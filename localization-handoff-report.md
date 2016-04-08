@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/1848f0dc5813ad060fdd8dec0b9a98c01032a34d/windows-apps-src/publish/mobile-operator-billing.md) | HandedOffSuccess | [Details](#c3e2ff6efd2a944ec550f9421c0ed1629709a6ca3414)
+ [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/19b171c056659bba30970778f3eeb8ef0933d747/windows-apps-src/security/companion-device-unlock.md) | HandedOffSuccess | [Details](#65a9a4ffb229a5babed2763ebfd3fc770ab98a573448)
 
 ## Item Details
-##### <a name='c3e2ff6efd2a944ec550f9421c0ed1629709a6ca3414'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/1848f0dc5813ad060fdd8dec0b9a98c01032a34d/windows-apps-src/publish/mobile-operator-billing.md)
+##### <a name='65a9a4ffb229a5babed2763ebfd3fc770ab98a573448'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/19b171c056659bba30970778f3eeb8ef0933d747/windows-apps-src/security/companion-device-unlock.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/36a7d91df401d521d1ddd011557d3fc6fe1e1fe5/ol-handoff/Microsoft/windows-apps.zh-tw/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf)
-* Handoff Datetime: 2016-04-08 20:12:08
+* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c91072d2219cf3dcf5bffcc0f8f499ac23f64748/ol-handoff/Microsoft/windows-apps.zh-tw/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-tw.xlf)
+* Handoff Datetime: 2016-04-08 21:36:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
