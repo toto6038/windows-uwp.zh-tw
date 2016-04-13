@@ -1,6 +1,6 @@
 ---
-BasicReaderWriter 的完整程式碼
-讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。
+title: BasicReaderWriter 的完整程式碼
+description: 讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 

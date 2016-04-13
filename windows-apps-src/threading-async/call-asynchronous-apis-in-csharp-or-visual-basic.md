@@ -1,7 +1,7 @@
 ---
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-在 C# 或 Visual Basic 中呼叫非同步 API
-通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。
+title: 在 C# 或 Visual Basic 中呼叫非同步 API
+description: 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。
 ---
 # 在 C# 或 Visual Basic 中呼叫非同步 API
 

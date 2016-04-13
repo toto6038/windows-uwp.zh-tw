@@ -1,6 +1,6 @@
 ---
-在 XAML 標記中，為屬性指定 null 值。
-x:Null 標記延伸
+description: 在 XAML 標記中，為屬性指定 null 值。
+title: x:Null 標記延伸
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 

@@ -1,8 +1,8 @@
 ---
-通知視覺化檢視是市集中新的通用 Windows 平台 (UWP) 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
-通知視覺化工具
+Description: 通知視覺化檢視是市集中新的通用 Windows 平台 (UWP) 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
+title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
-TBD
+label: TBD
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-建置通用 Windows 平台 (UWP) app，支援來自畫筆和手寫筆裝置的自訂互動，包括適用於自然書寫與繪圖體驗的數位筆墨。
-畫筆和手寫筆互動
+Description: 建置通用 Windows 平台 (UWP) app，支援來自畫筆和手寫筆裝置的自訂互動，包括適用於自然書寫與繪圖體驗的數位筆墨。
+title: 畫筆和手寫筆互動
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
-畫筆和手寫筆
+label: 畫筆和手寫筆
 template: detail.hbs
 ---
 

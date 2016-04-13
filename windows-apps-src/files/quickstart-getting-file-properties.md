@@ -1,7 +1,7 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-取得檔案屬性
-取得由 StorageFile 物件所表示檔案的屬性 (最上層、基本及延伸)。
+title: 取得檔案屬性
+description: 取得由 StorageFile 物件所表示檔案的屬性 (最上層、基本及延伸)。
 ---
 # 取得檔案屬性
 

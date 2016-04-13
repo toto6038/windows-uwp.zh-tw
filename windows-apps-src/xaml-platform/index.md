@@ -1,7 +1,7 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。
-XAML 平台
+description: 本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。
+title: XAML 平台
 ---
 
 # XAML 平台

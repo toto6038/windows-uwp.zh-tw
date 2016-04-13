@@ -1,6 +1,6 @@
 ---
-處理 app 預先啟動
-了解如何透過覆寫 OnLaunched 方法來處理 app 預先啟動。
+title: 處理 app 預先啟動
+description: 了解如何透過覆寫 OnLaunched 方法來處理 app 預先啟動。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ---
 

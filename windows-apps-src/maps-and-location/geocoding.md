@@ -1,6 +1,6 @@
 ---
-執行地理編碼和反向地理編碼
-呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
+title: 執行地理編碼和反向地理編碼
+description: 呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ---
 

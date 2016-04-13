@@ -1,6 +1,6 @@
 ---
-您將在 Visual Studio 中建立新的 Windows 10 專案，然後將您的檔案複製到此專案中，以開始移植程序。
-將 Windows Phone Silverlight 專案移植到 UWP 專案
+description: 您將在 Visual Studio 中建立新的 Windows 10 專案，然後將您的檔案複製到此專案中，以開始移植程序。
+title: 將 Windows Phone Silverlight 專案移植到 UWP 專案
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ---
 

@@ -1,8 +1,8 @@
 ---
-了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
-回應觸控式鍵盤出現
+Description: 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
+title: 回應觸控式鍵盤出現
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-回應觸控式鍵盤出現
+label: 回應觸控式鍵盤出現
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-應用程式在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。
-磚
+Description: 應用程式在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。
+title: 磚
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-磚
+label: 磚
 template: detail.hbs
 ---
 

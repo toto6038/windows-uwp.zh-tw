@@ -1,6 +1,6 @@
 ---
-列出 Windows 執行階段的 XAML 中，針對 Common Language Runtime (CLR) 及其他程式設計語言 (例如 C++) 中特定資料類型的語言層級支援。
-XAML 內建資料類型
+description: 列出 Windows 執行階段的 XAML 中，針對 Common Language Runtime (CLR) 及其他程式設計語言 (例如 C++) 中特定資料類型的語言層級支援。
+title: XAML 內建資料類型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ---
 

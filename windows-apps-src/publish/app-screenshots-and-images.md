@@ -1,6 +1,6 @@
 ---
-您的 app 需要包括各種標誌、螢幕擷取畫面和影像。
-App 螢幕擷取畫面與影像
+Description: 您的 app 需要包括各種標誌、螢幕擷取畫面和影像。
+title: App 螢幕擷取畫面與影像
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ---
 

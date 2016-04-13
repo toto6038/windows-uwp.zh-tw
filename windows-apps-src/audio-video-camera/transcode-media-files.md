@@ -1,7 +1,7 @@
 ---
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。
-轉碼媒體檔案
+description: 您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。
+title: 轉碼媒體檔案
 ---
 
 # 轉碼媒體檔案

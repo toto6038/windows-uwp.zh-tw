@@ -1,7 +1,7 @@
 ---
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-本文說明如何使用 IMediaEncodingProperties 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。
-設定媒體編碼屬性
+description: 本文說明如何使用 IMediaEncodingProperties 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。
+title: 設定媒體編碼屬性
 ---
 
 # 設定媒體編碼屬性

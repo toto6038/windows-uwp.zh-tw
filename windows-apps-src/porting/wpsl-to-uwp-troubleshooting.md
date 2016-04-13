@@ -1,6 +1,6 @@
 ---
-強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
-將 Windows Phone Silverlight 移植到 UWP 的疑難排解
+description: 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
+title: 將 Windows Phone Silverlight 移植到 UWP 的疑難排解
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
 ---
 

@@ -1,8 +1,8 @@
 ---
-網頁檢視控制項會將檢視嵌入您的 app 中，而 app 使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
-網頁檢視
+Description: 網頁檢視控制項會將檢視嵌入您的 app 中，而 app 使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
+title: 網頁檢視
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
-網頁檢視
+label: 網頁檢視
 template: detail.hbs
 ---
 

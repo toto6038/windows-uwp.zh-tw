@@ -1,6 +1,6 @@
 ---
-當您開始移植程序時，會有兩個選項。
-將 Windows Runtime 8 專案移植到 UWP 專案
+description: 當您開始移植程序時，會有兩個選項。
+title: 將 Windows Runtime 8 專案移植到 UWP 專案
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ---
 

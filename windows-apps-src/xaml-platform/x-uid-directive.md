@@ -1,6 +1,6 @@
 ---
-提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
-x:Uid 指示詞
+description: 提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
+title: x:Uid 指示詞
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ---
 

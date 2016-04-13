@@ -1,6 +1,6 @@
 ---
-DirectX 遊戲專案範本
-了解建立通用 Windows 平台 (UWP) 和 DirectX 遊戲的範本。
+title: DirectX 遊戲專案範本
+description: 了解建立通用 Windows 平台 (UWP) 和 DirectX 遊戲的範本。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ---
 

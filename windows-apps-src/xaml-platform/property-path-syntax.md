@@ -1,6 +1,6 @@
 ---
-您可以使用 PropertyPath 類別和字串語法，具現化 XAML 或程式碼中的 PropertyPath 值。
-Property-path 語法
+description: 您可以使用 PropertyPath 類別和字串語法，具現化 XAML 或程式碼中的 PropertyPath 值。
+title: Property-path 語法
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ---
 

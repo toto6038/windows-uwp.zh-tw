@@ -1,6 +1,6 @@
 ---
-Windows 執行階段元件
-Windows 執行階段元件是可讓您具現化並從任何語言 (包括 C#、Visual Basic、JavaScript 和 C++) 使用的獨立物件。
+title: Windows 執行階段元件
+description: Windows 執行階段元件是可讓您具現化並從任何語言 (包括 C#、Visual Basic、JavaScript 和 C++) 使用的獨立物件。
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ---
 

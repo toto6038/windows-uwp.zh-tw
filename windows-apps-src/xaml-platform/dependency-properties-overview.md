@@ -1,6 +1,6 @@
 ---
-這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。
-相依性屬性概觀
+description: 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。
+title: 相依性屬性概觀
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 

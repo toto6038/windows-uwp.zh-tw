@@ -1,8 +1,8 @@
 ---
-本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
-傳送本機磚通知
+Description: 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
+title: 傳送本機磚通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
-TBD
+label: TBD
 template: detail.hbs
 ---
 

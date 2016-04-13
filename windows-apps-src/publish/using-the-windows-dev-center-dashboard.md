@@ -1,6 +1,6 @@
 ---
-Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。
-使用 Windows 開發人員中心儀表板
+Description: Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。
+title: 使用 Windows 開發人員中心儀表板
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ---
 

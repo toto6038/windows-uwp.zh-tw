@@ -1,6 +1,6 @@
 ---
-最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
-輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。
+title: 最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
+description: 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ---
 

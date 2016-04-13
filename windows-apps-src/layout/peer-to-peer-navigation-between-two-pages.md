@@ -1,8 +1,8 @@
 ---
-了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
-兩個頁面之間的對等瀏覽
+Description: 了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
+title: 兩個頁面之間的對等瀏覽
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-兩個頁面之間的對等瀏覽
+label: 兩個頁面之間的對等瀏覽
 template: detail.hbs
 ---
 

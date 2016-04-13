@@ -1,6 +1,6 @@
 ---
-一份出色的 app 描述可以讓您的 app 在 Windows 市集中更為突出，並協助鼓勵客戶下載。
-撰寫一份出色的 app 介紹
+Description: 一份出色的 app 描述可以讓您的 app 在 Windows 市集中更為突出，並協助鼓勵客戶下載。
+title: 撰寫一份出色的 app 介紹
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ---
 

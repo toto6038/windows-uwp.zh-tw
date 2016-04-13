@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-本文說明如何使用 BitmapDecoder 和 BitmapEncoder 來載入及儲存影像檔，以及如何使用 SoftwareBitmap 物件來代表點陣圖影像。
-影像處理
+description: 本文說明如何使用 BitmapDecoder 和 BitmapEncoder 來載入及儲存影像檔，以及如何使用 SoftwareBitmap 物件來代表點陣圖影像。
+title: 影像處理
 ---
 
 # 影像處理

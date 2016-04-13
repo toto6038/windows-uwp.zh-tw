@@ -1,8 +1,8 @@
 ---
-以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) 應用程式的名片。
-磚和圖示資產
+Description: 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) 應用程式的名片。
+title: 磚和圖示資產
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-磚和圖示資產
+label: 磚和圖示資產
 template: detail.hbs
 ---
 

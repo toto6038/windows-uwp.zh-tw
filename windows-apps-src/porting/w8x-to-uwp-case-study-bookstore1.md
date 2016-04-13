@@ -1,7 +1,7 @@
 ---
-Windows Runtime 8.x 至 UWP 的案例研究：Bookstore1
+title: Windows Runtime 8.x 至 UWP 的案例研究：Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-本主題提供將一個非常簡單的通用 8.1 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的案例研究。
+description: 本主題提供將一個非常簡單的通用 8.1 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的案例研究。
 ---
 
 # Windows Runtime 8.x 至 UWP 的案例研究：Bookstore1

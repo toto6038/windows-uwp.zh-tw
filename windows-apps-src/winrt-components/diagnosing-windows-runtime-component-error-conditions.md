@@ -1,6 +1,6 @@
 ---
-診斷 Windows 執行階段元件錯誤狀況
-本文提供以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。
+title: 診斷 Windows 執行階段元件錯誤狀況
+description: 本文提供以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 

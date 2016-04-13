@@ -1,8 +1,8 @@
 ---
-本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
-App 設定和資料
+Description: 本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
+title: App 設定和資料
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
-App 設定和資料
+label: App 設定和資料
 template: detail.hbs
 ---
 

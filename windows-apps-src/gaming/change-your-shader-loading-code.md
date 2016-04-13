@@ -1,6 +1,6 @@
 ---
-OpenGL ES 2.0 著色器管線與 Direct3D 的比較
-在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。
+title: OpenGL ES 2.0 著色器管線與 Direct3D 的比較
+description: 在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ---
 

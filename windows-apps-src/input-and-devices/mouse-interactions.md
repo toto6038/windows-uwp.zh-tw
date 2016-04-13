@@ -1,8 +1,8 @@
 ---
-處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
-滑鼠互動
+Description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
+title: 滑鼠互動
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-滑鼠
+label: 滑鼠
 template: detail.hbs
 ---
 

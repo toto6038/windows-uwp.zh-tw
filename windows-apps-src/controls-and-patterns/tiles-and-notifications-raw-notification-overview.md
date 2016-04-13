@@ -1,8 +1,8 @@
 ---
-原始通知是簡短、一般用途的推播通知。
-原始通知概觀
+Description: 原始通知是簡短、一般用途的推播通知。
+title: 原始通知概觀
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
-TBD
+label: TBD
 template: detail.hbs
 ---
 

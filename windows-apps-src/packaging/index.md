@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-封裝 app
-本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。
+title: 封裝 app
+description: 本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。
 ---
 # 封裝 app
 

@@ -1,8 +1,8 @@
 ---
-Windows.UI.Text.Core 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。
-自訂文字輸入概觀
+Description: Windows.UI.Text.Core 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。
+title: 自訂文字輸入概觀
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
-自訂文字輸入
+label: 自訂文字輸入
 template: detail.hbs
 ---
 

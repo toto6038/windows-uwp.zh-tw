@@ -1,7 +1,7 @@
 ---
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
-藍牙 GATT
-本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼。
+title: 藍牙 GATT
+description: 本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼。
 ---
 # 藍牙 GATT
 

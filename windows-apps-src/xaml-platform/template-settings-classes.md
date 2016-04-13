@@ -1,6 +1,6 @@
 ---
-範本設定類別
-範本設定類別
+description: 範本設定類別
+title: 範本設定類別
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ---
 

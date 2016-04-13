@@ -1,8 +1,8 @@
 ---
-以下是用來建立彈性磚的元素和屬性。
-彈性磚結構描述與範本
+Description: 以下是用來建立彈性磚的元素和屬性。
+title: 彈性磚結構描述與範本
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-彈性磚結構描述與範本
+label: 彈性磚結構描述與範本
 template: detail.hbs
 ---
 

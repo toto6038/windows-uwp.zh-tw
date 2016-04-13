@@ -1,8 +1,8 @@
 ---
-使用語音命令，延伸 Cortana 與您的應用程式所提供的功能。
-Cortana 設計指導方針
+Description: 使用語音命令，延伸 Cortana 與您的應用程式所提供的功能。
+title: Cortana 設計指導方針
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-指導方針
+label: 指導方針
 template: detail.hbs
 ---
 

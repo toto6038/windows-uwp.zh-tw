@@ -1,6 +1,6 @@
 ---
-用來進行遊戲程式設計的 Visual Studio 工具
-Visual Studio 中提供的 DirectX 特定工具概觀。
+title: 用來進行遊戲程式設計的 Visual Studio 工具
+description: Visual Studio 中提供的 DirectX 特定工具概觀。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ---
 

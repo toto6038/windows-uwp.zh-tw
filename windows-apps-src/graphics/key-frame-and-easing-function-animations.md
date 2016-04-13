@@ -1,7 +1,7 @@
 ---
-主要畫面格動畫和 Easing 函式動畫
+title: 主要畫面格動畫和 Easing 函式動畫
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。
+description: 線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。
 ---
 # 主要畫面格動畫和 Easing 函式動畫
 

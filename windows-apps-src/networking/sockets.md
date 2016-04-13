@@ -1,6 +1,6 @@
 ---
-您可以使用 Windows.Networking.Sockets 和 Winsock，以通用 Windows 平台 (UWP) 的 app 開發人員的身分與其他裝置通訊。
-通訊端
+description: 您可以使用 Windows.Networking.Sockets 和 Winsock，以通用 Windows 平台 (UWP) 的 app 開發人員的身分與其他裝置通訊。
+title: 通訊端
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 

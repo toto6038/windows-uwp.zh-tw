@@ -1,6 +1,6 @@
 ---
-建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
-本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows app 呼叫此元件。
+title: 建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
+description: 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows app 呼叫此元件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 

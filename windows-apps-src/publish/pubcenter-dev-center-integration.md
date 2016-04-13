@@ -1,6 +1,6 @@
 ---
-pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。
-pubCenter 開發人員中心整合
+Description: pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。
+title: pubCenter 開發人員中心整合
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 ---
 

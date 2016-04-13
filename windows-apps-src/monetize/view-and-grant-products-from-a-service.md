@@ -1,7 +1,7 @@
 ---
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-如果您有 app 及應用程式內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API 及 Windows 市集購買 API，來從您的服務存取這些產品的擁有權資訊。
-從服務檢視及授與產品
+description: 如果您有 app 及應用程式內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API 及 Windows 市集購買 API，來從您的服務存取這些產品的擁有權資訊。
+title: 從服務檢視及授與產品
 ---
 
 # 從服務檢視及授與產品

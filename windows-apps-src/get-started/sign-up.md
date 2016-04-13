@@ -1,7 +1,7 @@
 ---
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-準備好註冊了嗎？
-立即註冊開發人員帳戶，就可以讓您的 app 出現在 Windows 市集中並參與其他的 Microsoft 計劃。
+title: 準備好註冊了嗎？
+description: 立即註冊開發人員帳戶，就可以讓您的 app 出現在 Windows 市集中並參與其他的 Microsoft 計劃。
 ---
 # 準備好註冊了嗎？
 

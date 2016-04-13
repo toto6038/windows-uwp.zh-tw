@@ -1,6 +1,6 @@
 ---
-DDSTextureLoader 的完整程式碼
-從記憶體載入 DDS 紋理的類別與方法的完整程式碼。
+title: DDSTextureLoader 的完整程式碼
+description: 從記憶體載入 DDS 紋理的類別與方法的完整程式碼。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ---
 

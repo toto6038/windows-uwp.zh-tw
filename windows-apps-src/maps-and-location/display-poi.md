@@ -1,6 +1,6 @@
 ---
-'在地圖上顯示興趣點 (POI)'
-藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。
+title: '在地圖上顯示興趣點 (POI)'
+description: 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ---
 

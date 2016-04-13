@@ -1,6 +1,6 @@
 ---
-非同步程式設計 (DirectX 和 C++)
-本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。
+title: 非同步程式設計 (DirectX 和 C++)
+description: 本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ---
 

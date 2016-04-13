@@ -1,8 +1,8 @@
 ---
-為使用者提供說明或疑難排解秘訣，並教導他們與您 app 互動的有效方式。 本節提供如何在使用者使用您的 app 時提供指示的最佳做法。
-說明和指示的 UX 指導方針
+Description: 為使用者提供說明或疑難排解秘訣，並教導他們與您 app 互動的有效方式。 本節提供如何在使用者使用您的 app 時提供指示的最佳做法。
+title: 說明和指示的 UX 指導方針
 ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
-app 內說明和指示性 UI
+label: app 內說明和指示性 UI
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-x:Phase 屬性
-搭配使用 x:Phase 與 x:Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
+title: x:Phase 屬性
+description: 搭配使用 x:Phase 與 x:Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 

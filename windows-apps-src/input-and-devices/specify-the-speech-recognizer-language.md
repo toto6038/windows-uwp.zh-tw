@@ -1,8 +1,8 @@
 ---
-了解如何選取已安裝的語言以用於語音辨識。
-指定語音辨識器語言
+Description: 了解如何選取已安裝的語言以用於語音辨識。
+title: 指定語音辨識器語言
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
-指定語音辨識器語言
+label: 指定語音辨識器語言
 template: detail.hbs
 ---
 

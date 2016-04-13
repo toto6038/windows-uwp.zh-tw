@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-腳本動畫
-腳本動畫不只是視覺意義上的動畫。
+title: 腳本動畫
+description: 腳本動畫不只是視覺意義上的動畫。
 ---
 # 腳本動畫
 

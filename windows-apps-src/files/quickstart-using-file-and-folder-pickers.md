@@ -1,7 +1,7 @@
 ---
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-使用選擇器開啟檔案和資料夾
-讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。
+title: 使用選擇器開啟檔案和資料夾
+description: 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。
 ---
 
 # 使用選擇器開啟檔案和資料夾

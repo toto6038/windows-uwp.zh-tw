@@ -1,8 +1,8 @@
 ---
-了解如何將影像整合到您的 app，包括如何使用兩個主要 XAML 類別的 API：Image 和 ImageBrush。
-影像與影像筆刷
+Description: 了解如何將影像整合到您的 app，包括如何使用兩個主要 XAML 類別的 API：Image 和 ImageBrush。
+title: 影像與影像筆刷
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-影像與影像筆刷
+label: 影像與影像筆刷
 template: detail.hbs
 ---
 # 影像與影像筆刷

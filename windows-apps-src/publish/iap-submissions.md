@@ -1,6 +1,6 @@
 ---
-您要透過 Windows 開發人員中心儀表板發佈 IAP。
-IAP 提交
+Description: 您要透過 Windows 開發人員中心儀表板發佈 IAP。
+title: IAP 提交
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ---
 

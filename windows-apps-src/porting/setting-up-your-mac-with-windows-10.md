@@ -1,6 +1,6 @@
 ---
-使用目前的 Mac 電腦開發適用於 Windows 的 app。
-設定 Mac 的 Windows 10
+description: 使用目前的 Mac 電腦開發適用於 Windows 的 app。
+title: 設定 Mac 的 Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ---
 

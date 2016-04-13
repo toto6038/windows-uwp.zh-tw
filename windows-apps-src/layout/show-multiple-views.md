@@ -1,8 +1,8 @@
 ---
-讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。
-顯示 app 的多重檢視
+Description: 讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。
+title: 顯示 app 的多重檢視
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-顯示 app 的多重檢視
+label: 顯示 app 的多重檢視
 template: detail.hbs
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-存取 HomeGroup 內容
-存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
+title: 存取 HomeGroup 內容
+description: 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
 ---
 # 存取 HomeGroup 內容
 

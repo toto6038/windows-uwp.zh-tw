@@ -1,6 +1,6 @@
 ---
-啟動 Windows 市集 app
-本主題描述 ms-windows-store URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。
+title: 啟動 Windows 市集 app
+description: 本主題描述 ms-windows-store URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ---
 

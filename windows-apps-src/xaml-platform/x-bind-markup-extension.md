@@ -1,6 +1,6 @@
 ---
-xBind 標記延伸是 Binding 的替代項目。 xBind 沒有 Binding 的部分功能，但在執行時所需的時間和記憶體都比 Binding 少，並且支援較強的偵錯功能。
-xBind 標記延伸
+description: xBind 標記延伸是 Binding 的替代項目。 xBind 沒有 Binding 的部分功能，但在執行時所需的時間和記憶體都比 Binding 少，並且支援較強的偵錯功能。
+title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ---
 

@@ -1,6 +1,6 @@
 ---
-您可以用 100 種以上的語言將 app 提交到 Windows 市集。
-支援的語言
+Description: 您可以用 100 種以上的語言將 app 提交到 Windows 市集。
+title: 支援的語言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ---
 

@@ -1,6 +1,6 @@
 ---
-App 週期
-本主題描述通用 Windows 平台 (UWP) app 從啟用到關閉為止的整個週期。
+title: App 週期
+description: 本主題描述通用 Windows 平台 (UWP) app 從啟用到關閉為止的整個週期。
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ---
 

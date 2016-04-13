@@ -1,6 +1,6 @@
 ---
-您可以透過商務用 Windows 市集，將企業營運 (LOB) app 直接發佈到企業來進行大量取得，而不需使 app 可在市集中廣泛取得。
-將 LOB app 發佈到企業
+Description: 您可以透過商務用 Windows 市集，將企業營運 (LOB) app 直接發佈到企業來進行大量取得，而不需使 app 可在市集中廣泛取得。
+title: 將 LOB app 發佈到企業
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
-媒體投射
+description: 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
+title: 媒體投射
 ---
 
 # 媒體投射

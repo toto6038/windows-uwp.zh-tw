@@ -1,6 +1,6 @@
 ---
-Marble Maze 範例基礎觀念
-本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。
+title: Marble Maze 範例基礎觀念
+description: 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ---
 

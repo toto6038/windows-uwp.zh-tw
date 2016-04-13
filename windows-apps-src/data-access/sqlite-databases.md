@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-SQLite 資料庫
-SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 程式庫、在通用 Windows app 中封裝您自己的 SQLite 程式庫，或是從來源建立 SQLite 程式庫。
+title: SQLite 資料庫
+description: SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 程式庫、在通用 Windows app 中封裝您自己的 SQLite 程式庫，或是從來源建立 SQLite 程式庫。
 ---
 # SQLite 資料庫
 

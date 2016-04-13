@@ -1,6 +1,6 @@
 ---
-加入聲音
-在這個步驟中，我們會檢視射擊遊戲範例如何使用XAudio2 API 來建立播放聲音的物件。
+title: 加入聲音
+description: 在這個步驟中，我們會檢視射擊遊戲範例如何使用XAudio2 API 來建立播放聲音的物件。
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ---
 

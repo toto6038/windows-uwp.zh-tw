@@ -1,7 +1,7 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-App 啟動效能的最佳做法
-透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
+title: App 啟動效能的最佳做法
+description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 ---
 # App 啟動效能的最佳做法
 

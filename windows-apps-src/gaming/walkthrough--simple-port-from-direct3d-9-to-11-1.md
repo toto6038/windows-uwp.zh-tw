@@ -1,6 +1,6 @@
 ---
-逐步解說 -- 將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
-這個移植練習示範如何將簡單的轉譯架構從 Direct3D 9 移到 Direct3D 11 和通用 Windows 平台 (UWP)。
+title: 逐步解說 -- 將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
+description: 這個移植練習示範如何將簡單的轉譯架構從 Direct3D 9 移到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
 

@@ -1,8 +1,8 @@
 ---
-使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
-觸控板互動
+Description: 使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
+title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-觸控板互動
+label: 觸控板互動
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。
-事件與路由事件概觀
+description: 我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。
+title: 事件與路由事件概觀
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ---
 

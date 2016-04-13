@@ -1,9 +1,9 @@
 ---
-「全球化」是在不進行任何變更或自訂的情況下，針對不同的全球市場設計和開發您的 app，以使它能適當運作的程序。
+Description: 「全球化」是在不進行任何變更或自訂的情況下，針對不同的全球市場設計和開發您的 app，以使它能適當運作的程序。
 Search.SourceType: Video
-全球化和當地語系化
+title: 全球化和當地語系化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
-簡介
+label: 簡介
 template: detail.hbs
 ---
 

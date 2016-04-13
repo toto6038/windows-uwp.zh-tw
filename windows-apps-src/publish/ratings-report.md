@@ -1,6 +1,6 @@
 ---
-Windows 開發人員中心儀表板中的 [評等] 報告可讓您查看客戶在 Windows 市集中對您 app 評等的分佈。
-評等報告
+Description: Windows 開發人員中心儀表板中的 [評等] 報告可讓您查看客戶在 Windows 市集中對您 app 評等的分佈。
+title: 評等報告
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 

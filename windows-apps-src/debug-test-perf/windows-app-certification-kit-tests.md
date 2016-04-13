@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-Windows 應用程式認證套件測試
-Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。
+title: Windows 應用程式認證套件測試
+description: Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。
 ---
 ## Windows 應用程式認證套件測試
 

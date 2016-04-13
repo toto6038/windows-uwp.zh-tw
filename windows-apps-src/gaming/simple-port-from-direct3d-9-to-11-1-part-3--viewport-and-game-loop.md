@@ -1,6 +1,6 @@
 ---
-移植遊戲迴圈
-說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 IFrameworkView 以控制全螢幕的 CoreWindow。
+title: 移植遊戲迴圈
+description: 說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 IFrameworkView 以控制全螢幕的 CoreWindow。
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ---
 

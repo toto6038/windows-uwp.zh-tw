@@ -1,8 +1,8 @@
 ---
-使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。
-語音互動
+Description: 使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。
+title: 語音互動
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-語音互動
+label: 語音互動
 template: detail.hbs
 ---
 

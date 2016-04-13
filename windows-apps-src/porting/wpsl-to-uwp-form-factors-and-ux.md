@@ -1,6 +1,6 @@
 ---
-Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。
-針對尺寸與 UX 移植 Windows Phone Silverlight 到 UWP
+description: Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。
+title: 針對尺寸與 UX 移植 Windows Phone Silverlight 到 UWP
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ---
 

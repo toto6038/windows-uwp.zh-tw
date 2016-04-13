@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-ListView 和 GridView 資料虛擬化
-透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。
+title: ListView 和 GridView 資料虛擬化
+description: 透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。
 ---
 # ListView 和 GridView 資料虛擬化
 

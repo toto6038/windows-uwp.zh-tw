@@ -1,6 +1,6 @@
 ---
-Windows 市集可觸及全球 200 多個國家與地區的客戶。
-制定價格和選擇市場
+Description: Windows 市集可觸及全球 200 多個國家與地區的客戶。
+title: 制定價格和選擇市場
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ---
 

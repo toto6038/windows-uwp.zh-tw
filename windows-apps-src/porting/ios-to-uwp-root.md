@@ -1,7 +1,7 @@
 ---
-從 iOS 移到 UWP
+description: 從 iOS 移到 UWP
 Search.SourceType: Video
-從 iOS 移到 UWP
+title: 從 iOS 移到 UWP
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ---
 

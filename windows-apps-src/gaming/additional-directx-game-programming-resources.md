@@ -1,6 +1,6 @@
 ---
-遊戲程式設計資源
-如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
+title: 遊戲程式設計資源
+description: 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ---
 

@@ -1,6 +1,6 @@
 ---
-初始化 Direct3D 11
-示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。
+title: 初始化 Direct3D 11
+description: 示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ---
 

@@ -1,6 +1,6 @@
 ---
-透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。
-CustomResource 標記延伸
+description: 透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。
+title: CustomResource 標記延伸
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ---
 

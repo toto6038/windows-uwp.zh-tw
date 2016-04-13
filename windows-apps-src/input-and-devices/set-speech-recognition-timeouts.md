@@ -1,8 +1,8 @@
 ---
-設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
-設定語音辨識逾時
+Description: 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
+title: 設定語音辨識逾時
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
-語音辨識逾時
+label: 語音辨識逾時
 template: detail.hbs
 ---
 

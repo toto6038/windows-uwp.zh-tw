@@ -1,8 +1,8 @@
 ---
-使用已針對觸控最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，建立通用 Windows 平台 (UWP) 應用程式。
-觸控互動
+Description: 使用已針對觸控最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，建立通用 Windows 平台 (UWP) 應用程式。
+title: 觸控互動
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
-觸控互動
+label: 觸控互動
 template: detail.hbs
 ---
 

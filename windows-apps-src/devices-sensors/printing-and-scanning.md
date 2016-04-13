@@ -1,7 +1,7 @@
 ---
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-列印與掃描
-本節描述如何從您的通用 Windows app 列印與掃描。
+title: 列印與掃描
+description: 本節描述如何從您的通用 Windows app 列印與掃描。
 ---
 # 列印與掃描
 

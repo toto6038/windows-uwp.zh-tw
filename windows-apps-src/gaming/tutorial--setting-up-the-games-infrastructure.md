@@ -1,6 +1,6 @@
 ---
-設定遊戲專案
-組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。
+title: 設定遊戲專案
+description: 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ---
 

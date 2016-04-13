@@ -1,6 +1,6 @@
 ---
-使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
-RSS/Atom 摘要
+description: 使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
+title: RSS/Atom 摘要
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
 

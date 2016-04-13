@@ -1,8 +1,8 @@
 ---
-定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
-定期通知概觀
+Description: 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
+title: 定期通知概觀
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
-TBD
+label: TBD
 template: detail.hbs
 ---
 

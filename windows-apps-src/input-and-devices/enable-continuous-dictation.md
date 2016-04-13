@@ -1,8 +1,8 @@
 ---
-了解如何擷取及辨識較長且連續的聽寫語音輸入。
-啟用連續聽寫
+Description: 了解如何擷取及辨識較長且連續的聽寫語音輸入。
+title: 啟用連續聽寫
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-連續聽寫
+label: 連續聽寫
 template: detail.hbs
 ---
 

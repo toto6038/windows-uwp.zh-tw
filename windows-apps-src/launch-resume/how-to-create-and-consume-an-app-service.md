@@ -1,6 +1,6 @@
 ---
-建立和使用 app 服務
-了解如何撰寫可為其他 UWP app 提供服務的通用 Windows 平台 (UWP) app，以及如何取用這些服務。
+title: 建立和使用 app 服務
+description: 了解如何撰寫可為其他 UWP app 提供服務的通用 Windows 平台 (UWP) app，以及如何取用這些服務。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ---
 

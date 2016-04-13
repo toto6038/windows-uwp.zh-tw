@@ -1,6 +1,6 @@
 ---
-Windows 執行階段類型的 .NET Framework 對應
-下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。
+title: Windows 執行階段類型的 .NET Framework 對應
+description: 下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ---
 

@@ -1,6 +1,6 @@
 ---
-啟動 app 以取得結果
-了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。
+title: 啟動 app 以取得結果
+description: 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ---
 

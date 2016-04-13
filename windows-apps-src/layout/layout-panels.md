@@ -1,8 +1,8 @@
 ---
-使用版面配置面板，在 app 中排列與群組 UI 元素。
-通用 Windows 平台 (UWP) app 的版面配置面板
+Description: 使用版面配置面板，在 app 中排列與群組 UI 元素。
+title: 通用 Windows 平台 (UWP) app 的版面配置面板
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-版面配置面板
+label: 版面配置面板
 template: detail.hbs
 ---
 # 版面配置面板

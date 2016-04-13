@@ -1,6 +1,6 @@
 ---
-修改 XAML 編譯行為，以 public 存取而不是 private 預設行為來定義具名物件參考的欄位。
-xFieldModifier 屬性
+description: 修改 XAML 編譯行為，以 public 存取而不是 private 預設行為來定義具名物件參考的欄位。
+title: xFieldModifier 屬性
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 ---
 

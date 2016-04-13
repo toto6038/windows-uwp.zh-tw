@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-通用 Windows 平台元件和最佳化互通性
-建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+title: 通用 Windows 平台元件和最佳化互通性
+description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
 ---
 # 通用 Windows 平台元件和最佳化互通性
 

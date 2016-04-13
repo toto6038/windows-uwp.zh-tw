@@ -1,7 +1,7 @@
 ---
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-建立 "Hello, world" app (JS)
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 &\#0034;Hello, world&\#0034; app。
+title: 建立 "Hello, world" app (JS)
+description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 &\#0034;Hello, world&\#0034; app。
 ---
 # 建立 "Hello, world" app (JS)
 

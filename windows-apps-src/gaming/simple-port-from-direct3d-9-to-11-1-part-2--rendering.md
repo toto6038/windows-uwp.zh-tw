@@ -1,6 +1,6 @@
 ---
-轉換轉譯架構
-示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。
+title: 轉換轉譯架構
+description: 示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 ---
 

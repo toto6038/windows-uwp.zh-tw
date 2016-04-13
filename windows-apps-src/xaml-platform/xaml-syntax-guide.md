@@ -1,6 +1,6 @@
 ---
-我們將說明 XAML 語法規則，以及說明描述 XAML 語法可用之限制或選項的詞彙。
-XAML 語法指南
+description: 我們將說明 XAML 語法規則，以及說明描述 XAML 語法可用之限制或選項的詞彙。
+title: XAML 語法指南
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ---
 

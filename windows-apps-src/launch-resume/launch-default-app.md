@@ -1,6 +1,6 @@
 ---
-啟動 URI 的預設 app
-了解如何啟動統一資源識別項 (URI) 的預設 app。 URI 可讓您啟動另一個 app 來執行特定工作。 本主題也提供許多內建於 Windows 之 URI 配置的概觀。
+title: 啟動 URI 的預設 app
+description: 了解如何啟動統一資源識別項 (URI) 的預設 app。 URI 可讓您啟動另一個 app 來執行特定工作。 本主題也提供許多內建於 Windows 之 URI 配置的概觀。
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ---
 

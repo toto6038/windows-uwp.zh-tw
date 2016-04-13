@@ -1,8 +1,8 @@
 ---
-本主題描述在 Windows 執行階段 app 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
-目標預測
+Description: 本主題描述在 Windows 執行階段 app 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+title: 目標預測
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
-目標預測
+label: 目標預測
 template: detail.hbs
 ---
 

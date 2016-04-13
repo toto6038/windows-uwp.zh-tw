@@ -1,7 +1,7 @@
 ---
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) App。
-背景音訊
+description: 本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) App。
+title: 背景音訊
 ---
 
 # 背景音訊

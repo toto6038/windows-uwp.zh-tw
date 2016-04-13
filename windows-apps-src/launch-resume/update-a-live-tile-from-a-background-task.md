@@ -1,6 +1,6 @@
 ---
-從背景工作更新動態磚
-使用背景工作來更新含有最新內容的應用程式動態磚。
+title: 從背景工作更新動態磚
+description: 使用背景工作來更新含有最新內容的應用程式動態磚。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ---

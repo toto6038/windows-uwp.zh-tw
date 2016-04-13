@@ -1,7 +1,7 @@
 ---
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-最佳化檔案存取
-建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
+title: 最佳化檔案存取
+description: 建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
 ---
 # 最佳化檔案存取
 

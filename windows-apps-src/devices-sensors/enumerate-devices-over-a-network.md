@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
-列舉網路上的裝置
-除了探索本機連線的裝置，您也可以使用 Windows.Devices.Enumeration API 來列舉無線及網路通訊協定上的裝置。
+title: 列舉網路上的裝置
+description: 除了探索本機連線的裝置，您也可以使用 Windows.Devices.Enumeration API 來列舉無線及網路通訊協定上的裝置。
 ---
 # 列舉網路上的裝置
 

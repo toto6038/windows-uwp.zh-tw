@@ -1,7 +1,7 @@
 ---
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。
-授與免費產品
+description: 請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。
+title: 授與免費產品
 ---
 
 # 授與免費產品

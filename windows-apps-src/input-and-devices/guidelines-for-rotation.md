@@ -1,8 +1,8 @@
 ---
-這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
-旋轉
+Description: 這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+title: 旋轉
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-旋轉
+label: 旋轉
 template: detail.hbs
 ---
 

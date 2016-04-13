@@ -1,7 +1,7 @@
 ---
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-此文章說明如何使用 Windows.Media.Audio 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
-音訊圖
+description: 此文章說明如何使用 Windows.Media.Audio 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
+title: 音訊圖
 ---
 
 # 音訊圖

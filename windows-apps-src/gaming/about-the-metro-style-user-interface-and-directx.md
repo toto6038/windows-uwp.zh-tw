@@ -1,6 +1,6 @@
 ---
-App 物件和 DirectX
-使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。
+title: App 物件和 DirectX
+description: 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 

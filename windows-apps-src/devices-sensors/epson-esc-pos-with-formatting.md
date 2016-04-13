@@ -1,7 +1,7 @@
 ---
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-具有格式化功能的 Epson ESC/POS
-了解如何使用 ESC/POS 命令語言，針對您的服務點印表機來格式化文字，例如粗體和雙倍大小字元。
+title: 具有格式化功能的 Epson ESC/POS
+description: 了解如何使用 ESC/POS 命令語言，針對您的服務點印表機來格式化文字，例如粗體和雙倍大小字元。
 ---
 # 具有格式化功能的 Epson ESC/POS
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-AdvancedPhotoCapture 類別可讓您擷取高動態範圍 (HDR) 相片。
-高動態範圍 (HDR) 相片擷取
+description: AdvancedPhotoCapture 類別可讓您擷取高動態範圍 (HDR) 相片。
+title: 高動態範圍 (HDR) 相片擷取
 ---
 
 # 高動態範圍 (HDR) 相片擷取

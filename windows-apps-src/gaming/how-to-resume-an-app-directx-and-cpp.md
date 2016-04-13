@@ -1,6 +1,6 @@
 ---
-如何繼續 app (DirectX 和 C++)
-這個主題示範如何在系統恢復通用 Windows 平台 (UWP) DirectX app 時，還原重要的應用程式資料。
+title: 如何繼續 app (DirectX 和 C++)
+description: 這個主題示範如何在系統恢復通用 Windows 平台 (UWP) DirectX app 時，還原重要的應用程式資料。
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-建立、寫入和讀取檔案
-使用 StorageFile 物件讀取和寫入檔案。
+title: 建立、寫入和讀取檔案
+description: 使用 StorageFile 物件讀取和寫入檔案。
 ---
 
 # 建立、寫入和讀取檔案

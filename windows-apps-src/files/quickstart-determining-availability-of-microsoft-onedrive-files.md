@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-判斷 Microsoft OneDrive 檔案的可用性
-使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
+title: 判斷 Microsoft OneDrive 檔案的可用性
+description: 使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 ---
 # 判斷 Microsoft OneDrive 檔案的可用性
 

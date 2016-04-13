@@ -1,6 +1,6 @@
 ---
-要求地圖驗證金鑰
-您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。
+title: 要求地圖驗證金鑰
+description: 您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ---
 

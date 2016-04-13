@@ -1,8 +1,8 @@
 ---
-中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 app。
-中樞控制項
+Description: 中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 app。
+title: 中樞控制項
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
-中樞
+label: 中樞
 template: detail.hbs
 ---
 # 中樞控制項/模式

@@ -1,8 +1,8 @@
 ---
-超連結會讓使用者瀏覽到 app 的其他部分、其他 app，或使用不同的瀏覽器 app 啟動特定的統一資源識別項 (URI)。
-超連結
+Description: 超連結會讓使用者瀏覽到 app 的其他部分、其他 app，或使用不同的瀏覽器 app 啟動特定的統一資源識別項 (URI)。
+title: 超連結
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-超連結
+label: 超連結
 template: detail.hbs
 ---
 # 超連結

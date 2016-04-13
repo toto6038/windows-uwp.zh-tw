@@ -1,6 +1,6 @@
 ---
-在 Windows 開發人員中心儀表板中使用 app 時，您可以檢視由 Windows 市集指派給 app 的唯一身分識別相關詳細資料，以及取得 app 市集清單的連結。
-檢視 app 身分識別詳細資料
+Description: 在 Windows 開發人員中心儀表板中使用 app 時，您可以檢視由 Windows 市集指派給 app 的唯一身分識別相關詳細資料，以及取得 app 市集清單的連結。
+title: 檢視 app 身分識別詳細資料
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ---
 

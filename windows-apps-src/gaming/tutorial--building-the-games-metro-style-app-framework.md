@@ -1,6 +1,6 @@
 ---
-定義遊戲的通用 Windows 平台 (UWP) app 架構
-撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。
+title: 定義遊戲的通用 Windows 平台 (UWP) app 架構
+description: 撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 

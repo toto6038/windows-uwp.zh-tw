@@ -1,8 +1,8 @@
 ---
-使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。
-RichTextBlock
+Description: 使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。
+title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-RTF 區塊
+label: RTF 區塊
 template: detail.hbs
 ---
 # RTF 區塊

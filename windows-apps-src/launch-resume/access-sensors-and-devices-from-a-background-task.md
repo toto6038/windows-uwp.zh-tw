@@ -1,6 +1,6 @@
 ---
-從背景工作存取感應器和裝置
-DeviceUseTrigger 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。
+title: 從背景工作存取感應器和裝置
+description: DeviceUseTrigger 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ---
 

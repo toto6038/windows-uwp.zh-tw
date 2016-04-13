@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-本文說明如何使用 SceneAnalysisEffect 和FaceDetectionEffect 分析媒體擷取預覽串流的內容。
-媒體擷取的場景分析
+description: 本文說明如何使用 SceneAnalysisEffect 和FaceDetectionEffect 分析媒體擷取預覽串流的內容。
+title: 媒體擷取的場景分析
 ---
 
 # 媒體擷取的場景分析

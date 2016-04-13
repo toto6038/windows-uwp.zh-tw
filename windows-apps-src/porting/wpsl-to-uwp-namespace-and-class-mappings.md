@@ -1,6 +1,6 @@
 ---
-本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。
-Windows Phone Silverlight 和 UWP 命名空間與類別對應
+description: 本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。
+title: Windows Phone Silverlight 和 UWP 命名空間與類別對應
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ---
 

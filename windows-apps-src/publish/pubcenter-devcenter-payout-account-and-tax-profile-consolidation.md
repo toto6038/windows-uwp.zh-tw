@@ -1,6 +1,6 @@
 ---
-如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 您的付款現在將透過您的開發人員中心支付帳戶來支付。
-pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
+Description: 如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 您的付款現在將透過您的開發人員中心支付帳戶來支付。
+title: pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 ---
 

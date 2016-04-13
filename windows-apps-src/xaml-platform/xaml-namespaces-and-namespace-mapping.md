@@ -1,6 +1,6 @@
 ---
-這個主題說明在大多數 XAML 檔案的根元素中找到的 XML/XAML 命名空間 (xmlns) 對應。 它也說明如何為自訂類型和組件產生類似的對應。
-XAML 命名空間與命名空間對應
+description: 這個主題說明在大多數 XAML 檔案的根元素中找到的 XML/XAML 命名空間 (xmlns) 對應。 它也說明如何為自訂類型和組件產生類似的對應。
+title: XAML 命名空間與命名空間對應
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ---
 

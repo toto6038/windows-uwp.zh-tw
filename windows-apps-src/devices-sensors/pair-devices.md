@@ -1,7 +1,7 @@
 ---
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
-配對裝置
-有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。
+title: 配對裝置
+description: 有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。
 ---
 # 配對裝置
 

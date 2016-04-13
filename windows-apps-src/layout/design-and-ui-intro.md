@@ -1,8 +1,8 @@
 ---
-本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。
-通用 Windows 平台 (UWP) app 設計簡介
+Description: 本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。
+title: 通用 Windows 平台 (UWP) app 設計簡介
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-UWP app 設計簡介
+label: UWP app 設計簡介
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-將 UI 的字串資源放入資源檔。 接著您就可以從程式碼或標記中參照這些字串。
-將 UI 字串放入資源
+Description: 將 UI 的字串資源放入資源檔。 接著您就可以從程式碼或標記中參照這些字串。
+title: 將 UI 字串放入資源
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-將 UI 字串放入資源
+label: 將 UI 字串放入資源
 template: detail.hbs
 ---
 

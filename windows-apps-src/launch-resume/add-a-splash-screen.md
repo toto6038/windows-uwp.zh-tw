@@ -1,6 +1,6 @@
 ---
-新增啟動顯示畫面
-使用 Microsoft Visual Studio 2015 設定應用程式的啟動顯示畫面影像與背景色彩。
+title: 新增啟動顯示畫面
+description: 使用 Microsoft Visual Studio 2015 設定應用程式的啟動顯示畫面影像與背景色彩。
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 ---
 

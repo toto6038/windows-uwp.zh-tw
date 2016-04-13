@@ -1,6 +1,6 @@
 ---
-從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
-本節提供將 DirectX 9 傳統型遊戲移植到 DirectX 11 和通用 Windows 平台 (UWP) 的指導方針。
+title: 從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
+description: 本節提供將 DirectX 9 傳統型遊戲移植到 DirectX 11 和通用 Windows 平台 (UWP) 的指導方針。
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ---
 

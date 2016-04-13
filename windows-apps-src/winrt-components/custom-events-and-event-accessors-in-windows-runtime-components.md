@@ -1,6 +1,6 @@
 ---
-Windows 執行階段元件中的自訂事件和事件存取子
-適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。
+title: Windows 執行階段元件中的自訂事件和事件存取子
+description: 適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ---
 

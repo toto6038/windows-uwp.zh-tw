@@ -1,8 +1,8 @@
 ---
-您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
-由推播通知精靈產生的程式碼
+Description: 您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
+title: 由推播通知精靈產生的程式碼
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
-TBD
+label: TBD
 template: detail.hbs
 ---
 

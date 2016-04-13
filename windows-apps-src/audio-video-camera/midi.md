@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。
-MIDI
+description: 本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。
+title: MIDI
 ---
 
 # MIDI

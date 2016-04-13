@@ -1,7 +1,7 @@
 ---
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
-非同步程式設計
-這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 元件延伸 (C\+\+/CX) 以及 JavaScript 中的表示方式。
+title: 非同步程式設計
+description: 這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 元件延伸 (C\+\+/CX) 以及 JavaScript 中的表示方式。
 ---
 # 非同步程式設計
 

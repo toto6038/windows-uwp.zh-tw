@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-這個案例研究根據 Bookstore1 中所提供的資訊來建置，是從在 SemanticZoom 控制項中顯示分組資料的通用 8.1 app 開始著手。
-Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2
+description: 這個案例研究根據 Bookstore1 中所提供的資訊來建置，是從在 SemanticZoom 控制項中顯示分組資料的通用 8.1 app 開始著手。
+title: Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2
 ---
 
 # Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2

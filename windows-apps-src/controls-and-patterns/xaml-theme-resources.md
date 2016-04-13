@@ -1,11 +1,11 @@
 ---
-XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。
+Description: XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。
 MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-XAML 佈景主題資源
+title: XAML 佈景主題資源
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-XAML 佈景主題資源
+label: XAML 佈景主題資源
 template: detail.hbs
 ---
 

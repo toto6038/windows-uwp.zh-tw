@@ -1,6 +1,6 @@
 ---
-在 C++ 中建立 Windows 執行階段元件
-本文說明如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。
+title: 在 C++ 中建立 Windows 執行階段元件
+description: 本文說明如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ---
 

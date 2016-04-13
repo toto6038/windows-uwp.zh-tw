@@ -1,11 +1,11 @@
 ---
-樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
+Description: 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
 MS-HAID: ' dev\_ctrl\_layout\_txt.styling\_controls'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-設定控制項的樣式
+title: 設定控制項的樣式
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-設定控制項的樣式
+label: 設定控制項的樣式
 template: detail.hbs
 ---
 

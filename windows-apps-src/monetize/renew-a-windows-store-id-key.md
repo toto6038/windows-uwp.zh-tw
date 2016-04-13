@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-請使用這個方法來更新 Windows 市集索引鍵。
-更新 Windows 市集識別碼索引鍵
+description: 請使用這個方法來更新 Windows 市集索引鍵。
+title: 更新 Windows 市集識別碼索引鍵
 ---
 
 # 更新 Windows 市集識別碼索引鍵

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-Windows 市集公開數個您可以透過 REST API 呼叫的服務，以程式設計方式存取註冊到您或是您組織的 Windows 開發人員中心帳戶之 app 的特定類型資料。
-使用 Windows 市集服務
+description: Windows 市集公開數個您可以透過 REST API 呼叫的服務，以程式設計方式存取註冊到您或是您組織的 Windows 開發人員中心帳戶之 app 的特定類型資料。
+title: 使用 Windows 市集服務
 ---
 
 # 使用 Windows 市集服務

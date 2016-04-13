@@ -1,6 +1,6 @@
 ---
-如何在 UWP app 中使用連絡人和行事曆資訊。
-連絡人和行事曆
+description: 如何在 UWP app 中使用連絡人和行事曆資訊。
+title: 連絡人和行事曆
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ---
 

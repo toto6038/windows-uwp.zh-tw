@@ -1,6 +1,6 @@
 ---
-通用 Windows 平台 (UWP) app 指南
-在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。
+title: 通用 Windows 平台 (UWP) app 指南
+description: 在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ---
 

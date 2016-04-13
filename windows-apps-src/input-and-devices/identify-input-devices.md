@@ -1,8 +1,8 @@
 ---
-識別連接至通用 Windows 平台 (UWP) 裝置的輸入裝置，以及識別它們的功能和屬性。
-識別輸入裝置
+Description: 識別連接至通用 Windows 平台 (UWP) 裝置的輸入裝置，以及識別它們的功能和屬性。
+title: 識別輸入裝置
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
-識別輸入裝置
+label: 識別輸入裝置
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-使用針對觸控最佳化，但在功能上與所有輸入裝置一致之直覺且特殊的使用者互動體驗，來建立通用 Windows 平台 (UWP) app。
-觸控設計指導方針
+Description: 使用針對觸控最佳化，但在功能上與所有輸入裝置一致之直覺且特殊的使用者互動體驗，來建立通用 Windows 平台 (UWP) app。
+title: 觸控設計指導方針
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
-觸控設計指導方針
+label: 觸控設計指導方針
 template: detail.hbs
 ---
 

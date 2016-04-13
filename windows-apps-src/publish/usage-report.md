@@ -1,6 +1,6 @@
 ---
-Windows 開發人員中心儀表板的 [使用方式] 報告可讓您查看客戶使用您 app 的方式。
-使用方式報告
+Description: Windows 開發人員中心儀表板的 [使用方式] 報告可讓您查看客戶使用您 app 的方式。
+title: 使用方式報告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ---
 

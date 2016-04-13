@@ -1,6 +1,6 @@
 ---
-在 app 中遵循這些適用於地理柵欄的最佳做法。
-地理柵欄 app 的指導方針
+Description: 在 app 中遵循這些適用於地理柵欄的最佳做法。
+title: 地理柵欄 app 的指導方針
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
 

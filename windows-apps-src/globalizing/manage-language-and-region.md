@@ -1,8 +1,8 @@
 ---
-藉由使用 Windows 所提供的各種語言及地區設定，即可控制 Windows 如何選取 UI 資源，以及如何將 app 的 UI 元素格式化。
-管理語言和地區
+Description: 藉由使用 Windows 所提供的各種語言及地區設定，即可控制 Windows 如何選取 UI 資源，以及如何將 app 的 UI 元素格式化。
+title: 管理語言和地區
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
-管理語言和地區
+label: 管理語言和地區
 template: detail.hbs
 ---
 

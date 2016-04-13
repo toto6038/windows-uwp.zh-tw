@@ -1,11 +1,11 @@
 ---
-「說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。」
+Description: 「說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。」
 MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-ResourceDictionary 與 XAML 資源參考
+title: ResourceDictionary 與 XAML 資源參考
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
-ResourceDictionary 與 XAML 資源參考
+label: ResourceDictionary 與 XAML 資源參考
 template: detail.hbs
 ---
 

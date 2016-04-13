@@ -1,7 +1,7 @@
 ---
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。
-搭配使用彈性資料流與 PlayReady
+description: 本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。
+title: 搭配使用彈性資料流與 PlayReady
 ---
 
 # 搭配使用彈性資料流與 PlayReady

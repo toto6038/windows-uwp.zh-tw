@@ -1,6 +1,6 @@
 ---
-啟動、繼續和背景工作
-本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。
+title: 啟動、繼續和背景工作
+description: 本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ---
 

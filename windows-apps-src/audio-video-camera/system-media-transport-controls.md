@@ -1,7 +1,7 @@
 ---
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-SystemMediaTransportControls 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
-系統媒體傳輸控制項
+description: SystemMediaTransportControls 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
+title: 系統媒體傳輸控制項
 ---
 
 # 系統媒體傳輸控制項

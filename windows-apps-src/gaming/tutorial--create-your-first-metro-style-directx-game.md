@@ -1,6 +1,6 @@
 ---
-使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
-在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。
+title: 使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
+description: 在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: ["DirectX 遊戲範例", "遊戲範例, 通用 Windows 平台 (UWP)", "Direct3D 11 遊戲"]
 ---

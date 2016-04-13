@@ -1,7 +1,7 @@
 ---
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-封裝 UWP app
-若要銷售您的通用 Windows 平台 (UWP) 應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。
+title: 封裝 UWP app
+description: 若要銷售您的通用 Windows 平台 (UWP) 應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。
 ---
 # 封裝 UWP app
 

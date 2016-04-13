@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-ListView 與 GridView UI 最佳化
-透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。
+title: ListView 與 GridView UI 最佳化
+description: 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。
 ---
 # ListView 與 GridView UI 最佳化
 

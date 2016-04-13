@@ -1,6 +1,6 @@
 ---
-除了為您的 app 建立將在 Windows app 中執行的廣告行銷活動之外，您也可以使用其他管道促銷您的 app。
-建立自訂 app 促銷活動
+Description: 除了為您的 app 建立將在 Windows app 中執行的廣告行銷活動之外，您也可以使用其他管道促銷您的 app。
+title: 建立自訂 app 促銷活動
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ---
 

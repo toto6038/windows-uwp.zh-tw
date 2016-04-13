@@ -1,6 +1,6 @@
 ---
-啟動檔案的預設 app
-了解如何啟動檔案的預設 app。
+title: 啟動檔案的預設 app
+description: 了解如何啟動檔案的預設 app。
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ---
 

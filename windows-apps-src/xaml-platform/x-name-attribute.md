@@ -1,6 +1,6 @@
 ---
-唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。
-xName 屬性
+description: 唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。
+title: xName 屬性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 

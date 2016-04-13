@@ -1,6 +1,6 @@
 ---
-在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
-選取連絡人
+description: 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
+title: 選取連絡人
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 關鍵字：連絡人, 選取
 關鍵字：選取單一連絡人

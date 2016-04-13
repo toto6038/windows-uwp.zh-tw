@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-本文說明如何使用 MediaProcessingTrigger 和背景工作，在背景處理媒體檔案。
-在背景處理媒體檔案
+description: 本文說明如何使用 MediaProcessingTrigger 和背景工作，在背景處理媒體檔案。
+title: 在背景處理媒體檔案
 ---
 
 # 在背景處理媒體檔案

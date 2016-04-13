@@ -1,7 +1,7 @@
 ---
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
-Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。
-在 Visual Studio 中建立專案
+description: Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。
+title: 在 Visual Studio 中建立專案
 ---
 
 # 開始使用：建立專案

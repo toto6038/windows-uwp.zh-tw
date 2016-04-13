@@ -1,6 +1,6 @@
 ---
-處理 URI 啟用
-了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。
+title: 處理 URI 啟用
+description: 了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ---
 

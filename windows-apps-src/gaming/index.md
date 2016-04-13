@@ -1,6 +1,6 @@
 ---
-遊戲和 DirectX
-通用 Windows 平台 (UWP) 能提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
+title: 遊戲和 DirectX
+description: 通用 Windows 平台 (UWP) 能提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ---
 

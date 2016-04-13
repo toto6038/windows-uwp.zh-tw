@@ -1,7 +1,7 @@
 ---
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-本節描述如何將您現有的 app 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 app 套件，讓客戶安裝於各種不同裝置上。 您的 app 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。
-將 app 移植到 Windows 10
+description: 本節描述如何將您現有的 app 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 app 套件，讓客戶安裝於各種不同裝置上。 您的 app 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。
+title: 將 app 移植到 Windows 10
 ---
 
 # 將 app 移植到 Windows 10

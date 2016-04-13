@@ -1,7 +1,7 @@
 ---
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
-彈性資料流
+description: 本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
+title: 彈性資料流
 ---
 
 # 彈性資料流

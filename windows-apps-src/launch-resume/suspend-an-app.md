@@ -1,6 +1,6 @@
 ---
-處理 app 暫停
-了解如何在系統暫停您的 app 時，儲存重要的應用程式資料。
+title: 處理 app 暫停
+description: 了解如何在系統暫停您的 app 時，儲存重要的應用程式資料。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ---
 

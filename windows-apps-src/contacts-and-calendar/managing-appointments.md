@@ -1,6 +1,6 @@
 ---
-您可以透過 Windows.ApplicationModel.Appointments 命名空間，在使用者的行事曆 app 建立和管理約會。
-管理約會
+description: 您可以透過 Windows.ApplicationModel.Appointments 命名空間，在使用者的行事曆 app 建立和管理約會。
+title: 管理約會
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ---
 

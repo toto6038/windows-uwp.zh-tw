@@ -1,6 +1,6 @@
 ---
-透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。
-ThemeResource 標記延伸
+description: 透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。
+title: ThemeResource 標記延伸
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。
-媒體組合和編輯
+description: Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。
+title: 媒體組合和編輯
 ---
 
 # 媒體組合和編輯

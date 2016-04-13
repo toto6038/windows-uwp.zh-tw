@@ -1,6 +1,6 @@
 ---
-遵循這些指導方針來準備要提交到 Windows 市集的 app 套件。
-應用程式套件需求
+Description: 遵循這些指導方針來準備要提交到 Windows 市集的 app 套件。
+title: 應用程式套件需求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ---
 

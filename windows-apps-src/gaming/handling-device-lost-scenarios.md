@@ -1,6 +1,6 @@
 ---
-處理 Direct3D 11 中的裝置已移除案例
-本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。
+title: 處理 Direct3D 11 中的裝置已移除案例
+description: 本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ---
 

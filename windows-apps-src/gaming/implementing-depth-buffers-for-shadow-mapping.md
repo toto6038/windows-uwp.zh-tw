@@ -1,6 +1,6 @@
 ---
-逐步解說 -- 使用 Direct3D 11 中的深度緩衝區實作陰影磁碟區
-此逐步解說示範如何在所有 Direct3D 功能層級的裝置上使用 Direct3D 11，轉譯使用深度圖的陰影磁碟區。
+title: 逐步解說 -- 使用 Direct3D 11 中的深度緩衝區實作陰影磁碟區
+description: 此逐步解說示範如何在所有 Direct3D 功能層級的裝置上使用 Direct3D 11，轉譯使用深度圖的陰影磁碟區。
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ---
 

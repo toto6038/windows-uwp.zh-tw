@@ -1,7 +1,7 @@
 ---
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-何謂通用 Windows 平台 (UWP) app？
-了解我們稱為通用 Windows app 的 app 有哪些不同類型：Windows 市集 app、Windows Phone 市集 app，以及 Windows 執行階段 app。
+title: 何謂通用 Windows 平台 (UWP) app？
+description: 了解我們稱為通用 Windows app 的 app 有哪些不同類型：Windows 市集 app、Windows Phone 市集 app，以及 Windows 執行階段 app。
 ---
 
 # 何謂通用 Windows 平台 (UWP) app？

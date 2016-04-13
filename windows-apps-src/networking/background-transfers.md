@@ -1,6 +1,6 @@
 ---
-使用背景傳輸 API 在網路上可靠地複製檔案。
-背景傳輸
+description: 使用背景傳輸 API 在網路上可靠地複製檔案。
+title: 背景傳輸
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 

@@ -1,11 +1,11 @@
 ---
-您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。
+Description: 您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。
 MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-控制項範本
+title: 控制項範本
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
-控制項範本
+label: 控制項範本
 template: detail.hbs
 ---
 

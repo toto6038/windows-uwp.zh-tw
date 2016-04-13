@@ -1,6 +1,6 @@
 ---
-DirectX 與 XAML 互通性
-您可以在通用 Windows 平台 (UWP) 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。
+title: DirectX 與 XAML 互通性
+description: 您可以在通用 Windows 平台 (UWP) 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ---
 

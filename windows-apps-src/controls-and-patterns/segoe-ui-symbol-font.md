@@ -1,9 +1,9 @@
 ---
-本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
+Description: 本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
 Search.Refinement.TopicID: 184
-Segoe MDL2 圖示的指導方針
+title: Segoe MDL2 圖示的指導方針
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-Segoe MDL2 圖示
+label: Segoe MDL2 圖示
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。
-app 如何在市集中顯示給 Windows 10 客戶
+Description: 如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。
+title: app 如何在市集中顯示給 Windows 10 客戶
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ---
 

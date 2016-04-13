@@ -1,9 +1,9 @@
 ---
-通用 Windows 平台 (UWP) app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
-通用 Windows 平台 (UWP) app 的瀏覽設計基本知識
+Description: 通用 Windows 平台 (UWP) app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
+title: 通用 Windows 平台 (UWP) app 的瀏覽設計基本知識
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-歷程記錄和向後瀏覽
+label: 歷程記錄和向後瀏覽
 template: detail.hbs
 ---
 

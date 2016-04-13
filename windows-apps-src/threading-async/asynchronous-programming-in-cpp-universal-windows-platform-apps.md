@@ -1,7 +1,7 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。
-C++ 中的非同步程式設計
+description: 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。
+title: C++ 中的非同步程式設計
 ---
 
 # C++ 中的非同步程式設計

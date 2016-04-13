@@ -1,6 +1,6 @@
 ---
-從 Direct3D 9 到 Direct3D 11 的重要變更
-本主題說明 DirectX 9 和 DirectX 11 的概要差異。
+title: 從 Direct3D 9 到 Direct3D 11 的重要變更
+description: 本主題說明 DirectX 9 和 DirectX 11 的概要差異。
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ---
 

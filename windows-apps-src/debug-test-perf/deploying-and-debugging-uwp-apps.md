@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-本文會引導您完成以各種部署和偵錯目標為目標的步驟。
-部署和偵錯通用 Windows 平台 (UWP) app
+description: 本文會引導您完成以各種部署和偵錯目標為目標的步驟。
+title: 部署和偵錯通用 Windows 平台 (UWP) app
 ---
 
 # 部署和偵錯通用 Windows 平台 (UWP) app

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
-藍牙
-本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app 的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。
+title: 藍牙
+description: 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app 的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。
 ---
 # 藍牙
 

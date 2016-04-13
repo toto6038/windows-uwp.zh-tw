@@ -1,6 +1,6 @@
 ---
-遊戲的專案範本與工具
-說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。
+title: 遊戲的專案範本與工具
+description: 說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ---
 

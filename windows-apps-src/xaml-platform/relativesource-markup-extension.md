@@ -1,6 +1,6 @@
 ---
-提供在執行階段物件圖形中指定繫結來源的相對關係的方法。
-RelativeSource 標記延伸
+description: 提供在執行階段物件圖形中指定繫結來源的相對關係的方法。
+title: RelativeSource 標記延伸
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ---
 

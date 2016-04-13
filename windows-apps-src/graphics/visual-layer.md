@@ -1,7 +1,7 @@
 ---
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-視覺層
-Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。
+title: 視覺層
+description: Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。
 ---
 # 視覺層
 

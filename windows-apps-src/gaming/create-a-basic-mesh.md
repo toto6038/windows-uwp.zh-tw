@@ -1,6 +1,6 @@
 ---
-建立和顯示基本網格
-3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。
+title: 建立和顯示基本網格
+description: 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 ---
 

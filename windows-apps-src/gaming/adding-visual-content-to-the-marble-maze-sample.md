@@ -1,6 +1,6 @@
 ---
-在 Marble Maze 範例中加入視覺化內容
-本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以編寫適合這些模式的遊戲內容。
+title: 在 Marble Maze 範例中加入視覺化內容
+description: 本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以編寫適合這些模式的遊戲內容。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 ---
 

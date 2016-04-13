@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
-Windows 應用程式認證套件
-為了讓您的 app 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
+title: Windows 應用程式認證套件
+description: 為了讓您的 app 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
 ---
 # Windows 應用程式認證套件
 

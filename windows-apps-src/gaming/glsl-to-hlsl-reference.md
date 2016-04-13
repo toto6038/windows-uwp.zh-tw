@@ -1,6 +1,6 @@
 ---
-GLSL-to-HLSL 參考
-當您將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。
+title: GLSL-to-HLSL 參考
+description: 當您將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ---
 

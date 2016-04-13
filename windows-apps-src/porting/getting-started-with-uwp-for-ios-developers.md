@@ -1,6 +1,6 @@
 ---
-適用於 iOS 開發人員的 UWP 入門
-適用於 iOS 開發人員的 UWP 入門
+description: 適用於 iOS 開發人員的 UWP 入門
+title: 適用於 iOS 開發人員的 UWP 入門
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ---
 

@@ -1,6 +1,6 @@
 ---
-使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
-HttpClient
+description: 使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
+title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ---
 

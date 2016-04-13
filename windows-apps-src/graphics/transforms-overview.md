@@ -1,7 +1,7 @@
 ---
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-轉換概觀
-了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段&\#160;API 中使用轉換。
+title: 轉換概觀
+description: 了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段&\#160;API 中使用轉換。
 ---
 
 # 轉換概觀

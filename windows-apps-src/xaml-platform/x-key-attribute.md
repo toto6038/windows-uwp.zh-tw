@@ -1,6 +1,6 @@
 ---
-唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。
-x:Key 屬性
+description: 唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。
+title: x:Key 屬性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 

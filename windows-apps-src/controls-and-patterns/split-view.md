@@ -1,8 +1,8 @@
 ---
-分割檢視
+title: 分割檢視
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-分割檢視控制項有一個可展開/可收合的窗格和內容區域。
-分割檢視
+description: 分割檢視控制項有一個可展開/可收合的窗格和內容區域。
+label: 分割檢視
 template: detail.hbs
 ---
 

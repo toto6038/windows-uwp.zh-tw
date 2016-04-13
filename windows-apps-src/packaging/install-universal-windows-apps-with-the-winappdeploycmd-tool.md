@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-使用 WinAppDeployCmd.exe 工具安裝 app
-Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) app 部署到任何 Windows 10 行動裝置版裝置的命令列工具。
+title: 使用 WinAppDeployCmd.exe 工具安裝 app
+description: Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) app 部署到任何 Windows 10 行動裝置版裝置的命令列工具。
 ---
 # 使用 WinAppDeployCmd.exe 工具安裝 app
 

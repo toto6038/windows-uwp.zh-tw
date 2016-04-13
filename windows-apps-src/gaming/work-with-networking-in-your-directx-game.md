@@ -1,6 +1,6 @@
 ---
-遊戲的網路功能
-了解如何在您的 DirectX 遊戲中開發與納入網路功能。
+title: 遊戲的網路功能
+description: 了解如何在您的 DirectX 遊戲中開發與納入網路功能。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 

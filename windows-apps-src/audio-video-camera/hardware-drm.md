@@ -1,7 +1,7 @@
 ---
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) app。
-硬體 DRM
+description: 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) app。
+title: 硬體 DRM
 ---
 
 # 硬體 DRM

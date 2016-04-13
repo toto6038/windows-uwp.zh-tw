@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-從您的 app 列印
-了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。
+title: 從您的 app 列印
+description: 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。
 ---
 # 從您的 app 列印
 

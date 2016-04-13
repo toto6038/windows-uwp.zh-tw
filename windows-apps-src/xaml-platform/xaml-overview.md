@@ -1,6 +1,6 @@
 ---
-我們將向 Windows 執行階段應用程式開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段應用程式。
-XAML 概觀
+description: 我們將向 Windows 執行階段應用程式開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段應用程式。
+title: XAML 概觀
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ---
 

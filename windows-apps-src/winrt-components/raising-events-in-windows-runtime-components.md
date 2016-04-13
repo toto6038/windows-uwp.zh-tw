@@ -1,5 +1,5 @@
 ---
-在 Windows 執行階段元件中引發事件
+title: 在 Windows 執行階段元件中引發事件
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
 ---

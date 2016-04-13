@@ -1,6 +1,6 @@
 ---
-您可以使用 Azure Active Directory，將使用者新增到您的開發人員中心帳戶。
-管理帳戶使用者
+Description: 您可以使用 Azure Active Directory，將使用者新增到您的開發人員中心帳戶。
+title: 管理帳戶使用者
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ---
 

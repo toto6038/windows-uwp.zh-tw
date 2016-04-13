@@ -1,6 +1,6 @@
 ---
-適用於遊戲的觸控控制項
-了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。
+title: 適用於遊戲的觸控控制項
+description: 了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 

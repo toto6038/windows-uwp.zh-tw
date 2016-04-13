@@ -1,6 +1,6 @@
 ---
-通用 Windows 平台 (UWP) app 中的多重取樣
-了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
+title: 通用 Windows 平台 (UWP) app 中的多重取樣
+description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 

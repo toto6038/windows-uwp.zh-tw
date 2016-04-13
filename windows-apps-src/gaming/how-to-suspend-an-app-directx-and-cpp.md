@@ -1,6 +1,6 @@
 ---
-如何暫停 app (DirectX 和 C++)
-這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX app 時，儲存重要的系統狀態與 app 資料。
+title: 如何暫停 app (DirectX 和 C++)
+description: 這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX app 時，儲存重要的系統狀態與 app 資料。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ---
 

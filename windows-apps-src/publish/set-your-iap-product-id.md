@@ -1,6 +1,6 @@
 ---
-這是在 Windows 開發人員中心儀表板送出 IAP (app 內購買) 的第一個步驟。
-設定您的 IAP 產品識別碼
+Description: 這是在 Windows 開發人員中心儀表板送出 IAP (app 內購買) 的第一個步驟。
+title: 設定您的 IAP 產品識別碼
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 

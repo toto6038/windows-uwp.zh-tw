@@ -1,6 +1,6 @@
 ---
-在 C# 和 Visual Basic 中建立 Windows 執行階段元件
-從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。
+title: 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
+description: 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ---
 

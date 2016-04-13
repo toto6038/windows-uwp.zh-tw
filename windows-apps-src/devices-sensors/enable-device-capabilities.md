@@ -1,7 +1,7 @@
 ---
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
-啟用裝置功能
-本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。
+title: 啟用裝置功能
+description: 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。
 ---
 # 啟用裝置功能
 

@@ -1,6 +1,6 @@
 ---
-以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至通用 Windows 平台 (UWP) app。
-將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
+description: 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至通用 Windows 平台 (UWP) app。
+title: 將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ---
 

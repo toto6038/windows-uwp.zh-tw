@@ -1,6 +1,6 @@
 ---
-與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
-將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
+description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
+title: 將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ---
 

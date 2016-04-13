@@ -1,8 +1,8 @@
 ---
-Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
-Windows 推播通知服務 (WNS) 概觀
+Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
+title: Windows 推播通知服務 (WNS) 概觀
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
-TBD
+label: TBD
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。
-使用全球通用格式
+Description: 藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。
+title: 使用全球通用格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-使用全球通用格式
+label: 使用全球通用格式
 template: detail.hbs
 ---
 

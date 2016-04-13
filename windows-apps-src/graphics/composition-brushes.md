@@ -1,7 +1,7 @@
 ---
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-組合筆刷
-筆刷會使用其輸出來繪製 Visual 的區域。 不同的筆刷有不同類型的輸出。
+title: 組合筆刷
+description: 筆刷會使用其輸出來繪製 Visual 的區域。 不同的筆刷有不同類型的輸出。
 ---
 # 組合筆刷
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-感應器方向
-取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
+title: 感應器方向
+description: 取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
 ---
 # 感應器方向
 

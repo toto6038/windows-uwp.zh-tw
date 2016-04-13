@@ -1,8 +1,8 @@
 ---
-您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。
-RichEditBox
+Description: 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。
+title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-Rich Edit 方塊
+label: Rich Edit 方塊
 template: detail.hbs
 ---
 # Rich Edit 方塊

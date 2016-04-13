@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
-裝置資訊屬性
-每個裝置都具有相關聯的 DeviceInformation 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。
+title: 裝置資訊屬性
+description: 每個裝置都具有相關聯的 DeviceInformation 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。
 ---
 # 裝置資訊屬性
 

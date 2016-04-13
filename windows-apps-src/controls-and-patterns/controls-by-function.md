@@ -1,8 +1,8 @@
 ---
-提供可用於 app 的部分控制項清單 (依功能分類)。
-依功能分類的控制項
+Description: 提供可用於 app 的部分控制項清單 (依功能分類)。
+title: 依功能分類的控制項
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
-依功能分類的控制項
+label: 依功能分類的控制項
 template: detail.hbs
 ---
 # 依功能分類的控制項

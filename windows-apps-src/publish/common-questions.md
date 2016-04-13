@@ -1,6 +1,6 @@
 ---
-關於廣告活動的常見問題
-關於廣告活動的常見問題
+Description: 關於廣告活動的常見問題
+title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ---
 

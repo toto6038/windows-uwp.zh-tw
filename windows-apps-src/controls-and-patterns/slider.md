@@ -1,8 +1,8 @@
 ---
-讓使用者在指定的範圍中設定值。
-滑桿
+Description: 讓使用者在指定的範圍中設定值。
+title: 滑桿
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-滑桿
+label: 滑桿
 template: detail.hbs
 ---
 # 滑桿

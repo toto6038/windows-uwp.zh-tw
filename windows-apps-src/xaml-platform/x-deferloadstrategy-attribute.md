@@ -1,6 +1,6 @@
 ---
-xDeferLoadStrategy 屬性
-xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。
+title: xDeferLoadStrategy 屬性
+description: xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-建立 NFC 智慧卡 app
-Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。
+title: 建立 NFC 智慧卡 app
+description: Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。
 ---
 # 建立 NFC 智慧卡 app
 

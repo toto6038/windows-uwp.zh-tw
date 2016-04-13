@@ -1,7 +1,7 @@
 ---
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
-本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。
-PlayReady DRM
+description: 本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。
+title: PlayReady DRM
 ---
 
 # PlayReady DRM

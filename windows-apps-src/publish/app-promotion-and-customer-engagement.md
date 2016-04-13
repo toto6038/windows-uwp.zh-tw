@@ -1,6 +1,6 @@
 ---
-一旦 app 在 Windows 市集上架，就必須讓更多客戶看到您的 app。
-App 促銷與客戶參與
+Description: 一旦 app 在 Windows 市集上架，就必須讓更多客戶看到您的 app。
+title: App 促銷與客戶參與
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 ---
 

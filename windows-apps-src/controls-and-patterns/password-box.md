@@ -1,9 +1,9 @@
 ---
-密碼方塊是一個文字輸入方塊，其中隱藏基於隱私權考量而輸入的字元。
-密碼方塊的指導方針
+Description: 密碼方塊是一個文字輸入方塊，其中隱藏基於隱私權考量而輸入的字元。
+title: 密碼方塊的指導方針
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-密碼方塊
+label: 密碼方塊
 template: detail.hbs
 ---
 # 密碼方塊

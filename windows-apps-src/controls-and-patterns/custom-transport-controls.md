@@ -1,8 +1,8 @@
 ---
-媒體播放器具有可自訂的 XAML 傳輸控制項，以管理通用 Windows 平台 (UWP) App 內的音訊和視訊內容的控制項。
-建立自訂媒體傳輸控制項
+Description: 媒體播放器具有可自訂的 XAML 傳輸控制項，以管理通用 Windows 平台 (UWP) App 內的音訊和視訊內容的控制項。
+title: 建立自訂媒體傳輸控制項
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
-建立自訂媒體傳輸控制項
+label: 建立自訂媒體傳輸控制項
 template: detail.hbs
 ---
 # 建立自訂傳輸控制項

@@ -1,6 +1,6 @@
 ---
-您可以為您在 Windows 市集中發行的 app 或 app 內產品 (IAP) 產生促銷碼。
-產生促銷碼
+Description: 您可以為您在 Windows 市集中發行的 app 或 app 內產品 (IAP) 產生促銷碼。
+title: 產生促銷碼
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ---
 

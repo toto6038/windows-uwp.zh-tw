@@ -1,8 +1,8 @@
 ---
-了解如何定義及使用自訂限制式來進行語音辨識。
-定義自訂辨識限制式
+Description: 了解如何定義及使用自訂限制式來進行語音辨識。
+title: 定義自訂辨識限制式
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
-定義自訂辨識限制式
+label: 定義自訂辨識限制式
 template: detail.hbs
 ---
 

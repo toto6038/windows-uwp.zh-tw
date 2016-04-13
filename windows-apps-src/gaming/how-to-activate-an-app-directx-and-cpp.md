@@ -1,6 +1,6 @@
 ---
-如何啟用 app (DirectX 和 C++)
-這個主題示範如何定義通用 Windows 平台 (UWP) DirectX app 的啟用經驗。
+title: 如何啟用 app (DirectX 和 C++)
+description: 這個主題示範如何定義通用 Windows 平台 (UWP) DirectX app 的啟用經驗。
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ---
 

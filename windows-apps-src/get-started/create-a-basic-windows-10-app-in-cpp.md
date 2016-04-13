@@ -1,7 +1,7 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-在 C++ 中建立 Hello World 應用程式 (Windows 10)
-透過 Microsoft Visual Studio 2015，您可以使用 C++ 來開發在 Windows 10 上執行的 app，包括在執行 Windows 10 的手機上執行。 這些 app 具有使用 Extensible Application Markup Language (XAML) 定義的 UI。
+title: 在 C++ 中建立 Hello World 應用程式 (Windows 10)
+description: 透過 Microsoft Visual Studio 2015，您可以使用 C++ 來開發在 Windows 10 上執行的 app，包括在執行 Windows 10 的手機上執行。 這些 app 具有使用 Extensible Application Markup Language (XAML) 定義的 UI。
 ---
 
 # 在 C++ 中建立 "hello world" 應用程式 (Windows 10)

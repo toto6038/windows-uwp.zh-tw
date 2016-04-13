@@ -1,8 +1,8 @@
 ---
-會顯示清單，並啟用與集合內容的互動。
-清單
+Description: 會顯示清單，並啟用與集合內容的互動。
+title: 清單
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-清單
+label: 清單
 template: detail.hbs
 ---
 # 清單

@@ -1,6 +1,6 @@
 ---
-啟動連絡人 app
-本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。
+title: 啟動連絡人 app
+description: 本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ---
 

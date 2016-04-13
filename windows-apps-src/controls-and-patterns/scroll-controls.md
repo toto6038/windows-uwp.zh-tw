@@ -1,8 +1,8 @@
 ---
-移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
-捲軸的指導方針
+Description: 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
+title: 捲軸的指導方針
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-捲軸
+label: 捲軸
 template: detail.hbs
 ---
 # 捲軸

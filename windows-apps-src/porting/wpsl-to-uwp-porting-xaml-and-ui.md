@@ -1,6 +1,6 @@
 ---
-以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 Windows Phone Silverlight 轉譯至通用 Windows 平台 (UWP) app。
-將 Windows Phone Silverlight XAML 與 UI 移植到 UWP
+description: 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 Windows Phone Silverlight 轉譯至通用 Windows 平台 (UWP) app。
+title: 將 Windows Phone Silverlight XAML 與 UI 移植到 UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ---
 

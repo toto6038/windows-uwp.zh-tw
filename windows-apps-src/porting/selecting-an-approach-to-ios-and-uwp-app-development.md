@@ -1,6 +1,6 @@
 ---
-開發跨平台 app 時有哪些選擇？
-選取 iOS 和 UWP app 開發的方式
+description: 開發跨平台 app 時有哪些選擇？
+title: 選取 iOS 和 UWP app 開發的方式
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ---
 

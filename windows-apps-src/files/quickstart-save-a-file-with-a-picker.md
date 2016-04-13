@@ -1,7 +1,7 @@
 ---
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
-使用選擇器儲存檔案
-使用 FileSavePicker，讓使用者指定想要您的 app 儲存檔案的名稱和位置。
+title: 使用選擇器儲存檔案
+description: 使用 FileSavePicker，讓使用者指定想要您的 app 儲存檔案的名稱和位置。
 ---
 
 # 使用選擇器儲存檔案

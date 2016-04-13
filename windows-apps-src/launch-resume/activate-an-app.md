@@ -1,6 +1,6 @@
 ---
-處理 app 啟用
-了解如何透過覆寫 OnLaunched 方法來處理 app 啟用。
+title: 處理 app 啟用
+description: 了解如何透過覆寫 OnLaunched 方法來處理 app 啟用。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ---
 
