@@ -1,0 +1,49 @@
+---
+本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
+App 設定和資料
+ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
+App 設定和資料
+template: detail.hbs
+---
+
+# App 設定和資料
+
+
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
+
+App 設定是通用 Windows 平台 (UWP) app 的使用者自訂部分。 例如，新聞閱讀程式 app 可讓使用者指定要顯示的新聞來源，或螢幕上要顯示的欄數。
+
+App 資料是 app 自身建立和管理的資料。 其中包含了執行階段狀態、app 設定、參考內容 (如字典 app 中的字典定義) 及其他設定。 App 資料只會在 app 存在時才存在，而且只對該 app 有意義。
+## 本節內容
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">文章</th>
+<th align="left">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p>建立和顯示 app 設定的最佳做法。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
+<td align="left"><p>如何儲存及擷取本機、漫遊和暫存的 app 資料。</p></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+<!--HONumber=Mar16_HO1-->
+
+

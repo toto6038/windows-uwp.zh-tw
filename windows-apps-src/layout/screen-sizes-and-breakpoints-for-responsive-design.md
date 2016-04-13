@@ -1,0 +1,103 @@
+---
+title: '回應式設計的螢幕大小與中斷點'
+description: .
+ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
+label: Screen sizes and break points
+template: detail.hbs
+---
+
+#  回應式設計的螢幕大小與中斷點
+
+
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+
+整個 Windows 10 生態系統中的裝置目標和螢幕大小的數目太大，以致於無法針對每一個最佳化您的 UI。 我們建議使用幾個重要的寬度 (也稱做「中斷點」) 的設計：360、640、1024 以及 1366 有效像素，做為替代方案。
+
+**秘訣** 當針對特定中斷點進行設計時，請針對您應用程式可以使用的螢幕空間量 (應用程式的視窗) 進行設計。 當以全螢幕執行應用程式時，應用程式視窗與螢幕大小相同，但是在其他情況下則較小。
+ 
+
+下表描述不同的大小類別，並提供針對這些大小類別量身訂做的一般建議。
+
+![回應式設計中斷點](images/rsp-design/rspd-breakpoints.png)
+
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">大小類別</th>
+<th align="left">小型</th>
+<th align="left">中型</th>
+<th align="left">大型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">一般螢幕大小 (對角線)</td>
+<td align="left">4 吋到 6 吋</td>
+<td align="left">7 吋到 12 吋，或電視</td>
+<td align="left">13 吋及更大尺寸</td>
+</tr>
+<tr class="even">
+<td align="left">一般裝置</td>
+<td align="left">手機</td>
+<td align="left">平板手機、平板電腦、電視</td>
+<td align="left">電腦、膝上型電腦、Surface Hub</td>
+</tr>
+<tr class="odd">
+<td align="left">通用視窗大小 (以有效像素為單位)</td>
+<td align="left">320x569、360x640、480x854</td>
+<td align="left">960x540、1024x640</td>
+<td align="left">1366x768、1920x1080</td>
+</tr>
+<tr class="even">
+<td align="left">視窗寬度中斷點 (以有效像素為單位)</td>
+<td align="left">640px 或更少</td>
+<td align="left">641px 到 1007px</td>
+<td align="left">1008px 或更大像素</td>
+</tr>
+<tr class="odd">
+<td align="left" valign="top">一般建議</td>
+<td align="left" valign="top"><ul>
+<li>中央索引標籤元素。</li>
+<li>設定左右視窗邊界為 12px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
+<li>將[app bars](../controls-and-patterns/app-bars.md)固定在視窗底部以改善存取性</li>
+<li>一次使用 1 個欄位/區域</li>
+<li>使用圖示來表示搜尋 (不顯示搜尋方塊)。</li>
+<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以重疊模式放置，以節省螢幕空間。</li>
+<li>如果您使用[master details pattern](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。</li>
+</ul></td>
+<td align="left" valign="top"><ul>
+<li>將索引標籤元素靠左對齊。</li>
+<li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
+<li>將[app bars](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
+<li>最多 2 個欄位/區域</li>
+<li>顯示搜尋方塊。</li>
+<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以窄條模式放置，以便永遠顯示窄條的圖示。</li>
+
+</ul></td>
+<td align="left" valign="top"><ul>
+<li>將索引標籤元素靠左對齊。</li>
+<li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
+<li>將[app bars](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
+<li>最多 3 個欄位/區域</li>
+<li>顯示搜尋方塊。</li>
+<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以停駐模式放置，以便讓它永遠顯示。</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+透過 [**Continuum 手機版**](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器、滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在小型類別中。
+ 
+
+
+<!--HONumber=Mar16_HO4-->
+
+

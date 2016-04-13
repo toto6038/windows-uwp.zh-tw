@@ -1,0 +1,262 @@
+---
+ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
+將工作項目提交至執行緒集區
+了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。
+---
+# 將工作項目提交至執行緒集區
+
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+** 重要 API **
+
+-   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
+-   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+
+了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。 工作若還要好一段時間才能完成，可使用這種方式讓 UI 保持回應，還可用來以並行方式完成多個工作。
+
+## 建立及提交工作項目
+
+透過呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 物件；請將這個物件儲存起來以在下個步驟中使用。
+
+提供三個版本的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
+
+**注意** 使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 從工作項目存取 UI 執行緒及顯示進度。
+
+下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
+
+> [!div class="tabbedCodeSnippets"]
+``` cpp
+// The nth prime number to find.
+const unsigned int n = 9999;
+
+// A shared pointer to the result.
+// We use a shared pointer to keep the result alive until the 
+// thread is done.
+std::shared_ptr&lt;unsigned long&gt; nthPrime = make_shared&lt;unsigned long int&gt;(0);
+
+// Simulates work by searching for the nth prime number. Uses a
+// naive algorithm and counts 2 as the first prime number.
+auto workItem = ref new WorkItemHandler(
+    \[this, n, nthPrime](IAsyncAction^ workItem)
+{
+    unsigned int progress = 0; // For progress reporting.
+    unsigned int primes = 0;   // Number of primes found so far.
+    unsigned long int i = 2;   // Number iterator.
+
+    if ((n &gt;= 0) &amp;&amp; (n &lt;= 2))
+    {
+        *nthPrime = n;
+        return;
+    }
+
+    while (primes &lt; (n - 1))
+    {
+        if (workItem-&gt;Status == AsyncStatus::Canceled)
+        {
+            break;
+        }
+
+        // Go to the next number.
+        i++;
+
+        // Check for prime.
+        bool prime = true;
+        for (unsigned int j = 2; j &lt; i; ++j)
+        {
+            if ((i % j) == 0)
+            {
+                prime = false;
+                break;
+            }
+        };
+
+        if (prime)
+        {
+            // Found another prime number.
+            primes++;
+
+            // Report progress at every 10 percent.
+            unsigned int temp = progress;
+            progress = static_cast&lt;unsigned int&gt;(10.f*primes / n);
+
+            if (progress != temp)
+            {
+                String^ updateString;
+                updateString = "Progress to " + n + "th prime: "
+                    + (10 * progress).ToString() + "%\n";
+
+                // Update the UI thread with the CoreDispatcher.
+                CoreApplication::MainView-&gt;CoreWindow-&gt;Dispatcher-&gt;RunAsync(
+                    CoreDispatcherPriority::High,
+                    ref new DispatchedHandler([this, updateString]()
+                {
+                    UpdateUI(updateString);
+                }));
+            }
+        }
+    }
+
+    // Return the nth prime number.
+    *nthPrime = i;
+});
+
+auto asyncAction = ThreadPool::RunAsync(workItem);
+
+// A reference to the work item is cached so that we can trigger a 
+// cancellation when the user presses the Cancel button.
+m_workItem = asyncAction;
+```
+``` csharp
+// The nth prime number to find.
+const uint n = 9999;
+
+// A shared pointer to the result.
+// We use a shared pointer to keep the result alive until the 
+// thread is done.
+ulong nthPrime = 0;
+
+// Simulates work by searching for the nth prime number. Uses a
+// naive algorithm and counts 2 as the first prime number.
+IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
+    (workItem) =&gt;
+{
+    uint  progress = 0; // For progress reporting.
+    uint  primes = 0;   // Number of primes found so far.
+    ulong i = 2;        // Number iterator.
+
+    if ((n &gt;= 0) &amp;&amp; (n &lt;= 2))
+    {
+        nthPrime = n;
+        return;
+    }
+
+    while (primes &lt; (n - 1))
+    {
+        if (workItem.Status == AsyncStatus.Canceled)
+        {
+            break;
+        }
+
+        // Go to the next number.
+        i++;
+
+        // Check for prime.
+        bool prime = true;
+        for (uint j = 2; j &lt; i; ++j)
+        {
+            if ((i % j) == 0)
+            {
+                prime = false;
+                break;
+            }
+        };
+
+        if (prime)
+        {
+            // Found another prime number.
+            primes++;
+
+            // Report progress at every 10 percent.
+            uint temp = progress;
+            progress = (uint)(10.0*primes/n);
+
+            if (progress != temp)
+            {
+                String updateString;
+                updateString = "Progress to " + n + "th prime: "
+                    + (10 * progress) + "%\n";
+
+                // Update the UI thread with the CoreDispatcher.
+                CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
+                    CoreDispatcherPriority.High,
+                    new DispatchedHandler(() =&gt;
+                {
+                    UpdateUI(updateString);
+                }));
+            }
+        }
+    }
+
+    // Return the nth prime number.
+    nthPrime = i;
+});
+
+// A reference to the work item is cached so that we can trigger a
+// cancellation when the user presses the Cancel button.
+m_workItem = asyncAction;
+```
+
+呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
+
+請注意，工作項目會檢查 [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) 屬性，並在取消工作項目時結束。
+
+## 處理工作項目的完成
+
+透過設定工作項目的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 存取 UI 執行緒及顯示結果。
+
+下列範例以在步驟 1 提交之工作項目的結果更新 UI：
+
+> [!div class="tabbedCodeSnippets"]
+``` cpp
+asyncAction-&gt;Completed = ref new AsyncActionCompletedHandler(
+    \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
+{
+    if (asyncStatus == AsyncStatus::Canceled)
+    {
+        return;
+    }
+    
+    String^ updateString;
+    updateString = "\n" + "The " + n + "th prime number is " 
+        + (*nthPrime).ToString() + ".\n";
+
+    // Update the UI thread with the CoreDispatcher.
+    CoreApplication::MainView-&gt;CoreWindow-&gt;Dispatcher-&gt;RunAsync(
+        CoreDispatcherPriority::High,
+        ref new DispatchedHandler([this, updateString]()
+    {
+        UpdateUI(updateString);
+    }));
+});
+```
+``` csharp
+asyncAction.Completed = new AsyncActionCompletedHandler(
+    (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =&gt;
+{
+    if (asyncStatus == AsyncStatus.Canceled)
+    {
+        return;
+    }
+
+    String updateString;
+    updateString = "\n" + "The " + n + "th prime number is " 
+        + nthPrime + ".\n";
+
+    // Update the UI thread with the CoreDispatcher.
+    CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
+        CoreDispatcherPriority.High,
+        new DispatchedHandler(()=&gt;
+    {
+        UpdateUI(updateString);
+    }));
+});
+```
+
+請注意，完成處理常式在分派 UI 更新之前，會檢查是否已取消工作項目。
+
+## 摘要與後續步驟
+
+您可以在[建立 ThreadPool 工作項目範例](http://go.microsoft.com/fwlink/p/?LinkID=328569)中，從針對 Windows 8.1 而撰寫的快速入門下載程式碼，並在 win\_unap Windows 10 應用程式中重複使用原始程式碼，以進行深入了解。
+
+## 相關主題
+
+* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
+* [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
+* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
+ 
+
+
+
+<!--HONumber=Mar16_HO1-->
+
+
