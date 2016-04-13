@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\publish\about-affiliate-ads.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/about-affiliate-ads.md) | HandedOffSuccess | [Details](#b56706396d32ef16c33cd167d8ccabf5e3d9ef8c3362)
- [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/affiliates-performance-report.md) | HandedOffSuccess | [Details](#a9c9e788e079d4c3f0881bd7c16e1fc76ede36c23369)
 
 ## Item Details
-##### <a name='b56706396d32ef16c33cd167d8ccabf5e3d9ef8c3362'></a> Source: [windows-apps-src\publish\about-affiliate-ads.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/about-affiliate-ads.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/cee6b201f4a21f2c08a5f41a41a94c86a347c785/ol-handoff/Microsoft/windows-apps.zh-tw/master/about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.zh-tw.xlf)
-* Handoff Datetime: 2016-04-13 17:41:01
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='a9c9e788e079d4c3f0881bd7c16e1fc76ede36c23369'></a> Source: [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/affiliates-performance-report.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/cee6b201f4a21f2c08a5f41a41a94c86a347c785/ol-handoff/Microsoft/windows-apps.zh-tw/master/affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.zh-tw.xlf)
-* Handoff Datetime: 2016-04-13 17:41:01
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
