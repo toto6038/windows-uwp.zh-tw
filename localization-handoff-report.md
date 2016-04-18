@@ -1,59 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/convert-ink-to-text.md) | OutofSyncHandedBackSuccess | [Details](#3476a1db5804a2a4b48b969a6ed3449ab9b762072596)
- [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md) | OutofSyncHandedBackSuccess | [Details](#eac095378f37265e4d050f574d12b6ae92583f172853)
- [windows-apps-src\input-and-devices\save-and-load-ink.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/save-and-load-ink.md) | OutofSyncHandedBackSuccess | [Details](#df2005734c3a7252afabf496e6dab43297d6806a2855)
+ [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/7b0ee8944b821d4ace2f72f533fe60cd12ac5920/windows-apps-src/porting/desktop-to-uwp-root.md) | OutofSyncHandedBackSuccess | [Details](#e37cf539fe313402a86d28146e04e975d6b8aa693269)
 
 ## Item Details
-##### <a name='3476a1db5804a2a4b48b969a6ed3449ab9b762072596'></a> Source: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/convert-ink-to-text.md)
+##### <a name='e37cf539fe313402a86d28146e04e975d6b8aa693269'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/7b0ee8944b821d4ace2f72f533fe60cd12ac5920/windows-apps-src/porting/desktop-to-uwp-root.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/48f85db79359613f515135f7f578ecde009617d6/ol-handoff/Microsoft/windows-apps.zh-tw/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
-* Handoff Datetime: 2016-04-15 22:43:39
+* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/45877052cf4f001a40e6804bee24ae56a6f9a7a7/ol-handoff/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-tw.xlf)
+* Handoff Datetime: 2016-04-18 20:28:21
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e9e3a968e3039e1db4b1eaa7a24f6617bec63ac3/windows-apps-src/input-and-devices/convert-ink-to-text.md)
-* Current Handback File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7e7ac617531cad1a899ee4aa209128c56d157317/ol-handback/Microsoft/windows-apps.zh-tw/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
-* Current Handback Datetime: 2016-04-13 20:54:04
-* [Back to Top](#report-top)
-
-##### <a name='eac095378f37265e4d050f574d12b6ae92583f172853'></a> Source: [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/48f85db79359613f515135f7f578ecde009617d6/ol-handoff/Microsoft/windows-apps.zh-tw/master/pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.zh-tw.xlf)
-* Handoff Datetime: 2016-04-15 22:43:39
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e9e3a968e3039e1db4b1eaa7a24f6617bec63ac3/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md)
-* Current Handback File: [pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7e7ac617531cad1a899ee4aa209128c56d157317/ol-handback/Microsoft/windows-apps.zh-tw/master/pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.zh-tw.xlf)
-* Current Handback Datetime: 2016-04-13 20:54:04
-* [Back to Top](#report-top)
-
-##### <a name='df2005734c3a7252afabf496e6dab43297d6806a2855'></a> Source: [windows-apps-src\input-and-devices\save-and-load-ink.md](https://github.com/Microsoft/windows-apps/blob/747d681c3c8140e2ab7b72bd53538a361be943ac/windows-apps-src/input-and-devices/save-and-load-ink.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [save-and-load-ink.3721dcc4d221bc574a7cbe1d1301b306515b50fe.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/48f85db79359613f515135f7f578ecde009617d6/ol-handoff/Microsoft/windows-apps.zh-tw/master/save-and-load-ink.3721dcc4d221bc574a7cbe1d1301b306515b50fe.zh-tw.xlf)
-* Handoff Datetime: 2016-04-15 22:43:39
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\save-and-load-ink.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e9e3a968e3039e1db4b1eaa7a24f6617bec63ac3/windows-apps-src/input-and-devices/save-and-load-ink.md)
-* Current Handback File: [save-and-load-ink.3721dcc4d221bc574a7cbe1d1301b306515b50fe.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7e7ac617531cad1a899ee4aa209128c56d157317/ol-handback/Microsoft/windows-apps.zh-tw/master/save-and-load-ink.3721dcc4d221bc574a7cbe1d1301b306515b50fe.zh-tw.xlf)
-* Current Handback Datetime: 2016-04-13 20:54:04
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/0609c936d94797d232f6479be438f5e7bbdbb668/windows-apps-src/porting/desktop-to-uwp-root.md)
+* Current Handback File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/d0cd9ac32e1c8b7fddf6c9b1c2c2c5eb94a9f058/ol-handback/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-tw.xlf)
+* Current Handback Datetime: 2016-04-13 18:08:55
 * [Back to Top](#report-top)
 
 
