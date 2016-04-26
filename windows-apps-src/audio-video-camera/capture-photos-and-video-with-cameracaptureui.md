@@ -61,7 +61,7 @@ title: 使用 CameraCaptureUI 擷取相片和視訊
 
 首先，新增 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項，以便讓視訊組合顯示在 XAML 頁面中。
 
-[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 將 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 和 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間新增到您的專案。
 
