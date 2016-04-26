@@ -34,7 +34,7 @@ title: 簡單的相機預覽存取
 [
             **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
 
-[!code-cs[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
 新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
