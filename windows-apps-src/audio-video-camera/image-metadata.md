@@ -1,93 +1,87 @@
 ---
+author: drewbatgit
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-description: 本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 GeotagHelper 公用程式類別以標記檔案的地理位置。
-title: 影像中繼資料
+description: This article shows how to read and write image metadata properties and how to geotag files using the GeotagHelper utility class.
+title: Image Metadata
 ---
 
-# 影像中繼資料
+# Image Metadata
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 公用程式類別以標記檔案的地理位置。
+This article shows how to read and write image metadata properties and how to geotag files using the [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) utility class.
 
-## 影像屬性
+## Image properties
 
-[
-            **StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
+The [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) property returns a [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) object that provides access to content-related information about the file. Get the image-specific properties by calling [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646). The returned [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) object exposes members that contain basic image metadata fields, like the title of the image and the capture date.
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-若要存取更大的一組檔案中繼資料，請使用 Windows 屬性系統，這是一組可使用唯一字串識別碼擷取的檔案中繼資料屬性。 針對您想要擷取的每個屬性，建立字串清單並加入識別碼。 [
-            **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法接受此字串清單，並傳回機碼/值組字典，其中機碼是屬性識別碼，值是屬性值。
+To access a larger set of file metadata, use the Windows Property System, a set of file metadata properties that can be retrieved with a unique string identifier. Create a list of strings and add the identifier for each property you want to retrieve. The [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) method takes this list of strings and returns a dictionary of key/value pairs where the key is the property identifier and the value is the property value.
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 
--   如需完整的 Windows 屬性清單，包括每個屬性的識別碼和類型，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)。
+-   For a complete list of Windows Properties, including the identifiers and type for each property, see [Windows Properties](https://msdn.microsoft.com/library/windows/desktop/dd561977).
 
--   某些檔案容器和影像轉碼器只支援部分屬性。 如需每個影像類型支援的影像中繼資料清單，請參閱[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)。
+-   Some properties are only supported for certain file containers and image codecs. For a listing of the image metadata supported for each image type, see [Photo Metadata Policies](https://msdn.microsoft.com/library/windows/desktop/ee872003).
 
--   因為擷取不支援的屬性時可能傳回 Null 值，在使用傳回的中繼資料值之前，一定要先檢查是否為 Null。
+-   Because properties that are unsupported may return a null value when retrieved, always check for null before using a returned metadata value.
 
-## 地理位置標籤協助程式
+## Geotag helper
 
-GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API，輕鬆地以地理位置資料來標記影像，而不必手動剖析或建構中繼資料格式。
+GeotagHelper is a utility class that makes it easy to tag images with geographic data using the [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) APIs directly, without having to manually parse or construct the metadata format.
 
-如果您已經有 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) 物件代表您想要標記在影像中的位置 (可能從先前使用的地理位置 API 或其他來源)，您可以呼叫 [**GeotagHelper.SetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903685) 並傳入 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **Geopoint**，以設定地理位置標籤資料。
+If you already have a [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) object representing the location you want to tag in the image, either from a previous use of the geolocation APIs or some other source, you can set the geotag data by calling [**GeotagHelper.SetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903685) and passing in a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and the **Geopoint**.
 
 [!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
 
-若要使用裝置的目前位置來設定地理位置標籤資料，請建立新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件並呼叫 [**GeotagHelper.SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686)，同時傳入 **Geolocator** 和要標記的檔案。
+To set the geotag data using the device's current location, create a new [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object and call [**GeotagHelper.SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) passing in the **Geolocator** and the file to be tagged.
 
 [!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
 
--   您必須在 app 資訊清單中包含 **location** 裝置功能，才能使用 [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) API。
+-   You must include the **location** device capability in your app manifest in order to use the [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) API.
 
--   您必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)，再呼叫 [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686)，以確保使用者已授權您的 app 來使用他們的位置。
+-   You must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) before calling [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) to ensure the user has granted your app permission to use their location.
 
--   如需地理位置 API 的詳細資訊，請參閱[地圖與位置](https://msdn.microsoft.com/library/windows/apps/mt219699)。
+-   For more information on the geolocation APIs, see [Maps and location](https://msdn.microsoft.com/library/windows/apps/mt219699).
 
-若要取得代表影像檔地理位置的 GeoPoint，請呼叫 [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684)。
+To get a GeoPoint representing the geotagged location of an image file, call [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684).
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
-## 解碼和編碼影像中繼資料
+## Decode and encode image metadata
 
-最先進的影像資料處理方式是使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 或 [BitmapEncoder](bitmapencoder-options-reference.md)，在資料流層級上讀取及寫入屬性。 對於這些作業，您可以使用 Windows 屬性來指定您要讀取或寫入的資料，但您也可以使用 Windows 影像處理元件 (WIC) 提供的中繼資料查詢語言，指定所要求屬性的路徑。
+The most advanced way of working with image data is to read and write the properties on the stream level using a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) or a [BitmapEncoder](bitmapencoder-options-reference.md). For these operations you can use Windows Properties to specify the data you are reading or writing, but you can also use the metadata query language provided by the Windows Imaging Component (WIC) to specify the path to a requested property.
 
-使用這項技術來讀取影像中繼資料時，您需要有以來源影像檔資料流所建立的 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176)。 相關作法請參閱[影像處理](imaging.md)。
+Reading image metadata using this technique requires you to have a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) that was created with the source image file stream. For information on how to do this, see [Imaging](imaging.md).
 
-當您有解碼器時，針對您想要擷取的每個中繼資料屬性，請使用 Windows 屬性識別碼字串或 WIC 中繼資料查詢，建立字串清單並加入新項目。 在解碼器的 [**BitmapProperties**](https://msdn.microsoft.com/library/windows/apps/br226248) 成員上呼叫 [**BitmapPropertiesView.GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 方法，以要求指定的屬性。 屬性會以機碼/值組的字典傳回，其中包含屬性名稱或路徑及屬性值。
+Once you have the decoder, create a list of strings and add a new entry for each metadata property you want to retrieve, using either the Windows Property identifier string or a WIC metadata query. Call the [**BitmapPropertiesView.GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) method on the decoder's [**BitmapProperties**](https://msdn.microsoft.com/library/windows/apps/br226248) member to request the specified properties. The properties are returned in a dictionary of key/value pairs containing the property name or path and the property value.
 
 [!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
 
--   如需 WIC 中繼資料查詢語言和支援的屬性的相關資訊，請參閱 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
+-   For information on the WIC metadata query language and the properties supported, see [WIC image format native metadata queries](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   許多中繼資料屬性只有在一部分影像類型中才支援。 如果解碼器相關的影像不支援其中一個要求的屬性，[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 會失敗並傳回錯誤碼 0x88982F41，如果影像完全不支援中繼資料，則會傳回 0x88982F81。 這些錯誤碼相關的常數為 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION，定義於 winerror.h 標頭檔中。
--   因為影像可能包含或不包含特定屬性的值，在嘗試存取屬性之前，請使用 **IDictionary.ContainsKey** 確認屬性存在於結果中。
+-   Many metadata properties are only supported by a subset of image types. [**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) will fail with the error code 0x88982F41 if one of the requested properties is not supported by the image associated with the decoder and 0x88982F81 if the image does not support metadata at all. The constants associated with these error codes are WINCODEC\_ERR\_PROPERTYNOTSUPPORTED and WINCODEC\_ERR\_UNSUPPORTEDOPERATION and are defined in the winerror.h header file.
+-   Because an image may or may not contain a value for a particular property, use the **IDictionary.ContainsKey** to verify that a property is present in the results before attempting to access it.
 
-將影像中繼資料寫入資料流時，需要有影像輸出檔相關聯的 **BitmapEncoder**。
+Writing image metadata to the stream requires a **BitmapEncoder** associated with the image output file.
 
-建立 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) 物件以包含您要設定的屬性值。 建立 [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) 物件以代表屬性值。 這個物件使用 **object** 做為值，並使用 [**PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871) 列舉的成員來定義值的類型。 將 **BitmapTypedValue** 加入到 **BitmapPropertySet**，然後呼叫 [**BitmapProperties.SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252)，使編碼器將屬性寫入資料流。
+Create a [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) object to contain the property values you want set. Create a [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) object to represent the property value. This object uses an **object** as the value and member of the [**PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871) enumeration that defines the type of the value. Add the **BitmapTypedValue** to the **BitmapPropertySet** and then call [**BitmapProperties.SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) to cause the encoder to write the properties to the stream.
 
 [!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
 
--   如需哪些影像檔類型支援哪些屬性的詳細資訊，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)、[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)和 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
+-   For details on which properties are supported for which image file types, see [Windows Properties](https://msdn.microsoft.com/library/windows/desktop/dd561977), [Photo Metadata Policies](https://msdn.microsoft.com/library/windows/desktop/ee872003), and [WIC image format native metadata queries](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   如果編碼器相關的影像不支援其中一個要求的屬性，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 會失敗並傳回錯誤碼 0x88982F41。
+-   [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) will fail with the error code 0x88982F41 if one of the requested properties is not supported by the image associated with the encoder.
 
-## 相關主題
+## Related topics
 
-* [影像處理](imaging.md)
- 
+* [Imaging](imaging.md)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

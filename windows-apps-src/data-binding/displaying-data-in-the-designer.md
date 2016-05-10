@@ -1,22 +1,23 @@
 ---
+author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
-title: 設計介面上適用於原型設計的範例資料
-description: 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。
+title: Sample data on the design surface, and for prototyping
+description: It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio.
 ---
-設計介面上適用於原型設計的範例資料
+Sample data on the design surface, and for prototyping
 =============================================================================================
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**注意：**您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
+**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) or the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783). The techniques described in this topic are based on the use of a [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
 
-針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
+It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio. In order to have your controls populated with data (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data. Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app. You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.
 
-在標記中設定 DataContext
+Setting DataContext in markup
 -----------------------------
 
-有一個相當常見的開發人員做法是，使用命令式程式碼 (在程式碼後置中) 來設定頁面或使用者控制項的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)，以檢視模型執行個體。
+It's a fairly common developer practice to use imperative code (in code-behind) to set a page or user control's [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) to a view model instance.
 
 ``` csharp
 public MainPage()
@@ -26,28 +27,28 @@ public MainPage()
 }
 ```
 
-但是，如果您要這樣做，則您的頁面就不能和它原本一樣是「可設計的」。 原因在於當您在 Visual Studio 或 Blend for Visual Studio 中開啟 XAML 頁面時，永遠不會執行命令式程式碼來指派 **DataContext** 值 (事實上，不會執行您的任何程式碼後置)。 XAML 工具當然會剖析您的標記並將其中宣告的任何物件具現化，但它們實際上不會將您的頁面類型本身具現化。 結果就是您將不會在控制項或 [建立資料繫結]**** 對話方塊中看見任何資料，而您頁面的樣式和配置將更具挑戰性。
+But if you do that then your page isn't as "designable" as it could be. The reason is that when your XAML page is opened in Visual Studio or Blend for Visual Studio, the imperative code that assigns the **DataContext** value is never run (in fact, none of your code-behind is executed). The XAML tools do of course parse your markup and instantiate any objects declared in it, but they don't actually instantiate your page's type itself. The result is that you won't see any data in your controls or in the **Create Data Binding** dialog, and your page will be more challenging to style and to lay out.
 
-![疏鬆設計 UI。](images/displaying-data-in-the-designer-01.png)
+![Sparse design UI.](images/displaying-data-in-the-designer-01.png)
 
-第一個解決方式是嘗試將 **DataContext** 指派標記為註解，並改為在頁面標記中設定 **DataContext**。 如此一來，您的即時資料就會在設計階段和執行階段顯示。 若要這樣做，請先開啟您的 XAML 頁面。 接著，在 [文件大綱]**** 視窗中，按一下根設計元素 (通常會與標籤 **\[頁面\]** 一起) 來選取它。 在 [屬性]**** 視窗中，尋找 **DataContext** 屬性 (位於常用類別中)，然後按一下 [新增]****。 在 [選取物件]**** 對話方塊中按一下您的檢視模型類型，然後按一下 [確定]****。
+The first remedy to try is to comment out that **DataContext** assignment and set the **DataContext** in your page markup instead. That way, your live data shows up at design-time as well as at run-time. To do this, first open your XAML page. Then, in the **Document Outline** window, click the root designable element (usually with the label **\[Page\]**) to select it. In the **Properties** window, find the **DataContext** property (inside the Common category), and then click **New**. Click your view model type from the **Select Object** dialog box, and then click **OK**.
 
-![用於設定 DataContext 的 UI。](images/displaying-data-in-the-designer-02.png)
+![UI for setting DataContext.](images/displaying-data-in-the-designer-02.png)
 
-以下是所產生的標記外觀。
+Here's what the resulting markup looks like.
 
-``` xml
+``` xaml
 <Page ... >
     <Page.DataContext>
         <local:BookstoreViewModel/>
     </Page.DataContext>
 ```
 
-而此處是您的繫結目前可解析的設計介面外觀。 請注意，目前已根據 **DataContext** 類型及您可繫結的屬性來填入 [建立資料繫結]**** 對話方塊中的 [路徑]**** 選擇器。
+And here’s what the design surface looks like now that your bindings can resolve. Notice that the **Path** picker in the **Create Data Binding** dialog is now populated, based on the **DataContext** type and the properties that you can bind to.
 
-![可設計的 UI。](images/displaying-data-in-the-designer-03.png)
+![Designable UI.](images/displaying-data-in-the-designer-03.png)
 
-[建立資料繫結]**** 對話方塊只需要可從中運作的類型，但是繫結需要使用值來初始化的屬性。 如果您不想在設計階段期間連接到雲端服務 (基於效能、付費資料傳輸、隱私權問題、這類事項等因素)，則您的初始化程式碼會進行檢查，以查看您的 app 是否正在設計工具 (例如 Visual Studio 或 Blend for Visual Studio) 中執行，並且會在該情況下載入僅供設計階段使用的範例資料。
+The **Create Data Binding** dialog only needs a type to work from, but the bindings need the properties to be initialized with values. If you don't want to reach out to your cloud service at design-time (due to performance, paying for data transfer, privacy issues, that kind of thing) then your initialization code can check to see whether your app is running in a design tool (such as Visual Studio or Blend for Visual Studio) and in that case load sample data for use at design-time only.
 
 ``` csharp
 if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
@@ -60,16 +61,16 @@ else
 }
 ```
 
-如果您需要將參數傳遞到初始化程式碼，您可以使用檢視模型尋找程式。 檢視模型尋找程式是您可以放入 app 資源的類別。 它具有公開檢視模型的屬性，而您頁面的 **DataContext** 會繫結至該屬性。 尋找程式或檢視模型可使用的另一種模式是相依性插入，可在適當時建構設計階段或執行階段的資料提供者 (每個都會實作常見的介面)。
+You could use a view model locator if you need to pass parameters to your initialization code. A view model locator is a class that you can put into app resources. It has a property that exposes the view model, and your page's **DataContext** binds to that property. Another pattern that the locator or the view model can use is dependency injection, which can construct a design-time or a run-time data provider (each of which implements a common interface), as applicable.
 
-「來自類別的範例資料」和設計階段屬性
+"Sample data from class", and design-time attributes
 ---------------------------------------------------------------------------------------
 
-如果基於任何因素而導致上節中的所有選項都不適合您的情況，則您仍然可透過 XAML 工具的功能和設計階段屬性來使用許多設計階段資料選項。 Blend for Visual Studio 中的 [從類別建立範例資料]**** 功能就是一個很好的選項。 您可以在 [資料]**** 面板頂端的其中一個按鈕中找到該命令。
+If for whatever reason none of the options in the previous section work for you then you still have plenty of design-time data options available via XAML tools features and design-time attributes. One good option is the **Create Sample Data from Class** feature in Blend for Visual Studio. You can find that command on one of the buttons at the top of the **Data** panel.
 
-而您只需指定要使用的命令類別即可。 命令接著會為您執行兩個重要動作。 首先，它會產生 XAML 檔案，其中包含適用於 以遞迴方式合成您所選擇的類別及其所有成員的範例資料 (事實上，工具同樣適用於 XAML 或 JSON 檔案)。 其次，它會在 [資料]**** 面板中填入您所選擇之類別的結構描述。 接著您可以將成員從 [資料]**** 面板拖曳到設計介面來執行各種工作。 根據您的拖曳項目及放置的位置，您可以將繫結新增到現有的控制項 (使用 **{Binding}**)，或建立新的控制項並同時繫結它們。 在這任一種情況下，如果您尚未設定其中一個，操作也會在頁面的配置根目錄中設定設計階段資料內容 (**d:DataContext**)。 這個設計階段資料內容會使用 **d:DesignData** 屬性，從產生的 XAML 檔案中取得範例資料 (此外，您可以隨意在專案中尋找並編輯，以使其包含您想要的範例資料)。
+All you need to do is to specify a class for the command to use. The command then does two important things for you. First, it generates a XAML file that contains sample data suitable for hydrating an instance of your chosen class and all of its members, recursively (in fact, the tooling works equally well with XAML or JSON files). Second, it populates the **Data** panel with the schema of your chosen class. You can then drag members from the **Data** panel onto the design surface to perform various tasks. Depending on what you drag and where you drop it, you can add bindings to existing controls (using **{Binding}**), or create new controls and bind them at the same time. In either case, the operation also sets a design-time data context (**d:DataContext**) for you (if one is not already set) on the layout root of your page. That design-time data context uses the **d:DesignData** attribute to get its sample data from the XAML file that was generated (which, by the way, you are free to find in your project and edit so that it contains the sample data you want).
 
-``` xml
+``` xaml
 <Page ...
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -81,14 +82,13 @@ else
 </Page>
 ```
 
-各種不同的 xmlns 宣告表示，只有在設計階段才會解譯具有 **d:** 首碼的屬性，在執行階段則會略過。 因此，**d:DataContext** 屬性只會在設計階段影響 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 屬性的值，在執行階段則沒有任何作用。 如有需要，您甚至可以在標記中同時設定 **d:DataContext** 和 **DataContext**。 **d:DataContext** 將會在設計階段覆寫，而 **DataContext** 將會在執行階段覆寫。 這些相同的覆寫規則適用於所有的設計階段和執行階段屬性。
+The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
 
-**d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](http://go.microsoft.com/fwlink/p/?LinkId=272504)主題中，其仍適用於通用 Windows 平台 (UWP) app。
+The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](http://go.microsoft.com/fwlink/p/?LinkId=272504) topic, which is still valid for Universal Windows Platform (UWP) apps.
 
-[
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 沒有 **DataContext** 屬性，但具有 **Source** 屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
+[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
 
-``` xml
+``` xaml
     <Page.Resources>
         <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
             d:Source="{d:DesignData /SampleData/RecordingsSampleData.xaml}"/>
@@ -100,7 +100,7 @@ else
     ...
 ```
 
-若要讓此設定運作，您必須有一個名為 `Recordings : ObservableCollection<Recording>` 的類別，而您要編輯範例資料 XAML 檔案，使其只包含**錄製**物件 (且其中包含**錄製**物件)，如下所示。
+For this to work, you would have a class named `Recordings : ObservableCollection<Recording>`, and you would edit the sample data XAML file so that it contains only a **Recordings** object (with **Recording** objects inside that), as shown here.
 
 ``` xml
 <Quickstart:Recordings xmlns:Quickstart="using:Quickstart">
@@ -113,18 +113,18 @@ else
 </Quickstart:Recordings>
 ```
 
-如果您使用 JSON 範例資料檔案而不是 XAML，就必須設定 **Type** 屬性。
+If you use a JSON sample data file instead of XAML, you must set the **Type** property.
 
-``` xml
+``` xaml
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-到目前為止，我們已經使用了 **d:DesignData**，從 XAML 或 JSON 檔案載入設計階段範例資料。 替代方法是 **d:DesignInstance** 標記延伸，這會指出設計階段來源是以 **Type** 屬性指定的類別為根據。 這裡提供一個範例。
+So far, we've been using **d:DesignData** to load design-time sample data from a XAML or JSON file. An alternative to that is the **d:DesignInstance** markup extension, which indicates that the design-time source is based on the class specified by the **Type** property. Here's an example.
 
-``` xml
+``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
-        ```
+```
 
 The **IsDesignTimeCreatable** property indicates that the design tool should actually create an instance of the class, which implies that the class has a public default constructor, and that it populates itself with data (either real or sample). If you don't set **IsDesignTimeCreatable** (or if you set it to **False**) then you won't get sample data displayed on the design surface. All the design tool does in that case is to parse the class for its bindable properties and display these in the the **Data** panel and in the **Create Data Binding** dialog.
 
@@ -138,16 +138,3 @@ Instead of specifying a class, you can actually design the schema of your sample
 The **New Sample Data** feature uses [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), and not **d:DataContext**, so that the sample data is available when you run your sketch or prototype as well as while you're designing it. And the **Data** panel really speeds up your designing and binding tasks. For example, simply dragging a collection property from the **Data** panel onto the design surface generates a data-bound items control and the necessary templates, all ready to build and run.
 
 ![Sample data for prototyping.](images/displaying-data-in-the-designer-04.png)
-
- 
-
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
-
-

@@ -1,125 +1,118 @@
 ---
+author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: 本文說明如何使用 SceneAnalysisEffect 和FaceDetectionEffect 分析媒體擷取預覽串流的內容。
-title: 媒體擷取的場景分析
+description: This article describes how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.
+title: Scene analysis for media capture
 ---
 
-# 媒體擷取的場景分析
+# Scene analysis for media capture
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文說明如何使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 和[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 分析媒體擷取預覽串流的內容。
+This article describes how to use the [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) and the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) to analyze the content of the media capture preview stream.
 
-## 場景分析效果
+## Scene analysis effect
 
-[
-            **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 會分析媒體擷取預覽串流的視訊框架，並且建議處理選項以改善擷取結果。 目前效果支援偵測擷取是否已使用高動態範圍 (HDR) 處理獲得改善。
+The [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) analyzes the video frames in the media capture preview stream and recommends processing options to improve the capture result. Currently, the effect supports detecting whether the capture would be improved by using High Dynamic Range (HDR) processing.
 
-如果效果建議使用 HDR，您可以透過下列方式進行：
+If the effect recommends using HDR, you can do this in the following ways:
 
--   使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 類別，使用 Windows 內建 HDR 處理演算法來擷取相片。 如需詳細資訊，請參閱[高動態範圍 (HDR) 相片擷取](high-dynamic-range-hdr-photo-capture.md)。
+-   Use the [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) class to capture photos using the Windows built-in HDR processing algorithm. For more information, see [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md).
 
--   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680)，以使用 Windows 內建 HDR 處理演算法來擷取影片。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)。
+-   Use the [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) to capture video using the Windows built-in HDR processing algorithm. For more information, see [Capture device controls for video capture](capture-device-controls-for-video-capture.md).
 
--   使用 [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) 擷取一系列的畫面，您可以接著使用自訂的 HDR 實作進行組合。 如需詳細資訊，請參閱[可變相片序列](variable-photo-sequence.md)。
+-   Use the [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) to capture a sequence of frames that you can then composite using a custom HDR implementation. For more information, see [Variable photo sequence](variable-photo-sequence.md).
 
-### 場景分析命名空間
+### Scene analysis namespaces
 
-若要使用場景分析，您的 app 除了基本媒體擷取所需的基本命名空間之外，還必須包含下列命名空間。
+To use scene analysis, your app must include the following namespaces in addition to the namespaces required for basic media capture.
 
 [!code-cs[SceneAnalysisUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
 
-### 初始化場景分析效果並將它新增至預覽串流
+### Initialize the scene analysis effect and add it to the preview stream
 
-視訊效果是使用以下兩個 API 進行實作：效果定義，提供擷取裝置初始化效果所需的設定，以及效果執行個體，它可以用來控制效果。 因為您可能會想要從您的程式碼中的多個位置存取效果執行個體，所以您通常應該宣告成員變數來保存物件。
+Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
 [!code-cs[DeclareSceneAnalysisEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
 
-在您的 app 中初始化 **MediaCapture** 物件之後，建立 [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903) 的新執行個體。
+In your app, after you have initialized the **MediaCapture** object, create a new instance of [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903).
 
-使用擷取裝置註冊效果，方法是在您的 **MediaCapture** 物件上呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，提供 **SceneAnalysisEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 物件。
+Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **SceneAnalysisEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) object.
 
-若要接收場景分析的結果，您必須註冊 [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) 事件的處理常式。
+To receive the results of the scene analysis, you must register a handler for the [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event.
 
-目前場景分析效果僅包含高動態範圍分析程式。 將效果的 [**HighDynamicRangeControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) 設為 true 以啟用 HDR 分析。
+Currently, the scene analysis effect only includes the high dynamic range analyzer. Enable HDR analysis by setting the effect's [**HighDynamicRangeControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) to true.
 
 [!code-cs[CreateSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
 
-### 實作 SceneAnalyzed 事件處理常式
+### Implement the SceneAnalyzed event handler
 
-場景分析的結果會在 **SceneAnalyzed** 事件處理常式中傳回。 傳入處理常式中的 [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) 物件有 [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) 物件，該物件有 [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) 物件。 高動態範圍輸出的 [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) 屬性提供一個介於 0 到 1.0 的值，其中 0 表示 HDR 處理不會協助改善擷取結果，1.0 表示 HDR 處理會協助。 您可以決定您想要使用 HDR 的閾值點，或對使用者顯示結果並讓使用者決定。
+The results of the scene analysis are returned in the **SceneAnalyzed** event handler. The [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) object passed into the handler has a [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) object which has a [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object. The [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) property of the high dynamic range output provides a value between 0 and 1.0 where 0 indicates that HDR processing would not help improve the capture result and 1.0 indicates that HDR processing would help. Your can decide the threshold point at which you want to use HDR or show the results to the user and let the user decide.
 
 [!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
-傳入處理常式的 [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) 物件也有 [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) 屬性，包含建議的框架控制項，以針對 HDR 處理擷取可變相片序列。 如需詳細資訊，請參閱[可變相片序列](variable-photo-sequence.md)。
+The [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object passed into the handler also has a [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) property which contains suggested frame controllers for capturing a variable photo sequence for HDR processing. For more information, see [Variable photo sequence](variable-photo-sequence.md).
 
-### 清除場景分析效果
+### Clean up the scene analysis effect
 
-當您的 app 完成擷取時，在處置 **MediaCapture** 物件之前，您應該將效果的 [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) 屬性設為 false，以停用場景分析效果，並且取消註冊您的 [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) 事件處理常式。 呼叫 [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592)，指定影片預覽串流，因為那是要新增效果的串流。 最後，將您的成員變數設為 null。
+When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the scene analysis effect by setting the effect's [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) property to false and unregister your [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event handler. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
 [!code-cs[CleanUpSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
 
-## 臉部偵測效果
+## Face detection effect
 
-[
-            **FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 會識別媒體擷取預覽串流中的臉部位置。 效果可以讓您只要在預覽串流中偵測到臉部時，就會收到通知，並且在預覽框架內針對每個偵測到的臉部提供界限方塊。 在支援的裝置中，臉部偵測效果也會提供增強的曝光度，並且將焦點放在場景中最重要的臉部。
+The [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) identifies the location of faces within the media capture preview stream. The effect allows you to receive a notification whenever a face is detected in the preview stream and provides the bounding box for each detected face within the preview frame. On supported devices, the face detection effect also provides enhanced exposure and focus on the most important face in the scene.
 
-### 臉部偵測命名空間
+### Face detection namespaces
 
-若要使用臉部偵測，您的 app 除了基本媒體擷取所需的基本命名空間之外，還必須包含下列命名空間。
+To use face detection, your app must include the following namespaces in addition to the namespaces required for basic media capture.
 
 [!code-cs[FaceDetectionUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-### 初始化臉部偵測效果並將它新增至預覽串流
+### Initialize the face detection effect and add it to the preview stream
 
-視訊效果是使用以下兩個 API 進行實作：效果定義，提供擷取裝置初始化效果所需的設定，以及效果執行個體，它可以用來控制效果。 因為您可能會想要從您的程式碼中的多個位置存取效果執行個體，所以您通常應該宣告成員變數來保存物件。
+Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
 [!code-cs[DeclareFaceDetectionEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
 
-在您的 app 中初始化 **MediaCapture** 物件之後，建立 [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778) 的新執行個體。 設定 [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) 屬性以設定優先順序，讓臉部偵測更快速或者準確度更高。 設定 [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) 以指定傳入框架不因為等待臉部偵測完成而延遲，因為這可能會導致不穩定的預覽經驗。
+In your app, after you have initialized the **MediaCapture** object, create a new instance of [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778). Set the [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) property to prioritize faster face detection or more accurate face detection. Set [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) to specify that incoming frames are not delayed waiting for face detection to complete as this can result in a choppy preview experience.
 
-使用擷取裝置註冊效果，方法是在您的 **MediaCapture** 物件上呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，提供 **FaceDetectionEffectDefinition** 並且指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 以表示效果應該套用至影片預覽串流，而不是擷取串流。 **AddVideoEffectAsync** 會傳回新增之效果的執行個體。 因為這個方法可以用於多個效果類型，所以您必須將傳回的執行個體轉換為 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 物件。
+Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **FaceDetectionEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) object.
 
-藉由設定 [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) 屬性，即可啟用或停用這些效果。 藉由設定 [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814) 屬性，調整效果分析框架的頻率。 媒體擷取正在進行時可以調整這兩個屬性。
+Enable or disable the effect by setting the [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) property. Adjust how often the effect analyzes frames by setting the [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814) property. Both of these properties can be adjusted while media capture is ongoing.
 
 [!code-cs[CreateFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
 
-### 偵測到臉部時接收通知
+### Receive notifications when faces are detected
 
-如果您想要在偵測到臉部時執行某些動作，例如於影片預覽中在偵測到的臉部周圍繪製方塊，您可以註冊 [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) 事件。
+If you want to perform some action when faces are detected, such as drawing a box around detected faces in the video preview, you can register for the [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event.
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在事件處理常式中，您可以取得框架中偵測到的所有臉部的清單，方法是存取 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 屬性。 [
-            **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 屬性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 結構，以預覽串流維度相對的單位來描述包含所偵測臉部的矩形。 若要檢視會將預覽串流座標轉換成畫面座標的範例程式碼，請參閱[臉部偵測 UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619486)。
+In the handler for the event, you can get a list of all faces detected in a frame by accessing the [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) property of the [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774). The [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) property is a [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) structure that describes the rectangle containing the detected face in units relative to the preview stream dimensions. To view sample code that transforms the preview stream coordinates into screen coordinates, see the [face detection UWP sample](http://go.microsoft.com/fwlink/?LinkId=619486).
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
-### 清除臉部偵測效果
+### Clean up the face detection effect
 
-當您的 app 完成擷取時，在處置 **MediaCapture** 物件之前，您應該使用 [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) 以停用臉部偵測效果，並且取消註冊您的 [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) 事件處理常式 (如果您之前已經註冊一個事件處理常式)。 呼叫 [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592)，指定影片預覽串流，因為那是要新增效果的串流。 最後，將您的成員變數設為 null。
+When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the face detection effect with [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) and unregister your [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event handler if you previously registered one. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
 [!code-cs[CleanUpFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
 
-### 檢查偵測到的臉部的對焦和曝光支援
+### Check for focus and exposure support for detected faces
 
-並非所有裝置都有可以根據偵測到的臉部調整其焦點和曝光的擷取裝置。 因為臉部偵測會耗用裝置資源，所以您可能只想要在可以使用功能以增強擷取的裝置上啟用臉部偵測。 若要查看臉部型擷取最佳化是否可用，取得適用於您的初始化 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825)，然後取得影片裝置控制器的 [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064)。 檢查以查看 [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) 是否支援至少一個區域。 然後檢查以查看 [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) 或 [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) 是否為 true。 如果符合這些條件，則裝置可以利用臉部偵測來增強擷取。
+Not all devices have a capture device that can adjust its focus and exposure based on detected faces. Because face detection consumes device resources, you may only want to enable face detection on devices that can use the feature to enhance capture. To see if face-based capture optimization is available, get the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your initialized [MediaCapture](capture-photos-and-video-with-mediacapture.md) and then get the video device controller's [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064). Check to see if the [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) supports at least one region. Then check to see if either [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) or [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) are true. If these conditions are met, then the device can take advantage of face detection to enhance capture.
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
-## 相關主題
+## Related topics
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
- 
+* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

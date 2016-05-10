@@ -1,138 +1,135 @@
 ---
-Description: 除了使用 Cortana 中的語音命令來存取系統功能之外，您也可以透過 Cortana 使用語音命令來啟動前景應用程式，以及指定要在應用程式中執行的動作或命令。
-title: 利用 Cortana 語音命令啟動前景應用程式
+author: Karl-Bridge-Microsoft
+Description: In addition to using voice commands within Cortana to access system features, you can also use voice commands through Cortana to launch a foreground app and specify an action or command to execute within the app.
+title: Launch a foreground app with voice commands in Cortana
 ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs
 ---
 
-# 利用 Cortana 語音命令啟用前景應用程式
+# Activate a foreground app with voice commands through Cortana
 
+In addition to using voice commands within **Cortana** to access system features, you can also extend **Cortana** with features and functionality from your app. Using voice commands, your app can be activated to the foreground and an action or command executed within the app. 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-**重要 API**
+**Important APIs**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-
-除了透過 **Cortana** 中的語音命令來使用系統功能之外，還可以從您的應用程式擴充 **Cortana** 特性與功能。 使用語音命令，可以將您的應用程式啟用到前景，以及在應用程式內執行動作或命令。 
-
-應用程式在前景中處理語音命令時，會取得焦點，並關閉 Cortana。 如果您想要的話，可以啟用您的應用程式，並執行命令做為背景工作。 在此情況下，Cortana 會保留焦點，而且您的應用程式會透過 **Cortana** 畫布和 **Cortana** 語音來傳回所有回覆和結果。
-
-需要額外內容或使用者輸入的語音命令 (例如，傳送訊息給特定的連絡人) 最好在前景應用程式中處理，而基本命令 (例如，列出即將出發的行程) 可在 **Cortana** 中透過背景應用程式來處理。
-
-如果您想要使用語音命令在前景啟用應用程式，請參閱[利用 Cortana 語音命令啟用背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md)。
-
-> **注意**  
-> 語音命令定義在語音命令定義 (VCD) 檔中，它是一種具有特定用途的單次語言表達，會透過 **Cortana** 導向已安裝的應用程式。
-
-> VCD 檔案會定義一或多個語音命令，每一個都具有唯一的用途。
-
-> 語音命令定義的複雜度各有不同。 它的支援範圍可從單一、限制的語句，到更具彈性、自然的語言表達集合，而這全都表示同樣的用途。
-
-為了示範前景應用程式功能，我們將使用 **Adventure Works** 的行程安排和管理應用程式，此應用程式來自 [Cortana 語音命令範例](http://go.microsoft.com/fwlink/p/?LinkID=619899)。
-
-若要建立新的 **Adventure Works** 行程，但又不想使用 **Cortana**，使用者可以在啟動應用程式後，瀏覽 [**新行程**] 頁面。 若要檢視現有的行程，使用者可以在啟動 app 後，瀏覽 [**即將出發的行程**] 頁面並選取行程。
-
-透過 **Cortana** 使用語音命令時，使用者可以改為說：「Adventure Works 新增行程」或「在 Adventure Works 上新增行程」，即可啟動 app，然後瀏覽到 [**新行程**] 頁面。 接著，說出「Adventure Works，顯示我到倫敦的行程」將會啟動 app，並瀏覽到 [**行程**] 詳細資料頁面，如下所示。
-
-![Cortana 啟動前景 app](images/cortana-foreground-with-adventureworks.png)
-
-以下是新增語音命令功能及使用語音或鍵盤輸入將 Cortana 整合至 app 的基本步驟：
-
-1.  建立 VCD 檔案。 這是一個 XML 文件，定義使用者可以說的所有語音命令，可在您啟用應用程式時啟始動作或叫用命令。 請參閱 [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)。
-2.  應用程式啟動後，註冊 VCD 檔案中的命令集。
-3.  處理透過語音命令進行的啟用、app 內的瀏覽，以及命令的執行。
-
-**先決條件：**
-
-如果您是開發通用 Windows 平台 (UWP) app 的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
-
--   [建立您的第一個 App](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)，以了解事件相關資訊
-
-**使用者體驗指導方針：**
-
-請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，來了解如何將您的應用程式與 **Cortana** 整合，您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，來取得有關設計既實用又吸引人且支援語音之應用程式的有用提示。
-
-## <span id="Create_a_new_solution_with_project_in_Visual_Studio"> </span> <span id="create_a_new_solution_with__project_in_visual_studio"> </span> <span id="CREATE_A_NEW_SOLUTION_WITH__PROJECT_IN_VISUAL_STUDIO"> </span>在 Visual Studio 中使用專案建立新的方案
+-   [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 
-1.  啟動 Microsoft Visual Studio 2015。
+When an app handles a voice command in the foreground, it takes focus and Cortana is dismissed. If you prefer, you can activate your app and execute a command as a background task. In this case, Cortana retains focus and your app returns all feedback and results through the **Cortana** canvas and the **Cortana** voice.
 
-    Visual Studio 2015 起始頁隨即顯示。
+Voice commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands (such as listing upcoming trips) can be handled in **Cortana** through a background app.
 
-2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
+If you want to activate an app in the background using voice commands, see [Activate a background app with voice commands through Cortana](launch-a-background-app-with-voice-commands-in-cortana.md).
 
-    隨即顯示 [新增專案]**** 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
+> **Note**  
+> A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**.
 
-3.  在左窗格中，依序展開 **[已安裝的] > [範本] > [Visual C\#] > [Windows]**，然後選取 [**通用**] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) 應用程式的專案範本清單。
-4.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]**** 範本。
+> A VCD file defines one or more voice commands, each with a unique intent.
 
-    [空白應用程式]**** 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
+> A voice command definition can vary in complexity. It can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.
 
-5.  在 [**名稱**] 文字方塊中，輸入您的專案名稱。 在這個範例中，我們使用 "AdventureWorks"。
-6.  按一下 [**確定**] 來建立專案。
+To demonstrate foreground app features, we'll use a trip planning and management app named **Adventure Works** from the [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899).
 
-    Microsoft Visual Studio 會建立您的專案，然後在 [**方案總管**] 中顯示。
+To create a new **Adventure Works** trip without **Cortana**, a user would launch the app and navigate to the **New trip** page. To view an existing trip, a user would launch the app, navigate to the **Upcoming trips** page, and select the trip.
 
-## <span id="Add_image_assets_to_project_and_specify_them_in_the_app_manifest"> </span> <span id="add_image_assets_to_project_and_specify_them_in_the_app_manifest"> </span> <span id="ADD_IMAGE_ASSETS_TO_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"> </span>將影像資產新增至專案，並在應用程式資訊清單中指定它們
+Using voice commands through **Cortana**, the user can instead just say, "Adventure Works add a trip" or "Add a trip on Adventure Works" to launch the app and navigate to the **New trip** page. In turn, saying "Adventure Works, show my trip to London" will launch the app and navigate to the **Trip** detail page, shown here.
+
+![cortana launching foreground app](images/cortana-foreground-with-adventureworks.png)
+
+These are the basic steps to add voice-command functionality and integrate Cortana with your app using speech or keyboard input:
+
+1.  Create a VCD file. This is an XML document that defines all the spoken commands that the user can say to initiate actions or invoke commands when activating your app. See [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593).
+2.  Register the command sets in the VCD file when the app is launched.
+3.  Handle the activation-by-voice-command, navigation within the app, and execution of the command.
+
+**Prerequisites:  **
+
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+
+**User experience guidelines:  **
+
+See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
+
+## <span id="Create_a_new_solution_with_project_in_Visual_Studio"></span><span id="create_a_new_solution_with__project_in_visual_studio"></span><span id="CREATE_A_NEW_SOLUTION_WITH__PROJECT_IN_VISUAL_STUDIO"></span>Create a new solution with project in Visual Studio
+
+
+1.  Launch Microsoft Visual Studio 2015.
+
+    The Visual Studio 2015 Start page appears.
+
+2.  On the **File** menu, select **New** > **Project**.
+
+    The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.
+
+3.  In the left pane, expand **Installed > Templates > Visual C\# > Windows**, then pick the **Universal** template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.
+4.  In the center pane, select the **Blank App (Universal Windows)** template.
+
+    The **Blank App** template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.
+
+5.  In the **Name** text box, type your project name. For this example, we use "AdventureWorks".
+6.  Click **OK** to create the project.
+
+    Microsoft Visual Studio creates your project and displays it in the **Solution Explorer**.
+
+## <span id="Add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>Add image assets to project and specify them in the app manifest
       
-UWP 應用程式可以根據特定的設定和裝置功能 (高對比、有效像素及地區設定等)，自動選取最適當的影像。 您需要的就是提供影像，並確保您在應用程式專案內為不同的資源版本使用適當的命名慣例和資料夾組織。 如果您未提供建議的資源版本，則視使用者的喜好設定、能力、裝置類型及位置而定，協助工具、當地語系化及影像品質可能會有問題。
+UWP apps can automatically select the most appropriate images based on specific settings and device capabilities (high contrast, effective pixels, locale, and so on). All you need to do is provide the images and ensure you use the appropriate naming convention and folder organization within the app project for the different resource versions. If you don't provide the recommended resource versions, accessibility, localization, and image quality can suffer, depending on the user's preferences, abilities, device type, and location.
 
-如需高對比和縮放比例的影像資源詳細資訊，請參閱[磚和圖示資產的指導方針](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
+For more detail on image resources for high contrast and scale factors, see [Guidelines for tile and icon assets](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets).
 
-您要使用限定詞命名資源。 資源限定詞是資料夾和檔案名稱的修飾詞，用來識別內容中應該使用的特定資源版本。
+You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.
 
-標準命名慣例為 `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`。 例如，`images/en-US/logo.scale-100_contrast-white.png` 只是指在程式碼中使用的根資料夾和檔案名稱：`images/logo.png`。 請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx)。
+The standard naming convention is `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. For example, `images/en-US/logo.scale-100_contrast-white.png`, which can be referred to in code using just the root folder and the filename: `images/logo.png`. See [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx).
 
-即使您目前不打算提供當地語系化或多種解析度資源，仍建議您在字串資源檔上標示預設語言 (如 `en-US\resources.resw`)，並在影像上標示預設縮放比例 (如 `logo.scale-100.png`)。 不過，我們建議您至少為 100、200 及 400 的縮放比例提供資產。
+We recommend that you mark the default language on string resource files (such as `en-US\resources.resw`) and the default scale factor on images (such as `logo.scale-100.png`), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, we recommend that you provide assets for 100, 200, and 400 scale factors.
 
-> *重要
+> *Important
 
-> **Cortana** 畫布的標題區域中使用的應用程式圖示是 "Package.appxmanifest" 檔案中指定的 Square44x44Logo 圖示。 
+> The app icon used in the title area of the **Cortana** canvas is the Square44x44Logo icon specified in the "Package.appxmanifest" file. 
     
-## <span id="Create_a_VCD_file"> </span> <span id="create_a_vcd_file"> </span> <span id="CREATE_A_VCD_FILE"> </span>建立 VCD 檔案
+## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>Create a VCD file
 
-1. 在 Visual Studio 中，於主要專案名稱上按一下滑鼠右鍵，選取 **[新增] > [新增項目]**。 新增 **XML 檔案**。
-2. 輸入 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案的名稱 (在此範例中，為 "AdventureWorksCommands.xml")，然後按一下 [新增]。 
-3. 在 [**方案總管**] 中，選取該 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案。
-4.  在 [**屬性**] 視窗中，將 [**建置動作**] 設定為 [**內容**]，然後將 [**複製到輸出目錄**] 設定為 [**有更新時才複製**]。
+1. In Visual Studio, right-click your primary project name, select **Add > New Item**. Add an **XML File**.
+2. Type a name for the [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) file (for this example, "AdventureWorksCommands.xml"), and click Add. 
+3. In **Solution Explorer**, select the [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) file.
+4.  In the **Properties** window, set **Build action** to **Content**, and then set **Copy to output directory** to **Copy if newer**.
 
-## <span id="Edit_the_VCD_file"> </span> <span id="edit_the_vcd_file"> </span> <span id="EDIT_THE_VCD_FILE"> </span>編輯 VCD 檔案
+## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>Edit the VCD file
 
 
-. 新增 **xmlns** 屬性指向 "http://schemas.microsoft.com/voicecommands/1.2" 的 **VoiceCommands** 元素。
+Add a **VoiceCommands** element with an **xmlns** attribute pointing to `http://schemas.microsoft.com/voicecommands/1.2`.
 
-2. 針對應用程式所支援的每一種語言，建立 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，內含應用程式所支援的語音命令。
+2. For each language supported by your app, create a [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) element that contains the voice commands supported by your app.
 
-  您可以宣告多個 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，且各自擁有不同的 [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 屬性，讓您的應用程式可以在不同的市場中使用。 例如，美國的應用程式可以有英文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 和西班牙文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。
+  You can declare multiple [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) elements, each with a different [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) attribute so your app to be used in different markets. For example, an app for the United States might have a [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) for English and a [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) for Spanish.
 
-  >  **注意**  
-  若要使用語音命令來啟用應用程式並起始動作，應用程式必須註冊一個包含 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 且其語言與使用者針對裝置所選語音功能語言相符的 VCD 檔案。 這個語音功能語言位於 **[設定] > [系統] > [語音] > [語音功能的語言]**。
+  >  **Caution**  
+  To activate an app and initiate an action using a voice command, the app must register a VCD file that contains a [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) with a language that matches the speech language selected by the user for their device. The speech language is located in **Settings > System > Speech > Speech Language**.
 
-3. 針對您想要支援的每個命令新增 **Command** 元素。
+3. Add a **Command** element for each command you want to support.
 
-  [
-            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案中宣告的每一個 **Command** 都必須包含以下資訊：
+  Each **Command** declared in a [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) file must include this information:
 
-  - **Name** 屬性，應用程式在執行期間用來識別語音命令。 
-  - **Example** 元素，包含一個片語，描述使用者如何叫用命令。 當使用者說：「我可以說什麼？」、「求助」或者點選 [**查看更多**] 後，**Cortana** 會顯示這個範例。    
-  -   **ListenFor** 元素，包含應用程式可辨識為命令的字詞或片語。 每個 **ListenFor** 元素都可以包含一個或多個 **PhraseList** 元素參考，而後面這個元素包含與命令相關的特定字詞。
-  > **注意**  
-  **ListenFor** 元素無法透過程式設計方式修改。 不過，與 **ListenFor** 元素關聯的 **PhraseList** 元素則可以透過程式設計方式修改。 應用程式應該在執行期間，根據使用者使用 app 時所產生的資料集修改 **PhraseList** 的內容。 請參閱[動態修改語音命令定義 (VCD) 片語清單](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)。
+  - A **Name** attribute that your application uses to identify the voice command at runtime. 
+  - An **Example** element that contains a phrase describing how a user can invoke the command. **Cortana** shows this example when the user says "What can I say?", "Help", or they tap **See more**.    
+  -   A **ListenFor** element that contains the words or phrases that your app recognizes as a command. Each **ListenFor** element can contain references to one or more **PhraseList** elements that contain specific words relevant to the command.
+  > **Note**  
+  **ListenFor** elements cannot be programmatically modified. However, **PhraseList** elements associated with **ListenFor** elements can be programmatically modified. Applications should modify the content of the **PhraseList** at runtime based on the data set generated as the user uses the app. See [Dynamically modify Voice Command Definition (VCD) phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
 
-  -   **Feedback** 元素，包含當應用程式啟動後，**Cortana** 會顯示以及說出的文字。
+  -   A **Feedback** element that contains the text for **Cortana** to display and speak as the application is launched.
 
-**Navigate** 元素表示語音命令會在前景啟動應用程式。 在此範例中，```showTripToDestination``` 命令是前景工作。
+A **Navigate** element indicates that the voice command activates the app to the foreground. In this example, the ```showTripToDestination``` command is a foreground task.
 
-**VoiceCommandService** 元素指出語音命令會在背景啟動應用程式。 此元素的 **Target** 屬性值應該符合 package.appxmanifest 中 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素的 **Name** 屬性值。 在這個範例中，```whenIsTripToDestination``` 和 ```cancelTripToDestination``` 命令是背景工作，可將應用程式服務的名稱指定為 "AdventureWorksVoiceCommandService"。
+A **VoiceCommandService** element indicates that the voice command activates the app in the background. The value of the **Target** attribute of this element should match the value of the **Name** attribute of the [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element in the package.appxmanifest file. In this example, the ```whenIsTripToDestination``` and ```cancelTripToDestination``` commands are background tasks that specify the name of the app service as "AdventureWorksVoiceCommandService".
 
-如需詳細資料，請參閱 [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) 參考。
+For more detail, see the [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) reference.
 
-以下是 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案的一個部分，定義 **Adventure Works** 應用程式的 en-us 語音命令。
+Here's a portion of the [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) file that defines the en-us voice commands for the **Adventure Works** app.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -174,31 +171,31 @@ UWP 應用程式可以根據特定的設定和裝置功能 (高對比、有效�
   </CommandSet>
 ```
 
-## <span id="Install_the_VCD_commands"> </span> <span id="install_the_vcd_commands"> </span> <span id="INSTALL_THE_VCD_COMMANDS"> </span>安裝 VCD 命令
+## <span id="Install_the_VCD_commands"></span><span id="install_the_vcd_commands"></span><span id="INSTALL_THE_VCD_COMMANDS"></span>Install the VCD commands
 
 
-您的應用程式必須執行一次，才能安裝 VCD。 
+Your app must run once to install the VCD. 
 
->  **注意**  
-不會跨應用程式安裝來保留語音命令資料。 為確保您應用程式的語音命令資料完整無缺，請考慮在每次應用程式啟動或啟用時將您的 VCD 檔案初始化，或是維護指出目前是否已安裝 VCD 的設定。
+>  **Note**  
+Voice command data is not preserved across app installations. To ensure the voice command data for your app remains intact, consider initializing your VCD file each time your app is launched or activated, or maintain a setting that indicates if the VCD is currently installed.
 
-在 "app.xaml.cs" 檔案中：
+In the "app.xaml.cs" file:
 
-1. 新增下列 using 指示詞：  
+1. Add the following using directive:  
 ```csharp
 using Windows.Storage;
 ```
-2. 使用 async 修飾詞，標示 "OnLaunched" 方法。  
+2. Mark the "OnLaunched" method with the async modifier.  
 ```csharp
 protected async override void OnLaunched(LaunchActivatedEventArgs e)
 ```
-3. 呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式中的 [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205)，以註冊系統應該辨識到的語音命令。
+3. Call [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) in the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler to register the voice commands that the system should recognize.
 
-  在 Adventure Works 範例中，我們先定義 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。 
+  In the Adventure Works sample, we first define a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object. 
 
-  然後我們呼叫 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 將它與我們的 "AdventureWorksCommands.xml" 檔案初始化。
+  We then call [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) to initialize it with our "AdventureWorksCommands.xml" file.
 
-  此 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件會接著傳遞至 [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205)。    
+  This [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object is then passed to [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205).    
 ```csharp
 try
 {
@@ -220,7 +217,8 @@ try
 catch (Exception ex)
 {
   System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
-}```
+}
+```
 
 ## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>Handle activation and execute voice commands
 
@@ -262,103 +260,103 @@ Use the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.mi
 /// <param name="args">Details about the activation method.</param>
 protected override void OnActivated(IActivatedEventArgs args)
 {
-    base.OnActivated(args);
+	base.OnActivated(args);
 
-    Type navigationToPageType;
-    ViewModel.TripVoiceCommand? navigationCommand = null;
+	Type navigationToPageType;
+	ViewModel.TripVoiceCommand? navigationCommand = null;
 
     // Voice command activation.
-    if (args.Kind == ActivationKind.VoiceCommand)
-    {
-        // Event args can represent many different activation types. 
+	if (args.Kind == ActivationKind.VoiceCommand)
+	{
+		// Event args can represent many different activation types. 
         // Cast it so we can get the parameters we care about out.
-        var commandArgs = args as VoiceCommandActivatedEventArgs;
+		var commandArgs = args as VoiceCommandActivatedEventArgs;
 
-        Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+		Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
 
-        // Get the name of the voice command and the text spoken. 
+		// Get the name of the voice command and the text spoken. 
         // See VoiceCommands.xml for supported voice commands.
-        string voiceCommandName = speechRecognitionResult.RulePath[0];
-        string textSpoken = speechRecognitionResult.Text;
+		string voiceCommandName = speechRecognitionResult.RulePath[0];
+		string textSpoken = speechRecognitionResult.Text;
 
-        // commandMode indicates whether the command was entered using speech or text.
+		// commandMode indicates whether the command was entered using speech or text.
         // Apps should respect text mode by providing silent (text) feedback.
-        string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
-        
-        switch (voiceCommandName)
-        {
-            case "showTripToDestination":
-                // Access the value of {destination} in the voice command.
-                string destination = this.SemanticInterpretation("destination", speechRecognitionResult);
+		string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
+		
+		switch (voiceCommandName)
+		{
+			case "showTripToDestination":
+				// Access the value of {destination} in the voice command.
+				string destination = this.SemanticInterpretation("destination", speechRecognitionResult);
 
-                // Create a navigation command object to pass to the page. 
-                navigationCommand = new ViewModel.TripVoiceCommand(
-                    voiceCommandName,
-                    commandMode,
-                    textSpoken,
-                    destination);
+				// Create a navigation command object to pass to the page. 
+				navigationCommand = new ViewModel.TripVoiceCommand(
+					voiceCommandName,
+					commandMode,
+					textSpoken,
+					destination);
 
-                // Set the page to navigate to for this voice command.
-                navigationToPageType = typeof(View.TripDetails);
-                break;
-            default:
-                // If we can't determine what page to launch, go to the default entry point.
-                navigationToPageType = typeof(View.TripListView);
-                break;
-        }
-    }
-    // Protocol activation occurs when a card is clicked within Cortana (using a background task).
+				// Set the page to navigate to for this voice command.
+				navigationToPageType = typeof(View.TripDetails);
+				break;
+			default:
+				// If we can't determine what page to launch, go to the default entry point.
+				navigationToPageType = typeof(View.TripListView);
+				break;
+		}
+	}
+	// Protocol activation occurs when a card is clicked within Cortana (using a background task).
     else if (args.Kind == ActivationKind.Protocol)
-    {
-        // Extract the launch context. In this case, we're just using the destination from the phrase set (passed
-        // along in the background task inside Cortana), which makes no attempt to be unique. A unique id or 
-        // identifier is ideal for more complex scenarios. We let the destination page check if the 
-        // destination trip still exists, and navigate back to the trip list if it doesn't.
-        var commandArgs = args as ProtocolActivatedEventArgs;
-        Windows.Foundation.WwwFormUrlDecoder decoder = new Windows.Foundation.WwwFormUrlDecoder(commandArgs.Uri.Query);
-        var destination = decoder.GetFirstValueByName("LaunchContext");
+	{
+		// Extract the launch context. In this case, we're just using the destination from the phrase set (passed
+		// along in the background task inside Cortana), which makes no attempt to be unique. A unique id or 
+		// identifier is ideal for more complex scenarios. We let the destination page check if the 
+		// destination trip still exists, and navigate back to the trip list if it doesn't.
+		var commandArgs = args as ProtocolActivatedEventArgs;
+		Windows.Foundation.WwwFormUrlDecoder decoder = new Windows.Foundation.WwwFormUrlDecoder(commandArgs.Uri.Query);
+		var destination = decoder.GetFirstValueByName("LaunchContext");
 
-        navigationCommand = new ViewModel.TripVoiceCommand(
-                                "protocolLaunch",
-                                "text",
-                                "destination",
-                                destination);
+		navigationCommand = new ViewModel.TripVoiceCommand(
+								"protocolLaunch",
+								"text",
+								"destination",
+								destination);
 
-        navigationToPageType = typeof(View.TripDetails);
-    }
-    else
-    {
-        // If we were launched via any other mechanism, fall back to the main page view.
+		navigationToPageType = typeof(View.TripDetails);
+	}
+	else
+	{
+		// If we were launched via any other mechanism, fall back to the main page view.
         // Otherwise, we'll hang at a splash screen.
-        navigationToPageType = typeof(View.TripListView);
-    }
+		navigationToPageType = typeof(View.TripListView);
+	}
 
-    // Repeat the same basic initialization as OnLaunched() above, taking into account whether
-    // or not the app is already active.
-    Frame rootFrame = Window.Current.Content as Frame;
+	// Repeat the same basic initialization as OnLaunched() above, taking into account whether
+	// or not the app is already active.
+	Frame rootFrame = Window.Current.Content as Frame;
 
-    // Do not repeat app initialization when the Window already has content,
-    // just ensure that the window is active.
-    if (rootFrame == null)
-    {
-        // Create a frame to act as the navigation context and navigate to the first page.
-        rootFrame = new Frame();
-        App.NavigationService = new NavigationService(rootFrame);
+	// Do not repeat app initialization when the Window already has content,
+	// just ensure that the window is active.
+	if (rootFrame == null)
+	{
+		// Create a frame to act as the navigation context and navigate to the first page.
+		rootFrame = new Frame();
+		App.NavigationService = new NavigationService(rootFrame);
 
-        rootFrame.NavigationFailed += OnNavigationFailed;
+		rootFrame.NavigationFailed += OnNavigationFailed;
 
-        // Place the frame in the current window.
-        Window.Current.Content = rootFrame;
-    }
+		// Place the frame in the current window.
+		Window.Current.Content = rootFrame;
+	}
 
-    // Since we're expecting to always show a details page, navigate even if 
-    // a content frame is in place (unlike OnLaunched).
-    // Navigate to either the main trip list page, or if a valid voice command
-    // was provided, to the details page for that trip.
-    rootFrame.Navigate(navigationToPageType, navigationCommand);
+	// Since we're expecting to always show a details page, navigate even if 
+	// a content frame is in place (unlike OnLaunched).
+	// Navigate to either the main trip list page, or if a valid voice command
+	// was provided, to the details page for that trip.
+	rootFrame.Navigate(navigationToPageType, navigationCommand);
 
-    // Ensure the current window is active
-    Window.Current.Activate();
+	// Ensure the current window is active
+	Window.Current.Activate();
 }
 
 /// <summary>
@@ -374,29 +372,24 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>Related articles
 
 
-**開發人員**
-* [Cortana 互動](cortana-interactions.md)
-* [定義自訂辨識限制式](define-custom-recognition-constraints.md)
-* [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**Developers**
+* [Cortana interactions](cortana-interactions.md)
+* [Define custom recognition constraints](define-custom-recognition-constraints.md)
+* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**設計人員**
-* [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Designers**
+* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**範例**
-* [Cortana 語音命令範例](http://go.microsoft.com/fwlink/p/?LinkID=619899)
- 
+**Samples**
+* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO4-->
 
 

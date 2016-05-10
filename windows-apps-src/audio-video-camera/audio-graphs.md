@@ -1,216 +1,205 @@
 ---
+author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: 此文章說明如何使用 Windows.Media.Audio 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
-title: 音訊圖
+description: This article shows how to use the APIs in the Windows.Media.Audio namespace to create audio graphs for audio routing, mixing, and processing scenarios.
+title: Audio Graphs
 ---
 
-# 音訊圖
+# Audio Graphs
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-此文章說明如何使用 [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。
+This article shows how to use the APIs in the [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) namespace to create audio graphs for audio routing, mixing, and processing scenarios.
 
-音訊圖是一組用以傳送音訊資料的互連音訊節點。 音訊輸入節點會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 音訊輸出節點是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 最後一種節點類型是副混音節點，它會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 已建立所有節點並設定它們之間的連線之後，您只需啟動音訊圖性，音訊資料就會從輸入節點經由任何副混音節點傳送至輸出節點。 此模型可讓您快速而輕鬆地實作案例，例如：從裝置的麥克風錄製到音訊檔、將檔案中的音訊播放到裝置的喇叭，或混合來自多個來源的音訊。
+An audio graph is a set of interconnected audio nodes through which audio data flows. Audio input nodes supply audio data to the graph from audio input devices, audio files, or from custom code. Audio output nodes are the destination for audio processed by the graph. Audio can be routed out of the graph to audio output devices, audio files, or custom code. The last type of node is a submix node which takes audio from one or more nodes and combines them into a single output that can be routed to other nodes in the graph. After all of the nodes have been created and the connections between them set up, you simply start the audio graph and the audio data flows from the input nodes, through any submix nodes, to the output nodes. This model makes scenarios like recording from a device's microphone to an audio file, playing audio from a file to a device's speaker, or mixing audio from multiple sources quick and easy to implement.
 
-將音訊效果加入至音訊圖，促成其他案例。 音訊圖中的每個節點可以填入零個或多個效果，以對透過節點傳遞的音訊執行音訊處理。 內建效果有好幾個：例如等化器、限制，以及可利用少數幾行程式碼附加到音訊節點的殘響效果。 您也可以建立自己的自訂音訊效果，其運作方式與內建效果完全相同。
+Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
 
-**注意**  
-[AudioGraph UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+**Note**  
+The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
 
-## 選擇 Windows 執行階段 AudioGraph 或 XAudio2
+## Choosing Windows Runtime AudioGraph or XAudio2
 
-Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎的 [XAudio2 API](https://msdn.microsoft.com/library/windows/desktop/hh405049) 實作。 以下是與 XAudio2 不同的 Windows 執行階段音訊圖架構功能。
+The Windows Runtime audio graph APIs offer functionality that can also be implemented using the COM-based [XAudio2 APIs](https://msdn.microsoft.com/library/windows/desktop/hh405049). The following are features of the Windows Runtime audio graph framework that differ from XAudio2.
 
--   Windows 執行階段音訊圖 API 明顯比 XAudio2 容易使用。
--   可以從 C# 使用 Windows 執行階段音訊圖 API - 除了對 C++ 提供支援以外。
--   Windows 執行階段音訊圖 API 可以直接使用包含壓縮檔案格式的音訊檔案。 XAudio2 只能在音訊緩衝區上操作，並不提供任何檔案 I/O 功能。
--   Windows 執行階段音訊圖 API 可以在 Windows 10 中使用低延遲音訊管線。
--   使用預設端點參數時，Windows 執行階段音訊圖 API 支援自動端點切換。 例如，如果使用者從裝置的喇叭切換到耳機時，則音訊會自動重新導向至新的輸入。
+-   The Windows Runtime audio graph APIs are significantly easier to use than XAudio2.
+-   The Windows Runtime audio graph APIs can be used from C# - in addition to being supported for C++.
+-   The Windows Runtime audio graph APIs can use audio files, including compressed file formats, directly. XAudio2 only operates on audio buffers and does not provide any file I/O capabilities.
+-   The Windows Runtime audio graph APIs can use the low-latency audio pipeline in Windows 10.
+-   The Windows Runtime audio graph APIs supports automatic endpoint switching when default endpoint parameters are used. For example, if the user switches from a device's speaker to a headset, the audio is automatically redirected to the new input.
 
-## AudioGraph 類別
+## AudioGraph class
 
-[
-            **AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 初始化 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 物件，接著呼叫 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，以建立 **AudioGraph** 類別的執行個體，包含圖形的組態設定。 傳回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
+The [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) class is the parent of all nodes that make up the graph. Use this object to create instances of all of the audio node types. Create an instance of the **AudioGraph** class by initializing an [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) object, containing configuration settings for the graph, and then calling [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216). The returned [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) gives access to the created audio graph or provides an error value if audio graph creation fails.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   使用 **AudioGraph** 類別的 Create\* 方法，建立所有音訊節點類型。
--   [
-            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法會導致音訊圖開始處理音訊資料。 [
-            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [
-            **ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) 會導致圖形中的所有節點捨棄目前在其音訊緩衝區中的所有資料。
--   當圖形開始處理新的音訊資料配量，會發生 [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) 事件。 當配量處理完成時，會發生 [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。
+-   All audio node types are created by using the Create\* methods of the **AudioGraph** class.
+-   The [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) method causes the audio graph to start processing audio data. The [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) method stops audio processing. Each node in the graph can be started and stopped independently while the graph is running, but no nodes are active when the graph is stopped. [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) causes all nodes in the graph to discard any data currently in their audio buffers.
+-   The [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) event occurs when the graph is starting the processing of a new quantum of audio data. The [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event occurs when the processing of a quantum is completed.
 
--   唯一必要的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 屬性是 [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724)。 指定這個值可讓系統最佳化指定類別的音訊管線。
--   音訊圖的配量大小會決定一次處理的範例數目。 根據預設，配量大小採用預設取樣率並以 10 毫秒為基礎。 如果您藉由設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性來指定自訂配量大小，您也必須將 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 屬性設定為 **ClosestToDesired**，否則會忽略所提供的值。 如果使用這個值，則系統會選擇儘可能接近您指定之配量大小的大小。 若要判斷實際配量大小，請在建立完成後檢查 **AudioGraph** 的 [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243)。
--   如果您只打算搭配使用音訊圖和檔案，而不打算輸出到音訊裝置，建議您不要設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性，以使用預設配量大小。
--   [
-            **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
--   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 設定為 **LowestLatency**，則音訊圖會自動為 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 使用 **Raw**。
--   [
-            **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
--   [
-            **PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
+-   The only [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) property that is required is [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Specifying this value allows the system to optimize the audio pipeline for the specified category.
+-   The quantum size of the audio graph determines the number of samples that are processed at one time. By default, the quantum size is 10 ms based at the default sample rate. If you specify a custom quantum size by setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property, you must also set the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) property to **ClosestToDesired** or the supplied value is ignored. If this value is used, the system will choose a quantum size as close as possible to the one you specify. To determine the actual quantum size, check the [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) of the **AudioGraph** after it has been created.
+-   If you only plan to use the audio graph with files and don't plan to output to an audio device, it is recommended that you use the default quantum size by not setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property.
+-   The [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) property determines the amount of processing the primary render device performs on the output of the audio graph. The **Default** setting allows the system to use the default audio processing for the specified audio render category. This processing can significantly improve the sound of audio on some devices, particularly mobile devices with small speakers. The **Raw** setting can improve performance by minimizing the amount of signal processing performed, but can result in inferior sound quality on some devices.
+-   If the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) is set to **LowestLatency**, the audio graph will automatically use **Raw** for [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
+-   The [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) determines the audio format used by the graph. Only 32-bit float formats are supported.
+-   The [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) sets the primary render device for the audio graph. If you don't set this, the default system device is used. The primary render device is used to calculate the quantum sizes for other nodes in the graph. If there are no audio render devices present on the system, audio graph creation will fail.
 
-您可以讓音訊圖使用預設音訊轉譯裝置，或使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別來取得系統可用的音訊轉譯裝置清單，其作法是呼叫 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 並傳入 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 所傳回的音訊轉譯裝置選取器。 您可以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後使用它來設定 [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 屬性。
+You can let the audio graph use the default audio render device or use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio render devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programatically or show UI to allow the user to select a device and then use it to set the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) property.
 
 [!code-cs[EnumerateAudioRenderDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
 
-##  裝置輸入節點
+##  Device input node
 
-裝置輸入節點會將音訊從連接到系統的音訊擷取裝置 (例如麥克風) 送入圖形中。 建立 [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) 物件，其藉由呼叫 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 來使用系統的預設音訊擷取裝置。 提供 [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724)，讓系統最佳化指定類別的音訊管線。
+A device input node feeds audio into the graph from an audio capture device connected to the system, such as a microphone. Create a [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) object that uses the system's default audio capture device by calling [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218). Provide an [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) to allow the system to optimize the audio pipeline for the specified category.
 
 [!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-若要為裝置輸入節點指定特定音訊擷取裝置，您可以使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別來取得系統可用的音訊擷取裝置清單，其作法是呼叫 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 並傳入 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 所傳回的音訊轉譯裝置選取器。 您能以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後將它傳遞到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
+If you want to specify a specific audio capture device for the device input node, you can use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio capture devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programmatically or show UI to allow the user to select a device and then pass it into [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
-##  裝置輸出節點
+##  Device output node
 
-裝置輸出節點會將音訊從圖形推送至音訊轉譯裝置，例如喇叭或耳機。 透過呼叫 [**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525) 建立 [**DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098)。 輸出節點會使用音訊圖的 [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524)。
+A device output node pushes audio from the graph to an audio render device, such as speakers or a headset. Create a [**DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) by calling [**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525). The output node uses the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) of the audio graph.
 
 [!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
 
 [!code-cs[CreateDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
 
-##  檔案輸入節點
+##  File input node
 
-檔案輸入節點可讓您將資料從音訊檔案送入圖形中。 透過呼叫 [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226) 建立 [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108)。
+A file input node allows you to feed data from an audio file into the graph. Create an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) by calling [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226).
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
 
 [!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
 
--   檔案輸入節點支援下列檔案格式：mp3、wav、wma、m4a
--   設定 [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) 屬性，以在檔案中指定應該開始播放的時間位移。 如果這個屬性為 Null，則會使用檔案的開頭。 設定 [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) 屬性，以在檔案中指定應該結束播放的時間位移。 如果這個屬性為 Null，則會使用檔案的結尾。 開始時間值必須小於結束時間值，而結束時間值必須小於或等於音訊檔案的持續時間，檢查 [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) 屬性值即可判斷此值。
--   呼叫 [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) 並指定檔案中播放位置應移至的時間位移，以尋找音訊檔案中的位置。 指定的值必須在 [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) 與 [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) 範圍內。 使用唯讀的 [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) 屬性，取得節點的目前播放位置。
--   設定 [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) 屬性，啟用音訊檔案的循環播放。 若不為 Null，這個值表示初始播放後將要播放該檔案的次數。 所以，例如將 **LoopCount** 設定為 1 會導致檔案總計播放 2 次，而設定為 5 則會導致檔案總計播放 6 次。 將 **LoopCount** 設定為 Null 會導致檔案無限循環播放。 若要停止循環播放，將此值設定為 0。
--   設定 [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123)，以調整音訊檔案的速度播放。 值為 1 表示檔案的原始速度、0.5 為一半速度，而 2 則是雙倍速度。
+-   File input nodes support the following file formats: mp3, wav, wma, m4a
+-   Set the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) property to specify the time offset into the file where playback should begin. If this property is null, the beginning of the file is used. Set the [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) property to specify the time offset into the file where playback should end. If this property is null, the end of the file is used. The start time value must be lower than the end time value, and the end time value must be less than or equal to the duration of the audio file, which can be determined by checking the [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) property value.
+-   Seek to a position in the audio file by calling [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) and specifying the time offset into the file to which the playback position should be moved. The specified value must be within the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) and [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) range. Get the current playback position of the node with the read-only [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) property.
+-   Enable looping of the audio file by setting the [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) property. When non-null, this value indicates the number of times the file will be played in after the initial playback. So, for example, setting **LoopCount** to 1 will cause the file to be played 2 times in total, and setting it to 5 will cause the file to be played 6 times in total. Setting **LoopCount** to null causes the file to be looped indefinitely. To stop looping, set the value to 0.
+-   Adjust the speed at which the audio file is played back by setting the [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). A value of 1 indicates the original speed of the file, .5 is half-speed, and 2 is double speed.
 
-##  檔案輸出節點
+##  File output node
 
-檔案輸出節點可讓您將音訊資料從圖形引導至音訊檔中。 透過呼叫 [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) 建立 [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133)。
+A file output node lets you direct audio data from the graph into an audio file. Create an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) by calling [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
 
 [!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
--   檔案輸出節點支援下列檔案格式：mp3、wav、wma、m4a
--   呼叫 [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) 之前，您必須呼叫 [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) 來停止節點的處理程序，否則會擲回例外狀況。
+-   File output nodes support the following file formats: mp3, wav, wma, m4a
+-   You must call [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) to stop the node's processing before calling [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) or an exception will be thrown.
 
-##  音訊框架輸入節點
+##  Audio frame input node
 
-音訊框架輸入節點可讓您將在自己的程式碼中產生的音訊資料推送至音訊圖中。 這會促成一些案例，例如建立自訂軟體合成器。 透過呼叫 [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230) 建立 [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147)。
+An audio frame input node allows you to push audio data that you generate in your own code into the audio graph. This enables scenarios like creating a custom software synthesizer. Create an [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) by calling [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230).
 
 [!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
 
 [!code-cs[CreateFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
 
-當音訊圖準備開始處理音訊資料的下一個配量時，會引發 [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) 事件。 您可在處理常式中將自訂產生的音訊資料提供給此事件。
+The [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) event is raised when the audio graph is ready to begin processing the next quantum of audio data. You supply your custom generated audio data from within the handler to this event.
 
 [!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   傳遞至 **QuantumStarted** 事件處理常式的 [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) 物件會公開 [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) 屬性，以指出音訊圖需要多少樣本才能填滿所要處理的配量。
--   呼叫 [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148)，將填滿音訊資料的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 物件傳遞至圖形中。
--   **GenerateAudioData** 協助程式方法的範例實作如下所示。
+-   The [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) object passed into the **QuantumStarted** event handler exposes the [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) property that indicates how many samples the audio graph needs to fill up the quantum to be processed.
+-   Call [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) to pass an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data into the graph.
+-   An example implementation of the **GenerateAudioData** helper method is shown below.
 
-若要在 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 中填入音訊資料，您必須能夠存取音訊框架的底層記憶體緩衝區。 若要這麼做，您必須在您的命名空間內新增下列程式碼，以初始化 **IMemoryBufferByteAccess** COM 介面。
+To populate an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) with audio data, you must get access to the underlying memory buffer of the audio frame. To do this you must initialize the **IMemoryBufferByteAccess** COM interface by adding the following code within your namespace.
 
 [!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
-下列程式碼顯示 **GenerateAudioData** 協助程式方法的範例實作，它可以建立 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 並填入音訊資料。
+The following code shows an example implementation of a **GenerateAudioData** helper method that creates an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) and populates it with audio data.
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
--   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
--   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
--   呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 介面的執行個體。
--   呼叫 [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506)，取得原始音訊緩衝區資料的指標並將它轉換為音訊資料的範例資料類型。
--   使用資料填滿緩衝區，並傳回 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 以便提交至音訊圖中。
+-   Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
+-   Initialize a new instance of [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), in the **Windows.Media** namespace, by passing in the desired buffer size to the constructor. The buffer size is the number of samples multiplied by the size of each sample.
+-   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Get an instance of the [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Get a pointer to raw audio buffer data by calling [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) and cast it to the sample data type of the audio data.
+-   Fill the buffer with data and return the [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) for submission into the audio graph.
 
-##  音訊框架輸出節點
+##  Audio frame output node
 
-音訊框架輸出節點可讓您使用所建立的自訂程式碼，接收和處理來自音訊圖的音訊資料輸出。 其中一個範例案例就是執行音訊輸出的訊號分析。 透過呼叫 [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233) 以建立 [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166)。
+An audio frame output node allows you to receive and process audio data output from the audio graph with custom code that you create. An example scenario for this is performing signal analysis on the audio output. Create an [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) by calling [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233).
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-當音訊圖已完成音訊資料的配量處理時，會引發 [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。 您可以在此事件的處理常式中存取音訊資料。
+The [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event is raised when the audio graph has completed processing a quantum of audio data. You can access the audio data from within the handler for this event.
 
 [!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
 
--   呼叫 [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171)，以取得填滿圖形中音訊資料的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 物件。
--   **ProcessFrameOutput** 協助程式方法的範例實作如下所示。
+-   Call [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) to get an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data from the graph.
+-   An example implementation of the **ProcessFrameOutput** helper method is shown below.
 
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
--   如上述的音訊框架輸入節點範例，您必須宣告 **IMemoryBufferByteAccess** COM 介面並設定您的專案允許不安全的程式碼，才能存取底層音訊緩衝區。
--   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
--   透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 以從音訊緩衝區取得 **IMemoryBufferByteAccess** COM 介面的執行個體。
--   透過呼叫 **IMemoryBufferByteAccess.GetBuffer** 以取得原始音訊緩衝區資料的指標，並將它轉換為音訊資料的範例資料類型。
+-   Like the audio frame input node example above, you will need to declare the **IMemoryBufferByteAccess** COM interface and configure your project to allow unsafe code in order to access the underlying audio buffer.
+-   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Get an instance of the **IMemoryBufferByteAccess** COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Get a pointer to raw audio buffer data by calling **IMemoryBufferByteAccess.GetBuffer** and cast it to the sample data type of the audio data.
 
-## 節點連線和副混音節點
+## Node connections and submix nodes
 
-所有輸入節點類型都會公開 **AddOutgoingConnection**方法，此方法會將節點所產生的音訊路由傳送至傳入方法中的節點。 下列範例會將 [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) 連接到 [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098)，這是可供在裝置的喇叭上播放音訊檔案的簡單設定。
+All input nodes types expose the **AddOutgoingConnection** method that routes the audio produced by the node to the node that is passed into the method. The following example connects an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098), which is a simple setup for playing an audio file on the device's speaker.
 
 [!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
-您可以建立從一個輸入節點到其他節點的多個連線。 下列範例會新增從 [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) 到 [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) 的另一個連線。 現在，音訊檔案的音訊會播放到裝置的喇叭，也會寫出至音訊檔案。
+You can create more than one connection from an input node to other nodes. The following example adds another connection from the [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133). Now, the audio from the audio file is played to the device's speaker and is also written out to an audio file.
 
 [!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-輸出節點也可以接收來自其他節點的多個連線。 下列範例會建立從 [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) 到 [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) 節點的連線。 因為輸出節點有來自檔案輸入節點和裝置輸入節點的連線，所以輸出會包含這兩個來源的音訊混合。 **AddOutgoingConnection** 提供的多載可讓您為通過連線的訊號指定增益值。
+Output nodes can also receive more than one connection from other nodes. In the following example a connection is made from a [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) to the [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) node. Because the output node has connections from the file input node and the device input node, the output will contain a mix of audio from both sources. **AddOutgoingConnection** provides an overload that lets you specify a gain value for the signal passing through the connection.
 
 [!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
-雖然輸出節點可以接受來自多個節點的連線，但您可以從一或多個節點建立訊號的中繼混音，再將混音傳遞至輸出。 例如，您可以設定層級或將效果套用至圖形中音訊訊號的子集。 若要這麼做，請使用 [**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247)。 您可以從一或多個輸入節點或其他副混音節點連接到某個副混音節點。 在下列範例中，會使用 [**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236) 建立新的副混音節點。 然後，會新增從檔案輸入節點和框架輸出節點至副混音節點的連線。 最後，副混音節點會連接到檔案輸出節點。
+Although output nodes can accept connections from multiple nodes, you may want to create an intermediate mix of signals from one or more nodes before passing the mix to an output. For example, you may want to set the level or apply effects to a subset of the audio signals in a graph. To do this, use the [**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247). You can connect to a submix node from one or more input nodes or other submix nodes. In the following example, a new submix node is created with [**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236). Then, connections are added from a file input node and a frame output node to the submix node. Finally, the submix node is connected to a file output node.
 
 [!code-cs[CreateSubmixNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
 
-## 開始和停止音訊圖節點
+## Starting and stopping audio graph nodes
 
-呼叫 [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 時，音訊圖會開始處理音訊資料。 每個節點類型都提供可導致個別節點開始或停止處理資料的 **Start** 和 **Stop** 方法。 呼叫 [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 時，在所有節點中處理的所有音訊都會停止 (不管個別節點的狀態為何)，但在音訊圖停止時可以設定每個節點的狀態。 例如，您可以在圖形停止時在個別節點上呼叫 **Stop**，然後再呼叫 **AudioGraph.Start**，而個別節點會維持在停止的狀態。
+When [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) is called, the audio graph begins processing audio data. Every node type provides **Start** and **Stop** methods that cause the individual node to start or stop processing data. When [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) is called, all audio processing in the all nodes is stopped regardless of the state of individual nodes, but the state of each node can be set while the audio graph is stopped. For example, you could call **Stop** on an individual node while the graph is stopped and then call **AudioGraph.Start**, and the individual node will remain in the stopped state.
 
-所有節點類型都會公開 **ConsumeInput** 屬性，若設定為 false，則可允許節點繼續音訊處理，但使它無法取用從其他節點輸入的任何音訊資料。
+All node types expose the **ConsumeInput** property that, when set to false, allows the node to continue audio processing but stops it from consuming any audio data being input from other nodes.
 
-所有節點類型都會公開 **Reset** 方法，該方法會導致節點捨棄目前在其緩衝區中的所有音訊資料。
+All node types expose the **Reset** method that causes the node to discard any audio data currently in its buffer.
 
-## 新增音訊效果
+## Adding audio effects
 
-音訊圖 API 可讓您將音訊效果新增到圖形中每一種類型的節點。 輸出節點、輸入節點和副混音節點都可擁有不限數量的音訊效果，但僅限於硬體的功能。下列範例示範如何將內建回音效果加入至副混音節點。
+The audio graph API allows you to add audio effects to every type of node in a graph. Output nodes, input nodes, and submix nodes can each have an unlimited number of audio effects, limited only by the capabilities of the hardware.The following example demonstrates adding the built-in echo effect to a submix node.
 
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
--   所有音訊效果都會實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044)。 每個節點都會公開 **EffectDefinitions** 屬性，以表示套用至該節點的效果清單。 將效果的定義物件新增至清單，即可新增該效果。
--   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 其中包括：
+-   All audio effects implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044). Every node exposes an **EffectDefinitions** property representing the list of effects applied to that node. Add an effect by adding it's definition object to the list.
+-   There are several effect definition classes that are provided in the **Windows.Media.Audio** namespace. These include:
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
     -   [**ReverbEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914313)
--   您可以建立自己的音訊效果以實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044)，然後將這些效果套用到音訊圖中的任何節點。
--   每個節點類型都會公開一個 **DisableEffectsByDefinition** 方法，以停用節點的 **EffectDefinitions** 清單中使用指定的定義新增的所有效果。 **EnableEffectsByDefinition** 會透過指定的定義啟用效果。
+-   You can create your own audio effects that implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and apply them to any node in an audio graph.
+-   Every node type exposes a **DisableEffectsByDefinition** method that disables all effects in the node's **EffectDefinitions** list that were added using the specified definition. **EnableEffectsByDefinition** enables the effects with the specified definition.
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

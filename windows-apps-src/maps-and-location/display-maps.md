@@ -1,29 +1,30 @@
 ---
-title: '顯示地圖的 2D、3D 和 Streetside 檢視'
-description: 藉由使用 MapControl 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。
+author: PatrickFarley
+title: 'Display maps with 2D, 3D, and Streetside views'
+description: Display customizable maps in your app by using the MapControl class. This topic also introduces aerial 3D and Streetside views.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ---
 
-# 顯示地圖的 2D、3D 和 Streetside 檢視
+# Display maps with 2D, 3D, and Streetside views
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-藉由使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。
+Display customizable maps in your app by using the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) class. This topic also introduces aerial 3D and Streetside views.
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 將地圖控制項新增至您的 app
+## Add the map control to your app
 
 
-藉由新增 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)，在 XAML 頁面上顯示地圖。 若要使用 **MapControl**，您必須在 XAML 頁面或您的程式碼中宣告 [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空間。 如果您從工具箱拖曳控制項，會自動新增此命名空間宣告。 如果您是手動將 **MapControl** 新增到 XAML 頁面，就必須在頁面頂端手動新增命名空間宣告。
+Display a map on a XAML page by adding a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). To use the **MapControl**, you must declare the [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) namespace in the XAML page or in your code. If you drag the control from the Toolbox, this namespace declaration is added automatically. If you add the **MapControl** to the XAML page manually, you must add the namespace declaration manually at the top of the page.
 
-下列範例顯示基本的地圖控制項，並設定讓地圖在除了接受觸控輸入之外，還能顯示縮放和傾斜控制項。 如需有關自訂地圖外觀的詳細資訊，請參閱[設定地圖](#mapconfig)。
+The following example displays a basic map control and configures the map to display the zoom and tilt controls in addition to accepting touch inputs. For more info about customizing the appearance of the map, see [Configure the map](#mapconfig).
 
-```xaml
+```xml
 <Page
     x:Class="MapsAndLocation1.DisplayMaps"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -46,7 +47,7 @@ ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 </Page>
 ```
 
-如果您是在程式碼中新增地圖控制項，就必須在程式碼檔案頂端手動宣告命名空間。
+If you add the map control in your code, you must declare the namespace manually at the top of the code file.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -60,19 +61,19 @@ MapControl2.MapServiceToken = "EnterYourAuthenticationKeyHere";
 pageGrid.Children.Add(MapControl2);
 ```
 
-## 取得及設定地圖驗證金鑰
+## Get and set a maps authentication key
 
 
-您必須先指定地圖驗證金鑰做為 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) 屬性的值，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地圖服務。 請在先前的範例中，使用您從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)取得的金鑰來取代 `EnterYourAuthenticationKeyHere`。 除非您指定地圖驗證金鑰，否則「**警告: 未指定 MapServiceToken**」文字會持續顯示在的控制項下方。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
+Before you can use [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services, you must specify the maps authentication key as the value of the [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) property. In the previous examples, replace `EnterYourAuthenticationKeyHere` with the key you get from the [Bing Maps Developer Center](https://www.bingmapsportal.com/). The text **Warning: MapServiceToken not specified** continues to appear below the control until you specify the maps authentication key. For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
-## 設定地圖的開始位置
+## Set a starting location for the map
 
 
-藉由在您的程式碼中指定 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 屬性，或在您的 XAML 標記中繫結該屬性，即可設定要在地圖上顯示的位置。 下列範例會顯示以西雅圖市為中心的地圖。
+Set the location to display on the map by specifying the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) in your code or by binding the property in your XAML markup. The following example displays a map with the city of Seattle as its center.
 
-**提示**：由於字串無法轉換成 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，因此您無法在 XAML 標記中指定 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 屬性的值，除非您使用資料繫結。 (這項限制也適用於 [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 附加屬性。)
+**Tip**  Since a string can't be converted to a [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), you can't specify a value for the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property in XAML markup unless you use data binding. (This limitation also applies to the [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) attached property.)
 
- 
+ 
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -88,14 +89,14 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-![地圖控制項的範例。](images/displaymapsexample1.png)
+![an example of the map control.](images/displaymapsexample1.png)
 
-## 設定地圖的目前位置
+## Set the current location of the map
 
 
-您的 app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法，才能存取使用者的位置。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的 app 存取其位置的權限之前，您的 app 將無法存取位置資料。
+Before your app can access the user’s location, your app must call the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method. At that time, your app must be in the foreground and **RequestAccessAsync** must be called from the UI thread. Until the user grants your app permission to their location, your app can't access location data.
 
-藉由使用 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 類別的 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 方法，即可取得裝置的目前位置 (如果位置可以使用)。 若要取得對應的 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，您可以使用地理位置坐標的 [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) 屬性。 如需詳細資訊，請參閱[取得目前位置](get-location.md)。
+Get the current location of the device (if location is available) by using the [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) method of the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) class. To obtain the corresponding [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), use the [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) property of the geoposition's geocoordinate. For more info, see [Get current location](get-location.md).
 
 ```csharp
 // Set your current location.
@@ -125,65 +126,65 @@ switch (accessStatus)
 }
 ```
 
-在地圖上顯示您的裝置位置時，請考慮顯示圖形，並根據位置資料的正確性設定縮放比例。 如需詳細資訊，請參閱[定位感知應用程式的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)。
+When you display your device's location on a map, consider displaying graphics and setting the zoom level based on the accuracy of the location data. For more info, see [Guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148).
 
-## 變更地圖的位置。
-
-
-若要變更顯示於 2D 地圖的位置，您可以呼叫 [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) 方法的其中一個多載。 使用該方法來為 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 和 [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) 指定新的值。 您也可以提供 [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列舉中的常數，以指定要在檢視變更時使用的選用動畫。
-
-若要變更 3D 地圖的位置，您可以改用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 如需詳細資訊，請參閱[顯示 3D 檢視](#display3d)。
-
-呼叫 [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) 方法，在地圖上顯示 [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) 的內容。 例如，您可以使用此方法在地圖上顯示一條路線或路線的一部分。 如需詳細資訊，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
-
-## 設定地圖
+## Change the location of the map
 
 
-設定下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，以設定地圖與其外觀。
+To change the location that appears in a 2D map, call one of the overloads of the [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) method. Use that method to specify new values for [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), and [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). You can also specify an optional animation to use when the view changes by providing a constant from the [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) enumeration.
 
-**地圖設定**
+To change the location of a 3D map, use the [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) method instead. For more info, see [Display 3D views](#display3d).
 
--   設定 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 屬性，將地圖的**中心**設定為某個地理點。
--   將 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 屬性設定為 1 到 20 之間的值，以設定地圖的**縮放層級**。
--   設定 [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 屬性以設定地圖的**旋轉**，其中 0 或 360 度 = 北、90 = 東、180 = 南、270 = 西。
--   將 [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) 屬性設定為 0 到 65 度之間的值，以設定地圖的**傾斜**。
+Call the [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) method to display the contents of a [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) on the map. Use this method, for example, to display a route or a portion of a route on the map. For more info, see [Display routes and directions on a map](routes-and-directions.md).
 
-**地圖外觀**
-
--   利用其中一個 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127) 常數設定 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性，以指定地圖的**類型** (例如，路面地圖或空照圖地圖)。
--   利用其中一個 [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003) 常數設定 [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) 屬性，將地圖的**色彩配置**設定為淺色或深色。
-
-設定下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，顯示地圖上的資訊。
-
--   啟用或停用 [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023) 屬性，在地圖上顯示**建築物與地標**。
--   啟用或停用 [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042) 屬性，在地圖上顯示**行人功能**，例如公共樓梯。
--   啟用或停用 [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055) 屬性，在地圖上顯示**交通**。
--   將 [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) 屬性設定成其中一個 [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749) 常數，以指定是否要在地圖上顯示**浮水印**。
--   將 [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) 新增到地圖控制項的 [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) 集合，以在地圖上顯示**開車或步行路線**。 如需詳細資訊和範例，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
-
-如需有關如何在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中顯示圖釘、圖形及 XAML 控制項的資訊，請參閱[在地圖上顯示興趣點 (POI)](display-poi.md)。
-
-## 顯示 Streetside 檢視
+## Configure the map
 
 
-Streetside 檢視是位置的街景透視，它會出現在地圖控制項上方。
+Configure the map and its appearance by setting the values of the following properties of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-![地圖控制項的 Streetside 檢視範例。](images/onlystreetside-730width.png)
+**Map settings**
 
-考慮「走進」Streetside 檢視的經驗，這不同於原先在地圖控制項中顯示的地圖。 例如，變更 Streetside 檢視中的位置並不會變更 Streetside 檢視「底下」的地圖位置或外觀。 關閉 Streetside 檢視之後 (方法是按一下控制項右上角的 **X**)，原始的地圖會保持不變。
+-   Set the **center** of the map to a geographic point by setting the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property.
+-   Set the **zoom level** of the map by setting the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) property to a value between 1 and 20.
+-   Set the **rotation** of the map by setting the [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) property, where 0 or 360 degrees = North, 90 = East, 180 = South, and 270 = West.
+-   Set the **tilt** of the map by setting the [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) property to a value between 0 and 65 degrees.
 
-顯示 Streetside 檢視：
+**Map appearance**
 
-1.  檢查 [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271) 以判斷裝置是否支援 Streetside 檢視。
-2.  如果支援 Streetside 檢視，請呼叫 [**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361) 以在指定位置附近建立 [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360)。
-3.  檢查 [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) 是否不是 Null，以判斷是否有找到附近的全景。
-4.  如果有找到附近的全景，請為地圖控制項的 [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) 屬性建立 [**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356)。
+-   Specify the **type** of map - for example, a road map or an aerial map - by setting the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property with one of the [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127) constants.
+-   Set the **color scheme** of the map to light or dark by setting the [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) property with one of the [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003) constants.
 
-本範例說明如何顯示類似先前影像的 Streetside 檢視。
+Show information on the map by setting the values of the following properties of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-**注意**：如果地圖控制項的比例太小，則不會出現概觀地圖。
+-   Display **buildings and landmarks** on the map by enabling or disabling the [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023) property.
+-   Display **pedestrian features** such as public stairs on the map by enabling or disabling the [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042) property.
+-   Display **traffic** on the map by enabling or disabling the [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055) property.
+-   Specify whether the **watermark** is displayed on the map by setting the [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) property to one of the [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749) constants.
+-   Display a **driving or walking route** on the map by adding a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the Map control. For more info and an example, see [Display routes and directions on a map](routes-and-directions.md).
 
- 
+For info about how to display pushpins, shapes, and XAML controls in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), see [Display points of interest (POI) on a map](display-poi.md).
+
+## Display Streetside views
+
+
+A Streetside view is a street-level perspective of a location that appears on top of the map control.
+
+![an example of a streetside view of the map control.](images/onlystreetside-730width.png)
+
+Consider the experience "inside" the Streetside view separate from the map originally displayed in the map control. For example, changing the location in the Streetside view does not change the location or appearance of the map "under" the Streetside view. After you close the Streetside view (by clicking the **X** in the upper right corner of the control), the original map remains unchanged.
+
+To display a Streetside view
+
+1.  Determine if Streetside views are supported on the device by checking [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271).
+2.  If Streetside view is supported, create a [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) near the specified location by calling [**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361).
+3.  Determine if a nearby panorama was found by checking if the [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) is not null
+4.  If a nearby panorama was found, create a [**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356) for the map control's [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) property.
+
+This example shows how to display a Streetside view similar to the previous image.
+
+**Note**  The overview map will not appear if the map control is sized too small.
+
+ 
 
 ```csharp
 private async void showStreetsideView()
@@ -219,26 +220,25 @@ private async void showStreetsideView()
 }
 ```
 
-## 顯示空照圖 3D 檢視
+## Display aerial 3D views
 
 
-藉由使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 類別，即可指定地圖的 3D 透視。 地圖場景代表在地圖中顯示的 3D 檢視。 [
-            **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 類別代表顯示這類檢視的相機位置。
+Specify a 3D perspective of the map by using the [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) class. The map scene represents the 3D view that appears in the map. The [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) class represents the position of the camera that would display such a view.
 
 ![](images/mapcontrol-techdiagram.png)
 
-若要讓地圖表面上的建築物和其他功能以 3D 方式顯現，請將地圖控制項的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性設定為 [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127)。 以下是使用 **Aerial3DWithRoads** 樣式的 3D 檢視範例。
+To make buildings and other features on the map surface appear in 3D, set the map control's [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property to [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127). This is an example of a 3D view with the **Aerial3DWithRoads** style.
 
-![3D 地圖檢視的範例。](images/only3d-730width.png)
+![an example of a 3d map view.](images/only3d-730width.png)
 
-顯示 3D 檢視
+To display a 3D view
 
-1.  檢查 [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265) 以判斷裝置是否支援 3D 檢視。
-2.  如果支援 3D 檢視，請將地圖控制項的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性設定為 [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127)。
-3.  使用眾多 **CreateFrom** 方法的其中之一 (例如 [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336) 和 [**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334)) 來建立 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 物件。
-4.  呼叫 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 以顯示 3D 檢視。 您也可以提供 [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列舉中的常數，以指定要在檢視變更時使用的選用動畫。
+1.  Determine if 3D views are supported on the device by checking [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265).
+2.  If 3D views is supported, set the map control's [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property to [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127).
+3.  Create a [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) object using one of the many **CreateFrom** methods, such as [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336) and [**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334).
+4.  Call [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) to display the 3D view. You can also specify an optional animation to use when the view changes by providing a constant from the [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) enumeration.
 
-本範例說明如何顯示 3D 檢視。
+This example shows how to display a 3D view.
 
 ```csharp
 private async void display3DLocation()
@@ -274,52 +274,43 @@ private async void display3DLocation()
 }
 ```
 
-## 取得位置與元素的相關資訊
+## Get info about locations and elements
 
 
-藉由呼叫下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 方法，即可取得地圖上位置的相關資訊。
+Get info about locations on the map by calling the following methods of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   [
-            **GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 取得與地圖控制項檢視區中指定的點對應的地理位置。
--   [
-            **GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 取得與指定的地理位置對應的地圖控制項檢視區中的點。
--   [
-            **IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 決定目前是否能在地圖控制項的檢視區中看見指定的地理位置。
--   [
-            **FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 取得地圖上位於地圖控制項檢視區中指定點的元素。
+-   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) method - Get the geographic location that corresponds to the specified point in the viewport of the Map control.
+-   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) method - Get the point in the viewport of the Map control that corresponds to the specified geographic location.
+-   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) method - Determine whether the specified geographic location is currently visible in the viewport of the Map control.
+-   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) method - Get the elements on the map located at the specified point in the viewport of the Map control.
 
-## 處理使用者互動及變更
+## Handle user interaction and changes
 
 
-藉由處理下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 事件，即可處理使用者在地圖上的輸入手勢。 請檢查 [**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090) 之 [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) 和 [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) 屬性的值，以取得手勢發生所在的地圖上地理位置及檢視區中實體位置的相關資訊。
+Handle user input gestures on the map by handling the following events of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Get info about the geographic location on the map and the physical position in the viewport where the gesture occurred by checking the values of the [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) and [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) properties of the [**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090).
 
 -   [**MapTapped**](https://msdn.microsoft.com/library/windows/apps/dn637038)
 -   [**MapDoubleTapped**](https://msdn.microsoft.com/library/windows/apps/dn637032)
 -   [**MapHolding**](https://msdn.microsoft.com/library/windows/apps/dn637035)
 
-藉由處理控制項的 [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) 事件，即可判斷地圖是正在載入，還是已完全載入。
+Determine whether the map is loading or completely loaded by handling the control's [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) event.
 
-請處理下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 事件，以處理使用者或應用程式變更地圖設定時所發生的變更。 [地圖的指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+Handle changes that happen when the user or the app changes the settings of the map by handling the following events of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
 -   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
 -   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
 -   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
 -   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
-## 相關主題
+## Related topics
 
-* [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [取得目前的位置](get-location.md)
-* [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Get current location](get-location.md)
+* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

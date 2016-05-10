@@ -1,87 +1,78 @@
 ---
+author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: ListView 和 GridView 資料虛擬化
-description: 透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。
+title: ListView and GridView data virtualization
+description: Improve ListView and GridView performance and startup time through data virtualization.
 ---
-# ListView 和 GridView 資料虛擬化
+# ListView and GridView data virtualization
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**注意** 如需詳細資訊，請參閱 //build/ 工作階段[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
+**Note**  For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
-透過資料虛擬化改善 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的效能和啟動時間。 如需 UI 虛擬化、減少元素和漸進式更新項目的資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
+Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through data virtualization. For UI virtualization, element reduction, and progressive updating of items, see [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
 
-資料虛擬化方法 對於大型而無法或不應該同時儲存在記憶體的資料集是必要的。 您將初始部分載入記憶體 (從本機磁碟機、網路或雲端) 並將 UI 虛擬化套用到這個局部的資料集。 您可以稍後以遞增的方式載入資料，或視需要從主要資料集的任意點 (隨機存取) 載入。 資料虛擬化是否適合您取決於許多因素。
+A method of data virtualization is needed for a data set that is so large that it cannot or should not all be stored in memory at one time. You load an initial portion into memory (from local disk, network, or cloud) and apply UI virtualization to this partial data set. You can later load data incrementally, or from arbitrary points in the master data set (random access), on demand. Whether data virtualization is appropriate for you depends on many factors.
 
--   資料集大小
--   每個項目大小
--   資料集來源 (本機磁碟、網路或雲端)
--   app 的整體記憶體耗用量
+-   The size of your data set
+-   The size of each item
+-   The source of the data set (local disk, network, or cloud)
+-   The overall memory consumption of your app
 
-**注意** 有一個功能預設會針對 ListView 和 GridView 加以啟用，以便在使用者快速移動瀏覽/捲動時顯示暫時性預留位置視覺效果。 載入資料時，會使用您的項目範本來取代這些預留位置視覺效果。 您可以將 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) 設為 False 來關閉該功能，但是如果您這樣做，則建議您使用 x:Phase 屬性，逐漸轉譯項目範本中的元素。 請參閱[逐漸更新 ListView 與 GridView 項目](optimize-gridview-and-listview.md#update-items-incrementally)。
+**Note**  Be aware that a feature is enabled by default for ListView and GridView that displays temporary placeholder visuals while the user is panning/scrolling quickly. As data is loaded, these placeholder visuals are replaced with your item template. You can turn the feature off by setting [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) to false, but if you do so then we recommend that you use the x:Phase attribute to progressively render the elements in your item template. See [Update ListView and GridView items progressively](optimize-gridview-and-listview.md#update-items-incrementally).
 
-以下是更多關於遞增和隨機存取資料虛擬化技術的詳細資訊。
+Here are more details about the incremental and random-access data virtualization techniques.
 
-## 遞增資料虛擬化
+## Incremental data virtualization
 
-遞增資料虛擬化會依序載入資料。 [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 使用遞增資料虛擬化，可能用來檢視數百萬個項目的集合，但最初只會載入 50 個項目。 當使用者移動瀏覽/捲動時，會載入接下來的 50 個項目。 載入項目時，捲軸的捲動方塊會減少大小。 針對這種資料虛擬化類型，您使用實作這些介面的資料來源類別。
+Incremental data virtualization loads data sequentially. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses incremental data virtualization may be used to view a collection of a million items, but only 50 items are loaded initially. As the user pans/scrolls, the next 50 are loaded. As items are loaded, the scroll bar's thumb decreases in size. For this type of data virtualization you write a data source class that implements these interfaces.
 
--   [**IList**](T:System.Collections.IList)
--   [
-            **INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
-像這樣的資料來源是可以持續擴充的記憶體內清單。 項目控制項會要求項目使用標準 [**IList**](T:System.Collections.IList) 索引子和計數屬性。 計數應該代表項目在本機的數量，而不是資料集的實際大小。
+A data source like this is an in-memory list that can be continually extended. The items control will ask for items using the standard [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) indexer and count properties. The count should represent the number of items locally, not the true size of the dataset.
 
-當項目控制項接近現有資料的結尾時，它會呼叫 [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/Hh701916-hasmoreitems)。 如果傳回 **true**，則它會呼叫 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701916-loadmoreitemsasync) 傳遞要載入的建議項目數。 根據您載入資料的來源位置 (本機磁碟機、網路或雲端)，您可以選擇載入與建議不同的項目數。 例如，如果您的服務支援 50 個項目的批次，但是項目控制項只要求 10 個，則您可以載入 50 個。 從後端載入資料、將它新增到您的清單，以及透過 [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知，項目控制項就能知道新的項目。 也會傳回您實際載入的項目計數。 如果載入比建議還少的項目，或項目控制項臨時被進一步移動瀏覽/捲動，您的資料來源會再次呼叫更多項目，且循環會繼續。 若要深入了解，您可以下載 Windows 8.1 的 [XAML 資料繫結範例](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)，並在 Windows 10 app 中重複使用其原始程式碼。
+When the items control gets close to the end of the existing data, it will call [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). If you return **true**, then it will call [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) passing an advised number of items to load. Depending on where you're loading data from (local disk, network, or cloud), you may choose to load a different number of items than that advised. For example, if your service supports batches of 50 items but the items control only asks for 10 then you can load 50. Load the data from your back end, add it to your list, and raise a change notification via [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new items. Also return a count of the items you actually loaded. If you load fewer items than advised, or the items control has been panned/scrolled even further in the interim, then your data source will be called again for more items and the cycle will continue. You can learn more by downloading the [XAML data binding sample](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) for Windows 8.1 and re-using its source code in your Windows 10 app.
 
-## 隨機存取資料虛擬化
+## Random access data virtualization
 
-隨機存取資料虛擬化允許從資料集的任意點載入。 [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 使用隨機存取資料虛擬化，用來檢視數百萬個項目的集合，可以載入 100,000 – 100,050 個項目。 如果使用者接著移動到清單開頭，控制項就會載入項目 1 – 50。 捲軸的捲動方塊隨時會表示 **ListView** 包含數百萬個項目。 捲軸的捲動方塊位置是可見項目在集合內整個資料集中的相對位置。 這種類型的資料虛擬化可以大幅減少記憶體需求和集合的載入時間。 若要啟用，您必須撰寫可隨選擷取資料和管理本機快取及實作這些介面的資料來源類別。
+Random access data virtualization allows loading from an arbitrary point in the data set. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses random access data virtualization, used to view a collection of a million items, can load the items 100,000 – 100,050. If the user then moves to the beginning of the list, the control loads items 1 – 50. At all times, the scroll bar's thumb indicates that the **ListView** contains a million items. The position of the scroll bar's thumb is relative to where the visible items are located in the collection's entire data set. This type of data virtualization can significantly reduce the memory requirements and load times for the collection. To enable it you need to write a data source class that fetches data on demand and manages a local cache and implements these interfaces.
 
--   [**IList**](T:System.Collections.IList)
--   [
-            **INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
--   (選擇性) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
--   (選擇性) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
+-   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   (Optionally) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
+-   (Optionally) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
 
-[
-            **IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 提供控制項正在使用哪些項目的資訊。 項目控制項會在其檢視變更時呼叫這個方法，並且將會包含兩個範圍集。
+[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) provides information on which items the control is actively using. The items control will call this method whenever its view is changing, and will include these two sets of ranges.
 
--   檢視區中的項目集合。
--   控制項使用的非虛擬化項目集合可能不在檢視區中。
-    -   項目控制項在檢視區周圍保留的項目緩衝區，讓觸控移動瀏覽流暢。
-    -   焦點的項目。
-    -   第一個項目。
+-   The set of items that are in the viewport.
+-   A set of non-virtualized items that the control is using that may not be in the viewport.
+    -   A buffer of items around the viewport that the items control keeps so that touch panning is smooth.
+    -   The focused item.
+    -   The first item.
 
-藉由實作 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)，您的資料來源知道要擷取和快取哪些項目，以及何時從不再需要的快取資料刪除。 **IItemsRangeInfo** 使用 [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) 物件，根據其集合中的索引來描述一組項目。 這是為何它不使用項目指標，指標可能不正確或不穩定。 **IItemsRangeInfo** 是設計僅讓項目控制項中的單一執行個體使用，因為它仰賴該項目控制項的狀態資訊。 如果多個項目控制項需要存取相同資料，則您針對每個項目將會需要資料來源的個別執行個體。 它們可以共用通用快取，但是從快取清除的邏輯會變得更複雜。
+By implementing [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) your data source knows what items need to be fetched and cached, and when to prune from the cache data that is no longer needed. **IItemsRangeInfo** uses [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) objects to describe a set of items based on their index in the collection. This is so that it doesn't use item pointers, which may not be correct or stable. **IItemsRangeInfo** is designed to be used by only a single instance of an items control because it relies on state information for that items control. If multiple items controls need access to the same data then you will need a separate instance of the data source for each. They can share a common cache, but the logic to purge from the cache will be more complicated.
 
-以下是您隨機存取資料虛擬化資料來源的基本策略。
+Here's the basic strategy for your random access data virtualization data source.
 
--   當要求項目時
-    -   如果您可在記憶體中使用，則將它傳回。
-    -   如果您沒有，則傳回 Null 或預留位置項目。
-    -   使用要求項目 (或從 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的範圍資訊) 以了解所需的項目，並以非同步方式從後端擷取項目的資料。 擷取資料、透過 [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知之後，項目控制項就能知道新的項目。
--   (選擇性) 當項目控制項的檢視區變更時，透過實作 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)，找出需要您的資料來源的哪些項目。
+-   When asked for an item
+    -   If you have it available in memory, then return it.
+    -   If you don’t have it, then return either null or a placeholder item.
+    -   Use the request for an item (or the range information from [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) to know which items are needed, and to fetch data for items from your back end asynchronously. After retrieving the data, raise a change notification via [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new item.
+-   (Optionally) as the items control's viewport changes, identify what items are needed from your data source via your implementation of [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
 
-除此之外，載入資料項目的時機、載入多少，以及在記憶體中保留哪些項目的策略，取決於您的 app。 要記住的一些一般考量：
+Beyond that, the strategy for when to load data items, how many to load, and which items to keep in memory is up to your application. Some general considerations to keep in mind:
 
--   提出非同步要求的資料；不要封鎖 UI 執行緒。
--   在您擷取項目的批次中尋找大小的甜蜜點。 偏好厚重，不愛小巧。 量不小卻要進行太多小型要求；量不大卻要花這麼久的時間擷取。
--   請考量您要同時擱置多少要求。 一次執行一個是比較容易，但是如果往返時間長則會太慢。
--   您可以取消資料的要求嗎？
--   如果使用裝載的服務，每個交易是否需要費用？
--   當查詢結果變更時，服務會提供哪種通知？ 如果項目插入索引 33，您是否會知道？ 如果您的服務根據金鑰加位移支援查詢，可能比只使用索引更好。
--   您想要在預先擷取項目中擁有什麼樣的智慧？ 您是否要嘗試和追蹤捲動的方向和速度，以預測所需的項目？
--   您對於清除快取的積極程度？ 這是記憶體與體驗之間的取捨問題。
+-   Make asynchronous requests for data; don't block the UI thread.
+-   Find the sweet spot in the size of the batches you fetch items in. Prefer chunky to chatty. Not so small that you make too many small requests; not too large that they take too long to retrieve.
+-   Consider how many requests you want to have pending at the same time. Performing one at a time is easier, but it may be too slow if turnaround time is high.
+-   Can you cancel requests for data?
+-   If using a hosted service, is there a cost per transaction?
+-   What kind of notifications are provided by the service when the results of a query are changed? Will you know if an item is inserted at index 33? If your service supports queries based on a key-plus-offset, that may be better than just using an index.
+-   How smart do you want to be in pre-fetching items? Are you going to try and track the direction and velocity of scrolling to predict which items are needed?
+-   How aggressive do you want to be in purging the cache? This is a tradeoff of memory versus experience.
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

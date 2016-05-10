@@ -1,15 +1,16 @@
 ---
-title: 遊戲移植指南
-description: 提供將現有的遊戲移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。
+author: mtoepke
+title: Game porting guides
+description: Provides guides for porting your existing games to Direct3D 11, Universal Windows Platform (UWP), and Windows 10.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ---
 
-# 遊戲移植指南
+# Game porting guides
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-提供將現有的遊戲移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。
+Provides guides for porting your existing games to Direct3D 11, Universal Windows Platform (UWP), and Windows 10.
 
 <table>
 <colgroup>
@@ -18,37 +19,32 @@ ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Port from DirectX 9 to Universal Windows Platform](porting-your-directx-9-game-to-windows-store.md)</p></td>
-<td align="left"><p>本節包含適用於將 DirectX 9 遊戲移植到 UWP 的文章、概觀及逐步解說。</p></td>
+<td align="left"><p>This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to UWP.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Port from OpenGL ES 2.0 to Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)</p></td>
-<td align="left"><p>包含適用於將 OpenGL ES 2.0 圖形管線移植到 Direct3D 11 與 Windows 執行階段的文章、概觀及逐步解說。</p></td>
+<td align="left"><p>Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+ 
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

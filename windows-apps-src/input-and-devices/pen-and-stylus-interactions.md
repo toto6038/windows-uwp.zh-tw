@@ -1,62 +1,51 @@
 ---
-Description: 建置通用 Windows 平台 (UWP) app，支援來自畫筆和手寫筆裝置的自訂互動，包括適用於自然書寫與繪圖體驗的數位筆墨。
-title: 畫筆和手寫筆互動
+author: Karl-Bridge-Microsoft
+Description: Build Universal Windows Platform (UWP) apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
+title: Pen and stylus interactions in UWP apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
-label: 畫筆和手寫筆
+label: Pen and stylus interactions in UWP apps
 template: detail.hbs
+keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 ---
 
-# 畫筆和手寫筆互動
+# Pen and stylus interactions in UWP apps
 
+Optimize your Universal Windows Platform (UWP) app for pen input to provide both standard [**pointer device**](https://msdn.microsoft.com/library/windows/apps/br225633) functionality and the best Windows Ink experience for your users.
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+> Note: This topic focuses on the Windows Ink platform. See [Handle pointer input](handle-pointer-input.md) for general pointer input handling (similar to mouse, touch, and touchpad).
 
-針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app 設計，並獲得預設的基本手寫筆支援。
+![touchpad](images/input-patterns/input-pen.jpg)
 
-UWP app 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方式手寫筆記、繪圖以及註解。 這個平台支援擷取數位板輸入的筆跡資料、產生筆跡資料、將資料轉譯成輸出裝置上的筆跡筆觸、管理筆跡資料，以及執行手寫辨識。
-
-![觸控板](images/input-patterns/input-pen.jpg)
-
-
-**重要 API**
+**Important APIs**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 -   [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
+The Windows Ink platform, together with a pen device, provides a natural way to create digital handwritten notes, drawings, and annotations. The platform supports capturing digitizer input as ink data, generating ink data, managing ink data, rendering ink data as ink strokes on the output device, and converting ink to text through handwriting recognition.
 
-除了做為[**指標裝置**](https://msdn.microsoft.com/library/windows/apps/br225633) (類似滑鼠和觸控式)，畫筆/手寫筆通常會與直接在螢幕上使用數位筆跡進行書寫或繪圖相關聯。
+In addition to capturing the basic position and movement of the pen as the user writes or draws, your app can also track and collect the varying amounts of pressure used throughout a stroke. This information, along with settings for pen tip shape, size, and rotation, ink color, and purpose (plain ink, erasing, highlighting, and selecting), enables you to provide user experiences that closely resemble writing or drawing on paper with a pen, pencil, or brush.
 
-通用 Windows 平台 (UWP) 筆跡平台搭配畫筆/手寫筆裝置之後，使用者就可以自然的方式建立數位手寫筆記、繪圖及註解。 此平台支援擷取數位板輸入做為筆墨資料、產生筆墨資料、管理筆墨資料、將筆墨資料轉譯為筆劃，以及透過手寫辨識將筆墨轉換為文字。
+**Note**  Your app can also support ink input from other pointer-based devices, including touch digitizers and mouse devices. 
 
-除了在使用者書寫或繪圖時抓取畫筆的基本位置和移動，您的 app 也可以追蹤並收集整個筆劃中所使用的壓力變動量。 此資訊以及適用於筆尖形狀、大小及旋轉、筆墨色彩和用途 (一般筆墨、清除、反白顯示及選取) 的設定，可讓您提供非常類似在紙上使用筆、鉛筆或筆刷書寫或繪圖的使用者經驗。
+The ink platform is very flexible. It is designed to support various levels of functionality, depending on your requirements.
 
-**注意**：您的 app 也可以支援來自其他指標型裝置的筆跡輸入，包括觸控數位板和滑鼠裝置。
+There are three components to the ink platform:
 
- 
+-   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) - A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke.
 
-筆跡平台的彈性非常大。 根據您的需求，它是專為支援各種不同層級的功能而設計。
+-   [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) - A code-behind object, instantiated along with an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control (exposed through the [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) property). This object provides all default inking functionality exposed by the **InkCanvas**, along with a comprehensive set of APIs for additional customization and personalization.
 
-有三個適用於筆跡平台的元件：
+-   [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) - Enables the rendering of ink strokes onto the designated Direct2D device context of a Universal Windows app, instead of the default [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control. This enables full customization of the inking experience.
 
--   [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) - XAML UI 平台控制項，此控制項預設會接收來自畫筆的所有輸入，並顯示為筆墨筆劃或擦去筆劃。
-
--   [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) - 程式碼後置物件，連同 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項 (透過 [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性所公開) 進行具現化。 這個物件提供 **InkCanvas** 公開的所有預設筆墨功能，以及一組完整的 API 來進行其他自訂和個人化。
-
--   [
-            **IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) - 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項。 這樣就能完整自訂筆墨體驗。
-
-## <span id="inkcanvas"> </span> <span id="INKCANVAS"> </span>利用 InkCanvas 的基本筆墨功能
+## <span id="inkcanvas"></span><span id="INKCANVAS"></span>Basic inking with InkCanvas
 
 
-針對基本筆墨功能，只需在頁面上的任何地方放置 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 即可。
+For basic inking functionality, just place an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) anywhere on a page.
 
-[
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 僅支援來自畫筆的筆墨輸入。 輸入是使用適用於色彩和粗細的預設設定轉譯為筆墨筆劃，或可視為筆墨橡皮擦 (若輸入是來自使用擦掉按鈕進行修改的橡皮擦頂端或筆尖時)。
+The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) supports ink input only from a pen. The input is either rendered as an ink stroke using default settings for color and thickness, or treated as a stroke eraser (when input is from an eraser tip or the pen tip modified with an erase button).
 
-在這個範例中，[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 會重疊背景影像。
+In this example, an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) overlays a background image.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -77,51 +66,29 @@ UWP app 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方
 </Grid>
 ```
 
-這系列的影像會顯示這個 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項轉譯畫筆輸入的方式。
+This series of images shows how pen input is rendered by this [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/ink_basic_1_small.png" alt="The blank InkCanvas with a background image" /></td>
-<td align="left"><img src="images/ink_basic_2_small.png" alt="The InkCanvas with ink strokes" /></td>
-<td align="left"><img src="images/ink_basic_3_small.png" alt="The InkCanvas with one stroke erased" /></td>
-</tr>
-<tr class="even">
-<td align="left">含有背景影像的空白 [<strong>InkCanvas</strong>] (https://msdn.microsoft.com/library/windows/apps/dn858535)。</td>
-<td align="left">含有筆墨筆劃的 [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535)。</td>
-<td align="left">已清除一個筆劃的 [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535)。
-<p>請注意，此功能會擦掉整個筆劃，而不是擦掉部分筆劃。</p></td>
-</tr>
-</tbody>
-</table>
+| ![The blank InkCanvas with a background image](images/ink_basic_1_small.png) | ![The InkCanvas with ink strokes](images/ink_basic_2_small.png) | ![The InkCanvas with one stroke erased](images/ink_basic_3_small.png) |
+| --- | --- | ---|
+| The blank [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with a background image. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with ink strokes. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with one stroke erased (note how erase operates on an entire stroke, not a portion). |
 
- 
+The inking functionality supported by the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control is provided by a code-behind object called the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
-[
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項支援的筆墨功能是由名為 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的程式碼後置物件所提供。
+For basic inking, you don't have to concern yourself with the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011). However, to customize and configure inking behavior on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), you must access its corresponding **InkPresenter** object.
 
-針對基本的筆墨功能，您不需要考慮使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 不過，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自訂和設定筆墨行為，您就必須存取其對應的 **InkPresenter** 物件。
-
-## <span id="inkpresenter"> </span> <span id="INKPRESENTER"> </span>使用 InkPresenter 的基本自訂
+## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>Basic customization with InkPresenter
 
 
-[
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 物件是利用每個 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項來具現化。
+An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) object is instantiated with each [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-除了提供其對應 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項的所有預設筆墨行為，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 也會提供一組完整的 API 來進行額外的筆劃自訂。 這包括筆劃屬性、支援的輸入裝置類型，以及輸入是否是由物件所處理或者會傳遞到 app。
+Along with providing all default inking behaviors of its corresponding [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control, the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) provides a comprehensive set of APIs for additional stroke customization. This includes stroke properties, supported input device types, and whether input is processed by the object or passed to the app.
 
-**注意**  
-[
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不會直接具現化。 而是透過 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性來存取。
+**Note**  
+The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) cannot be instantiated directly. Instead, it is accessed through the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) property of the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
- 
+ 
 
-我們會在此處設定[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
+Here, we configure the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to interpret input data from both pen and mouse as ink strokes. We also set some initial ink stroke attributes used for rendering strokes to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 ```CSharp
 public MainPage()
@@ -142,9 +109,9 @@ public MainPage()
 }
 ```
 
-您可以動態設定筆墨筆劃屬性，以適應使用者的喜好設定或 app 需求。
+Ink stroke attributes can be set dynamically to accommodate user preferences or app requirements.
 
-我們將在此處讓使用者可從筆墨色彩清單中進行選擇。
+Here, we let a user choose from a list of ink colors.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -177,7 +144,7 @@ public MainPage()
 </Grid>
 ```
 
-接著處理選取色彩的變更，並據此更新筆墨筆劃屬性。
+We then handle changes to the selected color and update the ink stroke attributes accordingly.
 
 ```CSharp
 // Update ink stroke color for new strokes.
@@ -208,38 +175,36 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 }
 ```
 
-這些影像說明 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 如何處理和自訂畫筆輸入。
+These images shows how pen input is processed and customized by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
-|                                                                                      |                                                                                          |
-|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-basic-custom-1-small.png) | ![含有使用者選取的紅色筆墨筆劃的 InkCanvas](images/ink-basic-custom-2-small.png) |
-| 含有預設黑色筆墨筆劃的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)        | 含有使用者選取的紅色筆墨筆劃的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)        |
+| ![the inkcanvas with default black ink strokes](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
+| --- | -- |
+| The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with default black ink strokes. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with user selected red ink strokes. |
 
- 
+ 
 
-若要提供筆墨和擦掉之後的功能 (例如選取筆劃)，您的 app 必須針對 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 識別出未經處理即可傳入的特定輸入，讓您的 app 來處理。
+To provide functionality beyond inking and erasing, such as stroke selection, your app must identify specific input for the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to pass through unprocessed for handling by your app.
 
-## <span id="passthrough"> </span> <span id="PASSTHROUGH"> </span>傳入輸入以進行進階處理
+## <span id="passthrough"></span><span id="PASSTHROUGH"></span>Pass-through input for advanced processing
 
 
-根據預設，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會將所有輸入處理為筆墨筆劃或擦去筆劃。 這包括透過次要硬體能供性所修改的輸入，例如畫筆筆身按鈕、滑鼠右鍵按鈕或類似按鈕。
+By default, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) processes all input as either an ink stroke or an erase stroke. This includes input modified by a secondary hardware affordance such as a pen barrel button, a right mouse button, or similar.
 
-使用這些次要能供性時，使用者通常會預期一些額外的功能或已修改的行為。
+When using these secondary affordances, users typically expect some additional functionality or a modified behavior.
 
-在某些情況下，您可能需要公開適用於畫筆的基本筆墨功能，而不需次要能供性 (通常不會與筆尖相關聯的功能)、其他輸入裝置類型或額外功能，或者根據 App UI 中的使用者選取項目來修改的行為。
+In some cases, you might need to expose basic ink functionality for pens without secondary affordances (functionality not usually associated with the pen tip), other input device types, or additional functionality, or modified behavior, based on a user selection in your app's UI.
 
-若要支援這一點，可設定 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來讓特定的輸入保持未處理狀態。 這個未處理的輸入接著會傳入您的 app 進行處理。
+To support this, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) can be configured to leave specific input unprocessed. This unprocessed input is then passed through to your app for processing.
 
-下列程式碼範例會逐步解說如何在使用畫筆筆身按鈕 (或滑鼠右鍵按鈕) 修改輸入時啟用筆劃選項的方法。
+The following code example steps through how to enable stroke selection when input is modified with a pen barrel button (or right mouse button).
 
-在這個範例中，我們使用 MainPage.xaml 和 MainPage.xaml.cs 檔案來裝載所有程式碼。
+For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host all code.
 
-1.  首先，在 MainPage.xaml 中設定 UI。
+1.  First, we set up the UI in MainPage.xaml.
 
-    我們將在此處新增畫布 (位於 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 下方) 來繪製選取筆劃。 使用個別層級來繪製選取筆劃，讓 **InkCanvas** 及其內容保持原貌。
+    Here, we add a canvas (below the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)) to draw the selection stroke. Using a separate layer to draw the selection stroke leaves the **InkCanvas** and its content untouched.
 
-    ![含有基礎選取項目畫布的空白 InkCanvas](images/ink-unprocessed-1-small.png)
-
+    ![the blank inkcanvas with an underlying selection canvas](images/ink-unprocessed-1-small.png)
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -262,8 +227,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     </Grid>
 ```
 
-2.  在 MainPage.xaml.cs 中，我們會宣告數個全域變數，持續參考各個層面的 UI 選取項目。 具體而言，選取套索筆劃和週框會將選取的筆劃反白顯示。
-
+2.  In MainPage.xaml.cs, we declare a couple of global variables for keeping references to aspects of the selection UI. Specifically, the selection lasso stroke and the bounding rectangle that highlights the selected strokes.
 ```    CSharp
 // Stroke selection tool.
     private Polyline lasso;
@@ -271,16 +235,15 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     private Rect boundingRect;
 ```
 
-3.  接下來，我們會設定 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃，並設定一些初始的筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
+3.  Next, we configure the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to interpret input data from both pen and mouse as ink strokes, and set some initial ink stroke attributes used for rendering strokes to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-    最重要的是，我們會使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 的 **InputProcessingConfiguration.RightDragAction** 值來指定。
+    Most importantly, we use the [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) property of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to indicate that any modified input should be processed by the app. Modified input is specified by assigning **InputProcessingConfiguration.RightDragAction** a value of [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760).
 
-    接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件指派接聽程式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入。 所有的選取功能都是在這些事件的處理常式中實作的。
+    We then assign listeners for the unprocessed [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711), and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) events passed through by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). All selection functionality is implemented in the handlers for these events.
 
-    最後，會針對 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) 和 [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) 事件指派接聽程式 。 如果開始新的筆劃或擦掉了現有的筆劃，我們就會使用這些事件的處理常式來清除 UI 選取項目。
+    Finally, we assign listeners for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) events of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
-    ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-unprocessed-2-small.png)
-
+    ![the inkcanvas with default black ink strokes](images/ink-unprocessed-2-small.png)
 ```    CSharp
 public MainPage()
     {
@@ -324,12 +287,11 @@ public MainPage()
     }
 ```
 
-4.  接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件定義處理常式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入。
+4.  We then define handlers for the unprocessed [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711), and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) events passed through by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
-    所有的選取功能都是在這些處理常式中實作的，包括套索筆劃和週框。
+    All selection functionality is implemented in these handlers, including the lasso stroke and the bounding rectangle.
 
-    ![選取套索](images/ink-unprocessed-3-small.png)
-
+    ![the selection lasso](images/ink-unprocessed-3-small.png)
 ```    CSharp
 // Handle unprocessed pointer events from modifed input.
     // The input is used to provide selection functionality.
@@ -374,10 +336,9 @@ public MainPage()
     }
 ```
 
-5.  為了推斷出 PointerReleased 事件處理常式，我們清除了所有內容的選取項目層級 (套索筆劃)，然後在套索區域所圍繞的筆墨筆劃四周繪製單一週框。
+5.  To conclude the PointerReleased event handler, we clear the selection layer of all content (the lasso stroke) and then draw a single bounding rectangle around the ink strokes encompassed by the lasso area.
 
-    ![選取週框](images/ink-unprocessed-4-small.png)
-
+    ![the selection bounding rect](images/ink-unprocessed-4-small.png)
 ```    CSharp
 // Draw a bounding rectangle, on the selection canvas, encompassing 
     // all ink strokes within the lasso area.
@@ -409,10 +370,9 @@ public MainPage()
     }
 ```
 
-6.  最後，會針對 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) 和 [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) InkPresenter 事件定義處理常式。
+6.  Finally, we define handlers for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) InkPresenter events.
 
-    每當偵測到新的筆劃時，這兩者只需要呼叫相同的清理函式來清除目前的選取範圍。
-
+    These both just call the same cleanup function to clear the current selection whenever a new stroke is detected.
 ```    CSharp
 // Handle new ink or erase strokes to clean up selection UI.
     private void StrokeInput_StrokeStarted(
@@ -428,8 +388,7 @@ public MainPage()
     }
 ```
 
-7.  以下這個函式會在開始新的筆劃或清除現有的筆劃時，從選取的畫布中移除所有 UI 選取項目。
-
+7.  Here's the function to remove all selection UI from the selection canvas when a new stroke is started or an existing stroke is erased.
 ```    CSharp
 // Clean up selection UI.
     private void ClearSelection()
@@ -452,21 +411,21 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"> </span> <span id="IINKD2DRENDERER"> </span>轉譯自訂的筆墨
+## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>Custom ink rendering
 
 
-根據預設，筆墨輸入是在低延遲背景執行緒上處理，並在其繪製期間轉譯為「濕潤」狀態。 完成筆劃 (拿起畫筆或手指，或是放開滑鼠按鈕) 時，即會在 UI 執行緒上處理該筆劃，並以「烘乾」狀態轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 層級 (在應用程式內容上方，並取代濕潤的筆墨)。
+By default, ink input is processed on a low-latency background thread and rendered "wet" as it is drawn. When the stroke is completed (pen or finger lifted, or mouse button released), the stroke is processed on the UI thread and rendered "dry" to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) layer (above the application content and replacing the wet ink).
 
-筆跡平台可讓您覆寫這個行為，並以自訂烘乾筆墨輸入完整自訂筆墨經驗。
+The ink platform enables you to override this behavior and completely customize the inking experience by custom drying the ink input.
 
-自訂烘乾必須要有 [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) 物件才能管理筆墨輸入，並將它轉譯到通用 Windows app 的 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項。
+Custom drying requires an [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) object to manage the ink input and render it to the Direct2D device context of your Universal Windows app, instead of the default [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-藉由呼叫 [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (在載入 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 之前)，app 會建立 [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) 物件，來自訂如何將筆墨筆劃以烘乾狀態轉譯到 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 或 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 例如，筆墨筆劃會被點陣化並整合到應用程式內容，而不是做為個別的 **InkCanvas** 層。
+By calling [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (before the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) is loaded), an app creates an [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) object to customize how an ink stroke is rendered dry to a [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) or [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). For example, an ink stroke could be rasterized and integrated into application content instead of as a separate **InkCanvas** layer.
 
-如需這項功能的完整範例，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。
+For a full example of this functionality, see the [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314) .
 
 
-## 本節中的其他文章 
+## Other articles in this section 
 <table>
 <colgroup>
 <col width="50%" />
@@ -474,52 +433,49 @@ public MainPage()
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Recognize ink strokes](convert-ink-to-text.md)</p></td>
-<td align="left"><p>使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。</p></td>
+<td align="left"><p>Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Store and retrieve ink strokes](save-and-load-ink.md)</p></td>
-<td align="left"><p>使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。</p></td>
+<td align="left"><p>Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>Related articles
 
 
-* [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
-**範例**
-* [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**封存範例**
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
 
- 
+**Samples**
+* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+ 
 
-
-
+ 
 
 
-<!--HONumber=Mar16_HO1-->
 
 

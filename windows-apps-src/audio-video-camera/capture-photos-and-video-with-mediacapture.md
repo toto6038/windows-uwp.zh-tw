@@ -1,329 +1,317 @@
 ---
+author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: 本文描述使用 MediaCapture API 擷取相片和視訊的步驟，包括初始化和關閉 MediaCapture 以及處理裝置方向的變更。
-title: 使用 MediaCapture 擷取相片和視訊
+description: This article describes the steps for capturing photos and video using the MediaCapture API, including initializing and shutting down the MediaCapture and handling changes in device orientation.
+title: Capture photos and video with MediaCapture
 ---
 
-# 使用 MediaCapture 擷取相片和視訊
+# Capture photos and video with MediaCapture
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-此文章說明使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API 擷取相片和視訊的步驟，包括初始化和關閉 **MediaCapture** 以及處理裝置方向的變更。
+This article describes the steps for capturing photos and video using the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API, including initializing and shutting down the **MediaCapture** and handling changes in device orientation.
 
-提供的 **MediaCapture** 支援需要低度控制媒體擷取處理程序的 app，以及可實作需要進階擷取功能之案例的 app。 使用 **MediaCapture** 也會要求您提供自己的擷取 UI。 如果您的 app 只需要擷取相片或視訊，而未涉及進階的擷取技術，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 可讓您輕鬆地只用幾行程式碼來擷取相片或視訊。 如需詳細資訊，請參閱[使用 CameraCaptureUI 擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)。
+**MediaCapture** is provided to support apps that require low-level control of the media capture process and that implement scenarios that require advanced capture capabilities. Using **MediaCapture** also requires you to provide your own capture UI. If your app only needs to capture a photo or video and is unconcerned with advanced capture techniques, the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) makes it easy to capture a photo or video with only a few lines of code. For more information, see [Capture photos and video with CameraCaptureUI](capture-photos-and-video-with-cameracaptureui.md).
 
-此文章中的程式碼是從 [CameraStarterKit 範例](http://go.microsoft.com/fwlink/?LinkId=619479)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範圍做為自己的 app 起點。
+The code in this article was adapted from the [CameraStarterKit sample](http://go.microsoft.com/fwlink/?LinkId=619479). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
-## 設定您的專案
+## Configure your project
 
-### 將功能宣告加入至應用程式資訊清單
+### Add capability declarations to the app manifest
 
-為了讓您的 app 可存取裝置的相機，您必須宣告您的 app 使用 *webcam* 和 *microphone* 裝置功能。 如果您要將拍攝的相片和影片儲存到使用者的圖片媒體櫃或視訊媒體櫃，您也必須宣告 *picturesLibrary* 和 *videosLibrary* 功能。
+In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
 
-**將功能新增到 app 資訊清單**
+**Add capabilities to the app manifest**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
-2.  選取 [功能]**** 索引標籤。
-3.  核取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請核取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
+1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
+2.  Select the **Capabilities** tab.
+3.  Check the box for **Webcam** and the box for **Microphone**.
+4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
 
-### 新增媒體擷取相關 API 的 using 指示詞
+### Add using directives for media capture-related APIs
 
-下列程式碼清單顯示本文中的範例程式碼所參照的命名空間，以及描述每個命名空間可提供的功能。
+The following code listing shows the namespaces that are referenced by the sample code in this article and describes what functionality each namespace provides.
 
 [!code-cs[Using](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## 初始化 MediaCapture 物件
+## Initialize the MediaCapture object
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738)命名空間中的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別是所有媒體都擷取操作的基本介面。 App 通常會宣告範圍限於單一頁面的此類型變數。 您的 app 需要追蹤 **MediaCapture** 的目前狀態，所以您應該宣告可供初始化、預覽及記錄物件狀態的布林值變數。
+The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class in the [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) namespace is the fundamental interface for all media capture operations. Apps typically declare a variable of this type scoped to a single page. Your app needs to track the current state of the **MediaCapture**, so you should declare boolean variables for the initialization, previewing, and recording state of the object.
 
 [!code-cs[MediaCaptureVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaCaptureVariables)]
 
-若要協助正確導向預覽視訊，請建立成員變數，以追蹤相機是否為外接式以及 app 目前是否在鏡像處理預覽資料流。 當您認為視訊輸入正在擷取使用者時，您的 app 應該鏡像處理預覽資料流。因為這是更為自然的使用者經驗。
+To help orient the preview video correctly, create member variables to track whether the camera is external and whether the app is currently mirroring the preview stream. Your app should mirror the preview stream when you think the video feed is capturing the user because that is a more natural user experience.
 
 [!code-cs[PreviewVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewVariables)]
 
-下列範例方法會初始化媒體擷取物件。 首先，程式碼會搜尋可用於媒體擷取的視訊擷取裝置。 找到後，則會初始化 **MediaCapture** 物件並登錄其事件的處理常式。 接下來，會使用視訊擷取裝置的識別碼建立 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) 物件。 然後，呼叫[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 以初始化 **MediaCapture**。
+The following example method initializes the media capture object. First, the code searches for a video capture device that can be used for media capture. Once found, the **MediaCapture** object is initialized and handlers for its events are registered. Next a [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) object is created using the ID of the video capture device. The **MediaCapture** is then initialized with a call to [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598).
 
 [!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
--   [
-            **DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法可用來尋找所有指定類型的裝置。 此範例會傳入 **DeviceClass.VideoCapture** 列舉值，表示只應傳回視訊擷取裝置。 請注意，視訊擷取裝置用於擷取相片和視訊。
+-   The [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) method can be used to find all devices of a specified type. In this example, the **DeviceClass.VideoCapture** enumeration value is passed in to indicate that only video capture devices should be returned. Note that a video capture device is used for capturing both photos and videos.
 
--   **FindAllAsync** 會傳回 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 物件，其中包含每個找到之要求類型裝置的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 物件。 **System.Linq** 命名空間中的 **FirstOrDefault** 延伸方法提供了簡單的語法，以便根據指定的條件選取清單中的項目。 第一次呼叫會嘗試選取清單中 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 值為 **Panel.Back** 的第一個 **DeviceInformation**，以表示相機位於裝置機殼的背面面板上。 如果裝置的背面面板上沒有相機，則會使用第一個可用的相機。
+-   **FindAllAsync** returns a [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) object that contains a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) object for each found device of the requested type. The **FirstOrDefault** extension method from the **System.Linq** namespace provides an easy syntax for selecting an item from a list based on specified conditions. The first call attempts to select the first **DeviceInformation** in the list that has an [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) value of **Panel.Back**, indicating that the camera is on the back panel of the device's enclosure. If the device does not have a camera on the back panel, the first available camera is used.
 
--   如果在初始化 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) 時並未指定裝置識別碼，系統將會選擇裝置的內部清單中的第一個裝置。
+-   If you do not specify a device ID when you initialize the [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573), the system will choose the first device in its internal list of devices.
 
--   呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 可讓物件開始使用指定的擷取裝置。 此呼叫是在 **try** 區塊內部進行，因為如果使用者拒絕了對相機的呼叫 app 存取，它將會擲回 **UnauthorizedAccessException**。 如果呼叫成功，**\_isInitialized** 變數會設定為 true，以便後續方法呼叫判斷是否已初始化擷取裝置。
+-   The call to [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) initializes the object to use the specified capture device. This call is made inside a **try** block because it will throw an **UnauthorizedAccessException** if the user has denied the calling app access to the camera. If the call succeeds, the **\_isInitialized** variable is set to true so that subsequent method calls can determine if the capture device has been initialized.
 
-- **重要事項** 在某些裝置系列，在授與您的 app 存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
+- **Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
 
--   如果擷取裝置的初始化成功，則會設定變數以反映擷取裝置是否為外接式，或是否位於裝置的前端面板上。 這些值將用來正確地為使用者導向擷取預覽。 最後會更新 UI，以反映擷取可用且來自擷取裝置的預覽資料流已啟動。 本文稍後會說明在協助程式方法中執行的工作。
+-   If the initialization of the capture device is successful, variables are set to reflect whether the capture device is external, or if it is on the front panel of the device. These values will be used to orient the capture preview correctly for the user. Finally, the UI is updated to reflect that capture is available and the preview stream from the capture device is started. All of these tasks are performed in helper methods that will be described later in this article.
 
-## 啟動擷取預覽
+## Start the capture preview
 
-為了讓使用者能夠查看他們所擷取的內容，您必須提供視訊擷取裝置目前在您 UI 中所見內容的預覽。
+For the user to be able to see what they are capturing, you need to provide a preview of what the video capture device is currently seeing in your UI.
 
-**重要：**您必須啟動擷取預覽，擷取裝置才能啟用自動對焦、自動曝光和自動白平衡。
+**Important** You must start the capture preview in order for the capture device to enable auto focus, auto exposure, and auto white balance.
 
-提供的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項可啟用擷取預覽。 以下顯示的範例 XAML 程式碼會定義擷取元素。
+The [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control is provided to enable capture preview. The following shows example XAML code that defines the capture element.
 
 [!code-xml[CaptureElement](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-使用者期待在預覽視訊擷取畫面時，畫面會保持開啟狀態，不會因為閒置而關閉。 若要達到此目的，您必須建立 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 物件。 使用頁面範圍宣告此變數，使其在擷取工作階段內持續存在。
+Users expect that the screen will stay on while they are previewing the video capture screen and not turn off due to inactivity. To enable this, you must create a [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) object. Declare this variable with page scope so that it persists throughout the capture session.
 
 [!code-cs[DisplayRequest](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayRequest)]
 
-下列方法可啟動媒體擷取預覽。 首先，它會在 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 上呼叫 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)，要求顯示器維持使用中狀態。 接下來，呼叫 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 以啟動預覽。
+The following method starts up the media capture preview. First, it requests that the display remain active by calling [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) on the [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816). Next, the preview is started by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
 
 [!code-cs[StartPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
--   在 **DisplayRequest** 物件上呼叫 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) 方法，以要求系統讓畫面保留開啟狀態。
+-   The [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) method is called on the **DisplayRequest** object to request that the system leave the screen on.
 
--   **CaptureElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性會設定為 app 的 **MediaCapture** 物件，以定義預覽的來源。
+-   The [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the **CaptureElement** is set to the app's **MediaCapture** object to define the source of the preview.
 
--   [
-            **FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 屬性是由 XAML 架構提供，可支援雙向使用者介面。 將 **CaptureElement** 的流向設定為 [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397)，可使得預覽視訊水平翻轉。 這使用於擷取裝置位於裝置的前面板時，如此才能從使用者的角度觀看正確方向的預覽。
+-   The [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) property is provided by the XAML framework to support bi-directional user interfaces. Setting the flow direction of the **CaptureElement** to [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397) causes the preview video to be flipped horizontally. This is used when the capture device is on the front panel of the device so that the preview in the correct direction from the user's perspective.
 
--   [
-            **StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 方法可在 **CaptureElement** 中開始顯示預覽資料流。 如果預覽啟動成功，**\_isPreviewing** 變數會設為允許 app 的其他部分得知 app 目前正在預覽，並會呼叫用於設定預覽旋轉的協助程式方法。 下一節中會定義這個方法。
+-   The [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) method starts the display of the preview stream within the **CaptureElement**. If the preview is started successfully, the **\_isPreviewing** variable is set to allow other parts of the app to know that the app is currently previewing, and the helper method for setting the preview rotation is called. This method is defined in the next section.
 
-## 偵測畫面和裝置方向
+## Detect screen and device orientation
 
-在行動裝置 (如手機或平板電腦) 上執行媒體擷取 app 時，有數個領域會受到裝置目前的方向所影響。 這些領域包括從相機正確旋轉預覽資料流以及正確編碼擷取的影像和視訊，這樣使用者檢視時的方向才會正確。
+There are several areas of a media capture app that, when running on a mobile device like a phone or a tablet, are impacted by the current orientation of the device. These areas include properly rotating the preview stream from the camera and properly encoding captured images and videos so that, when viewed by the user, they are correctly oriented.
 
-「顯示方向」一詞是指系統在裝置上旋轉 XAML 頁面的方式，以便使用者直立檢視。 「裝置方向」是指全局空間中的裝置方向，因此是全局空間中實體相機裝置的方向。 這兩種方向都與媒體擷取 app 相關。 若要處理顯示方向，請宣告並初始化 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) 類別的頁面範圍變數。 宣告另一個 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 類型的變數，以追蹤目前的顯示器方向。 宣告 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) 變數和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 變數，以追蹤裝置方向。
+The term "display orientation" refers to the way the system rotates the XAML page on the device to keep it upright for the user. "Device orientation" refers to the orientation of the device in world space and, therefore, the orientation of the physical camera device in world space. Both kinds of orientation a relevant to a media capture app. To handle display orientation, declare and initialize a page-scoped variable for the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) class. Declare another variable of type [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) to track the current orientation of the display. Declare a [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) variable and a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) variable to track device orientation.
 
 [!code-cs[DisplayInformationAndOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayInformationAndOrientation)]
 
-下列協助程式方法可登錄和取消登錄 [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 和 [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) 事件的事件處理常式，並以目前的方向初始化追蹤變數。 請注意，並非所有裝置都有 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400)，因此您應該在登錄處理常式或嘗試取得目前方向之前進行檢查。
+The following helper methods register and unregister event handlers for the [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) and [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) events and initialize the tracking variables with the current orientation. Note that not all devices have a [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400), so you should check before registering the handler or attempting to get the current orientation.
 
 [!code-cs[RegisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterOrientationEventHandlers)]
 
 [!code-cs[UnregisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterOrientationEventHandlers)]
 
-在 **SimpleOrientationSensor.OrientationChanged** 事件的事件處理常式中，以目前的方向更新裝置方向變數。 若裝置是朝上或朝下，您不應該更新方向。
+In the event handler for the **SimpleOrientationSensor.OrientationChanged** event, update the device orientation variable with the current orientation. You should not update the orientation if the device is facing up or down.
 
 [!code-cs[SimpleOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSimpleOrientationChanged)]
 
-在 **DisplayInformation.OrientationChanged** 事件的事件處理常式中，以目前的方向更新顯示器方向變數。 如果目前顯示擷取裝置的視訊預覽，請更新預覽視訊資料流的旋轉。 下一節會說明 **SetPreviewRotationAsync** 協助程式方法。
+In the event handler for the **DisplayInformation.OrientationChanged** event, update the display orientation variable with the current orientation. If the video preview of the capture device is currently being displayed, update the rotation of the preview video stream. The **SetPreviewRotationAsync** helper method is described in the following section.
 
 [!code-cs[DisplayOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayOrientationChanged)]
 
-## 設定媒體擷取預覽旋轉
+## Set the media capture preview rotation
 
-使用者預期 UI 控制項會在其行動裝置的方向變更時旋轉，以便 UI 中的文字垂直對齊並可閱讀。 不過，對於 **CaptureElement** 控制項，使用者通常不希望視訊預覽的方向跟著裝置旋轉。 為了提供預期的使用者體驗，您應該旋轉預覽資料流以符合裝置的方向。
+Users expect for UI controls to rotate when the orientation of their mobile device changes, so that the text in the UI is vertically aligned and readable. For the **CaptureElement** control, however, users typically do not want the orientation of the video preview to rotate when the device does. In order to provide the expected user experience, you should rotate the preview stream to match the orientation of the device.
 
-預覽資料流方向必須以度數表示。 下列協助程式方法可將 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 列舉值轉換為度數。
+The preview stream orientation must be expressed in degrees. The following helper method to converts the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) enumeration values into degrees.
 
 [!code-cs[ConvertDisplayOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDisplayOrientationToDegrees)]
 
-此外，此協助程式方法可轉換 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列舉值，並由 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) 用來表示裝置的旋轉 (以度數表示)。
+And this helper method converts a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) enumeration value, which is used by the [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) to express the rotation of the device, into degrees.
 
 [!code-cs[ConvertDeviceOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDeviceOrientationToDegrees)]
 
-低階的資料流旋轉實際上是由「Microsoft 媒體基礎」架構執行。 使用 [MF\_MT\_VIDEO\_ROTATION](https://msdn.microsoft.com/library/windows/desktop/hh162880) 屬性可指定旋轉。 因為這是 Windows 執行階段 app，所以會使用屬性的 GUID 指定旋轉，而非使用屬性名稱。 定義下列 GUID 來識別視訊旋轉屬性。
+At a low-level, the rotation of a stream is actually performed by the Microsoft Media Foundation framework. The rotation is specified using the [MF\_MT\_VIDEO\_ROTATION](https://msdn.microsoft.com/library/windows/desktop/hh162880) attribute. Since this is a Windows Runtime app, the rotation is specified using the GUID for the attribute, rather than the attribute name. Define the following GUID to identify the video rotation attribute.
 
 [!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-下列方法可設定預覽資料流的旋轉。 媒體擷取之 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 的 [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 方法會傳回組成機碼/值組的屬性集。 指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640)，表示我們想要視訊預覽資料流的屬性，而不是視訊錄製資料流或音訊資料流。 此屬性集是用於設定資料流屬性的一般用途介面，但對此工作而言，以上定義的視訊旋轉 GUID 會新增為屬性機碼，而所需的視訊資料流方向 (以度數表示) 則會指定為此值。 [
-            **SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) 可使用新的值更新編碼屬性。 再次指定 **MediaStreamType.VideoPreview**，表示所要設定的屬性適用於視訊預覽資料流。
+The following method sets the rotation of the preview stream. The [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) method of the media capture's [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) returns a property set made up of key/value pairs. [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) is specified to indicate that we want the properties for the video preview stream, as opposed to the video recording stream or the audio stream. The property set is a general purpose interface for setting stream properties, but for this task the video rotation GUID defined above is added as the property key and the desired orientation of the video stream, in degrees, is specified as the value. [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) updates the encoding properties with the new values. Once again, **MediaStreamType.VideoPreview** is specified to indicate that the properies being set are for the video preview stream.
 
 [!code-cs[SetPreviewRotation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
 
--   對於具有外接式相機的裝置，使用者不會預期相機資料流會跟著裝置旋轉。
+-   For devices with external cameras, the user does not expect for the camera stream to be rotated when the device rotates.
 
--   如果針對前面板上的相機鏡像處理預覽，則必須反轉旋轉方向以符合裝置的旋轉。
+-   If the preview is being mirrored for a camera on the front panel, the rotation direction must be inverted to match the rotation of the device.
 
--   有些裝置 (通常是電話) 支援將 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) 設定為方向值 (例如 [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/br226142))，以強制顯示跟著裝置旋轉。 您應該設定此值，因為它可在支援的裝置上提供良好的經驗，但您仍應在您的 app 中實作上述模式，以支援不支援自動旋轉喜好設定的裝置。
+-   Some devices, typically phones, support setting [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) to an orientation value such as [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/br226142) to force the display to rotate with the device. You should set this value because it provides a good experience on devices that support it, but you should still implement the above pattern in your app to support devices that don't support auto-rotation preferences.
 
--   在舊版中，[**SetPreviewRotation**](https://msdn.microsoft.com/library/windows/apps/br226611) 方法是旋轉預覽資料流的唯一方式。 此方法目前仍存在於 API 介面中，以支援現有的 app，但這個方法沒有效率且不得使用於新的 app。
+-   In previous releases, the [**SetPreviewRotation**](https://msdn.microsoft.com/library/windows/apps/br226611) method was the only way to rotate the preview stream. This method is still present in the API surface to support existing apps, but this method inefficient and should not be used for new apps.
 
-## 擷取相片
+## Capture a photo
 
-下列方法會使用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) 方法擷取相片，並傳入要求的編碼屬性以及將會包含擷取操作輸出的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 物件。 [
-            **ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 類別會提供協助程式方法 (如 [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994))，以產生媒體擷取所支援檔案類型的編碼屬性。
+The following method captures a photo using the [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) method and passing in the requested encoding properties and an [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) object that will contain the output of the capture operation. The [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) class provides helper methods, like [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994), to generate encoding properties for the file types supported by media capture.
 
 [!code-cs[TakePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
 
-將相片儲存到檔案之前，您必須判斷相片的正確方向。 **MediaCapture** 物件不知道裝置的方向，所以它會以擷取裝置採用其預設方向的方式來編碼所擷取的相片資料。 這會在使用者檢視所擷取的相片時造成負面的使用者體驗，因為相片的方向不正確。 下列協助程式方法可判斷正確的相片方向，然後以正確的方向儲存檔案。
+Before saving the photo to a file, you need to determine the correct orientation of the photo. The **MediaCapture** object doesn't know about the device's orientation and so it encodes the captured photo data as if the capture device is in its default orientation. This can result in a negative user experience when the user is viewing the captured photo, as the photo will be oriented incorrectly. The following helper methods determine the correct photo orientation and then save the file with the correct orientation.
 
-**GetCameraOrientation** 協助程式方法會以目前的裝置方向啟動，然後根據裝置的原生方向和裝置上的相機位置旋轉該值。 如果相機固定在裝置前面板 (如這個範例中的 **\_mirroringPreview** 變數所示)，則相機方向應該會反轉。
+The **GetCameraOrientation** helper method starts with the current device orientation and then rotates that value depending on the native orientation of the device and the location of the camera on the device. If the camera is mounted on the front panel of the device, as indicated in this example by the **\_mirroringPreview** variable, then the camera orientation should be inverted.
 
 [!code-cs[GetCameraOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetCameraOrientation)]
 
-下列協助程式方法只是將方向感應器所使用的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列舉值轉換為將用來儲存檔案之點陣圖編碼器所使用的同等 [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 值。
+The following helper method simply converts values from the [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) enumeration values used by the orientation sensor to the equivalent [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) value used by the bitmap encoder that will be used to save the file.
 
 [!code-cs[ConvertOrientationToPhotoOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertOrientationToPhotoOrientation)]
 
-最後，可以編碼和儲存所擷取的相片。 從包含所擷取相片資料的輸入資料流建立 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 物件。 建立新的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 並將它開啟以便讀取和寫入。 建立 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 物件，傳入輸出檔案及包含影像資料的解碼器。 建立新的 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) 並加入新的屬性。 "System.Photo.Orientation" 屬性的機碼指定屬性代表相片的方向。 這個值是先前計算的 [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 值。 呼叫 [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 以在編碼器上更新屬性，然後呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/dn237883) 將相片寫入存放檔案。
+Finally, the captured photo can be encoded and saved. Create a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) object from the input stream containing the captured photo data. Create a new [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and open it for reading and writing. Create a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) object, passing in the output file and the decoder containing the image data. Create a new [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) and add a new property. The key for the property, "System.Photo.Orientation" specifies that the property represents the orientation of the photo. The value is the [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) value that was previously calculated. Call [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) to update the properties on the encoder and then call [**FlushAsync**](https://msdn.microsoft.com/library/dn237883) to write the photo to the storage file.
 
 [!code-cs[ReencodeAndSavePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
 
--   設定 "System.Photo.Orientation" 點陣圖屬性可將相片的方向編碼成檔案的中繼資料。 這不會導致以不同的方式編碼實際影像資料。 如需有關將中繼資料內嵌到影像檔案的詳細資訊，請參閱[影像中繼資料](image-metadata.md)。
+-   Setting the "System.Photo.Orientation" bitmap property encodes the orientation of the photo into the metadata of the file. It does not cause the actual image data to be encoded differently. For more information about embedding metadata into image files, see [Image metadata](image-metadata.md).
 
--   如需有關使用影像的詳細資訊，包括影像編碼和解碼，請參閱[影像處理](imaging.md)。
+-   For more information about working with images, including encoding and decoding images, see [Imaging](imaging.md).
 
-## 擷取視訊
+## Capture a video
 
-若要開始擷取視訊，請先建立將要記錄視訊的存放檔案。 接著建立 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026)，供 **MediaCapture** 將視訊編碼成檔案。 **MediaEncodingProfile** 類別提供一些方法 (例如 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078))，以建立所支援視訊格式的編碼設定檔。 使用先前討論的協助程式方法，取得視訊的正確旋轉度數。 與相片案例不同，視訊旋轉資訊會由 **MediaCapture** 編碼成資料流。 將旋轉資訊加入至 [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) 集合，即可將它新增到編碼設定檔。 先前為視訊旋轉定義的 GUID 會做為機碼，而其值是旋轉度數。 最後，呼叫 [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863)，指定編碼屬性與輸出檔案即可開始錄製。
+To start capturing video, first create a storage file to which the video will be recorded. Next create the [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) that the **MediaCapture** will use to encode the video to the file. The **MediaEncodingProfile** class provides methods, like [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078), that create encoding profiles for the supported video formats. Use the helper methods discussed previously to get the correct rotation for the video, in degrees. Unlike the photo scenario, the video rotation information is encoded into the stream by the **MediaCapture**. Add the rotation information to the encoding profile by adding it to the [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) collection. The previously defined GUID for video rotation is used as the key and the rotation, in degrees, is the value. Finally, call [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863), specifying the encoding properties and the output file to begin recording.
 
 [!code-cs[StartRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
 
-若要停止錄製，只需呼叫 [**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623)。
+To stop recording, simply call [**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623).
 
 [!code-cs[StopRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopRecordingAsync)]
 
-已在初始化 **MediaCapture** 時登錄 [**MediaCapture.RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/hh973312) 事件的處理常式。 在處理常式中，呼叫 **StopRecordingAsync** 方法來停止錄製。
+A handler for the [**MediaCapture.RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/hh973312) event was registered when the **MediaCapture** was initialized. In the handler, call the **StopRecordingAsync** method to stop video recording.
 
 [!code-cs[RecordLimitationExceeded](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
-## 暫停和繼續視訊擷取
+## Pause and resume video capture
 
-在某些情況下，您可能想要暫停並繼續進行中的視訊擷取，而不是停止擷取並開始進行新的擷取。 若要暫停錄製，請呼叫 [**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102)。 如果您指定 [**MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686)，則在不支援同時視訊與相片擷取的裝置上，app 將無法在視訊暫停時擷取相片。 如需判斷裝置是否支援同時相片和視訊擷取的資訊，請參閱[相機設定檔](camera-profiles.md)。
+For some scenarios you may want to pause and resume an ongoing video capture rather than stopping the capture and starting a new one. To pause recording call [**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102). If you specify [**MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686), then on devices that don't support simultaneous video and photo capture, the app will be unable to capture photos while the video is paused. For information on determining if a device supports simultaneous photo and video capture, see [Camera profiles](camera-profiles.md).
 
 [!code-cs[PauseRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPauseRecordingAsync)]
 
-若要繼續先前暫停的視訊擷取，請呼叫 [**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103)。
+To resume a previously paused video capture, call [**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103).
 
 [!code-cs[ResumeRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResumeRecordingAsync)]
 
-## 清理擷取資源
+## Clean up capture resources
 
-請務必正確地關閉並釋出媒體擷取資源。 若無法這麼做，在 app 關閉之後，將會造成未預期的相機行為，進而導致 App 使用者發生負面的使用經驗。 下列各節逐步引導您完成關閉相機所需的步驟。
+It is very important that you shut down and release the media capture resources properly. Failure to do so can cause unexpected camera behavior after your app closes, which results in a negative user experience for your app. The following sections walk through the different steps you should take to shut down the camera.
 
-### 關閉擷取預覽
+### Shut down the capture preview
 
-若要關閉擷取預覽，請先呼叫 [**MediaCapture.StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622)。 將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定為 Null。 接著，對 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 變數呼叫 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819)，允許系統在必要時關閉顯示器。
+To shut down the capture preview, first call [**MediaCapture.StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622). Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of your [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to null. Then, call the [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) on your [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) variable to allow the system to turn off the display when needed.
 
 [!code-cs[StopPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopPreviewAsync)]
 
--   您無法從非 UI 執行緒存取 UI，所以必須使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法設定 **MediaElement.Source** 屬性及呼叫 **RequestRelease**，才能在 UI 執行緒上執行呼叫。
+-   You can't access the UI from a non-UI thread, so the setting the **MediaElement.Source** property and calling **RequestRelease** must be made using the [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method so that the calls execute on the UI thread.
 
-### 關閉和處置 MediaCapture 物件
+### Shut down and dispose of the MediaCapture object
 
-處置 **MediaCapture** 物件之前，請停止進行中的錄製作業，並呼叫先前定義的協助程式方法來停止預覽資料流。 完成此動作之後，移除向 **MediaCapture** 登錄的所有事件處理常式，然後呼叫 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) 以釋出與此物件相關聯的資源並將 **MediaCapture** 變數設定為 Null
+Before disposing of the **MediaCapture** object, stop any recording that is ongoing and stop the preview stream by calling the helper methods defined previously. Once this has been done, remove any event handlers registered with the **MediaCapture**, then call [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) to free any resources associated with the object and set the **MediaCapture** variable to null
 
 [!code-cs[CleanupCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-您應該呼叫這個方法，以從 [**MediaCapture.Failed**](https://msdn.microsoft.com/library/windows/apps/br226593) 事件的處理常式內部關閉並處置 **MediaCapture** 物件。
+You should call this method to shut down and dispose of the **MediaCapture** object from inside the handler for the [**MediaCapture.Failed**](https://msdn.microsoft.com/library/windows/apps/br226593) event.
 
 [!code-cs[CaptureFailed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureFailed)]
 
-### 處理 app 存留期和頁面瀏覽事件
+### Handle app lifetime and page navigation events
 
-App 存留期事件讓 app 有機會初始化並釋出資源。 這對於 **Application.Suspending** 事件特別重要，您的 app 必須正確地處置媒體擷取資源。
+The app lifetime events give your app an opportunity to initialize and release resources. This is especially important with the **Application.Suspending** event, where it is essential that your app properly disposes of media capture resources.
 
-您可以在頁面的建構函式中登錄 app 存留期事件的處理常式。
+You can register handlers for the application lifetime events in your page's constructor.
 
 [!code-cs[RegisterAppLifetimeEvents](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterAppLifetimeEvents)]
 
-在 **Application.Suspending** 事件的處理常式中，您應該取消登錄顯示器和裝置方向事件的處理常式並關閉 **MediaCapture** 物件。 本文稍後描述的另一個應用程式週期相關工作會需要此處取消註冊的 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。
+In the handler for the **Application.Suspending** event, you should unregister the handlers for the display and device orientation events and shut down the **MediaCapture** object. The [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) event unregistered here is needed for another application lifecycle-related task that is described later in this article.
 
-**注意** 
-您必須在擱置中事件處理常式的開頭呼叫 [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690)，以要求延遲擱置。 這會要求系統等到您發出作業已完成的訊號，再清除您的 app。 這是必要的，因為 **MediaCapture** 關閉作業是非同步的，所以 **Application.Suspending** 事件處理常式可以在相機正常關機前完成。 等到非同步呼叫完成之後，您應該藉由呼叫 [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 來釋放延遲。
+**Caution** 
+You must request a suspending deferral by calling [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) at the beginning of your suspending event handler. This requests that the system wait for you to signal that the operation is complete before tearing down your app. This is necessary because the **MediaCapture** shutdown operations are asynchronous, so the **Application.Suspending** event handler may complete before the camera is properly shut down. After your awaited asynchronous calls complete, you should release the deferral by calling [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).
 
 [!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-在 **Application.Resuming** 事件的處理常式中，您應該登錄顯示器和裝置方向事件的處理常式、登錄 **SystemMediaTransportControls.PropertyChanged** 物件，以及初始化 **MediaCapture** 物件。
+In the handler for the **Application.Resuming** event, you should register handlers for the display and device orientation events, register the **SystemMediaTransportControls.PropertyChanged** event, and initialize the **MediaCapture** object.
 
 [!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 事件讓您一開始有機會登錄顯示器和裝置方向事件的處理常式並初始化 **MediaCapture** 物件。
+The [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event gives an opportunity to initially register handlers for the display and device orientation events and initialize the **MediaCapture** object.
 
 [!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-如果 app 有多個頁面，您應該在 [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) 事件處理常式中清理您的媒體擷取物件。
+If your app has multiple pages, you should clean up your media capture objects in the [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) event handler.
 
 [!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-為了讓 app 能在支援多個同步視窗的裝置上正常運作，您必須在 app 已最小化或還原時進行回應。 若要這樣做，您必須處理 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。 初始化成員變數，以針對您的 app 儲存對 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 物件的參考。
+For your app to behave properly on devices that support multiple simultaneous windows, you must respond when your app is minimized or restored. To do this, you must handle the [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) event. Initialize a member variable to store a reference to the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) object for your app.
 
 [!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-如上述範例所示，用以登錄和取消登錄 **PropertyChanged** 事件的程式碼應該新增至 app 週期事件。 在事件的處理常式中，查看觸發此事件的屬性變更是否為 [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) 屬性。 如果這是變更的屬性，請檢查屬性的值。 如果此值為 [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852)，則 app 會最小化，而您應該適當地清理媒體擷取資源。 否則，事件會發出 app 視窗已還原的訊號，而您應重新初始化您的媒體擷取資源。 必須在 UI 執行緒上存取 **SoundLevel** 屬性，以便在對 [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫中包裝此方法中的程式碼。
+The code to register and unregister the **PropertyChanged** event should be added to the app life cycle events as shown in the examples above. In the handler for the event, check to see if the property change that triggered the event was the [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) property. If this was the property that changed, check the value of the property. If the value is [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), then your app was minimized and you should clean up your media capture resources appropriately. Otherwise, the event signals that your app window was restored and you should reinitialize you media capture resources. The **SoundLevel** property must be accessed on the UI thread, so the code in this method is wrapped in a call to [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## 媒體擷取的其他 UI 考量
+## Additional UI considerations for media capture
 
-### 設定自動旋轉喜好設定
+### Set auto-rotation preferences
 
-如上一節的旋轉預覽資料流所述，有些裝置支援設定 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259)以避免頁面 (包括顯示預覽的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)) 在裝置旋轉時跟著旋轉。 這可在支援的裝置上提供良好的使用者經驗。 當 app 啟動或當您開始顯示預覽時，設定這個值。 請注意，您仍應該對不支援自動旋轉喜好設定的裝置，實作預覽旋轉處理。
+As mentioned in the previous section on rotating the preview stream, some devices support setting [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) to prevent the page, including the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) that displays the preview, from rotating as the device is rotating. This provides a good user experience on devices that support it. Set this value when your app launches or when you begin displaying the preview. Note that you should still implement preview rotation handling for devices that don't support auto-rotation preferences.
 
 [!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### 處理 UI 元素方向
+### Handle UI element orientation
 
-使用者通常希望相機 app 中的 UI 元素 (例如用來起始相片或視訊擷取的按鈕) 隨著視訊預覽一起旋轉。 下列方法說明如何使用先前定義的方向協助程式方法，正確地在相機 UI 中設定按鈕的方向。 您應該在 app 初次啟動時，從 [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 和 [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) 事件處理常式呼叫這個方法。 您的實作會因 app 的 UI 而有所不同。
+Users typically expect for the UI elements in a camera app, such as the buttons for initiating photo or video capture, to rotate along with the video preview. The following method illustrates the use of the previously defined orientation helper methods to properly orient the buttons in the camera UI. You should call this method from the [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) and [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) event handlers and when your app first launches. Your implementation my vary depending on your app's UI.
 
 [!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-當 app 關閉時，或如果您瀏覽至與媒體擷取無關的頁面，請將自動旋轉喜好設定設為 [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) 以允許 UI 正常旋轉。
+When your app is shutting down or if you navigate to a page that is unrelated to media capture, set the auto-rotation preference to [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) to allow the UI to rotate normally.
 
 [!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### 支援同時的相片和視訊擷取
+### Support simultaneous photo and video capture
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API 可讓您在支援的裝置上同時擷取相片和視訊。 為求簡潔，這個範例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 屬性來判斷是否支援同時擷取視訊與相片，但更強大且建議的方法是使用相機設定檔。 如需詳細資訊，請參閱[相機設定檔](camera-profiles.md)。
+The [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API allows you to capture photos and videos simultaneously on devices that support it. For brevity, this example uses the [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) property to determine if simultaneous video and photo capture is supported, but a more robust and recommended way to do this is to use camera profiles. For more information, see [Camera profiles](camera-profiles.md).
 
-下列協助程式方法會更新 app 的控制項，以符合 app 目前的擷取狀態。 每當 app 的擷取狀態變更 (例如視訊擷取啟動或停止) 時，請呼叫此方法。
+The following helper method updates the app's controls to match the current capture state of the app. Call this method whenever the capture state of your app changes, such as when video capture is started or stopped.
 
 [!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### 支援行動裝置特定的 UI 功能
+### Support mobile-specific UI features
 
-本文中顯示的所有程式碼將會在通用 Windows app 中運作。 透過額外幾行程式碼，您可以利用只會出現在行動裝置上的特殊 UI 功能。 若要使用這些功能，您必須將 Microsoft Mobile Extension SDK for Universal App Platform 的參照新增到您的專案。
+All of the code shown in this article will work in a Universal Windows app. With a few additional lines of code, you can take advantage of special UI features that are only present on mobile devices. To use these features, you must add a reference to the Microsoft Mobile Extension SDK for Universal App Platform to your project.
 
-**若要新增硬體相機按鈕支援的行動擴充功能 SDK 的參照**
+**To add a reference to the mobile extension SDK for hardware camera button support**
 
-1.  在 [方案總管]**** 中的 [參照]**** 上按一下滑鼠右鍵，然後選取 [加入參照...]****。
+1.  In **Solution Explorer**, right-click **References** and select **Add Reference...**
 
-2.  展開 [**Windows 通用**] 節點，然後選取 [**擴充功能**]。
+2.  Expand the **Windows Universal** node and select **Extensions**.
 
-3.  按一下 [**Microsoft Mobile Extension SDK for Universal App Platform**] 旁邊的核取方塊。
+3.  Click the checkbox next to **Microsoft Mobile Extension SDK for Universal App Platform**.
 
-行動裝置的 [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 控制項可為使用者提供有關裝置的狀態資訊。 此控制項會佔掉螢幕上可能會干擾媒體擷取 UI 的空間。 您可以呼叫 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 以隱藏狀態列，但是您必須在條件性區塊中進行此呼叫，而此種區塊中您會使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) 方法來判斷 API 是否可用。 這個方法只會在支援狀態列的行動裝置上傳回 true。 您應該在 app 啟動時或在您開始從相機進行預覽時隱藏狀態列。
+Mobile devices have a [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) control that provides the user with status information about the device. This control takes up space on the screen that can interfere with the media capture UI. You can hide the status bar by calling [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), but you must make this call from within a conditional block where you use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) method to determine if the API is available. This method will only return true on mobile devices that support the status bar. You should hide the status bar when your app launches or when you begin previewing from the camera.
 
 [!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-當 app 關閉或使用者離開 app 的媒體擷取頁面時，您可讓此控制項再次顯現。
+When your app is shutting down or when the user navigates away from the media capture page of your app, you make the control visible again.
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-相較於螢幕上的控制項，有些行動裝置有某些使用者偏好的專用硬體相機按鈕。 若要在按下硬體相機按鈕時收到通知，請登錄 [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) 事件的處理常式。 因為此 API 只能用於行動裝置，所以您必須再次使用 **IsTypePresent** 來確定目前的裝置支援此 API，再嘗試進行存取。
+Some mobile devices have a dedicated hardware camera button that some users prefer over an on-screen control. To be notified when the hardware camera button is pressed, register a handler for the [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) event. Because this API is available on mobile devices only, you must again use the **IsTypePresent** to make sure the API is supported on the current device before attempting to access it.
 
 [!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
 [!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-在 **CameraPressed** 事件的處理常式中，您可以起始相片擷取。
+In the handler for the **CameraPressed** event, you can initiate a photo capture.
 
 [!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-當 app 關閉或使用者離開 app 的媒體擷取頁面時，請取消登錄硬體按鈕處理常式。
+When your app is shutting down or the user moves away from the media capture page of your app, unregister the hardware button handler.
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-**注意：**本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**Note** This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## 相關主題
+## Related topics
 
-* [相機設定檔](camera-profiles.md)
-* [高動態範圍 (HDR) 相片擷取](high-dynamic-range-hdr-photo-capture.md)
-* [相片和視訊擷取的擷取裝置控制項](capture-device-controls-for-photo-and-video-capture.md)
-* [視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)
-* [視訊擷取的效果](effects-for-video-capture.md)
-* [媒體擷取的場景分析](scene-analysis-for-media-capture.md)
-* [可變相片序列](variable-photo-sequence.md)
-* [取得預覽框架](get-a-preview-frame.md)
-* [CameraStarterKit 範例](http://go.microsoft.com/fwlink/?LinkId=619479)
-
-
-<!--HONumber=Mar16_HO5-->
-
-
+* [Camera profiles](camera-profiles.md)
+* [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md)
+* [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md)
+* [Capture device controls for video capture](capture-device-controls-for-video-capture.md)
+* [Effects for video capture](effects-for-video-capture.md)
+* [Scene analysis for media capture](scene-analysis-for-media-capture.md)
+* [Variable photo sequence](variable-photo-sequence.md)
+* [Get a preview frame](get-a-preview-frame.md)
+* [CameraStarterKit sample](http://go.microsoft.com/fwlink/?LinkId=619479)

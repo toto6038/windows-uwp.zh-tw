@@ -1,49 +1,49 @@
 ---
-title: 啟動檔案的預設 app
-description: 了解如何啟動檔案的預設 app。
+author: mcleblanc
+title: Launch the default app for a file
+description: Learn how to launch the default app for a file.
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ---
 
-# 啟動檔案的預設 app
+# Launch the default app for a file
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
-了解如何啟動檔案的預設 app。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
+Learn how to launch the default app for a file. Many apps need to work with files that they can't handle themselves. For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers. These steps show how to use the [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API to launch the default handler for a file that your app can't handle itself.
 
-## 取得檔案物件
-
-
-首先，為檔案取得 [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
-
-如果檔案包含在應用程式的套件中，您可以使用 [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性來取得 [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件，並使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
-
-如果檔案位於已知資料夾中，您可以使用 [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 類別的屬性來取得 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，並使用 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
-
-## 啟動檔案
+## Get the file object
 
 
-Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這些選項在這個圖表和接下來的小節中有更詳細的說明。
+First, get a [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the file.
 
-| 選項 | 方法 | 說明 |
+If the file is included in the package for your app, you can use the [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) property to get a [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object and the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+
+If the file is in a known folder, you can use the properties of the [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class to get a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) and the [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+
+## Launch the file
+
+
+Windows provides several different options for launching the default handler for a file. These options are described in this chart and in the sections that follow.
+
+| Option | Method | Description |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 預設啟動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用預設處理常式啟動指定的檔案。 |
-| 開啟檔案啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 啟動指定的檔案，讓使用者透過 [開啟檔案] 對話方塊挑選處理常式。 |
-| 使用建議的 app 備用選項啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
-| 以所需的剩餘檢視啟動 | [
-            **LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (僅限 Windows) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 |
+| Default launch | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Launch the specified file with the default handler. |
+| Open With launch | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Launch the specified file letting the user pick the handler through the Open With dialog. |
+| Launch with a recommended app fallback | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Launch the specified file with the default handler. If no handler is installed on the system, recommend an app in the store to the user. |
+| Launch with a desired remaining view | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | Launch the specified file with the default handler. Specify a preference to stay on screen after the launch and request a specific window size. |
 |  |  |  |
-|  |  | **行動裝置系列：** 行動裝置系列上不支援 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)。 |
+|  |  | **Mobile device family:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family. |
 
- 
-### 預設啟動
+ 
+### Default launch
 
-呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) 方法來啟動預設 app。 這個範例使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來啟動影像檔案 test.png，它包含於 app 套件內。
+Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) method to launch the default app. This example uses the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to launch an image file, test.png, that is included in the app package.
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -127,13 +127,13 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-### 開啟檔案啟動
+### Open With launch
 
-呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法並將 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 設定為 **true**，以啟動使用者從 [**開啟檔案**] 對話方塊中選取的 app。
+Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) set to **true** to launch the app that the user selects from the **Open With** dialog box.
 
-建議您在使用者不想選取特定檔案預設的 app 時，使用 [**開啟檔案**] 對話方塊。 例如，如果您的應用程式允許使用者啟動影像檔案，則預設處理常式可能是某個檢視器應用程式。 在某些情況下，使用者可能想編輯影像而非檢視影像。 使用 [**開啟檔案**] 選項搭配 [**AppBar**] 或操作功能表中的其他命令，可以讓使用者開啟 [**開啟檔案**] 對話方塊，並選取想在這類情況中使用的編輯器 app。
+We recommend that you use the **Open With** dialog box when the user may want to select an app other than the default for a particular file. For example, if your app allows the user to launch an image file, the default handler will likely be a viewer app. In some cases, the user may want to edit the image instead of viewing it. Use the **Open With** option along with an alternative command in the **AppBar** or in a context menu to let the user bring up the **Open With** dialog and select the editor app in these types of scenarios.
 
-![啟動 .png 檔案的 [開啟檔案] 對話方塊。 對話方塊包含一個核取方塊，指定使用者的選擇應該用於所有 .png 檔案還是只用於一個 .png 檔案。 對話方塊包含四個 app 選項來啟動檔案以及一個 [更多選項] 連結。](images/checkboxopenwithdialog.png)
+![the open with dialog for a .png file launch. the dialog contains a checkbox which specifies if the user’s choice should be used for all .png files or just this one .png file. the dialog contains four app options for launching the file and a ‘more options’ link.](images/checkboxopenwithdialog.png)
 
 > [!div class="tabbedCodeSnippets"]
 > ```vb
@@ -229,13 +229,13 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-**使用建議的 app 備用選項啟動**
+**Launch with a recommended app fallback**
 
-在某些情況下，使用者可能尚未安裝處理您要啟動之檔案的 app。 依照預設，Windows 處理這些情況的方法是提供連結，讓使用者在市集上搜尋適當的應用程式。 如果您想提供使用者在此情況下應取得什麼應用程式的特定建議，您可以在啟動檔案時一併傳送該建議。 若要這樣做，請呼叫 [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法，並將 [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) 設為您想建議使用者使用的市集 app 套件系列名稱。 然後將 [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) 設為該應用程式的名稱。 Windows 將使用此資訊，以從市集取得建議 app 的特定選項，取代在市集中搜尋 app 的一般選項。
+In some cases the user may not have an app installed to handle the file that you are launching. By default, Windows will handle these cases by providing the user with a link to search for an appropriate app on the store. If you would like to give the user a specific recommendation for which app to acquire in this scenario, you may do so by passing that recommendation along with the file that you are launching. To do this, call the [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) set to the package family name of the app in the Store that you want to recommend. Then, set the [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) to the name of that app. Windows will use this information to replace the general option to search for an app in the store with a specific option to acquire the recommended app from the Store.
 
-> **注意** 您必須設定這兩個選項才能建議 app。 只設定其中一個將出現錯誤。
+> **Note**  You must set both of these options to recommend an app. Setting one without the other will result in a failure.
 
-![啟動 .contoso 檔案的 [開啟檔案] 對話方塊。 因為 .contoso 未在電腦上安裝處理常式，所以對話方塊會包含一個選項，這個選項會包含市集圖示以及指示使用者市集中正確處理常式的文字。 對話方塊也包含 [更多選項] 連結。](images/howdoyouwanttoopen.png)
+![the open with dialog for a .contoso file launch. since .contoso does not have a handler installed on the machine the dialog contains an option with the store icon and text which points the user to the correct handler on the store. the dialog also contains a ‘more options’ link'.](images/howdoyouwanttoopen.png)
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -341,13 +341,13 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-### 以所需的剩餘檢視啟動 (僅限 Windows)
+### Launch with a Desired Remaining View (Windows-only)
 
-呼叫 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的來源應用程式可要求在檔案啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理檔案的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 也可以使用 **DesiredRemainingView**，指出來源 app 在檔案啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
+Source apps that call [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) can request that they remain on screen after a file launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the file. Source apps can use the [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app does not need to remain on screen after the file launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
 
-> **注意** Windows 在判斷來源 app 的最終視窗大小時，會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
+> **Note**  Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), you aren't guaranteed a specific windowing behavior for the source app.
 
-**行動裝置系列：** 行動裝置系列上不支援 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)。
+**Mobile device family:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -417,44 +417,39 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-## 備註
+## Remarks
 
-您的 app 不能選取已啟動的 app。 使用者決定要啟動哪個 app。 使用者可選取通用 Windows 平台 (UWP) app 或傳統 Windows 平台 (CWP) app。
+Your app can't select the app that is launched. The user determines which app is launched. The user can select either a Universal Windows Platform (UWP) app or a Classic Windows Platform (CWP) app.
 
-啟動檔案時，您的應用程式必須是前景應用程式，也就是說，使用者必須看得到您的應用程式。 這項需求可讓使用者握有控制權。 為了滿足這項需求，請務必將所有檔案啟動直接繫結到您的應用程式 UI。 最好是讓使用者一律必須採取某些動作才能起始檔案啟動。
+When launching a file, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all file launches directly to the UI of your app. Most likely, the user must always take some action to initiate a file launch.
 
-如果包含程式碼或指令碼的檔案類型 (例如 .exe、.msi 以及 .js 檔案) 是由作業系統自動執行，您就無法啟動這些檔案類型。 這項限制可以防止使用者遭受可能竄改作業系統的惡意檔案攻擊。 如果包含指令碼的檔案類型 (例如 .docx 檔案) 是由隔離指令碼的應用程式所執行，就可以使用這個方法來啟動。 Microsoft Word 之類的應用程式會防止 .docx 檔案中的指令碼修改作業系統。
+You can't launch file types that contain code or script if they are executed automatically by the operating system, such as, .exe, .msi, and .js files. This restriction protects users from potentially malicious files that could modify the operating system. You can use this method to launch file types that can contain script if they are executed by an app that isolates the script, such as, .docx files. Apps like Microsoft Word keep the script in .docx files from modifying the operating system.
 
-如果您嘗試啟動受限制的檔案類型，則啟動將會失敗，並會叫用您的錯誤回呼。 如果您的應用程式處理許多不同類型的檔案，而您預期會碰到這個錯誤，建議您為使用者提供遞補做法。 例如，您可以為使用者提供將檔案儲存到桌面的選項，讓他們從桌面開啟檔案。
+If you try to launch a restricted file type, the launch will fail and your error callback will be invoked. If your app handles many different types of files and you expect that you will hit this error, we recommend that you provide a fallback experience to your user. For example, you could give the user an option to save the file to the desktop, and they could open it there.
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
-## 相關主題
+ 
+## Related topics
 
 
-**工作**
+**Tasks**
 
-* [啟動 URI 的預設 app](launch-default-app.md)
-* [處理檔案啟用](handle-file-activation.md)
+* [Launch the default app for a URI](launch-default-app.md)
+* [Handle file activation](handle-file-activation.md)
 
-**指導方針**
+**Guidelines**
 
-* [檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**參考資料**
+**Reference**
 
 * [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 * [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
- 
+ 
 
- 
+ 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

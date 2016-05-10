@@ -1,43 +1,41 @@
 ---
-title: 執行地理編碼和反向地理編碼
-description: 呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
+author: PatrickFarley
+title: Perform geocoding and reverse geocoding
+description: Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ---
 
-# 執行地理編碼和反向地理編碼
+# Perform geocoding and reverse geocoding
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-呼叫 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
+Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace.
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-以下說明地理編碼與反向地理編碼如何相關：
+Here's how the classes for geocoding and reverse geocoding are related:
 
--   [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別擁有可執行地理編碼 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理編碼 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
--   這些方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)。
--   [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。 透過 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
--   每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件皆包含一個 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。 請透過每個 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取這個物件。
+-   The [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class has methods that do geocoding ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) and reverse geocoding ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)).
+-   These methods return a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
+-   The [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) contains a collection of [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects. Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the **MapLocationFinderResult**.
+-   Each [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) object contains a [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) object. Access this object through the [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) property of each **MapLocation**.
 
-**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
+**Important**  You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
 
- 
+ 
 
-## 取得位置 (地理編碼)
+## Get a location (Geocode)
 
 
-藉由執行下列步驟，即可將地址或地點名稱轉換成地理位置 (地理編碼)。
+Convert an address or a place name to a geographic location (geocoding) by performing the following steps.
 
-1.  呼叫 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別之 [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法的其中一個多載。
-2.  [
-            **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 物件，此物件包含相符之 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。
-3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
+1.  Call one of the overloads of the [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) method of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class.
+2.  The [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) method returns a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) object that contains a collection of matching [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects.
+3.  Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
 
 ```csharp
 using Windows.Services.Maps;
@@ -73,22 +71,21 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個程式碼會在 `tbOutputText` 文字方塊中顯示下列結果。
+This code displays the following results to the `tbOutputText` textbox.
 
 ``` syntax
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## 取得地址 (反向地理編碼)
+## Get an address (reverse geocode)
 
 
-藉由執行下列步驟，即可將地理位置轉換成地址 (反向地理編碼)。
+Convert a geographic location to an address (reverse geocoding) by performing the following steps.
 
-1.  呼叫 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的 [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法。
-2.  [
-            **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 物件，此物件包含相符之 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。
-3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
-4.  透過每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。
+1.  Call the [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) method of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class.
+2.  The [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) method returns a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) object that contains a collection of matching [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects.
+3.  Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
+4.  Access the [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) object through the [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) property of each [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549).
 
 ```csharp
 using Windows.Services.Maps;
@@ -116,26 +113,21 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個程式碼會在 `tbOutputText` 文字方塊中顯示下列結果。
+This code displays the following results to the `tbOutputText` textbox.
 
 ``` syntax
 town = Redmond
 ```
 
-## 相關主題
+## Related topics
 
-* [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

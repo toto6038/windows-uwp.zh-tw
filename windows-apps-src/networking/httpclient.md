@@ -1,68 +1,57 @@
 ---
-description: 使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
+author: DelfCo
+description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ---
 
 # HttpClient
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要 API**
+**Important APIs**
 
 -   [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
 -   [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 -   [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)
 
-使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和其餘 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
+Use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) and the rest of the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 
-## HttpClient 和 Windows.Web.Http 命名空間的概觀
+## Overview of HttpClient and the Windows.Web.Http namespace
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間和相關 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 與 [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623)命名空間中的類別提供了適用於通用 Windows 平台 (UWP) app 的程式設計介面，可做為 HTTP 用戶端來執行基本的 GET 要求或實作下列更進階的 HTTP 功能。
+The classes in the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace and the related [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) and [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) namespaces provide a programming interface for Universal Windows Platform (UWP) apps that act as an HTTP client to perform basic GET requests or implement more advanced HTTP functionality listed below.
 
--   適用於常見動詞 (**DELETE**、**GET**、**PUT** 及 **POST**) 的方法。 每一個要求在傳送時，會以非同步作業的方式進行。
+-   Methods for common verbs (**DELETE**, **GET**, **PUT**, and **POST**). Each of these requests are sent as an asynchronous operation.
 
--   常見驗證設定與模式的支援。
+-   Support for common authentication settings and patterns.
 
--   存取傳輸相關的安全通訊端層 (SSL) 詳細資料。
+-   Access to Secure Sockets Layer (SSL) details on the transport.
 
--   在進階 app 中包含自訂篩選。
+-   Ability to include customized filters in advanced apps.
 
--   取得、設定及刪除 Cookie。
+-   Ability to get, set, and delete cookies.
 
--   非同步方法中的 HTTP 要求進度資訊。
+-   HTTP Request progress info available on asynchronous methods.
 
-[
-            **Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 類別代表 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 所傳送的 HTTP 要求訊息。 [
-            **Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 類別代表從 HTTP 要求收到的 HTTP 回應訊息。 HTTP 訊息是由 IETF 定義在 [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) 中。
+The [**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) class represents an HTTP request message sent by [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639). The [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) class represents an HTTP response message received from an HTTP request. HTTP messages are defined in [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) by the IETF.
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間代表做為 HTTP 實體內容和標頭 (包含 Cookie) 的 HTTP 內容。 HTTP 內容可與 HTTP 要求或 HTTP 回應產生關聯。 **Windows.Web.Http** 命名空間提供一些不同的類別來代表 HTTP 內容。
+The [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace represents HTTP content as the HTTP entity body and headers including cookies. HTTP content can be associated with an HTTP request or an HTTP response. The **Windows.Web.Http** namespace provides a number of different classes to represent HTTP content.
 
--   [
-            **HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 緩衝區形式的內容
--   [
-            **HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 形式為以 **application/x-www-form-urlencoded** MIME 類型編碼之名稱/值 Tuple 的內容
--   [
-            **HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 格式為 **multipart/\*** MIME 類型的內容。
--   [
-            **HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 以 **multipart/form-data** MIME 類型編碼的內容。
--   [
-            **HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 串流形式的內容 (HTTP GET 方法用來接收資料以及 HTTP POST 方法用來上傳資料的內部類型)
--   [
-            **HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 字串形式的內容
--   [
-            **IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 開發人員用來建立他們自己的內容物件的基底介面
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625). Content as a buffer
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685). Content as name and value tuples encoded with the **application/x-www-form-urlencoded** MIME type
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708). Content in the form of the **multipart/\*** MIME type.
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596). Content that is encoded as the **multipart/form-data** MIME type.
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649). Content as a stream (the internal type is used by the HTTP GET method to receive data and the HTTP POST method to upload data)
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661). Content as a string.
+-   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - A base interface for developers to create their own content objects
 
-在 [透過 HTTP 傳送簡單 GET 要求] 一節的程式碼片段中，會使用 [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) 類別，以字串形式表示來自 HTTP GET 要求的 HTTP 回應。
+The code snippet in the "Send a simple GET request over HTTP" section uses the [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) class to represent the HTTP response from an HTTP GET request as a string.
 
-[
-            **Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空間支援建立 HTTP 標頭與 Cookie，接著將它們當成屬性來與 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 物件產生關聯。
+The [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) namespace supports creation of HTTP headers and cookies, which are then associated as properties with [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) and [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) objects.
 
-## 透過 HTTP 傳送簡單 GET 要求
+## Send a simple GET request over HTTP
 
-如本文先前所述，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別將 GET 要求傳送至 http://www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 類別讀取 GET 要求的回應。
+As mentioned earlier in this article, the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http://www.contoso.com using the [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class and the [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) class to read the response from the GET request.
 
 ```csharp
 //Create an HTTP client object
@@ -104,27 +93,21 @@ catch (Exception ex)
 }
 ```
 
-## Windows.Web.Http 中的例外狀況
+## Exceptions in Windows.Web.Http
 
-如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
+An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET:  **The [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) type appears as [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) in C# and VB.
 
-在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
+In C# and Visual Basic, this error can be avoided by using the [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) class in the .NET 4.5 and one of the [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) methods to test the string received from a user before the URI is constructed.
 
-在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果應用程式取得使用者為 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
+In C++, there is no method to try and parse a string to a URI. If an app gets input from the user for the [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998), the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
+The [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) lacks a convenience function. So an app using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) and other classes in this namespace needs to use the **HRESULT** value.
 
-在使用 C#、VB.NET 之 .NET Framework 4.5 的 app 中，[System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) 代表例外狀況發生時 app 執行期間的錯誤。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+In apps using the .NET Framework 4.5 in C#, VB.NET, the [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) represents an error during app execution when an exception occurs. The [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) property returns the **HRESULT** assigned to the specific exception. The [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) property returns the message that describes the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. An app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
 
-在使用 Managed C++ 的 app 中，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表例外狀況發生時 app 執行期間的錯誤。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+In apps using managed C++, the [Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) represents an error during app execution when an exception occurs. The [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) property returns the **HRESULT** assigned to the specific exception. The [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) property returns the system-provided string that is associated with the **HRESULT** value. Possible **HRESULT** values are listed in the *Winerror.h* header file. An app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
 
-針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對部分不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**. For some illegal method calls, the **HRESULT** returned is **E\_ILLEGAL\_METHOD\_CALL**.
 

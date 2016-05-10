@@ -1,33 +1,34 @@
 ---
-title: 將紋理套用到基本型別
-description: 以下我們將使用「在基本型別上使用深度和效果」中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。
+author: mtoepke
+title: Apply textures to primitives
+description: Here, we load raw texture data and apply that data to a 3D primitive by using the cube that we created in Using depth and effects on primitives.
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ---
 
-# 將紋理套用到基本型別
+# Apply textures to primitives
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下我們將使用[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。 我們還會介紹一個簡單的內積光源模型，其中立方體的表面會根據它們與光源的相對距離和角度呈現較淺或較深的顏色。
+Here, we load raw texture data and apply that data to a 3D primitive by using the cube that we created in [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md). We also introduce a simple dot-product lighting model, where the cube surfaces are lighter or darker based on their distance and angle relative to a light source.
 
-**目標：**將紋理套用到基本型別。
+**Objective:** To apply textures to primitives.
 
-## 先決條件
+## Prerequisites
 
 
-我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
+We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
-我們也假設您已經看過[快速入門：設定 DirectX 資源及顯示影像](setting-up-directx-resources.md)、[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)，以及[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)。
+We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md), [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md), and [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md).
 
-**完成所需的時間：**20 分鐘。
+**Time to complete:** 20 minutes.
 
-指示
+Instructions
 ------------
 
-### 1. 為紋理立方體定義變數
+### 1. Defining variables for a textured cube
 
-首先，我們需要為紋理立方體定義 **BasicVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置、方向及紋理，以及檢視立方體的方式。 否則，我們就需要使用類似先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中的方式宣告變數。
+First, we need to define the **BasicVertex** and **ConstantBuffer** structures for the textured cube. These structures specify the vertex positions, orientations, and textures for the cube and how the cube will be viewed. Otherwise, we declare variables similarly to the previous tutorial, [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md).
 
 ```cpp
 struct BasicVertex
@@ -58,20 +59,20 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 使用表面和紋理元素建立頂點和像素著色器
+### 2. Creating vertex and pixel shaders with surface and texture elements
 
-以下我們將建立比先前 [在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點紋理座標傳遞給像素著色器。
+Here, we create more complex vertex and pixel shaders than in the previous tutorial, [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md). This app's vertex shader transforms each vertex position into projection space and passes the vertex texture coordinate through to the pixel shader.
 
-描述頂點著色器程式碼配置的 App [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構陣列具有三個配置元素：一個元素定義頂點位置，另一個元素定義表面法線向量 (表面一般面對的方向)，而第三個元素定義紋理座標。
+The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures that describe the layout of the vertex shader code has three layout elements: one element defines the vertex position, another element defines the surface normal vector (the direction that the surface normally faces), and the third element defines the texture coordinates.
 
-我們會建立頂點緩衝區、索引緩衝區及常數緩衝區來定義環繞移動的紋理立方體。
+We create vertex, index, and constant buffers that define an orbiting textured cube.
 
-**定義環繞移動的紋理立方體**
+**To define an orbiting textured cube**
 
-1.  首先，我們定義立方體。 每個頂點都會被指派一個位置、表面法線向量及紋理座標。 我們會針對每個角落使用多個頂點，以允許為每個面定義不同的法線向量和紋理座標。
-2.  接著，我們會使用立方體定義來描述頂點和索引緩衝區 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 和 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220))。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 一次。
-3.  接著，我們會建立常數緩衝區 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) 來傳遞模型、檢視及投影陣列給頂點著色器。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 來建立常數緩衝區。
-4.  最後，我們會指定對應 X = 0、Y = 1、Z = 2 相機位置的檢視轉換。
+1.  First, we define the cube. Each vertex is assigned a position, a surface normal vector, and texture coordinates. We use multiple vertices for each corner to allow different normal vectors and texture coordinates to be defined for each face.
+2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
+3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to create the constant buffer.
+4.  Finally, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.
 
 ```cpp
         
@@ -262,20 +263,20 @@ private:
        });
 ```
 
-### 3. 建立紋理和取樣器
+### 3. Creating textures and samplers
 
-以下我們會將紋理資料套用到立方體，而不是像在先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中那樣套用色彩。
+Here, we apply texture data to a cube rather than applying colors as in the previous tutorial, [Using depth and effects on primitives](using-depth-and-effects-on-primitives.md).
 
-我們會使用原始紋理資料來建立紋理。
+We use raw texture data to create textures.
 
-**建立紋理和取樣器**
+**To create textures and samplers**
 
-1.  首先，我們會從磁碟上的 texturedata.bin 檔案讀取原始紋理資料。
-2.  接著，我們會建構參考該原始紋理資料的 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 結構。
-3.  然後，我們會填入 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 結構來描述紋理。 再接著，會在 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 呼叫中傳遞 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 和 **D3D11\_TEXTURE2D\_DESC** 結構來建立紋理。
-4.  接著，我們會建立紋理的著色器資源檢視，以便讓著色器能夠使用紋理。 為了建立著色器資源檢視，我們會填入一個 [**D3D11\_SHADER\_RESOURCE\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476211) 來描述著色器資源檢視，並將著色器資源檢視描述和紋理傳遞給 [**ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519)。 一般而言，您會讓檢視描述與紋理描述相符。
-5.  接著，我們會建立紋理的取樣器狀態。 這個取樣器狀態會使用相關的紋理資料，以定義如何判斷特定紋理座標的色彩。 我們會填入 [**D3D11\_SAMPLER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476207) 結構來描述取樣器狀態。 然後我們會在 [**ID3D11Device::CreateSamplerState**](https://msdn.microsoft.com/library/windows/desktop/ff476518) 呼叫中傳遞 **D3D11\_SAMPLER\_DESC** 結構來建立取樣器狀態。
-6.  最後，我們會宣告一個 *degree* 變數，我們將使用這個變數藉由在每個畫面旋轉立方體來製作動畫。
+1.  First, we read raw texture data from the texturedata.bin file on disk.
+2.  Next, we construct a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure that references that raw texture data.
+3.  Then, we populate a [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) structure to describe the texture. We then pass the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and **D3D11\_TEXTURE2D\_DESC** structures in a call to [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to create the texture.
+4.  Next, we create a shader-resource view of the texture so shaders can use the texture. To create the shader-resource view, we populate a [**D3D11\_SHADER\_RESOURCE\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476211) to describe the shader-resource view and pass the shader-resource view description and the texture to [**ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519). In general, you match the view description with the texture description.
+5.  Next, we create sampler state for the texture. This sampler state uses the relevant texture data to define how the color for a particular texture coordinate is determined. We populate a [**D3D11\_SAMPLER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476207) structure to describe the sampler state. We then pass the **D3D11\_SAMPLER\_DESC** structure in a call to [**ID3D11Device::CreateSamplerState**](https://msdn.microsoft.com/library/windows/desktop/ff476518) to create the sampler state.
+6.  Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.
 
 ```cpp
         
@@ -386,24 +387,24 @@ private:
         float degree = 0.0f;
 ```
 
-### 4. 旋轉及繪製紋理立方體並呈現轉譯的影像
+### 4. Rotating and drawing the textured cube and presenting the rendered image
 
-如先前教學課程所示，我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 來更新常數緩衝區並旋轉立方體模型。 接著，我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 來指定轉譯目標和深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 來清除深度緩衝區。
+As in the previous tutorials, we enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) to update the constant buffer and rotate the cube model. Next, we call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target and the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) to clear the depth buffer.
 
-在無限迴圈中，我們也會在藍色表面上繪製紋理立方體。
+In the endless loop, we also draw the textured cube on the blue surface.
 
-**繪製紋理立方體**
+**To draw the textured cube**
 
-1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
-2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 來將頂點和索引緩衝區繫結到輸入組合階段。
-3.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 搭配要為輸入組合階段指定的 [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 值，以將頂點資料解譯為三角形區域。
-4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 以使用像素著色器程式碼起始像素著色階段。
-5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) 來設定頂點著色器管線階段所使用的常數緩衝區。
-6.  接著，我們會呼叫 [**PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) 來將紋理的著色器資源檢視繫結到像素著色器管線階段。
-7.  接著，我們會呼叫 [**PSSetSamplers**](https://msdn.microsoft.com/library/windows/desktop/ff476471) 來將取樣器狀態設成像素著色器管線階段。
-8.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 來繪製立方體並將它提交給轉譯管線。
+1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
+2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
+3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
+4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
+5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) to set the constant buffer that is used by the vertex shader pipeline stage.
+6.  Next, we call [**PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) to bind the shader-resource view of the texture to the pixel shader pipeline stage.
+7.  Next, we call [**PSSetSamplers**](https://msdn.microsoft.com/library/windows/desktop/ff476471) to set the sampler state to the pixel shader pipeline stage.
+8.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the cube and submit it to the rendering pipeline.
 
-如先前教學課程中所示，我們會呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 來將轉譯的影像呈現到視窗。
+As in the previous tutorials, we call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -507,20 +508,15 @@ private:
                 );
 ```
 
-## 摘要
+## Summary
 
 
-我們載入了原始紋理資料並將該資料套用到 3D 基本型別。
+We loaded raw texture data and applied that data to a 3D primitive.
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

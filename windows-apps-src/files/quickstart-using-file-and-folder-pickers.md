@@ -1,65 +1,66 @@
 ---
+author: TylerMSFT
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-title: 使用選擇器開啟檔案和資料夾
-description: 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。
+title: Open files and folders with a picker
+description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
 ---
 
-# 使用選擇器開啟檔案和資料夾
+# Open files and folders with a picker
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
 -   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 類別來存取檔案，使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。
+Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) classes to gain access to files, and the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) to gain access to a folder.
 
-**注意**：另請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+**Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
- 
+ 
 
-## 先決條件
-
-
--   **了解通用 Windows 平台 (UWP) app 的非同步程式設計**
-
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
-
--   **位置的存取權限**
-
-    請參閱[檔案存取權限](file-access-permissions.md)。
-
-## 檔案選擇器 UI
+## Prerequisites
 
 
-檔案選擇器會顯示資訊以引導使用者，並且在使用者開啟或儲存檔案時提供一致的體驗。
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-資訊包括：
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   目前的位置
--   使用者選擇的項目
--   使用者可以瀏覽的位置樹狀結構。 這些位置包括檔案系統位置 (例如 [音樂] 或 [下載] 資料夾)，以及實作檔案選擇器協定 (例如相機、相片與 Microsoft OneDrive) 的 app。
+-   **Access permissions to the location**
 
-電子郵件 app 可能會顯示檔案選擇器，讓使用者可以挑選附件。
+    See [File access permissions](file-access-permissions.md).
 
-![檔案選擇器具有兩個挑選要開啟的檔案。](images/picker-multifile-600px.png)
-
-## 選擇器的運作方式
+## File picker UI
 
 
-透過選擇器，您的 app 即可存取使用者系統上的所有檔案和資料夾。 透過選擇器，使用者可以瀏覽他們的系統來選擇要開啟或儲存的檔案 (或資料夾)。 您的 app 會以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件的形式接收這些挑中的項目，您稍後可以進行操作。
+A file picker displays information to orient users and to provide a consistent experience when users open or save files.
 
-選擇器使用統合的單一介面，讓使用者得以從檔案系統或其他 app 挑選檔案和資料夾。 從其他 app 挑選的檔案就像從檔案系統挑選的檔案一樣：它們也會以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件傳回。 一般而言，您的應用程式操作它們的方式與操作其他這類物件一樣。 其他 app 只要透過參與檔案選擇器協定就可以提供檔案。 如果您想要 app 提供檔案、儲存位置或檔案更新給其他 app，請參閱[與檔案選擇器協定整合](https://msdn.microsoft.com/library/windows/apps/hh465192)。
+That information includes:
 
-例如，您可以在 app 中呼叫檔案選擇器，讓您的使用者能夠開啟檔案。 這會讓您的 app 成為呼叫 app。 檔案選擇器與系統及其他 app 互動，以便讓使用者瀏覽和挑選檔案。 使用者選擇檔案的時候，檔案選擇器會將這個檔案傳回到您的 app。 以下是使用者從另一個 app (例如 OneDrive) 選擇檔案時的程序。 在這個案例中，OneDrive 就是提供 app。
+-   The current location
+-   The item or items that the user picked
+-   A tree of locations that the user can browse to. These locations include file system locations—such as the Music or Downloads folder—as well as apps that implement the file picker contract (such as Camera, Photos, and Microsoft OneDrive).
 
-![圖表中顯示的程序是一個 app 透過另一個 app 開啟檔案，並將檔案選擇器當作兩個 app 之間的介面使用。](images/app-to-app-diagram-600px.png)
+An email app might display a file picker so that the user can pick attachments.
 
-## 挑選單一檔案以開啟它：完整程式碼清單
+![a file picker with two files picked to be opened.](images/picker-multifile-600px.png)
+
+## How pickers work
+
+
+Through a picker, your app can gain access to files and folders on the user's system. Through the picker, the user browses their system to pick files (or folders) to open or save to. Your app receives those picks as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects, which you can then operate on.
+
+The picker uses a single, unified interface to let the user pick files and folders from the files system or from other apps. Files picked from other apps are like files from the file system: they are returned as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects. In general, your app can operate on them in the same ways as other such objects. Other apps make files available by participating in file picker contracts. If you want your app to provide files, a save location, or file updates to other apps, see [Integrating with file picker contracts](https://msdn.microsoft.com/library/windows/apps/hh465192).
+
+For example, you might call the file picker in your app so that your user can open a file. This makes your app the calling app. The file picker interacts with the system and/or other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file to your app. Here's the process for the case where the user chooses a file from another app, such as OneDrive. In this case OneDrive is the providing app.
+
+![a daigram that shows the process of one app getting a file to open from another app using the file picker as an interface bewteen the two apps.](images/app-to-app-diagram-600px.png)
+
+## Pick a single file to open it: complete code listing
 
 
 ```CSharp
@@ -83,14 +84,14 @@ else
 }
 ```
 
-如需挑選多個檔案的程式碼，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+For code to pick multiple files, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## 挑選單一檔案將它開啟：逐步說明
+## Pick a single file to open it: step-by-step
 
 
-呼叫檔案選擇器牽涉到建立和自訂檔案選擇器物件，然後顯示檔案選擇器供使用者挑選一或多個項目。
+Using a file picker involves creating and customizing a file picker object, and then showing the file picker so the user can pick one or more items.
 
-1.  **建立和自訂 FileOpenPicker**
+1.  **Create and customize a FileOpenPicker**
 
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -102,19 +103,19 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.FileTypeFilter.Add(".png");
 ```
 
-在與使用者和您的 app 相關的檔案選擇器物件上設定屬性。 如需協助您決定如何自訂檔案選擇器的指導方針，請參閱[檔案選擇器的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465182)。
+Set properties on the file picker object that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-這個範例會藉由設定下列三個屬性，在使用者可以挑選的便利位置建立一個豐富的視覺化圖片：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 及 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+This example creates a rich, visual display of pictures in a convenient location that the user can pick from by setting three properties: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), and [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
--   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 **Thumbnail**[**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
+-   Setting [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) to the **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) enum value creates a rich, visual display by using picture thumbnails to represent files in the file picker. Do this for picking visual files such as pictures or videos. Otherwise, use [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). A hypothetical email app with **Attach Picture or Video** and **Attach Document** features would set the **ViewMode** appropriate to the feature before showing the file picker.
 
--   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 設定為 [圖片]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
+-   Setting [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to Pictures using [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) starts the user in a location where they're likely to find pictures. Set **SuggestedStartLocation** to a location appropriate for the type of file being picked, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
 
--   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 以指定檔案類型，讓使用者聚焦在挑選相關的檔案。 若要使用新的項目取代 **FileTypeFilter** 中的檔案類型，請使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) (而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834))。
+-   Using [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) to specify file types keeps the user focused on picking files that are relevant. To replace previous file types in the **FileTypeFilter** with new entries, use [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) instead of [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834).
 
-2.  **顯示 FileOpenPicker**
+2.  **Show the FileOpenPicker**
 
-    -   **挑選單一檔案**
+    -   **To pick a single file**
 
 ```CSharp
 Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -150,7 +151,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## 挑選資料夾：完整程式碼清單
+## Pick a folder: complete code listing
 
 
 ```CSharp
@@ -172,19 +173,14 @@ else
 }
 ```
 
-**提示**：只要您的 app 透過選擇器來存取檔案或資料夾，就會將該項目新增到 app 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便追蹤。 若要深入了解如何使用這些清單，請參閱[如何追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md)。
+**Tip**  Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) or [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
 
- 
+ 
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

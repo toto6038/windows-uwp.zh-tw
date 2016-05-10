@@ -1,159 +1,150 @@
 ---
+author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。
-title: 媒體組合和編輯
+description: The APIs in the Windows.Media.Editing namespace allow you to quickly develop apps that enable the users to create media compositions from audio and video source files.
+title: Media compositions and editing
 ---
 
-# 媒體組合和編輯
+# Media compositions and editing
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[
-            **Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 架構的功能包括能夠以程式設計的方式一起新增多個視訊剪輯、新增視訊與影像重疊、新增背景音訊，以及套用音訊與視訊效果。 建立之後，媒體組合可以轉譯為一般媒體檔案來播放或共用，但是組合也可以序列化至磁碟和從磁碟還原序列化，允許使用者載入和修改他們之前建立的組合。 這項功能是以方便使用的 Windows 執行階段介面提供，相較於低階 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197) API時，大幅減少執行這些工作所需之程式碼的數量和複雜度。
+This article shows you how to use the APIs in the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace to quickly develop apps that enable the users to create media compositions from audio and video source files. Features of the framework include the ability to programmatically append multiple video clips together, add video and image overlays, add background audio, and apply both audio and video effects. Once created, media compositions can be rendered into a flat media file for playback or sharing, but compositions can also be serialized to and deserialized from disk, allowing the user to load and modify compositions that they have previously created. All of this functionality is provided in an easy-to-use Windows Runtime interface that dramatically reduces the amount and complexity of code required to perform these tasks when compared to the low-level [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API.
 
-## 建立新的媒體組合
+## Create a new media composition
 
-[
-            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
+The [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) class is the container for all of the media clips that make up the composition and is responsible for rendering the final composition, loading and saving compositions to disc, and providing a preview stream of the composition so that the user can view it in the UI. To use **MediaComposition** in your app, include the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace as well as the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) namespace that provides related APIs that you will need.
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
-將會從您的程式碼的多個點存取 **MediaComposition** 物件，因此通常您會宣告其中的成員變數以儲存它。
+The **MediaComposition** object will be accessed from multiple points in your code, so typically you will declare a member variable in which to store it.
 
 [!code-cs[DeclareMediaComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
 
-**MediaComposition** 的建構函式沒有引數。
+The constructor for **MediaComposition** takes no arguments.
 
 [!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## 將媒體剪輯新增至組合
+## Add media clips to a composition
 
-媒體組合通常包含一或多個視訊剪輯。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) 以允許使用者選取視訊檔案。 一旦選取檔案，建立新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 物件以包含視訊剪輯，方法是呼叫 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)。 接著您將剪輯新增至 **MediaComposition** 物件的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 清單。
+Media compositions typically contain one or more video clips. You can use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) to allow the user to select a video file. Once the file has been selected, create a new [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) object to contain the video clip by calling [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Then you add the clip to the **MediaComposition** object's [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
 
 [!code-cs[PickFileAndAddClip](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
 
--   媒體剪輯會以在 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 清單中顯示的相同順序出現在 **MediaComposition** 中。
+-   Media clips appear in the **MediaComposition** in the same order as they appear in [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
 
--   **MediaClip** 只能併入組合一次。 嘗試新增已由組合使用的 **MediaClip** 會導致錯誤。 若要在組合中重複使用視訊剪輯多次，請呼叫 [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) 以建立稍後可以新增至組合的新 **MediaClip** 物件。
+-   A **MediaClip** can only be included in a composition once. Attempting to add a **MediaClip** that is already being used by the composition will result in an error. To reuse a video clip multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
 
--   通用 Windows app 沒有權限可以存取整個檔案系統。 [
-            **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性可以讓您的 app 儲存檔案的記錄，該檔案已由使用者選取，所以您可以保留存取檔案的權限。 **FutureAccessList** 具有最多的 1000 個項目，所以您的 app 需要管理清單以確定不會變滿。 如果您計劃支援載入和修改之前建立的組合，這特別重要。
+-   Universal Windows apps do not have permission to access the entire file system. The [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class allows your app to store a record of a file that has been selected by the user so that you can retain permissions to access the file. The **FutureAccessList** has a maxium of 1000 entries, so your app needs to manage the list to make sure it does not become full. This is especially important if you plan to support loading and modifying previously created compositions.
 
--   **MediaComposition** 支援 MP4 格式的視訊剪輯。
+-   A **MediaComposition** supports video clips in MP4 format.
 
--   如果視訊檔案包含多個內嵌的曲目，您可以藉由設定 [**SelectedEmbeddedAudioTrackIndex**](https://msdn.microsoft.com/library/windows/apps/dn652627) 屬性，選取要在組合中使用哪個曲目。
+-   If a video file contains multiple embedded audio tracks, you can select which audio track is used in the composition by setting the [**SelectedEmbeddedAudioTrackIndex**](https://msdn.microsoft.com/library/windows/apps/dn652627) property.
 
--   建立單一色彩填滿整個框架的 **MediaClip**，方法是呼叫 [**CreateFromColor**](https://msdn.microsoft.com/library/windows/apps/dn652605) 以及指定色彩和剪輯的持續時間。
+-   Create a **MediaClip** with a single color filling the entire frame by calling [**CreateFromColor**](https://msdn.microsoft.com/library/windows/apps/dn652605) and specifying a color and a duration for the clip.
 
--   從影像檔建立 **MediaClip**，方法是呼叫 [**CreateFromImageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652610) 以及指定影像檔和剪輯的持續時間。
+-   Create a **MediaClip** from an image file by calling [**CreateFromImageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652610) and specifying an image file and a duration for the clip.
 
--   從 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 建立 **MediaClip**，方法是呼叫 [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) 以及指定表面和剪輯的持續時間。
+-   Create a **MediaClip** from a [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) by calling [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) and specifying a surface and a duration from the clip.
 
-## 預覽 MediaElement 中的組合
+## Preview the composition in a MediaElement
 
-若要讓使用者檢視媒體組合，請將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 新增至定義您 UI 的 XAML 檔案。
+To enable the user to view the media composition, add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to the XAML file that defines your UI.
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-宣告類型 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 的成員變數。
+Declare a member variable of type [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716).
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-呼叫 **MediaComposition** 物件的 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 方法來建立組合的 **MediaStreamSource**，然後呼叫 **MediaElement** 的 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 方法。 現在可以在 UI 中檢視組合。
+Call the **MediaComposition** object's [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) method to create a **MediaStreamSource** for the composition and then call the [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) method of the **MediaElement**. Now the composition can be viewed in the UI.
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
--   **MediaComposition** 必須包含至少一個媒體剪輯，然後才能呼叫 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，否則傳回的物件將會是 Null。
+-   The **MediaComposition** must contain at least one media clip before calling [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), or the returned object will be null.
 
--   **MediaElement** 時間軸不會自動更新以反映組合中的變更。 當您每次對組合進行一組變更並且想要更新 UI 時，建議您同時呼叫 **GeneratePreviewMediaStreamSource** 和 **SetMediaStreamSource**。
+-   The **MediaElement** timeline is not automatically updated to reflect changes in the composition. It is recommended that you call both **GeneratePreviewMediaStreamSource** and **SetMediaStreamSource** every time you make a set of changes to the composition and want to update the UI.
 
-當使用者離開頁面以釋放相關聯的資源時，建議您將 **MediaStreamSource** 物件和 **MediaElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設為 Null。
+It is recommended that you set the **MediaStreamSource** object and the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the **MediaElement** to null when the user navigates away from the page in order to release associated resources.
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## 將組合轉譯為視訊檔案
+## Render the composition to a video file
 
-若要將媒體組合轉譯為一般視訊檔案，以便共用及在其他裝置上檢視，您需要使用 [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) 命名空間的 API。 若要更新非同步作業進度的 UI，您也需要 [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) 命名空間的 API。
+To render a media composition to a flat video file so that it can be shared and viewed on other devices, you will need to use APIs from the [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) namespace. To update the UI on the progress of the async operation, you will also need APIs from the [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) namespace.
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-在允許使用者使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 選取輸出檔案之後，藉由呼叫 **MediaComposition** 物件的 [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690)，將組合轉譯為選取的檔案。 下列範例中的其他程式碼只是遵循處理 [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) 的模式。
+After allowing the user to select an output file with a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), render the composition to the selected file by calling the **MediaComposition** object's [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690). The rest of the code in the following example simply follows the pattern of handling an [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807).
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [
-            **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
+-   The [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) allows you to prioritize speed of the transcoding operation versus the precision of trimming of adjacent media clips. **Fast** causes transcoding to be faster with lower-precision trimming, **Precise** causes transcoding to be slower but with more precise trimming.
 
-## 修剪視訊剪輯
+## Trim a video clip
 
-修剪組合中視訊剪輯的持續時間，方法是設定 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 物件的 [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) 屬性、[**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) 屬性，或兩者同時設定。
+Trim the duration of a video clip in a composition by setting the [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) objects [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) property, the [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) property, or both.
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用 **MediaElement** 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) 屬性，藉由檢查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先決定要在目前位置播放哪個 MediaClip。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
--   **MediaClip** 物件的 [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) 屬性可讓您知道未套用任何剪輯的媒體剪輯的持續時間。
--   [
-            **TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
--   指定大於媒體剪輯原始持續時間的修剪值不會擲回錯誤。 不過，如果組合只包含單一剪輯，並且藉由指定大的修剪值而修剪為零長度，[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的後續呼叫會傳回 Null，如同組合沒有任何剪輯。
+-   Your can use any UI that you want to let the user specify the start and end trim values. The example above uses the [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) property of the **MediaElement** to first determine which MediaClip is playing back at the current position in the composition by checking the [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) and [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Then the **Position** and **StartTimeInComposition** properties are used again to calculate the amount of time to trim from the beginning of the clip. The **FirstOrDefault** method is an extension method from the **System.Linq** namespace that simplifies the code for selecting items from a list.
+-   The [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) property of the **MediaClip** object lets you know the duration of the media clip without any clipping applied.
+-   The [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) property lets you know the duration of the media clip after trimming is applied.
+-   Specifying a trimming value that is larger than the original duration of the clip does not throw an error. However, if a composition contains only a single clip and that is trimmed to zero length by specifying a large trimming value, a subsequent call to [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) will return null, as if the composition has no clips.
 
-## 將背景曲目新增至組合
+## Add a background audio track to a composition
 
-若要將背景曲目新增至組合，載入音訊檔案然後建立 [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) 物件，方法是呼叫 Factory 方法 [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561)。 接著將 **BackgroundAudioTrack** 新增至組合的 [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) 屬性。
+To add a background track to a composition, load an audio file and then create a [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) object by calling the factory method [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561). Then, add the **BackgroundAudioTrack** to the composition's [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) property.
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   **MediaComposition** 支援下列格式的背景曲目：MP3、WAV、FLAC
+-   A **MediaComposition** supports background audio tracks in the following formats: MP3, WAV, FLAC
 
--   背景曲目
+-   A background audio track
 
--   如同使用視訊檔案，您應該使用 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別來保留組合中檔案的存取權。
+-   As with video files, you should use the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class to preserve access to files in the composition.
 
--   如同使用 **MediaClip**，**BackgroundAudioTrack** 只能併入組合一次。 嘗試新增已由組合使用的 **BackgroundAudioTrack** 會導致錯誤。 若要在組合中重複使用曲目多次，請呼叫 [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) 以建立稍後可以新增至組合的新 **MediaClip** 物件。
+-   As with **MediaClip**, a **BackgroundAudioTrack** can only be included in a composition once. Attempting to add a **BackgroundAudioTrack** that is already being used by the composition will result in an error. To reuse an audio track multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
 
--   根據預設，背景曲目會在組合的開頭開始播放。 如果有多個背景曲目存在，所有曲目都會在組合的開頭開始播放。 若要讓背景曲目在其他時間開始播放，請將 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) 屬性設為想要的時間起始位移。
+-   By default, background audio tracks begin playing at the start of the composition. If multiple background tracks are present, all of the tracks will begin playing at the start of the composition. To cause a background audio track to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) property to the desired time offset.
 
-## 將重疊新增至組合
+## Add an overlay to a composition
 
-重疊可讓您在組合中每個視訊層上方堆疊多個視訊層。 組合可以包含多個重疊層，每一個可以包含多個重疊。 將 **MediaClip** 傳遞到其建構函式，以建立 [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) 物件。 設定重疊的位置和不透明度，然後建立新的 [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795)，並將 **MediaOverlay** 新增至其 [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) 清單。 最後，將 **MediaOverlayLayer** 新增至組合的 [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) 清單。
+Overlays allow you to stack multiple layers of video on top of each other in a composition. A composition can contain multiple overlay layers, each of which can include multiple overlays. Create a [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) object by passing a **MediaClip** into its constructor. Set the position and opacity of the overlay, then create a new [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) and add the **MediaOverlay** to its [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) list. Finally, add the **MediaOverlayLayer** to the composition's [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) list.
 
 [!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
 
--   視訊層內的重疊是根據其包含層之 **Overlays** 清單的順序進行 z 排序。 清單中具有較高索引的項目會轉譯在較低索引項目的上方。 組合中的重疊層也是如此。 在組合的 **OverlayLayers** 清單中具有較高索引的視訊層會轉譯在較低索引視訊層的上方。
+-   Overlays within a layer are z-ordered based on their order in their containing layer's **Overlays** list. Higher indices within the list are rendered on top of lower indices. The same is true of overlay layers within a composition. A layer with higher index in the composition's **OverlayLayers** list will be rendered on top of lower indices.
 
--   因為重疊是堆疊在彼此上方，而不是順序播放，所以所有重疊預設會在組合的開頭開始播放。 若要讓重疊在其他時間開始播放，請將 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) 屬性設為想要的時間起始位移。
+-   Because overlays are stacked on top of each other instead of being played sequentially, all overlays start playback at the beginning of the composition by default. To cause an overlay to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) property to the desired time offset.
 
-## 將效果新增至媒體剪輯
+## Add effects to a media clip
 
-組合中的每個 **MediaClip** 都有一份可以加入多個效果的音訊與視訊效果清單。 效果必須分別實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 下列範例會使用目前的媒體元件位置以選擇目前檢視的 **MediaClip**，然後建立 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新執行個體，並將它附加到媒體剪輯的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 清單。
+Each **MediaClip** in a composition has a list of audio and video effects to which multiple effects can be added. The effects must implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) respectively. The following example uses the current media element position to choose the currently viewed **MediaClip** and then creates a new instance of the [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) and appends it to the media clip's [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) list.
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## 將組合儲存至檔案
+## Save a composition to a file
 
-媒體組合稍後可以序列化至檔案以進行修改。 挑選輸出檔案，然後呼叫 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) 以儲存組合。
+Media compositions can be serialized to a file to be modified at a later time. Pick an output file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) to save the composition.
 
 [!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## 從檔案載入組合
+## Load a composition from a file
 
-可以從檔案還原序列化媒體組合，讓使用者檢視和修改組合。 挑選組合檔案，然後呼叫 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) 以載入組合。
+Media compositions can be deserialized from a file to allow the user to view and modify the composition. Pick a composition file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) to load the composition.
 
 [!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
 
--   如果組合中的媒體檔案不是在您 app 可存取的位置，且不是在 app 的 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性中，則在載入組合時會擲回錯誤。
+-   If a media file in the composition is not in a location that can be accessed by your app and is not in the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class for your app, an error will be thrown when loading the composition.
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

@@ -1,72 +1,66 @@
 ---
+author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-title: 轉換概觀
-description: 了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段&\#160;API 中使用轉換。
+title: Transforms overview
+description: Learn how to use transforms in the Windows Runtime&\#160;API, by changing the relative coordinate systems of elements in the UI.
 ---
 
-# 轉換概觀
+# Transforms overview
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段 API 中使用轉換。 這可以用來調整個別 XAML 元素的外觀，例如在 x-y 空間中縮放、旋轉或轉換位置。
+Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space.
 
-## <span id="What_is_a_transform_"> </span> <span id="what_is_a_transform_"> </span> <span id="WHAT_IS_A_TRANSFORM_"> </span>什麼是轉換？
+## <span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>What is a transform?
 
-*轉換*定義了如何將點從一個座標空間對應或轉換到另一個座標空間。 將轉換套用到 UI 元素時，會變更該 UI 元素轉譯為螢幕上 UI 一部分的方式。
+A *transform* defines how to map, or transform, points from one coordinate space to another coordinate space. When a transform is applied to a UI element, it changes how that UI element is rendered to the screen as part of the UI.
 
-轉換可分為四大類：轉譯、旋轉、縮放及扭曲 (傾斜)。 為了使用圖形 API 來變更 UI 元素的外觀，通常最簡單的方式就是建立一次只定義一個操作的轉換。 因此，Windows 執行階段為這些轉換分類中的每一個都定義了個別的類別：
+Think of transforms in four broad classifications: translation, rotation, scaling and skew (or shear). For the purposes of using graphics APIs to change the appearance of UI elements, it's usually easiest to create transforms that define only one operation at a time. So the Windows Runtime defines a discrete class for each of these transform classifications:
 
--   [
-            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)：藉由設定 [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) 與 [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y) 的值，在 x-y 空間中轉譯元素。
--   [
-            **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)：藉由設定 [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) 及 [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) 的值，根據中心點縮放轉換。
--   [
-            **RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)：藉由設定 [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) 的值，在 x-y 空間中旋轉。
--   [
-            **SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950)：藉由設定 [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx)、[**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty) 的值，在 x-y 空間中扭曲或傾斜。
+-   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027): translates an element in x-y space, by setting values for [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) and [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
+-   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940): scales the transform based on a center point, by setting values for [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) and [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
+-   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932): rotates in x-y space, by setting values for [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) and [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
+-   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950): skews or shears in x-y space, by setting values for [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) and [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
 
-在這些當中，您最常針對 UI 案例使用的會是 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 與 [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)。
+Of these, you're likely to use [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) and [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) most often for UI scenarios.
 
-您可以將不同的轉換結合使用，而有兩個 Windows 執行階段類別支援這麼做：[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) 與 [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022)。 在 **CompositeTransform** 中，轉換的套用順序依序是：縮放、扭曲、旋轉、轉譯。 如果您希望以不同的順序套用轉換，請以 **TransformGroup** 代替 **CompositeTransform**。 如需詳細資訊，請參閱 [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105)。
+You can combine transforms, and there are two Windows Runtime classes that support this: [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) and [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022). In a **CompositeTransform**, transforms are applied in this order: scale, skew, rotate, translate. Use **TransformGroup** instead of **CompositeTransform** if you want the transforms applied in a different order. For more info, see [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105).
 
-## <span id="Transforms_and_layout"> </span> <span id="transforms_and_layout"> </span> <span id="TRANSFORMS_AND_LAYOUT"> </span>轉換與配置
+## <span id="Transforms_and_layout"></span><span id="transforms_and_layout"></span><span id="TRANSFORMS_AND_LAYOUT"></span>Transforms and layout
 
-在 XAML 配置中，版面配置階段完成之後才會套用轉換，因此是在套用轉換前，先完成可用空間計算與其他配置決策。 因為會先進行配置，所以如果您轉換位於 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 儲存格或是會在配置期間配置空間的類似配置容器中的元素，有時會收到非預期的結果。 經過轉換的元素可能會顯示成被截斷或被遮住，因為它嘗試在分割其父容器內的空間時，繪製到未計算轉換後尺寸的區域。 您可能需要對轉換結果進行實驗並調整一些設定。 例如，您可能需要變更 **Center** 屬性，或是宣告配置空間的固定像素度量，而不倚賴調適型配置與比例縮放，以確保父容器配置足夠的空間。
+In XAML layout, transforms are applied after the layout pass is complete, so available space calculations and other layout decisions have been made before the transforms are applied. Because layout comes first, you'll sometimes get unexpected results if you transform elements that are in a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) cell or similar layout container that allocates space during layout. The transformed element may appear truncated or obscured because it's trying to draw into an area that didn't calculate the post-transform dimensions when dividing space within its parent container. You may need to experiment with the transform results and adjust some settings. For example, instead of relying on adaptive layout and star sizing, you may need to change the **Center** properties or declare fixed pixel measurements for layout space to make sure the parent allots enough space.
 
-**移轉注意事項：**Windows Presentation Foundation (WPF) 已有在版面配置階段前先套用轉換的 **LayoutTransform** 屬性。 但 Windows 執行階段 XAML 不支援 **LayoutTransform** 屬性。 (Microsoft Silverlight 也沒有此選項)。
+**Migration note:  **Windows Presentation Foundation (WPF) had a **LayoutTransform** property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a **LayoutTransform** property. (Microsoft Silverlight didn't have this property either.)
 
-## <span id="Applying_a_transform_to_a_UI_element"> </span> <span id="applying_a_transform_to_a_ui_element"> </span> <span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"> </span>將轉換套用到 UI 元素
+## <span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Applying a transform to a UI element
 
-當您將轉換套用到物件時，一般是用來設定 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 屬性。 設定這個屬性實際上並不會將物件依像素逐步變更。 這個屬性實際上所做的是在該物件所在的區域座標空間內套用轉換。 然後，轉譯邏輯與操作 (配置後) 會轉譯經過結合的座標空間，看起來就像物件已變更了外觀且可能變更其配置位置 (如果已套用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027))。
+When you apply a transform to an object, you typically do so to set the property [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980). Setting this property does not literally change the object pixel by pixel. What the property really does is apply the transform within the local coordinate space in which that object exists. Then the rendering logic and operation (post-layout) renders the combined coordinate spaces, making it look like the object has changed appearance and also potentially its layout position (if [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) was applied).
 
-根據預設，每個轉譯轉換都是以目標物件之區域座標系統的原點做為中心—即 (0,0)。 唯一的例外是 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，它沒有中心屬性可供設定，因為不論其中心在哪裡，轉譯效果都相同。 但就其他轉換而言，每個都有可設定 **CenterX** 與 **CenterY** 值的屬性。
+By default, each render transform is centered at the origin of the target object's local coordinate system—its (0,0). The only exception is a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), which has no center properties to set because the translation effect is the same regardless of where it is centered. But the other transforms each have properties that set **CenterX** and **CenterY** values.
 
-每當您以 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 來使用轉換時，請記住在會影響轉換行為的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 上有另一個屬性：[**RenderTransformOrigin**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransformorigin.aspx)。 **RenderTransformOrigin** 所宣告的是整個轉換應該要套用到元素的預設 (0,0) 點，還是要套用到該元素之相對座標空間中的某個其他原始點。 就一般元素來說，(0,0) 會將轉換置於左上角。 視您想要獲得的效果而定，可以選擇變更 **RenderTransformOrigin**，而不是調整轉換上的 **CenterX** 與 **CenterY** 值。 請注意，如果您同時套用了 **RenderTransformOrigin** 與 **CenterX** / **CenterY** 值，結果可能會相當混淆，尤其是當您以動畫顯示這當中任何一個值的時候。
+Whenever you use transforms with [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), remember that there's another property on [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) that affects how the transform behaves: [**RenderTransformOrigin**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransformorigin.aspx). What **RenderTransformOrigin** declares is whether the whole transform should apply to the default (0,0) point of an element or to some other origin point within the relative coordinate space of that element. For typical elements, (0,0) places the transform to the top left corner. Depending on what effect you want, you might choose to change **RenderTransformOrigin** rather than adjusting the **CenterX** and **CenterY** values on transforms. Note that if you apply both **RenderTransformOrigin** and **CenterX** / **CenterY** values, the results can be pretty confusing, especially if you're animating any of the values.
 
-基於點擊測試目的，已套用轉換的物件會在 x-y 空間中以和其視覺外觀一致的預期方式，繼續回應輸入。 例如，如果您已使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 將 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 在 UI 中橫向移動 400 像素，當使用者按下 **Rectangle** 以視覺方式出現的點時，該 **Rectangle** 會回應 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) 事件。 如果使用者按下 **Rectangle** 在轉譯前的區域，您並不會收到錯誤事件。 對任何影響點擊測試的 z-index 考量來說，套用轉換並不會帶來任何不同；規範哪個元素處理在 x-y 空間點的輸入事件的 z-index 仍然使用容器中宣告的子系順序進行評估。 雖然對於 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) 物件的子元素而言，您可以透過將 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) 附加屬性套用到子元素以調整順序，但該順序通常會與您在 XAML 中宣告元素的順序相同。
+For hit-testing purposes, an object to which a transform is applied continues to respond to input in an expected way that's consistent to its visual appearance in x-y space. For example, if you've used a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) to move a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 400 pixels laterally in the UI, that **Rectangle** responds to [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) events when the user presses the point where the **Rectangle** appears visually. You won't get false events if the user presses the area where the **Rectangle** was before being translated. For any z-index considerations that affect hit testing, applying a transform makes no difference; the z-index that governs which element handles input events for a point in x-y space is still evaluated using the child order as declared in a container. That order is usually the same as the order in which you declare the elements in XAML, although for child elements of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) object you can adjust the order by applying the [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) attached property to child elements.
 
-## <span id="Other_transform_properties"> </span> <span id="other_transform_properties"> </span> <span id="OTHER_TRANSFORM_PROPERTIES"> </span>其他轉換屬性
+## <span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Other transform properties
 
--   [
-            **Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082)、[**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080)：這些會影響 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 在套用 **Brush** 以設定視覺屬性 (例如前景與背景) 的區域內如何使用座標空間。 這些轉換與最常見的筆刷 (通常以 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 設定純色) 無關，但是以 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 或 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時，可能偶爾會有用。
--   [
-            **Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066)：您可以使用這個屬性，在將某個幾何圖形用於 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) 屬性值之前，先將轉換套用到該幾何圖形。
+-   [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): These influence how a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) uses coordinate space within the area that the **Brush** is applied to set visual properties such as foregrounds and backgrounds. These transforms aren't relevant for the most common brushes (which are typically setting solid colors with [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)) but might be occasionally useful when painting areas with an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) or [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
+-   [**Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066): You might use this property to apply a transform to a geometry prior to using that geometry for a [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) property value.
 
-## <span id="Animating_a_transform"> </span> <span id="animating_a_transform"> </span> <span id="ANIMATING_A_TRANSFORM"> </span>以動畫顯示轉換
+## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Animating a transform
 
-[
-            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 物件可以用動畫顯示。 若要以動畫顯示 **Transform**，請將相容類型的動畫套用到您想要以動畫顯示的屬性。 因為所有轉換屬性都是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 類型，這通常表示您正使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) 物件定義動畫。 影響用於 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值之轉換的動畫並不會被視為相依式動畫，即使它們的持續時間並不為零也一樣。 如需有關相依式動畫的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
+[**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) objects can be animated. To animate a **Transform**, apply an animation of a compatible type to the property you want to animate. This typically means you're using [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) or [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) objects to define the animation, because all of the transform properties are of type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Animations that affect a transform that's used for a [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) value are not considered to be dependent animations, even if they have a nonzero duration. For more info about dependent animations, see [Storyboarded animations](storyboarded-animations.md).
 
-如果您的動畫屬性會產生在純視覺外觀上轉換的類似效果，例如以動畫顯示 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 與 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 而不套用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，則這類動畫幾乎一律會視為相依式動畫。 您將必須啟用動畫，而該動畫可能會有明顯的效能問題，尤其是當您嘗試在以動畫顯示物件時支援使用者互動的情況中。 基於該理由，建議使用轉換並以動畫顯示，而不要以動畫顯示動畫會被視為相依式動畫的任何其他屬性。
+If you animate properties to produce an effect similar to a transform in terms of the net visual appearance—for example, animating the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) rather than applying a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)—such animations are almost always treated as dependent animations. You'd have to enable the animations and there could be significant performance issues with the animation, especially if you're trying to support user interaction while that object is being animated. For that reason it's preferable to use a transform and animate it rather than animating any other property where the animation would be treated as a dependent animation.
 
-若要以轉換為目標，必須要有一個現有的 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 做為 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 的值。 您一般會將適當轉換類型的元素放在初始 XAML 中，有時並不在該轉換上設定任何屬性。
+To target the transform, there must be an existing [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) as the value for [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980). You typically put an element for the appropriate transform type in the initial XAML, sometimes with no properties set on that transform.
 
-您一般會使用間接目標設定技術將動畫套用到轉換的屬性。 如需有關間接目標設定語法的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)與[屬性路徑語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。
+You typically use an indirect targeting technique to apply animations to the properties of a transform. For more info about indirect targeting syntax, see [Storyboarded animations](storyboarded-animations.md) and [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586).
 
-控制項的預設樣式有時會將轉換的動畫定義為它們視覺狀態行為的一部分。 例如，[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) 的視覺狀態會使用以動畫顯示的 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 值來旋轉環圈中的點。
+Default styles for controls sometimes define animations of transforms as part of their visual-state behavior. For example, the visual states for [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) use animated [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) values to "spin" the dots in the ring.
 
-以下是一個如何以動畫顯示轉換的簡單範例。 在這種情況下，是以動畫來顯示 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 的 [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx)，將 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 繞著其視覺中心就地旋轉。 這個範例指名了 **RotateTransform**，因此不需要間接動畫目標設定，但是您可以選擇不指名轉換、指名套用轉換的元素，然後使用間接目標設定 (例如 `(UIElement.RenderTransform).(RotateTransform.Angle)`)。
+Here's a simple example of how to animate a transform. In this case, it's animating the [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) of a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) to spin a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in place around its visual center. This example names the **RotateTransform** so doesn't need indirect animation targeting, but you could alternatively leave the transform unnamed, name the element that the transform's applied to, and use indirect targeting such as `(UIElement.RenderTransform).(RotateTransform.Angle)`.
 
 ```xml
 <StackPanel Margin="15">
@@ -94,18 +88,17 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 }
 ```
 
-## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time"> </span> <span id="accounting_for_coordinate_frames_of_reference_at_run_time"> </span> <span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"> </span>說明執行階段的參考座標框架
+## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>Accounting for coordinate frames of reference at run time
 
-[
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 有一個名為 [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx) 的方法，這個方法可以產生將兩個 UI 元素的參考座標框架相互關聯的 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)。 如果您將根視覺項目當做第一個參數來傳遞，便可以使用這個方法將元素與應用程式的預設參考座標框架做比較。 如果您已經從不同元素擷取輸入事件，或正嘗試在不實際要求版面配置階段的情況下預測配置行為，這就有用處。
+[**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) has a method named [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx), which can generate a [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) that correlates the coordinate frames of reference for two UI elements. You can use this to compare an element to the app's default coordinate frame of reference if you pass the root visual as the first parameter. This can be useful if you've captured an input event from a different element, or if you are trying to predict layout behavior without actually requesting a layout pass.
 
-從指標事件取得的事件資料可提供 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/BR212141) 方法的存取權，您可以在該方法指定 *relativeTo* 參數，以將參考的座標框架變更成特定的元素，而非應用程式預設值。 這種方法只是在內部套用轉譯轉換，並在建立傳回的 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/BR242038) 物件時，為您轉換 x-y 座標資料。
+Event data obtained from pointer events provides access to a [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/BR212141) method, where you can specify a *relativeTo* parameter to change the coordinate frame of reference to a specific element rather than the app default. This approach simply applies a translate transform internally and transforms the x-y coordinate data for you when it creates the returned [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/BR242038) object.
 
-## <span id="Describing_a_transform_mathematically"> </span> <span id="describing_a_transform_mathematically"> </span> <span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY"> </span>從數學觀點描述轉換
+## <span id="Describing_a_transform_mathematically"></span><span id="describing_a_transform_mathematically"></span><span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY"></span>Describing a transform mathematically
 
-轉換可以用轉換矩陣來描述。 3×3 矩陣可用來描述二維 x-y 平面的轉換。 仿射轉換矩陣可以相乘來形成任何數目的線性轉換 (例如旋轉與扭曲 (傾斜))，後面再接著轉譯。 仿射轉換矩陣的最終欄位等於 (0, 0, 1)，因此，您只需要以數學描述指定前兩個欄位中的成員。
+A transform can be described in terms of a transformation matrix. A 3×3 matrix is used to describe the transformations in a two-dimensional, x-y plane. Affine transformation matrices can be multiplied to form any number of linear transformations, such as rotation and skew (shear), followed by translation. The final column of an affine transformation matrix is equal to (0, 0, 1), so you need to specify only the members of the first two columns in the mathematical description.
 
-如果您具有數學背景，或是熟悉也使用矩陣描述座標空間轉換的圖形程式設計技術，那麼轉換的數學描述可能對您很有用。 有一個 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 衍生類別可讓您以轉換的 3×3 矩陣來直接表示該轉換：[**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137)。 **MatrixTransform** 具有 [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) 屬性，這個屬性有一個包含下列六個屬性的結構：[**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)、[**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)、[**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)、[**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)、[**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) 以及 [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816)。 每個 [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) 屬性都使用一個 **Double** 值，並且對應至仿射轉換矩陣的六個相關值 (第 1 與第 2 欄)。
+The mathematical description of a transform might be useful to you if you have a mathematical background or a familiarity with graphics-programming techniques that also use matrices to describe transformations of coordinate space. There's a [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)-derived class that enables you to express a transformation directly in terms of its 3×3 matrix: [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). **MatrixTransform** has a [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) property, which holds a structure that has six properties: [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847), [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853), [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851), [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849), [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) and [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816). Each [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) property uses a **Double** value and corresponds to the six relevant values (columns 1 and 2) of an affine transformation matrix.
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
@@ -113,34 +106,29 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 | [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
 | [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
- 
+ 
 
-任何您能夠以 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)、[**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 或 [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) 物件描述的轉換，都能夠同樣以 [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) 搭配 [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) 值來描述。 但是您一般只會使用 **TranslateTransform** 及其他類別，因為與設定 **Matrix** 中的向量元件相比，將這些轉換類別的相關屬性概念化會比較容易。 以動畫顯示轉換的個別屬性也同樣比較容易；**Matrix** 實際上是一個結構而不是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356)，因此無法支援以動畫顯示的個別值。
+Any transform that you could describe with a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940), [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932), or [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) object could be described equally by a [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) with a [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) value. But you typically just use **TranslateTransform** and the others because the properties on those transform classes are easier to conceptualize than setting the vector components in a **Matrix**. It's also easier to animate the discrete properties of transforms; a **Matrix** is actually a structure and not a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356), so it can't support animated individual values.
 
-有些可讓您套用轉換操作功能的 XAML 設計工具會將結果序列化為 [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137)。 在這種情況下，最好再次使用相同的設計工具變更轉換效果，並將 XAML 再次序列化，而不要自行嘗試直接操縱 XAML 中的 [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) 值。
+Some XAML design tools that enable you to apply transformation operations will serialize the results as a [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). In this case it may be best to use the same design tool again to change the transformation effect and serialize the XAML again, rather than trying to manipulate the [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) values yourself directly in the XAML.
 
-## <span id="3-D_transforms"> </span> <span id="3-d_transforms"> </span> <span id="3-D_TRANSFORMS"> </span>3D 轉換
+## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>3-D transforms
 
-您可以使用*透視轉換*，將 3D 效果套用到任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)。 例如，您可以建立一個物件在透視平面上旋轉靠近或遠離您的錯覺。 若要這麼做，請將 **UIElement** 物件的 [**Projection**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) 屬性設定為 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 值。 **PlaneProjection** 類別定義了在模擬的 3D 空間中如何轉譯轉換的方式。 [XAML UI 的 3D 透視效果](3-d-perspective-effects.md)中有這個轉換類型的較詳細描述。
+You can apply 3-D effects to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) by using *perspective transforms*. For example, you can create the illusion that an object is rotated toward or away from you in a perspective plane. To do this, set the**UIElement** object's [**Projection**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) property as a [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) value. The **PlaneProjection** class defines how the transform is rendered in a simulated 3-D space. This type of transform is described in more detail in [3-D perspective effects for XAML UI](3-d-perspective-effects.md).
 
-**注意：**就技術而言，結合使用 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 類別有可能會得到類似的結果，但是 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 技術通常在筆刷之類的影像上看起來較美觀，而且也較容易設定正確的屬性值。
+**Note**   It's technically possible to get similar results by using the [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) classes in combination, but the [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) technique usually looks better with images as brushes and it's much easier to get the property values right.
 
- 
+ 
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>Related topics
 
-* [繪製形狀](drawing-shapes.md)
-* [XAML UI 的 3D 透視效果](3-d-perspective-effects.md)
-* [**轉換**](https://msdn.microsoft.com/library/windows/apps/BR243006)
- 
+* [Drawing shapes](drawing-shapes.md)
+* [3-D perspective effects for XAML UI](3-d-perspective-effects.md)
+* [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

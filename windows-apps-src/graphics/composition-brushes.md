@@ -1,46 +1,43 @@
 ---
+author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-title: 組合筆刷
-description: 筆刷會使用其輸出來繪製 Visual 的區域。 不同的筆刷有不同類型的輸出。
+title: Composition brushes
+description: A brush paints the area of a Visual with its output. Different brushes have different types of output.
 ---
-# 組合筆刷
+# Composition brushes
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-筆刷會使用其輸出來繪製 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的區域。 不同的筆刷有不同類型的輸出。 「組合 API」提供三種筆刷類型：
+A brush paints the area of a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with its output. Different brushes have different types of output. The Composition API provides three brush types:
 
--   [
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 會使用純色繪製視覺效果
--   [
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面的內容來繪製視覺效果
--   [
-            **CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) 會使用組合效果的內容來繪製視覺效果
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) paints a visual with a solid color
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with the contents of a composition surface
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paints a visual with the contents of a composition effect
 
-所有筆刷都會繼承 [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398)；它們是由 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 直接或間接建立，並且是與裝置無關的資源。 雖然筆刷與裝置無關，但是 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) 會使用來自與裝置相關的組合表面內容來繪製 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)。
+All brushes inherit from [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398); they are created directly or indirectly by the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and are device-independent resources. Although brushes are device-independent, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paint a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with contents from a composition surface which are device-dependent.
 
--   [先決條件](./composition-brushes.md#prerequisites)
--   [色彩基本知識](./composition-brushes.md#color-basics)
-    -   [Alpha 模式](./composition-brushes.md#alpha-modes)
--   [使用色彩筆刷](./composition-brushes.md#using-color-brush)
--   [使用表面筆刷](./composition-brushes.md#using-surface-brush)
--   [設定延展與對齊方式](./composition-brushes.md#configuring-stretch-and-alignment)
+-   [Prerequisites](./composition-brushes.md#prerequisites)
+-   [Color Basics](./composition-brushes.md#color-basics)
+    -   [Alpha Modes](./composition-brushes.md#alpha-modes)
+-   [Using Color Brush](./composition-brushes.md#using-color-brush)
+-   [Using Surface Brush](./composition-brushes.md#using-surface-brush)
+-   [Configuring Stretch and Alignment](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## 先決條件
+## Prerequisites
 
-這個概觀假設您已熟悉基本「組合」應用程式的結構，如[組合 UI](visual-layer.md) 所述。
+This overview assumes that you are familiar with the structure of a basic Composition application, as described in [Composition UI](visual-layer.md).
 
-## 色彩基本知識
+## Color Basics
 
-在使用 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 進行繪製之前，您必須先選擇色彩。 「組合 API」使用「Windows 執行階段」結構 (即色彩) 來呈現色彩。 「色彩」結構使用 sRGB 編碼。 sRGB 編碼將色彩分為四個頻道：Alpha、紅色、綠色及藍色。 每個元件都是以一般範圍為 0.0 到 1.0 的浮點值代表。 值為 0.0 時，表示完全沒有該色彩，而值為 1.0 時，則表示全部為該色彩。 就 Alpha 元件而言，0.0 代表完全透明的色彩，1.0 則代表完全不透明的色彩。
+Before you paint with a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399), you need to choose colors. The Composition API uses the Windows Runtime structure, Color, to represent a color. The Color structure uses sRGB encoding. sRGB encoding divides colors into four channels: alpha, red, green, and blue. Each component is represented by a floating point value with a normal range of 0.0 to 1.0. A value of 0.0 indicates the complete absence of that color, while a value of 1.0 indicates that the color is fully present. For the alpha component, 0.0 represents a fully transparent color and 1.0 represents a fully opaque color.
 
-### Alpha 模式
+### Alpha Modes
 
-[
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 中的色彩值一律會解譯為直接 Alpha。
+Color values in [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) are always interpreted as straight alpha.
 
-## 使用色彩筆刷
+## Using Color Brush
 
-若要建立色彩筆刷，請呼叫 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，這會傳回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的預設色彩是 \#00000000。 以下圖例和程式碼示範一個小型的視覺化樹狀結構來建立矩形，此矩形是以黑色筆刷勾勒，並以色彩值為 0x9ACD32 的單色筆刷繪製。
+To create a color brush, call the Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) method, which returns a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). The default color for **CompositionColorBrush** is \#00000000. The following illustration and code shows a small visual tree to create a rectangle that is stroked with a black color brush and painted with a solid color brush that has the color value of 0x9ACD32.
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 ```cs
@@ -65,22 +62,21 @@ Visual2.Size = new Vector2(150, 150);
 Visual2.Offset = new Vector3(3, 3, 0);
 ```
 
-不同於其他的筆刷，建立 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 是相當不耗費資源的操作。 您可以在每次轉譯時都建立 **CompositionColorBrush** 物件，這對效能幾乎沒有什麼影響。
+Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) is a relatively inexpensive operation. You may create **CompositionColorBrush** objects each time you render with little to no performance impact.
 
-## 使用表面筆刷
+## Using Surface Brush
 
-[
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面 (由 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 物件表示) 來繪製視覺效果。 下圖顯示一個以甘草糖點陣圖繪製並使用 D2D 轉譯到 **ICompositionSurface** 的方形視覺效果。
+A [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with a composition surface (represented by a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) object). The following illustration shows a square visual painted with a bitmap of licorice rendered onto a **ICompositionSurface** using D2D.
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
-第一個範例會將組合表面初始化以與筆刷搭配使用。 組合表面是使用協助程式方法 (採用 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 Url 做為字串的 LoadImage) 建立的。 它會從 Url 載入影像、將該影像轉譯到 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819)，然後將該表面設定為 **CompositionSurfaceBrush** 的內容。 請注意，**ICompositionSurface** 只會以機器碼公開，因此 LoadImage 方法是在機器碼中實作。
+The first example initializes a composition surface for use with the brush. The composition surface is created using a helper method, LoadImage that takes in a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and a Url as a string. It loads the image from the Url, renders the image onto a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) and sets the surface as content of the **CompositionSurfaceBrush**. Note, **ICompositionSurface** is exposed in Native code only, hence LoadImage method is implemented in native code.
 
 ```cs
 LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-若要建立表面筆刷，請呼叫 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 這個方法會傳回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 物件。 以下程式碼說明可用來以 **CompositionSurfaceBrush** 的內容繪製視覺效果的程式碼。
+To create the surface brush, call the Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) method. The method returns a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) object. The code below illustrates the code that can be used to paint a visual with contents of a **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
@@ -93,31 +89,24 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## 設定延展與對齊方式
+## Configuring Stretch and Alignment
 
-有時，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 內容不會完全填滿所繪製之視覺效果的區域。 當發生這種情況時，「組合 API」會使用筆刷的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 及 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式設定來決定如何填滿剩餘的區域。
+Sometimes, the contents of the [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) for a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) doesn’t completely fill the areas of the visual that is being painted. When this happens, the Composition API uses the brush’s [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) and [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) mode settings to determine how to fill the remaining area.
 
--   [
-            **HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 的類型是浮點數，並且可用來控制筆刷在視覺邊界內的位置。
-    -   值 0.0 會將筆刷的左/上角與視覺效果的左/上角對齊
-    -   值 0.5 會將筆刷中央與視覺效果的中央對齊
-    -   值 1.0 會將筆刷的右/下角與視覺效果的右/下角對齊
--   [
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 屬性接受以下由 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列舉 所定義的值：
-    -   None：筆刷不會延展以填滿視覺邊界。 請小心使用此「延展」設定：如果筆刷比視覺邊界大， 筆刷的內容將會受到裁剪。 您可以使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 屬性來控制用來繪製視覺邊界 的筆刷部分。
-    -   Uniform：筆刷會配合視覺邊界調整大小；會保留筆刷的外觀比例。 這是預設值。
-    -   UniformToFill：筆刷會調整大小來完全填滿視覺邊界；會保留筆刷的外觀比例。
-    -   Fill：筆刷會配合視覺邊界調整大小。 由於筆刷的高度和寬度會單獨調整，因此可能不會保留筆刷的原始外觀比例。 也就是說，筆刷可能會為了完全填滿視覺邊界而扭曲變形。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) and [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) are of type float and can be used to control the positioning of the brush inside the visual bounds.
+    -   Value 0.0 aligns the left/top corner of the brush with the left/top corner of the visual
+    -   Value of 0.5 aligns the center of the brush with the center of the visual
+    -   Value of 1.0 aligns the right/bottom corner of the brush with the right/bottom corner of the visual
+-   The [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) property accepts these values, which the [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) enumeration defines:
+    -   None: The brush doesn't stretch to fill the visual bounds. Be careful with this Stretch setting: if the brush is larger than the visual bounds, the contents of the brush will be clipped. The portion of brush used to paint the visual bounds can be controlled by using the [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) and [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) properties.
+    -   Uniform: The brush is scaled to fit the visual bounds; the aspect ratio of the brush is preserved. This is the default value.
+    -   UniformToFill: The brush is scaled so that it completely fills the visual bounds; the aspect ratio of the brush is preserved.
+    -   Fill: The brush is scaled to fit the visual bounds. Because the brush’s height and width are scaled independently, the original aspect ratio of the brush might not be preserved. That is, the brush might be distorted to completely fill the visual bounds.
 
- 
+ 
 
- 
+ 
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

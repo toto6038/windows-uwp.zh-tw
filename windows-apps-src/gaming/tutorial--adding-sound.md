@@ -1,31 +1,32 @@
 ---
-title: 加入聲音
-description: 在這個步驟中，我們會檢視射擊遊戲範例如何使用XAudio2 API 來建立播放聲音的物件。
+author: mtoepke
+title: Add sound
+description: In this step, we examine how the shooting game sample creates an object for sound playback using the XAudio2 APIs.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ---
 
-# 加入聲音
+# Add sound
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在這個步驟中，我們會檢視射擊遊戲範例如何使用[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 來建立播放聲音的物件。
+In this step, we examine how the shooting game sample creates an object for sound playback using the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs.
 
-## 目標
-
-
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 加入聲音輸出。
-
-在遊戲範例中，音訊物件和行為是在三個檔案中定義：
-
--   **Audio.h/.cpp**。 這個程式碼檔案會定義 **Audio** 物件，其中包含聲音播放的 XAudio2 資源。 如果遊戲暫停或停用，它還會定義暫停和繼續音訊播放的方法。
--   **MediaReader.h/.cpp**。 這個程式碼會定義從本機存放區讀取音訊 .wav 檔的方法。
--   **SoundEffect.h/.cpp**。 這個程式碼會定義遊戲內聲音播放的物件。
-
-## 定義聲音引擎
+## Objective
 
 
-當遊戲範例啟動時，它會建立一個配置遊戲音訊資源的 **Audio** 物件。 宣告這個物件的程式碼看起來就像這樣：
+-   To add sound output using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+
+In the game sample, the audio objects and behaviors are defined in three files:
+
+-   **Audio.h/.cpp**. This code file defines the **Audio** object, which contains the XAudio2 resources for sound playback. It also defines the method for suspending and resuming audio playback if the game is paused or deactivated.
+-   **MediaReader.h/.cpp**. This code defines the methods for reading audio .wav files from local storage.
+-   **SoundEffect.h/.cpp**. This code defines an object for in-game sound playback.
+
+## Defining the audio engine
+
+
+When the game sample starts, it creates an **Audio** object that allocates the audio resources for the game. The code that declares this object looks like this:
 
 ```cpp
 public:
@@ -47,12 +48,12 @@ protected:
 };
 ```
 
-**Audio::MusicEngine** 和 **Audio::SoundEffectEngine** 方法會將參考傳回給定義每個音訊類型之主播放聲音的 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件。 主播放聲音是用來播放的音訊裝置。 聲音資料緩衝區無法直接提交到主播放聲音，但是提交到其他聲音類型的資料必須導向主播放聲音才能被聽到。
+The **Audio::MusicEngine** and **Audio::SoundEffectEngine** methods return references to [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) objects that define the mastering voice for each audio type. A mastering voice is the audio device used for playback. Sound data buffers cannot be submitted directly to mastering voices, but data submitted to other types of voices must be directed to a mastering voice to be heard.
 
-## 初始化音訊資源
+## Initializing the audio resources
 
 
-範例會呼叫 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 來初始化音樂和音效引擎的 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件。 在引擎具現化後，它會呼叫 [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) 為每個引擎建立主播放聲音，像這樣：
+The sample initializes the [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) objects for the music and sound effect engines with calls to [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212). After the engines have been instantiated, it creates a mastering voice for each with calls to [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048), as here:
 
 ```cpp
 
@@ -84,12 +85,12 @@ void Audio::CreateDeviceIndependentResources()
 }
 ```
 
-在載入音樂或音效的音訊檔案時，這個方法會呼叫主播放聲音上的 [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) (它會為要播放的來源聲音建立執行個體)。 完成檢視遊戲範例如何載入音訊檔案後，我們就會說明這個程式碼。
+As a music or sound effect audio file is loaded, this method calls [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) on the mastering voice, which creates an instance of a source voice for playback. We look at the code for this as soon as we finish reviewing how the game sample loads audio files.
 
-## 讀取音訊檔案
+## Reading an audio file
 
 
-在遊戲範例中，讀取音訊格式檔案的程式碼是在 **MediaReader.cpp** 中定義。 讀取編碼 .wav 音訊檔案的特定方法 **MediaReader::LoadMedia**，看起來就像這樣：
+In the game sample, the code for reading audio format files is defined in **MediaReader.cpp**. The specific method that reads in an encoded .wav audio file, **MediaReader::LoadMedia**, looks like this:
 
 ```cpp
 Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -200,19 +201,19 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 }
 ```
 
-這個方法使用[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 當作脈衝碼調制 (PCM) 緩衝區來讀入 .wav 音訊檔案。
+This method uses the [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) APIs to read in the .wav audio file as a Pulse Code Modulation (PCM) buffer.
 
-1.  呼叫 [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) 來建立媒體來源讀取器 ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) 物件。
-2.  呼叫 [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) 來建立解碼音訊檔案的媒體類型 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850))。 這個方法會將解碼輸出指定為 PCM 音訊，它是 XAudio2 可以使用的音訊類型。
-3.  呼叫 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 來設定讀取器的解碼輸出媒體類型。
-4.  建立 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 緩衝區，並複製在 [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) 物件上呼叫 [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 的結果。 在音訊檔案載入後，會格式化存放這個音訊檔案的緩衝區。
-5.  呼叫 [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) 來取得音訊串流的持續時間 (以秒為單位)，然後將持續時間轉換為位元組。
-6.  呼叫 [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) 將音訊檔案當作串流讀入。
-7.  將音訊範例緩衝區的內容複製到方法傳回的陣列。
+1.  Creates a media source reader ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) object by calling [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110).
+2.  Creates a media type ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) for the decoding of the audio file by calling [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861). This method specifies that the decoded output is PCM audio, which is an audio type that XAudio2 can use.
+3.  Sets the decoded output media type for the reader by calling [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
+4.  Creates a [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) buffer and copies the results of a call to [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) on the [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) object. This formats the buffer that holds the audio file after it is loaded.
+5.  Gets the duration, in seconds, of the audio stream by calling [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) and then converts the duration to bytes.
+6.  Reads the audio file in as a stream by calling [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
+7.  Copies the contents of the audio sample buffer into an array returned by the method.
 
-**SoundEffect::Initialize** 中最重要的事是從主播放聲音建立來源聲音物件 **m\_sourceVoice**。 我們會在從 **MediaReader::LoadMedia** 取得的聲音資料緩衝區實際播放使用來源聲音。
+The most important thing in **SoundEffect::Initialize** is the creation of the source voice object, **m\_sourceVoice**, from the mastering voice. We use the source voice for the actual play back of the sound data buffer obtained from **MediaReader::LoadMedia**.
 
-範例遊戲會在初始化 **SoundEffect** 物件時呼叫這個方法，就像這樣：
+The sample game calls this method when it initializes the **SoundEffect** object, like this:
 
 ```cpp
 void SoundEffect::Initialize(
@@ -240,7 +241,7 @@ void SoundEffect::Initialize(
 }
 ```
 
-呼叫 **Audio::SoundEffectEngine** (或 **Audio::MusicEngine**)、**MediaReader::GetOutputWaveFormatEx** 的結果會傳送給這個方法，而且呼叫 **MediaReader::LoadMedia** 會傳回緩衝區，就像在這裡看到的。
+This method is passed the results of calls to **Audio::SoundEffectEngine** (or **Audio::MusicEngine**), **MediaReader::GetOutputWaveFormatEx**, and the buffer returned by a call to **MediaReader::LoadMedia**, as seen here.
 
 ```cpp
 MediaReader^ mediaReader = ref new MediaReader;
@@ -255,11 +256,11 @@ myTarget->HitSound()->Initialize(
                 targetHitSound);
 ```
 
-會從 **Simple3DGame:Initialize** 方法呼叫 **SoundEffect::Initialize**，這個方法會初始化主要的遊戲物件。
+**SoundEffect::Initialize** is called from the **Simple3DGame:Initialize** method that initializes the main game object.
 
-現在範例遊戲在記憶體中有音訊檔案了，我們再來看看如何在遊戲時播放它！
+Now that the sample game has an audio file in memory, let's see how it plays it back during game play!
 
-## 播放音訊檔案
+## Playing back an audio file
 
 
 ```cpp
@@ -297,18 +298,18 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-若要播放聲音，這個方法會使用來源聲音物件 **m\_sourceVoice**，以啟動播放聲音資料緩衝區 **m\_soundData**。 它會建立一個 [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228)，並對它提供一個聲音資料緩衝區的參考，然後再呼叫 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) 來提交它。 當聲音資料排入佇列時，**SoundEffect::PlaySound** 會呼叫 [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) 開始播放。
+To play the sound, this method uses the source voice object **m\_sourceVoice** to start the playback of the sound data buffer **m\_soundData**. It creates an [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228), to which it provides a reference to the sound data buffer, and then submits it with a call to [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473). With the sound data queued up, **SoundEffect::PlaySound** starts play back by calling [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
 
-現在只要子彈和目標發生撞擊，呼叫 **SoundEffect::PlaySound** 都會播放噪音。
+Now, whenever a collision between the ammo and a target occurs, a call to **SoundEffect::PlaySound** causes a noise to play.
 
-## 後續步驟
+## Next steps
 
 
-這是對通用 Windows 平台 (UWP) DirectX 遊戲開發的一大改革！ 到目前為止，您對於如何為 Windows 8 建立出色的遊戲應該已經有些概念了。 不過請記得，您的遊戲可以在多種 Windows 8 裝置和平台上進行，所以設計元件時，請盡可能讓您的圖形、控制項，使用者介面適用於廣泛的組態中！
+That was a whirlwind tour of Universal Windows Platform (UWP) DirectX game development! At this point, you have an idea of what you need to do to make your own game for Windows 8 a great experience. Remember, your game can be played on a wide variety of Windows 8 devices and platforms, so design your components: your graphics, your controls, your user interface, and your audio for as wide a set of configurations as you can!
 
-如需修改這些文件所提供之範例的詳細資訊，請參閱[延伸遊戲範例](tutorial-resources.md)。
+For more info about ways to modify the game sample provided in these documents, see [Extending the game sample](tutorial-resources.md).
 
-## 這個章節的完整範例程式碼
+## Complete sample code for this section
 
 
 Audio.h
@@ -549,15 +550,10 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 
