@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/a25d87556bb85718f818af5b586f54e6985aaaa4/windows-apps-src/publish/view-app-identity-details.md) | HandedOffSuccess | [Details](#f00d817616d473ef220ebc1817c2bf9207a7aea03546)
+ [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/7ce24486e0c730d1b6d9a9239b605603895a6a68/windows-apps-src/security/index.md) | HandedOffSuccess | [Details](#074c4f23e5912ece050d0b44621ab78015f2ce7b3621)
 
 ## Item Details
-##### <a name='f00d817616d473ef220ebc1817c2bf9207a7aea03546'></a> Source: [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/a25d87556bb85718f818af5b586f54e6985aaaa4/windows-apps-src/publish/view-app-identity-details.md)
+##### <a name='074c4f23e5912ece050d0b44621ab78015f2ce7b3621'></a> Source: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/7ce24486e0c730d1b6d9a9239b605603895a6a68/windows-apps-src/security/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/8f5eccc7c869314bfe738b8e160bc14bb5d1d69e/ol-handoff/Microsoft/windows-apps.zh-tw/master/view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.zh-tw.xlf)
-* Handoff Datetime: 2016-05-11 17:49:22
+* Handoff File: [index.36c19658e673067b86aba619b12635d8359c4091.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/efc2167d9bb46ef844050bbef34c970ff3dda655/ol-handoff/Microsoft/windows-apps.zh-tw/master/index.36c19658e673067b86aba619b12635d8359c4091.zh-tw.xlf)
+* Handoff Datetime: 2016-05-11 18:20:37
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
