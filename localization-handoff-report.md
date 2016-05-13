@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/13603b66bd6168073b855bbe37ea92763e14a5a0/windows-apps-src/publish/organizational-licensing.md) | HandedOffSuccess | [Details](#e4adbc66b4b4a88ca3787737e9bbddf0d937b6043523)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/ea746685b1d2903c9fdc45f2df004ed909a309b1/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#99702a50a2653fbc58428ed6d8003dcfddef07bb484)
 
 ## Item Details
-##### <a name='e4adbc66b4b4a88ca3787737e9bbddf0d937b6043523'></a> Source: [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/13603b66bd6168073b855bbe37ea92763e14a5a0/windows-apps-src/publish/organizational-licensing.md)
+##### <a name='99702a50a2653fbc58428ed6d8003dcfddef07bb484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/ea746685b1d2903c9fdc45f2df004ed909a309b1/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c10329e9fca41c6200cfefc5e8264c9a436a6986/ol-handoff/Microsoft/windows-apps.zh-tw/master/organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf)
-* Handoff Datetime: 2016-05-12 23:50:00
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/58eba10a3fc37a76c3900d9806ad27c4c27142f5/ol-handoff/Microsoft/windows-apps.zh-tw/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf)
+* Handoff Datetime: 2016-05-13 16:50:19
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
