@@ -1,37 +1,40 @@
 ---
 author: Jwmsft
-Description: 'You can define custom panels for XAML layout by deriving a custom class from the Panel class.'
+Description: '您可以從 Panel 類別衍生自訂類別，為 XAML 配置定義自訂面板。'
 MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: XAML custom panels overview
+title: XAML 自訂面板概觀
 ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview
 template: detail.hbs
 ---
 
-# XAML custom panels overview
+# XAML 自訂面板概觀
 
-A *panel* is an object that provides a layout behavior for child elements it contains, when the Extensible Application Markup Language (XAML) layout system runs and your app UI is rendered. You can define custom panels for XAML layout by deriving a custom class from the [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class. You provide behavior for your panel by overriding the [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) and [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), supplying logic that measures and arranges the child elements.
+「*面板*」是一個物件，可在可延伸應用程式標記語言 (XAML) 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 與 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)，提供可度量和排列子元素的邏輯，即可提供面板行為。
 
-## The **Panel** base class
-
-
-To define a custom panel class, you can either derive from the [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class directly, or derive from one of the practical panel classes that aren't sealed, such as [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) or [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). It's easier to derive from **Panel**, because it can be difficult to work around the existing layout logic of a panel that already has layout behavior. Also, a panel with behavior might have existing properties that aren't relevant for your panel's layout features.
-
-From [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), your custom panel inherits these APIs:
-
--   The [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property.
--   The [**Background**](https://msdn.microsoft.com/library/windows/apps/br227512), [**ChildrenTransitions**](https://msdn.microsoft.com/library/windows/apps/br227515) and [**IsItemsHost**](https://msdn.microsoft.com/library/windows/apps/br227517) properties, and the dependency property identifiers. None of these properties are virtual, so you don't typically override or replace them. You don't typically need these properties for custom panel scenarios, not even for reading values.
--   The layout override methods [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) and [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711). These were originally defined by [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). The base [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class doesn't override these, but practical panels like [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) do have override implementations that are implemented as native code and are run by the system. Providing new (or additive) implementations for **ArrangeOverride** and **MeasureOverride** is the bulk of the effort you need to define a custom panel.
--   All the other APIs of [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) and [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), such as [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) and so on. You sometimes reference values of these properties in your layout overrides, but they aren't virtual so you don't typically override or replace them.
-
-This focus here is to describe XAML layout concepts, so you can consider all the possibilities for how a custom panel can and should behave in layout. If you'd rather jump right in and see an example custom panel implementation, see [BoxPanel, an example custom panel](boxpanel-example-custom-panel.md).
-
-## The **Children** property
+## **Panel** 基底類別
 
 
-The [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property is relevant to a custom panel because all classes derived from [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) use the **Children** property as the place to store their contained child elements in a collection. **Children** is designated as the XAML content property for the **Panel** class, and all classes derived from **Panel** can inherit the XAML content property behavior. If a property is designated the XAML content property, that means that XAML markup can omit a property element when specifying that property in markup, and the values are set as immediate markup children (the "content"). For example, if you derive a class named **CustomPanel** from **Panel** that defines no new behavior, you can still use this markup:
+您可以直接從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別衍生，或從其中一個未密封的實際面板類別 (例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)) 衍生，定義自訂面板類別。 因為可能難以解決已有配置行為的現有面板配置邏輯，所以從 **Panel** 衍生會比較容易。 此外，具有行為的面板可能會有和您的面板配置功能不相關的現有屬性。
+
+您的自訂面板會從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 中繼承以下 API：
+
+-   [
+            **Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性。
+-   [
+            **Background**](https://msdn.microsoft.com/library/windows/apps/br227512)、[**ChildrenTransitions**](https://msdn.microsoft.com/library/windows/apps/br227515) 和 [**IsItemsHost**](https://msdn.microsoft.com/library/windows/apps/br227517) 屬性，以及相依性屬性識別元。 這些屬性都不是虛擬屬性，因此您通常不會覆寫或取代它們。 您的自訂面板案例通常不需要使用這些屬性，甚至也不需要使用它們來讀取值。
+-   配置覆寫方法 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 與 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)。 這些原本是由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 定義。 基底 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別不會覆寫這些方法，但 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 這類實際面板確實有覆寫實作，會當成機器碼實作並由系統執行。 為 **ArrangeOverride** 與 **MeasureOverride** 提供新的 (或附加) 實作，是定義自訂面板時需要投入心力的最主要部分。
+-   [
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 及 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的所有其他 API，例如 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 等。 您有時候會在配置覆寫中參考這些屬性值，但由於並非虛擬屬性，因此您通常不會覆寫或取代它們。
+
+這裡的重點是說明 XAML 配置概念，以便您考慮自訂面板在配置中所有可能和應有的行為。 如果您想要直接進入自訂面板實作範例，請參閱 [BoxPanel，自訂面板範例](boxpanel-example-custom-panel.md)
+
+## **Children** 屬性
+
+
+因為從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生的所有類別都使用 **Children** 屬性做為儲存集合中所含子元素之處，所以 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性與自訂面板相關。 **Children** 指定為 **Panel** 類別的 XAML 內容屬性，且從 **Panel** 衍生的所有類別都可繼承 XAML 內容屬性行為。 如果將屬性指定為 XAML 內容屬性，表示在標記中指定該屬性時，XAML 標記可以略過屬性元素，並將值設定為直接標記子系 (也就是「內容」)。 例如，若您從 **Panel** 衍生一個稱為 **CustomPanel** 的類別，其中未定義任何新行為，那麼您依然可以使用此標記：
 
 ```XAML
 <local:CustomPanel>
@@ -40,50 +43,60 @@ The [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) pro
 </local:CustomPanel>
 ```
 
-When a XAML parser reads this markup, [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) is known to be the XAML content property for all [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) derived types, so the parser will add the two [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) elements to the [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) value of the **Children** property. The XAML content property facilitates a streamlined parent-child relationship in the XAML markup for a UI definition. For more info about XAML content properties, and how collection properties are populated when XAML is parsed, see the [XAML syntax guide](https://msdn.microsoft.com/library/windows/apps/mt185596).
+當 XAML 剖析器讀取此標記時，已知 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 是所有 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生類型的 XAML 內容屬性，因此剖析器會將兩個 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 元素新增到 **Children** 屬性的 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 值。 XAML 內容屬性可以在 UI 定義的 XAML 標記中，協助簡化父系-子系關係。 如需有關 XAML 內容屬性以及剖析 XAML 時如何填入集合屬性的詳細資訊，請參閱 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/mt185596)
 
-The collection type that's maintaining the value of the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property is the [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) class. **UIElementCollection** is a strongly typed collection that uses [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) as its enforced item type. **UIElement** is a base type that's inherited by hundreds of practical UI element types, so the type enforcement here is deliberately loose. But it does enforce that you couldn't have a [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) as a direct child of a [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), and it generally means that only elements that are expected to be visible in UI and participate in layout will be found as child elements in a **Panel**.
+維護 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性值的集合類型是 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 類別。 **UIElementCollection** 是一個強型別集合，使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 當成其強制的項目類型。 **UIElement** 是由數百個實際 UI 元素類型繼承的基底類型，因此這裡的類型強制會刻意鬆散。 但它確實會強制您不能將 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 當成 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 的直屬子系，且它通常表示只有預期要在 UI 中顯示並參與配置的元素，才會成為 **Panel** 中的子元素
 
-Typically, a custom panel accepts any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) child element by a XAML definition, by simply using the characteristics of the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property as-is. As an advanced scenario, you could support further type checking of child elements, when you iterate over the collection in your layout overrides.
+一般而言，只要依現況使用 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性的特性，自訂面板即可透過 XAML 定義接受任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 子元素。 在進階案例中，您可以在配置覆寫中重複處理集合時，進一步檢查子元素類型。
 
-Besides looping through the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) collection in the overrides, your panel logic might also be influenced by `Children.Count`. You might have logic that is allocating space at least partly based on the number of items, rather than desired sizes and the other characteristics of individual items.
+除了循環顯示覆寫中的 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 集合之外，您的面板邏輯也可能會受 `Children.Count` 的影響。 您的邏輯可能會有部分根據項目數目來配置空間，而不是根據所需的大小和個別項目的其他特性。
 
-## Overriding the layout methods
+## 覆寫配置方法
 
 
-The basic model for the layout override methods ([**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) and [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)) is that they should iterate through all the children and call each child element's specific layout method. The first layout cycle starts when the XAML layout system sets the visual for the root window. Because each parent invokes layout on its children, this propagates a call to layout methods to every possible UI element that is supposed to be part of a layout. In XAML layout, there are two stages: measure, then arrange.
+配置覆寫方法 ([**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 與 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)) 的基本模型是，逐一查看所有子系，並呼叫每個子元素的特定配置方法。 第一個配置週期會在 XAML 配置系統設定根視窗的視覺化項目時開始。 因為每個父系都會在其子系叫用配置，所以會將配置方法呼叫傳播到應該屬於配置的每一個可能 UI 元素。 XAML 配置中有兩個階段：一個是度量，接著是排列。
 
-You don't get any built-in layout method behavior for [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) and [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) from the base [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class. Items in [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) won't automatically render as part of the XAML visual tree. It is up to you to make the items known to the layout process, by invoking layout methods on each of the items you find in **Children** through a layout pass within your **MeasureOverride** and **ArrangeOverride** implementations.
+來自基底 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別的 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 與 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 不會有任何內建的配置方法行為。 [
+            **Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 的項目不會自動轉譯為 XAML 視覺化樹狀結構的一部分。 是否要讓配置程序知道項目，由您決定，方法是透過 **MeasureOverride** 與 **ArrangeOverride** 實作內的版面配置階段，在 **Children** 中找到的每個項目上叫用配置方法。
 
-There's no reason to call base implementations in layout overrides unless you have your own inheritance. The native methods for layout behavior (if they exist) run regardless, and not calling base implementation from overrides won't prevent the native behavior from happening.
+除非您另有繼承腹案，否則不需要在配置覆寫呼叫基底實作。 配置行為的原生方法 (若存在的話) 無論如何都會執行，即使不從覆寫呼叫基底實作，還是會發生原生行為。
 
-During the measure pass, your layout logic queries each child element for its desired size, by calling the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) method on that child element. Calling the **Measure** method establishes the value for the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) property. The [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) return value is the desired size for the panel itself.
+在度量階段期間，配置邏輯會在各個子元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法，以查詢每個子元素所需的大小。 呼叫 **Measure** 方法可建立 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 屬性的值。 [
+            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 傳回值就是面板本身所需的大小。
 
-During the arrange pass, the positions and sizes of child elements are determined in x-y space and the layout composition is prepared for rendering. Your code must call [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) on each child element in [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) so that the layout system detects that the element belongs in the layout. The **Arrange** call is a precursor to composition and rendering; it informs the layout system where that element goes, when the composition is submitted for rendering.
+在排列階段期間，子元素的位置與大小是以 x-y 空間來決定，並準備轉譯配置組合。 您的程式碼必須在 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 的每個子元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914)，如此一來，配置系統才能偵測出該元素屬於配置。 **Arrange** 呼叫是組合與轉譯的先驅；它會在提交組合進行轉譯時，通知配置系統要放置該元素的位置。
 
-Many properties and values contribute to how the layout logic will work at runtime. A way to think about the layout process is that the elements with no children (generally the most deeply nested element in the UI) are the ones that can finalize measurements first. They don't have any dependencies on child elements that influence their desired size. They might have their own desired sizes, and these are size suggestions until the layout actually takes place. Then, the measure pass continues walking up the visual tree until the root element has its measurements and all the measurements can be finalized.
+憑藉許多屬性與值，形成在執行階段運作的配置邏輯。 您可以將配置程序視為沒有子系的元素 (通常是位在 UI 最深處的巢狀元素)，這些是最先完成度量的元素。 這些元素在影響它們所需大小的子元素上沒有任何相依性。 它們可能有自己的所需大小，且在實際進行配置之前，這些就是大小建議。 接著，度量階段會在視覺化樹狀結構逐層向上進行，直到根元素有其度量值並完成所有度量為止。
 
-The candidate layout must fit within the current app window or else parts of the UI will be clipped. Panels often are the place where the clipping logic is determined. Panel logic can determine what size is available from within the [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) implementation, and may have to push the size restrictions onto the children and divide space amongst children so that everything fits as best it can. The result of layout is ideally something that uses various properties of all parts of the layout but still fits within the app window. That requires both a good implementation for layout logic of the panels, and also a judicious UI design on the part of any app code that builds a UI using that panel. No panel design is going to look good if the overall UI design includes more child elements than can possibly fit in the app.
+候選配置必須要能整個顯示在目前的應用程式視窗內，不然會裁剪掉部分 UI。 面板通常是決定裁剪邏輯之處。 面板邏輯能決定 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作內可用的大小，且可能必須將大小限制推入子系，並將空間分配給子系，盡可能讓配置盡善盡美。 理想的配置結果是使用配置所有部分的各種不同屬性，但仍然能整個顯示在應用程式視窗內。 這不但需要好的面板配置邏輯實作，還需要在使用該面板建置 UI 的任何應用程式程式碼部分明智審慎的設計 UI。 若整體的 UI 設計包含的子元素過多，而無法全部顯示在應用程式，面板設計就不會美觀。
 
-A large part of what makes the layout system work is that any element that's based on [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) already has some of its own inherent behavior when acting as a child in a container. For example, there are several APIs of **FrameworkElement** that either inform layout behavior or are needed to make layout work at all. These include:
+配置系統得以運作，大部分是因為任何以 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 為基礎的元素，在做為容器的子系時，本身已有一些繼承而來的行為。 例如，**FrameworkElement** 的 API 有些是通知配置行為，也些是配置運作時不可或缺者。 其中包括：
 
--   [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (actually a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) property)
--   [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) and [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
--   [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+-   [
+            **DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (實際為 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 屬性)
+-   [
+            **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 與 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
+-   [
+            **Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
--   [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) event
--   [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) and [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
--   [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) and [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) methods
--   [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) and [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) methods: these have native implementations defined at the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) level, which handle the element-level layout action
+-   [
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 事件
+-   [
+            **HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 與 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+-   [
+            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 與 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法
+-   [
+            **Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 與 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法：均已在 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 層級定義原生實作，負責處理元素層級的配置動作。
 
 ## **MeasureOverride**
 
 
-The [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) method has a return value that's used by the layout system as the starting [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) for the panel itself, when the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) method is called on the panel by its parent in layout. The logic choices within the method are just as important as what it returns, and the logic often influences what value is returned.
+[
+            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法有一個傳回值，當配置中面板的父系在該面板上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法時，配置系統使用此值做為面板本身一開始的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921)。 方法內的邏輯選擇和其傳回值一樣重要，而且邏輯通常會影響傳回的值。
 
-All [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) implementations should loop through [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514), and call the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) method on each child element. Calling the **Measure** method establishes the value for the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) property. This might inform how much space the panel itself needs, as well as how that space is divided among elements or sized for a particular child element.
+所有 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作都應該循環顯示 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514)，並在每個子元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 呼叫 **Measure** 方法可建立 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 屬性的值。 這會通知面板本身需要多少空間，以及如何在元素之間劃分這些空間，或如何調整特定子元素的大小。
 
-Here's a very basic skeleton of a [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) method:
+以下是 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法非常基本的架構：
 
 ```CSharp
 protected override Size MeasureOverride(Size availableSize)
@@ -101,37 +114,39 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-Elements often have a natural size by the time they're ready for layout. After the measure pass, the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) might indicate that natural size, if the *availableSize* you passed for [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) was smaller. If the natural size is larger than *availableSize* you passed for **Measure**, the **DesiredSize** is constrained to *availableSize*. That's how **Measure**'s internal implementation behaves, and your layout overrides should take that behavior into account.
+元素在準備好進行配置時，通常是具有原始大小。 如果您為 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 傳送的 *availableSize* 較小，完成度量階段之後，[**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 可能會指出該原始大小。 如果原始大小大於您為 **Measure** 傳送的 *availableSize*，**DesiredSize** 就會受限於 *availableSize*。 這就是 **Measure** 的內部實作行為，您的配置覆寫應該將該行為納入考量。
 
-Some elements don't have a natural size because they have **Auto** values for [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751). These elements use the full *availableSize*, because that's what an **Auto** value represents: size the element to the maximum available size, which the immediate layout parent communicates by calling [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) with *availableSize*. In practice, there's always some measurement that a UI is sized to (even if that's the top level window.) Eventually, the measure pass resolves all the **Auto** values to parent constraints and all **Auto** value elements get real measurements (which you can get by checking [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707), after layout completes).
+有些元素沒有原始大小，因為它們的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 的值為 **Auto**。 因為 **Auto** 值代表將元素的大小調整為最大可用大小 (當前的配置父系利用 *availableSize* 呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 來傳達)，所以這些元素使用整個 *availableSize*。 實際上，UI 一律會根據某個度量值來調整大小，即使是最上層視窗也是如此。最後，度量階段會將所有 **Auto** 值解析成父系限制，而所有 **Auto** 值元素都會取得實際度量值 (您可以在配置完成後，查看 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 來取得)。
 
-It's legal to pass a size to [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) that has at least one infinite dimension, to indicate that the panel can attempt to size itself to fit measurements of its content. Each child element being measured sets its [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) value using its natural size. Then, during the arrange pass, the panel typically arranges using that size.
+您可以將大小傳送到至少有一個無限維度的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示該面板能嘗試調整本身的大小，以容納內容的大小。 每個接受測量的子元素會用它的原始大小設定 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值。 然後，在排列階段期間，面板通常會使用該大小進行排列。
 
-Text elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) have a calculated [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) based on their text string and text properties even if no [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) or [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) value is set, and these dimensions should be respected by your panel logic. Clipping text is a particularly bad UI experience.
+即使未設定 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 或 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值，還是可以根據文字元素 (例如 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)) 的文字字串與文字屬性計算出 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)，而且面板邏輯應要遵守這些維度。 裁剪的文字是特別不好的 UI 體驗。
 
-Even if your implementation doesn't use the desired size measurements, it's best to call the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) method on each child element, because there are internal and native behaviors that are triggered by **Measure** being called. For an element to participate in layout, each child element must have **Measure** called on it during the measure pass and the [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) method called on it during the arrange pass. Calling these methods sets internal flags on the object and populates values (such as the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) property) that the system's layout logic needs when it builds the visual tree and renders the UI.
+即使實作未使用所需的大小度量，最好是在每個子元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法，因為呼叫 **Measure** 時會觸發內部和原生行為。 在度量階段期間，務必要在每個子元素上呼叫 **Measure**，並在排列階段期間於元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法，如此一來，該元素才能參與配置。 呼叫這些方法會在物件上設定內部旗標以及填入值 (例如 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 屬性)，這些值是建置視覺化樹狀結構和轉譯 UI 時，系統的配置邏輯所需的值。
 
-The [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) return value is based on the panel's logic interpreting the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) or other size considerations for each of the child elements in [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) when [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) is called on them. What to do with **DesiredSize** values from children and how the **MeasureOverride** return value should use them is up to your own logic's interpretation. You don't typically add up the values without modification, because the input of **MeasureOverride** is often a fixed available size that's being suggested by the panel's parent. If you exceed that size, the panel itself might get clipped. You'd typically compare the total size of children to the panel's available size and make adjustments if necessary.
+在 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每個子元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 時，會根據面板的邏輯解譯 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 或其他大小考量，而得到 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 傳回值。 要怎樣使用來自子系的 **DesiredSize** 值，以及 **MeasureOverride** 傳回值應如何使用它們，完全取決於自訂邏輯的解譯。 因為 **MeasureOverride** 的輸入通常是面板父系建議的固定可用大小，所以您通常會經過修改後，才將值加總。 如果超過該大小，可能會裁剪面板本身。 您通常會比較子系的總大小和面板的可用大小，然後視需要加以調整。
 
-### Tips and guidance
+### 提示和指導方針
 
--   Ideally, a custom panel should be suitable for being the first true visual in a UI composition, perhaps at a level immediately under [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) or another element that is the XAML page root. In [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) implementations, don't routinely return the input [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) without examining the values. If the return **Size** has an **Infinity** value in it, this can throw exceptions in runtime layout logic. An **Infinity** value can come from the main app window, which is scrollable and therefore doesn't have a maximum height. Other scrollable content might have the same behavior.
--   Another common mistake in [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) implementations is to return a new default [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) (values for height and width are 0). You might start with that value, and it might even be the correct value if your panel determines that none of the children should be rendered. But, a default **Size** results in your panel not being sized correctly by its host. It requests no space in the UI, and therefore gets no space and doesn't render. All your panel code otherwise might be functioning fine, but you still won't see your panel or contents thereof if it's being composed with zero height, zero width.
--   Within the overrides, avoid the temptation to cast child elements to [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) and use properties that are calculated as a result of layout, particularly [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707). For most common scenarios, you can base the logic on the child's [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) value and you won't need any of the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) or [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) related properties of a child element. For specialized cases, where you know the type of element and have additional information, for example the natural size of an image file, you can use your element's specialized information because it's not a value that is actively being altered by layout systems. Including layout-calculated properties as part of layout logic substantially increases the risk of defining an unintentional layout loop. These loops cause a condition where a valid layout can't be created and the system can throw a [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799) if the loop is not recoverable.
--   Panels typically divide their available space between multiple child elements, although exactly how space is divided varies. For example, [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) implements layout logic that uses its [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) and [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) values to divide the space into the **Grid** cells, supporting both star-sizing and pixel values. If they're pixel values, the size available for each child is already known, so that's what is passed as input size for a grid-style [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952).
--   Panels themselves can introduce reserved space for padding between items. If you do this, make sure to expose the measurements as a property that's distinct from [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) or any **Padding** property.
--   Elements might have values for their [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) properties based on a previous layout pass. If values change, app UI code can put handlers for [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) on elements if there's special logic to run, but panel logic typically doesn't need to check for changes with event handling. The layout system is already making the determinations of when to re-run layout because a layout-relevant property changed value, and a panel's [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) or [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) are called automatically in the appropriate circumstances.
+-   在理想的情況下，自訂面板應該適合當成 UI 組合中的第一個實際視覺化項目，可能位於 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 或另一個 XAML 頁面根目錄元素的直接下層。 在 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作中，不要經常未先檢查值便傳回輸入 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。 如果傳回 **Size** 中有 **Infinity** 值，可能會在執行階段配置邏輯擲回例外狀況。 **Infinity** 值可能來自可捲動的主應用程式視窗，因此不會有最大高度。 其他可捲動的內容也可能有相同的行為。
+-   [
+            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的另一個常見錯誤是傳回新的預設 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) (高度與寬度的值都是 0)。 您可以從那個值開始，而且如果面板判斷沒有任何應該轉譯的子系，它就可能是正確的值。 但是預設的 **Size** 會造成主機無法正確地調整您面板的大小。 它不會要求 UI 中的任何空間，因此不會取得空間也不會進行轉譯。 除此之外，您的所有面板程式碼可能都運作正常，但由於組成高度、寬度皆為零，因此您仍將看不到自己的面板或內容。
+-   在覆寫內，避免將子元素轉換成 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 和使用計算為配置結果的屬性，特別是 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)。 對於最常見的案例，您可以讓邏輯以子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值為基礎，如此您將不需要任何與 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 或 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 相關的子元素屬性。 對於您知道元素類型且有其他資訊 (例如，影像檔的原始大小) 的特殊化案例，則可以使用元素的特殊化資訊，因為它不是配置系統主動更改的值。 配置邏輯中若包含配置計算的屬性，會大幅增加無意中定義配置迴圈的風險。 這些迴圈會造成無法建立有效配置，且系統會在迴圈無法復原時擲回 [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799)。
+-   面板通常會將其可用空間劃分給多個子元素，雖然實際上劃分空間的方式不盡相同。 例如，[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 實作的配置邏輯是使用其 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 與 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 值，將空間分配給 **Grid** 儲存格，同時支援比例縮放與像素值。 如果是像素值，即已知各個子系可用的空間，所以就是傳送為格線樣式 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的輸入大小
+-   面板本身可為項目間的邊框間距導入保留空間。 如果這麼做，務必將度量公開為不同於 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) 或任何 **Padding** 屬性的屬性。
+-   根據先前的版面配置階段，元素可能會有 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 屬性值。 如果值有所變更且有特殊邏輯要執行，應用程式 UI 程式碼可以在元素上放置 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 的處理常式，但面板邏輯通常不需要利用事件處理來檢查變更。 因為與配置相關的屬性值已經變更，而且在適當情況下自動呼叫面板的 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 或 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)，所以配置系統已經決定何時重新執行配置。
 
 ## **ArrangeOverride**
 
 
-The [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) method has a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) return value that's used by the layout system when rendering the panel itself, when the [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) method is called on the panel by its parent in layout. It's typical that the input *finalSize* and the **ArrangeOverride** returned **Size** are the same. If they aren't, that means the panel is attempting to make itself a different size than what the other participants in layout claim is available. The final size was based on having previously run the measure pass of layout through your panel code, so that's why returning a different size isn't typical: it means you are deliberately ignoring measure logic.
+[
+            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 方法有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 傳回值，當配置中面板的父系在該面板上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法時，配置系統會在轉譯面板本身時使用此值。 輸入 *finalSize* 和 **ArrangeOverride** 傳回的 **Size** 通常會相同。 若非如此，則表示該面板嘗試建立不同於配置宣告中其他參與者可用的大小。 最終大小是以先前透過面板程式碼執行配置的度量階段為基礎，因此通常不會傳回不同的大小：這表示您刻意忽略度量邏輯。
 
-Don't return a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) with an **Infinity** component. Trying to use such a **Size** throws an exception from internal layout.
+不要傳回含有 **Infinity** 元件的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。 嘗試使用這類 **Size** 會在內部配置擲回例外狀況。
 
-All [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) implementations should loop through [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514), and call the [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) method on each child element. Like [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952), **Arrange** doesn't have a return value. Unlike **Measure**, no calculated property gets set as a result (however, the element in question typically fires a [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) event).
+所有 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 實作都應該循環顯示 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514)，並在每個子元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。 與 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 一樣，**Arrange** 沒有傳回值。 和 **Measure** 不同的是，不會將計算的屬性設為結果 (不過，有問題的元素通常會觸發 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 事件)。
 
-Here's a very basic skeleton of an [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) method:
+以下是 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 方法非常基本的架構：
 
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
@@ -147,43 +162,53 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-The arrange pass of layout might happen without being preceded by a measure pass. However, this only happens when the layout system has determined no properties have changed that would have affected the previous measurements. For example, if an alignment changes, there's no need to re-measure that particular element because its [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) would not change when its alignment choice changes. On the other hand, if [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) changes on any element in a layout, a new measure pass is needed. The layout system automatically detects true measure changes and invokes the measure pass again, and then runs another arrange pass.
+沒有進行度量階段也能進行配置的排列階段。 不過，只限於配置系統已經判斷沒有任何屬性變更會影響先前度量的情況。 例如，若對齊方式改變，並不需要重新度量特定元素，因為它的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 不會隨著對齊選項改變而變化。 另一方面，如果配置中任何元素的 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 有所變更，則需要進行新的度量階段。 配置系統會自動偵測實際的度量變更，並再次叫用度量階段，然後執行另一個排列階段。
 
-The input for [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) takes a [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) value. The most common way to construct this **Rect** is to use the constructor that has a [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) input and a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) input. The **Point** is the point where the top left corner of the bounding box for the element should be placed. The **Size** is the dimensions used to render that particular element. You often use the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) for that element as this **Size** value, because establishing the **DesiredSize** for all elements involved in layout was the purpose of the measure pass of layout. (The measure pass determines all-up sizing of the elements in an iterative way so that the layout system can optimize how elements are placed once it gets to the arrange pass.)
+[
+            **Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的輸入採用 [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 值。 建構這個 **Rect** 最常見的方法是使用有 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 輸入與 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 輸入的建構函式。 **Point** 是應該放置元素週框方塊左上角的點。 **Size** 是用來轉譯該特定元素的維度。 您通常會將該元素的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 當成這個 **Size** 值使用，因為針對配置中涉及的所有元素建立 **DesiredSize** 就是配置的度量階段的目的。 (度量階段會以反覆進行的方式決定全部的元素大小，讓配置系統在進入排列階段時能夠以最佳的方式放置元素)。
 
-What typically varies between [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) implementations is the logic by which the panel determines the [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) component of how it arranges each child. An absolute positioning panel such as [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) uses the explicit placement info that it gets from each element through [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) values. A space-dividing panel such as [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) would have mathematical operations that divided the available space into cells and each cell would have an x-y value for where its content should be placed and arranged. An adaptive panel such as [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) might be expanding itself to fit content in its orientation dimension.
+[
+            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 實作之間的差異通常在於面板用來判斷 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 元件如何排列每一子系的邏輯。 絕對位置面板 (例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)) 使用透過 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 與 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 值，從每個元素取得的明確位置資訊。 空間劃分面板 (例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)) 有將可用空間劃分給儲存格的數學運算，而每個儲存格都會有表明應在何處放置和排列其內容的 x-y 值。 彈性面板 (例如 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)) 可能會自行擴充，以容納其方向維度中的內容。
 
-There are still additional positioning influences on elements in layout, beyond what you directly control and pass to [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). These come from the internal native implementation of **Arrange** that's common to all [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) derived types and augmented by some other types such as text elements. For example, elements can have margin and alignment, and some can have padding. These properties often interact. For more info, see [Alignment, margin, and padding](alignment-margin-padding.md).
+除了您直接控制和傳送給 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的項目之外，還有其他配置元素的位置影響。 這些來自於 **Arrange** 的內部原生實作，常見於所有 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 衍生類型，並可透過一些其他類型 (例如文字元素) 來增強。 例如，有些元素有邊界和對齊，有些則有邊框間距。 這些屬性通常會互相影響。 如需詳細資訊，請參閱[對齊、邊界及邊框間距](alignment-margin-padding.md)
 
-## Panels and controls
-
-
-Avoid putting functionality into a custom panel that should instead be built as a custom control. The role of a panel is to present any child element content that exists within it, as a function of layout that happens automatically. The panel might add decorations to content (similar to how a [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) adds the border around the element it presents), or perform other layout-related adjustments like padding. But that's about as far as you should go when extending the visual tree output beyond reporting and using information from the children.
-
-If there's any interaction that's accessible to the user, you should write a custom control, not a panel. For example, a panel shouldn't add scrolling viewports to content it presents, even if the goal is to prevent clipping, because the scrollbars, thumbs and so on are interactive control parts. (Content might have scrollbars after all, but you should leave that up to the child's logic. Don't force it by adding scrolling as a layout operation.) You might create a control and also write a custom panel that plays an important role in that control's visual tree, when it comes to presenting content in that control. But the control and the panel should be distinct code objects.
-
-One reason the distinction between control and panel is important is because of Microsoft UI Automation and accessibility. Panels provide a visual layout behavior, not a logical behavior. How a UI element appears visually is not an aspect of UI that is typically important to accessibility scenarios. Accessibility is about exposing the parts of an app that are logically important to understanding a UI. When interaction is required, controls should expose the interaction possibilities to the UI Automation infrastructure. For more info, see [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667).
-
-## Other layout API
+## 面板與控制項
 
 
-There are some other APIs that are part of the layout system, but aren't declared by [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). You might use these in a panel implementation or in a custom control that uses panels.
+避免將功能放入應該建立為自訂控制項的自訂面板。 面板的角色是呈現其中的所有子元素內容，做為自動執行的配置功能。 面板可以增加內容裝飾 (方法類似於 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 在呈現的元素周圍加上框線)，或執行其他與配置相關的調整，例如邊框間距。 但除了報告和使用來自子系的資訊，在擴充視覺化樹狀結構輸出時，這大約就是您所進行的工作。
 
--   [**UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989), [**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930), and [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) are methods that initiate a layout pass. **InvalidateArrange** might not trigger a measure pass, but the other two do. Never call these methods from within a layout method override, because they're almost sure to cause a layout loop. Control code doesn't typically need to call them either. Most aspects of layout are triggered automatically by detecting changes to the framework-defined layout properties such as [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) and so on.
--   [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) is an event that fires when some aspect of layout of the element has changed. This isn't specific to panels; the event is defined by [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706).
--   [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) is an event that fires only after layout passes are finalized, and indicates that [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) or [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) have changed as a result. This is another [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) event. There are cases where [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) fires, but **SizeChanged** does not. For example the internal contents might be rearranged, but the element's size didn't change.
+如果有使用者可以存取的任何互動，您應撰寫自訂控制項，而不是面板。 例如，即使為了防止發生裁剪，面板也不應該針對其呈現的內容新增捲動檢視區，因為捲軸、縮圖等都屬於互動控制項 (內容可能會有捲軸，但您應該將它留給子邏輯決定。 不要在配置作業新增捲動，強制放置捲軸)。您可以建立控制項，同時撰寫自訂面板，當呈現控制項中的內容時，在該控制項的視覺化樹狀結構中扮演重要角色。 但控制項與面板應該是不同的程式碼物件。
+
+區別控制項和面板一個很重要的原因是 Microsoft 使用者介面自動化與協助工具。 面板提供視覺配置行為，但不提供邏輯行為。 UI 元素的視覺顯示方式與 UI 的關係不大，通常對協助工具案例很重要。 協助工具的目的是公開在邏輯上對了解 UI 很重要的應用程式部分。 需要互動時，控制項應向使用者介面自動化基礎結構公開互動可能性。 如需詳細資訊，請參閱[自訂自動化對等](https://msdn.microsoft.com/library/windows/apps/mt297667)。
+
+## 其他配置 API
 
 
-## Related topics
+配置系統中還有一些其他 API，但並非由 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 宣告。 您可以將這些用於面板實作，或用於使用面板的自訂控制項。
 
-**Reference**
+-   [
+            **UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989)、[**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) 及 [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) 是起始版面配置階段的方法。 **InvalidateArrange** 可能不會觸發度量階段，但其他兩種會。 永遠不要從配置方法覆寫內呼叫這些方法，因為幾乎可以確定它們會造成配置迴圈。 控制項程式碼通常也不需要呼叫它們。 大部分配置層面會藉由偵測架構定義的配置屬性 (例如 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等) 的變更而自動觸發。
+-   [
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 是元素的一些配置層面變更時所觸發的事件。 這並非面板特有；此事件是由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 所定義
+-   [
+            **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) 是只在版面配置階段完成後，並指出 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 或 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 因此有所變更時才會觸發的事件。 這是另一個 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 事件。 有時候會觸發 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722)，但不會觸發 **SizeChanged**。 例如，內部內容可能已重新排列，但元素大小保持不變。
+
+
+## 相關主題
+
+**參考**
 
 [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 
 [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
-[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+[**面板**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
-**Concepts**
+**概念**
 
-[Alignment, margin, and padding](alignment-margin-padding.md)
+[對齊、邊界及邊框間距](alignment-margin-padding.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

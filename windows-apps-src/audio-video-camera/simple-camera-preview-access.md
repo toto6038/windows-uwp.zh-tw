@@ -1,84 +1,90 @@
 ---
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
-title: Simple camera preview access
+description: 本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。
+title: 簡單的相機預覽存取
 ---
 
-# Simple camera preview access
+# 簡單的相機預覽存取
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. Creating an app that captures photos and videos using the camera requires you to perform tasks like handling device and camera orientation or setting encoding options for the captured file. For some app scenarios, you may want to just simply show the preview stream from the camera without worrying about these other considerations. This article shows you how to do that with a minimum of code. Note that you should always shut down the preview stream properly when you are done with it by following the steps below.
+本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。 建立使用相機擷取相片和視訊的 app 會要求您執行如處理裝置和相機方向，或針對擷取之檔案設定編碼選項的工作。 針對某些 app 案例，您可能只想要從相機顯示預覽串流，而不擔心這些其他考量。 本文說明如何使用最少的程式碼執行這些動作。 請注意，您應該一律在完成後，遵循下列步驟正確地關閉預覽串流。
 
-For information on writing a camera app that captures photos or videos, see [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+如需撰寫擷取相片或視訊之相機 app 的詳細資訊，請參閱[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
 
-## Add capability declarations to the app manifest
+## 將功能宣告加入至應用程式資訊清單
 
-In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
+為了讓您的 app 可存取裝置的相機，您必須宣告您的 app 使用 *webcam* 和 *microphone* 裝置功能。 如果您要將拍攝的相片和影片儲存到使用者的圖片媒體櫃或視訊媒體櫃，您也必須宣告 *picturesLibrary* 和 *videosLibrary* 功能。
 
-**Add capabilities to the app manifest**
+**將功能新增到 app 資訊清單**
 
-1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
-2.  Select the **Capabilities** tab.
-3.  Check the box for **Webcam** and the box for **Microphone**.
-4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
+2.  選取 [功能]**** 索引標籤。
+3.  選取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
 
-## Add a CaptureElement to your page
+## 將 CaptureElement 新增到您的頁面
 
-Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) to display the preview stream within your XAML page.
+使用 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 在您的 XAML 頁面中顯示預覽串流。
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-## Use MediaCapture to start the preview stream
+## 使用 MediaCapture 來開始預覽串流
 
-The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) and [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) namespaces, in addition to those included by the default project template.
+[
+            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
 
-Add using directives to include the following namespaces in your page's .cs file.
+新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
 [!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
 
-Declare a class variable for the **MediaCapture** object.
+宣告 **MediaCapture** 物件的類別變數。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
+建立 **MediaCapture** 類別的新執行個體，然後呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 來初始化擷取裝置。 這個方法可能會失敗 (例如在沒有相機的裝置上)，因此您應該從 **try** 區塊中呼叫它。 若使用者在裝置的隱私權設定中停用相機存取，則當您嘗試初始化相機時將會擲回 **UnauthorizedAccessException**。 如果您沒有將適當的功能加入至應用程式資訊清單，您也會在開發期間看到此例外狀況。
 
-**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
+**重要事項** 在某些裝置系列，在授與您的應用程式存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
 
-Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property. Finally, start the preview by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
+透過設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 屬性將 **MediaCapture** 連接到 **CaptureElement**。 最後，呼叫 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 開始預覽。
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## Shut down the preview stream
+## 關閉預覽串流
 
-When you are done using the preview stream, you should always shut down the stream and properly dispose of the associated resources to ensure that the camera is available to other apps on the device. The required steps for shutting down the preview stream are:
+當您完成使用預覽串流時，您應該一律關閉串流，並妥善處置相關資源，以確保裝置上的相機可以供其他 app 使用。 關閉預覽串流的所需的步驟是：
 
--   Call [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) to stop the preview stream.
--   Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property of the **CaptureElement** to null.
--   Call the **MediaCapture** object's [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) method to release the object.
--   Set the **MediaCapture** member variable to null.
+-   呼叫 [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) 停止預覽串流。
+-   將 **CaptureElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 屬性設為 null。
+-   呼叫 **MediaCapture** 物件的 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) 方法以釋放物件。
+-   將 **MediaCapture** 成員變數設為 null。
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) method.
+當使用者離開您的頁面時，您應該藉由覆寫 [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 方法關閉預覽串流。
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event in your page's constructor.
+當 app 暫停時，您也應該正確地關閉預覽串流。 若要這樣做，請在您頁面的建構函式中登錄 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 事件的處理常式。
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) by comparing the page type to the [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method to let the system continue suspending your app.
+在 **Suspending** 事件處理常式中，藉由比較頁面類型與 [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) 屬性，可先檢查以確保頁面已顯示 app 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 如果目前沒有顯示頁面，則應該已經引發 **OnNavigatedFrom** 事件，並關閉預覽串流。 如果目前正在顯示頁面，則從傳入處理常式的事件引數中取得 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 物件，確保系統不會在預覽串流關閉之前暫停您的 app。 關閉串流之後，呼叫延遲的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法，讓系統繼續暫停您的 app。
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
-## Capture a still image from the preview stream
+## 從預覽串流擷取靜止影像
 
-It's simple to get a still image from the media capture preview stream in the form of a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). For more information, see [Get a preview frame](get-a-preview-frame.md).
+以 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 格式從媒體擷取預覽串流中取得靜止影像的方式很簡單。 如需詳細資訊，請參閱[取得預覽框架](get-a-preview-frame.md)
 
-## Related topics
+## 相關主題
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
-* [Get a preview frame](get-a-preview-frame.md)
+* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [取得預覽框架](get-a-preview-frame.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

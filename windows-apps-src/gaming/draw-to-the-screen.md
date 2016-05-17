@@ -1,40 +1,44 @@
 ---
 author: mtoepke
-title: Draw to the screen
-description: Finally, we port the code that draws the spinning cube to the screen.
+title: 繪製到螢幕
+description: 最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ---
 
-# Draw to the screen
+# 繪製到螢幕
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要 API**
 
 -   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
 -   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
 -   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
 
-Finally, we port the code that draws the spinning cube to the screen.
+最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。
 
-In OpenGL ES 2.0, your drawing context is defined as an EGLContext type, which contains the window and surface parameters as well the resources necessary for drawing to the render targets that will be used to compose the final image displayed to the window. You use this context to configure the graphics resources to correctly display the results of your shader pipeline on the display. One of the primary resources is the "back buffer" (or "frame buffer object") that contains the final, composited render targets, ready for presentation to the display.
+在 OpenGL ES 2.0 中，您的繪製內容定義為 EGLContext 類型，其中包含視窗與表面參數以及繪製到轉譯目標所需的資源，將用於構成顯示在視窗上的最終影像。 您使用此內容來設定圖形資源，以便將著色器管線的結果正確顯示在顯示器上。 其中一個主要資源是「背景緩衝區」(或稱為「框架緩衝區物件」)，包含最終的組合轉譯目標，可呈現在顯示器上。
 
-With Direct3D, the process of configuring the graphics resources for drawing to the display is more didactic, and requires quite a few more APIs. (A Microsoft Visual Studio Direct3D template can significantly simplify this process, though!) To obtain a context (called a Direct3D device context), you must first obtain an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object, and use it to create and configure an [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object. These two objects are used in conjunction to configure the specific resources you need for drawing to the display.
+使用 Direct3D 時，設定圖形資源用於繪製到顯示器的程序更易於遵循，且只需要多使用幾個 API。 (不過，Microsoft Visual Studio Direct3D 範本可大幅精簡此程序！) 若要取得內容 (呼叫 Direct3D 裝置內容)，您必須先取得 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 物件，然後再使用該物件建立和設定 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 物件。 這兩個物件可一起用於設定繪製到顯示器所需的特定資源。
 
-In short, the DXGI APIs contain primarily APIs for managing resources that directly pertain to the graphics adapter, and Direct3D contains the APIs that allow you to interface between the GPU and your main program running on the CPU.
+簡單來說，DXGI API 包含的主要 API 可用來管理與圖形介面卡直接相關的資源，而 Direct3D 包含的 API 則可讓您在 GPU 與在 CPU 上執行的主要程式間進行互動。
 
-For the purposes of comparison in this sample, here are the relevant types from each API:
+為了在此範例中進行比較，以下是每個 API 的相關類型：
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): provides a virtual representation of the graphics device and its resources.
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): provides the interface to configure buffers and issue rendering commands.
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): the swap chain is analogous to the back buffer in OpenGL ES 2.0. It is the region of memory on the graphics adapter that contains the final rendered image(s) for display. It is called the "swap chain" because it has several buffers that can be written to and "swapped" to present the latest render to the screen.
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): this contains the 2D bitmap buffer that the Direct3D device context draws into, and which is presented by the swap chain. As with OpenGL ES 2.0, you can have multiple render targets, some of which are not bound to the swap chain but are used for multi-pass shading techniques.
+-   [
+            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供圖形裝置與其資源的虛擬表示法。
+-   [
+            **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用來設定緩衝區和發出轉譯命令的介面。
+-   [
+            **IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交換鏈結類似於 OpenGL ES 2.0 中的背景緩衝區。 這是圖形介面卡的記憶體區域，包含最終要顯示的轉譯影像。 稱為「交換鏈結」是因為它具有數個「交換的」可寫入緩衝區，將最新的轉譯呈現至螢幕。
+-   [
+            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：這包含容納 Direct3D 裝置繪製內容的 2D 點陣圖緩衝區，其由交換鏈結來呈現。 使用 OpenGL ES 2.0，您可以擁有多個轉譯目標，某些轉譯目標未繫結至交換鏈結，但可用於多重傳遞著色技巧。
 
-In the template, the renderer object contains the following fields:
+在範本中，轉譯器物件包含下列欄位：
 
-Direct3D 11: Device and device context declarations
+Direct3D 11：裝置與裝置內容宣告
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -45,7 +49,7 @@ Microsoft::WRL::ComPtr<IDXGISwapChain1>                      m_swapChainCoreWind
 Microsoft::WRL::ComPtr<ID3D11RenderTargetView>          m_d3dRenderTargetViewWin;
 ```
 
-Here's how the back buffer is configured as a render target and provided to the swap chain.
+這裡是如何將背景緩衝區設定為轉譯目標以及提供給交換鏈結。
 
 ``` syntax
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -56,19 +60,19 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-The Direct3D runtime implicitly creates an [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) for the [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), which represents the texture as a "back buffer" that the swap chain can use for display.
+Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)明確建立 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，將紋理表示為「背景緩衝區」，讓交換鏈結用於顯示。
 
-The initialization and configuration of the Direct3D device and device context, as well as the render targets, can be found in the custom **CreateDeviceResources** and **CreateWindowSizeDependentResources** methods in the Direct3D template.
+您可以在 Direct3D 範本的自訂 **CreateDeviceResources** 與 **CreateWindowSizeDependentResources** 方法中，找到 Direct3D 裝置與裝置內容的初始化與設定以及轉譯目標。
 
-For more info on Direct3D device context as it relates to EGL and the EGLContext type, read [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md).
+如需與 EGL 及 EGLContext 類型相關的 Direct3D 裝置內容的詳細資訊，請閱讀[將 EGL 程式碼移植到 DXGI 與 Direct3D](moving-from-egl-to-dxgi.md)
 
-## Instructions
+## 指示
 
-### Step 1: Rendering the scene and displaying it
+### 步驟 1：轉譯場景並顯示
 
-After updating the cube data (in this case, by rotating it slightly around the y axis), the Render method sets the viewport to the dimensions of he drawing context (an EGLContext). This context contains the color buffer that will be displayed to the window surface (an EGLSurface), using the configured display (EGLDisplay). At this time, the example updates the vertex data attributes, re-binds the index buffer, draws the cube, and swaps in color buffer drawn by the shading pipeline to the display surface.
+更新立方體資料後 (在此案例中，是延著 Y 軸將它稍微旋轉)，Render 方法會將檢視區設為繪製內容 (EGLContext) 的維度。 此內容包含將會使用設定的顯示器 (EGLDisplay) 顯示於視窗表面 (EGLSurface) 的色彩緩衝區。 此時，範例會更新頂點資料屬性、重新繫結索引緩衝區、繪製立方體，並在著色管線繪製到顯示介面的色彩緩衝區內交換。
 
-OpenGL ES 2.0: Rendering a frame for display
+OpenGL ES 2.0：轉譯框架用於顯示
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -114,19 +118,19 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-In Direct3D 11, the process is very similar. (We're assuming that you're using the viewport and render target configuration from the Direct3D template.
+在 Direct3D 11 中的程序非常類似。 (我們假設您是使用 Direct3D 範本的檢視區與轉譯目標設定。
 
--   Update the constant buffers (the model-view-projection matrix, in this case) with calls to [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Set the vertex buffer with [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
--   Set the index buffer with [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
--   Set the specific triangle topology (a triangle list) with [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
--   Set the input layout of the vertex buffer with [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
--   Bind the vertex shader with [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Bind the fragment shader with [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Send the indexed vertices through the shaders and output the color results to the render target buffer with [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
--   Display the render target buffer with [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+-   呼叫 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 以更新常數緩衝區 (在此案例中為 model-view-projection 矩陣)
+-   使用 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 設定頂點緩衝區
+-   使用 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 設定索引緩衝區
+-   使用 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 設定特定的三角形拓撲 (三角形清單)
+-   使用 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 設定頂點緩衝區的輸入配置
+-   使用 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 繫結頂點著色器
+-   使用 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 繫結片段著色器
+-   透過著色器傳送索引後的頂點，並使用 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 將色彩結果輸出到轉譯目標緩衝區
+-   使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 顯示轉譯目標緩衝區
 
-Direct3D 11: Rendering a frame for display
+Direct3D 11：轉譯框架用於顯示
 
 ``` syntax
 void RenderObject::Render()
@@ -189,29 +193,34 @@ void RenderObject::Render()
 
 ```
 
-Once [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) is called, your frame is output to the configured display.
+呼叫 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 後，您的框架就會輸出到設定的顯示器。
 
-## Previous step
-
-
-[Port the GLSL](port-the-glsl.md)
-
-## Remarks
-
-This example glosses over much of the complexity that goes into configuring device resources, especially for Universal Windows Platform (UWP) DirectX apps. We suggest you review the full template code, especially the parts that perform the window and device resource setup and management. UWP apps have to support rotation events as well as suspend/resume events, and the template demonstrates best practices for handling the loss of an interface or a change in the display parameters.
-
-## Related topics
+## 上一步
 
 
-* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Port the shader objects](port-the-shader-config.md)
-* [Port the GLSL](port-the-glsl.md)
-* [Draw to the screen](draw-to-the-screen.md)
+[移植 GLSL](port-the-glsl.md)
 
- 
+## 備註
 
- 
+此範例並未討論關於設定裝置資源的複雜性，尤其是通用 Windows 平台 (UWP) DirectX app。 建議您檢閱完整的範本程式碼，特別是執行視窗與裝置資源設定和管理的部分。 UWP app 除了支援暫停/繼續事件之外，也必須支援旋轉事件，而範本示範了處理介面遺失或顯示參數變更的最佳做法。
+
+## 相關主題
 
 
+* [使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [移植著色器物件](port-the-shader-config.md)
+* [移植 GLSL](port-the-glsl.md)
+* [繪製到螢幕](draw-to-the-screen.md)
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

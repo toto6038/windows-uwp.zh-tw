@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: Use depth and effects on primitives
-description: Here, we show you how to use depth, perspective, color, and other effects on primitives.
+title: 在基本型別上使用深度和效果
+description: 在這裡，我們將示範如何在基本型別上使用深度、透視、色彩及其他效果。
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ---
 
-# Use depth and effects on primitives
+# 在基本型別上使用深度和效果
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Here, we show you how to use depth, perspective, color, and other effects on primitives.
+在這裡，我們將示範如何在基本型別上使用深度、透視、色彩及其他效果。
 
-**Objective:** To create a 3D object and apply basic vertex lighting and coloring to it.
+**目標：**建立 3D 物件並將基本頂點光源和色彩套用到該物件。
 
-## Prerequisites
+## 先決條件
 
 
-We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
+我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
 
-We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).
+我們也假設您已經看過[快速入門：設定 DirectX 資源及顯示影像](setting-up-directx-resources.md)和[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)。
 
-**Time to complete:** 20 minutes.
+**完成所需的時間：**20 分鐘。
 
-Instructions
+指示
 ------------
 
-### 1. Defining cube variables
+### 1. 定義立方體變數
 
-First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) and [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) with [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) and declare an instance of **ConstantBuffer**.
+首先，我們需要為立方體定義 **SimpleCubeVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置和色彩，以及檢視立方體的方式。 我們會使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來宣告 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，並宣告 **ConstantBuffer** 的執行個體
 
 ```cpp
 struct SimpleCubeVertex
@@ -58,9 +58,9 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. Creating a depth stencil view
+### 2. 建立深度樣板檢視
 
-In addition to creating the render-target view, we also create a depth-stencil view. The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera. Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer. We populate a [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to create the depth-stencil buffer. To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
+除了建立轉譯目標檢視之外，我們也會建立深度樣板檢視。 深度樣板檢視可以讓 Direct3D 有效地將較靠近相機的物件轉譯在離相機較遠的物件前面。 我們必須先建立深度樣板緩衝區，才能建立深度樣板緩衝區的檢視。 我們會填入一個 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 來描述深度樣板緩衝區，然後呼叫 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 來建立深度樣板緩衝區。 為了建立深度樣板檢視，我們會填入一個 [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) 來描述深度樣板檢視，並將深度樣板檢視描述和深度樣板緩衝區傳送給 [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -105,9 +105,9 @@ In addition to creating the render-target view, we also create a depth-stencil v
             );
 ```
 
-### 3. Updating perspective with the window
+### 3. 更新視窗的透視
 
-We update the perspective projection parameters for the constant buffer depending on the window dimensions. We fix the parameters to a 70-degree field of view with a depth range of 0.01 to 100.
+我們會根據視窗大小來更新常數緩衝區的透視投影參數。 我們會將參數修正成 70 度視野搭配 0.01 到 100 的深度範圍。
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -138,21 +138,21 @@ We update the perspective projection parameters for the constant buffer dependin
             );
 ```
 
-### 4. Creating vertex and pixel shaders with color elements
+### 4. 使用色彩元素建立頂點和像素著色器
 
-In this app, we create more complex vertex and pixel shaders than what we described in the previous tutorial, [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md). The app's vertex shader transforms each vertex position into projection space and passes the vertex color through to the pixel shader.
+在這個 app 中，我們會建立比先前[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)教學課程中所述還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點色彩傳送給像素著色器。
 
-The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.
+描述頂點著色器程式碼配置的 app [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構陣列具有兩個配置元素：一個元素定義頂點位置，另一個元素定義色彩。
 
-We create vertex, index, and constant buffers to define an orbiting cube.
+我們會建立頂點緩衝區、索引緩衝區及常數緩衝區來定義環繞移動的立方體。
 
-**To define an orbiting cube**
+**定義環繞移動的立方體**
 
-1.  First, we define the cube. We assign each vertex a color in addition to a position. This allows the pixel shader to color each face differently so the face can be distinguished.
-2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
-3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to create the constant buffer.
-4.  Next, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.
-5.  Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.
+1.  首先，我們定義立方體。 除了位置之外，我們也會為每個頂點指派顏色。 這樣可以讓像素著色器在每一面填上不同的色彩，以便能夠分辨這些面。
+2.  接著，我們會使用立方體定義來描述頂點和索引緩衝區 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 和 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220))。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 一次。
+3.  接著，我們會建立常數緩衝區 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) 來傳遞模型、檢視及投影陣列給頂點著色器。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 來建立常數緩衝區。
+4.  接著，我們會指定對應 X = 0、Y = 1、Z = 2 相機位置的檢視轉換。
+5.  最後，我們會宣告一個 *degree* 變數，我們將使用這個變數藉由在每個畫面旋轉立方體來製作動畫。
 
 ```cpp
         
@@ -328,22 +328,22 @@ We create vertex, index, and constant buffers to define an orbiting cube.
         
 ```
 
-### 5. Rotating and drawing the cube and presenting the rendered image
+### 5.旋轉及繪製立方體並呈現轉譯的影像
 
-We enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) to update the constant buffer and rotate the cube model. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. In this **OMSetRenderTargets** call, we pass the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) to clear the depth buffer.
+我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 來更新常數緩衝區並旋轉立方體模型。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，以將轉譯目標指定為輸出目標。 在這個 **OMSetRenderTargets** 呼叫中，我們會傳送深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 來清除深度緩衝區。
 
-In the endless loop, we also draw the cube on the blue surface.
+在無限迴圈中，我們也會在藍色表面上繪製立方體。
 
-**To draw the cube**
+**繪製立方體**
 
-1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
-2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
-3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
-4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
-5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) to set the constant buffer that is used by the vertex shader pipeline stage.
-6.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the cube and submit it to the rendering pipeline.
+1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
+2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 來將頂點和索引緩衝區繫結到輸入組合階段。
+3.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 搭配要為輸入組合階段指定的 [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 值，以將頂點資料解譯為三角形區域。
+4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 以使用像素著色器程式碼起始像素著色階段。
+5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) 來設定頂點著色器管線階段所使用的常數緩衝區。
+6.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 來繪製立方體並將它提交給轉譯管線。
 
-We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
+我們會呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，以將轉譯的影像呈現到視窗。
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -435,19 +435,24 @@ We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows
                 );
 ```
 
-## Summary and next steps
+## 摘要與後續步驟
 
 
-We used depth, perspective, color, and other effects on primitives.
+我們在基本型別上使用了深度、透視、色彩及其他效果。
 
-Next, we apply textures to primitives.
+接著，我們會將紋理套用到基本型別。
 
-[Applying textures to primitives](applying-textures-to-primitives.md)
+[將紋理套用到基本型別](applying-textures-to-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

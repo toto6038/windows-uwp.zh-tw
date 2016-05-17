@@ -1,43 +1,48 @@
 ---
 author: mtoepke
-title: Add controls
-description: Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
+title: 新增控制項
+description: 現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ---
 
-# Add controls
+# 新增控制項
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
+現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。
 
-## Objective
-
-
--   To implement mouse/keyboard, touch, and Xbox controller controls in a Universal Windows Platform (UWP) game with DirectX.
-
-## UWP game apps and controls
+## 目標
 
 
-A good UWP game supports a broad variety of interfaces. A potential player might have Windows 10 on a tablet with no physical buttons, or a media PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. Your game should support all of these devices if the game design allows it.
+-   在使用 DirectX 的通用 Windows 平台 (UWP) 遊戲中實作滑鼠/鍵盤、觸控以及 Xbox 控制器控制項。
 
-This sample supports all three. It's a simple first-person shooting game, and the move-look controls that are standard for this genre are easily implemented for all three types of input.
-
-For more info about controls, and move-look controls specifically, see [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) and [Touch controls for games](tutorial--adding-touch-controls-to-your-directx-game.md).
-
-## Common control behaviors
+## UWP 應用程式和控制項
 
 
-Touch controls and mouse/keyboard controls have a very similar core implementation. In a UWP app, a pointer is simply a point on the screen. You can move it by sliding the mouse or sliding your finger on the touch screen. As a result, you can register for a single set of events, and not worry about whether the player is using a mouse or a touch screen to move and press the pointer.
+一個好的 UWP 遊戲必須可以支援多種介面。 潛在玩家使用的也許是沒有實體按鈕的 Windows 10 平板電腦，或是連接 Xbox 控制器的媒體電腦，或者是專為遊戲設計的最新傳統型電腦 (安裝有高效能滑鼠和遊戲鍵盤)。 如果遊戲設計允許，您的遊戲應該要支援所有這些裝置。
 
-When the **MoveLookController** class in the game sample is initialized, it registers for four pointer-specific events and one mouse-specific event:
+此範例三種都可支援。 這是很簡單的第一人稱射擊遊戲，移動視角控制項對這類遊戲來說是標準的設計，也很容易在上述三種輸入類型中實作。
 
--   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278). The left or right mouse button was pressed (and held), or the touch surface was touched.
--   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276). The mouse moved, or a drag action was made on the touch surface.
--   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279). The left mouse button was released, or the object contacting the touch surface was lifted.
--   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275). The pointer moved out of the main window.
--   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356). The mouse moved a certain distance. Be aware that we are only interested in mouse movement delta values, and not the current x-y position.
+如需有關控制項 和移動視角控制項的明確詳細資訊， 請參閱[適用於遊戲的移動視角控制項 ](tutorial--adding-move-look-controls-to-your-directx-game.md)和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)
+
+## 通用控制項行為
+
+
+觸控控制項和滑鼠/鍵盤控制項具有非常相似的核心實作。 在 UWP 應用程式中，指標就是螢幕上的點。 您可以滑動滑鼠或在觸控式螢幕上滑動手指來移動指標。 因此您只需登錄一組事件，不用理會玩家在移動和按下指標時使用的是滑鼠或觸控式螢幕。
+
+在遊戲範例中初始化 **MoveLookController** 類別時，它會登錄四個指標專用的事件以及一個滑鼠專用的事件：
+
+-   [
+            **CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
+-   [
+            **CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 移動滑鼠，或在觸控式螢幕上進行拖曳動作。
+-   [
+            **CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 放開滑鼠左鍵，或是讓與觸控式螢幕接觸的物件離開觸控式螢幕。
+-   [
+            **CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 指標移出主視窗。
+-   [
+            **Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 滑鼠移動了特定距離。 請注意，我們只對滑鼠移動差異值有興趣，而不關心目前的 x-y 位置。
 
 ```cpp
 void MoveLookController::Initialize(
@@ -74,25 +79,25 @@ void MoveLookController::Initialize(
 }
 ```
 
-The Xbox controller is handled separately, using the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) APIs. We talk about the implementation of game controller controls in a bit.
+Xbox 控制器的處理方式則不太一樣，它需要使用 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) API。 我們稍候會討論遊戲控制器控制項的實作。
 
-In the game sample, the **MoveLookController** class has three controller-specific states, regardless of the control type:
+在遊戲範例中，**MoveLookController** 類別提供 3 種控制器專用的狀態，無論控制項類型為何：
 
--   **None**. This is the initialized state for the controller. The game is not anticipating any controller input.
--   **WaitForInput**. The game is paused and is waiting for the player to continue.
--   **Active**. The game is running, processing player input.
+-   **None**。 這是控制器的初始化狀態。 遊戲還沒有預期任何控制器輸入。
+-   **WaitForInput**。 遊戲暫停，並等待玩家的輸入以繼續進行。
+-   **Active**。 遊戲執行中，正在處理玩家的輸入。
 
-The **Active** state is the state when the player is actively playing the game. During this state, the **MoveLookController** instance is processing input events from all enabled input devices and interpreting the player's intentions based on the aggregated event data. As a result, it updates the velocity and look direction (the view plane normal) of the player's view and shares the updated data with the game after Update is called from the game loop.
+**Active** 狀態是玩家正在玩遊戲時的狀態。 在這個狀態下，**MoveLookController** 執行個體會處理來自所有啟用輸入裝置的輸入事件，並根據彙總的事件資料解譯玩家想做的事。 因此，它會更新玩家視角的速度和視角方向 (檢視平面方向)，並在遊戲迴圈呼叫 Update 之後與遊戲共用更新的資料。
 
-Be aware that the player can take more than one action at the same time. For example, he or she could be firing spheres while moving the camera. All of these inputs are tracked in the **Active** state, with different pointer IDs corresponding to different pointer actions. This is necessary because from a player's perspective, a pointer event in the firing rectangle is different from one in the move rectangle or in the rest of the screen.
+請注意，玩家可以同時進行多個動作。 例如，他 (或她) 可以在移動相機的同時射擊。 **Active** 狀態會追蹤所有這些輸入，不同的指標 ID 會對應到個別的指標動作。 這是必要做法，因為從玩家的觀點而言，射擊矩形中的指標事件，與移動矩形或螢幕上其他區域中的指標事件是不一樣的。
 
-When a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) event is received, the **MoveLookController** obtains the pointer ID value created by the window. The pointer ID represents a specific type of input. For example, on a multi-touch device, there may be several different active inputs at the same time. The IDs are used to keep track of which input the player is using. If one event is in the move rectangle of the touch screen, a pointer ID is assigned to track any pointer events in move rectangle. Other pointer events in the fire rectangle are tracked separately, with a separate pointer ID. (We talk about this some more in the section on touch controls.)
+收到 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) 事件時，**MoveLookController** 會取得視窗建立的指標 ID 值。 指標 ID 代表特定的輸入類型。 例如，多點觸控裝置可以同時有多個不同的作用中輸入。 ID 可追蹤玩家目前使用哪一種輸入。 如果單一事件發生在觸控式螢幕的移動矩形中，就會指派一個指標 ID 來追蹤移動矩形中的任何指標事件。 而其他射擊矩形中的指標事件則會使用不同的指標 ID 另外追蹤。 (我們會在觸控控制項段落中進行更詳細的討論。)
 
-Input from the mouse has yet another ID and is also handled separately.
+從滑鼠進行的輸入會使用另一個 ID，而且也會另外處理。
 
-After the pointer events have been mapped to a specific game action, it's time to update the data the **MoveLookController** object shares with the main game loop.
+將指標事件對應到特定遊戲動作後，就應該更新 **MoveLookController** 物件與主遊戲迴圈共用的資料。
 
-When called, the **Update** method in the game sample processes the input and updates the velocity and look direction variables (**m\_velocity** and **m\_lookdirection**), which the game loop then retrieves by calling the public **Velocity** and **LookDirection** methods on the **MoveLookController** instance.
+呼叫時，遊戲範例中的 **Update** 方法會處理輸入，並更新速度和視角方向變數 (**m\_velocity** 和 **m\_lookdirection**)，遊戲迴圈接著會在 **MoveLookController** 執行個體上呼叫公用的 **Velocity** 和 **LookDirection** 方法來擷取這些變數。
 
 ```cpp
 void MoveLookController::Update()
@@ -167,7 +172,7 @@ void MoveLookController::Update()
 }
 ```
 
-The game loop can test to see if the player is firing by calling the **IsFiring** method on the **MoveLookController** instance. The **MoveLookController** checks to see if the player has pressed the fire button on one of the three input types.
+遊戲迴圈可藉由在 **MoveLookController** 執行個體上呼叫 **IsFiring** 方法，測試玩家是否可以正常射擊。 **MoveLookController** 會檢查玩家是否按下三種輸入類型中的其中一種射擊按鈕。
 
 ```cpp
 bool MoveLookController::IsFiring()
@@ -191,18 +196,18 @@ bool MoveLookController::IsFiring()
 }
 ```
 
-If the player moves the pointer outside the main window of the game, or presses the pause button (the P key or the Xbox controller start button), the game must be paused. The **MoveLookController** registered the press, and informs the game loop when it calls the **IsPauseRequested** method. At that point, if **IsPauseRequested** returns **true**, the game loop then calls **WaitForPress** on the **MoveLookController** to move the controller into the **WaitForInput** state. Then, the **MoveLookController** waits for the player to select one of the menu items to load, continue, or exit the game, and stop processing gameplay input events until it returns to the **Active** state.
+如果玩家將指標移到遊戲主視窗外，或按下暫停按鈕 (P 按鍵或 Xbox 控制器開始按鈕)，遊戲就必須暫停。 **MoveLookController** 會登錄按鍵動作，並在呼叫 **IsPauseRequested** 方法時通知遊戲迴圈。 在這個時候，如果 **IsPauseRequested** 傳回 **true**，遊戲迴圈會在 **MoveLookController** 上呼叫 **WaitForPress**，讓控制器進入 **WaitForInput** 狀態。 然後，**MoveLookController** 會等待玩家選取其中一個功能表項目來載入、繼續或結束遊戲，並停止處理遊戲中的輸入事件，直到返回 **Active** 狀態為止。
 
-See the [complete code sample for this section](#code_sample).
+請參閱[這個章節的完整程式碼範例](#code_sample)。
 
-Now, let's look at the implementation of each of the three control types in a little more detail.
+現在，讓我們更仔細地實作這三種控制項類型。
 
-## Implementing relative mouse controls
+## 實作相對滑鼠控制項
 
 
-If mouse movement is detected, we want use that movement to determine the new pitch and yaw of the camera. We do that by implementing relative mouse controls, where we handle the relative distance the mouse has moved—the delta between the start of the movement and the stop—as opposed to recording the absolute x-y pixel coordinates of the motion.
+如果偵測到滑鼠的動作，我們要使用這個動作來決定相機的新上下移動和左右偏移。 我們執行的方式是透過實作相對滑鼠控制項，處理滑鼠已經移動的相對距離 (即移動開始與停止之間的差異值)，而不是記錄移動的絕對 x-y 像素座標。
 
-To do that, we obtain the changes in the X (the horizontal motion) and the Y (the vertical motion) coordinates by examining the [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) and **MouseDelta::Y** fields on the [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) argument object returned by the [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) event.
+若要這樣做，我們檢查 [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) 事件傳回的 [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) 引數物件上的 [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) 和 **MouseDelta::Y** 欄位，獲取 X (水平移動) 與 Y (垂直移動) 座標。
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -246,12 +251,12 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## Implementing touch controls
+## 實作觸控控制項
 
 
-Touch controls are the trickiest to develop, because they are the most complex and require the most fine-tuning to be effective. In the game sample, a rectangle in the lower left quadrant of the screen is used as a directional pad, where sliding your thumb left and right in this space slides the camera left and right, and sliding your thumb up and down moves the camera forward and backward. A rectangle in the lower right quadrant of the screen can be pressed to fire the spheres. Aiming (pitch and yaw) are controlled by sliding your finger on the parts of the screen not reserved for moving and firing; as your finger moves, the camera (with fixed cross hairs) moves similarly.
+觸控控制項是最難開發的控制項，因為它最複雜，而且需要最精細的微調才能生效。 在遊戲範例中，螢幕左下象限中的矩形是方向鍵，在這個區域中左右滑動拇指就可以讓相機左右滑動，而上下滑動拇指就可以讓相機前後移動。 而按一下螢幕右下象限中的矩形，就會射擊子彈。 在螢幕的移動和射擊區域以外的其他區域滑動手指，即可進行瞄準控制 (上下移動和左右偏移) ；移動手指時，含固定十字準星的相機就會隨著移動。
 
-The move and fire rectangles are created by two methods in the sample code:
+移動和射擊矩形在範例程式碼中是使用兩個方法來建立的：
 
 ```cpp
 void SetMoveRect(
@@ -264,9 +269,9 @@ void SetMoveRect(
         );
 ```
 
-We treat touch device pointer events for the other regions of the screen as look commands. If the screen is resized, these rectangles must be computed again (and redrawn).
+我們會將螢幕其他區域中的觸控裝置指標事件當作視角命令。 如果重新調整螢幕大小，就必須重新計算 (重新繪製) 這些矩形。
 
-If a touch device pointer event is raised in one of these regions and the game state is set to **Active**, it's assigned a pointer ID, as we discussed earlier.
+如果其中一個區域引發了觸控裝置指標，而且遊戲狀態設成 **Active**，就會對它指派一個指標 ID，如我們前面所討論的。
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -346,9 +351,9 @@ void MoveLookController::OnPointerPressed(
 }
 ```
 
-If a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) event has occurred in one of the three control regions, the move rectangle, the fire rectangle, or the rest of the screen (the look control), the **MoveLookController** assigns the pointer ID for the pointer that fired the event to a specific variable that corresponds to the region of the screen the event was fired in. For example, if the event occurred in the move rectangle, the **m\_movePointerID** variable is set to the pointer ID that fired the event. A Boolean "in use" variable (**m\_lookInUse**, in the example) is also set to indicate that the control has not been released yet.
+如果 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) 事件發生在三個控制區域 (移動矩形、射擊矩形或螢幕其他區域 (視角控制項)) 的其中一個中，**MoveLookController** 會將引發事件的指標 ID 指派到與引發事件之螢幕區域對應的特定變數中。 例如，如果事件發生在移動矩形中，**m\_movePointerID** 變數會設定成引發事件的指標 ID。 也會設定布林值 "in use" 變數 (在範例中是 **m\_lookInUse**) 以指示尚未放開控制項。
 
-Now, let's look at how the game sample handles the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) touch screen event.
+現在，我們再來看看遊戲範例如何處理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 觸控螢幕事件。
 
 ```cpp
 void MoveLookController::OnPointerMoved(
@@ -406,12 +411,12 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-The **MoveLookController** checks the pointer ID to determine where the event occurred, and takes one of the following actions:
+**MoveLookController** 會檢查指標 ID，判斷事件發生的位置，並且採取下列其中一個動作：
 
--   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred in the move or fire rectangle, update the pointer position for the controller.
--   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred somewhere in the rest of the screen (defined as the look controls), calculate the change in pitch and yaw of the look direction vector.
+-   如果 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件是在移動或射擊矩形中發生，請更新控制器的指標位置。
+-   如果 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件是在螢幕的其他位置發生 (定義為視角控制項)，就會計算視角方向向量的上下和左右偏移變化。
 
-Lastly, let's look at how the game sample handles the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) touch screen event.
+最後，我們再來看看遊戲範例如何處理[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 觸控螢幕事件。
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -461,23 +466,23 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-If the ID of the pointer that fired the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) event is the ID of the previously recorded move pointer, the **MoveLookController** sets the velocity to 0 because the player has stopped touching the move rectangle. If it didn't set the velocity to 0, the player would keep moving! If you want to implement some form of inertia, this is where you add the method that begins returning the velocity to 0 over future calls to **Update** from the game loop.
+如果引發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 事件的指標 ID 是先前記錄的移動指標 ID，**MoveLookController** 會將速度設成 0，因為玩家已經停止觸碰移動矩形。 如果沒有將速度設成 0，玩家會繼續移動！ 如果想要實作某些慣性形式，您可以在這裡加入方法，將來從遊戲迴圈呼叫 **Update** 時開始將速度設回 0。
 
-Otherwise, if the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) event fired in the fire rectangle or the look region, the **MoveLookController** resets the specific pointer IDs.
+或者，如果 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 事件是在射擊矩形或視角區域中引發的，**MoveLookController** 會重設特定指標 ID。
 
-That's the basics of how touch screen controls are implemented in the game sample. Let's move on to mouse and keyboard controls.
+這是遊戲範例中如何實作觸控式螢幕控制項的基本概念。 現在我們來看看滑鼠和鍵盤控制項。
 
-## Implementing mouse and keyboard controls
+## 實作滑鼠和鍵盤控制項
 
 
-The game sample implements these mouse and keyboard controls:
+遊戲範例實作以下滑鼠和鍵盤控制項：
 
--   The W, S, A, and D keys move the player view forward, backward, left, and right, respectively. Pressing X and the space bar move the view up and down, respectively.
--   Pressing the P key pauses the game.
--   Moving the mouse puts the player in control of the rotation (the pitch and yaw) of the camera view.
--   Clicking the left button fires a sphere.
+-   W、S、A、 D 鍵分別會前、後、左、右移動玩家視角。 按 X 鍵和空白鍵則會分別將視角上下移動。
+-   按 P 鍵則會暫停遊戲。
+-   玩家可藉由移動滑鼠來控制相機視角的旋轉 (上下移動和左右偏移)。
+-   按一下滑鼠左鍵會發射子彈。
 
-To use the keyboard, the game sample registers for two extra events: [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) and [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270), which handle the press and the release of a key, respectively.
+若要使用鍵盤，遊戲範例會另外登錄兩個事件：[**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) 和 [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)，分別處理按下和放開按鍵動作。
 
 ```cpp
 window->KeyDown +=
@@ -487,7 +492,7 @@ window->KeyUp +=
         ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &MoveLookController::OnKeyUp);
 ```
 
-The mouse is treated a little differently from the touch controls, even though it uses a pointer. Obviously, it doesn't use the move and fire rectangles, as that would be very cumbersome for the player: how could they press the move and fire controls at the same time? As noted earlier, the **MoveLookController** controller engages the look controls whenever the mouse is moved, and engages the fire controls when the left mouse button is pressed, as shown here.
+雖然滑鼠使用指標，但是它的處理方式與觸控控制項稍微不同。 很顯然地，它不必使用移動矩形和射擊矩形，這樣反而會讓玩家的速度變慢：玩家要如何同時按下移動和射擊控制項呢？ 正如前面所述，**MoveLookController** 控制器會在滑鼠移動時使用視角控制項，而在按滑鼠左鍵時使用射擊控制項，如這裡所示。
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -598,7 +603,7 @@ void MoveLookController::OnPointerPressed(
 }
 ```
 
-Now, let's look at how the game sample handles the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) mouse event.
+現在，我們先來看看遊戲範例如何處理[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 滑鼠事件。
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -656,16 +661,16 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-When the player stops pressing one of the mouse buttons, the input is complete: the spheres stop firing. But, because look is always enabled, the game continues to use the same mouse pointer to track the ongoing look events.
+當玩家不再按滑鼠的任何按鍵時，輸入就會完成：子彈會停止射擊。 但是，因為視角一直在啟用狀態， 所以遊戲會繼續使用相同的滑鼠指標來追蹤進行中的視角事件。
 
-Now, let's look at the last of control types: the Xbox controller. It's handled separately from the touch and mouse controls, because it doesn't use the pointer object.
+現在，我們來看看最後一個控制器類型：Xbox 控制器。 它與觸控和滑鼠控制項的處理方式不同，因為它不使用指標物件。
 
-## Implementing Xbox controller controls
+## 實作 Xbox 控制器控制項
 
 
-In the game sample, Xbox controller support is added by calls to the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) APIs, which are set of APIs designed to simplify programming for game controllers. In the game sample, we use the Xbox controller's left analog stick for player movement, the right analog stick for the look controls, and the right trigger to fire. We use the start button to pause and resume the game.
+在遊戲範例中，呼叫 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) API 即可支援 Xbox 控制器，這組 API 的設計是為了簡化遊戲控制器所需的程式設計。 在遊戲範例中，我們要使用 Xbox 控制器的左搖桿來控制玩家的移動， 而右搖桿用來控制視角，右發射鍵則用來射擊。 我們使用開始按鈕來暫停和繼續遊戲。
 
-The **Update** method on the **MoveLookController** instance immediately checks to see if a game controller is connected, and then checks the controller state.
+**MoveLookController** 執行個體上的 **Update** 方法會立即檢查是否已經連接遊戲控制器，然後檢查控制器的狀態。
 
 ```cpp
 void MoveLookController::UpdateGameController()
@@ -793,20 +798,20 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-If the game controller is in the **Active** state, this method checks to see if a user moved the left analog stick in a specific direction. But the movement on the stick in a specific direction must register as larger than the radius of the dead zone; otherwise, nothing will happen. This dead zone radius is necessary to present "drifting," which is when the controller picks up minute movements from the player's thumb as it rests on the stick. If we don't have this dead zone, the player can get annoyed very quickly, as the controls feel very fidgety.
+如果遊戲控制器處於 **Active** 狀態，這個方法會檢查使用者是否以特定方向移動左搖桿。 但是您必須將搖桿特定方向的移動距離登錄為大於靜止區域的半徑，否則不會發生任何動作。 您必須使用這個靜止區域半徑來處理「飄移」移動，也就是玩家將拇指放在控制器搖桿上的細微移動。 如果沒有這個靜止區域，玩家很快就會開始煩躁，因為很難控制遊戲中的移動。
 
-The **Update** method then performs the same check on the right stick, to see if the player has changed the direction the camera is looking, as long as the movement on the stick is longer than another dead zone radius.
+**Update** 方法接下來會對右搖桿執行相同的檢查，看看玩家是否改變了相機的視角方向 (搖桿的移動距離必須大於另一個靜止區域半徑)。
 
-**Update** computes the new pitch and yaw, and then checks to see if the user pressed the right analog trigger, our fire button.
+**Update** 會計算新的上下移動和左右偏移，然後檢查使用者是否按了右發射鍵 (也就是我們的射擊按鈕)。
 
-And that's how this sample implements a full set of control options. Again, remember that a good UWP app supports a range of control options, so players with different form factors and devices can play in the way they prefer!
+以上就是這個範例實作完整控制選項的方式。 請記住，好的 UWP 應用程式必須支援多種控制選項，進而讓使用不同尺寸和裝置的玩家可以根據自己的偏好進行遊戲！
 
-## Next steps
+## 後續步驟
 
 
-We've reviewed every major component of a UWP DirectX game except one: audio! Music and sound effects are important to any game, so let's discuss [adding sound](tutorial--adding-sound.md)!
+我們已經了解所有的主要 UWP DirectX 遊戲元件，只除了一個：音訊！ 音樂和音效對所有遊戲都非常重要，讓我們接著討論[加入聲音](tutorial--adding-sound.md)吧！
 
-## Complete sample code for this section
+## 這個章節的完整範例程式碼
 
 
 MoveLookController.h
@@ -1896,20 +1901,25 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)
 
- 
+ 
 
-## Related topics
-
-
-[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
-
- 
+## 相關主題
 
 
+[使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

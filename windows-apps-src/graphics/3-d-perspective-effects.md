@@ -1,28 +1,28 @@
 ---
 author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
-title: 3-D perspective effects for XAML UI
-description: You can apply 3-D effects to content in your Windows Runtime apps using perspective transforms. For example, you can create the illusion that an object is rotated toward or away from you, as shown here.
+title: XAML UI 的 3D 透視效果
+description: 您可以使用透視轉換將 3D 效果套用到 Windows 執行階段 App 中的內容。 例如，您可以建立物件轉近或轉離的動畫效果，如這裡所示。
 ---
-# 3-D perspective effects for XAML UI
+# XAML UI 的 3D 透視效果
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You can apply 3-D effects to content in your Windows Runtime apps using perspective transforms. For example, you can create the illusion that an object is rotated toward or away from you, as shown here.
+您可以使用透視轉換將 3D 效果套用到 Windows 執行階段 App 中的內容。 例如，您可以建立物件轉近或轉離的動畫效果，如這裡所示。
 
-![Image with Perspective Transform](images/3dsimple.png)
+![透視轉換的影像](images/3dsimple.png)
 
-Another common usage for perspective transforms is to arrange objects in relation to one another to create a 3-D effect, as here.
+透視轉換的另一個常見用法，就是將物件排列在一起以建立 3D 效果，如下所示。
 
-![Stacking objects to create a 3-D effect](images/3dstacking.png)
+![堆疊物件以建立 3D 效果](images/3dstacking.png)
 
-Besides creating static 3-D effects, you can animate the perspective transform properties to create moving 3-D effects. [Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236111) to see an example of this.
+除了建立靜態 3D 效果，您也可以動畫顯示透視轉換屬性，以建立移動中的 3D 效果。 [執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236111)查看上述效果。
 
-You just saw perspective transforms applied to images, but you can apply these effects to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), including controls. For example, you can apply a 3-D effect to an entire container of controls like this:
+前述範例是套用至影像的透視轉換，而您可以將這些效果套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，包括控制項。 例如，您可以將一種 3D 效果套用到整個控制項容器，如下所示：
 
-![3-D effect applied to a container of elements](images/skewedstackpanel.png)
+![套用 3D 效果的元素容器](images/skewedstackpanel.png)
 
-Here is the XAML code used to create this sample:
+以下是建立此範例所用的 XAML 程式碼：
 
 ```xml
 <StackPanel Margin="35" Background="Gray">    
@@ -35,13 +35,13 @@ Here is the XAML code used to create this sample:
 </StackPanel>
 ```
 
-Here we focus on the properties of [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) which is used to rotate and move objects in 3-D space. The next sample allows you to experiment with these properties and see their effect on an object.
+以下我們將焦點放在 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 屬性，其用途是在 3D 空間中旋轉和移動物件。 您可以在下一個範例中實驗這些屬性，查看它們對物件產生的效果。
 
-[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236112)
+[執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## PlaneProjection class
+## PlaneProjection 類別
 
-You can apply 3D effects can to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), by setting the UIElement's [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) property using a [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). The **PlaneProjection** defines how the transform is rendered in space. The next example shows a simple case.
+使用 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 設定 UIElement 的 [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
 
 ```xml
 <Image Source="kid.png">
@@ -51,11 +51,12 @@ You can apply 3D effects can to any [**UIElement**](https://msdn.microsoft.com/l
 </Image>
 ```
 
-This figure shows what the image renders as. The x-axis, y-axis, and z-axis are shown as red lines. The image is rotated backward 35 degrees around the x-axis using the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) property.
+此圖表顯示影像呈現的情形。 x 軸、y 軸以及 z 軸以紅線顯示。 此影像是使用 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 屬性繞著 x 軸往後旋轉 35 度。
 
-![RotateX minus 35 degrees](images/3drotatexminus35.png)
+![RotateX 減 35 度](images/3drotatexminus35.png)
 
-The [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) property rotates around the y-axis of the center of rotation.
+[
+            **RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 屬性是繞著旋轉中心的 y 軸轉動。
 
 ```xml
 <Image Source="kid.png">
@@ -65,9 +66,10 @@ The [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.x
 </Image>
 ```
 
-![RotateY minus 35 degrees](images/3drotateyminus35.png)
+![RotateY 減 35 度](images/3drotateyminus35.png)
 
-The [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) property rotates around the z-axis of the center of rotation (a line that is perpendicular to the plane of the object).
+[
+            **RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) 屬性是繞著旋轉中心的 z 軸轉動 (與物件平面呈直角的一條線)。
 
 ```xml
 <Image Source="kid.png">
@@ -77,13 +79,14 @@ The [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.x
 </Image>
 ```
 
-![RotateZ minus 45 degrees](images/3drotatezminus35.png)
+![RotateZ 減 45 度](images/3drotatezminus35.png)
 
-The rotation properties can specify a positive or negative value to rotate in either direction. The absolute number can be greater than 360, which rotates the object more than one full rotation. [Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236112) to experiment with different values for the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx), [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy), and [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) properties to see the effect.
+旋轉屬性可以指定正值或負值，朝正向或反向旋轉。 絕對數字可以大於 360，這會完全旋轉物件一圈以上。 [執行這個範例，](http://go.microsoft.com/fwlink/p/?linkid=236112)以嘗試不同的 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx)、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 以及 [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) 屬性值，並查看效果。
 
-You can move the center of rotation by using the [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy), and [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) properties. By default, the axes of rotation run directly through the center of the object, causing the object to rotate around its center. But if you move the center of rotation to the outer edge of the object, it will rotate around that edge. The default values for **CenterOfRotationX** and **CenterOfRotationY** are 0.5, and the default value for **CenterOfRotationZ** is 0. For **CenterOfRotationX** and **CenterOfRotationY**, values between 0 and 1 set the pivot point at some location within the object. A value of 0 denotes one object edge and 1 denotes the opposite edge. Values outside of this range are allowed and will move the center of rotation accordingly. Because the z-axis of the center of rotation is drawn through the plane of the object, you can move the center of rotation behind the object using a negative number and in front of the object (toward you) using a positive number.
+您可以使用 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx)、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 以及 [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) 屬性來移動旋轉中心。 根據預設，旋轉軸會直接穿過物件中心，導致物件繞著本身中心旋轉。 但是如果您將旋轉中心移出物件外部邊緣，物件就會繞著該邊緣旋轉。 **CenterOfRotationX** 與 **CenterOfRotationY** 的預設值是 0.5，**CenterOfRotationZ** 的預設值是 0。 針對 **CenterOfRotationX** 與 **CenterOfRotationY**，介於 0 與 1 的數值會將樞紐點設在物件內部的某個位置。 0 代表物件某一邊緣，1 代表正對面的另一邊緣。 值可以超出此範圍，並會據此移動旋轉中心。 因為旋轉中心 z 軸的繪製方式是穿透物件平面，所以您可以使用負值在物件背面移動旋轉中心，或使用正值在物件前面 (朝向您) 移動旋轉中心。
 
-[**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) moves the center of rotation along the x-axis parallel to the object while [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) moves the center or rotation along the y-axis of the object. The next illustrations demonstrate using different values for **CenterOfRotationY**.
+[
+            **CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) 會沿著與物件平行的 X 軸移動旋轉中心，而 [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 則是沿著物件 Y 軸移動旋轉中心。 下一個圖例示範 **CenterOfRotationY** 使用不同值的效果
 
 ```xml
 <Image Source="kid.png">
@@ -93,9 +96,9 @@ You can move the center of rotation by using the [**CenterOfRotationX**](https:/
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = "0.5" (預設值)**
 
-![CenterOfRotationY equals 0.5](images/3drotatexminus35.png)
+![CenterOfRotationY 等於 0.5](images/3drotatexminus35.png)
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
@@ -106,9 +109,9 @@ You can move the center of rotation by using the [**CenterOfRotationX**](https:/
 
 **CenterOfRotationY = "0.1"**
 
-![CenterOfRotationY equals 0.1](images/3dcenterofrotationy0point1.png)
+![CenterOfRotationY 等於 0.1](images/3dcenterofrotationy0point1.png)
 
-Notice how the image rotates around the center when the [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) property is set to the default value of 0.5 and rotates near the upper edge when set to 0.1. You see similar behavior when changing the [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) property to move where the [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) property rotates the object.
+請注意 [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 屬性為預設值 0.5 時影像繞著中心旋轉的方式，而為 0.1 時影像在上邊緣附近旋轉的方式。 在變更 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) 屬性以移動 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 屬性旋轉物件的位置時，會有類似行為。
 
 ```xml
 <Image Source="kid.png">
@@ -118,9 +121,9 @@ Notice how the image rotates around the center when the [**CenterOfRotationY**](
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = "0.5" (預設值)**
 
-![CenterOfRotationX equals 0.5](images/3drotateyminus35.png)
+![CenterOfRotationX 等於 0.5](images/3drotateyminus35.png)
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
@@ -129,53 +132,68 @@ Notice how the image rotates around the center when the [**CenterOfRotationY**](
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX = "0.9" (右側邊緣)**
 
-![CenterOfRotationX equals 0.9](images/3dcenterofrotationx0point9.png)
+![CenterOfRotationX 等於 0.9](images/3dcenterofrotationx0point9.png)
 
-Use the [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) to place the center of rotation above or below the plane of the object. This way, you can rotate the object around the point analogous to a planet orbiting around a star.
+使用 [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) 將旋轉中心放在物件平面的下方或上方。 如此一來，物件繞著某點旋轉的方式，就如同行星圍繞恆星運行一般。
 
-[Run this slider sample](http://go.microsoft.com/fwlink/p/?linkid=236112) to experiment with rotating the object around different locations for the center of rotation.
+[執行這個滑桿範例](http://go.microsoft.com/fwlink/p/?linkid=236112)實驗物件繞著旋轉中心以外位置轉動的方式。
 
-## Positioning an object
+## 放置物件
 
-So far, you learned how to rotate an object in space. You can position these rotated objects in space relative to one another by using these properties:
+目前為止，您已學會如何在空間中旋轉物件。 使用下列屬性可以將旋轉物件放在彼此之間的相對位置：
 
--   [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) moves an object along the x-axis of the plane of a rotated object.
--   [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) moves an object along the y-axis of the plane of a rotated object.
--   [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) moves an object along the z-axis of the plane of a rotated object.
--   [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) moves an object along the screen-aligned x-axis.
--   [**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) moves an object along the screen-aligned y-axis.
--   [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) moves an object along the screen-aligned z-axis.
+-   [
+            **LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) 使物件沿著旋轉物件平面的 x 軸移動。
+-   [
+            **LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) 使物件沿著旋轉物件平面的 y 軸移動。
+-   [
+            **LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) 使物件沿著旋轉物件平面的 z 軸移動。
+-   [
+            **GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) 使物件沿著與螢幕對齊的 x 軸移動。
+-   [
+            **GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) 使物件沿著與螢幕對齊的 y 軸移動。
+-   [
+            **GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) 使物件沿著與螢幕對齊的 z 軸移動。
 
-**Local offset**
+**區域位移**
 
-The [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx), [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety), and [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) properties translate an object along the respective axis of the plane of the object after it has been rotated. Therefore, the rotation of the object determines the direction that the object is translated. To demonstrate this concept, the next sample animates **LocalOffsetX** from 0 to 400 and [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) from 0 to 65 degrees.
+[
+            **LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx)、[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) 以及 [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) 屬性可在物件旋轉之後，沿著物件平面的各軸平移物件。 因此，旋轉物件的方式會決定平移物件的方向。 為了示範此概念，下一個範例以動畫顯示 0 到 400 度的 **LocalOffsetX**，以及 0 到 65 度的 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy)。
 
-[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236209)
+[執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236209)
 
-Notice in the preceding sample that the object is moving along its own x-axis. At the very beginning of the animation, when the [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) value is near zero (parallel to the screen), the object moves along the screen in the x direction, but as the object rotates toward you, the object moves along the x-axis of the plane of the object toward you. On the other hand, if you animated the **RotationY** property to -65 degrees, the object would curve away from you.
+請注意，前述範例中的物件是沿著本身 x 軸移動。 動畫一開始，[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 值接近零時 (與螢幕平行)，物件是以 X 方向沿著螢幕移動，但是當物件朝向您旋轉時，則是沿著朝向您之物件平面的 X 軸移動。 另一方面，如果您以動畫顯示 **RotationY** 屬性到 -65 度，則物件會以曲線路徑轉離。
 
-[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) works similarly to [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx), except that it moves along the vertical axis, so changing [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) affects the direction **LocalOffsetY** moves the object. In the next sample, **LocalOffsetY** is animated from 0 to 400 and **RotationX** from 0 to 65 degrees.
+[
+            **LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) 的運作方式與 [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) 類似，不過是沿著垂直軸移動，因此變更 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 效果會影響 **LocalOffsetY** 移動物件的方向。 下一個範例會動畫顯示 0 到 400 度的 **LocalOffsetY**，以及 0 到 65 度的 **RotationX**。
 
-[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236210)
+[執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236210)
 
-[**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) translates the object perpendicular to the plane of the object as though a vector was drawn directly through the center from behind the object out toward you. To demonstrate how **LocalOffsetZ** works, the next sample animates **LocalOffsetZ** from 0 to 400 and [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) from 0 to 65 degrees.
+[
+            **LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) 可平移與物件平面呈直角的物件，就像從物件背面直接穿透中心朝向您繪製一個向量。 為了示範 **LocalOffsetZ** 的運作方式，下一個範例將以動畫顯示 0 到 400 度的 **LocalOffsetZ**，以及 0 到 65 度的 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx)。
 
-[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236211)
+[執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236211)
 
-At the beginning of the animation, when the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) value is near zero (parallel to the screen), the object moves directly out toward you, but as the face of the object rotates down, the object moves down instead.
+動畫一開始，[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 值接近零時 (與螢幕平行)，物件是直接朝向您移動，但是當物件的正面向下旋轉，就會改為向下移動。
 
-**Global offset**
+**全域位移**
 
-The [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx), [**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety), and [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) properties translate the object along axes relative to the screen. That is, unlike the local offset properties, the axis the object moves along is independent of any rotation applied to the object. These properties are useful when you want to simply move the object along the x-, y-, or z-axis of the screen without worrying about the rotation applied to the object.
+[
+            **GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx)、[**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) 以及 [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) 屬性會沿著相對於螢幕的各軸平移物件。 也就是說，物件移動沿著的軸與物件套用的任何旋轉無關，這一點與區域位移屬性不同。 若您只想沿著螢幕的 x、y 或 z 軸移動物件，這些屬性就非常實用，可以讓您不用擔心物件所套用的旋轉。
 
-The next sample animates [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) from 0 to 400 and [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) from 0 to 65 degrees.
+下一個範例會以動畫顯示 0 到 400 度的 [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx)，以及 0 到 65 度的 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy)。
 
-[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236213)
+[執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236213)
 
-Notice in this sample that the object does not change course as it rotates. That is because the object is being moved along the x-axis of the screen without regard to its rotation.
+請注意，此範例中的物件在旋轉時不會變更路徑。 因為物件是沿著螢幕的 x 軸移動，與其本身的旋轉無關。
 
-## Positioning an object
+## 放置物件
 
-You can use the [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) and [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) types for more complex semi-3D scenarios than are possible with the [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). **Matrix3DProjection** provides you with a complete 3D transform matrix to apply to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), so that you can apply arbitrary model transformation matrices and perspective matrices to elements. Keep in mind that these API are minimal and therefore if you use them, you will need to write the code that correctly creates the 3D transform matrices. Because of this, it is easier to use **PlaneProjection** for simple 3D scenarios.
+您可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 類型處理 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 無法達成的更複雜仿 3D 效果. **Matrix3DProjection** 提供可套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完整 3D 轉換矩陣，因此您可以將自選的模型轉換矩陣與透視矩陣模型套用至元素。 請記住，這些 API 只含最基本的內容，如果您要使用它們，就必須寫入可正確建立 3D 轉換矩陣的程式碼。 因此，使用 **PlaneProjection** 創造簡單的 3D 效果會比較容易。 Because of this, it is easier to use <bpt id="p1">**</bpt>PlaneProjection<ept id="p1">**</ept> for simple 3D scenarios.
+
+
+<!--HONumber=May16_HO2-->
+
+
