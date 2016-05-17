@@ -19,7 +19,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG](https://github.com/Microsoft/WDG.handback/blob/42d0c0ec27eeaabbe6e346de378ea59fc15649ea/ol-handback/Microsoft/windows-apps.zh-tw/master/49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG)
-* Handback Datetime: 2016-05-17 12:35:16
+* Handback Datetime: 2016-05-17 13:06:52
 * Handback Error: [handback_validate_file_extension_name_invalide](#49d5c6b9b25d3dee65e09aeb7726c3695132bc601940handback_validate_file_extension_name_invalide)
 * Dependency From: windows-apps-src\debug-test-perf\test-with-the-emulator.md
 * [Back to Top](#report-top)
@@ -33,7 +33,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG](https://github.com/Microsoft/WDG.handback/blob/42d0c0ec27eeaabbe6e346de378ea59fc15649ea/ol-handback/Microsoft/windows-apps.zh-tw/master/17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG)
-* Handback Datetime: 2016-05-17 12:35:16
+* Handback Datetime: 2016-05-17 13:06:52
 * Handback Error: [handback_validate_file_extension_name_invalide](#17324ec7248a681bfd744ca4fb8a3d48be2aad253302handback_validate_file_extension_name_invalide)
 * Dependency From: windows-apps-src\monetize\launch-feedback-hub-from-your-app.md
 * [Back to Top](#report-top)
