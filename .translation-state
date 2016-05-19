@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7",
-  "LastTranslatedCommit": "a51eb2a3ff411b868157b618a3e3e2e60ef3e44b",
+  "LastTranslatedCommit": "cc89d9f9d27b20fc1f611dd675f84f8e78972caa",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -50762,7 +50762,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-19T15:39:54.9647038Z",
+      "HandbackDateTime": "2016-05-19T16:08:14.7495817Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.zh-TW is different with handoff file name: getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.zh-tw.",
@@ -50772,7 +50772,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 1,
+      "HandbackFailureTimes": 2,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
