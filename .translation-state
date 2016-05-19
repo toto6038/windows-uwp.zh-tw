@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7",
-  "LastTranslatedCommit": "33160278eb2fa76cb91891645653c911e0369258",
+  "LastTranslatedCommit": "8805912a81ecef39d2da41e2b575c5b4bca6c048",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -57658,7 +57658,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-19T16:39:53.5437786Z",
+      "HandbackDateTime": "2016-05-19T17:11:25.2733675Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-TW is different with handoff file name: microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-tw.",
@@ -57668,7 +57668,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
@@ -57696,7 +57696,7 @@
       "TargetFilePath": "windows-apps-src\\security\\microsoft-passport-login-auth-service.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\windows-apps.zh-tw\\master\\microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.zh-tw.xlf",
       "HandbackFileCommit": "de340b0acce4e89762f9a817e6f44fd23043659b",
-      "HandbackDateTime": "2016-05-19T16:39:53.5437786Z",
+      "HandbackDateTime": "2016-05-19T17:11:25.2733675Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.zh-TW is different with handoff file name: microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.zh-tw.",
@@ -57706,7 +57706,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 3,
+      "HandbackFailureTimes": 4,
       "UpdatedDateTime": "2016-05-17T11:35:53.3071707Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
