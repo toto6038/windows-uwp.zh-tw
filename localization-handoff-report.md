@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\setting-up-your-payout-account-and-tax-forms.md](https://github.com/Microsoft/windows-apps/blob/f17132514a42c50d6bfe716f6be706748c287043/windows-apps-src/publish/setting-up-your-payout-account-and-tax-forms.md) | HandedOffSuccess | [Details](#45cb4e8b65f1aeb75c049a88c143a23350d47b643538)
+ [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/9ad7589344d2af986e52ae43acc3e48de6374ae6/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md) | HandedOffSuccess | [Details](#d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b43497)
 
 ## Item Details
-##### <a name='45cb4e8b65f1aeb75c049a88c143a23350d47b643538'></a> Source: [windows-apps-src\publish\setting-up-your-payout-account-and-tax-forms.md](https://github.com/Microsoft/windows-apps/blob/f17132514a42c50d6bfe716f6be706748c287043/windows-apps-src/publish/setting-up-your-payout-account-and-tax-forms.md)
+##### <a name='d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b43497'></a> Source: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/9ad7589344d2af986e52ae43acc3e48de6374ae6/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [setting-up-your-payout-account-and-tax-forms.713eef0ce6c8021be69a291d8f7972e14807c5ae.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/be51e4fface6314dac336202c99894981f3afbc6/ol-handoff/Microsoft/windows-apps.zh-tw/master/setting-up-your-payout-account-and-tax-forms.713eef0ce6c8021be69a291d8f7972e14807c5ae.zh-tw.xlf)
-* Handoff Datetime: 2016-05-19 18:07:36
+* Handoff File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/57dcb49c33a5c776401e74978a1841bceaed6c35/ol-handoff/Microsoft/windows-apps.zh-tw/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.zh-tw.xlf)
+* Handoff Datetime: 2016-05-19 23:06:49
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
