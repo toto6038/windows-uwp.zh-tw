@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "f17132514a42c50d6bfe716f6be706748c287043",
-  "LastTranslatedCommit": "824c149cfc24a60d35d0ff0a90b1b78e17a37352",
+  "LastTranslatedCommit": "8ea9ba55e3cbf09b78f422e4507c094e236ddcb3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -63803,7 +63803,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-19T17:38:56.8947906Z",
+      "HandbackDateTime": "2016-05-19T18:16:23.2903236Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.zh-TW is different with handoff file name: best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.zh-tw.",
@@ -63813,7 +63813,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 5,
+      "HandbackFailureTimes": 1,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
