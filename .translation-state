@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7",
-  "LastTranslatedCommit": "c96693b58a0216c5c30f21299e9b7fde57b68f9b",
+  "LastTranslatedCommit": "bc1004a041180710fb5ba8d89581d445e9ffb58d",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -46348,7 +46348,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-19T16:08:00.452365Z",
+      "HandbackDateTime": "2016-05-19T16:39:21.4261133Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-TW is different with handoff file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-tw.",
@@ -46358,7 +46358,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 2,
+      "HandbackFailureTimes": 3,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
