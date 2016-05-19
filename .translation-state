@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7",
-  "LastTranslatedCommit": "c448249aa97418799795ee0f3cf49d40b768eb4b",
+  "LastTranslatedCommit": "42d683c44a2bd7059ea625ca4d127202f0ffd7fb",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -46348,9 +46348,17 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
-      "HandbackException": null,
-      "HandbackFailureTimes": 0,
+      "HandbackDateTime": "2016-05-19T15:39:38.0896694Z",
+      "HandbackException": {
+        "internal_error_code": "handback_validate_file_name_invalide",
+        "internal_error_message": "Handback file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-TW is different with handoff file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-tw.",
+        "internal_error_retriable": false,
+        "exception_message": "Handback file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-TW is different with handoff file name: get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.zh-tw.",
+        "exception_type": "Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException",
+        "stack_trace": null,
+        "extended_information": null
+      },
+      "HandbackFailureTimes": 1,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
