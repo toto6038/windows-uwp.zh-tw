@@ -1,24 +1,80 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 5
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\cpusets-games.md](https://github.com/Microsoft/windows-apps/blob/d8e73b0e1ef1d2cce623cb3db95bbc420906ee1a/windows-apps-src/xbox-apps/cpusets-games.md) | HandedOffSuccess | [Details](#8bbc426a626200f70150869166673a4a409a3cfd3815)
+ [windows-apps-src\xbox-apps\cpusets-games.md](https://github.com/Microsoft/windows-apps/blob/be95626fedd29edd68571daca2b37d25d4c135f2/windows-apps-src/xbox-apps/cpusets-games.md) | HandedOffSuccess | [Details](#73fef7eac1932a9b338499844b22a38fbc81b8113815)
+ [windows-apps-src\xbox-apps\images\cpusets-lumia950cache.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-lumia950cache.png) | HandedOffSuccess | [Details](#404bdc0ccc088dec61b9a077bcff54a78d0d15123832)
+ [windows-apps-src\xbox-apps\images\cpusets-table2.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table2.png) | HandedOffSuccess | [Details](#bb9c5b1e4d5928bc0d751763f8fa9e77f3060f1d3833)
+ [windows-apps-src\xbox-apps\images\cpusets-table3.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table3.png) | HandedOffSuccess | [Details](#e89485a0a0c29bbc1b6a18bc24cdb0833143d5a93834)
+ [windows-apps-src\xbox-apps\images\cpusets-table4.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table4.png) | HandedOffSuccess | [Details](#06cd7d578f0d33f403fa67caadc3559f3af4a83e3835)
 
 ## Item Details
-##### <a name='8bbc426a626200f70150869166673a4a409a3cfd3815'></a> Source: [windows-apps-src\xbox-apps\cpusets-games.md](https://github.com/Microsoft/windows-apps/blob/d8e73b0e1ef1d2cce623cb3db95bbc420906ee1a/windows-apps-src/xbox-apps/cpusets-games.md)
+##### <a name='73fef7eac1932a9b338499844b22a38fbc81b8113815'></a> Source: [windows-apps-src\xbox-apps\cpusets-games.md](https://github.com/Microsoft/windows-apps/blob/be95626fedd29edd68571daca2b37d25d4c135f2/windows-apps-src/xbox-apps/cpusets-games.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [cpusets-games.de1f770e7a453fa82efd07e80f4f4380b7d5530a.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/44d50a88fd99e51e27a2fb5cb2b8798a4ceaf509/ol-handoff/Microsoft/windows-apps.zh-tw/master/cpusets-games.de1f770e7a453fa82efd07e80f4f4380b7d5530a.zh-tw.xlf)
-* Handoff Datetime: 2016-05-21 23:08:06
+* Handoff File: [cpusets-games.de1f770e7a453fa82efd07e80f4f4380b7d5530a.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9304c3af4b994663a3bf00971878d671e9217a55/ol-handoff/Microsoft/windows-apps.zh-tw/master/cpusets-games.de1f770e7a453fa82efd07e80f4f4380b7d5530a.zh-tw.xlf)
+* Handoff Datetime: 2016-05-21 23:36:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='404bdc0ccc088dec61b9a077bcff54a78d0d15123832'></a> Source: [windows-apps-src\xbox-apps\images\cpusets-lumia950cache.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-lumia950cache.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [404bdc0ccc088dec61b9a077bcff54a78d0d1512.png](https://github.com/Microsoft/WDG.handoff/blob/9304c3af4b994663a3bf00971878d671e9217a55/ol-handoff/Microsoft/windows-apps.zh-tw/master/404bdc0ccc088dec61b9a077bcff54a78d0d1512.png)
+* Handoff Datetime: 2016-05-21 23:36:26
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Dependency From: windows-apps-src\xbox-apps\cpusets-games.md
+* [Back to Top](#report-top)
+
+##### <a name='bb9c5b1e4d5928bc0d751763f8fa9e77f3060f1d3833'></a> Source: [windows-apps-src\xbox-apps\images\cpusets-table2.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table2.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [bb9c5b1e4d5928bc0d751763f8fa9e77f3060f1d.png](https://github.com/Microsoft/WDG.handoff/blob/9304c3af4b994663a3bf00971878d671e9217a55/ol-handoff/Microsoft/windows-apps.zh-tw/master/bb9c5b1e4d5928bc0d751763f8fa9e77f3060f1d.png)
+* Handoff Datetime: 2016-05-21 23:36:26
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Dependency From: windows-apps-src\xbox-apps\cpusets-games.md
+* [Back to Top](#report-top)
+
+##### <a name='e89485a0a0c29bbc1b6a18bc24cdb0833143d5a93834'></a> Source: [windows-apps-src\xbox-apps\images\cpusets-table3.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table3.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [e89485a0a0c29bbc1b6a18bc24cdb0833143d5a9.png](https://github.com/Microsoft/WDG.handoff/blob/9304c3af4b994663a3bf00971878d671e9217a55/ol-handoff/Microsoft/windows-apps.zh-tw/master/e89485a0a0c29bbc1b6a18bc24cdb0833143d5a9.png)
+* Handoff Datetime: 2016-05-21 23:36:26
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Dependency From: windows-apps-src\xbox-apps\cpusets-games.md
+* [Back to Top](#report-top)
+
+##### <a name='06cd7d578f0d33f403fa67caadc3559f3af4a83e3835'></a> Source: [windows-apps-src\xbox-apps\images\cpusets-table4.png](https://github.com/Microsoft/windows-apps/blob/e95a3858dbcf23802bc87bab6783298359ac9610/windows-apps-src/xbox-apps/images/cpusets-table4.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [06cd7d578f0d33f403fa67caadc3559f3af4a83e.png](https://github.com/Microsoft/WDG.handoff/blob/9304c3af4b994663a3bf00971878d671e9217a55/ol-handoff/Microsoft/windows-apps.zh-tw/master/06cd7d578f0d33f403fa67caadc3559f3af4a83e.png)
+* Handoff Datetime: 2016-05-21 23:36:26
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Dependency From: windows-apps-src\xbox-apps\cpusets-games.md
 * [Back to Top](#report-top)
 
 
