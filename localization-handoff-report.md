@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/c4a753b7642354c4fe42cff721fb21337b14528f/windows-apps-src/publish/opening-a-developer-account.md) | HandedOffSuccess | [Details](#979df6390fef01a32fb1728956622fbfe38bafa93526)
+ [windows-apps-src\launch-resume\launch-maps-app.md](https://github.com/Microsoft/windows-apps/blob/dda8ca956dd3a01958a0270966f0e116a0d0ca7f/windows-apps-src/launch-resume/launch-maps-app.md) | HandedOffSuccess | [Details](#8bc7b2e448bbbab4cf1e56f117db2fc11d8da88c2941)
 
 ## Item Details
-##### <a name='979df6390fef01a32fb1728956622fbfe38bafa93526'></a> Source: [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/c4a753b7642354c4fe42cff721fb21337b14528f/windows-apps-src/publish/opening-a-developer-account.md)
+##### <a name='8bc7b2e448bbbab4cf1e56f117db2fc11d8da88c2941'></a> Source: [windows-apps-src\launch-resume\launch-maps-app.md](https://github.com/Microsoft/windows-apps/blob/dda8ca956dd3a01958a0270966f0e116a0d0ca7f/windows-apps-src/launch-resume/launch-maps-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/862b078dc788378c4d63959022f6b5332faef2bd/ol-handoff/Microsoft/windows-apps.zh-tw/master/opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.zh-tw.xlf)
-* Handoff Datetime: 2016-05-26 19:25:59
+* Handoff File: [launch-maps-app.4c53ae19a43a4989c42d509c2657de322f2161fe.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/05489e1a875af06aa780ccc5477bf66453e50252/ol-handoff/Microsoft/windows-apps.zh-tw/master/launch-maps-app.4c53ae19a43a4989c42d509c2657de322f2161fe.zh-tw.xlf)
+* Handoff Datetime: 2016-05-26 21:55:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
