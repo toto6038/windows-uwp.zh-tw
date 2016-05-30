@@ -1,15 +1,16 @@
 ---
-Description: 藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。
+author: DelfCo
+Description: 藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 App。
 title: 使用全球通用格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: 使用全球通用格式
+label: Use global-ready formats
 template: detail.hbs
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"> </span>使用全球通用格式
+# <span id="dev_globalizing.use_global-ready_formats"></span>使用全球通用格式
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要 API**
@@ -18,20 +19,20 @@ template: detail.hbs
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 
-藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。 這可讓您在將來因應全球市場中的其他文化特性、地區及語言。
+藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。 這可讓您的 app 在將來因應全球市場中的其他文化特性、地區及語言。
 
-## <span id="Introduction"> </span> <span id="introduction"> </span> <span id="INTRODUCTION"> </span>簡介
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>簡介
 
 
-許多 app 開發人員在建立 app 時，都會自然而然地只顧慮到自己的語言和文化。 但是，當應用程式開始跨足其他市場時，調整應用程式以適應新語言和新區域就可能會遭遇意外的困難。 例如，日期、時間、數字、行事曆、貨幣、電話號碼、度量單位和紙張大小等項目，全部都可以根據不同的文化特性或語言以不同方式顯示。
+許多應用程式開發人員在建立應用程式時，都會自然而然地只顧慮到自己的語言和文化。 但是，當應用程式開始跨足其他市場時，調整應用程式以適應新語言和新區域就可能會遭遇意外的困難。 例如，日期、時間、數字、行事曆、貨幣、電話號碼、度量單位和紙張大小等項目，全部都可以根據不同的文化特性或語言以不同方式顯示。
 
-只要在開發 app 時將幾個事項納入考量，就可以簡化適應新市場的程序。
+只要在開發應用程式時將幾個事項納入考量，就可以簡化適應新市場的程序。
 
-## <span id="Prerequisites"> </span> <span id="prerequisites"> </span> <span id="PREREQUISITES"> </span>先決條件
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先決條件
 
 
 [針對全球市場進行規劃](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"> </span> <span id="tasks"> </span> <span id="TASKS"> </span>工作
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>工作
 
 
 1.  **以適當方式格式化日期和時間。**
@@ -117,7 +118,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -149,7 +150,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -164,7 +165,7 @@ template: detail.hbs
 
     如果要根據使用者的語言、地區或文化喜好設定提供不同功能，Windows 可以讓您透過 [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) 存取這些喜好設定。 如有需要，可以使用 **GlobalizationPreferences** 類別取得使用者目前地理區域、慣用語言、慣用貨幣等項目的值。
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
 * [針對全球市場進行規劃](https://msdn.microsoft.com/library/windows/apps/hh465405)
@@ -189,6 +190,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
