@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: UI 的背後是商務與資料層。
 title: 移值 Windows Phone Silverlight 商務與資料層至 UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
@@ -136,6 +137,6 @@ Windows Phone Silverlight 應用程式對選用的 SD 記憶卡具有唯讀存�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

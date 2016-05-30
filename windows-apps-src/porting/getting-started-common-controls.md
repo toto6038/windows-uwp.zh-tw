@@ -1,7 +1,8 @@
 ---
+author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: 常用控制項入門
-title: 常用控制項入門
+description: 開始使用常用控制項
+title: 開始使用常用控制項
 ---
 
 # 開始使用：常用控制項
@@ -16,8 +17,7 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 
 | iOS 控制項 (類別/通訊協定) | 對等的 Windows 市集應用程式控制項 |
 |------------------------------|--------------------------------------|
-| 活動指示器 (**UIActivityIndicatorView**) | [
-            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另請參閱[快速入門：新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
+| 活動指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另請參閱[快速入門：新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | 廣告橫幅檢視 (**ADBannerView**) 和廣告檢視委派 (**ADBannerViewDelegate**) | 請參閱 [Microsoft Advertising SDK](http://go.microsoft.com/fwlink/p/?LinkId=263494) |
 | 按鈕 (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另請參閱[快速入門：新增按鈕控制項](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | 日期選擇器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
@@ -57,6 +57,6 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 * [Build 2014：使用 Visual Studio 建置 XAML 交集的應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397876)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

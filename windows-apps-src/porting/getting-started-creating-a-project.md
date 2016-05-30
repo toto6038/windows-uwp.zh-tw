@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
 description: Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。
 title: 在 Visual Studio 中建立專案
@@ -16,7 +17,9 @@ Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">開發人員短片 - 比較 Visual Studio 與 Xcode</iframe>
 
-建立適用於 Windows 10 (正式名稱是通用 Windows 平台 (UWP) app) 的 app 比較像是使用腳本建立 iOS app。 Windows 10 App 通常是建構於數個頁面上，每個頁面都會包含不同部分的使用者介面，例如網站。 每個頁面都有兩個相關聯的來源檔案：一個用來儲存以程式設計的方式或以視覺化方式定義的使用者介面 (採用 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)格式儲存)，另一個則包含原始程式碼。 當使用者與您的 App 互動時，他們將在這些頁面中瀏覽。 在這個逐步解說中，您將建立含有兩個頁面的 app。
+您也會發現此[建置適用於 Windows 之應用程式的部落格文章](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)非常有用。
+
+建立適用於 Windows 10 的 app (正式名稱是通用 Windows 平台 (UWP) app) 比較像是使用腳本建立 iOS app。 Windows 10 App 通常是建構於數個頁面上，每個頁面都會包含不同部分的使用者介面，例如網站。 每個頁面通常都有兩個相關聯的來源檔案：一個用來以 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)格式儲存使用者介面，另一個則包含原始程式碼，通常是 C#。 當使用者與您的 App 互動時，他們將在這些頁面中瀏覽。 在這個逐步解說中，您將建立含有兩個頁面的 app。
 
 **注意** Windows 10 app 的一個重要功能是，無論平台為何，您都可以使用相同的原始程式碼和相同的 API 集。 如您所知，當您在撰寫適用於 iPhone 和 iPad 的通用 iOS app 時，您在執行階段就可以判斷您的 app 會在什麼平台上執行，並採取適當動作。 同樣地，Windows 10 的 app 在執行階段就可以知道它們會在什麼裝置上執行。 UWP app 無需在原始程式碼中使用 \#ifdef，就可以建立電話與桌上型電腦的不同組建。 為了方便起見，Windows 10 app 也會根據裝置聰明地使用使用者介面控制項：例如，您的 app 可能會參考日期選擇器控制項，而控制項則會根據 app 是在桌面或電話螢幕上執行，自動顯示不同的外觀並以不同的方式運作。 然而，您的原始程式碼仍將維持不變。
 
@@ -41,14 +44,13 @@ Visual Studio 是非常相似的。 您會看見如下圖中顯示的 [**開始�
 
 Visual Studio 中也提供好幾個可以選用的專案範本，如下圖中所示。
 
-![Visual Studio [新增專案] 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)
-如需此逐步解說，請依序點選 [**Visual C#**]、[**Windows**]、[**Windows 通用**] 以及 [**空白 App (Windows 通用)**]。 在 [**名稱**] 方塊中，輸入「MyApp」，然後點選 [**確定**]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
+![Visual Studio [新建專案] 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)如需此逐步解說，請依序點選 [**Visual C#**]、[**Windows**]、[**Windows 通用**] 以及 [**空白 App (Windows 通用)**]。 在 [**名稱**] 方塊中，輸入「MyApp」，然後點選 [**確定**]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
 
 ## 下一步
 
 [開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

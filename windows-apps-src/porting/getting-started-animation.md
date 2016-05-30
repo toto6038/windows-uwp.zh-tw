@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 動畫入門
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: 在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。
@@ -62,7 +63,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼顯示一個範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
 
-```xaml
+```xml
 ...
 <Storyboard 
         x:Name="Storyboard1" 
@@ -125,6 +126,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 [開始使用：後續動作？](getting-started-what-next.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

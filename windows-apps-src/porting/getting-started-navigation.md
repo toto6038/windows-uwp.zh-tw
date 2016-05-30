@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 瀏覽入門
 description: 瀏覽入門
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
@@ -16,21 +17,21 @@ iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以�
 
 在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 類別。 下列逐步解說會說明如何嘗試使用這種方式。
 
-讓我們繼續之前開始的方案，開啟 **MainPage.xaml** 檔案，然後在 [**設計**] 檢視中新增一個按鈕。 將按鈕的 [**Content**] 屬性從「Button」變更為「Go To Page」。 然後為按鈕的 **Click** 事件建立一個處理常式，如下圖中所示。 如果您不記得怎麼做，請檢閱上一節中的逐步解說 (提示：按兩下 [**設計**] 檢視中的按鈕)。
+讓我們繼續之前開始的方案，開啟 **MainPage.xaml** 檔案，然後在 \[**設計**\] 檢視中新增一個按鈕。 將按鈕的 \[**Content**\] 屬性從「Button」變更為「Go To Page」。 然後為按鈕的 **Click** 事件建立一個處理常式，如下圖中所示。 如果您不記得怎麼做，請檢閱上一節中的逐步解說 (提示：按兩下 \[**設計**\] 檢視中的按鈕)。
 
 ![在 Visual Studio 中新增按鈕及其 Click 事件](images/ios-to-uwp/vs-go-to-page.png)
 
-讓我們開始新增頁面。 在 [**方案**] 檢視中，依序點選 [**專案**]功能表和 [**加入新項目**]。 點選 [**空白頁**] (如下圖所示)，然後點選 [**新增**]。
+讓我們開始新增頁面。 在 \[**方案**\] 檢視中，依序點選 \[**專案**\]功能表和 \[**加入新項目**\]。 點選 **空白頁** \(如下圖所示\)，然後點選 **新增**。
 
 ![在 Visual Studio 中新增頁面](images/ios-to-uwp/vs-add-new-page.png)
 
-接下來，將按鈕新增到 BlankPage.xaml 檔案。 讓我們使用 AppBarButton 控制項，並為它提供一個返回箭頭影像：在 [**XAML**] 檢視中，於 `<Grid> </Grid>` 元素之間新增 ` <AppBarButton Icon="Back"/>`。
+接下來，將按鈕新增到 BlankPage.xaml 檔案。 讓我們使用 AppBarButton 控制項，並為它提供一個返回箭頭影像：在 \[**XAML**\] 檢視中，於 `<Grid> </Grid>` 元素之間新增 ` <AppBarButton Icon="Back"/>`。
 
-現在，讓我們將事件處理常式加入到按鈕中：按兩下 [**設計**] 檢視中的控制項，Microsoft Visual Studio 會將文字「AppBarButton\_Click」加入至 **Click** 方塊中 (如下圖所示)，然後在 BlankPage.xaml.cs 檔案中新增並顯示對應的事件處理常式。
+現在，讓我們將事件處理常式加入到按鈕中：按兩下 **設計** 檢視中的控制項，Microsoft Visual Studio 會將文字「AppBarButton\_Click」加入至 **Click** 方塊中 \(如下圖所示\)，然後在 BlankPage.xaml.cs 檔案中新增並顯示對應的事件處理常式。
 
 ![在 Visual Studio 中新增上一頁按鈕及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
-如果您返回檔案的 [**XAML**] 檢視，`<AppBarButton>` 元素的 Extensible Application Markup Language (XAML) 程式碼現在應該看起來像這樣：
+如果您返回檔案的 \[**XAML**\] 檢視，`<AppBarButton>` 元素的 Extensible Application Markup Language (XAML) 程式碼現在應該看起來像這樣：
 
 ` <AppBarButton Icon="Back" Click="AppBarButton_Click"/>`
 
@@ -81,6 +82,6 @@ public BlankPage()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

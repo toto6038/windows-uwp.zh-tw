@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
 title: 針對 I/O、裝置與 app 模型將 Windows Phone Silverlight 移植到 UWP
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
@@ -95,6 +96,6 @@ UWP app 中，與 **PhoneApplicationPage.SupportedOrientations** 和 **Orientati
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

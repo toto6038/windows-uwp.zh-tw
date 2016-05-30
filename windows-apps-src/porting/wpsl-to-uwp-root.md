@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。
 title: 從 Windows Phone Silverlight 移到 UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
@@ -8,7 +9,7 @@ ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在此移植指南中提及之 Windows 10、UWP 應用程式，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在此移植指南中提及之 Windows 10、UWP app，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 當您將 Windows Phone Silverlight 應用程式移植成 Windows 10 應用程式時，將可補足已在 [Windows Phone 8.1 引入](https://msdn.microsoft.com/library/windows/apps/dn632424)的行動裝置功能，還能超越它們，使用可在所有 Windows 10 裝置通用的應用程式模型與 UI 架構之「通用 Windows 平台 (UWP)」。 這使得以一個程式碼為基底，以及單一應用程式套件，來支援電腦、平板電腦、手機與大量其他種類裝置成為可能。 而這將讓您 app 的潛在對象倍增，並藉由共用資料、購買的消費性產品等，創造新的可能性。 如需新功能的詳細資訊，請參閱 [Windows 10 提供給開發人員的新功能](https://dev.windows.com/getstarted/whats-new-windows-10)。
 
@@ -66,23 +67,23 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 | [移植商務與資料層](wpsl-to-uwp-business-and-data.md) | UI 的背後是商務與資料層。 這些層中的程式碼會呼叫作業系統和 .NET Framework API (例如背景處理、位置、相機、檔案系統、網路及其他資料存取)。 其中大多數皆[可供 UWP app 使用](https://msdn.microsoft.com/library/windows/apps/br211369)，因此您應該能夠原封不動地移植此程式碼中的大部分。 |
 | [尺寸與 UX 的移植](wpsl-to-uwp-form-factors-and-ux.md) | Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。|
 |[案例研究：Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | 本主題提供將一個非常簡單的 Windows Phone Silverlight app 移植到 Windows 10 UWP app 的案例研究。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 |
-| [案例研究：Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | 這個案例研究 (根據 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置) 是從在 **LongListSelector** 中顯示分組資料的 Windows Phone Silverlight app 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
+| [案例研究：Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | 這個案例研究 (根據 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置) 是從在 **LongListSelector** 中顯示分組資料的 Windows Phone Silverlight App 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
 
 ## 相關主題
 
 **文件**
 * [Windows 10 提供給開發人員的新功能](https://dev.windows.com/getstarted/whats-new-windows-10)
 * [通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)
-* [使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) app 的藍圖](https://msdn.microsoft.com/library/windows/apps/br229583)
-* [Windows Phone 8 開發人員的下一步](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
-**雜誌文章**
-* [Visual Studio 雜誌：Windows Phone 8.1：聚合功能的一大躍進](http://go.microsoft.com/fwlink/p/?LinkID=398541)
-**簡報**
-* [將 Nokia 音樂從 Windows Phone 移到 Windows 8 案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
+* [使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) App 的藍圖](https://msdn.microsoft.com/library/windows/apps/br229583)
+* [Windows Phone 8 開發人員的下一步](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx) 
+           **雜誌文章**
+* [Visual Studio 雜誌：Windows Phone 8.1：聚合功能的一大躍進](http://go.microsoft.com/fwlink/p/?LinkID=398541) 
+           **簡報**
+* [將 Nokia 音樂從 Windows Phone 移到 Windows 8 的案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

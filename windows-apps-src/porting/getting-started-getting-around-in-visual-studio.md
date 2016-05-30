@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 使用 Visual Studio
 title: 使用 Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
@@ -16,11 +17,11 @@ ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 
 ![Xcode 開發環境](images/ios-to-uwp/xcode-ide.png)
 
-Microsoft Visual Studio 看起來非常類似，但預設檢視的控制項在 [**工具箱**] 的左邊。 原始檔位於 [**方案總管**] 右側，而屬性則位於 [**方案總管**] 窗格底下的 [**屬性**]，如下所示：
+Microsoft Visual Studio 看起來非常類似，但預設檢視的控制項在 \[**工具箱**\] 的左邊。 原始檔位於 \[**方案總管**\] 右側，而屬性則位於 \[**方案總管**\] 窗格底下的 \[**屬性**\]，如下所示：
 
 ![Visual Studio 開發環境](images/ios-to-uwp/vs-ide.png)
 
-如果您覺得有點怪怪的，您會很高興知道您可以在 Visual Studio 中重新排列這些窗格，您可以將來源檔案放在畫面左側，將工具箱放在右側。 事實上，您可以按一下並拖曳任何窗格的標題列來將它重新定位，在您放開滑鼠後，Visual Studio 將會顯示一個灰色方塊，告訴您窗格的停駐位置。 許多窗格在其標題列中也會有小型圖釘圖示。 這可讓您依現狀釘選面板，就地鎖定。 取消釘選窗格，而且您可以摺疊窗格以節省空間：這對小型監視器非常有用。 如果您將窗格弄亂 (別擔心，我們都有過這種經驗)，從 [**視窗**] 功能表中選取 [**重設視窗配置**] 以還原順序。
+如果您覺得有點怪怪的，您會很高興知道您可以在 Visual Studio 中重新排列這些窗格，您可以將來源檔案放在畫面左側，將工具箱放在右側。 事實上，您可以按一下並拖曳任何窗格的標題列來將它重新定位，在您放開滑鼠後，Visual Studio 將會顯示一個灰色方塊，告訴您窗格的停駐位置。 許多窗格在其標題列中也會有小型圖釘圖示。 這可讓您依現狀釘選面板，就地鎖定。 取消釘選窗格，而且您可以摺疊窗格以節省空間：這對小型監視器非常有用。 如果您將窗格弄亂 (別擔心，我們都有過這種經驗)，從 \[**視窗**\] 功能表中選取 \[**重設視窗配置**\] 以還原順序。
 
 ## 新增控制項、設定其屬性以及回應事件
 
@@ -30,17 +31,17 @@ Microsoft Visual Studio 看起來非常類似，但預設檢視的控制項在 [
 
 ![在 Xcode 中設計 UI](images/ios-to-uwp/xcode-add-button-label.png)
 
-讓我們在 Visual Studio 執行類似的步驟。 在 [**工具箱**] 中，拖曳 [**Button**] 控制項，然後將它放到 MainPage.xaml 檔案的設計表面。
+讓我們在 Visual Studio 執行類似的步驟。 在 \[**工具箱**\] 中，拖曳 \[**Button**\] 控制項，然後將它放到 MainPage.xaml 檔案的設計表面。
 
 對 **TextBlock** 控制項執行相同的動作，看起來就像這樣：
 
 ![在 Visual Studio 中設計 UI](images/ios-to-uwp/vs-add-button-label.png)
 
-Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .xib 或腳本檔案內部，而前者會鼓勵您使用豐富、可編輯、宣告式且類似 XML 架構的語言來編輯用來儲存這些詳細資料的 XAML 檔案。 如需有關 Extensible Application Markup Language (XAML) 的詳細資訊，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)。 現在，您只需知道 [**設計**] 窗格中顯示的所有物件都是在 [**XAML**] 窗格中定義。 [**XAML**] 窗格能夠視需要進行更精確的控制。隨著您了解得越多，也就可以更快地手動開發使用者介面程式碼。 不過，在目前這個階段，讓我們先只專注於 [**設計**] 和 [**屬性**] 窗格。
+Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .xib 或腳本檔案內部，而前者會鼓勵您使用豐富、可編輯、宣告式且類似 XML 架構的語言來編輯用來儲存這些詳細資料的 XAML 檔案。 如需有關 Extensible Application Markup Language (XAML) 的詳細資訊，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)。 現在，您只需知道 \[**設計**\] 窗格中顯示的所有物件都是在 \[**XAML**\] 窗格中定義。 \[**XAML**\] 窗格能夠視需要進行更精確的控制。隨著您了解得越多，也就可以更快地手動開發使用者介面程式碼。 不過，在目前這個階段，讓我們先只專注於 \[**設計**\] 和 \[**屬性**\] 窗格。
 
-讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 [**標題**] 欄位中的值。
+讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 \[**標題**\] 欄位中的值。
 
-使用 Visual Studio 時，您會執行非常類似的動作。 在 [**設計**] 窗格中，點選按鈕讓它成為焦點。 接著，在 [**屬性**] 窗格中，將 [**內容**] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [**名稱**] 值從 "&lt;No Name&gt;" 變更到 "myButton" 來更新按鈕控制項的名稱，如下所示：
+使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱]**** 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
 
 ![Visual Studio 中的按鈕屬性視窗](images/ios-to-uwp/vs-button-properties.png)
 
@@ -58,11 +59,11 @@ Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .
 }
 ```
 
-Visual Studio 很相似。 [屬性]**** 右上角有一個閃電按鈕。 這裡列出了與選取控制項關聯的可能事件，如下所示：
+Visual Studio 很相似。 \[**屬性**\] 右上角有一個閃電按鈕。 這裡列出了與選取控制項關聯的可能事件，如下所示：
 
 ![Visual Studio 中的按鈕事件清單](images/ios-to-uwp/vs-button-event.png)
 
-若要為按鈕的 Click 事件新增程式碼，請先在 [**設計**] 窗格中選取按鈕。 然後按一下閃電按鈕，並按兩下 [**Click**] 名稱旁的空白方塊。 Visual Studio 便會將「myButton\_Click」事件新增到 **[Click**] 方塊，然後在 MainPage.xaml.cs 檔案中新增並顯示對應的事件處理常式，如下所示。
+若要為按鈕的 Click 事件新增程式碼，請先在 \[**設計**\] 窗格中選取按鈕。 然後按一下閃電按鈕，並按兩下 \[**Click**\] 名稱旁的空白方塊。 Visual Studio 便會將「myButton\_Click」事件新增到 \[**Click**\] 方塊，然後在 MainPage.xaml.cs 檔案中新增並顯示對應的事件處理常式，如下所示。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -71,7 +72,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-現在連接 [**TextBlock**] 控制項。 在 Xcode 中，您可以透過按住 Control 鍵並拖曳按鈕到原始程式碼的方式，來將控制項與其定義建立關聯，如下所示。
+現在連接 \[**TextBlock**\] 控制項。 在 Xcode 中，您可以透過按住 Control 鍵並拖曳按鈕到原始程式碼的方式，來將控制項與其定義建立關聯，如下所示。
 
 ![在 Xcode 中撰寫以關聯標籤及其定義](images/ios-to-uwp/xcode-add-button-reference.png)
 
@@ -84,9 +85,9 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 在 Visual Studio 中，您不需要與控制項建立關聯，因為我們已經為您做好了。 不過我們還是變更一下部分的屬性：
 
 1.  點選 MainPage.xaml 檔案索引標籤。
-2.  在 [**設計**] 窗格中，點選 [**TextBlock**] 控制項。
-3.  在 [**屬性**] 窗格中，點選扳手按鈕以顯示其屬性。
-4.  在 [**名稱**] 方塊中，將 "&lt;No Name&gt;" 變更為 "myLabel"。
+2.  在 \[**設計**\] 窗格中，點選 \[**TextBlock**\] 控制項。
+3.  在 \[**屬性**\] 窗格中，點選扳手按鈕以顯示其屬性。
+4.  在 [名稱]**** 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
 
 ![Visual Studio 中的標籤屬性視窗](images/ios-to-uwp/vs-label-properties.png)
 
@@ -108,11 +109,11 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-最後，若要執行 app，請選取 [**偵錯**] 功能表，然後再選取 [**開始偵錯**] (或是直接按下 F5)。 在 app 啟動之後，按一下 [Press Me] 按鈕，就會看到標籤的內容從「TextBlock」變更為「Hello, World!」，如下圖中所示。
+最後，若要執行 app，請選取 \[**偵錯**\] 功能表，然後再選取 **開始偵錯** \(或是直接按下 F5\)。 在 app 啟動之後，按一下 \[Press Me\] 按鈕，就會看到標籤的內容從「TextBlock」變更為「Hello, World!」，如下圖中所示。
 
 ![第一個逐步解說的執行結果：Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
-若要退出 app，請返回 Visual Studio，點選 [**偵錯**] 功能表，然後點選 [**停止偵錯**] (或是直接按下 SHIFT + F5)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
+若要退出 app，請返回 Visual Studio，點選\ [**偵錯**\] 功能表，然後點選 **停止偵錯** \(或是直接按下 SHIFT + F5\)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
 
 ## 下一步
 
@@ -120,6 +121,6 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

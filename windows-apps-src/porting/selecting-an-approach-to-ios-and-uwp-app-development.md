@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 開發跨平台 app 時有哪些選擇？
 title: 選取 iOS 和 UWP app 開發的方式
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
@@ -90,6 +91,6 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

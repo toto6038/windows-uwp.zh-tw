@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 選擇程式設計語言
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: 選擇程式設計語言
@@ -139,6 +140,6 @@ C# 是個很容易學會的語言，而且內建許多構成 .NET 的支援類�
 [開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

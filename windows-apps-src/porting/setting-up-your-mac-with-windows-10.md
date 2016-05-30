@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 使用目前的 Mac 電腦開發適用於 Windows 的 app。
 title: 設定 Mac 的 Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
@@ -38,6 +39,6 @@ VirtualBox 是一個在電腦上用來執行虛擬機器的免費應用程式，
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

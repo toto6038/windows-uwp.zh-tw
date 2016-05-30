@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: 這個案例研究根據 Bookstore1 中所提供的資訊來建置，是從在 SemanticZoom 控制項中顯示分組資料的通用 8.1 app 開始著手。
 title: Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2
@@ -106,7 +107,7 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 -   在 Bookstore2\_81.WindowsPhone 專案中，開啟 BookstoreStyles.xaml。 從這個檔案中，複製相同的這三個資源 (如上方所述)、兩個捷徑清單項目轉換器，以及命名空間前置字元宣告 Windows\_UI\_Xaml\_Controls\_Primitives，並將它們全部貼到新專案中的 BookstoreStyles.xaml。
 -   最後，在新專案的 SeZoUC.xaml 中，將適當的 Visual State Manager 標記新增到您在上方新增的 **Grid**。
 
-```xaml
+```xml
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -168,6 +169,6 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 下一個案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我們將在其中探討如何存取和顯示分組資料。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
