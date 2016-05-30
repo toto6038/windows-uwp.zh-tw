@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 157
+ Total Files | 160
 
 ## File List
  Source File | Status | Details 
@@ -163,6 +163,9 @@
  [windows-apps-src\devices-sensors\use-the-inclinometer.md](https://github.com/Microsoft/windows-apps/blob/d403e78b775af0f842ba2172295a09e35015dcc8/windows-apps-src/devices-sensors/use-the-inclinometer.md) | InSyncHandedBackSuccess | [Details](#f8b56e0ef13e471d99519256b5a6d124b569102d2066)
  [windows-apps-src\devices-sensors\use-the-light-sensor.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/devices-sensors/use-the-light-sensor.md) | InSyncHandedBackSuccess | [Details](#289d50ff4f45147c46bd66c526cf109d8fdf6d322067)
  [windows-apps-src\devices-sensors\use-the-orientation-sensor.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/devices-sensors/use-the-orientation-sensor.md) | InSyncHandedBackSuccess | [Details](#67c23795be54207c54c1e871dad045e6c0cd7c772068)
+ [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/enterprise/edp-hub.md) | InSyncHandedBackSuccess | [Details](#97bdbce8360fabad63f9fe7e85e5172ccd83f4032070)
+ [windows-apps-src\enterprise\enterprise-shared-storage.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/enterprise/enterprise-shared-storage.md) | InSyncHandedBackSuccess | [Details](#6f0e479081c361d69ab0c9e8cf4c531627304d322071)
+ [windows-apps-src\enterprise\index.md](https://github.com/Microsoft/windows-apps/blob/468c87694f519a5081f3242346039e6e7310d1db/windows-apps-src/enterprise/index.md) | InSyncHandedBackSuccess | [Details](#c2cfcc270d6b1380f065e7ada275c1c60ae05b042076)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -2047,6 +2050,42 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-orientation-sensor.8933b360952e357137a95b5a72dbbb525b664797.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b022fb5df98f71ec8b686e63b084a4f3a350ada2/ol-handback/Microsoft/windows-apps.zh-tw/master/devices-sensors/use-the-orientation-sensor.8933b360952e357137a95b5a72dbbb525b664797.zh-tw.xlf)
 * Handback Datetime: 2016-05-30 22:21:02
+* [Back to Top](#report-top)
+
+##### <a name='97bdbce8360fabad63f9fe7e85e5172ccd83f4032070'></a> Source: [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/enterprise/edp-hub.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e3e4019e77647fc90cc1256c39aeadba82bebc36/windows-apps-src/enterprise/edp-hub.md)
+* Handoff File: [edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/19691410fa0160c07f2eea4b6182322813a2cee5/ol-handback/Microsoft/windows-apps.zh-tw/master/enterprise/edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:21:08
+* [Back to Top](#report-top)
+
+##### <a name='6f0e479081c361d69ab0c9e8cf4c531627304d322071'></a> Source: [windows-apps-src\enterprise\enterprise-shared-storage.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/enterprise/enterprise-shared-storage.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\enterprise\enterprise-shared-storage.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e3e4019e77647fc90cc1256c39aeadba82bebc36/windows-apps-src/enterprise/enterprise-shared-storage.md)
+* Handoff File: [enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/19691410fa0160c07f2eea4b6182322813a2cee5/ol-handback/Microsoft/windows-apps.zh-tw/master/enterprise/enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:21:08
+* [Back to Top](#report-top)
+
+##### <a name='c2cfcc270d6b1380f065e7ada275c1c60ae05b042076'></a> Source: [windows-apps-src\enterprise\index.md](https://github.com/Microsoft/windows-apps/blob/468c87694f519a5081f3242346039e6e7310d1db/windows-apps-src/enterprise/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\enterprise\index.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/e3e4019e77647fc90cc1256c39aeadba82bebc36/windows-apps-src/enterprise/index.md)
+* Handoff File: [index.de142d6354f8b01275f69cff0f6e3a678b0be895.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/index.de142d6354f8b01275f69cff0f6e3a678b0be895.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.de142d6354f8b01275f69cff0f6e3a678b0be895.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/19691410fa0160c07f2eea4b6182322813a2cee5/ol-handback/Microsoft/windows-apps.zh-tw/master/enterprise/index.de142d6354f8b01275f69cff0f6e3a678b0be895.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:21:08
 * [Back to Top](#report-top)
 
 
