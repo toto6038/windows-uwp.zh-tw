@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 偵錯背景工作
 description: 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
@@ -22,7 +23,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
 
 -   在 C# 與 C++ 中，確定主要專案參照背景工作專案。 如果此參照未就緒，背景工作將不會包含在應用程式套件中。
--   在 C\# 與 C++ 中，確定背景工作專案的 [輸出類型]**** 為 [Windows 執行階段元件]。
+-   在 C\# 與 C++ 中，確定背景工作專案的 [輸出類型]**** 為「Windows 執行階段元件」。
 -   背景類別必須在套件資訊清單的進入點屬性中進行宣告。
 
 ## 手動觸發背景工作以偵錯背景工作程式碼
@@ -34,7 +35,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
     在 C++ 背景類別的 Run 函式中設置中斷點，和/或使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 編寫偵錯輸出。
 
-2.  在偵錯工具中執行 app，然後使用 [**週期事件**] 工具列中的暫停下拉式功能表來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
+2.  在偵錯工具中執行您的應用程式，然後使用 [週期事件]**** 工具列中的暫停下拉式功能表來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
     若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
@@ -68,8 +69,8 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
     如果您遵照此程序但事件日誌顯示背景工作發生錯誤進入點或觸發程序，表示您的 app 未正確註冊背景工作。 如需此工作的協助，請參閱[註冊背景工作](register-a-background-task.md)。
 
     1.  移至 [開始] 畫面並搜尋 eventvwr.exe，開啟事件檢視器。
-    2.  在事件檢視器中，移至 [應用程式及服務記錄檔]**** -&gt; [Microsoft]**** -&gt; [Windows]**** -&gt; [BackgroundTaskInfrastructure]****。
-    3.  在動作窗格中，選取 [檢視]**** -&gt; [顯示分析與偵錯記錄檔]****，啟用診斷記錄。
+    2.  在事件檢視器中，移至 [應用程式及服務記錄檔]****  -&gt; [Microsoft]****  -&gt; [Windows]****  -&gt; [BackgroundTaskInfrastructure]****。
+    3.  在動作窗格中，選取 [檢視]****  -&gt; [顯示分析與偵錯記錄檔]****，啟用診斷記錄。
     4.  選取 [診斷記錄檔]****，然後按一下 [啟用記錄]****。
     5.  現在嘗試使用應用程式再次註冊並啟動背景工作。
     6.  檢視診斷記錄檔，以取得詳細的錯誤資訊。 當中包含為背景工作註冊的進入點。
@@ -90,10 +91,10 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
 
 -   確認您的 app 會先檢查現有背景工作註冊，以免再次註冊背景工作。 多次登錄相同背景工作會在每次觸發背景工作時多次執行該背景工作，因而造成無法預期的結果。
--   在 Windows 上，如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 app 指定資訊清單選項的詳細資訊，請參閱[在 app 資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
+-   在 Windows 上，如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 app 指定資訊清單選項的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 -   背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試註冊工作之後，可能會當機。
 
-如需使用 VS 偵錯背景工作的詳細資訊，請參閱[如何在 Windows 市集應用程式觸發暫停、繼續以及背景事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+如需使用 VS 偵錯背景工作的詳細資訊，請參閱[如何在 Windows 市集應用程式中觸發暫停、繼續以及背景事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
 
 ## 相關主題
 
@@ -112,6 +113,6 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

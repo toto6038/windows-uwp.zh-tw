@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 處理已取消的背景工作
 description: 了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
@@ -102,7 +103,7 @@ OnCanceled 方法必須具有下列配置：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -115,7 +116,7 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -136,7 +137,7 @@ OnCanceled 方法必須具有下列配置：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -171,7 +172,7 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -186,7 +187,7 @@ OnCanceled 方法必須具有下列配置：
 >         
 >         auto settings = ApplicationData::Current->LocalSettings;
 >         auto key = TaskInstance->Task->Name;
->         settings->Values->Insert(key, (Progress &lt; 100) ? "Canceled" : "Completed");
+>         settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
 >         
 >         //
 >         // Indicate that the background task has completed.
@@ -243,7 +244,7 @@ OnCanceled 方法必須具有下列配置：
 > //
 > private void PeriodicTimerCallback(ThreadPoolTimer timer)
 > {
->     if ((_cancelRequested == false) &amp;&amp; (_progress < 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -283,7 +284,7 @@ OnCanceled 方法必須具有下列配置：
 >     //
 >     // Associate a cancellation handler with the background task.
 >     //
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &amp;SampleBackgroundTask::OnCanceled);
+>     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > 
 >     //
 >     // Get the deferral object from the task instance, and take a reference to the taskInstance.
@@ -293,7 +294,7 @@ OnCanceled 方法必須具有下列配置：
 > 
 >     auto timerDelegate = [this](ThreadPoolTimer^ timer)
 >     {
->         if ((CancelRequested == false) &amp;&amp;
+>         if ((CancelRequested == false) &&
 >             (Progress < 100))
 >         {
 >             Progress += 10;
@@ -345,6 +346,6 @@ OnCanceled 方法必須具有下列配置：
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

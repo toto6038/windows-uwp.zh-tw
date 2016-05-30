@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 啟動 app 以取得結果
 description: 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
@@ -17,14 +18,14 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 
 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為「啟動 App 以取得結果」**。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 來啟動 App 以取得結果。
 
-在 Windows 10 中，新的 App 與 App 通訊 API 讓 Windows App (以及 Windows Web App) 能夠使用它，來啟動某個 App 並交換資料與檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
+在 Windows 10 中，新的 App 間通訊 API 讓 Windows App (以及 Windows Web App) 能夠使用它，來啟動某個 App 並交換資料與檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
 
 您將啟動以取得結果的 App 將稱為啟動的 App。 啟動該 App 的 App 將稱為呼叫的 App。 您將針對此範例撰寫呼叫的 app 和啟動的 app。
 
-## 步驟 1：在您將啟動以取得結果的 app 中，登錄要處理的通訊協定
+## 步驟 1：在您將啟動以取得結果的 App 中，登錄要處理的通訊協定
 
 
-在啟動的 app 的 Package.appxmanifest 檔案中，將通訊協定延伸模組新增到 **&lt;Application&gt;** 區段。 下列範例會使用名為 **test-app2app** 的虛構通訊協定。
+在已啟動 App 的 Package.appxmanifest 檔案中，將通訊協定延伸模組新增到 **&lt;Application&gt;** 區段。 下列範例會使用名為 **test-app2app** 的虛構通訊協定。
 
 通訊協定延伸模組中的 **ReturnResults** 屬性會接受下列其中一個值：
 
@@ -34,7 +35,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 
 在這個通訊協定延伸模組範例中，可以只為了取得結果來啟動 app。 這會簡化 **OnActivated** 方法內部的邏輯 (如下所述)，因為我們只需處理「啟動以取得結果」的案例，而且沒有其他方法可用以啟動 app。
 
-```xaml
+```xml
 <Applications>
    <Application ...>
 
@@ -94,7 +95,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 ## 步驟 4：在您啟動以取得結果的 app 中覆寫 OnNavigatedTo()
 
 
-在啟動 app 以取得結果時顯示的頁面上，覆寫 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果這個方法尚未存在，請在 &lt;pagename&gt;.xaml.cs 中定義的頁面類別內建立它。 確保下列 **using** 陳述式已包含於檔案頂端：
+在啟動 App 以取得結果時顯示的頁面上，覆寫 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果這個方法尚未存在，請在 &lt;pagename&gt;.xaml.cs 中定義的頁面類別內建立它。 確保下列 **using** 陳述式已包含於檔案頂端：
 
 ```cs
 using Windows.ApplicationModel.Activation
@@ -155,8 +156,8 @@ async Task<string> LaunchAppForResults()
 
     string theResult = "";
     LaunchUriResult result = await Windows.System.Launcher.LaunchUriForResultsAsync(testAppUri, options, inputData);
-    if (result.Status == LaunchUriStatus.Success &amp;&amp;
-        result.Result != null &amp;&amp;
+    if (result.Status == LaunchUriStatus.Success &&
+        result.Result != null &&
         result.Result.ContainsKey("ReturnedData"))
     {
         ValueSet theValues = result.Result;
@@ -202,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

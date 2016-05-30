@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: 延長顯示啟動顯示畫面
-description: 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。
+description: 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
@@ -56,7 +57,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 
 請在 ExtendedSplash.xaml 中新增下列控制碼來定義 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 與 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素，以及定義 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項：
 
-```xaml
+```xml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -120,7 +121,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
         if (splash != null)
         {
             // Register an event handler to be executed when the splash screen has been dismissed.
-            splash.Dismissed += new TypedEventHandler&lt;SplashScreen, Object&gt;(DismissedEventHandler);
+            splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
 
             // Retrieve the window coordinates of the splash screen image.
             splashImageRect = splash.ImageLocation;
@@ -168,7 +169,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     在 ExtendedSplash.xaml.cs 中將 `dismissed` 類別變數設定為 true，以在 [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) 事件發生時予以回應。 如果您的應用程式有安裝程式作業，請將它們新增到這個事件處理常式。
 
     ```cs
-    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
     void DismissedEventHandler(SplashScreen sender, object e)
     {
         dismissed = true;
@@ -222,7 +223,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     {
         if (loadState)
         {
-             // code to load your app&#39;s state here 
+             // code to load your app's state here 
         }
     }
     ```
@@ -261,7 +262,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ExtendedSplash.xaml：這個範例包含一個 `DismissSplash` 按鈕，因為它沒有要載入的應用程式資源。 在您的應用程式中，請在應用程式完成資源載入或其初始 UI 準備時，自動關閉延長式啟動顯示畫面。
 
-```xaml
+```xml
 <Page
     x:Class="SplashScreenExample.ExtendedSplash"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -385,7 +386,7 @@ namespace SplashScreenExample
             }
         }
 
-        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
@@ -492,7 +493,7 @@ namespace SplashScreenExample
 
             if (rootFrame.Content == null)
             {
-                // When the navigation stack isn&#39;t restored navigate to the first page,
+                // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
@@ -548,6 +549,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

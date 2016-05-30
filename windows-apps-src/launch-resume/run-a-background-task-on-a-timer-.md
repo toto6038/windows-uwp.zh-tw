@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 在計時器上執行背景工作
 description: 了解如何排程一次性的背景工作，或執行定期的背景工作。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
@@ -32,11 +33,11 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     -   如果 *FreshnessTime* 設定為 15 分鐘，而且 *OneShot* 為 False，表示工作將會在工作登錄時間的 0 到 15 分鐘之間開始每隔 15 分鐘執行。
 
-    **注意** 如果 *FreshnessTime* 設定為少於 15 分鐘，則嘗試登錄背景工作時會擲回例外狀況。
+    **注意：**如果 *FreshnessTime* 設定為少於 15 分鐘，則嘗試登錄背景工作時會擲回例外狀況。
 
      
 
-    For example, this trigger will cause a background task to run once an hour:
+    例如，這個觸發程序將導致背景工作一個小時執行一次：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -83,26 +84,26 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > string taskName   = “Example hourly background task”;
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > String ^ taskName   = “Example hourly background task”;
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     
-    > **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
+    > **注意：**背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
 
    
 ## 備註
 
-> **注意** 從 Windows 10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+> **注意：**從 Windows 10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
 ## 相關主題
@@ -130,6 +131,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

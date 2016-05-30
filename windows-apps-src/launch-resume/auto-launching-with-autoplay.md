@@ -1,13 +1,14 @@
 ---
+author: mcleblanc
 title: 使用自動播放功能來自動啟動
 description: 當使用者將裝置連接至電腦時，您可以使用「自動播放」，讓您的 app 成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ---
 
-# <span id="dev_launch_resume.auto-launching_with_autoplay"> </span>使用自動播放功能來自動啟動
+# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>使用自動播放功能來自動啟動
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 當使用者將裝置連接至電腦時，您可以使用「自動播放」****，讓您的 app 成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 當使用者使用透過近接 (輕觸) 方式在兩部電腦之間分享檔案時，您也可以使用「自動播放」****，讓您的 app 成為一個選項。
@@ -61,9 +62,9 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 
 ### 步驟 2：新增 XAML UI
 
-開啟 MainPage.xaml 檔案，並將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
+開啟 MainPage.xaml 檔案，將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
 
-```xaml
+```xml
 <TextBlock FontSize="18">File List</TextBlock>
 <TextBlock x:Name="FilesBlock" HorizontalAlignment="Left" TextWrapping="Wrap" 
            VerticalAlignment="Top" Margin="0,20,0,0" Height="280" Width="240" />
@@ -75,7 +76,7 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 
 這個步驟中的程式碼會檢查 **Verb** 屬性中的動詞值，這是發生 **OnFileActivated** 事件時傳遞至 app 的其中一個啟動引數。 程式碼接著會呼叫與使用者選取之選項相關的方法。 對於相機記憶體事件，自動播放會將相機存放裝置的根資料夾傳遞至 app。 您可以從 **Files** 屬性的第一個元素擷取這個資料夾。
 
-開啟 App.xaml.cs 檔案，檔案，然後將下列程式碼新增到 **App** 類別。
+開啟 App.xaml.cs 檔案，然後將下列程式碼新增到 **App** 類別。
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -254,9 +255,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 ### 步驟 3：新增 XAML UI
 
-開啟 MainPage.xaml 檔案，並將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
+開啟 MainPage.xaml 檔案，將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
     <TextBlock FontSize="24">Device Information</TextBlock>
     <StackPanel Orientation="Horizontal">
@@ -284,7 +285,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 這個步驟中的程式碼透過將相機的裝置資訊識別碼傳遞至 [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) 方法，以將相機參考為 [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654)。 相機的裝置資訊識別碼的取得方式，是先將事件引數轉換為 [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710)，然後再從 [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) 屬性取得值。
 
-開啟 App.xaml.cs 檔案，檔案，然後將下列程式碼新增到 **App** 類別。
+開啟 App.xaml.cs 檔案，然後將下列程式碼新增到 **App** 類別。
 
 ```cs
 protected override void OnActivated(IActivatedEventArgs args)
@@ -449,9 +450,9 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 ### 步驟 3：新增 XAML UI
 
-開啟 MainPage.xaml 檔案，並將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
+開啟 MainPage.xaml 檔案，將下列 XAML 新增至預設的 &lt;Grid&gt; 區段。
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical">
     <TextBlock FontSize="28" Margin="10,0,800,0">Files</TextBlock>
     <TextBlock x:Name="FilesBlock" FontSize="22" Height="600" Margin="10,0,800,0" />
@@ -462,7 +463,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 這個步驟中的程式碼會呼叫一個方法，以顯示磁碟區裝置的根磁碟機中的資料夾。 對於自動播放內容事件，自動播放會傳遞在 **OnFileActivated** 事件期間傳遞至應用程式啟動引數中的存放裝置根資料夾。 您可以從 **Files** 屬性的第一個元素擷取這個資料夾。
 
-開啟 App.xaml.cs 檔案，檔案，然後將下列程式碼新增到 **App** 類別。
+開啟 App.xaml.cs 檔案，然後將下列程式碼新增到 **App** 類別。
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -577,6 +578,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

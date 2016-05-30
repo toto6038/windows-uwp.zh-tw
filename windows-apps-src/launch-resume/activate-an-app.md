@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 處理 app 啟用
 description: 了解如何透過覆寫 OnLaunched 方法來處理 app 啟用。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
@@ -25,7 +26,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 
 定義應用程式的類別。
 
-```xaml
+```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              x:Class="AppName.App" >
@@ -182,6 +183,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

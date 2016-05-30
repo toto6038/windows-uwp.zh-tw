@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 使用維護觸發程序
 description: 了解如何在裝置使用 AC 電源時，使用 MaintenanceTrigger 類別於背景中執行輕量型程式碼。
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
@@ -120,6 +121,6 @@ ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

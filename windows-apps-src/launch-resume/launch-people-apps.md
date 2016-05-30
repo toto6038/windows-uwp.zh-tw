@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 啟動連絡人 app
 description: 本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
@@ -38,7 +39,8 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 <tr class="odd">
 <td align="left">可讓其他 app 提供將會啟動含有搜尋結果頁面之連絡人 app 的搜尋字串。
 <div class="alert">
-**注意** <p>這些參數區分大小寫。</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
 <p>如果您未正確輸入語法或遺失搜尋字串值，預設行為將是傳回未經篩選的完整連絡人清單。</p>
 </div>
 <div>
@@ -49,7 +51,8 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 <tr class="even">
 <td align="left">如果找到連絡人，就會啟動到現有的連絡人卡片。 如果找不到連絡人，就會啟動到暫時連絡人卡片。 如果未提供輸入參數，我們將會啟動含有連絡人清單的連絡人 app。
 <div class="alert">
-**注意** <p>這些參數區分大小寫。</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
 <p>參數的順序並不重要。</p>
 <p>如果有多個相符項目，我們會傳回第一個相符的連絡人。</p>
 </div>
@@ -61,7 +64,8 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 <tr class="odd">
 <td align="left">啟動到連絡人 app 內的儲存連絡人頁面，以提供的電話號碼或電子郵件地址與儲存指定的連絡人。
 <div class="alert">
-**注意** <p>這些參數區分大小寫。</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
 <p>參數的順序並不重要。</p>
 </div>
 <div>
@@ -203,6 +207,6 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

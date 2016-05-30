@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 使用背景工作回應系統事件
 description: 了解如何建立回應 SystemTrigger 事件的背景工作。
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
@@ -107,6 +108,6 @@ App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/w
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

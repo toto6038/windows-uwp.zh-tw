@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: 建立並註冊背景工作
-description: 建立背景工作類別並註冊它，即使您的 app 不在前景也能執行。
+description: 建立背景工作類別並加以註冊，即使您的 App 不在前景也能執行。
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ---
 
@@ -16,7 +17,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-建立背景工作類別並註冊它，即使您的 app 不在前景也能執行。
+建立背景工作類別並加以註冊，即使您的 App 不在前景也能執行。
 
 ## 建立背景工作類別
 
@@ -227,8 +228,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     下列程式碼會註冊背景工作並儲存結果：
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     BackgroundTaskRegistration task = builder.Register();
 >     ```
 >     ```cpp
@@ -248,8 +248,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     下列範例程式碼會辨識背景工作完成並呼叫範例 UI 更新方法，以取得訊息字串。
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
 >     {
 >         var settings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -276,12 +275,11 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     下列範例程式碼會將 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 新增到 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)：
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
 >     ```
 >     ```cpp
->     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &amp;ExampleBackgroundTask::OnCompleted);
+>     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
 >     ```
 
 ## 宣告您的應用程式有使用應用程式資訊清單的背景工作
@@ -291,14 +289,14 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
 2.  開啟 [宣告]**** 索引標籤。
-3.  從 [**可用宣告**] 下拉式清單中選擇 [**背景工作**]，然後按一下 [**新增**]。
-4.  選取 [**系統事件**] 核取方塊。
+3.  從 [可用宣告]**** 下拉式清單中選擇 [背景工作]****，然後按一下 [新增]****。
+4.  選取 [系統事件]**** 核取方塊。
 5.  在 [進入點:]**** 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
 6.  關閉資訊清單設計工具。
 
     下列 Extensions 元素會新增至您的 Package.appxmanifest 檔案中以註冊背景工作：
 
-    ```xaml
+    ```xml
     <Extensions>
       <Extension Category="windows.backgroundTasks" EntryPoint="RuntimeComponent1.ExampleBackgroundTask">
         <BackgroundTasks>
@@ -319,7 +317,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
 請參閱下列 API 參考的相關主題、背景工作概念指引，以及撰寫使用背景工作之應用程式的更詳細說明。
 
-> **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -354,6 +352,6 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: 處理檔案啟用
-description: App 可以登以成為特定檔案類型的預設處理常式。
+description: App 可以登錄為特定檔案類型的預設處理常式。
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ---
 
@@ -21,14 +22,14 @@ App 可以登錄以成為特定檔案類型的預設處理常式。 傳統 Windo
 
 這些步驟示範如何登錄自訂檔案類型 .alsdk，以及如何在使用者啟動 .alsdk 檔案時啟用您的 app。
 
-> **注意** 在 UWP app 中，會將特定的 URI 和副檔名保留給內建 app 和作業系統使用。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 如需詳細資訊，請參閱[保留的檔案和 URI 配置名稱](reserved-uri-scheme-names.md)。
+> **注意** 在 UWP App 中，會將特定的 URI 和副檔名保留給內建 App 和作業系統使用。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 如需詳細資訊，請參閱[保留的檔案和 URI 配置名稱](reserved-uri-scheme-names.md)。
 
 ## 步驟 1：在封裝資訊清單中指定擴充點
 
 
 App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下是如何指示應 app 處理具有 `.alsdk` 副檔名的檔案。
 
-1.  在 [**方案總管**] 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [**宣告**] 索引標籤，然後在 [**可用宣告**] 下拉式清單中選取 [**檔案類型關聯**]，然後按一下 [**新增**]。 請參閱[以程式設計方式撰寫識別碼](https://msdn.microsoft.com/library/windows/desktop/cc144152)，了解檔案關聯使用的識別碼詳細資料。
+1.  在 [方案總管]**** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告]**** 索引標籤，然後在 [可用宣告]**** 下拉式清單中選取 [檔案類型關聯]****，然後按一下 [新增]****。 請參閱[以程式設計方式撰寫識別碼](https://msdn.microsoft.com/library/windows/desktop/cc144152)，了解檔案關聯使用的識別碼詳細資料。
 
     以下簡短說明可在資訊清單設計工具中填寫的每個欄位：
 
@@ -41,8 +42,8 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 | **內容類型** | 為特定檔案類型指定 MIME 內容類型，例如 **image/jpeg**。 **允許之內容類型的重要事項：**以下是您無法在封裝資訊清單中輸入的 MIME 內容類型清單 (依字母順序排序)，因為它們已經被保留或禁止使用：**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload**。 |
 | **檔案類型** | 指定要登錄的檔案類型，前面加上一個句號，例如「.jpeg」。 **請保留和禁止的檔案類型** 請參閱[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)，以取得因為已經被保留或禁止使用，而無法為 UWP app 登錄之內建 app 檔案類型的字母排序清單。 |
 
-2.  輸入 `alsdk` 做為 [**名稱**]。
-3.  輸入 `.alsdk` 做為 [**檔案類型**]。
+2.  輸入 `alsdk` 做為 [名稱]****。
+3.  輸入 `.alsdk` 做為 [檔案類型]****。
 4.  輸入「images\Icon.png」做為 [標誌]。
 5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
@@ -72,7 +73,7 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 -   [開始] 畫面上的搜尋結果
 
 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
-![[方案總管] 及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
+![方案總管及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
 
 ## 步驟 3：處理啟用的事件
 
@@ -116,7 +117,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -152,6 +153,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

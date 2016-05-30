@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 處理 app 繼續執行
 description: 了解如何在系統繼續執行您的 app 時，重新整理已顯示的內容。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
@@ -51,7 +52,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
     Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &amp;MainPage::App_Resuming);
+        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
 }
 ```
 
@@ -87,7 +88,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 }
 ```
 
-> **注意** 因為 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件不是從 UI 執行緒引發，所以調派程式必須用來取得 UI 執行緒並將更新置入 UI (如果處理常式中有需要處理的項目)。
+> **注意：**因為 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件不是從 UI 執行緒引發，所以調派程式必須用來取得 UI 執行緒並將更新置入 UI (如果處理常式中有需要處理的項目)。
 
 ## 備註
 
@@ -96,9 +97,9 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 如果 app 沒有任何要重新整理的顯示內容，就不需要為它處理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-**有關使用 Visual Studio 進行偵錯的注意事項：** 當您的 app 連接至 Visual Studio 偵錯工具時，您可以傳送給它一個 **Resume** 事件。 確定 [偵錯位置工具列]**** 已經顯示，然後按一下 [暫停]**** 圖示旁邊的下拉式清單。 然後選擇 [**繼續**]。
+**有關使用 Visual Studio 進行偵錯的注意事項：**當您的 app 連接至 Visual Studio 偵錯工具時，您可以傳送給它一個 **Resume** 事件。 確定 [偵錯位置工具列]**** 已經顯示，然後按一下 [暫停]**** 圖示旁邊的下拉式清單。 然後選擇 [繼續]****。
 
-> **注意** 就 Windows Phone 市集 app 而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在 app 目前已被暫停，而使用者從主要磚或 app 清單重新啟動 app 的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+> **注意：**就 Windows Phone 市集 app 而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在 app 目前已被暫停，而使用者從主要磚或 app 清單重新啟動 app 的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
 
 ## 相關主題
 
@@ -110,6 +111,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 啟動 Windows 設定 app
 description: 了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
@@ -29,7 +30,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 在這個範例中，會使用超連結 XAML 控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -125,6 +126,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

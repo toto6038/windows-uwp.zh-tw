@@ -1,6 +1,7 @@
 ---
-title: 在應用程式資訊清單中宣告背景工作
-description: 在 app 資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
+author: mcleblanc
+title: 在 app 資訊清單中宣告背景工作
+description: 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ---
 
@@ -91,16 +92,16 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
                     <Task Type="pushNotification" />
                   </BackgroundTasks>
                 </Extension>
-                ```
+    ```
 
-    > **Note**  Normally, an app will run in a special process called "BackgroundTaskHost.exe". It is possible to add an Executable element to the Extension element, allowing the background task to run in the context of the app. Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
+    > **注意** 通常應用程式會在稱為 "BackgroundTaskHost.exe" 的特殊程序中執行。 您可以將 Executable 元素新增至 Extension 元素，讓背景工作能夠在應用程式內容中執行。 Executable 元素只可搭配需要該元素的背景工作使用，例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。    
 
-## Add Additional Background Task Extensions
+## 新增其他背景工作延伸
 
 
-Repeat step 2 for each additional background task class registered by your app.
+針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
 
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+下列範例是取自[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 請複製這個範例的 Extensions 區段，並視需要修改它，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>
@@ -112,7 +113,7 @@ The following example is the complete Application element from the [background t
           Square150x150Logo="Assets\StoreLogo-sdk.png"
           Square44x44Logo="Assets\SmallTile-sdk.png"
           Description="BackgroundTask"
-          
+
           BackgroundColor="#00b2f0">
           <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\smalltile-Windows-sdk.png" />
             <uap:SplashScreen Image="Assets\Splash-sdk.png" />
@@ -147,14 +148,7 @@ The following example is the complete Application element from the [background t
 * [登錄背景工作](register-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 
- 
 
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
