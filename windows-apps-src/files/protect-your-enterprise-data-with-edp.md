@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 Description: '本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。'
 MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -8,7 +9,7 @@ title: '使用企業資料保護 (EDP) 來保護檔案'
 
 # 使用企業資料保護 (EDP) 來保護檔案
 
-__注意__：企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
+__注意：__企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
 
 本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。 如需 EDP 如何與檔案、串流、剪貼簿、網路、背景工作及鎖定時的資料保護產生關係的完整開發人員說明，請參閱[企業資料保護 (EDP)](../enterprise/edp-hub.md)。
 
@@ -41,7 +42,7 @@ string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 
 擁有路徑之後，您就能使用檔案總管輕鬆地找到您的應用程式建立的檔案。 如此一來，您就能確認它們受到保護，並且是以正確的身分識別保護。
 
-在 [檔案總管] 中，勾選 [變更資料夾和搜尋選項] ****，在 [檢視]**** 索引標籤上，勾選 [使用色彩顯示加密的檔案]****。 另請使用 [檔案總管] 的 [檢視]**** &gt; [新增欄]**** 命令來新增 [加密給]**** 欄，這樣您就可以看到保護檔案的企業身分識別。
+在 [檔案總管] 中，勾選 [變更資料夾和搜尋選項] ****，在 [檢視]**** 索引標籤上，選取 [使用色彩顯示加密的檔案]****。 另請使用 [檔案總管] 的 [檢視]****&gt;[新增欄]**** 命令來新增 [已加密到]**** 欄，這樣您就可以看到保護檔案的企業身分識別。
 
 ## 保護新檔案中的企業資料 (適用於互動式應用程式)
 
@@ -109,7 +110,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
         await FileProtectionManager.CreateProtectedAndOpenAsync(storageFolder,
             "sample.txt", identity, CreationCollisionOption.ReplaceExisting);
 
-    // It&#39;s important to successfully protect a file *before* writing enterprise data to it.
+    // It's important to successfully protect a file *before* writing enterprise data to it.
     if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
         protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
     {
@@ -244,7 +245,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**注意**：本文適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -263,6 +264,6 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

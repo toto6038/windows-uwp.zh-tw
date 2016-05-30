@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 追蹤最近使用的檔案和資料夾
 description: 將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。
@@ -107,6 +108,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: 檔案、資料夾和媒體櫃
 description: 了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。
@@ -40,6 +41,6 @@ description: 了解如何讀取和寫入應用程式設定、檔案和資料夾�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: 檔案存取權限
 description: App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
@@ -162,6 +163,6 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

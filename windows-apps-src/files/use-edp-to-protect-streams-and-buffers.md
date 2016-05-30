@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 Description: '本主題說明達成一些最常見的串流和緩衝區相關企業資料保護 EDP 案例所需的編碼工作範例。'
 MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -279,7 +280,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
     {
         // In this case, the app has lost access to the buffer
         // (ProtectedToOtherIdentity, Revoked). This must be handled.
-        // &#39;Unprotected&#39; is never returned for GetProtectionInfoAsync().
+        // 'Unprotected' is never returned for GetProtectionInfoAsync().
         return;
     }
 
@@ -307,6 +308,6 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
