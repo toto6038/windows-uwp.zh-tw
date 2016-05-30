@@ -1,17 +1,14 @@
 ---
-Description: 通用 Windows 平台 (UWP) app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。
+author: mijacobs
+Description: 在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、 瀏覽元素和系統層級功能的彈性模型為基礎。
 title: 通用 Windows 平台 (UWP) app 的瀏覽設計基本知識
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-label: 歷程記錄和向後瀏覽
+label: History and backwards navigation
 template: detail.hbs
 ---
 
 #  瀏覽歷程記錄和向後瀏覽
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 在網際網路上，每個網站都提供自己的瀏覽系統，例如內容表格、按鈕、功能表、簡單的連結清單等。 不同網站之間的瀏覽體驗可能會有很大的差異。 不過，它們都有一項一致的瀏覽體驗：返回。 無論是何種網站，大部分瀏覽器都提供行為相同的返回按鈕。
 
@@ -97,7 +94,7 @@ template: detail.hbs
 當您的 app 在手機、平板電腦或啟用系統返回的電腦或膝上型電腦上執行時，按下返回按鈕後，系統就會通知您的 app。 使用者預期返回按鈕會瀏覽到應用程式瀏覽歷程的前一個位置。 您可以決定加入瀏覽歷程的瀏覽動作，以及如何回應按下返回按鈕。
 
 
-## <span id="Enable_system_back_navigation_support"> </span> <span id="enable_system_back_navigation_support"> </span> <span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"> </span>如何啟用系統返回瀏覽支援
+## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>如何啟用系統返回瀏覽支援
 
 
 App 必須啟用所有的硬體和軟體系統返回按鈕的返回瀏覽。 執行方式是登錄 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的接聽程式並定義對應的處理常式。
@@ -156,16 +153,16 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button"> </span> <span id="enable_the_title_bar_back_button"> </span> <span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"> </span>如何啟用標題列返回按鈕
+## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何啟用標題列返回按鈕
 
 
-支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 並已啟用設定 (**[設定] &gt; [系統] &gt; [平板電腦模式]**) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
+支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
 
 在桌面模式中，每個 app 都是在有標題列的視窗中執行。 您可以為 app 提供一個替代的返回按鈕，顯示在此標題列中。
 
 只有當 app 在處於桌面模式的裝置上執行時，才會有標題列的返回按鈕，而且只支援 app 內瀏覽歷程記錄 — 不支援 app 間瀏覽歷程記錄。
 
-**重要事項：**標題列的返回按鈕預設不會顯示。 您必須選擇加入。
+**重要：**標題列的返回按鈕預設不會顯示。 您必須選擇加入。
 
  
 
@@ -256,7 +253,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>頁面之間、不同的對等群組</strong></p></td>
-<td align="left"><strong>是</strong><p>在此圖例中，使用者從 app 的層級 1，跨對等群組瀏覽到層級 2，因此該瀏覽會新增至瀏覽歷程記錄。</p>
+<td align="left"><strong>是</strong>
+<p>在此圖例中，使用者從 app 的層級 1，跨對等群組瀏覽到層級 2，因此該瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>在下一個圖例中，使用者在相同層級的兩個對等群組之間瀏覽，同樣是跨對等群組，所以此瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
@@ -264,35 +262,41 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 <tr class="even">
 <td align="left"><p><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong></p>
 <p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有提供直接瀏覽到兩頁面，且一律顯示的瀏覽元素 (如索引標籤/樞紐分析或停駐的瀏覽窗格)。</p></td>
-<td align="left"><strong>是</strong><p>在以下圖例中，使用者在相同對等群組內的兩個頁面之間瀏覽。 頁面沒有使用索引標籤或停駐的瀏覽窗格，因此該瀏覽會新增至瀏覽歷程記錄。</p>
+<td align="left"><strong>是</strong>
+<p>在以下圖例中，使用者在相同對等群組內的兩個頁面之間瀏覽。 頁面沒有使用索引標籤或停駐的瀏覽窗格，因此該瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>頁面之間、相同對等群組、有螢幕上的瀏覽元素</strong></p>
 <p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 兩個頁面都顯示在同一個瀏覽元素中。 例如，這兩個頁面使用相同的索引標籤/樞紐分析項目，或兩個頁面都顯示在停駐的瀏覽窗格中。</p></td>
-<td align="left"><strong>否</strong><p>當使用者按下返回時，將返回使用者瀏覽到目前對等群組之前的最後一個頁面。</p>
+<td align="left"><strong>否</strong>
+<p>當使用者按下返回時，將返回使用者瀏覽到目前對等群組之前的最後一個頁面。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>顯示暫時性 UI</strong><p>App 顯示快顯或子視窗 (例如對話方塊)、啟動畫面、螢幕小鍵盤，或 app 進入特殊模式 (例如多重選取模式)。</p></td>
-<td align="left"><strong>否</strong><p>當使用者按下返回按鈕時，關閉暫時性 UI (隱藏螢幕小鍵盤、取消對話方塊等等) 並返回產生暫時性 UI 的頁面。</p>
+<td align="left"><strong>顯示暫時性 UI</strong>
+<p>應用程式顯示快顯或子視窗 (例如對話方塊)、啟動畫面、螢幕小鍵盤，或應用程式進入特殊模式 (例如多重選取模式)。</p></td>
+<td align="left"><strong>否</strong>
+<p>當使用者按下返回按鈕時，關閉暫時性 UI (隱藏螢幕小鍵盤、取消對話方塊等等) 並返回產生暫時性 UI 的頁面。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>列舉項目</strong><p>App 會顯示螢幕項目的內容，例如主要/詳細資料清單中所選項目的詳細資料。</p></td>
-<td align="left"><strong>否。</strong><p>列舉項目類似於在對等群組中瀏覽。 當使用者按下返回時，會返回目前頁面之前有項目列舉的頁面。</p>
+<td align="left"><strong>列舉項目</strong>
+<p>App 會顯示螢幕項目的內容，例如主要/詳細資料清單中所選項目的詳細資料。</p></td>
+<td align="left"><strong>否</strong>
+<p>列舉項目類似於在對等群組中瀏覽。 當使用者按下返回時，會返回目前頁面之前有項目列舉的頁面。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming"> </span> <span id="resuming"> </span> <span id="RESUMING"> </span>繼續
+### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>繼續
 
 當使用者切換到其他 app，再回到您的 app 時，我們建議回到瀏覽歷程中的最後一個頁面。
 
 
-\[此文章包含 UWP app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 
 
@@ -303,6 +307,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

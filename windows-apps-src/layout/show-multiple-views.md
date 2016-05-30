@@ -1,16 +1,13 @@
 ---
+author: Jwmsft
 Description: 讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。
 title: 顯示 app 的多重檢視
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-label: 顯示 app 的多重檢視
+label: Show multiple views for an app
 template: detail.hbs
 ---
 
 # 顯示 app 的多重檢視
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 您可以讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。 典型的範例是電子郵件 app，其主要 UI 會顯示電子郵件清單和所選電子郵件的預覽。 但是使用者也可以在個別的視窗中開啟訊息，並以並列的方式檢視它們。
 
@@ -19,9 +16,9 @@ template: detail.hbs
 -   [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)
 -   [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
-如果您為 app 建立多個視窗，則每個視窗的行為都是各自獨立的。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都會以自己的執行緒運作。
+如果您為 app 建立多個視窗，則每個視窗的行為都是各自獨立的。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
 
-## <span id="What_is_a_view_"> </span> <span id="what_is_a_view_"> </span> <span id="WHAT_IS_A_VIEW_"> </span>什麼是檢視？
+## <span id="What_is_a_view_"></span><span id="what_is_a_view_"></span><span id="WHAT_IS_A_VIEW_"></span>什麼是檢視？
 
 
 App 檢視是執行緒與 app 用來顯示內容之視窗的 1:1 配對。 它是由 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 物件表示。
@@ -32,7 +29,7 @@ App 檢視是執行緒與 app 用來顯示內容之視窗的 1:1 配對。 它�
 
 XAML 架構同樣也會將 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件包裝在 [**Windows.UI.XAML.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 物件中。 在 XAML app 中，您通常是與 **Window** 物件互動，而不是直接使用 **CoreWindow**。
 
-## <span id="Show_a_new_view"> </span> <span id="show_a_new_view"> </span> <span id="SHOW_A_NEW_VIEW"> </span>顯示新的檢視
+## <span id="Show_a_new_view"></span><span id="show_a_new_view"></span><span id="SHOW_A_NEW_VIEW"></span>顯示新的檢視
 
 
 在繼續深入之前，讓我們看看建立新檢視的步驟。 這裡會啟動新檢視來回應按鈕點選。
@@ -134,23 +131,23 @@ bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewI
     </table>
 ```
 
-## <span id="The_main_view"> </span> <span id="the_main_view"> </span> <span id="THE_MAIN_VIEW"> </span>主要檢視
+## <span id="The_main_view"></span><span id="the_main_view"></span><span id="THE_MAIN_VIEW"></span>主要檢視
 
 
-您 app 啟動時建立的第一個檢視稱為「*主要檢視*」。 這個檢視是儲存在 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 屬性中，並且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 屬性為 true。 您不需建立這個檢視；它是由 app 所建立。 主要檢視的執行緒會做為 app 的管理員，而所有的 app 啟用事件都會在這個執行緒上傳遞。
+您 app 啟動時建立的第一個檢視稱為「主要檢視」**。 這個檢視是儲存在 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 屬性中，並且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 屬性為 true。 您不需建立這個檢視；它是由 app 所建立。 主要檢視的執行緒會做為 app 的管理員，而所有的 app 啟用事件都會在這個執行緒上傳遞。
 
 開啟次要檢視時，可以隱藏主要檢視的視窗 (例如按一下視窗標題列中的關閉 (x) 按鈕)，但是其執行緒會維持為使用中。 在主要檢視的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 上呼叫 [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) 會導致發生 **InvalidOperationException**。 (使用 [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) 關閉您的 app)。如果將主要檢視的執行緒終止，app 就會關閉。
 
-## <span id="Secondary_views"> </span> <span id="secondary_views"> </span> <span id="SECONDARY_VIEWS"> </span>次要檢視
+## <span id="Secondary_views"></span><span id="secondary_views"></span><span id="SECONDARY_VIEWS"></span>次要檢視
 
 
 其他檢視 (包括您在 app 程式碼中呼叫 [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) 來建立的所有檢視) 都是次要檢視。 主要檢視與次要檢視都是儲存在 [**CoreApplication.Views**](https://msdn.microsoft.com/library/windows/apps/br205861) 集合中。 通常您建立次要檢視是為了回應使用者動作。 在某些情況下，系統會為您的 app 建立次要檢視。
 
-**注意** 您可以使用 Windows「*受指派的存取權*」功能，以 [kiosk 模式](https://technet.microsoft.com/library/mt219050.aspx)執行 app。 當您這樣做時，系統會建立次要檢視以在鎖定畫面上呈現您的 app UI。 系統並不允許有 app 建立的次要檢視，因此如果您嘗試以 kiosk 模式顯示您自己的次要檢視，將會擲回例外狀況。
+**注意** 您可以使用 Windows「受指派的存取權」**功能，以 [kiosk 模式](https://technet.microsoft.com/library/mt219050.aspx)執行 app。 當您這樣做時，系統會建立次要檢視以在鎖定畫面上呈現您的 app UI。 系統並不允許有 app 建立的次要檢視，因此如果您嘗試以 kiosk 模式顯示您自己的次要檢視，將會擲回例外狀況。
 
  
 
-## <span id="Switch_from_one_view_to_another"> </span> <span id="switch_from_one_view_to_another"> </span> <span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER"> </span>從一個檢視切換到另一個檢視
+## <span id="Switch_from_one_view_to_another"></span><span id="switch_from_one_view_to_another"></span><span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER"></span>從一個檢視切換到另一個檢視
 
 
 您必須提供一個方法，讓使用者能夠從次要視窗瀏覽回主要視窗。 若要這樣做，請使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 您可以從原來的視窗執行緒呼叫此方法，然後傳送要切換的目的地視窗的檢視識別碼。
@@ -184,6 +181,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

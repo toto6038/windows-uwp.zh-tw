@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: 了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
 title: 兩個頁面之間的對等瀏覽
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-label: 兩個頁面之間的對等瀏覽
+label: Peer-to-peer navigation between two pages
 template: detail.hbs
 ---
 
-# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"> </span>兩個頁面之間的對等瀏覽
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>兩個頁面之間的對等瀏覽
 
 了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
 
@@ -23,27 +21,27 @@ template: detail.hbs
 -   [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)
 
 
-## <span id="Create_the_blank_app"> </span> <span id="create_the_blank_app"> </span> <span id="CREATE_THE_BLANK_APP"> </span>建立空白 app
+## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>建立空白 App
 
 
 1.  在 Microsoft Visual Studio 功能表，選擇 [檔案] &gt; [新增專案]****。
-2.  在 [新增專案]**** 對話方塊的左窗格中，選擇 **Visual C# -&gt; Windows -&gt; 通用**或 **Visual C++ -&gt; Windows -&gt; 通用**節點。
+2.  在 [新增專案]**** 對話方塊的左窗格中，選擇 [Visual C#] -&gt; [Windows] -&gt; [通用]**** 或 [Visual C++] -&gt; [Windows] -&gt; [通用]**** 節點。
 3.  在中央窗格中，選擇**空白 app**。
 4.  在 [名稱]**** 方塊中輸入 **NavApp1**，然後選擇 [確定]**** 按鈕。
 
     隨即建立您的方案，而且專案檔案會出現在 [方案總管]**** 中。
 
-    **重要**：當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
+    **重要：**當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
 
      
 
-5.  若要執行程式，請從功能表選擇 [偵錯]**** &gt; [開始偵錯]****，或按 F5。
+5.  若要執行程式，請從功能表依序選擇 [偵錯]**** &gt; [開始偵錯]****，或按 F5。
 
     隨即顯示空白頁面。
 
-6.  按 Shift+F5 停止偵錯並返回 Visual Studio。
+6.  按 Shift+F5 可停止偵錯並返回 Visual Studio。
 
-## <span id="Add_basic_pages"> </span> <span id="add_basic_pages"> </span> <span id="ADD_BASIC_PAGES"> </span>新增基本頁面
+## <span id="Add_basic_pages"></span><span id="add_basic_pages"></span><span id="ADD_BASIC_PAGES"></span>新增基本頁面
 
 
 接下來，將兩個內容頁面新增到專案。
@@ -84,7 +82,8 @@ template: detail.hbs
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>注意</strong><p>函式是在標頭檔 (.h) 中宣告，並在程式碼後置檔案 (.cpp) 中實作。</p>
+<strong>注意</strong>  
+<p>函式是在標頭檔 (.h) 中宣告，並在程式碼後置檔案 (.cpp) 中實作。</p>
 </div>
 <div>
  
@@ -311,13 +310,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**注意**：如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
+**注意：**如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
 
  
 
 現在，建置並執行 app。 按一下顯示為 [按一下以移至頁面 2] 的連結。 最上方顯示 [第 2 頁] 的第二頁應該會載入並顯示在框架中。
 
-## <span id="Frame_and_Page_classes"> </span> <span id="frame_and_page_classes"> </span> <span id="FRAME_AND_PAGE_CLASSES"> </span>Frame 和 Page 類別
+## <span id="Frame_and_Page_classes"></span><span id="frame_and_page_classes"></span><span id="FRAME_AND_PAGE_CLASSES"></span>Frame 和 Page 類別
 
 
 將更多功能新增到 app 前，我們先來看看前面新增的頁面如何為 app 提供瀏覽支援。
@@ -337,7 +336,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 每當頁面載入框架時，就會以 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 將該頁面新增到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)。
 
-## <span id="Pass_information_between_pages"> </span> <span id="pass_information_between_pages"> </span> <span id="PASS_INFORMATION_BETWEEN_PAGES"> </span>在頁面之間傳送資訊
+## <span id="Pass_information_between_pages"></span><span id="pass_information_between_pages"></span><span id="PASS_INFORMATION_BETWEEN_PAGES"></span>在頁面之間傳送資訊
 
 
 我們的 app 可以在兩個頁面之間瀏覽，但這只是最基本的功能。 通常，當應用程式有多個頁面時，這些頁面需要共用資訊。 讓我們將一些資訊從第一頁傳送到第二頁。
@@ -404,7 +403,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 執行 app，在文字方塊中輸入您的名稱，然後按一下 [按一下以移至頁面 2]**** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
 
-## <span id="Cache_a__page"> </span> <span id="cache_a__page"> </span> <span id="CACHE_A__PAGE"> </span>快取頁面
+## <span id="Cache_a__page"></span><span id="cache_a__page"></span><span id="CACHE_A__PAGE"></span>快取頁面
 
 
 頁面內容和狀態預設不會快取，您必須在 app 的每個頁面中啟用。
@@ -415,7 +414,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果您想要忽略框架的快取大小限制，請將 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 設定為 [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284)。 不過，根據裝置的記憶體限制，快取大小限制可能會非常重要。
 
-**注意**：[**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性指定框架的瀏覽歷程記錄中可以快取的頁面數。
+**注意：**[**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性指定框架的瀏覽歷程記錄中可以快取的頁面數。
 
  
 
@@ -435,7 +434,7 @@ public Page1()
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 * [UWP app 的瀏覽設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)
 * [索引標籤和樞紐的指導方針](https://msdn.microsoft.com/library/windows/apps/dn997788)
@@ -449,6 +448,6 @@ public Page1()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

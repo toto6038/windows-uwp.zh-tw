@@ -1,6 +1,7 @@
 ---
+author: mijacobs
 title: '回應式設計的螢幕大小與中斷點'
-description: .
+description: 。
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
@@ -8,14 +9,9 @@ template: detail.hbs
 
 #  回應式設計的螢幕大小與中斷點
 
+整個 Windows 10 生態系統中，裝置目標和螢幕大小有太多種，以致於無法針對每一個最佳化您的 UI。 我們建議使用幾個重要的寬度 (也稱做「中斷點」) 的設計：360、640、1024 以及 1366 有效像素，做為替代方案。
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-
-整個 Windows 10 生態系統中的裝置目標和螢幕大小的數目太大，以致於無法針對每一個最佳化您的 UI。 我們建議使用幾個重要的寬度 (也稱做「中斷點」) 的設計：360、640、1024 以及 1366 有效像素，做為替代方案。
-
-**秘訣** 當針對特定中斷點進行設計時，請針對您應用程式可以使用的螢幕空間量 (應用程式的視窗) 進行設計。 當以全螢幕執行應用程式時，應用程式視窗與螢幕大小相同，但是在其他情況下則較小。
+**祕訣：**當針對特定中斷點進行設計時，請針對您應用程式可以使用的螢幕空間量 (應用程式的視窗) 進行設計。 當以全螢幕執行應用程式時，應用程式視窗與螢幕大小相同，但是在其他情況下則較小。
  
 
 下表描述不同的大小類別，並提供針對這些大小類別量身訂做的一般建議。
@@ -40,9 +36,9 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">一般螢幕大小 (對角線)</td>
-<td align="left">4 吋到 6 吋</td>
-<td align="left">7 吋到 12 吋，或電視</td>
-<td align="left">13 吋及更大尺寸</td>
+<td align="left">4&quot; 到 6&quot;</td>
+<td align="left">7&quot; 到 12&quot;，或電視</td>
+<td align="left">13&quot; 及更大</td>
 </tr>
 <tr class="even">
 <td align="left">一般裝置</td>
@@ -67,28 +63,28 @@ template: detail.hbs
 <td align="left" valign="top"><ul>
 <li>中央索引標籤元素。</li>
 <li>設定左右視窗邊界為 12px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[app bars](../controls-and-patterns/app-bars.md)固定在視窗底部以改善存取性</li>
+<li>將[應用程式列](../controls-and-patterns/app-bars.md)固定在視窗底部以改善存取性</li>
 <li>一次使用 1 個欄位/區域</li>
 <li>使用圖示來表示搜尋 (不顯示搜尋方塊)。</li>
-<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以重疊模式放置，以節省螢幕空間。</li>
-<li>如果您使用[master details pattern](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。</li>
+<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以重疊模式放置，以節省螢幕空間。</li>
+<li>如果您使用[主要詳細資料模式](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>將索引標籤元素靠左對齊。</li>
 <li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[app bars](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
+<li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
 <li>最多 2 個欄位/區域</li>
 <li>顯示搜尋方塊。</li>
-<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以窄條模式放置，以便永遠顯示窄條的圖示。</li>
-
+<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。</li>
+<li>請考慮進一步自訂[電視體驗](http://go.microsoft.com/fwlink/?LinkId=760736)。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>將索引標籤元素靠左對齊。</li>
 <li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[app bars](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
+<li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
 <li>最多 3 個欄位/區域</li>
 <li>顯示搜尋方塊。</li>
-<li>將[navigation pane](../controls-and-patterns/nav-pane.md)以停駐模式放置，以便讓它永遠顯示。</li>
+<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以停駐模式放置，以便讓它永遠顯示。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -98,6 +94,6 @@ template: detail.hbs
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
