@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: 使用筆刷
 description: Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。
@@ -52,7 +53,7 @@ description: Brush 物件可用來繪製形狀、文字或部分控制項的內�
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"> </span> <span id="property_element_syntax__"> </span> <span id="PROPERTY_ELEMENT_SYNTAX__"> </span>屬性 (Property) 元素語法
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>屬性 (Property) 元素語法
 
 您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/Mt185595)和 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/Mt185596)。
 
@@ -66,10 +67,10 @@ description: Brush 物件可用來繪製形狀、文字或部分控制項的內�
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"> </span> <span id="linear_gradient_brushes_"> </span> <span id="LINEAR_GRADIENT_BRUSHES_"> </span>線性漸層筆刷
+## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
 
 [
-            **LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為漸層軸**。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
+            **LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」**。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
 
 [
             **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 是漸層筆刷的基本建置組塊。 漸層停駐點會指定筆刷套用到繪製的區域時，漸層軸上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 使用什麼 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 的筆刷。
@@ -97,12 +98,11 @@ description: Brush 物件可用來繪製形狀、文字或部分控制項的內�
 
 在漸層停駐點之間每個點的色彩，都是以線性插補成由兩個連結漸層停駐點所指定的色彩結合。 下列圖例強調顯示前述範例中的漸層停駐點。 圓圈標示漸層停駐點的位置，虛線則是漸層軸。
 
-![漸層停駐點](images/linear-gradients-stops.png)
-您可以將 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 與 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 屬性設為與起始預設值 `(0,0)` 與 `(1,1)` 不同的其他值，藉此變更漸層停駐點所在的線條位置。 變更 **StartPoint** 與 **EndPoint** 座標值，就能建立水平或垂直漸層、反轉漸層方向，或是壓縮漸層範圍以套用到比完整繪製區域小的範圍。 若要壓縮漸層，請將 **StartPoint** 和/或 **EndPoint** 的值設在 0 到 1 之間。 例如，如果想要水平漸層在筆刷的左半部漸層但在右半部使用上個 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 使用的純色，請將 **StartPoint** 指定為 `(0,0)`，**EndPoint** 指定為 `(0.5,0)`。
+![漸層停駐點](images/linear-gradients-stops.png) 您可以將 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 與 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 屬性設為與起始預設值 `(0,0)` 與 `(1,1)` 不同的其他值，藉此變更漸層停駐點所在的線條位置。 變更 **StartPoint** 與 **EndPoint** 座標值，就能建立水平或垂直漸層、反轉漸層方向，或是壓縮漸層範圍以套用到比完整繪製區域小的範圍。 若要壓縮漸層，請將 **StartPoint** 和/或 **EndPoint** 的值設在 0 到 1 之間。 例如，如果想要水平漸層在筆刷的左半部漸層但在右半部使用上個 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 使用的純色，請將 **StartPoint** 指定為 `(0,0)`，**EndPoint** 指定為 `(0.5,0)`。
 
-### <span id="Use_tools_to_make_gradients"> </span> <span id="use_tools_to_make_gradients"> </span> <span id="USE_TOOLS_TO_MAKE_GRADIENTS"> </span>使用工具製作漸層
+### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
 
-在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 [**筆刷**]，然後選取 [**線性漸層**] 索引標籤 (請參閱下一個螢幕擷取畫面)。
+在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 [筆刷]****，然後選取 [線性漸層]**** 索引標籤 (請參閱下一個螢幕擷取畫面)。
 
 ![使用 Visual Studio 建立線性漸層。](images/tool-gradient-brush-1.png)
 
@@ -110,10 +110,10 @@ description: Brush 物件可用來繪製形狀、文字或部分控制項的內�
 
 ![位於屬性視窗底部可控制漸層停駐點的列。](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"> </span> <span id="image_brushes"> </span> <span id="IMAGE_BRUSHES"> </span>影像筆刷
+## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
 
 [
-            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 使用影像繪製區域，而要繪製的影像則來自影像檔案來源。 [
+            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 [
             **ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 屬性應設定為要載入之影像的路徑。 影像來源通常來自 app 資源中的 **Content** 項目。
 
 根據預設值，[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 會伸展影像，使其完全填滿繪圖區，如果繪圖區與影像的長寬比不同，影像可能會失真。 只要變更 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) 屬性的預設值 **Fill**，將它設定為 **None**、**Uniform** 或 **UniformToFill**，就可以變更此行為。
@@ -183,6 +183,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

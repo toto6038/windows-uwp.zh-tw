@@ -1,4 +1,5 @@
 ---
+author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: 組合效果
 description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
@@ -30,8 +31,8 @@ description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
 
 | 效果               | 說明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects)中的 Alpha 遮罩產生動畫效果。       |
-| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects)中建立淡入與淡出效果。 |
+| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
+| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
 | 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md)的 21 種。        |
 | 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
 | 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md)。                                              |
@@ -79,7 +80,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 ### 效果屬性 – 常數與動畫效果
 
-您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過 "<effect name>.<property name>" 格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
+您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過 "<effect name>.<property name>" 的字串格式指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
 
 在編譯上述效果時，您有彈性可以選擇飽和度一律等於 0.5，或將它設為動態值並以動態或動畫效果顯示。
 
@@ -117,11 +118,11 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-請參閱[去飽和度 - 動畫範例](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/Desaturation%20-%20Animation)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/AlphaMask)來了解效果和運算式的使用方式。
+請參閱[去飽和度 - 動畫範例](http://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](http://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
 
 ### 使用獨立屬性的多個效果執行個體
 
-藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/ColorSource%20and%20Blend)。
+藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](http://go.microsoft.com/fwlink/?LinkId=785344)。
 
 ## 開始使用組合效果
 
@@ -140,9 +141,9 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 ### 建立新的專案
 
--   移至 [檔案] -> [新增] -> [專案]...
+-   移至 [檔案] -&gt; [新增] -&gt; [專案]...
 -   選取 [Visual C#]
--   建立 [空白的應用程式 (Windows 通用)] (Visual Studio 2015)
+-   建立 [空白的應用程式 \(Windows 通用\)] \(Visual Studio 2015\)
 -   輸入您選擇的專案名稱
 -   按一下 [確定]
 
@@ -162,7 +163,7 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 ![來源影像](images/composition-cat-source.png)
 ### 設定您的組合基本知識
 
-如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/CompositionVisual)。
+如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](http://go.microsoft.com/fwlink/?LinkId=785345)。
 
 ```cs
 _compositor = new Compositor();
@@ -243,6 +244,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

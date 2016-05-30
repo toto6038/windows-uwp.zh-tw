@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: 繪製圖形
+title: 繪製形狀
 description: 了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。
 ---
 # 繪製圖形
@@ -52,7 +53,7 @@ description: 了解如何繪製圖形，例如橢圓形、矩形、多邊形以�
 
 一組 6 個 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 元素屬於 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) 控制項的控制項範本，而 2 個同心 **Ellipse** 元素則屬於 [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544)。
 
-## <span id="Rectangle"> </span> <span id="rectangle"> </span> <span id="RECTANGLE"> </span>矩形
+## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
 
 [
             **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是對應邊相等的四邊形。 若要建立基本的 **Rectangle**，請指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
@@ -105,11 +106,11 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 ## 線條
 
 [
-            **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的任何值，因為其沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
+            **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的任何值，因為它沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
 
 您無法使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 圖形，而是必須使用 [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 以及 [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 的離散 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 這樣就可以使用最簡潔的標記語言來繪製水平或垂直線。 例如，`<Line Stroke="Red" X2="400"/>` 定義了 400 個像素長的水平線。 另一個 X、Y 屬性預設為 0，因此這個 XAML 的點會繪製從 `(0,0)` 到 `(400,0)` 的線條。 然後，如果您希望它從 (0,0) 以外的點開始，可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移動整個 **Line**。
 
-## <span id="_Polyline"> </span> <span id="_polyline"> </span> <span id="_POLYLINE"> </span> 聚合線條
+## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 聚合線條
 
 [
             **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 與 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
@@ -204,6 +205,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,16 +1,17 @@
 ---
+author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: 圖形和動畫
-description: 本節中的主題會引導您開始使用市集應用程式中的圖形和動畫。
+description: 本節中的主題會引導您開始在市集應用程式中使用圖形和動畫。
 ---
 # 圖形和動畫
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節中的主題會引導您開始使用市集 app 中的圖形和動畫。
+本節中的主題會引導您開始在市集應用程式中使用圖形和動畫。
 
 **注意**  
-圖形和動畫是為了提供使用 XAML 的 app 開發人員使用所設計。 如果您想要將圖形與動畫新增至使用 Microsoft DirectX 的遊戲中，請參閱[遊戲和 DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375)。
+圖形和動畫是為了提供使用 XAML 的 App 開發人員使用所設計。 如果您想要將圖形與動畫新增至使用 Microsoft DirectX 的遊戲中，請參閱[遊戲和 DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375)。
 
  
 
@@ -33,6 +34,6 @@ description: 本節中的主題會引導您開始使用市集應用程式中的�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: 組合動畫
 description: 許多組合物件和效果屬性都可藉由使用主要畫面格和運算式動畫來製作動畫效果，這些動畫可允許隨時間或根據計算來變更 UI 元素的屬性。
@@ -122,7 +123,7 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 一般的語法及範例如以下所示：
 
 ```cs
-targetVisual.StartAnimation(“Offset”, animation);
+targetVisual.StartAnimation("Offset", animation);
 ```
 
 在開始您的動畫之後，您也能夠將它停止和中斷。 做法是使用 [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841) 方法，並指定您想要停止產生動畫效果的屬性。
@@ -130,7 +131,7 @@ targetVisual.StartAnimation(“Offset”, animation);
 例如：
 
 ```cs
-targetVisual.StopAnimation(“Offset”);
+targetVisual.StopAnimation("Offset");
 ```
 
 ### 動畫完成事件
@@ -167,7 +168,7 @@ myScopedBatch.End();
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
-Visual.StartAnimation(“Opacity”, myAnimation);
+Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
 
@@ -192,7 +193,7 @@ myCommitBatch = _compositor.GetCommitBatch(CompositionBatchTypes.Animation);
 若要建立您運算式，請對您的 Compositor 物件呼叫 [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002)，並指定您想要使用的運算式：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“INSERT_EXPRESSION_STRING”)
+var expression = _compositor.CreateExpressionAnimation("INSERT_EXPRESSION_STRING")
 ```
 
 ### 運算子、優先順序及關聯性
@@ -229,8 +230,8 @@ ChildVisual.Offset.X / ParentVisual.Offset.Y
 在上述的「運算式字串」中，我們將需要建立兩個參數來定義兩個「視覺效果」：
 
 ```cs
-Expression.SetReferenceParameter(“ChildVisual”, childVisual);
-Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
+Expression.SetReferenceParameter("ChildVisual", childVisual);
+Expression.SetReferenceParameter("ParentVisual", parentVisual);
 ```
 
 ### 運算式協助程式函式
@@ -244,7 +245,7 @@ Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
 以下是一個使用 Clamp 協助程式函式的較複雜運算式字串範例：
 
 ```cs
-Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)
+Clamp((scroller.Offset.y * -1.0) - container.Offset.y, 0, container.Size.y - header.Size.y)
 ```
 
 ### 開始和停止 Expression 動畫
@@ -264,14 +265,14 @@ _sharedProperties = _compositor.CreatePropertySet();
 建立您的屬性集之後，您可以使用 [**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772) 的其中一個 **Insert\*** 方法，將屬性和值新增到該屬性集。 例如：
 
 ```cs
-_sharedProperties.InsertVector3(“NewOffset”, offset);
+_sharedProperties.InsertVector3("NewOffset", offset);
 ```
 
 建立運算式動畫之後，您可以在運算式字串中，使用參考參數來參考來自屬性集的屬性。 例如：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“sharedProperties.NewOffset”);
-expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
+var expression = _compositor.CreateExpressionAnimation("sharedProperties.NewOffset");
+expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
 ### 運算式 KeyFrame
@@ -291,7 +292,7 @@ expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
 
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
-animation.InsertExpressionKeyFrame(0.25, “VisualBOffset.X / VisualAOffset.Y”);
+animation.InsertExpressionKeyFrame(0.25, "VisualBOffset.X / VisualAOffset.Y");
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
@@ -305,7 +306,7 @@ animation.InsertKeyFrame(1.00f, 0.8f);
 在「運算式 KeyFrame」中使用這些值的範例：
 
 ```cs
-animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
+animation.InsertExpressionKeyFrame(0.0f, "this.CurrentValue + delta");
 ```
 
 ### 條件式運算式
@@ -334,7 +335,7 @@ animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
 下列程式碼片段示範一個在運算式中使用條件式的範例：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f”);
+var expression = _compositor.CreateExpressionAnimation("target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f");
 ```
 
  
@@ -346,6 +347,6 @@ var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ?
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
