@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 在 C++ 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C\# 呼叫該元件#
 description: 本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
@@ -115,6 +116,6 @@ ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

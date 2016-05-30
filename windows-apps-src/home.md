@@ -43,6 +43,6 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 | [XAML 平台](xaml-platform/index.md) | 開始認識 XAML 程式設計語言的基本概念。 或者，如果您已熟悉 XAML，您可以直接了解如何使用 Visual Studio 在 XAML 中實作 Windows 執行階段功能，以建立通用 Windows app。 |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
