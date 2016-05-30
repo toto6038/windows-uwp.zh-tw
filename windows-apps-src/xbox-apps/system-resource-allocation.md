@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: 適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 description: Xbox 上的 UWP 系統資源
 area: Xbox
@@ -19,14 +20,12 @@ area: Xbox
 
 * Xbox One 上的 UWP 支援 DirectX 11 功能層級 10。 此時不支援 DirectX 12。 
 
-對於**應用程式開發**，請務必記住，相較於標準電腦，可用的資源可能受限。
+對於「應用程式開發」****，請務必牢記，相較於標準電腦，可用的資源可能受限。
 
-對於**遊戲開發**，請務必記住，Xbox One 如同其他遊戲主機， 
-是一個特殊的硬體，需要以特定硬體為基礎的開發套件，才能充分發揮其潛力。 
-如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲， 
-您可以登錄 [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 計畫，以存取 Xbox One 開發套件 (其中包含 DirectX 12 支援)。
+對於「遊戲開發」****，請務必牢記，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 
+如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請向 [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 計畫註冊來存取該 Xbox One 開發套件 (內含 DirectX 12 支援)。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

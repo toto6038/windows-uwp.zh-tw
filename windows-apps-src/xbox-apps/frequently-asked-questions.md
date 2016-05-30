@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: 常見問題集
 description: Xbox 上 UWP 的常見問題集。
 area: Xbox
@@ -43,7 +44,7 @@ area: Xbox
 是，您可以從開發人員模式切換至零售模式 (您可以在此玩遊戲)。 
 如需詳細資訊，請參閱[啟用 Xbox One 開發人員模式](devkit-activation.md)。 
 
-> **注意**&nbsp;&nbsp;Xbox 開發人員預覽系統更新包括實驗性和早期發行前版本軟體。 
+> **注意** &nbsp;&nbsp;Xbox 開發人員預覽系統更新包括實驗性和早期發行前版本軟體。 
 這代表某些熱門的遊戲和應用程式將不會如預期般運作，而您可能偶爾會遇到當機和資料遺失。
 
 ### 我是否將遺失我的遊戲和應用程式或儲存的變更？
@@ -75,8 +76,7 @@ area: Xbox
 
 您可以在開發人員模式使用 UWP 和 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 
 若要發佈 UWP 遊戲，您必須登錄 [ID@XBOX](http://www.xbox.com/en-us/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 為開發人員提供其遊戲的 Xbox Live API 的完整存取權，包括 Gamerscore and Achievements， 
-以及利用裝置、雲端儲存以及 Xbox One 上的所有 Xbox Live 功能之間的多玩家功能。 
+[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 為開發人員提供其遊戲的 Xbox Live API (包括 遊戲分數與成就) 的完整存取權，以及利用裝置、雲端儲存以及 Xbox One 上的所有 Xbox Live 功能之間的多玩家功能。 
 [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 也可以存取遊戲的 Xbox One 開發套件，而遊戲可能需要存取最大部分的 Xbox One 硬體。
 
 ### 標準遊戲引擎是否可以運作？
@@ -119,23 +119,23 @@ area: Xbox
 
 1. 請確定未安裝您的應用程式，方法是從 Xbox One 殼層的集合應用程式中解除安裝您的應用程式。 
 
-> **注意**&nbsp;&nbsp;從 Windows Device Portal (WDP) 解除安裝您的應用程式將不會解決問題。
+> **注意** &nbsp;&nbsp;從 Windows Device Portal (WDP) 解除安裝您的 App 將不會解決問題。
 
 2. 如果您的問題持續發生，請在集合應用程式中解除安裝您的應用程式或遊戲、離開開發人員模式、重新啟動到零售模式，然後切換回開發人員模式。 
 這樣會清除 Dev 儲存體。
 
 3. 如果您的問題持續發生，請依照上面的步驟進行，然後使用 [**重設並保留我的遊戲和應用程式**] 刪除 Xbox One 上任何儲存的狀態。 
-移至 [設定] > [系統] > [主控台資訊與更新] > [重設主控台]，然後選取 [**重設並保留我的遊戲和應用程式**] 按鈕。
+移至 [設定] &gt; [系統] &gt; [主控台資訊與更新] &gt; [重設主控台]，然後選取 [**重設並保留我的遊戲和應用程式**] 按鈕。
 
-> **注意**&nbsp;&nbsp;這樣做會刪除 Xbox One 上所有儲存的設定，包括無線設定、使用者帳戶以及任何未儲存到雲端儲存體的遊戲進度。
+> **注意** &nbsp;&nbsp;這樣做會刪除 Xbox One 上所有儲存的設定，包括無線設定、使用者帳戶以及任何未儲存到雲端儲存體的遊戲進度。
 
-> **注意**&nbsp;&nbsp;請不要選取 [**重設並移除所有項目**] 按鈕。
-這樣會刪除所有遊戲、應用程式、設定和內容、停用開發人員模式，以及從開發人員預覽群組中移除您的主控台。
+> **注意** &nbsp;&nbsp;請不要選取 [重設並移除所有項目]**** 按鈕。
+這樣會刪除所有遊戲、App、設定和內容、停用開發人員模式，以及從開發人員預覽群組中移除您的主機。
 
 ### 如果我要使用 HTML/JavaScript 建置應用程式，要如何啟用遊戲台瀏覽？
 
 TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 JavaScript 和 C# 建置絕佳的 Xbox One 與電視體驗。 
-TVJS 是可協助您針對 Xbox One 建置優質 UWP 應用程式的程式庫。 TVJS 包含自動控制器瀏覽、多媒體播放、搜尋等支援。 
+TVJS 是可協助您針對 Xbox One 建置優質 UWP app 的程式庫。 TVJS 包含自動控制器瀏覽、多媒體播放、搜尋等支援。 
 您可以使用 TVJS 搭配託管的 Web 應用程式，就如同搭配具備 Windows 執行階段 API 完整存取權之封裝的 Web 應用程式一樣簡單。
 
 如需詳細資訊，請參閱 [TVHelpers](https://github.com/Microsoft/TVHelpers) 專案和專案 [wiki](https://github.com/Microsoft/TVHelpers/wiki)。
@@ -145,6 +145,6 @@ TVJS 是可協助您針對 Xbox One 建置優質 UWP 應用程式的程式庫。
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
