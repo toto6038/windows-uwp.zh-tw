@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: 設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集 app。
 title: 設計指示性 UI 的指導方針
 label: Instructional UI
@@ -9,17 +10,17 @@ template: detail.hbs
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在某些情況下，教導使用者有關應用程式中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過使用者介面 (UI) 向使用者呈現指示，讓他們可以使用遺漏的功能。
+在某些情況下，教導使用者有關應用程式中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過使用者介面 (UI) 向使用者呈現指示，讓他們可以使用可能沒有注意到的功能。
 
-## <span id="when_to_use_instructional_ui"> </span> <span id="WHEN_TO_USE_INSTRUCTIONAL_UI"> </span>何時使用指示性 UI
+## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>何時使用指示性 UI
 
 指示性 UI 必須謹慎使用。 過度使用時，即可輕鬆地予以略過，也可能會惹惱使用者，使其無效。
 
 指示性 UI 應該用來協助使用者探索重要且不明顯的應用程式功能，例如使用者可能感興趣的觸控手勢或設定。 它也可以用來通知使用者有關應用程式中他們可能已忽略的新功能或變更。
 
-除非您的應用程式依賴觸控手勢，否則不應該使用指示性 UI 向使用者教導您應用程式的基本功能。
+除非您的 App 依賴觸控手勢，否則不應該使用指示性 UI 向使用者教導您 App 的基本功能。
 
-## <span id="writing_instructional_ui"> </span> <span id="WRITING_INSTRUCTIONAL_UI"> </span>撰寫指示性 UI 的原則
+## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>撰寫指示性 UI 的原則
 
 良好的指示性 UI 是與使用者有關並且對使用者具有教育性，而且可以提升使用者體驗。 它應該是︰
 
@@ -39,7 +40,7 @@ template: detail.hbs
 -   **強制使用者參與︰**使用者應該可以忽略指示性 UI，並且仍然繼續執行應用程式。
 -   **顯示重複資訊︰**不要使用指示性 UI 不斷騷擾使用者，即使是第一次忽略它時也一樣。 新增再次顯示指示性 UI 的設定是比較好的做法。
 
-## <span id="examples_of_instructional_ui"> </span> <span id="EXAMPLES_OF_INSTRUCTIONAL_UI"> </span>指示性 UI 範例
+## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>指示性 UI 範例
 
 以下是指示性 UI 可協助使用者學習的一些實例：
 
@@ -51,21 +52,21 @@ template: detail.hbs
 
     ![影片時刻應用程式的啟動畫面](images/instructional-ui-movie.png)
 
--   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件 app 中，收件匣底部的提示會引導使用者進入 [**設定**] 以存取較舊的郵件。
+-   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件 App 中，收件匣底部的提示會引導使用者進入 [設定]**** 以存取較舊的郵件。
 
     ![顯示指示性 UI 訊息的 Windows 郵件 app 的裁剪螢幕擷取畫面](images/instructional-ui-mail-inbox.png)
 
-    使用者按一下訊息時，app 的 [**設定**] 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
+    使用者按一下訊息時，App 的 [設定]**** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
 
     | 之前                                                               | 之後                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![Windows 郵件 app 的螢幕擷取畫面](images/instructional-ui-mail.png) | ![顯示延伸式 [設定] 飛出視窗的 Windows 郵件應用程式螢幕擷取畫面](images/instructional-ui-mail-flyout.png) |
+    | ![Windows 郵件 app 的螢幕擷取畫面](images/instructional-ui-mail.png) | ![具有延伸式設定飛出視窗的 Windows 郵件 App 螢幕擷取畫面](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
-* [應用程式說明的指導方針](guidelines-for-app-help.md)
+* [App 說明的指導方針](guidelines-for-app-help.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
