@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 使用重新定位動畫將單一元素或多個元素移入新位置。
 title: UWP app 中的重新定位動畫
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
@@ -9,7 +10,7 @@ template: detail.hbs
 # 重新定位動畫
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 使用重新定位動畫將單一元素或多個元素移入新位置。
 
@@ -43,6 +44,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

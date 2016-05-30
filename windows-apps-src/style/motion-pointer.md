@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 使用指標動畫為使用者提供在項目上點選時的視覺化回饋。
 title: UWP app 中的指標按一下動畫
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
@@ -10,7 +11,7 @@ template: detail.hbs
 
 使用指標動畫為使用者提供在項目上點選時的視覺化回饋。 第一次點選項目時，會播放稍微縮小並傾斜已按下項目的指標向下動畫。 當使用者放開指標時，則會播放將項目還原至其原始位置的指標向上動畫。
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要 API**
@@ -43,6 +44,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

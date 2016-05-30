@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 title: 在 UVP app 中新增和刪除動畫
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
@@ -9,7 +10,7 @@ template: detail.hbs
 # 新增和刪除動畫
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 
@@ -28,7 +29,7 @@ template: detail.hbs
 -   請勿使用清單動畫來顯示或移除容器。 這些動畫適合已經顯示之集合或一組項目的成員。 使用快顯動畫，在 app 表面顯示或隱藏暫時容器。 使用內容轉換動畫，顯示或取代屬於應用程式表面的容器。
 -   不要在整個項目集合上使用清單動畫。 使用內容轉換動畫，新增或移除容器內的整個集合。
 
-\[本文包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -48,6 +49,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 title: UWP app 中的拖曳動畫
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
@@ -9,7 +10,7 @@ template: detail.hbs
 # 拖曳動畫
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 
@@ -65,6 +66,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

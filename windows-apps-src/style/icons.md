@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 理想的圖示達到印刷格式與其餘設計語言的平衡。 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。 
 title: 圖示
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
@@ -82,7 +83,7 @@ template: detail.hbs
     </tr>  
 </table>
 
-### 範例
+<p>以下是一些範例：</p>
 
 <table>
     <tr>
@@ -152,9 +153,7 @@ template: detail.hbs
 
 <table>
 <tr><td>綠色 - #128B44</td><td>藍色 - #2C71B9</td><td>黃色 - #FDC214</td></tr>
-<tr><td>正向：完成、 
-已完成 </td><td>中性：說明、 
-通知 </td><td>注意：警示、警告 </td></tr>
+<tr><td>正向：作業結束、已完成 </td><td>中性：協助、通知 </td><td>注意：警示、警告 </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -172,6 +171,7 @@ template: detail.hbs
 
 * [磚和圖示資產的指導方針](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

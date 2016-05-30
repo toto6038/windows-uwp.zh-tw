@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。
 title: UWP 應用程式中以邊緣為基礎的 UI 動畫
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
@@ -9,7 +10,7 @@ template: detail.hbs
 # 以邊緣為基礎的 UI 動畫
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
 
@@ -54,6 +55,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

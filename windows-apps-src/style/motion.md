@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
 title: UWP app 中的動作和動畫
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
@@ -10,7 +11,7 @@ template: detail.hbs
 
 有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
 
-## <span id="Benefits_of_animation"> </span> <span id="benefits_of_animation"> </span> <span id="BENEFITS_OF_ANIMATION"> </span>動畫的優勢
+## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>動畫的優勢
 
 
 動畫不只是讓物品移動。 動畫是一個用來為使用者建立實體生態系統的工具，以讓使用者沈浸其中，並透過觸控方式進行操縱。 體驗的品質高低依 app 如何回應使用者及 UI 的通訊特質種類而定。
@@ -43,7 +44,7 @@ template: detail.hbs
 
     動畫可以用來讓使用者知道手機正在運作，而不是靜止不動，而且可以被動顯示使用者可能感興趣的新資訊。
 
-<h2>本節內容</h2>
+## 本節內容
 <table>
 <thead>
 <tr class="header">
@@ -53,43 +54,43 @@ template: detail.hbs
 </thead>
 <tbody>
     <tr>
-        <td>[Add and delete](motion-list.md)
+        <td>[新增和刪除](motion-list.md)
         </td>
         <td>清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
         </td>
     </tr> 
     <tr>
-        <td>[Drag and drop](motion-dragdrop.md)
+        <td>[拖放](motion-dragdrop.md)
         </td>
         <td>在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
         </td>
     </tr>
     <tr>
-        <td>[Edge](motion-edgebased.md)
+        <td>[邊緣](motion-edgebased.md)
         </td>
         <td>以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
         </td>
     </tr>   
     <tr>
-        <td>[Fade](motion-fade.md)
+        <td>[淡化](motion-fade.md)
         </td>
-        <td>使用淡入/淡出動畫將項目帶入檢視或帶出檢視。 兩個常見的淡入/淡出動畫會淡入和淡出。
+        <td>使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡化動畫為淡入和淡出。
         </td>
     </tr>   
     <tr>
-        <td>[Pointer](motion-pointer.md)
+        <td>[指標](motion-pointer.md)
         </td>
         <td>指標動畫為使用者提供在項目上點選時的視覺化回饋。 第一次點選項目時，會播放稍微縮小並傾斜已按下項目的指標向下動畫。 當使用者放開指標時，則會播放將項目還原至其原始位置的指標向上動畫。
         </td>
     </tr>   
     <tr>
-        <td>[Pop-up animations](motion-popup-animations.md)
+        <td>[快顯動畫](motion-popup-animations.md)
         </td>
         <td>使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
         </td>
     </tr>     
     <tr>
-        <td>[Reposition](motion-reposition.md)
+        <td>[調整位置](motion-reposition.md)
         </td>
         <td>將元素移至新位置。
         </td>
@@ -109,6 +110,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
