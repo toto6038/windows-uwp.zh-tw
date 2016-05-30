@@ -1,9 +1,10 @@
 ---
+author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-title: 使用 WinAppDeployCmd.exe 工具安裝 app
+title: 使用 WinAppDeployCmd.exe 工具安裝 App
 description: Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) app 部署到任何 Windows 10 行動裝置版裝置的命令列工具。
 ---
-# 使用 WinAppDeployCmd.exe 工具安裝 app
+# 使用 WinAppDeployCmd.exe 工具安裝 App
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -49,7 +50,7 @@ WinAppDeployCmd command -option <argument> ...
 
  
 
-下表描述 **WinAppDeployCmd.exe** 的選項。
+下表描述 **WinAppDeployCmd.exe** 的選項
 
 |                  |                                                                                                                                                                                                               |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -70,11 +71,11 @@ WinAppDeployCmd command -option <argument> ...
 |------------------------|------------------------------------------------------------------------------|
 | **引數**           | **說明**                                                              |
 | &lt;x&gt;              | 逾時 (秒)。 (預設值為 10)                                          |
-| &lt;address&gt;        | 目標裝置的 IP 位址或唯一識別碼。                        |
-| &lt;a&gt;&lt;b&gt; ... | 每個 app 套件相依性的相依性路徑。                    |
+| &lt;位址&gt;        | 目標裝置的 IP 位址或唯一識別碼。                        |
+| &lt;a&gt;&lt;b&gt; ... | 每個應用程式套件相依性的相依性路徑。                    |
 | &lt;p&gt;              | 裝置設定中顯示用於建立連線的英數字元 PIN。 |
 | &lt;path&gt;           | 檔案系統路徑。                                                            |
-| &lt;name&gt;           | 要解除安裝的 app 套件的完整套件名稱。                          |
+| &lt;name&gt;           | 要解除安裝之應用程式套件的完整套件名稱。                          |
 
  
 ## WinAppDeployCmd.exe 範例
@@ -107,6 +108,6 @@ WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
