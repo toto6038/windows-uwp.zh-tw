@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 行動裝置的 Device Portal
 description: 了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。
@@ -11,7 +12,7 @@ description: 了解 Windows Device Portal 如何讓您從遠端設定並管理�
 
 ![Device Portal 設定](images/device-portal/mob-dev-mode-options.png)
 
-## 在 Windows Phone 上設定裝置入口網站
+## 在 Windows Phone 上設定 Device Portal
 
 ### 開啟裝置探索和配對
 
@@ -27,19 +28,19 @@ description: 了解 Windows Device Portal 如何讓您從遠端設定並管理�
 
 1. 在瀏覽器中，針對您使用的連接類型輸入位址 (如下所示)。
 
-    - USB：`http://127.0.0.1:10080`
+    - USB： `http://127.0.0.1:10080`
 
     當手機透過 USB 連線連接到電腦時，請使用這個位址。 這兩個裝置都必須具備 Windows 10 版本 1511或更新版本。
     
-    - 本機主機：`http://127.0.0.1`
+    - 本機主機： `http://127.0.0.1`
 
     使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
     
-    - 區域網路：`https://<The IP address of the phone>`
+    - 區域網路： `https://<The IP address of the phone>`
 
     使用這個位址來透過區域網路連線。
 
-    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱 (可在 [設定] > [系統] > [關於] 中編輯) 也可以用來在區域網路上存取 Device Portal (例如 http://Phone360)。這對於經常會變更網路或 IP 位址，或是需要與他人共用的裝置來說相當有用。 
+    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱 (可在 [設定] &gt; [系統] &gt; [關於] 中編輯) 也可以用來在區域網路上存取 Device Portal (例如 http://Phone360)。這對於經常會變更網路或 IP 位址，或是需要與他人共用的裝置來說相當有用。 
 
 2. 按下手機上的 [配對] 按鈕，來產生並顯示所需的安全性驗證碼
 
@@ -71,6 +72,6 @@ description: 了解 Windows Device Portal 如何讓您從遠端設定並管理�
 - 網路功能
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

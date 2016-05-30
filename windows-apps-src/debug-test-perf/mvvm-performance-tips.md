@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: MVVM 和語言效能秘訣
+title: MVVM 和語言效能祕訣
 description: 本主題討論與您的軟體設計模式及程式設計語言選擇相關的一些效能考量。
 ---
 # MVVM 和語言效能祕訣
@@ -39,6 +40,6 @@ MVVM 模式有多個具體的定義，以及協助實作此模式的協力廠商
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

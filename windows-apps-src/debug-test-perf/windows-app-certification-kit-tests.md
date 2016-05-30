@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 應用程式認證套件測試
 description: Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。
@@ -33,7 +34,7 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 確定您在螢幕夠大的電腦上執行測試。
 
-如果您的應用程式無法啟動，但測試平台符合 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
+如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
 1.  開啟 eventvwr.exe，並瀏覽到 Application and Services Log\\Microsoft\\Windows\\Immersive-Shell 資料夾。
 2.  篩選檢視，顯示事件識別碼：5900-6000。
@@ -83,9 +84,9 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### 測試詳細資料
 
-針對 Windows Phone 8.1 app，測試會驗證套件組合中的 appx 套件總數 &lt; 512、套件組合中只有一個主套件，以及已將套件組合中的主套件架構標記為 ARM 或中性。
+針對 Windows Phone 8.1 App，測試會確認套件組合中的 appx 套件總數為 &lt; 512、套件組合中只有一個主套件，以及套件組合中的主套件架構已標示為 ARM 或中性。
 
-針對 Windows 10 app，測試會驗證亦將套件組合版本中的版本號碼設定為 0。
+針對 Windows 10 App，測試會驗證套件組合版本中的版本號碼已設定為 0。
 
 ### 修正動作
 
@@ -129,7 +130,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### 測試詳細資料
 
-執行 [BinScope 二元分析器](#binscope)以測試應用程式的安全性。
+執行 [BinScope 二元分析器](#binscope)以測試 app 的安全性。
 
 BinScope 二元分析器測試會檢驗應用程式的二進位檔，檢查編碼和建置做法是否讓應用程式較不容易受到攻擊或是做為攻擊媒介。
 
@@ -140,7 +141,7 @@ BinScope 二元分析器測試會檢查是否正確使用下列安全性相關�
 
 ### BinScope 二元分析器測試
 
-[BinScope 二元分析器](http://go.microsoft.com/fwlink/p/?linkid=257276)測試會檢驗應用程式的二進位檔，檢查編碼和建置做法是否讓應用程式較不容易受到攻擊或是做為攻擊媒介。
+[BinScope 二元分析器](http://go.microsoft.com/fwlink/p/?linkid=257276)測試會檢驗 app 的二進位檔，檢查編碼和建置做法是否讓 app 較不容易受到攻擊或是做為攻擊媒介。
 
 BinScope 二元分析器測試會檢查是否正確使用下列安全性相關的功能：
 
@@ -153,7 +154,7 @@ BinScope 二元分析器測試會檢查是否正確使用下列安全性相關�
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
-### <span id="binscope-1"> </span>AllowPartiallyTrustedCallersAttribute
+### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
 **Windows 應用程式認證套件錯誤訊息：**APTCACheck 測試失敗
 
@@ -167,8 +168,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 這個測試只會在 Managed 程式碼 (C#、.NET 等) 執行。
 
-### <span id="binscope-2">
-            </span>/SafeSEH 例外狀況處理保護
+### <span id="binscope-2"></span>/SafeSEH 例外狀況處理保護
 
 **Windows 應用程式認證套件錯誤訊息：**SafeSEHCheck 測試失敗
 
@@ -182,8 +182,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 測試不會在 64 位元的二進位檔或 ARM 晶片組二進位檔上執行，原因是兩者不會在堆疊上儲存例外處理常式位址。
 
-### <span id="binscope-3">
-            </span>資料執行防止
+### <span id="binscope-3"></span>資料執行防止
 
 **Windows 應用程式認證套件錯誤訊息：**NXCheck 測試失敗
 
@@ -195,10 +194,9 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 **備註**
 
-建議您在支援 DEP 的 CPU 上測試 app，並修正由 DEP 所導致的任何失敗。
+建議您在支援 DEP 的 CPU 上測試應用程式，並修正由 DEP 所導致的任何失敗。
 
-### <span id="binscope-4">
-            </span>位址空間配置隨機載入
+### <span id="binscope-4"></span>位址空間配置隨機載入
 
 **Windows 應用程式認證套件錯誤訊息：**DBCheck 測試失敗
 
@@ -214,8 +212,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 這個測試只能在以 Managed 程式碼 (如 C# 或 .NET Framework) 撰寫的 app 上執行。
 
-### <span id="binscope-5">
-            </span>讀取/寫入共用的 PE 區段
+### <span id="binscope-5"></span>讀取/寫入共用的 PE 區段
 
 **Windows 應用程式認證套件錯誤訊息：**SharedSectionsCheck 測試失敗。
 
@@ -223,7 +220,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 **如果您的 app 未通過這個測試，應該怎麼辦？**
 
-從應用程式中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 以建立共用的記憶體物件，然後重新建置您的應用程式。
+從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 以建立共用的記憶體物件，然後重新建置您的 app。
 
 **備註**
 
@@ -245,7 +242,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 這個測試會在所有 .exe 檔案和 Unmanaged DLL 上執行。
 
-### <span id="binscope-7"> </span>ExecutableImportsCheck
+### <span id="binscope-7"></span>ExecutableImportsCheck
 
 **Windows 應用程式認證套件錯誤訊息：**ExecutableImportsCheck 測試失敗。
 
@@ -259,7 +256,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 這個測試會在完全 Managed 組件以外的所有二進位程式碼上執行。
 
-### <span id="binscope-8"> </span>WXCheck
+### <span id="binscope-8"></span>WXCheck
 
 **Windows 應用程式認證套件錯誤訊息：**WXCheck 測試失敗。
 
@@ -273,7 +270,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 這個測試會在所有 .exe 檔案和原生的 Unmanaged DLL 上執行。
 
-如果可執行檔在建置時啟用了 [編輯後繼續] (/ZI)，則可執行檔便可能有可寫入和可執行的區段。 停用 [編輯後繼續] 即可不顯示無效的區段。
+如果可執行檔在建置時啟用了 編輯後繼續 (/ZI)，則可執行檔便可能有可寫入和可執行的區段。 停用 \[編輯後繼續\] 即可不顯示無效的區段。
 
 可執行檔的 *SectionAlignment* 預設為 *PAGE\-SIZE*。
 
@@ -310,9 +307,9 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **注意** app 偵錯組建即使只使用[適用於 Windows 市集 app 的 API](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx)，還是無法通過這個測試。
+> **注意** app 偵錯組建即使只使用[適用於 Windows 市集 app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)，還是無法通過這個測試。
 
-檢閱錯誤訊息，找出 app 使用的 API 有哪些不屬於 [Windows 市集 app 的 API](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx)。
+檢閱錯誤訊息，找出 app 使用的 API 有哪些不屬於 [Windows 市集 app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
 > **注意** 即使偵錯組態只使用來自適用於 Windows 市集 app 的 Windows SDK 的 API，該設定內建的 C++ app 也無法通過這個測試。 如需詳細資訊，請參閱 [Windows 市集 app 中 Windows API 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
@@ -407,7 +404,7 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 <tr><td>
 <p>影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">UWP app 回應設計 101</a> 和 <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP app 回應設計 101</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
 </td></tr>
 <tr><td>
 <p>套件缺少 "resources.pri" 檔案。</p>
@@ -429,7 +426,7 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
 </td><td>
-<p>請參閱 <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
+<p>請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
 <p>在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。</p>
 </td></tr>
 <tr><td>
@@ -442,12 +439,12 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 <tr><td>
 <p>字串必須為非空白 (長度大於零)</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">app 套件需求</a>。</p>
 </td></tr>
 <tr><td>
 <p>"resources.pri" 檔案中沒有指定預設資源。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">app 資源的指導方針</a>。</p>
 <p>在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。</p>
 </td></tr>
 <tr><td>
@@ -518,7 +515,7 @@ Windows 市集應用程式應該要完整且功能正常。 使用預設影像 (
 
 ### 修正動作
 
-開啟受影響的檔案，然後從 Visual Studio 的 [**檔案**] 功能表中選取 [**另存新檔**]。 選取 [**儲存**] 按鈕旁的下拉式控制項，然後選取 [**以編碼方式儲存**]。 從 [**進階**] 儲存選項對話方塊中選擇 [Unicode (UTF-8 有簽章)] 選項，然後按一下 [**確定**]。
+開啟受影響的檔案，然後從 Visual Studio 的 \[**檔案**\] 功能表中選取 \[**另存新檔**\]。 選取 \[**儲存**\] 按鈕旁的下拉式控制項，然後選取 \[**以編碼方式儲存**\]。 從 \[**進階**\] 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 \[**確定**\]。
 
 ## Direct3D 功能層級測試
 
@@ -546,7 +543,7 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 
 ### 背景
 
-如果應用程式未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，該應用程式就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
+如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，該 app  就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
 
 ### 測試詳細資料
 
@@ -579,48 +576,88 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 請考慮移除 app 不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Windows 執行階段中繼資料驗證 ### 背景 確保 app 隨附的元件符合 UWP 類型系統。
+## Windows 執行階段中繼資料驗證
 
-### 測試詳細資料 確認套件中的 **.winmd** 檔案符合 UWP 規則。
+### 背景
 
-### 修正動作 -   **ExclusiveTo 屬性測試：**確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
+確保 app 隨附的元件符合 UWP 類型系統。
+
+### 測試詳細資料
+
+確認套件中的 **.winmd** 檔案符合 UWP 規則。
+
+### 修正動作
+
+-   **ExclusiveTo 屬性測試：**確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
 -   **類型位置測試：**確保所有 UWP 類型的中繼資料都位於 app 套件中命名空間相符名稱最長的 winmd 檔案中。
 -   **類型名稱區分大小寫測試：**確保所有 UWP 類型在 app 套件內都具有唯一且不區分大小寫的名稱。 同時也確保 app 套件內的命名空間名稱均未使用 UWP 類型名稱。
 -   **類型名稱正確性測試：**確保全域命名空間或 Windows 最上層命名空間中，不存在任何 UWP 類型。
 -   **一般中繼資料正確性測試：**確保您用來產生類型的編譯器符合最新的 UWP 規格。
 -   **屬性測試：**確保 UWP 類別的所有屬性都有 get 方法 (set 方法為選用)。 針對 UWP 類型的所有屬性，確保 get 方法傳回值的類型與 set 方法輸入參數的類型相符。
 
-## 套件例行性測試 ### 平台適用檔案測試 視使用者的處理器架構而定，安裝混合二進位檔案的 app 可能會損毀或無法正確執行。
+## 套件例行性測試
 
-### 背景 這個測試驗證 app 套件中的二進位檔案是否會發生架構衝突。 app 套件不應包含無法在資訊清單中所指定的處理器架構上使用的二進位檔案。 包含不支援的二進位檔案會導致 app 毀損，或是以非必要方式增加 app 套件的大小。
+### 平台適用檔案測試
 
-### 測試詳細資料 驗證每個檔案的 PE 標頭中的「位元」都適合與 app 套件處理器架構宣告交叉參考 ### 修正動作 遵循這些指導方針，以確保您的 app 套件只包含 app 資訊清單中指定之架構所支援的檔案：- 如果 app 的目標處理器架構是 Neutral 處理器類型，則 app 套件不得包含 x86、x64 或 ARM 二進位檔案或映像類型檔案。
+視使用者的處理器架構而定，安裝混合二進位檔案的 app 可能會損毀或無法正確執行。
 
-- 如果 app 的目標處理器架構是 x86 處理器類型，則 app 套件必須只能包含 x86 二進位檔案或映像類型檔案。 如果套件包含 x64 或 ARM 二進位檔案或映像類型檔案，這個測試將會失敗。
+### 背景
 
-- 如果 app 的目標處理器架構是 x64 處理器類型，則 app 套件必須能包含 x64 二進位檔案或映像類型檔案。 請注意，在這個情況下，套件也可以包含 x86 檔案，但是主要的 app 經驗應該運用 x64 二進位檔案。
+這個測試驗證應用程式套件中的二進位檔案是否會發生架構衝突。 應用程式套件不應包含無法在資訊清單中所指定的處理器架構上使用的二進位檔案。 包含不支援的二進位檔案會導致應用程式毀損，或是以非必要方式增加應用程式套件的大小。
+
+### 測試詳細資料
+
+驗證每個檔案的 PE 標頭中的「位元」都適合與應用程式套件處理器架構宣告交叉參考
+
+### 修正動作
+
+遵循這些指導方針，以確保您的應用程式套件只包含應用程式資訊清單中指定之架構所支援的檔案：
+
+-   如果 app 的目標處理器架構是 Neutral 處理器類型，則應用程式套件不得包含 x86、x64 或 ARM 二進位檔案或映像類型檔案。
+
+-   如果 app 的目標處理器架構是 x86 處理器類型，則應用程式套件必須只能包含 x86 二進位檔案或映像類型檔案。 如果套件包含 x64 或 ARM 二進位檔案或映像類型檔案，這個測試將會失敗。
+
+-   如果 app 的目標處理器架構是 x64 處理器類型，則應用程式套件必須能包含 x64 二進位檔案或映像類型檔案。 請注意，在這個情況下，套件也可以包含 x86 檔案，但是主要的應用程式經驗應該運用 x64 二進位檔案。
 
     不過，如果套件包含 ARM 二進位檔案或映像類型檔案，或者只包含 x86 二進位檔案或映像類型檔案，則這個測試將會失敗。
 
-- 如果 app 的目標處理器架構是 ARM 處理器類型，則 app 套件必須只能包含 ARM 二進位檔案或映像類型檔案。 如果套件包含 x64 或 x86 二進位檔案或映像類型檔案，這個測試將會失敗。
+-   如果應用程式的目標處理器架構是 ARM 處理器類型，則應用程式套件必須只能包含 ARM 二進位檔案或映像類型檔案。 如果套件包含 x64 或 x86 二進位檔案或映像類型檔案，這個測試將會失敗。
 
-### 支援的目錄結構測試 驗證應用程式在安裝期間建立的子目錄長度不超過 MAX\-PATH。
+### 支援的目錄結構測試
 
-### 背景 OS 元件 (包括 Trident、WWAHost 等) 的檔案系統路徑在內部限制為 MAX\-PATH；若路徑較長，將無法正確運作。
+驗證應用程式在安裝期間建立的子目錄長度不超過 MAX\-PATH。
 
-### 測試詳細資料 確認 app 安裝目錄內的路徑不超過 MAX\-PATH。
+### 背景
 
-### 修正動作 使用較短的目錄結構和 (或) 檔案名稱。
+OS 元件 (包括 Trident、WWAHost 等) 的檔案系統路徑在內部限制為 MAX\-PATH；若路徑較長，將無法正確運作。
 
-## 資源使用狀況測試 ### WinJS 背景工作測試 WinJS 背景工作測試可確保 JavaScript app 備適當的 close 陳述式，以免 app 耗用電池電力。
+### 測試詳細資料
 
-### 背景 具備 JavaScript 背景工作的 app 必須呼叫 Close() 做為其背景工作的最後一個陳述式。 不執行此動作的 app 可能會使系統無法返回連線待命模式，導致電池電力耗盡。
+確認 App 安裝目錄內的路徑不超過 MAX\-PATH。
 
-### 測試詳細資料 如果 app 沒有資訊清單中指定的背景工作檔案，將會通過測試。 否則，測試將會剖析 app 套件中指定的 JavaScript 背景工作檔案，並尋找 Close() 陳述式。 如果找到，將會通過測試；否則測試就會失敗。
+### 修正動作
 
-### 修正動作 更新背景 JavaScript 程式碼以正確呼叫 Close()。
+使用較短的目錄結構或檔案名稱。
 
-> **注意** 本文適用於撰寫 UWP app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 開發，請參閱[archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+## 資源使用狀況測試
+
+### WinJS 背景工作測試
+
+WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close 陳述式，以免應用程式耗用電池電力。
+
+### 背景
+
+具備 JavaScript 背景工作的應用程式必須呼叫 Close() 做為其背景工作的最後一個陳述式。 不執行此動作的應用程式可能會使系統無法返回連線待命模式，導致電池電力耗盡。
+
+### 測試詳細資料
+
+如果應用程式沒有資訊清單中指定的背景工作檔案，將會通過測試。 否則，測試將會剖析應用程式套件中指定的 JavaScript 背景工作檔案，並尋找 Close() 陳述式。 如果找到，將會通過測試；否則測試就會失敗。
+
+### 修正動作
+
+更新背景JavaScript 程式碼以正確呼叫 Close()。
+
+> **注意** 本文適用於撰寫 UWP App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -629,10 +666,6 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
  
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

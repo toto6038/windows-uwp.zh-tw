@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: 最佳化您的 XAML 版面配置
 description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
@@ -66,7 +67,7 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
 [
             **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
 
-```
+```xml
   <Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -83,7 +84,7 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
   </Grid.ColumnDefinitions>
   <TextBlock Text="Options:" Grid.ColumnSpan="2" />
   <CheckBox Content="Power User" Grid.Row="1" Grid.ColumnSpan="2" />
-  <CheckBox Content="Admin" Margin="150,0,0,0” Grid.Row="1" Grid.ColumnSpan="2" />
+  <CheckBox Content="Admin" Margin="150,0,0,0" Grid.Row="1" Grid.ColumnSpan="2" />
   <TextBlock Text="Basic information:" Grid.Row="2" Grid.ColumnSpan="2" />
   <TextBlock Text="Name:" Width="75" Grid.Row="3" />
   <TextBox Width="200" Grid.Row="3" Grid.Column="1" />
@@ -126,7 +127,7 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
 
 常見的 UI 需求是讓元素彼此重疊的版面配置。 通常會使用這種方式，利用邊框間距、邊界、對齊和轉換來放置元素。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控制項已最佳化，可改善重疊元素的版面配置效能。
 
-**重要** 若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions)。
+**重要** 若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### 範例
 
@@ -169,12 +170,12 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
 ## 使用 **SizeChanged** 事件來回應版面配置變更
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
 
-如需良好的效能，[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) 幾乎一向是正確的選擇。 **SizeChanged** 具備直覺式語意。 它會在進行版面配置期間更新 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小時引發。
+如需良好的效能，[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 幾乎一向是正確的選擇。 **SizeChanged** 具備直覺式語意。 它會在進行版面配置期間更新 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小時引發。
 
 [
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
 
 ## 選擇面板
 
@@ -184,6 +185,6 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

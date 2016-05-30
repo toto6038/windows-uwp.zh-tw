@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: 讓 UI 執行緒保持回應
 description: 不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。
@@ -33,7 +34,7 @@ app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初
 
 撰寫可快速返回的事件處理常式。 在需要執行不少的工作量時，排定給背景執行緒並返回。
 
-您可以使用 C# 的 **await** 運算子、Visual Basic 的 **Await** 運算子或 C++ 中的委派，以非同步方式排程工作。 但這並不保證您排程的工作一定會在背景執行緒中執行。 許多通用 Windows 平台 (UWP) API 會為您在背景執行緒中排程工作，但如果僅使用 **await** 或委派呼叫您的 app 程式碼，則會在 UI 執行緒中執行該委派或方法。 您必須明確指示何時要在背景執行緒中執行您的 app 程式碼。 在 C# 與 Visual Basic 中，將程式碼傳送到 [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx) 即可做出明確的指示。
+您可以使用 C# 的 **await** 運算子、Visual Basic 的 **Await** 運算子或 C++ 中的委派，以非同步方式排程工作。 但這並不保證您排程的工作一定會在背景執行緒中執行。 許多通用 Windows 平台 (UWP) API 會為您在背景執行緒中排程工作，但如果僅使用 **await** 或委派呼叫您的 app 程式碼，則會在 UI 執行緒中執行該委派或方法。 您必須明確指示何時要在背景執行緒中執行您的 app 程式碼。 在 C# 與 Visual Basic 中，將程式碼傳送到 [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx) 即可做出明確的指示。
 
 請記住，只有從 UI 執行緒才能存取 UI 元素。 啟動背景工作之前先使用 UI 執行緒存取 UI 元素，以及/或在背景執行緒上使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 或 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918)。
 
@@ -59,41 +60,41 @@ public class AsyncExample
 ```
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-public class Example
-{
-    // ...
-    private async void NextMove-Click(object sender, RoutedEventArgs e)
-    {
-        await Task.Run(() => ComputeNextMove());
-        // Update the UI with results
-    }
-
-    private async Task ComputeNextMove()
-    {
-        // ...
-    }
-    // ...
-}
-```
-```vb
-Public Class Example
-    ' ...
-    Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        Await Task.Run(Function() ComputeNextMove())
-        ' update the UI with results
-    End Sub
-
-    Private Async Function ComputeNextMove() As Task
-        ' ...
-    End Function
-    ' ...
-End Class
-```
+> ```csharp
+> public class Example
+> {
+>     // ...
+>     private async void NextMove-Click(object sender, RoutedEventArgs e)
+>     {
+>         await Task.Run(() => ComputeNextMove());
+>         // Update the UI with results
+>     }
+> 
+>     private async Task ComputeNextMove()
+>     {
+>         // ...
+>     }
+>     // ...
+> }
+> ```
+> ```vb
+> Public Class Example
+>     ' ...
+>     Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>         Await Task.Run(Function() ComputeNextMove())
+>         ' update the UI with results
+>     End Sub
+> 
+>     Private Async Function ComputeNextMove() As Task
+>         ' ...
+>     End Function
+>     ' ...
+> End Class
+> ```
 
 在這個範例中，`NextMove-Click` 處理常式會回到 **await**，讓 UI 執行緒保持回應。 但在 `ComputeNextMove` (在背景執行緒上執行) 完成之後，該處理常式又會再次執行。 處理常式中的其餘程式碼會以結果更新 UI。
 
-> **注意** UWP 還有 [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) 和 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) API，可用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
+> **注意** UWP 還有 [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) 和 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API，可用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
 
 ## 相關主題
 
@@ -101,6 +102,6 @@ End Class
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

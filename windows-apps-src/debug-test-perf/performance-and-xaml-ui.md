@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: 效能
 description: 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。
@@ -13,11 +14,11 @@ description: 使用者會期望其 app 保持回應性，並可自在地使用�
 
 | 主題 | 說明 |
 |-------|-------------|
-| [規劃效能](planning-and-measuring-performance.md) | 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例有哪些；定義良好效能所代表的意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 |
+| [規劃效能](planning-and-measuring-performance.md) | 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 |
 | [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md) | 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 效能和啟動時間。 |
 | [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md) | 透過資料虛擬化改善 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 效能和啟動時間。 |
 | [改善記憶體回收效能](improve-garbage-collection-performance.md) | 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 |
-| [讓 UI 執行緒保持回應](keep-the-ui-thread-responsive.md) | 不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。 這對於不同的 app 有不同的意義。 對某些 app 而言，這表示提供更實際的物理性質、更快地從磁碟或網路載入資料、快速地呈現複雜的場景和在頁面之間瀏覽、立即找到方向，或是快速處理資料。 不論執行何種計算，使用者都會希望 app 可以回應輸入，不希望有看似在「思考」而停止回應的情況發生。 |
+| [讓 UI 執行緒保持回應](keep-the-ui-thread-responsive.md) | 不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。 這對於不同的 app 有不同的意義。 對某些 app 而言，這表示提供更實際的物理性質、更快地從磁碟或網路載入資料、快速地呈現複雜的場景和在頁面之間瀏覽、立即找到方向，或是快速處理資料。 不論執行何種計算，使用者都會希望 app 可以回應輸入，不希望有看似在「思考」&quot;&quot;而停止回應的情況發生。 |
 | [最佳化您的 XAML 標記](optimize-xaml-loading.md) | 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。 | 
 | [最佳化您的 XAML 版面配置](optimize-your-xaml-layout.md) | 在 CPU 使用量與記憶體負荷方面，版面配置可說是 XAML app 中高度耗費資源的一部分。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。 | 
 | [MVVM 和語言效能祕訣](mvvm-performance-tips.md) | 本主題討論與您的軟體設計模式及程式設計語言選擇相關的一些效能考量。 |
@@ -30,6 +31,6 @@ description: 使用者會期望其 app 保持回應性，並可自在地使用�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

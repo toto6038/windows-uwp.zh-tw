@@ -1,4 +1,5 @@
 ---
+author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal 核心 API 參考
 description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
@@ -8,7 +9,7 @@ description: 了解可用來存取資料並以程式設計方式控制裝置的 
 
 Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
 
-## App 部署
+## 應用程式部署
 
 ---
 ### 安裝 App
@@ -19,8 +20,8 @@ Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存�
 
 方法      | 要求 URI
 :------     | :-----
-POST | /api/appx/packagemanager/package
-
+POST | /api/app/packagemanager/package
+<br />
 **URI 參數**
 
 您可以在要求 URI 上指定下列其他參數：
@@ -28,7 +29,7 @@ POST | /api/appx/packagemanager/package
 URI 參數 | 描述
 :---          | :---
 package   | (**必要**) 要安裝之套件的檔案名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -39,12 +40,16 @@ package   | (**必要**) 要安裝之套件的檔案名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 部署要求已受理並正在處理
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -61,8 +66,8 @@ package   | (**必要**) 要安裝之套件的檔案名稱。
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/appx/packagemanager/state
-
+GET | /api/app/packagemanager/state
+<br />
 **URI 參數**
 
 - 無
@@ -77,12 +82,16 @@ GET | /api/appx/packagemanager/state
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 最後部署的結果
+204 | 正在執行安裝
+404 | 找不到安裝動作
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -99,8 +108,8 @@ GET | /api/appx/packagemanager/state
  
 方法      | 要求 URI
 :------     | :-----
-DELETE | /api/appx/packagemanager/package
-
+DELETE | /api/app/packagemanager/package
+<br />
 
 **URI 參數**
 
@@ -116,12 +125,16 @@ DELETE | /api/appx/packagemanager/package
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -139,8 +152,8 @@ DELETE | /api/appx/packagemanager/package
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/appx/packagemanager/packages
-
+GET | /api/app/packagemanager/packages
+<br />
 
 **URI 參數**
 
@@ -156,12 +169,41 @@ GET | /api/appx/packagemanager/packages
 
 **回應**
 
-回應會包含一份已安裝套件與其相關詳細資料的清單。
-
+回應會包含一份已安裝套件與其相關詳細資料的清單。 適用於此回應的範本如下所示。
+```
+{"InstalledPackages": [
+    {
+        "Name": string,
+        "PackageFamilyName": string,
+        "PackageFullName": string,
+        "PackageOrigin": int, (https://msdn.microsoft.com/en-us/library/windows/desktop/dn313167(v=vs.85).aspx)
+        "PackageRelativeId": string,
+        "Publisher": string,
+        "Version": {
+            "Build": int,
+            "Major": int,
+            "Minor": int,
+            "Revision": int
+     },
+     "RegisteredUsers": [
+     {
+        "UserDisplayName": string,
+        "UserSID": string
+     },...
+     ]
+    },...
+]}
+```
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -182,7 +224,7 @@ GET | /api/appx/packagemanager/packages
 方法      | 要求 URI
 :------     | :-----
 GET | /api/devicemanager/devices
-
+<br />
 
 **URI 參數**
 
@@ -198,12 +240,31 @@ GET | /api/devicemanager/devices
 
 **回應**
 
-- 回應會包括 JSON 結構，其中包含階層式裝置樹狀目錄。
+此回應包含附加至裝置的裝置 JSON 陣列。
+``` 
+{"DeviceList": [
+    {
+        "Class": string,
+        "Description": string,
+        "ID": string,
+        "Manufacturer": string,
+        "ParentID": string,
+        "ProblemCode": int,
+        "StatusCode": int
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -222,7 +283,7 @@ GET | /api/devicemanager/devices
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/dumps
-
+<br />
 
 **URI 參數**
 
@@ -238,12 +299,18 @@ GET | /api/debug/dump/usermode/dumps
 
 **回應**
 
-- 回應會包含每個側載應用程式的損毀傾印清單。
+回應會包含每個側載應用程式的損毀傾印清單。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -260,7 +327,7 @@ GET | /api/debug/dump/usermode/dumps
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashcontrol
-
+<br />
 
 **URI 參數**
 
@@ -269,7 +336,7 @@ GET | /api/debug/dump/usermode/crashcontrol
 URI 參數 | 描述
 :---          | :---
 packageFullname   | (**必要**) 側載 App 的完整套件名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -280,12 +347,21 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 
 **回應**
 
-- 無
+回應具有下列格式。
+```
+{"CrashDumpEnabled": bool}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -302,7 +378,7 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 方法      | 要求 URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashdump
-
+<br />
 
 **URI 參數**
 
@@ -312,7 +388,7 @@ URI 參數 | 描述
 :---          | :---
 packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 fileName   | (**必要**) 應該刪除之傾印檔案的名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -323,12 +399,16 @@ fileName   | (**必要**) 應該刪除之傾印檔案的名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -346,7 +426,7 @@ fileName   | (**必要**) 應該刪除之傾印檔案的名稱。
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashcontrol
 
-
+<br />
 **URI 參數**
 
 您可以在要求 URI 上指定下列其他參數：
@@ -354,7 +434,7 @@ DELETE | /api/debug/dump/usermode/crashcontrol
 URI 參數 | 描述
 :---          | :---
 packageFullname   | (**必要**) 側載 App 的完整套件名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -365,12 +445,16 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -387,7 +471,7 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashdump
-
+<br />
 
 **URI 參數**
 
@@ -397,7 +481,7 @@ URI 參數 | 描述
 :---          | :---
 packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 fileName   | (**必要**) 您要下載之傾印檔案的名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -408,12 +492,18 @@ fileName   | (**必要**) 您要下載之傾印檔案的名稱。
 
 **回應**
 
-- 回應會包含傾印檔案。 您可以使用 WinDbg 或 Visual Studio 檢查傾印檔案。
+回應會包含傾印檔案。 您可以使用 WinDbg 或 Visual Studio 檢查傾印檔案。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -430,7 +520,7 @@ fileName   | (**必要**) 您要下載之傾印檔案的名稱。
 方法      | 要求 URI
 :------     | :-----
 POST | /api/debug/dump/usermode/crashcontrol
-
+<br />
 
 **URI 參數**
 
@@ -439,7 +529,7 @@ POST | /api/debug/dump/usermode/crashcontrol
 URI 參數 | 描述
 :---          | :---
 packageFullname   | (**必要**) 側載 App 的完整套件名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -450,12 +540,14 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -472,7 +564,7 @@ packageFullname   | (**必要**) 側載 App 的完整套件名稱。
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dumplist
-
+<br />
 
 **URI 參數**
 
@@ -488,12 +580,24 @@ GET | /api/debug/dump/kernel/dumplist
 
 **回應**
 
-- 回應會包含一份傾印檔案名稱與這些檔案大小的清單。
+回應會包含一份傾印檔案名稱與這些檔案大小的清單。 此清單必須使用下列格式。 第二個 *FileName* 參數為檔案大小。 這是已知的錯誤。
+```
+{"DumpFiles": [
+    {
+        "FileName": string,
+        "FileName": string
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -509,7 +613,7 @@ GET | /api/debug/dump/kernel/dumplist
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dump
-
+<br />
 
 **URI 參數**
 
@@ -518,7 +622,7 @@ GET | /api/debug/dump/kernel/dump
 URI 參數 | 描述
 :---          | :---
 filename   | (**必要**) 傾印檔案的檔案名稱。 您可以透過使用 API 來取得傾印清單，以找到此項目。
-
+<br />
 **要求標頭**
 
 - 無
@@ -529,12 +633,18 @@ filename   | (**必要**) 傾印檔案的檔案名稱。 您可以透過使用 A
 
 **回應**
 
-- 回應會包含傾印檔案。 您可以使用 WinDbg 來檢查此檔案。
+回應會包含傾印檔案。 您可以使用 WinDbg 來檢查此檔案。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -551,7 +661,7 @@ filename   | (**必要**) 傾印檔案的檔案名稱。 您可以透過使用 A
 :------     | :-----
 GET | /api/debug/dump/kernel/crashcontrol
 
-
+<br />
 **URI 參數**
 
 - 無
@@ -566,12 +676,26 @@ GET | /api/debug/dump/kernel/crashcontrol
 
 **回應**
 
-- 回應會包含損毀控制設定。 如需有關 CrashControl 的詳細資訊，請參閱 [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) 文章。
+回應會包含損毀控制設定。 如需有關 CrashControl 的詳細資訊，請參閱 [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) 文章。 適用於此回應的範本如下所示。
+```
+{
+    "autoreboot": int,
+    "dumptype": int,
+    "maxdumpcount": int,
+    "overwrite": int
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -587,7 +711,7 @@ GET | /api/debug/dump/kernel/crashcontrol
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/livekernel
-
+<br />
 
 **URI 參數**
 
@@ -603,12 +727,18 @@ GET | /api/debug/dump/livekernel
 
 **回應**
 
-- 回應會包含完整的核心模式傾印。 您可以使用 WinDbg 來檢查此檔案。
+回應會包含完整的核心模式傾印。 您可以使用 WinDbg 來檢查此檔案。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -624,7 +754,7 @@ GET | /api/debug/dump/livekernel
 方法      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/live
-
+<br />
 
 **URI 參數**
 
@@ -633,7 +763,7 @@ GET | /api/debug/dump/usermode/live
 URI 參數 | 描述
 :---          | :---
 pid   | (**必要**) 您感興趣的處理程序唯一處理程序識別碼。
-
+<br />
 **要求標頭**
 
 - 無
@@ -644,12 +774,18 @@ pid   | (**必要**) 您感興趣的處理程序唯一處理程序識別碼。
 
 **回應**
 
-- 回應會包含處理程序傾印。 您可以使用 WinDbg 或 Visual Studio 來檢查此檔案。
+回應會包含處理程序傾印。 您可以使用 WinDbg 或 Visual Studio 來檢查此檔案。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -665,7 +801,7 @@ pid   | (**必要**) 您感興趣的處理程序唯一處理程序識別碼。
 方法      | 要求 URI
 :------     | :-----
 POST | /api/debug/dump/kernel/crashcontrol
-
+<br />
 
 **URI 參數**
 
@@ -677,7 +813,7 @@ autoreboot   | (**選用**) True 或 False。 這指出系統失敗或遭鎖定�
 dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)。
 maxdumpcount   | (**選用**) 要儲存的傾印數目上限。
 overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* 指定的傾印計數器限制時，是否會覆寫舊的傾印。
-
+<br />
 **要求標頭**
 
 - 無
@@ -688,12 +824,16 @@ overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* �
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -706,12 +846,12 @@ overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* �
 
 **要求**
 
-您可以透過使用下列要求格式，以建立即時 ETW 工作階段。 這將會透過 Websocket 管理。
+您可以透過使用下列要求格式，以建立即時 ETW 工作階段。 這將會透過 Websocket 管理。  ETW 事件會在伺服器上進行批次處理，並每秒傳送至用戶端一次。 
  
 方法      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/etw/session/realtime
-
+<br />
 
 **URI 參數**
 
@@ -727,18 +867,73 @@ GET/WebSocket | /api/etw/session/realtime
 
 **回應**
 
-- 回應會包含來自已啟用之提供者的 ETW 事件。
+回應會包含來自已啟用之提供者的 ETW 事件。  請參閱下方的 ETW WebSocket 命令。 
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
 * Windows 電腦
 * HoloLens
 * IoT
+
+### ETW WebSocket 命令
+這些命令會從用戶端傳送至伺服器。
+
+命令 | 說明
+:----- | :-----
+provider *{guid}* enable *{level}* | 在指定層級啟用標示為 *{guid}* (不含括號) 的提供者。 *{level}* 是介於 1 (粗略) 至 5 (詳細) 之間的 **int**。
+provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者。
+
+此回應會從伺服器傳送至用戶端。 此回應會傳送為文字，而您可透過剖析 JSON 取得下列格式。
+```
+{
+    "Events":[
+        {
+            "Timestamp": int,
+            "Provider": string,
+            "ID": int, 
+            "TaskName": string,
+            "Keyword": int,
+            "Level": int,
+            payload objects...
+        },...
+    ],
+    "Frequency": int
+}
+```
+
+承載物件為原始 ETW 事件中提供的額外機碼值組 (字串︰字串)。
+
+範例：
+```
+{
+    "ID" : 42, 
+    "Keyword" : 9223372036854775824, 
+    "Level" : 4, 
+    "Message" : "UDPv4: 412 bytes transmitted from 10.81.128.148:510 to 132.215.243.34:510. ",
+    "PID" : "1218", 
+    "ProviderName" : "Microsoft-Windows-Kernel-Network", 
+    "TaskName" : "KERNEL_NETWORK_TASK_UDPIP", 
+    "Timestamp" : 131039401761757686, 
+    "connid" : "0", 
+    "daddr" : "132.245.243.34", 
+    "dport" : "500", 
+    "saddr" : "10.82.128.118", 
+    "seqnum" : "0", 
+    "size" : "412", 
+    "sport" : "500"
+}
+```
 
 ---
 ### 列舉已登錄的 ETW 提供者
@@ -750,7 +945,7 @@ GET/WebSocket | /api/etw/session/realtime
 方法      | 要求 URI
 :------     | :-----
 GET | /api/etw/providers
-
+<br />
 
 **URI 參數**
 
@@ -766,12 +961,24 @@ GET | /api/etw/providers
 
 **回應**
 
-- 回應會包含 ETW 提供者的清單。 清單會包含每個提供者的易記名稱與 GUID。
+回應會包含 ETW 提供者的清單。 清單會包含每個提供者的易記名稱與 GUID，且使用下列格式。
+```
+{"Providers": [
+    {
+        "GUID": string, (GUID)
+        "Name": string
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -780,18 +987,16 @@ GET | /api/etw/providers
 * IoT
 
 ---
-## 網路功能
----
-### 取得目前的 IP 設定
+### 列舉由平台公開的自訂 ETW 提供者。
 
 **要求**
 
-您可以透過使用下列要求格式，以取得目前的 IP 設定。
+您可以透過使用下列要求格式，以列舉已登錄提供者。
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/networking/ipconfig
-
+GET | /api/etw/customproviders
+<br />
 
 **URI 參數**
 
@@ -807,22 +1012,25 @@ GET | /api/networking/ipconfig
 
 **回應**
 
-- 回應會包含 IP 設定
+200 確定。 回應會包含 ETW 提供者的清單。 清單會包含每個提供者的易記名稱與 GUID。
+
+```
+{"Providers": [
+    {
+        "GUID": string, (GUID)
+        "Name": string
+    },...
+]}
+```
 
 **狀態碼**
 
-下表顯示可當成此作業之結果傳回的其他狀態碼。
-
-HTTP 狀態碼      | 描述
-:------     | :-----
-200 | 已順利完成作業
-500 | 發生內部伺服器錯誤
-
+- 標準狀態碼。
+<br />
 **可用裝置系列**
 
 * Windows Mobile
 * Windows 電腦
-* Xbox
 * HoloLens
 * IoT
 
@@ -838,7 +1046,7 @@ HTTP 狀態碼      | 描述
 方法      | 要求 URI
 :------     | :-----
 GET | /api/os/machinename
-
+<br />
 
 **URI 參數**
 
@@ -854,12 +1062,22 @@ GET | /api/os/machinename
 
 **回應**
 
-- 無
+回應包含下列格式的電腦名稱。 
+
+```
+{"ComputerName": string}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -878,7 +1096,7 @@ GET | /api/os/machinename
 方法      | 要求 URI
 :------     | :-----
 GET | /api/os/info
-
+<br />
 
 **URI 參數**
 
@@ -894,12 +1112,28 @@ GET | /api/os/info
 
 **回應**
 
-- 無
+回應包含下列格式的作業系統資訊。
+
+```
+{
+    "ComputerName": string,
+    "OsEdition": string,
+    "OsEditionId": int,
+    "OsVersion": string,
+    "Platform": string
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -918,7 +1152,7 @@ GET | /api/os/info
 方法      | 要求 URI
 :------     | :-----
 POST | /api/os/machinename
-
+<br />
 
 **URI 參數**
 
@@ -927,7 +1161,7 @@ POST | /api/os/machinename
 URI 參數 | 描述
 :---          | :---
 name | (**必要**) 電腦的新名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -938,12 +1172,14 @@ name | (**必要**) 電腦的新名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -959,12 +1195,13 @@ name | (**必要**) 電腦的新名稱。
 
 **要求**
 
-您可以透過使用下列要求格式，以取得目前執行中的處理程序清單。
+您可以透過使用下列要求格式，以取得目前執行中的處理程序清單。  此清單亦可升級至 WebSocket 連線，且每秒會將相同的 JSON 資料推送至用戶端一次。 
  
 方法      | 要求 URI
 :------     | :-----
 GET | /api/resourcemanager/processes
-
+GET/WebSocket | /api/resourcemanager/processes
+<br />
 
 **URI 參數**
 
@@ -980,12 +1217,33 @@ GET | /api/resourcemanager/processes
 
 **回應**
 
-- 回應會包含一份處理程序與每個處理程序之詳細資料的清單。 該資訊使用 JSON 格式。
+回應會包含一份處理程序與每個處理程序之詳細資料的清單。 此資訊採用 JSON 格式，並具有下列範本。
+```
+{"Processes": [
+    {
+        "CPUUsage": int,
+        "ImageName": string,
+        "PageFileUsage": int,
+        "PrivateWorkingSet": int,
+        "ProcessId": int,
+        "SessionId": int,
+        "UserName": string,
+        "VirtualSize": int,
+        "WorkingSetSize": int
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1003,7 +1261,9 @@ GET | /api/resourcemanager/processes
 方法      | 要求 URI
 :------     | :-----
 GET | /api/resourcemanager/systemperf
-
+GET/WebSocket | /api/resourcemanager/systemperf
+<br />
+此項目亦可升級至 WebSocket 連線。  其每秒會提供一次與下方相同的 JSON 資料。 
 
 **URI 參數**
 
@@ -1019,12 +1279,49 @@ GET | /api/resourcemanager/systemperf
 
 **回應**
 
-- 回應會包含系統的效能統計資料，例如 CPU 與 GPU 使用量、記憶體存取以及網路存取。 此資訊使用 JSON 格式。
+回應會包含系統的效能統計資料，例如 CPU 與 GPU 使用量、記憶體存取以及網路存取。 此資訊採用 JSON 格式，並具有下列範本。
+```
+{
+    "AvailablePages": int,
+    "CommitLimit": int,
+    "CommittedPages": int,
+    "CpuLoad": int,
+    "IOOtherSpeed": int,
+    "IOReadSpeed": int,
+    "IOWriteSpeed": int,
+    "NonPagedPoolPages": int,
+    "PageSize": int,
+    "PagedPoolPages": int,
+    "TotalInstalledInKb": int,
+    "TotalPages": int,
+    "GPUData": 
+    {
+        "AvailableAdapters": [{ (One per detected adapter)
+            "DedicatedMemory": int,
+            "DedicatedMemoryUsed": int,
+            "Description": string,
+            "SystemMemory": int,
+            "SystemMemoryUsed": int,
+            "EnginesUtilization": [ float,... (One per detected engine)]
+        },...
+    ]},
+    "NetworkingData": {
+        "NetworkInBytes": int,
+        "NetworkOutBytes": int
+    }
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1045,7 +1342,7 @@ GET | /api/resourcemanager/systemperf
 方法      | 要求 URI
 :------     | :-----
 GET | /api/power/battery
-
+<br />
 
 **URI 參數**
 
@@ -1061,17 +1358,36 @@ GET | /api/power/battery
 
 **回應**
 
-- 無
+使用以下格式傳回目前的電池狀態資訊。
+```
+{
+    "AcOnline": int (0 | 1),
+    "BatteryPresent": int (0 | 1),
+    "Charging": int (0 | 1),
+    "DefaultAlert1": int,
+    "DefaultAlert2": int,
+    "EstimatedTime": int,
+    "MaximumCapacity": int,
+    "RemainingCapacity": int
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
 * HoloLens
 * IoT
+* 行動裝置版
 
 ---
 ### 取得使用中電源配置
@@ -1083,7 +1399,7 @@ GET | /api/power/battery
 方法      | 要求 URI
 :------     | :-----
 GET | /api/power/activecfg
-
+<br />
 
 **URI 參數**
 
@@ -1099,12 +1415,21 @@ GET | /api/power/activecfg
 
 **回應**
 
-- 無
+使用中電源配置具有下列格式。
+```
+{"ActivePowerScheme": string (guid of scheme)}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1120,7 +1445,9 @@ GET | /api/power/activecfg
 方法      | 要求 URI
 :------     | :-----
 GET | /api/power/cfg/*<power scheme path>*
-
+<br />
+選項：
+- SCHEME_CURRENT
 
 **URI 參數**
 
@@ -1132,16 +1459,20 @@ GET | /api/power/cfg/*<power scheme path>*
 
 **要求主體**
 
-- 無
+根據每個應用程式與設定提供完整電源狀態清單，以標示諸如電池電力偏低或嚴重不足等各種電力狀態。 
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1157,7 +1488,7 @@ GET | /api/power/cfg/*<power scheme path>*
 方法      | 要求 URI
 :------     | :-----
 GET | /api/power/state
-
+<br />
 
 **URI 參數**
 
@@ -1173,57 +1504,25 @@ GET | /api/power/state
 
 **回應**
 
-- 無
+電源狀態資訊具有下列範本。
+```
+{"LowPowerStateAvailable": bool}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
 * HoloLens
-* IoT
-
----
-### 取得睡眠研究報告
-
-**要求**
-
-您可以透過使用下列要求格式，以取得睡眠研究報告。
- 
-方法      | 要求 URI
-:------     | :-----
-GET | /api/power/sleepstudy/reports
-
-
-**URI 參數**
-
-您可以在要求 URI 上指定下列其他參數：
-
-URI 參數 | 描述
-:---          | :---
-FileName | (**必要**) 您要下載之睡眠研究報告的檔案名稱。
-
-**要求標頭**
-
-- 無
-
-**要求主體**
-
-- 無
-
-**回應**
-
-- 無
-
-**狀態碼**
-
-- 標準狀態碼。
-
-**可用裝置系列**
-
-* Windows 電腦
 * IoT
 
 ---
@@ -1236,7 +1535,7 @@ FileName | (**必要**) 您要下載之睡眠研究報告的檔案名稱。
 方法      | 要求 URI
 :------     | :-----
 POST | /api/power/activecfg
-
+<br />
 
 **URI 參數**
 
@@ -1245,7 +1544,7 @@ POST | /api/power/activecfg
 URI 參數 | 描述
 :---          | :---
 scheme | (**必要**) 您要為系統設定之使用中電源配置的配置 GUID。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1256,12 +1555,16 @@ scheme | (**必要**) 您要為系統設定之使用中電源配置的配置 GUI
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1277,7 +1580,7 @@ scheme | (**必要**) 您要為系統設定之使用中電源配置的配置 GUI
 方法      | 要求 URI
 :------     | :-----
 POST | /api/power/cfg/*<power scheme path>*
-
+<br />
 
 **URI 參數**
 
@@ -1287,7 +1590,7 @@ URI 參數 | 描述
 :---          | :---
 valueAC | (**必要**) 要用於 A/C 電源的值。
 valueDC | (**必要**) 要用於電池電力的值。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1298,12 +1601,57 @@ valueDC | (**必要**) 要用於電池電力的值。
 
 **回應**
 
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
+**可用裝置系列**
+
+* Windows 電腦
+* IoT
+
+---
+### 取得睡眠研究報告
+
+**要求**
+
+方法      | 要求 URI
+:------     | :-----
+GET | /api/power/sleepstudy/report
+<br />
+您可以透過使用下列要求格式，以取得睡眠研究報告。
+
+**URI 參數**
+URI 參數 | 描述
+:---          | :---
+FileName | (**必要**) 您要下載之檔案的完整名稱。 此值應該是 hex64 編碼。
+<br />
+**要求標頭**
+
 - 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+回應為包含休眠研究的檔案。 
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1319,7 +1667,7 @@ valueDC | (**必要**) 要用於電池電力的值。
 方法      | 要求 URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
-
+<br />
 
 **URI 參數**
 
@@ -1335,12 +1683,26 @@ GET | /api/power/sleepstudy/reports
 
 **回應**
 
-- 無
+可用的報告清單具有下列範本。
+
+```
+{"Reports": [
+    {
+        "FileName": string
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1355,8 +1717,8 @@ GET | /api/power/sleepstudy/reports
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/power/sleepstudy/reports
-
+GET | /api/power/sleepstudy/transform
+<br />
 
 **URI 參數**
 
@@ -1372,12 +1734,18 @@ GET | /api/power/sleepstudy/reports
 
 **回應**
 
-- 無
+回應包含休眠研究轉換。
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1395,7 +1763,7 @@ GET | /api/power/sleepstudy/reports
 方法      | 要求 URI
 :------     | :-----
 POST | /api/control/restart
-
+<br />
 
 **URI 參數**
 
@@ -1411,12 +1779,14 @@ POST | /api/control/restart
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1435,7 +1805,7 @@ POST | /api/control/restart
 方法      | 要求 URI
 :------     | :-----
 POST | /api/control/shutdown
-
+<br />
 
 **URI 參數**
 
@@ -1451,12 +1821,16 @@ POST | /api/control/shutdown
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1477,7 +1851,7 @@ POST | /api/control/shutdown
 方法      | 要求 URI
 :------     | :-----
 POST | /api/taskmanager/app
-
+<br />
 
 **URI 參數**
 
@@ -1487,7 +1861,7 @@ URI 參數 | 描述
 :---          | :---
 appid   | (**必要**) 您要啟動之 App 的 PRAID。 此值應該是 hex64 編碼。
 package   | (**必要**) 您要啟動之應用程式套件的完整名稱。 此值應該是 hex64 編碼。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1498,12 +1872,16 @@ package   | (**必要**) 您要啟動之應用程式套件的完整名稱。 此
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1522,7 +1900,7 @@ package   | (**必要**) 您要啟動之應用程式套件的完整名稱。 此
 方法      | 要求 URI
 :------     | :-----
 DELETE | /api/taskmanager/app
-
+<br />
 
 **URI 參數**
 
@@ -1532,7 +1910,7 @@ URI 參數 | 描述
 :---          | :---
 package   | (**必要**) 您要停止之應用程式套件的完整名稱。 此值應該是 hex64 編碼。
 forcestop   | (**選用**) **yes** 的值表示系統應該強制停止所有處理程序。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1543,12 +1921,16 @@ forcestop   | (**選用**) **yes** 的值表示系統應該強制停止所有處
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1558,18 +1940,18 @@ forcestop   | (**選用**) **yes** 的值表示系統應該強制停止所有處
 * IoT
 
 ---
-## WiFi
+## 網路功能
 ---
-### 列舉無線網路介面
+### 取得目前的 IP 設定
 
 **要求**
 
-您可以透過使用下列要求格式，以列舉可用的無線網路介面。
+您可以透過使用下列要求格式，以取得目前的 IP 設定。
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/wifi/interfaces
-
+GET | /api/networking/ipconfig
+<br />
 
 **URI 參數**
 
@@ -1585,12 +1967,120 @@ GET | /api/wifi/interfaces
 
 **回應**
 
-- 含有詳細資料的可用無線介面清單。 詳細資料將會包含例如 GUID、描述、易記名稱等項目。
+回應包含下列範本中的 IP 設定。
+
+```
+{"Adapters": [
+    {
+        "Description": string,
+        "HardwareAddress": string,
+        "Index": int,
+        "Name": string,
+        "Type": string,
+        "DHCP": {
+            "LeaseExpires": int, (timestamp)
+            "LeaseObtained": int, (timestamp)
+            "Address": {
+                "IpAddress": string,
+                "Mask": string
+            }
+        },
+        "WINS": {(WINS is optional)
+            "Primary": {
+                "IpAddress": string,
+                "Mask": string
+            },
+            "Secondary": {
+                "IpAddress": string,
+                "Mask": string
+            }
+        },
+        "Gateways": [{ (always 1+)
+            "IpAddress": "10.82.128.1",
+            "Mask": "255.255.255.255"
+            },...
+        ],
+        "IpAddresses": [{ (always 1+)
+            "IpAddress": "10.82.128.148",
+            "Mask": "255.255.255.0"
+            },...
+        ]
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* Xbox
+* HoloLens
+* IoT
+
+--
+### 列舉無線網路介面
+
+**要求**
+
+您可以透過使用下列要求格式，以列舉可用的無線網路介面。
+ 
+方法      | 要求 URI
+:------     | :-----
+GET | /api/wifi/interfaces
+<br />
+
+**URI 參數**
+
+- 無
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+具有詳細資料的可用無線介面清單，使用下列格式。
+
+``` 
+{"Interfaces": [{
+    "Description": string,
+    "GUID": string (guid with curly brackets),
+    "Index": int,
+    "ProfilesList": [
+        {
+            "GroupPolicyProfile": bool,
+            "Name": string, (Network currently connected to)
+            "PerUserProfile": bool
+        },...
+    ]
+    }
+]}
+```
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1609,7 +2099,7 @@ GET | /api/wifi/interfaces
 方法      | 要求 URI
 :------     | :-----
 GET | /api/wifi/networks
-
+<br />
 
 **URI 參數**
 
@@ -1617,8 +2107,8 @@ GET | /api/wifi/networks
 
 URI 參數 | 描述
 :---          | :---
-interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID。
-
+interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 
+<br />
 **要求標頭**
 
 - 無
@@ -1629,12 +2119,38 @@ interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID。
 
 **回應**
 
-- 可在提供的 *interface* 上找到的無線網路清單。 這包括網路的詳細資料。
+可在提供的 *interface* 上找到的無線網路清單。 這包括網路的詳細資料，使用下列格式。
+
+```
+{"AvailableNetworks": [
+    {
+        "AlreadyConnected": bool,
+        "AuthenticationAlgorithm": string, (WPA2, etc)
+        "Channel": int,
+        "CipherAlgorithm": string, (e.g. AES)
+        "Connectable": int, (0 | 1)
+        "InfrastructureType": string,
+        "ProfileAvailable": bool,
+        "ProfileName": string,
+        "SSID": string,
+        "SecurityEnabled": int, (0 | 1)
+        "SignalQuality": int,
+        "BSSID": [int,...],
+        "PhysicalTypes": [string,...]
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1653,7 +2169,7 @@ interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID。
 方法      | 要求 URI
 :------     | :-----
 POST | /api/wifi/network
-
+<br />
 
 **URI 參數**
 
@@ -1663,8 +2179,9 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
 op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (**必要，如果 *op* == connect**) 要連線的 SSID。
-key   | (**必要，如果 *op* == connect**) 共用金鑰。
+ssid   | (**必要，如果 *op* == 連線**) 要連線的 SSID。
+金鑰   | (**必要，如果 *op* == 連線且需要網路驗證**) 共用金鑰。
+createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
 
 **要求標頭**
 
@@ -1676,12 +2193,14 @@ key   | (**必要，如果 *op* == connect**) 共用金鑰。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1700,7 +2219,7 @@ key   | (**必要，如果 *op* == connect**) 共用金鑰。
 方法      | 要求 URI
 :------     | :-----
 DELETE | /api/wifi/network
-
+<br />
 
 **URI 參數**
 
@@ -1710,7 +2229,7 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。
 profile   | (**必要**) 要刪除的設定檔名稱。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1721,12 +2240,14 @@ profile   | (**必要**) 要刪除的設定檔名稱。
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1746,8 +2267,8 @@ profile   | (**必要**) 要刪除的設定檔名稱。
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/wer/reports/file
-
+GET | /api/wer/report/file
+<br />
 
 **URI 參數**
 
@@ -1757,9 +2278,9 @@ URI 參數 | 描述
 :---          | :---
 user   | (**必要**) 與報告關聯的使用者名稱。
 type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。
-name   | (**必要**) 報告的名稱。
-file   | (**必要**) 要從報告下載之檔案的名稱。
-
+name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 
+file   | (**必要**) 要從報告下載之檔案的名稱。 此應為 base64 編碼。 
+<br />
 **要求標頭**
 
 - 無
@@ -1770,12 +2291,18 @@ file   | (**必要**) 要從報告下載之檔案的名稱。
 
 **回應**
 
-- 無
+- 回應包含所要求的檔案。 
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1791,8 +2318,8 @@ file   | (**必要**) 要從報告下載之檔案的名稱。
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/wer/reports/files
-
+GET | /api/wer/report/files
+<br />
 
 **URI 參數**
 
@@ -1802,24 +2329,35 @@ URI 參數 | 描述
 :---          | :---
 user   | (**必要**) 與報告關聯的使用者。
 type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。
-name   | (**必要**) 報告的名稱。
-
+name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 
+<br />
 **要求標頭**
 
 - 無
 
 **要求主體**
 
-- 無
+```
+{"Files": [
+    {
+        "Name": string, (Filename, not base64 encoded)
+        "Size": int (bytes)
+    },...
+]}
+```
 
 **回應**
 
-- 無
-
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1836,7 +2374,7 @@ name   | (**必要**) 報告的名稱。
 方法      | 要求 URI
 :------     | :-----
 GET | /api/wer/reports
-
+<br />
 
 **URI 參數**
 
@@ -1852,12 +2390,32 @@ GET | /api/wer/reports
 
 **回應**
 
-- 無
+WER 報告使用下列格式。
+
+```
+{"WerReports": [
+    {
+        "User": string,
+        "Reports": [
+            {
+                "CreationTime": int,
+                "Name": string, (not base64 encoded)
+                "Type": string ("Queue" or "Archive")
+            },
+    },...
+]}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows 電腦
@@ -1871,12 +2429,12 @@ GET | /api/wer/reports
 
 **要求**
 
-您可以透過使用下列要求格式，以上傳 WPR 設定檔，並使用該設定檔開始追蹤。
+您可以透過使用下列要求格式，以上傳 WPR 設定檔，並使用該設定檔開始追蹤。  一次僅可執行一個追蹤。 此設定檔不會保留在裝置上。 
  
 方法      | 要求 URI
 :------     | :-----
 POST | /api/wpr/customtrace
-
+<br />
 
 **URI 參數**
 
@@ -1892,12 +2450,25 @@ POST | /api/wpr/customtrace
 
 **回應**
 
-- 傳回 WPR 工作階段狀態。
+WPR 工作階段狀態使用下列格式。
+
+```
+{
+    "SessionType": string, (Running or Idle) 
+    "State": string (normal or boot)
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1915,7 +2486,7 @@ POST | /api/wpr/customtrace
 方法      | 要求 URI
 :------     | :-----
 POST | /api/wpr/boottrace
-
+<br />
 
 **URI 參數**
 
@@ -1924,7 +2495,7 @@ POST | /api/wpr/boottrace
 URI 參數 | 描述
 :---          | :---
 profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。
-
+<br />
 **要求標頭**
 
 - 無
@@ -1935,12 +2506,25 @@ profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤
 
 **回應**
 
-- 啟動時，此 API 會傳回 WPR 工作階段狀態。
+啟動時，此 API 會傳回使用下列格式的 WPR 工作階段狀態。
+
+```
+{
+    "SessionType": string, (Running or Idle) 
+    "State": string (boot)
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1958,7 +2542,7 @@ profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤
 方法      | 要求 URI
 :------     | :-----
 GET | /api/wpr/boottrace
-
+<br />
 
 **URI 參數**
 
@@ -1978,8 +2562,14 @@ GET | /api/wpr/boottrace
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -1992,12 +2582,12 @@ GET | /api/wpr/boottrace
 
 **要求**
 
-您可以透過使用下列要求格式，以啟動 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。
+您可以透過使用下列要求格式，以啟動 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。  一次僅可執行一個追蹤。 
  
 方法      | 要求 URI
 :------     | :-----
 POST | /api/wpr/trace
-
+<br />
 
 **URI 參數**
 
@@ -2006,7 +2596,7 @@ POST | /api/wpr/trace
 URI 參數 | 描述
 :---          | :---
 profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。
-
+<br />
 **要求標頭**
 
 - 無
@@ -2017,12 +2607,25 @@ profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱�
 
 **回應**
 
-- 啟動時，此 API 會傳回 WPR 工作階段狀態。
+啟動時，此 API 會傳回使用下列格式的 WPR 工作階段狀態。
+
+```
+{
+    "SessionType": string, (Running or Idle) 
+    "State": string (normal)
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -2040,7 +2643,7 @@ profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱�
 方法      | 要求 URI
 :------     | :-----
 GET | /api/wpr/trace
-
+<br />
 
 **URI 參數**
 
@@ -2060,8 +2663,14 @@ GET | /api/wpr/trace
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -2079,7 +2688,7 @@ GET | /api/wpr/trace
 方法      | 要求 URI
 :------     | :-----
 GET | /api/wpr/status
-
+<br />
 
 **URI 參數**
 
@@ -2095,12 +2704,25 @@ GET | /api/wpr/status
 
 **回應**
 
-- WPR 追蹤工作階段的狀態。
+WPR 追蹤工作階段的狀態，使用下列格式。
+
+```
+{
+    "SessionType": string, (Running or Idle) 
+    "State": string (normal or boot)
+}
+```
 
 **狀態碼**
 
-- 標準狀態碼。
+此 API 具有下列預期狀態碼。
 
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
 **可用裝置系列**
 
 * Windows Mobile
@@ -2109,6 +2731,6 @@ GET | /api/wpr/status
 * IoT
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

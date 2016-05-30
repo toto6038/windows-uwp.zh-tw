@@ -1,7 +1,8 @@
 ---
+author: mcleblanc
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: 通用 Windows 平台元件和最佳化互通性
-description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
+description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。
 ---
 # 通用 Windows 平台元件和最佳化互通性
 
@@ -19,7 +20,7 @@ description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通�
 
 UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程式的語言存取。 您可以使用 C# 或 Microsoft Visual Basic 中的 UWP 類型，其使用方式與 .NET 物件的使用方式相同。 您不需要執行平台叫用方法呼叫，就可以存取 UWP 元件。 這使得撰寫應用程式比較不複雜，但是請務必了解會發生比預期更多的互動性。 如果 UWP 元件是以非 C# 或 Visual Basic 的語言來撰寫，當您使用該元件時，會跨越互通性界限。 跨越互通性界限可能會影響應用程式的效能。
 
-當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP app 的 .NET，以獲得較佳的效能。
+當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP App 的 .NET，以獲得較佳的效能。
 
 **注意**  
 大部分隨附在 Windows 10 中的 UWP 元件是以 C++ 實作，因此從 C# 或 Visual Basic 使用這些元件時，可以跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
@@ -38,7 +39,7 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 ### 考慮使用適用於 UWP 應用程式的 .NET
 
-在某些情況下，您可以使用 UWP 或適用於 UWP 應用程式的 .NET 來完成工作。 建議您試著不要混合使用 .NET 類型與 UWP 類型。 試著只使用其中一種或其他種類型。 例如，您可以使用 [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) 類型 (UWP 類型) 或是 [**System.Xml.XmlReader**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) 類型 (.NET 類型)，來分析 XML 的資料流。 使用來自與資料流相同技術的 API。 例如，如果您從 [**MemoryStream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx) 讀取 XML，請使用 **System.Xml.XmlReader** 類型，因為兩個類型都是 .NET 類型。 如果您從檔案讀取，請使用 **Windows.Data.Xml.Dom.XmlDocument** 類型，因為檔案 API 與 **XmlDocument** 是 UWP 元件。
+在某些情況下，您可以使用 UWP 或適用於 UWP 應用程式的 .NET 來完成工作。 建議您試著不要混合使用 .NET 類型與 UWP 類型。 試著只使用其中一種或其他種類型。 例如，您可以使用 [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) 類型 (UWP 類型) 或是 [**System.Xml.XmlReader**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.xmlreader.aspx) 類型 (.NET 類型)，來分析 XML 的資料流。 使用來自與資料流相同技術的 API。 例如，如果您從 [**MemoryStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.memorystream.aspx) 讀取 XML，請使用 **System.Xml.XmlReader** 類型，因為兩個類型都是 .NET 類型。 如果您從檔案讀取，請使用 **Windows.Data.Xml.Dom.XmlDocument** 類型，因為檔案 API 與 **XmlDocument** 是 UWP 元件。
 
 ### 將 Window 執行階段物件複製到 .NET 類型
 
@@ -69,11 +70,11 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 ![互通性轉換不應占去大量程式執行時間。](images/interop-transitions.png)
 
 [
-            **.NET for Windows apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
+            **.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
 
-您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析應用程式效能前，可以使用 [**功能**] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
+您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析 app 效能前，可以使用 [**功能**] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
 
-如果您的 app 因互通性負荷而變慢，您可以在最忙碌的程式碼路徑中減少對 UWP API 的呼叫，以便提高 app 的效能。 例如，若要在不斷查詢 [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) 位置和維度以執行大量物理計算的遊戲引擎中節省執行時間，您可以將來自 **UIElements** 的必要資訊儲存到區域變數，並在這些快取的值上進行計算，然後在計算完成後將最終結果指派回 **UIElements**。 另一個例子：如果 C# 或 Visual Basic 程式碼大量存取某個集合，則使用 [**System.Collections**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) 命名空間中的集合比使用 [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 命名空間中的集合更有效率。 您也可以考慮將 UWP 元件的呼叫結合起來；可以這樣做的其中一個範例就是使用 [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API。
+如果您的 app 因互通性負荷而變慢，您可以在最忙碌的程式碼路徑中減少對 UWP API 的呼叫，以便提高 app 的效能。 例如，若要在不斷查詢 [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) 位置和維度以執行大量物理計算的遊戲引擎中節省執行時間，您可以將來自 **UIElements** 的必要資訊儲存到區域變數，並在這些快取的值上進行計算，然後在計算完成後將最終結果指派回 **UIElements**。 另一個例子：如果 C# 或 Visual Basic 程式碼大量存取某個集合，則使用 [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) 命名空間中的集合比使用 [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 命名空間中的集合更有效率。 您也可以考慮將 UWP 元件的呼叫結合起來；可以這樣做的其中一個範例就是使用 [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API。
 
 ### 建置 UWP 元件
 
@@ -85,6 +86,6 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
