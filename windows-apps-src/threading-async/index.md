@@ -1,7 +1,8 @@
 ---
+author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: 執行緒和非同步程式設計
-description: 執行緒和非同步程式設計可讓您的應用程式以非同步方式完成平行執行緒中的工作。
+description: 執行緒和非同步程式設計可讓您的 app 在平行執行緒中以非同步方式完成工作。
 ---
 # 執行緒和非同步程式設計
 
@@ -24,7 +25,7 @@ description: 執行緒和非同步程式設計可讓您的應用程式以非同�
 | 主題                                                                                                          | 描述                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | [非同步程式設計 (UWP app)](asynchronous-programming-universal-windows-platform-apps.md)              | 本主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C++ 元件延伸 (C++/CX) 以及 JavaScript 中的表示方式。 |
-| [C++ 的非同步程式設計 (UWP app)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文描述透過使用 ppltasks.h 的 <code>concurrency</code> 命名空間中定義的 <code>task</code> 類別使用 C++/CX 中非同步方法的建議方式。 |
+| [C++ 的非同步程式設計 (UWP App)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文描述透過使用在 ppltasks.h 內 <code>concurrency</code> 命名空間中定義的 <code>task</code> 類別，於 C++/CX 中運用非同步方法的建議方式。 |
 | [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)                         | 本主題描述使用執行緒集區的最佳做法。 |
 | [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。 本主題討論如何在 C# 或 Microsoft Visual Basic 使用 UWP 的非同步方法。 |
 | [建立定期工作項目](create-a-periodic-work-item.md)                                                   | 了解如何建立定期重複執行的工作項目。 |
@@ -36,6 +37,6 @@ description: 執行緒和非同步程式設計可讓您的應用程式以非同�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

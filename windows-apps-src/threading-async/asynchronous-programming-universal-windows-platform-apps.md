@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: 非同步程式設計
 description: 這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 元件延伸 (C\+\+/CX) 以及 JavaScript 中的表示方式。
@@ -76,6 +77,6 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

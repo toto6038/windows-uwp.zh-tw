@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。
 title: C++ 中的非同步程式設計
@@ -6,7 +7,7 @@ title: C++ 中的非同步程式設計
 
 # C++ 中的非同步程式設計
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 的 `concurrency` 命名空間中所定義的 `task` 類別)。
 
@@ -53,7 +54,7 @@ void App::TestAsync()
     // Recommended:
     auto deviceEnumTask = create_task(deviceOp);
 
-    // Call the task’s .then member function, and provide
+    // Call the task's .then member function, and provide
     // the lambda to be invoked when the async operation completes.
     deviceEnumTask.then( [this] (DeviceInformationCollection^ devices ) 
     {       
@@ -67,15 +68,17 @@ void App::TestAsync()
 }
 ```
 
-[**task::then**][taskThen] 函式建立並傳回的工作稱為「接續」**。 使用者提供的 Lambda 輸入引數 (在這個情況中) 會是工作完成後所產生的結果。 如果您直接使用 **IAsyncOperation** 介面，它是與呼叫 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 所擷取的值相同的值。
+[
+            **task::then**][taskThen] 函式建立並傳回的工作稱為「接續」**。 使用者提供的 Lambda 輸入引數 (在這個情況中) 會是工作完成後所產生的結果。 如果您直接使用 **IAsyncOperation** 介面，它是與呼叫 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 所擷取的值相同的值。
 
-[**task::then**][taskThen] 方法會立即傳回，而且除非非同步工作成功完成，否則不會執行它的委派。 在這個範例中，如果非同步作業擲回例外狀況，或者因取消要求而以取消狀態結束，則永遠不會執行接續。 我們稍後會描述如何編寫即使先前工作被取消或失敗，仍會執行的接續。
+[
+            **task::then**][taskThen] 方法會立即傳回，而且除非非同步工作成功完成，否則不會執行它的委派。 在這個範例中，如果非同步作業擲回例外狀況，或者因取消要求而以取消狀態結束，則永遠不會執行接續。 我們稍後會描述如何編寫即使先前工作被取消或失敗，仍會執行的接續。
 
 雖然您在本機堆疊中宣告這個工作變數，不過它會管理自己的週期，只會在所有作業完成且其所有相關參照超出範圍後，才刪除這個工作變數 (即使作業完成前已經傳回該方法)。
 
 ## 建立工作鏈結
 
-非同步程式設計中通常會定義一連串的作業 (稱為「工作鏈結」**)，只有上一個接續完成後才會繼續執行下一個。 有時上一個 (或「前項」**) 工作會產生接續要接受的輸入值。 使用 [**task::then**][taskThen] 方法可讓您以直接又簡單的方法建立工作鏈結，這個方法會傳回 **task<T>**，其中 **T** 是 Lambda 函式的傳回類型。 您可以將多個接續編寫成一個工作鏈結：`myTask.then(…).then(…).then(…);`
+非同步程式設計中通常會定義一連串的作業 (稱為「工作鏈結」**)，只有上一個接續完成後才會繼續執行下一個。 有時上一個 (或「前項」**) 工作會產生接續要接受的輸入值。 使用 [**task::then**][taskThen] 方法可讓您以直接又簡單的方法建立工作鏈結，這個方法會傳回 **task<T>**，其中 **T** 是 Lambda 函式的傳回類型。 您可以將多個接續編寫成一個工作鏈結： `myTask.then(…).then(…).then(…);`
 
 當接續建立新的非同步作業時，工作鏈結尤為實用；這種工作稱為非同步工作。 下列範例說明有兩個接續的工作鏈結。 初始工作會取得現有檔案的控制代碼，而當該作業完成時，第一個接續會啟動新的非同步作業來刪除檔案。 當作業完成時，會執行第二個接續，然後輸出一個確認訊息。
 
@@ -111,7 +114,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 ## Lambda 函式傳回類型和工作傳回類型
 
-在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation<SyndicationFeed^>^**，接續會傳回 **task<SyndicationFeed^>**，而非 **task<task<SyndicationFeed^>>** 或 **task<IAsyncOperation<SyndicationFeed^>^>^**。 這個處理程序稱為「非同步解除包裝」**，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
+在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」**，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
 
 在上一個範例中，請注意工作傳回的是 **task<void>** 事件 (即使它的 Lambda 傳回 [**IAsyncInfo**][IAsyncInfo] 物件)。 下表摘要說明 Lambda 函式和封入工作之間的類型轉換：
 
@@ -120,7 +123,7 @@ void App::DeleteWithTasks(String^ fileName)
 | Lambda 傳回類型                                     | `.then` 傳回類型 |
 | TResult                                                | 工作<TResult> |
 | IAsyncOperation<TResult>^                        | 工作<TResult> |
-| IAsyncOperationWithProgress<TResult, TProgress>^ | 工作<TResult> |
+| IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | 工作<TResult> |
 |IAsyncAction^                                           | 工作<void>    |
 | IAsyncActionWithProgress<TProgress>^             |工作<void>     |
 | 工作<TResult>                                    |工作<TResult>  |
@@ -153,7 +156,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 如果您希望即使接續在前項已經取消或擲回例外狀況的情況下仍繼續執行，請將 Lambda 函式的輸入指定為 **task<TResult>** 來將接續變成工作型接續，或在前項工作的 Lambda 傳回 [**IAsyncAction^**][IAsyncAction] 時指定為 **task<void>**。
 
-若要處理工作鏈結中的錯誤和取消作業，您不需要將每個接續變成工作型接續，也不必在 `try…catch` 區塊置入每個可能擲回的作業。 您可以在工作鏈結的尾端加上工作型接續，然後在該處處理所有的錯誤。 任何例外狀況 (包含 [**task\_canceled**][taskCanceled] 例外狀況) 都會往下傳送至工作鏈結，然後略過任何數值型接續，如此您就可以在錯誤處理的工作型接續中處理這些例外狀況。 我們可以重新改寫上一個範例，改用錯誤處理工作型接續：
+若要處理工作鏈結中的錯誤和取消作業，您不需要將每個接續變成工作型接續，也不必在 `try…catch` 區塊置入每個可能擲回的作業。 您可以在工作鏈結的尾端加上工作型接續，然後在該處處理所有的錯誤。 任何例外狀況 (包含[**task\_canceled**][taskCanceled] 例外狀況) 都會往下傳送至工作鏈結，然後略過任何數值型接續，如此您就可以在錯誤處理的工作型接續中處理這些例外狀況。 我們可以重新改寫上一個範例，改用錯誤處理工作型接續：
 
 ``` cpp
 #include <ppltasks.h>
@@ -233,7 +236,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
     {
         // Create the async operation. feedOp is an 
         // IAsyncOperationWithProgress<SyndicationFeed^, RetrievalProgress>^
-        // but we don’t handle progress in this example.
+        // but we don't handle progress in this example.
 
         auto feedUri = ref new Uri(ref new String(url.c_str()));
         auto feedOp = client->RetrieveFeedAsync(feedUri);
@@ -313,6 +316,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: 使用執行緒集區的最佳做法
 description: 本主題描述使用執行緒集區的最佳做法。
 ---
 # 使用執行緒集區的最佳做法
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題描述使用執行緒集區的最佳做法。
@@ -29,10 +30,10 @@ description: 本主題描述使用執行緒集區的最佳做法。
 
 -   當無法容許使用中的資源配置失敗時，請使用預先配置的工作項目。
 
-## 禁止
+## 禁止事項
 
 
--   不要建立 *period* 值小於 1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
+-   不要建立 *period* 值小於 &lt;1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
 
 -   不要提交完成時間比您使用 *period* 參數指定的時間更長的定期工作項目。
 
@@ -51,6 +52,6 @@ description: 本主題描述使用執行緒集區的最佳做法。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

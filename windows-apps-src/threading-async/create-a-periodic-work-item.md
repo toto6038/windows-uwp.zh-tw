@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: 建立定期工作項目
 description: 了解如何建立定期重複執行的工作項目。
@@ -157,14 +158,14 @@ description: 了解如何建立定期重複執行的工作項目。
 > 
 >         }),
 >         period,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle periodic timer cancellation.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -178,7 +179,7 @@ description: 了解如何建立定期重複執行的工作項目。
 
 ## 取消計時器
 
-必要時，可呼叫 [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法來停止定期工作項目。 如果在工作項目執行中取消定期計時器，該工作項目還是可以繼續完成。 所有定期工作項目的執行個體都完成時，就會呼叫 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (若提供的話)。
+必要時，可呼叫 [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法來停止定期工作項目避免重複。 如果在工作項目執行中取消定期計時器，該工作項目還是可以繼續完成。 所有定期工作項目的執行個體都完成時，就會呼叫 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (若提供的話)。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -201,6 +202,6 @@ description: 了解如何建立定期重複執行的工作項目。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

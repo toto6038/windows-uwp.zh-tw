@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: 在 C# 或 Visual Basic 中呼叫非同步 API
 description: 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。
@@ -23,13 +24,12 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 下列範例會呼叫非同步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 並等待結果，以從部落格取得部落格文章清單。
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+          [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
 
-在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查應用程式執行什麼工作，使得應用程式具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 (並沒有這種方法，但請想像有)。如果您的 app 包含 `SyndicationFeed feed = client.RetrieveFeed(feedUri)` 程式行而非 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，在取得 `RetrieveFeed` 的傳回值之前，app 會停止執行。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
+在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 (並沒有這種方法，但請想像有)。如果您的 app 包含 `SyndicationFeed feed = client.RetrieveFeed(feedUri)` 程式行而非 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，在取得 `RetrieveFeed` 的傳回值之前，app 會停止執行。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
 
 但是，如果您呼叫 `client.RetrieveFeedAsync`，該方法會起始擷取作業並立即傳回。 當您使用 **await** 搭配 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 時，app 會暫時結束事件處理常式。 接著，當 **RetrieveFeedAsync** 以非同步方式執行時，app 就可以處理其他事件。 這樣可以保持 app 對使用者的回應能力。 當 **RetrieveFeedAsync** 完成而且 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) 可用時，app 基本上會重新進入先前在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之後停止的事件處理常式，然後完成方法的其餘部分。
 
@@ -63,7 +63,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
  
 
 [
-            **.NET for UWP apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有[**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
+            **.NET for UWP app**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
 
 ## 處理錯誤
 
@@ -82,9 +82,9 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 -   根據慣例，非同步方法的名稱會以 "Async" 結尾。
 -   任何使用 **await** 運算子的方法都必須為其宣告標示 **async** 關鍵字。
--   當應用程式發現 **await** 運算子時，會在非同步方法執行的同時保持對使用者互動的回應。
+-   當 app 發現 **await** 運算子時，會在非同步方法執行的同時保持對使用者互動的回應。
 -   等待非同步方法傳回的值傳回包含結果的物件。 在大部分情況下，有用的資訊是傳回值中的結果，而非傳回值本身。 您可以透過查看非同步方法的傳回類型，來尋找結果內包含的值類型。
--   使用非同步 API 與 **async** 模式通常可以提高應用程式回應性。
+-   使用非同步 API 與 **async** 模式通常可以提高 app 回應性。
 
 本主題中的範例會輸出如下文字。
 
@@ -109,6 +109,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
