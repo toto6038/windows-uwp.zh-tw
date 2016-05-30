@@ -1,5 +1,6 @@
 ---
-title: 逐步解說 -- 將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
+author: mtoepke
+title: 逐步解說 -- 將簡單的 Direct3D 9 App 移植到 DirectX 11 和通用 Windows 平台 (UWP)
 description: 這個移植練習示範如何將簡單的轉譯架構從 Direct3D 9 移到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
@@ -24,15 +25,15 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
+<td align="left"><p>[初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
 <td align="left"><p>示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
+<td align="left"><p>[轉換轉譯架構](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
 <td align="left"><p>示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
+<td align="left"><p>[移植遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
 <td align="left"><p>示範如何為 UWP 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) 以控制全螢幕的 [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225)。</p></td>
 </tr>
 </tbody>
@@ -67,14 +68,13 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ## 相關主題
 
 
-**Direct3D**
-[在 Direct3D 9 撰寫 HLSL 著色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+**Direct3D** 
+           [在 Direct3D 9 中撰寫 HLSL 著色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
 [建立適用於 UWP 的新 DirectX 11 專案](user-interface.md)
 
-**Windows 市集**
-[
-            **Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+**Windows 市集** 
+           [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
 [**物件控制代碼運算子 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
@@ -87,6 +87,6 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

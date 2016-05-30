@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植頂點緩衝區與資料
 description: 在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
@@ -312,6 +313,6 @@ m_d3dContext->DrawIndexed(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

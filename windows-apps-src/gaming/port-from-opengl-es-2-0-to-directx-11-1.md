@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 從 OpenGL ES 2.0 移植到 Direct3D 11
 description: 包含適用於將 OpenGL ES 2.0 圖形管線移植到 Direct3D 11 與 Windows 執行階段的文章、概觀及逐步解說。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
@@ -11,7 +12,7 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 包含適用於將 OpenGL ES 2.0 圖形管線移植到 Direct3D 11 與 Windows 執行階段的文章、概觀及逐步解說。
 
-> **注意**：移植 OpenGL ES 2.0 專案的中間步驟是使用適用於 Windows 市集的 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。 如需關於 ANGLE 的詳細資訊，請移至[適用於 Windows 市集的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
+> **注意：**移植 OpenGL ES 2.0 專案的中間步驟是使用適用於 Windows 市集的 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。 如需關於 ANGLE 的詳細資訊，請移至[適用於 Windows 市集的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
 
  
 
@@ -28,15 +29,15 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
-<td align="left"><p>當您第一次開始進行將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 的程序時，請讓您自己熟悉這些 API 間的重要差異。 本節中的主題可以協助您計劃移植策略，以及當您將圖形處理移至 Direct3D 時必須進行的 API 變更。</p></td>
+<td align="left"><p>[將 OpenGL ES 2.0 對應到 Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
+<td align="left"><p>當您第一次開始進行將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 的程序時，請務必熟悉這些 API 間的重要差異。 本節中的主題可以協助您計劃移植策略，以及當您將圖形處理移至 Direct3D 時必須進行的 API 變更。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Walkthrough sample ports from OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
+<td align="left"><p>[逐步解說來自 OpenGL ES 2.0 的移植範例](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
 <td align="left"><p>這系列主題提供一些不同複雜程度的 OpenGL ES 2.0 圖形管線移植案例。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
+<td align="left"><p>[從 OpenGL ES 2.0 到 Direct3D 11.1 的參考](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
 <td align="left"><p>從 OpenGL ES 2.0 移植到 Direct3D 11 時，可以使用這些參考主題來查詢 API 對應和簡短的程式碼範例。</p></td>
 </tr>
 </tbody>
@@ -58,6 +59,6 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 description: 大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
@@ -223,6 +224,6 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

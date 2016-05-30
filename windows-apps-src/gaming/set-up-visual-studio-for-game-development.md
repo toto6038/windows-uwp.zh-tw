@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 用來進行遊戲程式設計的 Visual Studio 工具
 description: Visual Studio 中提供的 DirectX 特定工具概觀。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
@@ -146,6 +147,6 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 適用於遊戲的觸控控制項
 description: 了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
@@ -27,7 +28,7 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 
 首先，我們要定義基本的控制器類型，在這個範例為 **CameraPanController**。 在這裡，我們將控制器定義為一個抽象的概念，也就是使用者可以執行的一組行為。
 
-**CameraPanController** 類別是會定期重新整理的相機控制器狀態資訊集合，可提供方法讓應用程式從它的更新迴圈取得這些資訊。
+**CameraPanController** 類別是會定期重新整理的相機控制器狀態資訊集合，可提供方法讓 app 從它的更新迴圈取得這些資訊。
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -96,7 +97,7 @@ public:
 
 私用欄位包含相機控制器目前的狀態。 我們來看看這些狀態。
 
--   **m\_position** 是場景區域中的相機位置。 在這個範例中，z 座標值固定在 0。 我們可以使用 DirectX::XMFLOAT2 來表示這個值，但是為了顧及這個範例及未來的擴充性，我們使用 DirectX::XMFLOAT3。 我們透過 **get\_Position** 屬性將這個值傳遞給應用程式，讓應用程式可以按照此值更新檢視區。
+-   **m\_position** 是場景區域中的相機位置。 在這個範例中，z 座標值固定在 0。 我們可以使用 DirectX::XMFLOAT2 來表示這個值，但是為了顧及這個範例及未來的擴充性，我們使用 DirectX::XMFLOAT3。 我們透過 **get\_Position** 屬性將這個值傳遞給 app，讓 app 可以按照此值更新檢視區。
 -   **m\_panInUse** 是布林值，可指出移動瀏覽作業是否在使用中，或者更具體一點，玩家是否正在觸控螢幕或移動相機。
 -   **m\_panPointerID** 是指標的唯一識別碼。 我們不會在這個範例使用它，但這是在控制器狀態類別與特定指標間建立關聯的最佳做法。
 -   **m\_panFirstDown** 是相機平移動作期間，玩家第一次在螢幕上觸控或按一下滑鼠的點。 我們稍後會使用這個值來設定靜止區域，以避免觸碰到螢幕時，或稍微移動滑鼠時造成抖動。
@@ -111,11 +112,11 @@ public:
 
 最後，我們使用這些方法和屬性來初始化、存取以及更新相機控制器狀態資訊。
 
--   **Initialize** 是一個處理常式，應用程式呼叫它來初始化控制項，並將它們附加到含有顯示視窗說明的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
--   **SetPosition** 是應用程式呼叫來設定場景區域中控制項的 x、y 以及 z 座標的方法。 請注意，這個教學課程中 z 座標會一直保持為 0。
--   **get\_Position** 是應用程式用來取得場景區域中相機目前位置的屬性。 您使用這個屬性做為告知 app 相機目前位置的方法。
+-   **Initialize** 是一個事件處理常式，app 會呼叫它來初始化控制項，並將它們附加到描述顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **SetPosition** 是 app 呼叫來設定場景區域中控制項的 x、y 以及 z 座標的方法。 請注意，這個教學課程中 z 座標會一直保持為 0。
+-   **get\_Position** 是 app 用來取得場景區域中相機目前位置的屬性。 您使用這個屬性做為告知 app 相機目前位置的方法。
 -   **get\_FixedLookPoint** 是 app 用來根據控制器相機面對的方向取得目前點的屬性。 在這個範例中，它是鎖定與 x-y 平面垂直。
--   **Update** 是讀取控制器狀態及更新相機位置的方法。 您要從 app 的主迴圈持續呼叫這個 &lt;something&gt;，以重新整理相機控制器資料以及場景區域中相機的位置。
+-   **Update** 是讀取控制器狀態並更新相機位置的方法。 您將從 App 的主迴圈中持續呼叫這個 &lt;something&gt;，以重新整理相機控制器資料及場景區域中相機的位置。
 
 您現在已經了解實作觸控控制項所需的全部元件。 您可以偵測發生觸控或滑鼠指標事件的時間和位置，以及發生的動作。 您可以設定相機與場景區域的相對位置和方向，並追蹤變更。 最後，您可以將新的相機位置傳送到呼叫應用程式。
 
@@ -130,7 +131,7 @@ Windows 執行階段事件調派程式提供 3 個我們要應用程式處理的
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
 -   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如需詳細資訊，請參閱[如何設定您的 UWP C++ app 來顯示 DirectX 視圖](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如需詳細資訊，請參閱[如何設定您的 UWP C++ app 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
 由於我們的 app 會在執行時觸發這些事件，因此處理常式會更新我們在私用欄位中定義的相機控制器狀態資訊。
 
@@ -162,7 +163,7 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-我們將這個處理常式的 **m\_panInUse** 設為 TRUE，告知目前的 **CameraPanController** 執行個體應該將相機控制器視為使用中。 如此一來，當應用程式呼叫 **Update** 時，會使用目前的位置資料來更新檢視區。
+我們將這個處理常式的 **m\_panInUse** 設為 TRUE，告知目前的 **CameraPanController** 執行個體應該將相機控制器視為使用中。 如此一來，當 app 呼叫 **Update** 時，會使用目前的位置資料來更新檢視區。
 
 我們已經建立當使用者觸控螢幕或在顯示視窗中按一下時，相機移動的基本值，現在必須決定當使用者按住螢幕拖曳或按住滑鼠按鍵移動時應該執行的動作。
 
@@ -182,7 +183,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-最後，我們需要在玩家停止觸控螢幕時停用相機平移動作。 我們會在觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 時呼叫 **OnPointerReleased**，以便將 **m\_panInUse** 設為 FALSE 並關閉相機平移動作，然後將指標識別碼設為 0。
+最後，我們需要在玩家停止觸控螢幕時停用相機平移動作。 我們會在引發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 時呼叫 **OnPointerReleased**，以便將 **m\_panInUse** 設為 FALSE 並關閉相機平移動作，然後將指標識別碼設為 0。
 
 **OnPointerReleased**
 
@@ -347,6 +348,6 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

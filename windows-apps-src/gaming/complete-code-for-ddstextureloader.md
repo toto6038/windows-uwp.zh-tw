@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DDSTextureLoader 的完整程式碼
 description: 從記憶體載入 DDS 紋理的類別與方法的完整程式碼。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
@@ -25,17 +26,14 @@ ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 
 ## 技術
 
-|                       |                 |
-|-----------------------|-----------------|
-| 程式語言 | C++             |
-| 程式設計模型    | Windows 執行階段 |
+**程式設計語言** - C++    
+**程式設計模型** - Windows 執行階段
 
 ## 需求
 
-| 最低支援的用戶端 | Windows 10                            |
-|--------------------------|---------------------------------------|
-| 最低支援的伺服器 | Windows Server 2016 Technical Preview |
-| 最低需求的 SDK     |                                       |
+**最低支援的用戶端** - Windows 10                               
+**最低支援的伺服器** - Windows Server 2016 Technical Preview
+
 
 
 ## 檢視程式碼 (C++)
@@ -1223,6 +1221,6 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 從 DirectX 9 移植到通用 Windows 平台 (UWP)
 description: 本節包含適用於將 DirectX 9 遊戲移植到通用 Windows 平台 (UWP) 的文章、概觀及逐步解說。
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
@@ -7,7 +8,7 @@ ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 # 從 DirectX 9 移植到通用 Windows 平台 (UWP)
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含適用於將 DirectX 9 遊戲移植到通用 Windows 平台 (UWP) 的文章、概觀及逐步解說。
 
@@ -34,6 +35,6 @@ ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 組合轉譯架構
 description: 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
@@ -43,7 +44,7 @@ DirectX 是 Windows 執行階段與 Windows 10 使用經驗的基本部分。 Wi
 
 若要在 UWP app 中新增對 DirectX 的支援，您要實作 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 和 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 介面來為 DirectX 資源建立一個檢視提供者。 它們會分別為您的檢視提供者類型提供一個 Factory 模式以及提供 DirectX 檢視提供者實作。 UWP 單例 (由 [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) 物件表示) 會執行這個實作。
 
-在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)時，我們會先了解轉譯器在遊戲範例架構中 app 所扮演的角色。 現在，我們來看看遊戲轉譯器如何連接到檢視，並建立定義遊戲外觀的圖形。
+在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)時，我們會先了解轉譯器在遊戲範例 app 架構中所扮演的角色。 現在，我們來看看遊戲轉譯器如何連接到檢視，並建立定義遊戲外觀的圖形。
 
 ## 定義轉譯器
 
@@ -183,11 +184,11 @@ void GameRenderer::Initialize(
 -   **CreateDeviceResources**
 -   **CreateWindowSizeDependentResources**
 
-現在，在遊戲範例中，我們要覆寫這些方法的其中兩個 (**CreateDeviceIndependentResources** 和 **CreateDeviceResources**)，它們是在 **DirectX 11 App (Universal Windows)** 範本中實作的 **DirectXBase** 類別上提供的。 對於每個覆寫方法，我們首先呼叫它們覆寫的 **DirectXBase** 實作，然後在遊戲範例中新增更多實作的特定詳細資料。 請注意，遊戲範例中內含的 **DirectXBase** 類別實作已根據 Visual Studio 範例提供的版本加以修改，以便包含立體視覺檢視支援，並包含預先旋轉的 **SwapBuffer** 物件。
+現在，在遊戲範例中，我們要覆寫這些方法的其中兩個 (**CreateDeviceIndependentResources** 和 **CreateDeviceResources**)，它們是在 **DirectX 11 應用程式 (Universal Windows)** 範本中實作的 **DirectXBase** 類別上提供的。 對於每個覆寫方法，我們首先呼叫它們覆寫的 **DirectXBase** 實作，然後在遊戲範例中新增更多實作的特定詳細資料。 請注意，遊戲範例中內含的 **DirectXBase** 類別實作已根據 Visual Studio 範例提供的版本加以修改，以便包含立體視覺檢視支援，並包含預先旋轉的 **SwapBuffer** 物件。
 
-**CreateWindowSizeDependentResources** 不是被 **GameRenderer** 物件覆寫。 我們使用 **DirectXBase** 類別中提供的它的實作。
+**CreateWindowSizeDependentResources** 不是由 **GameRenderer** 物件覆寫。 我們使用 **DirectXBase** 類別中提供的它的實作。
 
-如需這些方法的 **DirectXBase** 基底實作詳細資訊，請參閱[如何設定您的 UWP DirectX app 來顯示檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+如需這些方法的 **DirectXBase** 基底實作詳細資訊，請參閱[如何設定您的 UWP DirectX 應用程式來顯示檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
 這些覆寫方法的第一種 **CreateDeviceIndependentResources** 會呼叫 **GameHud::CreateDeviceIndependentResources** 方法來建立 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 文字資源，並使用大部分 UWP app 使用的 Segoe UI 字型。
 
@@ -689,9 +690,9 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 遊戲有現成的程式碼可以用自己的座標系統來更新世界 (有時候稱為世界空間或場景空間)。 所有物件 (包括相機) 都在這個空間設定放置及方向。 在範例遊戲中，會使用相機的位置以及視角向量 (「視線」向量是從相機直接看到場景，而「仰視」向量則是垂直向上看) 定義相機空間。 投影參數決定最終場景可實際看到的空間量；而視野範圍 (FoV)、外觀比例以及裁剪平面則可定義投影轉換。 頂點著色器則負責使用下列演算法 (其中 V 是向量而 M 是矩陣)，將模型座標轉換為裝置座標的繁重工作：
 
-`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
+`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
--   `M(model-to-world)` 是模型座標到全局座標的轉換矩陣。 這是由基本類型提供的 (我們將在這裡的基本類型一節中討論相關資訊)。
+-   `M(model-to-world)` 是模型座標到全局座標的轉換矩陣。 這是由基本類型提供。 (我們將在這裡的基本類型一節中討論相關資訊)。
 -   `M(world-to-view)` 是全局座標到視覺座標的轉換矩陣。 這是由相機的視圖矩陣提供的。
 -   `M(view-to-device)` 是視覺座標到裝置座標的轉換矩陣。 這是由相機的投影提供的。
 
@@ -853,7 +854,7 @@ void Camera::SetProjParams(
 
 **MeshObject.h/.cpp** 定義所有網格物件的基底類別。 **SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 以及 **WorldMesh.h/.cpp** 檔案包含的程式碼會將每個基本類型的常數緩衝區填入定義基本類型幾何的頂點和頂點標準資料。 如果您想要了解如何在自己的遊戲 app 中建立 Direct3D 基本類型，這些程式碼檔案是一個很好的起點，但是在本文中我們不會涵蓋這些內容，因為這對於這個遊戲實作而言太過專精。 就目前而言，我們假設已填入每個基本類型的頂點緩衝區，然後看看遊戲範例如何處理這些緩衝區來更新遊戲本身。
 
-代表遊戲觀點之基本類型物件的基底類別會在 **GameObject.h./.cpp.** 中定義。**GameObject** 這個類別定義所有基本類型中常見行為的欄位及方法。 每個基本物件類型都從它衍生出來。 我們來看看如何定義：
+代表遊戲觀點之基本類型物件的基底類別會在 **GameObject.h./.cpp** 中定義。 這個類別 **GameObject** 定義所有基本類型中常見行為的欄位及方法。 每個基本物件類型都從它衍生出來。 我們來看看如何定義：
 
 ```cpp
 ref class GameObject
@@ -1051,7 +1052,7 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 -   頂點著色器執行個別頂點作業，例如頂點轉換和光線。
 -   像素 (或稱片段) 著色器執行個別像素作業，例如紋理和個別像素光線。 它們還可以用來執行點陣圖的後處理效果，例如最終轉譯目標。
 
-著色器程式碼是以高階著色器語言 (HLSL) 定義，在 Direct3D 11 中，是從使用與 C 類似之語法建立的程式編譯而成。 (完整的語法可以在[這裡](https://msdn.microsoft.com/library/windows/desktop/bb509635)找到。) 範例遊戲的兩個主要著色器定義在 **PixelShader.hlsl** 和 **VertexShader.hlsl** 中。 (另外也為低電量裝置定義了兩個「低電量」著色器：**PixelShaderFlat.hlsl** 和 **VertexShaderFlat.hlsl**。 這兩個著色器提供效果，像是不反射強光光線紋理表面上。）最後，還有.hlsli 檔案包含常數緩衝區的格式 **ConstantBuffers.hlsli**。
+著色器程式碼是以高階著色器語言 (HLSL) 定義，在 Direct3D 11 中，是從使用與 C 類似之語法建立的程式編譯而成。 (完整的語法可以在[這裡](https://msdn.microsoft.com/library/windows/desktop/bb509635)找到。) 範例遊戲的兩個主要著色器定義在 **PixelShader.hlsl** 和 **VertexShader.hlsl** 中。 (另外也為低電量裝置定義了兩個「低電量」著色器：**PixelShaderFlat.hlsl** 和 **VertexShaderFlat.hlsl**。 這兩個著色器提供降低過的效果，像是不在紋理表面上反射強光光線。) 最後，還有包含常數緩衝區的格式的 .hlsli 檔案 **ConstantBuffers.hlsli**。
 
 **ConstantBuffers.hlsli** 的定義如下所示：
 
@@ -6320,6 +6321,6 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

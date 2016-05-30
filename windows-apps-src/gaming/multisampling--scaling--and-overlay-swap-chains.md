@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 交換鏈結縮放和覆疊
 description: 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
@@ -158,7 +159,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
     > **請注意**每次調整交換鏈結的大小時，都會再次設定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
 
-     ```cpp
+    ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
         2, // Double-buffered swap chain.
         static_cast<UINT>(m_d3dRenderTargetSize.Width),
@@ -323,6 +324,6 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

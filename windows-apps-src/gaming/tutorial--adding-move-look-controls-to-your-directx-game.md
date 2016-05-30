@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: 適用於遊戲的移動視角控制項
 description: 了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"> </span>適用於遊戲的移動視角控制項
+# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。
 
@@ -170,7 +171,7 @@ internal:
 
 最後，我們使用這些方法和屬性來初始化、存取以及更新控制器的狀態資訊。
 
--   **Initialize**。 我們的應用程式會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **Initialize**。 我們的 app 會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
 -   **SetPosition**。 我們的 app 會呼叫這個方法來設定場景區域中控制項的 x、y 及 z 座標。
 -   **SetOrientation**。 我們的 app 會呼叫這個方法來設定相機的上下移動和左右偏移。
 -   **get\_Position**。 我們的 app 會存取這個屬性來取得場景區域中相機的目前位置。 把這個屬性當作將目前相機位置傳送到 app 的方法。
@@ -567,7 +568,7 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-恭喜！ 您已經為遊戲中的觸控式螢幕和鍵盤/滑鼠輸入觸控控制項實作了基本的移動視角控制項！
+恭喜！ 您已經在遊戲中實作觸控式螢幕和鍵盤/滑鼠輸入觸控控制項的基本移動視角控制項！
 
 > **注意**  
 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
@@ -583,6 +584,6 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 如何暫停 app (DirectX 和 C++)
 description: 這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX app 時，儲存重要的系統狀態與 app 資料。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
@@ -129,7 +130,7 @@ void DX::DeviceResources::Trim()
 ## 備註
 
 
-當使用者切換至另一個應用程式或桌面時，系統會暫停您的應用程式。 當使用者切換回您的 app 時，系統就會繼續執行 app。 當系統繼續執行您的 app 時，您的變數和資料結構內容和系統暫停 app 之前一樣，沒有變化。 系統會將 app 回復成暫停之前的相同狀態，如此使用者會以為 app 一直在背景中執行。
+當使用者切換至另一個應用程式或桌面時，系統會暫停您的應用程式。 當使用者切換回您的 app 時，系統就會繼續執行 app 。 當系統繼續執行您的 app 時，您的變數和資料結構內容和系統暫停 app 之前一樣，沒有變化。 系統會將 app 回復成暫停之前的相同狀態，如此使用者會以為 app 一直在背景中執行。
 
 當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，系統將終止您的 app。 當使用者切換回已被終止的暫停 app 時，系統會傳送一個 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，並且應該會在它的 **CoreApplicationView::Activated** 事件處理常式中還原其應用程式資料。
 
@@ -149,6 +150,6 @@ void DX::DeviceResources::Trim()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 在 Marble Maze 範例中加入音訊
 description: 本文件說明使用音訊時需要考量的重要做法，並指出 Marble Maze 如何運用這些做法。
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
@@ -7,14 +8,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 # 在 Marble Maze 範例中加入音訊
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文件說明使用音訊時需要考量的重要做法，並指出 Marble Maze 如何運用這些做法。 Marble Maze 使用 Microsoft 媒體基礎從檔案載入音訊資源，並使用 XAudio2 來混合和播放音訊，以及將效果套用至音訊。
 
 Marble Maze 會播放背景音樂，也會使用遊戲音效來表示遊戲事件，例如當彈珠碰到圍牆時。 實作的一個重點是Marble Maze 使用殘響或回音效果來模擬彈珠彈跳的音效。 殘響效果實作會讓回音在小房間裡更快到達聽者的位置、更大聲，房間較大時則會比較小聲，且較慢到達聽者的位置。
 
-> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze game sample (DirectX Marble Maze 遊戲範例)](http://go.microsoft.com/fwlink/?LinkId=624011) 中找到。
 
 以下是本文件所討論在遊戲中使用音訊時的一些重點：
 
@@ -97,11 +98,11 @@ DX::ThrowIfFailed(
 );
 ```
 
-**Audio::CreateResources** 方法會執行類似的步驟來建立遊戲音效的主控音，差別在於它會為 *StreamCategory* 參數指定 **AudioCategory\_GameEffects**，這是預設值。 Marble Maze 指定 **AudioCategory\_GameMedia** 來處理背景音樂，讓使用者可以一邊玩遊戲，一邊聆聽不同應用程式的音樂。 當音樂應用程式播放時，Windows 會將 **AudioCategory\_GameMedia** 選項所產生的任何聲音變成靜音。 因為遊戲音效是由 **AudioCategory\_GameEffects** 選項所產生，使用者仍然可以聽見遊戲音效。 如需音訊分類的詳細資訊，請參閱 [**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 列舉。
+**Audio::CreateResources** 方法會執行類似的步驟來建立遊戲音效的主控音，差別在於它會為 *StreamCategory* 參數指定 **AudioCategory\_GameEffects**，這是預設值。 Marble Maze 指定 **AudioCategory\_GameMedia** 來處理背景音樂，讓使用者可以一邊玩遊戲，一邊聆聽不同應用程式的音樂。 當音樂應用程式播放時，Windows 會將 **AudioCategory\_GameMedia** 選項所產生的任何聲音變成靜音。 使用者仍然可以聽見遊戲音效，因為遊戲音效是由 **AudioCategory\_GameEffects** 選項產生。 如需音訊分類的詳細資訊，請參閱 [**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 列舉。
 
 ###  建立殘響效果
 
-對於每個音效，您可以使用 XAudio2 建立一序列的效果來處理音訊。 這類序列稱為「效果鏈」。 當您想要將一或多個效果套用至音效時，請使用效果鏈。 效果鏈可能有破壞性，也就是鏈結中的每個效果都可以覆寫音訊緩衝區。 這個屬性很重要，因為 XAudio2 不保證會以無聲方式初始化輸出緩衝區。 效果物件在 XAudio2 中是以跨平台音訊處理物件 (XAPO) 來代表。 如需 XAPO 的詳細資訊，請參閱 [XAPO 概觀](o:microsoft.directx_sdk.xapo.audio_overview_xapo)。
+對於每個音效，您可以使用 XAudio2 建立一序列的效果來處理音訊。 這類序列稱為「效果鏈」。 當您想要將一或多個效果套用至音效時，請使用效果鏈。 效果鏈可能有破壞性，也就是鏈結中的每個效果都可以覆寫音訊緩衝區。 這個屬性很重要，因為 XAudio2 不保證會以無聲方式初始化輸出緩衝區。 效果物件在 XAudio2 中是以跨平台音訊處理物件 (XAPO) 來代表。 如需 XAPO 的詳細資訊，請參閱 [XAPO 概觀](https://msdn.microsoft.com/library/windows/desktop/ee415735)。
 
 當您建立效果鏈時，請依照下列步驟執行：
 
@@ -181,7 +182,7 @@ m_reverbParametersSmall.DisableLateField = TRUE;
 
 這個範例在大部分殘響參數中使用預設值，不過，它將 **DisableLateField** 設為 TRUE 來指定近距離殘響、將 **EarlyDiffusion** 設為 4 來模擬平坦近距離平面、將 **LateDiffusion** 設為 15 來模擬極度擴散遠距離平面。 平坦近距離平面會使回音傳遞得更快、更大聲，而擴散遠距離平面則會使回音變小聲、傳遞得較慢。 您可以實驗殘響值來取得適合遊戲的理想效果，或使用 **ReverbConvertI3DL2ToNative** 函式來採用業界標準的 I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) 參數。
 
-下列範例顯示 **Audio::CreateReverb** 如何設定殘響參數。 parameters 參數是 [**XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) 物件。
+以下範例顯示 **Audio::CreateReverb** 如何設定殘響參數。 parameters 參數是 [**XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) 物件。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -606,7 +607,7 @@ void Audio::PlaySoundEffect(SoundEvent sound)
 
 對於滾動以外的音效，**Audio::PlaySoundEffect** 方法會呼叫 [**IXAudio2SourceVoice::GetState**](https://msdn.microsoft.com/library/windows/desktop/hh405047) 來決定來源音播放的緩衝區數目。 如果沒有作用中的緩衝區，它會呼叫 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473)，將音效的音訊資料新增至聲音的輸入佇列。 **Audio::PlaySoundEffect** 方法也能夠連續播放兩次碰撞音效。 例如，當彈珠碰撞到迷宮角落時，就會出現這種情形。
 
-如前所述，Audio 類別在初始化滾動事件的音效時會使用 **XAUDIO2\_LOOP\_INFINITE** 旗標。 第一次因為此事件而呼叫 **Audio::PlaySoundEffect** 時，就會開始循環播放音效。 為了簡化滾動音效的播放邏輯，Marble Maze 會變成靜音，而非停止音效。 當彈珠速度改變時，Marble Maze 也會隨之變更音效的音調和音量，以產生更真實的效果。 以下內容顯示 **MarbleMaze::Update** 方法如何隨著彈珠速度的改變來更新音調和音量，以及如何在彈珠停止時將音量設定為零以變成靜音。
+如前所述，Audio 類別在初始化滾動事件的音效時會使用 **XAUDIO2\_LOOP\_INFINITE** 旗標。 第一次因為此事件而呼叫 **Audio::PlaySoundEffect** 時，就會開始循環播放音效。 為了簡化滾動音效的播放邏輯，Marble Maze 會變成靜音，而非停止音效。 當彈珠速度改變時，Marble Maze 也會隨之變更音效的音調和音量，以產生更真實的效果。 以下程式碼顯示 **MarbleMaze::Update** 方法如何隨著彈珠速度的改變來更新音調和音量，以及如何在彈珠停止時將音量設定為零以變成靜音。
 
 ```cpp
 // Play the roll sound only if the marble is actually rolling. 
@@ -751,7 +752,7 @@ void SetEngineExperiencedCriticalError()
 }
 ```
 
-發生嚴重錯誤時，音訊處理會停止，而且對 XAudio2 的其他所有呼叫都會失敗。 為了從這種情況中復原，您必須釋放 XAudio2 執行個體並建立新的執行個體。 **Audio::Render** 方法 (從遊戲迴圈的每個畫面呼叫) 會先檢查 **m\_engineExperiencedCriticalError** 旗標。 如果有設定此旗標，則會加以清除、釋放目前的 XAudio2 執行個體、初始化資源，然後啟動背景音樂。
+發生嚴重錯誤時，音訊處理會停止，而且對 XAudio2 的其他所有呼叫都會失敗。 為了從這種情況中復原，您必須釋放 XAudio2 執行個體並建立新的執行個體。 **Audio::Render** 方法 (每個畫面會從遊戲迴圈呼叫) 會先檢查 **m\_engineExperiencedCriticalError** 旗標。 如果有設定此旗標，則會加以清除、釋放目前的 XAudio2 執行個體、初始化資源，然後啟動背景音樂。
 
 ```cpp
 if (m_engineExperiencedCriticalError)
@@ -768,7 +769,7 @@ if (m_engineExperiencedCriticalError)
 }
 ```
 
-當沒有音訊裝置可用時，Marble Maze 也會使用 **m\_engineExperiencedCriticalError** 旗標，以避免呼叫 XAudio2。 例如，有設定此旗標時，**MarbleMaze::Update** 方法便不會處理滾動或碰撞事件的音訊。 如有需要，應用程式會嘗試隨每個畫面修復音訊引擎；不過，如果電腦上沒有音訊裝置或已拔下耳機，並且也沒有其他可用的音訊裝置，則 **m\_engineExperiencedCriticalError** 旗標可能會一直維持已設定狀態。
+當沒有音訊裝置可用時，Marble Maze 也會使用 **m\_engineExperiencedCriticalError** 旗標，以避免呼叫 XAudio2。 例如，有設定此旗標時，**MarbleMaze::Update** 方法便不會處理滾動或碰撞事件的音訊。 如有需要，App 會嘗試隨每個畫面修復音訊引擎；不過，如果電腦上沒有音訊裝置或已拔下耳機，並且也沒有其他可用的音訊裝置，則 **m\_engineExperiencedCriticalError** 旗標可能會一直維持已設定狀態。
 
 > **警告** 請勿在引擎回呼的主體中執行封鎖操作。 這樣做可能會造成效能問題。 Marble Maze 會在 **OnCriticalError** 回呼中設定旗標，之後再於一般音訊處理階段中處理錯誤。 如需 XAudio2 回呼的詳細資訊，請參閱 [XAudio2 回呼](https://msdn.microsoft.com/library/windows/desktop/ee415745)。
 
@@ -789,6 +790,6 @@ if (m_engineExperiencedCriticalError)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 適用於通用 Windows 平台 (UWP) app 的遊戲技術
 description: 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
@@ -66,7 +67,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <tbody>
     <tr class="odd">
     <td align="left">Direct3D 12</td>
-    <td align="left"><p>Direct3D 12 引進了下一版的 Direct3D，也就是 DirectX 核心的 3D 圖形 API。 相較於舊版 Direct3D，此 Direct3D 版本的設計更快且更有效率。 Direct3D 12 速度提升所帶來的缺點是它的層級較低，並需要您自行管理圖形資源，還需要具備更廣泛的圖形程式設計經驗，才能實現它的速度提升。</p>
+    <td align="left"><p>Direct3D 12 引進了下一版的 Direct3D，也就是 DirectX 核心的 3D 圖形 API。 相較於舊版 Direct3D，此 Direct3D 版本的設計更快且更有效率。 Direct3D 12 提高速度的缺點是它是較低層級，而且需要您自行管理圖形資源， 還要有更廣泛的圖形程式設計經驗才能實現提高的速度。</p>
     <p><strong>使用時機</strong></p>
     <p>當您需要將遊戲效能最大化且您的遊戲佔用龐大 CPU 資源時，請使用 Direct3D 12。</p>
     <p><strong>其他資訊</strong></p>
@@ -74,9 +75,9 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
-    <td align="left"><p>Direct3D 11 是舊版的 Direct3D，可讓您使用高於 D3D 12 的硬體抽象層級建立 3D 圖形。</p>
+    <td align="left"><p>Direct3D 11 是舊版的 Direct3D，可讓您 使用高於 D3D 12 的硬體抽象層級建立 3D 圖形。</p>
     <p><strong>使用時機</strong></p>
-    <p>如果您有現有的 Direct3D 11 程式碼、您的遊戲沒有佔用龐大 CPU 資源，或您想要擁有資源已為您管理的優勢，請使用 Direct3D 11。</p>
+    <p>如果您有現有的 Direct3D 11 程式碼、您的遊戲沒有佔用龐大 CPU 資源，或您想要擁有為您管理資源的優勢，請使用 Direct3D 11。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) 文件。</p></td>
     </tr>
@@ -101,15 +102,15 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <tbody>
     <tr class="odd">
     <td align="left">Direct2D</td>
-    <td align="left"><p>Direct2D 是一種硬體加速的即時模式 2D 圖形 API，能夠以高效能和高品質來呈現 2D 幾何、點陣圖和文字。 Direct2D API 是以 Direct3D 為建置基礎，並針對與 GDI、GDI+ 和 Direct3D 交互操作所設計。</p>
+    <td align="left"><p>Direct2D 是一種硬體加速的即時模式 2D 圖形 API，能夠以高效能和高品質來呈現 2D 幾何、點陣圖和文字。 Direct2D API 是以 Direct3D 為建置基礎，設計用來與 GDI、GDI+ 和 Direct3D 交互操作。</p>
     <p><strong>使用時機</strong></p>
-    <p>Direct2D 可以代替 Direct3D 用於提供純 2D 遊戲的圖形，例如橫軸捲動或棋盤遊戲，或是可搭配 Direct3D 使用來簡化在 3D 遊戲中建立 2D 圖形 (例如使用者介面或抬頭顯示器) 的程序。</p>
+    <p>Direct2D (而非 Direct3D) 可用於提供純 2D 遊戲的圖形，例如側捲動或棋盤遊戲，或可搭配 Direct3D 使用來簡化在 3D 遊戲中建立 2D 圖形，例如使用者介面或抬頭顯示器。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 文件。</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
-    <td align="left"><p>DirectWrite 提供其他處理文字的功能，並可搭配 Direct3D 與 Direct2D 使用， 以提供使用者介面或其他需要文字之區域的文字輸出。 DirectWrite 支援多格式文字的測量、繪圖和點擊測試。 DirectWrite 可使用全域和當地語系化應用程式的所有支援語言來處理文字。 DirectWrite 也提供低階的字符轉譯 API，適用於想要執行自己的版面配置和 Unicode 對字符處理的開發人員。</p>
+    <td align="left"><p>DirectWrite 提供其他處理文字的功能，並可搭配 Direct3D 與 Direct2D 使用， 以提供使用者介面或其他需要文字之區域的文字輸出。 DirectWrite 支援多格式文字的測量、繪圖和點擊測試。 DirectWrite 可使用全域和當地語系化應用程式的所有支援語言來處理文字。 DirectWrite 也提供低階字符轉譯 API，適用於想要執行自己的版面配置和 Unicode 對字符處理的開發人員。</p>
     <p><strong>使用時機</strong></p>
     <p></p>
     <p><strong>其他資訊</strong></p>
@@ -117,9 +118,9 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
-    <td align="left"><p>DirectComposition 是一個 Windows 元件，能夠利用轉換、效果和動畫來產生高效能的 點陣圖組合。 應用程式開發人員可以使用 DirectComposition API 來建立視覺上吸引人的使用者介面，以在視覺效果之間提供豐富和流暢的動畫轉換。</p>
+    <td align="left"><p>DirectComposition 是一個 Windows 元件，能夠利用轉換、效果和動畫來產生高效能的 點陣圖組合。 應用程式開發人員可以使用 DirectComposition API 來建立視覺上吸引人的使用者介面，以提供豐富和流暢的動畫轉換 (從一種視覺效果轉換成另一種視覺效果)。</p>
     <p><strong>使用時機</strong></p>
-    <p>DirectComposition 是針對簡化撰寫視覺效果及建立動畫轉換的程序所設計。 如果您的遊戲需要複雜的使用者介面，您可以使用 DirectComposition 來簡化 UI 的建立和管理。</p>
+    <p>DirectComposition 設計用來簡化撰寫視覺效果及建立動畫轉換的程序。 如果您的遊戲需要複雜的使用者介面，您可以使用 DirectComposition 來簡化 UI 的建立和管理。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) 文件。</p></td>
     </tr>
@@ -144,7 +145,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <tbody>
     <tr class="odd">
     <td align="left">XAudio2</td>
-    <td align="left"><p>XAudio2 是低階的音訊 API，可提供訊號處理和混音基礎。 XAudio 針對遊戲音訊引擎的回應非常靈敏，並擁有建立自訂音訊效果及音訊效果和篩選器之複雜鏈結的能力。</p>
+    <td align="left"><p>XAudio2 是低階的音訊 API，可提供訊號處理和混音基礎。 XAudio 的設計對遊戲音訊引擎非常敏感， 而且還能夠建立自訂音訊效果以及複雜的音訊效果和篩選器鏈結。</p>
     <p><strong>使用時機</strong></p>
     <p>當您的遊戲需要以最低的負荷和延遲來播放音效時，請使用 XAudio2。</p>
     <p><strong>其他資訊</strong></p>
@@ -152,7 +153,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tr>
     <tr class="even">
     <td align="left">媒體基礎</td>
-    <td align="left"><p>Microsoft 媒體基礎是針對播放音訊和視訊的媒體檔案和串流所設計，但在需要高於 XAudio2 的功能層級，並可接受一些額外負荷的情況下，也可以在遊戲中使用。</p>
+    <td align="left"><p>Microsoft 媒體基礎是設計來播放音訊和視訊的媒體檔案和串流，但需要高於 XAudio2 的功能層級並可接受一些額外的負荷時，也可以在遊戲中使用。</p>
     <p><strong>使用時機</strong></p>
     <p>媒體基礎對於遊戲中的電影場景或非互動式元件特別實用。 媒體基礎也很適合用於解碼音訊檔案以便使用 XAudio2 播放。</p>
     <p><strong>其他資訊</strong></p>
@@ -181,7 +182,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left">XInput</td>
     <td align="left"><p>XInput 遊戲控制器 API 可讓應用程式接收遊戲控制器的輸入。</p>
     <p><strong>使用時機</strong></p>
-    <p>如果您的遊戲需要支援控制器輸入，而且您有現有的 XInput 程式碼，即可繼續使用 XInput。 針對 UWP，XInput 已被 Windows.Gaming.Input 所取代。如果您正在撰寫新的輸入程式碼，則應該使用 Windows.Gaming.Input 而非 XInput。</p>
+    <p>如果您的遊戲需要支援 gampad 輸入，而且您有現有的 XInput 程式碼，即可繼續使用 XInput。 UWP 的 Windows.Gaming.Input 已取代 XInput，而如果您正在撰寫新的輸入程式碼，則應該使用 Windows.Gaming.Input 而不是 XInput。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) 文件。</p></td>
     </tr>
@@ -197,15 +198,15 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <li>能夠將輸入歸屬於特定使用者 (Windows.System.User)</li>
     </ul>
     <p><strong>使用時機</strong></p>
-    <p>如果您的遊戲需要支援控制器輸入，但不是使用現有的 XInput 程式碼，或是需要以上所列的其中一個優勢，便應該使用 Windows.Gaming.Input。</p>
+    <p>如果您的遊戲需要支援遊戲板輸入但不是使用現有的 XInput 程式碼或您需要以上所列的其中一個優勢，則應使用 Windows.Gaming.Input。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) 文件。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
-    <td align="left"><p>Windows.UI.Core.CoreWindow 類別提供追蹤指標按下和移動，以及按鍵按下和放開的事件。</p>
+    <td align="left"><p>Windows.UI.Core.CoreWindow 類別提供的事件可用於追蹤按下指標和移動、按下和放開按鍵事件。</p>
     <p><strong>使用時機</strong></p>
-    <p>當您需要追蹤遊戲中滑鼠或按鍵按下的情況時，請使用 Windows.UI.Core.CoreWindows 事件。</p>
+    <p>當您需要追蹤您遊戲中的按下滑鼠或按鍵時，請使用 Windows.UI.Core.CoreWindows 事件。</p>
     <p><strong>其他資訊</strong></p>
     <p>如需在您的遊戲中使用滑鼠或鍵盤的詳細資訊，請參閱[適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md)。</p></td>
     </tr>
@@ -232,7 +233,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left">DirectXMath</td>
     <td align="left"><p>DirectXMath API 針對遊戲常用的一般線性代數和圖形數學運算，提供適用於 SIMD 架構的 C++ 類型和函式。</p>
     <p><strong>使用時機</strong></p>
-    <p>使用 DirectXMath 是選擇性的，並能夠簡化一般數學運算。</p>
+    <p>使用 DirectXMath 是選擇性的，可簡化一般數學運算。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 文件。</p></td>
     </tr>
@@ -257,7 +258,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <tbody>
     <tr class="odd">
     <td align="left">Windows.Networking.Sockets</td>
-    <td align="left"><p>Windows.Networking.Sockets 命名空間提供的 TCP 與 UDP 通訊端，可允許可靠或不可靠的網路通訊。</p>
+    <td align="left"><p>Windows.Networking.Sockets 命名空間提供的 TCP 與 UDP 通訊端可允許可靠或不可靠的網路通訊。</p>
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要透過網路與其他電腦或裝置通訊，請使用 Windows.Networking.Sockets。</p>
     <p><strong>其他資訊</strong></p>
@@ -267,7 +268,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <td align="left">Windows.Web.HTTP</td>
     <td align="left"><p>Windows.Web.HTTP 命名空間提供對 HTTP 伺服器的可靠連線，可用來存取網站。</p>
     <p><strong>使用時機</strong></p>
-    <p>當您的遊戲需要存取網站以擷取或儲存資訊時，請使用 Windows.Web.HTTP。</p>
+    <p>當您的遊戲需要存取網站才能抓取或儲存資訊時，請使用 Windows.Web.HTTP。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱[在您的遊戲中使用網路功能](work-with-networking-in-your-directx-game.md)。</p></td>
     </tr>
@@ -292,9 +293,9 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <tbody>
     <tr class="odd">
     <td align="left">DirectX 工具組</td>
-    <td align="left"><p>DirectX 工具組 (DirectXTK) 是協助程式類別的集合，可供以 C++ 撰寫 DirectX 11.x 程式碼。</p>
+    <td align="left"><p>DirectX 工具組 (DirectXTK) 是協助程式類別集合，可供以 C++ 撰寫 DirectX 11.x 程式碼。</p>
     <p><strong>使用時機</strong></p>
-    <p>如果您是想要尋找新式程式碼以替代舊版 D3DX 公用程式程式碼的 C++ 開發人員，或您是正在轉換到原生 C++ 的 XNA Game Studio 開發人員，請使用 DirectX 工具組。</p>
+    <p>如果您是尋找舊版 D3DX 公用程式程式碼的新式替代程式碼的 C++ 開發人員，或您是轉換到原生 C++ 的 XNA Game Studio 開發人員，請使用 DirectX 工具組。</p>
     <p><strong>其他資訊</strong></p>
     <p>請參閱 DirectX 工具組專案頁面 ([https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK))。</p></td>
     </tr>
@@ -350,6 +351,6 @@ Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 –
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

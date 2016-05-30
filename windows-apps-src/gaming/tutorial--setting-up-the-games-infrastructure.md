@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 設定遊戲專案
 description: 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
@@ -26,11 +27,11 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 
 Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2015 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
 
-這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [**檔案**] &gt; [**新增專案**]，然後：
+這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [檔案]**** &gt; [新增專案]****然後：
 
-1.  從 [**範本**] 中，依序選取 [**Visual C++**]、[**Windows**]、[**通用**]。
-2.  在中央窗格中，選取 [**DirectX 11 應用程式 (通用 Windows)**]。
-3.  提供遊戲專案名稱，然後按一下 [**確定**]。
+1.  從 [範本]**** 中，依序選取 [Visual C++]****、[Windows]****、[通用]****。
+2.  在中央窗格中，選取 [DirectX 11 應用程式 (通用 Windows)]****。
+3.  提供遊戲專案名稱，然後按一下 [確定]****。
 
 ![選取 direct3d 應用程式範本](images/simple-dx-game-vs-new-proj.png)
 
@@ -73,7 +74,7 @@ Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對
     };
 ```
 
-在實作定義檢視提供者的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) 介面時，您要建立以下五個方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 以及 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
+在實作定義檢視提供者的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) 介面時，您要建立以下 5 個方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 以及 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
 
 您的 **main** 方法是在 **App.cpp** 來源檔中。 它的外觀如下：
 
@@ -120,7 +121,7 @@ void App::Run()
 
 範本不只有程式碼檔案。 **package.appxmanifest** 檔案包含有關您專案的中繼資料，可用來封裝和啟動您的遊戲，以及提交到 Windows 市集。 它也包含玩家系統的重要資訊，用來存取遊戲執行所需的系統資源。
 
-在 [**方案總管**] 中的 **package.appxmanifest** 檔案上按兩下，啟動 [**資訊清單設計工具**]。 您會看到這個檢視：
+在 [方案總管]**** 中的 **package.appxmanifest** 檔案上按兩下，啟動 [資訊清單設計工具]****。 您會看到這個檢視：
 
 ![package.appx 資訊清單編輯器。](images/simple-dx-game-vs-app-manifest.png)
 
@@ -128,7 +129,7 @@ void App::Run()
 
 ![direct3d 應用程式的預設功能。](images/simple-dx-game-vs-capabilities.png)
 
-如果您未選取遊戲所使用的功能 (例如透過 [**網際網路**] 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
+如果您未選取遊戲所使用的功能 (例如透過 [網際網路]**** 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
 
 現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
 
@@ -163,6 +164,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

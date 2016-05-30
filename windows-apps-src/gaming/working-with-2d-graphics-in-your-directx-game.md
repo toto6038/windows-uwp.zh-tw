@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 適用於 DirectX 遊戲的 2D 圖形
 description: 我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
@@ -66,6 +67,6 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

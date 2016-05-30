@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植 GLSL
 description: 一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
@@ -148,12 +149,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ## 上一步
 
 
-[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)
-下一步
+[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md) 下一步
 ---------
 
-[繪製到螢幕](draw-to-the-screen.md)
-備註
+[繪製到螢幕](draw-to-the-screen.md) 備註
 -------
 
 了解 HLSL 語意與常數緩衝區的封裝，除了可為您省掉一些令人頭痛的偵錯工作，還能提供最佳化的時機。 如果有機會，請完整閱讀[變數語法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)、[Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)以及[使用方法：建立常數緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果沒有機會，那麼此處提供一些有關語意與常數緩衝區的入門提示，請謹記在心。
@@ -185,6 +184,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

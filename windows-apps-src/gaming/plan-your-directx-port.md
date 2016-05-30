@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 計劃 DirectX 移植
 description: 計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
@@ -27,7 +28,7 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 
 您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
-> **注意**：您可以使用 [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)，取代先前由 D3DX 與 DXUT 所提供的部分功能。
+> **注意：**您可以使用 [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)，取代先前由 D3DX 與 DXUT 所提供的部分功能。
 
  
 
@@ -62,6 +63,6 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

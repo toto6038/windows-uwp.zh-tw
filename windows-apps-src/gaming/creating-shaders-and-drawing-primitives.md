@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 建立著色器及繪製基本型別
 description: 以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製基本型別的著色器。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
@@ -290,6 +291,6 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 在 DirectX 遊戲中載入資源
 description: 大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
@@ -47,15 +48,15 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>[BasicLoader 的完整程式碼](complete-code-for-basicloader.md)</p></td>
 <td align="left"><p>將圖形網格物件轉換並載入記憶體的類別與方法的完整程式碼。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。 供 [BasicLoader](complete-code-for-basicloader.md) 類別使用。</p></td>
+<td align="left"><p>[BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。 專供 [BasicLoader](complete-code-for-basicloader.md) 類別使用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>[DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)</p></td>
 <td align="left"><p>從記憶體載入 DDS 紋理的類別與方法的完整程式碼。</p></td>
 </tr>
 </tbody>
@@ -69,7 +70,7 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 
 非同步載入使用平行模式程式庫 (PPL) 中的 **task** 範本進行處理。 **task** 包含一個後面跟著 Lambda 的方法呼叫，可以在完成後處理非同步呼叫的結果，格式通常如下：
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
 使用 **.then()** 語法可以將多個工作鏈結在一起，因此，當一個作業完成後，便可執行相依於前一作業之結果的另一個非同步操作。 如此一來，您就能以玩家幾乎看不見的方式，載入、轉換及管理個別執行緒上的複雜資產。
 
@@ -183,7 +184,7 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-請注意，工作已經使用 && 運算子彙總，因此只有在所有工作完成後，才會觸發設定載入完成旗標的 Lambda。 請注意，如果您有多個旗標，可能會生競爭情況。 例如，假設 Lambda 連續將兩個旗標設為相同的值，如果另一個執行緒在第二個旗標設定之前就檢查了旗標，則可能只會看到設定的第一個旗標。
+請注意，工作已經使用 &amp;&amp; 運算子彙總，因此只有在所有工作完成後，才會觸發設定載入完成旗標的 Lambda。 請注意，如果您有多個旗標，可能會生競爭情況。 例如，假設 Lambda 連續將兩個旗標設為相同的值，如果另一個執行緒在第二個旗標設定之前就檢查了旗標，則可能只會看到設定的第一個旗標。
 
 您已經了解如何以非同步方式載入資源檔案。 以同步方式載入檔案就更簡單了，您可以在 [BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)和 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)中找到它們的範例。
 
@@ -704,6 +705,6 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

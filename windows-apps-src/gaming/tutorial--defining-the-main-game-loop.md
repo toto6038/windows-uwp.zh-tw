@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 定義主要遊戲物件
 description: 現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
@@ -144,7 +145,7 @@ private:
 在程式碼範例頂端有 4 個物件，其執行個體會隨著遊戲迴圈執行而更新。
 
 -   **MoveLookController** 物件。 這個物件代表玩家輸入。 (如需有關 **MoveLookController** 物件的詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。)
--   **GameRenderer** 物件。 這個物件代表衍生自處理所有裝置特定物件及其轉譯之 **DirectXBase** 類別的 Direct3D 11 轉譯器。 如需詳細資訊，請參閱[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)。
+-   **GameRenderer** 物件。 這個物件代表衍生自處理所有裝置特定物件及其轉譯之 **DirectXBase** 類別的 Direct3D 11 轉譯器。 (如需詳細資訊，請參閱[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md))。
 -   **Camera** 物件。 這個物件代表玩家的第一人稱遊戲世界視角。 (如需有關 **Camera** 物件的詳細資訊，請參閱[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)。)
 -   **Audio** 物件。 這個物件控制遊戲的音訊播放。 (如需有關 **Audio** 物件的詳細資訊，請參閱[加入聲音](tutorial--adding-sound.md)。)
 
@@ -560,7 +561,7 @@ void App::Update()
 6.  此方法會檢查是否已達到過關的條件。 如果達到，它會計算關卡的最後分數，並檢查是否為最後一關 (共 6 關)。 如果是最後一關，此方法會傳回 **GameComplete** 遊戲狀態；否則會傳回 **LevelComplete** 遊戲狀態。
 7.  如果關卡尚未完成，此方法會將遊戲狀態設為 **Active** 並回到這一關。
 
-以下是在 **Simple3DGame.cpp**中，**RunGame** 在程式碼中看起來的樣子。
+以下是在 **Simple3DGame.cpp** 中，**RunGame** 在程式碼中看起來的樣子。
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -3619,6 +3620,6 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

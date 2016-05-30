@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 在 Marble Maze 範例中加入輸入和互動
 description: 通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
@@ -521,6 +522,6 @@ if (marblePosition.z >= resetDepth)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
 description: 在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
@@ -26,7 +27,7 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniform                   | 常數緩衝區 (**cbuffer**) 欄位。                                                                                                                                                |
 | 屬性                 | 頂點緩衝區元素欄位是由輸入配置所指定，並以特定的 HLSL 語意來標示。                                                                                |
-| 緩衝區物件             | 緩衝區；請參閱 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 與  [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)，而且適用於一般用法的緩衝區定義。 |
+| 緩衝區物件             | 緩衝區；請參閱 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 與 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)，而且適用於一般用法的緩衝區定義。 |
 | 框架緩衝區物件 (FBO) | 轉譯目標；請參閱 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 與 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)。                                       |
 | 背景緩衝區               | 含有「背景緩衝區」表面的交換鏈結；請參閱含有附加 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) 的 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。                       |
 
@@ -66,7 +67,7 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vert
 在 Direct3D 11 中，緩衝區資料元素會被視為「子資源」，而涵蓋範圍可從個別的頂點資料元素到 MIP 圖紋理。
 
 -   使用緩衝區資料元素的設定填入 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 結構。
--   使用緩衝區中個別元素的大小以及緩衝區類型填入  [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 結構。
+-   使用緩衝區中個別元素的大小以及緩衝區類型填入 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 結構。
 -   使用這兩個結構呼叫 [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)。
 
 Direct3D 11：建立和填入頂點緩衝區和索引緩衝區。
@@ -296,6 +297,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 計劃從 OpenGL ES 2.0 移植到 Direct3D
 description: 如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
@@ -114,6 +115,6 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

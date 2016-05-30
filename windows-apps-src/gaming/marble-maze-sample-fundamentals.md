@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze 範例基礎觀念
 description: 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
@@ -12,7 +13,7 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 
 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本文件也描述程式碼中採用的幾種慣例。
 
-> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 ## 
@@ -33,7 +34,7 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 
 [DirectX 11 App (通用 Windows)]**** 範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
 
-> **警告** **/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
+> **注意****/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
@@ -42,9 +43,9 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ##  建置、部署及執行遊戲
 
 
-依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 **[建置] 和 [建置方案]**)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
+依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
 
-建置專案之後，就必須部署它 (在功能表列上，依序選擇 **[建置] 和 [建置方案]**)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
+建置專案之後，就必須部署它 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
 
 在您部署專案之後，請挑選 [Marble Maze] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 [偵錯]、[開始偵錯]****。
 
@@ -65,7 +66,7 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 
 Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 這類 App 會使用授權的函式、資料類型及裝置，並從 Windows 市集發佈。 Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
 
-若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 **AddRef** 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822)。
+若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 **AddRef** 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822)。
 
 > **重要**  
 當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用 **^** 和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
@@ -117,7 +118,7 @@ void LoadMesh(
     );
 ```
 
-若要對 app 執行程式碼分析，請在功能表列上依序選擇 **[建置] 和 [針對方案執行程式碼分析]**。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
+若要對 app 執行程式碼分析，請在功能表列上依序選擇 [建置] 和 [針對方案執行程式碼分析]****。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
 
 可用註釋的完整清單定義在 sal.h 中。 如需詳細資訊，請參閱 [SAL 註釋](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 
@@ -141,6 +142,6 @@ void LoadMesh(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,5 +1,6 @@
 ---
-title: 啟動和繼續 app (DirectX 和 C++)
+author: mtoepke
+title: 啟動和繼續應用程式 (DirectX 和 C++)
 description: 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ---
@@ -11,7 +12,7 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 
 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | [如何啟用 app](how-to-activate-an-app-directx-and-cpp.md) | 本主題示範如何定義 UWP DirectX app 的啟用經驗。 |
 | [如何暫停 app](how-to-suspend-an-app-directx-and-cpp.md) | 本主題示範如何在系統暫停 UWP DirectX app 時，儲存重要的系統狀態與 app 資料。 |
@@ -27,6 +28,6 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

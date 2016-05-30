@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 支援各種硬體上的陰影圖
 description: 在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
@@ -114,7 +115,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 適用於著色器線性篩選版本的專案檔項目會定義 LINEAR：
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -143,7 +144,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 適用於著色器線性篩選版本的專案檔項目不會包含前置處理器定義：
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -173,6 +174,6 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

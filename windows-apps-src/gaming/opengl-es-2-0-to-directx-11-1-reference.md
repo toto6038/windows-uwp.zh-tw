@@ -1,10 +1,11 @@
 ---
+author: mtoepke
 title: 從 OpenGL ES 2.0 到 Direct3D 11 的參考
 description: 從 OpenGL ES 2.0 移植到 Direct3D 11 時，可以使用這些參考主題來查詢 API 對應和簡短的程式碼範例。
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ---
 
-# 從 OpenGL ES 2.0 到 Direct3D 11 的參考
+# 從 OpenGL ES 2.0 到 Direct3D 11 的參考資料
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -24,8 +25,8 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>當您 [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以建立適用於通用 Windows 平台 (UWP) 的遊戲時，會將您的 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft High Level 高階著色器語言 (HLSL) 程式碼。</p></td>
+<td align="left"><p>[GLSL-to-HLSL 參考](glsl-to-hlsl-reference.md)</p></td>
+<td align="left"><p>當您[將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。</p></td>
 </tr>
 </tbody>
 </table>
@@ -41,6 +42,6 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

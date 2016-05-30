@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 將陰影圖轉譯為深度緩衝區
 description: 從光線的視角轉譯，以建立代表陰影體的二維深度圖。
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
@@ -151,6 +152,6 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 延伸遊戲範例
 description: 恭喜！ 現在，您已經了解基本通用 Windows 平台 (UWP) DirectX 3D 遊戲的關鍵元件。
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
@@ -30,7 +31,7 @@ keywords: ["DirectX, XAML"]
 
 您要為 **SwapChainBackgroundPanel** 宣告 XAML，就像 **Main.app.xaml** 檔案中的一樣：
 
-```xaml
+```xml
 <Page
     x:Name="DXMainPage"
     x:Class="Simple3DGameXaml.MainPage"
@@ -863,7 +864,7 @@ void App::ResetGame()
 
 MainPage.xaml
 
-```xaml
+```xml
 <SwapChainBackgroundPanel
     x:Name="DXSwapChainPanel"
     x:Class="Simple3DGameXaml.MainPage"
@@ -1503,7 +1504,7 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 //----------------------------------------------------------------------
 ```
 
-若要下載使用 XAML 的重疊的範例遊戲版本，請移至 [Direct3D 射擊遊戲範例 (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418)。
+若要下載使用 XAML 為重疊的範例遊戲版本，請移至 [Direct3D 射擊遊戲範例 (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418)。
 
  
 
@@ -1514,6 +1515,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

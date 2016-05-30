@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: BasicReaderWriter 的完整程式碼
 description: 讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
@@ -25,19 +26,14 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 
 ## 技術
 
-|                       |                 |
-|-----------------------|-----------------|
-| 程式語言 | C++             |
-| 程式設計模型    | Windows 執行階段 |
+**程式設計語言** - C++  
+**程式設計模型** - Windows 執行階段
 
 
 ## 需求
 
-| 最低支援的用戶端 | Windows 10                            |
-|--------------------------|---------------------------------------|
-| 最低支援的伺服器 | Windows Server 2016 Technical Preview |
-| 最低需求的 SDK     |                                       |
-
+ **最低支援的用戶端** - Windows 10       
+ **最低支援的伺服器** - Windows Server 2016 Technical Preview 
 
 ## 檢視程式碼 (C++)
 
@@ -265,6 +261,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

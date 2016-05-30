@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 使用深度測試轉譯場景
 description: 將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
@@ -159,6 +160,6 @@ return float4(input.color * ambient, 1.f);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

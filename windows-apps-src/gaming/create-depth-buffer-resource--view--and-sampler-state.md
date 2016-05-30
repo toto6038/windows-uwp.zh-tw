@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 建立深度緩衝區裝置資源
 description: 了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
@@ -259,6 +260,6 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

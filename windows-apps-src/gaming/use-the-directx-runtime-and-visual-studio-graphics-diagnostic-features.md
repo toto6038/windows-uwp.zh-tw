@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 圖形診斷工具
 description: 了解如何取得與使用圖形診斷功能，包括 Visual Studio 中的圖形偵錯、圖形畫面格分析，以及 GPU 使用量。
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
@@ -34,6 +35,6 @@ ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

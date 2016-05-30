@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: 遊戲和 DirectX
-description: 通用 Windows 平台 (UWP) 能提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
+description: 通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ---
 
@@ -37,12 +38,12 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 | [DirectX 與 XAML 互通性](directx-and-xaml-interop.md) | 您可以在 UWP 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 |
 | [封裝您的遊戲](package-your-windows-store-directx-game.md) | 大型 UWP 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。 在這個主題中，您將了解如何使用 app 套件與 app 套件組合來自訂 app，讓客戶只收到他們實際所需的資源。 |
 | [遊戲移植指南](porting-guides.md) | 提供將現有的遊戲移植到 Direct3D 11、UWP 和 Windows 10 的指南。 |
-| [遊戲程式設計資源](additional-directx-game-programming-resources.md) | 如需 Windows 遊戲程式設計的詳細資訊，請查看下列資源。 |
+| [遊戲程式設計資源](additional-directx-game-programming-resources.md) | 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。 |
 
  
 
 > **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發， 請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -62,6 +63,6 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

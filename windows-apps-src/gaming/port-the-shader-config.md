@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植著色器物件
 description: 從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
@@ -317,6 +318,6 @@ m_d3dContext->UpdateSubresource(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

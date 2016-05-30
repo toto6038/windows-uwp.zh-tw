@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: GLSL-to-HLSL 參考
 description: 當您將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
@@ -55,7 +56,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </tr>
 <tr class="even">
 <td align="left">著色器編譯整合至圖形 API</td>
-<td align="left">在 Direct3D 將著色器傳遞到驅動程式之前，HLSL 編譯器[compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633)至中繼的二進位表示法。
+<td align="left">在 Direct3D 將著色器傳遞到驅動程式之前，HLSL 編譯器會先將[著色器編譯](https://msdn.microsoft.com/library/windows/desktop/bb509633)至中繼的二進位表示法。
 <div class="alert">
 <strong>注意</strong> 此二進位表示法與硬體無關。 通常會在 app 建置時進行編譯，而不是在 app 執行時進行編譯。
 </div>
@@ -64,12 +65,11 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[
-            Variable](#variables) 儲存區修飾詞</td>
+<td align="left">[Variable](#variables) 儲存區修飾詞</td>
 <td align="left">透過輸入配置宣告傳輸常數緩衝區與資料</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Types](#types)</p>
+<td align="left"><p>[類型](#types)</p>
 <p>典型的向量類型：vec2/3/4</p>
 <p>lowp、mediump、highp</p></td>
 <td align="left"><p>典型的向量類型：float2/3/4</p>
@@ -77,19 +77,17 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left">[
-            texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
+<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left">[
-            Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
+<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">以列為主的矩陣 (預設值)</td>
 <td align="left">以欄為主的矩陣 (預設值)
 <div class="alert">
-<strong>注意</strong> 請使用 <strong>row_major</strong> 型別修飾詞來變更單一變數的配置。 如需詳細資訊，請參閱[Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
+<strong>注意</strong> 請使用 <strong>row_major</strong> 型別修飾詞來變更單一變數的配置。 如需詳細資訊，請參閱[變數語法](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
 </div>
 <div>
  
@@ -132,7 +130,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <p>您將 uniform 變數從 app 程式碼傳遞至頂點與片段著色器內，或是其中之一。 使用這些著色器繪製任何三角形之前，您必須設定所有 uniform 的值，這樣在繪製三角形網格的整個過程中，它們的值才能維持相同。 這些值是 uniform。 有些 uniform 是針對整個框架所設定，而其他則是特別針對某一組特殊頂點像素著色器而設定。</p>
 <p>uniform 變數是基於多邊形的變數。</p></td>
 <td align="left"><p>使用常數緩衝區。</p>
-<p>請參閱 [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) 和 [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581)。</p></td>
+<p>請參閱[使用方法：建立常數緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476896)與[著色器常數](https://msdn.microsoft.com/library/windows/desktop/bb509581)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -142,8 +140,8 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>attribute 是您單獨從 app 程式碼傳遞至頂點著色器之頂點描述的一部分。 與 uniform 不同，您要為每個頂點設定各個 attribute 的值，然後每個頂點便有不同的值。 Attribute 變數是基於頂點的變數。</p></td>
-<td align="left"><p>在 Direct3D 應用程式程式碼中定義頂點緩衝區，並使它與頂點著色器中定義的頂點輸入相符。 您可選擇是否定義索引緩衝區。 請參閱 [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) 和 [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897)。</p>
-<p>在 Direct3D app 程式碼中建立輸入配置，並使語意值與頂點輸入中的語意值相符。 請參閱 [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)。</p></td>
+<td align="left"><p>在 Direct3D 應用程式程式碼中定義頂點緩衝區，並使它與頂點著色器中定義的頂點輸入相符。 您可選擇是否定義索引緩衝區。 請參閱[使用方法：建立頂點緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476899)與[使用方法：建立索引緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476897)。</p>
+<p>在 Direct3D 應用程式程式碼中建立輸入配置，並使語意值與頂點輸入中的語意值相符。 請參閱[建立輸入配置](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -180,7 +178,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <td align="left">純量類型：float、int、bool</td>
 <td align="left"><p>純量類型：float、int、bool</p>
 <p>還有 uint、double</p>
-<p>如需詳細資訊，請參閱[Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)。</p></td>
+<p>如需詳細資訊，請參閱[純量類型](https://msdn.microsoft.com/library/windows/desktop/bb509646)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>向量類型</p>
@@ -202,8 +200,8 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>如需詳細資訊，請參閱 [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) 和 [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
-<p>向量也被定義為 float4 (typedef vector &lt;float, 4&gt; vector;) 的類型。 如需詳細資訊，請參閱[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>如需詳細資訊，請參閱[向量類型](https://msdn.microsoft.com/library/windows/desktop/bb509707)與[關鍵字](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
+<p>向量也是定義為 float4 (typedef vector &lt;float, 4&gt; vector;) 的類型。 如需詳細資訊，請參閱[使用者定義的類型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>矩陣類型</p>
@@ -226,9 +224,9 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>您也可使用 [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) 來定義矩陣。</p>
-<p>例如：matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>矩陣也被定義為 float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;) 的類型。 如需詳細資訊，請參閱[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>您也可使用[矩陣類型](https://msdn.microsoft.com/library/windows/desktop/bb509623)來定義矩陣。</p>
+<p>例如，matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>矩陣也是定義為 float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;) 的類型。 如需詳細資訊，請參閱[使用者定義的類型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>適用於 float、int、取樣器的精確度限定詞</p>
@@ -249,10 +247,10 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <p>最小固定點帶正負號 2.8 位元值 (2 位元的整數與 8 位元的分數元件)。 8 位元的分數元件可包含 1 而不排除，讓範圍完整包含從 -2 到 2。</p></li>
 <li>min16int：最小 16 位元帶正負號的整數</li>
 <li><p>min12int：最小 12 位元帶正負號的整數</p>
-<p>此類型適用於 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876))，其中整數由浮點數表示。 這會是您在使用 16 位元浮點數列舉整數時所得到的精確度。</p></li>
+<p>此類型適用於 10Level9 ([9_x 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876))，其中整數由浮點數表示。 這會是您在使用 16 位元浮點數列舉整數時所得到的精確度。</p></li>
 <li>min16uint：最小 16 位元不帶正負號的整數</li>
 </ul>
-<p>如需詳細資訊，請參閱 [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) 和 [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108)。</p></td>
+<p>如需詳細資訊，請參閱[純量類型](https://msdn.microsoft.com/library/windows/desktop/bb509646)與[使用 HLSL 最小精確度](https://msdn.microsoft.com/library/windows/desktop/hh968108)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -547,7 +545,7 @@ m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
 
-// Set the primitive’s topology.
+// Set the primitive's topology.
 m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 // Draw a triangle with 3 vertices. triangleVertices is an array of 3 vertices.
@@ -568,6 +566,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 將 DirectX 9 功能對應到 DirectX 11 API
 description: 了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
@@ -45,8 +46,8 @@ Direct2D 在 Direct3D 之上執行；可使用任一種 API 來實作 2D 遊戲�
 
 D3DX 與 DXUT 已過時，UWP 遊戲無法使用。 這些協助程式程式庫提供紋理載入與網格載入等工作的資源。
 
--   [從 Direct3D 9 到 UWP 的簡易移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)逐步解說示範如何設定視窗、 初始化 Direct3D 與執行基本 3D 轉譯。
--   [使用 DirectX 的簡易 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)逐步解說示範常見的遊戲程式設計工作，包含圖形、 載入檔案、UI、控制項與音效。
+-   [從 Direct3D 9 到 UWP 的簡易移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)逐步解說示範如何設定視窗、初始化 Direct3D 與執行基本 3D 轉譯。
+-   [使用 DirectX 的簡易 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)逐步解說示範常見的遊戲程式設計工作，包含圖形、載入檔案、UI、控制項與音效。
 -   [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)社群專案提供可搭配 Direct3D 11 與 UWP app 使用的協助程式類別。
 
 ## 將著色器程式從 FX 移到 HLSL
@@ -129,8 +130,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
 <td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
 <p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
-<p>[
-            Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882) 中會說明圖性管線階段。</p></td>
+<p>[圖形管線](https://msdn.microsoft.com/library/windows/desktop/ff476882)中會說明圖性管線階段。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
@@ -335,7 +335,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用著色器中的 .r swizzle 將紅色複製到其他 元件，以取得 Direct3D 9 行為。
+<strong>注意</strong> 使用著色器中的 .r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為。
 </div>
 <div>
  
@@ -419,7 +419,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM 與 DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 從 API/硬體的角度來說，DXT1 與 DXT2 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式進行追蹤，不需要個別格式。
+<strong>注意</strong> 從 API/硬體的角度來說，DXT1 與 DXT2 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -433,7 +433,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM 與 DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 從 API/硬體的角度來說，DXT3 與 DXT4 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式進行追蹤，不需要個別格式。
+<strong>注意</strong> 從 API/硬體的角度來說，DXT3 與 DXT4 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -669,6 +669,6 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

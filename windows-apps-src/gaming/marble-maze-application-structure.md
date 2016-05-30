@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze 應用程式結構
 description: DirectX 通用 Windows 平台 (UWP) app 的結構與傳統型應用程式結構不同。
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
@@ -372,6 +373,6 @@ void MarbleMaze::LoadState()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

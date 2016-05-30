@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: 在 Marble Maze 範例中加入視覺化內容
-description: 本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以編寫適合這些模式的遊戲內容。
+description: 本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以在編寫您的遊戲內容時運用這些模式。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 ---
 
 # 在 Marble Maze 範例中加入視覺化內容
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以編寫適合這些模式的遊戲內容。 若要了解視覺化遊戲元件如何融入 Marble Maze 的整個應用程式結構中，請參閱 [Marble Maze 應用程式結構](marble-maze-application-structure.md)。
@@ -24,7 +25,7 @@ ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 
 在開發過程中，我們也需要多次反覆執行其中的一些步驟。 例如，當我們變更網格和彈珠模型時，我們也必須變更一些支援這些模型的著色器程式碼。
 
-> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze game sample (DirectX Marble Maze 遊戲範例)](http://go.microsoft.com/fwlink/?LinkId=624011) 中找到。
 
  
 針對處理 DirectX 和視覺化遊戲內容方面，也就是初始化 DirectX 圖庫、載入場景資源及更新和呈現場景，以下是本文件討論的一些重點：
@@ -78,7 +79,7 @@ void DeviceResources::DeviceResources(CoreWindow^ window, float dpi)
 }
 ```
 
-**DeviceResources** 類別會分割這項功能，可以更輕鬆順應環境改變。 例如，當視窗大小變更時，它會呼叫 **CreateWindowSizeDependentResources** 方法。
+**DeviceResources** 類別會分割這項功能，因此能更輕鬆順應環境改變。 例如，當視窗大小變更時，它會呼叫 **CreateWindowSizeDependentResources** 方法。
 
 ###  初始化 Direct2D、DirectWrite 及 WIC Factory
 
@@ -126,7 +127,7 @@ void DeviceResources::CreateDeviceIndependentResources()
 
 ###  建立 Direct3D 和 Direct2D 裝置
 
-**DeviceResources::CreateDeviceResources** 方法會呼叫 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 來建立代表 Direct3D 顯示卡的裝置物件。 因為 Marble Maze 支援功能層級 9.1 及以上版本，所以 **DeviceResources::CreateDeviceResources** 方法會使用 **\\** 值的陣列指定層級 9.1 到 11.1。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給應用程式。 因此，**D3D\_FEATURE\_LEVEL** 陣列項目會從最高列到最低，讓應用程式取得可用的最高階功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
+**DeviceResources::CreateDeviceResources** 方法會呼叫 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 來建立代表 Direct3D 顯示卡的裝置物件。 因為 Marble Maze 支援功能層級 9.1 及以上版本，所以 **DeviceResources::CreateDeviceResources** 方法會使用 **\\** 值的陣列指定層級 9.1 到 11.1。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給 App。 因此，**D3D\_FEATURE\_LEVEL** 陣列項目會從最高列到最低，讓 App 取得可用的最高階功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
 
 ```cpp
 // This array defines the set of DirectX hardware feature levels this app will support. 
@@ -214,7 +215,7 @@ DX::ThrowIfFailed(
 
 ### 建立 Direct3D 與檢視的關聯
 
-**DeviceResources::CreateWindowSizeDependentResources** 方法會建立依存於特定視窗大小的圖形資源，例如交換鏈結，以及 Direct3D 和 Direct2D 呈現目標。 DirectX UWP app 與傳統型應用程式間有個重要差異，就是交換鏈結與輸出視窗建立關聯的方式。 交換鏈結負責顯示裝置要在監視器上呈現的緩衝區。 Marble Maze 應用程式結構文件描述 UWP App 與傳統型應用程式的視窗系統有何不同。 因為 Windows 市集應用程式不使用 **HWND** 物件，Marble Maze 必須使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 方法，將裝置輸出關聯至檢視。 下列範例顯示 **DeviceResources::CreateWindowSizeDependentResources** 方法中負責建立交換鏈結的部分。
+**DeviceResources::CreateWindowSizeDependentResources** 方法會建立依存於特定視窗大小的圖形資源，例如交換鏈結，以及 Direct3D 和 Direct2D 呈現目標。 DirectX UWP app 與傳統型應用程式間有個重要差異，就是交換鏈結與輸出視窗建立關聯的方式。 交換鏈結負責顯示裝置要在監視器上呈現的緩衝區。 Marble Maze 應用程式結構文件描述 UWP App 與傳統型應用程式的視窗系統有何不同。 因為 Windows 市集應用程式不使用 **HWND** 物件，所以 Marble Maze 必須使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 方法將裝置輸出關聯至檢視。 下列範例顯示 **DeviceResources::CreateWindowSizeDependentResources** 方法中負責建立交換鏈結的部分。
 
 ```cpp
 // Obtain the final swap chain for this window from the DXGI factory.
@@ -242,7 +243,7 @@ DX::ThrowIfFailed(
 
 **DeviceResources::CreateWindowSizeDependentResources** 方法以適合大部分遊戲的方式來初始化圖形資源。
 
-> *注意* 在 Windows 執行階段和 Direct3D 中，「檢視」****一詞的意義不同。 在 Windows 執行階段中，檢視是指應用程式使用者介面設定的集合，包括顯示區域和輸入行為及用來處理的執行緒。 當您建立檢視時，您可以指定所需的組態和設定。 [Marble Maze 應用程式結構](marble-maze-application-structure.md)中會說明設定應用程式檢視的程序。 在 Direct3D 中，「檢視」一詞有多種意義。 首先，資源檢視可定義資源可以存取的子資源。 例如，當紋理物件與著色器資源檢視相關聯時，該著色器稍後可存取紋理。 資源檢視的一項優點是在呈現管線的不同階段中，您可以採取不同的方式來解譯資料。 如需資源檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 在檢視轉換或檢視轉換矩陣的環境下使用時，檢視是指相機的位置和方向。 檢視轉換會依相機的位置和方向來重新定位全世界的物件。 如需檢視轉換的詳細資訊，請參閱[檢視轉換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主題會進一步說明 Marble Maze 如何使用資源和矩陣檢視。
+> *注意* 在 Windows 執行階段和 Direct3D 中，「檢視」****一詞的意義不同。 在 Windows 執行階段中，檢視是指應用程式使用者介面設定的集合，包括顯示區域和輸入行為及用來處理的執行緒。 當您建立檢視時，您可以指定所需的組態和設定。 [Marble Maze 應用程式結構](marble-maze-application-structure.md)中會說明設定 App 檢視的程序。 在 Direct3D 中，「檢視」一詞有多種意義。 首先，資源檢視可定義資源可以存取的子資源。 例如，當紋理物件與著色器資源檢視相關聯時，該著色器稍後可存取紋理。 資源檢視的一項優點是在呈現管線的不同階段中，您可以採取不同的方式來解譯資料。 如需資源檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 在檢視轉換或檢視轉換矩陣的環境下使用時，檢視是指相機的位置和方向。 檢視轉換會依相機的位置和方向來重新定位全世界的物件。 如需檢視轉換的詳細資訊，請參閱[檢視轉換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主題會進一步說明 Marble Maze 如何使用資源和矩陣檢視。
 
  
 
@@ -903,6 +904,6 @@ else
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

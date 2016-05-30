@@ -1,10 +1,11 @@
 ---
-title: 定義遊戲的通用 Windows 平台 (UWP) app 架構
+author: mtoepke
+title: 定義遊戲的通用 Windows 平台 (UWP) App 架構
 description: 撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 
-#  定義遊戲的通用 Windows 平台 (UWP) 應用程式架構
+#  定義遊戲的通用 Windows 平台 (UWP) App 架構
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +24,7 @@ ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 
 如我們在[設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md)中所討論，Microsoft Visual Studio 2015 在 **Sample3DSceneRenderer.cpp** 檔案中提供了 DirectX 基本轉譯器的實作；當您挑選 **DirectX 11 應用程式 (通用 Windows)** 範本時，該檔案便可供使用。
 
-如需了解及建立檢視提供者和轉譯器的詳細資料，請參閱[如何設定使用 C++ 和 DirectX 的 UWP 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+如需了解及建立檢視提供者和轉譯器的詳細資料，請參閱[如何使用 C++ 和 DirectX 設定 UWP 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
 簡單的來說，您必須提供應用程式單例呼叫的 5 種方法實作：
 
@@ -309,9 +310,9 @@ void App::InitializeGameState()
 </tr>
 <tr class="even">
 <td align="left">OnLogicalDpiChanged</td>
-<td align="left">處理 [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150)。 主遊戲視窗的 DPI 已變更，而且遊戲 app 據此調整其資源。
+<td align="left">處理 [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150)。 主遊戲視窗的 DPI 已變更，而且遊戲 App 據此調整其資源。
 <div class="alert">
-<strong>注意</strong> [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標的單位是 DIP (裝置獨立畫素)，如同 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
+<strong>注意</strong> [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標的單位是 DIP (裝置獨立畫素)，和在 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) 中相同。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
  
@@ -1421,6 +1422,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

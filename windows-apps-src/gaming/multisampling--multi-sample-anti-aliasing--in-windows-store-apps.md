@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: 通用 Windows 平台 (UWP) app 中的多重取樣
 description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 
-# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"> </span> 通用 Windows 平台 (UWP) app 中的多重取樣
+# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 通用 Windows 平台 (UWP) app 中的多重取樣
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
 
@@ -74,7 +75,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **請注意**如果您必須檢查區塊式資源緩衝區的多重取樣支援，請改用 [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)。
+    > **注意：**如果您必須檢查區塊式資源緩衝區的多重取樣支援，請改用 [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)。
 
      
 
@@ -204,6 +205,6 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

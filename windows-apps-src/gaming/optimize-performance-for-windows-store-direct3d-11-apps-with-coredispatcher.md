@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 description: 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
@@ -88,7 +89,7 @@ void App::Run()
 
 在第二個反覆運算中，遊戲經過修改，所以使用者選取一塊拼圖然後觸碰這塊拼圖的正確目的地時，拼圖會以動畫形式越過畫面，直到到達其目的地為止。
 
-和之前一樣，此程式碼有一個使用 **ProcessOneAndAllPending** 的單一執行緒遊戲迴圈，以分派佇列中的輸入事件。 現在的差異是在動畫期間，迴圈改為使用 **CoreProcessEventsOption::ProcessAllIfPresent**，所以它不會等待新的輸入事件。 如果沒有任何事件擱置中，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 會立即傳回，並讓 app 在動畫中呈現下一個畫面。 當動畫完成時，迴圈會切換回 **ProcessOneAndAllPending** 以限制畫面更新。
+和之前一樣，此程式碼有一個使用 **ProcessOneAndAllPending** 的單一執行緒遊戲迴圈，以分派佇列中的輸入事件。 現在的差異是在動畫期間，迴圈改為使用 **CoreProcessEventsOption::ProcessAllIfPresent**，所以它不會等待新的輸入事件。 如果沒有任何事件擱置中，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 會立即傳回，並讓 app 呈現動畫中的下一個畫面。 當動畫完成時，迴圈會切換回 **ProcessOneAndAllPending** 以限制畫面更新。
 
 ``` syntax
 void App::Run()
@@ -238,13 +239,13 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 ![圖 1 Directx 的輸入延遲 ](images/input-latency1.png)
 
-在 Windows 8.1 中，DXGI 為交換鏈結引進了 **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** 旗標，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持目前佇列空白。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
+在 Windows 8.1 中，DXGI 為交換鏈結引進了 **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** 旗標，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持 Present 佇列空白。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
 
 圖 2
 
 ![圖 2 Directx 可等候的輸入延遲](images/input-latency2.png)
 
-我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 拼圖範例使用可等候的交換鏈結，並透過呼叫 ` m_deviceResources->SetMaximumFrameLatency(1);` 來控制目前的佇列限制。
+我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 拼圖範例透過呼叫下行來使用可等候的交換鏈結，並控制 Present 佇列的限制：` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 
@@ -255,6 +256,6 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

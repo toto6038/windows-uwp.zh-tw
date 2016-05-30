@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 建立和顯示基本網格
 description: 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
@@ -11,7 +12,7 @@ ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 
 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。 組成這些多邊形物件與表面結構的一系列頂點則稱為網格。 我們在此建立一個立方體物件的基本網格，並將它提供給著色器管線進行轉譯和顯示。
 
-> **重要** 這裡提供的範例程式碼會使用類型 (如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4) 及在 DirectXMath.h 中宣告的內嵌方法。 如果您是透過剪下並貼上的方式使用此程式碼，請在您的專案中包含 \#include &lt;DirectXMath.h&gt;。
+> **重要** 這裡提供的範例程式碼會使用類型 (如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4) 及在 DirectXMath.h 中宣告的內嵌方法。 如果您是透過剪下並貼上的方式使用此程式碼，請在您的專案中\#包含 &lt;DirectXMath.h&gt;。
 
  
 
@@ -444,6 +445,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

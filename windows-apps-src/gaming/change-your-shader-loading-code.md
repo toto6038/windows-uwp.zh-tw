@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 description: 在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
@@ -32,8 +33,7 @@ Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 -   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "PS" 開頭。
 -   [輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120) - 輸出合併階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "OM" 開頭。
 
-(還有幾何著色器、輪廓著色器、鑲嵌與網域著色器等階段，但因為在 OpenGL ES 2.0 中沒有類似項目，所以不在此討論。)
-如需這些階段的完整方法清單，請參閱 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 與 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 參考頁。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
+(還有幾何著色器、輪廓著色器、鑲嵌與網域著色器，但因為在 OpenGL ES 2.0 中沒有類似項目，我們將不會在此討論。) 如需這些階段的方法的完整清單，請參閱 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
 
 ## 建立著色器
 
@@ -249,6 +249,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
