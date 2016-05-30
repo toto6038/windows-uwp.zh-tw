@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Windows 執行階段元件中的自訂事件和事件存取子
 description: 適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
@@ -10,7 +11,7 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。 但是，當您在 Windows 執行階段元件中宣告自訂事件存取子時，必須遵循 UWP 中使用的模式。
 
@@ -125,6 +126,6 @@ Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

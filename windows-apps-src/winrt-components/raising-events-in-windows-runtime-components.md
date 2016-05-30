@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 在 Windows 執行階段元件中引發事件
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
@@ -10,7 +11,7 @@ description:
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義之委派類型的事件，而您希望 JavaScript 可以接收該事件，則可透過下列其中一種方式來實作和 (或) 引發此事件：
 
@@ -72,7 +73,7 @@ public void MakeToastWithDispatcher(string message)
 
 另一種從背景執行緒傳送事件的方式，是使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; 做為事件的類型。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
 
-下列範例示範如何在 C\# 中使用 Windows.Foundation.EventHandler&lt;Object&gt;：
+下列範例示範如何在 C# 中使用 Windows.Foundation.EventHandler&lt;Object&gt;：
 
 ```csharp
 public sealed Class1
@@ -131,24 +132,24 @@ toastCompletedEventHandler: function (event) {
 
 ## 建立 Windows 執行階段元件
 
-1.  在 Visual Studio 的功能表列上，選擇 [**檔案] &gt; [新增專案**]。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
-2.  將 C\# Windows 執行階段元件新增至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [新增] &gt; [新增專案]****。 展開 [Visual C#] &gt; [Windows 市集]****，然後選取 [Windows 執行階段元件]****。 將專案命名為 ToasterComponent，然後選擇 [確定]**** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
+1.  在 Visual Studio 的功能表列上，選擇 [檔案] &gt; [新增專案]****。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
+2.  將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [加入] &gt; [新增專案]****。 展開 [Visual C#] &gt; [Windows 市集]****，然後選取 [Windows 執行階段元件]****。 將專案命名為 ToasterComponent，然後選擇 [確定]**** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
 
     在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]****。 在 [屬性頁]**** 對話方塊的左窗格中選取 [組態屬性]****，然後將對話方塊頂端的 [組態]**** 設定為 [偵錯]****，並將 [平台]**** 設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定]**** 按鈕。
 
-    > **注意**：將 [平台] 設定為 [任何 CPU] 將無法運作，因為它並不適用於您稍後加入至方案的機器碼架構 Win32 DLL。
+    > **注意：**將 [平台] 設定為 [任何 CPU] 將無法運作，因為它並不適用於您稍後加入至方案的機器碼架構 Win32 DLL。
 
 3.  在 [方案總管] 中，將 class1.cs 重新命名為 ToasterComponent.cs，使其符合專案的名稱。 Visual Studio 會自動重新命名檔案中的類別，以符合新的檔案名稱。
 4.  在 .cs 檔案中，為 Windows.Foundation 命名空間加上 using 指示詞，以便將 TypedEventHandler 納入範圍。
 5.  需要 Proxy 和虛設常式時，您的元件必須使用介面來公開它的公用成員。 在 ToasterComponent.cs 中，分別為快顯通知程式及其產生的 Toast 定義介面。
 
-    > **注意**：在 C# 中，您可以略過此步驟， 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構]> [擷取介面]****。 在產生的程式碼中，手動為介面提供公用存取範圍。
+    > **注意：**在 C# 中，您可以略過此步驟， 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]****。 在產生的程式碼中，手動為介面提供公用存取範圍。
 
     ```csharp
     public interface IToaster
         {
             void MakeToast(String message);
-            event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
         }
         public interface IToast
@@ -181,7 +182,7 @@ toastCompletedEventHandler: function (event) {
         }
         public sealed class Toaster : IToaster
         {
-            public event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            public event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
             private void OnToastCompleted(Toast args)
             {
@@ -210,7 +211,7 @@ toastCompletedEventHandler: function (event) {
 
     在上述程式碼中，我們建立了快顯通知，然後備妥執行緒集區工作項目來引發通知。 雖然 IDE 可能會建議您將 await 關鍵字套用至非同步呼叫，但在這種情況下不必這麼做，因為方法不會執行任何取決於作業結果的工作。
 
-    > **注意**：上述程式碼中的非同步呼叫會單獨使用 ThreadPool.RunAsync，示範以簡單的方式在背景執行緒上引發事件。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
+    > **注意：**上述程式碼中的非同步呼叫會單獨使用 ThreadPool.RunAsync，示範以簡單的方式在背景執行緒上引發事件。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
   
     ````csharp
     public async void MakeToast(string message)
@@ -294,7 +295,7 @@ toastCompletedEventHandler: function (event) {
 2.  Paste the GUID just before the IToaster interface definition. After you paste, the GUID should resemble the following example. (Don't use the GUID in the example. Every unique interface should have its own GUID.)
 
     ```cpp 
-      <Extensions> <!—Use your own GUIDs!!!-->
+      <Extensions> <!--Use your own GUIDs!!!-->
         <Extension Category="windows.activatableClass.proxyStub">
           <ProxyStub ClassId="1ecafeff-1ee1-504a-9af5-a68c6fb2b47d">
             <Path>Proxies.dll</Path>
@@ -326,6 +327,6 @@ toastCompletedEventHandler: function (event) {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

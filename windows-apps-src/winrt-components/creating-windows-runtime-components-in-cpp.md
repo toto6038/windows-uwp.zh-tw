@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 在 C++ 中建立 Windows 執行階段元件
 description: 本文說明如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
@@ -11,7 +12,7 @@ ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 本文示範如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。
 
@@ -572,7 +573,7 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 
 若要使用其他 Windows 執行階段物件所公開的非同步方法，請使用 [task 類別 (並行執行階段)](https://msdn.microsoft.com/library/hh750113.aspx)。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)](https://msdn.microsoft.com/library/dd492427.aspx)。
 
-若要在 C++ 中實作非同步方法，請使用 ppltasks.h 中定義的 [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 函式。 如需詳細資訊，請參閱[使用 C++ 建立 Windows 市集應用程式的非同步操作](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 如需範例，請參閱[逐步解說：在 C++ 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 語言使用 C++ 非同步方法的方式，就如同使用 .NET Framework 中定義的所有非同步方法一樣。
+若要在 C++ 中實作非同步方法，請使用 ppltasks.h 中定義的 [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 函式。 如需詳細資訊，請參閱[使用 C++ 建立 Windows 市集應用程式的非同步操作](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 如需範例，請參閱[逐步解說：使用 C++ 建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 語言使用 C++ 非同步方法的方式，就如同使用 .NET Framework 中定義的所有非同步方法一樣。
 
 ## 例外狀況
 
@@ -596,6 +597,6 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

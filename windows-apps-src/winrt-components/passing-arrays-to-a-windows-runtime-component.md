@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 將陣列傳遞到 Windows 執行階段元件
 description: Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
@@ -62,6 +63,6 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

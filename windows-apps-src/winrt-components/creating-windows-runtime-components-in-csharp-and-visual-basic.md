@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 description: 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
@@ -10,7 +11,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。 您可以在通用 Windows 平台 (UWP) app 中，將元件與 C++、JavaScript、Visual Basic 或 C# 搭配使用。 本文將概述建立元件的規則，並就某些層面討論 .NET Framework 對於 Windows 執行階段的支援。 一般而言，該支援依設計應可讓 .NET Framework 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。
 
@@ -98,7 +99,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以將 Dictionary&lt;int, string&gt; (在 Visual Basic 中為 Dictionary(Of Integer, String)) 傳遞或傳回為 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，如果您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，它都會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+**重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
 在 Windows 執行階段中，IMap&lt;K, V&gt; 與 IMapView&lt;K, V&gt; 可透過 IKeyValuePair 反覆執行。 當您將其傳遞至 Managed 程式碼時，它們會顯示為 IDictionary&lt;TKey, TValue&gt; 與 IReadOnlyDictionary&lt;TKey, TValue&gt;，以便您使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 加以列舉。
 
@@ -224,7 +225,7 @@ function asyncExample(id) {
 
 對於支援取消或進度報告的非同步動作與作業，請使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生啟動的工作，並將該工作的取消和進度報告功能與適當的 Windows 執行階段介面的取消和進度報告功能相連結。 如需支援取消與進度報告的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C\# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
+請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -249,7 +250,7 @@ function asyncExample(id) {
 > End Function
 > ```
 
-如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不針對取消語彙基元或 IProgress&lt;T&gt; 介面使用參數的多載。
+如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不具備取消語彙基元或 IProgress&lt;T&gt; 介面參數的多載。
 
 ## 擲回例外狀況
 
@@ -293,6 +294,6 @@ function asyncExample(id) {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

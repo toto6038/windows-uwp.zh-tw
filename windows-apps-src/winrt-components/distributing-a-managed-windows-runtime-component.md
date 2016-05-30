@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 發佈 Managed Windows 執行階段元件
 description: 您可以透過檔案複製來發佈自己的 Windows 執行階段元件。
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
@@ -74,6 +75,6 @@ For example: Microsoft.Cpp.Build.dll
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

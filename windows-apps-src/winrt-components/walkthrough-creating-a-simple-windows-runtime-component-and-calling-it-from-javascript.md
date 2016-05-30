@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
 description: 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows app 呼叫此元件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
@@ -10,7 +11,7 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#、建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows 應用程式呼叫此元件。
 
@@ -36,16 +37,16 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
 4.  將兩個簡單成員加入至類別、**static** 方法 (在 Visual Basic 中為 **Shared**) 和執行個體屬性：
 
     > [!div class="tabbedCodeSnippets"]
-    > ```cpp 
+    > ```cpp
     > namespace SampleComponent
     > {
     >     public sealed class Example
     >     {
-    >         public static string GetAnswer() 
-    >         { 
-    >             return "The answer is 42."; 
+    >         public static string GetAnswer()
+    >         {
+    >             return "The answer is 42.";
     >         }
-    > 
+    >
     >         public int SampleProperty { get; set; }
     >     }
     > }
@@ -55,7 +56,7 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
     >     Public Shared Function GetAnswer() As String
     >         Return "The answer is 42."
     >     End Function
-    > 
+    >
     >     Public Property SampleProperty As Integer
     > End Class
     > ```
@@ -77,7 +78,7 @@ function basics1() {
 
     ex = new SampleComponent.Example();
 
-   document.getElementById('output').innerHTML += "<br/>" + 
+   document.getElementById('output').innerHTML += "<br/>" +
        ex.sampleProperty;
 
 }
@@ -195,7 +196,7 @@ Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using Windows.Foundation.Collections;
-> 
+>
 > namespace SampleComponent
 > {
 >     public sealed class PropertySetStats
@@ -206,16 +207,16 @@ Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 
 >             _ps = new PropertySet();
 >             _ps.MapChanged += this.MapChangedHandler;
 >         }
-> 
+>
 >         public PropertySet PropertySet { get { return _ps; } }
-> 
+>
 >         int[] counts = { 0, 0, 0, 0 };
 >         private void MapChangedHandler(IObservableMap<string, object> sender,
 >             IMapChangedEventArgs<string> args)
 >         {
 >             counts[(int)args.CollectionChange] += 1;
 >         }
-> 
+>
 >         public string DisplayStats()
 >         {
 >             StringBuilder report = new StringBuilder("<br/>Number of changes:<ul>");
@@ -230,39 +231,39 @@ Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 
 > ```
 > ```vb
 > Imports System.Text
-> 
+>
 > Public NotInheritable Class PropertySetStats
 >     Private _ps As PropertySet
 >     Public Sub New()
 >         _ps = New PropertySet()
 >         AddHandler _ps.MapChanged, AddressOf Me.MapChangedHandler
 >     End Sub
-> 
+>
 >     Public ReadOnly Property PropertySet As PropertySet
 >         Get
 >             Return _ps
 >         End Get
 >     End Property
-> 
+>
 >     Dim counts() As Integer = {0, 0, 0, 0}
 >     Private Sub MapChangedHandler(ByVal sender As IObservableMap(Of String, Object),
 >         ByVal args As IMapChangedEventArgs(Of String))
-> 
+>
 >         counts(CInt(args.CollectionChange)) += 1
 >     End Sub
-> 
+>
 >     Public Function DisplayStats() As String
 >         Dim report As New StringBuilder("<br/>Number of changes:<ul>")
 >         For i As Integer = 0 To counts.Length - 1
->             report.Append("<li>" &amp; CType(i, CollectionChange).ToString() &amp;
->                           ": " &amp; counts(i) &amp; "</li>")
+>             report.Append("<li>" & CType(i, CollectionChange).ToString() &
+>                           ": " & counts(i) & "</li>")
 >         Next
->         Return report.ToString() &amp; "</ul>"
+>         Return report.ToString() & "</ul>"
 >     End Function
 > End Class
 > ```
 
-事件處理常式會遵循熟悉的 .NET Framework 事件模式，但事件的傳送者 (在此案例中為 PropertySet 物件) 會轉型為 IObservableMap&lt;string, object&gt; 介面 (在 Visual Basic 中為 IObservableMap(Of String, Object))，也就是 Windows 執行階段介面 [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的具現化 (如有需要，您可以將傳送者轉型為其類型)。此外，事件引數會呈現為介面，而不是物件。
+事件處理常式會遵循熟悉的 .NET Framework 事件模式，但事件的傳送者 (在此案例中為 PropertySet 物件) 會轉型為 IObservableMap&lt;string, object&gt; 介面 (在 Visual Basic 中為 IObservableMap(Of String, Object))，也就是 Windows 執行階段介面 [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的具現化。(如有需要，您可以將傳送者轉型為其類型)。此外，事件引數會呈現為介面，而不是物件。
 
 在 default.js 檔案中，新增 Runtime1 函式，如下所示。 此程式碼會建立 PropertySetStats 物件、取得其 PropertySet 集合，並加入自有的事件處理常式 (onMapChanged 函式)，來處理 MapChanged 事件。 對集合進行變更之後，runtime1 會呼叫 DisplayStats 方法來顯示變更類型的摘要。
 
@@ -295,7 +296,7 @@ function onMapChanged(change) {
             result = "All properties cleared";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemInserted:
-            result = "Inserted " + change.key + ": '" + 
+            result = "Inserted " + change.key + ": '" +
                 change.target.lookup(change.key) + "'";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemRemoved:
@@ -403,9 +404,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 > End Function
 > ```
 
-請注意，此字典必須當做由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 實作且對應至 Windows 執行階段介面的介面傳回。 在這種情形下，此介面為 IDictionary&lt;int, string&gt; (在 Visual Basic 中為 IDictionary(Of Integer, String))。 將 Windows 執行階段類型 IMap&lt;int, string&gt; 傳遞至 Managed 程式碼時，它會顯示為 IDictionary&lt;int, string&gt;，反之，將 Managed 類型傳遞至 JavaScript 時亦然。
+請注意，此字典必須當做由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 實作且對應至 Windows 執行階段介面的介面傳回。 在這種情形下，此介面為 IDictionary&lt;int, string&gt; (在 Visual Basic 中為 IDictionary(Of Integer, String))。 將 Windows 執行階段類型 IMap&lt;int, string&gt; 傳遞至 Managed 程式碼時，它會顯示為 IDictionary&lt;int, string&gt;，反之，將 Managed 類型傳遞至 JavaScript 時亦然。
 
-**重要** 當 Managed 類型實作多個介面時，JavaScript 會使用清單中第一個出現的介面。 例如，如果您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，它都會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+**重要** 當 Managed 類型實作多個介面時，JavaScript 會使用清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
  
 
@@ -454,11 +455,11 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-您可以發現一些有關此 JavaScript 程式碼的有趣現象。 首先，它包含 showMap 函式，可利用 HTML 格式來顯示字典內容。 在 showMap 的程式碼中，請注意反覆運算模式。 在 .NET Framework 中，泛型 IDictionary 介面上沒有 First 方法，而且大小是由 Count 屬性所傳回，而不是由 Size 方法所傳回。 在 JavaScript 中，IDictionary&lt;int, string&gt; 似乎是 Windows 執行階段類型 IMap&lt;int, string&gt; (請參閱 [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) 介面)。
+您可以發現一些有關此 JavaScript 程式碼的有趣現象。 首先，它包含 showMap 函式，可利用 HTML 格式來顯示字典內容。 在 showMap 的程式碼中，請注意反覆運算模式。 在 .NET Framework 中，泛型 IDictionary 介面上沒有 First 方法，而且大小是由 Count 屬性所傳回，而不是由 Size 方法所傳回。 在 JavaScript 中，IDictionary&lt;int, string&gt; 會顯示為 Windows 執行階段類型 IMap&lt;int, string&gt;。 (請參閱 [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) 介面)。
 
 如先前範例所示，在 returns2 函式中，JavaScript 會呼叫 Insert 方法 (在 JavaScript 中為 insert)，將項目加入至字典。
 
-若要執行 app，請選擇 F5 鍵。 若要建立和顯示字典的初始內容，請選擇 [**Returns 1**] 按鈕。 若要將其他兩個項目加入至字典，請選擇 [**Returns 2**] 按鈕。 請注意，項目會依插入的順序顯示，如同您對 Dictionary&lt;TKey, TValue&gt; 的預期一般。 若要將它們排序，您可以從 GetMapOfNames 傳回 SortedDictionary&lt;int, string&gt; (先前範例中使用的 PropertySet 類別與 Dictionary&lt;TKey, TValue&gt; 具有不同的內部組織)。
+若要執行 app，請選擇 F5 鍵。 若要建立和顯示字典的初始內容，請選擇 [Returns 1]**** 按鈕。 若要將其他兩個項目加入至字典，請選擇 [Returns 2]**** 按鈕。 請注意，項目會依插入的順序顯示，如同您對 Dictionary&lt;TKey, TValue&gt; 的預期一般。 若要將它們排序，您可以從 GetMapOfNames 傳回 SortedDictionary&lt;int, string&gt; (先前範例中使用的 PropertySet 類別與 Dictionary&lt;TKey, TValue&gt; 具有不同的內部組織)。
 
 當然，JavaScript 不是強類型語言，所以使用強類型的泛型集合可能會導致一些意外的結果。 再次選擇 [Returns 2]**** 按鈕。 JavaScript 會將 "7" 強制轉型為數值 7，而將儲存在 ct 中的數值 7 強制轉型為字串。 而且，還會將字串 "forty" 強制轉型為零。 但是，這只是個開頭。 請多選擇幾次 [Returns 2]**** 按鈕。 在 Managed 程式碼中，即使值已轉型為正確的類型，Add 方法仍會產生重複索引鍵例外狀況。 相反地，Insert 方法會更新與現有索引鍵相關聯的值，並傳回 Boolean 值，表示是否已將新的索引鍵加入至字典。 這就是為何與索引鍵 7 相關聯的值會持續變更的緣故。
 
@@ -510,7 +511,7 @@ List&lt;T&gt; 會實作 IList&lt;T&gt;，後者在 JavaScript 中會顯示為 Wi
 >             }
 >         }
 >     }
-> 
+>
 >     public sealed class TestEventArgs
 >     {
 >         public string Value1 { get; set; }
@@ -528,7 +529,7 @@ List&lt;T&gt; 會實作 IList&lt;T&gt;，後者在 JavaScript 中會顯示為 Wi
 >                             })
 >     End Sub
 > End Class
-> 
+>
 > Public NotInheritable Class TestEventArgs
 >     Public Property Value1 As String
 >     Public Property Value2 As Long
@@ -564,36 +565,29 @@ events1Button.addEventListener("click", events1, false);
 ## 公開非同步作業
 
 
-根據 Task 和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 類別，.NET Framework 有一組豐富的工具可用來進行非同步處理和平行處理。 若要在 Windows 執行階段元件中公開工作非同步處理，請使用 Windows 執行階段介面 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) 及 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx) (在 Windows 執行階段中，作業會傳回結果，但動作不會)。
+根據 Task 和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 類別，.NET Framework 有一組豐富的工具可用來進行非同步處理和平行處理。 若要在 Windows 執行階段元件中公開工作非同步處理，請使用 Windows 執行階段介面 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) 及 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx)。 (在 Windows 執行階段中，作業會傳回結果，但動作不會)。
 
-本節示範可報告進度並傳回結果的可取消非同步作業。 GetPrimesInRangeAsync 方法會使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生工作，並將它的取消與進度報告功能連接到 WinJS.Promise 物件。 一開始先將下列 **using** 陳述式 (在 Visual Basic 中為 **Imports**) 加入至 Example 類別：
+本節示範可報告進度並傳回結果的可取消非同步作業。 GetPrimesInRangeAsync 方法會使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生工作，並將它的取消與進度報告功能連接到 WinJS.Promise 物件。 現在將 GetPrimesInRangeAsync 方法加入至 Example 類別：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using System.Runtime.InteropServices.WindowsRuntime;
 > using Windows.Foundation;
-> ```
-> ```vb
-> Imports System.Runtime.InteropServices.WindowsRuntime
-> ```
-> 
-> 現在將 GetPrimesInRangeAsync 方法加入至 Example 類別：
-> 
-> > [!div class="tabbedCodeSnippets"]
-> ```csharp
-> public static IAsyncOperationWithProgress<IList<long>, double> GetPrimesInRangeAsync(long start, long count)
+>
+> public static IAsyncOperationWithProgress<IList<long>, double>
+> GetPrimesInRangeAsync(long start, long count)
 > {
 >     if (start < 2 || count < 1) throw new ArgumentException();
-> 
+>
 >     return AsyncInfo.Run<IList<long>, double>((token, progress) =>
-> 
+>
 >         Task.Run<IList<long>>(() =>
 >         {
 >             List<long> primes = new List<long>();
 >             double onePercent = count / 100;
 >             long ctProgress = 0;
 >             double nextProgress = onePercent;
-> 
+>
 >             for (long candidate = start; candidate < start + count; candidate++)
 >             {
 >                 ctProgress += 1;
@@ -612,7 +606,7 @@ events1Button.addEventListener("click", events1, false);
 >                     }
 >                 }
 >                 if (isPrime) primes.Add(candidate);
-> 
+>
 >                 token.ThrowIfCancellationRequested();
 >             }
 >             progress.Report(100.0);
@@ -622,10 +616,13 @@ events1Button.addEventListener("click", events1, false);
 > }
 > ```
 > ```vb
-> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long) As IAsyncOperationWithProgress(Of IList(Of Long), Double)
-> 
+> Imports System.Runtime.InteropServices.WindowsRuntime
+>
+> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long)
+> As IAsyncOperationWithProgress(Of IList(Of Long), Double)
+>
 >     If (start < 2 Or count < 1) Then Throw New ArgumentException()
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of Long), Double)( _
 >         Function(token, prog)
 >             Return Task.Run(Of IList(Of Long))( _
@@ -634,15 +631,15 @@ events1Button.addEventListener("click", events1, false);
 >                     Dim onePercent As Long = count / 100
 >                     Dim ctProgress As Long = 0
 >                     Dim nextProgress As Long = onePercent
-> 
+>
 >                     For candidate As Long = start To start + count - 1
 >                         ctProgress += 1
-> 
+>
 >                         If ctProgress >= nextProgress Then
 >                             prog.Report(ctProgress / onePercent)
 >                             nextProgress += onePercent
 >                         End If
-> 
+>
 >                         Dim isPrime As Boolean = True
 >                         For i As Long = 2 To CLng(Math.Sqrt(candidate))
 >                             If (candidate Mod i) = 0 Then
@@ -650,9 +647,9 @@ events1Button.addEventListener("click", events1, false);
 >                                 Exit For
 >                             End If
 >                         Next
-> 
+>
 >                         If isPrime Then primes.Add(candidate)
-> 
+>
 >                         token.ThrowIfCancellationRequested()
 >                     Next
 >                     prog.Report(100.0)
@@ -665,14 +662,14 @@ events1Button.addEventListener("click", events1, false);
 GetPrimesInRangeAsync 是一個非常簡單的質數搜尋工具，而這是設計的做法。 此處的重點在於實作非同步作業，因此簡單是很重要的，而且在示範取消時，能夠緩慢實作即為其優點。 GetPrimesInRangeAsync 會強行尋找質數：將候選項目除以小於或等於其平方根的所有整數，而不是只使用質數。 逐步執行此程式碼：
 
 -   開始非同步作業之前，請先執行維護活動，例如，驗證參數以及對無效的輸入擲回例外狀況。
--   此實作的索引鍵是 [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) 方法，以及做為此方法唯一參數的委派。 此委派必須接受取消語彙基元和介面報告進度，而且必須傳回使用這些參數的已啟動工作。 當 JavaScript 呼叫 GetPrimesInRangeAsync 方法時，會發生下列步驟 (不一定是依照此處指定的順序)：
+-   此實作的索引鍵是 [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) 方法，以及做為此方法唯一參數的委派。 此委派必須接受取消語彙基元和介面報告進度，而且必須傳回使用這些參數的已啟動工作。 當 JavaScript 呼叫 GetPrimesInRangeAsync 方法時，會發生下列步驟 (不一定是依照此處指定的順序)：
 
     -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 物件可提供函式來處理傳回結果、回應取消作業，以及處理進度報告。
     -   AsyncInfo.Run 方法會建立取消來源和可實作 IProgress&lt;T&gt; 介面的物件。 對此委派，它會從取消來源傳遞 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面。
 
         > **注意** 如果 Promise 物件未提供函式來反應取消作業，AsyncInfo.Run 仍會傳遞可取消的語彙基元，而取消作業仍會發生。 如果 Promise 物件未提供函式來處理進度更新，AsyncInfo.Run 仍會提供物件來實作 IProgress&lt;T&gt;，但會忽略其報告。
 
-    -   此委派會使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法來建立已啟動的工作，該工作會使用語彙基元和進度介面。 已啟動工作的委派是由可計算所需結果的 Lambda 函式所提供。 立即深入了解。
+    -   此委派會使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法來建立已啟動的工作，該工作會使用語彙基元和進度介面。 已啟動工作的委派是由可計算所需結果的 Lambda 函式所提供。 立即深入了解。
     -   AsyncInfo.Run 方法會建立物件來實作 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 介面、連接 Windows 執行階段取消機制與語彙基元來源，以及連接 Promise 物件的進度報告函式與 IProgress&lt;T&gt; 介面。
     -   IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 介面會傳回 JavaScript。
 
@@ -729,7 +726,7 @@ btnCancel.addEventListener("click", asyncCancel, false);
 
 asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 
-若要執行 app，請選擇 F5 鍵。 若要啟動非同步作業，請選擇 [非同步]**** 按鈕。 接下來發生的狀況取決於您的電腦速度有多快。 如果進度列在一瞬間就迅速完成，請以十或十的倍數增加起始數字大小，該數字會傳遞至 GetPrimesInRangeAsync。 您可以藉由增加或減少要測試的數字計數來微調作業的持續時間，但在起始數字中間加入零將造成較大的影響。 若要取消作業，請選擇 [**取消非同步**] 按鈕。
+若要執行 app，請選擇 F5 鍵。 若要啟動非同步作業，請選擇 [非同步]**** 按鈕。 接下來發生的狀況取決於您的電腦速度有多快。 如果進度列在一瞬間就迅速完成，請以十或十的倍數增加起始數字大小，該數字會傳遞至 GetPrimesInRangeAsync。 您可以藉由增加或減少要測試的數字計數來微調作業的持續時間，但在起始數字中間加入零將造成較大的影響。 若要取消作業，請選擇 [取消非同步]**** 按鈕。
 
 ## 相關主題
 
@@ -738,7 +735,6 @@ asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
