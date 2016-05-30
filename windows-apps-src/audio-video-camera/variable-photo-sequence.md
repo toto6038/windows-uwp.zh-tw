@@ -1,6 +1,7 @@
 ---
+author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
-description: 本文章示範如何拍攝可變相片序列，讓您以快速連續的方式拍攝多個影像框架，並將每個框架設為使用不同焦點、閃光燈、ISO、曝光度以及曝光補償設定。
+description: 本文章示範如何擷取可變相片序列，讓您以快速連續的方式拍攝多個影像畫面，並針對每個畫面使用不同焦點、閃光燈、ISO、曝光度及曝光補償設定進行設定。
 title: 可變相片序列
 ---
 
@@ -22,13 +23,13 @@ title: 可變相片序列
 
 [!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-宣告一個成員變數來儲存 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 物件，用來初始化相片序列擷取。 宣告 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的陣列，以儲存序列中每個擷取的影像。 此外，宣告陣列來儲存每個框架的 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 物件。 這可以由您的影像處理演算法用來判斷要使用哪些設定來擷取每個框架。 最後，宣告索引，這些索引將用來追蹤目前正在擷取之序列中的影像。
+宣告一個成員變數來儲存 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 物件，用來初始化相片序列擷取。 宣告 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的陣列，以儲存序列中每個擷取的影像。 此外，宣告陣列來儲存每個框架的 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 物件。 這可以由您的影像處理演算法用來判斷要使用哪些設定來擷取每個框架。 最後，請宣告將用來追蹤目前正在擷取序列中之影像的索引。
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
 ## 準備可變相片序列擷取
 
-初始化您的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 之後，請確定目前裝置上支援該可變相片序列，方法是從媒體擷取的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 取得 [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) 的執行個體，並檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) 屬性。
+初始化您的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 之後，請確定目前裝置上支援可變相片序列，方法是從媒體擷取的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 取得 [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) 的執行個體，並檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) 屬性。
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
@@ -41,7 +42,7 @@ title: 可變相片序列
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
-這個範例會為每個畫面設定不同曝光補償值。 若要確認目前裝置上的相片序列支援該曝光補償，請檢查 [**FrameExposureCompensationCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652628) 物件的 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn278905) 屬性，該物件可以透過 **ExposureCompensation** 屬性存取。
+這個範例會為每個畫面設定不同曝光補償值。 若要確認目前裝置上的相片序列支援曝光補償，請檢查 [**FrameExposureCompensationCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652628) 物件的 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn278905) 屬性，該物件可以透過 **ExposureCompensation** 屬性存取。
 
 [!code-cs[IsExposureCompensationSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsExposureCompensationSupported)]
 
@@ -55,13 +56,13 @@ title: 可變相片序列
 
 ## 開始可變相片序列擷取
 
-若要開始可變相片序列的擷取，請呼叫 [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577)。 請務必初始化陣列，以儲存擷取的影像和畫面控制值。並且將目前的索引設為 0。 設定您的 app 錄製狀態變數並且更新 UI，以在此擷取進行中時停用開始另一個擷取。
+若要開始可變相片序列的擷取，請呼叫 [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577)。 請務必初始化陣列，以儲存擷取的影像和畫面控制值。並且將目前的索引設為 0。 設定您 App 的錄製狀態變數並且更新 UI，以防止在此擷取進行中時開始另一個擷取。
 
 [!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
 ## 接收擷取的畫面
 
-針對每個擷取的畫面引發 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 事件。 儲存畫面控制值和畫面的已擷取影像，然後增加目前畫面索引。 這個範例示範如何取得每個畫面的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示法。 如需使用 **SoftwareBitmap** 的詳細資訊，請參閱[映像處理](imaging.md)。
+針對每個擷取的畫面引發 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 事件。 儲存畫面控制值和畫面的已擷取影像，然後增加目前畫面索引。 這個範例示範如何取得每個畫面的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示法。 如需使用 **SoftwareBitmap** 的詳細資訊，請參閱[影像處理](imaging.md)。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
@@ -95,6 +96,6 @@ title: 可變相片序列
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

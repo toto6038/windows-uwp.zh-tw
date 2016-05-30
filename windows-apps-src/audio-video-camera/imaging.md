@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: 本文說明如何使用 BitmapDecoder 和 BitmapEncoder 來載入及儲存影像檔，以及如何使用 SoftwareBitmap 物件來代表點陣圖影像。
 title: 影像處理
@@ -22,9 +23,9 @@ title: 影像處理
 -   [
             **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 可讓您偵測 **SoftwareBitmap** 中的人臉。
 
-本文中的程式碼範例使用下列命名空間中的 API。
+本文中的範例程式碼使用下列命名空間中的 API。
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[命名空間](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
 ## 使用 BitmapDecoder 從影像檔建立 SoftwareBitmap
 
@@ -51,17 +52,17 @@ title: 影像處理
 
 [!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-當您建立 **BitmapEncoder** 時，您可以建立新的 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) 物件，在其中填入一或多個代表編碼器設定的 [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) 物件，以指定額外的編碼選項。 如需支援的編碼器選項清單，請參閱 [BitmapEncoder 選項參考](bitmapencoder-options-reference.md)。
+您可以在建立 **BitmapEncoder** 時指定額外的編碼選項，方法是建立新的 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) 物件，在其中填入一或多個代表編碼器設定的 [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) 物件。 如需支援的編碼器選項清單，請參閱 [BitmapEncoder 選項參考](bitmapencoder-options-reference.md)。
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## 透過 XAML Image 控制項使用 SoftwareBitmap
+## 透過 XAML 影像控制項使用 SoftwareBitmap
 
 若要在 XAML 頁面內使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控制項顯示影像，請先在 XAML 頁面中定義 **Image** 控制項。
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-建立新的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) 物件。 呼叫 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856)，同時傳入 **SoftwareBitmap**，設定來源物件的內容。 然後，您就可以將 **Image** 控制項的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 屬性，設定為新建立的 **SoftwareBitmapSource**。
+建立新的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) 物件。 呼叫 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856)，同時傳入 **SoftwareBitmap**，以設定來源物件的內容。 然後，您就可以將 **Image** 控制項的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 屬性，設定為新建立的 **SoftwareBitmapSource**。
 
 [!code-cs[SoftwareBitmapToWriteableBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
 
@@ -87,7 +88,7 @@ title: 影像處理
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
-使用您想要的像素格式和大小，建立新的 **SoftwareBitmap**。 或者，使用您想要編輯像素資料的現有 **SoftwareBitmap**。 呼叫 [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380)，取得代表像素資料緩衝區的 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 類別執行個體。 將 **BitmapBuffer** 轉型為 **IMemoryBufferByteAccess** COM 介面，然後呼叫 [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506)，將資料填入位元組陣列中。 使用 [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 方法來取得 [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) 物件，幫助您計算每個像素在緩衝區中的位移。
+以您想要的像素格式和大小，建立新的 **SoftwareBitmap**。 或者，使用您想要編輯像素資料的現有 **SoftwareBitmap**。 呼叫 [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380)，取得代表像素資料緩衝區的 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 類別執行個體。 將 **BitmapBuffer** 轉型為 **IMemoryBufferByteAccess** COM 介面，然後呼叫 [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506)，將資料填入位元組陣列中。 使用 [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 方法來取得 [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) 物件，幫助您計算每個像素在緩衝區中的位移。
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
@@ -95,11 +96,11 @@ title: 影像處理
 
 ## 從 Direct3D 外觀建立 SoftwareBitmap
 
-若要從 Direct3D 外觀建立 **SoftwareBitmap** 物件，您必須在專案中加入 [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) 命名空間。
+若要從 Direct3D 表面建立 **SoftwareBitmap** 物件，您必須在專案中加入 [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) 命名空間。
 
 [!code-cs[Direct3DNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
 
-呼叫 [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373)，從外觀建立新的 **SoftwareBitmap**。 顧名思義，新的 **SoftwareBitmap** 有個別的影像資料複本。 修改 **SoftwareBitmap** 完全不會影響 Direct3D 外觀。
+呼叫 [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) 以從表面建立新的 **SoftwareBitmap**。 顧名思義，新的 **SoftwareBitmap** 有個別的影像資料複本。 修改 **SoftwareBitmap** 完全不會影響 Direct3D 表面。
 
 [!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
@@ -109,7 +110,7 @@ title: 影像處理
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## 影像檔轉碼
+## 對影像檔進行轉碼
 
 您可以將影像檔直接從 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 轉碼成 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 從要轉碼的檔案建立 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 從輸入資料流建立新的 **BitmapDecoder**。 建立新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 供編碼器寫入，然後呼叫 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，並傳入記憶體內部資料流和解碼器物件。 設定您想要的編碼屬性。 輸入影像檔中未明確設定於編碼器的任何屬性，將會原封不動寫入輸出檔。 呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216)，使編碼器將記憶體內部資料流編碼。 最後，移至檔案資料流和記憶體內部資料流的開頭，並呼叫 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 將記憶體內部資料流寫出至檔案資料流。
 
@@ -128,6 +129,6 @@ title: 影像處理
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

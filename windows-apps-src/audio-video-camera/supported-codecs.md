@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: 本文列出 UWP app 支援的音訊與視訊轉碼器和格式。
 title: 支援的轉碼器
@@ -2691,6 +2692,6 @@ title: 支援的轉碼器
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

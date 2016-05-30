@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: 本文說明視訊裝置控制項如何啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。
 title: 相片和視訊擷取的擷取裝置控制項
@@ -17,7 +18,7 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 **注意** 本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
-此文中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空間的成員。
+此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空間的成員。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
@@ -30,7 +31,7 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 屬性以查看目前的擷取裝置是否支援 **ExposureControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動曝光調整的核取方塊核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 屬性的值。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 屬性以查看目前的擷取裝置是否支援 **ExposureControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動曝光調整的核取方塊的核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 屬性的值。
 
 曝光值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -79,7 +80,7 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 如果支援 **FlashControl**，則不一定支援自動消除紅眼，因此在啟用 UI 之前，請先檢查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 屬性。 由於 **TorchControl** 是與閃光燈控制項分開的，因此，使用它之前，也必須先檢查其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 屬性。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 如果支援 **FlashControl**，不一定支援自動消除紅眼，因此在啟用 UI 之前，請先檢查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 屬性。 由於 **TorchControl** 是與閃光燈控制項分開的，因此，使用它之前，也必須先檢查其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 屬性。
 
 在每個閃光燈選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，啟用或停用適當的對應閃光燈設定。 請注意，若要設定為一律使用閃光燈，您必須將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) 屬性設為 true，將 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) 屬性設為 false。
 
@@ -89,11 +90,11 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 在消除紅眼核取方塊的處理常式中，將 [**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) 屬性設定為適當的值。
 
-[!code-cs[RedEye](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
+[!code-cs[紅眼](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
 
 最後，在視訊手電筒核取方塊的處理常式中，將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 屬性設定為適當的值。
 
-[!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
+[!code-cs[手電筒](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
 **注意** 在某些裝置上，除非裝置的預覽串流處於執行狀態且正在主動擷取視訊，否則即使將 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 設定為 true，手電筒也不會發光。 建議的操作順序是開啟視訊預覽，接著將 **Enabled** 設定為 true 來開啟手電筒，然後起始視訊擷取。 在某些裝置上，要在啟動預覽後，手電筒才會亮起。 在其他裝置上，則是在啟動視訊擷取後，手電筒才會亮起。
 
@@ -136,7 +137,7 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 [!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
 
-這個範例會在使用者點選螢幕時對區域進行對焦，然後在使用者再次點選時從該區域移除焦點，就像是一種切換。 使用布林值變數來追蹤目前的切換狀態。
+這個範例會在使用者點選螢幕時對區域對焦，然後在使用者再次點選時從該區域移除焦點，就像是一種切換。 使用布林值變數來追蹤目前的切換狀態。
 
 [!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
 
@@ -164,9 +165,9 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 **重要事項** 實作點選以對焦時，作業的程序非常重要。 您應該依照以下順序呼叫這些 API：
 
-**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
-**2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
-**3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
+           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
+           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -194,7 +195,7 @@ title: 相片和視訊擷取的擷取裝置控制項
 
 取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **FocusControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[對焦](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
 在手動對焦選項按鈕的 **Checked** 事件處理常式中，取得 **FocusControl** 物件並呼叫[**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075)，以防萬一您的 App 先前已透過呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 將焦點解除鎖定。
 
@@ -270,7 +271,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **WhiteBalanceControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[WhiteBalance](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
+[!code-cs[白平衡](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
 
 在色溫預設下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件處理常式中，藉由呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 來取得目前選取的預設並設定控制項的值。 如果選取的預設值不是 **Manual**，則請停用手動白平衡滑桿。
 
@@ -315,7 +316,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[IsSmoothZoomSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsSmoothZoomSupported)]
 
-在多點觸控功能的裝置上，典型的案例是調整以兩指捏合手勢為基礎的縮放係數。 將 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項的 [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) 屬性設為 [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934)，以啟用捏合手勢。 接著，註冊捏合手勢變更大小時引發的 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。
+在支援多點觸控功能的裝置上，典型的案例是調整以兩指捏合手勢為基礎的縮放係數。 將 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項的 [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) 屬性設為 [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934)，以啟用捏合手勢。 接著，註冊捏合手勢變更大小時引發的 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
@@ -332,6 +333,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 * [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO2-->
 
 

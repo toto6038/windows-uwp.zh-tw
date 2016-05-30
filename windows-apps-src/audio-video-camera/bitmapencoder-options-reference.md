@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: 本文列出可搭配 BitmapEncoder 使用的編碼選項。
 title: BitmapEncoder 選項參考
@@ -38,6 +39,6 @@ title: BitmapEncoder 選項參考
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

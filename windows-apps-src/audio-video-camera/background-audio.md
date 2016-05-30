@@ -1,21 +1,22 @@
 ---
+author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: 本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) App。
+description: 本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) 應用程式。
 title: 背景音訊
 ---
 
 # 背景音訊
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) App。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 本文討論背景音訊 App 的元件，以及它們如何搭配運作。
 
 背景音訊播放的案例包含：
 
--   **長時間執行的播放清單：**使用者會短暫叫用前景應用程式來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
+-   **長時間執行的播放清單：**使用者會短暫叫用前景 app 來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
 
--   **使用工作切換器：**使用者會短暫叫用前景應用程式來開始播放音訊，然後使用工作切換器，切換到另一個開啟的應用程式。 使用者預期音訊會在背景持續播放。
+-   **使用工作切換器：**使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
 
 本文中描述的背景音訊實作可讓 App 在所有的 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
@@ -26,7 +27,7 @@ title: 背景音訊
 
 ## 背景音訊架構
 
-執行背景播放的應用程式包含兩個處理程序。 第一個處理程序是在前景執行的主應用程式，其包含應用程式 UI 和用戶端邏輯。 第二個處理程序是背景播放工作，可如同所有的 UWP App 背景工作一樣實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。 背景工作包含音訊播放邏輯和背景服務。 背景工作會透過系統媒體傳輸控制項與系統進行通訊。
+執行背景播放的應用程式包含兩個處理程序。 第一個處理程序是在前景執行的主應用程式，其包含應用程式 UI 和用戶端邏輯。 第二個處理程序是背景播放工作，可如同所有的 UWP app 背景工作一樣實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。 背景工作包含音訊播放邏輯和背景服務。 背景工作會透過系統媒體傳輸控制項與系統進行通訊。
 
 下圖是系統設計方式的概觀。
 
@@ -34,11 +35,11 @@ title: 背景音訊
 ## MediaPlayer
 
 [
-            **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 App 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
+            **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 app 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
 
 ## MediaPlayer Proxy 和虛設常式
 
-從 App 的背景處理程序存取 **BackgroundMediaPlayer.Current** 時，**MediaPlayer** 執行個體會在背景工作主機中啟動並可直接進行操作。
+從 app 的背景處理程序存取 **BackgroundMediaPlayer.Current** 時，**MediaPlayer** 執行個體會在背景工作主機中啟動並可直接進行操作。
 
 從前景 app 存取 **BackgroundMediaPlayer.Current** 時，傳回的 **MediaPlayer** 執行個體實際上是與背景處理程序中的虛設常式進行通訊的 Proxy。 這個虛設常式會與實際 **MediaPlayer** 執行個體進行通訊，該執行個體也裝載在背景處理程序中。
 
@@ -70,11 +71,11 @@ title: 背景音訊
 背景工作的存留期與 App 的目前播放狀態有很緊密的關係。 例如，當使用者暫停音訊播放時，系統可能會根據情況終止或取消您的 App。 在一段沒有音訊播放的時間之後，系統可能會自動關閉背景工作。
 
 [
-            **IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
+            **IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息的處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
 
 若要讓背景工作持續執行，您的 app 必須在 **Run** 方法中要求 [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，並在工作執行個體收到 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) 或 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) 事件時呼叫 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 不要在 **Run** 方法中執行迴圈或等待，因為這樣會消耗資源，而且可能導致系統終止 app 的背景工作。
 
-當 **Run** 方法完成且沒有要求延遲時，您的背景工作會取得 **Completed** 事件。 在某些情況下，當您的 app 取得 **Canceled** 事件，稍後也可能會收到 **Completed** 事件。 執行 **Run** 時，您的工作可能會收到 **Canceled** 事件，所以請務必管理此潛在的同時發生情形。
+當 **Run** 方法完成且沒有要求延遲時，您的背景工作會取得 **Completed** 事件。 在某些情況下，當您的 app 取得 **Canceled** 事件時，稍後也可能會收到 **Completed** 事件。 執行 **Run** 時，您的工作可能會收到 **Canceled** 事件，所以請務必管理此潛在的同時發生情形。
 
 可能會取消背景工作的情況包含：
 
@@ -137,6 +138,6 @@ title: 背景音訊
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

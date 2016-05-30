@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: 本文說明如何使用 IMediaEncodingProperties 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。
 title: 設定媒體編碼屬性
@@ -13,7 +14,7 @@ title: 設定媒體編碼屬性
 
 相機設定檔提供更進階的方式來探索和設定相機的資料流屬性，但並非所有裝置都支援它們。 如需詳細資訊，請參閱[相機設定檔](camera-profiles.md)。
 
-本文中的程式碼是採用 [CameraResolution 範例](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)的程式碼。 您可以下載範例以查看內容中使用的程式碼，或以此範圍做為自己的 app 起點。
+本文中的程式碼是採用 [CameraResolution 範例](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)的程式碼。 您可以下載範例以查看內容中使用的程式碼，或以此範例做為自己的 app 起點。
 
 **注意**  
 本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
@@ -72,7 +73,7 @@ title: 設定媒體編碼屬性
 在某些裝置上，可以將相機的預覽串流和擷取串流的外觀比例設定成不同。 因為這個不相符而引發的框架剪裁，可能會在擷取的媒體中顯示內容，而此內容不會顯示於預覽中，這會導致負面使用者經驗。 強烈建議您在小型容錯視窗內，針對預覽和擷取資料流使用相同的外觀比例。 啟用完全不同的解析度進行擷取和預覽是正常的，只要外觀比例非常接近即可。
 
 
-為了確保相片或視訊擷取資料流符合預覽串流的外觀比例，這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並傳入 **VideoPreview** 列舉值，以要求資料流目前的資料流屬性。 接著會定義一個小型外觀比例的容錯視窗，讓我們能夠包含未與預覽資料流完全相同的外觀比例 (儘管它們非常相近)。 接下來，會使用 Linq 擴充方法，僅選取外觀比例在已定義的預覽串流容許範圍內的 **StreamPropertiesHelper** 物件。
+為了確保相片或視訊擷取資料流符合預覽串流的外觀比例，這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並傳入 **VideoPreview** 列舉值，以要求預覽資料流目前的資料流屬性。 接著會定義一個小型外觀比例的容錯視窗，讓我們能夠包含未與預覽資料流完全相同的外觀比例 (儘管它們非常相近)。 接下來，會使用 Linq 擴充方法，僅選取外觀比例在已定義的預覽資料流容許範圍內的 **StreamPropertiesHelper** 物件。
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 
@@ -85,6 +86,6 @@ title: 設定媒體編碼屬性
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

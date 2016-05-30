@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: MediaSource 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。
 title: 使用 MediaSource 進行媒體播放
@@ -9,7 +10,7 @@ title: 使用 MediaSource 進行媒體播放
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 [
             **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。 [
@@ -126,7 +127,7 @@ title: 使用 MediaSource 進行媒體播放
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-只要相關播放軌的呈現模式為 **ApplicationPresented**、**Hidden** 或 **PlatformPresented.**，當達到提示的開始時間時，便會引發 **CueEntered** 事件。如果播放軌的呈現模式為 **Disabled** 時，則不會為中繼資料播放軌引發提示事件。 這個範例只會將與提示關聯的自訂資料輸出到偵錯視窗。
+只要相關播放軌的呈現模式為 **ApplicationPresented**、**Hidden** 或 **PlatformPresented**，當達到提示的開始時間時，便會引發 **CueEntered** 事件。 如果播放軌的呈現模式為 **Disabled** 時，則不會為中繼資料播放軌引發提示事件。 這個範例只會將與提示關聯的自訂資料輸出到偵錯視窗。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
@@ -178,6 +179,6 @@ title: 使用 MediaSource 進行媒體播放
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

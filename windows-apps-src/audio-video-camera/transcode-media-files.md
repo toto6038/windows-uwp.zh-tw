@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
 description: 您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。
 title: 轉碼媒體檔案
@@ -58,7 +59,7 @@ title: 轉碼媒體檔案
 
 ## 回應轉碼進度
 
-您可以註冊事件在非同步進度 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 的進度變更時回應。 這些事件屬於通用 Windows 平台 (UWP) 應用程式的非同步程式設計架構，不是轉碼 API 特定。
+您可以註冊事件在非同步進度 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 的進度變更時回應。 這些事件屬於通用 Windows 平台 (UWP) app 的非同步程式設計架構，而不是只屬於轉碼 API。
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
 
@@ -71,6 +72,6 @@ title: 轉碼媒體檔案
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

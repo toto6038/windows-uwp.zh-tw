@@ -1,18 +1,25 @@
 ---
+author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: 本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。
+description: 本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。
 title: 搭配使用彈性資料流與 PlayReady
 ---
 
 # 搭配使用彈性資料流與 PlayReady
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。 
 
-本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
+本功能目前支援播放 DASH (Dynamic Adaptive Streaming over HTTP) 內容。
 
-這篇文章僅處理針對 PlayReady 的彈性資料流層面。 如需實作彈性串流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
+
+目前也不支援原生的 Smooth Streaming，不過，PlayReady 可以使用額外的程式碼或程式庫來延伸，因此可支援 PlayReady 保護的 Smooth Streaming，以利用軟體或甚至硬體 DRM (數位版權管理)。
+
+這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 [Download ZIP] (下載 ZIP)**** 按鈕。
 
 您將需要下列 using 陳述式：
 
@@ -44,7 +51,7 @@ private string playReadyChallengeCustomData = "";
 您也會想要宣告下列常數：
 
 ```csharp
-private const int MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = -2147174251;
+private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
 ## 設定 MediaProtectionManager
@@ -154,7 +161,7 @@ async Task<bool> ReactiveIndivRequest(
         else
         {
             COMException comException = exception as COMException;
-            if (comException != null &amp;&amp; comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
+            if (comException != null && comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
             {
                 IndivRequest.NextServiceRequest();
             }
@@ -279,7 +286,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 }
 ```
 
-您可以在任何處理啟動彈性資料流的事件中呼叫這個函式—例如，在按鈕點及事件中。
+您可以在任何處理啟動彈性資料流的事件中呼叫這個函式—例如，在按鈕點擊事件中。
 
  
 
@@ -290,6 +297,6 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

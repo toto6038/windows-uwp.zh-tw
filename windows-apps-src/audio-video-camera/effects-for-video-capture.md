@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: 這個主題說明適用於視訊擷取案例的效果。 其中包括影像防震效果。
 title: 視訊擷取的效果
@@ -84,6 +85,6 @@ title: 視訊擷取的效果
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: 本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
 title: PlayReady 加密媒體延伸
@@ -28,7 +29,7 @@ title: PlayReady 加密媒體延伸
 
     您可以使用 PlayReady 物件搭配多個金鑰識別碼 (KeyID) (就像在 Windows 8.1 中)，或者使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 搭配多個 KeyID。
 
-    **注意**：在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
+    **注意：**在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
 
      
 
@@ -64,7 +65,7 @@ title: PlayReady 加密媒體延伸
 
 硬體 DRM 有時不支援某些內容。 硬體 DRM 從未支援混合式內容 (雞尾酒內容)；若想要播放混合式內容，您必須選擇不使用硬體 DRM。 部分硬體 DRM 會支援 HEVC，部分則不支援；若想要播放 HEVC 內容，但硬體 DRM 不支援，則您可能也會選擇不使用。
 
-**注意**：若要判斷是否支援 HEVC 內容，請在具現化 `com.microsoft.playready` 之後，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
+**注意：**若要判斷是否支援 HEVC 內容，請在具現化 `com.microsoft.playready` 之後，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
 
  
 
@@ -97,7 +98,7 @@ title: PlayReady 加密媒體延伸
 
 下列範例示範如何在 Web app 中使用安全停止：
 
-``` syntax
+```JavaScript
 // JavaScript source code
 
 var g_prkey = null;
@@ -254,7 +255,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**注意**：在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
+**注意：**在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
 
 ## 適用於加密媒體延伸的程式設計考量
 
@@ -299,6 +300,6 @@ function foo() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

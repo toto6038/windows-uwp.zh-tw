@@ -1,6 +1,7 @@
 ---
+author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-description: 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) app。
+description: 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) App。
 title: 硬體 DRM
 ---
 
@@ -53,21 +54,21 @@ Windows TEE 實作的細節不在本文件的討論範圍內。 不過，對於�
 
 下列範例示範如何選擇不使用硬體 DRM。 切換之前，您只需執行此動作。 此外，請確定記憶體中沒有任何 PlayReady 物件，否則會發生未定義的行為。
 
-``` syntax
+```js
 var applicationData = Windows.Storage.ApplicationData.current;
-var localSettings = applicationData.localSettings.createContainer(“PlayReady”, Windows.Storage.ApplicationDataCreateDisposition.always);
-localSettings.values[“SoftwareOverride”] = 1;
+var localSettings = applicationData.localSettings.createContainer("PlayReady", Windows.Storage.ApplicationDataCreateDisposition.always);
+localSettings.values["SoftwareOverride"] = 1;
 ```
 
 若要切換回硬體 DRM，可將 **SoftwareOverride** 值設定為 **0**。
 
 每次播放媒體時，您都必須將 **MediaProtectionManager** 設定為：
 
-``` syntax
-mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtectionLayer”] = true;
+```js
+mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-了解您正在使用硬體 DRM 或軟體 DRM 的最好方式，是查看 C:\\Users\\&lt;使用者名稱&gt;\\AppData\\Local\\Packages\\&lt;應用程式名稱&gt;\\LocalState\\PlayReady\\\*
+了解您正在使用硬體 DRM 或軟體 DRM 的最好方式是查看 C:\\Users\\&lt;使用者名稱&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
 
 -   如果有 mspr.hds 檔案，就表示您正在使用軟體 DRM。
 -   如果還有另一個 *.hds 檔案，表示您在使用硬體 DRM。
@@ -79,7 +80,7 @@ mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtect
 
 您可以使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法，來判斷系統是否支援特定的硬體數位版權管理 (DRM) 功能。 例如：
 
-``` syntax
+```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
@@ -90,6 +91,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

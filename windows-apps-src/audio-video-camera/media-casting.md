@@ -1,10 +1,11 @@
 ---
+author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
-title: 媒體投射
+title: 媒體傳播
 ---
 
-# 媒體投射
+# 媒體傳播
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +20,7 @@ title: 媒體投射
 
 [!code-cs[BuiltInCastingUsing](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
 
-在 app 的 XAML 檔案中，加入 **MediaElement**並將 [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) 設定為 true。
+在 app 的 XAML 檔案中，加入 **MediaElement** 並將 [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) 設定為 true。
 
 [!code-xml[MediaElement](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -61,7 +62,7 @@ title: 媒體投射
 
 在 **CastingDeviceSelected** 事件處理常式中，呼叫事件引數的 [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) 屬性 (代表使用者選取的傳播裝置) 的 [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) 方法。 註冊 [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) 和 [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) 事件的處理常式。 最後，呼叫 [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) 來開始傳播，並傳入 **MediaElement** 物件的 [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) 方法的結果，以指定要傳播的媒體是 **MediaElement** 的內容。
 
-**注意** 傳播連線必須在 UI 執行緒上起始。 因為UI 執行緒上不會呼叫 **CastingDeviceSelected**，您必須將這些呼叫放在 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫內，才能在 UI 執行緒上呼叫它們。
+**注意;**傳播連線必須在 UI 執行緒上起始。 因為UI 執行緒上不會呼叫 **CastingDeviceSelected**，您必須將這些呼叫放在 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫內，才能在 UI 執行緒上呼叫它們。
 
 [!code-cs[CastingDeviceSelected](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
@@ -81,7 +82,7 @@ title: 媒體投射
 
 -   用來啟動裝置監控程式的按鈕，以尋找可用的傳播裝置。
 -   [
-            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項，向使用者知道傳播列舉正在進行。
+            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項會提供使用者回饋，讓他們知道傳播列舉正在進行。
 -   [
             **ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)，列出找到的傳播裝置。 定義控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，讓我們可以將傳播裝置物件直接指派給控制項，且仍然顯示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 屬性。
 -   可讓使用者中斷連接傳播裝置的按鈕。
@@ -152,6 +153,6 @@ title: 媒體投射
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

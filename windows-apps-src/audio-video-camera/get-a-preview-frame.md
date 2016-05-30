@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: 本主題說明如何從媒體擷取預覽資料流取得預覽框架。
 title: 取得預覽框架
@@ -58,6 +59,6 @@ title: 取得預覽框架
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

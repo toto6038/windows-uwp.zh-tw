@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: 此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。
 title: 相機設定檔
@@ -26,7 +27,7 @@ title: 相機設定檔
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
-本文中的程式碼範例透過探索支援各種功能的相機設定檔來取代此最小初始化，而這些相機設定檔接著用來初始化媒體擷取裝置。
+本文中的程式碼範例透過探索支援各種功能的相機設定檔來取代此最小初始化，然後會使用這些相機設定檔來初始化媒體擷取裝置。
 
 ## 尋找可支援相機設定檔的視訊裝置
 
@@ -36,7 +37,7 @@ title: 相機設定檔
 
 [!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
 
-如果 **GetVideoProfileSupportedDeviceIdAsync** 協助程式方法傳回的裝置識別碼為 null 或空字串，則指定的面板上沒有任何支援相機設定檔的裝置。 在此情況下，您應該初始化媒體擷取裝置，而不需使用設定檔。
+如果 **GetVideoProfileSupportedDeviceIdAsync** 協助程式方法傳回的裝置識別碼為 null 或空字串，表示指定的面板上沒有任何支援相機設定檔的裝置。 在此情況下，您應該在不使用設定檔的情況下初始化媒體擷取裝置。
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
@@ -46,11 +47,11 @@ title: 相機設定檔
 
 建立新的 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) 物件，並傳入選取的裝置識別碼。 接著，呼叫靜態方法 [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708)，以取得裝置支援的所有相機設定檔清單。
 
-這個範例使用 Linq 查詢方法 (包含在 using**System.Linq** 命名空間中) 來選取包含 [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) 物件的設定檔，其中 [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697) 和 [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) 屬性符合要求的值。 如果找到相符的值，則 **MediaCaptureInitializationSettings** 的 [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) 和 [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) 會設定為 Linq 查詢所傳回匿名類型中的值。 如果找不到相符的值，則會使用預設設定檔。
+這個範例使用 Linq 查詢方法 (包含在 using**System.Linq** 命名空間中) 來選取包含 [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) 物件的設定檔，其中 [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697) 和 [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) 屬性符合要求的值。 如果找到相符的值，則 **MediaCaptureInitializationSettings** 的 [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) 和 [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) 會設定為 Linq 查詢所傳回之匿名類型中的值。 如果找不到相符的值，則會使用預設設定檔。
 
 [!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
 
-以您所需的相機設定檔填入 **MediaCaptureInitializationSettings** 後，您只需在媒體擷取物件上呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)，將它設為所需的設定檔。
+以您所需的相機設定檔填入 **MediaCaptureInitializationSettings** 後，您只需在媒體擷取物件上呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 來將它設為所需的設定檔即可。
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
@@ -60,7 +61,7 @@ title: 相機設定檔
 
 [!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
 
-靜態方法 [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) 會傳回由指定的擷取裝置支援並且支援並行處理的相機設定檔清單。 使用 Linq 查詢來尋找支援並行處理並由前置和後置鏡頭支援的設定檔。 如果找到符合這些需求的設定檔，則在每個 **MediaCaptureInitializationSettings** 物件上設定此設定檔，並將布林值並行處理追蹤變數設定為 true。
+靜態方法 [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) 會傳回由指定的擷取裝置支援並且支援並行處理的相機設定檔清單。 使用 Linq 查詢來尋找支援並行處理並由前置和後置鏡頭支援的設定檔。 如果找到符合這些需求的設定檔，請在每個 **MediaCaptureInitializationSettings** 物件上設定此設定檔，並將布林值並行處理追蹤變數設定為 true。
 
 [!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
 
@@ -78,7 +79,7 @@ title: 相機設定檔
 
 [!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
 
-靜態方法 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 會傳回由指定的裝置支援並依指定的 [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) 分類的相機設定檔。 在這個案例中，指定 **VideoRecording** 值可將傳回的相機設定檔限制為支援視訊錄製的設定檔。
+靜態方法 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 會傳回由指定的裝置支援並依指定的 [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值分類的相機設定檔。 在這個案例中，指定 **VideoRecording** 值可將傳回的相機設定檔限制為支援視訊錄製的設定檔。
 
 循環顯示傳回的相機設定檔清單。 對於每個相機設定檔，在設定檔檢查中循環顯示每個 [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695)，以查看 [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) 屬性是否為 true。 一旦找到合適的媒體描述，請中斷迴圈並將設定檔和描述物件指派給 **MediaCaptureInitializationSettings** 物件。
 
@@ -104,6 +105,6 @@ title: 相機設定檔
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: 本主題說明如何使用 FaceDetector 來偵測影像中的臉部。 FaceTracker 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
 title: 偵測影像或影片中的臉部
@@ -9,7 +10,7 @@ title: 偵測影像或影片中的臉部
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 本主題說明如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 來偵測影像中的臉部。 [
             **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
@@ -33,11 +34,11 @@ title: 偵測影像或影片中的臉部
 
 臉部偵測可在使用各種不同方式建立的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件上運作。 這個範例使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)，讓使用者能夠挑選將在其中偵測臉部的影像檔。 如需使用軟體點陣圖的詳細資訊，請參閱[影像處理](imaging.md)。
 
-[!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
+[!code-cs[選擇器](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
 使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 類別，將影像檔解碼到 **SoftwareBitmap**。 利用較小的影像可讓臉部偵測程序更快速，因此，您可能會想縮小來源影像的大小。 您可以在解碼期間執行此動作，方法是建立 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 物件、設定 [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) 和 [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) 屬性並將它傳送到對 [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) 的呼叫，這會傳回已解碼且已調整大小的 **SoftwareBitmap**。
 
-[!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
+[!code-cs[解碼](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
 在目前版本中，**FaceDetector** 類別僅支援 Gray8 或 Nv12 的影像。 **SoftwareBitmap** 類別提供 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法，可將點陣圖從某一種格式轉換成其他格式。 這個範例會將來源影像轉換為 Gray8 像素格式 (如果還不是這種格式)。 如有需要，您可以使用 [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) 和 [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) 方法，在執行階段判斷是否支援某種像素格式 (假設將在未來版本中擴充支援的格式組合)。
 
@@ -98,6 +99,6 @@ title: 偵測影像或影片中的臉部
 * [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

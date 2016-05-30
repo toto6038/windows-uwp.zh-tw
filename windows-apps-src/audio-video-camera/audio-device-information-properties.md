@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: 本文列出與音訊裝置有關的 DeviceInformation 屬性
 title: 音訊裝置資訊屬性
@@ -26,6 +27,6 @@ title: 音訊裝置資訊屬性
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
