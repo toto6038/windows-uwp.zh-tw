@@ -1,9 +1,6 @@
 ---
-ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
-title: 下一步
-description: 現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供不同章節的簡介。
-關鍵字︰開發人員中心、快速瀏覽
-關鍵字︰開發人員中心、入門
+description&#58; author&#58; martinekuan ms.assetid&#58; 4288E511-581C-49DC-A2F2-1CB832C4A676 title&#58; 接下來要做什麼？現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供不同章節的簡介。&#39;
+關鍵字︰開發人員中心, 快速瀏覽 關鍵字︰開發人員中心, 入門
 ---
 # 接下來要做什麼？
 
@@ -67,6 +64,6 @@ Windows 市集可以讓您接觸到數百萬使用 Microsoft Windows 的客戶�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

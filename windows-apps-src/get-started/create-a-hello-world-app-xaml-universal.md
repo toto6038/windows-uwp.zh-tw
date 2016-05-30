@@ -1,7 +1,8 @@
 ---
+author: martinekuan
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 建立 Hello, world 應用程式 (XAML)
-description: 本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上的 Universal Windows Platform (UWP) 簡單 Hello, world app。
+description: 本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。
 ---
 
 # 建立 "Hello, world" 應用程式 (XAML)
@@ -31,13 +32,13 @@ description: 本教學課程會教您如何使用 Extensible Application Markup 
 
 1.  啟動 Visual Studio 2015。
 
-   Visual Studio 2015 起始頁隨即顯示。 (以下將 Visual Studio 2015 簡稱為 Visual Studio 。)
+   Visual Studio 2015 起始頁隨即顯示。 (以下將 Visual Studio 2015 簡稱為 Visual Studio。)
 
 2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
 
    隨即顯示 [新增專案]**** 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
 
-3.  在左窗格中，依序展開 [已安裝的] > [範本]**** > [Visual C#] > [Windows]****，然後選取 [通用] 範本群組。 對話方塊的中央窗格會顯示 Universal Windows Platform (UWP) app 的專案範本清單。
+3.  在左窗格中，依序展開 [已安裝的] &gt; [範本] &gt; [Visual C#] &gt; [Windows]****，然後選取 [通用]**** 範本群組。 對話方塊的中央窗格會顯示 Universal Windows Platform (UWP) app 的專案範本清單。
 
    ![[新增專案] 視窗 ](images/newproject-cs.png)
 
@@ -138,7 +139,7 @@ namespace HelloWorld
         <TextBlock Text="What' s your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="280" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -253,7 +254,7 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
     在 XAML 編輯器中，[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的 XAML 已更新來宣告 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件處理常式，像這樣。
 
 ```xml   
-   <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;" Click="Button_Click"/>
+   <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
 5.  將程式碼新增到在程式碼後置頁面中建立的事件處理常式。 在事件處理常式中，從 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項擷取使用者的名稱，並用它來建立問候語。 使用 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 顯示結果。
@@ -317,6 +318,6 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
 恭喜您！您已經完成適用於 Windows 10 和 UWP 的第一個 app 了！
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

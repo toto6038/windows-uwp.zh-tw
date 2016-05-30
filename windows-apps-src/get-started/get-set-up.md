@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 開始設定
 description: 開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。
@@ -50,6 +51,6 @@ Microsoft Visual Studio 2015 可協助您設計、撰寫、測試和偵錯您的
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

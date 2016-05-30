@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: 何謂通用 Windows 平台 (UWP) app？
 description: 了解我們稱為通用 Windows app 的 app 有哪些不同類型：Windows 市集 app、Windows Phone 市集 app，以及 Windows 執行階段 app。
@@ -89,6 +90,6 @@ Microsoft Visual Studio 2015 為每種語言提供 UWP 應用程式範本，可�
 * [開始設定](get-set-up.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 建立您的第一個 App
 description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。
@@ -68,6 +69,6 @@ description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
