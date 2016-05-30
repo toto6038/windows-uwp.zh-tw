@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。
 title: 語音辨識
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
@@ -8,8 +9,6 @@ template: detail.hbs
 
 # 語音辨識
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。
 
@@ -22,19 +21,19 @@ template: detail.hbs
 語音辨識包含了語音執行階段、用於設計執行階段程式的辨識 API、現成的口述和網頁搜尋文法，以及可幫助使用者探索和使用語音辨識功能的預設系統 UI。
 
 
-## <span id="Set_up_the_audio_feed"> </span> <span id="set_up_the_audio_feed"> </span> <span id="SET_UP_THE_AUDIO_FEED"> </span>設定音訊饋送
+## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>設定音訊饋送
 
 
-確定您的裝置有麥克風或對等的功能。
+確定您的裝置有麥克風或同等的功能。
 
-在 [app 套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** 檔案) 中設定 [**麥克風**] 裝置功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430))，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
+在[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** 檔案) 中設定 [麥克風]**** 裝置功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430))，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
 
-請參閱 [app 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+請參閱[應用程式功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## <span id="Recognize_speech_input"> </span> <span id="recognize_speech_input"> </span> <span id="RECOGNIZE_SPEECH_INPUT"> </span>辨識語音輸入
+## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>辨識語音輸入
 
 
-*限制式*會定義 app 在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
+「限制式」**定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
 
 您可以在執行語音辨識時使用各種類型的限制式：
 
@@ -46,17 +45,17 @@ template: detail.hbs
 
     網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-    **注意** 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
+    **注意：**由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    若要使用 Web 服務的限制，必須在 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面的 [設定]**** 中開啟 [了解我] 選項以啟用語音輸入與聽寫支援。
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    以下說明如何測試是否已啟用語音輸入，並開啟 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面 (如果未啟用)。
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[以 C# 或 Visual Basic 撰寫的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -113,7 +112,7 @@ catch (Exception exception)
 
     使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱[利用 Cortana 語音命令啟動前景 app](launch-a-foreground-app-with-voice-commands-in-cortana.md)。
 
-**注意** 要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
+**注意：**要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。
 
  
@@ -144,7 +143,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Customize_the_recognition_UI"> </span> <span id="customize_the_recognition_ui"> </span> <span id="CUSTOMIZE_THE_RECOGNITION_UI"> </span>自訂辨識 UI
+## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>自訂辨識 UI
 
 
 當您的應用程式呼叫 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來嘗試進行語音辨識時，會依下列順序顯示數個畫面。
@@ -201,14 +200,14 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **開發人員**
-* [語音互動](speech-interactions.md)
-**設計人員**
-* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**範例**
+* [語音互動](speech-interactions.md) 
+           **設計人員**
+* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -219,6 +218,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,16 +1,17 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 本主題描述用來選取及操作文字、影像以及控制項的新 Windows UI，並提供在 Windows 市集應用程式中使用這些新的選取和操作機制時，所應考慮的使用者經驗指導方針。
 title: 選取文字和影像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
-label: 選取文字和影像
+label: Selecting text and images
 template: detail.hbs
 ---
 
 # 選取文字和影像
 
-本文描述如何選取及操作文字、影像以及控制項，並提供在 app 中使用這些機制時，所應考慮的使用者經驗指導方針。
+本文描述如何選取及操作文字、影像以及控制項，並提供在 App 中使用這些機制時，所應考慮的使用者經驗指導方針。
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要 API**
@@ -19,10 +20,10 @@ template: detail.hbs
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>可行與禁止事項
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
--   在實作自己的移駐夾 UI 時，請使用字型字符。 移駐夾為兩個全系統可用的 Segoe UI 字型組合。 使用字型資源可簡化不同 dpi 的呈現問題，以及配合各種不同 UI 的縮放倍數使用。 實作自己的移駐夾時，這些移駐夾必須共有以下的 UI 特點：
+-   在實作自己的移駐夾 UI 時，使用字型字符。 移駐夾為兩個全系統可用的 Segoe UI 字型組合。 使用字型資源可簡化不同 dpi 的呈現問題，以及配合各種不同 UI 的縮放倍數使用。 實作自己的移駐夾時，這些移駐夾必須共有以下的 UI 特點：
 
     -   圓形
     -   在任何背景均可見
@@ -33,12 +34,12 @@ template: detail.hbs
 
 -   進行互動時隱藏移駐夾 UI。 消除進行互動時移駐夾造成的閉塞。 這在移駐夾未完全被手指所掩蓋或有多個文字選取移駐夾時相當有用。 這樣可在顯示子項視窗時消除視覺誤差。
 
--   不要允許選取 UI 元素，例如控制項、標籤、影像、機密內容等等。 一般來說，Windows 應用程式只允許在特定控制項內選取內容。 按鈕、標籤以及標誌之類的控制項是不可選取的。 請評估選取對於您的 app 是否會構成問題，如果是，請識別應該禁止選取的 UI 區域。 
+-   不要允許選取 UI 元素，例如控制項、標籤、影像、機密內容等等。 一般來說，Windows 應用程式只允許在特定控制項內選取內容。 按鈕、標籤以及標誌之類的控制項是不可選取的。 請評估選取對於您的 App 是否會構成問題，如果是，請識別應該禁止選取的 UI 區域。 
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
-文字選取和操作特別容易受到觸控互動所帶來的使用者經驗挑戰所影響。 滑鼠、畫筆/手寫筆以及鍵盤輸入都是極細微的：滑鼠點選或畫筆/手寫筆接觸一般都是對應單一像素，按鍵則不是按下就是未按下。 觸控輸入並不精細；很難將指尖的整個表面對應螢幕上特定的 x-y 位置來精確放置一個文字插入點。
+文字選取和操作特別容易受到觸控互動所帶來的使用者經驗挑戰影響。 滑鼠、畫筆/手寫筆以及鍵盤輸入都是極細微的：滑鼠點選或畫筆/手寫筆接觸一般都是對應單一像素，按鍵則不是按下就是未按下。 觸控輸入並不精細；很難將指尖的整個表面對應螢幕上特定的 x-y 位置來精確放置一個文字插入點。
 
 **考量與建議**
 
@@ -99,17 +100,19 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 *具備裁剪移駐夾的影像編輯器。*
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 
 **適用於開發人員**
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
+
 **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -128,6 +131,6 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

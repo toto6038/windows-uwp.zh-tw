@@ -1,24 +1,20 @@
 ---
-Description: 這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 app 中使用這些互動機制時的使用者經驗指導方針。
+author: Karl-Bridge-Microsoft
+Description: 這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。
 title: 視覺化縮放和調整大小的指導方針
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
-label: 視覺化縮放和調整大小
+label: Optical zoom and resizing
 template: detail.hbs
 ---
 
 # 視覺化縮放和調整大小
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+這個文章描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。
 
 **重要 API**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-這個文章描述 Windows 縮放和調整元素大小的方式，並提供在 app 中使用這些互動機制時的使用者經驗指導方針。
-
 
 
 視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
@@ -36,14 +32,14 @@ template: detail.hbs
 ![將手指靠攏會縮小物件，將手指分開會放大物件。](images/objectresize.png)
 
 **注意**  
-請勿將視覺化縮放與[語意式縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織之內容的呈現和瀏覽。
+請勿將視覺化縮放與[語意式縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
 
  
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>可行與禁止事項
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
-針對支援調整大小或視覺化縮放的 app，請參考下列指導方針：
+對於支援調整大小或視覺化縮放的應用程式，請參考下列指導方針：
 
 -   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
 -   使用貼齊點來影響縮放和大小調整行為，方法為提供停止操作的邏輯點，並確保檢視區中顯示特定內容子集。 提供一般縮放比例或邏輯檢視的貼齊點，讓使用者可以比較容易選取這些比例。 例如，相片應用程式會提供 100% 比例的大小調整貼齊點，或如果是地圖應用程式，貼齊點對於城市、省以及國家/地區檢視有可能會相當有用。
@@ -65,11 +61,11 @@ template: detail.hbs
     -   包含內嵌物件 (如地圖) 的網頁。
 
     **注意**  
-    在所有的情況下都會調整內容區域的大小，除非所有觸控點都位於可調整大小物件內。
+    在所有的情況下都會調整內容區域的大小，除非所有觸控點都位於可調整大小的物件內。
 
      
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **範例**
@@ -77,6 +73,7 @@ template: detail.hbs
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -95,6 +92,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

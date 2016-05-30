@@ -1,17 +1,16 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
 title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-label: 觸控板互動
+label: Touchpad interactions
 template: detail.hbs
 ---
 
 # 觸控板設計指導方針
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-設計您的應用程式，讓使用者可以透過觸控板進行互動。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及較小目標的生產力 app 兩者。
+設計您的 App，讓使用者可以透過觸控板進行互動。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及較小目標的生產力 app 兩者。
 
  
 
@@ -39,7 +38,7 @@ template: detail.hbs
 
 本主題中討論的手勢和指導方針可以協助您確保您的 App 使用最少的程式碼就能順暢地支援觸控板輸入。
 
-## <span id="The_touchpad_language"> </span> <span id="the_touchpad_language"> </span> <span id="THE_TOUCHPAD_LANGUAGE"> </span>觸控板語言
+## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>觸控板語言
 
 
 一組可用於整個系統的簡單觸控板互動。 針對觸控及滑鼠輸入最佳化您的 App，而這個語言讓使用者可以立即熟悉您的 App，提高他們的自信，讓您的 App 更易於學習及使用。
@@ -70,7 +69,7 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指點選</p></td>
-<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 <strong>[重要訊息中心]</strong>。</p></td>
+<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]<strong></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑動</p></td>
@@ -109,14 +108,14 @@ template: detail.hbs
 
  
 
-## <span id="Hardware"> </span> <span id="hardware"> </span> <span id="HARDWARE"> </span>硬體
+## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>硬體
 
 
 查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-## <span id="Visual_feedback"> </span> <span id="visual_feedback"> </span> <span id="VISUAL_FEEDBACK"> </span>視覺化回饋
+## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>視覺化回饋
 
 
 -   偵測到觸控板游標時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果觸控板游標有一段時間沒有移動，或者使用者起始觸控互動，讓觸控板 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -127,7 +126,7 @@ template: detail.hbs
 
 如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>游標
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>游標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
@@ -142,17 +141,17 @@ template: detail.hbs
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 * [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
-**範例**
+* [識別輸入裝置](identify-input-devices.md) 
+           **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **封存範例**
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -163,6 +162,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

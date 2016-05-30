@@ -1,17 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 title: 旋轉
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-label: 旋轉
+label: Rotation
 template: detail.hbs
 ---
 
 # 旋轉
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+本文描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
 **重要 API**
 
@@ -19,12 +17,12 @@ template: detail.hbs
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>可行與禁止事項
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
 -   使用旋轉以協助使用者直接旋轉 UI 元素。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 **旋轉概觀**
@@ -85,7 +83,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 </tr>
 <tr class="odd">
 <td align="left">組合式旋轉</td>
-<td align="left"><p>組合式旋轉支援依區域 (類似 [Guidelines for panning](guidelines-for-panning.md) 中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
+<td align="left"><p>組合式旋轉支援依區域 (類似於[移動瀏覽的指導方針](guidelines-for-panning.md)中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
 <strong>注意</strong> 使用者介面柵欄是一種會讓目標周圍的區域限制朝某個特定值或位置移動，以影響其選取結果的功能。
 </div>
@@ -98,7 +96,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
  
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
 **範例**
@@ -106,6 +104,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -124,6 +123,6 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,15 +1,13 @@
 ---
-Description: 本主題描述在 Windows 執行階段 app 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+author: Karl-Bridge-Microsoft
+Description: 本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。
 title: 目標預測
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
-label: 目標預測
+label: Targeting
 template: detail.hbs
 ---
 
 # 目標預測的指導方針
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
 
@@ -21,9 +19,9 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 
 
 
-本主題描述在 Windows 執行階段 app 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
 
-## <span id="Measurements_and_scaling"> </span> <span id="measurements_and_scaling"> </span> <span id="MEASUREMENTS_AND_SCALING"> </span>度量單位和縮放
+## <span id="Measurements_and_scaling"></span><span id="measurements_and_scaling"></span><span id="MEASUREMENTS_AND_SCALING"></span>度量單位和縮放
 
 
 為了在不同的畫面大小和像素密度之間保持一致，所有目標大小都是以實體單位 (公釐) 來表示。 實體單位可以透過下列等式轉換為像素：
@@ -42,14 +40,14 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 
 這個結果必須根據系統定義的每一個縮放倍數調整。
 
-## <span id="Thresholds"> </span> <span id="thresholds"> </span> <span id="THRESHOLDS"> </span>閾值
+## <span id="Thresholds"></span><span id="thresholds"></span><span id="THRESHOLDS"></span>閾值
 
 
 距離和時間閾值可以用來判斷互動的結果。
 
-例如，偵測到觸碰時，如果物件從觸碰點拖曳的距離小於 2.7 公釐，而且在觸碰的 0.1 秒內提起，就會登錄點選。 手指移動距離超過這個 2.7 公釐的閾值時，便會拖曳物件以及選取或移動 (如需詳細資訊，請參閱[交叉滑動的指導方針](guidelines-for-cross-slide.md))。 視您的 app 而定，手指長按 0.1 秒以上可能會造成系統執行自顯互動 (如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md#selfreveal))。
+例如，偵測到觸碰時，如果物件從觸碰點拖曳的距離小於 2.7 公釐，而且在觸碰的 0.1 秒內提起，就會登錄點選。 手指移動距離超過這個 2.7 公釐的閾值時，便會拖曳物件以及選取或移動 (如需詳細資訊，請參閱[交叉滑動的指導方針](guidelines-for-cross-slide.md))。 視您的應用程式而定，手指按住不放 0.1 秒以上可能會造成系統執行自顯互動 (如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md#selfreveal))。
 
-## <span id="Target_sizes"> </span> <span id="target_sizes"> </span> <span id="TARGET_SIZES"> </span>目標大小
+## <span id="Target_sizes"></span><span id="target_sizes"></span><span id="TARGET_SIZES"></span>目標大小
 
 
 一般而言，將您的觸控目標大小設為 9 公釐或更大的方格 (在縮放倍數 1.0 倍的 135 PPI 螢幕上為 48x48 像素)。 避免使用小於 7 公釐方格的觸控目標大小。
@@ -111,29 +109,29 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 -   觸控視覺效果
 -   硬體和觸控數位板
 
-## <span id="Targeting_assistance"> </span> <span id="targeting_assistance"> </span> <span id="TARGETING_ASSISTANCE"> </span>目標預測協助
+## <span id="Targeting_assistance"></span><span id="targeting_assistance"></span><span id="TARGETING_ASSISTANCE"></span>目標預測協助
 
 
 Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊框間距建議不適用的狀況；例如，網頁上的超連結、行事曆控制項、下拉式清單以及下拉式方塊，或是文字選取。
 
 這些目標預測平台改進和使用者介面行為與視覺化回饋 (判別 UI) 搭配運作，共同改進使用者的準確度和自信心。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-如果可觸碰元素不得不小於建議的最小目標大小，可以使用下列技巧將所造成的目標預測問題降到最小。
+如果可觸碰元素不得不小於建議的最小目標大小，可以使用下列技術將所造成的目標預測問題降到最小。
 
-## <span id="Tethering"> </span> <span id="tethering"> </span> <span id="TETHERING"> </span>繫連
+## <span id="Tethering"></span><span id="tethering"></span><span id="TETHERING"></span>繫連
 
 
-繫連是一種視覺提示 (從接觸點到物件週框矩形的連結線)，用來向使用者表示他們已經連結到物件並正與該物件互動，雖然輸入接觸並未直接與該物件接觸。 在以下情況，會發生這種現象：
+繫連是一種視覺提示 (從接觸點到物件週框矩形的連結線)，用來向使用者表示它們已經連結到物件並正與該物件互動，雖然輸入接觸並未直接與該物件接觸。 在以下情況，會發生這種現象：
 
 -   在物件的某些鄰近性閾值以內，會先偵測到接觸點，然後這個物件會被當作是最有可能的接觸目標。
 -   接觸點遠離物件，但是接觸點仍然在鄰近性閾值以內。
 
-這項功能並未對使用 JavaScript 之 Windows 市集應用程式的開發人員顯示。
+這項功能並未對使用 JavaScript 的 Windows 市集應用程式的開發人員公開。
 
-## <span id="scrubbing"> </span> <span id="SCRUBBING"> </span>擦選
+## <span id="scrubbing"></span><span id="SCRUBBING"></span>擦選
 
 
-擦選是指觸控目標所在區域中的任何一個位置，然後在不提起手指的情況下，滑動直到停在想要的目標上為止，並藉此選取想要的目標。 這也稱為「觸離啟動」，也就是被啟動的物件是手指從畫面提起時最後觸碰的物件。
+擦選是指觸控目標所在區域中的任何一個位置，然後滑動而不提起手指直到停在想要的目標上為止，以藉此選取想要的目標。 這也稱為「觸離啟動」，也就是被啟動的物件是手指從畫面提起時最後觸碰的物件。
 
 設計擦選互動時，請遵循下列指導方針：
 
@@ -145,7 +143,7 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 -   如果目標執行的動作不具破壞性 (例如在行事曆上切換日期)，就會指定對擦選目標的繫連。
 -   指定繫連時是採單一方向 (水平或垂直)。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **範例**
@@ -153,6 +151,7 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -171,6 +170,6 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

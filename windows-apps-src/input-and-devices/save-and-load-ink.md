@@ -1,15 +1,17 @@
 ---
-Description: 使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。
-title: 儲存和擷取筆墨筆劃
+author: Karl-Bridge-Microsoft
+Description: 支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
+title: 儲存和抓取 Windows Ink 筆觸資料
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
-label: Store and retrieve ink strokes
+label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
+keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
 ---
 
-# 儲存和擷取筆墨筆劃
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# 儲存和抓取 Windows Ink 筆觸資料
 
-支援筆墨輸入的 app 可以在完全不失真的情況下序列化和還原序列化筆墨中繼資料，以保留所有的屬性和行為。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
+
+支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
 
 
 **重要 API**
@@ -24,7 +26,7 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 
  
 
-## <span id="Save_ink_strokes_to_a_file"> </span> <span id="save_ink_strokes_to_a_file"> </span> <span id="SAVE_INK_STROKES_TO_A_FILE"> </span>將筆墨筆劃儲存為檔案
+## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>將筆墨筆劃儲存為檔案
 
 
 我們將在此處示範如何儲存在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上繪製的筆墨筆劃。
@@ -32,7 +34,6 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 1.  一開始先設定 UI。
 
     UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -64,7 +65,6 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
-
 ```    CSharp
 public MainPage()
     {
@@ -91,8 +91,7 @@ public MainPage()
 
     選取檔案之後，我們會開啟已設為 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
 
-    接著呼叫 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114)，將 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 管理的筆墨筆劃序列化至串流。
-
+    接著呼叫 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114)，將 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 管理的筆墨筆劃序列化至資料流。
 ```    CSharp
 // Save ink data to a file.
     private async void btnSave_Click(object sender, RoutedEventArgs e)
@@ -156,12 +155,12 @@ public MainPage()
     }
 ```
 
-**注意**  
+[!NOTE]  
 GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
 
  
 
-## <span id="Load_ink_strokes_from_a_file"> </span> <span id="load_ink_strokes_from_a_file"> </span> <span id="LOAD_INK_STROKES_FROM_A_FILE"> </span>從檔案載入筆墨筆劃
+## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>從檔案載入筆墨筆劃
 
 
 我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上轉譯它們。
@@ -169,7 +168,6 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 1.  一開始先設定 UI。
 
     UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -201,7 +199,6 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
-
 ```    CSharp
 public MainPage()
     {
@@ -229,7 +226,6 @@ public MainPage()
     選取檔案之後，我們會開啟已設為 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
 
     接著呼叫 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607)，來讀取並還原序列化已儲存的筆墨筆劃，然後載入 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)。 將筆劃載入 **InkStrokeContainer**，會導致 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 立即將它們轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
-
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -266,18 +262,14 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 **注意**  
 GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法可以支援用於回溯相容性的下列格式。
 
-| 格式                    | 說明                                                                                                                                                                                                                                                                                                                                                                                           |
+| 格式                    | 說明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | 指定使用 ISF 保留的筆墨。 這是最簡單且易於保留格式的筆墨表示法。 它可以內嵌到二進位文件格式中，或直接放置到剪貼簿上。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | 指定透過將 ISF 編碼為 base64 資料流來保留的筆墨。 提供這個格式是為了讓筆墨能夠直接在 XML 或 HTML 檔案中進行編碼。                                                                                                                                                                                                                                                |
 | GIF                       | 指定使用 GIF 檔案保留的筆墨，這種檔案包含做為中繼資料內嵌在檔案中的 ISF。 這可讓筆墨可在沒有啟用筆墨功能的應用程式中加以檢視，並且在其返回啟用筆墨功能的應用程式時仍完全不失真。 這個格式適合用來在 HTML 檔案中傳輸筆墨內容，讓筆墨和非筆墨應用程式都可以使用該內容。 |
-| Base64Gif                 | 指定使用 base64 編碼保護之 GIF 保留的筆墨。 提供這個格式是為了在 XML 或 HTML 檔案中直接編碼筆墨，以便稍後轉換為影像。 可能的使用情況是產生包含所有筆墨資訊的 XML 格式，並用來透過可延伸樣式表語言轉換 (Extensible Stylesheet Language Transformations，XSLT) 來產生 HTML。                           |
+| Base64Gif                 | 指定使用 base64 編碼保護之 GIF 保留的筆墨。 提供這個格式是為了在 XML 或 HTML 檔案中直接編碼筆墨，以便稍後轉換為影像。 可能的使用情況是產生包含所有筆墨資訊的 XML 格式，並用來透過可延伸樣式表語言轉換 (Extensible Stylesheet Language Transformations，XSLT) 來產生 HTML。 
 
- 
-
- 
-
-## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"> </span> <span id="copy_and_paste_ink_strokes_with_the_clipboard"> </span> <span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"> </span>複製筆墨筆劃並貼上剪貼簿
+## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>複製筆墨筆劃並貼上剪貼簿
 
 
 我們將在此處示範如何使用剪貼簿，在 app 之間傳輸筆墨筆劃。
@@ -289,7 +281,6 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 1.  一開始先設定 UI。
 
     UI 包含 [剪下]、[複製]、[貼上] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 和選取項目畫布。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -329,7 +320,6 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
 
     如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的[傳入輸入以進行進階處理](pen-and-stylus-interactions.md#passthrough)。
-
 ```    CSharp
 public MainPage()
     {
@@ -382,7 +372,6 @@ public MainPage()
     接著呼叫 [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) 來移除筆墨畫布上的筆劃。
 
     最後，從選取項目畫布中刪除所有選取筆劃。
-
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
     {
@@ -391,7 +380,6 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
         ClearSelection();
     }
 ```
-
 ```    CSharp
 // Clean up selection UI.
     private void ClearSelection()
@@ -415,7 +403,6 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
 ```
 
     For copy, we simply call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
-
 ```    CSharp
 private void btnCopy_Click(object sender, RoutedEventArgs e)
     {
@@ -426,7 +413,6 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     For paste, we call [**CanPasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208495) to ensure that the content on the clipboard can be pasted to the ink canvas.
 
     If so, we call [**PasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208503) to insert the clipboard ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011), which then renders the strokes to the ink canvas.
-
 ```    CSharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
     {
@@ -442,10 +428,10 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <span id="related_topics"> </span>相關文章
-
+## <span id="related_topics"></span>相關文章
 
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
+
 **範例**
 * [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
@@ -459,6 +445,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

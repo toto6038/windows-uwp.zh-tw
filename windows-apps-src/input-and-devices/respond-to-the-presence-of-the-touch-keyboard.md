@@ -1,15 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
 title: 回應觸控式鍵盤出現
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-label: 回應觸控式鍵盤出現
+label: Respond to the presence of the touch keyboard
 template: detail.hbs
 ---
 
 # 回應觸控式鍵盤出現
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
 
 
 **重要 API**
@@ -17,11 +17,11 @@ template: detail.hbs
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
-了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
+
 
 ![預設配置模式的觸控式鍵盤](images/touchkeyboard-standard.png)
 
-<sup>預設配置模式的觸控式鍵盤</sup>
+<sup>預設版面配置模式的觸控式鍵盤</sup>
 
 觸控式鍵盤可讓支援觸控的裝置輸入文字。 當使用者點選可編輯的輸入欄位時，通用 Windows 平台 (UWP) 文字輸入控制項預設會叫用觸控式鍵盤。 當使用者在表單中的控制項之間瀏覽時，觸控式鍵盤通常會保持可見，但是這種行為可能會因表單內的其他控制項類型而有所不同。
 
@@ -29,7 +29,7 @@ template: detail.hbs
 
 一旦這項支援新增到您的自訂控制項之後，您可以適當地回應觸控式鍵盤的目前狀態。
 
-**先決條件：**
+**先決條件：  **
 
 本文建置在[鍵盤互動](keyboard-interactions.md)基礎上。
 
@@ -37,14 +37,14 @@ template: detail.hbs
 
 如果您是開發通用 Windows 平台 (UWP) App 的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
 
--   [建立您的第一個 app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   [建立您的第一個 App](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)，以了解事件相關資訊
 
-**使用者體驗指導方針：**
+**使用者體驗指導方針：  **
 
 如需有關設計的有用提示，並且讓 app 針對鍵盤輸入最佳化，請參閱[鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)。
 
-## <span id="Touch_keyboard_and_a_custom_UI"> </span> <span id="touch_keyboard_and_a_custom_ui"> </span> <span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"> </span>觸控式鍵盤和自訂 UI
+## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>觸控式鍵盤和自訂 UI
 
 
 以下是自訂文字輸入控制項的一些基本建議。
@@ -67,7 +67,7 @@ template: detail.hbs
 
     ![表單中包含應永久留在檢視中的區域](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"> </span> <span id="HANDLING_EVENTS"> </span>處理顯示和隱藏事件
+## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>處理顯示和隱藏事件
 
 
 以下是對觸控式鍵盤 [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件附加事件處理常式的範例。
@@ -120,9 +120,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
-
-
+## <span id="related_topics"></span>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
 * [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -143,6 +141,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

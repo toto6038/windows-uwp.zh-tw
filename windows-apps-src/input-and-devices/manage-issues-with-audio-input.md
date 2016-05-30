@@ -1,16 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 title: 管理音訊輸入的問題
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-label: 管理音訊輸入的問題
+label: Manage audio input issues
 template: detail.hbs
 ---
 
 # 管理音訊輸入的問題
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
 **重要 API**
 
@@ -18,10 +17,10 @@ template: detail.hbs
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
 -   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
-了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
 
-## <span id="Assess_audio-input_quality"> </span> <span id="assess_audio-input_quality"> </span> <span id="ASSESS_AUDIO-INPUT_QUALITY"> </span>評定音訊輸入品質
+
+## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>評定音訊輸入品質
 
 
 在啟用語音辨識功能的情況下，使用您語音辨識器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，以判斷是否有一或多個音訊問題可能在干擾語音輸入。 事件引數 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 會提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 屬性，用來描述偵測到的音訊輸入問題。
@@ -60,10 +59,10 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Manage_the_speech-recognition_experience"> </span> <span id="manage_the_speech-recognition_experience"> </span> <span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"> </span>管理語音辨識體驗
+## <span id="Manage_the_speech-recognition_experience"></span><span id="manage_the_speech-recognition_experience"></span><span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"></span>管理語音辨識體驗
 
 
-使用 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 屬性所提供的描述，來協助使用者改善辨識的條件。
+使用 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 屬性所提供的說明，來協助使用者改善辨識的條件。
 
 我們將在此處建立 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件的處理常式，這個處理常式會檢查音量大小過低的情況。 然後使用 [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) 物件，建議使用者嘗試調高說話音量。
 
@@ -100,7 +99,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 * [語音互動](speech-interactions.md)
@@ -116,6 +115,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

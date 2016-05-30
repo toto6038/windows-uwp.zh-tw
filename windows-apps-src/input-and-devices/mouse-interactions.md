@@ -1,15 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
 title: 滑鼠互動
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-label: 滑鼠
+label: Mouse
 template: detail.hbs
 ---
 
 # 滑鼠互動
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。
 
@@ -25,7 +24,7 @@ template: detail.hbs
 
 這個主題說明滑鼠互動的設計考量。
 
-## <span id="The_UWP_app_mouse_language"> </span> <span id="the_uwp_app_mouse_language"> </span> <span id="THE_UWP_APP_MOUSE_LANGUAGE"> </span>UWP app 滑鼠語言
+## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>UWP app 滑鼠語言
 
 
 一組可用於整個系統的簡單滑鼠互動。
@@ -58,7 +57,7 @@ template: detail.hbs
 <td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>請注意</strong>如果選取的項目或應用程式列命令不是適當的 UI 行為，按滑鼠右鍵會顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意：</strong>如果「選取」或「應用程式列命令」不是適當的 UI 行為，則以按滑鼠右鍵來顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  
@@ -98,7 +97,7 @@ template: detail.hbs
 
 - [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"> </span> <span id="guidelines_for_visual_feedback"> </span> <span id="GUIDELINES_FOR_VISUAL_FEEDBACK"> </span>視覺化回饋的指導方針
+## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>視覺化回饋的指導方針
 
 
 -   偵測到滑鼠時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果滑鼠有一段時間沒有移動，或者使用者起始觸控互動，讓滑鼠 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -111,7 +110,7 @@ template: detail.hbs
 如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>游標
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>游標
 
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
@@ -126,7 +125,7 @@ template: detail.hbs
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
@@ -152,6 +151,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 在 Cortana 中提供來自背景應用程式服務的深層連結，以便將應用程式啟動至處於特定狀態或內容的前景。
 title: 從 Cortana 到背景應用程式的深層連結
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
@@ -9,43 +10,40 @@ template: detail.hbs
 # 從 Cortana 到背景應用程式的深層連結
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 **重要 API**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**語音命令定義 (VCD) 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-在 **Cortana** 中提供來自背景 app 的深層連結，以將 app 啟動至處於特定狀態或內容的前景。
+在 **Cortana** 中提供來自背景應用程式的深層連結，以將 app 啟動至處於特定狀態或內容的前景。
 
 > **注意**  
 **Cortana** 與背景應用程式服務會在啟動前景應用程式時終止。
 
 深層連結預設會顯示於此處所示的 **Cortana** 完成畫面 ("Go to AdventureWorks")，但您可在其他各個畫面上顯示深層連結。 
 
-![Cortana 背景 app 完成畫面](images/cortana-completion-screen-upcomingtrip-small.png)
+![Cortana 背景應用程式完成畫面](images/cortana-completion-screen-upcomingtrip-small.png)
 
-**先決條件：**
+**先決條件：  **
 
-本主題位於[利用 Cortana 與背景應用程式互動](interact-with-a-background-app-in-cortana.md)中。 我們將繼續使用規劃與管理應用程式 (名為 **Adventure Works**) 的行程來示範各種 **Cortana** 功能。
+本主題位於[利用 Cortana 與背景應用程式互動](interact-with-a-background-app-in-cortana.md)中。 我們將繼續使用行程規劃與管理應用程式 (名為 **Adventure Works**) 來示範各種 **Cortana** 功能。
 
 如果您是開發通用 Windows 平台 (UWP) 應用程式的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
 
--   [建立您的第一個應用程式](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   [建立您的第一個 App](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)，以了解事件相關資訊
 
-**使用者體驗指導方針：**
+**使用者體驗指導方針：  **
 
-請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，來了解如何將您的應用程式與 **Cortana** 整合，您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，來取得有關設計既實用又吸引人且支援語音之應用程式的有用提示。
+請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，了解如何將您的 App 與 **Cortana** 整合。您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，取得有關設計既實用又吸引人且支援語音之 App 的有用提示。
 
-## <span id="Overview"> </span> <span id="overview"> </span> <span id="OVERVIEW"> </span>概觀
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概觀
 
 
 使用者可以使用下列方式，透過 **Cortana** 來存取您的應用程式：
 
--   將其啟用為前景 app (請參閱[利用 Cortana 語音命令啟用前景 app](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
--   將特定功能公開為背景 app 服務 (請參閱 [利用 Cortana 語音命令啟用背景 app](launch-a-background-app-with-voice-commands-in-cortana.md))。
+-   將其啟用為前景應用程式 (請參閱[利用 Cortana 語音命令啟用前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
+-   將特定功能公開為背景應用程式服務 (請參閱 [利用 Cortana 語音命令啟用背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md))。
 -   深層連結到特定頁面、內容，以及狀態或內容。
 
 我們將在此處討論深層連結。
@@ -54,24 +52,24 @@ template: detail.hbs
 
 有三種方式可以提供深層連結：
 
--   位於各種 **Cortana** 畫面上的 [移至 &lt;app&gt;] 連結。
+-   位於各種 **Cortana** 畫面上的「移至 &lt;app&gt;」連結。
 -   內嵌於各種 **Cortana** 畫面上之內容磚的連結。
--   透過程式設計方式，從背景 app 服務啟動前景 app。
+-   透過程式設計方式，從背景應用程式服務啟動前景應用程式。
 
-## <span id="Go_to__app__deep_link"> </span> <span id="go_to__app__deep_link"> </span> <span id="GO_TO__APP__DEEP_LINK"> </span>「移至 &lt;app&gt;」深層連結
+## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>「移至 &lt;app&gt;」深層連結
 
 
 **Cortana** 會在大部分畫面的內容卡下方，顯示「移至 &lt;app&gt;」深層連結。
 
-![Cortana 背景 app 完成畫面](images/cortana-completion-screen.png)
+![Cortana 背景應用程式完成畫面](images/cortana-completion-screen.png)
 
 您可提供此連結的啟動引數，利用與 app 服務類似的環境來開啟您的 app。 如果您未提供啟動引數，app 就會啟動到主畫面。
 
 在此示例的 AdventureWorksVoiceCommandService.cs **AdventureWorks** 範例中，我們會傳送指定目的地至 SendCompletionMessageForDestination 方法，其會擷取所有相符的行程，並提供 app 的深層連結。
 
-首先，我們會建立 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)，其是由 **Cortana** 說出並顯示於 **Cortana** 畫布。 接著會建立 [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 清單物件，以在畫布上顯示結果卡的集合。 
+首先，我們會建立 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)，其是由 **Cortana** 說出並顯示於 **Cortana** 畫布。 接著會建立 [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 清單物件，以在畫布上顯示結果卡的集合。 
 
-這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (```response```)。 接著我們會將 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值，設為語音命令中的目的地值。
+這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (```response```)。 接著我們會將 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值，設為語音命令中的目的地值。
 
 最後，我們會呼叫 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 的 [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) 方法 。
 
@@ -101,20 +99,20 @@ private async Task SendCompletionMessageForDestination(string destination)
 ```
 
 
-## <span id="Content_tile_deep_link"> </span> <span id="content_tile_deep_link"> </span> <span id="CONTENT_TILE_DEEP_LINK"> </span>內容磚深層連結
+## <span id="Content_tile_deep_link"></span><span id="content_tile_deep_link"></span><span id="CONTENT_TILE_DEEP_LINK"></span>內容磚深層連結
 
 
 您可在各個 **Cortana** 畫面上，新增深層連結至內容卡。
 
-![Cortana 背景 app 遞交畫面 ](images/cortana-backgroundapp-progress-result.png)
+![Cortana 背景 App 遞交畫面 ](images/cortana-backgroundapp-progress-result.png)
 
-與「移至 &lt;app&gt;」連結類似，您可以提供啟動引數，利用與 app 服務類似的環境來開啟您的 app。 如果您未提供啟動引數，內容磚就不會連結到您的 app。
+與「移至 &lt;app&gt;」連結類似，您可以提供啟動引數，利用類似的內容來開啟您的 app 以做為應用程式服務。 如果您未提供啟動引數，內容磚就不會連結到您的 app。
 
 在此示例之 **AdventureWorks** 範例的 AdventureWorksVoiceCommandService.cs 中，我們會傳送指定目的地至 SendCompletionMessageForDestination 方法，其會擷取所有相符的行程，並為內容卡提供 app 的深層連結。
 
-首先，我們會建立 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)，其是由 **Cortana** 說出並顯示於 **Cortana** 畫布。 接著會建立 [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 清單物件，以在畫布上顯示結果卡的集合。 
+首先，我們會建立 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)，其是由 **Cortana** 說出並顯示於 **Cortana** 畫布。 接著會建立 [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 清單物件，以在畫布上顯示結果卡的集合。 
 
-這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (```response```)。 接著我們會將 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值，設為語音命令中的目的地值。
+這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (```response```)。 接著我們會將 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值，設為語音命令中的目的地值。
 
 最後，我們會呼叫 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 的 [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) 方法 。
 我們在此處將兩個具有不同 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 參數值的內容磚新增到 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 物件的 [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) 呼叫中所使用的 [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) 清單。
@@ -203,10 +201,10 @@ private async Task SendCompletionMessageForDestination(string destination)
     await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
-## <span id="Programmatic_deep_link"> </span> <span id="programmatic_deep_link"> </span> <span id="PROGRAMMATIC_DEEP_LINK"> </span>透過程式設計方式的深層連結
+## <span id="Programmatic_deep_link"></span><span id="programmatic_deep_link"></span><span id="PROGRAMMATIC_DEEP_LINK"></span>透過程式設計方式的深層連結
 
 
-您也可以利用程式設計的方式，使用啟動引數來啟動應用程式，利用類似的內容來開啟您的應用程式以做為應用程式服務。 如果您未提供啟動引數，app 就會啟動到主畫面。
+您也可以利用程式設計的方式，使用啟動引數來啟動 App，利用類似的內容來開啟您的 App 以做為 App 服務。 如果您未提供啟動引數，app 就會啟動到主畫面。
 
 現在，將值為 "Las Vegas" 的 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 參數新增到 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 物件之 [**RequestAppLaunchAsync**](https://msdn.microsoft.com/library/windows/apps/dn706581) 呼叫中所使用的 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件。
 
@@ -221,12 +219,12 @@ response.AppLaunchArgument = “Las Vegas”;
 await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 ```
 
-## <span id="App_manifest"> </span> <span id="app_manifest"> </span> <span id="APP_MANIFEST"> </span>應用程式資訊清單
+## <span id="App_manifest"></span><span id="app_manifest"></span><span id="APP_MANIFEST"></span>應用程式資訊清單
 
 
 若要啟用應用程式的深層連結，您必須在應用程式專案的 Package.appxmanifest 檔案中宣告 `windows.personalAssistantLaunch` 延伸。
 
-我們在此處針對 **Adventure Works**應用程式宣告 `windows.personalAssistantLaunch` 延伸。
+我們在此處針對 **Adventure Works** 應用程式宣告 `windows.personalAssistantLaunch` 延伸。
 
 ```XML
 <Extensions>
@@ -238,7 +236,7 @@ await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 </Extensions>
 ```
 
-## <span id="Protocol_contract"> </span> <span id="protocol_contract"> </span> <span id="PROTOCOL_CONTRACT"> </span>通訊協定的協定
+## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>通訊協定的協定
 
 
 您的應用程式是使用 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/br224693) 協定，透過統一資源識別項 (URI) 的啟用，啟動到前景。 您的應用程式必須覆寫應用程式的 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件，並檢查 **Protocol** 的 **ActivationKind**。 如需詳細資訊，請參閱[處理 URI 啟用](https://msdn.microsoft.com/library/windows/apps/mt228339)。
@@ -268,7 +266,7 @@ if (args.Kind == ActivationKind.Protocol)
   }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **開發人員**
@@ -290,6 +288,6 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
 title: 處理指標輸入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
@@ -8,11 +9,7 @@ template: detail.hbs
 
 # 處理指標輸入
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
+在通用 Windows 平台 (UWP) App 中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
 
 **重要 API**
 
@@ -25,7 +22,7 @@ template: detail.hbs
 如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您以[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)來模型化您的自訂互動，以保持一致且可探索的 UI 體驗。 這些平台控制項提供完整的通用 Windows 平台 (UWP) 使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
 
-## <span id="Pointers"> </span> <span id="pointers"> </span> <span id="POINTERS"> </span>指標
+## <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>指標
 
 
 許多互動體驗牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將資訊升級到整合的輸入堆疊，並公開為已合併且無從驗證裝置的指標資料。 您的 UWP app 之後就能取用此資料，而不需擔心所使用的輸入裝置。
@@ -36,10 +33,10 @@ template: detail.hbs
 
 輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 物件來表示，此物件是透過各種不同指標事件所提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入點。
 
-## <span id="Pointer_events"> </span> <span id="pointer_events"> </span> <span id="POINTER_EVENTS"> </span>指標事件
+## <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>指標事件
 
 
-指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及位置、壓力和接觸幾何等延伸資訊。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的 app 必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
+指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及取得延伸資訊 (例如位置、壓力和接觸幾何)。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的 app 必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
 
 UWP app 可以接聽下列指標事件：
 
@@ -126,18 +123,18 @@ UWP app 可以接聽下列指標事件：
 
  
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>範例
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
 
 
-以下提供一些來自基本指標追蹤 app 的程式碼範例，示範如何接聽及處理指標事件，並取得各種適用於作用中指標的屬性。
+以下提供一些來自基本指標追蹤 App 的程式碼範例，示範如何進行接聽，以及處理指標事件並取得各種適用於作用中指標的屬性。
 
-### <span id="Create_the_UI"> </span> <span id="create_the_ui"> </span> <span id="CREATE_THE_UI"> </span>建立 UI
+### <span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>建立 UI
 
 針對這個範例，我們使用矩形 (`targetContainer`) 做為指標輸入的目標物件。 當指標狀態變更時，目標的色彩就會變更。
 
 每個指標的詳細資料都會顯示於浮動的文字區塊中，該區塊會與指標一起移動。 指標事件本身會顯示於矩形左邊 (適用於回報事件順序)。
 
-這是此範例的 Extensible Application Markup Language (XAML)。
+這是適用於此範例的 Extensible Application Markup Language (XAML)。
 
 ```XAML
 <Page
@@ -194,7 +191,7 @@ UWP app 可以接聽下列指標事件：
 </Page>
 ```
 
-### <span id="Listen_for_pointer_events"> </span> <span id="listen_for_pointer_events"> </span> <span id="LISTEN_FOR_POINTER_EVENTS"> </span>接聽指標事件
+### <span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>接聽指標事件
 
 在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 來取得指標資訊。
 
@@ -243,7 +240,7 @@ UWP app 可以接聽下列指標事件：
 
 ```
 
-### <span id="Handle_pointer_events"> </span> <span id="handle_pointer_events"> </span> <span id="HANDLE_POINTER_EVENTS"> </span>處理指標事件
+### <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>處理指標事件
 
 接下來，將使用 UI 回饋來示範基本指標事件處理常式。
 
@@ -555,7 +552,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### <span id="Get_pointer_properties"> </span> <span id="get_pointer_properties"> </span> <span id="GET_POINTER_PROPERTIES"> </span>取得指標屬性
+### <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>取得指標屬性
 
 如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 與 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法，從 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 物件取得最延伸的指標資訊。
 
@@ -651,9 +648,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### <span id="Complete_example"> </span> <span id="complete_example"> </span> <span id="COMPLETE_EXAMPLE"> </span>完整範例
+### <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>完整範例
 
-以下是這個範例的 C\# 程式碼。 如需較複雜範例的連結，請參閱本頁面下方的相關主題。
+以下是這個範例的 C\# 程式碼。 如需較複雜範例的連結，請參閱本頁面下方的相關文章。
 
 ```CSharp
 using System;
@@ -1079,7 +1076,7 @@ namespace PointerInput
 }
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **範例**
@@ -1087,6 +1084,7 @@ namespace PointerInput
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -1103,6 +1101,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解使用者如何在執行語音時，透過 Cortana 語音和畫布與背景應用程式互動。
 title: 與背景應用程式互動
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
@@ -6,10 +7,10 @@ label: Interact with a background app
 template: detail.hbs
 ---
 
-# 利用 Cortana 與背景應用程式互動
+# 利用 Cortana 與背景 App 互動
 
+執行語音命令時，透過 **Cortana** 畫布中的語音和文字輸入，來啟用與背景 App 的使用者互動。
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -17,9 +18,8 @@ template: detail.hbs
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**語音命令定義 (VCD) 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-執行語音命令時，透過 **Cortana** 畫布中的語音和文字輸入，來啟用與背景應用程式的使用者互動。
 
-Cortana 支援您應用程式的完整轉向工作流程。 此工作流程是由您的應用程式所定義，而且可以支援下列這類功能︰ 
+Cortana 針對您的 App 支援完整的轉向建議導航工作流程。 此工作流程是由您的應用程式所定義，而且可以支援下列這類功能︰ 
 
 -   順利完成
 -   遞交
@@ -37,17 +37,17 @@ Cortana 支援您應用程式的完整轉向工作流程。 此工作流程是�
 -   [建立您的第一個 App](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)，以了解事件相關資訊
 
-**使用者體驗指導方針：**
+**使用者體驗指導方針：  **
 
-請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，來了解如何將您的應用程式與 **Cortana** 整合，您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，來取得有關設計既實用又吸引人且支援語音之應用程式的有用提示。
+請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，了解如何將您的 App 與 **Cortana** 整合。您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，取得有關設計既實用又吸引人且支援語音之 App 的有用提示。
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>回覆字串
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>回覆字串
 
 撰寫要透過 **Cortana** 顯示以及說出的回覆字串。
 
 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)提供撰寫 **Cortana** 字串的建議。
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>回覆字串
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>回覆字串
 
 內容卡可以為使用者提供其他內容，並協助保持回覆字串的簡潔。
 
@@ -64,9 +64,9 @@ Cortana 支援您應用程式的完整轉向工作流程。 此工作流程是�
     -   68w x 92h
     -   280w x 140h
 
-您也可以讓使用者按一下卡或應用程式文字連結，即可在前景啟動應用程式。
+您也可以讓使用者按一下卡或 App 的文字連結，即可在前景啟動 App。
 
-## <span id="Completion_screen"> </span> <span id="completion_screen"> </span> <span id="COMPLETION_SCREEN"> </span>完成畫面
+## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>完成畫面
 
 使用者可以從完成畫面中了解完成的語音命令工作。
 
@@ -174,7 +174,7 @@ private async Task SendCompletionMessageForDestination(string destination)
 }
 ```
 
-## <span id="Hand-off_screen"> </span> <span id="hand-off_screen"> </span> <span id="HAND-OFF_SCREEN"> </span>遞交畫面
+## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>遞交畫面
 
 語音命令辨識成功後，**Cortana** 必須呼叫 ReportSuccessAsync，並在 500 毫秒左右的時間內提供回覆內容。 如果應用程式服務無法在 500 毫秒內完成語音命令指定的動作，**Cortana** 就會在應用程式呼叫 ReportSuccessAsync 之前顯示一個遞交畫面 (最長 5 秒)。
 
@@ -182,13 +182,13 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 以下是 **Adventure Works** 應用程式的遞交畫面範例。 在這個範例中，使用者已向 **Cortana** 查詢即將出發的旅遊。 遞交畫面有一則訊息特別標上利用 app 服務名稱，以及在 VCD 檔案中宣告的 **Feedback** 字串。
 
-![Cortana 背景 app 遞交畫面](images/cortana-backgroundapp-progress-result.png)
+![Cortana 背景 App 遞交畫面](images/cortana-backgroundapp-progress-result.png)
 
 
-## <span id="Progress_screen"> </span> <span id="progress_screen"> </span> <span id="PROGRESS_SCREEN"> </span>進度畫面
+## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>進度畫面
 
 
-如果應用程式服務呼叫 ReportSuccessAsync 超過 500 毫秒，**Cortana** 就會向使用者提供進度畫面。 應用程式圖示將會顯示，而您必須同時提供 GUI 與 TTS 進度字串，指出正在主動處理工作。
+如果 App 服務呼叫 ReportSuccessAsync 超過 500 毫秒，**Cortana** 就會向使用者提供進度畫面。 應用程式圖示將會顯示，而您必須同時提供 GUI 與 TTS 進度字串，指出正在主動處理工作。
 
 **Cortana** 顯示一個最多 5 秒鐘的進度畫面。 5 秒鐘之後，**Cortana** 會顯示錯誤訊息，然後結束 app 服務。 如果應用程式服務需要超過 5 秒的時間才能完成此動作，它可以繼續更新 **Cortana** 的進度畫面。
 
@@ -216,10 +216,10 @@ private async Task ShowProgressScreen(string message)
 }
 ```
 
-## <span id="Confirmation_screen"> </span> <span id="confirmation_screen"> </span> <span id="CONFIRMATION_SCREEN"> </span>確認畫面
+## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>確認畫面
 
 
-當語音命令指定的動作無法復原時，會造成嚴重的影響或者辨識可信度不高時，app 服務可以要求進行確認。
+當語音命令所指定的動作為無法復原、會造成顯著影響，或是辨識可信度不高時，App 服務可以要求進行確認。
 
 以下是 **Adventure Works** app 的確認畫面範例。 在這個範例中，使用者已透過 **Cortana** 指示 app 服務取消前往拉斯維加斯的行程。 app 服務已經提供 **Cortana** 並附帶一個確認畫面，在取消行動之前提示使用者輸入 yes 或 no。
 
@@ -231,7 +231,7 @@ private async Task ShowProgressScreen(string message)
 
 ![Cortana 背景應用程式確認畫面](images/cortana-confirmation-screen.png)
 
-AdventureWorksVoiceCommandService.cs 包含下列取消行程方法，可呼叫 [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) 以在 **Cortana** 中顯示確認畫面。
+AdventureWorksVoiceCommandService.cs 包含下列取消行程方法，這些方法會呼叫 [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) 以在 **Cortana** 中顯示確認畫面。
 
 ```    CSharp
 /// <summary>
@@ -343,14 +343,14 @@ private async Task SendCompletionMessageForCancellation(string destination)
 }
 ```
 
-## <span id="Disambiguation_screen"> </span> <span id="disambiguation_screen"> </span> <span id="DISAMBIGUATION_SCREEN"> </span>解釋清楚畫面
+## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>解釋清楚畫面
 
 
-當語音命令指定的的動作有多個可能的結果時，app 服務會要求使用者提供更詳細的資訊。
+當語音命令指定的的動作有多個可能的結果時，App 服務會要求使用者提供更詳細的資訊。
 
 以下是 **Adventure Works** app 的解釋清楚畫面範例。 在這個範例中，使用者已透過 **Cortana** 指示 app 服務取消前往拉斯維加斯的行程。 不過，使用者在不同的日期會分別兩次飛往拉斯維加斯，但是如果使用者不選取希望的行程，app 服務便無法完成此動作。
 
-app 服務為 **Cortana** 提供一個解釋清楚畫面，提示使用者從相符的行程清單進行選擇，然後取消不合適的行程。
+App 服務為 **Cortana** 提供一個解釋清楚畫面，提示使用者從相符的行程清單進行選擇，然後取消不合適的行程。
 
 在這種情況下，**Cortana** 提示使用者回答 app 服務提供的類似問題。
 
@@ -360,7 +360,7 @@ app 服務為 **Cortana** 提供一個解釋清楚畫面，提示使用者從相
 
 ![Cortana 背景應用程式解釋清單畫面 ](images/cortana-disambiguation-screen.png)
 
-AdventureWorksVoiceCommandService.cs 包含下列取消行程方法，可呼叫 [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) 以在 **Cortana** 中顯示解釋清單畫面。
+AdventureWorksVoiceCommandService.cs 包含下列取消行程方法，這些方法會呼叫 [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) 以在 **Cortana** 中顯示解釋清楚畫面。
 
 ```csharp
 /// <summary>
@@ -428,10 +428,10 @@ private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, 
 }
 ```
 
-## <span id="Error_screen"> </span> <span id="error_screen"> </span> <span id="ERROR_SCREEN"> </span>錯誤畫面
+## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>錯誤畫面
 
 
-當無法完成語音命令指定的動作時，app 服務可以提供錯誤畫面。
+當無法完成語音命令指定的動作時，App 服務可以提供錯誤畫面。
 
 以下是 **Adventure Works** app 的錯誤畫面範例 。 在這個範例中，使用者已透過 **Cortana** 指示 app 服務取消前往拉斯維加斯的行程。 不過，使用者沒有任何前往拉斯維加斯的行程。
 
@@ -450,7 +450,7 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportFailureAsync(response);
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **開發人員**
@@ -472,6 +472,6 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

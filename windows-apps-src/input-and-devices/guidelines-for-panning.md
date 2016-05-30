@@ -1,25 +1,24 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 title: 移動瀏覽
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
-label: 移動瀏覽
+label: Panning
 template: detail.hbs
 ---
 
 # 移動瀏覽的指導方針
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
 **重要 API**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>可行與禁止事項
+
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
 **移動瀏覽指標和捲軸**
@@ -70,7 +69,7 @@ template: detail.hbs
 
     ![示範與其容器朝同方向捲動之內嵌可移動瀏覽區域的影像。](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
@@ -100,8 +99,7 @@ Windows 8 支援三種移動瀏覽類型：
 
 移動瀏覽的互動經驗對輸入裝置都是唯一的，但仍然能提供類似的功能。
 
-**可移動瀏覽的區域**
-可移動瀏覽區域行為是在設計階段透過階層式樣式表 (CSS) 顯示給使用 JavaScript 的 Windows 市集應用程式開發人員。
+**可移動瀏覽區域** 可移動瀏覽區域行為是在設計階段透過階層式樣式表 (CSS) 顯示給使用 JavaScript 的 Windows 市集應用程式開發人員。
 
 根據偵測到的輸入裝置，提供兩種移動瀏覽顯示模式：
 
@@ -112,16 +110,14 @@ Windows 8 支援三種移動瀏覽類型：
 
  
 
-**移動瀏覽指標**
-移動瀏覽指標類似於捲軸中的捲動方塊。 它們指示了顯示內容佔可移動瀏覽總區域的比例，以及顯示內容在可移動瀏覽區域中的相對位置。
+**移動瀏覽指標** 移動瀏覽指標類似於捲軸中的捲動方塊。 它們指示了顯示內容佔可移動瀏覽總區域的比例，以及顯示內容在可移動瀏覽區域中的相對位置。
 
 下圖顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標。
 
 ![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
 
-**移動瀏覽行為**
-**貼齊點**
-撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+**移動瀏覽行為** 
+           **貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
 
 貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
 
@@ -141,8 +137,7 @@ Windows 8 支援三種移動瀏覽類型：
 
  
 
-**柵欄**
-內容可以寬於和高於顯示裝置的維度及解析度。 基於這個理由，二維移動瀏覽 (水平和垂直) 通常是必需的。 柵欄可改進這些案例中的使用者經驗，透過沿著動作方向的軸線 (垂直或水平) 強調移動瀏覽來完成。
+**柵欄** 內容可以寬於和高於顯示裝置的維度及解析度。 基於這個理由，二維移動瀏覽 (水平和垂直) 通常是必需的。 柵欄可改進這些案例中的使用者經驗，透過沿著動作方向的軸線 (垂直或水平) 強調移動瀏覽來完成。
 
 下圖示範柵欄的概念。
 
@@ -162,19 +157,21 @@ Windows 8 支援三種移動瀏覽類型：
 
 ![示範內嵌的可移動瀏覽區域邊框間距不足的影像。](images/ux-panning-embedded-wrong.png)
 
-對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的 app (如相簿或地圖 app)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的 app 中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
+對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的 app (如相簿或地圖 app)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的 App 中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
 * [最佳化 ListView 與 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
 * [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
+
 **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -193,6 +190,6 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

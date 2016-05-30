@@ -1,20 +1,16 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 使用語音命令，延伸 Cortana 與您的應用程式所提供的功能。
 title: Cortana 設計指導方針
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-label: 指導方針
+label: Guidelines
 template: detail.hbs
 ---
 
 # Cortana 設計指導方針
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-
-
-這些指導方針與建議會說明您的應用程式如何充分利用 **Cortana** 與使用者互動，以協助他們完成工作，並清楚傳達發生的過程。
+這些指導方針與建議會說明您的 app 如何充分利用 **Cortana** 與使用者互動，以協助他們完成工作，並清楚傳達發生的過程。
 
 **Cortana** 可讓應用程式在背景執行，並提示使用者進行確認或去除混淆，然後根據語音命令的狀態提供使用者回饋。 過程輕量且快速，而且不會強迫使用者離開 **Cortana** 體驗或切換內容到應用程式。
 
@@ -24,7 +20,7 @@ template: detail.hbs
 
 ![Cortana 畫布概觀](images/speech/cortana-overview.png)
 
-## <span id="Conversational_writing_"> </span> <span id="conversational_writing_"> </span> <span id="CONVERSATIONAL_WRITING_"> </span>對話式寫入
+## <span id="Conversational_writing_"></span><span id="conversational_writing_"></span><span id="CONVERSATIONAL_WRITING_"></span>對話式寫入
 
 
 成功的 **Cortana** 互動需要您在製作文字轉換語音 (TTS) 和 GUI 字串時遵循一些基礎原則。
@@ -70,7 +66,7 @@ template: detail.hbs
 <dd><p>避免混淆。 使用日常用語，而不是技術專業用語。</p>
 </dd>
 </dl></td>
-<td align="left"><p>沒有「到拉斯維加斯的行程」的查詢結果。</p></td>
+<td align="left"><p>沒有 &quot;到拉斯維加斯的行程&quot; 的查詢結果。</p></td>
 <td align="left"><p>我找不到任何到拉斯維加斯的行程。</p></td>
 </tr>
 <tr class="even">
@@ -106,18 +102,18 @@ template: detail.hbs
 
 在您的回應中透過從集合內或替代性的回應，輪流或隨機選取來產生變化。 例如，「您想要看什麼電影？」 與「您想要觀賞哪部電影？」。 這樣能讓您的應用程式聽起來更自然且獨特。
 
-## <span id="Localization_"> </span> <span id="localization_"> </span> <span id="LOCALIZATION_"> </span>當地語系化
+## <span id="Localization_"></span><span id="localization_"></span><span id="LOCALIZATION_"></span>當地語系化
 
 
-若要使用語音命令啟動動作，您的應用程式必須在使用者於裝置上選取的語言中登錄語音命令 (Settings &gt; System &gt; Speech &gt; Speech Language)。
+若要使用語音命令啟動動作，您的 app 必須在使用者於裝置上選取的語言中登錄語音命令 ([設定] &gt; [系統] &gt; [語音] &gt; [語音語言])。
 
-您應該當地語系化應用程式回應的語音命令，以及所有 TTS 和 GUI 字串。
+您應該當地語系化 app 回應的語音命令，以及所有 TTS 和 GUI 字串。
 
 您應該避免冗長的 GUI 字串。 **Cortana** 畫布提供三行的回應，並會截斷超過的字串。
 
 如需詳細資訊，請參閱[全球化和當地語系化區段](../globalizing/globalizing-portal.md)。
 
-## <span id="Image_resources_and_scaling"> </span> <span id="image_resources_and_scaling"> </span> <span id="IMAGE_RESOURCES_AND_SCALING"> </span>影像資源和縮放
+## <span id="Image_resources_and_scaling"></span><span id="image_resources_and_scaling"></span><span id="IMAGE_RESOURCES_AND_SCALING"></span>影像資源和縮放
 
 
 通用 Windows 平台 (UWP) app 可以根據特定的設定和裝置功能，自動選取最適當的應用程式標誌影像 (高對比、有效像素及地區設定等)。 您需要的就是提供影像，並確保您在應用程式專案內為不同的資源版本使用適當的命名慣例和資料夾組織。 如果您未提供建議的資源版本，則視使用者的喜好設定、能力、裝置類型及位置而定，協助工具、當地語系化及影像品質可能會有問題。
@@ -133,17 +129,35 @@ template: detail.hbs
 **重要**  
 Cortana 畫布的標題區域中使用的應用程式圖示是 "Package.appxmanifest" 檔案中指定的 Square44x44Logo 圖示。 
 
-您也可以從 Cortana 畫布的內容區域中顯示的查詢為每個結果指定圖示。 結果圖示的有效影像大小為︰
+您也可以針對使用者查詢，指定每個結果磚的圖示。 結果圖示的有效影像大小為︰
 
 -   68w x 68h
 -   68w x 92h
 -   280w x 140h
 
+## <span id="Result_tile_templates"></span><span id="result_tile_templates"></span><span id="RESULT_TILE_TEMPLATES"></span>結果磚範本
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>範例
+針對 Cortana 畫布上顯示的結果磚，提供一組範本。 使用這些範本，指定磚的標題以及磚是否包含文字和結果圖示影像。 每個磚可以包含最多三行的文字和一張影像，取決於指定的範本。
+
+以下是支援的範本 (含範例)︰
+
+| 名稱 | 範例 |
+| --- | --- |
+| 只有標題  | ![只有標題](images/cortana/voicecommandcontenttiletype_titleonly_small.png) |
+| 標題含文字   | ![標題含文字](images/cortana/voicecommandcontenttiletype_titlewithtext_small.png) |
+| 標題含 68 x 68 圖示   | 無影像 |
+| 標題含 68 x 68 圖示與文字   | ![標題含 68 x 68 圖示與文字](images/cortana/voicecommandcontenttiletype_titlewith68x68iconandtext_small.png) |
+| 標題含 68 x 92 圖示   | 無影像 |
+| 標題含 68 x 92 圖示與文字    | ![標題含 68 x 92 圖示與文字](images/cortana/voicecommandcontenttiletype_titlewith68x92iconandtext_small.png) |
+| 標題含 280 x 140 圖示   | 無影像 |
+| 標題含 280 x 140 圖示與文字    | ![標題含 280 x 140 圖示與文字](images/cortana/voicecommandcontenttiletype_titlewith280x140iconandtext_small.png) |
+
+如需關於 Cortana 範本的詳細資訊，請參閱 [VoiceCommandContentTileType](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttiletype.aspx)。
+
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
 
 
-這個範例示範在 **Cortana** 中背景應用程式的端對端工作流程。 我們使用 **Adventure Works** 應用程式來取消到拉斯維加斯的行程。
+這個範例示範在 **Cortana** 中背景應用程式的端對端工作流程。 我們使用 **Adventure Works** 應用程式來取消到拉斯維加斯的行程。 此範例使用「標題含 68 x 68 圖示與文字」範本。
 
 ![端對端 Cortana 背景應用程式流程](images/speech/e2e-canceltrip.png)
 
@@ -160,22 +174,21 @@ Cortana 畫布的標題區域中使用的應用程式圖示是 "Package.appxmani
 
 我們將探索這些步驟的詳細資料如下。
 
-### <span id="Handoff"> </span> <span id="handoff"> </span> <span id="HANDOFF"> </span>遞交
+### <span id="Handoff"></span><span id="handoff"></span><span id="HANDOFF"></span>遞交
 
-|                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|
-| ![端對端：尋找行程，沒有遞交畫面 ](images/speech/cortana-backgroundapp-result.png)              |
-| 尋找行程，沒有遞交畫面                                                                              |
+| ![端對端：尋找行程，沒有遞交畫面 ](images/speech/cortana-backgroundapp-result.png) |
+|--- |
+| 尋找行程，沒有遞交畫面 |
+
 | ![端對端：取消行程 (包含遞交畫面) ](images/speech/cortana-backgroundapp-progress-result.png) |
-| 包含遞交畫面的取消行程                                                                          |
-
- 
+|--- |
+| 包含遞交畫面的取消行程 | 
 
 應用程式在工作回應上花費小於 500 毫秒，不需要其他的使用者資訊與 **Cortana** 的進一步參與即可完成 (除了顯示完成畫面)。
 
 如果應用程式需要 500 毫秒以上才能回應，**Cortana** 提供遞交畫面。 應用程式圖示與名稱將會顯示，且您必須同時提供 GUI 與 TTS 遞交字串，以指出語音命令已經正確地了解。 遞交畫面最多顯示 5 秒；如果您的應用程式沒有在這段時間內回應，**Cortana** 會顯示一般錯誤畫面。
 
-### <span id="GUI_and_TTS_guidelines_for_handoff_screens"> </span> <span id="gui_and_tts_guidelines_for_handoff_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"> </span>遞交畫面的 GUI 與 TTS 指導方針
+### <span id="GUI_and_TTS_guidelines_for_handoff_screens"></span><span id="gui_and_tts_guidelines_for_handoff_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"></span>遞交畫面的 GUI 與 TTS 指導方針
 
 清楚地指出工作正在進行。
 
@@ -196,14 +209,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
  
 
-### <span id="Progress"> </span> <span id="progress"> </span> <span id="PROGRESS"> </span>進度
+### <span id="Progress"></span><span id="progress"></span><span id="PROGRESS"></span>進度
 
-|                                                                                             |
-|---------------------------------------------------------------------------------------------|
 | ![端對端：取消行程 (包含進度畫面) ](images/speech/e2e-canceltrip-progress.png) |
-| 包含進度畫面的取消行程                                                            |
-
- 
+| --- |
+| 包含進度畫面的取消行程 |  
 
 當工作在步驟間要花費一點時間時，應用程式必須在進度畫面上介入並更新資訊，告知使用者正在發生的事情。 應用程式圖示將會顯示，且您必須同時提供 GUI 與 TTS 進度字串，以指出工作正在進行。
 
@@ -218,7 +228,7 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 -   去除混淆
 -   完成
 
-### <span id="GUI_and_TTS_guidelines_for_progress_screens"> </span> <span id="gui_and_tts_guidelines_for_progress_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"> </span>進度畫面的 GUI 與 TTS 指導方針
+### <span id="GUI_and_TTS_guidelines_for_progress_screens"></span><span id="gui_and_tts_guidelines_for_progress_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"></span>進度畫面的 GUI 與 TTS 指導方針
 
 使用現在式時態。
 
@@ -236,14 +246,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
  
 
-### <span id="Confirmation"> </span> <span id="confirmation"> </span> <span id="CONFIRMATION"> </span>確認
+### <span id="Confirmation"></span><span id="confirmation"></span><span id="CONFIRMATION"></span>確認
 
-|                                                                                                     |
-|-----------------------------------------------------------------------------------------------------|
 | ![端對端：取消行程 (包含確認畫面) ](images/speech/e2e-canceltrip-confirmation.png) |
-| 包含確認畫面的取消行程                                                                |
-
- 
+| --- |
+| 包含確認畫面的取消行程 | 
 
 有些工作可由使用者命令的性質隱含確認；其他可能更具敏感性的則需要明確確認。 下列是何時使用明確確認與隱含確認的指導方針。
 
@@ -265,7 +272,7 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 -   工作必須要快速 (例如要快速地擷取想法，以免之後忘記)
 -   準確度很高 (例如簡單的功能表)
 
-### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"> </span> <span id="gui_and_tts_guidelines_for_confirmation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"> </span>確認畫面的 GUI 與 TTS 指導方針
+### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"></span><span id="gui_and_tts_guidelines_for_confirmation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"></span>確認畫面的 GUI 與 TTS 指導方針
 
 使用現在式時態。
 
@@ -287,14 +294,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
  
 
-### <span id="Disambiguation"> </span> <span id="disambiguation"> </span> <span id="DISAMBIGUATION"> </span>去除混淆
+### <span id="Disambiguation"></span><span id="disambiguation"></span><span id="DISAMBIGUATION"></span>去除混淆
 
-|                                                                                                        |
-|--------------------------------------------------------------------------------------------------------|
 | ![端對端：取消行程 (包含去除混淆畫面)](images/speech/cortana-disambiguation-screen.png) |
-| 取消行程 (包含去除混淆畫面)                                                                 |
-
- 
+| --- |
+| 取消行程 (包含去除混淆畫面) | 
 
 有些工作可能需要使用者從清單選取實體以完成工作。
 
@@ -302,7 +306,7 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
 客戶回應去除混淆問題之後，您的應用程式必須在 500 毫秒內提供下一個畫面，避免進入進度畫面。
 
-### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"> </span> <span id="gui_and_tts_guidelines_for_disambiguation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"> </span>去除混淆畫面的 GUI 與 TTS 指導方針
+### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"></span><span id="gui_and_tts_guidelines_for_disambiguation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"></span>去除混淆畫面的 GUI 與 TTS 指導方針
 
 使用現在式時態。
 
@@ -326,12 +330,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
  
 
-### <span id="Completion"> </span> <span id="completion"> </span> <span id="COMPLETION"> </span>完成
+### <span id="Completion"></span><span id="completion"></span><span id="COMPLETION"></span>完成
 
-|                                                                                                 |
-|-------------------------------------------------------------------------------------------------|
 | ![端對端：取消行程 (包含完成畫面) ](images/speech/e2e-canceltrip-completion.png) |
-| 包含完成畫面的取消行程                                                              |
+| --- |
+| 包含完成畫面的取消行程 |
 
  
 
@@ -341,7 +344,7 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
 您應該提供一個包含啟動參數的連結到您的應用程式，以在適當的狀態下啟動應用程式。 這可讓使用者檢視或完成工作本身。 **Cortana** 提供連結文字 (例如「移至 Adventure Works」)。
 
-### <span id="GUI_and_TTS_guidelines_for_completion_screens"> </span> <span id="gui_and_tts_guidelines_for_completion_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"> </span>完成畫面的 GUI 與 TTS 指導方針
+### <span id="GUI_and_TTS_guidelines_for_completion_screens"></span><span id="gui_and_tts_guidelines_for_completion_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"></span>完成畫面的 GUI 與 TTS 指導方針
 
 使用過去式時態。
 
@@ -356,12 +359,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
  
 
-### <span id="Error"> </span> <span id="error"> </span> <span id="ERROR"> </span>錯誤
+### <span id="Error"></span><span id="error"></span><span id="ERROR"></span>錯誤
 
-|                                                                                      |
-|--------------------------------------------------------------------------------------|
 | ![端對端：取消行程 (包含錯誤畫面)](images/speech/e2e-canceltrip-error.png) |
-| 取消行程 (包含錯誤畫面)                                                        |
+| --- |
+| 取消行程 (包含錯誤畫面) |
 
  
 
@@ -371,10 +373,11 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 -   **Cortana** 與應用程式服務通訊失敗。
 -   在 **Cortana** 顯示遞交畫面或進度畫面 5 秒後，應用程式無法提供畫面。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
-* [語音互動](speech-interactions.md)
+* [語音互動](speech-interactions.md)  
+
 **開發人員**
 * [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598)
 * [語音互動](https://msdn.microsoft.com/library/windows/apps/mt185614)
@@ -387,6 +390,6 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解如何在執行階段利用語音辨識結果，以存取和更新語音命令定義 (VCD) 檔案中支援的片語清單 (PhraseList 元素)。
 title: 動態修改 VCD 片語清單
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
@@ -9,7 +10,7 @@ template: detail.hbs
 # 動態修改 VCD 片語清單
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要 API**
@@ -21,13 +22,13 @@ template: detail.hbs
 
 如果語音命令是專門針對涉及某種使用者定義或暫時性應用程式資料的工作，則在執行階段動態修改片語清單會相當有用。 
 
-例如，假設您有一款旅遊應用程式，使用者可以輸入目的地，但您希望使用者只要說出：應用程式名稱 +「顯示行程安排 &lt;目的地&gt;」，就可以啟動應用程式。 在 **ListenFor** 元素本身，您可以指定如下內容：`<ListenFor> Show trip to {destination}  </ListenFor>`，其中 "destination" 是 **PhraseList** 的 **Label** 屬性值。
+例如，假設您有一款旅遊 app，使用者可以輸入目的地，但您希望使用者只要說出：應用程式名稱 +「顯示行程&lt;目的地&gt;」，就可以啟動 app。 在 **ListenFor** 元素本身，您可以指定如下內容：`<ListenFor> Show trip to {destination}  </ListenFor>`，其中 "destination" 是 **PhraseList** 的 **Label** 屬性值。
 
 在執行階段更新片語清單可評估為每個可能的目的地建立個別 **ListenFor** 元素的需求。 您可以改為在 **PhraseList** 中動態填入使用者輸入行程時指定的目的地。 
 
 如需有關 **PhraseList** 及其他 VCD 元素的詳細資訊，請參閱 [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) 參考資料。
 
-**先決條件：**
+**先決條件：  **
 
 本主題改編自[利用 Cortana 語音命令啟動前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md)。 我們在這裡以 **Adventure Works** 這個行程安排和管理 app，繼續示範各項功能。
 
@@ -36,11 +37,11 @@ template: detail.hbs
 -   [建立您的第一個 App](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)，以了解事件相關資訊
 
-**使用者體驗指導方針：**
+**使用者體驗指導方針：  **
 
-請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233) 取得相關資訊，來了解如何將您的 app 與 **Cortana** 整合，您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，來取得有關設計既實用又吸引人且支援語音之 app 的有用提示。
+請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)取得相關資訊，了解如何將您的 App 與 **Cortana** 整合。您也可以參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)，取得有關設計既實用又吸引人且支援語音之 App 的有用提示。
 
-## <span id="Identify_the_command"> </span> <span id="identify_the_command"> </span> <span id="IDENTIFY_THE_COMMAND"> </span>識別命令及更新片語清單
+## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>識別命令及更新片語清單
 
 這裡是一個 VCD 檔案檔案範例，它會定義一個「showTripToDestination」**命令**以及一個 **PhraseList** (此元素會在我們的 **Adventure Works** 旅遊應用程式中定義三個目的地選項)。 當使用者儲存和刪除應用程式中的目的地時，應用程式會更新 **PhraseList** 的選項。
 
@@ -92,7 +93,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 }
 ```
 
-## <span id="Remarks"> </span> <span id="remarks"> </span> <span id="REMARKS"> </span>備註
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>備註
 
 
 如果集合不大或單字不多，比較適合利用 **PhraseList** 來限制辨識結果。 當字組太大 (例如，數百個文字)，或根本不應該限制時，可以使用 **PhraseTopic** 元素和 **Subject** 元素來縮小語音辨識結果的相關性，以提高延展性。
@@ -126,7 +127,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
   </CommandSet>
 ```
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **開發人員**
@@ -150,6 +151,6 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

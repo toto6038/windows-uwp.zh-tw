@@ -1,8 +1,9 @@
 ---
+author: mijacobs
 Description: 使用交叉滑動以支援透過撥動手勢進行選取，以及透過滑動手勢進行拖曳 (移動) 互動。
 title: 交叉滑動的指導方針
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-label: 交叉滑動
+label: Cross-slide
 template: detail.hbs
 ---
 
@@ -20,14 +21,14 @@ template: detail.hbs
 
 使用交叉滑動以支援透過撥動手勢進行選取，以及透過滑動手勢進行拖曳 (移動) 互動。
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>可行與禁止事項
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
 -   針對朝單一方向捲動的清單或集合使用交叉滑動。
 -   當點選互動用於其他用途時，項目選取請使用交叉滑動。
 -   不要使用交叉滑動將項目新增到佇列。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 選取和拖曳只適用於單一方向移動瀏覽 (垂直或水平) 的內容區域。 為了讓任一種互動可以作用，必須鎖定單一移動瀏覽方向，而且必須以與移動瀏覽方向垂直的方向操作手勢。
@@ -123,15 +124,15 @@ template: detail.hbs
 
 如果需要移動的物件超過一個，請讓使用者選取多個項目，然後同時拖曳所有項目。
 
-## <span id="related_topics"> </span>相關文章
+## <span id="related_topics"></span>相關文章
 
 
 **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -149,6 +150,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
