@@ -43,25 +43,25 @@ author: awkoren
 
 當您封裝資料進行分享時，可以提供各種屬性，為目前分享的內容提供更多資訊。 這些屬性可協助目標 app 提升使用者體驗。 例如，description 屬性可在使用者利用多個 app 分享內容時提供協助。 分享影像或網頁連結時，如果加上縮圖，就可以提供使用者視覺上的參考。 如需詳細資訊，請參閱 [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]。
 
-除了 title 之外所有的屬性都是選擇性的。 標題屬性是必須設定的強制性屬性。
+除了 title 之外所有的屬性都是選擇性的。 title 屬性是必須設定的強制性屬性。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## 啟動分享 UI
 
-分享的 UI 是由系統所提供。 呼叫 [**ShowShareUI**][ShowShareUi] 方法來啟動。
+分享的 UI 是由系統所提供。 呼叫 [**ShowShareUI**][ShowShareUi] 方法來啟動它。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## 處理錯誤
 
-在大部分情況下，內容的分享過程其實不複雜。 但是，還是有可能發生意外的狀況。 例如，App 要求使用者選取要分享的內容，但使用者沒有選取任何內容。 為了處理這些情況，請使用 [**FailWithDisplayText**][FailWithDisplayText] 方法在發生某些錯誤時向使用者顯示訊息。
+在大部分情況下，內容的分享過程其實不複雜。 但是，還是有可能發生意外的狀況。 例如，app 要求使用者選取要分享的內容，但使用者沒有選取任何內容。 為了處理這些情況，請使用 [**FailWithDisplayText**][FailWithDisplayText] 方法在發生某些錯誤時向使用者顯示訊息。
 
 ## 使用委派延遲分享
 
-有時候，立即準備使用者想要分享的資料並沒有什麼意義。 例如，如果 app 支援以幾種不同的可能格式傳送大型影像檔案，在使用者做出選擇之前建立所有的影像是沒有效率的。
+有時候，立即準備使用者想要分享的資料並沒有什麼意義。 例如，如果 app 支援以幾種不同的可能格式傳送大型影像檔案，則在使用者做出選擇之前建立所有的影像是沒有效率的。
 
-若要解決這個問題，[**DataPackage**][DataPackage] 可以包含委派，這是接收 app 要求資料時所呼叫的函式。 當使用者要分享的資料會耗用大量資源時，建議您使用委派。
+若要解決這個問題，[**DataPackage**][DataPackage] 可以包含委派，這是接收方 app 要求資料時所呼叫的函式。 當使用者要分享的資料會耗用大量資源時，建議您使用委派。
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -103,6 +103,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -28,6 +28,6 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 | [使用 EDP 保護在應用程式之間傳輸的企業資料](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主題說明達成一些最常見的資料傳輸相關企業資料保護 EDP 案例所需的編碼工作範例。 |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

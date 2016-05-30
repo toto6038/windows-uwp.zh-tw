@@ -35,14 +35,12 @@ author: awkoren
 設定資料格式：
 
 1.  開啟資訊清單檔案。
-2.  在 [宣告]**** 頁面的 [資料格式]**** 區段中，按一下 [新增新的]****。
+2.  在 [宣告]**** 頁面的 [資料格式]**** 區段中，按一下 [加入新的]****。
 3.  輸入支援的資料格式名稱。 例如，「Text」。
 
 ## 處理分享啟用
 
 當使用者選取您的 app 時 (通常是從分享 UI 中可用的目標 app 清單中加以選取)，會引發 [**Application.OnShareTargetActivated**][OnShareTargetActivated] 事件。 您的 app 必須處理此事件，才能處理使用者想要分享的資料。
-
-請注意，如果您的 App 在啟用為分享目標時正在執行，您 App 的現有執行個體會終止，然後會啟動 App 的新執行個體來處理協定。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -61,8 +59,8 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
     string text = await shareOperation.Data.GetTextAsync();
 
     // To output the text from this example, you need a TextBlock control
-    // with a name of &quot;sharedContent&quot;.
-    sharedContent.Text = &quot;Text: &quot; + text;
+    // with a name of "sharedContent".
+    sharedContent.Text = "Text: " + text;
 } 
 ```
 
@@ -85,7 +83,7 @@ shareOperation.ReportSubmittedBackgroundTask();
 如果出現錯誤，可以呼叫 [**ReportError**][ReportError] 傳送錯誤訊息給系統。 當使用者檢查分享狀態時就會看到這個訊息。 在這個時候，您的 app 會關閉並結束分享。 使用者需要再次啟動並分享內容到您的 app。 根據您的情況，您可以決定特定錯誤沒有嚴重到需要結束分享作業。 在這個情況中，您可以選擇不要呼叫 **ReportError** 而繼續分享。
 
 ```cs
-shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
+shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
 最後，當您的應用程式順利處理完分享內容時，應該呼叫 [**ReportCompleted**][ReportCompleted] 讓系統知道。
@@ -114,13 +112,13 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
         // For quicklinks, the supported FileTypes and DataFormats are set 
         // independently from the manifest
-        SupportedFileTypes = { &quot;*&quot; },
+        SupportedFileTypes = { "*" },
         SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
                 StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
     };
 
     StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
-            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+            "assets\\user.png", CreationCollisionOption.OpenIfExists);
     quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
     shareOperation.ReportCompleted(quickLinkInfo);
 }
@@ -142,6 +140,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
