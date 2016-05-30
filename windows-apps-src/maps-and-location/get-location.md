@@ -1,6 +1,7 @@
 ---
+author: PatrickFarley
 title: 取得使用者的位置
-description: 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 [設定] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
+description: 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ---
 
@@ -10,7 +11,7 @@ ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-尋找使用者的位置並回應位置變更。 存取使用者的位置是由 [設定] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
+尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 
 **提示**：若要深入了解如何在您的 app 中存取使用者的位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
@@ -19,8 +20,8 @@ ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ## 啟用位置功能
 
 
-1.  在 [方案總管]**** 中按兩下 **package.appxmanifest**，然後選取 [功能]**** 索引標籤。
-2.  在 [**功能**] 清單中，選取 [**功能**] 索引標籤。 這會將 `Location` 裝置功能新增至封裝資訊清單檔案中。
+1.  在 \[**方案總管**\] 中按兩下 **package.appxmanifest**，然後選取 \[**功能**\] 索引標籤。
+2.  在 \[**功能**\] 清單中，選取 \[**功能**\] 索引標籤。 這會將 `Location` 裝置功能新增至封裝資訊清單檔案中。
 
 ```XML
   <Capabilities>
@@ -227,9 +228,9 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 ## 變更位置隱私權設定
 
 
-如果位置隱私權設定不允許您的 app 存取使用者的位置，建議您提供一個可連到 [**設定**] app 中 [**位置隱私權設定**] 的便利連結。 在這個範例中，是使用「超連結」控制項來瀏覽至 `ms-settings:privacy-location` URI。
+如果位置隱私權設定不允許您的 app 存取使用者的位置，建議您提供一個可連到 \[**設定**\] app 中 \[**位置隱私權設定**\] 的便利連結。 在這個範例中，是使用「超連結」控制項來瀏覽至 `ms-settings:privacy-location` URI。
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to location is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -241,7 +242,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 </TextBlock>
 ```
 
-或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [**設定**] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
+或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 \[**設定**\] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
 
 ```csharp
 using Windows.System;
@@ -252,11 +253,11 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## 針對您的 app 進行疑難排解
 
 
-必須先在裝置上啟用 [**位置**]，您的 app 才能存取使用者的位置。 在 [設定]**** app 中，確認已開啟下列 [位置隱私權設定]****：
+必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取使用者的位置。 在 \[**設定**\] app 中，確認已開啟下列 \[**位置隱私權設定**\]：
 
--   已將 [**此裝置的位置**] 設為 [**開啟**] (不適用於 Windows 10 行動裝置版)
--   已將定位服務設定的 [位置]**** 設為 [開啟]****
--   在 [**選擇可以使用您的位置的應用程式**] 底下，將您的 app 設為 [**開啟**]
+-   已將 **此裝置的位置** 設為 **開啟** \(不適用於 Windows 10 行動裝置版\)
+-   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
+-   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 
 ## 相關主題
 
@@ -267,6 +268,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

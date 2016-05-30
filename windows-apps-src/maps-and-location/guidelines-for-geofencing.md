@@ -1,10 +1,11 @@
 ---
-Description: 在 app 中遵循這些適用於地理柵欄的最佳做法。
-title: 地理柵欄 app 的指導方針
+author: PatrickFarley
+Description: 在 App 中遵循這些適用於地理柵欄的最佳做法。
+title: 地理柵欄 App 的指導方針
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
 
-# 地理柵欄 app 的指導方針
+# 地理柵欄 App 的指導方針
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -121,7 +122,7 @@ function onVisibilityChanged() {
 * [設定地理柵欄](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [取得目前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置範例 (地理位置)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -131,6 +132,6 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

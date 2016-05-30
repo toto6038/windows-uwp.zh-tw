@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 要求地圖驗證金鑰
 description: 您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
@@ -65,7 +66,7 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 
 -   這個範例會在 XAML 標記中將 **MapServiceToken** 設定為驗證金鑰的值。
 
-    ```xaml
+    ```xml
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
@@ -90,6 +91,6 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

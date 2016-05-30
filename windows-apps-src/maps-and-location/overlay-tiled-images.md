@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 在地圖上重疊顯示並排影像
 description: 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
@@ -12,7 +13,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 
 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**提示：**若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -53,7 +54,7 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-          "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+          "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
 2.  將 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 具現化並設定。 將您在上一個步驟中設定的 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) 指定為 **MapTileSource** 的 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
@@ -111,7 +112,7 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
             // Create an HTTP data source.
             // This example retrieves tiles from a fictitious web service.
             HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
             // Optionally, add custom HTTP headers if the web service requires them.
             dataSource.AdditionalRequestHeaders.Add("header name", "header value");
@@ -130,7 +131,7 @@ void MainPage::AddHttpMapTileSource()
        GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
        auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
        dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
@@ -201,7 +202,7 @@ void MainPage::AddHttpMapTileSource()
 1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 屬性結合，以建立自訂 URI。
 2.  傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 URI。
 
-下列範例示範如何為**UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
+下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -218,7 +219,7 @@ using System.Threading.Tasks;
             MapTileUriRequestedEventArgs args)
         {
             // Get a deferral to do something asynchronously.
-            // Omit this line if you don&#39;t have to do something asynchronously.
+            // Omit this line if you don't have to do something asynchronously.
             var deferral = args.Request.GetDeferral();
 
             // Get the custom Uri.
@@ -228,7 +229,7 @@ using System.Threading.Tasks;
             args.Request.Uri = uri;
 
             // Notify the app that the custom Uri is ready.
-            // Omit this line also if you don&#39;t have to do something asynchronously.
+            // Omit this line also if you don't have to do something asynchronously.
             deferral.Complete();
         }
 
@@ -309,7 +310,7 @@ using System.Threading.Tasks;
         }
 ```
 
-```ManagedCPlusPlus
+```cpp
 InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 {
        int pixelHeight = 256;
@@ -366,6 +367,6 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
