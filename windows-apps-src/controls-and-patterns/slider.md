@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 讓使用者在指定的範圍中設定值。
 title: 滑桿
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-label: 滑桿
+label: Sliders
 template: detail.hbs
 ---
 # 滑桿
@@ -25,13 +26,13 @@ template: detail.hbs
 
 請不要為二元設定使用滑桿。 請改用[切換開關](toggles.md)。
 
-這裡是決定是否使用滑桿時的一些其他考量因素：
+以下是決定是否使用滑桿時的一些其他考量因素：
 
--   **設定看起來是否像是相對數量？**如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
--   **設定是確實的已知數值嗎？**如果是，請使用數值[文字方塊](text-box.md)。
--   **使用者需要在變更設定時取得效果的即時回應嗎？**如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
--   **設定的範圍是四個或更多的值嗎？**如果不是，請使用[選項按鈕](radio-button.md)。
--   **使用者可以變更值嗎？**滑桿適用於使用者互動。 如果使用者無法變更值，請改用唯讀文字。
+-   **設定看起來是否像相對數量？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
+-   **該設定是否為已知的確切數值？** 如果是，請使用數字[文字方塊](text-box.md)。
+-   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
+-   **設定的範圍是否包含四個或更多值？** 如果不是，請使用[選項按鈕](radio-button.md)。
+-   **使用者是否能變更該值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
 
 如果您正在決定使用滑桿或數值文字方塊，則在下列情況下請使用數值文字方塊：
 
@@ -162,11 +163,11 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## 相關主題
 
 **適用於設計人員**
-- [切換開關的指導方針](toggles.md)
-**適用於開發人員 (XAML)**
+- [切換開關的指導方針](toggles.md) 
+           **適用於開發人員 (XAML)**
 - [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

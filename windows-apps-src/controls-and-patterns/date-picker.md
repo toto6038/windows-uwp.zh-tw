@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。 
 title: 日期選擇器
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
@@ -44,7 +45,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期選擇器的範例](images/date-picker-closed.png)
 
-> **注意：**如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞一文中的[DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**：&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
 
 
 
@@ -56,6 +57,6 @@ birthDatePicker.Header = "Date of birth";
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

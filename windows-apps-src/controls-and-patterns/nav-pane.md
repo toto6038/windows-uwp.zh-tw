@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 提供最上層瀏覽同時節省螢幕空間。
 title: 瀏覽窗格的指導方針
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
@@ -10,83 +11,97 @@ template: detail.hbs
 =============================================================================================
 瀏覽窗格是一種瀏覽模式，它可以有多個最上層瀏覽項目，同時節省螢幕空間。 瀏覽窗格廣泛使用於行動裝置應用程式，但也適用於較大的螢幕。 以重疊模式使用時，窗格會維持收合直到使用者按下按鈕，這適用於較小的螢幕。 以停駐模式使用時，窗格會維持開啟，如果有足夠的螢幕實際可用空間時，這可以提高使用效率。
 
-![瀏覽窗格的範例](images/NAV_PANE_EXAMPLE.png)
+![瀏覽窗格的範例](images/navHero.png)
 
 <span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
--   [**SplitView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
--   [**SplitView 物件 (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
+-   [**SplitView 類別**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin
-
-<span id="Is_this_the_right_pattern_"> </span> <span id="is_this_the_right_pattern_"> </span> <span id="IS_THIS_THE_RIGHT_PATTERN_"> </span>這是正確的模式嗎？
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>這是正確的模式嗎？
 
 瀏覽窗格適用於：
 
--   具有許多相同類別最上層瀏覽項目的應用程式，例如包含許多種類 (例如美式足球、棒球、籃球、足球等) 的運動應用程式。
--   如果窗格內只有置入瀏覽元素時，可跨應用程式提供一致的瀏覽經驗。
+-   具有許多相似類型最上層瀏覽項目的 app。 例如，具有像是美式足球、棒球、籃球、足球等類別的運動 app。
+-   提供跨應用程式一致的瀏覽體驗。 瀏覽窗格中應該只包含瀏覽元素，不包含動作。
 -   最上層瀏覽類別的中到高數字 (5-10+)。
 -   保留螢幕實際可用空間 (以重疊方式)。
 -   不常存取的瀏覽項目。 (以重疊方式)。
--   使用拖放功能的狀況 (停駐時)。
 
-<span id="Building_a_nav_pane"> </span> <span id="building_a_nav_pane"> </span> <span id="BUILDING_A_NAV_PANE"> </span>建置瀏覽窗格
--------------------------------------------------------------------------------------------------------------------------------------
+## <span id="Building_a_nav_pane"></span><span id="building_a_nav_pane"></span><span id="BUILDING_A_NAV_PANE"></span>建置瀏覽窗格
 
-瀏覽窗格模式是由按鈕、瀏覽類別的窗格及內容區域所組成。 建置瀏覽窗格的最簡單方式是使用[分割檢視控制項](split-view.md)，它內建空的窗格與一律會顯示的內容區域。 窗格可以顯示或隱藏，並且可以從應用程式視窗的左邊或右邊呈現。
+瀏覽窗格模式是由瀏覽類別窗格、內容區域以及開啟或關閉窗格的選用按鈕所組成。 建置瀏覽窗格的最簡單方式是使用[分割檢視控制項](split-view.md)，它內建空的窗格與一律會顯示的內容區域。
 
-如果您想要建置瀏覽窗格而不使用分割檢視控制項，您需要三個主要元件：按鈕、窗格和內容區域。 按鈕是讓使用者開啟和關閉窗格的 UI 元素。 窗格為瀏覽元素的容器。 內容區域會顯示已選取瀏覽項目的資訊。 瀏覽窗格也能以停駐模式存在，這樣就可以永遠顯示窗格，且在該情況下不需要按鈕。
+若要嘗試實作此模式的程式碼，請從 GitHub 下載 [XAML 瀏覽解決方案](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation)。
 
-### <span id="Button"> </span> <span id="button"> </span> <span id="BUTTON"> </span>按鈕
 
-根據預設，瀏覽窗格按鈕以三個堆疊的水平線段顯示，通常稱為「漢堡」按鈕。 該按鈕可讓使用者在需要時，開啟和關閉窗格，且不會隨窗格移動。 我們建議將該按鈕放在您 app 的左上角。 該按鈕不會隨窗格移動。
 
-![瀏覽窗格按鈕範例](images/NAVPANE_BUTTONONLY.png)
+### <span id="Pane"></span><span id="pane"></span><span id="PANE"></span>窗格
 
-該按鈕通常與一個文字字串關聯。 在 app 的最上層，應用程式標題可以顯示在按鈕旁。 在 app 較低的層級，該文字字串可以與使用者目前所在的頁面關聯。
+瀏覽類別的標頭會在窗格中。 應用程式設定和帳戶管理的進入點也會在窗格中 (若適用的話)。 瀏覽標頭通常是供使用者選擇的項目清單。
 
-### <span id="Pane"> </span> <span id="pane"> </span> <span id="PANE"> </span>窗格
+![瀏覽窗格的窗格範例](images/nav_pane_expanded.png)
 
-瀏覽類別的標頭會在窗格中。 應用程式設定和帳戶管理的進入點也會在窗格中 (若適用的話)。 導覽頁首可以是最上層，或巢狀最上層/第二層。
-
-![瀏覽窗格的窗格範例](images/NAVPANE_PANE.png)
-
-### <span id="Content_area"> </span> <span id="content_area"> </span> <span id="CONTENT_AREA"> </span>內容區域
+### <span id="Content_area"></span><span id="content_area"></span><span id="CONTENT_AREA"></span>內容區域
 
 內容區域是顯示已選取瀏覽位置資訊的地方。 它能夠包含個別元素或其他子層級的瀏覽。
 
-<span id="Nav_pane_variations"> </span> <span id="nav_pane_variations"> </span> <span id="NAV_PANE_VARIATIONS"> </span>瀏覽窗格變化
--------------------------------------------------------------------------------------------------------------------------------------
+### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>按鈕
 
-瀏覽窗格有兩種主要變化，重疊和停駐。 重疊時會視需要收合及展開。 停駐窗格則預設為維持開啟。
+顯示時，按鈕可讓使用者開啟和關閉窗格。 按鈕會保持在固定位置顯示，並不會隨窗格移動。 我們建議將該按鈕放在您 app 的左上角。 瀏覽窗格按鈕以三個堆疊的水平線段顯示，通常稱為「漢堡」按鈕。
 
-### <span id="Overlay"> </span> <span id="overlay"> </span> <span id="OVERLAY"> </span>重疊
+![瀏覽窗格按鈕範例](images/nav_button.png)
+
+該按鈕通常與一個文字字串關聯。 在 app 的最上層，應用程式標題可以顯示在按鈕旁。 在 app 的較下層，文字字串可能會是使用者目前所在之頁面的標題。
+
+## <span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>瀏覽窗格變化
+
+瀏覽窗格有三種模式：重疊、精簡以及內嵌。 重疊時會視需要收合及展開。 當精簡時，窗格會一律顯示為可以展開的窄條格式。 內嵌窗格預設會維持開啟。
+
+### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>重疊
 
 -   重疊可以在任何大小螢幕上以縱向或橫向方式使用。 在預設 (收合) 狀態中，重疊不會佔用實際空間，因為只會顯示按鈕。
 -   可在節省螢幕空間的情況下提供隨選瀏覽功能。 適合手機和平板手機上的應用程式。
 -   根據預設會隱藏窗格，只顯示按鈕。
 -   按 [瀏覽窗格] 按鈕可開啟和關閉重疊。
 -   展開狀態只是暫時性的，會在進行選擇時、使用 [上一頁] 按鈕時，或是當使用者點選窗格外部時關閉。
--   重疊會覆蓋在內容上，且不會自動重排內容。
+-   重疊會覆蓋在內容上，且不會使內容自動重排。
 
-### <span id="Docked"> </span> <span id="docked"> </span> <span id="DOCKED"> </span>停駐
+### <span id="Compact"></span><span id="compact"></span><span id="COMPACT"></span>精簡
 
--   瀏覽窗格會維持開啟。 這個模式較適合大型螢幕，通常是平板電腦或更大的螢幕。
--   橫向時，可以使用停駐狀態的最小螢幕寬度是 720 epx。 這個大小的停駐狀態可能需要特別注意到內容的縮放比例。
+-   精簡模式可以指定為 `CompactOverlay` \(這會在開啟時重疊內容\) 或者 `CompactInline` \(這會將內容移出\)。 建議使用 CompactOverlay。
+-   精簡窗格使用少量螢幕實際可用空間，也同時提供所選位置的一些指示。
+-   這個模式很適合中型螢幕，例如平板電腦。
+-   根據預設，窗格為關閉，只顯示瀏覽圖示和按鈕。
+-   按下瀏覽窗格按鈕會開啟和關閉窗格，像是根據指定的顯示模式重疊或內嵌的行為。
+-   清單圖示上應顯示選取狀態，以強調使用者在瀏覽樹狀結構中的所在位置。
+
+### <span id="Inline"></span><span id="inline"></span><span id="INLINE"></span>內嵌
+
+-   瀏覽窗格會維持開啟。 這個模式適合用於較大的螢幕。
 -   支援在窗格之間來回拖放的情況。
 -   這個狀態不需要瀏覽窗格按鈕。 如果使用按鈕，則會將內容區域推出螢幕之外，而該區域中的內容將會自動重排。
 -   清單項目上應顯示選取狀態，以強調使用者在瀏覽樹狀結構中的所在位置。
--   當裝置縱向寬度太窄而無法顯示停駐窗格時，建議在裝置旋轉時使用下列行為：
-    -   橫向-縱向。 窗格會收合為重疊狀態或最小化狀態。
-    -   縱向-橫向。 窗格會重新出現。
 
-<span id="related_topics"> </span>相關主題
------------------------------------------------
+## <span id="Adaptability"></span><span id="adaptability"></span><span id="ADAPTABILITY"></span>適應性
+
+若要最大化各種裝置上的可用性，我們建議使用[中斷點](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)及根據其 app 的視窗寬度調整瀏覽窗格的模式。
+-   小型視窗
+   -   寬度小於或等於 640px。
+   -   瀏覽窗格應該是在重疊模式中，預設已關閉。
+-   中型視窗
+   -   寬度大於 640px 且小於或等於 1007px。
+   -   瀏覽窗格中應該在窄條模式中，預設已關閉。
+-   大型視窗
+   -   寬度大於 1007px。
+   -   瀏覽窗格中應該在停駐模式中，預設已開啟。
+
+## <span id="Tailoring"></span><span id="tailoring"></span><span id="TAILORING"></span>自訂
+
+若要最佳化您 app 的 [10 英呎體驗](http://go.microsoft.com/fwlink/?LinkId=760736)，請考慮藉由改變其瀏覽元素的視覺外觀，自訂瀏覽窗格。 根據互動的內容，引起使用者注意已選取的瀏覽項目或是焦點瀏覽項目，可能更為重要。 針對 10ft 體驗 (其中遊戲台是最常見的輸入裝置)，確保使用者可以輕易地追蹤螢幕上目前焦點項目的位置更是特別重要。
+
+![自訂瀏覽窗格項目的範例](images/nav_item_states.png)
+
+## <span id="related_topics"></span>相關主題
 
 * [分割檢視控制項](split-view.md)
 * [主要/詳細資料](master-details.md)
@@ -96,6 +111,6 @@ template: detail.hbs
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

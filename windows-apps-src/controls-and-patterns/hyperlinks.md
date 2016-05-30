@@ -1,8 +1,9 @@
 ---
-Description: 超連結會讓使用者瀏覽到 app 的其他部分、其他 app，或使用不同的瀏覽器 app 啟動特定的統一資源識別項 (URI)。
+author: Jwmsft
+Description: 超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。
 title: 超連結
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-label: 超連結
+label: Hyperlinks
 template: detail.hbs
 ---
 # 超連結
@@ -49,7 +50,7 @@ template: detail.hbs
 
 ![超連結做為文字元素的範例](images/controls_hyperlink-element.png) 
 
-> **提示**&nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="preserve"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
+> **提示** &nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="preserve"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
 
 ## 建立 HyperlinkButton
 
@@ -78,13 +79,13 @@ template: detail.hbs
 
 **瀏覽至 URI**
 
-若要使用超連結瀏覽至 URI，請設定 NavigateUri 屬性。 使用者按一下或點選超連結時，會在預設瀏覽器中開啟指定的 URI。 預設瀏覽器會在與您應用程式不同的處理程序中執行。
+若要使用超連結瀏覽至 URI，請設定 NavigateUri 屬性。 使用者按一下或點選超連結時，會在預設瀏覽器中開啟指定的 URI。 預設瀏覽器會在與您 App 不同的處理程序中執行。
 
-> **注意**&nbsp;&nbsp;您不需要使用 http: 或 https: 配置。 如果適合在瀏覽器中載入這些位置中的資源內容，則可以使用 ms-appx:、ms-appdata: 或 ms-resources: 這類配置。 不過，會特別封鎖 file: 配置。 如需詳細資訊，請參閱 [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> **注意** &nbsp;&nbsp;您不需要使用 http: 或 https: 配置。 如果適合在瀏覽器中載入這些位置中的資源內容，則可以使用 ms-appx:、ms-appdata: 或 ms-resources: 這類配置。 不過，會特別封鎖 file: 配置。 如需詳細資訊，請參閱 [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 使用者按一下超連結時，會將 NavigateUri 屬性的值傳遞給 URI 類型和配置的系統處理常式。 系統接著會啟動針對 NavigateUri 所提供的 URI 配置登錄的 app。
 
-如果您不想要超連結在預設網頁瀏覽器中載入內容 (並且不想要顯示瀏覽器)，請不要設定 NavigateUri 的值。 而是處理 Click 事件，並且撰寫您所要執行之動作的程式碼。
+如果您不想要超連結在預設網頁瀏覽器中載入內容 (並且不想要顯示瀏覽器)，請不要設定 NavigateUri 的值， 而是處理 Click 事件，並且撰寫您所要執行之動作的程式碼。
 
 
 **處理 Click 事件**
@@ -133,17 +134,15 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 ## 建議
 
 -   只使用超連結來瀏覽；不要用於其他動作。
--   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**fonts and the Windows 10 type ramp**](text-controls.md)。
+-   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**字型和 Windows 10 字體坡形**](text-controls.md)。
 -   在各個超連結之間保持足夠距離，讓使用者能分辨它們，並容易選取每個超連結。
 -   在超連結新增工具提示，以指示使用者將被導向的位置。 如果使用者將被導向至外部網站，請在工具提示包含最上層網域名稱，並將文字樣式設為次要字型色彩。
 
-\[本文章包含通用 Windows 平台 (UWP) 應用程式與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
-[文字控制項](text-controls.md)
-
-**適用於設計人員**
+- [文字控制項](text-controls.md)
 - [工具提示的指導方針](tooltips.md)
 
 **適用於開發人員 (XAML)**
@@ -151,6 +150,6 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 - [**Windows.UI.Xaml.Controls.HyperlinkButton 類別**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

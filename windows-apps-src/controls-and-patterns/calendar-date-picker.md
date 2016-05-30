@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。
 title: 行事曆日期選擇器
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
@@ -63,7 +64,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 您可以處理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以便在 Date 值變更時收到通知。
 
-> **注意：**如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞一文中的[DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**：&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
 
 ### 設定標頭與預留位置文字
 
@@ -84,6 +85,6 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

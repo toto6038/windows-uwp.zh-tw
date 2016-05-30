@@ -1,11 +1,11 @@
 ---
+author: Jwmsft
 Description: 媒體播放器可用來檢視及聆聽視訊、音訊及影像。
 title: 媒體播放器
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-author: mijacobs
 ---
 # 媒體播放器
 
@@ -70,7 +70,7 @@ MediaElement 具有內建的傳輸控制項，可處理播放、停止、暫停�
 ### 設定媒體來源
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定為檔案的路徑。
 
-**提示** 若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示：**若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
@@ -142,7 +142,7 @@ private void LoadEmbeddedAppFile()
 ### 開啟本機媒體檔案
 若要開啟本機系統或 OneDrive 上的檔案，您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 來取得檔案，以及使用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 來設定媒體來源，或是以程式設計方式存取使用者媒體資料夾。
 
-如果您的 app 需要不藉助使用者互動就能存取 [音樂]**** 或 [影片]**** 資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告**音樂媒體櫃**和**影片媒體櫃**功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://msdn.microsoft.com/library/windows/apps/mt188703)。
+如果您的 app 需要不藉助使用者互動就能存取 [音樂]**** 或 [影片]**** 資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告「音樂媒體櫃」****和「影片媒體櫃」****功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://msdn.microsoft.com/library/windows/apps/mt188703)。
 
 [
             **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能來存取本機檔案系統 (例如，使用者的 [音樂]**** 或 [影片]**** 資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
@@ -208,8 +208,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### 讓裝置的螢幕保持使用中
-裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕視訊時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [
-            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看視訊。
+裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [
+            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
 
 若要省電並延長電池壽命，您應該呼叫 [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819)，以便在不再需要時釋放顯示器要求。 當您的 App 未顯示於螢幕上時，Windows 會自動停用它的啟用顯示要求，並在 App 回到前景時重新啟用顯示要求。
 
@@ -229,7 +229,7 @@ private DisplayRequest appDisplayRequest = null;
 
 2.  呼叫 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)，通知 Windows，App 需要讓顯示器保持開啟。
 
-3.  每當視訊播放停止、暫停或因播放錯誤而中斷時，呼叫 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) 以釋放顯示要求。 當 App 不再有任何啟用的顯示要求時，Windows 會在沒有使用裝置時將顯示器畫面變暗 (最後將它關閉) 以延長電池壽命。
+3.  每當影片播放停止、暫停或因播放錯誤而中斷時，呼叫 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) 以釋放顯示要求。 當 App 不再有任何啟用的顯示要求時，Windows 會在沒有使用裝置時將顯示器畫面變暗 (最後將它關閉) 以延長電池壽命。
 
     您會在此處使用 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 事件來偵測這些情況。 然後，使用 [**IsAudioOnly**](https://msdn.microsoft.com/library/windows/apps/hh965334) 屬性來判斷是否正在播放音訊或視訊檔案，唯有當視訊正在播放時，才會讓螢幕保持使用中狀態。
     ```xaml
@@ -345,8 +345,7 @@ private void FullWindow_Click(object sender, object e)
 -   [
             **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
 
-![延展列舉值](images/Image_Stretch.jpg)
-此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
+![伸展列舉值](images/Image_Stretch.jpg) 此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
 
 ```xaml
 <AppBarButton Icon="Switch" 
@@ -407,14 +406,12 @@ mediaPlayer.RealTimePlayback = true;
 -   盡量不要在控制列上放入太多選項。
 -   請勿將媒體時間軸壓縮到比其預設大小下限更小，因為這將會嚴重限制其有效性。
 
-\[本文包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
-
 ## 相關文章
 
 - [UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP app 的內容設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

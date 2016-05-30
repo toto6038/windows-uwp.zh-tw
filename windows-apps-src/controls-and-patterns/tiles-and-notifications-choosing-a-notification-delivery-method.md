@@ -1,23 +1,24 @@
 ---
-Description: 本文涵蓋四個通知選項&\#8212;本機、排程、定期和推播&\#8212;，它們會傳遞磚和徽章更新及快顯通知內容。
+author: mijacobs
+Description: 本文涵蓋四個通知選項&amp;\#8212;本機、排程、定期和推播&amp;\#8212;，它們會傳遞磚和徽章更新及快顯通知內容。
 title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-label: 選擇通知傳遞方法
+label: Choose a notification delivery method
 template: detail.hbs
 ---
 
 # 選擇通知傳遞方法
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文涵蓋四個通知選項：本機、排程、定期和推播，它們會傳遞磚和徽章更新及快顯通知內容。 即使使用者沒有與應用程式直接互動，磚或快顯通知仍然可以將資訊傳遞給使用者。 應用程式的性質及內容與您想傳遞的資訊，可以協助您判斷哪種通知方法最適合您的案例。
 
-## <span id="Notification_delivery_methods__overview"> </span> <span id="notification_delivery_methods__overview"> </span> <span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"> </span>通知傳遞方法概觀
+本文涵蓋四個通知選項：本機、排程、定期和推播，它們會傳遞磚和徽章更新及快顯通知內容。 即使使用者沒有與應用程式直接互動，磚或快顯通知仍然可以將資訊傳遞給使用者。 App 的性質及內容與您想傳遞的資訊，可以協助您判斷哪種通知方法最適合您的案例。
+
+## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>通知傳遞方法概觀
 
 
-應用程式可以使用四種機制來傳遞通知：
+App 可以使用四種機制來傳遞通知：
 
 -   **本機**
 -   **排程**
@@ -45,10 +46,10 @@ template: detail.hbs
 <tr class="odd">
 <td align="left">本機</td>
 <td align="left">磚、徽章、快顯通知</td>
-<td align="left">在應用程式執行時傳送通知的一組 API 呼叫，會直接更新磚或徽章，或傳送快顯通知。</td>
+<td align="left">在 App 執行時傳送通知的一組 API 呼叫，會直接更新磚或徽章，或傳送快顯通知。</td>
 <td align="left"><ul>
-<li>音樂應用程式會更新磚以顯示「現正播放」的內容。</li>
-<li>遊戲應用程式在使用者離開遊戲時，會以使用者的最高分數來更新磚。</li>
+<li>音樂 App 會更新磚以顯示「現正播放」&quot;&quot;的內容。</li>
+<li>遊戲 App 在使用者離開遊戲時，會以使用者的最高分數來更新磚。</li>
 <li>啟動 app 時，便會清除其字符指出 app 有新資訊的徽章。</li>
 </ul></td>
 </tr>
@@ -65,8 +66,8 @@ template: detail.hbs
 <td align="left">磚、徽章</td>
 <td align="left">透過輪詢雲端服務來取得新內容，並以固定時間間隔來定期更新磚與徽章的通知。</td>
 <td align="left"><ul>
-<li>氣象應用程式每 30 分鐘會更新一次顯示氣象預測的磚。</li>
-<li>「每日特賣」網站會在每天早上更新當日的特價商品。</li>
+<li>氣象 App 每 30 分鐘會更新一次顯示氣象預測的磚。</li>
+<li>「每日特賣」&quot;&quot;網站會在每天早上更新當日的特價商品。</li>
 <li>顯示事件倒數天數的磚會在每日午夜更新顯示的倒數天數。</li>
 </ul></td>
 </tr>
@@ -86,7 +87,7 @@ template: detail.hbs
 
  
 
-## <span id="Local_notifications"> </span> <span id="local_notifications"> </span> <span id="LOCAL_NOTIFICATIONS"> </span>本機通知
+## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>本機通知
 
 
 在應用程式執行時更新應用程式磚或徽章，或是產生快顯通知，是最簡單的通知傳遞機制；它只需要本機 API 呼叫。 每個應用程式都可以在磚上顯示實用或有趣的資訊，即使該內容只會在使用者啟動並與應用程式互動時才變更。 即使您也使用了其他的通知機制，本機通知還是讓應用程式磚保持最新狀態的好辦法。 例如，相片應用程式磚可以顯示最近新增相簿中的相片。
@@ -105,7 +106,7 @@ template: detail.hbs
 -   [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"> </span> <span id="scheduled_notifications"> </span> <span id="SCHEDULED_NOTIFICATIONS"> </span>排程通知
+## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>排程通知
 
 
 排程通知是本機通知的子集，它們可以指定應該更新磚或顯示快顯通知的確切時間。 排程通知適合事先已知道要更新之內容 (像是會議邀請) 的情況。 如果您事先並不清楚通知內容，那就應該使用推播或定期通知。
@@ -117,7 +118,7 @@ template: detail.hbs
 -   [排程通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Periodic_notifications"> </span> <span id="periodic_notifications"> </span> <span id="PERIODIC_NOTIFICATIONS"> </span>定期通知
+## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>定期通知
 
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 它們也是將相同內容散佈給廣大群眾的絕佳方式。 您的用戶端程式碼可以指定雲端位置 URL，好讓 Windows 輪詢以取得磚或徽章的更新，以及指定輪詢該位置的頻率。 Windows 會在每個輪詢間隔期間連線 URL，下載指定的 XML 內容並在磚上顯示內容。
@@ -131,7 +132,7 @@ template: detail.hbs
 -   [定期通知概觀](tiles-and-notifications-periodic-notification-overview.md)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Push_notifications"> </span> <span id="push_notifications"> </span> <span id="PUSH_NOTIFICATIONS"> </span>推播通知
+## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>推播通知
 
 
 若要交流即時資料或針對使用者個人化的資料，就非常適合使用推播通知。 推播通知用於在無法預測的時間產生的內容，像是突發新聞、社交網路更新或立即訊息。 當資料 (像是遊戲進行時的遊戲分數) 有時效性而不適合定期通知時，也可以使用推播通知。
@@ -146,12 +147,8 @@ template: detail.hbs
 -   [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-**注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
-
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
 * [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -170,6 +167,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

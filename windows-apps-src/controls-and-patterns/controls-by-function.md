@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 提供可用於 app 的部分控制項清單 (依功能分類)。
 title: 依功能分類的控制項
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
-label: 依功能分類的控制項
+label: Controls by function
 template: detail.hbs
 ---
 # 依功能分類的控制項
@@ -77,7 +78,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
-設計和︰[按鈕控制項指南](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
 ### 超連結
 請參閱＜超連結按鈕＞。
@@ -108,7 +109,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
 
-設計和︰[按鈕控制項指南](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
 ## 集合/資料控制項
 
@@ -843,6 +844,6 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法︰[切換控制項指南](toggles.md) 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

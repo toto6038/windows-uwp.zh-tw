@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: Buttons
 template: detail.hbs
 ---
@@ -134,7 +135,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   對於包含文字內容的命令按鈕，請使用最小按鈕寬度。
 -   避免使用窄、短或高的命令按鈕包含文字內容。
 -   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
--   對於需要在應用程式內多個頁面上提供的動作，請不要在多個頁面上複製按鈕，而是考慮改用[底部應用程式列](app-bars.md)。
+-   對於需要在 app 內多個頁面上提供的動作，請不要在多個頁面上複製按鈕，而是考慮改用[底部應用程式列](app-bars.md)。
 -   一次只對使用者顯示一或兩個按鈕，例如，[接受] 和 [取消]。 如果需要對使用者顯示更多動作，請考慮使用[核取方塊](checkbox.md)或[選項按鈕](radio-button.md)，使用者可以利用它們選取動作，只要一個命令按鈕即可觸發這些動作。
 -   使用預設命令按鈕來指示最常用或建議的動作。
 -   考慮自訂您的按鈕。 按鈕的預設形狀是矩形，但是您可以自訂組成按鈕外觀的視覺效果。 按鈕的內容通常是文字，例如 [接受] 或 [取消]，但是您可以使用圖示來取代文字，或是使用圖示加上文字。
@@ -150,44 +151,39 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 瀏覽歷程記錄的範圍 (app 內或全域) 取決於裝置和裝置模式。
 
-## <span id="examples"> </span> <span id="EXAMPLES"> </span>範例
+## <span id="examples"></span><span id="EXAMPLES"></span>範例
 
 
 系統返回按鈕的 UI 適合每種裝置和輸入類型，但每個裝置和通用 Windows 平台 (UWP) app 的瀏覽體驗卻是全域且一致的。 這些不同的體驗包含：
 
-裝置
-手機
-![手機上的系統返回](images/nav-back-phone.png)
+裝置手機 ![手機上的系統返回](images/nav-back-phone.png)
 -   一律顯示。
 -   裝置底部的軟體或硬體按鈕。
 -   在 app 內和 app 間提供全域返回瀏覽。
 
-<span id="Tablet"> </span> <span id="tablet"> </span> <span id="TABLET"> </span>平板電腦
-![平板電腦上的系統返回 (平板電腦模式)](images/nav-back-tablet.png)
+<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>平板電腦 ![平板電腦上的系統返回](images/nav-back-tablet.png)
 -   在平板電腦模式中一律顯示。
 
     在桌面模式中無法使用。 但是可改用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
 
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定] > [系統] > [平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
+    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
 
 -   裝置底部瀏覽列中的軟體按鈕。
 -   在 app 內和 app 間提供全域返回瀏覽。
 
-<span id="PC"> </span> <span id="pc"> </span>電腦、膝上型電腦、平板電腦
-![電腦或膝上型電腦上的系統返回](images/nav-back-pc.png)
+<span id="PC"></span><span id="pc"></span>電腦、膝上型電腦、平板電腦 ![電腦或膝上型電腦上的系統返回](images/nav-back-pc.png)
 -   在桌面模式中為選擇性。
 
     在平板電腦模式中無法使用。 請參閱[平板電腦](#Tablet)。
 
     預設為停用。 必須選擇加入才能啟用。
 
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定] > [系統] > [平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
+    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
 
 -   App 標題列中的軟體按鈕。
 -   只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。
 
-Surface Hub
-![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
+Surface Hub ![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
 -   一律顯示。
 -   裝置底部的軟體按鈕。
 -   在 app 內和 app 間提供返回瀏覽。
@@ -229,6 +225,6 @@ Surface Hub
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
-Description: 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的應用程式建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的應用程式。
+author: Jwmsft
+Description: 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。
 title: 新增控制項和處理事件
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: 控制項和事件的簡介
+label: Intro to controls and events
 template: detail.hbs
 ---
 # 控制項和事件的簡介
@@ -93,7 +94,7 @@ Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 
 ![Visual Studio 事件清單](images/add-controls-add-event-designer.png)
 
-若要以預設名稱建立事件處理常式，請在 [屬性] 視窗中按兩下事件名稱旁邊的文字方塊。 若要以自訂名稱建立事件處理常式，請在文字方塊中輸入您選擇的名稱，然後按 Enter。 這時會建立事件處理常式，並在程式碼編輯器中開啟程式碼後置檔案。 事件處理常式方法有 2 個參數。 第一個參數是 `sender`，這是附加處理常式之物件的參照。 `sender` 參數是 **Object** 類型。 如果您打算檢查或變更 `sender` 物件本身的狀態，通常需將 `sender` 轉換成更精準的類型。 依據您自己的應用程式設計，您會想要一個能夠依據處理程式附加位置來放心轉換 `sender` 的類型。 第二個值是事件資料，通常以 `e` 或 `args` 參數的形式顯示在簽章中。
+若要以預設名稱建立事件處理常式，請在 [屬性] 視窗中按兩下事件名稱旁邊的文字方塊。 若要以自訂名稱建立事件處理常式，請在文字方塊中輸入您選擇的名稱，然後按 Enter。 這時會建立事件處理常式，並在程式碼編輯器中開啟程式碼後置檔案。 事件處理常式方法有 2 個參數。 第一個參數是 `sender`，這是附加處理常式之物件的參照。 `sender` 參數是 **Object** 類型。 如果您打算檢查或變更 `sender` 物件本身的狀態，通常需將 `sender` 轉換成更精準的類型。 依據您自己的 app 設計，您會想要一個能夠依據處理程式附加位置來放心轉換 `sender` 的類型。 第二個值是事件資料，通常以 `e` 或 `args` 參數的形式顯示在簽章中。
 
 以下程式碼用來處理 Button (名為 `Button1`) 的 Click 事件。 當您按一下按鈕，按下之 Button 的 Foreground 屬性會設成藍色。 
 
@@ -123,7 +124,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關主題
 
@@ -132,6 +133,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [飛出視窗](dialogs-popups-menus.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

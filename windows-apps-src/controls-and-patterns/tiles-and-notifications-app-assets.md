@@ -1,32 +1,33 @@
 ---
-Description: 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) 應用程式的名片。
+author: mijacobs
+Description: 以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。
 title: 磚和圖示資產
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: 磚和圖示資產
+label: Tile and icon assets
 template: detail.hbs
 ---
 
 # 磚和圖示資產的指導方針
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。
+
+以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。
 
 ![Windows 10 開始畫面和磚](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"> </span> <span id="adaptive_scaling"> </span> <span id="ADAPTIVE_SCALING"> </span>彈性縮放比例
+## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>彈性縮放比例
 
 
 首先，簡短概述彈性縮放比例，以便更清楚了解縮放比例如何使用資產。 Windows 10 引進現有縮放比例模型的進化。 除了縮放比例向量內容之外，還有統一的縮放比例集合，跨各種不同的螢幕大小和顯示器解析度，針對 UI 元素提供一致的大小。 縮放比例也相容於 iOS 與 Android 等其他作業系統的縮放比例，讓您能夠更輕鬆地在這些平台之間共用資產。
 
 市集會根據裝置的 DPI 部分來選取要下載的資產。 只會下載最符合裝置的資產。
 
-## <span id="Tile_elements"> </span> <span id="tile_elements"> </span> <span id="TILE_ELEMENTS"> </span>磚元素
+## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>磚元素
 
 
-開始畫面磚的基本元件是由一個背板、一個圖示、一個商標列、邊界及一個應用程式標題所構成：
+開始畫面磚的基本元件是由一個背板、一個圖示、一個商標列、邊界及一個 App 標題所構成：
 
 ![磚元素的分析](images/assetguidance02.png)
 
@@ -62,7 +63,7 @@ template: detail.hbs
 
  
 
-## <span id="Tile_assets"> </span> <span id="tile_assets"> </span> <span id="TILE_ASSETS"> </span>磚資產
+## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>磚資產
 
 
 每個磚資產都與它所在的磚等大小。 您可以資產的兩個不同的呈現方式在您的應用程式磚上打印商標：
@@ -131,7 +132,7 @@ template: detail.hbs
 
 ![邊界過小的跨頁磚](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"> </span> <span id="tile_assets_in_list_views"> </span> <span id="TILE_ASSETS_IN_LIST_VIEWS"> </span>清單檢視中的磚資產
+## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>清單檢視中的磚資產
 
 
 磚也會出現在清單檢視中。 對於出現在清單檢視的磚資產的大小調整指導方針，與前述的磚資產稍有不同。 本節詳細說明這些大小調整特性。
@@ -158,7 +159,7 @@ template: detail.hbs
 
 ![對磚而言過小的圖示](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"> </span> <span id="target-based_assets"> </span> <span id="TARGET-BASED_ASSETS"> </span>以目標為基礎的資產
+## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>以目標為基礎的資產
 
 
 以目標為基礎的資產適用於圖示和磚，會顯示在 Windows 工作列、工作檢視、ALT + TAB 及貼齊小幫手上，以及開始畫面磚的右下角。 您不需要將邊框間距新增至這些資產；如果需要，Windows 會新增邊框間距。 這些資產至少需要 16 個像素的擺設區域。 以下是這些資產出現在 Windows 工作列上之圖示中的範例：
@@ -191,7 +192,7 @@ template: detail.hbs
 
 ![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"> </span> <span id="splash_screen_assets"> </span> <span id="SPLASH_SCREEN_ASSETS"> </span>啟動顯示畫面資產
+## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>啟動顯示畫面資產
 
 
 您可以提供啟動顯示畫面影像，做為影像檔案的直接路徑或做為資源。 藉由使用資源參考，您可以提供不同縮放比例的影像，讓 Windows 可以為裝置和螢幕解析度選擇最佳大小。 您也可以提供協助工具的高對比影像和當地語系化的影像，以符合不同的 UI 語言。
@@ -209,7 +210,7 @@ template: detail.hbs
 
 ![啟動顯示畫面資產的大小調整](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"> </span> <span id="high-contrast_assets"> </span> <span id="HIGH-CONTRAST_ASSETS"> </span>高對比資產
+## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>高對比資產
 
 
 高對比模式使用不同的資產集合，高對比白色使用白色背景和黑色文字，高對比黑色使用黑色背景和白色文字。 如果您沒有為應用程式提供高對比資產，將使用標準資產。
@@ -220,7 +221,7 @@ template: detail.hbs
 
 如果您決定提供高對比資產，您需要包含兩組 — 黑底白字和白底黑字。 在您的套件中包含這些資產時，您可以為黑底白字資產建立一個「對比 - 黑色」資料夾，為白底黑字資產建立一個「對比 - 白色」資料夾。
 
-## <span id="Asset_size_tables"> </span> <span id="asset_size_tables"> </span> <span id="ASSET_SIZE_TABLES"> </span>資產大小表格
+## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>資產大小表格
 
 
 我們強烈建議您起碼為 100、200 及 400 的縮放比例提供資產。 針對所有縮放比例提供資產將可提供最佳的使用者體驗。
@@ -288,7 +289,7 @@ template: detail.hbs
 
 \* 提交這些資產大小做為基準線
 
-## <span id="Asset_types"> </span> <span id="asset_types"> </span> <span id="ASSET_TYPES"> </span>資產類型
+## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>資產類型
 
 
 此處列出所有資產類型、資產用途和建議的檔案名稱。
@@ -367,13 +368,13 @@ template: detail.hbs
 -   用途：
     -   圖示磚
 
-\[本文包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
-
-## <span id="related_topics"> </span>相關主題
 
 
+## <span id="related_topics"></span>相關主題
 
-* [特殊磚範本](tiles-and-notifications-special-tile-templates-catalog.md)
+
+
+* [特殊的磚範本](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -383,6 +384,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

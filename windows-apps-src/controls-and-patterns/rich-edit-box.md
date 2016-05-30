@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: Rich Edit 方塊
+label: Rich edit box
 template: detail.hbs
 ---
 # Rich Edit 方塊
@@ -193,7 +194,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -209,10 +210,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**適用於開發人員 (其他)**
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

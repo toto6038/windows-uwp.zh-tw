@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。
 title: 行事曆檢視
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
@@ -57,7 +58,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 您可以處理 [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在當 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合變更時接收通知。
 
-> **注意：**如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞一文中的[DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**：&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
 
 ### 自訂行事曆檢視的外觀
 
@@ -190,6 +191,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

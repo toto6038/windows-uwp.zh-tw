@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 會顯示清單，並啟用與集合內容的互動。
 title: 清單
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: 清單
+label: Lists
 template: detail.hbs
 ---
 # 清單
@@ -174,7 +175,6 @@ template: detail.hbs
 
 ## 相關文章
 
-**適用於設計人員**
 - [中樞](hub.md)
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](nav-pane.md)
@@ -189,6 +189,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

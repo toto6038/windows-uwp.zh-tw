@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。
 title: 時間選擇器
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-label: 時間選擇器
+label: Time picker
 template: detail.hbs
 ---
 
@@ -43,9 +44,9 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時間選擇器的範例](images/time-picker-closed.png)
 
-> **注意**&nbsp;&nbsp;如需有關日期與時間值的重要資訊，請參閱*日期和時間控制項*一文中的[DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
+> **注意** &nbsp;&nbsp;如需有關日期和時間值的重要資訊，請參閱《日期和時間控制項》**文章中的[DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關主題
 
@@ -55,6 +56,6 @@ arrivalTimePicker.Header = "Arrival time";
 - [日期選擇器](date-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

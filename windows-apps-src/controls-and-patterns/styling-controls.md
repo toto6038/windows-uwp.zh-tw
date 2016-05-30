@@ -1,19 +1,20 @@
 ---
+author: Jwmsft
 Description: 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
-MS-HAID: ' dev\_ctrl\_layout\_txt.styling\_controls'
+MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: 設定控制項的樣式
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-label: 設定控制項的樣式
+label: Styling controls
 template: detail.hbs
 ---
 
 # 設定控制項的樣式
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
+
+您可以使用 XAML 架構，以許多方式自訂 App 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
 
 ## 樣式基本知識
 
@@ -136,7 +137,7 @@ template: detail.hbs
 
 ## 使用工具輕鬆處理樣式
 
-快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [**編輯樣式**]或 [**編輯範本**] (依按右鍵的控制項而定)。 接著，您可以選取 [**套用資源**] 來套用現有的樣式，或選取 [**建立空白**] 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
+快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [編輯樣式]****或 [編輯範本]**** \(依按右鍵的控制項而定\)。 接著，您可以選取 \[套用資源\]**** 來套用現有的樣式，或選取 \[建立空白\]**** 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
 
 ## 修改預設系統樣式
 
@@ -146,10 +147,8 @@ template: detail.hbs
 
 Style Setter 可以用於 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 屬性，事實上，大多數的典型 XAML 樣式和應用程式 XAML 資源都是由此組成。 這部分內容將在[控制項範本](control-templates.md)主題中深入討論。
 
-**注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 主要/詳細資料模式會顯示主要清單和目前所選項目的詳細資料。 這個模式通常用於電子郵件和連絡人清單/通訊錄。
 title: 主要/詳細資料
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: 主要/詳細資料
+label: Master/details
 template: detail.hbs
 ---
 # 主要/詳細資料模式
@@ -71,7 +72,7 @@ template: detail.hbs
 
 ![桌面上使用主要/詳細資料模式的 app 範例](images/uap-finance-desktop700.png)
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -81,6 +82,6 @@ template: detail.hbs
 - [**ListView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 選取字型及指定字型大小與色彩時，請遵循這些指導方針。
 title: 字型
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
@@ -8,10 +9,6 @@ template: detail.hbs
 
 # 字型的指導方針
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 **重要 API**
 
 -   [**FontFamily 屬性**](https://msdn.microsoft.com/library/windows/apps/br209655)
@@ -20,10 +17,10 @@ template: detail.hbs
 
 如果您要尋找 Segoe UI Symbol 圖示的清單，請參閱 [**Segoe UI Symbol 圖示的指導方針**](segoe-ui-symbol-font.md)。
 
-## <span id="The_Windows_10_type_ramp"> </span> <span id="the_windows_10_type_ramp"> </span> <span id="THE_WINDOWS_10_TYPE_RAMP"> </span>Windows 10 字體坡形
+## <span id="The_Windows_10_type_ramp"></span><span id="the_windows_10_type_ramp"></span><span id="THE_WINDOWS_10_TYPE_RAMP"></span>Windows 10 字體坡形
 
 
-字體坡形從標題到內文文字建立了一個重要的設計關係，確保不同的層級之間有一個一目了然且容易理解的階層。 使用者可以立即了解在哪裡尋找資訊，以及如何剖析頁面。
+字體坡形從標題到內文文字建立了一個重要的設計關係，確保不同的層級之間有一個一目瞭然、好理解的階層。 使用者可以立即了解在哪裡尋找資訊，以及如何剖析頁面。
 
 以下是 UWP app 的建議字體坡形：
 
@@ -39,14 +36,14 @@ template: detail.hbs
 
  
 
-## <span id="Recommended_fonts"> </span> <span id="recommended_fonts"> </span> <span id="RECOMMENDED_FONTS"> </span>建議字型
+## <span id="Recommended_fonts"></span><span id="recommended_fonts"></span><span id="RECOMMENDED_FONTS"></span>建議字型
 
 
-您並不需要針對所有項目使用 Segoe UI。 您可能會針對特定情況使用其他字型，例如閱讀，或顯示非英文語言的文字。
+您不必完全使用 Segoe UI。 您可能會針對特定情況使用其他字型，例如閱讀，或顯示非英文語言的文字。
 
 下面的清單列出在所有支援 UWP app 之 Windows 10 版本中保證可以使用的字型。
 
-**注意** 如果您使用的字型不在此清單中，您的 app 可能會觸發從 Microsoft 服務自動下載該字型。 這可能會有效能和其他影響的考量，特別是針對行動裝置。 請特別注意，這可能會使用使用者的行動數據方案，或造成行動數據用量的花費。 可在行動裝置上使用的 UWP app 的 UI 內容永遠不應該使用在此清單以外的字型。
+**注意** 如果您使用的字型不在此清單中，您的 app 可能會觸發從 Microsoft 服務自動下載字型資料。 這可能會有效能和其他影響的考量，特別是針對行動裝置。 請特別注意，這可能會使用使用者的行動數據方案，或造成行動數據用量的花費。 可在行動裝置上使用的 UWP app 的 UI 內容永遠不應該使用在此清單以外的字型。
 
  
 
@@ -269,13 +266,12 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"> </span>相關主題
-
+## <span id="related_topics"></span>相關主題
 
 **適用於設計人員**
 * [標籤 (或文字區塊)](labels.md)
-* [Segoe UI Symbol 圖示](segoe-ui-symbol-font.md)
-**適用於開發人員 (XAML)**
+* [Segoe UI Symbol 圖示](segoe-ui-symbol-font.md) 
+           **適用於開發人員 (XAML)**
 * [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [配置 app 頁面](https://msdn.microsoft.com/library/windows/apps/hh872191)
 * [Segoe UI Symbol 圖示](segoe-ui-symbol-font.md)
@@ -294,6 +290,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

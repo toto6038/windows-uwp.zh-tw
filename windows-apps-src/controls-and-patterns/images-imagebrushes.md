@@ -1,8 +1,9 @@
 ---
-Description: 了解如何將影像整合到您的 app，包括如何使用兩個主要 XAML 類別的 API：Image 和 ImageBrush。
+author: Jwmsft
+Description: 了解如何將影像整合到您的 App，包括如何使用兩個主要 XAML 類別的 API：Image 和 ImageBrush。
 title: 影像與影像筆刷
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-label: 影像與影像筆刷
+label: Images and image brushes
 template: detail.hbs
 ---
 # 影像與影像筆刷
@@ -140,20 +141,10 @@ template: detail.hbs
 
 如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (不是 URI)。 如果您的來源是資料流，請使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法來初始化該值。 如果您的來源是 URI，包含 app 中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **注意**&nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
-
-## 建議
+> **注意** &nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
-## 相關文章
-
-**適用於設計人員**
-
-**適用於開發人員 (XAML)**
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

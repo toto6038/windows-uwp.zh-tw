@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: 使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
 title: 標籤
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
-label: 標籤
+label: Labels
 template: detail.hbs
 ---
 
 # 標籤
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
@@ -27,16 +25,14 @@ template: detail.hbs
 
 ![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>建議
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建議事項
 
 
 -   使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
 -   為控制項加上標籤時，可填寫名詞或簡要的名詞片語，而非長句或說明文字。 請避免使用冒號或其他標點符號。
 -   當您的標籤中有說明文字時，您對於文字字串的長度可能會更寬厚，而且也會使用標點符號。
 
-## <span id="related_topics"> </span>相關主題
-
-
+## <span id="related_topics"></span>相關主題
 * [文字控制項](text-controls.md)
 
 **適用於開發人員**
@@ -59,6 +55,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

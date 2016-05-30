@@ -1,36 +1,35 @@
 ---
+author: Jwmsft
 Description: 本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 圖示的指導方針
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 圖示
+label: Segoe MDL2 icons
 template: detail.hbs
 ---
 
 # Segoe MDL2 圖示的指導方針
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。 若要取得字型，您必須安裝 Windows 10。
 
 **重要 API**
 
 -   [**Symbol 列舉 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 -   [**AppBarIcon 列舉 (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。 若要取得字型，您必須安裝 Windows 10。
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>建議
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建議事項
 
 
 -   只在您可以明確指定 **Segoe MDL2 Assets** 字型時才使用這些字符。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 自 Windows 10 發行之後，Windows 8/8.1 **Segoe UI Symbol** 字型已被取代為 **Segoe MDL2 Assets** 字型。 它的使用方式與較舊的字型大致相同，但是許多字符已使用具有字型衡量標準集的 Windows 10 圖示樣式重新繪製，讓圖示在字型的 em 正方形內對齊，而不是在印刷基準上。
 
-**注意** **Em** 是字型中的度量單位。 字型中的 1 em 等於 72ppi 的 100% 指定點值。 例如，16pt 等於 72ppi 的 16px (也稱為 100% 縮放倍數)。 設計新的 MDL2 字型，讓圖示區域的範圍是正方形 Em。 因此如果您在字碼中針對寬度和高度放置 16px，您會取得 16x16px 圖示範圍。 這不一定表示該圖示是範圍的完整維度。
+**注意：****Em** 是字型中的度量單位。 字型中的 1 em 等於 72ppi 的 100% 指定點值。 例如，16pt 等於 72ppi 的 16px (也稱為 100% 縮放倍數)。 設計新的 MDL2 字型，讓圖示區域的範圍是正方形 Em。 因此如果您在字碼中針對寬度和高度放置 16px，您會取得 16x16px 圖示範圍。 這不一定表示該圖示是範圍的完整維度。
 
  
 
@@ -54,7 +53,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
 此外，請記住 **Segoe MDL2 Assets** 字型包含許多其他我們可以在這裡顯示以外的圖示。 許多是針對特殊目的且通常不用於其他地方。
 
-## <span id="Hearts"> </span> <span id="hearts"> </span> <span id="HEARTS"> </span>傷心小棧
+## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>心型
 
 
 <table>
@@ -66,7 +65,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">代碼</th>
+<th align="left">字碼</th>
 <th align="left">符號</th>
 <th align="left">列舉</th>
 <th align="left">說明</th>
@@ -108,7 +107,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Rating_stars"> </span> <span id="rating_stars"> </span> <span id="RATING_STARS"> </span>評等星星
+## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>評等星星
 
 
 <table>
@@ -120,7 +119,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">代碼</th>
+<th align="left">字碼</th>
 <th align="left">符號</th>
 <th align="left">列舉</th>
 <th align="left">說明</th>
@@ -174,12 +173,12 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Checkbox_components"> </span> <span id="checkbox_components"> </span> <span id="CHECKBOX_COMPONENTS"> </span>核取方塊元件
+## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>核取方塊元件
 
 
 |        |                                                                                |                                 |                         |
 |--------|--------------------------------------------------------------------------------|---------------------------------|-------------------------|
-| 代碼   | 符號                                                                         | 列舉                            | 說明             |
+| 字碼   | 符號                                                                         | 列舉                            | 說明             |
 | U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | 核取記號              |
 | U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | 已填滿核取方塊         |
 | U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | 核取方塊                |
@@ -197,7 +196,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Miscellaneous"> </span> <span id="miscellaneous"> </span> <span id="MISCELLANEOUS"> </span>其他
+## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>其他事項
 
 
 <table>
@@ -209,7 +208,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">代碼</th>
+<th align="left">字碼</th>
 <th align="left">符號</th>
 <th align="left">列舉</th>
 <th align="left">說明</th>
@@ -341,10 +340,10 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Scroll_bar_arrows"> </span> <span id="scroll_bar_arrows"> </span> <span id="SCROLL_BAR_ARROWS"> </span>捲軸箭頭
+## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>捲軸箭頭
 
 
-| 代碼   | 符號                                                                   | 列舉                         |
+| 字碼   | 符號                                                                   | 列舉                         |
 |--------|--------------------------------------------------------------------------|------------------------------|
 | U+E00E | ![scrollchevronleftlegacy](images/scrollchevronleftlegacy.png)           | ScrollChevronLeftLegacy      |
 | U+E00F | ![scrollchevronrightlegacy](images/scrollchevronrightlegacy.png)         | ScrollChevronRightLegacy     |
@@ -357,10 +356,10 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Back_buttons"> </span> <span id="back_buttons"> </span> <span id="BACK_BUTTONS"> </span>返回按鈕
+## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>返回按鈕
 
 
-返回按鈕的舊版字符有 2 種不同的大小，因此外環的粗細有 20pt 和 42pt。 另外還提供兩個按比例裝飾的新返回按鈕。 這些字符是設計用來支援圖層。
+返回按鈕的舊版圖像有 2 種不同的大小，因此外環的粗細有 20pt 和 42pt。 另外還提供兩個按比例裝飾的新返回按鈕。 這些字符是設計用來支援圖層。
 
 | 代碼   | 符號                                                                     | 列舉                          | 說明                               |
 |--------|----------------------------------------------------------------------------|-------------------------------|-------------------------------------------|
@@ -373,10 +372,10 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Back_arrows_for_HTML"> </span> <span id="back_arrows_for_html"> </span> <span id="BACK_ARROWS_FOR_HTML"> </span>HTML 的返回箭頭
+## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>HTML 的返回箭頭
 
 
-新增額外的程式碼來建立圈住這些字符的圓圈。
+新增額外的程式碼來建立圈住這些圖像的圓圈。
 
 | 代碼   | 符號                                                         | 列舉                    | 說明                |
 |--------|----------------------------------------------------------------|-------------------------|----------------------------|
@@ -385,10 +384,10 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="AppBar_glyphs"> </span> <span id="appbar_glyphs"> </span> <span id="APPBAR_GLYPHS"> </span>AppBar 字符
+## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>AppBar 圖像
 
 
-使用 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670) 之下列清單中的字符。 根據慣例，它們會以其列舉名稱代表。 它們是設計為沒有圓形的 20x20px 圖示。
+使用下列清單中適用於 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670) 的字符。 根據慣例，它們會以其列舉名稱代表。 它們是設計為沒有圓形的 20x20px 圖示。
 
 <table>
 <colgroup>
@@ -1551,10 +1550,10 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="Battery_icons"> </span> <span id="battery_icons"> </span> <span id="BATTERY_ICONS"> </span>電池圖示
+## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>電池圖示
 
 
-| 代碼 | 符號                                             | 列舉              | 代碼 | 符號                                                  | 列舉                |
+| 字碼 | 符號                                             | 列舉              | 代碼 | 符號                                                  | 列舉                |
 |------|----------------------------------------------------|-------------------|------|---------------------------------------------------------|---------------------|
 | E996 | ![batteryunknown](images/batteryunknown.png)       | BatteryUnknown    | EC02 | ![mobbatteryunknown](images/mobbatteryunknown.png)      | MobBatteryUnknown   |
 | E850 | ![battery0](images/battery0.png)                   | Battery0          | EBA0 | ![mobbattery0](images/mobbattery0.png)                  | MobBattery0         |
@@ -1593,13 +1592,13 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
  
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
 **適用於設計人員**
 * [字型的指導方針](fonts.md)
-* [W3C 哪些語言是由右至左撰寫 (RTL)？](http://www.i18nguy.com/temp/rtl.mdl)
-**適用於開發人員 (XAML)**
+* [W3C：哪些語言從右至左 (RTL)撰寫 ？](http://www.i18nguy.com/temp/rtl.mdl) 
+           **適用於開發人員 (XAML)**
 * [**Symbol 列舉**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
@@ -1610,6 +1609,6 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

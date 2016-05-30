@@ -1,5 +1,6 @@
 ---
-Description: 通知視覺化檢視是市集中新的通用 Windows 平台 (UWP) 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
+author: mijacobs
+Description: 通知視覺化工具是市集中新的通用 Windows 平台 (UWP) App，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
@@ -9,12 +10,12 @@ template: detail.hbs
 # 通知視覺化工具
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-通知視覺化檢視是[市集](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中新的通用 Windows 平台 (UWP) 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 
-## <span id="Overview"> </span> <span id="overview"> </span> <span id="OVERVIEW"> </span>概觀
+通知視覺化檢視是[市集](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中新的通用 Windows 平台 (UWP) app，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
+
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概觀
 
 
 和 Visual Studio 的 XAML 編輯器/設計檢視一樣，當您編輯時，通知視覺化檢視應用程式會提供即時的磚視覺預覽。 應用程式也會檢查錯誤，這可確保您建立的是有效的磚承載。
@@ -31,7 +32,7 @@ template: detail.hbs
 
  
 
-## <span id="Features"> </span> <span id="features"> </span> <span id="FEATURES"> </span>功能
+## <span id="Features"></span><span id="features"></span><span id="FEATURES"></span>功能
 
 
 通知視覺化檢視隨附數個範例承載，以展示彈性動態磚可能的型態並協助您開始。 您可以實驗所有不同的文字選項、群組/子群組、背景影像，而且您可以看到磚如何適應不同的裝置和螢幕。 在您變更後，您可以將更新的承載儲存為檔案以供日後使用。
@@ -42,14 +43,14 @@ template: detail.hbs
 
 應用程式的這個螢幕擷取畫面顯示磚編輯器：
 
-![含有磚的通知視覺化檢視編輯器的螢幕擷取畫面](images/notif-visualizer-004.png)
+![含有磚的通知視覺化工具編輯器的螢幕擷取畫面](images/notif-visualizer-004.png)
 
  
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
-* [在市集中取得通知視覺化檢視](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [在市集中取得通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
 * [彈性磚範本：結構描述和文件](tiles-and-notifications-adaptive-tiles-schema.md)
 * [磚和快顯通知 (MSDN 部落格)](http://blogs.msdn.com/b/tiles_and_toasts/)
@@ -63,6 +64,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

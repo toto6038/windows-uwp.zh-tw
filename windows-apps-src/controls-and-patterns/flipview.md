@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 顯示集合中的影像 (一次一個影像)，例如相簿中的相片或是產品詳細資料頁面中的項目。
 title: 翻轉檢視控制項的指導方針
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
@@ -87,7 +88,7 @@ stackPanel1.Children.Add(flipView1);
 
 您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需詳細資訊，請參閱[與 XAML 的資料繫結](../data-binding/data-binding-quickstart.md)。
 
-此處的 ItemsSource 繫結至名為 `itemsViewSource` 的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。 
+此處的 ItemsSource 是繫結至名為 `itemsViewSource` 的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。 
 
 ```xaml
 <Page.Resources>
@@ -101,7 +102,7 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意**&nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以新增項目到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+>**注意** &nbsp;&nbsp;填入 FlipView 有兩種方法，您可以新增項目到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
 ### 指定項目的外觀
 
@@ -201,11 +202,11 @@ stackPanel1.Children.Add(flipView1);
 
 ## 相關文章
 
-[清單的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)
+- [清單的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)
 - [**FlipView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
 - [**CarouselPanel 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

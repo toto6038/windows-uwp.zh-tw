@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
 title: 傳送本機磚通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
@@ -9,35 +10,35 @@ template: detail.hbs
 # 傳送本機磚通知
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中，次要磚則是以程式設計方式建立，而且是由您的應用程式程式碼定義。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
-**注意**：了解[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
+**注意**：請了解[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
 
  
 
-## <span id="Install_the_NuGet_package"> </span> <span id="install_the_nuget_package"> </span> <span id="INSTALL_THE_NUGET_PACKAGE"> </span>安裝 NuGet 套件
+## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>安裝 NuGet 套件
 
 
 我們建議您安裝 [NotificationsExtensions NuGet 套件](https://www.nuget.org/packages/NotificationsExtensions.Win10/)，透過產生含有物件的磚承載 (而非原始 XML) 以簡化項目。
 
 本文中的內嵌程式碼範例是針對已安裝 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 封裝的 C#。 (如果您想要建立您自己的 XML，您可以在文章後面找到不含 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的程式碼範例。)
 
-## <span id="Add_namespace_declarations"> </span> <span id="add_namespace_declarations"> </span> <span id="ADD_NAMESPACE_DECLARATIONS"> </span>加入命名空間宣告
+## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>加入命名空間宣告
 
 
-若要存取磚 API， 請包含 [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 命名空間。 我們也建議您包含 **NotificationsExtensions.Tiles** 命名空間，這樣您就能利用我們的磚協助程式 API (您必須安裝 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 套件才能存取這些 API)。
+若要存取磚 API，請包含 [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 命名空間。 我們也建議您包含 **NotificationsExtensions.Tiles** 命名空間，這樣您就能利用我們的磚協助程式 API (您必須安裝 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 套件才能存取這些 API)。
 
 ```
 using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ```
 
-## <span id="Create_the_notification_content"> </span> <span id="create_the_notification_content"> </span> <span id="CREATE_THE_NOTIFICATION_CONTENT"> </span>建立通知內容
+## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>建立通知內容
 
 
 在 Windows 10 中，磚承載是彈性磚範本定義的，可讓您為您的通知建立自訂的視覺配置。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本](tiles-and-notifications-adaptive-tiles-schema.md)文章。)
@@ -116,7 +117,7 @@ TileContent content = new TileContent()
 
 ![中型磚上的通知內容](images/sending-local-tile-02.png)
 
-## <span id="Create_the_notification"> </span> <span id="create_the_notification"> </span> <span id="CREATE_THE_NOTIFICATION"> </span>建立通知
+## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>建立通知
 
 
 擁有通知內容後，您需要建立一個新的 [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)。 **TileNotification** 建構函式採用 Windows 執行階段 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) 物件，如果您使用 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)，即可透過 **TileContent.GetXml** 方法取得。
@@ -128,7 +129,7 @@ TileContent content = new TileContent()
 var notification = new TileNotification(content.GetXml());
 ```
 
-## <span id="Set_an_expiration_time_for_the_notification__optional_"> </span> <span id="set_an_expiration_time_for_the_notification__optional_"> </span> <span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"> </span>設定通知的到期時間 (選擇性)
+## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>設定通知的到期時間 (選擇性)
 
 
 根據預設，本機磚和徽章通知不會到期，而推播、定期以及排程通知則會在三天後到期。 磚內容持續的時間不應太長，最佳做法是設定適合您的應用程式的到期時間，特別是針對本機磚和徽章通知。
@@ -142,7 +143,7 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 </table>
 ```
 
-## <span id="Send_the_notification"> </span> <span id="send_the_notification"> </span> <span id="SEND_THE_NOTIFICATION"> </span>傳送通知
+## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>傳送通知
 
 
 雖然在本機傳送磚通知很簡單，但傳送通知到主要或次要磚則稍有不同。
@@ -184,7 +185,7 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
-## <span id="Clear_notifications_on_the_tile__optional_"> </span> <span id="clear_notifications_on_the_tile__optional_"> </span> <span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"> </span>清除磚上的通知 (選擇性)
+## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>清除磚上的通知 (選擇性)
 
 
 在大部分情況下，在使用者與通知內容互動後就該清除通知。 例如，使用者啟動您的應用程式後，您可能要清除磚的所有通知。 如果通知有時間限制，建議您設定通知的到期時間，而不是明確清除通知。
@@ -204,7 +205,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 ![含有通知的磚與清除後的磚](images/sending-local-tile-03.png)
 
-## <span id="Next_steps"> </span> <span id="next_steps"> </span> <span id="NEXT_STEPS"> </span>後續步驟
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>後續步驟
 
 
 **使用通知佇列**
@@ -238,7 +239,7 @@ public string XmlEncode(string text)
 }
 ```
 
-## <span id="Code_examples_without_NotificationsExtensions"> </span> <span id="code_examples_without_notificationsextensions"> </span> <span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"> </span>不含 NotificationsExtensions 的程式碼範例
+## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>不含 NotificationsExtensions 的程式碼範例
 
 
 如果您偏好使用原始的 XML 而非 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 套件，請將這些替代程式碼範例運用到本文的前三個範例。 其餘的程式碼範例則可搭配 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 或原始 XML 使用。
@@ -294,7 +295,7 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <span id="related_topics"> </span>相關主題
+## <span id="related_topics"></span>相關主題
 
 
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
@@ -314,6 +315,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

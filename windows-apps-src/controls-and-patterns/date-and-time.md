@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 日期和時間控制項可讓您檢視並設定日期和時間。 此文章提供設計指導方針，並協助您挑選適當的控制項。
 title: 日期和時間控制項的指導方針
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
@@ -93,11 +94,11 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 - C# 和 Visual Basic 使用屬於 .NET 一部分的 [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 結構。 
 - C++/CX 使用 [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 結構。 
 
-相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段 app 都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 類別。 C# 和 Visual Basic 應用程式也可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
+相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段應用程式都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 類別。 C# 和 Visual Basic 應用程式也可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
 
 .NET 亦支援名為 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的類型，隱含可轉換為 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 類別中的＜備註＞。
 
-> **注意**&nbsp;&nbsp;採用日期物件的屬性，不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將日期字串轉換為 DateTime/DateTimeOffset 物件的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\} 標記延伸](../xaml-platform/binding-markup-extension.md)運算式。
+> **注意** &nbsp;&nbsp;採用日期物件的屬性，不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將日期字串轉換為 DateTime/DateTimeOffset 物件的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\} 標記延伸](../xaml-platform/binding-markup-extension.md)運算式。
 
 
 ## 相關主題
@@ -109,6 +110,6 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 - [**TimePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

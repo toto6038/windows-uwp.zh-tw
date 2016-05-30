@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 使用者輸入時提供建議的文字輸入方塊。
 title: 自動建議方塊的指導方針
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
@@ -151,6 +152,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

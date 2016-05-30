@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-label: 文字方塊
+label: Text box
 template: detail.hbs
 ---
 # 文字方塊
@@ -59,7 +60,7 @@ rootGrid.Children.Add(textBox);
 
 您可以新增 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (或標籤) 與 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (或浮水印) 至文字方塊，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) 屬性而非 Header。 *如需設計資訊，請參閱標籤指導方針*。
 
-您可藉由設定 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用[貼上](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)事件已貼上的文字。
+您可藉由設定 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件以修改貼上的文字。
 
 文字方塊包含全部清除按鈕 (「X」)，當您在方塊中輸入文字時會顯示此按鈕。 使用者按一下「X」時，會清除文字方塊中的文字。 其外觀如下。
 
@@ -79,7 +80,7 @@ rootGrid.Children.Add(textBox);
 您可以藉由將 IsReadOnly 屬性設定成 true，使 TextBox 變成唯讀。 例如您可能希望僅在特定條件下，啟用 TextBox 讓使用者輸入註解。 您可將 TextBox 設為在符合條件前保持唯讀狀態。 若您僅需要顯示文字，請考慮改用 TextBlock 或 RichTextBlock。
 
 唯讀文字方塊外觀看起來與讀取/寫入文字方塊類似，因此可能會混淆使用者。 
-使用者可選取和複製的文字。
+使用者可選取和複製文字。
 IsEnabled
 
 
@@ -87,13 +88,13 @@ IsEnabled
 
 您可使用兩種屬性，控制 TextBox 是否採用多行方式顯示文字。 您通常會同時設定這兩個屬性，以產生多行文字方塊。
 - 若要讓文字方塊允許並顯示新行或傳回字元，請將 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
-- 若要啟用文字換行，請將 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，而獨立於行分隔字元。
+- 若要啟用文字換行，請將 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
-> **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 針對其 TextWrapping 屬性不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 值，則會擲回無效的引數例外。
+> **注意** &nbsp;&nbsp;TextBox 和 RichEditBox 針對其 TextWrapping 屬性不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 值，則會擲回無效的引數例外。
 
 多行 TextBox 大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 或 [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 屬性，或是依父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。 
 
-必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 設為 [**自動**]，以顯示垂直捲軸 (如此處所示)。 
+必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 設為 [自動]****，以顯示垂直捲軸 (如此處所示)。 
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap" 
@@ -169,7 +170,7 @@ rootGrid.Children.Add(textBox);
 
 您可以在使用 [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) 屬性的 TextBox 中，取得或設定所選文字。 使用 [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) 和 [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) 屬性，以及 [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) 和 [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) 方法，來操控文字選取動作。 處理 [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) 事件，可在使用者選取或取消選取文字時執行任務。 您可設定 [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) 屬性，以變更反白所選文字時使用的色彩。
 
-根據預設，TextBox 支援複製與貼上。 您可以在應用程式的可編輯文字控制項上，提供 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件的自訂處理。 舉例而言，您在將多行地址貼至單行搜尋方塊時，可能會移除其中的分行符號。 或者，您可能會檢查已貼上文字的長度，並在其超過可儲存至資料庫的長度上限時警告使用者。 如需詳細資訊和範例，請參閱[貼上](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx)事件。
+根據預設，TextBox 支援複製與貼上。 您可以在應用程式的可編輯文字控制項上，提供 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件的自訂處理。 舉例而言，您在將多行地址貼至單行搜尋方塊時，可能會移除其中的分行符號。 或者，您可能會檢查已貼上文字的長度，並在其超過可儲存至資料庫的長度上限時警告使用者。 如需詳細資訊和範例，請參閱 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件。
 
 以下是使用這些屬性與方法的範例。 您選取第一個文字方塊中的文字時，所選文字會顯示於第二個文字方塊 (唯讀)。 [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) 與 [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) 屬性的值會顯示在兩個文字區塊中。 這是使用 [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) 事件所完成。
 
@@ -207,7 +208,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
-> **重要**&nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
+> **重要** &nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
 其他會影響觸控式鍵盤的屬性包括 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx)、[IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx)。 (IsSpellCheckEnabled 也會影響使用硬體鍵盤時的 TextBox。) 
 
@@ -215,7 +216,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ## 建議
 
--   如果文字方塊的目的不清楚，請使用標籤或預留位置文字。 無論文字輸入方塊是否包含值，都會顯示標籤。 預留位置文字會顯示在文字輸入方塊內，只要輸入值就會消失。
+-   如果文字方塊的目的不清楚，請使用標籤或預留位置文字。 無論文字輸入方塊是否包含值，都應該要顯示標籤。 預留位置文字會顯示在文字輸入方塊內，只要輸入值就會消失。
 -   為文字方塊指定一個適合所要輸入的值範圍的寬度。 每個語言的單字長度都不相同，所以如果您希望您的應用程式能夠全球化，請考慮到當地語系化。
 -   文字輸入方塊通常是單行 (`TextWrap = "NoWrap"`)。 當使用者需要輸入或編輯長字串時，請將文字輸入方塊設定為多行 (`TextWrap = "Wrap"`)。
 -   文字輸入方塊通常使用於可編輯的文字。 但是您也可讓文字輸入方塊成為唯讀，如此一來，使用者可以閱讀、選取和複製它的內容，但是不能進行編輯。
@@ -256,7 +257,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 -   使用者只需要單行時，不要使用多行文字方塊。
 -   使用純文字控制項就足夠時，不要使用 RTF 控制項。
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -276,6 +277,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

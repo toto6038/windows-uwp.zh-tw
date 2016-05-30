@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-label: RTF 區塊
+label: Rich text block
 template: detail.hbs
 ---
 # RTF 區塊
@@ -53,7 +54,7 @@ RichTextBlock 支援：
 ### 內嵌的 UI 元素
 
 [
-            **InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 類別可讓您將文字內嵌於任何 UIElement 中。 常見的案例是將 Image 與您的文字內嵌在一起，但是您也可以使用互動式元素，例如 Button 或 CheckBox。
+            **InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 類別可讓您將任何 UIElement 內嵌於文字中。 常見的案例是將 Image 與您的文字內嵌在一起，但是您也可以使用互動式元素，例如 Button 或 CheckBox。
 
 如果您想在相同位置中內嵌多個元素，請考慮使用面板做為單一 InlineUIContainer 子項，然後在該面板中放置多個元素。
 
@@ -127,7 +128,7 @@ RichTextBlock 支援：
 
 請參閱＜印刷樣式與字型的指導方針＞。
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -147,6 +148,6 @@ RichTextBlock 支援：
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

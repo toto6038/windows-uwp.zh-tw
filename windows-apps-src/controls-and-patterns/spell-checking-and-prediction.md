@@ -1,14 +1,13 @@
 ---
+author: Jwmsft
 Description: 輸入並編輯文字時，拼字檢查會以紅色波浪線醒目顯示某個單字，告知使用者這個字拼錯了，並為使用者提供修正拼字錯誤的方式。
 title: 拼字檢查和文字預測
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
-label: 拼字檢查和文字預測
+label: Spell checking and text prediction
 template: detail.hbs
 ---
 
 # 拼字檢查的指導方針
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 輸入並編輯文字時，拼字檢查會以紅色波浪線醒目顯示某個單字，告知使用者這個字拼錯了，並為使用者提供修正拼字錯誤的方式。
 
@@ -17,17 +16,17 @@ template: detail.hbs
 -   [**IsSpellCheckEnabled 屬性 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
 
 
-## <span id="checklist_section"> </span> <span id="CHECKLIST_SECTION"> </span>建議
+## <span id="checklist_section"></span><span id="CHECKLIST_SECTION"></span>建議事項
 
 
 -   當使用者在文字輸入控制項中輸入單字或句子時，使用拼字檢查協助使用者。 拼字檢查可與觸控、滑鼠及鍵盤輸入搭配使用。
 -   當單字不太可能出現在字典中或使用者不重視拼字檢查時，不要使用拼字檢查。 例如，對於密碼、電話號碼或姓名的輸入方塊，不要啟用拼字檢查。 這些控制項的拼字檢查預設為停用狀態。
--   不要只是因為目前的拼字檢查引擎不支援您的應用程式語言，就停用拼字檢查。 當拼字檢查工具不支援語言時，它不會執行任何動作，所以保留啟用該選項並不會造成損害。 另外，有些使用者可能會使用輸入法 (IME) 將另一種語言輸入您的應用程式中，可能就會支援該語言。 例如，建置日文應用程式時，雖然拼字檢查引擎目前無法辨識該語言，但是不要將拼字檢查關閉。 使用者可能會切換到英文 IME 並且在 app 中輸入英文；如果啟用拼字檢查，就會進行英文拼字檢查。
+-   不要只是因為目前的拼字檢查引擎不支援您的應用程式語言，就停用拼字檢查。 當拼字檢查工具不支援語言時，它不會執行任何動作，所以保留啟用該選項並不會造成損害。 另外，有些使用者可能會使用輸入法 (IME) 將另一種語言輸入您的應用程式中，可能就會支援該語言。 例如，建置日文應用程式時，雖然拼字檢查引擎目前無法辨識該語言，但是不要將拼字檢查關閉。 使用者可能會切換到英文 IME 並且在應用程式中輸入英文；如果啟用拼字檢查，就會進行英文拼字檢查。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指導方針
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
-Windows 市集 app 為多行和單行文字輸入方塊，以及 **contentEditable** 屬性設為 **true** 的元素，提供內建的拼字檢查工具。 這裡是內建拼字檢查工具的範例：
+Windows 市集應用程式為多行和單行文字輸入方塊，以及 **contentEditable** 屬性設為 **true** 的元素，提供內建的拼字檢查工具。 這裡是內建拼字檢查工具的範例：
 
 ![內建拼字檢查工具](images/spellchecking.png)
 
@@ -47,14 +46,14 @@ Windows 市集 app 為多行和單行文字輸入方塊，以及 **contentEditab
 
 XAML TextBox 控制項的拼字檢查預設為關閉狀態。 您可以將 **IsSpellCheckEnabled** 屬性設為 **true** 來啟用它。
 
-\[本文章包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
-## <span id="related_topics"> </span>相關文章
+
+## <span id="related_topics"></span>相關文章
 
 * [文字和文字控制項](text-controls.md)
 * [文字輸入的指導方針](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [文字與印刷樣式的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394)
-**適用於開發人員 (XAML)**
+* [文字與印刷樣式的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394) 
+           **適用於開發人員 (XAML)**
 * [**TextBox.IsSpellCheckEnabled 屬性**](https://msdn.microsoft.com/library/windows/apps/br209688)
 * [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
 
@@ -65,6 +64,6 @@ XAML TextBox 控制項的拼字檢查預設為關閉狀態。 您可以將 **IsS
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

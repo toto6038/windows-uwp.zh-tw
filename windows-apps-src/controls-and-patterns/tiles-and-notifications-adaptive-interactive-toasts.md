@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
 title: 調適型和互動式快顯通知
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-label: 調適型和互動式快顯通知
+label: Adaptive and interactive toast notifications
 template: detail.hbs
 ---
 
 # 調適型和互動式快顯通知
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
@@ -20,14 +21,14 @@ template: detail.hbs
 -   針對主要快顯通知和每項動作提供三種不同的啟用類型。
 -   針對特定案例 (包括警示、提醒及來電) 建立通知的選項。
 
-**注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本資料目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
+**注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
  
 
-## <span id="toast_structure"> </span> <span id="TOAST_STRUCTURE"> </span>快顯通知結構
+## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>快顯通知結構
 
 
-使用 XML 建構的快顯通知通常包含三種重要元素：
+快顯通知是使用 XML 建構，並通常包含下列重要元素：
 
 -   &lt;visual&gt; 涵蓋可供使用者目視檢視的內容，包括文字和影像
 -   &lt;actions&gt; 包含開發人員要在通知中加入的按鈕/輸入項目
@@ -56,58 +57,57 @@ template: detail.hbs
 
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"> </span> <span id="visual"> </span> <span id="VISUAL"> </span>視覺
+### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>視覺
 
 在視覺元素內部，必須有且只有一個包含快顯通知視覺內容的繫結元素。
 
 通用 Windows 平台 (UWP) App 中的通知依據不同的磚大小支援多種範本。 但是，快顯通知只有一個範本名稱：**ToastGeneric**。 只有一個範本名稱表示：
 
 -   您可以變更快顯內容，例如新增另一行文字、新增內嵌影像，或將應用程式圖示的縮圖影像變更為顯示其他項目，而且執行這些動作時不需要擔心會變更整個範本，或擔心因為範本名稱和內容不符而建立無效的承載。
--   您可以使用相同的程式碼，針對要供不同類型 Microsoft Windows 裝置 (包括手機、平板電腦、電腦及 Xbox One) 使用的 **toast notification** 建構相同的承載。 這些裝置每一個都將能夠接受通知，並依據其 UI 原則以適當的視覺能供性和互動模型方式向使用者顯示。
+-   您可以使用相同的程式碼，針對要供不同類型 Microsoft Windows 裝置 (包括手機、平板電腦、電腦及 Xbox One) 使用的**快顯通知**建構相同的承載。 這些裝置每一個都將能夠接受通知，並依據其 UI 原則以適當的視覺能供性和互動模型方式向使用者顯示。
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### <span id="Actions"> </span> <span id="actions"> </span> <span id="ACTIONS"> </span>動作
+### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>動作
 
 在 UWP App 中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在 App 外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
 
--   &lt;action&gt; 會在桌面與行動裝置上顯示為按鈕。 您最多可以在快顯通知中指定五個自訂或系統動作。
--   &lt;input&gt; 可以允許使用者提供輸入 (例如快速回覆訊息)，或從下拉式功能表中選取選項。
+-   &lt;action&gt; 這會在傳統型與行動裝置上顯示為按鈕。 您最多可以在快顯通知中指定五個自訂或系統動作。
+-   &lt;input&gt; 這可以允許使用者提供輸入，例如快速回覆訊息，或從下拉式功能表中選取選項。
 
-&lt;action&gt; 和 &lt;input&gt; 在 Windows 系列裝置內部皆具備調整彈性。 例如在行動或桌上型裝置中，提供給使用者的 &lt;action&gt; 是可以點選/按一下的按鈕。 文字 &lt;input&gt; 則是一個方塊，使用者可使用實體鍵盤或螢幕小鍵盤在其中輸入文字。 這些元素也可以針對未來的互動案例 (例如透過語音宣告動作，或透過聽寫方式輸入文字) 調整。
+&lt;action&gt; 和 &lt;input&gt; 在 Windows 系列裝置內部皆具備調整彈性。 例如，在行動或傳統型裝置中，提供給使用者的 &lt;action&gt; 是可以點選/按一下的按鈕。 文字 &lt;input&gt; 則是一個方塊，使用者可使用實體鍵盤或螢幕小鍵盤在其中輸入文字。 這些元素也可以針對未來的互動案例 (例如透過語音宣告動作，或透過聽寫方式輸入文字) 調整。
 
 當使用者採取動作時，您可以指定 &lt;action&gt; 元素內部的 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 屬性來執行下列其中一項動作：
 
--   使用可用來瀏覽特定頁面/內容的動作特定引數在前景啟用應用程式。
+-   使用可用來瀏覽特定頁面/內容的動作特定引數在前景啟用 App。
 -   在不影響使用者的情況下啟用 app 的背景工作。
 -   透過通訊協定啟動來啟用另一個 app。
 -   指定要執行的系統動作。 目前可用的系統動作為延期及解除排定的鬧鐘/提醒，將在下面的小節中進一步說明。
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### <span id="Audio"> </span> <span id="audio"> </span> <span id="AUDIO"> </span>音訊
+### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>音訊
 
-針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的應用程式從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
+針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的 app 從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
 
 -   ms-appx:///
 -   ms-appdata:///
 
 請參閱[音訊結構描述頁面](https://msdn.microsoft.com/library/windows/apps/br230842)了解快顯通知音訊的相關資訊，包括完整的 ms-winsoundevents 清單。
 
-## <span id="Alarms__reminders__and_incoming_calls"> </span> <span id="alarms__reminders__and_incoming_calls"> </span> <span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"> </span>鬧鐘、提醒及來電
+## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>鬧鐘、提醒及來電
 
 
 您可以針對鬧鐘、提醒及來電使用快顯通知。 這些特殊快顯通知的外觀和標準快顯通知一致，但是特殊快顯通知具備一些自訂、以案例為基礎的 UI 和圖案：
 
 -   提醒快顯通知將停留在螢幕上，直到使用者將它關閉或採取動作。 在 Windows Mobile 上，提醒快顯通知也會以預先展開的方式顯示。
 -   除了和提醒通知共用上述行為之外，鬧鐘通知也會自動播放循環音效。
--   來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 這可透過在以下的快顯通知根元素內部指定案例屬性來完成 – &lt;toast&gt;:
-    &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
+-   來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 這可以透過在以下的快顯通知根元素內部指定 scenario 屬性來完成 – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"> </span> <span id="XML_EXAMPLES"> </span>XML 範例
+## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 範例
 
 
-**注意：**這些範例快顯通知螢幕擷取畫面取自桌面應用程式。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
+**注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
 
  
 
@@ -286,10 +286,10 @@ template: detail.hbs
 
  
 
-## <span id="Activation_samples"> </span> <span id="activation_samples"> </span> <span id="ACTIVATION_SAMPLES"> </span>啟用範例
+## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>啟用範例
 
 
-如上述說明，快顯通知的內文和動作可以透過不同方式啟動應用程式。 下面的範例將說明如何處理來自快顯通知內文和/或快顯通知動作的不同類型啟用。
+如上述說明，快顯通知的內文和動作可以透過不同方式啟動 app。 下面的範例將說明如何處理來自快顯通知內文和/或快顯通知動作的不同類型啟用。
 
 **前景**
 
@@ -348,7 +348,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"> </span> <span id="schemas___visual__and__audio_"> </span> <span id="SCHEMAS___VISUAL__AND__AUDIO_"> </span>結構描述：&lt;visual&gt; 和 &lt;audio&gt;
+## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>結構描述：&lt;visual&gt; 和 &lt;audio&gt;
 
 
 在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
@@ -368,7 +368,7 @@ namespace ToastNotificationTask
 </toast>
 ```
 
-**&lt;toast&gt; 中的屬性**
+**&lt;toast 中的屬性&gt;**
 
 launch?
 
@@ -377,8 +377,8 @@ launch?
 -   快顯通知啟動應用程式時，傳遞給應用程式的字串。
 -   視 activationType 的值而定，此值可由在前景的 app 於背景工作內部 app 接收，或由透過通訊協定從原始 app 啟動的其他 app 接收。
 -   此字串的格式和內容是由 app 定義以供 app 自己使用。
--   當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。
--   如果是因為使用者按下某個動作 (而非按一下快顯通知內文) 而啟用，開發人員可取回該 &lt;action&gt; 標記中預先定義的 "arguments"，而非取回 &lt;toast&gt; 標記中預先定義的 "launch"。
+-   當使用者點選或按一下快顯通知來啟動其相關聯 App 時，啟動字串會提供相關內容給 App，以允許 App 向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。
+-   如果是因為使用者按下某個動作 (而非按一下快顯通知內文) 而啟用，開發人員會取回在該 &lt;action&gt; 標記中預先定義的 "arguments"，而非取回 &lt;toast&gt; 標記中預先定義的 "launch"。
 
 duration?
 
@@ -398,14 +398,14 @@ scenario?
 -   scenario? = "default | alarm | reminder | incomingCall"
 -   這是選擇性屬性，預設值為 "default"。
 -   除非您的案例是要快顯鬧鐘、提醒或來電，否則您不需要使用此屬性。
--   不要只因為要讓通知在螢幕上持續顯示而使用此屬性。
+-   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
-**&lt;visual&gt; 中的屬性**
+**&lt;visual 中的屬性&gt;**
 
 version?
 
 -   version? = nonNegativeInteger
--   此屬性非必要，因為在 &lt;visual&gt; 中將會取代版本設定。 如有需要，請持續留意您將可從較高階層指定的新版本設定模型。
+-   這個屬性是不必要的，因為版本設定在 &lt;visual&gt; 中將被取代。 如有需要，請持續留意您將可從較高階層指定的新版本設定模型。
 
 lang?
 
@@ -419,7 +419,7 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;binding&gt; 中的屬性**
+**&lt;binding 中的屬性&gt;**
 
 template?
 
@@ -439,13 +439,13 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;text&gt; 中的屬性**
+**&lt;text 中的屬性&gt;**
 
 lang?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**&lt;image&gt; 中的屬性**
+**&lt;image 中的屬性&gt;**
 
 src
 
@@ -474,7 +474,7 @@ hint-crop?
 -   "none" 為預設值，表示沒有裁剪。
 -   "circle" 會將影像裁剪為圓形。 請針對連絡人設定檔影像、人員影像等項目使用此屬性。
 
-**&lt;audio&gt; 中的屬性**
+**&lt;audio 中的屬性&gt;**
 
 src?
 
@@ -488,7 +488,7 @@ silent?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
-## <span id="Schemas___action_"> </span> <span id="schemas___action_"> </span> <span id="SCHEMAS___ACTION_"> </span>結構描述：&lt;action&gt;
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>結構描述：&lt;action&gt;
 
 
 在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
@@ -507,7 +507,7 @@ silent?
 </toast>
 ```
 
-**&lt;input&gt; 中的屬性**
+**&lt;input 中的屬性&gt;**
 
 id
 
@@ -538,9 +538,9 @@ defaultInput?
 -   defaultInput? = string
 -   defaultInput 是選擇性屬性，且是用來提供預設輸入值。
 -   如果輸入類型是 "text"，此屬性將被視為字串輸入。
--   如果輸入類型是 "selection"，此屬性會預期為此輸入元素內部其中一個可用選取項目的 id。
+-   如果輸入類型是 "selection"，此屬性預期為此輸入元素內部其中一個可用選取項目的 id。
 
-**&lt;selection&gt; 中的屬性**
+**&lt;selection 中的屬性&gt;**
 
 id
 
@@ -550,7 +550,7 @@ content
 
 -   這是必要屬性。 這個屬性可為此選取項目元素提供字串以供顯示。
 
-**&lt;action&gt; 中的屬性**
+**&lt;action 中的屬性&gt;**
 
 content
 
@@ -580,10 +580,10 @@ hint-inputId
 -   值必須是要關聯之輸入屬性的 id。
 -   在行動裝置與桌上型裝置中，這個屬性會將按鈕放在輸入方塊旁邊。
 
-## <span id="Attributes_for_system-handled_actions"> </span> <span id="attributes_for_system-handled_actions"> </span> <span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"> </span>適用於系統處理動作的屬性
+## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>系統處理之動作的屬性
 
 
-如果您不想要由應用程式以背景工作的方式處理通知的延遲/重新排程工作，系統可以處理延遲和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
+如果您不想要由 app 以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
 
 系統命令組合：SnoozeAndDismiss
 
@@ -629,7 +629,7 @@ hint-inputId
     -   如果您想要提供延遲間隔選取項目：
         -   請在延遲動作中指定 hint-inputId
         -   讓輸入的 id 和延遲動作的 hint-inputId 相符：&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   將選取項目 id 指定為代表延遲間隔 (分鐘) 的 nonNegativeInteger：&lt;selection id="240" /&gt; 表示延遲 4 小時
+        -   將選取項目 id 指定為代表延期間隔 (分鐘) 的 nonNegativeInteger：&lt;selection id="240" /&gt; 表示延期 4 小時
         -   確定 &lt;input&gt; 中 defaultInput 的值與 &lt;selection&gt; 子元素的其中一個 id 相符
         -   提供最多 (但不要超過) 5 個 &lt;selection&gt; 值
 
@@ -642,6 +642,6 @@ hint-inputId
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

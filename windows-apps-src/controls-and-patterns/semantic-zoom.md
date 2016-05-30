@@ -1,14 +1,15 @@
 ---
+author: Jwmsft
 Description: 語意式縮放控制項可以讓使用者在相同資料集的兩個不同語意式檢視間縮放。
 title: 語意式縮放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-label: 語意式縮放
+label: Semantic zoom
 template: detail.hbs
 ---
 
 # 語意式縮放
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 語意式縮放控制項可讓使用者在相同內容的兩個不同檢視之間縮放，這樣就能快速瀏覽大型資料集。 放大檢視是內容的主要檢視。 您會在此檢視中顯示完整的資料集。 縮小檢視是相同內容的高階檢視。 您通常會在此檢視中顯示群組的資料集的群組標頭。 例如，檢視通訊錄時，使用者可以放大字母，然後查看與該字母相關的名稱。 
 
@@ -41,7 +42,7 @@ template: detail.hbs
 -   使用群組集合中項目的群組名稱。
 -   針對未分組但已排序的集合使用排序 (例如依時間順序排序日期，或依字母順序排序名稱清單)。
 
-\[本文包含通用 Windows 平台 (UWP) app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
 
@@ -64,6 +65,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

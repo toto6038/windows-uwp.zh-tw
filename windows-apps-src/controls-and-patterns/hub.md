@@ -1,8 +1,9 @@
 ---
-Description: 中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 app。
+author: Jwmsft
+Description: 中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 App。
 title: 中樞控制項
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
-label: 中樞
+label: Hub
 template: detail.hbs
 ---
 # 中樞控制項/模式
@@ -34,7 +35,7 @@ template: detail.hbs
 
 -   **彈性架構**
 
-    如果您想要讓您的 app 架構維持淺層狀態，您可以在中樞區段摘要中包含所有通道內容。
+    如果您想要讓您的 App 架構維持淺層狀態，您可以在中樞區段摘要中包含所有通道內容。
 
 <span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
@@ -47,7 +48,7 @@ template: detail.hbs
 
 中樞控制項適用於顯示依階層排列的大量內容。 中樞會排定新內容的瀏覽與探索之優先順序，讓它們適用於在市集或是媒體集合中顯示項目。
 
-中樞只是多個瀏覽元素的其中一項；若要深入了解瀏覽模式與其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) app 的瀏覽設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)。
+中樞只是多個瀏覽元素的其中一項；若要深入了解瀏覽模式與其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) App 的瀏覽設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)。
 
 ## 中樞架構
 
@@ -61,13 +62,13 @@ template: detail.hbs
 
 **水平移動瀏覽**
 
-![水平移動瀏覽中樞範例](images/controls_hub_horizontal_pan.png)
+![水平移動瀏覽中樞的範例](images/controls_hub_horizontal_pan.png)
 **垂直移動瀏覽**
 
-![垂直移動瀏覽中樞範例](images/controls_hub_vertical_pan.png)
+![垂直移動瀏覽中樞的範例](images/controls_hub_vertical_pan.png)
 **具備垂直捲動清單/格線的水平移動瀏覽**
 
-![具備垂直捲動清單的水平移動瀏覽中樞範例](images/controls_hub_horizontal_vertical_scroll.png)
+![具備垂直捲動清單之水平移動瀏覽中樞的範例](images/controls_hub_horizontal_vertical_scroll.png)
 **具備水平捲動清單/格線的垂直移動瀏覽**
 
 ![水平移動瀏覽中樞範例](images/controls_hub_vertical_horizontal_scroll.png)
@@ -99,21 +100,16 @@ template: detail.hbs
     -   標頭和內容中文字樣式和大小
     -   背景、區段、區段標頭及區段內容的色彩
 
-\[此文章包含 UWP app 與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相關文章
------------------------------------------------
 
-**適用於設計人員**
 - [瀏覽基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)
-
-**適用於開發人員 (XAML)**
-- [階層式瀏覽，從開始到完成](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
 - [**Windows.UI.Xaml.Controls Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [XAML Hub 控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 - [使用中樞](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

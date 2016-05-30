@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 ---
@@ -46,7 +47,9 @@ Windows Phone 上 Outlook 行事曆中的命令列
 ![關閉的命令列](images/commandbar_anatomy_open.png)
 
 命令列被分成 4 個主要區域︰
-- [查看更多] \[•••\] 按鈕會顯示在命令列右側。 [查看更多] \[•••\] 按鈕有兩種功能：在主要命令按鈕上顯示標籤，而且如果有任何次要命令出現，它還會開啟溢位功能表。 
+- [查看更多] \[•••\] 按鈕會顯示在命令列右側。 [查看更多] \[•••\] 按鈕有 2 種功能：在主要命令按鈕上顯示標籤，而且如果有任何次要命令出現，它還會開啟溢位功能表。 在沒有要顯示的次要命令和隱藏標籤時，按鈕將不會顯示。 [
+            `OverflowButtonVisibility`
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 屬性可讓應用程式變更這項預設自動隱藏行為。
 - 內容區域會對齊命令列左側。 如果填入 `Content` 屬性，就會顯示內容區域。
 - 主要命令區域會對齊命令列右側，就在 [查看更多] \[•••\] 按鈕右邊。 如果填入 `PrimaryCommands` 屬性，就會顯示內容區域。  
 - 只有命令列開啟並填入 `SecondaryCommands` 屬性時，才會顯示溢位功能表。 
@@ -97,6 +100,17 @@ PrimaryCommands 和 SecondaryCommands 只能填入 [**AppBarButton**](https://ms
 
 應用程式列按鈕控制項是以圖示與關聯的標籤表示。 它們有兩種大小：標準和精簡。 根據預設，會顯示文字標籤。 當 [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) 屬性設定為 **true** 時，會隱藏文字標籤。 用在 CommandBar 控制項中時，當命令列開啟或關閉時，命令列會自動覆寫按鈕的 IsCompact 屬性。
 
+若要將應用程式列按鈕標籤放置到它們的圖示右邊，app 可以使用 CommandBar 新的 [`DefaultLabelPosition`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) 屬性。 個別的應用程式列按鈕無法移動它們的標籤位置，這必須在命令列上作為一個整體來完成。
+```xaml
+<CommandBar DefaultLabelPosition="Right">
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle"/>
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat"/>
+</CommandBar>
+```
+
+app 繪製上述項目時程式碼片段看起來像下面這樣。
+
+![標籤在右邊的命令列](images/app-bar-labels-on-right.png)
 
 當您將應用程式列按鈕放在溢位功能表 (SecondaryCommands) 時，它只會顯示為文字。 以下是相同的應用程式列切換按鈕，它顯示在動作空間中並成為一個主要命令 (上方)，以及顯示在溢位區域中並成為一個次要命令 (下方)。
 
@@ -125,11 +139,9 @@ PrimaryCommands 和 SecondaryCommands 只能填入 [**AppBarButton**](https://ms
 
 當 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 為 **Compact** 時，如果內容比精簡大小的命令列還要大時，內容就會被裁剪。 您應該處理 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) 和 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件，以顯示或隱藏內容區域中的 UI 部分，讓它們不被裁剪。 請參閱[開啟與關閉狀態](#open-and-closed-states)一節以取得詳細資訊。
 
-
-
 ## 開啟與關閉狀態
 
-命令列可以開啟或關閉。 使用者可以按下 [查看更多] \[•••\] 按鈕，以在這些狀態之間切換。 您能以程式設計方式設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以在這些狀態之間切換。 開啟時，會顯示含文字標籤的主要命令按鈕，以及溢位功能表 (若有次要命令存在)，如先前所示。
+命令列可以開啟或關閉。 使用者可以按下 [查看更多] \[•••\] 按鈕，以在這些狀態之間切換。 您可以設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 開啟時，會顯示含文字標籤的主要命令按鈕，以及溢位功能表 (若有次要命令存在)，如先前所示。
 
 您可以使用 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) 與 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件來回應要開啟或關閉的命令列。  
 - 轉換動畫開始之前，會發生 Opening 和 Closing 事件。
@@ -196,7 +208,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注意：**此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
+>**注意** &nbsp;&nbsp;此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
 
 雖然在某些情況下，Minimal 與 Hidden 模式很有用，但是請記住，隱藏所有動作可能造成使用者的混淆。
 
@@ -216,7 +228,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 -   對於小型手持裝置，我們建議將命令列放置在螢幕底部以方便存取。
 -   對於配備大型螢幕的裝置，如果您只要放置一個命令列，我們建議將它放置在接近視窗頂端位置。
-使用 [**DiagonalSizeInInches**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 來判斷實際的螢幕大小。
+使用 [**DiagonalSizeInInches**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 來判斷實際的螢幕大小。
 
 命令列在單一檢視螢幕 (左側範例)，以及多檢視螢幕 (右側範例) 中可放置的畫面區域如下。 內嵌命令列可以放置在巨集指令空間中的任何地方。
 
@@ -238,7 +250,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ### 命令列飛出視窗
 
-請考慮為命令使用邏輯式分組，例如在 [回覆] 功能表中放入 [回覆]、[全部回覆] 和 [轉寄]。 雖然通常應用程式列按鈕會啟動單一命令，但應用程式列命令也可以用來顯示包含自訂內容的 [**MenuFlyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
+請考慮為命令使用邏輯式分組，例如在 [回覆] 功能表中放入 [回覆]、[全部回覆] 和 [轉寄]。 雖然通常應用程式列按鈕會啟動單一命令，但應用程式列按鈕也可以用來顯示包含自訂內容的 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
 
 ![命令列上的飛出視窗範例](images/AppbarGuidelines_Flyouts.png)
 
@@ -258,16 +270,17 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 -   在大型螢幕上，將應用程式列放在靠近視窗頂端的位置可讓它們更容易被注意到及找到。
 -   透過設定中斷點目標，您可以在視窗大小變更時將動作移入和移出功能表。
 -   透過設定螢幕對角線目標，您可以依據裝置螢幕大小修改應用程式列位置。
+-   請考慮將標籤移動到應用程式列按鈕圖示的右邊，以改善可讀性。 位在底部的標籤需要使用者開啟命令列以顯示標籤，而在右邊的標籤即使命令列關閉也依然會顯示。 這項最佳化非常適合較大的視窗。
 
 ## 相關文章
 
-**適用於設計人員**
-[UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
+**適用於設計人員** 
+           [UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-**適用於開發人員 (XAML)**
-[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**適用於開發人員 (XAML)** 
+           [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

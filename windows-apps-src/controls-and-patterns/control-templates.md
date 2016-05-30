@@ -1,17 +1,18 @@
 ---
+author: Jwmsft
 Description: 您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。
 MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: 控制項範本
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
-label: 控制項範本
+label: Control templates
 template: detail.hbs
 ---
 
 # 控制項範本
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 **重要 API**
 
@@ -182,7 +183,7 @@ template: detail.hbs
 
 ## 使用工具輕鬆處理主題
 
-快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio **線上文件**的控制項上按一下滑鼠右鍵，然後選取 [**編輯佈景主題**] 或 [**編輯樣式**] (依您用滑鼠右鍵按一下的控制項而定)。 然後您可以選取 [**套用資源**] 來套用現有的佈景主題，或選取 [**建立空白**] 來定義新的佈景主題。
+快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio **線上文件**的控制項上按一下滑鼠右鍵，然後選取**編輯佈景主題**或**編輯樣式** \(依您用滑鼠右鍵按一下的控制項而定\)。 然後您可以選取 \[**套用資源**\] 來套用現有的佈景主題，或選取 \[**建立空白**\] 來定義新的佈景主題。
 
 ## 控制項和協助工具
 
@@ -198,7 +199,7 @@ template: detail.hbs
 
 ## 控制項範本中的佈景主題資源
 
-針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的 App 可以使用適用於該佈景主題的資源集，所以 App UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
+針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的 app 可以使用適用於該佈景主題的資源集，所以 app UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
 
 **注意**  
 此文章適用於撰寫 UWP app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
@@ -213,6 +214,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

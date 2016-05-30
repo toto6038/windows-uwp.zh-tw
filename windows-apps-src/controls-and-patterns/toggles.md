@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 切換開關相當於實體開關，讓使用者能夠開啟或關閉選項。
 title: 切換開關控制項的指導方針
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: 切換開關
+label: Toggle switches
 template: detail.hbs
 ---
 # 切換開關
@@ -156,6 +157,6 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch 類別**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。
 title: 核取方塊
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
@@ -34,7 +35,7 @@ template: detail.hbs
 
 ![用來顯示混合選項的核取方塊](images/checkbox3.png)
 
-**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中進行選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
+**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
 
 ## 範例
 
@@ -70,7 +71,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 [提交] 按鈕。
 
-> 注意&nbsp;&nbsp;我們在此處只會顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
+> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -287,6 +288,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
