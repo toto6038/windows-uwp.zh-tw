@@ -1,6 +1,7 @@
 ---
+author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: 具有格式化功能的 Epson ESC/POS
+title: 用來設定格式的 Epson ESC/POS
 description: 了解如何使用 ESC/POS 命令語言，針對您的服務點印表機來格式化文字，例如粗體和雙倍大小字元。
 ---
 # 具有格式化功能的 Epson ESC/POS
@@ -31,22 +32,22 @@ ESC/POS 是 Epson 建立來在範圍廣泛之 POS 印表機系統上使用的命
 
 ```csharp
 // … prior plumbing code removed for brevity
-// this code assumed you’ve already created a receipt print job (printJob)
-// and also that you’ve already checked the PosPrinter Capabilities to 
+// this code assumed you've already created a receipt print job (printJob)
+// and also that you've already checked the PosPrinter Capabilities to 
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
-const string ESC = “\u001B”;
-const string GS = “\u001D”;
-const string InitializePrinter = ESC + “@”;
-const string BoldOn = ESC + “E” + “\u0001”;
-const string BoldOff = ESC + “E” + “\0”;
-const string DoubleOn = GS + “!” + “\u0011”;  // 2x sized text (double-high + double-wide)
-const string DoubleOff = GS + “!” + “\0”;
+const string ESC = "\u001B";
+const string GS = "\u001D";
+const string InitializePrinter = ESC + "@";
+const string BoldOn = ESC + "E" + "\u0001";
+const string BoldOff = ESC + "E" + "\0";
+const string DoubleOn = GS + "!" + "\u0011";  // 2x sized text (double-high + double-wide)
+const string DoubleOff = GS + "!" + "\0";
 
 printJob.Print(InitializePrinter);
-printJob.PrintLine(“Here is some normal text.”);
-printJob.PrintLine(BoldOn + “Here is some bold text.” + BoldOff);
-printJob.PrintLine(DoubleOn + “Here is some large text.” + DoubleOff);
+printJob.PrintLine("Here is some normal text.");
+printJob.PrintLine(BoldOn + "Here is some bold text." + BoldOff);
+printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 
 printJob.ExecuteAsync();
 ```
@@ -56,6 +57,6 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

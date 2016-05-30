@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: 裝置、感應器及電源
 description: 為提供使用者豐富的使用經驗，您可能會發現有必要將外部裝置或感應器與您的應用程式整合。
@@ -15,7 +16,8 @@ description: 為提供使用者豐富的使用經驗，您可能會發現有必�
 
 | 主題 | 描述 |
 |-------|-------------|
-| [啟用裝置功能](enable-device-capabilities.md) | 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。 | 
+| [啟用裝置功能](enable-device-capabilities.md) | 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 App 使用相機、麥克風、定位感應器及其他裝置。 | 
+| [以使用者模式存取 Windows IoT](enable-usermode-access.md) | 本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。 |
 | [列舉裝置](enumerate-devices.md) | 列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。 |
 | [配對裝置](pair-devices.md) | 有些裝置在使用之前需要先進行配對。 [
             <strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。 |
@@ -29,6 +31,6 @@ description: 為提供使用者豐富的使用經驗，您可能會發現有必�
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

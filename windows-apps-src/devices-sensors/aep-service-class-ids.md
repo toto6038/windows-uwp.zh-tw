@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: AEP 服務類別識別碼
 description: 關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。
 ---
 # AEP 服務類別識別碼
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 <span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
@@ -23,7 +24,7 @@ app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩
 -   藍牙通訊協定識別碼：{e0cbf06c-cd8b-4647-bb8a263b43f0f974}
 -   藍牙 LE 通訊協定識別碼：{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
-藍牙通訊協定支援全都遵循相同基本格式的多個服務。 GUID 的前四個數字會因服務而有所不同，但所有的藍芽 GUID 都會以 **0000-0000-1000-8000-00805F9B34FB** 結尾。 例如，RFCOMM 服務都有 0x0003 的前導，因此完整的識別碼會是 **00030000-0000-1000-8000-00805F9B34FB**。 下表列出一些常見的藍芽服務。
+藍牙通訊協定支援全都遵循相同基本格式的多個服務。 GUID 的前四個數字會因服務而有所不同，但所有的藍芽 GUID 都會以 **0000-0000-1000-8000-00805F9B34FB** 結尾。 例如，RFCOMM 服務都有 0x0003 的前導碼，因此完整的識別碼會是 **00030000-0000-1000-8000-00805F9B34FB**。 下表列出一些常見的藍芽服務。
 
 | 服務名稱                         | GUID                                     |
 |--------------------------------------|------------------------------------------|
@@ -125,6 +126,6 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

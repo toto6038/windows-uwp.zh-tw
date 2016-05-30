@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: 取得電池資訊
 description: 了解如何使用 Windows.Devices.Power 命名空間中的 API 取得詳細的電池資訊。
@@ -124,9 +125,9 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## 範例：基本電池 app
 
-在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 [**新增專案**]，然後在 [**Visual C# &gt; Windows &gt; 通用**] 範本下，使用 [**空白應用程式**] 範本建立新的 app。
+在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 [新增專案]****，然後在 [Visual C# &gt; Windows &gt; 通用]**** 範本下，使用 [空白應用程式]**** 範本建立新的 app。
 
-接下來，開啟 **MainPage.xaml** 檔案，然後將以下的 XML 複製到這個檔案 (取代原來的內容)。
+接下來，開啟 **MainPage.xaml** 檔案，然後將以下的 XML 複製到這個檔案中 (取代原來的內容)。
 
 ```xml
 <Page
@@ -251,7 +252,7 @@ namespace App1
             TextBlock txt5 = new TextBlock { Text = "Fully-charged energy capacity (mWh): " + report.FullChargeCapacityInMilliwattHours.ToString() };
             TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + report.RemainingCapacityInMilliwattHours.ToString() };
 
-            // Create energy capacity progress bar &amp; labels
+            // Create energy capacity progress bar & labels
             TextBlock pbLabel = new TextBlock { Text = "Percent remaining energy capacity" };
             pbLabel.Margin = new Thickness(0,10, 0, 5);
             pbLabel.FontFamily = new FontFamily("Segoe UI");
@@ -334,6 +335,6 @@ namespace App1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

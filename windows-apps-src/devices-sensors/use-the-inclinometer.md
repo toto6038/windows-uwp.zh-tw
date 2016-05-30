@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: 使用傾角計
 description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
@@ -123,23 +124,23 @@ description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="InclinometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:InclinometerCS"`。
 
--   按 F5 或選取 [偵錯]**** > [開始偵錯]**** 以建置、部署及執行 app。
+-   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
 
-應用程式開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
+App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** > [停止偵錯]**** 以停止應用程式。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
 ###  說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的傾角計輸入。
 
-app 會與 **MainPage** 方法中的預設傾角計建立連線。
+App 會與 **MainPage** 方法中的預設傾角計建立連線。
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-app 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
+App 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -149,7 +150,7 @@ _inclinometer.ReportInterval = reportInterval;
 
 會在 **ReadingChanged** 方法中擷取新的傾角計資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
-```
+```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
@@ -171,6 +172,6 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

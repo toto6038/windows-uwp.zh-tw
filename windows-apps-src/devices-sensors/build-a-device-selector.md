@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: 建置裝置選取器
 description: 建置裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。
 ---
 # 建置裝置選取器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** 重要 API **
@@ -62,32 +63,41 @@ description: 建置裝置選取器可讓您在列舉裝置時限制要搜尋的�
 
 下列範例說明如何使用 AQS 語法來限制您要列舉的裝置。 所有的這些篩選字串都會與 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配對，以建立完整篩選器。 如果未指定類型，請記住預設的類型是 **DeviceInterface**。
 
-當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含音訊擷取介面類別且目前已啟用的所有物件。 **=** 會轉譯為 **COP\_EQUALS**。
+當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含音訊擷取介面類別且目前已啟用的所有物件。 **
+            =
+            ** 會轉譯為 **COP\_EQUALS**。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含至少一個 GenCdRom 硬體識別碼的所有物件。 **~~** 會轉譯為 **COP\_VALUE\_CONTAINS**。
+當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含至少一個 GenCdRom 硬體識別碼的所有物件。 **
+            ~~
+            ** 會轉譯為 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-當這個篩選器與 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉型號名稱包含子字串 Microsoft 的所有物件。 **~~** 會轉譯為 **COP\_VALUE\_CONTAINS**。
+當這個篩選器與 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉型號名稱包含子字串 Microsoft 的所有物件。 **
+            ~~
+            ** 會轉譯為 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉名稱以子字串 Microsoft 開頭的所有物件。 **~&lt;** 會轉譯為 **COP\_STARTSWITH**。
+當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉名稱以子字串 Microsoft 開頭的所有物件。 **
+            ~&lt;
+            ** 會轉譯為 **COP\_STARTSWITH**。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含 **System.Devices.IpAddress** 屬性集的所有物件。 **&lt;&gt;\[\]** 會轉譯為結合了 **NULL** 值的 **COP\_NOTEQUALS**。
+當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含 **System.Devices.IpAddress** 屬性集的所有物件。 **
+            &lt;&gt;\[\]** 會轉譯為結合了 **NULL** 值的 **COP\_NOTEQUALS**。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
@@ -108,6 +118,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

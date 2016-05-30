@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: 配對裝置
 description: 有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。
@@ -19,7 +20,7 @@ description: 有些裝置在使用之前需要先進行配對。 Windows.Devices
 -   基本配對
 -   自訂配對
 
-**提示** 有些裝置不需要為了使用而進行配對。 此內容將涵蓋於＜自動配對＞一節中。
+**提示：**有些裝置不需要配對就可以使用。 此內容將涵蓋於＜自動配對＞一節中。
 
  
 
@@ -71,6 +72,6 @@ description: 有些裝置在使用之前需要先進行配對。 Windows.Devices
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

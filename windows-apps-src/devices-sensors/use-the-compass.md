@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: 使用指南針
 description: 了解如何使用指南針來判斷目前朝向何方。
@@ -12,7 +13,7 @@ description: 了解如何使用指南針來判斷目前朝向何方。
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**指南針**](https://msdn.microsoft.com/library/windows/apps/BR225705)
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 了解如何使用指南針來判斷目前朝向何方。
 
@@ -123,23 +124,23 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="CompassCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:CompassCS"`。
 
--   按 F5 或選取 [偵錯]**** > [開始偵錯]**** 以建置、部署及執行 app。
+-   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
 
-應用程式開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
+App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** > [停止偵錯]**** 以停止應用程式。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
 ### 說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的指南針輸入。
 
-app 會與 **MainPage** 方法中的預設指南針建立連線。
+App 會與 **MainPage** 方法中的預設指南針建立連線。
 
 ```csharp
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-app 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
+App 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -175,6 +176,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

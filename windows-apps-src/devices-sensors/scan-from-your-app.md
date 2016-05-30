@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: 從您的 app 掃描
 description: 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。
@@ -15,7 +16,7 @@ description: 在此處了解如何使用平台、送紙器或自動設定的掃�
 
 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。
 
-**重要** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[裝置系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 app 只能在桌面版的 Windows 10 上使用這些 API。
+**重要：**[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[裝置系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 app 只能在桌面版的 Windows 10 上使用這些 API。
 
 如果要從 app 掃描，您必須先透過宣告新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件並取得 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 類型以列出可用的掃描器。 只有在本機連同 WIA 驅動程式一起安裝的掃描器會列出，並且可供您的 app 使用。
 
@@ -54,9 +55,9 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
        await
        MainPage.Current.Dispatcher.RunAsync(
              Windows.UI.Core.CoreDispatcherPriority.Normal,
-             () =&gt;
+             () =>
              {
-                MainPage.Current.NotifyUser(String.Format(&quot;Scanner with device id {0} has been added&quot;, deviceInfo.Id), NotifyType.StatusMessage);
+                MainPage.Current.NotifyUser(String.Format("Scanner with device id {0} has been added", deviceInfo.Id), NotifyType.StatusMessage);
 
                 // search the device list for a device with a matching device id
                 ScannerDataItem match = FindInList(deviceInfo.Id);
@@ -89,7 +90,7 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
 
 為使用預設值掃描，您的應用程式需要 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空間才能選取掃描器並從該來源掃描。 掃描設定不會變更。 可能的掃描器有自動設定、平台或送紙器。 此類型的掃描最有可能產生成功的掃描作業，即使是從錯誤的來源 (例如平台而非送紙器) 掃描也一樣。
 
-**注意** 如果使用者在送紙器中放入要掃描的文件，掃描器會改從平台進行掃描。 如果使用者嘗試從空白的送紙器掃描，掃瞄工作將不會產生任何掃描的檔案。
+**注意：**如果使用者在送紙器中放入要掃描的文件，掃描器會改從平台進行掃描。 如果使用者嘗試從空白的送紙器掃描，掃瞄工作將不會產生任何掃描的檔案。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
@@ -100,7 +101,7 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
 
 您可以使用裝置的[自動設定的掃描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)，以最佳的掃描設定執行掃描。 使用此選項時，裝置本身可依據正在掃描的內容來判斷最佳的掃描設定，例如色彩模式與掃描解析度。 裝置會在執行階段為每個新的掃描工作選取掃描設定。
 
-**注意** 並非所有掃描器都支援此功能，因此，app 在使用此設定之前，必須先檢查掃描器是否支援此功能。
+**注意：**並非所有掃描器都支援此功能，因此，app 在使用此設定之前，必須先檢查掃描器是否支援此功能。
 
 在此範例中，app 會先檢查掃描器是否可以自動設定，然後再進行掃描。 如果要指定平台或送紙器掃描器，只要將 **AutoConfigured** 取代成 **Flatbed** 或 **Feeder**。
 
@@ -122,7 +123,7 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
 {
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
                 // Scan API call to get preview from the flatbed.
                 var result = await myScanner.ScanPreviewToStreamAsync(
                     ImageScannerScanSource.Flatbed, stream);
@@ -159,16 +160,16 @@ cancellationToken = new CancellationTokenSource();
 2.  設定進度事件處理常式，以取得掃描的進度。
 
 ```csharp
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
-    var progress = new Progress&lt;UInt32&gt;(ScanProgress);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
+    var progress = new Progress<UInt32>(ScanProgress);
 ```
 
 ## 掃描到圖片媒體櫃
 
-使用者可使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) 類別動態地掃描至任一資料夾，但您必須在資訊清單中宣告「圖片庫」**功能，以允許使用者掃描至該資料夾。 如需 app 功能的詳細資訊，請參閱 [app 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
+使用者可使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) 類別動態地掃描至任一資料夾，但您必須在資訊清單中宣告「圖片庫」**功能，以允許使用者掃描至該資料夾。 如需 app 功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

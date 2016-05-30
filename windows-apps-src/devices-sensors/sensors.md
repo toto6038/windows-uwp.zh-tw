@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: 感應器
 description: 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。
@@ -136,6 +137,6 @@ description: 感應器可讓 app 得知裝置與周遭實際環境之間的關�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

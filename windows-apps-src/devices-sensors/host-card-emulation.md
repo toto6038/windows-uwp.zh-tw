@@ -1,9 +1,10 @@
 ---
+author: DBirtolo
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-title: 建立 NFC 智慧卡 app
-description: Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。
+title: 建立 NFC 智慧卡 App
+description: Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 App，但該模型需要安全的付款 App 才能與行動網路運算子 (MNO) 緊密結合。
 ---
-# 建立 NFC 智慧卡 app
+# 建立 NFC 智慧卡 App
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -160,7 +161,7 @@ void BgTask::HandleHceActivation()
         if (Windows::Phone::System::SystemProtection::ScreenLocked)
         {
             auto denyIfLocked = Windows::Storage::ApplicationData::Current->RoamingSettings->Values->Lookup("DenyIfPhoneLocked");
-            if (denyIfLocked != nullptr &amp;&amp; (bool)denyIfLocked == true)
+            if (denyIfLocked != nullptr && (bool)denyIfLocked == true)
             {
                 // The phone is locked, and our current user setting is to deny transactions while locked so let the user know
                 // Denied
@@ -176,7 +177,7 @@ void BgTask::HandleHceActivation()
         }
 
         m_emulator->ApduReceived += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorApduReceivedEventArgs^>(
-            this, &amp;BgTask::ApduReceived);
+            this, &BgTask::ApduReceived);
 
         m_emulator->ConnectionDeactivated += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorConnectionDeactivatedEventArgs^>(
                 [this](
@@ -228,7 +229,7 @@ public static byte[] AID_OTHER =
         {
             (byte)'1', (byte)'2', (byte)'3', (byte)'4',
             (byte)'5', (byte)'6', (byte)'7', (byte)'8',
-            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R’
+            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R'
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -374,12 +375,12 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 ```
 
 ** 重要 **  
-Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用 Windows 10 行動裝置版中更廣泛的新 SMS 支援來取代，但任何依賴該功能的舊版 Windows Phone 8.1 app 都必須更新，以使用新的 Windows 10 行動裝置版 SMS API。
+Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用 Windows 10 行動裝置版中更廣泛的新 SMS 支援來取代，但任何依賴該功能的舊版 Windows Phone 8.1 App 都必須更新，以使用新的 Windows 10 行動裝置版 SMS API。
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

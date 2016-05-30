@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: 感應器方向
 description: 取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
@@ -153,11 +154,9 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 [
             **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
-![尤拉公式](images/eulers-formula.png)
-若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
+![尤拉公式](images/eulers-formula.png) 若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
 
-![將參考物件比對絕對物件相乘。](images/orientation-formula.png)
-在前面的運算式中，絕對物件是由感應器資料傳回。
+![將參考物件比對絕對物件相乘](images/orientation-formula.png) 在前面的運算式中，絕對物件由感應器資料傳回。
 
 | 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
@@ -168,6 +167,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

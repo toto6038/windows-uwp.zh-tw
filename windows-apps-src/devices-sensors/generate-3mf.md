@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: '描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。'
 MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -14,24 +15,24 @@ title: 產生 3MF 套件
 
 **重要 API**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx)
+-   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
-描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx) API 來建立和操作。
+描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 來建立和操作。
 
 ## 什麼是 3MF？
 
-3D 製造格式是一組慣例，基於製造 (3D 列印) 使用 XML 來描述 3D 模型的外觀和結構。 它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。 
+3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。 它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，最後是 C\# 中的 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，最後是 C\# 中的 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## 3MF 結構中的核心類別
 
-**Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 類別表示)。 將會儲存要指定有關 3D 模型的大部分資訊，方法是設定 **Printing3DModel** 類別的屬性和其基礎類別的屬性。
+**Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 類別表示)。 大部分我們希望指定的 3D 模型相關資訊，都將透過設定 **Printing3DModel** 類別屬性和其基本類別屬性來加以儲存。
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -41,15 +42,15 @@ title: 產生 3MF 套件
 
 3MF 文件的模型組件可以保留中繼資料，並以字串的機碼/值組形式儲存在 **Metadata** 屬性中。 會有一些預先定義的中繼資料名稱，但其他組可以新增為延伸的一部分 (詳述於 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)中)。 是由套件的接收者 (3D 製造裝置) 判斷是否處理中繼資料和其作法，但最好在 3MF 套件中包括最多的基本資訊：
 
-[!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
+[!code-cs[中繼資料](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 
 ## 網格資料
 
-在本指南的內容中，網格是透過一組頂點所建構的 3D 幾何內文 (但它不需要顯示為單一純色)。 網格部分是以 [**Printing3DMesh**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) 類別表示。 有效的網格物件必須包含其所有頂點位置的資訊，以及存在於某些組頂點之間的所有三角形表面位置的資訊。 
+在本指南的內容中，網格是透過一組頂點所建構的 3D 幾何主體 (但它不需要顯示為單一純色)。 網格部分是以 [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) 類別表示。 有效的網格物件必須包含其所有頂點位置的資訊，以及存在於某些組頂點之間的所有三角形表面位置的資訊。
 
 下列方法會新增網格的頂點，然後提供它們在 3D 空間中的位置︰
 
-[!code-cs[Vertices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
+[!code-cs[頂點](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
 
 下一種方法定義要跨這些頂點繪製的所有三角形︰
 
@@ -65,7 +66,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 ## 建立材質
 
 
-3D 模型可以保留多個材質的資料。 這個慣例是要利用可對單一列印工作使用多個材質的 3D 製造裝置。 也有多種*類型*的材質群組，各可以支援數個不同的個別材質。 每個材質群組都必須有唯一的參考識別碼，而且該群組內的每一種材質也必須有唯一識別碼。 
+3D 模型可以保留多個材質的資料。 這個慣例是要利用可對單一列印工作使用多個材質的 3D 製造裝置。 也有多種*類型*的材質群組，各可以支援數個不同的個別材質。 每個材質群組都必須有唯一的參考識別碼，而且該群組內的每一種材質也必須有唯一識別碼。
 
 模型內的不同網格物件接著可以參考這些材質。 此外，每個網格上的個別三角形可以指定不同的材質。 甚至，不同的材質可在單一三角形內表示，而且每個三角形頂點都已獲指派不同的材質，而且表面材質計算為其中的漸層。
 
@@ -87,7 +88,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ### 複合材質
 
-**複合材質**只會指示製造裝置使用不同**基底材質**的統一混合。 每個**複合材質群組**都只能參考一個用來繪製組成部分的**基本材質群組**。 此外，此群組內要設為可用的**基本材質**必須列在**材質索引**清單中，而每個**複合材質**在指定比例時都會參考該清單 (每個**複合材質**只是**基本材質**的比例)。
+**複合材質**只會指示製造裝置使用不同**基底材質**的統一混合。 每個**複合材質群組**都只能參考一個用來繪製組成部分的**基本材質群組**。 此外，此群組內要設為可用的**基本材質**必須列在**材質索引**清單中，而每個**複合材質**在指定比例時都會參考該清單 (每個**複合材質**都只是**基本材質**的比例)。
 
 [!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
 
@@ -97,9 +98,9 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**注意** 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。 
+**注意** 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
 
-接下來，我們必須填寫 **Texture3Coord 材質**。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。 
+接下來，我們必須填寫 **Texture3Coord 材質**。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。
 
 [!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
 
@@ -112,37 +113,34 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 ## 元件和建置
 
 元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [
-            **Printing3DComponent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。 
+            **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
 
-例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
+例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
 
-所有 **Printing3DComponent** 物件都必須在模型的 **Components** 屬性中直接進行參考。 要用在列印工作的一個特定元件儲存在 **Build** 屬性中。
+所有 **Printing3DComponent** 物件都必須在模型的 **Components** 屬性中直接參考。 要用在列印工作的一個特定元件儲存在 **Build** 屬性中。
 
-[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+[!code-cs[元件](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
 
 ## 儲存套件
-現在，我們已經有一個具有已定義材質和元件的模型，可以將它儲存到套件中。 
+現在，我們已經有一個具有已定義材質和元件的模型，可以將它儲存到套件中。
 
-[!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
+[!code-cs[儲存套件](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-接下來，我們可以起始應用程式內的列印工作 (請參閱[從應用程式進行 3D 列印](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
+接下來，我們可以起始應用程式內的列印工作 (請參閱[從應用程式進行 3D 列印](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
 
-下列方法採用已完成的 **Printing3D3MFPackage**，並將其資料儲存至 .3mf 檔案。 
+下列方法採用已完成的 **Printing3D3MFPackage**，並將其資料儲存至 .3mf 檔案。
 
 [!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
 
 ## 相關主題
 
-[從應用程式進行 3D 列印](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx)
+[從應用程式進行 3D 列印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
 
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

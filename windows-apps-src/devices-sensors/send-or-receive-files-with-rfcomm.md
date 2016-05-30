@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: 藍牙 RFCOMM
 description: 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
@@ -17,12 +18,13 @@ description: 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 R
 ## 概觀
 
 [
-            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的物件所設計。 Session Description Protocol (SDP) 屬性具有值和預期類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
+            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
 
 RFCOMM API 運用了服務識別碼的概念。 雖然服務識別碼只是 128 位元的 GUID，但也通常會指定為 16 或 32 位元的整數。 RFCOMM API 為服務識別碼提供一個包裝函式，使它們可指定和做為 128 位元的 GUID 及 32 位元的整數使用，但不提供 16 位元的整數。 這對 API 而言不是問題，因為語言將自動轉換成 32 位元的整數，而且仍然可以正確地產生識別碼。
 
 app 可以在背景工作中執行多步驟的裝置作業，因此即使 app 移至背景且暫停，作業仍然可以完成。 這可允許可靠的裝置提供服務 (例如永續性設定或韌體的變更) 及內容同步，不需要使用者在一旁監督進度列。 使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) 提供裝置服務，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) 執行內容同步。 請注意，這些背景工作會限制 app 可在背景執行的時間，且不允許無限期的作業或同步。
 
+如需 RFCOMM 作業詳細資訊的完整程式碼範例，請參閱 Github 上的[**藍牙 Rfcomm 交談範例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) 。  
 ## 以用戶端身分傳送檔案
 
 傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 這牽涉到下列步驟：
@@ -49,8 +51,8 @@ async void Initialize()
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
 
-        // Check that the service meets this App’s minimum requirement
-        if (SupportsProtection(service) &amp;&amp; IsCompatibleVersion(service))
+        // Check that the service meets this App's minimum requirement
+        if (SupportsProtection(service) && IsCompatibleVersion(service))
         {
             _service = service;
 
@@ -92,7 +94,7 @@ bool SupportsProtection(RfcommDeviceService service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel.BluetoothEncryptionWithAuthentication:
@@ -144,10 +146,10 @@ void Initialize()
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
             .then([](RfcommDeviceService^ service)
             {
-                // Check that the service meets this App’s minimum
+                // Check that the service meets this App's minimum
                 // requirement
                 if (SupportsProtection(service)
-                    &amp;&amp; IsCompatibleVersion(service))
+                    && IsCompatibleVersion(service))
                 {
                     _service = service;
 
@@ -194,7 +196,7 @@ bool SupportsProtection(RfcommDeviceService^ service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel::BluetoothEncryptionWithAuthentication:
@@ -236,6 +238,8 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 -   為連線至用戶端裝置，建立一個通訊端接聽程式以開始接聽內送的連線要求。
 -   在收到連線時，儲存連線的通訊端以稍後處理。
 -   遵循建立的資料串流模式，以讀取通訊端的 InputStream 中的資料區塊，並將它儲存至檔案。
+
+若要保留背景中的 RFCOMM 服務，請使用 [**RfcommConnectionTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.rfcommconnectiontrigger.aspx)。 連線至服務時會觸發背景工作。 開發人員會在背景工作收到通訊端的控制代碼。 背景工作是長時間執行，且只要通訊端為使用中就會持續執行。    
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
@@ -279,7 +283,7 @@ void OnConnectionReceived(
     StreamSocketListener listener,
     StreamSocketListenerConnectionReceivedEventArgs args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider.StopAdvertising();
     await listener.Close();
     _socket = args.Socket;
@@ -310,7 +314,7 @@ void Initialize()
         listener->ConnectionReceived += ref new TypedEventHandler<
                 StreamSocketListener^,
                 StreamSocketListenerConnectionReceivedEventArgs^>
-           (&amp;OnConnectionReceived);
+           (&OnConnectionReceived);
         return create_task(listener->BindServiceNameAsync(
             _provider->ServiceId->AsString(),
             SocketProtectionLevel
@@ -342,7 +346,7 @@ void OnConnectionReceived(
     StreamSocketListener^ listener,
     StreamSocketListenerConnectionReceivedEventArgs^ args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider->StopAdvertising();
     create_task(listener->Close())
     .then([args](void) {
@@ -360,6 +364,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
