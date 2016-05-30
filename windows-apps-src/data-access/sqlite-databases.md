@@ -1,7 +1,8 @@
 ---
+author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: SQLite 資料庫
-description: SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 程式庫、在通用 Windows app 中封裝您自己的 SQLite 程式庫，或是從來源建立 SQLite 程式庫。
+description: SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 資料庫、在通用 Windows app 中封裝您自己的 SQLite 資料庫，或是從來源建立 SQLite 資料庫。
 ---
 # SQLite 資料庫
 
@@ -34,9 +35,9 @@ SQLite 最適合 Windows 10 IoT 核心版 (IoT 核心版) 的手機 app 和內�
 
 `#include <winsqlite/winsqlite3.h>`
 
-設定專案以連結到 winsqlite3.lib。 在 [**方案總管**] 中，以滑鼠右鍵按一下您的專案並選取 [**屬性**] &gt; [**連結器**] &gt; [**輸入**]，然後將 winsqlite3.lib 新增到 [**其他相依性**]。
+設定專案以連結到 winsqlite3.lib。 在 [方案總管]**** 中，以滑鼠右鍵按一下您的專案並選取 [屬性]****&gt;[連結器]****&gt;[輸入]****，然後將 winsqlite3.lib 新增到 [其他相依性]****。
 
-### 2. 在 app 套件中包含 SQLite
+### 2. 在應用程式套件中包含 SQLite
 
 有時候，您可能想要封裝您自己的程式庫而不是使用 SDK 版本，例如，您可能想在您的跨平台用戶端使用特定版本的程式庫，該版本與 SDK 中包含的 SQLite 版本並不同。
 
@@ -64,7 +65,7 @@ SQLite 的原始程式碼可至 [SQLite.org 下載頁面](https://www.sqlite.org
 
 ## 管理 SQLite 資料庫
 
-使用 SQLite C API 可以建立、更新和刪除 SQLite 資料庫。 在 SQLite.org [SQLite C/C++ 介面簡介](http://www.sqlite.org/cintro.html)頁面可以找到 SQLite C API 的詳細資訊。
+使用 SQLite C API 可以建立、更新和刪除 SQLite 資料庫。 在 SQLite.org [SQLite C/C++ 介面簡介](http://www.sqlite.org/cintro.html) (英文) 頁面可以找到 SQLite C API 的詳細資訊。
 
 若要充分了解 SQLite 的運作方式，從用來評估 SQL 陳述式的 SQL 資料庫的主要工作往回工作。 您必須記住兩個目標：
 
@@ -89,6 +90,6 @@ SQLite 的原始程式碼可至 [SQLite.org 下載頁面](https://www.sqlite.org
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
