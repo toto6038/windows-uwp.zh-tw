@@ -10,7 +10,7 @@ author: awkoren
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-此藍圖概述適用於 Windows 10 通用 Windows 平台 (UWP) app 的重要企業功能。 Windows 10 可讓您只需要撰寫一次，就能部署到所有裝置，方法是建立一個可調整成適合任何裝置的 app。 這可讓您建置使用者期待的絕佳經驗，並提供組織所需，針對安全性、管理以及設定上的控制。
+此藍圖概述適用於 Windows 10 通用 Windows 平台 (UWP) app 的重要企業功能。 Windows 10 可讓您只需要撰寫一次，就能部署到所有裝置，方法是建立一個可調整成適合任何裝置的 app。 這可讓您建置使用者期待的絕佳經驗，並針對組織所需的安全性、管理以及設定等提供控制功能。
 
 **注意** 本文的對象是撰寫企業 UWP app 的開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/en-us/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
@@ -24,7 +24,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 | 主題 | 描述 |
 |-------|-------------|
 | [安全開發 Windows app 的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 本文涵蓋大範圍的主題，主要目的是協助 app 設計人員更充分地了解可快速且輕易地建立通用 Windows 平台 app 的 Windows 功能。 |
-| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 針對企業，強烈建議使用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證，以產生方便且高度安全的使用經驗。 |
+| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證，以產生方便且高度安全的使用經驗。 |
 | [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括如何輕鬆地加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰以及使用 MAC、雜湊和簽章這類進階主題。 |
 | [企業資料保護 (EDP)](edp-hub.md) | 這是中樞主題，涵蓋企業資料保護 (EDP) 與檔案的關聯、緩衝區、剪貼簿、網路、背景工作以及鎖定時的資料保護的完整開發人員描述。 |
 
@@ -111,6 +111,6 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
