@@ -18,7 +18,7 @@ author: awkoren
 
  
 
-如需美國 商務部與工業安全局的詳細資訊，請參閱[關於工業安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
+如需美國商務部與工業安全局的詳細資訊，請參閱[關於工業安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
 如需規範技術 (包含加密) 出口的出口管制條例 (EAR) 詳細資訊，請參閱 [EAR 管制使用密碼編譯的項目](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
@@ -55,6 +55,6 @@ author: awkoren
 如果您沒有 ECCN，請參閱 [ECCN 問答集](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

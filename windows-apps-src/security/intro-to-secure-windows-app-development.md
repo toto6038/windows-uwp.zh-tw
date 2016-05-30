@@ -37,9 +37,9 @@ author: awkoren
 
 使用者為了要向特定的服務和/或應用程式驗證自己的身分，會使用由您知道的事情、您擁有的東西，及/或您扮演的角色來組成的認證。 而這些資訊每個都叫做驗證因素。
 
--   **Something the user knows** 通常是密碼，但也可以是個人識別碼 (PIN) 或「祕密」的問題與答案組。
--   **Something the user has** 大多數是硬體記憶體裝置，例如內含使用者專屬驗證資料的 USB 隨身碟。
--   **Something the user is** 通常包含使用者的指紋，但有些因素越來越受歡迎，例如使用者的語音、臉部、眼睛特徵，或是行為模式。 當這些因素的度量儲存成資料之後，就稱為生物特徵辨識技術。
+-   **使用者知道的資訊**通常是密碼，但也可以是個人識別碼 (PIN) 或「祕密」的問題與答案組。
+-   **使用者擁有的物品**大多數是硬體記憶體裝置，例如內含使用者專屬驗證資料的 USB 隨身碟。
+-   **使用者本身的特質**通常包含使用者的指紋，但有些因素越來越受歡迎，例如使用者的語音、臉部、眼睛特徵，或是行為模式。 當這些因素的度量儲存成資料之後，就稱為生物特徵辨識技術。
 
 使用者建立的密碼本身就是驗證因素，但這通常不夠，因為任何知道密碼的人，都能冒充擁有該密碼的使用者。 智慧卡能提供更高層級的安全性，但是它可能會遭竊、遺失，或放錯地方。 能利用指紋或眼部掃描來驗證使用者身分的系統，或許可提供最高層級和最便利的安全性，但這需要昂貴和專用的硬體 (例如，臉部辨識用的 Intel RealSense 攝影機)，並非所有使用者都能負擔。
 
@@ -219,7 +219,7 @@ private async Task ValidateSSLRoot()
         await httpClient.GetAsync(bingUri);
 
     // Get the list of certificates that were used to
-    // validate the server&#39;s identity
+    // validate the server's identity
     IReadOnlyList<Certificate> serverCertificates = response.RequestMessage.TransportInformation.ServerIntermediateCertificates;
   
     // Perform validation
@@ -342,7 +342,7 @@ private PasswordCredential GetCredentialFromLocker()
     else if (credentialList.Count > 0)
     {
         // When there are multiple usernames,
-        // retrieve the default username. If one doesn’t
+        // retrieve the default username. If one doesn't
         // exist, then display UI to have the user select
         // a default username.
         defaultUserName = GetDefaultUserNameUI();
@@ -468,7 +468,7 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [密碼編譯金鑰](cryptographic-keys.md)
 -   [資料保護](data-protection.md)
 -   [MAC、雜湊以及簽章](macs-hashes-and-signatures.md)
--   [密碼編譯的匯出限制](export-restrictions-on-cryptography.md)
+-   [密碼編譯的出口限制](export-restrictions-on-cryptography.md)
 -   [常見的密碼編譯工作](common-cryptography-tasks.md)
 
 ### 6.2 程式碼範例
@@ -498,6 +498,6 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

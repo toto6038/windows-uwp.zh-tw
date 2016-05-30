@@ -33,7 +33,7 @@ author: awkoren
 下列範例顯示如何建立要求 URI。
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
+string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
 string endURL = "http://<appendpoint>";
 
 System.Uri startURI = new System.Uri(startURL);
@@ -84,7 +84,7 @@ catch (Exception ex)
 ## 使用單一登入 (SSO) 連線。
 
 
-根據預設，Web 驗證代理人不允許保留 Cookie。 基於這個原因，即使 app 使用者指出他們想要保持登入 (例如，透過在提供者登入對話方塊選取核取方塊)，仍然需要在每次想要存取該提供者的資源時進行登入。 若要使用 SSO 登入，您的線上身分識別提供者必須啟用 Web 驗證代理人的 SSO，而且應用程式必須呼叫不會使用 *callbackUri* 參數的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 超載。
+根據預設，Web 驗證代理人不允許保留 Cookie。 基於這個原因，即使 app 使用者指出他們想要保持登入 (例如，透過在提供者登入對話方塊選取核取方塊)，仍然需要在每次想要存取該提供者的資源時進行登入。 若要使用 SSO 登入，您的線上身分識別提供者必須啟用 Web 驗證代理人的 SSO，而且 app 必須呼叫不會使用 *callbackUri* 參數的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 超載。
 
 若要支援 SSO，線上提供者必須允許您以 `ms-app://`*appSID* 的形式登錄重新導向 URI，其中 *appSID* 是您 app 的 SID。 您可以在 app 的 app 開發人員頁面找到 app SID，或者呼叫 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法。
 
@@ -147,14 +147,14 @@ catch (Exception ex)
 
 Fiddler Web 偵錯工具可以與 app 搭配使用。
 
-1.  由於 AuthHost 是在自己的 app 容器中執行以給予私人網路功能，因此您必須設定登錄機碼：Windows Registry Editor Version 5.00
+1.  由於 AuthHost 是在自己的 App 容器中執行以給予私人網路功能，因此您必須設定登錄機碼：Windows Registry Editor Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  為 AuthHost 新增一個規則，因為它是產生輸出流量的主機。
+2.  為 AuthHost 新增一個規則，因為它負責產生輸出流量。
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -174,6 +174,6 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
 
 3.  將連入流量防火牆規則新增到 Fiddler。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

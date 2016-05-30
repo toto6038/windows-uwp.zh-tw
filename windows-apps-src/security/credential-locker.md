@@ -86,7 +86,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
         else
         {
             // When there are multiple usernames,
-            // retrieve the default username. If one doesn’t
+            // retrieve the default username. If one doesn't
             // exist, then display UI to have the user select
             // a default username.
 
@@ -127,6 +127,6 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 
 請勿使用應用程式資料或漫遊設定儲存純文字形式的認證。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

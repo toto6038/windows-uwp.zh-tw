@@ -28,7 +28,7 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 ## 建立與發行受保護的 Web 服務
 
 
-1.  以系統管理員的身分執行 Microsoft Visual Studio，然後從起始畫面選取 [新增專案]****。 必須要有系統管理員存取權才能將 Web 服務發行到 IIS 伺服器。 在 [新增專案] 對話方塊中，將 Framework 變更為 [**.NET Framework 3.5**]。 選取 **Visual C#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **ASP.NET Web Service 應用程式**。 將應用程式命名為 "FirstContosoBank"。 按一下 [確定]**** 來建立專案。
+1.  以系統管理員的身分執行 Microsoft Visual Studio，然後從起始畫面選取 [新增專案]****。 必須要有系統管理員存取權才能將 Web 服務發行到 IIS 伺服器。 在 [新增專案] 對話方塊中，將 Framework 變更為 [.NET Framework 3.5]****。 選取 [Visual C#]**** -&gt;[Web]**** -&gt;[Visual Studio]**** -&gt;[ASP.NET Web Service 應用程式]****。 將應用程式命名為 "FirstContosoBank"。 按一下 [確定]**** 來建立專案。
 2.  在 **Service1.asmx.cs** 檔案中，將預設的 **HelloWorld** Web 方法取代為下列 "Login" 方法。
     ```cs
             [WebMethod]
@@ -44,19 +44,19 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 3.  儲存 **Service1.asmx.cs** 檔案。
 4.  在 [方案總管]**** 中，用滑鼠右鍵按一下 "FirstContosoBank" app，然後選取 [發行]****。
-5.  在 [**發行網站**] 對話方塊中建立新的設定檔，將它命名為 "ContosoProfile"。 按 [下一步]****。
+5.  在 [發行 Web]**** 對話方塊中建立新的設定檔，將它命名為 "ContosoProfile"。 按 [下一步]****。
 6.  在下一頁中，輸入 IIS 伺服器的伺服器名稱，然後指定網站名稱為 "Default Web Site/FirstContosoBank"。 按一下 [發行]**** 以發行您的 Web 服務。
 
 ## 設定您的 Web 服務以使用用戶端憑證驗證
 
 
-1.  執行 [**網際網路資訊服務 (IIS) 管理員**]。
-2.  展開 IIS 伺服器的網站。 在 [預設的網站]**** 底下選取新的 "FirstContosoBank" Web 服務。 在 [動作]**** 區段中，選取 [進階設定]****。
+1.  執行 [網際網路資訊服務 (IIS) 管理員]****。
+2.  展開 IIS 伺服器的網站。 在 [預設的網站]**** 底下選取新的 [FirstContosoBank] Web 服務。 在 [動作]**** 區段中，選取 [進階設定]****。
 3.  將 [應用程式集區]**** 設為 [.NET v2.0]****，然後按一下 [確定]****。
-4.  在 **Internet Information Services (IIS) 管理員** 中選取您的 IIS 伺服器，然後按兩下 [伺服器憑證]****。 在 [動作]**** 區段中，選取 [建立自我簽署憑證]****。 輸入 "ContosoBank" 做為憑證的易記名稱，然後按一下 [確定]****。 這樣會建立下列格式的新憑證供 IIS 伺服器使用："&lt;server-name&gt;.&lt;domain-name&gt;"。
-5.  在 [Internet Information Services (IIS) 管理員]**** 中選取預設網站。 在 [動作]**** 區段中，選取 [繫結]****，然後按一下 [加入]****。 選取 "https" 做為類型，將連接埠設為 "443"，然後輸入 IIS 伺服器的完整主機名稱 ("&lt;server-name&gt;.&lt;domain-name&gt;")。 將 SSL 憑證設為 "ContosoBank"。 按一下 [確定]****。 在 [站台繫結]**** 視窗中按一下 [關閉]****。
-6.  在 [Internet Information Services (IIS) 管理員]**** 中，選取 "FirstContosoBank" Web 服務。 按兩下 [SSL 設定]****。 核取 [需要 SSL]****。 選取 [用戶端憑證]**** 下方的 [需要]****。 在 [動作]**** 區段中，按一下 [套用]****。
-7.  您可以開啟網頁瀏覽器並輸入下列網址，以確認 Web 服務是否已正確設定："https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx"。 例如，"https://myserver.example.com/FirstContosoBank/Service1.asmx"。 如果您的 Web 服務已正確設定，系統會提示您選取用戶端憑證以存取 Web 服務。
+4.  在 [網際網路資訊服務 (IIS) 管理員]**** 中選取您的 IIS 伺服器，然後按兩下 [伺服器憑證]****。 在 [動作]**** 區段中，選取 [建立自我簽署憑證]****。 輸入 "ContosoBank" 做為憑證的易記名稱，然後按一下 [確定]****。 這樣會建立下列格式的新憑證供 IIS 伺服器使用："&lt;伺服器名稱&gt;.&lt;網域名稱&gt;"。
+5.  在 [網際網路資訊服務 (IIS) 管理員]**** 中選取預設網站。 在 [動作]**** 區段中，選取 [繫結]****，然後按一下 [加入]****。 選取 [https] 做為類型，將連接埠設為 "443"，然後輸入 IIS 伺服器的完整主機名稱 ("&lt;伺服器名稱&gt;.&lt;網域名稱&gt;")。 將 SSL 憑證設為 "ContosoBank"。 按一下 [確定]****。 在 [站台繫結]**** 視窗中按一下 [關閉]****。
+6.  在 [網際網路資訊服務 (IIS) 管理員]**** 中，選取 [FirstContosoBank] Web 服務。 按兩下 [SSL 設定]****。 選取 [需要 SSL]****。 選取 [用戶端憑證]**** 下方的 [需要]****。 在 [動作]**** 區段中，按一下 [套用]****。
+7.  您可以開啟網頁瀏覽器並輸入下列網址，以確認 Web 服務是否已正確設定："https://&lt;伺服器名稱&gt;.&lt;網域名稱&gt;/FirstContosoBank/Service1.asmx"。 例如，"https://myserver.example.com/FirstContosoBank/Service1.asmx"。 如果您的 Web 服務已正確設定，系統會提示您選取用戶端憑證以存取 Web 服務。
 
 您可以重複上述步驟來建立多個 Web 服務，並使用相同的用戶端憑證來存取這些服務。
 
@@ -67,13 +67,13 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 如果沒有可用的用戶端憑證，則使用者必須新增憑證到憑證存放區。 您可以在 app 中包含程式碼，讓使用者選取包含用戶端憑證的 PFX 檔案，然後將該憑證匯入用戶端憑證存放區。
 
-**秘訣** 您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門使用。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+**祕訣** 您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門使用。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
  
 
 1.  開啟 Visual Studio，然後從開始頁面建立新專案。 將新專案命名為 "FirstContosoBankApp"。 按一下 [確定]**** 以建立新的專案。
 2.  在 MainPage.xaml 檔案中，將下列 XAML 新增至預設的 **Grid** 元素。 這個 XAML 包含一個瀏覽要匯入之 PFX 檔案的按鈕、一個輸入受密碼保護之 PFX 檔案的密碼的文字方塊、一個匯入所選 PFX 檔案的按鈕、一個登入受保護的 Web 服務的按鈕，以及一個顯示目前動作狀態的文字區塊。
-    ```xaml
+    ```xml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>
     <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="611,305,0,0" VerticalAlignment="Top" Height="75" Width="240" Click="Login_Click" FontSize="16"/>
     <TextBlock x:Name="Result" HorizontalAlignment="Left" Margin="355,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="560"/>
@@ -94,9 +94,9 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
     using Windows.Storage.Streams;
     ```
 
-5.  在 MainPage.xaml.cs 檔案中，將下列變數新增至 **MainPage** 類別。 它們會指定 "FirstContosoBank" Web 服務的受保護 "Login" 方法的位址，以及存放要匯入憑證存放區之 PFX 憑證的全域變數。 將 &lt;server-name&gt; 更新為 Microsoft Internet Information Server (IIS) 伺服器的完整伺服器名稱。
+5.  在 MainPage.xaml.cs 檔案中，將下列變數新增至 **MainPage** 類別。 它們會指定 "FirstContosoBank" Web 服務的受保護 "Login" 方法的位址，以及存放要匯入憑證存放區之 PFX 憑證的全域變數。 將 &lt;伺服器名稱&gt; 更新為 Microsoft Internet Information Server (IIS) 伺服器的完整伺服器名稱。
     ```cs
-    private Uri requestUri = new Uri("https://&lt;server-name&gt;/FirstContosoBank/Service1.asmx?op=Login");
+    private Uri requestUri = new Uri("https://<server-name>/FirstContosoBank/Service1.asmx?op=Login");
     private string pfxCert = null;
     ```
 
@@ -200,6 +200,6 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 您可以使用這些步驟來建立多個應用程式，它們會使用相同的使用者憑證來存取相同或不同的受保護 Web 服務。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

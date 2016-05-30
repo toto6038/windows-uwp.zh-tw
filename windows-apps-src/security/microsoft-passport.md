@@ -119,7 +119,7 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 if (!keyCredentialAvailable)
 {
-   // User didn&#39;t set up PIN yet
+   // User didn't set up PIN yet
    return;
 }
 ```
@@ -166,7 +166,7 @@ static async void RegisterUser(string AccountId)
     var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
     if (!keyCredentialAvailable)
     {
-        // The user didn&#39;t set up a PIN yet
+        // The user didn't set up a PIN yet
         return;
     }
 
@@ -452,6 +452,6 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 * [Microsoft Passport 登入 app](microsoft-passport-login.md)
 * [Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

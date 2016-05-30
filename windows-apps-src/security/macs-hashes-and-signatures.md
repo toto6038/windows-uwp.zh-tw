@@ -189,6 +189,6 @@ public void SampleReusableHash()
 
 您可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 物件來列舉可用的簽章演算法及產生或匯入金鑰組。 您可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別上使用靜態方法來簽署郵件或驗證簽章。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
