@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: App 提交程序的 [應用程式屬性] 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。
 title: 輸入 app 屬性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
@@ -39,6 +40,6 @@ ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 如需詳細資訊，請參閱 [App 宣告](app-declarations.md)。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為自家廣告。
 title: 關於自家廣告
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
@@ -23,7 +24,7 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ## 相關主題
 
 
-* [為您的 app 建立廣告行銷活動](create-an-ad-campaign-for-your-app.md)
+* [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
 * [管理您的廣告活動](managing-your-ad-campaign.md)
 * [App 安裝廣告報告](app-install-ads-reports.md)
 * [常見問題](common-questions.md)
@@ -31,6 +32,6 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

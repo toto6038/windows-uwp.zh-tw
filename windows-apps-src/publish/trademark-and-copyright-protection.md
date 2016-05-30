@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解如果您認為其他應用程式侵犯您的智慧財產權您可以採取的行動。
 title: 商標與著作權保護
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
@@ -63,6 +64,6 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

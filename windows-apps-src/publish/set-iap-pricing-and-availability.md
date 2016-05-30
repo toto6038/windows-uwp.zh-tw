@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 提交 IAP 時，[價格與可用性] 頁面上的選項會決定您的 IAP 計費內容，以及提供給客戶的方式。
 title: 設定 IAP 價格與可用性
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
@@ -50,6 +51,6 @@ ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

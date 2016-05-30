@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 提交 IAP 時，[屬性] 頁面上的選項有助於決定提供給客戶時 IAP 的特行。
 title: 輸入 IAP 屬性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
@@ -60,6 +61,6 @@ ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

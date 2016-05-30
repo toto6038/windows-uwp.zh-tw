@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 關於廣告活動的常見問題
 title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
@@ -6,24 +7,23 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 
 # 關於廣告活動的常見問題
 
-
 ## 我的 app 廣告的執行成本是多少？
 
+這取決於您，但請記住：您花費的越多，越多人會看見您的廣告。 越多人看見您的廣告，您就應該會得到越多點擊數與安裝數。 如需有關建立您 app 廣告活動的資訊，請查看[這篇文章](create-an-ad-campaign-for-your-app.md)。
 
-這取決於您，但請記住：您花費的越多，越多人會看見您的廣告。 越多人看見您的廣告，您就應該會得到越多點擊數與安裝數。 如需建立您應用程式廣告活動的資訊，請查看[這篇文章](create-an-ad-campaign-for-your-app.md)。
+## 我能夠在我其他的 app 中執行我其中一個 app 的廣告嗎？
 
-## 我能夠在我其他的應用程式中執行我其中一個應用程式的廣告嗎？
+是的。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
 
+## 我可以利用市集中其他開發人員的 app 宣傳我的 app 嗎？
 
-是的。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需「自家廣告」的詳細資訊，請查看[這篇文章](about-house-ads.md)。
+可以。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#how-to-opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
 
 ## 如何自訂我的廣告？
-
 
 如果使用其中一個預設廣告範例，您可以選擇廣告的大小、圖像與背景色彩。 您也可以將自訂標籤列新增到您的廣告 (如果您想要這麼做的話)。 或者，您可以上傳您自己的且符合我們要求的廣告設計。 如需詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 ## 我的廣告會在哪裡顯示？
-
 
 您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Windows 市集中發行 app 時，您可以設定這些屬性。
 
@@ -33,18 +33,15 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 
 ## 廣告活動支援哪些語言？
 
-
 可以使用下列語言建立廣告活動：
 
 阿拉伯文、簡體中文、繁體中文、丹麥文、荷蘭文、英文、芬蘭文、法文、德文、義大利文、挪威文、葡萄牙文 (巴西)、葡萄牙文 (葡萄牙)、西班牙文、瑞典文。
 
 ## 何時將開始付費？
 
-
 將會於下個月初向您收取任何指定月份的費用。
 
 ## 我要如何刪除信用卡或編輯信用卡的詳細資料？
-
 
 請移至 <http://commerce.microsoft.com>，使用您的 Microsoft 帳戶認證登入，並進行必要的變更。
 
@@ -53,10 +50,10 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 * [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
 * [管理您的廣告活動](managing-your-ad-campaign.md)
 * [關於自家廣告](about-house-ads.md)
+* [關於社群廣告](about-community-ads.md)
 * [App 安裝廣告報告](app-install-ads-reports.md)
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
 title: Windows 市集應用程式行銷指導方針
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
@@ -31,7 +32,7 @@ ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 
 ## 授與 Microsoft 商標權限
 
-*Microsoft 徽章*表示在 [徽章產生器][](http://go.microsoft.com/fwlink/p/?LinkID=534236) 頁面上所描述的 *Microsoft 徽章*和 *Windows 市集磚*。 若要使用這些徽章，您必須：
+*Microsoft 徽章*表示在 [徽章產生器](http://go.microsoft.com/fwlink/p/?LinkID=534236) 頁面上所描述的 *Microsoft 徽章*和 *Windows 市集磚*。 若要使用這些徽章，您必須：
 
 -   在 Windows 市集中提供您的 app 或其他內容，或參與 [Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)。
 
@@ -52,6 +53,6 @@ Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

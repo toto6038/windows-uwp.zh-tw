@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務應用程式識別碼和權杖。 您可以在 [服務] 區段中的 [地圖] 頁面的開發人員中心儀表板取得這個權杖。
 title: 使用地圖服務
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
@@ -26,6 +27,6 @@ ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

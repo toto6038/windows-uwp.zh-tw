@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 在您提交 app 時，可以選擇使用「認證注意事項」頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。
 title: 認證注意事項
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
@@ -42,6 +43,6 @@ ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

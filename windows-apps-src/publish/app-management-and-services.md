@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。
 title: App 管理與服務
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
@@ -77,6 +78,6 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

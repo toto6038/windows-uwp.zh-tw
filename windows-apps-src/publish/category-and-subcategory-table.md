@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
 title: 類別與子類別表格
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
@@ -58,6 +59,6 @@ Windows 市集可以組織 app，以分成下列類別與子類別。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的 Qpp 包含在其映像中。
 title: 針對 OEM 產生預先安裝套件
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
@@ -34,7 +35,7 @@ ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ## 支援
 
 
-如果您對於產生預先安裝套件有其他疑問，請傳送電子郵件至 <partnerops@microsoft.com>。
+如果您對於產生預先安裝套件有其他疑問，請寄送電子郵件到 <partnerops@microsoft.com>。
 
  
 
@@ -45,6 +46,6 @@ ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

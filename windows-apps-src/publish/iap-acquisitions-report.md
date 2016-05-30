@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 開發人員中心儀表板的 [IAP 下載數] 報告讓您能夠查看您已經銷售多少 IAP、人數統計資料及平台詳細資料。
 title: IAP 下載數報告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
@@ -64,6 +65,6 @@ Windows 開發人員中心儀表板的 [IAP 下載數]**** 報告讓您能夠查
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

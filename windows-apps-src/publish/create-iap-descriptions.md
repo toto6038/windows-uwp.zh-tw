@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 提交 IAP 時，您在步驟中輸入的資訊將會顯示給您的 app 客戶。
 title: 建立 IAP 說明
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
@@ -44,6 +45,6 @@ ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

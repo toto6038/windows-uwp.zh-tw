@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您要透過 Windows 開發人員中心儀表板發佈 IAP。
 title: IAP 提交
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
@@ -62,6 +63,6 @@ IAP 提交程序的第一步是在儀表板中[定義產品識別碼](set-your-i
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

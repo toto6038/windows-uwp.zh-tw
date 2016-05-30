@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。
 title: 解決提交錯誤
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
@@ -40,6 +41,6 @@ ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 開發人員中心儀表板會提供選項，讓您的 app 僅供指定人員使用，這樣您就可以在公開提供之前，讓測試者試試看。
 title: 搶鮮版 (Beta) 測試和特定對象的發佈
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
@@ -80,6 +81,6 @@ ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 -   在測試者下載 app 之後，您無法撤銷對 app 的存取。 一旦他們下載 app，便可以繼續使用，並將可取得您送出的更新。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

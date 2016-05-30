@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 當您建立完應用程式的提交作業並且按一下 [提交至市集] 時，應用程式就進入認證步驟。
 title: 應用程式認證程序
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
@@ -35,7 +36,7 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 
 ## 在市集中 
 
-成功進行上述步驟之後，客戶就能在 Windows 市集下載您的提交項目 (除非您選擇了其他 [配送和可見性][](set-app-pricing-and-availability.md#distribution-and-visibility) 選項)。
+成功進行上述步驟之後，客戶就能在 Windows 市集下載您的提交項目 (除非您選擇了其他 [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)選項)。
 
 **注意：**我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
@@ -50,6 +51,6 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 您的付款現在將透過您的開發人員中心支付帳戶來支付。
 title: pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
@@ -7,22 +8,17 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 # pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
 
 
-如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 您的付款現在將透過您的開發人員中心支付帳戶來支付。
+如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 現在透過開發人員中心支付帳戶付款。
 
-為了確保會準時提交任何應付款項，請在 2016 年 3 月 31 日之前登入您的開發人員中心儀表板，並確認您的[支付帳戶和稅務設定檔](setting-up-your-payout-account-and-tax-forms.md)均已正確設定且是最新設定。
+為了確保會準時提交任何應付款項，請登入您的開發人員中心儀表板，並確認您的[支付帳戶和稅務設定檔](setting-up-your-payout-account-and-tax-forms.md)均已正確設定且是最新設定。
 
-> **重要**：如果您未曾在開發人員中心設定您的支付帳戶或稅金設定檔，則需在 2016 年 3 月 31 日之前執行該動作。 如需詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
+> **重要：**如果您未曾在開發人員中心設定您的支付帳戶或稅金設定檔，則需立即執行該動作。 如需詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
 
 如需開發人員中心的付款詳細資訊，請參閱[支付摘要](payout-summary.md)。 如需不同國家與地區中用於支付的貨幣相關資訊，請參閱[開發人員帳戶與 App 提交市場](account-types-locations-and-fees.md#account_markets)。
 
 我們也建議檢閱下列的常見問題集，以取得更多有關特定案例的資訊。
 
 ## 常見問題集
-
-
-### 對於我的 2016 年 3 月的支付，將會使用哪一個帳戶？
-
-在 2016 年 3 月，我們仍將使用您在 pubCenter 中設定的支付帳戶和稅金設定檔。 這將是我們最後一次使用該資訊。 從 2016 年 4 月 1 日開始，您的 Microsoft Advertising 獲益將會支付到您在開發人員中心設定的 PayPal 或銀行帳戶。
 
 ### 我已在同一個地區/國家中使用同一個 Microsoft 帳戶註冊我的 pubCenter 和開發人員中心帳戶。 我該如何收到我的獲利？
 
@@ -84,6 +80,6 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

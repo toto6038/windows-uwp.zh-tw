@@ -1,10 +1,11 @@
 ---
-Description: 如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。
-title: app 如何在市集中顯示給 Windows 10 客戶
+author: jnHs
+Description: 如果您先前在 Windows 或 Windows Phone 市集發行 App，Windows 10 裝置的客戶也可以取得這些 App。
+title: App 如何在市集中顯示給 Windows 10 客戶
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ---
 
-# app 如何在市集中顯示給 Windows 10 客戶
+# App 如何在市集中顯示給 Windows 10 客戶
 
 
 如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
@@ -78,10 +79,10 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 | 健康 + 健身 &gt; 健康            | 健康 + 健身              |
 | 生活方式 &gt; 藝術 + 娛樂      | 生活方式                     |
 | 生活方式 &gt; 室外 + 相關資訊              | 生活方式                     |
-| 生活方式 &gt; 食品 + 餐飲            | 食品 + 餐飲                 |
+| 生活方式 &gt; 美食            | 食品 + 餐飲                 |
 | 生活方式 &gt; 購物                 | 購物                      |
 | 新聞 + 天氣 &gt; 國際       | 新聞 + 天氣                |
-| 新聞 + 天氣 &gt; 當地 + 國際    | 新聞 + 天氣                |
+| 新聞 + 天氣 &gt; 當地 + 國內    | 新聞 + 天氣                |
 | 公用程式 + 生產力                | 公用程式 + 工具             |
 | 旅遊 + 導覽                     | 旅遊                        |
 | 旅遊 + 導航 &gt; 計劃       | 旅遊                        |
@@ -97,7 +98,7 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 
  
 
-**Windows 8 app 的類別變更：**
+**Windows 8 App 的類別變更：**
 
 | 上一個類別           | 新類別                         |
 |-----------------------------|--------------------------------------|
@@ -116,6 +117,6 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 | 遊戲 &gt; 賽車           | 遊戲 &gt; 賽車 + 飛行           |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理您的帳戶設定與個人檔案資訊
 description: 您可以在整合的 Windows 開發人員中心儀表板中的 [帳戶設定] 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。
@@ -31,6 +32,6 @@ description: 您可以在整合的 Windows 開發人員中心儀表板中的 [�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

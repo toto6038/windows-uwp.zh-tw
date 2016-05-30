@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 廣告流量分配報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。
 title: 廣告流量分配報告
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
@@ -62,6 +63,6 @@ ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

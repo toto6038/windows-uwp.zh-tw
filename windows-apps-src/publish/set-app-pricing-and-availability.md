@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以從應用程式提交程序的 [價格與可用性] 頁面決定您的應用程式價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的應用程式。
 title: 設定應用程式價格與可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
@@ -97,6 +98,6 @@ ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

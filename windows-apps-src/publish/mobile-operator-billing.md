@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。
 title: 電信業者帳單
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -9,7 +10,7 @@ ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 
 Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。 如果客戶的電信業者支援這項功能，客戶就能使用他們的行動裝置帳戶在市集購物。
 
-> **注意** 如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上沒有這個選項，請參閱這些[疑難排解步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
+> **注意：**如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上沒有這個選項，請參閱這些[疑難排解步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
  
 
@@ -43,7 +44,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 澳大利亞            | Telstra                                                            |
 | 奧地利              | A1 Telekom、T-Mobile                                               |
 | 巴林              | Zain、VIVA                                                         |
-| 比利時              | BASE, Mobistar                                                     |
+| 比利時              | BASE、Mobistar、Proximus                                                     |
 | 巴西               | Claro                                                              |
 | 保加利亞             | Telenor                                                            |
 | 加拿大               | Fido、Rogers、Telus                                                |
@@ -64,7 +65,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 匈牙利              | Telenor、T-Mobile                                                  |
 | 印度                | Idea                                                               |
 | 印尼            | Indosat、Telkomsel、XL Axiata、AXIS                                |
-| 愛爾蘭              | O2、Vodafone                                                       |
+| 愛爾蘭              | O2、Vodafone、Three                                                      |
 | 義大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | 約旦               | Zain、Umniah                                                       |
 | 肯亞                | Safaricom                                                          |
@@ -82,7 +83,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 波蘭               | T-Mobile、Orange、Polkomtel (Plus)                                 |
 | 波多黎各          | Claro                                                              |
 | 羅馬尼亞              | Orange、Vodafone                                                   |
-| 俄羅斯               | Beeline                                                            |
+| 俄羅斯               | Beeline、MTS                                                          |
 | 沙烏地阿拉伯         | Zain                                                               |
 | 新加坡            | M1、SingTel、StarHub                                               |
 | 斯洛伐克             | T-Mobile                                                           |
@@ -94,7 +95,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 泰國             | DTAC                                                               |
 | 阿拉伯聯合大公國 | Etisalat、Du                                                       |
 | 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
-| 美國        | AT&T、Sprint、T-Mobile、Verizon                                    |
+| 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
 | 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
@@ -110,6 +111,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

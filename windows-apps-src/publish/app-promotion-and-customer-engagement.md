@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 一旦 app 在 Windows 市集上架，就必須讓更多客戶看到您的 app。
 title: App 促銷與客戶參與
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
@@ -16,7 +17,7 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 -   [回應客戶評論](respond-to-customer-reviews.md)
 -   [Windows 市集應用程式行銷指導方針](app-marketing-guidelines.md)
 -   [連結至您的 app](link-to-your-app.md)
--   [讓您的 app 更易於促銷](make-your-app-easier-to-promote.md)
+-   [讓您的 app 更容易促銷](make-your-app-easier-to-promote.md)
 
  
 
@@ -27,6 +28,6 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

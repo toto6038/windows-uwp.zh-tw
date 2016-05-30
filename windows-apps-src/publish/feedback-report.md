@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 開發人員中心儀表板中的意見反應報告可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。
 title: 意見反應報告
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
@@ -7,6 +8,8 @@ ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 # 意見反應報告
 
 鼓勵客戶提供有關您應用程式的意見反應，是了解對他們而言最重要的問題和功能的不錯方式。 當客戶知道他們可以直接將意見反應傳送給您時，較不可能留下負面評論的意見反應。 
+
+> **注意** 本文章中所述的意見反應報告尚未提供給所有開發人員帳戶使用。
 
 您可以使用 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您應用程式的所有客戶，都可以使用意見反應中樞應用程式留下意見反應。 因此，您可能會在此報告中看到客戶的意見反應，即使您未在應用程式內明確要求意見反應也是一樣。
 
@@ -49,6 +52,6 @@ Windows 開發人員中心儀表板中的**意見反應**報告可讓您查看 W
 如前所述，建議直接在您的應用程式中納入意見反應中樞的連結，鼓勵客戶提供意見反應。 如需詳細資訊，請參閱[從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

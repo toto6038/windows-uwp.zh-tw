@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 此處提供一些您需要用來確認收到應用程式、應用程式內產品 (IAP) 及 Microsoft Advertising 營收之付款的重要資訊。
 title: 獲得報酬
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
@@ -55,6 +56,6 @@ Windows 市集費用適用於 Windows 市集收取的所有 app 銷售金額，�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

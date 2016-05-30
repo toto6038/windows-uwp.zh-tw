@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 在 Windows 開發人員中心儀表板中使用 app 時，您可以檢視由 Windows 市集指派給 app 的唯一身分識別相關詳細資料，以及取得 app 市集清單的連結。
 title: 檢視 app 身分識別詳細資料
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
@@ -35,12 +36,13 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 ## App 清單連結
 
+您可以分享連至您 app 頁面的連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
 
-您可以分享連至您 app 頁面的連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Product ID>`**。
+> **注意** 此 URL 適用於任何可使用您 App 的作業系統版本。 您可能也會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
 
-> **注意** 根據您的目標作業系統版本而定，您可能會看到一個以上的連結。 所有 app 都會顯示使用上述格式適用於 Windows 10 的 URL，對任何作業系統都能發生作用。 您可能會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
+當客戶按一下此連結時，會開啟您 App 的網頁清單頁面。 如果您的 App 適用於客戶的 Windows 裝置，市集 App 也會啟動並顯示您的 App 清單。
 
-當客戶按一下此連結時，會開啟您 app 的網頁清單頁面。 如果您的 app 適用於客戶的 Windows 裝置，市集 app 也會啟動並顯示您的 app 清單。
+您 App 的**市集識別碼**也會在此區段中顯示。 這個市集識別碼可用來[產生市集徽章](http://go.microsoft.com/fwlink/p/?LinkId=534236)，或識別您的 App。
 
  
 
@@ -51,6 +53,6 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

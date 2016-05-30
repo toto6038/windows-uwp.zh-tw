@@ -1,5 +1,6 @@
 ---
-Description: 如果您的應用程式使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。
+author: jnHs
+Description: 如果您的 app 使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。
 title: 利用廣告獲利
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ---
@@ -7,7 +8,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 # 利用廣告獲利
 
 
-如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項來顯示橫幅或影片插入式廣告，請使用 [創造營收]**** &gt; [利用廣告獲利]**** 頁面來管理廣告的使用方式。
+如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項來顯示橫幅或影片插入式廣告，請使用 [創造營收]****&gt;[利用廣告獲利]**** 頁面來管理廣告的使用方式。
 
 ## Windows 廣告流量分配
 
@@ -20,7 +21,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 
 基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的 app 是針對 13 歲以下的兒童，則您必須通知 Microsoft。 如果您使用開發人員中心來通知 Microsoft 有關您 app 是針對 13 歲以下的兒童，當傳送廣告到您 app 時，Microsoft 會採取步驟來停用其行為廣告服務。 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。
 
-如需有關 COPPA 規範義務的詳細資訊，請參閱[本頁](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+如需有關 COPPA 規範義務的詳細資訊，請參閱[此頁面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
 
 ## Microsoft 聯盟廣告
 
@@ -28,7 +29,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 
 如果您變更此選取項目，不需要重新發佈您的 app，變更就會生效。 如需 Microsoft 聯盟廣告的詳細資訊，請參閱[關於聯盟廣告](about-affiliate-ads.md)。
 
-> **注意**：如果您的應用程式使用廣告流量分配 (也就是使用 **AdMediatorControl** 來顯示廣告)，則只有在廣告流量分配設定為顯示來自 Microsoft 的廣告時，您的應用程式才可顯示聯盟廣告。
+> **注意：**如果您的應用程式使用廣告流量分配 (也就是使用 **AdMediatorControl** 來顯示廣告)，則只有在廣告流量分配設定為顯示來自 Microsoft 的廣告時，您的應用程式才可顯示聯盟廣告。
 
 ## 社群廣告
 
@@ -55,7 +56,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 -   如果您的 app 顯示橫幅廣告，請將這些值指派給 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 屬性。
 -   如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
 
-> **注意** 如果您的 app 使用廣告流量分配顯示來自 Microsoft Advertising 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生 Microsoft Advertising 廣告單元。
+> **注意：**如果您的 app 使用廣告流量分配顯示來自 Microsoft Advertising 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生 Microsoft Advertising 廣告單元。
 
  
 
@@ -64,6 +65,6 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

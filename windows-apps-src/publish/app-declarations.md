@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。
 title: 應用程式宣告
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
@@ -61,6 +62,6 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

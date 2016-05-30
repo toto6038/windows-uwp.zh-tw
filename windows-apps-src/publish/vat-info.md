@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果您被要求在開發人員中心註冊程序期間提供 VAT 識別碼，本文提供可幫助您開始的一些資訊。
 title: VAT 資訊
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
@@ -245,6 +246,6 @@ ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

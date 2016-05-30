@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 title: 避免常見的認證失敗
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
@@ -39,6 +40,6 @@ ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

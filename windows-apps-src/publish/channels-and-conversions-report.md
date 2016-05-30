@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 開發人員中心儀表板的 [通道與轉換] 報告可讓您查看使用 Windows 10 的客戶如何找到您的 app 清單。
 title: 通道與轉換報告
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
@@ -92,6 +93,6 @@ Windows 開發人員中心儀表板的 [**通道與轉換**] 報告可讓您查�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

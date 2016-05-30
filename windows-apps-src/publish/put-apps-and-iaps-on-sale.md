@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以在限定時間內降價銷售您的 app 或應用程式內產品 (IAP)，以在 Windows 市集進行促銷。
 title: 促銷 app 和 IAP
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
@@ -64,6 +65,6 @@ ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

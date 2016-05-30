@@ -1,5 +1,6 @@
 ---
-Description: 您可以為您在 Windows 市集中發行的 app 或 app 內產品 (IAP) 產生促銷碼。
+author: jnHs
+Description: 您可以為您在 Windows 市集中發行的 App 或應用程式內產品 (IAP) 產生促銷碼。
 title: 產生促銷碼
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ---
@@ -68,7 +69,7 @@ ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 
     -   **可兌換的 URL**：使用者可以用來兌換代碼並安裝您的 app 或 IAP 的 URL。 URL 具有下列格式：
 
-        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code>
+        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code&gt;
 
     -   **訂購日期**：下單訂購此代碼的日期。
     -   **到期日期**：此代碼的到期日期。
@@ -88,17 +89,17 @@ ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 
 1.  使用者按一下可兌換的 URL。
 
-    瀏覽器開啟至已驗證的 [**兌換您的代碼**] 頁面，位置是：<https://account.microsoft.com/billing/redeem>。 這個頁面包含使用者即將兌換之 app 的描述。
+    瀏覽器開啟到經驗證的**兌換您的代碼**頁面，網址：<https://account.microsoft.com/billing/redeem>。 這個頁面包含使用者即將兌換 app 的描述。
 
-2.  使用者按一下 [**兌換**]。
+2.  使用者按一下 [兌換]****。
 
-    瀏覽器會瀏覽至具有 [**取得** ***&lt;your app name&gt;***] 連結的 [**感謝您**] 頁面。
+    瀏覽器會瀏覽至具有 [**取得*****&lt;your app name&gt;***] 連結的 [感謝您]**** 頁面。
 
     > **注意** 如果您的應用程式尚未發佈，使用者會在此步驟收到錯誤。
 
-3.  使用者按一下 [**取得** ***&lt;your app name&gt;***]。
+3.  使用者按一下 [**取得*****&lt;your app name&gt;***]。
 
-4.  如果使用者是使用具備適用於 Windows 10 或 Windows 8.1 之 Windows 市集的電腦上，Windows 市集會開啟應用程式的概觀頁面。 使用者可以按一下 [安裝]**** 來免費安裝 app。
+4.  如果使用者是使用已安裝適用於 Windows 10 或 Windows 8.1 之 Windows 市集的電腦，Windows 市集會開啟應用程式的概觀頁面。 使用者可以按一下 [安裝]**** 來免費安裝 app。
 
     如果使用者是在未安裝 Windows 市集的電腦或裝置上，瀏覽器會開啟至 app 的 Windows 市集頁面。 使用者可以按一下 [安裝]**** 來免費安裝 app。
 
@@ -129,6 +130,6 @@ ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

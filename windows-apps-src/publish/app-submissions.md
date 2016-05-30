@@ -1,22 +1,16 @@
 ---
-Description: 一旦您已透過保留名稱來建立您的 app，您可以開始進行發行。 第一個步驟是建立提交項。
-title: App 提交
-ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-關鍵字：提交 app
-關鍵字：必要資訊
-關鍵字：必要欄位
-關鍵字：必要資料
-關鍵字：檢查清單
+Description&#58; 作者：jnHs 一旦您已透過保留名稱來建立您的 app，您就可以開始進行發行。 第一個步驟是建立提交。
+title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords&#58; submit an app keywords&#58; required info keywords&#58; required fields keywords&#58; required data keywords&#58; checklist
 ---
 
 # App 提交
 
 
-一旦您已[透過保留名稱來建立您的 app](create-your-app-by-reserving-a-name.md)，您可以開始進行發行。 第一個步驟是建立**提交**。
+一旦您已[透過保留名稱來建立您的 app](create-your-app-by-reserving-a-name.md)，您就可以開始進行發行。 第一個步驟是建立**提交**。
 
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 提交將儲存於儀表板中，如此一來，每當您準備好時，即可加以使用。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要對 app 建立新的提交，請按一下 app [概觀] 頁面上所顯示最新提交旁的 [更新]****。
+發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 app 建立新的提交，請按一下 app [概觀] 頁面上所顯示最新提交旁的 [更新]。
 
 ## App 提交檢查清單
 
@@ -98,6 +92,6 @@ ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 **注意**如需直接將企業營運 (LOB) App 發佈到企業的相關資訊，請參閱[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

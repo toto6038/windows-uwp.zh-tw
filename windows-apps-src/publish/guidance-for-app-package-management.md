@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解您的 app 套件是如何提供給您的客戶，以及如何管理特定套件案例。
 title: App 套件管理指導方針
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
@@ -133,6 +134,6 @@ ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

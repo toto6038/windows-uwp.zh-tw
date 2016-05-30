@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 讓您的 app 成為矚目的焦點！ 除了讓您的 app 達到最好的功能之外，還有一些您可以做到的事，就是讓 Windows 市集和其他網站更容易展現您的 app，讓更多人注意到它。
 title: 讓您的 app 更容易促銷
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
@@ -43,6 +44,6 @@ Windows 市集會依類別或主題分組展示不同的應用程式。 因為�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

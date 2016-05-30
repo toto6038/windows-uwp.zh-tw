@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂有哪些介紹的部分。
 title: 建立特定平台的介紹
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
@@ -44,6 +45,6 @@ ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

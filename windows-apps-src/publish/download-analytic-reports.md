@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 您可以下載包含您分析資料的 .files，這樣您可以離線檢閱您的統計資料和資訊。
 title: 下載分析報告
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
@@ -22,6 +23,6 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 4.  按一下 [下載報告]**** 按鈕，然後儲存或開啟 .tsv 檔案。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

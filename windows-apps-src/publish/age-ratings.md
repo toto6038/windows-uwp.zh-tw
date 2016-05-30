@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: App 提交程序的 [年齡分級] 頁面讓您能夠提供 app 的相關資訊，因此，它可以接收到來自國際年齡分級聯盟 (IARC) 的適當年齡分級。
 title: 年齡分級
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
@@ -44,6 +45,6 @@ ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 | 18+ (適合成人)            | 這個年齡分級的遊戲可包含只適合成人之強烈、嚴重或特殊的暴力或血腥內容。 所有內容必須符合[內容原則](https://msdn.microsoft.com/library/windows/apps/dn764944)準則。                                                                                                                                                            |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
