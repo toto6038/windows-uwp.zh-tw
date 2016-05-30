@@ -1,8 +1,9 @@
 ---
+author: Xansky
 description: 本主題示範如何啟動 [撰寫 SMS] 對話方塊，讓使用者傳送 SMS 訊息。 您可以在顯示該對話方塊之前，使用資料預先填入 SMS 的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。
 title: 傳送 SMS 訊息
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-關鍵字：連絡人, SMS, 傳送
+keywords: contacts, SMS, send
 ---
 
 # 傳送 SMS 訊息
@@ -14,12 +15,12 @@ ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 
 ## 啟動 [撰寫 SMS] 對話方塊
 
-建立一個新的 [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/Dn642160) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync) 以顯示該對話方塊。
+建立一個新的 [**ChatMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.chatmessage) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) 以顯示該對話方塊。
 
 ```cs
-private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
-    StorageFile attachmentFile, 
+private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
+    StorageFile attachmentFile,
     string mimeType)
 {
     var chatMessage = new Windows.ApplicationModel.Chat.ChatMessage();
@@ -36,7 +37,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Attachments.Add(attachment);
     }
 
-    var phone = recipient.Phones.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactPhone&gt;();
+    var phone = recipient.Phones.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactPhone>();
     if (phone != null)
     {
         chatMessage.Recipients.Add(phone.Number);
@@ -54,8 +55,6 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 * [選取連絡人](selecting-contacts.md)
 
 
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

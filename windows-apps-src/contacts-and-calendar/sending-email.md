@@ -1,8 +1,9 @@
 ---
+author: Xansky
 description: 示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。
 title: 傳送電子郵件
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-關鍵字：連絡人, 電子郵件, 傳送
+keywords: contacts, email, send
 ---
 
 # 傳送電子郵件
@@ -41,7 +42,7 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
         emailMessage.Attachments.Add(attachment);
     }
 
-    var email = recipient.Emails.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactEmail&gt;();
+    var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
     if (email != null)
     {
         var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
@@ -70,6 +71,6 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,14 +1,6 @@
 ---
-description: 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
-title: 選取連絡人
-ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-關鍵字：連絡人, 選取
-關鍵字：選取單一連絡人
-關鍵字：選取多個連絡人
-關鍵字：連絡人, 選取多個
-關鍵字：選取特定的連絡人資料
-關鍵字：連絡人, 選取特定資料
-關鍵字：連絡人, 選取特定欄位
+description&#58; author：Xansky 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
+title&#58; 選取連絡人 ms.assetid&#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 關鍵字&#58; 連絡人, 選取 關鍵字&#58; 選取單一連絡人的 關鍵字&#58; 選取多個連絡人 關鍵字&#58; 連絡人, 選取多個 關鍵字&#58; 選取特定連絡人資料 關鍵字&#58; 連絡人, 選取特定資料 關鍵字&#58; 連絡人, 選取特定欄位
 ---
 
 # 選取連絡人
@@ -29,7 +21,8 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ## 設定選取模式 (選擇性)
 
 根據預設，連絡人選擇器會抓取使用者選取之連絡人的所有可用資料。 [
-            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
+              **SelectionMode**
+            ](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
 
 首先，將 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 屬性設定成 **Fields**：
 
@@ -52,7 +45,7 @@ Contact contact = await contactPicker.PickContactAsync();
 如果您想讓使用者選取一或多位連絡人，請使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync)。
 
 ```cs
-public IList&lt;Contact&gt; contacts;
+public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
@@ -69,14 +62,14 @@ if (contact != null)
 }
 else
 {
-    rootPage.NotifyUser(&quot;No contact was selected.&quot;, NotifyType.ErrorMessage);
+    rootPage.NotifyUser("No contact was selected.", NotifyType.ErrorMessage);
 }
 ```
 
 這個範例示範如何處理多位連絡人。
 
 ```cs
-if (contacts != null &amp;&amp; contacts.Count &gt; 0)
+if (contacts != null && contacts.Count > 0)
 {
     foreach (Contact contact in contacts)
     {
@@ -122,36 +115,36 @@ private async void PickAContactButton-Click(object sender, RoutedEventArgs e)
     }
 }
 
-private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt; fields)
+private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 {
-    if (fields.Count &gt; 0)
+    if (fields.Count > 0)
     {
         StringBuilder output = new StringBuilder();
 
         if (fields[0].GetType() == typeof(ContactEmail))
         {
-            foreach (ContactEmail email in fields as IList&lt;ContactEmail&gt;)
+            foreach (ContactEmail email in fields as IList<ContactEmail>)
             {
-                output.AppendFormat(&quot;Email: {0} ({1})\n&quot;, email.Address, email.Kind);
+                output.AppendFormat("Email: {0} ({1})\n", email.Address, email.Kind);
             }
         }
         else if (fields[0].GetType() == typeof(ContactPhone))
         {
-            foreach (ContactPhone phone in fields as IList&lt;ContactPhone&gt;)
+            foreach (ContactPhone phone in fields as IList<ContactPhone>)
             {
-                output.AppendFormat(&quot;Phone: {0} ({1})\n&quot;, phone.Number, phone.Kind);
+                output.AppendFormat("Phone: {0} ({1})\n", phone.Number, phone.Kind);
             }
         }
         else if (fields[0].GetType() == typeof(ContactAddress))
         {
-            List&lt;String&gt; addressParts = null;
-            string unstructuredAddress = &quot;&quot;;
+            List<String> addressParts = null;
+            string unstructuredAddress = "";
 
-            foreach (ContactAddress address in fields as IList&lt;ContactAddress&gt;)
+            foreach (ContactAddress address in fields as IList<ContactAddress>)
             {
-                addressParts = (new List&lt;string&gt; { address.StreetAddress, address.Locality, address.Region, address.PostalCode });
-                unstructuredAddress = string.Join(&quot;, &quot;, addressParts.FindAll(s =&gt; !string.IsNullOrEmpty(s)));
-                output.AppendFormat(&quot;Address: {0} ({1})\n&quot;, unstructuredAddress, address.Kind);
+                addressParts = (new List<string> { address.StreetAddress, address.Locality, address.Region, address.PostalCode });
+                unstructuredAddress = string.Join(", ", addressParts.FindAll(s => !string.IsNullOrEmpty(s)));
+                output.AppendFormat("Address: {0} ({1})\n", unstructuredAddress, address.Kind);
             }
         }
 
@@ -171,18 +164,18 @@ private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt;
 
 ```cs
 MainPage rootPage = MainPage.Current;
-public IList&lt;Contact&gt; contacts;
+public IList<Contact> contacts;
 
 private async void PickContactsButton-Click(object sender, RoutedEventArgs e)
 {
     var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
-    contactPicker.CommitButtonText = &quot;Select&quot;;
+    contactPicker.CommitButtonText = "Select";
     contacts = await contactPicker.PickContactsAsync();
 
     // Clear the ListView.
     OutputContacts.Items.Clear();
 
-    if (contacts.Count &gt; 0)
+    if (contacts != null && contacts.Count > 0)
     {
         OutputContacts.Visibility = Windows.UI.Xaml.Visibility.Visible;
         OutputEmpty.Visibility = Visibility.Collapsed;
@@ -209,19 +202,19 @@ public class ContactItemAdapter
     public ContactItemAdapter(Contact contact)
     {
         Name = contact.DisplayName;
-        if (contact.Emails.Count &gt; 0)
+        if (contact.Emails.Count > 0)
         {
             SecondaryText = contact.Emails[0].Address;
         }
-        else if (contact.Phones.Count &gt; 0)
+        else if (contact.Phones.Count > 0)
         {
             SecondaryText = contact.Phones[0].Number;
         }
-        else if (contact.Addresses.Count &gt; 0)
+        else if (contact.Addresses.Count > 0)
         {
-            List&lt;string&gt; addressParts = (new List&lt;string&gt; { contact.Addresses[0].StreetAddress, 
+            List<string> addressParts = (new List<string> { contact.Addresses[0].StreetAddress,
               contact.Addresses[0].Locality, contact.Addresses[0].Region, contact.Addresses[0].PostalCode });
-              string unstructuredAddress = string.Join(&quot;, &quot;, addressParts.FindAll(s =&gt; !string.IsNullOrEmpty(s)));
+              string unstructuredAddress = string.Join(", ", addressParts.FindAll(s => !string.IsNullOrEmpty(s)));
             SecondaryText = unstructuredAddress;
         }
     }
@@ -234,6 +227,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
