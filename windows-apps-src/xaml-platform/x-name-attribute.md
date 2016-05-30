@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。
 title: xName 屬性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 
-# x:Name 屬性
+# x&#58;Name 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -30,7 +31,7 @@ ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -65,6 +66,6 @@ UWP XAML 中使用的一些類型也具有名為 **Name** 的屬性。 例如，
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

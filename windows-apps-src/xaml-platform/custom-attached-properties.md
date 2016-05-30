@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。
 title: 自訂附加屬性
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
@@ -34,21 +35,21 @@ ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 
 **Get**_PropertyName_ 存取子的簽章必須是這個。
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **Get** _PropertyName_ `(DependencyObject target)`
 
 若為 Microsoft Visual Basic，它是這個。
 
-` Public Shared Function Get` _PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_ `)`
+` Public Shared Function Get`_PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_`)`
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 傳回值也可以是實作中的更具體類型。 基本 **Object** 類型是可以被接受的，不過通常您會希望您的附加屬性強制執行類型安全技術。 建議的類型安全技術是在 getter 和 setter 簽章中使用類型。
 
 **Set***PropertyName* 存取子的簽章必須是這個。
 
-`  public static void Set` _PropertyName_ ` (DependencyObject target , ` _valueType_ ` value)`
+`  public static void Set`_PropertyName_ ` (DependencyObject target , ` _valueType_` value)`
 
 若為 Visual Basic，它是這個。
 
-`Public Shared Sub Set` _PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_ `)`
+`Public Shared Sub Set`_PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_`)`
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 物件及它的 *valueType* 可以是實作中的更具體類型。 請記住，這個方法的值是 XAML 處理器在標記中遇到附加屬性時，來自於 XAML 處理器的輸入。 您使用的類型必須取得類型轉換或現有標記延伸的支援，這樣才能從屬性值建立適當的類型 (最終只是字串)。 基本 **Object** 類型是可以接受的，但是通常您會想要更進一步的類型安全性。 若要這樣做，請將類型強制放到存取子中。
 
@@ -175,7 +176,7 @@ GameService::RegisterDependencyProperties() {
 
 XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 例如，針對包含前面程式碼片段中所示之附加屬性定義的命名空間 `UserAndCustomControls` 中名為 `GameService` 的類別，其對應看起來就會像這樣。
 
-```XAML
+```XML
 <UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:uc="using:UserAndCustomControls"
@@ -185,30 +186,14 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 
 使用對應即可在符合您目標定義的任何元素上設定您的 `GameService.IsMovable` 附加屬性，包括 Windows 執行階段定義的現有類型。
 
-```XAML
-<Image uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<Image uc:GameService.IsMovable="true" .../>
 ```
 
 如果您在某個元素上設定屬性且該元素也在同一個對應的 XML 命名空間中，仍然需要在附加屬性名稱上包含前置詞。 這是因為前置詞會限定擁有者類型。 您不能假設附加屬性的屬性一定位於與包含屬性的元素相同的 XML 命名空間內；不過，根據一般的 XML 規則，屬性可以從元素繼承命名空間。 例如，如果您在自訂類型的 `ImageWithLabelControl` 上設定 `GameService.IsMovable` (未顯示定義)，而且即使這兩者是在對應到相同前置詞的同一個程式碼命名空間中定義的，XAML 仍然會是這個。
 
-```XAML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XAML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
 **注意** 如果您使用 C++ 來撰寫 XAML UI，只要 XAML 頁面使用定義附加屬性的自訂類型時，您都必須為這個類型包含標頭。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
@@ -258,6 +243,6 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

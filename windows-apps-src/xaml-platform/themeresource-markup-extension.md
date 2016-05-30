@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。
 title: ThemeResource 標記延伸
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
@@ -20,7 +21,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 | 詞彙 | 說明 |
 |------|-------------|
-| 索引鍵 | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
+| 索引鍵 | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
  
 ## 備註
 
@@ -61,7 +62,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 類型屬性。
 
-**注意：**Windows 8.1 XAML 中支援針對佈景主題切換的 `{ThemeResource}` 和執行階段資源評估，但在以 Windows 8 為目標之應用程式的 XAML 中則不支援。
+**注意：**Windows 8.1 XAML 中支援針對佈景主題切換的 `{ThemeResource}` 和執行階段資源評估，但在以 Windows 8 為目標之應用程式的 XAML 中則不支援。
 
 ### 系統資源
 
@@ -73,7 +74,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 這裡提供一些取自預設 generic.xaml 和 themeresources.xaml 檔案的範例 XAML，用來說明如何使用 **ThemeResource**。 我們只會看一個範本 (預設 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265))，以及如何宣告兩個屬性 ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) 以回應佈景主題變更。
 
-```xaml
+```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
@@ -86,7 +87,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 [
             **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
 
-```xaml
+```xml
 <VisualState x:Name="Pressed">
   <Storyboard>
     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
@@ -103,7 +104,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 這些筆刷中的每一個都是稍早在 generic.xaml 中定義：必須在使用這些筆刷的所有範本之前先行定義，才能避免 XAML 向前參考。 這裡針對「Default」佈景主題字典提供這些定義。
 
-```xaml
+```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
 ... 
@@ -117,7 +118,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 然後，每個其他的佈景主題字典也都定義這些筆刷，例如：
 
-```xaml
+```xml
         <ResourceDictionary x:Key="HighContrast">
             <!-- High Contrast theme resources -->
 ...
@@ -151,6 +152,6 @@ Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

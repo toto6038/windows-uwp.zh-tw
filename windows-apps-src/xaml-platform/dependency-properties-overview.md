@@ -1,5 +1,6 @@
 ---
-description: 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。
+author: jwmsft
+description: 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
 title: 相依性屬性概觀
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
@@ -34,7 +35,7 @@ ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 
 ## 相依性屬性與 Windows 執行階段屬性
 
-相依性屬性會藉由提供全域內部屬性儲存區來擴充基本的 Windows 執行階段屬性功能，這個屬性儲存區會在執行階段支援應用程式中的所有相依性屬性。 這是以私用欄位支援屬性的標準模式替代方案，而私用欄位在屬性定義類別中為私用的。 您可以將這個屬性儲存區想像成是為任一特定物件而存在的一組屬性識別碼和值 (只要它是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 即可)。 儲存區中的每個屬性是由 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 執行個體來識別，而不是由名稱來識別。 但是，屬性系統常會隱藏這個實作詳細資料：您通常可以使用簡單名稱 (程式碼語言中使用的程式設計屬性名稱，或是撰寫 XAML 時使用的屬性名稱) 來存取相依性屬性。
+相依性屬性會藉由提供全域內部屬性儲存區來擴充基本的 Windows 執行階段屬性功能，這個屬性儲存區會在執行階段支援應用程式中的所有相依性屬性。 這是以私用欄位支援屬性的標準模式替代方案，而私用欄位在屬性定義類別中為私用的。 您可以將這個內部屬性儲存區想像成是為任一特定物件而存在的一組屬性識別碼和值 (只要它是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 即可)。 儲存區中的每個屬性是由 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 執行個體來識別，而不是由名稱來識別。 但是，屬性系統常會隱藏這個實作詳細資料：您通常可以使用簡單名稱 (程式碼語言中使用的程式設計屬性名稱，或是撰寫 XAML 時使用的屬性名稱) 來存取相依性屬性。
 
 提供相依性屬性系統基礎的基底類型是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 **DependencyObject** 會定義可以存取相依性屬性的方法，而 **DependencyObject** 衍生類別的執行個體內部支援我們先前提及的屬性儲存區概念。
 
@@ -133,7 +134,7 @@ public bool IsSpinning
 
 下列範例會在 XAML 中使用繫結，以設定 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 值。 繫結會使用繼承的資料內容與物件資料來源 (這個簡短範例中並未顯示這兩者，如需顯示內容與來源的更完整範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946))。
 
-```XAML
+```XML
 <Canvas>
   <TextBlock Text="{Binding Team.TeamName}"/>
 </Canvas>
@@ -184,7 +185,7 @@ public bool IsSpinning
 
 ## **DependencyObject** 和執行緒處理
 
-所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段 app 所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
+所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段應用程式所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
 
 [
             **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
@@ -197,13 +198,13 @@ public bool IsSpinning
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML 使用者和自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**與相依性屬性相關的 API**
+* [XAML 使用者與自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581) 
+           **與相依性屬性相關的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

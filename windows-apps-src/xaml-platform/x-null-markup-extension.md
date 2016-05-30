@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 在 XAML 標記中，為屬性指定 null 值。
-title: x:Null 標記延伸
+title: x&#58;Null 標記延伸
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 
-# {x:Null} 標記延伸
+# {x&#58;Null} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -32,6 +33,6 @@ ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
-title: x:Phase 屬性
-description: 搭配使用 x:Phase 與 x:Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
+author: jwmsft
+title: x&#58;Phase 屬性
+description: 搭配使用 x&#58;Phase 與 x&#58;Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
-# x:Phase 屬性
+# x&#58;Phase 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -32,7 +33,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 ## 範例
 
-```xaml
+```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
     <Grid Width="200" Height="80">
         <Grid.ColumnDefinitions>
@@ -76,6 +77,6 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

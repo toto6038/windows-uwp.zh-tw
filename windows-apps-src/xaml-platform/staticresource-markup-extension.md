@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 透過評估對某個已定義資源的參考，以提供任一 XAML 屬性的值。 資源是在 ResourceDictionary 中定義，而 StaticResource 用法會參考該資源在 ResourceDictionary 中的索引鍵。
 title: StaticResource 標記延伸
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
@@ -45,7 +46,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 這個 XAML 範例來自 [XAML 資料繫結範例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
-```xaml
+```xml
 <StackPanel Margin="5">
     <!-- Add converter as a resource to reference it from a Binding. --> 
     <StackPanel.Resources>
@@ -70,7 +71,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 當您在 XAML 頁面中使用 **{StaticResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和 app 層級 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)，以及專案正在使用之任何延伸的資源。
 
-一旦資源索引鍵存在於任何 **{StaticResource}** 用法中，[**移至定義**] (F12) 功能就可以立即解析該資源，並為您顯示其定義所在的目錄。 針對佈景主題資源，這會在設計階段移至 generic.xaml。
+一旦資源索引鍵存在於任何 **{StaticResource}** 用法中，**移至定義** \(F12\) 功能就可以立即解析該資源，並為您顯示其定義所在的目錄。 針對佈景主題資源，這會在設計階段移至 generic.xaml。
 
 ## 相關主題
 
@@ -81,6 +82,6 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
-title: x:Uid 指示詞
+title: x&#58;Uid 指示詞
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ---
 
-# x:Uid 指示詞
+# x&#58;Uid 指示詞
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -44,6 +45,6 @@ UWP XAML 的 **x:Uid** 唯一性，和之前使用的 XAML-utilizing 技術有�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

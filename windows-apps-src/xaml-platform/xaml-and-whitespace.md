@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 了解 XAML 使用的空格處理規則。
 title: XAML 與空格
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
@@ -48,6 +49,6 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

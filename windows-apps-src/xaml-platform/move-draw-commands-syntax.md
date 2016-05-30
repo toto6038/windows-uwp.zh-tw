@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。
 title: 移動與繪製命令語法
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
@@ -16,7 +17,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字串：[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 與 [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723)。 如果藉由指定移動與繪製命令來設定其中一個屬性，您通常會將它設為 XAML 屬性值以及該元素的其他必要屬性。 在不探討內容的情況下，它看起來就像以下這樣：
 
-```xaml
+```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
@@ -68,12 +69,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| _startPoint_ | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新圖形的起點。|
+| _startPoint_ | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新圖形的起點。|
 
 大寫 **M** 表示 *startPoint* 是絕對座標；小寫 **m** 表示 *startPoint* 是前一個點的位移，如果沒有前一個點，則為 (0,0)。
 
-**請注意**在移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
+**注意：**移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
 
 **繪製命令**
 
@@ -93,8 +93,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| endPoint | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>線條的終點。|
+| endPoint | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>線條的終點。|
 
 **水平線命令**
 
@@ -106,8 +105,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| x | [
-            **Double**](T:System.Double) <br/> 線條終點的 x 座標。 |
+| x | [**雙線**](T:System.Double) <br/> 線條終點的 x 座標。 |
 
 **垂直線命令**
 
@@ -119,8 +117,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *y* | [
-            **Double**](T:System.Double) <br/> 線條終點的 y 座標。 |
+| *y* | [**雙線**](T:System.Double) <br/> 線條終點的 y 座標。 |
 
 **三次方貝茲曲線命令**
 
@@ -132,12 +129,9 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *controlPoint1* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第一個控制點，決定曲線的起點切線。 |
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第二個控制點，決定曲線的終點切線。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線將繪製到的點。 | 
+| *controlPoint1* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第一個控制點，決定曲線的起點切線。 |
+| *controlPoint2* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第二個控制點，決定曲線的終點切線。 |
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線將繪製到的點。 | 
 
 **二次方貝茲曲線命令**
 
@@ -149,14 +143,12 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的起點與終點切線。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的起點與終點切線。 |
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
 
 **平滑的三次方貝茲曲線命令**
 
-在目前的點與指定的終點之間建立一條三次方貝茲曲線。 第一個控制點假設為前一個命令之第二個控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是三次方貝茲曲線命令或平滑的三次方貝茲曲線命令，則會假設第一個控制點就是目前的點。 第二個控制點 — 曲線終點的控制點 — 是由 *controlPoint2* 指定。 例如，`S 100,200 200,300` 是一個有效的平滑三次方貝茲曲線命令。 這個命令是以前面曲線線段的 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
+在目前的點與指定的終點之間建立一條三次方貝茲曲線。 第一個控制點假設為前一個命令之第二個控制點相對於目前點的反射。 如果沒有前一個命令，或者前一個命令不是三次方貝茲曲線命令或平滑的三次方貝茲曲線命令，則會假設第一個控制點就是目前的點。 第二個控制點 (曲線終點的控制點) 是由 *controlPoint2* 指定。 例如，`S 100,200 200,300` 是一個有效的平滑三次方貝茲曲線命令。 這個命令是以前面曲線線段的 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 定義 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的對等物件。
 
 | 語法 |
 |--------|
@@ -164,10 +156,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的終點切線。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint2* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的控制點，決定曲線的終點切線。 |
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
 
 **平滑的二次方貝茲曲線命令**
 
@@ -179,10 +169,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線的控制點，決定曲線的起點切線。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
+| *controlPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線的控制點，決定曲線的起點切線。 |
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線將繪製到的點。 |
 
 **橢圓形弧線命令**
 
@@ -194,14 +182,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *size* | [
-            **Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>弧線的 x 軸半徑與 y 軸半徑。 |
-| *rotationAngle* | [
-            **Double**](T:System.Double) <br/> 橢圓形的旋轉度數。 |
+| *size* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>弧線的 x 軸半徑與 y 軸半徑。 |
+| *rotationAngle* | [**雙線**](T:System.Double) <br/> 橢圓形的旋轉度數。 |
 | *isLargeArcFlag* | 如果弧線的角度應該等於或大於 180 度，則設定為 1；否則設定為 0。 |
 | *sweepDirectionFlag* | 如果是以正角方向繪製弧線，則設定為 1；否則設定為 0。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 弧線將繪製到的點。|
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 弧線將繪製到的點。|
  
 **關閉命令**
 
@@ -221,10 +206,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *x* | [
-            **Double**](T:System.Double) <br/> 點的 x 座標。 |
-| *y* | [
-            **Double**](T:System.Double) <br/> 點的 y 座標。 |
+| *x* | [**雙線**](T:System.Double) <br/> 點的 x 座標。 |
+| *y* | [**雙線**](T:System.Double) <br/> 點的 y 座標。 |
 
 **其他附註**
 
@@ -253,6 +236,6 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: 本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。
 title: XAML 平台
@@ -22,6 +23,6 @@ title: XAML 平台
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

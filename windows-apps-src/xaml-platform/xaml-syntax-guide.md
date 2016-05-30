@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 我們將說明 XAML 語法規則，以及說明描述 XAML 語法可用之限制或選項的詞彙。
 title: XAML 語法指南
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
@@ -37,18 +38,18 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 如果要使用物件元素語法來宣告物件，您可以依照下列方式撰寫標記：`<objectName>  </objectName>`，其中 *objectName* 是您要具現化之物件的類型名稱。 以下是宣告 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 物件的物件元素用法：
 
-```xaml
+```xml
 <Canvas>
 </Canvas>
 ```
 
-如果物件未包含其他物件，您可以使用一個自我結尾標記 (而不使用開頭/結尾標記組) 來宣告物件元素：`<Canvas />`
+如果物件未包含其他物件，您可以使用一個自我結尾標記 (而不使用開頭/結尾標記組) 來宣告物件元素： `<Canvas />`
 
 ### 容器
 
 許多做為 UI 元素使用的物件 (像是 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)) 可以包含其他物件。 這些有時稱為容器。 下列範例顯示只包含一個元素 ([**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)) 的 **Canvas** 容器。
 
-```xaml
+```xml
 <Canvas>
   <Rectangle />
 </Canvas>
@@ -66,7 +67,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 
 下列的簡短範例使用初始化文字指定 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 的值，這個案例指定的值將 **Left** 與 **Right** 設為 20，而 **Top** 與 **Bottom** 設為 10。 這個範例顯示建立為索引鍵來源的 **Thickness**，和該資源的參考。 如需 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 初始化文字的詳細資訊，請參閱 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864)。
 
-```xaml
+```xml
 <UserControl ...>
   <UserControl.Resources>
     <Thickness x:Key="TwentyTenThickness">20,10</Thickness>
@@ -105,11 +106,8 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 下列範例使用四個屬性的屬性語法設定 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 物件的 [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 以及 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378)。
 
-```xaml
-<Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" /></code></pre></td>
-</tr>
-</tbody>
-</table>
+```xml
+<Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" />
 ```
 
 ### 使用屬性元素語法設定屬性
@@ -120,29 +118,19 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 在下列文法中，*property* 是您要設定之屬性的名稱，*propertyValueAsObjectElement* 是一個要用來滿足該屬性的值類型需求的單一物件元素。
 
-`<` *object* `>`
+`<`*object*`>`
 
-`<` *object* `.` *屬性* `>`
+`<`*object* `.` *property*`>`
 
 *propertyValueAsObjectElement*
 
-`</` *object* `.` *屬性* `>`
+`</`*object* `.` *property*`>`
 
-`</` *object* `>`
+`</`*object*`>`
 
-下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 物件元素的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) (在 **SolidColorBrush** 內，[**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 設定為屬性)。這個 XAML 的剖析結果，與使用屬性語法設定 **Fill** 的上一個 XAML 範例相同。
+下列範例使用屬性元素語法來設定含有 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 物件元素之 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) (在 **SolidColorBrush** 內，[**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 設定為屬性)。這個 XAML 的剖析結果，與使用屬性語法設定 **Fill** 的上一個 XAML 範例相同。
 
-```xaml
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XAML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
+```xml
 <Rectangle
   Name="rectangle1"
   Width="100" 
@@ -167,7 +155,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 如果有可用的 XAML 內容語法，該語法就會顯示在 Windows 執行階段參考文件裡該屬性之 [語法]**** 的 [XAML] 區段中。 例如，[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) 屬性頁會顯示 XAML 內容語法，而非設定 **Border** 的單一物件 **Border.Child** 值的屬性元素語法，如下：
 
-```xaml
+```xml
 <Border>
   <Button .../>
 </Border>
@@ -175,11 +163,8 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 如果宣告為 XAML 內容屬性的屬性是 **Object** 類型或 **String** 類型，則 XAML 內容語法就能支援 XML 文件模型中基本上視為內部文字的字串：開頭與結尾物件標記之間的字串。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 屬性頁會顯示含有要設定 **Text** 的內部文字值的 XAML 內容語法，但是標記中從未出現 "Text" 這個字串。 這裡提供一個範例用法：
 
-```xaml
-<TextBlock>Hello!</TextBlock></code></pre></td>
-</tr>
-</tbody>
-</table>
+```xml
+<TextBlock>Hello!</TextBlock>
 ```
 
 如果某個類別有 XAML 內容屬性，在＜屬性＞小節裡該類別的參考主題中就會指出該內容屬性。 請尋找 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 的值。 這個屬性使用具名欄位 "Name"。 "Name" 的值是身為 XAML 內容屬性的該類別屬性的名稱。 例如，在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 參考頁上，您會看到：ContentProperty("Name=Child")。
@@ -202,17 +187,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 許多集合屬性也會被識別為類別的 XAML 內容屬性。 隱含集合處理與 XAML 內容語法的組合在用於控制項組合的類型中很常見，例如面板、檢視或項目控制項。 例如，下列範例顯示在 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 內組合兩個對等 UI 元素可能使用的最簡單 XAML。
 
-```xaml
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XAML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
+```xml
 <StackPanel>
   <TextBlock>Hello</TextBlock>
   <TextBlock>World</TextBlock>
@@ -239,7 +214,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 設定屬性值是在標記語言 (如 XML 或 HTML) 中設定屬性值的典型方法。 在下列語法中，*objectName* 是您要具現化的物件，*propertyName* 是您要在該物件設定的屬性的名稱，*propertyValue* 是要設定的值。
 
-```xaml
+```xml
 <objectName propertyName="propertyValue" .../>
 
 -or-
@@ -265,7 +240,7 @@ XAML 透過新增名為「附加屬性」**的語法元素延伸了 XML 的功�
 
 在 XAML 中，您使用語法 *AttachedPropertyProvider*.*PropertyName* 來設定附加屬性。 這裡是如何在 XAML 中設定附加屬性 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例：
 
-```xaml
+```xml
 <Canvas>
   <Button Canvas.Left="50">Hello</Button>
 </Canvas>
@@ -320,9 +295,9 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 XAML 用法區段也使用各種一般化的預留位置。 這些預留位置不會每次在 [XAML 值]**** 中重新定義，因為您可以猜想到或是最後都能了解它們所代表的意義。 我們認為大部分的讀者應該都不想在 [XAML 值]**** 中重複看到它們出現，所以定義中予以省略。 如果需要參考資料，以下是部分預留位置及它們以廣義來說所代表的意義：
 
 -   *object*：理論上是任何物件值，但實際上通常限制為特定的物件類型，例如，string-or-object 選項，詳細資訊請參閱參考頁面的＜備註＞。
--   *object* *property*：當顯示的語法是類型的語法，而該類型可用來做為許多屬性的屬性值時，會將 *object* 和 *property* 搭配使用。 例如，針對 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 顯示的 [XAML 屬性用法]**** 包含：<*object**property*="*predefinedColorName*"/>
+-   *object* *property*：當顯示的語法是類型的語法，而該類型可用來做為許多屬性的屬性值時，會將 *object* 和 *property* 搭配使用。 例如，針對 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 顯示的 [XAML 屬性用法]**** 包含：&lt;*object**property*="*predefinedColorName*"/&gt;
 -   *eventhandler*：這會顯示為事件屬性所顯示的每個 XAML 語法的屬性值。 您在這裡所提供的資訊，就是事件處理常式函式的函式名稱。 該函式必須定義在 XAML 頁面的程式碼後置中。 在程式設計層級，該函式必須符合您所處理事件的委派簽章，否則無法編譯應用程式程式碼。 不過這實際上是程式設計方面的考量，而非 XAML 的考量，所以我們不會嘗試提示任何關於 XAML 語法中的委派類型。 如果您想要知道應該為事件實作的委派，請參閱事件參考主題的 [事件資訊] ****區段中標示為**委派**的表格列。
--   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 顯示的語法為 <*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/>。 如果您正位於其中一個屬性參考頁面，按一下顯示在 [屬性值]**** 區段中 [類型:]**** 旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 [成員]**** 清單的 [成員]**** 欄中的任何字串。
+-   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 顯示的語法為 &lt;*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/&gt;。 如果您正位於其中一個屬性參考頁面，按一下顯示在 [屬性值]**** 區段中 [類型:]**** 旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 [成員]**** 清單的 [成員]**** 欄中的任何字串。
 -   *double*、*int*、*string*、*bool*：這些是 XAML 語言已知的基本類型。 如果您使用 C# 或 Visual Basic 進行程式設計，這些類型可對應 Microsoft .NET 的等同類型，例如 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) 和 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)，當您在 .NET 程式碼後置中使用 XAML 定義的值時，可以使用這些 .NET 類型的任何成員。 如果您使用 C++/CX 進行程式設計，可以使用 C++ 基本類型，也可以考慮使用等同於 [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空間所定義類型的這些項目，例如 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)。 針對特定的屬性值有時會有額外的限制。 但您通常會在 [屬性值]**** 區段或 [備註] 區段而不會在 XAML 區段中看到這些註解，因為這些限制同時適用於程式碼用法和 XAML 用法。
 
 ## 祕訣與技巧，樣式附註
@@ -339,6 +314,6 @@ XAML 用法區段也使用各種一般化的預留位置。 這些預留位置�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

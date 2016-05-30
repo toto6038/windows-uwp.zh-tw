@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。
-title: x:Key 屬性
+title: x&#58;Key 屬性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 
-# x:Key 屬性
+# x&#58;Key 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -41,7 +42,7 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -65,6 +66,6 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

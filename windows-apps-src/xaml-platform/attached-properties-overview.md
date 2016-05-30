@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 說明 XAML 中附加屬性的概念並提供一些範例。
 title: 附加屬性概觀
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
@@ -18,7 +19,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 附加屬性之所以存在，主要是因為它們啟用了 XAML 語法。 在 XAML 中，您使用 _AttachedPropertyProvider.PropertyName_ 語法來設定附加屬性。 這裡是您如何在 XAML 中設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例。
 
-```XAML
+```XML
 <Canvas>
   <Button Canvas.Left="50">Hello</Button>
 </Canvas>
@@ -117,6 +118,6 @@ Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: xBind 標記延伸是 Binding 的替代項目。 xBind 沒有 Binding 的部分功能，但在執行時所需的時間和記憶體都比 Binding 少，並且支援較強的偵錯功能。
 title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ---
 
-# {x:Bind} 標記延伸
+# {x&#58;Bind} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -36,7 +37,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 |------|-------------|
 | _propertyPath_ | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | _bindingProperties_ |
-| _propName_=_value_\[, _propName_=_value_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
+| _propName_ = _value_\[, _propName_=_value_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 | 
 | _value_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-you-can-set)一節。 | 
 
@@ -112,7 +113,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 ## 範例
 
-```XAML
+```XML
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -120,7 +121,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 此範例 XAML 會搭配使用 **{x:Bind}** 與 **ListView.ItemTemplate** 屬性。 請注意 **x:DataType** 值的宣告。
 
-```XAML
+```XML
   <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -131,6 +132,6 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

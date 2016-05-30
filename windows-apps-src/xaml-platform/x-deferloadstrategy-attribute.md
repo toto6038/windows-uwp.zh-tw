@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 title: xDeferLoadStrategy 屬性
 description: xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 
-# x:DeferLoadStrategy 屬性
+# x&#58;DeferLoadStrategy 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -55,7 +56,7 @@ ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 
 ## 範例
 
-```xaml
+```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -83,6 +84,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

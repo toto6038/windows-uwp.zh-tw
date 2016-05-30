@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。
-title: Binding 標記延伸'
+title: Binding 標記延伸&#39;
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ---
 
 # {Binding} 標記延伸
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意：**Windows 10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
 
@@ -37,7 +38,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | 詞彙 | 說明 |
 |------|-------------|
 | *propertyPath* | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
+| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 | 
 | *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-binding)一節的屬性。 |
 
@@ -73,7 +74,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定當無法解析來源或路徑時，所要顯示的值。 | 
 | [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定繫結模式，如下列其中一個字串："OneTime"、"OneWay" 或 "TwoWay"。 這些會對應 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列舉的常數名稱。 預設值會取決於繫結目標，但在大部分情況下，它會是 "OneWay"。 請注意，這與 **{x:Bind}** 的預設值 ("OneTime") 不同。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 透過描述相對於繫結目標位置的繫結來源位置，以指定資料來源。 這會以執行階段物件圖形 (例如，指定物件的父系) 來表示。 設定 [{RelativeSource} 標記延伸](relativesource-markup-extension.md)。 |
-| [**來源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**來源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 屬性需要物件參考，例如 [{StaticResource} 標記延伸](staticresource-markup-extension.md)參考。 如果未指定這個屬性，動作資料內容會指定來源。 通常不會在個別的繫結中指定 Source 值，而是倚賴共用的 **DataContext** 進行多重繫結。 如需詳細資訊，請參閱[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)或[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定繫結來源更新的時機。 如果沒有指定，則預設為 **Default**。 |
 
@@ -89,7 +90,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 ## 範例
 
-```XAML
+```XML
 <!-- binding a UI element to a view model -->    
 <Page ... >
     <Page.DataContext>
@@ -100,7 +101,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 </Page>
 ```
 
-```XAML
+```XML
 <!-- binding a UI element to another UI element -->
 <Page ... >
     <Page.Resources>
@@ -126,6 +127,6 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

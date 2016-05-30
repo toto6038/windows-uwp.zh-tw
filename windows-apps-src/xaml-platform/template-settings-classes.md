@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 範本設定類別
 title: 範本設定類別
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
@@ -41,7 +42,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 以下範例來自預設 XAML 控制項範本的開頭部份。 這個特殊的範本來自 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的預設範本：
 
-```xaml
+```xml
 <Ellipse
     x:Name="E1"
     Style="{StaticResource ProgressRingEllipseStyle}"
@@ -57,7 +58,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 [
             **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
 
-```xaml
+```xml
 <Rectangle
     x:Name="R1"
     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
@@ -73,7 +74,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 以下是另一個預設 XAML 控制項範本的範例用法，這次顯示動畫的 **From** 和 **To** 的其中一個屬性集。 這是來自 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 預設範本：
 
-```xaml
+```xml
 <VisualStateGroup x:Name="DropDownStates">
     <VisualState x:Name="Opened">
         <Storyboard>
@@ -105,6 +106,6 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

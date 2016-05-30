@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
-title: x:Class 屬性
+title: x&#58;Class 屬性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 
-# x:Class 屬性
+# x&#58;Class 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -40,6 +41,6 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
