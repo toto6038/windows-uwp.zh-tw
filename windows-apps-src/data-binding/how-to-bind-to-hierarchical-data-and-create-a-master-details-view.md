@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: 繫結階層式資料並建立主要/詳細資料檢視
 description: 您可以將項目控制項繫結到已繫結成一個鏈的 CollectionViewSource 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。
@@ -50,48 +51,48 @@ namespace MasterDetailsBinding
     public class Division
     {
         public string Name { get; set; }
-        public IEnumerable&lt;Team&gt; Teams { get; set; }
+        public IEnumerable<Team> Teams { get; set; }
     }
 
     public class League
     {
         public string Name { get; set; }
-        public IEnumerable&lt;Division&gt; Divisions { get; set; }
+        public IEnumerable<Division> Divisions { get; set; }
     }
 
-    public class LeagueList : List&lt;League&gt;
+    public class LeagueList : List<League>
     {
         public LeagueList()
         {
             this.AddRange(GetLeague().ToList());
         }
 
-        public IEnumerable&lt;League&gt; GetLeague()
+        public IEnumerable<League> GetLeague()
         {
             return from x in Enumerable.Range(1, 2)
                    select new League
                    {
-                       Name = &quot;League &quot; + x,
+                       Name = "League " + x,
                        Divisions = GetDivisions(x).ToList()
                    };
         }
 
-        public IEnumerable&lt;Division&gt; GetDivisions(int x)
+        public IEnumerable<Division> GetDivisions(int x)
         {
             return from y in Enumerable.Range(1, 3)
                    select new Division
                    {
-                       Name = String.Format(&quot;Division {0}-{1}&quot;, x, y),
+                       Name = String.Format("Division {0}-{1}", x, y),
                        Teams = GetTeams(x, y).ToList()
                    };
         }
 
-        public IEnumerable&lt;Team&gt; GetTeams(int x, int y)
+        public IEnumerable<Team> GetTeams(int x, int y)
         {
             return from z in Enumerable.Range(1, 4)
                    select new Team
                    {
-                       Name = String.Format(&quot;Team {0}-{1}-{2}&quot;, x, y, z),
+                       Name = String.Format("Team {0}-{1}-{2}", x, y, z),
                        Wins = 25 - (x * y * z),
                        Losses = x * y * z
                    };
@@ -107,9 +108,9 @@ namespace MasterDetailsBinding
 ```cs
 namespace MasterDetailsBinding
 {
-    /// &lt;summary&gt;
+    /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
-    /// &lt;/summary&gt;
+    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -124,82 +125,82 @@ namespace MasterDetailsBinding
 
 最後，將 MainPage.xaml 檔案的內容取代為下列標記，其中宣告三個 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體，並將它們繫結成一個鏈。 然後，後續的控制項就可以繫結到階層中位於適當層級的 **CollectionViewSource**。
 
-```xaml
+```xml
 <Page
-    x:Class=&quot;MasterDetailsBinding.MainPage&quot;
-    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
-    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-    xmlns:local=&quot;using:MasterDetailsBinding&quot;
-    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
-    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
-    mc:Ignorable=&quot;d&quot;>
+    x:Class="MasterDetailsBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MasterDetailsBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 
     <Page.Resources>
-        <CollectionViewSource x:Name=&quot;Leagues&quot;
-            Source=&quot;{x:Bind ViewModel}&quot;/>
-        <CollectionViewSource x:Name=&quot;Divisions&quot;
-            Source=&quot;{Binding Divisions, Source={StaticResource Leagues}}&quot;/>
-        <CollectionViewSource x:Name=&quot;Teams&quot;
-            Source=&quot;{Binding Teams, Source={StaticResource Divisions}}&quot;/>
+        <CollectionViewSource x:Name="Leagues"
+            Source="{x:Bind ViewModel}"/>
+        <CollectionViewSource x:Name="Divisions"
+            Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
+        <CollectionViewSource x:Name="Teams"
+            Source="{Binding Teams, Source={StaticResource Divisions}}"/>
 
-        <Style TargetType=&quot;TextBlock&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
-            <Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot;/>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        <Style TargetType=&quot;ListBox&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="15"/>
         </Style>
 
-        <Style TargetType=&quot;ContentControl&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
+        <Style TargetType="ContentControl">
+            <Setter Property="FontSize" Value="15"/>
         </Style>
 
     </Page.Resources>
 
-    <Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <StackPanel Orientation=&quot;Horizontal&quot;>
+        <StackPanel Orientation="Horizontal">
 
             <!-- All Leagues view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;All Leagues&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Leagues}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="All Leagues"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Leagues}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- League/Divisions view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;{Binding Name, Source={StaticResource Leagues}}&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Divisions}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, Source={StaticResource Leagues}}"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Divisions}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- Division/Teams view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;{Binding Name, Source={StaticResource Divisions}}&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Teams}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, Source={StaticResource Divisions}}"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Teams}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- Team view -->
 
-            <ContentControl Content=&quot;{Binding Source={StaticResource Teams}}&quot;>
+            <ContentControl Content="{Binding Source={StaticResource Teams}}">
                 <ContentControl.ContentTemplate>
                     <DataTemplate>
-                        <StackPanel Margin=&quot;5&quot;>
-                            <TextBlock Text=&quot;{Binding Name}&quot; 
-                                FontSize=&quot;15&quot; FontWeight=&quot;Bold&quot;/>
-                            <StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,10&quot;>
-                                <TextBlock Text=&quot;Wins:&quot; Margin=&quot;0,0,5,0&quot;/>
-                                <TextBlock Text=&quot;{Binding Wins}&quot;/>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Name}" 
+                                FontSize="15" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,10">
+                                <TextBlock Text="Wins:" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Wins}"/>
                             </StackPanel>
-                            <StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,0&quot;>
-                                <TextBlock Text=&quot;Losses:&quot; Margin=&quot;0,0,5,0&quot;/>
-                                <TextBlock Text=&quot;{Binding Losses}&quot;/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0">
+                                <TextBlock Text="Losses:" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Losses}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
@@ -212,7 +213,7 @@ namespace MasterDetailsBinding
 </Page>
 ```
 
-請注意，直接繫結到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 時，就意味著您想要繫結到在集合本身找不到路徑的繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。 例如，代表小組檢視之 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365-content) 屬性是繫結到 `Teams`**CollectionViewSource**。 不過，[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 中的控制項則是繫結到 `Team` 類別的屬性，因為必要時，**CollectionViewSource** 會自動提供團隊清單中目前選取的團隊。
+請注意，直接繫結到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 時，就意味著您想要繫結到在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。 例如，代表小組檢視之 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 屬性是繫結到 `Teams`**CollectionViewSource**。 不過，[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 中的控制項則是繫結到 `Team` 類別的屬性，因為必要時，**CollectionViewSource** 會自動提供團隊清單中目前選取的團隊。
 
  
 
@@ -220,6 +221,6 @@ namespace MasterDetailsBinding
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
