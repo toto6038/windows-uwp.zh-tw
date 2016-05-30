@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 100
+ Total Files | 103
 
 ## File List
  Source File | Status | Details 
@@ -106,6 +106,9 @@
  [windows-apps-src\data-access\entity-framework-7-with-sqlite-for-csharp-apps.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/entity-framework-7-with-sqlite-for-csharp-apps.md) | InSyncHandedBackSuccess | [Details](#4c9b674445e901a370f9822f8f11acdeba6061b61886)
  [windows-apps-src\data-access\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/index.md) | InSyncHandedBackSuccess | [Details](#007e07d05f4f89771f6a0b93fb4279783ca170f61889)
  [windows-apps-src\data-access\sqlite-databases.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/sqlite-databases.md) | InSyncHandedBackSuccess | [Details](#dd628d16b3ee230ddc0c56b47fd381a518b8af001890)
+ [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/d76ef6a87d6afad577f5f7bf5e8f18a8b0776094/windows-apps-src/data-binding/data-binding-quickstart.md) | InSyncHandedBackSuccess | [Details](#c30e048f450c062c6e0148e5040a58bfa47193bb1892)
+ [windows-apps-src\data-binding\how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md](https://github.com/Microsoft/windows-apps/blob/afb508fcbc2d4ab75188a2d4f705ea0bee385ed6/windows-apps-src/data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | InSyncHandedBackSuccess | [Details](#2ff66a1d6a80bb085f54dec8e35371ba0c9e6b271894)
+ [windows-apps-src\data-binding\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-binding/index.md) | InSyncHandedBackSuccess | [Details](#d1fbc7376b3505d39e757a1b65ae0f08909480781907)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -1306,6 +1309,42 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/cdd5f373fb420d01f19dbfcca9841ed689ddab21/ol-handback/Microsoft/windows-apps.zh-tw/master/data-access/sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.zh-tw.xlf)
 * Handback Datetime: 2016-05-30 22:20:26
+* [Back to Top](#report-top)
+
+##### <a name='c30e048f450c062c6e0148e5040a58bfa47193bb1892'></a> Source: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/d76ef6a87d6afad577f5f7bf5e8f18a8b0776094/windows-apps-src/data-binding/data-binding-quickstart.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/43cf7660fa93c1cf65619908c0598cb97b6edf06/windows-apps-src/data-binding/data-binding-quickstart.md)
+* Handoff File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7cd259a5e45867bf44707063f4984b0d5286bb3d/ol-handback/Microsoft/windows-apps.zh-tw/master/data-binding/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:20:33
+* [Back to Top](#report-top)
+
+##### <a name='2ff66a1d6a80bb085f54dec8e35371ba0c9e6b271894'></a> Source: [windows-apps-src\data-binding\how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md](https://github.com/Microsoft/windows-apps/blob/afb508fcbc2d4ab75188a2d4f705ea0bee385ed6/windows-apps-src/data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-binding\how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/43cf7660fa93c1cf65619908c0598cb97b6edf06/windows-apps-src/data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)
+* Handoff File: [how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7cd259a5e45867bf44707063f4984b0d5286bb3d/ol-handback/Microsoft/windows-apps.zh-tw/master/data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:20:33
+* [Back to Top](#report-top)
+
+##### <a name='d1fbc7376b3505d39e757a1b65ae0f08909480781907'></a> Source: [windows-apps-src\data-binding\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-binding/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-binding\index.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/43cf7660fa93c1cf65619908c0598cb97b6edf06/windows-apps-src/data-binding/index.md)
+* Handoff File: [index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/7cd259a5e45867bf44707063f4984b0d5286bb3d/ol-handback/Microsoft/windows-apps.zh-tw/master/data-binding/index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.zh-tw.xlf)
+* Handback Datetime: 2016-05-30 22:20:33
 * [Back to Top](#report-top)
 
 
