@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: 使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
 title: RSS/Atom 摘要
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
@@ -86,7 +87,7 @@ var uri = null;
 try {
     uri = new Windows.Foundation.Uri(uriString);
 } catch (error) {
-    WinJS.log &amp;&amp; WinJS.log("Error: Invalid URI");
+    WinJS.log && WinJS.log("Error: Invalid URI");
     return;
 }
 ```
@@ -126,7 +127,7 @@ catch (Exception ex)
 ```
 ```javascript
 function onError(err) {
-    WinJS.log &amp;&amp; WinJS.log(err, "sample", "error");
+    WinJS.log && WinJS.log(err, "sample", "error");
 
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
@@ -147,7 +148,7 @@ function retreiveFeed(uri) {
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
 
-        WinJS.log &amp;&amp; WinJS.log("Feed download complete.", "sample", "status");
+        WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
 
         var title = "(no title)";
         if (currentFeed.title) {
@@ -256,6 +257,6 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

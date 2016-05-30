@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: 存取網路和 Web 服務的技術。
 title: 網路和 Web 服務
@@ -22,6 +23,7 @@ title: 網路和 Web 服務
 | [背景傳輸](background-transfers.md)                                         | 使用背景傳輸 API 在網路上可靠地複製檔案。           |
 | [使用 EDP 身分識別標記網路連線](tagging_network_connections_with_edp_identity.md) | 本主題說明如何在企業資料保護 (EDP) 案例中建立網路連線之前，先建立受保護的對話內容。 |
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

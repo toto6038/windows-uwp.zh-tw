@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: 您可以使用 Windows.Networking.Sockets 和 Winsock，以通用 Windows 平台 (UWP) 的 app 開發人員的身分與其他裝置通訊。
 title: 通訊端
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
@@ -14,6 +15,8 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 您可以使用 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 和 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523)，以通用 Windows 平台 (UWP) 的 app 開發人員的身分與其他裝置通訊。 本主題提供使用 **Windows.Networking.Sockets** 命名空間執行網路功能作業的詳細指導方針。
+
+>**注意：**因為是[網路隔離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的一部分，所以系統禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或明確指定本機 IP 位址。 這表示您無法使用通訊來在 UWP app 之間通訊。 UWP 提供其他 app 間的通訊機制。 如需詳細資訊，請參閱 [App 間通訊](https://msdn.microsoft.com/windows/uwp/app-to-app/index)。
 
 ## 基本 TCP 通訊端作業
 
@@ -259,7 +262,7 @@ await outputStream.FlushAsync();
 
 ## DatagramSocket 的連接埠共用
 
-Windows 10 導入了新的 [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) 屬性 [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368)，可讓您指定相關的 **DatagramSocket** 能夠與其他繫結至相同地址/連接埠的 Win32 或 WinRT 多點傳送通訊端並存。
+Windows 10 導入了新的 [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) 屬性 ([**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368))，可讓您指定相關的 **DatagramSocket** 能夠與其他繫結至相同地址/連接埠的 Win32 或 WinRT 多點傳送通訊端並存。
 
 ## 提供具有 StreamSocket 類別的用戶端憑證
 
@@ -277,7 +280,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 ## Windows.Networking.Sockets 中的例外狀況
 
-如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別的建構函式會發生例外狀況。 如果應用程式取得使用者為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
+如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別的建構函式會發生例外狀況。 如果 app 取得使用者為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
 [
             **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間有便利的協助程式方法及列舉，在使用通訊端和 WebSocket 時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
@@ -297,6 +300,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

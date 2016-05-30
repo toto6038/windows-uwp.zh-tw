@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊。
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
@@ -350,6 +351,6 @@ MessageWebSocket 和 StreamWebSocket 類別會使用內部系統服務，來傳�
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: 適用於 UWP 開發人員的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。
 title: 哪一種網路功能技術？
@@ -143,6 +144,6 @@ Windows 10 為廣泛的開發人員對象公開了一些先前僅公開給裝置
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

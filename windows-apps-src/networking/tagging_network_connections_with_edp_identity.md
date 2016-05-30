@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: '本主題說明如何在企業資料保護 (EFP) 案例中建立網路連線之前，先建立受保護的對話內容。'
 MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -125,6 +126,6 @@ public static async void SyncMailbox(string identity)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
