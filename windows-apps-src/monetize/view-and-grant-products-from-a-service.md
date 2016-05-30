@@ -1,6 +1,7 @@
 ---
+author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: 如果您有 app 及應用程式內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API 及 Windows 市集購買 API，來從您的服務存取這些產品的擁有權資訊。
+description: 如果您有 App 及 App 內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API 及 Windows 市集購買 API，來從您的服務存取這些產品的擁有權資訊。
 title: 從服務檢視及授與產品
 ---
 
@@ -54,7 +55,7 @@ Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure A
 
 Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端識別碼建立關聯的應用程式和 IAP，提供其使用者擁有權資訊的存取權。
 
-1.  登入 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)，然後選取您的 app
+1.  登入 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)，然後選取您的 App
 2.  依序前往 [服務]**** &gt; [產品系列和購買]**** 頁面，然後在其中一個可用欄位中輸入您的 Azure AD 用戶端識別碼。
 
 ### 步驟 3：從 Azure AD 擷取存取權杖
@@ -136,7 +137,7 @@ Windows 市集識別碼索引鍵就是 JSON Web 權杖 (JWT)，代表您想要�
 
 以下是已解碼的 Windows 市集識別碼索引鍵標頭範例。
 
-```
+```json
 { 
     "typ":"JWT", 
     "alg":"RS256", 
@@ -146,7 +147,7 @@ Windows 市集識別碼索引鍵就是 JSON Web 權杖 (JWT)，代表您想要�
 
 以下是已解碼的 Windows 市集識別碼金鑰宣告組範例。
 
-```
+```json
 { 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId": "1d5773695a3b44928227393bfef1e13d", 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=", 
@@ -177,6 +178,6 @@ Windows 市集識別碼索引鍵就是 JSON Web 權杖 (JWT)，代表您想要�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

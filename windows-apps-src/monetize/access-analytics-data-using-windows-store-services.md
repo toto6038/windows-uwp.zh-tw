@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: 使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。
 title: 使用 Windows 市集服務存取分析資料
@@ -49,13 +50,13 @@ title: 使用 Windows 市集服務存取分析資料
 
 若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的指示，來將 HTTP POST 傳送至下列的 Azure AD 端點。
 
-```
+```syntax
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
 -   若要取得您的租用戶識別碼，請登入到 [Azure 管理入口網站](http://manage.windowsazure.com/)，瀏覽至 [Active Directory]****，然後按一下您要連結到開發人員中心帳戶的目錄。 此目錄的租用戶識別碼會內嵌在此頁面的 URL 中，如以下範例中所示的 *your\_tenant\_ID* 字串。
 
-  ```
+  ```syntax
   https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
   ```
 
@@ -236,6 +237,6 @@ Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回�
  
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

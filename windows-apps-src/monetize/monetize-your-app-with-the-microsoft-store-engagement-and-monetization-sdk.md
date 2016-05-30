@@ -1,10 +1,11 @@
 ---
+author: mcleanbyron
 Description: Microsoft Store Engagement and Monetization SDK 提供了一些可讓您在應用程式中新增更多功能的程式庫和工具，以協助您產生更高獲利及增加客戶。
-title: 利用 Microsoft Store Engagement and Monetization SDK 讓您的 app 獲利及吸引客戶。
+title: Microsoft Store Engagement and Monetization SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ---
 
-# 利用 Microsoft Store Engagement and Monetization SDK 讓您的 app 獲利及吸引客戶。
+# Microsoft Store Engagement and Monetization SDK
 
 Microsoft Store Engagement and Monetization SDK 提供了一些程式庫和工具來協助您產生更高獲利及增加客戶，例如在您的 app 中顯示廣告以及使用 A/B 測試執行實驗。 這個 SDK 取代了 Microsoft Universal Ad Client SDK，它會隨著時間而進化，以納入新的客戶參與和獲利功能。
 
@@ -15,23 +16,25 @@ Microsoft Store Engagement and Monetization SDK 提供了一些支援下列功�
 
 ### 對 UVP app 使用 A/B 測試執行實驗
 
-在通用 Windows 平台 (UWP) app 中執行 A/B 測試，在將功能發給每個人之前，對部分客戶測量功能的有效性。 當您在開發人員中心儀表板中定義實驗之後，請使用 [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx) 類別來取得您 app 中實驗的變化，使用此資料來修改您正在測試的功能行為，以及使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法將檢視事件和轉換事件傳送至開發人員中心。 最後，使用您的儀表板來檢視結果並管理體驗。
+在通用 Windows 平台 (UWP) app 中執行 A/B 測試，在將功能發給每個人之前，對部分客戶測量功能的有效性。 當您在開發人員中心儀表板中定義實驗之後，請使用 [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx) 類別來取得您 app 中實驗的變化，使用此資料來修改您正在測試的功能行為，以及使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法將檢視事件和轉換事件傳送至開發人員中心。 最後，使用您的儀表板來檢視結果並管理體驗。
 
 如需詳細資訊，請參閱[使用 A/B 測試執行實驗](run-app-experiments-with-a-b-testing.md)。
 
 ### UWP app 的 app 意見反應
 
-在您的 UWP app 中使用[意見反應](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx)類別將您的 Windows 10 客戶引導至意見反應中樞，以便他們在其中提交問題、建議及附議。 然後，在開發人員中心儀表板的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。
+在您的 UWP app 中使用[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx)類別將您的 Windows 10 客戶引導至意見反應中樞，以便他們在其中提交問題、建議及附議。 然後，在開發人員中心儀表板的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。
 
 如需詳細資訊，請參閱[從您的 app 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)。
 
-### 在您的 app 中顯示廣告
+>**注意：** **意見反應**報告目前只提供給已加入[開發人員中心測試人員計畫](../publish/dev-center-insider-program.md)的開發人員帳戶。
+
+### 在您的 App 中顯示廣告
 
 在 UWP app 以及 Windows 8.1 和 Windows Phone 8.x app 中顯示來自 Microsoft 的橫幅廣告或插入式影片廣告，以增加收入。 利用廣告流量分配來顯示來自多個廣告網路提供者的廣告，也可以將您的廣告投放率最大化。
 
 如需詳細資訊，請參閱[在您的 app 中顯示廣告](display-ads-in-your-app.md)。
 
->**注意** 舊版 Universal Ad Client SDK、Ad Mediator 延伸模組和 Microsoft Advertising SDK 中的廣告功能現在包含在 Microsoft Store Monetization and Engagement SDK 中。
+>**注意：**舊版 Universal Ad Client SDK、Ad Mediator 延伸模組和 Microsoft Advertising SDK 中的廣告功能現在包含在 Microsoft Store Monetization and Engagement SDK 中。
 
 ### API 參考
 
@@ -49,7 +52,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 舊版 Universal Ad Client SDK、Ad Mediator 延伸模組和 Microsoft Advertising SDK 中的廣告功能現在包含在 Microsoft Store Monetization and Engagement SDK 中。 如果您有現有的 Visual Studio 2015 或 Visual Studio 2013 專案使用先前其中一個版本的廣告功能，您可以繼續處理您的專案，而不需要在安裝 Microsoft Store Monetization and Engagement SDK 之後進行任何變更。
 
->**附註** 若要隨著 Visual Studio 2015 安裝 Microsoft Store Engagement and Monetization SDK，您必須安裝適用於通用 Windows app 的 Visual Studio Tools 1.1 版或更新版本。 如需這個適用於通用 Windows app 之 Visual Studio Tools 的更新詳細資訊，請參閱[版本資訊](http://go.microsoft.com/fwlink/?LinkID=624516)。
+>**附註：**若要隨著 Visual Studio 2015 安裝 Microsoft Store Engagement and Monetization SDK，您必須安裝適用於通用 Windows app 的 Visual Studio Tools 1.1 版或更新版本。 如需這個適用於通用 Windows app 之 Visual Studio Tools 的更新詳細資訊，請參閱[版本資訊](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
 ## SDK 中的架構套件
 
@@ -72,6 +75,6 @@ SDK 中的其他程式庫 (包括適用於其他目標平台的 Microsoft.Advert
 * [從您的 app 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

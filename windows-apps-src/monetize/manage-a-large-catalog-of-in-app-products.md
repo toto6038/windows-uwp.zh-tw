@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: 如果您的 app 提供大型的 app 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。
 title: 管理大型的 app 內產品型錄
@@ -20,7 +21,7 @@ title: 管理大型的 app 內產品型錄
 ## 先決條件
 
 -   本主題涵蓋使用市集中列出的單一應用程式內產品呈現多個應用程式內的購買選項之市集支援。 如果您不熟悉 app 內購買，請檢閱[啟用 App 內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出您的 app 內購買。
--   初次撰寫並測試新的應用程式內購買選項程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
+-   初次撰寫並測試新的應用程式內購買選項程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
 -   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
 ## 針對應用程式內產品提出購買要求
@@ -112,6 +113,6 @@ switch (result)
 * [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

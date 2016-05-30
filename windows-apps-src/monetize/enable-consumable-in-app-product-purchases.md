@@ -1,17 +1,9 @@
 ---
-Description: 您可以透過市集商業平台提供消費性的應用程式內產品，亦即可購買、使用然後再次購買的項目，為客戶提供既健全又可靠的購買體驗。
-title: 啟用消費性 app 內產品購買
-ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-關鍵字︰App 內的購買選項
-關鍵字 ︰消費性
-關鍵字：App 內購買
-關鍵字：App 內產品
-關鍵字：如何支援應用程式內
-關鍵字：App 內購買程式碼範例
-關鍵字：App 內的購買選項程式碼範例
+Description&#58; author&#58; mcleanbyron 您可以透過市集商業平台提供消費性的應用程式內產品&amp;\#8212;亦即可購買、使用然後再次購買的項目&amp;\#8212;為客戶提供既健全又可靠的購買體驗。
+title&#58; 啟用消費性應用程式內產品購買 ms.assetid&#58; F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords&#58; 應用程式內的購買選項 keywords&#58; 消費性 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
 ---
 
-# 啟用消費性 app 內產品購買
+# 啟用消費性應用程式內產品購買
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,7 +13,7 @@ ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 ## 先決條件
 
 -   本主題涵蓋消費性應用程式內產品的購買和履行狀況報告。 如果您不熟悉 app 內產品，請檢閱[啟用 app 內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出 app 內產品。
--   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
+-   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
 -   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
 ## 步驟 1：提出購買要求
@@ -79,7 +71,7 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 {
-    return grantedConsumableTransactionIds.ContainsKey(productId) &amp;&amp; grantedConsumableTransactionIds[productId].Contains(transactionId);
+    return grantedConsumableTransactionIds.ContainsKey(productId) && grantedConsumableTransactionIds[productId].Contains(transactionId);
 }
 ```
 
@@ -127,6 +119,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

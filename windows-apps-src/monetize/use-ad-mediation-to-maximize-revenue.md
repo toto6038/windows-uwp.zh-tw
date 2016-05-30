@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
 description: Microsoft 提供廣告流量分配支援，可透過為來自多個廣告網路的橫幅和要求進行流量分配，讓您的應用程式內廣告獲得最佳收益。
 title: 使用廣告流量分配來獲得最佳收益
@@ -42,13 +43,13 @@ Microsoft 提供廣告流量分配支援，可透過為來自多個廣告網路�
 * [選取和管理廣告網路](select-and-manage-your-ad-networks.md)
 * [新增和使用廣告流量分配控制項](add-and-use-the-ad-mediator-control.md)
 * [測試您的廣告流量分配實作](test-your-ad-mediation-implementation.md)
-* [送出您的應用程式並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md)
+* [送出您的 App 並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md)
 * [疑難排解廣告流量分配](troubleshoot-ad-mediation.md)
  
 
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

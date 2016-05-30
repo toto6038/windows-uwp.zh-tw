@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: 在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。
 title: 取得應用程式評分
@@ -37,7 +38,7 @@ title: 取得應用程式評分
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
  
 
@@ -62,7 +63,7 @@ title: 取得應用程式評分
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字串</td>
-<td align="left">您想要擷取評分資料的 app 產品識別碼。 產品識別碼內嵌於 app 的刊登連結，該連結可於開發人員中心儀表板的 [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) 上取得。 舉例來說，產品識別碼可以是 9WZDNCRFJ3Q8。</td>
+<td align="left">您想要擷取評分資料之 app 的產品識別碼。 產品識別碼內嵌於 app 的刊登連結，該連結可於開發人員中心儀表板的 [App 識別碼頁面](https://msdn.microsoft.com/library/windows/apps/mt148561)上取得。 舉例來說，產品識別碼可以是 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -92,7 +93,7 @@ title: 取得應用程式評分
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">字串</td>
-<td align="left">在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[filter fields](#filter-fields)＞一節。</td>
+<td align="left">在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。</td>
 <td align="left">否</td>
 </tr>
 <tr class="odd">
@@ -185,7 +186,7 @@ title: 取得應用程式評分
 
 下列範例示範取得評分資料的數個要求。 將 *applicationId* 值以您 app 的產品識別碼取代。
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -207,12 +208,12 @@ Authorization: Bearer <your access token>
  
 ### 評分數值
 
-*Value* 陣列中的元素包含下列的值。
+*Value* 陣列中的元素包含下列值。
 
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 日期            | 字串  | 評分資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId   | 字串  | 您正在擷取評分資料的 app 產品識別碼。                                                                                                                                                                 |
+| applicationId   | 字串  | 您正在擷取評分資料之 app 的產品識別碼。                                                                                                                                                                 |
 | applicationName | 字串  | App 的顯示名稱。                                                                                                                                                                                                         |
 | market          | 字串  | 提交評分之市場的 ISO 3166 國家/地區碼。                                                                                                                                                              |
 | osVersion       | 字串  | 提交評分的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                               |
@@ -265,6 +266,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

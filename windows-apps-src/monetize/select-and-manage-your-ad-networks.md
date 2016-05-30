@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
 description: 使用廣告流量分配之前，您將需要為每個想要在應用程式中使用的廣告網路設定帳戶。
 title: 選取和管理廣告網路
@@ -29,7 +30,7 @@ title: 選取和管理廣告網路
 ## 適用於每個網路的特定參數和詳細資料
 
 
-以下是您需要針對每個廣告網路使用的特定詳細資料，包括如何設定帳戶，以及如何將 app 上架的方式。 我們也會列出當您[送出 app 並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md) (和/或在 [已連接服務] 中為了進行[測試廣告流量分配實作](test-your-ad-mediation-implementation.md)) 時所需提供的參數。 如需使用特定廣告網路的詳細資訊，請瀏覽其網站。
+以下是您需要針對每個廣告網路使用的特定詳細資料，包括如何設定帳戶，以及如何將 app 上架的方式。 我們也會列出當您[送出 app 並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md) (和/或在 \[已連接服務\] 中為了進行[測試廣告流量分配實作](test-your-ad-mediation-implementation.md)) 時所需提供的參數。 如需使用特定廣告網路的詳細資訊，請瀏覽其網站。
 
 除了所需的參數，每個廣告網路也都有其他選擇性參數，讓您可在 app 中透過程式碼進行設定。 如需範例，請參閱本主題稍後的[選擇性廣告網路參數](#optionalparameters) 。 如需選擇性參數的完整清單，請參閱每個廣告網路提供的說明文件。 廣告流量分配將會忽略或覆寫這些其中部分參數，而以下各節將列出這些參數。 例如，與目前位置相關的參數通常會由客戶位置的相關資訊來覆寫，而客戶的位置是由 app 本身內部的位置功能所判斷。
 
@@ -37,7 +38,7 @@ title: 選取和管理廣告網路
 
 ### Microsoft
 
-| 網站                        | 若要設定廣告網路參數，請使用 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)上的[利用廣告賺取獲利](https://msdn.microsoft.com/library/windows/apps/mt170658)頁面。   |
+| 網站                        | 若要設定廣告網路參數，請使用 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)上的[利用廣告營利](https://msdn.microsoft.com/library/windows/apps/mt170658)頁面。   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SDK 位置                   | [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。                                                                                                                                                                                                                         |
 | 讓應用程式上架              | 將廣告流量分配控制項新增到您的 App，並將 App 提交至 Windows 開發人員中心儀表板。                                                                                                                                                                                                            |
@@ -60,8 +61,8 @@ title: 選取和管理廣告網路
 
 | 網站                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK 位置                   | 首先，嘗試讓廣告流量分配者控制項透過「已連接服務」抓取組件，如[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)中所述。 如果您需要手動下載它們，請移至 Smaato 入口網站中的 [下載] (Downloads) 索引標籤。 |
-| 讓應用程式上架              | 在 Smaato 入口網站中，移至 [我的空間] (My Spaces)，然後產生新的 Adspace。                                                                                                                                                                                                                |
+| SDK 位置                   | 首先，嘗試讓廣告流量分配者控制項透過「已連接服務」抓取組件，如[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)中所述。 如果您需要手動下載它們，請移至 Smaato 入口網站中的 \[下載\] \(Downloads\) 索引標籤。 |
+| 讓應用程式上架              | 在 Smaato 入口網站中，移至 \[我的空間\] \(My Spaces\)，然後產生新的 Adspace。                                                                                                                                                                                                                |
 | 必要參數            | Pub <br> <br> Adspace <br> <br> Height 和 Width (只有針對 Windows 8.1 XAML 時是必要項)  |
 | 覆寫/忽略的參數 | Gps (覆寫)                                                                                                                                                                                                                                                                |
 
@@ -72,7 +73,7 @@ title: 選取和管理廣告網路
 | 網站                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | SDK 位置                   | 從 [Google Mobile Ads SDK 網站](http://go.microsoft.com/fwlink/p/?LinkId=518032)取得 Windows Phone 8 SDK。 |
-| 讓應用程式上架              | 在 AdMob 入口網站中，選取 [讓新應用程式成為賺錢工具] (Monetize new app)。                                                                          |
+| 讓應用程式上架              | 在 AdMob 入口網站中，選取 \[讓新應用程式成為賺錢工具\] \(Monetize new app\)。                                                                          |
 | 必要參數            | AdUnitID <br> <br> Format                                                                                              |
 | 覆寫/忽略的參數 | Location (覆寫)  <br><br> ForceTesting (忽略) <br><br> Refresh Rate (忽略)                                |
  
@@ -81,7 +82,7 @@ title: 選取和管理廣告網路
 
 | 網站             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK 位置        | 首先，嘗試讓廣告流量分配者控制項透過「已連接服務」抓取組件，如[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)中所述。 如果您需要手動下載它們，請登入您的帳戶，然後移至 [儀表板] (Dashboard) 中的 [SDK] 索引標籤，以下載 Windows Phone 8 SDK。 |
+| SDK 位置        | 首先，嘗試讓廣告流量分配者控制項透過「已連接服務」抓取組件，如[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)中所述。 如果您需要手動下載它們，請登入您的帳戶，然後移至 \[儀表板\] \(Dashboard\) 中的 \[SDK\] 索引標籤，以下載 Windows Phone 8 SDK。 |
 | 讓應用程式上架   | 在 Inneractive 入口網站中，建立新的應用程式。                                                                                                                                                                                                                                                                                           |
 | 必要參數 | AppID <br> <br> AdType (IaAdType_Banner 或 IaAdType_Text)                                                                               |
  
@@ -101,7 +102,7 @@ title: 選取和管理廣告網路
 
 除了所需的參數，每個廣告網路也都有其他選擇性參數，讓您可在 app 中透過程式碼進行設定。 如需選擇性參數的完整清單，請參閱每個廣告網路提供的說明文件。 若要在程式碼中設定這些選擇性參數，請使用 **AdMediatorControl** 物件的 **AdSdkOptionalParameters** 屬性。
 
-下列範例示範如何設定 Microsoft Advertising 的 **CountryOrRegion** 參數。
+下列範例示範如何將 Microsoft Advertising 的 [CountryOrRegion](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.countryorregion.aspx) 屬性設定為使用者的雙字母國家或地區碼。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
@@ -118,13 +119,13 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
 
 * [新增和使用廣告流量分配控制項](add-and-use-the-ad-mediator-control.md)
 * [測試您的廣告流量分配實作](test-your-ad-mediation-implementation.md)
-* [送出您的應用程式並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md)
+* [送出您的 App 並設定廣告流量分配](submit-your-app-and-configure-ad-mediation.md)
 * [疑難排解廣告流量分配](troubleshoot-ad-mediation.md)
  
 
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

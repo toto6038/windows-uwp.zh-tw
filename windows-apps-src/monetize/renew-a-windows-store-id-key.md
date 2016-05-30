@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 請使用這個方法來更新 Windows 市集索引鍵。
 title: 更新 Windows 市集識別碼索引鍵
@@ -45,7 +46,7 @@ title: 更新 Windows 市集識別碼索引鍵
 
 ### 要求主體
 
-| 參數     | 類型   | 說明                       | 必要 |
+| 參數     | 類型   | 描述                       | 必要 |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | 字串 | Azure AD 存取權杖。        | 是      |
 | key           | 字串 | 過期的 Windows 市集識別碼索引鍵。 | 否       |
@@ -54,7 +55,7 @@ title: 更新 Windows 市集識別碼索引鍵
 
 ### 要求的範例
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
 Content-Length: 2774
 Content-Type: application/json
@@ -71,7 +72,7 @@ Host: collections.mp.microsoft.com
 
 ### 回應主體
 
-| 參數 | 類型   | 說明                                                                                                            | 必要 |
+| 參數 | 類型   | 描述                                                                                                            | 必要 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | 字串 | 更新的 Windows 市集索引鍵，可在未來呼叫 Windows 市集集合 API 或購買 API 時使用。 | 否       |
 
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 
 ### 回應的範例
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 1646
 Content-Type: application/json
@@ -114,6 +115,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

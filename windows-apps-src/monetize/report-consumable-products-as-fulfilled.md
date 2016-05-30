@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。
 title: 將消費性產品回報為已完成
@@ -39,9 +40,9 @@ title: 將消費性產品回報為已完成
 
 ### 要求的標頭
 
-| 標頭         | 類型   | 說明                                                                                           |
+| 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
+| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。                           |
 | Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
@@ -50,7 +51,7 @@ title: 將消費性產品回報為已完成
 
 ### 要求主體
 
-| 參數     | 類型         | 說明         | 必要 |
+| 參數     | 類型         | 描述         | 必要 |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | 取用此項目時所針對的使用者。                                                                                                                                                                                                                                                                 | 是      |
 | itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 itemId 值。 請搭配 trackingId 來使用這個參數。                                                                                                                                                                                                  | 否       |
@@ -65,7 +66,7 @@ title: 將消費性產品回報為已完成
 
 UserIdentity 物件包含下列參數。
 
-| 參數            | 類型   | 說明                                                                                                                                 | 必要 |
+| 參數            | 類型   | 描述                                                                                                                                 | 必要 |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。                                                                                                           | 是      |
 | identityValue        | 字串 | Windows 市集識別碼索引鍵的字串值。                                                                                                   | 是      |
@@ -77,7 +78,7 @@ UserIdentity 物件包含下列參數。
 
 下列範例使用 *itemId* 和 *trackingId*。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1…..
 Host: collections.mp.microsoft.com
@@ -97,7 +98,7 @@ Content-Type: application/json
 
 下列範例使用 *productId* 和 *transactionId*。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1……
 Content-Length: 1880
@@ -122,7 +123,7 @@ Host: collections.md.mp.microsoft.com
 
 ### 回應的範例
 
-```
+```syntax
 HTTP/1.1 204 No Content
 Content-Length: 0
 MS-CorrelationId: 386f733d-bc66-4bf9-9b6f-a1ad417f97f0
@@ -157,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

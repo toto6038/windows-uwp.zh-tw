@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 您必須先在開發人員中心儀表板中定義您的實驗，然後方可在通用 Windows 平台 (UWP) app 中運用 A/B 測試執行實驗。
 title: 在開發人員中心儀表板中定義您的實驗
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
@@ -79,6 +80,6 @@ API 金鑰是將 app 與您開發人員中心帳戶中實驗建立關聯的唯�
   * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

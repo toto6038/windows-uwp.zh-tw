@@ -1,16 +1,9 @@
 ---
-Description: 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
-title: 啟用 app 內產品購買
-ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-關鍵字︰App 內的購買選項
-關鍵字：App 內購買
-關鍵字：App 內產品
-關鍵字：如何支援應用程式內
-關鍵字：App 內購買程式碼範例
-關鍵字：App 內的購買選項程式碼範例
+Description&#58; author&#58; mcleanbyron 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
+title&#58; 啟用應用程式內產品購買 ms.assetid&#58; D158E9EB-1907-4173-9889-66507957BD6B keywords&#58; 應用程式內的購買選項 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
 ---
 
-# 啟用 app 內產品購買
+# 啟用應用程式內產品購買
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +14,7 @@ ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 ## 先決條件
 
 -   要新增功能讓客戶購買的 Windows 應用程式。
--   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
+-   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
 -   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
 ## 步驟 1：初始化應用程式的授權資訊
@@ -118,13 +111,13 @@ void AppInit()
 
 如果您想要為客戶提供消費性 app 內產品選項 (可購買、耗盡，並在想要時再次購買的項目)，請前往[啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)主題。
 
-如果您需要使用收據來確認使用者已進行 app 內購買，請務必檢閱[使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)。
+如果您需要使用收據來確認使用者已進行 App 內購買，請務必檢閱[使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)。
 
 ## 相關主題
 
 
 * [啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)
-* [管理大型的 app 內產品型錄](manage-a-large-catalog-of-in-app-products.md)
+* [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
 * [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
 * [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
  
@@ -136,6 +129,6 @@ void AppInit()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
 description: 提交應用程式之前，建議您先測試您的廣告流量分配實作。
 title: 測試您的廣告流量分配實作
@@ -20,7 +21,7 @@ title: 測試您的廣告流量分配實作
 
 將會為支援這些廣告的廣告網路顯示測試廣告。 請注意，測試廣告有時可能看起來像錯誤。 請務必檢閱您的事件，以判斷是否發生錯誤。
 
-**注意：**當測試 Windows Phone Silverlight App 時，Google AdMob 一律會傳回「**無效的要求**」錯誤，因為它不會使用測試中繼資料。 若要驗證您的 Google AdMob 實作，您必須輸入所需的參數，如下一節所述。
+> **注意：**當測試 Windows Phone Silverlight App 時，Google AdMob 一律會傳回「**無效的要求**」錯誤，因為它不會使用測試中繼資料。 若要驗證您的 Google AdMob 實作，您必須輸入所需的參數，如下一節所述。
 
  
 
@@ -48,9 +49,6 @@ title: 測試您的廣告流量分配實作
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

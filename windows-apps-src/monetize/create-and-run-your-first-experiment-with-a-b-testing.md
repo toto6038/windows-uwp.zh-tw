@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 在此逐步解說中，您將會使用 A/B 測試建立和執行您的第一個實驗。
 title: 使用 A/B 測試建立和執行您的第一個實驗
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
@@ -174,6 +175,6 @@ private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
   * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

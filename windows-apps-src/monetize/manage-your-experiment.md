@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 在開發人員儀表板中定義實驗並在您的應用程式中編寫實驗用的程式碼之後，您即可使用實驗並使用開發人員儀表板來檢閱實驗的結果。
 title: 在開發人員中心儀表板中管理您的實驗
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
@@ -52,6 +53,6 @@ ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
   * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
