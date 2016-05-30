@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) 所支援的工具、功能及使用經驗。
 title: Windows 10 提供給開發人員的新功能 - 2015 年 7 月
 ---
@@ -8,7 +9,7 @@ title: Windows 10 提供給開發人員的新功能 - 2015 年 7 月
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) 所支援的工具、功能及使用經驗。 在 Windows 10 上[安裝工具和 SDK](https://dev.windows.com/downloads) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](https://msdn.microsoft.com/library/windows/apps/bg124288)，或探索如何使用您在[ Windows 上的現有應用程式程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) 所支援的工具、功能及使用經驗。 在 Windows 10 上[安裝工具和 SDK](https://dev.windows.com/downloads) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](https://msdn.microsoft.com/library/windows/apps/bg124288)，或探索如何使用您在[Windows 上的現有應用程式程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
 以下為您逐項列出 Windows 10 RTM 中的新功能。
 
@@ -65,7 +66,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="even">
 <td align="left">SplitView</td>
-<td align="left">新的 [<strong>SplitView</strong>] (https://msdn.microsoft.com/library/windows/apps/dn864360) 控制項可讓您輕鬆顯示和隱藏暫時性內容。 它常用於最上層瀏覽案例，例如漢堡功能表；在此功能表中，會隱藏瀏覽內容，等到需要時再移入做為使用者動作結果。</td>
+<td align="left">新的 [<strong>SplitView</strong>] (https://msdn.microsoft.com/library/windows/apps/dn864360) 控制項可讓您輕鬆顯示和隱藏暫時性內容。 它通常用於最上層瀏覽案例 (例如「漢堡功能表」&quot;&quot;)，其中瀏覽內容是隱藏的，並且會視使用者動作結果在需要時滑入。</td>
 </tr>
 <tr class="odd">
 <td align="left">RelativePanel</td>
@@ -73,7 +74,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="even">
 <td align="left">CalendarView</td>
-<td align="left">[<strong>CalendarView</strong>] (https://msdn.microsoft.com/library/windows/apps/dn890052) 控制項可讓您使用可自訂、以月份為基礎的檢視，輕鬆檢視及選取日期和日期範圍。 <strong>CalendarView</strong> 支援最小、最大和封鎖日期，以限制可供選取的日期。 您也可以設定自訂密度列，用以顯示某天之排程的一般「密度」。</td>
+<td align="left">[<strong>CalendarView</strong>] (https://msdn.microsoft.com/library/windows/apps/dn890052) 控制項可讓您使用可自訂、以月份為基礎的檢視，輕鬆檢視及選取日期和日期範圍。 <strong>CalendarView</strong> 支援最小、最大和封鎖日期，以限制可供選取的日期。 您也可以設定自訂密度列，以用來顯示特定日之排程的一般「行程密度」&quot;&quot;。</td>
 </tr>
 <tr class="odd">
 <td align="left">CalendarDatePicker</td>
@@ -95,7 +96,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <li>[<strong>Windows.UI.Xaml.Controls.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空間 - 顯示地圖。</li>
 <li>[<strong>Windows.Services.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間 - 尋找位置和路線。</li>
 </ul>
-<p>若要立即開始在通用 Windows 應用程式中使用這些 API，請向 [Bing Maps Developer Center](https://www.bingmapsportal.com/) 索取金鑰。 如需詳細資訊，請參閱[How to authenticate a Maps app](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528)。 電腦及手機使用者可以從 [設定] app 下載離線地圖，這也是 Windows 10 的新功能之一。 在無法使用網際網路時，可用的離線地圖可讓 [<strong>MapControl</strong>] (https://msdn.microsoft.com/library/windows/apps/dn637004) 用來顯示地圖。</p></td>
+<p>若要立即在通用 Windows App 中開始使用這些 API，請向 [Bing 地圖開發人員中心](https://www.bingmapsportal.com/)要求金鑰。 如需詳細資訊，請參閱[如何驗證地圖 App](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528)。 此外，電腦及手機使用者可以從 [設定] App 下載離線地圖，這是 Windows 10 的新功能之一。 在無法使用網際網路時，可用的離線地圖可讓 [<strong>MapControl</strong>] (https://msdn.microsoft.com/library/windows/apps/dn637004) 用來顯示地圖。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">輸入按鈕對應</td>
@@ -107,7 +108,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <p>[<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項可定義繪製及轉譯筆墨筆劃的重疊區域。 此控制項的功能 (輸入、處理和轉譯) 來自於 [<strong>InkPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn922011)、[<strong>InkStroke</strong>](https://msdn.microsoft.com/library/windows/apps/br208485)、[<strong>InkRecognizer</strong>](https://msdn.microsoft.com/library/windows/apps/br208478) 和 [<strong>InkSynchronizer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903979) 類別。</p>
 <p></p>
 <div class="alert">
-<strong>重要事項</strong>：使用 JavaScript 的 Windows 應用程式中不支援這些類別。
+<strong>重要</strong> 使用 JavaScript 的 Windows 應用程式中不支援這些類別。
 </div>
 <div>
  
@@ -131,7 +132,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <td align="left">CommandBar 和 AppBar 更新</td>
 <td align="left"><p>[<strong>CommandBar</strong>] (https://msdn.microsoft.com/library/windows/apps/dn279427) 與 [<strong>AppBar</strong>] (https://msdn.microsoft.com/library/windows/apps/hh701927) 控制項已經過更新，使得不同裝置系列的 UWP app 有一致的 API、行為和使用者體驗。</p>
 <p>通用 Windows 應用程式的 [<strong>CommandBar</strong>] (https://msdn.microsoft.com/library/windows/apps/dn279427) 控制項已經過改良，可提供 [<strong>AppBar</strong>] (https://msdn.microsoft.com/library/windows/apps/hh701927) 功能的超集，並提升在您的 app 中加以使用的彈性。 您應將 <strong>CommandBar</strong> 用於 Windows 10 上的所有新的通用 Windows 應用程式。 在 Windows 8.1 的 <strong>CommandBar</strong> 中，您可以僅使用實作 [<strong>ICommandBarElement</strong>] (https://msdn.microsoft.com/library/windows/apps/dn251969) 的控制項，例如 [<strong>AppBarButton</strong>] (https://msdn.microsoft.com/library/windows/apps/dn279244)。 在通用 Windows 應用程式中，除了 <strong>AppBarButton</strong> 以外，現在您可以將自訂內容放在 <strong>CommandBar</strong> 中。</p>
-<p>[<strong>AppBar</strong>] (https://msdn.microsoft.com/library/windows/apps/hh701927) 控制項已經更新，可讓您更輕鬆地將使用 <strong>AppBar</strong> 的 Windows 8.1 應用程式移至通用 Windows 平台。 <strong>AppBar</strong> 依設計可與全螢幕應用程式搭配使用，並使用邊緣手勢來叫用。 控制帳戶已針對 Windows 10 中的視窗化應用程式和缺少邊緣手勢等問題進行更新。</p>
+<p>[<strong>AppBar</strong>] (https://msdn.microsoft.com/library/windows/apps/hh701927) 控制項已經更新，可讓您更輕鬆地將使用 <strong>AppBar</strong> 的 Windows 8.1 App 移至通用 Windows 平台。 <strong>AppBar</strong> 依設計可與全螢幕 App 搭配使用，並使用邊緣手勢來叫用。 控制帳戶已針對 Windows 10 中視窗化 App 和缺少邊緣手勢等問題進行更新。</p>
 <p>隱藏的 [<strong>AppBar.ClosedDisplayMode</strong>] (https://msdn.microsoft.com/library/windows/apps/dn633872) 先前僅限於 Windows Phone，現在已可支援所有裝置系列，讓您選擇不同層級的命令提示。 [<strong>AppBar</strong>] (https://msdn.microsoft.com/library/windows/apps/hh701927) 依預設會顯示最少的提示，讓您在將 Windows 8.1 應用程式升級至通用 Windows 應用程式時能有一致的使用經驗，而無須再依賴平台中的邊緣手勢支援。</p>
 <p><strong>新的</strong> [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) <strong>API：</strong>[<strong>Closing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996483)、[<strong>OnClosing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996484)、[<strong>Opening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996486)、[<strong>OnOpening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996485)、[<strong>TemplateSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn996487)。</p>
 <p><strong>新的</strong> [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) <strong>API：</strong>[<strong>CommandBarOverflowPresenterStyle</strong>](https://msdn.microsoft.com/library/windows/apps/dn975227) 和 [<strong>CommandBarOverflowPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn975225)。</p></td>
@@ -159,7 +160,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <tr class="odd">
 <td align="left">清單捲動虛擬化</td>
 <td align="left"><p>XAML [<strong>ListView</strong>](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) 控制項有新的 [<strong>ListViewBase.ChoosingItemContainer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903989) 事件，可改善資料收集發生變更時的控制效能。</p>
-<p>系統現在不會執行會重新顯示入口動畫的完整清單重設，而會保有目前在檢視中的項目以及焦點和選取狀態；檢視區中的新項目和移除的項目會以動畫方式流暢地移入和移出。 資料收集在經過容器未終結的變更之後，應用程式將可快速比對任何「舊」項目及其先前的容器，並略過進一步處理容器生命週期覆寫方法的作業。 只有「新」項目會進行處理，並與回收或新的容器產生關聯。</p></td>
+<p>系統現在不會執行會重新顯示入口動畫的完整清單重設，而會保有目前在檢視中的項目以及焦點和選取狀態；檢視區中的新項目和移除的項目會以動畫方式流暢地移入和移出。 資料收集在經過容器未終結的變更之後，App 將可快速比對任何「舊」&quot;&quot;項目及其先前的容器，並略過進一步處理容器生命週期覆寫方法的作業。 只有「新」&quot;&quot;項目會被處理，並與回收的或新的容器產生關聯。</p></td>
 </tr>
 <tr class="even">
 <td align="left">SelectRange 方法和 SelectedRanges 屬性</td>
@@ -172,7 +173,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <tr class="even">
 <td align="left">SemanticZoom 更新</td>
 <td align="left"><p>現在，[<strong>SemanticZoom</strong>] (https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項可讓所有裝置系列的 UWP app 有單一而一致的行為。</p>
-<p>在放大檢視中與縮小檢視之間切換的預設動作，是點選放大檢視中的群組標頭。 此行為與 Windows Phone 8.1 上的行為相同，但與使用捏合手勢進行縮放的 Windows 8.1 不同。 若要變更使用捏合進行縮放的檢視，請在 [<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) 的內部 [<strong>ScrollViewer</strong>](https://msdn.microsoft.com/library/windows/apps/br209527) 上設定 [<strong>ScrollViewer.ZoomMode</strong>](https://msdn.microsoft.com/library/windows/apps/br209601)=&quot;Enabled&quot;。</p>
+<p>在放大檢視中與縮小檢視之間切換的預設動作，是點選放大檢視中的群組標頭。 此行為與 Windows Phone 8.1 上的行為相同，但與使用捏合手勢進行縮放的 Windows 8.1 不同。 若要變更使用捏合進行縮放的檢視，請在 [<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) 的內部 [<strong>ScrollViewer</strong>](https://msdn.microsoft.com/library/windows/apps/br209527) 上將 [<strong>ScrollViewer.ZoomMode</strong>](https://msdn.microsoft.com/library/windows/apps/br209601) 設定為 &quot;Enabled&quot;。</p>
 <p>在通用 Windows 應用程式中，縮小檢視會取代放大檢視，且其大小會與它所取代的檢視相同。 此行為與 Windows 8.1 上的行為相同，但與 Windows Phone 8.1 不同；在 Windows Phone 8.1 中，縮小檢視會佔用整個螢幕大小，並呈現在所有其他內容之上。</p></td>
 </tr>
 <tr class="odd">
@@ -201,10 +202,10 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="odd">
 <td align="left">PasswordBox.PasswordRevealMode</td>
-<td align="left"><p>在通用 Windows app 中，[<strong>PasswordRevealMode</strong>] (https://msdn.microsoft.com/library/windows/apps/dn890867) 屬性會取代 [<strong>IsPasswordRevealButtonEnabled</strong>] (https://msdn.microsoft.com/library/windows/apps/hh702579) 屬性，以在各個裝置系列間提供一致的行為。</p>
+<td align="left"><p>在通用 Windows App 中，[<strong>PasswordRevealMode</strong>] (https://msdn.microsoft.com/library/windows/apps/dn890867) 屬性會取代 [<strong>IsPasswordRevealButtonEnabled</strong>] (https://msdn.microsoft.com/library/windows/apps/hh702579) 屬性，以在各個裝置系列間提供一致的行為。</p>
 <p></p>
 <div class="alert">
-<strong>注意：</strong>在 Windows 10 之前，依預設不會顯示密碼顯示按鈕；在通用 Windows app 中則預設為顯示。 如果您的 app 基於安全性要求一律隱藏密碼，請務必將 [<strong>PasswordRevealMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn890867) 設為 [隱藏]。
+<strong>注意</strong> 在 Windows 10 之前，依預設不會顯示密碼顯示按鈕；在通用 Windows App 中則預設為顯示。 如果您的 App 基於安全性要求一律隱藏密碼，請務必將 [<strong>PasswordRevealMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn890867) 設為 [隱藏]。
 </div>
 <div>
  
@@ -216,15 +217,15 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="odd">
 <td align="left">AutoSuggestBox</td>
-<td align="left">Windows Phone 8.1 中的 [<strong>AutoSuggestBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn633874) 控制項現在已可在所有裝置系列的通用 Windows app 上使用，且您應使用它來取代 [<strong>SearchBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn252771)。 <strong>AutoSuggestBox</strong> 會在使用者輸入時提供建議，並且可與各種不同的輸入類型搭配運作，例如觸控、鍵盤及輸入法等。 它也有一些新成員，使其成為更理想的搜尋方塊：[<strong>QueryIcon</strong>](https://msdn.microsoft.com/library/windows/apps/dn996494) 屬性和 [<strong>QuerySubmitted</strong>](https://msdn.microsoft.com/library/windows/apps/dn996497) 事件。</td>
+<td align="left">Windows Phone 8.1 中的 [<strong>AutoSuggestBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn633874) 控制項現在已可在所有裝置系列的通用 Windows App 上使用，且您應使用它來取代 [<strong>SearchBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn252771)。 <strong>AutoSuggestBox</strong> 會在使用者輸入時提供建議，並且可與各種不同的輸入類型搭配運作，例如觸控、鍵盤及輸入法等。 它也新增一些新成員，來使它成為更理想的搜尋方塊：[<strong>QueryIcon</strong>](https://msdn.microsoft.com/library/windows/apps/dn996494) 屬性和 [<strong>QuerySubmitted</strong>](https://msdn.microsoft.com/library/windows/apps/dn996497) 事件。</td>
 </tr>
 <tr class="even">
 <td align="left">ContentDialog</td>
-<td align="left">Windows Phone 8.1 中的 [<strong>ContentDialog</strong>](https://msdn.microsoft.com/library/windows/apps/dn633972) 控制項現在已可在所有裝置系列的通用 Windows app 上使用。 <strong>ContentDialog</strong> 可讓您顯示可在各類裝置上順暢運作的可自訂強制回應對話方塊。</td>
+<td align="left">Windows Phone 8.1 中的 [<strong>ContentDialog</strong>](https://msdn.microsoft.com/library/windows/apps/dn633972) 控制項現在已可在所有裝置系列的通用 Windows App 上使用。 <strong>ContentDialog</strong> 可讓您顯示可在各類裝置上順暢運作的可自訂強制回應對話方塊。</td>
 </tr>
 <tr class="odd">
-<td align="left">樞紐分析</td>
-<td align="left">Windows Phone 8.1 中的 [<strong>Pivot</strong>](https://msdn.microsoft.com/library/windows/apps/dn608241) 控制項現在已可在所有裝置系列的通用 Windows app 上使用。 現在，您在行動裝置和桌面裝置的應用程式中，可以使用相同的<strong>樞紐分析</strong>控制項。 <strong>樞紐分析</strong>可根據螢幕大小和輸入類型提供可調整的行為。 您可以設定<strong>樞紐分析</strong>的樣式以提供類似索引標籤的行為，讓每個樞紐分析項目包含不同的資訊檢視。</td>
+<td align="left">Pivot</td>
+<td align="left">Windows Phone 8.1 中的 [<strong>Pivot</strong>](https://msdn.microsoft.com/library/windows/apps/dn608241) 控制項現在已可在所有裝置系列的通用 Windows app 上使用。 現在，您在行動裝置和桌面裝置的 App 中，可以使用相同的 <strong>Pivot</strong> 控制項。 <strong>Pivot</strong> 可根據螢幕大小和輸入類型提供可調整的行為。 您可以設定 <strong>Pivot</strong> 控制項的樣式以提供類似索引標籤的行為，讓每個樞紐分析項目包含不同的資訊檢視。</td>
 </tr>
 </tbody>
 </table>
@@ -285,7 +286,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <td align="left">Cortana</td>
 <td align="left"><p>使用可在外部應用程式中啟動及執行單一動作的語音命令，來延伸 <strong>Cortana</strong> 的基本功能。</p>
 <p>整合應用程式的基本功能，並提供一個中心進入點，讓使用者不需要開啟應用程式就能完成大部分的工作，使 <strong>Cortana</strong> 成為您的應用程式與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。</p>
-<p>了解如何 [integrate your app into the Cortana canvas](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230)。 如果您需要相關概念，可以參考 [Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics) 中有關於 <strong>Cortana</strong> 的特定設計建議與 UX 指導方針。</p></td>
+<p>了解如何[將您的 App 整合到 Cortana 畫布中](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230)。 如果您需要一些想法，您可以參考[通用 Windows App 設計基本知識](https://dev.windows.com/design/design-basics)中針對 <strong>Cortana</strong> 的設計建議與 UX 指導方針。</p></td>
 </tr>
 <tr class="even">
 <td align="left">檔案總管</td>
@@ -299,12 +300,12 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <td align="left">設定</td>
 <td align="left"><p>使用 ms-settings 通訊協定與 [<strong>LaunchUriAsync</strong>](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以顯示內建的設定頁面。 例如，下列程式碼會顯示 Wi-Fi 設定的頁面。</p>
 <p><code>bool result = await Launcher.LaunchUriAsync(new Uri(&quot;ms-settings://network/wifi&quot;));</code></p>
-<p>如需您可以顯示的設定頁面清單，請參閱[How to display built-in settings pages by using the ms-settings protocol](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx)。</p></td>
+<p>如需您可以顯示之設定頁面的清單，請參閱[如何使用 ms-settings 通訊協定顯示內建設定頁面](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">App 間通訊</td>
-<td align="left"><p>Windows 10 中新的 [app-to-app communication](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) API 可讓 Windows 應用程式 (以及 Windows Web 應用程式) 能夠相互啟動並交換資料與檔案。</p>
-<p>使用這些新的 API，就能流暢地立即處理需要使用者使用多個應用程式的複雜工作。 例如，您的應用程式可以啟動社交網路 app 來選擇一位連絡人，或啟動結帳應用程式來完成付款程序。</p></td>
+<td align="left"><p>Windows 10 中新的 [App 間通訊](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) API，讓 Windows 應用程式 (及 Windows Web 應用程式) 可以互相啟動並交換資料和檔案。</p>
+<p>使用這些新的 API，就能流暢地處理需要使用者使用多個應用程式的複雜工作。 例如，您的應用程式可以啟動社交網路 app 來選擇一位連絡人，或啟動結帳應用程式來完成付款程序。</p></td>
 </tr>
 <tr class="even">
 <td align="left">app 服務</td>
@@ -312,8 +313,8 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="odd">
 <td align="left">應用程式套件資訊清單</td>
-<td align="left"><p>對 Windows 10 的 [package manifest schema](https://msdn.microsoft.com/library/windows/apps/br211474) 參考所做的更新，包括已新增、移除和變更的元素。</p>
-<p>如需結構描述中的所有元素、屬性和類型的參考資訊，請參閱[Element Hierarchy](https://msdn.microsoft.com/library/windows/apps/dn934819)。</p></td>
+<td align="left"><p>針對新增、移除和變更之 Windows 10 內含元素的[套件資訊清單結構描述](https://msdn.microsoft.com/library/windows/apps/br211474)參考更新。</p>
+<p>如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://msdn.microsoft.com/library/windows/apps/dn934819)。</p></td>
 </tr>
 </tbody>
 </table>
@@ -332,18 +333,18 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <tr class="odd">
 <td align="left">Microsoft Surface Hub</td>
 <td align="left"><p>Microsoft Surface Hub 是功能強大的小組共同作業裝置和大型螢幕平台，適用於從 Surface Hub 或是您已連接的裝置原生執行的通用 Windows app。</p>
-<p>您可以根據本身的商業需求建置量身打造的 app，充分利用大型螢幕、觸控和筆跡輸入，和大量上架硬體，例如相機和感應器。</p>
-<p>請參考 [Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics) 中有關於 Surface Hub 的特定設計建議與 UX 指導方針。 這些文件說明通用 Windows app 的回應式設計技術。</p>
+<p>利用大型螢幕、觸控及手寫輸入，以及各種內建硬體 (例如攝影機與感應器) 的優點，針對您的商務特性設計及建立您自己的 App。</p>
+<p>請參考[通用 Windows App 設計基本知識](https://dev.windows.com/design/design-basics)中 Surface Hub 特定的設計建議與 UX 指導方針。 這些文件說明通用 Windows App 的回應式設計技術。</p>
 <p>如需支援公共共用應用程式的詳細資訊，請參閱 [<strong>SharedModeSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn949019)。</p>
 <p>如需筆跡輸入的相關資訊，以及在新的 [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上支援多點筆跡的詳細資訊，請參閱 [<strong>Windows.UI.Input.Inking</strong>](https://msdn.microsoft.com/library/windows/apps/br208524) 和 [<strong>Windows.UI.Input.Inking.Core</strong>](https://msdn.microsoft.com/library/windows/apps/dn958452)。</p>
-<p>如需處理感應器輸入的資訊，請參閱[Integrating devices, printers, and sensors](https://msdn.microsoft.com/library/windows/apps/br229563)。</p></td>
+<p>如需如何處理感應器輸入的資訊，請參閱[整合裝置、印表機以及感應器](https://msdn.microsoft.com/library/windows/apps/br229563)。</p></td>
 </tr>
 <tr class="even">
 <td align="left">位置</td>
 <td align="left"><p>Windows 10 導入了新方法，用以提示使用者要求存取其位置的權限，即 [<strong>RequestAccessAsync</strong>](https://msdn.microsoft.com/library/windows/apps/dn859152)。</p>
 <p>使用者可以使用 [設定]<strong></strong> 應用程式中的 [位置隱私權設定]<strong></strong> 來設定其位置資料的隱私權。 您的應用程式只能在下列情況下存取使用者的位置：</p>
 <ul>
-<li><strong>[此裝置的位置]</strong>已開啟 (不適用於 Windows 10 for Phone)。</li>
+<li><strong>[此裝置的位置]</strong> 已開啟 (不適用於 Windows 10 for Phone)。</li>
 <li>位置服務設定 [位置]<strong></strong> 已 [開啟]<strong></strong>。</li>
 <li>在 [選擇可以使用您的位置的應用程式]<strong></strong> 底下，將您的應用程式設為 [開啟]<strong></strong>。</li>
 </ul>
@@ -351,10 +352,10 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="odd">
 <td align="left">AllJoyn</td>
-<td align="left"><p>[<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows 執行階段命名空間導入了 Microsoft 的 AllJoyn 開放原始碼軟體架構和服務的實作。 這些 API 可讓您的通用 Windows 裝置應用程式能夠參與 AllJoyn 驅動物聯網 (IoT) 案例中的其他裝置。 如需 AllJoyn C API 的詳細資訊，請在 [The AllSeen Alliance](https://allseenalliance.org/) 下載文件。</p>
-<p>使用包含在此版本中的 [AllJoynCodeGen tool](https://msdn.microsoft.com/library/windows/apps/dn913809)，可產生能夠用來在您的裝置應用程式中啟用 AllJoyn 案例的 Windows 元件。</p>
+<td align="left"><p>[<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows 執行階段命名空間導入了 Microsoft 的 AllJoyn 開放原始碼軟體架構和服務的實作。 這些 API 可讓您的通用 Windows 裝置 App 能夠和其他裝置參與 AllJoyn 所驅動之物聯網 (IoT) 案例。 如需關於 AllJoyn C API 的詳細資料，請於 [AllSeen 聯盟](https://allseenalliance.org/)下載文件。</p>
+<p>使用此版本中包含的 [AllJoynCodeGen 工具](https://msdn.microsoft.com/library/windows/apps/dn913809)，以產生可用來在裝置 App 中啟用 AllJoyn 案例的 Windows 元件。</p>
 <div class="alert">
-<strong>注意</strong>：Windows 10 IoT 核心版現在已可用於小型裝置的新類別，讓您使用 Windows 和 Visual Studio 建立「物聯網」(IoT) 裝置。 在 [WindowsOnDevices.com](http://www.windowsondevices.com/) 深入了解 Windows。
+<strong>注意</strong> Windows 10 IoT 核心版現在已適用於小型裝置的新類別，可讓您使用 Windows 和 Visual Studio 建立「物聯網」(IoT) 裝置。 在 [WindowsOnDevices.com](http://www.windowsondevices.com/) 深入了解 Windows IoT
 </div>
 <div>
  
@@ -421,8 +422,8 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <tr class="even">
 <td align="left">媒體基礎轉換 (MFT) 的媒體基礎轉碼視訊處理器 (XVP) 支援</td>
 <td align="left"><p>使用媒體基礎轉換 (MFT) 的 Windows 應用程式現在可以使用<strong>媒體基礎轉碼視訊處理器</strong> (XVP) 來轉換、縮放以及轉換原始視訊資料︰</p>
-<p>新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) 屬性即使在 Microsoft DirectX 視訊加速 (DXVA) 模式中，也可讓您輸出至呼叫者配置的紋理。</p>
-<p>新的 [<strong>IMFVideoProcessorControl2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn800741) 介面可讓您的應用程式支援硬體效果、查詢支援的硬體效果，以及覆寫由視訊處理器執行的旋轉操作。</p></td>
+<p>新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) 屬性支援對呼叫端配置紋理的輸出 (即使在 Microsoft DirectX 視訊加速 (DXVA) 模式中也支援)。</p>
+<p>新的 [<strong>IMFVideoProcessorControl2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn800741) 介面可讓您的 App 支援硬體效果、查詢支援的硬體效果，以及覆寫由視訊處理器執行的旋轉操作。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">轉碼</td>
@@ -474,8 +475,8 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <td align="left">通訊端</td>
 <td align="left"><p>通訊端更新包括：</p>
 <ul>
-<li><strong>通訊端代理程式。</strong> 通訊端代理程式可代表在應用程式生命週期中處於任何狀態的應用程式建立及關閉通訊端連線。 這會讓應用程式和它們所提供的服務更易於探索。 例如，透過通訊端代理程式，Win32 服務即使在未執行時，仍然可以接受連入的通訊端連線。</li>
-<li><strong>輸送量的改進。</strong> 通訊端輸送量已針對使用 [<strong>Windows.Networking.Sockets</strong>](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間的應用程式最佳化。</li>
+<li><strong>通訊端代理程式。</strong> 通訊端代理程式可代表處於 App 生命週期中任何狀態的 App 建立及關閉通訊端連線。 這會讓應用程式和它們所提供的服務更易於探索。 例如，透過通訊端代理程式，Win32 服務即使在未執行時，仍然可以接受連入的通訊端連線。</li>
+<li><strong>輸送量的改進。</strong> 通訊端輸送量已針對使用 [<strong>Windows.Networking.Sockets</strong>](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間的 App 最佳化。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -490,7 +491,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <td align="left">Wi-Fi Direct API 更新</td>
 <td align="left"><p>裝置代理程式會進行更新，使裝置不需要離開應用程式即可配對。 對 [<strong>Windows.Devices.WiFiDirect</strong>] (https://msdn.microsoft.com/library/windows/apps/dn297687) 命名空間進行新增後，裝置也因此讓本身能夠讓其他裝置探索到，並讓它接聽連入的連線通知。</p>
 <div class="alert">
-<strong>請注意</strong>：在此版本中，Wi-Fi Direct 增強功能並未內建於 UX 中，並且僅支援按鈕配對。 此外，此版本僅支援一個使用中連線。
+<strong>注意</strong> 在此版本中，Wi-Fi Direct 功能的改善並未內建於 UX 中，並且僅支援按鈕配對。 此外，此版本僅支援一個使用中連線。
 </div>
 <div>
  
@@ -536,9 +537,9 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="even">
 <td align="left">版本</td>
-<td align="left"><p>您可以使用 [Version Helper functions](https://msdn.microsoft.com/library/windows/desktop/dn424972) 來確認作業系統的版本。 在 Windows 10 中，這些 Helper 函式包含新的函式 [<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474)。 當您想要確認系統版本時，您應使用 Helper 函式，而不是已過時的 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 和 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式。 如需如何取得系統版本的詳細資訊，請參閱[Getting the System Version](https://msdn.microsoft.com/library/windows/desktop/ms724429)。</p>
-<p>如果您使用已過時的 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 或 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式來取得 [<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) 或 [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834) 結構中的版本資訊，請留意這些結構所包含的版本號碼已從 Windows 8.1 和 Windows Server 2012 R2 的 6.3 增加到 Windows 10 的 10.0。 如需關於作業系統版本號碼的詳細資訊，請參閱[Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832)。</p>
-<p>您也必須明確地在應用程式中將 Windows 8.1 或 Windows 10 定為目標，才能透過 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 或 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式取得這些版本的正確版本資訊。 如需如何在您的應用程式中將這些 Windows 版本定為目標的相關資訊，請參閱[Targeting your application for Windows](https://msdn.microsoft.com/library/windows/desktop/dn481241)。</p></td>
+<td align="left"><p>您可以使用 [Version Helper 函式](https://msdn.microsoft.com/library/windows/desktop/dn424972)判斷作業系統版本。 在 Windows 10 中，這些 Helper 函式包含新函式：[<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474)。 當您想要確認系統版本時，您應該使用 Helper 函式，而不是使用已過時的 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 和 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式。 如需如何取得系統版本的相關詳細資訊，請參閱[取得系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724429)。</p>
+<p>如果您使用已過時的 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 或 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式來取得 [<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) 或 [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834) 結構中的版本資訊，請留意這些結構所包含的版本號碼已從 Windows 8.1 和 Windows Server 2012 R2 的 6.3 增加到 Windows 10 的 10.0。 如需作業系統版本號碼的相關詳細資訊，請參閱[作業系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724832)。</p>
+<p>您也必須明確地在應用程式中將 Windows 8.1 或 Windows 10 定為目標，才能透過 [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 或 [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 函式取得這些版本的正確版本資訊。 如需如何讓您的應用程式以這些 Windows 版本為目標的相關資訊，請參閱[讓您的應用程式以 Windows 為目標](https://msdn.microsoft.com/library/windows/desktop/dn481241)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">使用者資訊</td>
@@ -587,8 +588,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="even">
 <td align="left">追蹤記錄</td>
-<td align="left"><p>[
-            TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) 是使用者模式應用程式與核心模式驅動程式新的事件追蹤 API；其建置基礎為 [Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW)。 此 API 有簡化的方式可供您檢測程式碼以及納入具有事件的結構化資料，而不需要個別的檢測資訊清單 XML 檔案。</p>
+<td align="left"><p>[追蹤記錄](https://msdn.microsoft.com/library/windows/desktop/dn904636)是適用於使用者模式應用程式與核心模式驅動程式的新事件追蹤 API；它是建置在 [Windows 事件追蹤](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW) 上。 這個 API 提供簡化的方式來檢測程式碼，並包括含有事件的結構化資料，而不需要個別的檢測資訊清單 XML 檔案。</p>
 <p>WinRT、.NET 和 C/C++ TraceLogging API 可用來服務不同的開發人員對象。</p></td>
 </tr>
 </tbody>
@@ -623,7 +623,7 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 </tr>
 <tr class="odd">
 <td align="left">自訂視窗標題列</td>
-<td align="left">針對適用於桌面裝置系列的 UWP 應用程式，您現在可以使用 [<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) 類別、[<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) 屬性和 [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) 方法，將預設的 Windows 標題列內容取代為您自訂的 XAML 內容。 您的 XAML 會被視為「系統 chrome」，因此 Windows 將會處理輸入事件，而不是您的應用程式。 這表示使用者即使按一下您的自訂標題列內容，仍可拖曳視窗調整其大小。</td>
+<td align="left">針對適用於桌面裝置系列的 UWP App，您現在可以使用 [<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) 類別、[<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) 屬性和 [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) 方法，將預設的 Windows 標題列內容取代為您自訂的 XAML 內容。 您的 XAML 會被視為「系統色彩」&quot;&quot;，因此 Windows 將會處理輸入活動，而非處理您的 App。 這表示使用者即使按一下您的自訂標題列內容，仍可拖曳視窗調整其大小。</td>
 </tr>
 </tbody>
 </table>
@@ -641,12 +641,10 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 <tbody>
 <tr class="odd">
 <td align="left">Internet Explorer</td>
-<td align="left"><p>Internet Explorer 導入了邊緣模式：是一個新的「即時」文件模式，其設計目的是要充分利用與其他新型瀏覽器和現代 Web 內容的互通性。 此實驗性模式正逐漸推展至隨機選擇的一組 Windows 10 使用者。 您可以透過新的 IE <strong>about:flags</strong> 機制，手動啟用或停用邊緣模式。 如需詳細資訊，請參閱：</p>
+<td align="left"><p>Internet Explorer 引進了「邊緣」模式：一種新的「動態」&quot;&quot;文件模式，針對與其他現代化瀏覽器和網頁內容達到最大互通性所設計。 此實驗性模式正逐漸推展至隨機選擇的一組 Windows 10 使用者。 您可以透過新的 IE <strong>about:flags</strong> 機制，手動啟用或停用邊緣模式。 如需詳細資訊，請參閱：</p>
 <ul>
-<li>[
-            Living on the Edge – our next step in helping the web just work](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx).</li>
-<li>[
-            The Internet Explorer for Windows 10 Developer Guide](https://dev.windows.com/microsoft-edge/).</li>
+<li>[於邊緣遊走 – 我們協助網路運作的正確下一步](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx)。</li>
+<li>[Windows 10 的 Internet Explorer 開發人員指南](https://dev.windows.com/microsoft-edge/)。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -691,6 +689,6 @@ Windows 10 和新的開發人員工具提供新的通用 Windows 平台 (UWP) �
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

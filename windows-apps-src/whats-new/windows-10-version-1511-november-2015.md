@@ -1,33 +1,33 @@
 ---
-Description: Windows 10 1511 版和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。
-title: Windows 10 1511 版提供給開發人員的新功能：2015 年 11 月
+Description&#58; 作者：QuinnRadich Windows 10 1511 版和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。
+title&#58; Windows 10 1511 版提供給開發人員的新功能：2015 年 11 月
 ---
 
 # Windows 10 1511 版提供給開發人員的新功能：2015 年 11 月
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows 10 1511 版和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。 在 Windows 10 1511 版上[安裝工具和 SDK](https://dev.windows.com/downloads) 之後，您即已經準備好可以[建立新的通用 Windows 應用程式](https://msdn.microsoft.com/library/windows/apps/bg124288)，或探索如何使用您在[ Windows 上的現有應用程式程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 1511 版和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。 在 Windows 10 1511 版上[安裝工具和 SDK](https://dev.windows.com/downloads) 之後，您即已經準備好可以[建立新的通用 Windows 應用程式](https://msdn.microsoft.com/library/windows/apps/bg124288)，或探索如何使用您在[Windows 上的現有應用程式程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
 ## 使用者經驗
 
-新的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpList</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpListItem</a> 類別可讓應用程式以程式設計方式選取其所需使用之系統管理的捷徑清單類型、將自訂工作進入點新增至其捷徑清單，以及將自訂群組新增至其捷徑清單。
+新的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpList</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpListItem</a> 類別可讓 app 以程式設計方式選取其所需使用之系統管理的捷徑清單類型、將自訂工作進入點新增至其捷徑清單，以及將自訂群組新增至其捷徑清單。
 
 ## 輸入
                                         
 * <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx">鍵盤傳遞攔截器</a>
                                         
-    可讓應用程式覆寫系統對原始鍵盤輸入的處理，包括鍵盤快速鍵、便捷鍵 (或熱鍵)、快速鍵和應用程式鍵，但排除 Secure Attention Sequence (SAS) 按鍵組合。
+    可讓 App 覆寫系統對原始鍵盤輸入的處理，包括鍵盤快速鍵、便捷鍵 (或熱鍵)、快速鍵和應用程式鍵，但排除 Secure Attention Sequence (SAS) 按鍵組合。
 
     Secure Attention Sequence (SAS) 按鍵組合 (包括 Ctrl-Alt-Del 和 Windows-L) 將繼續由系統處理。
                                         
-* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.core.corewindow.aspx">UWP 應用程式</a>和<a href="https://msdn.microsoft.com/library/windows/desktop/hh454903(v=vs.85).aspx">傳統 Windows 應用程式</a>之指標輸入的交叉處理鏈結。
+* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.core.corewindow.aspx">UWP app</a> 和<a href="https://msdn.microsoft.com/library/windows/desktop/hh454903(v=vs.85).aspx">傳統 Windows 應用程式</a>之指標輸入的交叉處理鏈結。
                                         
     啟用輸入之跨處理程序鏈結的新指標事件。    
                                         
-* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">適用於傳統桌面應用程式的筆跡展示器</a>
+* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">適用於傳統型應用程式的筆跡呈現器</a>
                                         
-    筆跡展示器 API 可讓 Microsoft Win32 應用程式透過在應用程式的 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx">DirectComposition</a> 視覺化樹狀結構中插入的 <a href="https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx">InkPresenter</a> 物件，管理筆跡輸入 (標準和修改過的) 輸入、處理和轉譯。    
+    筆跡展示器 API 可讓 Microsoft Win32 應用程式透過在 App 的 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx">DirectComposition</a> 視覺化樹狀結構中插入的 <a href="https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx">InkPresenter</a> 物件，管理筆跡輸入 (標準和修改過的) 輸入、處理和轉譯。    
                                     
 ## 網路功能
                                                                         
@@ -67,10 +67,10 @@ Windows Hello 可讓您的應用程式啟用臉部或指紋辨識登入 Windows 
 ## 更新的儲存 API ## 
     
 <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx">Windows.Storage.DownloadsFolder 類別</a><br />
-現在，您的應用程式可以在 [下載] 資料夾內，為特定的<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">使用者</a><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx">建立檔案</a>或<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx">建立資料夾</a>。
+現在，您的 App 可以在 [下載] 資料夾內，為特定的<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">使用者</a><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx">建立檔案</a>或<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx">建立資料夾</a>。
                                             
 <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx">Windows.Storage.StorageLibrary 類別</a><br />
-現在，您的應用程式可以為特定的<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">使用者</a><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx">取得指定的媒體櫃</a>。
+現在，您的 App 可以為特定的<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">使用者</a><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx">取得指定的媒體櫃</a>。
                                     
 ## Windows 應用程式認證套件 ## 
                                     
@@ -83,6 +83,6 @@ Windows 應用程式認證套件已經由更嚴格的測試進行更新。 如�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
