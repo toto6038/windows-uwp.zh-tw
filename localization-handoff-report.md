@@ -1,27 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps/blob/60e328ca8652baeb226e78f5a9d99fbf8c4f5208/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md) | OutofSyncHandedBackSuccess | [Details](#479b900ca14497712f25a7825fde6775a3c1ab603813)
+ [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/1722fc00de000d07ed30cfb0ae12080708c30b76/windows-apps-src/input-and-devices/convert-ink-to-text.md) | OutofSyncHandedBackSuccess | [Details](#c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a742629)
+ [windows-apps-src\input-and-devices\keyboard-interactions.md](https://github.com/Microsoft/windows-apps/blob/d65e1315e83fef5e53771adad0943c9cb59d9139/windows-apps-src/input-and-devices/keyboard-interactions.md) | OutofSyncHandedBackSuccess | [Details](#9de90236d94522f1b80309c3fec51ce59aee03192890)
 
 ## Item Details
-##### <a name='479b900ca14497712f25a7825fde6775a3c1ab603813'></a> Source: [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps/blob/60e328ca8652baeb226e78f5a9d99fbf8c4f5208/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md)
+##### <a name='c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a742629'></a> Source: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/1722fc00de000d07ed30cfb0ae12080708c30b76/windows-apps-src/input-and-devices/convert-ink-to-text.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/31e8301742223b7977197895c4407e6b69882fa3/ol-handoff/Microsoft/windows-apps.zh-tw/master/xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.zh-tw.xlf)
-* Handoff Datetime: 2016-05-31 19:12:47
+* Handoff File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/0d1bb828603e856520482806e216fafb3fb13e37/ol-handoff/Microsoft/windows-apps.zh-tw/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
+* Handoff Datetime: 2016-05-31 19:42:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/429bcea2cd8ba8b38d4a5249c62d6fe4d41089eb/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md)
-* Current Handback File: [xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/25793fc9872f720c6713b7dffdd784230ec9b482/ol-handback/Microsoft/windows-apps.zh-tw/master/xaml-platform/xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.zh-tw.xlf)
-* Current Handback Datetime: 2016-05-30 22:24:48
+* Current Target File: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/c798707e6f9150665cdfe341b882fc2c411a8e14/windows-apps-src/input-and-devices/convert-ink-to-text.md)
+* Current Handback File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/45ab42ea8dbcf0c94975a0e1fd1e9c8e0155ee69/ol-handback/Microsoft/windows-apps.zh-tw/master/input-and-devices/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
+* Current Handback Datetime: 2016-05-30 22:22:20
+* [Back to Top](#report-top)
+
+##### <a name='9de90236d94522f1b80309c3fec51ce59aee03192890'></a> Source: [windows-apps-src\input-and-devices\keyboard-interactions.md](https://github.com/Microsoft/windows-apps/blob/d65e1315e83fef5e53771adad0943c9cb59d9139/windows-apps-src/input-and-devices/keyboard-interactions.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/0d1bb828603e856520482806e216fafb3fb13e37/ol-handoff/Microsoft/windows-apps.zh-tw/master/keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.zh-tw.xlf)
+* Handoff Datetime: 2016-05-31 19:42:26
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\input-and-devices\keyboard-interactions.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/1764b6ce63f3ad575ede78441ad662cff31f05e1/windows-apps-src/input-and-devices/keyboard-interactions.md)
+* Current Handback File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/de340b0acce4e89762f9a817e6f44fd23043659b/ol-handback/Microsoft/windows-apps.zh-tw/master/keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.zh-tw.xlf)
+* Current Handback Datetime: 2016-05-17 11:35:53
 * [Back to Top](#report-top)
 
 
