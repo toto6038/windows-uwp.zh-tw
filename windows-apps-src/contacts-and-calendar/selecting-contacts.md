@@ -1,6 +1,6 @@
 ---
-description&#58; author：Xansky 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
-title&#58; 選取連絡人 ms.assetid&#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 關鍵字&#58; 連絡人, 選取 關鍵字&#58; 選取單一連絡人的 關鍵字&#58; 選取多個連絡人 關鍵字&#58; 連絡人, 選取多個 關鍵字&#58; 選取特定連絡人資料 關鍵字&#58; 連絡人, 選取特定資料 關鍵字&#58; 連絡人, 選取特定欄位
+description: author：Xansky 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
+title: 選取連絡人 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords: 連絡人, 選取 keywords: 選取單一連絡人的 keywords: 選取多個連絡人 keywords: 連絡人, 選取多個 keywords: 選取特定連絡人資料 keywords: 連絡人, 選取特定資料 keywords: 連絡人, 選取特定欄位
 ---
 
 # 選取連絡人
