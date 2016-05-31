@@ -1,6 +1,6 @@
 ---
-Description&#58; author&#58; mcleanbyron 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
-title&#58; 啟用應用程式內產品購買 ms.assetid&#58; D158E9EB-1907-4173-9889-66507957BD6B keywords&#58; 應用程式內的購買選項 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
+Description: author: mcleanbyron 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
+title: 啟用應用程式內產品購買 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B keywords: 應用程式內的購買選項 keywords: App 內購買 keywords: 應用程式內產品 keywords: 如何支援應用程式內 keywords: App 內購買程式碼範例 keywords: 應用程式內的購買選項程式碼範例
 ---
 
 # 啟用應用程式內產品購買
