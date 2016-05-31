@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "bd2df770211332e2f6dba0bed0b1184836b81446",
-  "LastTranslatedCommit": "a263c75d680a0719979664ef995468e7c794ea31",
+  "LastTranslatedCommit": "8f00738c0289abcb53a1dc8b0afc0a4b4c7680e7",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -53774,14 +53774,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "ebd3e17087c3da87dfea678dbb504ee656dcde0b",
+      "TargetFileCommit": "8f00738c0289abcb53a1dc8b0afc0a4b4c7680e7",
       "TargetFilePath": "windows-apps-src\\publish\\app-submissions.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\windows-apps.zh-tw\\master\\publish\\app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.zh-tw.xlf",
-      "HandbackFileCommit": "0fea5e4838a79b30775fad80e219636983f51d84",
-      "HandbackDateTime": "2016-05-30T22:23:53.4528918Z",
+      "HandbackFileCommit": "deb7bcf6819a3dbe4366287a763937dd60c6695c",
+      "HandbackDateTime": "2016-05-31T22:16:01.5379983Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-05-30T22:23:53.4528918Z",
+      "UpdatedDateTime": "2016-05-31T22:16:01.5379983Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",

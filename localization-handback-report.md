@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 5
+ Total Files | 6
 
 ## File List
  Source File | Status | Details 
@@ -11,6 +11,7 @@
  [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/learn-more.md) | InSyncHandedBackSuccess | [Details](#cb77a32f99bc6e27cfe87af16d6cd4e08855d7b62562)
  [windows-apps-src\monetize\enable-consumable-in-app-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/monetize/enable-consumable-in-app-product-purchases.md) | InSyncHandedBackSuccess | [Details](#25f09e043d61f1705f9f0a4fa34114fd06166fa43267)
  [windows-apps-src\monetize\exclude-or-limit-features-in-a-trial-version-of-your-app.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md) | InSyncHandedBackSuccess | [Details](#9c38784325f4dc51052f70a819012508f2a0bdbb3272)
+ [windows-apps-src\publish\app-submissions.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/app-submissions.md) | InSyncHandedBackSuccess | [Details](#59f41b74ca264606b4668addf44a07c82e1735793486)
 
 ## Item Details
 ##### <a name='12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c496'></a> Source: [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps/blob/0d62e3026af9f71940bd05d4e072d46cda51bbc0/windows-apps-src/contacts-and-calendar/selecting-contacts.md)
@@ -71,6 +72,18 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [exclude-or-limit-features-in-a-trial-version-of-your-app.b46a34293bb95068c4598af040920875bf2d25c8.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/2e0e94d0e1b99877c9121de9a2f1cb0ec6a65d9b/ol-handback/Microsoft/windows-apps.zh-tw/master/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.b46a34293bb95068c4598af040920875bf2d25c8.zh-tw.xlf)
 * Handback Datetime: 2016-05-31 22:15:47
+* [Back to Top](#report-top)
+
+##### <a name='59f41b74ca264606b4668addf44a07c82e1735793486'></a> Source: [windows-apps-src\publish\app-submissions.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/app-submissions.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\publish\app-submissions.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8f00738c0289abcb53a1dc8b0afc0a4b4c7680e7/windows-apps-src/publish/app-submissions.md)
+* Handoff File: [app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.zh-tw.xlf)
+* Handoff Datetime: 2016-05-12 15:06:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/deb7bcf6819a3dbe4366287a763937dd60c6695c/ol-handback/Microsoft/windows-apps.zh-tw/master/publish/app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.zh-tw.xlf)
+* Handback Datetime: 2016-05-31 22:16:01
 * [Back to Top](#report-top)
 
 
