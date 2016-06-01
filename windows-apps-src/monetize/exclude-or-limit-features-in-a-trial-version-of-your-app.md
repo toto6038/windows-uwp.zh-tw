@@ -1,6 +1,6 @@
 ---
-Description: 作者：mcleanbyron 如果您讓客戶在試用期間免費使用 app，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 app。
-title: 在試用版本中排除或限制某些功能 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords:免費試用keywords&#58;免費試用期間keywords&#58;免費試用程式碼範例keywords&#58;免費試用程式碼範例
+Description&#58; 作者：mcleanbyron 如果您讓客戶在試用期間免費使用 app，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 app。
+title&#58; 在試用版本中排除或限制某些功能 ms.assetid&#58; 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords&#58;免費試用keywords&#58;免費試用期間keywords&#58;免費試用程式碼範例keywords&#58;免費試用程式碼範例
 ---
 
 # 在試用版本中排除或限制某些功能

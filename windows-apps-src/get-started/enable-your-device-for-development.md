@@ -1,6 +1,6 @@
 ---
-description: autohr&#58; martinekuan ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD title: 啟用您的裝置以用於開發 針對 Windows 10 裝置的開發已有不同的方法。
-keywords: 入門 keywords: 開發人員授權 keywords: Visual Studio, 開發人員授權 keywords: 啟用裝置
+description&#58; autohr&#58; martinekuan ms.assetid&#58; 54973C62-9669-4988-934E-9273FB0425FD title&#58; 啟用您的裝置以用於開發 針對 Windows 10 裝置的開發已有不同的方法。
+keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studio, 開發人員授權 keywords&#58; 啟用裝置
 ---
 # 啟用您的裝置以用於開發
 

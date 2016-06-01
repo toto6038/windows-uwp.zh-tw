@@ -1,6 +1,6 @@
 ---
-Description: 作者：jnHs 一旦您已透過保留名稱來建立您的 app，您就可以開始進行發行。 第一個步驟是建立提交。
-title: App submissions ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords: submit an app keywords: required info keywords: required fields keywords: required data keywords: checklist
+Description&#58; 作者：jnHs 一旦您已透過保留名稱來建立您的 app，您就可以開始進行發行。 第一個步驟是建立提交。
+title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords&#58; submit an app keywords&#58; required info keywords&#58; required fields keywords&#58; required data keywords&#58; checklist
 ---
 
 # App 提交

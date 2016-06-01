@@ -1,6 +1,6 @@
 ---
-Description: author: mcleanbyron 您可以透過市集商業平台提供消費性的應用程式內產品&amp;\#8212;亦即可購買、使用然後再次購買的項目&amp;\#8212;為客戶提供既健全又可靠的購買體驗。
-title: 啟用消費性應用程式內產品購買 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords: 應用程式內的購買選項 keywords: 消費性 keywords: App 內購買 keywords: 應用程式內產品 keywords: 如何支援應用程式內 keywords: App 內購買程式碼範例 keywords: 應用程式內的購買選項程式碼範例
+Description&#58; author&#58; mcleanbyron 您可以透過市集商業平台提供消費性的應用程式內產品&amp;\#8212;亦即可購買、使用然後再次購買的項目&amp;\#8212;為客戶提供既健全又可靠的購買體驗。
+title&#58; 啟用消費性應用程式內產品購買 ms.assetid&#58; F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords&#58; 應用程式內的購買選項 keywords&#58; 消費性 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
 ---
 
 # 啟用消費性應用程式內產品購買

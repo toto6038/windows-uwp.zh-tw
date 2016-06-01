@@ -88,7 +88,7 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 [無]****。 如需憑證和簽章的詳細資訊，請參閱下列各項︰ 
+當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 \[無\]。 如需憑證和簽章的詳細資訊，請參閱下列各項︰ 
 
 - [做法︰建立開發時要使用的暫時憑證](https://msdn.microsoft.com/library/ms733813.aspx)
 

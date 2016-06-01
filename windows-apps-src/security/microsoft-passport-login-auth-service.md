@@ -23,7 +23,7 @@ author: awkoren
 您將在這個練習中，從您在第一個實驗室所建置的 Passport 應用程式開始，建立本機模擬伺服器和資料庫。 這個實習實驗室的目的，是要讓您了解如何將 Microsoft Passport 整合到現有的系統中。 由於我們使用模擬伺服器及模擬資料庫，因此會去除許多不相關的設定。 而在您自己的應用程式中，您必須用實際的服務及資料庫取代模擬的物件。
 
 -   首先，請開啟您在第一個 Passport 實習實驗室所建立的 PassportLogin 解決方案。
--   您將從實作模擬伺服器及模擬資料庫開始。 請建立名為「AuthService」的新資料夾， 方法是在方案總管中，用滑鼠右鍵按一下 [PassportLogin (通用 Windows)] 方案，然後選取 [加入] > [新增資料夾]。
+-   您將從實作模擬伺服器及模擬資料庫開始。 請建立名為「AuthService」的新資料夾， 方法是在方案總管中，用滑鼠右鍵按一下 [PassportLogin (通用 Windows)] 方案，然後選取 [加入] &gt; [新增資料夾]。
 -   請建立 UserAccount 和 PassportDevices 類型，來做為將在模擬資料庫中儲存的資料模型。 UserAccount 類似在傳統的驗證伺服器上實作的使用者模型。 請用滑鼠右鍵按一下 [AuthService] 資料夾，然後加入名為「UserAccount.cs」的新類別。
 
     ![](images/passport-auth-1.png)
@@ -984,7 +984,7 @@ author: awkoren
     }
     ```
 
--   請建置並執行應用程式 (F5)。 請登入範例使用者帳戶，其認證為「sampleUsername」及「samplePassword」。 您可能會在歡迎畫面中看到 [Forget Device] (忘記裝置) 按鈕，但頁面上沒有任何裝置。 當您建立或移轉使用者來使用 Microsoft Passport 時，系統並不會把 Passport 資訊發送到 AuthService。
+-   請建置並執行應用程式 (F5)。 請登入範例使用者帳戶，其認證為「sampleUsername」及「samplePassword」。 您可能會在歡迎畫面中看到 \[Forget Device\] \(忘記裝置\) 按鈕，但頁面上沒有任何裝置。 當您建立或移轉使用者來使用 Microsoft Passport 時，系統並不會把 Passport 資訊發送到 AuthService。
 
     ![](images/passport-auth-3.png)
 
