@@ -1,45 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md) | OutofSyncHandedBackSuccess | [Details](#9596dd4de0c05ee6f85189e529ad18e528e954df3495)
- [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/76ea880f7dd1e737b3b0640d10a138e0eb790802/windows-apps-src/publish/mobile-operator-billing.md) | OutofSyncHandedBackSuccess | [Details](#d22d89523ff3089b3b56d1a85fa2c4b1373898873525)
 
 ## Item Details
-##### <a name='9596dd4de0c05ee6f85189e529ad18e528e954df3495'></a> Source: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/22e1fbcce26ecb654ddfd845b354f2b97a48dad3/ol-handoff/Microsoft/windows-apps.zh-tw/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-tw.xlf)
-* Handoff Datetime: 2016-06-02 18:27:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
-* Current Handback File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-tw.xlf)
-* Current Handback Datetime: 2016-06-01 14:04:32
-* [Back to Top](#report-top)
-
-##### <a name='d22d89523ff3089b3b56d1a85fa2c4b1373898873525'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/76ea880f7dd1e737b3b0640d10a138e0eb790802/windows-apps-src/publish/mobile-operator-billing.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/22e1fbcce26ecb654ddfd845b354f2b97a48dad3/ol-handoff/Microsoft/windows-apps.zh-tw/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf)
-* Handoff Datetime: 2016-06-02 18:27:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/publish/mobile-operator-billing.md)
-* Current Handback File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf)
-* Current Handback Datetime: 2016-06-01 14:04:32
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
