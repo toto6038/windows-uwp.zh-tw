@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\monetize\set-up-ad-units-in-your-app.md](https://github.com/Microsoft/windows-apps/blob/cf695b5c20378f7bbadafb5b98cdd3327bcb0be6/windows-apps-src/monetize/set-up-ad-units-in-your-app.md) | InSyncHandedBackSuccess | [Details](#96c09de9321f67dc26cc3538f2655bd598f134f93328)
- [windows-apps-src\publish\upload-app-packages.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/upload-app-packages.md) | InSyncHandedBackSuccess | [Details](#bb89968c261cc0c14f82375d0d708bbce5da98693549)
 
 ## Item Details
-##### <a name='96c09de9321f67dc26cc3538f2655bd598f134f93328'></a> Source: [windows-apps-src\monetize\set-up-ad-units-in-your-app.md](https://github.com/Microsoft/windows-apps/blob/cf695b5c20378f7bbadafb5b98cdd3327bcb0be6/windows-apps-src/monetize/set-up-ad-units-in-your-app.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\monetize\set-up-ad-units-in-your-app.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/4f2a97081bb77bde7c0a1930a0bfde69254d0c19/windows-apps-src/monetize/set-up-ad-units-in-your-app.md)
-* Handoff File: [set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.zh-tw.xlf)
-* Handoff Datetime: 2016-05-12 15:06:24
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/c0b9c2c1cdd2a0c481b47dc54bb68814cc8e76aa/ol-handback/Microsoft/windows-apps.zh-tw/master/set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.zh-tw.xlf)
-* Handback Datetime: 2016-06-02 20:34:48
-* [Back to Top](#report-top)
-
-##### <a name='bb89968c261cc0c14f82375d0d708bbce5da98693549'></a> Source: [windows-apps-src\publish\upload-app-packages.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/upload-app-packages.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\publish\upload-app-packages.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/4f2a97081bb77bde7c0a1930a0bfde69254d0c19/windows-apps-src/publish/upload-app-packages.md)
-* Handoff File: [upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/e866b902c014d17d1da5326c677481865d5a6fcd/ol-handoff/Microsoft/windows-apps.zh-tw/master/upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.zh-tw.xlf)
-* Handoff Datetime: 2016-05-12 15:06:24
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/c0b9c2c1cdd2a0c481b47dc54bb68814cc8e76aa/ol-handback/Microsoft/windows-apps.zh-tw/master/upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.zh-tw.xlf)
-* Handback Datetime: 2016-06-02 20:34:48
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
