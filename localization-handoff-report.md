@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9868aaabd9516932f08eca5c2c3745461530e41b/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#ebb90b613f8df1b5bbd1f870fbdcbae69e5cbc063249)
+ [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps/blob/3cf9dd4ab83139a2b4b0f44a36c2e57a92900903/windows-apps-src/launch-resume/launch-settings-app.md) | OutofSyncHandedBackSuccess | [Details](#e52a4245e8697a68bfc5c5605dc54e5ea510c6622945)
 
 ## Item Details
-##### <a name='ebb90b613f8df1b5bbd1f870fbdcbae69e5cbc063249'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9868aaabd9516932f08eca5c2c3745461530e41b/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+##### <a name='e52a4245e8697a68bfc5c5605dc54e5ea510c6622945'></a> Source: [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps/blob/3cf9dd4ab83139a2b4b0f44a36c2e57a92900903/windows-apps-src/launch-resume/launch-settings-app.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/ec0930e8f6b81530d781703d64545f49830357bb/ol-handoff/Microsoft/windows-apps.zh-tw/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf)
-* Handoff Datetime: 2016-06-07 22:42:01
+* Handoff File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/38475091d7fdc9d5ce7763b489269c5d0109e368/ol-handoff/Microsoft/windows-apps.zh-tw/master/launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.zh-tw.xlf)
+* Handoff Datetime: 2016-06-08 00:26:59
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
-* Current Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf)
+* Current Target File: [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/launch-resume/launch-settings-app.md)
+* Current Handback File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.zh-tw.xlf)
 * Current Handback Datetime: 2016-06-01 14:04:32
 * [Back to Top](#report-top)
 
