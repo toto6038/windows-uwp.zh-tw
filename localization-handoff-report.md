@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/6166e7aec8816d7419ade943491004f037cf8417/windows-apps-src/xbox-apps/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#17be11b950a718374237c451b8b948bae1318dd73878)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/b8519c686ffb9e9378b6d5ef58b947d4dbf3e59e/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#c3b4805e084c6db4960c79292efdca8af43d5b1f3775)
 
 ## Item Details
-##### <a name='17be11b950a718374237c451b8b948bae1318dd73878'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/6166e7aec8816d7419ade943491004f037cf8417/windows-apps-src/xbox-apps/known-issues.md)
+##### <a name='c3b4805e084c6db4960c79292efdca8af43d5b1f3775'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/b8519c686ffb9e9378b6d5ef58b947d4dbf3e59e/windows-apps-src/TOC.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/15e28e6f105adeafe228666139f172260cc33b8d/ol-handoff/Microsoft/windows-apps.zh-tw/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf)
-* Handoff Datetime: 2016-06-10 20:32:37
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/92d17198a07ab318e9cb21c4dee6064392a81cb2/ol-handoff/Microsoft/windows-apps.zh-tw/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-tw.xlf)
+* Handoff Datetime: 2016-06-10 23:32:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf)
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-tw.xlf)
 * Current Handback Datetime: 2016-06-01 14:04:32
 * [Back to Top](#report-top)
 
