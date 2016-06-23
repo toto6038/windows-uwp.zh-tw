@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\style\motion.md](https://github.com/Microsoft/windows-apps/blob/706eac1bd7e6133153752734a61693204d51fa6b/windows-apps-src/style/motion.md) | OutofSyncHandedBackSuccess | [Details](#28f3f86ab074155e5ea3f8505ce0391220e833403825)
- [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/7bb23094d569bb29c7227ccd628abd0989b575a4/windows-apps-src/style/sound.md) | OutofSyncHandedBackSuccess | [Details](#e6dab48935cd5345ee734e6fda7e6fd4d333bb903826)
+ [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/62f0ea80940ff862d26feaa063414d95b048f685/windows-apps-src/graphics/composition-animation.md) | OutofSyncHandedBackSuccess | [Details](#e0088692b9de10c188f15b85b1f20b98cc1135172648)
 
 ## Item Details
-##### <a name='28f3f86ab074155e5ea3f8505ce0391220e833403825'></a> Source: [windows-apps-src\style\motion.md](https://github.com/Microsoft/windows-apps/blob/706eac1bd7e6133153752734a61693204d51fa6b/windows-apps-src/style/motion.md)
+##### <a name='e0088692b9de10c188f15b85b1f20b98cc1135172648'></a> Source: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/62f0ea80940ff862d26feaa063414d95b048f685/windows-apps-src/graphics/composition-animation.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [motion.212117af558af085cfa0768ba51dd5afcc6073cd.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/600390fff04b5e79dfbacd07cf042f74222c50d0/ol-handoff/Microsoft/windows-apps.zh-tw/master/motion.212117af558af085cfa0768ba51dd5afcc6073cd.zh-tw.xlf)
-* Handoff Datetime: 2016-06-23 18:08:57
+* Handoff File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/eaecdfb5f14be276d6a7a1ad6f3bd69d9122399c/ol-handoff/Microsoft/windows-apps.zh-tw/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-tw.xlf)
+* Handoff Datetime: 2016-06-23 19:25:38
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\style\motion.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/style/motion.md)
-* Current Handback File: [motion.212117af558af085cfa0768ba51dd5afcc6073cd.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/motion.212117af558af085cfa0768ba51dd5afcc6073cd.zh-tw.xlf)
-* Current Handback Datetime: 2016-06-01 14:04:32
-* [Back to Top](#report-top)
-
-##### <a name='e6dab48935cd5345ee734e6fda7e6fd4d333bb903826'></a> Source: [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps/blob/7bb23094d569bb29c7227ccd628abd0989b575a4/windows-apps-src/style/sound.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [sound.640badc71d5e71614fef1214ebef20367f363e08.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/600390fff04b5e79dfbacd07cf042f74222c50d0/ol-handoff/Microsoft/windows-apps.zh-tw/master/sound.640badc71d5e71614fef1214ebef20367f363e08.zh-tw.xlf)
-* Handoff Datetime: 2016-06-23 18:08:57
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\style\sound.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/style/sound.md)
-* Current Handback File: [sound.640badc71d5e71614fef1214ebef20367f363e08.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/sound.640badc71d5e71614fef1214ebef20367f363e08.zh-tw.xlf)
+* Current Target File: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/dd1cd79c890b897dcea817a87e8bdc0f8a8075e2/windows-apps-src/graphics/composition-animation.md)
+* Current Handback File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b90c4ee90f2e635b617419c0868b3000438e0c1d/ol-handback/Microsoft/windows-apps.zh-tw/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-tw.xlf)
 * Current Handback Datetime: 2016-06-01 14:04:32
 * [Back to Top](#report-top)
 
