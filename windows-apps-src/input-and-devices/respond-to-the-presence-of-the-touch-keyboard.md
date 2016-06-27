@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
-title: 回應觸控式鍵盤出現
+Description: "了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。"
+title: "回應觸控式鍵盤出現"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+
 ---
 
 # 回應觸控式鍵盤出現
@@ -141,6 +144,7 @@ public class MyApplication
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

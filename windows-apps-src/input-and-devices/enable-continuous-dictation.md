@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何擷取及辨識較長且連續的聽寫語音輸入。
-title: 啟用連續聽寫
+Description: "了解如何擷取及辨識較長且連續的聽寫語音輸入。"
+title: "啟用連續聽寫"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+
 ---
 
 # 連續聽寫
@@ -100,7 +103,7 @@ SpeechRecognitionCompilationResult result =
 ## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>處理辨識事件
 
 
-您可以透過呼叫 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來擷取單一、簡短的發音或片語 
+您可以透過呼叫 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來擷取單一、簡短的發音或片語。 
 
 但是，若要擷取較長、連續的辨識工作階段，我們指定事件接聽程式來於使用者說話時在背景執行，並定義處理常式來建立聽寫字串。
 
@@ -163,7 +166,7 @@ private async void ContinuousRecognitionSession_ResultGenerated(
 
 3.  然後我們會處理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 事件，該事件會指示連續聽寫的結束點。
 
-    工作階段會在您呼叫 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法 (在下一節中說明) 時結束。 工作階段也可以在發生錯誤時結束，或在使用者停止說話時結束。 檢查事件引數的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 屬性來判斷工作階段的結束原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)
+    工作階段會在您呼叫 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法 (在下一節中說明) 時結束。 工作階段也可以在發生錯誤時結束，或在使用者停止說話時結束。 檢查事件引數的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 屬性來判斷工作階段的結束原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
 
     在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中註冊 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 連續辨識事件的處理常式。
 ```    CSharp
@@ -267,7 +270,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ```
 
 [!NOTE]  
-在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 之後，可能會發生 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件  
+在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 之後，可能會發生 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。  
 因為多執行緒的關係，可能會在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 時仍於堆疊中保留 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。 如果是這樣，就仍會引發 **ResultGenerated** 事件。  
 如果您在取消辨識工作階段時設定任何私用欄位，請一律確認它們在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 處理常式中的值。 例如，如果您在取消工作階段時將欄位設定為 null，請勿假設您處理常式中的欄位已經初始化。
 
@@ -289,6 +292,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

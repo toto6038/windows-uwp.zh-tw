@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何在執行階段利用語音辨識結果，以存取和更新語音命令定義 (VCD) 檔案中支援的片語清單 (PhraseList 元素)。
-title: 動態修改 VCD 片語清單
+Description: "了解如何在執行階段利用語音辨識結果，以存取和更新語音命令定義 (VCD) 檔案中支援的片語清單 (PhraseList 元素)。"
+title: "動態修改 VCD 片語清單"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+
 ---
 
 # 動態修改 VCD 片語清單
@@ -151,6 +154,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

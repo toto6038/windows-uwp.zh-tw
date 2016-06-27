@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 建置通用 Windows 平台 (UWP) app，支援來自畫筆和手寫筆裝置的自訂互動，包括適用於自然書寫與繪圖體驗的數位筆墨。
-title: UWP app 中的畫筆和手寫筆互動
+Description: "建置通用 Windows 平台 (UWP) app，支援來自畫筆和手寫筆裝置的自訂互動，包括適用於自然書寫與繪圖體驗的數位筆墨。"
+title: "UWP app 中的畫筆和手寫筆互動"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+
 ---
 
 # UWP app 中的畫筆和手寫筆互動
@@ -77,7 +80,7 @@ Windows 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方
 | 含有背景影像的空白 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 含有筆墨筆劃的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 已擦掉一個筆畫的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (請注意，此功能會擦掉整個筆劃，而不是擦掉部分筆劃)。 |
 
 [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項支援的筆墨功能是由名為 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的程式碼後置物件所提供
+            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項支援的筆墨功能是由名為 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的程式碼後置物件所提供。
 
 針對基本的筆墨功能，您不需要考慮使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 不過，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自訂和設定筆墨行為，您就必須存取其對應的 **InkPresenter** 物件。
 
@@ -91,11 +94,11 @@ Windows 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方
 
 **注意**  
 [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不會直接具現化。 而是透過 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性來存取
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不會直接具現化。 而是透過 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性來存取。
 
  
 
-我們會在此處設定[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
+我們會在此處設定[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
 ```CSharp
 public MainPage()
@@ -182,7 +185,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 }
 ```
 
-這些影像說明 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 如何處理和自訂畫筆輸入
+這些影像說明 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 如何處理和自訂畫筆輸入。
 
 | ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-basic-custom-1-small.png) | ![含有使用者選取的紅色筆墨筆劃的 InkCanvas](images/ink-basic-custom-2-small.png) |
 | --- | -- |
@@ -242,9 +245,9 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     private Rect boundingRect;
 ```
 
-3.  接下來，我們會設定 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃，並設定一些初始的筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
+3.  接下來，我們會設定 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃，並設定一些初始的筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
-    最重要的是，我們會使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 的 **InputProcessingConfiguration.RightDragAction** 值來指定
+    最重要的是，我們會使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 的 **InputProcessingConfiguration.RightDragAction** 值來指定。
 
     接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件指派接聽程式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入。 所有的選取功能都是在這些事件的處理常式中實作的。
 
@@ -294,7 +297,7 @@ public MainPage()
     }
 ```
 
-4.  接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件定義處理常式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入
+4.  接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件定義處理常式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入。
 
     所有的選取功能都是在這些處理常式中實作的，包括套索筆劃和週框。
 
@@ -429,7 +432,7 @@ public MainPage()
 
 藉由呼叫 [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (在載入 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 之前)，app 會建立 [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) 物件，來自訂如何將筆墨筆劃以烘乾狀態轉譯到 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 或 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 例如，筆墨筆劃會被點陣化並整合到應用程式內容，而不是做為個別的 **InkCanvas** 層。
 
-如需這項功能的完整範例，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+如需這項功能的完整範例，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。
 
 
 ## 本節中的其他文章 
@@ -488,6 +491,7 @@ public MainPage()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

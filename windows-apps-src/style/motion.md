@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: 有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
-title: UWP app 中的動作和動畫
+Description: "有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。"
+title: "UWP app 中的動作和動畫"
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
+
 ---
 
 # 適用於 UWP app 的動作
@@ -110,6 +113,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

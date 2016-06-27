@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: 繪製形狀
-description: 了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。
+title: "繪製形狀"
+description: "了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。"
+ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
+ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+
 ---
 # 繪製圖形
 
@@ -194,7 +197,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
           </Path>
 ```
 
-在各種組件使用 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 的其中一個理由是每個組件都含有 **Double** 和 **Point** 屬性，可做為 UI 動畫的可能目標。 您不能在使用序列化格式的 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 進行這項操作。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
+使用 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 可能會較填入 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 字串更易閱讀。 相反地，[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 使用與可縮放向量圖形 (SVG) 映像路徑定義相容的語法，在從 SVG 移植圖形或自 Blend 等工具輸出時非常實用。
 
  
 
@@ -205,6 +208,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

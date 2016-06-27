@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
-title: 移動瀏覽
+Description: "移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。"
+title: "移動瀏覽"
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
+
 ---
 
 # 移動瀏覽的指導方針
@@ -190,6 +193,7 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

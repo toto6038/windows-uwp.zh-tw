@@ -1,8 +1,11 @@
 ---
-description: 本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。
-title: 複製和貼上
+description: "本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。"
+title: "複製和貼上"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+ms.sourcegitcommit: bf081c07f8235790b99b3c1037751f24a86bbc1f
+ms.openlocfilehash: ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c
+
 ---
 #複製和貼上
 
@@ -14,20 +17,22 @@ author: awkoren
 ## 檢查內建式剪貼簿支援
 
 
-在很多情況下，您不需要撰寫程式碼就可以支援剪貼簿作業。 許多您可用來建立 app 的預設 XAML 控制項已經支援剪貼簿作業。 如需可用控制項的詳細資訊，請參閱[控制項清單][ControlsList]。
+在很多情況下，您不需要撰寫程式碼就可以支援剪貼簿作業。 許多您可用來建立 app 的預設 XAML 控制項已經支援剪貼簿作業。 
 
 ## 開始設定
 
-首先，在您的 App 中包含 [**Windows.ApplicationModel.DataTransfer**][DataTransfer] 命名空間。 然後，新增 [**DataPackage**][DataPackage] 物件的執行個體。 這個物件包含使用者想要複製的資料以及您想要包含的任何屬性 (例如描述)。
+首先，在您的 App 中包含 [**Windows.ApplicationModel.DataTransfer**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer) 命名空間。 接著，新增 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 物件的執行個體。 這個物件包含使用者想要複製的資料以及您想要包含的任何屬性 (例如描述)。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 DataPackage dataPackage = new DataPackage();
 ```
 
+AuthenticateAsync
+
 ## 複製和剪下
 
-複製和剪下 (也稱為移動) 的作用幾乎相同。 選擇您想使用 [**DataPackage.RequestedOperation**][RequestedOperation] 屬性的作業。
+複製和剪下 (也稱為移動) 的作用幾乎相同。 選擇您想使用 [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) 屬性的作業。
 
 ```cs
 // copy 
@@ -35,21 +40,20 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-
-接下來，您可以將使用者選取的資料新增至 [**DataPackage**][DataPackage] 物件。 如果 **DataPackage** 類別支援此資料，就可以使用 **DataPackage** 物件的其中一種對應方法。 以下是新增文字的方式：
+接下來，您可以將使用者選取的資料新增至 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 物件。 如果 **DataPackage** 類別支援此資料，就可以使用 **DataPackage** 物件的其中一種對應方法。 以下是新增文字的方式：
 
 ```cs
 dataPackage.SetText("Hello World!");
 ```
 
-最後一個步驟是呼叫靜態 [**Clipboard.SetContent**][SetContent] 方法，將 [**DataPackage**][DataPackage] 新增到剪貼簿。
+最後一個步驟是呼叫靜態 [**SetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(Windows.ApplicationModel.DataTransfer.DataPackage)) 方法，將 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 新增到剪貼簿。
 
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
 ## 貼上
 
-若要取得剪貼簿的內容，請呼叫靜態 [**Clipboard.GetContent**[GetContent] 方法。 這個方法會傳回包含內容的 [**DataPackageView**][DataPackageView]。 這個物件與 [**DataPackage**][DataPackage] 物件幾乎完全一樣，不同的是它的內容是唯讀的。 使用該物件，就可以使用 [**AvailableFormats**][AvailableFormats] 或 [**Contains**][Contains] 方法來識別可用的格式。 接著，再呼叫對應的 **DataPackageView** 方法來取得資料。
+若要取得剪貼簿的內容，請呼叫靜態 [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) 方法。 這個方法會傳回包含內容的 [**DataPackageView**][DataPackageView]。 這個物件與 [**DataPackage**][DataPackage] 物件幾乎完全一樣，不同的是它的內容是唯讀的。 使用該物件，就可以使用 [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) 或 [**Contains**][Contains] 方法來識別可用的格式。 接著，再呼叫對應的 **DataPackageView** 方法來取得資料。
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -63,7 +67,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 
 ## 追蹤剪貼簿的變更
 
-除了複製和貼上命令，您可能也想要追蹤剪貼簿的變更。 處理剪貼簿的 [**Clipboard.ContentChanged**][ContentChanged] 事件來執行這個動作。
+除了複製和貼上命令，您可能也想要追蹤剪貼簿的變更。 處理剪貼簿的 [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) 事件即可執行這個動作。
 
 ```cs
 Clipboard.ContentChanged += (s, e) => 
@@ -78,25 +82,27 @@ Clipboard.ContentChanged += (s, e) =>
 }
 ```
 
-<!-- LINKS --> 
-[DataTransfer]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.aspx 
-[DataPackage]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx 
-[DataPackageView]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.aspx
-[DataPackagePropertySet]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx 
-[DataRequest]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx 
-[DataRequested]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx 
-[FailWithDisplayText]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx
-[ShowShareUi]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx
-[RequestedOperation]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.requestedoperation.aspx 
-[ControlsList]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt185406.aspx 
-[SetContent]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.setcontent.aspx 
-[GetContent]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.getcontent.aspx
-[AvailableFormats]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.availableformats.aspx 
-[包含]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx
-[ContentChanged]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx 
+## 另請參閱
+
+* [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
+* [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
+* [DataPackageView](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.aspx)
+* [DataPackagePropertySet]( https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx)
+* [DataRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx) 
+* [DataRequested]( https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)
+* [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
+* [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
+* [RequestedOperation](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.requestedoperation.aspx) 
+* [ControlsList](https://msdn.microsoft.com/library/windows/apps/xaml/mt185406.aspx)
+* [SetContent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.setcontent.aspx)
+* [GetContent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.getcontent.aspx)
+* [AvailableFormats](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.availableformats.aspx)
+* [包含](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx)
+* [ContentChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

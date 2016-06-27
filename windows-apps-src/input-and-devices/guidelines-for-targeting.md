@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。
-title: 目標預測
+Description: "本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。"
+title: "目標預測"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
+
 ---
 
 # 目標預測的指導方針
@@ -170,6 +173,7 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

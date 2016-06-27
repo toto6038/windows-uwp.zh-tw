@@ -2,6 +2,9 @@
 author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: a7abca8712d2b02eac8bfd150a9476a955e2982a
+
 ---
 
 # 應用程式列與命令列
@@ -34,7 +37,7 @@ Windows Phone 上 Outlook 行事曆中的命令列
 
 ## 結構
 
-根據預設，命令列會顯示一排圖示按鈕與一個選擇性的 [查看更多] 按鈕，它會以省略符號 \[•••\] 表示。 這個命令列是由稍後顯示的範例程式碼建立。 顯示的命令列處於關閉、精簡狀態。
+根據預設，命令列會顯示一排圖示按鈕與一個選擇性的 \[查看更多\] 按鈕，它會以省略符號 \[•••\] 表示。 這個命令列是由稍後顯示的範例程式碼建立。 顯示的命令列處於關閉、精簡狀態。
 
 ![關閉的命令列](images/command-bar-compact.png)
 
@@ -47,11 +50,11 @@ Windows Phone 上 Outlook 行事曆中的命令列
 ![關閉的命令列](images/commandbar_anatomy_open.png)
 
 命令列被分成 4 個主要區域︰
-- [查看更多] \[•••\] 按鈕會顯示在命令列右側。 [查看更多] \[•••\] 按鈕有 2 種功能：在主要命令按鈕上顯示標籤，而且如果有任何次要命令出現，它還會開啟溢位功能表。 在沒有要顯示的次要命令和隱藏標籤時，按鈕將不會顯示。 [
-            `OverflowButtonVisibility`
+- \[查看更多\] \[•••\] 按鈕會顯示在命令列右側。 \[查看更多\] \[•••\] 按鈕有 2 種功能：在主要命令按鈕上顯示標籤，而且如果有任何次要命令出現，它還會開啟溢位功能表。 在沒有要顯示的次要命令和隱藏標籤時，按鈕將不會顯示。 [
+              `OverflowButtonVisibility`
             ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 屬性可讓應用程式變更這項預設自動隱藏行為。
 - 內容區域會對齊命令列左側。 如果填入 `Content` 屬性，就會顯示內容區域。
-- 主要命令區域會對齊命令列右側，就在 [查看更多] \[•••\] 按鈕右邊。 如果填入 `PrimaryCommands` 屬性，就會顯示內容區域。  
+- 主要命令區域會對齊命令列右側，就在 \[查看更多\] \[•••\] 按鈕右邊。 如果填入 `PrimaryCommands` 屬性，就會顯示內容區域。  
 - 只有命令列開啟並填入 `SecondaryCommands` 屬性時，才會顯示溢位功能表。 
 
 當 [FlowDirection]() 為 **RightToLeft** 時，配置會反轉。
@@ -86,7 +89,7 @@ CommandBar 控制項有 3 個可用來新增命令與內容的屬性：[**Primar
 
 ### 主要動作與溢位
 
-根據預設，新增到命令列的項目也會新增到 **PrimaryCommands** 集合。 這些命令會顯示在 [查看更多] \[•••\] 按鈕左側，就在我們稱為動作空間的區域中。 將最重要的命令 (您希望在命令列中保持可見) 放在動作空間中。 在最小的螢幕 (320 epx 寬) 上，命令列的動作空間約可容納最多 4 個項目。
+根據預設，新增到命令列的項目也會新增到 **PrimaryCommands** 集合。 這些命令會顯示在 \[查看更多\] \[•••\] 按鈕左側，就在我們稱為動作空間的區域中。 將最重要的命令 (您希望在命令列中保持可見) 放在動作空間中。 在最小的螢幕 (320 epx 寬) 上，命令列的動作空間約可容納最多 4 個項目。
 
 您可以將命令新增到 **SecondaryCommands** 集合，而這些項目會顯示在溢位區域中。 將較不重要的命令放在溢位區域內。
 
@@ -117,7 +120,7 @@ app 繪製上述項目時程式碼片段看起來像下面這樣。
 ![成為主要和次要命令的應用程式列按鈕](images/app-bar-toggle-button-two-modes.png)
 
 - *如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。*
-- *我們建議將 [接受]、[是]、[確定] 命令放在 [拒絕]、[否] 和 [取消] 的左邊。 一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。*
+- *我們建議將 \[接受\]、\[是\]、\[確定\] 命令放在 \[拒絕\]、\[否\] 和 \[取消\] 的左邊。 一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。*
 
 ### 按鈕標籤
 
@@ -141,7 +144,7 @@ app 繪製上述項目時程式碼片段看起來像下面這樣。
 
 ## 開啟與關閉狀態
 
-命令列可以開啟或關閉。 使用者可以按下 [查看更多] \[•••\] 按鈕，以在這些狀態之間切換。 您可以設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 開啟時，會顯示含文字標籤的主要命令按鈕，以及溢位功能表 (若有次要命令存在)，如先前所示。
+命令列可以開啟或關閉。 使用者可以按下 \[查看更多\] \[•••\] 按鈕，以在這些狀態之間切換。 您可以設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) 屬性，以程式設計方式在這些狀態之間切換。 開啟時，會顯示含文字標籤的主要命令按鈕，以及溢位功能表 (若有次要命令存在)，如先前所示。
 
 您可以使用 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) 與 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件來回應要開啟或關閉的命令列。  
 - 轉換動畫開始之前，會發生 Opening 和 Closing 事件。
@@ -177,8 +180,8 @@ private void CommandBar_Closing(object sender, object e)
 ### ClosedDisplayMode
 
 您可以設定 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 屬性，以控制如何顯示關閉狀態的命令列。 目前有 3 個關閉顯示模式可供選擇︰
-- **Compact**：這是預設模式。 顯示內容、沒有標籤的主要命令圖示，以及 [查看更多] \[•••\] 按鈕。
-- **Minimal**：只顯示精簡的一列來做為 [查看更多 ] \[•••\] 按鈕。 使用者可以按該列上的任意位置以開啟它。
+- **Compact**：這是預設模式。 顯示內容、沒有標籤的主要命令圖示，以及 \[查看更多\] \[•••\] 按鈕。
+- Minimal：只顯示精簡的一列來做為 \[查看更多 \] \[•••\] 按鈕。 使用者可以按該列上的任意位置以開啟它。
 - **Hidden**︰命令列關閉後就不會顯示。 這十分適合用來顯示一個含內嵌命令列的關聯式命令。 在此情況下，您必須設定 **IsOpen** 屬性或將 ClosedDisplayMode 變更為 **Minimal** 或 **Compact**，以程式設計方式來開啟命令列。
 
 在這裡，命令列是用來放置 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 的簡單格式設定命令。 當焦點不在編輯方塊時，格式設定命令會干擾注意力，所以會隱藏起來。 使用編輯方塊時，命令列的 ClosedDisplayMode 會變更為 Compact，因此會顯示格式設定命令。
@@ -208,7 +211,8 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注意** &nbsp;&nbsp;此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
+>**注意**
+            &nbsp;&nbsp;此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
 
 雖然在某些情況下，Minimal 與 Hidden 模式很有用，但是請記住，隱藏所有動作可能造成使用者的混淆。
 
@@ -216,7 +220,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ### IsSticky
 
-開啟命令列後，如果使用者在控制項以外的任何地方與 app 互動，則根據預設，會關閉溢位功能表並隱藏標籤。 以這種方式關閉時，稱為「消失關閉」**。 您可以設定 [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 屬性，以控制列的關閉方式。 當列是相黏 (`IsSticky="true"`) 時，消失關閉手勢並無法關閉它。 列會保持開啟，直到使用者按下 [查看更多] \[•••\] 按鈕為止，或是從溢位功能表中選取項目 (如果有)。
+開啟命令列後，如果使用者在控制項以外的任何地方與 app 互動，則根據預設，會關閉溢位功能表並隱藏標籤。 以這種方式關閉時，稱為「消失關閉」。 您可以設定 [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) 屬性，以控制列的關閉方式。 當列是相黏 (`IsSticky="true"`) 時，消失關閉手勢並無法關閉它。 列會保持開啟，直到使用者按下 \[查看更多\] \[•••\] 按鈕為止，或是從溢位功能表中選取項目 (如果有)。
 
 ## 可行與禁止事項
 
@@ -244,21 +248,21 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 -   將較不重要的命令放在列的動作空間後方，或放在溢位區域的前幾個位置。 當列有足夠的螢幕實際可用空間時，這些命令就會顯示；當沒有足夠的空間時，會納入溢位區域的下拉式功能表中。
 -   將最不重要的命令放在溢位區域內。 這些命令將一律顯示在下拉式功能表中。
 
-如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。 我們建議將 [接受]、[是]、[確定] 命令放在 [拒絕]、[否] 和 [取消] 的左邊。 一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。
+如果有會顯示在各頁面上的命令，最好將該命令保持在一致的位置。 我們建議將 \[接受\]、\[是\]、\[確定\] 命令放在 \[拒絕\]、\[否\] 和 \[取消\] 的左邊。 一致性可讓使用者自信地在系統中移動，幫助他們將 app 瀏覽的知識從某個 app 運用到另一個 app。
 
-雖然您可以將所有動作放在溢位區域內，讓命令列上只顯示 [查看更多] \[•••\] 按鈕，但是請記住，隱藏所有動作可能造成使用者的混淆。
+雖然您可以將所有動作放在溢位區域內，讓命令列上只顯示 \[查看更多\] \[•••\] 按鈕，但是請記住，隱藏所有動作可能造成使用者的混淆。
 
 ### 命令列飛出視窗
 
-請考慮為命令使用邏輯式分組，例如在 [回覆] 功能表中放入 [回覆]、[全部回覆] 和 [轉寄]。 雖然通常應用程式列按鈕會啟動單一命令，但應用程式列按鈕也可以用來顯示包含自訂內容的 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
+請考慮為命令使用邏輯式分組，例如在 \[回覆\] 功能表中放入 \[回覆\]、\[全部回覆\] 和 \[轉寄\]。 雖然通常應用程式列按鈕會啟動單一命令，但應用程式列按鈕也可以用來顯示包含自訂內容的 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
 
 ![命令列上的飛出視窗範例](images/AppbarGuidelines_Flyouts.png)
 
 ### 溢位功能表
 
-![包含 [更多] 區域的命令列範例](images/AppbarGuidelines_Illustration.png)
+![包含 \[更多\] 區域的命令列範例](images/AppbarGuidelines_Illustration.png)
 
--   溢位功能表是由 [查看更多] \[•••\] 按鈕代表，也就是功能表的可見進入點。 它位於工具列最右側，與主要動作相鄰。
+-   溢位功能表是由 \[查看更多\] \[•••\] 按鈕代表，也就是功能表的可見進入點。 它位於工具列最右側，與主要動作相鄰。
 -   溢位區域是針對使用頻率較低的動作所配置。
 -   動作可以在中斷點處，於主要動作空間與溢位功能表之間移動。 您也可以指定巨集指令保持顯示在主要巨集指令空間，而不受畫面或應用程式視窗大小影響。
 -   即使在較大的螢幕上展開應用程式列時，不常用的巨集指令仍可以保留在溢位功能表內。
@@ -274,13 +278,18 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## 相關文章
 
-**適用於設計人員** 
-           [UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
+**適用於設計人員**
+            
+            [UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-**適用於開發人員 (XAML)** 
-           [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**適用於開發人員 (XAML)**
+            
+            [
+              **CommandBar**
+            ](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

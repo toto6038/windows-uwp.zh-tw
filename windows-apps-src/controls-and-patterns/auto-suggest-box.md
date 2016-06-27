@@ -1,11 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用者輸入時提供建議的文字輸入方塊。
-title: 自動建議方塊的指導方針
+Description: "使用者輸入時提供建議的文字輸入方塊。"
+title: "自動建議方塊的指導方針"
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+
 ---
 # 自動建議方塊
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
@@ -36,7 +39,7 @@ Groove 音樂 app 中的自動建議方塊。
 
 ![自動建議控制項的進入點範例](images/controls_autosuggest_entrypoint.png)
 
-當使用者開始輸入文字，自動建議結果清單就會自動產生。 結果清單可顯示在文字輸入方塊的上方或下方。 [全部清除] 按鈕將會出現：
+當使用者開始輸入文字，自動建議結果清單就會自動產生。 結果清單可顯示在文字輸入方塊的上方或下方。 \[全部清除\] 按鈕將會出現：
 
 ![展開的自動建議控制項範例](images/controls_autosuggest_expanded01.png)
 
@@ -79,13 +82,13 @@ QuerySubmitted 事件會在使用者確認查詢字串時發生。 使用者可�
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-根據預設，文字輸入方塊沒有顯示 [查詢] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 [尋找] 圖示，如下所示。
+根據預設，文字輸入方塊沒有顯示 \[查詢\] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 \[尋找\] 圖示，如下所示。
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
 ```
 
-以下是包含 [尋找] 圖示的 AutoSuggestBox。
+以下是包含 \[尋找\] 圖示的 AutoSuggestBox。
 
 ![自動建議控制項的進入點範例](images/controls_autosuggest_entrypoint.png)
 
@@ -152,6 +155,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

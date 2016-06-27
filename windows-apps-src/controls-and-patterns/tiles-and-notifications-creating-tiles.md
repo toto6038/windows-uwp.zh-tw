@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。
-title: 磚
+Description: "App 在 \\[開始\\] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。"
+title: "磚"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+
 ---
 
 # 適用於 UWP App 的磚
@@ -13,7 +16,7 @@ template: detail.hbs
 
 
 
-App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+App 在 \[開始\] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
 ## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>設定預設磚
 
@@ -47,7 +50,7 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
     縮放影像按照以下命名慣例：
     
-    &lt;影像名稱&gt;**.scale-&lt;縮放比例&gt;**.&lt;影像檔案副檔名&gt;** 
+    &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt; 
 
 
      
@@ -105,6 +108,7 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

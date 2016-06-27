@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 使用語音命令，延伸 Cortana 與您的應用程式所提供的功能。
-title: Cortana 設計指導方針
+Description: "使用語音命令，延伸 Cortana 與您的應用程式所提供的功能。"
+title: "Cortana 設計指導方針"
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 31442ed17b9b463cbf10cecb564278b86086bbf2
+
 ---
 
 # Cortana 設計指導方針
@@ -105,7 +108,7 @@ template: detail.hbs
 ## <span id="Localization_"></span><span id="localization_"></span><span id="LOCALIZATION_"></span>當地語系化
 
 
-若要使用語音命令啟動動作，您的 app 必須在使用者於裝置上選取的語言中登錄語音命令 ([設定] &gt; [系統] &gt; [語音] &gt; [語音語言])。
+若要使用語音命令啟動動作，您的 app 必須在使用者於裝置上選取的語言中登錄語音命令 (\[設定\]  \[系統\]  \[語音\]  \[語音語言\])。
 
 您應該當地語系化 app 回應的語音命令，以及所有 TTS 和 GUI 字串。
 
@@ -390,6 +393,7 @@ GUI 與 TTS 字串可以相同，但並非必要。 嘗試讓 GUI 字串保持�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

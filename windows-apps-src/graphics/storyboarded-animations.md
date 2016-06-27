@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-title: 腳本動畫
-description: 腳本動畫不只是視覺意義上的動畫。
+title: "腳本動畫"
+description: "腳本動畫不只是視覺意義上的動畫。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+
 ---
 # 腳本動畫
 
@@ -17,7 +20,7 @@ description: 腳本動畫不只是視覺意義上的動畫。
 
 通常，在 Windows 執行階段應用程式中建立腳本動畫就和 Silverlight 或 WPF 一樣。 但是，還是有一些重要的差異：
 
--   腳本動畫不是以視覺化方式讓 UI 產生動畫效果的唯一方式，也不是應用程式開發人員執行這項工作最簡單的方式。 通常，比較好的設計方式是使用主題動畫和轉換動畫，而不是使用腳本動畫。 這些動畫可以快速建立建議的 UI 動畫，並不需要熟悉動畫屬性目標的複雜做法。 如需詳細資訊，請參閱[動畫概念](animations-overview.md)
+-   腳本動畫不是以視覺化方式讓 UI 產生動畫效果的唯一方式，也不是應用程式開發人員執行這項工作最簡單的方式。 通常，比較好的設計方式是使用主題動畫和轉換動畫，而不是使用腳本動畫。 這些動畫可以快速建立建議的 UI 動畫，並不需要熟悉動畫屬性目標的複雜做法。 如需詳細資訊，請參閱[動畫概念](animations-overview.md)。
 -   在 Windows 執行階段中，有許多 XAML 控制項包含主題動畫和轉換動畫做為它們內建行為的一部分。 在大部分的情況下，WPF 和 Silverlight 控制項並沒有預設動畫行為。
 -   並非您建立的所有自訂動畫預設都可以在 Windows 執行階段應用程式中執行，如果動畫系統判斷動畫可能對您的 UI 造成不良的效能，就不會執行。 系統判斷可能影響效能的動畫稱為「相依式動畫」**。 它是相依式的，因為計時動畫會直接針對 UI 執行緒來運作，而作用中的使用者輸入及其他更新也會嘗試將執行階段變更套用到 UI。 在 UI 執行緒上耗用大量系統資源的相依式動畫，在特定情況下會使應用程式沒有回應。 如果您的動畫會導致配置變更，或者可能影響 UI 執行緒上的效能，您通常需要明確啟用動畫讓它執行。 這就是特定動畫類別上 **EnableDependentAnimation** 屬性的作用。 如需詳細資訊，請參閱[相依式和獨立式動畫](./storyboarded-animations.md#dependent-and-independent-animations)。
 -   Windows 執行階段目前不支援自訂的 Easing 函式。
@@ -26,11 +29,11 @@ description: 腳本動畫不只是視覺意義上的動畫。
 
 腳本動畫是一種變更相依性屬性值做為時間函式的方式。 您要產生動畫效果的屬性不一定是直接影響您應用程式 UI 的屬性。 但因為 XAML 是用來定義應用程式的 UI，所以通常會產生動畫效果的都是 UI 相關屬性。 例如，您可以讓 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 的角度或按鈕背景的色彩值產生動畫效果。
 
-定義腳本動畫的其中一個可能的主要原因是如果您是控制項作者或正在重新範本化控制項，以及您正在定義視覺狀態。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+定義腳本動畫的其中一個可能的主要原因是如果您是控制項作者或正在重新範本化控制項，以及您正在定義視覺狀態。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 無論您是為應用程式定義視覺狀態或自訂動畫，本主題中所說明的腳本動畫概念和 API 大部分都適用於兩者。
 
-為了建立動畫效果，腳本動畫的目標屬性必須是「相依性屬性」**。 相依性屬性是 Windows 執行階段 XAML 實作的主要特色。 大部分常用 UI 元素的可編寫屬性通常是當做相依性屬性來實作的，因此您可以為它們建立動畫效果、套用資料繫結值，或是套用 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 並以 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 將屬性做為目標。 如需相依性屬性運作方式的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+為了建立動畫效果，腳本動畫的目標屬性必須是「相依性屬性」**。 相依性屬性是 Windows 執行階段 XAML 實作的主要特色。 大部分常用 UI 元素的可編寫屬性通常是當做相依性屬性來實作的，因此您可以為它們建立動畫效果、套用資料繫結值，或是套用 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 並以 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 將屬性做為目標。 如需相依性屬性運作方式的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
 
 通常是以編寫 XAML 的方式定義腳本動畫。 如果您使用像是 Microsoft Visual Studio 這類工具，工具會為您產生 XAML。 您也可以使用程式碼定義腳本動畫，但較不常見。
 
@@ -85,9 +88,9 @@ description: 腳本動畫不只是視覺意義上的動畫。
 
 您可能注意到這些範例有些會在數字周圍使用方括弧。 這是索引子。 它表示方括弧前的屬性名稱有集合做為值，而您需要該集合內的項目 (以零為基底的索引識別)。
 
-您也可以讓 XAML 附加屬性產生動畫效果。 一律將完整的附加屬性名稱放在括號內，例如 `(Canvas.Left)`。 如需詳細資訊，請參閱[讓 XAML 附加屬性產生動畫效果](./storyboarded-animations.md#animating-xaml-attached-properties)
+您也可以讓 XAML 附加屬性產生動畫效果。 一律將完整的附加屬性名稱放在括號內，例如 `(Canvas.Left)`。 如需詳細資訊，請參閱[讓 XAML 附加屬性產生動畫效果](./storyboarded-animations.md#animating-xaml-attached-properties)。
 
-如需如何使用屬性路徑讓屬性的間接目標產生動畫效果的詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)或 [**Storyboard.TargetProperty 附加屬性**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
+如需如何使用屬性路徑讓屬性的間接目標產生動畫效果的詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)或 [**Storyboard.TargetProperty 附加屬性**](https://msdn.microsoft.com/library/windows/apps/Hh759824)。
 
 ### 動畫類型
 
@@ -114,7 +117,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 -   如果您沒有指定 **To** 值或 **By** 值，結束值會是動畫執行之前動畫屬性所具備的值。 在這種情況下，最好要有 **From** 值，因為如果沒有這個值，動畫就完全不會變更值；開始和結束值會相同。
 -   動畫通常至少會有 **From**、**By** 或 **To** 其中一個，但不會三個同時存在。
 
-讓我們回到稍早的 XAML 範例，再看一次 **From** 和 **To** 值，以及 **Duration**。 這個範例是設定 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 屬性的動畫效果，**Opacity** 的屬性類型為 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 所以這裡使用的動畫是 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
+讓我們回到稍早的 XAML 範例，再看一次 **From** 和 **To** 值，以及 **Duration**。 這個範例是設定 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 屬性的動畫效果，**Opacity** 的屬性類型為 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 所以這裡使用的動畫是 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)。
 
 `From="1.0" To="0.0"` 指定當動畫執行時，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 屬性從值 1 開始，然後動畫效果結束在 0。 換句話說，這些 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值對 **Opacity** 屬性而言，這個動畫會使物件從不透明開始，然後淡化成透明。
 
@@ -132,7 +135,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 `Duration="0:0:1"` 指定動畫持續時間，也就是矩形淡化的速度。 [
             **Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 屬性是以 *hours*:*minutes*:*seconds* 的形式指定值。 因此，這個範例的時間期間為 1 秒。
 
-如需 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值和 XAML 語法的詳細資訊，請參閱 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)
+如需 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值和 XAML 語法的詳細資訊，請參閱 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。
 
 **注意** 對於我們所說明的範例，如果您確定設定動畫效果的物件其開始狀態的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 永遠等於 1，無論是透過預設或明確設定，都可以省略 **From** 值，動畫會使用隱含的開始值，結果會相同。
 
@@ -148,10 +151,10 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ### **AutoReverse**
 
-如果您沒有在動畫指定 [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 或 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211)，動畫會執行一次，然後執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 指定的時間
+如果您沒有在動畫指定 [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 或 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211)，動畫會執行一次，然後執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 指定的時間。
 
 [
-            **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 屬性指定是否在時間軸到達其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的最後時反向播放。 如果將它設定為 **true**，動畫會在到達宣告的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 最後時反向，將值從結束值 (**To**) 變更回開始值 (**From**)。 這表示該動畫實際上是執行其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的兩倍時間。
+            **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 屬性指定是否在時間軸到達其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的最後時反向播放。 如果將它設定為 **true**，動畫會在到達宣告的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 最後時反向，將值從結束值 (**To**) 變更回開始值 (**From**)。 這表示該動畫實際上是執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的兩倍時間。
 
 ### **RepeatBehavior**
 
@@ -160,11 +163,11 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 您可以讓動畫執行多個反覆運算，例如，「3x」的值會讓動畫執行三次。 或是，您可以為 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 指定不同的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。 該 **Duration** 應該比動畫本身的 **Duration** 長，才會生效。 例如，如果您將 **RepeatBehavior** 指定為 0:0:10，[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 為 0:0:2 的動畫會重複五次。 如果除不盡，動畫會在到達 **RepeatBehavior** 時間時截斷，可能正好在動畫的中間。 最後，您可以指定特殊值「Forever」，這會使動畫無限的執行，直到您主動停止為止。
 
-如需 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 值和 XAML 語法的詳細資訊，請參閱 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)
+如需 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 值和 XAML 語法的詳細資訊，請參閱 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)。
 
 ### **FillBehavior="Stop"**
 
-根據預設，當動畫結束時，動畫會將屬性值留在最後的 **To** 或 **By** 修改的值，即使在它的持續時間已經超過也是一樣。 不過，如果您將 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 屬性的值設定為 [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306)，動畫值的值會還原為套用動畫之前的值，或是更精確的說，是相依性屬性系統所決定的目前有效值 (如需這個區別的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583))
+根據預設，當動畫結束時，動畫會將屬性值留在最後的 **To** 或 **By** 修改的值，即使在它的持續時間已經超過也是一樣。 不過，如果您將 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 屬性的值設定為 [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306)，動畫值的值會還原為套用動畫之前的值，或是更精確的說，是相依性屬性系統所決定的目前有效值 (如需這個區別的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583))。
 
 ### **BeginTime**
 
@@ -172,7 +175,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ### **SpeedRatio**
 
-如果在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 中有多個動畫，您可以變更一或多個動畫相對於 **Storyboard** 的時間速率。 父項 **Storyboard** 才是控制動畫執行時如何使用 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 時間的主要項目。 不常使用這個屬性。 如需詳細資訊，請參閱 [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213)
+如果在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 中有多個動畫，您可以變更一或多個動畫相對於 **Storyboard** 的時間速率。 父項 **Storyboard** 才是控制動畫執行時如何使用 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 時間的主要項目。 不常使用這個屬性。 如需詳細資訊，請參閱 [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213)。
 
 ## 在 **Storyboard** 定義多個動畫
 
@@ -186,7 +189,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 [
             **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 類別實際上有許多和動畫類型相同的動畫屬性，因為兩者共用 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底類別。 因此，**Storyboard** 可以有 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 或 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204)。 不過您通常不會在 **Storyboard** 上設定這些項目，除非您希望所有包含的動畫都有該行為。 一般來說，在 **Storyboard** 上設定的任何 **Timeline** 屬性都會套用到它的所有子動畫。 如果未設定，**Storyboard** 會有隱含的持續時間，從所包含動畫的最長 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值開始計算。 在 **Storyboard** 上明確設定短於其中一個子動畫的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 會使動畫被截斷，通常不希望發生這種情形。
 
-腳本不能包含嘗試針對相同物件上的相同屬性設定動畫效果的兩個動畫。 如果您嘗試這麼做，會在腳本嘗試執行時發生執行階段錯誤。 即使動畫因為刻意設定不同的 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 值和持續時間而沒有時間上的重疊，也同樣適用上述限制。 如果您真的希望在單一腳本中的相同屬性套用較複雜的動畫時間軸，應該要使用關鍵畫面動畫。 請參閱[主要畫面格和 Easing 函式動畫](key-frame-and-easing-function-animations.md)
+腳本不能包含嘗試針對相同物件上的相同屬性設定動畫效果的兩個動畫。 如果您嘗試這麼做，會在腳本嘗試執行時發生執行階段錯誤。 即使動畫因為刻意設定不同的 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 值和持續時間而沒有時間上的重疊，也同樣適用上述限制。 如果您真的希望在單一腳本中的相同屬性套用較複雜的動畫時間軸，應該要使用關鍵畫面動畫。 請參閱[主要畫面格和 Easing 函式動畫](key-frame-and-easing-function-animations.md)。
 
 動畫系統可以將多個動畫套用到屬性的值，前提是這些輸入必須來自多個腳本。 特別為同時執行的腳本使用這個行為並不常見。 不過，套用到控制項屬性的應用程式定義的動畫，將會修改之前以控制項視覺狀態模型執行之動畫的 **HoldEnd** 值，是有可能的。
 
@@ -216,14 +219,14 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 </Page>
 ```
 
-若要組織 XAML 中的索引資源，一般做法是在 XAML 檔案 (例如 page.xaml 或 app.xaml) 的 XAML 根項目定義資源。 您也可以把資源分到不同的檔案，然後將它們合併到應用程式或頁面中。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/Mt187273)
+若要組織 XAML 中的索引資源，一般做法是在 XAML 檔案 (例如 page.xaml 或 app.xaml) 的 XAML 根項目定義資源。 您也可以把資源分到不同的檔案，然後將它們合併到應用程式或頁面中。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/Mt187273)。
 
 **注意** Windows 執行階段 XAML 可支援使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性 或 [x:Name](https://msdn.microsoft.com/library/windows/apps/Mt204788) 屬性識別資源。 [
             **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 較常使用 x:Name 屬性，因為您最後還是希望依變數名稱參考它，以便可以呼叫它的 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 方法和執行動畫。 如果您使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性，就需要使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 方法 (例如 [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) 索引子) 抓取它做為索引資源，然後將抓取的物件轉換為 **Storyboard** 以使用 **Storyboard** 方法。
 
  
 
-直到為控制項視覺外觀宣告視覺狀態動畫之前，您也可以將動畫放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 單元內。 在該情況下，您定義的 **Storyboard** 元素會進入 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，它會在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 更深層巢狀中 (這是索引鍵資源 **Style**)。 在這種情況下，您的 **Storyboard** 不需要索引鍵或名稱，因為它是 **VisualState**，具有 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 可以叫用的目標名稱。 控制項的樣式通常會分到不同的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 檔案中，而不是放置在頁面或應用程式 **Resources** 集合內。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+直到為控制項視覺外觀宣告視覺狀態動畫之前，您也可以將動畫放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 單元內。 在該情況下，您定義的 **Storyboard** 元素會進入 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，它會在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 更深層巢狀中 (這是索引鍵資源 **Style**)。 在這種情況下，您的 **Storyboard** 不需要索引鍵或名稱，因為它是 **VisualState**，具有 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 可以叫用的目標名稱。 控制項的樣式通常會分到不同的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 檔案中，而不是放置在頁面或應用程式 **Resources** 集合內。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 ## 相依式和獨立式動畫
 
@@ -255,11 +258,11 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 </Storyboard>
 ```
 
-如果您的動畫不符合這些條件，就可能是相依式動畫。 根據預設，動畫系統不會執行相依式動畫。 所以在開發和測試的程序期間，您可能不會看到您的動畫執行。 您還是可以使用這種動畫，但必須特別啟用每一個相依式動畫。 若要啟用動畫，將動畫物件的 **EnableDependentAnimation** 屬性設定為 **true** (代表動畫的每一個 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 子類別都有不同的屬性實作，但都命名為
+如果您的動畫不符合這些條件，就可能是相依式動畫。 根據預設，動畫系統不會執行相依式動畫。 所以在開發和測試的程序期間，您可能不會看到您的動畫執行。 您還是可以使用這種動畫，但必須特別啟用每一個相依式動畫。 若要啟用動畫，將動畫物件的 **EnableDependentAnimation** 屬性設定為 **true** (代表動畫的每一個 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 子類別都有不同的屬性實作，但都命名為 `EnableDependentAnimation`)。
 
-對於使用相依式動畫的需求，應用程式開發人應謹慎構思動畫系統和開發經驗的設計概念。 我們希望開發人員注意到動畫對於 UI 的回應速度確實有效能方面的影響。 在全方位的應用程式中，很難針對效能不佳的動畫隔離和偵錯。 所以，最好只開啟應用程式的 UI 體驗確實需要的相依式動畫。 我們不希望因為使用大量循環的裝飾動畫而輕易地降低應用程式的效能。 如需動畫效能祕訣的詳細資訊，請參閱[最佳化動畫和媒體](https://msdn.microsoft.com/library/windows/apps/Mt204774)
+對於使用相依式動畫的需求，應用程式開發人應謹慎構思動畫系統和開發經驗的設計概念。 我們希望開發人員注意到動畫對於 UI 的回應速度確實有效能方面的影響。 在全方位的應用程式中，很難針對效能不佳的動畫隔離和偵錯。 所以，最好只開啟應用程式的 UI 體驗確實需要的相依式動畫。 我們不希望因為使用大量循環的裝飾動畫而輕易地降低應用程式的效能。 如需動畫效能祕訣的詳細資訊，請參閱[最佳化動畫和媒體](https://msdn.microsoft.com/library/windows/apps/Mt204774)。
 
-做為應用程式開發人員，您也可以選擇套用一律停用相依式動畫的全應用程式設定，即使 **EnableDependentAnimation** 為 **true** 也可以。 請參閱 [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)
+做為應用程式開發人員，您也可以選擇套用一律停用相依式動畫的全應用程式設定，即使 **EnableDependentAnimation** 為 **true** 也可以。 請參閱 [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)。
 
 **祕訣** 如果您使用 Visual Studio 撰寫控制項的視覺狀態，設計工具就會在您嘗試將相依式動畫套用到視覺狀態屬性時產生警告。
 
@@ -310,7 +313,7 @@ myStoryBoard.Begin()
 
 ### **Storyboard** 和 **EventTrigger**
 
-有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)
+有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
 
 ## 讓 XAML 附加屬性產生動畫效果
 
@@ -318,7 +321,7 @@ myStoryBoard.Begin()
 
 ## 其他動畫類型以及了解設定 UI 動畫效果的後續步驟
 
-到目前為止，我們已經說明了在兩個值之間產生動畫效果的自訂動畫，以及在動畫執行時視需要以線性方式插入值。 這些稱為 **From**/**To**/**By** 動畫。 但是還有另一種動畫類型，可讓您宣告位於開始和結束之間的中繼值。 這些稱為「*關鍵畫面動畫*」。 還有一種方式可以改變 **From**/**To**/**By** 動畫或關鍵畫面動畫上的內插補點邏輯。 這牽涉到套用 Easing 函式。 如需這些概念的詳細資訊，請參閱[關鍵畫面和 Easing 函式動畫](key-frame-and-easing-function-animations.md)
+到目前為止，我們已經說明了在兩個值之間產生動畫效果的自訂動畫，以及在動畫執行時視需要以線性方式插入值。 這些稱為 **From**/**To**/**By** 動畫。 但是還有另一種動畫類型，可讓您宣告位於開始和結束之間的中繼值。 這些稱為「*關鍵畫面動畫*」。 還有一種方式可以改變 **From**/**To**/**By** 動畫或關鍵畫面動畫上的內插補點邏輯。 這牽涉到套用 Easing 函式。 如需這些概念的詳細資訊，請參閱[關鍵畫面和 Easing 函式動畫](key-frame-and-easing-function-animations.md)。
 
 ## 相關主題
 
@@ -338,6 +341,7 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

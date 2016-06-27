@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 索引標籤和樞紐讓使用者可以在經常存取的內容之間瀏覽。
-title: 索引標籤與樞紐
+Description: "索引標籤和樞紐讓使用者可以在經常存取的內容之間瀏覽。"
+title: "索引標籤與樞紐"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+
 ---
 # 樞紐和索引標籤
 
@@ -107,6 +110,7 @@ Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/ap
 [瀏覽設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

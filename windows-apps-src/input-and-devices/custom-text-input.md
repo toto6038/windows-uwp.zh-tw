@@ -1,16 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Windows.UI.Text.Core 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。
-title: 自訂文字輸入概觀
+Description: "Windows.UI.Text.Core 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。"
+title: "自訂文字輸入概觀"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
+
 ---
 
 # 自訂文字輸入
 
 [
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這類 API 十分類似[文字服務架構](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，其中的 App 不需要具備文字服務的詳細知識。 這讓 App 能夠接收任何語言以及來自任何輸入類型的文字，例如鍵盤、語音或手寫筆。
+              **Windows.UI.Text.Core**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這類 API 十分類似[文字服務架構](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，其中的 App 不需要具備文字服務的詳細知識。 這讓 App 能夠接收任何語言以及來自任何輸入類型的文字，例如鍵盤、語音或手寫筆。
 
 
 **重要 API**
@@ -33,7 +37,8 @@ template: detail.hbs
 
 -   「應用程式」代表裝載使用核心文字 API 建置之自訂編輯控制項的 UWP App。
 -   [
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API會透過 Windows 來協助與文字服務進行通訊。 文字編輯控制項和文字服務之間的通訊主要是透過 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 物件來處理，此物件會提供方法和事件，協助進行通訊。
+              **Windows.UI.Text.Core**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958238) API會透過 Windows 來協助與文字服務進行通訊。 文字編輯控制項和文字服務之間的通訊主要是透過 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 物件來處理，此物件會提供方法和事件，協助進行通訊。
 
 ![核心文字架構圖](images/coretext/architecture.png)
 
@@ -58,11 +63,11 @@ template: detail.hbs
 
  
 
-例如，在先前所示的文字範圍中，範圍 [0, 5] 指出 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
+例如，在先前所示的文字範圍中，範圍 \[0, 5\] 指出 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
 
 ### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>插入點
 
-目前的插入號位置 (通常稱為插入點) 是藉由設定 **StartCaretPosition**，使其等於 **EndCaretPosition** 來表示
+目前的插入號位置 (通常稱為插入點) 是藉由設定 **StartCaretPosition**，使其等於 **EndCaretPosition** 來表示。
 
 ### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>不連續的選取項目
 
@@ -70,93 +75,97 @@ template: detail.hbs
 
 以下列文字資料流為例：
 
-![文字資料流圖表範例 有兩個選項：\[0, 1\] 和 \[6, 11\]。
+![範例文字資料流圖表](images/coretext/stream-2.png) 有兩個選項：\[0, 1\] and \[6, 11\]。 編輯控制項只能報告這其中一個項目；\[0, 1\] 或 \[6, 11\]。
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>編輯控制項只能報告這其中一個項目；\[0, 1\] 或 \[6, 11\]。
+## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>使用文字
 
-
-使用文字
 
 [
-            **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 類別可透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件及 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來啟用 Windows 和編輯控制項之間的文字流向。
+              **CoreTextEditContext**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958158) 類別可透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件及 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來啟用 Windows 和編輯控制項之間的文字流向。
 
-編輯控制項會透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件來接收文字，這類事件是在使用者與輸入法 (例如，鍵盤、語音或 IME) 互動時所產生。
+編輯控制項會透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件來接收文字，這類事件是在使用者與輸入法 (例如，鍵盤、語音或 INE) 互動時所產生。
 
-當您變更編輯控制項中的文字時 (例如，將文字貼入控制項)，需要呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 來通知 Windows 如果文字服務需要新文字，則會引發 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。
+當您變更編輯控制項中的文字時 (例如，將文字貼入控制項)，需要呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 來通知 Windows。
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>您必須在 **TextRequested** 事件處理常式中提供新文字。
+如果文字服務需要新文字，則會引發 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。 您必須在 **TextRequested** 事件處理常式中提供新文字。
 
-接受文字更新 編輯控制項通常應該會接受文字更新要求，因為它們代表使用者想要輸入的文字。
+### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>接受文字更新
 
-1.  在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件處理常式中，編輯控制項預期要有下列動作：
-2.  在 [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) 中指定的位置上，插入 [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) 中指定的文字
-3.  將選取項目放置於 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) 中指定的位置上
+編輯控制項通常應該會接受文字更新要求，因為它們代表使用者想要輸入的文字。 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件處理常式中，編輯控制項預期要有下列動作：
 
-通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) 成功進行更新 例如，這是編輯控制項在使用者輸入 "d" 之前的狀態。
+1.  在 [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) 中指定的位置上，插入 [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) 中指定的文字。
+2.  將選取項目放置於 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) 中指定的位置上。
+3.  通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) 成功進行更新。
 
-![插入點是在 \[10, 10\]。
+例如，這是編輯控制項在使用者輸入 "d" 之前的狀態。 插入點是在 \[10, 10\]。
 
--   文字資料流圖表範例
--   當使用者輸入 "d" 時，即會使用下列 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 資料來引發 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件：
+![範例文字資料流圖表](images/coretext/stream-3.png) 當使用者輸入 "d"，會引發包含下列 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 資料的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件：
+
 -   [
-            **Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+              **Range**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [
+              **Text**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [
+              **NewSelection**
+            ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
-[
-            **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d" [
-            **NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+在編輯控制項中，套用指定的變更，並將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
-![在編輯控制項中，套用指定的變更，並將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Succeeded**。](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>以下是控制項在套用變更之後的狀態。
+![文字資料流圖表範例](images/coretext/stream-4.png)
+### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>拒絕文字更新
 
-文字資料流圖表範例 拒絕文字更新 您有時無法套用文字更新，因為要求的範圍是在不得變更的編輯控制項區域內。
+您有時無法套用文字更新，因為要求的範圍是在不得變更的編輯控制項區域內。 在此情況下，您不應該套用任何變更。 而是改為通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)，來讓更新失敗。
 
-在此情況下，您不應該套用任何變更。 而是改為通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)，來讓更新失敗
+以只接受一個電子郵件地址的編輯控制項為例。 由於電子郵件地址不能包含空格，所以必須拒絕空格，因此，在針對空格鍵引發 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件時，您只需在編輯控制項中將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Failed** 即可。
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>以只接受一個電子郵件地址的編輯控制項為例。
-
-由於電子郵件地址不能包含空格，所以必須拒絕空格，因此，在針對空格鍵引發 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件時，您只需在編輯控制項中將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Failed** 即可。 通知文字變更
+### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>通知文字變更
 
 有時您的編輯控制項會對文字進行變更，例如，在貼上或自動校正文字時。 在這些情況下，您必須呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來通知這些變更的文字服務。
 
-![例如，這是編輯控制項在使用者貼上 "World" 之前的狀態。
+例如，這是編輯控制項在使用者貼上 "World" 之前的狀態。 插入點是在 \[6, 6\]。
 
-![插入點是在 \[6, 6\]。
+![範例文字資料流圖表](images/coretext/stream-5.png) 使用者執行貼上動作，而編輯控制項最終會以下列文字結束：
 
--   文字資料流圖表範例
--   使用者執行貼上動作，而編輯控制項會以下列文字來結束：
--   文字資料流圖表範例
+![範例文字資料流圖表](images/coretext/stream-4.png) 發生這種情況時，您應該使用下列引數呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
-在這種情況下，您應該使用這些引數來呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+-   *modifiedRange* = \[6, 6\]
+-   *newLength* = 5
+-   *newSelection* = \[11, 11\]
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>*modifiedRange* = \[6, 6\]
+隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
-*newLength* = 5
+### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>覆寫文字更新
 
-*newSelection* = \[11, 11\] 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。 覆寫文字更新
+在編輯控制項中，您可能想要覆寫文字更新，以提供自動校正功能。
 
-![在編輯控制項中，您可能想要覆寫文字更新，以提供自動校正功能。 例如，假設有個編輯控制項可提供將縮寫形式化的校正功能。 這是編輯控制項在使用者輸入空格鍵來觸發校正功能之前的狀態。 插入點是在 \[3, 3\]。
+例如，假設有個編輯控制項可提供將縮寫形式化的校正功能。 這是編輯控制項在使用者輸入空格鍵來觸發校正功能之前的狀態。 插入點是在 \[3, 3\]。
 
-![文字資料流圖表範例 使用者按下空格鍵，並引發對應的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件。 編輯控制項接受文字更新。
+![範例文字資料流圖表](images/coretext/stream-6.png) 使用者按下空格鍵，並引發對應的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件。 編輯控制項接受文字更新。 這是編輯控制項在完成校正之前短暫的狀態。 插入點是在 \[4, 4\]。
 
-![這是編輯控制項在完成校正之前短暫的狀態。
+![範例文字資料流圖表](images/coretext/stream-7.png) 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件處理常式以外，編輯控制項會進行下列校正。 這是編輯控制項在完成校正之後的狀態。 插入點是在 \[5, 5\]。
 
--   插入點是在 \[4, 4\]。
--   文字資料流圖表範例
--   在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件處理常式外部，編輯控制項會進行下列校正。
+![範例文字資料流圖表](images/coretext/stream-8.png) 發生這種情況時，您應該使用下列引數呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
-這是編輯控制項在完成校正之後的狀態。
+-   *modifiedRange* = \[1, 2\]
+-   *newLength* = 2
+-   *newSelection* = \[5, 5\]
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>插入點是在 \[5, 5\]。
+隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
-文字資料流圖表範例 在這種情況下，您應該使用這些引數來呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>提供要求的文字
 
-*modifiedRange* = \[1, 2\] *newLength* = 2 *newSelection* = \[5, 5\]
+請務必讓文字服務具備正確的文字，以提供像是自動校正或預測的功能，特別是已經存在於編輯控制項的文字，例如，來自載入文件或編輯控制項插入的文字，如先前小節所述。 因此，每當引發 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件時，您就必須針對指定的範圍提供目前位於編輯控制項中的文字。
 
-## <span id="related_topics"></span>隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
+有時 [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 會指定您的編輯控制項無法依原樣容納的範圍。 例如，**Range** 大於 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件當時的編輯控制項大小，或者 **Range** 的結尾已超出範圍。 在這些情況下，您應該傳回任何合理的範圍，通常是要求範圍的子集。
+
+## <span id="related_topics"></span>相關文章
 
 
-**提供要求的文字**
-* [請務必讓文字服務具備正確的文字，以提供像是自動校正或預測的功能，特別是已經存在於編輯控制項的文字，例如，來自載入文件或編輯控制項插入的文字，如先前小節所述。](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+**封存範例**
+* [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  
@@ -166,6 +175,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

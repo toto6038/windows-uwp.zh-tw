@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。
-title: 核取方塊
+Description: "用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。"
+title: "核取方塊"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+
 ---
 # 核取方塊
 
@@ -19,7 +22,7 @@ template: detail.hbs
 
 ## 這是正確的控制項嗎？
 
-針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用**單一核取方塊** 登入案例或是用於服務合約條款。
+針對二元 (是/否) 選項 (例如用於 \[記住我?\]) 使用單一核取方塊 登入案例或是用於服務合約條款。
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
@@ -43,9 +46,9 @@ Microsoft Edge 瀏覽器中對話方塊上的核取方塊。
 
 ![Microsoft Edge 瀏覽器中對話方塊上的核取方塊](images/control-examples/check-box-edge.png)
 
-Windows 中 [鬧鐘與時鐘] app 上的核取方塊。
+Windows 中 \[鬧鐘與時鐘\] app 上的核取方塊。
 
-![Windows 中 [鬧鐘與時鐘] app 上的核取方塊](images/control-examples/check-box-alarm.png)
+![Windows 中 \[鬧鐘與時鐘\] app 上的核取方塊](images/control-examples/check-box-alarm.png)
 
 ## 建立核取方塊
 
@@ -69,7 +72,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
-在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 [提交] 按鈕。
+在這個範例中，用於同意服務條款之核取方塊的 IsChecked 屬性會繫結到 \[提交\] 按鈕的 IsEnabled 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
 > 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
@@ -177,7 +180,7 @@ CheckBox 控制項是繼承自 [ToggleButton](https://msdn.microsoft.com/library
 
 將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
-在下列範例中，[全選] 核取方塊已將其 IsThreeState 屬性設為 **true**。 針對 [全選] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
+在下列範例中，\[全選\] 核取方塊已將其 IsThreeState 屬性設為 true。 針對 \[全選\] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
 
 ```xaml
 <StackPanel>
@@ -288,6 +291,7 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

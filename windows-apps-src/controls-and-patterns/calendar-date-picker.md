@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。
-title: 行事曆日期選擇器
+Description: "行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。"
+title: "行事曆日期選擇器"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+
 ---
 
 # 行事曆日期選擇器
@@ -85,6 +88,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。
-title: 行事曆檢視
+Description: "行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。"
+title: "行事曆檢視"
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+
 ---
 
 # 行事曆檢視
@@ -63,7 +66,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 ### 自訂行事曆檢視的外觀
 
 行事曆檢視是由兩個部分所組成：ControlTemplate 中定義的 XAML 元素，以及控制項直接呈現的視覺元素。 
-- 控制項範本中定義的 XAML 元素包括控制項周圍的框線、標頭、[上一步] 和 [下一步] 按鈕以及 DayOfWeek 元素。 與任何 XAML 控制項一樣，您可以設定這些元素的樣式以及重新套用範本。 
+- 控制項範本中定義的 XAML 元素包括控制項周圍的框線、標頭、\[上一步\] 和 \[下一步\] 按鈕以及 DayOfWeek 元素。 與任何 XAML 控制項一樣，您可以設定這些元素的樣式以及重新套用範本。 
 - 行事曆格線是由 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 物件所組成。 您無法設定這些元素的樣式或重新套用範本，但我們提供不同的屬性，讓您可以自訂它們的外觀。
 
 下圖顯示行事曆月份檢視的組成元素。 如需詳細資訊，請參閱 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 類別的「備註」。
@@ -191,6 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

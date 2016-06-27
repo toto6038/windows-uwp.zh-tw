@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
-title: 設定語音辨識逾時
+Description: "設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。"
+title: "設定語音辨識逾時"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e0dbc43cba4556674a4d96013b65837d95044622
+
 ---
 
 # 設定語音辨識逾時
@@ -51,6 +54,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

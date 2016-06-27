@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 使用可在外部應用程式中啟動及執行單一動作的語音命令，來延伸 Cortana 的基本功能。
-title: Cortana 互動
+Description: "使用可在外部應用程式中啟動及執行單一動作的語音命令，來延伸 Cortana 的基本功能。"
+title: "Cortana 互動"
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: d55ece0112e5360c1de4e194c6dd326c15404f9e
+
 ---
 
 # UWP app 中的 Cortana 互動
@@ -99,6 +102,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
-title: 多重輸入設計指導方針
+Description: "就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。"
+title: "多重輸入設計指導方針"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+
 ---
 
 # 多重輸入
@@ -40,6 +43,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

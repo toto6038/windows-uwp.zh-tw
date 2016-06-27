@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 除了透過 Cortana 中的語音命令來使用系統功能之外，有一些具備語音命令功能的背景應用程式，可以指定要在應用程式中執行的動作或命令，利用這些背景應用程式，就可以擴充 Cortana 特性與功能。
-title: 利用 Cortana 語音命令啟動背景應用程式
+Description: "除了透過 Cortana 中的語音命令來使用系統功能之外，有一些具備語音命令功能的背景應用程式，可以指定要在應用程式中執行的動作或命令，利用這些背景應用程式，就可以擴充 Cortana 特性與功能。"
+title: "利用 Cortana 語音命令啟動背景應用程式"
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: c65abdda905a390567d3c2b199a891c0c3067df1
+
 ---
 
 # 利用 Cortana 語音命令啟用背景應用程式
@@ -35,9 +38,9 @@ template: detail.hbs
 
 ![Cortana 畫布概觀 ](images/cortana-overview.png)
 
-若要檢視 **Adventure Works** 行程，但又不想使用 **Cortana**，使用者可以在啟動 app 後，瀏覽到 [即將出發的行程]**** 頁面。
+若要檢視 Adventure Works 行程，但又不想使用 Cortana，使用者可以在啟動 app 後，瀏覽到 \[即將出發的行程\] 頁面。
 
-透過 **Cortana** 使用語音命令並在背景中啟動您的 app 時，使用者只要說：「Adventure Works，我什麼時候要到拉斯維加斯旅行？」就可以了。 app 會處理命令，然後 **Cortana** 會顯示結果、您的 app 圖示，而且如果還有其他 app 資訊的話，也會一併顯示。 以下是基本的旅行計劃查詢和 **Cortana** 結果畫面範例，二者顯示並說出：「您下次前往拉斯維加斯的旅行是 8 月 1 日。」
+透過 **Cortana** 使用語音命令並在背景中啟動您的 app 時，使用者只要說：「Adventure Works，我什麼時候要到拉斯維加斯旅行？」就可以了。 app 會處理命令，然後 **Cortana** 會顯示結果、您的 app 圖示，而且如果還有其他 app 資訊的話，也會一併顯示。 以下是基本的旅行計劃查詢和 **Cortana** 結果畫面範例，二者顯示並說出：「您下次前往拉斯維加斯的旅行是 2015 年 7 月 31 日星期五。」
 
 ![在背景使用 Adventure Works app 的基本查詢和結果畫面](images/cortana-backgroundapp-result.png)
 
@@ -67,19 +70,19 @@ template: detail.hbs
 
     Visual Studio 2015 起始頁隨即顯示。
 
-2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
+2.  在 \[檔案\] 功能表上，選取 \[新增\]\[專案\]。
 
-    隨即顯示 [新增專案]**** 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
+    隨即顯示 \[新增專案\] 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
 
-3.  在左窗格中，依序展開 **[已安裝的] &gt; [範本] &gt; [Visual C\#] &gt; [Windows]**，然後選取 [**通用**] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
-4.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]**** 範本。
+3.  在左窗格中，依序展開 \[已安裝的\] &gt; \[範本\] &gt; \[Visual C\#\] &gt; \[Windows\]，然後選取 \[通用\] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
+4.  在中央窗格中，選取 \[空白應用程式 (通用 Windows)\] 範本。
 
-    [空白應用程式]**** 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
+    \[空白應用程式\] 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
 
-5.  在 [**名稱**] 文字方塊中，輸入您的專案名稱。 在這個範例中，我們使用 "AdventureWorks"。
-6.  按一下 [確定]**** 來建立專案。
+5.  在 \[名稱\] 文字方塊中，輸入您的專案名稱。 在這個範例中，我們使用 "AdventureWorks"。
+6.  按一下 \[確定\] 來建立專案。
 
-    Microsoft Visual Studio 會建立您的專案，然後在 [方案總管]**** 中顯示。
+    Microsoft Visual Studio 會建立您的專案，然後在 \[方案總管\] 中顯示。
 
 
 ## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>將影像資產新增至主要專案，並在應用程式資訊清單中指定它們
@@ -122,38 +125,37 @@ destinationTile.Image =
 
 <ol>
     <li>
-    您的方案名稱上按一下滑鼠右鍵，選取 [新增] &gt; [專案]****。
+您的方案名稱上按一下滑鼠右鍵，選取 \[新增\] &gt; \[專案\]。
     </li>
     <li>
-    在 [已安裝] &gt; [範本] &gt; [Visual C#] &gt; [Windows] &gt; [通用]**** 下方，選取 [Windows 執行階段元件]****。 這個元件會實作應用程式服務 (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**)。
+在 \[已安裝\] &gt; \[範本\] &gt; \[Visual C#\] &gt; \[Windows\] &gt; \[通用\] 下方，選取 \[Windows 執行階段元件\]。 這個元件會實作應用程式服務 (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**)。
     </li>
     <li>
-    輸入專案的名稱 (例如 "VoiceCommandService")，然後按一下 [確定]****。
+輸入專案的名稱 (例如 "VoiceCommandService")，然後按一下 \[確定\]。
     </li>
     <li>
-    在 [方案總管]**** 中，選取 "VoiceCommandService" 專案，然後重新命名 Visual Studio 所產生的 "Class1.cs" 檔案。 針對 **Adventure Works** 範例，我們使用 "AdventureWorksVoiceCommandService.cs"。
+在 \[方案總管\] 中，選取 "VoiceCommandService" 專案，然後重新命名 Visual Studio 所產生的 "Class1.cs" 檔案。 針對 **Adventure Works** 範例，我們使用 "AdventureWorksVoiceCommandService.cs"。
     </li>
     <li>
-    當系統詢問您是否要重新命名 "Class1.cs" 的所有項目時，按一下 [是]****。 
+當系統詢問您是否要重新命名 "Class1.cs" 的所有項目時，按一下 \[是\]。 
     </li>
     <li>
-    在 "AdventureWorksVoiceCommandService.cs" 檔案中：
-        <ol type="i">
+在 "AdventureWorksVoiceCommandService.cs" 檔案中： <ol type="i">
  <li>
- 新增下列 using 指示詞。  
+新增下列 using 指示詞。  
  ```using Windows.ApplicationModel.Background;```
  </li>
  <li>
- 當您建立新的專案時，會使用專案名稱做為所有檔案中的預設根命名空間。 重新命名命名空間，以將應用程式服務程式碼 巢狀於主要專案下方。 例如，`namespace AdventureWorks.VoiceCommands`。 
+當您建立新的專案時，會使用專案名稱做為所有檔案中的預設根命名空間。 重新命名命名空間，以將應用程式服務程式碼 巢狀於主要專案下方。 例如，`namespace AdventureWorks.VoiceCommands`。 
  </li>
  <li>
- 在 [方案總管] 中的應用程式服務專案名稱上按一下滑鼠右鍵，然後選取 [屬性]****。 
+在 \[方案總管\] 中的應用程式服務專案名稱上按一下滑鼠右鍵，然後選取 \[屬性\]。 
  </li>
  <li>
- 在 [程式庫]**** 索引標籤上，將 [預設命名空間]**** 欄位更新為相同的值 (在此範例中，為 "AdventureWorks.VoiceCommands")。 
+在 \[程式庫\] 索引標籤上，將 \[預設命名空間\] 欄位更新為相同的值 (在此範例中，為 "AdventureWorks.VoiceCommands")。 
  </li>
  <li>
- 建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 此類別需要 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法 (這是 Cortana 辨識語音命令時的進入點)。 
+建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 此類別需要 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法 (這是 Cortana 辨識語音命令時的進入點)。 
  </li>
         </ol>
     </li>
@@ -210,36 +212,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    在應用程式資訊清單中宣告您的背景工作為 **AppService**。
+在應用程式資訊清單中宣告您的背景工作為 **AppService**。
     <ol type="i">
         <li>
-        在 [方案總管]**** 中，於 "Package.appxmanifest" 檔案上按一下滑鼠右鍵，然後選取 [檢視程式碼]****。 
+在 \[方案總管\] 中，於 "Package.appxmanifest" 檔案上按一下滑鼠右鍵，然後選取 \[檢視程式碼\]。 
         </li>
         <li>
-        尋找 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
+尋找 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        將 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素新增至 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
+將 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素新增至 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        將 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素新增至 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素。
+將 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素新增至 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素。
         </li>
         <li>將 **Category** 屬性新增至 **uap:Extension** 元素，然後將 **Category** 屬性的值設定為 "windows.appService"。
         </li>
         <li>
-        將 **EntryPoint** 屬性新增至 **uap:Extension** 元素，然後將 **EntryPoint** 屬性的值設定為實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的類別名稱，在本案例中，為 "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService"。
+將 **EntryPoint** 屬性新增至 **uap:Extension** 元素，然後將 **EntryPoint** 屬性的值設定為實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的類別名稱，在本案例中，為 "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService"。
         </li>
         <li>
-        將 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素新增至 **uap:Extension** 元素。
+將 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素新增至 **uap:Extension** 元素。
         </li>
         <li>
-        將 **Name** 屬性新增至 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素，然後將 **Name** 屬性的值設定成應用程式服務的名稱，在本案例中，為 "AdventureWorksVoiceCommandService"。
+將 **Name** 屬性新增至 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素，然後將 **Name** 屬性的值設定成應用程式服務的名稱，在本案例中，為 "AdventureWorksVoiceCommandService"。
         </li>
         <li>
-        將第二個 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素新增至 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720)。
+將第二個 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素新增至 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720)。
         </li>
         <li>
-        將 **Category** 屬性新增至這個 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素，然後將 **Category** 屬性的值設定為 "windows.personalAssistantLaunch"。
+將 **Category** 屬性新增至這個 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素，然後將 **Category** 屬性的值設定為 "windows.personalAssistantLaunch"。
         </li>
     </li> 
     </ol>
@@ -267,19 +269,19 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="8">
     <li>
-    新增此應用程式服務專案以做為主要專案中的參考。 
+新增此應用程式服務專案以做為主要專案中的參考。 
     <ol type="i">
         <li>
-        以滑鼠右鍵按一下 [參考]****。 
+以滑鼠右鍵按一下 \[參考\]。 
         </li>
         <li>
-        選取 [加入參考...]**** 
+選取 \[加入參考...\] 
         </li>
         <li>
-        在 [參考管理員]**** 對話方塊中，展開 [專案]****，然後選取應用程式服務專案。 
+在 \[參考管理員\] 對話方塊中，展開 \[專案\]，然後選取應用程式服務專案。 
         </li>
         <li>
-        按一下 [確定]。 
+按一下 \[確定\]。 
         </li>
     </ol>
     </li>
@@ -288,10 +290,10 @@ namespace AdventureWorks.VoiceCommands
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>建立 VCD 檔案
 
 
-1. 在 Visual Studio 中，於主要專案名稱上按一下滑鼠右鍵，選取 [新增] &gt; [新增項目]****。 新增 **XML 檔案**。
-2. 輸入 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案的名稱 (在此範例中，為 "AdventureWorksCommands.xml")，然後按一下 [新增]。 
-3. 在 [方案總管]**** 中，選取該 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案。
-4.  在 [屬性]**** 視窗中，將 [建置動作]**** 設定為 [內容]****，然後將 [複製到輸出目錄]**** 設定為 [有更新時才複製]****。
+1. 在 Visual Studio 中，於主要專案名稱上按一下滑鼠右鍵，選取 \[新增\] &gt; \[新增項目\]。 新增 **XML 檔案**。
+2. 輸入 VCD 檔案的名稱 (在此範例中，為 "AdventureWorksCommands.xml")，然後按一下 \[新增\]。 
+3. 在 \[方案總管\] 中，選取該 VCD 檔案。
+4.  在 \[屬性\] 視窗中，將 \[建置動作\] 設定為 \[內容\]，然後將 \[複製到輸出目錄\] 設定為 \[有更新時才複製\]。
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>編輯 VCD 檔案
 
@@ -302,15 +304,16 @@ namespace AdventureWorks.VoiceCommands
   您可以宣告多個 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，且各自擁有不同的 [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 屬性，讓您的應用程式可以在不同的市場中使用。 例如，美國的應用程式可以有英文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 和西班牙文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。
 
   >  **注意**  
-  若要使用語音命令來啟用應用程式並起始動作，應用程式必須註冊一個包含 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 且其語言與使用者針對裝置所選語音功能語言相符的 VCD 檔案。 這個語音功能語言位於[設定] &gt; [系統] &gt; [語音] &gt; [語音功能的語言] ****。
+  若要使用語音命令來啟用應用程式並起始動作，應用程式必須註冊一個包含 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 且其語言與使用者針對裝置所選語音功能語言相符的 VCD 檔案。 這個語音功能語言位於\[設定\] &gt; \[系統\] &gt; \[語音\] &gt; \[語音功能的語言\] 。
 
 3. 針對您想要支援的每個命令新增 **Command** 元素。
 
   [
-            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案中宣告的每一個 **Command** 都必須包含以下資訊：
+              **VCD**
+            ](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案中宣告的每一個 **Command** 都必須包含以下資訊：
 
   - **Name** 屬性，應用程式在執行期間用來識別語音命令。 
-  - **Example** 元素，包含一個片語，描述使用者如何叫用命令。 當使用者說：「我可以說什麼？」、「求助」或者點選 [查看更多]**** 後，**Cortana** 會顯示這個範例。    
+  - **Example** 元素，包含一個片語，描述使用者如何叫用命令。 當使用者說：「我可以說什麼？」、「求助」或者點選 \[查看更多\] 後，Cortana 會顯示這個範例。    
   -   **ListenFor** 元素，包含應用程式可辨識為命令的字詞或片語。 每個 **ListenFor** 元素都可以包含一個或多個 **PhraseList** 元素參考，而後面這個元素包含與命令相關的特定字詞。
   > **注意**  
   **ListenFor** 元素無法透過程式設計方式修改。 不過，與 **ListenFor** 元素關聯的 **PhraseList** 元素則可以透過程式設計方式修改。 應用程式應該在執行期間，根據使用者使用應用程式時所產生的資料集修改 **PhraseList** 的內容。 請參閱[動態修改語音命令定義 (VCD) 片語清單](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)。
@@ -768,6 +771,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

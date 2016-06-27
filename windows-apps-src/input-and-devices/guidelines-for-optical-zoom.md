@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。
-title: 視覺化縮放和調整大小的指導方針
+Description: "這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。"
+title: "視覺化縮放和調整大小的指導方針"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 07f9f2979a7a2c712b39bd4dc962e5991e1824ac
+
 ---
 
 # 視覺化縮放和調整大小
@@ -92,6 +95,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

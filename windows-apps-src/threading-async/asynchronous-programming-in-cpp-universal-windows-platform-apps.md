@@ -1,8 +1,11 @@
 ---
 author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。
-title: C++ 中的非同步程式設計
+description: "此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。"
+title: "C++ 中的非同步程式設計"
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 560b51d5bb67f5f2611311cb78f59d189d4ea440
+
 ---
 
 # C++ 中的非同步程式設計
@@ -69,16 +72,20 @@ void App::TestAsync()
 ```
 
 [
-            **task::then**][taskThen] 函式建立並傳回的工作稱為「接續」**。 使用者提供的 Lambda 輸入引數 (在這個情況中) 會是工作完成後所產生的結果。 如果您直接使用 **IAsyncOperation** 介面，它是與呼叫 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 所擷取的值相同的值。
+              **task::then**
+            ]
+            [taskThen] 函式建立並傳回的工作稱為「接續」。 使用者提供的 Lambda 輸入引數 (在這個情況中) 會是工作完成後所產生的結果。 如果您直接使用 **IAsyncOperation** 介面，它是與呼叫 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 所擷取的值相同的值。
 
 [
-            **task::then**][taskThen] 方法會立即傳回，而且除非非同步工作成功完成，否則不會執行它的委派。 在這個範例中，如果非同步作業擲回例外狀況，或者因取消要求而以取消狀態結束，則永遠不會執行接續。 我們稍後會描述如何編寫即使先前工作被取消或失敗，仍會執行的接續。
+              **task::then**
+            ]
+            [taskThen] 方法會立即傳回，而且除非非同步工作成功完成，否則不會執行它的委派。 在這個範例中，如果非同步作業擲回例外狀況，或者因取消要求而以取消狀態結束，則永遠不會執行接續。 我們稍後會描述如何編寫即使先前工作被取消或失敗，仍會執行的接續。
 
 雖然您在本機堆疊中宣告這個工作變數，不過它會管理自己的週期，只會在所有作業完成且其所有相關參照超出範圍後，才刪除這個工作變數 (即使作業完成前已經傳回該方法)。
 
 ## 建立工作鏈結
 
-非同步程式設計中通常會定義一連串的作業 (稱為「工作鏈結」**)，只有上一個接續完成後才會繼續執行下一個。 有時上一個 (或「前項」**) 工作會產生接續要接受的輸入值。 使用 [**task::then**][taskThen] 方法可讓您以直接又簡單的方法建立工作鏈結，這個方法會傳回 **task<T>**，其中 **T** 是 Lambda 函式的傳回類型。 您可以將多個接續編寫成一個工作鏈結： `myTask.then(…).then(…).then(…);`
+非同步程式設計中通常會定義一連串的作業 (稱為「工作鏈結」)，只有上一個接續完成後才會繼續執行下一個。 有時上一個 (或「前項」) 工作會產生接續要接受的輸入值。 使用 [**task::then**][taskThen] 方法可讓您以直接又簡單的方法建立工作鏈結，這個方法會傳回 **task<T>**，其中 **T** 是 Lambda 函式的傳回類型。 您可以將多個接續編寫成一個工作鏈結： `myTask.then(…).then(…).then(…);`
 
 當接續建立新的非同步作業時，工作鏈結尤為實用；這種工作稱為非同步工作。 下列範例說明有兩個接續的工作鏈結。 初始工作會取得現有檔案的控制代碼，而當該作業完成時，第一個接續會啟動新的非同步作業來刪除檔案。 當作業完成時，會執行第二個接續，然後輸出一個確認訊息。
 
@@ -110,11 +117,11 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   因為第二個是數值型接續，所以如果呼叫 [**DeleteAsync**][deleteAsync] 所啟動的作業擲回例外狀況，則第二個接續不會執行。
 
-**注意：**建立工作鏈結只是使用 **task** 類別編寫非同步作業的其中一種方法。 您也可以使用 join 和 choice 運算子 **&&** 以及 **||** 來編寫作業。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。
+**注意：**建立工作鏈結只是使用 **task** 類別編寫非同步作業的其中一種方法。 您也可以使用 join 和 choice 運算子  以及  來編寫作業。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。
 
 ## Lambda 函式傳回類型和工作傳回類型
 
-在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」**，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
+在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
 
 在上一個範例中，請注意工作傳回的是 **task<void>** 事件 (即使它的 Lambda 傳回 [**IAsyncInfo**][IAsyncInfo] 物件)。 下表摘要說明 Lambda 函式和封入工作之間的類型轉換：
 
@@ -148,7 +155,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 取消作業時，會將 [**task\_canceled**][taskCanceled] 例外狀況往下傳送到工作鏈結。 數值型接續將不會執行，但工作型接續會在呼叫 [**task::get**][taskGet] 之後擲回例外狀況。 如果您有一個錯誤處理接續，請確定它會清楚地攔截 **task\_canceled** 例外狀況 (這個例外狀況不是從 [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx) 衍生的)。
 
-取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 [取消]**** 按鈕，則不會呼叫 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
+取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 \[取消\] 按鈕，則不會呼叫 IAsyncInfo::CancelIAsyncInfoCancel 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
 
 如需詳細資訊，請參閱 [PPL 中的取消](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)
 
@@ -292,30 +299,50 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## 相關主題
 
-* [使用 C++ 建立 Windows 市集應用程式的非同步作業][createAsyncCpp]
+* [使用 C++ 建立 Windows 市集應用程式的非同步作業]
+            [createAsyncCpp]
 * [Visual C++ 語言參考](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [非同步程式設計][AsyncProgramming]
-* [工作平行處理原則 (並行執行階段)][taskParallelism]
-* [工作類別][task-class]
+* [非同步程式設計]
+            [AsyncProgramming]
+* [工作平行處理原則 (並行執行階段)]
+            [taskParallelism]
+* [task 類別]
+            [task-class]
  
 <!-- LINKS -->
-[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx> "Concurrency Namespace"
-[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
-[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
-[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/BR206580> "IAsyncAction"
-[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
-[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
-[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
-[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx> "Task Class"
-[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx> "Task Parallelism"
-[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
-[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
+[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx>
+             "AsyncProgramming"
+[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx>
+             "Concurrency 命名空間"
+[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx>
+             "CreateTask"
+[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx>
+             "CreateAsync"
+[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>
+             "DeleteAsync"
+[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/BR206580>
+             "IAsyncAction"
+[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>
+             "IAsyncOperation"
+[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587>
+             "IAsyncInfo"
+[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel>
+             "IAsyncInfoCancel"
+[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx>
+             "TaskCancelled"
+[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx>
+             "Task 類別"
+[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx>
+             "TaskGet"
+[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx>
+             "工作平行處理原則"
+[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx>
+             "TaskThen"
+[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx>
+             "UseArbitrary"
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

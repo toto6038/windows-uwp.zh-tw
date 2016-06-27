@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 啟動 URI 的預設 app
-description: 了解如何啟動統一資源識別項 (URI) 的預設 app。 URI 可讓您啟動另一個 app 來執行特定工作。 本主題也提供許多內建於 Windows 之 URI 配置的概觀。
+author: TylerMSFT
+title: "啟動 URI 的預設 app"
+description: "了解如何啟動統一資源識別項 (URI) 的預設 app。 URI 可讓您啟動另一個 app 來執行特定工作。 本主題也提供許多內建於 Windows 之 URI 配置的概觀。"
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+
 ---
 
 # 啟動 URI 的預設 app
@@ -66,7 +69,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 在某些情況下，作業系統會提示使用者確認是否真的要切換 app。
 
-![警告對話方塊會顯示在 app 變暗的背景上。 對話方塊會詢問使用者是否想要切換 app，並在右下方顯示 [是] 和 [否] 按鈕。 [否] 按鈕會醒目顯示。](images/warningdialog.png)
+![警告對話方塊會顯示在 app 變暗的背景上。 對話方塊會詢問使用者是否想要切換 app，並在右下方顯示 \[是\] 和 \[否\] 按鈕。 \[否\] 按鈕會醒目顯示。](images/warningdialog.png)
 
 如果您一律要顯示此提示，請使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) 屬性指示作業系統顯示警告。
 
@@ -96,7 +99,7 @@ var options = new Windows.System.LauncherOptions();
 options.PreferredApplicationPackageFamilyName = "Contoso.URIApp_8wknc82po1e";
 options.PreferredApplicationDisplayName = "Contoso URI Ap";
 
-// Launch the URI and pass in the recommended app 
+// Launch the URI and pass in the recommended app
 // in case the user has no apps installed to handle the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
@@ -114,7 +117,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 var options = new Windows.System.LauncherOptions();
 options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
 
-// Launch the URI 
+// Launch the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
@@ -143,7 +146,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ## Windows 市集 app URI 配置
 
 
-您的 app 可以使用 **ms-windows-store:** URI 配置來[啟動 Windows 市集 app](launch-store-app.md)。 開啟產品詳細資料頁面、產品檢閱頁面及搜尋頁面等等。例如，下列 URI 會開啟 Windows 市集 app，並啟動 [市集] 的首頁。
+您的 app 可以使用 **ms-windows-store:** URI 配置來[啟動 Windows 市集 app](launch-store-app.md)。 開啟產品詳細資料頁面、產品檢閱頁面及搜尋頁面等等。例如，下列 URI 會開啟 Windows 市集 app，並啟動 \[市集\] 的首頁。
 
 `ms-windows-store://home/`
 
@@ -170,7 +173,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | ms-chat:                                 | 啟動訊息中心 app。                                                                                                                                                            |
 | ms-chat:?ContactID={contacted}           | 可讓訊息中心應用程式以特定連絡人的資訊啟動。                                                                                               |
 | ms-chat:?Body={body}                     | 可讓訊息中心應用程式以做為訊息內容的字串啟動。                                                                                    |
-| ms-chat:?Addresses={address}&Body={body} | 可讓訊息中心應用程式以特定地址的資訊，以及做為訊息內容的字串啟動。 注意：地址可以串連。 |
+| ms-chat:?Addresses={address}&amp;Body={body} | 可讓訊息中心應用程式以特定地址的資訊，以及做為訊息內容的字串啟動。 注意：地址可以串連。 |
 | ms-chat:?TransportId={transportId}       | 可讓訊息中心應用程式以特定傳輸識別碼啟動。                                                                                                        |
 
  
@@ -183,7 +186,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | URI 配置               | 結果                                                                                                                                                     |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | mailto:                  | 啟動預設電子郵件 app。                                                                                                                             |
-| mailto:\[email address\] | 啟動電子郵件 app，並以指定於 [收件者] 行上的電子郵件地址建立新訊息。 請注意，在使用者點選「傳送」之後，才會傳送電子郵件。 |
+| mailto:\[email address\] | 啟動電子郵件 app，並以指定於 \[收件者\] 行上的電子郵件地址建立新訊息。 請注意，在使用者點選「傳送」之後，才會傳送電子郵件。 |
 
  
 
@@ -205,7 +208,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 配置                                            | 結果                                                                               |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------|
-| ms-yellowpage:?input=\[keyword\]&method=\[String|T9\] | 啟動已安裝且支援這個新 URI 的參考資訊 (POI) 搜尋 app。 |
+| ms-yellowpage:?input=\[keyword\]&amp;method=\[String|T9\] | 啟動已安裝且支援這個新 URI 的參考資訊 (POI) 搜尋 app。 |
 
  
 
@@ -222,8 +225,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,8 +1,11 @@
 ---
-description: 本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。
-title: 分享資料
+description: "本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。"
+title: "分享資料"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.sourcegitcommit: 03b9943d9bf76343bfbbe714f681a2b398d1a9ad
+ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
+
 ---
 
 # 分享資料
@@ -13,11 +16,11 @@ author: awkoren
 
 ## 設定事件處理常式
 
-新增要在每次使用者叫用分享時呼叫的 [**DataRequested**][DataRequested] 事件處理常式。 這會在使用者點選 app 中的控制項 (例如按鈕或是應用程式列命令) 時發生，或是在特定的情況下 (例如使用者完成了關卡並取得高分) 自動發生。
+新增要在每次使用者叫用分享時呼叫的 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件處理常式。 這會在使用者點選 app 中的控制項 (例如按鈕或是應用程式列命令) 時發生，或是在特定的情況下 (例如使用者完成了關卡並取得高分) 自動發生。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-發生 [**DataRequested**][DataRequested] 事件後，應用程式會收到 [**DataRequest**][DataRequest] 物件。 這個物件包含一個 [**DataPackage**][DataPackage]，可以用來提供使用者想分享的內容。 您必須提供標題和資料才能分享。 描述是選擇性的，但建議使用。
+發生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件後，應用程式會收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 物件。 這個物件包含一個 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可以用來提供使用者想分享的內容。 您必須提供標題和資料才能分享。 描述是選擇性的，但建議使用。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -35,13 +38,13 @@ author: awkoren
 -   自訂開發人員定義資料
 
 [
-            **DataPackage**][DataPackage] 物件可以包含其中的一或多種格式，任何組合皆可。 下列範例示範分享文字。
+            **DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 物件可以包含其中的一或多種格式，任何組合皆可。 下列範例示範分享文字。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## 設定屬性
 
-當您封裝資料進行分享時，可以提供各種屬性，為目前分享的內容提供更多資訊。 這些屬性可協助目標 app 提升使用者體驗。 例如，description 屬性可在使用者利用多個 app 分享內容時提供協助。 分享影像或網頁連結時，如果加上縮圖，就可以提供使用者視覺上的參考。 如需詳細資訊，請參閱 [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]。
+當您封裝資料進行分享時，可以提供各種屬性，為目前分享的內容提供更多資訊。 這些屬性可協助目標 app 提升使用者體驗。 例如，description 屬性可在使用者利用多個 app 分享內容時提供協助。 分享影像或網頁連結時，如果加上縮圖，就可以提供使用者視覺上的參考。 如需詳細資訊，請參閱 [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)。
 
 除了 title 之外所有的屬性都是選擇性的。 title 屬性是必須設定的強制性屬性。
 
@@ -55,13 +58,13 @@ author: awkoren
 
 ## 處理錯誤
 
-在大部分情況下，內容的分享過程其實不複雜。 但是，還是有可能發生意外的狀況。 例如，app 要求使用者選取要分享的內容，但使用者沒有選取任何內容。 為了處理這些情況，請使用 [**FailWithDisplayText**][FailWithDisplayText] 方法在發生某些錯誤時向使用者顯示訊息。
+在大部分情況下，內容的分享過程其實不複雜。 但是，還是有可能發生意外的狀況。 例如，app 要求使用者選取要分享的內容，但使用者沒有選取任何內容。 若要處理這些情況，請使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String) 方法，如果出現錯誤，這個方法會向使用者顯示訊息。
 
 ## 使用委派延遲分享
 
-有時候，立即準備使用者想要分享的資料並沒有什麼意義。 例如，如果 app 支援以幾種不同的可能格式傳送大型影像檔案，則在使用者做出選擇之前建立所有的影像是沒有效率的。
+有時候，立即準備使用者想要分享的資料並沒有什麼意義。 例如，如果 app 支援以幾種不同的可能格式傳送大型影像檔案，在使用者做出選擇之前建立所有的影像是沒有效率的。
 
-若要解決這個問題，[**DataPackage**][DataPackage] 可以包含委派，這是接收方 app 要求資料時所呼叫的函式。 當使用者要分享的資料會耗用大量資源時，建議您使用委派。
+若要解決這個問題，[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 可以包含委派，這是接收 app 要求資料時所呼叫的函式。 當使用者要分享的資料會耗用大量資源時，建議您使用委派。
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -88,21 +91,20 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## 相關主題
+## 另請參閱 
+
 * [接收資料](receive-data.md)
-
-
-<!-- LINKS -->
-* [DataPackage]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx 
-* [DataPackagePropertySet]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx 
-* [DataRequest]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx 
-* [DataRequested]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx 
-* [FailWithDisplayText]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx
-* [ShowShareUi]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx
+* [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
+* [DataPackagePropertySet](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx)
+* [DataRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx)
+* [DataRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)
+* [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
+* [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

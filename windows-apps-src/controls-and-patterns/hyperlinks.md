@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。
-title: 超連結
+Description: "超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。"
+title: "超連結"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
+
 ---
 # 超連結
 
@@ -150,6 +153,7 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 - [**Windows.UI.Xaml.Controls.HyperlinkButton 類別**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

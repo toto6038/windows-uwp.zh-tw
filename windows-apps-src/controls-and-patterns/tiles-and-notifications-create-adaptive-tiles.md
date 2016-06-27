@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: 彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。
-title: 建立彈性磚
+Description: "彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。"
+title: "建立彈性磚"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+
 ---
 
 # 建立彈性磚
@@ -1489,6 +1492,7 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

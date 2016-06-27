@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何利用更具彈性且自然的語音命令來延伸 Cortana 的功能，讓使用者可以在命令中的任何地方說出應用程式名稱。
-title: 支援 Cortana 的自然語音命令
+Description: "了解如何利用更具彈性且自然的語音命令來延伸 Cortana 的功能，讓使用者可以在命令中的任何地方說出應用程式名稱。"
+title: "支援 Cortana 的自然語音命令"
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
 label: Support natural language voice commands
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: c9cd6894c61f3d6cfe770d197317a97a804b4119
+
 ---
 
 # 支援 Cortana 的自然語音命令
@@ -209,6 +212,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

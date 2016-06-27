@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 在 Cortana 中提供來自背景應用程式服務的深層連結，以便將應用程式啟動至處於特定狀態或內容的前景。
-title: 從 Cortana 到背景應用程式的深層連結
+Description: "在 Cortana 中提供來自背景應用程式服務的深層連結，以便將應用程式啟動至處於特定狀態或內容的前景。"
+title: "從 Cortana 到背景應用程式的深層連結"
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: b89aa43dffa69d092615e1b408feac77d0caa87c
+
 ---
 
 # 從 Cortana 到背景應用程式的深層連結
@@ -48,7 +51,7 @@ template: detail.hbs
 
 我們將在此處討論深層連結。
 
-當 Cortana 和您的 app 服務是完整功能 app 的閘道 (而不需使用者透過 [開始] 功能表來啟動 app) 時，或者可用來存取您 app 內無法透過 Cortana 存取之更豐富的詳細資料與功能時，深層連結會非常有用。 深層連結是提高可用性和存取您 app 的另一種方式。
+當 Cortana 和您的 app 服務是完整功能 app 的閘道 (而不需使用者透過 \[開始\] 功能表來啟動 app) 時，或者可用來存取您 app 內無法透過 Cortana 存取之更豐富的詳細資料與功能時，深層連結會非常有用。 深層連結是提高可用性和存取您 app 的另一種方式。
 
 有三種方式可以提供深層連結：
 
@@ -65,11 +68,11 @@ template: detail.hbs
 
 您可提供此連結的啟動引數，利用與 app 服務類似的環境來開啟您的 app。 如果您未提供啟動引數，app 就會啟動到主畫面。
 
-在此示例的 AdventureWorksVoiceCommandService.cs **AdventureWorks** 範例中，我們會傳送指定目的地至 SendCompletionMessageForDestination 方法，其會擷取所有相符的行程，並提供 app 的深層連結。
+在此示例的 AdventureWorksVoiceCommandService.cs **AdventureWorks** 範例中，我們會傳送指定目的地 (`destination`) 字串至 SendCompletionMessageForDestination 方法，其會擷取所有相符的行程，並提供 app 的深層連結。
 
 首先，我們會建立 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)，其是由 **Cortana** 說出並顯示於 **Cortana** 畫布。 接著會建立 [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 清單物件，以在畫布上顯示結果卡的集合。 
 
-這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (```response```)。 接著我們會將 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值，設為語音命令中的目的地值。
+這兩個物件接著會傳送至 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 物件的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法 (`response`)。 接著我們會將回應物件的 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 屬性值設定為傳遞至此函式的 `destination` 值。 當使用者點選 Cortana 畫布上的一個內容動態磚時，參數值會透過回應物件傳遞給 app。
 
 最後，我們會呼叫 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 的 [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) 方法 。
 
@@ -288,6 +291,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

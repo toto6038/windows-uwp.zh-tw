@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: 了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。
-title: 移動與繪製命令語法
+description: "了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。"
+title: "移動與繪製命令語法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
+ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+
 ---
 
 # 移動與繪製命令語法
@@ -23,7 +26,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 ```
 
 [
-            **PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
+              **PathGeometry.Figures**
+            ](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
 
 ## 使用移動與複製命令與使用 **PathGeometry** 比較
 
@@ -45,7 +49,17 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 -   除了關閉命令以外，每個命令後面通常會跟著一或多個數字。
 -   如果命令有一個以上的數字，請使用逗號或空格來分隔。
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
+**\[**
+            _fillRule_
+            **\]**
+            _moveCommand_
+            _drawCommand_
+            **\[**
+            _drawCommand_
+            **\*\]**
+            **\[**
+            _closeCommand_
+            **\]**
 
 許多繪製命令會使用點，由您提供 _x,y_ 值。 每當您看到 \*_points_ 預留位置時，都可以假設是要為一個點的 _x,y_ 值提供兩個十進位值。
 
@@ -125,7 +139,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -152,7 +170,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2*
+            *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -165,7 +184,9 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - 或 - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint*
+            *endPoint* <br/> - 或 - <br/> `t` *controlPoint*
+            *endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -178,7 +199,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size*
+            *rotationAngle*
+            *isLargeArcFlag*
+            *sweepDirectionFlag*
+            *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -202,7 +227,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| *x*,*y*<br/> - 或 - <br/>*x* *y* |
+| *x*,*y*<br/> - 或 - <br/>*x*
+            *y* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -221,11 +247,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 ## 產生移動與繪製命令的設計工具
 
-使用 Blend for Microsoft Visual Studio 2013 中的 [畫筆]**** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。
+使用 Blend for Microsoft Visual Studio 2015 中的 \[畫筆\] 工具及其他繪圖工具通常會產生含有移動與繪製命令的 Path 物件。
 
 您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)。
 
-其他可將向量以 XAML 形式輸出的常用向量圖形設計工具有可用的匯出工具或外掛程式。 這些通常會在配置容器中建立含有 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 之移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。 XAML 中可能會有多個 **Path** 元素，以便可以套用不同的筆刷。 這些匯出工具或外掛程式原先是為 Windows Presentation Foundation (WPF) XAML 撰寫的，但是該 XAML 語法層面與 Windows 執行階段 XAML 相同。 您或許可以使用匯出工具的 XAML 區塊，將它們貼到 Windows 執行階段 XAML 頁面中。 (不過，如果 **RadialGradientBrush** 是已轉換之 XAML 的一部分，您就無法加以使用，因為 Windows 執行階段 XAML 不支援該筆刷)。
+其他可將向量以 XAML 形式輸出的常用向量圖形設計工具有可用的匯出工具或外掛程式。 這些通常會在配置容器中建立含有 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 之移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。 XAML 中可能會有多個 **Path** 元素，以便可以套用不同的筆刷。 許多這類匯出工具或外掛程式原先是為 Windows Presentation Foundation (WPF) XAML 或 Silverlight 撰寫的，但是該 XAML 路徑語法與 Windows 執行階段 XAML 相同。 通常，您可以使用匯出工具的 XAML 區塊，將它們貼到 Windows 執行階段 XAML 頁面中。 (不過，如果 **RadialGradientBrush** 是已轉換之 XAML 的一部分，您就無法加以使用，因為 Windows 執行階段 XAML 不支援該筆刷)。
 
 ## 相關主題
 
@@ -236,6 +262,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

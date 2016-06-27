@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何選取已安裝的語言以用於語音辨識。
-title: 指定語音辨識器語言
+Description: "了解如何選取已安裝的語言以用於語音辨識。"
+title: "指定語音辨識器語言"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+
 ---
 
 # 指定語音辨識器語言
@@ -37,12 +40,12 @@ template: detail.hbs
 
 **使用者體驗指導方針：  **
 
-如需有關設計既實用又吸引人且支援語音之 app 的有用提示，請參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+如需有關設計既實用又吸引人且支援語音之應用程式的有用提示，請參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
 ## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>識別預設語言
 
 
-語音辨識器會使用系統語音功能的語言，做為其預設的辨識語言。 這個語言是由使用者在裝置的 [設定] &gt; [系統] &gt; [語音] &gt; [語音功能的語言] 畫面上所設定。
+語音辨識器會使用系統語音功能的語言，做為其預設的辨識語言。 這個語言是由使用者在裝置的 \[設定\]  \[系統\]  \[語音\]  \[語音功能的語言\] 畫面上所設定。
 
 我們可藉由檢查 [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) 靜態屬性來識別預設語言。
 
@@ -65,10 +68,12 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 勾選 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
 -   [
-            **SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
+              **SupportedTopicLanguages**
+            ](https://msdn.microsoft.com/library/windows/apps/dn653251)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
 
 -   [
-            **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
+              **SupportedGrammarLanguages**
+            ](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
 
 ## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>指定語言
 
@@ -106,9 +111,13 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 **開發人員**
-* 語音互動
-* 設計人員
-* [語音設計指導方針](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音互動](speech-interactions.md)
+            
+            **設計人員**
+* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+            
+            **範例**
+* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -118,6 +127,7 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

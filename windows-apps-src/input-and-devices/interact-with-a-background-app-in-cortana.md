@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解使用者如何在執行語音時，透過 Cortana 語音和畫布與背景應用程式互動。
-title: 與背景應用程式互動
+Description: "了解使用者如何在執行語音時，透過 Cortana 語音和畫布與背景應用程式互動。"
+title: "與背景應用程式互動"
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
 label: Interact with a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: 675553f5c3954597982360900e965b2a756d7f63
+
 ---
 
 # 利用 Cortana 與背景 App 互動
@@ -30,7 +33,7 @@ Cortana 針對您的 App 支援完整的轉向建議導航工作流程。 此工
 
 **先決條件：**
 
-本主題改編自[利用 Cortana 語音命令啟動背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md)。 我們在這裡以 **Adventure Works** 這個行程安排和管理 app，繼續示範各項功能。
+本主題的基礎是[利用 Cortana 語音命令啟動背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md)。 我們在這裡以 **Adventure Works** 這個行程安排和管理 app，繼續示範各項功能。
 
 如果您是開發通用 Windows 平台 (UWP) app 的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
 
@@ -180,7 +183,9 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 如果應用程式服務未呼叫 ReportSuccessAsync 或任何其他 VoiceCommandServiceConnection 方法，則使用者會收到錯誤訊息，然後取消應用程式服務呼叫。
 
-以下是 **Adventure Works** 應用程式的遞交畫面範例。 在這個範例中，使用者已向 **Cortana** 查詢即將出發的旅遊。 遞交畫面有一則訊息特別標上利用 app 服務名稱，以及在 VCD 檔案中宣告的 **Feedback** 字串。
+以下是 **Adventure Works** 應用程式的遞交畫面範例。 在這個範例中，使用者已向 **Cortana** 查詢即將出發的旅遊。 遞交畫面有包含一則使用應用程式服務名稱、一個圖示，以及一個 **Feedback** 字串自訂的訊息。 
+
+[!NOTE] 您可以在 VCD 檔案中宣告 **Feedback** 字串。 這個字串並不會影響顯示在 Cortana 畫布上的 UI 文字，它只會影響 **Cortana** 說出的文字。
 
 ![Cortana 背景 App 遞交畫面](images/cortana-backgroundapp-progress-result.png)
 
@@ -472,6 +477,7 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

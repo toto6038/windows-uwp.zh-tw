@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
-title: 處理指標輸入
+Description: "在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。"
+title: "處理指標輸入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+
 ---
 
 # 處理指標輸入
@@ -1101,6 +1104,7 @@ namespace PointerInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

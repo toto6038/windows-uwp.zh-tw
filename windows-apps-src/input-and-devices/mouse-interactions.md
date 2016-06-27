@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
-title: 滑鼠互動
+Description: "處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。"
+title: "滑鼠互動"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+
 ---
 
 # 滑鼠互動
@@ -121,7 +124,7 @@ template: detail.hbs
 
 -   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 -   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
--   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
+-   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 \[開始\] 畫面磚)，請勿使用移動游標。
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
@@ -151,6 +154,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

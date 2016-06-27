@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 本主題描述用來選取及操作文字、影像以及控制項的新 Windows UI，並提供在 Windows 市集應用程式中使用這些新的選取和操作機制時，所應考慮的使用者經驗指導方針。
-title: 選取文字和影像
+Description: "本主題描述用來選取及操作文字、影像以及控制項的新 Windows UI，並提供在 Windows 市集應用程式中使用這些新的選取和操作機制時，所應考慮的使用者經驗指導方針。"
+title: "選取文字和影像"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+
 ---
 
 # 選取文字和影像
@@ -131,6 +134,7 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

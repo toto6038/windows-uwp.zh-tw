@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
-title: 觸控板互動
+Description: "使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。"
+title: "觸控板互動"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+
 ---
 
 # 觸控板設計指導方針
@@ -34,7 +37,7 @@ template: detail.hbs
 
 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入最佳化您的 Windows 市集應用程式設計，獲得預設的觸控板支援。
 
-因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
+因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 \[上一頁\] 和 \[下一頁\] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
 本主題中討論的手勢和指導方針可以協助您確保您的 App 使用最少的程式碼就能順暢地支援觸控板輸入。
 
@@ -43,7 +46,7 @@ template: detail.hbs
 
 一組可用於整個系統的簡單觸控板互動。 針對觸控及滑鼠輸入最佳化您的 App，而這個語言讓使用者可以立即熟悉您的 App，提高他們的自信，讓您的 App 更易於學習及使用。
 
-比起在標準觸控板上所做的動作，使用者能夠設定更多的精確式觸控板手勢與互動行為。 下列兩個影像顯示分別來自標準觸控板和精確式觸控板之 [設定] &gt; [裝置] &gt; [滑鼠和觸控板] 的不同觸控板設定頁面。
+比起在標準觸控板上所做的動作，使用者能夠設定更多的精確式觸控板手勢與互動行為。 下列兩個影像顯示分別來自標準觸控板和精確式觸控板之 \[設定\]  \[裝置\]  \[滑鼠和觸控板\] 的不同觸控板設定頁面。
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
@@ -69,11 +72,11 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指點選</p></td>
-<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]<strong></strong>。</p></td>
+<td align="left"><p>使用者喜好設定，可使用 Cortana 搜尋或顯示 \[重要訊息中心\]。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑動</p></td>
-<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 [工作檢視]、顯示桌面，或在開啟的 App 之間切換。</p></td>
+<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 \[工作檢視\]、顯示桌面，或在開啟的 App 之間切換。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>單指點選以進行主要動作</p></td>
@@ -137,7 +140,7 @@ template: detail.hbs
 
 -   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 -   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
--   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
+-   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 \[開始\] 畫面磚)，請勿使用移動游標。
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
@@ -145,13 +148,15 @@ template: detail.hbs
 
 
 * [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md) 
-           **範例**
+* [識別輸入裝置](identify-input-devices.md)
+            
+            **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+            
+            **封存範例**
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -162,6 +167,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

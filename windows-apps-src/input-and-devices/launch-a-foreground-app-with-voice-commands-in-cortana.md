@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 除了使用 Cortana 中的語音命令來存取系統功能之外，您也可以透過 Cortana 使用語音命令來啟動前景應用程式，以及指定要在應用程式中執行的動作或命令。
-title: 利用 Cortana 語音命令啟動前景應用程式
+Description: "除了使用 Cortana 中的語音命令來存取系統功能之外，您也可以透過 Cortana 使用語音命令來啟動前景應用程式，以及指定要在應用程式中執行的動作或命令。"
+title: "利用 Cortana 語音命令啟動前景應用程式"
 ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs
+ms.sourcegitcommit: 7cbea3c4e784fe024aef953e3ea757dad6c5e3b8
+ms.openlocfilehash: aa4d71525d4a41382b8bbe123ca1fa830a4fc720
+
 ---
 
 # 利用 Cortana 語音命令啟用前景應用程式
@@ -21,7 +24,7 @@ template: detail.hbs
 
 需要額外內容或使用者輸入的語音命令 (例如，傳送訊息給特定的連絡人) 最好在前景應用程式中處理，而基本命令 (例如，列出即將出發的行程) 可在 **Cortana** 中透過背景應用程式來處理。
 
-如果您想要使用語音命令在背景啟用應用程式，請參閱[利用 Cortana 語音命令啟用背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md)
+如果您想要使用語音命令在前景啟用應用程式，請參閱[利用 Cortana 語音命令啟用背景應用程式](launch-a-background-app-with-voice-commands-in-cortana.md)。
 
 > **注意**  
 > 語音命令定義在語音命令定義 (VCD) 檔中，它是一種具有特定用途的單次語言表達，會透過 **Cortana** 導向已安裝的應用程式。
@@ -30,17 +33,17 @@ template: detail.hbs
 
 > 語音命令定義的複雜度各有不同。 它的支援範圍可從單一、限制的語句，到更具彈性、自然的語言表達集合，而這全都表示同樣的用途。
 
-為了示範前景應用程式功能，我們將使用 **Adventure Works** 的行程安排和管理應用程式，此應用程式來自 [Cortana 語音命令範例](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+為了示範前景應用程式功能，我們將使用 **Adventure Works** 的行程安排和管理應用程式，此應用程式來自 [Cortana 語音命令範例](http://go.microsoft.com/fwlink/p/?LinkID=619899)。
 
-若要建立新的 **Adventure Works** 行程，但又不想使用 **Cortana**，使用者可以在啟動應用程式後，瀏覽 [**新行程**] 頁面。 若要檢視現有的行程，使用者可以在啟動 app 後，瀏覽 [**即將出發的行程**] 頁面並選取行程。
+若要建立新的 Adventure Works 行程，但又不想使用 Cortana，使用者可以在啟動應用程式後，瀏覽 \[新行程\] 頁面。 若要檢視現有的行程，使用者可以在啟動 app 後，瀏覽 \[即將出發的行程\] 頁面並選取行程。
 
-透過 **Cortana** 使用語音命令時，使用者可以改為說：「Adventure Works 新增行程」或「在 Adventure Works 上新增行程」，即可啟動 app，然後瀏覽到 [**新行程**] 頁面。 接著，說出「Adventure Works，顯示我到倫敦的行程」將會啟動 app，並瀏覽到 [**行程**] 詳細資料頁面，如下所示。
+透過 Cortana 使用語音命令時，使用者可以改為說：「Adventure Works 新增行程」或「在 Adventure Works 上新增行程」，即可啟動 app，然後瀏覽到 \[新行程\] 頁面。 接著，說出「Adventure Works，顯示我到倫敦的行程」將會啟動 app，並瀏覽到 \[行程\] 詳細資料頁面，如下所示。
 
 ![Cortana 啟動前景 app](images/cortana-foreground-with-adventureworks.png)
 
 以下是新增語音命令功能及使用語音或鍵盤輸入將 Cortana 整合至 app 的基本步驟：
 
-1.  建立 VCD 檔案。 這是一個 XML 文件，定義使用者可以說的所有語音命令，可在您啟用應用程式時啟始動作或叫用命令。 請參閱 [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+1.  建立 VCD 檔案。 這是一個 XML 文件，定義使用者可以說的所有語音命令，可在您啟用應用程式時啟始動作或叫用命令。 請參閱 [**VCD 元素和屬性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)。
 2.  應用程式啟動後，註冊 VCD 檔案中的命令集。
 3.  處理透過語音命令進行的啟用、app 內的瀏覽，以及命令的執行。
 
@@ -62,29 +65,29 @@ template: detail.hbs
 
     Visual Studio 2015 起始頁隨即顯示。
 
-2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
+2.  在 \[檔案\] 功能表上，選取 \[新增\]\[專案\]。
 
-    隨即顯示 [新增專案]**** 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
+    隨即顯示 \[新增專案\] 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
 
-3.  在左窗格中，依序展開 **[已安裝的] > [範本] > [Visual C\#] > [Windows]**，然後選取 [**通用**] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
-4.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]**** 範本。
+3.  在左窗格中，依序展開 \[已安裝的\] &gt; \[範本\] &gt; \[Visual C\#\] &gt; \[Windows\]，然後選取 \[通用\] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
+4.  在中央窗格中，選取 \[空白應用程式 (通用 Windows)\] 範本。
 
-    [空白應用程式]**** 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
+    \[空白應用程式\] 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
 
-5.  在 [**名稱**] 文字方塊中，輸入您的專案名稱。 在這個範例中，我們使用 "AdventureWorks"。
-6.  按一下 [確定]**** 來建立專案。
+5.  在 \[名稱\] 文字方塊中，輸入您的專案名稱。 在這個範例中，我們使用 "AdventureWorks"。
+6.  按一下 \[確定\] 來建立專案。
 
-    Microsoft Visual Studio 會建立您的專案，然後在 [**方案總管**] 中顯示
+    Microsoft Visual Studio 會建立您的專案，然後在 \[方案總管\] 中顯示。
 
 ## <span id="Add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>將影像資產新增至專案，並在應用程式資訊清單中指定它們
       
 UWP 應用程式可以根據特定的設定和裝置功能 (高對比、有效像素及地區設定等)，自動選取最適當的影像。 您需要的就是提供影像，並確保您在應用程式專案內為不同的資源版本使用適當的命名慣例和資料夾組織。 如果您未提供建議的資源版本，則視使用者的喜好設定、能力、裝置類型及位置而定，協助工具、當地語系化及影像品質可能會有問題。
 
-如需高對比和縮放比例的影像資源詳細資訊，請參閱[磚和圖示資產的指導方針](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)
+如需高對比和縮放比例的影像資源詳細資訊，請參閱[磚和圖示資產的指導方針](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
 
 您要使用限定詞命名資源。 資源限定詞是資料夾和檔案名稱的修飾詞，用來識別內容中應該使用的特定資源版本。
 
-標準命名慣例為 `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`。 例如，`images/en-US/logo.scale-100_contrast-white.png` 只是指在程式碼中使用的根資料夾和檔案名稱：`images/logo.png`。 請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)
+標準命名慣例為 `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`。 例如，`images/en-US/logo.scale-100_contrast-white.png` 只是指在程式碼中使用的根資料夾和檔案名稱：`images/logo.png`。 請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)。
 
 即使您目前不打算提供當地語系化或多種解析度資源，仍建議您在字串資源檔上標示預設語言 (如 `en-US\resources.resw`)，並在影像上標示預設縮放比例 (如 `logo.scale-100.png`)。 不過，我們建議您至少為 100、200 及 400 的縮放比例提供資產。
 
@@ -94,33 +97,34 @@ UWP 應用程式可以根據特定的設定和裝置功能 (高對比、有效�
     
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>建立 VCD 檔案
 
-1. 在 Visual Studio 中，於主要專案名稱上按一下滑鼠右鍵，選取 **[新增] > [新增項目]**。 新增 **XML 檔案**
-2. 輸入 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案的名稱 (在此範例中，為 "AdventureWorksCommands.xml")，然後按一下 [新增]。 
-3. 在 [**方案總管**] 中，選取該 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案。
-4.  在 [**屬性**] 視窗中，將 [**建置動作**] 設定為 [**內容**]，然後將 [**複製到輸出目錄**] 設定為 [**有更新時才複製**]
+1. 在 Visual Studio 中，於主要專案名稱上按一下滑鼠右鍵，選取 \[新增\] &gt; \[新增項目\]。 新增 **XML 檔案**。
+2. 輸入 VCD 檔案的名稱 (在此範例中，為 "AdventureWorksCommands.xml")，然後按一下 \[新增\]。 
+3. 在 \[方案總管\] 中，選取該 VCD 檔案。
+4.  在 \[屬性\] 視窗中，將 \[建置動作\] 設定為 \[內容\]，然後將 \[複製到輸出目錄\] 設定為 \[有更新時才複製\]。
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>編輯 VCD 檔案
 
 
-新增 **VoiceCommands** 元素，其 **xmlns** 屬性指向
+新增 **VoiceCommands** 元素，其 **xmlns** 屬性指向 `http://schemas.microsoft.com/voicecommands/1.2`。
 
 2. 針對應用程式所支援的每一種語言，建立 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，內含應用程式所支援的語音命令。
 
   您可以宣告多個 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，且各自擁有不同的 [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 屬性，讓您的應用程式可以在不同的市場中使用。 例如，美國的應用程式可以有英文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 和西班牙文的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。
 
   >  **注意**  
-  若要使用語音命令來啟用應用程式並起始動作，應用程式必須註冊一個包含 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 且其語言與使用者針對裝置所選語音功能語言相符的 VCD 檔案。 這個語音功能語言位於 **[設定] > [系統] > [語音] > [語音功能的語言]**
+  若要使用語音命令來啟用應用程式並起始動作，應用程式必須註冊一個包含 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 且其語言與使用者針對裝置所選語音功能語言相符的 VCD 檔案。 這個語音功能語言位於\[設定\] &gt; \[系統\] &gt; \[語音\] &gt; \[語音功能的語言\] 。
 
 3. 針對您想要支援的每個命令新增 **Command** 元素。
 
   [
-            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案中宣告的每一個 **Command** 都必須包含以下資訊：
+              **VCD**
+            ](https://msdn.microsoft.com/library/windows/apps/dn706593) 檔案中宣告的每一個 **Command** 都必須包含以下資訊：
 
   - **Name** 屬性，應用程式在執行期間用來識別語音命令。 
-  - **Example** 元素，包含一個片語，描述使用者如何叫用命令。 當使用者說：「我可以說什麼？」、「求助」或者點選 [**查看更多**] 後，**Cortana** 會顯示這個範例    
+  - **Example** 元素，包含一個片語，描述使用者如何叫用命令。 當使用者說：「我可以說什麼？」、「求助」或者點選 \[查看更多\] 後，Cortana 會顯示這個範例。    
   -   **ListenFor** 元素，包含應用程式可辨識為命令的字詞或片語。 每個 **ListenFor** 元素都可以包含一個或多個 **PhraseList** 元素參考，而後面這個元素包含與命令相關的特定字詞。
   > **注意**  
-  **ListenFor** 元素無法透過程式設計方式修改。 不過，與 **ListenFor** 元素關聯的 **PhraseList** 元素則可以透過程式設計方式修改。 應用程式應該在執行期間，根據使用者使用 app 時所產生的資料集修改 **PhraseList** 的內容。 請參閱[動態修改語音命令定義 (VCD) 片語清單](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)
+  **ListenFor** 元素無法透過程式設計方式修改。 不過，與 **ListenFor** 元素關聯的 **PhraseList** 元素則可以透過程式設計方式修改。 應用程式應該在執行期間，根據使用者使用應用程式時所產生的資料集修改 **PhraseList** 的內容。 請參閱[動態修改語音命令定義 (VCD) 片語清單](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)。
 
   -   **Feedback** 元素，包含當應用程式啟動後，**Cortana** 會顯示以及說出的文字。
 
@@ -196,7 +200,7 @@ protected async override void OnLaunched(LaunchActivatedEventArgs e)
 
   然後我們呼叫 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 將它與我們的 "AdventureWorksCommands.xml" 檔案初始化。
 
-  此 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件會接著傳遞至 [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205)    
+  此 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件會接著傳遞至 [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205)。    
 ```csharp
 try
 {
@@ -227,7 +231,7 @@ catch (Exception ex)
 
 1.  確認已使用語音命令啟用您的應用程式。
 
-    覆寫 [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件並檢查 [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 是否為 [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693)
+    覆寫 [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件並檢查 [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 是否為 [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
 2.  判斷命令的名稱和所說出的內容。
 
@@ -396,6 +400,7 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

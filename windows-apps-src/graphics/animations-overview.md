@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-title: 動畫概觀
-description: 使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的 app 中。
+title: "動畫概觀"
+description: "使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的 app 中。"
+ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
+ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+
 ---
 # 動畫概觀
 
@@ -23,6 +26,8 @@ Windows 執行階段動畫庫中的動畫有下列優點：
 
 然而動畫庫無法為每種可能的狀況提供動畫。 在某些狀況下，您可能會希望以 XAML 建立自訂動畫。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
+此外，針對諸如根據 ScrollViewer 捲動位置產生項目動畫效果的特定進階案例，開發人員可能會想要使用視覺層交互操作來實作自訂動畫。 如需詳細資訊，請參閱[視覺層](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)。
+
 ## 動畫類型
 
 Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓控制項與 UI 的其他部分的行為都能有動畫效果。 動畫有好幾種不同的類型。
@@ -30,12 +35,13 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 -   當 UI 中的特定條件變更時 (與來自預先定義之 Windows 執行階段 XAML UI 類型的控制項或元素有關)，就會自動套用「佈景主題轉換」**。 這些項目之所以名為「佈景主題轉換」**，是因為動畫在從某個互動模式變更為另一個互動模式時，可支援 Windows 外觀及操作，而且可定義所有應用程式針對特定 UI 狀況所執行的動作。 這些佈景主題轉換是動畫庫的一部分。
 -   「佈景主題動畫」**是預先定義之 Windows 執行階段 XAML UI 類型的一或多個屬性的動畫。 佈景主題動畫與佈景主題轉換不同，因為佈景主題動畫會針對某個特定元素，並存在於某個控制項內的特定視覺狀態中，而佈景主題轉換則會指派給存在於視覺狀態外部控制項的屬性，而且會影響這些狀態之間的轉換。 許多 Windows 執行階段 XAML 控制項在屬於其控制項範本一部分的腳本內，都包含佈景主題動畫以及由視覺狀態觸發的動畫。 只要您沒有修改範本，您所擁有的這些內建佈景主題動畫就可供您 UI 中的控制項使用。 不過，如果您取代了範本，則也將移除內建的控制項佈景主題動畫。 若要回復這些佈景主題動畫，您必須定義一個腳本，在控制項的這組視覺狀態內包含佈景主題動畫。 您也可以從不在視覺狀態內的腳本執行佈景主題動畫，並使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) 方法啟動這些佈景主題動畫，但這比較少見。 佈景主題動畫是動畫庫的一部分。
 -   當控制項從某個已定義的視覺狀態轉換成另一個狀態時，就會套用「視覺轉換」**。 它們是您撰寫的自訂動畫，通常與您針對控制項撰寫的自訂範本以及該範本內的視覺狀態定義有關。 這個動畫只會在狀態與狀態之間執行；執行時間通常很短，頂多只有幾秒鐘。 如需詳細資訊，請參閱[視覺狀態的腳本動畫的 "VisualTransition" 區段](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)。
--   當 app 程式碼或元件 (例如您包含的控制項) 隨附的程式碼明確啟動「腳本動畫」**時，就會套用這些動畫。 一段時間後，腳本動畫可以變更任何 Windows 執行階段相依性屬性的值。 腳本動畫不限於 UI 狀況；事實上，如果您熟悉該概念，將腳本動畫想成是一種狀態機器技術可能比較實用。 腳本動畫並不限於視覺狀態之間的轉換時間；無論控制項狀態是否變更，它都可以隨時執行，而且動畫也有可能持續執行。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。 如需相依性屬性及其存在位置的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
+-   「腳本動畫」**會隨著時間變更 Windows 執行階段相依性屬性的值。 腳本可定義為視覺轉換的一部分，或是在執行階段由應用程式所觸發。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。 如需相依性屬性及其存在位置的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
 
 ## 動畫庫中可用的動畫
 
 動畫庫提供下列動畫。 按一下動畫名稱，以深入了解動畫的主要使用狀況、定義動畫的方式，以及查看動畫的範例。
 
+-   [頁面轉換](./animations-overview.md#page-transition)：在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)中以動畫方式進行頁面轉換。
 -   [內容和入場轉換](./animations-overview.md#content-transition-and-entrance-transition)：讓一個或一組內容以動畫方式進入或離開檢視。
 -   [淡入/淡出以及淡入與淡出](./animations-overview.md#fade-in-out-and-crossfade)：顯示暫時性元素或控制項，或重新整理內容區域。
 -   [指標向上/向下](./animations-overview.md#pointer-up-down)：在點選或按一下磚時提供的視覺化回饋。
@@ -44,13 +50,22 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 -   [顯示/隱藏邊緣 UI](./animations-overview.md#show-hide-edge-ui)：將以邊緣為基礎的 UI (包括大型 UI，如面板) 滑入或滑出檢視。
 -   [清單項目變更](./animations-overview.md#list-item-changes)：從清單中新增或刪除某個項目，或為這些項目重新排序。
 -   [拖放](./animations-overview.md#drag-drop)：在拖放操作期間提供視覺化回饋。
--   [撥動手勢](./animations-overview.md#swipe-gestures)：提示磚支援撥動互動，或指示撥動選取的狀態。
+
+### 頁面轉換
+
+使用頁面轉換在 App 中產生動畫瀏覽效果。 由於絕大部分的 App 皆使用某種類型的瀏覽，因此頁面轉化動畫是 App 最常使用的佈景主題動畫類型。 如需關於頁面轉換 API 的詳細資訊，請參閱 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition)。
+
+
 
 ### 內容轉換和入場轉換
 
 使用內容轉換動畫 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103))，將內容片段或一組內容移入或移出目前的檢視。 例如，內容轉換動畫會顯示最初載入頁面時或變更頁面區段內容時，尚未準備顯示的內容。
 
-XAML 動畫庫沒有載入頁面時套用至整個頁面的動畫的概念，但是在第一次載入包含內容的頁面並呈現部分內容時，的確有可以套用至內容的個別轉換 ([**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288))。 因此，內容第一次出現時，可以提供與內容變更不同的回饋。
+[
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同於具預設參數的 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)之外使用。
+ 
+ 
 
 ### 淡入/淡出以及淡入與淡出
 
@@ -64,7 +79,7 @@ XAML 動畫庫沒有載入頁面時套用至整個頁面的動畫的概念，但
 
 ### 調整位置
 
-使用重新定位動畫 ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) 將元素移入新位置。 例如，在標頭項目控制項中移動標頭，就可以使用重新定位動畫。
+使用重新定位動畫 ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) 將元素移入新位置。 例如，在項目控制項中移動標頭即可使用重新定位動畫。
 
 ### 顯示/隱藏快顯
 
@@ -82,17 +97,13 @@ XAML 動畫庫沒有載入頁面時套用至整個頁面的動畫的概念，但
 
 如果清單中的項目變更位置，您也可以套用個別的 [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409)。 此動畫效果產生的方式與刪除某個項目，然後再以相關的刪除/新增動畫，將其新增在新位置的方式不同。
 
+請注意，這些動畫已包含於預設的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 範本，因此您無須手動新增這些動畫 (若您已使用這些控制項)。
+
 ### 拖放
 
 使用拖曳動畫 ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) 和放下動畫 ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185))，在使用者拖曳或放下項目時提供視覺化回饋。
 
 作用時，這些動畫會為使用者示範清單可以在放下的項目周圍重新排列。 這有助於使用者了解如果在目前的位置放下項目之後，該項目會放置在清單何處。 如果某個拖曳的項目可以放在清單中的兩個其他項目之間，且這兩個項目會讓開，這些動畫會提供視覺化回饋。
-
-### 撥動手勢
-
-使用 [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) 動畫顯示磚支援撥動互動。 使用者可以向下撥動以選取磚。 如果使用者不知道是否可以撥動磚，磚上的按住不放手勢就會播放撥動提示動畫，建議使用者應該透過撥動來與磚互動。
-
-使用 [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) 動畫顯示已經選取磚並讓磚回到靜止位置。
 
 ## 使用動畫搭配自訂控制項
 
@@ -278,6 +289,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 | API | 說明 |
 |-----|-------------|
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | 針對[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | 提供控制項新增或刪除子項或內容時的動畫轉換行為。 通常控制項就是一個項目容器。 |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | 提供控制項內容變更時的動畫轉換行為。 除了 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 之外，您也可以套用此項目。 |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | 為 (小) 邊緣 UI 轉換提供動畫轉換行為。 |
@@ -351,10 +363,10 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | 控制項的彈入元件出現時套用的預先設定動畫。 此動畫結合了不透明和轉譯。 |
 | [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | 控制項的彈入元件關閉或移除時套用的預先設定動畫。 此動畫結合了不透明和轉譯。 |
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | 重新放置物件時套用的預先設定動畫。 |
-| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 使用分割動畫隱藏目標 UI 的預先設定動畫。 |
-| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 使用分割動畫顯示目標 UI 的預先設定動畫。 |
-| [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | 元素在撥動互動之後滑回配置位置時，控制項套用的預先設定動畫。 |
-| [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | 指出現在可以使用撥動手勢的預先設定動畫。 |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 隱藏目標 UI 的預先設定動畫，會使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 開啟與關閉樣式中的動畫。 |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 顯示目標 UI 的預先設定動畫，會使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 開啟與關閉樣式中的動畫。 |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 顯示使用者在邏輯階層中正向瀏覽時執行的預先設定動畫，例如從主要頁面瀏覽至詳細資料頁面。 |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 顯示使用者在邏輯階層中反向瀏覽時執行的預先設定動畫，例如從詳細資料頁面瀏覽至主要頁面。 |
 
  
 
@@ -364,7 +376,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 為了建立動畫效果，要產生動畫的屬性必須是「相依性屬性」**。 如需相依性屬性的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。 如需建立自訂腳本動畫 (包括如何做為目標並加以控制) 的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
-您以 XAML 定義控制項之視覺狀態的一個狀況是，您將定義自訂腳本動畫所在 XAML 中最大的應用程式 UI 定義區域。 這麼做的原因是，您要建立新的控制項類別，或是您要在其控制項範本中，為具有視覺狀態的現有控制項重新建立範本。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 這些動畫通常不是隨著時間轉換，它們是瞬間發生，而且其實不只是用於為狀態定義一組屬性變更的技術。 它們不一定會將視覺上的動畫行為套用到 UI，但是您將會看到控制項的視覺狀態通常包含動畫庫本身。 在此情況下，佈景主題動畫會隨著時間套用變更，但通常是一段很短的時間。
+您以 XAML 定義控制項之視覺狀態的一個狀況是，您將定義自訂腳本動畫所在 XAML 中最大的應用程式 UI 定義區域。 這麼做的原因是，您要建立新的控制項類別，或是您要在其控制項範本中，為具有視覺狀態的現有控制項重新建立範本。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
  
 
@@ -375,6 +387,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

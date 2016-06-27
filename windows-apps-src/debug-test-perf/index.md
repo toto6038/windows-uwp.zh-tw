@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
-title: 偵錯、測試及效能
-description: 使用 Microsoft Visual Studio 偵錯並測試您的 app。 若要準備您的應用程式來進行 Windows 市集認證程序，請使用「Windows 應用程式認證套件」。
+title: "偵錯、測試及效能"
+description: "使用 Microsoft Visual Studio 偵錯並測試您的 app。 若要準備您的應用程式來進行 Windows 市集認證程序，請使用「Windows 應用程式認證套件」。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1d6187470e8e1578af833221089a76261ebad1e4
+
 ---
 # 偵錯、測試及效能
 
@@ -22,6 +25,7 @@ description: 使用 Microsoft Visual Studio 偵錯並測試您的 app。 若要�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

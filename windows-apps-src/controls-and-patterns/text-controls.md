@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 想想我們每天多常閱讀電子郵件、書籍、路標、菜單價格、胎壓標記，或是街道柱子上張貼海報中的文字。
-title: 文字控制項
+Description: "想想我們每天多常閱讀電子郵件、書籍、路標、菜單價格、胎壓標記，或是街道柱子上張貼海報中的文字。"
+title: "文字控制項"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1fec4bf13567507087eef08feea0a3ebc255b43f
+
 ---
 # 文字控制項
 文字控制項包含文字輸入方塊、密碼方塊、自動建議方塊以及文字區塊。 XAML 架構提供用於轉譯、輸入和編輯文字的數個控制項，以及一組用於格式化文字的屬性。
@@ -103,7 +106,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。
 
->秘訣：此資訊僅適用於 SIP。 它並不適用於硬體鍵盤或 Windows [輕鬆存取] 選項中提供的 [螢幕小鍵盤]。
+>秘訣：此資訊僅適用於 SIP。 它並不適用於硬體鍵盤或 Windows \[輕鬆存取\] 選項中提供的 \[螢幕小鍵盤\]。
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 TextBox 或 RichEditBox) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的 app 中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
@@ -160,6 +163,7 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

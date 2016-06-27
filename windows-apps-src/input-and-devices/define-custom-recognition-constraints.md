@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何定義及使用自訂限制式來進行語音辨識。
-title: 定義自訂辨識限制式
+Description: "了解如何定義及使用自訂限制式來進行語音辨識。"
+title: "定義自訂辨識限制式"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7d91cef0955dbf8544f658369ee488c47aaef787
+
 ---
 
 # 定義自訂辨識限制式
@@ -26,14 +29,17 @@ template: detail.hbs
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 屬性可以為語音辨識器新增限制式。
 
-這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景 app](launch-a-foreground-app-with-voice-commands-in-cortana.md)
+這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
 
 -   [
-            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
+              **SpeechRecognitionTopicConstraint**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
 -   [
-            **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
+              **SpeechRecognitionListConstraint**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
 -   [
-            **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
+              **SpeechRecognitionGrammarFileConstraint**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
@@ -137,14 +143,14 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 -   使用語意，定義語音識別對您應用程式的意義。
 -   以內嵌於文法或透過語彙連結的方式指定發音。
 
-如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](http://go.microsoft.com/fwlink/p/?LinkID=269887)
+如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](http://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 請記住下列重點：
 
 -   您可以將多個文法檔限制式新增到限制式集合。
 -   針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
-這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，[封裝動作]**** 是設定為 [內容]****，而 [複製到輸出目錄]**** 是設定為 [ 永遠複製 ]****：
+這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，\[封裝動作\] 是設定為 \[內容\]，而 \[複製到輸出目錄\] 是設定為 \[ 永遠複製 \]：
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -213,7 +219,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 ## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>管理限制式
 
 
-載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**
+載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**。
 
 與針對每項辨識操作載入、卸載及編譯限制式相比，先一次載入限制式，再視需要予以啟用及停用，通常是較有效率的方式。 請視需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性。
 
@@ -239,6 +245,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

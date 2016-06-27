@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-description: 使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。
-title: 語音互動
+description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。"
+title: "語音互動"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
+ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+
 ---
 
 # 語音互動
@@ -22,7 +25,7 @@ template: detail.hbs
 
 **TTS：**使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
 
-> [!NOTE] 使用 **Cortana** 和自動語音命令時，您的 app 可以在前端啟動 (app 取得焦點，如同從 [開始] 功能表啟動一般) 或啟動為背景服務 (**Cortana** 保持焦點，但提供來自 app 的結果)。 
+> [!NOTE] 使用 Cortana 和自動語音命令時，您的 app 可以在前端啟動 (app 取得焦點，如同從 \[開始\] 功能表啟動一般) 或啟動為背景服務 (Cortana 保持焦點，但提供來自 app 的結果)。 
 > 需要額外內容或使用者輸入的命令 (例如傳送訊息給特定的連絡人) 最好在前景 app 處理，而基本命令則可由 **Cortana** 透過背景 app 處理。
 > 如果您要透過在 **Cortana** UI 中的語音命令，公開功能為背景服務，請參閱 [Cortana 設計指導方針](cortana-design-guidelines.md)。
 
@@ -83,21 +86,21 @@ template: detail.hbs
 
 -   預先定義的文法 (聽寫或網頁搜尋)
 
-    -   [正在聆聽]**** 畫面。
-    -   [正在思考]**** 畫面。
-    -   [聽到您說]**** 畫面或錯誤畫面。
+    -   \[正在聆聽\] 畫面。
+    -   \[正在思考\] 畫面。
+    -   \[聽到您說\] 畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
-    -   [正在聆聽]**** 畫面。
-    -   [您說的是]**** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
-    -   [聽到您說]**** 畫面或錯誤畫面。
+    -   \[正在聆聽\] 畫面。
+    -   \[您說的是\] 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
+    -   \[聽到您說\] 畫面或錯誤畫面。
 
-您可以在 [正在聆聽]**** 畫面上：
+您可以在 \[正在聆聽\] 畫面上：
 
 -   自訂標頭文字
 -   提供使用者可以說出的範例文字。
--   指定是否顯示 [聽到您說]**** 畫面。
--   在 [聽到您說]**** 畫面向使用者讀出已辨識到的字串。
+-   指定是否顯示 \[聽到您說\] 畫面。
+-   在 \[聽到您說\] 畫面向使用者讀出已辨識到的字串。
 
 以下是使用 SRGS 定義限制之語音辨識器的內建辨識流程範例。 在這個範例中，語音辨識是成功的。
 
@@ -223,7 +226,8 @@ TTS 從純文字或 SSML 產生語音輸出。
 ## <span id="related_topics"></span>相關文章
 
 * [語音互動](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598) 
+* [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598)
+             
             **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
@@ -234,6 +238,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

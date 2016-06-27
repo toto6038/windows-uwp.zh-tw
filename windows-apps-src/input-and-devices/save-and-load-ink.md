@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
-title: 儲存和抓取 Windows Ink 筆觸資料
+Description: "支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。"
+title: "儲存和抓取 Windows Ink 筆觸資料"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 0f2e95146281fb992af1201c408ed62705c77741
+
 ---
 
 # 儲存和抓取 Windows Ink 筆觸資料
@@ -33,7 +36,7 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 
 1.  一開始先設定 UI。
 
-    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
+    UI 包含 \[儲存\]、\[載入\] 和 \[清除\] 按鈕，以及 InkCanvas。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -64,7 +67,8 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 2.  然後設定一些基本的筆墨輸入行為。
 
     [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
+              **InkPresenter**
+            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```    CSharp
 public MainPage()
     {
@@ -84,10 +88,11 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [儲存]**** 按鈕的 click 事件處理常式中儲存筆劃。
+3.  最後，會在 \[儲存\] 按鈕的 click 事件處理常式中儲存筆劃。
 
     [
-            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
+              **FileSavePicker**
+            ](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
     選取檔案之後，我們會開啟已設為 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
 
@@ -167,7 +172,7 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 
 1.  一開始先設定 UI。
 
-    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
+    UI 包含 \[儲存\]、\[載入\] 和 \[清除\] 按鈕，以及 InkCanvas。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -198,7 +203,8 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 2.  然後設定一些基本的筆墨輸入行為。
 
     [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
+              **InkPresenter**
+            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```    CSharp
 public MainPage()
     {
@@ -218,10 +224,11 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [載入]**** 按鈕的 click 事件處理常式中載入筆墨。
+3.  最後，會在 \[載入\] 按鈕的 click 事件處理常式中載入筆墨。
 
     [
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
+              **FileOpenPicker**
+            ](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
     選取檔案之後，我們會開啟已設為 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
 
@@ -280,7 +287,7 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 
 1.  一開始先設定 UI。
 
-    UI 包含 [剪下]、[複製]、[貼上] 和 [清除] 按鈕，以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 和選取項目畫布。
+    UI 包含 \[剪下\]、\[複製\]、\[貼上\] 和 \[清除\] 按鈕，以及 InkCanvas 和選取項目畫布。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -317,7 +324,8 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 2.  然後設定一些基本的筆墨輸入行為。
 
     [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
+              **InkPresenter**
+            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
 
     如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的[傳入輸入以進行進階處理](pen-and-stylus-interactions.md#passthrough)。
 ```    CSharp
@@ -365,7 +373,7 @@ public MainPage()
     }
 ```
 
-3.  最後，在新增筆劃選取項目支援之後，我們會在 [剪下]****、[複製]**** 和 [貼上]**** 按鈕的 click 事件處理常式中實作剪貼簿功能。
+3.  最後，在新增筆劃選取項目支援之後，我們會在 \[剪下\]、\[複製\] 和 \[貼上\] 按鈕的 click 事件處理常式中實作剪貼簿功能。
 
     針對剪下功能，我們會先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上呼叫 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232)。
 
@@ -445,6 +453,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

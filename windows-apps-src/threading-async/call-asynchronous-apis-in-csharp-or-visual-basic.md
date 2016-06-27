@@ -1,8 +1,11 @@
 ---
 author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-title: 在 C# 或 Visual Basic 中呼叫非同步 API
-description: 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。
+title: "在 C# 或 Visual Basic 中呼叫非同步 API"
+description: "通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
+
 ---
 # 在 C# 或 Visual Basic 中呼叫非同步 API
 
@@ -109,6 +112,7 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

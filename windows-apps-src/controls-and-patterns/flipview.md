@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 顯示集合中的影像 (一次一個影像)，例如相簿中的相片或是產品詳細資料頁面中的項目。
-title: 翻轉檢視控制項的指導方針
+Description: "顯示集合中的影像 (一次一個影像)，例如相簿中的相片或是產品詳細資料頁面中的項目。"
+title: "翻轉檢視控制項的指導方針"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+
 ---
 # 翻轉檢視
 
@@ -207,6 +210,7 @@ stackPanel1.Children.Add(flipView1);
 - [**CarouselPanel 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

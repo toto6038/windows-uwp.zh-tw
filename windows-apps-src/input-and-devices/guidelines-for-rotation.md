@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
-title: 旋轉
+Description: "這個主題描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。"
+title: "旋轉"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: d91a3cf5dc5ae2e1a68e32fc64848b869f229391
+
 ---
 
 # 旋轉
@@ -123,6 +126,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

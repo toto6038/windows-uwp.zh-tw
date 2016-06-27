@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 使用已針對觸控最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，建立通用 Windows 平台 (UWP) 應用程式。
-title: 觸控互動
+Description: "使用已針對觸控最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，建立通用 Windows 平台 (UWP) 應用程式。"
+title: "觸控互動"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+
 ---
 
 # 觸控互動
@@ -108,7 +111,7 @@ template: detail.hbs
 使用下列功能針對隨性互動進行設計：
 
 -   貼齊點：在使用者與內容進行互動時，可以較容易停在想要的位置。
--   指向性「柵欄」：可在即使手以稍微弧形的方式移動時，協助進行垂直或水平移動瀏覽。 如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)
+-   指向性「柵欄」：可在即使手以稍微弧形的方式移動時，協助進行垂直或水平移動瀏覽。 如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
 
 ## 遮蔽
 
@@ -128,7 +131,7 @@ template: detail.hbs
 
 -   精確度控點
 
-    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段 app)](guidelines-for-textselection.md)
+    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段 app)](guidelines-for-textselection.md)。
 
 ## 計時
 
@@ -167,7 +170,7 @@ template: detail.hbs
 
 您可以使用 app 檢視與事件，來修改移動瀏覽/捲動和縮放行為。 與處理指標和手勢事件相比，它可以提供更順暢的互動體驗。
 
-如需有關應用程式檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)
+如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
 ## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>自訂觸控互動
 
@@ -176,7 +179,7 @@ template: detail.hbs
 
 若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件。 這些事件會分成三個等級的抽象概念。
 
--   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 及 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
+-   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 及 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)。
 
     您可以透過將 [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) 及 [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) 設定為 **false**，來停用特定元素的手勢事件。
 
@@ -209,7 +212,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## <span id="gestures"></span><span id="GESTURES"></span>手勢事件
 
 
-如需個別控制項的詳細資訊，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)
+如需個別控制項的詳細資訊，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
 ## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>指標事件
 
@@ -432,7 +435,7 @@ End Sub
 | 事件或類別                                                                                               | 說明                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting 事件**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | 第一次建立操作處理器時發生。                                                                                  |
-| [**ManipulationStarted 事件**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 當輸入裝置開始在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 進行操作時發生                                            |
+| [**ManipulationStarted 事件**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 當輸入裝置開始在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 進行操作時發生。                                            |
 | [**ManipulationDelta 事件**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | 當輸入裝置在操作期間變更位置時發生。                                                                      |
 | [**ManipulationInertiaStarting 事件**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | 在操作和慣性開始的時候，只要輸入裝置不與 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 物件接觸便發生。 |
 | [**ManipulationCompleted 事件**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | 當在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 進行的操作和慣性互動完成時發生。                                          |
@@ -481,7 +484,7 @@ End Sub
 </Grid>
 ```
 
-接著，建立一個名為 `dragTranslation` 的全域 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來轉譯 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。 在 **Rectangle** 上指定 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件接聽程式，並將 `dragTranslation` 新增到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)
+接著，建立一個名為 `dragTranslation` 的全域 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來轉譯 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。 在 **Rectangle** 上指定 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件接聽程式，並將 `dragTranslation` 新增到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)。
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -599,7 +602,7 @@ End Sub
 ## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或 app 的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)
+本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或 app 的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
 ## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
@@ -616,15 +619,17 @@ End Sub
 ## <span id="related_topics"></span>相關文章
 
 * [處理指標輸入](handle-pointer-input.md)
-* 識別輸入裝置
-* [範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* 使用者互動模式範例
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [封存範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [識別輸入裝置](identify-input-devices.md) 
+           **範例**
+* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **封存範例**
+* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
@@ -634,6 +639,7 @@ End Sub
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 
