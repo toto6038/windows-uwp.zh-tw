@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/accessibility-checklist.md) | InSyncHandedBackSuccess | [Details](#9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d6)
 
 ## Item Details
-##### <a name='9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d6'></a> Source: [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/accessibility-checklist.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/194df74a9ce9725574a10d080b81053118bbec9a/windows-apps-src/accessibility/accessibility-checklist.md)
-* Handoff File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/a0b82f36afc8572596b1a2a007c0a662f70e4ba7/ol-handoff/Microsoft/windows-apps.zh-tw/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf)
-* Handoff Datetime: 2016-06-27 18:09:25
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/b5d483bc5d895e7c04b2a7271dfb125f5eaaaae7/ol-handback/Microsoft/windows-apps.zh-tw/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf)
-* Handback Datetime: 2016-06-28 10:58:32
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
