@@ -18,7 +18,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/de340b0acce4e89762f9a817e6f44fd23043659b/ol-handback/Microsoft/windows-apps.zh-tw/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-tw.xlf)
-* Handback Datetime: 2016-06-28 09:57:08
+* Handback Datetime: 2016-06-28 10:25:23
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d6handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
