@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/c13c51c26998fba4bf54c221905fc917ccac3035/windows-apps-src/publish/index.md) | HandedOffSuccess | [Details](#ff3988998951ae8569dc6d8fd2f28ba19b509c6f3615)
+ [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/056642044953bab02f78912c7611ddcf5d6d48e6/windows-apps-src/publish/usage-report.md) | HandedBackFailed | [Details](#476e7ee0c9c7ea7dce7f5e3a0389091ede9132c43648)
 
 ## Item Details
-##### <a name='ff3988998951ae8569dc6d8fd2f28ba19b509c6f3615'></a> Source: [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/c13c51c26998fba4bf54c221905fc917ccac3035/windows-apps-src/publish/index.md)
-* Status: HandedOffSuccess
+##### <a name='476e7ee0c9c7ea7dce7f5e3a0389091ede9132c43648'></a> Source: [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/056642044953bab02f78912c7611ddcf5d6d48e6/windows-apps-src/publish/usage-report.md)
+* Status: HandedBackFailed
 * Target File: 
-* Handoff File: [index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/366f44d8e019e92625f6ce8fd6d649e2723c0037/ol-handoff/Microsoft/windows-apps.zh-tw/master/index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.zh-tw.xlf)
-* Handoff Datetime: 2016-06-28 19:13:24
+* Handoff File: [usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c3c77a8c4cc1183989d173e5a2389da05bed5d4b/ol-handoff/Microsoft/windows-apps.zh-tw/master/usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.zh-tw.xlf)
+* Handoff Datetime: 2016-06-28 21:13:42
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
