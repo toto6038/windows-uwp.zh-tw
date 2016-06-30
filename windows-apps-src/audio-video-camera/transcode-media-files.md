@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: 您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。
-title: 轉碼媒體檔案
+description: "您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。"
+title: "轉碼媒體檔案"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
+
 ---
 
 # 轉碼媒體檔案
@@ -72,6 +76,7 @@ title: 轉碼媒體檔案
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

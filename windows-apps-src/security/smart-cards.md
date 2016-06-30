@@ -1,8 +1,12 @@
 ---
-title: 智慧卡
-description: 本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。
+title: "智慧卡"
+description: "本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。"
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
+
 ---
 
 # 智慧卡
@@ -21,7 +25,7 @@ author: awkoren
 ## 存取連線的讀卡機與智慧卡
 
 
-您可以透過將裝置識別碼 (在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定) 傳送至 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法，以查詢讀卡機和連接的智慧卡。 若要存取目前連接至傳回的讀卡機裝置的智慧卡，請呼叫 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)
+您可以透過將裝置識別碼 (在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定) 傳送至 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法，以查詢讀卡機和連接的智慧卡。 若要存取目前連接至傳回的讀卡機裝置的智慧卡，請呼叫 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)。
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -55,11 +59,11 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 ## 建立虛擬智慧卡
 
 
-若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 建立虛擬智慧卡，您的 app 首先需要提供一個易記的名稱、一個管理金鑰以及一個 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 易記名稱通常會提供給 app，但您的 app 仍然需要提供管理金鑰並產生目前 **SmartCardPinPolicy** 的執行個體，才能將這三個值全部傳送至 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)
+若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 建立虛擬智慧卡，您的 app 首先需要提供一個易記的名稱、一個管理金鑰以及一個 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 易記名稱通常會提供給 app，但您的 app 仍然需要提供管理金鑰並產生目前 **SmartCardPinPolicy** 的執行個體，才能將這三個值全部傳送至 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
 
 1.  建立新的 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) 執行個體
 2.  在服務或管理工具提供的管理金鑰值上呼叫 [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392)，以產生管理金鑰值。
-3.  將這些值連同 *FriendlyNameText* 字串傳送至 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)
+3.  將這些值連同 *FriendlyNameText* 字串傳送至 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -200,6 +204,7 @@ bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

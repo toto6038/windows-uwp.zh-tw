@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 在 XAML 標記中，為屬性指定 null 值。
-title: x&#58;Null 標記延伸
+description: "在 XAML 標記中，為屬性指定 null 值。"
+title: "x&#58;Null 標記延伸"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+
 ---
 
 # {x&#58;Null} 標記延伸
@@ -33,6 +37,7 @@ ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

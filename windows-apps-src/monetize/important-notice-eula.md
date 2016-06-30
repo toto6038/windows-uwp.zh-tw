@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
-description: 完整閱讀使用者授權合約 (EULA) 以了解重要資訊。
-title: 重要須知 - EULA
+description: "完整閱讀使用者授權合約 (EULA) 以了解重要資訊。"
+title: "重要須知 - EULA"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+
 ---
 
 # 重要須知 - EULA
@@ -25,6 +29,7 @@ EULA 位於擴充功能 SDK 所在的資料夾中。 視您安裝時選擇的選
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

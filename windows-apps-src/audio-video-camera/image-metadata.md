@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-description: 本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 GeotagHelper 公用程式類別以標記檔案的地理位置。
-title: 影像中繼資料
+description: "本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 GeotagHelper 公用程式類別以標記檔案的地理位置。"
+title: "影像中繼資料"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
+
 ---
 
 # 影像中繼資料
@@ -26,7 +30,7 @@ title: 影像中繼資料
 
 -   如需完整的 Windows 屬性清單，包括每個屬性的識別碼和類型，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)。
 
--   某些檔案容器和影像轉碼器只支援部分屬性。 如需每個影像類型支援的影像中繼資料清單，請參閱[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)
+-   某些檔案容器和影像轉碼器只支援部分屬性。 如需每個影像類型支援的影像中繼資料清單，請參閱[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)。
 
 -   因為擷取不支援的屬性時可能傳回 Null 值，在使用傳回的中繼資料值之前，一定要先檢查是否為 Null。
 
@@ -34,7 +38,7 @@ title: 影像中繼資料
 
 GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API，輕鬆地以地理位置資料來標記影像，而不必手動剖析或建構中繼資料格式。
 
-如果您已經有 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) 物件代表您想要標記在影像中的位置 (可能從先前使用的地理位置 API 或其他來源)，您可以呼叫 [**GeotagHelper.SetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903685) 並傳入 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **Geopoint**，以設定地理位置標籤資料
+如果您已經有 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) 物件代表您想要標記在影像中的位置 (可能從先前使用的地理位置 API 或其他來源)，您可以呼叫 [**GeotagHelper.SetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903685) 並傳入 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **Geopoint**，以設定地理位置標籤資料。
 
 [!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
 
@@ -46,9 +50,9 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 -   您必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)，再呼叫 [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686)，以確保使用者已授權您的 app 來使用他們的位置。
 
--   如需地理位置 API 的詳細資訊，請參閱[地圖與位置](https://msdn.microsoft.com/library/windows/apps/mt219699)
+-   如需地理位置 API 的詳細資訊，請參閱[地圖與位置](https://msdn.microsoft.com/library/windows/apps/mt219699)。
 
-若要取得代表影像檔地理位置的 GeoPoint，請呼叫 [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684)
+若要取得代表影像檔地理位置的 GeoPoint，請呼叫 [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684)。
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
@@ -56,13 +60,13 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 最先進的影像資料處理方式是使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 或 [BitmapEncoder](bitmapencoder-options-reference.md)，在資料流層級上讀取及寫入屬性。 對於這些作業，您可以使用 Windows 屬性來指定您要讀取或寫入的資料，但您也可以使用 Windows 影像處理元件 (WIC) 提供的中繼資料查詢語言，指定所要求屬性的路徑。
 
-使用這項技術來讀取影像中繼資料時，您需要有以來源影像檔資料流所建立的 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176)。 相關作法請參閱[影像處理](imaging.md)
+使用這項技術來讀取影像中繼資料時，您需要有以來源影像檔資料流所建立的 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176)。 相關作法請參閱[影像處理](imaging.md)。
 
 當您有解碼器時，針對您想要擷取的每個中繼資料屬性，請使用 Windows 屬性識別碼字串或 WIC 中繼資料查詢，建立字串清單並加入新項目。 在解碼器的 [**BitmapProperties**](https://msdn.microsoft.com/library/windows/apps/br226248) 成員上呼叫 [**BitmapPropertiesView.GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 方法，以要求指定的屬性。 屬性會以機碼/值組的字典傳回，其中包含屬性名稱或路徑及屬性值。
 
 [!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
 
--   如需 WIC 中繼資料查詢語言和支援的屬性的相關資訊，請參閱 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)
+-   如需 WIC 中繼資料查詢語言和支援的屬性的相關資訊，請參閱 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
 -   許多中繼資料屬性只有在一部分影像類型中才支援。 如果解碼器相關的影像不支援其中一個要求的屬性，[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) 會失敗並傳回錯誤碼 0x88982F41，如果影像完全不支援中繼資料，則會傳回 0x88982F81。 這些錯誤碼相關的常數為 WINCODEC\_ERR\_PROPERTYNOTSUPPORTED 和 WINCODEC\_ERR\_UNSUPPORTEDOPERATION，定義於 winerror.h 標頭檔中。
 -   因為影像可能包含或不包含特定屬性的值，在嘗試存取屬性之前，請使用 **IDictionary.ContainsKey** 確認屬性存在於結果中。
@@ -73,7 +77,7 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 [!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
 
--   如需哪些影像檔類型支援哪些屬性的詳細資訊，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)、[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)和 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)
+-   如需哪些影像檔類型支援哪些屬性的詳細資訊，請參閱 [Windows 屬性](https://msdn.microsoft.com/library/windows/desktop/dd561977)、[相片中繼資料原則](https://msdn.microsoft.com/library/windows/desktop/ee872003)和 [WIC 影像格式原生中繼資料查詢](https://msdn.microsoft.com/library/windows/desktop/ee719904)。
 
 -   如果編碼器相關的影像不支援其中一個要求的屬性，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 會失敗並傳回錯誤碼 0x88982F41。
 
@@ -89,6 +93,7 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

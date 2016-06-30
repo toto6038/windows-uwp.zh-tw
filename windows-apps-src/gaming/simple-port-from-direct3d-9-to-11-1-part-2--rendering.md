@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 轉換轉譯架構
-description: 示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。
+title: "轉換轉譯架構"
+description: "示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。"
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
+
 ---
 
 # 轉換轉譯架構
@@ -230,7 +234,7 @@ m_d3dDevice->CreateVertexShader(
 
 若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
 
-> **注意：**請確定為 HLSL 編譯器設定正確的目標功能層級：在 Visual Studio 中使用滑鼠右鍵按一下 HLSL 來源檔、選取 [屬性]，然後在 [HLSL 編譯器] -&gt; [一般]**** 下方變更 [著色器模型]**** 設定。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
+> 注意：請確定為 HLSL 編譯器設定正確的目標功能層級：在 Visual Studio 中使用滑鼠右鍵按一下 HLSL 來源檔、選取 \[屬性\]，然後在 \[HLSL 編譯器\] - \[一般\] 下方變更 \[著色器模型\] 設定。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
 
  
 
@@ -488,6 +492,7 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

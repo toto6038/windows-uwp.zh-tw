@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 開發跨平台 app 時有哪些選擇？
-title: 選取 iOS 和 UWP app 開發的方式
+description: "開發跨平台 app 時有哪些選擇？"
+title: "選取 iOS 和 UWP app 開發的方式"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
+
 ---
 
 # 選取 iOS 和 UWP app 開發的方式
@@ -91,6 +95,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

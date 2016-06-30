@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。
+Description: "使用 RichTextBlock 搭配 RichTextBlockOverflow 元素來建立進階文字配置。"
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a
+
 ---
 # RTF 區塊
 RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援段落、內嵌的 UI 元素或複雜的文字配置時，可以使用 RTF 區塊。
@@ -148,6 +152,7 @@ RichTextBlock 支援：
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

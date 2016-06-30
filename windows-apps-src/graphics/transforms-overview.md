@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "轉換概觀"
 description: "了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段&amp;\\#160;API 中使用轉換。"
-ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
-ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ---
 
@@ -60,7 +60,7 @@ ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
 ## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>以動畫顯示轉換
 
 [
-            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 物件可以用動畫顯示。 若要以動畫顯示 **Transform**，請將相容類型的動畫套用到您想要以動畫顯示的屬性。 因為所有轉換屬性都是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 類型，這通常表示您正使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) 物件定義動畫。 影響用於 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值之轉換的動畫並不會被視為相依式動畫，即使它們的持續時間並不為零也一樣。 如需有關相依式動畫的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
+            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 物件可以用動畫顯示。 若要以動畫顯示 **Transform**，請將相容類型的動畫套用到您想要以動畫顯示的屬性。 因為所有轉換屬性都是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 類型，這通常表示您正使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) 物件定義動畫。 影響用於 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值之轉換的動畫並不會被視為相依式動畫，即使它們的持續時間並不為零也一樣。 如需有關相依式動畫的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
 如果您的動畫屬性會產生在純視覺外觀上轉換的類似效果，例如以動畫顯示 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 與 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 而不套用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，則這類動畫幾乎一律會視為相依式動畫。 您將必須啟用動畫，而該動畫可能會有明顯的效能問題，尤其是當您嘗試在以動畫顯示物件時支援使用者互動的情況中。 基於該理由，建議使用轉換並以動畫顯示，而不要以動畫顯示動畫會被視為相依式動畫的任何其他屬性。
 
@@ -146,6 +146,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,13 +1,17 @@
 ---
 author: jnHs
-Description: 您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。
-title: 應用程式宣告
+Description: "您可以在提交程序中，於 \\[應用程式內容\\] 頁面的 \\[應用程式宣告\\] 區段中，提供關於 app 的其他資訊。"
+title: "應用程式宣告"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+
 ---
 
 # 應用程式宣告
 
-您可以在[提交程序](app-submissions.md)中，於 [應用程式內容]**** 頁面的 [應用程式宣告]**** 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
+您可以在提交程序中，於 \[應用程式內容\] 頁面的 \[應用程式宣告\] 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
 
 下列各節說明每個宣告，以及您在決定每個宣告是否適合 app 時應考量的事項。
 
@@ -62,6 +66,7 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

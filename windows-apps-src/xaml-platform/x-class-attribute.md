@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
-title: x&#58;Class 屬性
+description: "設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。"
+title: "x&#58;Class 屬性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+
 ---
 
 # x&#58;Class 屬性
@@ -29,7 +33,7 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 ## 備註
 
-**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 [**頁面**] 建置動作編譯的 XAML 檔案在頁面根目錄或應用程式根目錄以外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
+**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 \[頁面\] 建置動作編譯的 XAML 檔案在頁面根目錄或應用程式根目錄以外的任何元素中宣告 x:Class，會導致編譯時期錯誤。
 
 做為 **x:Class** 的類別不可以是巢狀類別。
 
@@ -41,6 +45,7 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: 組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作
-description: Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。
+title: "組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作"
+description: "Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+
 ---
 # 組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作
 
@@ -265,6 +269,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

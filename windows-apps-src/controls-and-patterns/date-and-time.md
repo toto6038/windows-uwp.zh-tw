@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 日期和時間控制項可讓您檢視並設定日期和時間。 此文章提供設計指導方針，並協助您挑選適當的控制項。
-title: 日期和時間控制項的指導方針
+Description: "日期和時間控制項可讓您檢視並設定日期和時間。 此文章提供設計指導方針，並協助您挑選適當的控制項。"
+title: "日期和時間控制項的指導方針"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
+
 ---
 
 # 行事曆、日期和時間控制項
@@ -110,6 +114,7 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 - [**TimePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: 了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML app 使用 AdControl 類別來顯示橫幅廣告。
-title: HTML 5 和 Javascript 中的 AdControl
+description: "了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML app 使用 AdControl 類別來顯示橫幅廣告。"
+title: "HTML 5 和 Javascript 中的 AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+
 ---
 
 # HTML 5 和 Javascript 中的 AdControl
@@ -25,23 +29,23 @@ title: HTML 5 和 Javascript 中的 AdControl
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 [任何 CPU]****，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]****)。 如果專案的目標是 [任何 CPU]****，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 \[任何 CPU\]，請將您的專案更新成使用架構特定的建置輸出 (例如，\[x86\])。 如果專案的目標是 \[任何 CPU\]，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱專案中因目標為 \[任何 CPU\] 所造成的參考錯誤。
 
-3.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
+3.  在 \[方案總管\] 視窗中的 \[參考\] 上按一下滑鼠右鍵，然後選取 \[加入參考\]。
 
-4.  在 [參考管理員]**** 中，根據您的專案類型選取下列其中一項參考︰
+4.  在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]****，按一下 [擴充功能]****，然後選取 [適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)]**** 旁邊的核取方塊。
+    -   對於通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]，按一下 \[擴充功能\]，然後選取 \[適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)\] 旁邊的核取方塊。
 
-    -   對於 Windows 8.1 專案：展開 [Windows 8.1]****，按一下 [擴充功能]****，然後選取 [適用於 Windows 8.1 Native 的 Microsoft Advertising SDK (JS)]**** 旁邊的核取方塊。
+    -   對於 Windows 8.1 專案：展開 \[Windows 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows 8.1 Native 的 Microsoft Advertising SDK (JS)\] 旁邊的核取方塊。
 
-    -   對於 Windows 8.1 專案：展開 [Windows Phone 8.1]****，按一下 [擴充功能]****，然後選取 [Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)]**** 旁邊的核取方塊。
+    -   對於 Windows 8.1 專案：展開 \[Windows Phone 8.1\]，按一下 \[擴充功能\]，然後選取 \[Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)\] 旁邊的核取方塊。
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
     > **注意** 這個影像是 Visual Studio 2015 建置適用於 Windows 10 的 UWP 專案。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的 app，則畫面看起來會不同。
 
-5.  在 [參考管理員]**** 中，按一下 [確定]。
+5.  在 \[參考管理員\] 中，按一下 \[確定\]。
 
 6.  開啟 default.html 檔案 (或其他 html 檔案，視您的專案而定)。
 
@@ -80,7 +84,7 @@ title: HTML 5 和 Javascript 中的 AdControl
 ## 使用 Windows 開發人員中心發行包含即時廣告的 App
 
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 \[營利\]\[利用廣告營利\] 頁面，並建立獨立的 Microsoft Advertising 單位。 單位類型請選取 \[橫幅\]。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -128,6 +132,7 @@ title: HTML 5 和 Javascript 中的 AdControl
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

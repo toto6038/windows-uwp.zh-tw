@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。
-title: Windows Phone Silverlight 和 UWP 命名空間與類別對應
+description: "本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。"
+title: "Windows Phone Silverlight 和 UWP 命名空間與類別對應"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+
 ---
 
 # Windows Phone Silverlight 和 UWP 命名空間與類別對應
@@ -76,7 +80,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** 類別 | [
             **ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) 類別 |
 | 控制項和 UI 基礎結構 | |
-| **ControlTiltEffect.TiltEffect** 類別 | 來自 Windows 執行階段動畫庫的動畫會內建至通用控制項的預設「樣式」中。 請參閱[動畫](wpsl-to-uwp-porting-xaml-and-ui.md#animation) |
+| **ControlTiltEffect.TiltEffect** 類別 | 來自 Windows 執行階段動畫庫的動畫會內建至通用控制項的預設「樣式」中。 請參閱[動畫](wpsl-to-uwp-porting-xaml-and-ui.md#animation)。 |
 | **Microsoft.Phone.Controls** 命名空間 | [
             **Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空間 |
 | (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** 類別 | [
@@ -108,7 +112,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 命名空間 | 沒有直接的對等項目 |
 | **Microsoft.Phone.Globalization** 命名空間 | 沒有直接的對等項目 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 類別 | [
-            **EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 類別。 如需更多詳細資料，請參閱[裝置狀態](wpsl-to-uwp-input-and-sensors.md#device-status) | 
+            **EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 類別。 如需更多詳細資料，請參閱[裝置狀態](wpsl-to-uwp-input-and-sensors.md#device-status)。 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** 類別 | 沒有直接的對等項目 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** 類別 | [
             **AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) 類別 | 
@@ -120,8 +124,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空間 | 
 | **System.Windows.Controls.DrawingSurface**、**DrawingSurfaceBackgroundGrid** 類別 | [
             **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 類別 | 
-| **System.Windows.Controls.RichTextBox** 類別 | [
-            **RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 類別 | 
+| **System.Windows.Controls.RichTextBox** 類別 | [ **RichEditBox** ](https://msdn.microsoft.com/library/windows/apps/br227548) 類別 | 
 | **System.Windows.Controls.WrapPanel** 類別 | 沒有針對一般配置目的的直接對等項目。 [
             **ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) 可以用在項目控制項的項目面板範本中。 | 
 | **System.Windows.Controls.Primitives** 命名空間 | [
@@ -168,11 +171,9 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 屬性 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 屬性 |
 | 圖形和動畫 | |
-| **Microsoft.Xna.Framework.\*** 命名空間、[XNA Framework 類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 搭配 C++。 請參閱[開發遊戲](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871) |
-| **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別 |
-| **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 類別 |
+| **Microsoft.Xna.Framework.\*** 命名空間、[XNA Framework 類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 搭配 C++。 請參閱[開發遊戲](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
+| **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [ **MediaCapture** ](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 |
+| **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926)類別 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空間 | (WPS = **Windows.Phone.System**) <br/> [
             **WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空間 |
 | **Microsoft.Xna.Framework.GamerServices.Guide** 類別 | 沒有直接的對等項目 | 
@@ -180,15 +181,14 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別 |
 | **Microsoft.Xna.Framework.Input.Touch.TouchPanel** 類別 | [
             **GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) 類別 |
-| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**、**MXFM.PhoneExtensions.MediaLibraryExtensions** 類別 | [
+| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** 類別 | [
             **KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 類別 |
 | **Microsoft.Xna.Framework.Media.MediaQueue** 類別 | [
             **SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別 |
 | **Microsoft.Xna.Framework.Media.Playlist** 類別 | [
             **BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) 類別 |
-| **System.Windows.Media** 命名空間 | [
-            **Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 命名空間 |
-| **System.Windows.Media.RadialGradientBrush** 類別 | 沒有直接的對等項目。 請參閱[媒體和圖形](wpsl-to-uwp-porting-xaml-and-ui.md#media) |
+| **System.Windows.Media** 命名空間 | [ **Windows.UI.Xaml.Media** ](https://msdn.microsoft.com/library/windows/apps/br243045)  命名空間 |
+| **System.Windows.Media.RadialGradientBrush** 類別 | 沒有直接的對等項目。 請參閱[媒體和圖形](wpsl-to-uwp-porting-xaml-and-ui.md#media)。 |
 | **System.Windows.Media.Animation** 命名空間 | [
             **Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 命名空間 |
 | **System.Windows.Media.Effects** 命名空間 | 沒有直接的對等項目 | 
@@ -196,8 +196,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空間 |
 | **System.Windows.Media.Media3D** 命名空間 | [
             **Windows.UI.Xaml.Media.Media3D**](https://msdn.microsoft.com/library/windows/apps/br243274) 命名空間 |
-| **System.Windows.Shapes** 命名空間 | [
-            **Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 命名空間 |
+| **System.Windows.Shapes** 命名空間 | [ **Windows.UI.Xaml.Shapes** ](https://msdn.microsoft.com/library/windows/apps/br243401) namespace |
 | 啟動程式與選擇器 | |
 | **Microsoft.Phone.Tasks.AddressChooserTask**、**EmailAddressChooserTask**、**PhoneNumberChooserTask** 類別 | [
             **ContactPicker**](https://msdn.microsoft.com/library/windows/apps/br224913) 類別 |
@@ -225,7 +224,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | **Microsoft.Phone.Tasks.SaveRingtoneTask** 類別 | 沒有直接的對等項目 | 
 | **Microsoft.Phone.Tasks.ShareLinkTask**、**ShareMediaTask**、**ShareStatusTask** 類別 | [
             **DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) 類別 |
-| 位置 | |
+| 定位 | |
 | **System.Device.Location** 命名空間 | [
             **Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空間 |
 | **System.Device.GeoCoordinateWatcher** 類別 | [
@@ -251,8 +250,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | **Microsoft.Phone.Marketplace** 命名空間 | [
             **Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) 命名空間 |
 | 媒體 | |
-| **Microsoft.Phone.Media** 命名空間 | [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 類別 |
+| **Microsoft.Phone.Media** 命名空間 | [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926)類別 |
 | 網路功能 | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 類別 | [
             **Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113)、[**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 類別
@@ -266,8 +264,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 類別 | 沒有直接的對等項目 | 
 | **Microsoft.Phone.Networking.Voip** 命名空間 | 沒有直接的對等項目 | 
 | **System.Net.CookieCollection** 類別 | 仍受支援，但缺少某些屬性 (例如 IsReadOnly) |
-| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 衍生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) 以測量進度。 |
+| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [ **HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)) 衍生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) 以測量進度。 |
 | **System.Net.DnsEndPoint**、**IPAddress** 類別 | 這些類別仍受支援，但缺少某些屬性。 或者，移植到 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別。 |
 | **System.Net.HttpUtility** 類別 | [
             **HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) 類別 |
@@ -309,10 +306,10 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | 反應擴充功能 | |
 | **Microsoft.Phone.Reactive** 命名空間 | 沒有直接的對等項目 | 
 | 反映 | |
-| **System.Type** 類別 | **System.Reflection.TypeInfo** 類別。 請參閱 [.NET Framework 中適用於 Windows 市集 App 的反映](https://msdn.microsoft.com/library/hh535795.aspx) |
+| **System.Type** 類別 | **System.Reflection.TypeInfo** 類別。 請參閱 [.NET Framework 中適用於 Windows 市集 App 的反映](https://msdn.microsoft.com/library/hh535795.aspx)。 |
 | 資源 | |
 | **System.Resources.ResourceManager** 類別 | (WA = **Windows.ApplicationModel**)<br/>[
-            **WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 命名空間、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 類別。 請參閱[在 Windows 執行階段 app 中建立及擷取資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx) |
+            **WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 命名空間、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 類別。 請參閱[在 Windows 執行階段 app 中建立及擷取資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx)。 |
 | 防護晶片 | |
 | (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** 類別 | [
             **SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/dn608002) 類別 |
@@ -372,10 +369,11 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | (SX = **System.Xml**) | **SX.XmlConvert.ToDateTimeOffset** 方法 |
  
 
-下一個主題是[移植專案](wpsl-to-uwp-porting-to-a-uwp-project.md)
+下一個主題是[移植專案](wpsl-to-uwp-porting-to-a-uwp-project.md)。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。
-title: TemplateBinding 標記延伸
+description: "連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。"
+title: "TemplateBinding 標記延伸"
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1a8006e58391c41568731810d9b1901474e8d18f
+
 ---
 
 # {TemplateBinding} 標記延伸
@@ -59,6 +63,7 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

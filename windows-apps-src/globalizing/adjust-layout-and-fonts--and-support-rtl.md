@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 開發您的 app 以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
-title: 調整配置和字型並支援 RTL
+Description: "開發您的 app 以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。"
+title: "調整配置和字型並支援 RTL"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+
 ---
 
 # 調整配置和字型並支援 RTL
@@ -115,6 +119,7 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

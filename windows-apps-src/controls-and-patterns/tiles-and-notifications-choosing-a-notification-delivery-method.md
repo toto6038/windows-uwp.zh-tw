@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本文涵蓋四個通知選項&amp;\#8212;本機、排程、定期和推播&amp;\#8212;，它們會傳遞磚和徽章更新及快顯通知內容。
-title: 選擇通知傳遞方法
+Description: "本文涵蓋四個通知選項&amp;\\#8212;本機、排程、定期和推播&amp;\\#8212;，它們會傳遞磚和徽章更新及快顯通知內容。"
+title: "選擇通知傳遞方法"
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+
 ---
 
 # 選擇通知傳遞方法
@@ -167,6 +171,7 @@ App 可以使用四種機制來傳遞通知：
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

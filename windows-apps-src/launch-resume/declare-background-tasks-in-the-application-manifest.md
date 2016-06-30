@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 在 app 資訊清單中宣告背景工作
-description: 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
+author: TylerMSFT
+title: "在 app 資訊清單中宣告背景工作"
+description: "在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+
 ---
 
 # 在應用程式資訊清單中宣告背景工作
@@ -149,6 +152,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。
-title: 進度控制項的指導方針
+Description: "進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。"
+title: "進度控制項的指導方針"
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 8a03ca36f6e306a03e8aec7b46e51bfff0079bf5
+
 ---
 # 進度控制項
 
@@ -298,6 +302,7 @@ stackPanel1.Children.Add(progressRing1);
 - [如何為 Windows Phone 建立自訂不確定的進度列](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

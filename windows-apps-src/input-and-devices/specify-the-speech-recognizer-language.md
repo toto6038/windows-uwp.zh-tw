@@ -5,8 +5,8 @@ title: "指定語音辨識器語言"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 8af4fe64e586037d68ab5cd422d7195bd3a64b94
 
 ---
 
@@ -42,7 +42,7 @@ ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
 
 如需有關設計既實用又吸引人且支援語音之應用程式的有用提示，請參閱[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
-## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>識別預設語言
+## 識別預設語言
 
 
 語音辨識器會使用系統語音功能的語言，做為其預設的辨識語言。 這個語言是由使用者在裝置的 \[設定\]  \[系統\]  \[語音\]  \[語音功能的語言\] 畫面上所設定。
@@ -56,7 +56,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>確認已安裝的語言
+## 確認已安裝的語言
 
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
@@ -75,14 +75,14 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
               **SupportedGrammarLanguages**
             ](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
 
-## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>指定語言
+## 指定語言
 
 
 若要指定語言，請傳遞 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 建構函式中的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件。
 
 我們將在此處指定 "en-US" 做為辨識語言。
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -98,7 +98,7 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>備註
+## 備註
 
 
 您可以藉由將 [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) 新增到 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 的 [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 集合，然後呼叫 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240)，來設定主題限制式。 如果辨識器不是使用支援的主題語言來初始化，即會傳回 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)。
@@ -107,7 +107,7 @@ var recognizer = new SpeechRecognizer(language);
 
 SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) 類別呈現的開放式標準 XML 格式。 與自訂清單不同，您可以在 SRGS 標記中指定文法的語言。 如果辨識器不會初始化為與 SRGS 標記相同的語言，則 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 會失敗並產生 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)。
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 **開發人員**
@@ -128,6 +128,6 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

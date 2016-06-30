@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。
-title: UWP 應用程式中以邊緣為基礎的 UI 動畫
+Description: "以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。"
+title: "UWP 應用程式中以邊緣為基礎的 UI 動畫"
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1be51a8ff4a63f32834c7eb04b70d17dc41de13b
+
 ---
 
 # 以邊緣為基礎的 UI 動畫
@@ -55,6 +59,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

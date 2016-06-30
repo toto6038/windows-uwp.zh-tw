@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: 在 Microsoft Store Engagement and Monetization SDK 中檢閱 Microsoft Advertising 程式庫的版本資訊。
-title: Microsoft Advertising 程式庫的版本資訊
+description: "在 Microsoft Store Engagement and Monetization SDK 中檢閱 Microsoft Advertising 程式庫的版本資訊。"
+title: "Microsoft Advertising 程式庫的版本資訊"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+
 ---
 
 # Microsoft Advertising 程式庫的版本資訊
@@ -17,7 +21,7 @@ title: Microsoft Advertising 程式庫的版本資訊
 
 Microsoft advertising 程式庫是做為 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) 的一部分來提供使用。 針對 Windows Phone 8.x Silverlight 以外的所有專案類型，曾用來在較舊的 Microsoft Universal Ad Client SDK 及 Microsoft Advertising SDK 獨立版本中發佈的 Microsoft Advertising 組件，現在會利用 Microsoft Store Engagement and Monetization SDK 進行安裝。 如需有關如何安裝的 SDK，而且包含在它的程式庫的詳細資訊，請參閱[安裝 Microsoft Advertising 程式庫](install-the-microsoft-advertising-libraries.md)。
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]****  > [加入已連接服務]****  > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 Microsoft Store Engagement and Monetization SDK，在 Visual Studio 中開啟您的專案，然後移至 \[專案\]\[加入已連接服務\]\[Ad Mediator\] 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## 了解 Microsoft Advertising 程式庫和廣告流量分配之間的差異
 
@@ -29,7 +33,7 @@ Microsoft advertising 程式庫是做為 [Microsoft Store Engagement and Monetiz
 
 ## 目標架構特定的建置輸出
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU]**** 為目標。 如果專案的目標是 [任何 CPU]****，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\] 為目標。 如果專案的目標是 \[任何 CPU\]，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
 
 ## C++ 支援
 
@@ -52,6 +56,7 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

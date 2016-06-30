@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 您可以將客戶連結到您 app 的市集清單頁面來協助客戶發現該 app。
-title: 連結至您的 app
+Description: "您可以將客戶連結到您 app 的市集清單頁面來協助客戶發現該 app。"
+title: "連結至您的 app"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
+translationtype: Human Translation
+ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
+ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
+
 ---
 
 # 連結至您的 app
@@ -13,9 +17,9 @@ ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ## 取得您的 app 市集清單的連結
 
 
-您可以在儀表板中每個 app 的 [應用程式管理]**** 區段中 [[應用程式身分識別](view-app-identity-details.md)] 頁面上找到連至您 app 市集清單的連結。
+您可以在儀表板中每個 app 的 \[應用程式管理\] 區段中 \[應用程式身分識別\] 頁面上找到連至您 app 市集清單的連結。
 
-這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
+這個連結的格式為 。
 
 當客戶按一下此連結時，會開啟您 app 的網頁清單頁面。 如果您的 app 適用於客戶的裝置，市集 app 也會啟動並顯示您的 app 清單。
 
@@ -28,7 +32,7 @@ ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 
 您可以使用自訂的徽章直接連結到您的 app 清單，讓客戶知道您的 app 位於 Windows 市集中。
 
-若要建立您的徽章，請瀏覽 [Windows 市集徽章](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 若要使用此表格，您需要有您 app 的市集識別碼，才能產生徽章與連結。 此識別碼是 [應用程式管理]**** 區段中 [[應用程式身分識別](view-app-identity-details.md)] 頁面上顯示的 **Windows 10 的 URL** 的最後 12 個字元。
+若要建立您的徽章，請瀏覽 [Windows 市集徽章](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 若要使用此表格，您需要有您 app 的市集識別碼，才能產生徽章與連結。 此識別碼是 \[應用程式管理\] 區段中 \[應用程式身分識別\] 頁面上顯示的 Windows 10 的 URL 的最後 12 個字元。
 
 > **注意** 如需使用 Windows 市集徽章的詳細資訊，請參閱 [app 行銷指導方針](app-marketing-guidelines.md)。
 
@@ -56,6 +60,7 @@ ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

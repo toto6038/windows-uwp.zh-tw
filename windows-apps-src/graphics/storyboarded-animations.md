@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: "腳本動畫"
 description: "腳本動畫不只是視覺意義上的動畫。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
 
 ---
 # 腳本動畫
@@ -226,7 +226,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
  
 
-直到為控制項視覺外觀宣告視覺狀態動畫之前，您也可以將動畫放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 單元內。 在該情況下，您定義的 **Storyboard** 元素會進入 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，它會在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 更深層巢狀中 (這是索引鍵資源 **Style**)。 在這種情況下，您的 **Storyboard** 不需要索引鍵或名稱，因為它是 **VisualState**，具有 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 可以叫用的目標名稱。 控制項的樣式通常會分到不同的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 檔案中，而不是放置在頁面或應用程式 **Resources** 集合內。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
+直到為控制項視覺外觀宣告視覺狀態動畫之前，您也可以將動畫放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 單元內。 在該情況下，您定義的 **Storyboard** 元素會進入 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，它會在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 更深層巢狀中 (這是索引鍵資源 **Style**)。 在這種情況下，您的 **Storyboard** 不需要索引鍵或名稱，因為它是 **VisualState**，具有 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 可以叫用的目標名稱。 控制項的樣式通常會分到不同的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 檔案中，而不是放置在頁面或應用程式 **Resources** 集合內。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 ## 相依式和獨立式動畫
 
@@ -309,11 +309,11 @@ myStoryBoard.Begin()
 
 ### 視覺狀態的動畫
 
-用來定義控制項視覺狀態的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的執行行為和應用程式直接執行腳本的方式有所不同。 就像套用到 XAML 的視覺狀態定義，**Storyboard** 是包含 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，而整體狀態是使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) API 所控制。 其中的所有動畫都會在控制項使用包含的 **VisualState** 時，根據它們的動畫值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 屬性執行。 如需詳細資訊，請參閱[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 至於視覺狀態，顯示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 並不相同。 如果視覺狀態變更為其他狀態，即使新的視覺狀態並未特別將新動畫套用到屬性，仍會取消先前視覺狀態及其動畫所套用的所有屬性變更。
+用來定義控制項視覺狀態的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的執行行為和應用程式直接執行腳本的方式有所不同。 就像套用到 XAML 的視覺狀態定義，**Storyboard** 是包含 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，而整體狀態是使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 所控制。 其中的所有動畫都會在控制項使用包含的 **VisualState** 時，根據它們的動畫值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 屬性執行。 如需詳細資訊，請參閱[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 至於視覺狀態，顯示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 並不相同。 如果視覺狀態變更為其他狀態，即使新的視覺狀態並未特別將新動畫套用到屬性，仍會取消先前視覺狀態及其動畫所套用的所有屬性變更。
 
 ### **Storyboard** 和 **EventTrigger**
 
-有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
+有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
 
 ## 讓 XAML 附加屬性產生動畫效果
 
@@ -342,6 +342,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: 本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP Live Streaming (HLS) 與 Dynamic Adaptive Streaming over HTTP (DASH) 內容播放。
-title: 彈性資料流
+description: "本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP Live Streaming (HLS) 與 Dynamic Adaptive Streaming over HTTP (DASH) 內容播放。"
+title: "彈性資料流"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
+
 ---
 
 # 彈性資料流
@@ -58,6 +62,7 @@ title: 彈性資料流
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

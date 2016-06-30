@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果您先前在 Windows 或 Windows Phone 市集發行 App，Windows 10 裝置的客戶也可以取得這些 App。
-title: App 如何在市集中顯示給 Windows 10 客戶
+Description: "如果您先前在 Windows 或 Windows Phone 市集發行 App，Windows 10 裝置的客戶也可以取得這些 App。"
+title: "App 如何在市集中顯示給 Windows 10 客戶"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+
 ---
 
 # App 如何在市集中顯示給 Windows 10 客戶
@@ -63,7 +67,7 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 
 在許多情況下，app 和遊戲的新[類別和子類別](category-and-subcategory-table.md)看起來與先前作業系統版本市集中看到的一樣。 不過，有一些變更。 請檢閱下表，了解如何根據之前的類別，在針對 Windows 10 客戶的市集中對 app 進行分類。
 
-**注意** 當檢視您的提交之 [[app 內容](enter-app-properties.md)] 頁面中的 [[app 類別](category-and-subcategory-table.md)] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的 app。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
+注意 當檢視您的提交之 \[app 內容\] 頁面中的 \[app 類別\] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的 app。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
 
 
 **Windows Phone 應用程式的類別變更：**
@@ -117,6 +121,7 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 | 遊戲 &gt; 賽車           | 遊戲 &gt; 賽車 + 飛行           |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

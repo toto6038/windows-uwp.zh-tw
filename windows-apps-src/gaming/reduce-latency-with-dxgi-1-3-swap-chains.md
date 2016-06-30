@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 透過 DXGI 1.3 交換鏈結減少延遲
-description: 使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。
+title: "透過 DXGI 1.3 交換鏈結減少延遲"
+description: "使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。"
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+
 ---
 
 # 透過 DXGI 1.3 交換鏈結減少延遲
@@ -158,6 +162,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

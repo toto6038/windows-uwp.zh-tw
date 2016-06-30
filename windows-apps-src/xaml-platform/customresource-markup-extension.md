@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。
-title: CustomResource 標記延伸
+description: "透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。"
+title: "CustomResource 標記延伸"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
+
 ---
 
 # {CustomResource} 標記延伸
@@ -47,6 +51,7 @@ Windows 執行階段 XAML 剖析器只要在標記中遇到使用 `{CustomResour
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

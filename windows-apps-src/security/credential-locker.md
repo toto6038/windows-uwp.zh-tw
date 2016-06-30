@@ -1,8 +1,12 @@
 ---
-title: 認證保險箱
-description: 本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。
+title: "認證保險箱"
+description: "本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
+
 ---
 
 # 認證保險箱
@@ -127,6 +131,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 
 請勿使用應用程式資料或漫遊設定儲存純文字形式的認證。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

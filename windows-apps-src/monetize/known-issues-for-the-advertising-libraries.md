@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: 了解 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。
-title: Microsoft Advertising 程式庫的已知問題
+description: "了解 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。"
+title: "Microsoft Advertising 程式庫的已知問題"
+translationtype: Human Translation
+ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
+ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+
 ---
 
 # Microsoft Advertising 程式庫的已知問題
@@ -18,7 +22,7 @@ title: Microsoft Advertising 程式庫的已知問題
 
 ## Windows Phone 8.x Silverlight 專案
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]****  > [加入已連接服務]****  > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 Microsoft Store Engagement and Monetization SDK，在 Visual Studio 中開啟您的專案，然後移至 \[專案\]\[加入已連接服務\]\[Ad Mediator\] 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## AdControl 介面於 XAML 中為未知
 
@@ -30,7 +34,7 @@ title: Microsoft Advertising 程式庫的已知問題
 
 ## 手機上的插入式廣告和瀏覽按鈕
 
-在具有軟體 [返回]****、[開始]**** 及 [搜尋]**** 按鈕的手機 (或模擬器) 上，插入式廣告影片的倒數計時器和點選按鈕可能會被遮住。
+在具有軟體 \[返回\]、\[開始\] 及 \[搜尋\] 按鈕的手機 (或模擬器) 上，插入式廣告影片的倒數計時器和點選按鈕可能會被遮住。
 
 ## 最近建立的廣告未被提供到您的 App
 
@@ -46,7 +50,7 @@ title: Microsoft Advertising 程式庫的已知問題
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://go.microsoft.com/fwlink/p/?LinkId=331508)。 在該頁面上，請選擇 [App 內廣告]****。
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://go.microsoft.com/fwlink/p/?LinkId=331508)。 在該頁面上，請選擇 \[App 內廣告\]。
 
 您也可以在[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
 
@@ -58,7 +62,7 @@ title: Microsoft Advertising 程式庫的已知問題
 
 * 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
 
-當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 [作用中並正在提供測試廣告]****。 目前這並不適用於手機 App。
+當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 \[作用中並正在提供測試廣告\]。 目前這並不適用於手機 App。
 
 ## 廣告單位識別碼和應用程式識別碼的過時測試值已無法運作
 
@@ -72,13 +76,13 @@ title: Microsoft Advertising 程式庫的已知問題
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## 專案中因目標為 [任何 CPU] 所造成的參考錯誤
+## 專案中因目標為 \[任何 CPU\] 所造成的參考錯誤
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU]**** 為目標。 如果您的專案以 [任何 CPU]**** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\] 為目標。 如果您的專案以 \[任何 CPU\] 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員]**** 來針對偵錯和發行組態設定平台目標。
+如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 \[組態管理員\] 來針對偵錯和發行組態設定平台目標。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
@@ -105,13 +109,14 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 ## 支援
 
 
-若要針對 Microsoft Advertising 程式庫的問題連絡產品支援，請造訪[支援頁面](https://go.microsoft.com/fwlink/p/?LinkId=331508)並選擇 [App 內廣告]****。
+若要針對 Microsoft Advertising 程式庫的問題連絡產品支援，請造訪支援頁面並選擇 \[App 內廣告\]。
 
  
 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

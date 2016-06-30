@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 使用 Visual Studio
-title: 使用 Visual Studio
+description: "使用 Visual Studio"
+title: "使用 Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
+
 ---
 
 # 開始使用：使用 Visual Studio
@@ -41,7 +45,7 @@ Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .
 
 讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 \[**標題**\] 欄位中的值。
 
-使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱]**** 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
+使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 \[名稱\] 值從 \[No Name\] 變更為 \[myButton\] 來更新按鈕控制項的名稱，如下所示：
 
 ![Visual Studio 中的按鈕屬性視窗](images/ios-to-uwp/vs-button-properties.png)
 
@@ -87,7 +91,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 1.  點選 MainPage.xaml 檔案索引標籤。
 2.  在 \[**設計**\] 窗格中，點選 \[**TextBlock**\] 控制項。
 3.  在 \[**屬性**\] 窗格中，點選扳手按鈕以顯示其屬性。
-4.  在 [名稱]**** 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
+4.  在 \[名稱\] 方塊中，將 No Name 變更為 myLabel。
 
 ![Visual Studio 中的標籤屬性視窗](images/ios-to-uwp/vs-label-properties.png)
 
@@ -113,7 +117,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 ![第一個逐步解說的執行結果：Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
-若要退出 app，請返回 Visual Studio，點選\ [**偵錯**\] 功能表，然後點選 **停止偵錯** \(或是直接按下 SHIFT + F5\)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
+若要退出 app，請返回 Visual Studio，點選\ \[偵錯\] 功能表，然後點選 停止偵錯 \(或是直接按下 SHIFT + F5\)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
 
 ## 下一步
 
@@ -121,6 +125,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

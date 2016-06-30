@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: 在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。
-title: 取得應用程式評分
+description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
+title: "取得應用程式評分"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
+
 ---
 
 # 取得應用程式評分
@@ -63,7 +66,7 @@ title: 取得應用程式評分
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字串</td>
-<td align="left">您想要擷取評分資料之 app 的產品識別碼。 產品識別碼內嵌於 app 的刊登連結，該連結可於開發人員中心儀表板的 [App 識別碼頁面](https://msdn.microsoft.com/library/windows/apps/mt148561)上取得。 舉例來說，產品識別碼可以是 9WZDNCRFJ3Q8。</td>
+<td align="left">您想要擷取評分資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -184,7 +187,7 @@ title: 取得應用程式評分
 
 ### 要求範例
 
-下列範例示範取得評分資料的數個要求。 將 *applicationId* 值以您 app 的產品識別碼取代。
+下列範例示範取得評分資料的數個要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -213,7 +216,7 @@ Authorization: Bearer <your access token>
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 日期            | 字串  | 評分資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId   | 字串  | 您正在擷取評分資料之 app 的產品識別碼。                                                                                                                                                                 |
+| applicationId   | 字串  | 您正在擷取評分資料之 app 的市集識別碼。                                                                                                                                                                 |
 | applicationName | 字串  | App 的顯示名稱。                                                                                                                                                                                                         |
 | market          | 字串  | 提交評分之市場的 ISO 3166 國家/地區碼。                                                                                                                                                              |
 | osVersion       | 字串  | 提交評分的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                               |
@@ -251,7 +254,7 @@ Authorization: Bearer <your access token>
   ],
   "@nextLink": "ratings?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 15242
-} 
+}
 
 ```
 
@@ -265,7 +268,6 @@ Authorization: Bearer <your access token>
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

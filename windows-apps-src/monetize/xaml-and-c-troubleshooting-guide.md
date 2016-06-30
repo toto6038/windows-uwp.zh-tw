@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: 深入了解在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
-title: XAML 和 C# 的疑難排解指南
+description: "深入了解在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
+title: "XAML 和 C# 的疑難排解指南"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+
 ---
 
 # XAML 和 C# 的疑難排解指南
@@ -33,7 +37,7 @@ title: XAML 和 C# 的疑難排解指南
 <span id="xaml-notappearing"/>
 ### 沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 \[網際網路 (用戶端)\] 功能。
 
 2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
@@ -161,7 +165,7 @@ title: XAML 和 C# 的疑難排解指南
 <span id="csharp-adcontrolnotappearing"/>
 ### 沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 \[網際網路 (用戶端)\] 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
@@ -335,6 +339,7 @@ title: XAML 和 C# 的疑難排解指南
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

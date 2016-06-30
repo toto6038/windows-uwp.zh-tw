@@ -1,7 +1,11 @@
 ---
-title: 使用隨附 (IoT) 裝置的 Windows 解除鎖定
-description: 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過隨附裝置架構，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。
+title: "使用隨附 (IoT) 裝置的 Windows 解除鎖定"
+description: "隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過隨附裝置架構，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: a6265ca66a1a9d729465845da1014d1aff0e7d4d
+ms.openlocfilehash: 18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1
+
 ---
 # 使用隨附 (IoT) 裝置的 Windows 解除鎖定
 
@@ -38,7 +42,7 @@ author: awkoren
 
 - 適用於隨附裝置的[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) 隨附裝置 app 可從 Windows app 市集下載。 
 - 能夠在隨附裝置上建立兩個 256 位元的 HMAC 金鑰，並使用它 (使用 SHA-256) 來產生 HMAC。
-- 正確設定 Windows 10 Desktop 上的安全性設定。 隨附驗證服務需要先設定這個 PIN，才能將任何隨附裝置插入它。 使用者必須透過 [設定] &gt; [帳戶] &gt; [登入選項] 來設定 PIN。
+- 正確設定 Windows 10 Desktop 上的安全性設定。 隨附驗證服務需要先設定這個 PIN，才能將任何隨附裝置插入它。 使用者必須透過 \[設定\] &gt; \[帳戶\] &gt; \[登入選項\] 來設定 PIN。
 
 除了上述需求，隨附裝置 app 還需負責︰
 
@@ -140,7 +144,7 @@ Windows 10 提供新的認證提供者來處理所有隨附裝置。
 
 ### PIN 管理
 
-您必須先在 Windows 10 Desktop 裝置上設定 PIN，才能使用隨附裝置。 這可確保使用者在發生隨附裝置無法運作的情況下會有備份。 該 PIN 是 Windows 所管理且 app 絕對不會看見的項目。 若要變更它，使用者可瀏覽至 [設定] &gt; [帳戶] &gt; [登入選項]。
+您必須先在 Windows 10 Desktop 裝置上設定 PIN，才能使用隨附裝置。 這可確保使用者在發生隨附裝置無法運作的情況下會有備份。 該 PIN 是 Windows 所管理且 app 絕對不會看見的項目。 若要變更它，使用者可瀏覽至 \[設定\] &gt; \[帳戶\] &gt; \[登入選項\]。
 
 ### 管理和原則
 
@@ -676,6 +680,7 @@ namespace SecondaryAuthFactorSample
 - 確認該使用者存在訊號可供使用。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

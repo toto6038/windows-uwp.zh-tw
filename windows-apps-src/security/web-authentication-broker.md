@@ -1,8 +1,12 @@
 ---
-title: Web 驗證代理人
-description: 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。
+title: "Web 驗證代理人"
+description: "本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。"
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+
 ---
 
 # Web 驗證代理人
@@ -12,7 +16,8 @@ author: awkoren
 
 
 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [
-            **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得說明 app 存取之提供者資源的存取權杖。
+              **AuthenticateAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得說明 app 存取之提供者資源的存取權杖。
 
 **注意** 如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
@@ -128,7 +133,7 @@ catch (Exception ex)
 
 ### 作業記錄
 
-通常您可以透過使用作業記錄來判斷哪裡出問題。 有一個專用的事件記錄檔通道 Microsoft-Windows-WebAuth\\Operational，可供網站開發人員了解 Web 驗證代理人如何處理他們的網頁。 如果要啟用作業記錄，請啟動 eventvwr.exe，然後啟用 [應用程式及服務\\Microsoft\\Windows\\WebAuth] 底下的 [作業] 記錄。 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
+通常您可以透過使用作業記錄來判斷哪裡出問題。 有一個專用的事件記錄檔通道 Microsoft-Windows-WebAuth\\Operational，可供網站開發人員了解 Web 驗證代理人如何處理他們的網頁。 如果要啟用作業記錄，請啟動 eventvwr.exe，然後啟用 \[應用程式及服務\\Microsoft\\Windows\\WebAuth\] 底下的 \[作業\] 記錄。 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
@@ -149,7 +154,21 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
 
 1.  由於 AuthHost 是在自己的 App 容器中執行以給予私人網路功能，因此您必須設定登錄機碼：Windows Registry Editor Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**
+            \\
+            **SOFTWARE**
+            \\
+            **Microsoft**
+            \\
+            **Windows NT**
+            \\
+            **CurrentVersion**
+            \\
+            **Image File Execution Options**
+            \\
+            **authhost.exe**
+            \\
+            **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -174,6 +193,7 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
 
 3.  將連入流量防火牆規則新增到 Fiddler。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

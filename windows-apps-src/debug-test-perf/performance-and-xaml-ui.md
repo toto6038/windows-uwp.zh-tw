@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
-title: 效能
-description: 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。
+title: "效能"
+description: "使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+
 ---
 # 效能
 
@@ -31,6 +35,7 @@ description: 使用者會期望其 app 保持回應性，並可自在地使用�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

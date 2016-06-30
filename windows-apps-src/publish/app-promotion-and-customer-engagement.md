@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 一旦 app 在 Windows 市集上架，就必須讓更多客戶看到您的 app。
-title: App 促銷與客戶參與
+Description: "一旦 app 在 Windows 市集上架，就必須讓更多客戶看到您的 app。"
+title: "App 促銷與客戶參與"
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
+
 ---
 
 # App 促銷與客戶參與
@@ -28,6 +32,7 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

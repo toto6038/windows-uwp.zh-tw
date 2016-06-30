@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: 選擇程式設計語言
+title: "選擇程式設計語言"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: 選擇程式設計語言
+description: "選擇程式設計語言"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+
 ---
 
 # 開始使用：選擇程式設計語言
@@ -140,6 +144,7 @@ C# 是個很容易學會的語言，而且內建許多構成 .NET 的支援類�
 [開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

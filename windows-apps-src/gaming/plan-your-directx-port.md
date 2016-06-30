@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 計劃 DirectX 移植
-description: 計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。
+title: "計劃 DirectX 移植"
+description: "計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+
 ---
 
 # 計劃 DirectX 移植
@@ -63,6 +67,7 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

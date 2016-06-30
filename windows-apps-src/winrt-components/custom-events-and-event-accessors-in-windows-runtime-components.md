@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: Windows 執行階段元件中的自訂事件和事件存取子
-description: 適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。
+author: msatranjr
+title: "Windows 執行階段元件中的自訂事件和事件存取子"
+description: "適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。"
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
+
 ---
 
 # Windows 執行階段元件中的自訂事件和事件存取子
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。 但是，當您在 Windows 執行階段元件中宣告自訂事件存取子時，必須遵循 UWP 中使用的模式。
 
@@ -32,9 +32,9 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
  
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
-> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>> 
+> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >     m_NumberChangedTokenTable = null;
-> 
+>
 > public event EventHandler<NumberChangedEventArgs> NumberChanged
 > {
 >     add
@@ -50,10 +50,10 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 >             .RemoveEventHandler(value);
 >     }
 > }
-> 
+>
 > internal void OnNumberChanged(int newValue)
 > {
->     EventHandler<NumberChangedEventArgs> temp = 
+>     EventHandler<NumberChangedEventArgs> temp =
 >         EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >         .GetOrCreateEventRegistrationTokenTable(ref m_NumberChangedTokenTable)
 >         .InvocationList;
@@ -66,21 +66,21 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 > ```vb
 > Private m_NumberChangedTokenTable As  _
 >     EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs))
-> 
+>
 > Public Custom Event NumberChanged As EventHandler(Of NumberChangedEventArgs)
-> 
+>
 >     AddHandler(ByVal handler As EventHandler(Of NumberChangedEventArgs))
 >         Return EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             AddEventHandler(handler)
 >     End AddHandler
-> 
+>
 >     RemoveHandler(ByVal token As EventRegistrationToken)
 >         EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             RemoveEventHandler(token)
 >     End RemoveHandler
-> 
+>
 >     RaiseEvent(ByVal sender As Class1, ByVal args As NumberChangedEventArgs)
 >         Dim temp As EventHandler(Of NumberChangedEventArgs) = _
 >             EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
@@ -126,6 +126,6 @@ Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

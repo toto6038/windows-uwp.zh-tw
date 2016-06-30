@@ -1,10 +1,14 @@
 ---
 author: PatrickFarley
-Description: '描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。'
-MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。"
+MS-HAID: dev\_devices\_sensors.generate\_3mf
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 產生 3MF 套件
+title: "產生 3MF 套件"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+
 ---
 
 # 產生 3MF 套件
@@ -74,7 +78,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ### 基本材質
 
-預設材質類型是 [**基本材質**]，其具有 [**色彩材質**] 值 (如下所述) 以及用來指定要使用的材質*類型*的 name 屬性。
+預設材質類型是 \[基本材質\]，其具有 \[色彩材質\] 值 (如下所述) 以及用來指定要使用的材質類型的 name 屬性。
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
@@ -113,7 +117,8 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 ## 元件和建置
 
 元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [
-            **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
+              **Printing3DComponent**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
 
 例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
 
@@ -141,6 +146,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

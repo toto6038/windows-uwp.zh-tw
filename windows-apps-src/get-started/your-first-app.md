@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: 建立您的第一個 App
-description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。
+title: "建立您的第一個 App"
+description: "這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+
 ---
 # 建立您的第一個 app
 
@@ -30,7 +34,7 @@ description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平�
 
 -   [適用於初學者的 C# 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
 -   [適用於初學者的 VB 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [適用於開始 Windows & Windows Phone App 的 XAML 深入探討](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [適用於開始 Windows &amp; Windows Phone App 的 XAML 深入探討](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
 ## Visual C++ 元件延伸 (C++/CX) 和 XAML 教學課程
 
@@ -41,7 +45,7 @@ description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平�
 我們假設您已經熟悉 XAML 和 C++。 如果您要了解基本知識，或者只是要重新整理您的記憶，請嘗試 [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916) 的這些課程。
 
 -   [C++：一般目的語言和程式庫開始](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [適用於開始 Windows & Windows Phone App 的 XAML 深入探討](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [適用於開始 Windows &amp; Windows Phone App 的 XAML 深入探討](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
 ## JavaScript 與 HTML 教學課程
 
@@ -69,6 +73,7 @@ description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

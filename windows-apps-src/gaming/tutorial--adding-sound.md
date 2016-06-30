@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 加入聲音
-description: 在這個步驟中，我們會檢視射擊遊戲範例如何使用XAudio2 API 來建立播放聲音的物件。
+title: "加入聲音"
+description: "在這個步驟中，我們會檢視射擊遊戲範例如何使用XAudio2 API 來建立播放聲音的物件。"
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+
 ---
 
 # 加入聲音
@@ -15,7 +19,7 @@ ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ## 目標
 
 
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 加入聲音輸出
+-   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 加入聲音輸出。
 
 在遊戲範例中，音訊物件和行為是在三個檔案中定義：
 
@@ -205,13 +209,13 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 
 1.  呼叫 [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) 來建立媒體來源讀取器 ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) 物件。
 2.  呼叫 [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) 來建立解碼音訊檔案的媒體類型 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850))。 這個方法會將解碼輸出指定為 PCM 音訊，它是 XAudio2 可以使用的音訊類型。
-3.  呼叫 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 來設定讀取器的解碼輸出媒體類型
+3.  呼叫 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 來設定讀取器的解碼輸出媒體類型。
 4.  建立 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 緩衝區，並複製在 [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) 物件上呼叫 [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 的結果。 在音訊檔案載入後，會格式化存放這個音訊檔案的緩衝區。
 5.  呼叫 [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) 來取得音訊串流的持續時間 (以秒為單位)，然後將持續時間轉換為位元組。
 6.  呼叫 [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) 將音訊檔案當作串流讀入。
 7.  將音訊範例緩衝區的內容複製到方法傳回的陣列。
 
-**SoundEffect::Initialize** 中最重要的事是從主播放聲音建立來源聲音物件 **m\_sourceVoice**。 我們會在從 **MediaReader::LoadMedia** 取得的聲音資料緩衝區實際播放使用來源聲音
+**SoundEffect::Initialize** 中最重要的事是從主播放聲音建立來源聲音物件 **m\_sourceVoice**。 我們會在從 **MediaReader::LoadMedia** 取得的聲音資料緩衝區實際播放使用來源聲音。
 
 範例遊戲會在初始化 **SoundEffect** 物件時呼叫這個方法，就像這樣：
 
@@ -298,7 +302,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-若要播放聲音，這個方法會使用來源聲音物件 **m\_sourceVoice**，以啟動播放聲音資料緩衝區 **m\_soundData**。 它會建立一個 [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228)，並對它提供一個聲音資料緩衝區的參考，然後再呼叫 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) 來提交它。 當聲音資料排入佇列時，**SoundEffect::PlaySound** 會呼叫 [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) 開始播放
+若要播放聲音，這個方法會使用來源聲音物件 **m\_sourceVoice**，以啟動播放聲音資料緩衝區 **m\_soundData**。 它會建立一個 [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228)，並對它提供一個聲音資料緩衝區的參考，然後再呼叫 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) 來提交它。 當聲音資料排入佇列時，**SoundEffect::PlaySound** 會呼叫 [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) 開始播放。
 
 現在只要子彈和目標發生撞擊，呼叫 **SoundEffect::PlaySound** 都會播放噪音。
 
@@ -559,6 +563,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

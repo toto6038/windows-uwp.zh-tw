@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 遊戲程式設計資源
-description: 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
+title: "遊戲程式設計資源"
+description: "如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。"
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
+
 ---
 
 # 遊戲程式設計資源
@@ -80,6 +84,7 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

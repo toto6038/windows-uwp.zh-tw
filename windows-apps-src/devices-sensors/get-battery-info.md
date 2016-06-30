@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-title: 取得電池資訊
-description: 了解如何使用 Windows.Devices.Power 命名空間中的 API 取得詳細的電池資訊。
+title: "取得電池資訊"
+description: "了解如何使用 Windows.Devices.Power 命名空間中的 API 取得詳細的電池資訊。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+
 ---
 # 取得電池資訊
 
@@ -20,7 +24,10 @@ description: 了解如何使用 Windows.Devices.Power 命名空間中的 API 取
 
 有些裝置有一個以上的電池，每個電池對裝置整體電源容量貢獻多少電力不一定顯而易見。 這時就需要使用 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 類別。 *彙總電池*代表所有連接到裝置的電池控制器，可以提供單一整體的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件。
 
-**注意** [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) 類別實際上對應到電池控制器。 根據裝置而定，控制器有時連接到實體電池，有時連接到裝置外殼。 因此，即使沒有電池，也有可能可以建立電池物件。 但有些時候，電池物件可能是 **Null**。
+**注意**
+            [
+              **Battery**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn895004) 類別實際上對應到電池控制器。 根據裝置而定，控制器有時連接到實體電池，有時連接到裝置外殼。 因此，即使沒有電池，也有可能可以建立電池物件。 但有些時候，電池物件可能是 **Null**。
 
 一旦您有彙總電池物件，請呼叫 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 取得對應的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
 
@@ -70,7 +77,8 @@ async private void RequestIndividualBatteryReports()
 ## 存取報告詳細資料
 
 [
-            **BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件提供許多電池資訊。 如需詳細資訊，請參閱 API 參考中的屬性：**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列舉)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 這個範例顯示基本電池 app (本主題稍後提供) 使用的一些電池報告屬性。
+              **BatteryReport**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件提供許多電池資訊。 如需詳細資訊，請參閱 API 參考中的屬性：**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列舉)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 這個範例顯示基本電池 app (本主題稍後提供) 使用的一些電池報告屬性。
 
 ```csharp
 ...
@@ -125,7 +133,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## 範例：基本電池 app
 
-在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 [新增專案]****，然後在 [Visual C# &gt; Windows &gt; 通用]**** 範本下，使用 [空白應用程式]**** 範本建立新的 app。
+在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 \[新增專案\]，然後在 \[Visual C#  Windows  通用\] 範本下，使用 \[空白應用程式\] 範本建立新的 app。
 
 接下來，開啟 **MainPage.xaml** 檔案，然後將以下的 XML 複製到這個檔案中 (取代原來的內容)。
 
@@ -327,7 +335,7 @@ namespace App1
 
 如果您的 app 名稱不是 **App1**，您需要將之前範例中的命名空間，重新命名為您的專案名稱。 例如，如果您建立名為 **BasicBatteryApp** 的專案，則應該將命名空間 `App1` 取代為命名空間 `BasicBatteryApp`。
 
-最後，若要執行此基本電池 app：在 [**偵錯**] 功能表中，按一下 [**開始偵錯**] 來測試方案。
+最後，若要執行此基本電池 app：在 \[偵錯\] 功能表中，按一下 \[開始偵錯\] 來測試方案。
 
 **提示** 若要從 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件接收數值，請在**本機電腦**或外部**裝置** (例如 Windows Phone) 偵錯您的 app。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
 
@@ -335,6 +343,7 @@ namespace App1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
-title: 類別與子類別表格
+Description: "將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。"
+title: "類別與子類別表格"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+
 ---
 
 # 類別與子類別表格
@@ -12,7 +16,7 @@ ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 
 選擇最能說明您 app 的類別。 然後選擇子類別 (如果有的話)。
 
-> **注意** 如果您選擇的類別是 [**遊戲**]，則子類別為必要項。
+> 注意 如果您選擇的類別是 \[遊戲\]，則子類別為必要項。
 
  
 
@@ -59,6 +63,7 @@ Windows 市集可以組織 app，以分成下列類別與子類別。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

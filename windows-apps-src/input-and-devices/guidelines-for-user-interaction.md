@@ -1,10 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 使用針對觸控最佳化，但在功能上與所有輸入裝置一致之直覺且特殊的使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
-title: 觸控設計指導方針
+Description: "使用針對觸控最佳化，但在功能上與所有輸入裝置一致之直覺且特殊的使用者互動體驗，來建立通用 Windows 平台 (UWP) App。"
+title: "觸控設計指導方針"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
+
 ---
 
 # 觸控設計指導方針
@@ -172,6 +176,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

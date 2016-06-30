@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
-title: 資料繫結
-description: 資料繫結可讓您的應用程式 UI 顯示資料，以及選擇性地與該資料保持同步。
+title: "資料繫結"
+description: "資料繫結可讓您的應用程式 UI 顯示資料，以及選擇性地與該資料保持同步。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d1fbc7376b3505d39e757a1b65ae0f0890948078
+
 ---
 
 # 資料繫結
@@ -20,6 +24,7 @@ description: 資料繫結可讓您的應用程式 UI 顯示資料，以及選擇
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 通知視覺化工具是市集中新的通用 Windows 平台 (UWP) App，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
-title: 通知視覺化工具
+Description: "通知視覺化工具是市集中新的通用 Windows 平台 (UWP) App，可協助開發人員設計適用於 Windows 10 的彈性動態磚。"
+title: "通知視覺化工具"
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+
 ---
 
 # 通知視覺化工具
@@ -28,7 +32,7 @@ template: detail.hbs
 
 使用通知視覺化檢視，您可以建立及測試彈性磚承載，不需要編輯和部署應用程式本身。 建立含有理想的視覺效果的承載後，您便可將它整合到您的應用程式。 如需詳細資訊，請參閱[傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)。
 
-**注意：**Windows [開始] 功能表的通知視覺化檢視模擬不一定完全精確，而且它不支援部分承載屬性，例如 [baseUri](https://msdn.microsoft.com/library/windows/apps/br208712)。 當您有想要的磚設計時，請將磚釘選到實際的 [開始] 功能表來測試它，確認它顯示為您想要的樣子。
+注意：Windows \[開始\] 功能表的通知視覺化檢視模擬不一定完全精確，而且它不支援部分承載屬性，例如 baseUri。 當您有想要的磚設計時，請將磚釘選到實際的 \[開始\] 功能表來測試它，確認它顯示為您想要的樣子。
 
  
 
@@ -64,6 +68,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

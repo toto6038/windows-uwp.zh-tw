@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: 了解關於在 App 中廣告的 UI 和使用者體驗指導方針。
-title: 在 App 中廣告的 UI 和使用者體驗指導方針。
+description: "了解關於在 App 中廣告的 UI 和使用者體驗指導方針。"
+title: "在 App 中廣告的 UI 和使用者體驗指導方針。"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
+
 
 ---
 
@@ -105,7 +109,7 @@ title: 在 App 中廣告的 UI 和使用者體驗指導方針。
     * 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
 
-* 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
+* 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 \[觀看廣告已取得 xxx\]，您應該在使用者這麼做之後提供 xxx。 要考慮的兩個選項︰
 
     * 除非引發 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，否則不要包含該選項。
 
@@ -138,6 +142,7 @@ title: 在 App 中廣告的 UI 和使用者體驗指導方針。
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。
-title: xName 屬性
+description: "唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。"
+title: "xName 屬性"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+
 ---
 
 # x&#58;Name 屬性
@@ -66,6 +70,7 @@ UWP XAML 中使用的一些類型也具有名為 **Name** 的屬性。 例如，
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

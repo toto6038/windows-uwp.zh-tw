@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 在計時器上執行背景工作
-description: 了解如何排程一次性的背景工作，或執行定期的背景工作。
+author: TylerMSFT
+title: "在計時器上執行背景工作"
+description: "了解如何排程一次性的背景工作，或執行定期的背景工作。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
+
 ---
 
 # 在計時器上執行背景工作
@@ -27,7 +30,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 -   建立一個新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二個參數 *OneShot* 指定背景工作是要執行一次或定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (單位：分鐘)。 如果 *OneShot* 設定成 False，*FreshnessTime* 會指定背景工作的執行頻率。
 
-    通用 Windows 平台 (UWP) app 的內建計時器每隔 15 分鐘會執行背景工作。
+    以桌面或行動裝置系列為目標之通用 Windows 平台 (UWP) app 的內建計時器每隔 15 分鐘會執行背景工作。
 
     -   如果 *FreshnessTime* 設定為 15 分鐘，而且 *OneShot* 為 True，表示工作將會在工作登錄時間的 0 到 15 分鐘之間開始執行一次。
 
@@ -86,19 +89,19 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
-    
+
     > **注意：**背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
 
-   
+
 ## 備註
 
 > **注意：**從 Windows 10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
@@ -129,8 +132,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

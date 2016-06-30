@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 使用背景傳輸 API 在網路上可靠地複製檔案。
-title: 背景傳輸
+description: "使用背景傳輸 API 在網路上可靠地複製檔案。"
+title: "背景傳輸"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+
 ---
 
 # 背景傳輸
@@ -39,7 +43,7 @@ ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 
 例如，為作業定義的成本原則可以指出裝置使用計量付費網路時應該自動暫停作業。 當建立「不受限制」網路的連線時，會自動繼續 (或重新啟動) 傳輸。 如需如何以成本定義網路的詳細資訊，請參閱 [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292)。
 
-儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的 app 還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](https://msdn.microsoft.com/library/windows/apps/hh452983)來取得其他資訊。
+儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的應用程式還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](https://msdn.microsoft.com/library/windows/apps/hh452983)來取得其他資訊。
 
 > **注意：**在行動裝置上執行的 app 中，有些功能讓使用者能夠根據連線類型、漫遊狀態及使用者數據傳輸方案來監視和限制傳輸的資料量。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
 
@@ -70,17 +74,19 @@ ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 
 在開始建立 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 之前，我們必須識別要上傳的目標位置 URI，以及要上傳的檔案。 在下列範例中，填入 *uriString* 值的方式是使用 UI 輸入中的字串，而填入 *file* 值的方式則是使用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作傳回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "識別上傳的檔案和目的地")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "識別上傳的檔案和目的地")]
 
 **建立和初始化上傳作業**
 
 在上一個步驟中，*uriString* 和 *file* 值已傳遞至我們下一個範例 UploadOp 的執行個體，這兩個值將被用來設定和啟動新的上傳操作。 首先，會剖析 *uriString* 以建立必要的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件。
 
-接下來，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 會使用所提供之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) 的屬性來填入要求標頭，並以 *StorageFile* 物件來設定 **SourceFile** 屬性。 接著會呼叫 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) 方法，插入以字串方式提供的檔案名稱和 [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) 屬性。
+接下來，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 會使用所提供之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) 的屬性來填入要求標頭，並以 **StorageFile** 物件來設定 *SourceFile* 屬性。 接著會呼叫 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) 方法，插入以字串方式提供的檔案名稱和 [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) 屬性。
 
 最後，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 會建立 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*)。
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "建立和初始化上傳作業")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "建立和初始化上傳作業")]
 
 請注意，非同步方法呼叫是使用 JavaScript Promise 定義的。 看看上個範例的行：
 
@@ -162,11 +168,13 @@ upload.startMultipart = function (uriString, files) {
 
 1.  在定義列舉持續作業的功能之前，我們必須建立一個陣列來包含它將傳回的 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 物件：
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "重新啟動已中斷的上傳作業")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "重新啟動已中斷的上傳作業")]
 
 2.  接著我們要定義列舉持續作業的功能，然後將這些作業儲存在我們的陣列。 請注意，將回呼重新指派到 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 時所呼叫的 **load** 方法 (應在應用程式終止期間都持續著)，位於我們稍後在本節所定義的 UploadOp 類別中。
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "列舉持續作業")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "列舉持續作業")]
 
 ## 下載檔案
 
@@ -289,23 +297,27 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 -   您使用與現有專案相同的名稱但不同的語言 (例如，從 C++ 變更為 C#) 建立新的專案。
 -   您變更現有專案中的目標架構 (例如，從 x86 變更為 x64)。
 -   您變更現有專案中的文化特性 (例如，從中性變更為 en-US)。
--   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 [企業驗證]****)。
+-   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 \[企業驗證\])。
 
 一般應用程式服務，包括新增或移除功能的資訊清單更新，並不會在應用程式的一般使用者部署上引起這個問題。
-若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 [開始]**** 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
+若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 \[開始\] 畫面或使用 PowerShell 和 Remove-AppxPackage Cmdlet 來完成。
 
 ## Windows.Networking.BackgroundTransfer 中的例外狀況
 
 如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET：**
+            [
+              **Windows.Foundation.Uri**
+            ](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自應用程式使用者的字串，以避免發生這個錯誤。
 
 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果應用程式取得使用者為 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
 [
-            **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+              **Windows.Networking.backgroundTransfer**
+            ](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間中非同步方法內遇到的錯誤會以 **HRESULT** 值的形式傳回。 使用 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法，將背景傳輸作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值都會對應到原始 HTTP 或 FTP 用戶端作業所傳回的錯誤。 app 可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
@@ -313,6 +325,7 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

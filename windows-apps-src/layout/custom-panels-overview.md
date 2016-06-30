@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: '您可以從 Panel 類別衍生自訂類別，為 XAML 配置定義自訂面板。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "您可以從 Panel 類別衍生自訂類別，為 XAML 配置定義自訂面板。"
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: XAML 自訂面板概觀
+title: "XAML 自訂面板概觀"
 ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
+
 ---
 
 # XAML 自訂面板概觀
@@ -29,7 +33,7 @@ template: detail.hbs
 -   [
             **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 及 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的所有其他 API，例如 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 等。 您有時候會在配置覆寫中參考這些屬性值，但由於並非虛擬屬性，因此您通常不會覆寫或取代它們。
 
-這裡的重點是說明 XAML 配置概念，以便您考慮自訂面板在配置中所有可能和應有的行為。 如果您想要直接進入自訂面板實作範例，請參閱 [BoxPanel，自訂面板範例](boxpanel-example-custom-panel.md)
+這裡的重點是說明 XAML 配置概念，以便您考慮自訂面板在配置中所有可能和應有的行為。 如果您想要直接進入自訂面板實作範例，請參閱 [BoxPanel，自訂面板範例](boxpanel-example-custom-panel.md)。
 
 ## **Children** 屬性
 
@@ -43,9 +47,9 @@ template: detail.hbs
 </local:CustomPanel>
 ```
 
-當 XAML 剖析器讀取此標記時，已知 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 是所有 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生類型的 XAML 內容屬性，因此剖析器會將兩個 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 元素新增到 **Children** 屬性的 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 值。 XAML 內容屬性可以在 UI 定義的 XAML 標記中，協助簡化父系-子系關係。 如需有關 XAML 內容屬性以及剖析 XAML 時如何填入集合屬性的詳細資訊，請參閱 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/mt185596)
+當 XAML 剖析器讀取此標記時，已知 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 是所有 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生類型的 XAML 內容屬性，因此剖析器會將兩個 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 元素新增到 **Children** 屬性的 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 值。 XAML 內容屬性可以在 UI 定義的 XAML 標記中，協助簡化父系-子系關係。 如需有關 XAML 內容屬性以及剖析 XAML 時如何填入集合屬性的詳細資訊，請參閱 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/mt185596)。
 
-維護 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性值的集合類型是 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 類別。 **UIElementCollection** 是一個強型別集合，使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 當成其強制的項目類型。 **UIElement** 是由數百個實際 UI 元素類型繼承的基底類型，因此這裡的類型強制會刻意鬆散。 但它確實會強制您不能將 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 當成 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 的直屬子系，且它通常表示只有預期要在 UI 中顯示並參與配置的元素，才會成為 **Panel** 中的子元素
+維護 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性值的集合類型是 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 類別。 **UIElementCollection** 是一個強型別集合，使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 當成其強制的項目類型。 **UIElement** 是由數百個實際 UI 元素類型繼承的基底類型，因此這裡的類型強制會刻意鬆散。 但它確實會強制您不能將 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 當成 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 的直屬子系，且它通常表示只有預期要在 UI 中顯示並參與配置的元素，才會成為 **Panel** 中的子元素。
 
 一般而言，只要依現況使用 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性的特性，自訂面板即可透過 XAML 定義接受任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 子元素。 在進階案例中，您可以在配置覆寫中重複處理集合時，進一步檢查子元素類型。
 
@@ -132,7 +136,7 @@ protected override Size MeasureOverride(Size availableSize)
 -   [
             **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的另一個常見錯誤是傳回新的預設 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) (高度與寬度的值都是 0)。 您可以從那個值開始，而且如果面板判斷沒有任何應該轉譯的子系，它就可能是正確的值。 但是預設的 **Size** 會造成主機無法正確地調整您面板的大小。 它不會要求 UI 中的任何空間，因此不會取得空間也不會進行轉譯。 除此之外，您的所有面板程式碼可能都運作正常，但由於組成高度、寬度皆為零，因此您仍將看不到自己的面板或內容。
 -   在覆寫內，避免將子元素轉換成 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 和使用計算為配置結果的屬性，特別是 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)。 對於最常見的案例，您可以讓邏輯以子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值為基礎，如此您將不需要任何與 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 或 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 相關的子元素屬性。 對於您知道元素類型且有其他資訊 (例如，影像檔的原始大小) 的特殊化案例，則可以使用元素的特殊化資訊，因為它不是配置系統主動更改的值。 配置邏輯中若包含配置計算的屬性，會大幅增加無意中定義配置迴圈的風險。 這些迴圈會造成無法建立有效配置，且系統會在迴圈無法復原時擲回 [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799)。
--   面板通常會將其可用空間劃分給多個子元素，雖然實際上劃分空間的方式不盡相同。 例如，[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 實作的配置邏輯是使用其 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 與 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 值，將空間分配給 **Grid** 儲存格，同時支援比例縮放與像素值。 如果是像素值，即已知各個子系可用的空間，所以就是傳送為格線樣式 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的輸入大小
+-   面板通常會將其可用空間劃分給多個子元素，雖然實際上劃分空間的方式不盡相同。 例如，[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 實作的配置邏輯是使用其 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 與 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 值，將空間分配給 **Grid** 儲存格，同時支援比例縮放與像素值。 如果是像素值，即已知各個子系可用的空間，所以就是傳送為格線樣式 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的輸入大小。
 -   面板本身可為項目間的邊框間距導入保留空間。 如果這麼做，務必將度量公開為不同於 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) 或任何 **Padding** 屬性的屬性。
 -   根據先前的版面配置階段，元素可能會有 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 屬性值。 如果值有所變更且有特殊邏輯要執行，應用程式 UI 程式碼可以在元素上放置 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 的處理常式，但面板邏輯通常不需要利用事件處理來檢查變更。 因為與配置相關的屬性值已經變更，而且在適當情況下自動呼叫面板的 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 或 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)，所以配置系統已經決定何時重新執行配置。
 
@@ -170,7 +174,7 @@ protected override Size ArrangeOverride(Size finalSize)
 [
             **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 實作之間的差異通常在於面板用來判斷 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 元件如何排列每一子系的邏輯。 絕對位置面板 (例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)) 使用透過 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 與 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 值，從每個元素取得的明確位置資訊。 空間劃分面板 (例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)) 有將可用空間劃分給儲存格的數學運算，而每個儲存格都會有表明應在何處放置和排列其內容的 x-y 值。 彈性面板 (例如 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)) 可能會自行擴充，以容納其方向維度中的內容。
 
-除了您直接控制和傳送給 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的項目之外，還有其他配置元素的位置影響。 這些來自於 **Arrange** 的內部原生實作，常見於所有 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 衍生類型，並可透過一些其他類型 (例如文字元素) 來增強。 例如，有些元素有邊界和對齊，有些則有邊框間距。 這些屬性通常會互相影響。 如需詳細資訊，請參閱[對齊、邊界及邊框間距](alignment-margin-padding.md)
+除了您直接控制和傳送給 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的項目之外，還有其他配置元素的位置影響。 這些來自於 **Arrange** 的內部原生實作，常見於所有 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 衍生類型，並可透過一些其他類型 (例如文字元素) 來增強。 例如，有些元素有邊界和對齊，有些則有邊框間距。 這些屬性通常會互相影響。 如需詳細資訊，請參閱[對齊、邊界及邊框間距](alignment-margin-padding.md)。
 
 ## 面板與控制項
 
@@ -189,7 +193,7 @@ protected override Size ArrangeOverride(Size finalSize)
 -   [
             **UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989)、[**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) 及 [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) 是起始版面配置階段的方法。 **InvalidateArrange** 可能不會觸發度量階段，但其他兩種會。 永遠不要從配置方法覆寫內呼叫這些方法，因為幾乎可以確定它們會造成配置迴圈。 控制項程式碼通常也不需要呼叫它們。 大部分配置層面會藉由偵測架構定義的配置屬性 (例如 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等) 的變更而自動觸發。
 -   [
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 是元素的一些配置層面變更時所觸發的事件。 這並非面板特有；此事件是由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 所定義
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 是元素的一些配置層面變更時所觸發的事件。 這並非面板特有；此事件是由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 所定義。
 -   [
             **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) 是只在版面配置階段完成後，並指出 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 或 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 因此有所變更時才會觸發的事件。 這是另一個 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 事件。 有時候會觸發 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722)，但不會觸發 **SizeChanged**。 例如，內部內容可能已重新排列，但元素大小保持不變。
 
@@ -209,6 +213,7 @@ protected override Size ArrangeOverride(Size finalSize)
 [對齊、邊界及邊框間距](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

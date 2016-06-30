@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 使用背景工作支援 app
-description: 本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。
+author: TylerMSFT
+title: "使用背景工作支援 app"
+description: "本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
+
 ---
 
 # 使用背景工作支援 app
@@ -15,7 +18,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 背景工作是實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的個別類別。 您可以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別來登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
 
-若要快速開始使用背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)
+若要快速開始使用背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)。
 
 **祕訣** 從 Windows 10 開始，您已不再需要將 app 放在鎖定畫面上，就可以登錄背景工作。
 
@@ -36,7 +39,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
  
 
-如需詳細資料，請參閱[使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+如需詳細資料，請參閱[使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)。
 
 ## 背景工作的條件
 
@@ -54,12 +57,12 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
  
 
-如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
 ## 應用程式資訊清單需求
 
 
-App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工作。 如需詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工作。 如需詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 
 ## 背景工作
 
@@ -68,15 +71,15 @@ App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工�
 
 **控制通道：**背景工作可以保持連線，並使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 在控制通道上接收訊息。 如果您的 app 接聽通訊端，則您可以使用通訊端代理程式，而不要使用 **ControlChannelTrigger**。 如需使用通訊端代理程式的詳細資訊，請參閱 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 Windows Phone 不支援 **ControlChannelTrigger**。
 
-**計時器：**背景工作最快可以每 15 分鐘執行一次，而且可以使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 來設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
+**計時器：**背景工作最快可以每 15 分鐘執行一次，而且可以使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 來設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。
 
 **推播通知：**背景工作會回應 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 以接收原始推播通知。
 
-**注意**  
+**附註**  
 
 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
-為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)
+為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
 ## 系統事件觸發程序
 
@@ -132,14 +135,14 @@ App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工�
 ## 維護觸發程序
 
 
-維護工作只有在裝置插入 AC 電源時才能執行。 如需詳細資訊，請參閱[使用維護觸發程序](use-a-maintenance-trigger.md)
+維護工作只有在裝置插入 AC 電源時才能執行。 如需詳細資訊，請參閱[使用維護觸發程序](use-a-maintenance-trigger.md)。
 
 ## 感應器和裝置的背景工作
 
 
 您的 app 可以使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 類別，從背景工作存取感應器和週邊裝置。 您可以在長時間執行的操作使用這個觸發程序，例如資料同步或監控。 和系統事件的工作不同，**DeviceUseTrigger** 工作只能在您的 app 於前景中執行時觸發，而且不能設定條件。
 
-部分重要裝置操作 (例如，長時間執行韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 app 來執行。 「*具有特殊權限的 app*」是裝置製造商授權執行這些操作的 app。 裝置中繼資料可用來指定要將哪個 app (如果有的話) 指定為裝置的具有特殊權限的 app。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+部分重要裝置操作 (例如，長時間執行韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 app (如果有的話) 指定為裝置的具有特殊權限的 app。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## 管理背景工作
 
@@ -151,7 +154,7 @@ App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工�
 [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 
 **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -186,8 +189,6 @@ App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工�
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

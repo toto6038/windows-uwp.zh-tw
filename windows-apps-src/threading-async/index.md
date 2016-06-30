@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
-title: 執行緒和非同步程式設計
-description: 執行緒和非同步程式設計可讓您的 app 在平行執行緒中以非同步方式完成工作。
+title: "執行緒和非同步程式設計"
+description: "執行緒和非同步程式設計可讓您的 app 在平行執行緒中以非同步方式完成工作。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+
 ---
 # 執行緒和非同步程式設計
 
@@ -37,6 +41,7 @@ description: 執行緒和非同步程式設計可讓您的 app 在平行執行�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

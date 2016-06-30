@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 執行地理編碼和反向地理編碼
-description: 呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
+title: "執行地理編碼和反向地理編碼"
+description: "呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。"
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+
 ---
 
 # 執行地理編碼和反向地理編碼
@@ -20,13 +24,13 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 以下說明地理編碼與反向地理編碼如何相關：
 
 -   [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別擁有可執行地理編碼 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理編碼 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法
--   這些方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別擁有可執行地理編碼 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理編碼 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
+-   這些方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)。
 -   [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。 透過 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合
--   每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件皆包含一個 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。 請透過每個 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取這個物件
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。 透過 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
+-   每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件皆包含一個 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。 請透過每個 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取這個物件。
 
-**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)
+**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
  
 
@@ -38,7 +42,7 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 1.  呼叫 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別之 [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法的其中一個多載。
 2.  [
             **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 物件，此物件包含相符之 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。
-3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合
+3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
 
 ```csharp
 using Windows.Services.Maps;
@@ -88,8 +92,8 @@ result = (47.6406099647284,-122.129339994863)
 1.  呼叫 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的 [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法。
 2.  [
             **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法會傳回 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 物件，此物件包含相符之 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。
-3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合
-4.  透過每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件
+3.  透過 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
+4.  透過每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。
 
 ```csharp
 using Windows.Services.Maps;
@@ -137,6 +141,7 @@ town = Redmond
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

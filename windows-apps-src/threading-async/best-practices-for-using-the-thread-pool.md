@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
-title: 使用執行緒集區的最佳做法
-description: 本主題描述使用執行緒集區的最佳做法。
+title: "使用執行緒集區的最佳做法"
+description: "本主題描述使用執行緒集區的最佳做法。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
+
 ---
 # 使用執行緒集區的最佳做法
 
@@ -52,6 +56,7 @@ description: 本主題描述使用執行緒集區的最佳做法。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

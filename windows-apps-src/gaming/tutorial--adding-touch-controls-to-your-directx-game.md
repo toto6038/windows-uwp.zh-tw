@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 適用於遊戲的觸控控制項
-description: 了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。
+title: "適用於遊戲的觸控控制項"
+description: "了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
+
 ---
 
 # 適用於遊戲的觸控控制項
@@ -348,6 +352,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

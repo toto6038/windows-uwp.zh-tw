@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
-description: 使用廣告流量分配之前，您將需要為每個想要在應用程式中使用的廣告網路設定帳戶。
-title: 選取和管理廣告網路
+description: "使用廣告流量分配之前，您將需要為每個想要在應用程式中使用的廣告網路設定帳戶。"
+title: "選取和管理廣告網路"
+translationtype: Human Translation
+ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
+ms.openlocfilehash: 49c9b8e60da9239c948265fb22563013019da259
+
 ---
 
 # 選取和管理廣告網路
@@ -126,6 +130,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

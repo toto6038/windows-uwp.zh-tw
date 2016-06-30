@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 支援各種硬體上的陰影圖
-description: 在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。
+title: "支援各種硬體上的陰影圖"
+description: "在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 0cdc31f07560e7f1747806d1436bccbc1e50f8b9
+
 ---
 
 # 支援各種硬體上的陰影圖
@@ -174,6 +178,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

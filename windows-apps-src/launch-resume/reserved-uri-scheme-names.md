@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 保留檔案和 URI 配置名稱
-description: 您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。
+author: TylerMSFT
+title: "保留檔案和 URI 配置名稱"
+description: "您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+
 ---
 # 保留檔案和 URI 配置名稱
 
@@ -124,8 +127,6 @@ ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

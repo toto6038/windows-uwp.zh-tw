@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 提供最上層瀏覽同時節省螢幕空間。
-title: 瀏覽窗格的指導方針
+Description: "提供最上層瀏覽同時節省螢幕空間。"
+title: "瀏覽窗格的指導方針"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
+
 ---
 
 瀏覽窗格
@@ -62,8 +66,8 @@ template: detail.hbs
 -   重疊可以在任何大小螢幕上以縱向或橫向方式使用。 在預設 (收合) 狀態中，重疊不會佔用實際空間，因為只會顯示按鈕。
 -   可在節省螢幕空間的情況下提供隨選瀏覽功能。 適合手機和平板手機上的應用程式。
 -   根據預設會隱藏窗格，只顯示按鈕。
--   按 [瀏覽窗格] 按鈕可開啟和關閉重疊。
--   展開狀態只是暫時性的，會在進行選擇時、使用 [上一頁] 按鈕時，或是當使用者點選窗格外部時關閉。
+-   按 \[瀏覽窗格\] 按鈕可開啟和關閉重疊。
+-   展開狀態只是暫時性的，會在進行選擇時、使用 \[上一頁\] 按鈕時，或是當使用者點選窗格外部時關閉。
 -   重疊會覆蓋在內容上，且不會使內容自動重排。
 
 ### <span id="Compact"></span><span id="compact"></span><span id="COMPACT"></span>精簡
@@ -111,6 +115,7 @@ template: detail.hbs
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

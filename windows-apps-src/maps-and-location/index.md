@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 地圖和位置概觀
-description: 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。
+author: msatranjr
+title: "地圖和位置概觀"
+description: "本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
+ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
+
 ---
 
 # 地圖和位置概觀
@@ -27,7 +30,7 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 | 主題 | 說明 |
 |-------|-------------|
 | [要求地圖驗證金鑰](authentication-key.md) | 您的 App 必須經過驗證，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中的地圖服務。 若要驗證您的 App，您必須指定地圖驗證金鑰。 本文說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 App。 |
-| [地圖的設計指導方針](controls-map.md) | 地圖控制項可顯示道路地圖和空照圖檢視、方向、搜尋結果及交通路況。 |
+| [地圖控制項](controls-map.md) | 地圖控制項可顯示道路地圖和空照圖檢視、方向、搜尋結果及交通路況。 |
 | [顯示地圖的 2D、3D 和 Streetside 檢視](display-maps.md) | 藉由使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 類別，即可在您的 App 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和街景檢視。 |
 | [在地圖上顯示興趣點 (POI)](display-poi.md) | 藉由使用圖釘、影像、形狀及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 |
 | [在地圖上重疊顯示並排影像](overlay-tiled-images.md) | 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。 |
@@ -36,7 +39,7 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 ## 存取地圖服務
 
-藉由使用來自 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間的 API，即可將路線、路線指引及地理編碼功能新增到您的 app。 您也可以將 [設定] app 直接啟動到適當的頁面，以協助使用者管理離線地圖。
+藉由使用來自 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間的 API，即可將路線、路線指引及地理編碼功能新增到您的 app。 您也可以將 \[設定\] app 直接啟動到適當的頁面，以協助使用者管理離線地圖。
 
 | 主題 | 說明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -80,6 +83,7 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

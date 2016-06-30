@@ -1,10 +1,14 @@
 ---
 author: drewbatgit
-Description: '本文章說明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。'
-MS-HAID: 'dev\_audio\_vid\_camera.custom\_video\_effects'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本文章說明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。"
+MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 自訂視訊效果
+title: "自訂視訊效果"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+
 ---
 
 # 自訂視訊效果
@@ -24,12 +28,12 @@ title: 自訂視訊效果
 
 **為您的視訊效果新增 Windows 執行階段元件**
 
-1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 [檔案]**** 功能表，然後選取 [新增] -&gt; [新專案...]****。
-2.  選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型。
+1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 \[檔案\] 功能表，然後選取 \[新增\] - \[新專案...\]。
+2.  選取 \[Windows 執行階段元件 (通用 Windows)\] 專案類型。
 3.  針對此範例，請將專案命名為「VideoEffectComponent」。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 [確定]****。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 [方案總管]**** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 [重新命名]****。
-6.  將檔案重新命名為「ExampleVideoEffect.cs」。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]****。
+4.  按一下 \[確定\]。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 \[方案總管\] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 \[重新命名\]。
+6.  將檔案重新命名為「ExampleVideoEffect.cs」。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 \[是\]。
 7.  開啟「ExampleVideoEffect.cs」並更新類別定義以實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -64,7 +68,8 @@ title: 自訂視訊效果
 ### IsReadOnly 屬性
 
 [
-            **IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面格 (例如僅針對視訊畫面格執行分析的效果)，您便應該將此屬性設定為 true，這將能使系統有效率地為您將畫面格輸入複製到畫面格輸出。
+              **IsReadOnly**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面格 (例如僅針對視訊畫面格執行分析的效果)，您便應該將此屬性設定為 true，這將能使系統有效率地為您將畫面格輸入複製到畫面格輸出。
 
 **提示** 當 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性設定為 true 時，系統會在呼叫 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前將輸入畫面格複製到輸出畫面格。 將 **IsReadOnly** 屬性設定為 true 並不會限制您在 **ProcessFrame** 中寫入至效果的輸出畫面格。
 
@@ -104,20 +109,22 @@ title: 自訂視訊效果
 ### TimeIndependent 屬性
 
 [
-            **TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果是否需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
+              **TimeIndependent**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果是否需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
 ### SetProperties 方法
 
 [
-            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 參數將會以包含參數名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
+              **SetProperties**
+            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
 
 
-此簡單範例會根據指定值使每個視訊畫面格中的像素變暗。 屬性已宣告，並使用 TryGetValue 來取得由呼叫 App 所設定的值。 如果沒有設定任何值，將會使用 .5 的預設值。
+此簡單範例會根據指定值使每個視訊畫面格中的像素變暗。 屬性已宣告，並使用 TryGetValue 來取得由呼叫 App 所設定的值。 如果沒有設定任何值，將會使用 0.5 的預設值。
 
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
@@ -125,7 +132,8 @@ title: 自訂視訊效果
 ### ProcessFrame 方法
 
 [
-            **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法可以讓您的效果修改視訊的影像資料。 此方法會於每個畫面格呼叫一次，並會被傳遞 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 物件。 此物件包含輸入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件 (該物件包含要處理的傳入畫面格)，以及輸出 **VideoFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘視訊管線的影像資料)。 每個 **VideoFrame** 物件皆擁有 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 參數及 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 參數，並由您從 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性回傳的值來決定會使用上述哪一個參數。
+              **ProcessFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法可以讓您的效果修改視訊的影像資料。 此方法會於每個畫面格呼叫一次，並會被傳遞 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 物件。 此物件包含輸入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件 (該物件包含要處理的傳入畫面格)，以及輸出 **VideoFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘視訊管線的影像資料)。 每個 **VideoFrame** 物件皆擁有 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性及 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，並由您從 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性回傳的值來決定會使用上述哪一個參數。
 
 此範例顯示使用軟體處理之 **ProcessFrame** 方法的簡單實作。 如需使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的詳細資訊，請參閱[影像處理](imaging.md)。 本文章稍後將提供使用硬體處理之 **ProcessFrame** 實作的範例。
 
@@ -140,15 +148,15 @@ title: 自訂視訊效果
 
 
 **注意** 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性...]。
-2.  選取 [建置] 索引標籤。
-3.  選取 [允許不安全的程式碼] 核取方塊
+1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[VideoEffectComponent\] 專案，然後選取 \[屬性...\]。
+2.  選取 \[建置\] 索引標籤。
+3.  選取 \[容許 Unsafe 程式碼\] 核取方塊
 
  
 
 現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 物件。 請注意，輸出畫面格已針對寫入開啟，並且是讀取的輸入。 接下來，將會透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
-現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 緩衝區的配置是透過呼叫 [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 取得，這將能提供緩衝區寬度、Stride 及初始位移的資訊。 「每一像素位元數」是由先前透過 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 方法所設定的編碼屬性所決定。 緩衝區格式資訊是用來找出每個像素之緩衝區的索引。 來源緩衝區的像素值會被複製到目標緩衝區中，其色彩值會被乘以針對此效果定義的 FadeValue 參數，來以指定的量將它們變暗。
+現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 緩衝區的配置是透過呼叫 [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 取得，這將能提供緩衝區寬度、Stride 及初始位移的資訊。 「每一像素位元數」是由先前透過 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 方法所設定的編碼屬性所決定。 緩衝區格式資訊是用來找出每個像素之緩衝區的索引。 來源緩衝區的像素值會被複製到目標緩衝區中，其色彩值會被乘以針對此效果定義的 FadeValue 屬性，來以指定的量將它們變暗。
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
@@ -162,11 +170,11 @@ title: 自訂視訊效果
 
 **將 Win2D NuGet 套件新增到您的效果專案**
 
-1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [VideoEffectComponent]**** 專案，然後選取 [管理 NuGet 套件...]****。
-2.  在視窗頂端，選取 [瀏覽]**** 索引標籤。
+1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[VideoEffectComponent\] 專案，然後選取 \[管理 NuGet 套件...\]。
+2.  在視窗頂端，選取 \[瀏覽\] 索引標籤。
 3.  在搜尋方塊中輸入「Win2D」。
-4.  按一下 [Win2D.uwp]****，然後按一下右窗格中的 [安裝]。
-5.  [檢閱變更]**** 對話方塊會顯示要安裝的套件。 按一下 [確定]****。
+4.  按一下 \[Win2D.uwp\]，然後按一下右窗格中的 \[安裝\]。
+5.  \[檢閱變更\] 對話方塊會顯示要安裝的套件。 按一下 \[確定\]。
 6.  接受套件授權。
 
 除了包含在基本專案設定中的命名空間之外，您將需要包含下列由 Win2D 提供的命名空間。
@@ -190,7 +198,8 @@ title: 自訂視訊效果
 
 
 [
-            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和上述的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
+              **SetProperties**
+            ](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和上述的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -209,9 +218,9 @@ title: 自訂視訊效果
 
 如果要從您的 App 使用您的視訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中您的專案下方，以滑鼠右鍵按一下 [參考]，然後選取 [加入參考...]
-2.  展開 [專案] 索引標籤，按一下 [方案]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 VideoEffectComponent。
-3.  按一下 [確定]。
+1.  在 \[方案總管\] 中您的專案下方，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考...\]
+2.  展開 \[專案\] 索引標籤，按一下 \[方案\]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 VideoEffectComponent。
+3.  按一下 \[確定\]。
 
 ### 將您的自訂效果新增到相機視訊串流
 
@@ -236,9 +245,11 @@ title: 自訂視訊效果
 ## 相關主題
 
 
-[簡單的相機預覽存取](simple-camera-preview-access.md) 
-           [媒體組合和編輯](media-compositions-and-editing.md) 
-           [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)
+[簡單的相機預覽存取](simple-camera-preview-access.md)
+            
+            [媒體組合和編輯](media-compositions-and-editing.md)
+            
+            [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)
  
 
  
@@ -247,6 +258,7 @@ title: 自訂視訊效果
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

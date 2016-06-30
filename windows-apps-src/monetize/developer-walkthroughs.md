@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: 使用本節中的逐步解說，瞭解如何使用 Microsoft Advertising 程式庫將橫幅廣告與影片插入式廣告新增至 app。
-title: 適用於 Microsoft Advertising 程式庫的開發人員逐步解說
+description: "使用本節中的逐步解說，瞭解如何使用 Microsoft Advertising 程式庫將橫幅廣告與影片插入式廣告新增至 app。"
+title: "適用於 Microsoft Advertising 程式庫的開發人員逐步解說"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
+
 ---
 
 # 適用於 Microsoft Advertising 程式庫的開發人員逐步解說
@@ -30,6 +34,7 @@ title: 適用於 Microsoft Advertising 程式庫的開發人員逐步解說
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

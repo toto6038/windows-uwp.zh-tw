@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 從 app 進行 3D 列印
-description: 了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。
+title: "從 app 進行 3D 列印"
+description: "了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。"
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+translationtype: Human Translation
+ms.sourcegitcommit: 61d9f5c1fca1ad2e26f052b901361813975ae357
+ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
+
 ---
 
 # 從 app 進行 3D 列印
@@ -46,7 +50,7 @@ ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ## 取得 3D 資料
 
 
-此方法依據您 app 取得 3D 幾何資料進行列印的方式而異。 您 app 擷取資料的方式可能是 3D 掃描、從網路資源提取模型資料，或使用方程式以程式設計方式產生 3D 網格。 為了簡單起見，本指南從 [檔案總管] 將 3D 資料檔案 (任何常見的檔案類型) 載入程式記憶體。
+此方法依據您 app 取得 3D 幾何資料進行列印的方式而異。 您 app 擷取資料的方式可能是 3D 掃描、從網路資源提取模型資料，或使用方程式以程式設計方式產生 3D 網格。 為了簡單起見，本指南從 \[檔案總管\] 將 3D 資料檔案 (任何常見的檔案類型) 載入程式記憶體。
 
 在 `OnLoadClick` 方法中，使用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 類別將單一檔案載入至 app 記憶體。
 
@@ -130,6 +134,7 @@ ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

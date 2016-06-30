@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 處理 Direct3D 11 中的裝置已移除案例
-description: 本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。
+title: "處理 Direct3D 11 中的裝置已移除案例"
+description: "本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
+
 ---
 
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>處理 Direct3D 11 中的裝置已移除案例
@@ -25,7 +29,7 @@ ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 
 ### <span></span>步驟 1：
 
-在轉譯迴圈中包含裝置已移除錯誤的檢查。 藉由呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等) 來呈現框架。 然後檢查它是否傳回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET**
+在轉譯迴圈中包含裝置已移除錯誤的檢查。 藉由呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等) 來呈現框架。 然後檢查它是否傳回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET**。
 
 首先，範本會儲存 DXGI 交換鏈結傳回的 HRESULT：
 
@@ -153,7 +157,7 @@ if (m_deviceNotify != nullptr)
 #endif
 ```
 
-如需詳細資料，請參閱 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 與 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)
+如需詳細資料， 請參閱 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 與 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
 
 ### 測試裝置已移除處理
 
@@ -172,6 +176,7 @@ Visual Studio 的「開發人員命令提示字元」支援針對與 Visual Stud
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

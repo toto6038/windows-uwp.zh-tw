@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: Microsoft Store Engagement and Monetization SDK 可提供您幾種方式來使用廣告讓您的應用程式獲利。
-title: 在您的應用程式中顯示廣告
+description: "Microsoft Store Engagement and Monetization SDK 可提供您幾種方式來使用廣告讓您的應用程式獲利。"
+title: "在您的應用程式中顯示廣告"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
+
 ---
 
 # 在您的應用程式中顯示廣告
@@ -39,6 +43,7 @@ Microsoft Store Engagement and Monetization SDK 已包含適用於 Microsoft 廣
 * [利用廣告讓 App 獲利]( http://go.microsoft.com/fwlink/p/?LinkId=699559)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

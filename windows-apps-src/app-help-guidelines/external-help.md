@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 設計您應用程式的詳細指示和建議的外部說明頁面。
-title: 設計外部說明頁面的指導方針
+Description: "設計您應用程式的詳細指示和建議的外部說明頁面。"
+title: "設計外部說明頁面的指導方針"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 03ef3fc34d2018c0ec712977065377a9c52cd8b2
+
 ---
 
 # 外部說明頁面
@@ -38,6 +42,7 @@ template: detail.hbs
 * [App 說明的指導方針](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

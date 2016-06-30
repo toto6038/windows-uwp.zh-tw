@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-title: 圖形和動畫
-description: 本節中的主題會引導您開始在市集應用程式中使用圖形和動畫。
+title: "圖形和動畫"
+description: "本節中的主題會引導您開始在市集應用程式中使用圖形和動畫。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+
 ---
 # 圖形和動畫
 
@@ -34,6 +38,7 @@ description: 本節中的主題會引導您開始在市集應用程式中使用�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: awkoren
-Description: '本主題說明達成一些最常見的資料傳輸相關企業資料保護 EDP 案例所需的編碼工作範例。'
-MS-HAID: 'dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主題說明達成一些最常見的資料傳輸相關企業資料保護 EDP 案例所需的編碼工作範例。"
+MS-HAID: dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 EDP 保護在 app 之間傳輸的企業資料
+title: "使用 EDP 保護在 app 之間傳輸的企業資料"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 77533d4aca3cc84e0a021a0faac57f5afbbefdd7
+
 ---
 
 # 使用 EDP 保護在 app 之間傳輸的企業資料
@@ -395,6 +399,7 @@ private async void OnPasteWithRequestAccess()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

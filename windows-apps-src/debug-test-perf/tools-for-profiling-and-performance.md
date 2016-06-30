@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
-title: 分析和效能的工具
-description: Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。
+title: "分析和效能的工具"
+description: "Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。"
+translationtype: Human Translation
+ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
+ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+
 ---
 # 分析和效能的工具
 
@@ -25,6 +29,7 @@ Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) App �
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 您對於任何具備網路功能的 app 所需執行的動作。
-title: 網路功能基本知識
+description: "您對於任何具備網路功能的 app 所需執行的動作。"
+title: "網路功能基本知識"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
+
 ---
 
 # 網路功能基本知識
@@ -46,12 +50,12 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 
 在某些情況下，任一觸發程序均適用。 當您選擇要在您的 app 中使用的觸發程序時，請考量下列建議。
 
--   如果您使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638)，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+-   如果您使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638)，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 -   如果使用啟用推播的 **StreamSockets**，您可以使用控制通道觸發程序，但應優先選擇使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 後者可讓系統在連線未積極使用時釋出記憶體並降低電源需求。
 -   如果您想要讓 app 在不主動處理網路要求時將其記憶體使用量降到最低，您應盡可能使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。
--   如果您想要讓應用程式能夠在系統處於「連線待命」模式時接收資料、請使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
+-   如果您想要讓應用程式能夠在系統處於「連線待命」模式時接收資料、請使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。
 
-如需如何使用通訊端代理程式的詳細資訊和範例，請參閱[背景網路通訊](network-communications-in-the-background.md)
+如需如何使用通訊端代理程式的詳細資訊和範例，請參閱[背景網路通訊](network-communications-in-the-background.md)。
 
 ## 安全連線
 
@@ -79,16 +83,16 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
             **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用來建立具有網路服務的初始連線，然後為所有通訊立即交涉以使用 SSL/TLS。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
 
 -   [
-            **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至指定為 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 物件與 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的遠端網路目的地
+            **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至指定為 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 物件與 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的遠端網路目的地。
 -   [
-            **ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至遠端主機名稱、遠端服務名稱以及 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的遠端目的地
+            **ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至遠端主機名稱、遠端服務名稱以及 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的遠端目的地。
 
 如果在呼叫上面的 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法時，將 *protectionLevel* 參數設定為 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，則必須建立 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 以使用 SSL/TLS 來加密。 這個值需要加密而且絕不允許使用 NULL 密碼。
 
 與其中一個 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法搭配使用的一般順序是相同的。
 
--   建立一個 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
--   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 執行個體。 設定 **StreamSocketControl** 上的屬性
+-   建立一個 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 執行個體。 設定 **StreamSocketControl** 上的屬性。
 -   呼叫上面其中一個 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法以啟動作業來連線至遠端目的地，並立即交涉以使用 SSL/TLS。
 -   順利完成非同步作業後，實際上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 交涉的 SSL 強度可以透過取得 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 屬性來決定。
 
@@ -175,8 +179,8 @@ using Windows::Networking::Sockets;
 
 與 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法搭配使用的一般順序如下：
 
--   建立一個 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
--   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 執行個體。 設定 **StreamSocketControl** 上的屬性
+-   建立一個 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 執行個體。 設定 **StreamSocketControl** 上的屬性。
 -   如果需要以未加密的方式傳送和接收任何資料，請立即傳送。
 -   呼叫 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法以啟動作業，將連線升級成使用 SSL/TLS。
 -   順利完成非同步作業後，實際上使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 交涉的 SSL 強度可以透過取得 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 屬性來決定。
@@ -360,7 +364,7 @@ using Windows::Storage::Streams;
 
 如同傳統型的通訊端連線，在為 Windows 市集應用程式使用 Windows 8 中的 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 功能時，也可以使用傳輸層安全性 (TLS)/安全通訊端層 (SSL) 加密 WebSocket 連線。 在大部分情況下，您會想使用安全的 WebSocket 連線。 這將會增加連線成功的機率，因為許多 Proxy 都會拒絕未加密的 WebSocket 連線。
 
-如需如何建立 (或升級至) 連線到網路服務的安全通訊端連線的範例，請參閱[如何使用 TLS/SSL 保護 WebSocket 連線](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)
+如需如何建立 (或升級至) 連線到網路服務的安全通訊端連線的範例，請參閱[如何使用 TLS/SSL 保護 WebSocket 連線](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)。
 
 除了 TLS/SSL 加密，伺服器可能還需要一個 **Sec-WebSocket-Protocol** 標頭值才能完成初始交握。 由 [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) 和 [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) 屬性代表的這個值，指出連線的通訊協定版本，並可讓伺服器正確解譯正在開啟的交握和以後交換的資料。 使用這個通訊協定資訊，如果伺服器在任何時間無法以安全的方式解譯連入資料，就可以關閉連線。
 
@@ -427,6 +431,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

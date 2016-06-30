@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 認識支援通用 Windows 平台 (UWP) App 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。
-title: 通用 Windows 平台 (UWP) App 的裝置基本資訊
+Description: "認識支援通用 Windows 平台 (UWP) App 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。"
+title: "通用 Windows 平台 (UWP) App 的裝置基本資訊"
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
+
 ---
 
 #  通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
@@ -194,6 +198,7 @@ UI 考量
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

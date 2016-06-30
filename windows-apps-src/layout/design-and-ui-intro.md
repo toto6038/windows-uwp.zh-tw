@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。
-title: 通用 Windows 平台 (UWP) 應用程式設計簡介
+Description: "本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。"
+title: "通用 Windows 平台 (UWP) 應用程式設計簡介"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ec154ec64ba18badb5f81b59e76fc04e539de1a8
+
 ---
 
 #  UWP app 設計簡介 
@@ -215,6 +219,7 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

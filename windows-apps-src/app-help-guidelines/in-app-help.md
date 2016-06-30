@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 設計有效說明，以在應用程式內反應性地顯示。
-title: 設計應用程式內說明的指導方針。
+Description: "設計有效說明，以在應用程式內反應性地顯示。"
+title: "設計應用程式內說明的指導方針。"
 label: In-app help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
+
 ---
 
 # 應用程式內說明頁面
@@ -52,6 +56,7 @@ App 內說明可以有數種形式，但都遵循相同的設計和可用性一�
 * [App 說明的指導方針](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

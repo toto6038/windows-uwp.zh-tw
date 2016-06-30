@@ -1,11 +1,14 @@
 ---
-author: PatrickFarley
-Description: 地圖控制項可顯示道路地圖和空照圖檢視、方向、搜尋結果及交通路況。
-title: 地圖的指導方針
+author: msatranjr
+Description: "地圖控制項可顯示道路地圖和空照圖檢視、方向、搜尋結果及交通路況。"
+title: "地圖的指導方針"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
+
 ---
 
-# 地圖的指導方針
+# 地圖控制項
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -69,6 +72,7 @@ ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

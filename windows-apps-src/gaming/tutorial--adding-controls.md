@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 新增控制項
-description: 現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。
+title: "新增控制項"
+description: "現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
+
 ---
 
 # 新增控制項
@@ -22,9 +26,9 @@ ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 
 一個好的 UWP 遊戲必須可以支援多種介面。 潛在玩家使用的也許是沒有實體按鈕的 Windows 10 平板電腦，或是連接 Xbox 控制器的媒體電腦，或者是專為遊戲設計的最新傳統型電腦 (安裝有高效能滑鼠和遊戲鍵盤)。 如果遊戲設計允許，您的遊戲應該要支援所有這些裝置。
 
-此範例三種都可支援。 這是很簡單的第一人稱射擊遊戲，移動視角控制項對這類遊戲來說是標準的設計，也很容易在上述三種輸入類型中實作。
+此範例三種都可支援。 這是很簡單的單人射擊遊戲，移動視角控制項對這類遊戲來說是標準的設計，也很容易在上述三種輸入類型中實作。
 
-如需有關控制項 和移動視角控制項的明確詳細資訊， 請參閱[適用於遊戲的移動視角控制項 ](tutorial--adding-move-look-controls-to-your-directx-game.md)和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)
+如需有關控制項 和移動視角控制項的明確詳細資訊， 請參閱[適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) 和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)。
 
 ## 通用控制項行為
 
@@ -1902,7 +1906,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -1920,6 +1924,7 @@ void MoveLookController::UpdateGameController()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

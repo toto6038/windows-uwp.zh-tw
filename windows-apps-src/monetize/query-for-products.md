@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: 在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
-title: 查詢產品
+description: "在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。"
+title: "查詢產品"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+
 ---
 
 # 查詢產品
@@ -19,7 +22,7 @@ title: 查詢產品
 
 若要使用這個方法，您將需要：
 
--   先前利用 **https://onestore.microsoft.com** 對象 URI 所建立的 Azure AD 存取權杖。
+-   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
 -   藉由從應用程式中的用戶端程式碼來呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所產生的 Windows 市集識別碼索引鍵。
 
 如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
@@ -30,8 +33,9 @@ title: 查詢產品
 
 | 方法 | 要求 URI                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | https://collections.mp.microsoft.com/v6.0/collections/query |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
 
+<br/>
  
 ### 要求的標頭
 
@@ -42,7 +46,7 @@ title: 查詢產品
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
- 
+ <br/>
 
 ### 要求主體
 
@@ -57,7 +61,7 @@ title: 查詢產品
 | productTypes      | 字串       | 如果已指定，該服務只會傳回符合特定產品類型的產品。 支援的產品類型為 **Application**、**Durable** 及 **UnmanagedConsumable**。                                                                                       | 否       |
 | validityType      | 字串       | 設定為 **All** 時，會傳回某使用者的所有產品，包括已過期的項目。 設定為 **Valid** 時，只會傳回在當下有效的產品 (也就是該產品的狀態為使用中、開始日期 &lt; 目前時間，以及結束日期 &gt; 目前時間)。 | 否       |
 
- 
+<br/> 
 
 UserIdentity 物件包含下列參數。
 
@@ -67,16 +71,16 @@ UserIdentity 物件包含下列參數。
 | identityValue        | 字串 | Windows 市集識別碼索引鍵的字串值。                                                                                                                                                                                    | 是      |
 | localTicketReference | 字串 | 已傳回產品的要求識別碼。 回應主體中的已傳回項目將會有相符的 *localTicketReference*。 我們建議您使用與 Windows 市集識別碼索引鍵中 *userId* 宣告相同的值。 | 是      |
 
- 
+<br/> 
 
 ProductSkuId 物件包含下列參數。
 
 | 參數 | 類型   | 描述                                                                                                                                                                                                                                                                                                            | 必要 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| productId | 字串 | Windows 市集型錄中的產品識別碼。 若要取得您的產品識別碼，請在 Windows 開發人員中心儀表板中瀏覽到您的應用程式，然後依序前往 [應用程式管理]****&gt;[應用程式身分識別]**** 頁面，並擷取 [Windows 10 的 URL]**** 欄位中字串的尾碼。 舉例來說，產品識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
+| productId | 字串 | Windows 市集型錄中的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
 | skuID     | 字串 | Windows 市集型錄中的 SKU 識別碼。 舉例來說，SKU 識別碼可以是「0010」。                                                                                                                                                                                                                                                | 是      |
 
- 
+<br/> 
 
 ### 要求的範例
 
@@ -120,7 +124,7 @@ Content-Type: application/json
 | continuationToken | 字串                   | 如果有多組產品，會在達到頁面限制時傳回此權杖。 您可以為後續的呼叫指定此接續權杖，來擷取剩餘的產品。 | 否       |
 | Items             | CollectionItemContractV6 | 特定使用者的產品陣列。                                                                                                                                               | 否       |
 
- 
+<br/> 
 
 CollectionItemContractV6 物件包含下列參數。
 
@@ -138,7 +142,7 @@ CollectionItemContractV6 物件包含下列參數。
 | orderId              | 字串             | 如果存在，則取得此項目的訂單識別碼。                                                                                          | 否       |
 | orderLineItemId      | 字串             | 如果存在，則取得此項目之特定訂單的明細項目。                                                                | 否       |
 | ownershipType        | 字串             | 字串為「OwnedByBeneficiary」。                                                                                                                   | 是      |
-| productId            | 字串             | Windows 市集型錄中的產品識別碼。 舉例來說，產品識別碼可以是「9WZDNCRFJ3Q8」。                                                            | 是      |
+| productId            | 字串             | Windows 市集型錄中 app 的市集識別碼。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。                                                            | 是      |
 | productType          | 字串             | 下列其中一個產品類型：**Application**、**Durable** 及 **UnmanagedConsumable**。                                                     | 是      |
 | purchasedCountry     | 字串             | 不適用。                                                                                                                                               | 否       |
 | purchaser            | IdentityContractV6 | 如果存在，則代表項目購買者的身分識別。 請在下方參閱此物件的詳細資料。                                      | 否       |
@@ -150,7 +154,7 @@ CollectionItemContractV6 物件包含下列參數。
 | Tags                 | 字串             | 不適用                                                                                                                                                | 是      |
 | transactionId        | guid               | 因購買此項目而產生的交易識別碼。 可用來回報某項目已完成。                                       | 是      |
 
- 
+<br/> 
 
 IdentityContractV6 物件包含下列參數。
 
@@ -159,7 +163,7 @@ IdentityContractV6 物件包含下列參數。
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Windows 市集識別碼索引鍵之 *publisherUserId* 的字串值。 | 是      |
 
- 
+<br/> 
 
 ### 回應的範例
 
@@ -211,6 +215,7 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [更新 Windows 市集識別碼索引鍵](renew-a-windows-store-id-key.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

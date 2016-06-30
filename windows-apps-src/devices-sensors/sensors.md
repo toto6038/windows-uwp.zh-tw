@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: 感應器
-description: 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。
+title: "感應器"
+description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+
 ---
 # 感應器
 
@@ -76,7 +80,7 @@ description: 感應器可讓 app 得知裝置與周遭實際環境之間的關�
 ## 指南針
 
 [
-            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
+            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
 
 ![關於磁北極的指南針讀數](images/compass.png)
 
@@ -127,7 +131,7 @@ description: 感應器可讓 app 得知裝置與周遭實際環境之間的關�
 ## 簡單方向
 
 [
-            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
+            **SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
 根據裝置是平行於地面或與地面成直角而變更其顯示方式的閱讀程式，都可以使用 SimpleOrientationSensor 的值來判斷裝置的手持姿勢。
 
@@ -137,6 +141,7 @@ description: 感應器可讓 app 得知裝置與周遭實際環境之間的關�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

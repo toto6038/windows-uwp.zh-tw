@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 啟動 Windows 地圖 app
-description: 了解如何從您的應用程式啟動 Windows 地圖應用程式。
+author: TylerMSFT
+title: "啟動 Windows 地圖 app"
+description: "了解如何從您的應用程式啟動 Windows 地圖應用程式。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+
 ---
 
 # 啟動 Windows 地圖 app
@@ -16,7 +19,6 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 **提示** 若要深入了解如何從您的應用程式啟動 Windows 地圖應用程式，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 ## URI 簡介
-
 
 URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開啟 app。 就像您可以使用 **mailto:** 建立新的電子郵件，或使用 **http:** 開啟網頁瀏覽器一樣，您可以使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** 來開啟 Windows 地圖 app。
 
@@ -68,7 +70,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | URI 範例                                                                 | 結果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:                                                                  | 開啟地圖 app。                                                                                                                                                                                       |
+| bingmaps:?                                                                 | 開啟地圖 app。                                                                                                                                                                                       |
 | bingmaps:?cp=40.726966~-74.006076                                          | 顯示以紐約市為中心的地圖。                                                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 顯示縮放比例 10 以紐約市為中心的地圖。                                                                                                                                       |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 以螢幕大小當成週框方塊顯示紐約市地圖。                                                                                                                          |
@@ -153,11 +155,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## 下載離線地圖
 
 
-**ms-settings:** URI 配置可讓您直接啟動到設定應用程式中的特定頁面。 雖然 **ms-settings:** URI 配置不會啟動到地圖應用程式，但是允許您直接啟動到設定應用程式中的 [離線地圖] 頁面，並且顯示確認對話方塊來下載地圖應用程式所使用的離線地圖。 URI 配置接受緯度和經度所指定的值，並自動判斷是否有包含該點之地區可用的離線地圖。  如果緯度和經度剛好落在多個下載地區內，確認對話方塊會讓使用者挑選要下載其中哪一個區域。 如果包含該點的地區沒有離線地圖，則設定應用程式中的 [離線地圖] 頁面會顯示錯誤對話方塊。
+**ms-settings:** URI 配置可讓您直接啟動到設定應用程式中的特定頁面。 雖然 ms-settings: URI 配置不會啟動到地圖應用程式，但是允許您直接啟動到設定應用程式中的 \[離線地圖\] 頁面，並且顯示確認對話方塊來下載地圖應用程式所使用的離線地圖。 URI 配置接受緯度和經度所指定的值，並自動判斷是否有包含該點之地區可用的離線地圖。  如果緯度和經度剛好落在多個下載地區內，確認對話方塊會讓使用者挑選要下載其中哪一個區域。 如果包含該點的地區沒有離線地圖，則設定應用程式中的 \[離線地圖\] 頁面會顯示錯誤對話方塊。
 
 | URI 範例                                                                                                | 結果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 將設定應用程式開啟到 [離線地圖] 頁面，並顯示確認對話方塊來下載包含所指定經緯度點之地區的地圖。 |
+| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 將設定應用程式開啟到 \[離線地圖\] 頁面，並顯示確認對話方塊來下載包含所指定經緯度點之地區的地圖。 |
  
 
 ## bingmaps: 參數參考
@@ -190,7 +192,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
 <p>範例：</p>
 <p>cp=40.726966~-74.006076</p></td>
-<td align="left"><p>這兩個值都必須以十進位度數表示，並以波狀符號 (**~**) 分隔。</p>
+<td align="left"><p>這兩個值都必須以十進位度數表示，並以波狀符號 () 分隔。</p>
 <p>有效的經度值介於 -180 (含) 到 +180 (含)。</p>
 <p>有效的緯度值介於 -90 (含) 到 +90 (含)。</p></td>
 </tr>
@@ -206,7 +208,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
 <p>範例：</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
-<td align="left"><p>一個以十進位度數表示來指定週框方塊的矩形區域，使用波狀符號 (**~**) 來分隔左下角和右上角。 每個週框方塊的經緯度會以底線 (**_**) 分隔。</p>
+<td align="left"><p>一個以十進位度數表示來指定週框方塊的矩形區域，使用波狀符號 () 來分隔左下角和右上角。 每個週框方塊的經緯度會以底線 (**_**) 分隔。</p>
 <p>有效的經度值介於 -180 (含) 到 +180 (含)。</p>
 <p>有效的緯度值介於 -90 (含) 到 +90 (含)。</p><p>提供週框方塊時，會忽略 cp 和 lvl 參數。</p></td>
 </tr>
@@ -286,7 +288,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>ss = "ss=" BIT</p>
 <p>範例：</p>
 <p>ss=1</p></td>
-<td align="left"><p>指出街景圖的顯示時機。 <code>ss=1</code>. 省略 **ss** 參數會產生與下者相同的結果： <code>ss=0</code>. 與 **cp** 參數搭配使用來指定街景檢視的位置。</p>
+<td align="left"><p>指出當 <code>ss=1</code> 時就顯示街景圖。 省略 **ss** 參數會產生與 <code>ss=0</code> 相同的結果。 與 **cp** 參數搭配使用來指定街景檢視的位置。</p>
 <div class="alert">
 > **注意** 並非所有地區都能使用街景圖。
 </div>
@@ -300,7 +302,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>trfc = "trfc=" BIT</p>
 <p>範例：</p>
 <p>trfc=1</p></td>
-<td align="left"><p>指定是否要在地圖上包含交通資訊。 省略 trfc 參數會產生與下者相同的結果： <code>trfc=0</code>.</p>
+<td align="left"><p>指定是否要在地圖上包含交通資訊。 省略 trfc 參數會產生與 <code>trfc=0</code> 相同的結果。</p>
 <div class="alert">
 > **注意** 並非所有地區都有提供交通資料。
 </div>
@@ -324,10 +326,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>範例：</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
-<td align="left"><p>定義要在地圖上繪製的路線起點和終點，以波狀符號 (**~**) 分隔。 每個導航點都是由使用緯度、經度和選擇性標題或地址識別碼的位置來定義。</p>
-<p>完整的路線會正好包含兩個導航點。 例如，會定義具有兩個導航點的路線。 <code>rtp="A"~"B"</code>.</p>
-<p>指定不完整的路線也是可接受的。 例如，您可以使用下者僅定義路線的起點： <code>rtp="A"~</code>. 在此情況下，顯示路線指引輸入時，[從]**** 欄位中會有所提供的導航點，而 [到]**** 欄位則為焦點所在。</p>
-<p>如果只指定路線的終點 (如同 <code>rtp=~"B"</code>)，則在顯示路線指引面板時，[到]**** 欄位中會有提供的導航點。 如果有正確的目前位置，將會在具有焦點的 [從]**** 欄位中預先填入目前所在位置。</p>
+<td align="left"><p>定義要在地圖上繪製的路線起點和終點，以波狀符號 () 分隔。 每個導航點都是由使用緯度、經度和選擇性標題或地址識別碼的位置來定義。</p>
+<p>完整的路線會正好包含兩個導航點。 例如，<code>rtp="A"~"B"</code> 會定義具有兩個導航點的路線。</p>
+<p>也可以接受指定不完整的路線。 例如，您可以使用 <code>rtp="A"~</code> 僅定義路線的起點。 在此情況下，顯示路線指引輸入時，\[從\] 欄位中會有所提供的導航點，而 \[到\] 欄位則為焦點所在。</p>
+<p>如果只指定路線的終點，如同，則在顯示路線指引面板時，\[到\] 欄位中會有提供的導航點。 如果有正確的目前位置，將會在具有焦點的 \[從\] 欄位中預先填入目前所在位置。</p>
 <p>提供的路線不完整時，不會繪製任何路線圖。</p>
 <p>與 **mode** 參數搭配使用可指定交通模式 (開車、運輸工具或步行)。 若未指定 **mode**，則會以使用者的交通喜好設定模式提供路線指引。</p>
 <div class="alert">
@@ -368,8 +370,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>範例：</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>要新增至地圖和清單中的點集合。 使用 name 參數，可以指定點集合。 使用緯度、經度和選擇性標題指定一個點。</p>
-<p>使用波狀符號 (**~**) 區隔名稱與多個點。</p>
-<p>如果您指定的項目包含波狀符號，請務必要將波狀符號編碼為： <code>%7E</code>. 如果沒有與「中心點」與「縮放比例」參數搭配使用，集合將會提供最適當的地圖檢視。</p>
+<p>使用波狀符號 () 區隔名稱與多個點。</p>
+<p>如果您指定的項目包含波狀符號，請務必要將波狀符號以 <code>%7E</code> 編碼。 如果沒有與「中心點」與「縮放比例」參數搭配使用，集合將會提供最適當的地圖檢視。</p>
 
 <p>**重要** 如果您所指定的項目包含底線，請確定將底線以 %255F 雙重編碼。</p>
 
@@ -383,7 +385,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ms-drive-to: 參數參考
 
 
-啟動詳細駕駛路線要求的 URI 不需要進行編碼，並且具有下列格式。
+啟動轉向建議駕駛路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
 > **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#directions)。
 
@@ -400,7 +402,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ms-walk-to: 參數參考
 
 
-啟動詳細步行路線要求的 URI 不需要進行編碼，並且具有下列格式。
+啟動轉向建議步行路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
 > **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#directions)。
 
@@ -428,6 +430,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

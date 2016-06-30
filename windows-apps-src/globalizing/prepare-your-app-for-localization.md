@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 準備 app 以針對其他市場、語言或地區進行當地語系化。
-title: 準備 app 以進行當地語系化
+Description: "準備 app 以針對其他市場、語言或地區進行當地語系化。"
+title: "準備 app 以進行當地語系化"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
+
 ---
 
 # 準備 app 以進行當地語系化
@@ -187,6 +191,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

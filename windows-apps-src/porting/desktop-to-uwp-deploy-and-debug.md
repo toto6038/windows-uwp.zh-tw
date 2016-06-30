@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: 使用桌面轉換擴充功能，部署和偵錯從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) 應用程式。
+Description: "使用桌面轉換擴充功能，部署和偵錯從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: 部署和偵錯從 Windows 傳統型應用程式轉換而來的通用 Windows 平台 (UWP) 應用程式
+title: "部署和偵錯從 Windows 傳統型應用程式轉換而來的通用 Windows 平台 (UWP) 應用程式"
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+
 ---
 
 # 部署和偵錯已轉換的 UWP App (Project Centennial)
@@ -176,6 +179,8 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 
 如果您嘗試在還沒有匯入您所建立之憑證的電腦上執行 Add-AppxPackage Cmdlet，將會收到錯誤。
 
+部署您的 app 之前，您必須以憑證簽署它。 如需建立憑證的詳細資訊，請參閱[簽署您的 .Appx 套件](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)。 
+
 以下是如何匯入您先前建立之憑證的方式。 您可以直接安裝它，或者可以從您已簽署的 appx 中安裝它，就像客戶會做的一樣。
 1.  在 \[檔案總管\] 中，以滑鼠右鍵按一下您使用測試憑證簽署的 appx，然後從操作功能表選擇 \[屬性\]。
 2.  按一下或點選 \[數位簽章\] 索引標籤。
@@ -188,8 +193,6 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 9.  按一下或點選 \[瀏覽\]。 在 \[選取憑證存放區\] 視窗中，向下捲動並選取 \[受信任的人\]，然後按一下或點選 \[確定\]。
 10. 按一下或點選 \[下一步\]。 新畫面隨即顯示。 按一下或點選 \[完成\]。
 11. 應該會顯示確認對話方塊。 出現時，按一下 \[確定\]。 如果出現其他對話方塊，指出憑證發生問題，您可能需要執行一些憑證疑難排解。
-
-### 其他資訊
 
 若要使 Windows 信任憑證，憑證必須位於 \[憑證 (本機電腦)\] &gt; \[信任的根憑證授權單位\] &gt; \[憑證\] 節點或 \[憑證 (本機電腦)\] &gt; \[受信任的人\] &gt; \[憑證\] 節點上。 只有這兩個位置中的憑證可以驗證本機電腦內容中的憑證信任。 否則，會出現類似下列字串的錯誤訊息︰
 ```CMD
@@ -207,7 +210,16 @@ in the app package must be trusted."
 
 在名為 VFS 的資料夾內，您將會看到包含您應用程式具有相依性之 DLL 的資料夾。 這些 DLL 會安裝到適用於您應用程式傳統桌面版本的系統資料夾。 但是，做為 UWP 應用程式，DLL 會在您應用程式的本機上。 如此一來，在安裝和解除安裝 UWP 應用程式時，就不會發生任何版本問題。
 
+## 另請參閱
+[將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-<!--HONumber=May16_HO2-->
+[傳統型應用程式轉換器預覽 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+
+[將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+
+[GitHub 上的傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+
+
+<!--HONumber=Jun16_HO4-->
 
 

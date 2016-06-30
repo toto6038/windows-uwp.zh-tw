@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: 使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
-description: 針對首次移植練習，我們將從頭開始 -- 將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。
+title: "使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11"
+description: "針對首次移植練習，我們將從頭開始 -- 將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
+ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+
 ---
 
 # 使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
@@ -10,7 +13,7 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-針對首次移植練習，我們將從頭開始：將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。 當我們逐步解說這個移植程序時，您將了解下列內容：
+針對此移植練習，我們將從頭開始：將適用於頂點已著色旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。 當我們逐步解說這個移植程序時，您將了解下列內容：
 
 -   如何將一組簡單的頂點緩衝區移植到 Direct3D 輸入緩衝區
 -   如何將 Uniform 與屬性移植到常數緩衝區
@@ -18,7 +21,7 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 -   如何在 Direct3D 著色器開發中使用基本的 HLSL 語意
 -   如何將非常簡單的 GLSL 移植到 HLSL
 
-本主題一開始假設您已建立新的 DirectX 11 專案。 若要了解如何建立新的 DirectX 11 專案，請閱讀[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)
+本主題一開始假設您已建立新的 DirectX 11 專案。 若要了解如何建立新的 DirectX 11 專案，請閱讀[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)。
 
 從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
 
@@ -141,6 +144,7 @@ typedef struct
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

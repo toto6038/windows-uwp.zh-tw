@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 提供可用於 app 的部分控制項清單 (依功能分類)。
-title: 依功能分類的控制項
+Description: "提供可用於 app 的部分控制項清單 (依功能分類)。"
+title: "依功能分類的控制項"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
+
 ---
 # 依功能分類的控制項
 
@@ -844,6 +848,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法︰[切換控制項指南](toggles.md) 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

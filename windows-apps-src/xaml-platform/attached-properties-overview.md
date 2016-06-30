@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 說明 XAML 中附加屬性的概念並提供一些範例。
-title: 附加屬性概觀
+description: "說明 XAML 中附加屬性的概念並提供一些範例。"
+title: "附加屬性概觀"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+
 ---
 
 # 附加屬性概觀
@@ -105,7 +109,7 @@ Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如
 
 **注意：**目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
  
-- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設有現有的元素 '<TextBlock x:Uid="Title" />' 存在，在該執行個體上以 **Canvas.Top** 值為目標之資源檔案中的資源機碼是 "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設有一個元素 '<TextBlock x:Uid="Title" />'，則資源檔中指向該執行個體上的 **Canvas.Top** 值的資源索引鍵會是 "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## 相關主題
 
@@ -118,6 +122,7 @@ Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

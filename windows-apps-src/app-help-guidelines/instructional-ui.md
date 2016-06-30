@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集 app。
-title: 設計指示性 UI 的指導方針
+Description: "設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集 app。"
+title: "設計指示性 UI 的指導方針"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1c8ab97a5625243a50fa3b40ae93f5928dc7d851
+
 ---
 
 # 指示性 UI 指導方針
@@ -52,11 +56,11 @@ template: detail.hbs
 
     ![影片時刻應用程式的啟動畫面](images/instructional-ui-movie.png)
 
--   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件 App 中，收件匣底部的提示會引導使用者進入 [設定]**** 以存取較舊的郵件。
+-   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件 App 中，收件匣底部的提示會引導使用者進入 \[設定\] 以存取較舊的郵件。
 
     ![顯示指示性 UI 訊息的 Windows 郵件 app 的裁剪螢幕擷取畫面](images/instructional-ui-mail-inbox.png)
 
-    使用者按一下訊息時，App 的 [設定]**** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
+    使用者按一下訊息時，App 的 \[設定\] 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
 
     | 之前                                                               | 之後                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -67,6 +71,7 @@ template: detail.hbs
 * [App 說明的指導方針](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

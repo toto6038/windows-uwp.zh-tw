@@ -1,14 +1,18 @@
 ---
 author: jnHs
-Description: 如果您的 app 使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。
-title: 利用廣告獲利
+Description: "如果您的 app 使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 \\[創造營收\\]  \\[利用廣告獲利\\] 頁面來管理廣告的使用方式。"
+title: "利用廣告獲利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+
 ---
 
 # 利用廣告獲利
 
 
-如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項來顯示橫幅或影片插入式廣告，請使用 [創造營收]****&gt;[利用廣告獲利]**** 頁面來管理廣告的使用方式。
+如果您的應用程式使用 AdMediatorControl、AdControl 或 InterstitialAd 控制項來顯示橫幅或影片插入式廣告，請使用 \[創造營收\]\[利用廣告獲利\] 頁面來管理廣告的使用方式。
 
 ## Windows 廣告流量分配
 
@@ -47,9 +51,9 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 若要為這些案例建立廣告單元：
 
 1.  為廣告單元命名。
-2.  選取廣告單元類型 ([橫幅]**** 或 [插入式影片]****)。
-3.  選取裝置類型 ([行動裝置]**** 或 [電腦/平板電腦]****)。
-4.  按一下 [建立廣告單元]****。
+2.  選取廣告單元類型 (\[橫幅\] 或 \[插入式影片\])。
+3.  選取裝置類型 (\[行動裝置\] 或 \[電腦/平板電腦\])。
+4.  按一下 \[建立廣告單元\]。
 
 您的廣告單元會出現在此區段底部的表格中。 您會看到每個廣告單元的**應用程式識別碼**和**廣告單元識別碼**。 若要在 app 中顯示廣告，您需要在程式碼中使用這些值：
 
@@ -65,6 +69,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

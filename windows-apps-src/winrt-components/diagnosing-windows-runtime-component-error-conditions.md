@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: 診斷 Windows 執行階段元件錯誤狀況
-description: 本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。
+author: msatranjr
+title: "診斷 Windows 執行階段元件錯誤狀況"
+description: "本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+
 ---
 
 # 診斷 Windows 執行階段元件錯誤狀況
@@ -10,7 +13,6 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 本文提供以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。 其中詳述 [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx) 中錯誤訊息所提供的資訊，並補充[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制相關資訊。
 
@@ -220,17 +222,17 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
     > ```cs
     > using System.Runtime.InteropServices;
     > using System.Runtime.InteropServices.WindowsRuntime;
-    > 
+    >
     > [return: ReturnValueName("average")]
     > public int GetAverage(out int lowValue, out int highValue)
     > ```
     > ```vb
     > Imports System.Runtime.InteropServices
     > Imports System.Runtime.InteropServices.WindowsRuntime
-    > 
+    >
     > Public Function GetAverage(<Out> ByRef lowValue As Integer, _
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
-    > ``` 
+    > ```
 
 > **注意** 如果您變更傳回值的名稱，而新的名稱與另一個參數的名稱發生衝突，就會收到錯誤 WME1091。
 
@@ -248,6 +250,7 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 * [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

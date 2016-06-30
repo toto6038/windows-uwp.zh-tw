@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
-title: 主要畫面格動畫和 Easing 函式動畫
+title: "主要畫面格動畫和 Easing 函式動畫"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-description: 線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。
+description: "線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
+
 ---
 # 主要畫面格動畫和 Easing 函式動畫
 
@@ -21,7 +25,7 @@ description: 線性主要畫面格動畫、含 KeySpline 值的主要畫面格�
 
 對內插補點行為而言，每個主要畫面格都會控制內插補點，直到它的 **KeyTime** 時間到達為止。 它的 **Value** 也會在該時間到達。 如果還有更多的主要畫面格，此值就會成為序列中下一個主要畫面格的開始值。
 
-動畫開始時，如果沒有 **KeyTime** 為 "0:0:0" 的主要畫面格，開始值會是屬性的任何非動畫值。 這種情況和 **From**/**To**/**By** 動畫在沒有 **From** 時的運作方式類似
+動畫開始時，如果沒有 **KeyTime** 為 "0:0:0" 的主要畫面格，開始值會是屬性的任何非動畫值。 這種情況和 **From**/**To**/**By** 動畫在沒有 **From** 時的運作方式類似。
 
 主要畫面格動畫的持續時間暗示此持續時間等於任一主要畫面格中設定的最高 **KeyTime** 值。 您可以視需要設定明確的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)，但請注意，不可短於您自己的主要畫面格中的 **KeyTime**，否則會截斷部分動畫。
 
@@ -34,7 +38,7 @@ description: 線性主要畫面格動畫、含 KeySpline 值的主要畫面格�
 -   [
             **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制到達最後一個主要畫面格時發生的情況。 **FillBehavior** 在任何中繼主要畫面格上都沒有作用。
 -   [
-            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
+            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
     -   如果設定為 **Forever**，那麼主要畫面格及其時間軸會無限重複。
     -   如果設定為某個反覆運算計數，時間軸會重複該次數。
     -   如果設定為 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，時間軸會重複到該時間到達為止。 如果它不是時間軸隱含持續時間的整數因素，這可能會在主要畫面格序列的中途截斷動畫。
@@ -149,9 +153,9 @@ Easing 函式可讓您將自訂的數學公式套用至動畫。 對於製作以
 
 Easing 函式可用三種方式套用到動畫：
 
--   如先前小節所述，在主要畫面格動畫中使用 Easing 主要畫面格。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)
--   在其中一個 **From**/**To**/**By** 動畫類型設定 **EasingFunction** 屬性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)
--   將 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 設定為 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 這是專用於定義控制項的視覺狀態；如需詳細資訊，請參閱 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+-   如先前小節所述，在主要畫面格動畫中使用 Easing 主要畫面格。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)。
+-   在其中一個 **From**/**To**/**By** 動畫類型設定 **EasingFunction** 屬性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)。
+-   將 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 設定為 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 這是專用於定義控制項的視覺狀態；如需詳細資訊，請參閱 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 以下是 Easing 函式的清單：
 
@@ -180,7 +184,7 @@ Easing 函式可用三種方式套用到動畫：
 
 有些 Easing 函式有自己的屬性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 有兩個屬性 [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)，可修改該特定 **BounceEase** 的 function-over-time 行為。 其他 Easing 函式 (例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)) 並沒有所有 Easing 函式共用之 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 屬性以外的屬性，而且一律產生相同的 function-over-time 行為。
 
-視您在具備屬性的 Easing 函式上設定屬性的方式而定，這些 Easing 函式中有部分會有一些重疊。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 和 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全一樣，它們的 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 都等於 2。 而 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 基本上是預設值 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)
+視您在具備屬性的 Easing 函式上設定屬性的方式而定，這些 Easing 函式中有部分會有一些重疊。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 和 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全一樣，它們的 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 都等於 2。 而 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 基本上是預設值 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)。
 
 [
             **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) Easing 函式是獨一無二的，因為它可以變更 **From**/**To** 或主要畫面格值所設定的一般範圍以外的值。 它啟動動畫的方式是以一般 **From**/**To** 行為的相反方向變更值，回到 **From** 或再次開始值，然後按一般方式執行動畫。
@@ -209,12 +213,12 @@ Easing 函式套用到 **From**/**To**/**By** 動畫時，它會變更如何在�
 
 ## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>離散物件值動畫
 
-這是值得特別提及的動畫，因為這是唯一的一種方式，讓您可以將動畫值套用到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的屬性。 這是主要畫面格動畫 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值製作動畫有所不同，因為無法在畫面格之間插入值。 當畫面格的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到達時，動畫值會立即設定為主要畫面格的 **Value** 中指定的值。 因為沒有內插補點，所以在 **ObjectAnimationUsingKeyFrames** 主要畫面格集合中只使用一個主要畫面格：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)
+這是值得特別提及的動畫，因為這是唯一的一種方式，讓您可以將動畫值套用到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的屬性。 這是主要畫面格動畫 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值製作動畫有所不同，因為無法在畫面格之間插入值。 當畫面格的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到達時，動畫值會立即設定為主要畫面格的 **Value** 中指定的值。 因為沒有內插補點，所以在 **ObjectAnimationUsingKeyFrames** 主要畫面格集合中只使用一個主要畫面格：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
 [
-            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用屬性 (Property) 元素語法進行設定，因為您嘗試設定的物件值通常無法以字串的形式表示，所以無法在屬性語法中填入 **Value**。 如果您使用 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588) 這類的參考，還是可以使用屬性語法
+            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用屬性 (Property) 元素語法進行設定，因為您嘗試設定的物件值通常無法以字串的形式表示，所以無法在屬性語法中填入 **Value**。 如果您使用 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588) 這類的參考，還是可以使用屬性語法。
 
-您會在一個地方看到預設範本使用 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)，那就是當範本屬性參考 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 資源時。 這些資源是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 物件，不僅只是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 值，它們會使用定義為系統佈景主題的資源 ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807))。 它們可以直接指派給 **Brush** 類型的值，例如 [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665)，而且不需要使用間接目標。 但因為 **SolidColorBrush** 不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 **Color**，所以您必須使用 **ObjectAnimationUsingKeyFrames** 才能使用資源。
+您會在一個地方看到預設範本使用 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)，那就是當範本屬性參考 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 資源。 這些資源是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 物件，不僅只是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 值，它們會使用定義為系統佈景主題的資源 ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807))。 它們可以直接指派給 **Brush** 類型的值，例如 [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665)，而且不需要使用間接目標。 但因為 **SolidColorBrush** 不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 **Color**，所以您必須使用 **ObjectAnimationUsingKeyFrames** 才能使用資源。
 
 ```xml
 <Style x:Key="TextButtonStyle" TargetType="Button">
@@ -296,6 +300,7 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

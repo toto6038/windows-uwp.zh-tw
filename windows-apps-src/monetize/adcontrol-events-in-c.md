@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
-description: 了解如何處理 AdControl 類別的事件。
-title: C 中的 AdControl 事件#
+description: "了解如何處理 AdControl 類別的事件。"
+title: "C 中的 AdControl 事件#"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: cc5dfbfacefb4be32153f3266878be41a3b923f8
+
 ---
 
 # C\ 中的 AdControl 事件# #  
@@ -47,6 +51,7 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

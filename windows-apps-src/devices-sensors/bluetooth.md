@@ -1,8 +1,11 @@
 ---
-author: DBirtolo
+author: msatranjr
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
-title: 藍牙
-description: 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app 的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。
+title: "藍牙"
+description: "本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app 的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。"
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: f2266207eeb1ec4214ae62dbad2bf4a6437fd69b
+
 ---
 # 藍牙
 
@@ -10,7 +13,7 @@ description: 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app
 
 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app 的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。
 
-|        |                  |
+|主題|說明|
 |--------|------------------|
 | [RFCOMM](send-or-receive-files-with-rfcomm.md)   | 本文將概略說明 [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空間中的藍牙 RFCOMM API，並提供如何傳送或接收檔案的範例程式碼。 |
 | [GATT](gatt-scenarios.md) | 本文將概略說明 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 命名空間中的藍牙一般屬性設定檔 (GATT) API，並提供三個通用 GATT 案例的範例程式碼：擷取藍牙資料、控制藍牙 LE 溫度計裝置，以及控制藍牙 LE 裝置資料的呈現。 |
@@ -20,6 +23,7 @@ description: 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) app
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

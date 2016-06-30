@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
-description: 在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。
+title: "OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較"
+description: "在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a588ba010ddf21a07d493774cff7f6ab5dbfdf47
+
 ---
 
 # OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
@@ -297,6 +301,7 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

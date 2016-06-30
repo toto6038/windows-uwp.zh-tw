@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: 本主題說明如何從媒體擷取預覽資料流取得預覽框架。
-title: 取得預覽框架
+description: "本主題說明如何從媒體擷取預覽資料流取得預覽框架。"
+title: "取得預覽框架"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
+
 ---
 
 # 取得預覽框架
@@ -59,6 +63,7 @@ title: 取得預覽框架
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

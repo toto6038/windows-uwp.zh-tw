@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 啟動 Windows 設定 app
-description: 了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。
+author: TylerMSFT
+title: "啟動 Windows 設定 app"
+description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+
 ---
 
 # 啟動 Windows 設定 app
@@ -32,7 +35,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-microphone">
@@ -42,7 +45,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 </TextBlock>
 ```
 
-或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [**設定**] app。
+或者，您的 app 也可以呼叫 LaunchUriAsync 方法，以從程式碼啟動 \[設定\] app。
 
 ```cs
 using Windows.System;
@@ -59,18 +62,18 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 ## ms-settings: URI 配置參考
 
 
-使用下列 URI 可開啟 [設定] app 的各個頁面。 請注意，[支援的 SKU] 欄會指出適用於傳統型版本 (家用版、專業版、企業版及教育版) 的 Windows 10、「Windows 10 行動裝置版」或兩者中是否有設定頁面。
+使用下列 URI 可開啟 \[設定\] app 的各個頁面。 請注意，\[支援的 SKU\] 欄會指出適用於傳統型版本 (家用版、專業版、企業版及教育版) 的 Windows 10、「Windows 10 行動裝置版」或兩者中是否有設定頁面。
 
 | 類別           | 設定頁面                          | 支援的 SKU | URI                                       |
 |--------------------|----------------------------------------|----------------|-------------------------------------------|
-| 首頁          | [設定] 的登陸頁面              | 兩者           | ms-settings:                              |
+| 首頁          | \[設定\] 的登陸頁面              | 兩者           | ms-settings:                              |
 | 系統             | 顯示器                                | 兩者           | ms-settings:screenrotation                |
 |                    | 通知與動作                | 兩者           | ms-settings:notifications                 |
 |                    | 手機                                  | 僅限行動裝置版    | ms-settings:phone                         |
 |                    | 訊息中心                              | 僅限行動裝置版    | ms-settings:messaging                     |
-|                    | 省電模式                          | 兩者           | ms-settings:batterysaver                  |
-|                    | 省電模式 / 省電模式設定 | 兩者           | ms-settings:batterysaver-settings         |
-|                    | 省電模式 / 電池使用情況            | 兩者           | ms-settings:batterysaver-usagedetails     |
+|                    | 省電模式                          | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver                  |
+|                    | 省電模式 / 省電模式設定 | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本 | ms-settings:batterysaver-settings         |
+|                    | 省電模式 / 電池使用情況            | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver-usagedetails     |
 |                    | 電源與睡眠                          | 僅限傳統型版本   | ms-settings:powersleep                    |
 |                    | 傳統型版本：關於                         | 兩者           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -124,8 +127,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

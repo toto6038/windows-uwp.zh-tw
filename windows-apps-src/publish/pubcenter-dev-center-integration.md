@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。
-title: pubCenter 開發人員中心整合
+Description: "pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。"
+title: "pubCenter 開發人員中心整合"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+
 ---
 
 # pubCenter 開發人員中心整合
@@ -26,7 +30,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 **結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
 
 -   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
+-   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
 -   若要管理現有 pubCenter 帳戶的付款方式和稅務詳細資料，您必須使用 pubCenter。
 -   在開發人員中心使用的付款方式和稅務詳細資料也將用於 pubCenter 支付。 您的付款方式和稅務詳細資料僅能從開發人員中心編輯。 這表示：
     -   如果您的付款方式在開發人員中心和 pubCenter 不同，您可能會開始在不同的銀行帳戶收到您的 pubCenter 支付。
@@ -45,7 +49,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 **結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
 
 -   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
+-   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
 -   您的 pubCenter 獲利資料將會轉換為開發人員中心的貨幣，並在開發人員中心報告。 不過，您的 pubCenter 支付將會繼續使用 pubCenter 帳戶的貨幣進行。
 -   若要管理現有 pubCenter 帳戶的付款方式和稅務詳細資料，您必須使用 pubCenter。
 -   對於您在開發人員中心建立的任何新廣告單位，獲利將會以您開發人員中心帳戶的貨幣累積、報告以及支付，而且這些新廣告單位的獲利將會使用您的開發人員中心付款方式和稅務詳細資料。
@@ -63,22 +67,22 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 **結果**：您必須將您的 pubCenter 帳戶手動連結到開發人員中心帳戶。 若要這麼做：
 
 1.  登入您想要連結的 pubCenter 帳戶。
-2.  在此帳戶的 [我的資訊]**** 頁面上，您將會找到一個 [pubCenter 帳戶連結代碼]****。 將此代碼放在手邊。
+2.  在此帳戶的 \[我的資訊\] 頁面上，您將會找到一個 \[pubCenter 帳戶連結代碼\]。 將此代碼放在手邊。
 
     > **注意：**每 60 分鐘會產生一個新的帳戶連結代碼。
 
 3.  登出您的 pubCenter 帳戶。
 4.  登入您的[開發人員中心帳戶](https://dev.windows.com/)。
-5.  在開發人員中心儀表板中，按一下左窗格中的 [廣告績效]****，再按一下 [連結 pubCenter 帳戶]****。
+5.  在開發人員中心儀表板中，按一下左窗格中的 \[廣告績效\]，再按一下 \[連結 pubCenter 帳戶\]。
 6.  輸入與 pubCenter 帳戶相關聯的電子郵件地址，以及帳戶連結代碼。
-7.  按一下 [**連結帳戶**]，您的 pubCenter 帳戶將會連結到您的開發人員中心帳戶。
+7.  按一下 \[連結帳戶\]，您的 pubCenter 帳戶將會連結到您的開發人員中心帳戶。
 
     > **注意：**您可以將一或多個 pubCenter 帳戶連結到您的開發人員中心帳戶。 不過，每個 pubCenter 帳戶只能連結到一個開發人員中心帳戶。
 
 您的 pubCenter 帳戶連結到開發人員中心帳戶之後：
 
 -   您的 pubCenter 帳戶資料就會在 24 小時內，開始出現在連結的開發人員中心帳戶中。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
+-   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
 -   如果您的 pubCenter 帳戶與開發人員中心帳戶是在不同的國家/地區註冊，您的獲利資料將會在報告中轉換成開發人員中心的貨幣。
 -   來自 pubCenter 帳戶的獲利將不再使用在 pubCenter 中設定的付款方式和稅務詳細資料來支付。 如果您需要變更付款方式或稅務詳細資料，您必須在開發人員中心進行。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 -   若要收取在開發人員中心所建立新廣告單位的累積獲利款項，您必須在開發人員中心設定付款和稅務資料。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
@@ -110,11 +114,11 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
 ### 我無法在 pubCenter 中建立新的廣告單位。 怎麼回事？
 
-我們已不再支援在 pubCenter 中建立新的廣告單位。 如果您已經在 app 中整合 Microsoft Ad Mediator 控制項，當您將 app 上傳到 Windows 市集時，就會自動在後端建立廣告單位。 或者，您也可以從您 app 的 [利用廣告營利]**** 頁面，在開發人員中心手動建立新的獨立廣告單位。
+我們已不再支援在 pubCenter 中建立新的廣告單位。 如果您已經在 app 中整合 Microsoft Ad Mediator 控制項，當您將 app 上傳到 Windows 市集時，就會自動在後端建立廣告單位。 或者，您也可以從您 app 的 \[利用廣告營利\] 頁面，在開發人員中心手動建立新的獨立廣告單位。
 
 ### 如何在開發人員中心建立廣告單位？
 
-從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [利用廣告營利]****。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
+從開發人員中心的 app 頁面，按一下 \[創造營收\] \[利用廣告營利\]。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
 
 ### 我安裝了最新版的廣告流量分配者延伸，而且將廣告流量分配者控制項新增到我的 app。 我還需要移至 pubCenter 建立新的廣告單位嗎？
 
@@ -122,7 +126,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 ### 我仍然在 app 中使用舊版的廣告流量分配者控制項，需要取得新的廣告單位識別碼。 如何建立廣告單位？
 
-您可以在開發人員中心儀表板中為您的 app 建立新的廣告單位。 從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [利用廣告營利]****。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
+您可以在開發人員中心儀表板中為您的 app 建立新的廣告單位。 從開發人員中心的 app 頁面，按一下 \[創造營收\] \[利用廣告營利\]。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
 
 ### 我因為使用了廣告流量分配者控制項而自動建立了廣告單位，而且我確認廣告正在進行。 我也從開發人員中心手動建立了幾個其他的廣告單位。 我還需要執行任何動作才能從這些廣告單位獲利嗎？
 
@@ -134,11 +138,11 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 ### 如何在開發人員中心建立 app 促銷活動？
 
-從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [促銷您的 app]****。 如需在開發人員中心為 app 建立廣告活動的詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+從開發人員中心的 app 頁面，按一下 \[創造營收\] \[促銷您的 app\]。 如需在開發人員中心為 app 建立廣告活動的詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 ### 在開發人員中心哪裡可以查看績效資料？
 
-從開發人員中心的 app 頁面，按一下 [分析]**** &gt; [Microsoft 廣告成效]****。 如需詳細資訊，請參閱[廣告績效報告](advertising-performance-report.md)。
+從開發人員中心的 app 頁面，按一下 \[分析\] \[Microsoft 廣告成效\]。 如需詳細資訊，請參閱[廣告績效報告](advertising-performance-report.md)。
 
 ### 如何在開發人員中心管理付款方式和稅務詳細資料？
 
@@ -150,11 +154,11 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 ### 我已經將 pubCenter 帳戶連結到開發人員中心帳戶，但是在 app 底下找不到當中使用的廣告單位。 哪裡可以找到這些廣告單位？
 
-如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果您在多個 app 中使用了該廣告單位、如果您在不屬於相同開發人員中心帳戶的 app 中使用了該廣告單位，或者如果廣告單位在過去幾天已經沒有提供任何廣告，則會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
+如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果您在多個 app 中使用了該廣告單位、如果您在不屬於相同開發人員中心帳戶的 app 中使用了該廣告單位，或者如果廣告單位在過去幾天已經沒有提供任何廣告，則會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
 
 ### 我以前都在開發人員中心帳戶的 app 底下查看廣告單位，但現在我找不到了。 怎麼回事？
 
-如果您的廣告單位有幾天沒有廣告，則會發生這個問題。 請移至開發人員中心的帳戶層級 [廣告績效]****報告，查看這些廣告單位的資料。
+如果您的廣告單位有幾天沒有廣告，則會發生這個問題。 請移至開發人員中心的帳戶層級 \[廣告績效\]報告，查看這些廣告單位的資料。
 
 ### 如何找出我的 pubCenter 帳戶是否已經成功連結到我的開發人員中心帳戶？
 
@@ -181,6 +185,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-title: 從您的 app 掃描
-description: 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。
+title: "從您的 app 掃描"
+description: "在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: fe01ccf5b0b91ffcca7937842cf0152622d59f9e
+
 ---
 # 從您的 app 掃描
 
@@ -170,6 +174,7 @@ cancellationToken = new CancellationTokenSource();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

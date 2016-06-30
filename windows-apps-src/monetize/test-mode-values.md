@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
-description: 使用本文中的測試應用程式識別碼和廣告單位識別碼值，以查看您的 app 於測試期間呈現廣告的方式。
-title: 測試模式值
+description: "使用本文中的測試應用程式識別碼和廣告單位識別碼值，以查看您的 app 於測試期間呈現廣告的方式。"
+title: "測試模式值"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
+
 ---
 
 # 測試模式值
@@ -72,6 +76,7 @@ title: 測試模式值
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 適用於 DirectX 遊戲的基本 3D 圖形
-description: 我們將示範如何使用 DirectX 程式設計來實作 3D 圖形的基本概念。
+title: "適用於 DirectX 遊戲的基本 3D 圖形"
+description: "我們將示範如何使用 DirectX 程式設計來實作 3D 圖形的基本概念。"
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8f27c5060ffdc566c596168e54d51730c349d401
+
 ---
 
 # 適用於 DirectX 遊戲的基本 3D 圖形
@@ -63,6 +67,7 @@ ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

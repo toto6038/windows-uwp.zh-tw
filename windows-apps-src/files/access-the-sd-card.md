@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
-title: 存取 SD 記憶卡
-description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。
+title: "存取 SD 記憶卡"
+description: "您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
+
 ---
 # 存取 SD 記憶卡
 
@@ -18,7 +22,8 @@ description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要�
 - 檔案選擇器。
 
 - [
-            **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+              **Windows.Storage**
+            ](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
 ## SD 記憶卡上可存取和不可存取的項目
 
@@ -34,7 +39,7 @@ description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要�
 
 - 您的應用程式看不到已標記隱藏屬性的檔案。 隱藏屬性一般用來降低意外刪除資料的風險。
 
-- 您的應用程式無法使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 來查看或存取 [文件] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 [文件] 媒體櫃。
+- 您的應用程式無法使用 KnownFolders.DocumentsLibrary 來查看或存取 \[文件\] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 \[文件\] 媒體櫃。
 
 ## 安全性和隱私權考量
 
@@ -55,14 +60,15 @@ description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要�
 
 前述方法也可讓您不需參考已知資料夾 (例如 **KnownFolders.MusicLibrary**) 即可存取 SD 記憶卡上的媒體檔案，或是存取儲存在媒體櫃資料夾外的媒體檔案。
 
-若要使用已知資料夾來存取儲存在媒體櫃 ([音樂]、[相片] 或 [影片]) 中的媒體檔案，您只需要在應用程式資訊清單檔案中指定相關的功能 (**musicLibrary**、**picturesLibrary** 或 **videoLibrary**) 即可。 您不需要指定 **removableStorage** 功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
+若要使用已知資料夾來存取儲存在媒體櫃 (\[音樂\]、\[相片\] 或 \[影片\]) 中的媒體檔案，您只需要在應用程式資訊清單檔案中指定相關的功能 (musicLibrary、picturesLibrary 或 videoLibrary) 即可。 您不需要指定 **removableStorage** 功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
 
 ## 存取 SD 記憶卡上的檔案
 
 ### 取得 SD 記憶卡的參照
 
 [
-            **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
+              **KnownFolders.RemovableDevices**
+            ](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
 
 使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
 
@@ -98,7 +104,8 @@ SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使�
 當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
 
 -   [
-            **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
+              **GetFilesAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
 
 -   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法將會失敗。
 
@@ -150,6 +157,7 @@ using Windows.Storage;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

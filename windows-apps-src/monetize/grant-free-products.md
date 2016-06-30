@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: 請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。
-title: 授與免費產品
+description: "請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。"
+title: "授與免費產品"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+
 ---
 
 # 授與免費產品
@@ -17,7 +20,7 @@ title: 授與免費產品
 
 若要使用這個方法，您將需要：
 
--   先前利用 **https://onestore.microsoft.com** 對象 URI 所建立的 Azure AD 存取權杖。
+-   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
 -   Windows 市集識別碼索引鍵是藉由從您 app 中的用戶端程式碼呼叫 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法所產生。
 
 如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
@@ -29,9 +32,9 @@ title: 授與免費產品
 
 | 方法 | 要求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | https://purchase.mp.microsoft.com/v6.0/purchases/grant |
+| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
 
- 
+<br/> 
 
 ### 要求的標頭
 
@@ -42,7 +45,7 @@ title: 授與免費產品
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
- 
+<br/>
 
 ### 要求主體
 
@@ -54,11 +57,11 @@ title: 授與免費產品
 | language       | 字串 | 使用者所用的語言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字串 | 使用者所在的市場。                                                                                                                                                                                                                                                                                                | 是      |
 | orderId        | guid   | 為訂單所產生的 GUID。 此值對使用者來說是唯一的，但在所有訂單中並不需要是唯一的。                                                                                                                                                                                              | 是      |
-| productId      | 字串 | Windows 市集型錄中的產品識別碼。 若要取得您的產品識別碼，請在 Windows 開發人員中心儀表板中瀏覽到您的應用程式，然後依序前往 [應用程式管理]****&gt;[應用程式身分識別]**** 頁面，並擷取 [Windows 10 的 URL]**** 欄位中字串的尾碼。 舉例來說，產品識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
+| productId      | 字串 | Windows 市集型錄中的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
 | quantity       | 整數    | 要購買的數量。 目前唯一支援的值為 1。 如果沒有指定，則預設為 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字串 | Windows 市集型錄中的 SKU 識別碼。 舉例來說，SKU 識別碼可以是「0010」。                                                                                                                                                                                                                                                | 是      |
 
- 
+<br/> 
 
 ### 要求的範例
 
@@ -104,7 +107,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | 十進位                     | 如果使用不同的付款方式和儲存值 (CSV)，金額就會計入 CSV。                                                                | 是      |
 | totalTaxAmount            | 十進位                     | 所有明細項目的總稅金金額。                                                                                                              | 是      |
 
- 
+<br/> 
 
 ClientContext 物件包含下列參數。
 
@@ -112,7 +115,7 @@ ClientContext 物件包含下列參數。
 |-----------|--------|---------------------------------------|----------|
 | client    | 字串 | 建立訂單的用戶端識別碼。 | 否       |
 
- 
+<br/> 
 
 OrderLineItemV6 物件包含下列參數。
 
@@ -144,7 +147,7 @@ OrderLineItemV6 物件包含下列參數。
 | Title                   | 字串         | 當地語系化的明細項目標題。                                                                        | 是      |
 | totalAmount             | 十進位        | 該明細項目含稅的總購金額。                                                    | 是      |
 
- 
+<br/> 
 
 IdentityV6 物件包含下列參數。
 
@@ -153,7 +156,7 @@ IdentityV6 物件包含下列參數。
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Windows 市集識別碼索引鍵之 *publisherUserId* 的字串值。 | 是      |
 
- 
+<br/> 
 
 ### 回應的範例
 
@@ -226,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 | 400  | BadRequest   | InvalidParameter           | 詳細資料包含要求主體的相關資訊，以及哪些欄位的值無效。                                                                                    |
 
- 
+<br/> 
 
 ## 相關主題
 
@@ -241,8 +244,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

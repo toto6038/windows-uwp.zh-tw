@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 使用淡入/淡出動畫將項目帶入檢視或帶出檢視。 兩個常見的淡入/淡出動畫會淡入和淡出。
-title: UWP app 中的淡入/淡出動畫
+Description: "使用淡入/淡出動畫將項目帶入檢視或帶出檢視。 兩個常見的淡入/淡出動畫會淡入和淡出。"
+title: "UWP app 中的淡入/淡出動畫"
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 028e3462a0bf34af0486864508b1ac049fdf60ed
+
 ---
 
 # 淡化動畫
@@ -43,6 +47,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

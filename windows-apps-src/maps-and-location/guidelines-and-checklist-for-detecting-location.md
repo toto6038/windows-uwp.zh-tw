@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-Description: 這個主題說明需要存取使用者位置之 app 的效能指導方針。
-title: 定位感知 app 的指導方針
+author: msatranjr
+Description: "這個主題說明需要存取使用者位置之 app 的效能指導方針。"
+title: "定位感知 app 的指導方針"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
+
 ---
 
 # 定位感知 app 的指導方針
@@ -25,7 +28,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
     請在存取使用者的位置之前，先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的 app 存取其位置的權限之前，您的 app 將無法存取位置資料。
 
--   如果定位功能對您的應用程式來說並非必要，除非使用者嘗試完成需要此功能的工作，否則請不要存取它。 舉例來說，如果社交網路應用程式有一個 [用我的位置登入] 按鈕，除非使用者按一下該按鈕，否則應用程式不應該存取位置。 如果您應用程式的主要功能需要，可以立即存取位置。
+-   如果定位功能對您的應用程式來說並非必要，除非使用者嘗試完成需要此功能的工作，否則請不要存取它。 舉例來說，如果社交網路應用程式有一個 \[用我的位置登入\] 按鈕，除非使用者按一下該按鈕，否則應用程式不應該存取位置。 如果您應用程式的主要功能需要，可以立即存取位置。
 
 -   第一次使用 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件，必須是在前景 app 的主要 UI 執行緒上，以便向使用者觸發同意提示。 第一次使用 **Geolocator** 可以是第一次呼叫 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，也可以是 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件的第一次處理常式登錄。
 
@@ -34,23 +37,24 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 -   等候取得位置資料時，顯示進度列或進度環。 <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
 -   在停用或無法取得定位服務時顯示適當的錯誤訊息或對話方塊。
 
-    如果位置設定不允許您的應用程式存取使用者的位置，建議您提供一個可連到 [**設定**] app 中 [**位置隱私權設定**] 的便利連結。 例如，您可以使用超連結控制項或呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，使用 `ms-settings:privacy-location` URI 從程式碼啟動 [**設定**] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
+    如果位置設定不允許您的應用程式存取使用者的位置，建議您提供一個可連到 \[設定\] app 中 \[位置隱私權設定\] 的便利連結。 例如，您可以使用超連結控制項或呼叫 LaunchUriAsync 方法，使用  URI 從程式碼啟動 \[設定\] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
 
 -   在使用者停用位置資訊存取功能時，清除快取的位置資料並釋放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)。
 
-    如果使用者透過 [設定] 關閉位置資訊的存取，則釋放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 然後，針對任何定位 API 呼叫，app 將會收到 **ACCESS\_DENIED** 結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
+    如果使用者透過 \[設定\] 關閉位置資訊的存取，則釋放 Geolocator 物件。 然後，針對任何定位 API 呼叫，app 將會收到 **ACCESS\_DENIED** 結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
 
 -   提供用來重新啟用定位服務的 UI。 例如，提供重新整理按鈕以重新具現化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件，並嘗試再次取得位置資訊。
 
     讓您的 app 提供可重新啟用定位服務的 UI—
 
     -   如果使用者在停用位置存取之後重新啟用，app 將不會收到通知。 [
-            **status**](https://msdn.microsoft.com/library/windows/apps/br225601) 屬性不會變更，也不會有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 您的應用程式應該建立新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件並呼叫 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 以嘗試取得更新的位置資料，或是再次訂閱 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 然後，如果狀態指出已重新啟用定位，請清除您的 app 先前通知使用者定位服務已停用的所有 UI，然後適當回應新狀態。
+              **status**
+            ](https://msdn.microsoft.com/library/windows/apps/br225601) 屬性不會變更，也不會有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 您的應用程式應該建立新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件並呼叫 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 以嘗試取得更新的位置資料，或是再次訂閱 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 然後，如果狀態指出已重新啟用定位，請清除您的 app 先前通知使用者定位服務已停用的所有 UI，然後適當回應新狀態。
     -   您的應用程式也應該在啟用時、使用者明確嘗試使用需要位置資訊的功能時，或在任何適用情況下，重新嘗試取得位置資料。
 
 **效能**
 
--   如果您的應用程式不需要接收位置更新，請使用單次定位要求。 例如，為相片加上位置標記的應用程式不需要接收位置更新事件。 它應該改用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 要求定位，如[取得目前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)中所述
+-   如果您的應用程式不需要接收位置更新，請使用單次定位要求。 例如，為相片加上位置標記的應用程式不需要接收位置更新事件。 它應該改用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 要求定位，如[取得目前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)中所述。
 
     當您發出單次定位要求時，應該設定下列的值。
 
@@ -59,7 +63,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
     -   設定 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的逾時參數。 這是您的應用程式等待定位的時間，超過這個時間就會傳回錯誤。 您必須在回應使用者的速度與應用程式所需的準確度之間做出取捨。
 -   如需頻繁更新位置，請使用持續定位工作階段。 使用 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 和 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件偵測超過特定閾值的移動，或在事件發生時持續進行位置更新。
 
-    要求位置更新時，您可以設定 [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 或 [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271)，指定應用程式要求的準確度。 您也應該使用 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 或 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541)，在需要位置更新的項目設定頻率
+    要求位置更新時，您可以設定 [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 或 [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271)，指定應用程式要求的準確度。 您也應該使用 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 或 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541)，在需要位置更新的項目設定頻率。
 
     -   指定移動閾值。 有些應用程式僅在使用者移動很大的距離時才需要位置更新。 例如，提供當地新聞或天氣更新的應用程式，除非使用者定位變更為不同城市時，才需要位置更新。 在這種情況下，您要設定 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 屬性，為位置更新事件調整必要移動最小值。 這會產生篩選掉 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件的效果。 只在位置變更超過移動閾值時，才會引發這些事件。
 
@@ -86,16 +90,16 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
         -   如果使用者嘗試分享其位置，應用程式應該要求大約 10 公尺的準確度。
     -   如果您的 app 有特定的準確度需求，請使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 屬性。 例如，導航 app 應該使用 **Geocoordinate.accuracy** 屬性來判斷可用的位置資料是否符合 app 的需求。
 
--   請考慮啟動延遲。 應用程式第一次要求定位資料時，在定位提供者啟動時可能會有短暫延遲 (1 到 2 秒)。 在設計您應用程式的 UI 時，應該考量這一點。 例如，您可能想要避免封鎖讓 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 呼叫擱置無法完成的其他工作
+-   請考慮啟動延遲。 應用程式第一次要求定位資料時，在定位提供者啟動時可能會有短暫延遲 (1 到 2 秒)。 在設計您應用程式的 UI 時，應該考量這一點。 例如，您可能想要避免封鎖讓 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 呼叫擱置無法完成的其他工作。
 
 -   考量背景行為。 如果應用程式沒有焦點，則在背景暫停時就不會接收位置更新事件。 如果您的應用程式透過記錄位置更新的方式來進行追蹤，請注意這一點。 當應用程式重新取得焦點時，它僅會接收新的事件。 它不會取得在未使用時所發生的任何更新。
 
--   有效使用原始感應器與融合感應器。 感應器有兩種：[原始]** 與 [融合]**
+-   有效使用原始感應器與融合感應器。 感應器有兩種：\[原始\] 與 \[融合\]。
 
     -   原始感應器包括加速計、陀螺儀及磁力儀。
     -   融合感應器包括方向、傾角計及指南針。 融合感應器可從原始感應器組合取得資料。
 
-    Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)
+    Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
 **連線待命：**當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator 物件**](https://msdn.microsoft.com/library/windows/apps/br225534)。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
 
@@ -104,11 +108,11 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 ### 偵測位置設定中的變更
 
-使用者可以使用 [設定]**** 應用程式中的 [位置隱私權設定]**** 來關閉定位功能。
+使用者可以使用 \[設定\] 應用程式中的 \[位置隱私權設定\] 來關閉定位功能。
 
 -   若要偵測使用者何時停用或重新啟用定位服務：
     -   處理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 如果使用者關閉定位服務，**StatusChanged** 事件之引數的 [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) 屬性值就會是 **Disabled**。
-    -   檢查 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 傳回的錯誤碼。 如果使用者已停用定位服務，針對 **GetGeopositionAsync** 的呼叫會失敗並出現 **ACCESS\_DENIED** 錯誤，且 [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) 屬性值會是 **Disabled**
+    -   檢查 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 傳回的錯誤碼。 如果使用者已停用定位服務，針對 **GetGeopositionAsync** 的呼叫會失敗並出現 **ACCESS\_DENIED** 錯誤，且 [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) 屬性值會是 **Disabled**。
 -   如果您有位置資料為必要資料的 app (例如地圖 app)，請確實執行下列動作：
     -   處理 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件以便在使用者位置變更時取得更新。
     -   如前述方式處理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，偵測位置設定中的變更。
@@ -117,7 +121,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 ### 位置圖形表示法
 
-讓您的 app 使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526)，來在地圖上清楚表示使用者目前的位置。 準確度有三個主要波段 - 約 10 公尺的錯誤半徑、約 100 公尺的錯誤半徑，以及大於 1 公里的錯誤半徑。 藉由使用準確度資訊，您可以確保 app 能根據可用的資料內容，準確地顯示位置。 如需有關使用地圖控制項的一般資訊，請參閱[顯示地圖的 2D、3D 和 Streetside 檢視](https://msdn.microsoft.com/library/windows/apps/mt219695)
+讓您的 app 使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526)，來在地圖上清楚表示使用者目前的位置。 準確度有三個主要波段 - 約 10 公尺的錯誤半徑、約 100 公尺的錯誤半徑，以及大於 1 公里的錯誤半徑。 藉由使用準確度資訊，您可以確保 app 能根據可用的資料內容，準確地顯示位置。 如需有關使用地圖控制項的一般資訊，請參閱[顯示地圖的 2D、3D 和 Streetside 檢視](https://msdn.microsoft.com/library/windows/apps/mt219695)。
 
 -   針對約等於 10 公尺 (GPS 解析) 的準確度，可以在地圖上以點或釘子來表示位置。 在這個準確度下，也可顯示經緯度座標與街道地址。
 
@@ -168,6 +172,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用筆刷"
 description: "Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ---
 # 使用筆刷
@@ -44,7 +44,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 ![經過轉譯的 SolidColorBrush。](images/brushes-solidcolorbrush.jpg)
 
-如果您使用程式碼定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 而不是使用 XAML，則每個命名色彩就是 [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) 類別的靜態屬性值。 例如，若要宣告 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以代表命名色彩 "Orchid"，請將 **Color** 值設為靜態值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
+如果您使用程式碼定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 而不是使用 XAML，則每個命名色彩就是 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 類別的靜態屬性值。 例如，若要宣告 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以代表命名色彩 "Orchid"，請將 **Color** 值設為靜態值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
 
 ### 十六進位色彩值
 
@@ -166,7 +166,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 使用 XAML 指定筆刷比使用程式碼定義筆刷更常見。 這是因為筆刷通常定義為 XAML 資源，且因為筆刷值通常是設計工具的輸出，不然就是 XAML UI 定義的一部分。 儘管如此，如果您偶爾想要使用程式碼定義筆刷，所有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型都可以用在程式碼具現化。
 
-若要以程式碼建立 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，請使用採用 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 參數的建構函式。 傳送 [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) 類別的靜態屬性值，像這樣：
+若要以程式碼建立 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，請使用採用 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 參數的建構函式。 傳送 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 類別的靜態屬性值，像這樣：
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -196,6 +196,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

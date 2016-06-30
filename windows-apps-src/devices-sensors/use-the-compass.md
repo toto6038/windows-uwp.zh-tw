@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-title: 使用指南針
-description: 了解如何使用指南針來判斷目前朝向何方。
+title: "使用指南針"
+description: "了解如何使用指南針來判斷目前朝向何方。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+
 ---
 # 使用指南針
 
@@ -31,7 +35,7 @@ description: 了解如何使用指南針來判斷目前朝向何方。
 
 ### 指示
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   從 \[Visual C#\] 專案範本中選擇 \[空白應用程式 (通用 Windows)\] 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -124,11 +128,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="CompassCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:CompassCS"`。
 
--   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
+-   按 F5 或選取 \[偵錯\] \[開始偵錯\] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 \[偵錯\] \[停止偵錯\] 以停止 App。
 
 ### 說明
 
@@ -176,6 +180,7 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: BasicReaderWriter 的完整程式碼
-description: 讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。
+title: "BasicReaderWriter 的完整程式碼"
+description: "讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+translationtype: Human Translation
+ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
+ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
+
 ---
 
 # BasicReaderWriter 的完整程式碼
@@ -261,6 +265,7 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

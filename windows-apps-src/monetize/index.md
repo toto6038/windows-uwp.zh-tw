@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: Windows SDK、Microsoft Store Engagement and Monetization SDK 以及 Windows 市集提供許多功能，可讓您透過應用程式賺更多的錢，並讓客戶透過吸引您的使用者來獲利。
-title: 從您的 app 獲利
+description: "Windows SDK、Microsoft Store Engagement and Monetization SDK 以及 Windows 市集提供許多功能，可讓您透過應用程式賺更多的錢，並讓客戶透過吸引您的使用者來獲利。"
+title: "從您的 app 獲利"
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 6d5f483b44ae4516f4969431e31f70388a66c5d9
+
 ---
 
 # 從您的 app 獲利和吸引客戶
@@ -28,6 +32,7 @@ Windows SDK、Microsoft Store Engagement and Monetization SDK 以及 Windows 市
 | [使用 Windows 市集服務](using-windows-store-services.md)                                    | Windows 市集公開數個您可以透過 REST API 呼叫的服務，以程式設計方式存取註冊到您或是您組織的 Windows 開發人員中心帳戶之 app 的特定類型資料。    |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

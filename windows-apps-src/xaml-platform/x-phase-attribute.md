@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-title: x&#58;Phase 屬性
-description: 搭配使用 x&#58;Phase 與 x&#58;Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。
+title: "x&#58;Phase 屬性"
+description: "搭配使用 x&#58;Phase 與 x&#58;Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。"
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
+
 ---
 
 # x&#58;Phase 屬性
@@ -77,6 +81,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,11 +1,15 @@
 ---
 author: DelfCo
-Description: 「全球化」是在不進行任何變更或自訂的情況下，針對不同的全球市場設計和開發您的 app，以使它能適當運作的程序。
+Description: "「全球化」是在不進行任何變更或自訂的情況下，針對不同的全球市場設計和開發您的 app，以使它能適當運作的程序。"
 Search.SourceType: Video
-title: 全球化與當地語系化
+title: "全球化與當地語系化"
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1fc82ff462a5c0af6b10e7dc8455adc215558b4e
+
 ---
 
 # 全球化與當地語系化
@@ -13,7 +17,7 @@ template: detail.hbs
 
 
 
-全球不同文化特性、地區和語言的對象都使用 Windows。 使用者可能會說任何語言，甚至是多種語言。 使用者可能位於世界上的任何地方，而且可能會說任何位置的任何語言。 您可以使用*全球化*和*當地語系化*來設計您的 app 並使它能做出調整，以提升 app 的潛在市場
+全球不同文化特性、地區和語言的對象都使用 Windows。 使用者可能會說任何語言，甚至是多種語言。 使用者可能位於世界上的任何地方，而且可能會說任何位置的任何語言。 您可以使用*全球化*和*當地語系化*來設計您的 app 並使它能做出調整，以提升 app 的潛在市場。
 
 **全球化**是在不進行任何變更或自訂的情況下，針對不同的全球市場設計和開發您的 app，以使它能適當運作的程序。
 
@@ -30,7 +34,7 @@ template: detail.hbs
 -   為新的市場翻譯 App 的文字和標籤，並為其語言建立個別的資源。
 -   必要時，對任何文化特性相關的影像做出修改，並置於不同的資源中。
 
-觀賞這部影片以獲得如何為全球準備您的 app 的簡介：[全球化與當地語系化的簡介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)
+觀賞這部影片以獲得如何為全球準備您的 app 的簡介：[全球化與當地語系化的簡介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
 
 ## 文章
 <table>
@@ -94,6 +98,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

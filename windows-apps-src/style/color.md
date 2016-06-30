@@ -1,12 +1,15 @@
 ---
 author: mijacobs
-Description: 色彩可提供 app 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。
-title: 色彩
+Description: "色彩可提供 app 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。"
+title: "色彩"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-
 label: Color
 template: detail.hbs
 extraBodyClass: style-color
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+
 ---
 
 # 色彩
@@ -17,7 +20,7 @@ extraBodyClass: style-color
 
 ## 輔色
 
-使用者可以從 [設定] &gt; [個人化] &gt; [色彩]** 挑選稱為輔色的單一色彩。 他們可以從 48 種色樣規劃中選擇 (除了擁有 21 種 TV-safe 色彩調色盤的 Xbox 以外)。
+使用者可以從 \[設定\] &gt; \[個人化\] &gt; \[色彩\] 挑選稱為輔色的單一色彩。 他們可以從 48 種色樣規劃中選擇 (除了擁有 21 種 TV-safe 色彩調色盤的 Xbox 以外)。
 
 <!-- Alternate version for the dev center. Need to add hex values. -->
 ![預設輔色](images/accentcolorswatch.png) 預設輔色
@@ -50,7 +53,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            在 XAML 中，主要輔色公開為名稱為`SystemAccentColor` 的 [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 這些漸層可用來做為 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 以及 `SystemAccentColorDark3`。 也可以透過 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 與 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列舉，以程式設計的方式提供使用。
+在 XAML 中，主要輔色公開為名稱為`SystemAccentColor` 的 [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 這些漸層可用來做為 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 以及 `SystemAccentColorDark3`。 也可以透過 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 與 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列舉，以程式設計的方式提供使用。
     </div>
 </aside>
 
@@ -90,7 +93,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            每個色彩都能夠以遵循 `System*Color` 命名慣例 (例如：`SystemChromeHighColor`) 的 XAML [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)方式提供使用。 您可以透過 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制您 app 的佈景主題。
+每個色彩都能夠以遵循 `System*Color` 命名慣例 (例如：`SystemChromeHighColor`) 的 XAML [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)方式提供使用。 您可以透過 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制您 app 的佈景主題。
     </div>
 </aside>
 
@@ -99,6 +102,7 @@ extraBodyClass: style-color
 針對螢幕的使用方式，將調色盤最佳化。 建議您針對背景維持 4.5:1 的文字對比率，以獲得最佳可讀性。 有許多免費工具可用來測試您的顏色是否通過，例如[對比率](http://leaverou.github.io/contrast-ratio/)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

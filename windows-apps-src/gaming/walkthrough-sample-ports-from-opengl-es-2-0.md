@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 逐步解說來自 OpenGL ES 2.0 的移植範例
-description: 這系列主題提供一些不同複雜程度的 OpenGL ES 2.0 圖形管線移植案例。
+title: "逐步解說來自 OpenGL ES 2.0 的移植範例"
+description: "這系列主題提供一些不同複雜程度的 OpenGL ES 2.0 圖形管線移植案例。"
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab56
+
 ---
 
 # 逐步解說來自 OpenGL ES 2.0 的移植範例
@@ -45,6 +49,7 @@ ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

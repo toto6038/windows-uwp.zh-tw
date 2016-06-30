@@ -1,8 +1,12 @@
 ---
-title: 比較緩衝區
-description: 這個範例程式碼說明如何比較通用 Windows 平台 (UWP) app 中的緩衝區。
+title: "比較緩衝區"
+description: "這個範例程式碼說明如何比較通用 Windows 平台 (UWP) app 中的緩衝區。"
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: fcbc3c8a3f70613635201732f3ca5053d58325c7
+
 ---
 
 # 比較緩衝區
@@ -45,6 +49,7 @@ public void CompareBuffers()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

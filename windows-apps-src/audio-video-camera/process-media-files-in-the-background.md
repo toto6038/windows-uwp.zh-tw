@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: 本文說明如何使用 MediaProcessingTrigger 和背景工作，在背景處理媒體檔案。
-title: 在背景處理媒體檔案
+description: "本文說明如何使用 MediaProcessingTrigger 和背景工作，在背景處理媒體檔案。"
+title: "在背景處理媒體檔案"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+
 ---
 
 # 在背景處理媒體檔案
@@ -13,7 +17,8 @@ title: 在背景處理媒體檔案
 本文說明如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。
 
 本文中所描述的 App 範例可讓使用者選取要轉碼的輸入媒體檔案，以及指定轉碼結果的輸出檔案。 接著，就會啟動背景工作來執行轉碼作業。 [
-            **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 支援除了轉碼以外許多不同的媒體處理案例，包括轉譯媒體組合到磁碟，以及處理完成後上傳已處理的媒體檔案。
+              **MediaProcessingTrigger**
+            ](https://msdn.microsoft.com/library/windows/apps/dn806005) 支援除了轉碼以外許多不同的媒體處理案例，包括轉譯媒體組合到磁碟，以及處理完成後上傳已處理的媒體檔案。
 
 如需此範例中各種通用 Windows 應用程式功能的詳細資訊，請參閱：
 
@@ -25,30 +30,33 @@ title: 在背景處理媒體檔案
 
 若要在 Microsoft Visual Studio 中將背景工作新增到您現有的方案，請輸入您元件的名稱
 
-1.  從 [檔案]**** 功能表選取 [新增]****，然後選取 [新增專案]****
-2.  選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型。
+1.  從 \[檔案\] 功能表選取 \[新增\]，然後選取 \[新增專案\]。
+2.  選取 \[Windows 執行階段元件 (通用 Windows)\] 專案類型。
 3.  為新的元件專案輸入名稱。 這個範例使用 **MediaProcessingBackgroundTask** 專案名稱。
-4.  按一下 [確定]。
+4.  按一下 \[確定\]。
 
-在 [方案總管]**** 中，以滑鼠右鍵按一下預設建立的 "Class1.cs" 檔案的圖示，然後選取 [重新命名]****。 將檔案重新命名為 "MediaProcessingTask.cs"。 當 Visual Studio 詢問您是否要重新命名這個類別的所有參考時，按一下 [是]****
+在 \[方案總管\] 中，以滑鼠右鍵按一下預設建立的 "Class1.cs" 檔案的圖示，然後選取 \[重新命名\]。 將檔案重新命名為 "MediaProcessingTask.cs"。 當 Visual Studio 詢問您是否要重新命名這個類別的所有參考時，按一下 \[是\]。
 
 在重新命名的類別檔案中，新增下列 **using** 指示詞，在專案中包含這些命名空間。
                                   
 [!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-更新您的類別宣告，讓您的類別繼承自 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
+更新您的類別宣告，讓您的類別繼承自 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
 將下列成員變數新增到您的類別：
 
 -   [
-            **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)，將用來以背景工作的進度更新前景 App。
+              **IBackgroundTaskInstance**
+            ](https://msdn.microsoft.com/library/windows/apps/br224797)，將用來以背景工作的進度更新前景 App。
 -   [
-            **BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，非同步執行媒體轉碼時，讓系統不要關閉您的背景工作。
+              **BackgroundTaskDeferral**
+            ](https://msdn.microsoft.com/library/windows/apps/hh700499)，非同步執行媒體轉碼時，讓系統不要關閉您的背景工作。
 -   **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
 -   [
-            **MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 物件，用來轉碼媒體檔案。
+              **MediaTranscoder**
+            ](https://msdn.microsoft.com/library/windows/apps/br207080) 物件，用來轉碼媒體檔案。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
@@ -82,20 +90,20 @@ title: 在背景處理媒體檔案
 
 您必須先更新您前景 App 的 Package.appmanifest 檔案讓系統知道您的 App 使用背景工作，您才能從前景 App 啟動背景工作。
 
-1.  在 [方案總管]**** 中按兩下 Package.appmanifest 檔案圖示，開啟資訊清單編輯器。
-2.  選取 [宣告]**** 索引標籤。
-3.  從 [可用宣告]****，選取 [背景工作]****，然後按一下 [新增]****
-4.  在 [支援的宣告] ****下，確認已選取 [背景工作]**** 項目。 在 [屬性]**** 下，選取 [媒體處理]**** 的核取方塊
-5.  在 [進入點]**** 文字方塊中，為您的背景測試指定命名空間與類別名稱，以句點分隔。 對於這個範例，則是：
+1.  在 \[方案總管\] 中按兩下 Package.appmanifest 檔案圖示，開啟資訊清單編輯器。
+2.  選取 \[宣告\] 索引標籤。
+3.  從 \[可用宣告\]，選取 \[背景工作\]，然後按一下 \[新增\]。
+4.  在 \[支援的宣告\] 下，確認已選取 \[背景工作\] 項目。 在 \[屬性\] 下，選取 \[媒體處理\] 的核取方塊。
+5.  在 \[進入點\] 文字方塊中，為您的背景測試指定命名空間與類別名稱，以句點分隔。 對於這個範例，則是：
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
 接著，您必須將背景工作參考新增到前景 app。
-1.  在 [方案總管]**** 中的前景 app 專案下，以滑鼠右鍵按一下 [參考]**** 資料夾，然後選取 [加入參考...]****。
-2.  展開 [專案]**** 節點，然後選取 [方案]****。
-3.  選取您背景工作專案旁邊的方塊，並按一下 [確定]****。
+1.  在 \[方案總管\] 中的前景 App 專案下，以滑鼠右鍵按一下 \[參考\] 資料夾，然後選取 \[加入參考...\]。
+2.  展開 \[專案\] 節點，然後選取 \[方案\]。
+3.  核取您背景工作專案旁邊的方塊，並按一下 \[確定\]。
 
-此範例中的其餘程式碼，應該新增到您的前景 app。 首先，您必須將下列命名空間新增到專案。
+此範例中的其餘程式碼，應該新增到您的前景 App。 首先，您必須將下列命名空間新增到專案。
 
 [!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
 
@@ -139,6 +147,7 @@ title: 在背景處理媒體檔案
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

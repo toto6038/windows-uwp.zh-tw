@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。
-title: 電信業者帳單
+Description: "Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。"
+title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.sourcegitcommit: 76ea880f7dd1e737b3b0640d10a138e0eb790802
+ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
+
 ---
 
 # 電信業者帳單
@@ -27,6 +30,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 |----------------|------------------|
 | 芬蘭        | DNA、Elisa       |
 | 德國        | O2               |
+| 挪威         | Telenor          |
 | 瑞士    | Swisscom         |
 | 美國  | Sprint           |
 
@@ -111,6 +115,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

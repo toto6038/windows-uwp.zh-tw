@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Windows 應用程式認證套件測試
-description: Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。
+title: "Windows 應用程式認證套件測試"
+description: "Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+
 ---
 ## Windows 應用程式認證套件測試
 
@@ -666,6 +670,7 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

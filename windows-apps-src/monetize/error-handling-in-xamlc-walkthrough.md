@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: 了解如何在您的 app 中抓取 AdControl 錯誤。
-title: XAML/C# 錯誤處理的逐步解說
+description: "了解如何在您的 app 中抓取 AdControl 錯誤。"
+title: "XAML/C# 錯誤處理的逐步解說"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
+
 
 ---
 
@@ -88,6 +92,7 @@ AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests mus
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

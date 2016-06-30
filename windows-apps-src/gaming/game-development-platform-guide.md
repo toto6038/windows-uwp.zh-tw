@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 適用於通用 Windows 平台 (UWP) app 的遊戲技術
-description: 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
+title: "適用於通用 Windows 平台 (UWP) app 的遊戲技術"
+description: "在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
+
 ---
 
 # 適用於通用 Windows 平台 (UWP) app 的遊戲技術
@@ -351,6 +355,7 @@ Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 –
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

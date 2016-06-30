@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
-title: 捲軸的指導方針
+Description: "移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。"
+title: "捲軸的指導方針"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
+
 ---
 # 捲軸
 
@@ -91,6 +95,7 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 * [**ScrollViewer 類別**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

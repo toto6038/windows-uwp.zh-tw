@@ -2,6 +2,10 @@
 author: Jwmsft
 label: Buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
+
 ---
 # 按鈕
 按鈕為使用者提供觸發立即動作的方式。
@@ -21,11 +25,11 @@ template: detail.hbs
 
 如果動作是瀏覽到另一個頁面，請不要使用按鈕，改為使用連結。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
     
-> 例外：對於精靈瀏覽，請使用標籤為 [上一頁] 和 [下一頁] 的按鈕。 對於其他類型的反向瀏覽或瀏覽到上層，請使用 [上一頁] 按鈕。
+> 例外：對於精靈瀏覽，請使用標籤為 \[上一頁\] 和 \[下一頁\] 的按鈕。 對於其他類型的反向瀏覽或瀏覽到上層，請使用 \[上一頁\] 按鈕。
 
 ## 範例
 
-這個範例是在 Microsoft Edge 瀏覽器的對話方塊中使用兩個按鈕 ([全部關閉] 和 [取消])。 
+這個範例是在 Microsoft Edge 瀏覽器的對話方塊中使用兩個按鈕 (\[全部關閉\] 和 \[取消\])。 
 
 ![按鈕的範例 (用於對話方塊中)](images/control-examples/buttons-edge.png)
 
@@ -97,7 +101,8 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 ## 建立一個重複按鈕
 
 [
-            **RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
+              **RepeatButton**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
 
 下列範例顯示兩個 RepeatButton 控制項，而且其各自的 Click 事件是用來增加或減少文字區塊中顯示的值。
 
@@ -136,9 +141,9 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   避免使用窄、短或高的命令按鈕包含文字內容。
 -   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
 -   對於需要在 app 內多個頁面上提供的動作，請不要在多個頁面上複製按鈕，而是考慮改用[底部應用程式列](app-bars.md)。
--   一次只對使用者顯示一或兩個按鈕，例如，[接受] 和 [取消]。 如果需要對使用者顯示更多動作，請考慮使用[核取方塊](checkbox.md)或[選項按鈕](radio-button.md)，使用者可以利用它們選取動作，只要一個命令按鈕即可觸發這些動作。
+-   一次只對使用者顯示一或兩個按鈕，例如，\[接受\] 和 \[取消\]。 如果需要對使用者顯示更多動作，請考慮使用[核取方塊](checkbox.md)或[選項按鈕](radio-button.md)，使用者可以利用它們選取動作，只要一個命令按鈕即可觸發這些動作。
 -   使用預設命令按鈕來指示最常用或建議的動作。
--   考慮自訂您的按鈕。 按鈕的預設形狀是矩形，但是您可以自訂組成按鈕外觀的視覺效果。 按鈕的內容通常是文字，例如 [接受] 或 [取消]，但是您可以使用圖示來取代文字，或是使用圖示加上文字。
+-   考慮自訂您的按鈕。 按鈕的預設形狀是矩形，但是您可以自訂組成按鈕外觀的視覺效果。 按鈕的內容通常是文字，例如 \[接受\] 或 \[取消\]，但是您可以使用圖示來取代文字，或是使用圖示加上文字。
 -   確定在使用者與按鈕互動時，按鈕會變更狀態和外觀，為使用者提供回饋。 按鈕狀態的範例有正常、已按下、已停用。
 -   當使用者點選或按下按鈕時，觸發按鈕的動作。 通常使用者放開按鈕時會觸發動作，但是您也可以設定手指一按下時就觸發按鈕的動作。
 -   不要使用命令按鈕設定狀態。
@@ -166,7 +171,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
     在桌面模式中無法使用。 但是可改用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
 
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
+    使用者若要在平板電腦模式和桌面模式之間切換，可移至 \[設定  系統  平板電腦模式\] 並設定 \[在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控\]。
 
 -   裝置底部瀏覽列中的軟體按鈕。
 -   在 app 內和 app 間提供全域返回瀏覽。
@@ -178,7 +183,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
     預設為停用。 必須選擇加入才能啟用。
 
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
+    使用者若要在平板電腦模式和桌面模式之間切換，可移至 \[設定  系統  平板電腦模式\] 並設定 \[在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控\]。
 
 -   App 標題列中的軟體按鈕。
 -   只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。
@@ -225,6 +230,7 @@ Surface Hub ![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

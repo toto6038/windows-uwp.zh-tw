@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: BasicLoader 的完整程式碼
-description: 轉換並載入一般圖形資源 (例如網格、紋理及多種著色器物件) 的類別與方法的完整程式碼。
+title: "BasicLoader 的完整程式碼"
+description: "轉換並載入一般圖形資源 (例如網格、紋理及多種著色器物件) 的類別與方法的完整程式碼。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+translationtype: Human Translation
+ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
+ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
+
 ---
 
 # BasicLoader 的完整程式碼
@@ -1106,6 +1110,7 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

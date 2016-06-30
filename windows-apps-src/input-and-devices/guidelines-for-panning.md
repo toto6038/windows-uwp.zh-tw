@@ -5,8 +5,8 @@ title: "移動瀏覽"
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
 
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+## 可行與禁止事項
 
 
 **移動瀏覽指標和捲軸**
@@ -72,7 +72,7 @@ ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
 
     ![示範與其容器朝同方向捲動之內嵌可移動瀏覽區域的影像。](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
+## 其他用法指導方針
 
 
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
@@ -162,7 +162,7 @@ Windows 8 支援三種移動瀏覽類型：
 
 對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的 app (如相簿或地圖 app)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的 App 中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
@@ -194,6 +194,6 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

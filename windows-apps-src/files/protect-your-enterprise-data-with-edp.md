@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: '本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。'
-MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。"
+MS-HAID: dev\_files.protect\_your\_enterprise\_data\_with\_edp
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: '使用企業資料保護 (EDP) 來保護檔案'
+title: "使用企業資料保護 (EDP) 來保護檔案"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+
 ---
 
 # 使用企業資料保護 (EDP) 來保護檔案
@@ -42,7 +46,7 @@ string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 
 擁有路徑之後，您就能使用檔案總管輕鬆地找到您的應用程式建立的檔案。 如此一來，您就能確認它們受到保護，並且是以正確的身分識別保護。
 
-在 [檔案總管] 中，勾選 [變更資料夾和搜尋選項] ****，在 [檢視]**** 索引標籤上，選取 [使用色彩顯示加密的檔案]****。 另請使用 [檔案總管] 的 [檢視]****&gt;[新增欄]**** 命令來新增 [已加密到]**** 欄，這樣您就可以看到保護檔案的企業身分識別。
+在 \[檔案總管\] 中，勾選 \[變更資料夾和搜尋選項\] ，在 \[檢視\] 索引標籤上，選取 \[使用色彩顯示加密的檔案\]。 另請使用 \[檔案總管\] 的 \[檢視\]\[新增欄\] 命令來新增 \[已加密到\] 欄，這樣您就可以看到保護檔案的企業身分識別。
 
 ## 保護新檔案中的企業資料 (適用於互動式應用程式)
 
@@ -264,6 +268,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

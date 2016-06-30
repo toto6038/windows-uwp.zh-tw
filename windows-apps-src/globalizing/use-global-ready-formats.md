@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 App。
-title: 使用全球通用格式
+Description: "藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 App。"
+title: "使用全球通用格式"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
+
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"></span>使用全球通用格式
@@ -190,6 +194,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

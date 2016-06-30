@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
-description: 取得示範如何使用 Microsoft Advertising 媒體櫃中 AdControl 和 InterstitialAd 類別的屬性、方法和事件的其他範例。
-title: 程式碼範例
+description: "取得示範如何使用 Microsoft Advertising 媒體櫃中 AdControl 和 InterstitialAd 類別的屬性、方法和事件的其他範例。"
+title: "程式碼範例"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+
 ---
 
 # 程式碼範例
@@ -36,6 +40,7 @@ title: 程式碼範例
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

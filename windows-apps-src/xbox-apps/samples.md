@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Xbox One 上的 UWP 範例
-description: 範例和程式庫，可協助您建置絕佳的 Xbox One 與電視體驗。
+title: "Xbox One 上的 UWP 範例"
+description: "範例和程式庫，可協助您建置絕佳的 Xbox One 與電視體驗。"
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
+
 ---
 
 # Xbox One 上的 UWP 範例
@@ -16,6 +20,7 @@ TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

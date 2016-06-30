@@ -1,25 +1,29 @@
 ---
 author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: ListView 和 GridView 資料虛擬化
-description: 透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。
+title: "ListView 和 GridView 資料虛擬化"
+description: "透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。"
+translationtype: Human Translation
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+
 ---
 # ListView 和 GridView 資料虛擬化
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**注意** 如需詳細資訊，請參閱 //build/ 工作階段[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)
+**注意** 如需詳細資訊，請參閱 //build/ 工作階段[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
-透過資料虛擬化改善 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的效能和啟動時間。 如需 UI 虛擬化、減少元素和漸進式更新項目的資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)
+透過資料虛擬化改善 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的效能和啟動時間。 如需 UI 虛擬化、減少元素和漸進式更新項目的資訊，請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 
-資料虛擬化方法對於大型而無法或不應該同時儲存在記憶體的資料集是必要的。 您將初始部分載入記憶體 (從本機磁碟機、網路或雲端) 並將 UI 虛擬化套用到這個局部的資料集。 您可以稍後以遞增的方式載入資料，或視需要從主要資料集的任意點 (隨機存取) 載入。 資料虛擬化是否適合您取決於許多因素。
+資料虛擬化方法 對於大型而無法或不應該同時儲存在記憶體的資料集是必要的。 您將初始部分載入記憶體 (從本機磁碟機、網路或雲端) 並將 UI 虛擬化套用到這個局部的資料集。 您可以稍後以遞增的方式載入資料，或視需要從主要資料集的任意點 (隨機存取) 載入。 資料虛擬化是否適合您取決於許多因素。
 
 -   資料集大小
 -   每個項目大小
 -   資料集來源 (本機磁碟、網路或雲端)
 -   app 的整體記憶體耗用量
 
-**注意** 有一個功能預設會針對 ListView 和 GridView 加以啟用，以便在使用者快速移動瀏覽/捲動時顯示暫時性預留位置視覺效果。 載入資料時，會使用您的項目範本來取代這些預留位置視覺效果。 您可以將 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 設為 False 來關閉該功能，但是如果您這樣做，則建議您使用 x:Phase 屬性，以逐漸轉譯項目範本中的元素。 請參閱[逐漸更新 ListView 與 GridView 項目](optimize-gridview-and-listview.md#update-items-incrementally)
+**注意** 有一個功能預設會針對 ListView 和 GridView 加以啟用，以便在使用者快速移動瀏覽/捲動時顯示暫時性預留位置視覺效果。 載入資料時，會使用您的項目範本來取代這些預留位置視覺效果。 您可以將 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 設為 False 來關閉該功能，但是如果您這樣做，則建議您使用 x:Phase 屬性，逐漸轉譯項目範本中的元素。 請參閱[逐漸更新 ListView 與 GridView 項目](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 以下是更多關於遞增和隨機存取資料虛擬化技術的詳細資訊。
 
@@ -65,7 +69,7 @@ description: 透過資料虛擬化改善 ListView 和 GridView 的效能和啟�
     -   如果您可在記憶體中使用，則將它傳回。
     -   如果您沒有，則傳回 Null 或預留位置項目。
     -   使用要求項目 (或從 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的範圍資訊) 以了解所需的項目，並以非同步方式從後端擷取項目的資料。 在抓取資料之後，會透過 [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知，這樣一來，項目控制項就會知道有新的項目。
--   (選擇性) 當項目控制項的檢視區變更時，透過實作 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)，找出需要您的資料來源的哪些項目
+-   (選擇性) 當項目控制項的檢視區變更時，透過實作 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)，找出需要您的資料來源的哪些項目。
 
 除此之外，載入資料項目的時機、載入多少，以及在記憶體中保留哪些項目的策略，取決於您的 app。 要記住的一些一般考量：
 
@@ -83,6 +87,7 @@ description: 透過資料虛擬化改善 ListView 和 GridView 的效能和啟�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

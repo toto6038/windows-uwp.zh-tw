@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。
-title: 時間選擇器
+Description: "時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。"
+title: "時間選擇器"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5056a9f304ca21c977b9cc65b8ead007eccd4288
+
 ---
 
 # 時間選擇器
@@ -56,6 +60,7 @@ arrivalTimePicker.Header = "Arrival time";
 - [日期選擇器](date-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

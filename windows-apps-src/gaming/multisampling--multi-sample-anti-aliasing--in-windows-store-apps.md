@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 通用 Windows 平台 (UWP) app 中的多重取樣
-description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。
+title: "通用 Windows 平台 (UWP) app 中的多重取樣"
+description: "了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。"
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+
 ---
 
 # <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 通用 Windows 平台 (UWP) app 中的多重取樣
@@ -205,6 +209,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

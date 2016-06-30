@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: 本節提供建立通用 Windows App 以擷取、播放或編輯相片、視訊或音訊的資訊。
-title: 音訊、視訊和相機
+description: "本節提供建立通用 Windows App 以擷取、播放或編輯相片、視訊或音訊的資訊。"
+title: "音訊、視訊和相機"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
+
 ---
 
 # 音訊、視訊和相機
@@ -45,6 +49,7 @@ title: 音訊、視訊和相機
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

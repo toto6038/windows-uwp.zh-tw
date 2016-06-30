@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: 了解插入式和橫幅廣告支援的國家和地區。
-title: Microsoft Advertising 支援的市場
+description: "了解插入式和橫幅廣告支援的國家和地區。"
+title: "Microsoft Advertising 支援的市場"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+
 ---
 
 # Microsoft Advertising 支援的市場
@@ -123,7 +127,7 @@ title: Microsoft Advertising 支援的市場
 
 -   衣索比亞
 
--   斐濟
+-   斐濟群島
 
 -   芬蘭
 
@@ -257,7 +261,7 @@ title: Microsoft Advertising 支援的市場
 
 -   南非
 
--   韓國
+-   南韓
 
 -   西班牙
 
@@ -310,6 +314,7 @@ title: Microsoft Advertising 支援的市場
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

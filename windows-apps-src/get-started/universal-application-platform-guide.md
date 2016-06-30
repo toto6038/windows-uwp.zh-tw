@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: 通用 Windows 平台 (UWP) app 指南
-description: 在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。
+author: TylerMSFT
+title: "通用 Windows 平台 (UWP) app 指南"
+description: "在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+
 ---
 
 # 通用 Windows 平台 (UWP) app 指南
@@ -213,7 +216,7 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 
 **使用 ApiInformation 類別撰寫彈性程式碼**
 
-撰寫彈性程式碼有兩個步驟。 第一步是讓您想要存取的 API 可供您的專案使用。 若要這樣做，請將參考新增至擴充功能 SDK，它代表擁有您要有條件呼叫之 API 的裝置系列。 請參閱[擴充功能 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks)
+撰寫彈性程式碼有兩個步驟。 第一步是讓您想要存取的 API 可供您的專案使用。 若要這樣做，請將參考新增至擴充功能 SDK，它代表擁有您要有條件呼叫之 API 的裝置系列。 請參閱[擴充功能 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks)。
 
 第二個步驟是使用程式碼條件式中的 [**Windows.Foundation.Metadata.ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別，以測試您要呼叫的 API 是否存在。 每當您的 app 執行時都將會評估此條件，但只會將有 API 存在的裝置評估為 true，也才可供呼叫。
 
@@ -251,7 +254,7 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 
 C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows 10 裝置系列實作。 連結您的 app 與 Windowsapp.lib。 Windowsapp.lib 是「雨傘」 lib，提供 UWP API 的匯出。 連結到 Windowsapp.lib 會將 Windows 10 裝置系列上存在的 dll 的相依性新增至您的 app。
 
-如需可用於 UWP app 之 Win32 API 的完整清單，請參閱[適用於 UWP app 的 API 集合](https://msdn.microsoft.com/library/windows/desktop/mt186421)和[適用於 UWP app 的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)
+如需可用於 UWP app 之 Win32 API 的完整清單，請參閱[適用於 UWP app 的 API 集合](https://msdn.microsoft.com/library/windows/desktop/mt186421)和[適用於 UWP app 的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 
 ## 使用者經驗
 
@@ -288,6 +291,7 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

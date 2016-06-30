@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 建立並註冊背景工作
-description: 建立背景工作類別並加以註冊，即使您的 App 不在前景也能執行。
+author: TylerMSFT
+title: "建立並註冊背景工作"
+description: "建立背景工作類別並加以註冊，即使您的 App 不在前景也能執行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
+
 ---
 
 # 建立並註冊背景工作
@@ -26,15 +29,16 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
 下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 開始之前，請先在您的方案中為背景工作建立一個新專案。 請為您的背景工作新增一個空的類別，然後匯入 [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空間。
 
-1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這麼做，請以滑鼠右鍵按一下您在 [方案總管]**** 中的方案節點，然後選取 [新增] -&gt; [新增專案]。 接著，選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型、為專案命名，然後按一下 [確定]。
+1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這麼做，請以滑鼠右鍵按一下您在 \[方案總管\] 中的方案節點，然後選取 \[新增\] - \[新增專案\]。 接著，選取 \[Windows 執行階段元件 (通用 Windows)\] 專案類型、為專案命名，然後按一下 \[確定\]。
 2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。
 
-    如果是 C++ 應用程式，請在您的應用程式專案上按一下滑鼠右鍵，然後選取 [屬性]****。 接著，移至 [通用屬性]**** 並按一下 [加入新參考]****，核取您背景工作專案旁邊的方塊，然後在兩個對話方塊中都按一下 [確定]****。
+    如果是 C++ 應用程式，請在您的應用程式專案上按一下滑鼠右鍵，然後選取 \[屬性\]。 接著，移至 \[通用屬性\] 並按一下 \[加入新參考\]，核取您背景工作專案旁邊的方塊，然後在兩個對話方塊中都按一下 \[確定\]。
 
-    如果是 C# 應用程式，請在您的應用程式專案中，於 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入新參考]****。 在 [方案]**** 下選取 [專案]****，然後選取您背景工作專案的名稱並按一下 [確定]****。
+    如果是 C# 應用程式，請在您的應用程式專案中，於 \[參考\] 上按一下滑鼠右鍵，然後選取 \[加入新參考\]。 在 \[方案\] 下選取 \[專案\]，然後選取您背景工作專案的名稱並按一下 \[確定\]。
 
 3.  建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 [
-            **Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一個在觸發指定事件時將會呼叫的必要進入點；這是每個背景工作都需要的方法。
+              **Run**
+            ](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一個在觸發指定事件時將會呼叫的必要進入點；這是每個背景工作都需要的方法。
 
     > **注意** 背景工作類別本身及背景工作專案中的所有其他類別都必須是 **sealed** 的 **public** 類別。
 
@@ -45,9 +49,9 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 >     //
 >     // ExampleBackgroundTask.cs
 >     //
-> 
+>
 >     using Windows.ApplicationModel.Background;
-> 
+>
 >     namespace Tasks
 >     {
 >         public sealed class ExampleBackgroundTask : IBackgroundTask
@@ -63,35 +67,35 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 >     //
 >     // ExampleBackgroundTask.cpp
 >     //
-> 
+>
 >     #include "ExampleBackgroundTask.h"
-> 
+>
 >     using namespace Tasks;
-> 
+>
 >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 >     {
-> 
+>
 >     }
 >  ```
 
-    
+
 > ```cpp
 >     //
 >     // ExampleBackgroundTask.h
 >     //
-> 
+>
 >     #pragma once
-> 
+>
 >     using namespace Windows::ApplicationModel::Background;
-> 
+>
 >     namespace RuntimeComponent1
 >     {
 >         public ref class ExampleBackgroundTask sealed : public IBackgroundTask
 >         {
-> 
+>
 >         public:
 >             ExampleBackgroundTask();
-> 
+>
 >             virtual void Run(IBackgroundTaskInstance^ taskInstance);
 >             void OnCompleted(
 >                     BackgroundTaskRegistration^ task,
@@ -159,7 +163,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 > ```cs
 >     var taskRegistered = false;
 >     var exampleTaskName = "ExampleBackgroundTask";
-> 
+>
 >     foreach (var task in BackgroundTaskRegistration.AllTasks)
 >     {
 >         if (task.Value.Name == exampleTaskName)
@@ -172,20 +176,20 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 > ```cpp
 >     boolean taskRegistered = false;
 >     Platform::String^ exampleTaskName = "ExampleBackgroundTask";
-> 
+>
 >     auto iter = BackgroundTaskRegistration::AllTasks->First();
 >     auto hascur = iter->HasCurrent;
-> 
+>
 >     while (hascur)
 >     {
 >         auto cur = iter->Current->Value;
-> 
+>
 >         if(cur->Name == exampleTaskName)
 >         {
 >             taskRegistered = true;
 >             break;
 >         }
-> 
+>
 >         hascur = iter->MoveNext();
 >     }
 > ```
@@ -199,14 +203,14 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 >     var builder = new BackgroundTaskBuilder();
-> 
+>
 >     builder.Name = exampleTaskName;
 >     builder.TaskEntryPoint = "RuntimeComponent1.ExampleBackgroundTask";
 >     builder.SetTrigger(new SystemTrigger(SystemTriggerType.TimeZoneChange, false));
 > ```
 > ```cpp
 >     auto builder = ref new BackgroundTaskBuilder();
-> 
+>
 >     builder->Name = exampleTaskName;
 >     builder->TaskEntryPoint = "RuntimeComponent1.ExampleBackgroundTask";
 >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
@@ -288,10 +292,10 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的 app 嘗試使用未列在資訊清單中的觸發程序來註冊背景工作，註冊將會失敗。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
-2.  開啟 [宣告]**** 索引標籤。
-3.  從 [可用宣告]**** 下拉式清單中選擇 [背景工作]****，然後按一下 [新增]****。
-4.  選取 [系統事件]**** 核取方塊。
-5.  在 [進入點:]**** 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
+2.  開啟 \[宣告\] 索引標籤。
+3.  從 \[可用宣告\] 下拉式清單中選擇 \[背景工作\]，然後按一下 \[新增\]。
+4.  選取 \[系統事件\] 核取方塊。
+5.  在 \[進入點:\] 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
 6.  關閉資訊清單設計工具。
 
     下列 Extensions 元素會新增至您的 Package.appxmanifest 檔案中以註冊背景工作：
@@ -350,8 +354,6 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

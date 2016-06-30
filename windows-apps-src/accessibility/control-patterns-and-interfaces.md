@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。
+Description: "本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。"
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: 控制項模式和介面
+title: "控制項模式和介面"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+
 ---
 
 # 控制項模式和介面  
@@ -43,10 +46,10 @@ template: detail.hbs
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | 讓使用者介面自動化用戶端應用程式能夠將滑鼠或鍵盤輸入導向特定的 UI 元素。 |
 | **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | 用於有格線以及標題資訊的控制項。 例如，表格式行事曆控制項。 |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 用於表格中的項目。 |
-| **文字** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用於公開文字資訊的編輯控制項及文件。 另請參閱 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426272)。 |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/Hh701839) | 用於存取最接近元素且支援 **Text** 控制項模式的上階。 |
+| **文字** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用於公開文字資訊的編輯控制項及文件。 另請參閱 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)。 |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | 用於存取最接近元素且支援 **Text** 控制項模式的上階。 |
 | **TextEdit** | 沒有可用的 Managed 類別 | 提供可修改文字的控制項存取權，例如，執行自動校正或透過輸入法 (IME) 啟用輸入組合的控制項。 |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) | 提供實作 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) 的文字容器中橫跨多行之連續文字的存取權。 另請參閱 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426342)。 |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | 提供實作 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) 的文字容器中橫跨多行之連續文字的存取權。 另請參閱 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2)。 |
 | **切換** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 用於可切換狀態的控制項。 例如，[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) 及可核取的功能表項目。 |
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用於可調整大小、移動和旋轉的控制項。 Transform 控制項模式通常用於設計工具、表單、圖形編輯器以及繪圖應用程式。 |
 | **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允許用戶端對不支援範圍值的控制項，取得或設定一個值。 |
@@ -65,6 +68,7 @@ template: detail.hbs
 * [協助工具](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

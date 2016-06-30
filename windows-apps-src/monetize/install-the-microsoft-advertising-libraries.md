@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: 了解如何安裝 Microsoft Advertising 程式庫。
-title: 安裝 Microsoft Advertising 程式庫
+description: "了解如何安裝 Microsoft Advertising 程式庫。"
+title: "安裝 Microsoft Advertising 程式庫"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
+
 
 ---
 
@@ -25,7 +29,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
 本文件說明使用 Microsoft Advertising 程式庫的 **AdControl** 和 **InterstitialAd** 類別來顯示 Microsoft 橫幅或插入式廣告影片的方式。 如需使用廣告流量分配的資訊，請參閱[使用廣告流量分配來獲得最佳收益](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue)。
 
 
-在您可以在 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出 Microsoft Store Engagement and Monetization SDK 中每個程式庫的名稱，排序方式與它們在 Visual Studio 的 [參考管理員]**** 對話方塊中所呈現的方式相同。
+在您可以在 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出 Microsoft Store Engagement and Monetization SDK 中每個程式庫的名稱，排序方式與它們在 Visual Studio 的 \[參考管理員\] 對話方塊中所呈現的方式相同。
 
 
 <table>
@@ -91,6 +95,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

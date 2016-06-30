@@ -1,8 +1,12 @@
 ---
 author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
-title: 帳戶類型、位置和費用
-description: 我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。
+title: "帳戶類型、位置和費用"
+description: "我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。"
+translationtype: Human Translation
+ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
+ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
+
 ---
 
 # 帳戶類型、位置和費用
@@ -255,6 +259,7 @@ description: 我們在許多國家與地區提供個人開發人員帳戶及公�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,11 +1,15 @@
 ---
 author: mijacobs
-Description: 在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、 瀏覽元素和系統層級功能的彈性模型為基礎。
-title: 通用 Windows 平台 (UWP) app 的瀏覽設計基本知識
+Description: "在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、 瀏覽元素和系統層級功能的彈性模型為基礎。"
+title: "通用 Windows 平台 (UWP) app 的瀏覽設計基本知識"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+
 ---
 
 #  瀏覽歷程記錄和向後瀏覽
@@ -22,7 +26,7 @@ template: detail.hbs
 <table>
     <tr>
         <td colspan="2">裝置</td>
-        <td>[上一頁] 按鈕行為</td>
+        <td>\[上一頁\] 按鈕行為</td>
      </tr>
     <tr>
         <td>手機</td>
@@ -115,7 +119,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 
 以下是對應的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件處理常式，在 app 根框架上呼叫 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)。
 
-這個處理常式會在發生全域返回事件時叫用。 如果 app 內的返回堆疊是空的，系統可能會瀏覽到 app 堆疊中的前一個 app 或 [開始] 畫面。 桌面模式沒有 app 返回堆疊，即使 app 內的返回堆疊用盡，使用者還是會留在 app 中。
+這個處理常式會在發生全域返回事件時叫用。 如果 app 內的返回堆疊是空的，系統可能會瀏覽到 app 堆疊中的前一個 app 或 \[開始\] 畫面。 桌面模式沒有 app 返回堆疊，即使 app 內的返回堆疊用盡，使用者還是會留在 app 中。
 
 ```CSharp
 void App::App_BackRequested(
@@ -156,7 +160,7 @@ private void App_BackRequested(object sender,
 ## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何啟用標題列返回按鈕
 
 
-支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
+支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 (\[設定\]  \[系統\]  \[平板電腦模式\]) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
 
 在桌面模式中，每個 app 都是在有標題列的視窗中執行。 您可以為 app 提供一個替代的返回按鈕，顯示在此標題列中。
 
@@ -307,6 +311,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

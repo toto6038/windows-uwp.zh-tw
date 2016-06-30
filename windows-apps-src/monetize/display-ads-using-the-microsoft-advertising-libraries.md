@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5cde1c22-91fd-4f5c-ac82-32efaa0d9fee
-description: 使用 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫，在您的 XAML 或 JavaScript/HTML app 中顯示橫幅廣告及影片插入式廣告。
-title: 使用 Microsoft Advertising 程式庫顯示廣告
+description: "使用 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫，在您的 XAML 或 JavaScript/HTML app 中顯示橫幅廣告及影片插入式廣告。"
+title: "使用 Microsoft Advertising 程式庫顯示廣告"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
+
 ---
 
 # 使用 Microsoft Advertising 程式庫顯示廣告
@@ -47,6 +51,7 @@ title: 使用 Microsoft Advertising 程式庫顯示廣告
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

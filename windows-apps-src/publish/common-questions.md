@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 關於廣告活動的常見問題
-title: 關於廣告活動的常見問題
+Description: "關於廣告活動的常見問題"
+title: "關於廣告活動的常見問題"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.sourcegitcommit: 3f0664e0387e206c432ce92aa221bb5c604bb675
+ms.openlocfilehash: c61866aa6fb71d41d4c6150cfe6af449da21a1da
+
 ---
 
 # 關於廣告活動的常見問題
@@ -39,7 +42,9 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 
 ## 何時將開始付費？
 
-將會於下個月初向您收取任何指定月份的費用。
+每當您帳戶的所有付費活動的收費累積到達美金 50 元 (或以您的市場或地區的貨幣計算的同等數量) 即會向您收費。
+
+如果距上次收費日期之後 30 天內，您帳戶的收費累積少於美金 50 元，將會在次月提早向您收取這些費用。 這可以確保您的帳戶不會有累計收費超過一個月的廣告活動餘款。
 
 ## 我要如何刪除信用卡或編輯信用卡的詳細資料？
 
@@ -54,6 +59,7 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 * [App 安裝廣告報告](app-install-ads-reports.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

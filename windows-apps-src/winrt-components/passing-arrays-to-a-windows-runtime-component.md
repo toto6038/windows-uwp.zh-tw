@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: 將陣列傳遞到 Windows 執行階段元件
-description: Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。
+author: msatranjr
+title: "將陣列傳遞到 Windows 執行階段元件"
+description: "Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。"
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
+
 ---
 
 # 將陣列傳遞到 Windows 執行階段元件
@@ -10,8 +13,6 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。 如果陣列的內容是用於輸入，方法就會從陣列讀取，而不會寫入陣列。 如果陣列的內容是用於輸出，方法就會寫入陣列，而不會從陣列讀取。 這會衍生出一個有關陣列參數的問題，因為 .NET Framework 中的陣列屬於參考類型，即便是依值傳遞陣列參考 (在 Visual Basic 中為 **ByVal**)，陣列的內容都是可變動的。 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 會在無法從內容判斷陣列的預定用法時，要求您對參數套用 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性，以指定其用法。 陣列用法的判斷方式如下：
 
@@ -40,7 +41,7 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 >     ' Manipulate the copy.
 >     '   ...
 >     Return output
-> End Function 
+> End Function
 > ```
 
 建議您立即建立輸入陣列的複本，並妥善管理此複本。 如此可確保無論 .NET Framework 程式碼是否呼叫您的元件，方法的運作方式都相同。
@@ -63,6 +64,6 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

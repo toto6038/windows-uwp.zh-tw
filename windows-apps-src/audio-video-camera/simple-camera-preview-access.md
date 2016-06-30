@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: 本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。
-title: 簡單的相機預覽存取
+description: "本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。"
+title: "簡單的相機預覽存取"
+translationtype: Human Translation
+ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
+ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
+
 ---
 
 # 簡單的相機預覽存取
@@ -11,18 +15,18 @@ title: 簡單的相機預覽存取
 
 本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。 建立使用相機擷取相片和視訊的 app 會要求您執行如處理裝置和相機方向，或針對擷取之檔案設定編碼選項的工作。 針對某些 app 案例，您可能只想要從相機顯示預覽串流，而不擔心這些其他考量。 本文說明如何使用最少的程式碼執行這些動作。 請注意，您應該一律在完成後，遵循下列步驟正確地關閉預覽串流。
 
-如需撰寫擷取相片或視訊之相機 app 的詳細資訊，請參閱[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+如需撰寫擷取相片或視訊之相機 app 的詳細資訊，請參閱[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)。
 
-## 將功能宣告加入至應用程式資訊清單
+## 將功能宣告加入至 app 資訊清單
 
 為了讓您的 app 可存取裝置的相機，您必須宣告您的 app 使用 *webcam* 和 *microphone* 裝置功能。 如果您要將拍攝的相片和影片儲存到使用者的圖片媒體櫃或視訊媒體櫃，您也必須宣告 *picturesLibrary* 和 *videosLibrary* 功能。
 
 **將功能新增到 app 資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
-2.  選取 [功能]**** 索引標籤。
-3.  選取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 \[方案總管\] 中的 package.appxmanifest 項目，開啟 app 資訊清單的設計工具。
+2.  選取 \[功能\] 索引標籤。
+3.  核取 \[網路攝影機\] 方塊和 \[麥克風\] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 \[圖片媒體櫃\] 方塊和 \[視訊媒體櫃\] 方塊。
 
 ## 將 CaptureElement 新增到您的頁面
 
@@ -33,7 +37,8 @@ title: 簡單的相機預覽存取
 ## 使用 MediaCapture 來開始預覽串流
 
 [
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
+              **MediaCapture**
+            ](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
 
 新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
@@ -77,7 +82,7 @@ title: 簡單的相機預覽存取
 
 ## 從預覽串流擷取靜止影像
 
-以 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 格式從媒體擷取預覽串流中取得靜止影像的方式很簡單。 如需詳細資訊，請參閱[取得預覽框架](get-a-preview-frame.md)
+以 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 格式從媒體擷取預覽串流中取得靜止影像的方式很簡單。 如需詳細資訊，請參閱[取得預覽框架](get-a-preview-frame.md)。
 
 ## 相關主題
 
@@ -85,6 +90,7 @@ title: 簡單的相機預覽存取
 * [取得預覽框架](get-a-preview-frame.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

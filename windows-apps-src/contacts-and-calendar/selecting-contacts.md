@@ -1,6 +1,12 @@
 ---
-description&#58; author：Xansky 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
-title&#58; 選取連絡人 ms.assetid&#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords&#58; 連絡人, 選取 keywords&#58; 選取單一連絡人的 keywords&#58; 選取多個連絡人 keywords&#58; 連絡人, 選取多個 keywords&#58; 選取特定連絡人資料 keywords&#58; 連絡人, 選取特定資料 keywords&#58; 連絡人, 選取特定欄位
+author: Xansky
+description: "在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。"
+title: "選取連絡人"
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contact, selecting specific fields
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+
 ---
 
 # 選取連絡人
@@ -21,16 +27,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ## 設定選取模式 (選擇性)
 
 根據預設，連絡人選擇器會抓取使用者選取之連絡人的所有可用資料。 [
-              **SelectionMode**
-            ](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
+            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
 
-首先，將 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 屬性設定成 **Fields**：
+首先，將 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性設定成 **Fields**：
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-然後，使用 [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) 屬性指定您想要連絡人選擇器抓取的欄位。 這個範例會設定連絡人選擇器抓取電子郵件地址：
+然後，使用 [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) 屬性指定您想要連絡人選擇器抓取的欄位。 這個範例會設定連絡人選擇器抓取電子郵件地址：
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -42,7 +47,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-如果您想讓使用者選取一或多位連絡人，請使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync)。
+如果您想讓使用者選取一或多位連絡人，請使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync)。
 
 ```cs
 public IList<Contact> contacts;
@@ -227,6 +232,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

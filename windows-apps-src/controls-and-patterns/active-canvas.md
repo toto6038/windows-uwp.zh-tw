@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 一種包含內容區域和命令區域的模式，適用於單一檢視應用程式或模態體驗，例如相片檢視器/編輯器、文件檢視器、地圖、繪畫或讓其他利用自由捲動檢視的應用程式。
-title: 主動式畫布模式指導方針
+Description: "一種包含內容區域和命令區域的模式，適用於單一檢視應用程式或模態體驗，例如相片檢視器/編輯器、文件檢視器、地圖、繪畫或讓其他利用自由捲動檢視的應用程式。"
+title: "主動式畫布模式指導方針"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 490c45fb8dc565e4ae0b890d26f28d698b58f255
+
 ---
 #主動式畫布
 
@@ -36,6 +40,7 @@ template: detail.hbs
 -   [**應用程式列與命令列**](app-bars.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

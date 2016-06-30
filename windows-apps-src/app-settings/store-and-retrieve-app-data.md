@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。
-title: 儲存及擷取設定和其他 app 資料
+Description: "了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。"
+title: "儲存及擷取設定和其他 app 資料"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
+
 ---
 
 # 儲存及擷取設定和其他 app 資料
@@ -65,7 +69,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>建立及擷取簡單的本機設定
 
-若要建立或寫入設定，請使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 屬性存取上一個步驟中取得之 `localSettings` 容器的設定。 這個範例會建立設定，名稱為
+若要建立或寫入設定，請使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 屬性存取上一個步驟中取得之 `localSettings` 容器的設定。 這個範例會建立名為 `exampleSetting` 的設定。
 
 ```CSharp
 // Simple setting
@@ -129,7 +133,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在本機 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 與 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要在本機 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 與 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -236,7 +240,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>建立及擷取漫遊設定
 
-使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 屬性存取上一節中取得之 `roamingSettings` 容器的設定。 此範例會建立名為 `exampleSetting` 的簡單設定和複合值，名稱為
+使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 屬性存取上一節中取得之 `roamingSettings` 容器的設定。 此範例會建立名為 `exampleSetting` 的簡單設定和名為 `composite` 的複合值。
 
 ```CSharp
 // Simple setting
@@ -294,7 +298,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在漫遊 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 與 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一節中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要在漫遊 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 與 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一節中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -356,7 +360,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在暫時的 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 及 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要在暫時的 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 及 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -455,6 +459,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

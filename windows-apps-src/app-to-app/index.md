@@ -1,8 +1,12 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: 本節說明如何在通用 Windows 平台 (UWP) 應用程式之間分享資料，包括如何使用分享協定、複製並貼上，以及拖放。
-title: App 間通訊
+description: "本節說明如何在通用 Windows 平台 (UWP) 應用程式之間分享資料，包括如何使用分享協定、複製並貼上，以及拖放。"
+title: "App 間通訊"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
+ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+
 ---
 
 # App 間通訊
@@ -28,6 +32,7 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 | [使用 EDP 保護在應用程式之間傳輸的企業資料](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主題說明達成一些最常見的資料傳輸相關企業資料保護 EDP 案例所需的編碼工作範例。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

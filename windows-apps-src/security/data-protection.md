@@ -1,8 +1,12 @@
 ---
-title: 資料保護
-description: 本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。
+title: "資料保護"
+description: "本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。"
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
+
 ---
 
 # 資料保護
@@ -259,6 +263,7 @@ namespace SampleProtectStreamAsync
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

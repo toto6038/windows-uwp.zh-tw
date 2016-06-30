@@ -3,8 +3,8 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。"
 title: "C++ 中的非同步程式設計"
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 560b51d5bb67f5f2611311cb78f59d189d4ea440
+ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
+ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
 
 ---
 
@@ -59,7 +59,7 @@ void App::TestAsync()
 
     // Call the task's .then member function, and provide
     // the lambda to be invoked when the async operation completes.
-    deviceEnumTask.then( [this] (DeviceInformationCollection^ devices ) 
+    deviceEnumTask.then( [this] (DeviceInformationCollection^ devices )
     {       
         for(int i = 0; i < devices->Size; i++)
         {
@@ -148,7 +148,7 @@ cancellation_token_source m_fileTaskTokenSource;
 m_fileTaskTokenSource.cancel();
 
 // task chain
-auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName), 
+auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
                                 m_fileTaskTokenSource.get_token());
 //getFileTask2.then ...
 ```
@@ -180,7 +180,7 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
         return storageFileSample->DeleteAsync();
     })
 
-    .then([](task<void> t) 
+    .then([](task<void> t)
     {
 
         try
@@ -219,7 +219,7 @@ void App::SetFeedText()
     SyndicationClient^ client = ref new SyndicationClient();
     auto feedOp = client->RetrieveFeedAsync(ref new Uri(url));
 
-    create_task(feedOp).then([this]  (SyndicationFeed^ feed) 
+    create_task(feedOp).then([this]  (SyndicationFeed^ feed)
     {
         m_TextBlock1->Text = feed->Title->Text;
     });
@@ -241,7 +241,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
     std::for_each(std::begin(urls), std::end(urls), [=,this] (std::wstring url)
     {
-        // Create the async operation. feedOp is an 
+        // Create the async operation. feedOp is an
         // IAsyncOperationWithProgress<SyndicationFeed^, RetrievalProgress>^
         // but we don't handle progress in this example.
 
@@ -263,7 +263,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
         // Append the initialized FeedData object to the list
         // that is the data source for the items collection.
         // This all has to happen on the same thread.
-        // By using the use_default context, we can append 
+        // By using the use_default context, we can append
         // safely to the Vector without taking an explicit lock.
         .then([feedList] (FeedData^ fd)
         {
@@ -295,7 +295,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## 處理進度更新
 
-支援 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206594) 或 [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1) 的方法可以在作業進行時 (完成前)，定期提供進度更新。 進度報告與工作和接續的概念無關。 您只是為物件的 [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) 屬性提供委派而已。 委派的典型用途是更新 UI 中的進度列。
+支援 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 或 [**IAsyncActionWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx) 的方法可以在作業進行時 (完成前)，定期提供進度更新。 進度報告與工作和接續的概念無關。 您只是為物件的 [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) 屬性提供委派而已。 委派的典型用途是更新 UI 中的進度列。
 
 ## 相關主題
 
@@ -320,7 +320,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
              "CreateAsync"
 [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>
              "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/BR206580>
+[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx>
              "IAsyncAction"
 [IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>
              "IAsyncOperation"
@@ -343,6 +343,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

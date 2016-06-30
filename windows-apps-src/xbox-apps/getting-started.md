@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: 開始使用 Xbox One 上的 UWP 應用程式開發
-description: 如何設定您的電腦和 Xbox One 以進行 UWP 開發。
+title: "開始使用 Xbox One 上的 UWP 應用程式開發"
+description: "如何設定您的電腦和 Xbox One 以進行 UWP 開發。"
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
+
 ---
 
 #開始使用 Xbox One 上的 UWP 應用程式開發
@@ -14,13 +17,13 @@ area: Xbox
 -   建立 [Windows 開發人員中心](https://dev.windows.com)帳戶。
 -   加入 [Windows 測試人員計畫](https://insider.windows.com/)。 您需要有此項目才能取得 Preview Windows SDK。
 -   設定 Windows 10 電腦 (任何版本都會包括最新 Windows 10 測試人員正式發行前小眾測試版)；針對此 Preview，我們的開發工具需要您執行 Windows 10。 
--   將您的 Xbox One 主機連線至有線網路 (無線可能也適用，但目前有線連線的效能較佳)。
-- Xbox One 主機上至少有 30 GB 的可用空間。
+-   將您的 Xbox One 主機連線到網路。 為獲得最佳效能，請使用有線連線。
+- Xbox One 主機上至少有 5 GB 的可用空間。
 
 ## 設定開發電腦
 1.  安裝 Visual Studio 2015 Update 2。 確定您選擇 \[**自訂**\] 安裝，然後選取 \[**通用 Windows 應用程式開發工具**\] 核取方塊 (它不是預設安裝的一部分)。 如需詳細資訊，請參閱[開發環境設定](development-environment-setup.md) (而且，如果您是 C++ 開發人員，請確定選擇 \[自訂\] 安裝，同時選取 C++)。
 
-2.  安裝 Windows 10 SDK Preview 組建 14295。 您可以從 [Windows 測試人員計畫](http://go.microsoft.com/fwlink/p/?LinkId=780552)取得此項目。
+2.  安裝最新的 Windows 10 SDK 預覽版。 您可以從 [Windows 測試人員計畫](http://go.microsoft.com/fwlink/p/?LinkId=780552)取得此項目。
   
   > **重要** &nbsp;&nbsp;在電腦上安裝此 Preview SDK，會讓您無法將應用程式提交到此電腦上所建置的存放區，因此請不要在生產開發電腦上執行這項作業。 
 
@@ -32,6 +35,8 @@ area: Xbox
 3.  前往「啟用開發人員模式」應用程式，然後選取 \[**切換並重新啟動**\]。 恭喜，您現在已經有處於開發人員模式的 Xbox One 了！
   
   > **注意** &nbsp;&nbsp;您的零售版遊戲和應用程式無法在開發人員模式中執行，但您建立的應用程式或遊戲可以。 切換回零售模式，以執行您最愛的遊戲和應用程式。
+  
+  > **注意** &nbsp;&nbsp;在您於開發人員模式中將 app 部署到 Xbox One 之前，主機上必須有已有使用者登入。 您可以使用現有的 Xbox Live 帳戶，或在開發人員模式中為主機建立一個新帳戶。 
 
 ## 在 Visual Studio 2015 中建立第一個專案
 
@@ -59,6 +64,7 @@ area: Xbox
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

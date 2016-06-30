@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: '本主題說明如何在企業資料保護 (EFP) 案例中建立網路連線之前，先建立受保護的對話內容。'
-MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主題說明如何在企業資料保護 (EFP) 案例中建立網路連線之前，先建立受保護的對話內容。"
+MS-HAID: dev\_networking.tagging\_network\_connections\_with\_edp\_identity
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 EDP 身份識別標記網路連線
+title: "使用 EDP 身份識別標記網路連線"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2b960bbb5cf58991778e5c20bb915a202ecf6e04
+
 ---
 
 # 使用 EDP 身份識別標記網路連線
@@ -126,6 +130,7 @@ public static async void SyncMailbox(string identity)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

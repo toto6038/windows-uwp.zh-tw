@@ -1,8 +1,11 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: 本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
-title: PlayReady 加密媒體延伸
+description: "本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
+title: "PlayReady 加密媒體延伸"
+ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
+ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+
 ---
 
 # PlayReady 加密媒體延伸
@@ -29,7 +32,7 @@ title: PlayReady 加密媒體延伸
 
     您可以使用 PlayReady 物件搭配多個金鑰識別碼 (KeyID) (就像在 Windows 8.1 中)，或者使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 搭配多個 KeyID。
 
-    **注意：**在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
+    **注意：**在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
 
      
 
@@ -130,6 +133,7 @@ function main()
         // to set the stop state.
         //
         videoElement.removeAttribute("src");
+        videoElement.load();
 
         onEndOfStream();
     };
@@ -300,6 +304,7 @@ function foo() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

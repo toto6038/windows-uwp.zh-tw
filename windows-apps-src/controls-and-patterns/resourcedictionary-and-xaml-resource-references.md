@@ -1,26 +1,30 @@
 ---
 author: Jwmsft
-Description: '說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。"
+MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: ResourceDictionary 與 XAML 資源參考
+title: "ResourceDictionary 與 XAML 資源參考"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fddd345507aace54aca66fe1caa2d9f89a74a299
+
 ---
 
 # ResourceDictionary 與 XAML 資源參考
 
 
 
-您可以使用 XAML 來定義您 app 的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源
+您可以使用 XAML 來定義您 app 的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
 
-您最常宣告為 XAML 資源的 XAML 元素包括 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)、動畫元件以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 子類別。 我們會在此處說明如何定義 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。 我們也會說明資源字典進階功能，例如 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 和 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807)
+您最常宣告為 XAML 資源的 XAML 元素包括 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)、動畫元件以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 子類別。 我們會在此處說明如何定義 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。 我們也會說明資源字典進階功能，例如 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 和 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807)。
 
 **先決條件**
 
-我們假設您了解 XAML 標記並已閱讀 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)
+我們假設您了解 XAML 標記並已閱讀 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)。
 
 ## 定義和使用 XAML 資源
 
@@ -45,9 +49,9 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 
 -   `<Page.Resources>…</Page.Resources>` - 定義資源字典。
 -   `<x:String>` - 使用 "greeting" 索引鍵來定義資源。
--   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源，此索引鍵會指派給 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 屬性
+-   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源，此索引鍵會指派給 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 屬性。
 
-> **注意** &nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
+> 注意請不要將 ResourceDictionary 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 \[資源\] 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
 
 資源不一定要是字串；它們可以是任何可共用的物件，例如樣式、範本、筆刷和色彩。 不過，控制項、形狀和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 無法共用，因此無法宣告為可重複使用的資源。 如需有關共用的詳細資訊，請參閱本主題稍後的 [XAML 資源必須是可共用的](#xaml_resources_must_be_sharable)一節。
 
@@ -95,13 +99,14 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 </Page>
 ```
 
-如需有關隱含樣式及其運作方式的詳細資訊，請參閱[設定控制項的樣式](styling-controls.md)和[控制項範本](control-templates.md)
+如需有關隱含樣式及其運作方式的詳細資訊，請參閱[設定控制項的樣式](styling-controls.md)和[控制項範本](control-templates.md)。
 
 ## 查詢程式碼中的資源
 
 您可以像存取任何其他字典一樣存取資源字典的成員。
 
-> **注意** &nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
+> **注意**
+            &nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
 
  
 
@@ -190,7 +195,8 @@ sealed partial class App : Application
 ## 每個 FrameworkElement 都可以有一個 ResourceDictionary
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 是控制項可從中繼承的一個基底類別，而且具備 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 因此，您可以將本機資源字典新增至任何 **FrameworkElement**
+              **FrameworkElement**
+            ](https://msdn.microsoft.com/library/windows/apps/br208706) 是控制項可從中繼承的一個基底類別，而且具備 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 因此，您可以將本機資源字典新增至任何 **FrameworkElement**。
 
 在這裡，資源字典會新增至頁面元素。
 
@@ -215,7 +221,8 @@ sealed partial class App : Application
 ```
 
 在這裡，[**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 都有資源字典，而且它們都有稱為 "greeting" 的資源。 [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 位於 **Border** 內，因此其資源查詢會先查詢 **Border** 的資源，再查詢 **Page** 的資源，最後查詢 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 資源。 **TextBlock** 將會讀取 "Hola mundo"。
+              **TextBlock**
+            ](https://msdn.microsoft.com/library/windows/apps/br209652) 位於 **Border** 內，因此其資源查詢會先查詢 **Border** 的資源，再查詢 **Page** 的資源，最後查詢 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 資源。 **TextBlock** 將會讀取 "Hola mundo"。
 
 若要從程式碼存取該元素的資源，請使用該元素的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 存取程式碼而不是 XAML 中 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的資源時，只會在該字典中查看，而不會在父元素的字典中查看。
 
@@ -253,7 +260,7 @@ sealed partial class App : Application
 
 *合併的資源字典*是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
 
-> **提示** &nbsp;&nbsp;您可以使用 [專案]**** 功能表的 [新增 &gt; 新增項目... &gt; 資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典。
+> 提示您可以使用 \[專案\] 功能表的 \[新增  新增項目...  資源字典\] 選項，在 Microsoft Visual Studio 中建立資源字典。
 
 在這裡，您會在另一個名為 Dictionary1.xaml 的 XAML 檔案中，定義資源字典。
 
@@ -335,7 +342,8 @@ sealed partial class App : Application
 「佈景主題字典」是一種特殊類型的合併字典，可根據使用者目前在裝置上使用的佈景主題保留不同的資源。 例如，「淺色」佈景主題可能會使用白色筆刷，而「深色」佈景主題則可能使用深色筆刷。 筆刷會變更它所解析成的資源，但除此之外，使用筆刷做為資源的控制項組合仍可維持不變。 若要在您自己的範本和樣式中重新產生佈景主題切換行為，請使用 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 屬性取代將項目合併到主要字典時使用的 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 屬性。
 
 [
-            **ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 中的每個 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素都必須有一個 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 這個值是為相關佈景主題命名的字串，例如 "Default"、"Dark"、"Light" 或 "HighContrast"。 `Dictionary1` 和 `Dictionary2` 通常會定義名稱相同但值不同的資源。
+              **ThemeDictionaries**
+            ](https://msdn.microsoft.com/library/windows/apps/br208807) 中的每個 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素都必須有一個 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 這個值是為相關佈景主題命名的字串，例如 "Default"、"Dark"、"Light" 或 "HighContrast"。 `Dictionary1` 和 `Dictionary2` 通常會定義名稱相同但值不同的資源。
 
 在這裡，您針對淺色佈景主題使用紅色文字，針對深色佈景主題使用藍色文字。
 
@@ -386,17 +394,18 @@ sealed partial class App : Application
 
 當您使用 XAML 設計工具編輯樣式和範本的複本時，設計工具會從 XAML 設計資源字典擷取區段，然後當成您 app 和專案中的 XAML 字典元素的本機複本。
 
-如需應用程式可用的佈景主題專用資源和系統資源詳細資訊和清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)
+如需應用程式可用的佈景主題專用資源和系統資源詳細資訊和清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)。
 
 ## XAML 資源參考的查詢行為
 
-「查詢行為」**是描述 XAML 資源系統如何嘗試尋找 XAML 資源的詞彙。 從應用程式 XAML 中的某個位置以 XAML 資源參考的方式參考某個索引鍵時，就會發生查詢。 首先，資源系統針對將在何處依據範圍檢查資源是否存在方面，具有可預期的行為。 如果在初始範圍中找不到某項資源，則會擴充範圍。 查詢行為會繼續在可能由應用程式或系統定義 XAML 資源的所有位置與範圍進行。 如果所有可能的資源查詢嘗試都失敗，通常會產生錯誤。 在開發過程中，通常可以移除這些錯誤。
+「查詢行為」是描述 XAML 資源系統如何嘗試尋找 XAML 資源的詞彙。 從應用程式 XAML 中的某個位置以 XAML 資源參考的方式參考某個索引鍵時，就會發生查詢。 首先，資源系統針對將在何處依據範圍檢查資源是否存在方面，具有可預期的行為。 如果在初始範圍中找不到某項資源，則會擴充範圍。 查詢行為會繼續在可能由應用程式或系統定義 XAML 資源的所有位置與範圍進行。 如果所有可能的資源查詢嘗試都失敗，通常會產生錯誤。 在開發過程中，通常可以移除這些錯誤。
 
 XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性開始。 如果 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 存在，會檢查該 **ResourceDictionary** 是否有項目含有要求的索引鍵。 這個第一層查詢通常沒有什麼相關性，因為您通常不會在定義物件上的資源之後，接著參考該相同物件上的資源。 實際上，這裡通常不會有 **Resources** 屬性。 您幾乎可以在 XAML 中的任何一處建立 XAML 資源參考；不限於 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 子類別的屬性。
 
 查詢序列會接著檢查 app 執行階段物件樹狀目錄中的下一個父物件。 如果 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 存在並包含 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，便會要求包含指定索引鍵字串的字典項目。 如果找到資源，查詢序列會停止，並將物件放置在參考的位置。 否則，查詢行為會朝著物件樹狀根目錄繼續前進到下一個父層級。 此搜尋會一直持續向上遞迴到 XAML 的根元素為止，以搜尋完所有可能的直接資源位置。
 
-> **注意** &nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
+> **注意**
+            &nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
 
  
 
@@ -406,7 +415,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 最後，還會針對平台資源進行資源查詢。 平台資源包含針對每個系統 UI 佈景主題定義的控制項範本，這些範本會針對 Windows 執行階段應用程式，定義您在 UI 中使用的所有控制項的預設外觀。 平台資源也包含一組與整個系統外觀及佈景主題相關的具名資源。 技術上來說，這些資源是 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 項目，所以在載入 app 後可以從 XAML 或程式碼查詢。 例如，系統佈景主題資源包含稱為 "SystemColorWindowTextColor" 的資源，它提供 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 定義，能夠讓 app 文字色彩與來自作業系統和使用者喜好設定的系統視窗文字色彩相符。 app 的其他 XAML 樣式也可以參考此樣式，或者程式碼可以取得資源查詢值 (並在範例中將它轉換為 **Color**)。
 
-如需使用 XAML 之 Windows 市集 app 可用的佈景主題專用資源和系統資源詳細資訊和清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)
+如需使用 XAML 之 Windows 市集 app 可用的佈景主題專用資源和系統資源詳細資訊和清單，請參閱 [XAML 佈景主題資源](xaml-theme-resources.md)。
 
 如果仍然無法在這些位置中找到要求的索引鍵，就會發生 XAML 剖析錯誤/例外狀況。 在某些情況下，XAML 剖析例外狀況可能是 XAML 標記編譯動作或 XAML 設計環境沒有偵測到的執行階段例外狀況。
 
@@ -422,21 +431,24 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 ## XAML 資源必須是可共用的
 
 
-物件若要存在於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，就必須「可共用」**。
+物件若要存在於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，就必須「可共用」。
 
 可共用是必要的特性，因為建構應用程式物件樹狀目錄並在執行階段使用時，物件不可以存在於樹狀目錄的多個位置。 要求每個 XAML 資源時，資源系統會在內部建立資源值複本，以在應用程式的物件圖形中使用。
 
 [
-            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和 Windows 執行階段 XAML 通常支援這些物件進行共用：
+              **ResourceDictionary**
+            ](https://msdn.microsoft.com/library/windows/apps/br208794) 和 Windows 執行階段 XAML 通常支援這些物件進行共用：
 
 -   樣式和範本 ([**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 和衍生自 [**FrameworkTemplate**](https://msdn.microsoft.com/library/windows/apps/br208753) 的類別)
 -   筆刷和色彩 (衍生自 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 的類別以及 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值)
 -   包含 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 的動畫類型
 -   轉換 (衍生自 [**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034) 的類別)
 -   [
-            **Matrix**](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
+              **Matrix**
+            ](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
 -   [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值
+              **Point**
+            ](https://msdn.microsoft.com/library/windows/apps/br225870) 值
 -   某些其他 UI 相關結構，如 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 和 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)
 -   [XAML 內建資料類型](https://msdn.microsoft.com/library/windows/apps/mt186448)
 
@@ -448,7 +460,8 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 
 [
-            **UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 元素有一種資源查詢行為的特殊情況，因為它具有定義範圍及用法範圍的固有概念。 從定義範圍建立 XAML 資源參考的 **UserControl** 必須能夠支援在自己的定義範圍查詢序列內查詢該資源—也就是說，它不能存取 app 資源。 在 **UserControl** 用法範圍，資源參考被視為在朝用法頁面根目錄進行的查詢序列內 (就像是已載入物件樹狀目錄中物件的任何其他資源參考) 並可存取 app 資源。
+              **UserControl**
+            ](https://msdn.microsoft.com/library/windows/apps/br227647) 元素有一種資源查詢行為的特殊情況，因為它具有定義範圍及用法範圍的固有概念。 從定義範圍建立 XAML 資源參考的 **UserControl** 必須能夠支援在自己的定義範圍查詢序列內查詢該資源—也就是說，它不能存取 app 資源。 在 **UserControl** 用法範圍，資源參考被視為在朝用法頁面根目錄進行的查詢序列內 (就像是已載入物件樹狀目錄中物件的任何其他資源參考) 並可存取 app 資源。
 
 ## ResourceDictionary 和 XamlReader.Load
 
@@ -456,11 +469,11 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 ## 從程式碼使用 ResourceDictionary
 
-大部分適用於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼是在 **ResourceDictionary** 執行個體上進行呼叫的，所以您必須先擷取一個執行個體。透過取得 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 擷取物件樹狀目錄某處的直接 **ResourceDictionary**，或
+大部分適用於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼是在 **ResourceDictionary** 執行個體上進行呼叫的，所以您必須先擷取一個 (透過取得 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 擷取物件樹狀目錄某處的直接 **ResourceDictionary**，或 `Application.Current.Resources`)。
 
-在 C\# 或 Microsoft Visual Basic 程式碼中，可以使用索引子 ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)) 在指定的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中參考資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800)
+在 C\# 或 Microsoft Visual Basic 程式碼中，可以使用索引子 ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)) 在指定的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中參考資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800)。
 
-使用程式碼來檢查或變更 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 時，[**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) 或 [**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801)
+使用程式碼來檢查或變更 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 時，[**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) 或 [**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801)。
 
 此外，如果您要求的索引鍵不存在於 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中，可能不會出現錯誤；可能只是會提供 **null** 做為傳回值。 不過，如果您嘗試使用傳回的 **null** 做為值，則您還是會收到錯誤。 錯誤會來自屬性的 setter，並非您的 **ResourceDictionary** 呼叫。 如果屬性接受 **null** 為有效值，是唯一可以避免錯誤的的方法。 請注意，這個行為與 XAML 剖析期間的 XAML 查詢行為恰好相反；無法在剖析期間解析從 XAML 提供的索引鍵會造成 XAML 剖析錯誤，即使在屬性可以接受 **null** 的情況中也是一樣。
 
@@ -477,7 +490,7 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
 
 ## 自訂資源查詢
 
-對於進階案例，您可以實作一個行為與本主題所述之 XAML 資源參考查詢行為不同的類別。 若要這樣做，您需要實作 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別，然後就可以使用 [CustomResource 標記延伸](https://msdn.microsoft.com/library/windows/apps/mt185580) (而不是使用 [StaticResource](../xaml-platform/staticresource-markup-extension.md) 或 [ThemeResource](../xaml-platform/themeresource-markup-extension.md)) 進行資源參考，以存取該行為。 大部分的 app 都不包含要求此作業的案例。 如需詳細資訊，請參閱 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
+對於進階案例，您可以實作一個行為與本主題所述之 XAML 資源參考查詢行為不同的類別。 若要這樣做，您需要實作 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別，然後就可以使用 [CustomResource 標記延伸](https://msdn.microsoft.com/library/windows/apps/mt185580) (而不是使用 [StaticResource](../xaml-platform/staticresource-markup-extension.md) 或 [ThemeResource](../xaml-platform/themeresource-markup-extension.md)) 進行資源參考，以存取該行為。 大部分的 app 都不包含要求此作業的案例。 如需詳細資訊，請參閱 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)。
 
  
 ## 相關主題
@@ -504,6 +517,7 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

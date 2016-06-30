@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
-title: 建置裝置選取器
-description: 建置裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。
+title: "建置裝置選取器"
+description: "建置裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+
 ---
 # 建置裝置選取器
 
@@ -118,6 +122,7 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
-description: 大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。
+title: "封裝您的通用 Windows 平台 (UWP) DirectX 遊戲"
+description: "大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。"
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
+
 ---
 
 #  封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
@@ -46,7 +50,7 @@ ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 
 -   資產檔案擁有相同的檔案名稱、且資源套件特定版本放置於特定的已命名目錄中。 這些目錄名稱由系統保留。 例如，\\en-us, \\scale-140, \\dxfl-dx11。
 -   資產檔案儲存在任意名稱的資料夾中，但是檔案以一般標籤命名，該標籤會附加系統為表示語言或其他限定詞而保留的字串。 特別是，限定詞字串會附加到一般化檔案名稱的底線 (“\_”) 後面。 例如，\\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds。 您也可以組合這些字串。 例如，\\assets\\menu\_option1\_scale-140\_lang-en-us.png。
-    > **注意** 當用於檔案名稱而非單獨使用在目錄名稱時，語言限定詞必須採取格式 "lang-<tag>"，例如 "lang-en-us"，如[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)中所述。
+    > **注意** 當用於檔案名稱而非單獨使用在目錄名稱時，語言限定詞的格式需為 "lang-<tag>" (例如 "lang-en-us")，如[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)中所述。
 
      
 
@@ -79,7 +83,7 @@ ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
      
 
 -   使用 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 與 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 為您的 app 指定並載入地區設定特定資源。 此外，請使用不包含特定地區設定的資產參考，因為這些 API 會根據使用者的設定判斷正確的地區設定，然後為使用者擷取正確的資源。
--   在 Microsoft Visual Studio 2015 中，選取 [**專案->存放區->建立應用程式套件...**]，然後建立套件。
+-   在 Microsoft Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 
 ## 定義縮放尺寸資源套件
 
@@ -96,7 +100,7 @@ Windows 10 提供 3 個使用者介面縮放係數：1.0x、1.4x 與 1.8x。 使
      
 
 -   使用 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 載入資產。 系統應該將資產參考一般化 (無尾碼)，省去特定的縮放變化。 系統將會針對顯示器和使用者的設定，擷取適當的縮放資產。
--   在 Visual Studio 2015 中，選取 [**專案->存放區->建立應用程式套件...**]，然後建立套件。
+-   在 Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 
 ## 定義 DirectX 功能層級資源套件
 
@@ -205,7 +209,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   在 Visual Studio 2015 中，選取 [**專案->存放區->建立應用程式套件...**]，然後建立套件。
+-   在 Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 -   確定您在 package.appxmanifest 資訊清單設定中啟用應用程式組合套件。
 
 ## 相關主題
@@ -224,6 +228,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

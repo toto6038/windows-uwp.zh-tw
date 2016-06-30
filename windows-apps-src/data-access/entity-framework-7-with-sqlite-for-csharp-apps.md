@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
-description: Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。
-title: 針對 C# app 搭配 SQLite 使用 Entity Framework 7
+description: "Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。"
+title: "針對 C# app 搭配 SQLite 使用 Entity Framework 7"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
+
 ---
 
 # 針對 C# app 搭配 SQLite 使用 Entity Framework 7
@@ -24,6 +28,7 @@ Entity Framework 7 原本是專供 .NET 開發人員使用，可在通用 Window
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

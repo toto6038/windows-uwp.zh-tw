@@ -1,8 +1,12 @@
 ---
-title: 驗證和使用者識別
-description: 通用 Windows 平台 (UWP) app 有數個使用者驗證選項，涵蓋範圍從使用 Web 驗證代理人的簡單單一登入 (SSO) 到高度安全的雙因素驗證。
+title: "驗證和使用者識別"
+description: "通用 Windows 平台 (UWP) app 有數個使用者驗證選項，涵蓋範圍從使用 Web 驗證代理人的簡單單一登入 (SSO) 到高度安全的雙因素驗證。"
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
+ms.openlocfilehash: e748b319cdeda82aadaf8516e41883a3e32dc10c
+
 ---
 
 # 驗證和使用者識別
@@ -25,14 +29,15 @@ author: awkoren
 <tr><td>[建立 Microsoft Passport 登入應用程式](microsoft-passport-login.md)</td><td>如何建立使用 Microsoft Passport 取代傳統使用者名稱及密碼驗證系統的 Windows 10 UWP(通用 Windows 平台) app 之完整逐步解說的第 1 部分。</td></tr>
 <tr><td>[建立 Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)</td><td>在 Windows 10 UWP (通用 Windows 平台) app 中使用 Microsoft Passport 取代傳統的使用者名稱及密碼驗證系統之完整逐步解說的第 2 部分。</td></tr>
 <tr><td>[智慧卡](smart-cards.md)</td><td>此主題說明應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。</td></tr>
-<tr><td>[在應用程式之間共用憑證](share-certificates.md)</td><td>針對需要比使用者識別碼和密碼組合更安全之驗證方式的 UWP app，即可使用憑證驗證。 憑證驗證可在驗證使用者時提供高階的信任層級。 在某些情況下，會有一組服務想驗證多個 app 的某位使用者。 本文說明如何使用相同的憑證來驗證多個 app，以及如何提供便利的程式碼，讓使用者匯入用來存取受保護 Web 服務的憑證。</td></tr>
+<tr><td>[在應用程式之間共用憑證](share-certificates.md)</td><td>針對需要比使用者識別碼和密碼組合更安全之驗證方式的 UWP app，即可使用憑證驗證。 憑證驗證可在驗證使用者時提供高階的信任層級。 在某些情況下，會有一組服務想驗證多個 app 的某位使用者。 本文說明如何使用相同的憑證來驗證多個 App，以及如何提供便利的程式碼，讓使用者匯入用來存取受保護 Web 服務的憑證。</td></tr>
 <tr><td>[使用隨附 IoT 裝置的 Windows 解除鎖定](companion-device-unlock.md)</td><td>隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過隨附裝置架構，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。</td></tr>
-<tr><td>[Web 帳戶管理員](web-account-manager.md)</td><td>本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) app 連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 </td></tr>
+<tr><td>[Web 帳戶管理員](web-account-manager.md)</td><td>本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) App 連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 </td></tr>
 <tr><td>[Web 驗證代理人](web-authentication-broker.md)</td><td>本文說明如何將您的 app 連接到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得描述 app 存取之提供者資源的存取權杖。</td></tr>
 </table>
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

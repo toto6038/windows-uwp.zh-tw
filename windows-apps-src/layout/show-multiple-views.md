@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。
-title: 顯示 app 的多重檢視
+Description: "讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。"
+title: "顯示 app 的多重檢視"
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23e999f86fb0552b96cddbd3b9d11803106bf6c2
+
 ---
 
 # 顯示 app 的多重檢視
@@ -181,6 +185,7 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

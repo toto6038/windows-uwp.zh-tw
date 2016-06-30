@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-title: 從您的 app 列印
-description: 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。
+title: "從您的 app 列印"
+description: "了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。"
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: 363c19cfc15a883c4b6d951c59c63187f4239dec
+
 ---
 # 從您的 app 列印
 
@@ -33,7 +37,8 @@ using Windows.UI.Xaml.Controls;
 ```
 
 [
-            **PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 類別是用來處理大部分的 app 與 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
+              **PrintDocument**
+            ](https://msdn.microsoft.com/library/windows/apps/BR243314) 類別是用來處理大部分的 app 與 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之間的互動，但是它會公開自己的數個回呼。 在註冊期間，建立 **PrintManager** 和 **PrintDocument** 的執行個體，並註冊其列印事件的處理常式。
 
 在 [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中，註冊是由 `RegisterForPrinting` 方法執行。
 
@@ -115,7 +120,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 ## 將 app 的內容格式化
 
-呼叫 **ShowPrintUIAsync** 時，會引發 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步驟顯示的 **PrintTaskRequested** 事件處理常式，會藉由呼叫 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436request_createprinttask) 方法及傳遞列印頁面的標題和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委派的名稱來建立 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)。 請注意，這個範例中的 **PrintTaskSourceRequestedHandler** 是以內嵌的方式定義。 **PrintTaskSourceRequestedHandler** 會提供要列印的格式化內容，稍後會加以描述。
+呼叫 **ShowPrintUIAsync** 時，會引發 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步驟顯示的 **PrintTaskRequested** 事件處理常式，會藉由呼叫 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) 方法及傳遞列印頁面的標題和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委派的名稱來建立 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)。 請注意，這個範例中的 **PrintTaskSourceRequestedHandler** 是以內嵌的方式定義。 **PrintTaskSourceRequestedHandler** 會提供要列印的格式化內容，稍後會加以描述。
 
 在這個範例中，也會定義完成處理常式以擷取錯誤。 處理完成事件是較好的做法，因為這樣一來，應用程式就可以讓使用者知道發生錯誤，並提供可能的解決方法。 同樣地，應用程式可以使用完成事件指出列印工作成功之後，使用者採取的後續步驟。
 
@@ -202,7 +207,7 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 }
 ```
 
-最後，當使用者按一下 [列印] 按鈕時，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 會要求傳送至印表機的頁面最終集合，方法是呼叫 **IDocumentPageSource** 介面的 **MakeDocument** 方法。 在 XAML 中，這會引發 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件。 您在註冊期間建立的事件處理常式會在此時呼叫。
+最後，當使用者按一下 \[列印\] 按鈕時，PrintManager 會要求傳送至印表機的頁面最終集合，方法是呼叫 IDocumentPageSource 介面的 MakeDocument 方法。 在 XAML 中，這會引發 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件。 您在註冊期間建立的事件處理常式會在此時呼叫。
 
 在 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件處理常式 ([UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法) 中，將來自頁面集合的頁面新增至要傳送到印表機的 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 物件。 如果使用者指定要列印特定的頁面或頁面範圍，您可以使用此處的資訊，只新增實際要傳送到印表機的頁面。
 
@@ -277,8 +282,7 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-[
-            **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法會建立 [範圍]**** 文字方塊。 當使用者選取 [列印範圍]**** 選項時，可以在此處輸入想要列印的特定頁面。
+CreateTextOption 方法會建立 \[範圍\] 文字方塊。 當使用者選取 \[列印範圍\] 選項時，可以在此處輸入想要列印的特定頁面。
 
 ## 處理列印選項變更
 
@@ -360,7 +364,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-**提示：**如需如何剖析使用者在 [範圍] 文字方塊中輸入之頁面範圍的詳細資料，請參閱 [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPagesInRange` 方法。
+提示：如需如何剖析使用者在 \[範圍\] 文字方塊中輸入之頁面範圍的詳細資料，請參閱 UWP 列印範例中的  方法。
 
 ## 預覽已選取的頁面
 
@@ -380,6 +384,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

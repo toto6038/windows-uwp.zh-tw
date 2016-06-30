@@ -6,8 +6,8 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
@@ -44,7 +44,7 @@ Windows 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方
 -   [
             **IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) - 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項。 這樣就能完整自訂筆墨體驗。
 
-## <span id="inkcanvas"></span><span id="INKCANVAS"></span>利用 InkCanvas 的基本筆墨功能
+## 利用 InkCanvas 的基本筆墨功能
 
 
 針對基本筆墨功能，只需在頁面上的任何地方放置 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 即可。
@@ -84,7 +84,7 @@ Windows 筆跡平台搭配手寫筆裝置之後，使用者就可以自然的方
 
 針對基本的筆墨功能，您不需要考慮使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 不過，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自訂和設定筆墨行為，您就必須存取其對應的 **InkPresenter** 物件。
 
-## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>使用 InkPresenter 的基本自訂
+## 使用 InkPresenter 的基本自訂
 
 
 [
@@ -195,7 +195,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 若要提供筆墨和擦掉之後的功能 (例如選取筆劃)，您的 app 必須針對 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 識別出未經處理即可傳入的特定輸入，讓您的 app 來處理。
 
-## <span id="passthrough"></span><span id="PASSTHROUGH"></span>傳入輸入以進行進階處理
+## 傳入輸入以進行進階處理
 
 
 根據預設，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會將所有輸入處理為筆墨筆劃或擦去筆劃。 這包括透過次要硬體能供性所修改的輸入，例如畫筆筆身按鈕、滑鼠右鍵按鈕或類似按鈕。
@@ -421,7 +421,7 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>轉譯自訂的筆墨
+## 轉譯自訂的筆墨
 
 
 根據預設，筆墨輸入是在低延遲背景執行緒上處理，並在其繪製期間轉譯為「濕潤」狀態。 完成筆劃 (拿起畫筆或手指，或是放開滑鼠按鈕) 時，即會在 UI 執行緒上處理該筆劃，並以「烘乾」狀態轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 層級 (在應用程式內容上方，並取代濕潤的筆墨)。
@@ -462,7 +462,7 @@ public MainPage()
  
 
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 * [處理指標輸入](handle-pointer-input.md)
@@ -492,6 +492,6 @@ public MainPage()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

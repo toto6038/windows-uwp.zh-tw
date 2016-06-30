@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "動畫概觀"
 description: "使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的 app 中。"
-ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
-ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 15fa3b33bf302633ef8cd51928e1af5ea726cc01
 
 ---
 # 動畫概觀
@@ -26,7 +26,7 @@ Windows 執行階段動畫庫中的動畫有下列優點：
 
 然而動畫庫無法為每種可能的狀況提供動畫。 在某些狀況下，您可能會希望以 XAML 建立自訂動畫。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
-此外，針對諸如根據 ScrollViewer 捲動位置產生項目動畫效果的特定進階案例，開發人員可能會想要使用視覺層交互操作來實作自訂動畫。 如需詳細資訊，請參閱[視覺層](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)。
+此外，針對諸如根據 ScrollViewer 捲動位置產生項目動畫效果的特定進階案例，開發人員可能會想要使用視覺層交互操作來實作自訂動畫。 如需詳細資訊，請參閱[視覺層](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
 
 ## 動畫類型
 
@@ -53,7 +53,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 ### 頁面轉換
 
-使用頁面轉換在 App 中產生動畫瀏覽效果。 由於絕大部分的 App 皆使用某種類型的瀏覽，因此頁面轉化動畫是 App 最常使用的佈景主題動畫類型。 如需關於頁面轉換 API 的詳細資訊，請參閱 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition)。
+使用頁面轉換在 App 中產生動畫瀏覽效果。 由於絕大部分的 App 皆使用某種類型的瀏覽，因此頁面轉化動畫是 App 最常使用的佈景主題動畫類型。 如需關於頁面轉換 API 的詳細資訊，請參閱 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)。
 
 
 
@@ -63,7 +63,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 [
             **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [
-            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同於具預設參數的 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)之外使用。
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同於具預設參數的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)之外使用。
  
  
 
@@ -114,16 +114,16 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 | 對話方塊 | [
             **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 | 飛出視窗 | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | 工具提示 | [
             **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 | 操作功能表 | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | 命令列 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | 工作窗格或以邊緣為基礎的面板 | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | 任何 UI 容器的內容 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | 用於控制項，或者沒有其他適用的動畫 | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -289,7 +289,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 | API | 說明 |
 |-----|-------------|
-| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | 針對[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | 針對[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | 提供控制項新增或刪除子項或內容時的動畫轉換行為。 通常控制項就是一個項目容器。 |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | 提供控制項內容變更時的動畫轉換行為。 除了 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 之外，您也可以套用此項目。 |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | 為 (小) 邊緣 UI 轉換提供動畫轉換行為。 |
@@ -345,7 +345,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 與轉換動畫不同，佈景主題動畫沒有自動執行的內建觸發程序 (轉換)。 當您以 XAML 定義佈景主題動畫時，必須使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 以包含該佈景主題動畫。 您也可以變更動畫的預設行為。 例如，可藉由提高 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 時間值，使淡出的速度變慢。
 
-**注意：**基於說明基本動畫技術的目的，我們將使用 app 程式碼呼叫 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的方法來啟動動畫。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
+**注意：**基於說明基本動畫技術的目的，我們將使用 app 程式碼呼叫 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的方法來啟動動畫。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
 
  
 
@@ -365,8 +365,8 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | 重新放置物件時套用的預先設定動畫。 |
 | [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 隱藏目標 UI 的預先設定動畫，會使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 開啟與關閉樣式中的動畫。 |
 | [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 顯示目標 UI 的預先設定動畫，會使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 開啟與關閉樣式中的動畫。 |
-| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 顯示使用者在邏輯階層中正向瀏覽時執行的預先設定動畫，例如從主要頁面瀏覽至詳細資料頁面。 |
-| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 顯示使用者在邏輯階層中反向瀏覽時執行的預先設定動畫，例如從詳細資料頁面瀏覽至主要頁面。 |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 顯示使用者在邏輯階層中正向瀏覽時執行的預先設定動畫，例如從主要頁面瀏覽至詳細資料頁面。 |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 顯示使用者在邏輯階層中反向瀏覽時執行的預先設定動畫，例如從詳細資料頁面瀏覽至主要頁面。 |
 
  
 
@@ -388,6 +388,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

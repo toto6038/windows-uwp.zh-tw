@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。 
-title: 日期選擇器
+Description: "日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。"
+title: "日期選擇器"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: c237d4bc013ad0a1d0d16f695f4332a6aac7efdc
+
 ---
 
 # 日期選擇器
@@ -57,6 +61,7 @@ birthDatePicker.Header = "Date of birth";
 - [時間選擇器](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

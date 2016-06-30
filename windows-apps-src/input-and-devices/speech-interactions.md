@@ -1,12 +1,12 @@
 ---
 author: Karl-Bridge-Microsoft
-description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。"
+Description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。"
 title: "語音互動"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
-ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
-ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ecd002e6f3a92702459426858693dd7547b0ca02
 
 ---
 
@@ -25,13 +25,14 @@ ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
 
 **TTS：**使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
 
-> [!NOTE] 使用 Cortana 和自動語音命令時，您的 app 可以在前端啟動 (app 取得焦點，如同從 \[開始\] 功能表啟動一般) 或啟動為背景服務 (Cortana 保持焦點，但提供來自 app 的結果)。 
-> 需要額外內容或使用者輸入的命令 (例如傳送訊息給特定的連絡人) 最好在前景 app 處理，而基本命令則可由 **Cortana** 透過背景 app 處理。
-> 如果您要透過在 **Cortana** UI 中的語音命令，公開功能為背景服務，請參閱 [Cortana 設計指導方針](cortana-design-guidelines.md)。
+注意 使用 Cortana 和自訂語音命令時，您的 app 可以在前端啟動 (app 取得焦點，如同從 \[開始\] 功能表啟動一般) 或啟動為背景服務 (Cortana 保持焦點，但提供來自 app 的結果)。 需要額外內容或使用者輸入的命令 (例如傳送訊息給特定的連絡人) 最好在前景 app 處理，而基本命令則可由 **Cortana** 透過背景 app 處理。
+如果您要透過在 **Cortana** UI 中的語音命令，公開功能為背景服務，請參閱 [Cortana 設計指導方針](cortana-design-guidelines.md)。
+
+ 
 
 經過親切體貼地設計和實作，語音可以成為使用者與您的 app 互動之可靠又有趣的方式，可補充或甚至取代鍵盤、滑鼠、觸控和手勢。
 
-## <span id="Speech_interaction_design"></span><span id="speech_interaction_design"></span><span id="SPEECH_INTERACTION_DESIGN"></span>語音互動設計
+## 語音互動設計
 
 
 這些指導方針和建議說明如何將語音辨識和 TTS 最佳地整合到您應用程式的互動體驗中。
@@ -48,7 +49,7 @@ ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
 -   應用程式內容是否是需要自訂或限制的詞彙 (例如醫藥、科學，或區域)？
 -   是否需要網路連線？
 
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>文字輸入
+## 文字輸入
 
 
 文字輸入的語音的範圍可從簡短格式 (單一字詞或片語) 到長格式 (連續聽寫)。 簡短格式輸入的時間長度必須小於 10 秒，而長格式輸入工作階段的時間長度最長可到兩分鐘。 (較長形式的輸入不需使用者操作即可重新啟動，以提供不間斷的連續聽寫印象。)
@@ -65,7 +66,7 @@ ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
 
 如果沒有可用的網路連線，請停用所有的連續辨識 UI 並終止辨識工作階段。 連續辨識需要網路連線。
 
-## <span id="Commanding"></span><span id="commanding"></span><span id="COMMANDING"></span>命令
+## 命令
 
 
 語音輸入可以起始動作、叫用命令，以及完成工作。
@@ -110,14 +111,14 @@ ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
 
 ![以 SGRS 文法檔為基礎之限制的最終辨識畫面](images/speech/speech-listening-complete.png)
 
-## <span id="Always_listening"></span><span id="always_listening"></span><span id="ALWAYS_LISTENING"></span>一律聆聽
+## 一律聆聽
 
 
 App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作。
 
 您應基於應用程式內容，自訂文法限制。 這可維持語音辨識體驗非常明確且相關於目前的工作，並減少錯誤。
 
-## <span id="What_can_I_say_"></span><span id="what_can_i_say_"></span><span id="WHAT_CAN_I_SAY_"></span>「我可以說什麼？」
+## 「我可以說什麼？」
 
 
 啟用語音輸入時，協助使用者探索可了解的項目和可執行的動作是非常重要的。
@@ -126,7 +127,7 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 如果語音辨識是一律開啟，請考慮將片語 「我可以說什麼？」增加 到每個頁面上。 當使用者說出這個片語，在目前的內容中顯示所有支援的字詞和片語。 使用此片語提供使用者一致性的方式來探索整個系統的語音功能。
 
-## <span id="Recognition_failures"></span><span id="recognition_failures"></span><span id="RECOGNITION_FAILURES"></span>辨識失敗
+## 辨識失敗
 
 
 語音辨識會失敗。 當音訊品質不佳、僅辨識出部分片語，或完全沒有偵測的輸入，就會發生失敗。
@@ -145,23 +146,25 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 聆聽音訊輸入並嘗試修正問題。 語音辨識器可以偵測到可能會影響語音辨識正確性的音訊品質問題。 您可以使用語音辨識器提供的資訊來告知使用者問題，讓他們採取修正動作 (如果可能的話)。 例如，如果麥克風的音量設定太低，您可以提示使用者提高說話音量或麥克風音量。
 
-## <span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>限制式
+## 限制式
 
 
 限制式或文法定義可與語音辨識器相符的口說字詞和片語。 您可以指定一個預先定義的 Web 服務文法，或者您可以建立自訂文法與您的 app 一起安裝。
 
-### <span id="Predefined_grammars"></span><span id="predefined_grammars"></span><span id="PREDEFINED_GRAMMARS"></span>預先定義的文法
+### 預先定義的文法
 
 預先定義的聽寫和網頁搜尋文法可為您的應用程式提供語音辨識，而不需要您編寫文法。 使用這些文法時，語音辨識是由遠端 Web 服務執行，結果會傳回裝置。
 
 -   預設的任意文字聽寫文法可以辨識使用者可以特定語言說出的大部分字詞與片語，並且已最佳化而能夠辨識簡短的片語。 當您不想限制使用者可以說出的內容時，任意文字聽寫便很實用。 典型的用法包括建立記事或聽寫訊息內容。
 -   網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-> [!NOTE] 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
+**注意：**由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
+
+ 
 
 這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 然而，它們需要連線到網路。
 
-### <span id="Custom_grammars"></span><span id="custom_grammars"></span><span id="CUSTOM_GRAMMARS"></span>自訂文法
+### 自訂文法
 
 自訂文法是由您設計及編寫，並隨著應用程式安裝。 使用自訂限制式的語音辨識是在裝置上執行的。
 
@@ -177,10 +180,11 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
     -   盡量避免在文法中定義只包含一個音節的片語。 包含兩個或多個音節的片語可以更正確地辨識。
     -   避免使用聽起來相似的片語。 例如，"hello"、"bellow"，和 "fellow" 之類的片語可能混淆辨識引擎，導致不佳的辨識準確度。
 
-> [!NOTE]
-> 要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
+**注意** 要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
 
-### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>自訂發音
+ 
+
+### 自訂發音
 
 如果您的應用程式包含專門詞彙使用生僻、虛構或特殊發音的單字，則可定義自訂發音以改進這些單字的辨識效能。
 
@@ -188,14 +192,14 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 對於較大的字詞和片語，或經常使用的字詞和片語清單，您可以另外建立發音字典文件。 如需詳細資訊，請參閱[關於字典和語音字母](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
 
-## <span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>測試
+## 測試
 
 
 測試您 app 目標對象的語音辨識準確度和任何支援的 UI。 這是判斷應用程式中語音互動體驗有效性的絕佳方式。 例如，使用者取得糟糕的辨識結果，是因為應用程式沒有聆聽通用片語嗎？
 
 修改文法以支援此片語，或提供使用者支援的片語清單。 如果您已經提供支援的片語清單，確保它很容易可探索到。
 
-## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>文字轉換語音 (TTS)
+## 文字轉換語音 (TTS)
 
 
 TTS 從純文字或 SSML 產生語音輸出。
@@ -213,7 +217,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 只要改用 SSML 而不是純文字輸入到語音合成程式，即可解決這兩個問題。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[語音合成標記語言參考](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
 
-## <span id="Other_articles"></span><span id="other_articles"></span><span id="OTHER_ARTICLES"></span>本節中的其他文章 
+## 本節中的其他文章 
 | 主題 | 說明 |
 | --- | --- |
 | [語音辨識](speech-recognition.md) | 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。 |
@@ -223,7 +227,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 | [管理音訊輸入的問題](manage-issues-with-audio-input.md) | 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。 |
 | [設定語音辨識逾時](set-speech-recognition-timeouts.md) | 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。 |
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 * [語音互動](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598)
@@ -239,6 +243,6 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

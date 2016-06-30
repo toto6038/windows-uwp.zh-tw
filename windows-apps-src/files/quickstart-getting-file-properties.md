@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-title: 取得檔案屬性
-description: 取得由 StorageFile 物件所表示檔案的屬性 &amp;\#8212;最上層、基本及延伸&amp;\#8212;。
+title: "取得檔案屬性"
+description: "取得由 StorageFile 物件所表示檔案的屬性 &amp;\\#8212;最上層、基本及延伸&amp;\\#8212;。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+
 ---
 # 取得檔案屬性
 
@@ -136,6 +140,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-title: 分割檢視
+title: "分割檢視"
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: 分割檢視控制項有一個可展開/可收合的窗格和內容區域。
+description: "分割檢視控制項有一個可展開/可收合的窗格和內容區域。"
 label: Split view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+
 ---
 
 # SplitView 控制項的指導方針
@@ -58,6 +62,7 @@ template: detail.hbs
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

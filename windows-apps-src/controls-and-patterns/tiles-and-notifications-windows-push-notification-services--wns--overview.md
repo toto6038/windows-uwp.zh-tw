@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
-title: Windows 推播通知服務 (WNS) 概觀
+Description: "Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。"
+title: "Windows 推播通知服務 (WNS) 概觀"
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
+
 ---
 
 # Windows 推播通知服務 (WNS) 概觀
@@ -32,7 +36,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 ## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>註冊您的 App 與接收雲端服務認證
 
 
-您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 [Windows 開發人員中心](http://go.microsoft.com/fwlink/p/?linkid=511146)，並選取 [儀表板]****。
+您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 Windows 開發人員中心，並選取 \[儀表板\]。
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 
@@ -156,20 +160,20 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 ## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>推播通知和省電模式
 
 
-省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 [設定]**** App 中找到) 可讓您的 App 即使在省電模式開啟時，也會接收到推播通知。
+省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 \[設定\] App 中找到) 可讓您的 App 即使在省電模式開啟時，也會接收到推播通知。
 
 -   **允許在省電模式中接收來自任何 App 的推播通知**：此設定可讓所有 App 在省電模式開啟時接收推播通知。 請注意，此設定僅適用於傳統型版本的 Windows 10 (家用版、專業版、企業版及教育版)。
 -   **一律允許**：此設定可讓特定 App 在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
 沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，使用 [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) 屬性檢查省電模式狀態。 您的 App 也可以使用 [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) 事件接聽省電模式的變更。
 
-如果您的 App 非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 您可以在 Windows 10 中使用省電模式設定 URI 配置 `ms-settings:batterysaver-settings`，以便為 [設定] App 提供方便的連結。
+如果您的 App 非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 您可以在 Windows 10 中使用省電模式設定 URI 配置 ，以便為 \[設定\] App 提供方便的連結。
 
 **提示：**向使用者通知省電模式設定時，建議提供一種方式來隱藏之後的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中保存使用者的喜好設定。
 
  
 
-以下是如何在 Windows 10 中檢查省電模式是否開啟的範例。 此範例會通知使用者並啟動 [設定] App 以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
+以下是如何在 Windows 10 中檢查省電模式是否開啟的範例。 此範例會通知使用者並啟動 \[設定\] App 以進入省電模式設定。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
 ```CSharp
 using System;
@@ -262,6 +266,7 @@ async public void CheckForEnergySaving()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

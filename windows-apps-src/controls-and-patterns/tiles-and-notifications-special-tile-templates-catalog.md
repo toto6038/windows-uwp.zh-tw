@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。
-title: 特殊的磚範本
+Description: "特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。"
+title: "特殊的磚範本"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+
 ---
 
 # 特殊的磚範本
@@ -83,7 +87,7 @@ template: detail.hbs
 
 **步驟 5：總結**
 
-下列影像說明各種 API 與承載如何與圖示磚範本的每個層面相關聯。 [磚通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (包含這些 &lt;binding[ 元素) 是用來指定圖示範本和影像資產；&gt;徽章通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定數值；磚屬性控制磚的顯示名稱及色彩等。
+下列影像說明各種 API 與承載如何與圖示磚範本的每個層面相關聯。 [磚通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (包含這些 &lt;binding[元素) 是用來指定圖示範本和影像資產；&gt;徽章通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定數值；磚屬性控制磚的顯示名稱及色彩等。
 
 ![與圖示磚範本相關聯的 API 與承載](images/iconic-template-properties-info.png)
 
@@ -283,6 +287,7 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

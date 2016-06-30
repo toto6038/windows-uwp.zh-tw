@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
-description: 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。
+author: msatranjr
+title: "在 C# 和 Visual Basic 中建立 Windows 執行階段元件"
+description: "從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+
 ---
 
 # 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。 您可以在通用 Windows 平台 (UWP) app 中，將元件與 C++、JavaScript、Visual Basic 或 C# 搭配使用。 本文將概述建立元件的規則，並就某些層面討論 .NET Framework 對於 Windows 執行階段的支援。 一般而言，該支援依設計應可讓 .NET Framework 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。
 
@@ -49,18 +49,18 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 ## **同時對 C++ 機器碼與 Managed 程式碼進行偵錯**
 
-1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 [屬性]****。
-2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
-3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限機器碼]**** 變更為 [混合 (Managed 和機器碼)]****。 選擇 [確定]****。
+1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 \[屬性\]。
+2.  在屬性頁中的 \[組態屬性\] 下方，選擇 \[偵錯\]。
+3.  選擇 \[偵錯工具類型\]，然後在下拉式清單方塊中，將 \[僅限機器碼\] 變更為 \[混合 (Managed 和機器碼)\]。 選擇 \[確定\]。
 4.  在機器碼與 Managed 程式碼中設定中斷點。
 
 當您使用 JavaScript 在通用 Windows app 中測試元件時，方案依預設會處於 JavaScript 偵錯模式。 在 Visual Studio 中，您無法同時偵錯 JavaScript 和 Managed 程式碼。
 
 ## **偵錯 Managed 程式碼，而不偵錯 JavaScript**
 
-1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 [屬性]****。
-2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
-3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限指令碼]**** 變更為 [僅限 Managed]****。 選擇 [確定]****。
+1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 \[屬性\]。
+2.  在屬性頁中的 \[組態屬性\] 下方，選擇 \[偵錯\]。
+3.  選擇 \[偵錯工具類型\]，然後在下拉式清單方塊中，將 \[僅限指令碼\] 變更為 \[僅限 Managed\]。 選擇 \[確定\]。
 4.  在 Managed 程式碼中設定中斷點，然後如常進行偵錯。
 
 ## 將 Windows 執行階段類型傳遞至 Managed 程式碼
@@ -121,11 +121,11 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > {
 >     return s;
 > }
-> [Windows.Foundation.Metadata.DefaultOverload()] 
+> [Windows.Foundation.Metadata.DefaultOverload()]
 > public int OverloadExample(int x)
 > {
 >     return x;
-> } 
+> }
 > ```
 > ```vb
 > Public Function OverloadExample(ByVal s As String) As String
@@ -137,7 +137,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > End Function
 > ```
 
-> **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
+ **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
 
 您無法將 DefaultOverloadAttribute 屬性套用至建構函式。 一個類別中的所有建構函式必須要有不同數量的參數。
 
@@ -202,7 +202,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >      As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return Task.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -225,7 +225,7 @@ function asyncExample(id) {
 
 對於支援取消或進度報告的非同步動作與作業，請使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生啟動的工作，並將該工作的取消和進度報告功能與適當的 Windows 執行階段介面的取消和進度報告功能相連結。 如需支援取消與進度報告的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
+請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -241,7 +241,7 @@ function asyncExample(id) {
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >     As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -259,7 +259,7 @@ function asyncExample(id) {
 
 如果您的元件不會處理例外狀況，呼叫該元件的程式碼中將會引發對應的例外狀況。 例外狀況對呼叫端的顯示方式，取決於呼叫的語言支援 Windows 執行階段的方式。
 
--   在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 [例外狀況] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。 您無法從 JavaScript 程式碼存取原始訊息文字。
+-   在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 \[例外狀況\] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。 您無法從 JavaScript 程式碼存取原始訊息文字。
 
     > **提示** 雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。
 
@@ -293,7 +293,6 @@ function asyncExample(id) {
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-title: 存取 HomeGroup 內容
-description: 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
+title: "存取 HomeGroup 內容"
+description: "存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+
 ---
 # 存取 HomeGroup 內容
 
@@ -211,6 +215,7 @@ description: 存取儲存在使用者 HomeGroup 資料夾中的內容，包括�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

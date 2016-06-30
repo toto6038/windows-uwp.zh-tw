@@ -3,8 +3,8 @@ author: jwmsft
 description: "了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。"
 title: "移動與繪製命令語法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
-ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
@@ -119,7 +119,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| x | [**雙線**](T:System.Double) <br/> 線條終點的 x 座標。 |
+| x | [**雙線**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 線條終點的 x 座標。 |
 
 **垂直線命令**
 
@@ -131,7 +131,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *y* | [**雙線**](T:System.Double) <br/> 線條終點的 y 座標。 |
+| *y* | [**雙線**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 線條終點的 y 座標。 |
 
 **三次方貝茲曲線命令**
 
@@ -208,7 +208,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 | 詞彙 | 說明 |
 |------|-------------|
 | *size* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>弧線的 x 軸半徑與 y 軸半徑。 |
-| *rotationAngle* | [**雙線**](T:System.Double) <br/> 橢圓形的旋轉度數。 |
+| *rotationAngle* | [**雙線**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 橢圓形的旋轉度數。 |
 | *isLargeArcFlag* | 如果弧線的角度應該等於或大於 180 度，則設定為 1；否則設定為 0。 |
 | *sweepDirectionFlag* | 如果是以正角方向繪製弧線，則設定為 1；否則設定為 0。 |
 | *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 弧線將繪製到的點。|
@@ -232,8 +232,8 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 詞彙 | 說明 |
 |------|-------------|
-| *x* | [**雙線**](T:System.Double) <br/> 點的 x 座標。 |
-| *y* | [**雙線**](T:System.Double) <br/> 點的 y 座標。 |
+| *x* | [**雙線**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 點的 x 座標。 |
+| *y* | [**雙線**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 點的 y 座標。 |
 
 **其他附註**
 
@@ -263,6 +263,6 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

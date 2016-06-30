@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: 建立定期工作項目
-description: 了解如何建立定期重複執行的工作項目。
+title: "建立定期工作項目"
+description: "了解如何建立定期重複執行的工作項目。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
+
 ---
 # 建立定期工作項目
 
@@ -202,6 +206,7 @@ description: 了解如何建立定期重複執行的工作項目。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

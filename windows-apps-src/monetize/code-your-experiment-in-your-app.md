@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 在開發人員中心儀表板中定義實驗之後，您就已經準備好在 app 中編寫實驗用的程式碼。
-title: 編寫實驗用的 app 程式碼
+Description: "在開發人員中心儀表板中定義實驗之後，您就已經準備好在 app 中編寫實驗用的程式碼。"
+title: "編寫實驗用的 app 程式碼"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 4e6706624e71c6d448a3d457c27d11c9f6ecc156
+
 ---
 
 # 編寫實驗用的 app 程式碼
@@ -17,9 +21,9 @@ ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 
 1. 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
 2. 在 Visual Studio 中，開啟您的專案。
-3. 在 [方案總管] 中，展開您的專案節點、以滑鼠右鍵按一下 [參考]****，然後按一下 [加入參考]****。
-3. 在 [參考管理員]**** 中，展開 [通用 Windows]****，然後按一下 [擴充功能]****。
-4. 在 SDK 清單中，選取 [Microsoft Store Engagement SDK]**** 旁邊的核取方塊，然後按一下 [確定]****。
+3. 在 \[方案總管\] 中，展開您的專案節點、以滑鼠右鍵按一下 \[參考\]，然後按一下 \[加入參考\]。
+3. 在 \[參考管理員\] 中，展開 \[通用 Windows\]，然後按一下 \[擴充功能\]。
+4. 在 SDK 清單中，選取 \[Microsoft Store Engagement SDK\] 旁邊的核取方塊，然後按一下 \[確定\]。
 
 ## 新增程式碼以取得變化設定
 
@@ -31,7 +35,7 @@ private readonly ExperimentClient experiment;
 private ExperimentVariation variation;
 ```
 
-2. 初始化 [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx) 物件，並將您從儀表板的 [**實驗**] 頁面擷取的 API 金鑰傳遞到建構函式。 如需有關 API 金鑰的詳細資訊，請參閱[在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md#generate-an-api-key)。 以下所示的 API 金鑰僅供範例使用。
+2. 初始化 ExperimentClient 物件，並將您從儀表板的 \[實驗\] 頁面擷取的 API 金鑰傳遞到建構函式。 如需有關 API 金鑰的詳細資訊，請參閱[在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md#generate-an-api-key)。 以下所示的 API 金鑰僅供範例使用。
 ```CSharp
 experiment = new ExperimentClient("F48AC670-4472-4387-AB7D-D65B095153FB");
 ```
@@ -97,6 +101,7 @@ StoreServicesCustomEvents.Log("userClickedButton", variation);
   * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

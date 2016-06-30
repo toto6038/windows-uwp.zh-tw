@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 啟動和繼續應用程式 (DirectX 和 C++)
-description: 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
+title: "啟動和繼續應用程式 (DirectX 和 C++)"
+description: "了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。"
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
+
 ---
 
 # 啟動和繼續 app (DirectX 和 C++)
@@ -28,6 +32,7 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 使用背景工作回應系統事件
-description: 了解如何建立回應 SystemTrigger 事件的背景工作。
+author: TylerMSFT
+title: "使用背景工作回應系統事件"
+description: "了解如何建立回應 SystemTrigger 事件的背景工作。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
+
 ---
 
 # 使用背景工作回應系統事件
@@ -49,13 +52,13 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
 
@@ -106,8 +109,6 @@ App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/w
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

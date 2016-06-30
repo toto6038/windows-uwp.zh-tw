@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: 使用傾角計
-description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
+title: "使用傾角計"
+description: "了解如何使用傾角計來決定俯仰、翻滾及偏擺。"
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
+
 ---
 # 使用傾角計
 
@@ -29,7 +33,7 @@ description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
 
 ###  指示
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   從 \[Visual C#\] 專案範本中選擇 \[空白應用程式 (通用 Windows)\] 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -124,11 +128,11 @@ description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="InclinometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:InclinometerCS"`。
 
--   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
+-   按 F5 或選取 \[偵錯\] \[開始偵錯\] 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 \[偵錯\] \[停止偵錯\] 以停止 App。
 
 ###  說明
 
@@ -172,6 +176,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

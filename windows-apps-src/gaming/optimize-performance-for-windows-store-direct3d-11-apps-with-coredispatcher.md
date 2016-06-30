@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
-description: 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。
+title: "最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲"
+description: "輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+
 ---
 
 #  最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
@@ -256,6 +260,7 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

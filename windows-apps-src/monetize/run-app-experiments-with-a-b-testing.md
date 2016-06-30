@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 您可以利用 Windows 開發人員中心儀表板，使用 A/B 測試執行通用 Windows 平台 (UWP) app 的實驗。
-title: 使用 A/B 測試執行 app 實驗
+Description: "您可以利用 Windows 開發人員中心儀表板，使用 A/B 測試執行通用 Windows 平台 (UWP) app 的實驗。"
+title: "使用 A/B 測試執行 app 實驗"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
+
 ---
 
 # 使用 A/B 測試執行 app 實驗
@@ -50,6 +54,7 @@ ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

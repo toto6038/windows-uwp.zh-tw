@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: 取得您需要的資訊以開始使用 Microsoft Advertising 程式庫來為您的 app 新增橫幅和視訊插入式廣告。
-title: 開始使用 Microsoft Advertising 程式庫
+description: "取得您需要的資訊以開始使用 Microsoft Advertising 程式庫來為您的 app 新增橫幅和視訊插入式廣告。"
+title: "開始使用 Microsoft Advertising 程式庫"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 08168dc15b33d99a044eedd7864848ed7a858991
+
 
 ---
 
@@ -37,6 +41,7 @@ title: 開始使用 Microsoft Advertising 程式庫
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

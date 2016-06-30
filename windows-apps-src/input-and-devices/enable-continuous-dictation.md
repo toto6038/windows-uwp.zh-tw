@@ -5,8 +5,8 @@ title: "啟用連續聽寫"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
 
 ---
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
 
 
 
-## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>設定
+## 設定
 
 
 您的應用程式需要幾項物件來管理連續聽寫工作階段：
@@ -64,7 +64,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>初始化
+## 初始化
 
 
 初始化連續語音辨識時，您必須：
@@ -94,13 +94,13 @@ this.speechRecognizer = new SpeechRecognizer();
 
     在這裡，我們立即呼叫 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 而不新增文法。
 
-    <span codelanguage="CSharp"></span>
+    
 ```    CSharp
 SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>處理辨識事件
+## 處理辨識事件
 
 
 您可以透過呼叫 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來擷取單一、簡短的發音或片語。 
@@ -211,7 +211,7 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>提供進行中的辨識回應
+## 提供進行中的辨識回應
 
 
 當人們交談時，他們通常會依賴前後相關內容來完整了解說話內容。 語音辨識也一樣，通常需要前後相關內容來提供高信賴等級的辨識結果。 例如，只有能夠在前後文字中收集更多相關內容時才能區分 "weight" 與 "wait" 這兩個字。 辨識器在能夠正確辨識某個字或某幾個字之後，才會引發 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。
@@ -239,7 +239,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>開始及停止辨識
+## 開始及停止辨識
 
 
 在開始辨識工作階段之前，請檢查語音辨識器 [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) 屬性的值。 語音辨識器必須處於 [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 狀態。
@@ -276,7 +276,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 * [語音互動](speech-interactions.md)
@@ -293,6 +293,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

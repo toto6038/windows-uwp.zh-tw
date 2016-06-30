@@ -1,8 +1,12 @@
 ---
-Description: 以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。
-title: Windows 10 應用程式使用方法指南 - Windows 應用程式開發
+Description: "以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。"
+title: "Windows 10 應用程式使用方法指南 - Windows 應用程式開發"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
+ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+
 ---
 
 
@@ -43,6 +47,7 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 | [XAML 平台](xaml-platform/index.md) | 開始認識 XAML 程式設計語言的基本概念。 或者，如果您已熟悉 XAML，您可以直接了解如何使用 Visual Studio 在 XAML 中實作 Windows 執行階段功能，以建立通用 Windows app。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

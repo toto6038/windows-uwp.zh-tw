@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 以下是用來建立彈性磚的元素和屬性。
-title: 彈性磚結構描述與範本
+Description: "以下是用來建立彈性磚的元素和屬性。"
+title: "彈性磚結構描述與範本"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+
 ---
 
 # 彈性磚範本：結構描述和指導方針
@@ -141,6 +145,7 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

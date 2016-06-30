@@ -5,8 +5,8 @@ title: "核取方塊"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
 # 核取方塊
@@ -15,7 +15,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![核取方塊狀態範例](images/templates-checkbox-states-default.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+
 -   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316)
 -   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
 -   [**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
@@ -26,7 +26,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
-對於二元選項，**核取方塊**與**切換開關**的主要差異在於核取方塊是針對狀態，而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
+對於二元選項，將主要之間的差異 **核取方塊** 和 [**切換開關**](toggles.md) 核取方塊針對狀態而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
 
 針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用**多個核取方塊**。
 
@@ -287,11 +287,13 @@ private void SetCheckedState()
 ## 相關文章
 
 -   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [選項按鈕](radio-button.md)
+-   [切換開關](toggles.md)
 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

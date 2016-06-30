@@ -5,8 +5,8 @@ title: "互動基本資訊"
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.sourcegitcommit: 1221928ebea4a2a926154ed1148e49bdb1e0834c
-ms.openlocfilehash: 7c2d3bd1ab2d2f4923cf84834a73fd1c58113212
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 068bb7d0c7af4b55ab10a955c563988f5123e5eb
 
 ---
 
@@ -15,13 +15,13 @@ ms.openlocfilehash: 7c2d3bd1ab2d2f4923cf84834a73fd1c58113212
 
 ![Windows 輸入類型](images/input-interactions/icons-inputdevices03.png)
 
-通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、**Cortana**、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景 App 服務)。 
+通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、**Cortana**、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景 App 服務)。
 
 UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情況下，就不需要個別處理您 app 所接收的獨特輸入類型。 這包含了做為一般指標類型的處理觸控、觸控板、滑鼠和手寫筆輸入，以支援靜態手勢 (例如點選或長按)、操作手勢 (例如滑動進行移動瀏覽，或呈現數位筆跡)。
 
 當與特定尺寸規格配對時，請熟悉各個輸入裝置及其行為、功能與限制。 這可以協助您判斷您的 app 是否有足夠的平台控制項與能供性，或者需要您提供自訂的互動體驗。
 
-## <span id="Cortana"></span><span id="cortana"></span><span id="CORTANA"></span>Cortana
+## Cortana
 
 
 在 Windows 10 中，**Cortana** 擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
@@ -44,7 +44,7 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)。
  
 
-## <span id="Speech"></span><span id="speech"></span><span id="SPEECH"></span>語音
+## 語音
 
 
 語音是使用者可用來與應用程式互動的有效且自然的方式。 這是與應用程式通訊的簡單且精確的方式，並讓使用者能夠提高生產力，且在各種不同的情況下收到通知。
@@ -68,19 +68,19 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 
 有三種語音互動的模式：
 
-<span id="Natural_language"></span><span id="natural_language"></span><span id="NATURAL_LANGUAGE"></span>自然語言  
+自然語言  
 自然語言是我們平常口頭上與人們互動的方式。 我們的語音會根據對象及狀況而不同，且通常能夠理解。 如果不是，我們通常會使用不同的文字和文字順序，來取得其中的相同概念。
 
 與 app 的自然語言互動類似：我們透過裝置對 app 說話，就像裝置是人一樣，並預期它會了解並據以回應。
 
 自然語言是最先進的語音互動模式，可透過 **Cortana** 來實作和公開。
 
-<span id="Command_and_control"></span><span id="command_and_control"></span><span id="COMMAND_AND_CONTROL"></span>命令和控制項  
+命令和控制項  
 命令和控制項就是使用口頭命令來啟動控制項和功能，例如，按一下按鈕或選取功能表項目。
 
 由於命令和控制項是成功使用者經驗的關鍵，所以通常不建議使用單一輸入類型。 根據使用者的喜好設定或硬體功能，語音對使用者而言通常是數種輸入選項的其中一個。
 
-<span id="Dictation"></span><span id="dictation"></span><span id="DICTATION"></span>聽寫  
+聽寫  
 最基本的語音輸入方法。 每次說話都會轉換成文字。
 
 當 App 不需要了解意義或意圖時，通常會使用聽寫。
@@ -88,7 +88,7 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 深入了解[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## <span id="Pen"></span><span id="pen"></span><span id="PEN"></span>手寫筆
+## 手寫筆
 
 
 手寫筆可以當做像素精確指標裝置 (例如滑鼠)，而且是適用於數位筆跡輸入的最佳裝置。
@@ -119,7 +119,7 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 深入了解[手寫筆設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## <span id="Touch"></span><span id="touch"></span><span id="TOUCH"></span>觸控
+## 觸控
 
 
 利用觸控功能，一或多隻手指的實際手勢就能用來模擬直接操作 UI 元素 (例如移動瀏覽、旋轉、調整大小或移動)、做為替代輸入法 (類似滑鼠或手寫筆)，或做為互補輸入法 (修改其他輸入法的外觀比例，例如手寫筆繪製之筆跡筆觸的汙點部分)。 類似這樣的觸覺經驗可以在使用者與螢幕上的元素互動時，提供更為自然、貼近真實世界的感覺。
@@ -150,7 +150,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 深入了解[觸控設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## <span id="Touchpad"></span><span id="touchpad"></span><span id="TOUCHPAD"></span>觸控板
+## 觸控板
 
 
 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及較小目標的生產力 app 兩者。
@@ -170,7 +170,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 深入了解[觸控板設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## <span id="Keyboard"></span><span id="keyboard"></span><span id="KEYBOARD"></span>鍵盤
+## 鍵盤
 
 
 鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與 app 互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
@@ -208,7 +208,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 深入了解[鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
-## <span id="Mouse"></span><span id="mouse"></span><span id="MOUSE"></span>滑鼠
+## 滑鼠
 
 
 滑鼠最適合用於生產力 app 和高密度 UI，其中的使用者互動要求適用於目標和命令的像素層級精確度。
@@ -231,7 +231,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 深入了解[滑鼠設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
-## <span id="Gesture"></span><span id="gesture"></span><span id="GESTURE"></span>手勢
+## 手勢
 
 
 手勢是辨識為輸入之任何形式的使用者動作，用來控制或與應用程式互動。 手勢有許多種形式，從簡單的用手在螢幕上指定目標，到學習特定的動作模式、使用全身的一連串連續動作。 設計自訂手勢時請注意，因為手勢的意義可能會因地區和文化特性而有所不同。
@@ -252,7 +252,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
  
 
-## <span id="Gamepad_Controller"></span><span id="gamepad_controller"></span><span id="GAMEPAD_CONTROLLER"></span>遊戲台/控制器
+## 遊戲台/控制器
 
 
 遊戲台/控制器是高度特殊化裝置，通常專用於玩遊戲。 不過，它也能用來模擬基本鍵盤輸入，並提供與鍵盤非常類似的 UI 瀏覽體驗。
@@ -272,7 +272,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
  
 
-## <span id="Multiple_inputs"></span><span id="multiple_inputs"></span><span id="MULTIPLE_INPUTS"></span>多重輸入
+## 多重輸入
 
 
 儘可能容納多個使用者和裝置、將 app 設計為可以使用各種輸入類型 (手勢、語音、觸控、觸控板、滑鼠與鍵盤)，以將彈性、可用性及可存取性最大化。
@@ -304,6 +304,6 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

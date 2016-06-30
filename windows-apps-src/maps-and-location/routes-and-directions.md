@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 在地圖上顯示路線和路線指引
-description: 要求路線和路線指引，並將它們顯示在您的 app 中。
+author: msatranjr
+title: "在地圖上顯示路線和路線指引"
+description: "要求路線和路線指引，並將它們顯示在您的 app 中。"
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
+
 ---
 
 # 在地圖上顯示路線和路線指引
@@ -17,7 +20,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**秘訣** 如果地圖功能不是您 app 的核心功能，請考慮改為啟動 Windows 地圖 app。 您可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 配置，將 Windows 地圖 app 啟動到特定的地圖和轉向建議路線。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)
+**秘訣** 如果地圖功能不是您 app 的核心功能，請考慮改為啟動 Windows 地圖 app。 您可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 配置，將 Windows 地圖 app 啟動到特定的地圖和轉向建議路線。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
  
 
@@ -28,7 +31,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 -   [
             **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別擁有可取得路線與路線指引的方法。
--   這些方法會傳回 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)
+-   這些方法會傳回 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)。
 -   [
             **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一個 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取這個物件。
 -   [
@@ -49,7 +52,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 計算的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 擁有的屬性可提供行經路線的時間、路線長度，以及包含路線行程的 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件集合。 每個 **MapRouteLeg** 物件都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 物件的集合。 **MapRouteManeuver** 物件包含您可以透過其 [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) 屬性存取的路線指引。
 
-**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)
+**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
  
 
@@ -131,7 +134,7 @@ You have reached your destination.
 
 若要在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 上顯示 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937)，請利用 **MapRoute** 來建構 [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122)。 接著，將 **MapRouteView** 新增到 **MapControl** 的 [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) 集合。
 
-**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務或地圖控制項。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)
+**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務或地圖控制項。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
  
 
@@ -194,6 +197,7 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

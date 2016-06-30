@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。"
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: XAML 佈景主題資源
+title: "XAML 佈景主題資源"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+
 ---
 
 # XAML 佈景主題資源
@@ -31,7 +35,8 @@ XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主
 
 每個佈景主題資源都是 XAML 檔案 themeresources.xaml 的一部分。 基於設計目的，Windows 軟體開發套件 (SDK) 安裝的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 資料夾中會提供 themeresources.xaml。 themeresources.xaml 中的資源字典也會重現於相同目錄的 generic.xaml 中。
 
-> **注意** &nbsp;&nbsp;Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 這就是為什麼它們特別放在 DesignTime 資料夾中，而且預設不會複製到 App。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您 app 的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
+> **注意**
+            &nbsp;&nbsp;Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 這就是為什麼它們特別放在 DesignTime 資料夾中，而且預設不會複製到 App。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您 app 的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
 
  ## 使用佈景主題資源的指導方針
 
@@ -53,7 +58,7 @@ XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主
 
 ## XAML 色彩坡形和佈景主題相依的筆刷
 
-適用於 "Light"、"Dark" 及 "HighContrast" 佈景主題的色彩組合可在 XAML 中組成 [Windows 色彩坡度]**。 不論您是否想要修改系統佈景主題，或者將系統佈景主題套用到自己的 XAML 元素，都請務必了解色彩資源的結構。
+適用於 "Light"、"Dark" 及 "HighContrast" 佈景主題的色彩組合可在 XAML 中組成 \[Windows 色彩坡度\]。 不論您是否想要修改系統佈景主題，或者將系統佈景主題套用到自己的 XAML 元素，都請務必了解色彩資源的結構。
 
 ### Light 和 Dark 佈景主題色彩
 
@@ -93,7 +98,7 @@ XAML 架構提供一組已命名的 [**Color**](https://msdn.microsoft.com/libra
 
 除了由 XAML 架構提供的資源組，還有一組衍生自 Windows 系統調色盤的色彩值。 這些色彩並不是 Windows 執行階段或通用 Windows 平台 (UWP) app 專用的。 不過，當系統的運作 (和 app 的執行) 是使用 "HighContrast" 佈景主題時，有許多 XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 資源會取用這些色彩。 XAML 架構提供這些全系統的色彩做為已設定索引鍵的資源。 索引鍵需遵循下列命名格式：`SystemColor[name]Color`。
 
-此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 [輕鬆存取名稱] 欄顯示如何在 Windows 設定 UI 中標示色彩。 [簡單的高對比名稱] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 [初始預設值] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
+此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 \[輕鬆存取名稱\] 欄顯示如何在 Windows 設定 UI 中標示色彩。 \[簡單的高對比名稱\] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 \[初始預設值\] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
 
 | 索引鍵                           | 輕鬆存取名稱            | 簡單的高對比名稱 | 初始預設值 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
@@ -107,7 +112,7 @@ XAML 架構提供一組已命名的 [**Color**](https://msdn.microsoft.com/libra
 | SystemColorWindowTextColor    | **文字**                       | PageText                 | \#FF000000      |
 
 
-Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存取中心] 設定其高對比設定特有的色彩，如此處所示。 因此，無法提供明確的高對比色彩值清單。
+Windows 提供不同的高對比佈景主題，可讓使用者透過 \[輕鬆存取中心\] 設定其高對比設定特有的色彩，如此處所示。 因此，無法提供明確的高對比色彩值清單。
 
 ![Windows 高對比設定 UI](images/high-contrast-settings.png)
 
@@ -117,7 +122,8 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 除了系統高對比佈景主題色彩以外，還使用索引鍵 `SystemAccentColor` 來提供系統輔色做為特殊的色彩資源。 在執行階段，這個資源會取得使用者已在 Windows 個人化設定中指定為輔色的色彩。
 
-> **注意** &nbsp;&nbsp;雖然您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但尊重使用者的色彩選擇仍然是最好的做法，特別是針對高對比設定。
+> **注意**
+            &nbsp;&nbsp;雖然您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但尊重使用者的色彩選擇仍然是最好的做法，特別是針對高對比設定。
 
 ### 佈景主題相依筆刷
 
@@ -145,7 +151,8 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意** &nbsp;&nbsp;並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都被提供為筆刷資源。
+> **注意**
+            &nbsp;&nbsp;並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都被提供為筆刷資源。
 
 ## XAML 字體坡形
 
@@ -306,7 +313,11 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-> **注意** &nbsp;&nbsp;[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
+> **注意**
+            &nbsp;&nbsp;
+            [
+              **RichTextBlock**
+            ](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
 
 ## 其他具名樣式
 
@@ -433,11 +444,12 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </ResourceDictionary>
 ```
 
-請注意，仍會在 "HighContrast" 字典中使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，而不是使用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 這種情況屬於指導方針中稍早指定的例外狀況。 大多數用於 "HighContrast" 佈景主題的筆刷值都是使用由系統全域控制但對 XAML 顯示為特別命名之資源的色彩選擇 (這些項目的名稱都是以 ‘SystemColor’ 做為首碼)。 系統可讓使用者透過 [輕鬆存取中心]，來設定其高對比設定應使用的特定色彩。 這些色彩選擇會套用到特別命名的資源。 XAML 架構會使用相同的佈景主題變更事件，當其在系統層級上偵測到這些筆刷已變更時，也會更新它們。 這就是為什麼要在此處使用 {ThemeResource} 標記延伸的原因。
+請注意，仍會在 "HighContrast" 字典中使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，而不是使用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 這種情況屬於指導方針中稍早指定的例外狀況。 大多數用於 "HighContrast" 佈景主題的筆刷值都是使用由系統全域控制但對 XAML 顯示為特別命名之資源的色彩選擇 (這些項目的名稱都是以 ‘SystemColor’ 做為首碼)。 系統可讓使用者透過 \[輕鬆存取中心\]，來設定其高對比設定應使用的特定色彩。 這些色彩選擇會套用到特別命名的資源。 XAML 架構會使用相同的佈景主題變更事件，當其在系統層級上偵測到這些筆刷已變更時，也會更新它們。 這就是為什麼要在此處使用 {ThemeResource} 標記延伸的原因。
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

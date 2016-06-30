@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。
-title: Binding 標記延伸&#39;
+description: "Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。"
+title: "Binding 標記延伸&#39;"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+
 ---
 
 # {Binding} 標記延伸
@@ -127,6 +131,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Windows 10 中的新功能
-description: Windows 10 Anniversary SDK Preview 組建與新的開發人員工具提供了由全新通用 Windows 平台支援的工具、功能和體驗。
+title: "Windows 10 中的新功能"
+description: "Windows 10 Anniversary SDK Preview 組建與新的開發人員工具提供了由全新通用 Windows 平台支援的工具、功能和體驗。"
+translationtype: Human Translation
+ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
+ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+
 ---
 
 # Windows 的新功能
@@ -24,6 +28,7 @@ Windows IoT | Windows 10 IoT 核心版可讓您以 Windows 的熟悉感來建立
 地圖 API | [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx#_blank) 已經過改善，讓開發人員在非常傾斜的視角，可以取得接近攝影機的可見區域，而排除遠處與接近地平線的區域。 [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx#_blank) 類別已擴充，可以讓開發人員指定正確度，以便在反向地理編碼時最佳化網路流量。 開發人員現在可以使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx#_blank) 方法與指定經緯度，以善用下載離線地圖。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-maps-app#_blank)。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

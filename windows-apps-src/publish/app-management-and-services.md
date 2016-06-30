@@ -1,19 +1,23 @@
 ---
 author: jnHs
-Description: 您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。
-title: App 管理與服務
+Description: "您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。"
+title: "App 管理與服務"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+
 ---
 
 # App 管理與服務
 
 您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。
 
-當您在儀表板中使用 app 時，將會在 [服務] 與 [App 管理] 的左導覽功能表中看見一些區段。 您可以展開這些區段來存取如下所述的功能。
+當您在儀表板中使用 app 時，將會在 \[服務\] 與 \[App 管理\] 的左導覽功能表中看見一些區段。 您可以展開這些區段來存取如下所述的功能。
 
 ## 服務
 
-[服務]**** 區段可讓您管理您 app 的數個不同服務。
+\[服務\] 區段可讓您管理您 app 的數個不同服務。
 
 ### 推播通知
 
@@ -23,7 +27,7 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 
 -   **Microsoft Azure Mobile App** 讓您能夠傳送推播通知、驗證和管理 app 使用者，以及在雲端中儲存 app 資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果使用的是 MPNS，就需要將憑證上傳至 [推播通知]**** 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果使用的是 MPNS，就需要將憑證上傳至 \[推播通知\] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
 
 ### 實驗
 
@@ -33,7 +37,7 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 
 ### 地圖
 
-若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 [地圖]**** 頁面的 [服務]**** 區段中取得這個權杖。
+若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 \[地圖\] 頁面的 \[服務\] 區段中取得這個權杖。
 
 > **注意：**若要在目標為其他作業系統的 app 中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694)。
 
@@ -47,7 +51,7 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 
 ## 應用程式管理
 
-[App 管理]**** 區段讓您能夠檢視身分識別和套件詳細資料，並管理您的 app 名稱。
+\[App 管理\] 區段讓您能夠檢視身分識別和套件詳細資料，並管理您的 app 名稱。
 
 ### 應用程式身分識別
 
@@ -67,17 +71,18 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 
 > **注意：**在您發行 app 之前，將無法在此處看見任何資訊。
 
-系統會顯示每個套件的名稱、版本及架構。 按一下 [詳細資料]****，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。
+系統會顯示每個套件的名稱、版本及架構。 按一下 \[詳細資料\]，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。
 
 您對每個套件可以看到的精確資訊，可能會因其目標作業系統以及其他因素有所不同。 例如，如果您已新增 [Windows 廣告流量分配](https://msdn.microsoft.com/library/windows/apps/mt219691)到您的套件，您會在這裡發現設定該套件的流量分配的連結。
 
-具備 OEM 權限的開發人員也可以從 [目前的套件]**** 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。
+具備 OEM 權限的開發人員也可以從 \[目前的套件\] 頁面產生預先安裝的套件。
 
  
 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

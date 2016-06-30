@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Windows 10 版本 1511 的新功能 - 2015 年 11 月
-description: Windows 10 版本 1511 與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。
+title: "Windows 10 版本 1511 的新功能 - 2015 年 11 月"
+description: "Windows 10 版本 1511 與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。"
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 07d40584e998d358c6c80bd5aec43be885a79495
+
 ---
 
 # Windows 的新功能
@@ -21,11 +25,12 @@ Windows Hello | Windows Hello 可為您的 app 提供臉部和指紋辨識功能
 新遊戲 API | 使用新的 Windows.Gaming.UI.GameBar 類別來於遊戲列顯示或隱藏時接收通知。
 藍牙 API | 已針對藍牙 LE、裝置列舉，及藍牙中的其他功能新增及更新幾個 API 至延伸支援。 請參閱 [Windows.Devices.Bluetooth](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx) 命名空間。
 智慧卡 API | 已新增幾個 SmartCardCryptogram API 至 [Windows.Devices.SmartCards](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.aspx) 命名空間，以支援保護密碼付款通訊協定。 使用主機卡模擬來支援輕觸以付款的付款 app 可以使用這些 API 來獲得更高的安全性與效能。 App 可以使用 TPM 建立金鑰並保護使用方式受限的交易金鑰。 App 也可以利用 NGC (新一代認證) 架構以使用使用者的 PIN 來保護金鑰。 這些 API 會將密碼產生作業委託給系統執行以提升效能。 這也可以避免其他 app 存取金鑰與密碼。
-已更新的儲存 API | 在 [Windows.Storage.DownloadsFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx) 類別中，您的 App 現在可以為特定[使用者](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)在 \[Downloads\] 資料夾內部[建立檔案](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)或[建立資料夾](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)。 在 [Windows.Storage.StorageLibrary](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx) 類別中，您的 App 現在可以為特定[使用者](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)[取得指定的程式庫](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)。
+已更新的儲存 API | 在 [Windows.Storage.DownloadsFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx) 類別中，您的 App 現在可以為特定[使用者](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)在 \[Downloads\] 資料夾內部[建立檔案](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)或[建立資料夾](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)。 在 [Windows.Storage.StorageLibrary](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx) 類別中，您的 App 現在可以為特定[使用者](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx) [取得指定的程式庫](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)。
 Windows 應用程式認證套件 | Windows 應用程式認證套已經更新，現已包含改進的測試。 如需更新項目的完整清單，請造訪 [Windows 應用程式認證套件](https://developer.microsoft.com/en-us/windows/develop/app-certification-kit)頁面。
 設計下載 | 查看我們適用於 Adobe Photoshop 的新 UWP app 設計範本。 我們也會更新 Microsoft PowerPoint 與 Adobe Illustrator 範本，並提供 PDF 版本的指導方針。 [造訪設計下載項目頁面](https://developer.microsoft.com/en-us/windows/design/assets)。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

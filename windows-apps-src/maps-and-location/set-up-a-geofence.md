@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 設定地理柵欄
-description: 在您的 app 中設定地理柵欄，並了解如何在前景和背景中處理通知。
+title: "設定地理柵欄"
+description: "在您的 app 中設定地理柵欄，並了解如何在前景和背景中處理通知。"
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
+
 ---
 
 # 設定地理柵欄
@@ -44,7 +48,8 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
 [
-            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
+              **RequestAccessAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
 ### 步驟 2：登錄地理柵欄狀態及位置權限的變更
 
@@ -113,15 +118,20 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 您可以使用其中一個其他的建構函式，來進一步微調您的地理柵欄。 在下一個範例中，地理柵欄建構函式會指定這些額外的參數：
 
 -   [
-            **MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指出您希望收到通知的地理柵欄事件：進入已定義的區域、離開已定義的區域，或移除地理柵欄。
+              **MonitoredStates**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指出您希望收到通知的地理柵欄事件：進入已定義的區域、離開已定義的區域，或移除地理柵欄。
 -   [
-            **SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在符合所監控之地理柵欄的所有狀態之後，將會移除該地理柵欄。
+              **SingleUse**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在符合所監控之地理柵欄的所有狀態之後，將會移除該地理柵欄。
 -   [
-            **DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指出使用者必須在已定義的區域內或外多久的時間，才會觸發進入/離開事件。
+              **DwellTime**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指出使用者必須在已定義的區域內或外多久的時間，才會觸發進入/離開事件。
 -   [
-            **StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指出開始監控地理柵欄的時間。
+              **StartTime**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指出開始監控地理柵欄的時間。
 -   [
-            **Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指出監控地理柵欄的期間。
+              **Duration**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指出監控地理柵欄的期間。
 
 ```csharp
 // Set the fence ID.
@@ -162,7 +172,8 @@ Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse,
 ### 步驟 4：處理位置權限的變更
 
 [
-            **GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) 物件會觸發 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **sender.Status** 屬性 (類型為 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
+              **GeofenceMonitor**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263595) 物件會觸發 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **sender.Status** 屬性 (類型為 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
 
 ```csharp
 using Windows.UI.Core;
@@ -302,8 +313,8 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 在您 app 資訊清單的 \[**宣告**\] 索引標籤底下，新增位置背景工作的宣告。 若要這樣做：
 
--   新增 [背景工作]**** 類型的宣告。
--   設定 [位置]**** 的屬性工作類型。
+-   新增 \[**背景工作**\] 類型的宣告。
+-   設定 \[**位置**\] 的屬性工作類型。
 -   在您的 app 中設定一個進入點，以便在觸發事件時呼叫。
 
 ### 步驟 2：登錄背景工作
@@ -418,7 +429,7 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 </TextBlock>
 ```
 
-或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [設定]**** app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
+或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 \[**設定**\] app。 如需詳細資訊，請參閱[啟動 Windows 設定 app](https://msdn.microsoft.com/library/windows/apps/mt228342)。
 
 ```csharp
 using Windows.System;
@@ -443,8 +454,8 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 1.  在 Visual Studio 中建立您的 app。
 2.  在 Visual Studio 模擬器中啟動您的應用程式。
-3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](http://go.microsoft.com/fwlink/p/?LinkID=325245)
-4.  您也可以使用模擬器來預估柵欄的大小，以及要在不同速度被偵測到時所需的大約暫留時間。
+3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](http://go.microsoft.com/fwlink/p/?LinkID=325245)。
+4.  您也可以使用模擬器來 預估柵欄的大小，以及要在不同速度被偵測到時所需的大約暫留時間。
 
 ### 針對在背景執行的地理柵欄 app 進行測試和偵錯
 
@@ -455,14 +466,14 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 3.  關閉目前正在本機執行的應用程式。
 4.  在 Visual Studio 模擬器中啟動您的應用程式。 請注意，在模擬器中，一次只支援在一個應用程式上進行背景地理柵欄模擬。 請勿在模擬器中啟動多個地理柵欄應用程式。
 5.  在模擬器中，模擬您地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。
-6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](http://go.microsoft.com/fwlink/p/?LinkID=325378)
+6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](http://go.microsoft.com/fwlink/p/?LinkID=325378)。
 
 ## 針對您的 app 進行疑難排解
 
 
-必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 [設定]**** 應用程式中，確認已開啟下列**位置隱私權設定**：
+必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 \[設定\] 應用程式中，確認已開啟下列位置隱私權設定：
 
--   已將 **此裝置的位置** 設為 **開啟** (不適用於 Windows 10 行動裝置版)
+-   已將 **此裝置的位置** 設為 **開啟** \(不適用於 Windows 10 行動裝置版\)
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
 -   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 
@@ -475,6 +486,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

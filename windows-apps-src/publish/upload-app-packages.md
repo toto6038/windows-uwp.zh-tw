@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 套件 頁面是為您要提交的應用程式上傳所有套件檔案 (.xap、.appx、.appxupload 和/或 .appxbundle) 的所在之處。 您可以在此步驟中，為您的應用程式對象上傳適用於任何作業系統的套件。
-title: 上傳應用程式套件
+Description: "套件 頁面是為您要提交的應用程式上傳所有套件檔案 (.xap、.appx、.appxupload 和/或 .appxbundle) 的所在之處。 您可以在此步驟中，為您的應用程式對象上傳適用於任何作業系統的套件。"
+title: "上傳應用程式套件"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+
 ---
 
 # 上傳應用程式套件
@@ -55,6 +59,7 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "自訂文字輸入概觀"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ---
 
@@ -23,14 +23,14 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 -   [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 
-## <span id="Why_use_core_text_APIs_"></span><span id="why_use_core_text_apis_"></span><span id="WHY_USE_CORE_TEXT_APIS_"></span>為什麼要使用核心文字 API？
+## 為什麼要使用核心文字 API？
 
 
 對於許多 App 而言，XAML 或 HTML文字方塊控制項就足以用來進行文字輸入和編輯。 不過，如果您的 App 會處理複雜的文字案例 (例如文書處理 App)，您可能需要自訂文字編輯控制項的彈性。 您可以使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 鍵盤 API 來建立文字編輯控制項，但是這些 API 不提供接收組合式文字輸入的方式，而這類文字輸入是用來支援東亞語言的必要方式。
 
 當您需要建立自訂的文字編輯控制項時，請改用 [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API。 這些 API 的設計目的是為您提供許多使用任何語言來處理文字輸入的彈性，可讓您提供最適合 App 的文字經驗。 內建於核心文字 API 的文字輸入與編輯控制項可以接收來自 Windows 裝置上所有現有文字輸入法的文字輸入、來自以[文字服務架構](https://msdn.microsoft.com/library/windows/desktop/ms629032)為基礎的輸入法 (IME) 的文字輸入，以及電腦上的手寫到行動裝置上的 WordFlow 鍵盤 (可提供自動校正、預測及聽寫)。
 
-## <span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span>架構
+## 架構
 
 
 以下是文字輸入系統的簡單表示法。
@@ -42,17 +42,17 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 ![核心文字架構圖](images/coretext/architecture.png)
 
-## <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>文字範圍與選取項目
+## 文字範圍與選取項目
 
 
 編輯控制項提供文字輸入的空間，而使用者預期在此空間的任一處編輯文字。 我們將在此處說明核心文字 API 所使用的文字放置系統，以及如何在此系統中呈現範圍與選取項目。
 
-### <span id="Application_caret_position"></span><span id="application_caret_position"></span><span id="APPLICATION_CARET_POSITION"></span>應用程式插入號位置
+### 應用程式插入號位置
 
 與核心文字 API 搭配使用的文字範圍是以插入號位置來表示。 「應用程式插入號位置 (ACP)」是以零起始的數字，指出從緊接在插入號前開始之文字資料流的字元數目，如下所示。
 
 ![文字資料流圖表範例](images/coretext/stream-1.png)
-### <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>文字範圍與選取項目
+### 文字範圍與選取項目
 
 文字範圍與選取項目是透過 [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) 結構來呈現，其中包含兩個欄位：
 
@@ -65,11 +65,11 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 例如，在先前所示的文字範圍中，範圍 \[0, 5\] 指出 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
 
-### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>插入點
+### 插入點
 
 目前的插入號位置 (通常稱為插入點) 是藉由設定 **StartCaretPosition**，使其等於 **EndCaretPosition** 來表示。
 
-### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>不連續的選取項目
+### 不連續的選取項目
 
 有一些編輯控制項支援不連續的選取項目。 例如，Microsoft Office App 支援多個任意選取項目，而且有許多原始程式碼編輯器支援選取欄。 不過，核心文字 API 不支援不連續的選取項目。 編輯控制項只能報告單一的連續選取項目，最常見的是不連續選取項目的作用中子範圍。
 
@@ -77,7 +77,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 ![範例文字資料流圖表](images/coretext/stream-2.png) 有兩個選項：\[0, 1\] and \[6, 11\]。 編輯控制項只能報告這其中一個項目；\[0, 1\] 或 \[6, 11\]。
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>使用文字
+## 使用文字
 
 
 [
@@ -90,7 +90,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 如果文字服務需要新文字，則會引發 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。 您必須在 **TextRequested** 事件處理常式中提供新文字。
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>接受文字更新
+### 接受文字更新
 
 編輯控制項通常應該會接受文字更新要求，因為它們代表使用者想要輸入的文字。 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件處理常式中，編輯控制項預期要有下列動作：
 
@@ -115,13 +115,13 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 在編輯控制項中，套用指定的變更，並將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
 ![文字資料流圖表範例](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>拒絕文字更新
+### 拒絕文字更新
 
 您有時無法套用文字更新，因為要求的範圍是在不得變更的編輯控制項區域內。 在此情況下，您不應該套用任何變更。 而是改為通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)，來讓更新失敗。
 
 以只接受一個電子郵件地址的編輯控制項為例。 由於電子郵件地址不能包含空格，所以必須拒絕空格，因此，在針對空格鍵引發 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件時，您只需在編輯控制項中將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Failed** 即可。
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>通知文字變更
+### 通知文字變更
 
 有時您的編輯控制項會對文字進行變更，例如，在貼上或自動校正文字時。 在這些情況下，您必須呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來通知這些變更的文字服務。
 
@@ -137,7 +137,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>覆寫文字更新
+### 覆寫文字更新
 
 在編輯控制項中，您可能想要覆寫文字更新，以提供自動校正功能。
 
@@ -155,13 +155,13 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>提供要求的文字
+### 提供要求的文字
 
 請務必讓文字服務具備正確的文字，以提供像是自動校正或預測的功能，特別是已經存在於編輯控制項的文字，例如，來自載入文件或編輯控制項插入的文字，如先前小節所述。 因此，每當引發 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件時，您就必須針對指定的範圍提供目前位於編輯控制項中的文字。
 
 有時 [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 會指定您的編輯控制項無法依原樣容納的範圍。 例如，**Range** 大於 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件當時的編輯控制項大小，或者 **Range** 的結尾已超出範圍。 在這些情況下，您應該傳回任何合理的範圍，通常是要求範圍的子集。
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 **封存範例**
@@ -176,6 +176,6 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

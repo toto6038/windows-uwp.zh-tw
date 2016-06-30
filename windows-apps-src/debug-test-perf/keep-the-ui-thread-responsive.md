@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: 讓 UI 執行緒保持回應
-description: 不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。
+title: "讓 UI 執行緒保持回應"
+description: "不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。"
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+
 ---
 # 讓 UI 執行緒保持回應
 
@@ -102,6 +106,7 @@ public class AsyncExample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: AdvancedPhotoCapture 類別可讓您擷取高動態範圍 (HDR) 相片。
-title: 高動態範圍 (HDR) 相片擷取
+description: "AdvancedPhotoCapture 類別可讓您擷取高動態範圍 (HDR) 相片。"
+title: "高動態範圍 (HDR) 相片擷取"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
+
 ---
 
 # 高動態範圍 (HDR) 相片擷取
@@ -15,11 +19,11 @@ title: 高動態範圍 (HDR) 相片擷取
 
 關於 HDR 擷取的其他文件包括：
 
--   您可以使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 讓系統評估媒體擷取預覽資料流的內容，以判斷 HDR 處理是否會改善擷取結果。 如需詳細資訊，請參閱[媒體擷取的場景分析](scene-analysis-for-media-capture.md)
+-   您可以使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 讓系統評估媒體擷取預覽資料流的內容，以判斷 HDR 處理是否會改善擷取結果。 如需詳細資訊，請參閱[媒體擷取的場景分析](scene-analysis-for-media-capture.md)。
 
--   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680)，以使用 Windows 內建 HDR 處理演算法來擷取影片。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)
+-   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680)，以使用 Windows 內建 HDR 處理演算法來擷取影片。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)。
 
--   您可以使用 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 擷取一連串相片，每張相片各有不同的擷取設定，並實作您自己的 HDR 或其他處理演算法。 如需詳細資訊，請參閱[可變相片序列](variable-photo-sequence.md)
+-   您可以使用 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 擷取一連串相片，每張相片各有不同的擷取設定，並實作您自己的 HDR 或其他處理演算法。 如需詳細資訊，請參閱[可變相片序列](variable-photo-sequence.md)。
 
 **注意**
 -   不支援使用 **AdvancedPhotoCapture** 同時進行錄製影片與相片擷取。
@@ -49,7 +53,7 @@ title: 高動態範圍 (HDR) 相片擷取
 
 在您的 app 中，於初始化 **MediaCapture** 物件之後，建立 [**AdvancedPhotoCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/mt147837) 物件，並將模式設定為 [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845)。 呼叫 [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) 物件的 [**Configure**](https://msdn.microsoft.com/library/windows/apps/mt147841) 方法，並傳入您建立的 **AdvancedPhotoCaptureSettings** 物件。
 
-呼叫 **MediaCapture** 物件的 [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403)，並傳入 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 物件來指定擷取應該使用的編碼類型。 **ImageEncodingProperties** 類別提供靜態方法來建立 **MediaCapture** 支援的影像編碼
+呼叫 **MediaCapture** 物件的 [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403)，並傳入 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 物件來指定擷取應該使用的編碼類型。 **ImageEncodingProperties** 類別提供靜態方法來建立 **MediaCapture** 支援的影像編碼。
 
 **PrepareAdvancedPhotoCaptureAsync** 會傳回 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 物件，讓您用來起始相片擷取。 您可以使用此物件來註冊 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) 和 [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) 的處理常式，本文稍後會討論。
 
@@ -61,14 +65,13 @@ title: 高動態範圍 (HDR) 相片擷取
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
-**ConvertOrientationToPhotoOrientation** 和 **ReencodeAndSavePhotoAsync** 是[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)文章中的基本媒體擷取案例所論及的協助程式方法
+**ConvertOrientationToPhotoOrientation** 和 **ReencodeAndSavePhotoAsync** 是[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)文章中的基本媒體擷取案例所論及的協助程式方法。
 
 ## 取得選用的參照框架
 
 HDR 程序會擷取多個框架，然後在擷取所有框架之後，組合成單一影像。 在整個 HDR 程序完成之前，您可以透過處理 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) 事件來存取已擷取的框架。 如果您只想要取得最終的 HDR 相片結果，則不需要這樣做。
 
-**重要**在支援硬體 HDR 的裝置上，由於不會引發 
-          [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392)，因此不會產生參照框架。 您的 app 應該處理不會引發這個事件的情況。
+**重要** 在支援硬體 HDR 的裝置上，由於不會引發 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392)，因此不會產生參照框架。 您的 app 應該處理不會引發這個事件的情況。
 
 因為送達的參照框架與呼叫 **CaptureAsync** 無關，因此會提供一項機制以將內容資訊傳遞給 **OptionalReferencePhotoCaptured** 處理常式。 首先，您應該有一個包含內容資訊的物件。 這個物件的名稱和內容由您決定。 這個範例定義一個物件，其中有成員可追蹤擷取的檔案名稱和相機方向。
 
@@ -99,6 +102,7 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 * [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

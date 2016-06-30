@@ -5,8 +5,8 @@ title: "處理指標輸入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您以[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)來模型化您的自訂互動，以保持一致且可探索的 UI 體驗。 這些平台控制項提供完整的通用 Windows 平台 (UWP) 使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
 
-## <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>指標
+## 指標
 
 
 許多互動體驗牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將資訊升級到整合的輸入堆疊，並公開為已合併且無從驗證裝置的指標資料。 您的 UWP app 之後就能取用此資料，而不需擔心所使用的輸入裝置。
@@ -36,7 +36,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 
 輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 物件來表示，此物件是透過各種不同指標事件所提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入點。
 
-## <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>指標事件
+## 指標事件
 
 
 指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及取得延伸資訊 (例如位置、壓力和接觸幾何)。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的 app 必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
@@ -60,7 +60,7 @@ UWP app 可以接聽下列指標事件：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
+<td align="left"><p>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
 <td align="left"><p>這會在平台取消指標時發生。</p>
 <ul>
 <li>在輸入表面的範圍內偵測到手寫筆時，即會取消觸控指標。</li>
@@ -71,7 +71,7 @@ UWP app 可以接聽下列指標事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
 <strong>注意</strong> 沒有對應的指標擷取事件。
@@ -81,7 +81,7 @@ UWP app 可以接聽下列指標事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>當指標進入元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點來引發此事件，不論是從元素上直接向下觸碰，或是移到元素的界限區域內均可。</li>
@@ -90,7 +90,7 @@ UWP app 可以接聽下列指標事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
+<td align="left"><p>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
 <td align="left"><p>當指標離開元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點，並且在將指標移出元素的界限區域時引發此事件。</li>
@@ -99,7 +99,7 @@ UWP app 可以接聽下列指標事件：
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
+<td align="left"><p>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
 <td align="left"><p>當指標在元素的界限區域內變更座標、按鈕狀態、壓力、傾斜或接觸幾何時 (例如，寬度與高度)，就會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點，而且只會在接觸點位於元素的界限區域內時引發此事件。</li>
@@ -108,16 +108,16 @@ UWP app 可以接聽下列指標事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
+<td align="left"><p>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
 <td align="left"><p>當指標指出元素界限區域內的按下動作 (例如，觸控向下、滑鼠向下、手寫筆向下或觸控板按鈕向下) 時，即會發生此情況。</p>
 <p>[<strong>CapturePointer</strong>] (https://msdn.microsoft.com/library/windows/apps/br208918) 針對此事件必須從處理常式呼叫。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
+<td align="left"><p>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
 <td align="left"><p>當指標指出元素界限區域內的放開動作 (例如，觸控向上、滑鼠按鈕向上、手寫筆向上或觸控版按鈕向上)，或如果指標在界限區域外部被擷取時，即會發生此情況。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
+<td align="left"><p>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
 <td align="left"><p>旋轉滑鼠滾輪時，即會發生此情況。</p>
 <p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) 事件建立指標與該按鈕的次要關聯。</p></td>
 </tr>
@@ -126,12 +126,12 @@ UWP app 可以接聽下列指標事件：
 
  
 
-## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
+## 範例
 
 
 以下提供一些來自基本指標追蹤 App 的程式碼範例，示範如何進行接聽，以及處理指標事件並取得各種適用於作用中指標的屬性。
 
-### <span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>建立 UI
+### 建立 UI
 
 針對這個範例，我們使用矩形 (`targetContainer`) 做為指標輸入的目標物件。 當指標狀態變更時，目標的色彩就會變更。
 
@@ -194,7 +194,7 @@ UWP app 可以接聽下列指標事件：
 </Page>
 ```
 
-### <span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>接聽指標事件
+### 接聽指標事件
 
 在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 來取得指標資訊。
 
@@ -243,7 +243,7 @@ UWP app 可以接聽下列指標事件：
 
 ```
 
-### <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>處理指標事件
+### 處理指標事件
 
 接下來，將使用 UI 回饋來示範基本指標事件處理常式。
 
@@ -555,7 +555,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>取得指標屬性
+### 取得指標屬性
 
 如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 與 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法，從 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 物件取得最延伸的指標資訊。
 
@@ -651,7 +651,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>完整範例
+### 完整範例
 
 以下是這個範例的 C\# 程式碼。 如需較複雜範例的連結，請參閱本頁面下方的相關文章。
 
@@ -1079,7 +1079,7 @@ namespace PointerInput
 }
 ```
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 **範例**
@@ -1105,6 +1105,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

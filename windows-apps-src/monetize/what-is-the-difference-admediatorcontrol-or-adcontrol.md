@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
-description: 了解 Microsoft Advertising 程式庫中 AdControl 類別和廣告流量分配程式庫中 AdMediatorControl 類別之間的差異。
-title: 有何差異 - AdMediatorControl 或 AdControl
+description: "了解 Microsoft Advertising 程式庫中 AdControl 類別和廣告流量分配程式庫中 AdMediatorControl 類別之間的差異。"
+title: "有何差異 - AdMediatorControl 或 AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
+
 ---
 
 # 有何差異：AdMediatorControl 或 AdControl
@@ -42,6 +46,7 @@ Microsoft Advertising 程式庫和廣告流量分配程式庫均包含於 Micros
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

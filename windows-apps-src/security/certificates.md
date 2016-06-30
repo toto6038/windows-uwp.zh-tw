@@ -1,8 +1,12 @@
 ---
-title: 憑證簡介
-description: 本文討論通用 Windows 平台 (UWP) app 的憑證用法。
+title: "憑證簡介"
+description: "本文討論通用 Windows 平台 (UWP) app 的憑證用法。"
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
+
 ---
 
 # 憑證簡介
@@ -95,6 +99,7 @@ X.509 版本 3 憑證包含版本 1 和版本 2 中定義的欄位，並新增�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: 此文章說明視訊裝置控制項如何啟用增強的視訊擷取案例，包括 HDR 視訊和曝光優先順序。
-title: 視訊擷取的擷取裝置控制項
+description: "此文章說明視訊裝置控制項如何啟用增強的視訊擷取案例，包括 HDR 視訊和曝光優先順序。"
+title: "視訊擷取的擷取裝置控制項"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
+
 ---
 
 # 視訊擷取的擷取裝置控制項
@@ -53,6 +57,7 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

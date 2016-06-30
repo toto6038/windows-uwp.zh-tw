@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: 最佳化您的 XAML 標記
-description: 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。
+title: "最佳化您的 XAML 標記"
+description: "剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
+
 ---
 # 最佳化您的 XAML 標記
 
@@ -104,7 +108,7 @@ description: 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言
 
 ## 將看起來相同的多個筆刷合併到一個資源
 
-XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 進行示範，但是 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的案例更類似且更重要
+XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使用這些物件。 但是，XAML 無法清楚分辨某個標記中宣告的筆刷與另一個標記中宣告的筆刷是否相同。 此處的範例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 進行示範，但是 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的案例更類似且更重要。
 
 **沒有效率。**
 
@@ -286,6 +290,7 @@ XAML 內建控制項和架構提供的字典已經完全啟用 XBF2。 針對您
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

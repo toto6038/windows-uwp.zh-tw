@@ -1,8 +1,12 @@
 ---
-title: 建立 Microsoft Passport 登入應用程式
-description: 這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。
+title: "建立 Microsoft Passport 登入應用程式"
+description: "這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。"
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
+ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
+
 ---
 
 # 建立 Microsoft Passport 登入應用程式
@@ -11,7 +15,7 @@ author: awkoren
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。 應用程式利用使用者名稱來進行登入作業，並為每個帳戶建立 Passport 金鑰。 這些帳戶會受到 PIN 碼的保護；而該 PIN 碼是在 Windows 設定中針對 Microsoft Passport 組態所設定的。
 
@@ -968,6 +972,7 @@ author: awkoren
 * [Microsoft Passport 及 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

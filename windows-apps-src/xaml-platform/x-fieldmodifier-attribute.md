@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 修改 XAML 編譯行為，以 public 存取而不是 private 預設行為來定義具名物件參考的欄位。
-title: xFieldModifier 屬性
+description: "修改 XAML 編譯行為，以 public 存取而不是 private 預設行為來定義具名物件參考的欄位。"
+title: "xFieldModifier 屬性"
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3f6c759d582d92aa33df5874186aeaa3a7c37b01
+
 ---
 
 # x&#58;FieldModifier 屬性
@@ -33,6 +37,7 @@ ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

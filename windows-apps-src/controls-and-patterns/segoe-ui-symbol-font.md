@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: 本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
+Description: "本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。"
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 圖示的指導方針
+title: "Segoe MDL2 圖示的指導方針"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 9071c7dfddba15738d7bad482fd14f7cbffaa1f7
+
 ---
 
 # Segoe MDL2 圖示的指導方針
@@ -1609,6 +1613,7 @@ Segoe UI Symbol 也會依賴「零寬度」字符進行分層和顏色標示，�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

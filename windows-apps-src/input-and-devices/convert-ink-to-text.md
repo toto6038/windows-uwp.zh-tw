@@ -6,8 +6,8 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: 1722fc00de000d07ed30cfb0ae12080708c30b76
-ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
 
 針對此處的所有範例，新增筆墨功能所需的命名空間參考。 這包括 "Windows.UI.Input.Inking"。
 
-## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>基本的手寫辨識
+## 基本的手寫辨識
 
 
 我們將在此處示範如何使用與預設安裝的語言套件相關聯的手寫辨識引擎，來解譯 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一組筆劃。
@@ -206,7 +206,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>國際性辨識
+## 國際性辨識
 
 
 Windows 支援的完整語言子集可用於手寫辨識。
@@ -457,7 +457,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>動態手寫辨識
+## 動態手寫辨識
 
 
 先前的兩個範例要求使用者按下按鈕來開始辨識。 您的 app 也可以使用與基本計時函式配對的筆劃輸入來執行動態辨識。
@@ -534,13 +534,13 @@ public MainPage()
 
 2.  以下是我們在第一個步驟中針對這三個事件新增的處理常式。
 
-    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
     當使用者提起他們的畫筆或手指，或是放開滑鼠按鈕來停止筆墨輸入時，即會啟動辨識計時器。 一秒之後若無任何筆墨輸入，即會初始辨識。
 
-    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     如果新的筆劃在下一個計時器 tick 事件之前開始，請停止計時器，因為新的筆劃很可能是延續自單一手寫輸入項。
 
-    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
     一秒之後若無任何筆墨輸入，請呼叫辨識函式。
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -671,7 +671,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
@@ -685,6 +685,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

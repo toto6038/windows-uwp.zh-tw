@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: 最佳化您的 XAML 版面配置
-description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
+title: "最佳化您的 XAML 版面配置"
+description: "版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。"
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
+
 ---
 # 最佳化您的 XAML 版面配置
 
@@ -185,6 +189,7 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&\#
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

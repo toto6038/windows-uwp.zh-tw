@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: UI 的背後是商務與資料層。
-title: 移值 Windows Phone Silverlight 商務與資料層至 UWP
+description: "UI 的背後是商務與資料層。"
+title: "移值 Windows Phone Silverlight 商務與資料層至 UWP"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 24e94e91adc0e5ef0b7a076d54299eab8c4ba527
+
 ---
 
 #  移值 Windows Phone Silverlight 商務與資料層至 UWP
@@ -19,7 +23,7 @@ UI 的背後是商務與資料層。 這些層中的程式碼會呼叫作業系�
 
 ## 背景處理
 
-Windows Phone Silverlight app 可以使用受管理的 **ScheduledTaskAgent** 物件，以在 app 工作不在前景時執行工作。 UWP app 會使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別，以類似的方式來建立並登錄背景工作。 您需定義會實作您背景工作之工作的類別。 系統會定期執行您的背景工作，藉由呼叫您類別的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法來執行工作。 在 UWP app 中，請記得在 app 套件資訊清單中設定 [**背景工作**] 宣告。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/library/windows/apps/mt299103)。
+Windows Phone Silverlight app 可以使用受管理的 **ScheduledTaskAgent** 物件，以在 app 工作不在前景時執行工作。 UWP app 會使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別，以類似的方式來建立並登錄背景工作。 您需定義會實作您背景工作之工作的類別。 系統會定期執行您的背景工作，藉由呼叫您類別的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法來執行工作。 在 UWP app 中，請記得在 app 套件資訊清單中設定 \[背景工作\] 宣告。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/library/windows/apps/mt299103)。
 
 若要在背景傳輸大量資料檔案，Windows Phone Silverlight app 會使用 **BackgroundTransferService** 類別。 UWP app 會在 [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間中使用 API 來執行這個動作。 這些功能使用類似的模式來起始傳輸，但新 API 已經改進性能和效能。 如需詳細資訊，請參閱[在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)。
 
@@ -137,6 +141,7 @@ Windows Phone Silverlight 應用程式對選用的 SD 記憶卡具有唯讀存�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

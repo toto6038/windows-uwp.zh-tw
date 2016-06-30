@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: 取得關於 Microsoft Store Engagement and Monetization SDK 中之 Microsoft Advertising 程式庫的一般開發人員資訊。
-title: 關於 Microsoft Advertising 程式庫的開發人員資訊
+description: "取得關於 Microsoft Store Engagement and Monetization SDK 中之 Microsoft Advertising 程式庫的一般開發人員資訊。"
+title: "關於 Microsoft Advertising 程式庫的開發人員資訊"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+
 
 ---
 
@@ -34,6 +38,7 @@ title: 關於 Microsoft Advertising 程式庫的開發人員資訊
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

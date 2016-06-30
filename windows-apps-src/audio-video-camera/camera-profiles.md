@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: 此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。
-title: 相機設定檔
+description: "此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。"
+title: "相機設定檔"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+
 ---
 
 # 相機設定檔
@@ -105,6 +109,7 @@ title: 相機設定檔
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

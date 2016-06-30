@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-Description: 在 App 中遵循這些適用於地理柵欄的最佳做法。
-title: 地理柵欄 App 的指導方針
+Description: "在 App 中遵循這些適用於地理柵欄的最佳做法。"
+title: "地理柵欄 App 的指導方針"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
+
 ---
 
 # 地理柵欄 App 的指導方針
@@ -132,6 +136,7 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

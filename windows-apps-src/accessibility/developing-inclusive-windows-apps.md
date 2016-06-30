@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
+Description: "瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: 開發通用 Windows 10 app
+title: "開發通用 Windows 10 app"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+
 ---
 
 # 開發通用 Windows app  
@@ -80,6 +84,7 @@ XAML
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

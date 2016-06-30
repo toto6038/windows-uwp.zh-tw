@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
-title: 媒體傳播
+description: "本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。"
+title: "媒體傳播"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
+
 ---
 
 # 媒體傳播
@@ -153,6 +157,7 @@ title: 媒體傳播
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

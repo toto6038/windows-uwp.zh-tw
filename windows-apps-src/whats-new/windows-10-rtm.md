@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-Description: Windows 10 RTM 和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。
-title: Windows 10 RTM 的新功能 - 2015 年 7 月
+Description: "Windows 10 RTM 和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。"
+title: "Windows 10 RTM 的新功能 - 2015 年 7 月"
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 67e5be130647e5ebeeef6e4c0dcbd822e8b84184
+
 ---
 
 # Windows 10 RTM 的新功能 - 2015 年 7 月
@@ -195,6 +199,7 @@ WebView.ClearTemporaryWebDataAsync 方法 | 當使用者與 XAML WebView 內部�
 ---
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

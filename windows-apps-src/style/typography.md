@@ -1,17 +1,21 @@
 ---
 author: mijacobs
-Description: 如同語言的視覺表示，印刷格式的主要工作會被清除。 其樣式絕不應干擾該目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
-title: 印刷格式
+Description: "作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
+title: "印刷格式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
 extraBodyClass: style-typography
-brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+
 ---
 
 # 適用於 UWP 應用程式的印刷格式
 
-如同語言的視覺表示，印刷格式的主要工作會被清除。 其樣式絕不應干擾該目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
+作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
 
 ## 字樣
 
@@ -79,7 +83,7 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 控制字型間距調整及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設為 “true” 而 FontStretch 會設為 “Normal”，這些是建議的值。
+在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 控制字型間距調整及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設為 “true” 而 FontStretch 會設為 “Normal”，這些是建議的值。
     </div>
 </aside>
 
@@ -125,7 +129,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型衡量標準的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
+XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型衡量標準的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
     </div>
 </aside>
 
@@ -139,7 +143,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 # 字體坡形
 
-您應不同大小的 Segoe UI 在字體坡形中建立階層。 此階層可做為基礎結構，讓使用者輕鬆地瀏覽已撰寫的通訊。
+您應使用不同大小的 Segoe UI 在字體坡形中建立階層。 此階層可做為基礎結構，讓使用者輕鬆地瀏覽已撰寫的通訊。
 
 <figure class="figure-img" >
     <img src="images/type-ramp.png" alt="Shows the type ramp"  />
@@ -150,7 +154,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            大部分的坡形層級是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 提供 (例如： 
+大部分的坡形層級是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 提供 (例如：`HeaderTextBlockStyle`)。 
     </div>
 </aside>
 
@@ -180,6 +184,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 * [文字控制項](../controls-and-patterns/text-controls.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

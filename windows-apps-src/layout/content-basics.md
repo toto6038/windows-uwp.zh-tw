@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 任何一種 app 的主要用途都是讓使用者存取內容。 在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；依此類推。
-title: 通用 Windows 平台 (UWP) 應用程式的內容設計基本知識
+Description: "任何一種 app 的主要用途都是讓使用者存取內容。 在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；依此類推。"
+title: "通用 Windows 平台 (UWP) 應用程式的內容設計基本知識"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
+
 ---
 
 #  UWP app 的內容設計基本知識
@@ -118,6 +122,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

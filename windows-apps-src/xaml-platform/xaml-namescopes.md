@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: XAML 命名範圍會儲存 XAML 定義的物件名稱與它們的執行個體對應項之間的關係。 這個概念與其他程式設計語言和技術中較廣義的「命名範圍」一詞類似。
-title: XAML 命名範圍
+description: "XAML 命名範圍會儲存 XAML 定義的物件名稱與它們的執行個體對應項之間的關係。 這個概念與其他程式設計語言和技術中較廣義的「命名範圍」一詞類似。"
+title: "XAML 命名範圍"
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+
 ---
 
 # XAML 命名範圍
@@ -84,6 +88,7 @@ XAML 中的範本可以讓您直接重新使用和重新套用內容，但範本
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

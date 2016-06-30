@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 除了為您的 app 建立將在 Windows app 中執行的廣告行銷活動之外，您也可以使用其他管道促銷您的 app。
-title: 建立自訂 app 促銷活動
+Description: "除了為您的 app 建立將在 Windows app 中執行的廣告行銷活動之外，您也可以使用其他管道促銷您的 app。"
+title: "建立自訂 app 促銷活動"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+
 ---
 
 # 建立自訂 app 促銷活動
@@ -39,7 +43,7 @@ ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ## 了解 app 安裝如何符合轉換的資格
 
 
-[轉換]** 是 app 安裝，源自客戶透過自訂行銷活動促銷的 URL 按一下 app 的 Windows 市集頁面。 針對開發人員中心儀表板上的[管道和轉換報告](channels-and-conversions-report.md)，符合轉換的資格與[以程式設計方式擷取行銷活動識別碼](#programmatically)符合轉換的資格有不同的條件。
+\[轉換\] 是 app 安裝，源自客戶透過自訂行銷活動促銷的 URL 按一下 app 的 Windows 市集頁面。 針對開發人員中心儀表板上的[管道和轉換報告](channels-and-conversions-report.md)，符合轉換的資格與[以程式設計方式擷取行銷活動識別碼](#programmatically)符合轉換的資格有不同的條件。
 
 針對[通道和轉換報告](channels-and-conversions-report.md)，若要符合轉換的資格，必須符合下列條件：
 
@@ -60,13 +64,13 @@ ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 若要使用自訂行銷活動識別碼為您的 app 建立 Windows 市集頁面 URL：
 
 1.  為您的自訂行銷活動建立識別碼字串。 此字串可以包含最多 100 個字元，不過我們建議您定義容易識別的簡短行銷活動識別碼。
-2.  取得您 app 的 HTML 或通訊協定格式的 Windows 市集頁面 URL。 HTML 格式的 URL 可在[開發人員中心儀表板中的 [App 身分識別]**** 頁面](link-to-your-app.md)取得。
-    -   如果您想要客戶在瀏覽器中瀏覽到您的 app 的 Windows 市集頁面 (如果已安裝 Windows 市集 app，這個 URL 也將啟動 Windows 市集 app 到您的 app 清單)，請使用 HTTP 格式。 此 URL 的格式為 **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`**。 例如，Skype 的 HTTP URL 為 `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`。
+2.  取得您 app 的 HTML 或通訊協定格式的 Windows 市集頁面 URL。 HTML 格式的 URL 可在開發人員中心儀表板中的 \[App 身分識別\] 頁面取得。
+    -   如果您想要客戶在瀏覽器中瀏覽到您的 app 的 Windows 市集頁面 (如果已安裝 Windows 市集 app，這個 URL 也將啟動 Windows 市集 app 到您的 app 清單)，請使用 HTTP 格式。 此 URL 的格式為 。 例如，Skype 的 HTTP URL 為 `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`。
         > **注意** HTTP 格式 URL 可以用來在執行 Windows 7 和更新版本的電腦和平板和執行 Windows Phone 8 和更新版本的電話上的瀏覽器中瀏覽到 Windows 市集。
-    - 如果您要從已安裝 Windows 市集 app 的裝置或電腦上執行的其他 Windows app 進行促銷，並且您想要客戶在 Windows 市集 app 中開啟您的 app 頁面，請使用通訊協定格式。 此 URL 的格式為 **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**。 例如，Skype 的通訊協定 URL 為 `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`。
+- 如果您要從已安裝 Windows 市集 app 的裝置或電腦上執行的其他 Windows app 進行促銷，並且您想要客戶在 Windows 市集 app 中開啟您的 app 頁面，請使用通訊協定格式。 此 URL 的格式為 。 例如，Skype 的通訊協定 URL 為 `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`。
 3.  附加以下字串到您的 app 的 URL 的結尾：
-    -   針對 HTTP 格式 URL，附加 **`?cid=*my custom campaign ID*`**。 例如，如果 Skype 推出值為 **custom\_campaign** 的行銷活動識別碼，則包含行銷活動識別碼的新 HTTP URL 會是：`https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`。
-    -   針對通訊協定格式 URL，附加 **`&cid=*my custom campaign ID*`**。 例如，如果 Skype 推出值為 **custom\_campaign** 的行銷活動識別碼，則包含行銷活動識別碼的新通訊協定 URL 會是：`ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`。
+    -   針對 HTTP 格式 URL，附加 。 例如，如果 Skype 推出值為 **custom\_campaign** 的行銷活動識別碼，則包含行銷活動識別碼的新 HTTP URL 會是：`https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`。
+    -   針對通訊協定格式 URL，附加 。 例如，如果 Skype 推出值為 **custom\_campaign** 的行銷活動識別碼，則包含行銷活動識別碼的新通訊協定 URL 會是：`ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`。
 
 ## 以程式設計方式擷取 app 的自訂行銷活動識別碼
 
@@ -89,7 +93,8 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 ```
 
 [
-            **GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法會從 Windows 市集存取資料。 使用這個方法時請遵循這些指導方針：
+              **GetAppPurchaseCampaignIdAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法會從 Windows 市集存取資料。 使用這個方法時請遵循這些指導方針：
 
 -   在非同步作業中包裝這個方法可讓呼叫完成。
 -   如果您的 app 尚未發佈到 Windows 市集，而您在測試您自訂行銷活動，請使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別的 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt187034) 方法，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 類別。 依照下列指導方針執行：
@@ -131,6 +136,7 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

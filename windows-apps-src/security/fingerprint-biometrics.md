@@ -1,8 +1,12 @@
 ---
-title: 指紋生物識別技術
-description: 本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。
+title: "指紋生物識別技術"
+description: "本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。"
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
+
 ---
 
 # 指紋生物識別技術
@@ -16,7 +20,7 @@ author: awkoren
 ## 檢查裝置是否有指紋辨識器
 
 
-若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 [設定] 中為使用者提供啟用或停用指紋驗證的選項。
+若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 \[設定\] 中為使用者提供啟用或停用指紋驗證的選項。
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -120,6 +124,7 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

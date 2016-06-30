@@ -1,11 +1,15 @@
 ---
 author: DelfCo
-Description: 當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。
+Description: "當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。"
 Search.Refinement.TopicID: 180
-title: 全球化與當地語系化的指導方針
+title: "全球化與當地語系化的指導方針"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: bdbe6b3e319aa90a78660c664f1603bac93399ca
+
 ---
 
 # 全球化和當地語系化的可行與禁止事項
@@ -188,6 +192,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

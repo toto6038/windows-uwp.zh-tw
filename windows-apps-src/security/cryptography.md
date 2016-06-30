@@ -1,8 +1,12 @@
 ---
-title: 密碼編譯
-description: 本文提供通用 Windows 平台 (UWP) 應用程式所提供的密碼編譯功能概觀。 如需特定工作的詳細資訊，請參閱本文結尾的表格。
+title: "密碼編譯"
+description: "本文提供通用 Windows 平台 (UWP) 應用程式所提供的密碼編譯功能概觀。 如需特定工作的詳細資訊，請參閱本文結尾的表格。"
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
+
 ---
 
 # 密碼編譯
@@ -143,6 +147,7 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
 
  
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

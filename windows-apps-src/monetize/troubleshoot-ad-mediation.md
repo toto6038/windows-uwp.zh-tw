@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 以下是與廣告流量分配有關的幾個一般開發問題的解決方案。
-title: 疑難排解廣告流量分配
+Description: "以下是與廣告流量分配有關的幾個一般開發問題的解決方案。"
+title: "疑難排解廣告流量分配"
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
+translationtype: Human Translation
+ms.sourcegitcommit: 10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe
+ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
+
 ---
 
 # 疑難排解廣告流量分配
@@ -13,12 +17,13 @@ ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
 以下是與廣告流量分配有關的幾個一般開發問題的解決方案。
 
 **您無法將 AdMediatorControl 新增到設計介面**  
-當您在使用 C# 或 Visual Basic 與 XAML 的通用 Windows 平台 (UWP)、Windows 8.1 或 Windows Phone 8.1 專案中首次將 **AdMediatorControl** 控制項拖曳到設計工具時，Visual Studio 會將必要的廣告流量分配者組件參考新增到您的專案，但還不會將該控制項新增到設計工具。 若要新增控制項，請按一下 Visual Studio 所顯示之訊息中的 [確定]，接著等候設計工具重新整理，然後將控制項再次拖曳回設計工具。
+當您在使用 C# 或 Visual Basic 與 XAML 的通用 Windows 平台 (UWP)、Windows 8.1 或 Windows Phone 8.1 專案中首次將 **AdMediatorControl** 控制項拖曳到設計工具時，Visual Studio 會將必要的廣告流量分配者組件參考新增到您的專案，但還不會將該控制項新增到設計工具。 若要新增控制項，請按一下 Visual Studio 所顯示之訊息中的 \[確定\]，接著等候設計工具重新整理，然後將控制項再次拖曳回設計工具。
 
-如果您仍然無法順利將控制項新增到設計工具，請確定您的專案目標為應用程式適用的處理器架構 (例如，**x86**)，而不是**任何 CPU**。 如果專案建置平台的目標是**任何 CPU**，則控制項無法新增到設計工具。
+如果您仍然無法順利將控制項新增到設計工具，請確定您的專案目標為應用程式適用的處理器架構 (例如，**x86**)，而不是**任何 CPU**。 如果專案建置平台的目標是 **任何 CPU**，則控制項無法新增到設計工具。
 
 *
-            *AdMediatorControl 會在執行階段提供來自 Microsoft 的廣告時顯示下列錯誤：「不支援 &lt;*width* &gt; x &lt;*height*&gt;」**Microsoft Advertising 只支援 [Interactive Advertising Bureau (IAB) 建議的特定廣告大小](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)。在某些情況下，即使您在設計工具或 XAML 中將廣告流量分配控制項的高度和寬度設定為這其中一個支援的廣告大小，縮放比例和進位問題仍然可能阻止廣告流量分配架構提供廣告。若要避免這個問題，請在程式碼中將 Microsoft Advertising 的** Width **和** Height** 選擇性參數設定為其中一個支援的廣告大小。
+              *AdMediatorControl 會在執行階段提供來自 Microsoft 的廣告時顯示下列錯誤：「不支援 &lt;*width*
+            &gt; x &lt;*height*&gt;」**Microsoft Advertising 只支援 [Interactive Advertising Bureau (IAB) 建議的特定廣告大小](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)。在某些情況下，即使您在設計工具或 XAML 中將廣告流量分配控制項的高度和寬度設定為這其中一個支援的廣告大小，縮放比例和進位問題仍然可能阻止廣告流量分配架構提供廣告。若要避免這個問題，請在程式碼中將 Microsoft Advertising 的** Width **和** Height** 選擇性參數設定為其中一個支援的廣告大小。
 
 下列程式碼範例示範如何將 Microsoft Advertising 的 **Width** 和 **Height** 選擇性參數指派為 728 x 90。
 
@@ -54,7 +59,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex]["Size"] = "160x
 
 **變更 AdMediator.config 檔案中的 RefreshRate 值後，發生非預期的行為**
 
-在 Visual Studio 中的 [加入已連接服務]**** 對話方塊內執行 **Ad Mediator** 元件來設定您的廣告網路之後，預設設定資訊會儲存到您專案中的 AdMediator.config。 您無法直接修改此檔案。 而是在上傳應用程式套件到 Windows 開發人員中心儀表板後，[為 App 設定廣告流量分配設定](submit-your-app-and-configure-ad-mediation.md)時修改此資訊 (包含新廣告重新整理的頻率)。
+在 Visual Studio 中的 \[加入已連接服務\] 對話方塊內執行 Ad Mediator 元件來設定您的廣告網路之後，預設設定資訊會儲存到您專案中的 AdMediator.config。 您無法直接修改此檔案。 而是在上傳應用程式套件到 Windows 開發人員中心儀表板後，[為 App 設定廣告流量分配設定](submit-your-app-and-configure-ad-mediation.md)時修改此資訊 (包含新廣告重新整理的頻率)。
 
 如果您變更 AdMediator.config 檔案中的 **RefreshRate** 值，請注意這個值必須包含 30 到 120 之間的整數，代表以秒為單位的重新整理頻率。 如果您設定小於 30 或大於 120 的整數，廣告流量分配架構將會自動使用 60 秒的重新整理頻率。
 
@@ -69,6 +74,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex]["Size"] = "160x
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

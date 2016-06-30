@@ -3,8 +3,8 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "組合視覺化樹狀結構"
 description: "「組合視覺效果」構成組合 API 的所有其他功能所使用和倚賴的視覺化樹狀結構。 API 可讓開發人員定義及建立一或多個視覺物件，每個物件各代表視覺化樹狀結構中的單一節點。"
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # 組合視覺化樹狀結構
@@ -107,7 +107,7 @@ visual.Opacity = 0.8f;
 
 ## 變更視覺效果在集合中的位置
 
-「組合 API」允許透過一些方式變更「視覺效果」在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) 中的位置： 可以使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) 將它放在另一個「視覺效果」的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) 將它放在另一個「視覺效果」的下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) 將它移到最上方，或使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) 將它移到最下方。
+「組合 API」允許透過一些方式變更「視覺效果」在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) 中的位置： 可以使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove) 將它放在另一個「視覺效果」的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow) 將它放在另一個「視覺效果」的下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) 將它移到最上方，或使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom) 將它移到最下方。
 
 在此範例中，已點選過的 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 被排序在最上方：
 
@@ -515,6 +515,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

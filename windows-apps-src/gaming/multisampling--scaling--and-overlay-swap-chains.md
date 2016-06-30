@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 交換鏈結縮放和覆疊
-description: 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。
+title: "交換鏈結縮放和覆疊"
+description: "了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。"
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
+
 ---
 
 # 交換鏈結縮放和覆疊
@@ -324,6 +328,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果您在 app 提交過程中上傳 app 套件時發生錯誤，您必須先解決這些錯誤，然後才可以將 app 提交至市集。
-title: 解決套件上傳錯誤
+Description: "如果您在 app 提交過程中上傳 app 套件時發生錯誤，您必須先解決這些錯誤，然後才可以將 app 提交至市集。"
+title: "解決套件上傳錯誤"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: afd2a08ed637502827e3207702d7659ed70148a0
+
 ---
 
 # 解決套件上傳錯誤
@@ -37,6 +41,7 @@ ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

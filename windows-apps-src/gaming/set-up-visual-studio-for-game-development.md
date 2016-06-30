@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 用來進行遊戲程式設計的 Visual Studio 工具
-description: Visual Studio 中提供的 DirectX 特定工具概觀。
+title: "用來進行遊戲程式設計的 Visual Studio 工具"
+description: "Visual Studio 中提供的 DirectX 特定工具概觀。"
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
+
 ---
 
 # 用來進行遊戲程式設計的 Visual Studio 工具
@@ -109,7 +113,7 @@ float3 LambertLighting(
 
 您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
 
-若要新增組建自訂，您可以在 [方案總管]**** 中以滑鼠右鍵按一下專案，然後選取 [組建自訂]****。 您可以將下列組建自訂類型新增到專案。
+若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。 您可以將下列組建自訂類型新增到專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
@@ -147,6 +151,7 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

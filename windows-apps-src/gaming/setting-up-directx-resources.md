@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 設定 DirectX 資源及顯示影像
-description: 我們將在此處示範如何建立 Direct3D 裝置、交換鏈結和轉譯目標檢視，以及如何將轉譯的影像呈現到顯示器。
+title: "設定 DirectX 資源及顯示影像"
+description: "我們將在此處示範如何建立 Direct3D 裝置、交換鏈結和轉譯目標檢視，以及如何將轉譯的影像呈現到顯示器。"
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f60d7c5b526fcdea8552256a6ebe4b92d5736264
+
 ---
 
 # 設定 DirectX 資源及顯示影像
@@ -36,15 +40,15 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
         );
 ```
 
-如果您使用 ComPtr 宣告 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)，則您可以使用 ComPtr 的 **GetAddressOf** 方法取得 **ID3D11RenderTargetView** (\*\*ID3D11RenderTargetView) 的指標位址以傳遞給 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464). **OMSetRenderTargets** 將轉譯目標繫結到 [output-merger stage](https://msdn.microsoft.com/library/windows/desktop/bb205120) 以指定轉譯目標為輸出目標。 在範例應用程式啟動後，它會初始化並載入，然後準備執行。
+如果您使用 ComPtr 宣告 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)，您就可以接著使用 ComPtr 的 **GetAddressOf** 方法取得 **ID3D11RenderTargetView** (\*\*ID3D11RenderTargetView) 的指標位址來傳送給 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)。 **OMSetRenderTargets** 會將轉譯目標繫結到[輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120)，以將轉譯目標指定為輸出目標。
 
-2. 建立 Direct3D 裝置
+在範例應用程式啟動後，它會初始化並載入，然後準備執行。
 
-### 若要使用 Direct3D API 來轉譯場景，我們必須先建立一個代表顯示卡的 Direct3D 裝置。
+### 2. 建立 Direct3D 裝置
 
-若要建立 Direct3D 裝置，我們將呼叫 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 函式。 我們會在 [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329) 值的陣列中指定層級 9.1 到 11.1。 Direct3D 會依序巡覽陣列，然後傳回最高的支援功能層級。 因此，為取得可用的最高功能層級，我們將按最高到最低的方式列出 **D3D\_FEATURE\_LEVEL** 陣列項目。 我們會將 [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) 旗標傳送給 *Flags* 參數，讓 Direct3D 資源與 Direct2D 互通。 如果我們使用偵錯組建，則也會一併傳送 [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) 旗標。 如需有關對應用程式偵錯的詳細資訊，請參閱[使用偵錯層對應用程式偵錯](https://msdn.microsoft.com/library/windows/desktop/jj200584) 我們藉由查詢 Direct3D 11 裝置和從 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 傳回的裝置內容，以取得 Direct3D 11.1 裝置 ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) 和裝置內容 ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598))。
+若要使用 Direct3D API 來轉譯場景，我們必須先建立一個代表顯示卡的 Direct3D 裝置。 若要建立 Direct3D 裝置，我們將呼叫 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 函式。 我們會在 [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329) 值的陣列中指定層級 9.1 到 11.1。 Direct3D 會依序巡覽陣列，然後傳回最高的支援功能層級。 因此，為取得可用的最高功能層級，我們將按最高到最低的方式列出 **D3D\_FEATURE\_LEVEL** 陣列項目。 我們會將 [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) 旗標傳送給 *Flags* 參數，讓 Direct3D 資源與 Direct2D 互通。 如果我們使用偵錯組建，則也會一併傳送 [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) 旗標。 如需有關對應用程式偵錯的詳細資訊，請參閱[使用偵錯層對應用程式偵錯](https://msdn.microsoft.com/library/windows/desktop/jj200584)。
 
-3. 建立交換鏈結
+我們藉由查詢 Direct3D 11 裝置和從 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 傳回的裝置內容，以取得 Direct3D 11.1 裝置 ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) 和裝置內容 ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598))。
 
 ```cpp
         // First, create the Direct3D device.
@@ -95,13 +99,13 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
             );
 ```
 
-### 接著，我們會建立一個裝置用來轉譯和顯示的交換鏈結。
+### 3. 建立交換鏈結
 
-我們會宣告並初始化 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 結構來描述交換鏈結。 然後我們會將交換鏈結設定為翻轉模型 (亦即交換鏈結的 **SwapEffect** 成員中設定了 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) 值)，並將 **Format** 成員設定為 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)。 我們會將 **SampleDesc** 成員指定之 [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 結構的 **Count** 成員設定為 1，並將 **DXGI\_SAMPLE\_DESC** 的 **Quality** 成員設定為零，因為翻轉模型不支援多重採樣消除鋸齒 (MSAA) 功能。 我們會將 **BufferCount** 成員設定為 2，以便讓交換鏈結可以使用前端緩衝區呈現到顯示裝置，並且使用背景緩衝區做為轉譯目標。 我們會透過查詢 Direct3D 11.1 裝置，取得基礎的 DXGI 裝置。
+接著，我們會建立一個裝置用來轉譯和顯示的交換鏈結。 我們會宣告並初始化 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 結構來描述交換鏈結。 然後我們會將交換鏈結設定為翻轉模型 (亦即交換鏈結的 **SwapEffect** 成員中設定了 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) 值)，並將 **Format** 成員設定為 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)。 我們會將 **SampleDesc** 成員指定之 [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 結構的 **Count** 成員設定為 1，並將 **DXGI\_SAMPLE\_DESC** 的 **Quality** 成員設定為零，因為翻轉模型不支援多重採樣消除鋸齒 (MSAA) 功能。 我們會將 **BufferCount** 成員設定為 2，以便讓交換鏈結可以使用前端緩衝區呈現到顯示裝置，並且使用背景緩衝區做為轉譯目標。
 
-為了將耗電量降到最低 (這對以電池供電的裝置而言很重要，例如膝上型電腦和平板電腦 )，我們會呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) 方法，並以 1 做為 DXGI 可以排入佇列的背景緩衝區框架數目上限。 這可確保應用程式只有在垂直空白後才會進行轉譯。 為了能夠在最後建立交換鏈結，我們必須從 DXGI 裝置取得父系 Factory。
+我們會透過查詢 Direct3D 11.1 裝置，取得基礎的 DXGI 裝置。 為了將耗電量降到最低 (這對以電池供電的裝置而言很重要，例如膝上型電腦和平板電腦 )，我們會呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) 方法，並以 1 做為 DXGI 可以排入佇列的背景緩衝區框架數目上限。 這可確保應用程式只有在垂直空白後才會進行轉譯。
 
-我們會呼叫 [**IDXGIDevice::GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) 來取得裝置的顯示卡，然後呼叫顯示卡上的 [**IDXGIObject::GetParent**](https://msdn.microsoft.com/library/windows/desktop/bb174542) 來取得父系 Factory ([**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556))。 為了建立交換鏈結，我們會使用交換鏈結描述元和應用程式核心視窗呼叫 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559)。 4. 建立轉譯目標檢視
+為了能夠在最後建立交換鏈結，我們必須從 DXGI 裝置取得父系 Factory。 我們會呼叫 [**IDXGIDevice::GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) 來取得裝置的顯示卡，然後呼叫顯示卡上的 [**IDXGIObject::GetParent**](https://msdn.microsoft.com/library/windows/desktop/bb174542) 來取得父系 Factory ([**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556))。 為了建立交換鏈結，我們會使用交換鏈結描述元和應用程式核心視窗呼叫 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559)。
 
 ```cpp
             // If the swap chain does not exist, create it.
@@ -170,9 +174,9 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
                 );
 ```
 
-### 為了將圖形轉譯到視窗，我們需要建立一個轉譯目標檢視。
+### 4. 建立轉譯目標檢視
 
-我們會呼叫 [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570) 來取得建立轉譯目標檢視時要使用的交換鏈結背景緩衝區。 我們會將背景緩衝區指定為 2D 紋理 ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635))。 為了建立轉譯目標檢視，我們會使用交換鏈結的背景緩衝區呼叫 [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517)。 我們必須將檢視區 ([**D3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) 指定為交換鏈結的整個背景緩衝區大小，以指定繪製到整個核心視窗。 我們會在 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) 的呼叫中使用檢視區，以將該檢視區繫結到管線的[點陣化階段](https://msdn.microsoft.com/library/windows/desktop/bb205125)。 點陣化階段會將向量資訊轉換成點陣影像。 在這種情況下，我們不需要進行轉換，因為我們只要顯示純色。 5. 呈現轉譯的影像
+為了將圖形轉譯到視窗，我們需要建立一個轉譯目標檢視。 我們會呼叫 [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570) 來取得建立轉譯目標檢視時要使用的交換鏈結背景緩衝區。 我們會將背景緩衝區指定為 2D 紋理 ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635))。 為了建立轉譯目標檢視，我們會使用交換鏈結的背景緩衝區呼叫 [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517)。 我們必須將檢視區 ([**D3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) 指定為交換鏈結的整個背景緩衝區大小，以指定繪製到整個核心視窗。 我們會在 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) 的呼叫中使用檢視區，以將該檢視區繫結到管線的[點陣化階段](https://msdn.microsoft.com/library/windows/desktop/bb205125)。 點陣化階段會將向量資訊轉換成點陣影像。 在這種情況下，我們不需要進行轉換，因為我們只要顯示純色。
 
 ```cpp
         // Once the swap chain is created, create a render target view.  This will
@@ -210,20 +214,20 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
         m_d3dDeviceContext->RSSetViewports(1, &viewport);
 ```
 
-### 我們會進入一個無限迴圈來不斷轉譯並顯示場景。
+### 5. 呈現轉譯的影像
+
+我們會進入一個無限迴圈來不斷轉譯並顯示場景。
 
 在這個迴圈中，我們呼叫：
 
-[
-            **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，將轉譯目標指定為輸出目標。
-
 1.  [
-            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388)，將轉譯目標清除為純色。
+            **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，將轉譯目標指定為輸出目標。
 2.  [
+            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388)，將轉譯目標清除為純色。
+3.  [
             **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，將轉譯的影像呈現到視窗。
-3.  由於我們之前已將最大框架延遲設定為 1，因此 Windows 通常會將轉譯迴圈速度減慢到螢幕的重新整理頻率，一般大約為 60 Hz。
 
-Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時，讓應用程式進入睡眠模式，以減慢轉譯迴圈速度。 Windows 會讓應用程式保持在睡眠模式，直到螢幕重新整理為止。 6. 調整 app 視窗與交換鏈結緩衝區的大小
+由於我們之前已將最大框架延遲設定為 1，因此 Windows 通常會將轉譯迴圈速度減慢到螢幕的重新整理頻率，一般大約為 60 Hz。 Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時，讓應用程式進入睡眠模式，以減慢轉譯迴圈速度。 Windows 會讓應用程式保持在睡眠模式，直到螢幕重新整理為止。
 
 ```cpp
         // Enter the render loop.  Note that Windows Store apps should never exit.
@@ -255,9 +259,9 @@ Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/librar
         }
 ```
 
-### 如果 app 視窗的大小發生變更，該 app 就必須調整交換鏈結緩衝區的大小、重新建立轉譯目標檢視，然後呈現已調整大小的轉譯影像。
+### 6. 調整 app 視窗與交換鏈結緩衝區的大小
 
-為了調整交換鏈結緩衝區的大小，我們會呼叫 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 在這個呼叫中，我們將緩衝區數目和緩衝區格式保持不變 (*BufferCount* 參數為 2，*NewFormat* 參數為 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM))。 我們讓交換鏈結的背景緩衝區大小與已調整大小的視窗相同。 在我們調整交換鏈結的緩衝區大小之後，我們會建立新的轉譯目標，並以類似初始化 app 時的方式呈現新的轉譯影像。 摘要與後續步驟
+如果 app 視窗的大小發生變更，該 app 就必須調整交換鏈結緩衝區的大小、重新建立轉譯目標檢視，然後呈現已調整大小的轉譯影像。 為了調整交換鏈結緩衝區的大小，我們會呼叫 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 在這個呼叫中，我們將緩衝區數目和緩衝區格式保持不變 (*BufferCount* 參數為 2，*NewFormat* 參數為 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM))。 我們讓交換鏈結的背景緩衝區大小與已調整大小的視窗相同。 在我們調整交換鏈結的緩衝區大小之後，我們會建立新的轉譯目標，並以類似初始化 app 時的方式呈現新的轉譯影像。
 
 ```cpp
             // If the swap chain already exists, resize it.
@@ -272,14 +276,14 @@ Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/librar
                 );
 ```
 
-## 我們建立了一個 Direct3D 裝置、交換鏈結和轉譯目標檢視，並將轉譯的影像呈現到顯示器。
+## 摘要與後續步驟
 
+
+我們建立了一個 Direct3D 裝置、交換鏈結和轉譯目標檢視，並將轉譯的影像呈現到顯示器。
 
 接著，我們也在顯示器上繪製一個三角形。
 
-建立著色器及繪製基本型別
-
-[Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md)
+[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)
 
  
 
@@ -290,6 +294,7 @@ Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/librar
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

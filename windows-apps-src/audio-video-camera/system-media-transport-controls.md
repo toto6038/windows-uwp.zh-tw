@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: SystemMediaTransportControls 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
-title: 系統媒體傳輸控制項
+description: "SystemMediaTransportControls 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。"
+title: "系統媒體傳輸控制項"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+
 ---
 
 # 系統媒體傳輸控制項
@@ -35,7 +39,7 @@ title: 系統媒體傳輸控制項
 
 [!code-cs[Namespace](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
 
-新增按鈕 click 處理常式，它使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 以允許使用者選取檔案，然後呼叫 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 讓它成為 **MediaElement** 的使用中檔案
+新增按鈕 click 處理常式，它使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 以允許使用者選取檔案，然後呼叫 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 讓它成為 **MediaElement** 的使用中檔案。
 
 [!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
 
@@ -126,6 +130,7 @@ title: 系統媒體傳輸控制項
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

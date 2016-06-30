@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 列出建立無障礙的通用 Windows 平台 (UWP) 應用程式時應避免的做法。
+Description: "列出建立無障礙的通用 Windows 平台 (UWP) 應用程式時應避免的做法。"
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
-title: 協助工具應避免的做法
+title: "協助工具應避免的做法"
 label: Accessibility practices to avoid
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b5f5f220d5ff70d70dd797c0bf26a355bd447563
+
 ---
 # 協助工具應避免的做法
 
@@ -32,6 +36,7 @@ template: detail.hbs
 * [協助工具檢查清單](accessibility-checklist.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

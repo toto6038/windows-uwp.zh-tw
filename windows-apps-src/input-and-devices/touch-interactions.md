@@ -5,8 +5,8 @@ title: "觸控互動"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
 ---
 
@@ -159,7 +159,7 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 -   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 
 
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>App 檢視
+## App 檢視
 
 
 透過 app 檢視的移動瀏覽/捲動和縮放設定，調整使用者互動方式。 應用程式檢視指示使用者如何存取並操作應用程式與其內容。 檢視也提供如慣性、內容界限彈回及貼齊點等行為。
@@ -172,7 +172,7 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 
 如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>自訂觸控互動
+## 自訂觸控互動
 
 
 如果您實作自己的互動支援，請牢記使用者所期待的是與 App UI 元素直接互動的直覺式體驗。 建議您在平台控制項程式庫上將您的自訂互動模型化，以保持一致且可探索的 UI 體驗。 這些程式庫中的控制項提供完整的使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
@@ -209,12 +209,12 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>手勢事件
+## 手勢事件
 
 
 如需個別控制項的詳細資訊，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>指標事件
+## 指標事件
 
 
 指標事件是透過各種不同的作用中輸入來源所引發，包括觸控、觸控板、手寫筆和滑鼠 (它們會取代傳統的滑鼠事件)。
@@ -423,7 +423,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>操作事件
+## 操作事件
 
 
 如果您的 app 中需要支援多指互動或是使用速度資料的互動，請使用操作事件。
@@ -599,12 +599,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>路由事件
+## 路由事件
 
 
 本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或 app 的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+## 可行與禁止事項
 
 
 -   設計以觸控互動做為主要預期輸入方法的應用程式。
@@ -616,7 +616,7 @@ End Sub
 -   如有可能，不要使用手指數目來辨別操作。
 
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md) 
@@ -640,6 +640,6 @@ End Sub
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

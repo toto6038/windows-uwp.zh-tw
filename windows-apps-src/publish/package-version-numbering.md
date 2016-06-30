@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
-title: 套件版本編號
+Description: "Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。"
+title: "套件版本編號"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+
 ---
 
 # 套件版本編號
@@ -77,6 +81,7 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 > **注意：**不同於 .appx 套件，在判斷要為特定客戶提供哪一個套件時，不會考慮任何 .xap 套件中的版本號碼。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
-description: 了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。
-title: 使用 Microsoft Advertising 程式庫處理時發生錯誤
+description: "了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。"
+title: "使用 Microsoft Advertising 程式庫處理時發生錯誤"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 5e0c7e6328247e5f686b14b10c80d8aafc13e0e4
+
 ---
 
 # 使用 Microsoft Advertising 程式庫處理時發生錯誤
@@ -76,6 +80,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

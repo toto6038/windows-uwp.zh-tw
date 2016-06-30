@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果您被要求在開發人員中心註冊程序期間提供 VAT 識別碼，本文提供可幫助您開始的一些資訊。
-title: VAT 資訊
+Description: "如果您被要求在開發人員中心註冊程序期間提供 VAT 識別碼，本文提供可幫助您開始的一些資訊。"
+title: "VAT 資訊"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4dd91c901ade83e482061bed781e3fdcd9dde141
+
 ---
 
 # VAT 資訊
@@ -246,6 +250,7 @@ ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

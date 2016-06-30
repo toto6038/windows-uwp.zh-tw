@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。
-title: 使用 Windows 開發人員中心儀表板
+Description: "Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。"
+title: "使用 Windows 開發人員中心儀表板"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+
 ---
 
 # 使用 Windows 開發人員中心儀表板
@@ -33,6 +37,7 @@ Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

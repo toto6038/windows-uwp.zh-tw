@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-title: ListView 與 GridView UI 最佳化
-description: 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。
+title: "ListView 與 GridView UI 最佳化"
+description: "透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。"
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
+
 ---
 # ListView 與 GridView UI 最佳化
 
@@ -320,6 +324,7 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

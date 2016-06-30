@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 輸入並編輯文字時，拼字檢查會以紅色波浪線醒目顯示某個單字，告知使用者這個字拼錯了，並為使用者提供修正拼字錯誤的方式。
-title: 拼字檢查和文字預測
+Description: "輸入並編輯文字時，拼字檢查會以紅色波浪線醒目顯示某個單字，告知使用者這個字拼錯了，並為使用者提供修正拼字錯誤的方式。"
+title: "拼字檢查和文字預測"
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
 label: Spell checking and text prediction
 template: detail.hbs
+redirect_url: text-controls
+ms.sourcegitcommit: 08f982f5c54d596a7624fe63528f91375e7761ca
+ms.openlocfilehash: 8954b14a84241686a7c784c3d250f197bed7c8b6
+
 ---
 
 # 拼字檢查的指導方針
@@ -64,6 +68,7 @@ XAML TextBox 控制項的拼字檢查預設為關閉狀態。 您可以將 **IsS
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

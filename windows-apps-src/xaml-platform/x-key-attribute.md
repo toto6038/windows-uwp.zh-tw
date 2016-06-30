@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。
-title: x&#58;Key 屬性
+description: "唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。"
+title: "x&#58;Key 屬性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+
 ---
 
 # x&#58;Key 屬性
@@ -66,6 +70,7 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

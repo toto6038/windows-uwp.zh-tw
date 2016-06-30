@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: 閱讀有關在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
-title: HTML 和 JavaScript 疑難排解指南
+description: "閱讀有關在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
+title: "HTML 和 JavaScript 疑難排解指南"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+
 
 ---
 
@@ -34,7 +38,7 @@ title: HTML 和 JavaScript 疑難排解指南
 <span id="html-notappearing"/>
 ### 沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 \[網際網路 (用戶端)\] 功能。
 
 2.  確定 JavaScript 參考存在。 若 &lt;head&gt; 區段中沒有 ad.js 參考，**AdControl** 將無法顯示，且建置期間會發生錯誤。
 
@@ -221,7 +225,7 @@ title: HTML 和 JavaScript 疑難排解指南
 <span id="js-adcontrolnotappearing"/>
 ### 沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 \[網際網路 (用戶端)\] 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 尚未具現化。 它將無法供使用。
 
@@ -378,6 +382,7 @@ title: HTML 和 JavaScript 疑難排解指南
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
-title: App 設定和資料
+Description: "本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。"
+title: "App 設定和資料"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+
 ---
 
 # App 設定和資料
@@ -45,6 +49,7 @@ App 資料是 app 自身建立和管理的資料。 其中包含了執行階段�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

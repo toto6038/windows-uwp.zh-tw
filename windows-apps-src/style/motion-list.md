@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
-title: 在 UVP app 中新增和刪除動畫
+Description: "清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。"
+title: "在 UVP app 中新增和刪除動畫"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a795cf52c3d062d2131832ac3bc765f45097e849
+
 ---
 
 # 新增和刪除動畫
@@ -49,6 +53,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

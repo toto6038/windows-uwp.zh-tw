@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 從 Direct3D 9 到 Direct3D 11 的重要變更
-description: 本主題說明 DirectX 9 和 DirectX 11 的概要差異。
+title: "從 Direct3D 9 到 Direct3D 11 的重要變更"
+description: "本主題說明 DirectX 9 和 DirectX 11 的概要差異。"
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+
 ---
 
 # 從 Direct3D 9 到 Direct3D 11 的重要變更
@@ -111,6 +115,7 @@ Direct3D 9 推出之後，硬體仍持續不斷地演進，而可程式化的圖
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

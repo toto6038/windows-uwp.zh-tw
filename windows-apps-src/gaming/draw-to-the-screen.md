@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 繪製到螢幕
-description: 最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。
+title: "繪製到螢幕"
+description: "最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+
 ---
 
 # 繪製到螢幕
@@ -64,7 +68,7 @@ Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/lib
 
 您可以在 Direct3D 範本的自訂 **CreateDeviceResources** 與 **CreateWindowSizeDependentResources** 方法中，找到 Direct3D 裝置與裝置內容的初始化與設定以及轉譯目標。
 
-如需與 EGL 及 EGLContext 類型相關的 Direct3D 裝置內容的詳細資訊，請閱讀[將 EGL 程式碼移植到 DXGI 與 Direct3D](moving-from-egl-to-dxgi.md)
+如需與 EGL 及 EGLContext 類型相關的 Direct3D 裝置內容的詳細資訊，請閱讀[將 EGL 程式碼移植到 DXGI 與 Direct3D](moving-from-egl-to-dxgi.md)。
 
 ## 指示
 
@@ -118,17 +122,17 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-在 Direct3D 11 中的程序非常類似。 (我們假設您是使用 Direct3D 範本的檢視區與轉譯目標設定。
+在 Direct3D 11 中的程序非常類似。 (我們假設您是使用 Direct3D 範本的檢視區與轉譯目標設定。)
 
--   呼叫 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 以更新常數緩衝區 (在此案例中為 model-view-projection 矩陣)
--   使用 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 設定頂點緩衝區
--   使用 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 設定索引緩衝區
--   使用 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 設定特定的三角形拓撲 (三角形清單)
--   使用 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 設定頂點緩衝區的輸入配置
--   使用 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 繫結頂點著色器
--   使用 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 繫結片段著色器
--   透過著色器傳送索引後的頂點，並使用 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 將色彩結果輸出到轉譯目標緩衝區
--   使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 顯示轉譯目標緩衝區
+-   呼叫 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 以更新常數緩衝區 (在此案例中為 model-view-projection 矩陣)。
+-   使用 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 設定頂點緩衝區。
+-   使用 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 設定索引緩衝區。
+-   使用 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 設定特定的三角形拓撲 (三角形清單)。
+-   使用 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 設定頂點緩衝區的輸入配置。
+-   使用 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 繫結頂點著色器。
+-   使用 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 繫結片段著色器。
+-   透過著色器傳送索引後的頂點，並使用 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 將色彩結果輸出到轉譯目標緩衝區。
+-   使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 顯示轉譯目標緩衝區。
 
 Direct3D 11：轉譯框架用於顯示
 
@@ -221,6 +225,7 @@ void RenderObject::Render()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

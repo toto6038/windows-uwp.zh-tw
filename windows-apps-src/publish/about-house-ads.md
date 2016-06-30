@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為自家廣告。
-title: 關於自家廣告
+Description: "您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為自家廣告。"
+title: "關於自家廣告"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c9b73bb1963839640243fce4caaa7f3701b1eb45
+
 ---
 
 # 關於自家廣告
@@ -10,7 +14,7 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 
 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為*自家廣告*。
 
-若要設定自家廣告，請在[建立廣告行銷活動](create-an-ad-campaign-for-your-app.md)時選取 [免費自家廣告]**** 做為 [行銷活動類型]****。 廣告會自動出現在符合下列條件的任何應用程式中：
+若要設定自家廣告，請在建立廣告行銷活動時選取 \[免費自家廣告\] 做為 \[行銷活動類型\]。 廣告會自動出現在符合下列條件的任何應用程式中：
 
 -   應用程式必須與廣告應用程式屬於相同裝置類型。
 -   App 必須至少設定一個廣告單位。
@@ -32,6 +36,7 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

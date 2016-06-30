@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。
-title: 磚和圖示資產
+Description: "以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。"
+title: "磚和圖示資產"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+
 ---
 
 # 磚和圖示資產的指導方針
@@ -296,11 +300,11 @@ template: detail.hbs
 
 **磚資產**
 
--   置中的資產一般使用於 [開始] 畫面上，以展示您的應用程式。
+-   置中的資產一般使用於 \[開始\] 畫面上，以展示您的應用程式。
 -   檔案名稱格式：\*Tile.scale-\*.PNG
 -   受影響的應用程式：每個 UWP app
 -   用途：
-    -   預設的 [開始] 畫面磚 (桌面和行動)
+    -   預設的 \[開始\] 畫面磚 (桌面和行動)
     -   重要訊息中心 (桌面和行動)
     -   工作切換器 (行動)
     -   共用選擇器 (行動)
@@ -313,11 +317,11 @@ template: detail.hbs
 -   檔案名稱格式：\*AppList.scale-\*.PNG
 -   受影響的應用程式：每個 UWP app
 -   用途：
-    -   [開始] 畫面的所有 App 清單 (桌面)
-    -   [開始] 畫面的最常用清單 (桌面)
+    -   \[開始\] 畫面的所有 App 清單 (桌面)
+    -   \[開始\] 畫面的最常用清單 (桌面)
     -   工作管理員 (桌面)
     -   Cortana 搜尋結果
-    -   [開始] 畫面的所有 App 清單 (行動)
+    -   \[開始\] 畫面的所有 App 清單 (行動)
     -   設定
 
 **含有背板的目標大小清單資產**
@@ -326,8 +330,8 @@ template: detail.hbs
 -   檔案名稱格式：\*AppList.targetsize-\*.PNG
 -   受影響的應用程式：每個 UWP app
 -   用途：
-    -   [開始] 畫面的捷徑清單 (桌面)
-    -   [開始] 畫面的右下角的磚 (桌面)
+    -   \[開始\] 畫面的捷徑清單 (桌面)
+    -   \[開始\] 畫面的右下角的磚 (桌面)
     -   捷徑 (桌面)
     -   控制台 (桌面)
 
@@ -384,6 +388,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

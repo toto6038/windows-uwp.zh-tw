@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
-title: 將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
+description: "與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。"
+title: "將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+
 ---
 
 # 將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
@@ -73,6 +77,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

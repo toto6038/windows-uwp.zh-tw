@@ -1,8 +1,12 @@
 ---
-title: 建立 Microsoft Passport 登入服務
-description: 這是一份完整逐步解說的第 2 部分，將說明如何在 Windows 10 UWP (通用 Windows 平台) 應用程式中，使用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統。
+title: "建立 Microsoft Passport 登入服務"
+description: "這是一份完整逐步解說的第 2 部分，將說明如何在 Windows 10 UWP (通用 Windows 平台) 應用程式中，使用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統。"
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
+
 ---
 
 # 建立 Microsoft Passport 登入服務
@@ -11,7 +15,7 @@ author: awkoren
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 這是一份完整逐步解說的第 2 部分，將說明如何在 Windows 10 UWP (通用 Windows 平台) 應用程式中，使用 Microsoft Passport 來取代傳統的使用者名稱及密碼驗證系統。 這篇文章將從第 1 部分 ([Microsoft Passport 登入應用程式](microsoft-passport-login.md)) 結束的地方延續下去，擴充應用程式的功能來示範如何將 Microsoft Passport 整合到您現有的應用程式中。
 
@@ -23,8 +27,8 @@ author: awkoren
 您將在這個練習中，從您在第一個實驗室所建置的 Passport 應用程式開始，建立本機模擬伺服器和資料庫。 這個實習實驗室的目的，是要讓您了解如何將 Microsoft Passport 整合到現有的系統中。 由於我們使用模擬伺服器及模擬資料庫，因此會去除許多不相關的設定。 而在您自己的應用程式中，您必須用實際的服務及資料庫取代模擬的物件。
 
 -   首先，請開啟您在第一個 Passport 實習實驗室所建立的 PassportLogin 解決方案。
--   您將從實作模擬伺服器及模擬資料庫開始。 請建立名為「AuthService」的新資料夾， 方法是在方案總管中，用滑鼠右鍵按一下 [PassportLogin (通用 Windows)] 方案，然後選取 [加入] &gt; [新增資料夾]。
--   請建立 UserAccount 和 PassportDevices 類型，來做為將在模擬資料庫中儲存的資料模型。 UserAccount 類似在傳統的驗證伺服器上實作的使用者模型。 請用滑鼠右鍵按一下 [AuthService] 資料夾，然後加入名為「UserAccount.cs」的新類別。
+-   您將從實作模擬伺服器及模擬資料庫開始。 請建立名為「AuthService」的新資料夾， 方法是在方案總管中，用滑鼠右鍵按一下 \[PassportLogin (通用 Windows)\] 方案，然後選取 \[加入\] &gt; \[新增資料夾\]。
+-   請建立 UserAccount 和 PassportDevices 類型，來做為將在模擬資料庫中儲存的資料模型。 UserAccount 類似在傳統的驗證伺服器上實作的使用者模型。 請用滑鼠右鍵按一下 \[AuthService\] 資料夾，然後加入名為「UserAccount.cs」的新類別。
 
     ![](images/passport-auth-1.png)
 
@@ -51,7 +55,7 @@ author: awkoren
 
     您可能已經注意到，PassportDevices 清單已標記為註解。 這就是您需要針對目前實作中現有使用者所做的修改。 PassportDevices 清單將包含 deviceID、透過 Microsoft Passport 產生的公開金鑰，以及 [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034)。 而對於這個實習實驗室，您將必須實作 keyAttestationResult，因為只有在擁有 TPM (信賴平台模組) 晶片之裝置上的 Microsoft Passport 才會提供 keyAttestationResult。 **KeyCredentialAttestationResult** 是多重屬性的組合，必須分割才能利用資料庫來儲存及載入。
 
--   請在 [AuthService] 資料夾中，建立名為「PassportDevice.cs」的新類別。 這是上述的 Passport 裝置所用的模型。 請將類型定義變更為 Public，然後加入下列屬性。
+-   請在 \[AuthService\] 資料夾中，建立名為「PassportDevice.cs」的新類別。 這是上述的 Passport 裝置所用的模型。 請將類型定義變更為 Public，然後加入下列屬性。
 
     ```cs
     namespace PassportLogin.AuthService
@@ -89,7 +93,7 @@ author: awkoren
     }
     ```
 
--   UserAccount 及 PassportDevice 所用的模型已經建立，現在您需要在 [AuthService] 資料夾中，建立另一個新類別來做為模擬資料庫。 這就是您將用來儲存及載入使用者帳戶清單的本機模擬資料庫。 在真實世界中，這就是您的資料庫實作。 請在 [AuthService] 資料夾中，建立名為「MockStore.cs」的新類別， 並將類別定義變更為 Public。
+-   UserAccount 及 PassportDevice 所用的模型已經建立，現在您需要在 \[AuthService\] 資料夾中，建立另一個新類別來做為模擬資料庫。 這就是您將用來儲存及載入使用者帳戶清單的本機模擬資料庫。 在真實世界中，這就是您的資料庫實作。 請在 \[AuthService\] 資料夾中，建立名為「MockStore.cs」的新類別， 並將類別定義變更為 Public。
 -   由於模擬存放區將在本機儲存及載入使用者帳戶清單，您可以利用 XmlSerializer 來實作儲存及載入該清單的邏輯。 您也需要記住檔案名稱及檔案的儲存位置。 請在 MockStore.cs 中實作下列程式碼：
 -   
 
@@ -382,7 +386,7 @@ author: awkoren
     }
     ```
 
--   現在 MockStore 類別已經完成，但由於它代表資料庫，因此應該被視為私用。 為了要存取 MockStore，您需要 AuthService 類別來管理資料庫的資料。 請在 [AuthService] 資料夾中，建立名為「AuthService.cs」的新類別， 並將類別定義變更為 Public，然後加入單一執行個體模式，來確保執行過程中只會建立一個執行個體。
+-   現在 MockStore 類別已經完成，但由於它代表資料庫，因此應該被視為私用。 為了要存取 MockStore，您需要 AuthService 類別來管理資料庫的資料。 請在 \[AuthService\] 資料夾中，建立名為「AuthService.cs」的新類別， 並將類別定義變更為 Public，然後加入單一執行個體模式，來確保執行過程中只會建立一個執行個體。
 
     ```cs
     namespace PassportLogin.AuthService
@@ -873,7 +877,7 @@ author: awkoren
     }
     ```
 
--   您要更新的下一個頁面就是 UserSelection 頁面。 UserSelection 頁面將需要使用 AuthService 來擷取目前裝置的所有使用者帳戶。 目前您完全無法把裝置識別碼傳遞給 AuthService，讓它能傳回該裝置的使用者帳戶。 請在 [Utils] 資料夾中建立名為「Helpers.cs」的新類別， 並把類別定義變更為 Public Static，然後加入下列方法來讓您擷取目前的裝置識別碼。
+-   您要更新的下一個頁面就是 UserSelection 頁面。 UserSelection 頁面將需要使用 AuthService 來擷取目前裝置的所有使用者帳戶。 目前您完全無法把裝置識別碼傳遞給 AuthService，讓它能傳回該裝置的使用者帳戶。 請在 \[Utils\] 資料夾中建立名為「Helpers.cs」的新類別， 並把類別定義變更為 Public Static，然後加入下列方法來讓您擷取目前的裝置識別碼。
 
     ```cs
     using Windows.Security.ExchangeActiveSyncProvisioning;
@@ -1164,7 +1168,7 @@ author: awkoren
     }
     ```
 
--   在這個練習的過程中，您已經更新用戶端的應用程式來使用 AuthService。 這麼做能讓您不再需要 Account 類別及 AccountHelper 類別。 請刪除 [Utils] 資料夾中的 Account 類別、[Models] 資料夾，以及 AccountHelper 類別。 您將需要移除整個應用程式中對 Models 命名空間的所有參考，才能順利建置解決方案。
+-   在這個練習的過程中，您已經更新用戶端的應用程式來使用 AuthService。 這麼做能讓您不再需要 Account 類別及 AccountHelper 類別。 請刪除 \[Utils\] 資料夾中的 Account 類別、\[Models\] 資料夾，以及 AccountHelper 類別。 您將需要移除整個應用程式中對 Models 命名空間的所有參考，才能順利建置解決方案。
 -   請建置並執行應用程式，現在您可以搭配模擬服務及資料庫來使用 Microsoft Passport 了！
 
 在這個實習實驗室中，您已經了解如何使用 Passport API，來取代從 Windows 10 電腦使用驗證時的密碼需求。 當您考慮到在現有的系統中，人員需要耗費多少精力來維護密碼，以及支援遺失密碼的功能，您應該就會發現改用這個新的 Microsoft Passport 驗證系統的好處。
@@ -1176,6 +1180,7 @@ author: awkoren
 * [Microsoft Passport 及 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登入應用程式](microsoft-passport-login.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

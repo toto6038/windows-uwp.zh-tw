@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 範本設定類別
-title: 範本設定類別
+description: "範本設定類別"
+title: "範本設定類別"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
+
 ---
 
 # 範本設定類別
@@ -106,6 +110,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

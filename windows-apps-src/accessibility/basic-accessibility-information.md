@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。
+Description: "基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。"
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
-title: 公開基本的協助工具資訊
+title: "公開基本的協助工具資訊"
 label: Expose basic accessibility information
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
+
 ---
 
 # 公開基本的協助工具資訊  
@@ -54,7 +57,7 @@ template: detail.hbs
 
 * [
             **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 以及 **RichTextBlock**，每一個都會將 **Text** 屬性的值升級為預設的無障礙名稱。
-* 任何 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 子類別都會使用反覆的 "ToString" 技術在它的 [**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) 值內尋找字串，然後將這些字串升級為預設的無障礙名稱。
+* 任何 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 子類別都會使用反覆的 "ToString" 技術在它的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 值內尋找字串，然後將這些字串升級為預設的無障礙名稱。
 
 > [!NOTE]
 > 根據使用者介面自動化的規定，無障礙名稱長度不可以超過 2048 個字元。 如果自動判斷無障礙名稱所使用的字串超過字元上限，則會截斷無障礙名稱超出的部分。
@@ -132,7 +135,7 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 ## 無障礙名稱和當地語系化  
 為了確保無障礙名稱也是經過當地語系化的元素，應使用正確的技術將可當地語系化的字串儲存成資源，然後使用 [x:Uid directive](https://msdn.microsoft.com/library/windows/apps/Mt204791) 值來參照資源關係。 如果無障礙名稱來自於明確設定的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 用法，請確定字串也可當地語系化。
 
-請注意，附加屬性 (例如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 屬性) 會使用適用於資源名稱的特定合格語法，如此在套用到特定元素時資源便會參考附加屬性。 例如，在套用到名為 `MediumButton` 的 UI 元素時 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 的資源名稱為：
+請注意，附加屬性 (例如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 屬性) 會使用適用於資源名稱的特定合格語法，如此在套用到特定元素時資源便會參考附加屬性。 例如，在套用到名為 `MediumButton` 的 UI 元素時 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 的資源名稱為：`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
 
 <span id="related_topics"/>
 ## 相關主題  
@@ -142,6 +145,7 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 * [協助工具測試](accessibility-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

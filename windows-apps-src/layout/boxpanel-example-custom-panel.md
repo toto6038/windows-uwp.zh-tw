@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: '學習如何撰寫自訂 Panel 類別程式碼、實作 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 屬性。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "學習如何撰寫自訂 Panel 類別程式碼、實作 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 屬性。"
+MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'BoxPanel，自訂面板範例'
+title: "BoxPanel，自訂面板範例"
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e03a4c9d2116d779545cb1fb8e87fa86a632bca8
+
 ---
 
 # BoxPanel，自訂面板範例
@@ -20,7 +24,7 @@ template: detail.hbs
 
 學習如何撰寫自訂 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別程式碼、實作 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 和 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法，以及使用 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性。 範例程式碼示範一個自訂面板實作，但對於影響不同配置案例的自訂面板方法的配置概念則未多加說明。 如需有關這些配置概念以及如何才能套用到特定配置案例的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)。
 
-「面板」**是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 與 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel**。 當您從 **Panel** 開始時，**ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
+「面板」是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 與 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel**。 當您從 **Panel** 開始時，**ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
 
 ## 您的配置案例
 
@@ -36,7 +40,7 @@ template: detail.hbs
 
 ## 從 **Panel** 衍生著手
 
-從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生一個自訂類別著手。 若要這樣做，最簡單的方法可能是從 Microsoft Visual Studio 的 [方案總管]**** 針對專案使用 [加入]****  |  [新增項目]****  |  [類別]**** 內容功能表選項，為這個類別定義個別的程式碼檔案。 將類別 (和檔案) 命名為 `BoxPanel`。
+從 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 衍生一個自訂類別著手。 若要這樣做，最簡單的方法可能是從 Microsoft Visual Studio 的 \[方案總管\] 針對專案使用 \[加入\] \[新增項目\] \[類別\] 內容功能表選項，為這個類別定義個別的程式碼檔案。 將類別 (和檔案) 命名為 `BoxPanel`。
 
 因為類別的範本檔案並非專供通用 Windows 平台 (UWP) app 使用，所以一開始不會有許多 **using** 陳述式。 因此，請先新增 **using** 陳述式。 範本檔案開始位置也使用了幾個您可能不需要，且可以刪除的 **using** 陳述式。 以下是建議的 **using** 陳述式清單，可用以解析一般自訂面板程式碼所需的類型：
 
@@ -117,7 +121,8 @@ protected override Size MeasureOverride(Size availableSize)
 ```
 
 [
-            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
+              **MeasureOverride**
+            ](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
 
 `BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#scenario)。
 
@@ -125,7 +130,11 @@ protected override Size MeasureOverride(Size availableSize)
 
 還有可能在 *availableSize* 的高度元件為無限時，使用此面板。 若是如此，面板不會有可供劃分的已知高度。 在這種情況下，度量階段的邏輯會通知各個子系，高度尚無界限。 方法是針對 [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) 為無限的子系，將 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 傳送至 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼叫。 上述為有效做法。 呼叫 **Measure** 時，邏輯是將 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 設定為下列各項的最小值：傳遞至 **Measure** 的項目，或來自明確設定的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等係數的元素原始大小。
 
-**注意** &nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有此行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
+**注意**
+            &nbsp;&nbsp;
+            [
+              **StackPanel**
+            ](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有此行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
 
 不過，面板本身不會從 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 傳回無限值的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)；造成在配置期間擲回例外狀況。 因此，部分邏輯是要找出任何子系要求的最大高度，並在面板本身的大小限制未提供儲存格高度時，使用該高度做為儲存格高度。 以下是先前程式碼中參照的協助程式函式 `LimitUnboundedSize`，會接受上述的最大儲存格高度，並用它提供面板一個可傳回的有限高度，以及確保在起始排列階段之前，`cellheight` 會是有限數字：
 
@@ -166,7 +175,8 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 [
-            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。
+              **ArrangeOverride**
+            ](https://msdn.microsoft.com/library/windows/apps/br208711) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。
 
 您是否注意到，執行計算的次數不如 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 中頻繁；一般就是如此。 您已經從面板本身的 **MeasureOverride** 邏輯中，或從在度量階段期間所設定各個子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值中，得知子系的大小。 不過，我們仍然需要決定各個子系在面板內的顯示位置。 在一般面板中，每個子系都應在不同的位置轉譯。 一般案例並不希望有會建立重疊元素的面板 (但如果那確實是您屬意的案例，還是可以建立有目的的重疊面板)。
 
@@ -211,7 +221,8 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 您可能會疑惑，有 10 個項目的面板為什麼不選擇和項目數目完全符合的 5x2 矩形。 不過在實務上，會將面板的大小調整為較沒有強烈外觀比例的矩形。 採用最少量方形技術，可讓調整大小邏輯與一般配置形狀搭配使用並運作良好，而且也不鼓勵將儲存格形狀調整為奇特的外觀比例。
 
-**注意：** &nbsp;&nbsp;本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**注意：**
+            &nbsp;&nbsp;本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 
@@ -228,6 +239,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 [對齊、邊界及邊框間距](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

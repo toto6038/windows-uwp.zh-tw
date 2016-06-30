@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: 視覺層
-description: Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。
+title: "視覺層"
+description: "Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+
 ---
 # 視覺層
 
@@ -52,16 +56,17 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 
 
 **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 開發， 請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
 ## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>其他資源：
 
--   閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[Graphics and Animation - Windows Composition Turns 10 (圖形與動畫 - Windows 組合邁向 10)](https://msdn.microsoft.com/magazine/mt590968)
--   [Composition GitHub](https://github.com/Microsoft/composition) 中的組合範例
--   API 的完整參考文件。
--   已知問題：[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)
+-   閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[圖形與動畫 - Windows 組合邁向 10](https://msdn.microsoft.com/magazine/mt590968) (英文)
+-   [Composition GitHub](https://github.com/Microsoft/composition) 中的組合範例 (英文)。
+-   [
+            **API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
+-   已知問題：[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
  
 
@@ -72,6 +77,7 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

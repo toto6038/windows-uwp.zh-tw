@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。
-title: ThemeResource 標記延伸
+description: "透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。"
+title: "ThemeResource 標記延伸"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+translationtype: Human Translation
+ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
+ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
+
 ---
 
 # {ThemeResource} 標記延伸
@@ -85,7 +89,8 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 在這裡，屬性採用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值，而使用 **ThemeResource** 建立對名為 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 之 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 資源的參考。
 
 [
-            **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
+              **Button**
+            ](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
 
 ```xml
 <VisualState x:Name="Pressed">
@@ -140,7 +145,7 @@ Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開�
 
 當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
 
-一旦資源索引鍵存在於任何 **{ThemeResource}** 用法中，**[移至定義]** (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 **[移至定義]** 會將您帶往檔案中找到的第一個定義，也就是 **Default** 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
+一旦資源索引鍵存在於任何 {ThemeResource} 用法中，\[移至定義\] (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 \[移至定義\] 會將您帶往檔案中找到的第一個定義，也就是 Default 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
 
 ## 相關主題
 
@@ -152,6 +157,7 @@ Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

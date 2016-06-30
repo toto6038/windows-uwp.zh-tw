@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 切換開關相當於實體開關，讓使用者能夠開啟或關閉選項。
-title: 切換開關控制項的指導方針
+Description: "切換開關相當於實體開關，讓使用者能夠開啟或關閉選項。"
+title: "切換開關控制項的指導方針"
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e90760c6894ee5d32ba1063993a703023d23c152
+
 ---
 # 切換開關
 
@@ -36,9 +40,9 @@ template: detail.hbs
 
     在上述範例中，在使用切換開關時，很明顯地是將無線設定為「開啟」。 但透過核取方塊，使用者需要思考現在是否已將無線設定為開啟，或者他們是否需要核取方塊來開啟無線。
 
--   當使用者需要執行額外步驟以便讓變更生效時，請使用核取方塊。 例如，如果使用者必須按一下 [提交] 或 [下一步] 按鈕以套用變更時，請使用核取方塊。
+-   當使用者需要執行額外步驟以便讓變更生效時，請使用核取方塊。 例如，如果使用者必須按一下 \[提交\] 或 \[下一步\] 按鈕以套用變更時，請使用核取方塊。
 
-    ![核取方塊和 [提交] 按鈕](images/submitcheckbox.png)
+    ![核取方塊和 \[提交\] 按鈕](images/submitcheckbox.png)
 
 -   當使用者可以選取多個項目時，請使用核取方塊或[清單方塊](lists.md)：
 
@@ -157,6 +161,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch 類別**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

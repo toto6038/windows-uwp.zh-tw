@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 處理 URI 啟用
-description: 了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。
+author: TylerMSFT
+title: "處理 URI 啟用"
+description: "了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+
 ---
 
 # 處理 URI 啟用
@@ -29,28 +32,25 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 
 App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件。 以下是如何指示 app 處理 `alsdk`URI 配置名稱的方法。
 
-1.  在 [方案總管]**** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告]**** 索引標籤，然後在 [可用宣告] ****下拉式清單中選取 [通訊協定]****，然後按一下 [新增]****。
+1.  在 \[方案總管\] 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 \[宣告\] 索引標籤，然後在 \[可用宣告\] 下拉式清單中選取 \[通訊協定\]，然後按一下 \[新增\]。
 
     以下簡短說明可在資訊清單設計工具中為通訊協定填寫的每個欄位 (如需詳細資訊請參閱 [**AppX 封裝資訊清單**](https://msdn.microsoft.com/library/windows/apps/dn934791))：
-    
+
 | 欄位 | 說明 |
 |-------|-------------|
-| **標誌** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的標誌。 如果沒有指定標誌，則會使用 app 的小標誌。 |
-| **顯示名稱** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的顯示名稱。 |
+| **標誌** | 在 \[控制台\] 的 設定預設程式中指定用來識別 URI 配置名稱的標誌。 如果沒有指定標誌，則會使用 app 的小標誌。 |
+| **顯示名稱** | 在 \[控制台\] 的 設定預設程式中指定用來識別 URI 配置名稱的顯示名稱。 |
 | **名稱** | 選擇 URI 配置的名稱。 |
-|  | **注意** [名稱] 必須全都是小寫字母。 |
+|  | 注意 \[名稱\] 必須全都是小寫字母。 |
 |  | **保留和禁止的檔案類型** 請參閱[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)，以取得因為已經被保留或禁止使用，而無法為 UWP app 登錄之 URI 配置的字母排序清單。 |
 | **執行檔** | 指定通訊協定預設的啟動執行檔。 如果沒有指定，則會使用 App 的執行檔。 如果已指定，字串長度必須介於 1 到 256 個字元，且結尾必須為「.exe」，同時不能包含下列字元：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，則也會使用**進入點**。 如果沒有指定**進入點**，則會使用針對 App 定義的進入點。 |
-       
-| 詞彙 | 說明 |
-|------|-------------|
 | **進入點** | 指定處理通訊協定延伸的工作。 這必須符合 Windows 執行階段類型的完整命名空間名稱。 如果沒有指定，則會使用 app 的進入點。 |
 | **開始頁面** | 處理擴充點的網頁 |
 | **資源群組** | 您可以用來基於資源管理目的、將延伸啟用群組在一起的標記。 |
-| **所需的檢視** (僅限 Windows) | 指定 [所需的檢視]**** 欄位，指示當針對 URI 配置名稱啟動 app 時，app 視窗所需的空間大小。 [所需的檢視]**** 的可能值為 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意** Windows 在判斷目標 app 的最終視窗大小時會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目以及螢幕方向等。 設定 [所需的檢視]**** 並無法保證目標 app 的特定視窗行為。<br/> 行動裝置系列上不支援**行動裝置系列：所需的檢視**。 |
-2.  輸入 `images\Icon.png` 做為 [標誌]****。
-3.  輸入 `SDK Sample URI Scheme` 做為 [顯示名稱]****
-4.  輸入 `alsdk` 做為 [名稱]****。
+| **所需的檢視** (僅限 Windows) | 指定 \[所需的檢視\] 欄位，指示當針對 URI 配置名稱啟動 app 時，app 視窗所需的空間大小。 \[所需的檢視\] 的可能值為 Default、UseLess、UseHalf、UseMore 或 UseMinimum。 <br/>**注意** Windows 在判斷目標 app 的最終視窗大小時會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目以及螢幕方向等。 設定 \[所需的檢視\] 並無法保證目標 app 的特定視窗行為。<br/> 行動裝置系列上不支援**行動裝置系列：所需的檢視**。 |
+2.  輸入  做為 \[標誌\]。
+3.  輸入  做為 \[顯示名稱\]
+4.  輸入  做為 \[名稱\]。
 5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
     這樣會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.protocol** 類別指示 app 處理 `alsdk` URI 配置名稱。
@@ -69,58 +69,59 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 ## 步驟 2：新增適當圖示
 
 
-成為 URI 配置名稱預設程式的 app，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。
+成為 URI 配置名稱預設程式的 app，會在系統的各個地方顯示它們的圖示，例如 \[預設程式\] 控制台。
 
 建議您使用適當圖示來代表專案，這樣能讓標誌在所有位置上看起來都很美觀。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
 
-![[方案總管] 及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
+![\[方案總管\] 及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
 
 ## 步驟 3：處理啟用的事件
 
 
 [
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件處理常式會收到所有啟用事件。 **Kind** 屬性指示啟用事件的類型。 這個範例是設定來處理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 啟用事件。
+              **OnActivated**
+            ](https://msdn.microsoft.com/library/windows/apps/br242330) 事件處理常式會收到所有啟用事件。 **Kind** 屬性指示啟用事件的類型。 這個範例是設定來處理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 啟用事件。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-public partial class App
-{
-   protected override void OnActivated(IActivatedEventArgs args)
-   {
-      if (args.Kind == ActivationKind.Protocol)
-      {
-         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
-         // TODO: Handle URI activation
-         // The received URI is eventArgs.Uri.AbsoluteUri
-      }
-   }
-}
-```
-```vb
-Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
-   If args.Kind = ActivationKind.Protocol Then
-      ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
-      
-      ' TODO: Handle URI activation
-      ' The received URI is eventArgs.Uri.AbsoluteUri
-   End If
-End Sub
-```
-```cpp
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
-{
-   if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
-   {
-      Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs = 
-          dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
-      
-      // TODO: Handle URI activation  
-      // The received URI is eventArgs->Uri->RawUri
-   } 
-}
-```
+> ```cs
+> public partial class App
+> {
+>    protected override void OnActivated(IActivatedEventArgs args)
+>   {
+>       if (args.Kind == ActivationKind.Protocol)
+>       {
+>          ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+>          // TODO: Handle URI activation
+>          // The received URI is eventArgs.Uri.AbsoluteUri
+>       }
+>    }
+> }
+> ```
+> ```vb
+> Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
+>    If args.Kind = ActivationKind.Protocol Then
+>       ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
+>       
+>       ' TODO: Handle URI activation
+>       ' The received URI is eventArgs.Uri.AbsoluteUri
+>  End If
+> End Sub
+> ```
+> ```cpp
+> void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
+> {
+>    if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+>    {
+>       Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
+>           dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
+>       
+>       // TODO: Handle URI activation  
+>       // The received URI is eventArgs->Uri->RawUri
+>    }
+> }
+> ```
 
-> **注意** 當透過「通訊協定協定」啟動時，請確定 [返回] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
+> 注意 當透過「通訊協定協定」啟動時，請確定 \[返回\] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
 
 建議 app 針對每個開啟新頁面的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。 決定針對啟動和檔案協定使用單一 XAML **Frame** 的 app，應該先清除 **Frame** 瀏覽日誌上的頁面，然後再瀏覽到新頁面。
 
@@ -133,7 +134,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 > **注意** 如果您要為 app 建立新的 URI 配置名稱，請務必遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指導方針。 這樣可確保您的名稱符合 URI 配置的標準。
 
-> **注意** 當透過「通訊協定協定」啟動時，請確定 [返回] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
+> 注意 當透過「通訊協定協定」啟動時，請確定 \[返回\] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
 
 建議 app 針對每個開啟新 URI 目標的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。
 
@@ -176,8 +177,6 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

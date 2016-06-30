@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 這個主題說明在大多數 XAML 檔案的根元素中找到的 XML/XAML 命名空間 (xmlns) 對應。 它也說明如何為自訂類型和組件產生類似的對應。
-title: XAML 命名空間與命名空間對應
+description: "這個主題說明在大多數 XAML 檔案的根元素中找到的 XML/XAML 命名空間 (xmlns) 對應。 它也說明如何為自訂類型和組件產生類似的對應。"
+title: "XAML 命名空間與命名空間對應"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+translationtype: Human Translation
+ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
+ms.openlocfilehash: fe24a66836d85e8d102ebc6b23b42c32a687c593
+
 ---
 
 # XAML 命名空間與命名空間對應
@@ -64,7 +68,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 ### **local:** 與 **common:**
 
-"local:" 是一個前置詞，通常會針對範本化的 Windows 市集 app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 Windows 市集 app 專案的相關前置詞為 **common:**。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 [**方案總管**] 檢視的 Common 資料夾中找到定義。
+"local:" 是一個前置詞，通常會針對範本化的 Windows 市集 app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 Windows 市集 app 專案的相關前置詞為 **common:**。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 \[方案總管\] 檢視的 Common 資料夾中找到定義。
 
 ### **vsm:**
 
@@ -109,6 +113,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

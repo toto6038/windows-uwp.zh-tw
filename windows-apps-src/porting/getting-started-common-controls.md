@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: 開始使用常用控制項
-title: 開始使用常用控制項
+description: "開始使用常用控制項"
+title: "開始使用常用控制項"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
+
 ---
 
 # 開始使用：常用控制項
@@ -57,6 +61,7 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 * [Build 2014：使用 Visual Studio 建置 XAML 交集的應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397876)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

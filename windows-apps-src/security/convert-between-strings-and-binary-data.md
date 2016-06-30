@@ -1,8 +1,12 @@
 ---
-title: 在字串與二進位資料間轉換
-description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 的字串與二進位資料間轉換。
+title: "在字串與二進位資料間轉換"
+description: "這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 的字串與二進位資料間轉換。"
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 667338ed3808f79b75230bc0c3ea00cc7e274d5a
+
 ---
 
 # 在字串與二進位資料間轉換
@@ -29,6 +33,7 @@ public void ConvertData()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

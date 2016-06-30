@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-description: 請使用這個方法來更新 Windows 市集索引鍵。
-title: 更新 Windows 市集識別碼索引鍵
+description: "請使用這個方法來更新 Windows 市集索引鍵。"
+title: "更新 Windows 市集識別碼索引鍵"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+
 ---
 
 # 更新 Windows 市集識別碼索引鍵
@@ -17,7 +20,7 @@ title: 更新 Windows 市集識別碼索引鍵
 
 若要使用這個方法，您將需要：
 
--   先前利用 **https://onestore.microsoft.com** 對象 URI 所建立的 Azure AD 存取權杖。
+-   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
 -   藉由從 app 中用戶端程式碼來呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法，所產生的過期 Windows 市集識別碼索引鍵。
 
 如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
@@ -29,10 +32,10 @@ title: 更新 Windows 市集識別碼索引鍵
 
 | 索引鍵類型    | 方法 | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
-| 集合 | POST   | https://collections.mp.microsoft.com/v6.0/b2b/keys/renew |
-| 購買    | POST   | https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew    |
+| 集合 | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
+| 購買    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
 
- 
+<br/> 
 
 ### 要求的標頭
 
@@ -42,7 +45,7 @@ title: 更新 Windows 市集識別碼索引鍵
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
- 
+<br/> 
 
 ### 要求主體
 
@@ -51,7 +54,7 @@ title: 更新 Windows 市集識別碼索引鍵
 | serviceTicket | 字串 | Azure AD 存取權杖。        | 是      |
 | key           | 字串 | 過期的 Windows 市集識別碼索引鍵。 | 否       |
 
- 
+<br/> 
 
 ### 要求的範例
 
@@ -61,7 +64,7 @@ Content-Length: 2774
 Content-Type: application/json
 Host: collections.mp.microsoft.com
 
-{ 
+{
     "serviceTicket": "eyJ0eXAiOiJKV1QiLCJhb….",
     "Key": "eyJ0eXAiOiJKV1QiLCJhbG…."
 }
@@ -76,7 +79,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | 字串 | 更新的 Windows 市集索引鍵，可在未來呼叫 Windows 市集集合 API 或購買 API 時使用。 | 否       |
 
- 
+<br/> 
 
 ### 回應的範例
 
@@ -103,7 +106,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | InconsistentClientId       | Windows 市集識別碼索引鍵的 *clientId* 宣告，和 Azure AD 存取權杖的 *appid* 不相符。                                                                     |
 
- 
+<br/> 
 
 ## 相關主題
 
@@ -115,6 +118,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

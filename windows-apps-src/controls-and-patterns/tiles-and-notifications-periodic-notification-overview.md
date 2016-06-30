@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
-title: 定期通知概觀
+Description: "定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。"
+title: "定期通知概觀"
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
+
 ---
 
 # 定期通知概觀
@@ -44,11 +48,14 @@ template: detail.hbs
 呼叫這些方法的其中一個開始輪詢：
 
 -   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (磚)
+              **StartPeriodicUpdate**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701684) (磚)
 -   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (徽章)
+              **StartPeriodicUpdate**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701611) (徽章)
 -   [
-            **StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (磚)
+              **StartPeriodicUpdateBatch**
+            ](https://msdn.microsoft.com/library/windows/apps/hh967945) (磚)
 
 呼叫其中一個方法時，會立即輪詢 URI，並使用收到的內容來更新磚或徽章。 在這次初始輪詢之後，Windows 會在固定的時間間隔繼續提供更新。 輪詢會一直持續，直到您明確加以停止 (透過 [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697))、解除安裝 app 或移除磚 (次要磚) 後才會停止。 否則，即使不再啟動您的 app，Windows 還是會繼續輪詢磚或徽章的更新。
 
@@ -71,20 +78,20 @@ template: detail.hbs
 
 根據預設，定期磚和徽章通知會在下載的三天後到期。 當通知到期的時候，會從徽章、磚或佇列中移除內容，不再對使用者顯示。 最佳做法是使用一個對您的 app 或通知有意義的時間，在所有的定期磚和徽章通知上設定明確的到期時間，以確保內容不超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務無法使用，或使用者在一段時間從網路中斷連線時，它也可以確保會移除過時內容。
 
-您的雲端服務會在回應承載中包含 X-WNS-Expires HTTP 標頭，以設定通知的到期日期和時間。 X-WNS-Expires HTTP 標頭必須符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 如需詳細資訊，請參閱 [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) 或 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)
+您的雲端服務會在回應承載中包含 X-WNS-Expires HTTP 標頭，以設定通知的到期日期和時間。 X-WNS-Expires HTTP 標頭必須符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 如需詳細資訊，請參閱 [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) 或 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)。
 
 例如，在股市交易日，您可以將股價更新到期時間設定為輪詢間隔時間的兩倍 (例如，如果是每半小時輪詢一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 
 ## <span id="taggo"></span><span id="TAGGO"></span>通知佇列中的定期通知
 
 
-您可以使用定期磚更新搭配[通知循環](https://msdn.microsoft.com/library/windows/apps/hh781199)。 根據預設，[開始] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
+您可以使用定期磚更新搭配[通知循環](https://msdn.microsoft.com/library/windows/apps/hh781199)。 根據預設，\[開始\] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
 
 如果佇列達到 5 個通知的容量，下一個新通知將會取代佇列中最舊的通知。 不過，您可以在通知設定標記，影響佇列的取代原則。 標記是應用程式專用、無大小寫之分的字串，最多可有 16 個英數字元，在回應承載的 [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP 標頭中指定。 Windows 會將傳入通知上的標記與已經在佇列中所有通知的標記相比較。 如果找到相符的標記，新的通知會取代具有相同標記的佇列通知。 如果沒有找到相符的標記，會套用預設的取代規則，由新的通知取代佇列中最舊的通知。
 
 您可以使用通知佇列和標記來實作各種不同的通知情形。 例如，股票應用程式可以傳送 5 個通知，每個通知各與不同的股票有關，並使用股票名稱做標記。 這樣可以避免佇列包含 2 則相同股票的通知，而且其中較舊的是已過期的通知。
 
-如需詳細資訊，請參閱[使用通知佇列](https://msdn.microsoft.com/library/windows/apps/hh781199)
+如需詳細資訊，請參閱[使用通知佇列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
 
 ### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>啟用通知佇列
 
@@ -109,6 +116,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

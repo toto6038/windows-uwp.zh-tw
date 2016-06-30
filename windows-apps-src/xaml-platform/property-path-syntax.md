@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 您可以使用 PropertyPath 類別和字串語法，具現化 XAML 或程式碼中的 PropertyPath 值。
-title: Property-path 語法
+description: "您可以使用 PropertyPath 類別和字串語法，具現化 XAML 或程式碼中的 PropertyPath 值。"
+title: "Property-path 語法"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+
 ---
 
 # Property-path 語法
@@ -116,6 +120,7 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

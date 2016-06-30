@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: 深入了解開發和發佈包含廣告之 App 的端對端處理程序。
-title: 建立包含廣告之 App 的工作流程
+description: "深入了解開發和發佈包含廣告之 App 的端對端處理程序。"
+title: "建立包含廣告之 App 的工作流程"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+
 
 ---
 
@@ -61,6 +65,7 @@ title: 建立包含廣告之 App 的工作流程
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
-title: Windows 市集應用程式行銷指導方針
+Description: "了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。"
+title: "Windows 市集應用程式行銷指導方針"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+
 ---
 
 # Windows 市集應用程式行銷指導方針
@@ -53,6 +57,7 @@ Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

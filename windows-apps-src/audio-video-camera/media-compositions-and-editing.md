@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。
-title: 媒體組合和編輯
+description: "Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。"
+title: "媒體組合和編輯"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+
 ---
 
 # 媒體組合和編輯
@@ -56,7 +60,7 @@ title: 媒體組合和編輯
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-宣告類型 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 的成員變數
+宣告類型 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 的成員變數。
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
@@ -80,7 +84,7 @@ title: 媒體組合和編輯
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-在允許使用者使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 選取輸出檔案之後，藉由呼叫 **MediaComposition** 物件的 [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690)，將組合轉譯為選取的檔案。 下列範例中的其他程式碼只是遵循處理 [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) 的模式
+在允許使用者使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 選取輸出檔案之後，藉由呼叫 **MediaComposition** 物件的 [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690)，將組合轉譯為選取的檔案。 下列範例中的其他程式碼只是遵循處理 [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) 的模式。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
@@ -154,6 +158,7 @@ title: 媒體組合和編輯
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

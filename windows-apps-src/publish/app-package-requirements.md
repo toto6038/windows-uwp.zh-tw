@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 遵循這些指導方針來準備要提交到 Windows 市集的 app 套件。
-title: 應用程式套件需求
+Description: "遵循這些指導方針來準備要提交到 Windows 市集的 app 套件。"
+title: "應用程式套件需求"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+
 ---
 
 # 應用程式套件需求
@@ -80,6 +84,7 @@ StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

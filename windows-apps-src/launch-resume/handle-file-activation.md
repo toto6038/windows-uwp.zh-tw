@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 處理檔案啟用
-description: App 可以登錄為特定檔案類型的預設處理常式。
+author: TylerMSFT
+title: "處理檔案啟用"
+description: "App 可以登錄為特定檔案類型的預設處理常式。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+
 ---
 
 # 處理檔案啟用
@@ -29,22 +32,22 @@ App 可以登錄以成為特定檔案類型的預設處理常式。 傳統 Windo
 
 App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下是如何指示應 app 處理具有 `.alsdk` 副檔名的檔案。
 
-1.  在 [方案總管]**** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告]**** 索引標籤，然後在 [可用宣告]**** 下拉式清單中選取 [檔案類型關聯]****，然後按一下 [新增]****。 請參閱[以程式設計方式撰寫識別碼](https://msdn.microsoft.com/library/windows/desktop/cc144152)，了解檔案關聯使用的識別碼詳細資料。
+1.  在 \[方案總管\] 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 \[宣告\] 索引標籤，然後在 \[可用宣告\] 下拉式清單中選取 \[檔案類型關聯\]，然後按一下 \[新增\]。 請參閱[以程式設計方式撰寫識別碼](https://msdn.microsoft.com/library/windows/desktop/cc144152)，了解檔案關聯使用的識別碼詳細資料。
 
     以下簡短說明可在資訊清單設計工具中填寫的每個欄位：
 
 | 欄位 | 說明 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **顯示名稱** | 指定一組檔案類型的顯示名稱。 顯示名稱用於在 [控制台]**** 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中識別檔案類型。 |
-| **標誌** | 指定用於桌面以及在 [控制台]**** 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中識別檔案類型的標誌。 如果沒有指定標誌，則會使用應用程式的小標誌。 |
+| **顯示名稱** | 指定一組檔案類型的顯示名稱。 顯示名稱用於在 \[控制台\] 的設定預設程式中識別檔案類型。 |
+| **標誌** | 指定用於桌面以及在 \[控制台\] 的設定預設程式中識別檔案類型的標誌。 如果沒有指定標誌，則會使用應用程式的小標誌。 |
 | **資訊提示** | 指定一組檔案類型的[資訊提示](https://msdn.microsoft.com/library/windows/desktop/cc144152)。 當使用者的滑鼠游標暫留在這類檔案的圖示上時，就會顯示這個工具提示文字。 |
-| **名稱** | 為共用相同顯示名稱、標誌、資訊提示以及編輯旗標的一組檔案類型選擇一個名稱。 選擇可以在所有 app 更新都維持一致的群組名稱。 **注意** [名稱] 必須全都是小寫字母。 |
+| **名稱** | 為共用相同顯示名稱、標誌、資訊提示以及編輯旗標的一組檔案類型選擇一個名稱。 選擇可以在所有 app 更新都維持一致的群組名稱。 注意 \[名稱\] 必須全都是小寫字母。 |
 | **內容類型** | 為特定檔案類型指定 MIME 內容類型，例如 **image/jpeg**。 **允許之內容類型的重要事項：**以下是您無法在封裝資訊清單中輸入的 MIME 內容類型清單 (依字母順序排序)，因為它們已經被保留或禁止使用：**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload**。 |
 | **檔案類型** | 指定要登錄的檔案類型，前面加上一個句號，例如「.jpeg」。 **請保留和禁止的檔案類型** 請參閱[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)，以取得因為已經被保留或禁止使用，而無法為 UWP app 登錄之內建 app 檔案類型的字母排序清單。 |
 
-2.  輸入 `alsdk` 做為 [名稱]****。
-3.  輸入 `.alsdk` 做為 [檔案類型]****。
-4.  輸入「images\Icon.png」做為 [標誌]。
+2.  輸入  做為 \[名稱\]。
+3.  輸入  做為 \[檔案類型\]。
+4.  輸入「images\Icon.png」做為 \[標誌\]。
 5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
 上述步驟會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.fileTypeAssociation** 類別指示 app 處理具有 `.alsdk` 副檔名的檔案。
@@ -70,7 +73,7 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 -   Windows 檔案總管清單檢視、操作功能表及功能區
 -   預設程式控制台
 -   檔案選擇器
--   [開始] 畫面上的搜尋結果
+-   \[開始\] 畫面上的搜尋結果
 
 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
 ![方案總管及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
@@ -79,7 +82,8 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 
 
 [
-            **OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) 事件處理常式會接收所有的檔案啟用事件。
+              **OnFileActivated**
+            ](https://msdn.microsoft.com/library/windows/apps/br242331) 事件處理常式會接收所有的檔案啟用事件。
 
 > [!div class="tabbedCodeSnippets"]
 ```vb
@@ -151,8 +155,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: 開始使用，後續動作
+title: "開始使用，後續動作"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: 利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。
+description: "利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+
 ---
 
 # 開始使用：後續動作？
@@ -33,6 +37,7 @@ description: 利用這個基本資訊，您現在可以開始撰寫更多好玩�
 * [建置適用於 Windows 的應用程式部落格](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

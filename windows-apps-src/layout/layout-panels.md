@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用版面配置面板，在 app 中排列與群組 UI 元素。
-title: 通用 Windows 平台 (UWP) app 的版面配置面板
+Description: "使用版面配置面板，在 app 中排列與群組 UI 元素。"
+title: "通用 Windows 平台 (UWP) app 的版面配置面板"
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+
 ---
 # 版面配置面板
 
@@ -226,6 +230,7 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 有數個具有特殊用途的面板，只能用來做為 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)，以顯示 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 中的項目。 這些是 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) 及 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx)。 您無法針對一般 UI 版面配置使用這些面板。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

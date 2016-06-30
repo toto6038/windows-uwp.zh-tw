@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: 了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。
-title: 在您的 App 中設定廣告單元
+description: "了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。"
+title: "在您的 App 中設定廣告單元"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+
 
 ---
 
@@ -17,7 +21,7 @@ title: 在您的 App 中設定廣告單元
 
 為您的實際 app 設定應用程式識別碼和廣告單元：
 
-1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收] &gt; \[利用廣告獲利\]。
+1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收\] &gt; \[利用廣告獲利\]。
 2.  在此頁面的 \[Microsoft Advertising 廣告單元\] 區段中，建立廣告單元。 對於廣告單元類型，如果使用 **AdControl** 請選取 \[橫幅\]，如果使用 **InterstitialAd** 則請選取 \[影片插入式\]。 如需此頁面的詳細資訊，請參閱[利用廣告賺取獲利](../publish/monetize-with-ads.md)。
 
 3.  您會看到每個已產生的廣告單元的「應用程式識別碼」和「廣告單元識別碼」。 若要在 app 中顯示廣告，您需要在 app 程式碼中使用這些值：
@@ -40,6 +44,7 @@ title: 在您的 App 中設定廣告單元
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

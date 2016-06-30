@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
-title: 搶鮮版 (Beta) 測試
-description: 搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。
+title: "搶鮮版 (Beta) 測試"
+description: "搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
+
 ---
 # 搶鮮版 (Beta) 測試
 
@@ -45,6 +49,7 @@ description: 搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

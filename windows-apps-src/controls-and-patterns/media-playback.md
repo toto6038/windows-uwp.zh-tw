@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: 媒體播放器可用來檢視及聆聽視訊、音訊及影像。
-title: 媒體播放器
+Description: "媒體播放器可用來檢視及聆聽視訊、音訊及影像。"
+title: "媒體播放器"
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 2dbc4e7fa227de3f37b8a337eded0004496dbe36
+
 ---
 # 媒體播放器
 
@@ -142,10 +146,9 @@ private void LoadEmbeddedAppFile()
 ### 開啟本機媒體檔案
 若要開啟本機系統或 OneDrive 上的檔案，您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 來取得檔案，以及使用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 來設定媒體來源，或是以程式設計方式存取使用者媒體資料夾。
 
-如果您的 app 需要不藉助使用者互動就能存取 [音樂]**** 或 [影片]**** 資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告「音樂媒體櫃」****和「影片媒體櫃」****功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://msdn.microsoft.com/library/windows/apps/mt188703)。
+如果您的 app 需要不藉助使用者互動就能存取 \[音樂\] 或 \[影片\] 資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告「音樂媒體櫃」和「影片媒體櫃」功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://msdn.microsoft.com/library/windows/apps/mt188703)。
 
-[
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能來存取本機檔案系統 (例如，使用者的 [音樂]**** 或 [影片]**** 資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
+FileOpenPicker 不需要特殊功能來存取本機檔案系統 (例如，使用者的 \[音樂\] 或 \[影片\] 資料夾) 上的檔案，因為使用者可以完全控制存取的檔案。 從安全性與隱私權的立場看，最佳做法是將 app 使用的「功能」數降到最小。
 
 **使用 FileOpenPicker 開啟本機媒體**
 
@@ -209,7 +212,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 ### 讓裝置的螢幕保持使用中
 裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [
-            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
+              **DisplayRequest**
+            ](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
 
 若要省電並延長電池壽命，您應該呼叫 [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819)，以便在不再需要時釋放顯示器要求。 當您的 App 未顯示於螢幕上時，Windows 會自動停用它的啟用顯示要求，並在 App 回到前景時重新啟用顯示要求。
 
@@ -267,7 +271,8 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
 
 ### 以程式設計方式控制媒體播放器
 [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供許多屬性、方法及事件來控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 參考頁面。
+              **MediaElement**
+            ](https://msdn.microsoft.com/library/windows/apps/br242926) 提供許多屬性、方法及事件來控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 參考頁面。
     
 
 ### 選取不同語言的音軌
@@ -337,13 +342,17 @@ private void FullWindow_Click(object sender, object e)
 使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性，來變更視訊內容填入所在容器的方式。 視 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值而定，這樣做可能會延展視訊。 **Stretch** 狀態和許多電視機上的影像大小設定類似。 您可以將勾點設定在按鈕上，並允許使用者依偏好選擇所要的設定。
 
 -   [
-            **None**](https://msdn.microsoft.com/library/windows/apps/br242968) 會以原始大小顯示內容的原生解析度。
+              **None**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) 會以原始大小顯示內容的原生解析度。
 -   [
-            **Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) 會盡可能地填滿空間，同時維持影像內容的外觀比例。 這會導致視訊邊緣出現水平或垂直的黑色長條。 這和寬螢幕模式類似。
+              **Uniform**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) 會盡可能地填滿空間，同時維持影像內容的外觀比例。 這會導致視訊邊緣出現水平或垂直的黑色長條。 這和寬螢幕模式類似。
 -   [
-            **UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿個空間，同時維持外觀比例。 這會導致部分影像被裁切。 這和全螢幕模式類似。
+              **UniformToFill**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿個空間，同時維持外觀比例。 這會導致部分影像被裁切。 這和全螢幕模式類似。
 -   [
-            **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
+              **Fill**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
 
 ![伸展列舉值](images/Image_Stretch.jpg) 此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
 
@@ -412,6 +421,7 @@ mediaPlayer.RealTimePlayback = true;
 - [UWP app 的內容設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

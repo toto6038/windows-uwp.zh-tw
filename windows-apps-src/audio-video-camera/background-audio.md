@@ -1,8 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: 本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) 應用程式。
-title: 背景音訊
+description: "本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) 應用程式。"
+title: "背景音訊"
+ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
+ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+
 ---
 
 # 背景音訊
@@ -65,6 +68,9 @@ title: 背景音訊
             **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法會個別叫用對應處理程序中的事件。 訂閱 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件，可以接收訊息。
 
 資料可以做為引數傳遞至傳送訊息方法，然後再傳入收到訊息事件處理常式。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別傳遞資料。 此類別是一個字典，其中包含的字串為索引鍵，而其他值類型則是值。 您可以傳送簡易的值類型，例如整數、字串和布林值。
+
+**注意**  
+前景 App 若在執行中，則 App 僅應呼叫 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533)。 若前景 App 未在執行中而嘗試呼叫此方法，則會擲回例外狀況。 App 負責前景 App 狀態到背景處理程序的通訊。 您可使用 App 週期事件、本機存放區中保留的狀態值以及各處理程序間的訊息，來完成此操作。 
 
 ## 背景工作週期
 
@@ -138,6 +144,7 @@ title: 背景音訊
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,15 +1,20 @@
 ---
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: 組合效果
-description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
+title: "組合效果"
+description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
+
 ---
 # 組合效果
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 [
-            **Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
+              **Windows.UI.Composition**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
 為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空間來使用效果描述。
 
@@ -80,7 +85,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 ### 效果屬性 – 常數與動畫效果
 
-您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過 "<effect name>.<property name>" 的字串格式指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
+您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過「<effect name>.<property name>」格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
 
 在編譯上述效果時，您有彈性可以選擇飽和度一律等於 0.5，或將它設為動態值並以動態或動畫效果顯示。
 
@@ -141,11 +146,11 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 ### 建立新的專案
 
--   移至 [檔案] -&gt; [新增] -&gt; [專案]...
--   選取 [Visual C#]
--   建立 [空白的應用程式 \(Windows 通用\)] \(Visual Studio 2015\)
+-   移至 \[檔案\] -&gt; \[新增\] -&gt; \[專案\]...
+-   選取 \[Visual C#\]
+-   建立 \[空白的應用程式 \(Windows 通用\)\] \(Visual Studio 2015\)
 -   輸入您選擇的專案名稱
--   按一下 [確定]
+-   按一下 \[確定\]
 
 ### 安裝 Win2D
 
@@ -153,10 +158,10 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 
 有兩種版本的套件，其中一個適用於 Windows 10，另一個適用於 Windows 8.1。 若是組合效果，則您必須使用 Windows 10 版本。
 
--   移至 [工具] → [NuGet 套件管理員] → [管理方案的 NuGet 套件] 啟動 NuGet 套件管理員。
+-   移至 \[工具\] → \[NuGet 套件管理員\] → \[管理方案的 NuGet 套件\] 啟動 NuGet 套件管理員。
 -   搜尋 "Win2D"，然後針對您的 Windows 目標版本選取適當的套件。 因為 Windows.UI。 組合支援 Windows 10 (不支援 8.1)，選取 Win2D.uwp。
 -   接受授權合約
--   按一下 [關閉]
+-   按一下 \[關閉\]
 
 在接下來的幾個步驟中，我們會使用組合 API，把移除所有飽和度的飽和度效果套用至這個貓咪影像。 在這個模型中，效果會在建立後套用至影像。
 
@@ -244,6 +249,7 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

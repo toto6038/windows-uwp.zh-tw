@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: 建立 "Hello, world" app (JS)
-description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 &\#0034;Hello, world&\#0034; app。
+title: "建立 \"Hello, world\" app (JS)"
+description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
+translationtype: Human Translation
+ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
+ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+
 ---
 # 建立 "Hello, world" app (JS)
 
@@ -24,7 +28,7 @@ description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立�
 
 -   本教學課程直接進入建立簡單通用 app 的步驟。 因此在開始本教學課程之前，我們強烈建議您閱讀並了解 [Windows 10 的新功能](https://dev.windows.com/whats-new-windows-10-dev-preview)和[什麼是通用 Windows 應用程式](whats-a-uwp.md)的概觀資訊。
 -   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。
--   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 [視窗]**** 功能表中的 [重設視窗配置]**** 命令重設它。
+-   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 \[視窗\] 功能表中的 \[重設視窗配置\] 命令重設它。
 
 ##步驟 1：在 Visual Studio 中建立新專案
 
@@ -35,38 +39,38 @@ description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立�
 
     隨即顯示 Visual Studio 2015 開始畫面。
 
-    (以下將 Visual Studio 2015 簡稱為 Visual Studio 。)
+    (以下將 Visual Studio 2015 簡稱為 Visual Studio。)
 
-2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
+2.  在 \[檔案\] 功能表上，選取 \[新增\]\[專案\]。
 
-    隨即顯示 [新增專案]**** 對話方塊。 對話方塊的左窗格能夠讓您選取要顯示的範本類型。
+    隨即顯示 \[新增專案\] 對話方塊。 對話方塊的左窗格能夠讓您選取要顯示的範本類型。
 
-3.  在左窗格中，依序展開 [已安裝] > [範本] > [JavaScript] > [Windows]****，然後選取 [通用]**** 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
+3.  在左窗格中，依序展開 \[已安裝\] &gt; \[範本\] &gt; \[JavaScript\] &gt; \[Windows\]，然後選取 \[通用\] 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
 
-    ![[新增專案] 視窗 ](images/js-tut-newproject.png)
+    ![\[新增專案\] 視窗 ](images/js-tut-newproject.png)
 
-    在本教學課程中，我們使用 [空白應用程式]**** 範本。 這個範本會建立能夠編譯和執行的最基本 UWP app，但不包含使用者介面控制項或資料。 在此教學課程系列中，您會將控制項和資料新增到 app。
+    在本教學課程中，我們使用 \[空白應用程式\] 範本。 這個範本會建立能夠編譯和執行的最基本 UWP app，但不包含使用者介面控制項或資料。 在此教學課程系列中，您會將控制項和資料新增到 app。
 
-4.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]**** 範本。
+4.  在中央窗格中，選取 \[空白應用程式 (通用 Windows)\] 範本。
 
-    [空白應用程式]**** 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
+    \[空白應用程式\] 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
 
-5.  在 [名稱]**** 文字方塊中，輸入 "HelloWorld"。
-6.  按一下 [確定]**** 來建立專案。
+5.  在 \[名稱\] 文字方塊中，輸入 "HelloWorld"。
+6.  按一下 \[確定\] 來建立專案。
 
-    Visual Studio 會建立您的專案，然後在 [方案總管]**** 中顯示。
+    Visual Studio 會建立您的專案，然後在 \[方案總管\] 中顯示。
 
     ![HelloWorld 專案的 Visual Studio 方案總管](images/js-tut-helloworld.png)
 
-雖然 [空白應用程式]**** 是最基本的範本，但是仍然包含少數檔案：
+雖然 \[空白應用程式\] 是最基本的範本，但是仍然包含少數檔案：
 
 -   一個資訊清單檔案 (package.appxmanifest)，說明 app 的名稱、描述、磚、起始頁、啟動顯示畫面等，以及列示其中包含的檔案。
--   在 [開始] 功能表上顯示的一組標誌影像 (images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png 和 images/Wide310x150Logo.scale-200.png)。
+-   在 \[開始\] 功能表上顯示的一組標誌影像 (images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png 和 images/Wide310x150Logo.scale-200.png)。
 -   在 Windows 市集中代表您的 app 的影像 (images/StoreLogo.png)。
 -   app 啟動時顯示的啟動顯示畫面 (images/SplashScreen.scale-200.png)。
 -   應用程式啟動時執行的起始頁 (default.html) 和伴隨的 JavaScript 檔案 (default.js)。
 
-若要檢視和編輯檔案，按兩下 [方案總管]**** 中的檔案。
+若要檢視和編輯檔案，按兩下 \[方案總管\] 中的檔案。
 
 這些檔案對於所有使用 JavaScript 的 UWP app 都是必要的。 您在 Visual Studio 中建立的任何專案都包含這些檔案。
 
@@ -87,12 +91,12 @@ description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立�
 
 **在本機電腦上開始偵錯**
 
-1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 [標準]**** 工具列上，確定已選取 [本機電腦]****。 (這是預設選項)。
-2.  按一下工具列上的 [開始偵錯]**** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在目標裝置功能表 (開始偵錯功能表) 的 \[標準\] 工具列上，確定已選取 \[本機電腦\]。 (這是預設選項)。
+2.  按一下工具列上的 \[開始偵錯\] 按鈕 (開始偵錯按鈕)。
 
    –或–
 
-   在 [偵錯]**** 功能表中，按一下 [開始偵錯]****。
+   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
 
    –或–
 
@@ -104,17 +108,17 @@ description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立�
 
 ![電腦上的 HelloWorld app](images/helloworld-1-js.png)
 
-按下 Windows 鍵以開啟 [開始]**** 功能表，然後顯示所有 app。 請注意，在本機部署應用程式會在 [開始] ****功能表上新增磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 [開始]**** 功能表中的磚。
+按下 Windows 鍵以開啟 \[開始\] 功能表，然後顯示所有 app。 請注意，在本機部署應用程式會在 \[開始\] 功能表上新增磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 \[開始\] 功能表中的磚。
 
 應用程式還沒有太多功能—但是，恭喜您，您已經建置第一個 UWP app 了！
 
 **停止偵錯**
 
--   按一下工具列中的 [停止偵錯]**** 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
+-   按一下工具列中的 \[停止偵錯\] 按鈕 (停止偵錯按鈕)。
 
    –或–
 
-   在 [偵錯]**** 功能表中，按一下 [停止偵錯]****。
+   在 \[偵錯\] 功能表中，按一下 \[停止偵錯\]。
 
    –或–
 
@@ -127,19 +131,19 @@ description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立�
 除了在傳統型裝置上偵錯的選項外，Visual Studio 還提供在連接到電腦的實體行動裝置或在行動裝置模擬器上部署和偵錯應用程式的選項。 您可以為有不同記憶體和顯示器組態的裝置選擇不同的模擬器。
 
 -   **裝置**
--   **模擬器 <SDK version> WVGA 4 inch 512MB**
--   **模擬器 <SDK version> WVGA 4 inch 1GB**
+-   **模擬器 <SDK version> WVGA 4 吋 512MB**
+-   **模擬器 <SDK version> WVGA 4 吋 1GB**
 -   等等... (其他組態中的各種模擬器)
 
-在小螢幕和記憶體有限的裝置上測試您的應用程式是不錯的想法，因此，請使用 [模擬器 10.0.10240.0 WVGA 4 inch 512MB]**** 選項。
+在小螢幕和記憶體有限的裝置上測試您的應用程式是不錯的想法，因此，請使用 \[模擬器 10.0.10240.0 WVGA 4 inch 512MB\] 選項。
 **在行動裝置模擬器上開始偵錯**
 
-1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 [標準]**** 工具列上，選擇 [模擬器 10.0.10240.0 WVGA 4 inch 512MB]****。
-2.  按一下工具列中的 [開始偵錯]**** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在目標裝置功能表 (開始偵錯功能表) 的 \[標準\] 工具列上，選擇 \[模擬器 10.0.10240.0 WVGA 4 inch 512MB\]。
+2.  按一下工具列中的 \[開始偵錯\] 按鈕 (開始偵錯按鈕)。
 
    –或–
 
-   在 [偵錯]**** 功能表中，按一下 [開始偵錯]****。
+   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
 
    
 Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程式。 在行動裝置模擬器上，應用程式看起來會像這樣。
@@ -248,7 +252,7 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 })();
 ```
 
-讓我們為您的 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定義一個事件處理常式。 我們新的事件處理常式會從 `nameInput`  [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項取得使用者的名稱，並使用它將問候語輸出到您在上一節中建立的 `greetingOutput`  [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素。
+讓我們為您的 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定義一個事件處理常式。 我們新的事件處理常式會從 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項取得使用者的名稱，並使用它將問候語輸出到您在上一節中建立的 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素。
 
 ### 使用適用於觸控、滑鼠及手寫筆輸入的事件
 
@@ -260,14 +264,14 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 **建立事件處理常式**
 
-1.  在 default.js 中，就在 [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件處理常式之後及呼叫 [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) 之前，建立名為 `buttonClickHandler` 的 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件處理常式函式，它接受的參數名為
+1.  在 default.js 中，就在 [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件處理常式之後及呼叫 [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) 之前，建立名為 `buttonClickHandler` 的 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件處理常式函式，它接受名為 `eventInfo` 的單一參數。
 ```javascript
     function buttonClickHandler(eventInfo) {
      
         }
 ```
 
-2.  在事件處理常式中，從 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項擷取使用者的名稱，並使用它來建立問候語。 使用 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 顯示結果。
+2.  在事件處理常式中，從 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項擷取使用者的名稱，並使用它來建立問候語。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 顯示結果。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -300,9 +304,9 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
     };
 ```
 
-在 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 處理常式中，程式碼會檢查發生了哪一種類型的啟用。 啟用有許多不同的類型。 例如，當使用者啟動您的應用程式以及當使用者想要開啟與您應用程式相關的檔案時，您的應用程式就會啟用。 (如需詳細資訊，請參閱[應用程式週期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。)
+在 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 處理常式中，程式碼會檢查發生了哪一種類型的啟用。 啟用有許多不同的類型。 例如，當使用者啟動您的應用程式以及當使用者想要開啟與您應用程式相關的檔案時，您的應用程式就會啟用。 如需詳細資訊，請參閱[應用程式週期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。
 
-我們只針對 [**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693) 啟用。 只要應用程式不在執行中，然後使用者啟用它，應用程式就被「啟動」**了。
+我們只針對 [**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693) 啟用。 只要應用程式不在執行中，然後使用者啟用它，應用程式就被「啟動」了。
 
 ```javascript
     app.onactivated = function (args) {
@@ -330,7 +334,10 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 無論應用程式是過去已經關機或者是第一次啟動，都會呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在 [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在應用程式頁面準備好前都不會關閉啟動顯示畫面。
 
-**提示** [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
+**提示**
+            [
+              **WinJS.UI.processAll**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh440975) 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
 
 如果要登錄非 WinJS 控制項的事件處理常式，最好緊接在呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之後。
 
@@ -414,7 +421,7 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 讓我們將 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項新增至您的應用程式。
 
-1.  在您的 default.html 檔案中，將 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 與 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項新增到 `greetingOutput`  [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 後方。
+1.  在您的 default.html 檔案中，將 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 與 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項新增到 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 後方。
 
     ```html
     <body class="win-type-body">
@@ -455,7 +462,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 與所有 WinJS 非同步方法一樣，[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 會傳回 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件。 **Promise** 是未來會發生某些事的「承諾」；當那件事發生時，表示 **Promise** 已完成。
 
 [
-            **Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件有一個 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，會將「完成的」函式做為參數。 **Promise** 會在完成時呼叫此函式。
+              **Promise**
+            ](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件有一個 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，會將「完成的」函式做為參數。 **Promise** 會在完成時呼叫此函式。
 
 透過將您的程式碼新增到「完成的」函式，並將它傳遞到 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件的 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，便可確保 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 完成後會執行您的程式碼。
 
@@ -477,7 +485,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 ```
 
 2.  在我們的 default.js 檔案中，為 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件 (名為 `ratingChanged`) 建立事件處理常式。 [
-            **eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) 參數包含一個提供新使用者評分的 **detail.tentativeRating** 屬性。 抓取此值並顯示在輸出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中。
+              **eventInfo**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh465776) 參數包含一個提供新使用者評分的 **detail.tentativeRating** 屬性。 抓取此值並顯示在輸出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中。
 
 ```javascript
         function ratingChanged(eventInfo) {
@@ -550,6 +559,7 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

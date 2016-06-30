@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: EGL 程式碼與 DXGI 和 Direct3D 的比較
-description: DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。
+title: "EGL 程式碼與 DXGI 和 Direct3D 的比較"
+description: "DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。"
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+
 ---
 
 # EGL 程式碼與 DXGI 和 Direct3D 的比較
@@ -411,6 +415,7 @@ EGLBoolean eglTerminate(eglDisplay);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

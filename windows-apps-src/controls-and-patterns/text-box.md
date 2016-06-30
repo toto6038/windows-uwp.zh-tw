@@ -3,6 +3,10 @@ author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
+
 ---
 # 文字方塊
 TextBox 控制項可讓使用者在應用程式中輸入文字。 其通常用來擷取單行文字，但亦可設為擷取多行文字。 文字在畫面上會以簡單、統一的純文字格式呈現。
@@ -79,8 +83,7 @@ rootGrid.Children.Add(textBox);
 
 您可以藉由將 IsReadOnly 屬性設定成 true，使 TextBox 變成唯讀。 例如您可能希望僅在特定條件下，啟用 TextBox 讓使用者輸入註解。 您可將 TextBox 設為在符合條件前保持唯讀狀態。 若您僅需要顯示文字，請考慮改用 TextBlock 或 RichTextBlock。
 
-唯讀文字方塊外觀看起來與讀取/寫入文字方塊類似，因此可能會混淆使用者。 
-使用者可選取和複製文字。
+唯讀文字方塊外觀看起來與讀取/寫入文字方塊類似，因此可能會混淆使用者。 使用者可選取和複製文字。
 IsEnabled
 
 
@@ -90,11 +93,12 @@ IsEnabled
 - 若要讓文字方塊允許並顯示新行或傳回字元，請將 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
 - 若要啟用文字換行，請將 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
-> **注意** &nbsp;&nbsp;TextBox 和 RichEditBox 針對其 TextWrapping 屬性不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 值，則會擲回無效的引數例外。
+> **注意**
+            &nbsp;&nbsp;TextBox 和 RichEditBox 針對其 TextWrapping 屬性不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 值，則會擲回無效的引數例外。
 
 多行 TextBox 大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 或 [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 屬性，或是依父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。 
 
-必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 設為 [自動]****，以顯示垂直捲軸 (如此處所示)。 
+必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 ScrollViewer.VerticalScrollBarVisibility 設為 \[自動\]，以顯示垂直捲軸 (如此處所示)。 
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap" 
@@ -208,7 +212,8 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
-> **重要** &nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
+> **重要**
+            &nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
 其他會影響觸控式鍵盤的屬性包括 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx)、[IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx)。 (IsSpellCheckEnabled 也會影響使用硬體鍵盤時的 TextBox。) 
 
@@ -277,6 +282,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

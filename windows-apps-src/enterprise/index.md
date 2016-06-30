@@ -1,8 +1,12 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此藍圖概述適用於 Windows 10&\#160; 通用 Windows 平台 (UWP) 應用程式的重要企業功能。
-title: 企業
+description: "此藍圖概述適用於 Windows 10&amp;\\#160; 通用 Windows 平台 (UWP) 應用程式的重要企業功能。"
+title: "企業"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
+ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+
 ---
 
 # 企業
@@ -111,6 +115,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

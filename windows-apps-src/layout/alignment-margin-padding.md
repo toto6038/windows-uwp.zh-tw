@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用對齊、邊界及邊框間距來改變頁面上元素的版面配置
-title: 通用 Windows 平台 (UWP) app 的對齊、邊界及邊框間距
+Description: "使用對齊、邊界及邊框間距來改變頁面上元素的版面配置"
+title: "通用 Windows 平台 (UWP) app 的對齊、邊界及邊框間距"
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+
 ---
 # 對齊、邊界及邊框間距
 
@@ -18,14 +22,14 @@ template: detail.hbs
 > **注意：**&nbsp;&nbsp;一般的配置原則是，最好只對特定的主要元素套用度量值，針對其他元素則使用調適型配置行為。 這樣可隨時在使用者調整最上層應用程式視窗時，提供彈性的配置行為。
 
  
-如果調適型容器內有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或裁剪的情況，即使將 **Stretch** 設定為對齊值，配置仍是由其容器的行為控制。 在面板中，已經被 **Height** 與 **Width** 去除的 **Stretch** 值，即有如 **Center** 值。
+如果彈性容器內有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或裁剪的情況，即使將 **Stretch** 設定為對齊值，配置仍是由其容器的行為控制。 在面板中，已經被 **Height** 與 **Width** 去除的 **Stretch** 值，即有如 **Center** 值。
 
 如果沒有原有或經過計算的高度與寬度值，這些維度值在數學上來說是 **NaN** (非數字)。 元素會等待其配置容器提供維度。 執行配置之後，使用 **Stretch** 對齊的元素將取得 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 與 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 屬性的值。 子元素的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中會繼續保留 **NaN** 值，讓調適型行為能夠再次執行，例如，當與配置相關的變更 (例如調整應用程式視窗大小) 導致進入另一個配置循環的時候。
 
 文字元素 (例如 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)) 通常不會有明確宣告的寬度，但是會有經過計算的寬度，您可以利用 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 來查詢，而該寬度同樣會取消 **Stretch** 對齊。 ([**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209657) 屬性與其他文字屬性以及文字本身都已提示預定的配置大小。 您通常不會希望延展文字。) 在控制項內當成內容使用的文字有相同的效果；需要呈現的文字會導致 **ActualWidth** 的計算，而這也會將所需的寬度和大小轉換為包含的控制項。 文字元素也會有根據每行字型大小、換行及其他文字屬性決定的 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)。
 
 [
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 這類面板已有其他配置邏輯 (列與欄定義，以及在元素上設定的附加屬性，例如 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)，用來指出要在哪一格中繪製)。 在此情況下，對齊屬性會影響該格區域內的內容對齊方式，但格狀結構與大小是由 **Grid** 上的設定來控制。
+            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 這類面板已有其他配置邏輯 (列與欄定義，以及在元素上設定的附加屬性，例如 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)，用來指出要在哪個儲存格中繪製)。 在此情況下，對齊屬性會影響該儲存格區域內的內容對齊方式，但儲存格結構與大小是由 **Grid** 上的設定來控制。
 
 項目控制項有時會顯示項目基底類型為資料的項目。 這種情況與 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/br242843) 有關。 雖然資料本身不是 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 衍生類型，但 **ItemsPresenter** 卻是，所以您可以為展示器設定 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)，且該對齊可套用到呈現在項目控制項中的資料項目。
 
@@ -87,6 +91,7 @@ template: detail.hbs
 [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: App 物件和 DirectX
-description: 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。
+title: "App 物件和 DirectX"
+description: "使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+
 ---
 
 # App 物件和 DirectX
@@ -111,9 +115,9 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ## DirectX 開發人員的 ASTA 考量
 
 
-定義 UWP 和 DirectX app 之執行階段表示法的 app 物件，會使用稱為應用程式單一執行緒 Apartment (ASTA) 的執行緒模式 來裝載您 app 的 UI 檢視。 如果您要開發 UWP 和 DirectX app，您可能已經熟悉 ASTA 的屬性，因為您從 UWP 和 DirectX app 分派的任何執行緒，都必須使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API， 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 (您可以從 app 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)，以取得 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件)。
+定義 UWP 和 DirectX app 之執行階段表示法的 app 物件，會使用稱為應用程式單一執行緒 Apartment (ASTA) 的執行緒模式 來裝載您 app 的 UI 檢視。 如果您要開發 UWP 和 DirectX app，您可能已經熟悉 ASTA 的屬性，因為您從 UWP 和 DirectX app 分派的任何執行緒，都必須使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API， 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 (您可以從 App 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)，以取得 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件)。
 
-身為使用 UWP DirectX app 的開發人員，最重要的是您必須在 **main()** 上設定 **Platform::MTAThread**，以便讓 app 執行緒分派 MTA 執行緒。
+身為使用 UWP DirectX app 的開發人員，最重要的是您必須在 **main()** 上設定 **Platform::MTAThread**，以便讓 App 執行緒分派 MTA 執行緒。
 
 ```cpp
 [Platform::MTAThread]
@@ -125,7 +129,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-當 UWP DirectX app 的 app 物件啟用時，它會建立用於 UI 檢視的 ASTA。 新的 ASTA 執行緒會呼叫到您的檢視提供者 Factory，為 app 物件建立檢視提供者，因此，檢視提供者程式碼將會在該 ASTA 執行緒上執行。
+當 UWP DirectX app 的 App 物件啟用時，它會建立用於 UI 檢視的 ASTA。 新的 ASTA 執行緒會呼叫到您的檢視提供者 Factory，為 app 物件建立檢視提供者，因此，檢視提供者程式碼將會在該 ASTA 執行緒上執行。
 
 此外，您從 ASTA 分派的任何執行緒必須在 MTA 中。 請注意，您分派的任何 MTA 執行緒仍然可能造成重新進入問題，並且導致鎖死。
 
@@ -143,7 +147,7 @@ int main(Platform::Array<Platform::String^>^)
 
     也就是說，您無法依賴直接將不相關的呼叫傳遞至 app 的 ASTA。 如需非同步呼叫的詳細資訊， 請閱讀[使用 C++ 進行非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
-總而言之，在設計 UWP app 時，請為 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 與 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 使用 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 以處理所有 UI 執行緒，而非嘗試自行建立和管理您的 MTA 執行緒。 當您需要無法以 **CoreDispatcher** 處理的不同執行緒時，請使用非同步模式，並依循前述的指導原則以避免重新進入問題。
+總而言之，在設計 UWP app 時，請為 App 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 與 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 使用 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 以處理所有 UI 執行緒，而非嘗試自行建立和管理您的 MTA 執行緒。 當您需要無法以 **CoreDispatcher** 處理的不同執行緒時，請使用非同步模式，並依循前述的指導原則以避免重新進入問題。
 
  
 
@@ -154,6 +158,7 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

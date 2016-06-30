@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 當 app 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊。
-title: 背景網路通訊
+description: "當 app 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊。"
+title: "背景網路通訊"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
+
 ---
 
 # 背景網路通訊
@@ -57,11 +61,11 @@ ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
     App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列其中一個適當的方法傳遞背景作業的識別碼。
 
     -   [
-            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法
+            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法。
     -   [
-            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法。
     -   [
-            **StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法
+            **StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法。
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -155,15 +159,15 @@ case SocketActivityTriggerReason.SocketClosed:
 
 如需示範使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](http://go.microsoft.com/fwlink/p/?LinkId=620606)。 通訊端初始化在 Scenario1\_Connect.xaml.cs 中執行，而背景作業實作是在 SocketActivityTask.cs 中。
 
-您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機
+您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機。
 
 ## 控制通道觸發程序
 
 首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，建議使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
 
-如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
-## ControlChannelTrigger 搭配 WebSockets
+## ontrolChannelTrigger 搭配 WebSockets
 
 使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
 
@@ -179,7 +183,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 請注意，app 必須發出另一個讀取，才能從完成回呼傳回控制項，這一點很重要。 請注意，還有一點也很重要，就是 [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) 不能直接搭配 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 傳輸使用，因為那會中斷上述的同步處理。 不支援直接在傳輸上使用 [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) 方法。 相反地，[**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) 屬性上 [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) 方法傳回的 [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) 可在稍後傳送至 [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) 方法，以便進一步處理。
 
-下列範例顯示如何使用原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取
+下列範例顯示如何使用原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取。
 
 ```csharp
 void PostSocketRead(int length) 
@@ -224,7 +228,7 @@ void PostSocketRead(int length)
 
 讀取完成處理常式一定會在叫用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 背景工作的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法之前觸發。 Windows 的內部同步處理要等候從讀取完成回呼傳回 app。 App 通常會在讀取完成回呼快速處理從 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 收到的資料或錯誤。 訊息本身會在 **IBackgroundTask.Run** 方法的內容中處理。 在下列範例中，會使用讀取完成處理常式插入訊息且背景工作稍後要處理的訊息佇列來說明這一點。
 
-下列範例顯示搭配原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取時要使用的讀取完成處理常式
+下列範例顯示搭配原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取時要使用的讀取完成處理常式。
 
 ```csharp
 public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
@@ -296,7 +300,7 @@ WebSocket 的額外細節是持續連線處理常式。 WebSocket 通訊協定�
 
 在 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 內容中使用 **await** 陳述式，以及在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上使用非同步操作時，app 要非常小心。 **Task&lt;bool&gt;** 物件可用來登錄推播通知的 **ControlChannelTrigger**，以及 **StreamWebSocket** 上的 WebSocket 持續連線，然後連線傳輸。 在登錄程序中，**StreamWebSocket** 傳輸會設為 **ControlChannelTrigger** 的傳輸，然後發佈讀取。 **Task.Result** 會封鎖目前的執行緒，直到執行完工作的所有步驟，且陳述式傳回訊息本文後才停止。 必須等到方法傳回 True 或 False 後，才能解析工作。 這樣可以確保整個方法都已執行。 **Task** 可以包含多個 **await** 陳述式，這些陳述式由 **Task** 保護。 使用 **StreamWebSocket** 或 **MessageWebSocket** 做為傳輸時，這個模式應與 **ControlChannelTrigger** 物件搭配使用。 對於那些需要長時間完成的操作 (例如，一般非同步讀取操作)，app 應使用上述的原始非同步模式。
 
-下列範例會登錄推播通知的 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 與 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上的 WebSocket 持續連線
+下列範例會登錄推播通知的 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 與 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上的 WebSocket 持續連線。
 
 ```csharp
 private bool RegisterWithControlChannelTrigger(string serverUri)
@@ -432,14 +436,13 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-如需使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger StreamWebSocket 範例](http://go.microsoft.com/fwlink/p/?linkid=251232)
+如需使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger StreamWebSocket 範例](http://go.microsoft.com/fwlink/p/?linkid=251232)。
 
 ## ControlChannelTrigger 搭配 HttpClient
 
 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收封包要求的處理方式。
 
-**注意** 目前不支援使用 SSL 的 
-           [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+**注意** 目前不支援使用 SSL 的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
  
 在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，應遵循下列使用模式與最佳做法：
@@ -449,7 +452,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 
 與其他網路傳輸不同的是，[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件無法直接傳送至 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 物件的 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法。 相反地，必須特別建構 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件，以搭配 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件和 **ControlChannelTrigger** 使用。 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件是使用 [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) 方法建立的。 然後，所建立的 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件會傳送到 **UsingTransport** 方法。
 
-下列範例顯示如何建構 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件以便搭配 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用
+下列範例顯示如何建構 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件以便搭配 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用。
 
 ```csharp
 using System;
@@ -497,7 +500,7 @@ private void SetupHttpRequestAndSendToHttpServer()
 
 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 顯然與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 傳輸不同。 因為 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 程式碼，[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收回呼是透過 Task 傳遞至 app。 這表示當資料或錯誤分派至 app 時，會立即觸發 **ControlChannelTrigger** 推播通知工作。 在下列範例中，程式碼會將 [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) 方法傳回的 responseTask 儲存到全域儲存區，推播通知工作會提取並內嵌處理這個傳回值。
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用時，如何處理 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上的傳送要求
+下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用時，如何處理 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上的傳送要求。
 
 ```csharp
 using System;
@@ -542,7 +545,7 @@ private void SendHttpRequest()
 }
 ```
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 時，如何讀取接收到的回應
+下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 時，如何讀取接收到的回應。
 
 ```csharp
 using System.Net;
@@ -583,7 +586,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-如需使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger HttpClient 範例](http://go.microsoft.com/fwlink/p/?linkid=258323)
+如需使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger HttpClient 範例](http://go.microsoft.com/fwlink/p/?linkid=258323)。
 
 ## ControlChannelTrigger 搭配 IXMLHttpRequest2
 
@@ -596,10 +599,11 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   App 可能需在呼叫 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 方法之前，先呼叫 [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) 和 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) 方法來設定 HTTP 傳輸。
 -   App 需要先執行一個起始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 搭配使用的傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 物件設定為與 **ControlChannelTrigger** 搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 **IXMLHTTPRequest2** 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
 
-如需使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](http://go.microsoft.com/fwlink/p/?linkid=258538)
+如需使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](http://go.microsoft.com/fwlink/p/?linkid=258538)。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

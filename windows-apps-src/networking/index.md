@@ -1,8 +1,12 @@
 ---
 author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: 存取網路和 Web 服務的技術。
-title: 網路和 Web 服務
+description: "存取網路和 Web 服務的技術。"
+title: "網路和 Web 服務"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
+
 ---
 
 # 網路和 Web 服務
@@ -24,6 +28,7 @@ title: 網路和 Web 服務
 | [使用 EDP 身分識別標記網路連線](tagging_network_connections_with_edp_identity.md) | 本主題說明如何在企業資料保護 (EDP) 案例中建立網路連線之前，先建立受保護的對話內容。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

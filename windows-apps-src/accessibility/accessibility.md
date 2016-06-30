@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 介紹與通用 Windows 平台 (UWP) app 相關的協助工具概念。
+Description: "介紹與通用 Windows 平台 (UWP) app 相關的協助工具概念。"
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: 協助工具
+title: "協助工具"
 label: Accessibility
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+
 ---
 
 # 協助工具  
@@ -15,6 +19,7 @@ template: detail.hbs
 
 協助工具的概念在於為特殊的使用者打造應用程式體驗。這些使用者會在各種不同環境下使用科技產品，並且以各式的需求及體驗來使用您的使用者介面。 根據法律的規定，某些情況必須提供協助工具。 不過無論法律的規定為何，最好能解決無障礙問題，這樣應用程式便能吸引更多的使用者。 此外，也會提供與您應用程式協助工具相關的 Windows 市集宣告。
 
+> [!NOTE]
 > 宣告 app 提供無障礙功能，只與 Windows 市集有關。
 
 | 文章 | 說明 |
@@ -38,6 +43,7 @@ template: detail.hbs
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

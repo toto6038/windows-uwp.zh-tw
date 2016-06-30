@@ -1,8 +1,12 @@
 ---
-title: 密碼編譯的出口限制
-description: 使用這項資訊判斷您的應用程式使用密碼編譯的方式，是否會使它無法被刊登於 Windows 市集中。
+title: "密碼編譯的出口限制"
+description: "使用這項資訊判斷您的應用程式使用密碼編譯的方式，是否會使它無法被刊登於 Windows 市集中。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
+
 ---
 
 # 密碼編譯的出口限制
@@ -55,6 +59,7 @@ author: awkoren
 如果您沒有 ECCN，請參閱 [ECCN 問答集](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

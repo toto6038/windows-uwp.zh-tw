@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 如果您有通用 8.1 app&\#8212;無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計&\#8212;則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。
-title: 從 Windows Runtime 8.x 移至 UWP
+description: "如果您有通用 8.1 app&amp;\\#8212;無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計&amp;\\#8212;則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。"
+title: "從 Windows Runtime 8.x 移至 UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3aa24e61482054dadd9b798063d46abf36623e9b
+
 ---
 
 # 從 Windows Runtime 8.x 移至 UWP
@@ -75,6 +79,7 @@ ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

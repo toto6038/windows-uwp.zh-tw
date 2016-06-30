@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 在通用 Windows 平台 (UWP) app 中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。
-title: Universal Windows Platform (UWP) app 的命令設計基本知識
+Description: "在通用 Windows 平台 (UWP) app 中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。"
+title: "Universal Windows Platform (UWP) app 的命令設計基本知識"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+
 ---
 
 #  UWP app 的命令設計基本知識
@@ -40,7 +44,7 @@ template: detail.hbs
 
 您可以在 app 中的數個表面放置命令元素，包括 app 畫布 (app 的內容區域) 或可當作命令容器的命令元素，例如命令列、功能表、對話方塊，以及飛出視窗。 以下是一些放置命令的一般建議：
 
--   盡可能讓使用者在應用程式的畫布上直接操作內容，不要新增用來處理內容的命令。 例如，在旅遊應用程式中，讓使用者在畫布上拖放清單中的活動來重新安排旅遊行程，而不是選取某個活動，然後使用 [上移] 或 [下移] 命令按鈕。
+-   盡可能讓使用者在應用程式的畫布上直接操作內容，不要新增用來處理內容的命令。 例如，在旅遊應用程式中，讓使用者在畫布上拖放清單中的活動來重新安排旅遊行程，而不是選取某個活動，然後使用 \[上移\] 或 \[下移\] 命令按鈕。
 -   如果使用者無法直接操作內容，請在下列這些 UI 表面上放置命令：
 
     -   [命令列](https://msdn.microsoft.com/library/windows/apps/hh465302)：您應該將大部分命令放在命令列，它能協助整理命令，並讓它們容易存取。
@@ -152,6 +156,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 在 Marble Maze 範例中加入輸入和互動
-description: 通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。
+title: "在 Marble Maze 範例中加入輸入和互動"
+description: "通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
+
 ---
 
 # 在 Marble Maze 範例中加入輸入和互動
@@ -83,8 +87,8 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 您可以使用滑鼠、觸控或 Xbox 360 控制器來瀏覽功能表，如下所示：
 
 -   使用方向鍵來變更現用功能表項目。
--   使用觸控、A 按鈕或 [開始] 按鈕來挑選功能表項目或關閉目前的功能表，例如計分排行榜。
--   使用 [開始] 按鈕來讓遊戲暫停或繼續。
+-   使用觸控、A 按鈕或 \[開始\] 按鈕來挑選功能表項目或關閉目前的功能表，例如計分排行榜。
+-   使用 \[開始\] 按鈕來讓遊戲暫停或繼續。
 -   以滑鼠按一下功能表項目來選擇該動作。
 
 ###  追蹤觸控和滑鼠輸入
@@ -161,7 +165,7 @@ for (int i = 0; i < buttonCount; ++i)
 }
 ```
 
-在 **MarbleMaze::Update** 方法收集按鈕輸入之後，它會執行必須發生的任何動作。 例如，按下 [開始] 按鈕 (XINPUT\_GAMEPAD\_START) 時，遊戲狀態會從作用中變成暫停，或從暫停變成作用中。
+在 **MarbleMaze::Update** 方法收集按鈕輸入之後，它會執行必須發生的任何動作。 例如，按下 \[開始\] 按鈕 (XINPUT\_GAMEPAD\_START) 時，遊戲狀態會從作用中變成暫停，或從暫停變成作用中。
 
 ```cpp
 // Check whether the user paused or resumed the game. 
@@ -522,6 +526,7 @@ if (marblePosition.z >= resetDepth)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

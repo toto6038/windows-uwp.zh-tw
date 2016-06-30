@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-title: 封裝 app
-description: 本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。
+title: "封裝 app"
+description: "本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f50874ceb5e133f2b1b764bfc6fcff6422172db
+
 ---
 # 封裝 app
 
@@ -21,6 +25,7 @@ description: 本節包含或連結至關於封裝通用 Windows 平台 (UWP) app
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

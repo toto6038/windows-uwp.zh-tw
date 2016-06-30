@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 新增使用者介面
-description: 您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。
+title: "新增使用者介面"
+description: "您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
+
 ---
 
 # 新增使用者介面
@@ -1488,6 +1492,7 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

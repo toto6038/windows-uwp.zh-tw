@@ -5,8 +5,8 @@ title: "磚"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
+ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
 ---
 
@@ -48,13 +48,10 @@ App 在 \[開始\] 功能表上以磚的形式顯示。 每個 app 都會有一�
 
     您應該以自己的影像取代這些影像。 您可以選擇為不同的視覺比例提供影像，但不需全部提供。 若要確保您的 app 在各種裝置上有很好的顯示效果，我們建議您提供每個影像的 100%、200% 及 400% 比例版本。
 
-    縮放影像按照以下命名慣例：
+    縮放影像按照以下命名慣例： 
     
-    &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt; 
-
-
-     
-
+    &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt;  
+    
     例如：SmallLogo.scale-100.png
 
     參考影像時，您將以 *&lt;影像名稱&gt;*.*&lt;影像檔案副檔名&gt;* 的格式來參考它 (在此範例中為 "SmallLogo.png")。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
@@ -109,6 +106,6 @@ App 在 \[開始\] 功能表上以磚的形式顯示。 每個 app 都會有一�
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

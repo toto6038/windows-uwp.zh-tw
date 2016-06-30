@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 原始通知是簡短、一般用途的推播通知。
-title: 原始通知概觀
+Description: "原始通知是簡短、一般用途的推播通知。"
+title: "原始通知概觀"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+
 ---
 
 # 原始通知概觀
@@ -31,7 +35,7 @@ template: detail.hbs
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
 -   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能]**** 索引標籤下找到此 [網際網路 (用戶端)]**** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 \[功能\] 索引標籤下找到此 \[網際網路 (用戶端)\] 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 
@@ -126,6 +130,7 @@ App 有兩個管道可以接收原始通知：
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

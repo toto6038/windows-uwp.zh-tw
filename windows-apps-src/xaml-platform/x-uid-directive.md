@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
-title: x&#58;Uid 指示詞
+description: "提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。"
+title: "x&#58;Uid 指示詞"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
+
 ---
 
 # x&#58;Uid 指示詞
@@ -31,7 +35,7 @@ ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-若要指定內容來取代顯示文字 [**執行**]，您必須指定一個來自資源檔的新資源。 您的資源檔應該包含一個名稱為 "GoButton.Content" 的資源項目。 在這種情況下，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) 會是 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別所繼承的特定屬性。 您也可以為這個按鈕的其他屬性提供當地語系化值，例如您可以為 "GoButton.FlowDirection" 提供一個以資源為基礎的值。 如需如何將 **x:Uid** 與資源檔搭配使用的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+若要指定內容來取代顯示文字 \[執行\]，您必須指定一個來自資源檔的新資源。 您的資源檔應該包含一個名稱為 "GoButton.Content" 的資源項目。 在這種情況下，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) 會是 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別所繼承的特定屬性。 您也可以為這個按鈕的其他屬性提供當地語系化值，例如您可以為 "GoButton.FlowDirection" 提供一個以資源為基礎的值。 如需如何將 **x:Uid** 與資源檔搭配使用的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 要使用哪些字串做為 **x:Uid** 值才有效，實際上取決於哪些字串在資源檔和資源路徑中可以做為合法識別碼。
 
@@ -45,6 +49,7 @@ UWP XAML 的 **x:Uid** 唯一性，和之前使用的 XAML-utilizing 技術有�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

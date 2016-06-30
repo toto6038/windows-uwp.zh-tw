@@ -1,9 +1,13 @@
 ---
-Description: 以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。
-title: Windows 10 應用程式使用方法指南 - Windows 應用程式開發
+Description: "以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。"
+title: "Windows 10 應用程式使用方法指南 - Windows 應用程式開發"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
+ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
+
 ---
 
 
@@ -21,6 +25,7 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

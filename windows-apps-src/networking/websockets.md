@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊。
+description: "WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊。"
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
+
 ---
 
 # WebSocket
@@ -39,7 +43,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 本節中的程式碼會建立新的 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)、連線到 WebSocket 伺服器並傳送資料到伺服器。 建立成功的連線後，應用程式會等候觸發 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) 事件，指出已收到資料。
 
-此範例使用 WebSocket.org 回應伺服器，此服務會直接將傳送給它的任何字串回傳給傳送者。 此範例使用 "wss:" 通訊協定規範，透過安全連線來傳送和接收訊息。
+此範例使用 WebSocket.org 回應伺服器，此服務會直接將傳送給它的任何字串回傳給傳送者。 使範例使用 "wss:" 通訊協定規範，透過安全連線來傳送和接收訊息。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -351,6 +355,7 @@ MessageWebSocket 和 StreamWebSocket 類別會使用內部系統服務，來傳�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

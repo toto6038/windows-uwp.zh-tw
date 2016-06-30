@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 將 DirectX 9 功能對應到 DirectX 11 API
-description: 了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。
+title: "將 DirectX 9 功能對應到 DirectX 11 API"
+description: "了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。"
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+
 ---
 
 # 將 DirectX 9 功能對應到 DirectX 11 API
@@ -669,6 +673,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

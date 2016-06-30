@@ -3,8 +3,8 @@ author: jwmsft
 description: "說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段 app 定義及實作自訂相依性屬性。"
 title: "自訂相依性屬性"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
+ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 
 ---
 
@@ -253,7 +253,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;
+        iwlc.HasLabelValue = false;s
     } else {
         iwlc.HasLabelValue = true;
     }
@@ -278,7 +278,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}
+}s
 ```
 
 ### 結構與列舉的屬性變更行為
@@ -340,7 +340,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 -   您通常不會為集合建立動畫效果。
 -   您通常不會使用樣式或範本在集合中預先填入項目。
 -   雖然繫結到集合是主要的案例，但是集合不一定必須是相依性屬性才能成為繫結來源。 對於繫結目標來說，最常見的做法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子類別來支援集合項目，或是使用檢視模型模式。 如需與集合相互繫結的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
--   透過 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 之類的介面，或是從 [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) 衍生集合類型，可以較好的處理集合變更的通知。
+-   透過 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 之類的介面，或是從 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 衍生集合類型，可以較好的處理集合變更的通知。
 
 儘管如此，還是有適用於集合類型相依性屬性的案例。 接下來三個小節提供一些如何實作集合類型相依性屬性的指導方針。
 
@@ -379,6 +379,6 @@ Windows 執行階段不提供將自訂相依性屬性登錄為唯讀的方法。
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 
