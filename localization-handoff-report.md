@@ -1,26 +1,39 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\input-primer.md](https://github.com/Microsoft/windows-apps/blob/fe012189566a20203b2bf8cae72f80655eeadfd1/windows-apps-src/input-and-devices/input-primer.md) | OutofSyncHandedBackSuccess | [Details](#6084a49a8d8d9884c3bd777160ca219059d1654b2983)
+ [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://github.com/Microsoft/windows-apps/blob/aa64c39c452beb2356186789a0d8bc44f79d82d2/windows-apps-src/porting/desktop-to-uwp-extensions.md) | HandedOffSuccess | [Details](#0ad7e8d0fe63ffbfa8668be8955859258887d6f03469)
+ [windows-apps-src\xbox-apps\how-to-disable-mouse-mode.md](https://github.com/Microsoft/windows-apps/blob/afb6c206ed7092fbcee29c245cd5471a4d8b6cf8/windows-apps-src/xbox-apps/how-to-disable-mouse-mode.md) | OutofSyncHandedBackSuccess | [Details](#e928b0764ada988f06aa3707a3d91cd0b6b5b9033956)
 
 ## Item Details
-##### <a name='6084a49a8d8d9884c3bd777160ca219059d1654b2983'></a> Source: [windows-apps-src\input-and-devices\input-primer.md](https://github.com/Microsoft/windows-apps/blob/fe012189566a20203b2bf8cae72f80655eeadfd1/windows-apps-src/input-and-devices/input-primer.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='0ad7e8d0fe63ffbfa8668be8955859258887d6f03469'></a> Source: [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://github.com/Microsoft/windows-apps/blob/aa64c39c452beb2356186789a0d8bc44f79d82d2/windows-apps-src/porting/desktop-to-uwp-extensions.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5e2eb634c89dca0ac2714258517835150111df17/ol-handoff/Microsoft/windows-apps.zh-tw/master/input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.zh-tw.xlf)
-* Handoff Datetime: 2016-07-06 18:36:31
+* Handoff File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/98288866459ac5048c582aefe3abe56eda4bde32/ol-handoff/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf)
+* Handoff Datetime: 2016-07-06 19:24:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\input-primer.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/b5b7769402d1075d787c34cc96beb388a7e3cf20/windows-apps-src/input-and-devices/input-primer.md)
-* Current Handback File: [input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ab4639345174d2fae7c186f49c61101809414a5b/ol-handback/Microsoft/windows-apps.zh-tw/master/input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.zh-tw.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='e928b0764ada988f06aa3707a3d91cd0b6b5b9033956'></a> Source: [windows-apps-src\xbox-apps\how-to-disable-mouse-mode.md](https://github.com/Microsoft/windows-apps/blob/afb6c206ed7092fbcee29c245cd5471a4d8b6cf8/windows-apps-src/xbox-apps/how-to-disable-mouse-mode.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/98288866459ac5048c582aefe3abe56eda4bde32/ol-handoff/Microsoft/windows-apps.zh-tw/master/how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.zh-tw.xlf)
+* Handoff Datetime: 2016-07-06 19:24:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\how-to-disable-mouse-mode.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/b5b7769402d1075d787c34cc96beb388a7e3cf20/windows-apps-src/xbox-apps/how-to-disable-mouse-mode.md)
+* Current Handback File: [how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ab4639345174d2fae7c186f49c61101809414a5b/ol-handback/Microsoft/windows-apps.zh-tw/master/how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.zh-tw.xlf)
 * Current Handback Datetime: 2016-06-30 20:23:47
 * [Back to Top](#report-top)
 
