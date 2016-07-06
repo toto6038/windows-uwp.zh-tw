@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\create-and-register-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/579547b7bd2ee76390b8cac66855be4a9dce008e/windows-apps-src/launch-resume/create-and-register-a-background-task.md) | OutofSyncHandedBackSuccess | [Details](#e8da193f96709bdd87bd6a008eb5885cc5c819fd3009)
+ [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://github.com/Microsoft/windows-apps/blob/d7d7edf8d1ed6ae1c4be504cd4827bb941f14380/windows-apps-src/launch-resume/how-to-create-and-consume-an-app-service.md) | OutofSyncHandedBackSuccess | [Details](#13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c3017)
 
 ## Item Details
-##### <a name='e8da193f96709bdd87bd6a008eb5885cc5c819fd3009'></a> Source: [windows-apps-src\launch-resume\create-and-register-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/579547b7bd2ee76390b8cac66855be4a9dce008e/windows-apps-src/launch-resume/create-and-register-a-background-task.md)
+##### <a name='13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c3017'></a> Source: [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://github.com/Microsoft/windows-apps/blob/d7d7edf8d1ed6ae1c4be504cd4827bb941f14380/windows-apps-src/launch-resume/how-to-create-and-consume-an-app-service.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-and-register-a-background-task.01f0ee74be60336ec8767af43d9f081f567f6796.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/96519cacbf2ecb2c0541b0c9572edb8d5ddf9302/ol-handoff/Microsoft/windows-apps.zh-tw/master/create-and-register-a-background-task.01f0ee74be60336ec8767af43d9f081f567f6796.zh-tw.xlf)
-* Handoff Datetime: 2016-07-06 20:51:51
+* Handoff File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/23af95b6e7695b186c378623cfc4f7e8d94548c4/ol-handoff/Microsoft/windows-apps.zh-tw/master/how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-tw.xlf)
+* Handoff Datetime: 2016-07-06 21:34:04
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\create-and-register-a-background-task.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/b5b7769402d1075d787c34cc96beb388a7e3cf20/windows-apps-src/launch-resume/create-and-register-a-background-task.md)
-* Current Handback File: [create-and-register-a-background-task.01f0ee74be60336ec8767af43d9f081f567f6796.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ab4639345174d2fae7c186f49c61101809414a5b/ol-handback/Microsoft/windows-apps.zh-tw/master/create-and-register-a-background-task.01f0ee74be60336ec8767af43d9f081f567f6796.zh-tw.xlf)
+* Current Target File: [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/b5b7769402d1075d787c34cc96beb388a7e3cf20/windows-apps-src/launch-resume/how-to-create-and-consume-an-app-service.md)
+* Current Handback File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ab4639345174d2fae7c186f49c61101809414a5b/ol-handback/Microsoft/windows-apps.zh-tw/master/how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-tw.xlf)
 * Current Handback Datetime: 2016-06-30 20:23:47
 * [Back to Top](#report-top)
 
