@@ -71,8 +71,7 @@ ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 
 您的應用程式檢視是由應用程式視窗的檢視提供者所產生，在大部分情況下，都將由特定的架構套件或系統本身來實作，因此您不需要自己實作它。 針對 DirectX，您需要實作精簡型檢視提供者，如先前所討論。 下列元件和行為之間有特定的 1 對 1 關係：
 
--   [
-            **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 類型表示的應用程式檢視，可定義更新視窗的方法。
+-   [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 類型表示的應用程式檢視，可定義更新視窗的方法。
 -   ASTA，這個元件的屬性可以定義應用程式執行緒的行為。 您無法在 ASTA 上建立 COM STA 屬性類型的執行個體。
 -   應用程式從系統取得或您實作的檢視提供者。
 -   一個父視窗，由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型表示。
@@ -83,16 +82,14 @@ ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 ## CoreApplicationView 行為和屬性
 
 
-[
-            **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 屬性來取得顯示檢視的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件以處理啟用或停用事件。
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 屬性來取得顯示檢視的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件以處理啟用或停用事件。
 
 ## CoreWindow 行為和屬性
 
 
 初始化應用程式物件時，會建立父視窗 ([**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體) 並將它傳送至檢視提供者。 如果應用程式有可以顯示的視窗，就會顯示該視窗；否則只會初始化檢視。
 
-[
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 會提供與輸入和基本視窗行為相關的一系列事件。 將自己的委派登錄到這些事件後，您就可以處理它們了。
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 會提供與輸入和基本視窗行為相關的一系列事件。 將自己的委派登錄到這些事件後，您就可以處理它們了。
 
 您也可以存取 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 屬性 (提供 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 執行個體)，並藉此取得視窗的視窗事件發送器。
 

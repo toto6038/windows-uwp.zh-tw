@@ -45,7 +45,8 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
 
 ## 緯度和經度屬性不再提供
 
-**AdControl** 類別不再有適用於 UWP app 的 **Latitude** 和 **Longitude** 屬性。 相反地，廣告控制項內建的程式碼會偵測，並代替 app 將這些值傳送至廣告伺服器。
+
+            **AdControl** 類別不再有適用於 UWP app 的 **Latitude** 和 **Longitude** 屬性。 相反地，廣告控制項內建的程式碼會偵測，並代替 app 將這些值傳送至廣告伺服器。
 
 ## 重要須知：
 

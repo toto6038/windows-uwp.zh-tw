@@ -27,14 +27,10 @@ API 可讓開發人員定義及建立一或多個 [**Visual**](https://msdn.micr
 
 「視覺效果」可以是其他「視覺效果」的容器，也可以裝載內容「視覺效果」。 API 藉由為存在於階層中的特定工作 提供一組明確的 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 物件，讓使用更為便利：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件。 大多數的屬性都在這裡，並且會被其他視覺物件繼承。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增插入子系視覺效果的能力。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且包含影像、效果及交換鏈結形式的內容。
--   [
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 管理應用程式與系統撰寫器處理程序之間關係的物件處理站。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件。 大多數的屬性都在這裡，並且會被其他視覺物件繼承。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增插入子系視覺效果的能力。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且包含影像、效果及交換鏈結形式的內容。
+-   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 管理應用程式與系統撰寫器處理程序之間關係的物件處理站。
 
 撰寫器除了是一組豐富的動畫和效果之外，也是一些其他用來裁剪或轉換樹狀結構中視覺效果之組合物件的處理站。
 
@@ -64,8 +60,7 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 
 -   閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[圖形與動畫 - Windows 組合邁向 10](https://msdn.microsoft.com/magazine/mt590968) (英文)
 -   [Composition GitHub](https://github.com/Microsoft/composition) 中的組合範例 (英文)。
--   [
-            **API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
+-   [**API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
 -   已知問題：[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
  

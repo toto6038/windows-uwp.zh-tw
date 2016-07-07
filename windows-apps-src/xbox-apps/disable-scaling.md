@@ -36,6 +36,6 @@ DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

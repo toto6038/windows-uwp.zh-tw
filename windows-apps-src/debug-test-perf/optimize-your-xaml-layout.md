@@ -68,8 +68,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 選項 2：單一 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
 
 ```xml
   <Grid>
@@ -157,8 +156,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 ## 使用面板內建的框線屬性
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 及 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控制項具有內建的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中加入額外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支援內建框線的新屬性如下：**BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 及 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控制項具有內建的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中加入額外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支援內建框線的新屬性如下：**BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
 
 如果您的 UI 在這些面板周圍具有 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素，請改用內建的框線，以便在 app 的版面配置結構中省下額外的元素。 如先前所述，這樣能夠大幅節省，特別是在重複 UI 的情況下。
 
@@ -173,13 +171,11 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 ## 使用 **SizeChanged** 事件來回應版面配置變更
 
-[
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
+[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
 
 如需良好的效能，[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 幾乎一向是正確的選擇。 **SizeChanged** 具備直覺式語意。 它會在進行版面配置期間更新 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小時引發。
 
-[
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
+[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
 
 ## 選擇面板
 

@@ -39,7 +39,8 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 ## 取得對媒體櫃的參考
 
 
-**注意**：請記得宣告適當的功能。
+
+            **注意**：請記得宣告適當的功能。
  
 
 若要取得對使用者的 \[音樂\]、\[圖片\] 或 \[影片\] 媒體櫃的參考，請呼叫 StorageLibrary.GetLibraryAsync 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
@@ -141,7 +142,8 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [
+您不需要編寫其他程式碼即可處理這項操作。 
+            [
               **Windows.Storage**
             ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
@@ -206,7 +208,8 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 您可以在應用程式資訊清單檔案中指定下列功能來存取應用程式中的媒體檔案。
 
--   **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   
+            **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .qcp
     -   .wav
@@ -227,7 +230,8 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
     -   .adt
     -   .adts
     -   .pya
--   **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   
+            **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .jpeg
     -   .jpe
@@ -240,7 +244,8 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
     -   .wdp
     -   .jxr
     -   .hdp
--   **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   
+            **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .wm
     -   .m4v

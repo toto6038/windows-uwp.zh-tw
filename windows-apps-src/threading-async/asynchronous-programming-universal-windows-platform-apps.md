@@ -62,8 +62,7 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 
 在 C++/CX 中，非同步程式設計的基礎在於 [**task class**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) 以及其 [**then method**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx)。 語法和 JavaScript Promise 的語法類似。 **task 類別**以及相關類型也會提供取消和管理執行緒內容的功能。 如需詳細資訊，請參閱 [C++ 中的非同步程式設計](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[
-            **create\_async function**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx) 可以提供產生非同步 API 的相關支援，讓開發人員能夠使用 JavaScript 或支援 UWP 的任何其他語言來取用非同步 API。 如需詳細資訊，請參閱[在 C++ 中建立非同步作業](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
+[**create\_async function**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx) 可以提供產生非同步 API 的相關支援，讓開發人員能夠使用 JavaScript 或支援 UWP 的任何其他語言來取用非同步 API。 如需詳細資訊，請參閱[在 C++ 中建立非同步作業](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
 
 ## 使用 JavaScript 的 UWP 中的非同步模式
 

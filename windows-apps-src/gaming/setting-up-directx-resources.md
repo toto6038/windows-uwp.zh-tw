@@ -220,12 +220,9 @@ ms.openlocfilehash: f60d7c5b526fcdea8552256a6ebe4b92d5736264
 
 在這個迴圈中，我們呼叫：
 
-1.  [
-            **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，將轉譯目標指定為輸出目標。
-2.  [
-            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388)，將轉譯目標清除為純色。
-3.  [
-            **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，將轉譯的影像呈現到視窗。
+1.  [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，將轉譯目標指定為輸出目標。
+2.  [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388)，將轉譯目標清除為純色。
+3.  [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，將轉譯的影像呈現到視窗。
 
 由於我們之前已將最大框架延遲設定為 1，因此 Windows 通常會將轉譯迴圈速度減慢到螢幕的重新整理頻率，一般大約為 60 Hz。 Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時，讓應用程式進入睡眠模式，以減慢轉譯迴圈速度。 Windows 會讓應用程式保持在睡眠模式，直到螢幕重新整理為止。
 

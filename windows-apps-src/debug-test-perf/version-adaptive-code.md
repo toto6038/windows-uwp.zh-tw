@@ -198,7 +198,8 @@ Windows 10 版本 1607 導入了新的媒體控制項，稱為 [**MediaPlayerEle
  
 **MediaPlayerUserControl** 
 
-`MediaPlayerUserControl` 會封裝 **MediaPlayerElement** 和數個用來逐格略過媒體的按鈕。 UserControl 可讓您將這些控制項視為單一項目，並讓在舊版系統上切換 MediaElement 變得更容易。 這個使用者控制項應該僅於存在 MediaPlayerElement 的系統上使用，因此您不必在此使用者控制項的程式碼中使用 ApiInformation 檢查。
+
+            `MediaPlayerUserControl` 會封裝 **MediaPlayerElement** 和數個用來逐格略過媒體的按鈕。 UserControl 可讓您將這些控制項視為單一項目，並讓在舊版系統上切換 MediaElement 變得更容易。 這個使用者控制項應該僅於存在 MediaPlayerElement 的系統上使用，因此您不必在此使用者控制項的程式碼中使用 ApiInformation 檢查。
 
 > [!NOTE]
 > 為了讓此範例簡單且聚焦，畫面速度按鈕將放置在媒體播放程式之外。 若要取得較佳的使用者體驗，您應該自訂 MediaTransportControls 以包含您的自訂按鈕。 如需詳細資訊，請參閱[自訂傳輸控制項](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
@@ -274,7 +275,8 @@ namespace MediaApp
 
 **MediaElementUserControl**
  
-`MediaElementUserControl` 會封裝 **MediaElement** 控制項。
+
+            `MediaElementUserControl` 會封裝 **MediaElement** 控制項。
 
 **XAML**
 ```xaml
@@ -297,7 +299,8 @@ namespace MediaApp
 ```
 
 > [!NOTE]
-> `MediaElementUserControl` 的程式碼頁面只包含產生的程式碼，因此它不會顯示。
+> 
+            `MediaElementUserControl` 的程式碼頁面只包含產生的程式碼，因此它不會顯示。
 
 **根據 IsTypePresent 初始化控制項**
 

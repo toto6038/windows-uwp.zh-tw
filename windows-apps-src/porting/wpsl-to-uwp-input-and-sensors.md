@@ -39,7 +39,8 @@ UWP 應用程式不支援鏡頭應用程式。
 
 考量應用程式設計目標的方式隨 Windows 10 而有所改變。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-**注意** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
+
+            **注意** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
 
 有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態版面配置面板。 在 XAML 標記中，繼續使用以有效像素 (先前稱為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631))。
 
@@ -68,28 +69,45 @@ Windows Phone Silverlight app 可以使用 **Microsoft.Phone.Info.DeviceStatus**
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | [
+| 
+            **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | 
+            [
               **MemoryManager.AppMemoryUsage**
             ](https://msdn.microsoft.com/library/windows/apps/dn633832) 和 [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) 屬性                                                                                                                                    |
-| **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
-| **DeviceFirmwareVersion** 屬性                                                      | [
+| 
+            **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
+| 
+            **DeviceFirmwareVersion** 屬性                                                      | 
+            [
               **EasClientDeviceInformation.SystemFirmwareVersion**
             ](https://msdn.microsoft.com/library/windows/apps/dn608144) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceHardwareVersion** 屬性                                                      | [
+| 
+            **DeviceHardwareVersion** 屬性                                                      | 
+            [
               **EasClientDeviceInformation.SystemHardwareVersion**
             ](https://msdn.microsoft.com/library/windows/apps/dn608145) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceManufacturer** 屬性                                                         | [
+| 
+            **DeviceManufacturer** 屬性                                                         | 
+            [
               **EasClientDeviceInformation.SystemManufacturer**
             ](https://msdn.microsoft.com/library/windows/apps/hh701398) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                |
-| **DeviceName** 屬性                                                                 | [
+| 
+            **DeviceName** 屬性                                                                 | 
+            [
               **EasClientDeviceInformation.SystemProductName**
             ](https://msdn.microsoft.com/library/windows/apps/hh701401) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                 |
-| **DeviceTotalMemory** 屬性                                                          | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
-| **IsKeyboardDeployed** 屬性                                                         | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **IsKeyboardPresent** 屬性                                                          | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **KeyboardDeployedChanged** 事件                                                       | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **PowerSource** 屬性                                                                | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
-| **PowerSourceChanged** 事件                                                            | 處理 [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) 事件 (僅行動裝置系列)。 當 [**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) 屬性 (僅行動裝置系列) 的值減少 1% 時，便會引發該事件。 |
+| 
+            **DeviceTotalMemory** 屬性                                                          | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
+| 
+            **IsKeyboardDeployed** 屬性                                                         | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
+| 
+            **IsKeyboardPresent** 屬性                                                          | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
+| 
+            **KeyboardDeployedChanged** 事件                                                       | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
+| 
+            **PowerSource** 屬性                                                                | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
+| 
+            **PowerSourceChanged** 事件                                                            | 處理 [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) 事件 (僅行動裝置系列)。 當 [**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) 屬性 (僅行動裝置系列) 的值減少 1% 時，便會引發該事件。 |
 
 ## 位置
 

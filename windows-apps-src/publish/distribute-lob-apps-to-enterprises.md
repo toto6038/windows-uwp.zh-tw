@@ -13,7 +13,8 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 您可以透過商務用 Windows 市集，將企業營運 (LOB) app 直接發佈到企業來進行大量取得，而不需使 app 可在市集中廣泛取得。
 
-> **重要** 目前只有免費的 app 可透過商務用 Windows 市集，單獨發佈到企業。 若您提交付費 app 做為 LOB，則目前無法將其提供給企業使用。 
+> 
+            **重要** 目前只有免費的 app 可透過商務用 Windows 市集，單獨發佈到企業。 若您提交付費 app 做為 LOB，則目前無法將其提供給企業使用。 
 
 ## 設定企業關聯
 
@@ -39,7 +40,8 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 選取應該能夠取得該 app 的企業。 沒有其他任何人能夠存取它。
 
-> **注意：**至少必須選取一家企業，以便將 app 當成企業營運 app 來發佈。
+> 
+            **注意：**至少必須選取一家企業，以便將 app 當成企業營運 app 來發佈。
 
 ### 組織授權
 
@@ -53,7 +55,8 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 按一下 \[提交到市集\] 之後，app 將進入認證程序。 一旦準備好之後，企業的系統管理員就必須在商務用 Windows 市集入口網站中將它新增到私人市集。 企業接著可將該 app 部署到它的使用者。
 
-> **注意** 若要取得您的 LOB app，組織必須位於[支援的市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)，且提交您的 app 時不能排除該市場。 
+> 
+            **注意** 若要取得您的 LOB app，組織必須位於[支援的市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)，且提交您的 app 時不能排除該市場。 
 
 如需詳細資訊，請參閱[使用企業營運 App](http://go.microsoft.com/fwlink/p/?LinkId=698846) 和[使用您的私人市集發佈 App](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
@@ -81,6 +84,6 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

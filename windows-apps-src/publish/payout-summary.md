@@ -17,7 +17,8 @@ ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
 
 如果您在 Azure Marketplace 銷售產品，您也會在 \[支付摘要\] 中看到 2015 年 11 月 1 日後成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](http://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 您可以在[這裡](http://go.microsoft.com/fwlink/p/?LinkID=722439)檢視較早之前 Azure Marketplace 支付資訊的詳細資訊。
 
-> **注意：**為符合支付資格，您 app 的收益必須達到適用的付款門檻。 如果收益少於付款門檻，將會維持在 \[保留\] 類別中，直到達到門檻為止。 如需詳細資訊，請參閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。
+> 
+            **注意：**為符合支付資格，您 app 的收益必須達到適用的付款門檻。 如果收益少於付款門檻，將會維持在 \[保留\] 類別中，直到達到門檻為止。 如需詳細資訊，請參閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。
 >
 > 付款是每月進行一次 (假設已符合任何適用的付款門檻)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何應付款項。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。
 
@@ -112,6 +113,6 @@ ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

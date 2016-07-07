@@ -278,7 +278,8 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意** 就 Windows Phone 市集 app 而言，[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 的功能就像 [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)，相同點在於為新增約會顯示的對話方塊都是可編輯的。
+
+            **注意** 就 Windows Phone 市集 app 而言，[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 的功能就像 [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)，相同點在於為新增約會顯示的對話方塊都是可編輯的。
 
 ## 在使用者的行事曆替換約會
 
@@ -503,7 +504,8 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## 新增可編輯的約會
 
-[
+
+            [
               **ShowEditNewAppointmentAsync**
             ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 的作用與 [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 相同，唯一的差別在於用來新增約會的對話方塊可供編輯，讓使用者可以先修改約會資料再儲存。
 
@@ -540,7 +542,8 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## 顯示約會詳細資料
 
-[
+
+            [
               **ShowAppointmentDetailsAsync**
             ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) 會使系統顯示指定之約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
 
@@ -576,6 +579,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

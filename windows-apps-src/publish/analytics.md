@@ -13,7 +13,8 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 
 您可以在 Windows 開發人員中心儀表板中，檢視 app 的詳細分析。 統計資料和圖表讓您能夠了解 app 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 app 的方式以及他們給該 app 的評價。 您也可以找到 app 健康情況、廣告使用量及其他更多項目的相關資訊。 在儀表板中檢視報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;除了儀表板的報告之外，您可透過 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)，以程式設計的方式存取部分的分析資料。
 
 ## 分析您所有的 app
@@ -40,7 +41,8 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 -   [App 安裝廣告報告](app-install-ads-reports.md)
 -   [通道與轉換報告](channels-and-conversions-report.md)
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;您可能無法在所有報告中都能夠看到資料，這會依據您 app 的特定功能和實作而定。
 
 ## 頁面與區段篩選
@@ -70,7 +72,8 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 * [了解如何使用 Power BI](https://powerbi.microsoft.com/guided-learning/)
 * [了解如何使用適用於 Power BI 的 Windows 開發人員中心內容封裝，以連接到您的分析資料](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;若要連接到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您從與您的開發人員中心帳戶關聯的 Azure AD 目錄指定認證。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI 來重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需如何關聯您的開發人員中心帳戶與 Azure AD 的詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
 
 ### 開發人員中心 App

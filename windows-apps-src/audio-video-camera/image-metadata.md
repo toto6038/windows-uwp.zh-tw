@@ -18,13 +18,11 @@ ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
 
 ## 影像屬性
 
-[
-            **StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
+[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-若要存取更大的一組檔案中繼資料，請使用 Windows 屬性系統，這是一組可使用唯一字串識別碼擷取的檔案中繼資料屬性。 針對您想要擷取的每個屬性，建立字串清單並加入識別碼。 [
-            **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法接受此字串清單，並傳回機碼/值組字典，其中機碼是屬性識別碼，值是屬性值。
+若要存取更大的一組檔案中繼資料，請使用 Windows 屬性系統，這是一組可使用唯一字串識別碼擷取的檔案中繼資料屬性。 針對您想要擷取的每個屬性，建立字串清單並加入識別碼。 [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法接受此字串清單，並傳回機碼/值組字典，其中機碼是屬性識別碼，值是屬性值。
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 

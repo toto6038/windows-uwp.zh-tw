@@ -47,12 +47,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## 將 SystemCondition 物件新增到背景工作
+## [!div class="tabbedCodeSnippets"]
 
+
+將 SystemCondition 物件新增到背景工作
 
 如果要新增條件，請呼叫 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件上的 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法，並將 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件傳給它。
-
-下列程式碼使用 TaskBuilder 登錄 InternetAvailable 背景工作條件：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -62,12 +62,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## 登錄背景工作
+## 下列程式碼使用 TaskBuilder 登錄 InternetAvailable 背景工作條件：
 
 
-現在您可以使用 [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法來登錄背景工作，而且只有在滿足指定條件時，工作才會啟動。
+[!div class="tabbedCodeSnippets"]
 
-下列程式碼會登錄工作並儲存產生的 BackgroundTaskRegistration 物件：
+登錄背景工作
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -77,20 +77,20 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **注意** 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+> 現在您可以使用 [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法來登錄背景工作，而且只有在滿足指定條件時，工作才會啟動。
 
-為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
+下列程式碼會登錄工作並儲存產生的 BackgroundTaskRegistration 物件： [!div class="tabbedCodeSnippets"]
 
-> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
+> **注意** 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-## 在背景工作上放置多個條件
+## **注意** 背景工作登錄參數會在登錄時受到驗證。
 
-若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 這些呼叫必須在工作登錄生效之前發生。
+如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
 
-> **注意：**請小心，不要將衝突的條件新增到背景工作。
+> 在背景工作上放置多個條件
  
 
-下列程式碼片段會在建立並登錄背景工作的內容中顯示多個條件：
+若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -152,35 +152,35 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## 備註
+## 這些呼叫必須在工作登錄生效之前發生。
 
 
-> **注意：**為背景工作選擇正確條件，讓工作只在需要時才執行，而且不會在工作無法運作時執行。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> **注意：**請小心，不要將衝突的條件新增到背景工作。 下列程式碼片段會在建立並登錄背景工作的內容中顯示多個條件：
 
-> **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> [!div class="tabbedCodeSnippets"] 備註
 
  
 
-## 相關主題
+## **注意：**為背景工作選擇正確條件，讓工作只在需要時才執行，而且不會在工作無法運作時執行。
 
 
 ****
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [登錄背景工作](register-a-background-task.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
-* [使用維護觸發程序](use-a-maintenance-trigger.md)
-* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [背景工作的指導方針](guidelines-for-background-tasks.md)
+* [如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。](create-and-register-a-background-task.md)
+* [**注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。](declare-background-tasks-in-the-application-manifest.md)
+* [如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。](handle-a-cancelled-background-task.md)
+* [相關主題](monitor-background-task-progress-and-completion.md)
+* [建立並登錄背景工作](register-a-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](respond-to-system-events-with-background-tasks.md)
+* [處理已取消的背景工作](update-a-live-tile-from-a-background-task.md)
+* [監視背景工作進度和完成](use-a-maintenance-trigger.md)
+* [登錄背景工作](run-a-background-task-on-a-timer-.md)
+* [使用背景工作回應系統事件](guidelines-for-background-tasks.md)
 
 ****
 
-* [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [從背景工作更新動態磚](debug-a-background-task.md)
+* [使用維護觸發程序](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -188,6 +188,6 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

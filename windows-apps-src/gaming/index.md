@@ -3,8 +3,8 @@ author: mtoepke
 title: "遊戲和 DirectX"
 description: "通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
+ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 ---
 
@@ -13,15 +13,15 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-通用 Windows 平台 (UWP) 能提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
+通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
 
 | 主題 | 描述 |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Windows 10 遊戲開發指南](e2e.md) | 開發 UWP 遊戲的資源與資訊的端對端指南。 |
 | [適用於通用 Windows 平台 app 的遊戲技術](game-development-platform-guide.md) | 在本指南中，您將了解可用於開發 UWP 遊戲的技術。 |
-| [遊戲的專案範本與工具](prepare-your-dev-environment-for-windows-store-directx-game-development.md) | 示範您需要哪些項目，才能開始進行 UWP 的 DirectX 遊戲程式設計。 |
-| [app 物件和 DirectX](about-the-metro-style-user-interface-and-directx.md) | 使用 DirectX 的 UWP 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通：方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何在開發 UWP app 時有效使用這個模型。 |
-| [啟動和繼續 app](launching-and-resuming-apps-directx-and-cpp.md) | 了解如何啟動、暫停和繼續您的 UWP DirectX app。 |
+| [適用於遊戲的專案範本與工具](prepare-your-dev-environment-for-windows-store-directx-game-development.md) | 示範您需要哪些項目，才能開始進行 UWP 的 DirectX 遊戲程式設計。 |
+| [App 物件和 DirectX](about-the-metro-style-user-interface-and-directx.md) | 使用 DirectX 的 UWP 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通：方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何在開發 UWP app 時有效使用這個模型。 |
+| [啟動和繼續 App](launching-and-resuming-apps-directx-and-cpp.md) | 了解如何啟動、暫停和繼續您的 UWP DirectX app。 |
 | [適用於 DirectX 遊戲的 2D 圖形](working-with-2d-graphics-in-your-directx-game.md) | 我們將討論 2D 點陣圖圖形和效果的用法，以及如何在遊戲中使用它們。 |
 | [適用於 DirectX 遊戲的基本 3D 圖形](an-introduction-to-3d-graphics-with-directx.md) | 我們將示範如何使用 DirectX 程式設計來實作 3D 圖形的基本概念。 |
 | [在 DirectX 遊戲中載入資源](load-a-game-asset.md) | 大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。 本文會引導您了解在 UWP 遊戲中載入這些檔案來使用時必須考量的整體事項。 |
@@ -38,6 +38,8 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 | [處理 Direct3D 11 中的裝置已移除案例](handling-device-lost-scenarios.md) | 本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。 |
 | [遊戲的非同步程式設計](asynchronous-programming-directx-and-cpp.md) | 本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。 |
 | [遊戲的網路功能](work-with-networking-in-your-directx-game.md) | 了解如何在您的 DirectX 遊戲中開發與納入網路功能。 |
+| [遊戲的協助工具](accessibility-for-games.md) | 了解如何設計無障礙遊戲。 |
+| [遊戲的雲端](cloud-for-games.md) | 了解如何利用雲端技術進行遊戲開發。 |
 | [DirectX 與 XAML 互通性](directx-and-xaml-interop.md) | 您可以在 UWP 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 |
 | [封裝您的遊戲](package-your-windows-store-directx-game.md) | 大型 UWP 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。 在這個主題中，您將了解如何使用 app 套件與 app 套件組合來自訂 app，讓客戶只收到他們實際所需的資源。 |
 | [遊戲移植指南](porting-guides.md) | 提供將現有的遊戲移植到 Direct3D 11、UWP 和 Windows 10 的指南。 |
@@ -67,6 +69,6 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

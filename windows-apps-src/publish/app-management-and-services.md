@@ -23,11 +23,14 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 根據應用程式的套件類型及其特定需求而定，您可以針對推播通知使用下列其中一個選項：
 
--   **Windows 推播通知服務 (WNS)** 讓您能夠從自己的雲端服務傳送快顯通知、磚、徽章及原始更新。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
+-   
+            **Windows 推播通知服務 (WNS)** 讓您能夠從自己的雲端服務傳送快顯通知、磚、徽章及原始更新。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
 
--   **Microsoft Azure Mobile App** 讓您能夠傳送推播通知、驗證和管理 app 使用者，以及在雲端中儲存 app 資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
+-   
+            **Microsoft Azure Mobile App** 讓您能夠傳送推播通知、驗證和管理 app 使用者，以及在雲端中儲存 app 資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果使用的是 MPNS，就需要將憑證上傳至 \[推播通知\] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   
+            **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果使用的是 MPNS，就需要將憑證上傳至 \[推播通知\] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
 
 ### 實驗
 
@@ -39,7 +42,8 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 \[地圖\] 頁面的 \[服務\] 區段中取得這個權杖。
 
-> **注意：**若要在目標為其他作業系統的 app 中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694)。
+> 
+            **注意：**若要在目標為其他作業系統的 app 中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694)。
 
 如需詳細資訊，請參閱[使用地圖服務](use-map-services.md)。
 
@@ -69,7 +73,8 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 此頁面讓您能夠檢視與您所有已發行套件相關的詳細資料。
 
-> **注意：**在您發行 app 之前，將無法在此處看見任何資訊。
+> 
+            **注意：**在您發行 app 之前，將無法在此處看見任何資訊。
 
 系統會顯示每個套件的名稱、版本及架構。 按一下 \[詳細資料\]，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。
 

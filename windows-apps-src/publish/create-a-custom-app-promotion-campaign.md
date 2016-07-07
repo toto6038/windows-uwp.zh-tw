@@ -24,7 +24,8 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 -   如果您的 app 是通用 Windows 平台 (UWP) app，它可以使用 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法，以程式設計方式擷取導致轉換的自訂行銷活動識別碼。
 -   您可以從開發人員中心儀表板上的[通道和轉換報告](channels-and-conversions-report.md)，看到有關您 app 或 IAP 頁面檢視和轉換的資料。
 
-> **重要** 這個資料只能追蹤執行 Windows 10 的客戶。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
+> 
+            **重要** 這個資料只能追蹤執行 Windows 10 的客戶。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
 
  
 
@@ -49,7 +50,8 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 
 -   具備可識別 Microsoft 帳戶的客戶按一下包含自訂行銷活動識別碼的 app URL，並被重新導向至 app 的 Windows 市集頁面。
 -   相同客戶 (依相同的 Microsoft 帳戶識別) 在第一次按一下具有自訂行銷活動識別碼的 Windows 市集 URL 之後的 24 小時內安裝 app。 這會符合轉換的資格，即使客戶在與他們按一下具有自訂行銷活動識別碼的 Windows 市集 URL 不同的電腦或裝置上安裝 app。
-    > **注意** 針對計入為自訂行銷活動轉換的 app 安裝，在該 app 中的任何 IAP 購買也會計算為相同的自訂行銷活動的轉換。
+    > 
+            **注意** 針對計入為自訂行銷活動轉換的 app 安裝，在該 app 中的任何 IAP 購買也會計算為相同的自訂行銷活動的轉換。
 
      
 
@@ -66,7 +68,8 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 1.  為您的自訂行銷活動建立識別碼字串。 此字串可以包含最多 100 個字元，不過我們建議您定義容易識別的簡短行銷活動識別碼。
 2.  取得您 app 的 HTML 或通訊協定格式的 Windows 市集頁面 URL。 HTML 格式的 URL 可在開發人員中心儀表板中的 \[App 身分識別\] 頁面取得。
     -   如果您想要客戶在瀏覽器中瀏覽到您的 app 的 Windows 市集頁面 (如果已安裝 Windows 市集 app，這個 URL 也將啟動 Windows 市集 app 到您的 app 清單)，請使用 HTTP 格式。 此 URL 的格式為 。 例如，Skype 的 HTTP URL 為 `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`。
-        > **注意** HTTP 格式 URL 可以用來在執行 Windows 7 和更新版本的電腦和平板和執行 Windows Phone 8 和更新版本的電話上的瀏覽器中瀏覽到 Windows 市集。
+        > 
+            **注意** HTTP 格式 URL 可以用來在執行 Windows 7 和更新版本的電腦和平板和執行 Windows Phone 8 和更新版本的電話上的瀏覽器中瀏覽到 Windows 市集。
 - 如果您要從已安裝 Windows 市集 app 的裝置或電腦上執行的其他 Windows app 進行促銷，並且您想要客戶在 Windows 市集 app 中開啟您的 app 頁面，請使用通訊協定格式。 此 URL 的格式為 。 例如，Skype 的通訊協定 URL 為 `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`。
 3.  附加以下字串到您的 app 的 URL 的結尾：
     -   針對 HTTP 格式 URL，附加 。 例如，如果 Skype 推出值為 **custom\_campaign** 的行銷活動識別碼，則包含行銷活動識別碼的新 HTTP URL 會是：`https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`。
@@ -77,7 +80,8 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 
 如果您的 app 是 UWP app，您可以使用 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法以程式設計方式擷取與 app 相關聯的自訂行銷活動識別碼。 這個方法能讓您實現許多分析以及獲利案例。 例如，您可以了解目前的使用者在透過您的 Facebook 行銷活動發現您的 app 後是否取得它，然後據此自訂 app 經驗。 或者，如果您使用第三方 app 行銷提供者，您可以將資料傳回提供者。
 
-> **注意** 只有當客戶使用內嵌的行銷活動識別碼按一下您的 URL、被重新導向到您的 app 的 Windows 市集頁面，然後安裝您的 app 而未離開這個頁面時，[**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法才會傳回行銷活動識別碼字串。 如果使用者離開頁面，並稍後回來並安裝 app，則使用 **GetAppPurchaseCampaignIdAsync** 時將不符合轉換的資格。 如需詳細資訊，請參閱本主題中的[了解轉換](#conversions)。
+> 
+            **注意** 只有當客戶使用內嵌的行銷活動識別碼按一下您的 URL、被重新導向到您的 app 的 Windows 市集頁面，然後安裝您的 app 而未離開這個頁面時，[**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法才會傳回行銷活動識別碼字串。 如果使用者離開頁面，並稍後回來並安裝 app，則使用 **GetAppPurchaseCampaignIdAsync** 時將不符合轉換的資格。 如需詳細資訊，請參閱本主題中的[了解轉換](#conversions)。
 
  
 
@@ -92,7 +96,8 @@ HString campaignId;
 HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf());
 ```
 
-[
+
+            [
               **GetAppPurchaseCampaignIdAsync**
             ](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法會從 Windows 市集存取資料。 使用這個方法時請遵循這些指導方針：
 

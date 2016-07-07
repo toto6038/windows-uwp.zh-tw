@@ -30,8 +30,7 @@ Direct3D 11 是 Direct3D 9 的重要升級。 當中有很多範例改變，包�
 ##  我需要針對 UWP 更新我的遊戲計時器嗎？
 
 
-[
-            **QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) 與 [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) 仍然是實作 UWP app 遊戲計時器最好的方式。
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) 與 [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) 仍然是實作 UWP app 遊戲計時器最好的方式。
 
 您應該注意計時器與 UWP app 週期的細微差別。 在玩家重新啟動傳統型遊戲時，暫停/繼續是不同的，因為您的遊戲 會從上次的遊戲進度即時繼續快照。 如果已經過一段長時間 (例如數個星期)，某些遊戲計時器實作可能無法正確運作。 當遊戲繼續時，您可以使用 app 週期事件來重設計時器。
 

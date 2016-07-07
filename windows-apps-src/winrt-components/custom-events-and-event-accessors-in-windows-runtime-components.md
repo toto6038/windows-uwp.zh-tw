@@ -93,39 +93,39 @@ ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
 > End Event
 > ```
 
-static (在 Visual Basic 中為 Shared) GetOrCreateEventRegistrationTokenTable 方法會延遲建立事件的 EventRegistrationTokenTable&lt;T&gt; 物件執行個體。 將保存語彙基元資料表執行個體的類別層級欄位傳遞給此方法。 如果此欄位空白，這個方法會建立資料表、在欄位中儲存資料表的參考，然後傳回該資料表的參考。 如果欄位已經包含語彙基元資料表參考，這個方法就只會傳回該參考。
+[!div class="tabbedCodeSnippets"] static (在 Visual Basic 中為 Shared) GetOrCreateEventRegistrationTokenTable 方法會延遲建立事件的 EventRegistrationTokenTable&lt;T&gt; 物件執行個體。 將保存語彙基元資料表執行個體的類別層級欄位傳遞給此方法。 如果此欄位空白，這個方法會建立資料表、在欄位中儲存資料表的參考，然後傳回該資料表的參考。
 
-> **重要** 為了確保執行緒安全，保存事件之 EventRegistrationTokenTable&lt;T&gt; 執行個體的欄位必須是類別層級的欄位。 如果是類別層級的欄位，則 GetOrCreateEventRegistrationTokenTable 方法會確保當多個執行緒嘗試建立語彙基元資料表時，所有執行緒都會取得此資料表的相同執行個體。 對於指定的事件，GetOrCreateEventRegistrationTokenTable 方法的所有呼叫都必須使用相同的類別層級欄位。
+> 如果欄位已經包含語彙基元資料表參考，這個方法就只會傳回該參考。 **重要** 為了確保執行緒安全，保存事件之 EventRegistrationTokenTable&lt;T&gt; 執行個體的欄位必須是類別層級的欄位。 如果是類別層級的欄位，則 GetOrCreateEventRegistrationTokenTable 方法會確保當多個執行緒嘗試建立語彙基元資料表時，所有執行緒都會取得此資料表的相同執行個體。
+
+對於指定的事件，GetOrCreateEventRegistrationTokenTable 方法的所有呼叫都必須使用相同的類別層級欄位。
 
 在 remove 存取子和 [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) 方法 (在 C# 中為 OnRaiseEvent 方法) 中呼叫 GetOrCreateEventRegistrationTokenTable 方法，可確保在加入任何事件處理常式委派之前呼叫這些方法，不會發生例外狀況。
 
-在 UWP 事件模式中使用的其他 EventRegistrationTokenTable&lt;T&gt; 類別成員包括下列各項：
-
+-   在 UWP 事件模式中使用的其他 EventRegistrationTokenTable&lt;T&gt; 類別成員包括下列各項：
 -   [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) 方法會產生事件處理常式委派的語彙基元、在資料表中儲存委派、將它加入至叫用清單，然後傳回語彙基元。
--   [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) 方法多載會從資料表和叫用清單中移除此委派。
 
-    >**注意** AddEventHandler 和 RemoveEventHandler(EventRegistrationToken) 方法會鎖定資料表，協助確保執行緒安全。
+    >[RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) 方法多載會從資料表和叫用清單中移除此委派。
 
--   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 屬性傳回的委派包含目前已註冊來處理事件的所有事件處理常式。 使用此委派來引發事件，或使用 Delegate 類別的方法個別叫用處理常式。
+-   **注意** AddEventHandler 和 RemoveEventHandler(EventRegistrationToken) 方法會鎖定資料表，協助確保執行緒安全。 [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 屬性傳回的委派包含目前已註冊來處理事件的所有事件處理常式。
 
-    >**注意** 建議您遵循本文前述範例中顯示的模式，先將委派複製到暫存變數，再予以叫用。 這可避免某一個執行緒移除最後一個處理常式的競爭情形，進而讓委派在另一個執行緒嘗試叫用委派之前減少至 null。 委派是不可變的，因此複本仍然有效。
+    >使用此委派來引發事件，或使用 Delegate 類別的方法個別叫用處理常式。 **注意** 建議您遵循本文前述範例中顯示的模式，先將委派複製到暫存變數，再予以叫用。 這可避免某一個執行緒移除最後一個處理常式的競爭情形，進而讓委派在另一個執行緒嘗試叫用委派之前減少至 null。
 
-視情況將自己的程式碼放在存取子中。 如果執行緒安全有問題，您就必須為程式碼提供自己的鎖定。
+委派是不可變的，因此複本仍然有效。 視情況將自己的程式碼放在存取子中。
 
-C# 使用者：當您在 UWP 事件模式中寫入自訂事件存取子時，編譯器不會提供一般語法快速鍵。 如果您在程式碼中使用事件名稱，則會產生錯誤。
+如果執行緒安全有問題，您就必須為程式碼提供自己的鎖定。 C# 使用者：當您在 UWP 事件模式中寫入自訂事件存取子時，編譯器不會提供一般語法快速鍵。
 
-Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註冊事件處理常式的多點傳送委派。 引發事件只是表示叫用委派。 Visual Basic 語法通常會隱藏與委派的互動，而且編譯器會在叫用委派之前先行複製 (如執行緒安全相關注意事項所述)。 當您在 Windows 執行階段元件中建立自訂事件時，您必須直接處理委派。 這也表示您可以使用 [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) 方法來取得一個陣列，如果您想要個別叫用處理常式，該陣列會包含每個事件處理常式的個別委派。
+如果您在程式碼中使用事件名稱，則會產生錯誤。 Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註冊事件處理常式的多點傳送委派。 引發事件只是表示叫用委派。 Visual Basic 語法通常會隱藏與委派的互動，而且編譯器會在叫用委派之前先行複製 (如執行緒安全相關注意事項所述)。 當您在 Windows 執行階段元件中建立自訂事件時，您必須直接處理委派。
 
-## 相關主題
+## 這也表示您可以使用 [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) 方法來取得一個陣列，如果您想要個別叫用處理常式，該陣列會包含每個事件處理常式的個別委派。
 
-* [事件 (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
-* [事件 (C# 程式設計指南)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [適用於 Windows 市集 App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
+* [相關主題](https://msdn.microsoft.com/library/ms172877.aspx)
+* [事件 (Visual Basic)](https://msdn.microsoft.com/library/awbftdfh.aspx)
+* [事件 (C# 程式設計指南)](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [適用於 Windows 市集 App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [適用於 UWP App 的 .NET](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

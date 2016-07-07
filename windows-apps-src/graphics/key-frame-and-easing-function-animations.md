@@ -31,19 +31,14 @@ ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
 
 除了 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 之外，您可以在主要畫面格動畫上設定所有以 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 為基礎的屬性，和使用 **From**/**To**/**By** 動畫一樣，因為主要畫面格動畫類別也是從 **Timeline** 衍生而來。 這些分別是：
 
--   [
-            **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse)：到達最後一個主要畫面格之後，會從最後開始以反向順序重複畫面格。 這會加倍動畫的顯示持續時間。
--   [
-            **BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延遲開始動畫。 畫面格中 **KeyTime** 值的時間軸會在到達 **BeginTime** 時才開始計數，所以不會截斷畫面格。
--   [
-            **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制到達最後一個主要畫面格時發生的情況。 **FillBehavior** 在任何中繼主要畫面格上都沒有作用。
--   [
-            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse)：到達最後一個主要畫面格之後，會從最後開始以反向順序重複畫面格。 這會加倍動畫的顯示持續時間。
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延遲開始動畫。 畫面格中 **KeyTime** 值的時間軸會在到達 **BeginTime** 時才開始計數，所以不會截斷畫面格。
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制到達最後一個主要畫面格時發生的情況。 **FillBehavior** 在任何中繼主要畫面格上都沒有作用。
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
     -   如果設定為 **Forever**，那麼主要畫面格及其時間軸會無限重複。
     -   如果設定為某個反覆運算計數，時間軸會重複該次數。
     -   如果設定為 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，時間軸會重複到該時間到達為止。 如果它不是時間軸隱含持續時間的整數因素，這可能會在主要畫面格序列的中途截斷動畫。
--   [
-            **SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (不常用)
+-   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (不常用)
 
 ### 線性主要畫面格
 
@@ -159,35 +154,23 @@ Easing 函式可用三種方式套用到動畫：
 
 以下是 Easing 函式的清單：
 
--   [
-            **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)：稍微倒退動畫的動作，再開始沿指示的路徑開始動畫。
--   [
-            **BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057)：建立彈跳效果。
--   [
-            **CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063)：使用循環函式建立加速或減速的動畫。
--   [
-            **CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)：使用公式 f(t) = t3 建立加速或減速的動畫。
--   [
-            **ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282)：建立類似來回振動直到停止的彈簧動畫。
--   [
-            **ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)：使用指數公式建立加速或減速的動畫。
--   [
-            **PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399)：使用公式 f(t) = tp (其中 p 等於 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 屬性) 建立加速或減速的動畫。
--   [
-            **QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403)：使用公式 f(t) = t2 建立加速或減速的動畫。
--   [
-            **QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405)：使用公式 f(t) = t4 建立加速或減速的動畫。
--   [
-            **QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407)：使用公式 f(t) = t5 建立加速或減速的動畫。
--   [
-            **SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439)：使用正弦公式建立加速或減速的動畫。
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)：稍微倒退動畫的動作，再開始沿指示的路徑開始動畫。
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057)：建立彈跳效果。
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063)：使用循環函式建立加速或減速的動畫。
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)：使用公式 f(t) = t3 建立加速或減速的動畫。
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282)：建立類似來回振動直到停止的彈簧動畫。
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)：使用指數公式建立加速或減速的動畫。
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399)：使用公式 f(t) = tp (其中 p 等於 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 屬性) 建立加速或減速的動畫。
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403)：使用公式 f(t) = t2 建立加速或減速的動畫。
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405)：使用公式 f(t) = t4 建立加速或減速的動畫。
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407)：使用公式 f(t) = t5 建立加速或減速的動畫。
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439)：使用正弦公式建立加速或減速的動畫。
 
 有些 Easing 函式有自己的屬性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 有兩個屬性 [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)，可修改該特定 **BounceEase** 的 function-over-time 行為。 其他 Easing 函式 (例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)) 並沒有所有 Easing 函式共用之 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 屬性以外的屬性，而且一律產生相同的 function-over-time 行為。
 
 視您在具備屬性的 Easing 函式上設定屬性的方式而定，這些 Easing 函式中有部分會有一些重疊。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 和 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全一樣，它們的 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 都等於 2。 而 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 基本上是預設值 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)。
 
-[
-            **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) Easing 函式是獨一無二的，因為它可以變更 **From**/**To** 或主要畫面格值所設定的一般範圍以外的值。 它啟動動畫的方式是以一般 **From**/**To** 行為的相反方向變更值，回到 **From** 或再次開始值，然後按一般方式執行動畫。
+[**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) Easing 函式是獨一無二的，因為它可以變更 **From**/**To** 或主要畫面格值所設定的一般範圍以外的值。 它啟動動畫的方式是以一般 **From**/**To** 行為的相反方向變更值，回到 **From** 或再次開始值，然後按一般方式執行動畫。
 
 在先前的範例中，我們示範了如何宣告主要畫面格動畫的 Easing 函式。 下一個範例會將 Easing 函式套用到 **From**/**To**/**By** 動畫。
 
@@ -215,8 +198,7 @@ Easing 函式套用到 **From**/**To**/**By** 動畫時，它會變更如何在�
 
 這是值得特別提及的動畫，因為這是唯一的一種方式，讓您可以將動畫值套用到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的屬性。 這是主要畫面格動畫 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值製作動畫有所不同，因為無法在畫面格之間插入值。 當畫面格的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到達時，動畫值會立即設定為主要畫面格的 **Value** 中指定的值。 因為沒有內插補點，所以在 **ObjectAnimationUsingKeyFrames** 主要畫面格集合中只使用一個主要畫面格：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
-[
-            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用屬性 (Property) 元素語法進行設定，因為您嘗試設定的物件值通常無法以字串的形式表示，所以無法在屬性語法中填入 **Value**。 如果您使用 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588) 這類的參考，還是可以使用屬性語法。
+[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用屬性 (Property) 元素語法進行設定，因為您嘗試設定的物件值通常無法以字串的形式表示，所以無法在屬性語法中填入 **Value**。 如果您使用 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588) 這類的參考，還是可以使用屬性語法。
 
 您會在一個地方看到預設範本使用 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)，那就是當範本屬性參考 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 資源。 這些資源是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 物件，不僅只是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 值，它們會使用定義為系統佈景主題的資源 ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807))。 它們可以直接指派給 **Brush** 類型的值，例如 [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665)，而且不需要使用間接目標。 但因為 **SolidColorBrush** 不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 **Color**，所以您必須使用 **ObjectAnimationUsingKeyFrames** 才能使用資源。
 

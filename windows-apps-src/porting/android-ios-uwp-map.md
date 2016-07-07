@@ -1,8 +1,11 @@
 ---
 author: GrantMeStrength
-Description: 比較 iOS、Android 和 Windows 10 平台之間的功能。
+Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
+title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
+ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
+ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+
 ---
 
 #適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
@@ -137,7 +140,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 <td align="left"><strong>啟動顯示畫面。</strong> <br><br>在 app 啟動時顯示影像，主要用於顯示商標。</td>
 <td align="left">預設不提供啟動顯示畫面，實作的方式是編輯第一個活動<strong>佈景主題背景</strong>。</td>
 <td align="left">App 必須具有<strong>靜態啟動影像</strong>或 <strong>XIB/storyboard (腳本) 啟動檔案</strong>。</td>
-<td align="left">您可以使用<strong>影像</strong>和彩色背景來建立啟動顯示畫面。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">啟動顯示畫面的時間可以延長</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">新增啟動顯示畫面</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465338.aspx">啟動顯示畫面的指導方針</a></td>
+<td align="left">您可以使用<strong>影像</strong>和彩色背景來建立啟動顯示畫面。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">啟動顯示畫面的時間可以延長</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">新增啟動顯示畫面</a></td>
 </tr>
 </tbody>
 </table>
@@ -162,7 +165,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 <td align="left"><strong>語音。</strong> <br><br>語音輸入的語音辨識及其他語音功能。</td>
 <td align="left">實作 <strong>RecognizerIntent</strong> (例如 <strong>Google 語音搜尋</strong>) 的任何 app 都可提供語音輸入。 <strong>SpeechRecognizer</strong> 類別可以讓 app 使用 Google 的語音辨識 API。</td>
 <td align="left">沒有內建的語音辨識或語音輸入 API。</td>
-<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 app 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動 app，以及與背景 app 互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 App 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動 App，以及與背景應用程式互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>自訂使用者輸入。</strong> <br><br>處理鍵盤、滑鼠、手寫筆及其他輸入方式。</td>
@@ -328,7 +331,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 <td align="left"><strong>針對回應式 UI 的檢視最佳化。</strong> <br><br>透過將檢視最佳化以改善效能。</td>
 <td align="left">使用 Hierarchy Viewer (階層檢視器) 工具最佳化<strong>版面配置階層</strong>、<strong>重複使用版面配置</strong>和<strong>隨需載入檢視</strong>，都是可以協助保持 UI 執行緒回應性和避免 [應用程式未回應]&quot;&quot; 對話方塊 (<strong>ANR</strong>) 的技術。<br/></td>
 <td align="left">修正<strong>螢幕範圍以外的轉譯</strong>、<strong>混合層</strong>、<strong>點陣化</strong>的 UI 問題，使用 <strong>Core Animation (核心動畫)</strong> 工具協助讓 UI 執行緒保持回應。</td>
-<td align="left">依照幾個簡單步驟操作，即可輕鬆地<strong>最佳化</strong> XAML <strong>標記</strong>和<strong>版面配置</strong>。 這些技術包括精簡版面配置結構、盡量減少元素數目及過度繪製。 <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">讓 UI 執行緒保持回應</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">最佳化您的 XAML 標記</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">最佳化您的 XAML 版面配置</a></td>
+<td align="left">依照幾個簡單步驟操作，即可輕鬆地<strong>最佳化</strong> XAML <strong>標記</strong>和<strong>版面配置</strong>。 這些技術包括精簡版面配置結構、盡量減少元素數目及過度繪製。 <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">讓 UI 執行緒保持回應</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">最佳化您的 XAML 標記</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">最佳化您的 XAML 配置</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>執行緒處理。</strong> <br><br>使用執行緒處理來維護<strong>回應式 UI</strong> 並執行多個<strong>平行工作</strong>。</td>
@@ -346,7 +349,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 <td align="left"><strong>清單檢視最佳化。</strong> <br><br>用來協助將資料清單最佳化的內建模式，這種清單需要顯示大量資料時，通常會發生效能不佳的情況</td>
 <td align="left"><strong>ViewHolder</strong> 設計模式是用來避免多個檢視查閱，可讓您使用重複使用的 UI 元素。</td>
 <td align="left">可進行一些最佳化以改善 <strong>UITableView</strong> 的效能，沒有任何內建項目。</td>
-<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">ListView 與 GridView UI 最佳化</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">ListView 和 GridView 資料虛擬化</a></td>
+<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">ListView 與 GridView UI 最佳化</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">ListView 與 GridView 資料虛擬化</a></td>
 </tr>
 </tbody>
 </table>
@@ -371,7 +374,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 <td align="left"><strong>App 內購買。</strong> <br><br>允許使用者在您的 app 中進行購買的平台功能。</td>
 <td align="left"><strong>App 內帳單功能</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
 <td align="left">產品已新增至 <strong>iTunes Connect</strong>。 App 內購買使用 <strong>StoreKit</strong> 架構實作。<br/><br/>產品的購買使用 <strong>SKMutablePayment</strong> 和 <strong>SKPaymentQueue</strong>。</td>
-<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將 App 內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
+<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>App 內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
@@ -660,6 +663,7 @@ title: 適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對�
 </table>
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -23,22 +23,14 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 
 **TemplateSettings** 有數種類別。 所有類別都位於 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空間中。 以下是類別清單，以及相關控制項之 **TemplateSettings** 屬性的連結。 此 **TemplateSettings** 屬性是您如何存取控制項的 **TemplateSettings** 值，並且可以建立範本繫結至它的屬性：
 
--   [
-            **ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)：[**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) 的值
--   [
-            **GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499)：[**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) 的值
--   [
-            **ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948)：[**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) 的值
--   [
-            **ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856)：[**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) 的值
--   [
-            **ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248)：[**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) 的值
--   [
-            **SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721)：[**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) 的值
--   [
-            **ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804)：[**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) 的值
--   [
-            **ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813)：[**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) 的值
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)：[**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) 的值
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499)：[**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) 的值
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948)：[**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) 的值
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856)：[**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) 的值
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248)：[**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) 的值
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721)：[**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) 的值
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804)：[**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) 的值
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813)：[**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) 的值
 
 **TemplateSettings** 屬性一律用於 XAML 中，而不是在程式碼中。 這些是父項控制項唯讀 **TemplateSettings** 屬性的唯讀子屬性。 在進階的自訂控制項案例中，例如如果建立的新 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 基底類別會影響控制項邏輯，請考慮在控制項上定義自訂的 **TemplateSettings** 屬性，以便傳遞可能對任何人都有用的資訊，讓其他人也能重新製作控制項的範本。 由於該屬性的值是唯讀的，所以請為每個與範本度量、動畫定位等相關的資訊項目，定義一個新的 **TemplateSettings** 類別，與您具唯讀屬性的控制項相關，並且提供呼叫者使用您的控制項邏輯初始化該類別的執行階段執行個體。 **TemplateSettings** 類別衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)，因此屬性可以使用相依性屬性系統做為屬性變更回呼。 但是屬性的相依性屬性識別碼並未公開為公用 API，因為 **TemplateSettings** 屬性對於呼叫者應該是唯讀的。
 
@@ -59,8 +51,7 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[
-            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
+[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
 
 ```xml
 <Rectangle

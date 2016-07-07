@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: 使用計時器提交工作項目
-description: 了解如何建立在計時器過後執行的工作項目。
+title: "使用計時器提交工作項目"
+description: "了解如何建立在計時器過後執行的工作項目。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+
 ---
 # 使用計時器提交工作項目
 
@@ -199,7 +203,7 @@ description: 了解如何建立在計時器過後執行的工作項目。
 
 ## 取消計時器
 
-如果計時器仍在倒數計時，但已不再需要該工作項目，可呼叫 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 計時器會取消，而且不會將工作項目提交至執行緒集區。
+如果計時器仍在倒數計時，但已不再需要該工作項目，可呼叫 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 就會取消計時器，而且不會將工作項目提交至執行緒集區。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -228,6 +232,7 @@ description: 了解如何建立在計時器過後執行的工作項目。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

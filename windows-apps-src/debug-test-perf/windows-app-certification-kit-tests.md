@@ -631,7 +631,7 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 
 驗證應用程式在安裝期間建立的子目錄長度不超過 MAX\-PATH。
 
-### 背景
+### 背景 
 
 OS 元件 (包括 Trident、WWAHost 等) 的檔案系統路徑在內部限制為 MAX\-PATH；若路徑較長，將無法正確運作。
 
@@ -649,7 +649,7 @@ OS 元件 (包括 Trident、WWAHost 等) 的檔案系統路徑在內部限制為
 
 WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close 陳述式，以免應用程式耗用電池電力。
 
-### 背景
+### 背景 
 
 具備 JavaScript 背景工作的應用程式必須呼叫 Close() 做為其背景工作的最後一個陳述式。 不執行此動作的應用程式可能會使系統無法返回連線待命模式，導致電池電力耗盡。
 
@@ -659,7 +659,7 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
 
 ### 修正動作
 
-更新背景JavaScript 程式碼以正確呼叫 Close()。
+更新背景 JavaScript 程式碼以正確呼叫 Close()。
 
 > **注意** 本文適用於撰寫 UWP App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 

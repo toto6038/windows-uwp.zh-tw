@@ -18,7 +18,8 @@ ms.openlocfilehash: 3d82caac353eb7cb63692469c5951be1f392ff52
 
 在 \[帳戶詳細資料\] 區段中，您可以查看帳戶的狀態和類型。 您也可以在此頁面上找到您的發行者識別碼資訊，包括賣方識別碼、Windows 發行者識別碼，以及 Windows Phone 發行者識別碼。 這些值是由 Microsoft 指派用以唯一識別您的開發人員帳戶，而且您不能修改這些值。
 
-**注意** 針對您個別 app 的身分識別詳細資料可以在每個 app 的 [app 身分識別](https://msdn.microsoft.com/library/windows/apps/Mt148561)頁面找到。
+
+            **注意** 針對您個別 app 的身分識別詳細資料可以在每個 app 的 [app 身分識別](https://msdn.microsoft.com/library/windows/apps/Mt148561)頁面找到。
 
 ## 連絡資訊
 

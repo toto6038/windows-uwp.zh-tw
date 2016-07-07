@@ -63,15 +63,12 @@ ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
 
 ### 建立安全的通訊端連線
 
-[
-            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件可用來設定在用戶端與伺服器之間使用 SSL/TLS 進行通訊。 對於 SSL/TLS 的支援，受限於使用 **StreamSocket** 物件做為 SSL/TLS 交涉中的用戶端。 您無法將 SSL/TLS 用於由 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 在收到連入通訊時建立的 **StreamSocket**，因為 **StreamSocket** 類別沒有實作做為伺服器的 SSL/TLS 交涉。
+[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件可用來設定在用戶端與伺服器之間使用 SSL/TLS 進行通訊。 對於 SSL/TLS 的支援，受限於使用 **StreamSocket** 物件做為 SSL/TLS 交涉中的用戶端。 您無法將 SSL/TLS 用於由 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 在收到連入通訊時建立的 **StreamSocket**，因為 **StreamSocket** 類別沒有實作做為伺服器的 SSL/TLS 交涉。
 
 有兩種方式可使用 SSL/TLS 保護 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 連線：
 
--   [
-            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - 建立連至網路服務的初始連線，並立即交涉讓所有通訊使用 SSL/TLS。
--   [
-            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - 在不加密的情況下初次連線至網路服務。 應用程式可能會傳送或接收資料。 然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
+-   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - 建立連至網路服務的初始連線，並立即交涉讓所有通訊使用 SSL/TLS。
+-   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - 在不加密的情況下初次連線至網路服務。 應用程式可能會傳送或接收資料。 然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
 
 您提供的 SocketProtectionLevel 值設定您允許的最低保護層級。 不過，已建立的連線的最終保護層級取決於連線的這兩個端點之間的交涉程序。 如果其他端點需要較高的層級，結果可能是比您指定的要更安全的保護層級。 順利完成非同步作業後，實際上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 或 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 交涉的 SSL 強度可以透過取得 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 屬性來決定。
 
@@ -79,13 +76,10 @@ ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
 
 ### 使用 ConnectAsync
 
-[
-            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用來建立具有網路服務的初始連線，然後為所有通訊立即交涉以使用 SSL/TLS。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
+[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用來建立具有網路服務的初始連線，然後為所有通訊立即交涉以使用 SSL/TLS。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
 
--   [
-            **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至指定為 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 物件與 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的遠端網路目的地。
--   [
-            **ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至遠端主機名稱、遠端服務名稱以及 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的遠端目的地。
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至指定為 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 物件與 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的遠端網路目的地。
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件上啟動非同步操作，以連線至遠端主機名稱、遠端服務名稱以及 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的遠端目的地。
 
 如果在呼叫上面的 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法時，將 *protectionLevel* 參數設定為 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，則必須建立 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 以使用 SSL/TLS 來加密。 這個值需要加密而且絕不允許使用 NULL 密碼。
 
@@ -174,8 +168,7 @@ using Windows::Networking::Sockets;
 
 當您的程式碼使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 時，它會先在不加密的情況下建立網路服務的連線。 應用程式可以傳送或接收部分資料，然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
 
-[
-            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法需要兩個參數。 *protectionLevel* 參數指示所需的保護層級。 *validationHostName* 參數是在升級成 SSL 時用於驗證的遠端網路目的地的主機名稱。 通常 *validationHostName* 是 app 用來初次建立連線的相同主機名稱。 如果在呼叫 **UpgradeToSslAsync** 時將 *protectionLevel* 參數設定為 **Windows.System.Socket.SocketProtectionLevel.Ssl**，則 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 必須使用 SSL/TLS 針對透過通訊端的進一步通訊加密。 這個值需要加密而且絕不允許使用 NULL 密碼。
+[**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法需要兩個參數。 *protectionLevel* 參數指示所需的保護層級。 *validationHostName* 參數是在升級成 SSL 時用於驗證的遠端網路目的地的主機名稱。 通常 *validationHostName* 是 app 用來初次建立連線的相同主機名稱。 如果在呼叫 **UpgradeToSslAsync** 時將 *protectionLevel* 參數設定為 **Windows.System.Socket.SocketProtectionLevel.Ssl**，則 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 必須使用 SSL/TLS 針對透過通訊端的進一步通訊加密。 這個值需要加密而且絕不允許使用 NULL 密碼。
 
 與 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法搭配使用的一般順序如下：
 
@@ -376,8 +369,7 @@ using Windows::Storage::Streams;
 
 ### 提供具有 StreamSocket 類別的用戶端憑證
 
-[
-            **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
 以下程式碼片段說明其實作方式：
 

@@ -54,7 +54,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
                   Width="728" Height="90" />
     ```
 
-4.  檢查元素的位置。 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必須在可檢視區域內。
+4.  檢查元素的位置。 
+            [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必須在可檢視區域內。
 
 5.  檢查 **Visibility** 屬性。 選擇性的 **Visibility** 屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
@@ -84,7 +85,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
     </StackPanel>
     ```
 
-8.  確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
+8.  確定 **AdControl** 沒有在檢視區隱藏。 
+            **AdControl** 必須可見，廣告才能正確顯示。
 
 9.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
@@ -118,7 +120,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 運作正常。
+3.  
+            [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 運作正常。
 
     根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
@@ -157,7 +160,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
     }
     ```
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp"/>
 ## C\# #
@@ -218,7 +222,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
     ContentPanel.Children.Add(adControl);
     ```
 
-6.  檢查 **Margin** 參數。 **AdControl** 必須在可檢視區域內。
+6.  檢查 **Margin** 參數。 
+            **AdControl** 必須在可檢視區域內。
 
 7.  檢查 **Visibility** 屬性。 選用的 **Visibility** 屬性必須設為 **Visible**。
 
@@ -290,7 +295,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp-adsnotrefreshing"/>
 ### 廣告沒有重新整理
@@ -332,7 +338,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
     }
     ```
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
  
 

@@ -127,6 +127,6 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

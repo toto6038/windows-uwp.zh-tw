@@ -17,14 +17,10 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 有三個構成視覺化樹狀結構的視覺效果類型，外加一個含有多個影響視覺效果內容之子類別的基底筆刷類別：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增建立子系的能力。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
--   [
-            **CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 可在「視覺效果」的內容上套用效果。 CompositionBrush 有一些子類別。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增建立子系的能力。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 可在「視覺效果」的內容上套用效果。 CompositionBrush 有一些子類別。
 
 ## CompositionVisual 範例
 
@@ -41,12 +37,9 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 在此範例中，同樣有三個不同的「視覺效果」在運作：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 Visual，並且會新增建立子系的能力。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 Visual，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 Visual，並且會新增建立子系的能力。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 Visual，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
 
 雖然這個範例並未涵蓋像是「動畫」或更複雜效果的概念，但是它包含所有這些系統所使用的構成要素
 
@@ -71,8 +64,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 ## 裁剪視覺效果
 
-[
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 也可以用來建立對 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的裁剪。 以下範例來自使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 來修剪視覺效果之每一面的樣本：
+[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 也可以用來建立對 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的裁剪。 以下範例來自使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 來修剪視覺效果之每一面的樣本：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -515,6 +507,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -24,6 +24,6 @@ ms.openlocfilehash: ef0fef1dd43444771add4ed6d9db1300f8d33210
 如需設計做法的資訊，請參閱[針對 Xbox 與電視設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主題。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

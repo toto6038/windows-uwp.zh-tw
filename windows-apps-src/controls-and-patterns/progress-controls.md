@@ -78,14 +78,10 @@ Windows Phone app：狀態列進度指示器和進度列
 確定的進度列會顯示應用程式已完成的進度。 工作進行時，進度列會漸漸填滿。 如果可以用時間、位元組、檔案或者其他可以量化的測量單位來預估剩餘的工作量，請使用確定的進度列。
 
 進度列提供數個屬性用於設定和判斷進度：
-- [
-            **IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)：指定是否為不確定的進度列。 設定為 **false** 以建立確定的進度列。
-- [
-            **Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx)︰值範圍的開始值。 預設為 0.0。
-- [
-            **Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx)︰值範圍的結束值。 預設為 1.0。 
-- [
-            **Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx)：指定目前進度的數字。 如果顯示的是檔案下載進度，這個值可能是已下載的位元組數目 (然後，將 Maximum 設為要下載的位元組總數)。
+- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)：指定是否為不確定的進度列。 設定為 **false** 以建立確定的進度列。
+- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx)︰值範圍的開始值。 預設為 0.0。
+- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx)︰值範圍的結束值。 預設為 1.0。 
+- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx)：指定目前進度的數字。 如果顯示的是檔案下載進度，這個值可能是已下載的位元組數目 (然後，將 Maximum 設為要下載的位元組總數)。
  
 下列範例顯示以值為基礎的確定進度列。 
 

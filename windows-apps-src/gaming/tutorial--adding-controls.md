@@ -37,16 +37,11 @@ ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
 
 在遊戲範例中初始化 **MoveLookController** 類別時，它會登錄四個指標專用的事件以及一個滑鼠專用的事件：
 
--   [
-            **CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
--   [
-            **CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 移動滑鼠，或在觸控式螢幕上進行拖曳動作。
--   [
-            **CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 放開滑鼠左鍵，或是讓與觸控式螢幕接觸的物件離開觸控式螢幕。
--   [
-            **CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 指標移出主視窗。
--   [
-            **Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 滑鼠移動了特定距離。 請注意，我們只對滑鼠移動差異值有興趣，而不關心目前的 x-y 位置。
+-   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 按下 (或按住) 滑鼠左鍵或右鍵，或觸碰觸控式螢幕。
+-   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 移動滑鼠，或在觸控式螢幕上進行拖曳動作。
+-   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 放開滑鼠左鍵，或是讓與觸控式螢幕接觸的物件離開觸控式螢幕。
+-   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 指標移出主視窗。
+-   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 滑鼠移動了特定距離。 請注意，我們只對滑鼠移動差異值有興趣，而不關心目前的 x-y 位置。
 
 ```cpp
 void MoveLookController::Initialize(

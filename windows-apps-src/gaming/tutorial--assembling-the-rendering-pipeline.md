@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 組合轉譯架構
-description: 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。
+title: "組合轉譯架構"
+description: "現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
+
 ---
 
 # 組合轉譯架構
@@ -6321,6 +6325,7 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

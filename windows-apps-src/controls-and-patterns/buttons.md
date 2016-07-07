@@ -100,7 +100,8 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ## 建立一個重複按鈕
 
-[
+
+            [
               **RepeatButton**
             ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
 
@@ -206,7 +207,8 @@ Surface Hub ![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
 
     會保留 app 內頁面瀏覽歷程記錄，不支援 app 間的返回瀏覽。
 
-    **注意：**在平板電腦模式中，當使用者從裝置頂端向下撥動或將滑鼠指標移至裝置頂端附近時，即會顯示標題列。 為避免重複和混淆，在平板電腦模式中不會顯示標題列返回按鈕。
+    
+            **注意：**在平板電腦模式中，當使用者從裝置頂端向下撥動或將滑鼠指標移至裝置頂端附近時，即會顯示標題列。 為避免重複和混淆，在平板電腦模式中不會顯示標題列返回按鈕。
 
      
 

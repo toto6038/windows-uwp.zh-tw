@@ -68,8 +68,7 @@ ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
 
 分段是 [{x:Bind}](x-bind-markup-extension.md) 的功能之一，可與衍生自 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 的控制項搭配運作，並可用遞增方式處理資料繫結的項目範本。 轉譯清單項目時，**ListViewBase** 會在單一階段中轉譯檢視中的所有項目，再移至下一個階段。 轉譯工作會以分時段的批次執行，因此在清單捲動時可以重新評估所需的工作，且對於不再顯示的項目將不會執行轉譯。
 
-**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [
-            **ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
+**x:Phase** 屬性可以對資料範本中任何使用 [{x:Bind}](x-bind-markup-extension.md) 的元素指定。 當元素的階段不是 0 時，該元素將會隱藏於檢視中 (透過 **Opacity**，而非 **Visibility**)，直到該階段處理完成且繫結更新為止。 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 衍生的控制項在捲動時，將會從已不在畫面上的項目回收項目範本，以轉譯新的可見項目。 範本中的 UI 元素會保留其舊值，直到再次完成資料繫結為止。 分段會造成資料繫結步驟延遲，因此在分段時必須隱藏 UI 元素，以免它們過時。
 
 每個 UI 元素可能只有一個指定的階段。 若是如此，將會套用到元素的所有繫結。 若未指定階段，將會使用階段 0。
 

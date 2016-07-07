@@ -35,8 +35,7 @@ XAML 也可以做為 [**XamlReader.Load**](https://msdn.microsoft.com/library/wi
 
 ### XamlReader.Load 的 XAML 命名範圍含意
 
-[
-            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 建立的新物件樹定義的初步 XAML 命名範圍，會評估在提供的 XAML 中為了唯一性而定義的任何名稱。 如果此時提供的 XAML 中有名稱在內部不是唯一的，**XamlReader.Load** 會產生例外狀況。 中斷連接的物件樹在連接到主應用程式物件樹時，不會嘗試合併它的 XAML 命名範圍與主應用程式的 XAML 命名範圍。 在連接樹狀目錄後，您的 app 會有一個統一的物件樹，但該樹狀目錄內有分離的 XAML 命名範圍。 分割會出現在物件之間的連接點，就是您設定某個屬性做為從 **XamlReader.Load** 呼叫傳回的值的位置。
+[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 建立的新物件樹定義的初步 XAML 命名範圍，會評估在提供的 XAML 中為了唯一性而定義的任何名稱。 如果此時提供的 XAML 中有名稱在內部不是唯一的，**XamlReader.Load** 會產生例外狀況。 中斷連接的物件樹在連接到主應用程式物件樹時，不會嘗試合併它的 XAML 命名範圍與主應用程式的 XAML 命名範圍。 在連接樹狀目錄後，您的 app 會有一個統一的物件樹，但該樹狀目錄內有分離的 XAML 命名範圍。 分割會出現在物件之間的連接點，就是您設定某個屬性做為從 **XamlReader.Load** 呼叫傳回的值的位置。
 
 含有分離與中斷連接的 XAML 命名範圍所造成的困難，是 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 方法的呼叫與直接管理的物件參考無法再用於統一的 XAML 命名範圍。 相反地，呼叫 **FindName** 的特定物件表示範圍，而該範圍就是呼叫物件所在的 XAML 命名範圍。 在直接管理的物件參考案例中，範圍是以程式碼存在的類別表示。 應用程式內容的「頁面」執行階段互動的程式碼後置，通常存在支援根「頁面」的部分類別中，因此 XAML 命名範圍是根 XAML 命名範圍。
 
@@ -49,8 +48,7 @@ XAML 也可以做為 [**XamlReader.Load**](https://msdn.microsoft.com/library/wi
 -   使用已知存在物件樹結構中的 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) 和 (或) 集合屬性 (像是 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 傳回的集合)，在個別的步驟中瀏覽整個樹狀目錄。
 -   如果您是從分離的 XAML 命名範圍呼叫，並且想要根 XAML 命名範圍，取得目前顯示的主視窗的參考就很容易。 您可以使用一行含有呼叫 `Window.Current.Content` 的程式碼，就能從目前的應用程式視窗取得視覺化根目錄 (根 XAML 元素，也稱為內容來源)。 您可以接著轉換成 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)，然後從這個範圍呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
 -   如果您是從根 XAML 命名範圍呼叫，並想要某個分離的 XAML 命名範圍中的物件，最佳做法是事先在您的程式碼中規劃，並保留 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 傳回並新增到主要物件樹的物件參考。 這個物件現在是可以在分離的 XAML 命名範圍內呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 的有效物件。 您可以讓這個物件做為全域變數，或使用方法參數以其他方式傳遞它。
--   您可以檢查視覺化樹狀目錄，以徹底避開名稱與 XAML 命名範圍考量。 [
-            **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 可以讓您純粹依據位置與索引，以周遊視覺化樹狀目錄中的父物件與子集合。
+-   您可以檢查視覺化樹狀目錄，以徹底避開名稱與 XAML 命名範圍考量。 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 可以讓您純粹依據位置與索引，以周遊視覺化樹狀目錄中的父物件與子集合。
 
 ## 範本中的 XAML 命名範圍
 

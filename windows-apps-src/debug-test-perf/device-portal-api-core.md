@@ -1,11 +1,14 @@
 ---
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal 核心 API 參考
-description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
+title: "Device Portal 核心 API 參考資料"
+description: "了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。"
+ms.sourcegitcommit: 0e36b2adbd0805d9c738de00959581417d2c1ee8
+ms.openlocfilehash: 364e19c723c6cf48a25104b5719735a533ae54a7
+
 ---
 
-# Device Portal 核心 API 參考
+# Device Portal 核心 API 參考資料
 
 Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
 
@@ -2179,8 +2182,8 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
 op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (**必要，如果 *op* == 連線**) 要連線的 SSID。
-金鑰   | (**必要，如果 *op* == 連線且需要網路驗證**) 共用金鑰。
+ssid   | (****如果 op == connect** 則為必要) 要連線的 SSID。
+索引鍵   | (****如果 op == connect 且網路需要驗證**則為必要) 共用金鑰。
 createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
 
 **要求標頭**
@@ -2730,7 +2733,456 @@ HTTP 狀態碼      | 描述
 * HoloLens
 * IoT
 
+---
+## DNS-SD 標記 
+---
+### 檢視標記
 
-<!--HONumber=May16_HO2-->
+**要求**
+
+檢視裝置目前套用的標記。  這些標記會透過 T 索引鍵中的 DNS-SD TXT 公告。  
+ 
+方法      | 要求 URI
+:------     | :-----
+GET | /api/dns-sd/tags
+<br />
+
+**URI 參數**
+
+- 無
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應** 目前以下列格式套用的標記。 
+```
+ {
+    "tags": [
+        "tag1", 
+        "tag2", 
+        ...
+     ]
+}
+```
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+5XX | 伺服器錯誤 
+
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* Xbox
+* HoloLens
+* IoT
+
+---
+### 刪除標記
+
+**要求**
+
+刪除目前由 DNS-SD 公告的所有標記   
+ 
+方法      | 要求 URI
+:------     | :-----
+DELETE | /api/dns-sd/tags
+<br />
+
+**URI 參數**
+
+- 無
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+ - 無
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+5XX | 伺服器錯誤 
+
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* Xbox
+* HoloLens
+* IoT
+
+---
+### 刪除標記
+
+**要求**
+
+刪除目前由 DNS-SD 公告的標記   
+ 
+方法      | 要求 URI
+:------     | :-----
+DELETE | /api/dns-sd/tag
+<br />
+
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+tagValue | (**必要**) 要移除的標記。
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+ - 無
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* Xbox
+* HoloLens
+* IoT
+ 
+---
+### 新增標記
+
+**要求**
+
+將標籤新增到 DNS-SD 廣告。   
+ 
+方法      | 要求 URI
+:------     | :-----
+POST | /api/dns-sd/tag
+<br />
+
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+tagValue | (**必要**) 要新增的標記。
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+ - 無
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+401 | 標記空間溢位。  當建議標記對於產生的 DNS-SD 服務記錄過長時的結果。  
+
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* Xbox
+* HoloLens
+* IoT
+
+## App 檔案總管
+
+---
+### 取得已知的資料夾
+
+**要求**
+
+取得可存取的最上層資料夾清單。
+
+方法      | 要求 URI
+:------     | :-----
+GET | /api/filesystem/apps/knownfolders
+<br />
+
+**URI 參數**
+
+- 無
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應** 以下列格式呈現的可用資料夾。 
+```
+ {"KnownFolders": [
+    "folder0",
+    "folder1",...
+]}
+```
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 部署要求已受理並正在處理
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 取得檔案
+
+**要求**
+
+取得資料夾中的檔案清單。
+
+方法      | 要求 URI
+:------     | :-----
+GET | /api/filesystem/apps/files
+<br />
+
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
+packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應** 以下列格式呈現的可用資料夾。 
+```
+{"Items": [
+    {
+        "CurrentDir": string (folder under the requested known folder),
+        "DateCreated": int,
+        "FileSize": int (bytes),
+        "Id": string,
+        "Name": string,
+        "SubPath": string (present if this item is a folder, this is the name of the folder),
+        "Type": int
+    },...
+]}
+```
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 取得檔案
+
+**要求**
+
+取得資料夾中的檔案清單。
+
+方法      | 要求 URI
+:------     | :-----
+GET | /api/filesystem/apps/file
+
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
+filename | (**必要**) 下載的檔案名稱。 
+packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
+path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 要求的檔案 (若有的話)
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 要求的檔案
+404 | 找不到檔案
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 刪除檔案
+
+**要求**
+
+刪除資料夾中的檔案。
+
+方法      | 要求 URI
+:------     | :-----
+DELETE | /api/filesystem/apps/file
+<br />
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
+filename | (**必要**) 刪除的檔案名稱。 
+packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定。 檔案已刪除
+404 | 找不到檔案
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 上傳檔案
+
+**要求**
+
+上傳檔案至資料夾。  這將會使用相同名稱覆寫現有的檔案，但不會建立新的資料夾。 
+
+方法      | 要求 URI
+:------     | :-----
+POST | /api/filesystem/apps/file
+<br />
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。
+packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定。 檔案已上傳
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "清單"
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ---
 # 清單
@@ -22,9 +22,9 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 
 ## 重要 API
 
--   [**ListView 類別 **](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView 類別 **](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox 類別 **](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**ComboBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## 清單檢視
@@ -85,33 +85,37 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 
 ## 下拉式清單
 
-下拉式清單，也稱為下拉式方塊，從精簡狀態開始並展開以顯示可選取項目的清單。 下拉式清單支援單一選取或多重選取。 選取的項目一律會顯示，當使用者點選選取的項目時就會顯示看不見的項目。
+下拉式清單 (也稱為下拉式方塊) 一開始為精簡狀態，展開後會顯示可選取項目清單。 已選取的項目一律為可見狀態，而不可見的項目則是會在使用者點選下拉式方塊來展開時顯示。
 
 ### 這是正確的控制項嗎？
 
--   使用下拉式清單，可讓使用者從能夠用單行文字充分表示的一組項目中，選取單一值。
--   使用清單或資料格檢視而不是下拉式清單，來顯示內含多行文字或影像的項目。
--   少於五個項目時，請考慮使用[選項按鈕](radio-button.md) (如果是單選) 或[核取方塊](checkbox.md) (如果是複選)。
--   當下拉式方塊在 app 流程中屬於次要項目時，請使用下拉式清單。 如果建議多數使用者在大多數情況下使用預設選項時，透過清單方塊顯示所有項目可能會使注意力集中在不必要的選項。 您可以利用下拉式清單來節省空間，並減少注意力分散的情形。
+-   若要讓使用者從能夠以單行文字充分表示的一組項目中選取單一值，請使用下拉式清單。
+-   若要顯示包含多行文字或影像的項目，請使用清單或資料格檢視，而不要使用下拉式清單。
+-   如果項目少於五個，請考慮使用[選項按鈕](radio-button.md) (如果是單選) 或[核取方塊](checkbox.md) (如果是複選)。
+-   如果選項項目在您 App 流程中的重要性為次要，請使用下拉式方塊。 如果針對大部分使用者在大多數情況下建議使用預設選項，則使用清單方塊來顯示所有項目可能會讓使用者浪費過多注意力在選項上。 您可以藉由使用下拉式方塊來節省空間，以及減少注意力分散的情形。
 
 ### 範例
 
-精簡狀態的下拉式清單可以顯示標頭。
+精簡狀態下的下拉式清單可以顯示標頭。
 
-![精簡狀態下拉式清單的範例](images/combo_box_collapsed.png)
+![精簡狀態下的下拉式清單範例](images/combo_box_collapsed.png)
 
-雖然下拉式清單會延展以支援較長的字串長度，但是請避免過長難以閱讀的字串。
+雖然下拉式方塊可延展來支援較長的字串長度，但是請避免使用過長而難以閱讀的字串。
 
-![具有長文字字串下拉式清單的範例](images/combo_box_listitemstate.png)
+![具有長文字字串的下拉式清單範例](images/combo_box_listitemstate.png)
 
-如果下拉式清單中的集合夠長，會顯示捲軸以容納它。 依邏輯群組清單中的項目。
+如果下拉式方塊中的集合夠長，將會顯示捲軸以容納它。 將清單中的項目以邏輯方式分組。
 
 ![下拉式清單中捲軸的範例](images/combo_box_scroll.png)
 
-### 建議
+### 建議事項
 
--   將下拉式清單項目的文字內容限制為一行。
--   以最合乎邏輯的順序排序下拉式清單中的項目。 將相關選項群組在一起、將最常用的選項放在頂端，以及以字母順序排序項目。 以字母順序排序名稱、以數字順序排序數字，以及以時間順序排序日期。
+-   將下拉式方塊項目的文字內容限制為單行。
+-   以最合乎邏輯的順序排序下拉式方塊中的項目。 將相關選項群組在一起並將最常用的選項放在頂端。 以字母順序排序名稱、以數字順序排序數字，以及以時間順序排序日期。
+
+### 文字搜尋
+
+下拉式方塊可自動支援在其集合內的搜尋。 當焦點在一個已開啟或關閉的下拉式方塊上時，如果使用者在實體鍵盤上輸入字元，就會顯示與使用者的字串相符的候選項目。 在瀏覽長清單時，這項功能特別有幫助。 例如，與包含狀態清單的下拉式清單進行互動時，使用者可以按 “w” 鍵來顯示 “Washington” 以供快速選取。 
 
 ## 清單方塊
 
@@ -149,9 +153,9 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 -   多重：使用者不需要使用輔助按鍵就能選取多個項目。
 -   延伸：使用者可以使用輔助按鍵選取多個項目，例如按住 SHIFT 鍵。
 
-在項目上點選任何位置即可選取項目。 點選命令列巨集指令會影響所有選取項目。 如果未選取任何項目，命令列動作應該為非使用中狀態 (除了 \[全選\] 以外)。
+在項目上點選任何位置即可選取項目。 點選命令列巨集指令會影響所有選取項目。 如果未選取任何項目，命令列動作應該為非使用中狀態 (除了 [全選] 以外)。
 
-選取模式並沒有消失關閉模型；點選選取模式在使用中之框架的外側並不會取消模式。 這可以避免意外停用模式。 按一下 \[上一頁\] 按鈕關閉多重選取模式。
+選取模式並沒有消失關閉模型；點選選取模式在使用中之框架的外側並不會取消模式。 這可以避免意外停用模式。 按一下 [上一頁] 按鈕關閉多重選取模式。
 
 在選取巨集指令時顯示視覺化確認。 請考慮針對某些動作顯示確認對話方塊，特別是破壞性動作 (例如刪除)。
 
@@ -188,11 +192,9 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 - [**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**ComboBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**ListBox 類別**](https://msdn.microsoft.com/library/windows/apps/br242868)
-- [新增下拉式方塊與清單方塊](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

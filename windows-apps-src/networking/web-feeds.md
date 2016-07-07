@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
-title: RSS/Atom 摘要
+description: "使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。"
+title: "RSS/Atom 摘要"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+
 ---
 
 # RSS/Atom 摘要
@@ -23,8 +27,7 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 
 ## 支援哪些摘要格式標準？
 
-通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [
-            **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
+通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
 
 此外，Atom 1.0 和 RSS 2.0 格式皆允許它們的摘要文件包含官方規格未定義的元素或屬性。 經過一段時間後，這些自訂元素與屬性已經變成一種方法，用以定義由其他 Web 服務資料格式 (如 GData 與 OData) 所取用的網域特定資訊。 為了支援此新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 類別代表一般 XML 元素。 使用 **SyndicationNode** 搭配 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空間中的類別，可允許 app 存取屬性、延伸以及任何可能包含的內容。
 
@@ -257,6 +260,7 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

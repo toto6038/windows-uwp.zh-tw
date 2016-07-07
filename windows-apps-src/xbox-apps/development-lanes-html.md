@@ -1,8 +1,8 @@
 ---
 title: "在 Xbox 上的 HTML 遊戲開發"
 author: JordanEllis6809
-ms.sourcegitcommit: 8d057ac245cd3d1cf343590b3832d3bf36cd99ed
-ms.openlocfilehash: 8329e72e84d3068305908141019aeb4cd0c93f09
+ms.sourcegitcommit: 4996662d044315b878eb05eb6b82a17ce5eef2a7
+ms.openlocfilehash: a7b891cf8373e989a0a3bebb0f40be9026ce42b4
 
 ---
 
@@ -14,10 +14,10 @@ HTML 遊戲與任何其他類型的遊戲相比毫不遜色。 開發人員可�
 
 Xbox One 是 UWP 平台，這代表與其他的 Microsoft 裝置一樣，它支援託管的 Web 應用程式。 這些是完全來自伺服器的應用程式。 [深入了解](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)
 
-若要開始，請下載您偏好的引擎，並尋找 Windows 10 app 的指示。 另請務必閱讀 (入門指南)[https://msdn.microsoft.com/zh-tw/windows/uwp/xbox-apps/index] 以取得如何將主機變成開發套件的資訊，和從 Visual Studio 部署的方式。
+若要開始，請下載您偏好的引擎，並尋找 Windows 10 App 的指示。 另請務必閱讀[入門指南](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)，以取得如何將主機變成開發套件的資訊，以及從 Visual Studio 進行部署的方式。
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

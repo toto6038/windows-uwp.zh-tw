@@ -27,11 +27,16 @@ ms.openlocfilehash: d454317d135e2b2b952c16fb00685e34b489865c
 
 URI 配置可讓您按一下超連結以開啟 app。 就像您可以使用 **mailto:** 建立新的電子郵件一樣，您可以使用 **http:** 來開啟預設網頁瀏覽器。 本主題描述一些內建於 Windows 的 URI 配置：
 
--   [ms-settings: URI 配置](#settings)啟動 Windows 設定 app
--   [ms-store: URI 配置](#store)會啟動 Windows 市集 app
--   [http: URI 配置](#browser)會啟動預設網頁瀏覽器
--   [mailto: URI 配置](#email)會啟動預設電子郵件 app
--   [bingmaps:、ms-drive-to: 和 ms-walk-to: URI 配置](#maps)會啟動 Windows 地圖 app
+-   
+            [ms-settings: URI 配置](#settings)啟動 Windows 設定 app
+-   
+            [ms-store: URI 配置](#store)會啟動 Windows 市集 app
+-   
+            [http: URI 配置](#browser)會啟動預設網頁瀏覽器
+-   
+            [mailto: URI 配置](#email)會啟動預設電子郵件 app
+-   
+            [bingmaps:、ms-drive-to: 和 ms-walk-to: URI 配置](#maps)會啟動 Windows 地圖 app
 
 例如，下列 URI 會開啟預設瀏覽器，並顯示 Bing 網站。
 
@@ -108,7 +113,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**注意** Windows 在判斷來源 app 的最終視窗大小時，會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
+
+            **注意** Windows 在判斷來源 app 的最終視窗大小時，會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
 
  
 
@@ -225,6 +231,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

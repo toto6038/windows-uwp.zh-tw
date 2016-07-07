@@ -71,7 +71,8 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 如果沒有可用的用戶端憑證，則使用者必須新增憑證到憑證存放區。 您可以在 app 中包含程式碼，讓使用者選取包含用戶端憑證的 PFX 檔案，然後將該憑證匯入用戶端憑證存放區。
 
-**祕訣** 您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門使用。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+
+            **祕訣** 您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門使用。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
  
 

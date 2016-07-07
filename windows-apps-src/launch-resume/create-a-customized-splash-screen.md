@@ -22,7 +22,8 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 
 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。 不論您是想要顯示即時載入資訊，或只是想給 app 額外的時間來準備好初始 UI，都可以利用延長式啟動顯示畫面來定義啟動體驗。
 
-> **注意** 本主題中的「延長式啟動顯示畫面」一詞是指在螢幕上延長停留時間的啟動顯示畫面。 這不是指衍生自 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別的子類別。
+> 
+            **注意** 本主題中的「延長式啟動顯示畫面」一詞是指在螢幕上延長停留時間的啟動顯示畫面。 這不是指衍生自 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別的子類別。
 
  
 
@@ -69,7 +70,8 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     </Grid>
 ```
 
-**注意** 這個程式碼會將 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的寬度設定為 20 像素。 您可以將其寬度設定為適合您應用程式的值，不過，如果寬度小於 20 像素，控制項將無法顯示。
+
+            **注意** 這個程式碼會將 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的寬度設定為 20 像素。 您可以將其寬度設定為適合您應用程式的值，不過，如果寬度小於 20 像素，控制項將無法顯示。
 
  
 
@@ -105,7 +107,9 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    這些類別變數是透過數個方法來使用。 `splashImageRect` 變數會儲存系統顯示應用程式的啟動顯示畫面影像的座標。 `splash` 變數會儲存 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，而 `dismissed` 變數會追蹤系統顯示的啟動顯示畫面是否已關閉。
+    這些類別變數是透過數個方法來使用。 
+            `splashImageRect` 變數會儲存系統顯示應用程式的啟動顯示畫面影像的座標。 
+            `splash` 變數會儲存 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，而 `dismissed` 變數會追蹤系統顯示的啟動顯示畫面是否已關閉。
 
 3.  **定義可正確放置影像的類別建構函式**
 
@@ -213,7 +217,8 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    **注意** 在您嘗試取得影像位置之前，請確定類別變數 (`splash`) 包含有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，如範例所示。
+    
+            **注意** 在您嘗試取得影像位置之前，請確定類別變數 (`splash`) 包含有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，如範例所示。
 
      
 
@@ -259,7 +264,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## 完整程式碼
 
 
-> **注意** 下列程式碼與之前步驟中顯示的程式碼片段稍微不同。
+> 
+            **注意** 下列程式碼與之前步驟中顯示的程式碼片段稍微不同。
 -   ExtendedSplash.xaml 包含一個 `DismissSplash` 按鈕。 按一下這個按鈕時，事件處理常式 `DismissSplashButton_Click` 會呼叫 `DismissExtendedSplash` 方法。 在您的應用程式中，請在應用程式完成資源載入或 UI 初始化時呼叫 `DismissExtendedSplash`。
 -   這個 app 也使用一個 UWP app 專案範本，而該範本使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽。 因此，在 App.xaml.cs 中，啟動啟用處理常式 ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) 定義了 `rootFrame`，並使用它來設定應用程式視窗的內容。
 
@@ -413,7 +419,8 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs：這個專案是使用 Visual Studio 2015 中的 UWP app \[空白 App (XAML)\] 專案範本建立的。 `OnNavigationFailed` 與 `OnSuspending` 事件處理常式都是自動產生的，而且不需變更就可以實作延長式啟動顯示畫面。 這個主題只會修改 `OnLaunched`。
+App.xaml.cs：這個專案是使用 Visual Studio 2015 中的 UWP app \[空白 App (XAML)\] 專案範本建立的。 
+            `OnNavigationFailed` 與 `OnSuspending` 事件處理常式都是自動產生的，而且不需變更就可以實作延長式啟動顯示畫面。 這個主題只會修改 `OnLaunched`。
 
 如果您沒有將專案範本用於您的 app，請參閱步驟 4：[修改啟動啟用處理常式](#modify_the_launch_activation_handler)，當中有一個沒有使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽的已修改 `OnLaunched` 範例。
 
@@ -550,6 +557,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

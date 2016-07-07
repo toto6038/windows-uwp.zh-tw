@@ -28,8 +28,7 @@ ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
 ## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>簡介
 
 
-[
-            **Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以針對年、月、日等使用標準格式，或是使用標準字串範本，例如 "longdate" 或 "month day"。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 提供不同的方式來適當地設定世界各地語言和地區的日期和時間格式。 您可以針對年、月、日等使用標準格式，或是使用標準字串範本，例如 "longdate" 或 "month day"。
 
 但是當您想要對所希望顯示之 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 字串的組成要素順序與格式有更多控制時，您可以針對字串範本參數使用特殊語法，稱為「模式」。 模式語法可讓您取得 **DateTime** 物件的個別要素 — 例如，只有月份名稱或只有年份值 — 以便使用您選擇的自訂格式來顯示日期和時間。 此外，模式也可以當地語系化以配合其他語言和地區。
 
@@ -100,8 +99,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 
 **字串範本，例如 "month day"。**
 
--   [
-            **DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 格式的抽象表示包含某種順序的月份值和日期值。
+-   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 格式的抽象表示包含某種順序的月份值和日期值。
 -   確定可以為 Windows 支援的所有語言-地區值傳回有效的標準格式。
 -   確定可以為指定的語言-地區提供文化上適當的格式化字串。
 -   並非所有要素組合都是有效的。 例如，沒有可用於 "dayofweek day" 的字串範本。

@@ -17,7 +17,8 @@ ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
 
 在您的 app 中設定[**地理柵欄**](https://msdn.microsoft.com/library/windows/apps/dn263587)，並了解如何在前景和背景中處理通知。
 
-**提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+
+            **提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -39,7 +40,8 @@ ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
 
 ### 步驟 1：要求使用者位置的存取權
 
-**重要**：嘗試存取使用者的位置之前，您必須先使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法要求使用者位置的存取權。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
+
+            **重要**：嘗試存取使用者的位置之前，您必須先使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法要求使用者位置的存取權。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -47,7 +49,8 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-[
+
+            [
               **RequestAccessAsync**
             ](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
@@ -55,7 +58,9 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 在這個範例中，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會存取目前的地理柵欄、登錄地理柵欄狀態變更，以及登錄位置權限的變更。
 
-**秘訣** 使用地理柵欄時，請使用來自 GeofenceMonitor 類別的 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件來監視位置權限的變更，而不要使用來自 Geolocator 類別的 StatusChanged 事件。 **Disabled** 為 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) 等同於已停用的 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)，兩者都指出 app 沒有存取使用者位置的權限。
+
+            **秘訣** 使用地理柵欄時，請使用來自 GeofenceMonitor 類別的 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件來監視位置權限的變更，而不要使用來自 Geolocator 類別的 StatusChanged 事件。 
+            **Disabled** 為 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) 等同於已停用的 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)，兩者都指出 app 沒有存取使用者位置的權限。
 
 ```csharp
 switch (accessStatus)
@@ -117,19 +122,24 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 您可以使用其中一個其他的建構函式，來進一步微調您的地理柵欄。 在下一個範例中，地理柵欄建構函式會指定這些額外的參數：
 
--   [
+-   
+            [
               **MonitoredStates**
             ](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指出您希望收到通知的地理柵欄事件：進入已定義的區域、離開已定義的區域，或移除地理柵欄。
--   [
+-   
+            [
               **SingleUse**
             ](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在符合所監控之地理柵欄的所有狀態之後，將會移除該地理柵欄。
--   [
+-   
+            [
               **DwellTime**
             ](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指出使用者必須在已定義的區域內或外多久的時間，才會觸發進入/離開事件。
--   [
+-   
+            [
               **StartTime**
             ](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指出開始監控地理柵欄的時間。
--   [
+-   
+            [
               **Duration**
             ](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指出監控地理柵欄的期間。
 
@@ -171,7 +181,8 @@ Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse,
 
 ### 步驟 4：處理位置權限的變更
 
-[
+
+            [
               **GeofenceMonitor**
             ](https://msdn.microsoft.com/library/windows/apps/dn263595) 物件會觸發 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **sender.Status** 屬性 (類型為 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
 

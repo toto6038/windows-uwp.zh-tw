@@ -16,7 +16,8 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[
+
+            [
               **Brush**
             ](https://msdn.microsoft.com/library/windows/apps/BR228076) 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。 讓我們看看可用的筆刷以及筆刷的用法。
 
@@ -26,7 +27,8 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## 純色筆刷
 
-[
+
+            [
               **SolidColorBrush**
             ](https://msdn.microsoft.com/library/windows/apps/BR242962) 會以單一 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) (如紅色或藍色) 繪製區域。 這是最基本的筆刷。 在 XAML 中，有三種方法可以定義 **SolidColorBrush** 及其指定的純色色彩：預先定義的色彩名稱、十六進位色彩值，或屬性 (Property) 元素語法。
 
@@ -62,7 +64,8 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/Mt185595)和 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/Mt185596)。
 
-在之前的範例中，您應該未曾在語法中看到 "SolidColorBrush" 字串。 建立的筆刷是經由隱含方式自動建立的，這是在多數常見案例中為協助保持簡單的 UI 定義而刻意使用的 XAML 語言簡略格式。 以下範例建立一個 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)，並明確地建立 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 做為 [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 屬性的元素值。 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 設為 [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx)，而 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) 設為 0.5。
+在之前的範例中，您應該未曾在語法中看到 "SolidColorBrush" 字串。 建立的筆刷是經由隱含方式自動建立的，這是在多數常見案例中為協助保持簡單的 UI 定義而刻意使用的 XAML 語言簡略格式。 以下範例建立一個 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)，並明確地建立 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 做為 [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 屬性的元素值。 
+            **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 設為 [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx)，而 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) 設為 0.5。
 
 ```xml
 <Rectangle Width="200" Height="150">
@@ -74,19 +77,23 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
 
-[
+
+            [
               **LinearGradientBrush**
             ](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
 
-[
+
+            [
               **GradientStop**
             ](https://msdn.microsoft.com/library/windows/apps/BR210078) 是漸層筆刷的基本建置組塊。 漸層停駐點會指定筆刷套用到繪製的區域時，漸層軸上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 使用什麼 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 的筆刷。
 
 漸層停駐點的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 屬性會指定漸層停駐點的色彩。 您可以使用預先定義的色彩或藉由指定十六進位 **ARGB** 值來設定色彩。
 
-[
+
+            [
               **GradientStop**
-            ](https://msdn.microsoft.com/library/windows/apps/BR210078) 的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 屬性指定了每個 **GradientStop** 在漸層軸的位置。 **Offset** 是一個介於 0 到 1 的 **double**。 值為 0 的 **Offset** 會在漸層軸的起點放置 **GradientStop**，換句話說，就在 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 的附近。 值為 1 的 **Offset** 會在 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 放置 **GradientStop**。 有用的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 至少應含有兩個 **GradientStop** 值，其中每個 **GradientStop** 應指定不同的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx)，並含有 0 到 1 之間的不同 **Offset**。
+            ](https://msdn.microsoft.com/library/windows/apps/BR210078) 的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 屬性指定了每個 **GradientStop** 在漸層軸的位置。 
+            **Offset** 是一個介於 0 到 1 的 **double**。 值為 0 的 **Offset** 會在漸層軸的起點放置 **GradientStop**，換句話說，就在 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 的附近。 值為 1 的 **Offset** 會在 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 放置 **GradientStop**。 有用的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 至少應含有兩個 **GradientStop** 值，其中每個 **GradientStop** 應指定不同的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx)，並含有 0 到 1 之間的不同 **Offset**。
 
 以下範例建立一個四色線性漸層，並用它來繪製 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)。
 
@@ -120,15 +127,18 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
 
-[
+
+            [
               **ImageBrush**
-            ](https://msdn.microsoft.com/library/windows/apps/BR210101) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 [
+            ](https://msdn.microsoft.com/library/windows/apps/BR210101) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 
+            [
               **ImageSource**
             ](https://msdn.microsoft.com/library/windows/apps/BR210107) 屬性應設定為要載入之影像的路徑。 影像來源通常來自 app 資源中的 **Content** 項目。
 
 根據預設值，[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 會伸展影像，使其完全填滿繪圖區，如果繪圖區與影像的長寬比不同，影像可能會失真。 只要變更 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) 屬性的預設值 **Fill**，將它設定為 **None**、**Uniform** 或 **UniformToFill**，就可以變更此行為。
 
-以下範例建立一個 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)，並將 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 設成名為 licorice.jpg 的影像，該影像必須位在 app 的資源中。 **ImageBrush** 接著繪製 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 形狀定義的區域。
+以下範例建立一個 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)，並將 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 設成名為 licorice.jpg 的影像，該影像必須位在 app 的資源中。 
+            **ImageBrush** 接著繪製 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 形狀定義的區域。
 
 ```xml
 <Ellipse Height="200" Width="300">
@@ -142,7 +152,8 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ![經過轉譯的 ImageBrush。](images/brushes-imagebrush.jpg)
 
-[
+
+            [
               **ImageBrush**
             ](https://msdn.microsoft.com/library/windows/apps/BR210101) 與 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 會以統一資源識別元 (URI) 參照影像來源檔案，而該影像來源檔案使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱[Image 和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)。
 
@@ -154,9 +165,12 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## WebViewBrush
 
-[
+
+            [
               **WebViewBrush**
-            ](https://msdn.microsoft.com/library/windows/apps/BR227703) 是特殊的筆刷類型，可以存取一般在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項中檢視的內容。 **WebViewBrush** 並非在矩形的 **WebView** 控制項區域中轉譯內容，而是將該內容繪製到具有轉譯介面 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型屬性的另一個元素上。 **WebViewBrush** 並不適用於所有筆刷案例，但對轉換 **WebView** 則很有用。 如需詳細資訊，請參閱 **WebViewBrush**。
+            ](https://msdn.microsoft.com/library/windows/apps/BR227703) 是特殊的筆刷類型，可以存取一般在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項中檢視的內容。 
+            **WebViewBrush** 並非在矩形的 **WebView** 控制項區域中轉譯內容，而是將該內容繪製到具有轉譯介面 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型屬性的另一個元素上。 
+            **WebViewBrush** 並不適用於所有筆刷案例，但對轉換 **WebView** 則很有用。 如需詳細資訊，請參閱 **WebViewBrush**。
 
 ## XAML 資源形式的筆刷
 
@@ -196,6 +210,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

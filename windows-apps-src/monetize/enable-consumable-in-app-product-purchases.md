@@ -1,6 +1,13 @@
 ---
-Description&#58; author&#58; mcleanbyron 您可以透過市集商業平台提供消費性的應用程式內產品&amp;\#8212;亦即可購買、使用然後再次購買的項目&amp;\#8212;為客戶提供既健全又可靠的購買體驗。
-title&#58; 啟用消費性應用程式內產品購買 ms.assetid&#58; F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords&#58; 應用程式內的購買選項 keywords&#58; 消費性 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
+author: mcleanbyron
+Description: "您可以透過市集商業平台提供消費性的應用程式內產品，亦即可購買、使用然後再次購買的項目，為客戶提供既健全又可靠的購買體驗。"
+title: "啟用消費性應用程式內產品購買"
+ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
+keywords: in-app offer code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 25f09e043d61f1705f9f0a4fa34114fd06166fa4
+
 ---
 
 # 啟用消費性應用程式內產品購買
@@ -12,7 +19,7 @@ title&#58; 啟用消費性應用程式內產品購買 ms.assetid&#58; F79EE369-A
 
 ## 先決條件
 
--   本主題涵蓋消費性應用程式內產品的購買和履行狀況報告。 如果您不熟悉 app 內產品，請檢閱[啟用 app 內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出 app 內產品。
+-   本主題涵蓋消費性應用程式內產品的購買和履行狀況報告。 如果您不熟悉應用程式內產品，請檢閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出應用程式內產品。
 -   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
 -   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
@@ -20,7 +27,7 @@ title&#58; 啟用消費性應用程式內產品購買 ms.assetid&#58; F79EE369-A
 
 就像透過市集進行的任何其他購買一樣，初始購買要求是以 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 提出。 消費性應用程式內產品的不同之處在於，客戶在順利購買這類產品之後，除非應用程式已通知市集先前的購買已順利履行，否則客戶無法再次購買相同的產品。 您的應用程式必須負責履行已購買的消費性產品，並在履行後通知市集。
 
-下列範例示範消費性 app 內產品購買要求。 您會注意到程式碼註解指出在下列兩種不同的情況下，app 應該於何時在本機履行消費性應用程式內產品在要求成功的情況，以及在因為購買尚未履行的相同產品而導致要求失敗的情況。
+下列範例示範消費性應用程式內產品購買要求。 您會注意到程式碼註解指出在下列兩種不同的情況下，app 應該於何時在本機履行消費性應用程式內產品在要求成功的情況，以及在因為購買尚未履行的相同產品而導致要求失敗的情況。
 
 ```CSharp
 PurchaseResults purchaseResults = await CurrentAppSimulator.RequestProductPurchaseAsync("product1");
@@ -79,7 +86,7 @@ private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 
 完成本機履行之後，您的 app 必須進行 [**ReportConsumableFulfillmentAsync**](https://msdn.microsoft.com/library/windows/apps/dn263380) 呼叫，此呼叫包含了 *productId* 及含括該項產品購買的交易。
 
-**重要：**若未將已履行的消費性 app 內產品報告給市集，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
+**重要：**若未將已履行的消費性應用程式內產品報告給市集，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
 
 ```CSharp
 FulfillmentResult result = await CurrentAppSimulator.ReportConsumableFulfillmentAsync("product2", product2TempTransactionId);
@@ -107,7 +114,7 @@ private async void GetUnfulfilledConsumables()
 
 ## 相關主題
 
-* [啟用 app 內產品購買](enable-in-app-product-purchases.md)
+* [啟用應用程式內產品購買](enable-in-app-product-purchases.md)
 * [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
 * [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197)
  
@@ -119,6 +126,7 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

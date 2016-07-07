@@ -24,7 +24,8 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-**注意：**若要深入了解，您可以下載適用於 Windows 8.1 的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
+
+            **注意：**若要深入了解，您可以下載適用於 Windows 8.1 的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
 
  
 
@@ -47,13 +48,16 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 呼叫這些方法的其中一個開始輪詢：
 
--   [
+-   
+            [
               **StartPeriodicUpdate**
             ](https://msdn.microsoft.com/library/windows/apps/hh701684) (磚)
--   [
+-   
+            [
               **StartPeriodicUpdate**
             ](https://msdn.microsoft.com/library/windows/apps/hh701611) (徽章)
--   [
+-   
+            [
               **StartPeriodicUpdateBatch**
             ](https://msdn.microsoft.com/library/windows/apps/hh967945) (磚)
 

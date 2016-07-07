@@ -12,7 +12,8 @@ ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
 
 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" app。 使用 Microsoft Visual Studio 中的單一專案，您可以建置可在任何 Windows 10 裝置上執行的 app。 這裡的重點是建立可在傳統型裝置和行動裝置上順利執行的 app。
 
-**重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
+
+            **重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
 
 您將在此處了解如何：
 
@@ -258,7 +259,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 在 UWP app 中，您不需要擔心觸控、滑鼠以及其他指標輸入形式之間的差異。 您可以只使用您知道的事件 (例如 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312))，而這些事件適用於所有輸入形式。
 
-**提示** 您的應用程式也可以使用新的 *MSPointer\** 和 *MSGesture\** 事件 (適用於觸控、滑鼠以及手寫筆輸入)，而且可以提供觸發事件之裝置的其他資訊。 如需詳細資訊，請參閱[回應使用者互動](https://msdn.microsoft.com/library/windows/apps/Hh700412)以及[手勢、操作以及互動](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
+
+            **提示** 您的應用程式也可以使用新的 *MSPointer\** 和 *MSGesture\** 事件 (適用於觸控、滑鼠以及手寫筆輸入)，而且可以提供觸發事件之裝置的其他資訊。 如需詳細資訊，請參閱[回應使用者互動](https://msdn.microsoft.com/library/windows/apps/Hh700412)以及[手勢、操作以及互動](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
 
 讓我們繼續建立事件處理常式。
 
@@ -332,9 +334,11 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
     };
 ```    
 
-無論應用程式是過去已經關機或者是第一次啟動，都會呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在 [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在應用程式頁面準備好前都不會關閉啟動顯示畫面。
+無論應用程式是過去已經關機或者是第一次啟動，都會呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 
+            **WinJS.UI.processAll** 包含在 [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在應用程式頁面準備好前都不會關閉啟動顯示畫面。
 
-**提示**
+
+            **提示**
             [
               **WinJS.UI.processAll**
             ](https://msdn.microsoft.com/library/windows/apps/Hh440975) 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
@@ -410,7 +414,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 ![HelloWorld app 的個人化問候語](images/helloworld-3-js-phone.png)
 
-**注意** 如果您想知道為什麼我們使用 [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) 在程式碼中登錄事件而不是在 HTML 中設定 [**onclick**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，請參閱[撰寫基本 app 的程式碼](https://msdn.microsoft.com/library/windows/apps/Hh780660)以取得詳細的說明。
+
+            **注意** 如果您想知道為什麼我們使用 [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) 在程式碼中登錄事件而不是在 HTML 中設定 [**onclick**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，請參閱[撰寫基本 app 的程式碼](https://msdn.microsoft.com/library/windows/apps/Hh780660)以取得詳細的說明。
 
 ## 步驟 6：新增適用於 JavaScript 的 Windows Library 控制項
 
@@ -449,7 +454,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 ## 步驟 7：為適用於 JavaScript 的 Windows Library 控制項登錄事件處理常式
 
 
-為 WinJS 控制項登錄事件處理常式，與為標準 HTML 控制項登錄事件處理常式稍有不同。 之前我們提過 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件處理常式會呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 方法，以在您的標記中初始化 WinJS。 **WinJS.UI.processAll** 是包含在 [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中。
+為 WinJS 控制項登錄事件處理常式，與為標準 HTML 控制項登錄事件處理常式稍有不同。 之前我們提過 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件處理常式會呼叫 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 方法，以在您的標記中初始化 WinJS。 
+            **WinJS.UI.processAll** 是包含在 [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中。
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());           
@@ -459,11 +465,14 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
 
 如果 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 是一般方法，我們可以在呼叫它以後便登錄 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 事件處理常式。 但 **WinJS.UI.processAll** 方法是非同步的，因此，遵循該方法的任何程式碼可能會在 **WinJS.UI.processAll** 完成之前執行。 那麼該怎麼辦呢？ 我們使用 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件接收 **WinJS.UI.processAll** 完成時的通知。
 
-與所有 WinJS 非同步方法一樣，[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 會傳回 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件。 **Promise** 是未來會發生某些事的「承諾」；當那件事發生時，表示 **Promise** 已完成。
+與所有 WinJS 非同步方法一樣，[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 會傳回 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件。 
+            **Promise** 是未來會發生某些事的「承諾」；當那件事發生時，表示 **Promise** 已完成。
 
-[
+
+            [
               **Promise**
-            ](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件有一個 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，會將「完成的」函式做為參數。 **Promise** 會在完成時呼叫此函式。
+            ](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件有一個 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，會將「完成的」函式做為參數。 
+            **Promise** 會在完成時呼叫此函式。
 
 透過將您的程式碼新增到「完成的」函式，並將它傳遞到 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 物件的 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，便可確保 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 完成後會執行您的程式碼。
 
@@ -484,7 +493,8 @@ Visual Studio 為您建立的其中一個檔案是 default.html，也就是您 a
     </body>
 ```
 
-2.  在我們的 default.js 檔案中，為 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件 (名為 `ratingChanged`) 建立事件處理常式。 [
+2.  在我們的 default.js 檔案中，為 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件 (名為 `ratingChanged`) 建立事件處理常式。 
+            [
               **eventInfo**
             ](https://msdn.microsoft.com/library/windows/apps/Hh465776) 參數包含一個提供新使用者評分的 **detail.tentativeRating** 屬性。 抓取此值並顯示在輸出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中。
 

@@ -721,9 +721,7 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-[
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 介面支援 Direct3D 10 及更新版本所提供的紋理檢視機制。 如需紋理檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [
-            **OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法會準備 Direct3D 管線的輸出合併階段。 如需輸出合併階段的詳細資訊，請參閱[輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
+[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 介面支援 Direct3D 10 及更新版本所提供的紋理檢視機制。 如需紋理檢視的詳細資訊，請參閱[紋理檢視 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法會準備 Direct3D 管線的輸出合併階段。 如需輸出合併階段的詳細資訊，請參閱[輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
 
 ### 準備頂點著色器和像素著色器
 
@@ -868,11 +866,9 @@ HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 
 在此範例中，**m\_swapChain** 是 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 物件。 本文件的[初始化 Direct3D 和 Direct2D](#initializing) 一節會描述這個物件的初始化。
 
-[
-            **IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一個參數 *SyncInterval* 指定顯示畫面之前等待的垂直空白數。 Marble Maze 指定 1，所以會等待到下一個垂直空白。 垂直空白是一個畫面完成在監視器繪製之後到下一個畫面開始之前的時間。
+[**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一個參數 *SyncInterval* 指定顯示畫面之前等待的垂直空白數。 Marble Maze 指定 1，所以會等待到下一個垂直空白。 垂直空白是一個畫面完成在監視器繪製之後到下一個畫面開始之前的時間。
 
-[
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法會傳回錯誤碼來表示裝置已移除或故障。 在此情況下，Marble Maze 會重新初始化裝置。
+[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法會傳回錯誤碼來表示裝置已移除或故障。 在此情況下，Marble Maze 會重新初始化裝置。
 
 ```cpp
 // Reinitialize the renderer if the device was disconnected  

@@ -104,8 +104,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的 app 所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的 app 所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
 
 在下列範例程式碼中，啟動的 app 預期呼叫的 app 所傳送的資料會在名為 **TestData** 之機碼下方的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，而這就是撰寫呼叫的 app 範例程式碼來傳送的原因。
 
@@ -204,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

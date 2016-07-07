@@ -108,8 +108,7 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 使用 JavaScript 的 Windows 市集應用程式如果使用 ui-light.css 或 ui-dark.css 樣式表，會根據應用程式語言將字型自動設定為最適當的字型。 主控處理程序會將根元素的 **lang** 屬性設定為應用程式語言。
 
-在單一頁面上顯示多個語言的應用程式應該在每個語言設定區段的 **lang** 屬性。 [
-            **:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器會針對頁面的每個區段挑選正確的字型。
+在單一頁面上顯示多個語言的應用程式應該在每個語言設定區段的 **lang** 屬性。 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器會針對頁面的每個區段挑選正確的字型。
 
  
 

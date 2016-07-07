@@ -5,8 +5,8 @@ title: "翻轉檢視控制項的指導方針"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
 # 翻轉檢視
@@ -14,7 +14,7 @@ ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
 針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+
 
 -   [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
 -   [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
@@ -205,12 +205,11 @@ stackPanel1.Children.Add(flipView1);
 
 ## 相關文章
 
-- [清單的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**FlipView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**CarouselPanel 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+- [清單的指導方針](lists.md)
+- [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

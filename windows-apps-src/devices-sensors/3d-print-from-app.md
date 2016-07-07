@@ -60,11 +60,13 @@ ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
 這時，您就可以將 3D 資料檔案載入 app 的記憶體。 不過，3D 幾何資料有許多不同格式，且對 3D 列印並非都有效率。 Windows 10 對於所有的 3D 列印工作皆使用 3D 製造格式 (.3mf) 檔案類型。
 
-> **注意** 3MF 檔案類型提供大量的功能，但本教學課程無法涵蓋。 若要深入了解 3MF 及其提供給 3D 產品生產者與消費者的功能，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何以 Windows 10 運用這些功能，請參閱[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教學課程。
+> 
+            **注意** 3MF 檔案類型提供大量的功能，但本教學課程無法涵蓋。 若要深入了解 3MF 及其提供給 3D 產品生產者與消費者的功能，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何以 Windows 10 運用這些功能，請參閱[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教學課程。
 
 幸運的是，[3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app 可以開啟大部分熱門的 3D 格式，並另存為 .3mf 檔案。 在這個範例中，當檔案類型有所不同時，一種非常簡單的解決方案是開啟 3D Builder 並提示使用者將匯入的檔案另存為 .3mf 檔案，然後重新載入。
 
-> **注意** 除了轉換檔案格式，**3D Builder** 提供簡單的工具來編輯模型、新增顏色資料，並執行其他列印特定的作業，因此通常值得將它整合到處理 3D 列印的 app 中。
+> 
+            **注意** 除了轉換檔案格式，**3D Builder** 提供簡單的工具來編輯模型、新增顏色資料，並執行其他列印特定的作業，因此通常值得將它整合到處理 3D 列印的 app 中。
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
@@ -76,7 +78,8 @@ ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
 [!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
 
-**Printing3DModel** 物件現在已經修復且可供列印。 當建立類別時，使用 **SaveModelToPackageAsync** 將模型指派到您建立類別時宣告的 Printing3D3MFPackage 物件。
+
+            **Printing3DModel** 物件現在已經修復且可供列印。 當建立類別時，使用 **SaveModelToPackageAsync** 將模型指派到您建立類別時宣告的 Printing3D3MFPackage 物件。
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
@@ -87,11 +90,14 @@ ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-這個方法的核心目的是使用 *args* 物件來將 **Printing3D3MFPackage** 向下傳送到管線。 **Print3DTaskRequestedEventArgs** 類型有一個屬性︰**Request**。 它是 [Print3DTaskRequest](https://msdn.microsoft.com/library/windows/apps/dn998050) 類型，並代表一個列印工作要求。 它的方法 **CreateTask** 可讓程式為列印工作送出正確資訊，而且它會傳回向下傳遞到 3D 列印管線之 [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) 物件的參考。
+這個方法的核心目的是使用 *args* 物件來將 **Printing3D3MFPackage** 向下傳送到管線。 
+            **Print3DTaskRequestedEventArgs** 類型有一個屬性︰**Request**。 它是 [Print3DTaskRequest](https://msdn.microsoft.com/library/windows/apps/dn998050) 類型，並代表一個列印工作要求。 它的方法 **CreateTask** 可讓程式為列印工作送出正確資訊，而且它會傳回向下傳遞到 3D 列印管線之 [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) 物件的參考。
 
-**CreateTask** 具有下列輸入參數：列印工作名稱的**字串**、要使用之印表機的識別碼**字串**，及 **Print3DTaskSourceRequestedHandler** 委派。 當引發 **3DTaskSourceRequested** 事件時，會自動叫用委派 (這會由 API 本身完成)。 要注意的重點是，這個委派在列印工作初始化時即已叫用，它會負責提供正確的 3D 列印封包。
 
-**Print3DTaskSourceRequestedHandler** 會接受一個參數，該參數提供要傳遞之資料的 [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) 物件。 這個類別的其中一個公用方法 **SetSource** 會接受要列印的封包。 實作 **Print3DTaskSourceRequestedHandler** 委派，如下所示：
+            **CreateTask** 具有下列輸入參數：列印工作名稱的**字串**、要使用之印表機的識別碼**字串**，及 **Print3DTaskSourceRequestedHandler** 委派。 當引發 **3DTaskSourceRequested** 事件時，會自動叫用委派 (這會由 API 本身完成)。 要注意的重點是，這個委派在列印工作初始化時即已叫用，它會負責提供正確的 3D 列印封包。
+
+
+            **Print3DTaskSourceRequestedHandler** 會接受一個參數，該參數提供要傳遞之資料的 [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) 物件。 這個類別的其中一個公用方法 **SetSource** 會接受要列印的封包。 實作 **Print3DTaskSourceRequestedHandler** 委派，如下所示：
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
@@ -103,7 +109,8 @@ ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
 [!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
 
-> **注意** 如果您希望將 `Task_Submitting` 和 `Task_Completed` 方法登錄到這些事件，您必須實作它們。
+> 
+            **注意** 如果您希望將 `Task_Submitting` 和 `Task_Completed` 方法登錄到這些事件，您必須實作它們。
 
 ## 執行列印工作︰開啟 3D 列印對話方塊
 

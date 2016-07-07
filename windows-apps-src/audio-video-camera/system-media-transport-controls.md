@@ -14,8 +14,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[
-            **SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
+[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
 
 系統傳輸控制項不同於 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 物件上的傳輸控制項。 系統傳輸控制項是在使用者按下硬體媒體鍵 (例如耳機上的音量控制或鍵盤上的媒體按鈕) 時以快顯方式顯示的控制項。 如果使用者按下鍵盤上的暫停鍵且您的應用程式支援 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)，您的應用程式會收到通知，而且您可以採取適當的動作。
 
@@ -26,8 +25,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## 設定傳輸控制項
 
-在頁面的 XAML 檔案中定義 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，它是由系統媒體傳輸控制項控制。 [
-            **CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件是用來更新系統媒體傳輸控制項，將會在本文稍後討論。
+在頁面的 XAML 檔案中定義 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，它是由系統媒體傳輸控制項控制。 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件是用來更新系統媒體傳輸控制項，將會在本文稍後討論。
 
 [!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
 
@@ -85,8 +83,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 -   您必須提供 [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751)、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) 和 [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) 的值，系統控制項才能為您正在播放的項目顯示時間軸。
 
--   [
-            **MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) 可讓您指定使用者可以搜尋的時間軸的範圍。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
+-   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) 可讓您指定使用者可以搜尋的時間軸的範圍。 典型的案例是讓內容提供者在他們的媒體中包含廣告中斷。
 
     您必須設定 [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748)，才會引發 [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755)。
 

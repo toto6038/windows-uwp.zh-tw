@@ -29,11 +29,14 @@ ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
  
 ## 備註
 
-**ThemeResource** 是一項技術，可以為 XAML 屬性取得定義在 XAML 資源字典中其他位置的值。 這個標記延伸的基本用途與 [{StaticResource} 標記延伸](staticresource-markup-extension.md)相同。 與 {StaticResource} 標記延伸在行為上的不同之處，在於 **ThemeResource** 參考可以依據系統目前所使用的佈景主題，動態使用不同的字典做為主要查詢位置。
 
-當應用程式第一次啟動時，系統會根據啟動時的使用中佈景主題，評估 **ThemeResource** 參考所執行的所有資源參考。 但是，如果使用者後續在執行階段變更使用中的佈景主題，系統將會重新評估每一個 **ThemeResource** 參考、抓取可能不同的佈景主題特定資源，然後使用視覺化樹狀結構中所有適當位置的新資源值重新顯示應用程式。 **StaticResource** 是在 XAML 載入階段/App 啟動時所決定，在執行階段不會重新評估 (此外，還有其他技術，例如會動態重新載入 XAML 的視覺狀態，但是這些技術是在由 [{StaticResource} 標記延伸](staticresource-markup-extension.md)啟用基本資源評估的較高層級運作)。
+            **ThemeResource** 是一項技術，可以為 XAML 屬性取得定義在 XAML 資源字典中其他位置的值。 這個標記延伸的基本用途與 [{StaticResource} 標記延伸](staticresource-markup-extension.md)相同。 與 {StaticResource} 標記延伸在行為上的不同之處，在於 **ThemeResource** 參考可以依據系統目前所使用的佈景主題，動態使用不同的字典做為主要查詢位置。
 
-**ThemeResource** 接受一個引數，這個引數指定了所要求的資源的索引鍵。 資源索引鍵一律是 Windows 執行階段 XAML 中的一個字串。 如需如何在一開始指定資源索引鍵的詳細資訊，請參閱 [x:Key 屬性](x-key-attribute.md)。
+當應用程式第一次啟動時，系統會根據啟動時的使用中佈景主題，評估 **ThemeResource** 參考所執行的所有資源參考。 但是，如果使用者後續在執行階段變更使用中的佈景主題，系統將會重新評估每一個 **ThemeResource** 參考、抓取可能不同的佈景主題特定資源，然後使用視覺化樹狀結構中所有適當位置的新資源值重新顯示應用程式。 
+            **StaticResource** 是在 XAML 載入階段/App 啟動時所決定，在執行階段不會重新評估 (此外，還有其他技術，例如會動態重新載入 XAML 的視覺狀態，但是這些技術是在由 [{StaticResource} 標記延伸](staticresource-markup-extension.md)啟用基本資源評估的較高層級運作)。
+
+
+            **ThemeResource** 接受一個引數，這個引數指定了所要求的資源的索引鍵。 資源索引鍵一律是 Windows 執行階段 XAML 中的一個字串。 如需如何在一開始指定資源索引鍵的詳細資訊，請參閱 [x:Key 屬性](x-key-attribute.md)。
 
 如需有關如何定義資源及正確使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
@@ -44,11 +47,13 @@ ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
 
 在 Windows 執行階段 XAML 處理器實作中，沒有 **ThemeResource** 的支援類別表示法。 在程式碼中最接近的相等做法是使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的集合 API，例如呼叫 [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) 或 [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139)。
 
-**ThemeResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
+
+            **ThemeResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
 ### 使用 {ThemeResource} 而不是 {StaticResource} 的時機和方式
 
-將 **ThemeResource** 解析成資源字典中的項目時所依據的規則，大致上與 **StaticResource** 相同。 **ThemeResource** 查詢可以延伸到 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 集合所參考的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 檔案中，但是 **StaticResource** 也可以那麼做。 差別在於 **ThemeResource** 可以在執行階段重新評估，但 **StaticResource** 不可以。
+將 **ThemeResource** 解析成資源字典中的項目時所依據的規則，大致上與 **StaticResource** 相同。 
+            **ThemeResource** 查詢可以延伸到 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 集合所參考的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 檔案中，但是 **StaticResource** 也可以那麼做。 差別在於 **ThemeResource** 可以在執行階段重新評估，但 **StaticResource** 不可以。
 
 每個佈景主題字典中的索引鍵組都應該提供一組相同的索引鍵資源，不論使用中的佈景主題是哪一個。 如果 **HighContrast** 佈景主題字典中有某個指定的索引鍵資源，則 **Light** 和 **Default** 中也應該要有另一個具有該名稱的資源。 如果不是這樣，當使用者切換佈景主題時，資源查詢可能會失敗，而您的應用程式會看起來不正常。 雖然佈景主題字典包含的索引鍵資源有可能只從相同範圍內參考以提供子值；這些在所有佈景主題中不一定要相等。
 
@@ -66,7 +71,8 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 類型屬性。
 
-**注意：**Windows 8.1 XAML 中支援針對佈景主題切換的 `{ThemeResource}` 和執行階段資源評估，但在以 Windows 8 為目標之應用程式的 XAML 中則不支援。
+
+            **注意：**Windows 8.1 XAML 中支援針對佈景主題切換的 `{ThemeResource}` 和執行階段資源評估，但在以 Windows 8 為目標之應用程式的 XAML 中則不支援。
 
 ### 系統資源
 
@@ -88,7 +94,8 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 在這裡，屬性採用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值，而使用 **ThemeResource** 建立對名為 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 之 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 資源的參考。
 
-[
+
+            [
               **Button**
             ](https://msdn.microsoft.com/library/windows/apps/br209265) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 物件及對筆刷的參考。
 
@@ -141,7 +148,8 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開始可供使用。 此外，Windows 8 不支援針對 Windows 執行階段應用程式動態切換與佈景主題相關的資源。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這並不是一個良好的使用者經驗，因此，強烈建議將應用程式重新編譯並定位為 Windows 8.1，讓它們可將樣式與 **ThemeResource** 用法搭配使用，且可在使用者進行時動態切換佈景主題。 針對 Windows 8 編譯但在 Windows 8.1 上執行的應用程式會繼續使用 Windows 8 的行為。
 
-## **{ThemeResource}** 標記延伸的設計階段工具支援
+## 
+            **{ThemeResource}** 標記延伸的設計階段工具支援
 
 當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
 

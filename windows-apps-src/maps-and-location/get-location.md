@@ -49,13 +49,11 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-[
-            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
+[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
 ### 步驟 2：取得使用者的位置並登錄位置權限的變更
 
-[
-            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 方法會執行目前位置的單次讀取。 在這裡，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會建立 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件、登錄位置權限的變更，以及要求使用者的位置。
+[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 方法會執行目前位置的單次讀取。 在這裡，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會建立 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件、登錄位置權限的變更，以及要求使用者的位置。
 
 ```csharp
 switch (accessStatus)
@@ -91,8 +89,7 @@ switch (accessStatus)
 
 ### 步驟 3：處理位置權限的變更
 
-[
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件會觸發 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **Status** 屬性 (類型為 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
+[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件會觸發 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，以指出使用者的位置設定已變更。 該事件會透過引數的 **Status** 屬性 (類型為 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)) 傳遞對應的狀態。 請注意，此方法並不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
 
 ```csharp
 using Windows.UI.Core;
@@ -169,8 +166,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 
 在這個範例中，**switch** 陳述式是與 **accessStatus** (來自先前的範例) 搭配使用，只有在獲允許存取使用者位置的情況下才有作用。 如果獲允許存取使用者的位置，程式碼就會建立 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件、指定追蹤類型，以及登錄位置更新。
 
-[
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件可以根據位置的變更 (距離型追蹤) 或時間的變更 (定期型追蹤) 來觸發 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
+[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件可以根據位置的變更 (距離型追蹤) 或時間的變更 (定期型追蹤) 來觸發 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
 
 -   針對距離型追蹤，請設定 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 屬性。
 -   針對定期型追蹤，請設定 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) 屬性。
@@ -213,8 +209,7 @@ switch (accessStatus)
 
 ### 步驟 2：處理位置更新
 
-[
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件會觸發 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件，以指出使用者的位置已變更或時間已推移 (視您的設定而定)。 該事件會透過引數的 **Position** 屬性 (類型為 [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)) 傳遞對應的位置。 在這個範例中，此方法不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
+[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件會觸發 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件，以指出使用者的位置已變更或時間已推移 (視您的設定而定)。 該事件會透過引數的 **Position** 屬性 (類型為 [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)) 傳遞對應的位置。 在這個範例中，此方法不是從 UI 執行緒呼叫，且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件會叫用 UI 變更。
 
 ```csharp
 using Windows.UI.Core;

@@ -1,6 +1,13 @@
 ---
-Description&#58; 作者：jnHs 一旦您已透過保留名稱來建立您的 app，您就可以開始進行發行。 第一個步驟是建立提交。
-title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords&#58; submit an app keywords&#58; required info keywords&#58; required fields keywords&#58; required data keywords&#58; checklist
+author: jnHs
+Description: "一旦您已透過保留名稱來建立您的 app，您可以開始進行發行。 第一個步驟是建立提交項。"
+title: "App 提交"
+ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
+keywords: checklist
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
+
 ---
 
 # App 提交
@@ -10,7 +17,7 @@ title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 
 
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 提交將儲存於儀表板中，如此一來，每當您準備好時，即可加以使用。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 app 建立新的提交，請按一下 app [概觀] 頁面上所顯示最新提交旁的 [更新]。
+發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 app 建立新的提交，請按一下 app [概觀] 頁面上所顯示最新提交旁的 [更新]****。
 
 ## App 提交檢查清單
 
@@ -25,7 +32,7 @@ title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 
 | **基本價格**                | 必要                                    | [基本價格](set-app-pricing-and-availability.md#base-price)              |
 | **免費試用**                | 預設值：沒有免費試用                      | [新增試用版和在 App 內購買](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
 | **市場和自訂價格** | 預設值：所有可能的市場，無自訂價格 | [制定價格和選擇市場](define-pricing-and-market-selection.md)              |
-| **銷售定價**              | 選用                                    | [促銷 app 和 IAP](put-apps-and-iaps-on-sale.md)                                       |
+| **銷售定價**              | 選用                                    | [銷售 App 和 IAP](put-apps-and-iaps-on-sale.md)                                       |
 | **配送和可見性** | 預設：在市集推出此應用程式 | [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility) | 
 | **Windows 10 裝置系列**  | 預設：可以在任何可執行您 app 的 Windows 10 裝置上下載該 app | [Windows 10 裝置系列](set-app-pricing-and-availability.md#windows-10-device-families) | 
 | **組織授權**    | 預設：允許組織大量取得 | [組織授權選項](organizational-licensing.md)                        | 
@@ -92,6 +99,7 @@ title&#58; App submissions ms.assetid&#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 
 **注意**如需直接將企業營運 (LOB) App 發佈到企業的相關資訊，請參閱[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

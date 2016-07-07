@@ -59,7 +59,8 @@ Windows 市集可以組織 app，以分成下列類別與子類別。
 | 公用程式 + 工具           | 備份 + 管理 <br> 檔案管理工具                |
  
 
-> **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [App 如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
+> 
+            **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [App 如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
 
 
 

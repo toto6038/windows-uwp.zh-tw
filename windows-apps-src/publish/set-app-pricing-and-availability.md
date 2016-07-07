@@ -30,7 +30,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 您也可以選取 \[1 天\]、\[7 天\]、\[15 天\] 或 \[30 天\] 的時間限定試用版的選項。 您在試用期間仍然可以限制功能，或者可以讓客戶在該時間期間存取完整功能。
 
-> **注意** Windows Phone 8.1 和較舊版本不會對客戶顯示限時試用。
+> 
+            **注意** Windows Phone 8.1 和較舊版本不會對客戶顯示限時試用。
 
 ## 市場和自訂價格
 
@@ -51,9 +52,12 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 如果您想要在市集中隱藏您的 app，但仍要讓特定人員能夠使用它，請選取下列其中一個選項來限制 app 的可用性。 請注意，如果您選擇這其中一個選項，Windows 8 和 Windows 8.1 的客戶將無法取得該 app。
 
--   **隱藏這個 app 並避免購買。具備促銷碼的客戶仍然能夠在 Windows 10 裝置上下載該 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是您可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 他們可以使用連結和代碼以免費取得您的 app，即使您並未將該 app 提供給其他任何客戶也一樣。
--   **在市集中隱藏這個 app。具有 app 清單直接連結的客戶仍能下載該 app，但在 Windows 8 與 Windows 8.1 上除外**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是具有 app 清單直接連結的任何客戶可以在執行 Windows 10 或 Windows Phone 8.1 和較舊版本的裝置上下載您的 app。
--   **隱藏這個 app，而且只有您在下方指定的人員可以使用它，這類人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，只有您在方塊中 (使用分號分隔) 輸入其電子郵件地址 (與其 Microsoft 帳戶相關聯) 的 Windows Phone 8.x 客戶可以使用直接連至其清單的連結來下載您的 app。 您也可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 這個選項通常用於 Windows Phone 8.1 和更舊版本的[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。 請注意，只有當您先前發行 app 時，未將 \[配送和可見性\]\] 選項設定為 \[任何人都可以在市集中找到您的 app\]，才能夠選取此選項。
+-   
+            **隱藏這個 app 並避免購買。具備促銷碼的客戶仍然能夠在 Windows 10 裝置上下載該 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是您可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 他們可以使用連結和代碼以免費取得您的 app，即使您並未將該 app 提供給其他任何客戶也一樣。
+-   
+            **在市集中隱藏這個 app。具有 app 清單直接連結的客戶仍能下載該 app，但在 Windows 8 與 Windows 8.1 上除外**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是具有 app 清單直接連結的任何客戶可以在執行 Windows 10 或 Windows Phone 8.1 和較舊版本的裝置上下載您的 app。
+-   
+            **隱藏這個 app，而且只有您在下方指定的人員可以使用它，這類人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，只有您在方塊中 (使用分號分隔) 輸入其電子郵件地址 (與其 Microsoft 帳戶相關聯) 的 Windows Phone 8.x 客戶可以使用直接連至其清單的連結來下載您的 app。 您也可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 這個選項通常用於 Windows Phone 8.1 和更舊版本的[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。 請注意，只有當您先前發行 app 時，未將 \[配送和可見性\]\] 選項設定為 \[任何人都可以在市集中找到您的 app\]，才能夠選取此選項。
 
 > 注意 若要完全停止為新客戶提供某個 app，請按一下 \[App 概觀\] 頁面的 \[停止提供 app\]。 在確認您想要停止提供該 app 之後，在數小時內，將無法在市集中看見該 app，而所有的新客戶都將無法透過任何方法來取得它。 這個動作將覆寫您在此處選擇的所有選項：新客戶將完全無法取得它。 若要再次為新客戶提供該 app，可隨時按一下 \[App 概觀\] 頁面的 \[提供 app\]。 如需詳細資訊，請參閱[從市集移除 app](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
@@ -61,7 +65,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 本節可讓您指出客戶可以使用何種類型的 Windows 10 裝置來取得您的應用程式。 (如果您的套件不會在特定的裝置類型上執行，我們將不會提供它下載至該類型的裝置。)
 
-> **重要** 若要完全防止特定 Windows 10 裝置系列取得您的應用程式，您需要更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，讓目標僅限於要支援的裝置系列 (也就是 **Windows.Mobile** 或 **Windows.Desktop**)，而不是讓它做為 Microsoft Visual Studio 預設包含在 appx 資訊清單中的 **Windows.Universal** 值 (適用於通用裝置系列)。
+> 
+            **重要** 若要完全防止特定 Windows 10 裝置系列取得您的應用程式，您需要更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，讓目標僅限於要支援的裝置系列 (也就是 **Windows.Mobile** 或 **Windows.Desktop**)，而不是讓它做為 Microsoft Visual Studio 預設包含在 appx 資訊清單中的 **Windows.Universal** 值 (適用於通用裝置系列)。
 
 根據預設，將會勾選 \[行動\] 和 \[桌面\] 方塊。 我們建議您讓這些方塊保持核取狀態，除非有特殊原因必須限制可以取得您的應用程式的 Windows 10 裝置類型。 例如，您可能已建立 Windows 通用套件，但是您仍然需要測試應用程式在行動裝置上的一些問題。 若要防止新客戶在 Windows 10 行動裝置上下載 app，您可以取消核取這裡的 \[行動裝置\] 核取方塊。 然後，如果您之後決定要提供給 Windows 10 行動裝置的客戶，您可以建立新的提交並且勾選 \[行動裝置\] 方塊。
 
@@ -73,7 +78,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 如需裝置系列的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)和 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)。
 
-> **注意** 您也將看到一個核取方塊，讓您可以指出是否要讓 Microsoft 將 app 提供給未來的 Windows 10 裝置系列。 我們建議您保持核取此方塊，讓您的 app 在新裝置系列引入時可供更多潛在客戶使用。
+> 
+            **注意** 您也將看到一個核取方塊，讓您可以指出是否要讓 Microsoft 將 app 提供給未來的 Windows 10 裝置系列。 我們建議您保持核取此方塊，讓您的 app 在新裝置系列引入時可供更多潛在客戶使用。
 
 ## 組織授權
 
@@ -90,7 +96,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 -   選擇 \[通過認證之後就立即發佈此提交項目\] 可讓此提交項目在市集中以最快方式取得。
 -   如果您希望提交項目要到您明確指定時才發佈，請選擇 \[手動發佈此提交項目\]。 您可以從認證狀態頁面按一下 \[立即發佈\] 或依照下面描述選取特定日期進行手動發佈。
 -   選擇 \[不早於 \[日期\]\] 可確保提交項目要到某個日期之後才會發佈。 使用此選項，您的提交項目會在指定日期的當天或之後立即發行。 此日期至少必須是未來的 24 小時後。 除了日期，您還能指定應開始發佈提交項目的時間。
-    > **注意** 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的 app (或更新)。
+    > 
+            **注意** 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的 app (或更新)。
 
 您也可以在提交 app 之後變更發行日期，只要還沒有進入 \[發佈\] 步驟即可。
  

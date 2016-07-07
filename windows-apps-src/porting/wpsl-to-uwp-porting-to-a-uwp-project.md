@@ -113,7 +113,8 @@ ms.openlocfilehash: 74cbd9789636383e6d04798435780dcda6b897d0
 
 ```
 
-您可能已經使用條件式編譯來限制對 Windows Phone 硬體相機按鈕的處理。 在 Windows 10 中，硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此，請小心並只將下列程式碼用於存在的功能，雖然它達到效果的方式與條件式編譯不同。
+您可能已經使用條件式編譯來限制對 Windows Phone 硬體相機按鈕的處理。 在 Windows 10 中，硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 
+            **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此，請小心並只將下列程式碼用於存在的功能，雖然它達到效果的方式與條件式編譯不同。
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.

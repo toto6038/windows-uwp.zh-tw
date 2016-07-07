@@ -32,7 +32,8 @@ ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
 1.  在 Visual Studio 中開啟您的方案 (或建立新的方案)。
 
 2.  在 Visual Studio 中開啟 package.appxmanifest，移至 \[應用程式\] 索引標籤，並且 (針對此範例) 將預設語言設定為 \[en-US\]。 如果您的方案中有多個 package.appxmanifest 檔案，請針對每個項目執行這個動作。
-    <br>**注意：**這樣會指定專案的預設語言。 如果使用者的慣用語言或顯示語言不符合應用程式提供的語言資源，就會使用預設語言資源。
+    <br>
+            **注意：**這樣會指定專案的預設語言。 如果使用者的慣用語言或顯示語言不符合應用程式提供的語言資源，就會使用預設語言資源。
 3.  建立資料夾以包含資源檔案。
     1.  在 \[方案總管\] 中，用滑鼠右鍵按一下專案 (如果您的方案包含多個專案則為「共用」專案) 並選取 \[新增\] \[新資料夾\]。
     2.  將新資料夾命名為 "Strings"。
@@ -160,7 +161,8 @@ auto str = loader->GetString("Farewell");
 
     HTML 取代項目的 data-win-res 屬性的一般模式是 data-win-res="{*屬性名稱1*: '*資源識別碼1*', *屬性名稱2*: '*資源識別碼2*'}"。
 
-    **注意：**如果字串不包含任何標記，請盡可能將資源繫結到 textContent 屬性，而不是 innerHTML。 取代 textContent 屬性的速度會比 innerHTML 快許多。
+    
+            **注意：**如果字串不包含任何標記，請盡可能將資源繫結到 textContent 屬性，而不是 innerHTML。 取代 textContent 屬性的速度會比 innerHTML 快許多。
 
 5.  在 JavaScript 中參考字串資源。
     <span codelanguage="JavaScript"></span>

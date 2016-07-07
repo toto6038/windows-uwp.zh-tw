@@ -28,8 +28,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 曝光
 
-[
-            **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 可讓您設定擷取相片或視訊時使用的快門速度。
+[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 可讓您設定擷取相片或視訊時使用的快門速度。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光值，以及使用核取方塊來切換自動曝光調整。
 
@@ -55,8 +54,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 曝光補償
 
-[
-            **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 可讓您設定擷取相片或視訊時使用的曝光補償。
+[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 可讓您設定擷取相片或視訊時使用的曝光補償。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值。
 
@@ -76,9 +74,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 閃光燈
 
-[
-            **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [
-            **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
+[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
 
 這個範例使用一組選項按鈕，可讓使用者在開啟、關閉及自動閃光燈設定之間做切換。 此外也提供一個核取方塊，可切換消除紅眼和視訊手電筒。
 
@@ -104,8 +100,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 對焦
 
-[
-            **FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 物件支援三種不同的常用方法來調整相機的焦點：連續自動對焦、點選以對焦以及手動對焦。 相機 App 可支援這三種方法全部，但為了方便閱讀起見，本文將分開討論每一種技術。 本節也會討論如何啟用對焦輔助燈。
+[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 物件支援三種不同的常用方法來調整相機的焦點：連續自動對焦、點選以對焦以及手動對焦。 相機 App 可支援這三種方法全部，但為了方便閱讀起見，本文將分開討論每一種技術。 本節也會討論如何啟用對焦輔助燈。
 
 ### 連續自動對焦
 
@@ -225,8 +220,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## ISO 速度
 
-[
-            **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 可讓您設定擷取相片或視訊時使用的 ISO 速度。
+[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 可讓您設定擷取相片或視訊時使用的 ISO 速度。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值，以及使用核取方塊來切換自動 ISO 速度調整。
 
@@ -262,8 +256,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 ## 白平衡
 
-[
-            **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
+[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
 
 這個範例使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 控制項以從內建的色溫預設進行選取，以及使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來進行手動白平衡調整。
 
@@ -291,8 +284,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 ## 縮放
 
-[
-            **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 可讓您設定擷取相片或視訊時使用的縮放比例。
+[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 可讓您設定擷取相片或視訊時使用的縮放比例。
 
 這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的縮放比例。 下節將說明如何根據螢幕上的捏合手勢調整縮放。
 
@@ -324,8 +316,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [
-            **ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
+在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
 
 在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放係數是裝置所支援的縮放分段大小的倍數 (以 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 屬性表示)。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
 

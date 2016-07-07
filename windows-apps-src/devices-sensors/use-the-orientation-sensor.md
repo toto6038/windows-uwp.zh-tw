@@ -20,15 +20,18 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
 
 了解如何使用方向感應器來判斷裝置方向。
 
-[
+
+            [
               **Windows.Devices.Sensors**
             ](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空間中包含兩種不同類型的方向感應器：[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 雖然這這兩種感應器都是方向感應器，但該詞彙意義遠大於此，而它們的用途大不相同。 不過，既然兩者都是方向感應器，所以就都涵蓋在這篇文章中。
 
-[
+
+            [
               **OrientationSensor**
             ](https://msdn.microsoft.com/library/windows/apps/BR206371) API 是用於 3D app，兩個即可取得一個四元數及一個旋轉矩陣。 四元數最簡單的理解方式是視為任一軸上某一點 \[x,y,z\] 的旋轉 (對照旋轉矩陣來說，旋轉矩陣代表繞著三個軸的旋轉)。 四元數的數學理論很難用通俗語言解釋，其中涉及到複數的幾何特性以及虛數的數學特性，不過實際應用卻很簡單，而且像 DirectX 之類的架構都能支援四元數。 複雜的 3D 應用程式可使用方向感應器的來調整使用者透視角度。 這種感應器結合了加速計、陀螺儀以及指南針的輸入。
 
-[
+
+            [
               **SimpleOrientation**
             ](https://msdn.microsoft.com/library/windows/apps/BR206399) API 是用來依據像是直向朝上、直向朝下、橫向朝左及橫向朝右的定義，判斷目前的裝置方向。 它也可以偵測裝置是否正面朝上或正面朝下。 這個感應器不會傳回如 "portrait up" 或 "landscape left" 的屬性，而是會傳回旋轉值：如 "Not rotated"、"Rotated90DegreesCounterclockwise" 等等。 下表將常用的方向屬性對應到相應的感應器讀數。
 
@@ -198,7 +201,8 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-**ReadingChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+
+            **ReadingChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
@@ -336,7 +340,8 @@ App 會與 **MainPage** 方法中的預設感應器建立連線。
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-**OrientationChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+
+            **OrientationChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 

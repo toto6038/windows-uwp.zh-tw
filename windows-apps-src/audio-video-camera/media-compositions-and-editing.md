@@ -18,8 +18,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 ## 建立新的媒體組合
 
-[
-            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
+[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -41,8 +40,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 -   **MediaClip** 只能併入組合一次。 嘗試新增已由組合使用的 **MediaClip** 會導致錯誤。 若要在組合中重複使用視訊剪輯多次，請呼叫 [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) 以建立稍後可以新增至組合的新 **MediaClip** 物件。
 
--   通用 Windows app 沒有權限可以存取整個檔案系統。 [
-            **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性可以讓您的 app 儲存檔案的記錄，該檔案已由使用者選取，所以您可以保留存取檔案的權限。 **FutureAccessList** 具有最多的 1000 個項目，所以您的 app 需要管理清單以確定不會變滿。 如果您計劃支援載入和修改之前建立的組合，這特別重要。
+-   通用 Windows app 沒有權限可以存取整個檔案系統。 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性可以讓您的 app 儲存檔案的記錄，該檔案已由使用者選取，所以您可以保留存取檔案的權限。 **FutureAccessList** 具有最多的 1000 個項目，所以您的 app 需要管理清單以確定不會變滿。 如果您計劃支援載入和修改之前建立的組合，這特別重要。
 
 -   **MediaComposition** 支援 MP4 格式的視訊剪輯。
 
@@ -88,8 +86,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [
-            **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
+-   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
 
 ## 修剪視訊剪輯
 
@@ -99,8 +96,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 -   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用 **MediaElement** 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) 屬性，藉由檢查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先決定要在目前位置播放哪個 MediaClip。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
 -   **MediaClip** 物件的 [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) 屬性可讓您知道未套用任何剪輯的媒體剪輯的持續時間。
--   [
-            **TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
+-   [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
 -   指定大於媒體剪輯原始持續時間的修剪值不會擲回錯誤。 不過，如果組合只包含單一剪輯，並且藉由指定大的修剪值而修剪為零長度，[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的後續呼叫會傳回 Null，如同組合沒有任何剪輯。
 
 ## 將背景曲目新增至組合

@@ -16,17 +16,22 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 本文說明如何使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 和 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 來載入及儲存影像檔，以及如何使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來代表點陣圖影像。
 
-**SoftwareBitmap** 類別是可從多個來源建立的多用途 API，包括影像檔、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) 物件、Direct3D 外觀和程式碼。 **SoftwareBitmap** 可讓您輕鬆地在不同的像素格式與 Alpha 模式之間轉換，並允許低階存取像素資料。 此外，**SoftwareBitmap** 是許多 Windows 功能經常使用的介面，包括：
 
--   [
+            **SoftwareBitmap** 類別是可從多個來源建立的多用途 API，包括影像檔、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) 物件、Direct3D 外觀和程式碼。 
+            **SoftwareBitmap** 可讓您輕鬆地在不同的像素格式與 Alpha 模式之間轉換，並允許低階存取像素資料。 此外，**SoftwareBitmap** 是許多 Windows 功能經常使用的介面，包括：
+
+-   
+            [
               **CapturedFrame**
             ](https://msdn.microsoft.com/library/windows/apps/dn278725) 可讓您以 **SoftwareBitmap** 取得相機所拍攝的畫面。
 
--   [
+-   
+            [
               **VideoFrame**
             ](https://msdn.microsoft.com/library/windows/apps/dn930917) 可讓您取得 **VideoFrame** 的 **SoftwareBitmap** 表示。
 
--   [
+-   
+            [
               **FaceDetector**
             ](https://msdn.microsoft.com/library/windows/apps/dn974129) 可讓您偵測 **SoftwareBitmap** 中的人臉。
 
@@ -50,9 +55,12 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 [!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-呼叫 **StorageFile** 物件的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，取得將寫入影像的隨機存取資料流。 呼叫靜態方法 [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211)，取得指定資料流的 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 類別執行個體。 **CreateAsync** 的第一個參數是 GUID，代表應該用來編碼影像的轉碼器。 **BitmapEncoder** 類別公開的一個屬性包含編碼器支援的每個轉碼器的識別碼，例如 [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226)。
+呼叫 **StorageFile** 物件的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，取得將寫入影像的隨機存取資料流。 呼叫靜態方法 [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211)，取得指定資料流的 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 類別執行個體。 
+            **CreateAsync** 的第一個參數是 GUID，代表應該用來編碼影像的轉碼器。 
+            **BitmapEncoder** 類別公開的一個屬性包含編碼器支援的每個轉碼器的識別碼，例如 [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226)。
 
-使用 [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) 方法來設定將編碼的影像。 您可以設定 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 屬性的值，對正在編碼的影像套用基本轉換。 [
+使用 [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) 方法來設定將編碼的影像。 您可以設定 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 屬性的值，對正在編碼的影像套用基本轉換。 
+            [
               **IsThumbnailGenerated**
             ](https://msdn.microsoft.com/library/windows/apps/br226225) 屬性決定編碼器是否產生縮圖。 請注意，並非所有檔案格式都支援縮圖，當您使用這項功能時，如果不支援縮圖，則會擲回不支援的作業錯誤。
 
@@ -86,7 +94,8 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 本主題到目前為止已討論影像檔的處理方式。 您也可以在程式碼中建立新的 **SoftwareBitmap**，並使用相同的技術來存取和修改 **SoftwareBitmap** 的像素資料。
 
-**SoftwareBitmap** 使用 COM Interop 公開包含像素資料的原始緩衝區。
+
+            **SoftwareBitmap** 使用 COM Interop 公開包含像素資料的原始緩衝區。
 
 若要使用 COM Interop，您必須在專案中加入 **System.Runtime.InteropServices** 命名空間的參考。
 
@@ -114,7 +123,8 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 ## 將 SoftwareBitmap 轉換成不同的像素格式
 
-**SoftwareBitmap** 類別提供靜態方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362)，可讓您從現有的 **SoftwareBitmap**，使用您指定的像素格式和 Alpha 模式，輕鬆地建立新的 **SoftwareBitmap**。 請注意，新建立的點陣圖有個別的影像資料複本。 修改新的點陣圖不會影響原始點陣圖。
+
+            **SoftwareBitmap** 類別提供靜態方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362)，可讓您從現有的 **SoftwareBitmap**，使用您指定的像素格式和 Alpha 模式，輕鬆地建立新的 **SoftwareBitmap**。 請注意，新建立的點陣圖有個別的影像資料複本。 修改新的點陣圖不會影響原始點陣圖。
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 在 DirectX 遊戲中載入資源
-description: 大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。
+title: "在 DirectX 遊戲中載入資源"
+description: "大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
+
 ---
 
 # 在 DirectX 遊戲中載入資源
@@ -198,7 +202,7 @@ void ResourceLoading::CreateDeviceResources()
 
 (您應該永遠盡可能地將資產資料以接近內部表示法的格式封裝。 這樣可以減少資源使用量並節省時間。)
 
-讓我們從網格的檔案取得位元組資料吧。 範例中的格式假設檔案是尾碼 .vbo 的範例特定格式 (再次提醒，這個格式與 OpenGL's VBO 格式不同)。每個頂點本身均對應 **BasicVertex** 類型，那是定義在 obj2vbo 轉換器工具程式碼中的結構。 .vbo 檔案中的頂點資料版面配置看起來像這樣：
+讓我們從網格的檔案取得位元組資料吧。 範例中的格式假設檔案是尾碼 .vbo 的範例特定格式  (再次提醒，這個格式與 OpenGL's VBO 格式不同)。每個頂點本身均對應 **BasicVertex** 類型，那是定義在 obj2vbo 轉換器工具程式碼中的結構。 .vbo 檔案中的頂點資料版面配置看起來像這樣：
 
 -   資料串流的前 32 個位元 (4 個位元組) 包含網格中的頂點數目 (numVertices)，以一個 uint32 值表示。
 -   資料串流的後 32 個位元 (4 個位元組) 包含網格中的索引數目 (numIndices)，以一個 uint32 值表示。
@@ -705,6 +709,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -47,7 +47,8 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
     讓您的 app 提供可重新啟用定位服務的 UI—
 
-    -   如果使用者在停用位置存取之後重新啟用，app 將不會收到通知。 [
+    -   如果使用者在停用位置存取之後重新啟用，app 將不會收到通知。 
+            [
               **status**
             ](https://msdn.microsoft.com/library/windows/apps/br225601) 屬性不會變更，也不會有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 您的應用程式應該建立新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件並呼叫 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 以嘗試取得更新的位置資料，或是再次訂閱 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 然後，如果狀態指出已重新啟用定位，請清除您的 app 先前通知使用者定位服務已停用的所有 UI，然後適當回應新狀態。
     -   您的應用程式也應該在啟用時、使用者明確嘗試使用需要位置資訊的功能時，或在任何適用情況下，重新嘗試取得位置資料。
@@ -73,7 +74,8 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
         提供位置資料的裝置可以追蹤不同應用程式要求的報告間隔，並以最小要求間隔提供資料報告。 這樣最需要精確度的應用程式就會收到符合需求的資料。 因此，如果另一個 app 要求更高頻率的更新時，定位提供者可能會以比您 app 所要求之頻率還要高的頻率產生更新。
 
-        **注意** 位置來源不保證接受指定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
+        
+            **注意** 位置來源不保證接受指定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
 
     -   為了幫助節省電源，請設定 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 屬性，向定位平台指出您的應用程式是否需要高精確度的資料。 如果沒有 app 需要高精確度的資料，系統可以藉由不開啟 GPS 提供者以便節省電源。
 
@@ -101,7 +103,8 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
     Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
-**連線待命：**當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator 物件**](https://msdn.microsoft.com/library/windows/apps/br225534)。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
+
+            **連線待命：**當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator 物件**](https://msdn.microsoft.com/library/windows/apps/br225534)。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
 
 ## 其他用法指導方針
 
@@ -173,6 +176,6 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,7 +1,10 @@
 ---
 author: JordanRh1
-title: 在 Windows 10 IoT 核心版上啟用使用者模式存取
-description: 本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。
+title: "在 Windows 10 IoT 核心版上啟用使用者模式存取"
+description: "本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。"
+ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
+ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+
 ---
 # 在 Windows 10 IoT 核心版上啟用使用者模式存取
 
@@ -101,7 +104,7 @@ Package(2) { "SPI0-SupportedDataBitLengths", Package() { 8 }},
 
 **SupportedDataBitLengths** 屬性會列出控制器支援的資料位元長度。 可在以逗號分隔的清單中指定多個值。 API 會防止使用者指定此清單以外的值。 資料位元長度會傳遞至連線描述元 (ACPI 區段 6.4.3.8.2.2) 之 _LEN 欄位中的 SPB 驅動程式。  
 
-您可以將這些資源宣告為「範本」。 系統開機時會固定某些欄位，而其他欄位則會於執行階段動態指定。 SPISerialBus 描述元的下列欄位會固定︰ 
+您可以將這些資源宣告為「範本」。 某些欄位在系統開機時是固定的，而其他欄位則會於執行階段動態指定。 SPISerialBus 描述元的下列欄位會固定︰ 
 
 * DeviceSelection 
 * DeviceSelectionPolarity 
@@ -340,13 +343,15 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 * 針腳多工處理伺服器 – 這些是控制針腳多工處理控制區塊的驅動程式。 針腳多工處理伺服器會透過保留多工處理資源的要求 (透過 *IRP_MJ_CREATE*)，以及切換針腳功能的要求 (透過 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求)，接收來自用戶端的針腳多工處理要求。 由於多工處理區塊有時為 GPIO 區塊的一部分，因此針腳多工處理伺服器通常為 GPIO 驅動程式。 即使多工處理區塊為個別周邊裝置，GPIO 驅動程式亦是放置多工處理功能的邏輯位置。 
 * 針腳多工處理用戶端 – 這些是使用針腳多工處理的驅動程式。 針腳多工處理用戶端會接收來自 ACPI 韌體的針腳多工處理資源。 針腳多工處理資源是一種連線資源，並由資源中樞所管理。 針腳多工處理用戶端會開啟資源控制代碼，以保留針腳多工處理資源。 為使硬體變更生效，用戶端必須傳送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求以認可設定。 用戶端會關閉控制代碼以釋放針腳多工處理資源，此時多工處理設定會回復為預設狀態。 
-* ACPI 韌體 – 指定具 `FunctionConfig()` 資源的多工處理設定。 FunctionConfig 資源會表明用戶端需要哪些針腳、使用何種多工處理設定。 FunctionConfig 資源包含功能編號、提取設定以及針腳編號清單。 FunctionConfig 資源會提供給針腳多工處理用戶端做為硬體資源，而驅動程式在執行 PrepareHardware 回呼時會接收這些資源，這與 GPIO 和 SPB 連線資源近似。 用戶端接收資源中樞識別碼，其可用來開啟資源的控制代碼。 
+* ACPI 韌體 – 指定具 `MsftFunctionConfig()` 資源的多工處理設定。 MsftFunctionConfig 資源會表明用戶端需要哪些針腳、使用何種多工處理設定。 MsftFunctionConfig 資源包含功能編號、提取設定以及針腳編號清單。 MsftFunctionConfig 資源會提供給針腳多工處理用戶端做為硬體資源，而驅動程式在執行 PrepareHardware 回呼時會接收這些資源，這與 GPIO 和 SPB 連線資源近似。 用戶端接收資源中樞識別碼，可用來開啟資源的控制代碼。 
+
+> 您必須將 `/MsftInternal` 命令列參數傳遞至 `asl.exe` 以編譯包含 `MsftFunctionConfig()` 描述元的 ASL 檔案，因為這些描述元目前正由 ACPI 工作委員會審核。 例如： `asl.exe /MsftInternal dsdt.asl`
 
 針腳多工處理相關作業順序如下所示。 
 
 ![針腳多工處理用戶端伺服器互動](images/usermode-access-diagram-1.png)
 
-1.  用戶端在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回呼中，接收來自 ACPI 韌體的 FunctionConfig 資源。
+1.  用戶端在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回呼中，接收來自 ACPI 韌體的 MsftFunctionConfig 資源。
 2.  用戶端使用資源中樞協助程式函式 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 自資源識別碼建立路徑，然後開啟路徑控制代碼 (使用 [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx))。
 3.  伺服器使用資源中樞協助程式函式 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 從檔案路徑擷取資源中樞識別碼，然後查詢資源中樞以取得資源描述元。
 4.  伺服器針對描述元中的每個針腳執行共用仲裁，並完成 IRP_MJ_CREATE 要求。
@@ -362,7 +367,7 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 ####    剖析資源
 
-WDF 驅動程式在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 常式中接收 `FunctionConfig()` 資源。 可透過下列欄位識別 FunctionConfig 資源：
+WDF 驅動程式在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 常式中接收 `MsftFunctionConfig()` 資源。 可透過下列欄位識別 MsftFunctionConfig 資源：
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -370,7 +375,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-`EvtDevicePrepareHardware()` 常式可能會擷取 FunctionConfig 資源，如下所示：
+`EvtDevicePrepareHardware()` 常式可能會擷取 MsftFunctionConfig 資源，如下所示：
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -426,7 +431,7 @@ evtDevicePrepareHardware (
 
 ####    保留和認可資源
 
-若用戶端想要多工處理針腳，則會保留和認可 FunctionConfig 資源。 下列範例說明用戶端如何保留並認可 FunctionConfig 資源。
+若用戶端想要多工處理針腳，則會保留和認可 MsftFunctionConfig 資源。 下列範例說明用戶端如何保留並認可 MsftFunctionConfig 資源。
 
 ```cpp
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -511,7 +516,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 ####    處理 IRP_MJ_CREATE 要求
 
-若用戶端想要保留針腳多工處理資源，則會開啟資源控制代碼。 針腳多工處理伺服器會透過來自資源中樞的重新剖析作業，接收 *IRP_MJ_CREATE* 要求。 *IRP_MJ_CREATE* 要求的結尾路徑元件會包含資源中樞識別碼，其為使用十六進位格式的 64 位元整數。 伺服器應會使用來自 reshub.h 的 `RESOURCE_HUB_ID_FROM_FILE_NAME()`，從檔名擷取資源中樞識別碼，並將 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 傳送至資源中樞以取得 `FunctionConfig()` 描述元。
+若用戶端想要保留針腳多工處理資源，則會開啟資源控制代碼。 針腳多工處理伺服器會透過來自資源中樞的重新剖析作業，接收 *IRP_MJ_CREATE* 要求。 *IRP_MJ_CREATE* 要求的結尾路徑元件會包含資源中樞識別碼，其為使用十六進位格式的 64 位元整數。 伺服器應會使用來自 reshub.h 的 `RESOURCE_HUB_ID_FROM_FILE_NAME()`，從檔名擷取資源中樞識別碼，並將 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 傳送至資源中樞以取得 `MsftFunctionConfig()` 描述元。
 
 伺服器應會驗證描述元，並從描述元擷取共用的模式與針腳清單。 接著它應會執行針腳的共用仲裁，若執行成功，則會將針腳標示為保留然後再完成要求。
 
@@ -525,18 +530,18 @@ NTSTATUS AcquireFunctionConfigResource (
 
 若共用仲裁作業失敗，則應使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成要求。 若共用仲裁作業成功，則應使用 *STATUS_SUCCESS* 完成要求。
 
-請注意，傳入要求的共用模式應取自 FunctionConfig 描述元，而非 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx)。
+請注意，傳入要求的共用模式應取自 MsftFunctionConfig 描述元，而非 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx)。
 
 ####    處理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求
 
-用戶端藉由開啟控制代碼成功保留 FunctionConfig 資源後，可傳送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求伺服器執行實際硬體多工處理作業。 當伺服器收到 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 時，對於針腳清單中的每個針腳，它應該會 
+用戶端藉由開啟控制代碼成功保留 MsftFunctionConfig 資源後，可傳送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求伺服器執行實際硬體多工處理作業。 當伺服器收到 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 時，對於針腳清單中的每個針腳，它應該會 
 
 *   將 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 PinConfiguration 成員中指定的提取模式設定到硬體。
 *   將針腳多工處理至由 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 FunctionNumber 成員指定的功能。
 
 隨後伺服器應會以 *STATUS_SUCCESS* 完成要求。
 
-FunctionNumber 的意義是由伺服器所定義，且其了解 FunctionConfig 描述元是在知悉伺服器如何解譯此欄位的情況下撰寫而成。
+FunctionNumber 的意義是由伺服器所定義，且 MsftFunctionConfig 描述元是在知悉伺服器如何解譯此欄位的情況下撰寫而成。
 
 請謹記，伺服器在關閉控制代碼時必須將針腳回復為接收 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 時的原本設定，因此伺服器可能需要儲存針腳的狀態後再修改針腳。
 
@@ -546,11 +551,11 @@ FunctionNumber 的意義是由伺服器所定義，且其了解 FunctionConfig �
 
 ### 撰寫 ACPI 表格的指導方針
 
-本節說明如何提供多工處理資源至用戶端驅動程式。 請注意，您必須具有 Microsoft ASL 編譯器建置 14327 或更新版本，才能編譯包含 `FunctionConfig()` 資源的表格。 `FunctionConfig()` 資源會提供至針腳多工處理用戶端做為硬體資源。 `FunctionConfig()` 資源應提供至需要執行針腳多工處理變更的驅動程式 (通常為 SPB 與序列控制器驅動程式)，但不應提供至 SPB 與序列周邊裝置驅動程式，這是因為控制器驅動程式會處理多工設定。
-`FunctionConfig()` ACPI 巨集定義如下：
+本節說明如何提供多工處理資源至用戶端驅動程式。 請注意，您必須具有 Microsoft ASL 編譯器建置 14327 或更新版本，才能編譯包含 `MsftFunctionConfig()` 資源的表格。 `MsftFunctionConfig()` 資源會提供至針腳多工處理用戶端做為硬體資源。 `MsftFunctionConfig()` 資源應提供至需要執行針腳多工處理變更的驅動程式 (通常為 SPB 與序列控制器驅動程式)，但不應提供至 SPB 與序列周邊裝置驅動程式，這是因為控制器驅動程式會處理多工設定。
+`MsftFunctionConfig()` ACPI 巨集定義如下：
 
 ```cpp
-  FunctionConfig(Shared/Exclusive
+  MsftFunctionConfig(Shared/Exclusive
                 PinPullConfig,
                 FunctionNumber,
                 ResourceSource,
@@ -560,7 +565,7 @@ FunctionNumber 的意義是由伺服器所定義，且其了解 FunctionConfig �
 
 ```
 
-* Shared/Exclusive (共用/專屬) – 若為專屬 ，則一次會由單一用戶端取得此針腳。 若為共用，則可讓多個共用用戶端取得資源。 請一律將此項目設為專屬，因為允許多個未協調的用戶端存取可多工資源，可能導致資料競爭而造成非預期的結果。 
+* Shared/Exclusive (共用/專屬) – 若為專屬 ，則會由單一用戶端個別取得此針腳； 若為共用，則可讓多個共用用戶端取得資源。 請一律將此項目設為專屬，因為允許多個未協調的用戶端存取可多工資源，可能導致資料競爭而造成非預期的結果。 
 * PinPullConfig – 下列其中一個 
   * PullDefault – 使用 SOC 定義的電源開啟預設提取設定 
   * PullUp – 啟用上拉電阻 
@@ -573,7 +578,7 @@ FunctionNumber 的意義是由伺服器所定義，且其了解 FunctionConfig �
 * VendorData – 由針腳多工處理伺服器定義意義的選用二進位資料。 此項目通常應為空白
 * Pin List (針腳清單) – 套用設定之針腳編號的清單 (以逗號分隔)。 若針腳多工處理伺服器為 GpioClx 驅動程式，則這些是 GPIO 針腳編號，並與 GpioIo 描述元中的針腳編號具有相同意義。 
 
-下列範例說明如何將 FunctionConfig() 資源提供給 I2C 控制器驅動程式。 
+下列範例說明如何將 MsftFunctionConfig() 資源提供給 I2C 控制器驅動程式。 
 
 ```cpp
 Device(I2C1) 
@@ -591,14 +596,14 @@ Device(I2C1)
         { 
             Memory32Fixed(ReadWrite, 0x3F804000, 0x20) 
             Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) { 0x55 } 
-            FunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
+            MsftFunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
         }) 
         Return(RBUF) 
     } 
 } 
 ```
 
-除了一般由控制器驅動程式取得的記憶體與插斷資源外，亦會指定 `FunctionConfig()` 資源。 此資源可讓 I2C 控制器驅動程式將針腳 2 和 3 (由位於 \\_SB.GPIO0 的裝置節點管理) 放置於功能 4，且啟用上拉電阻。 
+除了一般由控制器驅動程式取得的記憶體與插斷資源外，亦會指定 `MsftFunctionConfig()` 資源。 此資源可讓 I2C 控制器驅動程式將針腳 2 和 3 (由位於 \\_SB.GPIO0 的裝置節點管理) 放置於功能 4，且啟用上拉電阻。 
 
 ### 在 GpioClx 用戶端驅動程式中提供多工處理支援 
 
@@ -611,7 +616,7 @@ Device(I2C1)
 
 除了這兩個新 DDI 外，應稽核現有 DDI 的針腳多工處理相容性： 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – GpioClx 呼叫 CLIENT_ConnectIoPins，以命令迷你連接埠驅動程式設定 GPIO 輸入或輸出的設定針腳。 GPIO 與 FunctionConfig 彼此互斥，這表示針腳絕對不會同時連線 GPIO 與 FunctionConfig。 由於針腳的預設功能並不必然是 GPIO，因此在呼叫 ConnectIoPins 時不一定要將針腳多工處理至 GPIO。 必須要有 ConnectIoPins 才能執行所有必要作業，讓針腳隨時可供 GPIO IO 使用，包括多工處理作業。 *CLIENT_ConnectInterrupt* 的行為方式應會近似，這是因為您可將插斷視為是 GPIO 輸入的特殊情況。 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – GpioClx 呼叫 CLIENT_ConnectIoPins，以命令迷你連接埠驅動程式設定 GPIO 輸入或輸出的設定針腳。 GPIO 與 MsftFunctionConfig 彼此互斥，這表示針腳絕對不會同時連線 GPIO 與 MsftFunctionConfig。 由於針腳的預設功能並不必然是 GPIO，因此在呼叫 ConnectIoPins 時不一定要將針腳多工處理至 GPIO。 必須要有 ConnectIoPins 才能執行所有必要作業，讓針腳隨時可供 GPIO IO 使用，包括多工處理作業。 *CLIENT_ConnectInterrupt* 的行為方式應會近似，這是因為您可將插斷視為是 GPIO 輸入的特殊情況。 
 * CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – 這些常式應讓針腳回到呼叫 CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt 時的狀態，除非另有指定 PreserveConfiguration 旗標。 除了將針腳方向回復為預設狀態外，迷你連接埠亦應會將每個針腳的多工處理狀態回復為呼叫 _Connect 常式時的狀態。 
 
 例如，假設針腳的預設多工處理設定為 UART，且針腳亦可用作 GPIO。 當呼叫 CLIENT_ConnectIoPins 以連線 GPIO 針腳時，它應會將針腳多工處理至 GPIO，且在 CLIENT_DisconnectIoPins 中應會將針腳多工回復為 UART。 一般而言，_Disconnect 常式應會復原 _Connect 常式完成的作業。 
@@ -620,17 +625,17 @@ Device(I2C1)
 
 自 Windows 10 組建 14327 開始，`SpbCx` 與 `SerCx` 架構包含適用於針腳多工處理的內建支援，可將 `SpbCx` 與 `SerCx` 控制器驅動程式做為針腳多工處理用戶端，而無須針對控制器驅動程式進行任何程式碼變更。 透過擴充方式，可讓連線至啟用多工處理功能之 SpbCx/SerCx 控制器驅動程式的任何 SpbCx/SerCx 周邊裝置驅動程式，觸發針腳多工處理活動。 
 
-下圖說明這些每個元件之間的相依性。 如您所見，針腳多工處理會將來自 SerCx 和 SpbCx 控制器驅動程式的相依性，導入至通成負責執行多工處理的 GPIO 驅動程式。 
+下圖說明這些每個元件之間的相依性。 如您所見，針腳多工處理會將來自 SerCx 和 SpbCx 控制器驅動程式的相依性，導入至通常負責執行多工處理的 GPIO 驅動程式。 
 
 ![針腳多工處理相依性](images/usermode-access-diagram-2.png)
 
-執行裝置初始化時，`SpbCx` 與 `SerCx` 架構會剖析所有提供作為裝置之硬體資源的 `FunctionConfig()` 資源。 隨後 SpbCx/SerCx 會依需求取得和釋放針腳多工處理資源。
+執行裝置初始化時，`SpbCx` 與 `SerCx` 架構會剖析所有提供作為裝置之硬體資源的 `MsftFunctionConfig()` 資源。 隨後 SpbCx/SerCx 會依需求取得和釋放針腳多工處理資源。
 
 `SpbCx` 在呼叫用戶端驅動程式的 [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) 回呼之前，會將針腳多工處理設定套用於其 *IRP_MJ_CREATE* 處理常式。 若無法套用多工處理設定，則不會呼叫控制器驅動程式的 `EvtSpbTargetConnect()` 回呼。 因此，SPB 控制器驅動程式可能會依據呼叫 `EvtSpbTargetConnect()` 的時間，假設針腳已多工處理至 SPB 功能。
 
 `SpbCx` 在完成叫用控制器驅動程式的 [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) 回呼後，將針腳多工處理設定回復於其 *IRP_MJ_CLOSE* 處理常式。 最後，針腳會在周邊裝置驅動程式開啟 SPB 控制器驅動程式控制代碼時多工處理至 SPB 功能，並在周邊裝置驅動程式關閉控制代碼時結束多工處理。
 
-`SerCx` 行為方式近似。 `SerCx` 會在叫用控制器驅動程式的 [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回呼前，取得所有位於其 *IRP_MJ_CREATE* 處理常式的 `FunctionConfig()` 資源，並在叫用控制器驅動程式的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回呼後，釋放所有位於其 IRP_MJ_CLOSE 處理常式的資源。
+`SerCx` 行為方式近似。 `SerCx` 會在叫用控制器驅動程式的 [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回呼前，取得所有位於其 *IRP_MJ_CREATE* 處理常式的 `MsftFunctionConfig()` 資源，並在叫用控制器驅動程式的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回呼後，釋放所有位於其 IRP_MJ_CLOSE 處理常式的資源。
 
 針對 `SerCx` 與 `SpbCx` 控制器驅動程式的動態針腳多工處理產生的影響，在於它們必須能夠容忍針腳於特定時間自 SPB/UART 功能結束多工處理。 控制器驅動程式必須假設在呼叫 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 前，不會多工處理針腳。 執行下列回呼時，並不必然要將針腳多工處理至 SPB/UART。 下列並非完整的清單，但代表控制器驅動程式最常實作的 PNP 常式。
 
@@ -717,7 +722,6 @@ devcon status *msft8000
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 測試 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| Signiant | http://windowsreleases/Playbook/Content%20Owners/Requesting%20Access%20to%20Signiant.aspx |
 | GpioTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/GPIOTestTool |
 | I2cTestTool   | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/I2cTestTool | 
 | SpiTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/spitesttool |
@@ -1081,26 +1085,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

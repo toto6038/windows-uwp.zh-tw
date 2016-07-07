@@ -16,8 +16,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
-本主題說明如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 來偵測影像中的臉部。 [
-            **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
+本主題說明如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 來偵測影像中的臉部。 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
 
 如需使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 追蹤臉部的替代方法，請參閱[媒體擷取的場景分析](scene-analysis-for-media-capture.md)。
 
@@ -25,8 +24,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 ## 偵測單一影像中的臉部
 
-[
-            **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別可讓您偵測靜物影像中的一或多個臉部。
+[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別可讓您偵測靜物影像中的一或多個臉部。
 
 這個範例會使用來自下列命名空間的 API。
 
@@ -86,8 +84,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 計時器會以非同步方式來呼叫 **ProcessCurrentVideoFrame** 協助程式，因此，此方法會先呼叫旗號的 **Wait** 方法，來查看追蹤作業是否正在進行中，如果正在進行，方法即會回傳而不需嘗試偵測臉部。 在這個方法結束時，會呼叫旗號的 **Release** 方法，這樣就能對 **ProcessCurrentVideoFrame** 進行後續呼叫來繼續。
 
-[
-            **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 類別會在 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件上運作。 有多種方式您可以用來取得 **VideoFrame**，包括從執行中的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 物件擷取預覽框架，或者透過實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法 。 這個範例使用未定義的協助程式方法，此方法會傳回視訊畫面 **GetLatestFrame**，以做為這個作業的預留位置。 如需從執行中的媒體擷取裝置的預覽資料流中取得視訊畫面的相關資訊，請參閱[取得預覽畫面](get-a-preview-frame.md)。
+[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 類別會在 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件上運作。 有多種方式您可以用來取得 **VideoFrame**，包括從執行中的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 物件擷取預覽框架，或者透過實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法 。 這個範例使用未定義的協助程式方法，此方法會傳回視訊畫面 **GetLatestFrame**，以做為這個作業的預留位置。 如需從執行中的媒體擷取裝置的預覽資料流中取得視訊畫面的相關資訊，請參閱[取得預覽畫面](get-a-preview-frame.md)。
 
 如同 **FaceDetector**，**FaceTracker** 支援一組有限的像素格式。 這個範例會在提供的畫面格式不是 Nv12 格式時放棄臉部偵測。
 

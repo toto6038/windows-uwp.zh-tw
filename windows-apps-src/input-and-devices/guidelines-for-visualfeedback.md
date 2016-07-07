@@ -1,18 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "使用視覺化回饋向使用者顯示偵測、解譯以及處理與 Windows 市集應用程式互動的時間。"
+Description: "使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們與 Windows 市集應用程式的互動。"
 title: "視覺化回饋"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 287ec24dbc60be39c0f944c6d4a86205961fb770
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 2bf873f35192c20f15c6cb445b6be6436354c8c2
 
 ---
 
 # 視覺化回饋的指導方針
 
-使用視覺化回饋向使用者顯示他們的互動已被偵測、解譯及處理。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
+使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
 **重要 API**
 
@@ -20,140 +20,86 @@ ms.openlocfilehash: 287ec24dbc60be39c0f944c6d4a86205961fb770
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
+## 建議事項
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+-   儘可能嘗試與原始控制項範本保持接近，以獲得最佳的控制項及應用程式效能。
+-   如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
+-   不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
+-   不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
 
--   無論接觸時間多短，皆應該提供視覺化回饋。 這可幫助使用者：
-    -   確定觸控式螢幕是否正常。
-    -   識別目標是否啟用觸控或回應觸控。
-    -   識別使用者是否未命中目標。
--   立即顯示所有互動事件的回饋。
--   提供不會讓使用者分心的細微直覺式提示回饋。
--   確定觸控目標在進行所有操作的期間均不離指尖。
--   當移動瀏覽受限於某一個方向時，能夠使用撥動手勢來選取項目。
--   不要在可能會干擾應用程式的使用情況下使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
--   不要在非必要情況下顯示回饋。 除非新增的是其他地方所沒有的值，否則不要顯示視覺化回饋，以讓 UI 畫面保持乾淨、不凌亂。 一律不要顯示已經可以見到之重複文字的工具提示。 應該保留特定情況的工具提示，例如在選取項目時未顯示的截斷內容 (含省略符號的內容)，或是了解或使用應用程式所需的額外資訊。
--   不要在資訊 UI 以外的任何控制項使用長按手勢。  
-    **重要** 若已同時啟用水平和垂直移動瀏覽，則可使用長按的方式來選取。    
--   不要針對內建 Windows 8 手勢自訂視覺化回饋行為，因為這可能會造成使用者經驗不一致且混淆。
--   不要在移動瀏覽或拖曳時顯示視覺化回饋；物件在螢幕上的實際移動就已經足夠了。 不過，如果內容區域沒有移動瀏覽或捲動，可以使用視覺效果來指示界限條件。 如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
--   不要顯示未識別為目標之控制項的回饋。 當依賴觸控輸入進行要求正確與精確位置的活動時，視覺化回饋就顯得相當重要。 每當偵測到觸控輸入時便顯示回饋，將可以幫助使用者了解應用程式與其控制項所定義的任何自訂目標鎖定啟發學習法。
--   請勿將用於一種輸入類型的回饋行為用在其他輸入類型上。 例如，鍵盤焦點矩形應該只用於鍵盤輸入，而非觸控。
+## 其他用法指導方針
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
+接觸點視覺效果對於要求準確度和精確度的觸控互動相當重要。 例如，您的 App 應該清楚地指示點選位置，讓使用者在未命中目標時能夠知到未命中、誤差有多少，以及必須要做什麼調整。
 
-接觸點視覺效果對於要求準確度和精確度的觸控互動相當重要。 例如，您的 app 必須清楚地指示點選位置，讓使用者在未命中目標時知道差了多少，以及必須要做什麼調整。
+使用可用的預設 XAML 平台控制項，將可確保您的 App 在所有裝置上及在所有輸入情況下都能正確運作。 如果您的 App 包含需要自訂回饋的自訂互動，那麼您應當確保回饋適當、可跨輸入裝置，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
 
-使用透過 Windows 市集應用程式語言架構 (使用 JavaScript 的 Windows 市集應用程式和使用 C++、C\# 或 Visual Basic 的 Windows 市集應用程式) 公開的平台控制項，來免費取得 Windows 8 視覺效果。 如果您的 app 包含需要自訂回饋的自訂互動，那麼您應當確保回饋是適當的、跨越輸入裝置的，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
+[!IMPORTANT] 建議您不要變更內建手勢的互動行為。 
 
-[!IMPORTANT] 我們建議您不要變更內建手勢的互動行為。 
+**跨裝置回饋**
 
-### <span id="Feedback_UI"></span><span id="feedback_ui"></span><span id="FEEDBACK_UI"></span>回饋 UI
-
-回饋 UI 一般取決於輸入裝置 (觸控、觸控板、滑鼠、畫筆/手寫筆、鍵盤等等)。 例如，滑鼠的內建回饋通常涉及移動與變更游標、觸控和手寫筆則需要接觸點視覺效果，而鍵盤輸入和瀏覽則使用焦點矩形和醒目提示。
+視覺化回饋通常取決於輸入裝置 (觸控、觸控板、滑鼠、畫筆/手寫筆、鍵盤等等)。 例如，內建的滑鼠回饋通常涉及移動和變更游標，觸控和手寫筆需要的是接觸點視覺效果，而鍵盤輸入和瀏覽則是使用焦點矩形和醒目提示。
 
 使用 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) 設定平台手勢的回饋行為。
 
 如果自訂回饋 UI，請確定您提供支援且適合所有輸入模式的回饋。
 
-以下是一些 Windows 內建接觸點視覺效果的範例。
+以下是 Windows 中一些內建的接觸點視覺效果範例。
 
-| ![顯示觸控視覺效果的螢幕擷取畫面](images/feedback-touch-cursor.png) | ![顯示滑鼠視覺效果的螢幕擷取畫面](images/feedback-mouse-cursor2.png) | ![顯示手寫筆視覺效果的螢幕擷取畫面](images/feedback-pen-cursor3.png) | ![顯示鍵盤視覺效果的螢幕擷取畫面](images/feedback-keyboard-cursor.png) | 
+| ![觸控回饋](images/TouchFeedback.png) | ![滑鼠回饋](images/MouseFeedback.png) | ![手寫筆回饋](images/PenFeedback.png) | ![鍵盤回饋](images/KeyboardFeedback.png) |
 | --- | --- | --- | --- |
 | 觸控視覺效果 | 滑鼠/觸控板視覺效果 | 手寫筆視覺效果 | 鍵盤視覺效果 |
 
-### <span id="Informational_UI"></span><span id="informational_ui"></span><span id="INFORMATIONAL_UI"></span>資訊 UI (快顯視窗)
+## 高可見度焦點視覺效果
 
-視覺化回饋的其中一種主要形式為資訊 UI (或去除混淆 UI)。 資訊 UI 可識別並顯示物件相關資訊、描述功能與存取方式，並在必要時提供指引。
+所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
 
-以下是 Windows 市集應用程式支援的不同資訊 UI 類型。
+## 色彩商標和自訂
 
--   工具提示
--   豐富工具提示
--   功能表
--   訊息對話方塊
--   飛出視窗
+**框線屬性**
 
-資訊 UI 對於克服指尖閉塞 (障礙) 和增進與應用程式的觸控互動特別有幫助。 它甚至具有專屬的內建手勢：長按。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線「內」**。
+![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
-長按是一種計時互動，一般建議不要在 Windows 8 中使用。 計時互動在這樣的情況下是可以接受的，因為它是做為學習和探索的工具來使用。 建議的時間長度需視資訊 UI 類型而定。 以下為建議的時間閾值。
+若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
+```XAML
+<Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
+```
+![高可見度焦點視覺效果邊界粗細](images/FocusMargin.png)
 
-| 資訊 UI 類型 | 計時 | 啟用 | 使用方式 |
-| --- | --- | --- | --- |
-| 遮蔽工具提示 (適用於擦選和小型目標) | 0 毫秒 | 是 | 適用於快速提供動作說明。 一般用於命令。 |
-| 遮蔽工具提示 (適用於動作) | 200 毫秒 | 是 | |
-| 豐富工具提示 | ~2000 毫秒 | 否 | 適用於較慢、較仔細的探索和學習。 一般搭配集合項目使用。 |
-| 自顯互動 | ~2000 毫秒 | 否 | |
-| 操作功能表 | ~2000 毫秒 | 否 | 顯示與所選物件相關的一組有限的命令。 |
-| 飛出視窗 | ~2000 毫秒 | 否 | 顯示與所選物件相關的一組有限的命令。 |
+邊界是 [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 參見下方：![高可見度焦點視覺效果邊界粗細 (僅限底部)](images/FocusThicknessSide.png)
 
-如需提供資訊 UI 的詳細資訊，請參閱[配置您的 UI](https://msdn.microsoft.com/library/windows/apps/hh465304) 和[顯示快顯視窗](https://msdn.microsoft.com/library/windows/apps/hh738362)。
+邊界是控制項視覺界限與焦點視覺效果「次要框線」**起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
+```XAML
+<Slider Width="200" FocusVisualMargin="-5"/>
+```
+![高可見度焦點視覺效果邊界差異](images/FocusPlusMinusMargin.png)
 
-### <span id="Tooltips"></span><span id="tooltips"></span><span id="TOOLTIPS"></span>工具提示
+*邊界為負值時，會將框線推離控制項的中心，邊界為正值時，則會將框線向控制項的中心靠攏。*
 
-使用工具提示可在要求使用者執行動作前，先顯示控制項的更多資訊。
+若要將控制項上的焦點視覺效果完全關閉，只要停用 **UseSystemFocusVisuals** 即可：
+```XAML
+<Slider Width="200" UseSystemFocusVisuals="False"/>
+```
 
-當使用者在控制項或物件上執行長按手勢 (或偵測到暫留事件) 時，會自動出現工具提示 ([**Tooltip**](https://msdn.microsoft.com/library/windows/apps/br229763))。 當接觸點或游標移開控制項或物件時，工具提示會消失。 工具提示可以包含文字和影像，但它無法互動。
+粗細、邊界或 App 開發人員是否想要使用焦點視覺效果是在個別控制項上決定。
 
-### <span id="Occlusion_tooltips_small"></span><span id="occlusion_tooltips_small"></span><span id="OCCLUSION_TOOLTIPS_SMALL"></span>小型目標的遮蔽工具提示
+**色彩屬性**
 
-遮蔽工具提示描述被遮蔽的目標。 在定位和啟動的項目小於標準觸控目標大小時 (例如網頁上的超連結)，這些工具提示相當有用。
+焦點視覺效果只有兩個色彩屬性︰主要框線色彩和次要框線色彩。 您可以在頁面層級上變更個別控制項的這些焦點視覺效果框線色彩，以及在全應用程式層級上全域變更這些色彩︰
 
-您可以在超出特定的時間閾值之後，將這些工具提示取代為資訊快顯通知。 例如，可使用遮蔽工具提示顯示被遮蔽的超連結文字，然後將工具提示取代為包含 URL 的快顯通知。
+若要設計全應用程式的焦點視覺效果商標，請覆寫系統筆刷：
+```XAML
+<SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush" Color="DarkRed"/>
+<SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="Pink"/>
+```
+![高可見度焦點視覺效果色彩變更](images/FocusRectColorChanges.png)
 
-### <span id="Occlusion_tooltips_actions"></span><span id="occlusion_tooltips_actions"></span><span id="OCCLUSION_TOOLTIPS_ACTIONS"></span>適用於動作和命令的遮蔽工具提示
+若要變更個別控制項上的色彩，只要編輯所需控制項上的焦點視覺效果屬性即可︰
+```XAML
+<Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
+```
 
-這些工具提示描述當使用者舉起原本在某個元素的手指時所發生的動作或命令。 在指向和啟動按鈕或類似的控制項時，這些工具提示很有用。
-
-小型目標工具提示可以在超出特定的時間閾值之後顯示動作工具提示。 在此情況下，應擴充小型目標工具提示，使其包含動作工具提示中的其他資訊。
-
-### <span id="Rich_tooltip"></span><span id="rich_tooltip"></span><span id="RICH_TOOLTIP"></span>豐富工具提示
-
-這些工具提示顯示與元素相關的次要資訊。 例如，豐富工具提示可以是影像的文字描述、被截斷標題的完整內容，或是與目標相關的其他資訊。
-
-豐富工具提示一般包含不是立即性的資訊，而且在某些情況下，太快顯示反而會讓使用者分心。 較長的時間閾值可以讓使用者在取得資訊方面較為仔細。
-
-顯示豐富工具提示之後，只要使用者提起手指，該物件就不再處於啟用狀態。 這是因為從工具提示獲得的資訊可能影響使用者，讓使用者不想啟用該項目。
-
-豐富工具提示中的視覺設計和資訊應該要清楚，並且要比標準工具提示中的視覺設計和資訊更有內容。
-
-### <span id="Context_menu"></span><span id="context_menu"></span><span id="CONTEXT_MENU"></span>操作功能表
-
-操作功能表 ([**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693)) 是 Windows 市集應用程式中的輕量型功能表，可讓使用者在文字或 UI 物件上立即存取動作 (如剪貼簿命令)。
-
-針對觸控功能最佳化的操作功能表包含兩個部分。 視覺提示會在進行按住互動之後顯示。 接著，在提示消失且使用者舉起手指之後，就會顯示操作功能表本身。
-
-下列影像示範如何在選取範圍內或在移駐夾上點選 (也可以使用長按) 來叫用文字的預設操作功能表。
-
-![在選取範圍內或在移駐夾上進行點選 (或長按)，以叫用操作功能表。](images/textselection-show-context.png)
-
-請參閱[新增操作功能表](https://msdn.microsoft.com/library/windows/apps/hh465300)。
-
-### <span id="Message_dialog"></span><span id="message_dialog"></span><span id="MESSAGE_DIALOG"></span>訊息對話方塊
-
-使用訊息對話方塊 ([**MessageDialog**](https://msdn.microsoft.com/library/windows/apps/br208674))，根據使用者的動作或應用程式狀態，在使用者繼續之前提示他們回應。 需要明確的使用者互動，且在使用者回應之前會封鎖對 app 的輸入。
-
-![錯誤訊息的訊息對話方塊](images/messagedialog.png)
-
-以下是顯示訊息對話方塊的一些典型原因。
-
--   顯示緊急資訊
--   繼續執行前問一個問題
--   顯示錯誤訊息
-
-請參閱[新增訊息對話方塊](https://msdn.microsoft.com/library/windows/apps/hh738361)。
-
-### <span id="Flyout"></span><span id="flyout"></span><span id="FLYOUT"></span>飛出視窗
-
-飛出視窗 ([**Flyout**](https://msdn.microsoft.com/library/windows/apps/br211726)) 是輕量型 UI 面板，在點選、按一下或其他啟用時顯示，用來對使用者顯示與目前活動有關的資訊、問題或功能表選項。 它可以消失關閉 (也就是在使用者觸碰或按一下飛出視窗面板或按 ESC 時消失)。 換句話說，飛出視窗可以被忽略。
-
-它與工具提示不同，飛出視窗可以接受輸入。 與訊息對話方塊不同的是，app 仍在作用中，並可以接受輸入。
-
-![含有確認的飛出視窗](images/flyout.png)
-
-請參閱[新增飛出視窗和功能表](https://msdn.microsoft.com/library/windows/apps/hh465325)。
-
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 **適用於設計人員**
 * [移動瀏覽的指導方針](guidelines-for-panning.md)
@@ -182,10 +128,6 @@ ms.openlocfilehash: 287ec24dbc60be39c0f944c6d4a86205961fb770
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

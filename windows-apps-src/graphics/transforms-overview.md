@@ -21,14 +21,10 @@ ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 轉換可分為四大類：轉譯、旋轉、縮放及扭曲 (傾斜)。 為了使用圖形 API 來變更 UI 元素的外觀，通常最簡單的方式就是建立一次只定義一個操作的轉換。 因此，Windows 執行階段為這些轉換分類中的每一個都定義了個別的類別：
 
--   [
-            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)：藉由設定 [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) 與 [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y) 的值，在 x-y 空間中轉譯元素。
--   [
-            **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)：藉由設定 [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) 及 [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) 的值，根據中心點縮放轉換。
--   [
-            **RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)：藉由設定 [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) 的值，在 x-y 空間中旋轉。
--   [
-            **SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950)：藉由設定 [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx)、[**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty) 的值，在 x-y 空間中扭曲或傾斜。
+-   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)：藉由設定 [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) 與 [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y) 的值，在 x-y 空間中轉譯元素。
+-   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)：藉由設定 [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) 及 [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) 的值，根據中心點縮放轉換。
+-   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)：藉由設定 [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) 的值，在 x-y 空間中旋轉。
+-   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950)：藉由設定 [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx)、[**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) 及 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty) 的值，在 x-y 空間中扭曲或傾斜。
 
 在這些當中，您最常針對 UI 案例使用的會是 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 與 [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)。
 
@@ -52,15 +48,12 @@ ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ## <span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>其他轉換屬性
 
--   [
-            **Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082)、[**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080)：這些會影響 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 在套用 **Brush** 以設定視覺屬性 (例如前景與背景) 的區域內如何使用座標空間。 這些轉換與最常見的筆刷 (通常以 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 設定純色) 無關，但是以 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 或 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時，可能偶爾會有用。
--   [
-            **Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066)：您可以使用這個屬性，在將某個幾何圖形用於 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) 屬性值之前，先將轉換套用到該幾何圖形。
+-   [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082)、[**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080)：這些會影響 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 在套用 **Brush** 以設定視覺屬性 (例如前景與背景) 的區域內如何使用座標空間。 這些轉換與最常見的筆刷 (通常以 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 設定純色) 無關，但是以 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 或 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時，可能偶爾會有用。
+-   [**Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066)：您可以使用這個屬性，在將某個幾何圖形用於 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) 屬性值之前，先將轉換套用到該幾何圖形。
 
 ## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>以動畫顯示轉換
 
-[
-            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 物件可以用動畫顯示。 若要以動畫顯示 **Transform**，請將相容類型的動畫套用到您想要以動畫顯示的屬性。 因為所有轉換屬性都是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 類型，這通常表示您正使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) 物件定義動畫。 影響用於 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值之轉換的動畫並不會被視為相依式動畫，即使它們的持續時間並不為零也一樣。 如需有關相依式動畫的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
+[**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 物件可以用動畫顯示。 若要以動畫顯示 **Transform**，請將相容類型的動畫套用到您想要以動畫顯示的屬性。 因為所有轉換屬性都是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 類型，這通常表示您正使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) 物件定義動畫。 影響用於 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值之轉換的動畫並不會被視為相依式動畫，即使它們的持續時間並不為零也一樣。 如需有關相依式動畫的詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
 如果您的動畫屬性會產生在純視覺外觀上轉換的類似效果，例如以動畫顯示 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 與 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 而不套用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)，則這類動畫幾乎一律會視為相依式動畫。 您將必須啟用動畫，而該動畫可能會有明顯的效能問題，尤其是當您嘗試在以動畫顯示物件時支援使用者互動的情況中。 基於該理由，建議使用轉換並以動畫顯示，而不要以動畫顯示動畫會被視為相依式動畫的任何其他屬性。
 
@@ -100,8 +93,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 ## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>說明執行階段的參考座標框架
 
-[
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 有一個名為 [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx) 的方法，這個方法可以產生將兩個 UI 元素的參考座標框架相互關聯的 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)。 如果您將根視覺項目當做第一個參數來傳遞，便可以使用這個方法將元素與應用程式的預設參考座標框架做比較。 如果您已經從不同元素擷取輸入事件，或正嘗試在不實際要求版面配置階段的情況下預測配置行為，這就有用處。
+[**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 有一個名為 [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx) 的方法，這個方法可以產生將兩個 UI 元素的參考座標框架相互關聯的 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)。 如果您將根視覺項目當做第一個參數來傳遞，便可以使用這個方法將元素與應用程式的預設參考座標框架做比較。 如果您已經從不同元素擷取輸入事件，或正嘗試在不實際要求版面配置階段的情況下預測配置行為，這就有用處。
 
 從指標事件取得的事件資料可提供 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/BR212141) 方法的存取權，您可以在該方法指定 *relativeTo* 參數，以將參考的座標框架變更成特定的元素，而非應用程式預設值。 這種方法只是在內部套用轉譯轉換，並在建立傳回的 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/BR242038) 物件時，為您轉換 x-y 座標資料。
 
@@ -146,6 +138,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

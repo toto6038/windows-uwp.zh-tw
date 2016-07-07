@@ -61,17 +61,20 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
 
-**注意** 安裝新的語言套件之後，需要重新開機。 如果不支援或無法完成安裝指定的語言，就會引發例外狀況且錯誤碼為 SPERR\_NOT\_FOUND (0x8004503a)。
+
+            **注意** 安裝新的語言套件之後，需要重新開機。 如果不支援或無法完成安裝指定的語言，就會引發例外狀況且錯誤碼為 SPERR\_NOT\_FOUND (0x8004503a)。
 
  
 
 勾選 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
--   [
+-   
+            [
               **SupportedTopicLanguages**
             ](https://msdn.microsoft.com/library/windows/apps/dn653251)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
 
--   [
+-   
+            [
               **SupportedGrammarLanguages**
             ](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
 
@@ -111,12 +114,16 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 **開發人員**
-* [語音互動](speech-interactions.md)
+* 
+            [語音互動](speech-interactions.md)
             
             **設計人員**
-* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+          
+* 
+            [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
             
             **範例**
+          
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -128,6 +135,6 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

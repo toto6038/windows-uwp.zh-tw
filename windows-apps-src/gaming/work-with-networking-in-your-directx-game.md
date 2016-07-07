@@ -42,14 +42,10 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 適用於遊戲的熱門網路 API 包含：
 
--   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [
-            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供可用於 Windows 市集遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
--   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [
-            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供支援 SSL 的 TCP 通訊端。
--   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [
-            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 類別提供可用於 Windows 市集遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
--   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別提供用於 Windows 市集遊戲的最新 HTTP 用戶端 API。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
+-   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供可用於 Windows 市集遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供支援 SSL 的 TCP 通訊端。
+-   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 類別提供可用於 Windows 市集遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別提供用於 Windows 市集遊戲的最新 HTTP 用戶端 API。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
 
 ## 處理您的 DirectX 遊戲中的網路例外狀況
 
@@ -76,8 +72,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 網路 API 支援不同的方法來抓取例外狀況發生原因的更詳細資訊。
 
 -   擷取導致例外狀況的錯誤 **HRESULT** 值的方法。 可能的 **HRESULT** 值的可能性清單過大且未指定。 使用任何網路 API 都可擷取 **HRESULT** 值。
--   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [
-            **Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 的通訊端類別可使用協助程式方法。
+-   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 的通訊端類別可使用協助程式方法。
 
 ### Windows.Networking.Sockets 中的例外狀況
 
@@ -119,11 +114,9 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
     // ... Continue with code to execute with a valid hostname.
 ```
 
-[
-            **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
-[
-            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
+[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
 針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 
@@ -273,12 +266,9 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-[
-            **Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
+[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 C++ 的 app 中，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表 app 執行期間發生例外狀況時的錯誤。 [
-            **Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [
-            **Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在使用 C++ 的 app 中，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表 app 執行期間發生例外狀況時的錯誤。 [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對部分不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
 

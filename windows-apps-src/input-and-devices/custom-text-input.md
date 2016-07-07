@@ -12,7 +12,8 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 # 自訂文字輸入
 
-[
+
+            [
               **Windows.UI.Text.Core**
             ](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空間中的核心文字 API 讓通用 Windows 平台 (UWP) App 能夠接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這類 API 十分類似[文字服務架構](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，其中的 App 不需要具備文字服務的詳細知識。 這讓 App 能夠接收任何語言以及來自任何輸入類型的文字，例如鍵盤、語音或手寫筆。
 
@@ -36,7 +37,8 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 以下是文字輸入系統的簡單表示法。
 
 -   「應用程式」代表裝載使用核心文字 API 建置之自訂編輯控制項的 UWP App。
--   [
+-   
+            [
               **Windows.UI.Text.Core**
             ](https://msdn.microsoft.com/library/windows/apps/dn958238) API會透過 Windows 來協助與文字服務進行通訊。 文字編輯控制項和文字服務之間的通訊主要是透過 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 物件來處理，此物件會提供方法和事件，協助進行通訊。
 
@@ -58,12 +60,19 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 | 欄位                  | 資料類型                                                                 | 說明                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
+| **StartCaretPosition** | 
+            **Number** \[JavaScript\] | 
+            **System.Int32** \[.NET\] | 
+            **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
+| **EndCaretPosition**   | 
+            **Number** \[JavaScript\] | 
+            **System.Int32** \[.NET\] | 
+            **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
 
  
 
-例如，在先前所示的文字範圍中，範圍 \[0, 5\] 指出 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
+例如，在先前所示的文字範圍中，範圍 \[0, 5\] 指出 "Hello" 這個字。 
+            **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
 
 ### 插入點
 
@@ -80,7 +89,8 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 ## 使用文字
 
 
-[
+
+            [
               **CoreTextEditContext**
             ](https://msdn.microsoft.com/library/windows/apps/dn958158) 類別可透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件及 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來啟用 Windows 和編輯控制項之間的文字流向。
 
@@ -102,13 +112,16 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ![範例文字資料流圖表](images/coretext/stream-3.png) 當使用者輸入 "d"，會引發包含下列 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 資料的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件：
 
--   [
+-   
+            [
               **Range**
             ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [
+-   
+            [
               **Text**
             ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [
+-   
+            [
               **NewSelection**
             ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
@@ -131,9 +144,12 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ![範例文字資料流圖表](images/coretext/stream-4.png) 發生這種情況時，您應該使用下列引數呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
--   *modifiedRange* = \[6, 6\]
--   *newLength* = 5
--   *newSelection* = \[11, 11\]
+-   
+            *modifiedRange* = \[6, 6\]
+-   
+            *newLength* = 5
+-   
+            *newSelection* = \[11, 11\]
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
@@ -149,9 +165,12 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ![範例文字資料流圖表](images/coretext/stream-8.png) 發生這種情況時，您應該使用下列引數呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
--   *modifiedRange* = \[1, 2\]
--   *newLength* = 2
--   *newSelection* = \[5, 5\]
+-   
+            *modifiedRange* = \[1, 2\]
+-   
+            *newLength* = 2
+-   
+            *newSelection* = \[5, 5\]
 
 隨後會有一或多個 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件，您可在其中處理更新文字服務正在使用的文字。
 
@@ -176,6 +195,6 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -16,7 +16,8 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 您的[通用 Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) 必須經過驗證，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中的地圖服務。 若要驗證您的 app，您必須指定地圖驗證金鑰。 本主題說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 app。
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+
+            **提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
 
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -41,8 +42,10 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 7.  完成 \[建立金鑰\] 表單，然後按一下 \[建立\]。
 
-    -   **應用程式名稱：**您應用程式的名稱。
-    -   **應用程式 URL (選擇性)：**您應用程式的 URL。
+    -   
+            **應用程式名稱：**您應用程式的名稱。
+    -   
+            **應用程式 URL (選擇性)：**您應用程式的 URL。
     -   金鑰類型：請選取 \[基本\] 或 \[企業\]。
     -   應用程式類型：請選取 \[通用 Windows app\] 以在您的通用 Windows app 中使用。
 
@@ -95,6 +98,6 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

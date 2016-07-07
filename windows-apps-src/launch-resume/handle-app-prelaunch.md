@@ -80,7 +80,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**提示** 如果您想要退出預先啟動，請檢查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 如果已設定，請在執行任何工作之前返回 OnLaunched() 以建立框架或啟動視窗。
+
+            **提示** 如果您想要退出預先啟動，請檢查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 如果已設定，請在執行任何工作之前返回 OnLaunched() 以建立框架或啟動視窗。
 
  
 
@@ -130,6 +131,6 @@ public sealed partial class MainPage : Page
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

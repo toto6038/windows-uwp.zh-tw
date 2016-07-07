@@ -60,7 +60,8 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 ## DevicePicker UI
 
 
-[
+
+            [
               **DevicePicker**
             ](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控制項，可用來建立讓使用者能夠從清單中選取裝置的小型 UI。 您可以透過幾種方式來自訂 \[DevicePicker\] 視窗。
 
@@ -71,7 +72,8 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 
 顯示 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 時，UI 的內容會在新增、移除或更新裝置時自動更新。
 
-**注意** 您無法使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 來指定 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
+
+            **注意** 您無法使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 來指定 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
 
  
 
@@ -106,7 +108,8 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 
 以背景工作的方式監看裝置很類似上述建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 的方式。 事實上，您仍然需要先建立如上節所述的標準 **DeviceWatcher** 物件。 一旦建立該物件之後，您會呼叫 [**GetBackgroundTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx)，而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 當您呼叫 **GetBackgroundTrigger** 時，必須指定您所感興趣的通知：新增、移除或更新。 您無法在沒有要求新增的情況下要求更新或移除。 一旦登錄觸發程序之後，**DeviceWatcher** 就會立即開始在背景中執行。 自此之後，每當收到適用於您應用程式且符合您準則的新通知時，將會觸發背景工作，並提供自從上次觸發您的應用程式之後所做的最新變更。
 
-**重要**
+
+            **重要**
             [
               **DeviceWatcherTrigger**
             ](https://msdn.microsoft.com/library/windows/apps/Dn913838) 第一次觸發您的應用程式的時機，便是在監看員達到 **EnumerationCompleted** 狀態時。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
@@ -119,7 +122,8 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | 背景中的相同行為               | 無                                                                                                                                    |
 | 可能在背景中的唯一被動掃描 | 裝置在等待被動掃瞄執行時，可能需要較長的時間來探索。                                                           |
-| 不支援背景掃描            | [
+| 不支援背景掃描            | 
+            [
               **DeviceWatcherTrigger**
             ](https://msdn.microsoft.com/library/windows/apps/Dn913838) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
 
@@ -132,11 +136,13 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 
 在大部分情況下，您不需要擔心 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件的 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 這是因為您正在使用之裝置 API 所傳回的裝置選取器，通常能保證您會取得可與其 API 搭配使用的正確裝置物件類型。 不過，某些情況下，雖然您想要取得裝置的 **DeviceInformation**，卻沒有對應的裝置 API 可提供裝置選取器。 在這些情況下，您便需要建置自己的選取器。 例如，裝置上的 Web 服務沒有專用的 API，但您可以探索這些裝置，並使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 來取得相關資訊，然後利用通訊端 API 來使用它們。
 
-如果您正在建置自己的裝置選取器來列舉裝置物件，請務必了解 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如需所有可能的類型及其彼此關聯的方式，請參閱 **DeviceInformationKind** 參考頁面中的說明。 **DeviceInformationKind** 最常見的用法之一，便是指定您在搭配裝置選取器送出查詢時正在搜尋的裝置類型。 如此可確保您只會列舉符合所提供之 **DeviceInformationKind** 的裝置。 例如，您可以尋找 **DeviceInterface** 物件，然後執行查詢來取得父項 **Device** 物件的資訊。 該父項物件可能包含其他資訊。
+如果您正在建置自己的裝置選取器來列舉裝置物件，請務必了解 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如需所有可能的類型及其彼此關聯的方式，請參閱 **DeviceInformationKind** 參考頁面中的說明。 
+            **DeviceInformationKind** 最常見的用法之一，便是指定您在搭配裝置選取器送出查詢時正在搜尋的裝置類型。 如此可確保您只會列舉符合所提供之 **DeviceInformationKind** 的裝置。 例如，您可以尋找 **DeviceInterface** 物件，然後執行查詢來取得父項 **Device** 物件的資訊。 該父項物件可能包含其他資訊。
 
 需要特別注意的是，[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件屬性包中的可用屬性會根據裝置的 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 而不同。 某些屬性僅供特定類型使用。 如需哪些屬性可供哪些類型使用的詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。 因此，在上述範例中，搜尋父項 **Device** 將讓您能夠存取更多無法從 **DeviceInterface** 裝置物件取得的資訊。 因此，當您建立 AQS 篩選字串時，請務必確認所要求的屬性適用於您正在列舉的 **DeviceInformationKind** 物件。 如需建置篩選器的詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。
 
-列舉 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 物件時，您是透過網路或網路通訊協定來列舉。 在這些情況下，建議您不要使用 [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx)，並改用 [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx)。 這是因為在網路上搜尋，通常會造成 [**EnumerationCompleted**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 產生之前無法逾時達 10 秒 (或以上) 的搜尋操作。 **FindAllAsync** 不會完成其操作，直到觸發 **EnumerationCompleted** 為止。 如果您正在使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，不論何時呼叫 **EnumerationCompleted**，您都會取得接近即時的結果。
+列舉 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 物件時，您是透過網路或網路通訊協定來列舉。 在這些情況下，建議您不要使用 [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx)，並改用 [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx)。 這是因為在網路上搜尋，通常會造成 [**EnumerationCompleted**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 產生之前無法逾時達 10 秒 (或以上) 的搜尋操作。 
+            **FindAllAsync** 不會完成其操作，直到觸發 **EnumerationCompleted** 為止。 如果您正在使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，不論何時呼叫 **EnumerationCompleted**，您都會取得接近即時的結果。
 
 ## 儲存裝置以供稍後使用
 

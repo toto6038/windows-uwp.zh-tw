@@ -5,15 +5,15 @@ title: "影像與影像筆刷"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
 # 影像與影像筆刷
 
 若要顯示影像，您可以使用 **Image** 物件或 **ImageBrush** 物件。 Image 物件會轉譯影像，而 ImageBrush 物件會以影像繪製另一個物件。 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+
 
 -   [**Image 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Source 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
@@ -23,10 +23,7 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 ## 這些是正確的元素嗎？
 使用 **Image** 元素，以在您的 app 中顯示獨立影像。
 
-使用 **ImageBrush**，將影像套用到另一個物件。 ImageBrush 的使用包括修飾性文字效果，或控制項或版面配置容器的並排背景。 您可以控制如何伸展、對齊以及並排影像，讓您產生模式和其他效果。 
-
-## 範例
-
+使用 **ImageBrush**，將影像套用到另一個物件。 ImageBrush 的使用包括修飾性文字效果，或控制項或版面配置容器的並排背景。 您可以控制影像的伸展、對齊及並排方式，以便產生模式和其他效果。 
 
 
 ## 建立影像
@@ -78,8 +75,7 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 
 您可以使用 [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 屬性，從影像輸出裁剪區域。 您需將 Clip 屬性設定成 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx)。 目前不支援非矩形裁剪。
 
-下一個範例示範如何使用 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) 當作影像的裁剪區域。 在這個範例中，我們定義一個高度為 200 的 **Image** 物件。 **RectangleGeometry** 會定義一個顯示影像區域的矩形。 [
-            **Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) 屬性設定成 "25,25,100,150"，將矩形定義為開始位置 "25,25"，寬度 100，高度 150。 只會顯示矩形區域內的部分影像。
+下一個範例示範如何使用 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) 當作影像的裁剪區域。 在這個範例中，我們定義一個高度為 200 的 **Image** 物件。 **RectangleGeometry** 會定義一個顯示影像區域的矩形。 [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) 屬性設定成 "25,25,100,150"，將矩形定義為開始位置 "25,25"，寬度 100，高度 150。 只會顯示矩形區域內的部分影像。
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -117,20 +113,17 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 -   JPEG XR
 -   圖示 (ICO)
 
-[
-            **Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 及 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包括任何用來編碼和解碼媒體格式的專用方法。 所有編碼及解碼作業都是內建作業，最多只會將編碼或解碼的各個層面呈現為載入事件的部分事件資料。 如果要利用影像編碼或解碼來執行任何特殊工作 (如果 app 正在執行影像轉換或操作，您就有可能這樣做)，則應該使用 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空間提供的 API。 Windows 的 Windows 影像處理元件 (WIC) 也支援這些 API。
+[**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 及 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包括任何用來編碼和解碼媒體格式的專用方法。 所有編碼及解碼作業都是內建作業，最多只會將編碼或解碼的各個層面呈現為載入事件的部分事件資料。 如果要利用影像編碼或解碼來執行任何特殊工作 (如果 app 正在執行影像轉換或操作，您就有可能這樣做)，則應該使用 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空間提供的 API。 Windows 的 Windows 影像處理元件 (WIC) 也支援這些 API。
 
 如需 app 資源以及如何封裝 app 影像來源的詳細資訊，請參閱[定義 app 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
 ### WriteableBitmap
 
-[
-            **WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) 會提供可修改且不會使用來自 WIC 的基本檔案型解碼的 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx)。 您可以動態更改影像以及重新轉譯更新後的影像。 若要定義 **WriteableBitmap** 的緩衝內容，可使用 [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) 屬性存取緩衝，然後使用資料流或語言特定緩衝類型填滿。 如需範例程式碼，請參閱 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)。
+[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) 會提供可修改且不會使用來自 WIC 的基本檔案型解碼的 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx)。 您可以動態更改影像以及重新轉譯更新後的影像。 若要定義 **WriteableBitmap** 的緩衝內容，可使用 [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) 屬性存取緩衝，然後使用資料流或語言特定緩衝類型填滿。 如需範例程式碼，請參閱 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)。
 
 ### RenderTargetBitmap
 
-[
-            **RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 類別可以從執行中的 app 擷取 XAML UI 樹狀目錄，然後呈現點陣圖影像來源。 擷取後，該影像來源可以套用到 app 的其他部分、由使用者儲存為資源或 app 資料，或用於其他案例。 其中一個特別有用的案例就是建立瀏覽配置的 XAML 頁面執行階段縮圖，例如，從 [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 控制項提供影像連結。 **RenderTargetBitmap** 對於顯示在擷取影像的內容有一些限制。 如需詳細資訊，請參閱 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 的 API 參考主題。
+[**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 類別可以從執行中的 app 擷取 XAML UI 樹狀目錄，然後呈現點陣圖影像來源。 擷取後，該影像來源可以套用到 app 的其他部分、由使用者儲存為資源或 app 資料，或用於其他案例。 其中一個特別有用的案例就是建立瀏覽配置的 XAML 頁面執行階段縮圖，例如，從 [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 控制項提供影像連結。 **RenderTargetBitmap** 對於顯示在擷取影像的內容有一些限制。 如需詳細資訊，請參閱 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 的 API 參考資料主題。
 
 ### 影像來源和縮放
 
@@ -146,9 +139,13 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 
 > **注意** &nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
+## 相關文章
+
+-   [音訊、視訊和相機](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Image 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**ImageBrush 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

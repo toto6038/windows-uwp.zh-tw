@@ -17,14 +17,17 @@ ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
 -   [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
 -   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432)
 
-了解如何使用 [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空間中的 API 取得詳細的電池資訊。 *電池報告* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) 描述電池或電池組的充電、容量和狀態。 這個主題示範您的 app 如何取得電池報告和收到變更通知。 程式碼範例來自於本主題結尾列出的基本電池 app。
+了解如何使用 [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空間中的 API 取得詳細的電池資訊。 
+            *電池報告* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) 描述電池或電池組的充電、容量和狀態。 這個主題示範您的 app 如何取得電池報告和收到變更通知。 程式碼範例來自於本主題結尾列出的基本電池 app。
 
 ## 取得彙總電池報告
 
 
-有些裝置有一個以上的電池，每個電池對裝置整體電源容量貢獻多少電力不一定顯而易見。 這時就需要使用 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 類別。 *彙總電池*代表所有連接到裝置的電池控制器，可以提供單一整體的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件。
+有些裝置有一個以上的電池，每個電池對裝置整體電源容量貢獻多少電力不一定顯而易見。 這時就需要使用 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 類別。 
+            *彙總電池*代表所有連接到裝置的電池控制器，可以提供單一整體的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件。
 
-**注意**
+
+            **注意**
             [
               **Battery**
             ](https://msdn.microsoft.com/library/windows/apps/Dn895004) 類別實際上對應到電池控制器。 根據裝置而定，控制器有時連接到實體電池，有時連接到裝置外殼。 因此，即使沒有電池，也有可能可以建立電池物件。 但有些時候，電池物件可能是 **Null**。
@@ -76,7 +79,8 @@ async private void RequestIndividualBatteryReports()
 
 ## 存取報告詳細資料
 
-[
+
+            [
               **BatteryReport**
             ](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件提供許多電池資訊。 如需詳細資訊，請參閱 API 參考中的屬性：**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列舉)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 這個範例顯示基本電池 app (本主題稍後提供) 使用的一些電池報告屬性。
 
@@ -337,7 +341,8 @@ namespace App1
 
 最後，若要執行此基本電池 app：在 \[偵錯\] 功能表中，按一下 \[開始偵錯\] 來測試方案。
 
-**提示** 若要從 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件接收數值，請在**本機電腦**或外部**裝置** (例如 Windows Phone) 偵錯您的 app。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
+
+            **提示** 若要從 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件接收數值，請在**本機電腦**或外部**裝置** (例如 Windows Phone) 偵錯您的 app。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
 
  
 

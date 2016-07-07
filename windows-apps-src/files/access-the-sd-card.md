@@ -21,7 +21,8 @@ ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
 
 - 檔案選擇器。
 
-- [
+- 
+            [
               **Windows.Storage**
             ](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
@@ -66,7 +67,8 @@ ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
 
 ### 取得 SD 記憶卡的參照
 
-[
+
+            [
               **KnownFolders.RemovableDevices**
             ](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
 
@@ -103,7 +105,8 @@ SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使�
 
 當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
 
--   [
+-   
+            [
               **GetFilesAsync**
             ](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
 

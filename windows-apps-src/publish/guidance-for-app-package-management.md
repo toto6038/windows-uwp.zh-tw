@@ -77,17 +77,20 @@ ms.openlocfilehash: ac8d150f426c7d32e8a3b61b7f08cc0b84feedb8
 
 如果您在市集中有一個 app 並想要針對 Windows 10 更新您的 app，請在 \[套件\] 步驟期間建立新的提交並新增您的 UWP .appxupload 套件。 在您的 app 通過認證程序後，客戶如果在升級為 Windows 10 之前就已經擁有您的 app，就可以從市集以更新的形式取得您的 UWP 套件。 Windows 10 上的客戶也可以透過全新取得的方式獲取 UWP 套件。
 
-> **重要** 一旦 Windows 10 客戶取得您的 UWP 套件後，您將無法讓該客戶回復到使用任何之前作業系統版本的套件。 在將您的 UWP 套件新增到提交之前，請務必在 Windows 10 上徹底測試您的 UWP 套件。
+> 
+            **重要** 一旦 Windows 10 客戶取得您的 UWP 套件後，您將無法讓該客戶回復到使用任何之前作業系統版本的套件。 在將您的 UWP 套件新增到提交之前，請務必在 Windows 10 上徹底測試您的 UWP 套件。
 
 您可以同時更新任何其他套件或對此提交進行其他變更 (例如，您可能要對舊版作業系統的客戶顯示[建立特定平台的介紹](create-platform-specific-descriptions.md))。 如果您想要，也能讓其他項目保持相同。
 
-> **注意** 針對相同的 app，您的 Windows 10 套件版本號碼必須高於您正在發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件 (或是適用於您先前發佈之作業系統版本的套件) 的版本號碼。 如需 Windows 10 版本編號的詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。
+> 
+            **注意** 針對相同的 app，您的 Windows 10 套件版本號碼必須高於您正在發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件 (或是適用於您先前發佈之作業系統版本的套件) 的版本號碼。 如需 Windows 10 版本編號的詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。
 
 一旦新的提交完成認證程序，即可使用 UWP 套件，以及您已提供給尚未採用 Windows 10 客戶使用的其他套件。
 
 如需針對市集封裝 UWP app 詳細資訊，請參閱[封裝適用於 Windows 10 的通用 Windows app](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
-> **重要** 請記住，如果您提供以通用裝置系列為目標的套件，則在任何舊版作業系統 (Windows Phone 8、Windows 8.1 等) 上已擁有您的 app，而後升級至 Windows 10 的客戶，將會被更新至 Windows 10 通用套件。
+> 
+            **重要** 請記住，如果您提供以通用裝置系列為目標的套件，則在任何舊版作業系統 (Windows Phone 8、Windows 8.1 等) 上已擁有您的 app，而後升級至 Windows 10 的客戶，將會被更新至 Windows 10 通用套件。
 > 
 > 即使您已在提交的[定價和可用性](set-app-pricing-and-availability.md#windows-10-device-families)步驟中排除特定裝置系列，也會發生這種情況，因為**裝置系列**選項僅適用於全新取得的情況。 如果您不想每一位先前客戶取得您的新 Windows 10 套件，請務必更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，只包含您想要支援的特定裝置系列。
 > 
@@ -112,13 +115,15 @@ ms.openlocfilehash: ac8d150f426c7d32e8a3b61b7f08cc0b84feedb8
 
 有時，您可能想要完全停止為客戶提供某個 app，有效地「取消發佈」該 app。 若要執行此動作，請按一下 \[App 概觀\] 頁面上的 \[停止提供 App\]。 在您確認想要停止提供該 app 之後，該 app 在數小時內便無法在市集中看見，而所有的新客戶都將無法透過任何方法 (包括促銷碼) 來取得它。
 
-> **重要** 這將會覆寫您已在提交中選取的所有[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)設定。
+> 
+            **重要** 這將會覆寫您已在提交中選取的所有[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)設定。
 
 請注意，任何已擁有此 app 的客戶仍可使用它 (甚至可以在您於稍後提交新的套件時取得更新)。
 
 停止提供該 app 之後，您仍能在儀表板中看見它。 如果您決定再次為客戶提供該 app，就可以按一下 \[App 概觀\] 頁面上的 \[提供 App\]。 當您確認之後，該 app 即可在數小時內提供給新的客戶使用 (除非受到您在最新提交中的設定所限制)。
 
-> **注意** 如果您想保持 app 的可用性，但不想繼續提供給特定作業系統版本上的客戶，您可以建立新的提交，並針對您想要在其上防止新取得的作業系統版本移除所有套件。 例如，如果您先前已有適用於 Windows Phone 8、Windows Phone 8.1 及 Windows 10 的套件，而您不想持續提供該 app 給 Windows Phone 8 上的客戶，則可從提交中移除 Windows Phone 8 套件。 發佈更新之後，就不會有任何 Windows Phone 8 上的新客戶能夠擷取該 app (但已經擁有該 app 的客戶仍能繼續使用)。 該 app 仍然可供 Windows Phone 8.1 和 Windows 10 上的新客戶使用。
+> 
+            **注意** 如果您想保持 app 的可用性，但不想繼續提供給特定作業系統版本上的客戶，您可以建立新的提交，並針對您想要在其上防止新取得的作業系統版本移除所有套件。 例如，如果您先前已有適用於 Windows Phone 8、Windows Phone 8.1 及 Windows 10 的套件，而您不想持續提供該 app 給 Windows Phone 8 上的客戶，則可從提交中移除 Windows Phone 8 套件。 發佈更新之後，就不會有任何 Windows Phone 8 上的新客戶能夠擷取該 app (但已經擁有該 app 的客戶仍能繼續使用)。 該 app 仍然可供 Windows Phone 8.1 和 Windows 10 上的新客戶使用。
 
 ## 移除先前支援之裝置系列的套件
 

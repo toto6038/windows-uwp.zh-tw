@@ -35,11 +35,9 @@ app 資料有兩種類型：設定和檔案。
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
     -   **布林值**
     -   **Char16**、**String**
-    -   [
-            **DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [
-            **ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一組必須個別序列化和還原序列化的相關 app 設定。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一組必須個別序列化和還原序列化的相關 app 設定。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 -   **檔案**
 
     使用檔案可儲存二進位資料，或啟用您自己的自訂序列化類型。
@@ -211,8 +209,7 @@ async void ReadTimestamp()
 
 1.  登錄以在漫遊資料變更時收到通知。
 
-    [
-            **DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
+    [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件會在漫遊資料變更時通知您。 這個範例會將 `DataChangeHandler` 設定成處理漫遊資料變更的處理常式。
 
 ```    CSharp
 void InitHandlers()

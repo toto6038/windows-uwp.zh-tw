@@ -28,8 +28,7 @@ ms.openlocfilehash: d7b44ce9db2e3d540036525c4b43e155a9500010
 建立簡單的 Helper 類別來包裝 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 介面的功能，就能更輕易地選取一組符合特定準則的編碼屬性。 這個 Helper 類別因編碼屬性功能的下列行為而特別有用：
 
 **警告**  
-[
-            **VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法會取得 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 列舉的成員 (例如 **VideoRecord** 或 **Photo**)，然後傳回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的清單，這類物件會傳遞資料流編碼設定，例如，擷取的相片或視訊的解析度。 呼叫 **GetAvailableMediaStreamProperties** 的結果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，而不論指定的是哪一個 **MediaStreamType** 值。 基於這個原因，您應該一律檢查每個傳回值的類型，並將其轉換為適當的類型，然後才嘗試存取任何屬性值。
+[**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法會取得 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 列舉的成員 (例如 **VideoRecord** 或 **Photo**)，然後傳回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的清單，這類物件會傳遞資料流編碼設定，例如，擷取的相片或視訊的解析度。 呼叫 **GetAvailableMediaStreamProperties** 的結果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，而不論指定的是哪一個 **MediaStreamType** 值。 基於這個原因，您應該一律檢查每個傳回值的類型，並將其轉換為適當的類型，然後才嘗試存取任何屬性值。
 
 下列定義的 Helper 類別會處理 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 的類型檢查和轉換，如此一來，您的 app 程式碼就不需要區分這兩種類型。 此外，Helper 類別所公開的屬性適用於屬性的外觀比例、畫面播放速率 (僅適用於視訊編碼屬性)，以及更容易在 app UI 中顯示編碼屬性的易記名稱。
 

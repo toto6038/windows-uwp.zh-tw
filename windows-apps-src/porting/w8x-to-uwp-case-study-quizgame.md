@@ -23,21 +23,26 @@ ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 應用程式會利用使用檢視與檢視模型的模式。 誠如所見，由於這個清楚的區隔，使得適用於此 app 的移植程序變得非常簡單。
 
-**注意** 這個範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 (儘管您的公司網路不適用，但是大部分的家用網路都適用)。 此範例也會傳送和接收 TCP 封包。
+
+            **注意** 這個範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 (儘管您的公司網路不適用，但是大部分的家用網路都適用)。 此範例也會傳送和接收 TCP 封包。
 
  
 
-**注意** 在 Visual Studio 中開啟 QuizGame10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+
+            **注意** 在 Visual Studio 中開啟 QuizGame10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
  
 
 ## 下載
 
-[下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
 
-[下載 QuizGame10 Windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是應用程式剛移植後的狀態。 
+            [下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
 
-[在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
+
+            [下載 QuizGame10 Windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是應用程式剛移植後的狀態。 
+
+
+            [在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
 ## WinRT 8.1 方案
 

@@ -31,13 +31,16 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
 這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
 
--   [
+-   
+            [
               **SpeechRecognitionTopicConstraint**
             ](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
--   [
+-   
+            [
               **SpeechRecognitionListConstraint**
             ](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
--   [
+-   
+            [
               **SpeechRecognitionGrammarFileConstraint**
             ](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
 
@@ -46,7 +49,8 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 -   單一主題限制式或預先定義的文法 (口述或網頁搜尋)。 不允許其他限制式。
 -   清單限制式和/或文法檔限制式的組合。
 
-**請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識程序。
+
+            **請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識程序。
 
 ## 指定網頁搜尋文法 (SpeechRecognitionTopicConstraint)
 
@@ -246,6 +250,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

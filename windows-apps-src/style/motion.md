@@ -1,18 +1,11 @@
 ---
-author: mijacobs
-Description: "有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。"
-title: "UWP app 中的動作和動畫"
-ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
-label: Motion
-template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
-
+Description&#58; 作者：mijacobs 有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
+title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8-560B340AE966 label&#58; Motion template&#58; detail.hbs testmetadata&#58; testing tocnode&#58;design and ui
 ---
 
 # 適用於 UWP app 的動作
 
-有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
+有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
 
 ## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>動畫的優勢
 
@@ -114,6 +107,6 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

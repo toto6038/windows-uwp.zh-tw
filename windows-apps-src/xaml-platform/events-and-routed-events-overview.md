@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。
-title: 事件與路由事件概觀
+description: "我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。"
+title: "事件與路由事件概觀"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+
 ---
 
 # 事件與路由事件概觀
@@ -39,8 +43,7 @@ Windows 執行階段應用程式最常見的一項程式設計工作，是將使
 
 *提示* 「**事件連接**」是一個程式設計術語。 它指的是您在表示發生某個事件時應叫用具名處理常式方法的處理程序或程式碼。 在大部分的程序性程式碼模型中，事件連接是隱含或明確的 "AddHandler" 程式碼，可以為事件和方法命名，通常包含目標物件執行個體。 在 XAML 中，"AddHandler" 是隱含的，而事件連接完全是由下列兩個動作所組成：將事件命名為物件元素的屬性名稱，以及將處理常式命名為該屬性的值。
 
-您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="showUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` [
-            **Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `showUpdatesButton_Click` 處理常式。
+您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="showUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `showUpdatesButton_Click` 處理常式。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -156,8 +159,7 @@ ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 -   自訂靜態事件。
 -   適用於頁面瀏覽的處理常式。
 
-[
-            **FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是在狀態管理中擁有適當位置和物件存留期的事件觸發程序，您可以使用這些事件觸發程序來移除其他事件的處理常式。
+[ **FrameworkElement.Unloaded** ](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是在狀態管理中擁有適當位置和物件存留期的事件觸發程序，您可以使用這些事件觸發程序來移除其他事件的處理常式。
 
 例如，您可以使用這個程式碼將名稱為 **textBlock1\_PointerEntered** 的事件處理常式從目標物件 **textBlock1** 中移除。
 
@@ -227,7 +229,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 ##  控制項中的輸入事件處理常式
 
-特定的 Windows 執行階段控制項有時會在內部對輸入事件使用 **Handled** 概念。 這樣可以使輸入事件看似從未發生，因為您的使用者程式碼無法處理它。 例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別包含會刻意處理一般輸入事件 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 的邏輯。 它會這麼做的原因，是因為按鈕會引發由 pointer-pressed 輸入與其他輸入模式 (例如可以在身為焦點時叫用按鈕的處理按鍵，如 ENTER 鍵) 起始的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件。 針對 **Button** 類別設計的目的，原始輸入事件將會以概念方式處理，而類別取用者 (例如您的使用者程式碼) 可改為與控制項相關的 **Click** 事件互動。 Windows 執行階段 API 參考中特定控制項類別的主題，通常會提到類別會實作的事件處理行為。 在某些情況下，您可以透過覆寫 **On***Event* 方法來變更行為。 例如，您可以覆寫 [**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982)，以變更 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 衍生類別回應按鍵輸入的方式。
+特定的 Windows 執行階段控制項有時會在內部對輸入事件使用 **Handled** 概念。 這樣可以使輸入事件看似從未發生，因為您的使用者程式碼無法處理它。 例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別包含會刻意處理一般輸入事件 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 的邏輯。 它會這麼做的原因，是因為按鈕會引發由 pointer-pressed 輸入與其他輸入模式 (例如可以在身為焦點時叫用按鈕的處理按鍵，如 ENTER 鍵) 起始的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件。 針對 **Button** 類別設計的目的，原始輸入事件將會以概念方式處理，而類別取用者 (例如您的使用者程式碼) 可改為與控制項相關的 **Click** 事件互動。 Windows 執行階段 API 參考資料中特定控制項類別的主題，通常會提到類別會實作的事件處理行為。 在某些情況下，您可以透過覆寫 **On***Event* 方法來變更行為。 例如，您可以覆寫 [**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982)，以變更 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 衍生類別回應按鍵輸入的方式。
 
 ##  登錄已處理之路由事件的處理常式
 
@@ -249,12 +251,9 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 **注意** **Background** 和 **Fill** 不是由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定義的，而是由不同的衍生類別 (如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377)) 定義的。 不過，您為前景和背景屬性使用的筆刷含意，與點擊測試及輸入事件是相同的，無論該屬性是由哪個子類別實作。
 
 -   如果元素是控制項，它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 屬性值必須是 **true**。
--   元素在配置中必須具有實際的尺寸。 [
-            **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 為 0 的元素不會引發輸入事件。
+-   元素在配置中必須具有實際的尺寸。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 為 0 的元素不會引發輸入事件。
 
-部分控制項擁有特殊的點擊測試規則。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 沒有 **Background** 屬性，但是在其尺寸的整個區域內仍然可以進行點擊測試。 [
-            **Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項在它們的定義矩形尺寸中可以進行點擊測試，無論媒體來源檔案中的透明內容 (如 alpha 通道) 是否顯示。 [
-            **WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 控制項具有特殊點擊測試行為，因為輸入可由裝載 HTML 處理並產生指令碼事件。
+部分控制項擁有特殊的點擊測試規則。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 沒有 **Background** 屬性，但是在其尺寸的整個區域內仍然可以進行點擊測試。 [ **Image** ](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項在它們的定義矩形尺寸中可以進行點擊測試，無論媒體來源檔案中的透明內容 (如 alpha 通道) 是否顯示。 [ **WebView** ](https://msdn.microsoft.com/library/windows/apps/br227702) 控制項具有特殊點擊測試行為，因為輸入可由裝載 HTML 處理並產生指令碼事件。
 
 大部分的 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 在自己的背景中無法進行點擊測試，但是仍然可以處理從它們包含之元素所路由的使用者輸入事件。
 
@@ -292,6 +291,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

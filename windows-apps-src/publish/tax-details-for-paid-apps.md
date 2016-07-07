@@ -13,9 +13,11 @@ ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 
 若要了解您在價格選擇、支付關連及稅責等方面的稅務考量，請參閱下表您發行 app 的國家/地區。
 
-> **注意：**「商業拓展調整」在某些國家/地區可能有支付關連。 如需「商業拓展調整」與適用市場的進一步詳細資料，請參閱 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)以及[受影響的國家/地區](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)清單。
+> 
+            **注意：**「商業拓展調整」在某些國家/地區可能有支付關連。 如需「商業拓展調整」與適用市場的進一步詳細資料，請參閱 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)以及[受影響的國家/地區](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)清單。
 
-> **注意：**稅率隨時可能變更。 Microsoft 不保證下表的稅率永遠正確。
+> 
+            **注意：**稅率隨時可能變更。 Microsoft 不保證下表的稅率永遠正確。
 
  
 
@@ -282,6 +284,6 @@ ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

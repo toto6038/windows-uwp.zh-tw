@@ -52,6 +52,6 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 - [SignTool.exe (簽署工具)](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
 - [如何使用 SignTool 簽署應用程式套件](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

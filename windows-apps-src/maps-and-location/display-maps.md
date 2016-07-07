@@ -226,8 +226,7 @@ private async void showStreetsideView()
 ## 顯示空照圖 3D 檢視
 
 
-藉由使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 類別，即可指定地圖的 3D 透視。 地圖場景代表在地圖中顯示的 3D 檢視。 [
-            **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 類別代表顯示這類檢視的相機位置。
+藉由使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 類別，即可指定地圖的 3D 透視。 地圖場景代表在地圖中顯示的 3D 檢視。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 類別代表顯示這類檢視的相機位置。
 
 ![](images/mapcontrol-techdiagram.png)
 
@@ -283,14 +282,10 @@ private async void display3DLocation()
 
 藉由呼叫下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 方法，即可取得地圖上位置的相關資訊。
 
--   [
-            **GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 取得與地圖控制項檢視區中指定的點對應的地理位置。
--   [
-            **GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 取得與指定的地理位置對應的地圖控制項檢視區中的點。
--   [
-            **IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 決定目前是否能在地圖控制項的檢視區中看見指定的地理位置。
--   [
-            **FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 取得地圖上位於地圖控制項檢視區中指定點的元素。
+-   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 取得與地圖控制項檢視區中指定的點對應的地理位置。
+-   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 取得與指定的地理位置對應的地圖控制項檢視區中的點。
+-   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 決定目前是否能在地圖控制項的檢視區中看見指定的地理位置。
+-   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 取得地圖上位於地圖控制項檢視區中指定點的元素。
 
 ## 處理使用者互動及變更
 
@@ -325,6 +320,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

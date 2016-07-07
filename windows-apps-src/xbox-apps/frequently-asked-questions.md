@@ -20,7 +20,8 @@ ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
 
 請從確認您是以開發人員模式執行開始，而不是零售模式。 處於零售模式時，您無法連線到您的 Xbox One。 按下 \[首頁\] 按鈕，並尋找畫面右側的 \[開發首頁\] 磚，即可進行這項檢查。 如果此磚不存在，而是看到 Gold/Live 內容，則是處於零售模式。 您需要執行「啟用開發人員模式」應用程式，才能切換至開發人員模式。
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;您必須在已有使用者已登入的情況下才能部署 app。
 
 如需詳細資訊，請參閱此頁面後面的[修正部署失敗](frequently-asked-questions.md#fixing-deployment-failures)。
@@ -65,8 +66,10 @@ This means that some popular games and apps will not work as expected and you ma
 ### 我是否可以發佈我的遊戲？
 
 您可以在開發人員模式使用 UWP 和 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 若要發佈 UWP 遊戲，您必須登錄 [ID@XBOX](http://www.xbox.com/en-us/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 為開發人員提供其遊戲的 Xbox Live API (包括 遊戲分數與成就) 的完整存取權，以及利用裝置、雲端儲存以及 Xbox One 上的所有 Xbox Live 功能之間的多玩家功能。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 也可以存取遊戲的 Xbox One 開發套件，而遊戲可能需要存取最大部分的 Xbox One 硬體。
+
+            [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 為開發人員提供其遊戲的 Xbox Live API (包括 遊戲分數與成就) 的完整存取權，以及利用裝置、雲端儲存以及 Xbox One 上的所有 Xbox Live 功能之間的多玩家功能。 
+
+            [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 也可以存取遊戲的 Xbox One 開發套件，而遊戲可能需要存取最大部分的 Xbox One 硬體。
 
 ### 標準遊戲引擎是否可以運作？
 
@@ -88,7 +91,8 @@ This means that some popular games and apps will not work as expected and you ma
 
 如果您無法從 Visual Studio 部署您的應用程式，這些步驟可協助您修正問題。 如果您遇到困難，請在論壇上要求協助。
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;您必須在已有使用者已登入的情況下才能部署 app。 如果您收到 0x87e10008 錯誤訊息，請確定已經有使用者登入，然後再試一次。
 
 如果 Visual Studio 無法連線到 Xbox One：
@@ -99,7 +103,8 @@ This means that some popular games and apps will not work as expected and you ma
 3. 如果您還沒有這麼做，請閱讀[開發環境設定](development-environment-setup.md)主題和 [Xbox One 工具簡介](introduction-to-xbox-tools.md)主題。
 
 4. 請確定您可以從開發電腦 "ping" 到主控台 IP 位址。
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;為了取得最佳的部署效能，建議您使用有線連線方式連線主機。
 
 5. 請確定您是使用 \[偵錯\] 索引標籤的 \[驗證\] 下拉式清單中的 \[通用 (未加密的通訊協定)\]。 如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
@@ -137,6 +142,6 @@ TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

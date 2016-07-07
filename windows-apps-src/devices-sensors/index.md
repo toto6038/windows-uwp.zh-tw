@@ -23,8 +23,7 @@ ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
 | [啟用裝置功能](enable-device-capabilities.md) | 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 App 使用相機、麥克風、定位感應器及其他裝置。 | 
 | [以使用者模式存取 Windows IoT](enable-usermode-access.md) | 本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。 |
 | [列舉裝置](enumerate-devices.md) | 列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。 |
-| [配對裝置](pair-devices.md) | 有些裝置在使用之前需要先進行配對。 [
-            <strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。 |
+| [配對裝置](pair-devices.md) | 有些裝置在使用之前需要先進行配對。 [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。 |
 | [頻外配對](out-of-band-pairing.md) | 本節描述頻外配對如何允許應用程式連線到特定裝置，而不需要探索。 | 
 | [感應器](sensors.md) | 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。 |
 | [藍牙](bluetooth.md) | 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) 應用程式的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。 | 

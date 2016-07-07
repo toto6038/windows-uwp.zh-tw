@@ -19,13 +19,16 @@ ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
-**注意** 在 Visual Studio 中開啟 Bookstore1Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+
+            **注意** 在 Visual Studio 中開啟 Bookstore1Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
 ## 下載
 
-[下載 Bookstore1\_81 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532946)。
 
-[下載 Bookstore1Universal\_10 Windows 10 App](http://go.microsoft.com/fwlink/?linkid=532950)。
+            [下載 Bookstore1\_81 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532946)。
+
+
+            [下載 Bookstore1Universal\_10 Windows 10 App](http://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## 通用 8.1 應用程式
 

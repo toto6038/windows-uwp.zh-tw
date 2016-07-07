@@ -21,7 +21,8 @@ ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
 
 -   [**SemanticZoom 類別**](https://msdn.microsoft.com/library/windows/apps/hh702601)
 
-**功能**：
+
+            **功能**：
 
 -   縮小檢視的大小受限於語意式縮放控制項的範圍。
 -   點選群組標題會切換檢視。 可以啟用捏合在檢視之間切換。

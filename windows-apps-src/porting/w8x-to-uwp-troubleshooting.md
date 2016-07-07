@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
-title: 將 Windows 執行階段 8.x 移植到 UWP 的疑難排解
+description: "強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。"
+title: "將 Windows 執行階段 8.x 移植到 UWP 的疑難排解"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+
 ---
 
 # 將 Windows 執行階段 8.x 移植到 UWP 的疑難排解
@@ -23,7 +27,7 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 
 ## TargetPlatformVersion
 
-本節說明如果在 Visual Studio 中開啟 Windows 10 專案，當您看見下列訊息時該怎麼辦：「需要 Visual Studio 更新。 一個以上的專案需要的平台 SDK <version> 可能未安裝或包含在 Visual Studio 未來更新中。」
+本節說明如果在 Visual Studio 中開啟 Windows 10 專案，當您看見下列訊息時該怎麼辦：「需要 Visual Studio 更新。 一個或多個專案需要平台 SDK <version>，但該 SDK 可能未安裝或包含在 Visual Studio 的未來更新中。」
 
 -   首先，判斷您已針對 Windows 10 安裝的 SDK 版本號碼。 瀏覽到 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** 並記下 *<versionfoldername>* (以四等分標記法 "主要編號.次要編號.組建編號.修訂編號" 的方式)。
 -   開啟您的專案檔案以進行編輯，然後尋找 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 將它們編輯如下，使用您在磁碟上找到的四等分標記法版本號碼取代 *<versionfoldername>*：
@@ -49,6 +53,7 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

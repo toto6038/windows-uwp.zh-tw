@@ -76,7 +76,7 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
 ![磚和背板](images/assetguidance05.png)
 
-2. 跨頁的商標磚，不含邊框間距：
+2.  跨頁的商標磚，不含邊框間距：
 
 ![磚會跨頁顯示](images/assetguidance06.png)
 

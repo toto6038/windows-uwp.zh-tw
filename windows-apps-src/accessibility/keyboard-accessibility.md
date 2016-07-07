@@ -52,13 +52,16 @@ XAML
 
 無論您是調整 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 值或者使用預設順序，都適用這些規則：
 
-* [
+* 
+            [
               **TabIndex**
             ](https://msdn.microsoft.com/library/windows/apps/BR209461) 等於 0 的 UI 元素會根據 XAML 或子集合中的宣告順序，新增到 Tab 順序。
-* [
+* 
+            [
               **TabIndex**
             ](https://msdn.microsoft.com/library/windows/apps/BR209461) 大於 0 的 UI 元素會根據 **TabIndex** 的值，新增到 Tab 順序。
-* [
+* 
+            [
               **TabIndex**
             ](https://msdn.microsoft.com/library/windows/apps/BR209461) 小於 0 的 UI 元素會新增到 Tab 順序，並顯示在任何零值的前面。 這與 HTML 處理 **tabindex** 屬性的方法有潛在的不同 (且舊版的 HTML 規格不支援負 **tabindex**)。
 
@@ -247,6 +250,6 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

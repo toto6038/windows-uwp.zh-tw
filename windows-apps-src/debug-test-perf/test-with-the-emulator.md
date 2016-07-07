@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: 使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
-description: 使用「適用於 Windows 10 行動裝置版的 Microsoft 模擬器」隨附的工具來模擬與裝置的實際互動，以及測試應用程式的功能。
+title: "使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試"
+description: "使用「適用於 Windows 10 行動裝置版的 Microsoft 模擬器」隨附的工具來模擬與裝置的實際互動，以及測試應用程式的功能。"
+translationtype: Human Translation
+ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
+ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+
 ---
 # 使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -132,7 +136,7 @@ RAM
 
 請注意，模擬器組建 10.0.14332 中的電腦硬體鍵盤對應已變更。 下表的第二欄中的值代表這些新按鍵。 
 
-電腦硬體按鍵 (模擬器組建 10.0.14295 及較舊) | 電腦硬體按鍵 (模擬器組建 10.0.14332 及較新) | Windows Phone 硬體按鈕 | 注意
+電腦硬體按鍵 (模擬器組建 10.0.14295 及較舊) | 電腦硬體按鍵 (模擬器組建 10.0.14332 及較新) | Windows Phone 硬體按鈕 | 注意事項
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ESC | 返回 | 長按可如預期運作。
 F2 | WIN + F2 | 開始 | 長按可如預期運作。
@@ -654,6 +658,7 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

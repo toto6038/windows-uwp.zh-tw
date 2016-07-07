@@ -120,21 +120,26 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-[
-              **MeasureOverride**
-            ](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
 
-`BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#scenario)。
+            [
+              **MeasureOverride**
+            ](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 
+            **Measure** 有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
+
+
+            `BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#scenario)。
 
 度量階段有何作用？ 它在呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的每個元素上設定唯讀 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 屬性的值。 因為步入排列階段之後，**DesiredSize** 會傳達進行排列時和最終轉譯中可有或應有的大小，所以最好能有 **DesiredSize** 值。 即使您自己的邏輯中不會使用 **DesiredSize**，但是系統仍需要它。
 
 還有可能在 *availableSize* 的高度元件為無限時，使用此面板。 若是如此，面板不會有可供劃分的已知高度。 在這種情況下，度量階段的邏輯會通知各個子系，高度尚無界限。 方法是針對 [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) 為無限的子系，將 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 傳送至 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼叫。 上述為有效做法。 呼叫 **Measure** 時，邏輯是將 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 設定為下列各項的最小值：傳遞至 **Measure** 的項目，或來自明確設定的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等係數的元素原始大小。
 
-**注意**
+
+            **注意**
             &nbsp;&nbsp;
             [
               **StackPanel**
-            ](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有此行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
+            ](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有此行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 
+            **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
 
 不過，面板本身不會從 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 傳回無限值的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)；造成在配置期間擲回例外狀況。 因此，部分邏輯是要找出任何子系要求的最大高度，並在面板本身的大小限制未提供儲存格高度時，使用該高度做為儲存格高度。 以下是先前程式碼中參照的協助程式函式 `LimitUnboundedSize`，會接受上述的最大儲存格高度，並用它提供面板一個可傳回的有限高度，以及確保在起始排列階段之前，`cellheight` 會是有限數字：
 
@@ -174,17 +179,20 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-[
+
+            [
               **ArrangeOverride**
             ](https://msdn.microsoft.com/library/windows/apps/br208711) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。
 
 您是否注意到，執行計算的次數不如 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 中頻繁；一般就是如此。 您已經從面板本身的 **MeasureOverride** 邏輯中，或從在度量階段期間所設定各個子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值中，得知子系的大小。 不過，我們仍然需要決定各個子系在面板內的顯示位置。 在一般面板中，每個子系都應在不同的位置轉譯。 一般案例並不希望有會建立重疊元素的面板 (但如果那確實是您屬意的案例，還是可以建立有目的的重疊面板)。
 
-這個面板依照列與欄的概念來排列。 列數與欄數已計算出來 (度量時的必要資訊)。 現在，列與欄的形狀加上已知的各儲存格大小所建構的邏輯，可為此面板包含的每個元素定義其轉譯位置 (`anchorPoint`)。 使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 和從度量得知的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)，當成建立 [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 的兩個元件。 **Rect** 是 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的輸入類型。
+這個面板依照列與欄的概念來排列。 列數與欄數已計算出來 (度量時的必要資訊)。 現在，列與欄的形狀加上已知的各儲存格大小所建構的邏輯，可為此面板包含的每個元素定義其轉譯位置 (`anchorPoint`)。 使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 和從度量得知的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)，當成建立 [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 的兩個元件。 
+            **Rect** 是 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 的輸入類型。
 
 面板有時候需要裁剪內容。 若有必要執行上述動作，裁剪的大小即為 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 所示的大小，因為 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 邏輯將它設定為傳遞至 **Measure** 的項目或其他原始大小係數的最小值。 所以您通常不用在 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 期間特別檢查裁剪，系統會根據傳遞至每個 **Arrange** 呼叫的 **DesiredSize** 進行裁剪。
 
-如果您可以利用其他方法得知定義轉譯位置所需的所有資訊，就不必在執行迴圈時計數。 例如，在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 配置邏輯中，[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 集合中的位置並不重要。 放置 **Canvas** 中每個元素所需的所有資訊都可在排列邏輯中讀取子系的 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 值來得知。 `BoxPanel` 邏輯恰巧需要計數以便與 *colcount* 比較，因此在開始新列和位移 *y* 值時，已知該值。
+如果您可以利用其他方法得知定義轉譯位置所需的所有資訊，就不必在執行迴圈時計數。 例如，在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 配置邏輯中，[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 集合中的位置並不重要。 放置 **Canvas** 中每個元素所需的所有資訊都可在排列邏輯中讀取子系的 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 值來得知。 
+            `BoxPanel` 邏輯恰巧需要計數以便與 *colcount* 比較，因此在開始新列和位移 *y* 值時，已知該值。
 
 輸入 *finalSize* 和從 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 實作傳回的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 通常會相同。 如需有關原因的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)的＜**ArrangeOverride**＞一節。
 
@@ -211,17 +219,20 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ## BoxPanel 的案例
 
-`BoxPanel` 的特定案例是一個面板，其中如何劃分空間的主要決定因素之一，就是要知道子項目的數目，然後為面板劃分已知的可用空間。 面板原本呈矩形。 許多面板的運作方式是將其矩形空間再劃分成更多矩形；[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 就是這樣處理其儲存格。 在 **Grid** 的案例中，是透過 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 與 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 值來設定儲存格的大小，而且元素利用 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 與 [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) 附加屬性，明確宣告其所進入的儲存格。 **Grid** 要有美觀的配置，通常需要事先知道子元素的數目，如此才能有足夠的儲存格，每個子元素也才能設定符合本身儲存格的附加屬性。
+
+            `BoxPanel` 的特定案例是一個面板，其中如何劃分空間的主要決定因素之一，就是要知道子項目的數目，然後為面板劃分已知的可用空間。 面板原本呈矩形。 許多面板的運作方式是將其矩形空間再劃分成更多矩形；[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 就是這樣處理其儲存格。 在 **Grid** 的案例中，是透過 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 與 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 值來設定儲存格的大小，而且元素利用 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 與 [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) 附加屬性，明確宣告其所進入的儲存格。 
+            **Grid** 要有美觀的配置，通常需要事先知道子元素的數目，如此才能有足夠的儲存格，每個子元素也才能設定符合本身儲存格的附加屬性。
 
 但如果子系的數目不定怎麼辦？ 上述情況絕對可能發生；App 程式碼可以將項目加入集合，以回應您認為其重要性達到需要更新 UI 的任何動態執行階段狀況。 如果您使用資料繫結支援集合/商業物件，會自動處理這類更新和更新 UI，所以這通常是偏好使用的技術 (請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946))。
 
-但不是所有的應用程式案例都適合使用資料繫結。 有時您必須在執行階段建立新的 UI，並讓它們顯示。 `BoxPanel` 適用於這個案例。 因為 `BoxPanel` 是在計算中使用子系計數，並依新的配置來調整現有與新的子元素，將它們全部放入，所以數目不定的子項目不會造成問題。
+但不是所有的應用程式案例都適合使用資料繫結。 有時您必須在執行階段建立新的 UI，並讓它們顯示。 `BoxPanel`  適用於這個案例。 因為 `BoxPanel` 是在計算中使用子系計數，並依新的配置來調整現有與新的子元素，將它們全部放入，所以數目不定的子項目不會造成問題。
 
 再次擴充 `BoxPanel` 的進階案例 (這裡沒有說明) 可同時容納動態子系，並使用子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 作為調整個別資料格大小更強大的因素。 此案例可以使用不同的列或欄大小或非格線形狀，以減少「浪費」的空間。 這樣做需要擬定策略，找出如何將多個不同大小與外觀比例的矩形全部放入包含的矩形 (包含美觀和最小的大小)。 `BoxPanel` 不是這麼做，它是使用較簡單的技術來劃分空間。 `BoxPanel`使用的技術是判斷大於子系計數的最少方形數目。 例如，9 個項目可以放在 3x3 方形。 10 個項目需要 4x4 方形。 不過，通常在移除起始方形的一列或一欄的情況下，還是可以放入項目以節省空間。 在 count=10 範例中，可放入 4x3 或 3x4 矩形。
 
 您可能會疑惑，有 10 個項目的面板為什麼不選擇和項目數目完全符合的 5x2 矩形。 不過在實務上，會將面板的大小調整為較沒有強烈外觀比例的矩形。 採用最少量方形技術，可讓調整大小邏輯與一般配置形狀搭配使用並運作良好，而且也不鼓勵將儲存格形狀調整為奇特的外觀比例。
 
-**注意：**
+
+            **注意：**
             &nbsp;&nbsp;本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題

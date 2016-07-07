@@ -17,7 +17,8 @@ ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 
 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本文件也描述程式碼中採用的幾種慣例。
 
-> **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 
+            **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 ## 
@@ -38,7 +39,8 @@ ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 
 \[DirectX 11 App (通用 Windows)\] 範本中的一個重要專案設定是 /ZW 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
 
-> **注意**
+> 
+            **注意**
             **/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  

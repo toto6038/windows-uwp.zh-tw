@@ -39,8 +39,7 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 ## 備註
 
-[
-            **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以將 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 設成 **Binding** 物件元素上的屬性，或是設成 [{Binding} 標記延伸](binding-markup-extension.md)內的元件。 這就是為什麼顯示兩個不同 XAML 語法的緣故。
+[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以將 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 設成 **Binding** 物件元素上的屬性，或是設成 [{Binding} 標記延伸](binding-markup-extension.md)內的元件。 這就是為什麼顯示兩個不同 XAML 語法的緣故。
 
 **RelativeSource** 與 [{Binding} 標記延伸](binding-markup-extension.md)類似。  它也是可以傳回本身的執行個體的標記延伸，並且支援實質上會傳遞引數到建構函式的字串型建構。 在此案例中，所傳遞的引數為 [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 值。
 
@@ -70,6 +69,6 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

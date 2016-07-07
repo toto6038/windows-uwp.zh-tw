@@ -21,7 +21,8 @@ ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
 
 如果您仍然無法順利將控制項新增到設計工具，請確定您的專案目標為應用程式適用的處理器架構 (例如，**x86**)，而不是**任何 CPU**。 如果專案建置平台的目標是 **任何 CPU**，則控制項無法新增到設計工具。
 
-*
+
+            *
               *AdMediatorControl 會在執行階段提供來自 Microsoft 的廣告時顯示下列錯誤：「不支援 &lt;*width*
             &gt; x &lt;*height*&gt;」**Microsoft Advertising 只支援 [Interactive Advertising Bureau (IAB) 建議的特定廣告大小](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)。在某些情況下，即使您在設計工具或 XAML 中將廣告流量分配控制項的高度和寬度設定為這其中一個支援的廣告大小，縮放比例和進位問題仍然可能阻止廣告流量分配架構提供廣告。若要避免這個問題，請在程式碼中將 Microsoft Advertising 的** Width **和** Height** 選擇性參數設定為其中一個支援的廣告大小。
 
@@ -52,7 +53,8 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex]["Size"] = "160x
 ```
 
 **您收到「廣告控制項被覆蓋」錯誤**  
-只要廣告在您的 App 中被以任何方式遮蔽，Ad Duplex 就會顯示錯誤。 [閱讀解決方式](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl)以解決此錯誤。
+只要廣告在您的 App 中被以任何方式遮蔽，Ad Duplex 就會顯示錯誤。 
+            [閱讀解決方式](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl)以解決此錯誤。
 
 **您收到「兩個檔案之間發生衝突」的錯誤**  
 您在應用程式中的某一個地方參考了 Microsoft Advertising 組件。 廣告流量分配的設計是只能在您的應用程式中運作，如果使用了對 Microsoft Advertising 組件的其他參考，它將不會運作。 請手動移除 Microsoft Advertising 參考，並重新安裝 Microsoft Store Engagement and Monetization SDK 來清除此錯誤。

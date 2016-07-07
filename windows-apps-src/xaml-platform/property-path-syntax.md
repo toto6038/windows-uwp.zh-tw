@@ -100,13 +100,11 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 ## PropertyPath 類別
 
-[
-            **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
 
 您通常可以在 XAML 中直接套用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
 
-[
-            **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 具有一個 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 建構函式，而且不具有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 具有一個 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 建構函式，而且不具有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
 
 ## 相關主題
 

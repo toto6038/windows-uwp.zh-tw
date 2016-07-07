@@ -34,8 +34,7 @@ ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
 
 您的應用程式需要幾項物件來管理連續聽寫工作階段：
 
--   [
-            **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 物件的執行個體。
+-   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 物件的執行個體。
 -   對 UI 發送器的參照以在聽寫時更新 UI。
 -   追蹤使用者說出之累計文字的方式。
 
@@ -77,8 +76,7 @@ private StringBuilder dictatedTextBuilder;
 
 在這個範例中，我們會在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中初始化語音辨識。
 
-1.  因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 一律會在 UI 執行緒上叫用。
+1.  因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 一律會在 UI 執行緒上叫用。
 ```    CSharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -111,20 +109,14 @@ SpeechRecognitionCompilationResult result =
 
 有兩個事件特別重要：
 
--   [
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，會在辨識器已經產生某些結果時發生。
--   [
-            **Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，會在連續辨識工作階段已經結束時發生。
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，會在辨識器已經產生某些結果時發生。
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，會在連續辨識工作階段已經結束時發生。
 
-[
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在使用者說話時引發。 辨識器會連續聆聽使用者說話，並定時引發傳遞語音輸入片段的事件。 您必須使用事件引數的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性檢查語音輸入，然後在事件處理常式中採取適當動作，例如附加文字到 StringBuilder 物件。
+[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在使用者說話時引發。 辨識器會連續聆聽使用者說話，並定時引發傳遞語音輸入片段的事件。 您必須使用事件引數的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性檢查語音輸入，然後在事件處理常式中採取適當動作，例如附加文字到 StringBuilder 物件。
 
-做為 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的執行個體，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性非常適合用來判斷您是否要接受語音輸入： [
-            **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 為此提供兩個屬性：
--   [
-            **Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 會指示辨識是否成功。 可能造成辨識失敗的原因有很多。
--   [
-            **Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 會指示辨識器了解正確文字的相對信賴等級。
+做為 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的執行個體，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性非常適合用來判斷您是否要接受語音輸入： [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 為此提供兩個屬性：
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 會指示辨識是否成功。 可能造成辨識失敗的原因有很多。
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 會指示辨識器了解正確文字的相對信賴等級。
 
 以下是支援連續辨識的基本步驟：  
 
@@ -255,10 +247,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 有兩種方式可以停止辨識：
 
--   [
-            **StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 會讓任何擱置中辨識事件完成 ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 會繼續被引發，直到所有擱置中辨識作業完成為止)。
--   [
-            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 會立即終止辨識工作階段，並捨棄任何擱置中結果。
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 會讓任何擱置中辨識事件完成 ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 會繼續被引發，直到所有擱置中辨識作業完成為止)。
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 會立即終止辨識工作階段，並捨棄任何擱置中結果。
 
 在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 屬性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法來停止工作階段。
 
@@ -293,6 +283,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

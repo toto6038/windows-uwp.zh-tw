@@ -26,8 +26,7 @@ ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
 Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中顯示的地圖上重疊顯示這些磚。
 
 **重要**  
-使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
+使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
 
 以下是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
 
@@ -97,8 +96,7 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
 
 3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
-下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [
-            **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
+下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -145,37 +143,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## 重疊顯示來自本機存放區的磚
+## [!div class="tabbedCodeSnippets"]
 
 
-藉由使用 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)，即可重疊顯示在本機存放區中儲存為檔案的並排影像。 通常您會將這些檔案與您的 app 封裝在一起並散布。
+重疊顯示來自本機存放區的磚 藉由使用 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)，即可重疊顯示在本機存放區中儲存為檔案的並排影像。
 
-1.  將 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 具現化。
-2.  指定檔案名稱的格式做為 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性的值。 若要建立這個值，請在基底檔案名稱中插入可置換參數。 例如，在下列程式碼範例中，[**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是：
+1.  通常您會將這些檔案與您的 app 封裝在一起並散布。
+2.  將 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 具現化。 指定檔案名稱的格式做為 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性的值。 若要建立這個值，請在基底檔案名稱中插入可置換參數。
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果檔案名稱格式需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
+    例如，在下列程式碼範例中，[**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是： 如果檔案名稱格式需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件來建立和傳回自訂 URI。
 
-3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
+3.  如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
 
-您可以使用下列通訊協定和位置以從本機存放區載入磚：
+然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
-| URI | 其他資訊 |
+| 您可以使用下列通訊協定和位置以從本機存放區載入磚： | URI |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-appx:/// | 指向 app 安裝資料夾的根目錄。 |
-|  | 這是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性所參考的位置。 |
-| ms-appdata:///local | 指向 app 本機存放區的根目錄。 |
-|  | 這是 [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) 屬性所參考的位置。 |
-| ms-appdata:///temp | 指向 app 的暫存資料夾。 |
-|  | 這是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性所參考的位置。 |
+| 其他資訊 | ms-appx:/// |
+|  | 指向 app 安裝資料夾的根目錄。 |
+| 這是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性所參考的位置。 | ms-appdata:///local |
+|  | 指向 app 本機存放區的根目錄。 |
+| 這是 [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) 屬性所參考的位置。 | ms-appdata:///temp |
+|  | 指向 app 的暫存資料夾。 |
 
  
 
-下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [
-            **UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
+這是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性所參考的位置。 下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。
 
 ```csharp
         void AddLocalMapTileSource()
@@ -197,15 +194,15 @@ void MainPage::AddHttpMapTileSource()
         }
 ```
 
-## 提供自訂 URI
+## 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
 
 
-如果 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。 將會針對每個個別磚引發 **UriRequested** 事件。
+提供自訂 URI 如果 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。
 
-1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 屬性結合，以建立自訂 URI。
-2.  傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 URI。
+1.  將會針對每個個別磚引發 **UriRequested** 事件。
+2.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 屬性結合，以建立自訂 URI。
 
-下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
+傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 URI。 下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -243,17 +240,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## 重疊顯示來自自訂來源的磚
+## 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
 
 
-藉由使用 [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)，即可重疊顯示自訂磚。 您可以透過程式設計方式在記憶體中即時建立磚，或撰寫您自己的程式碼，以從另一個來源載入現有的磚。
+重疊顯示來自自訂來源的磚 藉由使用 [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)，即可重疊顯示自訂磚。
 
-若要建立或載入自訂磚，請為 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件提供自訂處理常式。 將會針對每個個別磚引發 **BitmapRequested** 事件。
+您可以透過程式設計方式在記憶體中即時建立磚，或撰寫您自己的程式碼，以從另一個來源載入現有的磚。 若要建立或載入自訂磚，請為 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件提供自訂處理常式。
 
-1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性結合，以建立或抓取自訂磚。
-2.  傳回 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128) (包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 屬性中) 之 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 屬性中的自訂磚。 **PixelData** 屬性的類型為 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
+1.  將會針對每個個別磚引發 **BitmapRequested** 事件。
+2.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性結合，以建立或抓取自訂磚。 傳回 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128) (包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 屬性中) 之 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 屬性中的自訂磚。
 
-下列範例示範如何為 **BitmapRequested** 事件建立自訂處理常式來提供自訂磚。 這個範例會建立局部不透明的相同紅色磚。 這個範例會忽略 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性。 雖然這不是真實世界的範例，但是此範例示範了如何在記憶體中即時建立自訂磚。 此範例同時也示範當您需要以非同步方式執行工作來建立自訂磚時，要如何實作延遲模式。
+**PixelData** 屬性的類型為 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。 下列範例示範如何為 **BitmapRequested** 事件建立自訂處理常式來提供自訂磚。 這個範例會建立局部不透明的相同紅色磚。 這個範例會忽略 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性。 雖然這不是真實世界的範例，但是此範例示範了如何在記憶體中即時建立自訂磚。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -352,25 +349,25 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## 取代預設地圖
+## 此範例同時也示範當您需要以非同步方式執行工作來建立自訂磚時，要如何實作延遲模式。
 
 
-完全以協力廠商磚或自訂磚取代預設地圖：
+取代預設地圖
 
+-   完全以協力廠商磚或自訂磚取代預設地圖：
 -   指定 [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** 做為 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的 [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) 屬性值。
--   指定 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** 做為 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性值。
 
-## 相關主題
+## 指定 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** 做為 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性值。
 
-* [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
+* [相關主題](https://www.bingmapsportal.com/)
+* [Bing 地圖服務開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [地圖的設計指導方針](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

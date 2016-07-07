@@ -41,8 +41,7 @@ __注意__：企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 
 
 在這個案例中，適用的郵件 app 正與一組由企業和個人信箱混合組成的信箱同步。 app 會將使用者身份識別傳遞給呼叫，以 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) 來建立受保護的對話內容。 這會標記之後在含有該身份識別之相同對話上建立的所有網路連線，並允許存取由企業原則控制存取的企業網路資源。
 
-這裡的「企業」是指使用者身份識別所屬的企業。 [
-            **CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) 會傳回不受原則強制執行影響的 [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) 物件。 一般而言，如果應用程式預期處理混合的資源，它可以選擇針對所有身份識別呼叫 **CreateCurrentThreadNetworkContext**。 在抓取網路資源之後，應用程式會在 **ThreadNetworkContext** 上呼叫 **Dispose** 以清除來自目前對話的任何身份識別標記。 您用於處置內容物件的模式將視您的程式設計語言而定。
+這裡的「企業」是指使用者身份識別所屬的企業。 [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) 會傳回不受原則強制執行影響的 [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) 物件。 一般而言，如果應用程式預期處理混合的資源，它可以選擇針對所有身份識別呼叫 **CreateCurrentThreadNetworkContext**。 在抓取網路資源之後，應用程式會在 **ThreadNetworkContext** 上呼叫 **Dispose** 以清除來自目前對話的任何身份識別標記。 您用於處置內容物件的模式將視您的程式設計語言而定。
 
 如果身份識別不明，應用程式可以使用 [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) API 從資源的網路存取權查詢受企業原則管理的身份識別。
 

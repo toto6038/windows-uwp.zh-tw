@@ -11,7 +11,8 @@ ms.openlocfilehash: f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要** 本主題僅適用於 Windows 10 行動裝置版。
+
+            **重要** 本主題僅適用於 Windows 10 行動裝置版。
 
 Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置版中，我們已導入新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的 app 直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE app，讓您的客戶可以透過他們的手機而不是實體卡片存取您的服務，而不需要使用 MNO 共同作業。
 
@@ -99,7 +100,8 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 **EmulatorHostApplicationActivated**。 這表示每當要解析 app 的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
+請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 
+            **EmulatorHostApplicationActivated**。 這表示每當要解析 app 的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
 
 ## 接收和回應 APDU
 
@@ -385,6 +387,6 @@ Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

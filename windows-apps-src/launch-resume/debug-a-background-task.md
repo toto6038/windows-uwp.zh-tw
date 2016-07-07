@@ -42,7 +42,8 @@ ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
 
     若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
-    **注意** 使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 的背景工作以及使用有 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 觸發程序類型的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的背景工作，都無法以這個方式啟用。     
+    
+            **注意** 使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 的背景工作以及使用有 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 觸發程序類型的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的背景工作，都無法以這個方式啟用。     
 
     ![偵錯背景工作](images/debugging-activation.png)
 
@@ -114,6 +115,6 @@ ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

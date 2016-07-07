@@ -5,8 +5,8 @@ title: "建立彈性磚"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
+ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 ---
 
@@ -20,21 +20,21 @@ ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
 
 (設計適用於 Windows 10 的通知時，如果您想要，仍然可以使用 [Windows 8 磚範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761491)中的預設範本)。
 
-## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>開始使用
+## 開始使用
 
 
 **安裝 NotificationsExtensions。** 若您想要使用 C# 而不是 XML 產生通知，請安裝名為 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的 NuGet 套件。 本文中所提供的 C# 範例使用 NotificationsExtensions。
 
 **安裝通知視覺化工具。** 這個免費的 UWP 應用程式可協助您透過在編輯磚時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，以設計彈性動態磚。 您可以閱讀[此部落格文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)以取得詳細資訊，您也可以從[這裡](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下載通知視覺化工具。
 
-## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>用法指導方針
+## 用法指導方針
 
 
 彈性範本的設計可跨不同的尺寸規格和通知類型運作。 諸如群組和子群組之類的元素會將內容連結在一起，而且並不代表自己的特定視覺行為。 無論是手機、平板電腦、傳統型裝置或其他裝置，通知的最終外觀應該以將會顯示在其上的特定裝置為基礎。
 
 提示是選用的屬性，可以新增至元素以達到特定的視覺行為。 提示可以是針對裝置或針對通知。
 
-## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>基本範例
+## 基本範例
 
 
 此範例示範彈性磚範本可以產生的內容。
@@ -104,7 +104,7 @@ TileContent content = new TileContent()
 
 ![快速範例磚](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>磚大小
+## 磚大小
 
 
 每個磚大小的內容是分別在 XML 承載內的不同 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素中指定。 將範本屬性設定為下列其中一個值，以選擇目標大小：
@@ -196,12 +196,12 @@ TileContent content = new TileContent()
 
 ![彈性磚大小：小、中、寬及大](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>商標
+## 商標
 
 
-您可以使用通知承載的商標屬性，控制動態磚底部的商標 (顯示名稱和角標誌)。 您可以選擇要顯示 "none"、僅顯示 "name"、僅顯示 "logo"，或使用 "nameAndLogo" 顯示兩者。
+您可以使用通知承載的商標屬性，控制動態磚底部的商標 (顯示名稱和角標誌)。 您可以選擇顯示 "none"、僅顯示 "name"、僅顯示 "logo"，或使用 "nameAndLogo" 來顯示兩者。
 
-**注意：**Windows Phone 不支援角標誌，因此，手機上的 "logo" 和 "nameAndLogo" 預設為 "name"。
+**注意：**Windows Mobile 不支援角落標誌，因此在行動裝置上，"logo" 和 "nameAndLogo" 預設會是 "name"。
 
  
 
@@ -283,10 +283,12 @@ TileContent content = new TileContent()
 
  
 
-## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>顯示名稱
+## 顯示名稱
 
 
-您可以使用 **displayName** 屬性來輸入您所選擇的文字字串，來覆寫通知的顯示名稱。 和商標一樣，您可以在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這會影響整個通知承載。您也可以在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這將只會影響個別的磚。
+您可以使用 **displayName** 屬性來輸入您所選擇的文字字串，來覆寫通知的顯示名稱。 和商標一樣，您可以在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這會影響整個通知承載，您也可以在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這將只會影響個別的磚。
+
+**已知問題：**在 Windows Mobile 上，如果您為磚指定了 ShortName，系統就不會使用通知中提供的顯示名稱 (一律會顯示 ShortName)。 
 
 ```XML
 <tile>
@@ -332,11 +334,10 @@ TileContent content = new TileContent()
 
 ![彈性磚顯示名稱](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>文字
+## 文字
 
 
-[
-            &lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用來顯示文字。 您可以使用此提示修改文字的顯示方式。
+[&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用來顯示文字。 您可以使用此提示修改文字的顯示方式。
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -345,7 +346,7 @@ TileContent content = new TileContent()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -367,7 +368,7 @@ new TileText()
 
 ![彈性磚文字](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>文字換行
+## 文字換行
 
 
 根據預設，文字不會換行，而且將會繼續超出磚的邊緣。 使用 **hint-wrap** 屬性在文字元素上設定文字換行。 您也可以使用 **hint-minLines** 和 **hint-maxLines** (皆接受正整數) 控制最小和最大行數。
@@ -379,7 +380,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -402,7 +403,7 @@ new TileText()
 
 ![含文字換行的彈性磚](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>文字樣式
+## 文字樣式
 
 
 樣式可控制文字元素的字型大小、色彩及粗細。 有許多可用的樣式，包括每個可將不透明度設定為 60% 的樣式的「細微」變化，這通常會使文字色彩變成淺灰色網底。
@@ -480,7 +481,7 @@ new TileText()
 
  
 
-## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>文字對齊方式
+## 文字對齊方式
 
 
 文字可以水平靠左對齊、置中對齊或靠右對齊。 對於由左到右的語言 (如英文)，文字預設為靠左對齊。 對於由右到左的語言 (如阿拉伯文)，文字預設為靠右對齊。 您可以對元素使用 **hint-align** 屬性，來手動設定對齊方式。
@@ -492,7 +493,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -515,7 +516,7 @@ new TileText()
 
 ![彈性磚文字對齊方式](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>群組與子群組
+## 群組與子群組
 
 
 群組可以讓您從語意宣告群組內的內容相關，而且必須以內容的完整性顯示，才會具有意義。 例如，您可能會有兩個文字元素、一個標頭和一個子標頭，如果只顯示標頭，將不具任何意義。 為子群組內的這些元素分組，將會顯示所有元素 (如果可以容納)，或完全不顯示任何元素 (因為無法容納)。
@@ -617,7 +618,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![彈性磚群組以及子群組](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>子群組 (欄)
+## 子群組 (欄)
 
 
 子群組也可讓您在群組中，將資料分成多個語意式區段。 對於動態磚，這在視覺上會翻譯成欄。
@@ -842,7 +843,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![天氣磚的範例](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>影像
+## 影像
 
 
 &lt;image&gt; 元素用來顯示磚通知上的影像。 影像可以內嵌於磚內容內 (預設值)、當做內容後方的背景影像，或當做以動畫方式從通知上方進入的預覽影像。
@@ -940,7 +941,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 放置在 &lt;binding&gt; 根目錄或第一個群組中的影像也會伸展以填滿可用的高度。
 
-### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>影像對齊方式
+### 影像對齊方式
 
 您可以使用 **hint-align** 屬性，將影像設為靠左對齊、置中對齊或靠右對齊。 這也會使影像以原始解析度顯示，而不會自動伸展以填滿寬度。
 
@@ -975,7 +976,7 @@ TileLarge = new TileBinding()
 
 ![影像對齊方式範例 (靠左、置中、靠右)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>影像邊界
+### 影像邊界
 
 根據預設，內嵌影像在影像上方或下方的任何內容之間有 8 個像素的邊界。 此邊界也可以使用影像的 **hint-removeMargin** 屬性移除。 不過，影像距離磚的邊緣一律會保留 8 個像素的邊界，且子群組 (欄) 在各欄之間一律會保留 8 個像素的邊框距離。
 
@@ -1065,7 +1066,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![hint remove margin 範例](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>影像裁剪
+### 影像裁剪
 
 使用 **hint-crop** 屬性可將影像裁剪成圓形，此屬性目前僅支援 "none" (預設) 或 "circle" 的值。
 
@@ -1143,7 +1144,7 @@ TileLarge = new TileBinding()
 
 ![影像裁剪範例](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>背景影像
+### 背景影像
 
 若要設定背景影像，將 image 元素放在 &lt;binding&gt; 的根目錄中，並將 placement 屬性設定為 "background"。
 
@@ -1267,7 +1268,7 @@ TileWide = new TileBinding()
 
 ![影像 hint overlay 的範例](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>預覽影像
+### 預覽影像
 
 您可以指定從磚的上方「預覽」的影像。 預覽影像使用動畫，從磚的上方向下/向上滑動以進入檢視，之後再向後滑出，以在磚上顯示主要內容。 若要設定預覽影像，將 image 元素放在 &lt;binding&gt; 的根目錄中，並將 placement 屬性設定為 "peek"。
 
@@ -1345,12 +1346,12 @@ hint-crop="circle"
 
 ![預覽影像上的 hint-overlay](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>垂直對齊方式 (文字堆疊)
+## 垂直對齊方式 (文字堆疊)
 
 
 您也可以使用 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素和 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上的 **hint-textStacking** 屬性，控制內容在您的磚上的垂直對齊方式。 根據預設，所有內容都會垂直靠上對齊，但是您也可以將內容靠下對齊或置中對齊。
 
-### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>binding 元素上的文字堆疊
+### binding 元素上的文字堆疊
 
 在 [&gt;binding&lt;](tiles-and-notifications-adaptive-tiles-schema.md) 層級套用時，文字堆疊會將通知內容當做一個整體來設定其垂直對齊方式，在品牌/徽章區域上方的可用垂直空間內對齊。
 
@@ -1398,7 +1399,7 @@ TileMedium = new TileBinding()
 
 ![binding 元素上的文字堆疊](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>子群組元素上的文字堆疊
+### 子群組元素上的文字堆疊
 
 在 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 層級套用時，文字堆疊會設定子群組 (欄) 的垂直對齊方式，在整個群組中的可用垂直空間內對齊。
 
@@ -1477,12 +1478,12 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"></span>相關主題
+## 相關主題
 
 
 * [彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)
 * [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [特殊的磚範本目錄](tiles-and-notifications-special-tile-templates-catalog.md)
+* [特殊磚範本目錄](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -1493,6 +1494,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

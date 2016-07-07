@@ -35,7 +35,8 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
     -   從不在 Windows 執行階段中的類型 (例如 System.Exception 與 System.EventArgs) 衍生。
 -   所有的公用類型都必須具有符合組件名稱的根命名空間，且組件名稱的開頭不可以是 "Windows"。
 
-    > **提示** 根據預設，Visual Studio 專案具有符合組件名稱的命名空間名稱。 在 Visual Basic 中，此預設命名空間的 Namespace 陳述式不會顯示在您的程式碼中。
+    > 
+            **提示** 根據預設，Visual Studio 專案具有符合組件名稱的命名空間名稱。 在 Visual Basic 中，此預設命名空間的 Namespace 陳述式不會顯示在您的程式碼中。
 
 -   公用結構不可以有公用欄位以外的任何成員，而且這些欄位必須是實值類型或字串。
 -   公用類別必須是 **sealed** (在 Visual Basic 中為 **NotInheritable**)。 如果您的程式設計模型需要使用多型，您可以建立公用介面，然後在必須是多型的類別上實作該介面。
@@ -99,7 +100,8 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 
 當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以將 Dictionary&lt;int, string&gt; (在 Visual Basic 中為 Dictionary(Of Integer, String)) 傳遞或傳回為 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+
+            **重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
 在 Windows 執行階段中，IMap&lt;K, V&gt; 與 IMapView&lt;K, V&gt; 可透過 IKeyValuePair 反覆執行。 當您將其傳遞至 Managed 程式碼時，它們會顯示為 IDictionary&lt;TKey, TValue&gt; 與 IReadOnlyDictionary&lt;TKey, TValue&gt;，以便您使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 加以列舉。
 
@@ -137,31 +139,32 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 > End Function
 > ```
 
- **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
+ [!div class="tabbedCodeSnippets"] 
+            **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。
 
-您無法將 DefaultOverloadAttribute 屬性套用至建構函式。 一個類別中的所有建構函式必須要有不同數量的參數。
+前述範例中的預設多載分別會傳回 0、42 和 42。 您無法將 DefaultOverloadAttribute 屬性套用至建構函式。
 
-## 實作 IStringable
+## 一個類別中的所有建構函式必須要有不同數量的參數。
 
 
-從 Windows 8.1 開始，Windows 執行階段會包含 IStringable 介面，此介面只有一個 IStringable.ToString 方法，可提供相當於 Object.ToString 的基本格式支援。 如果您選擇要在從 Windows 執行階段元件匯出的公用 Managed 類型中實作 IStringable，將會有下列限制：
+實作 IStringable 從 Windows 8.1 開始，Windows 執行階段會包含 IStringable 介面，此介面只有一個 IStringable.ToString 方法，可提供相當於 Object.ToString 的基本格式支援。
 
--   您只能在「類別實作」關聯性中定義 IStringable 介面，例如，下列在 C# 中的程式碼：
+-   如果您選擇要在從 Windows 執行階段元件匯出的公用 Managed 類型中實作 IStringable，將會有下列限制：
 
     ```cs
     public class NewClass : IStringable
     ```
 
-    或是下列 Visual Basic 程式碼：
+    您只能在「類別實作」關聯性中定義 IStringable 介面，例如，下列在 C# 中的程式碼：
 
     ```vb
     Public Class NewClass : Implements IStringable
     ```
 
+-   或是下列 Visual Basic 程式碼：
 -   您無法針對介面實作 IStringable。
 -   您無法將參數宣告為類型 IStringable。
 -   IStringable 不能是方法的傳回類型、屬性或欄位。
--   您無法使用以下所示的方法定義，從基底類別隱藏您的 IStringable 實作：
 
     ```cs
     public class NewClass : IStringable
@@ -173,20 +176,20 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
     }
     ```
 
-    相反地，IStringable.ToString 實作必須一律覆寫基底類別實作。 您只能藉由針對強類型的類別執行個體叫用 ToString 實作來隱藏該實作。
+    您無法使用以下所示的方法定義，從基底類別隱藏您的 IStringable 實作： 相反地，IStringable.ToString 實作必須一律覆寫基底類別實作。
 
-請注意，在各種情況下，從機器碼傳送至實作 IStringable 或隱藏其 ToString 實作的 Managed 類型可能會導致非預期的行為。
+您只能藉由針對強類型的類別執行個體叫用 ToString 實作來隱藏該實作。
 
-## 非同步作業
+## 請注意，在各種情況下，從機器碼傳送至實作 IStringable 或隱藏其 ToString 實作的 Managed 類型可能會導致非預期的行為。
 
 
-若要在元件中實作非同步方法，請在方法名稱結尾處加上 "Async"，並傳回代表非同步動作或作業的 Windows 執行階段介面之一：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
+非同步作業
 
-您可以使用 .NET Framework 工作 ([Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 類別和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 類別) 來實作您的非同步方法。 您必須傳回代表進行中作業的工作，例如，從使用 C# 或 Visual Basic 撰寫的非同步方法傳回的工作，或是從 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法傳回的工作。 如果您使用建構函式來建立此工作，就必須先呼叫其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法，再加以傳回。
+若要在元件中實作非同步方法，請在方法名稱結尾處加上 "Async"，並傳回代表非同步動作或作業的 Windows 執行階段介面之一：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。 您可以使用 .NET Framework 工作 ([Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 類別和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 類別) 來實作您的非同步方法。 您必須傳回代表進行中作業的工作，例如，從使用 C# 或 Visual Basic 撰寫的非同步方法傳回的工作，或是從 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法傳回的工作。
 
-使用 await (在 Visual Basic 中為 Await) 的方法，必須要有 **async** 關鍵字 (在 Visual Basic 中為 **Async**)。 如果您從 Windows 執行階段元件公開此類方法，請將 **async** 關鍵字套用至您傳遞給 Run 方法的委派。
+如果您使用建構函式來建立此工作，就必須先呼叫其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法，再加以傳回。 使用 await (在 Visual Basic 中為 Await) 的方法，必須要有 **async** 關鍵字 (在 Visual Basic 中為 **Async**)。
 
-對於不支援取消或進度報告的非同步動作與作業，您可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 擴充方法，將工作包覆在適當的介面中。 例如，下列程式碼會使用 Task.Run&lt;TResult&gt; 方法來啟動工作，以實作非同步方法。 AsAsyncOperation&lt;TResult&gt; 擴充方法會以 Windows 執行階段非同步作業的形式傳回工作。
+如果您從 Windows 執行階段元件公開此類方法，請將 **async** 關鍵字套用至您傳遞給 Run 方法的委派。 對於不支援取消或進度報告的非同步動作與作業，您可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 擴充方法，將工作包覆在適當的介面中。 例如，下列程式碼會使用 Task.Run&lt;TResult&gt; 方法來啟動工作，以實作非同步方法。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -211,7 +214,7 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 > End Function
 > ```
 
-下列 JavaScript 程式碼示範如何使用 [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 物件來呼叫方法。 完成非同步呼叫時，便會執行傳遞至 then 方法的函式。 StringList 參數包含 DownloadAsStringAsync 方法傳回的字串清單，而該函式會執行任何必要的處理。
+AsAsyncOperation&lt;TResult&gt; 擴充方法會以 Windows 執行階段非同步作業的形式傳回工作。 [!div class="tabbedCodeSnippets"] 下列 JavaScript 程式碼示範如何使用 [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 物件來呼叫方法。
 
 ```javascript
 function asyncExample(id) {
@@ -223,9 +226,9 @@ function asyncExample(id) {
 }
 ```
 
-對於支援取消或進度報告的非同步動作與作業，請使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生啟動的工作，並將該工作的取消和進度報告功能與適當的 Windows 執行階段介面的取消和進度報告功能相連結。 如需支援取消與進度報告的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+完成非同步呼叫時，便會執行傳遞至 then 方法的函式。 StringList 參數包含 DownloadAsStringAsync 方法傳回的字串清單，而該函式會執行任何必要的處理。
 
-請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
+對於支援取消或進度報告的非同步動作與作業，請使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生啟動的工作，並將該工作的取消和進度報告功能與適當的 Windows 執行階段介面的取消和進度報告功能相連結。 如需支援取消與進度報告的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -250,49 +253,51 @@ function asyncExample(id) {
 > End Function
 > ```
 
-如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不具備取消語彙基元或 IProgress&lt;T&gt; 介面參數的多載。
+如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。
 
-## 擲回例外狀況
+## 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
 
 
-您可以擲回適用於 Windows app 的 .NET 所包含的任何例外狀況類型。 您無法在 Windows 執行階段元件中宣告自己的公用例外狀況類型，但可宣告和擲回非公用類型。
+[!div class="tabbedCodeSnippets"] 如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不具備取消語彙基元或 IProgress&lt;T&gt; 介面參數的多載。
 
-如果您的元件不會處理例外狀況，呼叫該元件的程式碼中將會引發對應的例外狀況。 例外狀況對呼叫端的顯示方式，取決於呼叫的語言支援 Windows 執行階段的方式。
+擲回例外狀況 您可以擲回適用於 Windows app 的 .NET 所包含的任何例外狀況類型。
 
--   在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 \[例外狀況\] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。 您無法從 JavaScript 程式碼存取原始訊息文字。
+-   您無法在 Windows 執行階段元件中宣告自己的公用例外狀況類型，但可宣告和擲回非公用類型。 如果您的元件不會處理例外狀況，呼叫該元件的程式碼中將會引發對應的例外狀況。 例外狀況對呼叫端的顯示方式，取決於呼叫的語言支援 Windows 執行階段的方式。
 
-    > **提示** 雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。
+    > 在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 \[例外狀況\] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。
 
--   在 C++ 中，例外狀況會顯示為平台例外狀況。 如果 Managed 例外狀況的 HResult 屬性可以對應至某個特定平台例外狀況的 HRESULT，就會使用該特定例外狀況，否則會擲回 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外狀況。 C++ 程式碼無法使用 Managed 例外狀況的訊息文字。 如果是擲回特定平台例外狀況，則會顯示該例外狀況類型的預設訊息文字，否則不會顯示任何訊息文字。 請參閱[例外狀況 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
--   在 C# 或 Visual Basic 中，例外狀況就是一般的 Managed 例外狀況。
+-   您無法從 JavaScript 程式碼存取原始訊息文字。 
+            **提示** 雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。 在 C++ 中，例外狀況會顯示為平台例外狀況。 如果 Managed 例外狀況的 HResult 屬性可以對應至某個特定平台例外狀況的 HRESULT，就會使用該特定例外狀況，否則會擲回 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外狀況。
+-   C++ 程式碼無法使用 Managed 例外狀況的訊息文字。
 
-當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。 JavaScript 呼叫端可以透過例外狀況物件的 number 屬性來存取 HRESULT，而 C++ 呼叫端可透過 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 屬性來存取。
+如果是擲回特定平台例外狀況，則會顯示該例外狀況類型的預設訊息文字，否則不會顯示任何訊息文字。 請參閱[例外狀況 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
 
-> **注意** 請使用負值做為 HRESULT 的值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。
+> 在 C# 或 Visual Basic 中，例外狀況就是一般的 Managed 例外狀況。 當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。
 
-## 宣告和引發事件
+## JavaScript 呼叫端可以透過例外狀況物件的 number 屬性來存取 HRESULT，而 C++ 呼叫端可透過 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 屬性來存取。
+
+
+            **注意** 請使用負值做為 HRESULT 的值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。 宣告和引發事件
 
 當您宣告某個類型包含事件的資料時，請從 Object 衍生，而不要從 EventArgs 衍生，因為 EventArgs 不是 Windows 執行階段類型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 做為事件的類型，並以您的事件引數類型做為泛型類型引數。 引發事件的方式與 .NET Framework 應用程式中的一樣。
 
 從 JavaScript 或 C++ 使用您的 Windows 執行階段元件時，事件會依循這些語言所預期的 Windows 執行階段事件模式。 當您從 C# 或 Visual Basic 使用元件時，事件會顯示為一般的 .NET Framework 事件。 請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件]()中的範例。
 
-如果您實作自訂事件存取子 (在 Visual Basic 中為使用 **Custom** 關鍵字宣告事件)，則您在實作時必須依循 Windows 執行階段事件模式。 請參閱 [Windows 執行階段元件中的自訂事件和事件存取子](custom-events-and-event-accessors-in-windows-runtime-components.md)。 請注意，當您處理來自 C# 或 Visual Basic 程式碼的事件時，該事件仍會顯示為一般的 .NET Framework 事件。
-
-## 後續步驟
+## 如果您實作自訂事件存取子 (在 Visual Basic 中為使用 **Custom** 關鍵字宣告事件)，則您在實作時必須依循 Windows 執行階段事件模式。
 
 
-在您建立要供自己使用的 Windows 執行階段元件之後，可能會發現它封裝的功能對其他開發人員也很有用。 有兩種方式可供您選擇來包裝元件並發佈給其他開發人員。 請參閱[發佈 Managed Windows 執行階段元件](https://msdn.microsoft.com/library/jj614475.aspx)。
+請參閱 [Windows 執行階段元件中的自訂事件和事件存取子](custom-events-and-event-accessors-in-windows-runtime-components.md)。 請注意，當您處理來自 C# 或 Visual Basic 程式碼的事件時，該事件仍會顯示為一般的 .NET Framework 事件。 後續步驟
 
-如需 Visual Basic 和 C# 語言功能以及 Windows 執行階段之 .NET Framework 支援的詳細資訊，請參閱 [Visual Basic 和 C# 語言參考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。
+在您建立要供自己使用的 Windows 執行階段元件之後，可能會發現它封裝的功能對其他開發人員也很有用。
 
-## 相關主題
+## 有兩種方式可供您選擇來包裝元件並發佈給其他開發人員。
 
-* [適用於 Windows 市集 app 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [請參閱[發佈 Managed Windows 執行階段元件](https://msdn.microsoft.com/library/jj614475.aspx)。](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [如需 Visual Basic 和 C# 語言功能以及 Windows 執行階段之 .NET Framework 支援的詳細資訊，請參閱 [Visual Basic 和 C# 語言參考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [相關主題](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

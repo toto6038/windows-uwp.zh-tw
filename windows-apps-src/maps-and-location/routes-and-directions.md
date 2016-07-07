@@ -29,20 +29,16 @@ ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
 
 以下說明路線與路線指引類別如何相關：
 
--   [
-            **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別擁有可取得路線與路線指引的方法。
+-   [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別擁有可取得路線與路線指引的方法。
 -   這些方法會傳回 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)。
--   [
-            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一個 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取這個物件。
--   [
-            **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 包含 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件的集合。 請透過 **MapRoute** 的 [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) 屬性存取這個集合。
+-   [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一個 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。 請透過 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取這個物件。
+-   [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 包含 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 物件的集合。 請透過 **MapRoute** 的 [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) 屬性存取這個集合。
 -   每個 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 物件的集合。 請透過 **MapRouteLeg** 的 [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) 屬性存取這個集合。
 
 ## 顯示路線指引
 
 
-您可以呼叫 [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別的方法 (例如 [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) 或 [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953))，來取得行車或步行路線和路線指引。 [
-            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 物件包含您可以透過其 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。
+您可以呼叫 [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 類別的方法 (例如 [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) 或 [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953))，來取得行車或步行路線和路線指引。 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 物件包含您可以透過其 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 屬性存取的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 物件。
 
 當您要求路線時，可以指定下列條件：
 
@@ -198,6 +194,6 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

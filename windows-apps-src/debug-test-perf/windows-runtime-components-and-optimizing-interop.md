@@ -73,7 +73,8 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 ![互通性轉換不應占去大量程式執行時間。](images/interop-transitions.png)
 
-[
+
+            [
               **.NET for Windows apps**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
 

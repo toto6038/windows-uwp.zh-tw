@@ -18,27 +18,23 @@ ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
 -   [**Windows.UI.Xaml.Shapes 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR243401)
 -   [**Windows.UI.Xaml.Media 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR243045)
 
-了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 [
-            **Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 類別是在 XAML UI 中視覺化非常複雜之向量繪製語言的方法，例如，繪製貝茲曲線。
+了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 類別是在 XAML UI 中視覺化非常複雜之向量繪製語言的方法，例如，繪製貝茲曲線。
 
 ## 簡介
 
 有兩組類別可定義 XAML UI 的空間區域：[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 類別與 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 類別。 這兩組類別的主要差異，在於 **Shape** 有一個相關聯的筆刷，而且可以轉譯到螢幕上；**Geometry** 只定義空間區域，而且除非有助於提供資訊給其他 UI 屬性，否則並不會進行轉譯。 您可以將 **Shape** 想成是一個 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，且由 **Geometry** 定義其界限。 本主題主要涵蓋 **Shape** 類別。
 
-[
-            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 類別有 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 以及 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)。 **Path** 很有趣，因為它可以定義任意幾何圖形，而且這裡還涉及 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 類別，因為這是定義 **Path** 組件的其中一種方法。
+[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 類別有 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 以及 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)。 **Path** 很有趣，因為它可以定義任意幾何圖形，而且這裡還涉及 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 類別，因為這是定義 **Path** 組件的其中一種方法。
 
 ## 圖形的填滿與筆觸
 
 若要將 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 轉譯到應用程式畫布，您必須使其與 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 建立關聯。 將 **Shape** 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 屬性設成所需的 **Brush**。 如需關於筆刷的資訊，請參閱[使用筆刷](using-brushes.md)。
 
-[
-            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 也可以包含 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)，這是在圖形周邊繪製的線條。 **Stroke** 也需要 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 來定義外觀，且 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 應為非零的值。 **StrokeThickness** 是定義圖形邊緣之周邊厚度的屬性。 如果您沒有為 **Stroke** 指定 **Brush** 值，或是將 **StrokeThickness** 設為 0，則不會繪製圖形周圍的框線。
+[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 也可以包含 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)，這是在圖形周邊繪製的線條。 **Stroke** 也需要 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 來定義外觀，且 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 應為非零的值。 **StrokeThickness** 是定義圖形邊緣之周邊厚度的屬性。 如果您沒有為 **Stroke** 指定 **Brush** 值，或是將 **StrokeThickness** 設為 0，則不會繪製圖形周圍的框線。
 
 ## 橢圓形
 
-[
-            **Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 是周邊為弧形的圖形。 若要建立基本的 **Ellipse**，請指定 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。
+[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 是周邊為弧形的圖形。 若要建立基本的 **Ellipse**，請指定 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。
 
 以下範例會建立 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 200 與 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 200 的一個 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)，並使用 [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) 色的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 作為其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
@@ -58,8 +54,7 @@ ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
 
 ## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
 
-[
-            **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是對應邊相等的四邊形。 若要建立基本的 **Rectangle**，請指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
+[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是對應邊相等的四邊形。 若要建立基本的 **Rectangle**，請指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
 您可以使 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 的四角變成圓角。 若要建立圓角，請指定 [**RadiusX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 與 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 屬性的值。 這些屬性指定橢圓形的 x-軸與 y-軸，進而定義圓角的弧形。 **RadiusX** 允許的最大值是 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 除以二，**RadiusY** 允許的最大值是 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 除以二。
 
@@ -108,15 +103,13 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 ## 線條
 
-[
-            **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的任何值，因為它沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
+[**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的任何值，因為它沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
 
 您無法使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 圖形，而是必須使用 [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 以及 [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 的離散 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 這樣就可以使用最簡潔的標記語言來繪製水平或垂直線。 例如，`<Line Stroke="Red" X2="400"/>` 定義了 400 個像素長的水平線。 另一個 X、Y 屬性預設為 0，因此這個 XAML 的點會繪製從 `(0,0)` 到 `(400,0)` 的線條。 然後，如果您希望它從 (0,0) 以外的點開始，可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移動整個 **Line**。
 
 ## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 聚合線條
 
-[
-            **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 與 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
+[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 與 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
 
 **注意**：您可以在設定給 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中明確指定相同的起點與終點，但在該情況下，您大可改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
 
@@ -126,8 +119,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 如同 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)，[**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 屬性定義形成界限的點集合。 在 XAML 中，您使用逗號分隔清單定義各個點。 在程式碼後置中，則是使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 定義點，並將每個獨立的點當成 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 結構加入集合中。
 
-此範例會建立四點分別設為 `(10,200)`、`(60,140)`、`(130,140)` 和 `(180,200)` 的 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)。 [
-            **Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 已定義，但並非 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
+此範例會建立四點分別設為 `(10,200)`、`(60,140)`、`(130,140)` 和 `(180,200)` 的 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)。 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 已定義，但並非 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
 ```xml
 <Polyline Stroke="Black"
@@ -141,8 +133,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 ## 路徑
 
-[
-            **Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 是最多功能的 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377)，因為它可以用來定義任意幾何圖形。 但是多功能性也意謂著複雜度較高。 我們來看一下如何在 XAML 中建立基本的 **Path**。
+[**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 是最多功能的 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377)，因為它可以用來定義任意幾何圖形。 但是多功能性也意謂著複雜度較高。 我們來看一下如何在 XAML 中建立基本的 **Path**。
 
 以 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 屬性定義路徑的幾何圖形。 設定 **Data** 的技術有兩種：
 
@@ -151,8 +142,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 這個範例顯示 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 的產生方式，我們在此使用 Blend for Visual Studio 製作少數向量圖形，接著將結果儲存為 XAML。 **Path** 共包含一段貝茲曲線與一段直線。 這個範例是為了讓您了解 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 序列化格式所含的元素，以及數字代表的意義。
 
-[
-            **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 由移動命令 (以 "M" 表示) 開始進行，該命令會建立路徑的絕對起點。
+[**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 由移動命令 (以 "M" 表示) 開始進行，該命令會建立路徑的絕對起點。
 
 第一段是起點為 `(100,200)` 而終點為 `(400,175)` 的貝茲立方曲線，使用兩個控制點 `(100,25)` 與 `(400,350)` 繪製。 這一段是由 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 屬性字串中的 "C" 命令指示。
 
@@ -209,6 +199,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

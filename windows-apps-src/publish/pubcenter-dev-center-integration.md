@@ -25,9 +25,11 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 ## 案例 1：您有一個開發人員中心帳戶和一個包含相同 Microsoft 帳戶的 pubCenter 帳戶，並在相同的國家/地區註冊
 
 
-**範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用 \[name\]@outlook.com 在美國註冊一個 pubCenter 帳戶。
 
-**結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
+            **範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用 \[name\]@outlook.com 在美國註冊一個 pubCenter 帳戶。
+
+
+            **結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
 
 -   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
 -   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
@@ -39,14 +41,17 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 -   現在可以在您的開發人員中心帳戶取得您的支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
 -   現在您所有的 app 促銷活動都與您的開發人員中心帳戶相關聯，而且您可以直接從開發人員中心管理它們。
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+> 
+            **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 ## 案例 2：您有一個開發人員中心帳戶和一個包含相同 Microsoft 帳戶的 pubCenter 帳戶，但是在不同的國家/地區註冊
 
 
-**範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用\[name\]@outlook.com 在印度註冊一個 pubCenter 帳戶。
 
-**結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
+            **範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用\[name\]@outlook.com 在印度註冊一個 pubCenter 帳戶。
+
+
+            **結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
 
 -   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
 -   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的廣告績效報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 \[廣告績效\]。
@@ -57,19 +62,23 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 -   現在可以在您的開發人員中心帳戶取得您的支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
 -   現在您所有的 app 促銷活動都與您的開發人員中心帳戶相關聯，而且您可以直接從開發人員中心管理它們。
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+> 
+            **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 ## 案例 3：您擁有使用不同的 Microsoft 帳戶註冊的開發人員中心帳戶和 pubCenter 帳戶
 
 
-**範例**：您使用 \[name\]@outlook.com 註冊一個開發人員中心帳戶。 您也使用 \[other\_name\]@outlook.com 註冊一個 pubCenter 帳戶。
 
-**結果**：您必須將您的 pubCenter 帳戶手動連結到開發人員中心帳戶。 若要這麼做：
+            **範例**：您使用 \[name\]@outlook.com 註冊一個開發人員中心帳戶。 您也使用 \[other\_name\]@outlook.com 註冊一個 pubCenter 帳戶。
+
+
+            **結果**：您必須將您的 pubCenter 帳戶手動連結到開發人員中心帳戶。 若要這麼做：
 
 1.  登入您想要連結的 pubCenter 帳戶。
 2.  在此帳戶的 \[我的資訊\] 頁面上，您將會找到一個 \[pubCenter 帳戶連結代碼\]。 將此代碼放在手邊。
 
-    > **注意：**每 60 分鐘會產生一個新的帳戶連結代碼。
+    > 
+            **注意：**每 60 分鐘會產生一個新的帳戶連結代碼。
 
 3.  登出您的 pubCenter 帳戶。
 4.  登入您的[開發人員中心帳戶](https://dev.windows.com/)。
@@ -77,7 +86,8 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 6.  輸入與 pubCenter 帳戶相關聯的電子郵件地址，以及帳戶連結代碼。
 7.  按一下 \[連結帳戶\]，您的 pubCenter 帳戶將會連結到您的開發人員中心帳戶。
 
-    > **注意：**您可以將一或多個 pubCenter 帳戶連結到您的開發人員中心帳戶。 不過，每個 pubCenter 帳戶只能連結到一個開發人員中心帳戶。
+    > 
+            **注意：**您可以將一或多個 pubCenter 帳戶連結到您的開發人員中心帳戶。 不過，每個 pubCenter 帳戶只能連結到一個開發人員中心帳戶。
 
 您的 pubCenter 帳戶連結到開發人員中心帳戶之後：
 
@@ -90,7 +100,8 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 -   現在可以在您的開發人員中心帳戶取得您的 pubCenter 支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
 -   系統將會自動暫停您在 pubCenter 中設定的所有 app 促銷活動。 往後請在開發人員中心建立新的活動。
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+> 
+            **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 ## 其他附註和建議
 

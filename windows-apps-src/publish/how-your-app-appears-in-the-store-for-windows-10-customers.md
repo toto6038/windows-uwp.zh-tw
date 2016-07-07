@@ -14,7 +14,8 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
 
-**注意** 如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
+
+            **注意** 如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
 
  
 
@@ -28,7 +29,8 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 ### 價格
 如果您在每一個市集中為 app (或 IAP) 選擇的底價都不同，則一律以 Windows 市集的底價為準。
 
-**注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格會顯示給您的 Windows 10 客戶。
+
+            **注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格會顯示給您的 Windows 10 客戶。
 
 ### 免費試用
 在之前的兩個市集中，試用選項是不一樣的，所以您可能會為每一個市集選擇不同的選項。 請查閱下表，了解提供給 Windows 10 客戶的選項。

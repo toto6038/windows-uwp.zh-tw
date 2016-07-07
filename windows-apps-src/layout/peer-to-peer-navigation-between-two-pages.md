@@ -35,7 +35,8 @@ ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
 
     隨即建立您的方案，而且專案檔案會出現在 \[方案總管\] 中。
 
-    **重要：**當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
+    
+            **重要：**當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
 
      
 
@@ -314,7 +315,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**注意：**如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
+
+            **注意：**如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
 
  
 
@@ -325,12 +327,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 將更多功能新增到 app 前，我們先來看看前面新增的頁面如何為 app 提供瀏覽支援。
 
-首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 [
+首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 
+            [
               **Navigate**
             ](https://msdn.microsoft.com/library/windows/apps/br242694) 方法是用來顯示這個 **Frame** 中的內容。
 
 **注意**  
-[
+
+            [
               **Frame**
             ](https://msdn.microsoft.com/library/windows/apps/br242682) 類別支援各種不同的瀏覽方法，例如 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 和 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693)，也支援不同的各種屬性，例如 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 和 [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995)。
 
@@ -338,7 +342,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 在我們的範例中，`Page1` 會傳遞至 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法。 這個方法會將 app 目前視窗的內容設定為 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 並將您指定的頁面內容載入 **Frame** (在我們的範例中為 Page1.xaml 或預設的 MainPage.xaml)。
 
-`Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別的子類別。 **Page** 類別具有唯讀的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 屬性，這個屬性會取得包含 **Page** 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 當 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件處理常式呼叫 ` Frame.Navigate(typeof(Page2))` 時，app 視窗中的 **Frame** 會顯示 Page2.xaml 的內容。
+`Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別的子類別。 
+            **Page** 類別具有唯讀的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 屬性，這個屬性會取得包含 **Page** 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 當 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件處理常式呼叫 ` Frame.Navigate(typeof(Page2))` 時，app 視窗中的 **Frame** 會顯示 Page2.xaml 的內容。
 
 每當頁面載入框架時，就會以 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 將該頁面新增到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)。
 
@@ -420,7 +425,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果您想要忽略框架的快取大小限制，請將 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 設定為 [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284)。 不過，根據裝置的記憶體限制，快取大小限制可能會非常重要。
 
-**注意：**
+
+            **注意：**
             [
               **CacheSize**
             ](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性指定框架的瀏覽歷程記錄中可以快取的頁面數。

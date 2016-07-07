@@ -13,7 +13,8 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 
 本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上的 Universal Windows Platform (UWP) 簡單 "Hello, world" app。 使用 Microsoft Visual Studio 中的單一專案，您可以建置可在任何 Windows 10 裝置上執行的 app。 這裡的重點是建立可在傳統型裝置和行動裝置上順利執行的 app。
 
-**重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
+
+            **重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
 
 您將在此處了解如何：
 

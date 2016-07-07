@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
-title: 將 Windows Phone Silverlight 移植到 UWP 的疑難排解
+description: "強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。"
+title: "將 Windows Phone Silverlight 移植到 UWP 的疑難排解"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
+
 ---
 
 #  將 Windows Phone Silverlight 移植到 UWP 的疑難排解
@@ -57,6 +61,7 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

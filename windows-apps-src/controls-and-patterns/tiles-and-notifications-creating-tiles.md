@@ -50,7 +50,8 @@ App 在 \[開始\] 功能表上以磚的形式顯示。 每個 app 都會有一�
 
     縮放影像按照以下命名慣例： 
     
-    &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt;  
+    
+            &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt;  
     
     例如：SmallLogo.scale-100.png
 
@@ -106,6 +107,6 @@ App 在 \[開始\] 功能表上以磚的形式顯示。 每個 app 都會有一�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,6 +1,12 @@
 ---
-Description&#58; author&#58; mcleanbyron 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
-title&#58; 啟用應用程式內產品購買 ms.assetid&#58; D158E9EB-1907-4173-9889-66507957BD6B keywords&#58; 應用程式內的購買選項 keywords&#58; App 內購買 keywords&#58; 應用程式內產品 keywords&#58; 如何支援應用程式內 keywords&#58; App 內購買程式碼範例 keywords&#58; 應用程式內的購買選項程式碼範例
+author: mcleanbyron
+Description: "無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。"
+title: "啟用應用程式內產品購買"
+ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
+keywords: in-app offer code sample
+ms.sourcegitcommit: bb28828463b14130deede9f7cf796c6e32fcb48b
+ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
+
 ---
 
 # 啟用應用程式內產品購買
@@ -9,7 +15,7 @@ title&#58; 啟用應用程式內產品購買 ms.assetid&#58; D158E9EB-1907-4173-
 
 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
 
-**注意：**試用版的應用程式無法提供 app 內產品。 使用試用版 app 的客戶只有在購買 app 的完整版本後，才能購買 app 內產品。
+> **注意：**試用版的應用程式無法提供應用程式內產品。 使用試用版 app 的客戶只有在購買 app 的完整版本後，才能購買應用程式內產品。
 
 ## 先決條件
 
@@ -19,7 +25,7 @@ title&#58; 啟用應用程式內產品購買 ms.assetid&#58; D158E9EB-1907-4173-
 
 ## 步驟 1：初始化應用程式的授權資訊
 
-在您的 app 進行初始化時，請透過初始化 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 來為 app 取得 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，以啟用購買 app 內產品的功能。
+在您的 app 進行初始化時，請透過初始化 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 來為 app 取得 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，以啟用購買應用程式內產品的功能。
 
 ```CSharp
 void AppInit()
@@ -41,15 +47,17 @@ void AppInit()
 
 針對您想要透過應用程式內產品提供的每項功能，建立一個購買選項，然後新增至您的 app。
 
-**重要事項：**在將您的應用程式送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至應用程式。 如果您想要稍後再新增 app 內產品，您就必須更新應用程式，然後重新送出新版本。
+> **重要事項：**在將您的應用程式送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至應用程式。 如果您想要稍後再新增應用程式內產品，您就必須更新應用程式，然後重新送出新版本。
 
 1.  **建立應用程式內的購買選項權杖**
 
     您可以依權杖識別您應用程式中的每個應用程式內產品。 這個權杖是您定義的字串，並在應用程式和市集中用來識別特定的應用程式內產品。 請指定一個既唯一 (對您的應用程式來說) 又有意義的名稱，以便在撰寫程式碼時，可以快速地識別其正確功能。 以下是一些名稱的範例：
 
     -   "SpaceMissionLevel4"
+    
     -   "ContosoCloudSave"
-    -   "RainbowThemePack".
+    
+    -   "RainbowThemePack"
 
 2.  **以條件性區塊來撰寫功能的程式碼**
 
@@ -59,13 +67,13 @@ void AppInit()
 
     ```    CSharp
     if (licenseInformation.ProductLicenses["featureName"].IsActive) 
-        {
-            // the customer can access this feature
-        } 
-        else
-        {
-            // the customer can' t access this feature
-        }
+    {
+        // the customer can access this feature
+    } 
+    else
+    {
+        // the customer can' t access this feature
+    }
     ```
 
 3.  **新增此功能的購買 UI**
@@ -75,28 +83,29 @@ void AppInit()
     以下是如何測試以查看客戶是否已經擁有應用程式內產品，如果沒有，就顯示購買對話方塊來讓客戶購買。 請以您為購買對話方塊自訂的程式碼取代 "show the purchase dialog" 註解 (例如提供一個含有親切提醒「購買此應用程式！」 按鈕的頁面)。
 
     ```    CSharp
-    void BuyFeature1() {
-            if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+    void BuyFeature1() 
+    {
+        if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+        {
+            try
             {
-                try
-                    {
-                    // The customer doesn't own this feature, so 
-                    // show the purchase dialog.
-                                    
-                    await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
-                    //Check the license state to determine if the in-app purchase was successful.
-                }
-                catch (Exception)
-                {
-                    // The in-app purchase was not completed because 
-                    // an error occurred.
-                }
-            } 
-            else
-            {
-                // The customer already owns this feature.
+                // The customer doesn't own this feature, so 
+                // show the purchase dialog.
+                await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
+        
+                //Check the license state to determine if the in-app purchase was successful.
             }
+            catch (Exception)
+            {
+                // The in-app purchase was not completed because 
+                // an error occurred.
+            }
+        } 
+        else
+        {
+            // The customer already owns this feature.
         }
+    }
     ```
 
 ## 步驟 3：將測試程式碼變更成最後呼叫
@@ -109,26 +118,24 @@ void AppInit()
 
 ## 備註
 
-如果您想要為客戶提供消費性 app 內產品選項 (可購買、耗盡，並在想要時再次購買的項目)，請前往[啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)主題。
+如果您想要為客戶提供消費性應用程式內產品選項 (可購買、耗盡，並在想要時再次購買的項目)，請前往[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)主題。
 
 如果您需要使用收據來確認使用者已進行 App 內購買，請務必檢閱[使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)。
 
 ## 相關主題
 
 
-* [啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)
+* [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)
 * [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
 * [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
 * [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
- 
-
- 
 
 
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -33,7 +33,8 @@ ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
 | 日期和時間選擇器 | [行事曆日期選擇器、行事曆檢視、日期選擇器、時間選擇器](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | 可讓使用者檢視與修改日期和時間資訊，例如當要輸入信用卡到期日，或是設定鬧鐘時。                   |
 | 清單                 | [下拉式清單、清單方塊、清單檢視與方格檢視](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | 呈現互動式清單或是方格中的項目。 使用這些元素，可讓使用者從最新發行的清單中選取電影，或是管理詳細目錄。 |
 | 預測文字輸入 | [自動建議方塊](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | 當使用者輸入資料或執行查詢時，提供輸入建議以節省使用者的時間。                                                   |
-| 選取控制項    | [核取方塊](https://msdn.microsoft.com/library/windows/apps/hh700393)、[選項按鈕](https://msdn.microsoft.com/library/windows/apps/hh700395)、[切換開關](https://msdn.microsoft.com/library/windows/apps/hh465475) | 可讓使用者選擇不同選項，例如完成問卷或是設定應用程式選項。                                      |
+| 選取控制項    | 
+            [核取方塊](https://msdn.microsoft.com/library/windows/apps/hh700393)、[選項按鈕](https://msdn.microsoft.com/library/windows/apps/hh700395)、[切換開關](https://msdn.microsoft.com/library/windows/apps/hh465475) | 可讓使用者選擇不同選項，例如完成問卷或是設定應用程式選項。                                      |
 
  
 
@@ -47,7 +48,8 @@ ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
 -   盡可能讓使用者在應用程式的畫布上直接操作內容，不要新增用來處理內容的命令。 例如，在旅遊應用程式中，讓使用者在畫布上拖放清單中的活動來重新安排旅遊行程，而不是選取某個活動，然後使用 \[上移\] 或 \[下移\] 命令按鈕。
 -   如果使用者無法直接操作內容，請在下列這些 UI 表面上放置命令：
 
-    -   [命令列](https://msdn.microsoft.com/library/windows/apps/hh465302)：您應該將大部分命令放在命令列，它能協助整理命令，並讓它們容易存取。
+    -   
+            [命令列](https://msdn.microsoft.com/library/windows/apps/hh465302)：您應該將大部分命令放在命令列，它能協助整理命令，並讓它們容易存取。
     -   應用程式畫布：如果使用者在具單一用途的頁面或檢視中，您可以在畫布直接提供該用途適用的命令。 這些命令的數量應該非常少。
     -   在[操作功能表](https://msdn.microsoft.com/library/windows/apps/hh465308)中：您可以使用操作功能表提供剪貼簿動作 (例如剪下、複製及貼上)，或是提供可針對無法選取的內容套用的命令 (例如在地圖的某個位置加上固定釘)。
 
@@ -135,7 +137,8 @@ ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
     -   修改內容或編輯文字
     -   重新命名檔案
 
-**提示** 請注意 app 使用確認對話方塊的頻率；在使用者犯錯時雖然非常有幫助，但在使用者有意執行某些動作時也是一種妨礙。
+
+            **提示** 請注意 app 使用確認對話方塊的頻率；在使用者犯錯時雖然非常有幫助，但在使用者有意執行某些動作時也是一種妨礙。
 
  
 

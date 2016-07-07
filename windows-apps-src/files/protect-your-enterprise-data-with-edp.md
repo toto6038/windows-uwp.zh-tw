@@ -13,11 +13,13 @@ ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
 
 # 使用企業資料保護 (EDP) 來保護檔案
 
-__注意：__企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
+
+            __注意：__企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
 
 本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。 如需 EDP 如何與檔案、串流、剪貼簿、網路、背景工作及鎖定時的資料保護產生關係的完整開發人員說明，請參閱[企業資料保護 (EDP)](../enterprise/edp-hub.md)。
 
-**注意**：[企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)涵蓋許多與本主題所示範的案例相同的案例。
+
+            **注意**：[企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)涵蓋許多與本主題所示範的案例相同的案例。
 
 ## 先決條件
 
@@ -84,7 +86,8 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 ## 保護新檔案中的企業資料 (適用於背景工作)
 
 
-我們在上一節使用的 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API 僅適用於互動式 app。 針對背景工作，您的程式碼可以在鎖定畫面時執行。 而組織可能使用安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，當裝置被鎖定時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 這可防止在遺失裝置時發生資料外洩。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。 不過，在鎖定期間 (裝置被鎖定與解除鎖定之間的時間) 可以建立新的受保護檔案並存取它們，同時又讓檔案控制代碼保持開啟。 **StorageFolder.CreateFileAsync** 會在檔案建立時關閉控制代碼，因此不能使用這個演算法。
+我們在上一節使用的 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API 僅適用於互動式 app。 針對背景工作，您的程式碼可以在鎖定畫面時執行。 而組織可能使用安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，當裝置被鎖定時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 這可防止在遺失裝置時發生資料外洩。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。 不過，在鎖定期間 (裝置被鎖定與解除鎖定之間的時間) 可以建立新的受保護檔案並存取它們，同時又讓檔案控制代碼保持開啟。 
+            **StorageFolder.CreateFileAsync** 會在檔案建立時關閉控制代碼，因此不能使用這個演算法。
 
 1.  使用 **StorageFolder.CreateFileAsync** 來建立新檔案。
 2.  使用 **FileProtectionManager.ProtectAsync** 來進行加密。
@@ -249,7 +252,8 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+
+            **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 

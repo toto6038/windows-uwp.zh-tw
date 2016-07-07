@@ -100,11 +100,16 @@ ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
 
 我們先來看看專案檔案。
 
--   **App.xaml、App.xaml.h、App.xaml.cpp：**代表應用程式物件，該物件是 app 的進入點。 App.xaml 不包含頁面特定 UI 標記，但您可以新增要從任何頁面存取的 UI 樣式和其他元素。 程式碼後置檔案包含 **OnLaunched** 和 **OnSuspending** 事件的處理常式。 通常，您會在這裡新增自訂程式碼，在應用程式啟動時起始應用程式，並在應用程式暫停或終止時執行清理。
--   **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：**包含應用程式預設「起始」頁的 XAML 標記和程式碼後置。 它沒有瀏覽支援或內建控制項。
--   **pch.h、pch.cpp：**預先編譯的標頭檔，及將它內含在您專案中的檔案。 在 pch.h，您可以包含任何不常變更的標頭，以及包含在方案其他檔案的標頭。
--   **package.appxmanifest：**描述應用程式所需的裝置功能，以及應用程式版本資訊和其他中繼資料的 XML 檔案。 若要在 \[資訊清單設計工具\] 開啟此檔案，只要按兩下即可。
--   **HelloWorld\_TemporaryKey.pfx：**從 Visual Studio 將 app 部署到此電腦所需的金鑰。
+-   
+            **App.xaml、App.xaml.h、App.xaml.cpp：**代表應用程式物件，該物件是 app 的進入點。 App.xaml 不包含頁面特定 UI 標記，但您可以新增要從任何頁面存取的 UI 樣式和其他元素。 程式碼後置檔案包含 **OnLaunched** 和 **OnSuspending** 事件的處理常式。 通常，您會在這裡新增自訂程式碼，在應用程式啟動時起始應用程式，並在應用程式暫停或終止時執行清理。
+-   
+            **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：**包含應用程式預設「起始」頁的 XAML 標記和程式碼後置。 它沒有瀏覽支援或內建控制項。
+-   
+            **pch.h、pch.cpp：**預先編譯的標頭檔，及將它內含在您專案中的檔案。 在 pch.h，您可以包含任何不常變更的標頭，以及包含在方案其他檔案的標頭。
+-   
+            **package.appxmanifest：**描述應用程式所需的裝置功能，以及應用程式版本資訊和其他中繼資料的 XML 檔案。 若要在 \[資訊清單設計工具\] 開啟此檔案，只要按兩下即可。
+-   
+            **HelloWorld\_TemporaryKey.pfx：**從 Visual Studio 將 app 部署到此電腦所需的金鑰。
 
 ## 初窺程式碼
 
@@ -129,9 +134,12 @@ ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
     }
 ```    
 
-所有 Windows 執行階段類型都必須在命名空間內宣告，與 ISO C++ 不同的是，這些類型本身有存取範圍修飾詞。 **public** 修飾詞可讓命名空間外的 Windows 執行階段元件看見類別。 **sealed** 關鍵字代表類別不能做為基底類別使用。 幾乎所有 ref 類別都是密封的；因為 Javascript 無法理解類別繼承，所以並未受到廣泛的使用。
+所有 Windows 執行階段類型都必須在命名空間內宣告，與 ISO C++ 不同的是，這些類型本身有存取範圍修飾詞。 
+            **public** 修飾詞可讓命名空間外的 Windows 執行階段元件看見類別。 
+            **sealed** 關鍵字代表類別不能做為基底類別使用。 幾乎所有 ref 類別都是密封的；因為 Javascript 無法理解類別繼承，所以並未受到廣泛的使用。
 
--   **ref new** 和 **^ (hats)**
+-   
+            **ref new** 和 **^ (hats)**
 
  您可以使用 ^ (hat) 運算子宣告 ref 類別的變數，ref new 關鍵字則可用來具現化物件。 之後，您就能以與 C++ 指標一樣的方式，使用 -&gt; 運算子存取物件的執行個體方法。 和 ISO C++ 一樣，要使用 :: 運算子存取靜態方法。
 
@@ -255,7 +263,8 @@ ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
 -   其他組態中的各種模擬器
 
 在小螢幕和記憶體有限的裝置上測試您的應用程式是不錯的想法，因此，請使用 \[模擬器 10.0.0.0 WVGA 4 inch 512MB\] 選項。
-**提示** 如需手機模擬器使用方式的詳細資訊，請參閱[在模擬器中執行 Windows Phone App](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
+
+            **提示** 如需手機模擬器使用方式的詳細資訊，請參閱[在模擬器中執行 Windows Phone App](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
 
  
 
@@ -300,7 +309,8 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程
 
 如果在轉譯期間發生無法處理的例外狀況，設計工具會無法載入。 在設計工具中的轉譯涉及了執行頁面的設計階段版本。 停用執行中的使用者程式碼會很有幫助。 您可以藉由在 \[工具\] &gt; \[選項\] 對話方塊變更設定來執行此動作。 在 \[XAML 設計工具\] 下，取消核取 \[在 XAML 設計工具中執行專案程式碼 (如果支援)\]。
 
-5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項擷取使用者的名稱，並用它來建立問候語。 `greetingOutput`
+5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項擷取使用者的名稱，並用它來建立問候語。 
+            `greetingOutput`
             [
               **TextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR209652) 會顯示結果。
@@ -348,7 +358,8 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程
 
 您應該使用哪個佈景主題？ 隨您的喜愛選擇。 以下是我們的想法：對於主要顯示影像或視訊的應用程式，建議您使用深色佈景主題；對於包含大量文字的應用程式，則建議使用淺色佈景主題。 如果您要使用自訂色彩配置，請使用與您 app 外觀及操作方式最搭配的佈景主題。 在本教學課程的其餘部分，我們會在螢幕擷取畫面使用淺色佈景主題。
 
-**注意** 佈景主題會在應用程式啟動時套用，且無法在應用程式執行時進行變更。
+
+            **注意** 佈景主題會在應用程式啟動時套用，且無法在應用程式執行時進行變更。
 
 ### 使用系統樣式
 
@@ -375,7 +386,8 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程
 
 7.  重複上述程序來設定字型大小，並將 **BaseTextBlockStyle** 指派給 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 元素。
 
-  **提示** 雖然這個 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 沒有任何文字，但是當您將指標移至 XAML 設計表面上時，會以藍色外框顯示其位置，讓您可以選取它。  
+  
+            **提示** 雖然這個 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 沒有任何文字，但是當您將指標移至 XAML 設計表面上時，會以藍色外框顯示其位置，讓您可以選取它。  
 
   您的 XAML 現在看起來應該會像這樣：
 

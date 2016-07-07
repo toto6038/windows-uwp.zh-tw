@@ -5,17 +5,17 @@ title: "超連結"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ---
 # 超連結
 
-超連結會讓使用者瀏覽到應用程式的其他部分、其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
+超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
 
 ![超連結按鈕](images/controls/hyperlink-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+
 
 -   [**Hyperlink 文字元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 -   [**HyperlinkButton 控制項**](https://msdn.microsoft.com/library/windows/apps/br242739)
@@ -137,7 +137,7 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 ## 建議
 
 -   只使用超連結來瀏覽；不要用於其他動作。
--   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**字型和 Windows 10 字體坡形**](text-controls.md)。
+-   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**字型和 Windows 10 字體坡形**](fonts.md)。
 -   在各個超連結之間保持足夠距離，讓使用者能分辨它們，並容易選取每個超連結。
 -   在超連結新增工具提示，以指示使用者將被導向的位置。 如果使用者將被導向至外部網站，請在工具提示包含最上層網域名稱，並將文字樣式設為次要字型色彩。
 
@@ -154,6 +154,6 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -74,7 +74,8 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 對話方塊是強制回應，這表示其會封鎖與 app 的所有互動，直到使用者選取對話方塊按鈕為止。 為了以視覺化方式強化其強制回應行為，對話方塊會繪製重疊層其會部分遮蔽暫時無法存取的應用程式 UI。
 
-**注意** 取消其中一個可用的對話方塊選項時，app 可選擇讓使用者按下 Esc 鍵來關閉對話方塊。 此行為並未內建至控制項，但為通用實作的捷徑。
+
+            **注意** 取消其中一個可用的對話方塊選項時，app 可選擇讓使用者按下 Esc 鍵來關閉對話方塊。 此行為並未內建至控制項，但為通用實作的捷徑。
 
 飛出視窗和操作功能表為消失關閉控制項，這表示使用者可以選擇透過各種不同的動作，快速關閉暫時性 UI。 這些互動的用意在於輕量，並非封鎖。 消失關閉的動作包括
 - 按一下或點選暫時性 UI 的外部位置
@@ -144,7 +145,8 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 飛出視窗和操作功能表會附加至特定的控制項。 顯示這些項目時應將其錨定至叫用的物件，並指定其慣用的相對物件位置：頂端、左側、底端或右側。 飛出視窗亦具備完整的位置模式，其會嘗試延展飛出視窗並將其置於應用程式視窗中央。
 
-[按鈕類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)包含 `Flyout` 屬性，可讓您指定當使用者按一下或點選按鈕時開啟的暫時性 UI。
+
+            [按鈕類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)包含 `Flyout` 屬性，可讓您指定當使用者按一下或點選按鈕時開啟的暫時性 UI。
 
 ````xaml
 <Button Content="Click me">

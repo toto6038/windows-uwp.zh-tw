@@ -23,7 +23,8 @@ ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
 當客戶按一下此連結時，會開啟您 app 的網頁清單頁面。 如果您的 app 適用於客戶的裝置，市集 app 也會啟動並顯示您的 app 清單。
 
-> **注意** 根據您的目標作業系統版本而定，您可能會看到一個以上的連結。 所有 app 都會顯示 Windows 10 的 URL，對於任何作業系統都一樣。 您可能會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
+> 
+            **注意** 根據您的目標作業系統版本而定，您可能會看到一個以上的連結。 所有 app 都會顯示 Windows 10 的 URL，對於任何作業系統都一樣。 您可能會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
 
  
 
@@ -34,7 +35,8 @@ ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
 若要建立您的徽章，請瀏覽 [Windows 市集徽章](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 若要使用此表格，您需要有您 app 的市集識別碼，才能產生徽章與連結。 此識別碼是 \[應用程式管理\] 區段中 \[應用程式身分識別\] 頁面上顯示的 Windows 10 的 URL 的最後 12 個字元。
 
-> **注意** 如需使用 Windows 市集徽章的詳細資訊，請參閱 [app 行銷指導方針](app-marketing-guidelines.md)。
+> 
+            **注意** 如需使用 Windows 市集徽章的詳細資訊，請參閱 [app 行銷指導方針](app-marketing-guidelines.md)。
 
  
 

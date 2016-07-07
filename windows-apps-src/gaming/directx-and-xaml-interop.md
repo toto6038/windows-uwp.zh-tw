@@ -36,8 +36,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 -   如果想製作靜態影像或在事件驅動間隔中繪製複雜的影像，請使用 [**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 在共用表面上 繪製。 這個類型會處理可調整大小的 DirectX 繪圖表面。 若要顯示在文件或 UI 元素中，您通常會使用這個類型將影像或紋理製作成點陣圖。 它不適用於即時互動 (例如需要高效能的遊戲)。 因為 **SurfaceImageSource** 物件的更新會與 XAML 使用者介面的更新同步，這會讓使用者在視覺回饋上感受到延遲，例如波動的畫面播放速率或遲緩的即時輸入回應。 不過，更新的速度仍足以進行動態控制或資料模擬！
 
-    [
-            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 圖形物件可以加入其他 XAML UI 元素。 您可以轉換或投影它們，且 XAML 架構會執行任何透明度或 z-index 值。
+    [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 圖形物件可以加入其他 XAML UI 元素。 您可以轉換或投影它們，且 XAML 架構會執行任何透明度或 z-index 值。
 
 -   如果影像大於提供的螢幕實際可用空間，且可以由使用者進行取景位置調整及縮放，請使用 [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 這個類型可以處理大於螢幕的 DirectX 繪圖表面大小。 和 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 一樣，您會在製作複雜影像或進行動態控制時使用這個類型。 另外，也和 **SurfaceImageSource** 一樣，它不適用於需要高效能的遊戲。 一些可以使用 **VirtualSurfaceImageSource** 的 XAML 元素範例為地圖控制項，或大型的影像密集文件檢視器。
 
@@ -46,8 +45,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 ## SurfaceImageSource
 
 
-[
-            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 提供用來繪圖的 DirectX 共用表面，然後將位元組合成應用程式內容。
+[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 提供用來繪圖的 DirectX 共用表面，然後將位元組合成應用程式內容。
 
 下列是在程式碼後置中建立和更新 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 物件的基本處理程序：
 
@@ -134,8 +132,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 當內容可能大於螢幕的可用空間時，[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 會擴充 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)，因此必須虛擬化內容以達最佳呈現效果。
 
-[
-            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 不同於 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)，它使用您實作的回呼 ([**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337)) 在螢幕顯示表面區域時更新這些表面區域。 您不需要清除隱藏的區域，因為 XAML 架構會為您進行清除。
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 不同於 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)，它使用您實作的回呼 ([**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337)) 在螢幕顯示表面區域時更新這些表面區域。 您不需要清除隱藏的區域，因為 XAML 架構會為您進行清除。
 
 下列是在程式碼後置中建立和更新 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 物件的基本處理程序：
 
@@ -265,8 +262,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 ## SwapChainPanel 和遊戲
 
 
-[
-            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 是 Windows 執行階段類型，專門用於支援高階圖形和遊戲，您可以在此直接管理交換鏈結。 在這個案例中，您會建立自己的 DirectX 交換鏈結並管理呈現內容的顯示。 接著您可以將 XAML 元素新增至 **SwapChainPanel** 物件，例如功能表、平視顯示器以及其他 UI 重疊。
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 是 Windows 執行階段類型，專門用於支援高階圖形和遊戲，您可以在此直接管理交換鏈結。 在這個案例中，您會建立自己的 DirectX 交換鏈結並管理呈現內容的顯示。 接著您可以將 XAML 元素新增至 **SwapChainPanel** 物件，例如功能表、平視顯示器以及其他 UI 重疊。
 
 為了確保最佳的效能，[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 類型有部分限制：
 
@@ -281,8 +277,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 設計應用程式使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 時，您可以參考部分常用的最佳做法。
 
--   [
-            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 繼承自 [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)，而且支援類似的配置行為。 請熟悉 **Grid** 類型及其屬性的使用方法。
+-   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 繼承自 [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)，而且支援類似的配置行為。 請熟悉 **Grid** 類型及其屬性的使用方法。
 
 -   設定 DirectX 交換鏈結後，所有針對 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 引發的輸入事件都會以與其他 XAML 元素相同的方式進行運作。 您不需設定 **SwapChainPanel** 的背景筆刷，而且與您在不使用 **SwapChainPanel** 的 DirectX 應用程式中所做的一樣，您也不需直接處理來自 app [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件的輸入事件。
 

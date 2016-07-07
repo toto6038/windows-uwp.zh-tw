@@ -35,7 +35,8 @@ App 設定是 App 中使用者可自訂的部分，存在於 App 設定頁面中
 ## <span id="general_principles"></span><span id="GENERAL_PRINCIPLES"></span>一般建議
 
 
--   讓設定頁面保持簡單，並使用二元 (開/關) 控制項。 [切換開關](../controls-and-patterns/toggles.md)通常是二元式設定的最佳控制項。
+-   讓設定頁面保持簡單，並使用二元 (開/關) 控制項。 
+            [切換開關](../controls-and-patterns/toggles.md)通常是二元式設定的最佳控制項。
 -   若需要讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目的設定，請使用[選項按鈕](../controls-and-patterns/radio-button.md)。
 -   在應用程式 \[設定\] 頁面中為所有應用程式設定建立進入點。
 -   讓設定保持簡單。 盡可能定義智慧型預設值，保持最少的設定數目。
@@ -115,10 +116,14 @@ App 設定是 App 中使用者可自訂的部分，存在於 App 設定頁面中
 -   從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
 -   為應用程式設定使用下列控制項：
 
-    -   [切換開關](../controls-and-patterns/toggles.md)：讓使用者將值設定為開啟或關閉。
-    -   [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目。
-    -   [文字輸入方塊](../controls-and-patterns/text-block.md)：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
-    -   [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的其他頁面或帶到外部網站。 當使用者按一下超連結的時候，\[設定\] 飛出視窗會關閉。
+    -   
+            [切換開關](../controls-and-patterns/toggles.md)：讓使用者將值設定為開啟或關閉。
+    -   
+            [選項按鈕](../controls-and-patterns/radio-button.md)：讓使用者從一組最多可有 5 個的互斥相關選項中選擇一個項目。
+    -   
+            [文字輸入方塊](../controls-and-patterns/text-block.md)：讓使用者輸入文字。 您使用的文字輸入方塊類型必須與要從使用者取得的文字類型對應，例如電子郵件或密碼。
+    -   
+            [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的其他頁面或帶到外部網站。 當使用者按一下超連結的時候，\[設定\] 飛出視窗會關閉。
     -   按鈕：讓使用者立即起始動作，而不需要關閉目前的 \[設定\] 飛出視窗。
 -   如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
 -   完成 \[設定\] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) 或 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) 動畫，產生內容的動畫。
@@ -132,13 +137,17 @@ App 設定是 App 中使用者可自訂的部分，存在於 App 設定頁面中
 ## <span id="related_topics"></span>相關主題
 
 * [命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
+* 
+            [進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
             
             **適用於開發人員 (XAML)**
+          
 * [儲存和擷取 App 資料](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [
+* 
+            [
               **EntranceThemeTransition**
             ](https://msdn.microsoft.com/library/windows/apps/br210288)
+          
 
 �
 

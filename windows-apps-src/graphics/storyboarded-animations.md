@@ -96,12 +96,9 @@ ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
 
 Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
--   [
-            **Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)，可以使用任何 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 設定動畫效果
--   [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)，可以使用任何 [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) 設定動畫效果
--   [
-            **Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)，可以使用任何 [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) 設定動畫效果
+-   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)，可以使用任何 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 設定動畫效果
+-   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)，可以使用任何 [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) 設定動畫效果
+-   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)，可以使用任何 [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) 設定動畫效果
 
 還有適用於物件參考值的一般化 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 動畫類型，稍後會再討論。
 
@@ -132,8 +129,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 ...
 ```
 
-`Duration="0:0:1"` 指定動畫持續時間，也就是矩形淡化的速度。 [
-            **Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 屬性是以 *hours*:*minutes*:*seconds* 的形式指定值。 因此，這個範例的時間期間為 1 秒。
+`Duration="0:0:1"` 指定動畫持續時間，也就是矩形淡化的速度。 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 屬性是以 *hours*:*minutes*:*seconds* 的形式指定值。 因此，這個範例的時間期間為 1 秒。
 
 如需 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值和 XAML 語法的詳細資訊，請參閱 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。
 
@@ -153,13 +149,11 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 如果您沒有在動畫指定 [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 或 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211)，動畫會執行一次，然後執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 指定的時間。
 
-[
-            **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 屬性指定是否在時間軸到達其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的最後時反向播放。 如果將它設定為 **true**，動畫會在到達宣告的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 最後時反向，將值從結束值 (**To**) 變更回開始值 (**From**)。 這表示該動畫實際上是執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的兩倍時間。
+[**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) 屬性指定是否在時間軸到達其 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的最後時反向播放。 如果將它設定為 **true**，動畫會在到達宣告的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 最後時反向，將值從結束值 (**To**) 變更回開始值 (**From**)。 這表示該動畫實際上是執行 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 的兩倍時間。
 
 ### **RepeatBehavior**
 
-[
-            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 屬性指定時間軸播放的次數，或是時間軸在該期間內應重複的較長持續時間。 根據預設，時間軸有一個「1x」的反覆運算計數，這表示在它的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 會播放一次，不會重複。
+[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 屬性指定時間軸播放的次數，或是時間軸在該期間內應重複的較長持續時間。 根據預設，時間軸有一個「1x」的反覆運算計數，這表示在它的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 會播放一次，不會重複。
 
 您可以讓動畫執行多個反覆運算，例如，「3x」的值會讓動畫執行三次。 或是，您可以為 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 指定不同的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)。 該 **Duration** 應該比動畫本身的 **Duration** 長，才會生效。 例如，如果您將 **RepeatBehavior** 指定為 0:0:10，[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 為 0:0:2 的動畫會重複五次。 如果除不盡，動畫會在到達 **RepeatBehavior** 時間時截斷，可能正好在動畫的中間。 最後，您可以指定特殊值「Forever」，這會使動畫無限的執行，直到您主動停止為止。
 
@@ -179,15 +173,13 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ## 在 **Storyboard** 定義多個動畫
 
-[
-            **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的內容可以有多個動畫定義。 如果您將相關動畫套用到相同目標物件的兩個屬性，就可能有多個動畫。 例如，您可以變更做為 UI 元素 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 之 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) 和 [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) 屬性，這會使得元素對角平移。 您需要兩個不同的動畫才能完成這個動作，但您可能希望這兩個動畫屬於相同的 **Storyboard**，因為您希望這兩個動畫永遠一起執行。
+[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的內容可以有多個動畫定義。 如果您將相關動畫套用到相同目標物件的兩個屬性，就可能有多個動畫。 例如，您可以變更做為 UI 元素 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 之 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 的 [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) 和 [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) 屬性，這會使得元素對角平移。 您需要兩個不同的動畫才能完成這個動作，但您可能希望這兩個動畫屬於相同的 **Storyboard**，因為您希望這兩個動畫永遠一起執行。
 
 動畫不一定要是相同的類型，或是針對相同的目標。 它們可以有不同的持續時間，不需要共用任何屬性值。
 
 當父項 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 執行時，其中的各個動畫也都會執行。
 
-[
-            **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 類別實際上有許多和動畫類型相同的動畫屬性，因為兩者共用 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底類別。 因此，**Storyboard** 可以有 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 或 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204)。 不過您通常不會在 **Storyboard** 上設定這些項目，除非您希望所有包含的動畫都有該行為。 一般來說，在 **Storyboard** 上設定的任何 **Timeline** 屬性都會套用到它的所有子動畫。 如果未設定，**Storyboard** 會有隱含的持續時間，從所包含動畫的最長 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值開始計算。 在 **Storyboard** 上明確設定短於其中一個子動畫的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 會使動畫被截斷，通常不希望發生這種情形。
+[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 類別實際上有許多和動畫類型相同的動畫屬性，因為兩者共用 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底類別。 因此，**Storyboard** 可以有 [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) 或 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204)。 不過您通常不會在 **Storyboard** 上設定這些項目，除非您希望所有包含的動畫都有該行為。 一般來說，在 **Storyboard** 上設定的任何 **Timeline** 屬性都會套用到它的所有子動畫。 如果未設定，**Storyboard** 會有隱含的持續時間，從所包含動畫的最長 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 值開始計算。 在 **Storyboard** 上明確設定短於其中一個子動畫的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 會使動畫被截斷，通常不希望發生這種情形。
 
 腳本不能包含嘗試針對相同物件上的相同屬性設定動畫效果的兩個動畫。 如果您嘗試這麼做，會在腳本嘗試執行時發生執行階段錯誤。 即使動畫因為刻意設定不同的 [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 值和持續時間而沒有時間上的重疊，也同樣適用上述限制。 如果您真的希望在單一腳本中的相同屬性套用較複雜的動畫時間軸，應該要使用關鍵畫面動畫。 請參閱[主要畫面格和 Easing 函式動畫](key-frame-and-easing-function-animations.md)。
 
@@ -195,8 +187,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ## 將腳本定義為資源
 
-[
-            **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 是您放置動畫物件的容器。 您通常在頁面層級的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 或 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) 將 **Storyboard** 定義為資源，供想要設定動畫效果的物件使用。
+[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 是您放置動畫物件的容器。 您通常在頁面層級的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 或 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) 將 **Storyboard** 定義為資源，供想要設定動畫效果的物件使用。
 
 下一個範例說明前一個範例 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 如何包含在頁面層級的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) 定義中，其中 **Storyboard** 是根 [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503) 的索引資源。 請注意 [x:Name 屬性](https://msdn.microsoft.com/library/windows/apps/Mt204788)。 這個屬性是您為 **Storyboard** 定義變數名稱的方式，以便讓 XAML 中的其他元素和程式碼之後可以參考 **Storyboard**。
 
@@ -221,8 +212,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 若要組織 XAML 中的索引資源，一般做法是在 XAML 檔案 (例如 page.xaml 或 app.xaml) 的 XAML 根項目定義資源。 您也可以把資源分到不同的檔案，然後將它們合併到應用程式或頁面中。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/Mt187273)。
 
-**注意** Windows 執行階段 XAML 可支援使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性 或 [x:Name](https://msdn.microsoft.com/library/windows/apps/Mt204788) 屬性識別資源。 [
-            **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 較常使用 x:Name 屬性，因為您最後還是希望依變數名稱參考它，以便可以呼叫它的 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 方法和執行動畫。 如果您使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性，就需要使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 方法 (例如 [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) 索引子) 抓取它做為索引資源，然後將抓取的物件轉換為 **Storyboard** 以使用 **Storyboard** 方法。
+**注意** Windows 執行階段 XAML 可支援使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性 或 [x:Name](https://msdn.microsoft.com/library/windows/apps/Mt204788) 屬性識別資源。 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 較常使用 x:Name 屬性，因為您最後還是希望依變數名稱參考它，以便可以呼叫它的 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 方法和執行動畫。 如果您使用 [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) 屬性，就需要使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 方法 (例如 [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) 索引子) 抓取它做為索引資源，然後將抓取的物件轉換為 **Storyboard** 以使用 **Storyboard** 方法。
 
  
 
@@ -301,47 +291,47 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-如果您想要動畫在完成套用值之後執行其他邏輯，可以處理 [**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。 此外，對於疑難排解屬性系統/動畫互動，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法很有用。
+[!div class="tabbedCodeSnippets"] 如果您想要動畫在完成套用值之後執行其他邏輯，可以處理 [**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。
 
-**祕訣** 當您為從應用程式程式碼啟動動畫的應用程式案例撰寫程式碼時，可能希望再次檢查動畫或轉換是否已經在您 UI 案例的動畫庫中。 動畫庫的動畫可以為所有 Windows 執行階段應用程式提供更一致的 UI 體驗，且更容易使用。
-
- 
-
-### 視覺狀態的動畫
-
-用來定義控制項視覺狀態的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的執行行為和應用程式直接執行腳本的方式有所不同。 就像套用到 XAML 的視覺狀態定義，**Storyboard** 是包含 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，而整體狀態是使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 所控制。 其中的所有動畫都會在控制項使用包含的 **VisualState** 時，根據它們的動畫值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 屬性執行。 如需詳細資訊，請參閱[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 至於視覺狀態，顯示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 並不相同。 如果視覺狀態變更為其他狀態，即使新的視覺狀態並未特別將新動畫套用到屬性，仍會取消先前視覺狀態及其動畫所套用的所有屬性變更。
-
-### **Storyboard** 和 **EventTrigger**
-
-有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
-
-## 讓 XAML 附加屬性產生動畫效果
-
-這不是常見的案例，但是您可以將動畫值套用到 XAML 附加屬性。 如需何謂附加屬性及其運作方式的詳細資訊，請參閱[附加屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185579)。 設定附加屬性目標需要使用 [property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)，此語法可將屬性名稱包在括號內。 您可以使用套用不連續整數值的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/Hh759773)，讓 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/BR210320) 之類的內建附加屬性產生動畫效果。 不過，目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
-
-## 其他動畫類型以及了解設定 UI 動畫效果的後續步驟
-
-到目前為止，我們已經說明了在兩個值之間產生動畫效果的自訂動畫，以及在動畫執行時視需要以線性方式插入值。 這些稱為 **From**/**To**/**By** 動畫。 但是還有另一種動畫類型，可讓您宣告位於開始和結束之間的中繼值。 這些稱為「*關鍵畫面動畫*」。 還有一種方式可以改變 **From**/**To**/**By** 動畫或關鍵畫面動畫上的內插補點邏輯。 這牽涉到套用 Easing 函式。 如需這些概念的詳細資訊，請參閱[關鍵畫面和 Easing 函式動畫](key-frame-and-easing-function-animations.md)。
-
-## 相關主題
-
-* [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [關鍵畫面格和 Easing 函式動畫](key-frame-and-easing-function-animations.md)
-* [視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
-* [控制項範本](https://msdn.microsoft.com/library/windows/apps/Mt210948)
-* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
-* [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+此外，對於疑難排解屬性系統/動畫互動，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法很有用。 **祕訣** 當您為從應用程式程式碼啟動動畫的應用程式案例撰寫程式碼時，可能希望再次檢查動畫或轉換是否已經在您 UI 案例的動畫庫中。
 
  
 
+### 動畫庫的動畫可以為所有 Windows 執行階段應用程式提供更一致的 UI 體驗，且更容易使用。
+
+視覺狀態的動畫 用來定義控制項視覺狀態的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的執行行為和應用程式直接執行腳本的方式有所不同。 就像套用到 XAML 的視覺狀態定義，**Storyboard** 是包含 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，而整體狀態是使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 所控制。 其中的所有動畫都會在控制項使用包含的 **VisualState** 時，根據它們的動畫值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 屬性執行。 如需詳細資訊，請參閱[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 至於視覺狀態，顯示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 並不相同。
+
+### 如果視覺狀態變更為其他狀態，即使新的視覺狀態並未特別將新動畫套用到屬性，仍會取消先前視覺狀態及其動畫所套用的所有屬性變更。
+
+**Storyboard** 和 **EventTrigger** 有一種方法可以啟動完全以 XAML 宣告的動畫。 不過，這項技術已不被廣泛使用。 它是來自 WPF 和 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支援前之 Silverlight 早期版本的舊版語法。 由於匯入/相容性的需要，這個 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 語法仍然可以在 Windows 執行階段 XAML 中運作，但僅能用於以 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件為依據的觸發程式行為；嘗試觸發其他事件會擲回例外狀況或無法編譯。
+
+## 如需詳細資訊，請參閱 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
+
+讓 XAML 附加屬性產生動畫效果 這不是常見的案例，但是您可以將動畫值套用到 XAML 附加屬性。 如需何謂附加屬性及其運作方式的詳細資訊，請參閱[附加屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185579)。 設定附加屬性目標需要使用 [property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)，此語法可將屬性名稱包在括號內。 您可以使用套用不連續整數值的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/Hh759773)，讓 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/BR210320) 之類的內建附加屬性產生動畫效果。
+
+## 不過，目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
+
+其他動畫類型以及了解設定 UI 動畫效果的後續步驟 到目前為止，我們已經說明了在兩個值之間產生動畫效果的自訂動畫，以及在動畫執行時視需要以線性方式插入值。 這些稱為 **From**/**To**/**By** 動畫。 但是還有另一種動畫類型，可讓您宣告位於開始和結束之間的中繼值。 這些稱為「*關鍵畫面動畫*」。 還有一種方式可以改變 **From**/**To**/**By** 動畫或關鍵畫面動畫上的內插補點邏輯。 這牽涉到套用 Easing 函式。
+
+## 如需這些概念的詳細資訊，請參閱[關鍵畫面和 Easing 函式動畫](key-frame-and-easing-function-animations.md)。
+
+* [相關主題](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [相依性屬性概觀](key-frame-and-easing-function-animations.md)
+* [關鍵畫面格和 Easing 函式動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt210948)
+* [**控制項範本**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
+ 
+
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

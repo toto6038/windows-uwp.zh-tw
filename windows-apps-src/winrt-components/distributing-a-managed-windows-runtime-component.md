@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: 發佈 Managed Windows 執行階段元件
-description: 您可以透過檔案複製來發佈自己的 Windows 執行階段元件。
+author: msatranjr
+title: "發佈 Managed Windows 執行階段元件"
+description: "您可以透過檔案複製來發佈自己的 Windows 執行階段元件。"
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+
 ---
 
 
@@ -10,9 +13,6 @@ ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[正式發行前可能會進行大幅度修改之預先發行的產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 您可以透過檔案複製來發佈自己的 Windows 執行階段元件。 不過，如果元件包含許多檔案，使用者就必須等待冗長的安裝過程。 此外，放置檔案時發生的錯誤或參考設定失敗都可能會造成他們的問題。 您可以將複雜元件封裝成 Visual Studio 擴充功能 SDK，方便安裝與使用。 使用者只需為整個封裝設定一個參考。 如 MSDN Library 中的[尋找及使用 Visual Studio 擴充功能](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述，使用者可以透過 [擴充功能和更新]**** 對話方塊輕鬆地尋找並安裝您的元件。
 
@@ -51,7 +51,7 @@ For example: Microsoft.Cpp.Build.dll
 **建立擴充功能 SDK**
 
 1.  確定您已安裝 Visual Studio SDK。 您可以從 [Visual Studio 下載](https://www.visualstudio.com/downloads/download-visual-studio-vs)頁面下載 Visual Studio SDK。
-2.  使用 VSIX 專案範本建立新專案。 您可以在 Visual C# 或 Visual Basic 底下的 [擴充性] 分類中找到此範本。 此範本是隨著 Visual Studio SDK 一起安裝。 (MSDN Library 中的[逐步解說：使用 C# 或 Visual Basic 建立 SDK](https://msdn.microsoft.com/library/jj127119.aspx) 或[逐步解說：使用 C++ 建立 SDK](https://msdn.microsoft.com/library/jj127117.aspx) 會透過非常簡單的案例，來示範此範本的使用方式。 )
+2.  使用 VSIX 專案範本建立新專案。 您可以在 Visual C# 或 Visual Basic 底下的 [擴充性] 分類中找到此範本。 此範本是隨著 Visual Studio SDK 一起安裝。 ([逐步解說：使用 C# 或 Visual Basic 建立 SDK](https://msdn.microsoft.com/library/jj127119.aspx) 或[逐步解說：使用 C++ 建立 SDK](https://msdn.microsoft.com/library/jj127117.aspx) 會透過非常簡單的案例，來示範此範本的使用方式。 )
 3.  判斷 SDK 的資料夾結構。 資料夾結構的開頭位於 VSIX 專案的根層級，並且包含 **References**、**Redist** 及 **DesignTime** 資料夾。
 
     -   **References** 是二進位檔案的位置，您的使用者可以針對這些檔案進行程式設計。 擴充功能 SDK 會在使用者的 Visual Studio 專案中建立這些檔案的參考。
@@ -75,6 +75,6 @@ For example: Microsoft.Cpp.Build.dll
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

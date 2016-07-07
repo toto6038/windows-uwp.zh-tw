@@ -38,8 +38,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 ## 使用 MessageWebSocket
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允許使用每個讀取作業來讀取訊息區段。 **MessageWebSocket** 通常用於訊息不是非常大的案例中。 同時支援 UTF-8 與二進位檔案。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允許使用每個讀取作業來讀取訊息區段。 **MessageWebSocket** 通常用於訊息不是非常大的案例中。 同時支援 UTF-8 與二進位檔案。
 
 本節中的程式碼會建立新的 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)、連線到 WebSocket 伺服器並傳送資料到伺服器。 建立成功的連線後，應用程式會等候觸發 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) 事件，指出已收到資料。
 
@@ -148,8 +147,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 ###  實作 MessageWebSocket.Closed 事件的回呼
 
-在使用 WebSocket 建立連線和傳送資料之前，您的應用程式必須登錄事件回呼，以在 WebSocket 伺服器關閉 WebSocket 時接收通知。 [
-            **MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件發生時會呼叫已登錄的回呼，以指出 WebSocket 伺服器已關閉連線。
+在使用 WebSocket 建立連線和傳送資料之前，您的應用程式必須登錄事件回呼，以在 WebSocket 伺服器關閉 WebSocket 時接收通知。 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件發生時會呼叫已登錄的回呼，以指出 WebSocket 伺服器已關閉連線。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -176,8 +174,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 ###  在 WebSocket 上傳送訊息
 
-建立連線後，WebSocket 用戶端即可將資料傳送至伺服器。 [
-            **DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法會傳回對應到不帶正負號之整數的參數。 與建立連線的工作相較，這改變了我們定義傳送訊息之工作的方式。
+建立連線後，WebSocket 用戶端即可將資料傳送至伺服器。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法會傳回對應到不帶正負號之整數的參數。 與建立連線的工作相較，這改變了我們定義傳送訊息之工作的方式。
 
 **注意** 當您使用 MessageWebSocket 的 OutputStream 建立新的 DataWriter 物件時，DataWriter 會取得 OutputStream 的擁有權，且會在 DataWriter 超出範圍時取消 Outputstream 的配置。 這會導致任何使用 OutputStream 的後續嘗試皆失敗，並出現 HRESULT 值 0x80000013。 為避免取消配置 OutputStream，這段程式碼會呼叫 DataWriter 的 DetachStream 方法，此方法會將資料流的擁有權傳回給 WebSocket 物件。
 
@@ -229,42 +226,34 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 ## 對 Websocket 使用進階控制項
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都遵循使用進階控制項的相同模型。 對應到上述每一個主要類別的是可以存取進階控制項的相關類別。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都遵循使用進階控制項的相同模型。 對應到上述每一個主要類別的是可以存取進階控制項的相關類別。
 
-[
-            **MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) 提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 物件的通訊端控制項資料。
-[
-            **StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 物件的通訊端控制項資料。
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) 提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 物件的通訊端控制項資料。
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 物件的通訊端控制項資料。
 兩種類型的 WebSocket 使用的進階控制項基本模型都是相同的。 以下討論使用 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 做為範例，但是相同程序也可與 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 搭配使用。
 
 1.  建立 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 物件。
 2.  使用 [**StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) 屬性來擷取與此 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 物件關聯的 [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 執行個體。
 3.  取得或設定 [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 執行個體的屬性，以取得或設定特定的進階控制項。
 
-[
-            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 對於何時可設定進階控制項都有其限制。
+[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 對於何時可設定進階控制項都有其限制。
 
 -   對於 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的所有進階控制項，應用程式都必須一律先設定屬性，再發出連線作業。 由於有此需求，因此最好在建立 **StreamWebSocket** 物件之後立即設定所有控制項屬性。 請不要嘗試在呼叫 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) 方法之後設定控制項屬性。
 -   對於訊息類型以外的所有 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 進階控制項，您必須一律先設定屬性，再發出連線作業。 最好在建立 **MessageWebSocket** 物件之後立即設定所有控制項屬性。 除了訊息類型以外，請不要嘗試在呼叫 [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) 之後變更控制項屬性。
 
 ## WebSocket 資訊類別
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 分別有一個對應的類別，可提供關於 WebSocket 執行個體的其他資訊。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 分別有一個對應的類別，可提供關於 WebSocket 執行個體的其他資訊。
 
-[
-            **MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) 會提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 的相關資訊，您可以使用 [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) 屬性擷取資訊類別的執行個體。
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) 會提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 的相關資訊，您可以使用 [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) 屬性擷取資訊類別的執行個體。
 
-[
-            **StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) 會提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的相關資訊，您可以使用 [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) 屬性擷取資訊類別的執行個體。
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) 會提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的相關資訊，您可以使用 [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) 屬性擷取資訊類別的執行個體。
 
 請注意，這兩個資訊類別的所有屬性都是唯讀的，在 Web 通訊端物件的存留期間，您可以隨時擷取目前資訊。
 
 ## 處理網路例外狀況
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 作業上發生的錯誤會傳回為 **HRESULT** 值。 使用 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法，將 WebSocket 作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值對應原始 HTTP 用戶端作業傳回的錯誤。 您的應用程式可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改應用程式行為。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 作業上發生的錯誤會傳回為 **HRESULT** 值。 使用 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法，將 WebSocket 作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值對應原始 HTTP 用戶端作業傳回的錯誤。 您的應用程式可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改應用程式行為。
 
 針對參數驗證錯誤，應用程式也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 

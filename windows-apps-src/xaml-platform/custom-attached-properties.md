@@ -57,8 +57,7 @@ ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 物件及它的 *valueType* 可以是實作中的更具體類型。 請記住，這個方法的值是 XAML 處理器在標記中遇到附加屬性時，來自於 XAML 處理器的輸入。 您使用的類型必須取得類型轉換或現有標記延伸的支援，這樣才能從屬性值建立適當的類型 (最終只是字串)。 基本 **Object** 類型是可以接受的，但是通常您會想要更進一步的類型安全性。 若要這樣做，請將類型強制放到存取子中。
 
-**注意** 您也可以定義附加屬性的預定用法是透過屬性元素語法。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [
-            **VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
+**注意** 您也可以定義附加屬性的預定用法是透過屬性元素語法。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
 
 ## 程式碼範例
 
@@ -215,8 +214,7 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 
 在前面的附加屬性用法範例中，我們示範了設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加屬性的不同方法。 但是，這對於 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 與您物件的互動方式有何改變，以及在何時發生？ 我們將進一步探討這個特定的範例，因為如果您實作附加屬性，看看當典型的附加屬性擁有者類別在其他物件上發現它的附加屬性值時，會對這些值做哪些其他處理，將是一件有趣的事。
 
-[
-            **Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 的主要功能是成為 UI 中的絕對位置配置容器。 **Canvas** 的子項會儲存在基底類別定義的屬性 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中。 在所有的面板中，**Canvas** 是唯一使用絕對位置的面板。 當新增屬性而屬性可能只與 **Canvas** 和它們身為 **UIElement** 子元素的特定 **UIElement** 案例相關時，會將常見的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 類型的物件模型塞得臃腫不堪。 將 **Canvas** 的配置控制項屬性定義成任何 **UIElement** 都可以使用的附加屬性可以讓物件模型保持簡潔。
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 的主要功能是成為 UI 中的絕對位置配置容器。 **Canvas** 的子項會儲存在基底類別定義的屬性 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中。 在所有的面板中，**Canvas** 是唯一使用絕對位置的面板。 當新增屬性而屬性可能只與 **Canvas** 和它們身為 **UIElement** 子元素的特定 **UIElement** 案例相關時，會將常見的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 類型的物件模型塞得臃腫不堪。 將 **Canvas** 的配置控制項屬性定義成任何 **UIElement** 都可以使用的附加屬性可以讓物件模型保持簡潔。
 
 為了能夠成為實際的面板，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 具有會覆寫架構層級的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 和 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法的行為。 這是 **Canvas** 實際檢查其子項是否有附加屬性值的位置。 **Measure** 和 **Arrange** 模式都有部分是迴圈，會逐一查看任何內容，而面板具有 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性，可以明確指出哪個應該視為面板子項。 因此，**Canvas** 配置行為會逐一查看這些子項，並且在每個子項進行靜態的 [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 和 [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) 呼叫，以查看那些附加屬性是否包含非預設值 (預設值為 0)。 然後，會使用這些值並根據每個子項提供的特定值，以賦予每個子項在 **Canvas** 可用配置空間中的絕對位置，然後使用 **Arrange** 來進行認可。
 

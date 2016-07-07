@@ -72,7 +72,8 @@ WNS 驗證配置使用 [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=2267
 
 在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在「client_id」欄位中提供您的套件 SID，並在「client_secret」欄位中提供您的祕密金鑰。 如需語法詳細資訊，請參閱[存取權杖要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)參考。
 
-**注意：**這只是範例，不是剪貼到您的程式碼就可以順利使用的程式碼。
+
+            **注意：**這只是範例，不是剪貼到您的程式碼就可以順利使用的程式碼。
 
  
 
@@ -162,14 +163,17 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 \[設定\] App 中找到) 可讓您的 App 即使在省電模式開啟時，也會接收到推播通知。
 
--   **允許在省電模式中接收來自任何 App 的推播通知**：此設定可讓所有 App 在省電模式開啟時接收推播通知。 請注意，此設定僅適用於傳統型版本的 Windows 10 (家用版、專業版、企業版及教育版)。
--   **一律允許**：此設定可讓特定 App 在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
+-   
+            **允許在省電模式中接收來自任何 App 的推播通知**：此設定可讓所有 App 在省電模式開啟時接收推播通知。 請注意，此設定僅適用於傳統型版本的 Windows 10 (家用版、專業版、企業版及教育版)。
+-   
+            **一律允許**：此設定可讓特定 App 在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
 沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 Windows 10 中，使用 [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) 屬性檢查省電模式狀態。 您的 App 也可以使用 [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) 事件接聽省電模式的變更。
 
 如果您的 App 非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 您可以在 Windows 10 中使用省電模式設定 URI 配置 ，以便為 \[設定\] App 提供方便的連結。
 
-**提示：**向使用者通知省電模式設定時，建議提供一種方式來隱藏之後的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中保存使用者的喜好設定。
+
+            **提示：**向使用者通知省電模式設定時，建議提供一種方式來隱藏之後的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中保存使用者的喜好設定。
 
  
 

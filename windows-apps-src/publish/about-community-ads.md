@@ -27,7 +27,8 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 1. 移至 Windows 開發人員中心儀表板中的 \[營利\]\[利用廣告營利\] 頁面。
 2. 在 \[社群廣告\] 區段中，選取 \[在我的應用程式中顯示社群廣告\] 核取方塊。
-   > **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
+   > 
+            **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
 
 3. 為您的 App [建立廣告行銷活動](create-an-ad-campaign-for-your-app.md) 對於行銷活動類型，請選取 \[免費社群廣告\]。
 
@@ -39,6 +40,6 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

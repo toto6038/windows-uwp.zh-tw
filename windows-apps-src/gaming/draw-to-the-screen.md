@@ -31,14 +31,10 @@ ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
 
 為了在此範例中進行比較，以下是每個 API 的相關類型：
 
--   [
-            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供圖形裝置與其資源的虛擬表示法。
--   [
-            **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用來設定緩衝區和發出轉譯命令的介面。
--   [
-            **IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交換鏈結類似於 OpenGL ES 2.0 中的背景緩衝區。 這是圖形介面卡的記憶體區域，包含最終要顯示的轉譯影像。 稱為「交換鏈結」是因為它具有數個「交換的」可寫入緩衝區，將最新的轉譯呈現至螢幕。
--   [
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：這包含容納 Direct3D 裝置繪製內容的 2D 點陣圖緩衝區，其由交換鏈結來呈現。 使用 OpenGL ES 2.0，您可以擁有多個轉譯目標，某些轉譯目標未繫結至交換鏈結，但可用於多重傳遞著色技巧。
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供圖形裝置與其資源的虛擬表示法。
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用來設定緩衝區和發出轉譯命令的介面。
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交換鏈結類似於 OpenGL ES 2.0 中的背景緩衝區。 這是圖形介面卡的記憶體區域，包含最終要顯示的轉譯影像。 稱為「交換鏈結」是因為它具有數個「交換的」可寫入緩衝區，將最新的轉譯呈現至螢幕。
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：這包含容納 Direct3D 裝置繪製內容的 2D 點陣圖緩衝區，其由交換鏈結來呈現。 使用 OpenGL ES 2.0，您可以擁有多個轉譯目標，某些轉譯目標未繫結至交換鏈結，但可用於多重傳遞著色技巧。
 
 在範本中，轉譯器物件包含下列欄位：
 

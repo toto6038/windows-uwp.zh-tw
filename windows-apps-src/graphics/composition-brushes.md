@@ -14,12 +14,9 @@ ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
 
 筆刷會使用其輸出來繪製 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的區域。 不同的筆刷有不同類型的輸出。 「組合 API」提供三種筆刷類型：
 
--   [
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 會使用純色繪製視覺效果
--   [
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面的內容來繪製視覺效果
--   [
-            **CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) 會使用組合效果的內容來繪製視覺效果
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 會使用純色繪製視覺效果
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面的內容來繪製視覺效果
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) 會使用組合效果的內容來繪製視覺效果
 
 所有筆刷都會繼承 [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398)；它們是由 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 直接或間接建立，並且是與裝置無關的資源。 雖然筆刷與裝置無關，但是 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) 會使用來自與裝置相關的組合表面內容來繪製 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)。
 
@@ -40,8 +37,7 @@ ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
 
 ### Alpha 模式
 
-[
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 中的色彩值一律會解譯為直接 Alpha。
+[**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 中的色彩值一律會解譯為直接 Alpha。
 
 ## 使用色彩筆刷
 
@@ -74,8 +70,7 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 ## 使用表面筆刷
 
-[
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面 (由 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 物件表示) 來繪製視覺效果。 下圖顯示一個以甘草糖點陣圖繪製並使用 D2D 轉譯到 **ICompositionSurface** 的方形視覺效果。
+[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 會使用組合表面 (由 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 物件表示) 來繪製視覺效果。 下圖顯示一個以甘草糖點陣圖繪製並使用 D2D 轉譯到 **ICompositionSurface** 的方形視覺效果。
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png) 第一個範例會將組合表面初始化以與筆刷搭配使用。 組合表面是使用協助程式方法 (採用 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 Url 做為字串的 LoadImage) 建立的。 它會從 Url 載入影像、將該影像轉譯到 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819)，然後將該表面設定為 **CompositionSurfaceBrush** 的內容。 請注意，**ICompositionSurface** 只會以機器碼公開，因此 LoadImage 方法是在機器碼中實作。
 
@@ -101,13 +96,11 @@ visual.Brush = _surfaceBrush;
 
 有時，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 內容不會完全填滿所繪製之視覺效果的區域。 當發生這種情況時，「組合 API」會使用筆刷的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 及 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式設定來決定如何填滿剩餘的區域。
 
--   [
-            **HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 的類型是浮點數，並且可用來控制筆刷在視覺邊界內的位置。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 的類型是浮點數，並且可用來控制筆刷在視覺邊界內的位置。
     -   值 0.0 會將筆刷的左/上角與視覺效果的左/上角對齊
     -   值 0.5 會將筆刷中央與視覺效果的中央對齊
     -   值 1.0 會將筆刷的右/下角與視覺效果的右/下角對齊
--   [
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 屬性接受以下由 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列舉 所定義的值：
+-   [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 屬性接受以下由 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列舉 所定義的值：
     -   None：筆刷不會延展以填滿視覺邊界。 請小心使用此「延展」設定：如果筆刷比視覺邊界大， 筆刷的內容將會受到裁剪。 您可以使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 屬性來控制用來繪製視覺邊界 的筆刷部分。
     -   Uniform：筆刷會配合視覺邊界調整大小；會保留筆刷的外觀比例。 這是預設值。
     -   UniformToFill：筆刷會調整大小來完全填滿視覺邊界；會保留筆刷的外觀比例。

@@ -25,10 +25,12 @@ ms.openlocfilehash: d3ddc07b214dcfe767d27bf24a36fe19d3534e6e
 
 -   使用主要畫面的物件動畫
 -   零持續時間動畫
--   [
+-   
+            [
               **Canvas.Left**
             ](https://msdn.microsoft.com/library/windows/apps/Hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 屬性的動畫
--   [
+-   
+            [
               **UIElement.Opacity**
             ](https://msdn.microsoft.com/library/windows/apps/BR208962) 屬性的動畫
 -   以 [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) 子屬性為目標時，[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型屬性的動畫
@@ -48,7 +50,8 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### 不要讓 WebView 或 MediaElement 產生動畫
 
-[
+
+            [
               **WebView**
             ](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項內的網頁內容不是由 XAML 架構直接呈現，並且需要執行額外的工作才能與其他場景合成。 在畫面上產生控制項動畫會增加這項額外的工作，而這項工作可能會帶來同步化的問題 (例如，HTML 內容可能不會與頁面上的其餘 XAML 內容同步移動)。 當您需要讓 **WebView** 控制項產生動畫時，請改用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) 以取得持續的動畫。
 
@@ -62,11 +65,13 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### 使用動畫庫
 
-[
+
+            [
               **Windows.UI.Xaml.Media.Animation**
             ](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空間包含高效能且順暢的動畫庫，這些動畫的外觀及操作與其他 Windows 動畫相同。 相關類別的名稱中會包含「佈景主題」，其相關說明請見[動畫概觀](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 這個動畫庫支援許多常見的動畫案例，例如將應用程式的第一個檢視以動畫顯示，並建立狀態與內容轉換。 建議您儘量使用這個動畫庫來提升效能以及與 UWP UI 的一致性。
 
-> **注意** 動畫庫無法讓所有可能的屬性產生動畫。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
+> 
+            **注意** 動畫庫無法讓所有可能的屬性產生動畫。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
 
 
 ### 個別使 CompositeTransform3D 屬性產生動畫效果
@@ -170,9 +175,11 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 </Image>
 ```
 
-[
+
+            [
               **DecodePixelWidth**
-            ](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 [
+            ](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的單位預設是實體像素。 
+            [
               **DecodePixelType**
             ](https://msdn.microsoft.com/library/windows/apps/Dn298545) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 會比較適當。 使用實體像素的預設行為，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以免使用者變更其顯示喜好設定。
 
@@ -260,7 +267,8 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 ### SoftwareBitmapSource
 
-[
+
+            [
               **SoftwareBitmapSource**
             ](https://msdn.microsoft.com/library/windows/apps/Dn997854) 類別交換不同 WinRT 命名空間 (例如 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176)、相機 API 以及 XAML) 之間的互通性未壓縮映像。 這個類別會排除通常是使用 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) 才需要的額外複本，以及協助減少尖峰記憶體和來源到螢幕的延遲。
 
@@ -270,7 +278,8 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 ### 使用 GetThumbnailAsync 以取得縮圖
 
-按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [
+按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 
+            [
               **GetThumbnailAsync**
             ](https://msdn.microsoft.com/library/windows/apps/BR227210) 會為已快取檔案系統的影像提供縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
 

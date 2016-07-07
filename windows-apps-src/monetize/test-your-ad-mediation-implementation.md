@@ -25,7 +25,8 @@ ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
 
 將會為支援這些廣告的廣告網路顯示測試廣告。 請注意，測試廣告有時可能看起來像錯誤。 請務必檢閱您的事件，以判斷是否發生錯誤。
 
-> **注意：**當測試 Windows Phone Silverlight App 時，Google AdMob 一律會傳回「**無效的要求**」錯誤，因為它不會使用測試中繼資料。 若要驗證您的 Google AdMob 實作，您必須輸入所需的參數，如下一節所述。
+> 
+            **注意：**當測試 Windows Phone Silverlight App 時，Google AdMob 一律會傳回「**無效的要求**」錯誤，因為它不會使用測試中繼資料。 若要驗證您的 Google AdMob 實作，您必須輸入所需的參數，如下一節所述。
 
  
 

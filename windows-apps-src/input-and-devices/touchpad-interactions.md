@@ -5,15 +5,15 @@ title: "觸控板互動"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 ---
 
 # 觸控板設計指導方針
 
 
-設計您的 App，讓使用者可以透過觸控板進行互動。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及較小目標的生產力 app 兩者。
+將您的 app 設計成使用者可透過觸控板與其互動的 app。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這項結合讓觸控板既適用於觸控最佳化 UI，也適用於較小的生產力 app 目標。
 
  
 
@@ -37,16 +37,16 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入最佳化您的 Windows 市集應用程式設計，獲得預設的觸控板支援。
 
-因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 \[上一頁\] 和 \[下一頁\] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
+因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
 本主題中討論的手勢和指導方針可以協助您確保您的 App 使用最少的程式碼就能順暢地支援觸控板輸入。
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>觸控板語言
+## 觸控板語言
 
 
 一組可用於整個系統的簡單觸控板互動。 針對觸控及滑鼠輸入最佳化您的 App，而這個語言讓使用者可以立即熟悉您的 App，提高他們的自信，讓您的 App 更易於學習及使用。
 
-比起在標準觸控板上所做的動作，使用者能夠設定更多的精確式觸控板手勢與互動行為。 下列兩個影像顯示分別來自標準觸控板和精確式觸控板之 \[設定\]  \[裝置\]  \[滑鼠和觸控板\] 的不同觸控板設定頁面。
+比起在標準觸控板上所做的動作，使用者能夠設定更多的精確式觸控板手勢與互動行為。 下列兩個影像顯示分別來自標準觸控板和精確式觸控板之 [設定] &gt; [裝置] &gt; [滑鼠和觸控板] 的不同觸控板設定頁面。
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
@@ -71,39 +71,39 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指點選</p></td>
-<td align="left"><p>使用者喜好設定，可使用 Cortana 搜尋或顯示 \[重要訊息中心\]。</p></td>
+<td align="left"><p>三指點選</p></td>
+<td align="left"><p>使用者喜好設定，可使用 <strong>Cortana</strong> 搜尋或顯示 [重要訊息中心]<strong></strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑動</p></td>
-<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 \[工作檢視\]、顯示桌面，或在開啟的 App 之間切換。</p></td>
+<td align="left"><p>三指滑動</p></td>
+<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 [工作檢視]、顯示桌面，或在開啟的 App 之間切換。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>單指點選以進行主要動作</p></td>
+<td align="left"><p>單指點選以進行主要動作</p></td>
 <td align="left"><p>使用單指點選元素，叫用它的主要動作 (例如啟動應用程式或執行命令)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>兩指點選以按一下滑鼠右鍵</p></td>
+<td align="left"><p>兩指點選以按一下滑鼠右鍵</p></td>
 <td align="left"><p>使用兩指同時點選元素來選取它，並顯示內容命令。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>兩指滑動以進行移動瀏覽</p></td>
+<td align="left"><p>兩指滑動以進行移動瀏覽</p></td>
 <td align="left"><p>滑動主要用於移動瀏覽互動，但也可以用來移動、繪圖以及書寫。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>捏合和伸展以進行縮放</p></td>
+<td align="left"><p>捏合和伸展以進行縮放</p></td>
 <td align="left"><p>捏合和伸展手勢通常用於調整大小和語意式縮放。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>單指按住並滑動以重新排列</p></td>
+<td align="left"><p>單指按住並滑動以重新排列</p></td>
 <td align="left"><p>拖曳元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>單指按住並滑動以選取文字</p></td>
+<td align="left"><p>單指按住並滑動以選取文字</p></td>
 <td align="left"><p>在可選取的文字內按住並滑動即可選取文字。 點兩下即可選取某個字。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>按左鍵/右鍵區域</p></td>
+<td align="left"><p>按左鍵/右鍵區域</p></td>
 <td align="left"><p>模擬滑鼠裝置的左鍵和右鍵功能。</p></td>
 </tr>
 </tbody>
@@ -111,14 +111,14 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>硬體
+## 硬體
 
 
 查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>視覺化回饋
+## 視覺化回饋
 
 
 -   偵測到觸控板游標時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果觸控板游標有一段時間沒有移動，或者使用者起始觸控互動，讓觸控板 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -129,7 +129,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>游標
+## 游標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
@@ -140,23 +140,21 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 -   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
 -   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
--   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 \[開始\] 畫面磚)，請勿使用移動游標。
+-   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 
 * [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
-            
-            **範例**
+* [識別輸入裝置](identify-input-devices.md) 
+           **範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-            
-            **封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **封存範例**
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -168,6 +166,6 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

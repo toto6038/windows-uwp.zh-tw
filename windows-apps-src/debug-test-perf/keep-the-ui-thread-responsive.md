@@ -27,8 +27,7 @@ app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初
 -   使用 [x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延遲具現化元素。
 -   以程式設計方式隨需將元素插入樹狀目錄。
 
-[
-            **CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 佇列適用於 UI 執行緒不忙碌時處理。
+[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 佇列適用於 UI 執行緒不忙碌時處理。
 
 ## 使用非同步 API
 

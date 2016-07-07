@@ -19,7 +19,8 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
 
 如需安裝指示，請參閱[利用 Microsoft Store Engagement and Monetization SDK 讓您的 App 獲利及吸引客戶](https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk)。
 
-> **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本並搭配 Visual Studio 2015，若您想要將廣告新增到 JavaScript/HTML App 中，便同時需要安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 
+            **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本並搭配 Visual Studio 2015，若您想要將廣告新增到 JavaScript/HTML App 中，便同時需要安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
 ## 針對廣告和廣告流量分配的程式庫名稱
 
@@ -38,7 +39,8 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (XAML)</td>
+            <td rowspan="3">
+            **AdControl** 和 **InterstitialAd** (XAML)</td>
             <td>UWP</td>
             <td>適用於 XAML 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
@@ -54,7 +56,8 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">
+            **AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
             <td>適用於 JavaScript 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
@@ -70,7 +73,8 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdMediatorControl** (僅 XAML)</td>
+            <td rowspan="3">
+            **AdMediatorControl** (僅 XAML)</td>
             <td>UWP</td>
             <td>Microsoft Advertising Universal SDK</td>
             <td>1.0</td>

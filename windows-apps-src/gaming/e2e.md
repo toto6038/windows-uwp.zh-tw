@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: Windows 10 遊戲開發指南
-description: 開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。
+title: "Windows 10 遊戲開發指南"
+description: "開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
+ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
+ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+
 ---
 
 # Windows 10 遊戲開發指南
@@ -165,7 +168,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Direct3D 12 圖形範例</td>
-        <td>[Direct 圖形範例](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
+        <td>[DirectX 圖形範例](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
     </tr>
     <tr>
         <td>Direct3D 11 第一人稱遊戲範例</td>
@@ -185,7 +188,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Xbox One 遊戲範例 (GDN)</td>
-        <td>[範例](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[範例](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 遊戲範例 (MSDN Code Gallery)</td>
@@ -213,24 +216,24 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>UWP app 開發人員論壇</td>
-        <td>[開發通用 Windows 平台應用程式](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
+        <td>[開發通用 Windows 平台 App](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
-        <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>傳統型應用程式開發人員論壇</td>
+        <td>[Windows 傳統型應用程式論壇](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
-        <td>DirectX Windows Store games (archived forum posts)</td>
-        <td>[Building Windows Store games with DirectX (archived)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
+        <td>DirectX Windows 市集遊戲 (已封存的論壇文章)</td>
+        <td>[使用 DirectX 建置 Windows 市集遊戲 (已封存)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
-        <td>Windows 10 managed partner developer forums</td>
-        <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
+        <td>Windows 10 受管理的合作夥伴開發人員論壇</td>
+        <td>[XBOX 開發人員論壇：Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX 優先使用計畫論壇</td>
+        <td>[DirectX 12 論壇](http://directx12forum.azurewebsites.net/index.php)</td>
     </tr>
 </table>
 
@@ -330,11 +333,13 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 
 ### 選擇您的圖形技術與程式設計語言
 
-有數種程式設計語言與圖形技術可在 Windows 10 遊戲中使用。 您所採取的途徑會取決於您要開發的遊戲類型、開發工作室的經驗與喜好，以及遊戲的特定功能需求。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
+有數種程式設計語言與圖形技術可在 Windows 10 遊戲中使用。 您可以依據您正在開發的遊戲類型、開發工作室的經驗與喜好，以及遊戲的特定功能需求來選擇。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
 
-### DirectX
+#### DirectX
 
-Microsoft DirectX 是適用於高效能 2D 及 3D 圖形與多媒體的選擇。 Windows 10 的新功能 Direct3D 12 使主控台式 API 變得更強大，而且比以往執行起來更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows 10 電腦與 Xbox One 提供了最佳化的圖形。 如果您想要使用熟悉的 Direct3D 11 圖形管線，您仍然可以從 Direct3D 11.3 中加入的新轉譯與最佳化功能中獲益。 而且如果您是千真萬確且有 Win32 情節的傳統型 Windows API 開發人員，您仍然可以在 Windows 10 中使用該選項。
+Microsoft DirectX 是適用於高效能 2D 與 3D 圖形與多媒體的選擇。 
+
+Windows 10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows 10 電腦與 Xbox One 提供了最佳化的圖形。 如果您想要使用熟悉的 Direct3D 11 圖形管線，您仍然可以從 Direct3D 11.3 中加入的新轉譯與最佳化功能中獲益。 而且如果您正嘗試且確實是使用 Win32 的傳統型 Windows API 開發人員，您仍然可以在 Windows 10 中使用該選項。
 
 DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提供所需的強大功能與效能。
 
@@ -355,12 +360,16 @@ DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提
         <td>Direct3D 12 程式設計指南與參考</td>
         <td>[Direct3D 12 圖形](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
     </tr>
+    <tr>
+        <td>圖形與 DirectX 12 開發影片 (YouTube 頻道)</td>
+        <td>[Microsoft DirectX 12 與圖形教育訓練](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
+    </tr>
 </table>
  
 
-### XAML
+#### XAML
 
-XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例如動畫、腳本、資料繫結、可調整的向量式圖形、動態調整大小及場景圖形。 XAML 非常適用於遊戲 UI、功能表、精靈及 2D 圖形。 為了讓 UI 版面配置變得簡單，XAML 與設計及開發工具 (例如 Expression Blend 與 Microsoft Visual Studio) 相容。 XAML 經常與 C# 搭配使用，但是如果您偏好使用 C++ 語言，或是您的遊戲對 CPU 的要求較高，那麼 C++ 也是一個很好的選擇。
+XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例如動畫、腳本、資料繫結、可調整的向量式圖形、動態調整大小及場景圖形。 XAML 非常適用於遊戲 UI、功能表、精靈及 2D 圖形。 為了簡化 UI 版面配置，XAML 與設計及開發工具相容，例如 Expression Blend 與 Microsoft Visual Studio。 XAML 經常與 C# 搭配使用，但是如果您偏好使用 C++ 語言，或是您的遊戲對 CPU 的要求較高，那麼 C++ 也是一個很好的選擇。
 
 <table>
     <colgroup>
@@ -378,9 +387,9 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
 </table>
  
 
-### HTML 5
+#### HTML 5
 
-超文字標記語言 (HTML) 是用於網頁、應用程式及豐富型用戶端的常用 UI 標記語言。 Windows 遊戲可以使用 HTML5 做為完整的功能展示層，此展示層具備熟悉的 HTML 功能、可存取「通用 Windows 平台」，以及支援新式 Web 功能 (例如 AppCache、Web 工作者、畫布、拖放、非同步程式設計及 SVG)。 HTML 轉譯可在幕後利用 DirectX 硬體加速能力，因此您仍然可以享有 DirectX 的效能優點，而不需撰寫任何額外的程式碼。 如果您精通 Web 開發、移植 Web 遊戲，或是想要使用比其他選項更容易著手的語言和圖形層，HTML5 會是一個很好的選擇。 HTML5 是與 JavaScript 搭配使用，但也可以呼叫使用 C# 或 C++/CX 建立的元件。
+超文字標記語言 (HTML) 是用於網頁、應用程式及豐富型用戶端的常用 UI 標記語言。 Windows 遊戲可以使用 HTML5 做為具備 HTML 熟悉功能、可存取 Universal Windows Platform，以及支援現代化 Web 功能 (例如 AppCache、Web 工作者、畫布、拖放功能、非同步程式設計及 SVG) 的完整功能展示層。 HTML 轉譯可在幕後利用 DirectX 硬體加速能力，因此您仍然可以享受到 DirectX 的效能優點，不需要撰寫任何額外的程式碼。 如果您精通 Web 開發、移植 Web 遊戲，或想要使用語言和圖形層，HTML5 是一個很好的選擇，比其他選擇更容易讓您完成工作。 HTML5 是與 JavaScript 搭配使用，但也可以呼叫使用 C# 或 C++/CX 建立的元件。
 
 <table>
     <colgroup>
@@ -398,7 +407,7 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
 </table>
  
 
-### 結合呈現技術
+#### 結合呈現技術
 
 Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術的互通性與相容性。 針對高效能圖形，您可以結合 XAML 與 DirectX，將 XAML 用於功能表與其他簡單的 UI，然後將 DirectX 用於轉譯複雜的 2D 與 3D 場景。 DXGI 也提供 Direct2D、Direct3D、DirectWrite、DirectCompute 及 Microsoft Media Foundation 之間的相容性。
 
@@ -418,9 +427,9 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術�
 </table>
  
 
-### C++
+#### C++
 
-C++/CX 是一種高效能、低額外負荷的語言，可提供兼具速度、相容性及平台存取的強大組合。 C++/CX 可讓您很容易地使用 Windows 10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C++/CX 可建立快速、原生且不會導致產生記憶體回收額外負荷的程式碼，因此您的遊戲可以兼具效能優越與耗電量低的優點，進而延長電池壽命。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
+C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、相容性及平台存取的強大效能。 C++/CX 可讓您很容易地使用 Windows 10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C++/CX 可建立快速、原生，且不會因收集廢棄項目而產生額外負荷的程式碼，所以您的城市可以擁有優越的效能與低耗電量，進而延長電池使用時間。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
 
 <table>
     <colgroup>
@@ -438,9 +447,9 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供兼具速度、�
 </table>
  
 
-### C#
+#### C#
 
-C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向的新式、創新語言。 C# 可讓您快速進行開發，同時又保有 C 式語言的熟悉性與表達方式。 C# 雖然容易使用，但它也有許多先進的語言功能，例如多型、委派、Lambda、關閉、Iterator 方法、共變數，以及 Language-Integrated Query (LINQ) 運算式。 如果您的目標是 XAML、想要快速開始開發您的遊戲，或之前有使用過 C# 的經驗，C# 就會是您的絕佳選擇。 C# 主要是與 XAML 搭配使用，因此如果您想要使用 DirectX，請改為選擇 C++，或將遊戲的部分內容撰寫成與 DirectX 互動的 C++ 元件。 或是考慮使用 [Win2D](https://github.com/Microsoft/Win2D)，這是一種適用於 C# 與 C++ 的直接模式 Direct2D 圖形程式庫。
+C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向的新式、創新語言。 C# 可讓您快速進行開發，同時保有 C 式語言的熟悉性與運算式表示方式。 C# 雖然容易使用，但它也有許多先進的語言功能，例如多型、委派、關閉、Iterator 方法、共變數，及 Language-Integrated Query (LINQ) 運算式。 如果您的目標是 XAML、想要快速開始開發您的遊戲，或之前有使用過 C# 的經驗，C# 就會是您的最佳選擇。 C# 主要是與 XAML 搭配使用，因此如果您想要使用 DirectX，請改為選擇 C++，或將遊戲的部分內容撰寫成與 DirectX 互動的 C++ 元件。 或是考慮使用 [Win2D](https://github.com/Microsoft/Win2D)，這是一種適用於 C# 與 C++ 的直接模式 Direct2D 圖形程式庫。
 
 <table>
     <colgroup>
@@ -454,11 +463,11 @@ C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向�
 </table>
  
 
-### JavaScript
+#### JavaScript
 
-JavaScript 是一種動態指令碼語言，廣泛地使用在新式 Web 與豐富型用戶端應用程式中。
+JavaScript 是一種動態指令碼語言，廣泛地使用在現代化網站與豐富型用戶端應用程式中。
 
-Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物件導向之 JavaScript 類別的方法與屬性) 存取「通用 Windows 平台」的強大功能。 如果您來自 Web 開發環境且已經熟悉 JavaScript，或是想要使用 HTML5、CSS、WinJS 或 JavaScript 程式庫，JavaScript 就會是您遊戲的良好選擇。 如果您的目標是 DirectX 或 XAML，請改為選擇 C# 或 C++/CX。
+Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物件導向之 JavaScript 類別的方法與屬性) 存取 Universal Windows Platform 的強大功能。 如果您是在 Web 開發環境中，且已經很熟悉 JavaScript，或想要使用 HTML5、CSS、WinJS 或 JavaScript 程式庫，JavaScript 是您的遊戲適用的好選擇。 如果您的目標是 DirectX 或 XAML，請改為選擇 C# 或 C++/CX。
 
 <table>
     <colgroup>
@@ -472,9 +481,9 @@ Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物�
 </table>
 
 
-### 使用 Windows 執行階段元件來結合語言
+#### 使用 Windows 執行階段元件來結合語言
 
-有了「通用 Windows 平台」，結合以不同語言撰寫的元件就變得相當簡單。 您可以使用 C++、C# 或 Visual Basic 來建立 Windows 執行階段元件，然後從 JavaScript、C#、C++ 或 Visual Basic 呼叫那些元件。 這是使用您選擇的語言進行遊戲某些部分之程式設計的絕佳方式。 元件也可以讓您取用只以特定語言提供的外部程式庫，以及使用您已經撰寫完成的舊有程式碼。
+有了「通用 Windows 平台」，結合以不同語言撰寫的元件就變得相當簡單。 使用 C++、C# 或 Visual Basic 建立 Windows 執行階段元件，然後從 JavaScript、C#、C++ 或 Visual Basic 使用那些元件。 這是以您選擇的語言為遊戲的某些部分撰寫程式碼的絕佳方式。 元件也可以讓您取用只以特定語言提供的外部程式庫，以及使用您已經撰寫完成的舊有程式碼。
 
 <table>
     <colgroup>
@@ -492,11 +501,9 @@ Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物�
 
 如果您要為您的遊戲選擇 DirectX，您將需要決定要使用哪一個版本：Microsoft Direct3D 12 或 Microsoft Direct3D 11。
 
-Direct3D 11.3 是一個使用熟悉的 Direct3D 程式設計模型的低層階圖形 API。 Direct3D 11 仍是通用 Windows app 的一個選項，您將可以使用 Direct3D 11.3 中加入的新轉譯與最佳化功能。
+Windows 10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows 10 電腦與 Xbox One 提供了最佳化的圖形。 由於 Direct3D 12 的運作層級非常低，因此它可以提供專業的圖形開發團隊或有經驗的 DirectX 11 開發團隊所有所需的控制，以最大化圖形最佳化。
 
-Direct3D 12 是 Windows 10 中的新功能，並且導入了新的管線程式設計模型。 Direct3D 12 與硬體較接近、使用較少的抽象概念，並可讓您的遊戲在資源的使用上有更好的控制。 Direct3D 12 提供更好的 CPU、GPU 及電源效能。
-
-如果您有以 Direct3D 11 撰寫的現有引擎，並且尚未準備好改用 Direct3D 12， 則您可以 Direct3D 11 on 12 來達到一些效能改進，然後再開始轉換到 Direct3D 12。
+Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模型，並且可以為您處理更多 GPU 轉譯所牽涉到的複雜度。 Windows 10 與 Xbox One 也支援它。 如果您有以 Direct3D 11 撰寫的現有引擎，並且尚未準備好改用 Direct3D 12，則您可以在 Direct3D 12 上使用 Direct3D 11 來達到一些效能改進。 11.3 以上的版本包含新的轉譯與最佳化功能，這些功能也可以在 Direct3D 12 中啟用。
 
 <table>
     <colgroup>
@@ -546,7 +553,7 @@ Direct3D 12 是 Windows 10 中的新功能，並且導入了新的管線程式�
 </table>
  
 
-### 通用 Windows 平台橋接
+#### 通用 Windows 平台橋接
 
 「通用 Windows 平台橋接」是可將您現有的應用程式或遊戲轉移到 UWP 的技術。 橋接是快速展開 UWP 遊戲開發的絕佳方式。
 
@@ -570,7 +577,7 @@ Direct3D 12 是 Windows 10 中的新功能，並且導入了新的管線程式�
 </table>
  
 
-### Unity
+#### Unity
 
 Unity 5 是獲得獎項肯定、用於建立 2D 與3D 遊戲及互動式體驗的新一代開發平台。 Unity 5 不僅提供新的藝術表現能力，也提供增強的圖形功能及更高的效率。
 
@@ -612,7 +619,7 @@ Unity 5 是獲得獎項肯定、用於建立 2D 與3D 遊戲及互動式體驗�
 </table>
  
 
-### Havok
+#### Havok
 
 Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動與沉浸式情境層級。 Havok 能夠實現極逼真的物理效果、互動式模擬及令人驚豔的場景。
 
@@ -636,7 +643,7 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
 </table>
  
 
-### Cocos2d
+#### Cocos2d
 
 Cocos2d-X 是一個跨平台的開放原始碼遊戲開發引擎與工具套件，可支援建置 UWP 遊戲。 從第 3 版開始，也新增了 3D 功能。
 
@@ -664,7 +671,7 @@ Cocos2d-X 是一個跨平台的開放原始碼遊戲開發引擎與工具套件�
 </table>
 
 
-### Unreal Engine
+#### Unreal Engine
 
 Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲與開發人員採用。 全球的遊戲開發人員都使用 Unreal Engine 來處理對效能要求最高的遊戲主機與電腦遊戲。 訂閱 Unreal Engine 4 的 [DirectX 12 優先使用計畫](#dxeap)成員將可獲得存取權來存取支援 DirectX 12 的 Unreal Engine 4.4 開發專案。
 
@@ -901,9 +908,9 @@ UWP 的目標是要擁有：
 </table>
  
 
-### 色彩指南與調色盤
+#### 色彩指南與調色盤
 
-在您的遊戲中遵循一致的色彩指導方針除了可增加美學質感、協助瀏覽，還是一個可協助玩家使用功能表與 HUD 功能的強大手段。 讓遊戲元素 (例如警告、損毀、XP 及成就) 採用一致的色調可使 UI 更清晰，而降低使用明確標籤的需求。
+在您的遊戲中遵循一致的色彩指南可增加美學質感、有助於瀏覽，且可成為協助遊戲玩家使用功能表與 HUD 功能的強大工具。 讓遊戲元素 (例如警告、損毀、XP 及成就) 採用一致的色調可使 UI 更清晰，而降低使用明確標籤的需求。
 
 <table>
     <colgroup>
@@ -917,7 +924,7 @@ UWP 的目標是要擁有：
 </table>
  
 
-### 印刷樣式
+#### 印刷樣式
 
 適當使用印刷樣式可增強遊戲的許多方面，包括 UI 版面配置、導覽、可讀性、氛圍、品牌及玩家沉浸度。
 
@@ -933,7 +940,7 @@ UWP 的目標是要擁有：
 </table>
  
 
-### UI 對應
+#### UI 對應
 
 UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 UI 對應有助於讓所有相關的專案關係人了解遊戲的介面與導覽路徑，而可以在開發週期中早日揭露潛在的障礙與無法解決的問題。
 
@@ -951,6 +958,8 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
 
 ### DirectX 開發
 
+DirectX 遊戲開發的指南與參考資料。
+
 <table>
     <colgroup>
     <col width="50%" />
@@ -965,6 +974,10 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
         <td>[App 物件和 DirectX](about-the-metro-style-user-interface-and-directx.md)</td>
     </tr>
     <tr>
+        <td>圖形與 DirectX 12 開發影片 (YouTube 頻道)</td>
+        <td>[Microsoft DirectX 12 與圖形教育訓練](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
+    </tr>
+    <tr>
         <td>DirectX 概觀與參考</td>
         <td>[DirectX 圖形與遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
     </tr>
@@ -977,9 +990,45 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
         <td>[功能更強、效能更佳：DirectX 12 的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12)</td>
     </tr>
 </table>
- 
 
-「DirectX 工具組」、DirectX 紋理處理程式庫和 DirectXMesh 幾何處理程式庫提供紋理、網格、精靈及其他公用程式功能與協助程式類別來進行 DirectX 開發。 與您自己實作這些功能相比，這些程式庫可以節省很多時間和精力。 雖然這些程式庫主要是針對 Direct3D 11 進行實作，但某些部分在 Direct3D 12 中也可以運作。
+#### 了解 Direct3D 12
+
+了解 Direct3D 12 中的變更，和如何使用 Direct3D 12 開始進行程式設計。 
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>設定程式設計環境</td>
+        <td>[Direct3D 12 程式設計環境設定](https://msdn.microsoft.com/library/windows/desktop/dn899120.aspx)</td>
+    </tr>
+    <tr>
+        <td>如何建立基本元件</td>
+        <td>[建立基本的 Direct3D 12 元件](https://msdn.microsoft.com/library/windows/desktop/dn859356.aspx)</td>
+    </tr>
+    <tr>
+        <td>Direct3D 12 中的變更</td>
+        <td>[從 Direct3D 11 移轉到 Direct3D 12 的重要變更](https://msdn.microsoft.com/library/windows/desktop/dn899194.aspx)</td>
+    </tr>
+    <tr>
+        <td>如何從 Direct3D 11 移植到 Direct3D 12</td>
+        <td>[從 Direct3D 11 移植到 Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/mt431709.aspx)</td>
+    </tr>
+    <tr>
+        <td>資源繫結概念 (涵蓋描述元、描述元表、描述元堆積及根簽章) </td>
+        <td>[Direct3D 12 中的資源繫結](https://msdn.microsoft.com/library/windows/desktop/dn899206.aspx)</td>
+    </tr>
+    <tr>
+        <td>管理記憶體</td>
+        <td>[Direct3D 12 中的記憶體管理](https://msdn.microsoft.com/library/windows/desktop/dn899198.aspx)</td>
+    </tr>
+</table>
+ 
+#### DirectX 工具組和程式庫
+
+DirectX 工具組、DirectX 紋理處理程式庫及 DirectXMesh 幾何處理程式庫提供紋理、網格、精靈及其他公用程式功能與協助程式類別來進行 DirectX 開發。 與您自己實作這些功能相比，這些程式庫可以節省很多時間和精力。 雖然這些程式庫主要是針對 Direct3D 11 進行實作，但某些部分在 Direct3D 12 中也可以運作。
 
 <table>
     <colgroup>
@@ -1001,6 +1050,33 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     <tr>
         <td>DirectXTK 中的 Direct3D 12 支援 (部落格文章)</td>
         <td>[DirectX 12 支援](https://github.com/Microsoft/DirectXTK/issues/2)</td>
+    </tr>
+</table>
+
+#### 來自合作伙伴的 DirectX 資源
+
+以下是一些由外部合作伙伴所建立的其他 DirectX 文件。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Nvidia：DX12 可行與禁止事項 (部落格文章) </td>
+        <td>[Nvidia GPU 上的 DirectX 12](https://developer.nvidia.com/dx12-dos-and-donts-updated)</td>
+    </tr>
+    <tr>
+        <td>Intel：使用 DirectX 12 有效率地轉譯</td>
+        <td>[Intel Graphics 上的 DirectX 12 轉譯](https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf)</td>
+    </tr>
+    <tr>
+        <td>Intel︰DirectX 12 中的多重介面卡支援</td>
+        <td>[如何使用 DirectX 12 實作明確的多重介面卡應用程式](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+    </tr>
+    <tr>
+        <td>Intel：DirectX 12 教學課程</td>
+        <td>[Intel、Suzhou Snail 及 Microsoft 的共同作業白皮書](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1071,7 +1147,7 @@ IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP
  
 ### 偵錯和效能監視工具
 
-Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 另一個用於產生傾印檔案以調查遊戲當機的好用工具是 ProcDump，它是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部份
+Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 另一個用於產生傾印檔案以調查遊戲當機的好用工具是 ProcDump，它是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部份。
 
 <table>
     <colgroup>
@@ -1122,6 +1198,10 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td>[使用 DirectX 工具解決遊戲難纏的圖形問題](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools)</td>
     </tr>
     <tr>
+        <td>適用於偵錯 DirectX 12 的 Visual Studio 2015 工具 (影片)</td>
+        <td>[Visual Studio 2015 中適用於 Windows 10 的 DirectX 工具](https://channel9.msdn.com/Series/ConnectOn-Demand/212)</td>
+    </tr>
+    <tr>
         <td>Direct3D 12 程式設計指南</td>
         <td>[Direct3D 12 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
     </tr>
@@ -1130,25 +1210,6 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td>[DirectX 與 XAML 互通性](directx-and-xaml-interop.md)</td>
     </tr>
 </table>
- 
-
-Microsoft DirectX 產品小組製作了一系列有關 DirectX 12 開發的深入影片。 它們涵蓋資源繫結、呈現模式、偵錯、資源障礙及許多其他 DirectX 12 概念的詳細資料。 這個系列有時也邀請來賓擔任主講。
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>圖形與 DirectX 12 開發影片 (YouTube 頻道)</td>
-        <td>[Microsoft DirectX 12 與圖形教育訓練](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-    <tr>
-        <td>Direct3D 12 資源與堆積管理 (影片)</td>
-        <td>[DirectX 12 中的堆積與資源](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-</table>
- 
 
 ### 全球化與當地語系化
 
@@ -1385,6 +1446,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

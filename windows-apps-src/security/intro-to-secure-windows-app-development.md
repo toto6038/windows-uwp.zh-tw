@@ -394,9 +394,7 @@ Windows 應用程式可以實行 MAC 訊息驗證，方法是藉由呼叫 [**Mac
 
 雜湊函數是使用任意長度的資料區塊的密碼編譯演算法，會傳回一個固定大小位元字串，稱為雜湊值。 有一整個系列的雜湊函數可以執行這項操作。
 
-雜湊值可用來取代上述訊息傳輸案例中的 MAC。 寄件者會傳送雜湊值和一則訊息，收件者從寄件者的雜湊值和訊息衍生其雜湊值，並比較兩個雜湊值。 Windows 10 上執行的 app 可以呼叫 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 類別來列舉可用的雜湊演算法，並執行其中一個演算法。 [
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別代表雜湊值。 [
-            **CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 **CryptographicHash** 類別的 Append 方法會將新資料加入要雜湊的緩衝區。 下列 C# 程式碼範例將示範這整個過程。
+雜湊值可用來取代上述訊息傳輸案例中的 MAC。 寄件者會傳送雜湊值和一則訊息，收件者從寄件者的雜湊值和訊息衍生其雜湊值，並比較兩個雜湊值。 Windows 10 上執行的 app 可以呼叫 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 類別來列舉可用的雜湊演算法，並執行其中一個演算法。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別代表雜湊值。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 **CryptographicHash** 類別的 Append 方法會將新資料加入要雜湊的緩衝區。 下列 C# 程式碼範例將示範這整個過程。
 
 ```cs
 public void SampleReusableHash()

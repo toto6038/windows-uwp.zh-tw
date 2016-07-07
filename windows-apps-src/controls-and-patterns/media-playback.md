@@ -35,7 +35,8 @@ Windows 10 入門 app 中的媒體元素。
 ## 建立媒體播放器
 使用 XAML 建立 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 物件來新增媒體到您的 app，並將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 設定成指向音訊或視訊檔案的統一資源識別項 (URI)。
 
-此 XAML 會建立 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 並將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定成指向 app 本機的視訊檔案的 URI。 **MediaElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) 屬性設定成 **false**。
+此 XAML 會建立 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 並將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定成指向 app 本機的視訊檔案的 URI。 
+            **MediaElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) 屬性設定成 **false**。
 
 ```xaml
 <MediaElement x:Name="mediaSimple" 
@@ -74,7 +75,8 @@ MediaElement 具有內建的傳輸控制項，可處理播放、停止、暫停�
 ### 設定媒體來源
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定為檔案的路徑。
 
-**提示：**若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+
+            **提示：**若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
@@ -197,7 +199,9 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### 設定海報來源
-您可以使用 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) 屬性，在載入媒體之前，為 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供視覺表示。 **PosterSource** 是影像，例如螢幕擷取畫面或電影海報，會取代媒體顯示。 **PosterSource** 會在下列情況顯示：
+您可以使用 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) 屬性，在載入媒體之前，為 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供視覺表示。 
+            **PosterSource** 是影像，例如螢幕擷取畫面或電影海報，會取代媒體顯示。 
+            **PosterSource** 會在下列情況顯示：
 
 -   未設定有效的來源。 例如，未設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419)、已將 **Source** 設定為 **Null**，或來源無效 (如同發生 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/br227393) 事件的情況)。
 -   媒體正在載入時。 例如，已設定有效來源，但尚未發生 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件。
@@ -211,7 +215,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### 讓裝置的螢幕保持使用中
-裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [
+裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 
+            [
               **DisplayRequest**
             ](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
 
@@ -270,7 +275,8 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
     ```
 
 ### 以程式設計方式控制媒體播放器
-[
+
+            [
               **MediaElement**
             ](https://msdn.microsoft.com/library/windows/apps/br242926) 提供許多屬性、方法及事件來控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 參考頁面。
     
@@ -320,7 +326,8 @@ private bool SetAudioLanguage(string lcid, MediaElement media)
 
 ### 啟用完整視窗視訊呈現
 
-設定 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) 屬性來啟用和停用完整視窗呈現。 如果要在 app 中以程式設計方式設定完整視窗呈現，您應該一律使用 **IsFullWindow** 而不是手動進行。 **IsFullWindow** 可保證執行系統層級最佳化，以增進效能及電池壽命。 如果未正確設定完整視窗呈現，將不會啟用這些最佳化。
+設定 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) 屬性來啟用和停用完整視窗呈現。 如果要在 app 中以程式設計方式設定完整視窗呈現，您應該一律使用 **IsFullWindow** 而不是手動進行。 
+            **IsFullWindow** 可保證執行系統層級最佳化，以增進效能及電池壽命。 如果未正確設定完整視窗呈現，將不會啟用這些最佳化。
 
 以下的部分程式碼會建立能切換完整視窗呈現的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244)。
 
@@ -339,22 +346,28 @@ private void FullWindow_Click(object sender, object e)
 
 ### 調整視訊大小和延展視訊
 
-使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性，來變更視訊內容填入所在容器的方式。 視 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值而定，這樣做可能會延展視訊。 **Stretch** 狀態和許多電視機上的影像大小設定類似。 您可以將勾點設定在按鈕上，並允許使用者依偏好選擇所要的設定。
+使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性，來變更視訊內容填入所在容器的方式。 視 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值而定，這樣做可能會延展視訊。 
+            **Stretch** 狀態和許多電視機上的影像大小設定類似。 您可以將勾點設定在按鈕上，並允許使用者依偏好選擇所要的設定。
 
--   [
+-   
+            [
               **None**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) 會以原始大小顯示內容的原生解析度。
--   [
+-   
+            [
               **Uniform**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) 會盡可能地填滿空間，同時維持影像內容的外觀比例。 這會導致視訊邊緣出現水平或垂直的黑色長條。 這和寬螢幕模式類似。
--   [
+-   
+            [
               **UniformToFill**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿個空間，同時維持外觀比例。 這會導致部分影像被裁切。 這和全螢幕模式類似。
--   [
+-   
+            [
               **Fill**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
 
-![伸展列舉值](images/Image_Stretch.jpg) 此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
+![伸展列舉值](images/Image_Stretch.jpg) 此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 
+            **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
 
 ```xaml
 <AppBarButton Icon="Switch" 

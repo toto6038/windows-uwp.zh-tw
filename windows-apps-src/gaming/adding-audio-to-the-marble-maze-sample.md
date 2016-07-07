@@ -38,8 +38,7 @@ XAudio2 是專門支援遊戲音訊的 Windows 低階音訊程式庫。 這個�
 
 [XAudio2 主要概念](https://msdn.microsoft.com/library/windows/desktop/ee415764)文件說明使用 XAudio2 的主要概念。 簡單來說，這些概念包括：
 
--   [
-            **IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 介面是 XAudio2 引擎的核心。 Marble Maze 使用此介面來建立音效，以及在輸出裝置變更或故障時接收通知。
+-   [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 介面是 XAudio2 引擎的核心。 Marble Maze 使用此介面來建立音效，以及在輸出裝置變更或故障時接收通知。
 -   「聲音」會處理、調整及播放音訊資料。
 -   「來源音」是音訊頻道的集合 (單聲道、5.1 等)，代表一個音訊資料流。 在 XAudio2 中，來源音是音訊處理的起點。 一般而言，會從外部來源 (例如檔案或網路) 載入音效資料，然後傳送至來源音。 Marble Maze 使用[媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)從檔案載入音效資料。 本文件稍後會介紹媒體基礎。
 -   「副混音」會處理音訊資料。 此處理可能包括變更音訊資料流，或將多個資料流合而為一。 Marble Maze 使用副混音來建立殘響效果。
@@ -125,8 +124,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-[
-            **XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 結構包含可供用於效果鏈的 XAPO 相關資訊，例如輸出通道目標數。 **Audio::CreateReverb** 方法會建立 **XAUDIO2\_EFFECT\_DESCRIPTOR** 物件，此物件設為停用狀態、使用兩個輸出通道，並且參照殘響效果的 [**IXAudio2SubmixVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415915) 物件。 **XAUDIO2\_EFFECT\_DESCRIPTOR** 物件最初為停用狀態，因為在效果開始修改遊戲音效之前，遊戲必須先設定參數。 Marble Maze 使用兩個輸出通道來簡化殘響效果的邏輯。
+[**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 結構包含可供用於效果鏈的 XAPO 相關資訊，例如輸出通道目標數。 **Audio::CreateReverb** 方法會建立 **XAUDIO2\_EFFECT\_DESCRIPTOR** 物件，此物件設為停用狀態、使用兩個輸出通道，並且參照殘響效果的 [**IXAudio2SubmixVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415915) 物件。 **XAUDIO2\_EFFECT\_DESCRIPTOR** 物件最初為停用狀態，因為在效果開始修改遊戲音效之前，遊戲必須先設定參數。 Marble Maze 使用兩個輸出通道來簡化殘響效果的邏輯。
 
 ```cpp
 soundEffectdescriptor.InitialState = false;
@@ -134,8 +132,7 @@ soundEffectdescriptor.OutputChannels = 2;
 soundEffectdescriptor.pEffect = soundEffectXAPO.Get();
 ```
 
-如果效果鏈有多個效果，則每個效果都需要一個物件。 [
-            **XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 結構會保存參與效果的 [**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 物件陣列。 下列範例顯示 **Audio::CreateReverb** 方法如何指定一個效果來實作殘響。
+如果效果鏈有多個效果，則每個效果都需要一個物件。 [**XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 結構會保存參與效果的 [**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 物件陣列。 下列範例顯示 **Audio::CreateReverb** 方法如何指定一個效果來實作殘響。
 
 ```cpp
 soundEffectChain.EffectCount = 1;
@@ -154,9 +151,7 @@ DX::ThrowIfFailed(
 
  
 
-[
-            **Audio::XAudio2CreateReverb**](https://msdn.microsoft.com/library/windows/desktop/ee419213) 方法會呼叫 [**IXAudio2Voice::SetEffectParameters**](https://msdn.microsoft.com/library/windows/desktop/ee418595) 來設定與效果相關聯的其他參數。 這個方法使用效果特有的參數結構。 [
-            **XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) 物件 (包含殘響的效果參數) 會在 **Audio::Initialize** 方法中初始化，因為每個殘響效果共用相同的參數。 下列範例顯示 **Audio::Initialize** 方法如何初始化近距離殘響的殘響參數。
+[**Audio::XAudio2CreateReverb**](https://msdn.microsoft.com/library/windows/desktop/ee419213) 方法會呼叫 [**IXAudio2Voice::SetEffectParameters**](https://msdn.microsoft.com/library/windows/desktop/ee418595) 來設定與效果相關聯的其他參數。 這個方法使用效果特有的參數結構。 [**XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) 物件 (包含殘響的效果參數) 會在 **Audio::Initialize** 方法中初始化，因為每個殘響效果共用相同的參數。 下列範例顯示 **Audio::Initialize** 方法如何初始化近距離殘響的殘響參數。
 
 ```cpp
 m_reverbParametersSmall.ReflectionsDelay = XAUDIO2FX_REVERB_DEFAULT_REFLECTIONS_DELAY;
@@ -264,8 +259,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-**MediaStreamer::Initialize** 方法接著建立 [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) 物件來描述音訊資料流的格式。 音訊格式有兩種類型：「主類型」及「子類型」。 主類型定義媒體的整體格式，例如視訊、音訊、指令碼等。 子類型定義 PCM、ADPCM 或 WMA 等格式。 **MediaStreamer::Initialize** 方法使用 [**IMFMediaType::SetGUID**](https://msdn.microsoft.com/library/windows/desktop/bb970530) 方法來指定主要類型為音訊 (**MFMediaType\_Audio**)，並指定次要類型為未壓縮的 PCM 音訊 (**MFAudioFormat\_PCM**)。 [
-            **IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 方法會將媒體類型與資料流讀取器產生關聯。
+**MediaStreamer::Initialize** 方法接著建立 [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) 物件來描述音訊資料流的格式。 音訊格式有兩種類型：「主類型」及「子類型」。 主類型定義媒體的整體格式，例如視訊、音訊、指令碼等。 子類型定義 PCM、ADPCM 或 WMA 等格式。 **MediaStreamer::Initialize** 方法使用 [**IMFMediaType::SetGUID**](https://msdn.microsoft.com/library/windows/desktop/bb970530) 方法來指定主要類型為音訊 (**MFMediaType\_Audio**)，並指定次要類型為未壓縮的 PCM 音訊 (**MFAudioFormat\_PCM**)。 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 方法會將媒體類型與資料流讀取器產生關聯。
 
 ```cpp
 // Set the decoded output format as PCM. 
@@ -358,10 +352,7 @@ enum SoundEvent
 
  
 
-下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的來源音。 [
-            **IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) 方法會建立並設定來源音。 這個方法採用 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 結構，而此結構會定義傳送至音效的音訊緩衝區格式。 如前所述，Marble Maze 使用 PCM 格式。 [
-            **XAUDIO2\_SEND\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419244) 結構會定義其他音效的目標音效，並指定是否應該使用篩選器。 Marble Maze 會呼叫 **Audio::SetSoundEffectFilter** 函式來使用篩選器，以在彈珠滾動時變更音效。 [
-            **XAUDIO2\_VOICE\_SENDS**](https://msdn.microsoft.com/library/windows/desktop/ee419246) 結構定義一組音效來接收單一輸出音效的資料。 Marble Maze 會將來源音的資料傳送至主控音 (音效播放的「原始音」或未修飾部分) 及兩個副混音 (實作音效播放的「效果音」或迴響部分)。
+下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的來源音。 [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) 方法會建立並設定來源音。 這個方法採用 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 結構，而此結構會定義傳送至音效的音訊緩衝區格式。 如前所述，Marble Maze 使用 PCM 格式。 [**XAUDIO2\_SEND\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419244) 結構會定義其他音效的目標音效，並指定是否應該使用篩選器。 Marble Maze 會呼叫 **Audio::SetSoundEffectFilter** 函式來使用篩選器，以在彈珠滾動時變更音效。 [**XAUDIO2\_VOICE\_SENDS**](https://msdn.microsoft.com/library/windows/desktop/ee419246) 結構定義一組音效來接收單一輸出音效的資料。 Marble Maze 會將來源音的資料傳送至主控音 (音效播放的「原始音」或未修飾部分) 及兩個副混音 (實作音效播放的「效果音」或迴響部分)。
 
 ```cpp
 XAUDIO2_SEND_DESCRIPTOR descriptors[3];
@@ -726,8 +717,7 @@ public :
 };
 ```
 
-[
-            **IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) 介面可以在發生音訊處理事件及引擎遇到嚴重錯誤時通知您的程式碼。 為了註冊回呼，Marble Maze 在建立音樂引擎的 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件之後會呼叫 [**IXAudio2::RegisterForCallbacks**](https://msdn.microsoft.com/library/windows/desktop/ee418620) 方法。
+[**IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) 介面可以在發生音訊處理事件及引擎遇到嚴重錯誤時通知您的程式碼。 為了註冊回呼，Marble Maze 在建立音樂引擎的 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件之後會呼叫 [**IXAudio2::RegisterForCallbacks**](https://msdn.microsoft.com/library/windows/desktop/ee418620) 方法。
 
 ```cpp
 m_musicEngineCallback.Initialize(this);

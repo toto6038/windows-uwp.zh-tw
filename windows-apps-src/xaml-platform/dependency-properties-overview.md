@@ -1,15 +1,19 @@
 ---
 author: jwmsft
-description: 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
-title: 相依性屬性概觀
+description: "這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。"
+title: "相依性屬性概觀"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
+translationtype: Human Translation
+ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
+ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+
 ---
 
 # 相依性屬性概觀
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。
+這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
 
 ## 什麼是相依性屬性？
 
@@ -44,8 +48,7 @@ ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 | 詞彙 | 說明 |
 |------|-------------|
 | 相依性屬性 | 存在於 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼的屬性 (如下所示)。 這個識別碼通常是以負責定義 **DependencyObject** 衍生類別的靜態成員方式來提供。 |
-| 相依性屬性識別碼 | [
-            **SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，這是它通常是公用的原因，即使它是唯讀的。 |
+| 相依性屬性識別碼 | [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，這是它通常是公用的原因，即使它是唯讀的。 |
 | 屬性包裝函式 | Windows 執行階段屬性的可呼叫 **get** 與 **set** 實作。 或者是語言特定的原始定義投影。 **get** 屬性包裝函式實作會呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，將相關的相依性屬性識別碼傳遞為輸入，並傳遞要設為第二個輸入的值。 | 
 
 屬性包裝函式不只對呼叫者方便，也可以向使用 Windows 執行階段屬性定義的任何程序、工具或投影公開相依性屬性。
@@ -166,12 +169,11 @@ public bool IsSpinning
 
 您可以使用腳本動畫將相依性屬性的值製作成動畫。 Windows 執行階段中的腳本動畫不僅僅是視覺裝飾。 這在考慮將動畫做為狀態機器技術時更有用，這類技術可設定個別屬性的值或所有屬性的值以及控制項的視覺效果，並且在一段時間後變更這些值。
 
-若要動畫化，動畫的目標屬性必須是相依性屬性。 此外，若要動畫化，現有的 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 衍生動畫類型之一必須支援目標屬性的值類型。 [
-            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](T:System.Double) 及 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可以使用內插補點或主要畫面格技術來製作動畫效果。 大部分的其他值可以使用分離的 **Object** 主要畫面格來製作動畫效果。
+若要動畫化，動畫的目標屬性必須是相依性屬性。 此外，若要動畫化，現有的 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 衍生動畫類型之一必須支援目標屬性的值類型。 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) 及 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可以使用內插補點或主要畫面格技術來製作動畫效果。 大部分的其他值可以使用分離的 **Object** 主要畫面格來製作動畫效果。
 
 套用與執行動畫時，動畫化的值的優先順序高於屬性另外包含的任何值 (像是本機值)。 動畫也包含一個選擇性的 [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 行為，即使動畫看起來像是已停止，仍會造成動畫套用到屬性值。
 
-狀態電腦原則的具體表現方式是使用腳本動畫做為控制項的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 狀態模型的一部分。 如需腳本動畫的詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需 **VisualStateManager** 和定義控制項視覺狀態的詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)或[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
+狀態電腦原則的具體表現方式是使用腳本動畫做為控制項的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 狀態模型的一部分。 如需腳本動畫的詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需 **VisualStateManager** 和定義控制項視覺狀態的詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)或[控制項範本](../controls-and-patterns/control-templates.md)。
 
 ### 屬性變更的行為
 
@@ -187,8 +189,7 @@ public bool IsSpinning
 
 所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段應用程式所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
 
-[
-            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
+[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
 
 ## 相關主題
 
@@ -205,6 +206,7 @@ public bool IsSpinning
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

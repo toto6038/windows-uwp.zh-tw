@@ -6,8 +6,8 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
 
 ---
 # 自動建議方塊
@@ -15,7 +15,7 @@ ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
 
 ![自動建議方塊](images/controls/auto-suggest-box-open.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+
 
 -   [**AutoSuggestBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 -   [**TextChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
@@ -39,7 +39,7 @@ Groove 音樂 app 中的自動建議方塊。
 
 ![自動建議控制項的進入點範例](images/controls_autosuggest_entrypoint.png)
 
-當使用者開始輸入文字，自動建議結果清單就會自動產生。 結果清單可顯示在文字輸入方塊的上方或下方。 \[全部清除\] 按鈕將會出現：
+當使用者開始輸入文字，自動建議結果清單就會自動產生。 結果清單可顯示在文字輸入方塊的上方或下方。 [全部清除] 按鈕將會出現：
 
 ![展開的自動建議控制項範例](images/controls_autosuggest_expanded01.png)
 
@@ -76,27 +76,27 @@ QuerySubmitted 事件會在使用者確認查詢字串時發生。 使用者可�
 - 當焦點在文字方塊中時，按下 Enter 或按一下查詢圖示。 事件引數 [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) 屬性為 **null**。
 - 當焦點在建議清單中時，按下 Enter，按一下或點選項目。 事件引數 ChosenSuggestion property 包含從清單選取的項目。
 
-在所有情況下，事件引數 [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) 屬性都會包含來自文字方塊的文字。 
+在所有情況下，事件引數 [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) 屬性都會包含來自文字方塊的文字。
 
-### 使用 AutoSuggestBox 搜尋
+## 使用 AutoSuggestBox 搜尋
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-根據預設，文字輸入方塊沒有顯示 \[查詢\] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 \[尋找\] 圖示，如下所示。
+根據預設，文字輸入方塊沒有顯示 [查詢] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 [尋找] 圖示，如下所示。
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
 ```
 
-以下是包含 \[尋找\] 圖示的 AutoSuggestBox。
+以下是包含 [尋找] 圖示的 AutoSuggestBox。
 
 ![自動建議控制項的進入點範例](images/controls_autosuggest_entrypoint.png)
 
 ## 範例
 
-若要查看 AutoSuggestBox 的完整工作範例，請參閱 [AutoSuggestBox 移轉範例](http://go.microsoft.com/fwlink/p/?LinkId=619996)與 [XAML UI 基本功能範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)。
+若要查看 AutoSuggestBox 的完整運作範例，請參閱 [AutoSuggestBox 移轉範例](http://go.microsoft.com/fwlink/p/?LinkId=619996)與 [XAML UI 基本功能範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)。
 
-以下是包含所需事件處理常式的 AutoSuggestBox 範例。
+以下是一個包含所需事件處理常式的簡單 AutoSuggestBox 範例。
 
 ```xaml
 <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" Width="200"
@@ -108,8 +108,8 @@ QuerySubmitted 事件會在使用者確認查詢字串時發生。 使用者可�
 ```csharp
 private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
 {
-    // Only get results when it was a user typing, 
-    // otherwise assume the value got filled in by TextMemberPath 
+    // Only get results when it was a user typing,
+    // otherwise assume the value got filled in by TextMemberPath
     // or the handler for SuggestionChosen.
     if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
     {
@@ -144,6 +144,18 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![沒有搜尋結果的自動建議方塊範例](images/controls_autosuggest_noresults.png)
 
+{{&gt; aside-internal content = "
+## 全球化和當地語系化檢查清單
+
+<table>
+<tr>
+<th>垂直間距</th><td>在垂直間距使用非拉丁字元可確保非拉丁指令碼 (包括數字) 能夠正常顯示。</td>
+</tr>
+<tr>
+<th>捲動</th><td>已選取自動建議文字時，使用者應該能夠捲動到字串的結尾。</td>
+</tr>
+</table>
+"}}
 
 ## 相關文章
 
@@ -156,6 +168,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

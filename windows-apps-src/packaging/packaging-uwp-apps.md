@@ -16,10 +16,14 @@ ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
 
 針對 Windows 10，您要產生一個可上傳到 Windows 市集的套件 (.appxupload)。 您的應用程式就可供安裝，並可在任何 Windows 10 裝置上執行。 以下是建立應用程式套件的步驟。
 
-1.  [封裝您的應用程式之前](#before-packaging-your-app)。 請依照這些步驟執行，確認您的應用程式已可封裝以提交至市集。
-2.  [設定應用程式套件](#configure-an-app-package)。 請使用資訊清單設計工具來設定套件。 例如，新增磚影像，然後選擇您的應用程式支援的方向。
-3.  [建立應用程式套件](#create-an-app-package)。 使用 Microsoft Visual Studio 中的精靈建立應用程式套件，接著使用 Windows 應用程式認證套件認證您的套件。
-4.  [側載您的應用程式套件](#sideload-your-app-package)。 將您的應用程式側載到裝置後，您可以測試它是否正常運作。
+1.  
+            [封裝您的應用程式之前](#before-packaging-your-app)。 請依照這些步驟執行，確認您的應用程式已可封裝以提交至市集。
+2.  
+            [設定應用程式套件](#configure-an-app-package)。 請使用資訊清單設計工具來設定套件。 例如，新增磚影像，然後選擇您的應用程式支援的方向。
+3.  
+            [建立應用程式套件](#create-an-app-package)。 使用 Microsoft Visual Studio 中的精靈建立應用程式套件，接著使用 Windows 應用程式認證套件認證您的套件。
+4.  
+            [側載您的應用程式套件](#sideload-your-app-package)。 將您的應用程式側載到裝置後，您可以測試它是否正常運作。
 
 完成上述步驟之後，您已經準備好在市集中銷售您的應用程式。 如果您有僅供內部使用而不打算銷售的企業營運 (LOB) 應用程式，您可以側載這個應用程式，以將它安裝到任何 Windows 10 裝置上。
 
@@ -27,7 +31,8 @@ ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
 
 1.  測試您的應用程式。 封裝您的應用程式以提交到市集之前，請確定它在您計畫支援的所有裝置系列上可如預期般運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、XBOX、IoT 裝置或其他等。
 2.  最佳化您的應用程式。 您可以使用 Visual Studio 的分析與偵錯工具來最佳化您的 UWP 應用程式的效能。 例如，UI 回應性時間軸工具、記憶體使用量工具及 CPU 使用量工具等。 如需這些工具的詳細資訊，請參閱[執行診斷工具但不偵錯](https://msdn.microsoft.com/library/dn957936.aspx)。
-3.  檢查 .NET 原生的相容性 (適用於 VB 和 C# 應用程式)。 現在有新的原生編譯器可搭配 UWP 使用，將可改善您的應用程式的執行階段效能。 由於這項變更，強烈建議您在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [此處](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)詳細說明一些使用 .NET 原生可能會發生的常見偵錯問題。
+3.  檢查 .NET 原生的相容性 (適用於 VB 和 C# 應用程式)。 現在有新的原生編譯器可搭配 UWP 使用，將可改善您的應用程式的執行階段效能。 由於這項變更，強烈建議您在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 
+            [此處](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)詳細說明一些使用 .NET 原生可能會發生的常見偵錯問題。
 
 ## 設定 app 套件
 
@@ -91,7 +96,8 @@ Visual Studio 可以將您的套件與市集關聯。 當您這樣做時，會�
 **在遠端 Windows 10 裝置上驗證您的應用程式套件。**
 
 1.  依照[啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)的指示，啟用您的 Windows 10 裝置以進行開發。
-    **重要：**您無法在遠端 ARM 裝置上驗證您的應用程式套件是否適用於 Windows 10。
+    
+            **重要：**您無法在遠端 ARM 裝置上驗證您的應用程式套件是否適用於 Windows 10。
 2.  下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 Windows 市集應用程式](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)，以取得關於這些工具的詳細資訊 (包括下載位置)。
 3.  下載必要的 [Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然後將它安裝在遠端的 Windows 10 裝置上。
 4.  在精靈的 \[套件建立完成\] 頁面上，選擇 \[遠端電腦\] 選項按鈕，然後選擇 \[測試連線\] 按鈕旁的省略符號按鈕。
@@ -128,7 +134,8 @@ Visual Studio 可以將您的套件與市集關聯。 當您這樣做時，會�
 
     當應用程式套件已安裝時，您會在 PowerShell 視窗中看到此訊息：您的應用程式已順利安裝。
 
-    **注意：**若要在平板電腦上開啟捷徑功能表，請觸碰螢幕上您想要以滑鼠右鍵按一下的位置，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會顯示捷徑功能表。
+    
+            **注意：**若要在平板電腦上開啟捷徑功能表，請觸碰螢幕上您想要以滑鼠右鍵按一下的位置，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會顯示捷徑功能表。
 4.  按一下 \[開始\] 按鈕，然後輸入您的應用程式名稱以啟動它。
 
  

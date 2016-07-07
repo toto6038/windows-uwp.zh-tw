@@ -51,7 +51,8 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 <span id="interstitialadsxaml10"/>
 ### 插入式廣告 (XAML/.NET)
 
-> **注意** 本節將提供 C# 範例，但同時也支援 Visual Basic 和 C++。
+> 
+            **注意** 本節將提供 C# 範例，但同時也支援 Visual Basic 和 C++。
  
 1. 在 Visual Studio 中，開啟您的專案。
 2. 在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
@@ -83,7 +84,8 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 #endif
     ```
 
-    > **注意** 在提交 App 之前，請以實際值取代測試值。
+    > 
+            **注意** 在提交 App 之前，請以實際值取代測試值。
 
 5.  具現化 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)，連結所有事件處理常式，然後要求廣告。
 
@@ -241,7 +243,8 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 此範例假設您已在 Visual Studio 2015 中建立 XAML 的通用 App 專案，並且是針對特定的 CPU 架構。
 
-> **重要** 此程式碼是以 C++ 撰寫，以符合 DirectX 要求。
+> 
+            **重要** 此程式碼是以 C++ 撰寫，以符合 DirectX 要求。
 
  
 1. 在 Visual Studio 中，開啟您的專案。

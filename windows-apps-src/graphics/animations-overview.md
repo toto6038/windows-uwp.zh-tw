@@ -61,9 +61,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 使用內容轉換動畫 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103))，將內容片段或一組內容移入或移出目前的檢視。 例如，內容轉換動畫會顯示最初載入頁面時或變更頁面區段內容時，尚未準備顯示的內容。
 
-[
-            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [
-            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同於具預設參數的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)之外使用。
+[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同於具預設參數的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](https://msdn.microsoft.com/library/windows/apps/br242682)之外使用。
  
  
 
@@ -111,19 +109,14 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 | UI 類型 | 建議的動畫 |
 |---------|-----------------------|
-| 對話方塊 | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 飛出視窗 | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| 工具提示 | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 操作功能表 | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| 對話方塊 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 飛出視窗 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| 工具提示 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 操作功能表 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | 命令列 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | 工作窗格或以邊緣為基礎的面板 | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | 任何 UI 容器的內容 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| 用於控制項，或者沒有其他適用的動畫 | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| 用於控制項，或者沒有其他適用的動畫 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -199,8 +192,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 </ItemsControl>
 ```
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的子項矩形會以賞心悅目的方式一個接著一個逐一轉換至檢視中，而不會像在各個矩形個別套用這個動畫時一樣，一次顯示所有子項矩形。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的子項矩形會以賞心悅目的方式一個接著一個逐一轉換至檢視中，而不會像在各個矩形個別套用這個動畫時一樣，一次顯示所有子項矩形。
 
 以下是示範此動畫的影片：
 

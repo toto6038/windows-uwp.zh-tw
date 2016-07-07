@@ -39,16 +39,20 @@ ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 ## 文字元素角色  
 UWP App 可以使用這些預設元素 (一般稱為「文字元素」或「文字編輯控制項」)：
 
-* [
+* 
+            [
               **TextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **TextBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **RichTextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR227565) (以及 overflow 類別[**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow))：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **RichEditBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
@@ -106,17 +110,20 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor** 的值是範圍 \[1,2\] 的兩倍。 最小的文字依照此量放大。 舉例來說，您可以使用這個值來調整圖形以符合文字。 但是請記住，並非所有文字都會以相同比例縮放。 一般說來，較大的文字比較不容易受到縮放所影響。
+
+            **TextScaleFactor** 的值是範圍 \[1,2\] 的兩倍。 最小的文字依照此量放大。 舉例來說，您可以使用這個值來調整圖形以符合文字。 但是請記住，並非所有文字都會以相同比例縮放。 一般說來，較大的文字比較不容易受到縮放所影響。
 
 這些類型都有 **IsTextScaleFactorEnabled** 屬性：  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [
+* 
+            [
               **Control**
             ](https://msdn.microsoft.com/library/windows/apps/BR209390) 和衍生類別
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [
+* 
+            [
               **TextElement**
             ](https://msdn.microsoft.com/library/windows/apps/BR209967) 和衍生類別
 
@@ -130,6 +137,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

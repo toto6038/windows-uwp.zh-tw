@@ -138,10 +138,7 @@ namespace SampleMacAlgorithmProvider
 
 數位簽章是等同於私密金鑰訊息驗證碼 (MAC) 的公開金鑰。 相對而言，MAC 使用私密金鑰讓郵件收件者驗證郵件在傳輸期間沒有被修改，而簽章則是使用私密/公開金鑰組。
 
-[
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [
-            **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法會將新資料加入要雜湊的緩衝區。 [
-            **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
+[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法會將新資料加入要雜湊的緩衝區。 [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
 
 ```cs
 public void SampleReusableHash()

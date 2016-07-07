@@ -21,7 +21,8 @@ Xbox 開發人員預覽系統更新包括實驗性和早期發行前版本軟體
 
 下列清單醒目提示這個版本中可能遇到的一些已知問題，但這並不是完整的清單。 
 
-**我們想要您的意見反應**，因此請在[開發通用 Windows App](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
+
+            **我們想要您的意見反應**，因此請在[開發通用 Windows App](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
 如果您遇到困難，請閱讀本主題中的資訊、參閱[常見問題集](frequently-asked-questions.md)，並使用論壇以尋求協助。
 
@@ -51,7 +52,8 @@ public App() {
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;在此開發人員預覽版中，當滑鼠模式開啟時，使用控制器上的右搖桿移動瀏覽可能造成主機當機。 如果您發生此問題，必須重新啟動主機。
 
 如需滑鼠模式支援的資訊，請參閱[針對 Xbox 與電視設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主題。 本主題包含如何啟用與停用滑鼠模式的資訊，可讓您選擇適用於 app 的正確行為。
@@ -121,7 +123,8 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 根據預設，Xbox 上 UWP App 的顯示區域應該要針對電視安全區域進行內凹處理。 不過，Xbox One 開發人員預覽包含的一個已知錯誤，會使電視安全區域從 [0, 0] 開始，而非從 [_offset_, _offset_] 開始。
 
-> **注意**
+> 
+            **注意**
             &nbsp;&nbsp;這僅適用於使用 Javascript 的 UWP app。
 
 解決這個問題最簡單的方式便是停用電視安全區域，如下列 JavaScript 範例所示。

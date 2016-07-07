@@ -104,8 +104,7 @@ Windows 10 包含新的控制項，例如行事曆和分割檢視。 Pivot 控�
 
 ### 使用彈性面板設計彈性 UI
 
-配置面板會依據可用空間，將大小和位置給予其子項。 例如，[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 依序排序其子項 (水平或垂直)。 [
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 就像是 CSS 格線，將其子項放入儲存格。
+配置面板會依據可用空間，將大小和位置給予其子項。 例如，[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 依序排序其子項 (水平或垂直)。 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 就像是 CSS 格線，將其子項放入儲存格。
 
 新的 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/dn879546) 會實作配置樣式，該配置依據其子元素之間的關係來定義。 它是用來建立可以適應螢幕解析度變更的 app 配置。 **RelativePanel** 會簡化重新排列元素的程序，方法是定義元素之間的關係，可讓您不需要使用巢狀配置即可建立更動態的 UI。
 
@@ -185,12 +184,9 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 
 下列 API 提供輸入的存取：
 
--   [
-            **CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 是新的 API，可讓您在主要執行緒或背景執行緒上使用原始輸入。
--   [
-            **PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 藉由使用 **CoreInput**，將原始觸控、滑鼠和手寫筆資料統一成單一、一致的介面和事件集合，可以在主要執行緒或背景執行緒上使用。
--   [
-            **PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 是裝置 API，支援查詢裝置功能，讓您可以判斷哪些輸入形式可用於裝置上。
+-   [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 是新的 API，可讓您在主要執行緒或背景執行緒上使用原始輸入。
+-   [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 藉由使用 **CoreInput**，將原始觸控、滑鼠和手寫筆資料統一成單一、一致的介面和事件集合，可以在主要執行緒或背景執行緒上使用。
+-   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 是裝置 API，支援查詢裝置功能，讓您可以判斷哪些輸入形式可用於裝置上。
 -   新的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML 控制項和 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows 執行階段 API 可讓您存取筆跡筆觸資料。
 
 ## 撰寫程式碼
@@ -292,6 +288,6 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

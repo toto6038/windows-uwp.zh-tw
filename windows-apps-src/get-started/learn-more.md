@@ -1,6 +1,13 @@
 ---
-description&#58; author&#58; martinekuan ms.assetid&#58; 4288E511-581C-49DC-A2F2-1CB832C4A676 title&#58; 接下來要做什麼？現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供不同章節的簡介。&#39;
-keywords&#58;開發人員中心, 快速瀏覽 keywords&#58;開發人員中心, 入門
+author: martinekuan
+ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
+title: "接下來要做什麼？"
+description: "現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供不同章節的簡介。"
+keywords: Dev Center, Getting started
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+
 ---
 # 接下來要做什麼？
 
@@ -64,6 +71,7 @@ Windows 市集可以讓您接觸到數百萬使用 Microsoft Windows 的客戶�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

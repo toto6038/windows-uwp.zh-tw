@@ -85,10 +85,8 @@ ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 將下列控制項新增到 XAML 頁面，以實作這個範例的初步 UI：
 
 -   用來啟動裝置監控程式的按鈕，以尋找可用的傳播裝置。
--   [
-            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項會提供使用者回饋，讓他們知道傳播列舉正在進行。
--   [
-            **ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)，列出找到的傳播裝置。 定義控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，讓我們可以將傳播裝置物件直接指派給控制項，且仍然顯示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 屬性。
+-   [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控制項會提供使用者回饋，讓他們知道傳播列舉正在進行。
+-   [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)，列出找到的傳播裝置。 定義控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，讓我們可以將傳播裝置物件直接指派給控制項，且仍然顯示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 屬性。
 -   可讓使用者中斷連接傳播裝置的按鈕。
 
 [!code-xml[CustomPickerXAML](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCustomPickerXAML)]

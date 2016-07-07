@@ -46,7 +46,7 @@ OnCanceled 方法必須具有下列配置：
 >    }
 > ```
 
-將稱為 **\_CancelRequested** 的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
+[!div class="tabbedCodeSnippets"] 將稱為 **\_CancelRequested** 的旗標變數新增至背景工作類別。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -57,9 +57,9 @@ OnCanceled 方法必須具有下列配置：
 >     volatile bool CancelRequested;
 > ```
 
-在步驟 1 所建立的 OnCanceled 方法中，將旗標變數 **\_CancelRequested** 設定為 **true**。
+此變數將用來指示何時提出取消要求。
 
-完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled 方法會將 **\_CancelRequested** 設定為 **true** 並撰寫可能會用到的偵錯輸出：
+[!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -85,7 +85,7 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-在背景工作的 Run 方法中，在開始工作之前先登錄 OnCanceled 事件處理常式方法。 例如，使用下面一行的程式碼：
+在步驟 1 所建立的 OnCanceled 方法中，將旗標變數 **\_CancelRequested** 設定為 **true**。 完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled 方法會將 **\_CancelRequested** 設定為 **true** 並撰寫可能會用到的偵錯輸出：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,14 +95,14 @@ OnCanceled 方法必須具有下列配置：
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## 結束 Run 方法以處理取消
+## [!div class="tabbedCodeSnippets"]
 
 
-接收取消要求時，Run 方法需要透過辨識 **\_cancelRequested** 被設定為 **true** 的時機，來停止工作並結束。
+在背景工作的 Run 方法中，在開始工作之前先登錄 OnCanceled 事件處理常式方法。
 
-修改背景工作類別的程式碼以便在旗標變數運作時檢查旗標變數。 如果將 **\_cancelRequested** 設定為 true，便會阻止工作繼續。
+例如，使用下面一行的程式碼： [!div class="tabbedCodeSnippets"]
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括會在取消背景工作時，停止定期計時器回呼的檢查：
+結束 Run 方法以處理取消
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,11 +132,11 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-> **注意** 上方所顯示的程式碼範例使用用來記錄背景工作進度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 屬性。 進度會透過 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 類別回報給 app。
+> 接收取消要求時，Run 方法需要透過辨識 **\_cancelRequested** 被設定為 **true** 的時機，來停止工作並結束。 修改背景工作類別的程式碼以便在旗標變數運作時檢查旗標變數。
 
-修改 Run 方法，以便在停止工作後，使它記錄工作是否已完成或被取消。
+如果將 **\_cancelRequested** 設定為 true，便會阻止工作繼續。
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態：
+[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括會在取消背景工作時，停止定期計時器回呼的檢查：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -200,15 +200,15 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-## 備註
+## [!div class="tabbedCodeSnippets"]
 
-您可以下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)，查看方法內容中的這些程式碼範例。
+**注意** 上方所顯示的程式碼範例使用用來記錄背景工作進度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 屬性。
 
-為了便於說明，範例程式碼僅顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中 Run 方法 (以及回呼計時器) 的一部分。
+進度會透過 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 類別回報給 app。
 
-## Run 方法範例
+## 修改 Run 方法，以便在停止工作後，使它記錄工作是否已完成或被取消。
 
-以下顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的完整的 Run方法以及回呼計時器程式碼的內容：
+[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -327,26 +327,26 @@ OnCanceled 方法必須具有下列配置：
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> [!div class="tabbedCodeSnippets"] 備註
 
-## 相關主題
+## 您可以下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)，查看方法內容中的這些程式碼範例。
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [登錄背景工作](register-a-background-task.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
-* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [為了便於說明，範例程式碼僅顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中 Run 方法 (以及回呼計時器) 的一部分。](create-and-register-a-background-task.md)
+* [Run 方法範例](declare-background-tasks-in-the-application-manifest.md)
+* [以下顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的完整的 Run方法以及回呼計時器程式碼的內容：](guidelines-for-background-tasks.md)
+* [[!div class="tabbedCodeSnippets"]](monitor-background-task-progress-and-completion.md)
+* [**注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。](register-a-background-task.md)
+* [如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。](respond-to-system-events-with-background-tasks.md)
+* [相關主題](run-a-background-task-on-a-timer-.md)
+* [建立並登錄背景工作](set-conditions-for-running-a-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](update-a-live-tile-from-a-background-task.md)
+* [背景工作的指導方針](use-a-maintenance-trigger.md)
 
-* [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [監視背景工作進度和完成](debug-a-background-task.md)
+* [登錄背景工作](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

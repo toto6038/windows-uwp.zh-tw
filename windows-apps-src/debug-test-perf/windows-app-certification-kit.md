@@ -48,17 +48,20 @@ ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 
 6.  開啟報告檔案，然後檢閱測試結果。
 
-**注意** 如果您使用的是 Visual Studio，可以在建立 app 套件時執行 Windows 應用程式認證套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
+
+            **注意** 如果您使用的是 Visual Studio，可以在建立 app 套件時執行 Windows 應用程式認證套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
 
  
 
 ## 從命令列使用 Windows 應用程式認證套件來驗證 Windows app
 
-**重要** Windows 應用程式認證套件必須在使用中的使用者工作階段內容中執行。
+
+            **重要** Windows 應用程式認證套件必須在使用中的使用者工作階段內容中執行。
 
 1.  在命令視窗中，瀏覽到包含 Windows 應用程式認證套件的目錄。
 
-    **注意** 預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    
+            **注意** 預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2.  依序輸入下列命令，以測試電腦上已安裝的 app：
 
@@ -74,9 +77,11 @@ ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 
 3.  測試完成之後，開啟名為 `[report file name]` 的報告檔案，然後檢閱測試結果。
 
-**注意** Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
 
-**注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
+            **注意** Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
+
+
+            **注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
 
 ## 使用低功率電腦進行測試
 

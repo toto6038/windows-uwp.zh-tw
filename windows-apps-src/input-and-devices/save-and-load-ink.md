@@ -66,7 +66,8 @@ ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [
+    
+            [
               **InkPresenter**
             ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```    CSharp
@@ -90,7 +91,8 @@ public MainPage()
 
 3.  最後，會在 \[儲存\] 按鈕的 click 事件處理常式中儲存筆劃。
 
-    [
+    
+            [
               **FileSavePicker**
             ](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
@@ -202,7 +204,8 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [
+    
+            [
               **InkPresenter**
             ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```    CSharp
@@ -226,7 +229,8 @@ public MainPage()
 
 3.  最後，會在 \[載入\] 按鈕的 click 事件處理常式中載入筆墨。
 
-    [
+    
+            [
               **FileOpenPicker**
             ](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
@@ -323,7 +327,8 @@ GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [
+    
+            [
               **InkPresenter**
             ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
 
@@ -454,6 +459,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

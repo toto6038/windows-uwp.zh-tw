@@ -5,8 +5,8 @@ title: "中樞控制項"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 ---
 # 中樞控制項/模式
@@ -16,9 +16,17 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 ![中樞範例](images/hub_example_tablet.png)
 
-中樞中的內容會以健全的移動瀏覽檢視方式顯示，讓使用者能夠輕鬆檢視新功能、可用功能及相關項目。 中樞通常會有頁面標頭，而多個內容區段的每個區段都會有區段標頭。
+中樞中的內容可以採用全景檢視方式顯示，讓使用者能夠檢視新功能、可用功能及相關項目。 中樞通常會有頁面標頭，而每個內容區段都會有一個區段標頭。
 
-中樞控制項有數個功能，使它能夠用於建置內容瀏覽模式。
+
+-   [**Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+-   [**HubSection 類別**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+
+## 這是正確的控制項嗎？
+
+中樞控制項適用於顯示依階層排列的大量內容。 中樞會為新內容的瀏覽與探索排定優先順序，讓它們不論是顯示市集中的項目還是媒體集合中的項目，都相當有用。
+
+Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良好運作。
 
 -   **視覺化瀏覽**
 
@@ -34,24 +42,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 -   **可變的頁面和內容寬度**
 
-    中樞變成全景模型之後，其區段寬度就可以變更。 這很適合用於深度不同的內容，且可以讓由少到多的項目數目同時具備同樣優美的格式。
+    採用全景模型之後，中樞便可允許變更其區段寬度。 這非常適用於具有不同深度或數量的內容。
 
 -   **彈性架構**
 
-    如果您想要讓您的 App 架構維持淺層狀態，您可以在中樞區段摘要中包含所有通道內容。
+    如果您想要讓您的 App 架構維持淺層狀態，您可以將所有通道內容都納入中樞區段摘要中。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
-
--   [**Hub 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
--   [**Hub 物件 (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
-
-
-## 這是正確的控制項嗎？
-
-中樞控制項適用於顯示依階層排列的大量內容。 中樞會排定新內容的瀏覽與探索之優先順序，讓它們適用於在市集或是媒體集合中顯示項目。
-
-中樞只是多個瀏覽元素的其中一項；若要深入了解瀏覽模式與其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) App 的瀏覽設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)。
+中樞只是您可以使用的數個瀏覽元素其中之一；若要深入了解瀏覽模式及其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) App 的瀏覽設計基本知識](../layout/navigation-basics.md)。
 
 ## 中樞架構
 
@@ -107,13 +104,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 ## 相關文章
 
-- [瀏覽基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)
-- [**Windows.UI.Xaml.Controls Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [XAML Hub 控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+- [Hub 類別](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [瀏覽基本知識](../layout/navigation-basics.md)
 - [使用中樞](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+- [XAML Hub 控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

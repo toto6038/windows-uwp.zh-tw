@@ -21,9 +21,12 @@ ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 
 在此階段會進行幾項測試：
 
--   **安全性測試：** 第一個測試會檢查您 app 的套件是否含有病毒或惡意程式碼。 如果應用程式未通過這個測試，您需要執行最新的防毒軟體來檢查您的開發系統，然後在全新的作業系統重建您的應用程式套件。
--   **技術規範測試：** 技術規範是由 Windows 應用程式認證套件進行測試。 (將 app 提交至市集之前，請務必記得[使用 Windows 應用程式認證套件測試 app](../debug-test-perf/windows-app-certification-kit.md))。
--   **內容規範：**所需的時間取決於您應用程式的複雜程度、應用程式包含多少視覺化內容以及最近提交了多少應用程式。 請務必在[認證注意事項](notes-for-certification.md)頁面中提供測試人員應該注意的任何資訊。
+-   
+            **安全性測試：** 第一個測試會檢查您 app 的套件是否含有病毒或惡意程式碼。 如果應用程式未通過這個測試，您需要執行最新的防毒軟體來檢查您的開發系統，然後在全新的作業系統重建您的應用程式套件。
+-   
+            **技術規範測試：** 技術規範是由 Windows 應用程式認證套件進行測試。 (將 app 提交至市集之前，請務必記得[使用 Windows 應用程式認證套件測試 app](../debug-test-perf/windows-app-certification-kit.md))。
+-   
+            **內容規範：**所需的時間取決於您應用程式的複雜程度、應用程式包含多少視覺化內容以及最近提交了多少應用程式。 請務必在[認證注意事項](notes-for-certification.md)頁面中提供測試人員應該注意的任何資訊。
 
 認證程序完成之後，您會收到一份認證報告，告知您的應用程式是否通過認證。 若 app 未通過認證，報告將指出哪個測試失敗或不符合哪個[原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 您修正問題之後，可以重新提交應用程式，再次進行認證程序。
 
@@ -41,7 +44,8 @@ ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 
 成功進行上述步驟之後，提交的狀態會從 \[發行中\] 變成 \[在市集內\]。 客戶就能在 Windows 市集下載您的提交項目 (除非您選擇了其他[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)選項)。 
 
-**注意：**我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
+
+            **注意：**我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
  
 
@@ -55,6 +59,6 @@ ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

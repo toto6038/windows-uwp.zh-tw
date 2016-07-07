@@ -26,7 +26,8 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 
 ## AdControl 介面於 XAML 中為未知
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
+
+            [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
 
 ## 來自先前廣告要求的 lastError
 

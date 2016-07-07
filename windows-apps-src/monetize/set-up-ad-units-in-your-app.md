@@ -30,7 +30,8 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
     * 如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 **InterstitialAd** 物件的 **RequestAd** 方法。
 
-> **重要：**如果您的 app 使用廣告流量分配顯示來自 Microsoft 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+> 
+            **重要：**如果您的 app 使用廣告流量分配顯示來自 Microsoft 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
 
  
 

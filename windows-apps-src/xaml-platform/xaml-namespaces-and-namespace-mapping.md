@@ -54,19 +54,25 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 "d:" XAML 命名空間旨在提供設計工具支援，特別是針對 Microsoft Visual Studio 中 XAML 設計介面的設計工具支援。 "d:" XAML 命名空間啟用 XAML 元素上的設計工具或設計階段屬性。 這些設計工具屬性只會影響 XAML 行為的設計層面。 當應用程式執行時，如果 Windows 執行階段 XAML 剖析器載入了相同的 XAML，就會忽略設計工具屬性。 一般來說，設計工具屬性在任何 XAML 元素上都是有效的，但是實際上，只有特定案例才適合您自行套用設計工具屬性。 特別是許多設計工具屬性是為了在您開發使用資料繫結的 XAML 和程式碼時，能夠針對與資料內容及資料來源的互動提供更佳的使用經驗。
 
--   **d:DesignHeight 和 d:DesignWidth 屬性：**這些屬性有時會套用到 Visual Studio 或其他 XAML 設計工具介面為您建立的 XAML 檔案的根元素。 例如，如果您將一個新的 **UserControl** 新增到您的應用程式專案，系統就會在已建立的 XAML 的 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 根元素上設定這些屬性。 這些屬性可以讓您更容易設計 XAML 內容的組合，讓您可以預期到一旦將該 XAML 內容用於控制項執行個體或較大 UI 頁面的其他部分時，可能會有的一些配置限制。
+-   
+            **d:DesignHeight 和 d:DesignWidth 屬性：**這些屬性有時會套用到 Visual Studio 或其他 XAML 設計工具介面為您建立的 XAML 檔案的根元素。 例如，如果您將一個新的 **UserControl** 新增到您的應用程式專案，系統就會在已建立的 XAML 的 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 根元素上設定這些屬性。 這些屬性可以讓您更容易設計 XAML 內容的組合，讓您可以預期到一旦將該 XAML 內容用於控制項執行個體或較大 UI 頁面的其他部分時，可能會有的一些配置限制。
 
-   **注意** 如果您是要從 Microsoft Silverlight 移轉 XAML，則在呈現整個 UI 頁面的根元素上可能會有這些屬性。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
+   
+            **注意** 如果您是要從 Microsoft Silverlight 移轉 XAML，則在呈現整個 UI 頁面的根元素上可能會有這些屬性。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
 
--   **d:DataContext 屬性：**您可以在頁面根元素或控制項上設定這個屬性，覆寫物件在其他情況下所具有的任何明確或繼承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
--   **d:DesignSource 屬性：**指定 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 的設計階段資料來源，會覆寫 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
--   **d:DesignInstance 和 d:DesignData 標記延伸：**這些標記延伸是用來為 **d:DataContext** 或 **d:DesignSource** 提供設計階段資料資源。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://msdn.microsoft.com/library/windows/apps/mt517866)。
+-   
+            **d:DataContext 屬性：**您可以在頁面根元素或控制項上設定這個屬性，覆寫物件在其他情況下所具有的任何明確或繼承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
+-   
+            **d:DesignSource 屬性：**指定 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 的設計階段資料來源，會覆寫 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
+-   
+            **d:DesignInstance 和 d:DesignData 標記延伸：**這些標記延伸是用來為 **d:DataContext** 或 **d:DesignSource** 提供設計階段資料資源。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://msdn.microsoft.com/library/windows/apps/mt517866)。
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 "mc:" 指示並支援讀取 XAML 的標記相容性模式。 一般而言，"d:" 前置詞是與屬性 **mc:Ignorable** 相關聯。 這項技術可以讓執行階段 XAML 剖析器忽略 "d:" 中的設計屬性。
 
-### **local:** 與 **common:**
+### 
+            **local:** 與 **common:**
 
 "local:" 是一個前置詞，通常會針對範本化的 Windows 市集 app 專案，在 XAML 頁面內進行對應。 對應這個前置詞，以便參考建立來包含 [x:Class 屬性](x-class-attribute.md)的相同命名空間，以及適用於所有 XAML 檔案 (包含 app.xaml 在內) 的程式碼。 只要您在這個相同命名空間中定義任何想要在 XAML 中使用的自訂類別，就可以使用 **local:** 前置詞，在 XAML 中參考您的自訂類型。 來自範本化 Windows 市集 app 專案的相關前置詞為 **common:**。 這個前置詞會參考巢狀的 "Common" 命名空間 (其中包含像是轉換器和命令的公用程式類別)，而您可以在 \[方案總管\] 檢視的 Common 資料夾中找到定義。
 
@@ -78,7 +84,8 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 您可以對應 XAML 命名空間，如此即可使用 XAML 來存取您自己的自訂類型。 換句話說，您對應程式碼命名空間的方式如同它存在於定義自訂類型的程式碼表示法中，並對它指派 XAML 命名空間以及前置詞以供使用。 適用於 XAML 的自訂類型可以在 Microsoft .NET 語言 (C# 或 Microsoft Visual Basic) 或 C++ 中定義。 對應是透過定義 **xmlns** 前置詞來建立的。 例如，`xmlns:myTypes` 定義新的 XAML 命名空間，它是由使用語彙基元 `myTypes:` 將所有用法加上前置詞來進行存取的。
 
-**xmlns** 定義包含值以及前置詞命名。 值是包含在引號內的字串，後面跟著等號。 常見 XML 慣例是將 XML 命名空間與統一資源識別元 (URI) 相關聯，這就是唯一性與識別性的慣例。 您在預設 XAML 命名空間與 XAML 語言 XAML 命名空間，以及一些 Windows 執行階段 XAML 較少用的 XAML 命名空間，也會看到這種個慣例。 不過，對於對應自訂類型的 XAML 命名空間，並非指定 URI，您要使用語彙基元 "using:" 做為前置詞定義的開頭。 在 "using:" 語彙基元的後面，接著命名程式碼命名空間。
+
+            **xmlns** 定義包含值以及前置詞命名。 值是包含在引號內的字串，後面跟著等號。 常見 XML 慣例是將 XML 命名空間與統一資源識別元 (URI) 相關聯，這就是唯一性與識別性的慣例。 您在預設 XAML 命名空間與 XAML 語言 XAML 命名空間，以及一些 Windows 執行階段 XAML 較少用的 XAML 命名空間，也會看到這種個慣例。 不過，對於對應自訂類型的 XAML 命名空間，並非指定 URI，您要使用語彙基元 "using:" 做為前置詞定義的開頭。 在 "using:" 語彙基元的後面，接著命名程式碼命名空間。
 
 例如，若要對應讓您參考 "CustomClasses" 命名空間的 "custom1" 前置詞，並使用該命名空間或組件的類別在 XAML 中做為物件元素，您的 XAML 頁面應該在根元素上包含下列對應： `xmlns:custom1="using:CustomClasses"`
 

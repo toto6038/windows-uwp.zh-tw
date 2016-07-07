@@ -29,16 +29,20 @@ ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 
 下列步驟說明端對端的程序：
 
-1.  [將 Azure AD應用程式與您的 Windows 開發人員中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
-2.  [取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。
-3.  [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
+1.  
+            [將 Azure AD應用程式與您的 Windows 開發人員中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
+2.  
+            [取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。
+3.  
+            [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
 
 
 ### 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯
 
 1.  在開發人員中心，移至您的 \[帳戶設定\]，按一下 \[管理使用者\]，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)。 您也可以選擇性地從組織的 Azure AD 目錄加入使用者，這樣他們也能存取開發人員帳戶。
 
-    > **注意** 一個 Azure Active Directory 只能與一個開發人員中心帳戶關聯。 同樣地，一個開發人員中心帳戶只能與一個 Azure Active Directory 關聯。 建立此關聯之後，您必須連絡支援人員才能將它移除。
+    > 
+            **注意** 一個 Azure Active Directory 只能與一個開發人員中心帳戶關聯。 同樣地，一個開發人員中心帳戶只能與一個 Azure Active Directory 關聯。 建立此關聯之後，您必須連絡支援人員才能將它移除。
 
      
 
@@ -241,6 +245,6 @@ Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -3,8 +3,8 @@ author: awkoren
 Description: "執行傳統型轉換器應用程式，將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "傳統型應用程式轉換器預覽 (Project Centennial)"
-ms.sourcegitcommit: 6d1c6e836d666972641320c73896459490f45924
-ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
+ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
+ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 
 ---
 
@@ -22,7 +22,12 @@ ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
 
 本節概述傳統型應用程式轉換器版本之間的變更。 
 
-### 2016/6/8
+### 6/16/2016
+
+* 傳統型應用程式轉換器 (0.1.20 版) 修正了會阻擋在最新 Windows 10 Insider Preview 組建上成功轉換的任何問題。 
+* 使用 ```–PackageArch``` 取代 ```–CreateX86Package```，這可讓您指定產生的套件的架構。 
+
+### 6/8/2016
 
 * 已新增在執行轉換器的 AMD64 主機電腦上產生 x86 appx 套件的支援。
 * 藉由移除任何先前延伸的基本映像，來減少磁碟空間使用量。
@@ -39,7 +44,7 @@ ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
 - 已新增應用程式安裝路徑的自動偵測，並將應用程式根目錄移到 VFS 外部，以便在執行階段降低任何不必要的檔案系統重新導向。
 - 已新增擴充之基礎映像的自動偵測，做為轉換處理序的一部分。
 - 已新增檔案類型關聯和通訊協定的自動偵測。
-- 已改進偵測 \[開始功能表\] 捷徑的邏輯。
+- 已改進偵測 [開始功能表] 捷徑的邏輯。
 - 已改進檔案系統篩選，以保留應用程式安裝的 MUI 檔案。
 - 已更新資訊清單中專案 Centennial 的最低支援桌面版本 (10.0.14342.0)。
 
@@ -111,7 +116,7 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ## 部署已轉換的 AppX
 使用 PowerShell 中的 [Add-AppxPackage](https://technet.microsoft.com/en-us/library/hh856048.aspx) Cmdlet，將已簽署的應用程式套件 (.appx) 部署到使用者帳戶。 若要簽署 .appx 套件，請參閱下一節＜簽署您的 .Appx 套件＞。 此外，您可以包含 Cmdlet 的 *Register*，在開發流程期間從未封裝的檔案資料夾中進行安裝。 如需詳細資訊，請參閱[部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md)。
 
-## 簽署您的 .AppX 套件
+## 簽署您的 .Appx 套件
 
 Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 SignTool.exe (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
 
@@ -121,7 +126,7 @@ C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -s
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-注意：當您執行 MakeCert.exe 且系統要求您輸入密碼時，請選取 \[無\]。
+**注意：**當您執行 MakeCert.exe 且系統要求您輸入密碼時，請選取 [無]****。
 
 如需憑證和簽章的詳細資訊，請參閱︰
 
@@ -210,12 +215,12 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup WorkDirectory``` | 移除所有的暫存轉換器檔案。 |
 |```Cleanup ExpandedImages``` | 刪除所有已展開且安裝在主機電腦上的基本映像。 |
 
-### x86 套件參數
-「傳統型應用程式轉換器預覽」現在支援建立可讓您在 x86 和 amd64 電腦上安裝與執行的 x86 應用程式套件。 請注意，「傳統型應用程式轉換器」仍需要在 AMD64 電腦上執行才能成功轉換。
+### 套件架構
+「傳統型應用程式轉換器預覽」現在支援建立可讓您在 x86 和 amd64 電腦上安裝與執行的 x86 與 x64 應用程式套件。 請注意，「傳統型應用程式轉換器」仍需要在 AMD64 電腦上執行才能成功轉換。
 
 |參數|說明|
 |---------|-----------|
-|```-CreateX86Package[<SwitchParameter>]``` | 產生可在 32 位元和 64 位元主機作業系統上安裝與執行的 32 位元套件。 根據預設，轉換器會嘗試從應用程式的主要可執行檔來偵測套件架構，如果沒有找到 exe 就預設為 64 位元。 |
+|```-PackageArch <String>``` | 產生具有指定架構的套件。 有效的選項是 'x86' 或 'x64'；例如，-PackageArch x86。 此為選擇性參數。 如果沒有指定，傳統型應用程式轉換器將會嘗試自動偵測套件架構。 如果自動偵測失敗，將預設為 x64 套件。 |
 
 ## 另請參閱
 + [取得傳統型應用程式轉換器](http://go.microsoft.com/fwlink/?LinkId=785437)
@@ -227,6 +232,6 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

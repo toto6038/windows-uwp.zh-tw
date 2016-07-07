@@ -28,7 +28,8 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 安裝最新的 Windows 10 SDK 預覽版。 如需安裝資訊，請參閱[下載開發人員適用的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
 
-  > **重要**
+  > 
+            **重要**
             &nbsp;&nbsp;您必須安裝最新的 SDK，但您並_不_需要安裝作業系統最新的 Windows Insider Preview 版本。
 
 ## 設定 Xbox One
@@ -109,6 +110,6 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

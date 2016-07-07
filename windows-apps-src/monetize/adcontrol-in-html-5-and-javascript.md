@@ -23,7 +23,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 * 使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
 
-> **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本，並搭配 Visual Studio 2015，您也必須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 
+            **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本，並搭配 Visual Studio 2015，您也必須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
 ## 程式碼開發
 
@@ -43,7 +44,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **注意** 這個影像是 Visual Studio 2015 建置適用於 Windows 10 的 UWP 專案。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的 app，則畫面看起來會不同。
+    > 
+            **注意** 這個影像是 Visual Studio 2015 建置適用於 Windows 10 的 UWP 專案。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的 app，則畫面看起來會不同。
 
 5.  在 \[參考管理員\] 中，按一下 \[確定\]。
 
@@ -65,7 +67,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意** 這一行必須放置於 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
+    > 
+            **注意** 這一行必須放置於 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
 
 8.  修改 default.html 檔案 (或其他 html 檔案，視您的專案而定) 中的 **&lt;body&gt;** 區段，以包含 **AdControl** 的 div。 指派 **AdControl** 中的 **applicationId** 和 **adUnitId** 屬性，以測試[測試模式值](test-mode-values.md)中所提供的值，並調整控制項的高度與寬度，以符合其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 

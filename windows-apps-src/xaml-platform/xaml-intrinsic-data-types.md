@@ -45,6 +45,6 @@ XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri**
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

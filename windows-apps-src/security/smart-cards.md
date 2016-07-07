@@ -154,8 +154,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 要求重設 PIN：
 
 1.  呼叫 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以起始作業。 此呼叫包含一個代表智慧卡和 PIN 重設要求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
-2.  [
-            **SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 會為我們的 **ChallengeResponseAlgorithm** (包裝在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼叫中) 提供資訊，用來比較智慧卡的挑戰值與服務或管理工具提供的管理金鑰，以驗證要求。
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 會為我們的 **ChallengeResponseAlgorithm** (包裝在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼叫中) 提供資訊，用來比較智慧卡的挑戰值與服務或管理工具提供的管理金鑰，以驗證要求。
 
 3.  如果挑戰成功，便會完成 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 呼叫，如果 PIN 順利重設，則會傳回 **true**。
 

@@ -367,8 +367,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 以下是 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) 的用法：當 [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件被引發時，請呼叫該事件之處理常式內的 [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) 以取得 **CoreWindowResizeManager** 的執行個體，然後在新方向的配置完成並呈現時，呼叫 [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) 讓 Windows 知道它可以完成旋轉動畫並顯示應用程式畫面。
 
-[
-            **DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件處理常式中的程式碼看起來如下：
+[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件處理常式中的程式碼看起來如下：
 
 ```cpp
 CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeManager::GetForCurrentView();

@@ -90,8 +90,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-[
-            **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列舉包含可查詢之硬體 DRM 功能值的有效清單。 若要判斷是否支援硬體 DRM，可在查詢中使用 **HardwareDRM** 成員。 若要判斷硬體是否支援高效率視訊編碼 (HEVC)/H.265 轉碼器，可在查詢中使用 **HEVC** 成員。
+[**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列舉包含可查詢之硬體 DRM 功能值的有效清單。 若要判斷是否支援硬體 DRM，可在查詢中使用 **HardwareDRM** 成員。 若要判斷硬體是否支援高效率視訊編碼 (HEVC)/H.265 轉碼器，可在查詢中使用 **HEVC** 成員。
 
 您也可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 屬性來取得用戶端憑證的安全性層級，以判斷是否支援硬體 DRM。 除非傳回的憑證安全性層級大於或等於 3000，否則用戶端就不會進行個人化或佈建 (在此案例中，這個屬性會傳回 0)，或者硬體 DRM 不會處於使用狀態 (在此案例中，這個屬性會傳回小於 3000 的值)。
 

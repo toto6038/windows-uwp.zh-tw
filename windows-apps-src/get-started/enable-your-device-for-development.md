@@ -1,6 +1,13 @@
 ---
-description&#58; autohr&#58; martinekuan ms.assetid&#58; 54973C62-9669-4988-934E-9273FB0425FD title&#58; 啟用您的裝置以用於開發 針對 Windows 10 裝置的開發已有不同的方法。
-keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studio, 開發人員授權 keywords&#58; 啟用裝置
+author: martinekuan
+ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
+title: "啟用您的裝置以用於開發"
+description: "針對 Windows 10 裝置的開發已有不同的方法。"
+keywords: enable device
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c890d6202a3151e8fc0cf03b3ff33b98cd6a863
+
 ---
 # 啟用您的裝置以用於開發
 
@@ -16,22 +23,22 @@ keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studi
 
 ![Visual Studio 中顯示的 [啟用開發人員模式] 對話方塊](images/latestenabledialog.png)
 
-當您看到這個對話方塊時，按一下 [**開發人員的設定**] 直接前往 [**更新與安全性**] 頁面，如下所示。 或按一下 [確定]，然後依照下列步驟，啟用您的 Windows 10 裝置來進行開發。
+當您看到這個對話方塊時，按一下 [**開發人員的設定**] 直接前往 [**更新與安全性**] 頁面，如下所示。 或按一下 [確定]****，然後依照下列步驟，啟用您的 Windows 10 裝置來進行開發。
 
 ### 啟用您的 Windows 10 裝置
 
 針對 Windows 10，您可以選擇要在裝置上啟用的開發人員功能。 這包括任何裝置：Windows 10 桌上型電腦、平板電腦與手機。 您可以啟用裝置進行開發，或直接側載。
 
--   「側載」是安裝並執行或測試未經 Windows 市集認證的 app。 例如，僅供公司內部使用的 app。
--   「開發人員模式」可讓您側載 app，也可從 Visual Studio 的偵錯模式中執行 app。
+-   「側載」**是安裝並執行或測試未經 Windows 市集認證的 app。 例如，僅供公司內部使用的 app。
+-   「開發人員模式」**可讓您側載 app，也可從 Visual Studio 的偵錯模式中執行 app。
 
 **注意**：如果您要側載 app，您仍只應安裝來自受信任來源的 app。 當您安裝未經 Windows 市集認證的側載 app 時，表示您同意您已具備側載這些 app 所需的所有權利，並為安裝和執行 app 造成的任何損害負全責。 請參閱這份[隱私權聲明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; ＜Windows 市集＞小節。
 
 **使用開發人員功能**
 
-1.  在您要啟用的裝置上，移至 [設定]。 選擇 [更新與安全性]，然後選擇 [適用於開發人員]。
+1.  在您要啟用的裝置上，移至 [設定]****。 選擇 [更新與安全性]****，然後選擇 [適用於開發人員]****。
 2.  選擇您需要的存取層級。 如需更多有關選項的詳細資訊，請參閱[應該選擇哪一個設定：側載 app 或開發人員模式？](#WhichSettings)
-3.  閱讀您選擇的設定免責聲明，然後按一下 [是] 接受變更。
+3.  閱讀您選擇的設定免責聲明，然後按一下 [是]**** 接受變更。
 
 以下是在傳統型裝置系列上的 [設定] 頁面。
 
@@ -47,7 +54,7 @@ keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studi
 
 **側載 app**
 
-通常是需要在受管理裝置上安裝自訂 app 而不經過 Windows 市集的公司或學校才會使用側載 app 設定。 在這個案例中，常見的情況是組織要強制執行停用「Windows 市集 app」設定的原則，如先前在手機 [設定] 頁面的影像中所示。 組織也會提供側載 app 所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
+通常是需要在受管理裝置上安裝自訂 app 而不經過 Windows 市集的公司或學校才會使用側載 app 設定。 在這個案例中，常見的情況是組織要強制執行停用「Windows 市集 app」**設定的原則，如先前在手機 [設定] 頁面的影像中所示。 組織也會提供側載 app 所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
 
 裝置系列特定的資訊
 
@@ -77,7 +84,7 @@ keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studi
 有數個工具可讓您用來將應用程式從 Windows 10 電腦部署到 Windows 10 行動裝置。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。 列出的任一個方法只會安裝 app 套件 (.appx)。它們不會安裝憑證。
 
 -   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)。
--   從 Windows 10 版本 1511 開始，您可以使用 [Device Portal](#device_portal)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal (&lt;IP&gt;/appmanager.md) 中的 [應用程式] 頁面來上傳 app 套件 (.appx)，並將其安裝在裝置上。
+-   從 Windows 10 版本 1511 開始，您可以使用 [Device Portal](#device_portal)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal (&lt;IP&gt;/appmanager.md) 中的 [應用程式]**** 頁面來上傳 app 套件 (.appx)，並將其安裝在裝置上。
 
  
 
@@ -172,6 +179,7 @@ keywords&#58; 入門 keywords&#58; 開發人員授權 keywords&#58; Visual Studi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

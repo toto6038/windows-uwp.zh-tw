@@ -28,8 +28,7 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 -   必須定義 [x:Name](x-name-attribute.md)，因為後續必須要有尋找元素的方法。
 -   只有 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 可標示為延遲，但衍生自 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的類型例外。
 -   根元素不可在 [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延遲。
--   [
-            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不可延遲。
+-   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不可延遲。
 -   不使用透過 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 載入的鬆散 XAML。
 -   移動父元素將會清除任何尚未辨識的元素。
 

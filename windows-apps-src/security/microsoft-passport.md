@@ -141,8 +141,7 @@ var keyCreationResult = await KeyCredentialManager
     .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[
-            **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
+[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
 
 當金鑰組和證明資訊在裝置上建立之後，公開金鑰、選用的證明資訊，以及唯一識別碼 (例如電子郵件地址) 必須傳送至後端註冊服務，並儲存在後端。
 
@@ -227,10 +226,8 @@ static async void RegisterUser(string AccountId)
 -   AIK 憑證是有效的時限。
 -   鏈結中所有簽發的 CA 憑證都是有效的時限而且未被撤銷。
 -   證明聲明的格式正確。
--   [
-            **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
--   [
-            **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
+-   [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
+-   [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
 
 根據以上這些條件，您的應用程式可能會把不同的授權層級指派給使用者。 舉例來說，如果這些檢查項目中有一個檢查失敗，應用程式可能不會讓使用者註冊，或是可能會限制使用者能執行的功能。
 

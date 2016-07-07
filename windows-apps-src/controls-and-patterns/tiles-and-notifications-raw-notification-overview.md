@@ -21,7 +21,8 @@ ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
 
 您可以將原始通知用於各種用途，包括觸發您的應用程式執行背景工作 (如果使用者授與應用程式執行背景工作的權限)。 使用 WNS 與 app 通訊可以避免建立持續通訊端連線、傳送 HTTP GET 訊息以及其他服務對 app 連線的額外負荷。
 
-**重要：**若要了解原始通知，請務必熟悉 [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)中討論的概念。
+
+            **重要：**若要了解原始通知，請務必熟悉 [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)中討論的概念。
 
  
 
@@ -75,11 +76,15 @@ App 有兩個管道可以接收原始通知：
 
 如果 app 沒有執行，也沒有使用[背景工作](#bg_tasks)，那麼傳送到該 app 的任何原始通知，都會在收到後遭 WNS 捨棄。 為了避免浪費雲端服務的資源，您應該考慮在服務實作邏輯，以追蹤應用程式是否正在使用中。 可以從兩個來源獲得這個資訊：應用程式可以明確告訴服務它已準備好開始接收通知，以及 WNS 可以告訴服務何時停止。
 
--   **App 通知雲端服務**：App 可以連絡服務，讓它知道 app 正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
--   **雲端服務回應 WNS 回應訊息**：App 服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 與 [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) 資訊，判斷何時停止傳送原始通知給 app。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
+-   
+            **App 通知雲端服務**：App 可以連絡服務，讓它知道 app 正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
+-   
+            **雲端服務回應 WNS 回應訊息**：App 服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 與 [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) 資訊，判斷何時停止傳送原始通知給 app。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
 
-    -   **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
-    -   **X-WNS-DeviceConnectionStatus: disconnected** 或 **X-WNS-DeviceConnectionStatus: tempconnected**：這表示 Windows 用戶端與 WNS 中斷連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
+    -   
+            **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
+    -   
+            **X-WNS-DeviceConnectionStatus: disconnected** 或 **X-WNS-DeviceConnectionStatus: tempconnected**：這表示 Windows 用戶端與 WNS 中斷連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
 
     應用程式的雲端服務可以使用這些狀態訊息中的資訊，停止使用原始通知進行通訊。 當應用程式回到前景並連線服務時，服務就可以繼續傳送原始通知。
 
@@ -89,7 +94,8 @@ App 有兩個管道可以接收原始通知：
 
 ### <span id="bg_tasks"></span><span id="BG_TASKS"></span>原始通知觸發的背景工作
 
-**重要：**使用原始通知背景工作之前，必須透過 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 授與 App 背景存取權限。
+
+            **重要：**使用原始通知背景工作之前，必須透過 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 授與 App 背景存取權限。
 
  
 

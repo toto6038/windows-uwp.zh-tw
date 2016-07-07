@@ -53,8 +53,7 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
     string mruToken = mru.Add(file, "profile pic");
     ```
     
-    [
-            **StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
 
     **提示** 您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)。
 
@@ -86,8 +85,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-[
-            **AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) 可以讓您重複處理 MRU 中的項目。 這些項目 (entry) 是 [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 結構，其中包含某個項目 (item) 的權杖和中繼資料。
+[**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) 可以讓您重複處理 MRU 中的項目。 這些項目 (entry) 是 [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 結構，其中包含某個項目 (item) 的權杖和中繼資料。
 
 ## 當 MRU 塞滿時從 MRU 移除項目
 
@@ -99,8 +97,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 當使用者挑選項目時，請考慮將此項目新增到您的未來存取清單及 MRU。
 
--   [
-            **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可以保留 1000 個項目。 請記住：它可以保留資料夾和檔案，所以會有許多資料夾。
+-   [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可以保留 1000 個項目。 請記住：它可以保留資料夾和檔案，所以會有許多資料夾。
 -   平台永遠不會替您從 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 移除項目。 當達到 1000 個項目的限制時，除非您使用 [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) 方法挪出空間，否則無法再新增其他項目。
 
  

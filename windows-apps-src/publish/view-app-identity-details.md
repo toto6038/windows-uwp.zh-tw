@@ -16,7 +16,8 @@ ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
 
 若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 \[應用程式管理\]。 按一下 \[應用程式身分識別\] 可檢視這些詳細資料。
 
-> **注意** 您必須有 app 的[保留名稱](create-your-app-by-reserving-a-name.md)，才能查看大多數身分識別詳細資料。
+> 
+            **注意** 您必須有 app 的[保留名稱](create-your-app-by-reserving-a-name.md)，才能查看大多數身分識別詳細資料。
 
 ## appx 資訊清單中包含的值
 
@@ -35,14 +36,17 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 下列值為參考您 app 套件系列的其他值，但是沒有包含在資訊清單中。
 
--   **套件系列名稱 (PFN)**：使用特定的 Windows API 時會使用這個值。
--   **套件 SID**：您需要此值以傳送 WNS 通知到您的 app。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
+-   
+            **套件系列名稱 (PFN)**：使用特定的 Windows API 時會使用這個值。
+-   
+            **套件 SID**：您需要此值以傳送 WNS 通知到您的 app。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
 
 ## App 清單連結
 
 您可以分享連至您 app 頁面的連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 。
 
-> **注意** 此 URL 適用於任何可使用您 App 的作業系統版本。 您可能也會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
+> 
+            **注意** 此 URL 適用於任何可使用您 App 的作業系統版本。 您可能也會看到適用於 Windows 8.1 和更早版本和/或 Windows Phone 8.1 和舊版的其他連結，這僅適用於指定的作業系統版本上。
 
 當客戶按一下此連結時，會開啟您 App 的網頁清單頁面。 如果您的 App 適用於客戶的 Windows 裝置，市集 App 也會啟動並顯示您的 App 清單。
 

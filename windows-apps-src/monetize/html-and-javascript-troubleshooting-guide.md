@@ -84,7 +84,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
     </div>
     ```
 
-5.  檢查元素的位置。 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必須在可檢視區域內。
+5.  檢查元素的位置。 
+            [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必須在可檢視區域內。
 
 6.  檢查 **visibility** 屬性。 這個屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
@@ -108,7 +109,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
     </div>
     ```
 
-8.  檢查 **z-index** 屬性。 **z-index** 屬性必須設為足夠高，使 **AdControl** 一律會顯示在其他元素之上。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
+8.  檢查 **z-index** 屬性。 
+            **z-index** 屬性必須設為足夠高，使 **AdControl** 一律會顯示在其他元素之上。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -143,7 +145,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
     </div>
     ```
 
-11. 確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
+11. 確定 **AdControl** 沒有在檢視區隱藏。 
+            **AdControl** 必須可見，廣告才能正確顯示。
 
 12. 不應在模擬器中測試 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
@@ -171,7 +174,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  **AdControl** 運作正常。 根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
+3.  
+            **AdControl** 運作正常。 根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
 <span id="html-adsnotrefreshing"/>
 ### 廣告沒有重新整理
@@ -217,7 +221,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
     );
     ```
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="js"/>
 ## JavaScript
@@ -326,7 +331,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="js-adsnotrefreshing"/>
 ### 廣告沒有重新整理
@@ -375,7 +381,8 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
     );
     ```
 
-3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
+3.  
+            **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
  
 

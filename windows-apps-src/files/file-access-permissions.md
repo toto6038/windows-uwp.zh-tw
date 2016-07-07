@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: 檔案存取權限
-description: App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
+title: "檔案存取權限"
+description: "App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+
 ---
 # 檔案存取權限
 
@@ -19,7 +23,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
     有兩種主要方式可以存取 app 安裝目錄的檔案和資料夾：
 
-    1.  您可以擷取代表 app 安裝目錄的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下所示：
+    1.  您可以抓取代表 app 安裝目錄的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -30,7 +34,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
        您可以接著使用 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 方法，來存取目錄中的檔案和資料夾。 在此範例中，這個 **StorageFolder** 儲存在 `installDirectory` 變數中。 您可以下載適用於 Windows 8.1 的 [App 套件資訊範例](http://go.microsoft.com/fwlink/p/?linkid=231526)，並在您的 Windows 10 app 中重複使用其原始程式碼，以深入了解如何使用 app 套件和安裝目錄。
 
-    2.  您可以使用 app URI，從 app 的安裝目錄直接擷取檔案，如下所示：
+    2.  您可以使用 App URI，從 App 的安裝目錄直接擷取檔案，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;            
@@ -44,7 +48,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         );
         ```
         
-        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 app 安裝目錄 (範例中為 `file`) 中的 *file.txt* 檔案。
+        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 App 安裝目錄 (範例中為 `file`) 中的 *file.txt* 檔案。
 
         URI 中的「ms-appx:///」前置詞是指 app 的安裝目錄。 您可以在[如何使用 URI 來參考內容](https://msdn.microsoft.com/library/windows/apps/hh781215)中，深入了解如何使用 app URI。
 
@@ -58,7 +62,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
     1.  使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) 屬性來抓取應用程式資料資料夾。
 
-        例如，您可以使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621)，來擷取代表 app 本機資料夾的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下所示：
+        例如，您可以使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621)，以抓取代表應用程式本機資料夾的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -68,11 +72,11 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
  
-        如果您想要存取 app 的漫遊或暫存資料夾，請改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性。
+        如果您想要存取 App 的漫遊或暫存資料夾，請改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性。
 
         在您擷取代表應用程式資料位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之後，可以使用 **StorageFolder** 方法存取該位置中的檔案和資料夾。 在此範例中，這些 **StorageFolder** 物件儲存在 `localFolder` 變數中。 您可以在[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)中，以及藉由下載適用於 Windows 8.1 的[應用程式資料範例](http://go.microsoft.com/fwlink/p/?linkid=231478)，並在您的 Windows 10 app 中重複使用其原始程式碼，來深入了解如何使用 app 資料位置。
 
-    2.  例如，您可以使用 app URI 從 app 的本機資料夾直接擷取檔案，如下所示：
+    2.  例如，您可以使用 App URI 從 App 的本機資料夾直接擷取檔案，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -86,7 +90,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         );
         ```
 
-        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 app 本機資料夾 (範例中為 `file`) 中的 *file.txt* 檔案。
+        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 App 本機資料夾 (範例中為 `file`) 中的 *file.txt* 檔案。
 
         URI 中的「ms-appdata:///local/」前置詞是指 app 的本機資料夾。 若要存取 app 的漫遊或暫存資料夾中的檔案，請改用「ms-appdata:///roaming/」或「ms-appdata:///temporary/」。 您可以在[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/hh781229)中，深入了解如何使用 app URI。
 
@@ -122,8 +126,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         );
         ```
  
-        [
-            **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的檔案時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
+        [ **DownloadsFolder** ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的檔案時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
 
     -   您可以在使用者的 [下載] 資料夾中建立子資料夾，如下所示：
         > [!div class="tabbedCodeSnippets"]
@@ -139,8 +142,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         );
         ```
  
-        [
-            **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的子資料夾時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
+        [ **DownloadsFolder** ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的子資料夾時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
 
     如果您在下載資料夾中建立檔案或資料夾，建議您將該項目新增到應用程式的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，如此一來，您的應用程式未來便能輕易存取該項目。
 
@@ -163,6 +165,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

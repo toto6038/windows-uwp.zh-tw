@@ -170,8 +170,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 1.  **在應用程式中包含 MediaElement。**
 
-    [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 可以讓您在 app 中播放音訊和視訊內容。 如需音訊和視訊播放的詳細資訊，請參閱[建立自訂傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt187271)與[音訊、視訊和相機](https://msdn.microsoft.com/library/windows/apps/mt203788)。
+    [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 可以讓您在 app 中播放音訊和視訊內容。 如需音訊和視訊播放的詳細資訊，請參閱[建立自訂傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt187271)與[音訊、視訊和相機](https://msdn.microsoft.com/library/windows/apps/mt203788)。
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>

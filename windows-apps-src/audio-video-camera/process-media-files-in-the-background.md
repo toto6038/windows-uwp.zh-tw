@@ -16,7 +16,8 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 本文說明如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。
 
-本文中所描述的 App 範例可讓使用者選取要轉碼的輸入媒體檔案，以及指定轉碼結果的輸出檔案。 接著，就會啟動背景工作來執行轉碼作業。 [
+本文中所描述的 App 範例可讓使用者選取要轉碼的輸入媒體檔案，以及指定轉碼結果的輸出檔案。 接著，就會啟動背景工作來執行轉碼作業。 
+            [
               **MediaProcessingTrigger**
             ](https://msdn.microsoft.com/library/windows/apps/dn806005) 支援除了轉碼以外許多不同的媒體處理案例，包括轉譯媒體組合到磁碟，以及處理完成後上傳已處理的媒體檔案。
 
@@ -47,14 +48,18 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 將下列成員變數新增到您的類別：
 
--   [
+-   
+            [
               **IBackgroundTaskInstance**
             ](https://msdn.microsoft.com/library/windows/apps/br224797)，將用來以背景工作的進度更新前景 App。
--   [
+-   
+            [
               **BackgroundTaskDeferral**
             ](https://msdn.microsoft.com/library/windows/apps/hh700499)，非同步執行媒體轉碼時，讓系統不要關閉您的背景工作。
--   **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
--   [
+-   
+            **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
+-   
+            [
               **MediaTranscoder**
             ](https://msdn.microsoft.com/library/windows/apps/br207080) 物件，用來轉碼媒體檔案。
 
@@ -74,7 +79,8 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 呼叫 [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936)，傳入輸入檔案、輸出檔案和編碼設定檔。 從這個呼叫傳回的 [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) 物件可讓您知道是否可以執行轉碼。 如果 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) 屬性為 true，請呼叫 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 來執行轉碼作業。
 
-**AsTask** 方法可讓您追蹤非同步作業的進度或取消作業。 建立新的 **Progress** 物件，指定您想要的進度單位，以及要呼叫來通知您目前工作進度的方法名稱。 將 **Progress** 物件連同可讓您取消工作的取消權杖傳入 **AsTask** 方法。
+
+            **AsTask** 方法可讓您追蹤非同步作業的進度或取消作業。 建立新的 **Progress** 物件，指定您想要的進度單位，以及要呼叫來通知您目前工作進度的方法名稱。 將 **Progress** 物件連同可讓您取消工作的取消權杖傳入 **AsTask** 方法。
 
 [!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
@@ -82,7 +88,8 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-**SendToastNotification** 協助程式方法會取得只有文字內容的快顯通知的範本 XML 文件，建立新的快顯通知。 此時會設定快顯通知 XML 的文字項目，然後從 XML 文件建立新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 物件。 最後，呼叫 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 對使用者顯示快顯通知。
+
+            **SendToastNotification** 協助程式方法會取得只有文字內容的快顯通知的範本 XML 文件，建立新的快顯通知。 此時會設定快顯通知 XML 的文字項目，然後從 XML 文件建立新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 物件。 最後，呼叫 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 對使用者顯示快顯通知。
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
@@ -111,7 +118,8 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 [!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-**PickFilesToTranscode** 協助程式方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，開啟轉碼的輸入檔案與輸出檔案。 使用者可能會選取您的 app 無法存取的位置中的檔案。 若要確定您的背景工作可以開啟檔案，請將這些檔案新增到您的 App 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)。
+
+            **PickFilesToTranscode** 協助程式方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，開啟轉碼的輸入檔案與輸出檔案。 使用者可能會選取您的 app 無法存取的位置中的檔案。 若要確定您的背景工作可以開啟檔案，請將這些檔案新增到您的 App 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)。
 
 最後，在您 app 的 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中設定輸入檔案與輸出檔案名稱的項目。 背景工作會擷取這個位置中的檔案名稱。
 

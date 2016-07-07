@@ -44,9 +44,11 @@ ms.openlocfilehash: ade51661fa6628c76b555316f645ec6622dd299a
 </Applications>
 ```
 
-**Category** 屬性會將此 app 識別為 app 服務提供者。
 
-**EntryPoint** 屬性會識別實作服務的類別，我們將在下一步驟中實作此類別。
+            **Category** 屬性會將此 app 識別為 app 服務提供者。
+
+
+            **EntryPoint** 屬性會識別實作服務的類別，我們將在下一步驟中實作此類別。
 
 ## 建立 app 服務
 
@@ -105,7 +107,8 @@ ms.openlocfilehash: ade51661fa6628c76b555316f645ec6622dd299a
 ## 撰寫 app 服務的程式碼
 
 
-**OnRequestedReceived()** 是撰寫 app 服務的程式碼所在位置。 使用這個範例中的程式碼，來取代 MyAppService 的 Class1.cs 中的虛設常式 **OnRequestedReceived()**。 這個程式碼會取得庫存項目的索引，並將它和命令字串一起傳送到服務，來擷取指定庫存項目的名稱和價格。 為求簡潔，已移除錯誤處理程式碼。
+
+            **OnRequestedReceived()** 是撰寫 app 服務的程式碼所在位置。 使用這個範例中的程式碼，來取代 MyAppService 的 Class1.cs 中的虛設常式 **OnRequestedReceived()**。 這個程式碼會取得庫存項目的索引，並將它和命令字串一起傳送到服務，來擷取指定庫存項目的名稱和價格。 為求簡潔，已移除錯誤處理程式碼。
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -159,13 +162,16 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 請注意，**OnRequestedReceived()** 是 **async**，因為我們要在這個範例中對 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 建立可等候的方法呼叫。
 
-隨即會產生延遲，讓服務能夠在 OnRequestReceived 處理常式中使用 **async** 方法。 它可確保 OnRequestReceived 的呼叫在其完成處理訊息之後才會完成。 [
+隨即會產生延遲，讓服務能夠在 OnRequestReceived 處理常式中使用 **async** 方法。 它可確保 OnRequestReceived 的呼叫在其完成處理訊息之後才會完成。 
+            [
               **SendResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn921722) 是在完成時用來傳送回應。 **SendResponseAsync** 不會發出完成呼叫的訊號。 它是對 [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) 發出訊號表示 OnRequestReceived 已完成的延遲完成。
+            ](https://msdn.microsoft.com/library/windows/apps/dn921722) 是在完成時用來傳送回應。 
+            **SendResponseAsync** 不會發出完成呼叫的訊號。 它是對 [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) 發出訊號表示 OnRequestReceived 已完成的延遲完成。
 
 app 服務會使用[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 來交換資訊。 您可能傳送的資料大小僅受限於系統資源。 沒有任何預先定義的機碼可供您在 **ValueSet** 中使用。 您必須決定要用來定義 app 服務通訊協定的機碼值。 在撰寫呼叫者時，必須以該通訊協定來考量。 在這個範例中，我們選擇名為 "Command" 的機碼，它的值會指出我們是否想要 app 服務提供庫存項目的名稱或其價格。 庫存名稱的索引儲存在 "ID" 機碼下方。 傳回的值會儲存在 "Result" 機碼下方。
 
-[
+
+            [
               **AppServiceClosedStatus**
             ](https://msdn.microsoft.com/library/windows/apps/dn921703) 列舉會傳回給呼叫者，指出 app 服務的呼叫成功或失敗。 app 服務呼叫可能會失敗的範例，就是作業系統中止服務端點、資源過度使用等。 您可以透過 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 傳回其他錯誤資訊。 在這個範例中，我們使用名為 "Status" 的機碼，為呼叫者傳回更詳細的錯誤資訊。
 
@@ -393,6 +399,6 @@ namespace MyAppService
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

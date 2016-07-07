@@ -68,7 +68,8 @@ ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
 
 如果您使用條件式編譯 (搭配使用 C# 前置處理器指示詞)，以便您的程式碼檔案在 Windows 8.1 與 Windows Phone 8.1 上運作，有鑑於 Windows 10 中完成的交集工作，您現在可以檢閱所做的條件式編譯。 交集表示在 Windows 10 應用程式中，有些條件式可以全然移除。 其他有關執行階段檢查的變更，如下列範例所示。
 
-**注意** 如果您想要以單一程式碼檔案支援 Windows 8.1、Windows Phone 8.1 及 Windows 10，您也可以執行這個動作。 如果您在專案的屬性頁面中查看 Windows 10 專案，您會看到專案將 WINDOWS\_UAP 定義為條件式編譯符號。 因此您能夠用來與 WINDOWS\_APP 及 WINDOWS\_PHONE\_APP 一起使用。 這些範例示範說明較簡單的情況，移除通用 8.1 應用程式的條件式編譯，然後取代為 Windows 10 應用程式的對等程式碼。
+
+            **注意** 如果您想要以單一程式碼檔案支援 Windows 8.1、Windows Phone 8.1 及 Windows 10，您也可以執行這個動作。 如果您在專案的屬性頁面中查看 Windows 10 專案，您會看到專案將 WINDOWS\_UAP 定義為條件式編譯符號。 因此您能夠用來與 WINDOWS\_APP 及 WINDOWS\_PHONE\_APP 一起使用。 這些範例示範說明較簡單的情況，移除通用 8.1 應用程式的條件式編譯，然後取代為 Windows 10 應用程式的對等程式碼。
 
 第一個範例示範 **PickSingleFileAsync** API (這只適用於 Windows 8.1) 與 **PickSingleFileAndContinue** API (這只適用於 Windows Phone 8.1) 的使用模式。
 
@@ -134,7 +135,8 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-在 Windows 10 中，硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此這個程式碼實質上等同於通用 8.1 程式碼，因為它很謹慎地僅使用現有的功能 (雖然是以不同的方式達成)。
+在 Windows 10 中，硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 
+            **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此這個程式碼實質上等同於通用 8.1 程式碼，因為它很謹慎地僅使用現有的功能 (雖然是以不同的方式達成)。
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -159,7 +161,8 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## 應用程式套件資訊清單
 
-[Windows 10 中的變更功能](https://msdn.microsoft.com/library/windows/apps/dn705793)主題會針對 Windows 10 列出對套件資訊清單結構描述參考所做的變更，包括已新增、移除及變更的元素。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果您正在移植 Windows Phone 市集應用程式，則需確保已移植應用程式資訊清單中的 **pm:PhoneIdentity** 元素符合您正在移植之 app 的應用程式資訊清單中的元素 (請參閱 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 主題，以取得完整詳細資料)。
+
+            [Windows 10 中的變更功能](https://msdn.microsoft.com/library/windows/apps/dn705793)主題會針對 Windows 10 列出對套件資訊清單結構描述參考所做的變更，包括已新增、移除及變更的元素。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果您正在移植 Windows Phone 市集應用程式，則需確保已移植應用程式資訊清單中的 **pm:PhoneIdentity** 元素符合您正在移植之 app 的應用程式資訊清單中的元素 (請參閱 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 主題，以取得完整詳細資料)。
 
 您專案 (包括任何擴充功能 SDK 參考) 中的設定，會決定您應用程式能呼叫的 API 介面區。 但客戶實際上能夠透過市集安裝您應用程式的裝置集，是由您的應用程式套件資訊清單決定。 如需詳細資訊，請參閱 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 中的範例。
 

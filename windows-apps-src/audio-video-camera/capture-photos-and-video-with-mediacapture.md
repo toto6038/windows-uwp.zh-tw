@@ -41,7 +41,8 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ## 初始化 MediaCapture 物件
 
-[
+
+            [
               **Windows.Media.Capture**
             ](https://msdn.microsoft.com/library/windows/apps/br226738)命名空間中的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別是所有媒體都擷取操作的基本介面。 App 通常會宣告範圍限於單一頁面的此類型變數。 您的 app 需要追蹤 **MediaCapture** 的目前狀態，所以您應該宣告可供初始化、預覽及記錄物件狀態的布林值變數。
 
@@ -55,17 +56,21 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 [!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
--   [
+-   
+            [
               **DeviceInformation.FindAllAsync**
             ](https://msdn.microsoft.com/library/windows/apps/br225432) 方法可用來尋找所有指定類型的裝置。 此範例會傳入 **DeviceClass.VideoCapture** 列舉值，表示只應傳回視訊擷取裝置。 請注意，視訊擷取裝置用於擷取相片和視訊。
 
--   **FindAllAsync** 會傳回 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 物件，其中包含每個找到之要求類型裝置的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 物件。 **System.Linq** 命名空間中的 **FirstOrDefault** 延伸方法提供了簡單的語法，以便根據指定的條件選取清單中的項目。 第一次呼叫會嘗試選取清單中 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 值為 **Panel.Back** 的第一個 **DeviceInformation**，以表示相機位於裝置機殼的背面面板上。 如果裝置的背面面板上沒有相機，則會使用第一個可用的相機。
+-   
+            **FindAllAsync** 會傳回 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 物件，其中包含每個找到之要求類型裝置的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 物件。 
+            **System.Linq** 命名空間中的 **FirstOrDefault** 延伸方法提供了簡單的語法，以便根據指定的條件選取清單中的項目。 第一次呼叫會嘗試選取清單中 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 值為 **Panel.Back** 的第一個 **DeviceInformation**，以表示相機位於裝置機殼的背面面板上。 如果裝置的背面面板上沒有相機，則會使用第一個可用的相機。
 
 -   如果在初始化 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) 時並未指定裝置識別碼，系統將會選擇裝置的內部清單中的第一個裝置。
 
 -   呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 可讓物件開始使用指定的擷取裝置。 此呼叫是在 **try** 區塊內部進行，因為如果使用者拒絕了對相機的呼叫 app 存取，它將會擲回 **UnauthorizedAccessException**。 如果呼叫成功，**\_isInitialized** 變數會設定為 true，以便後續方法呼叫判斷是否已初始化擷取裝置。
 
-- **重要事項** 在某些裝置系列，在授與您的 app 存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
+- 
+            **重要事項** 在某些裝置系列，在授與您的 app 存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
 
 -   如果擷取裝置的初始化成功，則會設定變數以反映擷取裝置是否為外接式，或是否位於裝置的前端面板上。 這些值將用來正確地為使用者導向擷取預覽。 最後會更新 UI，以反映擷取可用且來自擷取裝置的預覽資料流已啟動。 本文稍後會說明在協助程式方法中執行的工作。
 
@@ -73,7 +78,8 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 為了讓使用者能夠查看他們所擷取的內容，您必須提供視訊擷取裝置目前在您 UI 中所見內容的預覽。
 
-**重要：**您必須啟動擷取預覽，擷取裝置才能啟用自動對焦、自動曝光和自動白平衡。
+
+            **重要：**您必須啟動擷取預覽，擷取裝置才能啟用自動對焦、自動曝光和自動白平衡。
 
 提供的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項可啟用擷取預覽。 以下顯示的範例 XAML 程式碼會定義擷取元素。
 
@@ -89,13 +95,16 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 -   在 **DisplayRequest** 物件上呼叫 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) 方法，以要求系統讓畫面保留開啟狀態。
 
--   **CaptureElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性會設定為 app 的 **MediaCapture** 物件，以定義預覽的來源。
+-   
+            **CaptureElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性會設定為 app 的 **MediaCapture** 物件，以定義預覽的來源。
 
--   [
+-   
+            [
               **FlowDirection**
             ](https://msdn.microsoft.com/library/windows/apps/br208716) 屬性是由 XAML 架構提供，可支援雙向使用者介面。 將 **CaptureElement** 的流向設定為 [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397)，可使得預覽視訊水平翻轉。 這使用於擷取裝置位於裝置的前面板時，如此才能從使用者的角度觀看正確方向的預覽。
 
--   [
+-   
+            [
               **StartPreviewAsync**
             ](https://msdn.microsoft.com/library/windows/apps/br226613) 方法可在 **CaptureElement** 中開始顯示預覽資料流。 如果預覽啟動成功，**\_isPreviewing** 變數會設為允許 app 的其他部分得知 app 目前正在預覽，並會呼叫用於設定預覽旋轉的協助程式方法。 下一節中會定義這個方法。
 
@@ -137,7 +146,8 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 [!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-下列方法可設定預覽資料流的旋轉。 媒體擷取之 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 的 [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 方法會傳回組成機碼/值組的屬性集。 指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640)，表示我們想要視訊預覽資料流的屬性，而不是視訊錄製資料流或音訊資料流。 此屬性集是用於設定資料流屬性的一般用途介面，但對此工作而言，以上定義的視訊旋轉 GUID 會新增為屬性機碼，而所需的視訊資料流方向 (以度數表示) 則會指定為此值。 [
+下列方法可設定預覽資料流的旋轉。 媒體擷取之 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 的 [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 方法會傳回組成機碼/值組的屬性集。 指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640)，表示我們想要視訊預覽資料流的屬性，而不是視訊錄製資料流或音訊資料流。 此屬性集是用於設定資料流屬性的一般用途介面，但對此工作而言，以上定義的視訊旋轉 GUID 會新增為屬性機碼，而所需的視訊資料流方向 (以度數表示) 則會指定為此值。 
+            [
               **SetEncodingPropertiesAsync**
             ](https://msdn.microsoft.com/library/windows/apps/dn297781) 可使用新的值更新編碼屬性。 再次指定 **MediaStreamType.VideoPreview**，表示所要設定的屬性適用於視訊預覽資料流。
 
@@ -153,15 +163,18 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ## 擷取相片
 
-下列方法會使用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) 方法擷取相片，並傳入要求的編碼屬性以及將會包含擷取操作輸出的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 物件。 [
+下列方法會使用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) 方法擷取相片，並傳入要求的編碼屬性以及將會包含擷取操作輸出的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 物件。 
+            [
               **ImageEncodingProperties**
             ](https://msdn.microsoft.com/library/windows/apps/hh700993) 類別會提供協助程式方法 (如 [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994))，以產生媒體擷取所支援檔案類型的編碼屬性。
 
 [!code-cs[TakePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
 
-將相片儲存到檔案之前，您必須判斷相片的正確方向。 **MediaCapture** 物件不知道裝置的方向，所以它會以擷取裝置採用其預設方向的方式來編碼所擷取的相片資料。 這會在使用者檢視所擷取的相片時造成負面的使用者體驗，因為相片的方向不正確。 下列協助程式方法可判斷正確的相片方向，然後以正確的方向儲存檔案。
+將相片儲存到檔案之前，您必須判斷相片的正確方向。 
+            **MediaCapture** 物件不知道裝置的方向，所以它會以擷取裝置採用其預設方向的方式來編碼所擷取的相片資料。 這會在使用者檢視所擷取的相片時造成負面的使用者體驗，因為相片的方向不正確。 下列協助程式方法可判斷正確的相片方向，然後以正確的方向儲存檔案。
 
-**GetCameraOrientation** 協助程式方法會以目前的裝置方向啟動，然後根據裝置的原生方向和裝置上的相機位置旋轉該值。 如果相機固定在裝置前面板 (如這個範例中的 **\_mirroringPreview** 變數所示)，則相機方向應該會反轉。
+
+            **GetCameraOrientation** 協助程式方法會以目前的裝置方向啟動，然後根據裝置的原生方向和裝置上的相機位置旋轉該值。 如果相機固定在裝置前面板 (如這個範例中的 **\_mirroringPreview** 變數所示)，則相機方向應該會反轉。
 
 [!code-cs[GetCameraOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetCameraOrientation)]
 
@@ -179,7 +192,8 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ## 擷取視訊
 
-若要開始擷取視訊，請先建立將要記錄視訊的存放檔案。 接著建立 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026)，供 **MediaCapture** 將視訊編碼成檔案。 **MediaEncodingProfile** 類別提供一些方法 (例如 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078))，以建立所支援視訊格式的編碼設定檔。 使用先前討論的協助程式方法，取得視訊的正確旋轉度數。 與相片案例不同，視訊旋轉資訊會由 **MediaCapture** 編碼成資料流。 將旋轉資訊加入至 [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) 集合，即可將它新增到編碼設定檔。 先前為視訊旋轉定義的 GUID 會做為機碼，而其值是旋轉度數。 最後，呼叫 [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863)，指定編碼屬性與輸出檔案即可開始錄製。
+若要開始擷取視訊，請先建立將要記錄視訊的存放檔案。 接著建立 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026)，供 **MediaCapture** 將視訊編碼成檔案。 
+            **MediaEncodingProfile** 類別提供一些方法 (例如 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078))，以建立所支援視訊格式的編碼設定檔。 使用先前討論的協助程式方法，取得視訊的正確旋轉度數。 與相片案例不同，視訊旋轉資訊會由 **MediaCapture** 編碼成資料流。 將旋轉資訊加入至 [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) 集合，即可將它新增到編碼設定檔。 先前為視訊旋轉定義的 GUID 會做為機碼，而其值是旋轉度數。 最後，呼叫 [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863)，指定編碼屬性與輸出檔案即可開始錄製。
 
 [!code-cs[StartRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
 
@@ -233,7 +247,8 @@ App 存留期事件讓 app 有機會初始化並釋出資源。 這對於 **Appl
 
 在 **Application.Suspending** 事件的處理常式中，您應該取消登錄顯示器和裝置方向事件的處理常式並關閉 **MediaCapture** 物件。 本文稍後描述的另一個應用程式週期相關工作會需要此處取消註冊的 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。
 
-**警告**：您必須在擱置中事件處理常式的開頭呼叫 [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690)，以要求延遲擱置。 這會要求系統等到您發出作業已完成的訊號，再清除您的 app。 這是必要的，因為 **MediaCapture** 關閉作業是非同步的，所以 **Application.Suspending** 事件處理常式可以在相機正常關機前完成。 等到非同步呼叫完成之後，您應該藉由呼叫 [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 來釋放延遲。
+
+            **警告**：您必須在擱置中事件處理常式的開頭呼叫 [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690)，以要求延遲擱置。 這會要求系統等到您發出作業已完成的訊號，再清除您的 app。 這是必要的，因為 **MediaCapture** 關閉作業是非同步的，所以 **Application.Suspending** 事件處理常式可以在相機正常關機前完成。 等到非同步呼叫完成之後，您應該藉由呼叫 [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 來釋放延遲。
 
 [!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
@@ -241,7 +256,8 @@ App 存留期事件讓 app 有機會初始化並釋出資源。 這對於 **Appl
 
 [!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-[
+
+            [
               **OnNavigatedTo**
             ](https://msdn.microsoft.com/library/windows/apps/br227508) 事件讓您一開始有機會登錄顯示器和裝置方向事件的處理常式並初始化 **MediaCapture** 物件。
 
@@ -279,7 +295,8 @@ App 存留期事件讓 app 有機會初始化並釋出資源。 這對於 **Appl
 
 ### 支援同時的相片和影片擷取
 
-[
+
+            [
               **Windows.Media.Capture**
             ](https://msdn.microsoft.com/library/windows/apps/br226738) API 可讓您在支援的裝置上同時擷取相片和視訊。 為求簡潔，這個範例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 屬性來判斷是否支援同時擷取視訊與相片，但更強大且建議的方法是使用相機設定檔。 如需詳細資訊，請參閱[相機設定檔](camera-profiles.md)。
 
@@ -321,7 +338,8 @@ App 存留期事件讓 app 有機會初始化並釋出資源。 這對於 **Appl
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-**注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+
+            **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 

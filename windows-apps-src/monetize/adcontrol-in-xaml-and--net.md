@@ -40,7 +40,8 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > **注意** 這個影像是 Visual Studio 2015 建置適用於 Windows 10 的 UWP 專案。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的 app，則畫面看起來會不同。
+    > 
+            **注意** 這個影像是 Visual Studio 2015 建置適用於 Windows 10 的 UWP 專案。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的 app，則畫面看起來會不同。
 
 3.  在 \[參考管理員\] 中，按一下 \[確定\]。
 4.  於內嵌 **Microsoft.Advertising.WinRT.UI** 命名空間的頁面修改 XAML。 例如，在 Visual Studio 產生的預設範例 App (同此 App 中的 MyAdFundedWindows10AppXAML)，該 XAML 頁面是 **MainPage.XAML**。
@@ -86,7 +87,8 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
     1.  在 **Page** 中，將 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 屬性指派為[測試模式值](test-mode-values.md)中提供的測試值。
 
-        > **注意** 在提交 App 之前，請以實際值取代測試值。
+        > 
+            **注意** 在提交 App 之前，請以實際值取代測試值。
 
     2.  調整控制項的高度和寬度，以符合[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
@@ -148,7 +150,8 @@ C#：如需如何將事件處理器指派給 **AdControl** 事件的範例，請
 
 Visual Basic：如需如何將事件處理器指派給 **AdControl** 事件的範例，請參閱 [XAML 屬性範例](xaml-properties-example.md)。
 
-C ++：目前版本的 Microsoft advertising 程式庫支援 C++。 **AdControl** 會載入 CLR 並使用管制型 C++。
+C ++：目前版本的 Microsoft advertising 程式庫支援 C++。 
+            **AdControl** 會載入 CLR 並使用管制型 C++。
 
 錯誤處理：若要了解如何處理錯誤，請參閱 [AdControl 錯誤處理](adcontrol-error-handling.md)。
 

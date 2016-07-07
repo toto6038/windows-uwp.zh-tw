@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 您的 app 需要包括各種標誌、螢幕擷取畫面和影像。
-title: App 螢幕擷取畫面與影像
+Description: "您的 app 需要包括各種標誌、螢幕擷取畫面和影像。"
+title: "App 螢幕擷取畫面與影像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
+ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
+
 ---
 
 # App 螢幕擷取畫面與影像
@@ -12,9 +15,9 @@ ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 
 在 [app 提交程序](app-submissions.md)中，您必須在[介紹](create-app-descriptions.md)步驟中提供[螢幕擷取畫面](#screenshots)和[促銷用圖稿](#promotional-artwork)。 這些影像可用來協助在市集中顯示您的應用程式。
 
-市集也會使用您的 app 磚以及應用程式套件中包含的其他影像。 執行 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/mt186449)，以判斷您是否缺少任何必要影像。
+市集也會使用您的 app 磚以及應用程式套件中包含的其他影像。 執行 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/mt186449)，以判斷您是否缺少任何必要影像。 如需關於這些影像的指導方針和建議，請參閱[磚和圖示資產](../controls-and-patterns/tiles-and-notifications-app-assets.md)。
 
-> **注意：**根據客戶的作業系統和其他因素而定，在市集中、在客戶的 [開始] 畫面上，以及在 app 本身使用影像的方式可能有所差異。
+> **注意** 根據客戶的作業系統和其他因素而定，在市集中、在客戶的 [開始] 畫面上，以及在 App 本身使用影像的方式可能有所差異。
 
 
 ## 在提交程序期間提供的影像
@@ -102,6 +105,7 @@ Windows 市集編輯團隊會使用不同的影像，在市集中展示 app。 �
 在 Windows 8.1 和較舊版本的市集中，促銷配置可能使用 414 x 180 像素大小的影像。 如果您的 app 是在 Windows 8.1 或較舊版本上執行，建議您基於促銷考量來提供這個大小的影像。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

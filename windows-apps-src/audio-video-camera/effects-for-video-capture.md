@@ -64,8 +64,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 ### 處理停用的影像防震效果
 
-如果像素輸送量太高，超過防震效果的處理能力，或如果系統偵測到效果執行速度變慢，則系統可能會自動停用影像防震效果。 如果發生這種情況，則會引發 EnabledChanged 事件。 *sender* 參數中的 **VideoStabilizationEffect** 執行個體指出效果的新狀態：啟用或停用。 [
-            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值，指出效果啟用或停用的原因。 請注意，如果您以程式設計方式啟用或停用效果，則也會引發這個事件，在此情況下原因是 **Programmatic**。
+如果像素輸送量太高，超過防震效果的處理能力，或如果系統偵測到效果執行速度變慢，則系統可能會自動停用影像防震效果。 如果發生這種情況，則會引發 EnabledChanged 事件。 *sender* 參數中的 **VideoStabilizationEffect** 執行個體指出效果的新狀態：啟用或停用。 [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值，指出效果啟用或停用的原因。 請注意，如果您以程式設計方式啟用或停用效果，則也會引發這個事件，在此情況下原因是 **Programmatic**。
 
 通常您會使用此事件來調整您 app 的 UI，指示目前的影像防震狀態。
 
