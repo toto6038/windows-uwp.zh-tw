@@ -91,7 +91,7 @@ Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/ap
 -   當所有的樞紐標頭大小符合允許的空間時，樞紐會靜止。
 -   雖然樞紐本身不會移動，但點選樞紐標籤會瀏覽到對應的頁面。 使用中的樞紐會以醒目提示的方式顯示。
 
-{{&gt; aside-internal content = "
+{{> aside-internal content = "
 -   強烈建議在 10 英呎環境中避免讓項目發生浮動切換。 如果您的 App 將在 Xbox 上執行，請將新的 `IsHeaderItemsCarouselEnabled` 屬性設定為 False。
 "}}
 
