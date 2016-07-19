@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/21cebdc15ee99cbe0d100bd4193d55fdafc1a5cd/windows-apps-src/get-started/get-set-up.md) | OutofSyncHandedBackSuccess | [Details](#fe6dc8f1ae3bd8bf308c0e2bcf5e565deffb3df22312)
- [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/3eeda3d0e9ceceb4204170423edb57cb24fa0e1c/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md) | OutofSyncHandedBackSuccess | [Details](#20cb7ce04503cfc2eed31db1bbad4878b8c666013502)
+ [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/09ecf35075de44b9f6e10f2011863015a5480689/windows-apps-src/get-started/get-set-up.md) | OutofSyncHandedBackSuccess | [Details](#db6874f3876330b646a19980aa6e122acc79f9762312)
+ [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/09ecf35075de44b9f6e10f2011863015a5480689/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#f3200f297049bdfcbcdf28a48656fa3a111277ea2672)
 
 ## Item Details
-##### <a name='fe6dc8f1ae3bd8bf308c0e2bcf5e565deffb3df22312'></a> Source: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/21cebdc15ee99cbe0d100bd4193d55fdafc1a5cd/windows-apps-src/get-started/get-set-up.md)
+##### <a name='db6874f3876330b646a19980aa6e122acc79f9762312'></a> Source: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/09ecf35075de44b9f6e10f2011863015a5480689/windows-apps-src/get-started/get-set-up.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/d73b1cd824ee83520aaddd2b03b400bc1b55f854/ol-handoff/Microsoft/windows-apps.zh-tw/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-tw.xlf)
-* Handoff Datetime: 2016-07-19 21:03:45
+* Handoff File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5779738e7076b07b5037130174efe185724b6544/ol-handoff/Microsoft/windows-apps.zh-tw/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-tw.xlf)
+* Handoff Datetime: 2016-07-19 21:34:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -25,18 +25,18 @@
 * Current Handback Datetime: 2016-07-07 14:52:43
 * [Back to Top](#report-top)
 
-##### <a name='20cb7ce04503cfc2eed31db1bbad4878b8c666013502'></a> Source: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/3eeda3d0e9ceceb4204170423edb57cb24fa0e1c/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
+##### <a name='f3200f297049bdfcbcdf28a48656fa3a111277ea2672'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/09ecf35075de44b9f6e10f2011863015a5480689/windows-apps-src/get-started/universal-application-platform-guide.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/d73b1cd824ee83520aaddd2b03b400bc1b55f854/ol-handoff/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-tw.xlf)
-* Handoff Datetime: 2016-07-19 21:03:45
+* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5779738e7076b07b5037130174efe185724b6544/ol-handoff/Microsoft/windows-apps.zh-tw/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf)
+* Handoff Datetime: 2016-07-19 21:34:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8fb0333f93d8703ca2c68ed5663a59d0bc562167/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
-* Current Handback File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/8a79e594417f6c24b1634f8d2ee5921039f22dca/ol-handback/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-tw.xlf)
+* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8fb0333f93d8703ca2c68ed5663a59d0bc562167/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/8a79e594417f6c24b1634f8d2ee5921039f22dca/ol-handback/Microsoft/windows-apps.zh-tw/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-07 14:52:43
 * [Back to Top](#report-top)
 
