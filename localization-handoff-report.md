@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b9d3826e31fff7a5423fab8116f636a8a9b48668/windows-apps-src/publish/microsoft-advertising-payment-process.md) | OutofSyncHandedBackSuccess | [Details](#f542cb924db3899f8b10cc10ecbc9558e2993ca33675)
+ [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps/blob/6f97dadf3af4991bfc8d72e4490f4001b5105219/windows-apps-src/xbox-apps/development-environment-setup.md) | OutofSyncHandedBackSuccess | [Details](#13d2833d9508a9d748cc4d7bf096f1a45ed1297e5360)
+ [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/6f97dadf3af4991bfc8d72e4490f4001b5105219/windows-apps-src/xbox-apps/getting-started.md) | OutofSyncHandedBackSuccess | [Details](#03e579dda5fd0ca85fd4d37aec3bd47537dd93d95370)
 
 ## Item Details
-##### <a name='f542cb924db3899f8b10cc10ecbc9558e2993ca33675'></a> Source: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b9d3826e31fff7a5423fab8116f636a8a9b48668/windows-apps-src/publish/microsoft-advertising-payment-process.md)
+##### <a name='13d2833d9508a9d748cc4d7bf096f1a45ed1297e5360'></a> Source: [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps/blob/6f97dadf3af4991bfc8d72e4490f4001b5105219/windows-apps-src/xbox-apps/development-environment-setup.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/8b8de11cf256b8c152b39698f0c637a771ef24f0/ol-handoff/Microsoft/windows-apps.zh-tw/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-tw.xlf)
-* Handoff Datetime: 2016-07-19 18:34:41
+* Handoff File: [development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/80d8e3c91c33f64dd7b1a84cb7e608c2bf95fac9/ol-handoff/Microsoft/windows-apps.zh-tw/master/development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.zh-tw.xlf)
+* Handoff Datetime: 2016-07-19 19:34:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8fb0333f93d8703ca2c68ed5663a59d0bc562167/windows-apps-src/publish/microsoft-advertising-payment-process.md)
-* Current Handback File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/8a79e594417f6c24b1634f8d2ee5921039f22dca/ol-handback/Microsoft/windows-apps.zh-tw/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-tw.xlf)
+* Current Target File: [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8fb0333f93d8703ca2c68ed5663a59d0bc562167/windows-apps-src/xbox-apps/development-environment-setup.md)
+* Current Handback File: [development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/8a79e594417f6c24b1634f8d2ee5921039f22dca/ol-handback/Microsoft/windows-apps.zh-tw/master/development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-07 14:52:43
+* [Back to Top](#report-top)
+
+##### <a name='03e579dda5fd0ca85fd4d37aec3bd47537dd93d95370'></a> Source: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/6f97dadf3af4991bfc8d72e4490f4001b5105219/windows-apps-src/xbox-apps/getting-started.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/80d8e3c91c33f64dd7b1a84cb7e608c2bf95fac9/ol-handoff/Microsoft/windows-apps.zh-tw/master/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.zh-tw.xlf)
+* Handoff Datetime: 2016-07-19 19:34:25
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/8fb0333f93d8703ca2c68ed5663a59d0bc562167/windows-apps-src/xbox-apps/getting-started.md)
+* Current Handback File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/8a79e594417f6c24b1634f8d2ee5921039f22dca/ol-handback/Microsoft/windows-apps.zh-tw/master/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-07 14:52:43
 * [Back to Top](#report-top)
 
