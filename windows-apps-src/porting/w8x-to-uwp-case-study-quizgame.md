@@ -23,26 +23,21 @@ ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 應用程式會利用使用檢視與檢視模型的模式。 誠如所見，由於這個清楚的區隔，使得適用於此 app 的移植程序變得非常簡單。
 
-
-            **注意** 這個範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 (儘管您的公司網路不適用，但是大部分的家用網路都適用)。 此範例也會傳送和接收 TCP 封包。
+**注意** 這個範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 (儘管您的公司網路不適用，但是大部分的家用網路都適用)。 此範例也會傳送和接收 TCP 封包。
 
  
 
-
-            **注意** 在 Visual Studio 中開啟 QuizGame10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+**注意** 在 Visual Studio 中開啟 QuizGame10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
  
 
 ## 下載
 
+[下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
 
-            [下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
+[下載 QuizGame10 Windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是應用程式剛移植後的狀態。 
 
-
-            [下載 QuizGame10 Windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是應用程式剛移植後的狀態。 
-
-
-            [在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
+[在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
 ## WinRT 8.1 方案
 
@@ -65,11 +60,11 @@ ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 酒吧裡正在舉行有趣的測驗遊戲。 酒吧裡有一台每個人都能看見的大型電視。 測驗遊戲主持人會有一部電腦將其輸出顯示於電視上。 該電腦上正在執行「主機應用程式」。 任何想要參加測驗的人，只需在其手機或 Surface 上安裝「用戶端應用程式」即可。
 
-主機應用程式處於大廳模式，並且正在大型電視上宣告它已經準備好可供用戶端連線。 Joan 在她的行動裝置上啟動用戶端應用程式。 她在 \[玩家名稱\] 文字方塊中輸入她的名稱，然後點選 \[加入遊戲\]。 主機應用程式會透過顯示 Joan 的名稱來確認她已加入，而 Joan 的用戶端應用程式會指出其正在等待遊戲開始。 接下來，Maxwell 會在其行動裝置上執行這些相同步驟。
+主機應用程式處於大廳模式，並且正在大型電視上宣告它已經準備好可供用戶端連線。 Joan 在她的行動裝置上啟動用戶端應用程式。 她在 [玩家名稱]**** 文字方塊中輸入她的名稱，然後點選 [加入遊戲]****。 主機應用程式會透過顯示 Joan 的名稱來確認她已加入，而 Joan 的用戶端應用程式會指出其正在等待遊戲開始。 接下來，Maxwell 會在其行動裝置上執行這些相同步驟。
 
-測驗遊戲主持人按一下 \[開始遊戲\]，主機應用程式便會顯示問題和可能的答案 (它也會使用一般字體粗細但色彩呈現灰色的方式來顯示已加入的玩家清單)。 在此同時，答案會顯示在已加入用戶端裝置的按鈕上。 Joan 點選答案 "1975" 的按鈕，接著她的所有按鈕都會變成停用狀態。 在主機應用程式中，Joan 的名稱會塗上綠色 (並變成粗體)，以做為收到其答案的通知。 Maxwell 也回答了問題。 當測驗遊戲主持人注意到所有玩家名稱都變成綠色之後，會按 \[下一個問題\]。
+測驗遊戲主持人按一下 [開始遊戲]****，主機應用程式便會顯示問題和可能的答案 (它也會使用一般字體粗細但色彩呈現灰色的方式來顯示已加入的玩家清單)。 在此同時，答案會顯示在已加入用戶端裝置的按鈕上。 Joan 點選答案 "1975" 的按鈕，接著她的所有按鈕都會變成停用狀態。 在主機應用程式中，Joan 的名稱會塗上綠色 (並變成粗體)，以做為收到其答案的通知。 Maxwell 也回答了問題。 當測驗遊戲主持人注意到所有玩家名稱都變成綠色之後，會按 [下一個問題]****。
 
-問題將以這個相同循環繼續進行提問與解答。 當主機應用程式上顯示最後一個問題時，按鈕的內容會是 \[顯示結果\]，而非 \[下一個問題\]。 按一下 \[顯示結果\] 時，即會顯示結果。 按一下 \[返回大廳\]，以返回遊戲週期的開頭，並產生已加入的玩家仍維持加入狀態的例外狀況。 但是，返回大廳讓新玩家有機會加入，並方便已加入的玩家有適當時機可以離開 (儘管已加入的玩家隨時都可點選 \[離開遊戲\] 來離開)。
+問題將以這個相同循環繼續進行提問與解答。 當主機應用程式上顯示最後一個問題時，按鈕的內容會是 [顯示結果]****，而非 [下一個問題]****。 按一下 [顯示結果]**** 時，即會顯示結果。 按一下 [返回大廳]****，以返回遊戲週期的開頭，並產生已加入的玩家仍維持加入狀態的例外狀況。 但是，返回大廳讓新玩家有機會加入，並方便已加入的玩家有適當時機可以離開 (儘管已加入的玩家隨時都可點選 [離開遊戲]**** 來離開)。
 
 ## 本機測試模式
 
@@ -92,11 +87,11 @@ QuizGame 含有下列項目。
 
 **QuizGame10 方案**
 
--   建立新方案 (\[新增專案\] \[其他專案類型\] \[Visual Studio 方案\])，並將它命名為 QuizGame10。
+-   建立新方案 ([新增專案]**** &gt; [其他專案類型]**** &gt; [Visual Studio 方案]****)，並將它命名為 QuizGame10。
 
 **P2PHelper**
 
--   在方案中，建立新的 Windows 10 類別庫專案 (\[新增專案\]\[Windows 通用\] \[類別庫 (Windows 通用)\])，並將它命名為 P2PHelper。
+-   在方案中，建立新的 Windows 10 類別庫專案 ([新增專案]**** &gt;[Windows 通用]**** &gt; [類別庫 (Windows 通用)]****)，並將它命名為 P2PHelper。
 -   從新專案刪除 Class1.cs。
 -   將 P2PSession.cs、P2PSessionClient.cs 及 P2PSessionHost.cs 複製到新專案的資料夾，並在新專案中包含複製的檔案。
 -   不需進一步變更即可建置專案。
@@ -108,9 +103,9 @@ QuizGame 含有下列項目。
 
 **QuizGameHost**
 
--   建立新的 Windows 10 應用程式專案 (\[新增\] \[新增專案\] \[Windows 通用\] \[空白應用程式 (Windows 通用)\])，並將它命名為 QuizGameHost。
--   新增 P2PHelper 的參考 (\[加入參考\] \[專案\] \[方案\] \[P2PHelper\])。
--   在 \[方案總管\] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 \[新增\]\[現有項目\] 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 \[加入做為連結\]。
+-   建立新的 Windows 10 應用程式專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameHost。
+-   新增 P2PHelper 的參考 ([加入參考]**** &gt; [專案]**** &gt; [方案]**** &gt; [P2PHelper]****)。
+-   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt;[現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
 -   將 MainPage.xaml 從 \\QuizGame.Windows\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   我們不會覆寫 app.xaml.cs，而是在新專案中保留該版本，只需對它進行一個目標變更，就能支援本機測試模式。 在 app.xaml.cs 中，取代這行程式碼：
@@ -129,15 +124,15 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 #endif
 ```
 
--   在 \[屬性\] \[建置\] \[條件式編譯符號\] 中，新增 LOCALTESTMODEON。
+-   在 [屬性]**** &gt; [建置]**** &gt; [條件式編譯符號]**** 中，新增 LOCALTESTMODEON。
 -   現在可以回到您新增到 app.xaml.cs 的程式碼，並解析 TestView 類型。
 -   在 package.appxmanifest 中，將功能名稱從 internetClient 變更為 internetClientServer。
 
 **QuizGameClient**
 
--   建立新的 Windows 10 應用程式專案 (\[新增\] \[新增專案\] \[Windows 通用\] \[空白應用程式 (Windows 通用)\])，並將它命名為 QuizGameClient。
--   新增 P2PHelper 的參考 (\[加入參考\] \[專案\] \[方案\] \[P2PHelper\])。
--   在 \[方案總管\] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 \[新增\]\[現有項目\] 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 \[加入做為連結\]。
+-   建立新的 Windows 10 應用程式專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameClient。
+-   新增 P2PHelper 的參考 ([加入參考]**** &gt; [專案]**** &gt; [方案]**** &gt; [P2PHelper]****)。
+-   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt;[現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
 -   將 MainPage.xaml 從 \\QuizGame.WindowsPhone\\ 複製到 \\QuizGameClient\\，然後將命名空間變更為 QuizGameClient。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGame.Shared\\，然後將命名空間變更為 QuizGameClient。
 -   在 package.appxmanifest 中，將功能名稱從 internetClient 變更為 internetClientServer。

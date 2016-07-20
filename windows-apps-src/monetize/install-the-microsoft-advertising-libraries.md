@@ -19,8 +19,7 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
 
 如需安裝指示，請參閱[利用 Microsoft Store Engagement and Monetization SDK 讓您的 App 獲利及吸引客戶](https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk)。
 
-> 
-            **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本並搭配 Visual Studio 2015，若您想要將廣告新增到 JavaScript/HTML App 中，便同時需要安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本並搭配 Visual Studio 2015，若您想要將廣告新增到 JavaScript/HTML App 中，便同時需要安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
 ## 針對廣告和廣告流量分配的程式庫名稱
 
@@ -30,7 +29,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
 本文件說明使用 Microsoft Advertising 程式庫的 **AdControl** 和 **InterstitialAd** 類別來顯示 Microsoft 橫幅或插入式廣告影片的方式。 如需使用廣告流量分配的資訊，請參閱[使用廣告流量分配來獲得最佳收益](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue)。
 
 
-在您可以在 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出 Microsoft Store Engagement and Monetization SDK 中每個程式庫的名稱，排序方式與它們在 Visual Studio 的 \[參考管理員\] 對話方塊中所呈現的方式相同。
+在您可以在 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出 Microsoft Store Engagement and Monetization SDK 中每個程式庫的名稱，排序方式與它們在 Visual Studio 的 [參考管理員]**** 對話方塊中所呈現的方式相同。
 
 
 <table>
@@ -39,8 +38,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">
-            **AdControl** 和 **InterstitialAd** (XAML)</td>
+            <td rowspan="3">**AdControl** 和 **InterstitialAd** (XAML)</td>
             <td>UWP</td>
             <td>適用於 XAML 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
@@ -56,8 +54,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">
-            **AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">**AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
             <td>適用於 JavaScript 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
@@ -73,8 +70,7 @@ Microsoft Store Engagement and Monetization SDK 包含兩組廣告程式庫：Mi
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">
-            **AdMediatorControl** (僅 XAML)</td>
+            <td rowspan="3">**AdMediatorControl** (僅 XAML)</td>
             <td>UWP</td>
             <td>Microsoft Advertising Universal SDK</td>
             <td>1.0</td>

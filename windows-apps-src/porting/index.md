@@ -4,8 +4,8 @@ ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: "本節描述如何將您現有的 App 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 App 套件，讓客戶安裝於各種不同裝置上。 您的 App 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。"
 title: "將 App 移植到 Windows 10"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 88ebc2984ce856dd3fb10b8a61de4a32dc711500
+ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
+ms.openlocfilehash: fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d
 
 ---
 
@@ -27,6 +27,7 @@ Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app �
 | [適用於 Android 與 iOS 開發人員的 Windows app 概念對應](android-ios-uwp-map.md) | 如果您是具備 Android 或 iOS 技巧或程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。 |
 | [從 iOS 移到 UWP](ios-to-uwp-root.md) | 您是 iOS 開發人員，想知道如何移至 Windows 10 與 UWP？ 過程並不如您所想的那麼恐怖。 我們已經有您需要的工具、技術以及資訊，可以讓 App 在 Windows 上運作得和在 iOS 裝置上一樣出色，或甚至更好！ |
 | [從傳統型移動到 UWP](desktop-to-uwp-root.md) | 將您的 Win32 和 .NET 4.6.1 傳統型應用程式轉換為通用 Windows 平台 (UWP) App。 |
+| [將 Web 應用程式移至 UWP](hwa-to-uwp-root.md) | 將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) App。 * 包含關於使用 Windows 或 Mac 做為開發平台的指示，以及關於轉換 Chrome App 支援搭配 UWP 運作的指示。 |
  
 ## 相關主題
 
@@ -36,6 +37,6 @@ Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

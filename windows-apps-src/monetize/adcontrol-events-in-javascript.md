@@ -4,8 +4,8 @@ ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
 description: "了解如何處理 AdControl 類別的事件。"
 title: "JavaScript 中的 AdControl 事件"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
 
 
 ---
@@ -17,7 +17,7 @@ ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
 
 以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [HTML 屬性範例](html-properties-example.md)。
 
-在 JavaScript 中，**AdControl** 事件必須包含在 [MarkSupportedForProcessing](http://msdn.microsoft.com/en-us/library/windows/apps/Hh967819.aspx) 函式中。 如需在 JavaScript 中處理事件的詳細資訊，請參閱[撰寫基本應用程式的程式碼 (HTML)](https://msdn.microsoft.com/en-us/library/windows/apps/hh780660.aspx#adding-event-handlers)。
+在 JavaScript 中，**AdControl** 事件必須包含在 [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函式中。 如需在 JavaScript 中處理事件的詳細資訊，請參閱[撰寫基本應用程式的程式碼 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers)。
 
 ## 範例
 
@@ -48,7 +48,7 @@ window.myAdEngagedChanged = function (sender) {
 
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 * [AdControl 錯誤處理](adcontrol-error-handling.md)
-* [RoutedEventArgs 類別](http://msdn.microsoft.com/en-us/library/system.windows.routedeventargs.aspx)
+* [RoutedEventArgs 類別](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
@@ -56,6 +56,6 @@ window.myAdEngagedChanged = function (sender) {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

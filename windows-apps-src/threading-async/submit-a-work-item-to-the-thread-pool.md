@@ -4,8 +4,8 @@ ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "將工作項目提交至執行緒集區"
 description: "了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
 # 將工作項目提交至執行緒集區
@@ -197,7 +197,7 @@ m_workItem = asyncAction;
 
 ## 處理工作項目的完成
 
-透過設定工作項目的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 存取 UI 執行緒及顯示結果。
+透過設定工作項目的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 存取 UI 執行緒及顯示結果。
 
 下列範例以在步驟 1 提交之工作項目的結果更新 UI：
 
@@ -263,6 +263,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

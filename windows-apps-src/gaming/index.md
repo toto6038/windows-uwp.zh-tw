@@ -3,6 +3,7 @@ author: mtoepke
 title: "遊戲和 DirectX"
 description: "通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+translationtype: Human Translation
 ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
 ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
@@ -69,6 +70,6 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

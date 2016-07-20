@@ -1,10 +1,11 @@
 ---
-description: "UWP app 的設計與 UI 相關下載。"
+description: "取得適用於 UWP app 使用者介面配置和控制項設計的最新下載和工具。"
+keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: "UWP app 的設計下載 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
+ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
+ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 
 ---
 
@@ -59,7 +60,7 @@ ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>適用於 Adobe Photoshop 的磚與圖示產生器</b><br/>
+            <p><b>適用於 Adobe Photoshop 的磚與圖示產生器。</b><br/>
 這組適用於 Adobe Photoshop 的巨集指令，只需 7 個檔案就能夠產生 68 個建議的磚和圖示資產。 <br/>[下載磚與圖示產生器](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
@@ -85,8 +86,8 @@ ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Photo sharing (相片分享) App</b> <br/>
-這個範例 App 示範使用實際的社交媒體分享相片。 其中示範回應式設計、App 內購買、Azure 服務、推播通知等等。 <br/>[下載 Photo sharing App 範本](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[深入了解 PhotoSharingApp (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
+            <p><b>Photo sharing app</b> <br/>
+這個範例示範使用實際的社交媒體分享相片。 其中示範回應式設計、App 內購買、Azure 服務、推播通知等等。 <br/>[下載 Photo sharing App 範本](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[深入了解 PhotoSharingApp (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760402"><img src="images/photo-sharing.png" alt="Download the Photo sharing app sample" /></a>
@@ -108,6 +109,6 @@ ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
 <b>想要更多程式碼嗎？</b> 瀏覽 Windows 範本頁面取得所有我們的 UWP app 範本的清單。 [移至範本入口網站](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -5,6 +5,7 @@ title: "語音辨識"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
@@ -29,19 +30,18 @@ ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
 確定您的裝置有麥克風或同等的功能。
 
-在應用程式套件資訊清單 (package.appxmanifest 檔案) 中設定 \[麥克風\] 裝置功能 (DeviceCapability)，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
+在[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** 檔案) 中設定 [麥克風]**** 裝置功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430))，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
 
 請參閱[應用程式功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
 ## 辨識語音輸入
 
 
-「限制式」定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
+「限制式」**定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
 
 您可以在執行語音辨識時使用各種類型的限制式：
 
-1.  
-            **預先定義的文法** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446))。
+1.  **預先定義的文法** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446))。
 
     預先定義的聽寫和網頁搜尋文法可為您的 app 提供語音辨識，而不需要您編寫文法。 使用這些文法時，語音辨識是由遠端 Web 服務所執行，並將結果傳回裝置。
 
@@ -49,16 +49,15 @@ ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
     網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-    
-            **注意：**由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
+    **注意：**由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
 
      
 
     這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
-    若要使用 Web 服務的限制，必須在 \[設定\] - \[隱私權\] - \[語音、筆跡與輸入\] 頁面的 \[設定\] 中開啟 \[了解我\] 選項以啟用語音輸入與聽寫支援。
+    若要使用 Web 服務的限制，必須在 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面的 [設定]**** 中開啟 [了解我] 選項以啟用語音輸入與聽寫支援。
 
-    以下說明如何測試是否已啟用語音輸入，並開啟 \[設定\] - \[隱私權\] - \[語音、筆跡與輸入\] 頁面 (如果未啟用)。
+    以下說明如何測試是否已啟用語音輸入，並開啟 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面 (如果未啟用)。
 
     首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[以 C# 或 Visual Basic 撰寫的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
@@ -103,25 +102,21 @@ catch (Exception exception)
     }
 ```
 
-2.  
-            **程式設計的清單限制式** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421))。
+2.  **程式設計的清單限制式** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421))。
 
     程式設計的清單限制式提供使用字詞或片語清單來建立簡易文法的輕量型方法。 清單限制式非常適合用來辨識簡短的明確片語。 明確指定所有符合文法的文字也可以提高辨識準確度，因為語音辨識引擎只需處理確認相符的語音。 清單也可透過程式設計方式來更新。
 
     清單限制式包含一個字串陣列，代表您應用程式的辨識操作將接受的語音輸入。 您可以藉由建立一個語音辨識清單限制式物件並傳遞字串陣列，在您的應用程式中建立清單限制式。 然後，將該物件新增到辨識器的限制式集合。 當語音辨識器辨識到清單中的任何一個字串時，即代表辨識成功。
 
-3.  
-            **SRGS 文法** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412))。
+3.  **SRGS 文法** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412))。
 
     語音辨識文法規格 (SRGS) 文法是一份靜態文件，與程式設計的清單限制式不同，您可以使用 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 所定義的 XML 格式來編輯該文件。 SRGS 文法透過讓您可在單一辨識中擷取多個語意意義，來提供控制整個語音辨識的最佳體驗。
 
-4.  
-            **語音命令限制式** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
+4.  **語音命令限制式** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
     使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱[利用 Cortana 語音命令啟動前景 app](launch-a-foreground-app-with-voice-commands-in-cortana.md)。
 
-
-            **注意：**要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
+**注意：**要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。
 
  
@@ -159,15 +154,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果您使用的是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式：
 
--   \[正在聆聽\] 畫面。
--   \[正在思考\] 畫面。
--   \[聽到您說\] 畫面或錯誤畫面。
+-   [正在聆聽]**** 畫面。
+-   [正在思考]**** 畫面。
+-   [聽到您說]**** 畫面或錯誤畫面。
 
 如果您使用的是以字詞或片語清單為基礎的限制式，或是以 SRGS 文法檔為基礎的限制式：
 
--   \[正在聆聽\] 畫面。
--   \[您說的是\] 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
--   \[聽到您說\] 畫面或錯誤畫面。
+-   [正在聆聽]**** 畫面。
+-   [您說的是]**** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
+-   [聽到您說]**** 畫面或錯誤畫面。
 
 下列影像針對使用以 SGRS 文法檔為基礎之條件約束的語音辨識器，顯示其畫面之間流程的範例。 在這個範例中，語音辨識是成功的。
 
@@ -177,7 +172,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![以 SGRS 文法檔為基礎之限制的最終辨識畫面](images/speech-listening-complete.png)
 
-\[正在聆聽\] 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 SpeechRecognizerUIOptions 類別的屬性 (透過呼叫 SpeechRecognizer.UIOptions 屬性來取得) 來自訂 \[正在聆聽\] 畫面上的內容。
+[正在聆聽]**** 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 類別的屬性 (透過呼叫 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 屬性來取得) 來自訂 [正在聆聽]**** 畫面上的內容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -213,16 +208,10 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 **開發人員**
-* 
-            [語音互動](speech-interactions.md)
-            
-            **設計人員**
-          
-* 
-            [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
-            
-            **範例**
-          
+* [語音互動](speech-interactions.md) 
+           **設計人員**
+* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 

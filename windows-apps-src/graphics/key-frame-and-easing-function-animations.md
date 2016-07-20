@@ -4,8 +4,8 @@ title: "主要畫面格動畫和 Easing 函式動畫"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 ---
 # 主要畫面格動畫和 Easing 函式動畫
@@ -34,7 +34,7 @@ ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
 -   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse)：到達最後一個主要畫面格之後，會從最後開始以反向順序重複畫面格。 這會加倍動畫的顯示持續時間。
 -   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延遲開始動畫。 畫面格中 **KeyTime** 值的時間軸會在到達 **BeginTime** 時才開始計數，所以不會截斷畫面格。
 -   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制到達最後一個主要畫面格時發生的情況。 **FillBehavior** 在任何中繼主要畫面格上都沒有作用。
--   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
     -   如果設定為 **Forever**，那麼主要畫面格及其時間軸會無限重複。
     -   如果設定為某個反覆運算計數，時間軸會重複該次數。
     -   如果設定為 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，時間軸會重複到該時間到達為止。 如果它不是時間軸隱含持續時間的整數因素，這可能會在主要畫面格序列的中途截斷動畫。
@@ -148,8 +148,8 @@ Easing 函式可讓您將自訂的數學公式套用至動畫。 對於製作以
 
 Easing 函式可用三種方式套用到動畫：
 
--   如先前小節所述，在主要畫面格動畫中使用 Easing 主要畫面格。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)。
--   在其中一個 **From**/**To**/**By** 動畫類型設定 **EasingFunction** 屬性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)。
+-   如先前小節所述，在主要畫面格動畫中使用 Easing 主要畫面格。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)。
+-   在其中一個 **From**/**To**/**By** 動畫類型設定 **EasingFunction** 屬性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)。
 -   將 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 設定為 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 這是專用於定義控制項的視覺狀態；如需詳細資訊，請參閱 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[視覺狀態的腳本](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 以下是 Easing 函式的清單：
@@ -166,7 +166,7 @@ Easing 函式可用三種方式套用到動畫：
 -   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407)：使用公式 f(t) = t5 建立加速或減速的動畫。
 -   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439)：使用正弦公式建立加速或減速的動畫。
 
-有些 Easing 函式有自己的屬性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 有兩個屬性 [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)，可修改該特定 **BounceEase** 的 function-over-time 行為。 其他 Easing 函式 (例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)) 並沒有所有 Easing 函式共用之 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 屬性以外的屬性，而且一律產生相同的 function-over-time 行為。
+有些 Easing 函式有自己的屬性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 有兩個屬性 [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)，可修改該特定 **BounceEase** 的 function-over-time 行為。 其他 Easing 函式 (例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)) 並沒有所有 Easing 函式共用之 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 屬性以外的屬性，而且一律產生相同的 function-over-time 行為。
 
 視您在具備屬性的 Easing 函式上設定屬性的方式而定，這些 Easing 函式中有部分會有一些重疊。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 和 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全一樣，它們的 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 都等於 2。 而 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 基本上是預設值 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)。
 
@@ -283,6 +283,6 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

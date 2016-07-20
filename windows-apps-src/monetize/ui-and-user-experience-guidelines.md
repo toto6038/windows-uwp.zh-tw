@@ -85,8 +85,7 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
     * 影片廣告比橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
 
 
-* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供影片廣告前，不要顯示或是警告使用者。 
-            [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
+* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
 
 * 在初始提交後，請繼續改善您的 App。 查看廣告報表，然後變更設計以改進覆蓋率與影片完成率。
 
@@ -110,7 +109,7 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
     * 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
 
-* 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 \[觀看廣告已取得 xxx\]，您應該在使用者這麼做之後提供 xxx。 要考慮的兩個選項︰
+* 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
     * 除非引發 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，否則不要包含該選項。
 

@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "啟動 Windows 市集 app"
 description: "本主題描述 ms-windows-store URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。"
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 
@@ -31,7 +32,7 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 </tr>
 <tr>
 <td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>建議針對 Windows 10 的客戶使用市集識別碼，此識別碼將適用於所有作業系統版本，但仍支援先前執行它的方式 (例如︰PFN)。</p>
-<p>您可以在每個 app 的 \[應用程式管理\] 區段中，透過 \[應用程式身分識別\] 頁面上的 \[Windows 開發人員中心\] 儀表板找到這些值。</p>
+<p>您可以在每個 app 的 [應用程式管理] 區段中，透過 [<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">應用程式身分識別</a>] 頁面上的 [Windows 開發人員中心] 儀表板找到這些值。</p>
 </td>
 <td>
 市集識別碼 <p>(建議使用)</p>

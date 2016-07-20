@@ -4,8 +4,8 @@ ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: "建立定期工作項目"
 description: "了解如何建立定期重複執行的工作項目。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 
 ---
 # 建立定期工作項目
@@ -23,7 +23,7 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 方法來建立定期工作項目。 提供可完成工作的 Lambda，並且使用 *period* 參數指定提交間隔。 期間使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 結構指定。 每次期間過後工作項目就會重新提交，因此請確定期間長度足以完成工作。
 
-[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 會傳回 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 物件。 請將這個物件儲存起來，以防需要取消計時器。
+[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 會傳回 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 物件。 請將這個物件儲存起來，以防需要取消計時器。
 
 > **注意** 請不要指定零值 (或任何小於 1 毫秒的值) 作為間隔值。 這會讓定期計時器變得像是單次計時器。
 
@@ -182,7 +182,7 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 ## 取消計時器
 
-必要時，可呼叫 [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法來停止定期工作項目避免重複。 如果在工作項目執行中取消定期計時器，該工作項目還是可以繼續完成。 所有定期工作項目的執行個體都完成時，就會呼叫 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (若提供的話)。
+必要時，可呼叫 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法來停止定期工作項目避免重複。 如果在工作項目執行中取消定期計時器，該工作項目還是可以繼續完成。 所有定期工作項目的執行個體都完成時，就會呼叫 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (若提供的話)。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -206,6 +206,6 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

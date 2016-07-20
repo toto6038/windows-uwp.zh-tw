@@ -16,32 +16,22 @@ XAML 提供彈性的版面配置系統，讓您能夠使用自動調整大小、
 
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，讓您的 app 具有回應性及調適性。 您可以在 [UWP app 設計簡介](../layout/design-and-ui-intro.md)中找到我們建置所依據的回應式 UI 設計與技術重要資訊。 您應該了解什麼是有效像素，以及了解每一種回應式設計技術：重新置放、調整大小、自動重排、顯示、取代及重新架構。
 
-> 
-            **注意**
-            &nbsp;&nbsp;您的 App 版面配置是從您選擇的瀏覽模型開始，例如，是否使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 搭配[索引標籤和樞紐分析表](../controls-and-patterns/tabs-pivot.md)模型，或是使用 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 搭配[瀏覽窗格](../controls-and-patterns/nav-pane.md)模型。 如需詳細資訊，請參閱 [UWP app 的瀏覽設計基本知識](../layout/navigation-basics.md)。 我們將在此處討論如何讓單一頁面或元素群組的版面配置具備回應性的技術。 無論您為 app 選擇的是哪一個瀏覽模型，此資訊都適用。
+> **注意** &nbsp;&nbsp;您的 App 版面配置是從您選擇的瀏覽模型開始，例如，是否使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 搭配[索引標籤和樞紐分析表](../controls-and-patterns/tabs-pivot.md)模型，或是使用 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 搭配[瀏覽窗格](../controls-and-patterns/nav-pane.md)模型。 如需詳細資訊，請參閱 [UWP app 的瀏覽設計基本知識](../layout/navigation-basics.md)。 我們將在此處討論如何讓單一頁面或元素群組的版面配置具備回應性的技術。 無論您為 app 選擇的是哪一個瀏覽模型，此資訊都適用。
 
 XAML 架構提供數個可用來建立回應式 UI 的最佳化層級。
-- 
-              **流暢版面配置**
+- **流暢版面配置** 
              使用版面配置屬性與面板來讓預設的 UI 更加流暢。
 
     回應式版面配置的基礎在於適當地使用版面配置屬性和面板，以進行內容的重新置放、調整大小及自動重排。 您可以在元素上設定固定大小，或者使用自動調整大小，讓父版面配置面板調整它的大小。 各種 [**Panel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.panel.aspx) 類別 (例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) 和 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)) 都提供不同的方式來為它們的子系調整大小和位置。
 
-- 
-              **調適型配置**
+- **調適型配置** 
              使用視覺狀態，根據視窗大小或其他變更，大幅更改您的 UI。
 
-    當 app 視窗放大或縮小的範圍超過一定數量時，您可能想要更改版面配置屬性，以重新置放、調整大小、自動重排或取代 UI 的區段。 您可以為 UI 定義不同的視覺狀態，並在視窗寬度或視窗長度超出指定閾值時套用它們。 
-            [
-              **AdaptiveTrigger**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供一種簡單的方法來設定套用狀態的閾值 (也稱為中斷點)。
+    當 app 視窗放大或縮小的範圍超過一定數量時，您可能想要更改版面配置屬性，以重新置放、調整大小、自動重排或取代 UI 的區段。 您可以為 UI 定義不同的視覺狀態，並在視窗寬度或視窗長度超出指定閾值時套用它們。 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供一種簡單的方法來設定套用狀態的閾值 (也稱為中斷點)。
 
-- 
-              **量身訂做的版面配置**
+- **量身訂做的版面配置** 
              量身訂做的版面配置會針對特定的裝置系列或螢幕大小範圍進行最佳化。 在裝置系列中，版面配置仍然應該在支援的視窗大小範圍內回應變更並配合調整。
-    > 
-            **注意**
-            &nbsp;&nbsp;使用者可藉由 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)，將手機連線到螢幕、滑鼠與鍵盤。 這個功能融合了手機和桌面裝置系列之間的界限。
+    > **注意** &nbsp;&nbsp;使用者可藉由 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)，將手機連線到螢幕、滑鼠與鍵盤。 這個功能融合了手機和桌面裝置系列之間的界限。
 
     量身訂做的方法包括
     - 建立自訂觸發程序
@@ -76,11 +66,9 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 
 您可以使用自動調整大小，讓 UI 元素調整大小以符合它們的內容或父容器。 您也可以使用自動調整大小搭配方格的列與欄。 若要使用自動調整大小，請將 UI 元素的 Height 和 (或) Width 設定為 **Auto**。
 
-> 
-            **注意**
-            &nbsp;&nbsp;元素是否會調整大小以符合其內容或容器，取決於它的 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 屬性值，以及父容器如何處理調整其子系大小的方式。 如需詳細資訊，請參閱本文後續內容中的[對齊方式]()和[版面配置面板]()。
+> **注意** &nbsp;&nbsp;元素是否會調整大小以符合其內容或容器，取決於它的 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 屬性值，以及父容器如何處理調整其子系大小的方式。 如需詳細資訊，請參閱本文後續內容中的[對齊方式]()和[版面配置面板]()。
 
-您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (加權星號調整則為 *n*\*)。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 和 "\*" 來表示 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 元素中的 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 屬性。
+您使用等比例調整大小 (亦稱為「星號調整」**)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (加權星號調整則為 *n*\*)。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 和 "\*" 來表示 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 元素中的 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 屬性。
 
 這個範例會在具有 4 欄的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 中結合固定、自動和等比例調整大小。
 
@@ -162,9 +150,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 您可以在程式碼或視覺狀態中變更元素的 Visibility 屬性。 當元素的 Visibility 變更時，其所有子元素也會變更。 您可以藉由顯示某一個面板，同時摺疊另一個面板，來取代 UI 的區段。
 
-> 
-            **提示**
-            &nbsp;&nbsp;當您在 UI 中具有預設是 **Collapsed** 的元素時，仍會在啟動期間建立物件，即使它們不會顯示也一樣。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../xaml-platform/x-deferloadstrategy-attribute.md)。
+> **提示** &nbsp;&nbsp;當您在 UI 中具有預設是 **Collapsed** 的元素時，仍會在啟動期間建立物件，即使它們不會顯示也一樣。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### 樣式資源
 
@@ -178,10 +164,8 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 面板控制項 | 描述
 --------------|------------
-[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | 
-            **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<ul><li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li></ul>
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | 
-            **Grid** 支援流暢地調整子元素大小。 您可以使用程式碼或視覺狀態，重新置放和自動重排元素。<ul><li>元素是使用 Grid.Row 與 Grid.Column 附加屬性，以列和欄形式來排列。</li><li>您可以使用 Grid.RowSpan 與 Grid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>系統會採用適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿方格儲存格中的可用空間。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li></ul>
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支援流暢的 UI；您可以完全控制放置子元素及調整其大小的各方面設定。 您通常會在特殊的情況下使用它，例如，建立圖形或定義較大型調適型 UI 的小型靜態區域。 您可以使用程式碼或視覺狀態，在執行階段重新置放元素。<ul><li>元素是使用 Canvas.Top 與 Canvas.Left 附加屬性以絕對位置的方式來放置。</li><li>圖層可以使用 Canvas.ZIndex 附加屬性明確指定。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 如果沒有明確設定元素的大小，它就會調整其大小來符合它的內容。</li><li>如果子內容大於面板，就不會以視覺化方式進行剪裁。 </li><li>子內容不會受限於面板的範圍內。</li></ul>
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支援流暢地調整子元素大小。 您可以使用程式碼或視覺狀態，重新置放和自動重排元素。<ul><li>元素是使用 Grid.Row 與 Grid.Column 附加屬性，以列和欄形式來排列。</li><li>您可以使用 Grid.RowSpan 與 Grid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>系統會採用適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿方格儲存格中的可用空間。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li></ul>
 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) | <ul><li>元素是以相較於面板的邊緣或中心，以及彼此相對的關係來排列。</li><li>元素是使用各種不同的附加屬性來放置，這些屬性可控制面板對齊方式、同層級對齊方式及同層級位置。 </li><li>除非用來對齊的 RelativePanel 附加屬性會造成向兩邊延伸 (例如，元素會向面板的左右邊緣對齊)，否則 HorizontalAlignment/VerticalAlignment 的 Stretch 值會遭到忽略。 如果沒有明確設定元素的大小且它不會向兩邊延伸，則它會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li></ul>
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<ul><li>元素以垂直或水平方式堆疊到單行中。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值會以與 Orientation 屬性相反的方向來採用。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿可用的寬度 (或高度，如果 Orientation 是 Horizontal)。 利用 Orientation 屬性指定的方向，元素會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小不會以 Orientation 屬性指定的方向受限於面板的範圍內，因此，可捲動內容向兩邊延伸的範圍會超過面板的範圍且不會顯示捲軸。 您必須明確限制子內容的高度 (或寬度)，讓它能夠顯示捲軸。</li></ul>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<ul><li>在列或欄中排列的元素，達到 MaximumRowsOrColumns 值時會自動換行到新列或新欄。</li><li>Orientation 屬性會指定以列或欄排列元素。</li><li>您可以使用 VariableSizedWrapGrid.RowSpan 與 VariableSizedWrapGrid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 元素的大小是由 ItemHeight 與 ItemWidth 屬性所指定。 如果未設定這些屬性，則第一個儲存格中的項目會調整大小以符合其內容，而所有其他的儲存格會繼承這個大小。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li></ul>
@@ -192,10 +176,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ## 視覺狀態與狀態觸發程序
 
-根據畫面大小或其他規格，使用視覺狀態來重新置放、調整大小、自動重排、顯示或取代 UI 區段。 
-            [
-              **VisualState**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) 會定義在其處於特殊狀態時要套用到元素的屬性值。 您會在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 中群組視覺狀態，在符合特定條件時套用適當的 VisualState。
+根據畫面大小或其他規格，使用視覺狀態來重新置放、調整大小、自動重排、顯示或取代 UI 區段。 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) 會定義在其處於特殊狀態時要套用到元素的屬性值。 您會在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 中群組視覺狀態，在符合特定條件時套用適當的 VisualState。
 
 ### 在程式碼中設定視覺狀態
 
@@ -296,9 +277,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 </Page>
 ```
 
-> 
-            **重要**
-            &nbsp;&nbsp;在先前範例中，已在 **Grid** 元素上設定 VisualStateManager.VisualStateGroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
+> **重要** &nbsp;&nbsp;在先前範例中，已在 **Grid** 元素上設定 VisualStateManager.VisualStateGroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
 
 ### 附加屬性語法
 
@@ -401,12 +380,12 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 使用 XAML 檢視，建立不同的 UI 定義來共用相同的程式碼後置。 您可以針對每個裝置系列提供獨特的 UI 定義。 請依照下列步驟來將 XAML 檢視新增到 App。
 
 **將 XAML 檢視新增到 app**
-1. 依序選取 \[專案\] &gt; \[加入新項目\]。 隨即開啟 \[加入新項目\] 對話方塊。
-    > 提示確定在 \[方案總管\] 中選取的是資料夾或專案，而不是方案。
-2. 在左窗格的 \[Visual C#\] 或 \[Visual Basic\] 下方，挑選 \[XAML\] 範本類型。
-3. 在中央窗格，挑選 \[XAML 檢視\]。
+1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
+    > **提示** &nbsp;&nbsp;確定在 [方案總管] 中選取的是資料夾或專案，而不是方案。
+2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
+3. 在中央窗格，挑選 [XAML 檢視]。
 4. 輸入檢視的名稱。 檢視必須以正確方式命名。 如需命名的詳細資訊，請參閱本節的其餘部分。
-5. 按一下 \[新增\]。 檔案即會新增到專案。
+5. 按一下 [新增]。 檔案即會新增到專案。
 
 先前步驟只會建立一個 XAML 檔案，但不會建立相關聯的程式碼後置檔案。 而是會使用 DeviceName 限定詞 (此為檔案或資料夾名稱的一部分)，將 XAML 檢視關聯至現有的程式碼後置檔案。 這個限定詞名稱可對應到代表 app 目前執行所在之裝置的裝置系列的字串值，例如，"Desktop"、"Mobile" 和其他裝置系列的名稱 (請參閱 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues.aspx))。
 
@@ -435,12 +414,12 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 若要提供獨特的檢視和功能，您可以建立個別的 Page 檔案 (XAML 和程式碼)，然後在需要某個頁面時瀏覽到適當的頁面。
 
 **將 XAML 頁面新增到 app**
-1. 依序選取 \[專案\] &gt; \[加入新項目\]。 隨即開啟 \[加入新項目\] 對話方塊。
-    > 提示確定在 \[方案總管\] 中選取的是專案，而不是方案。
-2. 在左窗格的 \[Visual C#\] 或 \[Visual Basic\] 下方，挑選 \[XAML\] 範本類型。
-3. 在中央窗格，選取 \[空白頁\]。
+1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
+    > **提示** &nbsp;&nbsp;確定在 [方案總管] 中選取的是專案，而不是方案。
+2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
+3. 在中央窗格，選取 [空白頁]。
 4. 輸入頁面的名稱。 例如，"MainPage_Mobile"。 同時建立 MainPage_Mobile.xaml 和 MainPage_Mobile.xaml.cs/vb/cpp 程式碼檔案。
-5. 按一下 \[新增\]。 檔案即會新增到專案。
+5. 按一下 [新增]。 檔案即會新增到專案。
 
 在執行階段，檢查 App 執行所在的裝置系列，然後瀏覽到正確的頁面，如下。
 

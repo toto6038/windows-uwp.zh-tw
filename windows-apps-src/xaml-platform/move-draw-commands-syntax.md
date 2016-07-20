@@ -3,6 +3,7 @@ author: jwmsft
 description: "了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。"
 title: "移動與繪製命令語法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
 ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
@@ -25,10 +26,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-
-            [
-              **PathGeometry.Figures**
-            ](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
+[ **PathGeometry.Figures** ](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
 
 ## 使用移動與複製命令與使用 **PathGeometry** 比較
 
@@ -50,19 +48,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 -   除了關閉命令以外，每個命令後面通常會跟著一或多個數字。
 -   如果命令有一個以上的數字，請使用逗號或空格來分隔。
 
-
-            **\[**
-            _fillRule_
-            **\]**
-            _moveCommand_
-            _drawCommand_
-            **\[**
-            _drawCommand_
-            **\*\]**
-            **\[**
-            _closeCommand_
-            **\]**
-          
+**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
 
 許多繪製命令會使用點，由您提供 _x,y_ 值。 每當您看到 \*_points_ 預留位置時，都可以假設是要為一個點的 _x,y_ 值提供兩個十進位值。
 
@@ -90,8 +76,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 大寫 **M** 表示 *startPoint* 是絕對座標；小寫 **m** 表示 *startPoint* 是前一個點的位移，如果沒有前一個點，則為 (0,0)。
 
-
-            **注意：**移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
+**注意：**移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
 
 **繪製命令**
 
@@ -143,15 +128,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `C ` 
-            *controlPoint1*
-            *controlPoint2*
-            *endPoint*
-           <br/> - 或 - <br/> `c ` 
-            *controlPoint1*
-            *controlPoint2*
-            *endPoint*
-           |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -178,10 +155,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `S` 
-            *controlPoint2*
-            *endPoint*
-           <br/> - 或 - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -194,13 +168,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `T` 
-            *controlPoint*
-            *endPoint*
-           <br/> - 或 - <br/> `t` 
-            *controlPoint*
-            *endPoint*
-           |
+| `T` *controlPoint* *endPoint* <br/> - 或 - <br/> `t` *controlPoint* *endPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -213,13 +181,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| `A ` 
-            *size*
-            *rotationAngle*
-            *isLargeArcFlag*
-            *sweepDirectionFlag*
-            *endPoint*
-           <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -243,11 +205,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| 
-            *x*,*y*<br/> - 或 - <br/>
-            *x*
-            *y*
-           |
+| *x*,*y*<br/> - 或 - <br/>*x* *y* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -258,18 +216,15 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 您也可以使用下列特殊值來代替標準數值。 這些值區分大小寫。
 
--   
-            **Infinity**：代表 **PositiveInfinity**。
--   
-            **\-Infinity**：代表 **NegativeInfinity**。
--   
-            **NaN**：代表 **NaN**。
+-   **Infinity**：代表 **PositiveInfinity**。
+-   **\-Infinity**：代表 **NegativeInfinity**。
+-   **NaN**：代表 **NaN**。
 
 您可以使用科學記號標記法代替使用小數或整數。 例如，`+1.e17` 是有效的值。
 
 ## 產生移動與繪製命令的設計工具
 
-使用 Blend for Microsoft Visual Studio 2015 中的 \[畫筆\] 工具及其他繪圖工具通常會產生含有移動與繪製命令的 Path 物件。
+使用 Blend for Microsoft Visual Studio 2015 中的 [畫筆]**** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。
 
 您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)。
 

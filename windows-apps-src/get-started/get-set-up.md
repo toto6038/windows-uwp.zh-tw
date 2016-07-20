@@ -4,8 +4,8 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "開始設定"
 description: "開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8c5dfb692d647a25eea13036cd320366f3c5a09c
+ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
+ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 
 ---
 # 開始設定
@@ -29,6 +29,10 @@ Microsoft Visual Studio 2015 可協助您設計、撰寫、測試和偵錯您的
 如果您還沒有安裝 Visual Studio 2015，請按一下此連結來安裝免費的 Microsoft Visual Studio Community 2015。 此下載包含用來測試應用程式的裝置和手機模擬器：
 
 -   [下載 Windows 10 開發人員工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+
+您在安裝 Visual Studio 的時候，請使用自訂選項，並確定已選取所有 [通用 Windows App 開發工具] 選項，如下所示。
+
+![其他 UWP 的 Visual Studio 工具](images/vs-2015-community-setup.png)
 
 ## 3. 啟用您的裝置以進行開發
 
@@ -56,6 +60,6 @@ Microsoft Visual Studio 2015 可協助您設計、撰寫、測試和偵錯您的
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

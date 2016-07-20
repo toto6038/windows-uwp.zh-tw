@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "您可以在提交程序中，於 \\[應用程式內容\\] 頁面的 \\[應用程式宣告\\] 區段中，提供關於 app 的其他資訊。"
+Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。"
 title: "應用程式宣告"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 translationtype: Human Translation
@@ -11,7 +11,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 # 應用程式宣告
 
-您可以在提交程序中，於 \[應用程式內容\] 頁面的 \[應用程式宣告\] 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
+您可以在[提交程序](app-submissions.md)中，於 [應用程式內容]**** 頁面的 [應用程式宣告]**** 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
 
 下列各節說明每個宣告，以及您在決定每個宣告是否適合 app 時應考量的事項。
 
@@ -35,8 +35,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 如需詳細資訊，請參閱 [Windows 執行階段 app 的協助工具](https://msdn.microsoft.com/library/windows/apps/dn263101)、[協助工具測試](https://msdn.microsoft.com/library/windows/apps/mt297664)和[市集中的協助工具](https://msdn.microsoft.com/library/windows/apps/mt297663)。
 
-> 
-            **重要：**請勿將您的 app 列示為無障礙 app，除非您已經特別針對該用途為 app 進行了工程設計及測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> **重要：**請勿將您的 app 列示為無障礙 app，除非您已經特別針對該用途為 app 進行了工程設計及測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## 客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
@@ -46,8 +45,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 請注意，沒有選項可用來限制 app 只能安裝到抽取式存放裝置媒體。
 
-> 
-            **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
+> **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
 
 ## Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
@@ -55,8 +53,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 如果您想要防止 app 的資料包含於自動備份中，請取消選取此方塊。
 
-> 
-            **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
+> **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
 
  
 

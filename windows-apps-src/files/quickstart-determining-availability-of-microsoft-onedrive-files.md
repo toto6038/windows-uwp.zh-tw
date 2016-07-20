@@ -4,8 +4,8 @@ ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "判斷 Microsoft OneDrive 檔案的可用性"
 description: "使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a46507f007e0f5c3a9b28e4a6e72f6ba31114294
 
 ---
 # 判斷 Microsoft OneDrive 檔案的可用性
@@ -17,9 +17,9 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 -   [**FileIO 類別**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**StorageFile 類別**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**StorageFile.IsAvailable 屬性**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**StorageFile.IsAvailable 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
+使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 
 ## 先決條件
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
 
 | 檔案類型                              | 線上 | 計量付費網路        | 離線 |
 |-------------------------------------------|--------|------------------------|---------|
@@ -50,10 +50,10 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 1.  宣告某項功能適用於您想要存取的媒體櫃。
 2.  包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 類型。
-3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
-4.  一旦您具備代表所需檔案之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件的存取權後，[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的值就會反映檔案是否可供使用。
+3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
+4.  一旦您具備代表所需檔案之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件的存取權後，[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的值就會反映檔案是否可供使用。
 
-下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的傳回集合上重複執行。
+下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的傳回集合上重複執行。
 
 ```CSharp
 /// <summary>
@@ -96,6 +96,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

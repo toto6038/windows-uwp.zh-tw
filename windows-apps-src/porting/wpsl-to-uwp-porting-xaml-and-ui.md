@@ -3,8 +3,9 @@ author: mcleblanc
 description: "以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 Windows Phone Silverlight 轉譯至通用 Windows 平台 (UWP) app。"
 title: "將 Windows Phone Silverlight XAML 與 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
 
 ---
 
@@ -64,12 +65,11 @@ ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
+**BitmapImage** 位於 Windows Phone Silverlight 的 **System.Windows.Media.Imaging**命名空間中，而同一檔案中的 using 指示詞可允許在不加命名空間限定的情況下使用 **BitmapImage**，如上述程式碼片段所示。 在這種情況下，您可以在 Visual Studio 中於類型名稱 (**BitmapImage**) 上按一下滑鼠右鍵，然後使用操作功能表上的 [**解析**] 命令將新的命名空間指示詞新增到檔案中。 在此情況下，會新增 [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空間，這是類型在 UWP 中的所在位置。 您可以移除 **System.Windows.Media.Imaging** using 指示詞，只要這樣就可以移植如上述程式碼片段中那樣的程式碼。 當您完成時，即已移除所有 Windows Phone Silverlight 命名空間。
 
-            **BitmapImage** 位於 Windows Phone Silverlight 的 **System.Windows.Media.Imaging**命名空間中，而同一檔案中的 using 指示詞可允許在不加命名空間限定的情況下使用 **BitmapImage**，如上述程式碼片段所示。 在這種情況下，您可以在 Visual Studio 中於類型名稱 (BitmapImage) 上按一下滑鼠右鍵，然後使用操作功能表上的 \[解析\] 命令將新的命名空間指示詞新增到檔案中。 在此情況下，會新增 [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空間，這是類型在 UWP 中的所在位置。 您可以移除 **System.Windows.Media.Imaging** using 指示詞，只要這樣就可以移植如上述程式碼片段中那樣的程式碼。 當您完成時，即已移除所有 Windows Phone Silverlight 命名空間。
+在像這樣的簡單案例中，亦即將舊命名空間中的類型對應到新命名空間中的相同類型，您可以使用 Visual Studio 的 [**尋找和取代**] 命令對原始程式碼進行大量變更。 [**解析**] 命令是一個探索類型之新命名空間的絕佳方法。 再舉一例，您可以使用 "Windows.UI.Xaml" 來取代所有 "System.Windows"。 基本上，這將會移植所有 using 指示詞和所有參考該命名空間的完整類型名稱。
 
-在像這樣的簡單案例中，亦即將舊命名空間中的類型對應到新命名空間中的相同類型，您可以使用 Visual Studio 的 \[尋找和取代\] 命令對原始程式碼進行大量變更。 \[解析\] 命令是一個探索類型之新命名空間的絕佳方法。 再舉一例，您可以使用 "Windows.UI.Xaml" 來取代所有 "System.Windows"。 基本上，這將會移植所有 using 指示詞和所有參考該命名空間的完整類型名稱。
-
-在移除所有舊的 using 指示詞並加入新的指示詞之後，您便可以使用 Visual Studio 的 \[組合管理 Using\] 命令來排序您的指示詞及移除不使用的指示詞。
+在移除所有舊的 using 指示詞並加入新的指示詞之後，您便可以使用 Visual Studio 的 [**組合管理 Using**] 命令來排序您的指示詞及移除不使用的指示詞。
 
 有時候，修正命令式程式碼就像變更參數類型一樣，只是小事一樁。 但其他時候，您將需要使用 UWP API，而不是使用「適用於 Windows 市集應用程式的 .NET API」。 若要識別哪些 API 受支援，請參考此移植指南的剩餘部分並搭配[適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)及 [Windows 執行階段參考](https://msdn.microsoft.com/library/windows/apps/br211377)。
 
@@ -89,7 +89,7 @@ UWP app 現在可以使用 UWP 動畫庫，做為主要畫面格動畫及 from/t
 
 如果您在 UWP app 中使用主要畫面格動畫或 from/to 動畫，您可能會想要了解新平台導入的獨立式和相依式動畫之間的區別。 請參閱[最佳化動畫和媒體](https://msdn.microsoft.com/library/windows/apps/mt204774)。 在 UI 執行緒上執行的動畫 (例如讓配置屬性產生動畫效果的動畫) 稱為「相依式動畫」，在新平台上執行時，除非您執行下列兩個動作之一，否則它們將不會有任何作用。 您可以將它們的動畫作用目標重新設定為不同的屬性 (例如 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980))，讓它們變成獨立式動畫。 或者，在動畫元素上設定 `EnableDependentAnimation="True"`，以確認想要執行無法保證能夠順暢執行的動畫。 如果您使用 Blend for Visual Studio 來撰寫新的動畫，則會在必要的地方為您設定該屬性。
 
-## \[返回\] 按鈕處理
+## [返回] 按鈕處理
 
 在 Windows 10 應用程式中，您可以使用單一方式來處理返回按鈕，且返回按鈕將可以在所有裝置上運作。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
@@ -155,19 +155,10 @@ Windows Phone Silverlight app 列和 app 列按鈕無法像在 UWP app 中一樣
 
 UWP app 的繫結相關功能目前有下列限制：
 
--   未針對資料輸入驗證以及 [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx) 介面提供內建支援。
--   
-            [
-              **Binding**
-            ](https://msdn.microsoft.com/library/windows/apps/br209820) 類別不包含 Windows Phone Silverlight 中提供的格式化屬性延伸。 不過，您仍然可以實作 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 來提供自訂格式。
--   
-            [
-              **IValueConverter**
-            ](https://msdn.microsoft.com/library/windows/apps/br209903) 方法將語言字串當作參數而不是 [**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) 物件。
--   
-            [
-              **CollectionViewSource**
-            ](https://msdn.microsoft.com/library/windows/apps/br209833) 類別不提供排序和篩選的內建支援，而群組的運作方式也不一樣。 如需詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)和[資料繫結範例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
+-   未針對資料輸入驗證以及 [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx) 介面提供內建支援。
+-   [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別不包含 Windows Phone Silverlight 中提供的格式化屬性延伸。 不過，您仍然可以實作 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 來提供自訂格式。
+-   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法將語言字串當作參數而不是 [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) 物件。
+-   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 類別不提供排序和篩選的內建支援，而群組的運作方式也不一樣。 如需詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)和[資料繫結範例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
 雖然相同的繫結功能仍普遍受到支援，但 Windows 10 提供全新且效能更好的繫結機制 (稱為「編譯的繫結」) 供您選用，它是使用 {x:Bind} 標記延伸。 請參閱[資料繫結：透過 XAML 資料繫結的全新增強功能來提升您應用程式的效能](http://channel9.msdn.com/Events/Build/2015/3-635)，以及 [x:Bind 範例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
 
@@ -195,20 +186,17 @@ Windows Phone Silverlight app 會使用 **Microsoft.Phone.Controls** 命名空�
 
 | 控制項名稱 | 變更 |
 |--------------|--------|
-| ApplicationBar | 
-            [Page.TopAppBar](https://msdn.microsoft.com/library/windows/apps/hh702575) 屬性。 |
+| ApplicationBar | [Page.TopAppBar](https://msdn.microsoft.com/library/windows/apps/hh702575) 屬性。 |
 | ApplicationBarIconButton | UWP 對等項目是 [Glyph](https://msdn.microsoft.com/library/windows/apps/dn279538) 屬性。 PrimaryCommands 是 CommandBar 的內容屬性。 XAML 剖析器會將元素的內部 XML 解譯成其內容屬性的值。 |
 | ApplicationBarMenuItem | UWP 對等項目是設為功能表項目文字的 [AppBarButton.Label](https://msdn.microsoft.com/library/windows/apps/dn279261)。 |
-| ContextMenu (在 Windows Phone 工具組中) | 針對單一選擇飛出視窗，請使用 \[飛出視窗\]。 |
+| ContextMenu (在 Windows Phone 工具組中) | 針對單一選擇飛出視窗，請使用 [[飛出視窗](https://msdn.microsoft.com/library/windows/apps/dn279496)]。 |
 | ControlTiltEffect.TiltEffect 類別 | 來自 UWP 動畫庫的動畫已內建至通用控制項的預設「樣式」中。 請參閱[讓指標動作產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)。 |
 | LongListSelector 搭配已分組的資料 | Windows Phone Silverlight LongListSelector 有兩種運作方式，而這兩種方式可以一起使用。 首先，可以顯示依索引鍵分組的資料，例如依第一個字母分組的名稱清單。 其次，可以在下列兩種語意式檢視之間「縮放」：已分組的項目 (例如名稱) 清單和只有群組索引鍵本身 (例如第一個字母) 的清單。 運用 UWP，您可以使用[清單和格線檢視控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)來顯示已分組的資料。 |
 | LongListSelector 搭配一般資料 | 基於效能考量，對於很長的清單，即使是一般、非分組的資料，我們也建議使用 LongListSelector，而不使用 Windows Phone Silverlight 清單方塊。 在 UWP app 中，針對長的項目清單 (不論是否可將資料加以分組)，皆建議使用 [GridView](https://msdn.microsoft.com/library/windows/apps/br242705)。 |
-| Panorama | Windows Phone Silverlight Panorama 控制項對應至 [Windows 市集 app Hub 控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/dn449149)和＜Hub 控制項的指導方針＞。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 
-            [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段不會迴繞，且不會使用視差。 |
+| Panorama | Windows Phone Silverlight Panorama 控制項對應至 [Windows 市集 app Hub 控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/dn449149)和＜Hub 控制項的指導方針＞。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段不會迴繞，且不會使用視差。 |
 | 樞紐分析 | UWP 中與 Windows Phone Silverlight Pivot 控制項相等的是 [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241)。 它適用於所有裝置系列。 |
 
-
-            **注意** PointerOver 視覺狀態在 Windows 10 app 的自訂樣式/範本中是相關的，但在 Windows Phone Silverlight app 中不是。 還有其他原因造成現有自訂樣式/範本不適用於 Windows 10 app，包括您正在使用的系統資源索引鍵、對所使用之虛擬狀態集所做的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您針對 Windows 10 編輯控制項之預設範本的全新副本，然後對其重新套用您的樣式與範本自訂項目。
+**注意** PointerOver 視覺狀態在 Windows 10 app 的自訂樣式/範本中是相關的，但在 Windows Phone Silverlight app 中不是。 還有其他原因造成現有自訂樣式/範本不適用於 Windows 10 app，包括您正在使用的系統資源索引鍵、對所使用之虛擬狀態集所做的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您針對 Windows 10 編輯控制項之預設範本的全新副本，然後對其重新套用您的樣式與範本自訂項目。
 
 如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)，以及[控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
@@ -218,14 +206,11 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式之間的設計
 
 ## 當地語系化和全球化
 
-針對當地語系化字串，您可以在 UWP app 專案中，重複使用來自 Windows Phone Silverlight 專案的 .resx 檔案。 請將檔案複製過去、將它新增到專案中，然後將它重新命名為 Resources.resw，以便讓查詢機制預設會尋找它。 將 \[建置動作\] 設定為 \[PRIResource\]，將 \[複製到輸出目錄\] 設定為 \[不要複製\]。 然後，您便可以藉由在 XAML 元素上指定 **X:uid** 屬性，在標記中使用這些字串。 請參閱[快速入門：使用字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+針對當地語系化字串，您可以在 UWP app 專案中，重複使用來自 Windows Phone Silverlight 專案的 .resx 檔案。 請將檔案複製過去、將它新增到專案中，然後將它重新命名為 Resources.resw，以便讓查詢機制預設會尋找它。 將 [**建置動作**] 設定為 [**PRIResource**]，將 [**複製到輸出目錄**] 設定為 [**不要複製**]。 然後，您便可以藉由在 XAML 元素上指定 **X:uid** 屬性，在標記中使用這些字串。 請參閱[快速入門：使用字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 Windows Phone Silverlight app 使用 **CultureInfo** 類別來協助將 app 全球化。 UWP app 使用 MRT (現代資源技術)，不論是在執行階段和 Visual Studio 設計介面中，都能動態載入 app 資源 (當地語系化、縮放及佈景主題)。 如需詳細資訊，請參閱[檔案、資料和全球化的指導方針](https://msdn.microsoft.com/library/windows/apps/dn611859)。
 
-
-            [
-              **ResourceContext.QualifierValues**
-            ](https://msdn.microsoft.com/library/windows/apps/br206071) 主題說明如何根據裝置系列資源選擇因素載入裝置系列特定資源。
+[**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主題說明如何根據裝置系列資源選擇因素載入裝置系列特定資源。
 
 ## 媒體和圖形
 
@@ -378,14 +363,13 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 
 對 Windows Phone Silverlight app 來說，不論手機螢幕實體像素是多少，也不論其像素密度或實體大小為何，所有手機螢幕寬度都正好是 480 檢視像素，無一例外。 這表示 **Image** 元素如果是 `Width="48"`，將正好是任何可執行 Windows Phone Silverlight app 之手機螢幕寬度的 1/10。
 
-對 Windows 10 app 來說，則「不是」所有裝置寬度都採用某個固定的有效像素數目這麼一回事。 這可能相當顯而易見，因為 UWP app 能夠在廣泛的各式裝置上執行。 不同的裝置有不同數量的有效像素範圍，範圍從適用於最小型裝置的 320 epx 到適用於中等大小之監視器的 1024 epx，還有遠遠超過此寬度的更高像素。 您只需一如往常繼續使用自動調整大小元素與動態配置面板。 在某些情況下，也會將 XAML 標記中的 UI 元素屬性設定為固定大小。 縮放比例會根據您的應用程式是在何種裝置上執行，以及使用者所做的顯示設定，自動套用到該應用程式。 此外，該縮放比例還可用來讓大小固定的任何 UI 元素持續在各種不同螢幕大小上，為使用者呈現大約是固定大小的觸控 (及讀取) 目標。 和動態配置一起使用，您的 UI 將不只會在不同裝置上進行光學縮放，還將改為執行必要的動作，以便將適當數量的內容放到可用空間中。
+對 Windows 10 app 來說，則「不是」**所有裝置寬度都採用某個固定的有效像素數目這麼一回事。 這可能相當顯而易見，因為 UWP app 能夠在廣泛的各式裝置上執行。 不同的裝置有不同數量的有效像素範圍，範圍從適用於最小型裝置的 320 epx 到適用於中等大小之監視器的 1024 epx，還有遠遠超過此寬度的更高像素。 您只需一如往常繼續使用自動調整大小元素與動態配置面板。 在某些情況下，也會將 XAML 標記中的 UI 元素屬性設定為固定大小。 縮放比例會根據您的應用程式是在何種裝置上執行，以及使用者所做的顯示設定，自動套用到該應用程式。 此外，該縮放比例還可用來讓大小固定的任何 UI 元素持續在各種不同螢幕大小上，為使用者呈現大約是固定大小的觸控 (及讀取) 目標。 和動態配置一起使用，您的 UI 將不只會在不同裝置上進行光學縮放，還將改為執行必要的動作，以便將適當數量的內容放到可用空間中。
 
 因為 480 之前是手機尺寸螢幕之檢視像素中的固定寬度，而且該值現在在有效像素中通常較小，所以縮圖的規則是將您 Windows Phone Silverlight 應用程式標記中的任何維度乘以 0.8。
 
 為使您的應用程式在所有顯示器上都能有最佳體驗，建議您在某個大小範圍內個別建立適用於各個特定縮放比例的點陣圖資產。 提供 100%、200% 及 400% 的縮放比例 (並以此順序做為其優先順序)，可讓您在大部分情況下利用所有的中繼縮放係數獲得絕佳的結果。
 
-
-            **注意** 如果您無法建立多種大小的資產 (無論原因為何)，請建立縮放比例為 100% 的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
+**注意** 如果您無法建立多種大小的資產 (無論原因為何)，請建立縮放比例為 100% 的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
 
 如果您有複雜的圖檔，您可以用更多大小來提供您的資產。 如果您開始使用向量藝術，則使用任何縮放比例來產生高品質的資產，相對來說就容易許多。
 
@@ -411,6 +395,6 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -26,11 +26,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-
-            [
-              **FindAllAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/br225432) 方法 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別是用來列舉 Windows 可辨識的許多不同類型的裝置。 若要指定您只想要方法可尋找 MIDI 輸入裝置，請使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 傳回的選取器字串。 
-            **FindAllAsync** 會傳回 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)，包含向系統登錄之每個 MIDI 輸入裝置的 **DeviceInformation**。 如果傳回的集合不包含任何項目，則沒有可用的 MIDI 輸入裝置。 如果集合中有項目，循環顯示 **DeviceInformation** 物件並且將每個裝置的名稱新增至 MIDI 輸入裝置 **ListBox**。
+[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別是用來列舉 Windows 可辨識的許多不同類型的裝置。 若要指定您只想要方法可尋找 MIDI 輸入裝置，請使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 傳回的選取器字串。 **FindAllAsync** 會傳回 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)，包含向系統登錄之每個 MIDI 輸入裝置的 **DeviceInformation**。 如果傳回的集合不包含任何項目，則沒有可用的 MIDI 輸入裝置。 如果集合中有項目，循環顯示 **DeviceInformation** 物件並且將每個裝置的名稱新增至 MIDI 輸入裝置 **ListBox**。
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -40,28 +36,16 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 ## 建立裝置監控程式協助程式類別
 
-
-            [
-              **Windows.Devices.Enumeration**
-            ](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空間提供 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可以在系統中新增或移除裝置時，或裝置的資訊更新時，通知您的 app。 因為已啟用 MIDI 的 app 通常會想要輸入和輸出裝置，這個範例會建立實作 **DeviceWatcher** 的協助程式類別，以便相同的程式碼可以用於 MIDI 輸入和 MIDI 輸出裝置，而不需要重複。
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空間提供 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可以在系統中新增或移除裝置時，或裝置的資訊更新時，通知您的 app。 因為已啟用 MIDI 的 app 通常會想要輸入和輸出裝置，這個範例會建立實作 **DeviceWatcher** 的協助程式類別，以便相同的程式碼可以用於 MIDI 輸入和 MIDI 輸出裝置，而不需要重複。
 
 將新的類別新增至您的專案做為裝置監控程式。 在此範例中，類別名為 **MyMidiDeviceWatcher**。 在本節中的其餘程式碼是用來實作協助程式類別。
 
 將部分成員變數新增至類別：
 
--   
-            [
-              **DeviceWatcher**
-            ](https://msdn.microsoft.com/library/windows/apps/br225446) 物件，該物件會監視裝置變更。
+-   [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) 物件，該物件會監視裝置變更。
 -   裝置選取器字串，它將針對一個執行個體包含 MIDI 輸入連接埠選取器字串，針對另一個執行個體包含 MIDI 輸出連接埠選取器字串。
--   
-            [
-              **ListBox**
-            ](https://msdn.microsoft.com/library/windows/apps/br242868) 控制項，該控制項會填入可用裝置的名稱。
--   
-            [
-              **CoreDispatcher**
-            ](https://msdn.microsoft.com/library/windows/apps/br208211)，這是從 UI 執行緒以外的執行緒更新 UI 的必要項目。
+-   [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) 控制項，該控制項會填入可用裝置的名稱。
+-   [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)，這是從 UI 執行緒以外的執行緒更新 UI 的必要項目。
 
 [!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
 
@@ -77,32 +61,18 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 [!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
 
+**DeviceWatcher** 具有下列事件：
 
-            **DeviceWatcher** 具有下列事件：
-
--   
-            [
-              **Added**
-            ](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新的裝置新增至系統時引發。
--   
-            [
-              **Removed**
-            ](https://msdn.microsoft.com/library/windows/apps/br225453) - 在從系統移除裝置時引發。
--   
-            [
-              **Updated**
-            ](https://msdn.microsoft.com/library/windows/apps/br225458) - 在與現有裝置相關聯的資訊更新時引發。
--   
-            [
-              **EnumerationCompleted**
-            ](https://msdn.microsoft.com/library/windows/apps/br225451) - 在監控程式已完成其要求裝置類型的列舉時引發。
+-   [ **Added** ](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新的裝置新增至系統時引發。
+-   [ **Removed** ](https://msdn.microsoft.com/library/windows/apps/br225453) - 在從系統移除裝置時引發。
+-   [ **Updated** ](https://msdn.microsoft.com/library/windows/apps/br225458) - 在與現有裝置相關聯的資訊更新時引發。
+-   [ **EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) - 在監控程式已完成其要求裝置類型的列舉時引發。
 
 在每個事件的事件處理常式中，會呼叫協助程式方法 **UpdateDevices**，以使用目前的裝置清單更新 **ListBox**。 因為 **UpdateDevices** 更新 UI 元素與這些事件處理常式不是在 UI 執行緒上呼叫，每個呼叫必須包裝於對 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫中，這會使指定的程式碼在 UI 執行緒上執行。
 
 [!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
 
-
-            **UpdateDevices** 協助程式方法會呼叫 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)，以及使用本文先前所述的已傳回裝置的名稱更新 **ListBox**。
+**UpdateDevices** 協助程式方法會呼叫 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)，以及使用本文先前所述的已傳回裝置的名稱更新 **ListBox**。
 
 [!code-cs[WatcherUpdateDevices](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherUpdateDevices)]
 
@@ -158,12 +128,11 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 **在 app 專案中包含 General MIDI Synth SDK 擴充功能**
 
-1.  在 \[方案總管\] 中您的專案底下，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
-2.  展開 \[Universal Windows\] 節點。
-3.  選取 \[擴充功能\]。
-4.  從擴充功能清單選取 \[Microsoft General MIDI DLS for Universal Windows Apps\]。
-    
-            **請注意**如果有擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 \[屬性\]、\[應用程式\] 索引標籤上查看設為 app 目標的 SDK 版本。
+1.  在 [**方案總管**] 中您的專案底下，以滑鼠右鍵按一下 [**參考**]，然後選取 [**加入參考**]。
+2.  展開 [**Universal Windows**] 節點。
+3.  選取 [**擴充功能**]。
+4.  從擴充功能清單選取 [**Microsoft General MIDI DLS for Universal Windows Apps**]。
+    **請注意**如果有擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 [屬性]、[**應用程式**] 索引標籤上查看設為 app 目標的 SDK 版本。
 
  
 

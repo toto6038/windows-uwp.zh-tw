@@ -2,8 +2,9 @@
 author: payzer
 title: "裝置入口網站 Xbox 開發人員設定 API 參考"
 description: "了解如何存取 Xbox 開發人員設定。"
-ms.sourcegitcommit: c392e6a2356d4180943c17d37512ef8ea35f5719
-ms.openlocfilehash: 52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f
+translationtype: Human Translation
+ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
+ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
 
 ---
 
@@ -46,7 +47,7 @@ Category - (字串) 設定的類別
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 已授與存取檔案共用認證的要求。
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -87,7 +88,7 @@ Category - (字串) 設定的類別
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 已授與存取檔案共用認證的要求。
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -124,7 +125,7 @@ Value - (字串) 設定的新值。
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 已授與存取檔案共用認證的要求。
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -136,6 +137,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

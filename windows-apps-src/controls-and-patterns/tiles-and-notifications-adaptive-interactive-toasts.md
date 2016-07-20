@@ -25,8 +25,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 -   針對主要快顯通知和每項動作提供三種不同的啟用類型。
 -   針對特定案例 (包括警示、提醒及來電) 建立通知的選項。
 
-
-            **注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
+**注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
  
 
@@ -80,8 +79,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 -   &lt;action&gt; 這會在傳統型與行動裝置上顯示為按鈕。 您最多可以在快顯通知中指定五個自訂或系統動作。
 -   &lt;input&gt; 這可以允許使用者提供輸入，例如快速回覆訊息，或從下拉式功能表中選取選項。
 
-
-            &lt;action&gt; 和 &lt;input&gt; 在 Windows 系列裝置內部皆具備調整彈性。 例如，在行動或傳統型裝置中，提供給使用者的 &lt;action&gt; 是可以點選/按一下的按鈕。 文字 &lt;input&gt; 則是一個方塊，使用者可使用實體鍵盤或螢幕小鍵盤在其中輸入文字。 這些元素也可以針對未來的互動案例 (例如透過語音宣告動作，或透過聽寫方式輸入文字) 調整。
+&lt;action&gt; 和 &lt;input&gt; 在 Windows 系列裝置內部皆具備調整彈性。 例如，在行動或傳統型裝置中，提供給使用者的 &lt;action&gt; 是可以點選/按一下的按鈕。 文字 &lt;input&gt; 則是一個方塊，使用者可使用實體鍵盤或螢幕小鍵盤在其中輸入文字。 這些元素也可以針對未來的互動案例 (例如透過語音宣告動作，或透過聽寫方式輸入文字) 調整。
 
 當使用者採取動作時，您可以指定 &lt;action&gt; 元素內部的 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 屬性來執行下列其中一項動作：
 
@@ -113,8 +111,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 ## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 範例
 
 
-
-            **注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
+**注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
 
  
 
@@ -375,8 +372,7 @@ namespace ToastNotificationTask
 </toast>
 ```
 
-**
-            &lt;toast 中的屬性&gt;**
+**&lt;toast 中的屬性&gt;**
 
 launch?
 
@@ -408,8 +404,7 @@ scenario?
 -   除非您的案例是要快顯鬧鐘、提醒或來電，否則您不需要使用此屬性。
 -   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
-**
-            &lt;visual 中的屬性&gt;**
+**&lt;visual 中的屬性&gt;**
 
 version?
 
@@ -428,12 +423,11 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**
-            &lt;binding 中的屬性&gt;**
+**&lt;binding 中的屬性&gt;**
 
 template?
 
--   \[Important\] template? = "ToastGeneric"
+-   [Important] template? = "ToastGeneric"
 -   如果您使用新的調適型和互動式通知，請確定您是從使用 "ToastGeneric" 範本開始，而非使用舊版範本。
 -   目前可能可以搭配新動作使用舊版範本，但那並非預期的使用情況，因此我們無法保證該使用方式將會持續有效。
 
@@ -449,15 +443,13 @@ addImageQuery?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**
-            &lt;text 中的屬性&gt;**
+**&lt;text 中的屬性&gt;**
 
 lang?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**
-            &lt;image 中的屬性&gt;**
+**&lt;image 中的屬性&gt;**
 
 src
 
@@ -486,8 +478,7 @@ hint-crop?
 -   "none" 為預設值，表示沒有裁剪。
 -   "circle" 會將影像裁剪為圓形。 請針對連絡人設定檔影像、人員影像等項目使用此屬性。
 
-**
-            &lt;audio 中的屬性&gt;**
+**&lt;audio 中的屬性&gt;**
 
 src?
 
@@ -520,8 +511,7 @@ silent?
 </toast>
 ```
 
-**
-            &lt;input 中的屬性&gt;**
+**&lt;input 中的屬性&gt;**
 
 id
 
@@ -554,8 +544,7 @@ defaultInput?
 -   如果輸入類型是 "text"，此屬性將被視為字串輸入。
 -   如果輸入類型是 "selection"，此屬性預期為此輸入元素內部其中一個可用選取項目的 id。
 
-**
-            &lt;selection 中的屬性&gt;**
+**&lt;selection 中的屬性&gt;**
 
 id
 
@@ -565,8 +554,7 @@ content
 
 -   這是必要屬性。 這個屬性可為此選取項目元素提供字串以供顯示。
 
-**
-            &lt;action 中的屬性&gt;**
+**&lt;action 中的屬性&gt;**
 
 content
 

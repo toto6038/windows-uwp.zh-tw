@@ -3,6 +3,7 @@ author: msatranjr
 title: "在 C++ 中建立 Windows 執行階段元件"
 description: "本文說明如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。"
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
 
@@ -85,11 +86,9 @@ Windows 執行階段元件可以包含多個公用的可啟用類別，以及其
 
 用戶端程式碼可以使用 **new** (在 Visual Basic 中為 **New**) 關鍵字，來建立元件的執行個體 (就像對於任何類別一樣)。
 
-可啟用的類別必須宣告為 **public ref class sealed**。 
-            **ref class** 關鍵字會指示編譯器，將類別建立為可與 Windows 執行階段相容的類型，而 sealed 關鍵字則會指定此類別無法被繼承。 Windows 執行階段目前不支援一般化繼承模型，因為受限制的繼承模型支援建立自訂的 XAML 控制項。 如需詳細資訊，請參閱 [Ref 類別與結構 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
+可啟用的類別必須宣告為 **public ref class sealed**。 **ref class** 關鍵字會指示編譯器，將類別建立為可與 Windows 執行階段相容的類型，而 sealed 關鍵字則會指定此類別無法被繼承。 Windows 執行階段目前不支援一般化繼承模型，因為受限制的繼承模型支援建立自訂的 XAML 控制項。 如需詳細資訊，請參閱 [Ref 類別與結構 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
 
-對 C++ 而言，所有的數值基本類型都定義於預設命名空間中。 
-            [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空間包含 Windows 執行階段類型系統特定的 C++ 類別。 這些包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 類別和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 類別。 這類具象集合類型 (例如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 類別和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 類別) 定義於 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空間中。 這些類型實作的公用介面定義於 [Windows::Foundation::Collections 命名空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中。 它是 JavaScript、C# 和 Visual Basic 所取用的這些介面類型。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+對 C++ 而言，所有的數值基本類型都定義於預設命名空間中。 [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空間包含 Windows 執行階段類型系統特定的 C++ 類別。 這些包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 類別和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 類別。 這類具象集合類型 (例如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 類別和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 類別) 定義於 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空間中。 這些類型實作的公用介面定義於 [Windows::Foundation::Collections 命名空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中。 它是 JavaScript、C# 和 Visual Basic 所取用的這些介面類型。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ## 傳回內建類型之值的方法
 
@@ -585,9 +584,9 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 ## 偵錯提示
 
 
-對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的原生程式碼，但不可兩者同時啟用。 若要變更設定，請在 \[方案總管\] 中選取 JavaScript 專案節點，然後依序選擇 \[屬性\]、\[偵錯\]、 \[偵錯工具類型\]。
+對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的原生程式碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中選取 JavaScript 專案節點，然後依序選擇 [屬性]、[偵錯]、 [偵錯工具類型]。
 
-請務必在封裝設計工具中選取適當的功能。 例如，如果您嘗試使用 Windows 執行階段 API 來開啟使用者圖片庫中的影像檔，請務必選取資訊清單設計工具的 \[功能\] 窗格中的 \[圖片庫\] 核取方塊。
+請務必在封裝設計工具中選取適當的功能。 例如，如果您嘗試使用 Windows 執行階段 API 來開啟使用者圖片庫中的影像檔，請務必選取資訊清單設計工具的 [功能] 窗格中的 [圖片庫] 核取方塊。
 
 如果 JavaScript 程式碼似乎無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用的是 Camel 命名法的大小寫慣例。 例如，LogCalc C++ 方法必須當做 JavaScript 中的 logCalc 來參考。
 

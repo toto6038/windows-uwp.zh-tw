@@ -5,8 +5,8 @@ title: "接下來要做什麼？"
 description: "現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供不同章節的簡介。"
 keywords: Dev Center, Getting started
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d8f036b7dcaba1c697f574011875cadbf1970c1
 
 ---
 # 接下來要做什麼？
@@ -39,7 +39,7 @@ Windows 市集可以讓您接觸到數百萬使用 Microsoft Windows 的客戶�
 
 本節包含用來建立通用 Windows 平台 (UWP) app 的類別、屬性、方法、事件、樣式以及其他 API 的詳細資訊。
 
-請移至 [API 參考資料](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)。
+請移至 [API 參考資料](https://msdn.microsoft.com/library/windows/apps/br211369.aspx)。
 
 ## 語言參考資料
 
@@ -72,6 +72,6 @@ Windows 市集可以讓您接觸到數百萬使用 Microsoft Windows 的客戶�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

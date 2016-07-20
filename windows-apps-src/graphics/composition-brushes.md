@@ -4,8 +4,8 @@ ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: "組合筆刷"
 description: "筆刷會使用其輸出來繪製 Visual 的區域。 不同的筆刷有不同類型的輸出。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
 
 ---
 # 組合筆刷
@@ -41,7 +41,7 @@ ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
 
 ## 使用色彩筆刷
 
-若要建立色彩筆刷，請呼叫 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，這會傳回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的預設色彩是 \#00000000。 以下圖例和程式碼示範一個小型的視覺化樹狀結構來建立矩形，此矩形是以黑色筆刷勾勒，並以色彩值為 0x9ACD32 的單色筆刷繪製。
+若要建立色彩筆刷，請呼叫 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，這會傳回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的預設色彩是 \#00000000。 以下圖例和程式碼示範一個小型的視覺化樹狀結構來建立矩形，此矩形是以黑色筆刷勾勒，並以色彩值為 0x9ACD32 的單色筆刷繪製。
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 ```cs
@@ -79,7 +79,7 @@ LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-若要建立表面筆刷，請呼叫 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 這個方法會傳回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 物件。 以下程式碼說明可用來以 **CompositionSurfaceBrush** 的內容繪製視覺效果的程式碼。
+若要建立表面筆刷，請呼叫 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 這個方法會傳回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 物件。 以下程式碼說明可用來以 **CompositionSurfaceBrush** 的內容繪製視覺效果的程式碼。
 
 ```cs
 Compositor _compositor;
@@ -94,14 +94,14 @@ visual.Brush = _surfaceBrush;
 
 ## 設定延展與對齊方式
 
-有時，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 內容不會完全填滿所繪製之視覺效果的區域。 當發生這種情況時，「組合 API」會使用筆刷的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 及 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式設定來決定如何填滿剩餘的區域。
+有時，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 內容不會完全填滿所繪製之視覺效果的區域。 當發生這種情況時，「組合 API」會使用筆刷的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 及 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式設定來決定如何填滿剩餘的區域。
 
--   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 的類型是浮點數，並且可用來控制筆刷在視覺邊界內的位置。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 的類型是浮點數，並且可用來控制筆刷在視覺邊界內的位置。
     -   值 0.0 會將筆刷的左/上角與視覺效果的左/上角對齊
     -   值 0.5 會將筆刷中央與視覺效果的中央對齊
     -   值 1.0 會將筆刷的右/下角與視覺效果的右/下角對齊
 -   [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 屬性接受以下由 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列舉 所定義的值：
-    -   None：筆刷不會延展以填滿視覺邊界。 請小心使用此「延展」設定：如果筆刷比視覺邊界大， 筆刷的內容將會受到裁剪。 您可以使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 屬性來控制用來繪製視覺邊界 的筆刷部分。
+    -   None：筆刷不會延展以填滿視覺邊界。 請小心使用此「延展」設定：如果筆刷比視覺邊界大， 筆刷的內容將會受到裁剪。 您可以使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 屬性來控制用來繪製視覺邊界 的筆刷部分。
     -   Uniform：筆刷會配合視覺邊界調整大小；會保留筆刷的外觀比例。 這是預設值。
     -   UniformToFill：筆刷會調整大小來完全填滿視覺邊界；會保留筆刷的外觀比例。
     -   Fill：筆刷會配合視覺邊界調整大小。 由於筆刷的高度和寬度會單獨調整，因此可能不會保留筆刷的原始外觀比例。 也就是說，筆刷可能會為了完全填滿視覺邊界而扭曲變形。
@@ -116,6 +116,6 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

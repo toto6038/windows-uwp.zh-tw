@@ -3,6 +3,7 @@ author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
 title: "PlayReady 加密媒體延伸"
+translationtype: Human Translation
 ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
 ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 

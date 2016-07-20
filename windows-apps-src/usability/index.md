@@ -1,10 +1,11 @@
 ---
-description: "本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入與裝置自訂您的 UWP app。"
+description: "了解如何讓您的 app 包容世界各地的使用者且無障礙。"
+keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: "UWP app 的可用性 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
+ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
+ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ---
 
@@ -12,11 +13,10 @@ ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
 
 # UWP app 的可用性
 
-UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如，您不需要額外執行任何動作，即可啟用觸控輸入或讓您的 App 在手機上執行。 
+在小地方的貼心設計和對細節的嚴苛要求，才能讓使用者體驗轉變成可滿足全球使用者需求，而成為真正具有包容性的使用者體驗。
 
-但是，有時您可能會想要針對特定類型的輸入或裝置，將您的 App 最佳化。 例如，如果您正在建立繪圖 App，您可以自訂手寫筆輸入的處理方式。 
+本節中的設計與程式碼撰寫指示可協助您透過新增協助工具功能、支援全球化與當地語系化、讓使用者能夠自訂其體驗，以及在使用者需要時提供協助，來提高您 UWP app 的包容性。
 
-本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入與裝置自訂您的 UWP app。 
 
 ## 協助工具
 
@@ -154,7 +154,7 @@ UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如
 
 ## 應用程式設定
 
-應用程式設定可讓您的使用者自訂您的 App、將 App 最佳化以滿足他們的個別需求和喜好。 提供正確的設定並正確儲存設定甚至可讓良好的使用者體驗變得更好。 
+應用程式設定可讓您的使用者自訂您的 app、將 app 最佳化以滿足他們的個別需求和喜好。 提供正確的設定並正確儲存設定甚至可讓良好的使用者體驗變得更好。 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -198,6 +198,6 @@ UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

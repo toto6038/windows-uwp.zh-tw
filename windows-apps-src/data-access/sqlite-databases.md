@@ -39,7 +39,7 @@ SQLite 最適合 Windows 10 IoT 核心版 (IoT 核心版) 的手機 app 和內�
 
 `#include <winsqlite/winsqlite3.h>`
 
-設定專案以連結到 winsqlite3.lib。 在 \[方案總管\] 中，以滑鼠右鍵按一下您的專案並選取 \[屬性\]\[連結器\]\[輸入\]，然後將 winsqlite3.lib 新增到 \[其他相依性\]。
+設定專案以連結到 winsqlite3.lib。 在 [方案總管]**** 中，以滑鼠右鍵按一下您的專案並選取 [屬性]****&gt;[連結器]****&gt;[輸入]****，然後將 winsqlite3.lib 新增到 [其他相依性]****。
 
 ### 2. 在應用程式套件中包含 SQLite
 

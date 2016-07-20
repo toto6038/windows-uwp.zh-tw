@@ -3,6 +3,7 @@ author: mtoepke
 title: "使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11"
 description: "針對首次移植練習，我們將從頭開始 -- 將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
 ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
 

@@ -24,8 +24,7 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-
-            **注意：**若要深入了解，您可以下載適用於 Windows 8.1 的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
+**注意：**若要深入了解，您可以下載適用於 Windows 8.1 的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
 
  
 
@@ -48,18 +47,9 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 呼叫這些方法的其中一個開始輪詢：
 
--   
-            [
-              **StartPeriodicUpdate**
-            ](https://msdn.microsoft.com/library/windows/apps/hh701684) (磚)
--   
-            [
-              **StartPeriodicUpdate**
-            ](https://msdn.microsoft.com/library/windows/apps/hh701611) (徽章)
--   
-            [
-              **StartPeriodicUpdateBatch**
-            ](https://msdn.microsoft.com/library/windows/apps/hh967945) (磚)
+-   [ **StartPeriodicUpdate** ](https://msdn.microsoft.com/library/windows/apps/hh701684) (磚)
+-   [ **StartPeriodicUpdate** ](https://msdn.microsoft.com/library/windows/apps/hh701611) (徽章)
+-   [ **StartPeriodicUpdateBatch** ](https://msdn.microsoft.com/library/windows/apps/hh967945) (磚)
 
 呼叫其中一個方法時，會立即輪詢 URI，並使用收到的內容來更新磚或徽章。 在這次初始輪詢之後，Windows 會在固定的時間間隔繼續提供更新。 輪詢會一直持續，直到您明確加以停止 (透過 [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697))、解除安裝 app 或移除磚 (次要磚) 後才會停止。 否則，即使不再啟動您的 app，Windows 還是會繼續輪詢磚或徽章的更新。
 
@@ -89,7 +79,7 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 ## <span id="taggo"></span><span id="TAGGO"></span>通知佇列中的定期通知
 
 
-您可以使用定期磚更新搭配[通知循環](https://msdn.microsoft.com/library/windows/apps/hh781199)。 根據預設，\[開始\] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
+您可以使用定期磚更新搭配[通知循環](https://msdn.microsoft.com/library/windows/apps/hh781199)。 根據預設，[開始] 畫面上的磚會顯示單一通知的內容，直到新通知取代目前的通知為止。 啟用循環後，佇列最多可以保留 5 個通知，而磚會循環顯示這些通知。
 
 如果佇列達到 5 個通知的容量，下一個新通知將會取代佇列中最舊的通知。 不過，您可以在通知設定標記，影響佇列的取代原則。 標記是應用程式專用、無大小寫之分的字串，最多可有 16 個英數字元，在回應承載的 [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP 標頭中指定。 Windows 會將傳入通知上的標記與已經在佇列中所有通知的標記相比較。 如果找到相符的標記，新的通知會取代具有相同標記的佇列通知。 如果沒有找到相符的標記，會套用預設的取代規則，由新的通知取代佇列中最舊的通知。
 

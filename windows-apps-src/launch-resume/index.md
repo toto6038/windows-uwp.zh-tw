@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "啟動、繼續和背景工作"
 description: "本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+translationtype: Human Translation
 ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
 ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
@@ -101,6 +102,6 @@ ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

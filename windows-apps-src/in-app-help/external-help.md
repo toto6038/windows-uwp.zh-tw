@@ -4,6 +4,7 @@ Description: "設計您應用程式的詳細指示和建議的外部說明頁面
 title: "設計外部說明頁面的指導方針"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
 ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
 

@@ -17,8 +17,7 @@ ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
 
 通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。 裝置可以具備各種輸入和控制機制。 支援多種輸入裝置可讓您的遊戲兼顧客戶更廣泛的各種偏好和能力。 本文件說明使用輸入裝置時需要牢記的重要做法，並示範 Marble Maze 如何運用這些做法。
 
-> 
-            **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 以下是本文件所討論在遊戲中使用輸入時的一些重點：
@@ -35,13 +34,11 @@ ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
 
 Marble Maze 支援以 Xbox 360 一般控制器裝置、滑鼠及觸控來選取功能表項目，也支援以 Xbox 360 控制器、滑鼠、觸控和加速計來控制遊戲進行。 Marble Maze 使用 XInput API 來輪詢控制器的輸入。 觸控可讓應用程式追蹤並回應指尖輸入。 加速計是測量沿著 X 軸、Y 軸和 Z 軸所施加力量的感應器。 您可以使用 Windows 執行階段來輪詢加速計裝置的目前狀態，以及透過 Windows 執行階段事件處理機制來接收觸控事件。
 
-> 
-            **注意** 本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，而使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取功能表項目和控制遊戲進行。
+> **注意** 本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，而使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取功能表項目和控制遊戲進行。
 
  
 
-> 
-            **注意** 套件資訊清單將 Landscape 設為遊戲支援的旋轉方式，以防止當您旋轉裝置讓彈珠滾動時改變方向。
+> **注意** 套件資訊清單將 Landscape 設為遊戲支援的旋轉方式，以防止當您旋轉裝置讓彈珠滾動時改變方向。
 
  
 
@@ -90,8 +87,8 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 您可以使用滑鼠、觸控或 Xbox 360 控制器來瀏覽功能表，如下所示：
 
 -   使用方向鍵來變更現用功能表項目。
--   使用觸控、A 按鈕或 \[開始\] 按鈕來挑選功能表項目或關閉目前的功能表，例如計分排行榜。
--   使用 \[開始\] 按鈕來讓遊戲暫停或繼續。
+-   使用觸控、A 按鈕或 [開始] 按鈕來挑選功能表項目或關閉目前的功能表，例如計分排行榜。
+-   使用 [開始] 按鈕來讓遊戲暫停或繼續。
 -   以滑鼠按一下功能表項目來選擇該動作。
 
 ###  追蹤觸控和滑鼠輸入
@@ -168,7 +165,7 @@ for (int i = 0; i < buttonCount; ++i)
 }
 ```
 
-在 **MarbleMaze::Update** 方法收集按鈕輸入之後，它會執行必須發生的任何動作。 例如，按下 \[開始\] 按鈕 (XINPUT\_GAMEPAD\_START) 時，遊戲狀態會從作用中變成暫停，或從暫停變成作用中。
+在 **MarbleMaze::Update** 方法收集按鈕輸入之後，它會執行必須發生的任何動作。 例如，按下 [開始] 按鈕 (XINPUT\_GAMEPAD\_START) 時，遊戲狀態會從作用中變成暫停，或從暫停變成作用中。
 
 ```cpp
 // Check whether the user paused or resumed the game. 
@@ -248,8 +245,7 @@ memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 
 ### 追蹤觸控和滑鼠輸入
 
-對於觸控和滑鼠輸入，當使用者觸碰或按一下功能表項目時，就會加以選擇。 下列範例顯示 **MarbleMaze::Update** 方法如何處理指標輸入來選取功能表項目。 
-            **m\_pointQueue** 成員變數會追蹤使用者在螢幕上觸碰或按一下的位置。 本文件稍後的＜處理指標輸入＞一節會進一步說明 Marble Maze 收集指標輸入的方式。
+對於觸控和滑鼠輸入，當使用者觸碰或按一下功能表項目時，就會加以選擇。 下列範例顯示 **MarbleMaze::Update** 方法如何處理指標輸入來選取功能表項目。 **m\_pointQueue** 成員變數會追蹤使用者在螢幕上觸碰或按一下的位置。 本文件稍後的＜處理指標輸入＞一節會進一步說明 Marble Maze 收集指標輸入的方式。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -261,8 +257,7 @@ while (!m_pointQueue.empty())
 }
 ```
 
-
-            **UserInterface::HitTest** 方法會判斷提供的點是否位於任何 UI 元素的邊界內。 任何通過此測試的 UI 元素會標示為已觸碰。 此方法是使用 **PointInRect** 函式來判斷提供的點是否位於每個 UI 元素的邊界內。
+**UserInterface::HitTest** 方法會判斷提供的點是否位於任何 UI 元素的邊界內。 任何通過此測試的 UI 元素會標示為已觸碰。 此方法是使用 **PointInRect** 函式來判斷提供的點是否位於每個 UI 元素的邊界內。
 
 ```cpp
 void UserInterface::HitTest(D2D1_POINT_2F point)
@@ -284,8 +279,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 
 ### 更新遊戲狀態
 
-
-            **MarbleMaze::Update** 方法在處理控制器和觸控輸入之後，如果有任何按鈕按下，便會更新遊戲狀態。
+**MarbleMaze::Update** 方法在處理控制器和觸控輸入之後，如果有任何按鈕按下，便會更新遊戲狀態。
 
 ```cpp
 // Update the game state if the user chose a menu option. 
@@ -304,8 +298,7 @@ if (m_highScoreButton.IsPressed())
 ##  控制遊戲進行
 
 
-遊戲迴圈和 **MarbleMaze::Update** 方法會共同合作來更新遊戲物件的狀態。 如果您的遊戲接受來自多個裝置的輸入，您可以將所有裝置的輸入累積在一組變數中，以便您撰寫更容易維護的程式碼。 
-            **MarbleMaze::Update** 方法會定義一組變數來累積所有裝置的動作。
+遊戲迴圈和 **MarbleMaze::Update** 方法會共同合作來更新遊戲物件的狀態。 如果您的遊戲接受來自多個裝置的輸入，您可以將所有裝置的輸入累積在一組變數中，以便您撰寫更容易維護的程式碼。 **MarbleMaze::Update** 方法會定義一組變數來累積所有裝置的動作。
 
 ```cpp
 float combinedTiltX = 0.0f;
@@ -323,8 +316,7 @@ float combinedTiltY = 0.0f;
 CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
 ```
 
-Windows 執行階段會針對產生的每個事件呼叫已登錄的處理常式。 
-            **DirectXApp** 類別會登錄事件，並將指標資訊轉送至 **MarbleMaze** 類別。
+Windows 執行階段會針對產生的每個事件呼叫已登錄的處理常式。 **DirectXApp** 類別會登錄事件，並將指標資訊轉送至 **MarbleMaze** 類別。
 
 ```cpp
 void DirectXApp::OnPointerPressed(
@@ -352,8 +344,7 @@ void DirectXApp::OnPointerMoved(
 }
 ```
 
-
-            **MarbleMaze** 類別會將保留觸控事件的 map 物件更新，以反應指標事件。 在第一次按下指標時，例如當使用者在觸控裝置上最初觸碰螢幕時，會呼叫 **MarbleMaze::AddTouch** 方法。 當指標位置移動時會呼叫 **MarbleMaze::AddTouch** 方法。 當釋放指標時 (例如，當使用者停止觸碰螢幕時)，會呼叫 **MarbleMaze::RemoveTouch** 方法。
+**MarbleMaze** 類別會將保留觸控事件的 map 物件更新，以反應指標事件。 在第一次按下指標時，例如當使用者在觸控裝置上最初觸碰螢幕時，會呼叫 **MarbleMaze::AddTouch** 方法。 當指標位置移動時會呼叫 **MarbleMaze::AddTouch** 方法。 當釋放指標時 (例如，當使用者停止觸碰螢幕時)，會呼叫 **MarbleMaze::RemoveTouch** 方法。
 
 ```cpp
 void MarbleMaze::AddTouch(int id, Windows::Foundation::Point point)
@@ -388,8 +379,7 @@ inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundati
 }
 ```
 
-
-            **MarbleMaze::Update** 方法會以固定縮放值來遞增傾斜係數，以更新合併的輸入值。 此縮放值是試驗過許多不同的值之後而決定。
+**MarbleMaze::Update** 方法會以固定縮放值來遞增傾斜係數，以更新合併的輸入值。 此縮放值是試驗過許多不同的值之後而決定。
 
 ```cpp
 // Account for touch input. 
@@ -403,8 +393,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 
 ### 處理加速計輸入
 
-若要處理加速計輸入，**MarbleMaze::Update** 方法會呼叫 [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 這個方法會傳回代表加速計讀數的 [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) 物件。 
-            **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 屬性分別保有沿著 X 軸和 Y 軸的重力加速度。
+若要處理加速計輸入，**MarbleMaze::Update** 方法會呼叫 [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 這個方法會傳回代表加速計讀數的 [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) 物件。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 屬性分別保有沿著 X 軸和 Y 軸的重力加速度。
 
 下列範例顯示 **MarbleMaze::Update** 方法如何輪詢加速計及更新合併的輸入值。 當您傾斜裝置時，重力會讓彈珠移動得更快。
 
@@ -428,10 +417,7 @@ if (m_accelerometer != nullptr)
 
 ### 處理 Xbox 360 控制器輸入
 
-下列範例顯示 **MarbleMaze::Update** 方法如何從 Xbox 360 控制器讀取並更新合併的輸入值。 
-            **MarbleMaze::Update** 方法使用 for 迴圈，以接收來自任何已連接控制器的輸入。 
-            **XInputGetState** 方法會將控制器的目前狀態填入 XINPUT\_STATE 物件。 
-            **combinedTiltX** 和 **combinedTiltY** 值會根據左搖捍的 X 值和 Y 值而更新。
+下列範例顯示 **MarbleMaze::Update** 方法如何從 Xbox 360 控制器讀取並更新合併的輸入值。 **MarbleMaze::Update** 方法使用 for 迴圈，以接收來自任何已連接控制器的輸入。 **XInputGetState** 方法會將控制器的目前狀態填入 XINPUT\_STATE 物件。 **combinedTiltX** 和 **combinedTiltY** 值會根據左搖捍的 X 值和 Y 值而更新。
 
 ```cpp
 // Account for input on any connected controller.
@@ -460,8 +446,7 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 
 XInput 定義左搖桿的 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** 常數。 這是適合大部分遊戲的靜止區域臨界值。
 
-> 
-            **重要** 當您使用 Xbox 360 控制器時，請總是考量靜止區域。 靜止區域是指不同遊戲台對於初始移動的敏感度差異。 在某些控制器中，細微的移動可能不會產生讀數，但在其他控制器中，卻可能產生可測出的讀數。 為了讓遊戲納入此一考量，請為初始搖捍移動建立非移動區域。 如需靜止區域的詳細資訊，請參閱 [XInput 入門](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
+> **重要** 當您使用 Xbox 360 控制器時，請總是考量靜止區域。 靜止區域是指不同遊戲台對於初始移動的敏感度差異。 在某些控制器中，細微的移動可能不會產生讀數，但在其他控制器中，卻可能產生可測出的讀數。 為了讓遊戲納入此一考量，請為初始搖捍移動建立非移動區域。 如需靜止區域的詳細資訊，請參閱 [XInput 入門](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
 
  
 
@@ -469,14 +454,11 @@ XInput 定義左搖桿的 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** 常數。 �
 
 裝置會以不同的方式報告輸入值。 例如，指標輸入可能以螢幕座標表示，而控制器輸入可能以完全不同的格式表示。 將多個裝置的輸入合併為一組輸入值的挑戰在於正規化，或將值轉換成一般格式。 Marble Maze 會將值縮放至範圍 \[-1.0, 1.0\] 來加以正規化。 為了將 Xbox 360 控制器輸入正規化，Marble Maze 會將輸入值除以 32768，因為搖桿輸入值一律介於 -32768 和 32767 之間。 本節稍早所述的 **PointToTouch** 函式會將螢幕座標轉換為介於大約 -1.0 和 +1.0 之間的正規化值，以得到類似的結果。
 
-> 
-            **祕訣** 即使您的應用程式只使用一個輸入方法，仍建議您一律將輸入值正規化。 這樣做可簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
+> **祕訣** 即使您的應用程式只使用一個輸入方法，仍建議您一律將輸入值正規化。 這樣做可簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
 
  
 
-
-            **MarbleMaze::Update** 方法在處理輸入之後，會建立向量來代表迷宮傾斜對彈珠的效果。 下列範例示範 Marble Maze 如何使用 **XMVector3Normalize** 函式來建立經過正規化的重力向量。 
-            *MaxTilt* 變數會限制迷宮傾斜的程度，避免迷宮翻覆。
+**MarbleMaze::Update** 方法在處理輸入之後，會建立向量來代表迷宮傾斜對彈珠的效果。 下列範例示範 Marble Maze 如何使用 **XMVector3Normalize** 函式來建立經過正規化的重力向量。 *MaxTilt* 變數會限制迷宮傾斜的程度，避免迷宮翻覆。
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;

@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。"
 title: "授與免費產品"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 ---
 
@@ -32,9 +33,9 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 
 | 方法 | 要求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
+| POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
-<br/> 
+<span/> 
 
 ### 要求的標頭
 
@@ -45,7 +46,7 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
-<br/>
+<span/>
 
 ### 要求主體
 
@@ -61,7 +62,7 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 | quantity       | 整數    | 要購買的數量。 目前唯一支援的值為 1。 如果沒有指定，則預設為 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字串 | Windows 市集型錄中的 SKU 識別碼。 舉例來說，SKU 識別碼可以是「0010」。                                                                                                                                                                                                                                                | 是      |
 
-<br/> 
+<span/>
 
 ### 要求的範例
 
@@ -107,7 +108,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | 十進位                     | 如果使用不同的付款方式和儲存值 (CSV)，金額就會計入 CSV。                                                                | 是      |
 | totalTaxAmount            | 十進位                     | 所有明細項目的總稅金金額。                                                                                                              | 是      |
 
-<br/> 
+<span/>
 
 ClientContext 物件包含下列參數。
 
@@ -115,7 +116,7 @@ ClientContext 物件包含下列參數。
 |-----------|--------|---------------------------------------|----------|
 | client    | 字串 | 建立訂單的用戶端識別碼。 | 否       |
 
-<br/> 
+<span/>
 
 OrderLineItemV6 物件包含下列參數。
 
@@ -147,7 +148,7 @@ OrderLineItemV6 物件包含下列參數。
 | Title                   | 字串         | 當地語系化的明細項目標題。                                                                        | 是      |
 | totalAmount             | 十進位        | 該明細項目含稅的總購金額。                                                    | 是      |
 
-<br/> 
+<span/>
 
 IdentityV6 物件包含下列參數。
 
@@ -156,7 +157,7 @@ IdentityV6 物件包含下列參數。
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Windows 市集識別碼索引鍵之 *publisherUserId* 的字串值。 | 是      |
 
-<br/> 
+<span/> 
 
 ### 回應的範例
 
@@ -229,7 +230,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 | 400  | BadRequest   | InvalidParameter           | 詳細資料包含要求主體的相關資訊，以及哪些欄位的值無效。                                                                                    |
 
-<br/> 
+<span/> 
 
 ## 相關主題
 
@@ -244,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

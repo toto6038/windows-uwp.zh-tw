@@ -5,6 +5,7 @@ title: "定義自訂辨識限制式"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
@@ -31,26 +32,16 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
 這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
 
--   
-            [
-              **SpeechRecognitionTopicConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
--   
-            [
-              **SpeechRecognitionListConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
--   
-            [
-              **SpeechRecognitionGrammarFileConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
+-   [ **SpeechRecognitionTopicConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
+-   [ **SpeechRecognitionListConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
+-   [ **SpeechRecognitionGrammarFileConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
 -   單一主題限制式或預先定義的文法 (口述或網頁搜尋)。 不允許其他限制式。
 -   清單限制式和/或文法檔限制式的組合。
 
-
-            **請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識程序。
+**請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識程序。
 
 ## 指定網頁搜尋文法 (SpeechRecognitionTopicConstraint)
 
@@ -154,7 +145,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 -   您可以將多個文法檔限制式新增到限制式集合。
 -   針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
-這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，\[封裝動作\] 是設定為 \[內容\]，而 \[複製到輸出目錄\] 是設定為 \[ 永遠複製 \]：
+這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，[封裝動作]**** 是設定為 [內容]****，而 [複製到輸出目錄]**** 是設定為 [ 永遠複製 ]****：
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)

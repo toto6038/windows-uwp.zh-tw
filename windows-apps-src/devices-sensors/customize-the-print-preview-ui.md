@@ -21,8 +21,7 @@ ms.openlocfilehash: 36c1499b51aa5b8b5ab4b0b354197c67dc89801f
 
 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 如需列印的詳細資訊，請參閱[從您的 app 進行列印](print-from-your-app.md)。
 
-
-            **提示**：本主題中大部分的範例是以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
+**提示**：本主題中大部分的範例是以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
  
 
@@ -43,10 +42,9 @@ ms.openlocfilehash: 36c1499b51aa5b8b5ab4b0b354197c67dc89801f
 
 這些選項會在 [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) 類別中定義。 您可以在預覽列印 UI 中顯示的選項清單中新增或移除選項。 您也可以變更選項出現的順序，以及設定對使用者顯示的預設設定。
 
-不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 \[更多設定\] 連結，使用者就可以存取印表機支援的所有選項。
+不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 [更多設定]**** 連結，使用者就可以存取印表機支援的所有選項。
 
-
-            **注意** 雖然您的應用程式可以指定要顯示的任何列印選項，但是只有選定的印表機支援的選項才會在預覽列印 UI 中顯示。 列印 UI 不會顯示選定的印表機不支援的選項。
+**注意** 雖然您的應用程式可以指定要顯示的任何列印選項，但是只有選定的印表機支援的選項才會在預覽列印 UI 中顯示。 列印 UI 不會顯示選定的印表機不支援的選項。
 
  
 
@@ -94,7 +92,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-重要 呼叫 displayedOptions.clear() 會移除預覽列印 UI 中的所有列印選項，包括 \[更多設定\] 連結。 務必在預覽列印 UI 上附加要顯示的選項。
+**重要** 呼叫 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 會移除預覽列印 UI 中的所有列印選項，包括 [更多設定]**** 連結。 務必在預覽列印 UI 上附加要顯示的選項。
 
 ### 指定預設選項
 

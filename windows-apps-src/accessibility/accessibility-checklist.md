@@ -6,8 +6,8 @@ title: "協助工具檢查清單"
 label: Accessibility checklist
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
+ms.sourcegitcommit: 6ac5430a3e18a02d5f2fc82829631b7649ea547d
+ms.openlocfilehash: 2d632c524de8299378d8cc059d1c522080a2df2e
 
 ---
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 3.  用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
 
-    * 使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者會從協助工具選項中變更 DPI 值，您可以在 \[輕鬆存取\] 中使用這個選項)。
+    * 使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者會從協助工具選項中變更 DPI 值，您可以在 [輕鬆存取]**** 中使用這個選項)。
     * 使用色彩分析工具，確定視覺文字對比率至少是 4.5:1。
     * 切換到高對比佈景主題，確定應用程式的 UI 可清楚閱讀並可操作。
     * 確定 UI 不將顏色作為傳達資訊的唯一方式。
@@ -68,6 +68,6 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

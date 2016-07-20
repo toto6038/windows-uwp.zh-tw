@@ -2,6 +2,7 @@
 Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 手動轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式"
+translationtype: Human Translation
 ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
 ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 

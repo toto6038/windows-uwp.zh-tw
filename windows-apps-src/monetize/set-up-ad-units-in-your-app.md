@@ -21,7 +21,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
 為您的實際 app 設定應用程式識別碼和廣告單元：
 
-1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收\] &gt; \[利用廣告獲利\]。
+1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收] &gt; \[利用廣告獲利\]。
 2.  在此頁面的 \[Microsoft Advertising 廣告單元\] 區段中，建立廣告單元。 對於廣告單元類型，如果使用 **AdControl** 請選取 \[橫幅\]，如果使用 **InterstitialAd** 則請選取 \[影片插入式\]。 如需此頁面的詳細資訊，請參閱[利用廣告賺取獲利](../publish/monetize-with-ads.md)。
 
 3.  您會看到每個已產生的廣告單元的「應用程式識別碼」和「廣告單元識別碼」。 若要在 app 中顯示廣告，您需要在 app 程式碼中使用這些值：
@@ -30,8 +30,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
     * 如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 **InterstitialAd** 物件的 **RequestAd** 方法。
 
-> 
-            **重要：**如果您的 app 使用廣告流量分配顯示來自 Microsoft 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+> **重要：**如果您的 app 使用廣告流量分配顯示來自 Microsoft 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
 
  
 

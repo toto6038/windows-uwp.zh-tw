@@ -73,12 +73,9 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 ![互通性轉換不應占去大量程式執行時間。](images/interop-transitions.png)
 
+[**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
 
-            [
-              **.NET for Windows apps**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中列出的類型從 C# 或 Visual Basic 中使用時不會產生這個互通性成本。 做為經驗法則，您可以假設命名空間中以 “Windows.” 為開頭的類型 屬於 UWP，而命名空間中以 “System.” 為開頭的類型 則是 .NET 類型。 請記住，就算是簡單的 UWP 類型使用 (例如配置或屬性存取) 也會產生互通性成本。
-
-您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析 app 效能前，可以使用 \[功能\] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
+您應該測量應用程式並判斷互通性是否佔用了應用程式大部分執行時間，然後再最佳化互通性成本。 使用 Visual Studio 分析 app 效能前，可以使用 [**功能**] 檢視並查看呼叫至 UWP 中的方法所耗費的時間，輕易取得互通性成本上限。
 
 如果您的 app 因互通性負荷而變慢，您可以在最忙碌的程式碼路徑中減少對 UWP API 的呼叫，以便提高 app 的效能。 例如，若要在不斷查詢 [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) 位置和維度以執行大量物理計算的遊戲引擎中節省執行時間，您可以將來自 **UIElements** 的必要資訊儲存到區域變數，並在這些快取的值上進行計算，然後在計算完成後將最終結果指派回 **UIElements**。 另一個例子：如果 C# 或 Visual Basic 程式碼大量存取某個集合，則使用 [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) 命名空間中的集合比使用 [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 命名空間中的集合更有效率。 您也可以考慮將 UWP 元件的呼叫結合起來；可以這樣做的其中一個範例就是使用 [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API。
 

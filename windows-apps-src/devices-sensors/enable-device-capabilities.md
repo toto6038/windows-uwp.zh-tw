@@ -4,8 +4,8 @@ ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "啟用裝置功能"
 description: "本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 512b89027f6b707de346fffe104f165074fabcea
-ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
 
 ---
 # 啟用裝置功能
@@ -18,13 +18,13 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 ## 指定您 app 將要使用的裝置功能
 
 
-當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](https://msdn.microsoft.com/library/windows/apps/Dn263092) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
+當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](https://msdn.microsoft.com/library/windows/apps/Dn263092) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
 
 **注意**  
 有些裝置類型 (例如印表機、掃描器和感應器) 不需要在 app 套件資訊清單中宣告。
 
--   在 Visual Studio \[方案總管\] 中，按兩下套件資訊清單檔案 Package.appxmanifest。
--   開啟 \[功能\] 索引標籤。
+-   在 Visual Studio [方案總管] 中，按兩下套件資訊清單檔案 **Package.appxmanifest**。
+-   開啟 [功能]**** 索引標籤。
 -   選取您的應用程式使用的裝置功能。 如果沒有在資訊清單設計工具中看到您要尋找的功能，可手動新增。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)。
 
 | 裝置功能 | 資訊清單設計工具 | 說明 |
@@ -39,7 +39,7 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 | 位置| ![資訊清單設計工具中提供](images/ap-tools.png) | 提供目前位置的存取。 這是透過專用硬體 (如電腦中的 GPS 感應器) 取得或由可用的網路資訊衍生的位置。 | 
 | 麥克風 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供麥克風音訊摘要的存取。 這樣可讓 app 從連接的麥克風錄音。 | 
 | 音樂媒體櫃 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供在本機電腦和 **HomeGroup** 電腦中，新增、變更或刪除**音樂媒體櫃**中檔案的功能。 | 
-| 物件 3D | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓使用者以程式設計方式存取他們的 \[立體物件\]，允許 app 在沒有使用者互動的情況下，列舉和存取媒體櫃中的所有檔案。 這項功能通常用於必須存取整個 \[立體物件\] 庫的 3D app 和遊戲。 | 
+| 物件 3D | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓使用者以程式設計方式存取他們的 [立體物件]****，允許 app 在沒有使用者互動的情況下，列舉和存取媒體櫃中的所有檔案。 這項功能通常用於必須存取整個 [立體物件]**** 庫的 3D app 和遊戲。 | 
 | 通話 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠存取所有裝置上的電話線路，並執行下列功能：在無需提示使用者的情況下，在手機上撥打電話並顯示系統撥號程式、存取與線路相關的中繼資料、存取與線路相關的觸發程序。 讓使用者選取的垃圾電話篩選 app 能夠設定和檢查封鎖清單及通話來源資訊。 | 
 | 圖片媒體櫃 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供在本機電腦和 **HomeGroup** 電腦中，新增、變更或刪除**圖片媒體櫃**中檔案的功能。 | 
 | 私人網路 (用戶端 &amp; 伺服器) | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供對內和對外存取權限給具有已驗證網域控制站或使用者已指定為家用或工作場所網路的內部網路。 一律封鎖對重要連接埠的對內存取。 | 
@@ -77,6 +77,6 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

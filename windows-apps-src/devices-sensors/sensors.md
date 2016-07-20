@@ -4,8 +4,8 @@ ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "感應器"
 description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
 translationtype: Human Translation
-ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
-ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 ---
 # 感應器
@@ -42,7 +42,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 您可以調整延遲時間，即可控制感應器傳送批次資料的頻率。 例如，[**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) 的 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 屬性。 為應用程式設定這個屬性之後，感應器就會在指定的時間之後傳送資料。 您可以設定 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval)，這樣就可以在規定的延遲時間內，控制可以累積的資料數量。
 
-設定延遲性時，有幾點重要聲明，請您牢記於心。 第一點重要聲明是：根據感應器自身情況，它們可以接受的 [**MaxBatchSize**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) 各自不同。 這是指感應器最多可以快取的事件數量，超過此限之後，就必須傳送出去。 將 **MaxBatchSize** 乘以 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) 之後，就會得出 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 最大值。 如果指定的值大於這個最大值，就會使用延遲時間上限，以免您遺失資料。 此外，即使有多個應用程式，每一個還是可以設定自己的延遲時間。 為了滿足所有的應用程式的需求，系統會採用最短的延遲時間。 因為這些種種的因素，所以您在應用程式中設定的延遲時間，有可能會與觀察到的延遲時間不一致。
+設定延遲性時，有幾點重要聲明，請您牢記於心。 第一點重要聲明是：根據感應器自身情況，它們可以接受的 [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) 各自不同。 這是指感應器最多可以快取的事件數量，超過此限之後，就必須傳送出去。 將 **MaxBatchSize** 乘以 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) 之後，就會得出 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 最大值。 如果指定的值大於這個最大值，就會使用延遲時間上限，以免您遺失資料。 此外，即使有多個應用程式，每一個還是可以設定自己的延遲時間。 為了滿足所有的應用程式的需求，系統會採用最短的延遲時間。 因為這些種種的因素，所以您在應用程式中設定的延遲時間，有可能會與觀察到的延遲時間不一致。
 
 感應器使用批次報告時，呼叫 [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) 即可清除目前的批次資料，然後開始新的延遲時間。
 
@@ -74,7 +74,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 ## 指南針
 
-[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
+[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
 
 ![關於磁北極的指南針讀數](images/compass.png)
 
@@ -118,7 +118,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 ## 簡單方向
 
-[**SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
+[**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
 根據裝置是平行於地面或與地面成直角而變更其顯示方式的閱讀程式，都可以使用 SimpleOrientationSensor 的值來判斷裝置的手持姿勢。
 
@@ -129,6 +129,6 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

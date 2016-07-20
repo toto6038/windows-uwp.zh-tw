@@ -3,8 +3,9 @@ author: awkoren
 Description: "使用桌面轉換擴充功能，部署和偵錯從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "部署和偵錯從 Windows 傳統型應用程式轉換而來的通用 Windows 平台 (UWP) 應用程式"
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ---
 
@@ -40,7 +41,7 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 
 5. 開啟已在 Visual Studio 中轉換的對應 Win32 方案。
  
-6. 在方案上按一下滑鼠右鍵，然後選擇 \[加入新的專案\]，將新的封裝專案加入至您的方案。 接著在 \[安裝和部署\] 下方選取 \[Desktop to UWP Packaging Project\]：
+6. 在方案上按一下滑鼠右鍵，然後選擇 [加入新的專案]，將新的封裝專案加入至您的方案。 接著在 [安裝和部署] 下方選取 [Desktop to UWP Packaging Project]：
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
@@ -123,7 +124,7 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 
 10. 最後，您現在可以在 Win32 程式碼中設定中斷點，並按 F5 來啟動偵錯工具。 它會複製您在 AppX 套件中對 Win32 應用程式所做的任何更新，並可讓您直接從 Visual Studio 偵錯。
 
-11. 如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11. 如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
 
 如果您有多個組建組態 (例如針對發行和偵錯)，就可以將下列項目新增至 AppXFileList.xml 檔案，從不同位置複製 Win32 組建︰
 
@@ -182,19 +183,19 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 部署您的 app 之前，您必須以憑證簽署它。 如需建立憑證的詳細資訊，請參閱[簽署您的 .Appx 套件](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)。 
 
 以下是如何匯入您先前建立之憑證的方式。 您可以直接安裝它，或者可以從您已簽署的 appx 中安裝它，就像客戶會做的一樣。
-1.  在 \[檔案總管\] 中，以滑鼠右鍵按一下您使用測試憑證簽署的 appx，然後從操作功能表選擇 \[屬性\]。
-2.  按一下或點選 \[數位簽章\] 索引標籤。
-3.  按一下或點選憑證，然後選擇 \[詳細資料\]。
-4.  按一下或點選 \[檢視憑證\]。
-5.  按一下或點選 \[安裝憑證\]。
-6.  在 \[存放區位置\] 群組中，選取 \[本機電腦\]。
-7.  按一下或點選 \[下一步\] 和 \[確定\]，以確認 UAC 對話方塊。
-8.  在 \[憑證匯入精靈\] 的下一個畫面中，將選取的選項變更為 \[將所有憑證放入以下的存放區\]。
-9.  按一下或點選 \[瀏覽\]。 在 \[選取憑證存放區\] 視窗中，向下捲動並選取 \[受信任的人\]，然後按一下或點選 \[確定\]。
-10. 按一下或點選 \[下一步\]。 新畫面隨即顯示。 按一下或點選 \[完成\]。
-11. 應該會顯示確認對話方塊。 出現時，按一下 \[確定\]。 如果出現其他對話方塊，指出憑證發生問題，您可能需要執行一些憑證疑難排解。
+1.  在 [檔案總管] 中，以滑鼠右鍵按一下您使用測試憑證簽署的 appx，然後從操作功能表選擇 [屬性]****。
+2.  按一下或點選 [數位簽章]**** 索引標籤。
+3.  按一下或點選憑證，然後選擇 [詳細資料]****。
+4.  按一下或點選 [檢視憑證]****。
+5.  按一下或點選 [安裝憑證]****。
+6.  在 [存放區位置]**** 群組中，選取 [本機電腦]****。
+7.  按一下或點選 [下一步]**** 和 [確定]****，以確認 UAC 對話方塊。
+8.  在 [憑證匯入精靈] 的下一個畫面中，將選取的選項變更為 [將所有憑證放入以下的存放區]****。
+9.  按一下或點選 [瀏覽]****。 在 [選取憑證存放區] 視窗中，向下捲動並選取 [受信任的人]****，然後按一下或點選 [確定]****。
+10. 按一下或點選 [下一步]****。 新畫面隨即顯示。 按一下或點選 [完成]****。
+11. 應該會顯示確認對話方塊。 出現時，按一下 [確定]****。 如果出現其他對話方塊，指出憑證發生問題，您可能需要執行一些憑證疑難排解。
 
-若要使 Windows 信任憑證，憑證必須位於 \[憑證 (本機電腦)\] &gt; \[信任的根憑證授權單位\] &gt; \[憑證\] 節點或 \[憑證 (本機電腦)\] &gt; \[受信任的人\] &gt; \[憑證\] 節點上。 只有這兩個位置中的憑證可以驗證本機電腦內容中的憑證信任。 否則，會出現類似下列字串的錯誤訊息︰
+若要使 Windows 信任憑證，憑證必須位於 [憑證 (本機電腦)] &gt; [信任的根憑證授權單位] &gt; [憑證]**** 節點或 [憑證 (本機電腦)] &gt; [受信任的人] &gt; [憑證]**** 節點上。 只有這兩個位置中的憑證可以驗證本機電腦內容中的憑證信任。 否則，會出現類似下列字串的錯誤訊息︰
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -215,11 +216,11 @@ in the app package must be trusted."
 
 [傳統型應用程式轉換器預覽 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
-[將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+[將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [GitHub 上的傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

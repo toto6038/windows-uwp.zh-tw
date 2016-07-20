@@ -3,6 +3,7 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。"
 title: "使用 Windows 市集服務存取分析資料"
+translationtype: Human Translation
 ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
 ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。 這個 API 可讓您擷取 app 的資料和 IAP 的下載數、錯誤、app 評分與評論。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 app 或服務的呼叫。
+使用「Windows 市集分析 API」**，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。 這個 API 可讓您擷取 app 的資料和 IAP 的下載數、錯誤、app 評分與評論。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 app 或服務的呼叫。
 
 ## 使用 Windows 市集分析 API 的先決條件
 
@@ -29,26 +30,22 @@ ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 
 下列步驟說明端對端的程序：
 
-1.  
-            [將 Azure AD應用程式與您的 Windows 開發人員中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
-2.  
-            [取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。
-3.  
-            [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
+1.  [將 Azure AD應用程式與您的 Windows 開發人員中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
+2.  [取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。
+3.  [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
 
 
 ### 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯
 
-1.  在開發人員中心，移至您的 \[帳戶設定\]，按一下 \[管理使用者\]，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)。 您也可以選擇性地從組織的 Azure AD 目錄加入使用者，這樣他們也能存取開發人員帳戶。
+1.  在開發人員中心，移至您的 [帳戶設定]****，按一下 [管理使用者]****，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)。 您也可以選擇性地從組織的 Azure AD 目錄加入使用者，這樣他們也能存取開發人員帳戶。
 
-    > 
-            **注意** 一個 Azure Active Directory 只能與一個開發人員中心帳戶關聯。 同樣地，一個開發人員中心帳戶只能與一個 Azure Active Directory 關聯。 建立此關聯之後，您必須連絡支援人員才能將它移除。
+    > **注意** 一個 Azure Active Directory 只能與一個開發人員中心帳戶關聯。 同樣地，一個開發人員中心帳戶只能與一個 Azure Active Directory 關聯。 建立此關聯之後，您必須連絡支援人員才能將它移除。
 
      
 
-2.  在 \[管理使用者\] 頁面中，按一下 \[新增 Azure AD 應用程式\]，新增代表您要用來存取開發人員中心帳戶分析資料之 app 或服務的 Azure AD 應用程式，並指派 \[Manager\] 角色給它。 如果這個應用程式已經存在於您的 Azure AD 目錄中，則您可以在 \[新增 Azure AD 應用程式\] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 否則，您可以在 \[新增 Azure AD 應用程式\] 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。
+2.  在 [管理使用者]**** 頁面中，按一下 [新增 Azure AD 應用程式]****，新增代表您要用來存取開發人員中心帳戶分析資料之 app 或服務的 Azure AD 應用程式，並指派 [Manager]**** 角色給它。 如果這個應用程式已經存在於您的 Azure AD 目錄中，則您可以在 [新增 Azure AD 應用程式]**** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 否則，您可以在 [新增 Azure AD 應用程式]**** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。
 
-3.  返回 \[管理使用者\] 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後按一下 \[新增金鑰\]。 在下列畫面中，複製 \[用戶端識別碼\] 和 \[金鑰\] 的值。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。 您需要此用戶端識別碼和金鑰來取得 Azure AD 存取權杖，以在呼叫 Windows 市集分析 API 時使用。 您離開這個頁面之後就無法再存取此資訊。
+3.  返回 [管理使用者]**** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後按一下 [新增金鑰]****。 在下列畫面中，複製 [用戶端識別碼]**** 和 [金鑰]**** 的值。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。 您需要此用戶端識別碼和金鑰來取得 Azure AD 存取權杖，以在呼叫 Windows 市集分析 API 時使用。 您離開這個頁面之後就無法再存取此資訊。
 
 
 ### 取得 Azure AD 存取權杖
@@ -61,7 +58,7 @@ ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
--   若要取得您的租用戶識別碼，請登入到 Azure 管理入口網站，瀏覽至 \[Active Directory\]，然後按一下您要連結到開發人員中心帳戶的目錄。 此目錄的租用戶識別碼會內嵌在此頁面的 URL 中，如以下範例中所示的 *your\_tenant\_ID* 字串。
+-   若要取得您的租用戶識別碼，請登入到 [Azure 管理入口網站](http://manage.windowsazure.com/)，瀏覽至 [Active Directory]****，然後按一下您要連結到開發人員中心帳戶的目錄。 此目錄的租用戶識別碼會內嵌在此頁面的 URL 中，如以下範例中所示的 *your\_tenant\_ID* 字串。
 
   ```syntax
   https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart

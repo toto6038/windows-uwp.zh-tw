@@ -21,8 +21,7 @@ ms.openlocfilehash: 7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a
 將音訊效果加入至音訊圖，促成其他案例。 音訊圖中的每個節點可以填入零個或多個效果，以對透過節點傳遞的音訊執行音訊處理。 內建效果有好幾個：例如等化器、限制，以及可利用少數幾行程式碼附加到音訊節點的殘響效果。 您也可以建立自己的自訂音訊效果，其運作方式與內建效果完全相同。
 
 **注意**  
-
-            [AudioGraph UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+[AudioGraph UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
 
 ## 選擇 Windows 執行階段 AudioGraph 或 XAudio2
 
@@ -36,46 +35,23 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 
 ## AudioGraph 類別
 
-
-            [
-              **AudioGraph**
-            ](https://msdn.microsoft.com/library/windows/apps/dn914176) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 初始化 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 物件，接著呼叫 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，以建立 **AudioGraph** 類別的執行個體，包含圖形的組態設定。 傳回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
+[**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 類別是構成圖形之所有節點的父項。 使用此物件來建立所有音訊節點類型的執行個體。 初始化 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 物件，接著呼叫 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，以建立 **AudioGraph** 類別的執行個體，包含圖形的組態設定。 傳回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 可供存取建立的音訊圖，或在音訊圖建立失敗時提供錯誤值。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
 -   使用 **AudioGraph** 類別的 Create\* 方法，建立所有音訊節點類型。
--   
-            [
-              **AudioGraph.Start**
-            ](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法會導致音訊圖開始處理音訊資料。 
-            [
-              **AudioGraph.Stop**
-            ](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 
-            [
-              **ResetAllNodes**
-            ](https://msdn.microsoft.com/library/windows/apps/dn914242) 會導致圖形中的所有節點捨棄目前在其音訊緩衝區中的所有資料。
+-   [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法會導致音訊圖開始處理音訊資料。 [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法會停止音訊處理。 執行圖形時，可以獨立啟動和停止圖形中的每個節點，但圖形停止時，就沒有作用中的節點。 [ **ResetAllNodes** ](https://msdn.microsoft.com/library/windows/apps/dn914242) 會導致圖形中的所有節點捨棄目前在其音訊緩衝區中的所有資料。
 -   當圖形開始處理新的音訊資料配量，會發生 [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) 事件。 當配量處理完成時，會發生 [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。
 
 -   唯一必要的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 屬性是 [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724)。 指定這個值可讓系統最佳化指定類別的音訊管線。
 -   音訊圖的配量大小會決定一次處理的範例數目。 根據預設，配量大小採用預設取樣率並以 10 毫秒為基礎。 如果您藉由設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性來指定自訂配量大小，您也必須將 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 屬性設定為 **ClosestToDesired**，否則會忽略所提供的值。 如果使用這個值，則系統會選擇儘可能接近您指定之配量大小的大小。 若要判斷實際配量大小，請在建立完成後檢查 **AudioGraph** 的 [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243)。
 -   如果您只打算搭配使用音訊圖和檔案，而不打算輸出到音訊裝置，建議您不要設定 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 屬性，以使用預設配量大小。
--   
-            [
-              **DesiredRenderDeviceAudioProcessing**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958522) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 
-            **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 
-            **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
+-   [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 屬性決定主要轉譯裝置對音訊圖輸出執行的處理量。 **Default** 設定可讓系統對指定的音訊轉譯類別使用預設音訊處理。 此處理可大幅改善某些裝置上的音訊聲音，特別是具有小型喇叭的行動裝置。 **Raw** 設定可將執行的訊號處理量降至最低，進而提高效能，但可能會導致某些裝置上的音效品質較差。
 -   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 設定為 **LowestLatency**，則音訊圖會自動為 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 使用 **Raw**。
--   
-            [
-              **EncodingProperties**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958523) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
--   
-            [
-              **PrimaryRenderDevice**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958524) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
+-   [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 可判斷圖形所使用的音訊格式。 僅支援 32 位元的浮點格式。
+-   [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 會設定音訊圖的主要轉譯裝置。 如果您未設定此項，則會使用預設系統裝置。 主要轉譯裝置用來計算圖形中的其他節點的配量大小。 如果系統上未出現任何音訊轉譯裝置，則音訊圖建立將會失敗。
 
 您可以讓音訊圖使用預設音訊轉譯裝置，或使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 類別來取得系統可用的音訊轉譯裝置清單，其作法是呼叫 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 並傳入 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 所傳回的音訊轉譯裝置選取器。 您可以程式設計方式選擇其中一個傳回的 **DeviceInformation** 物件，或顯示 UI 讓使用者選取裝置，然後使用它來設定 [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 屬性。
 
@@ -144,8 +120,7 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 
 -   傳遞至 **QuantumStarted** 事件處理常式的 [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) 物件會公開 [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) 屬性，以指出音訊圖需要多少樣本才能填滿所要處理的配量。
 -   呼叫 [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148)，將填滿音訊資料的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 物件傳遞至圖形中。
--   
-            **GenerateAudioData** 協助程式方法的範例實作如下所示。
+-   **GenerateAudioData** 協助程式方法的範例實作如下所示。
 
 若要在 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 中填入音訊資料，您必須能夠存取音訊框架的底層記憶體緩衝區。 若要這麼做，您必須在您的命名空間內新增下列程式碼，以初始化 **IMemoryBufferByteAccess** COM 介面。
 
@@ -155,7 +130,7 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 \[屬性\] 頁面、按一下 \[建置\] 屬性頁，然後選取 \[容許 Unsafe 程式碼\] 核取方塊。
+-   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
 -   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
 -   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
 -   呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 介面的執行個體。
@@ -175,8 +150,7 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 [!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
 
 -   呼叫 [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171)，以取得填滿圖形中音訊資料的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 物件。
--   
-            **ProcessFrameOutput** 協助程式方法的範例實作如下所示。
+-   **ProcessFrameOutput** 協助程式方法的範例實作如下所示。
 
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
@@ -195,8 +169,7 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 
 [!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-輸出節點也可以接收來自其他節點的多個連線。 下列範例會建立從 [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) 到 [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) 節點的連線。 因為輸出節點有來自檔案輸入節點和裝置輸入節點的連線，所以輸出會包含這兩個來源的音訊混合。 
-            **AddOutgoingConnection** 提供的多載可讓您為通過連線的訊號指定增益值。
+輸出節點也可以接收來自其他節點的多個連線。 下列範例會建立從 [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) 到 [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) 節點的連線。 因為輸出節點有來自檔案輸入節點和裝置輸入節點的連線，所以輸出會包含這兩個來源的音訊混合。 **AddOutgoingConnection** 提供的多載可讓您為通過連線的訊號指定增益值。
 
 [!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
@@ -219,15 +192,13 @@ Windows 執行階段音訊圖 API 提供的功能也可使用以 COM 為基礎�
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   所有音訊效果都會實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044)。 每個節點都會公開 **EffectDefinitions** 屬性，以表示套用至該節點的效果清單。 將效果的定義物件新增至清單，即可新增該效果。
--   
-            **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 其中包括：
+-   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 其中包括：
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
     -   [**ReverbEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914313)
 -   您可以建立自己的音訊效果以實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044)，然後將這些效果套用到音訊圖中的任何節點。
--   每個節點類型都會公開一個 **DisableEffectsByDefinition** 方法，以停用節點的 **EffectDefinitions** 清單中使用指定的定義新增的所有效果。 
-            **EnableEffectsByDefinition** 會透過指定的定義啟用效果。
+-   每個節點類型都會公開一個 **DisableEffectsByDefinition** 方法，以停用節點的 **EffectDefinitions** 清單中使用指定的定義新增的所有效果。 **EnableEffectsByDefinition** 會透過指定的定義啟用效果。
 
  
 

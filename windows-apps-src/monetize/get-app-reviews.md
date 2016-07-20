@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器取得評論資料。"
 title: "取得應用程式評論"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
- 
+<span/> 
 
 ### 要求的標頭
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
- 
+<span/> 
 
-### 要求主體
+### 要求參數
 
 <table>
 <colgroup>
@@ -132,10 +133,11 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
+<span/>
  
 ### 篩選欄位
 
-要求本體的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而某些欄位同時也支援 **contains**、**gt**、**lt**, **ge** 及 **le** 運算子。 陳述式可以使用 **and** 或 **or** 來結合。
+要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而某些欄位同時也支援 **contains**、**gt**、**lt**、**ge** 及 **le** 運算子。 陳述式可以使用 **and** 或 **or** 來結合。
 
 下列為 *filter* 字串的範例：*filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
 
@@ -282,7 +284,7 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求範例
 
@@ -307,6 +309,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
+<span/>
  
 ### 評論數值
 
@@ -337,7 +340,7 @@ Authorization: Bearer <your access token>
 | deviceStorageCapacity  | 數字  | 主要存放磁碟的容量 (以 GB 為單位)。                                                                                                                                                                                     |
 | rating                 | 數字  | App 評分 (以星星為單位)。                                                                                                                                                                                                            |
 
- 
+<span/> 
 
 ### 回應範例
 
@@ -386,6 +389,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

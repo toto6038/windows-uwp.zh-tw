@@ -20,7 +20,7 @@ ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
 
 ## 輔色
 
-使用者可以從 \[設定\] &gt; \[個人化\] &gt; \[色彩\] 挑選稱為輔色的單一色彩。 他們可以從 48 種色樣規劃中選擇 (除了擁有 21 種 TV-safe 色彩調色盤的 Xbox 以外)。
+使用者可以從 [設定] &gt; [個人化] &gt; [色彩]** 挑選稱為輔色的單一色彩。 他們可以從 48 種色樣規劃中選擇 (除了擁有 21 種 TV-safe 色彩調色盤的 Xbox 以外)。
 
 <!-- Alternate version for the dev center. Need to add hex values. -->
 ![預設輔色](images/accentcolorswatch.png) 預設輔色

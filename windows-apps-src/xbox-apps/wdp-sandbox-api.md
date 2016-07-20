@@ -2,6 +2,7 @@
 author: payzer
 title: "裝置入口網站 Xbox Live 沙箱 API 參考"
 description: "了解如何以程式設計方式存取 Xbox Live 沙箱。"
+translationtype: Human Translation
 ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
 ms.openlocfilehash: c1671db55dcb05ab7a126fad271a5e49146fe9ac
 
@@ -89,6 +90,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

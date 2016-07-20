@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。"
 title: "取得應用程式下載數"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: e28c309a51d28e14e57b8bd027dc8c353311d89a
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
 
 | 方法 | 要求 URI                                                              |
 |--------|--------------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions``` |
 
- 
+<span/>
 
 ### 要求的標頭
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
- 
+<span/> 
 
-### 要求主體
+### 要求參數
 
 <table>
 <colgroup>
@@ -127,10 +128,11 @@ ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
 </tbody>
 </table>
 
+<span/>
  
 ### 篩選欄位
 
-要求本體的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
+要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -233,7 +235,7 @@ ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求範例
 
@@ -258,6 +260,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
+<span/>
  
 ### 下載數數值
 
@@ -278,7 +281,7 @@ Authorization: Bearer <your access token>
 | acquisitionType     | 字串 | 下載的類型 (免費、付費等等)。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                    |
 | acquisitionQuantity | 數字 | 指定彙總層級期間發生的下載數目。                                                                                                                                                         |
 
- 
+<span/> 
 
 ### 回應範例
 
@@ -317,6 +320,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

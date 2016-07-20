@@ -6,14 +6,15 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "企業資料保護 (EDP)"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
+ms.sourcegitcommit: 235a0d96c0cf86fdb16a0a6b933fc0f2bbed99f0
+ms.openlocfilehash: 2cae64ff234a4fb85fd6a3e50ade3b91480b36c8
 
 ---
 
 # 企業資料保護 (EDP)
 
-__注意__：企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
+> [!NOTE]
+> 企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
 
 這是中樞主題，涵蓋企業資料保護 (EDP) 與檔案的關聯、緩衝區、剪貼簿、網路、背景工作以及鎖定時的資料保護的完整開發人員描述。
 
@@ -56,12 +57,13 @@ EDP 檔案保護會運用 Rights Management Service (RMS) 金鑰 (如果已佈�
 
 應用程式位於允許清單之後，即可讀取受保護的資料。 而且，系統預設會自動保護您應用程式的任何資料輸出。 這項自動保護的原因是管理企業必須透過一或多種方式確保仍然可以自行控制企業資料。 但是，這麼近的控制應用程式只是達成該目的的預設方式。 更好的方式是讓系統足夠信任您，以提供給您更多的能力和彈性。 而且，該許可的代價就是讓您的應用程式變得更為聰明。 這表示更進一步，而不只是處理允許清單；它表示讓您的應用程式並將其宣告為啟用企業。
 
-如果應用程式使用我們將說明的技術來獨立保護企業資料 (不論資料是待用、使用中還是傳送中)，則已啟用您的應用程式。 您的啟用應用程式可辨識企業資料來源和企業資料，並在資料到達您的應用程式時予以保護。 變成啟用，也表示只要企業資料離開您的應用程式，就會感知並遵守 EDP 原則。 這包括不允許內容進入非企業網路端點、先以可攜式加密格式包裝資料再讓它漫遊，而且可能 (根據原則設定) 會先提示使用者再將企業資料貼入不在允許清單上的應用程式。 啟用應用程式之後，您的應用程式會透過宣告限制的 **enterpriseDataPolicy** 功能，以向系統宣告它是啟用的應用程式。 如需使用受限制功能的詳細資訊，請參閱[特殊和受限制的功能](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities)。
+如果應用程式使用我們將說明的技術來獨立保護企業資料 (不論資料是待用、使用中還是傳送中)，則已啟用您的應用程式。 您的啟用應用程式可辨識企業資料來源和企業資料，並在資料到達您的應用程式時予以保護。 變成啟用，也表示只要企業資料離開您的應用程式，就會感知並遵守 EDP 原則。 這包括不允許內容進入非企業網路端點、先以可攜式加密格式包裝資料再讓它漫遊，而且可能 (根據原則設定) 會先提示使用者再將企業資料貼入不在允許清單上的應用程式。 啟用應用程式之後，您的應用程式會透過宣告限制的 **enterpriseDataPolicy** 功能，以向系統宣告它是啟用的應用程式。 如需使用受限制功能的詳細資訊，請參閱[特殊和受限制的功能](https://msdn.microsoft.com/library/windows/apps/mt270968#special-and-restricted-capabilities)。
 
 在理想的情況下，所有企業資料都是受保護的資料 (待用和傳送中)。 但是，不可避免地，最初產生的企業資料與正在保護的企業資料之間必須有一段簡短期間。 而且，企業資料有時可以存在於企業網路端點上，而不進行加密。 啟用的應用程式可以獨立保護這類資料；允許但不啟用的應用程式需要具有系統所公開的保護。
 
 原因是未啟用的應用程式一律會以企業模式執行。 系統可確保這項作業。 但是，針對啟用的應用程式在任何指定時間使用的資料類型，應用程式可以任意且適當地在企業模式與個人模式之間自由切換。 對啟用的應用程式而言，尊重個人資料以及不要將個人資料標記為企業資料，也十分重要。 只要遵守這些承諾，啟用的應用程式就可以同時處理企業資料與個人資料。 下一節示範如何透過程式碼切換模式。
 
+<span id="confirming-an-identity-is-managed"/>
 ## 確認身分識別受到管理，以及判斷保護原則強制層級
 
 您的應用程式通常是從外部資源 (例如信箱電子郵件地址、受管理的網域或 URI 主機名稱) 取得企業身分識別。 您可以呼叫 [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027)，以取得網路端點主機名稱的受管理身分識別 (如果有的話)。
@@ -102,12 +104,12 @@ else
 ## EDP 功能簡介
 
 
-**檔案和緩衝區保護。**
+**檔案和緩衝區保護**
 
 -   您的應用程式可以保護、包含和抹除與企業身分識別相關聯的資料。
 -   金鑰管理是由 Windows 所處理。 裝置可以使用企業的 RMS 金鑰時，Windows 就會使用該 RMS 金鑰；否則，Windows 會回復為本機選擇性抹除保護。
 
-**裝置原則管理。**
+**裝置原則管理**
 
 -   您的應用程式可以查詢用來管理裝置的身分識別 (企業或組織)。
 -   您的應用程式可以保護使用者免於意外公開資料，方法是關聯身分識別與有問題的資料。
@@ -134,7 +136,7 @@ else
 
 ## 鎖定時的資料保護 (DPL) 和背景工作
 
-組織可以選擇管理安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，鎖定裝置時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 若要針對這個可能性來準備您的應用程式，請參閱本主題中的[處理裝置鎖定事件並避免在記憶體中保留未受保護的內容](#handle_lock_events)一節。 此外，如果您應用程式的背景工作需要保護檔案，請參閱[保護新檔案中的企業資料 (適用於背景工作)](../files/protect-your-enterprise-data-with-edp.md#protect_data_new_file_bg)。
+組織可以選擇管理安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，鎖定裝置時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 若要針對這個可能性來準備您的應用程式，請參閱本主題中的[處理裝置鎖定事件並避免在記憶體中保留未受保護的內容](#handle-lock-events)一節。 此外，如果您應用程式的背景工作需要保護檔案，請參閱[保護新檔案中的企業資料 (適用於背景工作)](../files/protect-your-enterprise-data-with-edp.md#protect-data-new-file-bg)。
 
 ## UI 原則強制執行
 
@@ -172,7 +174,7 @@ private void SwitchMailbox(Mailbox targetMailbox)
     }
 }
 ```
-
+<span id="handle-lock-events"/>
 ## 處理裝置鎖定事件並避免在記憶體中保留未受保護的內容
 
 
@@ -378,6 +380,6 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

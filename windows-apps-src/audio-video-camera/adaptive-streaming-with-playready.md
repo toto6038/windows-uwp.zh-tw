@@ -23,7 +23,7 @@ PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
 這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 \[Download ZIP\] (下載 ZIP) 按鈕。
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 [Download ZIP] (下載 ZIP)**** 按鈕。
 
 您將需要下列 using 陳述式：
 
@@ -41,8 +41,7 @@ using Windows.Media.Streaming.Adaptive;
 using Windows.UI.Xaml.Controls;
 ```
 
-
-            **LicenseRequest** 命命空間是來自 **CommonLicenseRequest.cs** (Microsoft 提供給使用人的 PlayReady 檔案)。
+**LicenseRequest** 命命空間是來自 **CommonLicenseRequest.cs** (Microsoft 提供給使用人的 PlayReady 檔案)。
 
 您將需要宣告幾個全域變數：
 
@@ -272,8 +271,7 @@ async void LicenseAcquisitionRequest(
 
 ## 初始化 AdaptiveMediaSource
 
-最後，您將需要一個函式來初始化 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912)，可從已知的 [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 和 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) 來建立。 
-            **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
+最後，您將需要一個函式來初始化 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912)，可從已知的 [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 和 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) 來建立。 **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

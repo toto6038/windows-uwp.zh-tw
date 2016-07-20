@@ -2,6 +2,7 @@
 author: msatranjr
 title: "Windows 執行階段元件"
 description: "本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+translationtype: Human Translation
 ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
 ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
 
@@ -578,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

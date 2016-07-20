@@ -5,6 +5,7 @@ title: "超連結"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
@@ -53,7 +54,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ![超連結做為文字元素的範例](images/controls_hyperlink-element.png) 
 
-> **提示** &nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="preserve"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
+> **提示** &nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="default"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
 
 ## 建立 HyperlinkButton
 
@@ -154,6 +155,6 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

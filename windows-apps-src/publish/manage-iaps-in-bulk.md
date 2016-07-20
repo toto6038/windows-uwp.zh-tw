@@ -2,6 +2,7 @@
 author: jnHs
 Description: "管理您的 IAP 以允許您同時變更多個 IAP，而不是個別送出每個更新。"
 title: "大量管理 IAP"
+translationtype: Human Translation
 ms.sourcegitcommit: 475371dd55aa111f3743c03dc1600e8cfdbeb5b0
 ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
 
@@ -52,6 +53,6 @@ ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

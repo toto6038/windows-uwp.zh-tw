@@ -5,8 +5,9 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: "設計適用於 Windows 10 的通用軟體"
 label: Designing inclusive software
 template: detail.hbs
-ms.sourcegitcommit: ea4d413e0b2ade1429d255afbc6a1a73ea308051
-ms.openlocfilehash: 6f1c0663034f81bb0ddfe42c04fbe60562b45c1c
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
 
 ---
 
@@ -18,7 +19,7 @@ ms.openlocfilehash: 6f1c0663034f81bb0ddfe42c04fbe60562b45c1c
 
 這個新的設計哲學稱為全人設計。 我們的想法是在一開始設計軟體時就融入每個人的需求。 這相較於在開發程序結尾才匆忙加上檢視協助工具以滿足一小群使用者的技術完全不同。
 
-「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 來自 [Inclusive](https://www.microsoft.com/en-us/design/inclusive) 視訊  
+「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 來自 [Inclusive](https://www.microsoft.com/design/inclusive) 視訊  
 
 通用設計可以為所有人創造更好的產品。 這牽涉到要考慮完整而多樣化的人性。 您現在會在大多數街道的人行道上看到路緣坡。 這些一開始是為了讓輪椅人士使用。 但是現在幾乎每個人都使用它們，包括使用嬰兒車的人、單車族與滑板族。 甚至行人也經常使用路緣坡，因為它們就在那兒且提供更好的體驗。 電視遙控器可以被視為是一項針對身體受限的人所使用的輔助技術 (AT)。 但是現在，購買電視幾乎不可能沒有遙控器。 在孩童學習如何綁鞋帶之前，他們可以穿著容易穿脫或繫牢的鞋子。 容易穿脫的鞋子通常較受進家門前需脫鞋的文化所喜愛。 它們也比較適合有敏捷性問題 (例如關節炎或甚至是暫時性手腕骨折) 的人們。
 
@@ -68,7 +69,7 @@ Microsoft 致力於進行電腦科學及軟體工程研究，目標是要增強�
 2.  找出 UI 中自訂控制項和標準控制項之間清楚的界限  
 3.  判斷 UI 部分彼此之間如何互動  
 
-邏輯階層是一個解決任何潛在可用性問題的絕佳方式。 如果您不能以相對簡單的方式組織 UI，可能會有可用性的問題。 一個簡單對話方塊的邏輯表示法不應該出現好幾頁圖表。 如果邏輯階層變得太深或太寬，您可能需要重新設計您的 UI。 如需詳細資訊，請下載[針對協助工具的軟體工程設計](https://www.microsoft.com/en-us/download/details.aspx?id=19262)電子書。  
+邏輯階層是一個解決任何潛在可用性問題的絕佳方式。 如果您不能以相對簡單的方式組織 UI，可能會有可用性的問題。 一個簡單對話方塊的邏輯表示法不應該出現好幾頁圖表。 如果邏輯階層變得太深或太寬，您可能需要重新設計您的 UI。 如需詳細資訊，請下載[針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書。  
 
 ### 設計適當的視覺 UI 設定  
 設計視覺 UI 時，請確保您的產品有高對比設定、使用預設的系統字型和平滑選項、正確縮放為每英吋點數 (dpi) 的螢幕設定、預設文字和背景至少有 5:1 的對比率，而且色彩組合可讓色覺缺陷的使用者非常容易區別。  
@@ -94,18 +95,18 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 2.  當您針對需求設計解決方案時，請盡可能使用架構提供的控制項 (標準控制項)，避免自訂控制項任何不必要的工作和成本。  
 3.  為您的產品設計邏輯階層，註明標準控制項、任何自訂控制項，以及鍵盤焦點在 UI 中的位置。  
 4.  對您的產品設計實用的系統設定 (例如鍵盤瀏覽、高對比和高 dpi)。  
-5.  使用 [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/en-us/windows/accessible-apps)和架構的協助工具規格做為參考點，實作您的設計。  
+5.  使用 [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)和架構的協助工具規格做為參考點，實作您的設計。  
 6.  讓有特殊需求的使用者測試您的產品，以確保他們能夠充分利用當中實作的全人設計技術。  
 7.  將您完成的產品與實作文件提供給之後可能會處理專案的人員。  
 
 ## 相關主題  
 * [通用設計](http://design.microsoft.com/inclusive)
-* [針對協助工具的軟體工程設計](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
-* [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/en-us/windows/accessible-apps)
+* [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md)  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

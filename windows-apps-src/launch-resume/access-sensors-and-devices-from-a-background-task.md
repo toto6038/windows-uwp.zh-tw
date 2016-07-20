@@ -3,6 +3,7 @@ author: dbirtolo
 title: "從背景工作存取感應器和裝置"
 description: "DeviceUseTrigger 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 

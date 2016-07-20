@@ -4,8 +4,8 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "感應器方向"
 description: "取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0f1123d3be66973d5b56a4789b1ff6e171f94900
 
 ---
 # 感應器方向
@@ -33,7 +33,7 @@ ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
 
 ![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-使用 [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法搭配 [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 屬性，即可透過 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
+使用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法搭配 [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 屬性，即可透過 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
 
 ## 橫向優先裝置與直向優先裝置
 
@@ -171,6 +171,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

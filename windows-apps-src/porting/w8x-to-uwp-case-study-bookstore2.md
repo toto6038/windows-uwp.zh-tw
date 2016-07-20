@@ -15,16 +15,13 @@ ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
 
 這個案例研究—根據 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置—是從在 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項中顯示分組資料的通用 8.1 app 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **SemanticZoom** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們會逐步說明將 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的步驟。
 
-
-            **注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+**注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
 ## 下載
 
+[下載 Bookstore2\_81 通用 8.1 app](http://go.microsoft.com/fwlink/?linkid=532951)。
 
-            [下載 Bookstore2\_81 通用 8.1 app](http://go.microsoft.com/fwlink/?linkid=532951)。
-
-
-            [下載 Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下載 Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952)。
 
 ## 通用 8.1 應用程式
 
@@ -57,7 +54,7 @@ Bookstore2\_81 方案是 8.1 通用 App 專案。 Bookstore2\_81.Windows 專案�
 
 **從共用專案**
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 \[方案總管\] 中，確定 \[顯示所有檔案\] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 \[加入至專案\]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 \[方案總管\] 中的 \[重新整理\]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管]**** 中的 [重新整理]****，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -66,7 +63,7 @@ Bookstore2\_81 方案是 8.1 通用 App 專案。 Bookstore2\_81.Windows 專案�
 -   複製 BookstoreStyles.xaml。 我們將使用此項目做為一個良好的起點，因為這個檔案中的所有資源索引鍵都將在 Windows 10 應用程式中進行解析，但相等 WindowsPhone 檔案中的部分資源索引鍵則不會進行解析。
 -   複製 SeZoUC.xaml 和 SeZoUC.xaml.cs。 我們將從這個檢視的 Windows 版本開始 (其適用於寬型視窗)，然後將它調整為適用於較小型視窗，接下來則是更小型裝置。
 
-編輯您剛才複製的來源程式碼與標記檔案，並將對 Bookstore2\_81 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 \[檔案中取代\] 功能。 在檢視模型中，或在任何其他非常重要的程式碼中，都不需要變更任何程式碼。 但是為了讓您更容易地查看正在執行哪一個版本的應用程式，請將 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "Bookstore2\_81" 變更為 "BOOKSTORE2UNIVERSAL\_10"。
+編輯您剛才複製的來源程式碼與標記檔案，並將對 Bookstore2\_81 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 [**檔案中取代**] 功能。 在檢視模型中，或在任何其他非常重要的程式碼中，都不需要變更任何程式碼。 但是為了讓您更容易地查看正在執行哪一個版本的應用程式，請將 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "Bookstore2\_81" 變更為 "BOOKSTORE2UNIVERSAL\_10"。
 
 您可以立即建置並執行。 以下是新的 UWP app 在尚未執行任何工作以將其移植到 Windows 10 之後的外觀。
 
@@ -144,7 +141,7 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 -   在 SeZoUC.xaml 中，將 `wideSeZo` 的邊界設為 `0` (或任何您喜歡的值)。
 -   在 BookstoreStyles.xaml 中，從 `AuthorGroupHeaderTemplateWide` 移除邊界屬性。
 -   從 `AuthorGroupHeaderTemplate` 和 `ZoomedOutAuthorTemplate` 移除 FontFamily 屬性。
--   Bookstore2\_81 會使用 `BookTemplateTitleTextBlockStyle`、`BookTemplateAuthorTextBlockStyle` 及 `PageTitleTextBlockStyle` 資源索引鍵做為間接取值，這樣一來，單一索引鍵在兩個應用程式中就會有不同的實作。 我們已經不再需要該間接取值，我們可以直接參照系統樣式。 因此，請個別使用 `TitleTextBlockStyle`、`CaptionTextBlockStyle` 及 `HeaderTextBlockStyle` 來取代那些參考。 您可以使用 Visual Studio 的 \[檔案中取代\] 功能，快速且準確地執行此動作。 然後，就可以刪除這三個未使用的資源。
+-   Bookstore2\_81 會使用 `BookTemplateTitleTextBlockStyle`、`BookTemplateAuthorTextBlockStyle` 及 `PageTitleTextBlockStyle` 資源索引鍵做為間接取值，這樣一來，單一索引鍵在兩個應用程式中就會有不同的實作。 我們已經不再需要該間接取值，我們可以直接參照系統樣式。 因此，請個別使用 `TitleTextBlockStyle`、`CaptionTextBlockStyle` 及 `HeaderTextBlockStyle` 來取代那些參考。 您可以使用 Visual Studio 的 [**檔案中取代**] 功能，快速且準確地執行此動作。 然後，就可以刪除這三個未使用的資源。
 -   在 `AuthorGroupHeaderTemplate` 中，使用 `SystemControlBackgroundAccentBrush` 來取代 `PhoneAccentBrush`，並在 **TextBlock** 上設定 `Foreground="White"`，讓它在行動裝置系列上執行時看起來是正確的。
 -   在 `BookTemplateWide` 中，將前景屬性從第二個 **TextBlock** 複製到第一個。
 -   在 `ZoomedOutAuthorTemplateWide` 中，將對 `SubheaderTextBlockStyle` (現在已經有一點太大) 的參照變更成參照 `SubtitleTextBlockStyle`。

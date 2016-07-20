@@ -5,8 +5,9 @@ title: "索引標籤與樞紐"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
 
 ---
 # 樞紐和索引標籤
@@ -89,28 +90,15 @@ Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/ap
 **靜止**
 
 -   當所有的樞紐標頭大小符合允許的空間時，樞紐會靜止。
--   雖然樞紐本身不會移動，但點選樞紐標籤會瀏覽到對應的頁面。 使用中的樞紐會以醒目提示的方式顯示。
+-   雖然樞紐本身不會移動，但點選樞紐標籤會瀏覽到對應的頁面。 使用中的樞紐會反白顯示。
 
-{{> aside-internal content = "
--   強烈建議在 10 英呎環境中避免讓項目發生浮動切換。 如果您的 App 將在 Xbox 上執行，請將新的 `IsHeaderItemsCarouselEnabled` 屬性設定為 False。
-"}}
 
 **浮動切換**
 
 -   當所有的樞紐標頭大小不符合允許的空間時，樞紐會浮動切換。
 -   點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
--   浮動切換中的樞紐項目會從最後一個樞紐區段到第一個樞紐區段進行循環。
+-   各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
 
-{{&gt; aside-internal content = "
-### 樞紐焦點
-
-根據預設，樞紐標頭上的鍵盤焦點會以底線代表。
-
-![預設焦點會在已選取的標頭加上底線](images/pivot_focus_selectedHeader.png)
-
-具有自訂樞紐並將底線納入標頭選取視覺效果的 App 可以使用新的 `HeaderFocusVisualPlacement` 屬性來變更預設值。 當 `HeaderFocusVisualPlacement=\"ItemHeaders\"` 時，會以圍繞整個標頭面板的方式繪製焦點。
-
-![ItemsHeader 選項會以圍繞所有樞紐標頭的方式繪製焦點矩形](images/pivot_focus_headers.png)}}
 
 ## 建議事項
 
@@ -129,6 +117,6 @@ Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/ap
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

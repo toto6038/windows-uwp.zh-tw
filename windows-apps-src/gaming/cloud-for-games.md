@@ -3,8 +3,9 @@ author: joannaleecy
 title: "針對 UWP 遊戲使用雲端服務"
 description: "深入了解將雲端實作為 UWP 遊戲的後端。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
-ms.sourcegitcommit: b25f02dc4ebcf960882e64f66f0306a8e584ebbd
-ms.openlocfilehash: d9b252783213f0c6a82944729f98c84e21d56535
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
 
 ---
 #  針對 UWP 遊戲使用雲端服務
@@ -54,7 +55,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
         </td>
         <td>
             <ul>
-                <li>[使用 Azure DocumentDB 實作的社交遊戲](https://azure.microsoft.com/en-us/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
+                <li>[使用 Azure DocumentDB 實作的社交遊戲](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
             </ul>
     </tr>
     <tr>
@@ -115,18 +116,18 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 ### 逐步解說學習指南
 
 * [Build 2016 Codelabs：使用 Microsoft Azure App Service 與 Microsoft SQL Azure 後端儲存遊戲分數](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* [設計遊戲的行動吸引力策略](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-gaming-scenario/)
-* [針對 Unity iOS 部署使用 Azure Mobile Engagement](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-unity-ios-get-started/)
+* [設計遊戲的行動吸引力策略](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
+* [針對 Unity iOS 部署使用 Azure Mobile Engagement](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
 ### 了解 IaaS、PaaS 或 SaaS
 
 首先，您需要了解最適合您遊戲的服務層級。 了解以下三種服務的差異，有助於您決定建置後端所要採取的方法。
 
-* [基礎結構即服務 (IaaS)](https://azure.microsoft.com/en-us/overview/what-is-iaas/)
+* [基礎結構即服務 (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
 
     基礎結構即服務 (IaaS) 是即時運算基礎結構，透過網際網路進行佈建及管理。 想像一下能根據需求讓許多電腦隨時快速相應增加和減少的可能性。 IaaS 協助您避免購買和管理自己的實體伺服器及其他資料中心基礎結構的成本和複雜度。
 
-* [平台即服務 (PaaS)](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+* [平台即服務 (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
 
     平台即服務 (PaaS) 就像 IaaS，不過它也包含基礎結構 (例如伺服器、儲存體和網路) 的管理。 因此在不購買實體伺服器與資料中心基礎結構的基礎上，您也不需要購買和管理軟體授權、基礎的應用程式基礎結構、中介軟體、開發工具或其他資源。
 
@@ -201,6 +202,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

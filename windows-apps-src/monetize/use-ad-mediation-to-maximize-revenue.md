@@ -29,7 +29,7 @@ Microsoft 提供廣告流量分配支援，可透過為來自多個廣告網路�
 
 3.  在 Visual Studio 中，開啟您的專案或建立新專案。 開啟要裝載廣告的頁面，並將 **AdMediatorControl** 拖曳到該頁面。 如果您使用 Microsoft Advertising，請調整控制項的高度與寬度以符合支援的廣告大小。 如需詳細資訊，請參閱[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)。
 
-4.  執行 \[已連接服務\] 來選擇您想要設為目標的廣告網路，並為每個廣告網路設定必要參數。 如需詳細資訊，請參閱[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)。
+4.  執行 [已連接服務]**** 來選擇您想要設為目標的廣告網路，並為每個廣告網路設定必要參數。 如需詳細資訊，請參閱[新增和使用廣告流量分配者控制項](add-and-use-the-ad-mediator-control.md)。
 
 5.  在您的 app 中測試廣告流量分配實作。 如需詳細資訊，請參閱[測試您的廣告流量分配實作](test-your-ad-mediation-implementation.md)。
 

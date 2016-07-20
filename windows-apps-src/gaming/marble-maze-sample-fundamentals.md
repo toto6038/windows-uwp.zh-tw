@@ -17,14 +17,13 @@ ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 
 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本文件也描述程式碼中採用的幾種慣例。
 
-> 
-            **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 ## 
 以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   在 C++ 應用程式中使用 \[DirectX 11 App (通用 Windows)\] 範本來建立 DirectX UWP 遊戲。 使用 Visual Studio 建置 UWP App 專案，就像建立標準專案一樣。
+-   在 C++ 應用程式中使用 [DirectX 11 App (通用 Windows)]**** 範本來建立 DirectX UWP 遊戲。 使用 Visual Studio 建置 UWP App 專案，就像建立標準專案一樣。
 -   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
 -   使用物件參考搭配 ^ 符號來管理 Windows 執行階段變數的存留期、搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理 COM 物件的存留期，以及搭配 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) 來管理其他所有堆積配置的 C++ 物件的存留期。
 -   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
@@ -33,15 +32,13 @@ ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 ## 建立 Visual Studio 專案
 
 
-如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 MarbleMaze.sln 方案檔，程式碼會隨即顯示出來。 您也可以在 DirectX Marble Maze 遊戲範例 MSDN 範例庫頁面中選取 \[瀏覽程式碼\] 索引標籤來檢視原始檔。
+如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 MarbleMaze.sln 方案檔，程式碼會隨即顯示出來。 您也可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN 範例庫頁面中選取 [瀏覽程式碼]**** 索引標籤來檢視原始檔。
 
-我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 Direct UWP 遊戲所需的基本功能，建議您根據 Visual Studio \[DirectX 11 App (通用 Windows)\] 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 Direct UWP 遊戲所需的基本功能，建議您根據 Visual Studio [DirectX 11 App (通用 Windows)]**** 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。
 
-\[DirectX 11 App (通用 Windows)\] 範本中的一個重要專案設定是 /ZW 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
+[DirectX 11 App (通用 Windows)]**** 範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
 
-> 
-            **注意**
-            **/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
+> **注意****/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
@@ -50,23 +47,23 @@ ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 ##  建置、部署及執行遊戲
 
 
-依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 \[建置\] 和 \[建置方案\])。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
+依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
 
-建置專案之後，就必須部署它 (在功能表列上，依序選擇 \[建置\] 和 \[建置方案\])。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
+建置專案之後，就必須部署它 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
 
-在您部署專案之後，請挑選 \[Marble Maze\] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 \[偵錯\]、\[開始偵錯\]。
+在您部署專案之後，請挑選 [Marble Maze] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 [偵錯]、[開始偵錯]****。
 
 ###  控制遊戲
 
 您可以使用觸控、加速計、Xbox 360 控制器或滑鼠來控制 Marble Maze。
 
 -   使用控制器的方向鍵來變更現用功能表項目。
--   使用觸控、A 按鈕、\[開始\] 按鈕或滑鼠來選擇功能表項目。
+-   使用觸控、A 按鈕、[開始] 按鈕或滑鼠來選擇功能表項目。
 -   使用觸控、加速計、左搖桿或滑鼠使迷宮傾斜。
--   使用觸控、A 按鈕、\[開始\] 按鈕或滑鼠來關閉功能表，例如計分排行榜。
--   使用 \[開始\] 按鈕或 P 鍵來暫停或繼續遊戲。
--   使用控制器的 \[返回\] 按鈕或鍵盤的 Home 鍵來重新啟動遊戲。
--   當計分排行榜出現時，使用 \[返回\] 按鈕或 Home 鍵可清除所有分數。
+-   使用觸控、A 按鈕、[開始] 按鈕或滑鼠來關閉功能表，例如計分排行榜。
+-   使用 [開始] 按鈕或 P 鍵來暫停或繼續遊戲。
+-   使用控制器的 [返回] 按鈕或鍵盤的 Home 鍵來重新啟動遊戲。
+-   當計分排行榜出現時，使用 [返回] 按鈕或 Home 鍵可清除所有分數。
 
 ##  程式碼慣例
 
@@ -76,9 +73,9 @@ Windows 執行階段是一個程式設計介面，您可以使用它來建立只
 若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 **AddRef** 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822)。
 
 > **重要**  
-當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用  和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
+當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用 **^** 和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
 
-Marble Maze 使用  並搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理堆積配置的物件，並使記憶體流失情況降到最低。 建議您使用 ^ 來管理 Windows 執行階段變數的存留期、使用 **ComPtr** 來管理 COM 變數的存留期 (例如當您使用 DirectX 時)，以及使用 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) 來管理其他所有堆積配置的 C++ 物件的存留期。
+Marble Maze 使用 **^** 並搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理堆積配置的物件，並使記憶體流失情況降到最低。 建議您使用 ^ 來管理 Windows 執行階段變數的存留期、使用 **ComPtr** 來管理 COM 變數的存留期 (例如當您使用 DirectX 時)，以及使用 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) 來管理其他所有堆積配置的 C++ 物件的存留期。
 
  
 
@@ -125,7 +122,7 @@ void LoadMesh(
     );
 ```
 
-若要對 app 執行程式碼分析，請在功能表列上依序選擇 \[建置\] 和 \[針對方案執行程式碼分析\]。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
+若要對 app 執行程式碼分析，請在功能表列上依序選擇 [建置] 和 [針對方案執行程式碼分析]****。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
 
 可用註釋的完整清單定義在 sal.h 中。 如需詳細資訊，請參閱 [SAL 註釋](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 

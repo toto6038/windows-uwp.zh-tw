@@ -14,8 +14,7 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
 
-
-            **注意** 如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
+**注意** 如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
 
  
 
@@ -29,8 +28,7 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 ### 價格
 如果您在每一個市集中為 app (或 IAP) 選擇的底價都不同，則一律以 Windows 市集的底價為準。
 
-
-            **注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格會顯示給您的 Windows 10 客戶。
+**注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格會顯示給您的 Windows 10 客戶。
 
 ### 免費試用
 在之前的兩個市集中，試用選項是不一樣的，所以您可能會為每一個市集選擇不同的選項。 請查閱下表，了解提供給 Windows 10 客戶的選項。
@@ -69,7 +67,7 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 在許多情況下，app 和遊戲的新[類別和子類別](category-and-subcategory-table.md)看起來與先前作業系統版本市集中看到的一樣。 不過，有一些變更。 請檢閱下表，了解如何根據之前的類別，在針對 Windows 10 客戶的市集中對 app 進行分類。
 
-注意 當檢視您的提交之 \[app 內容\] 頁面中的 \[app 類別\] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的 app。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
+**注意** 當檢視您的提交之 [[app 內容](enter-app-properties.md)] 頁面中的 [[app 類別](category-and-subcategory-table.md)] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的 app。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
 
 
 **Windows Phone 應用程式的類別變更：**

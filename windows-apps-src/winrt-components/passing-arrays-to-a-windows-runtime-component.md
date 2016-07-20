@@ -3,6 +3,7 @@ author: msatranjr
 title: "將陣列傳遞到 Windows 執行階段元件"
 description: "Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。"
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 
@@ -44,23 +45,23 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 > End Function
 > ```
 
-[!div class="tabbedCodeSnippets"] 建議您立即建立輸入陣列的複本，並妥善管理此複本。
+建議您立即建立輸入陣列的複本，並妥善管理此複本。 如此可確保無論 .NET Framework 程式碼是否呼叫您的元件，方法的運作方式都相同。
 
-## 如此可確保無論 .NET Framework 程式碼是否呼叫您的元件，方法的運作方式都相同。
+## 從 Managed 程式碼與 Unmanaged 程式碼使用元件
 
 
-從 Managed 程式碼與 Unmanaged 程式碼使用元件 具有 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性的參數，會因為呼叫端是以機器碼或 Managed 程式碼所撰寫，而有不同的運作方式。
+具有 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性的參數，會因為呼叫端是以機器碼或 Managed 程式碼所撰寫，而有不同的運作方式。 如果呼叫端是機器碼 (JavaScript 或 Visual C++ 元件擴充功能)，則會將陣列內容視為：
 
--   如果呼叫端是機器碼 (JavaScript 或 Visual C++ 元件擴充功能)，則會將陣列內容視為： ReadOnlyArrayAttribute：在呼叫跨越應用程式二進位介面 (ABI) 界限時，會複製陣列。 視需要轉換元素。
--   因此，方法無意間對僅限輸入的陣列所做的任何變更，呼叫端都看不見。 WriteOnlyArrayAttribute：呼叫的方法無法對原始陣列的內容進行任何假設。 例如，方法所接收的陣列可能並未初始化，或者可能包含預設值。
+-   ReadOnlyArrayAttribute：在呼叫跨越應用程式二進位介面 (ABI) 界限時，會複製陣列。 視需要轉換元素。 因此，方法無意間對僅限輸入的陣列所做的任何變更，呼叫端都看不見。
+-   WriteOnlyArrayAttribute：呼叫的方法無法對原始陣列的內容進行任何假設。 例如，方法所接收的陣列可能並未初始化，或者可能包含預設值。 方法依預期應設定陣列中所有元素的值。
 
-方法依預期應設定陣列中所有元素的值。 如果呼叫端是 Managed 程式碼，則呼叫的方法將可使用原始陣列，因為 .NET Framework 中的任何方法呼叫都會包含此陣列。 陣列內容在 .NET Framework 程式碼中是可變動的，因此，呼叫端可看見方法對陣列所做的任何變更。 請務必記住這一點，因為這會影響到為 Windows 執行階段元件撰寫的單元測試。
+如果呼叫端是 Managed 程式碼，則呼叫的方法將可使用原始陣列，因為 .NET Framework 中的任何方法呼叫都會包含此陣列。 陣列內容在 .NET Framework 程式碼中是可變動的，因此，呼叫端可看見方法對陣列所做的任何變更。 請務必記住這一點，因為這會影響到為 Windows 執行階段元件撰寫的單元測試。 如果測試是利用 Managed 程式碼撰寫的，陣列的內容在測試期間就可能是可變動的。
 
-## 如果測試是利用 Managed 程式碼撰寫的，陣列的內容在測試期間就可能是可變動的。
+## 相關主題
 
-* [相關主題](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
-* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [WriteOnlyArrayAttribute](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
+* [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
+* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

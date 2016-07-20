@@ -3,8 +3,9 @@ author: awkoren
 Description: "準備您的 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms)，以便使用桌面轉換擴充功能轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) 應用程式"
-ms.sourcegitcommit: 37d4c8ef6178fe78c7333c47848177b5185c6d61
-ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
+translationtype: Human Translation
+ms.sourcegitcommit: 45b9170ed311e6f17d1c51c0b7d1d288e07184a9
+ms.openlocfilehash: c5ffb1e912c2953d5f813f099e036d2d7b395b69
 
 ---
 
@@ -16,7 +17,7 @@ ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
 
 ## 將應用程式轉換為 UWP 的好處
 
-使用桌面轉換擴充功能的 UWP 是可讓您將傳統型桌面應用程式 (例如 Win32、Windows Forms 和 WPF) 或遊戲轉換為通用 Windows 平台 (UWP) 應用程式或遊戲的橋樑。 請參閱 [UWP 應用程式指南](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx)。 轉換之後，您的傳統型桌面應用程式就會以目標為 Windows 10 Desktop 的 UWP 應用程式套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署
+使用桌面轉換擴充功能的 UWP 是可讓您將傳統型桌面應用程式 (例如 Win32、Windows Forms 和 WPF) 或遊戲轉換為通用 Windows 平台 (UWP) 應用程式或遊戲的橋樑。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx)。 轉換之後，您的傳統型桌面應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
 有兩個部分的技術可將傳統型應用程式轉換為 UWP 套件。 第一個部分是傳統型應用程式轉換器，它會取得您現有的二進位檔並將它們重新封裝為 UWP 套件。 您的程式碼仍然相同，只是以不同方式封裝。 第二個部分是由 Windows 年度更新版中的執行階段技術所組成，可讓 UWP 套件擁有以完全信任方式執行而不是在應用程式容器中執行的可執行檔。 這項技術也會為已轉換的應用程式提供套件識別資料，需要有此識別資料才能使用某些 UWP API。
 
@@ -26,11 +27,11 @@ ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
 
 * 由於已轉換的應用程式具有套件識別資料，因此，您甚至可從完全信任的磁碟分割呼叫比以前更多的 UWP API。
 
-* 依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。 所有可供任何其他 UWP 應用程式使用的功能都可供您的應用程式使用。
+* 依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。 所有可供任何其他 UWP app 使用的功能都可供您的 app 使用。
 
 * 如果您選擇要將所有應用程式功能移出應用程式完全信任的磁碟分割，然後移入應用程式容器磁碟分割，則您的應用程式將能在任何 Windows 10 裝置上執行。
 
-* 做為 UWP 應用程式，您的應用程式能夠執行的動作，就像它做為傳統型桌面應用程式時所做的一樣。 它會與登錄和檔案系統的虛擬化檢視互動，這很難與實際登錄和檔案系統區分。
+* 做為 UWP app，您的 app 能夠執行的動作，就像它做為傳統型桌面應用程式時所做的一樣。 它會與登錄和檔案系統的虛擬化檢視互動，這很難與實際登錄和檔案系統區分。
 
 * 您的應用程式可以參與 Windows 市集的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
 
@@ -51,7 +52,7 @@ ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
 
 + __您的應用程式會使用 ddeexec 登錄子機碼做為啟動另一個應用程式的方式__。 在您的[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中，使用各種不同 Activatable* 擴充功能來設定時，請改用其中一個 DelegateExecute 動詞命令處理常式。
 
-+ __您的應用程式會寫入 AppData 資料夾，以便與其他應用程式共用資料__。 轉換之後，系統會將 AppData 重新導向至本機應用程式資料存放區，此為每一個 UWP 應用程式的私人存放區。 使用不同方式來進行處理序間的資料共用。 如需詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
++ __您的應用程式會寫入 AppData 資料夾，以便與其他應用程式共用資料__。 轉換之後，系統會將 AppData 重新導向至本機 app 資料存放區，此為每一個 UWP app 的私人存放區。 使用不同方式來進行處理序間的資料共用。 如需詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
 
 + __您的應用程式會寫入您應用程式的安裝目錄__。 例如，您的應用程式所寫入的記錄檔是放在與您的 exe 相同的目錄中。 不支援此情況，因此您將需要尋找其他位置，例如本機應用程式資料存放區。
 
@@ -89,12 +90,13 @@ ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
 | 主題 | 說明 |
 |-------|-------------|
 | [傳統型應用程式轉換器預覽 (Project Centennial)](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行傳統型應用程式轉換器。 您可能不需要針對應用程式的轉換程式做太多準備 (如果有的話)。 |
-| [將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
+| [將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
+| [已轉換的傳統型應用程式擴充功能](desktop-to-uwp-extensions.md) | 您可運用各式各樣的通用 Windows 平台 (UWP) API，增強已轉換的傳統型應用程式功能。 不過，除了適用於所有 UWP app 的一般 API 外，某些擴充功能與 API 僅適用於已轉換的傳統型應用程式。 本文說明這些擴充功能及其使用方式。 |
 | [部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md) | 包含的資訊可協助您在轉換應用程式之後順利部署和偵錯該應用程式。 此外，如果您想探究桌面轉換擴充功能的一些本質，本主題非常適合您。 |
 | [傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上示範轉換 app 功能的程式碼範例。 |
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

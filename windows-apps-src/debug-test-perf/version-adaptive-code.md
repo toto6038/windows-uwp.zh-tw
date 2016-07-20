@@ -19,13 +19,13 @@ ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 
 ## 設定您的 Visual Studio 專案
 
-支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」與「最低」支援的 OS/SDK 版本。
-- 目標：Visual Studio 編譯 App 程式碼並執行所有工具的目標 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
-- 最低：支援可執行您 App (且會由市集部署至) 之最早 OS 版本的 SDK 版本，以及 Visual Studio 編譯您 App 標記程式碼的目標版本。 
+支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」**與「最低」**支援的 OS/SDK 版本。
+- 目標**：Visual Studio 編譯 App 程式碼並執行所有工具的目標 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
+- 最低**：支援可執行您 App (且會由市集部署至) 之最早 OS 版本的 SDK 版本，以及 Visual Studio 編譯您 App 標記程式碼的目標版本。 
 
 在執行階段期間，您的 App 將針對它所部署至的 OS 版本執行，因此如果您使用或呼叫該版本中沒有提供使用的資源或 API，您的 App 便會擲回例外狀況。 我們稍後於本文章中會示範如何使用執行階段檢查，以呼叫正確的 API。
 
-\[目標\] 和 \[最低\] 設定指定了 OS/SDK 版本範圍的兩端。 不過，如果您在最低版本上測試您的 App，便可以確定它將可以在「最低」和「目標」之間的任何版本上執行。
+[目標] 和 [最低] 設定指定了 OS/SDK 版本範圍的兩端。 不過，如果您在最低版本上測試您的 App，便可以確定它將可以在「最低」和「目標」之間的任何版本上執行。
 
 > [!TIP]
 > Visual Studio 不會針對 API 的相容性向您提出警告。 進行測試是您的責任，以確保您的 App 可如預期地在「最低」和「目標」的 OS 版本，以及它們之間的所有 OS 版本上執行。
@@ -36,7 +36,7 @@ ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 
 我們通常會建議您保留預設值。 不過，如果您已安裝 SDK 的預覽版本，且您正在撰寫實際執行程式碼，您應該將 Preview SDK 的「目標」版本變更為最新的正式 SDK 版本。 
 
-若要變更 Visual Studio 中已經建立專案的「最低」和「目標」版本，請移至 \[專案\] -&gt; \[屬性\] -&gt; \[應用程式\] 索引標籤 -&gt; \[目標預測\]。
+若要變更 Visual Studio 中已經建立專案的「最低」和「目標」版本，請移至 [專案] -&gt; [屬性] -&gt; [應用程式] 索引標籤 -&gt; [目標預測]。
 
 ![在 Visual Studio 中變更目標 SDK](images/vs-target-sdk-2.png) 
 
@@ -198,8 +198,7 @@ Windows 10 版本 1607 導入了新的媒體控制項，稱為 [**MediaPlayerEle
  
 **MediaPlayerUserControl** 
 
-
-            `MediaPlayerUserControl` 會封裝 **MediaPlayerElement** 和數個用來逐格略過媒體的按鈕。 UserControl 可讓您將這些控制項視為單一項目，並讓在舊版系統上切換 MediaElement 變得更容易。 這個使用者控制項應該僅於存在 MediaPlayerElement 的系統上使用，因此您不必在此使用者控制項的程式碼中使用 ApiInformation 檢查。
+`MediaPlayerUserControl` 會封裝 **MediaPlayerElement** 和數個用來逐格略過媒體的按鈕。 UserControl 可讓您將這些控制項視為單一項目，並讓在舊版系統上切換 MediaElement 變得更容易。 這個使用者控制項應該僅於存在 MediaPlayerElement 的系統上使用，因此您不必在此使用者控制項的程式碼中使用 ApiInformation 檢查。
 
 > [!NOTE]
 > 為了讓此範例簡單且聚焦，畫面速度按鈕將放置在媒體播放程式之外。 若要取得較佳的使用者體驗，您應該自訂 MediaTransportControls 以包含您的自訂按鈕。 如需詳細資訊，請參閱[自訂傳輸控制項](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
@@ -275,8 +274,7 @@ namespace MediaApp
 
 **MediaElementUserControl**
  
-
-            `MediaElementUserControl` 會封裝 **MediaElement** 控制項。
+`MediaElementUserControl` 會封裝 **MediaElement** 控制項。
 
 **XAML**
 ```xaml
@@ -299,8 +297,7 @@ namespace MediaApp
 ```
 
 > [!NOTE]
-> 
-            `MediaElementUserControl` 的程式碼頁面只包含產生的程式碼，因此它不會顯示。
+> `MediaElementUserControl` 的程式碼頁面只包含產生的程式碼，因此它不會顯示。
 
 **根據 IsTypePresent 初始化控制項**
 

@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "登錄背景工作"
 description: "了解如何建立可重複用來安全登錄大多數背景工作的函式。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
@@ -63,16 +64,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 檢查現有登錄
 
 
-檢查現有登錄 檢查工作是否已登錄。
+檢查工作是否已登錄。 這是檢查的重點，因為如果多次登錄工作，則觸發該工作時，它就會多次執行；這樣可能會過量使用 CPU，也可能造成未預期的行為。
 
-這是檢查的重點，因為如果多次登錄工作，則觸發該工作時，它就會多次執行；這樣可能會過量使用 CPU，也可能造成未預期的行為。 您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。
+您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
 
-> 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。 **注意** 使用您 app 專用的背景工作名稱。
+> **注意** 使用您 app 專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
 
-確認每個背景工作都有唯一的名稱。
+下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -136,16 +137,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
+## 登錄背景工作 (或傳回現有登錄)
 
 
-[!div class="tabbedCodeSnippets"] 登錄背景工作 (或傳回現有登錄)
+檢查現有背景工作登錄清單中是否已有該工作。 如果有，則傳回工作的該執行個體。
 
-檢查現有背景工作登錄清單中是否已有該工作。 如果有，則傳回工作的該執行個體。 然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。
+然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
 
-> 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。 **注意** 背景工作登錄參數會在登錄時受到驗證。
+> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
 
-如果有任一個登錄參數無效，就會傳回錯誤。
+下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -245,10 +246,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
+## 完成背景工作登錄公用程式函式
 
 
-下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)： [!div class="tabbedCodeSnippets"]
+這個範例顯示已完成的背景工作登錄函式。 這個函式可用來登錄大多數的背景工作 (除了網路背景工作之外)。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -365,29 +366,29 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-> 完成背景工作登錄公用程式函式 這個範例顯示已完成的背景工作登錄函式。
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
-## 這個函式可用來登錄大多數的背景工作 (除了網路背景工作之外)。
+## 相關主題
 
 
 ****
 
-* [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
-* [**注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。](declare-background-tasks-in-the-application-manifest.md)
-* [如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。](handle-a-cancelled-background-task.md)
-* [相關主題](monitor-background-task-progress-and-completion.md)
-* [建立並登錄背景工作](respond-to-system-events-with-background-tasks.md)
-* [在應用程式資訊清單中宣告背景工作](set-conditions-for-running-a-background-task.md)
-* [處理已取消的背景工作](update-a-live-tile-from-a-background-task.md)
-* [監視背景工作進度和完成](use-a-maintenance-trigger.md)
-* [使用背景工作回應系統事件](run-a-background-task-on-a-timer-.md)
-* [設定執行背景工作的條件](guidelines-for-background-tasks.md)
+* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
+* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
+* [背景工作的指導方針](guidelines-for-background-tasks.md)
 
 ****
 
-* [從背景工作更新動態磚](debug-a-background-task.md)
-* [使用維護觸發程序](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [偵錯背景工作](debug-a-background-task.md)
+* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

@@ -6,8 +6,8 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ---
 # 版面配置面板
@@ -35,7 +35,7 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 如需有關附加屬性的詳細資訊，請參閱[附加屬性概觀](../xaml-platform/attached-properties-overview.md)。
 
-> **注意** &nbsp;&nbsp;附加屬性是一種 XAML 概念，需要從程式碼取得或設定的特殊語法。 若要在程式碼中使用附加屬性，請參閱*附加屬性概觀*一文的*程式碼中的附加屬性*小節。
+> **注意**&nbsp;&nbsp;附加屬性是一種 XAML 概念，需要特殊語法以從程式碼設定或取得。 若要在程式碼中使用附加屬性，請參閱*附加屬性概觀*一文的*程式碼中的附加屬性*小節。
 
 **面板框線**
 
@@ -51,7 +51,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 ![含有框線的方格](images/layout-panel-grid-border.png)
 
-使用內建的框線屬性，可降低 XAML 元素計數，這樣可以提升 App 的 UI 效能。 如需版面配置面板和 UI 效能的詳細資訊，請參閱[最佳化您的 XAML 版面配置](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx)。
+使用內建的框線屬性，可降低 XAML 元素計數，這樣可以提升 App 的 UI 效能。 如需版面配置面板和 UI 效能的詳細資訊，請參閱[最佳化您的 XAML 版面配置](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx)。
 
 ## RelativePanel
 
@@ -225,6 +225,6 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

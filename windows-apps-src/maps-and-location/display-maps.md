@@ -3,6 +3,7 @@ author: msatranjr
 title: "顯示 2D、3D 和 Streetside 檢視的地圖"
 description: "藉由使用 MapControl 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
 

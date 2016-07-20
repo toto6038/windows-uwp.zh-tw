@@ -3,6 +3,7 @@ author: msatranjr
 title: "在地圖上顯示感興趣的地點 (POI)"
 description: "藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
 

@@ -29,10 +29,7 @@ ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
 
 **修改網頁檢視的外觀**
 
-
-            [
-              **WebView**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 不是 [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 子類別，因此它沒有控制項範本。 不過，您可以設定各種屬性來控制網頁檢視的一些視覺外觀。
+[ **WebView** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 不是 [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 子類別，因此它沒有控制項範本。 不過，您可以設定各種屬性來控制網頁檢視的一些視覺外觀。
 - 若要限制顯示區域，請設定 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 和 [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 屬性。 
 - 若要轉譯、延展、扭曲和旋轉網頁檢視，請使用 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) 屬性。
 - 若要控制網頁檢視的不透明度，請設定 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) 屬性。
@@ -96,8 +93,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 網頁檢視控制項提供數個事件，以用來回應瀏覽和內容載入狀態。 根網頁檢視內容的事件發生順序如下：[**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)。
 
 
-
-            **NavigationStarting** - 發生在網頁檢視瀏覽至新的內容之前。 將 WebViewNavigationStartingEventArgs.Cancel 屬性設定為 true，即可取消此事件之處理常式中的瀏覽。 
+**NavigationStarting** - 發生在網頁檢視瀏覽至新的內容之前。 將 WebViewNavigationStartingEventArgs.Cancel 屬性設定為 true，即可取消此事件之處理常式中的瀏覽。 
 
 ```csharp
 webView1.NavigationStarting += webView1_NavigationStarting;
@@ -110,8 +106,7 @@ private void webView1_NavigationStarting(object sender, WebViewNavigationStartin
 }
 ```
 
-
-            **ContentLoading** - 發生在網頁檢視開始載入新的內容時。 
+**ContentLoading** - 發生在網頁檢視開始載入新的內容時。 
 
 ```csharp
 webView1.ContentLoading += webView1_ContentLoading;
@@ -126,8 +121,7 @@ private void webView1_ContentLoading(WebView sender, WebViewContentLoadingEventA
 }
 ```
 
-
-            **DOMContentLoaded** - 發生在網頁檢視完成剖析目前 HTML 內容時。 
+**DOMContentLoaded** - 發生在網頁檢視完成剖析目前 HTML 內容時。 
 
 ```csharp
 webView1.DOMContentLoaded += webView1_DOMContentLoaded;
@@ -142,8 +136,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-
-            **NavigationCompleted** - 發生在網頁檢視完成載入目前內容或瀏覽失敗時。 若要判斷瀏覽是否失敗，請檢查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 類別的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 屬性。 
+**NavigationCompleted** - 發生在網頁檢視完成載入目前內容或瀏覽失敗時。 若要判斷瀏覽是否失敗，請檢查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 類別的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 屬性。 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -163,22 +156,10 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 ```
 
 針對網頁檢視內容中的每個 **iframe**，類似事件的發生順序都相同︰ 
-- 
-            [
-              **FrameNavigationStarting**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - 發生在網頁檢視中的框架瀏覽至新的內容之前。 
-- 
-            [
-              **FrameContentLoading**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - 發生在網頁檢視中的框架開始載入新的內容時。 
-- 
-            [
-              **FrameDOMContentLoaded**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 發生在網頁檢視中的框架完成剖析其目前 HTML 內容時。 
-- 
-            [
-              **FrameNavigationCompleted**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 發生在網頁檢視中的框架完成載入其內容時。 
+- [ **FrameNavigationStarting** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - 發生在網頁檢視中的框架瀏覽至新的內容之前。 
+- [ **FrameContentLoading** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - 發生在網頁檢視中的框架開始載入新的內容時。 
+- [ **FrameDOMContentLoaded** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 發生在網頁檢視中的框架完成剖析其目前 HTML 內容時。 
+- [ **FrameNavigationCompleted** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 發生在網頁檢視中的框架完成載入其內容時。 
 
 ### 回應潛在問題
 
@@ -276,7 +257,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 網頁檢視內容中的指令碼可以搭配使用 **window.external.notify** 與 string 參數，以將資訊送回 app。 若要接收這些訊息，請處理 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件。 
 
-若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在 app 資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI (您可以在 Microsoft Visual Studio 之 Package.appxmanifest 設計工具的 \[內容 URI\] 索引標籤上這麼做)。這個清單中的 URI 必須使用 HTTPS，而且可以包含子網域萬用字元 (例如，)，但是不可以包含網域萬用字元 (例如， 和 )。 資訊清單需求不適用於源自 app 套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 載入的內容。 
+若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在 app 資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI (您可以在 Microsoft Visual Studio 之 Package.appxmanifest 設計工具的 [內容 URI] 索引標籤上這麼做)。這個清單中的 URI 必須使用 HTTPS，而且可以包含子網域萬用字元 (例如，`https://*.microsoft.com`)，但是不可以包含網域萬用字元 (例如，`https://*.com` 和 `https://*.*`)。 資訊清單需求不適用於源自 app 套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 載入的內容。 
 
 ### 在網頁檢視中存取 Windows 執行階段
 
@@ -326,9 +307,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 網頁檢視內容預設會裝載於傳統型裝置系列之裝置的 UI 執行緒上，並從所有其他裝置上的 UI 執行緒予以卸載。 您可以使用 [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 靜態屬性，來查詢目前用戶端的預設執行緒行為。 必要時，您可以使用 [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) 建構函式來覆寫這個行為。 
 
-> 
-            **注意**
-            &nbsp;&nbsp;將 UI 執行緒上的內容裝載到行動裝置時可能會發生效能問題，因此，請務必在變更 DefaultExecutionMode 時在所有目標裝置上進行測試。
+> **注意** &nbsp;&nbsp;將 UI 執行緒上的內容裝載到行動裝置時可能會發生效能問題，因此，請務必在變更 DefaultExecutionMode 時在所有目標裝置上進行測試。
 
 從 UI 執行緒卸載內容的網頁檢視與父控制項不相容，而父控制項需要手勢才能從網頁檢視控制項散佈到父項 (例如 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 和其他相關控制項)。 這些控制項將無法接收關閉執行緒網頁檢視中所起始的手勢。 此外，不直接支援列印關閉執行緒網頁內容；您應該改為使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) 填滿來列印元素。
 

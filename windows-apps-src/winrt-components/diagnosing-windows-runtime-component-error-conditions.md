@@ -3,6 +3,7 @@ author: msatranjr
 title: "診斷 Windows 執行階段元件錯誤狀況"
 description: "本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
@@ -234,20 +235,20 @@ Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> [!div class="tabbedCodeSnippets"]
+> **注意** 如果您變更傳回值的名稱，而新的名稱與另一個參數的名稱發生衝突，就會收到錯誤 WME1091。
 
-**注意** 如果您變更傳回值的名稱，而新的名稱與另一個參數的名稱發生衝突，就會收到錯誤 WME1091。 JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。
+JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。 如需範例，請參閱 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 屬性。
 
-| 如需範例，請參閱 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 屬性。 | 錯誤代碼 |
+| 錯誤代碼 | 訊息文字 |
 |---------------|------------|
-| 訊息文字 | WME1091 方法 '\{0}' 有一個名稱為'\{1}' 的傳回值，該值與某個參數名稱相同。 |
-| Windows 執行階段方法參數和傳回值必須具有唯一的名稱。 | WME1092 方法 '\{0}' 有一個名稱為 '\{1}' 的參數，該參數與預設傳回值名稱相同。<br/>請考慮使用不同的參數名稱，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 明確指定傳回值的名稱。 |
+| WME1091 | 方法 '\{0}' 有一個名稱為'\{1}' 的傳回值，該值與某個參數名稱相同。 Windows 執行階段方法參數和傳回值必須具有唯一的名稱。 |
+| WME1092 | 方法 '\{0}' 有一個名稱為 '\{1}' 的參數，該參數與預設傳回值名稱相同。 請考慮使用不同的參數名稱，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 明確指定傳回值的名稱。<br/>**注意** 屬性存取子的預設名稱為 "returnValue"，而其他所有方法的預設名稱為 "value"。 |
  
 
-## **注意** 屬性存取子的預設名稱為 "returnValue"，而其他所有方法的預設名稱為 "value"。
+## 相關主題
 
-* [相關主題](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](https://msdn.microsoft.com/library/hh925576.aspx)
+* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 

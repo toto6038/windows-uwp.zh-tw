@@ -5,6 +5,7 @@ title: "核取方塊"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
@@ -22,7 +23,7 @@ ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ## 這是正確的控制項嗎？
 
-針對二元 (是/否) 選項 (例如用於 \[記住我?\]) 使用單一核取方塊 登入案例或是用於服務合約條款。
+針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用**單一核取方塊** 登入案例或是用於服務合約條款。
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
@@ -38,8 +39,7 @@ ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ![用來顯示混合選項的核取方塊](images/checkbox3.png)
 
-
-            **核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
+**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
 
 ## 範例
 
@@ -47,9 +47,9 @@ Microsoft Edge 瀏覽器中對話方塊上的核取方塊。
 
 ![Microsoft Edge 瀏覽器中對話方塊上的核取方塊](images/control-examples/check-box-edge.png)
 
-Windows 中 \[鬧鐘與時鐘\] app 上的核取方塊。
+Windows 中 [鬧鐘與時鐘] app 上的核取方塊。
 
-![Windows 中 \[鬧鐘與時鐘\] app 上的核取方塊](images/control-examples/check-box-alarm.png)
+![Windows 中 [鬧鐘與時鐘] app 上的核取方塊](images/control-examples/check-box-alarm.png)
 
 ## 建立核取方塊
 
@@ -73,7 +73,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
-在這個範例中，用於同意服務條款之核取方塊的 IsChecked 屬性會繫結到 \[提交\] 按鈕的 IsEnabled 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
+在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 [提交] 按鈕。
 
 > 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
@@ -118,11 +118,9 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 若要在核取方塊狀態變更時執行動作，您可以處理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件，或者 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
+**Click** 事件會在已核取的狀態變更時發生。 如果要處理 Click 事件，請使用 **IsChecked** 屬性來判斷核取方塊的狀態。
 
-            **Click** 事件會在已核取的狀態變更時發生。 如果要處理 Click 事件，請使用 **IsChecked** 屬性來判斷核取方塊的狀態。
-
-
-            **Checked** 和 **Unchecked** 事件會單獨發生。 如果您處理這些事件，您應該同時處理這兩個事件，以回應核取方塊中的狀態變更。
+**Checked** 和 **Unchecked** 事件會單獨發生。 如果您處理這些事件，您應該同時處理這兩個事件，以回應核取方塊中的狀態變更。
 
 在下列範例中，我們會示範如何處理 Click 事件，以及 Checked 和 Unchecked 事件。 
 
@@ -183,7 +181,7 @@ CheckBox 控制項是繼承自 [ToggleButton](https://msdn.microsoft.com/library
 
 將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
-在下列範例中，\[全選\] 核取方塊已將其 IsThreeState 屬性設為 true。 針對 \[全選\] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
+在下列範例中，[全選] 核取方塊已將其 IsThreeState 屬性設為 **true**。 針對 [全選] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
 
 ```xaml
 <StackPanel>

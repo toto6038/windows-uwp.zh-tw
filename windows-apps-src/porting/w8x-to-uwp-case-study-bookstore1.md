@@ -15,20 +15,17 @@ ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
 
 本主題提供將一個非常簡單的通用 8.1 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的案例研究。 通用 8.1 app 會針對 Windows 8.1 建置一個應用程式套件，並針對 Windows Phone 8.1 建置另一個應用程式套件。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 \[建置動作\] 是設定為 \[內容\]，而 \[複製到輸出目錄\] 是設定為 \[不要複製\]。
+我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作]**** 是設定為 [內容]****，而 [複製到輸出目錄]**** 是設定為 [不要複製]****。
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
-
-            **注意** 在 Visual Studio 中開啟 Bookstore1Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+**注意** 在 Visual Studio 中開啟 Bookstore1Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
 ## 下載
 
+[下載 Bookstore1\_81 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532946)。
 
-            [下載 Bookstore1\_81 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532946)。
-
-
-            [下載 Bookstore1Universal\_10 Windows 10 App](http://go.microsoft.com/fwlink/?linkid=532950)。
+[下載 Bookstore1Universal\_10 Windows 10 App](http://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## 通用 8.1 應用程式
 
@@ -56,7 +53,7 @@ Bookstore1\_81 方案是 8.1 通用 App 專案，其中包含這些專案。
 
 **從共用專案**
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 \[方案總管\] 中，確定 \[顯示所有檔案\] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 \[加入至專案\]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 \[方案總管\] 中的 \[重新整理\]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管]**** 中的 [重新整理]****，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -64,7 +61,7 @@ Bookstore1\_81 方案是 8.1 通用 App 專案，其中包含這些專案。
 
 -   複製 BookstoreStyles.xaml。 我們將使用此項目做為一個良好的起點，因為這個檔案中的所有資源索引鍵都將在 Windows 10 應用程式中進行解析，但相等 WindowsPhone 檔案中的部分資源索引鍵則不會進行解析。
 
-編輯您剛才複製的來源程式碼與標記檔案，並將對 Bookstore1\_81 命名空間的任何參考變更為參考 Bookstore1Universal\_10。 執行此作業的快速方法是使用 \[檔案中取代\] 功能。 在檢視模型中，或在任何其他非常重要的程式碼中，都不需要變更任何程式碼。 但是為了讓您更容易地查看正在執行哪一個版本的 app，請將 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE1\_81" 變更為 "BOOKSTORE1UNIVERSAL\_10"。
+編輯您剛才複製的來源程式碼與標記檔案，並將對 Bookstore1\_81 命名空間的任何參考變更為參考 Bookstore1Universal\_10。 執行此作業的快速方法是使用 [檔案中取代]**** 功能。 在檢視模型中，或在任何其他非常重要的程式碼中，都不需要變更任何程式碼。 但是為了讓您更容易地查看正在執行哪一個版本的 app，請將 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE1\_81" 變更為 "BOOKSTORE1UNIVERSAL\_10"。
 
 您可以立即建置並執行。 以下是新的 UWP app 在尚未明確執行任何工作以將其移植到 Windows 10 之後的外觀。
 

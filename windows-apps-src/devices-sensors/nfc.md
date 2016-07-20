@@ -2,6 +2,7 @@
 author: msatranjr
 title: NFC
 description: "本節包含如何將 NFC 整合到通用 Windows 平台 (UWP) App 的文章。"
+translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
 ms.openlocfilehash: 2da839b282015c39bd0046d6cf60ce4f79fc485c
 

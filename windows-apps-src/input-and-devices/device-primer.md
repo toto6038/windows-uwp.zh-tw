@@ -6,8 +6,8 @@ ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
+ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
+ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
 
 認識支援通用 Windows 平台 (UWP) App 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 為特定裝置設計時，主要的考量包括應用程式在該裝置上如何顯示，何處、何時與如何在該裝置上使用應用程式，以及使用者如何與該裝置互動。
 
-## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>手機和平板手機
+## 手機和平板手機
 
 
 所有計算裝置中最被廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
@@ -61,7 +61,7 @@ UI 考量
 
  
 
-## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>平板電腦
+## 平板電腦
 
 
 超級輕便好攜帶的平板電腦配備觸控式螢幕、相機、麥克風和加速計。 平板電腦的螢幕大小通常介於 7 吋到 13.3 吋之間。
@@ -96,7 +96,7 @@ UI 考量
 
  
 
-## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>電腦和筆記型電腦
+## 電腦和筆記型電腦
 
 
 Windows 電腦和膝上型電腦涵蓋各種裝置和螢幕大小。 一般而言，電腦和膝上型電腦可顯示比手機或平板電腦的更多的資訊。
@@ -128,7 +128,7 @@ UI 考量
 
  
 
-## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub 裝置
+## Surface Hub 裝置
 
 
 Microsoft Surface Hub 是一個大型螢幕的小組共同作業裝置，針對多個使用者同時使用所設計。
@@ -161,7 +161,7 @@ UI 考量
 
  
 
-## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT 裝置
+## Windows IoT 裝置
 
 
 Windows IoT 裝置是新興的裝置類別，以嵌入式小型電子、感應器，以及實體物件內含的連線能力為中心。 這些裝置通常透過網路或是網際網路，回報在真實世界感測到的資料，並在某些情況下執行動作。 裝置可以沒有螢幕 (也稱為「無周邊」裝置) 或與尺寸小於 3.5 吋或更小的螢幕連接 (也稱為「周邊」裝置)。
@@ -199,6 +199,6 @@ UI 考量
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

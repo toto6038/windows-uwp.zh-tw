@@ -3,6 +3,7 @@ author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "App 啟動效能的最佳做法"
 description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。"
+translationtype: Human Translation
 ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
 ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
 
@@ -147,7 +148,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 ### 階段 2
 
-啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) 以及 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051)，然後呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或 app 實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
+啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) 以及 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051)，然後呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或應用程式實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -262,9 +263,9 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class 
 > ```
 
-[!div class="tabbedCodeSnippets"] 在啟用處理常式中顯示載入頁面的 app 會開始在背景建立 UI。 建立該元素之後，會發生元素的 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件。
+在啟用處理常式中顯示載入頁面的應用程式會開始在背景建立 UI。 建立該元素之後，會發生元素的 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件。 在事件處理常式中，您可以將視窗的內容 (目前的載入畫面) 取代成新建立的首頁。
 
-在事件處理常式中，您可以將視窗的內容 (目前的載入畫面) 取代成新建立的首頁。 對於具有延長式初始化期間的應用程式來說，顯示載入頁面是非常重要的。
+對於具有延長式初始化期間的應用程式來說，顯示載入頁面是非常重要的。 除了可提供使用者啟用程序的回應之外，如果在啟用程序開始的 15 秒內未呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)，這個程序就會終止。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -318,47 +319,47 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class
 > ```
 
-除了可提供使用者啟用程序的回應之外，如果在啟用程序開始的 15 秒內未呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)，這個程序就會終止。
+如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
 
-### [!div class="tabbedCodeSnippets"]
+### 階段 3
 
-如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。 階段 3 應用程式顯示 UI 時並不代表使用者已經可以使用完整的應用程式功能。
+應用程式顯示 UI 時並不代表使用者已經可以使用完整的應用程式功能。 以我們的遊戲為例，UI 會與需要從網際網路取得資料的功能預留位置一起顯示。 此時，遊戲會下載讓應用程式可以完整運作所需的額外資料，並透過取得的資料逐漸啟用應用程式功能。
 
-以我們的遊戲為例，UI 會與需要從網際網路取得資料的功能預留位置一起顯示。 此時，遊戲會下載讓應用程式可以完整運作所需的額外資料，並透過取得的資料逐漸啟用應用程式功能。 有時，啟用所需的大多數內容會與應用程式封裝在一起。 簡單的遊戲就是其中一例。 這讓啟用程序變得相當簡單。 但是許多程式 (例如，新聞閱讀程式和相片檢視器) 必須從網路取得資訊才能正常運作。
+有時，啟用所需的大多數內容會與應用程式封裝在一起。 簡單的遊戲就是其中一例。 這讓啟用程序變得相當簡單。 但是許多程式 (例如，新聞閱讀程式和相片檢視器) 必須從網路取得資訊才能正常運作。 這個資料可能很大，並且需要花費相當長的時間下載。 應用程式在啟用程序期間取得這個資料的方式會大幅影響使用者對應用程式效能的感受。
 
-這個資料可能很大，並且需要花費相當長的時間下載。 應用程式在啟用程序期間取得這個資料的方式會大幅影響使用者對應用程式效能的感受。 如果應用程式嘗試在啟用的階段 1 或 2 下載功能所需的整個資料集，而且應用程式必須顯示長達數分鐘的載入頁面或 (更糟的是) 啟動顯示畫面。 這會讓應用程式看起來像是沒有反應，或是被系統終止。
+如果應用程式嘗試在啟用的階段 1 或 2 下載功能所需的整個資料集，而且應用程式必須顯示長達數分鐘的載入頁面或 (更糟的是) 啟動顯示畫面。 這會讓應用程式看起來像是沒有反應，或是被系統終止。 我們建議 app 在階段 2 中先下載最少的資料量來顯示與預留位置元素一起顯示的互動式 UI，然後在階段 3 中逐漸載入取代預留位置元素的資料。 如需處理資料的詳細資訊，請參閱[最佳化 ListView 與 GridView](optimize-gridview-and-listview.md)。
 
-我們建議 app 在階段 2 中先下載最少的資料量來顯示與預留位置元素一起顯示的互動式 UI，然後在階段 3 中逐漸載入取代預留位置元素的資料。
+app 對每個啟動階段的反應方式完全取決於您，但是請盡可能提供使用者更多回應 (資料載入時的啟動顯示畫面、載入畫面、UI)，這會讓使用者感覺 app 和整個系統執行起來是快速的。
 
-### 如需處理資料的詳細資訊，請參閱[最佳化 ListView 與 GridView](optimize-gridview-and-listview.md)。
+### 將啟動路徑中的 Managed 組件減到最少
 
-app 對每個啟動階段的反應方式完全取決於您，但是請盡可能提供使用者更多回應 (資料載入時的啟動顯示畫面、載入畫面、UI)，這會讓使用者感覺 app 和整個系統執行起來是快速的。 將啟動路徑中的 Managed 組件減到最少 可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。
+可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
-因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。 減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。
+減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
 
-### 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。
+### 聰明的 Web 要求
 
-您可以使用工具 (例如 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。 聰明的 Web 要求 您可以透過在本機封裝應用程式內容 (包括 XAML、影像，以及任何其他對應用程式很重要的檔案) 來大幅提升應用程式的載入時間。
+您可以透過在本機封裝應用程式內容 (包括 XAML、影像，以及任何其他對應用程式很重要的檔案) 來大幅提升應用程式的載入時間。 磁碟操作的速度比網路操作快。 如果 App 在初始化時需要某個特定的檔案，您可以從磁碟載入 (而不是從遠端伺服器抓取) 該檔案，以減少整體的啟動時間。
 
-## 磁碟操作的速度比網路操作快。
+## 有效率地記錄日誌和快取頁面
 
-如果 App 在初始化時需要某個特定的檔案，您可以從磁碟載入 (而不是從遠端伺服器抓取) 該檔案，以減少整體的啟動時間。 有效率地記錄日誌和快取頁面
+「框架」控制項可提供瀏覽功能。 它提供「頁面」瀏覽 (Navigate 方法)、瀏覽日誌 (BackStack/ForwardStack 屬性、GoForward/GoBack 方法)、「頁面」快取 (Page.NavigationCacheMode)，以及序列化支援 (GetNavigationState 方法)。
 
-「框架」控制項可提供瀏覽功能。
+「框架」相關效能方面要注意的主要是圍繞著日誌和頁面快取。
 
-它提供「頁面」瀏覽 (Navigate 方法)、瀏覽日誌 (BackStack/ForwardStack 屬性、GoForward/GoBack 方法)、「頁面」快取 (Page.NavigationCacheMode)，以及序列化支援 (GetNavigationState 方法)。 「框架」相關效能方面要注意的主要是圍繞著日誌和頁面快取。 **框架日誌記錄**。 當您使用 Frame.Navigate() 來瀏覽到頁面時，目前頁面的 PageStackEntry 會被新增到 Frame.BackStack 集合。
+**框架日誌記錄**。 當您使用 Frame.Navigate() 來瀏覽到頁面時，目前頁面的 PageStackEntry 會被新增到 Frame.BackStack 集合。 PageStackEntry 相對較小，但 BackStack 集合並沒有內建的大小限制。 使用者有可能以迴圈方式瀏覽，而讓這個集合無限地成長。
 
-PageStackEntry 相對較小，但 BackStack 集合並沒有內建的大小限制。 使用者有可能以迴圈方式瀏覽，而讓這個集合無限地成長。 PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使用基本可序列化類型 (例如整數或字串) 的參數，以便讓 Frame.GetNavigationState() 方法能夠運作。
+PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使用基本可序列化類型 (例如整數或字串) 的參數，以便讓 Frame.GetNavigationState() 方法能夠運作。 但該參數有可能參考負責更大量工作集或其他資源的物件，使得 BackStack 中的每個項目更加耗費資源。 例如，您有可能使用 StorageFile 做為參數，因而導致 BackStack 讓不限數目的檔案保持開啟。
 
-但該參數有可能參考負責更大量工作集或其他資源的物件，使得 BackStack 中的每個項目更加耗費資源。 例如，您有可能使用 StorageFile 做為參數，因而導致 BackStack 讓不限數目的檔案保持開啟。
+因此，建議您讓瀏覽參數維持在較小的狀態，並限制 BackStack 的大小。 BackStack 是一個標準的向量 (在 C# 中為 IList，在 C++/CX 中為 Platform::Vector)，因此可以藉由移除項目來進行刪減。
 
-因此，建議您讓瀏覽參數維持在較小的狀態，並限制 BackStack 的大小。 BackStack 是一個標準的向量 (在 C# 中為 IList，在 C++/CX 中為 Platform::Vector)，因此可以藉由移除項目來進行刪減。 **頁面快取**。
+**頁面快取**。 根據預設，當您使用 Frame.Navigate 方法來瀏覽到頁面時，該頁面的新執行個體將會具現化。 同樣地，如果您接著使用 Frame.GoBack 往回瀏覽到上一頁，就會配置上一頁的新執行個體。
 
-根據預設，當您使用 Frame.Navigate 方法來瀏覽到頁面時，該頁面的新執行個體將會具現化。 同樣地，如果您接著使用 Frame.GoBack 往回瀏覽到上一頁，就會配置上一頁的新執行個體。 不過，「框架」有提供一個可避免這些具現化的選擇性頁面快取。 若要將頁面放入快取中，請使用 Page.NavigationCacheMode 屬性。 將該模式設定為 Required 會強制快取頁面，將它設定為 Enabled 則可允許快取頁面。
+不過，「框架」有提供一個可避免這些具現化的選擇性頁面快取。 若要將頁面放入快取中，請使用 Page.NavigationCacheMode 屬性。 將該模式設定為 Required 會強制快取頁面，將它設定為 Enabled 則可允許快取頁面。 預設的快取大小是 10 頁，但是可以使用 Frame.CacheSize 屬性來覆寫該預設值。 將會快取所有 Required 頁面，如果數量比 CacheSize Required 頁面少，則也可以快取 Enabled 頁面。
 
-預設的快取大小是 10 頁，但是可以使用 Frame.CacheSize 屬性來覆寫該預設值。 將會快取所有 Required 頁面，如果數量比 CacheSize Required 頁面少，則也可以快取 Enabled 頁面。
+頁面快取可藉由避免具現化來協助改善效能，進而提升瀏覽效能。 頁面快取可能因過度快取，進而影響到工作集，而導致效能降低。
 
-頁面快取可藉由避免具現化來協助改善效能，進而提升瀏覽效能。 頁面快取可能因過度快取，進而影響到工作集，而導致效能降低。 因此，建議針對您的應用程式適當地使用頁面快取。 例如，假設您有一個會在「框架」中顯示項目清單的 App，而當您點選某個項目時，框架會瀏覽到該項目的詳細資料頁面。 清單頁面或許就應該設定為要快取。
+因此，建議針對您的應用程式適當地使用頁面快取。 例如，假設您有一個會在「框架」中顯示項目清單的 App，而當您點選某個項目時，框架會瀏覽到該項目的詳細資料頁面。 清單頁面或許就應該設定為要快取。 如果所有項目的詳細資料頁面都相同，則或許也應該快取該頁面。 但是，如果詳細資料頁面是較異質的頁面，則將快取維持關閉可能較好。
 
 
 

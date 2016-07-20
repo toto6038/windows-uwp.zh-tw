@@ -17,11 +17,11 @@ ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
 -   [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
 -   [建立自訂 app 促銷活動](create-a-custom-app-promotion-campaign.md)
 -   [產生促銷碼](generate-promotional-codes.md)
--   [銷售 app 和 IAP](put-apps-and-iaps-on-sale.md)
+-   [銷售 App 和 IAP](put-apps-and-iaps-on-sale.md)
 -   [回應客戶評論](respond-to-customer-reviews.md)
 -   [Windows 市集應用程式行銷指導方針](app-marketing-guidelines.md)
 -   [連結至您的 app](link-to-your-app.md)
--   [讓您的 app 更容易促銷](make-your-app-easier-to-promote.md)
+-   [讓您的 app 更易於促銷](make-your-app-easier-to-promote.md)
 
  
 

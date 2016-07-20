@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "資料繫結概觀"
 description: "本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。"
-ms.sourcegitcommit: c5325f0d0a067847bea81a115db4770a39ddd12a
-ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 092df9799982dc5da5cc085b2e73a5dd376c0eb8
 
 ---
 資料繫結概觀
@@ -23,7 +24,7 @@ ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
 建立專案
 ---------------------------------------------------------------------------------------------------------------------------------
 
-建立新的 \[空白應用程式 (Windows 通用)\] 專案。 將它命名為「快速入門」。
+建立新的 [空白應用程式 (Windows 通用)]**** 專案。 將它命名為「快速入門」。
 
 繫結到單一項目
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,7 +199,7 @@ namespace Quickstart
 繫結到項目集合
 ------------------------------------------------------------------------------------------------------------------
 
-常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ms668604.aspx) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
+常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
 下一個範例將 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 繫結到 `Recording` 物件的集合。 首先讓我們將集合加入到檢視模型。 將這些新成員加入到 **RecordingViewModel** 類別。
 
@@ -283,8 +284,7 @@ namespace Quickstart
 </Page>
 ```
 
-我們還未提供資料範本給 **Recording** 類別，因此 UI 架構所能做的只是針對 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 中的每個項目，呼叫 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 
-            **ToString** 的預設實作是傳回類型名稱。
+我們還未提供資料範本給 **Recording** 類別，因此 UI 架構所能做的只是針對 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 中的每個項目，呼叫 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 **ToString** 的預設實作是傳回類型名稱。
 
 ![繫結清單檢視](images/xaml-databinding1.png)
 
@@ -331,8 +331,7 @@ namespace Quickstart
 
 有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)：將 **ListView** 和詳細資料檢視都繫結到 **CollectionViewSource** (將為您處理目前選取的項目)。 以下顯示這兩種技巧，且兩者的結果相同，如圖所示。
 
-
-            **注意** 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
+**注意** 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
 首先是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技術。 如果您使用的是 Visual C++ 元件延伸 (C++/CX)，則由於我們將使用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因此您需要將 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 屬性新增到 **Recording** 類別。
 
@@ -401,8 +400,7 @@ namespace Quickstart
 格式化或轉換資料值以供顯示
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-以上呈現的結果有一個小問題。 
-            **ReleaseDateTime** 屬性不只是日期，而且還是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，結果顯示多餘的精確度。 一種解決辦法是將字串屬性加入到 **Recording** 類別，以傳回 `this.ReleaseDateTime.ToString("d")`。 將該屬性命名為 **ReleaseDate** 表示只傳回日期，而不是日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
+以上呈現的結果有一個小問題。 **ReleaseDateTime** 屬性不只是日期，而且還是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，結果顯示多餘的精確度。 一種解決辦法是將字串屬性加入到 **Recording** 類別，以傳回 `this.ReleaseDateTime.ToString("d")`。 將該屬性命名為 **ReleaseDate** 表示只傳回日期，而不是日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
 
 更有彈性的解決辦法是使用所謂的「值轉換器」。 以下是如何撰寫您自己的值轉換器的範例。 將下列程式碼加入到 Recording.cs 原始程式碼檔。
 
@@ -458,6 +456,6 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

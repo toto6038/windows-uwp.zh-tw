@@ -3,6 +3,7 @@ author: joannaleecy
 title: "設計無障礙遊戲"
 description: "了解如何設計無障礙遊戲。 使用包容性遊戲設計原則來取得遊戲協助工具。"
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
+translationtype: Human Translation
 ms.sourcegitcommit: 2492ff5c8b3ba0331e831234943a1db124f8fa4f
 ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
 
@@ -216,6 +217,6 @@ ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

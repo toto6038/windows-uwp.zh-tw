@@ -47,7 +47,7 @@ Windows 使用者可以利用與 Windows 完全不同的語言來執行應用程
 
 使用者語言喜好設定清單是排序的語言清單，依照使用者慣用的語言順序來說明它們。
 
-使用者可以在 \[設定\]\[時間與語言\]\[地區與語言\] 中設定此清單。 或者，他們也可以使用 \[控制台\]\[時鐘、語言和區域\] 來設定此清單。
+使用者可以在 [設定]****&gt;[時間與語言]****&gt;[地區與語言]**** 中設定此清單。 或者，他們也可以使用 [控制台]****&gt;[時鐘、語言和區域]**** 來設定此清單。
 
 使用者的語言喜好設定清單可包含多種語言，以及地區變體或特定變體。 例如，使用者可能慣用 fr-CA，但是也可以了解 en-GB。
 
@@ -57,7 +57,7 @@ Windows 使用者可以利用與 Windows 完全不同的語言來執行應用程
 
 ### <span id="Specify_the_default_language."></span><span id="specify_the_default_language."></span><span id="SPECIFY_THE_DEFAULT_LANGUAGE."></span>指定預設語言。
 
-在 Visual Studio 開啟 package.appxmanifest，前往 \[應用程式\] 索引標籤，並將您的預設語言設為撰寫應用程式所使用的語言。
+在 Visual Studio 開啟 package.appxmanifest，前往 [應用程式]**** 索引標籤，並將您的預設語言設為撰寫應用程式所使用的語言。
 
 當 app 不支援使用者選擇的任何語言時，會使用預設語言。 Visual Studio 會使用預設語言將中繼資料加入以該語言標記的資產中，以便在執行階段選擇適當的資產。
 
@@ -89,10 +89,7 @@ Windows 使用者可以利用與 Windows 完全不同的語言來執行應用程
 
 ### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>建立應用程式語言清單。
 
-在執行階段，系統會判斷應用程式在其資訊清單宣告支援的使用者語言喜好設定，然後建立*應用程式語言清單*。 它使用這個清單判斷應用程式應使用的語言。 這個清單會判斷針對 app 和系統資源、日期、時間及數字，以及其他元件使用的語言。 例如，資源管理系統 ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WinJS.Resources**](https://msdn.microsoft.com/library/windows/apps/br229779) 命名空間) 會根據應用程式語言載入 UI 資源。 
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) 也會根據應用程式語言清單選擇格式。 應用程式語言清單可以使用 [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) 取得。
+在執行階段，系統會判斷應用程式在其資訊清單宣告支援的使用者語言喜好設定，然後建立*應用程式語言清單*。 它使用這個清單判斷應用程式應使用的語言。 這個清單會判斷針對 app 和系統資源、日期、時間及數字，以及其他元件使用的語言。 例如，資源管理系統 ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WinJS.Resources**](https://msdn.microsoft.com/library/windows/apps/br229779) 命名空間) 會根據應用程式語言載入 UI 資源。 [ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也會根據應用程式語言清單選擇格式。 應用程式語言清單可以使用 [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) 取得。
 
 比對語言和資源並不容易。 建議您讓 Windows 處理比對，因為一種語言標記有許多選用元件會影響比對的優先順序，而實際上可能會遇到這些元件。
 
@@ -119,11 +116,7 @@ Windows 會以標準且眾所周知的方式來排列語言相符結果的優先
 
 應用程式語言清單由以下項目組成：
 
-1.  
-            **(選擇性) 主要語言覆寫**
-            [
-              **PrimaryLanguageOverride**
-            ](https://msdn.microsoft.com/library/windows/apps/hh972398) 是一個簡單的 app 覆寫設定，可讓使用者選擇自己的語言，或是讓 app 有充分的理由可覆寫預設語言選擇。 若要深入了解，請參閱[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
+1.  **(選擇性) 主要語言覆寫** [**PrimaryLanguageOverride**](https://msdn.microsoft.com/library/windows/apps/hh972398) 是一個簡單的 app 覆寫設定，可讓使用者選擇自己的語言，或是讓 app 有充分的理由可覆寫預設語言選擇。 若要深入了解，請參閱[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
 2.  **app 支援的使用者語言。** 這是一份使用者的語言喜好設定清單，以語言喜好設定排序。 此清單是由 app 資訊清單中的支援語言清單所篩選出。 依 app 支援的語言篩選使用者的語言可在軟體開發套件 (SDK)、類別庫、相依架構套件及 app 之間維持一致性。
 3.  **如果第 1 項和第 2 項空白，則為預設語言或 app 所支援的第一個語言。** 如果使用者使用的是 app 不支援的語言，選擇的應用程式語言會是 app 支援的第一個語言。
 
@@ -131,26 +124,19 @@ Windows 會以標準且眾所周知的方式來排列語言相符結果的優先
 
 ### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>設定 HTTP Accept Language 標頭。
 
-在典型 Web 要求和 XMLHttpRequest (XHR) 中，從 Windows 市集 app 和傳統型 app 提出的要求，會使用標準的 HTTP Accept-Language 標頭。 HTTP 標頭預設會設定為使用者的語言喜好設定 (依據使用者慣用的順序)，此順序指定於 \[設定\]\[時間與語言\]\[地區與語言\] 中。 清單中的每個語言都可進一步展開，以包含中性語言和加權 (q)。 例如，fr-FR 和 en-US 的使用者語言清單會產生 fr-FR、fr、en-US、en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3") 的 HTTP Accept-Language 標頭。
+在典型 Web 要求和 XMLHttpRequest (XHR) 中，從 Windows 市集 app 和傳統型 app 提出的要求，會使用標準的 HTTP Accept-Language 標頭。 HTTP 標頭預設會設定為使用者的語言喜好設定 (依據使用者慣用的順序)，此順序指定於 [設定]****&gt;[時間與語言]****&gt;[地區與語言]**** 中。 清單中的每個語言都可進一步展開，以包含中性語言和加權 (q)。 例如，fr-FR 和 en-US 的使用者語言清單會產生 fr-FR、fr、en-US、en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3") 的 HTTP Accept-Language 標頭。
 
 ### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>在 Windows.Globalization 命名空間中使用 API。
 
-通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空間中的 API 元素會使用應用程式語言清單來判斷語言。 如果沒有找到具有相符格式的語言，就會使用使用者地區設定。 這是用於系統時鐘的相同地區設定。 使用者地區設定可以從 \[設定\]\[時間與語言\]\[地區與語言\]\[其他日期、時間及區域設定\]\[地區: 變更日期、時間或數字格式\] 中取得。 
-            **Windows.Globalization** API 也接受覆寫以指定要使用的語言清單，取代應用程式語言清單。
+通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空間中的 API 元素會使用應用程式語言清單來判斷語言。 如果沒有找到具有相符格式的語言，就會使用使用者地區設定。 這是用於系統時鐘的相同地區設定。 使用者地區設定可以從 [設定]****&gt;[時間與語言]****&gt;[地區與語言]****&gt;[其他日期、時間及區域設定]****&gt;[地區: 變更日期、時間或數字格式]**** 中取得。 **Windows.Globalization** API 也接受覆寫以指定要使用的語言清單，取代應用程式語言清單。
 
-
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件。 這個物件讓應用程式可以檢查有關語言的詳細資料，例如語言的指令碼、顯示名稱及原始名稱。
+[ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件。 這個物件讓應用程式可以檢查有關語言的詳細資料，例如語言的指令碼、顯示名稱及原始名稱。
 
 ### <span id="Use_geographic_region_when_appropriate."></span><span id="use_geographic_region_when_appropriate."></span><span id="USE_GEOGRAPHIC_REGION_WHEN_APPROPRIATE."></span>適當使用地理區域。
 
-您可以利用使用者的住家地理區域設定 (而不使用語言) 來選擇要為使用者顯示哪些內容。 例如，新聞 app 可以預設為顯示來自使用者住家位置的內容，該位置是在安裝 Windows 時所設定，如先前的工作中所述，可以從 \[地區: 變更日期、時間或數字格式\] 中取得。 您可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) 來抓取目前使用者的住家地區設定。
+您可以利用使用者的住家地理區域設定 (而不使用語言) 來選擇要為使用者顯示哪些內容。 例如，新聞 app 可以預設為顯示來自使用者住家位置的內容，該位置是在安裝 Windows 時所設定，如先前的工作中所述，可以從 [地區: 變更日期、時間或數字格式]**** 中取得。 您可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) 來抓取目前使用者的住家地區設定。
 
-
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 物件。 這個物件可讓 app 檢查有關特定地區的詳細資料，例如它的顯示名稱、原始名稱及使用中的貨幣。
+[ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 物件。 這個物件可讓 app 檢查有關特定地區的詳細資料，例如它的顯示名稱、原始名稱及使用中的貨幣。
 
 ## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>備註
 

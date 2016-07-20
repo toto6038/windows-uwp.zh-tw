@@ -17,7 +17,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 
 將現有的音樂、圖片或影片資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
 
-媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 \[圖片\] 這個已知資料夾。 使用者可以透過您的 app 或內建的 \[相片\] app，在圖片媒體櫃中新增或移除資料夾。
+媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 [圖片] 這個已知資料夾。 使用者可以透過您的 app 或內建的 [相片] app，在圖片媒體櫃中新增或移除資料夾。
 
 ## 先決條件
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 
 -   **位置的存取權限**
 
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 \[功能\] 頁面上，選取您應用程式所管理的媒體櫃。
+    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能]**** 頁面上，選取您應用程式所管理的媒體櫃。
 
     -   **音樂媒體櫃**
     -   **圖片媒體櫃**
@@ -39,11 +39,10 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 ## 取得對媒體櫃的參考
 
 
-
-            **注意**：請記得宣告適當的功能。
+**注意**：請記得宣告適當的功能。
  
 
-若要取得對使用者的 \[音樂\]、\[圖片\] 或 \[影片\] 媒體櫃的參考，請呼叫 StorageLibrary.GetLibraryAsync 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
+若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
 
 -   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
 -   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
@@ -79,7 +78,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 ## 將現有的資料夾新增到媒體櫃
 
 
-若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 \[將此資料夾新增至圖片\] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 StorageLibrary.Folders 屬性 (和內建的 \[相片\] app) 中的項目，但是該資料夾不會顯示為檔案總管中 \[圖片\] 資料夾的子項。
+若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 [**將此資料夾新增至圖片**] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性 (和內建的 [相片] app) 中的項目，但是該資料夾不會顯示為檔案總管中 [圖片] 資料夾的子項。
 
 
 ```CSharp
@@ -91,7 +90,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 
 若要從媒體櫃中移除資料夾，請呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 方法，並指定要移除的資料夾。 您可以使用 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項 (或類似項目)，讓使用者選取要移除的資料夾。
 
-當您呼叫 StorageLibrary.RequestRemoveFolderAsync 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 \[圖片\] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 StorageLibrary.Folders 屬性中移除，且將不再包含在內建的 \[相片\] app 中。
+當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性中移除，且將不再包含在內建的 [相片] app 中。
 
 下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項中選取要移除的資料夾。
 
@@ -123,15 +122,15 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 這些位置包括：
 
--   \[圖片\] 資料夾。 包含圖片。
+-   [**圖片**] 資料夾。 包含圖片。
 
-    -   \[手機相簿\] 資料夾。 包含內建相機中的相片和視訊。
+    -   [**手機相簿**] 資料夾。 包含內建相機中的相片和視訊。
 
-    -   \[儲存的圖片\] 資料夾。 包含使用者從其他 app 儲存的圖片。
+    -   [**儲存的圖片**] 資料夾。 包含使用者從其他 app 儲存的圖片。
 
--   \[音樂\] 資料夾。 包含歌曲、播客和有聲書。
+-   [**音樂**] 資料夾。 包含歌曲、播客和有聲書。
 
--   \[影片\] 資料夾。 包含視訊。
+-   [**影片**] 資料夾。 包含視訊。
 
 使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
@@ -142,10 +141,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 
-            [
-              **Windows.Storage**
-            ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 
@@ -157,11 +153,11 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 您可以使用深層查詢來快速列舉媒體櫃的整個內容。
 
-深層查詢只會傳回指定之媒體類型的檔案。 舉例來說，如果您使用深層查詢來查詢 \[音樂媒體櫃\]，查詢結果將不會包含在 \[音樂\] 資料夾中找到的任何圖片檔案。
+深層查詢只會傳回指定之媒體類型的檔案。 舉例來說，如果您使用深層查詢來查詢 [音樂媒體櫃]，查詢結果將不會包含在 [音樂] 資料夾中找到的任何圖片檔案。
 
 如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
 
-\[手機相簿\] 和 \[儲存的圖片\] 資料夾不支援深層查詢。
+[手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
 
 以下是可用的深度查詢：
 
@@ -185,7 +181,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 若要取得媒體櫃中所有檔案和資料夾的完整清單，請呼叫 `GetFilesAsync(CommonFileQuery.DefaultQuery)`。 這個方法會傳回媒體櫃中的所有檔案，不論其類型為何。 這是一個淺層查詢，因此如果使用者在媒體櫃中建立了子資料夾，您就必須以遞迴方式列舉子資料夾的內容。
 
-您可以使用單層查詢來傳回內建查詢無法辨識其類型的媒體檔案，或是傳回媒體櫃中的所有檔案，包括不屬於指定類型的檔案。 舉例來說，如果您使用單層查詢來查詢 \[音樂媒體櫃\]，查詢結果將會包含這個查詢在 \[音樂\] 資料夾中找到的任何圖片檔案。
+您可以使用單層查詢來傳回內建查詢無法辨識其類型的媒體檔案，或是傳回媒體櫃中的所有檔案，包括不屬於指定類型的檔案。 舉例來說，如果您使用單層查詢來查詢 [音樂媒體櫃]，查詢結果將會包含這個查詢在 [音樂] 資料夾中找到的任何圖片檔案。
 
 ### 範例查詢
 
@@ -197,9 +193,9 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 | 查詢 | 結果 |
 |--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 來自內部儲存空間的 \[手機相簿\] 資料夾 <br>- 來自 SD 記憶卡的 \[手機相簿\] 資料夾 <br>- 來自內部儲存空間的 \[儲存的圖片\] 資料夾 <br>- 來自 SD 記憶卡的 \[儲存的圖片\] 資料夾 <br><br>這是一個單層查詢，因此只會傳回 \[圖片\] 資料夾中的直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | 沒有結果。 <br><br>這是一個單層查詢，\[圖片\] 資料夾未包含任何檔案做為其直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br>- 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自內部儲存空間的 1-2-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 1-6-2014.jpg 檔案 <br><br>這是一個深層查詢，因此會傳回 \[圖片\] 資料夾及其子資料夾的內容。 |
+| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 來自內部儲存空間的 [手機相簿] 資料夾 <br>- 來自 SD 記憶卡的 [手機相簿] 資料夾 <br>- 來自內部儲存空間的 [儲存的圖片] 資料夾 <br>- 來自 SD 記憶卡的 [儲存的圖片] 資料夾 <br><br>這是一個單層查詢，因此只會傳回 [圖片] 資料夾中的直屬子系。 |
+| KnownFolders.PicturesLibrary.GetFilesAsync();  | 沒有結果。 <br><br>這是一個單層查詢，[圖片] 資料夾未包含任何檔案做為其直屬子系。 |
+| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br>- 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自內部儲存空間的 1-2-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 1-6-2014.jpg 檔案 <br><br>這是一個深層查詢，因此會傳回 [圖片] 資料夾及其子資料夾的內容。 |
 | KnownFolders.CameraRoll.GetFilesAsync(); | - 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br><br>這是一個單層查詢。 無法保證結果的排列順序。 |
 
  
@@ -208,8 +204,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 您可以在應用程式資訊清單檔案中指定下列功能來存取應用程式中的媒體檔案。
 
--   
-            **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .qcp
     -   .wav
@@ -230,8 +225,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
     -   .adt
     -   .adts
     -   .pya
--   
-            **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .jpeg
     -   .jpe
@@ -244,8 +238,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
     -   .wdp
     -   .jxr
     -   .hdp
--   
-            **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
+-   **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
 
     -   .wm
     -   .m4v
@@ -266,7 +259,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
 
-\[手機相簿\] 和 \[儲存的圖片\] 資料夾不支援深層查詢。
+[手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
 
 **在拍攝相片的 app 中開啟該相片**
 

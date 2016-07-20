@@ -4,8 +4,8 @@ ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: "3D 列印"
 description: "本節描述如何利用通用 Windows app 中的 3D 列印功能。"
 translationtype: Human Translation
-ms.sourcegitcommit: 4b8125e064c4e2e6f4eeced50885ad352d4d6988
-ms.openlocfilehash: a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
 
 ---
 # 3D 列印
@@ -23,12 +23,12 @@ ms.openlocfilehash: a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc
 
 * [UWP 3D 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [從 Unity 進行 UWP 3D 列印的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
-* [硬體：使用 Windows 10 進行 3D 列印](https://msdn.microsoft.com/en-us/windows/hardware/bg183398.aspx)
+* [硬體：使用 Windows 10 進行 3D 列印](https://msdn.microsoft.com/windows/hardware/bg183398.aspx)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

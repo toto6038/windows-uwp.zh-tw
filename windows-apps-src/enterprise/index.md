@@ -4,8 +4,8 @@ description: "此藍圖概述適用於 Windows 10&amp;\\#160; 通用 Windows 平
 title: "企業"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
-ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
 
 此藍圖概述適用於 Windows 10 通用 Windows 平台 (UWP) app 的重要企業功能。 Windows 10 可讓您只需要撰寫一次，就能部署到所有裝置，方法是建立一個可調整成適合任何裝置的 app。 這可讓您建置使用者期待的絕佳經驗，並針對組織所需的安全性、管理以及設定等提供控制功能。
 
-**注意** 本文的對象是撰寫企業 UWP app 的開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/en-us/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
+**注意** 本文的對象是撰寫企業 UWP app 的開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
  
 
@@ -95,7 +95,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 | 主題 | 描述 |
 |-------|-------------|
 | [將 LOB app 發佈到企業](https://msdn.microsoft.com/library/windows/apps/mt608995) | 您可以透過商務用 Windows 市集，將企業營運 app 直接發佈到企業來進行大量取得，而不需要讓大眾廣泛取得 app。 |
-| [側載 app](https://technet.microsoft.com/en-us/library/mt269549) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
+| [側載 app](https://technet.microsoft.com/library/mt269549) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
 | [將 app 發佈到 Windows 市集](https://dev.windows.com/publish) | 整合的 Windows 市集可讓您發佈與管理您為所有 Windows 裝置開發的所有 app。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您 app 的可用性。 |
 
  
@@ -116,6 +116,6 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

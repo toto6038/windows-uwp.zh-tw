@@ -3,6 +3,7 @@ author: jnHs
 Description: "如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。"
 title: "解決提交錯誤"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
+translationtype: Human Translation
 ms.sourcegitcommit: e295011db20d151f54e2581f8c67014b30261eb6
 ms.openlocfilehash: cd0e1011bd1f857d8c859428ae0ff7e755db842e
 
@@ -51,6 +52,6 @@ ms.openlocfilehash: cd0e1011bd1f857d8c859428ae0ff7e755db842e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

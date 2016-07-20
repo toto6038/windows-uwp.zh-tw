@@ -17,7 +17,7 @@ ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
 
 首先，在 Visual Studio 中建立新的空白 App。 
 
-其次，為了要連線到身分識別提供者，您必須將 App 與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 \[市集\] \[將 App 與市集建立關聯\]，然後遵循精靈的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將 App 與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集]****  >  [將 App 與市集建立關聯]****，然後遵循精靈的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -62,7 +62,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-當您執行 App 並按一下 \[登入\] 按鈕，它應該會顯示空白視窗。 
+當您執行 App 並按一下 [登入] 按鈕，它應該會顯示空白視窗。 
 
 ![帳戶設定窗格](images/tb-1.png)
 
@@ -88,7 +88,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 }
 ```
 
-使用者不會非常頻繁地與帳戶互動，因此以這種方式註冊和解除註冊事件處理常式有助於防止記憶體流失。 如此一來，當使用者有很大機率會要求查看您的自訂窗格時 (因為他們正位於 \[設定\] 或 \[登入\] 頁面)，該窗格只會存在於記憶體中。 
+使用者不會非常頻繁地與帳戶互動，因此以這種方式註冊和解除註冊事件處理常式有助於防止記憶體流失。 如此一來，當使用者有很大機率會要求查看您的自訂窗格時 (因為他們正位於 [設定] 或 [登入] 頁面)，該窗格只會存在於記憶體中。 
 
 ## 建置帳戶設定窗格
 
@@ -293,7 +293,7 @@ private async Task<string> GetTokenSilentlyAsync()
 
 ## 登出帳戶 
 
-如果您保留 WebAccount，您可能想要提供 \[登出\] 功能給使用者，以便他們可以切換帳戶，或簡單地將他們的帳戶與 App 取消關聯。 若要這樣做，請先移除任何儲存的帳戶和提供者資訊。 接著呼叫 WebAccount.SignOutAsync() 以清除快取，並使任何 App 可能擁有的現有權杖無效。 
+如果您保留 WebAccount，您可能想要提供 [登出] 功能給使用者，以便他們可以切換帳戶，或簡單地將他們的帳戶與 App 取消關聯。 若要這樣做，請先移除任何儲存的帳戶和提供者資訊。 接著呼叫 WebAccount.SignOutAsync() 以清除快取，並使任何 App 可能擁有的現有權杖無效。 
 
 ```C#
 private async Task SignOutAccountAsync(WebAccount account)

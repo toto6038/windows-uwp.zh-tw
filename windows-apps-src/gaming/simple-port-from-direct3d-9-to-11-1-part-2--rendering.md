@@ -21,8 +21,7 @@ ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
 -   [第三部分：移植遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。 
-            [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第二部分。
+示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第二部分。
 
 ## 將效果轉換到 HLSL 著色器
 
@@ -104,8 +103,7 @@ Direct3D 9 中用來將頂點著色器繫結到像素著色器的規則比 Direc
 
 以下為我們的硬體轉換頂點著色器，這次是定義於它自己的檔案中。
 
-> 
-            **注意：**需要有頂點著色器，才能輸出 SV\_POSITION 系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
+> **注意：**需要有頂點著色器，才能輸出 SV\_POSITION 系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
 
  
 
@@ -152,8 +150,7 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 我們的傳遞像素著色器只需要這個項目。 儘管我們將它稱為傳遞，但它實際上可以針對每個像素取得透視修正的插補色彩資料。 請注意，SV\_TARGET 系統值語意已在 API 要求時由我們的像素著色器套用到色彩值輸出。
 
-> 
-            **注意：**著色器層級 9\_x 像素著色器無法從 SV\_POSITION 系統值語意中讀取。 模型 4.0 (及更高) 像素著色器可以使用 SV\_POSITION 來擷取螢幕上的像素位置，其中 x 介於 0 與轉譯目標寬度之間，而 y 介於 0 與轉譯目標高度之間 (每個都會位移 0.5)。
+> **注意：**著色器層級 9\_x 像素著色器無法從 SV\_POSITION 系統值語意中讀取。 模型 4.0 (及更高) 像素著色器可以使用 SV\_POSITION 來擷取螢幕上的像素位置，其中 x 介於 0 與轉譯目標寬度之間，而 y 介於 0 與轉譯目標高度之間 (每個都會位移 0.5)。
 
  
 
@@ -237,7 +234,7 @@ m_d3dDevice->CreateVertexShader(
 
 若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
 
-> 注意：請確定為 HLSL 編譯器設定正確的目標功能層級：在 Visual Studio 中使用滑鼠右鍵按一下 HLSL 來源檔、選取 \[屬性\]，然後在 \[HLSL 編譯器\] - \[一般\] 下方變更 \[著色器模型\] 設定。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
+> **注意：**請確定為 HLSL 編譯器設定正確的目標功能層級：在 Visual Studio 中使用滑鼠右鍵按一下 HLSL 來源檔、選取 [屬性]，然後在 [HLSL 編譯器] -&gt; [一般]**** 下方變更 [著色器模型]**** 設定。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
 
  
 
@@ -247,8 +244,7 @@ m_d3dDevice->CreateVertexShader(
 
 每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 例如，DirectXMath 資料類型可以協助 DXGI\_FORMAT\_R32G32B32\_FLOAT 對應到 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
 
-> 
-            **注意：**常數緩衝區會使用一次對齊到四個浮點數的固定輸入配置。 建議針對常數緩衝區資料使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (及其衍生項目)。
+> **注意：**常數緩衝區會使用一次對齊到四個浮點數的固定輸入配置。 建議針對常數緩衝區資料使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (及其衍生項目)。
 
  
 

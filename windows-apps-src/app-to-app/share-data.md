@@ -3,6 +3,7 @@ description: "本文說明如何在通用 Windows 平台 (UWP) 應用程式中�
 title: "分享資料"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
 ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
@@ -104,6 +105,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -3,16 +3,16 @@ author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "建立 NFC 智慧卡 App"
 description: "Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 App，但該模型需要安全的付款 App 才能與行動網路運算子 (MNO) 緊密結合。"
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
 
 ---
 # 建立 NFC 智慧卡 App
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-            **重要** 本主題僅適用於 Windows 10 行動裝置版。
+**重要** 本主題僅適用於 Windows 10 行動裝置版。
 
 Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置版中，我們已導入新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的 app 直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE app，讓您的客戶可以透過他們的手機而不是實體卡片存取您的服務，而不需要使用 MNO 共同作業。
 
@@ -42,7 +42,7 @@ Windows 10 支援以 ISO-DEP (ISO-IEC 14443-4) 為基礎的智慧卡模擬，以
 
 ## App 選取和 AID 路由
 
-若要開發 HCE app，由於使用者可以安裝多個不同的 HCE app，因此您必須了解 Windows 10 行動裝置版裝置如何將 AID 路由傳送到特定 app。 每個 app 都可登錄多個以 HCE 和 SIM 卡為基礎的卡片。 只要使用者在 \[NFC 設定\] 功能表中選擇 \[SIM 卡\] 選項做為預設付款卡，以 SIM 卡為基礎的舊版 Windows Phone 8.1 app 將會在 Windows 10 行動裝置版上繼續運作。 此選項為首次開啟裝置時的預設設定。
+若要開發 HCE app，由於使用者可以安裝多個不同的 HCE app，因此您必須了解 Windows 10 行動裝置版裝置如何將 AID 路由傳送到特定 app。 每個 app 都可登錄多個以 HCE 和 SIM 卡為基礎的卡片。 只要使用者在 [NFC 設定] 功能表中選擇 [SIM 卡] 選項做為預設付款卡，以 SIM 卡為基礎的舊版 Windows Phone 8.1 app 將會在 Windows 10 行動裝置版上繼續運作。 此選項為首次開啟裝置時的預設設定。
 
 當使用者將他們的 Windows 10 行動裝置版裝置輕觸終端機時，資料即會自動路由傳送到安裝於裝置上的適當 app。 這個路由是以小程式識別碼 (AID) 為根據，這類識別碼是 5-16 位元組的識別碼 。 輕觸期間，外部終端機將傳輸 SELECT 命令 APDU 來指定 AID，它就像所有後續要路由傳送的 APDU 命令一樣。 後續的 SELECT 命令將再次變更路由。 根據 app 登錄的 AID 和使用者設定，會將 APDU 流量路由傳送到特定的 app，這將會傳送回應 APDU。 請注意，終端機可能想要在同一個輕觸期間，與數種不同的 app 進行通訊。 因此，您必須確定 app 的背景工作會在停用時儘快結束，以便為另一個 app 的背景工作產生更多空間來回應 APDU。 我們將在本主題稍後討論背景工作。
 
@@ -50,11 +50,11 @@ HCE app 必須利用它們可處理的特殊 AID 來登錄自己，讓它們能�
 
 ## 針對付款 AID 群組的衝突解決
 
-當 app 登錄實體卡片 (AID 群組) 時，可將 AID 群組類別宣告為 \[付款\] 或 \[其他\]。 儘管在任何指定期間內可登錄多個付款 AID 群組，但針對「輕觸以付款」一次只能啟用一個付款 AID 群組，該群組將會由使用者選取。 這種行為存在是因為使用者預期能夠控制自行選擇要使用單一付款、信用卡或轉帳卡，如此一來，當他們將其裝置輕觸終端機時，就不會用到其他不想使用的卡片來支付。
+當 app 登錄實體卡片 (AID 群組) 時，可將 AID 群組類別宣告為 [付款] 或 [其他]。 儘管在任何指定期間內可登錄多個付款 AID 群組，但針對「輕觸以付款」一次只能啟用一個付款 AID 群組，該群組將會由使用者選取。 這種行為存在是因為使用者預期能夠控制自行選擇要使用單一付款、信用卡或轉帳卡，如此一來，當他們將其裝置輕觸終端機時，就不會用到其他不想使用的卡片來支付。
 
-不過，已登錄為 \[其他\] 的多個 AID 群組可以在不需使用者互動的情況下同時啟用。 這種行為之所以存在，是因為使用者透過點選手機使用其他類型的卡片 (例如，忠誠卡、折價券或大眾運輸卡) 時，應該不須要花費任何心力或收到任何提示便可以使用。
+不過，已登錄為 [其他] 的多個 AID 群組可以在不需使用者互動的情況下同時啟用。 這種行為之所以存在，是因為使用者透過點選手機使用其他類型的卡片 (例如，忠誠卡、折價券或大眾運輸卡) 時，應該不須要花費任何心力或收到任何提示便可以使用。
 
-已登錄為 \[付款\] 的所有 AID 群組會出現在 \[NFC 設定\] 頁面的卡片清單中，使用者可在其中選取預設付款卡。 選取預設付款卡之後，已登錄這個付款 AID 群組的預設付款卡就會成為預設付款 app。 預設付款 app 可以在沒有使用者互動的情況下，啟用或停用它們的任何 AID 群組。 如果使用者拒絕預設付款 app 的提示，則目前的預設付款 app (如果有的話) 就會繼續保持為預設值。 下列螢幕擷取畫面會顯示 \[NFC 設定\] 頁面。
+已登錄為 [付款] 的所有 AID 群組會出現在 [NFC 設定] 頁面的卡片清單中，使用者可在其中選取預設付款卡。 選取預設付款卡之後，已登錄這個付款 AID 群組的預設付款卡就會成為預設付款 app。 預設付款 app 可以在沒有使用者互動的情況下，啟用或停用它們的任何 AID 群組。 如果使用者拒絕預設付款 app 的提示，則目前的預設付款 app (如果有的話) 就會繼續保持為預設值。 下列螢幕擷取畫面會顯示 [NFC 設定] 頁面。
 
 ![](./images/nfc-settings.png)
 
@@ -62,9 +62,9 @@ HCE app 必須利用它們可處理的特殊 AID 來登錄自己，讓它們能�
 
 ## 針對非付款 AID 群組的衝突解決
 
-分類為 \[其他\] 的非付款卡不會出現在 \[NFC設定\] 頁面中。
+分類為 [其他] 的非付款卡不會出現在 [NFC設定] 頁面中。
 
-您的 app 可以使用與付款 AID 群組的相同方式，來建立、登錄並啟用非付款 AID 群組。 主要差異在於非付款 AID 群組已將模擬類別設定為 \[其他\] 而不是 \[付款\]。 向系統登錄 AID 群組之後，您需要啟用 AID 群組來接收 NFC 流量。 當您嘗試啟用非付款 AID 群組來接收流量時，除非與其他 app 已經登錄於系統中的其中一個 AID 發生衝突，否則系統不會提示使用者進行確認。 如果發生衝突，若使用者選擇啟用最新登錄的 AID 群組，系統將提示使用者關於哪一張卡片及其相關聯 app 即將停用的相關資訊。
+您的 app 可以使用與付款 AID 群組的相同方式，來建立、登錄並啟用非付款 AID 群組。 主要差異在於非付款 AID 群組已將模擬類別設定為 [其他] 而不是 [付款]。 向系統登錄 AID 群組之後，您需要啟用 AID 群組來接收 NFC 流量。 當您嘗試啟用非付款 AID 群組來接收流量時，除非與其他 app 已經登錄於系統中的其中一個 AID 發生衝突，否則系統不會提示使用者進行確認。 如果發生衝突，若使用者選擇啟用最新登錄的 AID 群組，系統將提示使用者關於哪一張卡片及其相關聯 app 即將停用的相關資訊。
 
 **和以 SIM 卡為基礎的 NFC 應用程式共存**
 
@@ -76,9 +76,9 @@ HCE app 必須利用它們可處理的特殊 AID 來登錄自己，讓它們能�
 
 當外部讀卡機傳送「SELECT AID」命令時，NFC 控制器會先檢查路由表中的 AID 路由來尋找相符項目。 如果沒有相符項目，將使用以通訊協定為基礎的路由做為 ISO-DEP (14443-4-A) 流量的預設路由。 對於任何其他非 ISO-DEP 流量，將使用以技術基礎的路由。
 
-Windows 10 行動裝置版會在 \[NFC 設定\] 頁面中提供 \[SIM 卡\] 功能表選項，以繼續使用以 SIM 卡為基礎的舊版 Windows Phone 8.1 app，這類 app 不會向系統登錄它們的 AID。 如果使用者選取 \[SIM 卡\] 做為預設付款卡，則 ISO-DEP 路由會設定為 UICC，針對下拉式功能表中的所有其他選取項目，ISO-DEP 路由會指向到主機。
+Windows 10 行動裝置版會在 [NFC 設定] 頁面中提供 [SIM 卡] 功能表選項，以繼續使用以 SIM 卡為基礎的舊版 Windows Phone 8.1 app，這類 app 不會向系統登錄它們的 AID。 如果使用者選取 [SIM 卡] 做為預設付款卡，則 ISO-DEP 路由會設定為 UICC，針對下拉式功能表中的所有其他選取項目，ISO-DEP 路由會指向到主機。
 
-當裝置第一次使用 Windows 10 行動裝置版啟動時，即會針對具備已啟用 SE 之 SIM 卡的裝置，將 ISO-DEP 路由設定為 \[SIM 卡\]。 當使用者安裝已啟用 HCE 的 app，且該 app 會啟用任何 HCE AID 群組登錄時，ISO-DEP 路由將會指向主機。 以 SIM卡為基礎的新應用程式需針對要在控制器路由表中填入的特定 AID 路由，在 SIM 卡中依序登錄 AID。
+當裝置第一次使用 Windows 10 行動裝置版啟動時，即會針對具備已啟用 SE 之 SIM 卡的裝置，將 ISO-DEP 路由設定為 [SIM 卡]。 當使用者安裝已啟用 HCE 的 app，且該 app 會啟用任何 HCE AID 群組登錄時，ISO-DEP 路由將會指向主機。 以 SIM卡為基礎的新應用程式需針對要在控制器路由表中填入的特定 AID 路由，在 SIM 卡中依序登錄 AID。
 
 ## 建立以 HCE 為基礎的 app
 
@@ -100,12 +100,11 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 
-            **EmulatorHostApplicationActivated**。 這表示每當要解析 app 的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
+請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 **EmulatorHostApplicationActivated**。 這表示每當要解析 app 的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
 
 ## 接收和回應 APDU
 
-如果有 APDU 的目標是您的 app 時，系統將會啟動您的背景工作。 您的背景工作將會接收透過 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 物件的 [**CommandApdu**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 屬性傳遞的 APDU，並使用相同物件的 [**TryRespondAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/mt634299.aspx) 方法來回應 APDU。 基於效能考量，請考慮讓您的背景工作保持為輕量型作業。 例如，在完成所有處理時，立即回應 APDU，並結束您的背景工作。 由於 NFC 交易的性質，使用者通常只會在讀卡機上持有其裝置一段極短暫的時間。 您的背景工作將繼續接收來自讀卡機的流量，直到您的連線停用為止，在這種情況下，您將會接收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 物件。 您的連線會因為下列原因 (如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 屬性中所示) 而停用。
+如果有 APDU 的目標是您的 app 時，系統將會啟動您的背景工作。 您的背景工作將會接收透過 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 物件的 [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 屬性傳遞的 APDU，並使用相同物件的 [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) 方法來回應 APDU。 基於效能考量，請考慮讓您的背景工作保持為輕量型作業。 例如，在完成所有處理時，立即回應 APDU，並結束您的背景工作。 由於 NFC 交易的性質，使用者通常只會在讀卡機上持有其裝置一段極短暫的時間。 您的背景工作將繼續接收來自讀卡機的流量，直到您的連線停用為止，在這種情況下，您將會接收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 物件。 您的連線會因為下列原因 (如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 屬性中所示) 而停用。
 
 -   如果連線是使用 **ConnectionLost** 值來停用，就表示使用者已將他們的裝置抽離讀卡機。 如果您的 app 需要使用者輕觸終端機較長的時間，您可能要考慮透過回饋來提示他們。 您應該快速終止背景工作 (藉由完成您的延遲)，以確保使用者再次輕觸它時，它不會因等待前一個背景工作結束而延遲。
 -   如果連線是使用 **ConnectionRedirected** 值來停用，就表示終端機所傳送的新 SELECT AID 命令 APDU 並導向至不同的 AID。 在此情況下，您的 app 應該立即結束背景工作 (藉由完成您的延遲)，以便讓另一個背景工作能夠執行。
@@ -209,7 +208,7 @@ void BgTask::HandleHceActivation()
 
 大部分的付款卡都會針對同一個 AID (其為 PPSE AID) 以及其他付款網路卡特定的 AID 進行登錄。 每個 AID 群組都代表一張卡片，而且當使用者啟用該卡片時，群組中的所有 AID 都會啟用。 同樣地，當使用者會停用卡片時，群組中的所有 AID 都會停用。
 
-若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -227,7 +226,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -329,7 +328,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## 鎖定畫面和螢幕關閉行為
 
-Windows 10 行動裝置版具有裝置層級的卡片模擬設定，可透過行動電信業者或裝置製造商來設定。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 \[輕觸支付\] 切換，並將 \[裝置層級的啟用原則\] 設定為 \[自動\]。
+Windows 10 行動裝置版具有裝置層級的卡片模擬設定，可透過行動電信業者或裝置製造商來設定。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 [輕觸支付] 切換，並將 [裝置層級的啟用原則] 設定為 [自動]。
 
 您的應用程式可以在裝置層級上查詢 [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) 的值，並根據 app 在每個狀態中所需的行為，針對每個案例採取動作。
 
@@ -387,6 +386,6 @@ Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

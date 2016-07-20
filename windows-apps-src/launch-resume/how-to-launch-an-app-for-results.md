@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "啟動 app 以取得結果"
 description: "了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
 ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 

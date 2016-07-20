@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
 title: "取得錯誤報告資料"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 
 | 方法 | 要求 URI                                                          |
 |--------|----------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits``` |
 
- 
+<span/> 
 
 ### 要求的標頭
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
- 
+<span/> 
 
-### 要求主體
+### 要求參數
 
 <table>
 <colgroup>
@@ -154,10 +155,11 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
+<span/>
  
 ### 篩選欄位
 
-要求本體的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
+要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -241,7 +243,7 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求範例
 
@@ -266,7 +268,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的錯誤，就會傳回此值。 |
 | TotalCount | inumber | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                     |
 
- 
+<span/>
+
 ### 錯誤數值
 
 *Value* 陣列中的元素包含下列值。
@@ -288,7 +291,7 @@ Authorization: Bearer <your access token>
 | eventCount      | inumber | 針對指定的彙總層級被歸類到此錯誤的事件數目。                                                                                                                                            |
 | deviceCount     | inumber | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。                                                                                                                                        |
 
- 
+<span/> 
 
 ### 回應範例
 
@@ -330,6 +333,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

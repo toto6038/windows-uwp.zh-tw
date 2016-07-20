@@ -2,6 +2,7 @@
 author: WilliamsJason
 title: "裝置入口網站鬆散資料夾註冊 API 參考"
 description: "了解如何以程式設計方式存取鬆散資料夾登錄 API。"
+translationtype: Human Translation
 ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
 ms.openlocfilehash: 41e4cc67120b9e32fac34404ca918edcf58ba267
 
@@ -61,6 +62,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

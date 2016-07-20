@@ -3,8 +3,9 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) App。"
 title: "硬體 DRM"
-ms.sourcegitcommit: b782d1e3d4f5c90e4cac9fbad3877c5457a27c45
-ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
+translationtype: Human Translation
+ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
+ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
 
 ---
 
@@ -14,7 +15,8 @@ ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
 
 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) app。
 
-> [!NOTE] 眾多裝置皆支援以硬體為基礎的 PlayReady DRM，包括諸如電視套組、手機和平板電腦等各種 Windows 與非 Windows 裝置。 針對支援 PlayReady 硬體 DRM 的 Windows 裝置，它必須執行 Windows 10 且具有支援的硬體設定。
+> [!NOTE] 
+> 眾多裝置皆支援以硬體為基礎的 PlayReady DRM，包括諸如電視套組、手機和平板電腦等各種 Windows 與非 Windows 裝置。 針對支援 PlayReady 硬體 DRM 的 Windows 裝置，它必須執行 Windows 10 且具有支援的硬體設定。
 
 內容提供者正不斷地朝向針對授與權限以播放 App 中最高價值的內容，提供硬體式保護的方向努力。 健全的密碼編譯核心硬體實作支援已新增到 PlayReady，以符合此需求。 此支援能夠在多個裝置的平台上安全播放高畫質 (1080p) 和超高畫質 (UHD) 的內容。 金鑰內容 (包括私密金鑰、內容金鑰，以及其他用來衍生或解除鎖定上述金鑰的金鑰內容)，以及已解密的壓縮和未壓縮的視訊範例會利用硬體安全性來進行保護。
 
@@ -97,6 +99,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

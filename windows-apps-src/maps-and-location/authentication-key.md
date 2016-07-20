@@ -3,6 +3,7 @@ author: msatranjr
 title: "要求地圖驗證金鑰"
 description: "您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。"
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 您的[通用 Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) 必須經過驗證，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中的地圖服務。 若要驗證您的 app，您必須指定地圖驗證金鑰。 本主題說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 app。
 
-
-            **提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
 
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -30,30 +30,28 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 1.  在瀏覽器中，瀏覽到「Bing 地圖服務開發人員中心」([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
-2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 \[登入\]。
+2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 [登入]****。
 
-3.  選擇要與您的「Bing 地圖服務」帳戶建立關聯的帳戶。 若要使用您的 Microsoft 帳戶，請按一下 \[是\]。 否則，請按一下 \[使用其他帳戶登入\]。
+3.  選擇要與您的「Bing 地圖服務」帳戶建立關聯的帳戶。 若要使用您的 Microsoft 帳戶，請按一下 [是]****。 否則，請按一下 [使用其他帳戶登入]****。
 
-4.  如果您還沒有「Bing 地圖服務」帳戶，請建立一個新的「Bing 地圖服務」帳戶。 輸入 \[帳戶名稱\]、\[連絡人名稱\]、\[公司名稱\]、\[電子郵件地址\] 及 \[電話號碼\]。 接受使用規定之後，按一下 \[建立\]。
+4.  如果您還沒有「Bing 地圖服務」帳戶，請建立一個新的「Bing 地圖服務」帳戶。 輸入 [帳戶名稱]****、[連絡人名稱]****、[公司名稱]****、[電子郵件地址]**** 及 [電話號碼]****。 接受使用規定之後，按一下 [建立]****。
 
-5.  在 \[我的帳戶\] 功能表下方，按一下 \[建立或檢視金鑰\]。
+5.  在 [我的帳戶]**** 功能表下方，按一下 [建立或檢視金鑰]****。
 
 6.  按一下**建立新金鑰**的連結。
 
-7.  完成 \[建立金鑰\] 表單，然後按一下 \[建立\]。
+7.  完成 [建立金鑰]**** 表單，然後按一下 [建立]****。
 
-    -   
-            **應用程式名稱：**您應用程式的名稱。
-    -   
-            **應用程式 URL (選擇性)：**您應用程式的 URL。
-    -   金鑰類型：請選取 \[基本\] 或 \[企業\]。
-    -   應用程式類型：請選取 \[通用 Windows app\] 以在您的通用 Windows app 中使用。
+    -   **應用程式名稱：**您應用程式的名稱。
+    -   **應用程式 URL (選擇性)：**您應用程式的 URL。
+    -   **金鑰類型：**請選取 [基本]**** 或 [企業]****。
+    -   **應用程式類型：**請選取 [通用 Windows app]**** 以在您的通用 Windows app 中使用。
 
     以下是表單的外觀範例。
 
-    ![\[建立金鑰\] 表單的範例。](images/createkeydialog.png)
+    ![[建立金鑰] 表單的範例。](images/createkeydialog.png)
 
-8.  按一下 \[建立\] 之後，新金鑰就會顯示在 \[建立金鑰\] 表單下方。 請將它複製到安全的地方，或立即將它新增到您的 app，如下一個步驟所述。
+8.  按一下 [建立]**** 之後，新金鑰就會顯示在 [建立金鑰]**** 表單下方。 請將它複製到安全的地方，或立即將它新增到您的 app，如下一個步驟所述。
 
 ## 將金鑰新增到 app
 

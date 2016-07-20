@@ -3,8 +3,9 @@ author: awkoren
 Description: "執行傳統型轉換器應用程式，將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "傳統型應用程式轉換器預覽 (Project Centennial)"
-ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
-ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 
 ---
 
@@ -22,10 +23,15 @@ ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 
 本節概述傳統型應用程式轉換器版本之間的變更。 
 
-### 6/16/2016
+### 7/7/2016 (v0.1.22)
 
-* 傳統型應用程式轉換器 (0.1.20 版) 修正了會阻擋在最新 Windows 10 Insider Preview 組建上成功轉換的任何問題。 
-* 使用 ```–PackageArch``` 取代 ```–CreateX86Package```，這可讓您指定產生的套件的架構。 
+* 新增以下支援：自動偵測來自您傳統型應用程式的殼層擴充功能，以及在您 UWP 套件的 AppXManifest 中宣告這些殼層擴充功能。 若要深入了解傳統型擴充功能，請參閱[**已轉換傳統型應用程式擴充功能**](desktop-to-uwp-extensions.md)。 
+* 針對大型應用程式集改善 AppExecutable 偵測功能。 
+
+### 6/16/2016 (v0.1.20)
+
+* 修正會致使無法順利在最新 Windows 10 Insider Preview 組建上成功轉換的任何問題。 
+* 使用 ```–PackageArch``` 取代 ```–CreateX86Package```，這可讓您指定產生的套件架構。 
 
 ### 6/8/2016
 
@@ -61,7 +67,7 @@ ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 + 第二層位址轉譯 (SLAT)
 
 ### 建議的資源
-+ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
++ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](http://go.microsoft.com/fwlink/?LinkId=615097)
 
 ## 安裝傳統型應用程式轉換器   
 傳統型應用程式轉換器依賴 Windows 10 功能，此為 Windows Insider Preview 組建的一部分，是正式發行前小眾測試版。 確定您是在最新組建上運用轉換器。
@@ -114,7 +120,7 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ```
 
 ## 部署已轉換的 AppX
-使用 PowerShell 中的 [Add-AppxPackage](https://technet.microsoft.com/en-us/library/hh856048.aspx) Cmdlet，將已簽署的應用程式套件 (.appx) 部署到使用者帳戶。 若要簽署 .appx 套件，請參閱下一節＜簽署您的 .Appx 套件＞。 此外，您可以包含 Cmdlet 的 *Register*，在開發流程期間從未封裝的檔案資料夾中進行安裝。 如需詳細資訊，請參閱[部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md)。
+使用 PowerShell 中的 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) Cmdlet，將已簽署的應用程式套件 (.appx) 部署到使用者帳戶。 若要簽署 .appx 套件，請參閱下一節＜簽署您的 .Appx 套件＞。 此外，您可以包含 Cmdlet 的 *Register*，在開發流程期間從未封裝的檔案資料夾中進行安裝。 如需詳細資訊，請參閱[部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md)。
 
 ## 簽署您的 .Appx 套件
 
@@ -224,7 +230,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 ## 另請參閱
 + [取得傳統型應用程式轉換器](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [將您的傳統型應用程式移至通用 Windows 平台](https://developer.microsoft.com/en-us/windows/bridges/desktop)
++ [將您的傳統型應用程式移至通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
 + [使用傳統型應用程式轉換器將傳統型應用程式移至 UWP](https://channel9.msdn.com/events/Build/2016/P504)
 + [專案 Centennial︰將現有的傳統型應用程式移至通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
 + [適用於桌面橋接器的 UserVoice (專案 Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
@@ -232,6 +238,6 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

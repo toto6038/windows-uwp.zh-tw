@@ -1,10 +1,11 @@
 ---
-description: "取得對您的 UWP app 新增控制項和模式的設計指導方針與程式碼撰寫指示。"
-title: "控制項和模式 - Windows 應用程式開發"
+description: "取得對您的 UWP app 新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的 App。"
+title: "UWP 控制項和模式 - Windows 應用程式開發"
 author: mijacobs
+keywords: uwp controls, user interface, app controls
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
+ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
+ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -44,8 +45,6 @@ ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
 <div class="uwpd-list-of-links">
 <ul>
 
-<li>[主動式畫布](active-canvas.md)</li>
-
 <li>[自動建議方塊](auto-suggest-box.md)</li>
 
 <li>[列](app-bars.md)</li>
@@ -80,11 +79,15 @@ ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
 
 <li>[清單](lists.md)</li>
 
+<li>[地圖控制項](../maps-and-location/controls-map.md)</li>
+
 <li>[主要/詳細資料](master-details.md)</li>
 
-<li>[媒體播放](media-playback.md)</li>
-
+<li>[媒體播放](media-playback.md)
+<ul>
 <li>[自訂傳輸控制項](custom-transport-controls.md)</li>
+</ul>
+</li>
 
 <li>[瀏覽窗格](nav-pane.md)</li>
 
@@ -107,7 +110,6 @@ ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
 <li>[文字控制項](text-controls.md)
 <ul>
 
-<li>[字型](fonts.md)</li>
 <li>[標籤](labels.md)</li>
 
 <li>[密碼方塊](password-box.md)</li>
@@ -115,8 +117,6 @@ ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
 <li>[可編輯對話方塊](rich-edit-box.md)</li>
 
 <li>[RTF 區塊](rich-text-block.md)</li>
-
-<li>[Segoe MDL2 圖示](segoe-ui-symbol-font.md)</li>
 
 <li>[拼字檢查和預測](spell-checking-and-prediction.md)</li>
 
@@ -167,6 +167,6 @@ ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

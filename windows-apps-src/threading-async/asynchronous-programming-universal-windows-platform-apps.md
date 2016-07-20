@@ -4,8 +4,8 @@ ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "非同步程式設計"
 description: "這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 元件延伸 (C\\+\\+/CX) 以及 JavaScript 中的表示方式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 ---
 # 非同步程式設計
@@ -60,9 +60,9 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 ## 使用 C++ 的 UWP 中的非同步模式
 
 
-在 C++/CX 中，非同步程式設計的基礎在於 [**task class**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) 以及其 [**then method**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx)。 語法和 JavaScript Promise 的語法類似。 **task 類別**以及相關類型也會提供取消和管理執行緒內容的功能。 如需詳細資訊，請參閱 [C++ 中的非同步程式設計](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
+在 C++/CX 中，非同步程式設計的基礎在於 [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) 以及其 [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx)。 語法和 JavaScript Promise 的語法類似。 **task 類別**以及相關類型也會提供取消和管理執行緒內容的功能。 如需詳細資訊，請參閱 [C++ 中的非同步程式設計](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[**create\_async function**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx) 可以提供產生非同步 API 的相關支援，讓開發人員能夠使用 JavaScript 或支援 UWP 的任何其他語言來取用非同步 API。 如需詳細資訊，請參閱[在 C++ 中建立非同步作業](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
+[**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) 可以提供產生非同步 API 的相關支援，讓開發人員能夠使用 JavaScript 或支援 UWP 的任何其他語言來取用非同步 API。 如需詳細資訊，請參閱[在 C++ 中建立非同步作業](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)。
 
 ## 使用 JavaScript 的 UWP 中的非同步模式
 
@@ -76,11 +76,11 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 
 * [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await 進行非同步程式設計 (C# 和 Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
-* [黑白棋範例功能案例：非同步程式碼](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj712233.aspx#async)
+* [黑白棋範例功能案例：非同步程式碼](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

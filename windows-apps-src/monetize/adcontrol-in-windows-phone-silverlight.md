@@ -24,19 +24,19 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 
 ## 新增廣告組件參考
 
-適用於 Windows Phone Silverlight 專案的 Microsoft Advertising 組件不會隨 Microsoft Store Engagement 和 Monetization SDK 安裝在本機。 在您可以開始更新程式碼之前，您必須先搭配使用「已連接服務」 與 Microsoft Store Engagement 和 Monetization SDK 中支援的廣告流量分配，以下載組件並在專案中加入其參考。
+適用於 Windows Phone Silverlight 專案的 Microsoft Advertising 組件不會隨 Microsoft Store Engagement 和 Monetization SDK 安裝在本機。 在您可以開始更新程式碼之前，您必須先搭配使用「已連接服務」**** 與 Microsoft Store Engagement 和 Monetization SDK 中支援的廣告流量分配，以下載組件並在專案中加入其參考。
 
-1.  在 Visual Studio 中，依序按一下 \[專案\]、\[加入已連接服務\]。
+1.  在 Visual Studio 中，依序按一下 [專案]****、[加入已連接服務]****。
 
-2.  在 \[加入已連接服務\] 對話方塊中，按一下 \[Ad Mediator\]，然後按一下 \[設定\]。
+2.  在 [加入已連接服務]**** 對話方塊中，按一下 [Ad Mediator]****，然後按一下 [設定]****。
 
-3.  按一下 \[選取廣告聯播網\]，並只選取 \[Microsoft Advertising\]。
+3.  按一下 [選取廣告聯播網]****，並只選取 [Microsoft Advertising]****。
 
     此時，適用於 Silverlight 的所有必要 Microsoft Advertising 組件都會透過 NuGet 封裝下載到您的本機專案，而且對這些組件的參考會自動新增到您的專案。 廣告流量分配組件的參考也會新增到專案。 在稍後的步驟中會移除廣告流量分配組件，因為此案例中不需要它。
 
-4.  在 \[選取廣告聯播網\] 對話方塊中，按一下 \[確定\]。 於下面隨即顯示的 \[擷取狀態\] 頁面中再按一次 \[確定\]，最後按一下 \[加入\] 來關閉 \[Ad Mediator\] 對話方塊。
+4.  在 [選取廣告聯播網]**** 對話方塊中，按一下 [確定]****。 於下面隨即顯示的 [擷取狀態]**** 頁面中再按一次 [確定]****，最後按一下 [加入]**** 來關閉 [Ad Mediator]**** 對話方塊。
 
-5.  在 \[方案總管\] 中，展開 \[參考\] 節點。 以滑鼠右鍵按一下 \[Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising\]，然後按一下 \[移除\]。 這個案例中不需要此組件參考。
+5.  在 [方案總管]**** 中，展開 [參考]**** 節點。 以滑鼠右鍵按一下 [Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising]****，然後按一下 [移除]****。 這個案例中不需要此組件參考。
 
 ## 撰寫 App 程式碼
 
@@ -64,15 +64,15 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
         </Capabilities>
     ```
 
-2.  (選擇性) 儲存您的專案。 按一下 \[檔案\] 功能表底下的 \[全部儲存\] 圖示，按一下 \[全部儲存\]。
+2.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
 
-3.  將「網際網路 (用戶端與伺服器)」 功能新增到專案中的 Package.appxmanifest 檔案 在 \[方案總管\] 中，按兩下 \[Package.appxmanifest\]。
+3.  將「網際網路 (用戶端與伺服器)」**** 功能新增到專案中的 Package.appxmanifest 檔案 在 [方案總管]**** 中，按兩下 [Package.appxmanifest]****。
 
     ![wp81silverlightmarkup\-solutionexplorer\-packageappxmanifest](images/13-b98c2a1a-69c3-4018-be0a-6ce010e703e7.jpg)
 
-    在 \[編輯器\] 中，按一下 \[功能\] 索引標籤。 選取 \[網際網路 (用戶端與伺服器)\] 方塊。
+    在 [編輯器]**** 中，按一下 [功能]**** 索引標籤。 選取 [網際網路 (用戶端與伺服器)]**** 方塊。
 
-4.  (選擇性) 儲存您的專案。 按一下 \[檔案\] 功能表底下的 \[全部儲存\] 圖示，按一下 \[全部儲存\]。
+4.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
 
 5.  修改 MainPage.xaml 檔案中的 Silverlight 標記，以包含 **Microsoft.Advertising.Mobile.UI** 命名空間。
 
@@ -114,7 +114,7 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 ## 使用開發人員中心發行包含即時廣告的 App
 
 
-1.  在開發人員中心儀表板中，移至 App 的 \[營利\]\[利用廣告營利\] 頁面，並建立獨立的 Microsoft Advertising 單位。 單位類型請選取 \[橫幅\]。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
 

@@ -3,6 +3,7 @@ author: msatranjr
 title: "Windows 執行階段類型的 .NET Framework 對應"
 description: "下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。"
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 

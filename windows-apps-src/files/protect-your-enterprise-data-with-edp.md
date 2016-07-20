@@ -1,25 +1,25 @@
 ---
 author: TylerMSFT
-Description: "本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。"
+Description: "本主題說明達成一些最常見的檔案相關企業資料保護 (EDP) 案例所需的程式設計工作範例。"
 MS-HAID: dev\_files.protect\_your\_enterprise\_data\_with\_edp
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "使用企業資料保護 (EDP) 來保護檔案"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+ms.sourcegitcommit: 9b9e9ecb70f3a0bb92038ae94f45ddcee3357dbd
+ms.openlocfilehash: a31fc65599f43be5b302b568774a51ab77065300
 
 ---
 
 # 使用企業資料保護 (EDP) 來保護檔案
 
+> [!NOTE]
+> 企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
 
-            __注意：__企業資料保護 (EDP) 原則無法套用於 Windows 10 1511 版 (組建 10586) 或更早版本。
+本主題說明達成一些最常見的檔案相關企業資料保護 (EDP) 案例所需的程式設計工作範例。 如需 EDP 如何與檔案、串流、剪貼簿、網路、背景工作及鎖定時的資料保護產生關係的完整開發人員說明，請參閱[企業資料保護 (EDP)](../enterprise/edp-hub.md)。
 
-本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。 如需 EDP 如何與檔案、串流、剪貼簿、網路、背景工作及鎖定時的資料保護產生關係的完整開發人員說明，請參閱[企業資料保護 (EDP)](../enterprise/edp-hub.md)。
-
-
-            **注意**：[企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)涵蓋許多與本主題所示範的案例相同的案例。
+> [!NOTE]
+> [企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)涵蓋許多與本主題所示範的案例相同的案例。
 
 ## 先決條件
 
@@ -48,14 +48,14 @@ string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 
 擁有路徑之後，您就能使用檔案總管輕鬆地找到您的應用程式建立的檔案。 如此一來，您就能確認它們受到保護，並且是以正確的身分識別保護。
 
-在 \[檔案總管\] 中，勾選 \[變更資料夾和搜尋選項\] ，在 \[檢視\] 索引標籤上，選取 \[使用色彩顯示加密的檔案\]。 另請使用 \[檔案總管\] 的 \[檢視\]\[新增欄\] 命令來新增 \[已加密到\] 欄，這樣您就可以看到保護檔案的企業身分識別。
+在 [檔案總管] 中，勾選 [變更資料夾和搜尋選項] ****，在 [檢視]**** 索引標籤上，選取 [使用色彩顯示加密的檔案]****。 另請使用 [檔案總管] 的 [檢視]****&gt;[新增欄]**** 命令來新增 [已加密到]**** 欄，這樣您就可以看到保護檔案的企業身分識別。
 
 ## 保護新檔案中的企業資料 (適用於互動式應用程式)
 
 
 企業資料可能以多種方法輸入您的 app，包括從特定的網路端點、檔案、剪貼簿或分享協定。 您的 app 也可以建立新的企業資料。 無論您的開明 app 如核取得企業資料，您的 app 在將資料保存到新檔案時，必須以受管理的企業身分識別小心保護資料。
 
-基本步驟是使用一般儲存 API 來建立檔案、使用 EDP API 以企業身分識別保護檔案，然後 (同樣使用一般儲存 API) 來寫入檔案。 寫入之前，請務必小心保護檔案 (如下列範例所示)。 您可以使用 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) 方法來保護檔案。 而且，一如往常，只有在某個身分識別受管理時，以該身分識別保護才有意義。 如需上述原因的詳細資訊，以及您的應用程式如何判斷它執行時所用的企業身分識別，請參閱[確認身分識別是受管理的](../enterprise/edp-hub.md#confirming_an_identity_is_managed)。
+基本步驟是使用一般儲存 API 來建立檔案、使用 EDP API 以企業身分識別保護檔案，然後 (同樣使用一般儲存 API) 來寫入檔案。 寫入之前，請務必小心保護檔案 (如下列範例所示)。 您可以使用 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) 方法來保護檔案。 而且，一如往常，只有在某個身分識別受管理時，以該身分識別保護才有意義。 如需上述原因的詳細資訊，以及您的應用程式如何判斷它執行時所用的企業身分識別，請參閱[確認身分識別是受管理的](../enterprise/edp-hub.md#confirming-an-identity-is-managed)。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -86,8 +86,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 ## 保護新檔案中的企業資料 (適用於背景工作)
 
 
-我們在上一節使用的 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API 僅適用於互動式 app。 針對背景工作，您的程式碼可以在鎖定畫面時執行。 而組織可能使用安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，當裝置被鎖定時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 這可防止在遺失裝置時發生資料外洩。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。 不過，在鎖定期間 (裝置被鎖定與解除鎖定之間的時間) 可以建立新的受保護檔案並存取它們，同時又讓檔案控制代碼保持開啟。 
-            **StorageFolder.CreateFileAsync** 會在檔案建立時關閉控制代碼，因此不能使用這個演算法。
+我們在上一節使用的 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API 僅適用於互動式 app。 針對背景工作，您的程式碼可以在鎖定畫面時執行。 而組織可能使用安全的「鎖定時的資料保護」(DPL) 原則，在此情況下，當裝置被鎖定時，會從裝置記憶體暫時移除存取受保護資源所需的加密金鑰。 這可防止在遺失裝置時發生資料外洩。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。 不過，在鎖定期間 (裝置被鎖定與解除鎖定之間的時間) 可以建立新的受保護檔案並存取它們，同時又讓檔案控制代碼保持開啟。 **StorageFolder.CreateFileAsync** 會在檔案建立時關閉控制代碼，因此不能使用這個演算法。
 
 1.  使用 **StorageFolder.CreateFileAsync** 來建立新檔案。
 2.  使用 **FileProtectionManager.ProtectAsync** 來進行加密。
@@ -252,27 +251,23 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-
-            **注意：**本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
 ## 相關主題
 
+- [企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[企業資料保護 (EDP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
-
-[**Windows.Security.EnterpriseData 命名空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
- 
-
- 
+- [**Windows.Security.EnterpriseData 命名空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Jul16_HO1-->
 
 

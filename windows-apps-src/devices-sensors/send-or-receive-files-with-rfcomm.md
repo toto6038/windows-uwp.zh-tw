@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: "藍牙 RFCOMM"
 description: "本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。"
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a4d7b0c9e51f3d118c5ed9ac83af2cc6d502d6b3
 
 ---
 # 藍牙 RFCOMM
@@ -33,7 +34,7 @@ app 可以在背景工作中執行多步驟的裝置作業，因此即使 app �
 
 -   使用 **RfcommDeviceService.GetDeviceSelector\*** 函式協助產生 AQS 查詢，該查詢可用於所需服務的列舉成對裝置執行個體。
 -   選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) 剖析屬性的資料)。
--   建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) 和 [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) 屬性以[**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) 至具有適當參數的遠端裝置服務。
+-   建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) 和 [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) 屬性以[**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) 至具有適當參數的遠端裝置服務。
 -   遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) 上將它傳送至裝置。
 
 ```csharp
@@ -367,6 +368,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

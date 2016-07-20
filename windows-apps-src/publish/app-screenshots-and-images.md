@@ -3,6 +3,7 @@ author: jnHs
 Description: "您的 app 需要包括各種標誌、螢幕擷取畫面和影像。"
 title: "App 螢幕擷取畫面與影像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+translationtype: Human Translation
 ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
 ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
 
@@ -106,6 +107,6 @@ Windows 市集編輯團隊會使用不同的影像，在市集中展示 app。 �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

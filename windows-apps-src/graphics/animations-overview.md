@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "動畫概觀"
 description: "使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的 app 中。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 15fa3b33bf302633ef8cd51928e1af5ea726cc01
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d50bf2b24d134fd50ae2bea976509b30a511652
 
 ---
 # 動畫概觀
@@ -24,6 +25,8 @@ Windows 執行階段動畫庫中的動畫有下列優點：
 
 例如，當使用者將項目新增到清單時，新項目不會立即出現在清單中，新項目會以動畫方式就定位。 清單中的其他項目則會在短時間內，以動畫方式移至它們的新位置，以便將空間讓給新增的項目。 對使用者而言，這裡的轉換行為會使控制項互動更為明顯。
 
+Windows 10 版本 1607 針對實作動畫引進新的 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API，元素會在瀏覽期間顯示在檢視之間的動畫。 這個 API 的使用模式與其他動畫程式庫 API 不同。 **ConnectedAnimationService** 的用法涵蓋在[參考頁面](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)。
+
 然而動畫庫無法為每種可能的狀況提供動畫。 在某些狀況下，您可能會希望以 XAML 建立自訂動畫。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
 此外，針對諸如根據 ScrollViewer 捲動位置產生項目動畫效果的特定進階案例，開發人員可能會想要使用視覺層交互操作來實作自訂動畫。 如需詳細資訊，請參閱[視覺層](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
@@ -36,6 +39,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 -   「佈景主題動畫」**是預先定義之 Windows 執行階段 XAML UI 類型的一或多個屬性的動畫。 佈景主題動畫與佈景主題轉換不同，因為佈景主題動畫會針對某個特定元素，並存在於某個控制項內的特定視覺狀態中，而佈景主題轉換則會指派給存在於視覺狀態外部控制項的屬性，而且會影響這些狀態之間的轉換。 許多 Windows 執行階段 XAML 控制項在屬於其控制項範本一部分的腳本內，都包含佈景主題動畫以及由視覺狀態觸發的動畫。 只要您沒有修改範本，您所擁有的這些內建佈景主題動畫就可供您 UI 中的控制項使用。 不過，如果您取代了範本，則也將移除內建的控制項佈景主題動畫。 若要回復這些佈景主題動畫，您必須定義一個腳本，在控制項的這組視覺狀態內包含佈景主題動畫。 您也可以從不在視覺狀態內的腳本執行佈景主題動畫，並使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) 方法啟動這些佈景主題動畫，但這比較少見。 佈景主題動畫是動畫庫的一部分。
 -   當控制項從某個已定義的視覺狀態轉換成另一個狀態時，就會套用「視覺轉換」**。 它們是您撰寫的自訂動畫，通常與您針對控制項撰寫的自訂範本以及該範本內的視覺狀態定義有關。 這個動畫只會在狀態與狀態之間執行；執行時間通常很短，頂多只有幾秒鐘。 如需詳細資訊，請參閱[視覺狀態的腳本動畫的 "VisualTransition" 區段](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)。
 -   「腳本動畫」**會隨著時間變更 Windows 執行階段相依性屬性的值。 腳本可定義為視覺轉換的一部分，或是在執行階段由應用程式所觸發。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。 如需相依性屬性及其存在位置的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
+-   全新 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API 提供的「連接動畫」**，讓開發人員輕鬆就能建立元素在瀏覽期間顯示於檢視之間的動畫效果。 Windows 10 版本 1607 起可以取得此 API。 如需詳細資訊，請參閱 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)。
 
 ## 動畫庫中可用的動畫
 
@@ -337,7 +341,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 與轉換動畫不同，佈景主題動畫沒有自動執行的內建觸發程序 (轉換)。 當您以 XAML 定義佈景主題動畫時，必須使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 以包含該佈景主題動畫。 您也可以變更動畫的預設行為。 例如，可藉由提高 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 時間值，使淡出的速度變慢。
 
-**注意：**基於說明基本動畫技術的目的，我們將使用 app 程式碼呼叫 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的方法來啟動動畫。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
+**注意：**基於說明基本動畫技術的目的，我們將使用 app 程式碼呼叫 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的方法來啟動動畫。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
 
  
 
@@ -380,6 +384,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

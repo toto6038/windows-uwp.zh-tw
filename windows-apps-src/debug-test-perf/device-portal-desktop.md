@@ -3,6 +3,7 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "傳統型裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。"
+translationtype: Human Translation
 ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
 ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
 
@@ -26,11 +27,11 @@ Device Portal 可讓您檢視診斷資訊，並透過 HTTP 從您的瀏覽器與
 
 ### 開啟 Device Portal
 
-在 \[開發人員設定\] 功能表中 (啟用 \[開發人員模式\])，您可啟用 Device Portal。  
+在 [開發人員設定]**** 功能表中 (啟用 [開發人員模式])，您可啟用 Device Portal。  
 
 啟用 Device Portal 時，您也必須為 Device Portal 建立使用者名稱與密碼。 請勿使用您的 Microsoft 帳戶或其他 Windows 認證。  
 
-啟用 Device Portal 之後，您會在 \[設定\] 區段的底端看見其連結。 記下套用至 URL 結尾的連接埠號碼：啟用 Device Portal 時會隨機產生此連接埠號碼，但其應與桌面重新開機時保持一致。 若您想要手動設定永久連接埠號碼，請參閱[設定連接埠號碼](device-portal-desktop.md#setting-port-numbers)。
+啟用 Device Portal 之後，您會在 [設定]**** 區段的底端看見其連結。 記下套用至 URL 結尾的連接埠號碼：啟用 Device Portal 時會隨機產生此連接埠號碼，但其應與桌面重新開機時保持一致。 若您想要手動設定永久連接埠號碼，請參閱[設定連接埠號碼](device-portal-desktop.md#setting-port-numbers)。
 
 您可以從兩種連線至 Device Portal 的方式中進行選擇：本機主機以及透過區域網路 (包括 VPN)。
 
@@ -86,8 +87,8 @@ HTTPS 需要進行驗證和安全通訊。
 
 1. 確認您的電腦是否已連線至網際網路。 
 2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 
-3. 在 \[設定\] &gt; \[更新與安全性\] &gt; Windows Updates 中，檢查 Windows 更新。
-4. 確認 Windows 開發人員模式套件顯示於 \[設定\] &gt; \[系統\] &gt; \[應用程式與功能\] &gt; 管理選用功能 &gt; \[新增功能\]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。 
+3. 在 [設定] &gt; [更新與安全性] &gt; [Windows Updates](ms-settings:windowsupdate) 中，檢查 Windows 更新。
+4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; [管理選用功能](ms-settings:optionalfeatures) &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。 
 
 執行上述步驟之後，停用和重新啟用開發人員模式確認已修正問題。 
 
@@ -100,7 +101,7 @@ HTTPS 需要進行驗證和安全通訊。
 
 解決此問題：
 
-1. 在 \[設定\] &gt; \[更新與安全性\] &gt; Windows Updates 中，檢查 Windows 更新。
+1. 在 [設定] &gt; [更新與安全性] &gt; [Windows Updates](ms-settings:windowsupdate) 中，檢查 Windows 更新。
 2. 重新啟動電腦，以確保套用所有的更新。
 
 

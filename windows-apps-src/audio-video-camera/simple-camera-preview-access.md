@@ -23,10 +23,10 @@ ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
 
 **將功能新增到 app 資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 \[方案總管\] 中的 package.appxmanifest 項目，開啟 app 資訊清單的設計工具。
-2.  選取 \[功能\] 索引標籤。
-3.  核取 \[網路攝影機\] 方塊和 \[麥克風\] 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 \[圖片媒體櫃\] 方塊和 \[視訊媒體櫃\] 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
+2.  選取 [功能]**** 索引標籤。
+3.  核取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
 
 ## 將 CaptureElement 新增到您的頁面
 
@@ -36,10 +36,7 @@ ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
 
 ## 使用 MediaCapture 來開始預覽串流
 
-
-            [
-              **MediaCapture**
-            ](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
+[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件是您 app 對裝置相機的介面。 此類別是 Windows.Media.Capture 命名空間的成員。 本文中的範例除了使用包含在預設專案範本中的項目，也會使用 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空間的 API。
 
 新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
@@ -51,8 +48,7 @@ ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
 
 建立 **MediaCapture** 類別的新執行個體，然後呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 來初始化擷取裝置。 這個方法可能會失敗 (例如在沒有相機的裝置上)，因此您應該從 **try** 區塊中呼叫它。 若使用者在裝置的隱私權設定中停用相機存取，則當您嘗試初始化相機時將會擲回 **UnauthorizedAccessException**。 如果您沒有將適當的功能加入至應用程式資訊清單，您也會在開發期間看到此例外狀況。
 
-
-            **重要事項** 在某些裝置系列，在授與您的應用程式存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
+**重要事項** 在某些裝置系列，在授與您的應用程式存取裝置相機的權限之前，會先向使用者顯示使用者同意提示。 基於此因素，您必須只能從主要的 UI 執行緒呼叫 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 嘗試從另一個執行緒初始化相機，可能導致初始化失敗。
 
 透過設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 屬性將 **MediaCapture** 連接到 **CaptureElement**。 最後，呼叫 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 開始預覽。
 

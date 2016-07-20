@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 工具簡介"
 description: "使用 Windows Device Portal 的 Xbox One 特有工具「開發人員首頁」。"
 area: Xbox
-ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
-ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 ---
 
@@ -90,7 +91,7 @@ _開發人員首頁_是 Xbox One Development Kit 上的一種工具體驗，設�
 
 若要定義開發人員套件的主機名稱，請移至主機設定工具，然後在 [主機名稱]____ 方塊中輸入主機名稱。  
 
-  > **注意** &nbsp;&nbsp;建立主機名稱時，不會強制執行名稱唯一性。 請注意避免名稱重複。 其中一種做法是從開發電腦名稱衍生主機名稱，這在組織內通常是唯一的。
+  > **注意**&nbsp;&nbsp;建立主機名稱時，不會強制執行名稱唯一性。 請注意避免名稱重複。 其中一種做法是從開發電腦名稱衍生主機名稱，這在組織內通常是唯一的。
 
 ## Windows Device Portal
 Windows Device Portal (WDP) 是一種 OneCore 裝置管理工具，允許瀏覽器型裝置管理體驗。
@@ -115,7 +116,8 @@ Windows Device Portal (WDP) 是一種 OneCore 裝置管理工具，允許瀏覽�
   ![安全性憑證警告](images/security_cert_warning.jpg)
 
 ## 另請參閱
-- [Microsoft Developer 技術︰Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
+- [開發 UWP 時如何使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)
+- [Microsoft Developer 技術︰Windows Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Xbox One 上的 UWP](index.md)
 
 
@@ -124,6 +126,6 @@ Windows Device Portal (WDP) 是一種 OneCore 裝置管理工具，允許瀏覽�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

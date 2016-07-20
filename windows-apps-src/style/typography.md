@@ -8,8 +8,8 @@ template: detail.hbs
 extraBodyClass: style-typography
 brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
 
 ---
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
 
 ![說明大型字體堆疊在小型字體上的方式](images/line-height-stacking.png)
 
-在 XAML 中，這會透過堆疊兩個 [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 並設定適當的邊界來完成。
+在 XAML 中，這會透過堆疊兩個 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 並設定適當的邊界來完成。
 
 ```xaml
 <StackPanel Width="200">
@@ -83,7 +83,7 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 控制字型間距調整及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設為 “true” 而 FontStretch 會設為 “Normal”，這些是建議的值。
+在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 控制字型間距調整及使用 [FontStretch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設為 “true” 而 FontStretch 會設為 “Normal”，這些是建議的值。
     </div>
 </aside>
 
@@ -129,7 +129,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型衡量標準的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
+XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型衡量標準的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
     </div>
 </aside>
 
@@ -154,7 +154,7 @@ XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/win
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-大部分的坡形層級是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 提供 (例如：`HeaderTextBlockStyle`)。 
+大部分的坡形層級是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 提供 (例如：`HeaderTextBlockStyle`)。 
     </div>
 </aside>
 
@@ -185,6 +185,6 @@ XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/win
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

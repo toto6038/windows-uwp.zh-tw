@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "建立 Hello, world 應用程式 (XAML)"
 description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0a524d51f713c37ce2069b4e750bf3ed20fe19ab
 
 ---
 
@@ -13,8 +13,7 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 
 本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上的 Universal Windows Platform (UWP) 簡單 "Hello, world" app。 使用 Microsoft Visual Studio 中的單一專案，您可以建置可在任何 Windows 10 裝置上執行的 app。 這裡的重點是建立可在傳統型裝置和行動裝置上順利執行的 app。
 
-
-            **重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
+**重要** 本教學課程與 Microsoft Visual Studio 2015 與 Windows 10 搭配使用。 在較早的版本中無法正常運作。
 
 您將在此處了解如何：
 
@@ -30,7 +29,7 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 -   本教學課程直接進入建立簡單通用 app 的步驟。 因此在開始本教學課程之前，我們強烈建議您閱讀並了解 [Windows 10 的新功能](https://dev.windows.com/whats-new-windows-10-dev-preview)和[什麼是通用 Windows 應用程式](whats-a-uwp.md)的概觀資訊。
 -   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。
 -   我們假設您對 XAML 和 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/Mt185595)的概念有基本的了解。
--   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 \[視窗\] 功能表中的 \[重設視窗配置\] 命令重設它。
+-   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 [視窗]**** 功能表中的 [重設視窗配置]**** 命令重設它。
 
 ##  步驟 1：在 Visual Studio 中建立新專案
 
@@ -39,29 +38,31 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 
    Visual Studio 2015 起始頁隨即顯示。 (以下將 Visual Studio 2015 簡稱為 Visual Studio。)
 
-2.  在 \[檔案\] 功能表上，選取 \[新增\]\[專案\]。
+2.  在 [檔案]**** 功能表上，選取 [新增]**** > [專案]****。
 
-   隨即顯示 \[新增專案\] 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
+   隨即顯示 [新增專案]**** 對話方塊。 您可以在對話方塊的左窗格中選取要顯示的範本類型。
 
-3.  在左窗格中，依序展開 \[已安裝的\] &gt; \[範本\] &gt; \[Visual C#\] &gt; \[Windows\]，然後選取 \[通用\] 範本群組。 對話方塊的中央窗格會顯示 Universal Windows Platform (UWP) app 的專案範本清單。
+3.  在左窗格中，依序展開 [已安裝的] &gt; [範本] &gt; [Visual C#] &gt; [Windows]****，然後選取 [通用]**** 範本群組。 對話方塊的中央窗格會顯示通用 Windows 平台 (UWP) app 的專案範本清單。
 
-   ![\[新增專案\] 視窗 ](images/newproject-cs.png)
+   ![[新增專案] 視窗 ](images/newproject-cs.png)
+   
+   (如果您沒有看到這些選項，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。)
 
-4.  在中央窗格中，選取 \[空白應用程式 (通用 Windows)\] 範本。
+4.  在中央窗格中，選取 [空白應用程式 (通用 Windows)]**** 範本。
 
-   \[空白應用程式\] 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
+   [空白應用程式]**** 範本可以建立能夠編譯、執行的最基本 UWP 應用程式，但不包含使用者介面控制項或資料。 在本教學課程中，您會將控制項新增到 app。
 
-5.  在 \[名稱\] 文字方塊中，輸入 "HelloWorld"。
-6.  按一下 \[確定\] 來建立專案。
+5.  在 [名稱]**** 文字方塊中，輸入 "HelloWorld"。
+6.  按一下 [確定]**** 來建立專案。
 
-   Visual Studio 會建立您的專案，然後在 \[方案總管\] 中顯示。
+   Visual Studio 會建立您的專案，然後在 [方案總管]**** 中顯示。
 
    ![HelloWorld 專案的 Visual Studio 方案總管](images/solutionexplorer-cs.png)
 
-雖然 \[空白應用程式\] 是最基本的範本，但是仍然包含些許檔案：
+雖然 [空白應用程式]**** 是最基本的範本，但是仍然包含些許檔案：
 
 -   一個資訊清單檔案 (Package.appxmanifest)，說明應用程式的名稱、描述、磚、起始頁等，並列出其中包含的檔案。
--   在 \[開始\] 功能表上顯示的一組標誌影像 (Assets/Square150x150Logo.scale-200.png、Assets/Square44x44Logo.scale-200.png 和 Assets/Wide310x150Logo.scale-200.png)。
+-   在 [開始] 功能表上顯示的一組標誌影像 (Assets/Square150x150Logo.scale-200.png、Assets/Square44x44Logo.scale-200.png 和 Assets/Wide310x150Logo.scale-200.png)。
 -   在 Windows 市集中代表您的應用程式的影像 (Assets/StoreLogo.png)。
 -   應用程式啟動時顯示的啟動顯示畫面 (Assets/SplashScreen.scale-200.png)。
 -   應用程式的 XAML 和程式碼檔案 (App.xaml 和 App.xaml.cs)。
@@ -74,7 +75,7 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 
 ### 檔案提供哪些內容？
 
-若要在專案中檢視和編輯檔案，請按兩下 \[方案總管\] 中的檔案。 根據預設，您可以像展開資料夾一樣展開 XAML 檔案，檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計表面與 XAML 編輯器。
+若要在專案中檢視和編輯檔案，請按兩下 [方案總管]**** 中的檔案。 根據預設，您可以像展開資料夾一樣展開 XAML 檔案，檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計表面與 XAML 編輯器。
 
 在本教學課程中，您僅會使用上述所列的一些檔案：App.xaml、MainPage.xaml 以及 MainPage.xaml.cs。
 
@@ -133,7 +134,7 @@ namespace HelloWorld
 
 **修改起始頁**
 
-1.  在 \[方案總管\] 中按兩下 \[MainPage.xaml\] 以將它開啟。
+1.  在 [方案總管]**** 中按兩下 [MainPage.xaml] 以將它開啟。
 2.  在 XAML 編輯器中新增 UI 的控制項。
 
    在根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 中，新增這個 XAML。 它包含含有標題 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、詢問使用者名稱的 **TextBlock**、接受使用者名稱的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 元素、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 以及顯示問候語的另一個 **TextBlock** 元素。 這些控制項的其中一部分具有名稱，以便您稍後在程式碼中參考它們。
@@ -155,26 +156,27 @@ namespace HelloWorld
 ## 步驟 3：啟動應用程式
 
 
-到目前為止，您已經建立了一個非常簡單的 app。 您可以趁現在建置、部署和啟動您的應用程式，並看看它的外觀。 您可以在本機電腦、模擬器或遠端裝置上進行應用程式的偵錯。 以下是在 Visual Studio 中的目標裝置功能表。
+到目前為止，您已經建立了一個非常簡單的 App。 您可以趁現在建置、部署和啟動您的應用程式，並看看它的外觀。 您可以在本機電腦、模擬器或遠端裝置上進行應用程式的偵錯。 以下是在 Visual Studio 中的目標裝置功能表。
 
 ![用於偵錯應用程式的裝置目標下拉式清單](images/uap-debug.png)
 
 ### 在傳統型裝置上啟動應用程式
 
-根據預設，app 會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
+根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
 
 -   **模擬器**
--   **本機電腦**
+-   **本機電腦 
+**
 -   **遠端電腦**
 
 **在本機電腦上開始偵錯**
 
-1.  在目標裝置功能表 (開始偵錯功能表) 的 \[標準\] 工具列上，確定已選取 \[本機電腦\]。 (這是預設選項)。
-2.  按一下工具列上的 \[開始偵錯\] 按鈕 (開始偵錯按鈕)。
+1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 [標準]**** 工具列上，確定已選取 [本機電腦]****。 (這是預設選項)。
+2.  按一下工具列上的 [開始偵錯]**** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
+   在 [偵錯]**** 功能表中，按一下 [開始偵錯]****。
 
    –或–
 
@@ -186,17 +188,17 @@ namespace HelloWorld
 
 ![最初的應用程式畫面](images/helloworld-1-cs.png)
 
-按下 Windows 鍵以開啟 \[開始\] 功能表，然後顯示所有 app。 請注意，在本機部署應用程式會在 \[開始\] 功能表上新增磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 \[開始\] 功能表中的磚。
+按下 Windows 鍵以開啟 [開始]**** 功能表，然後顯示所有 app。 請注意，在本機部署應用程式會在 [開始] ****功能表上新增磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 [開始]**** 功能表中的磚。
 
 應用程式還沒有太多功能—但是，恭喜您，您已經建置第一個 UWP app 了！
 
 **停止偵錯**
 
--   按一下工具列中的 \[停止偵錯\] 按鈕 (停止偵錯按鈕)。
+-   按一下工具列中的 [停止偵錯]**** 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[停止偵錯\]。
+   在 [偵錯]**** 功能表中，按一下 [停止偵錯]****。
 
    –或–
 
@@ -213,15 +215,17 @@ namespace HelloWorld
 -   **模擬器 <SDK version> WVGA 4 吋 1GB**
 -   等等... (其他組態中的各種模擬器)
 
-在小螢幕和記憶體有限的裝置上測試您的應用程式是不錯的想法，因此，請使用 \[模擬器 10.0.10240.0 WVGA 4 inch 512MB\] 選項。
+(如果您沒有看到模擬器，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。)
+
+在小螢幕和記憶體有限的裝置上測試您的應用程式是不錯的想法，因此，請使用 [模擬器 10.0.10240.0 WVGA 4 inch 512MB]**** 選項。
 **在行動裝置模擬器上開始偵錯**
 
-1.  在目標裝置功能表 (開始偵錯功能表) 的 \[標準\] 工具列上，選擇 \[模擬器 10.0.10240.0 WVGA 4 inch 512MB\]。
-2.  按一下工具列中的 \[開始偵錯\] 按鈕 (開始偵錯按鈕)。
+1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 [標準]**** 工具列上，選擇 [模擬器 10.0.10240.0 WVGA 4 inch 512MB]****。
+2.  按一下工具列中的 [開始偵錯]**** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
+   在 [偵錯]**** 功能表中，按一下 [開始偵錯]****。
 
    –或–
 
@@ -240,7 +244,7 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程
 
 XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓您有機會採取動作來回應事件。 您可以將回應事件的程式碼放置在事件處理常式方法中。 在許多應用程式中，其中一個最常見的事件就是使用者按一下 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
 
-讓我們為您按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件建立一個事件處理常式。 這個事件處理常式會從 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項取得使用者的名稱，並使用它將問候語輸出到 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)。
+讓我們為您按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件建立一個事件處理常式。 這個事件處理常式會從 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項取得使用者的名稱，並使用它將問候語輸出到 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)。
 
 ### 使用適用於觸控、滑鼠及手寫筆輸入的事件
 
@@ -249,10 +253,10 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
 **新增事件處理常式**
 
 1.  在 XAML 或設計檢視中，選取新增到 MainPage.xaml 的 "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
-2.  在 \[屬性\] 視窗中，按一下 \[事件\] 按鈕 (事件按鈕)。
+2.  在 [屬性]**** 視窗中，按一下 [事件] 按鈕 (![事件按鈕](images/eventsbutton.png))。
 3.  在事件清單的最上方尋找 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件。 在事件的文字方塊中，輸入處理 **Click** 事件的函式名稱。 在這個範例中，輸入 "Button\_Click"。
 
-   ![\[屬性\] 視窗中的事件清單](images/xaml-hw-event.png)
+   ![[屬性] 視窗中的事件清單](images/xaml-hw-event.png)
 
 4.  按 Enter 鍵。 這時候會建立事件處理常式方法並在程式碼編輯器中開啟，如此一來，您就可以新增事件發生要執行的程式碼。
 
@@ -262,7 +266,7 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
    <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
-5.  將程式碼新增到在程式碼後置頁面中建立的事件處理常式。 在事件處理常式中，從 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項擷取使用者的名稱，並用它來建立問候語。 使用 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 顯示結果。
+5.  將程式碼新增到在程式碼後置頁面中建立的事件處理常式。 在事件處理常式中，從 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控制項擷取使用者的名稱，並用它來建立問候語。 使用 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 顯示結果。
     
 ```csharp    
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -271,7 +275,7 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
     }
 ```    
 
-6.  在本機電腦上偵錯應用程式。 在文字方塊中輸入您的名稱並按一下按鈕時，app 會顯示個人化問候語。
+6.  在本機電腦上偵錯應用程式。 在文字方塊中輸入您的名稱並按一下按鈕時，App 會顯示個人化問候語。
 
 ## 步驟 5：隨不同的視窗大小調整 UI。
 
@@ -310,9 +314,9 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
 
 如果您已在舊版的 XAML 中使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021)，您可能會注意到這裡的 XAML 使用簡化的語法。
 
-名為 `wideState` 的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 有一個 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) 的[**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 畫素時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 物件，因此它會使用您在頁面內容的 XAML 中定義的配置屬性。
+名為 `wideState` 的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 有一個 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) 的[**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 畫素時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 物件，因此它會使用您在頁面內容的 XAML 中定義的配置屬性。
 
-第二個 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) (`narrowState`) 有一個 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) 的 [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 0。 當視窗寬度大於 0 但小於 641 畫素時，會套用這個狀態。 (在 641 像素時，會套用 `wideState`)。在這個狀態中，您要定義一些 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 物件，以變更 UI 中的控制項配置屬性：
+第二個 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) (`narrowState`) 有一個 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) 的 [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 0。 當視窗寬度大於 0 但小於 641 畫素時，會套用這個狀態。 (在 641 像素時，會套用 `wideState`)。在這個狀態中，您要定義一些 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 物件，以變更 UI 中的控制項配置屬性：
 
 -   將 `inputPanel` 元素的 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) 從 **Horizontal** 變更為 **Vertical**。
 -   新增上邊界為 4 至 `inputButton` 元素。
@@ -324,6 +328,6 @@ XAML 元素可以在特定事件發生時傳送訊息。 這些事件訊息讓�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

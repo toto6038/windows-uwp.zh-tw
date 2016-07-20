@@ -42,8 +42,7 @@ ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
 
 如需詳細資訊，請參閱[使用紋理與影像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
 
-> 
-            **注意** 影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **注意** 影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
 
  
 
@@ -62,8 +61,7 @@ ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
 
 如需詳細資訊，請參閱[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
 
-> 
-            **注意** 模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **注意** 模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
 
  
 
@@ -115,7 +113,7 @@ float3 LambertLighting(
 
 您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
 
-若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。 您可以將下列組建自訂類型新增到專案。
+若要新增組建自訂，您可以在 [方案總管]**** 中以滑鼠右鍵按一下專案，然後選取 [組建自訂]****。 您可以將下列組建自訂類型新增到專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
@@ -140,8 +138,7 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 
 如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
 
-> 
-            **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 

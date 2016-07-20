@@ -2,8 +2,9 @@
 author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 01cd10c72745ff4bd8204a9adaa8eebf5a892efe
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
 
 ---
 
@@ -93,7 +94,7 @@ CommandBar 控制項有 3 個可用來新增命令與內容的屬性：[**Primar
 
 預設溢位區域的樣式會與命令列不同。 您可以將 [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) 屬性設定為以 [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx) 為目標的 [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx)，以調整樣式。
 
-您可以視需要，透過程式設計方式在 PrimaryCommands 與 SecondaryCommands 之間移動命令。 {{&gt; internal content = "命令也可以隨著命令列寬度的變更 (例如當使用者調整其 App 視窗大小時) 自動移入或移出溢位。 動態溢位預設為開啟，但 App 可以藉由變更 `IsDynamicOverflowEnabled` 屬性的值關閉這個行為。"}}
+您能以程式設計方式控制在 PrimaryCommands 與 SecondaryCommands 之間移動命令。 
 
 ### 應用程式列按鈕
 
@@ -139,9 +140,9 @@ PrimaryCommands 和 SecondaryCommands 只能填入 [**AppBarButton**](https://ms
 
 您可以設定 **Content** 屬性，以將任何 XAML 元素新增到內容區域。 若要新增多個元素，您必須將它們放在面板容器中，然後將面板變成 Content 屬性的單一子系。
 
-當主要命令和內容都存在時，主要命令的優先順序較高，而可能導致內容被裁剪。 {{&gt; internal content = "在已啟用動態溢位的情況下，將不會裁剪內容，因為主要命令會移到溢位功能表中來釋出空間供內容使用。"}}
+當主要命令和內容都存在的時候，主要命令的優先順序較高，而且可能造成內容被裁剪。 
 
-當 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 為 **Compact** 時，如果內容比精簡大小的命令列還要大，內容就會被裁剪。 您應該處理 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) 和 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件，以顯示或隱藏內容區域中的 UI 部分，讓它們不被裁剪。 請參閱[開啟與關閉狀態](#open-and-closed-states)一節以取得詳細資訊。
+當 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 為 **Compact** 時，如果內容比精簡大小的命令列還要大時，內容就會被裁剪。 您應該處理 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) 和 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件，以顯示或隱藏內容區域中的 UI 部分，讓它們不被裁剪。 請參閱[開啟與關閉狀態](#open-and-closed-states)一節以取得詳細資訊。
 
 ## 開啟與關閉狀態
 
@@ -286,6 +287,6 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

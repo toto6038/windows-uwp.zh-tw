@@ -5,8 +5,9 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "鍵盤協助工具"
 label: Keyboard accessibility
 template: detail.hbs
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
 
 ---
 
@@ -52,18 +53,9 @@ XAML
 
 無論您是調整 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 值或者使用預設順序，都適用這些規則：
 
-* 
-            [
-              **TabIndex**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209461) 等於 0 的 UI 元素會根據 XAML 或子集合中的宣告順序，新增到 Tab 順序。
-* 
-            [
-              **TabIndex**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209461) 大於 0 的 UI 元素會根據 **TabIndex** 的值，新增到 Tab 順序。
-* 
-            [
-              **TabIndex**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209461) 小於 0 的 UI 元素會新增到 Tab 順序，並顯示在任何零值的前面。 這與 HTML 處理 **tabindex** 屬性的方法有潛在的不同 (且舊版的 HTML 規格不支援負 **tabindex**)。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 等於 0 的 UI 元素會根據 XAML 或子集合中的宣告順序，新增到 Tab 順序。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 大於 0 的 UI 元素會根據 **TabIndex** 的值，新增到 Tab 順序。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 小於 0 的 UI 元素會新增到 Tab 順序，並顯示在任何零值的前面。 這與 HTML 處理 **tabindex** 屬性的方法有潛在的不同 (且舊版的 HTML 規格不支援負 **tabindex**)。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
@@ -96,10 +88,10 @@ XAML
 ## 鍵盤快速鍵  
 除了實作應用程式的鍵盤瀏覽以及啟用功能之外，實作應用程式功能的捷徑也是不錯的做法。 Tab 瀏覽會提供基本的鍵盤支援，不過遇到複雜的表單時，可能需要加入快速鍵的支援。 這樣可以讓應用程式更加容易操作，即使同時使用鍵盤和指標裝置的人，也是如此。
 
-「捷徑」是一種鍵盤組合，可讓使用者更有效率地存取應用程式功能，提高工作效率。 目前有兩種捷徑：
+「捷徑」**是一種鍵盤組合，可讓使用者更有效率地存取應用程式功能，提高工作效率。 目前有兩種捷徑：
 
-* 「便捷鍵」是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
-* 「快速鍵」是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
+* 「便捷鍵」**是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
+* 「快速鍵」**是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
 
 請為依賴螢幕助讀程式或其他輔助技術的使用者，提供一種便利的方法，讓他們發現應用程式的快速鍵。 使用工具提示、無障礙名稱、無障礙說明或其他螢幕上的溝通方式，與快速鍵進行溝通。 至少應在 app 的說明內容中詳細記載快速鍵。
 
@@ -154,7 +146,7 @@ XAML
 <span id="implementing_a_key_event_handler"/>
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
 ### 實作按鍵事件處理常式  
-像按鍵事件這種輸入事件，都使用一種稱為「路由事件」的事件概念。 路由事件可以透過複合控制項的子元素反昇，因此通用控制項父元素可以處理多個子元素的事件。 如果控制項包含多個複合組件，而這些組件的設計無法擁有焦點或無法成為 Tab 順序一部分，這時候很適合使用這種事件模型，為控制項定義快速鍵動作。
+像按鍵事件這種輸入事件，都使用一種稱為「路由事件」**的事件概念。 路由事件可以透過複合控制項的子元素反昇，因此通用控制項父元素可以處理多個子元素的事件。 如果控制項包含多個複合組件，而這些組件的設計無法擁有焦點或無法成為 Tab 順序一部分，這時候很適合使用這種事件模型，為控制項定義快速鍵動作。
 
 如需示範如何撰寫包含輔助按鍵 (例如 Ctrl 鍵) 檢查的按鍵事件處理常式的程式碼範例，請參閱[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/Mt185607)。
 
@@ -164,7 +156,7 @@ XAML
 ## 自訂控制項的鍵盤瀏覽  
 如果子元素彼此之間存在空間關係時，建議您使用方向鍵當作鍵盤快速鍵在子元素之間瀏覽。 如果樹狀檢視節點具有獨立的子項目來處理展開折疊以及節點啟動，請使用向左鍵或向右鍵，提供鍵盤展開折疊功能。 如果您有一個方向控制項可以在控制項內容中支援方向瀏覽，請使用適當的方向鍵。
 
-通常，您是在類別邏輯包含 [**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) 和 [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) 方法的覆寫，實作自訂控制項的自訂按鍵處理。
+通常，您是在類別邏輯包含 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) 和 [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) 方法的覆寫，實作自訂控制項的自訂按鍵處理。
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
@@ -235,7 +227,7 @@ XAML
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 ## 鍵盤協助工具和 Windows Phone
-Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 \[文字\] SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
+Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 [文字]**** SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
 
 鍵盤快速鍵通常與 Windows Phone app 無關，因為 SIP 不會包含 Ctrl 鍵或 Alt 鍵。
 
@@ -250,6 +242,6 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

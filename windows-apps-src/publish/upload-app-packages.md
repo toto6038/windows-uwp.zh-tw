@@ -4,8 +4,8 @@ Description: "套件 頁面是為您要提交的應用程式上傳所有套件�
 title: "上傳應用程式套件"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+ms.sourcegitcommit: 7f1a40f33a3137e4e0ded674b5bfdf35f11135dc
+ms.openlocfilehash: f628820747f51f7200e2748c2c3f41b58455b2fa
 
 ---
 
@@ -43,14 +43,8 @@ ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
 
 如果我們偵測到您的一或多個套件重複，我們將顯示一個警告，建議您從此提交中移除重複的套件。 當您先前已上傳套件，而現在又提供支援相同客戶群的更新版本套件時，通常會發生這個狀況。 在此情況下，客戶將不會取得重複的套件，因為您有更好 (更高版本) 的套件可以支援這些客戶。
 
-當我們偵測到您有重複的套件時，我們將提供一個自動從此提交移除所有重複套件的選項。 如果您想要，也可以從此提交個別移除套件。
+當我們偵測到您有重複的套件時，我們將提供一個自動從此提交移除所有重複套件的選項。 如果需要，您也可以從此提交個別移除套件。
 
-## 包含 Visual Studio Application Insights 的套件
-
-
-我們建議您在套件中使用 [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) \(或在建置您的套件時選取 \[在 Windows 開發人員中心顯示遙測\] 方塊啟用它\) 讓我們可以提供您[應用程式使用量遙測詳細資料](usage-report.md)。 如果您沒有在 Microsoft Visual Studio 中設定 Application Insights，當我們偵測到套件含有它時，將會顯示一個訊息，確認在您提交套件時同意啟用有關您開發人員帳戶的 app 使用方式遙測。 您可以在 \[帳戶設定\] 中，隨時停用 app 使用方式遙測。
-
- 
 
  
 
@@ -60,6 +54,6 @@ ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

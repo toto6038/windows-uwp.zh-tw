@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "使用背景工作支援 app"
 description: "本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 
@@ -169,9 +170,9 @@ App 必須先在應用程式資訊清單中宣告，才能成功登錄背景工�
 
 * [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [建立並註冊背景工作](create-and-register-a-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [在 app 資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [登錄背景工作](register-a-background-task.md)

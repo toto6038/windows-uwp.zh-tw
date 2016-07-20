@@ -2,8 +2,9 @@
 author: JordanRh1
 title: "在 Windows 10 IoT 核心版上啟用使用者模式存取"
 description: "本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。"
-ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
-ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
 
 ---
 # 在 Windows 10 IoT 核心版上啟用使用者模式存取
@@ -38,7 +39,7 @@ Device(RHPX)
 * _CID – 相容識別碼。 必須為「MSFT8000」。  
 * _UID – 唯一識別碼。 設為 1。  
 
-接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 與 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.spi.spicontroller.aspx) 之 `GetDefaultAsync()` 方法傳回的執行個體。 
+接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 與 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 之 `GetDefaultAsync()` 方法傳回的執行個體。 
 
 ### SPI 
 
@@ -702,9 +703,9 @@ devcon status *msft8000
 
 | 工具 | 連結 |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## 資源
@@ -722,9 +723,9 @@ devcon status *msft8000
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 測試 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -732,7 +733,7 @@ devcon status *msft8000
 
 ### 附錄 A - Raspberry Pi ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/PinMappingsRPi2
+排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -894,7 +895,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### 附錄 B - MinnowBoardMax ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/zh-tw/windows/iot/win10/samples/PinMappingsMBM
+排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1085,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

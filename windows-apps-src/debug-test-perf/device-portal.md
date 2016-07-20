@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概觀"
 description: "了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。"
-ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
-ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+translationtype: Human Translation
+ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
+ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
 
 ---
 # Windows Device Portal 概觀
@@ -44,11 +45,9 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 ### 工具列與瀏覽
 
 頁面頂端的工具列能讓您存取常用狀態與功能。
-- 
-            **關機**：關閉裝置。
-- 
-            **重新啟動**：關閉裝置電源並重新開啟。
-- 說明︰開啟 \[說明\] 頁面。
+- **關機**：關閉裝置。
+- **重新啟動**：關閉裝置電源並重新開啟。
+- **說明**︰開啟 [說明] 頁面。
 
 使用頁面左側瀏覽窗格中的連結，瀏覽到適用於您裝置的管理與監視工具。
 
@@ -64,35 +63,29 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-apps.png)
 
-- 
-            **已安裝的 App**︰移除及啟動 App。
-- 
-            **執行中 App**︰列出目前的執行中 App。
-- 
-            **安裝 App**︰從電腦或網路上的資料夾，選取安裝的應用程式套件。
-- 
-            **相依性**︰新增將要安裝之 app 的相依性。
-- 
-            **部署**︰將所選取的 app 與相依性部署到您的裝置。
+- **已安裝的 App**︰移除及啟動 App。
+- **執行中 App**︰列出目前的執行中 App。
+- **安裝 App**︰從電腦或網路上的資料夾，選取安裝的應用程式套件。
+- **相依性**︰新增將要安裝之 app 的相依性。
+- **部署**︰將所選取的 app 與相依性部署到您的裝置。
 
 **安裝 app**
 
-1.  
-            [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
+1.  [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
 
     ![App 安裝](images/device-portal/iot-installapp0.png)
-2.  按一下 \[瀏覽\] 並尋找您的應用程式套件 (.appx)。
-3.  按一下 \[瀏覽\] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
+2.  按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
+3.  按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
 4.  新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
-5.  在 \[部署\] 下，按一下 \[執行\]。 
-6.  若要安裝另一個 app，請按一下 \[重設\] 按鈕以清除欄位。
+5.  在 [部署]**** 下，按一下 [執行]****。 
+6.  若要安裝另一個 app，請按一下 [重設]**** 按鈕以清除欄位。
 
 
 **解除安裝 app**
 
 1.  請確定您的應用程式不在執行中。 
-2.  若它正在執行，請移至 \[執行中的 App\] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
-3.  準備好之後，請按一下 \[解除安裝\]。
+2.  若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
+3.  準備好之後，請按一下 [解除安裝]****。
 
 ### 處理程序
 
@@ -107,16 +100,11 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 顯示系統診斷資訊的即時圖表，例如電源使用量、畫面播放速率與 CPU 負載。
 
 下列為可用的衡量標準：
-- 
-            **CPU**︰可用總計的百分比
-- 
-            **記憶體**：總計、使用中、已認可的可用空間、分頁與非分頁
-- 
-            **GPU**：GPU 引擎使用率、可用總計的百分比
-- 
-            **I/O**：讀取與寫入
-- 
-            **網路**︰已接收與已傳送
+- **CPU**︰可用總計的百分比
+- **記憶體**：總計、使用中、已認可的可用空間、分頁與非分頁
+- **GPU**：GPU 引擎使用率、可用總計的百分比
+- **I/O**：讀取與寫入
+- **網路**︰已接收與已傳送
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-perf.png)
 
@@ -126,24 +114,19 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-etw.png)
 
-選取 \[隱藏提供者\] 以只顯示 \[事件\] 清單。
-- 
-            **已登錄的提供者**︰選取 ETW 提供者與追蹤等級。 追蹤等級是下列其中一個值 ︰
+選取 [隱藏提供者]**** 以只顯示 [事件] 清單。
+- **已登錄的提供者**︰選取 ETW 提供者與追蹤等級。 追蹤等級是下列其中一個值 ︰
     1. 異常結束或終止
     2. 嚴重錯誤
     3. 警告
     4. 非錯誤警告
     5. 追蹤的詳細資料 (*)
 
-按一下或點選 \[啟用\] 以開始追蹤。 提供者已新增到 \[啟用的提供者\] 下拉式清單中。
-- 
-            **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
-- 
-            **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 \[停用\] 以停止追蹤。 按一下或點選 \[全部停止\] 以暫停所有追蹤。
-- 
-            **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 \[啟用\] 以啟用已停用的提供者。 按一下或點選 \[清除\] 以清除歷程記錄。
-- 
-            **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 \[清除\] 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 \[儲存到檔案\]，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
+按一下或點選 [啟用]**** 以開始追蹤。 提供者已新增到 [啟用的提供者]**** 下拉式清單中。
+- **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
+- **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用]**** 以停止追蹤。 按一下或點選 [全部停止]**** 以暫停所有追蹤。
+- **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 [啟用]**** 以啟用已停用的提供者。 按一下或點選 [清除]**** 以清除歷程記錄。
+- **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 [清除]**** 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [儲存到檔案]****，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
 
 如需使用 ETW 追蹤的詳細資訊，請參閱有關使用它來收集您 App 即時記錄的[部落格文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
 
@@ -153,10 +136,10 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- 可用的設定檔︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 \[開始\] 以開始追蹤。
-- 自訂設定檔︰按一下或點選 \[瀏覽\]，以從您的電腦選擇 WPR 設定檔。 按一下或點選 \[上傳並開始\] 以開始追蹤。
+- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 [開始]**** 以開始追蹤。
+- **自訂設定檔**︰按一下或點選 [瀏覽]****，以從您的電腦選擇 WPR 設定檔。 按一下或點選 [上傳並開始]**** 以開始追蹤。
 
-若要停止追蹤，請按一下 \[停止\]。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
+若要停止追蹤，請按一下 [停止]****。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
 
 擷取的 ETL 檔案可以在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中開啟以進行分析。
 
@@ -169,12 +152,16 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 ### 網路功能
 
 管理裝置上的網路連線。  除非您透過 USB 連線到 Device Portal，否則變更這些設定很可能會中斷您與 Device Portal 的連線。
-- 
-            **設定檔**：選取要使用的其他 WiFi 設定檔。  
-- 
-            **可用的網路**︰可供裝置使用的 WiFi 網路。 按一下或點選網路可讓您與它連線，而且您必須視需要提供密碼。 注意︰Device Portal 還不支援企業驗證。 
+- **設定檔**：選取要使用的其他 WiFi 設定檔。  
+- **可用的網路**︰可供裝置使用的 WiFi 網路。 按一下或點選網路可讓您與它連線，而且您必須視需要提供密碼。 注意︰Device Portal 還不支援企業驗證。 
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-network.png)
+
+### App 檔案總管
+
+可讓您檢視和操作側載 App 所儲存的檔案。  這是 Windows Phone 8.1 [隔離的存放裝置總管](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的全新、跨平台版本，請參閱[這篇部落格文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)，深入了解 App 檔案總管和其使用方法。 
+
+![行動裝置的 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
 ## 服務功能和附註
 
@@ -182,7 +169,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 Device Portal 會使用 DNS-SD 在區域網路上公告其目前狀態。  所有的 Device Portal 執行個體都會在 "WDP._wdp._tcp.local" 底下公告，不論其裝置類型為何。 服務執行個體的 TXT 記錄會提供下列項目：
 
-金鑰 | 類型 | 說明 
+索引鍵 | 類型 | 說明 
 ----|------|-------------
 S | int | Device Portal 的安全連接埠。  如果為 0 (零)，Device Portal 不會接聽 HTTPS 連線。 
 D | string | 裝置類型。  格式將為 "Windows.*"，例如 Windows.Xbox 或 Windows.Desktop
@@ -195,8 +182,7 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
 
 為了防止 [CSRF 攻擊](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 要求都需要唯一權杖。 這個 X-CSRF-Token 要求標頭的權杖是衍生自工作階段 Cookie，CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 會複製到各個要求的 X-CSRF-Token 標頭中。
 
-
-            **重要** 此保護可防止從獨立用戶端 (例如命令列公用程式) 使用 REST API。 這可以 3 種方式解決： 
+**重要** 此保護可防止從獨立用戶端 (例如命令列公用程式) 使用 REST API。 這可以 3 種方式解決： 
 
 1. 使用 "auto-" 使用者名稱。 使用者名稱前面加上 "auto-" 的用戶端將略過 CSRF 保護。 請務必注意，不可以透過瀏覽器使用此使用者名稱來登入 Device Portal，因為它會將服務開放給 CSRF 攻擊。 範例︰如果 Device Portal 的使用者名稱為 "admin"，```curl -u auto-admin:password <args>``` 應該用來略過 CSRF 保護。 
 
@@ -204,11 +190,14 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
  
 3. 停用驗證，並使用 HTTP。 CSRF 保護僅適用於 HTTPS 端點，因此 HTTP 端點上的連線不需要執行上述各項。 
 
+**注意**︰以 "auto-" 開頭的使用者名稱無法透過瀏覽器登入 Device Portal。  
 
-            **注意**︰以 "auto-" 開頭的使用者名稱無法透過瀏覽器登入 Device Portal。  
+#### 跨網站 WebSocket 攔截 (CSWSH) 保護
+
+若要防止 [CSWSH 攻擊](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，開啟 WebSocket 連接到裝置入口網站的所有用戶端，必須也提供符合 Host 標頭的 Origin 標頭。  這可向裝置入口網站證明要求是來自裝置入口網站 UI 或有效的用戶端應用程式。  沒有 Origin 標頭您的要求將會被拒絕。 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

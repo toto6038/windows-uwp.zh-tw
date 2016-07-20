@@ -16,9 +16,7 @@ MediaElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Windows �
 
 開始之前，您應該先熟悉 MediaElement 和 MediaTransportControls 類別。 如需詳細資訊，請參閱＜MediaElement 控制項指南＞。 
 
-> 
-            **提示**
-            &nbsp;&nbsp;本主題中的範例是以[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
+> **提示** &nbsp;&nbsp;本主題中的範例是以[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
 
 <span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
@@ -28,8 +26,7 @@ MediaElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Windows �
 
 ## 您何時應該自訂範本？
 
-
-            **MediaElement** 具有內建的傳輸控制項，這些控制項已設計成在大多數視訊和音訊播放 App 中不需修改即可正常運作。 這些控制項是由 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 類別所提供，並且包含可播放、停止及瀏覽媒體、調整音量、切換全螢幕、轉換到另一個裝置、啟用輔助字幕、切換曲目以及調整播放速率的按鈕。 MediaTransportControls 含有可讓您控制每個按鈕是否要顯示與啟用的屬性。 您也可以設定 [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) 屬性，來指定控制項是否顯示於一列或兩列中。
+**MediaElement** 具有內建的傳輸控制項，這些控制項已設計成在大多數視訊和音訊播放 App 中不需修改即可正常運作。 這些控制項是由 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 類別所提供，並且包含可播放、停止及瀏覽媒體、調整音量、切換全螢幕、轉換到另一個裝置、啟用輔助字幕、切換曲目以及調整播放速率的按鈕。 MediaTransportControls 含有可讓您控制每個按鈕是否要顯示與啟用的屬性。 您也可以設定 [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) 屬性，來指定控制項是否顯示於一列或兩列中。
 
 不過，可能有一些案例需要您進一步自訂控制項的外觀或變更其行為。 以下是一些範例：
 - 變更圖示、滑桿行為及色彩。
@@ -39,33 +36,20 @@ MediaElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Windows �
 
 您可以藉由修改預設範本來自訂控制項的外觀。 若要修改控制項的行為或增加新命令，您可以建立衍生自 MediaTransportControls 的自訂控制項。
 
->
-            **提示**
-            &nbsp;&nbsp;可自訂的控制項範本是 XAML 平台的一個強大功能，但也有您應該納入考慮的後果。 當您自訂範本時，它會變成 App 的靜態部分，因此不會收到 Microsoft 對範本所做的任何平台更新。 如果是由 Microsoft 進行範本更新，您應該採用新範本並重新加以修改，以獲得更新範本的好處。
+>**提示** &nbsp;&nbsp;可自訂的控制項範本是 XAML 平台的一個強大功能，但也有您應該納入考慮的後果。 當您自訂範本時，它會變成 App 的靜態部分，因此不會收到 Microsoft 對範本所做的任何平台更新。 如果是由 Microsoft 進行範本更新，您應該採用新範本並重新加以修改，以獲得更新範本的好處。
 
 ## 範本結構
 
-
-            [
-              **ControlTemplate**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是預設樣式的一部分。 傳輸控制項的預設樣式如 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 類別參考頁中所示。 您可以將這個預設樣式複製到您的專案以進行修改。 ControlTemplate 可分割為類似其他 XAML 控制項範本的區段。
+[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是預設樣式的一部分。 傳輸控制項的預設樣式如 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 類別參考頁中所示。 您可以將這個預設樣式複製到您的專案以進行修改。 ControlTemplate 可分割為類似其他 XAML 控制項範本的區段。
 - 範本的第一個區段包含適用於 MediaTransportControls 的各種元件的 [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) 定義。
 - 第二個區段定義 MediaTransportControls 所使用的各種視覺狀態。
 - 第三個區段包含 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。
 
-> 
-            **注意**
-            &nbsp;&nbsp;如需修改範本的詳細資訊，請參閱[控制項範本]()。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
+> **注意** &nbsp;&nbsp;如需修改範本的詳細資訊，請參閱[控制項範本]()。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
 
 在下列各節中，您將了解如何為傳輸控制項自訂數個主要元素： 
-- 
-            [
-              **Slider**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允許使用者拖曳他們的媒體，同時顯示進度
-- 
-            [
-              **CommandBar**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)：包含所有按鈕。
+- [ **Slider** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允許使用者拖曳他們的媒體，同時顯示進度
+- [ **CommandBar** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)：包含所有按鈕。
 如需詳細資訊，請參閱 MediaTransportControls 參考主題的＜剖析＞一節。 
 
 ## 自訂傳輸控制項
@@ -100,8 +84,8 @@ MediaElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Windows �
 
 **建立衍生自 MediaTransportControls 的新類別**
 1. 將新的類別檔案新增到您的專案。
-    - 在 Visual Studio 中，選取 \[專案\] &gt; \[加入類別\]。 隨即會開啟 \[加入新項目\] 對話方塊。
-    - 在 \[加入新項目\] 對話方塊中，輸入類別檔案的名稱，然後按一下 \[加入\]。 (在＜媒體傳輸控制項範例＞中，類別名為 `CustomMediaTransportControls`)。
+    - 在 Visual Studio 中，選取 [專案] &gt; [加入類別]。 隨即會開啟 [加入新項目] 對話方塊。
+    - 在 [加入新項目] 對話方塊中，輸入類別檔案的名稱，然後按一下 [加入]。 (在＜媒體傳輸控制項範例＞中，類別名為 `CustomMediaTransportControls`)。
 2. 修改類別程式碼，以便衍生自 MediaTransportControls 類別。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
@@ -187,13 +171,11 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 </CommandBar.SecondaryCommands>
 ```
 
-> 
-            **重要**
-            &nbsp;&nbsp;您仍然必須讓按鈕顯示並啟用它，才能在溢位功能表中加以使用。 在這個範例中，除非 IsPlaybackRateButtonVisible 屬性是 true，否則 PlaybackRateButton 元素不會顯示於溢位功能表中。 除非 IsPlaybackRateEnabled 屬性是 true，否則不會加以啟用。 設定這些屬性的方式，請見上一節。
+> **重要** &nbsp;&nbsp;您仍然必須讓按鈕顯示並啟用它，才能在溢位功能表中加以使用。 在這個範例中，除非 IsPlaybackRateButtonVisible 屬性是 true，否則 PlaybackRateButton 元素不會顯示於溢位功能表中。 除非 IsPlaybackRateEnabled 屬性是 true，否則不會加以啟用。 設定這些屬性的方式，請見上一節。
 
 ### 新增自訂按鈕
 
-您可能想要自訂 MediaTransportControls 的其中一個理由是將自訂命令新增到控制項。 不論您將它新增為主要命令或次要命令，建立命令按鈕和修改其行為的程序都一樣。 在媒體傳輸控制項範例中，會將 \[評等\] 按鈕新增到主要命令。 
+您可能想要自訂 MediaTransportControls 的其中一個理由是將自訂命令新增到控制項。 不論您將它新增為主要命令或次要命令，建立命令按鈕和修改其行為的程序都一樣。 在[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)中，會將 [評等] 按鈕新增到主要命令。 
 
 **新增自訂命令按鈕**
 1. 建立 AppBarButton 物件，並將它新增到控制項範本中的 CommandBar。 

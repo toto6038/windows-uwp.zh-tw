@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
 title: "取得應用程式評分"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 
 ---
 
@@ -33,7 +34,7 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings``` |
 
  
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
- 
+<span/> 
 
-### 要求主體
+### 要求參數
 
 <table>
 <colgroup>
@@ -123,10 +124,11 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 </tbody>
 </table>
 
+<span/>
  
 ### 篩選欄位
 
-要求本體的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。
+要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。
 
 以下為 *filter* 字串的範例：*filter=market eq 'US' and deviceType eq 'phone' and isRevised eq true*
 
@@ -183,7 +185,7 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求範例
 
@@ -208,7 +210,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
- 
+<span/>
+
 ### 評分數值
 
 *Value* 陣列中的元素包含下列值。
@@ -227,8 +230,8 @@ Authorization: Bearer <your access token>
 | threeStars      | 數字  | 三顆星評分的數目。                                                                                                                                                                                                    |
 | fourStars       | 數字  | 四顆星評分的數目。                                                                                                                                                                                                     |
 | fiveStars       | 數字  | 五顆星評分的數目。                                                                                                                                                                                                     |
-
  
+<span/>
 
 ### 回應範例
 
@@ -268,6 +271,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

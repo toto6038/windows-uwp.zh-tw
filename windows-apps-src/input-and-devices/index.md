@@ -1,10 +1,11 @@
 ---
-description: "針對特定類型的輸入與裝置自訂您的 UWP app。"
-title: "輸入和裝置設計 - Windows 應用程式開發"
+description: "針對特定類型的輸入與裝置自訂您的 UWP app。 利用觸控和語音命令。 在 Xbox、手機，甚至電視上執行您的 App。"
+title: "UWP app 輸入和裝置設計 - Windows 應用程式開發"
 author: mijacobs
+keywords: device primer, app inputs, customize UWP application
 translationtype: Human Translation
-ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
-ms.openlocfilehash: f2055318fe67a0af2bcc009c6f9782029f9032f1
+ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
+ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: f2055318fe67a0af2bcc009c6f9782029f9032f1
 
 UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如，您不需要額外執行任何動作，即可啟用觸控輸入或讓您的 App 在手機上執行。 
 
-但是，有時您可能會想要針對特定類型的輸入或裝置，將您的 App 最佳化。 例如，如果您正在建立繪圖 App，您可以自訂手寫筆輸入的處理方式。 
+但是您有時候可能會想要針對特定類型的輸入或裝置將您的 app 最佳化。 例如，如果您建立繪圖 app，您可能想要自訂手寫筆輸入的處理方式。 
 
 本節中的設計與程式碼撰寫指示可協助您針對特定類型輸入與裝置自訂您的 UWP app。 
 
@@ -150,12 +151,12 @@ UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如
 
 ## 裝置
 
-了解支援 UWP app 的裝置將可協助您為各種尺寸規格提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括 App 在該裝置上將如何顯示、將在該裝置上的何處使用 App、何時使用和如何使用，以及使用者將如何與該裝置互動。
+認識支援 UWP app 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括 App 在該裝置上將如何顯示、將在該裝置上的何處使用 App、何時使用和如何使用，以及使用者將如何與該裝置互動。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[裝置基本資訊](device-primer.md)</b><br/>了解支援 UWP app 的裝置將可協助您為各種尺寸規格提供最佳的使用者體驗。 
+<p><b>[裝置基本資訊](device-primer.md)</b><br/>認識支援 UWP app 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 
 </p>
   </div>
   <div class="side-by-side-content-right">

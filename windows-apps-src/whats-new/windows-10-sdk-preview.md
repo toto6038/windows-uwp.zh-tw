@@ -3,21 +3,21 @@ author: QuinnRadich
 title: "Windows 10 中的新功能"
 description: "Windows 10 Anniversary SDK Preview 組建與新的開發人員工具提供了由全新通用 Windows 平台支援的工具、功能和體驗。"
 translationtype: Human Translation
-ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
-ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
 
 ---
 
 # Windows 的新功能
 
-Windows 10 Anniversary SDK Preview 組建 14295 與 Windows 開發人員工具更新會持續提供由通用 Windows 平台所支援的工具、功能與體驗。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/en-us/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 Anniversary SDK Preview 組建 14295 與 Windows 開發人員工具更新會持續提供由通用 Windows 平台所支援的工具、功能與體驗。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
 ## Windows 10 Anniversary SDK Preview 組建 12295
 
 功能 | 說明
  :---- | :----
 網路功能 | 您現在可以訂閱 [HttpBaseProtocolFilter.ServerCustomValidationRequest](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank) 事件，便能提供伺服器 SSL/TLS 憑證的自訂驗證。 您也可以在 HTTP 要求中指定 [HttpCacheReadBehavior.NoCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpcachereadbehavior.aspx#_blank) 列舉值，便能完全停用從快取中讀取 HTTP 回應。 現在藉由呼叫 [HttpBaseProtocolFilter.ClearAuthenticationCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank) 方法，便可以清除驗證認證，以促成「登出」狀況。
-擴充功能 | Microsoft Edge 的新功能之一，便是能使用擴充功能。 使用者可藉由擴充功能來擴充 Microsoft Edge 的功能，以便針對特定對象，提供重要的特殊功能。 若要了解詳細資訊，請參閱[擴充功能文件](https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/extensions/#_blank)。
+擴充功能 | Microsoft Edge 的新功能之一，便是能使用擴充功能。 使用者可藉由擴充功能來擴充 Microsoft Edge 的功能，以便針對特定對象，提供重要的特殊功能。 若要了解詳細資訊，請參閱[擴充功能文件](https://developer.microsoft.com/microsoft-edge/platform/documentation/extensions/#_blank)。
 藍牙 API | App 現在可經由 [Windows.Devices.Bluetooth and Windows.Devices.Bluetooth.Rfcomm](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx#_blank) 來存取遠端藍牙周邊裝置上的 RFCOMM 服務，而不必先與周邊裝置配對。 新方法可讓 app 搜尋與存取未配對裝置上的 RFCOMM 服務。
 聊天 API | 您可以藉由新的 [ChatSyncManager](https://msdn.microsoft.com/library/windows/apps/mt414181.aspx#_blank) 類別，使得簡訊與雲端同步。
 [適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應](https://msdn.microsoft.com/windows/uwp/porting/android-ios-uwp-map#_blank) | 如果您是具備 Android 或 iOS 技巧和 (或) 程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台 (UWP)，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。
@@ -29,6 +29,6 @@ Windows IoT | Windows 10 IoT 核心版可讓您以 Windows 的熟悉感來建立
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

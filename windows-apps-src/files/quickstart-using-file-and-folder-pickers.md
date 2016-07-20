@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用選擇器開啟檔案和資料夾"
 description: "讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 
 ---
 
@@ -23,8 +23,7 @@ ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
 
 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 類別來存取檔案，使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。
 
-
-            **注意**：另請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+**注意**：另請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
 
  
 
@@ -48,7 +47,7 @@ ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
 
 -   目前的位置
 -   使用者選擇的項目
--   使用者可以瀏覽的位置樹狀結構。 這些位置包括檔案系統位置 (例如 \[音樂\] 或 \[下載\] 資料夾)，以及實作檔案選擇器協定 (例如相機、相片與 Microsoft OneDrive) 的 app。
+-   使用者可以瀏覽的位置樹狀結構。 這些位置包括檔案系統位置 (例如 [音樂] 或 [下載] 資料夾)，以及實作檔案選擇器協定 (例如相機、相片與 Microsoft OneDrive) 的 app。
 
 電子郵件 app 可能會顯示檔案選擇器，讓使用者可以挑選附件。
 
@@ -112,9 +111,9 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
 
 這個範例會藉由設定下列三個屬性，在使用者可以挑選的便利位置建立一個豐富的視覺化圖片：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 及 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
--   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 **Thumbnail**[**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
+-   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
 
--   使用 PickerLocationId.PicturesLibrary 將 SuggestedStartLocation 設定為 \[圖片\]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
+-   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 設定為 [圖片]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
 
 -   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 以指定檔案類型，讓使用者聚焦在挑選相關的檔案。 若要使用新的項目取代 **FileTypeFilter** 中的檔案類型，請使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) (而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834))。
 
@@ -178,21 +177,20 @@ else
 }
 ```
 
-
-            **提示**：只要您的 app 透過選擇器來存取檔案或資料夾，就會將該項目新增到 app 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便追蹤。 若要深入了解如何使用這些清單，請參閱[如何追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md)。
-
- 
+**提示**：只要您的 app 透過選擇器來存取檔案或資料夾，就會將該項目新增到 app 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便追蹤。 若要深入了解如何使用這些清單，請參閱[如何追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md)。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jul16_HO2-->
 
 

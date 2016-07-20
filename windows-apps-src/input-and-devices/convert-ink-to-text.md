@@ -6,8 +6,9 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4351901984f9b1f134cfc42acbbc7f756dc6c11f
 
 ---
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 1.  一開始先設定 UI。
 
-    UI 包含一個 \[辨識\] 按鈕 (InkCanvas)，以及一個可顯示辨識結果的區域。    
+    UI 包含一個 [辨識] 按鈕 ([**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535))，以及一個可顯示辨識結果的區域。    
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -68,10 +69,7 @@ ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    
-            [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上，使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 來轉譯筆墨筆劃。 同時也會在 \[辨識\] 按鈕上宣告適用於 click 事件的接聽程式。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上，使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 來轉譯筆墨筆劃。 同時也會在 [辨識] 按鈕上宣告適用於 click 事件的接聽程式。
 ```    CSharp
 public MainPage()
     {
@@ -94,12 +92,9 @@ public MainPage()
     }
 ```
 
-3.  最後是執行基本的手寫辨識。 在這個範例中，我們使用 \[辨識\] 按鈕的 click 事件處理常式來執行手寫辨識。
+3.  最後是執行基本的手寫辨識。 在這個範例中，我們使用 [辨識] 按鈕的 click 事件處理常式來執行手寫辨識。
 
-    
-            [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
@@ -213,20 +208,20 @@ string str = "Recognition result\n";
 
 Windows 支援的完整語言子集可用於手寫辨識。
 
-如需 [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) 支援的語言清單，請參閱 [**InkRecognizer.Name**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) 屬性。
+如需 [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) 支援的語言清單，請參閱 [**InkRecognizer.Name**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) 屬性。
 
 您的 app 可以查詢這組已安裝的手寫辨識引擎，並使用其中一個，或者讓使用者選擇他們偏好的語言。
 
 **注意**  
-使用者可以移至 \[設定\] - \[時間與語言\]，來查看已安裝的語言清單。 \[語言\] 下方會列出已安裝的語言。
+使用者可以移至 [設定] -&gt; [時間與語言]****，來查看已安裝的語言清單。 [語言]**** 下方會列出已安裝的語言。
 
 若要安裝新的語言套件並針對該語言啟用手寫辨識：
 
-1.  移至 \[設定\]  \[時間與語言\]  \[地區與語言\]。
-2.  選取 \[新增語言\]。
-3.  從清單中選取語言，然後選擇地區版本。 語言現在會列於 \[地區及語言\] 頁面上。
-4.  按一下語言，然後選取 \[選項\]。
-5.  在 \[語言選項\] 頁面上，下載 \[手寫辨識引擎\] (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
+1.  移至 [設定] &gt; [時間與語言] &gt; [地區與語言]****。
+2.  選取 [新增語言]****。
+3.  從清單中選取語言，然後選擇地區版本。 語言現在會列於 [地區及語言]**** 頁面上。
+4.  按一下語言，然後選取 [選項]****。
+5.  在 [語言選項]**** 頁面上，下載 [手寫辨識引擎]**** (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
 
  
 
@@ -236,7 +231,7 @@ Windows 支援的完整語言子集可用於手寫辨識。
 
 1.  一開始先設定 UI。
 
-    UI 包含一個 \[辨識\] 按鈕、一個列出所有已安裝之手寫辨識器的下拉式方塊、InkCanvas，以及一個可顯示辨識結果的區域。
+    UI 包含一個 [辨識] 按鈕、一個列出所有已安裝之手寫辨識器的下拉式方塊、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)，以及一個可顯示辨識結果的區域。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -281,14 +276,11 @@ Windows 支援的完整語言子集可用於手寫辨識。
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    
-            [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上，使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 來轉譯筆墨筆劃。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上，使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 來轉譯筆墨筆劃。
 
     我們會呼叫 `InitializeRecognizerList` 函式來填入辨識器下拉式方塊，其中包含已安裝的手寫辨識器清單。
 
-    我們也會在 \[辨識\] 按鈕上宣告適用於 click 事件的接聽程式，以及在辨識器下拉式方塊上宣告選取範圍變更事件。
+    我們也會在 [辨識] 按鈕上宣告適用於 click 事件的接聽程式，以及在辨識器下拉式方塊上宣告選取範圍變更事件。
 ```    CSharp
  public MainPage()
      {
@@ -320,10 +312,7 @@ Windows 支援的完整語言子集可用於手寫辨識。
 
 3.  我們會在辨識器下拉式方塊中填入已安裝的手寫辨識器清單。
 
-    
-            [
-              **InkRecognizerContainer**
-            ](https://msdn.microsoft.com/library/windows/apps/br208479) 是建立來管理手寫辨識程序。 使用此物件來呼叫 [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480)，並抓取已安裝的辨識器清單來填入辨識器下拉式方塊。
+    [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) 是建立來管理手寫辨識程序。 使用此物件來呼叫 [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480)，並抓取已安裝的辨識器清單來填入辨識器下拉式方塊。
 ```    CSharp
 // Populate the recognizer combo box with installed recognizers.
     private void InitializeRecognizerList()
@@ -355,12 +344,9 @@ Windows 支援的完整語言子集可用於手寫辨識。
     }
 ```
 
-5.  最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 \[辨識\] 按鈕的 click 事件處理常式來執行手寫辨識。
+5.  最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 [辨識] 按鈕的 click 事件處理常式來執行手寫辨識。
 
-    
-            [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes =
@@ -575,10 +561,7 @@ public MainPage()
 
 3.  最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 的 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) 事件處理常式來初始手寫辨識功能。
 
-    
-            [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
@@ -691,6 +674,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -28,19 +28,18 @@ ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
 ## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>建立空白 App
 
 
-1.  在 Microsoft Visual Studio 功能表，選擇 \[檔案\]  \[新增專案\]。
-2.  在 \[新增專案\] 對話方塊的左窗格中，選擇 \[Visual C#\] - \[Windows\] - \[通用\] 或 \[Visual C++\] - \[Windows\] - \[通用\] 節點。
+1.  在 Microsoft Visual Studio 功能表，選擇 [檔案] &gt; [新增專案]****。
+2.  在 [新增專案]**** 對話方塊的左窗格中，選擇 [Visual C#] -&gt; [Windows] -&gt; [通用]**** 或 [Visual C++] -&gt; [Windows] -&gt; [通用]**** 節點。
 3.  在中央窗格中，選擇**空白 app**。
-4.  在 \[名稱\] 方塊中輸入 NavApp1，然後選擇 \[確定\] 按鈕。
+4.  在 [名稱]**** 方塊中輸入 **NavApp1**，然後選擇 [確定]**** 按鈕。
 
-    隨即建立您的方案，而且專案檔案會出現在 \[方案總管\] 中。
+    隨即建立您的方案，而且專案檔案會出現在 [方案總管]**** 中。
 
-    
-            **重要：**當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
+    **重要：**當您第一次執行 Visual Studio 時，系統會提示您取得開發人員授權。 如需詳細資訊，請參閱[啟用您的裝置以用於開發](https://msdn.microsoft.com/library/windows/apps/dn706236)。
 
      
 
-5.  若要執行程式，請從功能表依序選擇 \[偵錯\] \[開始偵錯\]，或按 F5。
+5.  若要執行程式，請從功能表依序選擇 [偵錯]**** &gt; [開始偵錯]****，或按 F5。
 
     隨即顯示空白頁面。
 
@@ -53,10 +52,10 @@ ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
 
 執行下列步驟兩次，新增兩個要互相瀏覽的頁面。
 
-1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[BlankApp\] 專案節點以開啟捷徑功能表。
-2.  從捷徑功能表選擇 \[新增\] \[新增項目\]。
-3.  在 \[加入新項目\] 對話方塊中，選擇中間窗格的 \[空白頁\]。
-4.  在 \[名稱\] 方塊中，輸入 Page1 (或 Page2)，然後按 \[新增\] 按鈕。
+1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [BlankApp]**** 專案節點以開啟捷徑功能表。
+2.  從捷徑功能表選擇 [新增]**** &gt; [新增項目]****。
+3.  在 [加入新項目]**** 對話方塊中，選擇中間窗格的 [空白頁]****。
+4.  在 [名稱]**** 方塊中，輸入 **Page1** (或 **Page2**)，然後按 [新增]**** 按鈕。
 
 這些檔案現在應該會列在您的 NavApp1 專案中。
 
@@ -111,7 +110,7 @@ ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
     </table>
 ```
 
--   新增下列 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
+-   新增下列 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
 
     <span codelanguage="XAML"></span>
 ```    XAML
@@ -169,7 +168,7 @@ private void HyperlinkButton_Click_nodata(object sender, RoutedEventArgs e)
     </table>
 ```
 
--   新增下列 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
+-   新增下列 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
 
     <span codelanguage="XAML"></span>
 ```    XAML
@@ -315,35 +314,27 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-
-            **注意：**如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
+**注意：**如果瀏覽到 app 的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 來擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
 
  
 
-現在，建置並執行 app。 按一下顯示為 \[按一下以移至頁面 2\] 的連結。 最上方顯示 \[第 2 頁\] 的第二頁應該會載入並顯示在框架中。
+現在，建置並執行 app。 按一下顯示為 [按一下以移至頁面 2] 的連結。 最上方顯示 [第 2 頁] 的第二頁應該會載入並顯示在框架中。
 
 ## <span id="Frame_and_Page_classes"></span><span id="frame_and_page_classes"></span><span id="FRAME_AND_PAGE_CLASSES"></span>Frame 和 Page 類別
 
 
 將更多功能新增到 app 前，我們先來看看前面新增的頁面如何為 app 提供瀏覽支援。
 
-首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 
-            [
-              **Navigate**
-            ](https://msdn.microsoft.com/library/windows/apps/br242694) 方法是用來顯示這個 **Frame** 中的內容。
+首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法是用來顯示這個 **Frame** 中的內容。
 
 **注意**  
-
-            [
-              **Frame**
-            ](https://msdn.microsoft.com/library/windows/apps/br242682) 類別支援各種不同的瀏覽方法，例如 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 和 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693)，也支援不同的各種屬性，例如 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 和 [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995)。
+[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 類別支援各種不同的瀏覽方法，例如 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 和 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693)，也支援不同的各種屬性，例如 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 和 [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995)。
 
  
 
 在我們的範例中，`Page1` 會傳遞至 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法。 這個方法會將 app 目前視窗的內容設定為 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 並將您指定的頁面內容載入 **Frame** (在我們的範例中為 Page1.xaml 或預設的 MainPage.xaml)。
 
-`Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別的子類別。 
-            **Page** 類別具有唯讀的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 屬性，這個屬性會取得包含 **Page** 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 當 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件處理常式呼叫 ` Frame.Navigate(typeof(Page2))` 時，app 視窗中的 **Frame** 會顯示 Page2.xaml 的內容。
+`Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別的子類別。 **Page** 類別具有唯讀的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 屬性，這個屬性會取得包含 **Page** 的 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 當 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件處理常式呼叫 ` Frame.Navigate(typeof(Page2))` 時，app 視窗中的 **Frame** 會顯示 Page2.xaml 的內容。
 
 每當頁面載入框架時，就會以 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 將該頁面新增到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)。
 
@@ -364,7 +355,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 </StackPanel>
 ```
 
-在 Page1.xaml 程式碼後置檔案的 `HyperlinkButton_Click` 事件處理常式中，將參考 `name`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 之 `Text` 屬性的參數新增到 `Navigate` 方法。
+在 Page1.xaml 程式碼後置檔案的 `HyperlinkButton_Click` 事件處理常式中，將參考 `name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 之 `Text` 屬性的參數新增到 `Navigate` 方法。
 
 ```ManagedCPlusPlus
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
@@ -412,7 +403,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-執行 app，在文字方塊中輸入您的名稱，然後按一下 \[按一下以移至頁面 2\] 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
+執行 app，在文字方塊中輸入您的名稱，然後按一下 [按一下以移至頁面 2]**** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
 
 ## <span id="Cache_a__page"></span><span id="cache_a__page"></span><span id="CACHE_A__PAGE"></span>快取頁面
 
@@ -425,11 +416,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果您想要忽略框架的快取大小限制，請將 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 設定為 [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284)。 不過，根據裝置的記憶體限制，快取大小限制可能會非常重要。
 
-
-            **注意：**
-            [
-              **CacheSize**
-            ](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性指定框架的瀏覽歷程記錄中可以快取的頁面數。
+**注意：**[**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性指定框架的瀏覽歷程記錄中可以快取的頁面數。
 
  
 

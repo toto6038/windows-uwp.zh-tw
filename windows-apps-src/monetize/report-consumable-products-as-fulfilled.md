@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。"
 title: "將消費性產品回報為已完成"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 5bd85c6ec9728a0dc08ab8ef4f586b0017510a74
 
 ---
 
@@ -37,9 +38,9 @@ ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
 
 | 方法 | 要求 URI                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/consume``` |
 
-<br/> 
+<span/> 
 
 ### 要求的標頭
 
@@ -50,7 +51,7 @@ ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
-<br/> 
+<span/>
 
 ### 要求主體
 
@@ -60,13 +61,10 @@ ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
 | itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 itemId 值。 請搭配 trackingId 來使用這個參數。                                                                                                                                                                                                  | 否       |
 | trackingId    | GUID         | 開發人員所提供的唯一追蹤識別碼。 請搭配 itemId 來使用這個參數。                                                                                                                                                                                                                                     | 否       |
 | productId     | 字串       | [查詢產品](query-for-products.md)時所傳回的 productId 值。 請搭配 transactionId 來使用這個參數                                                                                                                                                                                            | 否       |
-| transactionId | GUID         | 從下列其中一個來源取得的交易識別碼值：                                                                                                                                                                                                                                      | 否       |
-|               |              | * [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 屬性。   |        |
-|               |              | * 由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 所傳回的 app 或產品收據。   |        |
-|               |              | * [查詢產品](query-for-products.md)時所傳回的 transactionId 參數。   |        |        
-|               |              | 請搭配 productId 來使用這個參數。   |        |
+| transactionId | Guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 productId 來使用這個參數。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 transactionId 參數。</li></ul>                                                                                                                                                                                                                                   | 否       |
+
  
-<br/>
+<span/>
 
 UserIdentity 物件包含下列參數。
 
@@ -76,7 +74,7 @@ UserIdentity 物件包含下列參數。
 | identityValue        | 字串 | Windows 市集識別碼索引鍵的字串值。                                                                                                   | 是      |
 | localTicketReference | 字串 | 已傳回回應的要求識別碼。 我們建議您使用與 Windows 市集識別碼索引鍵中 *userId* 宣告相同的值。 | 是      |
 
-<br/> 
+<span/> 
 
 ### 要求範例
 
@@ -146,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | Unauthorized | PartnerAadTicketRequired   | Azure AD 存取權杖沒有傳遞到 Authorization 標頭中的服務。                                                                                                   |
 | 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 
-<br/> 
+<span/> 
 
 ## 相關主題
 
@@ -160,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

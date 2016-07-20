@@ -3,6 +3,7 @@ author: msatranjr
 title: "在地圖上顯示路線和路線指引"
 description: "要求路線和路線指引，並將它們顯示在您的 app 中。"
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
 

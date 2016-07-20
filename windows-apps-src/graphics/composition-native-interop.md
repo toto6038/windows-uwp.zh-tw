@@ -4,8 +4,8 @@ ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: "組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作"
 description: "Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: c2086e703e3972d4dd38dc1b7147bfa5f01231cf
 
 ---
 # 組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作
@@ -24,19 +24,19 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 
 ## 將像素載入表面
 
-為了將像素載入表面，應用程式必須呼叫 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 方法， 視應用程式所要求的內容而定，這會傳回呈現紋理或 Direct2D 內容的 DirectX 介面。 應用程式必須接著將像素轉譯或上傳到該紋理。 當應用程式完成工作時，它必須呼叫 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法。 只有到這個時候，新像素才可供組合，但是它們仍然不會顯示在螢幕上，而是必須等到下一次認可對視覺化樹狀結構所做的一切變更時，才會顯示在螢幕上。 如果在呼叫 **EndDraw** 之前就已認可視覺化樹狀結構，則螢幕上將不會顯示進行中的更新，而表面也會繼續顯示它在 **BeginDraw** 之前擁有的內容。 呼叫 **EndDraw** 時，BeginDraw 所傳回的紋理或 Direct2D 內容指標會失效。 應用程式一律不應該在 **EndDraw** 呼叫之後快取該指標。
+為了將像素載入表面，應用程式必須呼叫 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 方法， 視應用程式所要求的內容而定，這會傳回呈現紋理或 Direct2D 內容的 DirectX 介面。 應用程式必須接著將像素轉譯或上傳到該紋理。 當應用程式完成工作時，它必須呼叫 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法。 只有到這個時候，新像素才可供組合，但是它們仍然不會顯示在螢幕上，而是必須等到下一次認可對視覺化樹狀結構所做的一切變更時，才會顯示在螢幕上。 如果在呼叫 **EndDraw** 之前就已認可視覺化樹狀結構，則螢幕上將不會顯示進行中的更新，而表面也會繼續顯示它在 **BeginDraw** 之前擁有的內容。 呼叫 **EndDraw** 時，BeginDraw 所傳回的紋理或 Direct2D 內容指標會失效。 應用程式一律不應該在 **EndDraw** 呼叫之後快取該指標。
 
-應用程式針對任何指定的 [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749)，一次只能在一個表面上呼叫 BeginDraw。 呼叫 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 之後，應用程式必須在該表面呼叫 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)，然後才能再於另一個表面呼叫 **BeginDraw**。 由於 API 相當靈活，因此如果應用程式想要從多個背景工作緒執行轉譯，就必須負責同步處理這些呼叫。 如果應用程式想要中斷一個表面的轉譯，並暫時切換到另一個表面，則應用程式可以使用 [**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx) 方法。 這可讓另一個 **BeginDraw** 順利完成，但不會讓第一個表面更新可供在螢幕上進行組合。 這可讓應用程式以交易方式執行多個更新。 暫停表面之後，應用程式可以呼叫 [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 方法來繼續進行該更新，或是也可以呼叫 **EndDraw** 來宣告更新已完成。 這表示針對任何指定的 **CompositionGraphicsDevice**，一次只能有一個正在更新的表面。 每個圖形裝置都獨立保有此狀態，因此如果兩個表面分屬不同的圖形裝置，應用程式便可同時轉譯到兩個表面。 不過，這會導致無法將這兩個表面的視訊記憶體放在一個集區中，因此較不具記憶體效益。
+應用程式針對任何指定的 [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749)，一次只能在一個表面上呼叫 BeginDraw。 呼叫 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 之後，應用程式必須在該表面呼叫 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)，然後才能再於另一個表面呼叫 **BeginDraw**。 由於 API 相當靈活，因此如果應用程式想要從多個背景工作緒執行轉譯，就必須負責同步處理這些呼叫。 如果應用程式想要中斷一個表面的轉譯，並暫時切換到另一個表面，則應用程式可以使用 [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx) 方法。 這可讓另一個 **BeginDraw** 順利完成，但不會讓第一個表面更新可供在螢幕上進行組合。 這可讓應用程式以交易方式執行多個更新。 暫停表面之後，應用程式可以呼叫 [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 方法來繼續進行該更新，或是也可以呼叫 **EndDraw** 來宣告更新已完成。 這表示針對任何指定的 **CompositionGraphicsDevice**，一次只能有一個正在更新的表面。 每個圖形裝置都獨立保有此狀態，因此如果兩個表面分屬不同的圖形裝置，應用程式便可同時轉譯到兩個表面。 不過，這會導致無法將這兩個表面的視訊記憶體放在一個集區中，因此較不具記憶體效益。
 
-如果應用程式執行的操作不正確 (例如傳遞無效的引數，或先在一個表面上呼叫 **BeginDraw**， 然後才在另一個表面上呼叫 **EndDraw**)，[**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 及 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法就會傳回失敗。 這些類型的失敗代表應用程式錯誤，因此預期的處理方式是以立即失敗來處理它們。 當基礎 DirectX 裝置遺失時，**BeginDraw** 也可能會傳回失敗。 這個失敗並不嚴重，因為應用程式可以重新建立其 DirectX 裝置並再試一次。 因此，應用程式應該以直接跳過轉譯的方式來處理裝置遺失。 如果 **BeginDraw** 因任何原因發生失敗，則應用程式也不應該呼叫 **EndDraw**，因為首先 begin 就永遠不會成功。
+如果應用程式執行的操作不正確 (例如傳遞無效的引數，或先在一個表面上呼叫 **BeginDraw**， 然後才在另一個表面上呼叫 **EndDraw**)，[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 及 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法就會傳回失敗。 這些類型的失敗代表應用程式錯誤，因此預期的處理方式是以立即失敗來處理它們。 當基礎 DirectX 裝置遺失時，**BeginDraw** 也可能會傳回失敗。 這個失敗並不嚴重，因為應用程式可以重新建立其 DirectX 裝置並再試一次。 因此，應用程式應該以直接跳過轉譯的方式來處理裝置遺失。 如果 **BeginDraw** 因任何原因發生失敗，則應用程式也不應該呼叫 **EndDraw**，因為首先 begin 就永遠不會成功。
 
 ## 捲動
 
-基於效能考量，當應用程式呼叫 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 時，所傳回的紋理內容並不保證是先前的表面內容。 應用程式必須假設內容是隨機的，因此，應用程式必須藉由在轉譯之前先清除表面，或藉由繪製足夠的不透明內容來涵蓋整個更新的矩形，以確保觸及所有像素。 藉由這樣的做法，再結合紋理指標只有在 **BeginDraw** 與 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 呼叫之間才有效的事實，應用程式便無法從表面複製先前的內容。 基於這個理由，我們提供了 [**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) 方法，可讓應用程式執行相同表面像素複製。
+基於效能考量，當應用程式呼叫 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 時，所傳回的紋理內容並不保證是先前的表面內容。 應用程式必須假設內容是隨機的，因此，應用程式必須藉由在轉譯之前先清除表面，或藉由繪製足夠的不透明內容來涵蓋整個更新的矩形，以確保觸及所有像素。 藉由這樣的做法，再結合紋理指標只有在 **BeginDraw** 與 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 呼叫之間才有效的事實，應用程式便無法從表面複製先前的內容。 基於這個理由，我們提供了 [**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) 方法，可讓應用程式執行相同表面像素複製。
 
 ## 用法範例
 
-下列範例說明非常一個簡單的案例，其中應用程式會建立繪圖表面，並使用 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 在表面填入文字。 應用程式會使用 DirectWrite 來配置文字 (不顯示詳細資料)，然後使用 Direct2D 來轉譯它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓 **BeginDraw** 傳回 ID2D1DeviceContext 介面指標，與讓應用程式在每次進行繪圖操作時建立 Direct2D 內容來包裝傳回的 ID3D11Texture2D 介面相比，效率高出許多。
+下列範例說明非常一個簡單的案例，其中應用程式會建立繪圖表面，並使用 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 在表面填入文字。 應用程式會使用 DirectWrite 來配置文字 (不顯示詳細資料)，然後使用 Direct2D 來轉譯它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓 **BeginDraw** 傳回 ID2D1DeviceContext 介面指標，與讓應用程式在每次進行繪圖操作時建立 Direct2D 內容來包裝傳回的 ID3D11Texture2D 介面相比，效率高出許多。
 
 ```cpp
 //------------------------------------------------------------------------------
@@ -270,6 +270,6 @@ private:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

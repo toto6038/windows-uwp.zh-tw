@@ -4,8 +4,8 @@ title: "計劃從 OpenGL ES 2.0 移植到 Direct3D"
 description: "如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
 **重要 API**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
+-   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。 在準備將圖形管線程式碼基底移到 Direct3D 11 與 Windows 執行階段時，有幾件事在開始之前必須先行考量。
 
@@ -73,7 +73,7 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 -   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
 -   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-此外，Windows 執行階段 C++ 範本庫 (WRL) 提供編寫與使用 Windows 執行階段元件的低階方式。 適用於 UWP app 的 Direct3D 11 API 最好搭配此程式庫中的介面與類型使用， 例如智慧型指標 ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx))。 如需 WRL 的詳細資訊，請閱讀 [Windows 執行階段 C++ 範本庫 (WRL)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx)。
+此外，Windows 執行階段 C++ 範本庫 (WRL) 提供編寫與使用 Windows 執行階段元件的低階方式。 適用於 UWP app 的 Direct3D 11 API 最好搭配此程式庫中的介面與類型使用， 例如智慧型指標 ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx))。 如需 WRL 的詳細資訊，請閱讀 [Windows 執行階段 C++ 範本庫 (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx)。
 
 ## 變更座標系統
 
@@ -120,6 +120,6 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

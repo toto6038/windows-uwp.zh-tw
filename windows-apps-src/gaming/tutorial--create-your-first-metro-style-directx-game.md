@@ -8,8 +8,8 @@ keywords:
 - game sample, Universal Windows Platform (UWP)
 - Direct3D 11 game
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7891642d33e7391e05ae0639e36ff90e6697def6
 
 ---
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
 -   基本線性代數和牛頓物理概念。
 -   基本圖形程式設計詞彙。
 -   基本 Windows 程式設計概念。
--   必須對 [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) 和 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API 有基本的認識。
+-   必須對 [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) 和 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API 有基本的認識。
 
 ##  Windows 市集 Direct3D 射擊遊戲範例
 
@@ -78,6 +78,6 @@ ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 Description: "您可以交叉推銷您的應用程式和其他開發人員發佈的應用程式。 我們將此功能稱為社群廣告。"
 title: "關於社群廣告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
+translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
 ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
@@ -10,7 +11,7 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 # 關於社群廣告
 
-如果您使用 **AdMediatorControl** 或 **AdControl** 顯示橫幅廣告，您可以在 Windows 市集中免費交叉推銷您的應用程式和其他開發人員發佈的 App。 我們將此功能稱為「社群廣告」。  
+如果您使用 **AdMediatorControl** 或 **AdControl** 顯示橫幅廣告，您可以在 Windows 市集中免費交叉推銷您的應用程式和其他開發人員發佈的 App。 我們將此功能稱為「社群廣告」**。  
 
 以下是此計劃的運作方式：
 
@@ -25,12 +26,11 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 選擇加入社群廣告：
 
-1. 移至 Windows 開發人員中心儀表板中的 \[營利\]\[利用廣告營利\] 頁面。
-2. 在 \[社群廣告\] 區段中，選取 \[在我的應用程式中顯示社群廣告\] 核取方塊。
-   > 
-            **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
+1. 移至 Windows 開發人員中心儀表板中的 [營利]****&gt;[利用廣告營利]**** 頁面。
+2. 在 [社群廣告]**** 區段中，選取 [在我的應用程式中顯示社群廣告]**** 核取方塊。
+   > **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
 
-3. 為您的 App [建立廣告行銷活動](create-an-ad-campaign-for-your-app.md) 對於行銷活動類型，請選取 \[免費社群廣告\]。
+3. 為您的 App [建立廣告行銷活動](create-an-ad-campaign-for-your-app.md) 對於行銷活動類型，請選取 [免費社群廣告]****。
 
 
 ## 相關主題

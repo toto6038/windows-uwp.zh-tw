@@ -15,16 +15,13 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 這個案例研究 (根據 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置) 是從在 **LongListSelector** 中顯示分組資料的 Windows Phone Silverlight App 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們會逐步說明將 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的步驟。
 
-
-            **注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+**注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
 
 ## 下載
 
+[下載 Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-            [下載 Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601)。
-
-
-            [下載 Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下載 Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952)。
 
 ##  Windows Phone Silverlight app
 
@@ -36,17 +33,17 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 這是一項快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore2WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore2Universal\_10。 這些是從 Bookstore2WPSL8 複製到 Bookstore2Universal\_10 的檔案。
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 \[方案總管\] 中，確定 \[顯示所有檔案\] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 \[加入至專案\]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 \[方案總管\] 中的 \[重新整理\]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管]**** 中的 [重新整理]****，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
 我們可以保留 App.xaml，以及 Visual Studio 在 Windows 10 專案中為我們產生的 App.xaml.cs。
 
-編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore2WPSL8 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 \[檔案中取代\] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
+編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore2WPSL8 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 [檔案中取代]**** 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
 
--   將  變更為 ，然後對其使用 \[解析\] 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對  使用 \[解析\] 命令。
--   對  使用 \[解析\] 命令。
+-   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析]**** 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
+-   對 `ImageSource` 使用 [解析]**** 命令。
+-   對 `BitmapImage` 使用 [解析]**** 命令。
 -   刪除 `using System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   將 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE2WPSL8" 變更為 "BOOKSTORE2UNIVERSAL"。
 -   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，更新 **BookSku.CoverImage** 屬性的實作 (請參閱[將映像繫結至檢視模型](wpsl-to-uwp-case-study-bookstore1.md#binding-an-image))。
@@ -56,21 +53,18 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 -   將 `phone:PhoneApplicationPage` 變更為 `Page` (包括出現在屬性元素語法中的部分)。
 -   刪除 `phone` 和 `shell` 命名空間前置字元宣告。
 -   將其餘命名空間前置字元宣告中的 "clr-namespace" 變更為 "using"。
--   刪除  和 ，並在新專案之 app 套件資訊清單中設定 \[縱向\]。
+-   刪除 `SupportedOrientations="Portrait"` 和 `Orientation="Portrait"`，並在新專案之 app 套件資訊清單中設定 [**縱向**]。
 -   刪除 `shell:SystemTray.IsVisible="True"`。
 -   捷徑清單項目轉換器 (在標記中是以資源形式存在) 的類型已移至 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空間中。 因此，請新增命名空間前置字元宣告 Windows\_UI\_Xaml\_Controls\_Primitives，並將其對應至 **Windows.UI.Xaml.Controls.Primitives**。 在捷徑清單項目轉換器資源上，將前置字元從 `phone:` 變更為 `Windows_UI_Xaml_Controls_Primitives:`。
 -   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，以 `SubtitleTextBlockStyle` 的參考取代 `PhoneTextExtraLargeStyle` **TextBlock** 樣式的所有參考、以 `SubtitleTextBlockStyle` 取代 `PhoneTextSubtleStyle`、以 `CaptionTextBlockStyle` 取代 `PhoneTextNormalStyle`，並以 `HeaderTextBlockStyle` 取代 `PhoneTextTitle1Style`。
--   
-            `BookTemplate` 中的一個例外狀況。 第二個 **TextBlock** 的樣式應該參考 `CaptionTextBlockStyle`。
+-   `BookTemplate` 中的一個例外狀況。 第二個 **TextBlock** 的樣式應該參考 `CaptionTextBlockStyle`。
 -   從 `AuthorGroupHeaderTemplate` 內的 **TextBlock** 移除 FontFamily 屬性，並將 **Border** 的背景設定為參考 `SystemControlBackgroundAccentBrush` 而非 `PhoneAccentBrush`。
 -   由於[變更與檢視像素相關](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)，因此請細查標記，並將所有固定大小維度 (邊界、寬度、高度等等) 乘以 0.8。
 
 ## 取代 LongListSelector
 
 
-以 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項取代 **LongListSelector** 將需要數個步驟，因此讓我們開始進行這項操作。 
-            **LongListSelector** 會直接繫結至分組資料來源，但是 **SemanticZoom** 包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控制項，這些控制項會透過 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 配接器間接繫結至資料。 
-            **CollectionViewSource** 必須在標記中做為資源，因此讓我們從將它新增至 MainPage.xaml 之 `<Page.Resources>` 內的標記中開始著手。
+以 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項取代 **LongListSelector** 將需要數個步驟，因此讓我們開始進行這項操作。 **LongListSelector** 會直接繫結至分組資料來源，但是 **SemanticZoom** 包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控制項，這些控制項會透過 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 配接器間接繫結至資料。 **CollectionViewSource** 必須在標記中做為資源，因此讓我們從將它新增至 MainPage.xaml 之 `<Page.Resources>` 內的標記中開始著手。
 
 ```xml
     <CollectionViewSource
@@ -79,8 +73,7 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
         IsSourceGrouped="true"/>
 ```
 
-請注意，**LongListSelector.ItemsSource** 上的繫結會變成 **CollectionViewSource.Source** 的值，而 **LongListSelector.IsGroupingEnabled** 會變成 **CollectionViewSource.IsSourceGrouped**。 
-            **CollectionViewSource** 有名稱 (注意：不是如您可能預期的索引鍵)，因此我們可以與它繫結。
+請注意，**LongListSelector.ItemsSource** 上的繫結會變成 **CollectionViewSource.Source** 的值，而 **LongListSelector.IsGroupingEnabled** 會變成 **CollectionViewSource.IsSourceGrouped**。 **CollectionViewSource** 有名稱 (注意：不是如您可能預期的索引鍵)，因此我們可以與它繫結。
 
 接著，以此標記取代 `phone:LongListSelector`，這會提供一個初步的 **SemanticZoom** 供我們使用：
 
@@ -272,18 +265,18 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 ## 讓檢視模型更具彈性
 
-本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別「是」一個 BookSku 群組。
+本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別「是」**一個 BookSku 群組。
 
-當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」一個 BookSku 群組「也是」該作者居住過之地址的群組，該怎麼辦？ Author 無法同時「是」這兩個群組。 但是 Author 可以「有」任何數目的群組。 而這就是方案：使用「有一個群組」模式來取代或補充我們目前使用的「是一個群組」模式。 方法如下：
+當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」**的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」**一個 BookSku 群組「也是」**該作者居住過之地址的群組，該怎麼辦？ Author 無法同時「是」**這兩個群組。 但是 Author 可以「有」**任何數目的群組。 而這就是方案：使用「有一個群組」**模式來取代或補充我們目前使用的「是一個群組」**模式。 方法如下：
 
 -   變更 Author，讓它不再衍生自 **List&lt;T&gt;**。
 -   將下列欄位新增至 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
 -   將下列屬性新增至 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
 -   當然，我們可以重複上述兩個步驟，依所需的數目將多個群組新增至 Author。
 -   將 AddBookSku 方法的實作變更為 `this.BookSkus.Add(bookSku);`。
--   既然 Author 已至少「有」一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將這個屬性新增至 **CollectionViewSource**： `ItemsPath="BookSkus"`
+-   既然 Author 已至少「有」**一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將這個屬性新增至 **CollectionViewSource**： `ItemsPath="BookSkus"`
 
-這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組：
+這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」**指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組：
 
 ```csharp
     public class Author : IEnumerable<BookSku>

@@ -38,8 +38,7 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## 3MF 結構中的核心類別
 
-
-            **Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 類別表示)。 大部分我們希望指定的 3D 模型相關資訊，都將透過設定 **Printing3DModel** 類別屬性和其基本類別屬性來加以儲存。
+**Printing3D3MFPackage** 類別代表完整 3MF 文件，而 3MF 文件的核心是其模型組件 (以 [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 類別表示)。 大部分我們希望指定的 3D 模型相關資訊，都將透過設定 **Printing3DModel** 類別屬性和其基本類別屬性來加以儲存。
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -64,8 +63,7 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> 
-            **注意** 所有三角形都必須以逆時鐘順序定義其索引 (從網格物件外部檢視三角形時)，使其 face-normal 向量指向外部。
+> **注意** 所有三角形都必須以逆時鐘順序定義其索引 (從網格物件外部檢視三角形時)，使其 face-normal 向量指向外部。
 
 Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它新增至模型的 **Meshes** 屬性。 套件中的所有 **Printing3DMesh** 物件都必須儲存至 **Printing3DModel** 類別的 **Meshes** 屬性。
 
@@ -83,24 +81,21 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ### 基本材質
 
-預設材質類型是 \[基本材質\]，其具有 \[色彩材質\] 值 (如下所述) 以及用來指定要使用的材質類型的 name 屬性。
+預設材質類型是 [**基本材質**]，其具有 [**色彩材質**] 值 (如下所述) 以及用來指定要使用的材質*類型*的 name 屬性。
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-
-            **注意** 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰ 如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
+**注意** 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰ 如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
 
 ### 色彩材質
 
-
-            **色彩材質**與**基本材質**類似，但不包含名稱。 因此，它們不會提供有關電腦應該使用的材質類型的指示。 它們只會保留色彩資料，並讓電腦選擇材質類型 (而電腦接著可能會提示使用者進行選擇)。 在下面的程式碼中，會自行使用先前方法中的 `colrMat` 物件。
+**色彩材質**與**基本材質**類似，但不包含名稱。 因此，它們不會提供有關電腦應該使用的材質類型的指示。 它們只會保留色彩資料，並讓電腦選擇材質類型 (而電腦接著可能會提示使用者進行選擇)。 在下面的程式碼中，會自行使用先前方法中的 `colrMat` 物件。
 
 [!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
 
 ### 複合材質
 
-
-            **複合材質**只會指示製造裝置使用不同**基底材質**的統一混合。 每個**複合材質群組**都只能參考一個用來繪製組成部分的**基本材質群組**。 此外，此群組內要設為可用的**基本材質**必須列在**材質索引**清單中，而每個**複合材質**在指定比例時都會參考該清單 (每個**複合材質**都只是**基本材質**的比例)。
+**複合材質**只會指示製造裝置使用不同**基底材質**的統一混合。 每個**複合材質群組**都只能參考一個用來繪製組成部分的**基本材質群組**。 此外，此群組內要設為可用的**基本材質**必須列在**材質索引**清單中，而每個**複合材質**在指定比例時都會參考該清單 (每個**複合材質**都只是**基本材質**的比例)。
 
 [!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
 
@@ -110,8 +105,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-
-            **注意** 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
+**注意** 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
 
 接下來，我們必須填寫 **Texture3Coord 材質**。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。
 
@@ -125,11 +119,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ## 元件和建置
 
-元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 
-            [
-              **Printing3DComponent**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 
-            **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
+元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
 
 例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
 

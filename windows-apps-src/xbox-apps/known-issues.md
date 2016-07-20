@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 開發人員預覽上的 UWP 已知問題"
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
 
 ---
 
@@ -21,8 +22,7 @@ Xbox 開發人員預覽系統更新包括實驗性和早期發行前版本軟體
 
 下列清單醒目提示這個版本中可能遇到的一些已知問題，但這並不是完整的清單。 
 
-
-            **我們想要您的意見反應**，因此請在[開發通用 Windows App](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
+**我們想要您的意見反應**，因此請在[開發通用 Windows App](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
 如果您遇到困難，請閱讀本主題中的資訊、參閱[常見問題集](frequently-asked-questions.md)，並使用論壇以尋求協助。
 
@@ -45,18 +45,18 @@ public App() {
 }
 ```
 
-若要關閉 HTML/Javascript app 中的滑鼠模式，請依照此範例：
+若要關閉 HTML/JavaScript app 中的滑鼠模式，請依照此範例：
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> 
-            **注意**
-            &nbsp;&nbsp;在此開發人員預覽版中，當滑鼠模式開啟時，使用控制器上的右搖桿移動瀏覽可能造成主機當機。 如果您發生此問題，必須重新啟動主機。
+如需包括如何在 HTML/JavaScript app 中開啟方向瀏覽的詳細資訊，請參閱[如何停用滑鼠模式](how-to-disable-mouse-mode.md#html)。
 
-如需滑鼠模式支援的資訊，請參閱[針對 Xbox 與電視設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主題。 本主題包含如何啟用與停用滑鼠模式的資訊，可讓您選擇適用於 app 的正確行為。
+> **注意**&nbsp;&nbsp;在此開發人員預覽版中，當滑鼠模式開啟時，使用控制器上的右搖桿移動瀏覽可能造成主機當機。 如果您發生此問題，必須重新啟動主機。
+
+如需滑鼠模式支援的資訊，請參閱[針對 Xbox 與電視設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主題。 本主題包含如何啟用與停用滑鼠模式的資訊，可讓您選擇適用於 app 的正確行為。
 
 ## 您必須已有使用者登入才能部署 app (錯誤 0x87e10008)
 
@@ -74,7 +74,7 @@ App 現在需要使用者登入才能啟動 (您必須已有使用者登入才�
  
 ## 家長監護開啟時，從 VS 部署失敗
 
-若主機開啟 \[設定\] 中的 \[家長監護\] 功能，從 VS 啟用 app 將會失敗。
+若主機開啟 [設定] 中的 [家長監護] 功能，從 VS 啟用 app 將會失敗。
 
 若要解決此問題，可以先暫時停用家長監護，或：
 1. 將 app 部署到關閉家長監護的主機
@@ -87,7 +87,7 @@ App 現在需要使用者登入才能啟動 (您必須已有使用者登入才�
 
 此時，即使解除安裝並重新安裝 app，權限仍會「相黏」__直到您將使用者登出為止。
  
-有另外一種豁免類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 \[一律\] 選項，來允許子女啟動 app。 該豁免會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
+有另外一種豁免類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律]**** 選項，來允許子女啟動 app。 該豁免會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
 
 <!--### x86 vs. x64
 
@@ -112,7 +112,7 @@ Please use the forum to report any issues you see.-->
 
 ## DirectX 12 支援
 
-Xbox One 上的 UWP 支援 DirectX 11 功能層級 10。 此時不支援 DirectX 12。 Xbox One (與所有傳統遊戲主機類似) 是一個特殊的硬體，需要有特定 SDK 才能充分發揮其潛力。 如果您正在處理需要存取 Xbox One 硬體之最大潛力的遊戲，請向 [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 計畫註冊來存取該 SDK (內含 DirectX 12 支援)。
+Xbox One 上的 UWP 支援 DirectX 11 功能層級 10。 此時不支援 DirectX 12。 Xbox One (與所有傳統遊戲主機類似) 是一個特殊的硬體，需要有特定 SDK 才能充分發揮其潛力。 如果您正在處理需要存取 Xbox One 硬體之最大潛力的遊戲，請向 [ID@XBOX](http://www.xbox.com/Developers/id) 計畫註冊來存取該 SDK (內含 DirectX 12 支援)。
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -123,9 +123,7 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 根據預設，Xbox 上 UWP App 的顯示區域應該要針對電視安全區域進行內凹處理。 不過，Xbox One 開發人員預覽包含的一個已知錯誤，會使電視安全區域從 [0, 0] 開始，而非從 [_offset_, _offset_] 開始。
 
-> 
-            **注意**
-            &nbsp;&nbsp;這僅適用於使用 Javascript 的 UWP app。
+> **注意**&nbsp;&nbsp;這僅適用於使用 JavaScript 的 UWP app。
 
 解決這個問題最簡單的方式便是停用電視安全區域，如下列 JavaScript 範例所示。
 
@@ -141,10 +139,12 @@ UWP apps and games running on Xbox One share resources with the system and other
 If you are running into memory or performance issues, this may be why. 
 For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
+<!--
+## Networking using traditional sockets
 
-## 使用傳統通訊端的網路功能
-
-在這個開發人員預覽中，無法使用來自使用傳統 TCP/UDP 通訊端 (WinSock、Windows.Networking.Sockets) 的主機的輸入和輸出網路存取。 開發人員仍然可以使用 HTTP 和 WebSocket。 
+In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
+Developers can still use HTTP and WebSockets.
+--> 
 
 
 ## UWP API 涵蓋範圍
@@ -218,7 +218,7 @@ Sometimes this is resolved by sorting a column on the table.-->
 
 ### 瀏覽到 WDP 會導致憑證警告
 
-您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 按一下 \[繼續瀏覽此網站\] 來存取 Windows Device Portal。
+您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 按一下 [繼續瀏覽此網站] 來存取 Windows Device Portal。
 
 ![網站安全性憑證警告](images/security_cert_warning.jpg)
 
@@ -233,6 +233,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

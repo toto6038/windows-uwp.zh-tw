@@ -6,8 +6,8 @@ ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a1b271360b84e670f0b28557ffc499436487ad5f
 
 ---
 
@@ -50,7 +50,7 @@ XAML 配置控制項 (例如 [**Grid**](https://msdn.microsoft.com/library/windo
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
-針對使用 JavaScript 的 Windows 市集應用程式，請使用[階層式樣式表 (CSS)](https://msdn.microsoft.com/library/ms531209) 配置機制，例如 [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) 和 [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section)。 請使用對稱式邊框間距和邊界，以便能夠為不同的配置方向進行當地語系化。
+針對使用 JavaScript 的 Windows 市集應用程式，請使用[階層式樣式表 (CSS)](https://msdn.microsoft.com/library/ms531209) 配置機制，例如 [-ms-grid](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#g_section) 和 [–ms-box](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#f_section)。 請使用對稱式邊框間距和邊界，以便能夠為不同的配置方向進行當地語系化。
 
 您的應用程式也可以使用 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器，根據應用程式的語言來調整 CSS 屬性，例如特定元素的寬度。 為了啟用，主控處理程序會將根元素的 **lang** 屬性設定為應用程式語言。
 
@@ -119,6 +119,6 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

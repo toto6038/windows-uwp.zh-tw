@@ -6,8 +6,9 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: 12f5905fce642a10656864e41325c8f4bd56c025
 
 ---
 # 自動建議方塊
@@ -144,18 +145,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![沒有搜尋結果的自動建議方塊範例](images/controls_autosuggest_noresults.png)
 
-{{&gt; aside-internal content = "
-## 全球化和當地語系化檢查清單
-
-<table>
-<tr>
-<th>垂直間距</th><td>在垂直間距使用非拉丁字元可確保非拉丁指令碼 (包括數字) 能夠正常顯示。</td>
-</tr>
-<tr>
-<th>捲動</th><td>已選取自動建議文字時，使用者應該能夠捲動到字串的結尾。</td>
-</tr>
-</table>
-"}}
 
 ## 相關文章
 
@@ -168,6 +157,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

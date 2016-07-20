@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "啟動連絡人 app"
 description: "本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。"
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 

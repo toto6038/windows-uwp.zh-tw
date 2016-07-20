@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "處理 App 預先啟動"
 description: "了解如何透過覆寫 OnLaunched 方法來處理 App 預先啟動。"
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
 ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
 
@@ -80,8 +81,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-
-            **提示** 如果您想要退出預先啟動，請檢查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 如果已設定，請在執行任何工作之前返回 OnLaunched() 以建立框架或啟動視窗。
+**提示** 如果您想要退出預先啟動，請檢查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 如果已設定，請在執行任何工作之前返回 OnLaunched() 以建立框架或啟動視窗。
 
  
 
@@ -119,7 +119,7 @@ public sealed partial class MainPage : Page
     -   效能影響舉例：您可以等到使用者切換到應用程式才擷取當前的天氣資訊，而不是在預先啟動應用程式時就載入該資訊，然後在應用程式變成可見時，需要再次載入該資訊來確定該資訊是當前的。
 -   如果您的應用程式會在啟動時清除其動態磚，請將此操作延遲到可見度變更事件發生之後才進行。
 -   您 App 的遙測應該要能區分一般磚啟用和預先啟動啟用，以便讓您能夠在問題發生時識別狀況。
--   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，您可以藉由選擇 \[偵錯\] \[其他偵錯目標\] \[偵錯 Windows 通用 App 預先啟動\] 在Visual Studio 2015中模擬預先啟動您的 App。
+-   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，您可以藉由選擇 [偵錯]**** &gt; [其他偵錯目標]**** &gt; [偵錯 Windows 通用 App 預先啟動]**** 在Visual Studio 2015中模擬預先啟動您的 App。
 
 ## 相關主題
 

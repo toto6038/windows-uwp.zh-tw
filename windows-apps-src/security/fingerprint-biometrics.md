@@ -20,7 +20,7 @@ ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
 ## 檢查裝置是否有指紋辨識器
 
 
-若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 \[設定\] 中為使用者提供啟用或停用指紋驗證的選項。
+若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 [設定] 中為使用者提供啟用或停用指紋驗證的選項。
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()

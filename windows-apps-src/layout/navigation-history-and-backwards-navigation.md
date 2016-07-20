@@ -26,7 +26,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 <table>
     <tr>
         <td colspan="2">裝置</td>
-        <td>\[上一頁\] 按鈕行為</td>
+        <td>[上一頁] 按鈕行為</td>
      </tr>
     <tr>
         <td>手機</td>
@@ -119,7 +119,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 
 以下是對應的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件處理常式，在 app 根框架上呼叫 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)。
 
-這個處理常式會在發生全域返回事件時叫用。 如果 app 內的返回堆疊是空的，系統可能會瀏覽到 app 堆疊中的前一個 app 或 \[開始\] 畫面。 桌面模式沒有 app 返回堆疊，即使 app 內的返回堆疊用盡，使用者還是會留在 app 中。
+這個處理常式會在發生全域返回事件時叫用。 如果 app 內的返回堆疊是空的，系統可能會瀏覽到 app 堆疊中的前一個 app 或 [開始] 畫面。 桌面模式沒有 app 返回堆疊，即使 app 內的返回堆疊用盡，使用者還是會留在 app 中。
 
 ```CSharp
 void App::App_BackRequested(
@@ -160,14 +160,13 @@ private void App_BackRequested(object sender,
 ## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何啟用標題列返回按鈕
 
 
-支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 (\[設定\]  \[系統\]  \[平板電腦模式\]) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
+支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
 
 在桌面模式中，每個 app 都是在有標題列的視窗中執行。 您可以為 app 提供一個替代的返回按鈕，顯示在此標題列中。
 
 只有當 app 在處於桌面模式的裝置上執行時，才會有標題列的返回按鈕，而且只支援 app 內瀏覽歷程記錄 — 不支援 app 間瀏覽歷程記錄。
 
-
-            **重要：**標題列的返回按鈕預設不會顯示。 您必須選擇加入。
+**重要：**標題列的返回按鈕預設不會顯示。 您必須選擇加入。
 
  
 

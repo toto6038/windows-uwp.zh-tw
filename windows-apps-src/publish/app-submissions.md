@@ -32,7 +32,7 @@ ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
 | **基本價格**                | 必要                                    | [基本價格](set-app-pricing-and-availability.md#base-price)              |
 | **免費試用**                | 預設值：沒有免費試用                      | [新增試用版和在 App 內購買](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
 | **市場和自訂價格** | 預設值：所有可能的市場，無自訂價格 | [制定價格和選擇市場](define-pricing-and-market-selection.md)              |
-| **銷售定價**              | 選用                                    | [銷售 App 和 IAP](put-apps-and-iaps-on-sale.md)                                       |
+| **銷售定價**              | 選用                                    | [銷售 app 和 IAP](put-apps-and-iaps-on-sale.md)                                       |
 | **配送和可見性** | 預設：在市集推出此應用程式 | [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility) | 
 | **Windows 10 裝置系列**  | 預設：可以在任何可執行您 app 的 Windows 10 裝置上下載該 app | [Windows 10 裝置系列](set-app-pricing-and-availability.md#windows-10-device-families) | 
 | **組織授權**    | 預設：允許組織大量取得 | [組織授權選項](organizational-licensing.md)                        | 
@@ -46,7 +46,7 @@ ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **類別與子類別**  | 必要                                    | [類別與子類別表格](category-and-subcategory-table.md)       |
 | **硬體喜好設定**      | 選用                                    | [硬體喜好設定](enter-app-properties.md#hardware_preferences)      |
-| **應用程式宣告**          | 預設值：客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置；Windows 可將此 app 的資料自動備份至 OneDrive。 | [應用程式宣告](app-declarations.md) |
+| **App 宣告**          | 預設值：客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置；Windows 可將此 app 的資料自動備份至 OneDrive。 | [應用程式宣告](app-declarations.md) |
 
 
 
@@ -75,7 +75,7 @@ ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
 | **說明**               | 必要                                    | [撰寫一份出色的 app 介紹](write-a-great-app-description.md) | 
 | **版本資訊**             | 選用                                    | [版本資訊](create-app-descriptions.md#release-notes)         |
 | **螢幕擷取畫面**               | 必要 (至少需要一個螢幕擷取畫面)          | [App 螢幕擷取畫面與影像](app-screenshots-and-images.md)       |
-| **App 磚圖示**             | 選用，但強烈建議用於 Windows Phone 8.1 和較舊版本 | [App 磚圖示](create-app-descriptions.md#app-tile-icon) | 
+| **App 磚圖示**             | 選用，但強烈建議用於  Windows Phone 8.1 和較舊版本 | [App 磚圖示](create-app-descriptions.md#app-tile-icon) | 
 | **促銷用圖稿**       | 選用                                    | [App 螢幕擷取畫面與影像](app-screenshots-and-images.md)       | 
 | **App 功能**              | 選用                                    | [功能](create-app-descriptions.md#app-features)               |
 | **建議的硬體**      | 選用                                    | [建議的硬體](create-app-descriptions.md#recommended-hardware) | 

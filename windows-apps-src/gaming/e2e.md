@@ -3,8 +3,9 @@ author: mtoepke
 title: "Windows 10 遊戲開發指南"
 description: "開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
-ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+translationtype: Human Translation
+ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
+ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
 
 ---
 
@@ -30,12 +31,9 @@ ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
 
 ## 遊戲開發資源
 
-
 從文件到開發人員計劃、論壇、部落格及範例，有許多資源可在您的遊戲開發之路上協助您。 以下是您開發 Windows 10 遊戲時需了解的資源摘要報導。
 
 > **注意：**管理 Xbox One 開發和選取 Windows 10 遊戲功能 (例如「Xbox Live 服務」) 時，是透過 ID@Xbox 和 Microsoft Studios 這類計畫來管理。 本指南涵蓋的資源範圍很廣，因此視您所參與的計畫或您的特定開發角色而定，您可能會發現有些資源無法使用。 解析成 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或「遊戲開發人員網路」(GDN) 的連結就是其中幾例。 如需有關與 Microsoft 合作的資訊，請參閱[開發人員計畫](#programs)。
-
- 
 
 ### 遊戲開發文件
 
@@ -80,7 +78,6 @@ ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
     </tr>     
 </table>
 
-
 ### 開發人員計畫
 
 Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 若要在「Windows 市集」中發行遊戲，您將需要在「Windows 開發人員中心」建立一個開發人員帳戶。 視您的遊戲和工作室需求而定，其他計畫可能會有相關，並且可以創造像是 Xbox One 開發與 Xbox Live 整合的機會。
@@ -97,7 +94,7 @@ Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員�
     <tr>
         <td>註冊開發人員帳戶</td>
         <td>[準備好註冊了嗎？](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
-    </tr>
+    </tr> 
 </table>  
 
 
@@ -188,7 +185,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Xbox One 遊戲範例 (GDN)</td>
-        <td>[範例](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[範例](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 遊戲範例 (MSDN Code Gallery)</td>
@@ -326,10 +323,30 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>遊戲在整個 Microsoft 生態系統的發展 (影片)</td>
-        <td>[遊戲在整個 Microsoft 生態系統的未來發展](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
+        <td>[遊戲在 Microsoft 生態圈的未來](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
     </tr>
 </table>
- 
+
+### 遊戲規劃
+
+以下是在規劃遊戲時可考量的高層級概念和規劃主題。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>設計無障礙遊戲</td>
+        <td>[遊戲的協助工具](https://msdn.microsoft.com/windows/uwp/gaming/accessibility-for-games)</td>
+    </tr>
+    <tr>
+        <td>針對遊戲使用雲端</td>
+        <td>[遊戲的雲端](https://msdn.microsoft.com/windows/uwp/gaming/cloud-for-games)</td>
+    </tr>
+</table>
+
+
 
 ### 選擇您的圖形技術與程式設計語言
 
@@ -1028,7 +1045,7 @@ DirectX 遊戲開發的指南與參考資料。
  
 #### DirectX 工具組和程式庫
 
-DirectX 工具組、DirectX 紋理處理程式庫及 DirectXMesh 幾何處理程式庫提供紋理、網格、精靈及其他公用程式功能與協助程式類別來進行 DirectX 開發。 與您自己實作這些功能相比，這些程式庫可以節省很多時間和精力。 雖然這些程式庫主要是針對 Direct3D 11 進行實作，但某些部分在 Direct3D 12 中也可以運作。
+DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程式庫、UVAtlas 程式庫，以及 DirectXMath 程式庫能提供紋理、網格、精靈及其他公用程式功能與協助程式類別來進行 DirectX 開發。 這些程式庫能幫您節省開發時間與精力。
 
 <table>
     <colgroup>
@@ -1036,16 +1053,28 @@ DirectX 工具組、DirectX 紋理處理程式庫及 DirectXMesh 幾何處理程
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>取得 DirectX 工具組 (DirectX 11)</td>
+        <td>取得適用於 DirectX 11 的 DirectX 工具組</td>
         <td>[DirectXTK](http://go.microsoft.com/fwlink/?LinkId=248929)</td>
     </tr>
     <tr>
-        <td>取得 DirectX 紋理處理程式庫 (DirectX 11)</td>
+        <td>取得適用於 DirectX 12 的 DirectX 工具組</td>
+        <td>[DirectXTK 12](http://go.microsoft.com/fwlink/?LinkID=615561)</td>
+    </tr>
+    <tr>
+        <td>DirectX 紋理處理程式庫</td>
         <td>[DirectXTex](http://go.microsoft.com/fwlink/?LinkId=248926)</td>
     </tr>
     <tr>
         <td>取得 DirectXMesh 幾何處理程式庫</td>
         <td>[DirectXMesh](http://go.microsoft.com/fwlink/?LinkID=324981)</td>
+    </tr>
+    <tr>
+        <td>取得可建立和封裝 Isochart 紋理地圖集的 UVAtlas</td>
+        <td>[UVAtlas](http://go.microsoft.com/fwlink/?LinkID=512686)</td>
+    </tr>
+    <tr>
+        <td>取得 DirectXMath 程式庫</td>
+        <td>[DirectXMath](http://go.microsoft.com/fwlink/?LinkID=615560)</td>
     </tr>
     <tr>
         <td>DirectXTK 中的 Direct3D 12 支援 (部落格文章)</td>
@@ -1072,11 +1101,11 @@ DirectX 工具組、DirectX 紋理處理程式庫及 DirectXMesh 幾何處理程
     </tr>
     <tr>
         <td>Intel︰DirectX 12 中的多重介面卡支援</td>
-        <td>[如何使用 DirectX 12 實作明確的多重介面卡應用程式](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+        <td>[如何使用 DirectX 12 實作明確的多重介面卡應用程式](https://software.intel.com/articles/multi-adapter-support-in-directx-12)</td>
     </tr>
     <tr>
         <td>Intel：DirectX 12 教學課程</td>
-        <td>[Intel、Suzhou Snail 及 Microsoft 的共同作業白皮書](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
+        <td>[Intel、Suzhou Snail 及 Microsoft 的共同作業白皮書](https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1115,10 +1144,18 @@ DirectX 工具組、DirectX 紋理處理程式庫及 DirectXMesh 幾何處理程
         <td>適用於以互動方式開發動態磚範本的 Windows 10 應用程式</td>
         <td>[通知視覺化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
     </tr>
+    <tr>
+        <td>適用於 Visual Studio 的 UWP Tile Generator 擴充功能</td>
+        <td>[此工具可使用單一影像建立所有必要的磚](https://visualstudiogallery.msdn.microsoft.com/09611e90-f3e8-44b7-9c83-18dba8275bb2)</td>
+    </tr>
+    <tr>
+        <td>適用於 Visual Studio 的 UWP Tile Generator 擴充功能 (部落格文章)</td>
+        <td>[使用 UWP Tile Generator 工具的提示](https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/)</td>
+    </tr>
 </table>
  
 
-### 啟用應用程式內產品 (IAP) 購買
+### 啟用 App 內產品 (IAP) 購買
 
 IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP 可以是新的附加元件、遊戲關卡、項目或您玩家可能喜歡的任何其他東西。 如果使用得當，IAP 便可既改善遊戲體驗，又提供收益。 您需透過「Windows 開發人員中心」儀表板來定義和發行您遊戲的 IAP， 並且需在遊戲程式碼中啟用 App 內購買。
 
@@ -1141,7 +1178,7 @@ IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP
     </tr>
     <tr>
         <td>監視您遊戲的 IAP 銷售與人口統計</td>
-        <td>[IAP 收購報告](https://msdn.microsoft.com/library/windows/apps/mt148538)</td>
+        <td>[IAP 下載數報告](https://msdn.microsoft.com/library/windows/apps/mt148538)</td>
     </tr>
 </table>
  
@@ -1259,8 +1296,16 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>以合作廠商開發人員的身分封裝您的遊戲 (部落格文章)</td>
-        <td>[建立可上傳的封裝而不需發行人員的市集帳戶存取權](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
+        <td>[在沒有發行人員的市集帳戶存取權之下建立可上傳的套件](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
     </tr>
+    <tr>
+        <td>使用 MakeAppx 建立應用程式套件和應用程式套件組合</td>
+        <td>[使用 App 封裝程式工具 MakeAppx.exe 建立套件](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+    </tr>
+    <tr>
+        <td>使用 SignTool 數位簽署您的檔案</td>
+        <td>[使用 SignTool 簽署檔案及驗證檔案中的簽章](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
+    </tr>      
     <tr>
         <td>上傳及設定您遊戲的版本</td>
         <td>[上傳應用程式套件](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
@@ -1320,6 +1365,10 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>開發人員中心 App</td>
+        <td>[開發人員中心 Windows 10 App 可檢視已發行 App 的效能](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
+    </tr>  
     <tr>
         <td>Windows 開發人員中分析</td>
         <td>[分析](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
@@ -1447,6 +1496,6 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

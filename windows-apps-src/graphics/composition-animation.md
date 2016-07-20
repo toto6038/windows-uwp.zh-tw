@@ -3,6 +3,7 @@ author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: "組合動畫"
 description: "許多組合物件和效果屬性都可藉由使用主要畫面格和運算式動畫來製作動畫效果，這些動畫可允許隨時間或根據計算來變更 UI 元素的屬性。"
+translationtype: Human Translation
 ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
 ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
 
@@ -667,6 +668,6 @@ _target.StartAnimation(“Opacity”, exp);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

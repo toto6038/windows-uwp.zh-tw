@@ -20,20 +20,11 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
 
 了解如何使用方向感應器來判斷裝置方向。
 
+[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空間中包含兩種不同類型的方向感應器：[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 雖然這這兩種感應器都是方向感應器，但該詞彙意義遠大於此，而它們的用途大不相同。 不過，既然兩者都是方向感應器，所以就都涵蓋在這篇文章中。
 
-            [
-              **Windows.Devices.Sensors**
-            ](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空間中包含兩種不同類型的方向感應器：[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 雖然這這兩種感應器都是方向感應器，但該詞彙意義遠大於此，而它們的用途大不相同。 不過，既然兩者都是方向感應器，所以就都涵蓋在這篇文章中。
+[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API 是用於 3D app，兩個即可取得一個四元數及一個旋轉矩陣。 四元數最簡單的理解方式是視為任一軸上某一點 \[x,y,z\] 的旋轉 (對照旋轉矩陣來說，旋轉矩陣代表繞著三個軸的旋轉)。 四元數的數學理論很難用通俗語言解釋，其中涉及到複數的幾何特性以及虛數的數學特性，不過實際應用卻很簡單，而且像 DirectX 之類的架構都能支援四元數。 複雜的 3D 應用程式可使用方向感應器的來調整使用者透視角度。 這種感應器結合了加速計、陀螺儀以及指南針的輸入。
 
-
-            [
-              **OrientationSensor**
-            ](https://msdn.microsoft.com/library/windows/apps/BR206371) API 是用於 3D app，兩個即可取得一個四元數及一個旋轉矩陣。 四元數最簡單的理解方式是視為任一軸上某一點 \[x,y,z\] 的旋轉 (對照旋轉矩陣來說，旋轉矩陣代表繞著三個軸的旋轉)。 四元數的數學理論很難用通俗語言解釋，其中涉及到複數的幾何特性以及虛數的數學特性，不過實際應用卻很簡單，而且像 DirectX 之類的架構都能支援四元數。 複雜的 3D 應用程式可使用方向感應器的來調整使用者透視角度。 這種感應器結合了加速計、陀螺儀以及指南針的輸入。
-
-
-            [
-              **SimpleOrientation**
-            ](https://msdn.microsoft.com/library/windows/apps/BR206399) API 是用來依據像是直向朝上、直向朝下、橫向朝左及橫向朝右的定義，判斷目前的裝置方向。 它也可以偵測裝置是否正面朝上或正面朝下。 這個感應器不會傳回如 "portrait up" 或 "landscape left" 的屬性，而是會傳回旋轉值：如 "Not rotated"、"Rotated90DegreesCounterclockwise" 等等。 下表將常用的方向屬性對應到相應的感應器讀數。
+[**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API 是用來依據像是直向朝上、直向朝下、橫向朝左及橫向朝右的定義，判斷目前的裝置方向。 它也可以偵測裝置是否正面朝上或正面朝下。 這個感應器不會傳回如 "portrait up" 或 "landscape left" 的屬性，而是會傳回旋轉值：如 "Not rotated"、"Rotated90DegreesCounterclockwise" 等等。 下表將常用的方向屬性對應到相應的感應器讀數。
 
 | 方向     | 相應的感應器讀數      |
 |-----------------|-----------------------------------|
@@ -54,7 +45,7 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
 
 ###  指示
 
--   從 \[Visual C#\] 專案範本中選擇 \[空白應用程式 (通用 Windows)\] 來建立一個新專案。
+-   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -177,11 +168,11 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **OrientationSensorCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="OrientationSensorCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:OrientationSensorCS"`。
 
--   按 F5 或選取 \[偵錯\] \[開始偵錯\] 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更方向。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 \[偵錯\] \[停止偵錯\] 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
 ###  說明
 
@@ -201,8 +192,7 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-
-            **ReadingChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+**ReadingChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
@@ -217,7 +207,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 ### 指示
 
--   從 \[Visual C#\] 專案範本中選擇 \[空白應用程式 (通用 Windows)\] 來建立一個新專案。
+-   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -324,11 +314,11 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **SimpleOrientationCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="SimpleOrientationCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:SimpleOrientationCS"`。
 
--   按 F5 或選取 \[偵錯\] \[開始偵錯\] 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更方向。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 \[偵錯\] \[停止偵錯\] 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
 ### 說明
 
@@ -340,8 +330,7 @@ App 會與 **MainPage** 方法中的預設感應器建立連線。
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-
-            **OrientationChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+**OrientationChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 

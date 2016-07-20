@@ -6,8 +6,8 @@ title: "開發通用 Windows 10 app"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
 
 ---
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
 
 如需深入了解使用鍵盤瀏覽 UI 元素的方式，請參閱[鍵盤協助工具](keyboard-accessibility.md)。  
 
-此外，[針對協助工具的軟體工程設計](https://www.microsoft.com/en-us/download/details.aspx?id=19262)電子書，針對這個主題有一篇名叫_設計邏輯階層_的絕佳章節。
+此外，[針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書，針對這個主題有一篇名叫_設計邏輯階層_的絕佳章節。
 
 ## 色彩和對比  
 Windows 的其中一個內建協助工具功能便是高對比模式，此模式能增加螢幕上文字和影像的色彩對比。 對於一些人來說，提升色彩對比能降低眼睛的疲勞度，並使畫面更容易閱讀。 當您在高對比中驗證 UI 時，應該要檢查控制項的程式碼是否有一致，且依照系統色彩 (而非硬式編碼色彩) 進行撰寫，以確保使用者能和未使用高對比之使用者看到一樣的控制項。  
@@ -53,7 +53,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-如需使用系統色彩和資源的詳細資訊，請參閱 [XAML 佈景主題資源](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources)。
+如需使用系統色彩和資源的詳細資訊，請參閱 [XAML 佈景主題資源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。
 
 只要您沒有覆寫系統色彩，UWP App 預設可支援高對比佈景主題。 如果使用者已選擇要讓系統使用來自系統設定或協助工具的高對比佈景主題，架構就會自動針對 UI 中的控制項和元件，使用產生高對比配置和呈現方式的色彩和樣式設定。   
 
@@ -80,11 +80,11 @@ XAML
 * [設計通用軟體](designing-inclusive-software.md)  
 * [通用設計](http://design.microsoft.com/inclusive)
 * [協助工具應避免的做法](practices-to-avoid.md)
-* [針對協助工具的軟體工程設計](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
+* [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

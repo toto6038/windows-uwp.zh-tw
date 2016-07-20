@@ -3,8 +3,9 @@ title: "密碼編譯金鑰"
 description: "本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。"
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
-ms.sourcegitcommit: 4c8f586f711b1a9e2d2f252cf28a5239d9d68122
-ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
+translationtype: Human Translation
+ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
+ms.openlocfilehash: a86f31a0b62958f1300e386dfb99fd7fc1432fc5
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。
+本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。 
 
 ## 對稱金鑰
 
@@ -75,6 +76,6 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

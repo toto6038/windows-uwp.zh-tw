@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "通用 Windows 平台 (UWP) app 指南"
 description: "在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+translationtype: Human Translation
+ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
+ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
 
 ---
 
@@ -31,18 +32,17 @@ Windows 10 引進了通用 Windows 平台 (UWP)，進一步進化 Windows 執行
 
 ## 裝置系列
 
-
 Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 Windows Phone。 使用 Windows 10，您不再是以作業系統為目標，而是以一或多個裝置系列做為您的 app 的目標。 裝置系列會識別 API、系統特性以及您對於裝置系列中的裝置可以預期的行為。 它也會判斷可以從市集安裝您的 app 的一組裝置。 以下是裝置系列階層。
 
 ![裝置系列](images/devicefamilytree.png)
 
 裝置系列是一起收集的一組 API，並且給予名稱和版本號碼。 裝置系列是作業系統的基礎。 電腦執行傳統型作業系統，是以傳統型裝置系列為基礎。 手機和平板電腦等等執行行動裝置作業系統，是以行動裝置系列為基礎。 依此類推。
 
-通用裝置系列是特殊的。 它不直接做為任何作業系統的基礎。 通用裝置系列中的一組 API 是由子裝置系列繼承。 因此通用裝置系列 API 保證會存在於每個作業系統上，隨後存在於每個裝置上。
+通用裝置系列是特殊的。 它不直接做為任何作業系統的基礎。 相反地，通用裝置系列中的一組 API 是由子裝置系列繼承。 因此通用裝置系列 API 保證會存在於每個 OS 及每個裝置上。
 
-每個子裝置系列會將自己的 API 新增至它繼承的 API。 子裝置系列中產生的 API 聯集保證會存在於以該裝置系列為基礎的作業系統中，隨後存在於執行該作業系統的每個裝置上。
+每個子裝置系列會將自己的 API 新增至它繼承的 API。 子裝置系列中產生的 API 聯集保證會存在於以該裝置系列為基礎的作業系統中，以及執行該作業系統的每個裝置上。
 
-裝置系列的一項優點是您的 app 可以在任何 (甚至是所有) 裝置上執行，從手機、平板電腦和桌上型電腦到 Surface Hub 和 Xbox 主機。 您的 app 也可以使用彈性的程式碼以動態地偵測和使用通用裝置系列以外的裝置功能。
+裝置系列的一項優點是您的 App 可以在任何 (甚至是所有) 裝置上執行，從手機、平板電腦、桌上型電腦到 Surface Hub 和 Xbox 主機，以及 HoloLens。 您的 App 也可以使用彈性的程式碼，以動態偵測並使用通用裝置系列以外的裝置功能。
 
 關於您的 app 要以哪個 (哪些) 裝置系列為目標的決策由您決定。 該決策會以這些重要的方式影響您的 app。 它會決定：
 
@@ -58,22 +58,21 @@ Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 W
 
 若要達到您的 app 對於裝置的最大範圍，並且讓它儘可能在多個類型的裝置上執行，您的 app 將會以通用裝置系列為目標。 這麼做可以讓 app 自動以根據通用的每個裝置系列為目標 (在圖表中，通用的所有子系)。 這表示 app 會在以這些裝置系列為基礎的每個作業系統上執行，以及在執行這些作業系統的所有裝置上執行。 保證可以在所有裝置上使用的唯一 API 是您做為目標之通用裝置系列的特定版本所定義的集合。 (這個版本中，該版本永遠是 10.0.x.0。) 若要了解 app 可以在其目標裝置系列版本以外呼叫 API 的方式，請參閱本主題稍後的＜撰寫程式碼＞。
 
-**將您的 app 限制為一種裝置**
+**將您的 App 限制於單一類型的裝置**
 
-您可能不希望您的 app 在各種裝置上執行；可能是它是特別針對桌上型電腦或 Xbox 主機。 在這種情況下，您可以選擇讓您的 app 以其中一個子裝置系列為目標。 例如，如果您以傳統型裝置系列為目標，API 保證可用於您的 app，包括從通用裝置系列繼承的 API，加上傳統型裝置系列特定的 API。
+基於某些原因，您可能不希望您的 App 在眾多類型的裝置上執行，例如它可能是特別針對桌上型電腦或 Xbox 主機所設計。 在這種情況下，您可以選擇讓您的 App 以其中一個子裝置系列為目標。 例如，如果您以傳統型裝置系列為目標，API 保證可用於您的 app，包括從通用裝置系列繼承的 API，加上傳統型裝置系列特定的 API。
 
 **將您的 app 限制為所有可能的裝置子集**
 
-不是以通用裝置系列為目標，或是以其中一個子裝置系列為目標，而是可以兩個 (或多個) 子裝置系列為目標。 以傳統型和行動裝置為目標可能適合您的 app。 或者傳統型和 Xbox。 或者傳統型、Xbox 和 Surface Hub。
+不是以通用裝置系列為目標，或是以其中一個子裝置系列為目標，而是可以兩個 (或多個) 子裝置系列為目標。 以傳統型和行動裝置為目標，對於您的 App 可能較為合理。 或是傳統型和 HoloLens。 或是傳統型、Xbox 及 Surface Hub 等等。
 
 **排除特定版本裝置系列的支援**
 
-在少數情況下，您可能想要讓您的 app 可以隨處執行，具有特定裝置系列之特定版本的裝置除外。 例如，假設您的 app 以通用裝置系列的 10.0.x.0 版為目標。 當未來作業系統版本變更時，假設變更為 10.0.x.2，屆時您就可以指定您的 app 在 10.0.x.1 版的 Xbox 以外的隨處執行，方法是讓您的 app 以 10.0.x.0 通用和 10.0.x.1 Xbox 為目標。 您的 app 不適用於 Xbox 10.0.x.1 (含) 和更舊版本內的裝置系列版本的集合。
+在少數情況下，您可能想要讓您的 app 可以隨處執行，具有特定裝置系列之特定版本的裝置除外。 例如，假設您的 App 以通用裝置系列的 10.0.x.0 版為目標。 當未來作業系統版本變更時 (假設變更為 10.0.x.2)，屆時您就可以透過讓 App 以通用的 10.0.x.0 及 Xbox 的 10.0.x.2 為目標，來指定您的 App 僅可在 Xbox 的 10.0.x.1 版以外的版本上執行。 您的 App 將會無法適用 Xbox 10.0.x.1 (含) 和更舊版本的裝置系列版本集合。
 
 根據預設，Microsoft Visual Studio 會將應用程式套件資訊清單檔案中的 **Windows.Universal** 指定為目標裝置系列。 若要指定從市集將您的 app 提供給一或多個裝置系列，請在您的 Package.appxmanifest 檔案中手動設定 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素。
 
 ## UI 和通用輸入
-
 
 UWP app 可以在具有不同輸入形式、螢幕解析度、DPI 密度以及其他獨特特性的許多不同類型裝置上執行。 Windows 10 提供新的通用控制項、配置面板和工具，可協助您針對您的 app 可能會在其上執行的裝置調整 UI。 例如，當您的 app 在桌上型電腦與行動裝置上執行時，您可以調整 UI 以利用不同的螢幕解析度。
 
@@ -192,7 +191,7 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 ## 撰寫程式碼
 
 
-您適用於 [Visual Studio 中的 Windows 10 專案](https://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#target_win10)的程式設計語言選項包含 Visual C++、C#、Visual Basic 和 JavaScript。 對於Visual C++、C# 和 Visual Basic，您可以使用 XAML 以獲得完全不失真的原生 UI 體驗。 對於 Visual C++，您可以選擇使用 DirectX 繪製，或是同樣使用 XAML。 對於 JavaScript，您的展示層將會是 HTML，而 HTML 當然是跨平台 Web 標準。 您的大部分程式碼與 UI 是通用的，會在任何位置以相同的方式執行。 但是對於為特定裝置系列量身打造的程式碼，以及為特定表單係數量身打造的 UI，您可以選擇使用彈性程式碼和彈性 UI。 讓我們看看這些不同的情況。
+您適用於 [Visual Studio 中的 Windows 10 專案](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10)的程式設計語言選項包含 Visual C++、C#、Visual Basic 和 JavaScript。 對於Visual C++、C# 和 Visual Basic，您可以使用 XAML 以獲得完全不失真的原生 UI 體驗。 對於 Visual C++，您可以選擇使用 DirectX 繪製，或是同樣使用 XAML。 對於 JavaScript，您的展示層將會是 HTML，而 HTML 當然是跨平台 Web 標準。 您的大部分程式碼與 UI 是通用的，會在任何位置以相同的方式執行。 但是對於為特定裝置系列量身打造的程式碼，以及為特定表單係數量身打造的 UI，您可以選擇使用彈性程式碼和彈性 UI。 讓我們看看這些不同的情況。
 
 **呼叫由您的目標裝置系列實作的 API**
 
@@ -254,10 +253,9 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 ## 使用者經驗
 
+通用 Windows App 可讓您充分利用執行該 App 之裝置的獨特功能。 您的 App 可以利用傳統型裝置的所有功能、平板電腦上直接操作的自然互動 (包括觸控和手寫筆輸入)、行動裝置的可攜性與便利性、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) 的共同作業功能，以及其他支援 UWP App 的裝置。
 
-通用 Windows 應用程式可讓您利用在上面執行之裝置的獨特功能。 您的 app 可以利用傳統型裝置的所有功能、平板電腦上直接操作的自然互動 (包括觸控和手寫筆輸入)、行動裝置的可攜性與便利性，以及 [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) 的共同作業功能。
-
-好的[設計](http://go.microsoft.com/fwlink/?LinkId=258848)是決定使用者如何與您的 app 互動以及其外觀和功能的程序。 使用者經驗在判斷使用者使用您的 app 時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://dev.windows.com/en-us/design)會為您介紹如何設計通用 Windows app。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) app 簡介](https://msdn.microsoft.com/library/windows/apps/dn958439)，以取得設計能讓使用者滿意的 UWP app 的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../input-and-devices/device-primer.md)，協助您思考在您要做為目標的所有不同表單係數上使用您的 app 的互動體驗。
+良好的[設計](http://go.microsoft.com/fwlink/?LinkId=258848)是決定您 App 與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的 app 時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://dev.windows.com/design)會為您介紹如何設計通用 Windows app。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) app 簡介](https://msdn.microsoft.com/library/windows/apps/dn958439)，以取得設計能讓使用者滿意的 UWP app 的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../input-and-devices/device-primer.md)，協助您思考在您要做為目標的所有不同表單係數上使用您的 app 的互動體驗。
 
 ![執行 Windows 的裝置](images/1894834-hig-device-primer-01-500.png)
 
@@ -288,6 +286,6 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

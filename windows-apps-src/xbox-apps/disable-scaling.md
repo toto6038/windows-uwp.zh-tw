@@ -3,8 +3,9 @@ author: payzer
 title: "如何關閉縮放比例"
 description: 
 area: Xbox
-ms.sourcegitcommit: 2fcccb9a045aad268afde615d31f8faa002b8a87
-ms.openlocfilehash: 65416dd2b6c8656078b63c316f3972cda9c792fc
+translationtype: Human Translation
+ms.sourcegitcommit: 192de32bf3afd11cd375655ad92d194ccb09dae1
+ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: 65416dd2b6c8656078b63c316f3972cda9c792fc
 ## HTML   
 您可以使用下列程式碼片段，選擇不使用縮放比例︰ 
    
-`bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);` 
+`var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);` 
 
 或者，您可以使用 Web 適用的方法：   
 
@@ -36,6 +37,6 @@ DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 
