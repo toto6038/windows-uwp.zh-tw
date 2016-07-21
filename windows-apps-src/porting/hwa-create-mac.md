@@ -47,9 +47,9 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 1. 在您的網頁瀏覽器中，開啟 [App Studio](http://appstudio.windows.com/)。
 
-2. 按一下 [立即開始!]****。
+2. 按一下 \[立即開始!\]****。
 
-3. 在 [Web app templates] (Web App 範本)**** 下方，按一下 [Hosted Web App] (託管的 Web App)****。
+3. 在 \[Web app templates\] \(Web App 範本\)**** 下方，按一下 \[Hosted Web App\] \(託管的 Web App\)****。
 
 4. 依照畫面上的指示產生隨時可發佈至 Windows 市集的套件。
 

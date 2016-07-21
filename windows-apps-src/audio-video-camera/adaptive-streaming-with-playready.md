@@ -23,7 +23,7 @@ PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
 這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 [Download ZIP] (下載 ZIP)**** 按鈕。
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 \[Download ZIP\] \(下載 ZIP\)**** 按鈕。
 
 您將需要下列 using 陳述式：
 

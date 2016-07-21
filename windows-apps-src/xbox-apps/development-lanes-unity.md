@@ -1,5 +1,5 @@
 ---
-title&#58; Unity：將遊戲移至 Xbox One 作者：JordanEllis6809 
+Unity：將遊戲移至 Xbox One 作者：JordanEllis6809 
 ---
 
 # Unity：將遊戲移至 Xbox One
@@ -8,8 +8,7 @@ title&#58; Unity：將遊戲移至 Xbox One 作者：JordanEllis6809
 
 [本教學課程的影片版本。](https://www.youtube.com/watch?v=f0Ptvw7k-CE)
 
-要查看您的 Unity UWP 專案相關版本嗎？  
-            [檢視此處](development-lanes-unity-versioning.md)。
+要查看您的 Unity UWP 專案相關版本嗎？  [檢視此處](development-lanes-unity-versioning.md)。
 
 ## 步驟 0：確定 Unity 已正確安裝
 
@@ -19,11 +18,11 @@ title&#58; Unity：將遊戲移至 Xbox One 作者：JordanEllis6809
 
 ## 步驟 1︰建置 UWP 方案
 
-在您的 Unity 遊戲專案中，開啟 `File -> Build Settings...` 中的 [ Build Settings] (建置設定) 視窗，移至 [Windows Store] (Windows 市集) 選項功能表，如下所示。
+在您的 Unity 遊戲專案中，開啟 `File -> Build Settings...` 中的 \[ Build Settings\] \(建置設定\) 視窗，移至 \[Windows Store\] \(Windows 市集\) 選項功能表，如下所示。
 
 ![建置設定視窗](images/build-settings.png)
 
-請確定 `SDK` 設定是設為 `Universal 10`。 接下來，按下功能表底部的 [Build] (建置) 按鈕，這會啟動要求目的地資料夾的檔案總管視窗。 在專案的 `Assets` 目錄中建立名為 `UWP` 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
+請確定 `SDK` 設定是設為 `Universal 10`。 接下來，按下功能表底部的 \[Build\] \(建置\) 按鈕，這會啟動要求目的地資料夾的檔案總管視窗。 在專案的 `Assets` 目錄中建立名為 `UWP` 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
 
 ![建置目的地資料夾](images/build-destination.png)
 
