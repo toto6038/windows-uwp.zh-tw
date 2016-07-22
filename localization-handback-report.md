@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ab05e49cbb6d58ead4bea479592c95820d273550/windows-apps-src/publish/payout-summary.md) | HandedBackFailed | [Details](#48fac3fd0309a40f1c575a6888ab0c2b341152d63703)
 
 ## Item Details
-##### <a name='48fac3fd0309a40f1c575a6888ab0c2b341152d63703'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ab05e49cbb6d58ead4bea479592c95820d273550/windows-apps-src/publish/payout-summary.md)
-* Status: HandedBackFailed
-* Target File: 
-* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/de7d63ba434aba36ce50c77f1c7e4f7fdea67560/ol-handoff/Microsoft/windows-apps.zh-tw/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-tw.xlf)
-* Handoff Datetime: 2016-07-18 18:25:40
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
