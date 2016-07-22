@@ -29,9 +29,9 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 ## 步驟 2：建立空白的 JavaScript App
 
 啟動 Visual Studio。
-1. 按一下 [檔案]****。
-2. 按一下 [新專案]****。
-3. 在 [JavaScript]****、[Windows 通用]**** 的下方，按一下 [空白應用程式 (通用 Windows)]****。
+1. 按一下 \[檔案\]****。
+2. 按一下 \[新專案\]****。
+3. 在 \[JavaScript\]****、\[Windows 通用\]**** 的下方，按一下 \[空白應用程式 \(通用 Windows\)\]****。
 
 ![步驟 #2：建立空白的 JavaScript App](images/hwa-to-uwp/windows_step2.png)
 
