@@ -1,11 +1,39 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/porting/hwa-create-windows.md) | InSyncHandedBackSuccess | [Details](#05e2362d23ce6d1ce70e20a5610e1a5ede4649873537)
+ [windows-apps-src\whats-new\windows-10-version-1511.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/whats-new/windows-10-version-1511.md) | InSyncHandedBackSuccess | [Details](#0bcec2e82afd81f68b36eab5719902d5fb7991fb5332)
 
 ## Item Details
+##### <a name='05e2362d23ce6d1ce70e20a5610e1a5ede4649873537'></a> Source: [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/porting/hwa-create-windows.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/2e7582766518aa2e564901c5a093c11531ac102e/windows-apps-src/porting/hwa-create-windows.md)
+* Handoff File: [hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9c918eaa58b42a7f61e2b51f5d5bff7352593d4d/ol-handoff/Microsoft/windows-apps.zh-tw/master/hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf)
+* Handoff Datetime: 2016-07-12 18:24:22
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ccafd76a14774dd43eaa7456d6ee0cc5cf721c6f/ol-handback/Microsoft/windows-apps.zh-tw/master/hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf)
+* Handback Datetime: 2016-07-22 16:31:22
+* [Back to Top](#report-top)
+
+##### <a name='0bcec2e82afd81f68b36eab5719902d5fb7991fb5332'></a> Source: [windows-apps-src\whats-new\windows-10-version-1511.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/whats-new/windows-10-version-1511.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\whats-new\windows-10-version-1511.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/2e7582766518aa2e564901c5a093c11531ac102e/windows-apps-src/whats-new/windows-10-version-1511.md)
+* Handoff File: [windows-10-version-1511.fc06c1eacb1e898a1d60813b8437b6c8c16843e8.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9c918eaa58b42a7f61e2b51f5d5bff7352593d4d/ol-handoff/Microsoft/windows-apps.zh-tw/master/windows-10-version-1511.fc06c1eacb1e898a1d60813b8437b6c8c16843e8.zh-tw.xlf)
+* Handoff Datetime: 2016-07-12 18:24:22
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [windows-10-version-1511.fc06c1eacb1e898a1d60813b8437b6c8c16843e8.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ccafd76a14774dd43eaa7456d6ee0cc5cf721c6f/ol-handback/Microsoft/windows-apps.zh-tw/master/windows-10-version-1511.fc06c1eacb1e898a1d60813b8437b6c8c16843e8.zh-tw.xlf)
+* Handback Datetime: 2016-07-22 16:31:22
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
