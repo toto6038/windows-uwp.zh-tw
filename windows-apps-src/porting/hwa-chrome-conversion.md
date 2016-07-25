@@ -46,7 +46,7 @@ ms.openlocfilehash: 7d1cceb931d3ee9d128c6ba47113f501625830da
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
 ![Windows 開發人員中心儀表板保留名稱](images/hwa-to-uwp/reserve_a_name.png)
- - 接著在左側功能表的 [應用程式管理] 區段下方，按一下 [應用程式身分識別]。
+ - 接著在左側功能表的 /[應用程式管理/] 區段下方，按一下 /[應用程式身分識別/]。
     ![Windows 開發人員中心儀表板應用程式身分識別](images/hwa-to-uwp/app_identity.png)
  - 您應會看見頁面上所列提示的三個值：1. 身分識別名稱：`Package/Identity/Name`
  2. 發行者身分識別：`Package/Identity/Publisher`

@@ -18,7 +18,7 @@ title&#58; Unity：針對您的 UWP 專案進行版本控制 作者：JordanElli
 
 ![UWP VS 解決方案](images/uwp-vs-solution.png)
 
-在此目錄中，我們僅需關注一個資料夾，***ScrapyardPhoenix*** (在此插入您的遊戲名稱) 資料夾。  在我們的版本控制中可以忽略所有其他項目：
+在此目錄中，我們僅需關注一個資料夾，***ScrapyardPhoenix*** /(在此插入您的遊戲名稱/) 資料夾。  在我們的版本控制中可以忽略所有其他項目：
 
 ***不熟悉 .gitignore 檔是什麼嗎？  在[這裡](https://git-scm.com/docs/gitignore)深入了解。***
 
@@ -99,7 +99,7 @@ title&#58; Unity：針對您的 UWP 專案進行版本控制 作者：JordanElli
 ![UWP 方案](images/uwp-solution.png)
 
 
-            ***ScrapyardPhoenix (通用 Windows)*** 是您要新增參考 (例如，Xbox Live SDK) 的專案。
+            ***ScrapyardPhoenix /(通用 Windows/)*** 是您要新增參考 /(例如，Xbox Live SDK/) 的專案。
 
 
 
