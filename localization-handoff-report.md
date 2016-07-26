@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps/blob/c15d4153f6ae83cc7bf1ae02d834bd07189e38ab/windows-apps-src/publish/app-package-requirements.md) | OutofSyncHandedBackSuccess | [Details](#9b4a8cd228fdbb4978b74f5d7773eaaf8a1a970d3653)
+ [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2e7e409e0b69d973a3679f13703d6a4d0ec32494/windows-apps-src/publish/manage-account-users.md) | OutofSyncHandedBackSuccess | [Details](#c9d62266a91764c8dc0df7128bb9f0d2768c62433690)
 
 ## Item Details
-##### <a name='9b4a8cd228fdbb4978b74f5d7773eaaf8a1a970d3653'></a> Source: [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps/blob/c15d4153f6ae83cc7bf1ae02d834bd07189e38ab/windows-apps-src/publish/app-package-requirements.md)
+##### <a name='c9d62266a91764c8dc0df7128bb9f0d2768c62433690'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2e7e409e0b69d973a3679f13703d6a4d0ec32494/windows-apps-src/publish/manage-account-users.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/f2248b0bc0383f60b922737725d47ed25e152cb1/ol-handoff/Microsoft/windows-apps.zh-tw/master/app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.zh-tw.xlf)
-* Handoff Datetime: 2016-07-26 17:43:41
+* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/a3673f90eab793e7a5495aaac48a162d087a1428/ol-handoff/Microsoft/windows-apps.zh-tw/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf)
+* Handoff Datetime: 2016-07-26 18:14:23
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/publish/app-package-requirements.md)
-* Current Handback File: [app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.zh-tw.xlf)
+* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/publish/manage-account-users.md)
+* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
