@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/1fe82576c6677fb0435e589772317b65fcc16d12/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | OutofSyncHandedBackSuccess | [Details](#57ed52794cba522730a911dc5ed29ca4519d46a42310)
+ [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/b77d4be4f908064f493d1ab03d9c4e0a9d5443f9/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#01fbee12567b9dc2af80385d6421977a846c53e92688)
 
 ## Item Details
-##### <a name='57ed52794cba522730a911dc5ed29ca4519d46a42310'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/1fe82576c6677fb0435e589772317b65fcc16d12/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+##### <a name='01fbee12567b9dc2af80385d6421977a846c53e92688'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/b77d4be4f908064f493d1ab03d9c4e0a9d5443f9/windows-apps-src/get-started/universal-application-platform-guide.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/a44c51f16e9ea110f8bf3460027a8bc9902bcd8d/ol-handoff/Microsoft/windows-apps.zh-tw/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-tw.xlf)
-* Handoff Datetime: 2016-07-27 22:15:51
+* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5872d4f16a5d565683b4ccee37c9bf818d1ced8a/ol-handoff/Microsoft/windows-apps.zh-tw/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf)
+* Handoff Datetime: 2016-07-28 03:15:33
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
-* Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-tw.xlf)
+* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
