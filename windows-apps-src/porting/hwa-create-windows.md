@@ -29,9 +29,9 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 ## 步驟 2：建立空白的 JavaScript App
 
 啟動 Visual Studio。
-1. 按一下 \[檔案\]****。
-2. 按一下 \[新專案\]****。
-3. 在 \[JavaScript\]****、\[Windows 通用\]**** 的下方，按一下 \[空白應用程式 \(通用 Windows\)\]****。
+1. 按一下 \[檔案\]。
+2. 按一下 \[新專案\]。
+3. 在 \[JavaScript\]、\[Windows 通用\] 的下方，按一下 \[空白應用程式 \(通用 Windows\)\]。
 
 ![步驟 #2：建立空白的 JavaScript App](images/hwa-to-uwp/windows_step2.png)
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 ## 步驟 4︰設定開始頁面 URL
 
 1. 開啟 `package.appxmanifest` 檔案。
-2. 在 [應用程式]**** 索引標籤下方，尋找 [開始頁面]**** 文字欄位。
+2. 在 \[應用程式\] 索引標籤下方，尋找 \[開始頁面\] 文字欄位。
 3. 將 `default.html` 取代為您的網站 URL。
 
 ![步驟 #4︰設定開始頁面 URL](images/hwa-to-uwp/windows_step4.png)
@@ -53,7 +53,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 
 應用程式內容 URI 規則 (ACUR) 會指定允許存取您 App 與通用 Windows API 的遠端 URL。 您至少必須新增適用於開始頁面的 ACUR，以及該頁面使用的所有網路資源。 如需關於 ACUR 的詳細資訊，請[按一下這裡](./hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs)。
 1. 開啟 `package.appxmanifest` 檔案。
-2. 按一下 [內容 URI]**** 索引標籤。
+2. 按一下 \[內容 URI\] 索引標籤。
 3. 針對開始頁面新增所有必要的 URI。
 
 例如：
@@ -61,7 +61,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 1. http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 2. http://*.codepen.io/
 ```
-4. 針對每個新增的 URI，將 [WinRT 存取]**** 設為 [全部]****。
+4. 針對每個新增的 URI，將 \[WinRT 存取\] 設為 \[全部\]。
 
 ![步驟 #5︰定義您的 Web 應用程式界限](images/hwa-to-uwp/windows_step5.png)
 
@@ -69,7 +69,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 
 現在您已擁有可存取通用 Windows API 的全功能 Windows 10 App！
 
-若您是依照我們的 Codepen 範例操作，請按一下 [Toast Notification]**** 按鈕以從託管指令碼呼叫 Windows API。
+若您是依照我們的 Codepen 範例操作，請按一下 \[Toast Notification\] 按鈕以從託管指令碼呼叫 Windows API。
 
 ![步驟 #6：執行 App](images/hwa-to-uwp/windows_step6.png)
 
