@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/porting/hwa-create-windows.md) | InSyncHandedBackSuccess | [Details](#05e2362d23ce6d1ce70e20a5610e1a5ede4649873538)
 
 ## Item Details
-##### <a name='05e2362d23ce6d1ce70e20a5610e1a5ede4649873538'></a> Source: [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps/blob/3de603aec1dd4d4e716acbbb3daa52a306dfa403/windows-apps-src/porting/hwa-create-windows.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\porting\hwa-create-windows.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/234a619c13a7e1f585b12b66ef4b166e3124e247/windows-apps-src/porting/hwa-create-windows.md)
-* Handoff File: [hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9c918eaa58b42a7f61e2b51f5d5bff7352593d4d/ol-handoff/Microsoft/windows-apps.zh-tw/master/hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf)
-* Handoff Datetime: 2016-07-12 18:24:22
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/f31476e29f5628c0a5a503eb96875f8d1f5c10c5/ol-handback/Microsoft/windows-apps.zh-tw/master/hwa-create-windows.681dd65bdcffe52b7e3512fdb828e18db356d05e.zh-tw.xlf)
-* Handback Datetime: 2016-07-29 13:46:50
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
