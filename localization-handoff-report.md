@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/79c047821b62eaf1a440e7795e9f3f5b3040b2a1/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#5db047ba23c5287e523dd34e85565beea16220214710)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9c9c792c646a4bd0c621f8c14263bef3e9761ca1/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#600cb9961ebddf4c2b83afc816ba7acffb265e294710)
+ [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/9e0c974b66fc786f8b76652518cef1d3b64980f7/windows-apps-src/publish/manage-account-users.md) | OutofSyncHandedBackSuccess | [Details](#06d37b746ad0ee27ff6a903fc1fdf452185153a35012)
 
 ## Item Details
-##### <a name='5db047ba23c5287e523dd34e85565beea16220214710'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/79c047821b62eaf1a440e7795e9f3f5b3040b2a1/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+##### <a name='600cb9961ebddf4c2b83afc816ba7acffb265e294710'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9c9c792c646a4bd0c621f8c14263bef3e9761ca1/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/389f1d7d95a38e70020d88bd778b49fcd3a9e94a/ol-handoff/Microsoft/windows-apps.zh-tw/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf)
-* Handoff Datetime: 2016-08-05 17:41:15
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c12999450038393291e5ce8c325a1d71583e1cbe/ol-handoff/Microsoft/windows-apps.zh-tw/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf)
+* Handoff Datetime: 2016-08-05 18:11:37
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -21,6 +22,21 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Current Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-20 17:39:23
+* [Back to Top](#report-top)
+
+##### <a name='06d37b746ad0ee27ff6a903fc1fdf452185153a35012'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/9e0c974b66fc786f8b76652518cef1d3b64980f7/windows-apps-src/publish/manage-account-users.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c12999450038393291e5ce8c325a1d71583e1cbe/ol-handoff/Microsoft/windows-apps.zh-tw/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf)
+* Handoff Datetime: 2016-08-05 18:11:37
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/publish/manage-account-users.md)
+* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
