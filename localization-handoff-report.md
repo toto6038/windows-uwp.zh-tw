@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/f3da82cab8813653a6ee999976983937649b42b2/windows-apps-src/accessibility/high-contrast-themes.md) | HandedOffSuccess | [Details](#30785998d11f09ef94f33789e3e74b0933d9c83e19)
- [windows-apps-src\accessibility\keyboard-accessibility.md](https://github.com/Microsoft/windows-apps/blob/2215aeae041ff975d99d29ea42350f6ce0f2a681/windows-apps-src/accessibility/keyboard-accessibility.md) | HandedOffSuccess | [Details](#112c7be4cb5418332a19565be9b739e7032ba83439)
+ [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps/blob/014fb096817a25651188821fa59b202d260781d5/windows-apps-src/accessibility/practices-to-avoid.md) | HandedOffSuccess | [Details](#382899f038e2ac2ad6e34e98b3ba4849e9685d1040)
 
 ## Item Details
-##### <a name='30785998d11f09ef94f33789e3e74b0933d9c83e19'></a> Source: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/f3da82cab8813653a6ee999976983937649b42b2/windows-apps-src/accessibility/high-contrast-themes.md)
+##### <a name='382899f038e2ac2ad6e34e98b3ba4849e9685d1040'></a> Source: [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps/blob/014fb096817a25651188821fa59b202d260781d5/windows-apps-src/accessibility/practices-to-avoid.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/35c3ba8027dc2f1b8d203c8c5bb9ec97d930423b/ol-handoff/Microsoft/windows-apps.zh-tw/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-tw.xlf)
-* Handoff Datetime: 2016-08-10 19:20:48
+* Handoff File: [practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/fca164fae6d7b9620b9c179d3aa3819875a58bd6/ol-handoff/Microsoft/windows-apps.zh-tw/master/practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.zh-tw.xlf)
+* Handoff Datetime: 2016-08-10 19:49:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/accessibility/high-contrast-themes.md)
-* Current Handback File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-tw.xlf)
-* Current Handback Datetime: 2016-07-20 17:39:23
-* [Back to Top](#report-top)
-
-##### <a name='112c7be4cb5418332a19565be9b739e7032ba83439'></a> Source: [windows-apps-src\accessibility\keyboard-accessibility.md](https://github.com/Microsoft/windows-apps/blob/2215aeae041ff975d99d29ea42350f6ce0f2a681/windows-apps-src/accessibility/keyboard-accessibility.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/35c3ba8027dc2f1b8d203c8c5bb9ec97d930423b/ol-handoff/Microsoft/windows-apps.zh-tw/master/keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.zh-tw.xlf)
-* Handoff Datetime: 2016-08-10 19:20:48
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\accessibility\keyboard-accessibility.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/accessibility/keyboard-accessibility.md)
-* Current Handback File: [keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.zh-tw.xlf)
+* Current Target File: [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/accessibility/practices-to-avoid.md)
+* Current Handback File: [practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
