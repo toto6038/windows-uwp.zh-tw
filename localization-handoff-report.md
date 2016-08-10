@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://github.com/Microsoft/windows-apps/blob/3ee91b9783d06024a719cf7267fc1e25c449a195/windows-apps-src/app-settings/store-and-retrieve-app-data.md) | HandedOffSuccess | [Details](#9de98c3d4e58fba085484451029fc3bb54da7a8082)
+ [windows-apps-src\monetize\in-app-purchases-and-trials.md](https://github.com/Microsoft/windows-apps/blob/0b00f711e42ac40493bb3e94448ab6f9feb4bd3d/windows-apps-src/monetize/in-app-purchases-and-trials.md) | HandedOffSuccess | [Details](#7032cf1aa297db9fa48d7ac1378eca3e4a22834f4780)
 
 ## Item Details
-##### <a name='9de98c3d4e58fba085484451029fc3bb54da7a8082'></a> Source: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://github.com/Microsoft/windows-apps/blob/3ee91b9783d06024a719cf7267fc1e25c449a195/windows-apps-src/app-settings/store-and-retrieve-app-data.md)
+##### <a name='7032cf1aa297db9fa48d7ac1378eca3e4a22834f4780'></a> Source: [windows-apps-src\monetize\in-app-purchases-and-trials.md](https://github.com/Microsoft/windows-apps/blob/0b00f711e42ac40493bb3e94448ab6f9feb4bd3d/windows-apps-src/monetize/in-app-purchases-and-trials.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/3c23cafb9445929eceb660fe2a3322e4b69f6d42/ol-handoff/Microsoft/windows-apps.zh-tw/master/store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.zh-tw.xlf)
-* Handoff Datetime: 2016-08-10 22:19:07
+* Handoff File: [in-app-purchases-and-trials.a3afb0af7e5d84cc7ffe7aa7ebe241757a3b869d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/b58d946bb87a6af1df922d4b888219eec8e0e8e8/ol-handoff/Microsoft/windows-apps.zh-tw/master/in-app-purchases-and-trials.a3afb0af7e5d84cc7ffe7aa7ebe241757a3b869d.zh-tw.xlf)
+* Handoff Datetime: 2016-08-10 23:20:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/app-settings/store-and-retrieve-app-data.md)
-* Current Handback File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.zh-tw.xlf)
-* Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
 
