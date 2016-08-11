@@ -6,35 +6,38 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps/blob/8534598b1f3cf49b15a73d03f6f19e67877b25d0/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md) | HandedOffSuccess | [Details](#22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95157)
- [windows-apps-src\audio-video-camera\camera.md](https://github.com/Microsoft/windows-apps/blob/f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8/windows-apps-src/audio-video-camera/camera.md) | HandedOffSuccess | [Details](#8759a7cdb1d516f9c88f866887861c2f28085b5b167)
+ [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/56d79a93704021fc18d3e72d00738d0ce7acba91/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#643b67c3975a8aea6791c834a9ca3178b97622571629)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/549826e6c355d6b8150fa20736db20a147ed41e9/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#735fdfb04bcf7e4fab8265b294b117be5c6148701647)
 
 ## Item Details
-##### <a name='22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95157'></a> Source: [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps/blob/8534598b1f3cf49b15a73d03f6f19e67877b25d0/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md)
+##### <a name='643b67c3975a8aea6791c834a9ca3178b97622571629'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/56d79a93704021fc18d3e72d00738d0ce7acba91/windows-apps-src/audio-video-camera/hardware-drm.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5c26a9f193bbb59362d9091c6c690ac69c6464ba/ol-handoff/Microsoft/windows-apps.zh-tw/master/adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 19:21:52
+* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9b695d96fa34eabb98224c131e9cc4b1763f59aa/ol-handoff/Microsoft/windows-apps.zh-tw/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.zh-tw.xlf)
+* Handoff Datetime: 2016-08-11 19:50:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/260aba60a96962730a233f70140a354592e0041f/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md)
-* Current Handback File: [adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/78ea240289e9b1be32edbf0f59a6691e482055fa/ol-handback/Microsoft/windows-apps.zh-tw/master/adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.zh-tw.xlf)
-* Current Handback Datetime: 2016-07-21 20:58:14
+* Current Target File: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/audio-video-camera/hardware-drm.md)
+* Current Handback File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
-##### <a name='8759a7cdb1d516f9c88f866887861c2f28085b5b167'></a> Source: [windows-apps-src\audio-video-camera\camera.md](https://github.com/Microsoft/windows-apps/blob/f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8/windows-apps-src/audio-video-camera/camera.md)
+##### <a name='735fdfb04bcf7e4fab8265b294b117be5c6148701647'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/549826e6c355d6b8150fa20736db20a147ed41e9/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [camera.ac9ab97d83ee667acbc68c7d381aee56cfdd2368.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/5c26a9f193bbb59362d9091c6c690ac69c6464ba/ol-handoff/Microsoft/windows-apps.zh-tw/master/camera.ac9ab97d83ee667acbc68c7d381aee56cfdd2368.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 19:21:52
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/9b695d96fa34eabb98224c131e9cc4b1763f59aa/ol-handoff/Microsoft/windows-apps.zh-tw/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf)
+* Handoff Datetime: 2016-08-11 19:50:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+* Current Handback File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
 
