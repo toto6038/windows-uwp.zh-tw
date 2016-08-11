@@ -1,69 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\background-audio.md](https://github.com/Microsoft/windows-apps/blob/c8cbc538e0979f48b657197d59cb94a90bc61210/windows-apps-src/audio-video-camera/background-audio.md) | HandedOffSuccess | [Details](#a477827553ac1780ac625deeee08d84ab638d4c2152)
- [windows-apps-src\audio-video-camera\integrate-with-systemmediatransportcontrols.md](https://github.com/Microsoft/windows-apps/blob/53b1cb94f90cd697a96bca49c5f2109d4749dbd1/windows-apps-src/audio-video-camera/integrate-with-systemmediatransportcontrols.md) | HandedOffSuccess | [Details](#c490ea43a6f49e09828cb6b07a6fbf1920acca741630)
- [windows-apps-src\audio-video-camera\process-media-frames-with-mediaframereader.md](https://github.com/Microsoft/windows-apps/blob/21433f812915a2b4da6b4d68151bbc922a97a7a7/windows-apps-src/audio-video-camera/process-media-frames-with-mediaframereader.md) | HandedOffSuccess | [Details](#5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa11641)
- [windows-apps-src\audio-video-camera\system-media-transport-controls.md](https://github.com/Microsoft/windows-apps/blob/2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272/windows-apps-src/audio-video-camera/system-media-transport-controls.md) | HandedOffSuccess | [Details](#6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e21646)
+ [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/b74a80b1c47771223d459e2c771605a0e2ce1308/windows-apps-src/launch-resume/launch-default-app.md) | HandedOffSuccess | [Details](#1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde4388)
+ [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/cdcd068c47cca4d64212085f3d7ae0fcc9549b50/windows-apps-src/whats-new/windows-10-version-1607.md) | HandedOffSuccess | [Details](#15a1a4d201f461a31241bd8c1422c470303e07287933)
 
 ## Item Details
-##### <a name='a477827553ac1780ac625deeee08d84ab638d4c2152'></a> Source: [windows-apps-src\audio-video-camera\background-audio.md](https://github.com/Microsoft/windows-apps/blob/c8cbc538e0979f48b657197d59cb94a90bc61210/windows-apps-src/audio-video-camera/background-audio.md)
+##### <a name='1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde4388'></a> Source: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/b74a80b1c47771223d459e2c771605a0e2ce1308/windows-apps-src/launch-resume/launch-default-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/6a227634ceac24f16eb5be82b1210979eebe95f0/ol-handoff/Microsoft/windows-apps.zh-tw/master/background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 22:50:42
+* Handoff File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/4087d77d87040b052eaac7b177674e27081f2257/ol-handoff/Microsoft/windows-apps.zh-tw/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf)
+* Handoff Datetime: 2016-08-11 23:20:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\background-audio.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/audio-video-camera/background-audio.md)
-* Current Handback File: [background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.zh-tw.xlf)
+* Current Target File: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/launch-resume/launch-default-app.md)
+* Current Handback File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
-##### <a name='c490ea43a6f49e09828cb6b07a6fbf1920acca741630'></a> Source: [windows-apps-src\audio-video-camera\integrate-with-systemmediatransportcontrols.md](https://github.com/Microsoft/windows-apps/blob/53b1cb94f90cd697a96bca49c5f2109d4749dbd1/windows-apps-src/audio-video-camera/integrate-with-systemmediatransportcontrols.md)
+##### <a name='15a1a4d201f461a31241bd8c1422c470303e07287933'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/cdcd068c47cca4d64212085f3d7ae0fcc9549b50/windows-apps-src/whats-new/windows-10-version-1607.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [integrate-with-systemmediatransportcontrols.7ae9f19d7d07a99f07f3124ef1a6ebf06dbadb4a.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/6a227634ceac24f16eb5be82b1210979eebe95f0/ol-handoff/Microsoft/windows-apps.zh-tw/master/integrate-with-systemmediatransportcontrols.7ae9f19d7d07a99f07f3124ef1a6ebf06dbadb4a.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 22:50:42
+* Handoff File: [windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/4087d77d87040b052eaac7b177674e27081f2257/ol-handoff/Microsoft/windows-apps.zh-tw/master/windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.zh-tw.xlf)
+* Handoff Datetime: 2016-08-11 23:20:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa11641'></a> Source: [windows-apps-src\audio-video-camera\process-media-frames-with-mediaframereader.md](https://github.com/Microsoft/windows-apps/blob/21433f812915a2b4da6b4d68151bbc922a97a7a7/windows-apps-src/audio-video-camera/process-media-frames-with-mediaframereader.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [process-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/6a227634ceac24f16eb5be82b1210979eebe95f0/ol-handoff/Microsoft/windows-apps.zh-tw/master/process-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 22:50:42
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e21646'></a> Source: [windows-apps-src\audio-video-camera\system-media-transport-controls.md](https://github.com/Microsoft/windows-apps/blob/2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272/windows-apps-src/audio-video-camera/system-media-transport-controls.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/6a227634ceac24f16eb5be82b1210979eebe95f0/ol-handoff/Microsoft/windows-apps.zh-tw/master/system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 22:50:42
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\system-media-transport-controls.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/audio-video-camera/system-media-transport-controls.md)
-* Current Handback File: [system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.zh-tw.xlf)
-* Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
 
