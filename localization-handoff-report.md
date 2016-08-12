@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/b74a80b1c47771223d459e2c771605a0e2ce1308/windows-apps-src/launch-resume/launch-default-app.md) | HandedOffSuccess | [Details](#1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde4388)
- [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/cdcd068c47cca4d64212085f3d7ae0fcc9549b50/windows-apps-src/whats-new/windows-10-version-1607.md) | HandedOffSuccess | [Details](#15a1a4d201f461a31241bd8c1422c470303e07287933)
+ [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps/blob/4c6a7aabb39b3835e042481ccae7da60e899e7cf/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md) | HandedOffSuccess | [Details](#13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38159)
 
 ## Item Details
-##### <a name='1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde4388'></a> Source: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/b74a80b1c47771223d459e2c771605a0e2ce1308/windows-apps-src/launch-resume/launch-default-app.md)
+##### <a name='13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38159'></a> Source: [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps/blob/4c6a7aabb39b3835e042481ccae7da60e899e7cf/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/4087d77d87040b052eaac7b177674e27081f2257/ol-handoff/Microsoft/windows-apps.zh-tw/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 23:20:31
+* Handoff File: [capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/ff1d3cd9852d24015406318f4abf3cc5e84f869e/ol-handoff/Microsoft/windows-apps.zh-tw/master/capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.zh-tw.xlf)
+* Handoff Datetime: 2016-08-12 18:50:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/launch-resume/launch-default-app.md)
-* Current Handback File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-tw.xlf)
+* Current Target File: [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
+* Current Handback File: [capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
-* [Back to Top](#report-top)
-
-##### <a name='15a1a4d201f461a31241bd8c1422c470303e07287933'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/cdcd068c47cca4d64212085f3d7ae0fcc9549b50/windows-apps-src/whats-new/windows-10-version-1607.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/4087d77d87040b052eaac7b177674e27081f2257/ol-handoff/Microsoft/windows-apps.zh-tw/master/windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.zh-tw.xlf)
-* Handoff Datetime: 2016-08-11 23:20:31
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
