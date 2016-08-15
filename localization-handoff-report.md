@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/00fd1109a47e66cde418746c5ef19e5195516617/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#a541072435775d1e23ecb3cb22b2a55c817481073923)
- [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/ca273ab6d881b350c2f5a48eafee38c74ac0f36a/windows-apps-src/publish/package-version-numbering.md) | HandedOffSuccess | [Details](#2668152ba471986e00831bdcf46e5a2feba54dcd5027)
+ [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps/blob/098683ae1ad594eee3cb3b197431ddfa3998a30d/windows-apps-src/xbox-apps/multi-user-applications.md) | HandedOffSuccess | [Details](#e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf8057)
 
 ## Item Details
-##### <a name='a541072435775d1e23ecb3cb22b2a55c817481073923'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/00fd1109a47e66cde418746c5ef19e5195516617/windows-apps-src/get-started/learn-more.md)
+##### <a name='e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf8057'></a> Source: [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps/blob/098683ae1ad594eee3cb3b197431ddfa3998a30d/windows-apps-src/xbox-apps/multi-user-applications.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/d1daf76d0c12f81ce780374c246538a11913b96f/ol-handoff/Microsoft/windows-apps.zh-tw/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf)
-* Handoff Datetime: 2016-08-15 16:52:19
+* Handoff File: [multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/fce6dd8305e483aed01b574ea3a4bf8db8aaa530/ol-handoff/Microsoft/windows-apps.zh-tw/master/multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.zh-tw.xlf)
+* Handoff Datetime: 2016-08-15 19:20:35
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/get-started/learn-more.md)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf)
-* Current Handback Datetime: 2016-07-20 17:39:23
-* [Back to Top](#report-top)
-
-##### <a name='2668152ba471986e00831bdcf46e5a2feba54dcd5027'></a> Source: [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/ca273ab6d881b350c2f5a48eafee38c74ac0f36a/windows-apps-src/publish/package-version-numbering.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/d1daf76d0c12f81ce780374c246538a11913b96f/ol-handoff/Microsoft/windows-apps.zh-tw/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.zh-tw.xlf)
-* Handoff Datetime: 2016-08-15 16:52:19
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/publish/package-version-numbering.md)
-* Current Handback File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.zh-tw.xlf)
+* Current Target File: [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/xbox-apps/multi-user-applications.md)
+* Current Handback File: [multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
