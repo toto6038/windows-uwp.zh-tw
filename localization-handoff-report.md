@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\add-on-submissions.md](https://github.com/Microsoft/windows-apps/blob/d67931b4ab23d2b6aef945e839d193e140240cf9/windows-apps-src/publish/add-on-submissions.md) | HandedOffSuccess | [Details](#400c2e2ee65e408c996193230b05c68264830f0d5018)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/8420f37160db9a3d1f2747923901ebe3d98dd95f/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#2212e65a4e54b6e024a1e61038f08912af11f9a73931)
 
 ## Item Details
-##### <a name='400c2e2ee65e408c996193230b05c68264830f0d5018'></a> Source: [windows-apps-src\publish\add-on-submissions.md](https://github.com/Microsoft/windows-apps/blob/d67931b4ab23d2b6aef945e839d193e140240cf9/windows-apps-src/publish/add-on-submissions.md)
+##### <a name='2212e65a4e54b6e024a1e61038f08912af11f9a73931'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/8420f37160db9a3d1f2747923901ebe3d98dd95f/windows-apps-src/get-started/learn-more.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [add-on-submissions.b11c4e69d2b3bcc0580f4ed748cc1058e9847672.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/ef3e10a548bbf73ea8d8a37e615a0844fe901593/ol-handoff/Microsoft/windows-apps.zh-tw/master/add-on-submissions.b11c4e69d2b3bcc0580f4ed748cc1058e9847672.zh-tw.xlf)
-* Handoff Datetime: 2016-08-30 19:10:14
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/59f62d2a88c65bf4b966fe10051d2fb91a52ed0a/ol-handoff/Microsoft/windows-apps.zh-tw/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf)
+* Handoff Datetime: 2016-08-30 19:38:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
 
