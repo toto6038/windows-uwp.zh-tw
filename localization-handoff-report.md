@@ -1,19 +1,35 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\migrate-from-admediatorcontrol-to-adcontrol.md](https://github.com/Microsoft/windows-apps/blob/35a10940d7722c7490051e84e6f3cc37d7a4ab9a/windows-apps-src/monetize/migrate-from-admediatorcontrol-to-adcontrol.md) | HandedOffSuccess | [Details](#55b557f41fde5b095a76b52d83b034835398b9f64836)
+ [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/b3e1a6f1dfe3537d0db8e917163cfbba7b8705fe/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md) | HandedOffSuccess | [Details](#6030f666f213865a92d071210fe66f587c1bffb18116)
+ [windows-apps-src\xbox-apps\xbox-dev-mode-companion.md](https://github.com/Microsoft/windows-apps/blob/87ebc9ec01b349af033984b17d150e56d7a8cb2f/windows-apps-src/xbox-apps/xbox-dev-mode-companion.md) | HandedOffSuccess | [Details](#036a581481888373249857ee21fe339819779dd08137)
 
 ## Item Details
-##### <a name='55b557f41fde5b095a76b52d83b034835398b9f64836'></a> Source: [windows-apps-src\monetize\migrate-from-admediatorcontrol-to-adcontrol.md](https://github.com/Microsoft/windows-apps/blob/35a10940d7722c7490051e84e6f3cc37d7a4ab9a/windows-apps-src/monetize/migrate-from-admediatorcontrol-to-adcontrol.md)
+##### <a name='6030f666f213865a92d071210fe66f587c1bffb18116'></a> Source: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/b3e1a6f1dfe3537d0db8e917163cfbba7b8705fe/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [migrate-from-admediatorcontrol-to-adcontrol.8e38f1650791cc09a079b134b29a35eef22b1e9d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/d227797884e84782bb3b70fa86f3a90bfd609f05/ol-handoff/Microsoft/windows-apps.zh-tw/master/migrate-from-admediatorcontrol-to-adcontrol.8e38f1650791cc09a079b134b29a35eef22b1e9d.zh-tw.xlf)
-* Handoff Datetime: 2016-09-01 19:39:10
+* Handoff File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/184f3fd891e2e4d633e2588d2766dc9df2d9e758/ol-handoff/Microsoft/windows-apps.zh-tw/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.zh-tw.xlf)
+* Handoff Datetime: 2016-09-01 20:11:55
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
+* Current Handback File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.zh-tw.xlf)
+* Current Handback Datetime: 2016-07-20 17:39:23
+* [Back to Top](#report-top)
+
+##### <a name='036a581481888373249857ee21fe339819779dd08137'></a> Source: [windows-apps-src\xbox-apps\xbox-dev-mode-companion.md](https://github.com/Microsoft/windows-apps/blob/87ebc9ec01b349af033984b17d150e56d7a8cb2f/windows-apps-src/xbox-apps/xbox-dev-mode-companion.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [xbox-dev-mode-companion.2d103d899e6ba5ffba62c3c5e6e2f3696e2a2bed.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/184f3fd891e2e4d633e2588d2766dc9df2d9e758/ol-handoff/Microsoft/windows-apps.zh-tw/master/xbox-dev-mode-companion.2d103d899e6ba5ffba62c3c5e6e2f3696e2a2bed.zh-tw.xlf)
+* Handoff Datetime: 2016-09-01 20:11:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
