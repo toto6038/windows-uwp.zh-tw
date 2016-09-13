@@ -106,7 +106,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory 而言，URL 為「https://login.microsoft.com」。 
+接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory 而言，URL 為「 https://login.microsoft.com 」。 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -168,9 +168,9 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 服務提供者會提供文件，說明需要指定哪些範圍以取得權杖來使用他們的服務。 
 
-針對 Office 365 和 Outlook.com 範圍，請參閱(使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API)[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]。 
+針對 Office 365 和 Outlook.com 範圍，請參閱(使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]。 
 
-針對 OneDrive，請參閱 (OneDrive 驗證與登入)[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]。 
+針對 OneDrive，請參閱 (OneDrive 驗證與登入)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]。 
 
 ## 使用權杖
 
