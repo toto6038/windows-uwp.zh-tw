@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/dfb790980a8016da0ed9a080d7cf56b5a8a784ff/windows-apps-src/input-and-devices/convert-ink-to-text.md) | HandedOffSuccess | [Details](#26dc8910c779dc46d19be75abd49c20b750a98434016)
+ [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/4a297b7a2a2383a825a848ed6939f9743733253f/windows-apps-src/publish/organizational-licensing.md) | HandedOffSuccess | [Details](#f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec25095)
 
 ## Item Details
-##### <a name='26dc8910c779dc46d19be75abd49c20b750a98434016'></a> Source: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/dfb790980a8016da0ed9a080d7cf56b5a8a784ff/windows-apps-src/input-and-devices/convert-ink-to-text.md)
+##### <a name='f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec25095'></a> Source: [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/4a297b7a2a2383a825a848ed6939f9743733253f/windows-apps-src/publish/organizational-licensing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a04ff6635e716bc1ef2b164c676a26318db29c7/ol-handoff/Microsoft/windows-apps.zh-tw/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
-* Handoff Datetime: 2016-09-15 20:39:44
+* Handoff File: [organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/4d3cc8fd82a2a235b36ffae3ed866bd10f09b26c/ol-handoff/Microsoft/windows-apps.zh-tw/master/organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf)
+* Handoff Datetime: 2016-09-15 21:40:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/input-and-devices/convert-ink-to-text.md)
-* Current Handback File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.zh-tw.xlf)
+* Current Target File: [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/28d9426b29c49ad4d7d36ad8929a7eab1d0bd985/windows-apps-src/publish/organizational-licensing.md)
+* Current Handback File: [organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/ba466a2470429e980e411fcb9bc1043d0c07ebdd/ol-handback/Microsoft/windows-apps.zh-tw/master/organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.zh-tw.xlf)
 * Current Handback Datetime: 2016-07-20 17:39:23
 * [Back to Top](#report-top)
 
