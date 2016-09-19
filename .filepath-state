@@ -4846,9 +4846,6 @@
   "62db1be80faeaf94583b66e693f822da4f66d5d2": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
   ],
-  "84119964d253bcc32ba76f8e53f06df010523683": [
-    "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
-  ],
   "78f743f172eefaeea8c3cc000e3c55aacd3325a1": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-8.png"
   ],
@@ -5242,9 +5239,6 @@
   "ec3c2f27223c35a423a5e5a5ff189e39b179f8d8": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
   ],
-  "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
-    "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
-  ],
   "2aa55797ed3a6588b3a27158282a02827fbd2109": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -5386,9 +5380,6 @@
   "7920f4f0ea31e50c7c7ca69054f969df43545319": [
     "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
   ],
-  "147a0a48f77c0a5679dff07cf8927969806165c8": [
-    "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
-  ],
   "d42d460623779397cf99559fbc29182a27a89c95": [
     "windows-apps-src\\get-started\\images\\win10-cs-01.png"
   ],
@@ -5414,9 +5405,6 @@
     "windows-apps-src\\get-started\\images\\win10-cs-08.png"
   ],
   "dc43ec1d2c973718cd80c0785ebbd12fd108ca6e": [
-    "windows-apps-src\\get-started\\images\\win10-cs-09.png"
-  ],
-  "5c3a44248265b9ad200a2844c8ad46b5ff5f7d00": [
     "windows-apps-src\\get-started\\images\\win10-cs-09.png"
   ],
   "00d663b130202f4513cd1a9d82baed4068d909d3": [
@@ -5905,9 +5893,6 @@
   "72ac67b17fc519d374798e5121b309f664ff6b1b": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md",
     "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
-  ],
-  "561f5ea0ab4ba5b456456cedf786479ef168e7c0": [
-    "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
   ],
   "ef605f9d749148240ecee5e0ecfd473f8440ca25": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
