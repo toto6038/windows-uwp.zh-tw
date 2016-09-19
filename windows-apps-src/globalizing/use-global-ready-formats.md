@@ -1,54 +1,42 @@
 ---
 author: DelfCo
-Description: "藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 App。"
-title: "使用全球通用格式"
+Description: Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies.
+title: Use global-ready formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
+ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
+ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
 
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"></span>使用全球通用格式
+# Use global-ready formats
 
-
-
-
-
-**重要 API**
+**Important APIs**
 
 -   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
+-   [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)
 
-藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的 app。 這可讓您的 app 在將來因應全球市場中的其他文化特性、地區及語言。
+Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. This permits you to adapt your app later for additional cultures, regions, and languages in the global market.
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>簡介
+## Introduction
 
+Many app developers naturally create their apps thinking only of their own language and culture. But when the app begins to grow into other markets, adapting the app for new languages and regions can be difficult in unexpected ways. For example, dates, times, numbers, calendars, currency, telephone numbers, units of measurement, and paper sizes are all items that can be displayed differently in different cultures or languages.
 
-許多應用程式開發人員在建立應用程式時，都會自然而然地只顧慮到自己的語言和文化。 但是，當應用程式開始跨足其他市場時，調整應用程式以適應新語言和新區域就可能會遭遇意外的困難。 例如，日期、時間、數字、行事曆、貨幣、電話號碼、度量單位和紙張大小等項目，全部都可以根據不同的文化特性或語言以不同方式顯示。
+The process of adapting to new markets can be simplified by taking a few things into account as you develop your app.
 
-只要在開發應用程式時將幾個事項納入考量，就可以簡化適應新市場的程序。
+## Format dates and times appropriately
 
-## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先決條件
+There are many different ways to properly display dates and times. Different regions and cultures use different conventions for the order of day and month in the date, for the separation of hours and minutes in the time, and even for what punctuation is used as a separator. In addition, dates may be displayed in various long formats ("Wednesday, March 28, 2012") or short formats ("3/28/12"), which can vary across cultures. And of course, the names and abbreviations for the days of the week and months of the year differ for every language.
 
+If you need to allow users to choose a date or select a time, use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls. These will automatically use the date and time formats for the user's preferred language and region.
 
-[針對全球市場進行規劃](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>工作
+If you need to display dates or times yourself, use [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) and [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) formatters to automatically display the user's preferred format for dates, times and numbers. The code below formats a given DateTime by using the preferred language and region. For example, if the current date is 3 June 2012, the formatter gives "6/3/2012", if the user prefers English (United States), but it gives "03.06.2012" if the user prefers German (Germany):
 
-
-1.  **以適當方式格式化日期和時間。**
-
-    有許多方法可以正確顯示日期和時間。 不同的區域與文化會使用不同的慣例來排列日期的日、月順序、時間的小時和分鐘區隔方式，即使是做為分隔符號的標點符號也會有所不同。 此外，日期可能會因為不同文化而顯示為各種長格式 (「Wednesday, March 28, 2012」) 或短格式 (「3/28/12」)。 每種語言的星期幾與月份的名稱和縮寫當然也會有所不同。
-
-    如果需要讓使用者選擇日期或選取時間，請使用標準[日期和時間選擇器](https://msdn.microsoft.com/library/windows/apps/hh465466)控制項。 這些控制項會自動使用使用者慣用語言及區域的日期和時間格式。
-
-    如果需要自行顯示日期或時間，請使用 [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) 及 [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) 格式器，自動以使用者慣用的格式顯示日期、時間及數字。 以下程式碼將使用目前的慣用語言和區域，來格式化指定的 DateTime。 例如，假設目前日期是 2012 年 6 月 3 日。如果使用者慣用英文 (美國)，則格式器會產生「6/3/2012」；但如果使用者慣用德文 (德國)，則會產生「03.06.2012」：
-
-    **C#**
-    ```    CSharp
+```CSharp
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
     // to display dates and times using basic formatters.
 
@@ -66,36 +54,15 @@ ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
     // Results for display.
     var results = "Short Date: " + sdate + "\n" +
                   "Short Time: " + stime;
-    ```
-    **JavaScript**
-    ```    JavaScript
-    // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
-    // to display dates and times using basic formatters.
+```
 
-    // Formatters for dates and times, using shortdate format.
-    var sdatefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("shortdate");
-    var stimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("shorttime");
+## Format numbers and currencies appropriately
 
-    // Obtain the date that will be formatted.
-    var dateToFormat = new Date();
+Different cultures format numbers differently. Format differences may include how many decimal digits to display, what characters to use as decimal separators, and what currency symbol to use. Use [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) to display decimal, percent, or permille numbers, and currencies. In most cases you simply display numbers or currencies according to the user's current preferences. But you may also use the formatters to display a currency for a particular region or format.
 
-    // Perform the actual formatting.
-    var sdate = sdatefmt.format(dateToFormat);
-    var stime = stimefmt.format(dateToFormat);
+The code below gives an example of how to display currencies per the user's preferred language and region, or for a specific given currency system:
 
-    // Results for display.
-    var results = "Short Date: " + sdate + "\n" +
-                  "Short Time: " + stime;
-    ```
-
-2.  **以適當方式格式化數字及貨幣。**
-
-    不同文化會以不同方式來格式化數字。 格式的差異可能是要顯示到小數第幾位、小數分隔符號要使用哪個字元，以及要使用哪個貨幣符號。 使用 [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) 來顯示小數點、百分比或千分比數字及貨幣。 在大部分情況下，您只要根據使用者目前的喜好設定來顯示數字或貨幣即可。 不過您也可以使用格式器來顯示特定區域或格式的貨幣。
-
-    以下程式碼提供的範例是如何依照使用者慣用的語言及區域顯示貨幣，或針對特定貨幣系統顯示貨幣：
-
-    **C#**
-    ```    CSharp
+```CSharp
     // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
     // to format a number as a currency.
 
@@ -125,76 +92,77 @@ ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
                   "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
-    ```
-    **JavaScript**
-    ```    JavaScript
-    // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
-    // to format a number as a currency.
+```
 
-    // Determine the current user's default currency.
-    var userCurrency = Windows.System.UserProfile.GlobalizationPreferences.currencies;
+## Use a culturally appropriate calendar
 
-    // Number to be formatted.
-    var fractionalNumber = 12345.67;
+The calendar differs across regions and languages. The Gregorian calendar is not the default for every region. Users in some regions may choose alternate calendars, such as the Japanese era calendar or Arabic lunar calendars. Dates and times on the calendar are also sensitive to different time zones and daylight saving time.
 
-    // Currency formatter using the current user's preference settings for number formatting.
-    var userCurrencyFormat = new Windows.Globalization.NumberFormatting.CurrencyFormatter(userCurrency);
-    var currencyDefault = userCurrencyFormat.format(fractionalNumber);
+Use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls to allow users to choose a date, to ensure that the preferred calendar format is used. For more complex scenarios, where working directly with operations on calendar dates may be required, Windows.Globalization provides a [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
 
-    // Create a formatter initialized to a specific currency,
-    // in this case US Dollar (specified as an ISO 4217 code) 
-    // but with the default number formatting for the current user.
-    var currencyFormatUSD = new Windows.Globalization.NumberFormatting.CurrencyFormatter("USD"); 
-    var currencyUSD = currencyFormatUSD.format(fractionalNumber);
+## Format phone numbers appropriately
+Phone numbers are formatted differently across regions. The number of digits, how the digits are grouped, and the significance of certain parts of the phone number vary from one country to the next. Starting in Windows 10, version 1607, you can use  [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) to format phone numbers appropriately for the current region.
 
-    // Create a formatter initialized to a specific currency.
-    // In this case it's the Euro with the default number formatting for France.
-    var currencyFormatEuroFR = new Windows.Globalization.NumberFormatting.CurrencyFormatter("EUR", ["fr-FR"], "FR");
-    var currencyEuroFR = currencyFormatEuroFR.format(fractionalNumber);
+[**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) parses a string of digits and allows you to determine if the digits are a valid phone number in the current region, compare two numbers for equality, and to extract the different functional parts of the phone number, such as country code or geographical area code.
 
-    // Results for display.
-    var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user's default currency: " + currencyDefault + "\n" +
-                  "Formatted US Dollar: " + currencyUSD + "\n" +
-                  "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
-    ```
+[**PhoneNumberFormatter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberformatter.aspx) formats a string of digits or a PhoneNumberInfo for display, even when the string of digits represents a partial phone number. (You can use this partial number formatting to format a number as a user is entering the number.) 
 
-3.  **使用符合當地文化的行事曆。**
+The code below shows how to use PhoneNumberFormatter to format a phone number as it is being entered. Each time text changes in a TextBox named gradualInput, the contents of the text box are formatted using the current default region and displayed in a TextBlock named outBox. For demonstration purposes, the string is also formatted using the region for New Zealand, and displayed in a TextBlock named NZOutBox.
+    
+```csharp
+    using Windows.Globalization;
 
-    不同區域及語言的行事曆也有所不同。 公曆 (西曆) 不是每個地區的預設行事曆。 有些地區的使用者可能會選擇其他行事曆，像是日本年號年曆或阿拉伯陰曆。 不同的時區及日光節約時間也會對行事曆上的日期和時間有顯著影響。
+    PhoneNumberFormatter currentFormatter, NZFormatter;
 
-    使用標準[日期和時間選擇器](https://msdn.microsoft.com/library/windows/apps/hh465466)控制項可讓使用者選擇日期，確保使用慣用的行事曆格式。 如果遇到更複雜的案例，需要在行事曆日期上直接使用操作，Windows.Globalization 可以提供 [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) 類別，針對特定文化、區域及行事曆類型，提供適當的行事曆表示法。
+    public MainPage()
+    {
+        this.InitializeComponent();
 
-4.  **尊重使用者的語言及文化喜好設定。**
+        // Use the default formatter for the current region
+        currentFormatter = new PhoneNumberFormatter();
 
-    如果要根據使用者的語言、地區或文化喜好設定提供不同功能，Windows 可以讓您透過 [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) 存取這些喜好設定。 如有需要，可以使用 **GlobalizationPreferences** 類別取得使用者目前地理區域、慣用語言、慣用貨幣等項目的值。
+        // Create an explicit formatter for New Zealand. 
+        // Note that you must check the results of TryCreate before you use the formatter.
+        PhoneNumberFormatter.TryCreate("NZ", out NZFormatter);
 
-## <span id="related_topics"></span>相關主題
+    }
 
+    private void gradualInput_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Format for the default region into outBox.
+        outBox.Text = currentFormatter.FormatPartialString(gradualInput.Text);
 
-* [針對全球市場進行規劃](https://msdn.microsoft.com/library/windows/apps/hh465405)
-* [日期和時間控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465466)
+        // If the NZFormatter was created successfully, format the partial string for the NZOutBox.
+        if(NZFormatter != null)
+        {
+            NZOutBox.Text = NZFormatter.FormatPartialString(gradualInput.Text);
+        }
+    }
+```    
 
-**參考資料**
+## Respect the user's Language and Cultural Preferences
+
+For scenarios where you provide different functionality based on the user's language, region, or cultural preferences, Windows gives you a way to access those preferences, through [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825). When needed, use the **GlobalizationPreferences** class to get the value of the user's current geographic region, preferred languages, preferred currencies, and so on.
+
+## Related topics
+
+* [Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
+* [Guidelines for date and time controls](https://msdn.microsoft.com/library/windows/apps/hh465466)
+
+**Reference**
 * [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
 * [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 * [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)
 
-**範例**
-* [行事曆詳細資料及數學範例](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和時間格式化範例](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [全球化喜好設定範例](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [數字格式化及剖析範例](http://go.microsoft.com/fwlink/p/?linkid=231620)
- 
-
- 
+**Samples**
+* [Calendar details and math sample](http://go.microsoft.com/fwlink/p/?linkid=231636)
+* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?linkid=231618)
+* [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Number formatting and parsing sample](http://go.microsoft.com/fwlink/p/?linkid=231620)
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

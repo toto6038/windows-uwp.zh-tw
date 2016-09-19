@@ -1,39 +1,39 @@
 ---
 author: jwmsft
-description: "我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。"
-title: "事件與路由事件概觀"
+description: We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or Visual C++ component extensions (C++/CX) as your programming language, and XAML for your UI definition.
+title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+ms.openlocfilehash: 1debd0c60fbfb12ff63e27140c4a769565d98f2a
 
 ---
 
-# 事件與路由事件概觀
+# Events and routed events overview
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要 API**
+**Important APIs**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援「路由事件」**：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或配置容器時，路由事件非常實用。
+We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or Visual C++ component extensions (C++/CX) as your programming language, and XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports *routed events*: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers.
 
-## 程式設計概念的事件
+## Events as a programming concept
 
-一般而言，進行 Windows 執行階段應用程式的程式設計時，所使用的事件概念與最受歡迎的程式設計語言中的事件模型類似。 如果您已經知道如何使用 Microsoft .NET 或 C++ 事件，就能輕易理解。 然而，您只需對事件模型概念有基本的認識，就能夠執行一些基本的工作，像是附加處理常式。
+Generally speaking, event concepts when programming a Windows Runtime app are similar to the event model in most popular programming languages. If you know how to work with Microsoft .NET or C++ events already, you have a head start. But you don't need to know that much about event model concepts to perform some basic tasks, such as attaching handlers.
 
-當您使用 C#、Visual Basic 或 C++/CX 做為程式設計語言時，UI 會定義在標記 (XAML) 中。 就 XAML 標記語法而言，在標記元素與執行階段程式碼實體間之連接事件的一些原理，與其他 Web 技術 (像是 ASP.NET 或 HTML5) 類似。
+When you use C#, Visual Basic or C++/CX as your programming language, the UI is defined in markup (XAML). In XAML markup syntax, some of the principles of connecting events between markup elements and runtime code entities are similar to other Web technologies, such as ASP.NET, or HTML5.
 
-*注意* 為 XAML 定義的 UI 提供執行階段邏輯的程式碼，通常稱為「**程式碼後置**」或程式碼後置檔案。 在 Microsoft Visual Studio 方案檢視中，會以圖形顯示這個關係，而程式碼後置檔案對它所參考的 XAML 頁面而言，是相依與巢狀的檔案。
+**Note**  The code that provides the runtime logic for a XAML-defined UI is often referred to as *code-behind* or the code-behind file. In the Microsoft Visual Studio solution views, this relationship is shown graphically, with the code-behind file being a dependent and nested file versus the XAML page it refers to.
 
-## Button.Click：事件與 XAML 的簡介
+## Button.Click: an introduction to events and XAML
 
-Windows 執行階段應用程式最常見的一項程式設計工作，是將使用者輸入擷取到 UI。 例如，您的 UI 可能包含按鈕，使用者必須按下按鈕才能送出資訊或變更狀態。
+One of the most common programming tasks for a Windows Runtime app is to capture user input to the UI. For example, your UI might have a button that the user must click to submit info or to change state.
 
-您是透過產生 XAML 的方式定義 Windows 執行階段應用程式的 UI。 此 XAML 通常是 Visual Studio 設計介面的輸出。 您也可以在純文字編輯器或其他廠商的 XAML 編輯器中撰寫 XAML。 在產生該 XAML 的過程中，您可以連接個別 UI 元素的事件處理常式，同時定義建立該 UI 元素的屬性值的其他所有 XAML 屬性。
+You define the UI for your Windows Runtime app by generating XAML. This XAML is usually the output from a design surface in Visual Studio. You can also write the XAML in a plain-text editor or a third-party XAML editor. While generating that XAML, you can wire event handlers for individual UI elements at the same time that you define all the other XAML attributes that establish property values of that UI element.
 
-若要在 XAML 中連接事件，請指定您已定義或稍後將在程式碼後置中定義之處理常式方法的字串格式名稱。 例如，下列 XAML 定義一個將其他屬性 ([x:Name 屬性](x-name-attribute.md)、[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) 指派為屬性的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 物件，並參考名為 `showUpdatesButton_Click` 的方法來連接按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的處理常式：
+To wire the events in XAML, you specify the string-form name of the handler method that you've already defined or will define later in your code-behind. For example, this XAML defines a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) object with other properties ([x:Name attribute](x-name-attribute.md), [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) assigned as attributes, and wires a handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event by referencing a method named `showUpdatesButton_Click`:
 
 ```XML
 <Button x:Name="showUpdatesButton"
@@ -41,9 +41,9 @@ Windows 執行階段應用程式最常見的一項程式設計工作，是將使
   Click="showUpdatesButton_Click"/>
 ```
 
-*提示* 「**事件連接**」是一個程式設計術語。 它指的是您在表示發生某個事件時應叫用具名處理常式方法的處理程序或程式碼。 在大部分的程序性程式碼模型中，事件連接是隱含或明確的 "AddHandler" 程式碼，可以為事件和方法命名，通常包含目標物件執行個體。 在 XAML 中，"AddHandler" 是隱含的，而事件連接完全是由下列兩個動作所組成：將事件命名為物件元素的屬性名稱，以及將處理常式命名為該屬性的值。
+**Tip**  *Event wiring* is a programming term. It refers to the process or code whereby you indicate that occurrences of an event should invoke a named handler method. In most procedural code models, event wiring is implicit or explicit "AddHandler" code that names both the event and method, and usually involves a target object instance. In XAML, the "AddHandler" is implicit, and event wiring consists entirely of naming the event as the attribute name of an object element, and naming the handler as that attribute's value.
 
-您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="showUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `showUpdatesButton_Click` 處理常式。
+You write the actual handler in the programming language that you're using for all your app's code and code-behind. With the attribute `Click="showUpdatesButton_Click"`, you have created a contract that when the XAML is markup-compiled and parsed, both the XAML markup compile step in your IDE's build action and the eventual XAML parse when the app loads can find a method named `showUpdatesButton_Click` as part of the app's code. `showUpdatesButton_Click` must be a method that implements a compatible method signature (based on a delegate) for any handler of the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event. For example, this code defines the `showUpdatesButton_Click` handler.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -65,37 +65,37 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 }
 ```
 
-在此範例中，`showUpdatesButton_Click` 方法是以 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委派為基礎。 您會知道這就是要使用的委派，因為 MSDN 參考頁面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的語法中將會提及該委派。
+In this example, the `showUpdatesButton_Click` method is based on the [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) delegate. You'd know that this is the delegate to use because you'll see that delegate named in the syntax for the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) method on the MSDN reference page.
 
-**提示** Visual Studio 在您編輯 XAML 時，會提供一個命名事件處理常式並定義處理常式方法的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 [&lt;新事件處理常式&gt;]****，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 [&lt;新事件處理常式&gt;]**** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
+**Tip**  Visual Studio provides a convenient way to name the event handler and define the handler method while you're editing XAML. When you provide the attribute name of the event in the XAML text editor, wait a moment until a Microsoft IntelliSense list displays. If you click **&lt;New Event Handler&gt;** from the list, Microsoft Visual Studio will suggest a method name based on the element's **x:Name** (or type name), the event name, and a numeric suffix. You can then right-click the selected event handler name and click **Navigate to Event Handler**. This will navigate directly to the newly inserted event handler definition, as seen in the code editor view of your code-behind file for the XAML page. The event handler already has the correct signature, including the *sender* parameter and the event data class that the event uses. Also, if a handler method with the correct signature already exists in your code-behind, that method's name appears in the auto-complete drop-down along with the **&lt;New Event Handler&gt;** option. You can also press the Tab key as a shortcut instead of clicking the IntelliSense list items.
 
-## 定義事件處理常式
+## Defining an event handler
 
-對於在 XAML 中宣告的 UI 元素物件，事件處理常式程式碼是定義在做為 XAML 頁面程式碼後置的部分類別中。 事件處理常式是您撰寫為部分類別中一部分的方法，這個部分類別與您的 XAML 相關聯。 這些事件處理常式是根據特定事件使用的委派。 您的事件處理常式方法可以是公用或私用的。 使用私用存取的原因，是因為程式碼產生最終會聯結 XAML 建立的處理常式與執行個體。 一般而言，建議您在類別中將事件處理常式方法建立為私用的。
+For objects that are UI elements and declared in XAML, event handler code is defined in the partial class that serves as the code-behind for a XAML page. Event handlers are methods that you write as part of the partial class that is associated with your XAML. These event handlers are based on the delegates that a particular event uses. Your event handler methods can be public or private. Private access works because the handler and instance created by the XAML are ultimately joined by code generation. In general, we recommend that you make your event handler methods private in the class.
 
-**注意** C++ 的事件處理常式不會在部分類別中定義，它們會在標頭中宣告為私用類別成員。 C++ 專案的建置動作會負責處理程式碼的產生，而這些程式碼可支援 C++ 的 XAML 類型系統和程式碼後置模型。
+**Note**  Event handlers for C++ don't get defined in partial classes, they are declared in the header as a private class member. The build actions for a C++ project take care of generating code that supports the XAML type system and code-behind model for C++.
 
-### *sender* 參數與事件資料
+### The *sender* parameter and event data
 
-您為事件撰寫的處理常式可以存取兩個值，這兩個值可做為您的處理常式被叫用時的輸入使用。 第一個值是 *sender*，為針對附加處理常式之物件的參考。 *sender* 參數的類型是基底 **Object** 類型。 常見的技巧是將 *sender* 轉換成更精確的類型。 如果您想在 *sender* 物件本身上進行檢查或變更狀態，這個技巧就很有用。 依據您 app 的設計，您通常可以依據處理程式的附加位置或是其他設計細節，來了解是否可以安全地將 *sender* 轉換成某個類型。
+The handler you write for the event can access two values that are available as input for each case where your handler is invoked. The first such value is *sender*, which is a reference to the object where the handler is attached. The *sender* parameter is typed as the base **Object** type. A common technique is to cast *sender* to a more precise type. This technique is useful if you expect to check or change state on the *sender* object itself. Based on your own app design, you usually know a type that is safe to cast *sender* to, based on where the handler is attached or other design specifics.
 
-第二個值是事件資料，通常以 *e* 參數的形式顯示在語法定義中。 您可以查看指派給您正在處理的特定事件之委派的 *e* 參數，然後在 Visual Studio 中使用 IntelliSense 或物件瀏覽器，以探索可用的事件資料屬性。 或者，您可以使用 Windows 執行階段參考文件。
+The second value is event data, which generally appears in syntax definitions as the *e* parameter. You can discover which properties for event data are available by looking at the *e* parameter of the delegate that is assigned for the specific event you are handling, and then using IntelliSense or Object Browser in Visual Studio. Or you can use the Windows Runtime reference documentation.
 
-對某些事件來說，事件資料的特定屬性值與知道事件發生一樣重要。 輸入事件更是如此。 對指標事件來說，事件發生時的指標位置可能很重要。 對鍵盤事件來說，所有可能的按鍵動作都會引發 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 為了判斷使用者按下哪個按鍵，您必須存取可供事件處理常式存取的 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)。 如需處理輸入事件的詳細資訊，請參閱[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)和[處理指標輸入](https://msdn.microsoft.com/library/windows/apps/mt404610)。 輸入事件與輸入案例通常有本主題未涵蓋的其他考量，像是指標事件的指標擷取，以及鍵盤事件的輔助按鍵與平台按鍵程式碼。
+For some events, the event data's specific property values are as important as knowing that the event occurred. This is especially true of the input events. For pointer events, the position of the pointer when the event occurred might be important. For keyboard events, all possible key presses fire a [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) event. To determine which key a user pressed, you must access the [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) that is available to the event handler. For more info about handling input events, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/mt185607) and [Handle pointer input](https://msdn.microsoft.com/library/windows/apps/mt404610). Input events and input scenarios often have additional considerations that are not covered in this topic, such as pointer capture for pointer events, and modifier keys and platform key codes for keyboard events.
 
-### 使用 **async** 模式的事件處理常式
+### Event handlers that use the **async** pattern
 
-在某些情況下，您會想要在事件處理常式內使用運用 **async** 模式的 API。 例如，您可能會在 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 中使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 來顯示檔案選擇器並與其互動。 不過，許多檔案選擇器 API 都是非同步的。 它們必須在 **async**/awaitable 範圍內呼叫，而且編譯器會強制這項條件。 因此，您可以執行的動作是將 **async** 關鍵字新增至事件處理常式，而處理常式現在是 **async****void**。 現在允許您的事件處理常式進行 **async**/awaitable 呼叫。
+In some cases you'll want to use APIs that use an **async** pattern within an event handler. For example, you might use a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) in an [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) to display a file picker and interact with it. However, many of the file picker APIs are asynchronous. They have to be called within an **async**/awaitable scope, and the compiler will enforce this. So what you can do is add the **async** keyword to your event handler such that the handler is now **async** **void**. Now your event handler is permitted to make **async**/awaitable calls.
 
-如需使用 **async** 模式的使用者互動事件處理範例，請參閱[檔案存取和選擇器](https://msdn.microsoft.com/library/windows/apps/jj655411) ([使用 C# 或 Visual Basic 建立您的第一個 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/hh974581)系列中的一部分)。 另請參閱 [在 C 中呼叫非同步 API]。
+For an example of user-interaction event handling using the **async** pattern, see [File access and pickers](https://msdn.microsoft.com/library/windows/apps/jj655411) (part of the[Create your first Windows Runtime app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581) series). See also [Call asynchronous APIs in C).
 
-## 在程式碼中新增事件處理常式
+## Adding event handlers in code
 
-XAML 不是將事件處理常式指派給物件的唯一方法。 如果要將事件處理常式新增到程式碼中的任何指定物件 (包含無法在 XAML 中使用的物件)，您可以使用語言特定的語法來新增事件處理常式。
+XAML is not the only way to assign an event handler to an object. To add event handlers to any given object in code, including to objects that are not usable in XAML, you can use the language-specific syntax for adding event handlers.
 
-在 C# 中的語法是使用 `+=` 運算子。 您要透過參考運算子右邊的事件處理常式方法名稱來登錄處理常式。
+In C#, the syntax is to use the `+=` operator. You register the handler by referencing the event handler method name on the right side of the operator.
 
-如果您使用程式碼新增事件處理常式到顯示在執行階段 UI 中的物件，常見的做法是新增這類處理常式以回應物件存留期事件或回呼，例如 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 或 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737)，這樣的話，相關物件的事件處理常式就會為使用者在執行階段起始的事件做好準備。 此範例說明頁面結構的 XAML 大綱，然後提供可將事件處理常式新增到物件的 C# 語言語法。
+If you use code to add event handlers to objects that appear in the run-time UI, a common practice is to add such handlers in response to an object lifetime event or callback, such as [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) or [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737), so that the event handlers on the relevant object are ready for user-initiated events at run time. This example shows a XAML outline of the page structure and then provides the C# language syntax for adding an event handler to an object.
 
 ```xml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
@@ -114,7 +114,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意** 還有更詳細的語法。 在 2005 年時，C# 新增一項稱為委派推斷的功能，可以讓編譯器推斷新的委派執行個體，並啟用更簡單的舊語法。 詳細語法在功能上與上一個範例相同，但會在登錄之前先明確地建立新的委派執行個體，因此不會利用委派推斷。 這個明確的語法較不常見，但是在有些程式碼範例中還是可能會看到它。
+**Note**  A more verbose syntax exists. In 2005, C# added a feature called delegate inference, which enables a compiler to infer the new delegate instance and enables the previous, simpler syntax. The verbose syntax is functionally identical to the previous example, but explicitly creates a new delegate instance before registering it, thus not taking advantage of delegate inference. This explicit syntax is less common, but you might still see it in some code examples.
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -124,9 +124,9 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-Visual Basic 語法有兩種可能性。 一種會呼應 C# 語法，並直接將處理常式附加到執行個體。 這種方法需要 **AddHandler** 關鍵字，也需要解除參照處理常式方法名稱的 **AddressOf** 運算子。
+There are two possibilities for Visual Basic syntax. One is to parallel the C# syntax and attach handlers directly to instances. This requires the **AddHandler** keyword and also the **AddressOf** operator that dereferences the handler method name.
 
-Visual Basic 語法的另一種選項，是在事件處理常式使用 **Handles** 關鍵字。 若預期處理常式於載入期間會存在於物件上，並於整個物件存留期中持續存在，便適合使用這個技巧。 若要在 XAML 中定義的物件上使用 **Handles**，您必須提供 **Name** / **x:Name**。 這個名稱會成為 **Handles** 語法之一部分的 *Instance.Event* 所需要的執行個體限定詞。 在這個案例中，您不需要物件存留期型的事件處理常式，就能夠開始附加其他事件處理常式；當您編譯 XAML 頁面時，就會建立 **Handles** 連線。
+The other option for Visual Basic syntax is to use the **Handles** keyword on event handlers. This technique is appropriate for cases where handlers are expected to exist on objects at load time and persist throughout the object lifetime. Using **Handles** on an object that is defined in XAML requires that you provide a **Name** / **x:Name**. This name becomes the instance qualifier that is needed for the *Instance.Event* part of the **Handles** syntax. In this case you don't need an object lifetime-based event handler to initiate attaching the other event handlers; the **Handles** connections are created when you compile your XAML page.
 
 ```vb
 Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As PointerRoutedEventArgs) Handles textBlock1.PointerEntered
@@ -134,34 +134,34 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**注意** Visual Studio 和它的 XAML 設計介面通常會升級執行個體處理技巧，而非 **Handles** 關鍵字。 這是因為在 XAML 中建立事件處理常式連接，是設計人員與開發人員之間一般工作流程的一部分，而 **Handles** 關鍵字技巧與連接 XAML 中的事件處理常式不相容。
+**Note**  Visual Studio and its XAML design surface generally promote the instance-handling technique instead of the **Handles** keyword. This is because establishing the event handler wiring in XAML is part of typical designer-developer workflow, and the **Handles** keyword technique is incompatible with wiring the event handlers in XAML.
 
-在 C++ 中，也可以使用 **+=** 語法，但是它與基本 C# 格式有一些差異：
+In C++, you also use the **+=** syntax, but there are differences from the basic C# form:
 
--   不具備委派推斷功能，因此必須針對委派執行個體使用 **ref new**。
--   委派建構函式有兩個參數，並且需要以目標物件做為第一個參數。 通常您是指定**這個**。
--   委派建構函式需以方法位址做為第二個參數，因此 **&** 參考運算子必須位於方法名稱之前。
+-   No delegate inference exists, so you must use **ref new** for the delegate instance.
+-   The delegate constructor has two parameters, and requires the target object as the first parameter. Typically you specify **this**.
+-   The delegate constructor requires the method address as the second parameter, so the **&** reference operator precedes the method name.
 
 ```cpp
 textBlock1->PointerEntered += 
 ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 ```
 
-### 移除程式碼中的事件處理常式
+### Removing event handlers in code
 
-通常，即使您在程式碼中加入事件處理常式，也沒有必要將該事件處理常式從程式碼移除。 在物件與主要 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 及其視覺化樹狀結構中斷連線之後，大多數 Windows 執行階段物件 (例如頁面和控制項) 的物件存留期行為會將物件摧毀，也會一併摧毀所有委派參考。 .NET 會透過記憶體回收執行這項工作，而搭配 C++/CX 的 Windows 執行階段則是預設使用弱式參照。
+It's not usually necessary to remove event handlers in code, even if you added them in code. The object lifetime behavior for most Windows Runtime objects such as pages and controls will destroy the objects when they are disconnected from the main [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) and its visual tree, and any delegate references are destroyed too. .NET does this through garbage collection and Windows Runtime with C++/CX uses weak references by default.
 
-在某些罕見的情況下，您確實會想要明確移除事件處理常式。 其中包括：
+There are some rare cases where you do want to remove event handlers explicitly. These include:
 
--   您為靜態事件新增的處理常式，這些是無法以常規方式進行記憶體回收的處理常式。 Windows 執行階段 API 中的靜態事件範例就是 [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) 和 [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) 類別的事件。
--   將處理常式移除時間設為立即的測試程式碼，或是在執行階段交換事件的新/舊事件處理常式的程式碼。
--   自訂 **remove** 存取子的實作。
--   自訂靜態事件。
--   適用於頁面瀏覽的處理常式。
+-   Handlers you added for static events, which can't get garbage-collected in a conventional way. Examples of static events in the Windows Runtime API are the events of the [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) and [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) classes.
+-   Test code where you want the timing of handler removal to be immediate, or code where you what to swap old/new event handlers for an event at run time.
+-   The implementation of a custom **remove** accessor.
+-   Custom static events.
+-   Handlers for page navigations.
 
-[ **FrameworkElement.Unloaded** ](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是在狀態管理中擁有適當位置和物件存留期的事件觸發程序，您可以使用這些事件觸發程序來移除其他事件的處理常式。
+[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) or [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) are possible event triggers that have appropriate positions in state management and object lifetime such that you can use them for removing handlers for other events.
 
-例如，您可以使用這個程式碼將名稱為 **textBlock1\_PointerEntered** 的事件處理常式從目標物件 **textBlock1** 中移除。
+For example, you can remove an event handler named **textBlock1\_PointerEntered** from the target object **textBlock1** using this code.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -171,13 +171,13 @@ textBlock1.PointerEntered -= textBlock1_PointerEntered;
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
 
-當事件是透過 XAML 屬性新增的情況下，也就是說當處理常式是在產生的程式碼中新增的情況下，您也可以移除處理常式。 如果您為處理常式所附加的元素提供了 **Name** 值，在執行上就會比較容易，因為那會在稍後為程式碼提供一個物件參照；不過，在物件沒有 **Name** 的情況下，您也可以瀏覽物件樹狀結構來找出所需的物件參照。
+You can also remove handlers for cases where the event was added through a XAML attribute, which means that the handler was added in generated code. This is easier to do if you provided a **Name** value for the element where the handler was attached, because that provides an object reference for code later; however, you could also walk the object tree in order to find the necessary object reference in cases where the object has no **Name**.
 
-如果您需要移除 C++/CX 中的事件處理常式，您將需要一個註冊 Token，而您應該已經從 `+=` 事件處理常式註冊的傳回值收到這個權杖 Token。 那是因為您在 C++/CX 語法中用於 `-=` 取消註冊右邊的值就是該 Token，不是方法名稱。 以 C++/CX 來說，您不能移除新增為 XAML 屬性的處理常式，因為 C++/CX 產生的程式碼不會儲存 Token。
+If you need to remove an event handler in C++/CX, you'll need a registration token, which you should've received from the return value of the `+=` event handler registration. That's because the value you use for the right side of the `-=` deregistration in the C++/CX syntax is the token, not the method name. For C++/CX, you can't remove handlers that were added as a XAML attribute because the C++/CX generated code doesn't save a token.
 
-## 路由事件
+## Routed events
 
-搭配 C#、Microsoft Visual Basic 或 C++/CX 的 Windows 執行階段可以針對大多數 UI 元素上的一組事件，支援路由事件的概念。 這些事件用於輸入與使用者互動案例，並且會在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 基底類型中實作。 下列是路由事件的輸入事件清單：
+The Windows Runtime with C#, Microsoft Visual Basic or C++/CX supports the concept of a routed event for a set of events that are present on most UI elements. These events are for input and user interaction scenarios, and they are implemented on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) base class. Here's a list of input events that are routed events:
 
 -   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
 -   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
@@ -205,93 +205,93 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927)
 -   [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943)
 
-路由事件是可能由子物件傳遞 (*路由*) 到它在物件樹狀結構中之每個後續父物件的事件。 UI 的 XAML 結構接近這個物件樹，它的根是 XAML 中的根元素。 實際的物件樹狀結構可能與 XAML 元素巢狀結構有些不同，因為物件樹狀結構未包含 XAML 語言功能，像是屬性元素標記。 您可以將路由事件想像成引發事件的任一 XAML 物件元素子元素 (針對包含它的父物件元素所引發) 中的「事件反昇」**(Bubbling)。 事件與其事件資料可沿著事件路由在多個物件中處理。 如果元素未具備處理常式，路由可能會持續進行，直到到達根元素為止。
+A routed event is an event that is potentially passed on (*routed*) from a child object to each of its successive parent objects in an object tree. The XAML structure of your UI approximates this tree, with the root of that tree being the root element in XAML. The true object tree might vary somewhat from the XAML element nesting, because the object tree doesn't include XAML language features such as property element tags. You can conceive of the routed event as *bubbling* from any XAML object element child element that fires the event, toward the parent object element that contains it. The event and its event data can be handled on multiple objects along the event route. If no element has handlers, the route potentially keeps going until the root element is reached.
 
-如果您了解動態 HTML (DHTML) 或 HTML5 之類的 Web 技術，可能已經熟知「事件反昇」**(Bubbling) 的事件概念。
+If you know Web technologies such as Dynamic HTML (DHTML) or HTML5, you might already be familiar with the *bubbling* event concept.
 
-當路由事件經由它的事件路由反昇時，任何附加的事件處理常式都會存取事件資料的共用執行個體。 因此，如果某個處理常式可以寫入任何事件資料，對事件資料所做的任何變更將會傳遞給下一個處理常式，因此可能不再是該事件中的原始事件資料。 當某個事件具有路由事件行為時，參考文件將會包含關於該路由行為的備註或其他附註。
+When a routed event bubbles through its event route, any attached event handlers all access a shared instance of event data. Therefore, if any of the event data is writeable by a handler, any changes made to event data will be passed on to the next handler, and may no longer represent the original event data from the event. When an event has a routed event behavior, the reference documentation will include remarks or other notations about the routed behavior.
 
-### **RoutedEventArgs** 的 **OriginalSource** 屬性
+### The **OriginalSource** property of **RoutedEventArgs**
 
-當某個事件沿著事件路徑向上反昇時，*sender* 和事件引發物件已不再是相同的物件。 *sender* 將變成是附加叫用之處理常式的物件。
+When an event bubbles up an event route, *sender* is no longer the same object as the event-raising object. Instead, *sender* is the object where the handler that is being invoked is attached.
 
-在某些情況下，*sender* 不是您感興趣的目標，您反而是想了解其他資訊，像是指標事件觸發時，指標在哪個可能的子物件上方，或當使用者按下鍵盤按鍵時，較大 UI 中的哪個物件是焦點。 在這些情況下，您可以使用 [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) 屬性的值。 在路由的所有點中，**OriginalSource** 會報告引發事件的原始物件，而非附加處理常式的物件。 不過，對於 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 輸入事件來說，該原始物件通常是無法立即在頁面層級的 UI 定義 XAML 中所能看到的物件。 該原始來源物件可能是控制項的範本組件。 例如，如果使用者將滑鼠指標停留在 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的邊緣，對於大多數的指標事件來說，**OriginalSource** 是 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 中的 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 範本組件，而非 **Button** 本身。
+In some cases, *sender* is not interesting, and you are instead interested in info such as which of the possible child objects the pointer is over when a pointer event fired, or which object in a larger UI held focus when a user pressed a keyboard key. For these cases, you can use the value of the [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) property. At all points on the route, **OriginalSource** reports the original object that fired the event, instead of the object where the handler is attached. However, for [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) input events, that original object is often an object that is not immediately visible in the page-level UI definition XAML. Instead, that original source object might be a templated part of a control. For example, if the user hovers the pointer over the very edge of a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), for most pointer events the **OriginalSource** is a [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) template part in the [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465), not the **Button** itself.
 
-**提示** 如果您正在建立範本化的控制項，輸入事件將會特別有用。 控制項的取用者可以為含有範本的任一控制項套用新範本。 正嘗試重建工作範本的取用者，可能會不慎刪除在預設範本中宣告的某些事件處理。 您仍然可以提供控制項層級的事件處理，方法是將處理常式附加為類別定義中的 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) 覆寫的一部分。 接著，您可以攔截具現化時向上反昇至控制項根目錄的輸入事件。
+**Tip**  Input event bubbling is especially useful if you are creating a templated control. Any control that has a template can have a new template applied by its consumer. The consumer that's trying to recreate a working template might unintentionally eliminate some event handling declared in the default template. You can still provide control-level event handling by attaching handlers as part of the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) override in the class definition. Then you can catch the input events that bubble up to the control's root on instantiation.
 
-### **Handled** 屬性
+### The **Handled** property
 
-特定路由事件的數種事件資料類別包含一個名為 **Handled** 的屬性。 例如，請參閱 [**PointerRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943079)、[**KeyRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 以及 [**DragEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/br242375)。 在所有情況下，**Handled** 都是可設定的布林值屬性。
+Several event data classes for specific routed events contain a property named **Handled**. For examples, see [**PointerRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943079), [**KeyRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073), [**DragEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/br242375). In all cases **Handled** is a settable Boolean property.
 
-將 **Handled** 屬性設為 **true** 會影響事件系統行為。 當 **Handled** 為 **true** 時，大多數事件處理常式的路由會停止；事件不會繼續沿著路由向其他附加的處理常式通知該特定事件案例。 「handled」在事件內容中的意義，以及您的 app 會如何回應它，將由您決定。 **Handled** 基本上是簡單的通訊協定，可讓 app 程式碼表明某個事件的發生不需反昇至任何容器，您的 app 邏輯已處理需完成的工作。 但相反地，您必須小心自己是否沒有處理到應該反昇的事件，導致內建的系統或控制項行為無法作用。 例如，處理選取控制項的組件或項目內的低層級事件可能會有不良影響。 選取控制項可能會尋找輸入事件，以確認選取項目應變更。
+Setting the **Handled** property to **true** influences the event system behavior. When **Handled** is **true**, the routing stops for most event handlers; the event doesn't continue along the route to notify other attached handlers of that particular event case. What "handled" means in the context of the event and how your app responds to it is up to you. Basically, **Handled** is a simple protocol that enables app code to state that an occurrence of an event doesn't need to bubble to any containers, your app logic has taken care of what needs done. Conversely though, you do have to be careful that you aren't handling events that probably should bubble so that built-in system or control behaviors can act. For example, handling low-level events within the parts or items of a selection control can be detrimental. The selection control might be looking for input events to know that the selection should change.
 
-並非所有路由事件都能以這種方式取消路由，而您也可以依據它們沒有 **Handled** 屬性來分辨。 例如，[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) 與 [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) 會反昇，但它們永遠會一路反昇至根目錄，而它們的事件資料類別並沒有能夠影響該行為的 **Handled** 屬性。
+Not all of the routed events can cancel a route in this way, and you can tell that because they won't have a **Handled** property. For example, [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) and [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) do bubble, but they always bubble all the way to the root, and their event data classes don't have a **Handled** property that can influence that behavior.
 
-##  控制項中的輸入事件處理常式
+##  Input event handlers in controls
 
-特定的 Windows 執行階段控制項有時會在內部對輸入事件使用 **Handled** 概念。 這樣可以使輸入事件看似從未發生，因為您的使用者程式碼無法處理它。 例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別包含會刻意處理一般輸入事件 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 的邏輯。 它會這麼做的原因，是因為按鈕會引發由 pointer-pressed 輸入與其他輸入模式 (例如可以在身為焦點時叫用按鈕的處理按鍵，如 ENTER 鍵) 起始的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件。 針對 **Button** 類別設計的目的，原始輸入事件將會以概念方式處理，而類別取用者 (例如您的使用者程式碼) 可改為與控制項相關的 **Click** 事件互動。 Windows 執行階段 API 參考資料中特定控制項類別的主題，通常會提到類別會實作的事件處理行為。 在某些情況下，您可以透過覆寫 **On***Event* 方法來變更行為。 例如，您可以覆寫 [**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982)，以變更 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 衍生類別回應按鍵輸入的方式。
+Specific Windows Runtime controls sometimes use the **Handled** concept for input events internally. This can make it seem like an input event never occurs, because your user code can't handle it. For example, the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class includes logic that deliberately handles the general input event [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). It does so because buttons fire a [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event that is initiated by pointer-pressed input, as well as by other input modes such as handling keys like the Enter key that can invoke the button when it's focused. For purposes of the class design of **Button**, the raw input event is conceptually handled, and class consumers such as your user code can instead interact with the control-relevant **Click** event. Topics for specific control classes in the Windows Runtime API reference often note the event handling behavior that the class implements. In some cases, you can change the behavior by overriding **On***Event* methods. For example, you can change how your [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) derived class reacts to key input by overriding [**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982).
 
-##  登錄已處理之路由事件的處理常式
+##  Registering handlers for already-handled routed events
 
-前文曾經提到，將 **Handled** 設為 **true** 可以避免呼叫大多數的處理常式。 不過，[**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 方法能提供一個技巧，即使路由中的部分其他處理常式已經在共用事件資料中將 **Handled** 設為 **true**，您還是可以為路由附加永遠會被叫用的處理常式。 如果您使用的控制項已透過在其內部結合來處理該事件，或是針對控制項特定的邏輯，這個技巧就很有用。 但您仍然想從控制項執行個體或您的 app UI 對它做出回應。 不過使用這個技巧時請小心，因為它可能會與 **Handled** 的目的衝突，並且可能會中斷控制項的目標互動。
+Earlier we said that setting **Handled** to **true** prevents most handlers from being called. But the [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) method provides a technique where you can attach a handler that is always invoked for the route, even if some other handler earlier in the route has set **Handled** to **true** in the shared event data. This technique is useful if a control you are using has handled the event in its internal compositing or for control-specific logic. but you still want to respond to it from a control instance, or your app UI. But use this technique with caution, because it can contradict the purpose of **Handled** and possibly break a control's intended interactions.
 
-只有包含對應的路由事件識別碼的路由事件可以使用 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 事件處理方法技術，因為識別碼是 **AddHandler** 方法的必要輸入。 請參閱 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 的參考文件，以取得含有可用路由事件識別碼的事件清單。 這與我們之前說明的路由事件清單大致相同。 例外的是清單中的最後兩個項目：[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) 和 [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) 沒有路由事件識別碼，因此您不能將 **AddHandler** 用於這兩個事件。
+Only the routed events that have a corresponding routed event identifier can use the [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) event handling technique, because the identifier is a required input of the **AddHandler** method. See the reference documentation for [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) for a list of events that have routed event identifiers available. For the most part this is the same list of routed events we showed you earlier. The exception is that the last two in the list: [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) and [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) don't have a routed event identifier, so you can't use **AddHandler** for those.
 
-## 視覺化樹狀結構以外的路由事件
+## Routed events outside the visual tree
 
-某些物件會參與和主要視覺化樹狀結構的關係，在概念上像是重疊了主要視覺化樹狀結構。 這些物件不是將所有樹狀結構元素與視覺化根目錄連接的一般父系-子系關係的一部分。 任何顯示的 [**Popup**](https://msdn.microsoft.com/library/windows/apps/br227842) 或 [**ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608) 皆為這種案例。 如果您想處理 **Popup** 或 **ToolTip** 中的路由事件，請在 **Popup** 或 **ToolTip** 內的特定 UI 元素中放置處理常式，而非在 **Popup** 或 **ToolTip** 元素本身。 不要仰賴針對 **Popup** 或 **ToolTip** 內容執行之任何結合內的路由。 這是因為路由事件的事件路由只會沿著主要的視覺化樹狀結構進行。 **Popup** 或 **ToolTip** 不會被視為附屬 UI 元素的父系，並且永遠不會接收路由事件，即使它嘗試使用像是 **Popup** 之類的預設背景做為輸入事件的擷取區域也一樣。
+Certain objects participate in a relationship with the primary visual tree that is conceptually like having an overlay over the main visuals. These objects are not part of the usual parent-child relationships that connect all tree elements to the visual root. This is the case for any displayed [**Popup**](https://msdn.microsoft.com/library/windows/apps/br227842) or [**ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608). If you want to handle routed events from a **Popup** or **ToolTip**, place the handlers on specific UI elements that are within the **Popup** or **ToolTip** and not the **Popup** or **ToolTip** elements themselves. Don't rely on routing inside any compositing that is performed for **Popup** or **ToolTip** content. This is because event routing for routed events works only along the main visual tree. A **Popup** or **ToolTip** is not considered a parent of subsidiary UI elements and never receives the routed event, even if it is trying to use something like the **Popup** default background as the capture area for input events.
 
-## 點擊測試和輸入事件
+## Hit testing and input events
 
-判斷滑鼠、觸控以及手寫筆輸入是否能夠在 UI 中看見元素以及在何處看見的動作，稱為「點擊測試」**。 對於觸控動作以及因為觸控動作而引發的互動特定或操作事件，元素必須具有點擊測試可見性，才能成為事件來源並引發與動作相關聯的事件。 否則，動作會透過這個元素傳送至視覺化樹狀結構中可與該輸入進行互動的任何基礎元素或父項元素。 影響點擊測試的因素有很多，不過您可以檢查元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 屬性，判斷指定的元素是否會引發輸入事件。 這個屬性只在元素符合以下條件時才會傳回 **true**：
+Determining whether and where in UI an element is visible to mouse, touch, and stylus input is called *hit testing*. For touch actions and also for interaction-specific or manipulation events that are consequences of a touch action, an element must be hit-test visible in order to be the event source and fire the event that is associated with the action. Otherwise, the action passes through the element to any underlying elements or parent elements in the visual tree that could interact with that input. There are several factors that affect hit testing, but you can determine whether a given element can fire input events by checking its [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) property. This property returns **true** only if the element meets these criteria:
 
--   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 屬性值是 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
--   元素的 **Background** 或 **Fill** 屬性值不是 **null**。 **null**[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值會導致透明而看不到點擊測試 (若要讓元素變成透明但仍可以進行點擊測試，請使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 筆刷而不要使用 **null**)。
+-   The element's [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) property value is [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
+-   The element's **Background** or **Fill** property value is not **null**. A **null** [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) value results in transparency and hit test invisibility. (To make an element transparent but also hit testable, use a [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) brush instead of **null**.)
 
-**注意** **Background** 和 **Fill** 不是由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定義的，而是由不同的衍生類別 (如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377)) 定義的。 不過，您為前景和背景屬性使用的筆刷含意，與點擊測試及輸入事件是相同的，無論該屬性是由哪個子類別實作。
+**Note**  **Background** and **Fill** aren't defined by [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), and are instead defined by different derived classes such as [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) and [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377). But the implications of brushes you use for foreground and background properties are the same for hit testing and input events, no matter which subclass implements the properties.
 
--   如果元素是控制項，它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 屬性值必須是 **true**。
--   元素在配置中必須具有實際的尺寸。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 為 0 的元素不會引發輸入事件。
+-   If the element is a control, its [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property value must be **true**.
+-   The element must have actual dimensions in layout. An element where either [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) and [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) are 0 won't fire input events.
 
-部分控制項擁有特殊的點擊測試規則。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 沒有 **Background** 屬性，但是在其尺寸的整個區域內仍然可以進行點擊測試。 [ **Image** ](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項在它們的定義矩形尺寸中可以進行點擊測試，無論媒體來源檔案中的透明內容 (如 alpha 通道) 是否顯示。 [ **WebView** ](https://msdn.microsoft.com/library/windows/apps/br227702) 控制項具有特殊點擊測試行為，因為輸入可由裝載 HTML 處理並產生指令碼事件。
+Some controls have special rules for hit testing. For example, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) has no **Background** property, but is still hit testable within the entire region of its dimensions. [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) and [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) controls are hit testable over their defined rectangle dimensions, regardless of transparent content such as alpha channel in the media source file being displayed. [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) controls have special hit testing behavior because the input can be handled by the hosted HTML and fire script events.
 
-大部分的 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 在自己的背景中無法進行點擊測試，但是仍然可以處理從它們包含之元素所路由的使用者輸入事件。
+Most [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) classes and [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) are not hit-testable in their own background, but can still handle the user input events that are routed from the elements that they contain.
 
-無論元素是否可以進行點擊測試，您都可以判斷哪些元素與使用者輸入事件位於相同的位置。 若要這樣做，請呼叫 [**FindElementsInHostCoordinates**](https://msdn.microsoft.com/library/windows/apps/br243039) 方法。 如名稱所示，這個方法會在與指定主機元素相關的位置尋找元素。 不過，套用的轉換和配置變更會調整元素的相對座標系統，進而影響在指定位置找到的元素。
+You can determine which elements are located at the same position as a user input event, regardless of whether the elements are hit-testable. To do this, call the [**FindElementsInHostCoordinates**](https://msdn.microsoft.com/library/windows/apps/br243039) method. As the name implies, this method finds the elements at a location relative to a specified host element. However, applied transforms and layout changes can adjust the relative coordinate system of an element, and therefore affect which elements are found at a given location.
 
-## 命令
+## Commanding
 
-少數 UI 元素支援命令功能**。 命令功能會在它的基礎實作中使用輸入相關的路由事件，並透過叫用單一命令處理常式來處理相關 UI 輸入 (某種指標動作，特定的快速鍵)。 如果某個 UI 元素擁有命令功能，請考慮使用它的命令 API，而非任何特定輸入事件。 您通常使用 **Binding** 參照到某個定義資料檢視模型的類別屬性。 這些屬性擁有具名命令，會實作語言特定的 **ICommand** 命令模式。 如需詳細資訊，請參閱 [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)。
+A small number of UI elements support *commanding*. Commanding uses input-related routed events in its underlying implementation and enables processing of related UI input (a certain pointer action, a specific accelerator key) by invoking a single command handler. If commanding is available for a UI element, consider using its commanding APIs instead of any discrete input events. You typically use a **Binding** reference into properties of a class that defines the view model for data. The properties hold named commands that implement the language-specific **ICommand** commanding pattern. For more info, see [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740).
 
-## Windows 執行階段中的自訂事件
+## Custom events in the Windows Runtime
 
-在定義自訂事件的目的上，您新增事件的方式及對您類別設計的意義，與您所使用的程式設計語言息息相關。
+For purposes of defining custom events, how you add the event and what that means for your class design is highly dependent on which programming language you are using.
 
--   對於 C# 和 Visual Basic，您定義的是 CLR 事件。 只要您不是使用自訂存取子 (**add**/**remove**)，您就可以使用標準的 .NET 事件模式。 其他提示：
-    -   對事件處理常式來說，使用 [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) 是一個相當好的方式，因為它具有內建的 Windows 執行階段泛型事件委派 [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577) 轉譯。
-    -   請勿以 [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) 做為您事件資料類別的基底，因為它不會轉譯成 Windows 執行階段。 使用現有的事件資料類別或完全不使用基底類別。
-    -   如果您使用自訂存取子，請參閱 [Windows 執行階段元件中的自訂事件和事件存取子](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)。
-    -   如果您不清楚什麼是標準 .NET 事件模式，請參閱[定義自訂 Silverlight 類別的事件](http://msdn.microsoft.com/library/dd833067.aspx)。 這是針對 Microsoft Silverlight 撰寫的，但是對於標準 .NET 事件模式仍提供了良好的程式碼及概念的總和。
--   如需 C++/CX 的相關資訊，請參閱[事件 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)。
-    -   使用具名參照，即使是在您自己的自訂事件使用方式中也一樣。 請勿將 Lambda 用於自訂事件，它會建立循環參照。
+-   For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
+    -   For the event handler it's a good idea to use [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
+    -   Don't base your event data class on [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
+    -   If you are using custom accessors, see [Custom events and event accessors in Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
+    -   If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](http://msdn.microsoft.com/library/dd833067.aspx). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
+-   For C++/CX, see [Events (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
+    -   Use named references even for your own usages of custom events. Don't use lambda for custom events, it can create a circular reference.
 
-您無法為 Windows 執行階段宣告自訂路由事件；路由事件受限於來自 Windows 執行階段的集合。
+You can't declare a custom routed event for Windows Runtime; routed events are limited to the set that comes from the Windows Runtime.
 
-定義自訂事件通常是在練習定義自訂控制項的過程中一併完成的。 擁有一個含有屬性變更回呼的相依性屬性，並且也定義一個在某些或所有情況下會由相依性屬性回呼引發的自訂事件，是常見的模式。 您控制項的取用者無法存取您定義的屬性變更回呼，但是提供一個通知事件則是最佳的下一步。 如需詳細資訊，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
+Defining a custom event is usually done as part of the exercise of defining a custom control. It's a common pattern to have a dependency property that has a property-changed callback, and to also define a custom event that's fired by the dependency property callback in some or all cases. Consumers of your control don't have access to the property-changed callback you defined, but having a notification event available is the next best thing. For more info, see [Custom dependency properties](custom-dependency-properties.md).
 
-## 相關主題
+## Related topics
 
-* [XAML 概觀](xaml-overview.md)
-* [快速入門：觸控輸入](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
-* [鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [.NET 事件與委派](http://go.microsoft.com/fwlink/p/?linkid=214364)
-* [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+* [XAML overview](xaml-overview.md)
+* [Quickstart: Touch input](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
+* [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/mt185607)
+* [.NET events and delegates](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

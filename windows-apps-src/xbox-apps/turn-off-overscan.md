@@ -1,23 +1,31 @@
 ---
 author: payzer
-title: "如何關閉溢出掃描"
+title: How to draw UI to the edge of the screen
 description: 
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 32a875348debac9aec9f5a26bc4e7e0af2a0a5b4
-ms.openlocfilehash: abd06e78364ff32cc10d733e33b153b854dbc467
+ms.sourcegitcommit: b5961d3266a031ab09a9da63319e9883cf050789
+ms.openlocfilehash: cddde27a17e897ab8a68bbed099e532a8cd48f07
 
 ---
 
-# 如何在螢幕邊緣繪製 UI   
-根據預設，應用程式在檢視區邊緣會放置框線。 這是為了處理電視安全區域。 如需詳細資訊，請參閱[針對 Xbox 與電視設計](http://go.microsoft.com/fwlink/?LinkID=760736#tv-safe-area)。  建議您關閉此功能，並繪製到螢幕邊緣。 您可以在應用程式啟動時，加入下列程式碼來繪製到螢幕邊緣：
+# How to draw UI to the edge of the screen   
+By default, applications will have borders placed at the edges of the viewport to account for the TV-safe area (for more information, see [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md#tv-safe-area)). 
+
+We recommend turning this off and drawing to the edge of the screen. You can draw to the edge of the screen by adding the following code when your application starts:
    
-`Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);`
+```
+Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
+```
    
-注意︰C++/DirectX 應用程式不需要擔心這個問題。 系統會一律將您的應用程式繪製到螢幕邊緣。
+> [!NOTE]
+> C++/DirectX applications do not have to worry about this. The system will always render your application to the edge of the screen.
+
+## See also
+- [Best practices for Xbox](tailoring-for-xbox.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

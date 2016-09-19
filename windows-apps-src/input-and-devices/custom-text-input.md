@@ -7,7 +7,7 @@ label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
+ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 ---
 
@@ -97,9 +97,9 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ![範例文字資料流圖表](images/coretext/stream-3.png) 當使用者輸入 "d"，會引發包含下列 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 資料的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件：
 
--   [ **Range** ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [ **Text** ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [ **NewSelection** ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 在編輯控制項中，套用指定的變更，並將 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
@@ -165,6 +165,6 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

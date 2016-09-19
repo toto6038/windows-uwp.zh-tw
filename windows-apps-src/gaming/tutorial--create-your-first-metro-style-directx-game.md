@@ -1,7 +1,7 @@
 ---
 author: mtoepke
-title: "使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲"
-description: "在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。"
+title: Create a simple Universal Windows Platform (UWP) game with DirectX
+description: In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords:
 - DirectX game sample
@@ -9,63 +9,63 @@ keywords:
 - Direct3D 11 game
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7891642d33e7391e05ae0639e36ff90e6697def6
+ms.openlocfilehash: 0e409f846c0f2e24c469c84610b22a0171e65018
 
 ---
 
-# 使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
+# Create a simple Universal Windows Platform (UWP) game with DirectX
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。 我們涵蓋遊戲的所有主要部分，包括載入圖案和網格等資產的程序、建立主遊戲迴圈、實作簡單轉譯管線，以及新增音效和控制項。
+In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++. We cover all the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.
 
-我們為您說明 UWP 遊戲開發技術和考量。 我們沒有提供完整流程的遊戲。 而是將焦點放在開發 UWP DirectX 遊戲的重要概念，並根據這些概念提出 Windows 執行階段的具體考量。
+We show you the UWP game development techniques and considerations. We don't provide a complete end-to-end game. Rather, we focus on key UWP DirectX game development concepts, and call out Windows Runtime specific considerations around those concepts.
 
-## 目標
-
-
--   使用 UWP DirectX 遊戲的基本概念和元件，並且能夠更得心應手地設計使用 DirectX 的 UWP 遊戲。
-
-## 開始前您必須知道的事
+## Objective
 
 
-在我們開始這個教學課程前，您應該熟悉 下列主題。
+-   To use the basic concepts and components of a UWP DirectX game, and to become more comfortable designing UWP games with DirectX.
 
--   Microsoft C++ 與元件延伸 (C++/CX)。 這是 Microsoft C++ 的更新內容，納入了自動參考計數，而且這也是使用 DirectX 11.1 或更新版本 開發 UWP 遊戲的語言。
--   基本線性代數和牛頓物理概念。
--   基本圖形程式設計詞彙。
--   基本 Windows 程式設計概念。
--   必須對 [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) 和 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API 有基本的認識。
-
-##  Windows 市集 Direct3D 射擊遊戲範例
+## What you need to know before starting
 
 
-這個範例實作簡單的第一人稱射擊場，玩家要用球射擊移動的目標。 擊中每個目標就會得到特定的分數，而且玩家可以晉級 6 個關卡，逐漸增加挑戰難度。 關卡結束後，會記錄得分，並提供玩家最後的分數。
+Before we get started with this tutorial, you need to be familiar with these subjects.
 
-範例示範的遊戲概念包括：
+-   Microsoft C++ with Component Extensions (C++/CX). This is an update to Microsoft C++ that incorporates automatic reference counting, and is the language for developing a UWP games with DirectX 11.1 or later versions.
+-   Basic linear algebra and Newtonian physics concepts.
+-   Basic graphics programming terminology.
+-   Basic Windows programming concepts.
+-   Basic familiarity with the [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) and [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) APIs.
 
--   DirectX 11.1 與 Windows 執行階段的互通性
--   第一人稱 3D 遠近景深和相機
--   3D 立體視覺效果
--   3D 中物件之間的撞擊偵測
--   處理滑鼠、觸控以及 Xbox 360 控制器的使用者輸入
--   音訊混合和播放
--   基本的遊戲狀態電腦
-
-![進行中的遊戲範例](images/simple3dgame-display.png)
+##  The Windows Store Direct3D shooting game sample
 
 
-| 主題 | 說明 |
+This sample implements a simple first-person shooting gallery, where the player fires balls at moving targets. Hitting each target awards a set number of points, and the player can progress through 6 levels of increasing challenge. At the end of the levels, the points are tallied, and the player is awarded a final score.
+
+The sample demonstrates the game concepts:
+
+-   Interoperation between DirectX 11.1 and the Windows Runtime
+-   A first-person 3D perspective and camera
+-   Stereoscopic 3D effects
+-   Collision detection between objects in 3D
+-   Handling player input for mouse, touch, and Xbox 360 controller controls
+-   Audio mixing and playback
+-   A basic game state machine
+
+![the game sample in action](images/simple3dgame-display.png)
+
+
+| Topic | Description |
 |---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md) | 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。 |
-| [定義遊戲的 UWP app 架構](tutorial--building-the-games-metro-style-app-framework.md) | 撰寫 UWP DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及定格，還有使用者介面的事件、互動和轉換。 我們要看看如何架構範例遊戲，以及它如何為玩家及系統互動定義高階狀態電腦。 |
-| [定義主要遊戲物件](tutorial--defining-the-main-game-loop.md) | 現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。 |
-| [組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md) | 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。 我們在這裡要看看如何實作轉譯架構，先從使用圖形顯示物件初始化圖形裝置開始。 |
-| [新增使用者介面](tutorial--adding-a-user-interface.md) | 您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。 現在，讓我們看看範例遊戲如何對玩家回應遊戲的狀態。 在這裡，您會了解如何在 3D 圖形管線輸出上面加入簡單的功能表選項以及平視顯示器元件。 |
-| [新增控制項](tutorial--adding-controls.md) | 現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。 |
-| [加入聲音](tutorial--adding-sound.md) | 在這個步驟中，我們會檢視射擊遊戲範例如何使用[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 來建立播放聲音的物件。 |
-| [延伸遊戲範例](tutorial-resources.md) | 恭喜！ 現在，您已經了解基本通用 UWP DirectX 3D 遊戲的關鍵元件。 您可以設定遊戲的架構，包含檢視提供者和轉譯管線，以及實作基本的遊戲迴圈。 您也可以建立基本的使用者介面重疊，並納入音效和控制項。 您現在正朝著建立自己的遊戲邁進，而這裡有一些資源，能夠擴展您對 DirectX 遊戲開發的知識。 |
+| [Set up the game project](tutorial--setting-up-the-games-infrastructure.md) | The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We step you through the setup and configuration of a simple game project. |
+| [Define the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md) | The first part of coding a UWP with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction. |
+| [Define the main game object](tutorial--defining-the-main-game-loop.md) | Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world. |
+| [Assemble the rendering framework](tutorial--assembling-the-rendering-pipeline.md) | Now, it's time to look at how the sample game uses that structure and state to display its graphics. Here, we look at how to implement a rendering framework, starting from the initialization of the graphics device through the presentation of the graphics objects for display. |
+| [Add a user interface](tutorial--adding-a-user-interface.md) | You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output. |
+| [Add controls](tutorial--adding-controls.md) | Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls. |
+| [Add sound](tutorial--adding-sound.md) | In this step, we examine how the shooting game sample creates an object for sound playback using the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. |
+| [Extend the game sample](tutorial-resources.md) | Congratulations! At this point, you understand the key components of a basic UWP DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, and incorporate sounds and controls. You're on your way to creating a game of your own, and here are some resources to further your knowledge of DirectX game development. |
  
 
  
@@ -78,6 +78,6 @@ ms.openlocfilehash: 7891642d33e7391e05ae0639e36ff90e6697def6
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

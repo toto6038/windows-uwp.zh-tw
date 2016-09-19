@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: "了解如何在您的 app 中抓取 AdControl 錯誤。"
-title: "JavaScript 錯誤處理的逐步解說"
+description: Learn how to catch AdControl errors in your app.
+title: Error handling in JavaScript walkthrough
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 
 ---
 
-# JavaScript 錯誤處理的逐步解說
+# Error Handling in JavaScript Walkthrough
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何在您的 app 中抓取 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
 
-這些範例假設您有包含 **AdControl** 的 JavaScript/HTML app。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+This topic demonstrates how to catch [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) errors in your app.
 
-1.  在 default.html 檔案中，為 **onErrorOccurred** 事件新增一個值，該事件是您為 **AdControl** 定義 **div** 中之 **data-win-options** 的所在位置。 請在 default.html 檔案中尋找以下程式碼。
+These examples assume that you have a JavaScript/HTML app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md). For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](http://aka.ms/githubads).
+
+1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. Find the following code in the default.html file.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -28,13 +28,13 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
     </div>
     ```
 
-    在 **adUnitId** 後方，新增 **onErrorOccurred** 事件的值。
+    Following the **adUnitId**, add the value for the **onErrorOccurred** event.
 
     ``` syntax
     onErrorOccurred: errorLogger
     ```
 
-    以下是 **div** 的完整程式碼。
+    Here is the complete code for the **div**.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -43,7 +43,7 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
     </div>
     ```
 
-2.  建立將顯示文字的 **div**，您就可以看見所產生的訊息。 要這樣做，請在 **div** 後方為 **myAd** 新增以下程式碼。
+2.  Create a **div** that will display text so you can see the messages being generated. To do this, add the following code after the **div** for **myAd**.
 
     ``` syntax
     <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
@@ -52,7 +52,7 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
     </div>
     ```
 
-3.  建立將觸發錯誤事件的 **AdControl**。 一個 app 中，所有 **AdControl** 物件只能有一個應用程式識別碼。 所以建立另一個具有不同應用程式識別碼的 AdControl 物件，將會在執行階段觸發錯誤。 若要這樣做，請在之前您已經建立的 **div** 區段後方，將以下程式碼新增至 default.html 頁面的內文。
+3.  Create an **AdControl** that will trigger an error event. There can only be one application id for all **AdControl** objects in an app. So creating an additional one with a different application id will trigger an error at runtime. To do this, after the previous **div** sections you have added, add the following code to the body of the default.html page.
 
     ``` syntax
     <!-- since only one applicationId can be used, the following ad control will fire an error event -->
@@ -63,7 +63,7 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
     </div>
     ```
 
-4.  在專案的 default.js 檔案中，您將會在預設的初始化函式之後新增 **errorLogger** 的事件處理常式。 捲動到檔案結尾處，然後在最後一個分號後方放入以下程式碼。
+4.  In the project’s default.js file, after the default initialization function, you will add the event handler for **errorLogger**. Scroll to the end of the file and after the last semi-colon is where you will put the following code.
 
     ``` syntax
     WinJS.Utilities.markSupportedForProcessing(
@@ -75,18 +75,18 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
     });
     ```
 
-5.  建置和執行檔案。
+5.  Build and run the file.
 
-您將會看到來自您之前建立之範例 app 的原始廣告，以及該廣告底下描述錯誤的文字。 您不會看到識別碼為 **liveAd** 的廣告。
+You will see the original ad from the sample app you built previously and text under that ad describing the error. You will not see the ad with the id of **liveAd**.
 
-## 相關主題
+## Related topics
 
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

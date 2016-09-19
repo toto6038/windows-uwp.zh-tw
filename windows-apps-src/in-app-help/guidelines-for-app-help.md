@@ -1,71 +1,71 @@
 ---
 author: QuinnRadich
-Description: "這些指導方針描述如何為應用程式設計有效的說明內容。"
-title: "應用程式說明的指導方針"
+Description: These guidelines describe how to design effective Help content for your app.
+title: Guidelines for app help
 label: Guidelines for app help
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 0aa2db498ab7ec25839da259dd0026b0a7cd2b13
-ms.openlocfilehash: f2522afa91abe26303a85cbfbabd5ec5b3dba59c
+ms.openlocfilehash: 0ca099b0acfcba16d62c6158c7a829adaf475891
 
 ---
 
-# App 說明的指導方針
+# Guidelines for app help
 
-\[ 針對 Windows 10 上的通用 Windows 平台 (UWP) app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for Universal Windows Platform (UWP) apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-應用程式可能十分複雜，並提供有效的說明，讓使用者可以大幅改善其體驗。 並非所有的應用程式需要為其使用者提供說明，且根據應用程式以及人們使用的方式，所提供的說明類型變化很大。
+Applications can be complex, and providing effective help for your users can greatly improve their experience. Not all applications need to provide help for their users, and the type of help provided can vary greatly, depending on the application and how people will use it.
 
-如果您決定提供說明，請考慮此處所述的指導方針。 請記住，沒有什麼幫助的說明，比根本沒有說明還要糟。
+If you decide to provide help, consider the guidelines outlined here. And remember, help that isn't helpful can be worse than no help at all.
 
-## <span id="intuitive_design"></span><span id="INTUITIVE_DESIGN"></span>直覺式設計
+## <span id="intuitive_design"></span><span id="INTUITIVE_DESIGN"></span>Intuitive design
 
-就算說明內容十分有用，您的 app 也不能依賴它為使用者提供良好的體驗。 如果某人無法立即探索並使用您 app 的重要功能，表示該人員不會使用您的 app。 沒有任何說明內容可以變更該第一印象。
+As useful as help content can be, your app cannot rely on it to provide a good experience for the user. If someone is unable to immediately discover and use the critical functions of your app, that person won't use your app. No help content will change that first impression.
 
-直覺且易於使用的設計是撰寫有用說明的第一個步驟。 這不僅可讓使用者持續使用以接觸更進階的功能，還可以讓他們了解 app 的核心功能，以做為基礎並繼續使用。
+An intuitive and user-friendly design is the first step to writing useful help. Not only does it keep the user engaged long enough for them to use more advanced features, but it also provides them with the knowledge of an app's core functions, which they can build upon as they continue on.
 
-## <span id="general_instructions"></span><span id="GENERAL_INSTRUCTIONS"></span>一般指示
+## <span id="general_instructions"></span><span id="GENERAL_INSTRUCTIONS"></span>General instructions
 
-除非使用者已經遇到問題，否則不會尋找說明內容，因此說明需要為該問題提供快速且有效的回答。 如果說明不是立即有用，或者說明太過複雜，則使用者更有可能會忽略它。
+A user will not look for help content unless they already have a problem, so help needs to provide a quick and effective answer to that problem. If help is not immediately useful, or if help is too complicated, then people are more likely to ignore it.
 
-所有說明 (不管是哪一種) 都應該遵循下列的基本原則︰
+All help, no matter what kind, should follow these basic principles:
 
--   **容易了解：**混淆使用者的說明比根本沒有說明還要糟。
+-   **Easy to understand:** Help that confuses the user is worse than no help at all.
 
--   **易懂：**尋找說明的使用者希望直接向他們呈現清楚的解答。
+-   **Straightforward:** Users looking for help want clear answers presented directly to them.
 
--   **相關：**使用者不希望必須搜尋他們的特定問題。 他們希望先呈現最相關的說明 (這稱為「內容說明」)，或是想要可輕鬆瀏覽的介面。
+-   **Relevant:** Users do not want to have to search for their specific issue. They want the most relevant help presented first (this is called "contextual help"), or they want an easily navigated interface.
 
--   **直接：**使用者尋求協助時，會想要查看說明。 如果您的 app 包含回報錯誤、提供意見反應、檢視服務條款或類似功能，它們應該包含為主要說明頁面上的連結或註腳，而不是重要項目。
+-   **Direct:** When a user looks for help, they want to see help. If your app includes pages for reporting bugs, giving feedback, viewing term of service, or similar functions, they should be included as links or footnotes on the main help page, and not as items of importance.
 
--   **一致：**不管類型為何，說明仍然是您 app 的一部分，應與 UI 的任何其他部分一視同仁。 針對 app 其他部分的相同可用性、可存取性及樣式設計原則，也應該用在您提供的說明中。
+-   **Consistent:** No matter the type, help is still a part of your app, and should be treated as any other part of the UI. The same design principles of usability, accessibility, and style that are used throughout the rest of your app should also be present in the help you offer.
 
-## <span id="types_of_help"></span><span id="TYPES_OF_HELP"></span>說明類型
+## <span id="types_of_help"></span><span id="TYPES_OF_HELP"></span>Types of help
 
-說明內容有三個主要類別，各有不同的優勢且適合不同的用途。 您可以視需求而定，在 app 中任意搭配這三個類別的內容。
+There are three primary categories of help content, each with varying strengths and suitable for different purposes. You can use any combination of them in your app, depending on your needs.
 
-### <span id="instructional_ui"></span><span id="INSTRUCTIONAL_UI"></span>指示性 UI
+### <span id="instructional_ui"></span><span id="INSTRUCTIONAL_UI"></span>Instructional UI
 
-在理想的情況下，使用者應該不需要指示就能夠使用您 app 的所有核心功能，但您的 app 可能偶爾會根據特定的手勢使用，或者是您的 app 可能具有不甚明顯的第二個功能。 在這些情況下，指示性 UI 應該用來提供使用者有關如何執行特定工作的指示。
+Ideally, users should be able to use all the core functions of your app without instruction, but occasionally your app may depend on the use of a specific gesture, or there may be secondary features of your app that are not immediately obvious. In these cases, instructional UI should be used to educate users with directions on how to perform specific tasks.
 
-[請參閱指示性 UI 的指導方針](instructional-ui.md)
+[See guidelines for instructional UI](instructional-ui.md)
 
-### <span id="in_app_help"></span><span id="IN_APP_HELP"></span>App 內說明
+### <span id="in_app_help"></span><span id="IN_APP_HELP"></span>In-app help
 
-呈現說明的標準方法是依使用者要求在應用程式內顯示。 有數種可實作的方式 (例如透過說明頁面或資訊描述)。 這種方法十分適用於一般用途的說明，可直接回答使用者不太複雜的問題。
+The standard method of presenting help is to display it within the application at the user's request. There are several ways in which this can be implemented, such as help pages or informative descriptions. This method is ideal for general-purpose help that directly answers a user's questions without complexity.
 
-[請參閱 App 內說明的指導方針](in-app-help.md)
+[See guidelines for in-app help](in-app-help.md)
 
-### <span id="external_help"></span><span id="EXTERNAL_HELP"></span>外部說明
+### <span id="external_help"></span><span id="EXTERNAL_HELP"></span>External help
 
-針對因太大而無法放入應用程式內的詳細教學課程、進階功能，或說明主題庫，便應該使用能連至外部網頁的連結。 這些連結應該謹慎使用，因為它們會移除使用者的應用程式體驗。
+For detailed tutorials, advanced functions, or libraries of help topics too large to fit within your application, links to external web pages are ideal. These links should be used sparingly if possible, as they remove the user from the application experience.
 
-[請參閱外部說明的指導方針。](external-help.md)
+[See guidelines for external help](external-help.md)
 
-\[本文章包含通用 Windows 平台 (UWP) 應用程式與 Windows 10 專屬的資訊。 如需 Windows 8.1 指導方針，請下載 [Windows 8.1 指導方針 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

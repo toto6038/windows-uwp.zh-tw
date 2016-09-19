@@ -1,26 +1,26 @@
 ---
 author: mtoepke
-title: "使用深度測試轉譯場景"
-description: "將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。"
+title: Render the scene with depth testing
+description: Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
+ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
 
 ---
 
-# 使用深度測試轉譯場景
+# Render the scene with depth testing
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第三部分。
+Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader. Part 3 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## 包含光線範圍的轉換
+## Include transformation for light frustum
 
 
-您的頂點著色器需要針對每個頂點計算光線空間的轉換位置。 使用常數緩衝區來提供光線空間模型、檢視及投影矩陣 您也可以使用這個常數緩衝區提供光線位置與標準，以進行光線計算。 光線空間的轉換位置將會在深度測試期間使用。
+Your vertex shader needs to compute the transformed light space position for each vertex. Provide the light space model, view, and projection matrices using a constant buffer. You can also use this constant buffer to provide the light position and normal for lighting calculations. The transformed position in light space will be used during the depth test.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -59,12 +59,12 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-接著，像素著色器將使用頂點著色器提供的插補光線空間位置來測試像素是否位於陰影中。
+Next, the pixel shader will use the interpolated light space position provided by the vertex shader to test whether the pixel is in shadow.
 
-## 測試位置是否位於光線範圍中
+## Test whether the position is in the light frustum
 
 
-首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果它們均位於範圍 \[0, 1\] 內，則像素可能就位於陰影中。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 並根據原始值來比較結果，藉以快速測試此項目。
+First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) and comparing the result against the original value.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -83,10 +83,10 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## 根據陰影圖進行的深度測試
+## Depth test against the shadow map
 
 
-使用一個取樣比較函式 ([SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) 或 [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697))，根據深度圖來測試像素在光線空間中的深度。 計算標準化的光線空間深度值 (也就是 `z / w`)，並將值傳遞到比較函式。 因為我們針對取樣器使用 LessOrEqual 比較測試，因此內建函式會在通過比較測試時傳回零；這表示像素位於陰影中。
+Use a sample comparison function (either [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) or [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -115,10 +115,10 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## 計算陰影的光源方向
+## Compute lighting in or out of shadow
 
 
-如果像素並未位於陰影中，則像素著色器應該會計算直接光源，並將它新增到像素值。
+If the pixel is not in shadow, the pixel shader should compute direct lighting and add it to the pixel value.
 
 ```cpp
 return float4(input.color * (ambient + DplusS(N, L, NdotL, input.view)), 1.f);
@@ -147,13 +147,13 @@ float3 DplusS(float3 N, float3 L, float NdotL, float3 view)
 }
 ```
 
-否則，像素著色器應該使用周遭環境光源來計算像素值。
+Otherwise, the pixel shader should compute the pixel value using ambient lighting.
 
 ```cpp
 return float4(input.color * ambient, 1.f);
 ```
 
-在這個逐步解說的下一個部分，您將了解如何[支援各種硬體上的陰影圖](target-a-range-of-hardware.md)。
+In the next part of this walkthrough, learn how to [Support shadow maps on a range of hardware](target-a-range-of-hardware.md).
 
  
 
@@ -165,6 +165,6 @@ return float4(input.color * ambient, 1.f);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

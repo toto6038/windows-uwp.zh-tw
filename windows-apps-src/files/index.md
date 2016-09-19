@@ -1,51 +1,45 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: "檔案、資料夾和媒體櫃"
-description: "了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。"
+title: Files, folders, and libraries
+description: Learn about reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 ---
- # 檔案、資料夾和媒體櫃
+ # Files, folders, and libraries
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-您可以使用 [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346)、[Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) 和 [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間中的 API，以在檔案中讀取與寫入文字和其他資料格式，以及管理檔案和資料夾。 在本節中，您也將了解讀取和寫入 app 設定、檔案和資料夾選擇器，並了解特殊的沙箱式位置，例如影片/音樂媒體櫃。
+You use the APIs in the [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791), and [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) namespaces to read and write text and other data formats in files, and to manage files and folders. In this section, you'll also learn about reading and writing app settings, about file and folder pickers, and about special sand-boxed locations such as the Video/Music library.
 
-| 主題 | 描述  |
+| Topic | Description  |
 |-------|--------------|
-| [列舉和查詢檔案和資料夾](quickstart-listing-files-and-folders.md) | 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。 |
-| [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件讀取和寫入檔案。 |
-| [取得檔案屬性](quickstart-getting-file-properties.md) | 取得由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。 |
-| [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md) | 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。 |
-| [使用選擇器儲存檔案](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者指定讓您的應用程式儲存檔案的名稱和位置。 |
-| [使用企業資料保護 (EDP) 來保護檔案](protect-your-enterprise-data-with-edp.md) | 本主題說明達成一些最常見的檔案相關企業資料保護 EDP 案例所需的編碼工作範例。 |
-| [使用企業資料保護 (EDP) 來保護串流和緩衝區](use-edp-to-protect-streams-and-buffers.md) | 本主題說明達成一些最常見的串流和緩衝區相關企業資料保護 EDP 案例所需的編碼工作範例。 |
-| [存取 HomeGroup 內容](quickstart-accessing-homegroup-content.md) | 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。 |
-| [判斷 Microsoft OneDrive 檔案的可用性](quickstart-determining-availability-of-microsoft-onedrive-files.md) | 使用 [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。 |
-| [音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。 |
-| [追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md) | 將使用者經常存取的檔案新增到您 app 的最近使用清單中 (MRU)，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。 |
-| [存取 SD 記憶卡](access-the-sd-card.md) | 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。 |
-| [檔案存取權限](file-access-permissions.md) | App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。 |
+| [Enumerate and query files and folders](quickstart-listing-files-and-folders.md) | Access files and folders in either a folder, library, device, or network   location. You can also query the files and folders in a location by constructing file and folder queries. |
+| [Create, write, and read a file](quickstart-reading-and-writing-files.md) | Read and write a file using a [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) object. |
+| [Get file properties](quickstart-getting-file-properties.md) | Get properties—top-level, basic, and extended—for a file represented by a   [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) object. |
+| [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md) | Access files and folders by letting the user interact with a picker. You can use the   [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) to gain access to a folder. |
+| [Save a file with a picker](quickstart-save-a-file-with-a-picker.md) | Use [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) to let users specify the name and location where they want your app to save a file. |
+| [Accessing HomeGroup content](quickstart-accessing-homegroup-content.md) | Access content stored in the user's HomeGroup folder, including pictures, music, and videos. |
+| [Determining availability of Microsoft OneDrive files](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Determine if a Microsoft OneDrive file is available using the [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property. |
+| [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos. |
+| [Track recently used files and folders](how-to-track-recently-used-files-and-folders.md) | Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU. |
+| [Access the SD card](access-the-sd-card.md) | You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage. |
+| [File access permissions](file-access-permissions.md) | Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities. |
 
-## 相關範例
-[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)
+## Related samples
+[Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
-[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)
+[File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995)
 
-[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)
+[File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994)
  
 
  
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

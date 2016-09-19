@@ -1,20 +1,20 @@
 ---
-title: "複製到位元組陣列和從位元組陣列中複製"
-description: "這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 中複製到位元組陣列和從位元組陣列中複製。"
+title: Copy to and from byte arrays
+description: This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
+ms.openlocfilehash: f700d3d9c09424ef8fffd73a08e12563acbbc497
 
 ---
 
-# 複製到位元組陣列和從位元組陣列中複製
+# Copy to and from byte arrays
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 中複製到位元組陣列和從位元組陣列中複製。
+This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void ByteArrayCopy()
@@ -35,6 +35,6 @@ public void ByteArrayCopy()
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

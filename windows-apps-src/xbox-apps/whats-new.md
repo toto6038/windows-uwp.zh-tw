@@ -1,59 +1,58 @@
 ---
 author: v-angraf
-title: "Xbox One 上的 UWP 新功能"
-description: "重點摘要 Xbox One App 上的 UWP 新功能。"
-area: Xbox
+title: What's new for UWP on Xbox One
+description: Highlights new features for UWP apps on Xbox One.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
+ms.sourcegitcommit: 044aac722180015586487dcc8738facccf209f5c
+ms.openlocfilehash: 4cc1e0b495a80e019296b9c3be9e75a37c60224a
 
 ---
 
-# Xbox One 上的 UWP 2016 年 7 月開發人員預覽的新功能
+# What's new for developers in the latest update of UWP on Xbox One
 
-Xbox One 上的通用 Windows 平台 (UWP) 2016 年 7 月開發人員預覽版本包含以下新功能、現有功能的更新與錯誤修正。
+The July 2016 release of Universal Windows Platform (UWP) on Xbox One contains the following new features, updates to existing features, and bug fixes.
 
-## 使用 TCP/UDP 通訊端的網路功能現在已可使用  
-來自使用傳統 TCP/UDP 通訊端 (WinSock、Windows.Networking.Sockets) 的主機的輸入和輸出網路存取現在已可使用。
+## Networking using TCP/UDP sockets is now available  
+Inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is now available.
 
-## Fiddler 支援
-對於已啟用 Xbox One 上通用 Windows 平台 (UWP) 的主機，您現在可以啟用 Fiddler 作為主機的 Proxy。 Fiddler 可讓您記錄與調查 Xbox 服務與信賴憑證者 Web 服務之所有 HTTP/HTTPS 的進出流量。 如需詳細資訊，請參閱[如何在開發 UWP 時使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)。
+## Fiddler support
+You can now enable Fiddler as a proxy for a console that has enabled UWP on Xbox One. Fiddler allows you to log and inspect all HTTP/HTTPS traffic to and from Xbox services and relying-party web services. For more information, see [How to use Fiddler with Xbox One when developing for UWP](uwp-fiddler.md).
 
-## 滑鼠模式現已預設為啟用
-針對 XAML 和託管的 Web 應用程式，滑鼠模式現已預設為啟用。
-強烈建議您關閉此功能，並針對方向控制器瀏覽最佳化。
-若要了解如何關閉滑鼠模式，請參閱[如何停用滑鼠模式](how-to-disable-mouse-mode.md)。
-如需如何建立適用於 Xbox 的絕佳 App 詳細資訊，請參閱[針對 Xbox 與電視進行設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)。
+## Mouse mode is now enabled by default
+Mouse mode is now enabled by default for XAML and Hosted Web Apps.
+We strongly recommend that you turn this off and optimize for directional controller navigation.
+To learn how to turn mouse mode off, see [How to disable mouse mode](how-to-disable-mouse-mode.md).
+For more information about how to build great apps for Xbox, see [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md#mouse-mode).
 
-## 延伸的 UWP API 介面區域現已可在主機上正常運作
-其他的 UWP API 現在可在 Xbox 主機上正常運作。 如需 UWP API 支援的詳細資訊，請參閱 [Xbox 上尚未支援的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。 
+## Extended UWP API surface area is now functional on the console
+Additional UWP APIs are now functional on the Xbox console. For more information about UWP API support, see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/p/?LinkID=760755). 
 
-## 背景音樂和音訊功能
-您現在可以從在背景執行的 App 播放音樂與音訊。
+## Background music and audio capabilities
+You can now play music and audio from an app that is running in the background.
 
-## XAML 改進功能
-XAML 平台已經做了下列改良：
--   焦點矩形現在是針對電視 10 呎體驗設定樣式。
--   Xbox 音效現在內嵌於 XAML 平台中。
--   已改進 UI 元素間的 XY 焦點瀏覽。 
+## XAML improvements
+The following improvements have been made to the XAML platform:
+-   The focus rectangle is now styled for a television 10-foot experience.
+-   Xbox sounds are now embedded in the XAML platform.
+-   XY focus navigation between UI elements has been improved. 
 
-## 您現在可以變更主機上已配置開發人員存放區的大小
-「開發人員首頁」App 中的新設定可讓您增加或減少主機上已配置開發人員存放區的大小。 如需變更已配置開發人員存放區大小的詳細資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
+## You can now change the size of allocated developer storage on the console
+A new setting in the Dev Home app allows you to increase or decrease the size of the allocated developer storage on your console. For more information about changing the size of your allocated developer storage, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
 
-## WDP 工具增強功能
-已針對適用於 Xbox 的 Windows Device Portal (WDP) 工具進行下列改善：
- - 工具包含額外的主機設定。 如需主機設定的詳細資訊，請參閱 [/ext/settings](wdp-xboxsettings-api.md) 參考主題。 
- - 使用者可以在主機上登入或登出。 如需使用者的詳細資訊，請參閱 [/ext/user](wdp-user-management.md) 參考主題。
- - 您現在可以擷取主機的螢幕擷取畫面。 如需製作螢幕擷取畫面的詳細資訊，請參閱 [/ext/screenshot](wdp-media-capture-api.md) 參考主題。
- - 此工具可以部署 App 的鬆散檔案組建。 如需鬆散檔案組建的詳細資訊，請參閱 [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) 參考主題。
- - 可以從開發電腦的 [檔案總管] 存取主機上的開發人員檔案。 如需透過 [檔案總管] 存取檔案的詳細資訊，請參閱 [/ext/smb/developerfolder](wdp-smb-api.md) 參考主題。
+## WDP tool enhancements
+The following improvements have been made to the Windows Device Portal (WDP) Tool for Xbox:
+ - The tool includes additional console settings. For more information about console settings, see the [/ext/settings](wdp-xboxsettings-api.md) reference topic. 
+ - Users can be signed in and out on the console. For more information about users, see the [/ext/user](wdp-user-management.md) reference topic.
+ - You can now capture a screenshot of the console. For more information about taking a screenshot, see the [/ext/screenshot](wdp-media-capture-api.md) reference topic.
+ - The tool can deploy a loose file build of your app. For more information about loose file builds, see the [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) reference topic.
+ - Developer files on your console can be accessed from File Explorer on your development PC. For more information about accessing files through File Explorer, see the [/ext/smb/developerfolder](wdp-smb-api.md) reference topic.
 
-## 另請參閱
-- [Xbox One 上的 UWP](index.md)
-- [已知問題](known-issues.md)
+## See also
+- [Known issues](known-issues.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

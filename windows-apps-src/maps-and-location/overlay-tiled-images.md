@@ -1,35 +1,35 @@
 ---
 author: msatranjr
-title: "在地圖上重疊顯示並排影像"
-description: "藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。"
+title: Overlay tiled images on a map
+description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
+ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
 
 ---
 
-# 在地圖上重疊顯示並排影像
+# Overlay tiled images on a map
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
+Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 
-**提示：**若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 並排影像概觀
+## Tiled image overview
 
 
-Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中顯示的地圖上重疊顯示這些磚。
+Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-**重要**  
-使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
+**Important**  
+When you use tile sources, you don't have to write code to request or to position individual tiles. The [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) requests tiles as it needs them. Each request specifies the X and Y coordinates and the zoom level for the individual tile. You simply specify the format of the Uri or filename to use to retrieve the tiles in the **UriFormatString** property. That is, you insert replaceable parameters in the base Uri or filename to indicate where to pass the X and Y coordinates and the zoom level for each tile.
 
-以下是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
+Here's an example of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property for an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) that shows the replaceable parameters for the X and Y coordinates and the zoom level.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -37,67 +37,67 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
 
  
 
-(X 和 Y 座標代表具指定詳細層級之世界地圖內個別磚的位置。 磚編號系統從地圖左上角的 {0, 0} 開始。 例如，位於 {1, 2} 的磚是在磚格線之第三列的第二欄中。)
+(The X and Y coordinates represent the location of the individual tile within the map of the world at the specified level of detail. The tile numbering system starts from {0, 0} in the upper left corner of the map. For example, the tile at {1, 2} is in the second column of the third row of the grid of tiles.)
 
-如需有關地圖服務所使用之磚系統的詳細資訊，請參閱 [Bing 地圖服務磚系統](http://go.microsoft.com/fwlink/p/?LinkId=626692)。
+For more info about the tile system used by mapping services, see [Bing Maps Tile System](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### 重疊顯示來自磚來源的磚
+### Overlay tiles from a tile source
 
-藉由使用 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)，即可在地圖上重疊顯示來自磚來源的並排影像。
+Overlay tiled images from a tile source on a map by using the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  將繼承自 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) 的三個磚資料來源類別其中之一具現化。
+1.  Instantiate one of the three tile data source classes that inherit from [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
     -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
     -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
     -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
 
-    藉由在基底 URI 或檔案名稱中插入可置換參數，設定要用來要求磚的 **UriFormatString**。
+    Configure the **UriFormatString** to use to request the tiles by inserting replaceable parameters in the base Uri or filename.
 
-    下列範例會將 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 具現化。 這個範例會在 **HttpMapTileDataSource** 的建構函式中指定 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值。
+    The following example instantiates an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). This example specifies the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) in the constructor of the **HttpMapTileDataSource**.
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  將 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 具現化並設定。 將您在上一個步驟中設定的 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) 指定為 **MapTileSource** 的 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
+2.  Instantiate and configure a [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Specify the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) that you configured in the previous step as the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) of the **MapTileSource**.
 
-    下列範例會在 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的建構函式中指定 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
+    The following example specifies the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) in the constructor of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
     ```cs
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    您可以使用 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的屬性來限制顯示磚的條件。
+    You can restrict the conditions in which the tiles are displayed by using properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    -   藉由提供 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性的值，只顯示特定地理區域內的磚。
-    -   藉由提供 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性的值，只以特定詳細層級顯示磚。
+    -   Display tiles only within a specific geographic area by providing a value for the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
+    -   Display tiles only at certain levels of detail by providing a value for the [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
-    您也可以依選擇設定 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的其他屬性來影響磚的載入或顯示，例如 [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157)、[**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145)、[**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) 及 [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155)。
+    Optionally, configure other properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) that affect the loading or the display of the tiles, such as [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153), and [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
 
-3.  將 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 新增到 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) 集合。
+3.  Add the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) to the [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) collection of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
     ```cs
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## 重疊顯示來自 Web 服務的磚
+## Overlay tiles from a web service
 
 
-藉由使用 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)，即可重疊顯示抓取自 Web 服務的並排影像。
+Overlay tiled images retrieved from a web service by using the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
-1.  將 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 具現化。
-2.  指定 Web 服務預期做為 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性值的 URI 格式。 若要建立這個值，請在基底 URI 中插入可置換參數。 例如，在下列程式碼範例中，**UriFormatString** 的值是：
+1.  Instantiate an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+2.  Specify the format of the Uri that the web service expects as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property. To create this value, insert replaceable parameters in the base Uri. For example, in the following code sample, the value of the **UriFormatString** is:
 
     ``` syntax
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服務必須支援包含可置換參數 {x}、{y} 及 {zoomlevel} 的 URI。 大部分 Web 服務 (例如 Nokia、Bing 及 Google) 都支援此格式的 URI。 如果 Web 服務需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
+    The web service has to support a Uri that contains the replaceable parameters {x}, {y}, and {zoomlevel}. Most web services (for example, Nokia, Bing, and Google) support Uris in this format. If the web service requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
+The following example overlays tiles from a fictitious web service on a map of North America. The value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is specified in the constructor of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). In this example, tiles are only displayed within the geographic boundaries specified by the optional [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -144,36 +144,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## 重疊顯示來自本機存放區的磚
+## Overlay tiles from local storage
 
 
-藉由使用 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)，即可重疊顯示在本機存放區中儲存為檔案的並排影像。 通常您會將這些檔案與您的 app 封裝在一起並散布。
+Overlay tiled images stored as files in local storage by using the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Typically, you package and distribute these files with your app.
 
-1.  將 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 具現化。
-2.  指定檔案名稱的格式做為 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性的值。 若要建立這個值，請在基底檔案名稱中插入可置換參數。 例如，在下列程式碼範例中，[**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是：
+1.  Instantiate a [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+2.  Specify the format of the file names as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property. To create this value, insert replaceable parameters in the base filename. For example, in the following code sample, the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果檔案名稱格式需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
+    If the format of the file names requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-您可以使用下列通訊協定和位置以從本機存放區載入磚：
+You can use the following protocols and locations to load tiles from local storage:
 
-| URI | 其他資訊 |
+| Uri | More info |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-appx:/// | 指向 app 安裝資料夾的根目錄。 |
-|  | 這是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 屬性所參考的位置。 |
-| ms-appdata:///local | 指向 app 本機存放區的根目錄。 |
-|  | 這是 [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) 屬性所參考的位置。 |
-| ms-appdata:///temp | 指向 app 的暫存資料夾。 |
-|  | 這是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性所參考的位置。 |
+| ms-appx:/// | Points to the root of the app's installation folder. |
+|  | This is the location referenced by the [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) property. |
+| ms-appdata:///local | Points to the root of the app's local storage. |
+|  | This is the location referenced by the [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) property. |
+| ms-appdata:///temp | Points to the app's temp folder. |
+|  | This is the location referenced by the [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) property. |
 
  
 
-下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
+The following example loads tiles that are stored as files in the app's installation folder by using the `ms-appx:///` protocol. The value for the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) is specified in the constructor of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). In this example, tiles are only displayed when the zoom level of the map is within the range specified by the optional [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
 ```csharp
         void AddLocalMapTileSource()
@@ -195,15 +195,15 @@ void MainPage::AddHttpMapTileSource()
         }
 ```
 
-## 提供自訂 URI
+## Provide a custom URI
 
 
-如果 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。 將會針對每個個別磚引發 **UriRequested** 事件。
+If the replaceable parameters available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) or the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) aren't sufficient to retrieve your tiles, then you have to create a custom Uri. Create and return a custom Uri by providing a custom handler for the **UriRequested** event. The **UriRequested** event is raised for each individual tile.
 
-1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 屬性結合，以建立自訂 URI。
-2.  傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 URI。
+1.  In your custom handler for the **UriRequested** event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) properties of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) to create the custom Uri.
+2.  Return the custom Uri in the [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) property of the [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) property of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
+The following example shows how to provide a custom Uri by creating a custom handler for the **UriRequested** event. It also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom Uri.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -241,17 +241,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## 重疊顯示來自自訂來源的磚
+## Overlay tiles from a custom source
 
 
-藉由使用 [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)，即可重疊顯示自訂磚。 您可以透過程式設計方式在記憶體中即時建立磚，或撰寫您自己的程式碼，以從另一個來源載入現有的磚。
+Overlay custom tiles by using the [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Create tiles programmatically in memory on the fly, or write your own code to load existing tiles from another source.
 
-若要建立或載入自訂磚，請為 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件提供自訂處理常式。 將會針對每個個別磚引發 **BitmapRequested** 事件。
+To create or load custom tiles, provide a custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event. The **BitmapRequested** event is raised for each individual tile.
 
-1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性結合，以建立或抓取自訂磚。
-2.  傳回 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128) (包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 屬性中) 之 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 屬性中的自訂磚。 **PixelData** 屬性的類型為 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
+1.  In your custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) to create or retrieve a custom tile.
+2.  Return the custom tile in the [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) property of the [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) property of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). The **PixelData** property is of type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
 
-下列範例示範如何為 **BitmapRequested** 事件建立自訂處理常式來提供自訂磚。 這個範例會建立局部不透明的相同紅色磚。 這個範例會忽略 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 屬性。 雖然這不是真實世界的範例，但是此範例示範了如何在記憶體中即時建立自訂磚。 此範例同時也示範當您需要以非同步方式執行工作來建立自訂磚時，要如何實作延遲模式。
+The following example shows how to provide custom tiles by creating a custom handler for the **BitmapRequested** event. This example creates identical red tiles that are partially opaque. The example ignores the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Although this is not a real world example, the example demonstrates how you can create in-memory custom tiles on the fly. The example also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom tiles.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -350,25 +350,25 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## 取代預設地圖
+## Replace the default map
 
 
-完全以協力廠商磚或自訂磚取代預設地圖：
+To replace the default map entirely with third-party or custom tiles:
 
--   指定 [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** 做為 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的 [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) 屬性值。
--   指定 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** 做為 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 屬性值。
+-   Specify [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** as the value of the [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) property of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+-   Specify [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** as the value of the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## 相關主題
+## Related topics
 
-* [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
-<!--HONumber=Jun16_HO5-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,52 +1,49 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
-title: "取得錯誤報告資料"
+description: Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
+title: Get error reporting data
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
 
 ---
 
-# 取得錯誤報告資料
+# Get error reporting data
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。 這個方法會傳回 JSON 格式的資料。
-
-## 先決條件
 
 
-若要使用這個方法，您需要進行下列動作：
+Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters. This method returns the data in JSON format.
 
--   將您會用來呼叫此方法的 Azure AD 應用程式與您的開發人員中心帳戶產生關聯。
-
--   取得您應用程式的 Azure AD 存取權杖。
-
-如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
-
-## 要求
+## Prerequisites
 
 
-### 要求的語法
+To use this method, you need to first do the following:
 
-| 方法 | 要求 URI                                                          |
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
+## Request
+
+
+### Request syntax
+
+| Method | Request URI                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits``` |
 
 <span/> 
 
-### 要求的標頭
+### Request header
 
-| 標頭        | 類型   | 描述                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
-### 要求參數
+### Request parameters
 
 <table>
 <colgroup>
@@ -57,59 +54,59 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">參數</th>
-<th align="left">類型</th>
-<th align="left">描述</th>
-<th align="left">必要</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">字串</td>
-<td align="left">您想要擷取錯誤報告資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
-<td align="left">是</td>
+<td align="left">string</td>
+<td align="left">The Store ID of the app for which you want to retrieve error reporting data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="left">startDate</td>
-<td align="left">日期</td>
-<td align="left">要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。</td>
-<td align="left">否</td>
+<td align="left">date</td>
+<td align="left">The start date in the date range of error reporting data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">endDate</td>
-<td align="left">日期</td>
-<td align="left">要擷取錯誤報告資料之日期範圍的結束日期。 預設為目前的日期。</td>
-<td align="left">否</td>
+<td align="left">date</td>
+<td align="left">The end date in the date range of error reporting data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">top</td>
-<td align="left">整數</td>
-<td align="left">在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。</td>
-<td align="left">否</td>
+<td align="left">int</td>
+<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">skip</td>
-<td align="left">整數</td>
-<td align="left">在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。</td>
-<td align="left">否</td>
+<td align="left">int</td>
+<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">filter</td>
-<td align="left">字串</td>
-<td align="left">在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">aggregationLevel</td>
-<td align="left">字串</td>
-<td align="left">指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 如果您指定 <strong>week</strong> 或 <strong>month</strong>，<em>failureName</em> 和 <em>failureHash</em> 值將會被限制在 1000 個值區。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>. If you specify <strong>week</strong> or <strong>month</strong>, the <em>failureName</em> and <em>failureHash</em> values are limited to 1000 buckets.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">groupby</td>
-<td align="left">字串</td>
-<td align="left">將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：
+<td align="left">string</td>
+<td align="left">A statement that applies data aggregation only to the specified fields. You can specify the following fields:
 <ul>
 <li><strong>failureName</strong></li>
 <li><strong>failureHash</strong></li>
@@ -121,23 +118,23 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 <li><strong>packageName</strong></li>
 <li><strong>packageVersion</strong></li>
 </ul>
-<p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p>
+<p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p>
 <ul>
-<li><strong>日期</strong></li>
+<li><strong>date</strong></li>
 <li><strong>applicationId</strong></li>
 <li><strong>applicationName</strong></li>
 <li><strong>deviceCount</strong></li>
 <li><strong>eventCount</strong></li>
 </ul>
-<p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
+<p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
-<td align="left">字串</td>
-<td align="left">對每個下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：
+<td align="left">string</td>
+<td align="left">A statement that orders the result data values for each acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
 <ul>
-<li><strong>日期</strong></li>
+<li><strong>date</strong></li>
 <li><strong>failureName</strong></li>
 <li><strong>failureHash</strong></li>
 <li><strong>symbol</strong></li>
@@ -148,23 +145,23 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 <li><strong>packageName</strong></li>
 <li><strong>packageVersion</strong></li>
 </ul>
-<p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p>
-<p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p></td>
-<td align="left">否</td>
+<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
+<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
  
-### 篩選欄位
+### Filter fields
 
-要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
+The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
 
-如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
+For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
 
 <table>
 <colgroup>
@@ -173,26 +170,26 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">欄位</th>
-<th align="left">描述</th>
+<th align="left">Fields</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">failureName</td>
-<td align="left">錯誤的名稱。</td>
+<td align="left">The name of the error.</td>
 </tr>
 <tr class="even">
 <td align="left">failureHash</td>
-<td align="left">錯誤的唯一識別碼。</td>
+<td align="left">The unique identifier for the error.</td>
 </tr>
 <tr class="odd">
 <td align="left">symbol</td>
-<td align="left">指派給此錯誤的符號。</td>
+<td align="left">The symbol assigned to this error.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">下列其中一個字串：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -206,7 +203,7 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 </tr>
 <tr class="odd">
 <td align="left">eventType</td>
-<td align="left">下列其中一個字串：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>crash</strong></li>
 <li><strong>hang</strong></li>
@@ -216,11 +213,11 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 </tr>
 <tr class="even">
 <td align="left">market</td>
-<td align="left">內含裝置市場的 ISO 3166 國家/地區碼的字串。</td>
+<td align="left">A string that contains the ISO 3166 country code of the device market.</td>
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">下列其中一個字串：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -234,20 +231,20 @@ ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 </tr>
 <tr class="even">
 <td align="left">packageName</td>
-<td align="left">與此錯誤關聯之應用程式套件的唯一名稱。</td>
+<td align="left">The unique name of the app package that is associated with this error.</td>
 </tr>
 <tr class="odd">
 <td align="left">packageVersion</td>
-<td align="left">與此錯誤關聯之應用程式套件的版本。</td>
+<td align="left">The version of the app package that is associated with this error.</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### 要求範例
+### Request example
 
-下列範例示範取得錯誤報告資料的數個要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
+The following examples demonstrate several requests for getting error reporting data. Replace the *applicationId* value with the Store ID for your app.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -257,45 +254,45 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applica
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## Response
 
 
-### 回應主體
+### Response body
 
-| 值      | 類型    | 描述                                                                                                                                                                                                                                                                    |
+| Value      | Type    | Description                                                                                                                                                                                                                                                                    |
 |------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array   | 內含彙總錯誤報告資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[錯誤數值](#error-values)＞一節。                                                                                                          |
-| @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                     |
+| Value      | array   | An array of objects that contain aggregate error reporting data. For more information about the data in each object, see the [error values](#error-values) section below.                                                                                                          |
+| @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of errors for the query. |
+| TotalCount | inumber | The total number of rows in the data result for the query.                                                                                                                                                                                                                     |
 
 <span/>
 
-### 錯誤數值
+### Error values
 
-*Value* 陣列中的元素包含下列值。
+Elements in the *Value* array contain the following values.
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                              |
+| Value           | Type    | Description                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 日期            | 字串  | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId   | 字串  | 您想要擷取 IAP 下載數資料之 app 的市集識別碼。                                                                                                                                                           |
-| applicationName | 字串  | App 的顯示名稱。                                                                                                                                                                                                             |
-| failureName     | 字串  | 錯誤的名稱。                                                                                                                                                                                                                 |
-| failureHash     | 字串  | 錯誤的唯一識別碼。                                                                                                                                                                                                   |
-| symbol          | 字串  | 指派給此錯誤的符號。                                                                                                                                                                                                       |
-| osVersion       | 字串  | 發生錯誤的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                       |
-| eventType       | 字串  | 錯誤事件的類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                                          |
-| market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。                                                                                                                                                                                          |
-| deviceType      | 字串  | 完成下載的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                  |
-| packageName     | 字串  | 與此錯誤關聯之應用程式套件的唯一名稱。                                                                                                                                                                 |
-| packageVersion  | 字串  | 與此錯誤關聯之應用程式套件的版本。                                                                                                                                                                     |
-| eventCount      | inumber | 針對指定的彙總層級被歸類到此錯誤的事件數目。                                                                                                                                            |
-| deviceCount     | inumber | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。                                                                                                                                        |
+| date            | string  | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| applicationId   | string  | The Store ID of the app for which you want to retrieve add-on acquisition data.                                                                                                                                                           |
+| applicationName | string  | The display name of the app.                                                                                                                                                                                                             |
+| failureName     | string  | The name of the error.                                                                                                                                                                                                                 |
+| failureHash     | string  | The unique identifier for the error.                                                                                                                                                                                                   |
+| symbol          | string  | The symbol assigned to this error.                                                                                                                                                                                                       |
+| osVersion       | string  | The OS version on which the error occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                       |
+| eventType       | string  | The type of error event. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                                          |
+| market          | string  | The ISO 3166 country code of the device market.                                                                                                                                                                                          |
+| deviceType      | string  | The type of device that completed the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                  |
+| packageName     | string  | The unique name of the app package that is associated with this error.                                                                                                                                                                 |
+| packageVersion  | string  | The version of the app package that is associated with this error.                                                                                                                                                                     |
+| eventCount      | inumber | The number of events that are attributed to this error for the specified aggregation level.                                                                                                                                            |
+| deviceCount     | inumber | The number of unique devices that correspond to this error for the specified aggregation level.                                                                                                                                        |
 
 <span/> 
 
-### 回應範例
+### Response example
 
-下列範例針對此要求示範範例 JSON 回應主體。
+The following example demonstrates an example JSON response body for this request.
 
 ```json
 {
@@ -323,16 +320,16 @@ Authorization: Bearer <your access token>
 
 ```
 
-## 相關主題
+## Related topics
 
-* [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得應用程式下載數](get-app-acquisitions.md)
-* [取得 IAP 下載數](get-in-app-acquisitions.md)
-* [取得應用程式評分](get-app-ratings.md)
-* [取得 app 評論](get-app-reviews.md)
+* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get app acquisitions](get-app-acquisitions.md)
+* [Get add-on acquisitions](get-in-app-acquisitions.md)
+* [Get app ratings](get-app-ratings.md)
+* [Get app reviews](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,50 +1,59 @@
 ---
 author: jnHs
-Description: "App 提交程序的 [應用程式屬性] 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。"
-title: "輸入 app 屬性"
+Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
+title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8861c13478adbe2010a164126c56f555375e0472
+ms.sourcegitcommit: 345350cea16b850e49f6f958e304654aba1299bb
+ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
 
 ---
 
-# 輸入 app 屬性
+# Enter app properties
 
-[App 提交程序](app-submissions.md)的 [應用程式屬性]**** 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+The **App properties** page of the [app submission process](app-submissions.md) lets you define your app's category and indicate hardware preferences or other declarations. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
-> **注意：**年齡分級現為提交程序的一個獨立頁面。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
+> **Note**  Age ratings are now a separate page of the submission process. For more info, see [Age ratings](age-ratings.md).
 
-## 類別與子類別
+## Category and subcategory
 
-您可以在此區段中指示市集應用來將您的應用程式分類的類別 (與子類別 (如果適用))。 您必須指定類別才能送出應用程式。
+In this section, you indicate the category (and subcategory, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
 
-如需詳細資訊，請參閱[類別與子類別表格](category-and-subcategory-table.md)。
+For more info, see [Category and subcategory table](category-and-subcategory-table.md).
 
-## 硬體喜好設定
+## Product declarations
+
+You can check boxes in this section to indicate if any of the declarations apply to your app. This may affect the way your app is displayed, whether it is offered to certain customers, or how customers can use it.
+
+For more info, see [App declarations](app-declarations.md).
+
+## System requirements
+
+In this section, you have the option to indicate if certain hardware features are required or recommended to run and interact with your app properly. You can check the box (or indicate the appropriate option) for each hardware item where you would like to specify **Minimum hardware** and/or **Recommended hardware**.
+
+If you make selections for **Recommended hardware**, those items will be displayed in your product's Store listing as recommended hardware for customers on Windows 10, version 1607 or later. Customers on earlier OS versions will not see this info.
+
+If you make selections for **Minimum hardware**, those items will be displayed in your product's Store listing as required hardware for customers on Windows 10, version 1607 or later. Customers on earlier OS versions will not see this info. The Store may also display a warning to customers who are viewing your app's listing on a device that doesn’t have the required hardware. This won't prevent people from downloading your app on devices that don't have the appropriate hardware, but they won't be able to rate or review your app on those devices. 
+
+The behavior for customers will vary depending on the specific requirements and the customer's version of Windows:
+
+- **For customers on Windows 10, version 1607 or later:**
+     - All minimum and recommended requirements will be displayed in the Store listing.
+     - The Store will check for all minimum requirements and will display a warning to customers on a device that doesn't meet the requirements.
+- **For customers on earlier versions of Windows 10:**
+     - For most customers, all minimum and recommended hardware requirements will be displayed in the Store listing (though customers viewing an older versions of the Store client will only see the minimum hardware requirements).
+     - The Store will attempt to verify items that you designate as **Minimum hardware**, with the exception of **Memory**, **DirectX**, **Video memory**, **Graphics**, and **Processor**; none of those will be verified, and customers won't see any warning on devices which don't meet those requirements. 
+- **For customers on Windows 8.x and earlier or Windows Phone 8.x and earlier:**
+     - If you check the **Minimum hardware** box for **Touch screen**, this requirement will be displayed in your app's Store listing, and customers on devices without a touch screen will see a warning if they try to download the app. No other requirements will be verified or displayed in your Store listing.
+
+We also recommend adding runtime checks for the specified hardware into your app, since the Store may not always be able to detect that a customer's device is missing the selected feature(s) and they could still be able to download your app even if a warning is displayed.
+
+> **Tip**  If you want to completely prevent your UWP app from being downloaded on a device which doesn't meet minimum requirements for memory or DirectX level, you can designate the minimum requirements in a StoreManifest XML file. For more info, see [StoreManifest schema (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335).
 
 
-在此區段中，您可以選擇指定是否需要特定硬體功能，才能讓您的 app 正常執行和互動。
-
-如果是這樣，Windows 市集將會嘗試偵測客戶的裝置是否支援選取的硬體功能。 如果我們偵測到不需要，將會顯示警告，通知客戶他們嘗試下載的 app 已宣告適用該硬體。 使用 Windows 10 裝置的客戶也能夠看見您 app 市集清單的 [硬體需求]**** 區段中所列的選取功能。
-
-這不會防止使用者將您的 app 下載到不具備適當硬體的裝置，但他們將無法在那些裝置上對您的 app 進行評分或評論。
-
-> **重要：**除了**觸控式螢幕**，這些警告只會向 Windows 10 裝置上沒有選定功能的客戶顯示。
-
-除了在此處選擇之外，建議您將指定硬體的執行階段檢查新增到您的 app 中，因為市集不一定能夠偵測到客戶的裝置無法使用選定的功能，而即使顯示警告，他們仍能夠下載您的 app。
-
-> **提示：**如果您希望避免您的 UWP app 在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指派最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
-
-## 應用程式宣告
-
-
-您可以核取此區段中的方塊以指出是否有任何宣告適用於您的 app。 這可能會影響應用程式顯示的方式、應用程式是否會提供給某些客戶，或者客戶可以使用應用程式的方式。
-
-如需詳細資訊，請參閱 [App 宣告](app-declarations.md)。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

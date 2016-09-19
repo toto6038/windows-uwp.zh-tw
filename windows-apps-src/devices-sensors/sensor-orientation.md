@@ -1,70 +1,70 @@
 ---
 author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-title: "感應器方向"
-description: "取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。"
+title: Sensor orientation
+description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0f1123d3be66973d5b56a4789b1ff6e171f94900
+ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
 
 ---
-# 感應器方向
+# Sensor orientation
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-取自 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 以及 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
+Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
 
-## 顯示方向和裝置方向
+## Display orientation vs device orientation
 
-為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。 下圖的裝置方向與顯示方向都是 **Landscape**。
+In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device. In the following picture, both the device and display orientation are in **Landscape**.
 
-![顯示方向與裝置方向為 Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![Display and device orientation in Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
 
-下圖說明顯示方向與裝置方向都是 **LandscapeFlipped**。
+The following picture shows both the display and device orientation in **LandscapeFlipped**.
 
-![顯示方向與裝置方向為 LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![Display and device orientation in LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
 
-下一張圖說明顯示方向為 Landscape，而裝置方向為 LandscapeFlipped。
+The next picture shows the display orientation in Landscape while the device orientation is LandscapeFlipped.
 
-![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-使用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法搭配 [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 屬性，即可透過 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
+You can query the orientation values through the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) class by using the [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) method with the [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
 
-## 橫向優先裝置與直向優先裝置
+## Landscape-first vs portrait-first devices
 
-製造商會同時生產橫向優先裝置與直向優先裝置。 製造商會以一致的方式將元件整合到裝置，這樣所有裝置都能以相同的參考架構來運作。 下表顯示橫向優先裝置與直向優先裝置的感應器軸線。
+Manufacturers produce both landscape-first and portrait-first devices. When manufacturers integrate components into devices, they do so in a unified and consistent way so that all devices operate within the same reference frame. The following table shows the sensor axes for both landscape-first and portrait first devices.
 
-| 方向 | 橫向優先 | 直向優先 |
+| Orientation | Landscape-first | Portrait-first |
 |-------------|-----------------|----------------|
-| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/accelerometer-axis-orientation-landscape.png) | ![方向為 Landscape 的直向優先裝置](images/accelerometer-axis-orientation-portrait-270.png) |
-| **直向** | ![方向為 Portrait 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-90.png) | ![方向為 Portrait 的直向優先裝置](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-180.png) | ![方向為 LandscapeFlipped 的直向優先裝置](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-270.png)| ![方向為 PortraitFlipped 的直向優先裝置](images/accelerometer-axis-orientation-portrait-180.png) |
+| **Landscape** | ![Landscape-first device in Landscape orientation](images/accelerometer-axis-orientation-landscape.png) | ![Portrait-first device in Landscape orientation](images/accelerometer-axis-orientation-portrait-270.png) |
+| **Portrait** | ![Landscape-first device in Portrait orientation](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait-first device in Portrait orientation](images/accelerometer-axis-orientation-portrait.png) |
+| **LandscapeFlipped ** | ![Landscape-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-landscape-180.png) | ![Portrait-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-portrait-90.png) | 
+| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-landscape-270.png)| ![Portrait-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-portrait-180.png) |
 
-## 廣播顯示畫面和無周邊裝置的裝置
+## Devices broadcasting display and headless devices
 
-有些裝置能夠將顯示畫面廣播至另一個裝置。 例如，您可以使用平板電腦，並將顯示畫面廣播至以橫向顯示的投影機。 在此情況下，請務必記住裝置方向是以原始裝置為準，而不是以呈現顯示畫面的裝置為準。 因此加速計會報告平板電腦的資料。
+Some devices have the ability to broadcast the display to another device. For example, you could take a tablet and broadcast the display to a projector that will be in landscape orientation. In this scenario, it is important to keep in mind that the device orientation is based on the original device, not the one presenting the display. So an accelerometer would report data for the tablet.
 
-此外，有些裝置沒有顯示畫面。 這些裝置的預設方向會設為直向。
+Furthermore, some devices do not have a display. With these devices, the default orientation for these devices is portrait.
 
-## 顯示方向和指南針朝向
+## Display orientation and compass heading
 
 
-指南針朝向取決於參考軸線，所以它會隨著裝置方向變更。 您要根據下表進行調整 (假設使用者面向北方)。
+Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
 
-| 顯示方向 | 指南針朝向的參考軸線 | 面向北方的 API 指南針朝向 | 指南針朝向調整 | 
+| Display orientation | Reference axis for compass heading | API compass heading when facing north | Compass heading compensation | 
 |---------------------|------------------------------------|---------------------------------------|------------------------------|
-| 橫向           | -Z | 0   | 朝向               |
-| 直向            |  Y | 90  | (朝向 + 270) % 360 | 
-| LandscapeFlipped    |  Z | 180 | (朝向 + 180) % 360 |
-| PortraitFlipped     |  Y | 270 | (朝向 + 90) % 360  |
+| Landscape           | -Z | 0   | Heading               |
+| Portrait            |  Y | 90  | (Heading + 270) % 360 | 
+| LandscapeFlipped    |  Z | 180 | (Heading + 180) % 360 |
+| PortraitFlipped     |  Y | 270 | (Heading + 90) % 360  |
 
-如表中所示修改指南針朝向，以便正確顯示朝向。 下列程式碼片段示範其操作方法。
+Modify the compass heading as shown in the table in order to correctly display the heading. The following code snippet demonstrates how to do this.
 
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -99,18 +99,18 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 }
 ```
 
-## 包含加速計和陀螺儀的顯示方向
+## Display orientation with the accelerometer and gyrometer
 
-本表轉換顯示方向的加速計和陀螺儀資料。
+This table converts accelerometer and gyrometer data for display orientation.
 
-| 參考軸線        |  X |  Y | Z |
+| Reference axes        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **橫向**         |  X |  Y | Z |
-| **直向**          |  Y | -X | Z |
+| **Landscape**         |  X |  Y | Z |
+| **Portrait**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
 
-以下是將這些轉換套用到陀螺儀的程式碼範例。
+The following code example applies these conversions to the gyrometer.
 
 ```csharp
 private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -153,24 +153,24 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 }
 ```
 
-## 顯示方向和裝置方向
+## Display orientation and device orientation
 
-[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
+The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
-![尤拉公式](images/eulers-formula.png) 若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
+![Euler's formula](images/eulers-formula.png) To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
 
-![將參考物件比對絕對物件相乘](images/orientation-formula.png) 在前面的運算式中，絕對物件由感應器資料傳回。
+![Multiply the reference object against the absolute object](images/orientation-formula.png) In the preceding expression, the absolute object is returned by the sensor data.
 
-| 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) | 
+| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **橫向**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **直向**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

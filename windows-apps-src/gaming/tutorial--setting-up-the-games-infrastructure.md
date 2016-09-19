@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: "設定遊戲專案"
-description: "組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。"
+title: Set up the game project
+description: The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
+ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
 
 ---
 
-# 設定遊戲專案
+# Set up the game project
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。
+The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We step you through the setup and configuration of a simple game project.
 
-## 目標
-
-
--   了解如何在 Visual Studio 中設定 Direct3D 遊戲專案。
-
-## 設定遊戲專案
+## Objective
 
 
-您可以從頭開始撰寫遊戲，只需要一個好用的文字編輯器、幾個範例，以及足夠的腦力。 但是這恐怕不是利用您的時間最有效的方式。 如果您是通用 Windows 平台 (UWP) 開發的初學者，為什麼不讓 Visual Studio 為您減輕一些負擔呢？ 以下是讓您的專案熱烈展開所需要做的事。
+-   To learn how to set up a Direct3D game project in Visual Studio.
 
-## 1. 挑選正確的範本
+## Setting up the game project
 
 
-Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2015 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
+You can write a game from scratch, with just a handy text editor, a few samples, and a hat full of raw brainpower. But that probably isn't the most effective use of your time. If you're new to Universal Windows Platform (UWP) development, why not let Visual Studio shoulder some of the burden? Here's what to do to get your project off to a roaring start.
 
-這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [檔案]**** &gt; [新增專案]****然後：
+## 1. Pick the right template
 
-1.  從 [範本]**** 中，依序選取 [Visual C++]****、[Windows]****、[通用]****。
-2.  在中央窗格中，選取 [DirectX 11 應用程式 (通用 Windows)]****。
-3.  提供遊戲專案名稱，然後按一下 [確定]****。
 
-![選取 direct3d 應用程式範本](images/simple-dx-game-vs-new-proj.png)
+A Visual Studio template is a collection of settings and code files that target a specific type of app based on the preferred language and technology. In Microsoft Visual Studio 2015, you'll find a number of templates that can dramatically ease game and graphics app development. If you don't use a template, you must develop much of the basic graphics rendering and display framework yourself, which can be a bit of a chore to a new game developer.
 
-這個範本為您提供使用 DirectX 搭配 C++ 的 UWP app 的基本架構。 按下 F5 開始建置和執行吧！ 看看那個粉藍色螢幕。 花點時間看看範本提供的程式碼。 此範本會建立多個程式碼檔案，其中包含使用 DirectX 搭配 C++ 的 UWP 應用程式所適用的基本功能。 我們將在[步驟 3](#3-review-the-included-libraries-and-headers) 中進一步討論其他程式碼檔案。 現在，我們很快地看一下 **App.h**。
+The right template for this tutorial, is the one titled DirectX 11 App (Universal Windows). In Visual Studio 2015, click **File...** &gt; **New Project**, and then:
+
+1.  From **Templates**, select **Visual C++**, **Windows**, **Universal**.
+2.  In the center pane, select **DirectX 11 App (Universal Windows)**.
+3.  Give your game project a name, and click **OK**.
+
+![selecting the direct3d application template](images/simple-dx-game-vs-new-proj.png)
+
+This template provides you with the basic framework for a UWP app using DirectX with C++. Go on, build and run it with F5! Check out that powder blue screen. Take a moment and review the code that the template provides. Tthe template creates multiple code files containing the basic functionality for a UWP app using DirectX with C++. We talk more about the other code files in [step 3](#3-review-the-included-libraries-and-headers). Right now, let's quickly inspect **App.h**.
 
 ```cpp
     ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
@@ -78,9 +78,9 @@ Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對
     };
 ```
 
-在實作定義檢視提供者的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) 介面時，您要建立以下 5 個方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 以及 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 這些方法是由遊戲啟動時建立的應用程式單例執行，而且會載入您 app 的所有資源，以及連接適當的事件處理常式。
+You create these 5 methods, [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), when implementing the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) interface that defines a view provider. These methods are run by the app singleton that is created when your game is launched, and load all your app's resources as well as connect the appropriate event handlers.
 
-您的 **main** 方法是在 **App.cpp** 來源檔中。 它的外觀如下：
+Your **main** method is in the **App.cpp** source file. It looks like this:
 
 ```cpp
 [Platform::MTAThread]
@@ -92,7 +92,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-現在，它會從檢視提供者 Factory (**App.h** 定義的 **Direct3DApplicationSource**) 來建立 Direct3D 檢視提供者的執行個體，並將它傳遞給應用程式單例執行 ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469))。 這表示遊戲的起點將位於 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法實作的內文，在這個情況就是 **App::Run**。 以下是程式碼：
+Right now, it creates an instance of the Direct3D view provider from the view provider factory (**Direct3DApplicationSource**, defined in **App.h**), and passes it to the app singleton to run ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). This means that the starting point for your game lives in the body of the implementation of the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method, in this case, **App::Run**. Here's the code:
 
 ```cpp
 void App::Run()
@@ -118,57 +118,57 @@ void App::Run()
 }
 ```
 
-如果遊戲的視窗沒有關閉，它會分派所有事件、更新計時器以及轉譯和顯示圖形管線的結果。 我們會在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)和[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)中詳細討論。 現在，您應該對 UWP DirectX 遊戲的基本程式碼結構有大致的了解。
+If the window for your game isn't closed, this dispatches all events, updates the timer, and renders and presents the results of your graphics pipeline. We talk about this in greater detail in [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md) and [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md). At this point, you should have a sense of the basic code structure of a UWP DirectX game.
 
-## 2. 檢視並更新 package.appxmanifest 檔案
-
-
-範本不只有程式碼檔案。 **package.appxmanifest** 檔案包含有關您專案的中繼資料，可用來封裝和啟動您的遊戲，以及提交到 Windows 市集。 它也包含玩家系統的重要資訊，用來存取遊戲執行所需的系統資源。
-
-在 [方案總管]**** 中的 **package.appxmanifest** 檔案上按兩下，啟動 [資訊清單設計工具]****。 您會看到這個檢視：
-
-![package.appx 資訊清單編輯器。](images/simple-dx-game-vs-app-manifest.png)
-
-如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 現在，看看 [功能]**** 索引標籤，以及其中提供的選項。
-
-![direct3d 應用程式的預設功能。](images/simple-dx-game-vs-capabilities.png)
-
-如果您未選取遊戲所使用的功能 (例如透過 [網際網路]**** 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
-
-現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
-
-## 3. 檢視包含的類別庫和標頭
+## 2. Review and update the package.appxmanifest file
 
 
-有幾個檔案我們尚未討論。 這些檔案提供 Direct3D 遊戲開發案例中常用的其他工具和支援。
+The code files aren't all there is to the template. The **package.appxmanifest** file contains metadata about your project that are used for packaging and launching your game and for submission to the Windows Store. It also contains important info the player's system uses to provide access to the system resources the game needs to run.
 
-| 範本來源檔         | 說明                                                                                                                                                                                                            |
+Launch the **Manifest Designer** by double-clicking the **package.appxmanifest** file in **Solution Explorer**. You see this view:
+
+![the package.appx manifest editor.](images/simple-dx-game-vs-app-manifest.png)
+
+For more info about the **package.appxmanifest** file and packaging, see [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). For now, take a look at the **Capabilities** tab and look at the options provided.
+
+![the default capabilities of a direct3d app.](images/simple-dx-game-vs-capabilities.png)
+
+If you don't select the capabilities that your game uses, such as access to the **Internet** for global high score board, you won't be able to access the corresponding resources or features. When you create a new game, make sure that you select the capabilities that your game needs to run!
+
+Now, let's look at the rest of the files that come with the **DirectX 11 App (Universal Windows)** template.
+
+## 3. Review the included libraries and headers
+
+
+There are a few files we haven't looked at yet. These files provide additional tools and support common to Direct3D game development scenarios.
+
+| Template Source File         | Description                                                                                                                                                                                                            |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| StepTimer.h                  | 定義高解析度的計時器，對於遊戲或互動式轉譯應用程式非常實用。                                                                                                                                       |
-| Sample3DSceneRenderer.h/.cpp | 定義基本轉譯器實作，將 Direct3D 交換鏈結與圖形卡連接至您的使用 DirectX 的 UWP 應用程式。                                                                                            |
-| DirectXHelper.h              | 實作單一方法 **DX::ThrowIfFailed**，將 DirectX API 傳回的錯誤 HRESULT 值轉換成 Windows 執行階段例外狀況。 使用這個方法放置偵錯 DirectX 錯誤的中斷點。 |
-| pch.h/.cpp                   | 包含針對 Direct3D 應用程式所使用之 API (包括 DirectX 11 API) 所含的所有 Windows 系統。                                                                                                           |
-| SamplePixelShader.hlsl       | 包含最基本的像素著色器的高階著色器語言 (HLSL) 程式碼。                                                                                                                                     |
-| SampleVertexShader.hlsl      | 包含最基本的頂點著色器的高階著色器語言 (HLSL) 程式碼。                                                                                                                                    |
+| StepTimer.h                  | Defines a high-resolution timer useful for gaming or interactive rendering apps.                                                                                                                                       |
+| Sample3DSceneRenderer.h/.cpp | Defines a basic renderer implementation that connects a Direct3D swap chain and graphics adapter to your UWP using DirectX.                                                                                            |
+| DirectXHelper.h              | Implements a single method, **DX::ThrowIfFailed**, that converts the error HRESULT values returned by DirectX APIs into Windows Runtime exceptions. Use this method to put a break point for debugging DirectX errors. |
+| pch.h/.cpp                   | Contains all the Windows system includes for the APIs used by a Direct3D app, including the DirectX 11 APIs.                                                                                                           |
+| SamplePixelShader.hlsl       | Contains the high-level shader language (HLSL) code for a very basic pixel shader.                                                                                                                                     |
+| SampleVertexShader.hlsl      | Contains the high-level shader language (HLSL) code for a very basic vertex shader.                                                                                                                                    |
 
  
 
-### 後續步驟
+### Next steps
 
-現在，您已可建立使用 DirectX 的 UWP 遊戲專案，並識別 DirectX 11 應用程式 (通用 Windows) 範本提供的元件和檔案。
+At this point, you can create a UWP with DirectX game project and identify the components and files provided by the DirectX 11 App (Universal Windows) template.
 
-在下一個教學課程[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)中，我們會使用一個已完成的遊戲，並檢驗它如何使用和擴充範本所提供的許多概念和元件。
-
- 
+In the next tutorial, [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we work with a completed game and examine how it uses and extends many of the concepts and components that the template provides.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

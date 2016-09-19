@@ -1,33 +1,33 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。"
-title: "XAML 平台"
+description: This section includes topics that explain programming concepts that are generally applicable to any app that you write.
+title: XAML platform
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4deae037857312f891c8c4beae2b6a89adc152cd
+ms.openlocfilehash: bd2423c9c58a2c6bf20b0b15715b9e9e7aa219dd
 
 ---
 
-# XAML 平台
+# XAML platform
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節包含說明程式設計概念的主題，如果您是使用 C#、Microsoft Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為您的程式設計語言，並且使用 XAML 定義 UI，則這些概念一般適用於您撰寫的所有 app。 這包含基本的程式設計概念，例如使用屬性和事件，以及如何將它們套用到通用 Windows 平台 (UWP) 應用程式的程式設計。 通用 Windows 平台 (UWP) 會藉由新增相依性屬性系統，來延伸屬性及其值的 C#、Visual Basic 或 C++/CX 概念。 本節中的主題也會在 UWP 使用 XAML 語言時記錄該語言，並且涵蓋基本案例和進階主題，以說明如何使用 XAML 來定義適用於 UWP app 的 UI。
+This section includes topics that explain programming concepts that are generally applicable to any app that you write, if you are using C#, Microsoft Visual Basic, or Visual C++ component extensions (C++/CX) as your programming language and XAML for your UI definition. This includes basic programming concepts such as using properties and events, and how these apply to Universal Windows Platform (UWP) app programming. The Universal Windows Platform (UWP) extends C#, Visual Basic, or C++/CX concepts of properties and their values by adding the dependency property system. Topics in this section also document the XAML language as it is used by the UWP, and cover basic scenarios and advanced topics explaining how to use XAML to define the UI for your UWP app.
  
-| 主題 | 說明 |
+| Topic | Description |
 |-------|-------------|
-| [XAML 概觀](xaml-overview.md) | 我們將向 Windows 執行階段 app 開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段 app。 |
-| [相依性屬性概觀](dependency-properties-overview.md) | 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。 |
-| [自訂相依性屬性](custom-dependency-properties.md) | 說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段 app 定義及實作自訂相依性屬性。 |
-| [附加屬性概觀](attached-properties-overview.md) | 說明 XAML 中附加屬性的概念並提供一些範例。 |
-| [自訂附加屬性](custom-attached-properties.md) | 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。 |
-| [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援「路由事件」****：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或版面配置容器時，路由事件非常實用。 |
+| [XAML overview](xaml-overview.md) | We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app. |
+| [Dependency properties overview](dependency-properties-overview.md) | This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI. |
+| [Custom dependency properties](custom-dependency-properties.md) | Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. |
+| [Attached properties overview](attached-properties-overview.md) | Explains the concept of an attached property in XAML, and provides some examples. |
+| [Custom attached properties](custom-attached-properties.md) | Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML. |
+| [Events and routed events overview](events-and-routed-events-overview.md) | We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or C++/CX as your programming language, and XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports **routed events**: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers. |
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

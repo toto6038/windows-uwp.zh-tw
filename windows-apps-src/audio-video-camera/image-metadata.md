@@ -5,7 +5,7 @@ description: "本文示範如何讀取和寫入影像中繼資料屬性，以及
 title: "影像中繼資料"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
+ms.openlocfilehash: 1f97bf89682bee430849a6b962c68a8c4877a609
 
 ---
 
@@ -92,6 +92,6 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

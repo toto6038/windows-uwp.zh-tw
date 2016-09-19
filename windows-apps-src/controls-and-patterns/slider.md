@@ -1,72 +1,84 @@
 ---
 author: Jwmsft
-Description: "讓使用者在指定的範圍中設定值。"
-title: "滑桿"
+Description: Lets the user set a value in a given range.
+title: Sliders
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 64ae11c8c7e46d973c13cacb69482fd957e0488d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 ---
-# 滑桿
+# Sliders
 
-滑桿是一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![滑桿控制項](images/controls/slider.png)
+A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+![A slider control](images/controls/slider.png)
 
--   [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Value 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged event</strong></a></li>
+</ul>
 
-## 這是正確的控制項嗎？
+</div>
+</div>
 
-如果您希望使用者能夠設定既定且連續的值 (例如音量或亮度)，或是某個範圍的離散值 (例如螢幕解析度設定)，可以使用滑桿。
 
-當您知道使用者將值視為相對數量而不是數字值時，滑桿是很好的選擇。 例如，使用者想要將音訊音量設定為低或中，而不是設定值為 2 或 5。
 
-請不要為二元設定使用滑桿。 請改用[切換開關](toggles.md)。
 
-以下是決定是否使用滑桿時的一些其他考量因素：
 
--   **設定看起來是否像相對數量？** 如果不是，請使用[選項按鈕](radio-button.md)或[清單方塊](lists.md)。
--   **該設定是否為已知的確切數值？** 如果是，請使用數字[文字方塊](text-box.md)。
--   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用滑桿。 例如，藉由立即看到色調、飽和或光度值變更後的效果，能讓使用者更易於選擇色彩。
--   **設定的範圍是否包含四個或更多值？** 如果不是，請使用[選項按鈕](radio-button.md)。
--   **使用者是否能變更該值？** 滑桿的用意是提供使用者互動。 如果使用者無法變更值，請改用唯讀文字。
 
-如果您正在決定使用滑桿或數值文字方塊，則在下列情況下請使用數值文字方塊：
+## Is this the right control?
 
--   螢幕空間很小。
--   使用者似乎慣於使用鍵盤。
+Use a slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).
 
-如果是下列情況，請使用滑桿：
+A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.
 
--   使用者可受益於立即回應。
+Don't use a slider for binary settings. Use a [toggle switch](toggles.md) instead.
 
-## 範例
+Here are some additional factors to consider when deciding whether to use a slider:
 
-Windows Phone 上用來控制音量的滑桿。
+-   **Does the setting seem like a relative quantity?** If not, use [radio buttons](radio-button.md) or a [list box](lists.md).
+-   **Is the setting an exact, known numeric value?** If so, use a numeric [text box](text-box.md).
+-   **Would a user benefit from instant feedback on the effect of setting changes?** If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.
+-   **Does the setting have a range of four or more values?** If not, use [radio buttons](radio-button.md).
+-   **Can the user change the value?** Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.
 
-![Windows Phone 上用來控制音量的滑桿](images/control-examples/slider-phone.png)
+If you are deciding between a slider and a numeric text box, use a numeric text box if:
 
-用來變更 Windows 顯示設定中文字大小的滑桿。
+-   Screen space is tight.
+-   The user is likely to prefer using the keyboard.
 
-![用來變更 Windows 顯示設定中文字大小的滑桿](images/control-examples/slider-display-settings.png)
+Use a slider if:
 
-## 建立滑桿
+-   Users will benefit from instant feedback.
 
-以下是如何在 XAML 中建立滑桿。
+## Examples
+
+A slider to control the volume on Windows Phone.
+
+![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
+
+A slider to change text size in Windows display settings.
+
+![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)
+
+## Create a slider
+
+Here's how to create a slider in XAML.
 
 ```xaml
 <Slider x:Name="volumeSlider" Header="Volume" Width="200"
         ValueChanged="Slider_ValueChanged"/>
 ```
 
-以下是如何在程式碼中建立滑桿。
+Here's how to create a slider in code.
 
 ```csharp
 Slider volumeSlider = new Slider();
@@ -78,7 +90,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-您要從 [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 屬性取得並設定滑桿的值。 若要回應值變更，您可以使用資料繫結來繫結 Value 屬性，或處理 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
+You get and set the value of the slider from the [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -91,88 +103,88 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## 建議
+## Recommendations
 
--   調整控制項的大小，方便使用者設定想要的值。 設定分散值時，確定使用者可輕鬆地使用滑鼠選取任何值。 確定滑桿的端點永遠在檢視邊界內。
--   在使用者選取時或選取後提供立即回饋 (可行的話)。 例如，Windows 音量控制項發出嗶聲，指示所選取的音訊音量。
--   使用標籤顯示值的範圍。 例外：如果滑桿是垂直方向，而頂端標籤為最大、高、多或對等值，則您可以省略其他標籤，因為意思已經很清楚了。
--   停用滑桿時，也會停用所有相關聯的標籤或視覺回饋。
--   設定滑桿的滑動方向和 (或) 方向時，請考慮文字的閱讀方向。 有些語言中的指令碼是從左至右閱讀，有些語言則是右至左。
--   不要使用滑桿做為進度指示器。
--   不要變更預設的滑桿縮圖大小。
--   如果值的範圍很大而且使用者很可能從範圍中的數個具有代表性的值選擇時，請不要建立連續滑桿。 而是將這些值做為允許選擇的間距。 例如，如果時間值可能長達 1 個月，但使用者只需要從 1 分鐘、1 小時、1 天或 1 個月中挑選，那麼請建立只有 4 個間距點的滑桿。
+-   Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
+-   Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
+-   Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
+-   Disable all associated labels or feedback visuals when you disable the slider.
+-   Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
+-   Don't use a slider as a progress indicator.
+-   Don't change the size of the slider thumb from the default size.
+-   Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
 
-## 其他用法指導方針
+## Additional usage guidance
 
-### 選擇正確的配置：水平或垂直
+### Choosing the right layout: horizontal or vertical
 
-您可以將滑桿的方向設定為水平或垂直。 使用這些指導方針來決定要使用哪種配置。
+You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.
 
--   使用原有的方向。 例如，如果滑桿表示真實世界中通常會垂直顯示的值 (例如溫度)，請使用垂直方向。
--   如果控制項是用來在媒體 (如視訊應用程式) 進行搜尋，請使用水平方向。
--   在可以朝某個方向 (水平或垂直) 平移的頁面中使用滑桿時，滑桿的方向應該與平移方向不同。 否則，使用者可能在嘗試移動瀏覽頁面時撥動到滑桿而不小心變更到值。
--   如果您仍然不確定要使用哪個方向，請使用最適合您頁面配置的方向。
+-   Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
+-   If the control is used to seek within media, like in a video app, use a horizontal orientation.
+-   When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
+-   If you're still not sure which orientation to use, use the one that best fits your page layout.
 
-### 範圍方向
+### Range direction
 
-範圍方向是指您從目前值將滑桿滑動到最大值時，移動滑桿的方向。
+The range direction is the direction you move the slider when you slide it from its current value to its max value.
 
--   若是垂直滑桿，無論讀取方向為何，請在滑桿頂端放入最大值。 例如音量滑桿，永遠將最大音量設定放在滑桿的頂端。 至於其他類型的值 (例如每週的天數)，請按照頁面的閱讀方向。
--   若是水平樣式，在從左到右的頁面配置中，請將較低值放在滑桿的左側，在從右到左的頁面配置中則放在滑桿右側。
--   上述指導方針的一個例外是媒體搜尋列：永遠將較低的值放置在滑桿的左邊。
+-   For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
+-   For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
+-   The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
 
-### 間距和刻度標記
+### Steps and tick marks
 
--   如果您不希望在滑桿的最小值和最大值之間允許任意值，請使用間距點。例如，如果您使用滑桿來指定要購買的電影票張數，請不要允許浮點數值。 請將間距值指定為 1。
--   如果您指定間距 (也稱作貼齊點)，請確認最後一個間距對齊滑桿的最大值。
--   當您想要對使用者顯示主要或重要值的位置時，請使用刻度標記。 例如，控制縮放的滑桿可以包含 50%、100% 及 200% 的刻度標記。
--   當使用者需要知道設定的近似值時，請顯示刻度標記。
--   當使用者需要知道所選擇設定的確實值，不需與控制項互動時，請顯示刻度和值標籤。 或者，使用者可以使用值工具提示查看確實值。
--   當間距點不明顯時，請一律使用刻度標記。 例如，如果滑桿的寬度為 200 像素且具有 200 個貼齊點，您可以隱藏刻度標記，因為使用者不會注意到貼齊行為。 但是如果僅有 10 個貼齊點時，請顯示刻度標記。
+-   Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
+-   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
+-   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
+-   Show tick marks when users need to know the approximate value of the setting.
+-   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.
+-   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
 
-### 標籤
+### Labels
 
--   **滑桿標籤**
+-   **Slider labels**
 
-    滑桿標籤指示滑桿的用途。
+    The slider label indicates what the slider is used for.
 
-    -   使用標籤，但不包含結尾標點符號 (這是所有控制項標籤慣例)。
-    -   如果滑桿將其大部分的標籤放在控制項上方，則將標籤放置在滑桿上方。
-    -   如果滑桿將大部分標籤放在控制項的旁邊，則將標籤放置在滑桿兩側。
-    -   避免將標籤放置在滑桿下方，因為使用者在觸控滑桿時，手指有可能會誤觸標籤。
--   **範圍標籤**
+    -   Use a label with no ending punctuation (this is the convention for all control labels).
+    -   Position labels above the slider when the slider is in a form that places most of its labels above their controls.
+    -   Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
+    -   Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
+-   **Range labels**
 
-    範圍或填滿標籤描述滑桿的最小值及最大值。
+    The range, or fill, labels describe the slider's minimum and maximum values.
 
-    -   在滑桿範圍的兩端建立標籤，如果是垂直方向，則不需要建立標籤。
-    -   如果可能的話，每個標籤僅使用一個字。
-    -   請勿使用結束標點符號。
-    -   確定這些標籤為描述性文字，而且平行放置。 範例：最大/最小、多/少、低/高、小聲/大聲。
--   **值標籤**
+    -   Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
+    -   Use only one word, if possible, for each label.
+    -   Don't use ending punctuation.
+    -   Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
+-   **Value labels**
 
-    值標籤顯示滑桿目前的值。
+    A value label displays the current value of the slider.
 
-    -   如果您需要值標籤，請將它顯示在滑桿下方。
-    -   把文字放在與控制項相對的位置中間並包括單位 (例如像素)。
-    -   因為擦選時會蓋住滑桿的捲動方塊，所以請考慮以其他方式 (使用標籤或其他視覺物件) 來顯示目前的值。 滑桿設定文字大小可以在滑桿旁呈現一些正確大小的範例文字。
+    -   If you need a value label, display it below the slider.
+    -   Center the text relative to the control and include the units (such as pixels).
+    -   Since the slider’s thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
 
-### 外觀和互動
+### Appearance and interaction
 
-滑桿是由軌道和捲動方塊組成。 軌道是一個列 (可選擇性顯示各種樣式的刻度記號)，代表可以輸入的值範圍。 捲動方塊則是選取器，使用者點選軌道或在上面來回擦選即可定位。
+A slider is composed of a track and a thumb. The track is a bar (which can optionally show various styles of tick marks) representing the range of values that can be input. The thumb is a selector, which the user can position by either tapping the track or by scrubbing back and forth on it.
 
-滑桿具有大型觸控目標。 為了維持觸控存取性，滑桿應該放置在離顯示邊緣夠遠的距離。
+A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
 
-設計自訂滑桿的時候，請考慮以盡可能不擁擠的方式為使用者呈現所有的資訊。 如果使用者需要知道單位才能了解設定，請使用值標籤；找出充滿創意的方式用圖形呈現這些值。 例如，控制音量的滑桿可以在滑桿的音量最低處顯示沒有音波的喇叭圖形，而在音量最高處顯示有音波的喇叭圖形。
+When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
 
-## 相關主題
+## Related topics
 
-**適用於設計人員**
-- [切換開關的指導方針](toggles.md) 
-           **適用於開發人員 (XAML)**
-- [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
+**For designers**
+- [Guidelines for toggle switches](toggles.md)
+**For developers (XAML)**
+- [**Slider class**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

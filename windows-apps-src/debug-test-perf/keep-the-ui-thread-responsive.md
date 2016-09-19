@@ -1,47 +1,47 @@
 ---
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: "讓 UI 執行緒保持回應"
-description: "不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。"
+title: Keep the UI thread responsive
+description: Users expect an app to remain responsive while it does computation, regardless of the type of machine.
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 ---
-# 讓 UI 執行緒保持回應
+# Keep the UI thread responsive
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。 這對於不同的 app 有不同的意義。 對某些 app 而言，這表示提供更實際的物理性質、更快地從磁碟或網路載入資料、快速地呈現複雜的場景和在頁面之間瀏覽、立即找到方向，或是快速處理資料。 不論執行何種計算，使用者都會希望 app 可以回應輸入，不希望有看似在「思考」而停止回應的情況發生。
+Users expect an app to remain responsive while it does computation, regardless of the type of machine. This means different things for different apps. For some, this translates to providing more realistic physics, loading data from disk or the web faster, quickly presenting complex scenes and navigating between pages, finding directions in a snap, or rapidly processing data. Regardless of the type of computation, users want their app to act on their input and eliminate instances where it appears unresponsive while it "thinks".
 
-您的 app 是事件驅動，這表示程式碼會執行工作來回應事件，接著進入閒置狀態，直到出現下一個事件。 平台的 UI 程式碼 (配置、輸入、引發事件等等) 及 app 的 UI 程式碼都在相同的 UI 執行緒上執行。 該執行緒上一次只能執行一個指令，如果您的 app 程式碼花費太多時間處理事件，則架構無法執行配置或引發代表使用者互動的新事件。 app 的回應性取決於 UI 執行緒是否有空檔處理工作。
+Your app is event-driven, which means that your code performs work in response to an event and then it sits idle until the next. Platform code for UI (layout, input, raising events, etc.) and your app’s code for UI all are executed on the same UI thread. Only one instruction can execute on that thread at a time so if your app code takes too long to process an event then the framework can’t run layout or raise new events representing user interaction. The responsiveness of your app is related to the availability of the UI thread to process work.
 
-幾乎所有對 UI 執行緒所做的變更都需要用到 UI 執行緒，包括建立 UI 類型和存取其成員。 您無法從背景執行緒更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 傳遞訊息給它，就在那裡執行程式碼。
+You need to use the UI thread to make almost all changes to the UI thread, including creating UI types and accessing their members. You can't update the UI from a background thread but you can post a message to it with [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to cause code to be run there.
 
-> **注意** 例外的是另有一個轉譯執行緒可以套用 UI 變更，而不會影響輸入的處理方式或基本配置。 例如，許多不會影響版面配置的動畫和轉場效果可以在這個轉譯執行緒上執行。
+> **Note**  The one exception is that there's a separate render thread that can apply UI changes that won't affect how input is handled or the basic layout. For example many animations and transitions that don’t affect layout can run on this render thread.
 
-## 延遲元素具現化
+## Delay element instantiation
 
-app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初看到的 UI 時不要太過花俏。 例如，不要建立那種逐漸展露 UI 和快顯內容的 UI。
+Some of the slowest stages in an app can include startup, and switching views. Don't do more work than necessary to bring up the UI that the user sees initially. For example, don't create the UI for progressively-disclosed UI and the contents of popups.
 
--   使用 [x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延遲具現化元素。
--   以程式設計方式隨需將元素插入樹狀目錄。
+-   Use [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) to delay-instantiate elements.
+-   Programmatically insert elements into the tree on-demand.
 
-[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 佇列適用於 UI 執行緒不忙碌時處理。
+[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) queues work for the UI thread to process when it's not busy.
 
-## 使用非同步 API
+## Use asynchronous APIs
 
-為了協助保持應用程式的回應性，平台為其許多 API 提供非同步的版本。 非同步 API 可確保使用中的執行緒不會被封鎖太長的時間。 當您從 UI 執行緒呼叫 API 時，請使用非同步版本 (如果提供的話)。 如需使用 **async** 模式進行設計程式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187335)或[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。
+To help keep your app responsive, the platform provides asynchronous versions of many of its APIs. An asynchronous API ensures that your active execution thread never blocks for a significant amount of time. When you call an API from the UI thread, use the asynchronous version if it's available. For more info about programming with **async** patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335) or [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337).
 
-## 將工作卸載到背景執行緒
+## Offload work to background threads
 
-撰寫可快速返回的事件處理常式。 在需要執行不少的工作量時，排定給背景執行緒並返回。
+Write event handlers to return quickly. In cases where a non-trivial amount of work needs to be performed, schedule it on a background thread and return.
 
-您可以使用 C# 的 **await** 運算子、Visual Basic 的 **Await** 運算子或 C++ 中的委派，以非同步方式排程工作。 但這並不保證您排程的工作一定會在背景執行緒中執行。 許多通用 Windows 平台 (UWP) API 會為您在背景執行緒中排程工作，但如果僅使用 **await** 或委派呼叫您的 app 程式碼，則會在 UI 執行緒中執行該委派或方法。 您必須明確指示何時要在背景執行緒中執行您的 app 程式碼。 在 C# 與 Visual Basic 中，將程式碼傳送到 [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx) 即可做出明確的指示。
+You can schedule work asynchronously by using the **await** operator in C#, the **Await** operator in Visual Basic, or delegates in C++. But this doesn't guarantee that the work you schedule will run on a background thread. Many of the Universal Windows Platform (UWP) APIs schedule work in the background thread for you, but if you call your app code by using only **await** or a delegate, you run that delegate or method on the UI thread. You have to explicitly say when you want to run your app code on a background thread. In C#C# and Visual Basic you can accomplish this by passing code to [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
 
-請記住，只有從 UI 執行緒才能存取 UI 元素。 啟動背景工作之前先使用 UI 執行緒存取 UI 元素，以及/或在背景執行緒上使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 或 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918)。
+Remember that UI elements may only be accessed from the UI thread. Use the UI thread to access UI elements before launching the background work and/or use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) or [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) on the background thread.
 
-例如，遊戲中的人工智慧計算，就是背景執行緒中可以執行的工作。 計算電腦下一步行動的程式碼需要花很多時間執行。
+An example of work that can be performed on a background thread is the calculating of computer AI in a game. The code that calculates the computer's next move can take a lot of time to execute.
 
 ```csharp
 public class AsyncExample
@@ -95,17 +95,17 @@ public class AsyncExample
 > End Class
 > ```
 
-在這個範例中，`NextMove-Click` 處理常式會回到 **await**，讓 UI 執行緒保持回應。 但在 `ComputeNextMove` (在背景執行緒上執行) 完成之後，該處理常式又會再次執行。 處理常式中的其餘程式碼會以結果更新 UI。
+In this example, the `NextMove-Click` handler returns at the **await** in order to keep the UI thread responsive. But execution picks up in that handler again after `ComputeNextMove` (which executes on a background thread) completes. The remaining code in the handler updates the UI with the results.
 
-> **注意** UWP 還有 [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) 和 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API，可用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
+> **Note**  There's also a [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) and [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API for the UWP, which can be used for similar scenarios. For more info, see [Threading and async programming](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 
-## 相關主題
+## Related topics
 
-* [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-
-
+* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/Mt185599)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

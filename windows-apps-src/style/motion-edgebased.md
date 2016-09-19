@@ -1,65 +1,65 @@
 ---
 author: mijacobs
-Description: "以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。"
-title: "UWP 應用程式中以邊緣為基礎的 UI 動畫"
+Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+title: Edge-based UI animations in UWP apps
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 1be51a8ff4a63f32834c7eb04b70d17dc41de13b
+ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 ---
 
-# 以邊緣為基礎的 UI 動畫
+# Edge-based UI animations
 
 
 
 
-以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
+Edge-based animations show or hide UI that originates from the edge of the screen. The show and hide actions can be initiated either by the user or by the app. The UI can either overlay the app or be part of the main app surface. If the UI is part of the app surface, the rest of the app might need to be resized to accommodate it.
 
-**重要 API**
+**Important APIs**
 
--   [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-
-
-## 可行與禁止事項
+-   [**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
--   使用邊緣 UI 動畫來顯示或隱藏無法延伸到畫面中的自訂訊息或錯誤列。
--   使用面板動畫來顯示會在畫面佔用很大距離的 UI，例如工作窗格或自訂螢幕小鍵盤。
--   從 UI 所處的相同邊緣滑入該 UI。
--   從 UI 進入的相同邊緣滑出該 UI。
--   如果應用程式的內容需要重新調整大小以回應滑入或滑出的 UI，可使用淡入/淡出動畫來重新調整大小。
-    -   如果 UI 是滑入的，請在邊緣 UI 或面板動畫之後使用淡入/淡出動畫。
-    -   如果 UI 是滑出的，請與邊緣 UI 或面板動畫同時使用淡入/淡出動畫。
--   不要將這些動畫套用到通知。 通知應該放置在以邊緣為基礎的 UI 內。
--   不要將邊緣 UI 或面板動畫套用到任何不是位於畫面邊緣的 UI 容器或控制項。 這些動畫只能用來顯示、重新調整大小及關閉位於畫面邊緣的 UI。 若要移動其他類型的 UI，可使用重新定位動畫。
-
-    ![說明何時使用邊緣 UI 或面板動畫和重新定位。](images/edgevsreposition.png)
-
-## 相關文章
+## Do's and don'ts
 
 
-**適用於開發人員 (XAML)**
-* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓以邊緣為基礎的 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**PaneThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [讓淡入/淡出產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [讓重新定位產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+-   Use edge UI animations to show or hide a custom message or error bar that does not extend far into the screen.
+-   Use panel animations to show UI that slides a significant distance into the screen, such as a task pane or a custom soft keyboard.
+-   Slide the UI in from the same edge it will be attached to.
+-   Slide the UI out to the same edge it came from.
+-   If the contents of the app need to resize in response to the UI sliding in or out, use fade animations for the resize.
+    -   If the UI is sliding in, use a fade animation after the edge UI or panel animation.
+    -   If the UI is sliding out, use a fade animation at the same time as the edge UI or panel animation.
+-   Don't apply these animations to notifications. Notifications should not be housed within edge-based UI.
+-   Don't apply the edge UI or panel animations to any UI container or control that is not at the edge of the screen. These animations are used only for showing, resizing, and dismissing UI at the edges of the screen. To move other types of UI, use reposition animations.
 
- 
+    ![illustrates when to use edge ui or panel animations and when to use reposition.](images/edgevsreposition.png)
+
+## Related articles
+
+
+**For developers (XAML)**
+* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animating edge-based UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+* [**PaneThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969160)
+* [Animating fades](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Animating repositions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

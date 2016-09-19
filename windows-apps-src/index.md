@@ -1,31 +1,31 @@
 ---
-Description: "以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。"
-title: "Windows 10 應用程式使用方法指南 - Windows 應用程式開發"
+Description: "Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs."
+title: How-to guides for Windows 10 apps - Windows app development
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
 translationtype: Human Translation
 ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
-ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
+ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
 
 ---
 
 
-# Windows 10 上的 UWP 應用程式使用方法指南
+# How-to guides for UWP apps on Windows 10
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下是您建立可在任何 Windows 10 裝置 (包括手機、平板電腦和個人電腦) 上執行的通用 Windows 應用程式時所需的資訊。 本節提供依照您想要完成的工作類型來編排的指示和程式碼範例。
+Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs. This section offers both instructions and code examples organized by the kind of task you want to accomplish.
 
-如果您需要通用 Windows 平台 (UWP) 及其如何讓您使用相同的程式碼為多個 Windows 裝置類型提供獨特體驗的簡介，請參閱下列文章：
+If you'd like an introduction to the Universal Windows Platform (UWP) and how it lets you use the same code to deliver appropriately tailored experiences to multiple Windows device types, see these articles:
 
--   [建立您的第一個通用 Windows 平台 app](get-started/create-a-hello-world-app-xaml-universal.md)
--   [通用 Windows 平台 (UWP) app 指南](get-started/universal-application-platform-guide.md)
--   [何謂通用 Windows 平台應用程式？](get-started/whats-a-uwp.md)
-
-
+-   [Create your first Universal Windows Platform app](get-started/create-a-hello-world-app-xaml-universal.md)
+-   [Guide to Universal Windows Platform (UWP) apps](get-started/universal-application-platform-guide.md)
+-   [What's a Universal Windows Platform app?](get-started/whats-a-uwp.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,49 +1,60 @@
 ---
 author: Jwmsft
+Description: A button gives the user a way to trigger an immediate action.
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 
 ---
-# 按鈕
-按鈕為使用者提供觸發立即動作的方式。
+# Buttons
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![按鈕的範例](images/controls/button.png)
+A button gives the user a way to trigger an immediate action.
+
+![Example of buttons](images/controls/button.png)
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Button class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>RepeatButton class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Click event</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
--   [**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Click 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-## 這是正確的控制項嗎？
 
-按鈕可讓使用者起始直接動作，例如提交表單。
+## Is this the right control?
 
-如果動作是瀏覽到另一個頁面，請不要使用按鈕，改為使用連結。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
+A button lets the user initiate an immediate action, such as submitting a form.
+
+Don't use a button when the action is to navigate to another page; use a link instead. See [Hyperlinks](hyperlinks.md) for more info.
     
-> 例外：對於精靈瀏覽，請使用標籤為 [上一頁] 和 [下一頁] 的按鈕。 對於其他類型的反向瀏覽或瀏覽到上層，請使用 [上一頁] 按鈕。
+> Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a back button.
 
-## 範例
+## Example
 
-這個範例是在 Microsoft Edge 瀏覽器的對話方塊中使用兩個按鈕 ([全部關閉] 和 [取消])。 
+This example uses two buttons, Close all and Cancel, in a dialog in the Microsoft Edge browser. 
 
-![按鈕的範例 (用於對話方塊中)](images/control-examples/buttons-edge.png)
+![Example of buttons, used in a dialog](images/control-examples/buttons-edge.png)
 
-## 建立按鈕
+## Create a button
 
-這個範例會顯示一個按鈕，它會回應 Click 動作。 
+This example shows a button that responds to a click. 
 
-在 XAML 中建立按鈕。
+Create the button in XAML.
 
 ```xaml
 <Button Content="Submit" Click="SubmitButton_Click"/>
 ```
 
-或者，在程式碼中建立按鈕。
+Or create the button in code.
 
 ```csharp
 Button submitButton = new Button();
@@ -54,7 +65,7 @@ submitButton.Click += SubmitButton_Click;
 stackPanel1.Children.Add(submitButton);
 ```
 
-處理 Click 事件。
+Handle the Click event.
 
 ```csharp
 private async void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -67,20 +78,20 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 按鈕互動
+### Button interaction
 
-當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
+When you tap a Button with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the Click event.
 
-您通常無法處理按鈕上的低階 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
+You generally can't handle low-level [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
 
-您可以變更 [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 屬性，以變更按鈕引發 Click 事件的方式。 預設 ClickMode 值是 **Release**。 如果 ClickMode 是 **Hover**，則使用鍵盤或觸控方式並不能引發 Click 事件。 
+You can change how a button raises the Click event by changing the [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) property. The default ClickMode value is **Release**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch. 
 
 
-### 按鈕內容
+### Button content
 
-按鈕是 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx)。 它的 XAML 內容屬性是 [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)，它可讓您使用如下 XAML 語法︰`<Button>A button's content</Button>`。 您可以將任何物件設定為按鈕的內容。 如果內容是 [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx)，就會呈現於按鈕中。 如果內容是其他類型的物件，則會在按鈕中顯示它的字串表示。
+Button is a [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Its XAML content property is [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
 
-此處提供的是 **StackPanel**，其中包含一個香蕉的影像，且文字已設定為按鈕的內容。
+Here, a **StackPanel** that contains an image of a banana and text is set as the content of a button.
 
 ```xaml
 <Button Click="Button_Click" 
@@ -94,15 +105,15 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 </Button>
 ```
 
-按鈕看起來就像這樣。
+The button looks like this.
 
-![含影像和文字內容的按鈕](images/button-orange.png)
+![A button with image and text content](images/button-orange.png)
 
-## 建立一個重複按鈕
+## Create a repeat button
 
-[**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
+A [**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) is a button that raises [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) events repeatedly from the time it's pressed until it's released. Set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) property to specify the time that the RepeatButton waits after it is pressed before it starts repeating the click action. Set the [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.
 
-下列範例顯示兩個 RepeatButton 控制項，而且其各自的 Click 事件是用來增加或減少文字區塊中顯示的值。
+The following example shows two RepeatButton controls whose respective Click events are used to increase and decrease the value shown in a text block.
 
 ```xaml
 <StackPanel>
@@ -130,105 +141,44 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 建議
+## Recommendations
 
--   確定使用者能清楚了解按鈕的用途和狀態。
--   使用簡潔、專屬、一目了然的文字，清楚說明按鈕執行的動作。 通常按鈕文字內容是一個動詞單字。
--   如果按鈕的文字內容是動態的 (例如經過當地語系化)，請考慮如何調整按鈕的大小以及調整後周圍的控制項會發生什麼變化。
--   對於包含文字內容的命令按鈕，請使用最小按鈕寬度。
--   避免使用窄、短或高的命令按鈕包含文字內容。
--   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
--   對於需要在 app 內多個頁面上提供的動作，請不要在多個頁面上複製按鈕，而是考慮改用[底部應用程式列](app-bars.md)。
--   一次只對使用者顯示一或兩個按鈕，例如，[接受] 和 [取消]。 如果需要對使用者顯示更多動作，請考慮使用[核取方塊](checkbox.md)或[選項按鈕](radio-button.md)，使用者可以利用它們選取動作，只要一個命令按鈕即可觸發這些動作。
--   使用預設命令按鈕來指示最常用或建議的動作。
--   考慮自訂您的按鈕。 按鈕的預設形狀是矩形，但是您可以自訂組成按鈕外觀的視覺效果。 按鈕的內容通常是文字，例如 [接受] 或 [取消]，但是您可以使用圖示來取代文字，或是使用圖示加上文字。
--   確定在使用者與按鈕互動時，按鈕會變更狀態和外觀，為使用者提供回饋。 按鈕狀態的範例有正常、已按下、已停用。
--   當使用者點選或按下按鈕時，觸發按鈕的動作。 通常使用者放開按鈕時會觸發動作，但是您也可以設定手指一按下時就觸發按鈕的動作。
--   不要使用命令按鈕設定狀態。
--   請不要在應用程式執行同時變更按鈕文字；例如，不要將按鈕文字「下一步」變更為「繼續」。
--   不要交換預設的送出、重設及按鈕樣式。
--   不要在按鈕內放入過多內容。 讓內容簡潔且容易理解 (一張圖片和一些文字就已足夠)。
+-   Make sure the purpose and state of a button are clear to the user.
+-   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
+-   If the button's text content is dynamic, for example, it is localized, consider how the button will resize and what will happen to controls around it.
+-   For command buttons with text content, use a minimum button width.
+-   Avoid narrow, short, or tall command buttons with text content.
+-   Use the default font unless your brand guidelines tell you to use something different.
+-   For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
+-   Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
+-   Use the default command button to indicate the most common or recommended action.
+-   Consider customizing your buttons. A button's shape is rectangular by default, but you can customize the visuals that make up the button's appearance. A button's content is usually text—for example, Accept or Cancel—but you could replace the text with an icon, or use an icon plus text.
+-   Make sure that as the user interacts with a button, the button changes state and appearance to provide feedback to the user. Normal, pressed, and disabled are examples of button states.
+-   Trigger the button's action when the user taps or presses the button. Usually the action is triggered when the user releases the button, but you also can set a button's action to trigger when a finger first presses it.
+-   Don't use a command button to set state.
+-   Don't change button text while the app is running; for example, don't change the text of a button that says "Next" to "Continue".
+-   Don't swap the default submit, reset, and button styles.
+-   Don't put too much content inside a button. Make the content concise and easy to understand (nothing more than a picture and some text).
 
-## 返回按鈕
-返回按鈕是一種系統提供的 UI 能供性，可往回瀏覽上一頁堆疊或使用者的瀏覽歷程記錄。
+## Back buttons
+The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [History and backwards navigation](../layout/navigation-history-and-backwards-navigation.md)
 
-瀏覽歷程記錄的範圍 (app 內或全域) 取決於裝置和裝置模式。
-
-## <span id="examples"></span><span id="EXAMPLES"></span>範例
-
-
-系統返回按鈕的 UI 適合每種裝置和輸入類型，但每個裝置和通用 Windows 平台 (UWP) app 的瀏覽體驗卻是全域且一致的。 這些不同的體驗包含：
-
-裝置手機 ![手機上的系統返回](images/nav-back-phone.png)
--   一律顯示。
--   裝置底部的軟體或硬體按鈕。
--   在 app 內和 app 間提供全域返回瀏覽。
-
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>平板電腦 ![平板電腦上的系統返回](images/nav-back-tablet.png)
--   在平板電腦模式中一律顯示。
-
-    在桌面模式中無法使用。 但是可改用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
-
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
-
--   裝置底部瀏覽列中的軟體按鈕。
--   在 app 內和 app 間提供全域返回瀏覽。
-
-<span id="PC"></span><span id="pc"></span>電腦、膝上型電腦、平板電腦 ![電腦或膝上型電腦上的系統返回](images/nav-back-pc.png)
--   在桌面模式中為選擇性。
-
-    在平板電腦模式中無法使用。 請參閱[平板電腦](#Tablet)。
-
-    預設為停用。 必須選擇加入才能啟用。
-
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
-
--   App 標題列中的軟體按鈕。
--   只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。
-
-Surface Hub ![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
--   一律顯示。
--   裝置底部的軟體按鈕。
--   在 app 內和 app 間提供返回瀏覽。
-
- 
-
-## 可行與禁止事項
+## Get the samples
+*   [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    See all of the XAML controls in an interactive format.
 
 
--   啟用返回瀏覽。
+## Related articles
 
-    如果未啟用返回瀏覽，您的應用程式會包含在全域的上一頁堆疊中，但不會保留應用程式內頁面瀏覽歷程記錄。
-
--   在桌面模式中啟用標題列返回按鈕。
-
-    會保留 app 內頁面瀏覽歷程記錄，不支援 app 間的返回瀏覽。
-
-    **注意：**在平板電腦模式中，當使用者從裝置頂端向下撥動或將滑鼠指標移至裝置頂端附近時，即會顯示標題列。 為避免重複和混淆，在平板電腦模式中不會顯示標題列返回按鈕。
-
-     
-
--   當應用程式內瀏覽歷程記錄被清空或無法取得時，在桌面模式中隱藏或停用標題列返回按鈕。
-
-    提供清楚的指示，讓使用者知道他們已無法再更往前返回瀏覽。
-
--   每個返回命令應回到返回堆疊中的上一頁，或者，如果不在桌面模式，則是返回上一個應用程式。
-
-    如果返回瀏覽不是直覺式、一致且可預測的，使用者可能會混淆。
-
-## 相關文章
-
-- [選項按鈕](radio-button.md)
-- [切換開關](toggles.md)
-- [核取方塊](checkbox.md)
-
-**適用於開發人員 (XAML)**
-- [**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Radio buttons](radio-button.md)
+- [Toggle switches](toggles.md)
+- [Check boxes](checkbox.md)
+- [**Button class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

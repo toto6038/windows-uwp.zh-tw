@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: "DDSTextureLoader 的完整程式碼"
-description: "從記憶體載入 DDS 紋理的類別與方法的完整程式碼。"
+title: Complete code for DDSTextureLoader
+description: Complete code for a class and method that loads a DDS texture from memory.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 9a842c773ce16e1093a158426b89caf239858f05
+ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
 
 ---
 
-# DDSTextureLoader 的完整程式碼
+# Complete code for DDSTextureLoader
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-從記憶體載入 DDS 紋理的類別與方法的完整程式碼。
+Complete code for a class and method that loads a DDS texture from memory.
 
-這個主題包含這些小節：
+This topic contains these sections:
 
--   [技術](#technologies)
--   [需求](#requirements)
--   [檢視程式碼 (C++)](#view-the-code-c)
-
-
-## 下載位置
+-   [Technologies](#technologies)
+-   [Requirements](#requirements)
+-   [View the code (C++)](#view-the-code-c)
 
 
-此範例不提供下載。
-
-## 技術
-
-**程式設計語言** - C++    
-**程式設計模型** - Windows 執行階段
-
-## 需求
-
-**最低支援的用戶端** - Windows 10                               
-**最低支援的伺服器** - Windows Server 2016 Technical Preview
+## Download location
 
 
+This sample is not available for download.
 
-## 檢視程式碼 (C++)
+## Technologies
+
+**Programming languages** - C++    
+**Programming models** - Windows Runtime
+
+## Requirements
+
+**Minimum supported client** - Windows 10                               
+**Minimum supported server** - Windows Server 2016 Technical Preview
+
+
+
+## View the code (C++)
 
 
 ## DDSTextureLoader.h
@@ -1226,6 +1226,6 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

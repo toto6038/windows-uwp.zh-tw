@@ -1,40 +1,40 @@
 ---
 author: DelfCo
-description: "用來偵錯和測試您 App 如何使用處理程序生命週期管理的工具及技術。"
-title: "處理程序生命週期管理 (PLM) 的測試與偵錯工具"
+description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
+title: Testing and debugging tools for Process Lifetime Management (PLM)
 translationtype: Human Translation
 ms.sourcegitcommit: cbf3d2bb1466ca06e397561ad90d95db28e7136d
-ms.openlocfilehash: 0fde4fa22dc6876807e7f7e1c10e7606eee3786d
+ms.openlocfilehash: 1ea7b969ce0b8992306bb8a2d2b569905cc0cc67
 
 ---
 
-# 處理程序生命週期管理 (PLM) 的測試與偵錯工具
+# Testing and debugging tools for Process Lifetime Management (PLM)
 
-UWP app 與傳統型桌面應用程式的其中一個主要差異是，UWP 產品位於應用程式容器中，受到處理程序生命週期管理 (PLM) 限制。 Runtime Broker 服務可以在所有平台上暫停、繼續，或終止 UWP app，而且在您測試或偵錯處理這些動作的程式碼時，有專屬的工具可供您用來強制執行這些轉換。
+One of the key differences between UWP apps and traditional desktop applications is that UWP titles reside in an app container subject to Process Lifecycle Management (PLM). UWP apps can be suspended, resumed, or terminated across all platforms by the Runtime Broker service, and there are dedicated tools for you to use to force those transitions when you are testing or debugging the code that handles them.
 
-## Visual Studio 2015 中的功能
+## Features in Visual Studio 2015
 
-Visual Studio 2015 中內建的偵錯工具可協助您調查使用 UWP 專屬功能時的潛在問題。 您可以使用 [週期事件]**** 工具列 (這在執行和偵錯您的產品時會出現)，強制應用程式進入不同的 PLM 狀態。
+The built-in debugger in Visual Studio 2015 can help you investigate potential issues when using UWP-exclusive features. You can force your application into different PLM states by using the **Lifecycle Events** toolbar, which becomes visible when you run and debug your title.
 
-![週期事件工具列](images/gs-debug-uwp-apps-001.png)
+![Lifecycle Events Toolbar](images/gs-debug-uwp-apps-001.png)
 
-## PLMDebug 工具
+## The PLMDebug tool
 
-PLMDebug.exe 是一項隨附於 Windows SDK 中的命令列工具，可讓您控制應用程式套件的 PLM 狀態。 工具安裝之後，預設會位於 *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*。 
+PLMDebug.exe is a command-line tool that allows you to control the PLM state of an application package, and is shipped as part of the Windows SDK. After it is installed, the tool resides in *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* by default. 
 
-PLMDebug 也允許您停用任何已安裝之應用程式套件的 PLM，這對於某些偵錯程式來說是必要的。 停用 PLM 會防止 Runtime Broker 服務在您可以偵錯前，終止您的 App。 若要停用 PLM，請使用 **/enableDebug** 切換參數，後面加上您 UWP app 的完整套件名稱** (簡短名稱、套件系列名稱或套件的 AUMID 將無法運作)：
+PLMDebug also allows you to disable PLM for any installed app package, which is necessary for some debuggers. Disabling PLM prevents the Runtime Broker service from terminating your app before you have a chance to debug. To disable PLM, use the **/enableDebug** switch, followed by the *full package name* of your UWP app (the short name, package family name, or AUMID of a package will not work):
 
 ```
 plmdebug /enableDebug [PackageFullName]
 ```
 
-從 Visual Studio 部署 UWP app 之後，完整套件名稱將會顯示在輸出視窗中。 或者，您也可以在 PowerShell 主控台中執行 **Get-AppxPackage** 來擷取完整套件名稱。
+After deploying your UWP app from Visual Studio, the full package name is displayed in the output window. Alternatively, you can also retrieve the full package name by running **Get-AppxPackage** in a PowerShell console.
 
-![執行 Get-AppxPackage](images/gs-debug-uwp-apps-003.png)
+![Running Get-AppxPackage](images/gs-debug-uwp-apps-003.png)
 
-另外，您可以指定應用套件啟動時，會自動啟動之偵錯工具的絕對路徑。 如果您希望使用 Visual Studio 來這樣做，您必須指定 VSJITDebugger.exe 做為偵錯工具。 不過，VSJITDebugger.exe 需要您指定 “-p” 切換參數，以及 UWP app 的處理序識別碼 (PID)。 因為無法事先知道您的 UWP app 的 PID，這個案例無法直接使用。
+Optionally, you can specify an absolute path to a debugger that will automatically launch when your app package is activated. If you wish to do this using Visual Studio, you’ll need to specify VSJITDebugger.exe as the debugger. However, VSJITDebugger.exe requires that you specify the “-p” switch, along with the process ID (PID) of the UWP app. Because it’s not possible to know the PID of your UWP app beforehand, this scenario is not possible out of the box.
 
-您可以撰寫指令碼或工具，識別您遊戲的處理序，然後在殼層中執行 VSJITDebugger.exe，傳入 UWP app 的 PID 來解決這個限制。 下列 C# 程式碼範例說明完成這項作業的簡單方法。
+You can work around this limitation by writing a script or tool that identifies your game’s process, and then the shell runs VSJITDebugger.exe, passing in the PID of your UWP app. The following C# code sample illustrates a straightforward approach to accomplish this.
 
 ```
 using System.Diagnostics;
@@ -69,21 +69,21 @@ namespace VSJITLauncher
 }
 ```
 
-這個範例用法搭配 PLMDebug：
+Example usage of this in conjunction with PLMDebug:
 
 ```
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
-其中 `Game` 是處理程序名稱，`279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` 是範例 UWP app 套件的完整套件名稱。
+where `Game` is the process name, and `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` is the full package name of the example UWP app package.
 
-請注意，每次呼叫 **/enableDebug** 都必須在稍後使用 **/disableDebug** 切換參數結合另一個 PLMDebug 呼叫。 此外，偵錯工具路徑必須是絕對路徑 (不支援相對路徑)。
+Note that every call to **/enableDebug** must be later coupled to another PLMDebug call with the **/disableDebug** switch. Furthermore, the path to a debugger must be absolute (relative paths are not supported).
 
-## 相關主題
-- [部署和偵錯 UWP app](deploying-and-debugging-uwp-apps.md)
-- [偵錯、測試及效能](index.md)
+## Related topics
+- [Deploying and debugging UWP apps](deploying-and-debugging-uwp-apps.md)
+- [Debugging, testing, and performance](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

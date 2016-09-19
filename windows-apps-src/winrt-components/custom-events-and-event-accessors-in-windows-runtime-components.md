@@ -1,34 +1,34 @@
 ---
 author: msatranjr
-title: "Windows 執行階段元件中的自訂事件和事件存取子"
-description: "適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。"
+title: Custom events and event accessors in Windows Runtime Components
+description: .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern.
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
+ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
 
 ---
 
-# Windows 執行階段元件中的自訂事件和事件存取子
+# Custom events and event accessors in Windows Runtime Components
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-適用於 Windows 執行階段元件的 .NET Framework 支援可隱藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之間的差異，以便輕易地宣告事件元件。 但是，當您在 Windows 執行階段元件中宣告自訂事件存取子時，必須遵循 UWP 中使用的模式。
+.NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern. However, when you declare custom event accessors in a Windows Runtime Component, you must follow the pattern used in the UWP.
 
-## 註冊事件
+## Registering events
 
 
-當您註冊以在 UWP 中處理事件時，add 存取子會傳回語彙基元。 若要取消註冊，您可以將這個語彙基元傳遞至 remove 存取子。 這表示 UWP 事件的 add 和 remove 存取子與您使用的存取子具有不同的簽章。
+When you register to handle an event in the UWP, the add accessor returns a token. To unregister, you pass this token to the remove accessor. This means that the add and remove accessors for UWP events have different signatures from the accessors you're used to.
 
-幸運的是，Visual Basic 和 C# 編譯器會簡化這個處理序：當您在 Windows 執行階段元件中宣告具有自訂存取子的事件時，編譯器會自動使用 UWP 模式。 例如，若 add 存取子未傳回語彙基元，就會發生編譯器錯誤。 .NET Framework 提供兩個類型來支援實作：
+Fortunately, the Visual Basic and C# compilers simplify this process: When you declare an event with custom accessors in a Windows Runtime Component, the compilers automatically use the UWP pattern. For example, you get a compiler error if your add accessor doesn't return a token. The .NET Framework provides two types to support the implementation:
 
--   [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) 結構代表語彙基元。
--   [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) 類別會建立語彙基元，並維護語彙基元和事件處理常式之間的對應。 泛型類型引數是事件引數類型。 您為每個事件建立此類別的執行個體時，第一次為該事件註冊事件處理常式。
+-   The [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) structure represents the token.
+-   The [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) class creates tokens and maintains a mapping between tokens and event handlers. The generic type argument is the event argument type. You create an instance of this class for each event, the first time an event handler is registered for that event.
 
-下列適用於 NumberChanged 事件的程式碼會顯示 UWP 事件的基本模式。 在這個範例中，事件引數物件的建構函式 (NumberChangedEventArgs) 會採用表示已變更數值的單一整數參數。
+The following code for the NumberChanged event shows the basic pattern for UWP events. In this example, the constructor for the event argument object, NumberChangedEventArgs, takes a single integer parameter that represents the changed numeric value.
 
-> **注意** 這就是編譯器用於您在 Windows 執行階段元件中宣告之一般事件的相同模式。
+> **Note**  This is the same pattern the compilers use for ordinary events that you declare in a Windows Runtime Component.
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -94,39 +94,39 @@ ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
 > End Event
 > ```
 
-static (在 Visual Basic 中為 Shared) GetOrCreateEventRegistrationTokenTable 方法會延遲建立事件的 EventRegistrationTokenTable&lt;T&gt; 物件執行個體。 將保存語彙基元資料表執行個體的類別層級欄位傳遞給此方法。 如果此欄位空白，這個方法會建立資料表、在欄位中儲存資料表的參考，然後傳回該資料表的參考。 如果欄位已經包含語彙基元資料表參考，這個方法就只會傳回該參考。
+The static (Shared in Visual Basic) GetOrCreateEventRegistrationTokenTable method creates the event’s instance of the EventRegistrationTokenTable&lt;T&gt; object lazily. Pass the class-level field that will hold the token table instance to this method. If the field is empty, the method creates the table, stores a reference to the table in the field, and returns a reference to the table. If the field already contains a token table reference, the method just returns that reference.
 
-> **重要** 為了確保執行緒安全，保存事件之 EventRegistrationTokenTable&lt;T&gt; 執行個體的欄位必須是類別層級的欄位。 如果是類別層級的欄位，則 GetOrCreateEventRegistrationTokenTable 方法會確保當多個執行緒嘗試建立語彙基元資料表時，所有執行緒都會取得此資料表的相同執行個體。 對於指定的事件，GetOrCreateEventRegistrationTokenTable 方法的所有呼叫都必須使用相同的類別層級欄位。
+> **Important**  To ensure thread safety, the field that holds the event’s instance of EventRegistrationTokenTable&lt;T&gt; must be a class-level field. If it is a class-level field, the GetOrCreateEventRegistrationTokenTable method ensures that when multiple threads try to create the token table, all threads get the same instance of the table. For a given event, all calls to the GetOrCreateEventRegistrationTokenTable method must use the same class-level field.
 
-在 remove 存取子和 [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) 方法 (在 C# 中為 OnRaiseEvent 方法) 中呼叫 GetOrCreateEventRegistrationTokenTable 方法，可確保在加入任何事件處理常式委派之前呼叫這些方法，不會發生例外狀況。
+Calling the GetOrCreateEventRegistrationTokenTable method in the remove accessor and in the [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) method (the OnRaiseEvent method in C#) ensures that no exceptions occur if these methods are called before any event handler delegates have been added.
 
-在 UWP 事件模式中使用的其他 EventRegistrationTokenTable&lt;T&gt; 類別成員包括下列各項：
+The other members of the EventRegistrationTokenTable&lt;T&gt; class that are used in the UWP event pattern include the following:
 
--   [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) 方法會產生事件處理常式委派的語彙基元、在資料表中儲存委派、將它加入至叫用清單，然後傳回語彙基元。
--   [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) 方法多載會從資料表和叫用清單中移除此委派。
+-   The [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) method generates a token for the event handler delegate, stores the delegate in the table, adds it to the invocation list, and returns the token.
+-   The [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) method overload removes the delegate from the table and from the invocation list.
 
-    >**注意** AddEventHandler 和 RemoveEventHandler(EventRegistrationToken) 方法會鎖定資料表，協助確保執行緒安全。
+    >**Note**  The AddEventHandler and RemoveEventHandler(EventRegistrationToken) methods lock the table to help ensure thread safety.
 
--   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 屬性傳回的委派包含目前已註冊來處理事件的所有事件處理常式。 使用此委派來引發事件，或使用 Delegate 類別的方法個別叫用處理常式。
+-   The [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) property returns a delegate that includes all the event handlers that are currently registered to handle the event. Use this delegate to raise the event, or use the methods of the Delegate class to invoke the handlers individually.
 
-    >**注意** 建議您遵循本文前述範例中顯示的模式，先將委派複製到暫存變數，再予以叫用。 這可避免某一個執行緒移除最後一個處理常式的競爭情形，進而讓委派在另一個執行緒嘗試叫用委派之前減少至 null。 委派是不可變的，因此複本仍然有效。
+    >**Note**  We recommend that you follow the pattern shown in the example provided earlier in this article, and copy the delegate to a temporary variable before invoking it. This avoids a race condition in which one thread removes the last handler, reducing the delegate to null just before another thread tries to invoke the delegate. Delegates are immutable, so the copy is still valid.
 
-視情況將自己的程式碼放在存取子中。 如果執行緒安全有問題，您就必須為程式碼提供自己的鎖定。
+Place your own code in the accessors as appropriate. If thread safety is an issue, you must provide your own locking for your code.
 
-C# 使用者：當您在 UWP 事件模式中寫入自訂事件存取子時，編譯器不會提供一般語法快速鍵。 如果您在程式碼中使用事件名稱，則會產生錯誤。
+C# users: When you write custom event accessors in the UWP event pattern, the compiler doesn't provide the usual syntactic shortcuts. It generates errors if you use the name of the event in your code.
 
-Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註冊事件處理常式的多點傳送委派。 引發事件只是表示叫用委派。 Visual Basic 語法通常會隱藏與委派的互動，而且編譯器會在叫用委派之前先行複製 (如執行緒安全相關注意事項所述)。 當您在 Windows 執行階段元件中建立自訂事件時，您必須直接處理委派。 這也表示您可以使用 [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) 方法來取得一個陣列，如果您想要個別叫用處理常式，該陣列會包含每個事件處理常式的個別委派。
+Visual Basic users: In the .NET Framework, an event is just a multicast delegate that represents all the registered event handlers. Raising the event just means invoking the delegate. Visual Basic syntax generally hides the interactions with the delegate, and the compiler copies the delegate before invoking it, as described in the note about thread safety. When you create a custom event in a Windows Runtime Component, you have to deal with the delegate directly. This also means that you can, for example, use the [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) method to get an array that contains a separate delegate for each event handler, if you want to invoke the handlers separately.
 
-## 相關主題
+## Related topics
 
-* [事件 (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
-* [事件 (C# 程式設計指南)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [適用於 Windows 市集 App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Events (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
+* [Events (C# Programming Guide)](https://msdn.microsoft.com/library/awbftdfh.aspx)
+* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

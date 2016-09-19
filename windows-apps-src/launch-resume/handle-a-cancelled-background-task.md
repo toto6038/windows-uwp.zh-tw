@@ -1,37 +1,37 @@
 ---
 author: TylerMSFT
-title: "處理已取消的背景工作"
-description: "了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。"
+title: Handle a cancelled background task
+description: Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ---
 
-# 處理已取消的背景工作
+# Handle a cancelled background task
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要 API**
+**Important APIs**
 
 -   [**BackgroundTaskCanceledEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224775)
 -   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
 -   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。
+Learn how to make a background task that recognizes a cancellation request, stops work, and reports the cancellation to the app using persistent storage.
 
-> **注意** 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外狀況，或是 app 沒有處理該狀況，背景工作將會在沒有警告也沒有引發 OnCanceled 事件的情況下終止。 這有助於確保前景 app 的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
+This topic assumes you have already created a background task class, including the Run method that is used as the background task entry point. To get started quickly building a background task, see [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) or . For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
 
-本主題假設您已建立背景工作類別，包括做為背景工作進入點的 Run 方法。 若要快速開始建立背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+This topic is also applicable to single-process background tasks. But instead of the Run() method, substitute OnBackgroundActivated(). Single-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.
 
-## 使用 OnCanceled 方法辨識取消要求
+## Use the OnCanceled method to recognize cancellation requests
 
-撰寫方法以處理取消事件。
+Write a method to handle the cancellation event.
 
-建立具有下列配置且名為 OnCanceled 的方法。 這個方法是每當針對您的背景工作提出取消要求時，由 Windows 執行階段呼叫的進入點。
+> **Note**  For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
-OnCanceled 方法必須具有下列配置：
+Create a method named OnCanceled as follows. This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -47,7 +47,7 @@ OnCanceled 方法必須具有下列配置：
 >    }
 > ```
 
-將稱為 **\_CancelRequested** 的旗標變數新增至背景工作類別。 此變數將用來指示何時提出取消要求。
+Add a flag variable called **\_CancelRequested** to the background task class. This variable will be used to indicate when a cancellation request has been made.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -58,9 +58,9 @@ OnCanceled 方法必須具有下列配置：
 >     volatile bool CancelRequested;
 > ```
 
-在步驟 1 所建立的 OnCanceled 方法中，將旗標變數 **\_CancelRequested** 設定為 **true**。
+In the OnCanceled method you created in step 1, set the flag variable **\_CancelRequested** to **true**.
 
-完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled 方法會將 **\_CancelRequested** 設定為 **true** 並撰寫可能會用到的偵錯輸出：
+The full [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled method sets **\_CancelRequested** to **true** and writes potentially useful debug output:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -86,7 +86,7 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-在背景工作的 Run 方法中，在開始工作之前先登錄 OnCanceled 事件處理常式方法。 例如，使用下面一行的程式碼：
+In the background task's Run method, register the OnCanceled event handler method before starting work. In a single-process background task, you might do this registration as part of your application initialization. For example, use the following line of code:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -96,14 +96,13 @@ OnCanceled 方法必須具有下列配置：
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## 結束 Run 方法以處理取消
+## Handle cancellation by exiting your background task
 
+When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**. For single-process background tasks, this means returning from the `OnBackgroundActivated()` method. For background tasks that run in a separate process, this means returning from the `Run()` method.
 
-接收取消要求時，Run 方法需要透過辨識 **\_cancelRequested** 被設定為 **true** 的時機，來停止工作並結束。
+Modify the code of your background task class to check the flag variable while it's working. If **\_cancelRequested** set to true, stop work from continuing.
 
-修改背景工作類別的程式碼以便在旗標變數運作時檢查旗標變數。 如果將 **\_cancelRequested** 設定為 true，便會阻止工作繼續。
-
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括會在取消背景工作時，停止定期計時器回呼的檢查：
+The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -133,11 +132,11 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-> **注意** 上方所顯示的程式碼範例使用用來記錄背景工作進度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 屬性。 進度會透過 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 類別回報給 app。
+> **Note**  The code sample shown above uses the [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property being used to record background task progress. Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) class.
 
-修改 Run 方法，以便在停止工作後，使它記錄工作是否已完成或被取消。
+Modify the Run method so that after work has stopped, it records whether the task completed or was cancelled. This step applies to background tasks that run in a separate process because you need a way to communicate between processes when the background task was cancelled. For single-process background tasks, you can simply share state with the application to indicate the task was cancelled.
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態：
+The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -201,15 +200,15 @@ OnCanceled 方法必須具有下列配置：
 >     }
 > ```
 
-## 備註
+## Remarks
 
-您可以下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)，查看方法內容中的這些程式碼範例。
+You can download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.
 
-為了便於說明，範例程式碼僅顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中 Run 方法 (以及回呼計時器) 的一部分。
+For illustrative purposes, the sample code shows only portions of the Run method (and callback timer) from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-## Run 方法範例
+## Run method example
 
-以下顯示[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的完整的 Run方法以及回呼計時器程式碼的內容：
+The complete Run method, and timer callback code, from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -328,26 +327,26 @@ OnCanceled 方法必須具有下列配置：
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## 相關主題
+## Related topics
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [登錄背景工作](register-a-background-task.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
-* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
 
-* [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

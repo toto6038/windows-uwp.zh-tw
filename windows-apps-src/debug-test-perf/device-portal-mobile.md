@@ -1,82 +1,82 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: "行動裝置的 Device Portal"
-description: "了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。"
+title: Device Portal for Mobile
+description: Learn how the Windows Device Portal lets you remotely configure and manage your mobile device.
 translationtype: Human Translation
 ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 ---
-# 行動裝置的 Device Portal
+# Device Portal for Mobile
 
-從 Windows 10 版本 1511 開始，即針對行動裝置系列提供額外的開發人員功能。 只有在裝置上啟用開發人員模式時，才能使用這些功能。
+Starting in Windows 10, Version 1511, additional developer features are available for the mobile device family. These features are available only when Developer mode is enabled on the device.
 
-如需啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](../get-started/enable-your-device-for-development.md)。
+For info about how to enable Developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-![Device Portal 設定](images/device-portal/mob-dev-mode-options.png)
+![Device Portal settings](images/device-portal/mob-dev-mode-options.png)
 
-## 在 Windows Phone 上設定 Device Portal
+## Set up device portal on Windows Phone
 
-### 開啟裝置探索和配對
+### Turn on device discovery and pairing
 
-若要連接到 Device Portal，您必須啟用裝置探索。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
+To connect to Device Portal, you must enable Device discovery. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
 
-第一次連線到 Device Portal 時，系統會要求您提供 6 個字元且區分大小寫的安全性驗證碼。 這可確保您具備手機的存取權，並讓您保持安全免於受到攻擊者入侵。 按下手機上的 [配對] 按鈕，即會產生並顯示驗證碼，接著請在瀏覽器的文字方塊中輸入這 6 個字元。
+The first time you connect to Device Portal, you are asked for a case-sensitive, 6 character security code. This ensures that you have access to the phone, and keeps you safe from attackers. Press the Pair button on your phone to generate and display the code, then enter the 6 characters into the text box in the browser.
 
-![開發人員模式裝置探索設定](images/device-portal/mob-dev-mode-pairing.png)
+![Developer mode device discovery settings](images/device-portal/mob-dev-mode-pairing.png)
 
-您可以從 3 種連接到 Device Portal 的方式中進行選擇：USB、本機主機，以及透過區域網路 (包括 VPN 和網際網路共用)。
+You can choose from 3 ways to connect to Device Portal: USB, local host, and over the local network (including VPN and tethering).
 
-**連接到 Device Portal**
+**To connect to Device Portal**
 
-1. 在瀏覽器中，針對您使用的連接類型輸入位址 (如下所示)。
+1. In your browser, enter the address shown here for the connection type you're using.
 
-    - USB： `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
-    當手機透過 USB 連線連接到電腦時，請使用這個位址。 這兩個裝置都必須具備 Windows 10 版本 1511或更新版本。
+    Use this address when the phone is connected to a PC via a USB connection. Both devices must have Windows 10, Version 1511 or later.
     
-    - 本機主機： `http://127.0.0.1`
+    - Localhost: `http://127.0.0.1`
 
-    使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
+    Use this address to view Device Portal locally on the phone in Microsoft Edge for Windows 10 Mobile.
     
-    - 區域網路： `https://<The IP address of the phone>`
+    - Local Network: `https://<The IP address of the phone>`
 
-    使用這個位址來透過區域網路連線。
+    Use this address to connect over a local network.
 
-    手機的 IP 位址會顯示於手機上的 Device Portal 設定中。 HTTPS 需要進行驗證和安全通訊。 主機名稱 (可在 [設定] &gt; [系統] &gt; [關於] 中編輯) 也可以用來在區域網路上存取 Device Portal (例如 http://Phone360)。這對於經常會變更網路或 IP 位址，或是需要與他人共用的裝置來說相當有用。 
+    The IP address of the phone is shown in the Device Portal settings on the phone. HTTPS is required for authentication and secure communication. The hostname (editable in Settings > System > About) can also be used to access Device Portal on the local network (e.g. http://Phone360), which is useful for devices that may change networks or IP addresses frequently, or need to be shared. 
 
-2. 按下手機上的 [配對] 按鈕，來產生並顯示所需的安全性驗證碼
+2. Press the Pair button on your phone to generate and display the required security code
 
-3. 在您瀏覽器的 Device Portal 密碼方塊中，輸入 6 個字元的安全性驗證碼。
+3. Enter the 6 character security code into the Device Portal password box in your browser.
 
-4. (選擇性) 選取瀏覽器中的 [記住我的電腦] 方塊，以便日後記住這個配對。
+4. (Optional) Check the Remember my computer box in your browser to remember this pairing in the future.
 
-以下是 Windows Phone 上開發人員設定頁面的 [Device Portal] 區段。
+Here's the Device Portal section of the developer settings page on Windows Phone.
 
-![Device Portal 設定](images/device-portal/mob-dev-mode-portal.png)
+![Device Portal settings](images/device-portal/mob-dev-mode-portal.png)
 
-如果您是在受保護的環境中使用 Device Portal (例如測試實驗室)，您可以在此環境中信任區域網路上的每個人、裝置上沒有個人資訊，而且有獨特的需求，則您可以停用驗證。 這會啟用未加密的通訊，並允許具有您手機 IP 位址的任何人對它進行控制。
+If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your phone to control it.
 
-## 工具附註
+## Tool Notes
 
-## Device Portal 頁面
-### 處理程序
+## Device Portal pages
+### Processes
 
-終止任意程序的能力並不包含在 Windows Mobile Device Portal 中。 
+The ability to terminate arbitrary processes is not included in the Windows Mobile Device Portal. 
 
-行動裝置上的 Device Portal 提供標準的頁面集。 如需詳細描述，請參閱 [Windows Device Portal 概觀](device-portal.md)。
+Device Portal on mobile devices provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
 
-- App
-- 處理程序
-- 效能
-- Windows 事件追蹤 (ETW)
-- 效能追蹤
-- 裝置
-- 網路功能
+- Apps
+- Processes
+- Performance
+- Event Tracing for Windows (ETW)
+- Performance tracing
+- Devices
+- Networking
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

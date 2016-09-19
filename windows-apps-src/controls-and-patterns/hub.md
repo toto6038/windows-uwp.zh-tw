@@ -1,117 +1,129 @@
 ---
 author: Jwmsft
-Description: "中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 App。"
-title: "中樞控制項"
+Description: The hub control uses a hierarchical navigation pattern to support apps with a relational information architecture.
+title: Hub controls
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ---
-# 中樞控制項/模式
+# Hub control/pattern
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-中樞控制項可讓您將 app 內容組織成不同但相關的區段或類別。 中樞中區段的目的是在於能夠以慣用的順序進行周遊，並可做為更詳細經驗的起點。
+A hub control lets you organize app content into distinct, yet related, sections or categories. Sections in a hub are meant to be traversed in a preferred order, and can serve as the starting point for more detailed experiences.
 
-![中樞範例](images/hub_example_tablet.png)
+![Example of a hub](images/hub_example_tablet.png)
 
-中樞中的內容可以採用全景檢視方式顯示，讓使用者能夠檢視新功能、可用功能及相關項目。 中樞通常會有頁面標頭，而每個內容區段都會有一個區段標頭。
+Content in a hub can be displayed in a panoramic view that allows users to get a glimpse of what's new, what's available, and what's relevant. Hubs typically have a page header, and content sections each get a section header.
 
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Hub class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>HubSection class</strong></a></li>
+</ul>
 
--   [**Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection 類別**](https://msdn.microsoft.com/library/windows/apps/dn251845)
-
-## 這是正確的控制項嗎？
-
-中樞控制項適用於顯示依階層排列的大量內容。 中樞會為新內容的瀏覽與探索排定優先順序，讓它們不論是顯示市集中的項目還是媒體集合中的項目，都相當有用。
-
-Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良好運作。
-
--   **視覺化瀏覽**
-
-    中樞可讓內容以多種、簡短且容易瀏覽的陣列方式顯示。
-
--   **分類**
-
-    每個中樞區段都可以使用邏輯順序安排其內容。
-
--   **混合內容類型**
-
-    有了混合內容類型之後，可變的資產大小和比例就變得很常見。 中樞可讓每種內容類型成為唯一的類型，且可以在每個中樞區段中整齊地排列。
-
--   **可變的頁面和內容寬度**
-
-    採用全景模型之後，中樞便可允許變更其區段寬度。 這非常適用於具有不同深度或數量的內容。
-
--   **彈性架構**
-
-    如果您想要讓您的 App 架構維持淺層狀態，您可以將所有通道內容都納入中樞區段摘要中。
-
-中樞只是您可以使用的數個瀏覽元素其中之一；若要深入了解瀏覽模式及其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) App 的瀏覽設計基本知識](../layout/navigation-basics.md)。
-
-## 中樞架構
-
-中樞控制項具備階層式瀏覽模式，此模式支援使用關聯式資訊架構的應用程式。 中樞由不同的內容類別組成，每個類別均對應至應用程式的區段頁面。 區段頁面可以使用任何形式顯示，只要能夠呈現出最佳的狀況和區段所包含的內容。
-
-![階層式 Food with Friends 應用程式的線框](images/navigation_diagram_food_with_friends_app_new.png)
-
-## 移動瀏覽/捲動的配置
-
-有一些方式可用來在中樞中配置及瀏覽內容；但是請確定中樞中列出的內容會一律以和中樞捲動方向垂直的方向移動瀏覽。
-
-**水平移動瀏覽**
-
-![水平移動瀏覽中樞的範例](images/controls_hub_horizontal_pan.png)
-**垂直移動瀏覽**
-
-![垂直移動瀏覽中樞的範例](images/controls_hub_vertical_pan.png)
-**具備垂直捲動清單/格線的水平移動瀏覽**
-
-![具備垂直捲動清單之水平移動瀏覽中樞的範例](images/controls_hub_horizontal_vertical_scroll.png)
-**具備水平捲動清單/格線的垂直移動瀏覽**
-
-![水平移動瀏覽中樞範例](images/controls_hub_vertical_horizontal_scroll.png)
-
-## 範例
-
-中樞提供大量的設計彈性。 這可讓您設計具有各式各樣引人注目及豐富視覺體驗的應用程式。 您可以為第一個群組使用主角影像或內容區段；主角的大型影像可以在不失去中心焦點的情況下，從垂直與水平方向裁剪。 以下是單個主角影像以及如何針對橫向、直向及窄格式寬度裁剪影像的範例。
-
-![針對不同視窗大小裁剪主角影像](images/hub_hero_cropped2.png)
-
-在行動裝置上，一次只能看到一個中樞區段。
-
-![小螢幕上的中樞模式範例](images/phone_hub_example.png)
-
-## 建議
-
--   若要讓使用者知道中樞區段中有更多內容，建議您裁剪內容，以方便使用者一次檢視某一數量的內容。
--   視應用程式的需求而定，您可以新增數個中樞區段到中樞控制項，每一區段都提供獨特的功能用途。 例如，一個區段可能包含一系列連結和控制項，另一個區段則可能是縮圖影像的存放庫。 使用者可以使用中樞控制項內建的手勢支援，在這些區段之間移動瀏覽。
--   動態自動重排群組中的內容是適應不同視窗大小的最佳方式。
--   如果中樞包含很多區段，請考慮新增語意式縮放。 這樣當應用程式調整到窄格式寬度大小時，會更易於找到區段。
--   我們建議您不要在中樞區段中建立導向其他中樞的項目；您可以改為使用互動式標題來瀏覽至其他中樞區段或頁面。
--   中樞是一個開始點，並且可加以自訂以符合您應用程式的需求。 您可以變更中樞的下列層面：
-    -   區段數量
-    -   每個區段的內容類型
-    -   區段的位置及順序
-    -   區段大小
-    -   區段之間的間距
-    -   區段與中樞頂端或底部之間的間距
-    -   標頭和內容中文字樣式和大小
-    -   背景、區段、區段標頭及區段內容的色彩
+</div>
+</div>
 
 
 
-## 相關文章
-
-- [Hub 類別](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [瀏覽基本知識](../layout/navigation-basics.md)
-- [使用中樞](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
-- [XAML Hub 控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 
 
+## Is this the right control?
 
-<!--HONumber=Jul16_HO1-->
+The hub control works well for displaying large amounts of content that is arranged in a hierarchy. Hubs prioritize the browsing and discovery of new content, making them useful for displaying items in a store or a media collection.
+
+The hub control has several features that make it work well for building a content navigation pattern.
+
+-   **Visual navigation**
+
+    A hub allows content to be displayed in a diverse, brief, easy-to-scan array.
+
+-   **Categorization**
+
+    Each hub section allows for its content to be arranged in a logical order.
+
+-   **Mixed content types**
+
+    With mixed content types, variable asset sizes and ratios are common. A hub allows each content type to be uniquely and neatly laid out in each hub section.
+
+-   **Variable page and content widths**
+
+    Being a panoramic model, the hub allows for variability in its section widths. This is great for content of different depths or quantities.
+
+-   **Flexible architecture**
+
+    If you'd prefer to keep your app architecture shallow, you can fit all channel content into a hub section summary.
+
+A hub is just one of several navigation elements you can use; to learn more about navigation patterns and the other navigation elements, see the [Navigation design basics for Universal Windows Platform (UWP) apps](../layout/navigation-basics.md).
+
+## Hub architecture
+
+The hub control has a hierarchical navigation pattern that support apps with a relational information architecture. A hub consists of different categories of content, each of which maps to the app's section pages. Section pages can be displayed in any form that best represents the scenario and content that the section contains.
+
+![wireframe of a hierarchical Food with Friends app](images/navigation_diagram_food_with_friends_app_new.png)
+
+## Layouts and panning/scrolling
+
+There are a number of ways to lay out and navigate content in a hub; just be sure that content lists in a hub always pan in a direction perpendicular to the direction in which the hub scrolls.
+
+**Horizontal panning**
+
+![Example of a horizontally panning hub](images/controls_hub_horizontal_pan.png)
+**Vertical panning**
+
+![Example of a vertically panning hub](images/controls_hub_vertical_pan.png)
+**Horizontal panning with vertically scrolling list/grid**
+
+![Example of a horizontally panning hub with a vertically scrolling list](images/controls_hub_horizontal_vertical_scroll.png)
+**Vertical panning with horizontally scrolling list/grid**
+
+![Example of a horizontally panning hub](images/controls_hub_vertical_horizontal_scroll.png)
+
+## Examples
+
+The hub provides a great deal of design flexibility. This lets you design apps that have a wide variety of compelling and visually rich experiences. You can use a hero image or content section for the first group; a large image for the hero can be cropped both vertically and horizontally without losing the center of interest. Here is an example of a single hero image and how that image may be cropped for landscape, portrait, and narrow width.
+
+![hero image cropped for different window sizes](images/hub_hero_cropped2.png)
+
+On mobile devices, one hub section is visible at a time.
+
+![Example of a hub pattern on a small screen](images/phone_hub_example.png)
+
+## Recommendations
+
+-   To let users know that there's more content in a hub section, we recommend clipping the content so that a certain amount of it peeks.
+-   Based on the needs of your app, you can add several hub sections to the hub control, with each one offering its own functional purpose. For example, one section could contain a series of links and controls, while another could be a repository for thumbnails. A user can pan between these sections using the gesture support built into the hub control.
+-   Having content dynamically reflow is the best way to accommodate different window sizes.
+-   If you have many hub sections, consider adding semantic zoom. This also makes it easier to find sections when the app is resized to a narrow width.
+-   We recommend not having an item in a hub section lead to another hub; instead, you can use interactive headers to navigate to another hub section or page.
+-   The hub is a starting point and is meant to be customized to fit the needs of your app. You can change the following aspects of a hub:
+    -   Number of sections
+    -   Type of content in each section
+    -   Placement and order of sections
+    -   Size of sections
+    -   Spacing between sections
+    -   Spacing between a section and the top or bottom of the hub
+    -   Text style and size in headers and content
+    -   Color of the background, sections, section headers, and section content
+
+
+
+## Related articles
+
+- [Hub class](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [Navigation basics](../layout/navigation-basics.md)
+- [Using a hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+- [XAML Hub control sample](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

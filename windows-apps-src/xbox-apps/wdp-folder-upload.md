@@ -1,59 +1,59 @@
 ---
 author: WilliamsJason
-title: "裝置入口網站資料夾上傳 API 參考"
-description: "了解如何以程式設計方式存取資料夾上傳 API。"
+title: Device Portal folder upload API reference
+description: Learn how to access the folder upload APIs programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
-# 將資料夾上傳到開發目錄
+# Upload a folder to the development directory
 
-**要求**
+**Request**
 
-您可以將整個資料夾同時上傳到 DevelopmentFiles 的已知資料夾識別碼 (或是該資料夾內的的子資料夾)。
+You can upload an entire folder at once to the Known Folder Id for the DevelopmentFiles (or to a subfolder within that folder).
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :------
 POST | /api/app/packagemanager/upload 
 <br />
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數      | 說明
+URI Parameter      | Description
 :------     | :-----
-destinationFolder (必要) | 上傳資料夾的目的地資料夾名稱。 這個資料夾會放置在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾是 LooseApps 下的子資料夾)。
+destinationFolder  (required) | The destination folder name of the folder to be uploaded. This folder will be placed under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is a subfolder under LooseApps.
 <br />
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 目錄內容的多部分合格 http 本文。
+- multi-part conforming http body of the directory contents.
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 成功
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | Success
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

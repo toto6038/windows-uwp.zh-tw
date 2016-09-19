@@ -1,44 +1,39 @@
 ---
 author: TylerMSFT
-title: "處理 App 預先啟動"
-description: "了解如何透過覆寫 OnLaunched 方法來處理 App 預先啟動。"
+title: Handle app prelaunch
+description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 translationtype: Human Translation
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
+ms.sourcegitcommit: ea9aa37e15dbb6c977b0c0be4f91f77f3879e622
+ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
 
 ---
 
-# 處理 App 預先啟動
+# Handle app prelaunch
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+Learn how to handle app prelaunch by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
 
+## Introduction
 
-**重要 API**
+When available system resources allow, the startup performance of Windows Store apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
 
--   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
+Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
 
-了解如何透過覆寫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法來處理 App 預先啟動。
+Whether an app is prelaunched depends on system resources. If the system is experiencing resource pressure, apps are not prelaunched.
 
-## 簡介
+Some types of apps may need to change their startup behavior to work well with prelaunch. For example, an app that plays music when its starts up, a game which assumes the user is present and displays elaborate visuals when the app starts up, a messaging app that changes the user's online visibility during startup, can identify when the app was prelaunched and can change their startup behavior as described in the sections below.
 
+The default templates for XAML Projects (C#, VB, C++) and WinJS accommodate prelaunch in Visual Studio 2015 Update 3.
 
-在可用的系統資源允許的情況下，可以藉由在背景中主動啟動使用者最常用的應用程式，提升「Windows 市集」應用程式的啟動效能。 預先啟動的應用程式在啟動不久後就會立即進入暫停狀態。 當使用者叫用應用程式時，應用程式會從暫停狀態切換到執行中狀態來繼續執行，這比應用程式冷啟動快。
+## Prelaunch and the app lifecycle
 
-在 Windows 10 之前，應用程式不會自動利用預先啟動。 從 Windows 10 開始，「通用 Windows 平台」(UWP) 應用程式會自動利用預先啟動。
+After an app is prelaunched, it will enter the suspended state. (see [Handle app suspend](suspend-an-app.md)).
 
-大多數應用程式應該都不需任何變更即可以預先啟動方式運作。 不過，某些類型的應用程式可能需要變更其啟動行為，才能以預先啟動方式正常運作。 例如，會在啟動期間變更使用者線上可見度的訊息中心應用程式，或是會假設使用者存在並在應用程式啟動時顯示精美視覺效果的遊戲。
+## Detect and handle prelaunch
 
-## 預先啟動與 app 週期
-
-
-預先啟動應用程式之後，它很快就會進入暫停的狀態。 (請參閱[處理 app 暫停](suspend-an-app.md))。
-
-## 偵測和處理預先啟動
-
-
-App 在啟動期間會收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 請使用這個旗標來決定是否要執行應該只有在使用者明確啟動 app 時才執行的操作，如以下來自 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 的摘錄所示。
+Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following excerpt from [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -81,14 +76,11 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**提示** 如果您想要退出預先啟動，請檢查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 旗標。 如果已設定，請在執行任何工作之前返回 OnLaunched() 以建立框架或啟動視窗。
+**Tip**  If you are targeting a version of Windows 10 prior to version 1607, and you wish to opt-out of prelaunch, check the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag. If it is set, return from OnLaunched() before doing any work to create a frame or activate the window.
 
- 
+## Use the VisibilityChanged event
 
-## 使用 VisibilityChanged 事件
-
-
-使用者看不到預先啟動所啟動的應用程式。 當使用者切換到它們時，才會顯示。 您可能會想要將某些操作延遲到應用程式主視窗顯示之後才進行。 例如，如果您的 app 會從摘要中顯示最新動向項目清單，您可以在 [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) 事件期間更新該清單，而不用倚賴預先啟動 app 時所建置，並在使用者啟用 app 時可能已過時的清單。 下列程式碼會處理 **MainPage** 的 **VisibilityChanged** 事件：
+Apps activated by prelaunch are not visible to the user. They become visible when the user switches to them. You may want to delay certain operations until your app's main window becomes visible. For example, if your app displays a list of what's new items from a feed, you could update the list during the [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) event rather than use the list that was built when the app was prelaunched because it may become stale by the time the user activates the app. The following code handles the **VisibilityChanged** event for **MainPage**:
 
 ```cs
 public sealed partial class MainPage : Page
@@ -108,29 +100,62 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## 指導方針
+## DirectX games guidance
+
+DirectX games should generally not enable prelaunch because many DirectX games do their initialization before prelaunch can be detected. Starting with Windows 1607, Anniversary edition, your game will not be prelaunched by default.  If you do want your game to take advantage of prelaunch, call [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx).
+
+If your game targets an earlier version of Windows 10, you can handle the prelaunch condition to exit the application:
+
+```cs
+void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^ args)
+{
+    if (args->Kind == ActivationKind::Launch)
+    {
+        auto launchArgs = static_cast<LaunchActivatedEventArgs^>(args);
+        if (launchArgs->PrelaunchActivated)
+        {
+            // Opt-out of Prelaunch
+            CoreApplication::Exit();
+            return;
+        }
+    }
+}
+```
+
+## WinJS app guidance
+
+If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](https://msdn.microsoft.com/en-us/library/windows/apps/br212679.aspx) handler:
+
+```js
+    app.onactivated = function (args) {
+        if (!args.detail.prelaunchActivated) {
+            // TODO: This is not a prelaunch activation. Perform operations which
+            // assume that the user explicitly launched the app such as updating
+            // the online presence of the user on a social network, updating a
+            // what's new feed, etc.
+        }
+    }
+```
+
+## General Guidance
+
+-   Apps should not perform long running operations during prelaunch because the app will terminate if it can't be suspended quickly.
+-   Apps should not initiate audio playback from [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) when the app is prelaunched because the app won't be visible and it won't be apparent why there is audio playing.
+-   Apps should not perform any operations during launch which assume that the app is visible to the user, or assume that the app was explicitly launched by the user. Because an app can now be launched in the background without explicit user action, developers should consider the privacy, user experience and performance implications.
+    -   An example privacy consideration is when a social app should change the user state to online. It should wait until the user switches to the app instead of changing the status when the app is prelaunched.
+    -   An example user experience consideration is that if you have an app, such as a game, that displays an introductory sequence when it is launched, you might delay the introductory sequence until the user switches to the app.
+    -   An example performance implication is that you might wait until the user switches to the app to retrieve the current weather information instead of loading it when the app is prelaunched and then need to load it again when the app becomes visible to ensure that the information is current.
+-   If your app clears its Live Tile when launched, defer doing this until the visibility changed event.
+-   Telemetry for your app should distinguish between normal tile activations and prelaunch activations to make it easier to narrow down the scenario if problems occur.
+-   If you have Microsoft Visual Studio 2015 Update 1, and Windows 10, Version 1511, you can simulate prelaunch for App your app in Visual Studio 2015 by choosing **Debug** &gt; **Other Debug Targets** &gt; **Debug Windows Universal App PreLaunch**.
+
+## Related topics
+
+* [App lifecycle](app-lifecycle.md)
+* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
 
 
--   應用程式不應該在預先啟動期間執行長時間執行的操作，因為如果無法快速暫停應用程式，應用程式就會終止。
--   當預先啟動應用程式時，應用程式不應初始化 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 的音訊播放，因為將會看不到應用程式，所以無法知道為什麼會播放音訊。
--   假設使用者可以看見應用程式，或假設應用程式是由使用者明確啟動，那麼應用程式在啟動期間不應該執行任何操作。 由於應用程式現在不需明確的使用者動作即可在背景中啟動，因此開發人員應該考量隱私權、使用者體驗及可能的效能影響。
-    -   隱私權考量舉例：社交應用程式應該在何時將使用者狀態變更為線上。 它應該等到使用者切換到應用程式，而不是在預先啟動應用程式時變更狀態。
-    -   使用者體驗考量舉例：如果您的應用程式 (例如遊戲) 會在啟動時顯示一個開場片段，則您可以將開場片段延遲到使用者切換到該應用程式之後才顯示。
-    -   效能影響舉例：您可以等到使用者切換到應用程式才擷取當前的天氣資訊，而不是在預先啟動應用程式時就載入該資訊，然後在應用程式變成可見時，需要再次載入該資訊來確定該資訊是當前的。
--   如果您的應用程式會在啟動時清除其動態磚，請將此操作延遲到可見度變更事件發生之後才進行。
--   您 App 的遙測應該要能區分一般磚啟用和預先啟動啟用，以便讓您能夠在問題發生時識別狀況。
--   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，您可以藉由選擇 [偵錯]**** &gt; [其他偵錯目標]**** &gt; [偵錯 Windows 通用 App 預先啟動]**** 在Visual Studio 2015中模擬預先啟動您的 App。
 
-## 相關主題
-
-* [App 週期](app-lifecycle.md)
-
- 
-
- 
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

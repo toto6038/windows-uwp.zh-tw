@@ -1,66 +1,66 @@
 ---
 author: mijacobs
-Description: "在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。"
-title: "UWP app 中的拖曳動畫"
+Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+title: Drag animations in UWP apps
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: c975ba3d03c06009710f4f57edf8a4cc517ad90c
+ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 
 ---
 
-# 拖曳動畫
+# Drag animations
 
 
 
 
-在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
+Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 
-**重要 API**
+**Important APIs**
 
--   [**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)
-
-
-## 可行與禁止事項
+-   [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
-**拖曳開始動畫**
-
--   在使用者開始移動物件時使用拖曳開始動畫。
--   只有在拖放作業會影響到其他物件時，才能在動畫中包含受影響的物件。
--   使用拖曳結束動畫，完成以拖曳開始動畫開始的任何動畫序列。 這樣可回復拖曳開始動畫所導致的拖曳物件大小變更。
-
-**拖曳結束動畫**
-
--   在使用者放下被拖曳的物件時使用拖曳結束動畫。
--   使用拖曳結束動畫搭配新增和刪除清單的動畫。
--   若要在拖曳結束動畫中包含受影響的物件，拖曳開始動畫中也必須包含這些相同的受影響物件。
--   如果沒有先使用拖曳開始動畫，不要使用拖曳結束動畫。 您必須同時使用這兩個動畫，才能在完成拖曳序列之後將物件回復到原來的大小。
-
-**拖曳到物件之間進入動畫**
-
--   當使用者將拖曳來源拖曳到兩個其他物件之間可以放下的放下區域時，使用拖曳到物件之間進入動畫。
--   選擇合理的放置目標區域。 這個區域不應太小，否則使用者很難放置要放下的拖曳來源。
--   移動受影響物件以顯示放下區域的建議方向是直接將彼此拉開。 要進行垂直或水平移動則會根據受影響物件彼此之間的方向而定。
--   請勿在無法放置拖曳來源的區域使用拖曳到物件之間進入動畫。 拖曳到物件之間進入動畫會告訴使用者拖曳來源可以在受影響物件之間放下。
-
-**拖曳到物件之間離開動畫**
-
--   當使用者將物件拖曳移開兩個其他物件之間可能放下的區域時，使用拖曳到物件之間離開動畫。
--   如果沒有先使用拖曳到物件之間進入動畫，則不要使用拖曳到物件之間離開動畫。
+## Do's and don'ts
 
 
-## 相關文章
+**Drag start animation**
 
-**適用於開發人員 (XAML)**
-* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓拖放序列產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243180)
+-   Use the drag start animation when the user begins to move an object.
+-   Include affected objects in the animation if and only if there are other objects that can be affected by the drag-and-drop operation.
+-   Use the drag end animation to complete any animation sequence that began with the drag start animation. This reverses the size change in the dragged object that was caused by the drag start animation.
+
+**Drag end animation**
+
+-   Use the drag end animation when the user drops a dragged object.
+-   Use the drag end animation in combination with add and delete animations for lists.
+-   Include affected objects in the drag end animation if and only if you included those same affected objects in the drag start animation.
+-   Don't use the drag end animation if you have not first used the drag start animation. You need to use both animations to return objects to their original sizes after the drag sequence is complete.
+
+**Drag between enter animation**
+
+-   Use the drag between enter animation when the user drags the drag source into a drop area where it can be dropped between two other objects.
+-   Choose a reasonable drop target area. This area should not be so small that it is difficult for the user to position the drag source for the drop.
+-   The recommended direction to move affected objects to show the drop area is directly apart from each other. Whether they move vertically or horizontally depends on the orientation of the affected objects to each other.
+-   Don't use the drag between enter animation if the drag source cannot be dropped in an area. The drag between enter animation tells the user that the drag source can be dropped between the affected objects.
+
+**Drag between leave animation**
+
+-   Use the drag between leave animation when the user drags an object away from an area where it could have been dropped between two other objects.
+-   Don't use the drag between leave animation if you have not first used the drag between enter animation.
+
+
+## Related articles
+
+**For developers (XAML)**
+* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animating drag-and-drop sequences](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
+* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
+* [**DropTargetItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243186)
+* [**DragOverThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
  
@@ -71,6 +71,6 @@ ms.openlocfilehash: c975ba3d03c06009710f4f57edf8a4cc517ad90c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

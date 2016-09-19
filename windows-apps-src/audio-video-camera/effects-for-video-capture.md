@@ -1,84 +1,85 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "這個主題說明適用於視訊擷取案例的效果。 其中包括影像防震效果。"
-title: "視訊擷取的效果"
+description: This topic shows you how to use the video stabilization effect.
+title: Effects for video capture
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
+ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ---
 
-# 視訊擷取的效果
+# Effects for video capture
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-這個主題說明適用於視訊擷取案例的效果。 其中包括影像防震效果。
+This topic shows you how to use the video stabilization effect.
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE] 
+> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
 
-## 影像防震效果
+## Video stabilization effect
 
-影像防震效果會處理視訊串流的框架，將手持擷取裝置造成搖晃的情況減到最少。 因為這項技術會導致像素右移、左移、上移和下移，也因為此效果無從得知超出視訊框架外的內容是什麼，所以會稍微裁剪原始視訊來得到防震視訊。 有一個公用程式函式可讓您調整視訊編碼設定，以最佳方式管理此效果所執行的裁剪工作。
+The video stabilization effect manipulates the frames of a video stream to minimize shaking caused by holding the capture device in your hand. Because this technique causes the pixels to be shifted right, left, up, and down, and because the effect can't know what the content just outside the video frame is, the stabilized video is cropped slightly from the original video. A utility function is provided to allow you to adjust your video encoding settings to optimally manage the cropping performed by the effect.
 
-在支援光學影像防震 (OIS) 的裝置上，OIS 會操作擷取裝置的機械來穩定視訊，因此不需要裁剪視訊畫面的邊緣。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)。
+On devices that support it, Optical Image Stabilization (OIS) stabilizes video by mechanically manipulating the capture device and, therefore, does not need to crop the edges of the video frames. For more information, see [Capture device controls for video capture](capture-device-controls-for-video-capture.md).
 
-### 將您的 app 設定為使用影像防震
+### Set up your app to use video stabilization
 
-除了基本媒體擷取所需的命名空間，使用影像防震效果還需要下列命名空間。
+In addition to the namespaces required for basic media capture, using the video stabilization effect requires the following namespace.
 
 [!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
-宣告成員變數來儲存 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 物件。 在效果實作中，您將會修改擷取到的視訊在編碼時所用的編碼屬性。 宣告兩個變數來儲存初始輸入和輸出編碼屬性的備份，以便稍後停用效果時可以還原屬性。 最後，因為將會從程式碼內的多個位置存取此物件，請宣告 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 類型的成員變數。
+Declare a member variable to store the [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) object. As part of the effect implementation, you will modify the encoding properties that you use to encode the captured video. Declare two variables to store a backup copy of the initial input and output encoding properties so that you can restore them later when the effect is disabled. Finally, declare a member variable of type [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) because this object will be accessed from multiple locations within your code.
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-在[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)文章所描述的基本視訊擷取實作中，因為媒體編碼設定檔物件不在程式碼中的其他地方使用，所以指派給區域變數。 在這個案例中，您應該將此物件指派給成員變數，以便稍後存取。
+For this scenario, you should assign the media encoding profile object to a member variable so that you can access it later.
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
-### 初始化影像防震效果
+### Initialize the video stabilization effect
 
-在 **MediaCapture** 物件初始化之後，建立 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 物件的新執行個體。 呼叫 [**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) 將此效果加入至視訊管線，並擷取 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 類別的執行個體。 指定 [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) 表示將此效果套用至視訊錄製資料流。
+After your **MediaCapture** object has been initialized, create a new instance of the [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) object. Call [**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) to add the effect to the video pipeline and retrieve an instance of the [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) class. Specify [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video record stream.
 
-註冊 [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) 事件的事件處理常式，並呼叫協助程式方法 **SetUpVideoStabilizationRecommendationAsync**，本文稍後討論這兩項。 最後，將此效果的 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) 屬性設為 true 來啟用效果。
+Register an event handler for the [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) event and call the helper method **SetUpVideoStabilizationRecommendationAsync**, both of which are discussed later in this article. Finally, set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) property of the effect to true to enable the effect.
 
 [!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
-### 使用建議的編碼屬性
+### Use recommended encoding properties
 
-如本文稍早所述，影像防震效果所採用的技術，一定會稍微裁剪原始視訊來得到防震視訊。 在程式碼中定義下列 Helper 函式，經由調整視訊編碼屬性，以最佳方式處理效果的這項限制。 使用影像防震效果並不需要此步驟，但如果您不執行此步驟，產生的影片會稍微放大，因而稍微降低視覺逼真度。
+As discussed earlier in this article, the technique that the video stabilization effect uses necessarily causes the stabilized video to be cropped slightly from the source video. Define the following helper function in your code in order to adjust the video encoding properties to optimally handle this limitation of the effect. This step is not required in order to use the video stabilization effect, but if you don't perform this step, the resulting video will be upscaled slightly and therefore have slightly lower visual fidelity.
 
-在影像防震效果執行個體上呼叫 [**GetRecommendedStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948983)，傳入 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 物件，讓效果知道您目前的輸入資料流編碼屬性，並傳入 **MediaEncodingProfile**，讓效果知道您目前的輸出編碼屬性。 這個方法會傳回 [**VideoStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn926727) 物件，其中包含最新建議的輸入和輸出資料流編碼屬性。
+Call [**GetRecommendedStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948983) on your video stabilization effect instance, passing in the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) object, which informs the effect about your current input stream encoding properties, and your **MediaEncodingProfile** which lets the effect know your current output encoding properties. This method returns a [**VideoStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn926727) object containing new recommended input and output stream encoding properties.
 
-建議的輸入編碼屬性 (如果裝置支援) 是比您提供的初始設定更高的解析度，因此在套用效果裁剪之後，解析度損失最少。
+The recommended input encoding properties are, if it is supported by the device, a higher resolution that the initial settings you provided so that there is minimal loss in resolution after the effect's cropping is applied.
 
-呼叫 [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) 設定新的編碼屬性。 設定新的屬性之前，請使用成員變數來儲存初始編碼屬性，以便停用效果時可以恢復設定。
+Call [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) to set the new encoding properties. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.
 
-如果影像防震效果必須裁剪輸出視訊，則建議的輸出編碼屬性為裁剪後的視訊大小。 這表示輸出解析度會符合裁剪的視訊大小。 如果您不使用建議的輸出屬性，則視訊會放大以符合初始輸出大小，而這會導致視覺逼真度降低。
+If the video stabilization effect must crop the output video, the recommended output encoding properties will be the size of the cropped video. This means that the output resolution will match the cropped video size. If you do not use the recommended output properties, the video will be scaled up to match the initial output size, which will result in a loss of visual fidelity.
 
-設定 **MediaEncodingProfile** 物件的 [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) 屬性。 設定新的屬性之前，請使用成員變數來儲存初始編碼屬性，以便停用效果時可以恢復設定。
+Set the [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) property of the **MediaEncodingProfile** object. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.
 
 [!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
-### 處理停用的影像防震效果
+### Handle the video stabilization effect being disabled
 
-如果像素輸送量太高，超過防震效果的處理能力，或如果系統偵測到效果執行速度變慢，則系統可能會自動停用影像防震效果。 如果發生這種情況，則會引發 EnabledChanged 事件。 *sender* 參數中的 **VideoStabilizationEffect** 執行個體指出效果的新狀態：啟用或停用。 [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值，指出效果啟用或停用的原因。 請注意，如果您以程式設計方式啟用或停用效果，則也會引發這個事件，在此情況下原因是 **Programmatic**。
+The system may automatically disable the video stabilization effect if the pixel throughput is too high for the effect to handle or if it detects that the effect is running slowly. If this occurs, the EnabledChanged event is raised. The **VideoStabilizationEffect** instance in the *sender* parameter indicates the new state of the effect, enabled or disabled. The [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) has a [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) value indicating why the effect was enabled or disabled. Note that this event is also raised if you programmatically enable or disable the effect, in which case the reason will be **Programmatic**.
 
-通常您會使用此事件來調整您 app 的 UI，指示目前的影像防震狀態。
+Typically, you would use this event to adjust your app's UI to indicate the current status of video stabilization.
 
 [!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
-### 清除影像防震效果
+### Clean up the video stabilization effect
 
-若要清除影像防震效果，請呼叫 [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592)，清除視訊管線中的所有效果。 如果包含初始編碼屬性的成員變數不是 Null，請使用它們來還原編碼屬性。 最後，移除 **EnabledChanged** 事件處理常式並將效果設定為 Null。
+To clean up the video stabilization effect, call [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) to clear all effects from the video pipeline. If the member variables containing the initial encoding properties are not null, use them to restore the encoding properties. Finally, remove the **EnabledChanged** event handler and set the effect to null.
 
 [!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
-## 相關主題
+## Related topics
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -89,6 +90,6 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

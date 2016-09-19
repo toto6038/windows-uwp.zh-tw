@@ -1,69 +1,69 @@
 ---
 author: jwmsft
-description: "連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。"
-title: "TemplateBinding 標記延伸"
+description: Links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML.
+title: TemplateBinding markup extension
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1a8006e58391c41568731810d9b1901474e8d18f
+ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 
 ---
 
-# {TemplateBinding} 標記延伸
+# {TemplateBinding} markup extension
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 **TemplateBinding** 只能在 XAML 的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義中使用。
+Links the value of a property in a control template to the value of some other exposed property on the templated control. **TemplateBinding** can only be used within a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML.
 
-## XAML 屬性用法
+## XAML attribute usage
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 屬性用法 (適用於範本或樣式中的 Setter 屬性)
+## XAML attribute usage (for Setter property in template or style)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 值
+## XAML values
 
-| 詞彙 | 說明 |
+| Term | Description |
 |------|-------------|
-| propertyName | 正在 setter 語法中設定的屬性的名稱。 必須是相依性屬性。 |
-| sourceProperty | 存在於範本化類型中其他相依性屬性的名稱。 |
+| propertyName | The name of the property being set in the setter syntax. This must be a dependency property. |
+| sourceProperty | The name of another dependency property that exists on the type being templated. |
 
-## 備註
+## Remarks
 
-不論您是一個自訂控制項作者，還是要取代現有控制項的控制項範本，定義控制項範本的方法時，使用 **TemplateBinding** 是相當基礎的一個部分。 如需詳細資訊，請參閱[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
+Using **TemplateBinding** is a fundamental part of how you define a control template, either if you are a custom control author or if you are replacing a control template for existing controls. For more info, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-讓 *propertyName* 與 *targetProperty* 使用相同的屬性名稱是相當常見的做法。 在這個情況下，控制項可以在本身定義一個屬性，然後將該屬性轉送到它的其中一個元件部分的現有直覺式具名屬性。 例如，組合中併入 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的控制項 (用來顯示控制項擁有的 **Text** 屬性) 可能會包含這個 XAML 以做為控制項範本的一部分： `<TextBlock Text="{TemplateBinding Text}" .... />`
+It's fairly common for *propertyName* and *targetProperty* to use the same property name. In this case, a control might define a property on itself and forward the property to an existing and intuitively named property of one of its component parts. For example, a control that incorporates a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) in its compositing, which is used to display the control's own **Text** property, might include this XAML as a part in the control template: `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-用來做為來源屬性值和目標屬性值的類型必須相符。 當您正在使用 **TemplateBinding** 時，沒有機會可以引入轉換器。 這樣在剖析 XAML 時會因為無法比對值而產生錯誤。 如果您需要轉換器，可以針對範本繫結使用動詞語法，例如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+The types used as the value for the source property and the target property must match. There's no opportunity to introduce a converter when you're using **TemplateBinding**. Failing to match values results in an error when parsing the XAML. If you need a converter you can use the verbose syntax for a template binding such as: `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
-嘗試在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義之外使用 **TemplateBinding** 會導致剖析器錯誤。
+Attempting to use a **TemplateBinding** outside of a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML will result in a parser error.
 
-您可以針對範本化的父系值也會延遲為其他繫結的情況，使用 **TemplateBinding**。 **TemplateBinding** 的評估會等到所有必要的執行階段繫結都有值之後才進行。
+You can use **TemplateBinding** for cases where the templated parent value is also deferred as another binding. The evaluation for **TemplateBinding** can wait until any required runtime bindings have values.
 
-**TemplateBinding** 一律是單向繫結。 內含的兩個屬性都必須是相依性屬性。
+A **TemplateBinding** is always a one-way binding. Both properties involved must be dependency properties.
 
-**TemplateBinding** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
+**TemplateBinding** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "{" and "}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
 
-**注意：**在 Windows 執行階段 XAML 處理器實作中，沒有 **TemplateBinding** 的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
+**Note**  In the Windows Runtime XAML processor implementation, there is no backing class representation for **TemplateBinding**. **TemplateBinding** is exclusively for use in XAML markup. There isn't a straightforward way to reproduce the behavior in code.
 
-## 相關主題
+## Related topics
 
-* [快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
-* [XAML 概觀](xaml-overview.md)
-* [相依性屬性概觀](dependency-properties-overview.md)
+* [XAML overview](xaml-overview.md)
+* [Dependency properties overview](dependency-properties-overview.md)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

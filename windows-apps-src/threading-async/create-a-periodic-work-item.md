@@ -1,35 +1,35 @@
 ---
 author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: "建立定期工作項目"
-description: "了解如何建立定期重複執行的工作項目。"
+title: Create a periodic work item
+description: Learn how to create a work item that repeats periodically.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
+ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
 
 ---
-# 建立定期工作項目
+# Create a periodic work item
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+** Important APIs **
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
 
-了解如何建立定期重複執行的工作項目。
+Learn how to create a work item that repeats periodically.
 
-## 建立定期工作項目
+## Create the periodic work item
 
-使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 方法來建立定期工作項目。 提供可完成工作的 Lambda，並且使用 *period* 參數指定提交間隔。 期間使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 結構指定。 每次期間過後工作項目就會重新提交，因此請確定期間長度足以完成工作。
+Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 會傳回 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 物件。 請將這個物件儲存起來，以防需要取消計時器。
+[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) returns a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) object. Store this object in case the timer needs to be canceled.
 
-> **注意** 請不要指定零值 (或任何小於 1 毫秒的值) 作為間隔值。 這會讓定期計時器變得像是單次計時器。
+> **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
 
-> **注意** 您可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 從工作項目存取 UI 及顯示進度。
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
 
-下列範例會建立一個每隔 60 秒執行一次的工作項目：
+The following example creates a work item that runs once every 60 seconds:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -81,11 +81,11 @@ ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 >         }), period);
 > ```
 
-## 處理定期工作項目的取消 (選用)
+## Handle cancellation of the periodic work item (optional)
 
-如有必要，您可以使用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) 處理定期計時器的取消。 使用 [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) 超載提供其他可處理定期工作項目取消的 Lambda。
+If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) overload to supply an additional lambda that handles cancellation of the periodic work item.
 
-下列範例會建立一個每 60 秒重複一次的定期工作項目，同時提供取消處理常式：
+The following example creates a periodic work item that repeats every 60 seconds and it also supplies a cancellation handler:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -180,9 +180,9 @@ ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 >         }));
 > ```
 
-## 取消計時器
+## Cancel the timer
 
-必要時，可呼叫 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法來停止定期工作項目避免重複。 如果在工作項目執行中取消定期計時器，該工作項目還是可以繼續完成。 所有定期工作項目的執行個體都完成時，就會呼叫 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (若提供的話)。
+When necessary, call the [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (if provided) is called when all instances of the periodic work item have completed.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -192,20 +192,20 @@ ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 > PeriodicTimer->Cancel();
 > ```
 
-## 備註
+## Remarks
 
-如需單次計時器的詳細資訊，請參閱[使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)。
+For information about single-use timers, see [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md).
 
-## 相關主題
+## Related topics
 
-* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
-* [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
-* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,113 +1,129 @@
 ---
 author: jnHs
-Description: "如果您的應用程式使用 AdMediatorControl 或 AdControl 來顯示橫幅廣告，您可以在您的應用程式中顯示 Microsoft 聯盟廣告，以提高您的廣告投放率和營收。"
-title: "套件正式發行前小眾測試版"
+Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
+title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 translationtype: Human Translation
-ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
-ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
+ms.sourcegitcommit: baa8212b7ec26be1f50e051fa06bff4bf8095227
+ms.openlocfilehash: 34321a5fd3db10833b958049597ebf830599cfb4
 
 ---
 
-# 套件正式發行前小眾測試版
+# Package flights
 
-您可以使用「套件正式發行前小眾測試版」，將套件發佈至有限的測試群組。 
+You can use package flights to distribute packages that are only given to a limited test group. 
 
-「套件正式發行前小眾測試版」可讓您將不同的套件提供給指定的一組測試人員，而不會中斷您其他客戶的體驗。 僅有套件不同；[市集] 列出的詳細資料對您所有的客戶來說都會是一樣的。
+Package flights allow you to provide different packages to designated set of testers without disrupting the experience of your other customers. Only the packages are different; the Store listing details will be the same for all of your customers.
 
-請注意，套件正式發行前小眾測試版必須通過[認證程序](the-app-certification-process.md)，此程序與一般非正式發行前小眾測試版的提交相同。 如果您之後決定要從提供給您所有客戶使用的套件正式發行前小眾測試版製作套件，可以如上所述，將那些套件拉到您的非正式發行前小眾測試版提交中。
+Note that package flights must pass the [certification process](the-app-certification-process.md), just the same as a regular, non-flighted submission. If you later decide that you want to make packages from a package flight available to all your customers, you can pull those packages into your non-flighted submission as described below.
 
-當您設定套件正式發行前小眾測試版時，可以透過將人員新增到正式發行前小眾測試版群組來選擇應取得特定套件的特定人員。 正式發行前小眾測試版群組中正在使用執行 Windows 10 某一版本，且支援套件正式發行前小眾測試版 (Windows.Desktop build 10586 或更新版本； Windows.Mobile build 10586.63 或更新版本) 之裝置的任何人，都能夠從您為該特定群組設計的套件正式發行前小眾測試版取得套件。 尚未新增至您其中一個正式發行前小眾測試版群組，或正在使用的裝置不支援套件正式發行前小眾測試版的任何人員，則將從非正式發行前小眾測試版提交取得套件。
+When you set up package flights, you can choose the specific people who should get specific packages by adding them to a flight group. Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
 
-在您提交 app 之後，您會在 [應用程式概觀] 頁面上看到 [套件正式發行前小眾測試版]**** 區段。 按一下 [新建套件正式發行前小眾測試版]**** 來開始。 如果您尚未設定任何正式發行前小眾測試版群組，系統會提示您建立，才能繼續進行。
+> **Important** On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your flight group).
 
-## 建立新的正式發行前小眾測試版群組
+Note that package flights will not be distributed via the [Windows Store for Business](https://www.microsoft.com/business-store). This is because people in your flight groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via the Windows Store for Business will receive your non-flighted packages.
 
-正式發行前小眾測試版群組可讓您指定您想要包含在群組中的人員。 為了取得您的正式發行前小眾測試版套件，每個人員都必須使用與您所提供之電子郵件地址相關聯的 Microsoft 帳戶於市集中通過驗證，且必須使用 Windows 10 裝置 (如上述指定裝置) 才能下載應用程式。
+> **Tip** Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 
-當您建立正式發行前小眾測試版群組時，您必須為其提供名稱。 每個正式發行前小眾測試版群組必須包含至少一個電子郵件地址，最多 10,000 個電子郵件地址。 您可以直接將電子郵件地址輸入欄位中 (以空格、逗號或分號區隔)，或者您可以按一下 [Import .csv]**** 連結，來從 .csv 檔的電子郵件地址清單建立正式發行前小眾測試版群組。
+> Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via the Windows Store for Business. 
 
-按一下 [建立群組]**** 來儲存群組，並繼續設定套件正式發行前小眾測試版。
+After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started. If you haven't set up any flight groups yet, you'll be prompted to create one before you can proceed.
 
-> **重要：**將人員新增至您的正式發行前小眾測試版群組時，必須確定您已經取得該人員的同意，而且他們瞭解他們將取得和您非正式發行前小眾測試版提交不同的套件。 
-> 您也可以考慮使用套件正式發行前小眾測試版的人員可透過哪些方式提供您應用程式相關意見反應。 我們建議[將控制項新增到您的 app 中以啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)，以便客戶直接發表自己的意見；您可以接著在您 app 的[意見反應報告](feedback-report.md)中檢閱他們的意見反應)。
+## Create a new flight group
 
-之後若要編輯您的正式發行前小眾測試版群組，可以按一下 **Export .csv** 將您的群組資訊儲存至 .csv 檔案。 在這個檔案中變更，然後按一下 **Import .csv** 來使用新版本更新群組成員。 請注意，這可能需要最多 30 分鐘來實作正式發行前小眾測試版群組成員變更。 如果您在發行套件正式發行前小眾測試版之後，將人員加入相關的正式發行前小眾測試版群組，套件將會自動傳遞給新的人員，您不需要針對該套件正式發行前小眾測試版發行新的提交。 
+Flight groups let you specify the people that you'd like to include in the group. In order to get your flighted packages, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide, and must be using a Windows 10 device (as specified above) to download the app.
 
-## 建立新的套件正式發行前小眾測試版
+When you create a flight group, you must give it a name. Each flight group must contain at least one email address, with a maximum of 10,000 email addresses. You can enter email addresses directly into the field (separated by spaces, commas, or semicolons), or you can click the **Import .csv** link to create the flight group from a list of email addresses in a .csv file.
 
-在您建立第一個正式發行前小眾測試版群組之後，您可以看到一個讓您新增詳細資料以完成設定的頁面。 您將需要提供一個名稱給套件正式發行前小眾測試版，並至少指定一個正式發行前小眾測試版群組。 如果您想要設定新的群組，您可以從此頁面進行。
+Click **Create group** to save the group and continue setting up the package flight.
 
-在您輸入名稱並選取正式發行前小眾測試版群組之後，按一下 [建立正式發行前小眾測試版]****。 您之後將無法變更這些詳細資料 (但您隨時可以將它刪除，並建立一個新的套件正式發行前小眾測試版來使用)。
+> **Important** Be sure that you have obtained any necessary consent from people that you add to your flight group, and that they understand that they will be getting packages that are different from your non-flighted submission. 
+> You may also want to consider how the people in your package flight can give you their input about the app. We suggest [adding a control into your app to launch Feedback Hub](../monetize/launch-feedback-hub-from-your-app.md) so that customers can provide their input directly; you can then review their feedback in your app's [Feedback report](feedback-report.md)).
 
-> 注意：如果您有多個套件正式發行前小眾測試版，您將需要為它們指派排名。 如需詳細資訊，請參閱下面的「新增並排名其他套件正式發行前小眾測試版」。
+To edit your flight group later, you can click **Export .csv** to save your group info to a .csv file. Make your changes in this file, then click **Import .csv** to use the new version to update the group membership. Note that it may take up to 30 minutes for flight group membership changes to be implemented. If you add people to a flight group after you've published an associated package flight, the packages will be delivered to the new people automatically; you don't have to create and publish a new submission for that package flight. 
 
-## 指定要包含在您套件正式發行前小眾測試版中的套件
+## Create a new package flight
 
-在您儲存套件正式發行前小眾測試版詳細資料之後，您會看到其概觀頁面。 按一下 [套件]**** 來指定您想要包含在正式發行前小眾測試版中的套件。
+After you've created your first flight group, you'll see a page where you can add details to complete setting it up. You'll need to give the package flight a name and specify at least one flight group. If you want to set up a new group, you can do that from this page.
 
-您可以選取與之前發行的提交 (非正式發行前小眾測試版提交，或如果您有多個其他套件正式發行前小眾測試版，可選取其中之一) 相關聯的套件。 如果您需要[上傳新套件](upload-app-packages.md)以用於此套件正式發行前小眾測試版，可以在這裡上傳 (使用和您上傳應用程式套件至一般非正式發行前小眾測試版提交時相同的程序)。 當您完成指定此套件正式發行前小眾測試版中要包含的套件時，按一下 [儲存]****。
+Click **Create flight** once you've entered the name and selected the flight group(s). You won't be able to change these details later (though you can always delete it and create a new package flight to use instead).
 
-如果您的 App 支援多種裝置系列，請確定您在您的正式發行前小眾測試版中包含支援相同裝置系列的套件。 正式發行前小眾測試版群組中的人員將**只能**取得該正式發行前小眾測試版中的套件。 他們將無法存取其他正式發行前小眾測試版或非正式發行前小眾測試提交的套件。 
+> Note  If you have more than one package flight, you'll need to assign a rank to each one. For more info, see Add and rank additional package flights below.
 
-同時請記得您的 [市集] 清單資訊來自非正式發行前小眾測試提交，包括哪個裝置系列支援您的 app。 正式發行前小眾測試版群組中的客戶只能下載由您的非正式發行前小眾測試提交所支援的裝置系列上的 App。 如需詳細資訊，請參閱[裝置系列支援](#device-family-support)。 
+## Specify packages to include in your package flight
 
-## 設定其他套件正式發行前小眾測試版選項
+After you've saved your package flight details, you'll see its overview page. Click **Packages** to specify the packages you'd like to include in the flight.
 
-依照預設，您的套件正式發行前小眾測試版會在完成認證程序之後，立即發佈並提供給您的正式發行前小眾測試版群組使用。 如果您想要變更[發行日期](set-app-pricing-and-availability.md#publish-date)，或想要新增[認證注意事項](notes-for-certification.md)，您可以在 [選項]**** 區段中進行。 按一下 [儲存]**** 回到套件正式發行前小眾測試版概觀頁面。 
+You have the option to select packages that were associated with a previous published submission (either a non-flighted submission, or one of your other package flights, if you have more than one). If you need to [upload new packages](upload-app-packages.md) to use for this package flight, you can upload them here (using the same process as when you upload app packages to a regular non-flighted submission). Click **Save** when you have finished specifying the packages to be included in this package flight.
 
-## 將您的套件正式發行前小眾測試版提交至市集
+If your app supports multiple device families, make sure you include packages to support the same set of device families in your flight. People in your flight groups will **only** be able to get packages from that flight. They won't be able to access packages from other flights, or from your non-flighted submission. 
 
-當您已指定套件並設定任何必要的選項時，按一下 [提交至市集]****。 您的套件正式發行前小眾測試版將會進行 [app 認證程序](the-app-certification-process.md)。 請注意，您的套件正式發行前小眾測試版中包含的套件，必須遵守 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)，就像所有提交一樣。
+Also remember that your Store listing info comes from your non-flighted submission, including which device families your app supports. customers in your flight groups will only be able to download the app on a device family that is supported by your non-flighted submission. For more info, see [Device family support](#device-family-support). 
 
-與該套件正式發行前小眾測試版關聯之正式發行前小眾測試版群組中已經擁有您的應用程式的人員，現在將可使用您套件正式發行前小眾測試版中包含的套件取得更新。 如果那些人員尚未擁有您的應用程式，它們將在安裝應用程式時，從您的套件正式發行前小眾測試版取得套件。 
+## Gradual package rollout
 
-> 注意：擁有只在套件正式發行前小眾測試版中提供之套件的人員，可以使用星星為 app 評等並留下評論，但他們的評分與評論將不會向其他客戶顯示。 (這會排除舊版 7.x 或 8.0 XAP 套件；其他客戶將看得見正式發行前小眾測試版群組的成員使用這些套件提供的評分和評論)。您可以在 app 的評分和評論報告中看見所有客戶 (包括正式發行前小眾測試版群組中的客戶) 的意見反應。
+By default, the packages in your submission will be made available to everyone in your flight group at the same time. To change this, you can check the box that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. You can choose a percentage of people in your flight group to get the packages from the new submission, so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly to the rest of the flight group. You can increase the percentage (or halt the update) any time without having to create a new submission for your package flight. 
 
-## 裝置系列支援
+> **Important** When gradually rolling out packages in a package flight, the people who aren't included in the percentage which gets your new packages will get the packages from the previous package flight submission (unless there is a higher-ranked flight available to them).
 
-在大部分情況下，您會想要包含所支援之裝置系列與非正式發行前小眾測試版提交相同的套件。 App 的裝置系列可用性一律根據非正式發行前小眾測試提交，無論客戶是否在正式發行前小眾測試版群組中。
+For more info, see [Gradual package rollout](gradual-package-rollout.md).
 
-**如果非正式發行前小眾測試提交支援您的套件正式發行前小眾測試版不支援的裝置系列**，正式發行前小眾測試版群組中的人員將無法下載該裝置系列上的 App。 例如，如果非正式發行前小眾測試提交包含「行動裝置」和「傳統型」套件，且您之後建立只包含「行動裝置」套件的套件正式發行前小眾測試版，則正式發行前小眾測試版群組中的人員將只能夠下載行動裝置上的 App，即使您具有可供不在該正式發行前小眾測試版中客戶使用的「傳統型」套件。 即使您只使用套件正式發行前小眾測試版來測試您的「行動裝置」套件中的變更，您應該在套件正式發行前小眾測試版中包含非正式發行前小眾測試提交的「傳統型」套件，讓正式發行前小眾測試版群組中的客戶能夠在傳統型裝置上下載您的 App。
+## Configure additional package flight options
 
-**如果您的套件正式發行前小眾測試版支援您的非正式發行前小眾測試提交不支援的裝置系列**，則沒有人能夠下載該裝置系列上的 App，無論他們是否在您的正式發行前小眾測試版群組中。 例如，如果非正式發行前小眾測試提交只包含「行動裝置」套件，且您之後建立同時包含「行動裝置」和「傳統型」套件的套件正式發行前小眾測試版，正式發行前小眾測試版群組中的人員仍將僅能在行動裝置上下載 App。 「傳統型」套件不會提供給任何人，即使是在您正式發行前小眾測試版群組中的人員。 如果您想要將傳統型套件提供給您正式發行前小眾測試版群組中的人員，您需要先更新您的非正式發行前小眾測試提交，以包含傳統型套件。 針對所有您 App 的客戶最加體驗，非正式發行前小眾測試提交應該支援與您的套件正式發行前小眾測試版相同的裝置系列。 
+By default, your package flight will be published and made available to your flight group as soon as it completes the certification process. If you'd like to change the [publish date](set-app-pricing-and-availability.md#publish-date), or want to add [Notes for certification](notes-for-certification.md), you can do so in the **Options** section. Click **Save** to return to the package flight overview page. 
 
-**注意：**新增到您套件正式發行前小眾測試版的套件可以支援任何作業系統版本 (或任何 Windows 10 組建)，但如上所述，正式發行前小眾測試版群組中的人員必須使用執行之 Windows 10 版本 (Windows.Desktop 組建 10586 或更新版本；Windows.Mobile 組建 10586.63 或更新版本) 支援套件正式發行前小眾測試版的裝置，以取得套件正式發行前小眾測試版的套件。
+## Submit your package flight to the Store
 
-## 更新或修改您的套件正式發行前小眾測試版
+When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). Note that packages included in your package flight must comply with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx), as with all submissions.
 
-若要從現有的套件正式發行前小眾測試版建立新的提交，請按一下您的 [應用程式概觀] 頁面上正式發行前小眾測試版名稱旁邊的 [更新]****。 然後您可以上傳新的套件 (並移除不需要的套件)，就像在非正式發行前小眾測試版提交中所做的一樣。 進行任何其他需要的變更，然後按一下 [提交至市集]**** 來透過[應用程式認證程序](the-app-certification-process.md)傳送更新的套件正式發行前小眾測試版。
+People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
 
-若要修改現有的正式發行前小眾測試版，但不建立和提交新的更新，按一下正式發行前小眾測試版名稱旁邊的 [修改]****。 這可讓您變更詳細資料 (例如正式發行前小眾測試版群組、名稱及排名)，而套件正式發行前小眾測試版不需要再次經歷認證程序。
+> Note  People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. (This excludes legacy 7.x or 8.0 XAP packages; ratings and reviews left by members of your flight groups using those packages will be visible to other customers.) You can see their feedback from all customers, including those in your flight groups, in the Ratings and Reviews reports for the app.
 
-## 新增並排名其他套件正式發行前小眾測試版
+## Device family support
 
-您可以對相同的應用程式建立多個套件正式發行前小眾測試版，以提供幾個不同的套件給不同組的客戶。 
+In most cases, you’ll want to include packages that support the same set of device families supported by your non-flighted submission. Device family availability for an app will always be based on the non-flighted submission, whether or not a customer is in a flight group.
 
-在您已建立第一個套件正式發行前小眾測試版之後，您可依照上述概略說明的程序建立其他套件正式發行前小眾測試版。 唯一的差異是如果您已經建立一個套件正式發行前小眾測試版，您將需要在 [排名]**** 區段中指定所有套件正式發行前小眾測試版的優先順序。 這可以讓市集判斷要將哪一個套件提供給任何獨立客戶，即使客戶是您多個正式發行前小眾測試版群組的成員。 正式發行前小眾測試版群組中的人員將永遠能夠取得提供給他們使用的最高排名套件正式發行前小眾測試版，即使較低排名的套件正式發行前小眾測試版包含版本號碼較大的套件也一樣。
+**If your non-flighted submission supports a device family that your package flight doesn’t support**, people in your flight group won’t be able to download the app on that device family. For example, if your non-flighted submission includes Mobile and Desktop packages, and you then create a package flight that only includes a Mobile package, people in your flight group will only be able to download the app on mobile devices, even though you do have a desktop package available to customers who aren’t in the flight. Even if you're only using the package flight to test changes in your Mobile package, you should include the Desktop package from your non-flighted submission in the package flight so that customers in the flight group are able to download your app on desktop devices.
 
-依照預設，您的新套件正式發行前小眾測試版將取得最高排名。 如果您想要變更其排名，可以將它向下移動 (或向上移動) 來將它置於您其他套件正式發行前小眾測試版之間的正確位置。
+**If your package flight supports a device family that your non-flighted submission doesn’t support**, no one will be able to download the app on that device family, whether they’re in your flight group or not. For example, if your non-flighted submission only includes a Mobile package, and you then create a package flight that includes both Mobile and Desktop packages, people in your flight group will still only be able to download the app on mobile devices. The desktop package won’t be offered to anyone, even people in your flight group. If you want to make a desktop package available to people in your flight group, you’ll need to first update your non-flighted submission to include a desktop package. For the best experience for all of your app’s customers, your non-flighted submission should support the same device families as your package flight. 
 
-請注意，您的非正式發行前小眾測試版提交一律會取得最低排名。 也就是說，不在您任何正式發行前小眾測試版群組中的人員，只能透過市集從非正式發行前小眾測試版提交中取得套件。 正式發行前小眾測試版群組中的人員將一律可以從提供給他們使用的最高排名套件正式發行前小眾測試版取得套件 (但一律無法從非正式發行前小眾測試版取得套件)。 這可以在您要決定如何將套件散發給可能是您多個正式發行前小眾測試版群組成員的人員時，提供您一些彈性。
+**Note**  Packages added to your package flights can support any OS version (or any build of Windows 10), but as noted above, people in flight groups must be using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later) in order to get packages from the package flight.
 
-例如，假設除了一般非正式發行前小眾測試版提交之外，您還想要建立兩個套件正式發行前小眾測試版：一個是相對穩定且已可供大範圍客戶測試的版本，另一個則是尚未確定且想要限制只提供給少數測試人員測試的版本。 您可以建立名為 Testers 的正式發行前小眾測試版群組，並在名為 Tester Flight 的套件正式發行前小眾測試版中包含該群組，然後建立成員人數較多且名為 Enthusiasts 的正式發行前小眾測試版群組，並在名為 Enthusiast Flight 的另一個套件正式發行前小眾測試版中包含該群組。 如果您讓 Tester Flight 的排名高於 Enthusiast Flight 的排名，您可以在 Enthusiast Flight 中使用您認為相當穩定的套件，並只在 Tester Flight 使用為 Testers 設計且風險較高的套件。 您 Testers 群組的成員將會一律取得您在 Tester Flight 中提供的套件，即使他們也是您 Enthusiasts 群組中的成員也一樣。 (之後，如果 Tester Flight 中的套件運作情況良好，您可以將 Enthusiast Flight 更新為使用原先散發給 Tester Flight 的套件 — 並且或許最後可在您的非正式發行前小眾測試版提交中使用那些套件。)
+## Update or modify your package flight
 
-## 從提供給您所有客戶使用的套件正式發行前小眾測試版製作套件
+To create a new submission for an existing package flight, click **Update** next to the flight name on your App overview page. You can then upload new packages (and remove unneeded packages), just as you would with a non-flighted submission. Make any other needed changes, and then click **Submit to the Store** to send the updated package flight through the [app certification process](the-app-certification-process.md).
 
-如果您決定已發佈之套件正式發行前小眾測試版中包含的一或多個套件，應提供給不在正式發行前小眾測試版群組中的客戶使用，您可以更新非正式發行前小眾測試版提交以使用那些套件，不需要再次上傳相同的套件。 
+To modify an existing flight without creating and submitting a new update, click **Modify** next to the flight name. This lets you change details such as the flight groups, name, and rank, without  requiring that the package flight go through the certification process again.
 
-當您建立新的提交時，您將會在[**套件**](upload-app-packages.md)頁面上看到一個下拉式清單，其中包含從其中一個套件正式發行前小眾測試版複製套件的選項。 選取含有您要納入之套件的套件正式發行前小眾測試版。 然後您可選取其任一或所有套件，以包含在非正式發行前小眾測試版提交中。
+## Add and rank additional package flights
 
-請注意，所有相同的套件驗證規則都適用，即使使用來自上一個已發佈之提交的套件也一樣。 
+You can create multiple package flights for the same app in order to distribute several different packages to different sets of customers. 
 
-## 刪除套件正式發行前小眾測試版
+Once you have created your first package flight, you create another by following the process outlined above. The only difference is that if you've already created one package flight, you'll need to specify the priority order of all package flights in the **Rank** section. This lets the Store can determine which package to give to any individual customer, even if they are in more than one of your flight groups. People in your flight groups will always get the highest-ranked package flight available to them, even if a lower-ranked package flight contains packages with a higher version number.
 
-若要刪除您不想再支援的套件正式發行前小眾測試版，請從 [應用程式概觀] 頁面按一下其名稱。 在正式發行前小眾測試版概觀頁面上，按一下 [修改]****，然後按一下 [刪除]**** 連結，刪除套件正式發行前小眾測試版。 (如果您有尚未提交的套件正式發行前小眾測試版正在處理中，您必須先將提交刪除)。最多可能需要 30 分鐘的時間才能完成。
+By default, your new package flight will be ranked highest. If you'd like to change its rank, you can move it down (or back up) to place it in the right location among your other package flights.
 
-當您刪除套件正式發行前小眾測試版時，任何具有您在該套件正式發行前小眾測試版中所散佈之套件的客戶，會在有更高版本號碼的套件時取得 app 更新 (或這類套件提供使用時)。 如果他們解除安裝 app 而後再次安裝，這將被視為取得新的 app，並且他們將會取得目前可用的最高版本。 
+Note that your non-flighted submission is always ranked the lowest. That is, people who aren’t in any of your flight groups can only get packages from your non-flighted submission through the Store. People in a flight group will always get packages from the highest-ranked package flight available to them (but never the non-flighted submission). This gives you flexibility in determining how to distribute your packages to people who may be members of more than one of your flight groups.
+
+For example, let's say you want to create two package flights in addition to your regular non-flighted submission: one that is relatively stable and ready for testing with a wide audience, and one that you're not so sure about and want to limit to only a few testers. You could create a flight group called Testers and include it in a package flight called Tester Flight, then create a flight group called Enthusiasts with a larger membership and include it in another package flight called Enthusiast Flight. If you rank Tester Flight higher than Enthusiast Flight, you can use packages that you're fairly confident about in Enthusiast Flight, while using riskier packages meant for Testers only in Tester Flight. Members of your Testers group will always get the packages you provide in Tester Flight, even if they also belong to your Enthusiasts group. (Then later, if it turns out that the packages in Tester Flight are performing well, you could update Enthusiast Flight to use the packages originally distributed to Tester Flight—and maybe eventually use those packages in your non-flighted submission.)
+
+## Make packages from a package flight available to all your customers
+
+If you decide that one or more of the packages you included in a published package flight should be made available to customers who aren’t in a flight group, you can update your non-flighted submission to use those packages, without having to upload the same packages all over again. 
+
+When you create your new submission, on the [**Packages**](upload-app-packages.md) page you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in the non-flighted submission.
+
+Note that all of the same package validation rules will apply, even when using packages from a previously published submission. 
+
+## Delete a package flight
+
+To delete a package flight that you no longer want to support, click its name from the App overview page. On the flight overview page, click **Modify**, then click the **Delete** link to delete the package flight. (If you have an unpublished submission of the package flight in progress, you’ll need to delete that submission first.) It may take up to 30 minutes for this to be completed.
+
+When you delete a package flight, any customers who have the packages you distributed in that package flight will get an app update if there is a package with a higher version number (or as soon as such a package becomes available). If they uninstall the app and then install it again later, this will be treated as a new acquisition, and they'll get the highest version currently available. 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

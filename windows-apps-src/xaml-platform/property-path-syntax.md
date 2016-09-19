@@ -1,124 +1,124 @@
 ---
 author: jwmsft
-description: "您可以使用 PropertyPath 類別和字串語法，具現化 XAML 或程式碼中的 PropertyPath 值。"
-title: "Property-path 語法"
+description: You can use the PropertyPath class and the string syntax to instantiate a PropertyPath value either in XAML or in code.
+title: Property-path syntax'
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 867fd859823c23cec9666095793871a4b78e7e52
 
 ---
 
-# Property-path 語法
+# Property-path syntax
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-您可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 但是動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
+You can use the [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class and the string syntax to instantiate a **PropertyPath** value either in XAML or in code. **PropertyPath** values are used by data binding. A similar syntax is used for targeting storyboarded animations. For both scenarios, a property path describes a traversal of one or more object-property relationships that eventually resolve to a single property.
 
-您可以直接將屬性路徑字串設定為 XAML 中的屬性。 您可以使用相同的字串語法來建構 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，以便在程式碼中設定 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)，或是使用 [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503) 在程式碼中設定動畫目標。 Windows 執行階段中有兩個獨特的功能領域會使用屬性路徑：資料繫結和動畫目標。 在 Windows 執行階段實作中，動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串，但是這兩者的物件-屬性周遊的概念非常類似。 資料繫結與動畫目標在評估屬性路徑上有些微的差異，所以我們會分別描述它們的屬性路徑語法。
+You can set a property path string directly to an attribute in XAML. You can use the same string syntax to construct a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) that sets a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) in code, or to set an animation target in code using [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). There are two distinct feature areas in the Windows Runtime that use a property path: data binding, and animation targeting. Animation targeting doesn't create underlying Property-path syntax values in the Windows Runtime implementation, it keeps the info as a string, but the concepts of object-property traversal are very similar. Data binding and animation targeting each evaluate a property path slightly differently, so we describe property path syntax separately for each.
 
-## 資料繫結中物件的屬性路徑
+## Property path for objects in data binding
 
-在 Windows 執行階段中，您可以繫結到任何相依性屬性的目標值。 資料繫結的來源屬性值不一定要是相依性屬性；它可以是商務物件上的屬性 (例如使用 Microsoft .NET 語言或 C++ 編寫的類別)。 或者，繫結值的來源物件可以是應用程式已經定義的現有相依性物件。 若要參考來源，您可以使用簡單的屬性名稱，或使用商務物件的物件圖形中物件-屬性關係的周遊。
+In Windows Runtime, you can bind to the target value of any dependency property. The source property value for a data binding doesn't have to be a dependency property; it can be a property on a business object (for example a class written in a Microsoft .NET language or C++). Or, the source object for the binding value can be an existing dependency object already defined by the app. The source can be referenced either by a simple property name, or by a traversal of the object-property relationships in the object graph of the business object.
 
-您可以繫結到個別屬性值或繫結到保存清單或集合的目標屬性。 如果您的來源是集合，或者如果路徑指定了集合屬性，則資料繫結引擎會將來源的集合項目與繫結目標進行比對，進而產生將資料來源集合的項目清單填入 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) 而不需要預期該集合中特定項目的這類行為。
+You can bind to an individual property value, or you can bind to a target property that holds lists or collections. If your source is a collection, or if the path specifies a collection property, the data-binding engine matches the collection items of the source to the binding target, resulting in behavior such as populating a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) with a list of items from a data source collection without needing to anticipate the specific items in that collection.
 
-### 周遊物件圖形
+### Traversing an object graph
 
-在物件圖形中標示物件-屬性關係周遊的語法元素是點 (**.**) 字元。 屬性路徑字串中的每個點表示物件 (點的左邊) 與該物件之屬性 (點的右邊) 間的分隔。 字串的會由左到右逐步評估多個物件-屬性的關係。 讓我們看一下範例：
+The element of the syntax that denotes the traversal of an object-property relationship in an object graph is the dot (**.**) character. Each dot in a property path string indicates a division between an object (left side of the dot) and a property of that object (right side of the dot). The string is evaluated left-to-right, which enables stepping through multiple object-property relationships. Let's look at an example:
 
 ``` syntax
-<Binding Path="Customer.Address.StreetAddress1"
+"{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
-以下是這個路徑的評估方式：
+Here's how this path is evaluated:
 
-1.  針對資料內容物件 (或同一個 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 所指定的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)) 搜尋一個名為 "Customer" 的屬性。
-2.  針對物件 ("Customer" 屬性的值) 搜尋一個名為 "Address" 的屬性。
-3.  針對物件 ("Address" 屬性的值) 搜尋一個名為 "StreetAddress1" 的屬性。
+1.  The data context object (or a [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) specified by the same [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) is searched for a property named "Customer".
+2.  The object that is the value of the "Customer" property is searched for a property named "Address".
+3.  The object that is the value of the "Address" property is searched for a property named "StreetAddress1".
 
-在每一個步驟中，每個值均被視為一個物件。 只有當繫結套用到特定屬性時，才會檢查結果類型。 如果 "Address" 只是字串值，而且沒有公開字串中哪個部分是街道地址，則這個範例就會失敗。 一般而言，繫結是指商務物件 (具有已知和明確資訊結構) 的特定巢狀屬性值。
+At each of these steps, the value is treated as an object. The type of the result is checked only when the binding is applied to a specific property. This example would fail if "Address" were just a string value that didn't expose what part of the string was the street address. Typically, the binding is pointing to the specific nested property values of a business object that has a known and deliberate information structure.
 
-### 資料繫結屬性路徑中屬性的規則
+### Rules for the properties in a data-binding property path
 
--   屬性路徑參考的所有屬性在來源商務物件中必須是公開的。
--   結尾屬性 (即路徑中最後一個具名屬性) 必須是公開且可變的 (您不能繫結到靜態值)。
--   如果這個路徑在雙向繫結中做為 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 資訊，則結尾屬性必須可以被讀取/寫入。
+-   All properties referenced by a property path must be public in the source business object.
+-   The end property (the property that is the last named property in the path) must be public and must be mutable – you can't bind to static values.
+-   The end property must be read/write if this path is used as the [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) information for a two-way binding.
 
-### 索引子
+### Indexers
 
-資料繫結的屬性路徑可以包含索引屬性的參考。 這樣便能繫結到已排序的清單/向量，或繫結到字典/對應。 使用方括號 "\[\]" 字元來表示索引屬性。 這種括號中的內容可以是整數 (已排序的清單) 或未加引號的字串 (字典)。 您也可以繫結到索引鍵為整數的字典。 您可以在相同的路徑中使用不同的索引屬性，並使用點來分隔物件-屬性。
+A property path for data-binding can include references to indexed properties. This enables binding to ordered lists/vectors, or to dictionaries/maps. Use square brackets "\[\]" characters to indicate an indexed property. The contents of these brackets can be either an integer (for ordered list) or an unquoted string (for dictionaries). You can also bind to a dictionary where the key is an integer. You can use different indexed properties in the same path with a dot separating the object-property.
 
-例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 則第二隊特定玩家的屬性路徑範例是："Teams\[1\].Players\[Smith\]" (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
+For example, consider a business object where there is a list of "Teams" (ordered list), each of which has a dictionary of "Players" where each player is keyed by last name. An example property path to a specific player on the second team is: "Teams\[1\].Players\[Smith\]". (You use 1 to indicate the second item in "Teams" because the list is zero-indexed.)
 
-**注意**：對 C++ 資料來源的索引功能支援是有限的；請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**Note**  Indexing support for C++ data sources is limited; see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-### 附加屬性
+### Attached properties
 
-屬性路徑可以包含對附加屬性的參考。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定使用 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 做為繫結路徑的字串是 "(Canvas.ZIndex)"。 如需附加屬性的詳細資訊，請參閱[附加屬性概觀](attached-properties-overview.md)。
+Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
 
-### 合併屬性路徑的語法
+### Combining property path syntax
 
-您可以將屬性路徑語法的各種元素合併為單一字串。 例如，如果您的資料來源包含參考索引附加屬性的屬性路徑，您可以定義該屬性路徑。
+You can combine various elements of property path syntax in a single string. For example, you can define a property path that references an indexed attached property, if your data source had such a property.
 
-### 偵錯繫結屬性路徑
+### Debugging a binding property path
 
-因為屬性路徑由繫結引擎加以解譯而且必須使用僅在執行階段出現的資訊，所以您必須經常偵錯繫結的屬性路徑，而不能依賴開發工具中對設計階段或編譯階段的傳統支援。 在許多情況下，執行階段無法解析屬性路徑所產生的結果是沒有錯誤的空白值，因為這是程式設計原本設定的繫結解析後援行為。 所幸，Microsoft Visual Studio 提供的偵錯輸出模式可以在指定繫結來源的屬性路徑中獨立指出哪個部分無法解析。 如需使用這項開發工具功能的詳細資訊，請參閱[深入了解資料繫結的＜偵錯＞一節](../data-binding/data-binding-in-depth.md#debugging)。
+Because a property path is interpreted by a binding engine and relies on info that may be present only at run-time, you must often debug a property path for binding without being able to rely on conventional design-time or compile-time support in the development tools. In many cases the run-time result of failing to resolve a property path is a blank value with no error, because that is the by-design fallback behavior of binding resolution. Fortunately, Microsoft Visual Studio provides a debug output mode that can isolate which part of a property path that's specifying a binding source failed to resolve. For more info on using this development tool feature, see ["Debugging" section of Data binding in depth](../data-binding/data-binding-in-depth.md#debugging).
 
-## 動畫目標的屬性路徑
+## Property path for animation targeting
 
-動畫的目標是相依性屬性，動畫執行時會在相依性屬性套用腳本值。 為了識別含有動畫屬性的物件，動畫會使用名稱 ([x:Name 屬性](x-name-attribute.md)) 來設定目標元素。 通常必須定義以 [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) 識別的物件開頭，並以應該套用動畫的特定相依性屬性值結束的屬性路徑。 這個屬性路徑可用來做為 [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824) 的值。
+Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
 
-如需如何在 XAML 中定義動畫的詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。
+For more info on the how to define animations in XAML, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354).
 
-## 簡單目標
+## Simple targeting
 
-如果您要在位於目標物件本身的屬性產生動畫效果，而且該屬性的類型具備可直接套用其本身的動畫 (而不是套用到屬性值的子屬性)，則您只需命名要產生動畫效果的屬性，而不用進一步限定。 例如，如果您要以 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) 子類別 (如 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)) 為目標，並要將動畫的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 套用到 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) 屬性，則屬性路徑可以是 "Fill"。
+If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) subclass such as [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property, your property path can be "Fill".
 
-## 間接屬性目標
+## Indirect property targeting
 
-您可以為目標物件的子屬性產生動畫效果。 換句話說，如果有一個目標物件的屬性是物件本身，且該物件具有屬性，您必須定義屬性路徑，說明如何逐步設定該物件-屬性關係。 如需指定要讓其子屬性產生動畫效果的物件，您必須將屬性名稱放入括號內，並以 *typename*.*propertyname* 格式指定屬性。 例如，若要指定目標物件 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) 屬性的物件值，第一個步驟是在屬性路徑中指定 "(UIElement.RenderTransform)"。 這還不是完整的路徑，因為沒有動畫可以直接套用到 [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) 值。 所以，在此例中，您現在要完成整個屬性路徑，讓結尾屬性成為可以使用 **Double** 值來產生動畫效果的 **Transform** 子類別屬性："(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+You can animate a property that is a sub-property of the target object. In other words, if there's a property of the target object that's an object itself, and that object has properties, you must define a property path that explains how to step through that object-property relationship. Whenever you are specifying an object where you want to animate a sub-property, you enclose the property name in parentheses, and you specify the property in *typename*.*propertyname* format. For example, to specify that you want the object value of a target object's [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) property, you specify "(UIElement.RenderTransform)" as the first step in the property path. This isn't yet a complete path, because there are no animations that can apply to a [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) value directly. So for this example, you now complete the property path so that the end property is a property of a **Transform** subclass that can be animated by a **Double** value: "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
 
-## 指定集合中的特定子項
+## Specifying a particular child in a collection
 
-若要指定集合屬性中的子項目，可以使用數值索引子。 請將整數索引值括在方括號 "\[\]" 字元內。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
+To specify a child item in a collection property, you can use a numeric indexer. Use square brackets "\[\]" characters around the integer index value. You can reference only ordered lists, not dictionaries. Because a collection isn't a value that can be animated, an indexer usage can never be the end property in a property path.
 
-例如，若要在套用到控制項[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 屬性的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) 中指定第一個色彩停止點的顏色動畫，則屬性路徑如下："(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)"。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
+For example, to specify that you want to animate the first color stop color in a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) that is applied to a control's [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property, this is the property path: "(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)". Note how the indexer is not the last step in the path, and that the last step particularly must reference the [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) property of item 0 in the collection to apply a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animated value to it.
 
-## 讓附加屬性產生動畫效果
+## Animating an attached property
 
-這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
+It isn't a common scenario, but it is possible to animate an attached property, so long as that attached property has a property value that matches an animation type. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to animate the [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) attached property on an object, use the property path "(Grid.Row)".
 
-**注意**：在此例中，[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 的值是 **Int32** 屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
+**Note**  For this example, the value of [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) is an **Int32** property type. so you can't animate it with a **Double** animation. Instead, you'd define an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) that has [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) components, where the [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) is set to an integer such as "0" or "1".
 
-## 動畫目標屬性路徑中的屬性規則
+## Rules for the properties in an animation targeting property path
 
--   屬性路徑的假設起點是 [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) 識別的物件。
--   屬性路徑中參考的所有物件及屬性必須是公開的。
--   結尾屬性 (即路徑中最後一個具名屬性) 必須是公開、唯讀且必須是相依性屬性。
--   結尾屬性必須具有能夠使用其中一個動畫類型廣泛類別產生動畫效果的屬性類型，這些動畫類型包括：[**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫、**Double** 動畫、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 動畫、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)。
+-   The assumed starting point of the property path is the object identified by a [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
+-   All objects and properties referenced along the property path must be public.
+-   The end property (the property that is the last named property in the path) must be public, be read-write, and be a dependency property.
+-   The end property must have a property type that is able to be animated by one of the broad classes of animation types ([**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animations, **Double** animations, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) animations, [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
 
-## PropertyPath 類別
+## The PropertyPath class
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別是用於繫結案例的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 相關屬性類型。
+The [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class is the underlying property type of [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) for the binding scenario.
 
-您通常可以在 XAML 中直接套用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，完全不需要使用任何程式碼。 但在某些情況下，您可能要使用程式碼來定義 **PropertyPath** 物件，並在執行階段將它指派給屬性。
+Most of the time, you can apply a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) in XAML without using any code at all. But in some cases you may want to define a **PropertyPath** object using code and assign it to a property at run-time.
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 具有一個 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 建構函式，而且不具有預設建構函式。 傳遞到這個建構函式的字串是使用屬性路徑語法定義的字串，如本文稍早的說明。 這也是用來將 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 指派為 XAML 屬性的同一個字串。 **PropertyPath** 類別唯一的另一個 API 是唯讀的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 屬性。 您可以使用這個屬性做為另一個 **PropertyPath** 執行個體的建構字串。
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) has a [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
 
-## 相關主題
+## Related topics
 
-* [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [{Binding} 標記延伸](binding-markup-extension.md)
+* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [{Binding} markup extension](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Binding 建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**Binding constructor**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

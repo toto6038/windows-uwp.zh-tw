@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: "轉換轉譯架構"
-description: "示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。"
+title: Convert the rendering framework
+description: Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
+ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
 
 ---
 
-# 轉換轉譯架構
+# Convert the rendering framework
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   [第一部分：初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   第二部分：轉換轉譯架構
--   [第三部分：移植遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第二部分。
-
-## 將效果轉換到 HLSL 著色器
+-   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   Part 2: Convert the rendering framework
+-   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-下列範例是簡單的 D3DX 技術，是針對舊有的效果 API 所撰寫，適用於硬體頂點轉換與傳遞色彩資料。
+Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11. Part 2 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
 
-Direct3D 9 著色器程式碼
+## Convert effects to HLSL shaders
+
+
+The following example is a simple D3DX technique, written for the legacy Effects API, for hardware vertex transformation and pass-through color data.
+
+Direct3D 9 shader code
 
 ```cpp
 // Global variables
@@ -90,24 +90,24 @@ technique RenderSceneSimple
 }
 ```
 
-在 Direct3D 11 中，我們仍然可以使用 HLSL 著色器。 我們將每個著色器放在本身的 HLSL 檔案中，讓 Visual Studio 將它們編譯成個別檔案，而稍後我們會將它們當作個別 Direct3D 資源載入。 我們將目標層級設為[著色器模型 4 層級 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876)，因為這些著色器是針對 DirectX 9.1 GPU 所撰寫。
+In Direct3D 11, we can still use our HLSL shaders. We put each shader in its own HLSL file so that Visual Studio compiles them into separate files and later, we'll load them as separate Direct3D resources. We set the target level to [Shader Model 4 Level 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876) because these shaders are written for DirectX 9.1 GPUs.
 
-當我們定義輸入配置時，已確定它代表我們在系統記憶體中與 GPU 記憶體中，用來儲存每個頂點資料的相同資料結構。 同理，頂點著色器的輸出應該符合用來做為像素著色器輸入的結構。 規則與 C++ 中將資料從某一個函式傳遞到另一個函式不同；您可以在結構的結尾略過未使用的變數。 但是順序無法重新安排，且您無法略過資料結構中間的內容。
+When we defined the input layout, we made sure it represented the same data structure we use to store per-vertex data in system memory and in GPU memory. Similarly, the output of a vertex shader should match the structure used as input to the pixel shader. The rules are not the same as passing data from one function to another in C++; you can omit unused variables at the end of the structure. But the order can't be rearranged and you can't skip content in the middle of the data structure.
 
-> **注意**  
-Direct3D 9 中用來將頂點著色器繫結到像素著色器的規則比 Direct3D 11 中的規則還要寬鬆。 Direct3D 9 排列方式具有彈性，但沒有效率。
-
- 
-
-您的 HLSL 檔案有可能針對著色器語意來使用較舊的語法 - 例如，使用 COLOR 而非 SV\_TARGET。 如果這樣，您將需要啟用 HLSL 相容性模式 (/Gec 編譯器選項) 或將著色器[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)更新成目前的語法。 這個範例中的頂點著色器已使用目前的語法來更新。
-
-以下為我們的硬體轉換頂點著色器，這次是定義於它自己的檔案中。
-
-> **注意：**需要有頂點著色器，才能輸出 SV\_POSITION 系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
+> **Note**  
+The rules in Direct3D 9 for binding vertex shaders to pixel shaders were more relaxed than the rules in Direct3D 11. The Direct3D 9 arrangement was flexible, but inefficient.
 
  
 
-HLSL 頂點著色器 (功能層級 9.1)
+It's possible that your HLSL files uses older syntax for shader semantics - for example, COLOR instead of SV\_TARGET. If so you'll need to enable HLSL compatibility mode (/Gec compiler option) or update the shader [semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647) to the current syntax. The vertex shader in this example has been updated with current syntax.
+
+Here's our hardware transformation vertex shader, this time defined in its own file.
+
+> **Note**  Vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
+
+ 
+
+HLSL vertex shader (feature level 9.1)
 
 ```cpp
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -148,15 +148,15 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-我們的傳遞像素著色器只需要這個項目。 儘管我們將它稱為傳遞，但它實際上可以針對每個像素取得透視修正的插補色彩資料。 請注意，SV\_TARGET 系統值語意已在 API 要求時由我們的像素著色器套用到色彩值輸出。
+This is all we need for our pass-through pixel shader. Even though we call it a pass-through, it's actually getting perspective-correct interpolated color data for each pixel. Note that the SV\_TARGET system value semantic is applied to the color value output by our pixel shader as required by the API.
 
-> **注意：**著色器層級 9\_x 像素著色器無法從 SV\_POSITION 系統值語意中讀取。 模型 4.0 (及更高) 像素著色器可以使用 SV\_POSITION 來擷取螢幕上的像素位置，其中 x 介於 0 與轉譯目標寬度之間，而 y 介於 0 與轉譯目標高度之間 (每個都會位移 0.5)。
+> **Note**  Shader level 9\_x pixel shaders cannot read from the SV\_POSITION system value semantic. Model 4.0 (and higher) pixel shaders can use SV\_POSITION to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5).
 
  
 
-多數像素著色器都會比傳遞來得更複雜；請注意，更高的 Direct3D 功能層級允許針對每個著色器程式進行大量計算。
+Most pixel shaders are much more complex than a pass through; note that higher Direct3D feature levels allow a much greater number of calculations per shader program.
 
-HLSL 像素著色器 (功能層級 9.1)
+HLSL pixel shader (feature level 9.1)
 
 ```cpp
 struct PS_INPUT
@@ -180,12 +180,12 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## 編譯和載入著色器
+## Compile and load shaders
 
 
-Direct3D 9 遊戲通常會使用效果程式庫來做為實作可程式化管線的簡便方式。 效果可以使用 [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) 方法在執行階段期間進行編譯。
+Direct3D 9 games often used the Effects library as a convenient way to implement programmable pipelines. Effects could be compiled at run-time using the [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) method.
 
-在 Direct3D 9 中載入效果
+Loading an effect in Direct3D 9
 
 ```cpp
 // Turn off preshader optimization to keep calculations on the GPU
@@ -208,9 +208,9 @@ D3DXCreateEffectFromFile(
     );
 ```
 
-Direct3D 11 使用著色器程式做為二進位資源。 著色器會在建置專案時進行編譯，然後被視為資源。 因此，我們的範例會將著色器位元組程式碼載入系統記憶體，使用 Direct3D 裝置介面來為每個著色器建立 Direct3D 資源，並在我們設定每個框架時指向 Direct3D 著色器資源。
+Direct3D 11 works with shader programs as binary resources. Shaders are compiled when the project is built and then treated as resources. So our example will load the shader bytecode into system memory, use the Direct3D device interface to create a Direct3D resource for each shader, and point to the Direct3D shader resources when we set up each frame.
 
-在 Direct3D 11 中載入著色器資源
+Loading a shader resource in Direct3D 11
 
 ```cpp
 // BasicReaderWriter is a tested file loader used in SDK samples.
@@ -232,23 +232,23 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-若要在編譯的應用程式套件中包含著色器位元組程式碼，只需將 HLSL 檔案新增到 Visual Studio 專案。 Visual Studio 將使用[效果編譯器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC)，將 HLSL 檔案編譯到編譯著色器物件 (.CSO 檔案)，並在應用程式套件中包含它們。
+To include the shader bytecode in your compiled app package, just add the HLSL file to the Visual Studio project. Visual Studio will use the [Effect-Compiler Tool](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) to compile HLSL files into compiled shader objects (.CSO files) and include them in the app package.
 
-> **注意：**請確定為 HLSL 編譯器設定正確的目標功能層級：在 Visual Studio 中使用滑鼠右鍵按一下 HLSL 來源檔、選取 [屬性]，然後在 [HLSL 編譯器] -&gt; [一般]**** 下方變更 [著色器模型]**** 設定。 當您的 app 建立 Direct3D 著色器資源時，Direct3D 會針對硬體功能來檢查這個屬性。
-
- 
-
-![HLSL 著色器屬性](images/hlslshaderpropertiesmenu.png)![HLSL 著色器類型](images/hlslshadertypeproperties.png)
-
-這裡很適合用來建立輸入配置，此輸入配置會對應到 Direct3D 9 中的頂點串流宣告。 每個頂點的資料結構需要符合頂點著色器所使用的內容；在 Direct3D 11 中，我們對於輸入配置有更多的控制權；我們可以定義浮點數向量的陣列大小與位元長度，以及指定頂點著色器的語意。 我們建立 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構，並使用它來通知 Direct3D 每個頂點資料的外觀。 我們要等到已載入頂點著色器來定義輸入配置之後，因為 API 會根據頂點著色器資源來驗證輸入配置。 如果輸入配置不相容，則 Direct3D 會擲回例外狀況。
-
-每個頂點的資料都必須以相容的類型儲存在系統記憶體中。 例如，DirectXMath 資料類型可以協助 DXGI\_FORMAT\_R32G32B32\_FLOAT 對應到 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
-
-> **注意：**常數緩衝區會使用一次對齊到四個浮點數的固定輸入配置。 建議針對常數緩衝區資料使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (及其衍生項目)。
+> **Note**   Be sure to set the correct target feature level for the HLSL compiler: right-click the HLSL source file in Visual Studio, select Properties, and change the **Shader Model** setting under **HLSL Compiler -&gt; General**. Direct3D checks this property against the hardware capabilities when your app creates the Direct3D shader resource.
 
  
 
-在 Direct3D 11 中設定輸入配置
+![hlsl shader properties](images/hlslshaderpropertiesmenu.png)![hlsl shader type](images/hlslshadertypeproperties.png)
+
+This is a good place to create the input layout, which corresponds to the vertex stream declaration in Direct3D 9. The per-vertex data structure needs to match what the vertex shader uses; in Direct3D 11 we have more control over the input layout; we can define the array size and bit length of floating-point vectors and specify semantics for the vertex shader. We create a [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structure and use it to inform Direct3D what the per-vertex data will look like. We waited until after we loaded the vertex shader to define the input layout because the API validates the input layout against the vertex shader resource. If the input layout isn't compatible then Direct3D throws an exception.
+
+Per-vertex data has to be stored in compatible types in system memory. DirectXMath data types can help; for example, DXGI\_FORMAT\_R32G32B32\_FLOAT corresponds to [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
+
+> **Note**   Constant buffers use a fixed input layout that aligns to four floating-point numbers at a time. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (and its derivatives) are recommended for constant buffer data.
+
+ 
+
+Setting the input layout in Direct3D 11
 
 ```cpp
 // Create input layout:
@@ -262,10 +262,10 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## 建立幾何資源
+## Create geometry resources
 
 
-在 Direct3D 9 中，我們會在 Direct3D 裝置上建立緩衝區、鎖定記憶體，並將資料從 CPU 記憶體複製到 GPU 記憶體，以儲存幾何資源。
+In Direct3D 9 we stored geometry resources by creating buffers on the Direct3D device, locking the memory, and copying data from CPU memory to GPU memory.
 
 Direct3D 9
 
@@ -293,7 +293,7 @@ memcpy(pVertices, CubeVertices, sizeof(CubeVertices));
 pVertexBuffer->Unlock();
 ```
 
-DirectX 11 遵循一個較簡單的程序。 API 會自動將資料從系統記憶體複製到 GPU。 我們可以使用 COM 智慧型指標，協助讓程式設計變得更簡單。
+DirectX 11 follows a simpler process. The API automatically copies the data from system memory to the GPU. We can use COM smart pointers to help make programming easier.
 
 DirectX 11
 
@@ -315,12 +315,12 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## 實作轉譯鏈結
+## Implement the rendering chain
 
 
-Direct3D 9 遊戲通常會使用以效果為基礎的轉譯鏈結。 這個轉譯鏈結類型會設定效果物件、為它提供所需的資源，然後讓它轉譯每個階段。
+Direct3D 9 games often used an effect-based rendering chain. This type of rendering chain sets up the effect object, provides it with the resources it needs, and lets it render each pass.
 
-Direct3D 9 轉譯鏈結
+Direct3D 9 rendering chain
 
 ```cpp
 // Clear the render target and the z-buffer.
@@ -381,11 +381,11 @@ if(SUCCEEDED(m_pd3dDevice->BeginScene()))
 m_pd3dDevice->Present(NULL, NULL, NULL, NULL);
 ```
 
-DirectX 11 轉譯鏈結仍會執行相同工作，但是轉譯階段需要以不同方式來實作。 我們將在 C++ 中設定所有的轉譯動作，而不是將特定項目放置於 FX 檔案中，讓轉譯技術對 C++ 程式碼而言多少有點不透明。
+The DirectX 11 rendering chain will still do the same tasks, but the rendering passes need to be implemented differently. Instead of putting the specifics in FX files and letting the rendering techniques be more-or-less opaque to our C++ code, we'll set up all our rendering in C++.
 
-以下為轉譯鏈結的外觀。 我們需要在載入頂點著色器之後提供我們建立的輸入配置、提供每一個著色器物件，並針對每個要使用的著色器指定常數緩衝區。 這個範例沒有包含多個轉譯階段，但是如果包含，我們就需要針對每個階段執行類似的轉譯鏈結，並視需要變更設定。
+Here's how our rendering chain will look. We need to supply the input layout we created after loading the vertex shader, supply each of the shader objects, and specify the constant buffers for each shader to use. This example doesn't include multiple rendering passes, but if it did we'd do a similar rendering chain for each pass, changing the setup as needed.
 
-Direct3D 11 轉譯鏈結
+Direct3D 11 rendering chain
 
 ```cpp
 // Clear the back buffer.
@@ -473,15 +473,15 @@ m_d3dContext->DrawIndexed(
     );
 ```
 
-交換鏈結是圖形基礎結構的一部分，所以我們使用 DXGI 交換鏈結來呈現完成的框架。 DXGI 會在下一個 vsync 之前封鎖呼叫；接著它會返回，然後我們的遊戲迴圈就可以繼續執行下一個反覆項目。
+The swap chain is part of graphics infrastructure, so we use our DXGI swap chain to present the completed frame. DXGI blocks the call until the next vsync; then it returns, and our game loop can continue to the next iteration.
 
-使用 DirectX 11 將框架呈現到螢幕
+Presenting a frame to the screen using DirectX 11
 
 ```cpp
 m_swapChain->Present(1, 0);
 ```
 
-我們剛建立的轉譯鏈結將會從 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中實作的遊戲迴圈進行呼叫。 這將於[第三部分：檢視區與遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)中說明。
+The rendering chain we just created will be called from a game loop implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method. This is shown in [Part 3: Viewport and game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
 
  
 
@@ -493,6 +493,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

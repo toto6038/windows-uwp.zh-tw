@@ -1,57 +1,57 @@
 ---
 author: jnHs
-Description: "您可以直接回應您 app 的評論，讓客戶知道您正在聆聽其意見反應。"
-title: "回應客戶評論"
+Description: "You can respond directly to reviews of your app to let customers know you’re listening to their feedback."
+title: Respond to customer reviews
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+ms.sourcegitcommit: 934715cc2681f613982d081335155e29fa7af775
+ms.openlocfilehash: 24d327a92a6a58ecf265f9cdadd5a49d24c0857d
 
 ---
 
-# 回應客戶評論
+# Respond to customer reviews
 
 
-您可以直接回應您 app 的評論，讓客戶知道您正在聆聽其意見反應。 透過評論回應功能，您可以告訴您的客戶您根據其意見新增的功能或修正的錯誤 (Bug)，或取得更特定的意見反應以改進您的 App。 您也可以選擇在市集中顯示您的回應，讓所有 Windows 10 客戶可以看到。
+You can respond directly to reviews of your app to let customers know you’re listening to their feedback. With a review response, you can tell customers about the features you’ve added or bugs you’ve fixed based on their comments, or get more specific feedback on how to improve your app. You can also opt to have your response displayed in the Store for all Windows 10 customers to see.
 
-> **注意：**若撰寫評論的客戶選擇不接收評論回應，您將無法直接回應該評論。 若評論的客戶使用 Windows Phone 8 裝置並位於美國境外，則您也無法回應該評論。
+> **Note**  You won't be able to directly respond to reviews written by customers who have chosen not to receive review responses. Responses also can’t be left for any reviews that were created by customers outside of the U.S. with Windows Phone 8 devices.
 
-若要檢視您 app 的評論並提供回應，請在 Windows 開發人員中心儀表板中尋找適當的 app。 在左方導覽功能表中，展開 [分析]****，然後按一下 [評論]**** 以顯示[評論報告](reviews-report.md)。
+To view your app's reviews and provide responses, find the appropriate app in your Windows Dev Center dashboard. In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md).
 
-傳送評論回應時，客戶將會收到 Microsoft 寄出的電子郵件，讓他們能夠看見您的回應。 此電子郵件也包含您 app 的支援電子郵件地址，客戶可用來直接與您連絡。 如果您在提交過程中，沒有為您的 app 新增支援電子郵件，將會要求您包含一個支援電子郵件地址，然後您才可以回應。
+When you send a review response, the customer will receive an email from Microsoft that lets them see your response. This email will also include your app’s support email address, which the customer can then use to contact you directly. If you didn’t add a support email address for your app during the submission process, you'll be asked to include one before you can respond.
 
-根據預設，只有您回應的對象客戶可以看到您的回應。 如果您想要讓其他客戶也可以檢視您的回應，請核取 [**將此回應公開**] 方塊。
+By default, your response will only be seen by the customer to whom you are responding. If you want to let other customers view your response, check the **Make this response public** box.
 
-> **注意：**公開回應只會顯示給使用 Windows 10 裝置檢視市集的客戶。
+> **Note**   Public responses are displayed only to customers viewing the Store on Windows 10 devices.
 
-核取 [**將此回應公開**] 方塊可以讓我們在您 app 市集清單中顯示您的回應，就在客戶的評論的正下方。 此回應會顯示給所有客戶，而非留下此評論的那位客戶。
+Checking the **Make this response public** box lets us display your response in your app’s Store listing, directly below the customer’s review. The response will be visible to all customers, not just the one that left the review.
 
-> **重要：**之後您將無法變更公開的回應 (除非客戶修訂原始的評論)，在您選擇要公開回應之前，務必審慎檢視您的回應。 如果客戶修訂他們的評論，則您的回應將會被移除。 如果您願意，可以針對修訂的評論提交新的回應。
+> **Important**  You won’t be able to change a public response later (unless the customer revises their original review), so review your response carefully before you choose to make it public. If a customer does revise their review, your response will be removed. You can then submit a new response to the revised review if you wish.
 
-## 回應的指導方針
-
-
-回應客戶的評論時，您必須遵循以下指導方針。 不論您選擇是否公開回應，這些方針都適用於所有的回應。
-
--   回應的長度不得超過 1000 個字元。
--   您無法提供任何形式的補償給變更 app 評等的使用者，包括數位 app 項目。 請記住，嘗試操縱評等是[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)所不允許的行為。
--   不要在回應中加入任何行銷內容或廣告。 請記住，評論者已經是您的客戶。
--   不要在您的回應中推銷其他 app 或服務。
--   您的回應必須與特定的 app 和評論直接相關。 不允許將相同的回應傳送給大量使用者，除非該罐頭式回應是要解決相同的問題。
--   不要在回應中加入任何粗俗、挑釁、針對個人或惡意的評論。 請務必保持禮貌並記住，滿意的客戶才是您 app 的最大支持者。
-
-> **注意：**客戶可以將開發人員的不當評論回應回報給 Microsoft。 他們也可以選擇不收到評論回應。
-Microsoft 保留出於任何原因而撤銷開發人員傳送回應之權限的權利，包括您的回應是提示大量不尋常的不當回應報告，還是大量不尋常的客戶選擇不收到評論回應。
-
-您需全權負責您與客戶之間的關係。 Microsoft 不介入開發人員和客戶之間的糾紛。 不過，如果您認為客戶對於您 app 的評論內容不當，請提交[支援票證](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
-
-## 使用客戶意見反應改進您的 app
+## Guidelines for responses
 
 
-聆聽客戶意見並予以回應只是一個開始。 針對其意見反應採取行動也非常重要。 如果您進行顯著的改進，請[建立新的提交](app-submissions.md)以更新您的 app，就可以在市集中安心地展示該 app。
+When responding to a customer's review, you must follow these guidelines. These apply to all responses, whether you choose to make them public or not.
+
+-   Responses must be no longer than 1000 characters.
+-   You may not offer any type of compensation, including digital app items, to users for changing the app rating. Remember, attempts to manipulate ratings are not permitted under the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+-   Don’t include any marketing content or ads in your response. Remember, your reviewer is already your customer.
+-   Don’t promote other apps or services in your response.
+-   Your response must be directly related to the specific app and review. Duplicating the same response to a large number of users isn’t allowed if the canned response doesn’t address the same question.
+-   Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
+
+> **Note**  Customers can report an inappropriate review response from a developer to Microsoft. They can also opt out of receiving review responses.
+Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports, or an unusually high number of customers to opt out of receiving review responses.
+
+Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if a review of your app contains offensive, profane or abusive language, please submit a [support ticket](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+
+## Use customer feedback to improve your app
+
+
+Listening and responding to your customers is only the beginning. Acting on their feedback is also critical. If you make significant improvements, showcase them in the Store with confidence by [creating a new submission](app-submissions.md) to update your app.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,36 +1,36 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: "列印與掃描"
-description: "本節描述如何從您的通用 Windows app 列印與掃描。"
+title: Printing and scanning
+description: This section describes how to print and scan from your Universal Windows app.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
+ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
 
 ---
-# 列印與掃描
+# Printing and scanning
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節描述如何從您的通用 Windows app 列印與掃描。
+This section describes how to print and scan from your Universal Windows app.
 
-| 主題 | 說明 | 
+| Topic | Description | 
 |-------|-------------|
-| [具有格式化功能的 Epson ESC/POS](epson-esc-pos-with-formatting.md) | 了解如何使用 ESC/POS 命令語言，針對您的服務點印表機來格式化文字，例如粗體和雙倍大小字元。 |
-| [從您的 app 列印](print-from-your-app.md) | 了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。 |
-| [自訂預覽列印 UI](customize-the-print-preview-ui.md) | 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 |
-| [從您的 app 掃描](scan-from-your-app.md) | 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。|
+| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
+| [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
+| [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
+| [Scan from your app](scan-from-your-app.md) | Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.|
 
-## 相關主題
+## Related topics
 
-* [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

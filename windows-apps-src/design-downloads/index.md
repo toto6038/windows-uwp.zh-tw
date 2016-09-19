@@ -1,29 +1,29 @@
 ---
-description: "取得適用於 UWP app 使用者介面配置和控制項設計的最新下載和工具。"
+description: Get the latest downloads and tools for UWP apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: "UWP app 的設計下載 - Windows 應用程式開發"
+title: Design downloads for UWP apps - Windows app development
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
-ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
+ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
+ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 
 ---
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# UWP app 的設計下載
+# Design downloads for UWP apps
 
 
-本節包含 UWP app 的設計與 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱[我們的主要下載頁面](https://developer.microsoft.com/downloads)。 
+This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
 
 
-## 設計範本
+## Design templates
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
     <p><b>PowerPoint</b><br/>
-這個平台提供您快速模擬 UWP app 框線所需的各種工具，包含控制項和配置。<br/>[下載適用於 PowerPoint 的設計範本](https://go.microsoft.com/fwlink/p/?LinkId=534632)</p>
+This deck has everything you need to quickly mock up wireframes for UWP apps, including controls and layouts.<br/>[Download the design templates for PowerPoint](https://go.microsoft.com/fwlink/p/?LinkId=534632)</p>
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534632"><img src="images/powerpoint.jpg" alt="Download the PowerPoint design templates" /></a>
@@ -35,7 +35,7 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Adobe Illustrator</b><br/>
-這些 Adobe Illustrator 範本提供控制項與配置，可用於設計 UWP app。<br/>[下載適用於 Adobe Illustrator 的設計範本](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
+These Adobe Illustrator templates provide controls and layouts for designing UWP apps.<br/>[Download the design templates for Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534634"><img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" /></a>
@@ -47,7 +47,7 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Adobe Photoshop</b><br/>
-在 Adobe Photoshop 中設計 UWP app 的控制項和配置。<br/>[下載適用於 Adobe Photoshop 的設計範本](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
+Controls and layouts for designing UWP apps in Adobe Photoshop.<br/>[Download the design templates for Adobe Photoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
@@ -55,13 +55,13 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 </div>
 </div>
 
-## 工具
+## Tools
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>適用於 Adobe Photoshop 的磚與圖示產生器。</b><br/>
-這組適用於 Adobe Photoshop 的巨集指令，只需 7 個檔案就能夠產生 68 個建議的磚和圖示資產。 <br/>[下載磚與圖示產生器](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
+            <p><b>Tile and icon generator for Adobe Photoshop</b><br/>
+This set of actions for Adobe Photoshop generates the 68 recommended tile and icon assets from just 7 files. <br/>[Download the tile and icon generator](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator" /></a>
@@ -72,8 +72,8 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>適用於 Adobe Illustrator 的 Redliner Tool</b><br/>
-輕鬆無比地從您的 Illustrator 原型產生參考線。 <br/>[下載適用於 Adobe Illustrator 的 Redliner Tool](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>    
+            <p><b>Redliner tool for Adobe Illustrator</b><br/>
+Effortlessly generate redlines from your Illustrator prototypes. (Requires Adobe Illustrator CC or later.)<br/>[Download the Redliner tool for Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
@@ -81,13 +81,13 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 </div>
 </div>
 
-## 範例
+## Samples
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Photo sharing app</b> <br/>
-這個範例示範使用實際的社交媒體分享相片。 其中示範回應式設計、App 內購買、Azure 服務、推播通知等等。 <br/>[下載 Photo sharing App 範本](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[深入了解 PhotoSharingApp (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
+This sample app demonstrates photo sharing with real-world social media. It demonstrates responsive design, in-app purchase, Azure services, push notifications, and more. <br/>[Download the Photo sharing app sample](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[Read more about PhotoSharingApp](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760402"><img src="images/photo-sharing.png" alt="Download the Photo sharing app sample" /></a>
@@ -99,16 +99,16 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Hue Lights </b><br/>
-這個範例整合了 Windows 功能與自動智慧型住宅。 其中值得注意的是，它示範以 Cortana 和藍牙低功耗 (Bluetooth LE) 來建立使用 Phillips Hue Lights (使用 Wi-Fi 的照明系統) 的互動體驗。 <br/>[下載 Hue Lights 範本](https://github.com/Microsoft/Windows-appsample-huelightcontroller/archive/master.zip)<br/>[深入了解 Hue Lights 範例](https://github.com/Microsoft/Windows-appsample-huelightcontroller)</p>    
+This sample integrates Windows features with intelligent home automation. Specifically, it shows how you can use Cortana and Bluetooth Low Energy (Bluetooth LE) to create an interactive experience with the Phillips Hue Lights (a Wi-Fi enabled lighting system). <br/>[Download the Hue Lights sample](https://github.com/Microsoft/Windows-appsample-huelightcontroller/archive/master.zip)<br/>[Read more about the Hue Lights sample](https://github.com/Microsoft/Windows-appsample-huelightcontroller)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="https://github.com/Microsoft/Windows-appsample-huelightcontroller/archive/master.zip"><img src="images/hue-lights.png" alt="Download the Hue Lights sample" /></a>
   </div>
 </div>
 </div>
-<b>想要更多程式碼嗎？</b> 瀏覽 Windows 範本頁面取得所有我們的 UWP app 範本的清單。 [移至範本入口網站](https://developer.microsoft.com/samples)
+<b>Want more code?</b> Check out the Windows sample page for complete list of all our UWP app samples. [Go to the samples portal](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

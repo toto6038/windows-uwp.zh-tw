@@ -1,42 +1,43 @@
 ---
 author: TylerMSFT
-title: "登錄背景工作"
-description: "了解如何建立可重複用來安全登錄大多數背景工作的函式。"
+title: Register a background task
+description: Learn how to create a function that can be re-used to safely register most background tasks.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 ---
 
-# 登錄背景工作
+# Register a background task
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+**Important APIs**
 
+-   [**BackgroundTaskRegistration class**](https://msdn.microsoft.com/library/windows/apps/br224786)
+-   [**BackgroundTaskBuilder class**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition class**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-**重要 API**
+Learn how to create a function that can be re-used to safely register most background tasks.
 
--   [**BackgroundTaskRegistration 類別**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**BackgroundTaskBuilder 類別**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**SystemCondition 類別**](https://msdn.microsoft.com/library/windows/apps/br224834)
+This topic is applicable to both single-process background tasks and background tasks that run in a separate process. This topic assumes that you already have a background task that needs to be registered. (See [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) or [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md) for information about how to write a background task).
 
-了解如何建立可重複用來安全登錄大多數背景工作的函式。
+This topic walks through a utility function that registers background tasks. This utility function checks for existing registrations first before registering the task multiple times to avoid problems with multiple registrations, and it can apply a system condition to the background task. The walkthrough includes a complete, working example of this utility function.
 
-本主題假設您已有需要登錄的背景工作。 (請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)，以取得如何撰寫背景工作的相關資訊)。
+**Note**  
 
-這個主題會逐步解說可登錄背景工作的公用程式函式。 這個公用程式函式會先檢查現有登錄，以避免多次登錄工作時可能產生的問題；也可以將系統條件套用到背景工作。 本逐步解說包括這個公用程式函式的完整工作範例。
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-**注意**  
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+## Define the method signature and return type
 
-為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
+This method takes in the task entry point, task name, a pre-constructed background task trigger, and (optionally) a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) for the background task. This method returns a [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) object.
 
-## 定義方法簽章和傳回類型
-
-
-這個方法會採用背景工作的工作進入點、工作名稱、預先建構的背景工作觸發程序，以及 (選用) [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)。 這個方法會傳回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 物件。
+> [!Important]
+> `taskEntryPoint` - for background tasks that run in a separate process, this must be constructed as the namespace name, '.', and the name of the class containing your background class. The string is case-sensitive.  For example, if you had a namespace "MyBackgroundTasks" and a class "BackgroundTask1" that contained your background class code, the string for `taskEntryPoint` would be "MyBackgroundTasks.BackgruondTask1".
+> If your background task runs in the same process as your app (i.e. a single-process background task) `taskEntryPoint` should not be set.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -64,16 +65,15 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 檢查現有登錄
+## Check for existing registrations
 
+Check whether the task is already registered. It's important to check this because if a task is registered multiple times, it will run more than once whenever it’s triggered; this can use excess CPU and may cause unexpected behavior.
 
-檢查工作是否已登錄。 這是檢查的重點，因為如果多次登錄工作，則觸發該工作時，它就會多次執行；這樣可能會過量使用 CPU，也可能造成未預期的行為。
+You can check for existing registrations by querying the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property and iterating on the result. Check the name of each instance – if it matches the name of the task you’re registering, then break out of the loop and set a flag variable so that your code can choose a different path in the next step.
 
-您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
+> **Note**  Use background task names that are unique to your app. Ensure each background task has a unique name.
 
-> **注意** 使用您 app 專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
-
-下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
+The following code registers a background task using the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) we created in the last step:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -137,16 +137,17 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 登錄背景工作 (或傳回現有登錄)
+## Register the background task (or return the existing registration)
 
 
-檢查現有背景工作登錄清單中是否已有該工作。 如果有，則傳回工作的該執行個體。
+Check to see if the task was found in the list of existing background task registrations. If so, return that instance of the task.
 
-然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
+Then, register the task using a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. This code should check whether the condition parameter is null, and if not, add the condition to the registration object. Return the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) returned by the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method.
 
-> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **Note** If you are registering a background task that runs in the same process as your app, send `String.Empty` or `null` for the `taskEntryPoint` parameter.
 
-下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
+The following example either returns the existing task, or adds code that registers the background task (including the optional system condition if present):
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -180,12 +181,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 >     var builder = new BackgroundTaskBuilder();
 >
 >     builder.Name = name;
->     builder.TaskEntryPoint = taskEntryPoint;
+>
+>     // single-process background tasks don't set TaskEntryPoint
+>     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
+>     {
+>         builder.TaskEntryPoint = taskEntryPoint;
+>     }
 >     builder.SetTrigger(trigger);
 >
 >     if (condition != null)
 >     {
->
 >         builder.AddCondition(condition);
 >     }
 >
@@ -246,10 +251,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 完成背景工作登錄公用程式函式
+## Complete background task registration utility function
 
 
-這個範例顯示已完成的背景工作登錄函式。 這個函式可用來登錄大多數的背景工作 (除了網路背景工作之外)。
+This example shows the completed background task registration function. This function can be used to register most background tasks, with the exception of networking background tasks.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -366,29 +371,28 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
-## 相關主題
-
+## Related topics
 
 ****
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
-* [使用維護觸發程序](use-a-maintenance-trigger.md)
-* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [背景工作的指導方針](guidelines-for-background-tasks.md)
+* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
+* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -396,6 +400,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

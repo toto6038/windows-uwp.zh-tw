@@ -1,26 +1,27 @@
 ---
 author: Mtoepke
-title: "Xbox One 上的 UWP 範例"
-description: "範例和程式庫，可協助您建置絕佳的 Xbox One 與電視體驗。"
-area: Xbox
+title: UWP on Xbox One samples
+description: Samples and libraries to help you build great Xbox One and TV experiences.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
+ms.sourcegitcommit: cee28021caddaf017b32e9bbce3fa31f3f77f4f7
+ms.openlocfilehash: 21aeb9ed928d0a0e9676245e86617cd24d5e3257
 
 ---
 
-# Xbox One 上的 UWP 範例
+# UWP on Xbox One samples
 
-TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 JavaScript 和 C# 建置絕佳的 Xbox One 與電視體驗。 TVJS 是可協助您針對 Xbox One 建置優質 UWP app 的程式庫。 TVJS 包含自動控制器瀏覽、多媒體播放、搜尋等支援。 您可以使用 TVJS 搭配託管的 Web 應用程式，就如同搭配具備 Windows 執行階段 API 完整存取權之封裝的 Web UWP app 一樣簡單。
+TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. TVJS is a library that helps you build premium Universal Windows Platform (UWP) apps for Xbox One. 
+
+TVJS includes support for automatic controller navigation, rich media playback, search, and more. You can use TVJS with your hosted web app just as easily as with a packaged web UWP app with full access to the Windows Runtime APIs.
   
-如需詳細資訊，請參閱 [TVHelpers](https://github.com/Microsoft/TVHelpers) 專案和專案 [wiki](https://github.com/Microsoft/TVHelpers/wiki)。
+For more information, see the [TVHelpers](https://github.com/Microsoft/TVHelpers) project and the project [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## 另請參閱
+## See also
 
-- [Xbox One 上的 UWP](index.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,26 +1,32 @@
 ---
-title&#58; Unity：針對您的 UWP 專案進行版本控制 作者：JordanEllis6809
+author: JordanEllis6809
+title: Unity - Version control your UWP project
+description: Version your Unity UWP project.
+translationtype: Human Translation
+ms.sourcegitcommit: a1b759b00e35092323b8c4634907dd5c0fffa68c
+ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
+
 ---
 
-# Unity：針對您的 UWP 專案進行版本控制
+# Unity: Version control your UWP project
 
-還沒有使用 UWP 建置適用於 Xbox 的遊戲嗎？  請先閱讀[此處](development-lanes-unity.md)。
+Still haven't built your Unity game for Xbox using the Universal Windows Platform (UWP)?  First see [Bringing Unity games to UWP on Xbox](development-lanes-unity.md).
 
-您想要將產生的 UWP 目錄新增到版本控制的原因有幾個不同的理由，其中一個是新增相依性 (也就是 Xbox Live SDK)。  我們在本教學課程中將以此案例做為範例，希望它會有助於您解決專案的個別需求。
+There are a few different reasons why you would want to add parts of your generated UWP directory to version control, one of which is adding dependencies (for example,Xbox Live SDK).  We'll use this scenario as an example for this tutorial, and hopefully it will help you solve your project's individual needs.
 
-***免責聲明：我們將使用 Git 做為版本控制解決方案。  如果您的版本控制解決方案不同，概念仍應該可以通用。***
+***Disclaimer: We'll be using Git as our version control solution.  If yours differs, the concepts should still translate.***
 
-為了重新整理您的記憶，以下是我們的遊戲 ***ScrapyardPhoenix*** 的目錄，目前看起來如下：
+To refresh your memory, this is what the directory for our game, ***ScrapyardPhoenix***, looks like currently:
 
-![建置目的地資料夾](images/build-destination.png)
+![Build Destination Folder](images/build-destination.png)
 
-而我們的 UWP 目錄看起來像這樣：
+And this is what our UWP directory looks like:
 
-![UWP VS 解決方案](images/uwp-vs-solution.png)
+![UWP VS Solution](images/uwp-vs-solution.png)
 
-在此目錄中，我們僅需關注一個資料夾，***ScrapyardPhoenix*** /(在此插入您的遊戲名稱/) 資料夾。  在我們的版本控制中可以忽略所有其他項目：
+In this directory, we're only concerned about one folder, the ***ScrapyardPhoenix*** (insert your game's name here) folder.  Everything else can be ignored in our version control.
 
-***不熟悉 .gitignore 檔是什麼嗎？  在[這裡](https://git-scm.com/docs/gitignore)深入了解。***
+***Unfamiliar with what a .gitignore file is?  See [gitignore](https://git-scm.com/docs/gitignore).***
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -36,37 +42,27 @@ title&#58; Unity：針對您的 UWP 專案進行版本控制 作者：JordanElli
     # except we want to keep... (this line will be modified and removed further down)
     !/UWP/ScrapyardPhoenix/
 
-我們將會從 `UWP/ScrapyardPhoenix` 中選取一些不同的檔案與資料夾，新增到我們的版本控制中。  我們先看看完整項目的詳細資訊：
+We're going to want to select a few different files and folders from within the **UWP/ScrapyardPhoenix** folder to add to our version control.  First let's look at the full thing in detail:
 
-![UWP 建置目錄](images/uwp-build-directory.png)  
+![UWP Build Directory](images/uwp-build-directory.png)  
 
-## 資料夾  
+## Folders  
 
-`Assets` | 
-            ***包含*** | 包含 Windows 市集影像。  
-`Data`   | 
-            ***忽略*** | Unity 編譯您專案的目標位置 (場景、著色器、指令碼、Prefabs 等等)。  
-`Dependencies` | 
-            ***包含*** | 此資料夾是建立以在其中保留所有 UWP 的相依性 (也就是 XboxLiveSDK.dll)。  
-`Properties` | 
-            ***包含*** | 包含開發人員可修改的進階設定。  
-`Unprocessed` | 
-            ***忽略*** | 包含 Unity `.dll` 和 `.pdb` 檔案。  
+`Assets` | ***Include*** | Contains Windows Store images  
+`Data`   | ***Ignore*** | Where Unity compiles your project to (Scenes, Shaders, Scripts, Prefabs, etc.)  
+`Dependencies` | ***Include*** | This folder is one I created to keep all UWP dependencies in (for example, XboxLiveSDK.dll)  
+`Properties` | ***Include*** | Contains more advanced settings that can be modified by the developer  
+`Unprocessed` | ***Ignore*** | Contains Unity `.dll` and `.pdb` files  
 
-## 檔案  
+## Files  
 
-`App.cs` | 
-            ***包含*** | 您的 UWP 應用程式的進入點。  此檔案可以修改，並搭配其他來源檔案擴充。  
-`Package.appxmanifest` | 
-            ***包含*** | 您的 AppX 的套件資訊清單。  
-`project.json` | 
-            ***包含*** | 描述您的 `*.csproj` 所依存的 NuGet 套件。  
-`ScrapyardPhoenix.csproj` | 
-            ***包含*** | 描述您的 UWP 建置目標。  如果您將其他相依性新增到 UWP 專案，這個 `*.csproj` 檔案將會包含該資訊。  
-`ScrapyardPhoenix.csproj.user` | 
-            ***忽略*** | 此檔案包含本機使用者資訊。
+`App.cs` | ***Include*** | Entry point for your UWP application; this can be modified and extended with other source files  
+`Package.appxmanifest` | ***Include*** | Package manifest for your AppX  
+`project.json` | ***Include*** | Describes the NuGet packages your `*.csproj` depends on  
+`ScrapyardPhoenix.csproj` | ***Include*** | Describes your UWP build target; if you add additional dependencies to your UWP project, this `*.csproj` file will contain that information  
+`ScrapyardPhoenix.csproj.user` | ***Ignore*** | This file contains local user information
 
-## 產生 .gitignore
+## Resulting .gitignore
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -88,21 +84,24 @@ title&#58; Unity：針對您的 UWP 專案進行版本控制 作者：JordanElli
     !/UWP/ScrapyardPhoenix/project.json
     !/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
 
-這樣就好了，現在您的小組成員將會與您產生的 UWP 專案同步。  現在您可以放心地將其他資產、來源和相依性新增到您的 UWP 專案。
+And there you go, now your teammates will be in sync with the UWP project you've generated. Now you can feel free to add additional assets, source, and dependencies to your UWP project.
 
-如需一些針對 UWP 資料夾版本管理的詳細範例，可在[這些範例](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview)中找到。
+Some more examples of versioning the UWP folder can be found in [these examples](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview).
 
-## 將相依性新增到 UWP App
+## Adding dependencies to your UWP app
 
-將相依性新增到 UWP 應用程式，就像您要在任何其他 Visual Studio 專案中所完成的一樣。  此處要釐清的唯一瑣碎細項，是在我們的方案中要新增相依性到哪個專案。  以下影像顯示該專案 (已加上醒目提示)：
+Add dependencies to DLLs and WINMDs by putting them in your **Unity Assets** folder under a **Plugins** folder, then select them and set their target platform settings appropriately in the Inspector.
 
-![UWP 方案](images/uwp-solution.png)
+![UWP Solution](images/uwp-solution.PNG)
+
+***ScrapyardPhoenix (Universal Windows)*** is the project you would add a reference to, for example, the Xbox Live SDK.
+
+## See also
+- [Bringing existing games to Xbox](development-lanes-landing.md)
+- [UWP on Xbox One](index.md)
 
 
-            ***ScrapyardPhoenix /(通用 Windows/)*** 是您要新增參考 /(例如，Xbox Live SDK/) 的專案。
 
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

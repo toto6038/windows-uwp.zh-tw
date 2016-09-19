@@ -1,190 +1,190 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。"
-title: "移動瀏覽"
+Description: Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
+title: Panning
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
+ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 ---
 
-# 移動瀏覽的指導方針
+# Guidelines for panning
 
-移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
+Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 
-## 可行與禁止事項
+## Dos and don'ts
 
 
-**移動瀏覽指標和捲軸**
+**Panning indicators and scroll bars**
 
--   確保可以移動瀏覽/捲動，才將內容載入到應用程式中。
+-   Ensure panning/scrolling is possible before loading content into your app.
 
--   顯示移動瀏覽指標和捲軸來提示位置及大小。 如果您提供自訂瀏覽功能，請隱藏它們。
+-   Display panning indicators and scroll bars to provide location and size cues. Hide them if you provide a custom navigation feature.
 
-    **注意** 與標準捲軸不同，移動瀏覽指標僅用來提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **Note**  Unlike standard scroll bars, panning indicators are purely informative. They are not exposed to input devices and cannot be manipulated in any way.
 
      
 
-**單軸移動瀏覽 (一維溢位)**
+**Single-axis panning (one-dimensional overflow)**
 
--   對延長超過一個檢視區界限 (垂直或水平) 的內容區域，使用單軸移動瀏覽。
+-   Use one-axis panning for content regions that extend beyond one viewport boundary (vertical or horizontal).
 
-    -   若為項目的一維清單，請使用垂直移動瀏覽。
-    -   若為格線中的項目，請使用水平移動瀏覽。
--   如果必須讓使用者在貼齊點之間移動瀏覽並停止時，請不要利用單軸移動瀏覽來使用強制貼齊點。 強制貼齊點會保證使用者停止在貼齊點上。 請改用鄰近性貼齊點。
+    -   Vertical panning for a one-dimensional list of items.
+    -   Horizontal panning for a grid of items.
+-   Don’t use mandatory snap-points with single-axis panning if a user must be able to pan and stop between snap-points. Mandatory snap-points guarantee that the user will stop on a snap-point. Use proximity snap-points instead.
 
-**任意方向移動瀏覽 (二維溢位)**
+**Freeform panning (two-dimensional overflow)**
 
--   對延長超過兩個檢視區界限 (垂直和水平) 的內容區域，使用雙軸移動瀏覽。
+-   Use two-axis panning for content regions that extend beyond both viewport boundaries (vertical and horizontal).
 
-    -   若是使用者可能會往多個方向移動的無結構內容，請覆寫預設的柵欄行為並使用任意方向移動瀏覽。
--   任意方向移動瀏覽通常適用於影像或地圖內。
+    -   Override the default rails behavior and use freeform panning for unstructured content where the user is likely to move in multiple directions.
+-   Freeform panning is typically suited to navigating within images or maps.
 
-**分頁檢視**
+**Paged view**
 
--   當內容是由離散的元素所組成或您想要顯示整個元素時，請使用強制貼齊點。 這可能包含一本書或雜誌的頁面、一個項目資料欄或個別的影像。
+-   Use mandatory snap-points when the content is composed of discrete elements or you want to display an entire element. This can include pages of a book or magazine, a column of items, or individual images.
 
-    -   貼齊點應被放置在每個邏輯界限上。
-    -   每個元素都應該調整大小或縮放以符合檢視範圍。
+    -   A snap-point should be placed at each logical boundary.
+    -   Each element should be sized or scaled to fit the view.
 
-**邏輯和關鍵點**
+**Logical and key points**
 
--   如果內容中有使用者可能停住的關鍵點或邏輯位置，請使用鄰近性貼齊點。 例如，區段標頭。
+-   Use proximity snap-points if there are key points or logical places in the content that a user will likely stop. For example, a section header.
 
--   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
+-   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
 
-**鏈結內嵌或巢狀的內容**
+**Chaining embedded or nested content**
 
--   對於文字與格線內容，請使用單軸移動瀏覽 (通常為水平) 與欄配置。 在這些情況下，內容通常會在欄與欄之間自然換行和流動，以及讓使用者經驗保持一致，並且可以跨 Windows 市集應用程式探索。
+-   Use single-axis panning (typically horizontal) and column layouts for text and grid-based content. In these cases, content typically wraps and flows naturally from column to column and keeps the user experience consistent and discoverable across Windows Store apps.
 
--   不要使用內嵌的可移動瀏覽區域來顯示文字或項目清單。 因為只有在區域內偵測到輸入接觸點時，才會顯示移動瀏覽指標與捲軸，所以這並非直覺式或可探索的使用者經驗。
+-   Don't use embedded pannable regions to display text or item lists. Because the panning indicators and scroll bars are displayed only when the input contact is detected within the region, it is not an intuitive or discoverable user experience.
 
--   如果兩個可移動瀏覽區域的移動瀏覽方向相同，請勿將兩者鏈結，或將其中一個區域置於另一個區域內 (如下所示)。 當達到子區域的界限時，這可能會導致在父區域發生非預期的移動瀏覽。 請考慮讓移動瀏覽軸成垂直。
+-   Don't chain or place one pannable region within another pannable region if they both pan in the same direction, as shown here. This can result in the parent area being panned unintentionally when a boundary for the child area is reached. Consider making the panning axis perpendicular.
 
-    ![示範與其容器朝同方向捲動之內嵌可移動瀏覽區域的影像。](images/scrolling-embedded3.png)
+    ![image demonstrating an embedded pannable area that scrolls in the same direction as its container.](images/scrolling-embedded3.png)
 
-## 其他用法指導方針
+## Additional usage guidance
 
 
-利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
+Panning with touch, by using a swipe or slide gesture with one or more fingers, is like scrolling with the mouse. The panning interaction is most similar to rotating the mouse wheel or sliding the scroll box, rather than clicking the scroll bar. Unless a distinction is made in an API or required by some device-specific Windows UI, we simply refer to both interactions as panning.
 
-根據輸入裝置，使用者會透過下列其中一種方式，在可移動瀏覽的區域內移動瀏覽：
+Depending on the input device, the user pans within a pannable region by using one of these:
 
--   使用滑鼠、觸控板或主動式畫筆/手寫筆按一下捲動箭號、拖曳捲動方塊，或在捲軸內按一下。
--   使用滑鼠的滾輪按鈕來模擬拖曳捲動方塊的動作。
--   延伸的按鈕 (XBUTTON1 和 XBUTTON2)，如果滑鼠支援。
--   使用鍵盤方向鍵來模擬拖曳捲動方塊的動作，或頁面鍵來模擬在捲軸內按一下的動作。
--   使用觸控、觸控板或被動式畫筆/手寫筆往想要的方向滑動，或將手指往想要的方向撥動。
+-   A mouse, touchpad, or active pen/stylus to click the scroll arrows, drag the scroll box, or click within the scroll bar.
+-   The wheel button of the mouse to emulate dragging the scroll box.
+-   The extended buttons (XBUTTON1 and XBUTTON2), if supported by the mouse.
+-   The keyboard arrow keys to emulate dragging the scroll box or the page keys to emulate clicking within the scroll bar.
+-   Touch, touchpad, or passive pen/stylus to slide or swipe the fingers in the desired direction.
 
-滑動需要將手指慢慢朝移動瀏覽方向移動。 這會產生一對一關係，內容會依手指移動的速度和距離移動瀏覽。 撥動 (需要快速滑動並提起手指) 會將下列物理作用套用到移動瀏覽動畫：
+Sliding involves moving the fingers slowly in the panning direction. This results in a one-to-one relationship, where the content pans at the same speed and distance as the fingers. Swiping, which involves rapidly sliding and lifting the fingers, results in the following physics being applied to the panning animation:
 
--   減速 (慣性)：提起手指會讓移動瀏覽開始減速。 這類似於在光滑的表面上滑動到停止的現象。
--   吸力：減速時如果到達貼齊點或內容區域界限，移動瀏覽動力會產生輕微的反彈效果。
+-   Deceleration (inertia): Lifting the fingers causes panning to start decelerating. This is similar to sliding to a stop on a slippery surface.
+-   Absorption: Panning momentum during deceleration causes a slight bounce-back effect if either a snap point or a content area boundary is reached.
 
-**移動瀏覽的類型**
+**Types of panning**
 
-Windows 8 支援三種移動瀏覽類型：
+Windows 8 supports three types of panning:
 
--   單軸 - 僅支援一個方向的移動瀏覽 (水平或垂直)。
--   柵欄 - 支援所有方向的移動瀏覽。 不過，一旦使用者超出某個特定方向的距離閾值，移動瀏覽就會受限於該軸。
--   任意方向 - 支援所有方向的移動瀏覽。
+-   Single axis - panning is supported in one direction only (horizontal or vertical).
+-   Rails - panning is supported in all directions. However, once the user crosses a distance threshold in a specific direction, then panning is restricted to that axis.
+-   Freeform - panning is supported in all directions.
 
-**移動瀏覽 UI**
+**Panning UI**
 
-移動瀏覽的互動經驗對輸入裝置都是唯一的，但仍然能提供類似的功能。
+The interaction experience for panning is unique to the input device while still providing similar functionality.
 
-**可移動瀏覽區域** 可移動瀏覽區域行為是在設計階段透過階層式樣式表 (CSS) 顯示給使用 JavaScript 的 Windows 市集應用程式開發人員。
+**Pannable regions** Pannable region behaviors are exposed to Windows Store app using JavaScript developers at design time through Cascading Style Sheets (CSS).
 
-根據偵測到的輸入裝置，提供兩種移動瀏覽顯示模式：
+There are two panning display modes based on the input device detected:
 
--   觸控時為移動瀏覽指標。
--   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
+-   Panning indicators for touch.
+-   Scroll bars for other input devices, including mouse, touchpad, keyboard, and stylus.
 
-**注意** 只有當觸控接觸是在可移動瀏覽的區域內時，才會顯示移動瀏覽指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**Note**  Panning indicators are only visible when the touch contact is within the pannable region. Similarly, the scroll bar is only visible when the mouse cursor, pen/stylus cursor, or keyboard focus is within the scrollable region.
 
  
 
-**移動瀏覽指標** 移動瀏覽指標類似於捲軸中的捲動方塊。 它們指示了顯示內容佔可移動瀏覽總區域的比例，以及顯示內容在可移動瀏覽區域中的相對位置。
+**Panning indicators** Panning indicators are similar to the scroll box in a scroll bar. They indicate the proportion of displayed content to total pannable area and the relative position of the displayed content in the pannable area.
 
-下圖顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標。
+The following diagram shows two pannable areas of different lengths and their panning indicators.
 
-![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
+![image showing two pannable areas of different lengths and their panning indicators.](images/scrolling-indicators.png)
 
-**移動瀏覽行為** 
-           **貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+**Panning behaviors**
+**Snap points** Panning with the swipe gesture introduces inertia behavior into the interaction when the touch contact is lifted. With inertia, the content continues to pan until some distance threshold is reached without direct input from the user. Use snap points to modify this inertia behavior.
 
-貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
+Snap points specify logical stops in your app content. Cognitively, snap points act as a paging mechanism for the user and minimize fatigue from excessive sliding or swiping in large pannable regions. With them, you can handle imprecise user input and ensure a specific subset of content or key information is displayed in the viewport.
 
-貼齊點有兩種類型：
+There are two types of snap-points:
 
--   鄰近性 - 提起手指後，如果慣性作用讓貼齊點停在距離閾值範圍內，就會選取該貼齊點。 移動瀏覽仍然可以在鄰近性貼齊點之間停止。
--   強制 - 選取的貼齊點為提起手指之前，在最後一個越過之貼齊點之前或之後的那個貼齊點 (取決於手勢的方向和速度)。 移動瀏覽必須在強制貼齊點上停止。
+-   Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Panning can still stop between proximity snap points.
+-   Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). Panning must stop on a mandatory snap point.
 
-對於一些模擬分頁內容或具有項目邏輯群組而可以被動態重新分組以納入檢視區或顯示範圍中的應用程式 (例如網頁瀏覽器和相簿) 來說，移動瀏覽貼齊點相當有用。
+Panning snap-points are useful for applications such as web browsers and photo albums that emulate paginated content or have logical groupings of items that can be dynamically regrouped to fit within a viewport or display.
 
-下圖顯示移動瀏覽至特定點並放開時，如何造成內容自動移動瀏覽至某個邏輯位置。
+The following diagrams show how panning to a certain point and releasing causes the content to automatically pan to a logical location.
 
 |                                                                |                                                                                         |                                                                                                                 |
 |----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![顯示可移動瀏覽區域的影像。](images/ux-panning-snap1.png) | ![顯示可移動瀏覽區域被移動瀏覽至左側的影像。](images/ux-panning-snap2.png) | ![顯示已在某個邏輯貼齊點停止移動瀏覽之可移動瀏覽區域的影像。](images/ux-panning-snap3.png) |
-| 撥動以移動瀏覽。                                                  | 提起手指。                                                                     | 可移動瀏覽區域會在貼齊點停止，而不是提起手指的位置。                                |
+| ![image showing a pannable area.](images/ux-panning-snap1.png) | ![image showing a pannable area being panned to the left.](images/ux-panning-snap2.png) | ![image showing a pannable area that has stopped panning at a logical snap-point.](images/ux-panning-snap3.png) |
+| Swipe to pan.                                                  | Lift touch contact.                                                                     | Pannable region stops at the snap point, not where the touch contact was lifted.                                |
 
  
 
-**柵欄** 內容可以寬於和高於顯示裝置的維度及解析度。 基於這個理由，二維移動瀏覽 (水平和垂直) 通常是必需的。 柵欄可改進這些案例中的使用者經驗，透過沿著動作方向的軸線 (垂直或水平) 強調移動瀏覽來完成。
+**Rails** Content can be wider and taller than the dimensions and resolution of a display device. For this reason, two-dimensional panning (horizontal and vertical) is often necessary. Rails improve the user experience in these cases by emphasizing panning along the axis of motion (vertical or horizontal).
 
-下圖示範柵欄的概念。
+The following diagram demonstrates the concept of rails.
 
-![畫面中有柵欄限制移動瀏覽範圍的圖表](images/ux-panning-rails.png)
+![diagram of a screen with rails that constrain panning](images/ux-panning-rails.png)
 
-**鏈結內嵌或巢狀的內容**
+**Chaining embedded or nested content**
 
-使用者達到元素 (巢狀於其他可縮放或可捲動元素內) 的縮放或捲動限制後，您可以指定父項元素是否應繼續執行由其子元素開始的縮放或捲動作業。 這稱為縮放或捲動「鏈結」。
+After a user hits a zoom or scroll limit on an element that has been nested within another zoomable or scrollable element, you can specify whether that parent element should continue the zooming or scrolling operation begun in its child element. This is called zoom or scroll chaining.
 
-對於在包含一或多個單軸或任意方向移動瀏覽區域的單軸內容區域內所進行的移動瀏覽 (當觸控接觸是發生在這些子區域的其中一個之內)，可以使用鏈結。 當達到子區域某個特定方向的移動瀏覽界限時，便會啟動父區域同一方向的移動瀏覽。
+Chaining is used for panning within a single-axis content area that contains one or more single-axis or freeform panning regions (when the touch contact is within one of these child regions). When the panning boundary of the child region is reached in a specific direction, panning is then activated on the parent region in the same direction.
 
-當一個可移動瀏覽區域巢狀於另一個可移動瀏覽區域內時，在容器與內嵌的內容之間指定足夠的空間便相當重要。 在下圖中，一個可移動瀏覽區域被置於另一個可移動瀏覽區域內，各自成垂直方向。 每個區域中都有充分的空間可供使用者移動瀏覽。
+When a pannable region is nested inside another pannable region it's important to specify enough space between the container and the embedded content. In the following diagrams, one pannable region is placed inside another pannable region, each going in perpendicular directions. There is plenty of space for users to pan in each region.
 
-![示範內嵌的可移動瀏覽區域的影像。](images/scrolling-embedded.png)
+![image demonstrating an embedded pannable area.](images/scrolling-embedded.png)
 
-如果空間不足 (如下圖所示)，內嵌的可移動瀏覽區域便可能干擾容器中的移動瀏覽，並導致在一或多個可移動瀏覽區域中發生非預期的移動瀏覽。
+Without enough space, as shown in the following diagram, the embedded pannable region can interfere with panning in the container and result in unintentional panning in one or more of the pannable regions.
 
-![示範內嵌的可移動瀏覽區域邊框間距不足的影像。](images/ux-panning-embedded-wrong.png)
+![image demonstrating insufficient padding for an embedded pannable area.](images/ux-panning-embedded-wrong.png)
 
-對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的 app (如相簿或地圖 app)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的 App 中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
+This guidance is also useful for apps such as photo albums or mapping apps that support unconstrained panning within an individual image or map while also supporting single-axis panning within the album (to the previous or next images) or details area. In apps that provide a detail or options area corresponding to a freeform panning image or map, we recommend that the page layout start with the details and options area as the unconstrained panning area of the image or map might interfere with panning to the details area.
 
-## 相關文章
+## Related articles
 
 
-* [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [最佳化 ListView 與 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Optimize ListView and GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
+* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
 
-**範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**封存範例**
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Archive samples**
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -195,6 +195,6 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,130 +1,138 @@
 ---
 author: PatrickFarley
-title: "從 app 進行 3D 列印"
-description: "了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。"
+title: 3D printing from your app
+description: Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 translationtype: Human Translation
-ms.sourcegitcommit: 61d9f5c1fca1ad2e26f052b901361813975ae357
-ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
+ms.sourcegitcommit: e2b88b0eb88d0a3d8d1a5fb944bd4d00a50012e0
+ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 ---
 
-# 從 app 進行 3D 列印
+# 3D printing from your app
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
-了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何將 3D 幾何資料載入 app，以及如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。 如需這些程序實際運作的範例，請參閱 [3D 列印 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)。
+Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to load 3D geometry data into your app and launch the 3D print dialog after ensuring your 3D model is printable and in the correct format. For an example of these procedures in action, see the [3D printing UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
 
-## 類別設定
+> [!NOTE]
+> In the sample code in this guide, error reporting and handling is greatly simplified for the sake of brevity.
+
+## Class setup
 
 
-在需要 3D 列印功能的類別中，加入 [Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/dn998169) 命名空間。
+In your class that is to have 3D print functionality, add the [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169) namespace.
 
 [!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
 
-下列其他的命名空間，將會在這個特定的指南中使用：
+The following additional namespaces will be used in this guide:
 
 [!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)]
 
-接下來，為您的類別提供一些有用的成員欄位。 宣告 [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) 物件做為要傳遞至列印驅動程式的列印工作參考。 宣告 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件來保存原始 3D 資料檔案。 最後，宣告 [Printing3D3MFPackage](https://msdn.microsoft.com/library/windows/apps/dn998063) 物件，這個物件代表含有所有必要之中繼資料的列印就緒 3D 模型。
+Next, give your class some helpful member fields. Declare a [**Print3DTask**](https://msdn.microsoft.com/library/windows/apps/dn998044) object to serve as a reference to the printing task that is to be passed to the print driver. Declare a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object to hold the original 3D data file to be loaded into the app. Declare a [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/dn998063) object, which represents a print-ready 3D model with all necessary metadata.
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
-## 建立簡單的 UI
+## Create a simple UI
 
-
-這個範例使用三個使用者控制項：將檔案帶入程式記憶體的載入按鈕、會視需要修改檔案的修正按鈕，以及初始化列印工作的列印按鈕。 下列程式碼會在您類別的 XAML 檔案中產生這些按鈕 (包含其點擊事件處理常式)：
+This sample features three user controls: a load button which will bring a file into program memory, a fix button which will modify the file as necessary, and a print button which will initiate the print job. The following code creates these buttons (with their click event handlers) in your class' XAML file.
 
 [!code-xml[Buttons](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
 
-加入 **TextBlock** 以用於 UI 回饋。
+Add a **TextBlock** for UI feedback.
 
 [!code-xml[OutputText](./code/3dprinthowto/cs/MainPage.xaml#SnippetOutputText)]
 
-## 取得 3D 資料
 
 
-此方法依據您 app 取得 3D 幾何資料進行列印的方式而異。 您 app 擷取資料的方式可能是 3D 掃描、從網路資源提取模型資料，或使用方程式以程式設計方式產生 3D 網格。 為了簡單起見，本指南從 [檔案總管] 將 3D 資料檔案 (任何常見的檔案類型) 載入程式記憶體。
+## Get the 3D data
 
-在 `OnLoadClick` 方法中，使用 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) 類別將單一檔案載入至 app 記憶體。
+
+The method by which your app acquires 3D geometry data will vary. Your app may retrieve data from a 3D scan, download model data from a web resource, or generate a 3D mesh programmatically using equations or user input. For the sake of simplicity, this guide will show how to load a 3D data file (of any of several common file types) into program memory from device storage. The [3D Builder model library](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) provides a variety of models that you can easily download to your device.
+
+In your `OnLoadClick` method, use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) class to load a single file into your app's memory.
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-## 使用 3D Builder 轉換為 3D 製造格式 (.3mf)
+## Use 3D Builder to convert to 3D Manufacturing Format (.3mf)
 
-這時，您就可以將 3D 資料檔案載入 app 的記憶體。 不過，3D 幾何資料有許多不同格式，且對 3D 列印並非都有效率。 Windows 10 對於所有的 3D 列印工作皆使用 3D 製造格式 (.3mf) 檔案類型。
+At this point, you are able to load a 3D data file into your app's memory. However, 3D geometry data can come in many different formats, and not all are efficient for 3D printing. Windows 10 uses the 3D Manufacturing Format (.3mf) file type for all 3D printing tasks.
 
-> **注意** 3MF 檔案類型提供大量的功能，但本教學課程無法涵蓋。 若要深入了解 3MF 及其提供給 3D 產品生產者與消費者的功能，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何以 Windows 10 運用這些功能，請參閱[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教學課程。
+> [!NOTE]  
+> The .3mf file type offers a great deal of functionality not covered in this tutorial. To learn more about 3MF and the features it provides to producers and consumers of 3D products, refer to the [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/). To learn how to harness these features using Windows 10 APIs, see the [Generate a 3MF package](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf) tutorial.
 
-幸運的是，[3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app 可以開啟大部分熱門的 3D 格式，並另存為 .3mf 檔案。 在這個範例中，當檔案類型有所不同時，一種非常簡單的解決方案是開啟 3D Builder 並提示使用者將匯入的檔案另存為 .3mf 檔案，然後重新載入。
+Fortunately, the [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app can open files of most popular 3D formats and save them as .3mf files. In this example, where the file type could vary, a very simple solution is to open 3D Builder and prompt the user to save the imported data as a .3mf file and then reload it.
 
-> **注意** 除了轉換檔案格式，**3D Builder** 提供簡單的工具來編輯模型、新增顏色資料，並執行其他列印特定的作業，因此通常值得將它整合到處理 3D 列印的 app 中。
+> [!NOTE]  
+> In addition to converting file formats, 3D Builder provides simple tools to edit your models, add color data, and perform other print-specific operations, so it is often worth integrating into an app that deals with 3D printing.
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
-## 修復模型資料以供 3D 列印
+## Repair model data for 3D printing
 
-即使是 .3mf 格式，也並非所有的 3D 模型資料都可以列印。 若要讓印表機正確地判斷要填滿的空間與要保留的空白，列印的模型必須是單一無縫的網格、具有對外區面法線，且具有多面幾何。 這些區域中的問題可能會以多種不同形式出現，且在複雜圖形中難以察覺。 幸運的是，目前的軟體解決方案通常可將原始幾何檔案轉換為可列印的 3D 圖形。 這可在 `OnFixClick` 方法中完成。
+Not all 3D model data is printable, even in the .3mf type. In order for the printer to correctly determine what space to fill and what to leave empty, the model(s) to be printed must (each) be a single seamless mesh, have outward-facing surface normals, and have manifold geometry. Issues in these areas can crop up in a variety of different forms and can be hard to spot in complex shapes. Fortunately, modern software solutions are often adequate for converting raw geometry to printable 3D shapes. This is known as *repairing* the model and will be done in the `OnFixClick` method.
 
-必須將 3D資料檔案轉換以實作 [IRandomAccessStream](https://msdn.microsoft.com/library/windows/apps/br241731)，這可接著用來產生 [Printing3DModel](https://msdn.microsoft.com/library/windows/apps/mt203679) 物件。
+The 3D data file must be converted to implement [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), which can then be used to generate a [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679) object.
 
 [!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
 
-**Printing3DModel** 物件現在已經修復且可供列印。 當建立類別時，使用 **SaveModelToPackageAsync** 將模型指派到您建立類別時宣告的 Printing3D3MFPackage 物件。
+The **Printing3DModel** object is now repaired and printable. Use [**SaveModelToPackageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync) to assign the model to the **Printing3D3MFPackage** object that you declared when creating the class.
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
-## 執行列印工作︰建立 TaskRequested 處理常式
+## Execute printing task: create a TaskRequested handler
 
 
-稍後對使用者顯示 3D 列印對話方塊且使用者選擇開始列印時，您的 app 必須將所需的參數傳遞到 3D 列印管線。 3D 列印 API 會引發 **TaskRequested** 事件。 您必須撰寫一個方法來適當地處理這個事件。 如同以往，它必須與其事件類型相同︰**TaskRequested** 事件有參數 [Print3DManager](https://msdn.microsoft.com/library/windows/apps/dn998029) (其傳送者物件) 和會保存大部分的相關資訊的 [Print3DTaskRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/dn998051) 物件。 它的傳回類型是 **void**。
+Later on, when the 3D print dialog is displayed to the user and the user elects to begin printing, your app will need to pass in the desired parameters to the 3D print pipeline. The 3D print API will raise the **TaskRequested** event. You must write a method to handle this event appropriately. As always, the handler method must be of the same type as its event: The **TaskRequested** event has parameters [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (a reference to its sender object) and a [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) object, which holds most of the relevant information. Its return type is **void**.
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-這個方法的核心目的是使用 *args* 物件來將 **Printing3D3MFPackage** 向下傳送到管線。 **Print3DTaskRequestedEventArgs** 類型有一個屬性︰**Request**。 它是 [Print3DTaskRequest](https://msdn.microsoft.com/library/windows/apps/dn998050) 類型，並代表一個列印工作要求。 它的方法 **CreateTask** 可讓程式為列印工作送出正確資訊，而且它會傳回向下傳遞到 3D 列印管線之 [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) 物件的參考。
+The core purpose of this method is to use the *args* parameter to send a **Printing3D3MFPackage** down the pipeline. The **Print3DTaskRequestedEventArgs** type has one property: [**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). It is of the type [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) and represents one print job request. Its method [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) allows the program to submit the right information for your print job, and it returns a reference to the **Print3DTask** object which was sent down the 3D print pipeline.
 
-**CreateTask** 具有下列輸入參數：列印工作名稱的**字串**、要使用之印表機的識別碼**字串**，及 **Print3DTaskSourceRequestedHandler** 委派。 當引發 **3DTaskSourceRequested** 事件時，會自動叫用委派 (這會由 API 本身完成)。 要注意的重點是，這個委派在列印工作初始化時即已叫用，它會負責提供正確的 3D 列印封包。
+**CreateTask** has the following input parameters: a **string** for the print job name, a **string** for the ID of the printer to use, and a [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx) delegate. The delegate is automatically invoked when the **3DTaskSourceRequested** event is raised (this is done by the API itself). The important thing to note is that this delegate is invoked when a print job is initiated, and it is responsible for providing the right 3D print package.
 
-**Print3DTaskSourceRequestedHandler** 會接受一個參數，該參數提供要傳遞之資料的 [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) 物件。 這個類別的其中一個公用方法 **SetSource** 會接受要列印的封包。 實作 **Print3DTaskSourceRequestedHandler** 委派，如下所示：
+**Print3DTaskSourceRequestedHandler** takes one parameter, a [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056) object which provides the data to be sent. The one public method of this class, [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx), accepts the package to be printed. Implement a **Print3DTaskSourceRequestedHandler** delegate as follows.
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
-接著，使用新定義的委派 `sourceHandler` 呼叫 **CreateTask**：
+Next, call **CreateTask**, using the newly-defined delegate, `sourceHandler`.
 
 [!code-cs[CreateTask](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)]
 
-傳回的 **Print3DTask** 會指派到在開頭宣告的類別變數。 您現在可以 (選擇性地) 使用此參考，來處理工作擲回的特定事件：
+The returned **Print3DTask** is assigned to the class variable declared in the beginning. You can now (optionally) use this reference to handle certain events thrown by the task.
 
 [!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
 
-> **注意** 如果您希望將 `Task_Submitting` 和 `Task_Completed` 方法登錄到這些事件，您必須實作它們。
+> [!NOTE]  
+> You must implement a `Task_Submitting` and `Task_Completed` method if you wish to register them to these events.
 
-## 執行列印工作︰開啟 3D 列印對話方塊
+## Execute printing task: open 3D print dialog
 
 
-從您的 app 列印所需的最終一段程式碼，是啟動 3D 列印對話方塊。 如同傳統的列印對話方塊視窗，3D 列印對話方塊提供數個最終列印規格，並讓使用者選取要使用的印表機 (無論是透過 USB 或網路連接)。
+The final piece of code needed is that which launches the 3D print dialog. Like a conventional printing dialog window, the 3D print dialog provides a number of last-minute printing options and allows the user to choose which printer to use (whether connected via USB or the network).
 
-首先，將您的 `MyTaskRequested` 方法向 **TaskRequested** 事件登錄。
+Register your `MyTaskRequested` method with the **TaskRequested** event.
 
 [!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
 
-登錄您的 **TaskRequested** 事件處理常式後，您可以叫用 **ShowPrintUIAsync** 方法，這會在目前的應用程式視窗中顯示 3D 列印對話方塊。
+After registering your **TaskRequested** event handler, you can invoke the method [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dmanager.showprintuiasync.aspx), which brings up the 3D print dialog in the current application window.
 
 [!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
 
-最後，當 app 繼續控制時，解除登錄事件處理常式是很好的做法：[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
+Finally, it is a good practice to de-register your event handlers once your app resumes control.  
 
-## 相關主題
+[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)
+## Related topics
 
-[3D 列印 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[Generate a 3MF package](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
+[3D printing UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
@@ -135,6 +143,6 @@ ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -5,7 +5,7 @@ description: "以下我們將使用「在基本型別上使用深度和效果」
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 56e8bf524537526d639f4d732ab228f3c0ea75da
+ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
 
 ---
 
@@ -527,6 +527,6 @@ private:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

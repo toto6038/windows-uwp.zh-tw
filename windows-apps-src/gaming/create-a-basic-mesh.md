@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: "建立和顯示基本網格"
-description: "3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。"
+title: Create and display a basic mesh
+description: 3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada2
+ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
 
 ---
 
-# 建立和顯示基本網格
+# Create and display a basic mesh
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。 組成這些多邊形物件與表面結構的一系列頂點則稱為網格。 我們在此建立一個立方體物件的基本網格，並將它提供給著色器管線進行轉譯和顯示。
+3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game. The lists of vertices that comprise the structure of these polygonal objects and surfaces are called meshes. Here, we create a basic mesh for a cube object and provide it to the shader pipeline for rendering and display.
 
-> **重要** 這裡提供的範例程式碼會使用類型 (如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4) 及在 DirectXMath.h 中宣告的內嵌方法。 如果您是透過剪下並貼上的方式使用此程式碼，請在您的專案中\#包含 &lt;DirectXMath.h&gt;。
+> **Important**   The example code included here uses types (such as DirectX::XMFLOAT3 and DirectX::XMFLOAT4X4) and inline methods declared in DirectXMath.h. If you're cutting and pasting this code, \#include &lt;DirectXMath.h&gt; in your project.
 
  
 
-## 您需要知道的事項
+## What you need to know
 
 
-### 技術
+### Technologies
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### 先決條件
+### Prerequisites
 
--   線性代數與 3D 座標系統的基本知識
--   Visual Studio 2015 Direct3D 範本
+-   Basic knowledge of linear algebra and 3-D coordinate systems
+-   A Visual Studio 2015 Direct3D template
 
-## 指示
+## Instructions
 
-### 步驟 1：建構模型的網格
+### Step 1: Construct the mesh for the model
 
-在大多數的遊戲中，遊戲物件的網格會從包含特定頂點資料的檔案中載入。 這些頂點的順序取決於應用程式，但通常會序列化為條形或扇形。 頂點資料可以來自任一軟體來源，也可以手動建立。 您的遊戲可以決定要使用哪種讓頂點著色器能夠有效處理資料的方式來解譯資料。
+In most games, the mesh for a game object is loaded from a file that contains the specific vertex data. The ordering of these vertices is app-dependent, but they are usually serialized as strips or fans. Vertex data can come from any software source, or it can be created manually. It's up to your game to interpret the data in a way that the vertex shader can effectively process it.
 
-在範例中，我們在立方體使用簡單的網格。 和管線中這個階段的任一個物件網格一樣，立方體會使用自己的座標系統呈現。 頂點著色器使用其座標並套用您提供的轉換矩陣，然後在同質的座標系統中傳回最終的 2D 檢視投影。
+In our example, we use a simple mesh for a cube. The cube, like any object mesh at this stage in the pipeline, is represented using its own coordinate system. The vertex shader takes its coordinates and, by applying the transformation matrices you provide, returns the final 2-D view projection in a homogeneous coordinate system.
 
-定義立方體的網格 (或從檔案載入。 由您自行決定！)
+Define the mesh for a cube. (Or load it from a file. It's your call!)
 
 ```cpp
 SimpleCubeVertex cubeVertices[] =
@@ -57,17 +57,17 @@ SimpleCubeVertex cubeVertices[] =
 };
 ```
 
-立方體的座標系統會將立方體的中心點放置於原點，並使用慣用左手的座標系統搭配座標值由上而下排列的 Y 軸。 座標值以介於 -1 和 1 之間的 32 位元浮點值表示。
+The cube's coordinate system places the center of the cube at the origin, with the y-axis running top to bottom using a left-handed coordinate system. Coordinate values are expressed as 32-bit floating values between -1 and 1.
 
-在每個以括號括住的配對值中，第二個 DirectX::XMFLOAT3 值群組以 RGB 值指定與頂點關聯的色彩。 例如，在 (-0.5, 0.5, -0.5) 的第一個頂點色彩為全綠色 (G 值設為 1.0，R 與 B 值設為 0)。
+In each bracketed pairing, the second DirectX::XMFLOAT3 value group specifies the color associated with the vertex as an RGB value. For example, the first vertex at (-0.5, 0.5, -0.5) has a full green color (the G value is set to 1.0, and the "R" and "B" values are set to 0).
 
-因此，您有 8 個頂點，每個頂點各有一個指定的色彩。 在範例中，每個頂點/色彩配對就表示一個頂點的完整資料。 當您指定我們的頂點緩衝區時，必須記住這個特殊的配置。 我們會將此輸入配置提供給頂點著色器，讓它可以了解您的頂點資料。
+Therefore, you have 8 vertices, each with a specific color. Each vertex/color pairing is the complete data for a vertex in our example. When you specify our vertex buffer, you must keep this specific layout in mind. We provide this input layout to the vertex shader so it can understand your vertex data.
 
-### 步驟 2：設定輸入配置
+### Step 2: Set up the input layout
 
-現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
+Now, you have the vertices in memory. But, your graphics device has its own memory, and you use Direct3D to access it. To get your vertex data into the graphics device for processing, you need to clear the way, as it were: you must declare how the vertex data is laid out so that the graphics device can interpret it when it gets it from your game. To do that, you use [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
 
-宣告和設定頂點緩衝區的輸入配置。
+Declare and set the input layout for the vertex buffer.
 
 ```cpp
 const D3D11_INPUT_ELEMENT_DESC basicVertexLayoutDesc[] =
@@ -86,31 +86,31 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-在此程式碼中，您指定了頂點的配置，更具體地說，就是頂點清單中每個元素包含的資料。 在這裡的 **basicVertexLayoutDesc** 中，您指定兩個資料部分：
+In this code, you specify a layout for the vertices, specifically, what data each element in the vertex list contains. Here, in **basicVertexLayoutDesc**, you specify two data components:
 
--   **POSITION**：這是一個 HLSL 語意，會將位置資料提供給著色器。 在此程式碼中是 DirectX::XMFLOAT3，或者更具體地說，這是與 3D 座標 (x, y, z) 對應的 3 個 32 位元浮點值的結構。 如果您要提供同質的 "w" 座標，也可以使用 float4，在此情況下，必須指定 DXGI\_FORMAT\_R32G32B32A32\_FLOAT。 要使用 DirectX::XMFLOAT3 還是 float4 會取決於遊戲的特殊需求。 您唯一要確定的是網格的頂點資料是否能夠正確地對應您使用的格式！
+-   **POSITION**: This is an HLSL semantic for position data provided to a shader. In this code, it's a DirectX::XMFLOAT3, or more specifically, a structure with 3 32-bit floating point values that correspond to a 3D coordinate (x, y, z). You could also use a float4 if you are supplying the homogeneous "w" coordinate, and in that case, you specify DXGI\_FORMAT\_R32G32B32A32\_FLOAT. Whether you use a DirectX::XMFLOAT3 or a float4 is up to the specific needs of your game. Just make sure that the vertex data for your mesh corresponds correctly to the format you use!
 
-    在物件的座標空間中，每個座標值都會以介於 -1 和 1 之間的浮點值表示。 當頂點著色器完成時，轉換的頂點會位於同質 (已修正透視) 的檢視投影空間中。
+    Each coordinate value is expressed as a floating point value between -1 and 1, in the object's coordinate space. When the vertex shader completes, the transformed vertex is in the homogeneous (perspective corrected) view projection space.
 
-    您聰明的注意到 「但列舉值所指為 RGB，而非 XYZ」。 好眼力！ 在色彩資料與座標資料這兩種情況中，您通常會使用 3 或 4 個值來組成，那麼何不在這兩種情況中使用相同的格式呢？ HLSL 語意 (不是格式名稱) 會指示著色器處理資料的方式。
+    "But the enumeration value indicates RGB, not XYZ!" you smartly note. Good eye! In both the cases of color data and coordinate data, you typically use 3 or 4 component values, so why not use the same format for both? The HLSL semantic, not the format name, indicates how the shader treats the data.
 
--   **COLOR**：這是色彩資料的 HLSL 語意。 與 **POSITION** 一樣，它包含 3 個 32 位元的浮點值 (DirectX::XMFLOAT3)。 每個值各包含一個色彩元件：紅 (r)、藍 (b) 或綠 (g)，以一個介於 0 和 1 之間的浮點數字表示。
+-   **COLOR**: This is an HLSL semantic for color data. Like **POSITION**, it consists of 3 32-bit floating point values (DirectX::XMFLOAT3). Each value contains a color component: red (r), blue (b), or green (g), expressed as a floating number between 0 and 1.
 
-    **COLOR** 值通常會在著色器管線尾端以一個有 4 個組成部分的 RGBA 值傳回。 例如，您會在所有像素的著色器管線中，將 "A" Alpha 值設為 1.0 (最大不透明度)。
+    **COLOR** values are typically returned as a 4-component RGBA value at the end of the shader pipeline. For this example, you will be setting the "A" alpha value to 1.0 (maximum opacity) in the shader pipeline for all pixels.
 
-如需格式的完整清單，請參閱 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。 如需 HLSL 語意的完整清單，請參閱[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+For a complete list of formats, see [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). For a complete list of HLSL semantics, see [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
-在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
+Call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) and create the input layout on the Direct3D device. Now, you need to create a buffer that can actually hold the data!
 
-### 步驟 3：填入頂點緩衝區
+### Step 3: Populate the vertex buffers
 
-頂點緩衝區包含網格中每個三角形的頂點清單。 每個頂點在清單中必須是唯一的。 在範例中，立方體有 8 個頂點。 頂點著色器會在圖形裝置上執行並讀取頂點緩衝區的內容，而且會依據您在先前步驟中指定的輸入配置解譯資料。
+Vertex buffers contain the list of vertices for each triangle in the mesh. Every vertex must be unique in this list. In our example, you have 8 vertices for the cube. The vertex shader runs on the graphics device and reads from the vertex buffer, and it interprets the data based on the input layout you specified in the previous step.
 
-在下一個範例中，您會提供緩衝區的描述和子資源以告知 Direct3D 關於頂點資料實際對應的一些資訊，以及如何在圖形裝置的記憶體中處理它。 由於您使用的是可包含任何項目的一般 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，因此這是必要的動作。 提供 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 與 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 結構可確保 Direct3D 了解緩衝區的實體記憶體配置，包括緩衝區中每個頂點元素的大小，以及頂點清單的大小上限。 您也可以在此控制緩衝區記憶體的存取和如何進行周遊，但這不在本教學課程的範圍內。
+In the next example, you provide a description and a subresource for the buffer, which tell Direct3D a number of things about the physical mapping of the vertex data and how to treat it in memory on the graphics device. This is necessary because you use a generic [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351), which could contain anything! The [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures are supplied to ensure that Direct3D understands the physical memory layout of the buffer, including the size of each vertex element in the buffer as well as the maximum size of the vertex list. You can also control access to the buffer memory here and how it is traversed, but that's a bit beyond the scope of this tutorial.
 
-在設定緩衝區後，您要呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 才能實際建立它。 顯而易見地，如果您有多個的物件，就必須為每個不同的模型建立緩衝區。
+After you configure the buffer, you call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to actually create it. Obviously, if you have more than one object, create buffers for each unique model.
 
-宣告與建立頂點緩衝區。
+Declare and create the vertex buffer.
 
 ```cpp
 D3D11_BUFFER_DESC vertexBufferDesc = {0};
@@ -133,26 +133,26 @@ m_d3dDevice->CreateBuffer(
                 &vertexBuffer);
 ```
 
-頂點已載入。 但處理這些頂點的順序為何？ 這會在您提供索引清單給頂點時處理—這些索引的順序便是頂點著色器處理它們的順序。
+Vertices loaded. But what's the order of processing these vertices? That's handled when you provide a list of indices to the vertices—the ordering of these indices is the order in which the vertex shader processes them.
 
-### 步驟 4：填入索引緩衝區
+### Step 4: Populate the index buffers
 
-現在，您要提供包含每個頂點的索引清單。 這些索引會與頂點緩衝區中的頂點位置對應，由 0 開始。 為協助您視覺化呈現此概念，請想像網格中每個唯一頂點都被指派了唯一號碼，就像識別碼一樣。 此識別碼是頂點緩衝區中頂點的整數位置。
+Now, you provide a list of the indices for each of the vertices. These indices correspond to the position of the vertex in the vertex buffer, starting with 0. To help you visualize this, consider that each unique vertex in your mesh has a unique number assigned to it, like an ID. This ID is the integer position of the vertex in the vertex buffer.
 
-![具有八個已編號頂點的立方體](images/cube-mesh-1.png)
+![a cube with eight numbered vertices](images/cube-mesh-1.png)
 
-在立方體範例中，您有 8 個頂點，每一面會建立 6 個象限。 您將象限分割為三角形，總共有 12 個三角形使用我們的 8 個頂點。 因為每個三角形有 3 個頂點，所以我們的索引緩衝區共有 36 個項目。 在範例中，此索引樣式稱為三角形清單，而當您設定基本拓撲時，您會在 Direct3D 中將它指示為 **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST**。
+In our example cube, you have 8 vertices, which create 6 quads for the sides. You split the quads into triangles, for a total of 12 triangles that use our 8 vertices. At 3 vertices per triangle, you have 36 entries in our index buffer. In our example, this index pattern is known as a triangle list, and you indicate it to Direct3D as a **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST** when you set the primitive topology.
 
-以這種方式列出索引非常沒有效率，因為三角形共用點和邊時會產生多餘的索引元素。 例如，當三角形共用菱形的某一邊時，您會為 4 個頂點列出 6 個索引，就像這樣：
+This is probably the most inefficient way to list indices, as there are many redundancies when triangles share points and sides. For example, when a triangle shares a side in a rhombus shape, you list 6 indices for the four vertices, like this:
 
-![建構菱形時的索引順序](images/rhombus-surface-1.png)
+![order of indices when constructing a rhombus](images/rhombus-surface-1.png)
 
--   三角形 1：\[0, 1, 2\]
--   三角形 2：\[0, 2, 3\]
+-   Triangle 1: \[0, 1, 2\]
+-   Triangle 2: \[0, 2, 3\]
 
-在條形或扇形的拓撲中，您會在排列頂點順序時排除周遊期間多餘的邊 (如影像中索引 0 到索引 2 的邊)。對於大型的網格而言，這會大幅減少執行頂點著色器的次數，並能大幅改善效能。 不過，我們將持續以最簡單的方式說明三角形清單。
+In a strip or fan topology, you order the vertices in a way that eliminates many redundant sides during traversal (such as the side from index 0 to index 2 in the image.) For large meshes, this dramatically reduces the number of times the vertex shader is run, and improves performance significantly. However, we'll keep it simple and stick with the triangle list.
 
-將頂點緩衝區的索引宣告為簡單的三角形清單拓撲。
+Declare the indices for the vertex buffer as a simple triangle list topology.
 
 ```cpp
 unsigned short cubeIndices[] =
@@ -175,29 +175,29 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-當您只有 8 個頂點時，緩衝區中 36 個索引元素的數目就顯得太多。 如果您選擇排除部分多餘的索引元素並使用不同的頂點清單類型 (如條形或扇形)，則必須在將特定的 [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) 值提供給 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 方法時指定該類型。
+Thirty six index elements in the buffer is very redundant when you only have 8 vertices! If you choose to eliminate some of the redundancies and use a different vertex list type, such as a strip or a fan, you must specify that type when you provide a specific [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) value to the [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) method.
 
-如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
+For more information about different index list techniques, see [Primitive Topologies](https://msdn.microsoft.com/library/windows/desktop/bb205124).
 
-### 步驟 5：為您的轉換矩陣建立常數緩衝區
+### Step 5: Create a constant buffer for your transformation matrices
 
-在開始處理頂點之前，您必須先提供執行時將套用 (相乘) 到每個頂點的轉換矩陣。 對於大多數的 3D 遊戲而言，它們共有三種：
+Before you can start processing vertices, you need to provide the transformation matrices that will be applied (multiplied) to each vertex when it runs. For most 3-D games, there are three of them:
 
--   從物件 (模型) 座標系統轉換成整體世界座標系統的 4x4 矩陣。
--   從世界座標系統轉換成相機 (視圖) 座標系統的 4x4 矩陣。
--   從相機座標系統轉換成 2D 檢視投影座標系統的 4x4 矩陣。
+-   The 4x4 matrix that transforms from the object (model) coordinate system to the overall world coordinate system.
+-   The 4x4 matrix that transforms from the world coordinate system to the camera (view) coordinate system.
+-   The 4x4 matrix that transforms from the camera coordinate system to the 2-D view projection coordinate system.
 
-這些矩陣會傳送到「常數緩衝區」**中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
+These matrices are passed to the shader in a *constant buffer*. A constant buffer is a region of memory that remains constant throughout the execution of the next pass of the shader pipeline, and which can be directly accessed by the shaders from your HLSL code. You define each constant buffer two times: first in your game's C++ code, and (at least) one time in the C-like HLSL syntax for your shader code. The two declarations must directly correspond in terms of types and data alignment. It's easy to introduce hard to find errors when the shader uses the HLSL declaration to interpret data declared in C++, and the types don't match or the alignment of data is off!
 
-HLSL 不會變更常數緩衝區。 您可以在遊戲更新特定資料時變更它們。 遊戲開發人員通常會建立 4 種類別的常數緩衝區：一種用於依畫面更新；一種用於依模型/物件更新；一種用於依遊戲狀態重新整理更新；還有一種用於遊戲生命週期內均未曾變更的資料。
+Constant buffers don't get changed by the HLSL. You can change them when your game updates specific data. Often, game devs create 4 classes of constant buffers: one type for updates per frame; one type for updates per model/object; one type for updates per game state refresh; and one type for data that never changes through the lifetime of the game.
 
-在此範例中，我們只使用未曾變更資料的類型：三個矩陣的 DirectX::XMFLOAT4X4 資料。
+In this example, we just have one that never changes: the DirectX::XMFLOAT4X4 data for the three matrices.
 
-> **注意** 此處提供的範例程式碼使用以行為主的矩陣。 若要改用以列為主的矩陣，您可以在 HLSL 中使用 **row\_major** 關鍵字，並確定您的原始矩陣資料也是以列為主。 DirectXMath 使用以列為主的矩陣，並且可以直接搭配以 **row\_major** 關鍵字定義的 HLSL 矩陣使用。
+> **Note**   The example code presented here uses column-major matrices. You can use row-major matrices instead by using the **row\_major** keyword in HLSL, and ensuring your source matrix data is also row-major. DirectXMath uses row-major matrices and can be used directly with HLSL matrices defined with the **row\_major** keyword.
 
  
 
-為您用於轉換每個頂點的三個矩陣宣告和建立常數緩衝區。
+Declare and create a constant buffer for the three matrices you use to transform each vertex.
 
 ```cpp
 struct ConstantBuffer
@@ -245,7 +245,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注意** 當您設定裝置特定的資源時，您通常會宣告投影矩陣，因為與其相乘的結果必須符合目前的 2D 檢視區大小參數 (通常與顯示器的像素高度與寬度對應)。 如果變更了值，您也必須適當地調整 x 與 y 座標值。
+> **Note**  You usually declare the projection matrix when you set up device specific resources, because the results of multiplication with it must match the current 2-D viewport size parameters (which often correspond with the pixel height and width of the display). If those change, you must scale the x- and y-coordinate values accordingly.
 
  
 
@@ -277,7 +277,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-到了這裡，請在[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149) 上設定頂點和索引緩衝區，還有您正在使用的拓撲。
+While you're here, set the vertex and index buffers on the[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149), plus the topology you're using.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -298,15 +298,15 @@ m_d3dDeviceContext->IASetIndexBuffer(
  m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 ```
 
-好！ 輸入組件完成。 轉譯的一切準備工作都已就緒。 讓我們開始執行這個頂點著色器。
+All right! Input assembly complete. Everything's in place for rendering. Let's get that vertex shader going.
 
-### 步驟 6：使用頂點著色器處理網格
+### Step 6: Process the mesh with the vertex shader
 
-有了定義網格頂點的頂點緩衝區以及定義處理頂點之順序的索引緩衝區之後，您要將它們傳送給頂點著色器。 頂點著色器程式碼 (以編譯的高階著色器語言表示) 會針對頂點緩衝區中的每個頂點執行一次，讓您可以執行每一頂點的轉換。 最終的結果通常是 2D 投影。
+Now that you have a vertex buffer with the vertices that define your mesh, and the index buffer that defines the order in which the vertices are processed, you send them to the vertex shader. The vertex shader code, expressed as compiled high-level shader language, runs one time for each vertex in the vertex buffer, allowing you to perform your per-vertex transforms. The final result is typically a 2-D projection.
 
-(您是否已載入頂點著色器？ 如果尚未載入，請檢閱[如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)。)
+(Did you load your vertex shader? If not, review [How to load resources in your DirectX game](load-a-game-asset.md).)
 
-在這裡，您要建立頂點著色器...
+Here, you create the vertex shader...
 
 ``` syntax
 // Set the vertex and pixel shader stage state.
@@ -316,7 +316,7 @@ m_d3dDeviceContext->VSSetShader(
                 0);
 ```
 
-...並設定常數緩衝區。
+...and set the constant buffers.
 
 ``` syntax
 m_d3dDeviceContext->VSSetConstantBuffers(
@@ -325,7 +325,7 @@ m_d3dDeviceContext->VSSetConstantBuffers(
                 m_constantBuffer.GetAddressOf());
 ```
 
-下列是處理從物件座標轉換成世界座標，再轉換成 2D 檢視投影座標系統的頂點著色器程式碼。 您也會在每個頂點套用一些簡單的光源以美化結果。 將以下程式碼納入您頂點著色器的 HLSL 檔案 (此範例中為 SimplerVertexShader.hlsl) 中。
+Here's the vertex shader code that handles the transformation from object coordinates to world coordinates and then to the 2-D view projection coordinate system. You also apply some simple per-vertex lighting to make things pretty. This goes in your vertex shader's HLSL file (SimplerVertexShader.hlsl, in this example).
 
 ``` syntax
 cbuffer simpleConstantBuffer : register( b0 )
@@ -365,23 +365,23 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-有看到最上方的 **cbuffer** 嗎？ 那是與我們先前在 C++ 程式碼中宣告的常數緩衝區類似的 HLSL。 也看到 **VertexShaderInputstruct** 嗎？ 它看來就像是您的輸入配置和頂點資料宣告！ 您 C++ 程式碼中的常數緩衝區和頂點資料宣告必須符合 HLSL 程式碼中的宣告，這非常重要—而那包含了簽章、類型及資料對齊。
+See that **cbuffer** at the top? That's the HLSL analogue to the same constant buffer we declared in our C++ code previously. And the **VertexShaderInputstruct**? Why, that looks just like your input layout and vertex data declaration! It's important that the constant buffer and vertex data declarations in your C++ code match the declarations in your HLSL code—and that includes signs, types, and data alignment.
 
-**PixelShaderInput** 會指定頂點著色器的主要函式所傳回的資料配置。 當處理完頂點時，將會傳回 2D 投影空間中的頂點位置，以及用於每一頂點光源的色彩。 圖形卡使用著色器輸出的資料來計算在管線的下一階段執行像素著色器時必須著色的「片段」(可能的像素)。
+**PixelShaderInput** specifies the layout of the data that is returned by the vertex shader's main function. When you finish processing a vertex, you'll return a vertex position in the 2-D projection space and a color used for per-vertex lighting. The graphics card uses data output by the shader to calculate the "fragments" (possible pixels) that must be colored when the pixel shader is run in the next stage of the pipeline.
 
-### 步驟 7：透過像素著色器傳送網格
+### Step 7: Passing the mesh through the pixel shader
 
-通常在圖形管線的這個階段中，您要在物件可見的投影表面執行每一像素作業。 (大家都愛紋理)。但在這個範例中，您只要透過此階段傳送它。
+Typically, at this stage in the graphics pipeline, you perform per-pixel operations on the visible projected surfaces of your objects. (People like textures.) For the purposes of sample, though, you simply pass it through this stage.
 
-首先，先建立像素著色器的執行個體。 像素著色器會針對您場景中 2D 投影的每個像素執行，並指派一種色彩給該像素。 在此例中，我們會直接傳送頂點著色器傳回的像素色彩。
+First, let's create an instance of the pixel shader. The pixel shader runs for every pixel in the 2-D projection of your scene, assigning a color to that pixel. In this case, we pass the color for the pixel returned by the vertex shader straight through.
 
-設定像素著色器。
+Set the pixel shader.
 
 ``` syntax
 m_d3dDeviceContext->PSSetShader( pixelShader.Get(), nullptr, 0 );
 ```
 
-在 HLSL 中定義通道像素著色器。
+Define a passthrough pixel shader in HLSL.
 
 ``` syntax
 struct PixelShaderInput
@@ -396,13 +396,13 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-將此程式碼放在不同於頂點著色器 HLSL (如 SimplePixelShader.hlsl) 的 HLSL 檔案中。 此程式碼會針對檢視區 (您要繪製的畫面區域的記憶體內部表示法) 中的每個可見像素執行一次。在此例中，檢視區對應整個畫面。 現在，您的圖形管線已經完整定義了！
+Put this code in an HLSL file separate from the vertex shader HLSL (such as SimplePixelShader.hlsl). This code is run one time for every visible pixel in your viewport (an in-memory representation of the portion of the screen you are drawing to), which, in this case, maps to the entire screen. Now, your graphics pipeline is completely defined!
 
-### 步驟8：點陣化和顯示網格
+### Step 8: Rasterizing and displaying the mesh
 
-我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
+Let's run the pipeline. This is easy: call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
 
-繪製該立方體！
+Draw that cube!
 
 ```cpp
 // Draw the cube.
@@ -410,11 +410,11 @@ m_d3dDeviceContext->DrawIndexed( ARRAYSIZE(cubeIndices), 0, 0 );
             
 ```
 
-在圖形卡內，每個頂點會依照您在索引緩衝區中指定的順序處理。 在您的程式碼執行頂點著色器並定義 2D 片段後，就會叫用像素著色器，並將三角形著色。
+Inside the graphics card, each vertex is processed in the order specified in your index buffer. After your code has executed the vertex shader and the 2-D fragments are defined, the pixel shader is invoked and the triangles colored.
 
-現在，將立方體放到畫面。
+Now, put the cube on the screen.
 
-將框架緩衝區顯示到顯示器。
+Present that frame buffer to the display.
 
 ```cpp
 // Present the rendered image to the window.  Because the maximum frame latency is set to 1,
@@ -424,24 +424,24 @@ m_d3dDeviceContext->DrawIndexed( ARRAYSIZE(cubeIndices), 0, 0 );
 m_swapChain->Present(1, 0);
 ```
 
-大功告成！ 如需含大量模型的場景，請使用多個頂點和索引緩衝區，甚至可以在不同的模型類型使用不同的著色器。 請記住，每個模型都有自己的座標系統，您必須使用您在常數緩衝區中定義的矩陣，將它們轉換成共用的世界座標系統。
+And you're done! For a scene full of models, use multiple vertex and index buffers, and you might even have different shaders for different model types. Remember that each model has its own coordinate system, and you need to transform them to the shared world coordinate system using the matrices you defined in the constant buffer.
 
-## 備註
+## Remarks
 
-本主題說明如何建立和顯示您自己建立的簡單幾何圖形。 如需從檔案載入更複雜的幾何圖形並將其轉換成範例特定的頂點緩衝區物件 (.vbo) 格式的詳細資訊，請參閱[如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)。
+This topic covers creating and displaying simple geometry that you create yourself. For more info about loading more complex geometry from a file and converting it to the sample-specific vertex buffer object (.vbo) format, see [How to load resources in your DirectX game](load-a-game-asset.md).
 
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
-## 相關主題
-
-
-* [如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
+## Related topics
+
+
+* [How to load resources in your DirectX game](load-a-game-asset.md)
+
+ 
+
  
 
 
@@ -450,6 +450,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

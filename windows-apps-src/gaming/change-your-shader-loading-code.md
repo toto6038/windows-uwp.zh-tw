@@ -1,93 +1,93 @@
 ---
 author: mtoepke
-title: "OpenGL ES 2.0 著色器管線與 Direct3D 的比較"
-description: "在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。"
+title: Compare the OpenGL ES 2.0 shader pipeline to Direct3D
+description: Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0.
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bc13df5e7f2648897be31b5cda634d23ffae8b6b
+ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
 
 ---
 
-# OpenGL ES 2.0 著色器管線與 Direct3D 的比較
+# Compare the OpenGL ES 2.0 shader pipeline to Direct3D
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
--   [輸入組合階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)
--   [頂點著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
--   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
+-   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116)
+-   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
+-   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
 
-在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。 不過在 API 設計方面，建立與管理著色器階段的主要元件則分為兩個主要的介面，[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)。 本主題嘗試將常見的 OpenGL ES 2.0 著色器管線 API 模式對應到這些介面中的 Direct3D 11 對應項。
+Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.
 
-## 檢閱 Direct3D 11 著色器管線
-
-
-著色器物件是使用 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 介面上的方法建立的，如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。
-
-Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 介面的執行個體管理，並具有下列階段：
-
--   [輸入組合階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)。 輸入組合階段提供資料 (三角形、線與點) 給管線。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "IA" 開頭。
--   [頂點著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - 頂點著色器階段處理頂點，通常執行轉換、貼圖與光照等作業。 頂點著色器一律採用單一輸入頂點，並產生單一輸出頂點。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "VS" 開頭。
--   [資料流輸出階段](https://msdn.microsoft.com/library/windows/desktop/bb205121) - 資料流輸出階段會在點陣化的過程中，將基本型別資料從管線串流到記憶體。 資料可串流輸出及/或傳遞進入點陣化。 串流輸出到記憶體的資料可重新循環回管線，做為輸入資料或從 CPU 讀回。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "SO" 開頭。
--   [點陣化階段](https://msdn.microsoft.com/library/windows/desktop/bb205125) - 點陣化會裁剪基本型別、準備像素著色器的基本型別，以及決定如何叫用像素著色器。 您也可告知管線沒有像素著色器 (使用 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 將像素著色器階段設為 NULL) 並停用深度與樣板測試 (在 [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110) 將 DepthEnable 與 StencilEnable 設為 FALSE)，以停用點陣化。 停用時，不會更新與點陣化相關的管線計數器。
--   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "PS" 開頭。
--   [輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120) - 輸出合併階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "OM" 開頭。
-
-(還有幾何著色器、輪廓著色器、鑲嵌與網域著色器，但因為在 OpenGL ES 2.0 中沒有類似項目，我們將不會在此討論。) 如需這些階段的方法的完整清單，請參閱 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
-
-## 建立著色器
+## Reviewing the Direct3D 11 shader pipeline
 
 
-在 Direct3D 中，不會在編譯和載入著色器資源之前先建立著色器資源；而是在載入 HLSL 時建立資源。 因此，沒有正好與 glCreateShader 類似的函式，這個函式可建立特定類型的初始化著色器資源 (如 GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER)。 著色器是在以特定函式 (如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 載入 HLSL 後建立，並使用類型與編譯的 HLSL 做為參數。
+The shader objects are created with methods on the [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) interface, such as [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513).
+
+The Direct3D 11 graphics pipeline is managed by instances of the [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) interface, and has the following stages:
+
+-   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116). The input-assembler stage supplies data (triangles, lines and points) to the pipeline. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "IA".
+-   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - The vertex-shader stage processes vertices, typically performing operations such as transformations, skinning, and lighting. A vertex shader always takes a single input vertex and produces a single output vertex. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "VS".
+-   [Stream-Output Stage](https://msdn.microsoft.com/library/windows/desktop/bb205121) - The stream-output stage streams primitive data from the pipeline to memory on its way to the rasterizer. Data can be streamed out and/or passed into the rasterizer. Data streamed out to memory can be recirculated back into the pipeline as input data or read-back from the CPU. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "SO".
+-   [Rasterizer Stage](https://msdn.microsoft.com/library/windows/desktop/bb205125) - The rasterizer clips primitives, prepares primitives for the pixel shader, and determines how to invoke pixel shaders. You can disable rasterization by telling the pipeline there is no pixel shader (set the pixel shader stage to NULL with [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), and disabling depth and stencil testing (set DepthEnable and StencilEnable to FALSE in [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). While disabled, rasterization-related pipeline counters will not update.
+-   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - The pixel-shader stage receives interpolated data for a primitive and generates per-pixel data such as color. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "PS".
+-   [Output-Merger Stage](https://msdn.microsoft.com/library/windows/desktop/bb205120) - The output-merger stage combines various types of output data (pixel shader values, depth and stencil information) with the contents of the render target and depth/stencil buffers to generate the final pipeline result. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "OM".
+
+(There are also stages for geometry shaders, hull shaders, tesselators, and domain shaders, but since they have no analogues in OpenGL ES 2.0, we won't discuss them here.) For a complete list of the methods for these stages, refer to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) reference pages. **ID3D11DeviceContext1** extends **ID3D11DeviceContext** for Direct3D 11.
+
+## Creating a shader
+
+
+In Direct3D, shader resources are not created before compiling and loading them; rather, the resource is created when the HLSLis loaded. Therefore, there is no directly analogous function to glCreateShader, which creates an initialized shader resource of a specific type (such as GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER). Rather, shaders are created after the HLSL is loaded with specific functions like [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513), and which take the type and the compiled HLSL as parameters.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCreateShader | 成功載入編譯的著色器物件後呼叫 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)，將 CSO 傳遞給它們做為緩衝區。 |
+| glCreateShader | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object, passing them the CSO as a buffer. |
 
  
 
-## 編譯著色器
+## Compiling a shader
 
 
-Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編譯的著色器物件 (.cso) 檔案，並使用其中一個 Windows 執行階段檔案 API 載入。 (傳統型 app 可在執行階段從文字檔或字串編譯著色器。) CSO 檔案是從您 Microsoft Visual Studio 專案中的任何 .hlsl 檔所建置，且可保留相同的名稱，只要有 .cso 副檔名即可。 出貨時，請確認它們包含在您的套件中！
+Direct3D haders must be precompiled as Compiled Shader Object (.cso) files in Universal Windows Platform (UWP) apps and loaded using one of the Windows Runtime file APIs. (Desktop apps can compile the shaders from text files or string at run-time.) The CSO files are built from any .hlsl files that are part of your Microsoft Visual Studio project, and retain the same names, only with a .cso file extension. Ensure that they are included with your package when you ship!
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCompileShader                        | 不適用。 在 Visual Studio 中將著色器編譯為 .cso 檔案，並將它們包含在您的套件中。                                                                                     |
-| 使用 glGetShaderiv 取得編譯狀態 | 不適用。 如果編譯過程中發生任何錯誤，請參閱 Visual Studio 的 FX 編譯器 (FXC) 的編譯結果。 如果編譯成功，會建立對應的 CSO 檔案。 |
+| glCompileShader                        | N/A. Compile the shaders to .cso files in Visual Studio and include them in your package.                                                                                     |
+| Using glGetShaderiv for compile status | N/A. See the compilation output from Visual Studio's FX Compiler (FXC) if there are errors in compilation. If compilation is successful, a corresponding CSO file is created. |
 
  
 
-## 載入著色器
+## Loading a shader
 
 
-如同建立著色器一節所說明，當對應的 CSO 檔案載入緩衝區並傳遞至下表的其中一個方法時，Direct3D 11 便會建立著色器。
+As noted in the section on creating a shader, Direct3D 11 creates the shader when the corresponding CSO file is loaded into a buffer and passed to one of the methods in the following table.
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ShaderSource  | 成功載入編譯的著色器物件後呼叫 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 |
+| ShaderSource  | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object. |
 
  
 
-## 設定管線
+## Setting up the pipeline
 
 
-OpenGL ES 2.0 擁有「著色器程式」物件，包含多個可執行的著色器。 個別著色器會附加至著色器程式物件。 不過，在 Direct3D 11 中，您會直接使用轉譯內容 ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) 並在其上建立著色器。
+OpenGL ES 2.0 has the "shader program" object, which contains multiple shaders for execution. Individual shaders are attached to the shader program object. However, in Direct3D 11, you work with the rendering context ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) directly and create shaders on it.
 
 | OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
-| glCreateProgram | 不適用。 Direct3D 11 不使用著色器程式物件抽象概念。                          |
-| glLinkProgram   | 不適用。 Direct3D 11 不使用著色器程式物件抽象概念。                          |
-| glUseProgram    | 不適用。 Direct3D 11 不使用著色器程式物件抽象概念。                          |
-| glGetProgramiv  | 使用您建立至 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 的參考。 |
+| glCreateProgram | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
+| glLinkProgram   | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
+| glUseProgram    | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
+| glGetProgramiv  | Use the reference you created to [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
 
  
 
-使用靜態 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 方法建立 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 與 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) 的執行個體。
+Create an instance of [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) and [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) with the static [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11Device1>          m_d3dDevice;
@@ -109,12 +109,12 @@ D3D11CreateDevice(
 );
 ```
 
-## 設定檢視區
+## Setting the viewport(s)
 
 
-在 Direct3D 11 設定檢視區的方法與在 OpenGL ES 2.0 設定檢視區的方法十分類似。 在 Direct3D 11，使用已設定的 [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722) 呼叫 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480)。
+Setting a viewport in Direct3D 11 is very similar to how you set a viewport in OpenGL ES 2.0. In Direct3D 11, call [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) with a configured [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722).
 
-Direct3D 11：設定檢視區。
+Direct3D 11: Setting a viewport.
 
 ``` syntax
 CD3D11_VIEWPORT viewport(
@@ -128,86 +128,86 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722)、[**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
-## 設定頂點著色器
+## Configuring the vertex shaders
 
 
-在 Direct3D 11，是在載入著色器時設定頂點著色器。 Uniform 使用 [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795) 做為常數緩衝區傳遞。
+Configuring a vertex shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
-| glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
-| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793)。 |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
 
  
 
-## 設定像素著色器
+## Configuring the pixel shaders
 
 
-在 Direct3D 11，是在載入著色器時設定像素著色器。 Uniform 使用 [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649) 做為常數緩衝區傳遞。
+Configuring a pixel shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649)
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
-| glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645)。 |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
  
 
-## 產生最終結果
+## Generating the final results
 
 
-管線完成時，即可將著色器階段的結果繪製到背景緩衝區。 在 Direct3D 11 的做法與在 Open GL ES 2.0 中相同，這個動作牽涉到呼叫繪製命令，在背景緩衝區中將結果輸出為色彩對應，然後傳送該背景緩衝區至顯示畫面。
+When the pipeline completes, you draw the results of the shader stages into the back buffer. In Direct3D 11, just as it is with Open GL ES 2.0, this involves calling a draw command to output the results as a color map in the back buffer, and thensending that back buffer to the display.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)、[**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (或 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 上的其他 Draw\* 方法)。 |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or other Draw\* methods on [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
  
 
-## 將 GLSL 移植到 HLSL
+## Porting GLSL to HLSL
 
 
-除了複雜類型支援與部分整體語法之外，GLSL 與 HLSL 並沒有太大的不同。 許多開發人員發現，將共用 OpenGL ES 2.0 指示與定義更名為 HLSL 的對等項目，是在這兩者中進行移植最簡單的方法。 請注意，Direct3D 使用著色器模型版本來呈現圖形介面支援之 HLSL 的功能集；OpenGL 則有不同的 HLSL 版本規格。 下表嘗試提供一些約略的概念，讓您了解在其他版本方面針對 Direct3D 11 與 OpenGL ES 2.0 所定義的著色器語言功能集。
+GLSL and HLSL are not very different beyond complex type support and syntax some overall syntax. Many developers find it easiest to port between the two by aliasing common OpenGL ES 2.0 instructions and definitions to their HLSL equivalent. Note that Direct3D uses the Shader Model version to express the feature set of the HLSL supported by a graphics interface; OpenGL has a different version specification for HLSL. The following table attempts to give you some approximate idea of the shader language feature sets defined for Direct3D 11 and OpenGL ES 2.0 in the terms of the other's version.
 
-| 著色器語言           | GLSL 功能版本                                                                                                                                                                                                      | Direct3D 著色器模型 |
+| Shader language           | GLSL feature version                                                                                                                                                                                                      | Direct3D Shader Model |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Direct3D 11 HLSL          | ~4.30。                                                                                                                                                                                                                    | SM 5.0                |
-| 適用於 OpenGL ES 2.0 的 GLSL ES | 1.40。 適用於 OpenGL ES 2.0 的 GLSL ES 較舊實作版本可使用 1.10 到 1.30。 使用 glGetString(GL\_SHADING\_LANGUAGE\_VERSION) 或 glGetString(SHADING\_LANGUAGE\_VERSION) 檢查您的原始程式碼加以判斷。 | ~SM 2.0               |
+| Direct3D 11 HLSL          | ~4.30.                                                                                                                                                                                                                    | SM 5.0                |
+| GLSL ES for OpenGL ES 2.0 | 1.40. Older implementations of GLSL ES for OpenGL ES 2.0 may use 1.10 through 1.30. Check your original code with glGetString(GL\_SHADING\_LANGUAGE\_VERSION) or glGetString(SHADING\_LANGUAGE\_VERSION) to determine it. | ~SM 2.0               |
 
  
 
-如需這兩個著色器語言之差異與共用語法對應的詳細資訊，請閱讀 [GLSL-to-HLSL 參考](glsl-to-hlsl-reference.md)。
+For more details of differences between the two shader languages, as well as common syntax mappings, read the [GLSL-to-HLSL reference](glsl-to-hlsl-reference.md).
 
-## 將 OpenGL 內建移植到 HLSL 語意
+## Porting the OpenGL intrinsics to HLSL semantics
 
 
-Direct3D 11 HLSL 語意是 Uniform 或屬性名稱這類字串，用來識別在應用程式與著色器程式間傳遞的值。 雖然它們可以是任何可能的字串，但最佳做法是使用可指出用法的字串，如 POSITION 或 COLOR。 您可在建構常數緩衝區或緩衝區輸入配置時，指派這些語意。 您也可以在語意後附加 0 到 7 的數字，在類似的值使用不同的登錄。 例如：COLOR0、COLOR1、COLOR2...
+Direct3D 11 HLSL semantics are strings that, like a uniform or attribute name, are used to identify a value passed between the app and a shader program. While they can be any of a variety of possible strings, the best practice is to use a string like POSITION or COLOR that indicates the usage. You assign these semantics when you are constructing a constant buffer or buffer input layout. You can also append a number between 0 and 7 to the semantic so that you use separate registers for similar values. For example: COLOR0, COLOR1, COLOR2...
 
-以 "SV\_" 開頭的語意是由您的著色器程式寫入的系統值語意；您的應用程式本身 (在 CPU 上執行) 無法修改這些語意。 一般來說，這些語意包含的值為圖形管線中來自其他著色器階段的輸入或輸出，或者是完全由 GPU 產生的值。
+Semantics that are prefixed with "SV\_" are system value semantics that are written to by your shader program; your app itself (running on the CPU) cannot modify them. Typically, these contain values that are inputs or outputs from another shader stage in the graphics pipeline, or are generated entirely by the GPU.
 
-此外，使用 SV\_ 語意指定著色器階段的輸入或輸出時，會有不同的行為。 例如，SV\_POSITION (輸出) 包含在頂點著色器階段期間轉換的頂點資料，而 SV\_POSITION (輸入) 包含在點陣化期間插補的像素位置值。
+Additionally, SV\_ semantics have different behaviors when they are used to specify input to or output from a shader stage. For example, SV\_POSITION (output) contains the vertex data transformed during the vertex shader stage, and SV\_POSITION (input) contains the pixel position values interpolated during rasterization.
 
-以下為共用 OpenGL ES 2.0 著色器內建的一些對應：
+Here are a few mappings for common OpenGL ES 2.0 shader instrinsics:
 
-| OpenGL 系統值 | 使用這個 HLSL 語意                                                                                                                                                   |
+| OpenGL system value | Use this HLSL Semantic                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gl\_Position        | POSITION(n)，適用於頂點緩衝區資料。 SV\_POSITION 為像素著色器提供像素位置，且無法由您的 app 寫入。                                        |
-| gl\_Normal          | NORMAL(n)，適用於頂點緩衝區提供的一般資料。                                                                                                                 |
-| gl\_TexCoord\[n\]   | TEXCOORD(n)，適用於提供給著色器的紋理 UV (在某些 OpenGL 文件中為 ST) 座標資料。                                                                       |
-| gl\_FragColor       | COLOR(n)，適用於提供給著色器的 RGBA 色彩資料。 請注意，此語意的處理方式與座標資料相同；該語意僅協助您識別其為色彩資料。 |
-| gl\_FragData\[n\]   | SV\_Target\[n\]，適用於從像素著色器寫入目標紋理或其他像素緩衝區。                                                                               |
+| gl\_Position        | POSITION(n) for vertex buffer data. SV\_POSITION provides a pixel position to the pixel shader and cannot be written by your app.                                        |
+| gl\_Normal          | NORMAL(n) for normal data provided by the vertex buffer.                                                                                                                 |
+| gl\_TexCoord\[n\]   | TEXCOORD(n) for texture UV (ST in some OpenGL documentation) coordinate data supplied to a shader.                                                                       |
+| gl\_FragColor       | COLOR(n) for RGBA color data supplied to a shader. Note that it is treated identically to coordinate data; the semantic simply helps you identify that it is color data. |
+| gl\_FragData\[n\]   | SV\_Target\[n\] for writing from a pixel shader to a target texture or other pixel buffer.                                                                               |
 
  
 
-您用來編寫語意程式碼的方法與在 OpenGL ES 2.0 中使用內建不同。 在 OpenGL 中，您不需要任何設定或宣告即可直接存取許多內建；但在 Direct3D，您必須宣告特定常數緩衝區中的欄位才能使用特殊語意，或者將欄位宣告為著色器的 **main()** 方法的傳回值。
+The method by which you code for semantics is not the same as using intrinsics in OpenGL ES 2.0. In OpenGL, you can access many of the intrinsics directly without any configuration or declaration; in Direct3D, you must declare a field in a specific constant buffer to use a particular semantic, or you declare it as the return value for a shader's **main()** method.
 
-以下為常數緩衝區定義中使用的語意範例：
+Here's an example of a semantic used in a constant buffer definition:
 
 ```cpp
 struct VertexShaderInput
@@ -224,9 +224,9 @@ struct PixelShaderInput
 };
 ```
 
-這個程式碼定義一對簡單的常數緩衝區
+This code defines a pair of simple constant buffers
 
-以下為用來定義片段著色器傳回值的語意範例：
+And here's an example of a semantic used to define the value returned by a fragment shader:
 
 ```cpp
 // A pass-through for the (interpolated) color data.
@@ -236,20 +236,20 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-在此案例中，SV\_TARGET 是轉譯目標的位置，當著色器執行完成時，會將像素色彩 (定義為四個浮動值的向量) 寫入此位置。
+In this case, SV\_TARGET is the location of the render target that the pixel color (defined as a vector with four float values) is written to when the shader completes execution.
 
-如需在 Direct3D 使用語意的詳細資訊，請閱讀 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
-
- 
+For more details on the use of semantics with Direct3D, read [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

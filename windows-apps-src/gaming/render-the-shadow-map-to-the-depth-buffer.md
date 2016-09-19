@@ -1,42 +1,42 @@
 ---
 author: mtoepke
-title: "將陰影圖轉譯為深度緩衝區"
-description: "從光線的視角轉譯，以建立代表陰影體的二維深度圖。"
+title: Render the shadow map to the depth buffer
+description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
 
 ---
 
-# 將陰影圖轉譯為深度緩衝區
+# Render the shadow map to the depth buffer
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第二部分。
+Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume. The depth map masks the space that will be rendered in shadow. Part 2 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## 清除深度緩衝區
+## Clear the depth buffer
 
 
-在轉譯為深度緩衝區之前，一律先行清除該緩衝區。
+Always clear the depth buffer before rendering to it.
 
 ```cpp
 context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), DirectX::Colors::CornflowerBlue);
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## 將陰影圖轉譯為深度緩衝區
+## Render the shadow map to the depth buffer
 
 
-針對陰影轉譯階段，請指定深度緩衝區，但是不要指定轉譯目標。
+For the shadow rendering pass, specify a depth buffer but do not specify a render target.
 
-指定光線檢視區、頂點著色器，並設定光線空間常數緩衝區。 針對這個階段使用正面剔除，以便將陰影緩衝區中的深度值最佳化。
+Specify the light viewport, a vertex shader, and set the light space constant buffers. Use front face culling for this pass to optimize the depth values placed in the shadow buffer.
 
-請注意，在大部分的裝置上，您可以為像素著色器指定 nullptr (或者完全略過指定像素著色器的部分)。 但是，部分驅動程式可能會在您使用設為 null 的像素著色器，於 Direct3D 裝置上呼叫繪製時擲回例外狀況。 若要避免發生這個例外狀況，您可以為陰影轉譯階段設定最低像素著色器。 這個著色器的輸出會捨棄；它可以在每個像素上呼叫 [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995)。
+Note that on most devices, you can specify nullptr for the pixel shader (or skip specifying a pixel shader entirely). But some drivers may throw an exception when you call draw on the Direct3D device with a null pixel shader set. To avoid this exception, you can set a minimal pixel shader for the shadow rendering pass. The output of this shader is thrown away; it can call [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) on every pixel.
 
-轉譯可以轉換陰影的物件，但是不必轉譯無法轉換陰影的幾何圖形 (像是房間中的地板，或者基於最佳化因素而從陰影階段中移除的物件)。
+Render the objects that can cast shadows, but don't bother rendering geometry that can't cast a shadow (like a floor in a room, or objects removed from the shadow pass for optimization reasons).
 
 ```cpp
 void ShadowSceneRenderer::RenderShadowMap()
@@ -122,12 +122,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**最佳化檢視範圍：**確定您的實作會計算緊密的檢視範圍，讓您可以從深度緩衝區中取得最佳的精確度。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+**Optimize the view frustum:**  Make sure your implementation computes a tight view frustum so that you get the most precision out of your depth buffer. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324) for more tips on shadow technique.
 
-## 適用於陰影階段的頂點著色器
+## Vertex shader for shadow pass
 
 
-使用簡化的頂點著色器版本，只轉譯光線空間中的頂點位置。 請勿包含任何光源法向量、次要轉換等。
+Use a simplified version of your vertex shader to render just the vertex position in light space. Don't include any lighting normals, secondary transformations, and so on.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -145,7 +145,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-在這個逐步解說的下一個部分，您將了解如何透過[使用深度測試進行轉譯](render-the-scene-with-depth-testing.md)來新增陰影。
+In the next part of this walkthrough, learn how to add shadows by [rendering with depth testing](render-the-scene-with-depth-testing.md).
 
  
 
@@ -157,6 +157,6 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

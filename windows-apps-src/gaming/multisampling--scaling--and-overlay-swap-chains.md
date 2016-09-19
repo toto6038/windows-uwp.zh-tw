@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: "交換鏈結縮放和覆疊"
-description: "了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。"
+title: Swap chain scaling and overlays
+description: Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
+ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
 
 ---
 
-# 交換鏈結縮放和覆疊
+# Swap chain scaling and overlays
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。
+Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 
-## DirectX 11.2 中的交換鏈結
-
-
-Direct3D 11.2 讓您能夠使用交換鏈結來建立通用 Windows 平台 (UWP) app，從非原生 (降低的) 解析度加以放大，以加快填滿速率。 Direct3D 11.2 也包含適合使用硬碟覆疊進行轉譯的 API，如此，您便能在其他交換鏈結中以原生解析度來呈現 UI。 這讓您的遊戲能夠以完全原生的解析度顯示 UI，同時保有高畫面播放速率，因此能充分利用行動裝置和高 DPI 顯示器 (例如 3840 X 2160)。 本文說明如何使用覆疊交換鏈結。
-
-Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來減少延遲。 請參閱[透過 DXGI 1.3 交換鏈結減少延遲](reduce-latency-with-dxgi-1-3-swap-chains.md)。
-
-## 使用交換鏈結縮放
+## Swap chains in DirectX 11.2
 
 
-當您的遊戲在下層硬體 (或者已針對省電模式最佳化的硬體) 上執行時，比起顯示器原生解析度，以較低解析度來轉譯即時遊戲內容會更有助益。 若要執行這個動作，用於轉譯遊戲內容的交換鏈結必須比原生解析度還小，或者必須使用交換鏈結的子區域。
+Direct3D 11.2 allows you to create Universal Windows Platform (UWP) apps with swap chains that are scaled up from non-native (reduced) resolutions, enabling faster fill rates. Direct3D 11.2 also includes APIs for rendering with hardware overlays so that you can present a UI in another swap chain at native resolution. This allows your game to draw UI at full native resolution while maintaining a high framerate, thereby making the best use of mobile devices and high DPI displays (such as 3840 by 2160). This article explains how to use overlapping swap chains.
 
-1.  首先，以完全原生的解析度建立交換鏈結。
+Direct3D 11.2 also introduces a new feature for reduced latency with flip model swap chains. See [Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md).
+
+## Use swap chain scaling
+
+
+When your game is running on downlevel hardware - or hardware optimized for power savings - it can be beneficial to render real-time game content at a lower resolution than the display is natively capable of. To do this, the swap chain that is used for rendering game content must be smaller than the native resolution, or a subregion of the swapchain must be used.
+
+1.  First, create a swap chain at full native resolution.
 
     ```cpp
     DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
@@ -77,9 +77,9 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-2.  接著，將來源大小設為已降低的解析度，藉以選擇要放大的交換鏈結子區域。
+2.  Then, choose a subregion of the swap chain to scale up by setting the source size to a reduced resolution.
 
-    DX 前景交換鏈結範例會根據下列百分比計算縮小的大小：
+    The DX Foreground Swap Chains sample calculates a reduced size based on a percentage:
 
     ```cpp
     m_d3dRenderSizePercentage = percentage;
@@ -96,7 +96,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-3.  建立檢視區以符合交換鏈結的子區域。
+3.  Create a viewport to match the subregion of the swap chain.
 
     ```cpp
     // In Direct3D, change the Viewport to match the region of the swap
@@ -111,16 +111,16 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-4.  如果使用了 Direct2D，就需要調整旋轉轉換以適用來源區域。
+4.  If Direct2D is being used, the rotation transform needs to be adjusted to compensate for the source region.
 
-## 針對 UI 元素建立硬體重疊交換鏈結
+## Create a hardware overlay swap chain for UI elements
 
 
-使用交換鏈結縮放時有一個繼承的缺點，便是 UI 也會縮小，因此可能使它變得模糊且難以使用。 在含有覆疊交換鏈結之硬體支援的裝置上，藉由從即時遊戲內容分離出來的交換鏈結中以原生解析度來轉譯 UI，即可完全解決這個問題。 請注意，此技術僅能套用到 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 交換鏈結 - 無法與 XAML Interop 搭配使用。
+When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) swap chains - it cannot be used with XAML interop.
 
-使用下列步驟來建立前景交換鏈結，以使用硬體重疊功能。 這些步驟會在先針對即時遊戲內容建立交換鏈結之後執行，如前所述。
+Use the following steps to create a foreground swap chain that uses hardware overlay capability. These steps are performed after first creating a swap chain for real-time game content as described above.
 
-1.  首先，判斷 DXGI 介面卡是否支援覆疊。 從交換鏈結取得 DXGI 輸出介面卡：
+1.  First, determine whether the DXGI adapter supports overlays. Get the DXGI output adapter from the swap chain:
 
     ```cpp
     ComPtr<IDXGIAdapter> outputDxgiAdapter;
@@ -139,21 +139,21 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-    如果輸出介面卡針對 [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) 傳回 True，就表示 DXGI 介面卡支援覆疊。
+    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **請注意**如果 DXGI 介面卡支援覆疊，請繼續下一個步驟。 如果裝置不支援覆疊，使用多個交換鏈結進行轉譯將會失效。 可改為在和即時遊戲內容相同的交換鏈結中，以降低的解析度來轉譯 UI。
+    > **Note**   If the DXGI adapter supports overlays, continue to the next step. If the device does not support overlays, rendering with multiple swap chains will not be efficient. Instead, render the UI at reduced resolution in the same swap chain as real-time game content.
 
      
 
-2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 建立前景交換鏈結。 您必須在提供給 *pDesc* 參數的 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中設定下列選項：
+2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) supplied to the *pDesc* parameter:
 
-    -   指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 交換鏈結旗標，以指定前景交換鏈結。
-    -   使用 [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) Alpha 模式旗標。 前景交換鏈結一律是預乘的。
-    -   設定 [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) 旗標。 前景交換鏈結一律會以原生解析度執行。
+    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap chain flag to indicate a foreground swap chain.
+    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha mode flag. Foreground swap chains are always premultiplied.
+    -   Set the [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) flag. Foreground swap chains always run at native resolution.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -161,7 +161,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **請注意**每次調整交換鏈結的大小時，都會再次設定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
+    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) again every time the swap chain is resized.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -173,7 +173,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-3.  使用兩個交換鏈結時，將框架延遲上限提高為 2，讓 DXGI 介面卡有時間同時顯示這兩個交換鏈結 (在相同的 VSync 間隔內)。
+3.  When two swap chains are being used, increase the maximum frame latency to 2 so that the DXGI adapter has time to present both swap chains simultaneously (within the same VSync interval).
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -194,15 +194,15 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
     }
     ```
 
-4.  前景交換鏈結一律使用預乘的 Alpha。 呈現框架之前，您可以預期每個像素的色彩值都已經與 Alpha 值相乘。 例如，50% Alpha 的 100% 白色 BGRA 像素會設為 (0.5, 0.5, 0.5, 0.5)。
+4.  Foreground swap chains always use premultiplied alpha. Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented. For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).
 
-    Alpha 預乘步驟是在輸出合併階段完成的，方法則是利用 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 結構中設為 **D3D11\_SRC\_ALPHA** 的 **SrcBlend** 欄位來套用 app 混色狀態 (請參閱 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349))。 含有預乘 Alpha 值的資產也可以使用。
+    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
 
-    如果 Alpha 預乘步驟尚未完成，前景交換鏈結上的色彩將會較預期的明亮。
+    If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.
 
-5.  根據前景交換鏈結是否已建立而定，UI 元素的 Direct2D 繪製表面可能需要與前景交換鏈結產生關聯。
+5.  Depending on whether the foreground swap chain was created, the Direct2D drawing surface for UI elements might need be associated with the foreground swap chain.
 
-    建立轉譯目標檢視：
+    Creating render target views:
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -223,7 +223,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
     }
     ```
 
-    建立 Direct2D 繪製表面：
+    Creating the Direct2D drawing surface:
 
     ```cpp
     if (m_foregroundSwapChain)
@@ -278,7 +278,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-6.  將前景交換鏈結與用於即時遊戲內容的縮放交換鏈結一起呈現。 由於已將這兩個交換鏈結的畫面格延遲設為 2，, 因此 DXGI 可以在相同的 VSync 間隔內呈現它們兩個。
+6.  Present the foreground swap chain together with the scaled swap chain used for real-time game content. Since frame latency was set to 2 for both swap chains, DXGI can present them both within the same VSync interval.
 
     ```cpp
     // Present the contents of the swap chain to the screen.
@@ -329,6 +329,6 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

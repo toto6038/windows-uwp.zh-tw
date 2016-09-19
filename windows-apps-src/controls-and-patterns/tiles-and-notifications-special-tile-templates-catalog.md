@@ -1,56 +1,56 @@
 ---
 author: mijacobs
-Description: "特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。"
-title: "特殊的磚範本"
+Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
+title: Special tile templates
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 ---
-
-# 特殊的磚範本
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Special tile templates
 
 
 
-特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 除了圖示磚範本 (針對 Windows 10 更新的傳統型特殊範本) 以外，每一個特殊的磚範本都是特別針對 Windows 10 建置的。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
-
-## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>圖示磚範本
 
 
-圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本
+Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. Each special tile template was specifically built for Windows 10, except for the iconic tile template, a classic special template that has been updated for Windows 10. This article covers three special tile templates: Iconic, Photos, and People.
 
-![小型和中型郵件磚](images/iconic-template-mail-2sizes.png)
+## Iconic tile template
 
-### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>如何建立圖示磚
 
-下列步驟說明建立適用於 Windows 10 的圖示磚必須知道的所有事。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop.
 
-![圖示磚的開發人員流程](images/iconic-template-dev-flow.png)
+![small and medium mail tiles](images/iconic-template-mail-2sizes.png)
 
-**步驟 1：以 PNG 格式建立您的影像資產**
+### How to create an iconic tile
 
-為您的磚建立圖示資產，並將它們與您的其他資產一起放在專案資源中。 建立一個最低限度為 200 x 200 像素的圖示，這適用於手機和桌上型電腦上的小型和中型磚。 若要提供最佳的使用者體驗，請為每個大小建立一個圖示。 請參閱下方影像中的調整大小詳細資訊。
+The following steps cover everything you need to know to create an iconic tile for Windows 10. At a high level, you need your iconic image asset, then you send a notification to the tile using the iconic template, and finally you send a badge notification that provides the number to be displayed on the tile.
 
-以 PNG 格式儲存具有透明度的圖示資產。 在 Windows Phone 上，每個非透明的像素會顯示成白色 (RGB 255, 255, 255)。 為求簡單一致，也請針對桌面圖示使用白色。
+![developer flow of iconic tile](images/iconic-template-dev-flow.png)
 
-平板電腦、膝上型電腦和桌上型電腦上的 Windows 10 僅支援正方形圖示資產。 Phone 支援正方形的資產和高度大於寬度的資產 (最多為 2:3 的寬度:高度比率)，這對於手機圖示等的影像很有用。
+**Step 1: Create your image assets in PNG format**
 
-![手機和桌上型電腦上小型和中型磚的圖示大小調整](images/iconic-template-sizing-info.png)
+Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. See sizing details in the below image.
 
-**步驟 2：建立基本的磚**
+Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
 
-您可以在主要和次要磚上使用圖示範本。 如果您正在次要磚上使用它，您必須先建立次要磚或使用已釘選次要磚。 主要磚以隱含方式釘選，且一律會傳送通知。
+Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
 
-**步驟 3：將通知傳送到您的磚**
+![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
 
-雖然此步驟可能會因為通知在本機傳送或透過伺服器推播而不同，但您傳送的 XML 承載仍相同。 若要傳送本機磚通知，請為您的磚 (主要或次要磚) 建立 [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628)，然後將通知傳送到使用圖示磚範本的磚，如下所示。 在理想的情況下，您也應該使用[彈性磚範本](tiles-and-notifications-adaptive-tiles-schema.md)包含寬形和大型磚大小的繫結。
+**Step 2: Create your base tile**
 
-以下是 XML 承載的範例程式碼：
+You can use the iconic template on both primary and secondary tiles. If you're using it on a secondary tile, you'll first have to create the secondary tile or use an already-pinned secondary tile. Primary tiles are implicitly pinned and can always be sent notifications.
+
+**Step 3: Send a notification to your tile**
+
+Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md).
+
+Here's sample code for the XML payload:
 
 ```XML
 <tile>
@@ -68,13 +68,13 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 </tile>
 ```
 
-這個圖示範本的 XML 承載會使用指向您在步驟 1 中建立的影像的影像元素。 現在您的磚已準備好在您的圖示旁顯示徽章，只剩下傳送徽章通知。
+This iconic tile template XML payload uses an image element that points to the image that you created in Step 1. Now your tile is ready to display the badge next to your icon; all that's left is sending badge notifications.
 
-**步驟 4：將徽章通知傳送到您的磚**
+**Step 4: Send a badge notification to your tile**
 
-和步驟 3 一樣，此步驟可能會因為通知在本機傳送或透過伺服器推播而不同，但您傳送的 XML 承載仍相同。 若要傳送本機徽章通知，請為您的磚 (主要或次要磚) 建立 [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537)，然後傳送包含您所需的值的徽章通知 (或清除徽章)。
+As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
 
-以下是 XML 承載的範例程式碼：
+Here's sample code for the XML payload:
 
 ```XML
 <badge value="2"/></code></pre></td>
@@ -83,30 +83,30 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 </table>
 ```
 
-磚的徽章會適當地更新。
+The tile's badge will update accordingly.
 
-**步驟 5：總結**
+**Step 5: Putting it all together**
 
-下列影像說明各種 API 與承載如何與圖示磚範本的每個層面相關聯。 [磚通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (包含這些 &lt;binding[元素) 是用來指定圖示範本和影像資產；&gt;徽章通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定數值；磚屬性控制磚的顯示名稱及色彩等。
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
-![與圖示磚範本相關聯的 API 與承載](images/iconic-template-properties-info.png)
+![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>相片磚範本
+## Photos tile template
 
 
-相片磚範本可讓您在動態磚上顯示相片的幻燈片秀。 範本適用於所有磚大小 (包括小型)，而且在每個磚大小上的行為都相同。 下列範例示範使用相片範本的中型磚的五個畫面格。 範本包含縮放和淡入與淡出動畫，而且會循環顯示所選相片並無限循環。
+The photos tile template lets you display a slideshow of photos on your live tile. The template is supported on all tile sizes, including small, and behaves the same on each tile size. The below example shows five frames of a medium tile that uses the photos template. The template has a zoom and cross-fade animation that cycles through selected photos and loops indefinitely.
 
-![使用相片磚範本的影像幻燈片秀](images/photo-tile-template-image01.jpg)
+![image slideshow using photos tile template](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>如何使用相片範本
+### How to use the photos template
 
-如果您安裝了 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用相片範本就很輕鬆。 雖然您可以使用原始 XML，但強烈建議您使用 NotificationExtensions，這樣您就不需要為產生有效的 XML 或 XML 逸出內容操心。
+Using the photos template is easy if you've installed the [Windows 10 version of NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Although you can use raw XML, we highly recommend going with NotificationExtensions so that you don't have to worry about generating valid XML or XML-escaping content.
 
-Windows Phone 在一個幻燈片秀中最多顯示 9 張相片；平板電腦、膝上型電腦和桌上型電腦最多顯示 12 張。
+Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and desktop display up to 12.
 
-如需傳送磚通知的詳細資訊，請參閱[傳送通知一文](tiles-badges-notifications.md)。
+For information about sending the tile notification, see the [Send notifications article](tiles-badges-notifications.md).
 
-<span codelanguage="XML"></span>
+
 ```XML
 <colgroup>
 <col width="100%" />
@@ -182,36 +182,36 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>連絡人磚範本
+## People tile template
 
 
-Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本自 Windows 10 組建 10572 開始提供，我們歡迎所有人在應用程式中使用。
+The People app in Windows 10 uses a special tile template that displays a collection of images in circles that slide around vertically or horizontally on the tile. This tile template has been available since Windows 10 Build 10572, and anyone is welcome to use it in their app.
 
-連絡人磚範本適用於下列大小的磚：
+The People tile template works on tiles of these sizes:
 
-**中型磚** (TileMedium)
+**Medium tile** (TileMedium)
 
-![中型連絡人磚](images/people-tile-medium.png)
-
- 
-
-**寬形磚** (TileWide)
-
-![寬形連絡人磚](images/people-tile-wide.png)
+![medium people tile](images/people-tile-medium.png)
 
  
 
-**大型磚 (僅限桌上型電腦)** (TileLarge)
+**Wide tile** (TileWide)
 
-![大型連絡人磚](images/people-tile-large.png)
+![wide people tile](images/people-tile-wide.png)
 
  
 
-如果您使用 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，要使用連絡人磚範本，您只需要為您的 *TileBinding* 內容建立一個新的 *TileBindingContentPeople* 物件。 *TileBindingContentPeople* 類別有一個供您新增影像的 Images 屬性。
+**Large tile (desktop only)** (TileLarge)
 
-如果您使用原始的 XML，請將 *hint-presentation* 設定為 "people"，並將您的影像新增為繫結元素的子系。
+![large people tile](images/people-tile-large.png)
 
-下列 C# 程式碼範例假設您使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)。
+ 
+
+If you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx), all you have to do to make use of the People tile template is create a new *TileBindingContentPeople* object for your *TileBinding* content. The *TileBindingContentPeople* class has an Images property where you add your images.
+
+If you're using raw XML, set the *hint-presentation* to "people" and add your images as children of the binding element.
+
+The following C# code sample assumes that you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx).
 
 ```CSharp
 TileContent content = new TileContent()
@@ -260,24 +260,24 @@ TileContent content = new TileContent()
 </tile>
 ```
 
-為提供最佳的使用者經驗，建議您針對每個磚大小提供下列數目的相片：
+For the best user experience, we recommend that you provide the following number of photos for each tile size:
 
--   中型磚：9 張相片
--   寬形磚：15 張相片
--   大型磚：20 張相片
+-   Medium tile: 9 photos
+-   Wide tile: 15 photos
+-   Large tile: 20 photos
 
-設定此數目的相片可以保留一些空的圓形，在視覺上磚就不會顯得過於雜亂。 您可以隨意調整相片數目，以設定最適合您的外觀。
+Having that number of photos allows for a few empty circles, which means that the tile won't be too visually busy. Feel free to tweak the number of photos to get the look that works best for you.
 
-若要傳送通知，請參閱[選擇通知傳遞方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
+To send the notification, see [Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md).
 
-## <span id="related_topics"></span>相關主題
+## Related topics
 
 
-* [GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [磚、徽章及通知](tiles-badges-notifications.md)
-* [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
-* [彈性磚範本：結構描述和文件](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Tiles, badges, and notifications](tiles-badges-notifications.md)
+* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
  
 
  
@@ -288,6 +288,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

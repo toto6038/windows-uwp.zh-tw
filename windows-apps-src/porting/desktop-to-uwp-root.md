@@ -1,102 +1,123 @@
 ---
 author: awkoren
-Description: "準備您的 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms)，以便使用桌面轉換擴充功能轉換為通用 Windows 平台 (UWP) 應用程式。"
+Description: Prepare your Windows desktop application (like Win32, WPF, and Windows Forms) for conversion to a Universal Windows Platform (UWP) app by using the Desktop Conversion extensions.
 Search.Product: eADQiWindows 10XVcnh
-title: "將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) 應用程式"
+title: Convert your desktop application to a Universal Windows Platform (UWP) app
 translationtype: Human Translation
-ms.sourcegitcommit: 45b9170ed311e6f17d1c51c0b7d1d288e07184a9
-ms.openlocfilehash: c5ffb1e912c2953d5f813f099e036d2d7b395b69
+ms.sourcegitcommit: ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2
+ms.openlocfilehash: 6cf6367ed0f6acea0f87ac36a050e874425423b1
 
 ---
 
-# 將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) 應用程式
+# Convert your desktop application to a Universal Windows Platform (UWP) app
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-準備您的 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms)，以便使用桌面轉換擴充功能轉換為通用 Windows 平台 (UWP) 應用程式。
+Prepare your Windows desktop application (like Win32, WPF, and Windows Forms) for conversion to a Universal Windows Platform (UWP) app by using the Desktop Conversion extensions.
 
-## 將應用程式轉換為 UWP 的好處
+## Benefits of converting your application to UWP
 
-使用桌面轉換擴充功能的 UWP 是可讓您將傳統型桌面應用程式 (例如 Win32、Windows Forms 和 WPF) 或遊戲轉換為通用 Windows 平台 (UWP) 應用程式或遊戲的橋樑。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx)。 轉換之後，您的傳統型桌面應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
+UWP using Desktop Conversion extensions is a bridge that enables you to convert your Windows desktop application (like Win32, Windows Forms, and WPF) or game to a Universal Windows Platform (UWP) app or game. For more info, see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx). After conversion, your Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (an .appx or an .appxbundle) targeting Windows 10 Desktop.
 
-有兩個部分的技術可將傳統型應用程式轉換為 UWP 套件。 第一個部分是傳統型應用程式轉換器，它會取得您現有的二進位檔並將它們重新封裝為 UWP 套件。 您的程式碼仍然相同，只是以不同方式封裝。 第二個部分是由 Windows 年度更新版中的執行階段技術所組成，可讓 UWP 套件擁有以完全信任方式執行而不是在應用程式容器中執行的可執行檔。 這項技術也會為已轉換的應用程式提供套件識別資料，需要有此識別資料才能使用某些 UWP API。
+There are two parts to the technology that enables desktop apps to be converted to UWP packages. The first is the Desktop App Converter, which takes your existing binaries and repackages them as a UWP package. Your code is still the same, it's just packaged differently. The second piece comprises runtime technologies in the Windows Anniversary update that enable a UWP package to have executables that run as full trust instead of in an app container. This technology also gives a converted app a package identity, which is required to use some UWP APIs.
 
-以下是一些轉換傳統型桌面應用程式的好處。
+Here are some of the benefits of converting your Windows desktop application.
 
-* 可針對您的應用程式為客戶提供更順暢的安裝體驗。 您可以使用側載來將它部署到電腦 (請參閱[在 Windows 10 中側載 LOB App](https://technet.microsoft.com/library/mt269549.aspx))，並且在解除安裝之後不會留下任何追蹤。 期限較長，您也能夠將您的應用程式發佈到 Windows 市集。
+* Your app's installation experience is much smoother for your customers. You can deploy it to computers using sideloading (see [Sideload LOB apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx)), and it leaves no trace behind after being uninstalled. Longer term, you'll also be able to publish your app to the Windows Store.
 
-* 由於已轉換的應用程式具有套件識別資料，因此，您甚至可從完全信任的磁碟分割呼叫比以前更多的 UWP API。
+* Because your converted app has package identity, you can call more UWP APIs, even from the full-trust partition, than you could before. See a full list of [Supported UWP APIs for converted desktop apps](desktop-to-uwp-supported-api.md). 
 
-* 依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。 所有可供任何其他 UWP app 使用的功能都可供您的 app 使用。
+* At your own pace, you can add UWP features to your app's package, like a XAML user-interface, live tile updates, UWP background tasks, app services, and many more. All of the functionality available to any other UWP app is available to your app.
 
-* 如果您選擇要將所有應用程式功能移出應用程式完全信任的磁碟分割，然後移入應用程式容器磁碟分割，則您的應用程式將能在任何 Windows 10 裝置上執行。
+* If you choose to move all of your app's functionality out of the full-trust partition of the app and into the app container partition, then your app will be able to run on any Windows 10 device.
 
-* 做為 UWP app，您的 app 能夠執行的動作，就像它做為傳統型桌面應用程式時所做的一樣。 它會與登錄和檔案系統的虛擬化檢視互動，這很難與實際登錄和檔案系統區分。
+* As a UWP app, your app is able to do the things it could do as a Windows desktop application. It interacts with a virtualized view of the registry and file system that's indistinguishable from the actual registry and file system.
 
-* 您的應用程式可以參與 Windows 市集的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
+* Your app can participate in the Windows Store's built-in licensing and automatic update facilities. Automatic update is a highly reliable and efficient mechanism, because only the changed parts of files are downloaded.
 
-## 準備將傳統型應用程式轉換為 UWP
-您可能不需要針對應用程式的轉換程式做太多準備。 請記住，Windows 市集會為您處理授權和自動更新，因此您可以從程式碼基底中移除這些功能。 如果您的應用程式符合下列任一情況，您就需要在轉換之前先解決此問題。
+## Prepare your desktop app for conversion to UWP
 
-+ __您的應用程式是使用 4.6.1 之前的 .NET 版本__。 僅支援 .NET 4.6.1。 您必須先將應用程式重新定位至 .NET 4.6.1 才能轉換。 
+You may not need to do much to get your app ready for the conversion process. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove those features from your codebase. If any of these situations applies to your application, you need to address this issue before conversion.
 
-+ __您的應用程式一律會以提升的安全性權限執行__。 在以互動使用者身分執行時您的應用程式必須能夠運作。 從 Windows 市集安裝您應用程式的使用者可能不是系統管理員，因此需要以提升的權限來執行您的應用程式，表示它無法針對標準使用者正常執行。
++ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You must retarget your app to .NET 4.6.1 before converting. 
 
-+ __您的應用程式需要核心模式驅動程式或 Windows 服務__。 橋接器適用於應用程式，但它不支援核心模式驅動程式或需要在系統帳戶下執行的 Windows 服務。 請改用[背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)，而非 Windows 服務。
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
 
-+ __您的應用程式模組會以同處理序載入至不在您 AppX 套件中的處理序__。 這是不允許的，這表示不支援同處理序擴充功能，例如 [Shell 擴充功能](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果您在同一個套件中有兩個應用程式，您就可以在它們之間進行處理序間通訊。
++ __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
-+ __您的應用程式會使用自訂的應用程式使用者模型識別碼 (AUMID)__。 如果您的處理序會呼叫 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) 來設定自己的 AUMID，則它可能只會使用應用程式模型環境/AppX 套件為它產生的 AUMID。 您不能定義自訂的 AUMID。
++ __Your app's modules are loaded in-process to processes that are not in your AppX package__. This isn't permitted, which means that in-process extensions, like [shell extensions](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), aren't supported. But if you have two apps in the same package, you can do inter-process communication between them.
 
-+ __您的應用程式會修改 HKEY_LOCAL_MACHINE (HKLM) 登錄區__。 應用程式對於建立 HKLM 機碼或開啟某一個機碼進行修改的任何嘗試都將產生存取遭拒的失敗。 請記住，您的應用程式有自己私用的登錄虛擬化檢視，因此，不適用全部使用者和整部電腦登錄區的概念 (這是 HKLM 的概念)。 您需要尋找其他方式來封存您使用 HKLM 所做的動作，例如改為寫入 HKEY_CURRENT_USER (HKCU)。
++ __Your app calls [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) or [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__. These functions are not currently supported for converted apps. We are working on adding support in a future release. As a workaround, you can copy any .dlls you were locating using these functions to your package root. 
 
-+ __您的應用程式會使用 ddeexec 登錄子機碼做為啟動另一個應用程式的方式__。 在您的[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中，使用各種不同 Activatable* 擴充功能來設定時，請改用其中一個 DelegateExecute 動詞命令處理常式。
++ __Your app uses a custom Application User Model ID (AUMID)__. If your process calls [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) to set its own AUMID, then it may only use the AUMID generated for it by the app model environment/AppX package. You can't define custom AUMIDs.
 
-+ __您的應用程式會寫入 AppData 資料夾，以便與其他應用程式共用資料__。 轉換之後，系統會將 AppData 重新導向至本機 app 資料存放區，此為每一個 UWP app 的私人存放區。 使用不同方式來進行處理序間的資料共用。 如需詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
++ __Your app modifies the HKEY_LOCAL_MACHINE (HKLM) registry hive__. Any attempt by your app to create an HKLM key, or to open one for modification, will result in an access-denied failure. Remember that your app has its own private virtualized view of the registry, so the notion of a user- and machine-wide registry hive (which is what HKLM is) does not apply. You will need to find another way of achieving what you were using HKLM for, like writing to HKEY_CURRENT_USER (HKCU) instead.
 
-+ __您的應用程式會寫入您應用程式的安裝目錄__。 例如，您的應用程式所寫入的記錄檔是放在與您的 exe 相同的目錄中。 不支援此情況，因此您將需要尋找其他位置，例如本機應用程式資料存放區。
++ __Your app uses a ddeexec registry subkey as a means of launching another app__. Instead, use one of the DelegateExecute verb handlers as configured by the various Activatable* extensions in your [app package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
 
-+ __您的應用程式安裝需要使用者互動__。 您的應用程式安裝程式必須能夠以無訊息方式執行，而且它需要安裝所有預設不在全新作業系統映像上的必要條件。
++ __Your app writes to the AppData folder with the intention of sharing data with another app__. After conversion, AppData is redirected to the local app data store, which is a private store for each UWP app. Use a different means of inter-process data sharing. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
-+ __您的應用程式會使用目前的工作目錄__。 在執行階段，已轉換的應用程式將不會取得您先前在桌面 .LNK 捷徑中指定的相同工作目錄。 如果您的應用程式必須擁有正確的目錄才能正確運作，則您需要在執行階段變更 CWD。
++ __Your app writes to the install directory for your app__. For example, your app writes to a log file that you put in the same directory as your exe. This isn't supported, so you'll need to find another location, like the local app data store.
 
-+ __您的應用程式需要 UIAccess__。 如果您的應用程式在 UAC 資訊清單的 `requestedExecutionLevel` 元素中指定 `UIAccess=true`，則目前不支援轉換為 UWP。 如需詳細資訊，請參閱 [UI 自動化安全性概觀](https://msdn.microsoft.com/library/ms742884.aspx)。
++ __Your app installation requires user interaction__. Your app installer must be able to run silently, and it must install all of its prerequisites that aren't on by default on a clean OS image.
 
-+ __您的應用程式公開 COM 物件或 GAC 組件給其他處理程序使用__。 在目前版本中，您的應用程式不能公開 COM 物件或 GAC 組件給來自 AppX 套件外部的可執行檔處理程序使用。 來自套件內的處理程序可以正常登錄及使用 COM 物件和 GAC 組件，但無法從外部看見它們。 這表示如果透過外部處理程序叫用 OLE 等互通性案例，將無法作用。 
++ __Your app uses the Current Working Directory__. At runtime, your converted app won't get the same Working Directory that you previously specified in your desktop .LNK shortcut. You need to change your CWD at runtime if having the correct directory is important for your app to function correctly.
 
-+ __不支援您的應用程式連結 C 執行階段程式庫的方式__。 Microsoft C/C++ 執行階段程式庫提供適用於 Microsoft Windows 作業系統的程式設計常式。 這些常式將許多常見但 C 和 C++ 語言未提供的程式設計工作自動化。 如果您的應用程式利用 C/C++ 執行階段程式庫，您必須確定以支援的方式連結它。 
++ __Your app requires UIAccess__. If your application specifies `UIAccess=true` in the `requestedExecutionLevel` element of the UAC manifest, conversion to UWP isn't supported currently. For more info, see [UI Automation Security Overview](https://msdn.microsoft.com/library/ms742884.aspx).
+
++ __Your app is already a full UWP app and wants to invoke a full trust process from within the app package__. Using the bridge in "reverse" is not supported and UWP apps attempting to invoke full trust processes will fail Store certification. To enable this scenario in a sideloaded app, first include the ```<desktop:Extension>``` declaration in your app's manifest (which includes the *EntryPoint* attribute with the value *Windows.FullTrustApplication*). Next, set your app's  ```<TargetDeviceFamily>``` to *Windows.Desktop*. This indicates your app is only targeting the desktop device family and not all UWP devices. If your app returns the error *APPX0501: Validation Error* with these settings in place, verify your target device family; your app is likely targeting the *Windows.Universal* family and not *Windows.Desktop*. 
+
++ __Your app exposes COM objects or GAC assemblies for use by other processes__. In the current release, your app cannot expose COM objects or GAC assemblies for use by processes originating from executables external to your AppX package. Processes from within the package can register and use COM objects and GAC assemblies as normal, but they will not be visible externally. This means interop scenarios like OLE will not function if invoked by external processes. 
+
++ __Your app is linking C runtime libraries in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner. 
     
-    Visual Studio 2015 支援用動態連結 (讓程式碼使用一般 DLL 檔案) 或用靜態連結 (將程式庫直接連結到程式碼中)，連結到目前的 CRT 版本。 可能的話，我們建議您的應用程式搭配 VS 2015 使用動態連結。 
+    Visual Studio 2015 supports both dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015. 
 
-    支援先前的多種 Visual Studio 版本。 如需詳細資訊，請參閱下表： 
+    Support in previous versions of Visual Studio varies. See the following table for details: 
 
     <table>
-    <th>Visual Studio 版本</td><th>動態連結</th><th>靜態連結</th></th>
-    <tr><td>2005 (VC 8)</td><td>不支援</td><td>支援</td>
-    <tr><td>2008 (VC 9)</td><td>不支援</td><td>支援</td>
-    <tr><td>2010 (VC 10)</td><td>支援</td><td>支援</td>
-    <tr><td>2012 (VC 11)</td><td>支援</td><td>不支援</td>
-    <tr><td>2013 (VC 12)</td><td>支援</td><td>不支援</td>
-    <tr><td>2015 (VC 14)</td><td>支援</td><td>支援</td>
+    <th>Visual Studio version</td><th>Dynamic linking</th><th>Static linking</th></th>
+    <tr><td>2005 (VC 8)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2008 (VC 9)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2010 (VC 10)</td><td>Supported</td><td>Supported</td>
+    <tr><td>2012 (VC 11)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2013 (VC 12)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2015 (VC 14)</td><td>Supported</td><td>Supported</td>
     </table>
     
-    注意：在任何情況下，您都必須連結到最新可公開取得的 CRT。
+    Note: In all cases, you must link to the latest publically available CRT.
 
-+ __您的應用程式會從 Windows 並列資料夾安裝與載入組件__。 例如，您的應用程式使用 C 執行階段程式庫 VC8 或 VC9 且從 Windows 並列資料夾動態連結它們，表示您的程式碼是使用來自共用資料夾的一般 DLL 檔。 不支援此連結方式。 您必須以靜態方式連結它們，直接將可轉散發程式庫檔案連結到您的程式碼中。
++ __Your app installs and loads assemblies from the Windows side-by-side folder__. For example, your app uses C runtimes libraries VC8 or VC9 and is dynamically linking them from Windows side-by-side folder, meaning your code is using the common DLL files from a shared folder. This is not supported. You will need to statically link them by linking to the redistributable library files directly into your code.
 
+## Start the conversion process
 
-## 本節內容
+You have a few different options for converting your app.
 
-| 主題 | 說明 |
+* **Desktop App Converter (DAC)**. The DAC is a tool that automatically converts and signs your app for you. Using the DAC is convenient and automatic, and it's useful if your app makes lots of system modifications or if there's any uncertainty about what your installer does. To get started with the DAC, see [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md). 
+
+* **Manual Conversion**. If your app is installed using xcopy, or you're familiar with the changes that your installer makes to the system, manual conversion might be a more straightforward choice. This involves creating a manifest file, running the MakeAppx.exe tool, and then signing your app package. For details on how to manually convert, see [Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app](desktop-to-uwp-manual-conversion.md). 
+
+* **Third-Party Installer**. Three popular third-party installers — [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer), [WiX by FireGiant](https://www.firegiant.com/r/appx), and [Advanced Installer by Caphyon](http://www.advancedinstaller.com/uwp-app-package) — now support the Desktop Bridge and can generate both a MSI installer and converted app package with only a few clicks. For more information, visit the respective website for each installer. 
+
+## Get support and give feedback
+
+If you run in to issues converting your app, you can visit the [forums](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) for help. 
+
+To give feedback or make feature suggestions, check out [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial). 
+
+## In this section
+
+| Topic | Description |
 |-------|-------------|
-| [傳統型應用程式轉換器預覽 (Project Centennial)](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行傳統型應用程式轉換器。 您可能不需要針對應用程式的轉換程式做太多準備 (如果有的話)。 |
-| [將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
-| [已轉換的傳統型應用程式擴充功能](desktop-to-uwp-extensions.md) | 您可運用各式各樣的通用 Windows 平台 (UWP) API，增強已轉換的傳統型應用程式功能。 不過，除了適用於所有 UWP app 的一般 API 外，某些擴充功能與 API 僅適用於已轉換的傳統型應用程式。 本文說明這些擴充功能及其使用方式。 |
-| [部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md) | 包含的資訊可協助您在轉換應用程式之後順利部署和偵錯該應用程式。 此外，如果您想探究桌面轉換擴充功能的一些本質，本主題非常適合您。 |
-| [傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上示範轉換 app 功能的程式碼範例。 |
+| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Shows how to run Desktop App Converter. You probably won't need to do much, if anything, to get your app ready for the conversion process. |
+| [Manually convert your desktop app](desktop-to-uwp-manual-conversion.md) | Learn how to create an app package and manifest to by hand. |
+| [Converted desktop app extensions](desktop-to-uwp-extensions.md) | Enhance your converted app with extensions to enable features like startup tasks, File Explorer integration, and more. |
+| [Supported UWP APIs for converted desktop apps](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your converted desktop app to use. |
+| [Sign your converted desktop app](desktop-to-uwp-signing.md) | Learn how to sign your converted .appx package with a certificate. |
+| [Deploy and debug your converted UWP app](desktop-to-uwp-deploy-and-debug.md) | Get help with deploying and debugging your app after converting it. Also, if you're curious about some of the internals of the Desktop Conversion extensions, this topic is for you. |
+| [Desktop app bridge to UWP code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

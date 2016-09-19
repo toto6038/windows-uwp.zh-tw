@@ -1,33 +1,33 @@
 ---
-title: "常見的密碼編譯工作"
-description: "下列文章提供常見的通用 Windows 平台 (UWP) 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。"
+title: Common cryptography tasks
+description: These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
+ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
 
 ---
 
-# 常見的密碼編譯工作
+# Common cryptography tasks
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-下列文章提供常見的通用 Windows 平台 (UWP) 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。
+These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
 
  
-| 主題                                                                                 | 說明                                                                                            |
+| Topic                                                                                 | Description                                                                                            |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| [建立隨機數字](create-random-numbers.md)                                     | 這個範例程式碼說明如何在 UWP app 中建立要用於密碼編譯的隨機數字或緩衝區。 |
-| [比較緩衝區](compare-buffers.md)                                                 | 這個範例程式碼說明如何比較 UWP app 中的緩衝區。                                          |
-| [在字串與二進位資料間轉換](convert-between-strings-and-binary-data.md) | 這個範例程式碼說明如何在 UWP app 的字串與二進位資料間轉換。                  |
-| [複製到位元組陣列和從位元組陣列中複製](copy-to-and-from-byte-arrays.md)                       | 這個範例程式碼說明如何在 UWP app 中複製到位元組陣列和從位元組陣列中複製。                             |
-| [編碼及解碼資料](encode-and-decode-data.md)                                   | 這個範例程式碼說明如何在 UWP app 中編碼及解碼 base64 和十六進位資料。            |
+| [Create random numbers](create-random-numbers.md)                                     | This example code shows how to create a random number or buffer for use in cryptography in an UWP app. |
+| [Compare buffers](compare-buffers.md)                                                 | This example code shows how to compare buffers in an UWP app.                                          |
+| [Convert between strings and binary data](convert-between-strings-and-binary-data.md) | This example code shows how to convert between strings and binary data in an UWP app.                  |
+| [Copy to and from byte arrays](copy-to-and-from-byte-arrays.md)                       | This example code shows how to copy to and from byte arrays in an UWP app.                             |
+| [Encode and decode data](encode-and-decode-data.md)                                   | This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.            |
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

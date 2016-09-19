@@ -1,94 +1,102 @@
 ---
-Description&#58; 作者：mijacobs 有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
-title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8-560B340AE966 label&#58; Motion template&#58; detail.hbs testmetadata&#58; testing tocnode&#58;design and ui
+author: mijacobs
+Description: Purposeful, well-designed animations bring apps to life and make the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
+title: Motion and animation in UWP apps
+ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
+label: Motion
+template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+
 ---
 
-# 適用於 UWP app 的動作
+# Motion for UWP apps
 
-有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
+Purposeful, well-designed animations bring apps to life and make the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>動畫的優勢
+## Benefits of animation
 
 
-動畫不只是讓物品移動。 動畫是一個用來為使用者建立實體生態系統的工具，以讓使用者沈浸其中，並透過觸控方式進行操縱。 體驗的品質高低依 app 如何回應使用者及 UI 的通訊特質種類而定。
+Animation is more than making things move. Animation is a tool for creating a physical ecosystem for the user to live inside and manipulate through touch. The quality of the experience depends on how well the app responds to the user, and what kind of personality the UI communicates.
 
-確保動畫在您的 app 中可以起作用。 最佳的通用 Windows 平台 (UWP) app 會使用動畫讓 UI 表現得活靈活現。 動畫應該：
+Make sure animation serves a purpose in your app. The best Universal Windows Platform (UWP) apps use animation to bring the UI to life. Animation should:
 
--   基於使用者的行為提供回饋。
--   教導使用者如何與 UI 互動。
--   指示如何瀏覽到之前或之後的檢視。
+-   Give feedback based on the user's behavior.
+-   Teach the user how to interact with the UI.
+-   Indicate how to navigate to previous or succeeding views.
 
-隨著使用者在 app 內花費的時間越來越多，或者 app 中的工作變得越來越複雜，高品質的動畫變得越來越重要：因為它可以用來改變使用者對其認知負載和 app 易用性的看法。 動畫有許多其他直接益處：
+As a user spends more time inside your app, or as tasks in your app become more sophisticated, high-quality animation becomes increasingly important: it can be used to change how the user perceives their cognitive load and your app's ease of use. Animation has many other direct benefits:
 
--   **動畫可加入對互動的提示。**
+-   **Animation adds hints towards interaction.**
 
-    動畫是有方向性的：它會向前和向後移動，移出和移入內容，留下關於使用者如何到達目前檢視的小型「瀏覽軌跡」提示。
+    Animation is directional: it moves forward and backward, in and out of content, leaving minimal "breadcrumb" clues as to how the user arrived at the present view.
 
--   **動畫可讓人產生性能增強的印象。**
+-   **Animation can give the impression of enhanced performance.**
 
-    當網路速度緩慢或系統暫停工作時，動畫可以讓使用者感覺等待的時間較短。
+    When network speeds lag or the system pauses to work, animations can make the user's wait feel shorter.
 
--   **動畫可增添個性。**
+-   **Animation adds personality.**
 
-    面面俱到的 Windows Phone UI 使用動作，建立一個 app 與實際情況關連的印象，並有助於消除使用者困在巢狀階層圖中的感覺。
+    The well-considered Windows Phone UI uses motion to create the impression that an app is concerned with the here and now, and helps counteract the sensation that the user is burrowing into nested hierarchies.
 
--   **動畫可增添一致性。**
+-   **Animation adds consistency.**
 
-    轉換可以透過類似使用者已經熟悉的工作來協助其了解如何操作新應用程式。
+    Transitions can help users learn how to operate new applications by drawing analogies to tasks that the user is already familiar with.
 
--   **動畫可增添雅致。**
+-   **Animation adds elegance.**
 
-    動畫可以用來讓使用者知道手機正在運作，而不是靜止不動，而且可以被動顯示使用者可能感興趣的新資訊。
+    Animations can be used to let the user know that the phone is processing, not frozen, and it can passively surface new information that the user may be interested in.
 
-## 本節內容
+## In this section
 <table>
 <thead>
 <tr class="header">
-<th align="left">動畫類型</th>
-<th align="left">說明</th>
+<th align="left">Animation type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
     <tr>
-        <td>[新增和刪除](motion-list.md)
+        <td>[Add and delete](motion-list.md)
         </td>
-        <td>清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
-        </td>
-    </tr> 
-    <tr>
-        <td>[拖放](motion-dragdrop.md)
-        </td>
-        <td>在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
+        <td>List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
         </td>
     </tr>
     <tr>
-        <td>[邊緣](motion-edgebased.md)
+        <td>[Drag and drop](motion-dragdrop.md)
         </td>
-        <td>以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
+        <td>Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+        </td>
+    </tr>
+    <tr>
+        <td>[Edge](motion-edgebased.md)
+        </td>
+        <td>Edge-based animations show or hide UI that originates from the edge of the screen. The show and hide actions can be initiated either by the user or by the app. The UI can either overlay the app or be part of the main app surface. If the UI is part of the app surface, the rest of the app might need to be resized to accommodate it.
         </td>
     </tr>   
     <tr>
-        <td>[淡化](motion-fade.md)
+        <td>[Fade](motion-fade.md)
         </td>
-        <td>使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡化動畫為淡入和淡出。
-        </td>
-    </tr>   
-    <tr>
-        <td>[指標](motion-pointer.md)
-        </td>
-        <td>指標動畫為使用者提供在項目上點選時的視覺化回饋。 第一次點選項目時，會播放稍微縮小並傾斜已按下項目的指標向下動畫。 當使用者放開指標時，則會播放將項目還原至其原始位置的指標向上動畫。
+        <td>Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
         </td>
     </tr>   
     <tr>
-        <td>[快顯動畫](motion-popup-animations.md)
+        <td>[Pointer](motion-pointer.md)
         </td>
-        <td>使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
+        <td>Pointer animations provide users with visual feedback when the user taps on an item. The pointer down animation slightly shrinks and tilts the pressed item, and plays when an item is first tapped. The pointer up animation, which restores the item to its original position, is played when the user releases the pointer.
+        </td>
+    </tr>   
+    <tr>
+        <td>[Pop-up animations](motion-popup-animations.md)
+        </td>
+        <td>Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
         </td>
     </tr>     
     <tr>
-        <td>[調整位置](motion-reposition.md)
+        <td>[Reposition](motion-reposition.md)
         </td>
-        <td>將元素移至新位置。
+        <td>Move elements into a new position.
         </td>
     </tr>
 
@@ -103,10 +111,6 @@ title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

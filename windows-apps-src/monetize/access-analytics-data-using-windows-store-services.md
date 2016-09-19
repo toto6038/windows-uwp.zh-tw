@@ -1,87 +1,82 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: "使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。"
-title: "使用 Windows 市集服務存取分析資料"
+description: Use the Windows Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
+title: Access analytics data using Windows Store services
 translationtype: Human Translation
-ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
-ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
+ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
+ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
 
 ---
 
-# 使用 Windows 市集服務存取分析資料
+# Access analytics data using Windows Store services
 
+Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+The following steps describe the end-to-end process:
 
+1.  Make sure that you have completed all the [prerequisites](#prerequisites).
+2.  Before you call a method in the Windows Store analytics API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store analytics API before the token expires. After the token expires, you can generate a new token.
+3.  [Call the Windows Store analytics API](#call-the-windows-store-analytics-api).
 
-使用「Windows 市集分析 API」**，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。 這個 API 可讓您擷取 app 的資料和 IAP 的下載數、錯誤、app 評分與評論。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 app 或服務的呼叫。
+<span id="prerequisites" />
+## Step 1: Complete prerequisites for using the Windows Store analytics API
 
-## 使用 Windows 市集分析 API 的先決條件
+Before you start writing code to call the Windows Store analytics API, make sure that you have completed the following prerequisites.
 
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
 
--   您 (或您的組織) 必須有一個 Azure AD 目錄。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD 目錄。 否則，您可以[免費取得一個](http://go.microsoft.com/fwlink/p/?LinkId=703757)。
--   在您要與 Windows 開發人員中心帳戶相關聯的 Azure AD 目錄中，必須要有[使用者帳戶](https://azure.microsoft.com/documentation/articles/active-directory-create-users/)。
+* You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store analytics API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
 
-## 使用 Windows 市集分析 API
+  >**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
+To associate an Azure AD application with your Dev Center account and retrieve the required values:
 
-在您可以使用 Windows 市集分析 API 之前，必須先將 Azure AD 應用程式與開發人員中心帳戶產生關聯，並取得 Azure AD 存取權杖。 Azure AD 應用程式代表您要呼叫 Windows 市集分析 API 的 app 或服務。 有了存取權杖之後，您即可從您的 app 或服務呼叫 Windows 市集分析 API。
+1.  In Dev Center, go to your **Account settings**, click **Manage users**, and associate your organization's Dev Center account with your organization's Azure AD directory. For detailed instructions, see [Manage account users](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
 
-下列步驟說明端對端的程序：
+2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access analytics data for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
 
-1.  [將 Azure AD應用程式與您的 Windows 開發人員中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
-2.  [取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。
-3.  [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
+3.  Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
+4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see the information about managing keys in [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
 
-### 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯
+<span id="obtain-an-azure-ad-access-token" />
+## Step 2: Obtain an Azure AD access token
 
-1.  在開發人員中心，移至您的 [帳戶設定]****，按一下 [管理使用者]****，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)。 您也可以選擇性地從組織的 Azure AD 目錄加入使用者，這樣他們也能存取開發人員帳戶。
+Before you call any of the methods in the Windows Store analytics API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
-    > **注意** 一個 Azure Active Directory 只能與一個開發人員中心帳戶關聯。 同樣地，一個開發人員中心帳戶只能與一個 Azure Active Directory 關聯。 建立此關聯之後，您必須連絡支援人員才能將它移除。
+To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
-     
+```
+POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
-2.  在 [管理使用者]**** 頁面中，按一下 [新增 Azure AD 應用程式]****，新增代表您要用來存取開發人員中心帳戶分析資料之 app 或服務的 Azure AD 應用程式，並指派 [Manager]**** 角色給它。 如果這個應用程式已經存在於您的 Azure AD 目錄中，則您可以在 [新增 Azure AD 應用程式]**** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 否則，您可以在 [新增 Azure AD 應用程式]**** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。
-
-3.  返回 [管理使用者]**** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後按一下 [新增金鑰]****。 在下列畫面中，複製 [用戶端識別碼]**** 和 [金鑰]**** 的值。 如需詳細資訊，請參閱[管理帳戶使用者](https://msdn.microsoft.com/library/windows/apps/mt489008)中，管理 Azure AD 應用程式一節。 您需要此用戶端識別碼和金鑰來取得 Azure AD 存取權杖，以在呼叫 Windows 市集分析 API 時使用。 您離開這個頁面之後就無法再存取此資訊。
-
-
-### 取得 Azure AD 存取權杖
-
-當您將 Azure AD 應用程式與開發人員中心帳戶產生關聯，且已經擷取用戶端識別碼和金鑰之後，即可使用這些資訊來取得 Azure AD 存取權杖。 您需要存取權杖才能呼叫 Windows 市集分析 API 中的任何方法。 在您建立存取權杖之後，您在權杖到期之前有 60 分鐘可以使用權杖。
-
-若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的指示，來將 HTTP POST 傳送至下列的 Azure AD 端點。
-
-```syntax
-https://login.microsoftonline.com/<tenant id>/oauth2/token
+grant_type=client_credentials
+&client_id=<your_client_id>
+&client_secret=<your_client_secret>
+&resource=https://manage.devcenter.microsoft.com
 ```
 
--   若要取得您的租用戶識別碼，請登入到 [Azure 管理入口網站](http://manage.windowsazure.com/)，瀏覽至 [Active Directory]****，然後按一下您要連結到開發人員中心帳戶的目錄。 此目錄的租用戶識別碼會內嵌在此頁面的 URL 中，如以下範例中所示的 *your\_tenant\_ID* 字串。
+For the *tenant\_id*, *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section. For the *resource* parameter, you must specify the ```https://manage.devcenter.microsoft.com``` URI.
 
-  ```syntax
-  https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
-  ```
+After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
--   針對 *client_id* 和 *client_secret* 參數，指定您稍早從開發人員中心抓取的應用程式用戶端識別碼和金鑰。
--   對於 *resource* 參數，請指定以下 URI：```https://manage.devcenter.microsoft.com```。
+<span id="call-the-windows-store-analytics-api" />
+## Step 3: Call the Windows Store analytics API
 
+After you have an Azure AD access token, you are ready to call the Windows Store analytics API. For information about the syntax of each method, see the following articles. You must pass the access token to the **Authorization** header of each method.
 
-### 呼叫 Windows 市集分析 API
+-   [Get app acquisitions](get-app-acquisitions.md)
+-   [Get add-on acquisitions](get-in-app-acquisitions.md)
+-   [Get error reporting data](get-error-reporting-data.md)
+-   [Get app ratings](get-app-ratings.md)
+-   [Get app reviews](get-app-reviews.md)
 
-有了 Azure AD 存取權杖之後，您即可呼叫 Windows 市集分析 API。 如需每個方法之語法的相關資訊，請參閱下列文章。 您必須將存取權杖傳送給每個方法的 **Authorization** 標頭。
-
--   [取得 app 下載數](get-app-acquisitions.md)
--   [取得 IAP 下載數](get-in-app-acquisitions.md)
--   [取得錯誤報告資料](get-error-reporting-data.md)
--   [取得 app 評分](get-app-ratings.md)
--   [取得 app 評論](get-app-reviews.md)
-
-## 程式碼範例
+## Code example
 
 
-下列程式碼範例示範如何取得 Azure AD 存取權杖，並從 C# 主控台應用程式呼叫 Windows 市集分析 API。 若要使用此程式碼範例，請針對您的案例將 *tenantId*、*clientId*、*clientSecret* 和 *appID* 變數指定為適當的值。 此範例需要 Newtonsoft 的 [Json.NET package](http://www.newtonsoft.com/json)，。以還原序列化 Windows 市集分析 API 傳回的 JSON 資料。
+The following code example demonstrates how to obtain an Azure AD access token and call the Windows Store analytics API from a C# console app. To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario. This example requires the [Json.NET package](http://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Windows Store analytics API.
 
 ```CSharp
 using Newtonsoft.Json;
@@ -136,7 +131,7 @@ namespace TestAnalyticsAPI
                 "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
                 appID, startDate, endDate, top, skip);
 
-            //// Get IAP acquisitions
+            //// Get add-on acquisitions
             //requestURI = string.Format(
             //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
@@ -207,10 +202,10 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## 錯誤回應
+## Error responses
 
 
-Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回錯誤回應。 下列範例示範由無效的參數造成的錯誤回應。
+The Windows Store analytics API returns error responses in a JSON object that contains error codes and messages. The following example demonstrates an error response caused by an invalid parameter.
 
 ```json
 {
@@ -231,17 +226,17 @@ Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回�
 }
 ```
 
-## 相關主題
+## Related topics
 
-* [取得 app 下載數](get-app-acquisitions.md)
-* [取得 IAP 下載數](get-in-app-acquisitions.md)
-* [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得 app 評分](get-app-ratings.md)
-* [取得 app 評論](get-app-reviews.md)
+* [Get app acquisitions](get-app-acquisitions.md)
+* [Get add-on acquisitions](get-in-app-acquisitions.md)
+* [Get error reporting data](get-error-reporting-data.md)
+* [Get app ratings](get-app-ratings.md)
+* [Get app reviews](get-app-reviews.md)
  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

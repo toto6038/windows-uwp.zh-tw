@@ -1,65 +1,70 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: "開始設定"
-description: "開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。"
+title: Get set up
+description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
 translationtype: Human Translation
-ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
-ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
+ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
+ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
 
 ---
-# 開始設定
+# Get set up
 
-開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。
+It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
 
-## 1. 取得 Windows 10
+> [!NOTE]
+> Are you a Mac user? Or maybe you don't want to install anything on your PC just yet? Try the [web-based virtual machines set up for Build2016's coding challenges](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges).
 
-若要開發 UWP 應用程式，您必須安裝最新版的 Windows。
 
--   [線上取得 Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=619312)
+## 1. Get Windows 10
 
-您是 MSDN 訂閱者嗎？ 您可以從此處取得 ISO 下載：
+To develop UWP apps, you need the latest version of Windows.
 
--   從 [MSDN 訂閱者下載](http://go.microsoft.com/fwlink/p/?LinkId=266384)中取得 Windows 10
+-   [Get Windows 10 online](http://go.microsoft.com/fwlink/p/?LinkId=619312)
 
-## 2. 下載或更新 Visual Studio
+Are you an MSDN subscriber? You can get ISO downloads here:
 
-Microsoft Visual Studio 2015 可協助您設計、撰寫、測試和偵錯您的應用程式。
-
-如果您還沒有安裝 Visual Studio 2015，請按一下此連結來安裝免費的 Microsoft Visual Studio Community 2015。 此下載包含用來測試應用程式的裝置和手機模擬器：
-
--   [下載 Windows 10 開發人員工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
-
-您在安裝 Visual Studio 的時候，請使用自訂選項，並確定已選取所有 [通用 Windows App 開發工具] 選項，如下所示。
-
-![其他 UWP 的 Visual Studio 工具](images/vs-2015-community-setup.png)
-
-## 3. 啟用您的裝置以進行開發
-
-必須在真正的 PC 和手機上測試您的 UWP 應用程式。 在您可以將應用程式部署到 PC 或 Windows Phone 之前，必須先啟用 PC 或 Windows Phone 以進行開發。
-
--   如需詳細指示，請參閱[啟用您的裝置以進行開發](enable-your-device-for-development.md)。
-
-## 4. 註冊成為應用程式開發人員
-
-您現在可以開始開發應用程式，但您必須有開發人員帳戶，才可以將應用程式提交至市集。
-
--   若要取得開發人員帳戶，請移至[註冊](sign-up.md)頁面。
-
-## 接下來要做什麼？
-
-安裝工具並取得開發人員授權或開發人員帳戶之後，請使用我們的教學課程建立您的第一個應用程式：
-
--   [建立您的第一個應用程式](your-first-app.md)教學課程
-
-## 想要更多工具和下載？
-
-如需工具和下載的完整清單，請參閱[下載](http://go.microsoft.com/fwlink/p/?linkid=285935)。
+-   Get Windows 10 from [MSDN Subscriber Downloads](http://go.microsoft.com/fwlink/p/?LinkId=266384)
 
 
 
+## 2. Download or update Visual Studio
+
+Microsoft Visual Studio 2015 helps you design, code, test, and debug your apps.
+
+If you don't already have Visual Studio 2015, click this link to install the free Microsoft Visual Studio Community 2015. This download includes device and phone simulators for testing your apps:
+
+-   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+
+When you install Visual Studio, use the custom option and make sure all Universal Windows App Development Tools options are selected, as shown here.
+
+![Visual Studio tools for UWP](images/vs-2015-community-setup.png)
+
+## 3. Enable your device for development
+
+It’s important to test your UWP apps on a real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
+
+-   For detailed instructions, see [Enable your device for development](enable-your-device-for-development.md).
+
+## 4. Register as an app developer
+
+You can start developing apps now, but before you can submit them to the store, you need a developer account.
+
+-   To get a developer account, go to the [Sign up](sign-up.md) page.
+
+## What's next?
+
+After you've installed the tools and gotten a developer license or a developer account, use our tutorials to create your first app:
+
+-   [Create your first app](your-first-app.md) tutorials
+
+## Want more tools and downloads?
+
+For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).
 
 
-<!--HONumber=Jul16_HO1-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

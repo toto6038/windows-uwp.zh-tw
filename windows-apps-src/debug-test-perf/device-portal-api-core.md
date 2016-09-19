@@ -1,179 +1,184 @@
 ---
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: "Device Portal 核心 API 參考資料"
-description: "了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。"
+title: Device Portal core API reference
+description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
 translationtype: Human Translation
-ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
-ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
+ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
+ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
 
 ---
 
-# Device Portal 核心 API 參考資料
+# Device Portal core API reference
 
-Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
+Everything in the Windows Device Portal is built on top of REST APIs that you can use to access the data and control your device programmatically.
 
-## 應用程式部署
+## App deployment
 
 ---
-### 安裝 App
+### Install an app
 
-**要求**
+**Request**
 
-您可以使用下列要求格式來安裝 App。
+You can install an app by using the following request format.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/app/packagemanager/package
 <br />
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-package   | (**必要**) 要安裝之套件的檔案名稱。
+package   | (**required**) The file name of the package to be installed.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- The .appx or .appxbundle file, as well as any dependencies the app requires. 
+- The certificate used to sign the app, if the device is IoT or Windows Desktop. Other platforms do not require the certificate. 
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 部署要求已受理並正在處理
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | Deploy request accepted and being processed
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
-* HoloLens
-* IoT
-
----
-### 取得 App 安裝狀態
-
-**要求**
-
-您可以透過使用下列要求格式，以取得目前正在進行的 App 安裝狀態。
- 
-方法      | 要求 URI
-:------     | :-----
-GET | /api/app/packagemanager/state
-<br />
-**URI 參數**
-
-- 無
-
-**要求標頭**
-
-- 無
-
-**要求主體**
-
-- 無
-
-**回應**
-
-**狀態碼**
-
-此 API 具有下列預期狀態碼。
-
-HTTP 狀態碼      | 描述
-:------     | :-----
-200 | 最後部署的結果
-204 | 正在執行安裝
-404 | 找不到安裝動作
-<br />
-**可用裝置系列**
-
-* Windows Mobile
-* Windows 電腦
-* HoloLens
-* IoT
-
----
-### 解除安裝 App
-
-**要求**
-
-您可以使用下列要求格式將 App 解除安裝。
- 
-方法      | 要求 URI
-:------     | :-----
-DELETE | /api/app/packagemanager/package
-<br />
-
-**URI 參數**
-
-- 無
-
-**要求標頭**
-
-- 無
-
-**要求主體**
-
-- 無
-
-**回應**
-
-**狀態碼**
-
-此 API 具有下列預期狀態碼。
-
-HTTP 狀態碼      | 描述
-:------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
-<br />
-**可用裝置系列**
-
-* Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 取得已安裝的應用程式
+### Get app installation status
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得系統上已安裝 App 的清單。
+You can get the status of an app installation that is currently in progress by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
+:------     | :-----
+GET | /api/app/packagemanager/state
+<br />
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | The result of the last deployment
+204 | The installation is running
+404 | No installation action was found
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
+### Uninstall an app
+
+**Request**
+
+You can uninstall an app by using the following request format.
+ 
+Method      | Request URI
+:------     | :-----
+DELETE | /api/app/packagemanager/package
+<br />
+
+**URI parameters**
+
+URI parameter | Description
+:---          | :---
+package   | (**required**) The PackageFullName (from GET /api/app/packagemanager/packages) of the target app
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
+### Get installed apps
+
+**Request**
+
+You can get a list of apps installed on the system by using the following request format.
+ 
+Method      | Request URI
 :------     | :-----
 GET | /api/app/packagemanager/packages
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含一份已安裝套件與其相關詳細資料的清單。 適用於此回應的範本如下所示。
+The response includes a list of installed packages with associated details. The template for this response is as follows.
 ```
 {"InstalledPackages": [
     {
@@ -198,53 +203,53 @@ GET | /api/app/packagemanager/packages
     },...
 ]}
 ```
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## 裝置管理員
+## Device manager
 ---
-### 取得電腦上已安裝的裝置
+### Get the installed devices on the machine
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得電腦上已安裝裝置的清單。
+You can get a list of devices that are installed on the machine by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/devicemanager/devices
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-此回應包含附加至裝置的裝置 JSON 陣列。
+The response includes a JSON array of devices attached to the device.
 ``` 
 {"DeviceList": [
     {
@@ -259,332 +264,332 @@ GET | /api/devicemanager/devices
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-## 傾印集合
+## Dump collection
 ---
-### 取得 App 的所有損毀傾印清單
+### Get the list of all crash dumps for apps
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得所有側載 App 的所有可用損毀傾印清單。
+You can get the list of all the available crash dumps for all sideloaded apps by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/dumps
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含每個側載應用程式的損毀傾印清單。
+The response includes a list of crash dumps for each sideloaded application.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 取得 App 的損毀傾印集合設定
+### Get the crash dump collection settings for an app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得側載 App 的損毀傾印集合設定。
+You can get the crash dump collection settings for a sideloaded app by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashcontrol
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-packageFullname   | (**必要**) 側載 App 的完整套件名稱。
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應具有下列格式。
+The response has the following format.
 ```
 {"CrashDumpEnabled": bool}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 刪除側載 App 的損毀傾印
+### Delete a crash dump for a sideloaded app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以刪除側載 App 的損毀傾印。
+You can delete a sideloaded app's crash dump by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashdump
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-packageFullname   | (**必要**) 側載 App 的完整套件名稱。
-fileName   | (**必要**) 應該刪除之傾印檔案的名稱。
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
+fileName   | (**required**) The name of the dump file that should be deleted.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 停用側載 App 的損毀傾印
+### Disable crash dumps for a sideloaded app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以停用側載 App 的損毀傾印。
+You can disable crash dumps for a sideloaded app by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashcontrol
 
 <br />
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-packageFullname   | (**必要**) 側載 App 的完整套件名稱。
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 下載側載 App 的損毀傾印
+### Download the crash dump for a sideloaded app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以下載側載 App 的損毀傾印。
+You can download a sideloaded app's crash dump by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashdump
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-packageFullname   | (**必要**) 側載 App 的完整套件名稱。
-fileName   | (**必要**) 您要下載之傾印檔案的名稱。
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
+fileName   | (**required**) The name of the dump file that you want to download.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含傾印檔案。 您可以使用 WinDbg 或 Visual Studio 檢查傾印檔案。
+The response includes a dump file. You can use WinDbg or Visual Studio to examine the dump file.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 啟用側載 App 的損毀傾印
+### Enable crash dumps for a sideloaded app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以啟用側載 App 的損毀傾印。
+You can enable crash dumps for a sideloaded app by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/debug/dump/usermode/crashcontrol
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-packageFullname   | (**必要**) 側載 App 的完整套件名稱。
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 取得錯誤檢查檔案的清單
+### Get the list of bugcheck files
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得錯誤檢查小型傾印檔案的清單。
+You can get the list of bugcheck minidump files by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dumplist
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含一份傾印檔案名稱與這些檔案大小的清單。 此清單必須使用下列格式。 第二個 *FileName* 參數為檔案大小。 這是已知的錯誤。
+The response includes a list of dump file names and the sizes of these files. This list will be in the following format. The second *FileName* parameter is the size of the file. This is a known bug.
 ```
 {"DumpFiles": [
     {
@@ -594,93 +599,93 @@ GET | /api/debug/dump/kernel/dumplist
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 下載錯誤檢查傾印檔案
+### Download a bugcheck dump file
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以下載錯誤檢查傾印檔案。
+You can download a bugcheck dump file by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dump
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-filename   | (**必要**) 傾印檔案的檔案名稱。 您可以透過使用 API 來取得傾印清單，以找到此項目。
+filename   | (**required**) The file name of the dump file. You can find this by using the API to get the dump list.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含傾印檔案。 您可以使用 WinDbg 來檢查此檔案。
+The response includes the dump file. You can inspect this file using WinDbg.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得錯誤檢查損毀控制設定
+### Get the bugcheck crash control settings
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得錯誤檢查損毀控制設定。
+You can get the bugcheck crash control settings by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/crashcontrol
 
 <br />
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含損毀控制設定。 如需有關 CrashControl 的詳細資訊，請參閱 [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) 文章。 適用於此回應的範本如下所示。
+The response includes the crash control settings. For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article. The template for the response is as follows.
 ```
 {
     "autoreboot": int,
@@ -690,215 +695,215 @@ GET | /api/debug/dump/kernel/crashcontrol
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得即時核心傾印
+### Get a live kernel dump
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得即時核心傾印。
+You can get a live kernel dump by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/livekernel
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含完整的核心模式傾印。 您可以使用 WinDbg 來檢查此檔案。
+The response includes the full kernel mode dump. You can inspect this file using WinDbg.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得即時使用者處理程序的傾印
+### Get a dump from a live user process
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得即時使用者處理程序的傾印。
+You can get the dump for live user process by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/live
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-pid   | (**必要**) 您感興趣的處理程序唯一處理程序識別碼。
+pid   | (**required**) The unique process id for the process you are interested in.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含處理程序傾印。 您可以使用 WinDbg 或 Visual Studio 來檢查此檔案。
+The response includes the process dump. You can inspect this file using WinDbg or Visual Studio.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 設定錯誤檢查損毀控制設定
+### Set the bugcheck crash control settings
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以設定要用於收集錯誤檢查資料的設定。
+You can set the settings for collecting bugcheck data by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/debug/dump/kernel/crashcontrol
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-autoreboot   | (**選用**) True 或 False。 這指出系統失敗或遭鎖定之後，是否會自動重新啟動。
-dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)。
-maxdumpcount   | (**選用**) 要儲存的傾印數目上限。
-overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* 指定的傾印計數器限制時，是否會覆寫舊的傾印。
+autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks.
+dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).
+maxdumpcount   | (**optional**) The maximum number of dumps to save.
+overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
 ## ETW
 ---
-### 透過 WebSocket 建立即時 ETW 工作階段
+### Create a realtime ETW session over a websocket
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以建立即時 ETW 工作階段。 這將會透過 Websocket 管理。  ETW 事件會在伺服器上進行批次處理，並每秒傳送至用戶端一次。 
+You can create a realtime ETW session by using the following request format. This will be managed over a websocket.  ETW events are batched on the server and sent to the client once per second. 
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET/WebSocket | /api/etw/session/realtime
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含來自已啟用之提供者的 ETW 事件。  請參閱下方的 ETW WebSocket 命令。 
+The response includes the ETW events from the enabled providers.  See ETW WebSocket commands below. 
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
-### ETW WebSocket 命令
-這些命令會從用戶端傳送至伺服器。
+### ETW WebSocket commands
+These commands are sent from the client to the server.
 
-命令 | 說明
+Command | Description
 :----- | :-----
-provider *{guid}* enable *{level}* | 在指定層級啟用標示為 *{guid}* (不含括號) 的提供者。 *{level}* 是介於 1 (粗略) 至 5 (詳細) 之間的 **int**。
-provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者。
+provider *{guid}* enable *{level}* | Enable the provider marked by *{guid}* (without brackets) at the specified level. *{level}* is an **int** from 1 (least detail) to 5 (verbose).
+provider *{guid}* disable | Disable the provider marked by *{guid}* (without brackets).
 
-此回應會從伺服器傳送至用戶端。 此回應會傳送為文字，而您可透過剖析 JSON 取得下列格式。
+This responses is sent from the server to the client. This is sent as text and you get the following format by parsing the JSON.
 ```
 {
     "Events":[
@@ -916,9 +921,9 @@ provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者
 }
 ```
 
-承載物件為原始 ETW 事件中提供的額外機碼值組 (字串︰字串)。
+Payload objects are extra key-value pairs (string:string) that are provided in the original ETW event.
 
-範例：
+Example:
 ```
 {
     "ID" : 42, 
@@ -940,32 +945,32 @@ provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者
 ```
 
 ---
-### 列舉已登錄的 ETW 提供者
+### Enumerate the registered ETW providers
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉已登錄提供者。
+You can enumerate through the registered providers by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/etw/providers
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含 ETW 提供者的清單。 清單會包含每個提供者的易記名稱與 GUID，且使用下列格式。
+The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider in the following format.
 ```
 {"Providers": [
     {
@@ -975,48 +980,48 @@ GET | /api/etw/providers
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 列舉由平台公開的自訂 ETW 提供者。
+### Enumerate the custom ETW providers exposed by the platform.
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉已登錄提供者。
+You can enumerate through the registered providers by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/etw/customproviders
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-200 確定。 回應會包含 ETW 提供者的清單。 清單會包含每個提供者的易記名稱與 GUID。
+200 OK. The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider.
 
 ```
 {"Providers": [
@@ -1027,96 +1032,96 @@ GET | /api/etw/customproviders
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-- 標準狀態碼。
+- Standard status codes.
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-## OS 資訊
+## OS information
 ---
-### 取得電腦名稱
+### Get the machine name
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得電腦的名稱。
+You can get the name of a machine by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/os/machinename
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應包含下列格式的電腦名稱。 
+The response includes the computer name in the following format. 
 
 ```
 {"ComputerName": string}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 取得作業系統資訊
+### Get the operating system information
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得電腦的 OS 資訊。
+You can get the OS information for a machine by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/os/info
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應包含下列格式的作業系統資訊。
+The response includes the OS information in the following format.
 
 ```
 {
@@ -1128,51 +1133,51 @@ GET | /api/os/info
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 取得裝置系列 
+### Get the device family 
 
-**要求**
+**Request**
 
-您可以使用下列要求格式取得裝置系列 (Xbox、手機、桌上型電腦等)。
+You can get the device family (Xbox, phone, desktop, etc) using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/os/devicefamily
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應包含裝置系列 (SKU - Desktop、Xbox 等)。
+The response includes the device family (SKU - Desktop, Xbox, etc).
 
 ```
 {
@@ -1180,102 +1185,102 @@ GET | /api/os/devicefamily
 }
 ```
 
-DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。 
+DeviceType will look like "Windows.Xbox", "Windows.Desktop", etc. 
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 設定電腦名稱
+### Set the machine name
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以設定電腦的名稱。
+You can set the name of a machine by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/os/machinename
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-name | (**必要**) 電腦的新名稱。
+name | (**required**) The new name for the machine.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## 效能資料
+## Performance data
 ---
-### 取得執行中的處理程序清單
+### Get the list of running processes
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得目前執行中的處理程序清單。  此清單亦可升級至 WebSocket 連線，且每秒會將相同的 JSON 資料推送至用戶端一次。 
+You can get the list of currently running processes by using the following request format.  this can be upgraded to a WebSocket connection as well, with the same JSON data being pushed to the client once per second. 
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/resourcemanager/processes
 GET/WebSocket | /api/resourcemanager/processes
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含一份處理程序與每個處理程序之詳細資料的清單。 此資訊採用 JSON 格式，並具有下列範本。
+The response includes a list of processes with details for each process. The information is in JSON format and has the following template.
 ```
 {"Processes": [
     {
@@ -1292,52 +1297,52 @@ GET/WebSocket | /api/resourcemanager/processes
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 取得系統效能統計資料
+### Get the system performance statistics
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得系統效能統計資料。 此類資訊包含讀取和寫入週期以及已使用多少記憶體。
+You can get the system performance statistics by using the following request format. This includes information such as read and write cycles and how much memory has been used.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/resourcemanager/systemperf
 GET/WebSocket | /api/resourcemanager/systemperf
 <br />
-此項目亦可升級至 WebSocket 連線。  其每秒會提供一次與下方相同的 JSON 資料。 
+This can also be upgraded to a WebSocket connection.  It provides the same JSON data below once every second. 
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應會包含系統的效能統計資料，例如 CPU 與 GPU 使用量、記憶體存取以及網路存取。 此資訊採用 JSON 格式，並具有下列範本。
+The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access. This information is in JSON format and has the following template.
 ```
 {
     "AvailablePages": int,
@@ -1370,53 +1375,53 @@ GET/WebSocket | /api/resourcemanager/systemperf
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## 電源
+## Power
 ---
-### 取得目前的電池狀態
+### Get the current battery state
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得目前的電池狀態。
+You can get the current state of the battery by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/battery
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-使用以下格式傳回目前的電池狀態資訊。
+The current battery state information is returned using the following format.
 ```
 {
     "AcOnline": int (0 | 1),
@@ -1430,318 +1435,318 @@ GET | /api/power/battery
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
-* 行動裝置版
+* Mobile
 
 ---
-### 取得使用中電源配置
+### Get the active power scheme
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得使用中電源配置。
+You can get the active power scheme by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/activecfg
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-使用中電源配置具有下列格式。
+The active power scheme has the following format.
 ```
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得電源配置的子值
+### Get the sub-value for a power scheme
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得電源配置的子值。
+You can get the sub-value for a power scheme by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/cfg/*<power scheme path>*
 <br />
-選項：
+Options:
 - SCHEME_CURRENT
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-根據每個應用程式與設定提供完整電源狀態清單，以標示諸如電池電力偏低或嚴重不足等各種電力狀態。 
+A full listing of power states available is on a per-application basis and the settings for flagging various power states like low and critical batterty. 
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得系統的電源狀態
+### Get the power state of the system
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以檢查系統的電源狀態。 這可讓您檢查是否處於低電源狀態。
+You can check the power state of the system by using the following request format. This will let you check to see if it is in a low power state.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/state
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-電源狀態資訊具有下列範本。
+The power state information has the following template.
 ```
 {"LowPowerStateAvailable": bool}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 設定使用中電源配置
+### Set the active power scheme
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以設定使用中電源配置。
+You can set the active power scheme by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/power/activecfg
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-scheme | (**必要**) 您要為系統設定之使用中電源配置的配置 GUID。
+scheme | (**required**) The GUID of the scheme you want to set as the active power scheme for the system.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 設定電源配置的子值
+### Set the sub-value for a power scheme
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以設定電源配置的子值。
+You can set the sub-value for a power scheme by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/power/cfg/*<power scheme path>*
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-valueAC | (**必要**) 要用於 A/C 電源的值。
-valueDC | (**必要**) 要用於電池電力的值。
+valueAC | (**required**) The value to use for A/C power.
+valueDC | (**required**) The value to use for battery power.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得睡眠研究報告
+### Get a sleep study report
 
-**要求**
+**Request**
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/report
 <br />
-您可以透過使用下列要求格式，以取得睡眠研究報告。
+You can get a sleep study report by using the following request format.
 
-**URI 參數**
-URI 參數 | 描述
+**URI parameters**
+URI parameter | Description
 :---          | :---
-FileName | (**必要**) 您要下載之檔案的完整名稱。 此值應該是 hex64 編碼。
+FileName | (**required**) The full name for the file you want to download. This value should be hex64 encoded.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應為包含休眠研究的檔案。 
+The response is a file containing the sleep study. 
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 列舉可用的睡眠研究報告
+### Enumerate the available sleep study reports
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉可用的睡眠研究報告。
+You can enumerate the available sleep study reports by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-可用的報告清單具有下列範本。
+The list of available reports has the following template.
 
 ```
 {"Reports": [
@@ -1751,281 +1756,281 @@ GET | /api/power/sleepstudy/reports
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-### 取得睡眠研究轉換
+### Get the sleep study transform
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得睡眠研究轉換。 此轉換是 XSLT，它可將睡眠研究報告轉換成人們可以讀取的 XML 格式。
+You can get the sleep study transform by using the following request format. This transform is an XSLT that converts the sleep study report into an XML format that can be read by a person.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/transform
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應包含休眠研究轉換。
+The response contains the sleep study transform.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * IoT
 
 ---
-## 遠端控制
+## Remote control
 ---
-### 重新啟動目標電腦
+### Restart the target computer
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以重新啟動目標電腦。
+You can restart the target computer by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/control/restart
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 將目標電腦關機
+### Shut down the target computer
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以將目標電腦關機。
+You can shut down the target computer by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/control/shutdown
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## 工作管理員
+## Task manager
 ---
-### 啟動現代化 App
+### Start a modern app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以啟動現代化 App。
+You can start a modern app by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/taskmanager/app
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-appid   | (**必要**) 您要啟動之 App 的 PRAID。 此值應該是 hex64 編碼。
-package   | (**必要**) 您要啟動之應用程式套件的完整名稱。 此值應該是 hex64 編碼。
+appid   | (**required**) The PRAID for the app you want to start. This value should be hex64 encoded.
+package   | (**required**) The full name for the app package you want to start. This value should be hex64 encoded.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 停止現代化 App
+### Stop a modern app
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以停止現代化 App。
+You can stop a modern app by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/taskmanager/app
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-package   | (**必要**) 您要停止之應用程式套件的完整名稱。 此值應該是 hex64 編碼。
-forcestop   | (**選用**) **yes** 的值表示系統應該強制停止所有處理程序。
+package   | (**required**) The full name of the app packages that you want to stop. This value should be hex64 encoded.
+forcestop   | (**optional**) A value of **yes** indicates that the system should force all processes to stop.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## 網路功能
+## Networking
 ---
-### 取得目前的 IP 設定
+### Get the current IP configuration
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以取得目前的 IP 設定。
+You can get the current IP configuration by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/networking/ipconfig
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-回應包含下列範本中的 IP 設定。
+The response includes the IP configuration in the following template.
 
 ```
 {"Adapters": [
@@ -2067,51 +2072,51 @@ GET | /api/networking/ipconfig
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 --
-### 列舉無線網路介面
+### Enumerate wireless network interfaces
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉可用的無線網路介面。
+You can enumerate the available wireless network interfaces by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wifi/interfaces
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-具有詳細資料的可用無線介面清單，使用下列格式。
+A list of the available wireless interfaces with details in the following format.
 
 ``` 
 {"Interfaces": [{
@@ -2129,55 +2134,55 @@ GET | /api/wifi/interfaces
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 列舉無線網路
+### Enumerate wireless networks
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉指定介面上的無線網路清單。
+You can enumerate the list of wireless networks on the specified interface by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wifi/networks
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不含括號。 
+interface   | (**required**) The GUID for the network interface to use to search for wireless networks, without brackets. 
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-可在提供的 *interface* 上找到的無線網路清單。 這包括網路的詳細資料，使用下列格式。
+The list of wireless networks found on the provided *interface*. This includes details for the networks in the following format.
 
 ```
 {"AvailableNetworks": [
@@ -2199,201 +2204,201 @@ interface   | (**必要**) 可用來搜尋無線網路的網路介面 GUID，不
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 連線到 Wi-Fi 網路和與它中斷連線。
+### Connect and disconnect to a Wi-Fi network.
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以連線到 Wi-Fi 網路或與它中斷連線。
+You can connect or disconnect to a Wi-Fi network by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/wifi/network
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
-op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (****如果 op == connect** 則為必要) 要連線的 SSID。
-索引鍵   | (****如果 op == connect 且網路需要驗證**則為必要) 共用金鑰。
-createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
+interface   | (**required**) The GUID for the network interface you use to connect to the network.
+op   | (**required**) Indicates the action to take. Possible values are connect or disconnect.
+ssid   | (**required if *op* == connect**) The SSID to connect to.
+key   | (**required if *op* == connect and network requires authentication**) The shared key.
+createprofile | (**required**) Create a profile for the network on the device.  This will cause the device to auto-connect to the network in the future. This can be **yes** or **no**. 
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 刪除 Wi-Fi 設定檔
+### Delete a Wi-Fi profile
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以刪除與特定介面上的網路關聯的設定檔。
+You can delete a profile associated with a network on a specific interface by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/wifi/network
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-interface   | (**必要**) 與要刪除之設定檔關聯的網路介面 GUID。
-profile   | (**必要**) 要刪除的設定檔名稱。
+interface   | (**required**) The GUID for the network interface associated with the profile to delete.
+profile   | (**required**) The name of the profile to delete.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## Windows 錯誤報告 (WER)
+## Windows Error Reporting (WER)
 ---
-### 下載 Windows 錯誤報告 (WER) 檔案
+### Download a Windows error reporting (WER) file
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以下載 WER 檔案。
+You can download a WER-related file by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/report/file
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-user   | (**必要**) 與報告關聯的使用者名稱。
-type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。
-name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 
-file   | (**必要**) 要從報告下載之檔案的名稱。 此應為 base64 編碼。 
+user   | (**required**) The user name associated with the report.
+type   | (**required**) The type of report. This can be either **queried** or **archived**.
+name   | (**required**) The name of the report. This should be base64 encoded. 
+file   | (**required**) The name of the file to download from the report. This should be base64 encoded. 
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-- 回應包含所要求的檔案。 
+- Response contains the requested file. 
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 列舉 Windows 錯誤報告 (WER) 報告中的檔案
+### Enumerate files in a Windows error reporting (WER) report
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以列舉 WER 報告中的檔案。
+You can enumerate the files in a WER report by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/report/files
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-user   | (**必要**) 與報告關聯的使用者。
-type   | (**必要**) 報告的類型。 這可以是 **queried** 或 **archived**。
-name   | (**必要**) 報告的名稱。 此應為 base64 編碼。 
+user   | (**required**) The user associated with the report.
+type   | (**required**) The type of report. This can be either **queried** or **archived**.
+name   | (**required**) The name of the report. This should be base64 encoded. 
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
 ```
 {"Files": [
@@ -2404,51 +2409,51 @@ name   | (**必要**) 報告的名稱。 此應為 base64 編碼。
 ]}
 ```
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 列出 Windows 錯誤報告 (WER) 報告
+### List the Windows error reporting (WER) reports
 
-**要求**
+**Request**
 
-您可以使用下列要求格式來取得 WER 報告。
+You can get the WER reports by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/reports
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-WER 報告使用下列格式。
+The WER reports in the following format.
 
 ```
 {"WerReports": [
@@ -2464,51 +2469,51 @@ WER 報告使用下列格式。
 ]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
 ## Windows Performance Recorder (WPR) 
 ---
-### 使用自訂設定檔開始追蹤
+### Start tracing with a custom profile
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以上傳 WPR 設定檔，並使用該設定檔開始追蹤。  一次僅可執行一個追蹤。 此設定檔不會保留在裝置上。 
+You can upload a WPR profile and start tracing using that profile by using the following request format.  Only one trace can run at a time. The profile will not remain on the device. 
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/customtrace
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 包含自訂 WPR 設定檔的多部分合格 http 主體。
+- A multi-part conforming http body that contains the custom WPR profile.
 
-**回應**
+**Response**
 
-WPR 工作階段狀態使用下列格式。
+The WPR session status in the following format.
 
 ```
 {
@@ -2517,54 +2522,54 @@ WPR 工作階段狀態使用下列格式。
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 啟動開機效能追蹤工作階段
+### Start a boot performance tracing session
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以啟動開機 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。
+You can start a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/boottrace
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。
+profile   | (**required**) This parameter is required on start. The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-啟動時，此 API 會傳回使用下列格式的 WPR 工作階段狀態。
+On start, this API returns the WPR session status in the following format.
 
 ```
 {
@@ -2573,99 +2578,99 @@ profile   | (**必要**) 啟動時一定要有此參數。 應啟動效能追蹤
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 停止開機效能追蹤工作階段
+### Stop a boot performance tracing session
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以停止開機 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。
+You can stop a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/boottrace
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-- 傳回追蹤 ETL 檔案。
+- Returns the trace ETL file.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 啟動效能追蹤工作階段
+### Start a performance tracing session
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以啟動 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。  一次僅可執行一個追蹤。 
+You can start a WPR tracing session by using the following request format. This is also known as a performance tracing session.  Only one trace can run at a time. 
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/trace
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱。 可能的設定檔儲存在 perfprofiles/profiles.json。
+profile   | (**required**) The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
 <br />
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-啟動時，此 API 會傳回使用下列格式的 WPR 工作階段狀態。
+On start, this API returns the WPR session status in the following format.
 
 ```
 {
@@ -2674,95 +2679,95 @@ profile   | (**必要**) 應啟動效能追蹤工作階段之設定檔的名稱�
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 停止效能追蹤工作階段
+### Stop a performance tracing session
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以停止 WPR 追蹤工作階段。 這也稱為效能追蹤工作階段。
+You can stop a WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/trace
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-- 無。  **注意︰**這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
+- None.  **Note:** This is a long running operation.  It will return when the ETL is finished writing to disk.  
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 擷取追蹤工作階段的狀態
+### Retrieve the status of a tracing session
 
-**要求**
+**Request**
 
-您可以透過使用下列要求格式，以擷取目前的 WPR 工作階段狀態。
+You can retrieve the status of the current WPR session by using the following request format.
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/status
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-WPR 追蹤工作階段的狀態，使用下列格式。
+The status of the WPR tracing session in the following format.
 
 ```
 {
@@ -2771,50 +2776,50 @@ WPR 追蹤工作階段的狀態，使用下列格式。
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 列出已完成的追蹤工作階段 (ETL)。
+### List completed tracing sessions (ETLs)
 
-**要求**
+**Request**
 
-您可以使用下列要求格式取得裝置上 ETL 追蹤的清單。 
+You can get a listing of ETL traces on the device using the following request format. 
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/tracefiles
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-已完成的追蹤工作階段清單將以下列格式提供。
+The listing of completed tracing sessions is provided in the following format.
 
 ```
 {"Items": [{
@@ -2828,148 +2833,148 @@ GET | /api/wpr/tracefiles
 }]}
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 下載追蹤工作階段 (ETL)
+### Download a tracing session (ETL)
 
-**要求**
+**Request**
 
-您可以使用下列要求格式下載 Tracefile (開機追蹤或使用者模式追蹤)。 
+You can download a tracefile (boot trace or user-mode trace) using the following request format. 
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/tracefile
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameter on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-filename   | (**必要**) 要下載之 ETL 追蹤的名稱。  可以在 /api/wpr/tracefiles 找到
+filename   | (**required**) The name of the ETL trace to download.  These can be found in /api/wpr/tracefiles
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-- 傳回追蹤 ETL 檔案。
+- Returns the trace ETL file.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### 刪除追蹤工作階段 (ETL)
+### Delete a tracing session (ETL)
 
-**要求**
+**Request**
 
-您可以使用下列要求格式刪除 Tracefile (開機追蹤或使用者模式追蹤)。 
+You can delete a tracefile (boot trace or user-mode trace) using the following request format. 
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/wpr/tracefile
 <br />
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameter on the request URI:
 
-URI 參數 | 描述
+URI parameter | Description
 :---          | :---
-filename   | (**必要**) 要刪除之 ETL 追蹤的名稱。  可以在 /api/wpr/tracefiles 找到
+filename   | (**required**) The name of the ETL trace to delete.  These can be found in /api/wpr/tracefiles
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-- 傳回追蹤 ETL 檔案。
+- Returns the trace ETL file.
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-## DNS-SD 標記 
+## DNS-SD Tags 
 ---
-### 檢視標記
+### View Tags
 
-**要求**
+**Request**
 
-檢視裝置目前套用的標記。  這些標記會透過 T 索引鍵中的 DNS-SD TXT 公告。  
+View the currently applied tags for the device.  These are advertised via DNS-SD TXT records in the T key.  
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/dns-sd/tags
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應** 目前以下列格式套用的標記。 
+**Response** The currently applied tags in the following format. 
 ```
  {
     "tags": [
@@ -2980,243 +2985,243 @@ GET | /api/dns-sd/tags
 }
 ```
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-5XX | 伺服器錯誤 
+200 | OK
+5XX | Server Error 
 
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 刪除標記
+### Delete Tags
 
-**要求**
+**Request**
 
-刪除目前由 DNS-SD 公告的所有標記   
+Delete all tags currently advertised by DNS-SD.   
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/dns-sd/tags
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
- - 無
+**Response**
+ - None
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-5XX | 伺服器錯誤 
+200 | OK
+5XX | Server Error 
 
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-### 刪除標記
+### Delete Tag
 
-**要求**
+**Request**
 
-刪除目前由 DNS-SD 公告的標記   
+Delete a tag currently advertised by DNS-SD.   
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /api/dns-sd/tag
 <br />
 
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-tagValue | (**必要**) 要移除的標記。
+tagValue | (**required**) The tag to be removed.
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
- - 無
+**Response**
+ - None
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
+200 | OK
 
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
  
 ---
-### 新增標記
+### Add a Tag
 
-**要求**
+**Request**
 
-將標籤新增到 DNS-SD 廣告。   
+Add a tag to the DNS-SD advertisement.   
  
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/dns-sd/tag
 <br />
 
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-tagValue | (**必要**) 要新增的標記。
+tagValue | (**required**) The tag to be added.
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
- - 無
+**Response**
+ - None
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-401 | 標記空間溢位。  當建議標記對於產生的 DNS-SD 服務記錄過長時的結果。  
+200 | OK
+401 | Tag space Overflow.  Results when the proposed tag is too long for the resulting DNS-SD service record.  
 
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
-## App 檔案總管
+## App File Explorer
 
 ---
-### 取得已知的資料夾
+### Get known folders
 
-**要求**
+**Request**
 
-取得可存取的最上層資料夾清單。
+Obtain a list of accessible top-level folders.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/knownfolders
 <br />
 
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應** 以下列格式呈現的可用資料夾。 
+**Response** The available folders in the following format. 
 ```
  {"KnownFolders": [
     "folder0",
     "folder1",...
 ]}
 ```
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 部署要求已受理並正在處理
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | Deploy request accepted and being processed
+4XX | Error codes
+5XX | Error codes
 <br />
 
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * Xbox
 * IoT
 
 ---
-### 取得檔案
+### Get files
 
-**要求**
+**Request**
 
-取得資料夾中的檔案清單。
+Obtain a list of files in a folder.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/files
 <br />
 
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
-path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
+knownfolderid | (**required**) The top-level directory where you want the list of files. Use **LocalAppData** for access to sideloaded apps. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above. 
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應** 以下列格式呈現的可用資料夾。 
+**Response** The available folders in the following format. 
 ```
 {"Items": [
     {
@@ -3230,169 +3235,223 @@ path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
     },...
 ]}
 ```
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * Xbox
 * IoT
 
 ---
-### 下載檔案
+### Download a file
 
-**要求**
+**Request**
 
-從已知的資料夾或 appLocalData 取得檔案。
+Obtain a file from a known folder or appLocalData.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/file
 
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-filename | (**必要**) 下載的檔案名稱。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
-path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+knownfolderid | (**required**) The top-level directory where you want to download files. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The name of the file being downloaded. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 要求的檔案 (若有的話)
+- The file requested, if present
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 要求的檔案
-404 | 找不到檔案
-5XX | 錯誤碼
+200 | The requested file
+404 | File not found
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * Xbox
 * IoT
 
 ---
-### 刪除檔案
+### Rename a file
 
-**要求**
+**Request**
 
-刪除資料夾中的檔案。
+Rename a file in a folder.
 
-方法      | 要求 URI
+Method      | Request URI
+:------     | :-----
+POST | /api/filesystem/apps/rename
+
+<br />
+**URI parameters**
+
+URI parameter | Description
+:------     | :-----
+knownfolderid | (**required**) The top-level directory where the file is located. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The original name of the file being renamed. 
+newfilename | (**required**) The new name of the file.
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above. 
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+- None
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK. The file is renamed
+404 | File not found
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
+### Delete a file
+
+**Request**
+
+Delete a file in a folder.
+
+Method      | Request URI
 :------     | :-----
 DELETE | /api/filesystem/apps/file
 <br />
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-filename | (**必要**) 刪除的檔案名稱。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
-path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+knownfolderid | (**required**) The top-level directory where you want to delete files. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The name of the file being deleted. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+- None 
 
-此 API 具有下列預期狀態碼。
+**Status code**
 
-HTTP 狀態碼      | 描述
+This API has the following expected status codes.
+
+HTTP status code      | Description
 :------     | :-----
-200 | 確定。 檔案已刪除
-404 | 找不到檔案
-5XX | 錯誤碼
+200 | OK. The file is deleted
+404 | File not found
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * Xbox
 * IoT
 
 ---
-### 上傳檔案
+### Upload a file
 
-**要求**
+**Request**
 
-上傳檔案至資料夾。  這將會使用相同名稱覆寫現有的檔案，但不會建立新的資料夾。 
+Upload a file to a folder.  This will overwrite an existing file with the same name, but will not create new folders. 
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /api/filesystem/apps/file
 <br />
-**URI 參數**
+**URI parameters**
 
-URI 參數 | 描述
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
-path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
+knownfolderid | (**required**) The top-level directory where you want to upload files. Use **LocalAppData** for access to sideloaded apps.
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**
+**Response**
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 確定。 檔案已上傳
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | OK. The file is uploaded
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Mobile
-* Windows 電腦
+* Windows Desktop
 * HoloLens
 * Xbox
 * IoT
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

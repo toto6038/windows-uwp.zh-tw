@@ -1,38 +1,38 @@
 ---
 author: mtoepke
-title: "透過 DXGI 1.3 交換鏈結減少延遲"
-description: "使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。"
+title: Reduce latency with DXGI 1.3 swap chains
+description: Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame.
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+ms.openlocfilehash: 7eb0eab864c58b07e29803895423998dd647a87e
 
 ---
 
-# 透過 DXGI 1.3 交換鏈結減少延遲
+# Reduce latency with DXGI 1.3 swap chains
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。 遊戲通常需要提供最低的延遲量，範圍可能從接收到玩家輸入時，到遊戲藉由更新顯示器來回應該輸入時。 本主題說明在 Direct3D 11.2 中開始時提供的技術，您可以使用該技術來將遊戲中有效的框架延遲降至最低。
+Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame. Games typically need to provide the lowest amount of latency possible from the time the player input is received, to when the game responds to that input by updating the display. This topic explains a technique available starting in Direct3D 11.2 that you can use to minimize the effective frame latency in your game.
 
-## 在背景緩衝區上等候如何減少延遲？
-
-
-使用翻轉模型交換鏈結，背景緩衝區「翻轉」會在您的遊戲呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時排入佇列。 當轉譯迴圈呼叫 Present() 時，系統會封鎖執行緒，直到它完成先前框架的顯示為止，在它實際顯示之前，清出空間以將新框架排入佇列。 這會導致遊戲繪製框架的時間和系統允許它顯示該框架的時間之間，產生額外的延遲。 在許多情況下，系統將會到達一個穩定的平衡，遊戲在它轉譯的時間和它呈現每個畫面的時間之間，一律會等候一個幾乎完全是額外存在的畫面。 最好是等到系統準備好接受新畫面，然後根據目前資料來轉譯該畫面，並立即將該畫面排入佇列。
-
-使用 [**DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 旗標建立可等候的交換鏈結。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
-
-## 步驟 1：建立可等候的交換鏈結
+## How does waiting on the back buffer reduce latency?
 
 
-當您呼叫 [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 時，指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 旗標。
+With the flip model swap chain, back buffer "flips" are queued whenever your game calls [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). When the rendering loop calls Present(), the system blocks the thread until it is done presenting a prior frame, making room to queue up the new frame, before it actually presents. This causes extra latency between the time the game draws a frame and the time the system allows it to display that frame. In many cases, the system will reach a stable equilibrium where the game is always waiting almost a full extra frame between the time it renders and the time it presents each frame. It's better to wait until the system is ready to accept a new frame, then render the frame based on current data and queue the frame immediately.
+
+Create a waitable swap chain with the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) flag. Swap chains created this way can notify your rendering loop when the system is actually ready to accept a new frame. This allows your game to render based on current data and then put the result in the present queue right away.
+
+## Step 1: Create a waitable swap chain
+
+
+Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) flag when you call [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注意** 相較於其他旗標，您無法使用 [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 來新增或移除這個旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
+> **Note**   In contrast to some flags, this flag can't be added or removed using [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI returns an error code if this flag is set differently from when the swap chain was created.
 
  
 
@@ -47,12 +47,12 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## 步驟 2：設定畫面延遲
+## Step 2: Set the frame latency
 
 
-使用 [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API 來設定畫面延遲，而不是呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334)。
+Set the frame latency with the [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API, instead of calling [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334).
 
-根據預設，會將適用於可等候交換鏈結的畫面延遲設為 1，這會盡可能產生最少的延遲，但也會降低 CPU-GPU 平行處理原則。 如果您需要提高 CPU-GPU 平行處理原則以達到 60 FPS (也就是說，如果 CPU 和 GPU 在框架處理轉譯工作時所花費的時間各少於 16.7 毫秒，但它們相加的總和大於 16.7 毫秒)，請將框架延遲設為 2。 這允許 GPU 處理在前一個框架期間由 CPU 排入佇列的工作，同時允許 CPU 獨立為目前框架提交轉譯命令。
+By default, the frame latency for waitable swap chains is set to 1, which results in the least possible latency but also reduces CPU-GPU parallelism. If you need increased CPU-GPU parallelism to achieve 60 FPS - that is, if the CPU and GPU each spend less than 16.7 ms a frame processing rendering work, but their combined sum is greater than 16.7 ms — set the frame latency to 2. This allows the GPU to process work queued up by the CPU during the previous frame, while at the same time allowing the CPU to submit rendering commands for the current frame independently.
 
 ```cpp
 // Swapchains created with the DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT flag use their
@@ -65,10 +65,10 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## 步驟 3：從交換鏈結取得可等候的物件
+## Step 3: Get the waitable object from the swap chain
 
 
-呼叫 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) 以擷取等候控制代碼。 等候控制代碼是指向可等候物件的指標。 儲存此控制代碼，以供您的轉譯迴圈使用。
+Call [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) to retrieve the wait handle. The wait handle is a pointer to the waitable object. Store this handle for use by your rendering loop.
 
 ```cpp
 // Get the frame latency waitable object, which is used by the WaitOnSwapChain method. This
@@ -77,12 +77,12 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## 步驟 4：轉譯每個框架之前先等候
+## Step 4: Wait before rendering each frame
 
 
-您的轉譯迴圈在開始轉譯每個框架之前，應該先等候交換鏈結透過可等候的物件發出訊號。 這包含第一個使用交換鏈結轉譯的畫面。 使用 [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)，提供步驟 2 中抓取的等候控制代碼，為每個畫面的開始發出訊號。
+Your rendering loop should wait for the swap chain to signal via the waitable object before it begins rendering every frame. This includes the first frame rendered with the swap chain. Use [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036), providing the wait handle retrieved in Step 2, to signal the start of each frame.
 
-下列範例顯示來自 DirectXLatency 範例的轉譯迴圈：
+The following example shows the render loop from the DirectXLatency sample:
 
 ```cpp
 while (!m_windowClosed)
@@ -114,7 +114,7 @@ while (!m_windowClosed)
 }
 ```
 
-下列範例顯示來自 DirectXLatency 範例的 WaitForSingleObjectEx 呼叫：
+The following example shows the WaitForSingleObjectEx call from the DirectXLatency sample:
 
 ```cpp
 // Block the current thread until the swap chain has finished presenting.
@@ -128,30 +128,30 @@ void DX::DeviceResources::WaitOnSwapChain()
 }
 ```
 
-## 當我的遊戲在等候交換鏈結出現時應該做些什麼？
+## What should my game do while it waits for the swap chain to present?
 
 
-如果您的遊戲不含任何會在轉譯迴圈上封鎖的工作，讓它等候交換鏈結出現就非常有利，因為能夠節省電力，這在行動裝置上特別重要。 否則，當您的遊戲在等候交換鏈結出現時，您可以使用多執行緒處理來完成工作。 以下只是一些您的遊戲可以完成的工作：
+If your game doesn’t have any tasks that block on the render loop, letting it wait for the swap chain to present can be advantageous because it saves power, which is especially important on mobile devices. Otherwise, you can use multithreading to accomplish work while your game is waiting for the swap chain to present. Here are just a few tasks that your game can complete:
 
--   處理網路事件
--   更新 AI
--   以 CPU 為基礎的物理計算
--   轉譯延遲的內容 (在支援的裝置上)
--   載入資產
+-   Process network events
+-   Update the AI
+-   CPU-based physics
+-   Deferred-context rendering (on supported devices)
+-   Asset loading
 
-如需 Windows 中多執行緒程式設計的詳細資訊，請參閱下列相關主題。
+For more information about multithreaded programming in Windows, see the following related topics.
 
-## 相關主題
+## Related topics
 
 
-* [DirectXLatency 範例](http://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency sample](http://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
-* [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)
-* [處理序和執行緒](https://msdn.microsoft.com/library/windows/desktop/ms684841)
-* [同步處理](https://msdn.microsoft.com/library/windows/desktop/ms686353)
-* [使用事件物件 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
+* [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334)
+* [Processes and Threads](https://msdn.microsoft.com/library/windows/desktop/ms684841)
+* [Synchronization](https://msdn.microsoft.com/library/windows/desktop/ms686353)
+* [Using Event Objects (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
  
 
@@ -163,6 +163,6 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

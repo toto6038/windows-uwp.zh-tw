@@ -1,46 +1,46 @@
 ---
 author: Jwmsft
-Description: "一種包含內容區域和命令區域的模式，適用於單一檢視應用程式或模態體驗，例如相片檢視器/編輯器、文件檢視器、地圖、繪畫或讓其他利用自由捲動檢視的應用程式。"
-title: "主動式畫布配置模式"
+Description: A pattern with a content area and a command area for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view.
+title: Active canvas layout pattern
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: ddb977999f4bdb24cef36c80659c78aba1ee5e98
+ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 ---
-# 主動式畫布配置模式
+# Active canvas layout pattern
 
-主動式畫布是一種包含內容區域和命令區域的模式。 它適用於單一檢視應用程式或模態體驗，例如相片檢視器/編輯器、文件檢視器、地圖、繪畫或讓其他利用自由捲動檢視的應用程式。 對於要採取的動作，根據您需要的動作之數量和類型，主動式畫布可搭配使用命令列或只有按鈕。
+An active canvas is a pattern with a content area and a command area. It's for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view. For taking actions, an active canvas can be paired with a command bar or just buttons, depending on the number and types of actions you need.
 
-## 範例
+## Examples
 
-這個相片編輯應用程式的設計強調主動式畫布模式，左側是行動裝置範例，右側則是桌面範例。 影像編輯表層是一個畫布，底部的命令列則包含應用程式的所有內容相關動作。
+This design of a photo editing app features an active canvas pattern, with a mobile example on the left, and a desktop example on the right. The image editing surface is a canvas, and the command bar at the bottom contains all of the contextual actions for the app.
 
-![使用主動式畫布模式的相片編輯器範例](images/uap-photo-pc-phone-700.png)
+![Example of a photo editor using active canvas pattern](images/uap-photo-pc-phone-700.png)
 
-這個捷運地圖應用程式採用的主動式畫布在上方有一個簡單的帶狀 UI，其中只有兩個動作和一個搜尋方塊。 如右側影像所示，內容相關動作會顯示在內容功能表。
+This design of a subway map app makes use of an active canvas with a simple UI strip at the top that has only two actions and a search box. Contextual actions are shown in the context menu, as seen on the right image.
 
-![採用主動式畫布模式的地圖應用程式範例](images/uap-subway-pc-phone-700.png)
-
-
-## 實作此模式
-
-主動式畫布由內容區域和命令區域組成。
-
-**內容區域。**  內容區域通常是可以自由捲動的畫布。 一個應用程式內可以有多個內容區域。
-
-**命令區域。**  如果您要放置很多命令，使用會根據畫面大小而回應的命令列是不錯的選擇。 如果您沒有要放置很多命令，而且也不考慮回應式 UI，則使用能節省空間的按鈕即可。
+![Example of a maps app using active canvas pattern](images/uap-subway-pc-phone-700.png)
 
 
+## Implementing this pattern
 
-## 相關文章
+The active canvas pattern consists of a content area and a command area.
 
--   [**應用程式列與命令列**](../controls-and-patterns/app-bars.md)
+**Content area.**  The content area is usually a free-scrolling canvas. Multiple content areas can exist within an app.
+
+**Command area.**  If you're placing a lot of commands, then a command bar, which responds based on screen size, could be the way to go. If you're not placing that many commands and aren't as concerned with a responsive UI, space-saving buttons work well.
 
 
 
-<!--HONumber=Jul16_HO1-->
+## Related articles
+
+-   [**App bar and command bar**](../controls-and-patterns/app-bars.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用�
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 ---
 
@@ -156,6 +156,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

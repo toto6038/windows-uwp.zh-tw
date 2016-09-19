@@ -1,28 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
-description: "了解如何使用 C# 啟動插入式廣告。"
-title: "使用 C 的插入式廣告範例程式碼#"
+description: Learn how to launch an interstitial ad using C#.
+title: Interstitial ad sample code in C#
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 5969bfacd34bcfab5f1bebd2cfbade4fd16c5a39
 
 
 ---
 
-# 使用 C 的插入式廣告範例程式碼\# #  
+# Interstitial ad sample code in C\# #  
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-本主題示範如何使用 C# 啟動插入式廣告。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插入式廣告](interstitial-ads.md)。 如需示範如何將插入式廣告影片新增到使用 C# 之 XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 
-## 程式碼範例
+This topic shows how to launch an interstitial ad using C#. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project that demonstrates how to add video interstitial ads to a XAML app using C#, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-此程式碼範例示範實作插入式廣告的運作 MainPage.xaml.cs 程式碼檔案。 此程式碼假設 MainPage.xaml 檔案擁有運作中的按鈕，該按鈕具有能夠觸發且由名為 **button_Click** 方法所處理的 **Click** 事件。 此程式碼會在按鈕上的 **Click** 事件被觸發時啟動插入式廣告。
 
-在將 App 提交至市集之前，請以具有實際值的 **AppID** 和 **AdUnitId** 變數取代文字。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+## Code example
+
+This code sample shows a working MainPage.xaml.cs code file that implements an interstitial ad. This code assumes that the MainPage.xaml file has a working button with a **Click** event that fires and is handled by a method named **button_Click**. This code launches the interstitial ad when the **Click** event on the button is fired.
+
+Replace the text in the **AppID** and **AdUnitId** variables with live values before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
 
 ``` syntax
 using System;
@@ -99,13 +99,13 @@ namespace BasicCSharpInterstitialUWP
 ```
 
  
-## 相關主題
+## Related topics
 
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

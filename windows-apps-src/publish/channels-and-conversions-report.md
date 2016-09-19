@@ -1,92 +1,92 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板的 [通道與轉換] 報告可讓您查看使用 Windows 10 的客戶如何找到您的 app 清單。"
-title: "通道與轉換報告"
+Description: The Channels and conversions report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing.
+title: Channels and conversions report
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e82299f156a7e4f82e9219dc9b0ef6171e72c74e
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 48128577d41a9810062288ae908646c391aae849
 
 ---
 
-# 通道與轉換報告
+# Channels and conversions report
 
 
-Windows 開發人員中心儀表板的 [**通道與轉換**] 報告可讓您查看使用 Windows 10 的客戶如何找到您的 app 清單。 這可讓您追蹤適用於您 app 或其 IAP 的[自訂促銷活動](create-a-custom-app-promotion-campaign.md)，並查看這些瀏覽中有多少會產生新的取得數。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
+The **Channels and conversions** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing. It lets you track [custom promotion campaigns](create-a-custom-app-promotion-campaign.md) for your app or its add-ons, and see how many of those visits resulted in new acquisitions. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
-> **重要** 此報告只會顯示頁面檢視，並從使用 Windows 10 的客戶轉換資料。
-
- 
-
-在此報告，*通道*是指客戶到達您 app 清單頁面 (例如，在市集中瀏覽及搜尋、來自外部網站的連結、來自您自訂行銷活動等等的其中一個連結) 的方法。 包含下列的管道類型：
-
--   **市集流量：**客戶在市集中透過瀏覽或搜尋看到您的 app 清單。
--   **外部網站：**客戶從網站的連結 (沒有任何自訂行銷活動識別碼) 連到您的 app 清單。
--   **搜尋引擎：**客戶透過線上搜尋引擎傳回的連結連到您的 app 清單。
--   **自訂的行銷活動：**客戶透過使用[自訂行銷活動識別碼](create-a-custom-app-promotion-campaign.md)的連結連到您的 app 清單。
-
-*頁面檢視*表示客戶透過網路市集或 Windows 10 上的市集 app 來檢視您 app 的市集清單頁面。
-
-*轉換*表示客戶已經新獲得您 app 的授權 (不論是付費或免費取得) 或 IAP。
-
-> **注意** 只有針對您自訂的行銷活動才提供轉換資料。 至於其他通道類型，在此報告中目前只納入頁面檢視資料。
+> **Important**   This report only shows page view and conversion data from customers on Windows 10.
 
  
 
-## 套用篩選
+In this report, a *channel* refers to the method in which a customer arrived at your app's listing page (for example, browsing and searching in the Store, a link from an external website, a link from one of your custom campaigns, etc.). The following channel types are included:
 
+-   **Store traffic:** The customer was browsing or searching within the Store when they viewed your app's listing.
+-   **External website:** The customer followed a link (without any custom campaign ID) to your app's listing from a website.
+-   **Search engine:** The customer followed a link to your app's listing that was returned by an online search engine.
+-   **Custom campaign:** The customer followed a link that used a [custom campaign ID](create-a-custom-app-promotion-campaign.md).
 
-您可以在接近頁面頂端的地方，展開 [套用篩選]****，依日期範圍和/或市場來篩選此頁面上的所有日期。
+A *page view* means that a customer viewed your app's Store listing page, either via the web-based Store or from within the Store app on Windows 10.
 
--   **日期**：預設篩選為 [過去 30 天]****，但是您可以擴展此範圍，最多可達 [過去 12 個月]****。
--   **市場**：預設設定為 [所有市場]****。 如果您只想在此頁面上顯示來自某特定市場中客戶的詳細資訊，則可選擇該市場。
--   **裝置類型**：預設篩選為 [所有裝置]****。 如果您只想在此頁面上顯示使用該類型之使用者的資料，則可以選擇特定裝置類型。
+A *conversion* means that a customer has newly obtained a license to your app (whether you charged money or you've offered it for free) or to an add-on.
 
-下列所有圖表中的資訊將反映 [套用篩選]**** 區段中選取的時段，並且會反映您在這裡所選擇的任何其他篩選。
-
-## 依管道的 app 頁面檢視和轉換
-
-
-[依管道的 app 頁面檢視和轉換]**** 圖表會顯示您 app 清單頁面的檢視頻率與客戶如何到達該處的方法。 也會顯示在選取時段內，來自自訂行銷的轉換數。
-
-此圖表的 [頁面檢視]**** 索引標籤會顯示在選取時段內，檢視您 app 清單頁面的次數。 檢視會根據客戶發現您 app 清單的管道來分組。
-
-此圖表的 [轉換]**** 索引標籤會顯示在選取時段內，透過自訂行銷活動到達您 app 清單頁面客戶的轉換數目 (新取得次數)。
-
-> **注意** 如需有關您 app 取得次數的資訊，包括並未透過自訂行銷活動連結的次數以及來自其他作業系統版本客戶的次數，請參閱[取得次數報告](acquisitions-report.md)。
+> **Note**  Conversion data is provided only for your custom campaigns. For other channel types, only page view data is currently included in this report.
 
  
 
-## 行銷活動績效 (依通路)
+## Apply filters
 
 
-[依管道的行銷效能]**** 圖表會顯示每個管道類型的頁面檢視數目。 也會顯示在選取時段內，來自自訂行銷的 app 總數與 IAP 轉換數。
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
 
-## 依行銷活動識別碼的 app 頁面檢視和轉換
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
+-   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show details from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show data from customers using that type of device.
 
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
 
-[依行銷活動識別碼的 app 頁面檢視和轉換]**** 圖表會顯示在選取時段內，每個您特定[行銷活動識別碼](create-a-custom-app-promotion-campaign.md)的頁面檢視與轉換數目。
-
-##  依行銷活動識別碼的 IAP 轉換
-
-
-[依行銷活動識別碼的 IAP 轉換]**** 圖表會顯示每個自訂行銷活動識別碼的 IAP 轉換數目。
-
-當 app 安裝被計算為自訂行銷活動所轉換的，在該 app 中的任何 IAP 購買也會被計算為相同的自訂行銷活動轉換。
-
-根據預設，此報告會包含在選取時段內，使用自訂行銷活動識別碼的連結所產生的任何 IAP 轉換。 若要檢視特定 IAP 的資料，請從 [區段篩選]**** 選取 IAP。
-
-## 轉換分解
+## App page views and conversions by channel
 
 
-[轉換分解]**** 圖表顯示每個管道類型所產生之頁面檢視的更多詳細資訊。 按一下每個管道類型可以取得該管道轉換的更多資訊：
+The **App page views and conversions by channel** chart shows how often your app's listing page was viewed and how customers arrived there. It also shows the number of conversions from custom campaigns over the selected period of time.
 
--   **自訂行銷活動：**顯示特定的行銷活動識別碼。
--   **外部網站：**顯示連結至此 app 之網站的網域。
--   **市集流量：**顯示客戶是否使用市集用戶端 app 或線上市集。
--   **搜尋引擎：**顯示客戶使用的特定搜尋字詞。
+The **Page views** tab of this chart shows the number of times your app's listing page was viewed over the selected period of time. Views are grouped according to the type of channel by which the customer found your app's listing.
 
-針對自訂的行銷活動，您也可以看到每個特定行銷活動識別碼所產生的 app 轉換數目與 IAP 轉換數目。
+The **Conversions** tab of this chart shows the number of conversions (new acquisitions) over the selected period of time for customers who arrived at your app's listing via a custom campaign.
+
+> **Note**  For info about all of your app's acquisitions, including those that did not occur via a custom campaign link and those from customers on other OS versions, see the [Acquisitions report](acquisitions-report.md).
+
+ 
+
+## Campaign performance by channel
+
+
+The **Campaign performance by channel** chart shows the number of page views for each channel type. It also shows the total number of app and add-on conversions from your custom campaigns during the selected period of time.
+
+## App page views and conversions by campaign ID
+
+
+The **App page views and conversions by campaign ID** chart shows the number of page views and conversions for each of your specific [campaign IDs](create-a-custom-app-promotion-campaign.md) during the selected period of time.
+
+##  Add-on conversions by campaign ID
+
+
+The **Add-on conversions by campaign ID** chart shows the number of add-on conversions per custom campaign ID.
+
+When an app install is counted as a conversion for a custom campaign, any add-on purchases in that app are also counted as conversions for the same custom campaign.
+
+By default, the report includes any add-on which had a conversion that resulted from a link using a custom campaign ID during the selected period of time. To view data for a specific add-on, select it from the **Section filters**.
+
+## Conversions breakdown
+
+
+The **Conversions breakdown** chart shows more details about the page views that resulted from each of your channel types. Click each channel type to get more info about conversions from that channel:
+
+-   **Custom campaign:** Shows the specific campaign IDs.
+-   **External website:** Shows the domain of the website that linked to the app.
+-   **Store traffic:** Shows whether the customer was using the Store client app or the online Store.
+-   **Search engine:** Shows the specific search terms used by the customer.
+
+For custom campaigns, you can also see the number of app conversions and add-on conversions which resulted from each specific campaign ID.
 
  
 
@@ -98,6 +98,6 @@ Windows 開發人員中心儀表板的 [**通道與轉換**] 報告可讓您查�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

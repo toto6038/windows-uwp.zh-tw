@@ -1,148 +1,148 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: "了解關於在 App 中廣告的 UI 和使用者體驗指導方針。"
-title: "在 App 中廣告的 UI 和使用者體驗指導方針。"
+description: Learn about UI and user experience guidelines for ads in apps.
+title: UI and user experience guidelines for ads in apps
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 
 ---
 
-# 在 App 中廣告的 UI 和使用者體驗指導方針。
+# UI and user experience guidelines for ads in apps
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Windows 應用程式的一般 UI 資源
 
-您可以在[設計與 UI](https://developer.microsoft.com/windows/design) 中找到關於如何設計 App 外觀與操作方式的資訊。
+## General UI resources for Windows apps
 
-## AdControl 最佳做法
+You can find information about how to design the look and feel for apps at [Design & UI](https://developer.microsoft.com/windows/design).
 
-* [AdControl 最佳做法：可行事項](#adcontrolbestpracticesdo10)
-* [AdControl 最佳做法：禁止事項](#adcontrolbestpracticesdont10)
+## AdControl best practices
+
+* [AdControl best practices: DO](#adcontrolbestpracticesdo10)
+* [AdControl best practices: DON'T](#adcontrolbestpracticesdont10)
 
 <span id="adcontrolbestpracticesdo10"/>
-### AdControl 最佳做法：可行事項
+### AdControl best practices: DO
 
-* 將廣告設計融入您的體驗中。 提供設計人員範例廣告，以規劃廣告的外觀。 App 中兩個良好規劃的廣告範例是「廣告即內容」配置和分割配置。
+* Design advertising into your experience. Give your designers a sample ad to plan how the advertising is going to look. Two examples of well-planned ads in apps are the ads-as-content layout and the split layout.
 
-  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows 8.1 和 Windows 10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
+  To see how different ad sizes will look and function within your app, you can utilize our test mode ad units for Windows Phone, Windows 8.1, and Windows 10. When you’re done with the test mode ad units, remember to [update your app with real ad unit IDs](set-up-ad-units-in-your-app.md) before submitting the app for certification.
 
-* 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的 App。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[錯誤處理](error-handling-with-advertising-libraries.md)。
+* Plan for times when no ads are available. There may be times when ads aren't being sent to your app. Lay out your pages in such a way that they look great whether they showcase an ad or not. For more information, see [Error handling](error-handling-with-advertising-libraries.md).
 
 <span id="adcontrolbestpracticesdont10"/>
-### AdControl 最佳做法：禁止事項
+### AdControl Best Practices: DON'T
 
-* 將廣告閂入開放可用空間。 廣告空間不應該放進您可找到的第一塊開放空間。 相反地，它應該整合到您 App 的整體設計中。
+* Bolt advertising into open real estate. Ad space shouldn't be placed into the first open piece of real estate you can find. Instead, it should be incorporated into your app's overall design.
 
-* 過多廣告和塞滿 App。 在 App 中有太多廣告會影響其外觀和可用性。 您想要透過廣告獲利，但不應犧牲 App 本身。
+* Over-advertise and saturate your app. Too many ads in your app detract from its appearance and usability. You want to make money with advertising, but not at the expense of the app itself.
 
-* 混淆使用者的核心工作。 主要的焦點應一律在 App 上。 應整合廣告空間，讓它維持在次要焦點。
+* Distract user from their core tasks. The primary focus should always be on the app. The ad space should be incorporated so it remains a secondary focus.
 
 <span id="interstitialbestpractices10"/>
-## 插入式廣告最佳做法
+## Interstitial best practices
 
-* [插入式廣告最佳做法：可行事項](#interstitialbestpracticesdo10)
-* [插入式廣告最佳做法：避免事項](#interstitialbestpracticesavoid10)
-* [插入式廣告最佳做法：禁止事項 (原則強制執行)](#interstitialbestpracticesnever10)
+* [Interstitial best practices: DO](#interstitialbestpracticesdo10)
+* [Interstitial best practices: AVOID](#interstitialbestpracticesavoid10)
+* [Interstitial best practices: NEVER (Policy Enforced)](#interstitialbestpracticesnever10)
 
-巧妙地使用影片插入式廣告可以大幅提高您 App 的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
+When used elegantly, video interstitial ads can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
 
-在這裡我們將協助您達成目標。 由於您比任何人都了解您的 App，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您 App 的評等與收益緊密結合。
+Here we aim to help you achieve elegance. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
 
 <span id="interstitialbestpracticesdo10"/>
-### 插入式廣告最佳做法：可行事項
+### Interstitial best practices: DO
 
-* 讓插入式廣告符合 App 的自然流程 (例如在遊戲關卡之間)。
+* Fit interstitial ads within the natural flow of the app, such as between game levels.
 
-* 將廣告與好的一面關聯，例如：
+* Associate ads with tangible upsides, such as:
 
-    * 完成關卡的提示。
+    * Hints towards level completion.
 
-    * 重試關卡的額外時間。
+    * Extra time to retry a level.
 
-    * 自訂虛擬人偶的功能，例如刺青或帽子。
+    * Custom avatar features, like a tattoo or hat.
 
-* 如果您的 App 必須看完影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
+* If your app requires that a video ad be watched to completion, mention that rule upfront so they aren’t surprised with an error message upon hitting the close button.
 
-* 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx))，理想的情況為 30 秒到 60 秒。
+* Pre-fetch the ad (by calling [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)) ideally 30-60 seconds before you need to show it.
 
-* 訂閱在 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別中公開的四個事件 (**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**) 並使用它們來為 App 做出正確的決策。
+* Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
 
-* 有一些內建的體驗可以用來取代伺服器比對的廣告。 您會在以下的一些範例中發現這很有用：
+* Have some built-in experience to use in lieu of a server-matched ad. You’ll find this useful in a few scenarios:
 
-    * 離線模式 (當無法連線到廣告伺服器時)。
+    * Offline mode, when ad servers can’t be reached.
 
-    * 當引發 **ErrorOccurred** 事件時。
+    * When the **ErrorOccurred** event fires.
 
-    * 如果您選擇根據 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
+    * If you opt to save user bandwidth based on [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), there are APIs in the **ConnectionProfile** class which can help.
 
-* 使用預設 (30 秒) 逾時，除非您有合理的理由設定其他值，在該情況下不低於 10 秒。
+* Use the default (30s) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10s.
 
-    * 影片廣告比橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
+    * Video ads take substantially longer to download than banners, especially in markets that don’t have high speed connections.
 
 
-* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
+* Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving a video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) class which can help.
 
-* 在初始提交後，請繼續改善您的 App。 查看廣告報表，然後變更設計以改進覆蓋率與影片完成率。
+* Continuously improve your app after the initial submission. Look at the ad reports and make design changes to improve fill and video completion rates.
 
 <span id="interstitialbestpracticesavoid10"/>
-### 插入式廣告最佳做法：避免事項
+### Interstitial best practices: AVOID
 
-* 使用過度。 請勿強制廣告超過 5 分鐘，除非使用者明確地被遊戲外的選擇性好處吸引。
+* Overdoing it. Don’t force ads more than every 5 minutes or so, unless the user explicitly engages with an optional tangible benefit, beyond just playing the game.
 
-* 在 App 啟動時插入影片，因為使用者可能會認為他們按到了錯誤的磚。
+* Video interstitials at app launch, since users may believe they clicked the wrong tile.
 
-* 在離開時插入影片。 這是不好的編排，因為完成率會趨近於零。
+* Video interstitials at exit. This is bad inventory, since completion rates will be near zero.
 
-    * 兩個或多個接續的影片廣告。
+    * Two or more video ads back to back.
 
-    * 使用者對於廣告進度列重設到開始點會感到不愉快。
+    * Users will be frustrated to see the ad progress bar reset to the starting point.
 
-    * 許多人會認為這是程式碼或廣告服務錯誤。
+    * Many will think it’s just a coding or ad serving bug.
 
-* 在呼叫 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前，請最少提早 5 分鐘開便開始擷取影片廣告。
+* Fetching a video ad more than 5 minutes before calling [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-    * 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
+    * Good inventory will maximize the conversion of pre-fetched ads to billable impressions.
 
 
-* 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
+* Penalizing a user for failures in ad serving, such as no ad available. For example, if you show a UI option to “Watch an ad to get *xxx*”, you should provide *xxx* if the user did her part. Two options to consider:
 
-    * 除非引發 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，否則不要包含該選項。
+    * Don’t include the option unless the [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) event has fired.
 
-    * 讓包含內建體驗的 App 可以產生與廣告相同的好處。
+    * Have the app include a built-in experience that yields the same benefit as a real ad.
 
-* 讓使用者可以在多人遊戲中獲得競爭優勢。
+* Letting a user gain a competitive advantage in a multi-player game.
 
-    * 在第一人稱射擊遊戲中，一把更好的槍就很明顯地屬於此類。
+    * A better gun in a first-person shooter game would clearly fall into this bucket.
 
-    * 玩家虛擬人偶上的自訂上衣也不錯，只要不會提供隱身效果！
+    * A custom shirt on the player’s avatar is fine, so long as it doesn’t provide camouflage!
 
 <span id="interstitialbestpracticesnever10"/>
-### 插入式廣告最佳做法：禁止事項 (原則強制執行)
+### Interstitial best practices: NEVER (Policy Enforced)
 
-* 將任何的 UI 元素放在廣告容器上。
+* Put any UI elements over the ad container.
 
-    * 全螢幕支付廣告。
+    * Advertisers have paid for the full screen.
 
 
-* 在使用者與 App 互動時呼叫 **Show**。
+* Call **Show** while user is engaged with the app.
 
-    * 因為 **InterstitialAd** 將會建立全螢幕覆蓋，使用者會覺得突兀。
+    * Because the **InterstitialAd** will create a full screen overlay, the user will find this jarring.
 
-    * 這也會導致誇張的點閱率。
+    * It may also lead to exaggerated click-through rates.
 
-* 使用廣告取得任何可消耗的貨幣或與其他使用者買賣的項目。
-
- 
+* Use ads to obtain anything that may be consumed as a currency or traded with other users.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

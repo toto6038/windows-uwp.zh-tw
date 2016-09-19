@@ -1,41 +1,41 @@
 ---
 author: mtoepke
-title: "建立著色器及繪製基本型別"
-description: "以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製基本型別的著色器。"
+title: Create shaders and drawing primitives
+description: Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
+ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 ---
 
-# 建立著色器及繪製基本型別
+# Create shaders and drawing primitives
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製基本型別的著色器。
+Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
 
-我們會使用頂點和像素著色器來建立及繪製一個黃色三角形。 在建立 Direct3D 裝置、交換鏈結及轉譯目標檢視之後，我們會從磁碟上的二進位著色器物件檔案讀取資料。
+We create and draw a yellow triangle by using vertex and pixel shaders. After we create the Direct3D device, the swap chain, and the render-target view, we read data from binary shader object files on the disk.
 
-**目標：**建立著色器及繪製基本型別。
+**Objective:** To create shaders and to draw primitives.
 
-## 先決條件
+## Prerequisites
 
 
-我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
+We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
-我們也假設您已經看過[快速入門：設定 DirectX 資源及顯示影像](setting-up-directx-resources.md)。
+We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md).
 
-**完成所需的時間：**20 分鐘。
+**Time to complete:** 20 minutes.
 
-## 指示
+## Instructions
 
-### 1. 編譯 HLSL 來源檔案
+### 1. Compiling HLSL source files
 
-Microsoft Visual Studio 使用 [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL 程式碼編譯器，將 .hlsl 來源檔案 (SimpleVertexShader.hlsl 和 SimplePixelShader.hlsl) 編譯成 .cso 二進位著色器物件檔案 (SimpleVertexShader.cso 和 SimplePixelShader.cso)。 如需 HLSL 程式碼編譯器的詳細資訊，請參閱＜效果編譯器工具＞。 如需有關編譯著色器程式碼的詳細資訊，請參閱[編譯著色器](https://msdn.microsoft.com/library/windows/desktop/bb509633)。
+Microsoft Visual Studio uses the [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL code compiler to compile the .hlsl source files (SimpleVertexShader.hlsl and SimplePixelShader.hlsl) into .cso binary shader object files (SimpleVertexShader.cso and SimplePixelShader.cso). For more info about the HLSL code compiler, see Effect-Compiler Tool. For more info about compiling shader code, see [Compiling Shaders](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
-以下是 SimpleVertexShader.hlsl 中的程式碼：
+Here is the code in SimpleVertexShader.hlsl:
 
 ```hlsl
 struct VertexShaderInput
@@ -59,7 +59,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-以下是 SimplePixelShader.hlsl 中的程式碼：
+Here is the code in SimplePixelShader.hlsl:
 
 ```hlsl
 struct PixelShaderInput
@@ -74,15 +74,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. 從磁碟讀取資料
+### 2. Reading data from disk
 
-我們可以使用 DirectX 11 App (通用 Windows) 範本中 DirectXHelper.h 的 DX::ReadDataAsync 功能，以非同步方式讀取磁碟上的檔案資料。
+We use the DX::ReadDataAsync function from DirectXHelper.h in the DirectX 11 App (Universal Windows) template to asynchronously read data from a file on the disk.
 
-### 3. 建立頂點著色器和像素著色器
+### 3. Creating vertex and pixel shaders
 
-我們會從 SimpleVertexShader.cso 檔案讀取資料，並將資料指派給 *vertexShaderBytecode* 位元組陣列。 我們會使用該位元組陣列呼叫 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 來建立頂點著色器 ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641))。 我們會在 SimpleVertexShader.hlsl 來源中將頂點深度值設定為 0.5，以確保會繪製出三角形。 我們會填入一個 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構的陣列來描述頂點著色器程式碼的配置，然後呼叫 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 來建立配置。 陣列有一個定義頂點位置的配置元素。 我們會從 SimplePixelShader.cso 檔案讀取資料，並將資料指派給 *pixelShaderBytecode* 位元組陣列。 我們會使用該位元組陣列呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) 來建立像素著色器 ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576))。 我們會在 SimplePixelShader.hlsl 來源中將像素值設定為 (1,1,1,1)，以讓三角形呈黃色。 您可以變更這個值來變更色彩。
+We read data from the SimpleVertexShader.cso file and assign the data to the *vertexShaderBytecode* byte array. We call [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) with the byte array to create the vertex shader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). We set the vertex depth value to 0.5 in the SimpleVertexShader.hlsl source to guarantee that our triangle is drawn. We populate an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures to describe the layout of the vertex shader code and then call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) to create the layout. The array has one layout element that defines the vertex position. We read data from the SimplePixelShader.cso file and assign the data to the *pixelShaderBytecode* byte array. We call [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) with the byte array to create the pixel shader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). We set the pixel value to (1,1,1,1) in the SimplePixelShader.hlsl source to make our triangle yellow. You can change the color by changing this value.
 
-我們會建立定義簡單三角形的頂點和索引緩衝區。 為了這麼做，我們會先定義三角形，接著使用三角形定義來描述頂點和索引緩衝區 ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 和 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220))，最後，為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 一次。
+We create vertex and index buffers that define a simple triangle. To do this, we first define the triangle, next describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the triangle definition, and finally call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -195,23 +195,23 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
         });
 ```
 
-我們會使用頂點和像素著色器、頂點著色器配置及頂點和索引緩衝區，以繪製黃色三角形。
+We use the vertex and pixel shaders, the vertex shader layout, and the vertex and index buffers to draw a yellow triangle.
 
-### 4. 繪製三角形並呈現轉譯的影像
+### 4. Drawing the triangle and presenting the rendered image
 
-我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，以將轉譯目標指定為輸出目標。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 搭配 { 0.071f, 0.04f, 0.561f, 1.0f }，以將轉譯目標清除成純藍色。
+We enter an endless loop to continually render and display the scene. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) with { 0.071f, 0.04f, 0.561f, 1.0f } to clear the render target to a solid blue color.
 
-在無限迴圈中，我們會在藍色表面上繪製一個黃色三角形。
+In the endless loop, we draw a yellow triangle on the blue surface.
 
-**繪製黃色三角形**
+**To draw a yellow triangle**
 
-1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
-2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 來將頂點和索引緩衝區繫結到輸入組合階段。
-3.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 搭配要為輸入組合階段指定的 [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 值，以將頂點資料解譯為三角形區域。
-4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 以使用像素著色器程式碼起始像素著色階段。
-5.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 來繪製三角形並將它提交給轉譯管線。
+1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
+2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
+3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
+4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
+5.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the triangle and submit it to the rendering pipeline.
 
-我們會呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)，以將轉譯的影像呈現到視窗。
+We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
 
 ```cpp
             // Specify the render target we created as the output target.
@@ -277,25 +277,25 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## 摘要與後續步驟
+## Summary and next steps
 
 
-我們使用頂點和像素著色器建立及繪製了一個黃色三角形。
+We created and drew a yellow triangle by using vertex and pixel shaders.
 
-接著，我們會建立一個環繞移動的 3D 立方體，並將光源效果套用到該立方體。
+Next, we create an orbiting 3D cube and apply lighting effects to it.
 
-[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)
-
- 
+[Using depth and effects on primitives](using-depth-and-effects-on-primitives.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

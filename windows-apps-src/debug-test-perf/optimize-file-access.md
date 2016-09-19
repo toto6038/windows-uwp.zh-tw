@@ -1,22 +1,22 @@
 ---
 author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: "最佳化檔案存取"
-description: "建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。"
+title: Optimize file access
+description: Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 
 ---
-# 最佳化檔案存取
+# Optimize file access
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
+Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
 
-當您想要存取大量的檔案，而且想要存取一般 Name、FileType 以及 Path 屬性以外的屬性值時，請透過建立 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 存取屬性，並呼叫 [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319)。 **SetPropertyPrefetch** 方法可以動態改善 app 的效能，以顯示從檔案系統取得的項目集合，例如影像的集合。 下一組範例顯示一些存取多個檔案的方法。
+When you want to access a large collection of files and you want to access property values other than the typical Name, FileType, and Path properties, access them by creating [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) and calling [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319). The **SetPropertyPrefetch** method can dramatically improve the performance of apps that display a collection of items obtained from the file system, such as a collection of images. The next set of examples shows a few ways to access multiple files.
 
-第一個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) 來為一組檔案抓取名稱資訊。 這個方法提供良好的效能，因為這個範例只存取 name 屬性。
+The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) to retrieve the name info for a set of files. This approach provides good performance, because the example accesses only the name property.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -40,7 +40,7 @@ ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
 > Next i
 > ```
 
-第二個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273)，然後抓取每個檔案的影像屬性。 這個方法提供不佳的效能。
+The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) and then retrieves the image properties for each file. This approach provides poor performance.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -66,7 +66,7 @@ ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
 > Next i
 > ```
 
-第三個範例使用 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 來取得關於一組檔案的資訊。 這個方法提供比上一個範例更好的效能。
+The third example uses [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) to get info about a set of files. This approach provides much better performance than the previous example.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -123,17 +123,17 @@ ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
 > 
 > Next file
 > ```
-如果您在 Windows.Storage 物件上執行多項操作 (例如 `Windows.Storage.ApplicationData.Current.LocalFolder`)，請建立一個區域變數以參照該存放裝置來源，如此您就不必在每次存取該存放裝置時，重新建立中繼物件。
+If you're performing multiple operations on Windows.Storage objects such as `Windows.Storage.ApplicationData.Current.LocalFolder`, create a local variable to reference that storage source so that you don't recreate intermediate objects each time you access it.
 
-## C# 和 Visual Basic 中的資料流效能
+## Stream performance in C# and Visual Basic
 
-### UWP 與 .NET 資料流之間的緩衝
+### Buffering between UWP and .NET streams
 
-在許多情況下，您可能想要將 UWP 資料流 (例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) 轉換為 .NET 資料流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx))。 例如，當您在撰寫 UWP app 並希望使用 UWP 檔案系統搭配運行資料流的現有 .NET 程式碼時，這個做法很實用。 若要啟用這個功能，適用於 Windows 市集 app 的 .NET API 會提供延伸方法，讓您在 .NET 與 UWP 資料流類型之間進行轉換。 如需詳細資訊，請參閱 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
+There are many scenarios when you might want to convert a UWP stream (such as a [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) or [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) to a .NET stream ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). For example, this is useful when you are writing a UWP app and want to use existing .NET code that works on streams with the UWP file system. In order to enable this, .NET APIs for Windows Store apps provides extension methods that allow you to convert between .NET and UWP stream types. For more info, see [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
-將 UWP 資料流轉換為 .NET 資料流時，您實際上建立了基礎 UWP 資料流的配接器。 在某些情況下，會有與 UWP 資料流叫用方法相關的執行階段成本。 這可能會影響 app 的速度，尤其是在執行許多小型且經常性讀取或寫入作業的情況中更是如此。
+When you convert a UWP stream to a .NET stream, you effectively create an adapter for the underlying UWP stream. Under some circumstances, there is a runtime cost associated with invoking methods on UWP streams. This may affect the speed of your app, especially in scenarios where you perform many small, frequent read or write operations.
 
-為了加快 app 的速度，UWP 資料流配接器會包含一個資料緩衝區。 下列程式碼範例示範使用 UWP 資料流配接器搭配預設緩衝區大小的小型連續讀取。
+In order to speed up apps, the UWP stream adapters contain a data buffer. The following code sample demonstrates small consecutive reads using a UWP stream adapter with a default buffer size.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -186,13 +186,13 @@ ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
 > End Using
 > ```
 
-將 UWP 資料流轉換為 .NET 資料流的大多數情況中，都可以使用這個預設緩衝行為。 不過，在某些情況下，您可能需要調整緩衝行為以增加效能。
+This default buffering behavior is desirable in most scenarios where you convert a UWP stream to a .NET stream. However, in some scenarios you may want to tweak the buffering behavior in order to increase performance.
 
-### 使用大型資料集
+### Working with large data sets
 
-在轉譯或撰寫較大型資料集時，您可以在 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 及 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 延伸方法提供大型緩衝區大小，增加讀取或寫入傳送量。 這可以提供資料流配接器較大的內部緩衝區大小。 例如，將大型檔案的資料流傳送到 XML 剖析器時，剖析器可對資料流進行許多循序的小型讀取。 大型緩衝區可以減少對基礎 UWP 資料流的呼叫數，並提升效能。
+When reading or writing larger sets of data you may be able to increase your read or write throughput by providing a large buffer size to the [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx), and [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) extension methods. This gives the stream adapter a larger internal buffer size. For instance, when passing a stream that comes from a large file to an XML parser, the parser can make many sequential small reads from the stream. A large buffer can reduce the number of calls to the underlying UWP stream and boost performance.
 
-> **注意** 在設定大於約 80 KB 的緩衝區大小時，請務必謹慎，因為這可能導致記憶體回收行程堆積分散 (請參閱[改善記憶體回收效能](improve-garbage-collection-performance.md))。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
+> **Note**   You should be careful when setting a buffer size that is larger than approximately 80 KB, as this may cause fragmentation on the garbage collector heap (see [Improve garbage collection performance](improve-garbage-collection-performance.md)). The following code example creates a managed stream adapter with an 81,920 byte buffer.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -204,7 +204,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-[**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) 和 [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) 方法也會配置本機緩衝區，以便在資料流之間進行複製。 對於 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) 延伸方法，您可以覆寫預設的緩衝區大小，讓大型資料流複本獲得較佳效能。 下列程式碼範例會示範變更 **CopyToAsync** 呼叫的預設緩衝區大小。
+The [**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) and [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) methods also allocate a local buffer for copying between streams. As with the [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) extension method, you may be able to get better performance for large stream copies by overriding the default buffer size. The following code example demonstrates changing the default buffer size of a **CopyToAsync** call.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -224,20 +224,20 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 > Await managedStream.CopyToAsync(destination, bufferSize:=1024 * 1024)
 > ```
 
-此範例使用 1 MB 的緩衝區大小，這比先前建議的 80 KB 更大。 使用如此大的緩衝區，可增加超大型資料集 (亦即數百 MB) 的複製作業傳送量。 不過，此緩衝區是配置在大型物件堆積上，而且很可能會降低記憶體回收的效能。 您應該只在能顯著改善應用程式效能時，使用大型緩衝區大小。
+This example uses a buffer size of 1 MB, which is greater than the 80 KB previously recommended. Using such a large buffer can improve throughput of the copy operation for very large data sets (that is, several hundred megabytes). However, this buffer is allocated on the large object heap and could potentially degrade garbage collection performance. You should only use large buffer sizes if it will noticeably improve the performance of your app.
 
-當您同時使用大量資料流時，可能需要減少或消除緩衝區的記憶體負荷。 您可以指定較小的緩衝區，或將 *bufferSize* 參數設為 0，將該資料流配接器的緩衝完全關閉。 如果針對管理資料流執行大型讀取和寫入，仍可在沒有緩衝的情況下達到良好的傳送量效能。
+When you are working with a large number of streams simultaneously, you might want to reduce or eliminate the memory overhead of the buffer. You can specify a smaller buffer, or set the *bufferSize* parameter to 0 to turn off buffering entirely for that stream adapter. You can still achieve good throughput performance without buffering if you perform large reads and writes to the managed stream.
 
-### 執行延遲敏感作業
+### Performing latency-sensitive operations
 
-如果您需要低延遲的讀取和寫入，而且不希望在基礎 UWP 資料流讀取大型區塊時，也要避免緩衝。 例如，如果您使用網路通訊資料流，可能需要低延遲讀取和寫入。
+You might also want to avoid buffering if you want low-latency reads and writes and do not want to read in large blocks out of the underlying UWP stream. For example, you might want low-latency reads and writes if you are using the stream for network communications.
 
-在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 及 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。
-
-
+In a chat app you might use a stream over a network interface to send messages back in forth. In this case you want to send messages as soon as they are ready and not wait for the buffer to fill up. If you set the buffer size to 0 when calling the [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx), and [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) extension methods, then the resulting adapter will not allocate a buffer, and all calls will manipulate the underlying UWP stream directly.
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

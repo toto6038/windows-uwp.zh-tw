@@ -5,7 +5,7 @@ description: "在您的 app 中設定地理柵欄，並了解如何在前景和�
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
+ms.openlocfilehash: e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483
 
 ---
 
@@ -115,11 +115,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 您可以使用其中一個其他的建構函式，來進一步微調您的地理柵欄。 在下一個範例中，地理柵欄建構函式會指定這些額外的參數：
 
--   [ **MonitoredStates** ](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指出您希望收到通知的地理柵欄事件：進入已定義的區域、離開已定義的區域，或移除地理柵欄。
--   [ **SingleUse** ](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在符合所監控之地理柵欄的所有狀態之後，將會移除該地理柵欄。
--   [ **DwellTime** ](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指出使用者必須在已定義的區域內或外多久的時間，才會觸發進入/離開事件。
--   [ **StartTime** ](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指出開始監控地理柵欄的時間。
--   [ **Duration** ](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指出監控地理柵欄的期間。
+-   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指出您希望收到通知的地理柵欄事件：進入已定義的區域、離開已定義的區域，或移除地理柵欄。
+-   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在符合所監控之地理柵欄的所有狀態之後，將會移除該地理柵欄。
+-   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指出使用者必須在已定義的區域內或外多久的時間，才會觸發進入/離開事件。
+-   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指出開始監控地理柵欄的時間。
+-   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指出監控地理柵欄的期間。
 
 ```csharp
 // Set the fence ID.
@@ -457,7 +457,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## 針對您的 app 進行疑難排解
 
 
-必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 [設定]**** 應用程式中，確認已開啟下列**位置隱私權設定**：
+必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 \[設定\] 應用程式中，確認已開啟下列位置隱私權設定：
 
 -   已將 **此裝置的位置** 設為 **開啟** \(不適用於 Windows 10 行動裝置版\)
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
@@ -473,6 +473,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

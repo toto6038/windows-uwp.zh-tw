@@ -1,28 +1,28 @@
 ---
 author: mtoepke
-title: "遊戲的專案範本與工具"
-description: "說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。"
+title: Project templates and tools for games
+description: Shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
+ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
 ---
 
-# 遊戲的專案範本與工具
+# Project templates and tools for games
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本主題說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。
+This topic shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
 
-首先，您需要 Visual Studio。
+First, you need Visual Studio.
 
-## 取得 Visual Studio
+## Get Visual Studio
 
 
-[下載並安裝 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
+[Download and install Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -31,56 +31,56 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[DirectX 遊戲專案範本](user-interface.md)</p></td>
-<td align="left"><p>了解建立 UWP 和 DirectX 遊戲的範本。</p></td>
+<td align="left"><p>[DirectX game project templates](user-interface.md)</p></td>
+<td align="left"><p>Learn about the templates for creating a UWP and DirectX game.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[用來進行遊戲程式設計的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)</p></td>
-<td align="left"><p>Visual Studio 中提供的 DirectX 特定工具概觀。</p></td>
+<td align="left"><p>[Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md)</p></td>
+<td align="left"><p>An overview of DirectX specific tools available in Visual Studio.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[圖形診斷工具](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
-<td align="left"><p>了解如何取得與使用圖形診斷功能，包括 Visual Studio 中的圖形偵錯、圖形畫面格分析，以及 GPU 使用量。</p></td>
+<td align="left"><p>[Graphics diagnostics tools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
+<td align="left"><p>Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## 後續步驟
+## Next steps
 
 
-如果您要移植現有的遊戲，請參閱以下主題。
+If you are porting an existing game, see the following topics.
 
--   [從 OpenGL ES 2.0 移植到 DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [從 DirectX 9 移植到 UWP](porting-your-directx-9-game-to-windows-store.md)
+-   [Port from OpenGL ES 2.0 to DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [Port from DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)
 
-如果您要建立新的 DirectX 遊戲，請參閱以下主題。
+If you are creating a new DirectX game, see the following topics.
 
--   [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
--   [使用 C++ 和 DirectX 開發 Marble Maze (通用 Windows 平台遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

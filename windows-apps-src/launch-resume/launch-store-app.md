@@ -1,27 +1,27 @@
 ---
 author: TylerMSFT
-title: "啟動 Windows 市集 app"
-description: "本主題描述 ms-windows-store URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。"
+title: Launch the Windows Store app
+description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
+ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
 
 ---
 
-# 啟動 Windows 市集 app
+# Launch the Windows Store app
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主題描述 **ms-windows-store:** URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。
+This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the store.
 
-## ms-windows-store: URI 配置參考
+## ms-windows-store: URI scheme reference
 
 <table>
-<tr><th>說明</th><th></th><th>URI 配置</th></tr>
-<tr><td>啟動市集的首頁。</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>啟動市集中的頂層類別。<p>注意： 並非所有使用者皆可存取所有類別。</p>
+<tr><th>Description</th><th></th><th>URI scheme</th></tr>
+<tr><td>Launches the home page of the Store.</td><td /><td>ms-windows-store://home</td></tr>
+<tr><td>Launches a top-level vertical in the Store.<p>Note: Not all users have access to all verticals.</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -31,61 +31,61 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 </td>
 </tr>
 <tr>
-<td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>建議針對 Windows 10 的客戶使用市集識別碼，此識別碼將適用於所有作業系統版本，但仍支援先前執行它的方式 (例如︰PFN)。</p>
-<p>您可以在每個 app 的 [應用程式管理] 區段中，透過 [<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">應用程式身分識別</a>] 頁面上的 [Windows 開發人員中心] 儀表板找到這些值。</p>
+<td rowspan="4">Launches the product details page (PDP) for a product. <p>Store ID is recommended for customers on Windows 10, and will work on all OS versions, but the earlier ways of doing it (ex: PFN) are still supported.</p>
+<p>These values can be found in the Windows Dev Center dashboard on the <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">App identity</a> page in the App management section for each app.</p>
 </td>
 <td>
-市集識別碼 <p>(建議使用)</p>
+Store ID <p>(Recommended)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
 </td>
 </tr>
 <tr>
-<td>套件系列名稱 (PFN)</td>
+<td>Package Family Name (PFN)</td>
 <td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
-<td>產品識別碼 (Windows Phone 7.x/8.x)</td>
+<td>Product ID (Windows Phone 7.x/8.x)</td>
 <td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
 </tr>
 <tr>
-<td>產品識別碼 (Windows 8.x)</td>
+<td>Product ID (Windows 8.x)</td>
 <td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117
 </td>
 </tr>
 <tr>
-<td rowspan="4">啟動產品的撰寫評論體驗。</td>
-<td>市集識別碼 <p>(建議使用)</p></td>
+<td rowspan="4">Launches the write a review experience for a product.</td>
+<td>Store ID <p>(Recommended)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>
-<td>套件系列名稱 (PFN)</td>
+<td>Package Family Name (PFN)</td>
 <td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
-<td>產品識別碼 (Windows Phone 7.x/8.x)</td>
+<td>Product ID (Windows Phone 7.x/8.x)</td>
 <td>ms-windows-store://reviewapp/?AppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
 </tr>
 <tr>
-<td>產品識別碼 (Windows 8.x)</td>
+<td>Product ID (Windows 8.x)</td>
 <td>ms-windows-store://review/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117 </td>
 </tr>
 <tr>
-<td>啟動搜尋與副檔名相關聯之產品的作業。 </td>
+<td>Launches a search for products associated with a file extension. </td>
 <td />
 <td>ms-windows-store://assoc/?FileExt=pdf
 </td>
 </tr>
 <tr>
-<td>啟動搜尋與通訊協定相關聯之產品的作業。</td>
+<td>Launches a search for products associated with a protocol.</td>
 <td />
 <td>ms-windows-store://assoc/?Protocol=ms-word </td>
 </tr>
 <tr>
-<td>啟動搜尋與一或多個標籤相關聯之產品的作業。 標籤應以逗號分隔。
+<td>Launches a search for products associated with one or more tags. Tags should be separated by commas.
 </td>
 <td />
 <td>
@@ -95,13 +95,13 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 </tr>
 <tr>
 <td>
-啟動指定查詢的搜尋。 在查詢中可使用空格。
+Launches a search for the specified query. Spaces in the query are allowed.
 </td>
 <td />
 <td>ms-windows-store://search/?query=OneNote </td>
 </tr>
 <tr>
-<td>啟動對類別中的產品進行搜尋的作業。</td>
+<td>Launches a search for products in a category.</td>
 <td />
 <td>
 <p>ms-windows-store://browse/?type=Apps&amp;cat=Productivity</p>
@@ -109,18 +109,18 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 </td>
 </tr>
 <tr>
-<td>啟動從指定的發行者搜尋產品的作業。 在名稱中可使用空格。
+<td>Launches a search for products from the specified publisher. Spaces in the name are allowed.
 </td>
 <td />
 <td>ms-windows-store://publisher/?name=Microsoft Corporation
 </td>
 </tr>
-<tr><td>啟動下載和更新頁面。</td>
+<tr><td>Launches the downloads and updates page.</td>
 <td />
 <td>ms-windows-store://downloadsandupdates </td>
 </tr>
 <tr>
-<td>啟動市集設定頁面。</td>
+<td>Launches the Store settings page.</td>
 <td />
 <td>ms-windows-store://settings </td>
 </tr>
@@ -132,6 +132,6 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

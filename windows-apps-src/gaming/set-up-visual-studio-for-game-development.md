@@ -1,88 +1,88 @@
 ---
 author: mtoepke
-title: "用來進行遊戲程式設計的 Visual Studio 工具"
-description: "Visual Studio 中提供的 DirectX 特定工具概觀。"
+title: Visual Studio tools for game programming
+description: An overview of DirectX specific tools available in Visual Studio.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
+ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 
 ---
 
-# 用來進行遊戲程式設計的 Visual Studio 工具
+# Visual Studio tools for game programming
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   [從範本建立 DirectX 遊戲專案](user-interface.md)
--   適用於 DirectX 遊戲程式設計的 Visual Studio 工具
-
-
-如果您使用 Visual Studio Ultimate 來開發 DirectX app，則有額外工具可用來建立、編輯、預覽及匯出影像、模型及著色器資源。 同時還有工具可讓您在建置期間用來轉換資源和偵錯 DirectX 圖形程式碼。
-
-本主題將提供這些圖形工具的概觀。
-
-## 影像編輯器
+-   [Create a DirectX game project from a template](user-interface.md)
+-   Visual Studio tools for DirectX game programming
 
 
-使用影像編輯器來利用 DirectX 所使用的豐富紋理與影像格式。 影像編輯器支援下列格式：
+If you use Visual Studio Ultimate to develop DirectX apps, there are additional tools available for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code.
+
+This topic gives an overview of these graphics tools.
+
+## Image Editor
+
+
+Use the Image Editor to work with the kinds of rich texture and image formats that DirectX uses. The Image Editor supports the following formats.
 
 -   .png
--   .jpg、.jpeg、.jpe、.jfif
+-   .jpg, .jpeg, .jpe, .jfif
 -   .dds
 -   .gif
 -   .bmp
 -   .dib
--   .tif、.tiff
+-   .tif, .tiff
 -   .tga
 
-建立[組建自訂檔](#custom)，在建置期間將這些檔案新增到 .dds 檔案。
+Create [build customization files](#custom) to convert these to .dds files at build time.
 
-如需詳細資訊，請參閱[使用紋理與影像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
+For more information, see [Working with Textures and Images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **注意** 影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **Note**  The Image Editor is not intended to be a replacement for a full feature image editing app, but is appropriate for many simple viewing and editing scenarios.
 
  
 
-## 模型編輯器
+## Model Editor
 
 
-您可以使用模型編輯器，從頭開始建立基本的 3D 模型，或者從功能完整的 3D 模型工具中檢視和修改更複雜的 3D 模型。 模型編輯器支援數個在 DirectX 應用程式開發時使用的 3D 模型格式。 您可以建立[組建自訂檔](#custom)，在建置期間將這些檔案轉換成 .cmo 檔案。
+You can use the Model Editor to create basic 3D models from scratch, or to view and modify more-complex 3D models from full-featured 3D modeling tools. The Model Editor supports several 3D model formats that are used in DirectX app development. You can create [build customization files](#custom) to convert these to .cmo files at build time.
 
 -   .fbx
 -   .dae
 -   .obj
 
-以下為編輯器中已套用光源的模型螢幕擷取畫面。
+Here's a screenshot of a model in the editor with lighting applied.
 
-![茶壺](images/modeleditor.png)
+![teapot](images/modeleditor.png)
 
-如需詳細資訊，請參閱[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
+For more information, see [Working with 3-D Models](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **注意** 模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **Note**  The Model Editor is not intended to be a replacement for a full feature model editing app, but is appropriate for many simple viewing and editing scenarios.
 
  
 
-## 著色器設計工具
+## Shader Designer
 
 
-即使您不了解 HLSL 程式設計，也可以使用著色器設計工具為您的遊戲或應用程式建立自訂的視覺效果。
+Use the Shader Designer to create custom visual effects for your game or app even if you don't know HLSL programming.
 
-您以視覺化方式建立著色器來做為圖形。 每個節點都會根據該操作顯示輸出的預覽。 這裡提供的範例會使用球體預覽來套用 Lambert 光源。
+You create a shader visually as a graph. Each node displays a preview of the output up to that operation. Here's an example that applies Lambert lighting with a sphere preview.
 
-![視覺著色器圖形](images/shaderdesigner.png)
+![visual shader graph](images/shaderdesigner.png)
 
-使用著色器編輯器，以 .dgsl 格式來設計、編輯及儲存著色器。 它也會匯出下列格式：
+Use the Shader Editor to design, edit, and save shaders in the .dgsl format. It also exports the following formats.
 
--   .hlsl (原始碼)
--   .cso (位元組程式碼)
--   .h (HLSL 位元組程式碼陣列)
+-   .hlsl (source code)
+-   .cso (bytecode)
+-   .h (HLSL bytecode array)
 
-建立[組建自訂檔](#custom)，以在建置期間將這其中的所有格式轉換成 .cso 檔案。
+Create [build customization files](#custom) to convert any of these formats to .cso files at build time.
 
-以下為著色器編輯器所匯出的部分 HLSL 程式碼。 這只是 Lambert 光源節點的程式碼。
+Here is a portion of HLSL code that is exported by the Shader Editor. This is only the code for the Lambert lighting node.
 
 ```hlsl
 //
@@ -106,52 +106,52 @@ float3 LambertLighting(
 }
 ```
 
-如需相關資訊，請參閱[使用著色器](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)。
+For more information, see [Working with Shaders](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
 
-## 適用於 3D 資產的組建自訂
-
-
-您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
-
-若要新增組建自訂，您可以在 [方案總管]**** 中以滑鼠右鍵按一下專案，然後選取 [組建自訂]****。 您可以將下列組建自訂類型新增到專案。
-
--   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
--   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
--   著色器內容管線會從 Visual Studio 著色器編輯器中取得視覺著色器圖形 (.dgsl)，並輸出編譯過的著色器輸出 (.cso) 檔案。
-
-如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
-
-## 偵錯 DirectX 圖形
+## Build customizations for 3D assets
 
 
-Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸如下列項目的偵錯：
+You can add build customizations to your project so that Visual Studio converts resources to usable formats. After that, you can load the assets into your app and use them by creating and filling DirectX resources just like you would in any other DirectX app.
 
--   圖形管線。
--   事件呼叫堆疊。
--   物件表格。
--   裝置狀態。
--   著色器錯誤。
--   未初始化或不正確的常數緩衝區與參數。
--   DirectX 版本相容性。
--   有限的 Direct2D 支援。
--   作業系統與 SDK 需求。
+To add a build customization, you right-click on the project in the **Solution Explorer** and select **Build Customizations...**. You can add the following types of build customizations to your project.
 
-如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+-   Image Content Pipeline takes image files as input and outputs DirectDraw Surface (.dds) files.
+-   Mesh Content Pipeline takes mesh files (such as .fbx) and outputs .cmo mesh files.
+-   Shader Content Pipeline takes Visual Shader Graph (.dgsl) from the Visual Studio Shader Editor and outputs a Compiled Shader Output (.cso) file.
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+For more information, see [Using 3-D Assets in Your Game or App](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
 
- 
+## Debugging DirectX graphics
+
+
+Visual Studio provides graphics-specific debugging tools. Use these tools to debug things like:
+
+-   The graphics pipeline.
+-   The event call stack.
+-   The object table.
+-   The device state.
+-   Shader bugs.
+-   Uninitialized or incorrect constant buffers and parameters.
+-   DirectX version compatibility.
+-   Limited Direct2D support.
+-   Operating system and SDK requirements.
+
+For more information, see [Debugging DirectX Graphics](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

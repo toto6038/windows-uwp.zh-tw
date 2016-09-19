@@ -4,8 +4,8 @@ ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "ListView 和 GridView 資料虛擬化"
 description: "透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。"
 translationtype: Human Translation
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
+ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 ---
 # ListView 和 GridView 資料虛擬化
@@ -63,7 +63,7 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 -   當要求項目時
     -   如果您可在記憶體中使用，則將它傳回。
     -   如果您沒有，則傳回 Null 或預留位置項目。
-    -   使用要求項目 (或從 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的範圍資訊) 以了解所需的項目，並以非同步方式從後端擷取項目的資料。 在抓取資料之後，會透過 [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知，這樣一來，項目控制項就會知道有新的項目。
+    -   使用要求項目 (或從 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的範圍資訊) 以了解所需的項目，並以非同步方式從後端擷取項目的資料。 擷取資料、透過 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知之後，項目控制項就能知道新的項目。
 -   (選擇性) 當項目控制項的檢視區變更時，透過實作 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)，找出需要您的資料來源的哪些項目。
 
 除此之外，載入資料項目的時機、載入多少，以及在記憶體中保留哪些項目的策略，取決於您的 app。 要記住的一些一般考量：
@@ -83,6 +83,6 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

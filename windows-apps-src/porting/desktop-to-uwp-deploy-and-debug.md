@@ -1,63 +1,63 @@
 ---
 author: awkoren
-Description: "使用桌面轉換擴充功能，部署和偵錯從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) 應用程式。"
+Description: Deploy and debug a Universal Windows Platform (UWP) app converted from a Windows desktop application (Win32, WPF, and Windows Forms) by using the Desktop Conversion extensions.
 Search.Product: eADQiWindows 10XVcnh
-title: "部署和偵錯從 Windows 傳統型應用程式轉換而來的通用 Windows 平台 (UWP) 應用程式"
+title: Deploy and debug a Universal Windows Platform (UWP) app converted from a Windows desktop application
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 75e176f17845bdbd618c6ca63fbbb5765bef54fb
 
 ---
 
-# 部署和偵錯已轉換的 UWP App (Project Centennial)
+# Deploy and debug your converted UWP app
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-本主題包含的資訊可協助您在轉換應用程式之後順利部署和偵錯該應用程式。 此外，如果您想探究桌面轉換擴充功能的一些本質，則本主題非常適合您。
+This topic contains info to help you be successful deploying and debugging your app after converting it. Also, if you're curious about some of the internals of the Desktop Conversion extensions, then this topic is for you.
 
-## 偵錯已轉換的 UWP 應用程式
+## Debug your converted UWP app
 
-您有兩個主要選項可使用 Visual Studio 來偵錯已轉換的應用程式。
+You have a few options for debugging your converted app.
 
-### 附加至處理序
+### Attach to process
 
-當您「以系統管理員身分」執行 Microsoft Visual Studio 時，將可針對已轉換的應用程式專案使用__開始偵錯__和__啟動但不偵錯__命令，但是已啟動的應用程式將會以[中級整合](https://msdn.microsoft.com/library/bb625963)來執行。 也就是說，它將不__具提高的權限。 若要為啟動的應用程式授與系統管理員權限，首先您必須透過捷徑或磚「以系統管理員身分」來啟動。 當應用程式正在執行時，從「以系統管理員身分」執行的 Microsoft Visual Studio 執行個體中叫用__附加至處理序__，然後從對話方塊中選取應用程式的處理序。
+When Microsoft Visual Studio is running "as administrator", the __Start Debugging__ and __Start Without Debugging__ commands will work for a converted app's project, but the launched app will run with [medium integrity level](https://msdn.microsoft.com/library/bb625963). That is, it will _not_ have elevated privileges. To confer administrator privileges onto the launched app, first you need to launch the "as administrator" via a shortcut or a tile. Once the app is running, from an instance of Microsoft Visual Studio running "as administrator", invoke the __Attach to Process__ and select your app's process from the dialog.
 
-### F5 偵錯
+### F5 debug
 
-Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式時所做的任何更新，自動複製到在應用程式安裝程式上執行轉換器時所建立的 AppX 套件。 在設定封裝專案之後，您現在也可以使用 F5，直接對 AppX 套件進行偵錯。 
+Visual Studio now supports a new packaging project that enables you to automatically copy any updates you make when you build your application into the AppX package created when you ran the converter on your application’s installer. Once you configure the packaging projectyou can now also use F5 to debug directly into the AppX package. 
 
-以下是如何開始使用的方式： 
+Here's how to get started: 
 
-1. 首先，確認您已設定為可使用 Centennial。 如需相關指示，請參閱[傳統型應用程式轉換器預覽 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)。 
+1. First, ensure you're set up to use the Desktop App Converter. For instructions, see [Desktop App Converter Preview](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter). 
 
-2. 針對您的 Win32 應用程式依序執行轉換器和安裝程式。 轉換器會擷取配置以及對登錄所做的任何變更，並輸出含有資訊清單與 registery.dat 的 Appx 來將登錄虛擬化︰
+2. Run the converter and then installer for your Win32 application. The converter captures the layout, and any changes made to the registry and outputs an Appx with manifest and registery.dat to virtualize the registry:
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
-3. 安裝和啟動 [Visual Studio "15" Preview 2](https://www.visualstudio.com/downloads/visual-studio-next-downloads-vs.aspx)。 
+3. Install and launch [Visual Studio "15" Preview 2](https://www.visualstudio.com/downloads/visual-studio-next-downloads-vs.aspx). 
 
-4. 從 [Visual Studio 組件庫](http://go.microsoft.com/fwlink/?LinkId=797871)安裝 Desktop to UWP Packaging VSIX 專案。 
+4. Install the Desktop to UWP Packaging VSIX project from the [Visual Studio Gallery](http://go.microsoft.com/fwlink/?LinkId=797871). 
 
-5. 開啟已在 Visual Studio 中轉換的對應 Win32 方案。
+5. Open the corresponding Win32 solution that was converted in Visual Studio.
  
-6. 在方案上按一下滑鼠右鍵，然後選擇 [加入新的專案]，將新的封裝專案加入至您的方案。 接著在 [安裝和部署] 下方選取 [Desktop to UWP Packaging Project]：
+6. Add the new packaging project to your solution by right clicking on the solution and choosing "Add New Project". Then pick the Desktop to UWP Packaging Project under Setup and Deployment:
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    產生的專案將加入至您的方案︰
+    The resulting project will be added to your solution:
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
-    在封裝專案中，AppXFileList 會在 AppX 配置中提供檔案對應。 參考一開始是空的，但是應該手動設定為 .exe 專案，以做為建置順序。 
+    In the Packaging project, the AppXFileList provides a mapping of files into the AppX layout. References begins empty, but should be manually set to the .exe project for build ordering. 
 
-7. DesktopToUWPPackaging 專案有一個屬性頁面，可讓您設定 AppX 套件根目錄以及要執行哪些磚︰
+7. The DesktopToUWPPackaging project has a property page which allows you to configure the AppX package root and which tile to execute:
 
     ![alt](images/desktop-to-uwp/debug-4.png)
 
-    將 PackageLayout 設定為由轉換器所建立之 AppX 的根位置 (上圖)。 然後選取要執行的磚。
+    Set the PackageLayout to the root location of the AppX that was created by the converter (above). Then pick which tile to execute.
 
-8.  開啟並編輯 AppXFileList.xml。 這個檔案會定義如何將 Win32 偵錯組建的輸出複製到轉換器建置的 AppX 配置。 根據預設，我們在檔案中有預留位置來使用範例標記與註解︰
+8.  Open and edit the AppXFileList.xml. This file defines how to copy the output of the Win32 debug build into the AppX layout  the converter built. By default, we have a placeholder in the file with an example tag and comment:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -73,7 +73,7 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
     </Project>
     ```
 
-    以下是建立對應的範例。 在此案例中，我們會將 .exe 和 .dll 從 Win32 組建位置複製到套件配置位置。 
+    Below is an example of creating the mapping. In this case, we copy the .exe and .dll from the Win32 build location into the package layout location. 
 
     ```XML
     <?xml version="1.0" encoding=utf-8"?>
@@ -92,9 +92,9 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
     </Project>
     ```
 
-    檔案的定義如下： 
+    The file is defined as follows: 
 
-    首先，我們定義 *MyProjectOutputPath* 指向建置 Win32 專案的位置︰
+    First, we define *MyProjectOutputPath* to point at the location where the Win32 project is building to:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -104,7 +104,7 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
         </PropertyGroup>
     ```
 
-    接著，每個 *LayoutFile* 會指定要從 Win32 組建位置複製到 Appx 套件配置的檔案。 在這個案例中，會依序複製 .exe 和 .dll。 
+    Then, each *LayoutFile* specifies a file to copy from the Win32 build location to the Appx Package layout. In this case first a .exe, then a .dll are copied. 
 
     ```XML
         <ItemGroup>
@@ -118,15 +118,15 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
     </Project>
     ```
 
-9. 將封裝專案設定為啟始專案。 這會將 Win32 檔案複製到 AppX，然後在建置並執行專案時啟動偵錯工具。  
+9. Set the packaging project the start-up project. This will copy the Win32 files into the AppX and then launch the debugger when the project is built and run.  
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. 最後，您現在可以在 Win32 程式碼中設定中斷點，並按 F5 來啟動偵錯工具。 它會複製您在 AppX 套件中對 Win32 應用程式所做的任何更新，並可讓您直接從 Visual Studio 偵錯。
+10. Finally, you can now set a breakpoint in the Win32 code and hit F5 to launch the debugger. It will copy any updates you have made to your Win32 application across to the AppX package and allow you to debug directly from within Visual Studio.
 
-11. 如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11. If you update your application, you'll need to use MakeAppX to repackage your app again. For more information, see [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
-如果您有多個組建組態 (例如針對發行和偵錯)，就可以將下列項目新增至 AppXFileList.xml 檔案，從不同位置複製 Win32 組建︰
+If you have multiple build configurations (for instance for release and debug), you can add the following to the AppXFileList.xml file to copy the Win32 build from different locations:
 
 ```XML
 <PropertyGroup>
@@ -136,9 +136,9 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
 </PropertyGroup>
 ```
 
-如果您將應用程式更新到 UWP，但仍想要建置它以使其適用於 Win32，您也可以使用條件式編譯來啟用特定的程式碼路徑。 
+You can also use conditional compilation to enable particular code paths if you update your application to UWP but also still want to build it for Win32. 
 
-1.  在下列範例中，程式碼將只會針對 DesktopUWP 進行編譯，而且將使用 WinRT API 來顯示磚。 
+1.  In the example below the code will only be compiled for DesktopUWP and will show a tile using the WinRT API. 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -152,50 +152,82 @@ Visual Studio 現在支援新的封裝專案，可讓您將在建置應用程式
     }
     ```
 
-2.  您可以使用 Configuration Manager 來新增新的組建組態︰
+2.  You can use Configuration Manager to add the new build configuration:
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  然後在專案屬性下方，新增對條件式編譯符號的支援︰
+3.  Then under the project properties add support for conditional compilation symbols:
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  如果您想要將建置目標設為您新增的 UWP API，您現在可以將組建目標切換為 DesktopUWP。
+4.  You can now toggle the build target to DesktopUWP if you want to build to target the UWP API you added.
 
-## 部署已轉換的 UWP 應用程式
+### PLMDebug 
 
-若要在開發期間部署您的應用程式，請執行下列 PowerShell Cmdlet： 
+Visual Studio F5 and Attach to Process are useful for debugging your app while it runs. In some cases, however, you may want finer-grained control over the debugging process, including the ability to debug your app before it starts. In these more advanced scenarios, use [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396). This tool allows you to debug your converted app using the Windows debugger and offers full control over app lifecycle including suspending, resuming, and termination. 
+
+PLMDebug is included with the Windows SDK. For more information, see [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396). 
+
+### Running another processes inside the full trust container 
+
+You can invoke custom processes inside the container of a specified app package. This can be useful for testing scenarios (for example, if you have a custom test harness and want to test output of the app). To do so, use the ```Invoke-CommandInDesktopPackage``` PowerShell cmdlet: 
+
+```CMD
+Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
+    <string>]  [<CommonParameters>]
+```
+
+## Deploy your converted UWP app
+
+There are 2 ways to deploy your converted app: loose file registration and deploying the appx package. 
+
+Loose file registration is useful for debugging purposes where the files are laid out on disk in a location you can easily access and update, and does not require signing or a cert.  
+
+Appx package deployment provides an easy means for deploying and sideloading the application across multiple machines, but requires the package to be signed and the cert trusted on the machine.
+
+### Loose file registration
+
+To deploy your app during development, run the following PowerShell cmdlet: 
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
-若要更新應用程式的 .exe 或.dll 檔案，只需使用新檔案來取代套件中現有的檔案、提高 AppxManifest.xml 的版本號碼，然後再次執行上述命令即可。
+To update your app's .exe or .dll files, simply replace the existing files in your package with the new ones, increase the version number in AppxManifest.xml, and then run the above command again.
 
-請注意下列事項： 
+Note the following: 
 
-您必須將已轉換應用程式安裝所在的任意磁碟機格式設定為 NTFS 格式。
+* Any drive that you install your converted app on to must be formatted to NTFS format.
 
-已轉換的應用程式一律會以互動式使用者身分執行。 這對於其資訊清單會指定 __requireAdministrator__ 執行層級的 .NET 應用程式而言有特別的意義。 如果互動使用者具有系統管理員權限，則會在_每次啟動應用程式_時顯示 UAC 提示。 對於標準使用者來說，應用程式將無法啟動。
+* A converted app always runs as the interactive user.
 
-如果您嘗試在還沒有匯入您所建立之憑證的電腦上執行 Add-AppxPackage Cmdlet，將會收到錯誤。
+### Appx package deployment 
 
-部署您的 app 之前，您必須以憑證簽署它。 如需建立憑證的詳細資訊，請參閱[簽署您的 .Appx 套件](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)。 
+Before you deploy your app, you'll need to sign it with a certificate. For information on creating a certificate, see [Sign your .Appx Package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx). 
 
-以下是如何匯入您先前建立之憑證的方式。 您可以直接安裝它，或者可以從您已簽署的 appx 中安裝它，就像客戶會做的一樣。
-1.  在 [檔案總管] 中，以滑鼠右鍵按一下您使用測試憑證簽署的 appx，然後從操作功能表選擇 [屬性]****。
-2.  按一下或點選 [數位簽章]**** 索引標籤。
-3.  按一下或點選憑證，然後選擇 [詳細資料]****。
-4.  按一下或點選 [檢視憑證]****。
-5.  按一下或點選 [安裝憑證]****。
-6.  在 [存放區位置]**** 群組中，選取 [本機電腦]****。
-7.  按一下或點選 [下一步]**** 和 [確定]****，以確認 UAC 對話方塊。
-8.  在 [憑證匯入精靈] 的下一個畫面中，將選取的選項變更為 [將所有憑證放入以下的存放區]****。
-9.  按一下或點選 [瀏覽]****。 在 [選取憑證存放區] 視窗中，向下捲動並選取 [受信任的人]****，然後按一下或點選 [確定]****。
-10. 按一下或點選 [下一步]****。 新畫面隨即顯示。 按一下或點選 [完成]****。
-11. 應該會顯示確認對話方塊。 出現時，按一下 [確定]****。 如果出現其他對話方塊，指出憑證發生問題，您可能需要執行一些憑證疑難排解。
+Here's how you import a certificate that you created previously. You can import the cert directly with CERTUTIL, or you can install it from an appx that you've signed, like the customer will. 
 
-若要使 Windows 信任憑證，憑證必須位於 [憑證 (本機電腦)] &gt; [信任的根憑證授權單位] &gt; [憑證]**** 節點或 [憑證 (本機電腦)] &gt; [受信任的人] &gt; [憑證]**** 節點上。 只有這兩個位置中的憑證可以驗證本機電腦內容中的憑證信任。 否則，會出現類似下列字串的錯誤訊息︰
+To install cert via CERTUTIL, run the following command from an administrator command prompt:
+
+```cmd
+Certutil -addStore TrustedPeople <testcert.cer>
+```
+
+To import the cert from the appx like a customer would:
+
+1.  In File Explorer, right click an appx that you've signed with a test cert and choose **Properties** from the context menu.
+2.  Click or tap the **Digital Signatures** tab.
+3.  Click or tap on the certificate and choose **Details**.
+4.  Click or tap **View Certificate**.
+5.  Click or tap **Install Certificate**.
+6.  In the **Store Location** group, select **Local Machine**.
+7.  Click or tap **Next** and **OK** to confirm the UAC dialog.
+8.  In the next screen of the Certificate Import Wizard, change the selected option to **Place all certificates in the following store**.
+9.  Click or tap **Browse**. In the Select Certificate Store window, scroll down and select **Trusted People** and click or tap **OK**.
+10. Click or tap **Next**. A new screen appears. Click or tap **Finish**.
+11. A confirmation dialog should appear. If so, click **OK**. If a different dialog indicates that there is a problem with the certificate, you may need to do some certificate troubleshooting.
+
+Note: For Windows to trust the certificate, the certificate must be located in either the **Certificates (Local Computer) > Trusted Root Certification Authorities > Certificates** node or the **Certificates (Local Computer) > Trusted People > Certificates** node. Only certificates in these two locations can validate the certificate trust in the context of the local machine. Otherwise, an error message that resembles the following string appears:
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -203,24 +235,51 @@ but terminated in a rootcertificate which is not trusted by the trust provider.
 in the app package must be trusted."
 ```
 
-### 幕後作業
+Now that the cert has been trusted, there are 2 ways you can install the package – through the powershell or just double-click on the appx package file to install it.  To install via powershell, run the following cmdlet:
 
-當您執行已轉換的應用程式時，您的 UWP 應用程式套件會從 \Program Files\WindowsApps\&lt;_套件名稱_&gt;\\&lt;_appname_&gt;.exe 啟動。 如果您查看該處，即會看見應用程式具有一份應用程式套件資訊清單 (名為 AppxManifest.xml)，其參考針對已轉換應用程式所使用的特殊 xml 命名空間。 該資訊清單檔案內部是一個 __&lt;EntryPoint&gt;__ 項目，它會參考完全信任的應用程式。 啟動該應用程式時，它不會在應用程式容器內執行，而是改為以使用者身分執行，就如其平常所做的一樣。
+```powershell
+Add-AppxPackage <MyApp>.appx
+```
 
-但應用程式會在特殊環境中執行，其中應用程式對於檔案系統和登錄所做的任何存取都會重新導向。 名為 Registry.dat 的檔案就是用來進行登錄重新導向。 它是真正的登錄區，因此您可以在 Windows 登錄編輯程式 (Regedit) 中檢視它。 請注意，此機制表示您無法使用登錄來進行處理序間通訊。 在任何情況下，登錄都不是設計來且不適合用於該做法。 當它隨附於檔案系統時，唯一要重新導向的就是 AppData 資料夾，而它會被重新導向到針對所有 UWP 應用程式儲存應用程式資料的相同位置。 這個位置稱為本機應用程式資料存放區，而您可以使用 [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) 屬性加以存取。 因此，已經在正確位置中植入您的程式碼來讀取和寫入應用程式資料，而您不需要做任何動作。 此外，您也可以直接寫入該處 檔案系統重新導向的其中一個好處是更簡潔的解除安裝體驗。
+## Behind the scenes
 
-在名為 VFS 的資料夾內，您將會看到包含您應用程式具有相依性之 DLL 的資料夾。 這些 DLL 會安裝到適用於您應用程式傳統桌面版本的系統資料夾。 但是，做為 UWP 應用程式，DLL 會在您應用程式的本機上。 如此一來，在安裝和解除安裝 UWP 應用程式時，就不會發生任何版本問題。
+When you run your converted app, your UWP app package is launched from \Program Files\WindowsApps\\&lt;_package name_&gt;\\&lt;_appname_&gt;.exe. If you look there, you'll see that your app has an app package manifest (named AppxManifest.xml), which references a special xml namespace that's used for converted apps. Inside that manifest file is an __&lt;EntryPoint&gt;__ element, which references a full-trust app. When that app is launched, it does not run inside an app container, but instead it runs as the user as it normally would.
 
-## 另請參閱
-[將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
+But the app runs in a special environment where any accesses that the app makes to the file system and to the Registry are redirected. The file named Registry.dat is used for Registry redirection. It's actually a Registry hive, so you can view it in the Windows Registry Editor (Regedit). Note, that this mechanism means that you can't use the Registry for inter-process communication. The Registry wasn't designed for, and is not well-suited to, that practice in any case. When it comes to the file system, the only thing redirected is the AppData folder, and it is redirected to the same location that app data is stored for all UWP apps. This location is known as the local app data store, and you access it by using the [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) property. This way, your code is already ported to read and write app data in the correct place without you doing anything. And you can also write there directly. One benefit of file system redirection is a cleaner uninstall experience.
 
-[傳統型應用程式轉換器預覽 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+Inside a folder named VFS, you will see folders that contain the DLLs that your app has dependencies on. These DLLs are installed into system folders for the classic desktop version of your app. But, as a UWP app, the DLLs are local to your app. This way, there are no versioning problems when UWP apps are installed and uninstalled.
 
-[將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+### Packaged VFS locations
 
-[GitHub 上的傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+The following table shows where files shipping as part of your package are overlayed on the system for the app. Your app will perceive these files to be in the listed system locations, when in fact they are in the redirected locations inside [Package Root]\VFS\. The FOLDERID locations are from the [**KNOWNFOLDERID**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx) constants.
+
+System Location | Redirected Location (Under [PackageRoot]\VFS\) | Valid on architectures
+ :---- | :---- | :---
+FOLDERID_SystemX86 | SystemX86 | x86, amd64 
+FOLDERID_System | SystemX64 | amd64 
+FOLDERID_ProgramFilesX86 | ProgramFilesX86 | x86, amd6 
+FOLDERID_ProgramFilesX64 | ProgramFilesX64 | amd64 
+FOLDERID_ProgramFilesCommonX86 | ProgramFilesCommonX86 | x86, amd64
+FOLDERID_ProgramFilesCommonX64 | ProgramFilesCommonX64 | amd64 
+FOLDERID_Windows | Windows | x86, amd64 
+FOLDERID_ProgramData | Common AppData | x86, amd64 
+FOLDERID_System\catroot | AppVSystem32Catroot | x86, amd64 
+FOLDERID_System\catroot2 | AppVSystem32Catroot2 | x86, amd64 
+FOLDERID_System\drivers\etc | AppVSystem32DriversEtc | x86, amd64 
+FOLDERID_System\driverstore | AppVSystem32Driverstore | x86, amd64 
+FOLDERID_System\logfiles | AppVSystem32Logfiles | x86, amd64 
+FOLDERID_System\spool | AppVSystem32Spool | x86, amd64 
+
+## See also
+[Convert your desktop application to a Universal Windows Platform (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
+
+[Desktop App Converter Preview](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+
+[Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+
+[Desktop app bridge to UWP code samples on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,50 +1,50 @@
 ---
-description: "本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。"
-title: "接收資料"
+description: This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app by using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
+title: Receive data
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
-ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
+ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
+ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 
 ---
 
-# 接收資料
+# Receive data
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
+This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app by using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
 
-## 將您的 app 宣告為分享目標
+## Declare your app as a share target
 
-當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 若要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
+The system displays a list of possible target apps when a user invokes Share. In order to appear on the list, your app needs to declare that it supports the Share contract. This lets the system know that your app is available to receive content.
 
-1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  開啟 [宣告]**** 索引標籤。
-3.  從 [可用宣告]**** 清單中選擇 [分享目標]****，然後按一下 [新增]****。
+1.  Open the manifest file. It should be called something like **package.appxmanifest**.
+2.  Open the **Declarations** tab.
+3.  Choose **Share Target** from the **Available Declarations** list, and then select **Add**.
 
-## 選擇檔案類型和格式
+## Choose file types and formats
 
-接下來，決定您要支援哪些檔案類型和資料格式。 分享 API 支援數種標準格式，例如文字、HTML 及點陣圖。 您也可以指定自訂的檔案類型和資料格式。 如果這樣做，請記住來源 app 必須知道這些類型和格式，否則它們就無法使用這些格式來分享資料。
+Next, decide what file types and data formats you support. The Share APIs support several standard formats, such as Text, HTML, and Bitmap. You can also specify custom file types and data formats. If you do, remember that source apps have to know what those types and formats are; otherwise, those apps can't use the formats to share data.
 
-只註冊您的 app 可以處理的格式。 當使用者叫用分享時，系統只會顯示能夠支援分享資料的目標 app。
+Only register for formats that your app can handle. Only target apps that support the data being shared appear when the user invokes Share.
 
-設定檔案類型：
+To set file types:
 
-1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  在 [宣告]**** 頁面的 [支援的檔案類型]**** 區段中，按一下 [加入新的]****。
-3.  輸入想要支援的副檔名。 例如，.docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 [SupportsAnyFileType]**** 方塊。
+1.  Open the manifest file. It should be called something like **package.appxmanifest**.
+2.  In the **Supported File Types** section of the **Declarations** page, select **Add New**.
+3.  Type the file name extension that you want to support, for example, ".docx." You need to include the period. If you want to support all file types, select the **SupportsAnyFileType** check box.
 
-設定資料格式：
+To set data formats:
 
-1.  開啟資訊清單檔案。
-2.  在 [宣告]**** 頁面的 [資料格式]**** 區段中，按一下 [加入新的]****。
-3.  輸入支援的資料格式名稱。 例如，「Text」。
+1.  Open the manifest file.
+2.  Open the **Data Formats** section of the **Declarations** page, and then select **Add New**.
+3.  Type the name of the data format you support, for example, "Text."
 
-## 處理分享啟用
+## Handle share activation
 
-當使用者選取您的 app 時 (通常是從分享 UI 中可用的目標 app 清單中選取)，會引發 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) 事件。 您的 app 必須處理此事件，才能處理使用者想要分享的資料。
+When a user selects your app (usually by selecting it from a list of available target apps in the share UI), an [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) event is raised. Your app needs to handle this event to process the data that the user wants to share.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -54,7 +54,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 } 
 ```
 
-使用者想要分享的資料包含在 [**ShareOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation) 物件中。 您可以使用此物件來檢查其包含的資料格式。
+The data that the user wants to share is contained in a [**ShareOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation) object. You can use this object to check the format of the data it contains.
 
 ```cs
 ShareOperation shareOperation = args.ShareOperation;
@@ -68,43 +68,43 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 } 
 ```
 
-## 報告分享狀態
+## Report sharing status
 
-在某些情形下，您的 app 需要時間來處理想要分享的資料。 範例包括使用者分享檔案或影像的集合。 這些項目比簡單文字字串更大，所以需要更長的處理時間。
+In some cases, it can take time for your app to process the data it wants to share. Examples include users sharing collections of files or images. These items are larger than a simple text string, so they take longer to process.
 
 ```cs
 shareOperation.ReportDataRetreived(); 
 ```
 
-呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 後，不要預期使用者與您的 App 進行更多互動。 因此，除非使用者可以關閉 App，否則不應該呼叫它。
+After calling [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted), don't expect any more user interaction with your app. As a result, you shouldn't call it unless your app is at a point where it can be dismissed by the user.
 
-使用延伸分享時，使用者有可能會在 App 從 DataPackage 物件取得所有資料前，就關閉來源 App。 因此，建議您讓系統知道 app 已取得所需的資料。 如此一來，系統就可以視需要暫停或終止來源 app。
+With an extended share, it's possible that the user might dismiss the source app before your app has all the data from the DataPackage object. As a result, we recommend that you let the system know when your app has acquired the data it needs. This way, the system can suspend or terminate the source app as necessary.
 
 ```cs
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-如果出現錯誤，可以呼叫 [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) 傳送錯誤訊息給系統。 當使用者檢查分享狀態時就會看到這個訊息。 在這個時候，您的 app 會關閉並結束分享。 使用者需要再次啟動並分享內容到您的 app。 根據您的情況，您可以決定特定錯誤沒有嚴重到需要結束分享作業。 在這個情況中，您可以選擇不要呼叫 **ReportError** 而繼續分享。
+If something goes wrong, call [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) to send an error message to the system. The user will see the message when they check on the status of the share. At that point, your app is shut down and the share is ended. The user will need to start again to share the content to your app. Depending on your scenario, you may decide that a particular error isn't serious enough to end the share operation. In that case, you can choose to not call **ReportError** and to continue with the share.
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
-最後，當您的 app 順利處理完分享內容時，應該呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 讓系統知道。
+Finally, when your app has successfully processed the shared content, you should call [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) to let the system know.
 
 ```cs
 shareOperation.ReportCompleted();
 ```
 
-當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者按一下 [分享] 按鈕後才會呼叫 **ReportStarted**。
+When you use these methods, you usually call them in the order just described, and you don't call them more than once. However, there are times when a target app can call [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) before [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). For example, the app might retrieve the data as part of a task in the activation handler, but not call **ReportStarted** until the user selects a **Share** button.
 
-## 如果分享成功，則傳回 QuickLink
+## Return a QuickLink if sharing was successful
 
-當使用者選取您的 app 來接收內容時，建議您建立一個 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 就像捷徑，可讓使用者方便與您的應用程式分享資訊。 例如，您可以建立一個 **QuickLink**，開啟已預先設定朋友電子郵件地址的新電子郵件訊息。
+When a user selects your app to receive content, we recommend that you create a [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). A **QuickLink** is like a shortcut that makes it easier for users to share information with your app. For example, you could create a **QuickLink** that opens a new mail message pre-configured with a friend's email address.
 
-**QuickLink** 必須包含標題、圖示以及識別碼。 當使用者點選分享常用鍵時，就會出現標題 (如「Email Mom」) 和圖示。 識別碼是您的 app 用來存取任何自訂資訊的物件，例如電子郵件地址或登入認證。 當您的 app 建立 **QuickLink** 時，app 會呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 來將 **QuickLink** 傳回系統。
+A **QuickLink** must have a title, an icon, and an Id. The title (like "Email Mom") and icon appear when the user taps the Share charm. The Id is what your app uses to access any custom information, such as an email address or login credentials. When your app creates a **QuickLink**, the app returns the **QuickLink** to the system by calling [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
 
-**QuickLink** 實際上不會儲存資料。 而是會含有一個識別碼，在選取時傳送到您的 app。 您的 app 要負責儲存 **QuickLink** 的識別碼及對應的使用者資料。 當使用者點選 **QuickLink** 時，您可以透過 [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) 屬性取得它的 ID。
+A **QuickLink** does not actually store data. Instead, it contains an identifier that, when selected, is sent to your app. Your app is responsible for storing the Id of the **QuickLink** and the corresponding user data. When the user taps the **QuickLink**, you can get its Id through the [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) property.
 
 ```cs
 async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, string quickLinkTitle)
@@ -128,9 +128,10 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## 另請參閱 
+## See also 
 
-* [分享資料](share-data.md)
+* [App-to-app communication](index.md)
+* [Share data](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [ReportError](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
@@ -141,6 +142,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

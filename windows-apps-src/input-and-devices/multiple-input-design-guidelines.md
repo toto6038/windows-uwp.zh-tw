@@ -1,50 +1,50 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。"
-title: "多重輸入設計指導方針"
+Description: Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
+title: Multiple inputs design guidelines
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
+ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 
 ---
 
-# 多重輸入
+# Multiple inputs
 
-就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
-
-
-為了儘可能配合多個使用者和裝置，我們建議將 app 設計為可以使用各種輸入類型 (手勢、語音、觸控、觸控板、滑鼠與鍵盤)。 這樣會最大化彈性、可用性及可存取性。
-
-若要開始，請考慮您的 app 處理輸入的各種案例。 嘗試在您的 app 保持一致，並記住平台控制項提供多個輸入類型的內建支援。
-
--   使用者可以透過多種輸入裝置與應用程式互動嗎？
--   所有輸入法是否隨時受到支援？ 使用特定控制項？ 在特定時間或情況？
--   某個輸入法的優先順序是否較高？
-
-## 單一 (或專屬) 模式互動
+Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
 
 
-使用單一模式互動，支援多個輸入類型，但是只有一個可以用於每個動作。 例如，命令的語音辨識及進行瀏覽的手勢；或根據鄰近性使用觸控或手勢的文字輸入。
+To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
 
-## 多樣式互動
+To begin, consider the various scenarios in which your app handles input. Try to be consistent throughout your app, and remember that the platform controls provide built-in support for multiple input types.
 
+-   Can users interact with the application through multiple input devices?
+-   Are all input methods supported at all times? With certain controls? At specific times or circumstances?
+-   Does one input method take priority?
 
-使用多樣式互動，會使用序列中的多個輸入法完成一個動作。
-
-語音 + 手勢  
-使用者指向產品，然後說出「新增到購物車」。
-
-語音 + 觸控  
-使用者以長按的方式選取相片，然後說「傳送相片」。
+## Single (or exclusive)-mode interactions
 
 
+With single-mode interactions, multiple input types are supported, but only one can be used per action. For example, speech recognition for commands, and gestures for navigation; or, text entry using touch or gestures, depending on proximity.
+
+## Multimodal interactions
+
+
+With multimodal interactions, multiple input methods in sequence are used to complete a single action.
+
+Speech + gesture  
+The user points to a product, and then says “Add to cart.”
+
+Speech + touch  
+The user selects a photo using press and hold, and then says “Send photo.”
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

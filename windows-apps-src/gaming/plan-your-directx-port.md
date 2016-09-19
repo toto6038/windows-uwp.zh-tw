@@ -1,65 +1,65 @@
 ---
 author: mtoepke
-title: "計劃 DirectX 移植"
-description: "計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。"
+title: Plan your DirectX port
+description: Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)-- upgrade your graphics code, and put your game in the Windows Runtime environment.
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 ---
 
-# 計劃 DirectX 移植
+# Plan your DirectX port
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   計劃 DirectX 移植
--   [從 Direct3D 9 到 Direct3D 11 的重要變更](understand-direct3d-11-1-concepts.md)
--   [功能對應](feature-mapping.md)
-
-
-計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案：升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。
-
-## 計劃移植圖形程式碼
+-   Plan your DirectX port
+-   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Feature mapping](feature-mapping.md)
 
 
-在您開始將遊戲移植到 UWP 之前，請務必確認您的遊戲不含任何來自 Direct3D 8 的保留功能。 請確定您的遊戲未殘留任何固定函式管線。 如需過時功能的完整清單 (包含固定管線功能)，請參閱[過時的功能](https://msdn.microsoft.com/library/windows/desktop/cc308047)。
+Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP): upgrade your graphics code, and put your game in the Windows Runtime environment.
 
-從 Direct3D 9 升級到 Direct3D 11 不只是搜尋與取代的變更。 您需要知道 Direct3D 裝置、裝置上下文及圖形基礎結構之間的差異，並了解 Direct3D 9 之後的其他重要變更。 您可以藉由閱讀本節的其他主題來開始進行這個程序。
-
-您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
-
-> **注意：**您可以使用 [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)，取代先前由 D3DX 與 DXUT 所提供的部分功能。
-
- 
-
-以組合語言撰寫的著色器應該使用著色器模型 4 層級 9\_1 或 9\_3 功能升級到 HLSL，而針對效果程式庫所撰寫的著色器將需要升級到更新版本的 HLSL 語法。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
-
-熟悉不同的 [Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 功能層級可以藉由定義已知的功能組合，將範圍廣泛的視訊硬體分類。 每一組大致上都會對應到 Direct3D 版本 (從 9.1 到 11.2)。 所有功能層級都使用 DirectX 11 API。
-
-## 計劃將 Win32 UI 程式碼移植到 CoreWindow
+## Plan to port graphics code
 
 
-UWP app 會在針對名稱為 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 app 容器所建立的視窗中執行。 您的遊戲可以藉由從 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 繼承以控制視窗，這樣所需的實作細節會比桌面視窗來得少。 遊戲的主迴圈將位於 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法內。
+Before you begin porting your game to UWP, it's important to ensure that your game does not have any holdovers from Direct3D 8. Ensure that your game doesn't have any remnants of the fixed function pipeline. For a complete list of deprecated features, including fixed pipeline functionality, see [Deprecated Features](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經常儲存遊戲，因為在發生暫停事件時，app 能夠用來停止執行程式碼的時間有限，而且您想要確認當 app 繼續執行時，玩家能夠立即回到他們原先所在的位置。 遊戲的儲存頻率必須足以維持繼續進行遊戲之後有持續進行遊戲的使用經驗，但不要讓遊戲儲存頻率高到影響畫面播放速率或導致遊戲間斷。 當遊戲從終止狀態繼續執行時，該遊戲可能需要載入遊戲狀態。
+Upgrading from Direct3D 9 to Direct3D 11 is more than a search-and-replace change. You need to know the difference between the Direct3D device, device context, and graphics infrastructure, and learn about other important changes since Direct3D 9. You can start this process by reading the other topics in this section.
 
-[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) 可以用來做為 D3DXMath 與 XNAMath 的替代項目，而且如果您需要數學程式庫，它就可以派上用場。 DirectXMath 含有快速的可攜式資料類型，以及已對齊且封裝來與著色器搭配使用的類型。
+You must replace the D3DX and DXUT helper libraries with your own helper libraries, or with community tools. See the [Feature mapping](feature-mapping.md) section for more info.
 
-已將像是[連鎖 API](https://msdn.microsoft.com/library/windows/desktop/dd405529) 的原生程式庫加以延伸，以支援 ARM 內建函式。 如果遊戲使用連鎖 API，則可持續在 DirectX 11 與 UWP 中使用它們。
-
-我們的範本和程式碼範例會使用您可能還不熟悉的 C++ 新功能。 例如，將非同步方法搭配 [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) 用來載入 Direct3D 資源，而不需封鎖 UI 執行緒。
-
-您通常會使用的概念有兩種：
-
--   Managed 參考 ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) 和 [**Managed 類別**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref 類別) 都是 Windows 執行階段的基本部分。 您需要為含有 Windows 執行階段元件的介面使用 Managed ref 類別，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (逐步解說中將提供更多相關資訊)。
--   使用 Direct3D 11 COM 介面時，請使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 範本類型，讓 COM 指標更容易使用。
+> **Note**   You can use the [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) to replace some functionality that was formerly provided by D3DX and DXUT.
 
  
 
+Shaders written in assembly language should be upgraded to HLSL using shader model 4 level 9\_1 or 9\_3 functionality, and shaders written for the Effects library will need to be updated to a more recent version of HLSL syntax. See the [Feature mapping](feature-mapping.md) section for more info.
+
+Get familiar with the different [Direct3D feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876). Feature levels classify a wide range of video hardware by defining sets of known functionality. Each set roughly corresponds to versions of Direct3D, from 9.1 through 11.2. All feature levels use the DirectX 11 API.
+
+## Plan to port Win32 UI code to CoreWindow
+
+
+UWP apps run in a window created for an app container, called a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Your game controls the window by inheriting from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), which requires less implementation details than a desktop window. Your game's main loop will be in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method.
+
+The lifecycle of a UWP app is very different from a desktop app. You'll need to save the game often, because when a suspend event happens your app only has a limited amount of time to stop running code, and you want to make sure the player can get back to where they were right away when your app resumes. Games should save just often enough to maintain a continuous gameplay experience from resume, but not so often that the game saves impact framerate or cause the game to stutter. Your game will potentially need to load game state when the game resumes from a terminated state.
+
+[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) can be used as a replacement for D3DXMath and XNAMath, and it can come in handy if you need a math library. DirectXMath has fast, portable data types, and types that are aligned and packed for use with shaders.
+
+Native libraries such as the [Interlocked API](https://msdn.microsoft.com/library/windows/desktop/dd405529) have been expanded to support ARM intrinsics. If your game uses interlocked APIs, you can keep using them in DirectX 11 and UWP.
+
+Our templates and code samples use new C++ features that you might not be familiar with yet. For example, asynchronous methods are used with [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) to load Direct3D resources without blocking the UI thread.
+
+There are two concepts you'll use often:
+
+-   Managed references ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) and [**managed classes**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref classes) are a fundamental part of the Windows Runtime. You will need to use managed ref classes to interface with Windows Runtime components, for example [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (more on that in the walkthrough).
+-   When working with Direct3D 11 COM interfaces, use the [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) template type to make COM pointers easier to use.
+
+ 
+
  
 
 
@@ -68,6 +68,6 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

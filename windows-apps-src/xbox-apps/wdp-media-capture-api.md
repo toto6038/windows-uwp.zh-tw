@@ -1,61 +1,61 @@
 ---
 author: WilliamsJason
-title: "媒體擷取 API 參考"
-description: "了解如何以程式設計方式存取媒體擷取 API。"
+title: Media Capture API reference
+description: Learn how to access the media capture API programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: 4356bd2cfc7697905ed91d60b5829c06d850e109
-ms.openlocfilehash: 2e32c4d516a35b5f5bd8d57bce75ff8bdce6b461
+ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
 
 ---
 
-# 媒體擷取 API 參考 #
+# Media Capture API reference #
 
-**要求**
+**Request**
 
-您可以使用下列要求格式擷取代表目前畫面的 PNG 檔案。
+You can capture a PNG representation of the current screen by using the following request format.
 
-| 方法        | 要求 URI     | 
+| Method        | Request URI     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
 <br>
 
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
 
-| URI 參數      | 說明     | 
+| URI parameter      | Description     | 
 | ------------------ |-----------------|
-| download (選擇性)| 指出 HTTP 回應標頭是否應該設定為指示主機瀏覽器應該以附件形式下載螢幕擷取畫面 (而不是在瀏覽器中呈現) 的布林值。  |
+| download (optional)| A boolean value indicating if HTTP response headers should be set indicating that the host browser should download the screenshot as an attachment rather than rendering it in the browser.  |
 <br>
 
-**要求標頭**
+**Request headers**
 
-* 無
+* None
 
-**要求主體**
+**Request body**
 
-* 無
+* None
 
-###回應###
+###Response###
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-| HTTP 狀態碼   | 描述     | 
+| HTTP status code   | Description     | 
 | ------------------ |-----------------|
-| 200                | 螢幕擷取畫面要求成功且已傳回擷取 |
-| 5XX                | 未預期失敗的錯誤代碼 |
+| 200                | Screenshot request successful and capture returned |
+| 5XX                | Error codes for unexpected failures |
 <br>
 
-**可用裝置系列**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,31 +1,31 @@
 ---
 author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: "本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。"
-title: "搭配使用彈性資料流與 PlayReady"
+description: This article describes how to add adaptive streaming of multimedia content with Microsoft PlayReady content protection to a Universal Windows Platform (UWP) app.
+title: Adaptive Streaming with PlayReady
 translationtype: Human Translation
-ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
-ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
+ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
 
 ---
 
-# 搭配使用彈性資料流與 PlayReady
+# Adaptive streaming with PlayReady
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。 
+This article describes how to add adaptive streaming of multimedia content with Microsoft PlayReady content protection to a Universal Windows Platform (UWP) app. 
 
-本功能目前支援播放 DASH (Dynamic Adaptive Streaming over HTTP) 內容。
+This feature currently supports playback of Dynamic streaming over HTTP (DASH) content.
 
-PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
+HLS (Apple's HTTP Live Streaming) is not supported with PlayReady.
 
-目前也不支援原生的 Smooth Streaming，不過，PlayReady 可以使用額外的程式碼或程式庫來延伸，因此可支援 PlayReady 保護的 Smooth Streaming，以利用軟體或甚至硬體 DRM (數位版權管理)。
+Smooth streaming is also currently not supported natively; however, PlayReady is extensible and by using additional code or libraries, PlayReady-protected Smooth streaming can be supported, leveraging software or even hardware DRM (digital rights management).
 
-這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+This article only deals with the aspects of adaptive streaming specific to PlayReady. For information about implementing adaptive streaming in general, see [Adaptive streaming](adaptive-streaming.md).
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 \[Download ZIP\] \(下載 ZIP\)**** 按鈕。
+This article uses code from the [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming) in Microsoft's **Windows-universal-samples** repository on GitHub. Scenario 4 deals with using adaptive streaming with PlayReady. You can download the repo in a ZIP file by navigating to the root level of the repository and selecting the **Download ZIP** button.
 
-您將需要下列 using 陳述式：
+You will need the following **using** statements:
 
 ```csharp
 using LicenseRequest;
@@ -41,9 +41,9 @@ using Windows.Media.Streaming.Adaptive;
 using Windows.UI.Xaml.Controls;
 ```
 
-**LicenseRequest** 命命空間是來自 **CommonLicenseRequest.cs** (Microsoft 提供給使用人的 PlayReady 檔案)。
+The **LicenseRequest** namespace is from **CommonLicenseRequest.cs**, a PlayReady file provided by Microsoft to licensees.
 
-您將需要宣告幾個全域變數：
+You will need to declare a few global variables:
 
 ```csharp
 private AdaptiveMediaSource ams = null;
@@ -52,17 +52,17 @@ private string playReadyLicenseUrl = "";
 private string playReadyChallengeCustomData = "";
 ```
 
-您也會想要宣告下列常數：
+You will also want to declare the following constant:
 
 ```csharp
 private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
-## 設定 MediaProtectionManager
+## Setting up the MediaProtectionManager
 
-若要將 PlayReady 內容保護新增到您的 UWP app，您將需要設定 [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) 物件。 您會在初始化 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 物件時設定。
+To add PlayReady content protection to your UWP app, you will need to set up a [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) object. You do this when initializing your [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) object.
 
-下列程式碼會設定 [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040)：
+The following code sets up a [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040):
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -95,9 +95,9 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 }
 ```
 
-直接將這個程式碼複製到您的應用程式即可，因為需要它才能設定內容保護。
+This code can simply be copied to your app, since it is mandatory for setting up content protection.
 
-二進位資料載入失敗時會觸發 [ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041) 事件。 我們需要新增事件處理常式來處理此事件，發送表示載入未完成的訊號：
+The [ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041) event is fired when the load of binary data fails. We need to add an event handler to handle this, signaling that the load did not complete:
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -108,7 +108,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-同樣地，我們需要為要求服務時觸發的 [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045) 事件新增事件處理常式。 這個程式碼會檢查要求的類型，並適當地回應：
+Similarly, we need to add an event handler for the [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045) event, which fires when a service is requested. This code checks what kind of request it is, and responds appropriately:
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -136,9 +136,9 @@ private async void ProtectionManager_ServiceRequested(
 }
 ```
 
-## 個人化服務要求
+## Individualization service requests
 
-下列程式碼會被動發出 PlayReady 個人化服務要求。 我們將要求以參數方式傳遞給函式。 我們將呼叫以 try/catch 區塊括住，如果沒有出現例外狀況，要求便視為成功：
+The following code reactively makes a PlayReady individualization service request. We pass in the request as a parameter to the function. We surround the call in a try/catch block, and if there are no exceptions, we say the request completed successfully:
 
 ```csharp
 async Task<bool> ReactiveIndivRequest(
@@ -177,7 +177,7 @@ async Task<bool> ReactiveIndivRequest(
 }
 ```
 
-或者，我們可能想要主動發出個人化服務要求，這種情況下我們會呼叫以下的函式來取代呼叫 `ProtectionManager_ServiceRequested` 中之 `ReactiveIndivRequest` 的程式碼：
+Alternatively, we may want to proactively make an individualization service request, in which case we call the following function in place of the code calling `ReactiveIndivRequest` in `ProtectionManager_ServiceRequested`:
 
 ```csharp
 async void ProActiveIndivRequest()
@@ -187,9 +187,9 @@ async void ProActiveIndivRequest()
 }
 ```
 
-## 授權取得服務要求
+## License acquisition service requests
 
-如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向 MediaProtectionServiceCompletion 物件告知我們傳入的要求是否成功，然後完成該要求：
+If instead the request was a [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), we call the following function to request and acquire the PlayReady license. We tell the **MediaProtectionServiceCompletion** object that we passed in whether the request was successful or not, and we complete the request:
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -269,9 +269,9 @@ async void LicenseAcquisitionRequest(
 }
 ```
 
-## 初始化 AdaptiveMediaSource
+## Initializing the AdaptiveMediaSource
 
-最後，您將需要一個函式來初始化 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912)，可從已知的 [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 和 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) 來建立。 **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
+Finally, you will need a function to initialize the [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), created from a given [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) and [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926). The **Uri** should be the link to the media file (HLS or DASH); the **MediaElement** should be defined in your XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -290,18 +290,17 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 }
 ```
 
-您可以在任何處理啟動彈性資料流的事件中呼叫這個函式—例如，在按鈕點擊事件中。
+You can call this function in whichever event handles the start of adaptive streaming; for example, in a button click event.
 
- 
-
- 
-
+## See also
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

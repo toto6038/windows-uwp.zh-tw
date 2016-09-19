@@ -1,31 +1,31 @@
 ---
 author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-title: "封裝 app"
-description: "本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。"
+title: Packaging apps
+description: This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6f50874ceb5e133f2b1b764bfc6fcff6422172db
+ms.sourcegitcommit: f7eec4d8df2b62143c198fe507dffd936e2e325c
+ms.openlocfilehash: 230c77cbe60631d643bebe905a92cdbeb76af4d2
 
 ---
-# 封裝 app
+# Packaging apps
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 用途
+## Purpose
 
-本節包含或連結至關於封裝通用 Windows 平台 (UWP) app 的文章。
+This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
 
-| 主題 | 說明 |
+| Topic | Description |
 |-------|-------------|
-| [封裝 UWP app](packaging-uwp-apps.md) | 若要銷售您的 UWP app 或將其發佈給其他使用者，您必須建立其 appxupload 套件。 當您建立 appxupload 時，將產生另一個 appx 套件以用於測試和側載。 您可以透過將 appx 套件側載到裝置以直接發佈您的應用程式。 本文描述設定、建立和測試 UWP 應用程式套件的程序。 如需側載的詳細資訊，請參閱[使用 DISM 側載 app](http://go.microsoft.com/fwlink/?LinkID=231020)。 |
-| [使用 WinAppDeployCmd.exe 工具安裝 app](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將 UWP app 部署到任何 Windows 10 行動裝置版裝置的命令列工具。 當 Windows 10 行動裝置版裝置是透過 USB 連接或可在相同的子網路上使用而不需要 Microsoft Visual Studio 或該 app 適用的方案時，您就可以使用此工具來部署 .appx 套件。 本文章說明如何使用此工具安裝 UWP app。 |
-| [app 功能宣告](app-capability-declarations.md) | 功能必須在您的 UWP app 的[套件資訊清單](https://msdn.microsoft.com/library/windows/apps/BR211474)中進行宣告，才能存取特定的 API 或資源 (如圖片、音樂)，或是相機或麥克風等裝置。 |
+| [Packaging UWP apps](packaging-uwp-apps.md) | To sell your UWP app or distribute it to other users, you need to create an appxupload package for it. When you create the appxupload, another appx package will be generated to use for testing and sideloading. You can distribute your app directly by sideloading the appx package to a device. This article describes the process of configuring, creating and testing a UWP app package. For more information about sideloading, see [Sideload Apps with DISM](http://go.microsoft.com/fwlink/?LinkID=231020). |
+| [Install apps with the WinAppDeployCmd.exe tool](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a UWP app from a Windows 10 machine to any Windows 10 Mobile device. You can use this tool to deploy an .appx package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. This article describes how to install UWP apps using this tool. |
+| [App capability declarations](app-capability-declarations.md) | Capabilities must be declared in your UWP app's [package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) to access certain API or resources like pictures, music, or devices like the camera or the microphone. |
+| [Download and install package updates for your app](self-install-package-updates.md) | Your UWP app can programmatically check for package updates and install the updates. Your app can also query for packages that have been marked as mandatory on the Windows Dev Center dashboard and disable functionality until the mandatory update is installed. This article describes how to perform these tasks. |
  
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

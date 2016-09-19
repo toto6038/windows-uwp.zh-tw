@@ -1,85 +1,85 @@
 ---
 author: DelfCo
-Description: "開發您的 app 以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。"
-title: "調整配置和字型並支援 RTL"
+Description: Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
+title: Adjust layout and fonts, and support RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a1b271360b84e670f0b28557ffc499436487ad5f
+ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
+ms.openlocfilehash: b45029156a28afdb37d7ac1402d1e6ae845b0e63
 
 ---
 
-# 調整配置和字型並支援 RTL
+# Adjust layout and fonts, and support RTL
 
 
 
 
 
-開發您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
+Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
 
-## <span id="Layout_guidelines"></span><span id="layout_guidelines"></span><span id="LAYOUT_GUIDELINES"></span>配置指導方針
+## Layout guidelines
 
 
-有些語言 (例如德文和芬蘭文) 的文字需要比英文更多的空間。 有些語言的字型 (例如日文) 需要較高的高度。 而有些語言 (例如阿拉伯文和希伯來文) 則要求文字配置和應用程式配置必須是採用從右至左 (RTL) 的閱讀順序。
+Some languages, such as German and Finnish, require more space than English for their text. The fonts for some languages, such as Japanese, require more height. And some languages, such as Arabic and Hebrew, require that text layout and app layout must be in right-to-left (RTL) reading order.
 
-請使用彈性配置機制，而不要使用絕對定位、固定寬度或固定高度。 必要時，可根據語言調整特定 UI 元素。
+Use flexible layout mechanisms instead of absolute positioning, fixed widths, or fixed heights. When necessary, particular UI elements can be adjusted based on language.
 
-### <span id="XAML"></span><span id="xaml"></span>XAML
+### XAML
 
-為元素指定 **Uid**：
+Specify a **Uid** for an element:
 
 ```XML
 <TextBlock x:Uid="Block1">
 ```
 
-確保應用程式的 ResW 檔案有 Block1.Width 的資源，您可以針對要當地語系化的每個語言設定這個資源。
+Ensure that your app's ResW file has a resource for Block1.Width, which you can set for each language that you localize into.
 
-對於使用 C++、C\# 或 Visual Basic 的 Windows 市集應用程式，請使用 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 屬性以及對稱式邊框間距和邊界，以當地語系化其他配置方向。
+For Windows Store apps using C++, C\#, or Visual Basic, use the [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) property, with symmetrical padding and margins, to enable localization for other layout directions.
 
-XAML 配置控制項 (例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)) 會使用 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 屬性自動縮放和翻轉。 在應用程式中公開您自己的 **FlowDirection** 屬性以做為當地語系化人員的資源。
+XAML layout controls such as [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) scale and flip automatically with the [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) property. Expose your own **FlowDirection** property in your app as a resource for localizers.
 
-為應用程式的主頁面指定 **Uid**：
+Specify a **Uid** for the main page of your app:
 
 ```XML
 <Page x:Uid="MainPage">
 ```
 
-確保應用程式的 **ResW** 檔案有 MainPage.FlowDirection 的資源，您可以針對要當地語系化的每個語言設定這個資源。
+Ensure that your app's **ResW** file has a resource for MainPage.FlowDirection, which you can set for each language that you localize into.
 
-### <span id="HTML"></span><span id="html"></span>HTML
+### HTML
 
-針對使用 JavaScript 的 Windows 市集應用程式，請使用[階層式樣式表 (CSS)](https://msdn.microsoft.com/library/ms531209) 配置機制，例如 [-ms-grid](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#g_section) 和 [–ms-box](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#f_section)。 請使用對稱式邊框間距和邊界，以便能夠為不同的配置方向進行當地語系化。
+For Windows Store apps using JavaScript, use [Cascading Style Sheets (CSS)](https://msdn.microsoft.com/library/ms531209) layout mechanisms such as [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) and [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section). Use symmetrical padding and margins to enable localization for various layout directions.
 
-您的應用程式也可以使用 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器，根據應用程式的語言來調整 CSS 屬性，例如特定元素的寬度。 為了啟用，主控處理程序會將根元素的 **lang** 屬性設定為應用程式語言。
+Your app can also use the [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) pseudo-class selector to adjust CSS properties such as width on particular elements based on the language of the app. To enable this, the App Host sets the root element's **lang** attribute to the app language.
 
 **CSS**
 ```CSS
 .item:-ms-lang(de, fi) { width: 350px; }
 ```
 
-使用 JavaScript 的 Windows 市集應用程式如果使用 ui-light.css 或 ui-dark.css 樣式表，就會根據應用程式語言自動設定其主體配置方向。 下列 CSS 位於 ui-light 和 ui-dark.css 中，您不需要自行撰寫這個 CSS。
+Windows Store apps using JavaScript that use the ui-light.css or ui-dark.css style sheets have their body layout direction set automatically, based on the app language. The following CSS is in ui-light and ui-dark.css, and you don't need to write it yourself.
 
 **CSS**
 ```CSS
 body:-ms-lang(ar,he…) { direction: rtl;}
 ```
 
-這表示大部分的應用程式配置在系統使用從右至左的語言時都能正確設定。
+This means that most app layouts are set correctly when the system uses a right-to-left language.
 
-就像 [WinJS.UI](https://msdn.microsoft.com/library/windows/apps/br229782) 控制項，您的應用程式可以使用 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器調整實體 CSS 屬性，例如 **margin** 和 **padding**。 您不需要調整使用 **after** 和 **before** 關鍵字的邏輯 CSS 屬性。
+Like [WinJS.UI](https://msdn.microsoft.com/library/windows/apps/br229782) controls, your app can use the [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) pseudo-class selector to adjust physical CSS properties, such as **margin** and **padding**. You don't need to adjust logical CSS properties that use keywords such as **after** and **before**.
 
-不要在 HTML 中使用 **align** CSS 屬性 (Property) 或 HTML 屬性 (Attribute)。 請改為使用 **direction** CSS 屬性來控制特定元件的對齊。
+Don't use the **align** property or attribute in HTML. Instead, use the **direction** property to control alignment of particular components.
 
-使用 [**writing-mode**](https://msdn.microsoft.com/library/ms531187) 屬性支援 CSS 中的垂直文字配置。
+Use the [**writing-mode**](https://msdn.microsoft.com/library/ms531187) property to support vertical text layouts in CSS.
 
-## <span id="Mirroring_images"></span><span id="mirroring_images"></span><span id="MIRRORING_IMAGES"></span>鏡像影像
+## Mirroring images
 
 
-### <span id="XAML"></span><span id="xaml"></span>XAML
+### XAML
 
-如果應用程式含有必須針對 RTL 進行鏡像的影像 (也就是相同的影像可以翻轉)，您可以套用 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 屬性：
+If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, you can apply the [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) property:
 
 ```XML
 <!-- en-US\localized.xaml -->
@@ -89,36 +89,76 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-### <span id="HTML"></span><span id="html"></span>HTML
+### HTML
 
-如果應用程式含有必須針對 RTL 進行鏡像的影像 (也就是相同的影像可以翻轉)，您可以使用 CSS 轉換，藉由將 .mirrorable 類別新增到您的元素並新增下列 CSS 類別，在轉譯時進行影像鏡像：
+If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, you can use CSS transforms to mirror your images at rendering time by adding a .mirrorable class to your elements and adding the following CSS class:
 
 ```CSS
 .mirrorable { transform: scaleX(-1); }
 ```
 
-**針對 XAML 與 HTML：**如果應用程式需要不同的影像才能正確翻轉影像，您可以使用資源管理系統搭配 [layoutdir 限定詞](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。 系統會在[應用程式語言](manage-language-and-region.md)設定為 RTL 語言時，選擇名為 file.layoutdir-rtl.png 的影像。 在已翻轉影像的某些部分，但其他部分尚未翻轉時，可能需要這個處理方式。
+**For both XAML and HTML:** If your app requires a different image to flip the image correctly, you can use the resource management system with the [layoutdir qualifier](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). The system chooses an image named file.layoutdir-rtl.png when the [application language](manage-language-and-region.md) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
-## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>字型
-
-
-**針對 XAML 與 HTML：**請使用 [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) 字型對應 API，以程式設計方式存取特定語言的建議字型系列、大小、粗細及樣式。 **LanguageFont** 物件會針對各種內容類別 (包括 UI 標頭、通知、內文，以及使用者可以編輯的文件主體字型)，提供正確字型資訊的存取權。
-
-### <span id="HTML"></span><span id="html"></span>HTML
-
-使用 JavaScript 的 Windows 市集應用程式如果使用 ui-light.css 或 ui-dark.css 樣式表，會根據應用程式語言將字型自動設定為最適當的字型。 主控處理程序會將根元素的 **lang** 屬性設定為應用程式語言。
-
-在單一頁面上顯示多個語言的應用程式應該在每個語言設定區段的 **lang** 屬性。 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 虛擬類別選取器會針對頁面的每個區段挑選正確的字型。
-
- 
-
- 
+## Fonts
 
 
+**For both XAML and HTML:** Use the [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) font-mapping APIs for programmatic access to the recommended font family, size, weight, and style for a particular language. The **LanguageFont** object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.
+
+### HTML
+
+Windows Store apps using JavaScript that use the ui-light.css or ui-dark.css style sheets have their font set automatically to the most appropriate font, based on the app language. The App Host sets the root element's **lang** attribute to the app language.
+
+Apps that display multiple languages on a single page should set the **lang** attribute for the section in each language. The [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) pseudo-class selector picks up the correct font for each section of the page.
+
+## Best practices for handling Right to Left (RTL) languages
+
+When your app is localized for Right to Left (RTL) languages, use APIs to set the default text direction for the RootFrame. This will cause all of the controls contained within the RootFrame to respond appropriately to the default text direction.  When more than one language is supported, use the LayoutDirection for the top preferred language to set the FlowDirection property. Most controls included in Windows use FlowDirection already. If you are implementing custom controls, they should use FlowDirection to make appropriate layout changes for RTL and LTR languages.
+
+C#
+```csharp    
+// For bidirectional languages, determine flow direction for RootFrame and all derived UI.
+
+    string resourceFlowDirection = ResourceContext.GetForCurrentView().QualifierValues["LayoutDirection"];
+    if (resourceFlowDirection == "LTR")
+    {
+       RootFrame.FlowDirection = FlowDirection.LeftToRight;
+    }
+    else
+    {
+       RootFrame.FlowDirection = FlowDirection.RightToLeft;
+    }
+```
+C++:
+```cpp
+    // Get preferred app language
+    m_language = Windows::Globalization::ApplicationLanguages::Languages->GetAt(0);
+     
+    // Set flow direction accordingly
+    m_flowDirection = ResourceManager::Current->DefaultContext->QualifierValues->Lookup("LayoutDirection") != "LTR" ? 
+       FlowDirection::RightToLeft : FlowDirection::LeftToRight;
+```
+
+
+### RTL FAQ 
+
+<dl>
+  <dt> <p><b>Q:</b> Is <b>FlowDirection</b> set automatically based on the current language selection? For example, if I select English will it display left to right, and if I select Arabic, will it display right to left?</p></dt>
+
+  <dd><p><b>A:</b> <b>FlowDirection</b> does not take into account the language. You set <b>FlowDirection</b> appropriately for the language you are currently displaying. See the sample code above.</p></dd> 
+
+  <dt> <p><b>Q:</b> I’m not too familiar with localization. Do the resources already contain flow direction? Is it possible to determine the flow direction from the current language?</p></dt>
+
+  <dd> <p><b>A:</b> If you are using current best practices, resources do not contain flow direction directly. You must determine flow direction for the current language. Here are two ways to do this: </p>
+   <p>The preferred way is to use the LayoutDirection for the top preferred language to set the FlowDirection property of the RootFrame. All the controls in the RootFrame inherit FlowDirection from the RootFrame.</p>
+   <p>Another way is to set the FlowDirection in the resw file for the RTL languages you are localizing for. For example, you might have an Arabic resw file and a Hebrew resw file. In these files you could use x:UID to set the FlowDirection. This method is more prone to errors than the programmatic method, though.</p></dd>
+</dl>
+
+
+## Related topics
+[FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

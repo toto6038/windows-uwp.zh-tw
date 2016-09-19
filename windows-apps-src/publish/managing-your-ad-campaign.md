@@ -1,46 +1,46 @@
 ---
 author: jnHs
-Description: "若要管理您 app 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 app 頁面的 [創造營收] &gt; [促銷您的應用程式]。"
-title: "管理您的廣告活動"
+Description: To manage your app's ad campaigns, click Monetization &gt; Promote your app from your app's page in the Windows Dev Center dashboard.
+title: Managing your ad campaign
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 ---
 
-# 管理您的廣告活動
+# Managing your ad campaign
 
 
-若要管理您 app 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 app 頁面的 [創造營收]****&gt;[促銷您的應用程式]****。 [促銷您的應用程式]**** 頁面會列出所有與您的 app 相關聯的廣告活動，並顯示每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)中這些詞彙的定義。
+To manage your app's ad campaigns, click **Monetization** &gt; **Promote your app** from your app's page in the Windows Dev Center dashboard. The **Promote your app** page lists all of the ad campaigns associated with your app and displays the impressions, clicks, and installs for each ad campaign. For more information about impressions, clicks, and installs, see the definitions for these terms in [App install ads report](app-install-ads-reports.md).
 
-若要篩選廣告活動的清單，請按一下 [**區段篩選器**] 下拉式清單，然後從下列篩選器中進行選擇：
+To filter the list of ad campaigns, click the **Section filters** drop-down and choose from the following filters:
 
--   **日期**：這會指定與廣告活動相關聯的曝光數、點擊數和安裝數的日期範圍。
--   **狀態**：這會指定廣告活動的狀態。
-    -   [**作用中**] 表示廣告活動執行中且正在處理資料。 若要暫時暫停廣告活動，請按一下廣告活動表格上 [動作]**** 欄中的 [暫停]****。
-    -   [已暫停]**** 表示廣告活動已暫時保留，並未處理資料。 若要繼續進行廣告活動，請按一下廣告活動表格上 [動作]**** 欄中的 [繼續]****。
-    -   [已結束]**** 表示廣告活動已到達您在建立或最後修改廣告活動時所指定的結束日期。
-    -   [需要注意]**** 表示廣告活動發生需要您注意的問題，例如，帳務失敗或驗證失敗的自訂廣告活動。 若要修正問題，請按一下廣告活動表格上 [動作]**** 欄中的文字。
--   **行銷活動類型**：這會指定是否要顯示已支付或[自家](about-house-ads.md)的廣告活動。
+-   **Date**: This specifies the data range for impressions, clicks, and installs that are associated with the ad campaigns.
+-   **Status**: This specifies the status of the ad campaigns:
+    -   **Active** indicates that the ad campaign is running and processing data. To temporarily pause an ad campaign, click **Pause** in the **Action** column of the ad campaigns table.
+    -   **Paused** indicates that the ad campaign is temporarily on hold and not processing data. To resume an ad campaign, click **Resume** in the **Action** column of the ad campaigns table.
+    -   **Ended** indicates that the ad campaign has reached the end date you specified when you created or last modified the ad campaign.
+    -   **Needs attention** indicates that the ad campaign has issues that need your attention, such as a billing failure or a custom ad design that failed validation. To fix the issues, click the text in the **Action** column of the ad campaigns table.
+-   **Campaign type**: This specifies whether to display paid or [house](about-house-ads.md) ad campaigns.
 
-## 報告
-
-
-若要查看廣告活動的執行方式，請在儀表板的瀏覽窗格中按一下 [分析]****&gt;[App 安裝廣告]****。 如需此報告的詳細資訊，請參閱[應用程式安裝廣告報告](app-install-ads-reports.md)。
-
-## 編輯廣告活動
+## Report
 
 
-若要對廣告活動進行變更，請按一下它的名稱以前往該廣告活動的詳細資料頁面。 進行變更之後，按一下 [檢閱]**** 檢閱詳細資料，然後按一下 [確認]****。
+To see how your ad campaigns are performing, click **Analytics** &gt; **App install ads** in the navigation pane of the dashboard. For more information about this report, see [App install ads report](app-install-ads-reports.md).
 
-## 相關主題
+## Edit an ad campaign
 
 
-* [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
-* [關於自家廣告](about-house-ads.md)
-* [App 安裝廣告報告](app-install-ads-reports.md)
-* [常見問題](common-questions.md)
+To make changes to an ad campaign, click its name to go to the details page for that ad campaign. After you make changes, click **Review**, review the details, and then click **Confirm**.
+
+## Related topics
+
+
+* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [About house ads](about-house-ads.md)
+* [App install ads report](app-install-ads-reports.md)
+* [Common questions](common-questions.md)
  
 
  
@@ -51,6 +51,6 @@ ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

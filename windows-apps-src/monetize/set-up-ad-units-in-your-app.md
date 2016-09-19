@@ -1,42 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: "了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。"
-title: "在您的 App 中設定廣告單元"
+description: Learn how to add application ID and ad unit ID values from the Windows Dev Center dashboard to your app before you submit your app to the Store.
+title: Set up ad units in your app
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
 
 ---
 
-# 在您的 App 中設定廣告單元
+# Set up ad units in your app
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-當您在 app 中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 來顯示廣告時，您必須指定應用程式識別碼和廣告單元識別碼。 當您開發您的 app 時，使用適當的[測試應用程式識別碼和廣告單元識別碼值](test-mode-values.md)，以查看您的 app 於測試期間呈現廣告的方式。
 
-在您完成測試您的 App 且準備好將 App 提交至 Windows 開發人員中心時，您必須更新您的 App 程式碼，以使用 [Windows 開發人員中心儀表板](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)的應用程式識別碼和廣告單位識別碼值。 如果您嘗試在實際 App 中使用測試值，您的 App 將不會收到即時廣告。
+When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) to display ads in your app, you must specify an application ID and ad unit ID. While you are developing your app, use the appropriate [test application ID and ad unit ID values](test-mode-values.md) to see how your app renders ads during testing.
 
-為您的實際 app 設定應用程式識別碼和廣告單元：
+After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Windows Dev Center dashboard](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx). If you try to use test values in your live app, your app will not receive live ads.
 
-1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收] &gt; \[利用廣告獲利\]。
-2.  在此頁面的 \[Microsoft Advertising 廣告單元\] 區段中，建立廣告單元。 對於廣告單元類型，如果使用 **AdControl** 請選取 \[橫幅\]，如果使用 **InterstitialAd** 則請選取 \[影片插入式\]。 如需此頁面的詳細資訊，請參閱[利用廣告賺取獲利](../publish/monetize-with-ads.md)。
+To set up the application ID and ad units for your live app:
 
-3.  您會看到每個已產生的廣告單元的「應用程式識別碼」和「廣告單元識別碼」。 若要在 app 中顯示廣告，您需要在 app 程式碼中使用這些值：
+1.  On the Windows Dev Center dashboard, select your app and then click **Monetization > Monetize with ads**.
+2.  In the **Microsoft Advertising ad units** section on this page, create an ad unit. For the ad unit type, select **Banner** if you are using an **AdControl**, or select **Video interstitial** if you are using an **InterstitialAd**. For more information about this page, see [Monetize with ads](../publish/monetize-with-ads.md).
 
-    * 如果您的 app 顯示橫幅廣告，請將這些值指派給 **AdControl** 物件的 **ApplicationId** 和 **AdUnitId** 屬性。
+3.  For each generated ad unit, you will see an **Application ID** and an **Ad unit ID** on this page. To show ads in your app, you'll need to use these values in your apps code:
 
-    * 如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 **InterstitialAd** 物件的 **RequestAd** 方法。
+    * If your app shows banner ads, assign these values to the **ApplicationId** and **AdUnitId** properties of your **AdControl** object.
 
-> **重要：**如果您的 app 使用廣告流量分配顯示來自 Microsoft 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+    * If your app shows video interstitial ads, pass these values to the **RequestAd** method of your **InterstitialAd** object.
 
  
 
-## 相關主題
+## Related topics
 
-[測試模式值](test-mode-values.md)
+[Test mode values](test-mode-values.md)
 
 
  
@@ -45,6 +43,6 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

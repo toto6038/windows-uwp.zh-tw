@@ -1,92 +1,92 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。"
-title: "視覺化縮放和調整大小的指導方針"
+Description: This topic describes Windows zooming and resizing elements and provides user experience guidelines for using these interaction mechanisms in your apps.
+title: Guidelines for optical zoom and resizing
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 38feedfe857f8ce2fc638cf55465f1e719108583
+ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
 ---
 
-# 視覺化縮放和調整大小
+# Optical zoom and resizing
 
-這個文章描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。
+This article describes Windows zooming and resizing elements and provides user experience guidelines for using these interaction mechanisms in your apps.
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
+Optical zoom lets users magnify their view of the content within a content area (it is performed on the content area itself), whereas resizing enables users to change the relative size of one or more objects without changing the view of the content area (it is performed on the objects within the content area).
 
-視覺化縮放與調整大小互動的執行方式是透過捏合和伸展手勢 (將手指分開則會放大，將手指靠攏會縮小)、按住 Ctrl 鍵不放並捲動滑鼠滾輪，或按住 Ctrl 鍵不放 (如果沒有數字鍵台，請搭配 Shift 鍵) 並按下加號 (+) 鍵或減號 (-) 鍵。
+Both optical zoom and resizing interactions are performed through the pinch and stretch gestures (moving fingers farther apart zooms in and moving them closer together zooms out), or by holding the Ctrl key down while scrolling the mouse scroll wheel, or by holding the Ctrl key down (with the Shift key, if no numeric keypad is available) and pressing the plus (+) or minus (-) key.
 
-下圖示範調整大小和視覺化縮放的差異。
+The following diagrams demonstrate the differences between resizing and optical zooming.
 
-**視覺化縮放**：使用者選取一個區域，然後縮放整個區域。
+**Optical zoom**: User selects an area, and then zooms into the entire area.
 
-![將手指靠攏會縮小，將手指分開則會放大。](images/areazoom.png)
+![moving the fingers closer together zooms in on the content area and moving them apart zooms out](images/areazoom.png)
 
-**調整大小**：使用者選取區域內的一個物件，然後調整該物件大小。
+**Resize**: User selects an object within an area, and resizes that object.
 
-![將手指靠攏會縮小物件，將手指分開會放大物件。](images/objectresize.png)
+![moving the fingers closer together shrinks an object and moving them apart enlarges it](images/objectresize.png)
 
-**注意**  
-請勿將視覺化縮放與[語意式縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
+**Note**  
+Optical zoom shouldn't be confused with [Semantic Zoom](../controls-and-patterns/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
 
  
 
-## 可行與禁止事項
+## Dos and don'ts
 
 
-對於支援調整大小或視覺化縮放的應用程式，請參考下列指導方針：
+Use the following guidelines for apps that support either resizing or optical zooming:
 
--   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
--   使用貼齊點來影響縮放和大小調整行為，方法為提供停止操作的邏輯點，並確保檢視區中顯示特定內容子集。 提供一般縮放比例或邏輯檢視的貼齊點，讓使用者可以比較容易選取這些比例。 例如，相片應用程式會提供 100% 比例的大小調整貼齊點，或如果是地圖應用程式，貼齊點對於城市、省以及國家/地區檢視有可能會相當有用。
+-   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
+-   Use snap points to influence zooming and resizing behavior by providing logical points at which to stop the manipulation and ensure a specific subset of content is displayed in the viewport. Provide snap points for common zoom levels or logical views to make it easier for a user to select those levels. For example, photo apps might provide a resizing snap point at 100% or, in the case of mapping apps, snap points might be useful at city, state, and country views.
 
-    貼齊點可以讓使用者不需要太精準就能達到他們的目標。 如果使用的是 XAML，請參閱 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的貼齊點屬性。 若為 JavaScript 和 HTML，請使用 [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
+    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). For JavaScript and HTML, use [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
 
-    貼齊點有兩種類型：
+    There are two types of snap-points:
 
-    -   鄰近性 - 提起手指後，如果慣性作用讓貼齊點停在距離閾值範圍內，就會選取該貼齊點。 鄰近性貼齊點仍然允許縮放或大小調整在貼齊點之間結束。
-    -   強制 - 選取的貼齊點為提起手指之前，在最後一個越過之貼齊點之前或之後的那個貼齊點 (取決於手勢的方向和速度)。 操作必須在強制貼齊點結束。
--   使用慣性物理。 這些包含：
-    -   減速：在使用者停止捏合或伸展時發生。 這類似於在光滑的表面上滑動到停止的現象。
-    -   反彈：超過大小限制或界限時發生的輕微彈回效果。
--   根據[目標預測的指導方針](guidelines-for-targeting.md)來設定控制項之間的空間。
--   提供限制調整大小縮放比例控點。 如果未指定控點，預設是以等體積或等比例的方式調整大小。
--   不要在應用程式使用縮放來瀏覽 UI 或顯示額外的控制項，請使用移動瀏覽區域。 如需移動瀏覽的詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
--   不要將可調整大小的物件放在可調整大小的內容區域中。 例外狀況包括：
-    -   繪圖應用程式，可調整大小的項目可以顯示在可調整大小的畫布或製圖板上。
-    -   包含內嵌物件 (如地圖) 的網頁。
+    -   Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Proximity snap points still allow a zoom or resize to end between snap points.
+    -   Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). A manipulation must end on a mandatory snap point.
+-   Use inertia physics. These include the following:
+    -   Deceleration: Occurs when the user stops pinching or stretching. This is similar to sliding to a stop on a slippery surface.
+    -   Bounce: A slight bounce-back effect occurs when a size constraint or boundary is passed.
+-   Space controls according to the [Guidelines for targeting](guidelines-for-targeting.md).
+-   Provide scaling handles for constrained resizing. Isometric, or proportional, resizing is the default if the handles are not specified.
+-   Don't use zooming to navigate the UI or expose additional controls within your app, use a panning region instead. For more info on panning, see [Guidelines for panning](guidelines-for-panning.md).
+-   Don't put resizable objects within a resizable content area. Exceptions to this include:
+    -   Drawing applications where resizable items can appear on a resizable canvas or art board.
+    -   Webpages with an embedded object such as a map.
 
-    **注意**  
-    在所有的情況下都會調整內容區域的大小，除非所有觸控點都位於可調整大小的物件內。
+    **Note**  
+    In all cases, the content area is resized unless all touch points are within the resizable object.
 
      
 
-## 相關文章
+## Related articles
 
 
-**範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**封存範例**
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Archive samples**
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -97,6 +97,6 @@ ms.openlocfilehash: 38feedfe857f8ce2fc638cf55465f1e719108583
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

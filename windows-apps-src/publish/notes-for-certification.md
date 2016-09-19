@@ -1,53 +1,53 @@
 ---
 author: jnHs
-Description: "在您提交 app 時，可以選擇使用「認證注意事項」頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。"
-title: "認證注意事項"
+Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
+title: Notes for certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 02a0f17fef730da305f5dfb24c834b53045e3eb8
+ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
 
 ---
 
-# 認證注意事項
+# Notes for certification
 
 
-在您提交 app 時，可以選擇使用**認證注意事項**頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。
+As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 
-記得包含下列各項資料 (如果適用於您的應用程式)：
+Make sure to include the following (if applicable for your app):
 
--   **測試帳戶的使用者名稱和密碼**
+-   **User names and passwords for test accounts**
 
-    如果應用程式需要使用者登入服務，請提供測試帳戶的使用者名稱和密碼。 認證測試者會使用這個帳戶審查您的應用程式。
+    If your app requires users to log in to a service, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
 
--   **存取隱藏或鎖定功能的步驟**
+-   **Steps to access hidden or locked features**
 
-    如果 app 含有測試人員可能不易察覺的功能，請簡短描述如何存取那些功能。 似乎不完整的 app 可能無法通過認證。
+    If your app has features that might not be obvious to the testers, briefly describe how they can access those features. Apps that appear to be incomplete may fail certification.
 
--   **確認背景音訊使用方式的步驟**
+-   **Steps to verify background audio usage**
 
-    如果您的 app 允許音訊在背景執行，測試人員可能需要如何存取此功能的指示，以便確認該功能是否正常運作。
+    If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
 
--   **App 更新中做了哪些變更的相關資訊**
+-   **Info about what's changed in an app update**
 
-    針對先前所發佈 app 的更新， 您可能想讓測試人員了解變更的部分，特別是如果您的套件完全相同，只是針對 app 清單做了一些變更 (例如，新增更多螢幕擷取畫面、變更 app 的類別，或是編輯描述)，務必加上註解。
+    For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
 
-考慮要撰寫哪些資訊時，請記住下列幾點：
+When considering what to write, remember:
 
--   **有人會閱讀這些注意事項。** 測試人員將會對有禮貌的附註以及清楚、有幫助的指示表示感謝。
--   **請簡潔扼要，保持簡單的指示。** 如果您真的需要進一步說明，您可以在頁面中包含詳細資訊的連結。 請記住，app 的客戶不會看到這些註解。 如果您需要提供複雜的指示用於測試 app，請考慮是否需要簡化您的 app，客戶才知道如何使用。
--   **服務和外部元件必須在線上且可以使用。** 如果您的 app 針對部分功能連接到某服務，請確定該服務在線上且可以使用。 包含測試者所需服務的任何相關資訊。 如果測試期間 app 無法連線到所需的服務，可能會無法通過認證。
-
- 
+-   **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
+-   **Be succinct and keep instructions simple.** If you really need to explain more, you can include a link to a page with more info. Keep in mind that customers of your app won't be seeing these notes. If you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers know how to use it.
+-   **Services and external components must be online and available.** If your app connects to a service for part of its function, make sure that the service will be online and available. Include any information about the service that testers will need. If your app can't connect to a service it needs during testing, it may fail certification.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

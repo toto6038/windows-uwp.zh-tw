@@ -1,78 +1,78 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板中的 [評等] 報告可讓您查看客戶在 Windows 市集中對您 app 評等的分佈。"
-title: "評等報告"
+Description: The Ratings report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store.
+title: Ratings report
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
+ms.openlocfilehash: 1613c8a5e5a28ba431fcfb186a0fcd5fe9bd7582
 
 ---
 
-# 評等報告
+# Ratings report
 
 
-Windows 開發人員中心儀表板中的 [評等]**** 報告可讓您查看客戶在 Windows 市集中對您 app 評等的分佈。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
+The **Ratings** report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-在此報告中，評等指的是在市集中為 app 評等時，客戶對於您 app 所給的星星數 (從 1 到 5)。 [評等]**** 報告不包含當做評論留下的任何個別意見的相關資訊；那些意見會包含於[評論報告](reviews-report.md)中。
+In this report, a rating means the number of stars (from 1 to 5) that a customer gave your app when rating it in the Store. The **Ratings** report does not include info on any individual comments left as reviews; those are available in the [Reviews report](reviews-report.md).
 
-## 套用篩選
-
-
-您可以在接近頁面頂端的地方，展開 [套用篩選]****，依日期範圍和/或市場來篩選此頁面上的所有日期。
-
--   **日期**：預設篩選為 [過去 30 天]****，但是您可以擴展此範圍，最多可達 [過去 12 個月]****。
--   **市場**：預設篩選為 [所有市場]****。 如果您只想在此頁面上顯示某特定市場中客戶所給予的評等，則可選擇該市場。
--   **裝置類型**：預設篩選為 [所有裝置]****。 如果您只想在此頁面上顯示使用該類型之使用者所給予的評等，則可以選擇特定裝置類型。
-
-下列所有圖表中的資訊將反映 [套用篩選]**** 區段中選取的時段，並且會反映您在這裡所選擇的任何其他篩選。
-
-## 平均評等
+## Apply filters
 
 
-[平均評等]**** 圖表顯示在所選時段內的 app 評等平均值。
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
 
-## 評等數目
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
+-   **Market**: The default filter is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show ratings left by customers using that type of device.
 
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
 
-[評等數目]**** 圖表顯示在所選時段內，app 的評等總數。
-
-## 新的和已修改的評等
-
-
-[新的和已修改的評等]**** 圖表顯示在所選時段內，每種評等類型 (新的或已修改的) 的評等數目。
-
--   [新的評等]**** 是客戶已經提交但尚未變更的評等。
--   [**已修改的評等**] 是客戶已經變更的評等。
-
->**注意**：即使客戶僅變更或新增其評論的文字或標題，並將實際評等維持不變，評等在這裡還是會顯示為已修改的評等。
-
-## 一段時間的平均評等
+## Average rating
 
 
-[一段時間的平均評等]**** 圖表顯示 app 平均評等在所選時段內的變化情形。
+The **Average rating** chart shows the average rating of your app over the selected period of time.
 
-[一段時間的平均評等]**** 圖表會顯示您的客戶在所選期間中如何在某天或某週對您 app 的評等，而非在所選期間計算所有獲得評等的平均數 (如 **平均評等** 圖表)。 這可協助您辨識出趨勢或判斷評等是否受更新或其他因素影響。
-
-如果您已經依 [**過去 30 天**] 或 [**過去 3 個月**] 篩選資訊，圖表會依天數顯示您的平均評等。 如果您已經依 [過去 6 個月]**** 或 [過去 12 個月]**** 篩選，圖表則會依週數顯示平均評等 (星期一視為新一週的開始；所顯示的平均評等是以上週為基準)。
-
-## 市場
+## Number of ratings
 
 
-[**市場**] 圖表會依市場顯示所選時段內的平均評等和評等數目。
+The **Number of ratings** chart shows the total number of ratings of your app over the selected period of time.
 
-> **注意**：如果您已經使用 [**頁面篩選**] 指定特定的市場，您將不會在 [**評等**] 報告上看到這個圖表。 若要查看此圖表，請將 [**頁面篩選**] 變更為顯示所有市場。
+## New and revised ratings
 
-根據預設，我們是從評論最多到評論最少的市場依序顯示，但是您可以切換此圖表的 [**評等數目**] 欄中的箭頭，以反轉這個順序。 您也可以按一下 [**平均評等**] 或 [**市場**] 欄，依這些欄排序資料。
 
-> **注意**：當您比較 Windows 開發人員中心的 [**評等**] 報告與舊版開發人員中心行動裝置版 app 中的 [評論] 報告時，您可能會看到不同數目的評等。 這是因為 app 只會顯示 Windows Phone 8.1 與較舊版本之客戶所留下的評論資料。 也可能是因為 Microsoft 從 Windows 市集移除了被認為是垃圾訊息、不恰當、具冒犯意味或違反其他原則的評論。 我們希望這樣的舉動可以讓客戶體驗變得更好。
+The **New and revised ratings** chart shows the number of ratings for each type of rating (new or revised) over the selected period of time.
 
- 
+-   **New ratings** are ratings that customers have submitted but haven't changed.
+-   **Revised ratings** are ratings that have been changed by the customer.
+
+>**Note**  A rating will appear here as revised even if the customer only changed or added the text or title of their review and left the actual rating the same.
+
+## Average rating over time
+
+
+The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+
+Rather than calculating the average of all ratings left during the selected period of time (as in the **Average rating** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week during the period. This helps you identify trends or determine if ratings were affected by updates or other factors.
+
+If you have filtered the info by **Last 30 days** or **Last 3 months**, the chart displays your average rating by day. If you've filtered by **Last 6 months** or **Last 12 months**, the chart displays your average rating by week (with a new week considered to start on Monday; the average rating shown is for the previous week).
+
+## Markets
+
+
+The **Markets** chart shows average rating and number of ratings over the selected period of time by market.
+
+> **Note**  If you have used the **Page filters** to specify a specific market, you won't see this chart on the **Ratings** report. To see this chart, change the **Page filters** to show all markets.
+
+By default, we show you the market which had the most reviews and continue downward from there, but you can reverse this order by toggling the arrow in the **Number of ratings** column of this chart. You can also sort the data by **Average rating** or **Market** by clicking those columns.
+
+> **Note**  It’s likely that you’ll see a different number of ratings when comparing the **Ratings** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

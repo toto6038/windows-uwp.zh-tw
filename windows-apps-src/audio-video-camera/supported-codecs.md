@@ -1,33 +1,33 @@
 ---
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: "本文列出 UWP app 支援的音訊與視訊轉碼器和格式。"
-title: "支援的轉碼器"
+description: This article lists the audio and video codec and format support for UWP apps.
+title: Supported codecs
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
-# 支援的轉碼器
+# Supported codecs
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文列出 UWP app 支援的音訊與視訊轉碼器和格式。
+This article lists the audio and video codec and format support for UWP apps.
 
-表格中下面的 "D" 表示解碼器支援，"E" 則表示編碼器支援。
+In the tables below "D" indicates decoder support and "E" indicates encoder support.
 
-## 音訊編碼器與支援的格式
+## Audio codec & format support
 
-下表顯示各裝置系列支援的音訊編碼器和格式。
+The following tables show the audio codec and format support for each device family.
 
-**注意**  
--   指示支援 AMR-NB 時，表示在 Server SKU 上不支援這個編碼器。
+> [!NOTE] 
+> Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
  
 
-### 桌上型電腦
+### Desktop
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -184,7 +184,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law、µ-Law)</td>
+<td align="left">G.711 (A-Law, µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -338,7 +338,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### 行動裝置版
+### Mobile
 
 <table>
 <colgroup>
@@ -358,7 +358,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -421,14 +421,14 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
-<td align="left">D (僅限 Lumia Icon、830、 930、 1520)</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -495,7 +495,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law、µ-Law)</td>
+<td align="left">G.711 (A-Law, µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -649,7 +649,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### IoT 核心版 (x86)
+### IoT Core (x86)
 
 <table>
 <colgroup>
@@ -669,7 +669,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -806,7 +806,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law、µ-Law)</td>
+<td align="left">G.711 (A-Law, µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -960,7 +960,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### IoT 核心版 (ARM)
+### IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -980,7 +980,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1117,7 +1117,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law、µ-Law)</td>
+<td align="left">G.711 (A-Law, µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1271,7 +1271,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### Xbox
+### XBox
 
 <table>
 <colgroup>
@@ -1291,7 +1291,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1428,7 +1428,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law、µ-Law)</td>
+<td align="left">G.711 (A-Law, µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1582,17 +1582,17 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-## 視訊轉碼器與支援的格式
+## Video codec & format support
 
-下表顯示各裝置系列支援的視訊編碼器和格式。
+The following tables show the video codec and format support for each device family.
 
-**注意**  
--   指示支援 H.265 時，表示不是該裝置系列中的所有裝置都支援。
--   指示支援 MPEG-2/MPEG-1 時，表示只有安裝選用的 Microsoft DVD 通用 Windows app 之後才支援。
+> [!NOTE] 
+> Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
+> Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
 
  
 
-### 桌上型電腦
+### Desktop
 
 <table>
 <colgroup>
@@ -1613,7 +1613,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -1811,7 +1811,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### 行動裝置版
+### Mobile
 
 <table>
 <colgroup>
@@ -1832,7 +1832,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2030,7 +2030,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### IoT 核心版 (x86)
+### IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2051,7 +2051,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2270,7 +2270,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2468,7 +2468,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### Xbox
+### XBox
 
 <table>
 <colgroup>
@@ -2489,7 +2489,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">轉碼器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

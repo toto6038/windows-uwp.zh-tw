@@ -1,37 +1,39 @@
 ---
 author: mcleanbyron
-Description: "無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。"
-title: "啟用應用程式內產品購買"
+Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
+title: Enable in-app product purchases
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: in-app offer code sample
 translationtype: Human Translation
-ms.sourcegitcommit: bb28828463b14130deede9f7cf796c6e32fcb48b
-ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 531b5c5a5c70461e98b5809246fdce7215805a25
 
 ---
 
-# 啟用應用程式內產品購買
+# Enable in-app product purchases
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
 
-> **注意：**試用版的應用程式無法提供應用程式內產品。 使用試用版 app 的客戶只有在購買 app 的完整版本後，才能購買應用程式內產品。
+>**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
-## 先決條件
+Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 
--   要新增功能讓客戶購買的 Windows 應用程式。
--   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
--   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
+> **Note**  In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
 
-## 步驟 1：初始化應用程式的授權資訊
+## Prerequisites
 
-在您的 app 進行初始化時，請透過初始化 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 來為 app 取得 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，以啟用購買應用程式內產品的功能。
+-   A Windows app in which to add features for customers to buy.
+-   When you code and test new in-app products for the first time, you must use the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) object instead of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named "WindowsStoreProxy.xml" in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766).
+-   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
+
+## Step 1: Initialize the license info for your app
+
+When your app is initializing, get the [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) object for your app by initializing the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) or [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) to enable purchases of an in-app product.
 
 ```CSharp
 void AppInit()
 {
-    // some app initialization functions 
+    // some app initialization functions
 
     // Get the license info
     // The next line is commented out for testing.
@@ -44,64 +46,64 @@ void AppInit()
 }
 ```
 
-## 步驟 2：在您的應用程式新增 App 內購買選項
+## Step 2: Add the in-app offers to your app
 
-針對您想要透過應用程式內產品提供的每項功能，建立一個購買選項，然後新增至您的 app。
+For each feature that you want to make available through an in-app product, create an offer and add it to your app.
 
-> **重要事項：**在將您的應用程式送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至應用程式。 如果您想要稍後再新增應用程式內產品，您就必須更新應用程式，然後重新送出新版本。
+> **Important**  You must add all the in-app products that you want to present to your customers to your app before you submit it to the Store. If you want to add new in-app products later, you must update your app and re-submit a new version.
 
-1.  **建立應用程式內的購買選項權杖**
+1.  **Create an in-app offer token**
 
-    您可以依權杖識別您應用程式中的每個應用程式內產品。 這個權杖是您定義的字串，並在應用程式和市集中用來識別特定的應用程式內產品。 請指定一個既唯一 (對您的應用程式來說) 又有意義的名稱，以便在撰寫程式碼時，可以快速地識別其正確功能。 以下是一些名稱的範例：
+    You identify each in-app product in your app by a token. This token is a string that you define and use in your app and in the Store to identify a specific in-app product. Give it a unique (to your app) and meaningful name so that you can quickly identify the correct feature it represents while you are coding. Here are some examples of names:
 
     -   "SpaceMissionLevel4"
-    
+
     -   "ContosoCloudSave"
-    
+
     -   "RainbowThemePack"
 
-2.  **以條件性區塊來撰寫功能的程式碼**
+2.  **Code the feature in a conditional block**
 
-    針對與應用程式內產品關聯的每個功能，您必須將其程式碼放到條件性區塊中來測試，以查看客戶是否擁有可使用該功能的授權。
+    You must put the code for each feature that is associated with an in-app product in a conditional block that tests to see if the customer has a license to use that feature.
 
-    下列範例示範如何在授權專屬的條件性區塊中，撰寫 **featureName** 產品功能的程式碼。 **featureName** 字串是可在應用程式內唯一識別這個產品的權杖，同時也可用來在市集中識別此產品。
+    Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**, is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
 
     ```    CSharp
-    if (licenseInformation.ProductLicenses["featureName"].IsActive) 
+    if (licenseInformation.ProductLicenses["featureName"].IsActive)
     {
         // the customer can access this feature
-    } 
+    }
     else
     {
         // the customer can' t access this feature
     }
     ```
 
-3.  **新增此功能的購買 UI**
+3.  **Add the purchase UI for this feature**
 
-    您的應用程式也必須提供購買機制，讓客戶能夠購買應用程式內產品所提供的產品或功能。 客戶無法透過市集以購買完整應用程式的方式來購買這些產品或功能。
+    Your app must also provide a way for your customers to purchase the product or feature offered by the in-app product. They can't purchase them through the Store in the same way they purchased the full app.
 
-    以下是如何測試以查看客戶是否已經擁有應用程式內產品，如果沒有，就顯示購買對話方塊來讓客戶購買。 請以您為購買對話方塊自訂的程式碼取代 "show the purchase dialog" 註解 (例如提供一個含有親切提醒「購買此應用程式！」 按鈕的頁面)。
+    Here's how to test to see if your customer already owns an in-app product and, if they don't, displays the purchase dialog so they can buy it. Replace the comment "show the purchase dialog" with your custom code for the purchase dialog (such as a page with a friendly "Buy this app!" button).
 
     ```    CSharp
-    void BuyFeature1() 
+    void BuyFeature1()
     {
         if (!licenseInformation.ProductLicenses["featureName"].IsActive)
         {
             try
             {
-                // The customer doesn't own this feature, so 
+                // The customer doesn't own this feature, so
                 // show the purchase dialog.
                 await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
-        
+
                 //Check the license state to determine if the in-app purchase was successful.
             }
             catch (Exception)
             {
-                // The in-app purchase was not completed because 
+                // The in-app purchase was not completed because
                 // an error occurred.
             }
-        } 
+        }
         else
         {
             // The customer already owns this feature.
@@ -109,34 +111,30 @@ void AppInit()
     }
     ```
 
-## 步驟 3：將測試程式碼變更成最後呼叫
+## Step 3: Change the test code to the final calls
 
-這個步驟很簡單：在您 App 的程式碼中，將 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 的每個參考變更成 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)。 您不再需要提供 WindowsStoreProxy.xml 檔案，因此可以將該檔案從您 App 的路徑中移除 (雖然您可能想要加以儲存，以供在下個步驟中設定應用程式內的購買選項時參考)。
+This is an easy step: change every reference to [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) to [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) in your app's code. You don't need to provide the WindowsStoreProxy.xml file any longer, so remove it from your app's path (although you may want to save it for reference when you configure the in-app offer in the next step).
 
-## 步驟 4：在市集中設定應用程式內產品購買選項
+## Step 4: Configure the in-app product offer in the Store
 
-在開發人員中心儀表板中，定義應用程式內產品的產品識別碼、類型、價格，以及其他屬性。 請確定在測試時，將它設定為與 WindowsStoreProxy.xml 相同的設定。 如需詳細資訊，請參閱 [IAP 提交](https://msdn.microsoft.com/library/windows/apps/mt148551)。
+In the Dev Center dashboard, define the product ID, type, price, and other properties for your in-app product. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing. For more information, see [IAP submissions](https://msdn.microsoft.com/library/windows/apps/mt148551).
 
-## 備註
+## Remarks
 
-如果您想要為客戶提供消費性應用程式內產品選項 (可購買、耗盡，並在想要時再次購買的項目)，請前往[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)主題。
+If you're interested in providing your customers with consumable in-app product options (items that can be purchased, used up, and then purchased again if desired), move on to the [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md) topic.
 
-如果您需要使用收據來確認使用者已進行 App 內購買，請務必檢閱[使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)。
+If you need to use receipts to verify that user made an in-app purchase, be sure to review [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md).
 
-## 相關主題
-
-
-* [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)
-* [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
-* [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
-* [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+## Related topics
 
 
+* [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)
+* [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)
+* [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)
+* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 
 
 
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

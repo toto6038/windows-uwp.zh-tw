@@ -1,180 +1,180 @@
 ---
 author: jnHs
-Description: "pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。"
-title: "pubCenter 開發人員中心整合"
+Description: Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
+title: pubCenter-Dev Center integration
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+ms.sourcegitcommit: b2aaf232567ea0910d83208ef77df127592afb0c
+ms.openlocfilehash: 7f841b27e736206c89bb3ad035f497991a01fc74
 
 ---
 
-# pubCenter 開發人員中心整合
+# pubCenter-Dev Center integration
 
 
-**重要事項**
+>**Important**
+-   **As of October 1st, 2016, you will no longer have access to the pubCenter dashboard.** Please visit your [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/apps/overview) for all ad management and reporting. If you haven’t linked any of your pubCenter accounts to a Dev Center account, please do so immediately by following the steps in this topic.
+-   As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the payout account you’ve set up in Dev Center. You should now manage any updates or changes to your payout account and tax profile only in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   As of December 1st, 2015, [your pubCenter account must be linked to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) in order to receive payouts.
+-   Your payout history will no longer be updated in pubCenter. To review your payout history going forward, [link your pubCenter account to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) and then visit the [Payout summary](payout-summary.md) page in the Dev Center dashboard.
 
--   到 2016 年 4 月 1 日為止，您的 Microsoft Advertising 獲利將會支付到您在開發人員中心設定的支付帳戶。 您現在只需管理開發人員中心上對於您支付帳戶的任何更新或變更。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
--   到 2015 年 12 月 1 日為止，[您必須將 pubCenter 帳戶連結到您的開發人員中心帳戶](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)，才能收到支付。
--   您的支付歷程記錄將不再於 pubCenter 中更新。 若要檢閱您往後的支出歷程記錄，[請將您的 pubCenter 帳戶與您的開發人員中心帳戶連結](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)，然後造訪開發人員中心儀表板中的[支出摘要](payout-summary.md)頁面
+Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
 
-pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。
+You might have multiple accounts in pubCenter and Dev Center, and your migration experience will depend on how your pubCenter and Dev Center accounts have been set up. You might fall into one or more of the following scenarios. Please read the details carefully for scenarios that apply to you.
 
-您在 pubCenter 和開發人員中心可能會有多個帳戶，而且您的移轉體驗將取決於設定 pubCenter 與開發人員中心帳戶的方式。 您可能屬於以下一或多個案例。 請仔細閱讀詳細資料以了解您適用的案例。
+## Scenario \#1: You have a Dev Center account and a pubCenter account with the same Microsoft account, registered in the same country/region
 
-## 案例 1：您有一個開發人員中心帳戶和一個包含相同 Microsoft 帳戶的 pubCenter 帳戶，並在相同的國家/地區註冊
 
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in the United States.
 
-**範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用 \[name\]@outlook.com 在美國註冊一個 pubCenter 帳戶。
+**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
 
-**結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
+-   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
+-   The payment method and tax details that are used in Dev Center will be used for your pubCenter payouts as well. Your payment method and tax details can be edited from Dev Center only. This means that:
+    -   If your payment methods in Dev Center and pubCenter were different, you might start receiving your pubCenter payouts in a different bank account.
+    -   If you don't have a payment method or tax details set up in Dev Center or pubCenter, please set them up in Dev Center and the same payment method or tax details will be used for your pubCenter payouts as well. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+    -   Your pubCenter payouts will happen with the payment method and tax details set up in pubCenter until your payment method and tax details are set up in Dev Center. If they are already set up in Dev Center, your pubCenter payment method and tax details will be superseded by those set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
 
--   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
--   若要管理現有 pubCenter 帳戶的付款方式和稅務詳細資料，您必須使用 pubCenter。
--   在開發人員中心使用的付款方式和稅務詳細資料也將用於 pubCenter 支付。 您的付款方式和稅務詳細資料僅能從開發人員中心編輯。 這表示：
-    -   如果您的付款方式在開發人員中心和 pubCenter 不同，您可能會開始在不同的銀行帳戶收到您的 pubCenter 支付。
-    -   如果您尚未在開發人員中心或 pubCenter 中設定付款方式或稅務詳細資料，請在開發人員中心進行設定，相同的付款方式或稅務詳細資料就也會用於您的 pubCenter 支付。 如需有關在開發人員中心管理付款方式與稅務詳細資料的詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
-    -   您的 pubCenter 支付將會使用在 pubCenter 中設定的付款方式和稅務詳細資料進行，直到您在開發人員中心設定您的付款方式和稅務詳細資料為止。 如果您已經在開發人員中心設定這些資料，您的 pubCenter 付款方式和稅務詳細資料將由開發人員中心的設定所取代。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
--   現在可以在您的開發人員中心帳戶取得您的支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
--   現在您所有的 app 促銷活動都與您的開發人員中心帳戶相關聯，而且您可以直接從開發人員中心管理它們。
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+## Scenario \#2: You have a Dev Center account and a pubCenter account with the same Microsoft account, but registered in different countries/regions
 
-## 案例 2：您有一個開發人員中心帳戶和一個包含相同 Microsoft 帳戶的 pubCenter 帳戶，但是在不同的國家/地區註冊
 
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in India.
 
-**範例**：您已經使用 \[name\]@outlook.com 在美國註冊一個開發人員中心帳戶。 您也已經使用\[name\]@outlook.com 在印度註冊一個 pubCenter 帳戶。
+**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
 
-**結果**：您的 pubCenter 帳戶已經在後端自動連結到您的開發人員中心帳戶。 您不需要執行任何動作。
+-   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   Your pubCenter earnings data will be converted to your Dev Center currency and reported in Dev Center. However, your pubCenter payouts will continue to happen in the currency of your pubCenter account.
+-   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
+-   For any new ad units that you create in Dev Center, earnings will accrue, be reported, and be paid out in the currency of your Dev Center account, and earnings for these new ad units will use your Dev Center payment method and tax details.
+-   You will need to manage the payment method and tax details for earnings from your new ad units in Dev Center. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) and [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
 
--   您在 pubCenter 中所有現有廣告單位的報告，都可在開發人員中心報告所屬 app 底下的[廣告績效報告](advertising-performance-report.md)中取得。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
--   您的 pubCenter 獲利資料將會轉換為開發人員中心的貨幣，並在開發人員中心報告。 不過，您的 pubCenter 支付將會繼續使用 pubCenter 帳戶的貨幣進行。
--   若要管理現有 pubCenter 帳戶的付款方式和稅務詳細資料，您必須使用 pubCenter。
--   對於您在開發人員中心建立的任何新廣告單位，獲利將會以您開發人員中心帳戶的貨幣累積、報告以及支付，而且這些新廣告單位的獲利將會使用您的開發人員中心付款方式和稅務詳細資料。
--   您必須從開發人員中心的新廣告單位，管理獲利的付款方式和稅務詳細資料。 如需在開發人員中心管理付款方式與稅務詳細資料的詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)和 [ppubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
--   現在可以在您的開發人員中心帳戶取得您的支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
--   現在您所有的 app 促銷活動都與您的開發人員中心帳戶相關聯，而且您可以直接從開發人員中心管理它們。
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+## Scenario \#3: You have Dev Center and pubCenter accounts registered with different Microsoft accounts
 
-## 案例 3：您擁有使用不同的 Microsoft 帳戶註冊的開發人員中心帳戶和 pubCenter 帳戶
 
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com. You also have a pubCenter account registered with \[other\_name\]@outlook.com.
 
-**範例**：您使用 \[name\]@outlook.com 註冊一個開發人員中心帳戶。 您也使用 \[other\_name\]@outlook.com 註冊一個 pubCenter 帳戶。
+**Result**: You need to manually link your pubCenter account(s) to your Dev Center account. To do so:
 
-**結果**：您必須將您的 pubCenter 帳戶手動連結到開發人員中心帳戶。 若要這麼做：
+1.  Sign in to the pubCenter account you wish to link.
+2.  On this account's **My information** page, you will find a **pubCenter Account Linking Code**. Keep this code available.
 
-1.  登入您想要連結的 pubCenter 帳戶。
-2.  在此帳戶的 [我的資訊]**** 頁面上，您將會找到一個 [pubCenter 帳戶連結代碼]****。 將此代碼放在手邊。
+    > **Note**  A new account linking code is generated every 60 minutes.
 
-    > **注意：**每 60 分鐘會產生一個新的帳戶連結代碼。
+3.  Sign out of your pubCenter account.
+4.  Sign in to your [Dev Center account](https://dev.windows.com/).
+5.  In the Dev Center dashboard, click **Advertising performance** in the left pane, and then click **Link a pubCenter account**.
+6.  Enter the email address associated with the pubCenter account and the account linking code.
+7.  Click **Link account** and your pubCenter account will be linked to your Dev Center account.
 
-3.  登出您的 pubCenter 帳戶。
-4.  登入您的[開發人員中心帳戶](https://dev.windows.com/)。
-5.  在開發人員中心儀表板中，按一下左窗格中的 [廣告績效]****，再按一下 [連結 pubCenter 帳戶]****。
-6.  輸入與 pubCenter 帳戶相關聯的電子郵件地址，以及帳戶連結代碼。
-7.  按一下 [**連結帳戶**]，您的 pubCenter 帳戶將會連結到您的開發人員中心帳戶。
+    > **Note**  You can link one or more pubCenter accounts to your Dev Center account. However, each of your pubCenter accounts can be linked to only one Dev Center account.
 
-    > **注意：**您可以將一或多個 pubCenter 帳戶連結到您的開發人員中心帳戶。 不過，每個 pubCenter 帳戶只能連結到一個開發人員中心帳戶。
+After your pubCenter account is linked to a Dev Center account:
 
-您的 pubCenter 帳戶連結到開發人員中心帳戶之後：
+-   Your pubCenter account data will start appearing in the linked Dev Center account within 24 hours.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   If your pubCenter account was registered in a different country/region than the Dev Center account, your earnings data will be converted to the Dev Center currency in reports.
+-   Earnings from your pubCenter account will no longer be paid out using the payment method and tax details set up in pubCenter. If you need to make changes to your payment method or tax details, you will need to do so in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
+-   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
+-   Earnings from any new ad units that you create in Dev Center will be paid out using your Dev Center payment method and tax details. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+-   Your pubCenter payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All of the app promotion campaigns you set up in pubCenter will be automatically paused. Please create new campaigns in Dev Center going forward.
 
--   您的 pubCenter 帳戶資料就會在 24 小時內，開始出現在連結的開發人員中心帳戶中。
--   如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果在開發人員中心的 app 名稱和在 pubCenter 中的不一致，就可能會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
--   如果您的 pubCenter 帳戶與開發人員中心帳戶是在不同的國家/地區註冊，您的獲利資料將會在報告中轉換成開發人員中心的貨幣。
--   來自 pubCenter 帳戶的獲利將不再使用在 pubCenter 中設定的付款方式和稅務詳細資料來支付。 如果您需要變更付款方式或稅務詳細資料，您必須在開發人員中心進行。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
--   若要收取在開發人員中心所建立新廣告單位的累積獲利款項，您必須在開發人員中心設定付款和稅務資料。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
--   來自您在開發人員中心所建立任何新廣告單位的獲利將會使用開發人員中心的付款方式和稅務詳細資料來支付。 如需有關在開發人員中心管理付款方式與稅務詳細資料的詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
--   現在可以在您的開發人員中心帳戶取得您的 pubCenter 支付報告。 如需開發人員中心中支付報告的詳細資訊，請參閱[支付摘要](payout-summary.md)。
--   系統將會自動暫停您在 pubCenter 中設定的所有 app 促銷活動。 往後請在開發人員中心建立新的活動。
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-> **注意：**您再也無法在 pubCenter 中建立廣告單位或新的 app 促銷活動。 如需如何在開發人員中心建立廣告單位的相關資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。 如需如何在開發人員中心建立 app 促銷活動的相關資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+## Additional notes and recommendations
 
-## 其他附註和建議
 
+-   Be sure to link all of your pubCenter accounts (with non-matching Microsoft accounts) to the Dev Center account in which you would like to manage them.
+-   Do not sign up for a new account in pubCenter, unless you wish to monetize Xbox apps. All your monetization and app promotion needs can now be managed in your Dev Center account.
+-   You will no longer be able to create new ad units in pubCenter. Create new ad units in Dev Center only going forward. If you wish to edit your existing ad units, please contact Support.
+-   A new pubCenter account may have been created for you, under the same Microsoft account, to link to your Dev Center account with the same Microsoft account. Use the new accounts drop-down in the top-right corner of pubCenter pages to view and manage information for your different pubCenter accounts.
+-   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
--   請確定將所有 pubCenter 帳戶 (以及未配對的 Microsoft 帳戶) 連結到您想要進行管理的開發人員中心帳戶。
--   除非您想要讓 Xbox app 獲利，否則不要在 pubCenter 中註冊新的帳戶。 現在所有獲利與 app 促銷需求都能在您的開發人員中心帳戶中進行管理。
--   在 pubCenter 中不能再建立新的廣告單位。 往後只能在開發人員中心建立新的廣告單位。 如果您想要編輯現有的廣告單位，請連絡支援小組。
--   在您同一個 Microsoft 帳戶之下可能已經為您建立新的 pubCenter 帳戶，使用同一個 Microsoft 帳戶連結到您的開發人員中心帳戶。 請使用 pubCenter 頁面右上角的新帳戶下拉式清單來檢視及管理不同 pubCenter 帳戶的資訊。
--   若要收取在開發人員中心所建立新廣告單位的累積獲利款項，您必須在開發人員中心設定付款和稅務資料。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
+## Frequently asked questions
 
-## 常見問題集
 
+**Why didn’t I receive my Microsoft Advertising payout this month?**
 
-### 為什麼我未收到這個月的 Microsoft Advertising 支付？
+This is usually due to one or more of the following reasons:
 
-這通常是因為下列一或多個原因所導致：
+-   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
+-   Your pubCenter account has not been linked to your Dev Center account.
 
--   您在開發人員中心的[支付帳戶和稅金設定檔詳細資料](setting-up-your-payout-account-and-tax-forms.md)並未正確設定。
--   您的 pubCenter 帳戶尚未連結到您的開發人員中心帳戶。
+For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
+**I am unable to create new ad units in pubCenter. What's going on?**
 
-如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
-### 我無法在 pubCenter 中建立新的廣告單位。 怎麼回事？
+Creating new ad units is no longer supported in pubCenter. If you have integrated the Microsoft Ad mediator control in your app, an ad unit will automatically get created on the back end when you upload your app to the Windows Store. Alternately, you could also manually create a new standalone ad unit in Dev Center from your app's **Monetize with ads** page.
 
-我們已不再支援在 pubCenter 中建立新的廣告單位。 如果您已經在 app 中整合 Microsoft Ad Mediator 控制項，當您將 app 上傳到 Windows 市集時，就會自動在後端建立廣告單位。 或者，您也可以從您 app 的 [利用廣告營利]**** 頁面，在開發人員中心手動建立新的獨立廣告單位。
+**How do I create ad units in Dev Center?**
 
-### 如何在開發人員中心建立廣告單位？
+From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
 
-從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [利用廣告營利]****。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
+**I installed the latest version of the ad mediator extension and I added the ad mediator control to my app. Do I also need to go to pubCenter and create a new ad unit?**
 
-### 我安裝了最新版的廣告流量分配者延伸，而且將廣告流量分配者控制項新增到我的 app。 我還需要移至 pubCenter 建立新的廣告單位嗎？
+If you are using the latest version of the [ad mediator extension](http://go.microsoft.com/fwlink/p/?LinkId=518026), we will automatically create a new ad unit for you when you upload your app to the Windows Store. You no longer need to go to pubCenter and manually create a new ad unit. If ad unit creation failed for some reason, you will receive an email with details of recommended next steps.
 
-如果您使用最新版的[廣告流量分配者延伸](http://go.microsoft.com/fwlink/p/?LinkId=518026)，當您將 app 上傳到 Windows 市集時，我們會為您自動建立新的廣告單位。 您不需要再移至 pubCenter 手動建立新的廣告單位。 如果廣告單位因為某些原因建立失敗，您會收到電子郵件得知建議的後續步驟詳細資料。
+**I am still using an older version of the ad mediator control in my app and I need to get a new ad unit ID. How do I create ad units?**
 
-### 我仍然在 app 中使用舊版的廣告流量分配者控制項，需要取得新的廣告單位識別碼。 如何建立廣告單位？
+You can create a new ad unit for your app in the Dev Center dashboard. From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
 
-您可以在開發人員中心儀表板中為您的 app 建立新的廣告單位。 從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [利用廣告營利]****。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
+**My ad units got created automatically because I used the ad mediator control, and I confirmed that ads are being served. I also manually created several other ad units from Dev Center. Do I need to do anything more to get paid for earnings on these ad units?**
 
-### 我因為使用了廣告流量分配者控制項而自動建立了廣告單位，而且我確認廣告正在進行。 我也從開發人員中心手動建立了幾個其他的廣告單位。 我還需要執行任何動作才能從這些廣告單位獲利嗎？
+Log in to pubCenter with the same Microsoft account that you use for Dev Center, and ensure your Payment and Tax Instruments are set up accurately. You will receive payout on these new ad units during the first week of the month if the accrued earnings crosses the threshold limit.
 
-請使用與您用於開發人員中心相同的 Microsoft 帳戶登入 pubCenter，確認您的付款和稅務資料設定正確。 如果累積的獲利超出閾值限制，您將會在每個月的第一週收到這些新廣告單位的支付。
+**I am unable to create new app promotion campaigns in pubCenter. Some of my app promotion campaigns have also been automatically paused. Is this expected?**
 
-### 我無法在 pubCenter 中建立新的 app 促銷活動。 我的一些 app 促銷活動也已經自動暫停。 這是正常的嗎？
+You will only be able to create app promotion campaigns in Dev Center going forward. Some of your app promotion campaigns in pubCenter may have been paused as part of this integration. Please create new app promotion campaigns in Dev Center going forward.
 
-您之後只能在開發人員中心建立 app 的促銷活動。 您在 pubCenter 中的一些 app 促銷活動，可能已經因為這項整合而暫停。 往後請在開發人員中心建立新的 app 促銷活動。
+**How do I create app promotion campaigns in Dev Center?**
 
-### 如何在開發人員中心建立 app 促銷活動？
+From your app's page in Dev Center, click **Monetization** &gt; **Promote your app**. For more information on creating ad campaigns for your apps in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-從開發人員中心的 app 頁面，按一下 [創造營收]**** &gt; [促銷您的 app]****。 如需在開發人員中心為 app 建立廣告活動的詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+**Where can I see performance data in Dev Center?**
 
-### 在開發人員中心哪裡可以查看績效資料？
+From your app's page in Dev Center, click **Analytics** &gt; **Microsoft Advertising performance**. For more information, see [Advertising performance report](advertising-performance-report.md).
 
-從開發人員中心的 app 頁面，按一下 [分析]**** &gt; [Microsoft 廣告成效]****。 如需詳細資訊，請參閱[廣告績效報告](advertising-performance-report.md)。
+**How do I manage my payment method and tax details in Dev Center?**
 
-### 如何在開發人員中心管理付款方式和稅務詳細資料？
+See [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
-請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
+**Where can I find payout reports in Dev Center?**
 
-### 在開發人員中心哪裡可以找到支付報告？
+See [Payout summary](payout-summary.md).
 
-請參閱[支付摘要](payout-summary.md)。
+**I linked my pubCenter account to my Dev Center account, but I am unable to find ad units under the app I used them in. Where can I find them?**
 
-### 我已經將 pubCenter 帳戶連結到開發人員中心帳戶，但是在 app 底下找不到當中使用的廣告單位。 哪裡可以找到這些廣告單位？
+If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if you used that ad unit in multiple apps, if you used that ad unit in apps that do not belong to the same Dev Center account, or if the ad unit has not been serving any ads in the last few days. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
 
-如果您在[廣告績效報告](advertising-performance-report.md)中找不到特定的 pubCenter 廣告單位，表示我們可能已經無法順利將該廣告單位連結到開發人員中心中的 app。 如果您在多個 app 中使用了該廣告單位、如果您在不屬於相同開發人員中心帳戶的 app 中使用了該廣告單位，或者如果廣告單位在過去幾天已經沒有提供任何廣告，則會發生這個狀況。 若要查看我們無法順利連結到開發人員中心 app 的廣告單位，請瀏覽帳戶層級的**廣告績效**報告並選取 pubCenter app 名稱。 若要存取帳戶層級的**廣告績效**報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
+**I used to see my ad units under an app in my Dev Center account, but now I can't find them. What’s going on?**
 
-### 我以前都在開發人員中心帳戶的 app 底下查看廣告單位，但現在我找不到了。 怎麼回事？
+This could happen if no ads served in your ad units for a few days. Go to the account-level **Advertising performance** report in Dev Center and look for data for these ad units.
 
-如果您的廣告單位有幾天沒有廣告，則會發生這個問題。 請移至開發人員中心的帳戶層級 [廣告績效]****報告，查看這些廣告單位的資料。
+**How do I find out if my pubCenter account has been linked to my Dev Center account successfully?**
 
-### 如何找出我的 pubCenter 帳戶是否已經成功連結到我的開發人員中心帳戶？
+If you have the same Microsoft account associated with your pubCenter and Dev Center accounts, your accounts will be automatically linked and you would start seeing your pubCenter earnings reports in your Dev Center account. If your pubCenter and Dev Center accounts were associated with different Microsoft accounts, you will start seeing your pubCenter account earnings reports on Dev Center 24 hours after you link your pubCenter account to your Dev Center account.
 
-如果您使用同一個 Microsoft 帳戶與 pubCenter 和開發人員中心帳戶關聯，您的帳戶將會自動連結，而且會在開發人員中心帳戶開始看到 pubCenter 的獲利報告。 如果您的 pubCenter 和開發人員中心帳戶與不同的 Microsoft 帳戶關聯，您會在將 pubCenter 帳戶連結到開發人員中心帳戶的 24 小時之後，開始看到 pubCenter 帳戶的獲利報告。
+**When do I need to complete the linking of my pubCenter accounts to my Dev Center account?**
 
-### 何時需要完成將 pubCenter 帳戶連結到開發人員中心帳戶？
+We recommend that you ensure all your pubCenter accounts are linked to your Dev Center account at your earliest possible convenience.
 
-我們建議您盡早將您所有的 pubCenter 帳戶都連結到您的開發人員中心帳戶。
+**I am now seeing a new accounts drop-down in my pubCenter Dashboard. What is this?**
 
-### 我現在在我的 pubCenter 儀表板中看到新的帳戶下拉式清單。 這是什麼？
+As part of the pubCenter-Dev Center integration, a new pubCenter account may have been created for you on the back end to link to your Dev Center account. In this pubCenter accounts drop-down, you can choose the account for which you would like to review data.
 
-這是 pubCenter 開發人員中心整合的一部分，表示可能已經在後端為您建立了新的 pubCenter 帳戶，連結到您的開發人員中心帳戶。 在這個 pubCenter 帳戶下拉式清單中，您可以選擇要用來檢閱資料的帳戶。
+**I see a slight difference between the data reported in pubCenter and Dev Center. Is this expected?**
 
-### 我看到 pubCenter 和開發人員中心回報的資料有些微的差異。 這是正常的嗎？
-
-是的，pubCenter 和開發人員中心的報告資料可能會有些微的差異。 這可能是因為 pubCenter 的資料是以 pubCenter 帳戶的時區回報，而開發人員中心的資料則是以 UTC 回報。
+Yes, there could be a slight difference in the data shown in pubCenter and Dev Center reports. This could be because data in pubCenter is reported in the time zone of the pubCenter account and data in Dev Center is reported in UTC.
 
  
 
@@ -182,10 +182,6 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

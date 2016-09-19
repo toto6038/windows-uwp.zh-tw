@@ -1,26 +1,26 @@
 ---
 author: mijacobs
-title: "回應式設計的螢幕大小與中斷點"
+title: Screen sizes and break points for responsive design
 description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
+ms.openlocfilehash: 5977b6253e2ee10fa0153d79053f89b705c2e1a3
 
 ---
 
-#  回應式設計的螢幕大小與中斷點
+#  Screen sizes and break points for responsive design
 
-整個 Windows 10 生態系統中，裝置目標和螢幕大小有太多種，以致於無法針對每一個最佳化您的 UI。 我們建議使用幾個重要的寬度 (也稱做「中斷點」) 的設計：360、640、1024 以及 1366 有效像素，做為替代方案。
+The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 360, 640, 1024 and 1366 epx.
 
-**祕訣：**當針對特定中斷點進行設計時，請針對您應用程式可以使用的螢幕空間量 (應用程式的視窗) 進行設計。 當以全螢幕執行應用程式時，應用程式視窗與螢幕大小相同，但是在其他情況下則較小。
+**Tip**  When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window). When the app is running full-screen, the app window is the same size as the screen, but in other cases, it's smaller.
  
 
-下表描述不同的大小類別，並提供針對這些大小類別量身訂做的一般建議。
+This table describes the different size classes and provides general recommendations for tailoring for those size classes.
 
-![回應式設計中斷點](images/rsp-design/rspd-breakpoints.png)
+![responsive design breakpoints](images/rsp-design/rspd-breakpoints.png)
 
 <table>
 <colgroup>
@@ -31,74 +31,74 @@ ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">大小類別</th>
-<th align="left">小型</th>
-<th align="left">中型</th>
-<th align="left">大型</th>
+<th align="left">Size class</th>
+<th align="left">small</th>
+<th align="left">medium</th>
+<th align="left">large</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">一般螢幕大小 (對角線)</td>
-<td align="left">4&quot; 到 6&quot;</td>
-<td align="left">7&quot; 到 12&quot;，或電視</td>
-<td align="left">13&quot; 及更大</td>
+<td align="left">Typical screen size (diagonal)</td>
+<td align="left">4&quot; to 6&quot;</td>
+<td align="left">7&quot; to 12&quot;, or TVs</td>
+<td align="left">13&quot; and larger</td>
 </tr>
 <tr class="even">
-<td align="left">一般裝置</td>
-<td align="left">手機</td>
-<td align="left">平板手機、平板電腦、電視</td>
-<td align="left">電腦、膝上型電腦、Surface Hub</td>
+<td align="left">Typical devices</td>
+<td align="left">Phones</td>
+<td align="left">Phablets, tablets, TVs</td>
+<td align="left">PCs, laptops, Surface Hubs</td>
 </tr>
 <tr class="odd">
-<td align="left">通用視窗大小 (以有效像素為單位)</td>
-<td align="left">320x569、360x640、480x854</td>
-<td align="left">960x540、1024x640</td>
-<td align="left">1366x768、1920x1080</td>
+<td align="left">Common window sizes in effective pixels</td>
+<td align="left">320x569, 360x640, 480x854</td>
+<td align="left">960x540, 1024x640</td>
+<td align="left">1366x768, 1920x1080</td>
 </tr>
 <tr class="even">
-<td align="left">視窗寬度中斷點 (以有效像素為單位)</td>
-<td align="left">640px 或更少</td>
-<td align="left">641px 到 1007px</td>
-<td align="left">1008px 或更大像素</td>
+<td align="left">Window width breakpoints in effective pixels</td>
+<td align="left">640px or less</td>
+<td align="left">641px to 1007px</td>
+<td align="left">1008px or greater</td>
 </tr>
 <tr class="odd">
-<td align="left" valign="top">一般建議</td>
+<td align="left" valign="top">General recommendations</td>
 <td align="left" valign="top"><ul>
-<li>中央索引標籤元素。</li>
-<li>設定左右視窗邊界為 12px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[應用程式列](../controls-and-patterns/app-bars.md)固定在視窗底部以改善存取性</li>
-<li>一次使用 1 個欄位/區域</li>
-<li>使用圖示來表示搜尋 (不顯示搜尋方塊)。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以重疊模式放置，以節省螢幕空間。</li>
-<li>如果您使用[主要詳細資料模式](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。</li>
+<li>Center tab elements.</li>
+<li>Set left and right window margins to 12px to create a visual separation between the left and right edges of the app window.</li>
+<li>Dock [app bars](../controls-and-patterns/app-bars.md) to the bottom of the window for improved reachability</li>
+<li>Use one column/region at a time</li>
+<li>Use an icon to represent search (don't show a search box).</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) in overlay mode to conserve screen space.</li>
+<li>If you're using the [master details pattern](../controls-and-patterns/master-details.md), use the stacked presentation mode to save screen space.</li>
 </ul></td>
 <td align="left" valign="top"><ul>
-<li>將索引標籤元素靠左對齊。</li>
-<li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
-<li>最多 2 個欄位/區域</li>
-<li>顯示搜尋方塊。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。</li>
-<li>請考慮進一步自訂[電視體驗](http://go.microsoft.com/fwlink/?LinkId=760736)。</li>
+<li>Make tab elements left-aligned.</li>
+<li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
+<li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
+<li>Up to two columns/regions</li>
+<li>Show the search box.</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into sliver mode so a narrow strip of icons always shows.</li>
+<li>Consider further tailoring for [TV experiences](http://go.microsoft.com/fwlink/?LinkId=760736).</li>
 </ul></td>
 <td align="left" valign="top"><ul>
-<li>將索引標籤元素靠左對齊。</li>
-<li>設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。</li>
-<li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
-<li>最多 3 個欄位/區域</li>
-<li>顯示搜尋方塊。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以停駐模式放置，以便讓它永遠顯示。</li>
+<li>Make tab elements left-aligned.</li>
+<li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
+<li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
+<li>Up to three columns/regions</li>
+<li>Show the search box.</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into docked mode so that it always shows.</li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-透過 [**Continuum 手機版**](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器、滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在小型類別中。
+With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the small size class.
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

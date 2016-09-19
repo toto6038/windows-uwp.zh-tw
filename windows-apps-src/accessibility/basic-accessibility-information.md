@@ -6,8 +6,8 @@ title: "公開基本的協助工具資訊"
 label: Expose basic accessibility information
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
+ms.sourcegitcommit: 05fa9bb674839c255d8b63da04a018e397c84490
+ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
 | 影像            | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
 | 表單元素     | 表單元素的無障礙名稱應該和元素的顯示標籤相同。 請參閱 [Labels 和 LabeledBy](#labels)。 |
 | 按鈕和連結 | 根據預設值，按鈕或連結的無障礙名稱是以可見的文字為基礎，使用與[來自內部文字的名稱](#name_from_inner_text)中所述之規則相同的規則。 如果按鈕只包含一個影像，則使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供與設計的按鈕動作相當的純文字。 |
-
+<br/>
 大部分的容器元素 (例如面板) 不會將它們的內容升級成無障礙名稱。 原因在於應該報告名稱和對應角色的是項目內容，而不是其容器。 容器元素可能會報告這個元素在 Microsoft 使用者介面自動化表示法中有子元素，因此輔助技術邏輯可以周遊這個元素。 但是使用輔助技術的使用者通常不需要知道容器為何，所以大部分的容器都沒有名稱。
 
 <span id="role_value"/>
@@ -146,6 +146,6 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

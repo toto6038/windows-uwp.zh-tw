@@ -1,74 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "了解 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。"
-title: "Microsoft Advertising 程式庫的已知問題"
+description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK.
+title: Known issues for the Microsoft advertising libraries
 translationtype: Human Translation
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
-# Microsoft Advertising 程式庫的已知問題
+# Known issues for the Microsoft advertising libraries
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主題列出 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。
 
-## 需要適用於通用 Windows App 的 Visual Studio Tools 才能完成安裝
+This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
 
-若要隨著 Visual Studio 2015 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，您必須安裝適用於通用 Windows App 的 Visual Studio Tools 1.1 版或更新版本。 如需詳細資訊，請參閱 Visual Studio [版本資訊](http://go.microsoft.com/fwlink/?LinkID=624516)。
+## Installation of Microsoft Store Services SDK requires Visual Studio Tools for Universal Windows Apps
 
-## Windows Phone 8.x Silverlight 專案
+To install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information, see the Visual Studio [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]****  > [加入已連接服務]****  > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+## Windows Phone 8.x Silverlight projects
 
-## AdControl 介面於 XAML 中為未知
+The Microsoft Advertising SDK for Windows and Windows Phone 8.x has limited support for Windows Phone 8.x Silverlight projects. For more information, see [Display ads in your app](display-ads-in-your-app.md#silverlight_support).
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
+To get the Microsoft advertising assemblies for Windows Phone 8.x Silverlight projects, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), open your project in Visual Studio, and then go to **Project** > **Add Connected Service** > **Ad Mediator** to automatically download the assemblies. After doing this, you can remove the ad mediator references from your project if you do not want to use ad mediation. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
-## 來自先前廣告要求的 lastError
+## AdControl interface unknown in XAML
 
-如果有來自先前廣告要求的剩餘 **lastError**，事件可能會在下一個廣告呼叫期間被觸發兩次。 雖然仍然會做出新的廣告要求，並可能產生有效的廣告，此行為可能會造成混淆。
+The XAML markup for an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) may incorrectly show a blue curvy line implying that the interface is unknown. This occurs only when targeting x86, and it may be ignored.
 
-## 手機上的插入式廣告和瀏覽按鈕
+## lastError from previous ad request
 
-在具有軟體 [返回]****、[開始]**** 及 [搜尋]**** 按鈕的手機 (或模擬器) 上，插入式廣告影片的倒數計時器和點選按鈕可能會被遮住。
+If there is a leftover **lastError** from the previous ad request, the event may be fired twice during the next ad call. While the new ad request will still be made and may yield a valid ad, this behavior may cause confusion.
 
-## 最近建立的廣告未被提供到您的 App
+## Interstitial ads and navigation buttons on phones
 
-如果您最近有建立廣告 (一天之內)，它可能無法立即可用。 如果廣告的編輯內容已受到核准，則會在廣告伺服器處理完畢，且該廣告能做為詳細目錄提供時提供。
+On phones (or emulators) that have software **Back**, **Start**, and **Search** buttons instead of hardware buttons, the countdown timer and click through buttons for video interstitial ads may be obscured.
 
-## 您的 App 中沒有顯示廣告
+## Recently created ads are not being served to your app
 
-有很多原因會使您看不見廣告，包括網路錯誤。 其他原因可能包含：
+If you have created an ad recently (less than a day), it might not be available immediately. If the ad has been approved for editorial content, it will be served once the advertising server has processed it and the ad is available as inventory.
 
-* 在 Windows 開發人員中心選取大小大於或小於您 App 程式碼之 **AdControl** 大小的廣告單位。
+## No ads are shown in your app
 
-* 如果您在執行實際 App 時使用[測試模式值](test-mode-values.md)做為您的廣告單位識別碼，則廣告將不會出現。
+There are many reasons you may see no ads, including network errors. Other reasons might include:
 
-* 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
+* Selecting an ad unit in Windows Dev Center with a size that is greater or less than the size of the **AdControl** in your app's code.
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://go.microsoft.com/fwlink/p/?LinkId=331508)。 在該頁面上，請選擇 [App 內廣告]****。
+* Ads will not appear if you're using a [test mode value](test-mode-values.md) for your ad unit ID when running a live app.
 
-您也可以在[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
+* If you created a new ad unit ID in the past half-hour, you might not see an ad until the servers propagate new data through the system. Existing IDs that have shown ads before should show ads immediately.
 
-## 您的 App 中顯示測試廣告而不是實際廣告
+If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://go.microsoft.com/fwlink/p/?LinkId=331508). On that page, choose **In-App Advertising**.
 
-就算您是預期實際廣告，仍有可能會顯示測試廣告。 這可能會在下列案例中發生：
+You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
-* Microsoft Advertising 無法驗證或找不到在應用程式市集中使用的實際應用程式識別碼。 在此情況下，當使用者建立廣告單位時，廣告單位的狀態一開始可能會是實際運作 (非測試)，但將會在第一次廣告要求後的 6 小時內移至測試狀態。 如果在 10 天內沒有任何來自測試 App 的要求，它將會變更回實際運作的狀態。
+## Test ads are showing in your app instead of live ads
 
-* 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
+Test ads can be shown, even when you are expecting live ads. This can happen in the following scenarios:
 
-當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 [作用中並正在提供測試廣告]****。 目前這並不適用於手機 App。
+* Microsoft advertising cannot verify or find the live application ID used in the app store. In this case, when an ad unit is created by a user, its status can start as live (non-test) but will move to test status within 6 hours after the first ad request. It will change back to live if there are no requests from test apps for 10 days.
 
-## 廣告單位識別碼和應用程式識別碼的過時測試值已無法運作
+* Side-loaded apps or apps that are running in the emulator will not show live ads.
 
-下列適用於 Windows Phone Silverlight App 的測試值已經過時，並已無法運作。 如果您的現有專案中有使用這些測試值，請使用[測試模式值 (英文)](test-mode-values.md) 中提供的值來更新您的專案。
+When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Windows Dev Center. This does not currently apply to phone apps.
 
-| 應用程式識別碼  |  廣告單位識別碼    |
+## Obsolete test values for ad unit ID and application ID no longer working
+
+The following test values for Windows Phone Silverlight apps are obsolete, and will no longer work. If you have an existing project that uses these test values, update your project to use the values provided in [Test mode values](test-mode-values.md).
+
+| Application ID  |  Ad unit ID    |
 |-----------------|----------------|
 | test_client     |  Image320_50   |
 | test_client     |  Image300_50   |
@@ -76,47 +78,47 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## 專案中因目標為 [任何 CPU] 所造成的參考錯誤
+## Reference errors caused by targeting Any CPU in your project
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU]**** 為目標。 如果您的專案以 [任何 CPU]**** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+When using the Microsoft advertising libraries, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning after adding the reference similar to this one.
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員]**** 來針對偵錯和發行組態設定平台目標。
+To remove this warning, update your project to use an architecture-specific build output (for example, **x86**). Use **Configuration Manager** to set the platform targets for debug and release configurations.
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-當您針對市集提交建立應用程式套件 (如下列影像所示)，請務必包含您想要做為目標的架構。 如果您想要在 x64 OS 上執行 x86 組建，您可以選擇略過 x64。
+When you create your app packages for store submission (as shown in the following images), be sure to include the architectures you intend to target. You may opt to skip x64 if you intend to run x86 builds on the x64 OS.
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 
 ![createapppackages](images/13-16280cb1-a838-42b9-9256-eac7f33f5603.png)
 
-## JavaScript/HTML App 中的 Z 軸順序
+## Z-order in JavaScript/HTML apps
 
-JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內。 唯一的例外是插斷覆疊，例如 Skype App 的輸入呼叫通知。
+JavaScript/HTML apps must not place elements into the reserved MAX-10 range of z-order. The sole exception is an interrupt overlay, such as an inbound call notification for a Skype app.
 
 <span id="bkmk-ui"/>
-## 請不要使用邊界。
+## Do not use borders
 
-設定由 **AdControl** 從其父類別繼承的邊界相關屬性，將會造成廣告位置錯誤。
+Setting border-related properties inherited by the **AdControl** from its parent class will cause the ad placement to be wrong.
 
-## 其他資訊
-
-
-如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising 程式庫的相關問題，請造訪[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
-
-## 支援
+## More Information
 
 
-若要針對 Microsoft Advertising 程式庫的問題連絡產品支援，請造訪[支援頁面](https://go.microsoft.com/fwlink/p/?LinkId=331508)並選擇 [App 內廣告]****。
+For more information about the latest known issues and to post questions related to the Microsoft advertising libraries, visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
- 
+## Support
+
+
+To contact product support for issues with the Microsoft advertising libraries, visit the [support page](https://go.microsoft.com/fwlink/p/?LinkId=331508) and choose **In-App Advertising**.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO2-->
 
 

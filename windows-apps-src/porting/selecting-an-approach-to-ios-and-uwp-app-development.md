@@ -1,101 +1,101 @@
 ---
 author: mcleblanc
-description: "開發跨平台 app 時有哪些選擇？"
-title: "選取 iOS 和 UWP app 開發的方式"
+description: What are the choices when developing cross-platform apps?.
+title: Selecting an approach to iOS and UWP app development
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
+ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
 ---
 
-# 選取 iOS 和 UWP app 開發的方式
+# Selecting an approach to iOS and UWP app development
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-開發跨平台 app 時有哪些選擇？
+What are the choices when developing cross-platform apps?
 
-## 若要同時支援 iOS 與 Windows 最佳的方式為何？
+## What's the best way to support both iOS and Windows?
 
-Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩種平台 (也包括 Android) 的 app，有越來越多的工具和技術可大大地協助您。 最好的解決方案取決於您撰寫的 app 類型，以及您是從頭開始或移植現有的專案。
+Windows and iOS may seem to be very different beasts, but a growing number of tools and techniques can greatly assist you if you need to write apps that support both platforms (and Android too). The best solution depends on the type of app you are writing, and whether you are starting from scratch or porting an existing project.
 
-## 撰寫新的 app
+## Writing a new app
 
-您可以使用全新的平板電腦，其中有許多選項供您任意使用，包括：
+With a clean slate, you have many options at your disposal, including:
 
 -   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
 
-    有了 Xamarin，您可以使用 C# 撰寫應用程式，讓它在 Windows 上執行，也可以建立原生的 iOS 應用程式。 Visual Studio 內建對 Xamarin 的支援；只要選取正確的專案類型即可。
+    With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    如果您比較熟悉 Javascript 和 HTML，Apache Cordova (也稱為 PhoneGap) 將協助您建立適用於 iOS、Windows 和 Android 的跨平台應用程式。 Visual Studio 也內建這個專案類型。
+    If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
 
--   遊戲引擎
+-   Game-engines
 
-    有了 [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) 和 [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) 這類供您任意使用的工具，就可以撰寫 AAA 品質的遊戲，供 Windows 和其他許多平台 (包括 iOS) 使用。 Unity 支援 C# 指令碼，Unreal 使用 C++。
+    With tools like [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
 
 -   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    XNA 的精神繼任者。 現在這是一個開放原始碼的跨平台架構，表示您可以使用 C# 為許多支援物理引擎以及 2D 和 3D 圖形的平台撰寫應用程式。
+    The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
 
-## 調整現有的應用程式
+## Adapting an existing app
 
-如果是針對現有的 iOS app，您的選擇就會稍微受到限制。 不過可以確定的是，絕對不會有任何遺失。
+With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
 
--   [適用於 iOS 的 Windows 橋接器](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
-    也稱為 Project Islandwood，這是一個仍在開發中的工具，可以直接將 Xcode 專案匯入 Visual Studio。 可從 Visual Studio 內建置並偵錯 Objective-C 程式碼。 如果您的專案針對圖形使用 Cocos 這類程式庫，您可能會發現這是一個很好用的方式快速移植 App。
+    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
--   重新調整您的 C++ 程式碼。
+-   Repurpose your C++ code.
 
-    如果您的核心商務邏輯是以 C++ 撰寫，而不是 Objective-C 或 Swift，在專案中只要做一點點變更，就可以使用這個程式碼。 然後您可以使用 XAML 來定義您的 UI，就像用於其他 Windows 應用程式一樣，然後必要時再呼叫 C++ 程式碼。
+    If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
 
--   [使用 ANGLE 在 Windows 上執行 OpenGL ES](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Use ANGLE to run OpenGL ES on Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    移植 OpenGL ES 2.0 專案的中間步驟是使用 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
+    An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
-## 其他跨平台編寫工具
+## Other cross-platform authoring tools
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
-    遊戲編寫環境。
+    A game authoring environment.
 
 -   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
 
-    遊戲編寫環境。
+    A game authoring environment.
 
 -   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
 
-    跨平台編寫環境。
+    A cross-platform authoring environment.
 
 -   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
 
-    適用於子畫面處理與物理模型化的跨平台程式碼程式庫。
+    A cross-platform code library for sprite handling and physics modeling.
 
 -   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
 
-    以 HTML 為基礎的遊戲庫。
+    An HTML based game library.
 
 -   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
 
-    跨平台 SDK。
+    A cross-platform SDK.
 
 -   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
 
-    跨平台開發工具。
+    A cross-platform development tool.
 
 -   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
 
-    專門針對遊戲的編寫環境。
+    An authoring environment specifically for games.
 
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
-    以 HTML 為基礎的遊戲開發工具。
+    An HTML based game development tool.
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

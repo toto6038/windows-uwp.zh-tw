@@ -1,34 +1,34 @@
 ---
 author: v-angraf
-title: "Xbox One API 參考上的 UWP"
-description: "Xbox One 上適用於 UWP 的 API 參考。"
-area: Xbox
+title: UWP on Xbox One API reference
+description: API reference for UWP on Xbox One.
 translationtype: Human Translation
-ms.sourcegitcommit: 1a8dc5bcfc619756696dd9892ca63d3ad92c3c16
-ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
+ms.sourcegitcommit: 3d1c06c556ac8d5bbb915bbfa9f023b0d2b4544f
+ms.openlocfilehash: 0d7fb9a2706dbcb1757c367c3e0b0c61c10eea9a
 
 ---
 
-# Xbox One API 參考上的 UWP
+# UWP on Xbox One API reference
 
-本節包含適用於 Xbox One API 上 UWP 的參考主題。
+This section contains reference topics for the UWP on Xbox One APIs.
 
-| URI      | 說明 |
+| URI      | Description |
 |------------|-------------|
-|[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| 登錄包含在鬆散資料夾中的 App。 |
-|[/api/app/packagemanager/upload](wdp-folder-upload.md)| 將整個資料夾上傳到主機。 |
-|[/ext/screenshot](wdp-media-capture-api.md)| 擷取代表目前主機上顯示畫面的 PNG 檔案。 |
-|[/ext/settings](wdp-xboxsettings-api.md)| 存取 Xbox One 開發人員設定。 |
-|[/ext/smb/developerfolder](wdp-smb-api.md)| 在您的開發電腦上透過 [檔案總管] 存取您主機上的開發人員資料夾。 |
-|[/ext/user](wdp-user-management.md)| 管理 Xbox One 主機上的使用者。 |
-|[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| 管理您的 Xbox Live 沙箱。 |
+|[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| Registers an app that is contained in a loose folder. |
+|[/api/app/packagemanager/upload](wdp-folder-upload.md)| Uploads an entire folder to the console. |
+|[/ext/screenshot](wdp-media-capture-api.md)| Captures a PNG representation of the screen currently displayed on the console. |
+|[/ext/settings](wdp-xboxsettings-api.md)| Accesses Xbox One developer settings. |
+|[/ext/smb/developerfolder](wdp-smb-api.md)| Accesses the developer folder on your console through File Explorer on your development PC. |
+|[/ext/user](wdp-user-management.md)| Manages users on the Xbox One console. |
+|[/ext/update/policy](wdp-updatepolicy-api.md)| Manages which update policy is applied to your console. |
+|[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Manages your Xbox Live sandbox. |
 
-## 另請參閱
+## See also
 
-- [Xbox One 上的 UWP](index.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,56 +1,56 @@
 ---
 author: mtoepke
-title: "OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較"
-description: "在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。"
+title: Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
+description: During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a588ba010ddf21a07d493774cff7f6ab5dbfdf47
+ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
 
 ---
 
-# OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
+# Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
 -   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
 -   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
 
-在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。
+During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 
-在 OpenGL ES 2.0 中會使用下列幾種方法，將資料傳入和傳出著色器程式：做為常數資料的 Uniform、做為頂點資料的屬性，以及做為其他資源資料 (例如紋理) 的緩衝區物件。 在 Direct3D 11 中，這些大致上會對應到常數緩衝區、頂點緩衝區及子資源。 儘管表面上有共通性，但在使用上它們的處理方式完全不同。
+In OpenGL ES 2.0, data is passed to and from shader programs in four ways: as uniforms for constant data, as attributes for vertex data, as buffer objects for other resource data (such as textures). In Direct3D 11, these roughly map to constant buffers, vertex buffers, and subresources. Despite the superficial commonality, they are handled quite different in usage.
 
-以下是基本對應。
+Here's the basic mapping.
 
 | OpenGL ES 2.0             | Direct3D 11                                                                                                                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| uniform                   | 常數緩衝區 (**cbuffer**) 欄位。                                                                                                                                                |
-| 屬性                 | 頂點緩衝區元素欄位是由輸入配置所指定，並以特定的 HLSL 語意來標示。                                                                                |
-| 緩衝區物件             | 緩衝區；請參閱 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 與 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)，而且適用於一般用法的緩衝區定義。 |
-| 框架緩衝區物件 (FBO) | 轉譯目標；請參閱 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 與 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)。                                       |
-| 背景緩衝區               | 含有「背景緩衝區」表面的交換鏈結；請參閱含有附加 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) 的 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。                       |
+| uniform                   | constant buffer (**cbuffer**) field.                                                                                                                                                |
+| attribute                 | vertex buffer element field, designated by an input layout and marked with a specific HLSL semantic.                                                                                |
+| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and for a general-use buffer definitions. |
+| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) with [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
+| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) with attached [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
 
  
 
-## 移植緩衝區
+## Port buffers
 
 
-在 OpenGL ES 2.0 中，建立並繫結任何種類的緩衝區程序通常會遵循這個模式。
+In OpenGL ES 2.0, the process for creating and binding any kind of buffer generally follows this pattern
 
--   呼叫 glGenBuffers 以產生一或多個緩衝區，並將控制代碼傳回給它們。
--   呼叫 glBindBuffer 以定義緩衝區的配置，例如 GL\_ELEMENT\_ARRAY\_BUFFER。
--   呼叫 glBufferData，在特定的配置中使用特定資料 (例如，頂點結構、索引資料或色彩資料) 填入緩衝區。
+-   Call glGenBuffers to generate one or more buffers and return the handles to them.
+-   Call glBindBuffer to define the layout of a buffer, such as GL\_ELEMENT\_ARRAY\_BUFFER.
+-   Call glBufferData to populate the buffer with specific data (such as vertex structures, index data, or color data) in a specific layout.
 
-最常見的緩衝區種類是頂點緩衝區，這在部分座標系統中至少會包含頂點的位置。 在典型的用法中，頂點是使用包含位置座標、頂點位置的法向量、頂點位置的正切函數向量，以及紋理查閱 (uv) 座標的結構來表示。 緩衝區包含這些頂點的連續性清單，並以某種順序排列 (例如，三角形清單、條形或扇形)，而且會在您的場景中共同呈現可見的多邊形 (在 Direct3D 11 以及 OpenGL ES 2.0 中，針對每個繪製呼叫提供多個頂點緩衝區是無效率的)。
+The most common kind of buffer is the vertex buffer, which minimally contains the positions of the vertices in some coordinate system. In typical use, a vertex is represented by a structure that contains the position coordinates, a normal vector to the vertex position, a tangent vector to the vertex position, and texture lookup (uv) coordinates. The buffer contains a contiguous list of these vertices, in some order (like a triangle list, or strip, or fan), and which collectively represent the visible polygons in your scene. (In Direct3D 11 as well as OpenGL ES 2.0 it is inefficient to have multiple vertex buffers per draw call.)
 
-這裡提供的範例是使用 OpenGL ES 2.0 建立的頂點緩衝區與索引緩衝區：
+Here's an example a vertex buffer and an index buffer created with OpenGL ES 2.0:
 
-OpenGL ES 2.0：建立和填入頂點緩衝區和索引緩衝區。
+OpenGL ES 2.0: Creating and populating a vertex buffer and an index buffer.
 
 ``` syntax
 glGenBuffers(1, &renderer->vertexBuffer);
@@ -62,19 +62,19 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vertexIndices, GL_STATIC_DRAW);
 ```
 
-其他緩衝區包含像素緩衝區及地圖，例如紋理。 著色器管線可以轉譯為紋理緩衝區 (Pixmap)，也可以轉譯為緩衝區物件，並在未來的著色器階段使用這些緩衝區。 在最簡單的案例中，呼叫流程如下：
+Other buffers include pixel buffers and maps, like textures. The shader pipeline can render into texture buffers (pixmaps) or render buffer objects and use those buffers in future shader passes. In the simplest case, the call flow is:
 
--   呼叫 glGenFramebuffers 以產生框架緩衝區物件。
--   呼叫 glBindFramebuffer 以繫結框架緩衝區物件以供寫入。
--   呼叫 glFramebufferTexture2D 以繪製到特定的紋理圖。
+-   Call glGenFramebuffers to generate a frame buffer object.
+-   Call glBindFramebuffer to bind the frame buffer object for writing.
+-   Call glFramebufferTexture2D to draw into a specified texture map.
 
-在 Direct3D 11 中，緩衝區資料元素會被視為「子資源」，而涵蓋範圍可從個別的頂點資料元素到 MIP 圖紋理。
+In Direct3D 11, buffer data elements are considered "subresources," and can range from individual vertex data elements to MIP-map textures.
 
--   使用緩衝區資料元素的設定填入 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 結構。
--   使用緩衝區中個別元素的大小以及緩衝區類型填入 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 結構。
--   使用這兩個結構呼叫 [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)。
+-   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure with the configuration for a buffer data element.
+-   Populate a [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure with the size of the individual elements in the buffer as well as the buffer type.
+-   Call [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) with these two structures.
 
-Direct3D 11：建立和填入頂點緩衝區和索引緩衝區。
+Direct3D 11: Creating and populating a vertex buffer and an index buffer.
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -103,9 +103,9 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-可寫入的像素緩衝區或地圖 (例如，框架緩衝區) 可建立為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 物件。 這些都可以當成資源繫結到 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 或 [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)，一旦繪製到其中之後，就可以分別使用相關聯的交換鏈結來顯示，或是傳送到著色器。
+Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) or [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
 
-Direct3D 11：建立框架緩衝區物件。
+Direct3D 11: Creating a frame buffer object.
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView> m_d3dRenderTargetViewWin;
@@ -119,14 +119,14 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## 將 Uniform 與 Uniform 緩衝區物件變更為 Direct3D 常數緩衝區
+## Change uniforms and uniform buffer objects to Direct3D constant buffers
 
 
-在 Open GL ES 2.0 中，Uniform 是提供常數資料給個別著色器程式的機制。 著色器無法變更這個資料。
+In Open GL ES 2.0, uniforms are the mechanism to supply constant data to individual shader programs. This data cannot be altered by the shaders.
 
-設定 Uniform 通常包含使用 GPU 中的上傳位置以及應用程式記憶體中資料的指標，以提供某一個 glUniform\* 方法。 在 glUniform\* 方法執行之後，Uniform 資料便會位於 GPU 記憶體，並能讓已宣告該 Uniform 的著色器存取。 您必須確定資料的封裝方式，是可讓著色器基於著色器中的 Uniform 宣告來解譯資料 (透過使用相容的類型)。
+Setting a uniform typically involves providing one of the glUniform\* methods with the upload location in the GPU along with a pointer to the data in app memory. After ithe glUniform\* method executes, the uniform data is in the GPU memory and accessible by the shaders that have declared that uniform. You are expected to ensure that the data is packed in such a way that the shader can interpret it based on the uniform declaration in the shader (by using compatible types).
 
-OpenGL ES 2.0 建立 Uniform 並將資料上傳給它
+OpenGL ES 2.0 Creating a uniform and uploading data to it
 
 ``` syntax
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
@@ -136,19 +136,19 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatrix.m[0][0]);
 ```
 
-在著色器的 GLSL 中，對應的 Uniform 宣告看起來像這樣：
+In a shader's GLSL, the corresponding uniform declaration looks like this:
 
-Open GL ES 2.0：GLSL Uniform 宣告
+Open GL ES 2.0: GLSL uniform declaration
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D 指定 Uniform 資料做為「常數緩衝區」，與 Uniform 一樣，其中包含提供給個別著色器的常數資料。 至於 Uniform 緩衝區，請務必在記憶體中使用與著色器預期用來解譯它的相同方法來封裝常數緩衝區資料。 使用 DirectXMath 類型 (例如 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) 而非平台類型 (例如 **float\*** 或 **float\[4\]**) 來保證資料元素會適當地對齊。
+Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
 
-常數緩衝區必須有一個關聯的 GPU 暫存器，以用來在 GPU 上參考該資料。 資料會封裝到緩衝區配置所指定的暫存器位置。
+Constant buffers must have an associated GPU register used to reference that data on the GPU. The data is packed into the register location as indicated by the layout of the buffer.
 
-Direct3D 11：建立常數緩衝區並上傳資料給它
+Direct3D 11: Creating a constant buffer and uploading data to it
 
 ``` syntax
 struct ModelViewProjectionConstantBuffer
@@ -171,9 +171,9 @@ m_d3dDevice->CreateBuffer(
   &m_constantBuffer);
 ```
 
-在著色器的 HLSL 中，對應的常數緩衝區宣告看起來像這樣：
+In a shader's HLSL, the corresponding constant buffer declaration looks like this:
 
-Direct3D 11：常數緩衝區 HLSL 宣告
+Direct3D 11: Constant buffer HLSL declaration
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -182,21 +182,21 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-請注意，暫存器必須針對每個常數緩衝區進行宣告。 不同的 Direct3D 功能層級會有不同的可用暫存器數目上限，因此請勿超過您設定為目標的最低功能層級的數目上限。
+Note that a register must be declared for each constant buffer. Different Direct3D feature levels have different maximum available registers, so do not exceed the maximum number for the lowest feature level you are targeting.
 
-## 將頂點屬性移植到 Direct3D 輸入配置與 HLSL 語意
+## Port vertex attributes to a Direct3D input layouts and HLSL semantics
 
 
-由於著色器管線可以修改頂點資料，因此 OpenGL ES 2.0 要求您將它們指定為「屬性」而非 "Uniform" (這在較新版本的 OpenGL 與 GLSL 中已經變更)。頂點特定的資料 (例如，頂點位置、法向量、正切函數及色彩值) 都會當成屬性值來提供給著色器。 這些屬性值會對應到頂點資料中每個元素的特定位移；例如，第一個屬性可以指向個別頂點的位置元件，而第二個指向法向量，依此類推。
+Since vertex data can be modified by the shader pipeline, OpenGL ES 2.0 requires that you specify them as "attributes" instead of "uniforms". (This has changed in later versions of OpenGL and GLSL.) Vertex-specific data such the vertex position, normals, tangents, and color values are supplied to the shaders as attribute values. These attribute values correspond to specific offsets for each element in the vertex data; for example, the first attribute could point to the position component of an individual vertex, and the second to the normal, and so on.
 
-將頂點緩衝區資料從主要記憶體移至 GPU 的基本程序看起來像這樣：
+The basic process for moving the vertex buffer data from main memory to the GPU looks like this:
 
--   使用 glBindBuffer 上傳頂點資料。
--   使用 glGetAttribLocation 取得 GPU 上屬性的位置。 針對頂點資料元素中的每個屬性呼叫它。
--   呼叫 glVertexAttribPointer，在個別頂點資料元素內部設定正確的屬性大小與位移。 針對每個屬性執行此動作。
--   使用 glEnableVertexAttribArray 啟用頂點資料配置資訊。
+-   Upload the vertex data with glBindBuffer.
+-   Get the location of the attributes on the GPU with glGetAttribLocation. Call it for each attribute in the vertex data element.
+-   Call glVertexAttribPointer to provide set the correct attribute size and offset inside an individual vertex data element. Do this for each attribute.
+-   Enable the vertex data layout information with glEnableVertexAttribArray.
 
-OpenGL ES 2.0：將頂點緩衝區資料上傳到著色器屬性
+OpenGL ES 2.0: Uploading vertex buffer data to the shader attribute
 
 ``` syntax
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->vertexBuffer);
@@ -212,20 +212,20 @@ glVertexAttribPointer(loc, 4, GL_FLOAT, GL_FALSE,
 glEnableVertexAttribArray(loc);
 ```
 
-現在，在頂點著色器中，以您在對 glGetAttribLocation 的呼叫中所定義的相同名稱來宣告屬性。
+Now, in your vertex shader, you declare attributes with the same names you defined in your call to glGetAttribLocation.
 
-OpenGL ES 2.0：在 GLSL 中宣告屬性
+OpenGL ES 2.0: Declaring an attribute in GLSL
 
 ``` syntax
 attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-從某些方面來說，這個相同程序適用於 Direct3D。 輸入緩衝區中提供的是頂點資料，而不是屬性，輸入緩衝區中包含頂點緩衝區及對應的索引緩衝區。 但是，由於 Direct3D 沒有「屬性」宣告，因此，您必須指定輸入配置，在頂點緩衝區與 HLSL 語意中宣告資料元素的個別元件，語意中會指出頂點著色器要在何處及如何解譯這些元件。 HLSL 語意要求您使用特定的字串來定義每個元件的用法，以通知著色器引擎它的相關用途。 例如，頂點位置資料會標示為 POSITION、法向量資料會標示為 NORMAL，而頂點色彩資料會標示為 COLOR (其他著色器階段也需要特定的語意，而那些語意會根據著色器階段而有不同的解譯方式)。如需關於 HLSL 語意的詳細資料，請參閱[移植您的著色器管線](change-your-shader-loading-code.md)與 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574)。
+In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574).
 
-總括來說，設定頂點與索引緩衝區以及設定輸入配置的程序稱為 Direct3D 圖形管線的「輸入組件」(IA) 階段。
+Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
 
-Direct3D 11：設定輸入組件階段
+Direct3D 11: Configuring the input assembly stage
 
 ``` syntax
 // Set up the IA stage corresponding to the current draw operation.
@@ -247,14 +247,14 @@ m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-您可以藉由宣告頂點資料元素的格式與每個元件所使用的語意，來宣告輸入配置並與頂點著色器產生關聯。 如同 D3D11\_INPUT\_ELEMENT\_DESC 中所述，您建立的頂點元素資料配置必須對應到對應結構的配置。 您可以在此處建立含有兩個元件的頂點資料配置：
+An input layout is declared and associated with a vertex shader by declaring the format of the vertex data element and the semantic used for each component. The vertex element data layout described in the D3D11\_INPUT\_ELEMENT\_DESC you create must correspond to the layout of the corresponding structure. Here, you create a layout for vertex data that has two components:
 
--   頂點位置座標 (在主記憶體中以 XMFLOAT3 來表示)，這是 (x, y, z) 座標的 3 個 32 位元浮點數值的對齊陣列。
--   頂點色彩值 (以 XMFLOAT4 來表示)，這是色彩 (RGBA) 的 4 個 32 位元浮點數值的對齊陣列。
+-   A vertex position coordinate, represented in main memory as an XMFLOAT3, which is an aligned array of 3 32-bit floating point values for the (x, y, z) coordinates.
+-   A vertex color value, represented as an XMFLOAT4, which is an aligned array of 4 32-bit floating point values for the color (RGBA).
 
-您需為每一個元件指派語意以及格式類型。 然後將描述傳送到 [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)。 當您在執行轉譯方法期間設定輸入組件時，我們會在呼叫 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 時使用輸入配置。
+You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) when you set up the input assembly during our render method.
 
-Direct3D 11：使用特定語意說明輸入配置
+Direct3D 11: Describing an input layout with specific semantics
 
 ``` syntax
 ComPtr<ID3D11InputLayout> m_inputLayout;
@@ -280,9 +280,9 @@ m_d3dDevice->CreateInputLayout(
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-最後，您需要確定著色器能夠藉由宣告輸入來了解輸入資料。 您在配置中指派的語意是用來選取 GPU 記憶體中的正確位置。
+Finally, you make sure that the shader can understand the input data by declaring the input. The semantics you assigned in the layout are used to select the correct locations in GPU memory.
 
-Direct3D 11：使用 HLSL 語意宣告著色器輸入資料
+Direct3D 11: Declaring shader input data with HLSL semantics
 
 ``` syntax
 struct VertexShaderInput
@@ -302,6 +302,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

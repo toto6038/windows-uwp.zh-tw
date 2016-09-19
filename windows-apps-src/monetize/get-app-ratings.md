@@ -1,52 +1,50 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
-title: "取得應用程式評分"
+description: Use this method in the Windows Store analytics API to get aggregate ratings data for a given date range and other optional filters.
+title: Get app ratings
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 
 ---
 
-# 取得應用程式評分
+# Get app ratings
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。 這個方法會傳回 JSON 格式的資料。
-
-## 先決條件
 
 
-若要使用這個方法，您需要進行下列動作：
+Use this method in the Windows Store analytics API to get aggregate ratings data for a given date range and other optional filters. This method returns the data in JSON format.
 
--   將您會用來呼叫此方法的 Azure AD 應用程式與您的開發人員中心帳戶產生關聯。
-
--   取得您應用程式的 Azure AD 存取權杖。
-
-如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
-
-## 要求
+## Prerequisites
 
 
-### 要求的語法
+To use this method, you need to first do the following:
 
-| 方法 | 要求 URI                                                      |
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
+
+## Request
+
+
+### Request syntax
+
+| Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings``` |
 
  
 
-### 要求的標頭
+### Request header
 
-| 標頭        | 類型   | 描述                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
-### 要求參數
+### Request parameters
 
 <table>
 <colgroup>
@@ -57,82 +55,82 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">參數</th>
-<th align="left">類型</th>
-<th align="left">描述</th>
-<th align="left">必要</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">字串</td>
-<td align="left">您想要擷取評分資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
-<td align="left">是</td>
+<td align="left">string</td>
+<td align="left">The Store ID of the app for which you want to retrieve ratings data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="left">startDate</td>
-<td align="left">日期</td>
-<td align="left">要擷取評分資料之日期範圍的開始日期。 預設為目前的日期。</td>
-<td align="left">否</td>
+<td align="left">date</td>
+<td align="left">The start date in the date range of ratings data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">endDate</td>
-<td align="left">日期</td>
-<td align="left">要擷取評分資料之日期範圍的結束日期。 預設為目前的日期。</td>
-<td align="left">否</td>
+<td align="left">date</td>
+<td align="left">The end date in the date range of ratings data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">top</td>
-<td align="left">整數</td>
-<td align="left">在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。</td>
-<td align="left">否</td>
+<td align="left">int</td>
+<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">skip</td>
-<td align="left">整數</td>
-<td align="left">在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。</td>
-<td align="left">否</td>
+<td align="left">int</td>
+<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">filter</td>
-<td align="left">字串</td>
-<td align="left">在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">aggregationLevel</td>
-<td align="left">字串</td>
-<td align="left">指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">orderby</td>
-<td align="left">字串</td>
-<td align="left">對每個評分的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：
+<td align="left">string</td>
+<td align="left">A statement that orders the result data values for each rating. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
 <ul>
-<li><strong>日期</strong></li>
+<li><strong>date</strong></li>
 <li><strong>osVersion</strong></li>
 <li><strong>market</strong></li>
 <li><strong>deviceType</strong></li>
 <li><strong>isRevised</strong></li>
 </ul>
-<p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p>
-<p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p></td>
-<td align="left">否</td>
+<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
+<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
  
-### 篩選欄位
+### Filter fields
 
-要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。
+The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**.
 
-以下為 *filter* 字串的範例：*filter=market eq 'US' and deviceType eq 'phone' and isRevised eq true*
+Here is an example *filter* string: *filter=market eq 'US' and deviceType eq 'phone' and isRevised eq true*
 
-如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
+For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
 
 <table>
 <colgroup>
@@ -141,18 +139,18 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">欄位</th>
-<th align="left">描述</th>
+<th align="left">Fields</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">market</td>
-<td align="left">內含裝置市場的 ISO 3166 國家/地區碼的字串。</td>
+<td align="left">A string that contains the ISO 3166 country code of the device market.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">下列其中一個字串：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -166,7 +164,7 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">下列其中一個字串：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -180,16 +178,16 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 </tr>
 <tr class="even">
 <td align="left">isRevised</td>
-<td align="left">指定 <strong>true</strong> 以篩選已修訂的評分，否則請指定 <strong>false</strong>。</td>
+<td align="left">Specify <strong>true</strong> to filter for ratings that have been revised; otherwise <strong>false</strong>.</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### 要求範例
+### Request example
 
-下列範例示範取得評分資料的數個要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
+The following examples demonstrate several requests for getting ratings data. Replace the *applicationId* value with the Store ID for your app.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -199,43 +197,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?application
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## Response
 
 
-### 回應主體
+### Response body
 
-| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[評分數值](#rating-values)＞一節。                                                                                                                           |
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
+| Value      | array  | An array of objects that contain aggregate ratings data. For more information about the data in each object, see the [rating values](#rating-values) section below.                                                                                                                           |
+| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
+| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
 
 <span/>
 
-### 評分數值
+### Rating values
 
-*Value* 陣列中的元素包含下列值。
+Elements in the *Value* array contain the following values.
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| Value           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 日期            | 字串  | 評分資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId   | 字串  | 您正在擷取評分資料之 app 的市集識別碼。                                                                                                                                                                 |
-| applicationName | 字串  | App 的顯示名稱。                                                                                                                                                                                                         |
-| market          | 字串  | 提交評分之市場的 ISO 3166 國家/地區碼。                                                                                                                                                              |
-| osVersion       | 字串  | 提交評分的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                               |
-| deviceType      | 字串  | 提交評分的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                           |
-| isRevised       | 布林值 | **true** 值表示評分已修訂，否則為 **false**。                                                                                                                                                       |
-| oneStar         | 數字  | 一顆星評分的數目。                                                                                                                                                                                                      |
-| twoStars        | 數字  | 兩顆星評分的數目。                                                                                                                                                                                                      |
-| threeStars      | 數字  | 三顆星評分的數目。                                                                                                                                                                                                    |
-| fourStars       | 數字  | 四顆星評分的數目。                                                                                                                                                                                                     |
-| fiveStars       | 數字  | 五顆星評分的數目。                                                                                                                                                                                                     |
+| date            | string  | The first date in the date range for the ratings data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| applicationId   | string  | The Store ID of the app for which you are retrieving ratings data.                                                                                                                                                                 |
+| applicationName | string  | The display name of the app.                                                                                                                                                                                                         |
+| market          | string  | The ISO 3166 country code of the market where the rating was submitted.                                                                                                                                                              |
+| osVersion       | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                               |
+| deviceType      | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                           |
+| isRevised       | Boolean | The value **true** indicates that the rating was revised; otherwise **false**.                                                                                                                                                       |
+| oneStar         | number  | The number of one-star ratings.                                                                                                                                                                                                      |
+| twoStars        | number  | The number of two-star ratings.                                                                                                                                                                                                      |
+| threeStars      | number  | The number of three-star ratings.                                                                                                                                                                                                    |
+| fourStars       | number  | The number of four-star ratings.                                                                                                                                                                                                     |
+| fiveStars       | number  | The number of five-star ratings.                                                                                                                                                                                                     |
  
 <span/>
 
-### 回應範例
+### Response example
 
-下列範例針對此要求示範範例 JSON 回應主體。
+The following example demonstrates an example JSON response body for this request.
 
 ```json
 {
@@ -261,16 +259,16 @@ Authorization: Bearer <your access token>
 
 ```
 
-## 相關主題
+## Related topics
 
-* [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得應用程式下載數](get-app-acquisitions.md)
-* [取得 IAP 下載數](get-in-app-acquisitions.md)
-* [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得應用程式評論](get-app-reviews.md)
+* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get app acquisitions](get-app-acquisitions.md)
+* [Get add-on acquisitions](get-in-app-acquisitions.md)
+* [Get error reporting data](get-error-reporting-data.md)
+* [Get app reviews](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

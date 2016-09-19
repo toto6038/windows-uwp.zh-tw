@@ -1,75 +1,75 @@
 ---
 author: jnHs
-Description: "如果您的 app 使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。"
-title: "利用廣告獲利"
+Description: If your app uses ad mediation or displays banner or video interstitial ads from Microsoft Advertising, use the Monetization &gt; Monetize with ads page to manage your use of ads.
+title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+ms.openlocfilehash: af322795be849bdaa2b1babeaec29d09f5d73fcf
 
 ---
 
-# 利用廣告獲利
+# Monetize with ads
 
 
-如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項來顯示橫幅或影片插入式廣告，請使用 [創造營收]****&gt;[利用廣告獲利]**** 頁面來管理廣告的使用方式。
+If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or video interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
 
-## Windows 廣告流量分配
+## Windows ad mediation
 
 
-如果您的 app 使用廣告流量分配，請使用這個區段來設定流量分配設定，並針對 app 使用的每個廣告網路新增必要參數。 如需這個區段中選項的詳細資訊，請參閱[送出您的應用程式並設定廣告流量分配](https://msdn.microsoft.com/library/windows/apps/mt219689)。
+If your app uses ad mediation, use this section to configure your mediation settings and add required parameters for each of the ad networks used by your app. For more information about the options in this section, see [Submit your app and configure ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219689).
 
-廣告流量分配支援可讓您透過為來自多個廣告網路的橫幅和要求進行流量分配，讓您的 app 內廣告獲得最佳收益。 如需廣告流量分配的詳細資訊，請參閱[使用廣告流量分配獲得最佳收益](https://msdn.microsoft.com/library/windows/apps/mt219691)。
+Ad mediation lets you optimize your in-app advertising revenue by mediating banner ad requests from multiple ad networks. For more information about ad mediation, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/mt219691).
 
-## COPPA 相容性
+## COPPA compliance
 
-基於兒童線上隱私權保護法 (「 COPPA 」) 的立法宗旨，如果您的 app 是針對 13 歲以下的兒童，則您必須通知 Microsoft。 如果您使用開發人員中心來通知 Microsoft 有關您 app 是針對 13 歲以下的兒童，當傳送廣告到您 app 時，Microsoft 會採取步驟來停用其行為廣告服務。 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。
+For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must notify Microsoft if your app is directed at children under the age of 13. If you use Dev Center to indicate to Microsoft that your app is directed at children under the age of 13, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app. If your app is directed at children under the age of 13, you have certain obligations under COPPA.
 
-如需有關 COPPA 規範義務的詳細資訊，請參閱[此頁面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+For more information on your obligations under COPPA, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).
 
-## Microsoft 聯盟廣告
+## Microsoft affiliate ads
 
-如果您想要在應用程式中顯示 Microsoft 聯盟廣告，請勾選此區段中的方塊。 如果您勾選此方塊，沒有來自其他廣告網路的廣告可用時，將提供市集中產品的廣告 (包括音樂、遊戲、電影、應用程式、硬體和軟體) 給您的應用程式。 當使用者在指定的屬性視窗內按一下市集中的廣告和匯流排產品時，您就會獲得核可購買項目的佣金。
+Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and bus products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
-如果您變更此選取項目，不需要重新發佈您的 app，變更就會生效。 如需 Microsoft 聯盟廣告的詳細資訊，請參閱[關於聯盟廣告](about-affiliate-ads.md)。
+If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
 
-> **注意：**如果您的應用程式使用廣告流量分配 (也就是使用 **AdMediatorControl** 來顯示廣告)，則只有在廣告流量分配設定為顯示來自 Microsoft 的廣告時，您的應用程式才可顯示聯盟廣告。
+> **Note**  If your app uses ad mediation (that is, it uses an **AdMediatorControl** to display ads), your app can show affiliate ads only if your ad mediation settings are configured to show ads from Microsoft.
 
-## 社群廣告
+## Community ads
 
-如果您想要聯合促銷您的應用程式與其他開發人員的 app，請勾選此區段中的方塊。 如果您勾選此方塊，然後[建立社群廣告活動](create-an-ad-campaign-for-your-app.md)，您的 app 將會顯示其他同樣建立社群廣告活動的開發人員所發佈之 app 的廣告，而他們的 app 的廣告將會顯示在您的 app 中。 社群廣告是免費的，只會在沒有其他廣告網路的廣告可用時顯示。
+Check the box in this section if you want to cross-promote your app with apps from other developers. If you check this box and then [create a community ad campaign](create-an-ad-campaign-for-your-app.md), your app will show ads for apps published by other developers who also create community ad campaigns, and ads for their apps will show in your app. Community ads are free, and they are shown only when no ads from other ad networks are available.
 
-如果您變更此選取項目，不需要重新發佈您的 app，變更就會生效。 如需社群廣告的詳細資訊，請參閱[關於社群廣告](about-community-ads.md)。
+If you change this selection, you do not need to republish your app for the changes to take effect. For more information about community ads, see [About community ads](about-community-ads.md).
 
-## Microsoft Advertising 廣告單元
+## Microsoft Advertising ad units
 
-使用本區段來建立 Microsoft Advertising 廣告單元。 您只需要在下列案例中建立廣告單元：
+Use this section to create a Microsoft Advertising ad unit. You only need to create ad units in the following scenarios:
 
--   您的 app 會使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件顯示來自 Microsoft Advertising 的橫幅廣告。
--   您的 app 會使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件顯示來自 Microsoft Advertising 的影片插入式廣告。
+-   Your app shows banner ads from Microsoft Advertising by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
+-   Your app shows video interstitial ads from Microsoft Advertising by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
 
-若要為這些案例建立廣告單元：
+To create an ad unit for these scenarios:
 
-1.  為廣告單元命名。
-2.  選取廣告單元類型 ([橫幅]**** 或 [插入式影片]****)。
-3.  選取裝置類型 ([行動裝置]**** 或 [電腦/平板電腦]****)。
-4.  按一下 [建立廣告單元]****。
+1.  Name the ad unit.
+2.  Select the ad unit type (**Banner** or **Video interstitial**).
+3.  Select the device type (**Mobile** or **PC/Tablet**).
+4.  Click **Create ad unit**.
 
-您的廣告單元會出現在此區段底部的表格中。 您會看到每個廣告單元的**應用程式識別碼**和**廣告單元識別碼**。 若要在 app 中顯示廣告，您需要在程式碼中使用這些值：
+Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
 
--   如果您的 app 顯示橫幅廣告，請將這些值指派給 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 屬性。
--   如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
+-   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
+-   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
 
-> **注意：**如果您的 app 使用廣告流量分配顯示來自 Microsoft Advertising 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生 Microsoft Advertising 廣告單元。
-
- 
+> **Note**  If your app uses ad mediation to show banner ads from Microsoft Advertising (that is, it uses an **AdMediatorControl** object), you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
 
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

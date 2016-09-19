@@ -1,26 +1,26 @@
 ---
-title: "指紋生物識別技術"
-description: "本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。"
+title: Fingerprint biometrics
+description: This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
+ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
 
 ---
 
-# 指紋生物識別技術
+# Fingerprint biometrics
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 App 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。
+This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app. Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class in the [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) namespace.
 
-## 檢查裝置是否有指紋辨識器
+## Check the device for a fingerprint reader
 
 
-若要查明裝置是否具有指紋辨識器，請呼叫 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使裝置支援指紋驗證，您的 app 仍應在 [設定] 中為使用者提供啟用或停用指紋驗證的選項。
+To find out whether the device has a fingerprint reader, call [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138). Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -64,12 +64,12 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## 要求同意並傳回結果
+## Request consent and return results
 
 
-若要要求使用者同意指紋掃描，請呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) 方法。 為了讓指紋驗證能運作，使用者必須先將指紋「簽章」加到指紋資料庫。
+To request user consent from a fingerprint scan, call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) method. For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.
 
-當您呼叫 [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) 時，使用者會看到一個要求指紋掃描的強制回應對話方塊。 您可以提供一個訊息給 **UserConsentVerifier.RequestVerificationAsync** 方法，使用者會在強制回應對話方塊中看見該訊息，如下列影像所示。
+When you call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139), the user is presented with a modal dialog requesting a fingerprint scan. You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)
@@ -125,6 +125,6 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

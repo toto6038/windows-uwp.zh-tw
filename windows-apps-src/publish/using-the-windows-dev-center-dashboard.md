@@ -1,43 +1,43 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。"
-title: "使用 Windows 開發人員中心儀表板"
+Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
+title: Using the Windows Dev Center dashboard
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 2ccec6e85666ef328f4aa0baa8ba6a705986a4c4
 
 ---
 
-# 使用 Windows 開發人員中心儀表板
+# Using the Windows Dev Center dashboard
 
 
-Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。
+The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 
-> **注意** 您必須具有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能存取 Windows 開發人員中心儀表板。
+> **Note**   You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard.
 
-當您建立[為您的 app 建立提交](app-submissions.md) (第一次或做為更新) 時，可以針對任何支援的作業系統[上傳應用程式套件](upload-app-packages.md)，市集將會自動為客戶提供最適合他們的套件。 您可以針對您的 app 支援的所有作業系統使用相同[描述](create-app-descriptions.md)和[作品](app-screenshots-and-images.md)，或者您也可以[自訂特定平台的描述](create-platform-specific-descriptions.md)。
+When you create a [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported operating system, and the Store will automatically offer customers the package that will work best for them. You can use the same [Store listings](create-app-store-listings.md) and [artwork](app-screenshots-and-images.md) for all of the operating systems your app supports, or you can [customize the Store listing for specific OS versions](create-platform-specific-Store-listings.md).
 
-應用程式內產品 (IAP) 在 app 提交作業中單獨管理。 這可以為您帶來更多彈性，讓您能夠單獨進行變更。 如需詳細資訊，請參閱 [IAP 提交](iap-submissions.md)。
+Add-ons (in-app products) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently. For more info, see [Add-on submissions](add-on-submissions.md).
 
-開發人員中心儀表板也會提供適用於 [app 管理和設定服務](app-management-and-services.md)、[檢閱分析資料](analytics.md)、[支付報告](payout-summary.md)、[促銷和客戶參與](app-promotion-and-customer-engagement.md)、[測試版測試](beta-testing-and-targeted-distribution.md)、[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)及其他更多項目的功能。
+The Dev Center dashboard also offers capabilities for [app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promotion and customer engagement](app-promotion-and-customer-engagement.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
 
-## 使用整合儀表板的秘訣
+## Tips for using the unified dashboard
 
-如果您先前曾發佈適用於 Windows 8.1、Windows Phone 8.1 或較舊作業系統版本的 app，請查看 [App 如何在市集中顯示給 Windows 10 客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md)，以深入了解適用於 Windows 10 客戶的 app 清單中的變更，以及我們在新儀表板中分類您的 app 資訊的方式。
+If you had previously published apps for Windows 8.1, Windows Phone 8.1, or earlier OS versions, take a look at [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md) to find out more about some of the changes in your app's listing for Windows 10 customers, and how we categorize your app's info in the new dashboard.
 
-先前在 Windows Phone 開發人員中心和 Windows 市集儀表板中連結以共用身分識別的 app，將會在開發人員中心儀表板中顯示為相同的 app。 無論您的 app 支援哪個作業系統版本，您都可以將其當成一個 app 來管理。 App 在不同裝置類型之間會共用相同的詳細資料，例如價格和類別。
-
- 
+Apps that were linked to share identity in the earlier Windows Phone Dev Center and Windows Store dashboard will appear as the same app in the Dev Center dashboard. No matter which OS versions your app supports, you'll manage it as one app. The app will share the same details, such as price and category, across device types.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO5-->
 
 

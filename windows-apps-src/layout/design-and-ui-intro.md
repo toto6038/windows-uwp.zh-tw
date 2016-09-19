@@ -1,96 +1,96 @@
 ---
 author: mijacobs
-Description: "本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。"
-title: "通用 Windows 平台 (UWP) 應用程式設計簡介"
+Description: This article describes the features, benefits, and requirements of the Universal Windows Platform (UWP) from a design perspective. Find out what the platform gives you for free and the tools it puts at your disposal.
+title: Introduction to Universal Windows Platform (UWP) app design
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec154ec64ba18badb5f81b59e76fc04e539de1a8
+ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 ---
 
-#  UWP app 設計簡介 
+#  Introduction to UWP app design 
 
-通用 Windows 平台 (UWP) 應用程式可以在任何執行 Windows 的裝置上執行，包括手機、平板電腦或電腦。
+A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC.
 
-![執行 Windows 的裝置](images/1894834-hig-device-primer-01-500.png)
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
-要設計一款在各種裝置上都能有好看外觀的應用程式是一個很大的挑戰。 您該如何設計一款可以在螢幕大小差異極大，又使用不同輸入方法的幾種裝置上提供絕佳 UX 的應用程式呢？ 幸運的是，通用 Windows 平台 (UWP) 提供一組內建的功能和通用建置組塊，可協助您進行這項工作。 
+Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that. 
 
-![在 Windows Phone、平板電腦與電腦上執行之應用程式的設計](images/food-truck-finder/uap-foodtruck--md-detail.png)
+![a design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
 
-本文章描述 UWP app 的 UI 功能與優點，並提供一些建立您第一個 UWP app 的高階設計指導方針。 我們先來看看，當您建立 UWP app 時可取得的一些功能。 
+This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app. 
 
-## UWP app 功能
+## UWP app features
 
-### 有效像素與縮放
+### Effective pixels and scaling
 
-UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其可在所有裝置上清晰可讀。
+UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible on all devices.
 
-當您在裝置上執行應用程式 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24px 字型一樣清晰。
+When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5' phone that's a few inches away.
 
-![不同裝置的檢視距離](images/1910808-hig-uap-toolkit-03.png)
+![viewing distances for different devices](images/1910808-hig-uap-toolkit-03.png)
 
-因為此縮放系統的運作方式，所以您設計 UWP app 時是使用*有效像素*，而不是實體像素。 所以，這樣會對您設計應用程式的方式造成什麼影響？
+Because of how the scaling system works, when you design your UWP app, you're designing in *effective pixels*, not actual physical pixels. So, how does that impact the way you design your app?
 
--   在設計的時候，您可以忽略像素密度和實際螢幕解析度。 相反地，針對大小類別 (我們[稍後於本文件中](#sizeclasses)會定義大小類別) 設計實際解析度 (有效像素解析度)。
+-   You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (we define size classes [later in this article](#sizeclasses)).
 
--   系統調整您的 UI 時，會以 4 的倍數進行。 如果要確保外觀清晰，請將您的設計貼齊 4x4 像素格線：讓 UI 元素的邊界、大小和位置，以及文字位置 (但不是大小—文字可以是任意大小) 為 4 有效像素的倍數。
+-   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes and positions of UI elements, and the position (but not the size—text can be any size) of text a multiple of 4 effective pixels.
 
-下圖顯示對應 4x4 像素格線的設計元素。 設計元素的邊緣一定清晰銳利。
+This illustration shows design elements that map to the 4x4 pixel grid. The design element will always have crisp, sharp edges.
 
-![貼齊至 4x4 像素格線](images/rsp-design/epx-4pixelgood.png)
+![snapping to the 4x4 pixel grid](images/rsp-design/epx-4pixelgood.png)
 
-下圖顯示沒有對應 4x4 格線的設計元素。 在某些裝置上，這些設計元素的邊緣會變得模糊柔化。
+The next illustration shows design elements that don't map to the 4x4 grid. These design elements will have blurry, soft edges on some devices.
 
-![沒有對齊 4x4 像素格線的設計元素](images/rsp-design/offthegridillustration.png)
+![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
-**提示** 在影像編輯程式中建立螢幕圖樣時，請將 DPI 設定為 72，並針對您的目標大小類別，將影像尺寸設定為有效解析度。 (如需大小類別和有效解析度的清單，請參閱本文章的[特定大小類別的建議](#sizeclasses)一節)。
-
-
-### 通用輸入和智慧型互動
-
-UWP 的另一個內建功能是透過智慧型互動啟用的通用輸入。 雖然您可以針對特定的輸入模式和裝置設計您的應用程式，但您不需要這麼做。 這是因為通用 Windows app 預設會依賴智慧型互動。 這表示您可以針對按一下的互動來設計，而不需知道或定義按一下是來自滑鼠的點擊或手指的點選。
-
-### 通用控制項與樣式
+**Tip**   When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. (For a list of size classes and effective resolutions, see the [Recommendations for specific size classes](#sizeclasses) section of this article.)
 
 
-UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系列的應用程式。
+### Universal input and smart interactions
 
--   **通用控制項**
+Another built-in capability of the UWP is universal input enabled via smart interactions. Although you can design your apps for specific input modes and devices, you aren’t required to. That’s because Universal Windows apps by default rely on smart interactions. That means you can design around a click interaction without having to know or define whether the click comes from an actual mouse click or the tap of a finger.
 
-    UWP 提供一組保證在所有運作 Windows 的裝置上都能運作良好的通用控制項。 這組通用控制項包含了所有項目，從一般格式控制項 (如選項按鈕和文字方塊)，到可以從資料流與範本產生項目清單的複雜控制項 (如格線檢視和清單檢視)。 這些控制項有輸入感知功能，且部署時包含一組適當的輸入支援性、事件狀態，以及適用於各個裝置系列的整體功能。
+### Universal controls and styles
 
-    如需這些控制項的完整清單，以及可使用它們建立的模式，請參閱[控制項和模式](https://dev.windows.com/design/controls-patterns)一節。
 
--   **通用樣式**
+The UWP also provides some useful building blocks that make it easier to design apps for multiple device families.
 
-    您的 UWP app 會自動取得一組預設樣式，讓您擁有這些功能：
+-   **Universal controls**
 
-    -   這組樣式會自動為應用程式設定淺色或深色佈景主題 (您可以選擇)，且可以整合使用者喜好的輔色。
+    The UWP provides a set of universal controls that are guaranteed to work well on all Windows-powered devices. This set of universal controls includes everything from common form controls like radio button and text box to sophisticated controls like grid view and list view that can generate lists of items from a stream of data and a template. These controls are input-aware and deploy with the proper set of input affordances, event states, and overall functionality for each device family.
 
-        ![淺色和深色佈景主題](images/1910808-hig-uap-toolkit-01.png)
+    For a complete list of these controls and the patterns you can make from them, see the [Controls and patterns](https://dev.windows.com/design/controls-patterns) section.
 
-    -   以 Segoe 為基礎的字體坡型能確保應用程式文字在所有裝置上都清晰可見。
-    -   互動的預設動畫。
-    -   自動支援高對比模式。 我們的樣式是針對高對比來設計，因此，當您的應用程式在裝置上以高對比模式執行時，將會正常顯示。
-    -   自動支援其他語言。 我們的預設樣式會針對 Windows 支援的每種語言，自動選取正確字型。 您甚至可以在同一個應用程式中使用多種語言，這些控制項還是會正常顯示。
-    -   內建 RTL 閱讀方向支援。
+-   **Universal styles**
 
-    您可以自訂這些預設樣式，來讓您的應用程式展現個人風格，或者也可以用您自己的樣式完全取代預設樣式，以創造獨特的視覺體驗。 例如，以下是具有唯一視覺化樣式之天氣應用程式的設計：
+    Your UWP app automatically gets a default set of styles that gives you these features:
 
-    ![具有唯一視覺化樣式的天氣應用程式](images/weather/uwp-weather-tab-phone-700.png)
+    -   A set of styles that automatically gives your app a light or dark theme (your choice) and can incorporate the user's accent color preference.
 
-我們已經說明了 UWP app 的建置組塊，讓我們來看看如何將它們放在一起來建立 UI。 
+        ![light and dark themes](images/1910808-hig-uap-toolkit-01.png)
+
+    -   A Segoe-based type ramp that ensures that app text looks crisp on all devices.
+    -   Default animations for interactions.
+    -   Automatic support for high-contrast modes. Our styles were designed with high-contrast in mind, so when your app runs on a device in high-contrast mode, it will display properly.
+    -   Automatic support for other languages. Our default styles automatically select the correct font for every language that Windows supports. You can even use multiple languages in the same app and they'll be displayed properly.
+    -   Built-in support for RTL reading order.
+
+    You can customize these default styles to give your app a personal touch, or you can completely replace them with your own to create a unique visual experience. For example, here's a design for a weather app with a unique visual style:
+
+    ![a weather app with its own visual style](images/weather/uwp-weather-tab-phone-700.png)
+
+Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI. 
     
-## 典型 UWP app 的結構
+## The anatomy of a typical UWP app
 
 
-現代使用者介面很複雜，是由文字、形狀、色彩和動畫所組成，這最終組成您所使用之裝置畫面的個別像素。 當您開始設計使用者介面時，純粹的選項數目會非常驚人。
+A modern user interface is a complex thing, made up of text, shapes, colors, and animations which are ultimately made up out of individual pixels of the screen of the device you're using. When you start designing a user interface, the sheer number of choices can be overwhelming.
 
-為了讓事情簡單一點，我們從設計觀點來定義應用程式結構。 例如，假設應用程式是由畫面和頁面組成。 每個頁面都有使用者介面，並由三種類型的 UI 元素組成：瀏覽、命令和內容元素。
+To make things simpler, let's define the anatomy of an app from a design perspective. Let's say that an app is made up of screens and pages. Each page has a user interface, made up of three types of UI elements: navigation, commanding, and content elements.
 
 
 
@@ -103,123 +103,123 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 <tr class="odd">
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
-<td align="left"><strong>瀏覽元素</strong>
-<p>瀏覽元素協助使用者選擇他們想要顯示的內容。 瀏覽元素的範例包括[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)、[超連結](../controls-and-patterns/hyperlinks.md)，以及[瀏覽窗格](../controls-and-patterns/nav-pane.md)。</p>
-<p>瀏覽元素的詳細內容涵蓋在[瀏覽設計基本知識](navigation-basics.md)一文中。</p>
-<strong>命令元素</strong>
-<p>命令元素會起始動作，例如操作、儲存或分享內容。 命令元素的範例包括[按鈕](../controls-and-patterns/buttons.md)和[命令列](../controls-and-patterns/app-bars.md)。 命令元素也可以包括實際在畫面上看不到的鍵盤快速鍵。</p>
-<p>命令元素的詳細內容涵蓋在[命令設計基本知識](commanding-basics.md)一文中。</p>
-<strong>內容元素</strong>
-<p>內容元素顯示應用程式的內容。 若是繪圖應用程式，內容可能是繪圖；若是新聞應用程式，內容可能是新聞文章。</p>
-<p>內容元素的詳細內容涵蓋在[內容設計基本知識](content-basics.md)一文中。</p></td>
+<td align="left"><strong>Navigation elements</strong>
+<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/nav-pane.md).</p>
+<p>Navigation elements are covered in detail in the [Navigation design basics](navigation-basics.md) article.</p>
+<strong>Command elements</strong>
+<p>Command elements initiate actions, such as manipulating, saving, or sharing content. Examples of command elements include [button](../controls-and-patterns/buttons.md) and the [command bar](../controls-and-patterns/app-bars.md). Command elements can also include keyboard shortcuts that aren't actually visible on the screen.</p>
+<p>Command elements are covered in detail in the [Command design basics](commanding-basics.md) article.</p>
+<strong>Content elements</strong>
+<p>Content elements display the app's content. For a painting app, the content might be a drawing; for a news app, the content might be a news article.</p>
+<p>Content elements are covered in detail in the [Content design basics](content-basics.md) article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-應用程式至少必須有啟動顯示畫面和定義使用者介面的首頁。 一般的應用程式會有多個頁面和畫面，以及可能會隨著頁面變更的瀏覽、命令和內容元素。
+At a minimum, an app has a splash screen and a home page that defines the user interface. A typical app will have multiple pages and screens, and navigation, command, and content elements might change from page to page.
 
-決定應用程式適合哪些 UI 元素時，也可以考慮要執行應用程式的裝置和螢幕大小。
+When deciding on the right UI elements for your app, you might also consider the devices and the screen sizes your app will run on.
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>針對特定裝置和螢幕大小量身打造您的 app
-
-
-UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 的裝置上都能有效使用。 那麼，為什麼您還是希望針對特定裝置系列自訂您的應用程式 UI？
-
-**注意**  
-在我們繼續進行之前，Windows 不會針對您的應用程式提供一個偵測執行您應用程式之特定裝置的方法。 它能夠告知您執行應用程式的裝置系列 (行動、桌面等)、實際解析度，以及應用程式可用的螢幕空間量 (應用程式的視窗大小)。
-
- 
-
--   **為將空間做最有效的利用並減少不必要的瀏覽**
-
-    如果您在小螢幕的裝置 (例如手機) 上設計了一個美觀的應用程式，該應用程式在有較大顯示器的電腦上也能夠使用，但是可能會有一些浪費的空間。 您可以自訂應用程式，在螢幕超過特定大小時顯示更多內容。 例如，購物應用程式在手機上可能一次只顯示一個商品類別，但是在電腦或膝上型電腦上可以同時顯示多種類別和產品。
-
-    在螢幕上放置更多內容，會減少使用者需要執行的瀏覽數。
-
--   **充分利用裝置的功能**
-
-    某些裝置可能有特定的裝置功能。 例如，手機很可能有定位感應器和相機，而電腦則可能沒有。 您的應用程式可以偵測到哪些功能可以使用，並啟用使用這些功能的功能。
-
--   **針對輸入最佳化**
-
-    通用控制項程式庫可搭配所有輸入類型 (觸控、手寫筆、鍵盤、滑鼠)，但是您仍然可以透過重新安排 UI 元素，最佳化特定輸入類型。 例如，如果您在螢幕底部放置瀏覽元素，手機使用者就能輕鬆存取—但是大部分的電腦使用者則希望在螢幕頂端看到瀏覽元素。
-
-## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>回應式設計技術
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>Tailoring your app for specific devices and screen sizes.
 
 
-當您針對特定螢幕寬度自訂應用程式的 UI 時，我們假設您要建立回應式設計。 以下是六種您可以用來自訂應用程式 UI 的回應式設計技術。
+UWP apps use effective pixels to guarantee that your design elements will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
 
-### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>調整位置
-
-您可以變更應用程式 UI 元素的位置，以充分利用每個裝置。 在這個範例中，手機或平板手機的直向檢視必須要有捲動 UI，其中一次只能有一個完整畫面。 當應用程式轉譯到允許兩個完整螢幕畫面的裝置時，不論是直向或橫向，畫面 B 會使用一個專用空間。 如果您是使用格線來定位，當重新調整 UI 位置時可以依照相同的格線。
-
-![調整位置](images/rsp-design/rspd-reposition.png)
-
-在這個相片應用程式的設計範例中，相片應用程式在較大的螢幕上會重新調整它的內容。
-
-![應用程式在較大螢幕上重新調整內容的設計](images/rsp-design/rspd-reposition-type1.png)
-
-### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>重新調整大小
-
-您可以調整邊界和 UI 元素的大小，以最佳化畫面大小。 如同這裡的範例所顯示，您可以輕鬆地透過增加內容畫面，來加強在較大螢幕上的閱讀體驗。
-
-![調整大小設計元素](images/rsp-design/rspd-resize.png)
-
-### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>自動重排
-
-依據裝置和方向來變更 UI 元素的排列，應用程式能夠提供最佳的顯示內容。 例如，當在較大螢幕時切換成較大的容器、新增欄，並以不同的方式產生清單項目是合理的做法。
-
-此範例說明在手機或平板手機上直向捲動的單欄內容，在較大的螢幕上可以自動重排顯示為兩欄的文字。
-
-![自動重排設計元素](images/rsp-design/rspd-reflow.png)
-
-### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> 顯示
-
-您可以根據螢幕空間顯示 UI，或者當裝置支援其他功能、特定情況或適合的螢幕方向時顯示。
-
-在這個包含索引標籤的範例中，中間有相機圖示的索引標籤特定使用於手機或平板手機上的該應用程式，而不適用於較大的裝置，這也是它在右側的裝置中顯示的原因。 顯示或隱藏 UI 的另一個常見範例適用於媒體播放程式控制項，其中按鈕集在較小的裝置上會減少，在較大的裝置上則會展開。 例如，電腦上的媒體播放程式可以處理比手機上來得更多顯示在螢幕上的功能。
-
-![隱藏設計元素](images/rsp-design/rspd-revealhide.png)
-
-顯示或隱藏技術的一部分，包含了選擇何時顯示更多中繼資料。 當螢幕空間為優先考量時 (例如手機或平板手機)，最好顯示最少的中繼資料。 使用膝上型電腦或電腦時，就可以顯示大量的中繼資料。 如何處理顯示或隱藏中繼資料的一些範例，包含：
-
--   在電子郵件應用程式中，您可以顯示使用者的虛擬人偶。
--   在音樂應用程式中，您可以顯示更多專輯或藝人的相關資訊。
--   在影片應用程式中，您可以顯示更多電影或節目的相關資訊 (例如顯示演員名單和劇組的詳細資料)。
--   在任何應用程式中，您可以分割欄位顯示更多詳細資料。
--   在任何應用程式中，您可以將垂直堆疊的內容改成以水平方向排列。 從手機或平版手機移至較大的裝置時，堆疊的清單項目可以改成以清單項目為列，並以中繼資料為欄來顯示。
-
-### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>替換
-
-這項技術可讓您針對特定裝置大小類別或方向切換使用者介面。 在這個範例中，瀏覽窗格與其精簡、暫時性 UI 適用於較小的裝置，但使用於較大的裝置索引標籤上可能是更好的選擇。
-
-![替換設計元素](images/rsp-design/rspd-replace.png)
-
-### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> 重新設計
-
-您可以摺疊或分支應用程式的結構，以便符合特定裝置。 在這個範例中，由左邊的裝置移至右邊的裝置示範了頁面的連接。
-
-![重新架構使用者介面的範例](images/rsp-design/rspd-rearchitect.png)
-
-以下是套用這個技術來設計智慧家庭應用程式的範例。
-
-![使用重新架構回應式設計技術的設計範例](images/rsp-design/rspd-rearchitect-type1.png)
-
-
-## 相關文章
-
-- [什麼是 UWP app？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+**Note**  
+Before we go any further, Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window).
 
  
 
+-   **To make the most effective use of space and reduce the need to navigate**
+
+    If you design an app to look good on a device that has a small screen, such as a phone, the app will be usable on a PC with a much bigger display, but there will probably be some wasted space. You can customize the app to display more content when the screen is above a certain size. For example, a shopping app might display one merchandise category at a time on a phone, but show multiple categories and products simultaneously on a PC or laptop.
+
+    By putting more content on the screen, you reduce the amount of navigation that the user needs to perform.
+
+-   **To take advantage of devices' capabilities**
+
+    Certain devices are more likely to have certain device capabilities. For example, phones are likely to have a location sensor and a camera, while a PC might not have either. Your app can detect which capabilities are available and enable features that use them.
+
+-   **To optimize for input**
+
+    The universal control library works with all input types (touch, pen, keyboard, mouse), but you can still optimize for certain input types by re-arranging your UI elements. For example, if you place navigation elements at the bottom of the screen, they'll be easier for phone users to access—but most PC users expect to see navigation elements toward the top of the screen.
+
+## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>Responsive design techniques
+
+
+When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
+
+### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>Reposition
+
+You can alter the location and position of app UI elements to get the most out of each device. In this example, the portrait view on phone or phablet necessitates a scrolling UI because only one full frame is visible at a time. When the app translates to a device that allows two full on-screen frames, whether in portrait or landscape orientation, frame B can occupy a dedicated space. If you're using a grid for positioning, you can stick to the same grid when UI elements are repositioned.
+
+![reposition](images/rsp-design/rspd-reposition.png)
+
+In this example design for a photo app, the photo app repositions its content on larger screens.
+
+![a design for an app that repositions content on larger screens](images/rsp-design/rspd-reposition-type1.png)
+
+### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>Resize
+
+You can optimize the frame size by adjusting the margins and size of UI elements. This could allow you, as the example here shows, to augment the reading experience on a larger screen by simply growing the content frame.
+
+![resizing design elements](images/rsp-design/rspd-resize.png)
+
+### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>Reflow
+
+By changing the flow of UI elements based on device and orientation, your app can offer an optimal display of content. For instance, when going to a larger screen, it might make sense to switch larger containers, add columns, and generate list items in a different way.
+
+This example shows how a single column of vertically scrolling content on phone or phablet can be reflowed on a larger screen to display two columns of text.
+
+![reflowing design elements](images/rsp-design/rspd-reflow.png)
+
+### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> Reveal
+
+You can reveal UI based on screen real estate, or when the device supports additional functionality, specific situations, or preferred screen orientations.
+
+In this example with tabs, the middle tab with the camera icon might be specific to the app on phone or phablet and not be applicable on larger devices, which is why it's revealed in the device on the right. Another common example of revealing or hiding UI applies to media player controls, where the button set is reduced on smaller devices and expanded on larger devices. The media player on PC, for instance, can handle far more on-screen functionality than it can on a phone.
+
+![hiding design elements](images/rsp-design/rspd-revealhide.png)
+
+Part of the reveal-or-hide technique includes choosing when to display more metadata. When real estate is at a premium, such as with a phone or phablet, it's best to show a minimal amount of metadata. With a laptop or desktop PC, a significant amount of metadata can be surfaced. Some examples of how to handle showing or hiding metadata include:
+
+-   In an email app, you can display the user's avatar.
+-   In a music app, you can display more info about an album or artist.
+-   In a video app, you can display more info about a film or a show, such as showing cast and crew details.
+-   In any app, you can break apart columns and reveal more details.
+-   In any app, you can take something that's vertically stacked and lay it out horizontally. When going from phone or phablet to larger devices, stacked list items can change to reveal rows of list items and columns of metadata.
+
+### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>Replace
+
+This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device tabs might be a better choice.
+
+![replacing design elements](images/rsp-design/rspd-replace.png)
+
+### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> Re-architect
+
+You can collapse or fork the architecture of your app to better target specific devices. In this example, going from the left device to the right device demonstrates the joining of pages.
+
+![an example of re-architecting a user interface](images/rsp-design/rspd-rearchitect.png)
+
+Here's an example of this technique applied to the design for a smart home app.
+
+![an example of a design that using the re-artchitect responsive design technique](images/rsp-design/rspd-rearchitect-type1.png)
+
+
+## Related articles
+
+- [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

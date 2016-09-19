@@ -1,43 +1,43 @@
 ---
-title: "驗證和使用者識別"
-description: "通用 Windows 平台 (UWP) app 有數個使用者驗證選項，涵蓋範圍從使用 Web 驗證代理人的簡單單一登入 (SSO) 到高度安全的雙因素驗證。"
+title: Authentication and user identity
+description: Universal Windows Platform (UWP) apps have several options for user authentication, ranging from simple single sign-on (SSO) using Web authentication broker to highly secure two-factor authentication.
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
-ms.openlocfilehash: e748b319cdeda82aadaf8516e41883a3e32dc10c
+ms.openlocfilehash: 5ed154b3d31e8741972edc8c8a0fd343f41d4167
 
 ---
 
-# 驗證和使用者識別
+# Authentication and user identity
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-通用 Windows 平台 (UWP) app 有數個使用者驗證選項，涵蓋範圍從使用 [Web 驗證代理人](web-authentication-broker.md)的簡單單一登入 (SSO) 到高度安全的雙因素驗證。
+Universal Windows Platform (UWP) apps have several options for user authentication, ranging from simple single sign-on (SSO) using [Web authentication broker](web-authentication-broker.md) to highly secure two-factor authentication.
 
-對於連線到第三方識別提供者服務 (例如 Facebook、Twitter 及 Flickr 等) 的一般 app 連線，請使用 [Web 驗證代理人](web-authentication-broker.md)。 如果您使用[認證保險箱](credential-locker.md)來儲存使用者的登入資訊，以及讓這些資訊漫遊，就能得到額外的便利性。
+For regular app connections to third-party identity provider services, such as Facebook, Twitter, Flickr, and so on, use the [Web authentication broker](web-authentication-broker.md). For added convenience, use [Credential Locker](credential-locker.md) to save and roam the user's login information.
 
-我們強烈建議使用 Windows 10 的企業，採用能啟用高安全性雙因素驗證的 [Microsoft Passport 和 Windows Hello](microsoft-passport.md)。 如果您無法使用 Microsoft Passport，[智慧卡](smart-cards.md)和[指紋生物特徵辨識技術](fingerprint-biometrics.md)也能提供額外的安全性。
+Enterprises using Windows 10 should strongly consider using [Microsoft Passport and Windows Hello](microsoft-passport.md), which enables highly secure two-factor authentication. If using Microsoft Passport is not possible, [Smart cards](smart-cards.md) and [Fingerprint biometrics](fingerprint-biometrics.md) can add an additional layer of security.
 
 <table>
-<tr><th>主題</th><th>描述</th></tr>
-<tr><td>[認證保險箱](credential-locker.md)</td><td>本文說明 App 如何使用認證保險箱來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。</td></tr>
+<tr><th>Topic</th><th>Description</th></tr>
+<tr><td>[Credential locker](credential-locker.md)</td><td>This article describes how apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account</td></tr>
 
-<tr><td>[指紋生物識別技術](fingerprint-biometrics.md) </td><td>本文將說明如何在您的應用程式中新增指紋生物識別技術。 包括使用者在進行特定動作時所必須同意的指紋驗證要求，以提高應用程式的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [Windows.Security.Credentials.UI](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [UserConsentVerifier](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。</td></tr>
-<tr><td>[Microsoft Passport 及 Windows Hello](microsoft-passport.md)</td><td>這篇文章說明新的 Windows 10 Microsoft Passport 技術，並討論開發人員如何實作這項技術來保護自己的應用程式及後端服務。 文章強調該技術的幾個特定功能，以協助您減少傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。 </td></tr>
-<tr><td>[建立 Microsoft Passport 登入應用程式](microsoft-passport-login.md)</td><td>如何建立使用 Microsoft Passport 取代傳統使用者名稱及密碼驗證系統的 Windows 10 UWP(通用 Windows 平台) app 之完整逐步解說的第 1 部分。</td></tr>
-<tr><td>[建立 Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)</td><td>在 Windows 10 UWP (通用 Windows 平台) app 中使用 Microsoft Passport 取代傳統的使用者名稱及密碼驗證系統之完整逐步解說的第 2 部分。</td></tr>
-<tr><td>[智慧卡](smart-cards.md)</td><td>此主題說明應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。</td></tr>
-<tr><td>[在應用程式之間共用憑證](share-certificates.md)</td><td>針對需要比使用者識別碼和密碼組合更安全之驗證方式的 UWP app，即可使用憑證驗證。 憑證驗證可在驗證使用者時提供高階的信任層級。 在某些情況下，會有一組服務想驗證多個 app 的某位使用者。 本文說明如何使用相同的憑證來驗證多個 App，以及如何提供便利的程式碼，讓使用者匯入用來存取受保護 Web 服務的憑證。</td></tr>
-<tr><td>[使用隨附 IoT 裝置的 Windows 解除鎖定](companion-device-unlock.md)</td><td>隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過隨附裝置架構，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。</td></tr>
-<tr><td>[Web 帳戶管理員](web-account-manager.md)</td><td>本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) App 連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 </td></tr>
-<tr><td>[Web 驗證代理人](web-authentication-broker.md)</td><td>本文說明如何將您的 app 連接到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得描述 app 存取之提供者資源的存取權杖。</td></tr>
+<tr><td>[Fingerprint biometrics](fingerprint-biometrics.md) </td><td>This article explains how to add fingerprint biometrics to your app. Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the [UserConsentVerifier](https://msdn.microsoft.com/library/windows/apps/dn279134) class in the [Windows.Security.Credentials.UI](https://msdn.microsoft.com/library/windows/apps/hh701356) namespace.</td></tr>
+<tr><td>[Microsoft Passport and Windows Hello](microsoft-passport.md)</td><td>This article describes the new Windows 10 Microsoft Passport technology, and discusses how developers can implement this technology to protect their apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats from conventional credentials and provides guidance about designing and deploying these technologies as part of your Windows 10 rollout. </td></tr>
+<tr><td>[Create a Microsoft Passport login app](microsoft-passport-login.md)</td><td>Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Microsoft Passport as an alternative to traditional username and password authentication systems.</td></tr>
+<tr><td>[Create a Microsoft Passport login service](microsoft-passport-login-auth-service.md)</td><td>Part 2 of a complete walkthrough on how to use Microsoft Passport as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps.</td></tr>
+<tr><td>[Smart cards](smart-cards.md)</td><td>This topic explains how apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.</td></tr>
+<tr><td>[Share certificates between apps](share-certificates.md)</td><td>UWP apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple apps using the same certificate, and how you can provide convenient code for a user to import a certificate that was provided to access secured web services.</td></tr>
+<tr><td>[Windows Unlock with companion IoT devices](companion-device-unlock.md)</td><td>A companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Companion Device Framework, a companion device can provide a rich experience for Microsoft Passport even when Windows Hello is not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).</td></tr>
+<tr><td>[Web Account Manager](web-account-manager.md)</td><td>This article describes how to show the AccountsSettingsPane and connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the new Windows 10 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive). </td></tr>
+<tr><td>[Web authentication broker](web-authentication-broker.md)</td><td>This article explains how to connect your app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on. The [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.</td></tr>
 </table>
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

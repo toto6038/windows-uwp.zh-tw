@@ -1,71 +1,71 @@
 ---
 author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: "深入了解開發和發佈包含廣告之 App 的端對端處理程序。"
-title: "建立包含廣告之 App 的工作流程"
+description: Learn about the end-to-end process for developing and publishing an app with ads.
+title: Workflows for creating apps with ads
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 
 ---
 
-# 建立包含廣告之 App 的工作流程
+# Workflows for creating apps with ads
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-若要在您的 App 中顯示廣告，您的 App 需要能從廣告網路接收廣告。 Microsoft 提供了一個 Web 服務，可讓 Windows 應用程式開發人員接收廣告。 當使用者按一下 App 中的廣告，您 (廣告的「發行者」**) 就可以從廣告的建立者 (「廣告客戶」**) 賺取金額。 從廣告客戶方面賺取的金額會使用您的帳戶支付給您。
 
-下列高階步驟說明開發和發佈包含廣告之 App 的一般處理程序。
+To display ads in your apps, your app needs to be able receive ads from an ad network. Microsoft provides a web service that allows Windows app developers to receive ads. When users click the ad in your app, you (being the *publisher* of the ad) earn money from the creator of the ads (the *advertiser*). The money earned from advertisers is paid to you using your account.
 
-1.  開發階段：
+The following high-level steps describe the general process of developing and publishing an app with ads.
 
-    * 設定您的 Windows 開發人員中心帳戶。
-    * 使用測試模式的值開發您的 App。
+1.  Development stage:
 
-2.  預備發行：
+    * Set up your Windows Dev Center account.
+    * Develop your app using test mode values.
 
-    * 設定您的 App 接收即時廣告。
-    * 將您的 App 提交至 Windows 開發人員中心，然後檢閱效能資料。
+2.  Ready to release:
 
-如需有關每個步驟的詳細資訊，請閱讀以下其對應的章節。
+    * Configure your app to receive live ads.
+    * Submit your app to Windows Dev Center and review performance data.
 
-## 設定您的 Windows 開發人員中心帳戶
+For more information about each step, read its corresponding section below.
 
-您必須具備 Windows 開發人員中心帳戶，才能發佈您的 App 與接收廣告。 無論您是否使用廣告流量分配，這都是成立的。 廣告相關的 App 管理也會在 Windows 開發人員中心中完成。 如果您曾使用 Microsoft pubCenter 來管理 App 中的廣告，這已經由 Windows 開發人員中心中的功能取代。
+## Set up your Windows Dev Center account
 
-若要設定 Windows 開發人員中心帳戶，請造訪[首頁](https://dev.windows.com/windows-apps)。 Windows 開發人員中心[說明頁面](https://dev.windows.com/develop)可取得其他資訊。
+You need to have an account with Windows Dev Center to publish your app and receive ads. This is true regardless of whether or not you are using ad mediation. Advertising-related app management is also done in Windows Dev Center. If you have used Microsoft pubCenter to manage advertising in your apps, this has been replaced with features in Windows Dev Center
 
-## 使用測試模式值開發您的 App
+To set up your account with Windows Dev Center, visit the [home page](https://dev.windows.com/windows-apps). Additional information is available at the Windows Dev Center [help pages](https://dev.windows.com/develop).
 
-使用下列逐步解說中的指示新增 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)，以在您的 App 中顯示廣告。
+## Develop your app using test mode values
 
--   [插入式廣告](interstitial-ads.md)
--   [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
--   [HTML 5 和 JavaScript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
--   [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)
+Use the instructions in the following walkthroughs to add an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) to display ads in your app:
 
-當您使用 **AdControl** 或 **InterstitialAd** 在您的 App 中顯示廣告時，您必須在您的程式碼中指定應用程式識別碼與廣告單位識別碼，以將您的 App 連結至您的 Windows 開發人員中心帳戶並提供廣告。 當您開發您的 App 時，使用測試應用程式識別碼和廣告單位識別碼值，以查看您的 App 於測試期間呈現廣告的方式。 這可讓您看到 App 在測試期間接收及呈現廣告的方式。 如需詳細資訊，請參閱[測試模式值](test-mode-values.md)。
+-   [Interstitial Ads](interstitial-ads.md)
+-   [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
+-   [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+-   [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)
 
-如需示範如何使用 C# 和 C++ 將橫幅及影片插入式廣告新增至 JavaScript/HTML App 以及XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+When you use an **AdControl** or **InterstitialAd** to display ads in your app, you must specify an application ID and ad unit ID in your code to link your app to your Windows Dev Center account and to serve ads. While you are developing your app, use test application ID and ad unit ID values to see how your app renders ads during testing. This enables you to see how the app is receiving and rendering advertisements during testing. For more information, see [Test mode values](test-mode-values.md).
 
-## 設定您的 App 接收即時廣告
+For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-在您完成測試您的 App 且準備好將 App 提交至 Windows 開發人員中心時，您必須更新您的 App 程式碼，以使用 [Windows 開發人員中心儀表板](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)的應用程式識別碼和廣告單位識別碼值。 如果您嘗試在實際 App 中使用測試值，您的 App 將不會收到即時廣告。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+## Configure your app to receive live ads
 
-## 提交 App
+After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Windows Dev Center dashboard](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx). If you try to use test values in your live app, your app will not receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
 
-完成 App 開發之後，您就可以使用 Windows 開發人員中心儀表板在 Windows 市集中發佈您的 App。 除了符合 Windows 市集中所有 App 的需求以外，顯示廣告的 App 也必須符合數個其他的需求。 如需詳細資訊，請參閱[提交包含廣告的 App 到 Windows 市集](submit-an-app-with-ads-to-the-windows-store.md)。
+## Submit your app
 
-在您發佈 App 且在 Windows 市集中提供使用之後，您可以在開發人員中心儀表板中檢視您的[廣告績效報告](../publish/advertising-performance-report.md)。
+After you complete development of your app, you can publish your app in the Windows Store by using the Windows Dev Center dashboard. In addition to meeting requirements for all apps in the Windows Store, apps that display ads must meet several additional requirements. For more information, see [Submit an app with ads to the Windows Store](submit-an-app-with-ads-to-the-windows-store.md).
 
- 
+After your app is published and available in the Windows Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

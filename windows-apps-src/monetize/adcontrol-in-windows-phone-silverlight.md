@@ -1,47 +1,53 @@
 ---
 author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
-description: "了解如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight app 使用 AdControl 類別來顯示橫幅廣告。"
-title: "Windows Phone Silverlight 中的 AdControl"
+description: Learn how to use the AdControl class to display banner ads in a Silverlight app for Windows Phone 8.1 or Windows Phone 8.0.
+title: AdControl in Windows Phone Silverlight
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
+ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
+ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 ---
 
-# Windows Phone Silverlight 中的 AdControl
+# AdControl in Windows Phone Silverlight
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-本文會逐步說明如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight app 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 類別來顯示橫幅廣告。
-
-## 先決條件
-
-*  使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
 
 
-## 新增廣告組件參考
+This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) class to display banner ads in a Silverlight app for Windows Phone 8.1 or Windows Phone 8.0.
 
-適用於 Windows Phone Silverlight 專案的 Microsoft Advertising 組件不會隨 Microsoft Store Engagement 和 Monetization SDK 安裝在本機。 在您可以開始更新程式碼之前，您必須先搭配使用「已連接服務」**** 與 Microsoft Store Engagement 和 Monetization SDK 中支援的廣告流量分配，以下載組件並在專案中加入其參考。
-
-1.  在 Visual Studio 中，依序按一下 [專案]****、[加入已連接服務]****。
-
-2.  在 [加入已連接服務]**** 對話方塊中，按一下 [Ad Mediator]****，然後按一下 [設定]****。
-
-3.  按一下 [選取廣告聯播網]****，並只選取 [Microsoft Advertising]****。
-
-    此時，適用於 Silverlight 的所有必要 Microsoft Advertising 組件都會透過 NuGet 封裝下載到您的本機專案，而且對這些組件的參考會自動新增到您的專案。 廣告流量分配組件的參考也會新增到專案。 在稍後的步驟中會移除廣告流量分配組件，因為此案例中不需要它。
-
-4.  在 [選取廣告聯播網]**** 對話方塊中，按一下 [確定]****。 於下面隨即顯示的 [擷取狀態]**** 頁面中再按一次 [確定]****，最後按一下 [加入]**** 來關閉 [Ad Mediator]**** 對話方塊。
-
-5.  在 [方案總管]**** 中，展開 [參考]**** 節點。 以滑鼠右鍵按一下 [Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising]****，然後按一下 [移除]****。 這個案例中不需要此組件參考。
-
-## 撰寫 App 程式碼
+> **Note for Windows Phone Silverlight 8.0**&nbsp;&nbsp;Banner ads are still supported for existing Windows Phone 8.0 Silverlight apps that use an **AdControl** from an earlier release of the Universal Ad Client SDK or Microsoft Advertising SDK and that are already available in the Store. However, banner ads are no longer supported in new Windows Phone 8.0 Silverlight projects. In addition, some debugging and testing scenarios are limited in Windows Phone 8.x Silverlight projects. For more information, see [Display ads in your app](display-ads-in-your-app.md#silverlight_support).
 
 
-1.  在 WMAppManifest.xml 檔案中的 **Capabilities** 新增下列功能。
+## Add the advertising assemblies to your project
+
+To get started, download and install the NuGet package that contains the Microsoft advertising assemblies for Windows Phone Silverlight to your project.
+
+1.  Open your project in Visual Studio.
+
+2.  Click **Tools**, point to **NuGet Package Manager**, and click **Package Manager Console**.
+
+3.  In the **Package Manager Console** window, enter one of these commands.
+
+  * If your project targets Windows Phone 8.0, enter this command.
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
+      ```
+
+  * If your project targets Windows Phone 8.1, enter this command.
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
+      ```
+
+    After entering the command, all the necessary Microsoft advertising assemblies for Silverlight are downloaded to your local project via NuGet packages, and references to these assemblies are automatically added to your project.
+
+## Code your app
+
+
+1.  Add the following capabilities to the in the **Capabilities** node in your WMAppManifest.xml file.
 
     ``` syntax
     <Capability Name="ID_CAP_IDENTITY_USER"/>
@@ -49,7 +55,7 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
     <Capability Name="ID_CAP_PHONEDIALER"/>
     ```
 
-    對於此範例，您的 **Capabilities** 看起來如下：
+    For this example, your **Capabilities** node looks like:
 
     ``` syntax
         <Capabilities>
@@ -64,23 +70,23 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
         </Capabilities>
     ```
 
-2.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
+2.  (Optional) Save your project. Click on the **Save All** icon or under the **File** menu click **Save All**.
 
-3.  將「網際網路 (用戶端與伺服器)」**** 功能新增到專案中的 Package.appxmanifest 檔案 在 [方案總管]**** 中，按兩下 [Package.appxmanifest]****。
+3.  Add the **Internet (Client & Server)** capability to the Package.appxmanifest file in your project. In **Solution Explorer**, double click **Package.appxmanifest**.
 
     ![wp81silverlightmarkup\-solutionexplorer\-packageappxmanifest](images/13-b98c2a1a-69c3-4018-be0a-6ce010e703e7.jpg)
 
-    在 [編輯器]**** 中，按一下 [功能]**** 索引標籤。 選取 [網際網路 (用戶端與伺服器)]**** 方塊。
+    In the **Editor**, click the **Capabilities** tab. Check the **Internet (Client & Server)** box.
 
-4.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
+4.  (Optional) Save your project. Click on the **Save All** icon or under the **File** menu click **Save All**.
 
-5.  修改 MainPage.xaml 檔案中的 Silverlight 標記，以包含 **Microsoft.Advertising.Mobile.UI** 命名空間。
+5.  Modify the Silverlight markup in the MainPage.xaml file to include the **Microsoft.Advertising.Mobile.UI** namespace.
 
     ``` syntax
     xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
     ```
 
-    您頁面的標頭會有下列程式碼︰
+    The header of your page will have the following code:
 
     ``` syntax
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -88,10 +94,9 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
         x:Class="PhoneApp1.MainPage"
     ```
 
-6.  在 **Grid** 標籤中，加入以下 **AdControl** 程式碼。 將 **ApplicationId** 和 **AdUnitId** 屬性指派給[測試模式屬性](test-mode-values.md)中提供的屬性，並將 **Height** 和 **Width** 屬性調整為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
+6.  In the **Grid** tag, add the following code for the **AdControl**. Assign the **ApplicationId** and **AdUnitId** properties to the test values provided in [Test mode values](test-mode-values.md), and adjust the **Height** and **Width** properties to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
-    > **注意**  
-    在提交 App 之前，請以實際值取代測試的 **ApplicationId** 和 **AdUnitId** 值。
+    > **Note**&nbsp;&nbsp;You will replace the test **ApplicationId** and **AdUnitId** values with live values before submitting your app for submission.
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">
@@ -107,26 +112,26 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
     </Grid>
     ```
 
-7.  建置並執行專案。 確認您的 App 會顯示廣告如下︰
+7.  Build and run your project. Confirm that your app displays an ad, similar to the following:
 
     ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
 
-## 使用開發人員中心發行包含即時廣告的 App
+## Release your app with live ads using Dev Center
 
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
+2.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Dev Center.
 
-3.  使用開發人員中心儀表板[提交您的 App](../publish/app-submissions.md) 到市集。
+3.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
-4.  在開發人員中心儀表板上檢閱[廣告績效報告](../publish/advertising-performance-report.md)。
+4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

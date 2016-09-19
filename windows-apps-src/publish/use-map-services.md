@@ -1,37 +1,37 @@
 ---
 author: jnHs
-Description: "若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務應用程式識別碼和權杖。 您可以在 [服務] 區段中的 [地圖] 頁面的開發人員中心儀表板取得這個權杖。"
-title: "使用地圖服務"
+Description: To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the Maps page in the Services section.
+title: Use map services
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0d775c67492fd6afe9f65f3e5dede865f9037342
+ms.openlocfilehash: 5ba722ae17fce33ff3a6860c17c1ed5f3e6790b8
 
 ---
 
-# 使用地圖服務
+# Use map services
 
 
-若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 [服務]**** 區段中的 [地圖]**** 頁面的開發人員中心儀表板取得這個權杖。
+To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the **Maps** page in the **Services** section.
 
-> **注意：**若要在目標為其他作業系統的 app 中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694)。
+> **Note**  To use map services in apps targeting other operating systems, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://msdn.microsoft.com/library/windows/apps/mt219694) for more info.
 
-一旦您[保留 app 名稱](create-your-app-by-reserving-a-name.md)之後，請尋找左方導覽功能表中的 [服務]**** 區段，然後將它展開以顯示 [地圖]**** 頁面。 當您按一下 [取得權杖]**** 時，將會產生 **ApplicationID** 和 **AuthenticationToken** 並顯示在此頁面。
+Once you've [reserved your app's name](create-your-app-by-reserving-a-name.md), look for the **Services** section in the left navigation menu and expand it to show the **Maps** page. When you click **Get token**, the **ApplicationID** and **AuthenticationToken** will be generated and will appear on this page.
 
-> **注意** 目前您不需要完成提交 app 的作業。 在您要求權杖和識別碼之後，這項資訊會儲存在此頁面。 您可以隨時返回此頁面以存取這項資訊。
+> **Note**  You don’t have to finish submitting your app at this time. After you request a token and ID, this info will be saved on this page. You can return to this page at any time to access this info.
 
-您也必須確定在封裝和提交您的 app 之前，將 **ApplicationID** 與 **AuthenticationToken** 加入至您的程式碼。 如需詳細資訊，請參閱[如何新增地圖控制項到頁面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
-
- 
+You'll also need to make sure to add the **ApplicationID** and **AuthenticationToken** to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

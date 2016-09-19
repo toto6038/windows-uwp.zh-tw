@@ -1,95 +1,95 @@
 ---
 author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-title: "在 C# 或 Visual Basic 中呼叫非同步 API"
-description: "通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。"
+title: Call asynchronous APIs in C# or Visual Basic
+description: The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b13f6b3fac2ce6d264ed0c44e145a89ad8be5996
+ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 ---
-# 在 C# 或 Visual Basic 中呼叫非同步 API
+# Call asynchronous APIs in C# or Visual Basic
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。 本主題討論如何在 C# 或 Microsoft Visual Basic 使用 UWP 的非同步方法。
-
-非同步 API 會讓您的應用程式不必等候大量操作完成，就能繼續執行。 例如，從網際網路下載資訊的應用程式可能需要花費一些時間來等候資訊。 如果您使用同步方法抓取資訊，則應用程式會遭到封鎖，直到該方法傳回為止。 app 將不會回應使用者的互動，而因為 app 似乎沒有回應，使用者就會感到失望。 透過提供非同步 API，UWP 可以協助確保 app 在執行長時間的操作時，仍然能夠回應使用者的動作。
-
-UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定自己了解如何在通用 Windows 平台 (UWP) app 中使用非同步 API 搭配 C# 或 Visual Basic。 以下示範如何呼叫 UWP 的非同步 API。
-
-## 使用非同步 API
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-根據慣例，非同步方法的名稱會以 "Async" 結尾。 您通常會為了回應使用者動作 (例如當使用者按一下按鈕時) 而呼叫非同步 API。 在事件處理常式中呼叫非同步方法，是使用非同步 API 最簡單的方法之一。 我們在這裡以 **await** 運算子為例。
+The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time. This topic discusses how to use asynchronous methods from the UWP in C# or Microsoft Visual Basic.
 
-假設您的應用程式會從某個位置列出部落格文章的標題。 App 含有一個 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)，使用者按一下該按鈕可以取得標題。 標題就會顯示在 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中。 當使用者按一下按鈕後，app 在等待部落格網站資訊的同時，必須仍舊能保持回應。 為確保做出回應，UWP 提供下載摘要的非同步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)。
+Asynchronous APIs keep your app from waiting for large operations to complete before continuing execution. For example, an app that downloads info from the Internet might spend several seconds waiting for the info to arrive. If you use a synchronous method to retrieve the info, the app is blocked until the method returns. The app won't respond to user interaction and because it seems non-responsive, the user might become frustrated. By providing asynchronous APIs, the UWP helps to ensure that your app stays responsive to the user when it's performing long operations.
 
-下列範例會呼叫非同步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 並等待結果，以從部落格取得部落格文章清單。
+Most of the asynchronous APIs in the UWP don't have synchronous counterparts, so you need to be sure to understand how to use the asynchronous APIs with C# or Visual Basic in your Universal Windows Platform (UWP) app. Here we show how to call asynchronous APIs of the UWP.
+
+## Using asynchronous APIs
+
+
+By convention, asynchronous methods are given names that end in "Async". You typically call asynchronous APIs in response to a user's action, such as when the user clicks a button. Calling an asynchronous method in an event handler is one of the simplest ways of using asynchronous APIs. Here we use the **await** operator as an example.
+
+Suppose that you have an app that lists the titles of blog posts from a certain location. The app has a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) that the user clicks to get the titles. The titles are displayed in a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652). When the user clicks the button, it is important that the app remains responsive while it waits for the info from the blog's website. To ensure this responsiveness, the UWP provides an asynchronous method, [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460), to download the feed.
+
+The example here gets the lists of blog posts from a blog by calling the asynchronous method, [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460), and awaiting the result.
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
 [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
 [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
-這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
+There are a couple of important things about this example. First, the line, `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` uses the **await** operator with the call to the asynchronous method, [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460). You can think of the **await** operator as telling the compiler that you are calling an asynchronous method, which causes the compiler to do some extra work so you don’t have to. Next, the declaration of the event handler includes the keyword **async**. You must include this keyword in the method declaration of any method in which you use the **await** operator.
 
-在這個主題中，我們將不深入探討使用 **await** 運算子時編譯器所執行工作的細節，但將檢查 app 執行什麼工作，使得 app 具有非同步性質和回應能力。 以使用同步程式碼時所發生的情況為例。 例如，假設有一個稱為 `SyndicationClient.RetrieveFeed` 的同步方法 (並沒有這種方法，但請想像有)。如果您的 app 包含 `SyndicationFeed feed = client.RetrieveFeed(feedUri)` 程式行而非 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，在取得 `RetrieveFeed` 的傳回值之前，app 會停止執行。 而且，當您的 app 在等待方法完成時，不會回應任何其他事件 (另一個 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件)。 也就是說，您的 app 在 `RetrieveFeed` 傳回之前會被封鎖。
+In this topic, we won't go into a lot of the details of what the compiler does with the **await** operator, but let's examine what your app does so that it is asynchronous and responsive. Consider what happens when you use synchronous code. For example, suppose that there is a method called `SyndicationClient.RetrieveFeed` that is synchronous. (There is no such method, but imagine that there is.) If your app included the line `SyndicationFeed feed = client.RetrieveFeed(feedUri)`, instead of `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, execution of the app would stop until the return value of `RetrieveFeed` is available. And while your app waits for the method to complete, it can't respond to any other events, such another [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event. That is, your app would be blocked until `RetrieveFeed` returns.
 
-但是，如果您呼叫 `client.RetrieveFeedAsync`，該方法會起始擷取作業並立即傳回。 當您使用 **await** 搭配 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 時，app 會暫時結束事件處理常式。 接著，當 **RetrieveFeedAsync** 以非同步方式執行時，app 就可以處理其他事件。 這樣可以保持 app 對使用者的回應能力。 當 **RetrieveFeedAsync** 完成而且 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) 可用時，app 基本上會重新進入先前在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之後停止的事件處理常式，然後完成方法的其餘部分。
+But if you call `client.RetrieveFeedAsync`, the method initiates the retrieval and immediately returns. When you use **await** with [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460), the app temporarily exits the event handler. Then it can process other events while **RetrieveFeedAsync** executes asynchronously. This keeps the app responsive to the user. When **RetrieveFeedAsync** completes and the [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) is available, the app essentially reenters the event handler where it left off, after `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, and finishes the rest of the method.
 
-使用 **await** 運算子的好處是，程式碼的撰寫方式與您使用虛構的 `RetrieveFeed` 方法時的程式碼撰寫方式並無太大差異。 有數種方法可以在 C# 或 Visual Basic 中撰寫不含 **await** 運算子的非同步程式碼，但產生的程式碼傾向強調以非同步方式執行的技巧。 這讓非同步程式碼不易撰寫、難以理解，而且不容易維護。 透過使用 **await** 運算子，既可以獲得非同步應用程式的好處，又不會使程式碼過於複雜。
+The nice thing about using the **await** operator is that the code doesn't look much different from how the code looks if you used the imaginary `RetrieveFeed` method. There are ways to write asynchronous code in C# or Visual Basic without the **await** operator, but the resulting code tends to emphasize the mechanics of executing asynchronously. This makes asynchronous code hard to write, hard to understand, and hard to maintain. By using the **await** operator, you get the benefits of an asynchronous app without making your code complex.
 
-## 傳回非同步 API 的類型與結果
+## Return types and results of asynchronous APIs
 
 
-如果您瀏覽連結 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)，可能會發現 **RetrieveFeedAsync** 的傳回類型不是 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485)。 相反地，傳回類型是 `IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>`。 從原始語法的角度而言，非同步 API 會傳回其中包含結果的物件。 將非同步方法想像成可以等待是很常見的想法 (有時很有用)，**await** 運算子實際上是在方法的傳回值 (而非方法) 上操作。 當您套用 **await** 運算子時，您得到的是針對方法傳回的物件呼叫 **GetResult** 的結果。 在這個範例中，**SyndicationFeed** 是 **RetrieveFeedAsync.GetResult()** 的結果。
+If you followed the link to [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460), you might have noticed that the return type of **RetrieveFeedAsync** is not a [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485). Instead, the return type is `IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>`. Viewed from the raw syntax, an asynchronous API returns an object that contains the result within it. While it is common, and sometimes useful, to think of an asynchronous method as being awaitable, the **await** operator actually operates on the method’s return value, not on the method. When you apply the **await** operator, what you get back is the result of calling **GetResult** on the object returned by the method. In the example, the **SyndicationFeed** is the result of **RetrieveFeedAsync.GetResult()**.
 
-當您使用非同步方法時，您可以檢查簽章以查看等待等待方法傳回的值之後會得到什麼項目。 UWP 中的所有非同步 API 會傳回下列其中一個類型：
+When you use an asynchronous method, you can examine the signature to see what you’ll get back after awaiting the value returned from the method. All asynchronous APIs in the UWP return one of the following types:
 
 -   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
 -   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)
 -   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)
 
-非同步方法的結果類型與 `      TResult` 類型參數相同。 不含 `TResult` 的類型將不會產生結果。 您可以將結果想像成是 **void**。 在 Visual Basic 中，[Sub](https://msdn.microsoft.com/library/windows/apps/xaml/831f9wka.aspx) 程序等同於含有 **void** 傳回類型的方法。
+The result type of an asynchronous method is the same as the `      TResult` type parameter. Types without a `TResult` don't have a result. You can think of the result as being **void**. In Visual Basic, a [Sub](https://msdn.microsoft.com/library/windows/apps/xaml/831f9wka.aspx) procedure is equivalent to a method with a **void** return type.
 
-下表提供非同步方法的範例，並列出每個方法的傳回類型和結果類型。
+The table here gives examples of asynchronous methods and lists the return type and result type of each.
 
-| 非同步方法                                                                           | 傳回類型                                                                                                                                        | 結果類型                                       |
+| Asynchronous method                                                                           | Return type                                                                                                                                        | Result type                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，實作 **IAsyncOperation&lt;UInt32&gt;** 的自訂結果類別 | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), a custom results class that implements **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-[**.NET for UWP app**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
+Asynchronous methods that are defined in [**.NET for UWP apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) have the return type [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) or [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx). Methods that return **Task** are similar to the asynchronous methods in the UWP that return [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx). In each case, the result of the asynchronous method is **void**. The return type **Task&lt;TResult&gt;** is similar to [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) in that the result of the asynchronous method when running the task is the same type as the `TResult` type parameter. For more info about using **.NET for UWP apps** and tasks, see [.NET for Windows Runtime apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx).
 
-## 處理錯誤
+## Handling errors
 
 
-使用 **await** 運算子從非同步方法取得您的結果時，您可以使用 **try/catch** 區塊來處理發生在非同步方法中的錯誤，如同處理同步方法的錯誤一樣。 先前的範例將 **RetrieveFeedAsync** 方法與 **await** 操作包裝在 **try/catch** 區塊中，以處理例外狀況擲回時的錯誤。
+When you use the **await** operator to retrieve your results from an asynchronous method, you can use a **try/catch** block to handle errors that occur in asynchronous methods, just as you do for synchronous methods. The previous example wraps the **RetrieveFeedAsync** method and **await** operation in a **try/catch** block to handle errors when an exception is thrown.
 
-當非同步方法呼叫其他非同步方法時，任何造成例外狀況的非同步方法都將被傳播到外部方法中。 這表示您可以在最外層的方法中放入 **try/catch** 區塊，以攔截巢狀非同步方法的錯誤。 這和您攔截同步方法錯誤的方式類似。 不過，在 **catch** 區塊中不能使用 **await**。
+When asynchronous methods call other asynchronous methods, any asynchronous method that results in an exception will be propagated to the outer methods. This means that you can put a **try/catch** block on the outer-most method to catch errors for the nested asynchronous methods. Again, this is similar to how you catch exceptions for synchronous methods. However, you can't use **await** in the **catch** block.
 
-**提示：**從 Microsoft Visual Studio 2005 中的 C# 開始，您可以在 **catch** 區塊中使用 **await**。
+**Tip**  Starting with C# in Microsoft Visual Studio 2005, you can use **await** in the **catch** block.
 
-## 摘要與後續步驟
+## Summary and next steps
 
-這裡示範的非同步方法呼叫模式，是當您在事件處理常式中呼叫非同步 API 時最容易使用的一種呼叫模式。 當您在某個會在 Visual Basic 中傳回 **void** 或 **Sub** 的覆寫方法中呼叫非同步方法時，也可以使用這種模式。
+The pattern of calling an asynchronous method that we show here is the simplest one to use when you call asynchronous APIs in an event handler. You can also use this pattern when you call an asynchronous method in an overridden method that returns **void** or a **Sub** in Visual Basic.
 
-當您在 UWP 遇到非同步方法時，請記住下列幾點：
+As you encounter asynchronous methods in the UWP, it is important to remember:
 
--   根據慣例，非同步方法的名稱會以 "Async" 結尾。
--   任何使用 **await** 運算子的方法都必須為其宣告標示 **async** 關鍵字。
--   當 app 發現 **await** 運算子時，會在非同步方法執行的同時保持對使用者互動的回應。
--   等待非同步方法傳回的值傳回包含結果的物件。 在大部分情況下，有用的資訊是傳回值中的結果，而非傳回值本身。 您可以透過查看非同步方法的傳回類型，來尋找結果內包含的值類型。
--   使用非同步 API 與 **async** 模式通常可以提高 app 回應性。
+-   By convention, asynchronous methods are given names that end in "Async".
+-   Any method that uses the **await** operator must have its declaration marked with the **async** keyword.
+-   When an app finds the **await** operator, the app remains responsive to user interaction while the asynchronous method executes.
+-   Awaiting the value returned by an asynchronous method returns an object that contains the result. In most cases, the result contained within the return value is what's useful, not the return value itself. You can find the type of the value that is contained inside the result by looking at the return type of the async method.
+-   Using asynchronous APIs and **async** patterns is often a way to improve the responsiveness of your app.
 
-本主題中的範例會輸出如下文字。
+The example in this topic outputs text that looks like this.
 
 ``` syntax
 Windows Experience Blog
@@ -112,6 +112,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

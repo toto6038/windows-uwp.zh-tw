@@ -1,48 +1,48 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: "音樂、圖片及影片媒體櫃中的檔案和資料夾"
-description: "將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。"
+title: Files and folders in the Music, Pictures, and Videos libraries
+description: Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
-# 音樂、圖片及影片媒體櫃中的檔案和資料夾
+# Files and folders in the Music, Pictures, and Videos libraries
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-將現有的音樂、圖片或影片資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
+Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
 
-媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 [圖片] 這個已知資料夾。 使用者可以透過您的 app 或內建的 [相片] app，在圖片媒體櫃中新增或移除資料夾。
+A library is a virtual collection of folders, which includes a known folder by default plus any other folders the user has added to the library by using your app or one of the built-in apps. For example, the Pictures library includes the Pictures known folder by default. The user can add folders to, or remove them from, the Pictures library by using your app or the built-in Photos app.
 
-## 先決條件
-
-
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
-
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
-
--   **位置的存取權限**
-
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能]**** 頁面上，選取您應用程式所管理的媒體櫃。
-
-    -   **音樂媒體櫃**
-    -   **圖片媒體櫃**
-    -   **視訊庫**
-
-    若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
-
-## 取得對媒體櫃的參考
+## Prerequisites
 
 
-**注意**：請記得宣告適當的功能。
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
+
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+
+-   **Access permissions to the location**
+
+    In Visual Studio, open the app manifest file in Manifest Designer. On the **Capabilities** page, select the libraries that your app manages.
+
+    -   **Music Library**
+    -   **Pictures Library**
+    -   **Videos Library**
+
+    To learn more, see [File access permissions](file-access-permissions.md).
+
+## Get a reference to a library
+
+
+**Note**  Remember to declare the appropriate capability.
  
 
-若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
+To get a reference to the user's Music, Pictures, or Video library, call the [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) method. Provide the corresponding value from the [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) enumeration.
 
 -   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
 -   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
@@ -53,56 +53,56 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## 取得媒體櫃中資料夾的清單
+## Get the list of folders in a library
 
 
-若要取得媒體櫃中資料夾的清單，請取得 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性的值。
+To get the list of folders in a library, get the value of the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property.
 
 ```CSharp
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## 取得媒體櫃中預設儲存新檔案的資料夾
+## Get the folder in a library where new files are saved by default
 
 
-若要取得媒體櫃中預設儲存新檔案的資料夾，請取得 [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) 屬性的值。
+To get the folder in a library where new files are saved by default, get the value of the [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) property.
 
 ```CSharp
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## 將現有的資料夾新增到媒體櫃
+## Add an existing folder to a library
 
 
-若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 [**將此資料夾新增至圖片**] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性 (和內建的 [相片] app) 中的項目，但是該資料夾不會顯示為檔案總管中 [圖片] 資料夾的子項。
+To add a folder to a library, you call the [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). Taking the Pictures Library as an example, calling this method causes a folder picker to be shown to the user with an **Add this folder to Pictures** button. If the user picks a folder then the folder remains in its original location on disk and it becomes an item in the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property (and in the built-in Photos app), but the folder does not appear as a child of the Pictures folder in File Explorer.
 
 
 ```CSharp
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## 從媒體櫃中移除資料夾
+## Remove a folder from a library
 
 
-若要從媒體櫃中移除資料夾，請呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 方法，並指定要移除的資料夾。 您可以使用 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項 (或類似項目)，讓使用者選取要移除的資料夾。
+To remove a folder from a library, call the [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) method and specify the folder to be removed. You could use [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) and a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control (or similar) for the user to select a folder to remove.
 
-當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性中移除，且將不再包含在內建的 [相片] app 中。
+When you call [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727), the user sees a confirmation dialog saying that the folder "won't appear in Pictures anymore, but won't be deleted." What this means is that the folder remains in its original location on disk, is removed from the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property, and will no longer included in the built-in Photos app.
 
-下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項中選取要移除的資料夾。
+The following example assumes that the user has selected the folder to remove from a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control named **lvPictureFolders**.
 
 
 ```CSharp
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## 取得媒體櫃中資料夾清單變更的通知
+## Get notified of changes to the list of folders in a library
 
 
-若要取得與媒體櫃中資料夾清單變更相關的通知，請為媒體櫃的 [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) 事件註冊一個處理常式。
+To get notified about changes to the list of folders in a library, register a handler for the [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) event of the library.
 
 
 ```CSharp
@@ -115,171 +115,94 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## 媒體櫃資料夾
+## Media library folders
 
 
-裝置會為使用者和 app 提供五個預先定義的位置來儲存媒體檔案。 內建 app 會將使用者建立的媒體和下載的媒體都儲存在這些位置。
+A device provides five predefined locations for users and apps to store media files. Built-in apps store both user-created media and downloaded media in these locations.
 
-這些位置包括：
+The locations are:
 
--   [**圖片**] 資料夾。 包含圖片。
+-   **Pictures** folder. Contains pictures.
 
-    -   [**手機相簿**] 資料夾。 包含內建相機中的相片和視訊。
+    -   **Camera Roll** folder. Contains photos and video from the built-in camera.
 
-    -   [**儲存的圖片**] 資料夾。 包含使用者從其他 app 儲存的圖片。
+    -   **Saved Pictures** folder. Contains pictures that the user has saved from other apps.
 
--   [**音樂**] 資料夾。 包含歌曲、播客和有聲書。
+-   **Music** folder. Contains songs, podcasts, and audio books.
 
--   [**影片**] 資料夾。 包含視訊。
+-   **Video** folder. Contains videos.
 
-使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
+Users or apps may also store media files outside the media library folders on the SD card. To find a media file reliably on the SD card, scan the contents of the SD card, or ask the user to locate the file by using a file picker. For more info, see [Access the SD card](access-the-sd-card.md).
 
-## 查詢媒體櫃
+## Querying the media libraries
 
+To get a collection of files, specify the library and the type of files that you want.
 
-### 查詢結果同時包含內部和卸除式儲存空間
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
 
-使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
 
-您不需要編寫其他程式碼即可處理這項操作。 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+    queryOption.FolderDepth = FolderDepth.Deep
 
-考量下圖中裝置儲存空間的狀態：
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
 
-![電話和 SD 記憶卡的影像](images/phone-media-locations.png)
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
 
-如果您透過呼叫 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 來查詢圖片媒體櫃的內容，結果會包含 internalPic.jpg 與 SDPic.jpg 兩者。
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
 
-### 深層查詢
+}
+```
 
-您可以使用深層查詢來快速列舉媒體櫃的整個內容。
+### Query results include both internal and removable storage
 
-深層查詢只會傳回指定之媒體類型的檔案。 舉例來說，如果您使用深層查詢來查詢 [音樂媒體櫃]，查詢結果將不會包含在 [音樂] 資料夾中找到的任何圖片檔案。
+Users can choose to store files by default on the optional SD card. Apps, however, can opt out of allowing files to be stored on the SD card. As a result, the media libraries can be split across the device's internal storage and the SD card.
 
-如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
+You don't have to write additional code to handle this possibility. The methods in the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) namespace that query known folders transparently combine the query results from both locations. You don't have to specify the **removableStorage** capability in the app manifest file to get these combined results, either.
 
-[手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
+Consider the state of the device's storage shown in the following image:
 
-以下是可用的深度查詢：
+![images on the phone and sd card](images/phone-media-locations.png)
 
-**圖片媒體櫃**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**音樂媒體櫃**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**視訊庫**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### 單層查詢
-
-若要取得媒體櫃中所有檔案和資料夾的完整清單，請呼叫 `GetFilesAsync(CommonFileQuery.DefaultQuery)`。 這個方法會傳回媒體櫃中的所有檔案，不論其類型為何。 這是一個淺層查詢，因此如果使用者在媒體櫃中建立了子資料夾，您就必須以遞迴方式列舉子資料夾的內容。
-
-您可以使用單層查詢來傳回內建查詢無法辨識其類型的媒體檔案，或是傳回媒體櫃中的所有檔案，包括不屬於指定類型的檔案。 舉例來說，如果您使用單層查詢來查詢 [音樂媒體櫃]，查詢結果將會包含這個查詢在 [音樂] 資料夾中找到的任何圖片檔案。
-
-### 範例查詢
-
-假設裝置及其選用的 SD 記憶卡包含下圖中顯示的資料夾和檔案：
-
-![檔案 ](images/phone-media-queries.png)
-
-以下是一些查詢範例及它們所傳回的結果。
-
-| 查詢 | 結果 |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 來自內部儲存空間的 [手機相簿] 資料夾 <br>- 來自 SD 記憶卡的 [手機相簿] 資料夾 <br>- 來自內部儲存空間的 [儲存的圖片] 資料夾 <br>- 來自 SD 記憶卡的 [儲存的圖片] 資料夾 <br><br>這是一個單層查詢，因此只會傳回 [圖片] 資料夾中的直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | 沒有結果。 <br><br>這是一個單層查詢，[圖片] 資料夾未包含任何檔案做為其直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br>- 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自內部儲存空間的 1-2-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 1-6-2014.jpg 檔案 <br><br>這是一個深層查詢，因此會傳回 [圖片] 資料夾及其子資料夾的內容。 |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br><br>這是一個單層查詢。 無法保證結果的排列順序。 |
-
- 
-## 媒體櫃功能和檔案類型
+If you query the contents of the Pictures Library by calling `await KnownFolders.PicturesLibrary.GetFilesAsync()`, the results include both internalPic.jpg and SDPic.jpg.
 
 
-您可以在應用程式資訊清單檔案中指定下列功能來存取應用程式中的媒體檔案。
-
--   **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .qcp
-    -   .wav
-    -   .mp3
-    -   .m4r
-    -   .m4a
-    -   .aac
-    -   .amr
-    -   .wma
-    -   .3g2
-    -   .3gp
-    -   .mp4
-    -   .wm
-    -   .asf
-    -   .3gpp
-    -   .3gp2
-    -   .mpa
-    -   .adt
-    -   .adts
-    -   .pya
--   **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .jpeg
-    -   .jpe
-    -   .jpg
-    -   .gif
-    -   .tiff
-    -   .tif
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
-
-## 使用相片
+## Working with photos
 
 
-如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
+On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
 
-[手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
+The Camera Roll and the Saved Pictures folder do not support the deep queries.
 
-**在拍攝相片的 app 中開啟該相片**
+**Opening a photo in the app that captured it**
 
-如果您想要讓使用者稍後可以在拍攝相片的 app 中再次開啟該相片，您可以使用與下列範例類似的程式碼，將 **CreatorAppId** 與相片的中繼資料儲存在一起。 在此範例中，**testPhoto** 是 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。
+If you want to let the user open a photo again later in the app that captured it, you can save the **CreatorAppId** with the photo's metadata by using code similar to the following example. In this example, **testPhoto** is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 ```CSharp
   IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## 使用串流方法將檔案新增到媒體櫃
+## Using stream methods to add a file to a media library
 
 
-當您使用已知資料夾來存取媒體櫃 (例如 **KnownFolders.PictureLibrary**)，並且使用串流方法將檔案新增到媒體櫃時，請務必關閉您的程式碼所開啟的所有串流。 否則，這些方法將無法如預期般將檔案新增到媒體櫃，因為至少還有一個串流仍然擁有檔案的控制代碼。
+When you access a media library by using a known folder such as **KnownFolders.PictureLibrary**, and you use stream methods to add a file to the media library, you have to make sure to close all the streams that your code opens. Otherwise these methods fail to add the file to the media library as expected because at least one stream still has a handle to the file.
 
-舉例來說，當您執行下列程式碼時，系統並不會將檔案新增到媒體櫃。 在 `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` 程式碼行中，**OpenAsync** 方法和**GetOutputStreamAt** 方法皆開啟了一個串流。 不過，由於 **using** 陳述式，系統只會處置 **GetOutputStreamAt** 方法所開啟的串流。 另一個串流會保持開啟，而導致無法儲存檔案。
+For example, when you run the following code, the file is not added to the media library. In the line of code, `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`, both the **OpenAsync** method and the **GetOutputStreamAt** method open a stream. However only the stream opened by the **GetOutputStreamAt** method is disposed as a result of the **using** statement. The other stream remains open and prevents saving the file.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -295,7 +218,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 ```
 
-若要順利使用串流方法將檔案新增到媒體櫃，請務必關閉您的程式碼所開啟的所有串流，如下列範例所示。
+To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -323,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

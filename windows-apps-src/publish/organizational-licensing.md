@@ -1,93 +1,93 @@
 ---
 author: jnHs
-Description: "您可以透過商務用 Windows 市集，在 app 提交之 [定價和可用性] 頁面的 [組織授權] 區段中，指出您的 app 是否可以大量購買及其方式。"
-title: "組織授權選項"
+Description: You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the Organizational licensing section of the Pricing and availability page of an app submission.
+title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 translationtype: Human Translation
-ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
-ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
+ms.sourcegitcommit: 4a297b7a2a2383a825a848ed6939f9743733253f
+ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 
 ---
 
-# 組織授權選項
+# Organizational licensing options
 
 
-您可以透過商務用 Windows 市集，在 app 提交之 [[定價和可用性](set-app-pricing-and-availability.md#organizational-licensing)] 頁面的 [組織授權]**** 區段中，指出您的 app 是否可以大量購買及其方式。
+You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the **Organizational licensing** section of the [Pricing and availability](set-app-pricing-and-availability.md#organizational-licensing) page of an app submission.
 
-透過這些設定，您可以選擇允許您的 app 讓組織使用，這些組織為其使用者取得和部署的多重授權，讓您有機會提升跨裝置類型 (包括電腦、平板電腦及電話) 之 Windows 10 組織的普及。 您也需要針對您直接發佈給企業的[企業營運 (LOB) app](distribute-lob-apps-to-enterprises.md) 允許組織授權。
+Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to Windows 10 organizations across device types, including PCs, tablets and phones. You will also need to allow organizational licensing for [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
 
-> **注意：**每個 app 選項的設定各不相同。 您可以建立新的提交以隨時變更 app 的喜好設定，您的變更會在提交完成[認證程序](the-app-certification-process.md)之後生效。
+> **Note**  Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
 
-## 允許將您的 app 提供給組織
+## Allowing your app to be offered to organizations
 
-根據預設，標示 [利用「市集」管理 (線上) 大量授權提供組織使用我的應用程式]**** 的方塊已核取。 這表示您希望您的 app 能夠加入我們可以讓組織大量取得的 app 型錄中，具有透過市集的線上授權系統管理的 app 授權。
+By default, the box labeled **Make my app available to organizations with Store-managed (online) licensing and distribution** is checked. This means that you wish your app to be available for inclusion in catalogs of apps that will be made available to organizations for volume acquisition, with app licenses managed through the Store's online licensing system.
 
-> **注意：**這並不保證您的 app 可以讓所有組織使用。
+> **Note**  This does not guarantee that your app will be made available to all organizations.
 
-如果您不想讓我們將您的 app 提供給組織進行大量取得，請取消核取此方塊。 請注意，這項變更只有在 app 完成認證程序之後才會發生。 如果任何組織先前曾取得您的 app 的授權，這些授權仍然有效，且已具有 app 的人員可以繼續使用它。
+If you prefer not to allow us to offer your app to organizations for volume acquisition, uncheck this box. Note that this change will only take place after the app completes the certification process. If any organizations had previously acquired licenses to your app, those licenses will still be valid, and the people who have the app already can continue to use it.
 
-> **提示：**若要發佈企業營運 (LOB) app 以供特定組織專用，您可以設定企業關聯，並允許組織將 app 直接新增到它們的私人市集。 如需詳細資訊，請參閱[發佈 LOB app 到企業](distribute-lob-apps-to-enterprises.md)。
+> **Tip**  To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
 
-## 允許中斷連線 (離線) 授權
+## Allowing disconnected (offline) licensing
 
 
-許多組織需要 app 啟用離線授權。 例如，某些組織需要將 app 部署到很少或永遠不會連線到網際網路的裝置。 如果您想要讓您的 app 可供這些客戶使用，請核取標示為 [**允許中斷連線 (離線) 授權組織**] 的方塊。
+Many organizations need apps enabled for offline licensing. For example, some organizations need to deploy apps to devices which rarely or never connect to the internet. If you want to allow your app to be made available to these customers, check the box labeled **Allow organization-managed (offline) licensing and distribution for organizations**.
 
-> **注意：**此方塊預設並未核取；您必須核取此方塊以讓您的 app 可供已驗證的組織取得，這些組織會使用中斷連線授權進行安裝。 組織必須通過其他驗證，才能以這種方式向使用者安裝付費 app。
+> **Note**  This box is unchecked by default; you must check the box to allow us to make your app available to verified organizations who will install it using organization-managed (offline) licensing. Organizations must go through additional validation in order to install paid apps to their end users in this way.
 
-離線授權可讓組織大量取得您的 app，然後不需要每個裝置都連絡市集的授權系統，即可安裝 app。 組織可以下載您的 app 套件以及授權，當使用特定授權時，讓他們將它安裝到裝置 (透過他們自己的管理工具或預先載入作業系統映像上的 app) 而不通知市集。 啟用這個案例會大幅增加部署彈性，它可能會大幅增加 app 對這些客戶的吸引力。
+Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.
 
-> **重要** .xap 套件不支援離線授權。  
+> **Important** Offline licensing is not supported for .xap packages.  
 
  
-## 付費應用程式支援
+## Paid app support
 
-目前，在特定市場中的開發人員帳戶都能透過商務用 Windows 市集提供大量取得付費應用程式。 
+Currently, developer accounts in certain markets are able to offer paid apps for volume acquisition through the Windows Store for Business. 
 
-> **注意：**在某些市場中，針對相同的的價格區間，商務用 Windows 市集中顯示的 app 價格可能會不同於 Windows 市集中顯示零售客戶價格。 組織購買的收益支付與消費者購買您 app 的運作方式相同。 如需詳細資訊，請參閱[獲得報酬](getting-paid-apps.md)和[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。
+> **Note** In some markets, the price shown for an app in the Windows Store for Business may be different than the price shown to retail customers in the Windows Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
 
-如果以下未列出您的國家或地區，您的付費應用程式目前不會在商務用 Windows 市集中提供使用。 如果是這樣，您針對您的付費應用程式所做的組織授權選項可能會稍後套用，因為商務用 Windows 市集會繼續從其他開發人員帳戶市場針對付費應用程式提交新增支援。
+If your country or region is not listed below, your paid apps currently will not be offered in the Windows Store for Business. If so, the organizational licensing selections you make for your paid apps may be applied at a later time, as the Windows Store for Business continues to add support for paid app submissions from additional developer account markets.
 
-目前，在下列國家和地區的開發人員可以透過商務用 Windows 市集，將付費應用程式發佈給組織客戶：
+At this time, developers in the following countries and regions can distribute paid apps to organizational customers via the Windows Store for Business:
 
-- 奧地利
-- 比利時
-- 保加利亞
-- 加拿大
-- 克羅埃西亞
-- 賽普勒斯
-- 捷克共和國
-- 丹麥
-- 愛沙尼亞
-- 芬蘭
-- 法國
-- 德國
-- 希臘
-- 匈牙利
-- 愛爾蘭
-- 曼城島
-- 義大利
-- 拉脫維亞
-- 列支敦斯登
-- 立陶宛
-- 盧森堡
-- 馬爾他
-- 摩納哥
-- 荷蘭
-- 挪威
-- 波蘭
-- 葡萄牙
-- 羅馬尼亞
-- 斯洛伐克
-- 斯洛維尼亞
-- 西班牙
-- 瑞典
-- 瑞士
-- 英國
-- 美國
+- Austria
+- Belgium
+- Bulgaria
+- Canada
+- Croatia
+- Cyprus
+- Czech Republic
+- Denmark
+- Estonia
+- Finland
+- France
+- Germany
+- Greece
+- Hungary
+- Ireland
+- Isle of Man
+- Italy
+- Latvia
+- Liechtenstein
+- Lithuania
+- Luxembourg
+- Malta
+- Monaco
+- Netherlands
+- Norway
+- Poland
+- Portugal
+- Romania
+- Slovakia
+- Slovenia
+- Spain
+- Sweden
+- Switzerland
+- United Kingdom
+- United States
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,31 +1,31 @@
 ---
 author: msatranjr
-title: "Windows 執行階段類型的 .NET Framework 對應"
-description: "下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。"
+title: .NET Framework mappings of Windows Runtime types
+description: The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types.
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
+ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
 
 ---
 
-# Windows 執行階段類型的 .NET Framework 對應
+# .NET Framework mappings of Windows Runtime types
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。 在使用 Managed 程式碼撰寫的通用 Windows app 中，IntelliSense 會顯示 .NET Framework 類型，而不會顯示 UWP 類型。 例如，如果 Windows 執行階段方法使用類型 IVector&lt;string&gt; 的參數，IntelliSense 即會顯示類型 IList&lt;string&gt; 的參數。 同樣地，在使用 Managed 程式碼撰寫的 Windows 執行階段元件中，您也會使用成員簽章中的 .NET Framework 類型。 當 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 產生您的 Windows 執行階段元件時，.NET Framework 類型會變成對應的 UWP 類型。
+The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types. In a Universal Windows app written with managed code, IntelliSense shows the .NET Framework type instead of the UWP type. For example, if a Windows Runtime method takes a parameter of type IVector&lt;string&gt;, IntelliSense shows a parameter of type IList&lt;string&gt;. Similarly, in a Windows Runtime Component written with managed code, you use the .NET Framework type in member signatures. When the [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) generates your Windows Runtime Component, the .NET Framework type becomes the corresponding UWP type.
 
-## 對應表格
+## Mapping Tables
 
 
-在 UWP 與 .NET Framework 中具有相同命名空間名稱與類型名稱的類型，大部分都是結構 (或是與結構相關聯的類型，例如列舉)。 在 UWP 中，結構沒有欄位以外的成員，而且必須有協助程式類型 (.NET Framework 會隱藏此類型)。 這些結構的 .NET Framework 版本具有相關屬性與方法，可提供隱藏的協助程式類型的功能。
+Most of the types that have the same namespace name and type name in both the UWP and the .NET Framework are structures (or types associated with structures, such as enumerations). In the UWP, structures have no members other than fields, and require helper types, which the .NET Framework hides. The .NET Framework versions of these structures have properties and methods that provide the functionality of the hidden helper types.
 
-如需 .NET Framework 如何使用 Windows 中繼資料來簡化 Windows 執行階段之程式設計的詳細資訊，請從 Windows 開發人員中心下載 [CLR 和 Windows 執行階段](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx)白皮書。
+For more information about the way the .NET Framework uses Windows metadata to simplify programming with the Windows Runtime, download the [CLR and the Windows Runtime](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) white paper from the Windows Dev Center.
 
-表 1：與具有不同名稱和 (或) 命名空間的 .NET Framework 類型相對應的 UWP 類型。
+Table 1: UWP types that map to .NET Framework types with a different name and/or namespace.
 
-| UWP 類型/命名空間                                            | .NET Framework 類型/命名空間                                          | .NET Framework 組件                           |
+| UWP type/namespace                                            | .NET Framework type/namespace                                          | .NET Framework assembly                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
 | AttributeUsageAttribute (Windows.Foundation.Metadata)         | AttributeUsageAttribute (System)                                       | System.Runtime.dll                                |
 | AttributeTargets (Windows.Foundation.Metadata)                | AttributeTargets (System)                                              | System.Runtime.dll                                |
@@ -56,9 +56,9 @@ ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 
  
 
-表 2：與具有相同名稱和命名空間的 .NET Framework 類型相對應的 UWP 類型。
+Table 2: UWP types that map to .NET Framework types with the same name and namespace.
 
-| 命名空間                           | 類型               | .NET Framework 組件                   |
+| Namespace                           | Type               | .NET Framework assembly                   |
 |-------------------------------------|--------------------|-------------------------------------------|
 | Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
@@ -80,12 +80,12 @@ ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 
  
 
-## 相關主題
+## Related topics
 
-* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

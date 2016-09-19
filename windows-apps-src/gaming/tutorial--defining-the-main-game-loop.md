@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: "定義主要遊戲物件"
-description: "現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。"
+title: Define the main game object
+description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66e40c150b5eb4f57c9cddfaf472c56601b3fa0b
+ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
 
 ---
 
-# 定義主要遊戲物件
+# Define the main game object
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-到目前為止，我們已經舖設好範例遊戲的基本架構，也實作了處理高階使用者及系統行為的狀態電腦。 但是我們還沒有檢驗讓遊戲成為實際遊戲的部分：規則與機制，以及它們的實作方式！ 現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。
+At this point, we've laid out the basic framework of the sample game, and we implemented a state machine that handles the high-level user and system behaviors. But we haven't examined the part that makes the game sample an actual game: the rules and mechanics, and how they're implemented! Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 
-## 目標
-
-
--   在實作簡單的使用 DirectX 的通用 Windows 平台 (UWP) 遊戲規則和機制時，套用基本的開發技術。
-
-## 考量遊戲的流程
+## Objective
 
 
-遊戲基本架構主要定義在這些檔案中：
+-   To apply the basic development techniques when implementing the rules and mechanics of a simple Universal Windows Platform (UWP) game using DirectX.
+
+## Considering the game's flow
+
+
+The majority of the game's basic structure is defined in these files:
 
 -   **App.cpp**
 -   **Simple3DGame.cpp**
 
-在[定義遊戲的 UWP app 架構](tutorial--building-the-games-metro-style-app-framework.md)中，我們看過了 **App.cpp** 中定義的遊戲架構。
+In [Defining the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), we reviewed the game framework defined in **App.cpp**.
 
-**Simple3DGame.cpp** 為 **Simple3DGame** 類別提供程式碼，這些程式碼會指定遊戲自己的實作。 之前，我們考慮了將範例遊戲處理為 UWP app。 現在，我們來看看讓它成為遊戲的程式碼。
+**Simple3DGame.cpp** provides the code for a class, **Simple3DGame**, which specifies the implementation of the game play itself. Earlier, we considered the treatment of the sample game as a UWP app. Now, we look at the code that makes it a game.
 
-**Simple3DGame.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#code_sample)中提供。
+The complete code for **Simple3DGame.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
 
-我們來看看 **Simple3DGame** 類別的定義。
+Let's take a look at the definition of the **Simple3DGame** class.
 
-## 定義核心遊戲物件
+## Defining the core game object
 
 
-當應用程式單例啟動時，檢視提供者的 **Initialize** 方法會建立主要遊戲類別的執行個體 (**Simple3DGame** 物件)。 這個物件包含的方法可以將遊戲狀態中的變更傳送到 app 架構中定義的狀態電腦，或從 app 傳送到遊戲物件本身。 它同時也包含可以傳回更新遊戲重疊點陣圖和平視顯示器資訊的方法，以及更新遊戲的動畫和物理特性 (動態) 的方法。 用來取得遊戲所用之圖形狀態資源的程式碼可以在 GameRenderer.cpp 中找到，我們將在接下來的[組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md)中討論。
+When the app singleton starts, the view provider's **Initialize** method creates an instance of the main game class, the **Simple3DGame** object. This object contains the methods that communicate changes in game state to the state machine defined in the app framework, or from the app to the game object itself. It also contains methods that return info for updating the game's overlay bitmap and heads-up display, and for updating the animations and physics (the dynamics) in the game. The code for obtaining the graphics device resources used by the game is found in GameRenderer.cpp, which we discuss next in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
 
-**Simple3DGame** 的程式碼看起來就像這樣：
+The code for **Simple3DGame** looks like this:
 
 ```cpp
 ref class GameRenderer;
@@ -84,32 +84,32 @@ private:
 };
 ```
 
-首先，我們來看看 **Simple3DGame** 上定義的內部方法。
+First, let's review the internal methods defined on **Simple3DGame**.
 
--   **Initialize**。 設定全域變數的起始值以及初始化遊戲物件。
--   **LoadGame**。 初始化新的關卡並開始載入。
--   **LoadLevelAsync**。 開始非同步工作 (請參閱[平行模式程式庫](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)了解詳細資料) 來初始化關卡，然後在轉譯器上叫用非同步工作來載入裝置特定關卡資源。 這個方法在另一個執行緒中執行；因此，從這個執行緒只能呼叫 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 方法 (與 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 方法相反)。 任何裝置內容方法都是在 **FinalizeLoadLevel** 方法中呼叫的。
--   **FinalizeLoadLevel**。 在主執行緒上完成載入關卡時需要完成的所有工作。 這包括任何呼叫 Direct3D 11 裝置內容 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 方法。
--   **StartLevel**。 以新關卡開始遊戲。
--   **PauseGame**。 暫停遊戲。
--   **RunGame**。 反覆執行遊戲迴圈。 如果遊戲狀態為 **Active**，那麼每次反覆執行遊戲迴圈時就會從 **App::Update** 呼叫它一次。
--   **OnSuspending** 和 **OnResuming**。 分別暫停和繼續遊戲的音訊。
+-   **Initialize**. Sets the starting values of the global variables and initializes the game objects.
+-   **LoadGame**. Initializes a new level and starts loading it.
+-   **LoadLevelAsync**. Starts an async task (see the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) for more details) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
+-   **FinalizeLoadLevel**. Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.
+-   **StartLevel**. Starts the game play for a new level.
+-   **PauseGame**. Pauses the game.
+-   **RunGame**. Runs an iteration of the game loop. It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.
+-   **OnSuspending** and **OnResuming**. Suspends and resumes the game's audio, respectively.
 
-私用方法：
+And the private methods:
 
--   **LoadSavedState** 和 **SaveState**。 分別載入和儲存遊戲的目前狀態。
--   **SaveHighScore** 和 **LoadHighScore**。 分別儲存和載入整個遊戲的高分記錄。
--   **InitializeAmmo**。 為每一輪的開始，將做為子彈的每個球體物件狀態重設回它的原始狀態。
--   **UpdateDynamics**。 這是一個重要的方法，因為它會依據已經定義的動畫常式、物理特性和控制項輸入更新所有遊戲物件。 這是定義遊戲的互動核心。 我們會在[更新遊戲](#update_game)一節中進一步討論。
+-   **LoadSavedState** and **SaveState**. Loads and saves the current state of the game, respectively.
+-   **SaveHighScore** and **LoadHighScore**. Saves and loads the high score across games, respectively.
+-   **InitializeAmmo**. Resets the state of each sphere object used as ammunition back to its original state for the beginning of each round.
+-   **UpdateDynamics**. This is an important method, because it updates all the game objects based on canned animation routines, physics, and control input. This is the heart of the interactivity that defines the game. We talk about it more in the [Updating the game](#update_game) section.
 
-其他公用方法則是 getter 屬性，它會將遊戲和重疊的特定資訊傳回到要顯示的 app 架構。
+The other public methods are property getters that return game play and overlay specific information to the app framework for display.
 
-## 定義遊戲狀態變數
+## Defining the game state variables
 
 
-遊戲物件的一個功能是當作資料的容器，這些資料會根據您在高階定義遊戲的方式來定義遊戲工作階段、關卡或存留期。 在這個情況下，這個遊戲狀態資料是用在遊戲的存留期，當使用者啟動遊戲時會初始化一次。
+One function of the game object is to serve as a container for the data that defines a game session, level, or lifetime, depending on how you define your game at a high level. In this case, the game state data is for the lifetime of the game, initialized one time when a user launches the game.
 
-這裡是遊戲物件狀態變數的一組完整定義。
+Here's the complete set of definitions for the game object's state variables.
 
 ```cpp
 private:
@@ -146,19 +146,19 @@ private:
     DirectX::XMFLOAT3                                   m_maxBound;
 ```
 
-在程式碼範例頂端有 4 個物件，其執行個體會隨著遊戲迴圈執行而更新。
+At the top of the code example, there are four objects whose instances are updated as the game loop runs.
 
--   **MoveLookController** 物件。 這個物件代表玩家輸入。 (如需有關 **MoveLookController** 物件的詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。)
--   **GameRenderer** 物件。 這個物件代表衍生自處理所有裝置特定物件及其轉譯之 **DirectXBase** 類別的 Direct3D 11 轉譯器。 (如需詳細資訊，請參閱[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md))。
--   **Camera** 物件。 這個物件代表玩家的第一人稱遊戲世界視角。 (如需有關 **Camera** 物件的詳細資訊，請參閱[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)。)
--   **Audio** 物件。 這個物件控制遊戲的音訊播放。 (如需有關 **Audio** 物件的詳細資訊，請參閱[加入聲音](tutorial--adding-sound.md)。)
+-   The **MoveLookController** object. This object represents the player input. (For more info about the **MoveLookController** object, see [Adding controls](tutorial--adding-controls.md).)
+-   The **GameRenderer** object. This object represents the Direct3D 11 renderer derived from the **DirectXBase** class that handles all the device-specific objects and their rendering. (For more info, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md)).
+-   The **Camera** object. This object represents the player's first-person view of the game world. (For more info about the **Camera** object, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).)
+-   The **Audio** object. This object controls the audio playback for the game. (For more info about the **Audio** object, see [Adding sound](tutorial--adding-sound.md).)
 
-其餘的遊戲變數包含基本類型清單及其各自的遊戲內掛接點，以及遊戲特定資料和限制。 我們來看看遊戲初始化時範例是如何設定這些變數的。
+The rest of the game variables contain the lists of the primitives and their respective in-game amounts, and game play specific data and constraints. Let's see how the sample configures these variables when the game is initialized.
 
-## 初始化和啟動遊戲
+## Initializing and starting the game
 
 
-當玩家啟動遊戲時，遊戲物件必須初始化它的狀態，建立和新增重疊，設定追蹤玩家表現的變數，以及具現化用來建立關卡的物件。
+When a player starts the game, the game object must initialize its state, create and add the overlay, set the variables that track the player's performance, and instantiate the objects that it will use to build the levels.
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -359,52 +359,52 @@ void Simple3DGame::Initialize(
 }
 ```
 
-範例遊戲會以下列順序設定遊戲物件的元件：
+The sample game sets up the components of the game object in this order:
 
-1.  已建立新的視訊播放物件。
-2.  已建立遊戲的圖形基本型別陣列，包括關卡基本型別、彈藥及障礙物陣列。
-3.  已建立儲存遊戲狀態資料的位置 (名為 *Game*)，並放在 [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) 指定的應用程式資料設定儲存位置。
-4.  已建立遊戲計時器與初始的遊戲內重疊點陣圖。
-5.  已使用一組特定的檢視與投射參數建立新的相機。
-6.  輸入裝置 (控制器) 設定為與相機相同的起始傾斜度與偏航角，因此玩家在起始控制位置與相機位置之間是 1 對 1 的對應。
-7.  已建立玩家物件並設定為使用中。 我們使用一個球形物件來偵測玩家與牆壁和障礙物的鄰近性，使相機不會設置在可能妨礙遊戲進行的位置。
-8.  已建立遊戲世界基本型別。
-9.  已建立圓柱形障礙物。
-10. 已建立目標 (**Face** 物件) 並設置編號。
-11. 已建立子彈。
-12. 已建立關卡。
-13. 已載入高分記錄。
-14. 已載入所有先前儲存的遊戲狀態。
+1.  A new audio playback object is created.
+2.  Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.
+3.  A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+4.  A game timer and the initial in-game overlay bitmap are created.
+5.  A new camera is created with a specific set of view and projection parameters.
+6.  The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.
+7.  The player object is created and set to active. We use a sphere object to detect the player's proximity to walls and obstacles and to keep the camera from getting put in a position that might break immersion.
+8.  The game world primitive is created.
+9.  The cylinder obstacles are created.
+10. The targets (**Face** objects) are created and numbered.
+11. The ammo spheres are created.
+12. The levels are created.
+13. The high score is loaded.
+14. Any prior saved game state is loaded.
 
-現在遊戲擁有所有關鍵元件的執行個體：世界、玩家、障礙物、目標以及子彈。 它也擁有關卡的執行個體，代表上述所有元件的設定，以及它們在每個特定關卡的行為。 現在來看看遊戲如何建立關卡。
+The game now has instances of all the key components: the world, the player, the obstacles, the targets, and the ammo spheres. It also has instances of the levels, which represent configurations of all of the above components and their behaviors for each specific level. Let's see how the game builds the levels.
 
-## 建立和載入遊戲關卡
-
-
-建構關卡時大部分的繁重工作都在 **Level.h/.cpp** 檔案中完成，我們不會深入研究這個檔案，因為它著重在非常特殊的實作。 重要的是每個關卡的程式碼都會做為個別 **LevelN** 物件來執行。 如果您想要擴充遊戲，可以建立 **Level** 物件，使用指派的數字做為參數，並隨機放置障礙物和目標。 或者，您可以從來源檔或者甚至是網際網路，載入關卡設定資料！
-
-**Level.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#code_sample)中提供。
-
-## 定義遊戲
+## Building and loading the game's levels
 
 
-到目前為止，我們已經具備組成遊戲所需的全部元件。 關卡已經從基本類型建構到記憶體中，而且也已準備就緒讓玩家可以特定的方式與關卡進行互動。
+Most of the heavy lifting for the level construction is done in the **Level.h/.cpp** file, which we won't delve into, because it focuses on a very specific implementation. The important thing is that the code for each level is run as a separate **LevelN** object. If you'd like to extend the game, you can create a **Level** object that took an assigned number as a parameter and randomly placed the obstacles and targets. Or, you can have it load level configuration data from a resource file, or even the Internet!
 
-能夠對玩家的輸入做出立即反應並提供立即回應的遊戲，才是最好的遊戲。 對於任何類型的遊戲都是這樣，從 TWITCH ACTION、即時射擊遊戲到需要思考的回合型戰略遊戲。
+The complete code for **Level.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
 
-在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)中，我們討論了管理遊戲流程的整個狀態電腦。 請注意，範例將這個流程以迴圈的方式在 **App** 類別的 [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) 方法內實作，它本身就是 DirectX 檢視提供者的實作。 這個重要的狀態轉換必須由玩家來控制，而且必須提供明確的回應。 這個回應中任何的延遲都會打斷沉浸的感受。
+## Defining the game play
 
-這裡是代表遊戲基本流程及它的高階狀態的圖表。
 
-![圖表中顯示我們遊戲的主要狀態電腦](images/simple3dgame-mainstatemachine.png)
+At this point, we have all the components we need to assemble the game. The levels have been constructed in memory from the primitives, and are ready for the player to start interacting with them in some fashion.
 
-當範例遊戲開始進行時，遊戲物件可能處於下列三種狀態的其中一種：
+Now, the best games react instantly to player input, and provide immediate feedback. This is true for any type of a game, from twitch-action, real-time shoot-em-ups to thoughtful, turn-based strategy games.
 
--   **Waiting for resources**。 這個狀態是在遊戲物件初始化或關卡的元件載入時啟用。 如果這個狀態是由載入舊遊戲的要求所觸發，則會顯示遊戲狀態重疊；如果是由進行遊戲關卡的要求所觸發，則會顯示關卡開始重疊。 資源載入完成時，遊戲會經過 **Resources loaded** 狀態並轉換成 **Waiting for press** 狀態。
--   **Waiting for press**。 這個狀態是在玩家或系統暫停遊戲時啟用 (例如在載入資源之後)。 當玩家準備結束這個狀態時，會提示玩家載入新遊戲狀態 (LoadGame)、開始或重新開始載入的關卡 (StartLevel) 或繼續目前關卡 (ContinueGame)。
--   **Dynamics**。 如果玩家完成按下輸入，而產生的動作是開始或繼續關卡，則遊戲物件就會轉換成 *Dynamics* 狀態。 遊戲會在這個狀態中進行，而遊戲世界和玩家物件都會依據動畫常式和玩家輸入在這裡更新。 當玩家按下 P、採取停用主視窗的動作，或是完成關卡或遊戲而觸發暫停事件時，就會離開這個狀態。
+In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at the overall state machine that governs the flow of the game. Remember, the sample implements this flow as a loop inside the [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) method of the **App** class, which itself is an implementation of a DirectX view provider. The important state transitions must be controlled by the player, and must provide clear feedback. Any delay in this feedback breaks the sense of immersion.
 
-現在，我們來看看 **App** 類別 (請參閱[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)) 中特別針對實作這個狀態電腦的 **Update** 方法的程式碼。
+Here is a diagram representing the basic flow of the game and its high-level states.
+
+![a diagram showing the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+
+When the sample game starts play, the game object can be in one of three states:
+
+-   **Waiting for resources**. This state is activated when the game object is initialized or when the components of a level are being loaded. If this state was triggered by a request to load a prior game, the game stats overlay is displayed; if it was triggered by a request to play a level, the level start overlay is displayed. The completion of resource loading causes the game to pass through the **Resources loaded** state and then transition into the **Waiting for press** state.
+-   **Waiting for press**. This state is activated when the game is paused, either by the player or by the system (after, say, loading resources). When the player is ready to exit this state, the player is prompted to load a new game state (LoadGame), start or restart the loaded level (StartLevel), or continue the current level (ContinueGame).
+-   **Dynamics**. If a player's press input is completed and the resulting action is to start or continue a level, the game object transitions into the *Dynamics* state. The game is played in this state, and the game world and player objects are updated here based on animation routines and player input. This state is left when the player triggers a pause event, either by pressing P, by taking an action that deactivates the main window, or by completing a level or the game.
+
+Now, let's look at specific code in the **App** class (see: [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md)) for the **Update** method that implements this state machine.
 
 ```cpp
 void App::Update()
@@ -549,23 +549,23 @@ void App::Update()
 }
 ```
 
-這個方法做的第一件事是呼叫 [MoveLookController](tutorial--adding-controls.md) 執行個體自己的 **Update** 方法，這個方法會更新控制器的資料。 這個資料包括玩家面對的視野方向 (相機) 以及玩家移動的速度。
+The first thing this method does is call the [MoveLookController](tutorial--adding-controls.md) instance's own **Update** method, which updates the data from the controller. This data includes the direction the player's view (the camera) is facing and the velocity of the player's movement.
 
-當遊戲處於 Dynamics 狀態時，也就是玩家正在進行遊戲時，工作是在 **RunGame** 方法中處理的，搭配下面的呼叫：
+When the game is in the Dynamics state, that is, when the player is playing, the work is handled in the **RunGame** method, with this call:
 
 `GameState runState = m_game->RunGame();`
 
-**RunGame** 會處理定義目前的遊戲進行狀態的資料集，以取得遊戲迴圈目前的反覆項目。 它的流程如下：
+**RunGame** handles the set of data that defines the current state of the game play for the current iteration of the game loop. It flows like this:
 
-1.  此方法會更新關卡結束前用來倒數計時 (秒) 的計時器，並測試關卡時間是否已經用完。 以下是遊戲的其中一項規則：如果沒有在時間結束前擊中所有目標，遊戲就會結束。
-2.  如果時間結束，此方法會設定 **TimeExpired** 遊戲狀態，並回到先前的程式碼中的 **Update** 方法。
-3.  如果還有時間，會輪詢移動視角控制器以更新相機位置；具體而言，就是更新從相機平面 (即玩家的視線) 正常投射的檢視角度，以及自上次輪詢控制器後該角度所移動的距離。
-4.  相機會依據移動視角控制器中的新資料進行更新。
-5.  更新動態，或是遊戲世界中與玩家控制無關的動畫及物件行為。 在遊戲範例中，這是子彈發射後的移動方式、柱狀障礙物的動畫與目標的移動。
-6.  此方法會檢查是否已達到過關的條件。 如果達到，它會計算關卡的最後分數，並檢查是否為最後一關 (共 6 關)。 如果是最後一關，此方法會傳回 **GameComplete** 遊戲狀態；否則會傳回 **LevelComplete** 遊戲狀態。
-7.  如果關卡尚未完成，此方法會將遊戲狀態設為 **Active** 並回到這一關。
+1.  The method updates the timer that counts down the seconds until the level is completed, and tests to see if the level's time has expired. This is one of the rules of the game: when time runs out without all the targets getting shot, the game is over.
+2.  If time has run out, the method sets the **TimeExpired** game state, and returns to the **Update** method in the previous code.
+3.  If time remains, the move-look controller is polled for an update to the camera position; specifically, an update to the angle of the view normal projecting from the camera plane (where the player is looking), and the distance that angle has moved from the previous time the controller was polled.
+4.  The camera is updated based on the new data from the move-look controller.
+5.  The dynamics, or the animations and behaviors of objects in the game world independent of player control, are updated. In the game sample, this is the motion of the ammo spheres that have been fired, the animation of the pillar obstacles and the movement of the targets.
+6.  The method checks to see if the criteria for the successful completion of a level have been met. If so, it finalizes the score for the level and checks to see if this is the last level (of 6). If it's the last level, the method returns the **GameComplete** game state; otherwise, it returns the **LevelComplete** game state.
+7.  If the level isn't complete, the method sets the game state to **Active** and returns.
 
-以下是在 **Simple3DGame.cpp** 中，**RunGame** 在程式碼中看起來的樣子。
+Here's what **RunGame**, found in **Simple3DGame.cpp**, looks like in code.
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -647,16 +647,16 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-以下是主要呼叫：`UpdateDynamics()`。 這就是將遊戲世界帶到現實的呼叫。 我們來看看吧！
+Here's the key call: `UpdateDynamics()`. It's what brings the game world to life. Let's review it!
 
-## 更新遊戲世界
+## Updating the game world
 
 
-快速且流暢的遊戲經驗是讓世界感覺像「真實」**的地方，遊戲本身不需要玩家輸入即可產生任何活動。 風中搖擺的樹、拍擊海岸線的浪花、機械的濃煙與光澤，以及外星怪獸的伸展和唾液。 想像一下，如果遊戲世界的每件東西都靜止不動，且圖形只有在玩家提供輸入時才能移動，這會是什麼樣子。 這個畫面絕對是很怪異，且無法讓人身歷其境。 身歷其境就是讓玩家感覺身處一個真實、有生命的世界。
+A fast and fluid game experience is one where the world feels *alive*, where the game itself is in motion independent of player input. Trees wave in the wind, waves crest along shore lines, machinery smokes and shines, and alien monsters stretch and salivate. Imagine what a game would be like if everything was frozen, with the graphics only moving when the player provided input. It'd be weird and not very, well, immersive. Immersion, for the player, comes from the feeling of being an agent in a living, breathing world.
 
-除非遊戲明確暫停，否則遊戲迴圈應該要一直更新遊戲世界，一直執行動畫常式，不管是已經定義或根據物理演算方式，或者只是隨機都一樣。 在遊戲範例中，這個原則就稱為「動態」**，它包含柱型障礙物的升起和落下，還有子彈發射時的動作及物理行為。 它也包含物件之間的互動，像是玩家環境和世界之間的碰撞，或子彈與障礙物和目標之間的撞擊。
+The game loop should always keep updating the game world and running the animation routines, be they canned or based on physical algorithms or just plain random, except when the game is specifically paused. In the game sample, this principle is called *dynamics*, and it encompasses the rise and fall of the pillar obstacles, and the motion and physical behaviors of the ammo spheres as they are fired. It also encompasses the interaction between objects, including collisions between the player sphere and the world, or between the ammo and the obstacles and targets.
 
-實作這些動態的程式碼看起來就像這樣：
+The code that implements these dynamics looks like this:
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -829,27 +829,27 @@ void Simple3DGame::UpdateDynamics()
 }
 ```
 
-(這個程式碼範例已經過簡化以便於閱讀。 完整的運作程式碼可以在本主題最下面的＜完整程式碼範例＞中找到)。
+(This code example has been abbreviated for readability. The full working code is found in the complete code sample at the bottom of this topic.)
 
-這個方法會處理 4 組計算：
+This method deals with four sets of computations:
 
--   發射的子彈在世界的位置。
--   柱型障礙物的動畫。
--   玩家與世界界限的交集。
--   子彈與障礙物、目標、其他子彈和世界的碰撞。
+-   The positions of the fired ammo spheres in the world.
+-   The animation of the pillar obstacles.
+-   The intersection of the player and the world boundaries.
+-   The collisions of the ammo spheres with the obstacles, the targets, other ammo spheres, and the world.
 
-障礙物動畫是在 **Animate.h/.cpp** 中定義的迴圈。 子彈的行為以及任何碰撞都是透過簡化的物理演算法來定義的，之前的程式碼已提供這個演算法，並由遊戲世界的一組全域常數 (包括重力和材料屬性) 參數化。 這些全都是在遊戲世界座標空間中計算的。
+The animation of the obstacles is a loop defined in **Animate.h/.cpp**. The behavior of the ammo and any collisions are defined by simplified physics algorithms, supplied in the previous code and parameterized by a set of global constants for the game world, including gravity and material properties. This is all computed in the game world coordinate space.
 
-我們更新了場景中的所有物件，並計算了任何碰撞，現在需要使用這些資訊來繪製對應的視覺變更。 在目前的遊戲迴圈反覆程序完成 Update 後，範例會立即呼叫 **Render** 來拿取更新過的物件資料，並產生一個新的場景呈現給使用者。
+Now that we've updated all the objects in the scene and calculated any collisions, we need to use that info to draw the corresponding visual changes. After Update completes in the current iteration of the game loop, the sample immediately calls **Render** to take the updated object data and generate a new scene to present to the player.
 
-現在來看看轉譯方法。
+Let's look at the render method now.
 
-## 轉譯遊戲世界的圖形
+## Rendering the game world's graphics
 
 
-建議您盡可能更新遊戲中的圖形，最多可以在每次主要遊戲迴圈反覆執行時就進行更新。 在迴圈反覆執行時，無論玩家有沒有提供輸入，都會更新遊戲。 這樣可以讓計算過的動畫和行為能夠流暢地顯示。 想像一下，如果我們有一個關於水的簡單場景，但是玩家必須按下按鈕才能流動。 這會是一個很無聊的視覺效果。 優質的遊戲看起來要很平穩流暢。
+We recommend that the graphics in a game update as often as possible, which, at maximum, is every time the main game loop iterates. As the loop iterates, the game is updated, with or without player input. This allows the animations and behaviors that are calculated to be displayed smoothly. Imagine if we had a simple scene of water that only moved when the player pressed a button. That would make for terribly boring visuals. A good game looks smooth and fluid.
 
-重新呼叫範例遊戲的迴圈，如這裡所示。 如果可以看到遊戲的主視窗且主視窗沒有定格或停用，遊戲會持續更新並轉譯這個更新的結果。
+Recall the sample game's loop, as shown here. If the game's main window is visible, and isn't snapped or deactivated, the game continues to update and render the results of that update.
 
 ```cpp
 void App::Run()
@@ -885,7 +885,7 @@ void App::Run()
 }
 ```
 
-我們現在檢視的這個方法，會呼叫 **Update** (我們已經在上一節討論過了) 並在 **Run** 更新狀態，之後立即轉譯代表這個狀態的項目。
+The method we examine now renders a representation of that state immediately after the state is updated in **Run** with a call to **Update**, which we discussed in the previous section.
 
 ```cpp
 void GameRenderer::Render()
@@ -1035,18 +1035,18 @@ void GameRenderer::Render()
 }
 ```
 
-您可以在[組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md)中找到這個方法的完整程式碼。
+The complete code for this method is in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
 
-這個方法會繪製 3D 世界的投影，然後在上面繪製 Direct2D 重疊。 完成時，它會顯示最後的交換鏈結，包含結合的顯示緩衝區。
+This method draws the projection of the 3D world, and then draws the Direct2D overlay on top of it. When completed, it presents the final swap chain with the combined buffers for display.
 
-請注意，範例遊戲的 Direct2D 重疊有兩種狀態：一種是遊戲顯示包含暫停功能表點陣圖的遊戲重疊；一種是遊戲顯示十字準線，以及觸控式螢幕移動視角控制器的矩形。 分數文字會同時在這兩種狀態繪製。
+Be aware that there are two states for the sample game's Direct2D overlay: one where the game displays the game info overlay that contains the bitmap for the pause menu, and one where the game displays the cross hairs along with the rectangles for the touchscreen move-look controller. The score text is drawn in both states.
 
-## 後續步驟
+## Next steps
 
 
-現在，您可能對實際的轉譯引擎感到很好奇：更新基本類型上的 **Render** 方法呼叫是如何轉變成螢幕上的像素？ 我們會在[組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md)中詳細說明。 如果您對玩家控制項如何更新遊戲狀態感到更有興趣，請參閱[新增控制項](tutorial--adding-controls.md)。
+By now, you're probably curious about the actual rendering engine: how those calls to the **Render** methods on the updated primitives get turned into pixels on your screen. We cover that in detail in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md). If you're more interested in how the player controls update the game state, then check out [Adding controls](tutorial--adding-controls.md).
 
-## 這個章節的完整範例程式碼
+## Complete code sample for this section
 
 
 Simple3DGame.h
@@ -3605,26 +3605,26 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## 相關主題
+## Related topics
 
 
-[使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

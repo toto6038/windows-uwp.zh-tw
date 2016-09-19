@@ -3,8 +3,8 @@ title: "使用 Web 帳戶管理員連線到身分識別提供者"
 description: "本文章說明如何利用新的 Windows 10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) App 連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
-ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
+ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
 
 ---
 # 使用 Web 帳戶管理員連線到身分識別提供者
@@ -106,7 +106,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory 而言，URL 為「 https://login.microsoft.com 」。 
+接下來，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法取得提供者。 提供者的 URL 會隨著提供者而有所不同，您可以在提供者的文件中找到。 針對 Microsoft 帳戶和 Azure Active Directory 而言，URL 為「https://login.microsoft.com」。 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -188,6 +188,8 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
     }
 }
 ```
+
+> 注意︰如果您在要求權杖時收到錯誤，請確定您已將 App 與 [市集] 產生關聯，如步驟一所述。 如果您略過此步驟，您的 App 將無法取得權杖。 
 
 一旦您擁有權杖之後，就可以使用它來呼叫您提供者的 API。 在下列程式碼中，我們將呼叫 Microsoft Live API 以取得關於使用者的基本資訊，然後將資訊顯示在我們的 UI 中。 
 
@@ -388,6 +390,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

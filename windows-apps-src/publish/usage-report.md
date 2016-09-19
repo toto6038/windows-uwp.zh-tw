@@ -1,51 +1,51 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板的 [使用方式] 報告可讓您查看客戶使用您 app 的方式。"
-title: "使用方式報告"
+Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
-# 使用方式報告
+# Usage report
 
 
-Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客戶在 Windows 10 上使用您 App 的方式，以及取得您所定義之自訂事件的相關資訊。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
+The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and get info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
-> **注意** 過去只有在 App 中啟用 Visual Studio Application Insights SDK，**使用量**報告才會提供資料。 有了更新的**使用量**報告，就不需要這麼做。
+> **Note**  Previously, the **Usage** report only provided data if you activated the Visual Studio Application Insights SDK in your app. With the updated **Usage** report, this is no longer required.
 
-## 套用篩選
+## Apply filters
 
 
-您可以在接近頁面頂端處，展開 [套用篩選條件]****，依日期範圍和/或產品群組 (相關作業系統版本) 來篩選此頁面上的所有資料。
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
 
--   **日期**：預設篩選為 [過去 30 天]****，但是您可以擴展此範圍，最多可達 [過去 3 個月]****。
--   **套件版本**：預設設定為 [所有版本]****。 如果您的 App 包含多個套件，您可以在這裡選擇一個特定的版本。
--   **裝置類型**：預設設定是 [全部]****，但是您可以選擇只顯示一個特定裝置類型的資料。
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 3 months**.
+-   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
+-   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
 
-下列所有圖表中的資訊將反映 [**套用篩選**] 中選取的時段。 根據預設，除非您只選擇一個套件版本來使用 [套用篩選條件]**** 區段，否則這將包含所有套件版本以及支援的裝置類型的資料。
+The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your package versions and supported device types, unless you've used the **Apply filters** section to filter for only one.
 
-> **注意** 只有 Windows 10 上的客戶的使用方式資料才會包含在此報告中。
+> **Note** Only usage data from customers on Windows 10 is included in this report.
 
-## 使用者工作階段總計
+## Total user sessions
 
-[使用者工作階段總計]**** 圖表顯示在所選時段內，您 App 的每日使用者工作階段數目。
+The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
 
-每個使用者工作階段代表一段客戶與您的 App 互動時的不同期間。 每個使用者工作階段會被視為在一段閒置時間後結束，因此單一客戶可以在同一天中有多個使用者工作階段。 請注意，此圖表無法分辨您 App 的單獨使用者。
+Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day. Note this chart does not track unique users for your app.
 
-## 作用中使用者
+## Active users
 
-**作用中使用者**圖表顯示在所選時段內，在特定某一天使用您 app 的客戶數目。
+The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
 
-每個作用中使用者都代表在那一天使用您 app 的客戶。 此圖表無法分辨單獨的使用者工作階段 (亦即，無論在該日客戶只使用一次您的 App 或使用多次，在此圖表中都只會呈現一個客戶)。
+Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
 
-## 自訂活動
+## Custom events
 
-**自訂活動**圖表顯示您為 App 定義的任何自訂活動發生次數總計。 這可能包括同一客戶的多次活動。
+The **Custom events** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
 
-自訂活動會在 [Microsoft Store Engagement and Monetization SDK](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 中使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法實作。
+Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 
 
@@ -53,10 +53,6 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

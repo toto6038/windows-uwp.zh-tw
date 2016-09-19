@@ -1,382 +1,383 @@
 ---
 author: eliotcowley
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
-description: "本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。"
+description: This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
 title: PlayReady DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 5cae0870142282eaf2f3db05e0e202db7e74ef26
-ms.openlocfilehash: eef128afc0da6f55a76b8c664f9049dc1ec48da1
+ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
+ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
 
 ---
 
 # PlayReady DRM
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。
+This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
 
-PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明對於適用於 Windows 10 的 Microsoft PlayReady DRM 所做的變更，以及如何修改 PlayReady UWP app 來支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
+PlayReady DRM enables developers to create UWP apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes changes made to Microsoft PlayReady DRM for Windows 10 and how to modify your PlayReady UWP app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
  
-| 主題                                                                     | 說明                                                                                                                                                                                                                                                                             |
+| Topic                                                                     | Description                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [硬體 DRM](hardware-drm.md)                                           | 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到 UWP app。                                                                                                                                                                 |
-| [搭配使用彈性資料流與 PlayReady](adaptive-streaming-with-playready.md) | 本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。 |
+| [Hardware DRM](hardware-drm.md)                                           | This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your UWP app.                                                                                                                                                                 |
+| [Adaptive streaming with PlayReady](adaptive-streaming-with-playready.md) | This article describes how to add adaptive streaming of multimedia content with Microsoft PlayReady content protection to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content. |
 
-## PlayReady DRM 的新功能
+## What's new in PlayReady DRM
 
-下列清單說明適用於 Windows 10 的 PlayReady DRM 新功能與所做的變更。
+The following list describes the new features and changes made to PlayReady DRM for Windows 10.
 
--   已新增硬體數位版權管理 (HWDRM)。
+-   Added hardware digital rights management (HWDRM).
 
-    硬體式內容保護支援能夠在多個裝置的平台上安全播放高畫質 (HD) 和超高畫質 (UHD) 的內容。 金鑰內容 (包括私密金鑰、內容金鑰，以及其他用來衍生或解除鎖定上述金鑰的金鑰內容)，以及已解密的壓縮和未壓縮的視訊範例會利用硬體安全性來進行保護。 使用硬體 DRM 時，由於 HWDRM 管線一定知道要使用的輸出，因此未知的啟用器 (播放到未知裝置 / 使用 downres 播放到未知裝置) 是不具意義的。 如需詳細資訊，請參閱[硬體 DRM](hardware-drm.md)。
+    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security. When Hardware DRM is being used, neither unknown enabler (play to unknown / play to unknown with downres) has meaning as the HWDRM pipeline always knows the output being used. For more information, see [Hardware DRM](hardware-drm.md).
 
--   PlayReady 不再是 appX 架構元件，而是內建的作業系統元件。 命名空間已從 **Microsoft.Media.PlayReadyClient** 變更為 [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。
--   下列定義 PlayReady 錯誤碼的標頭現在是 Windows 軟體開發套件 (SDK) 的一部分：Windows.Media.Protection.PlayReadyErrors.h 和 Windows.Media.Protection.PlayReadyResults.h。
--   提供主動取得非永久性授權。
+-   PlayReady is no longer an appX framework component, but instead is an in-box operating system component. The namespace was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454).
+-   The following headers defining the PlayReady error codes are now part of the Windows Software Development Kit (SDK): Windows.Media.Protection.PlayReadyErrors.h and Windows.Media.Protection.PlayReadyResults.h.
+-   Provides proactive acquisition of non-persistent licenses.
 
-    舊版的 PlayReady DRM 不支援主動取得非永久性授權。 這個功能已新增到這個版本。 這可減少第一個畫面的時間。 如需詳細資訊，請參閱[播放之前主動取得非永久性授權](#proactively_acquire_a_non_persistent_license_before_playback)。
+    Previous versions of PlayReady DRM did not support proactive acquisition of non-persistent licenses. This capability has been added to this version. This can decrease the time to first frame. For more information, see [Proactively Acquire a Non-Persistent License Before Playback](#proactively_acquire_a_non_persistent_license_before_playback).
 
--   提供在一則訊息中取得多個授權的功能。
+-   Provides acquisition of multiple licenses in one message.
 
-    允許用戶端 App 在一則授權取得訊息中取得多個非永久性授權。 這樣可藉由取得多個內容片段的授權來減少第一個畫面的時間，同時使用者仍可瀏覽您的內容庫；這可在使用者選取要播放的內容時，防止授權取得延遲。 此外，它可藉由啟用包含多個金鑰識別碼 (KID) 的內容標頭，來讓音訊和視訊串流以不同的金鑰加密；這樣讓單一授權取得可針對內容檔案中的所有串流取得所有授權，而不需使用自訂邏輯和多個授權取得要求來達到相同結果。
+    Allows the client app to acquire multiple non-persistent licenses in one license acquisition message. This can decrease the time to first frame by acquiring licenses for multiple pieces of content while the user is still browsing your content library; this prevents a delay for license acquisition when the user selects the content to play. In addition, it allows audio and video streams to be encrypted to separate keys by enabling a content header that includes multiple key identifiers (KIDs); this enables a single license acquisition to acquire all licenses for all streams within a content file instead of having to use custom logic and multiple license acquisition requests to achieve the same result.
 
--   已新增即時到期支援或限時授權 (LDL)。
+-   Added real time expiration support, or limited duration license (LDL).
 
-    能夠在授權上設定即時到期，並在播放期間順暢地從到期的授權轉換為另一個 (有效) 授權。 在一則訊息中結合取得多個授權的功能時，這讓 App 能夠以非同步方式取得數個 LDL，同時使用者仍能瀏覽內容庫，而且一旦使用者選取要播放的內容之後，只會取得較長持續時間的授權。 之後，就能以更快速的方式開始播放 (因為授權已經可以使用)，而且，因為 App 已在 LDL 到期之前取得較長持續時間的授權，所以能夠流暢地繼續播放到內容結尾而不會中斷。
+    Provides the ability to set real-time expiration on licenses and smoothly transition from an expiring license to another (valid) license in the middle of playback. When combined with acquisition of multiple licenses in one message, this allows an app to acquire several LDLs asynchronously while the user is still browsing the content library and only acquire a longer duration license once the user has selected content to playback. Playback will then start more quickly (because a license is already available) and, since the app will have acquired a longer duration license by the time the LDL expires, smoothly continue playback to the end of the content without interruption.
 
--   已新增非永久性授權鏈結。
--   已在非永久性授權上新增以時間為基礎之限制 (包括到期、在第一次播放之後到期，以及即時到期) 的支援。
--   已新增 HDCP 類型 1 (Windows 10 為版本 2.2) 原則的支援。
+-   Added non-persistent license chains.
+-   Added support for time-based restrictions (including expiration, expire after first play, and real time expiration) on non-persistent licenses.
+-   Added HDCP Type 1 (version 2.2 on Windows 10) policy support.
 
-    如需詳細資訊，請參閱[要考慮的事項](#things_to_consider)。
+    See [Things to Consider](#things_to_consider) for more information.
 
--   現已內含 Miracast 做為輸出。
--   已新增安全停止功能。
+-   Miracast is now implicit as an output.
+-   Added secure stop.
 
-    安全停止功能讓 PlayReady 裝置能夠確實向媒體串流處理服務宣告任何指定內容的媒體播放已停止。 此功能確保您的媒體串流處理服務能在不同裝置上，針對指定帳戶正確地強制執行和報告使用限制。
+    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
--   已新增音訊與視訊各別授權。
+-   Added audio and video license separation.
 
-    分離曲目可防止視訊被解碼為音訊，進而使內容保護能力更為健全。 新的標準要求音訊與視覺曲目要個別提供金鑰。
+    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
 
--   新增 MaxResDecode。
+-   Added MaxResDecode.
 
-    即使擁有功能更強的金鑰 (但非授權)，這項新功能仍限制以最高解析度來播放內容。 其支援使用單一金鑰編碼多個資料流大小的情況。
+    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
 
-下列新介面、類別及列舉已新增到 PlayReady DRM 中：
+The following new interfaces, classes, and enumerations were added to PlayReady DRM:
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) 介面
--   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) 介面
--   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) 介面
--   [**PlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986309) 類別
--   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) 類別
--   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) 類別
--   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列舉程式
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
+-   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
+-   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
+-   [**PlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986309) class
+-   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) class
+-   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
+-   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
 
-已建立新的範例來示範如何使用 PlayReady DRM 的新功能。 此範例可從 [http://go.microsoft.com/fwlink/p/?linkid=331670&amp;clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) 下載。
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
 
-## 要考慮的事項
+## Things to consider
 
--   PlayReady DRM 現在支援 HDCP 類型 1 (支援 HDCP 版本 2.1 或更新版本)。 PlayReady 會在適用於裝置的授權中，包含要強制執行的 HDCP 類型限制原則。 在 Windows 10 上，此原則將會強制執行已經執行的 HDCP 2.2 或更新版本。 此功能可以在 PlayReady 伺服器 3.0 版 SDK 授權中啟用 (此伺服器會使用 HDCP 類型限制 GUID，在授權中控制此原則)。 如需詳細資訊，請參閱 [PlayReady 規範和穩健性規則](http://www.microsoft.com/playready/licensing/compliance/)。
--   硬體 DRM 不支援 Windows Media 視訊 (也稱為 VC-1)，請參閱[覆寫硬體 DRM](hardware-drm.md#override-hardware-drm)。
--   PlayReady DRM 現在支援高效率視訊編碼 (HEVC /H.265) 視訊壓縮標準。 若要支援 HEVC，您的 app 必須使用常見加密配置 (CENC) 版本 2 內容，以便讓內容的切割標頭不加密。 如需詳細資訊，請參閱 ISO/IEC 23001-7 資訊技術 -- MPEG 系統技術 -- 第 7 部分：以 ISO 為基礎的媒體檔案格式檔案中的常見加密 (需要規格版本 ISO/IEC 23001-7:2015 或更高版本)。 Microsoft 也建議針對所有 HWDRM 內容使用 CENC 版本 2。 此外，某些硬體 DRM 將支援 HEVC，但有些不支援 (請參閱[覆寫硬體 DRM](hardware-drm.md#override-hardware-drm))。
--   利用某些新的 PlayReady 3.0 功能 (包括但不限於適用於硬體式用戶端的 SL3000、在一個授權取得訊息中取得多個非永久性授權，以及非永久性授權上的時間限制)，PlayReady 伺服器必須是 Microsoft PlayReady 伺服器軟體開發套件 v3.0.2769 版本或更新版本。
--   根據內容授權中指定的輸出保護原則，如果使用者連接的輸出不支援這些需求，則媒體播放將會失敗。 下表列出一組所產生的常見錯誤。 如需詳細資訊，請參閱 [PlayReady 規範和穩健性規則](http://www.microsoft.com/playready/licensing/compliance/)。
+-   PlayReady DRM now supports HDCP Type 1 (supported in HDCP version 2.1 or later). PlayReady carries an HDCP Type Restriction policy in the license for the device to enforce. On Windows 10, this policy will enforce that HDCP 2.2 or later is engaged. This feature can be enabled in your PlayReady Server v3.0 SDK license (the server controls this policy in the license using the HDCP Type Restriction GUID). For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
+-   Windows Media Video (also known as VC-1) is not supported in hardware DRM (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
+-   PlayReady DRM now supports the High Efficiency Video Coding (HEVC /H.265) video compression standard. To support HEVC, your app must use Common Encryption Scheme (CENC) version 2 content which includes leaving the content's slice headers in the clear. Refer to ISO/IEC 23001-7 Information technology -- MPEG systems technologies -- Part 7: Common encryption in ISO base media file format files (Spec version ISO/IEC 23001-7:2015 or higher is required.) for more information. Microsoft also recommends using CENC version 2 for all HWDRM content. In addition, some hardware DRM will support HEVC and some will not (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
+-   To take advantage of certain new PlayReady 3.0 features (including, but not limited to, SL3000 for hardware-based clients, acquiring multiple non-persistent licenses in one license acquisition message, and time-based restrictions on non-persistent licenses), the PlayReady server is required to be the Microsoft PlayReady Server Software Development Kit v3.0.2769 Release version or later.
+-   Depending on the Output Protection Policy specified in the content license, media playback may fail for end users if their connected output does not support those requirements. The following table lists the set of common errors that occur as a result. For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
 
-| 錯誤                                                   | 值      | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Error                                                   | Value      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ERROR\_GRAPHICS\_OPM\_OUTPUT\_DOES\_NOT\_SUPPORT\_HDCP  | 0xC0262513 | 授權的輸出保護原則要求監視器採用 HDCP，但卻無法採用 HDCP。                                                                                                                                                                                                                                                                                                                                                                                              |
-| MF\_E\_POLICY\_UNSUPPORTED                              | 0xC00D7159 | 授權的輸出保護原則要求監視器採用 HDCP 類型 1，但卻無法採用 HDCP 類型 1。                                                                                                                                                                                                                                                                                                                                                                                |
-| DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | 只有在硬體 DRM 下執行時，才會發生這個錯誤碼。 授權的輸出保護原則要求監視器採用 HDCP 或降低內容的有效解析度，但卻無法採用 HDCP 且無法降低內容的有效解析度，因為硬體 DRM 不支援降低內容的解析度。 在軟體 DRM 下，可播放該內容。 請參閱[使用硬體 DRM 的考量](hardware-drm.md#considerations-for-using-hardware-drm)。 |
-| ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | 圖形驅動程式不支援輸出保護。 例如，監視器是透過 VGA 所連接，或者未安裝適用於數位輸出的適當圖形驅動程式。 在後者的情況下，所安裝的一般驅動程式是 Microsoft 基本顯示卡，而安裝適當的圖形驅動程式就能解決問題。                                                                                                                                                  |
+| ERROR\_GRAPHICS\_OPM\_OUTPUT\_DOES\_NOT\_SUPPORT\_HDCP  | 0xC0262513 | The license's Output Protection Policy requires the monitor to engage HDCP, but HDCP was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                              |
+| MF\_E\_POLICY\_UNSUPPORTED                              | 0xC00D7159 | The license's Output Protection Policy requires the monitor to engage HDCP Type 1, but HDCP Type 1 was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                |
+| DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | This error code only occurs when running under hardware DRM. The license's Output Protection Policy requires the monitor to engage HDCP or to reduce the content's effective resolution, but HDCP was unable to be engaged and the content's effective resolution could not be reduced because hardware DRM does not support reducing the content's resolution. Under software DRM, the content plays. See [Considerations for Using Hardware DRM](hardware-drm.md#considerations-for-using-hardware-drm). |
+| ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | The graphics driver does not support Output Protection. For example, the monitor is connected through VGA or an appropriate graphics driver for the digital output is not installed. In the latter case, the typical driver that is installed is the Microsoft Basic Display Adapter and installing an appropriate graphics driver will resolve the issue.                                                                                                                                                  |
 
-## 輸出保護
+## Output protection
 
-下一節會說明在 PlayReady 授權中使用適用於 Windows 10 的 PlayReady DRM 搭配輸出保護原則時，所產生的行為。
+The following section describes the behavior when using PlayReady DRM for Windows 10 with output protection policies in a PlayReady license.
 
-PlayReady DRM 支援 **Microsoft PlayReady 可延伸媒體權利規格**中包含的輸出保護層級。 您可在 PlayReady 授權產品的隨附文件套件中，找到這份文件。
+PlayReady DRM supports output protection levels contained in the **Microsoft PlayReady Extensible Media Rights Specification**. This document can be found in the documentation pack that comes with PlayReady licensed products.
 
-> **注意** &nbsp;&nbsp;授權伺服器可設定的輸入保護層級允許值，受到 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)所規範。
+> [!NOTE]
+> The allowed values for output protection levels that can be set by a licensing server are governed by the [PlayReady Compliance Rules](https://www.microsoft.com/playready/licensing/compliance/).
 
-PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器上，播放具輸出保護原則的內容。 如需有關 PlayReady 相容性規則指定連接器詞彙的詳細資訊，請參閱[適用於 PlayReady 相容性與穩健性規則的定義詞彙](https://www.microsoft.com/playready/licensing/compliance/)。
+PlayReady DRM allows playback of content with output protection policies only on output connectors as specified in the PlayReady Compliance Rules. For more information about output connector terms specified in the PlayReady Compliance Rules, see [Defined Terms for PlayReady Compliance and Robustness Rules](https://www.microsoft.com/playready/licensing/compliance/).
 
-本節著重探討適用於 Windows 10 之 PlayReady DRM，以及適用於 Windows 10 之 PlayReady 硬體 DRM 的輸出保護案例，亦適用於部分 Windows 用戶端。 使用 PlayReady HWDRM 時，會在 Windows TEE 實作過程中強制執行所有輸出保護 (請參閱[硬體 DRM](hardware-drm.md))。 因此，與使用 PlayReady SWDRM (軟體 DRM) 時的部分行為會略有差異：
+This section focuses on output protection scenarios with PlayReady DRM for Windows 10 and PlayReady Hardware DRM for Windows 10, which is also available on some Windows clients. With PlayReady HWDRM, all output protections are enforced from within the Windows TEE implementation (see [Hardware DRM](hardware-drm.md)). As a result, some behaviors differ from when using PlayReady SWDRM (software DRM):
 
-* 適用於未壓縮數位視訊 270 的輸出保護層級 (OPL) 支援：適用於 Windows 10 的 PlayReady HWDRM 不支援向下解析度，且會強制執行 HDCP (高頻寬數位內容保護)。 建議適用於 HWDRM 的高畫質內容應具備超過 270 的 OPL (雖然並非必要)。 此外，您應該在授權 (HDCP 版本 2.2 或更新版本) 中設定 HDCP 類型限制。
-* 不同於 SWDRM，HWDRM 會根據功能最少的監視器，在所有監視器上強制執行輸出保護。 例如，如果使用者連接了兩台監視器，其中一台監視器支援 HDCP，而另一台不支援，則如果授權要求 HDCP (即使只在支援 HDCP 監視器上呈現內容)，皆將無法播放。 在 SWDRM 中，只要內容僅在支援 HDCP 的監視器上顯示，就能播放內容。
-* 除非內容金鑰和授權符合下列條件，否則不保證 HWDRM 可供用戶端使用且安全：
-    * 用於視訊內容金鑰的授權，其最低安全性層級必須為 3000。
-    * 音訊必須以有別於視訊的內容金鑰加密，且適用於音訊的授權其最低安全性層級必須為 2000。 否則音訊可能不會進行加密處理。
-* 所有 SWDRM 案例，皆要求適用於音訊和/或視訊內容金鑰的 PlayReady 授權最低安全性等級應不超過 2000。
+* Support for Output Protection Level (OPL) for Uncompressed Digital Video 270: PlayReady HWDRM for Windows 10 doesn't support down-resolution and will enforce that HDCP (High-bandwidth Digital Content Protection) is engaged. It is recommended that high definition content for HWDRM have an OPL greater than 270 (although it is not required). Additionally, you should set HDCP type restriction in the license (HDCP version 2.2 or later).
+* Unlike SWDRM, with HWDRM, output protections are enforced on all monitors based on the least capable monitor. For example, if the user has two monitors connected where one supports HDCP and the other doesn't, playback will fail if the license requires HDCP even if the content is only being rendered on the monitor that supports HDCP. In SWDRM, content will play back as long as it's only being rendered on the monitor that supports HDCP.
+* HWDRM is not guaranteed to be used by the client and secure unless the following conditions are met by the content keys and licenses:
+    * The license used for the video content key must have a minimum security level of 3000.
+    * Audio must be encrypted to a different content key than video, and the license used for audio must have a minimum security level of 2000. Alternatively, audio could be left in the clear.
+* All SWDRM scenarios require that the minimum security level of the PlayReady license used for the audio and/or video content key is lower or equal to 2000.
 
-### 輸出保護層級
+### Output protection levels
 
-下表概述 PlayReady 授權中各個 OPL 間的對應，以及適用於 Windows 10 的 PlayReady DRM 如何強制執行這些對應。
+The following table outlines the mappings between various OPLs in the PlayReady license and how PlayReady DRM for Windows 10 enforces them.
 
-#### 視訊
+#### Video
 
 <table>
     <tr>
         <th rowspan="2">OPL</th>
-        <th>壓縮的數位視訊</th>
-        <th colspan="2">未壓縮的數位視訊</th>
-        <th>類比電視</th>
+        <th>Compressed digital video</th>
+        <th colspan="2">Uncompressed digital video</th>
+        <th>Analog TV</th>
     </tr>
     <tr>
-        <th>不限</th>
-        <th colspan="2">HDMI、DVI、DisplayPort、MHL</th>
-        <th>色差、複合視訊</th>
+        <th>Any</th>
+        <th colspan="2">HDMI, DVI, DisplayPort, MHL</th>
+        <th>Component, Composite</th>
     </tr>
     <tr>
         <th>0-100</th>
-        <td rowspan="7">Windows 10 絕對不會將壓縮的數位視訊內容傳遞至輸出，無論後續 OPL 值為何皆然。 如需有關壓縮的數位視訊內容詳細資訊，請參閱[適用於 PlayReady 產品的相容性規則](https://www.microsoft.com/playready/licensing/compliance/)</td>
-        <td rowspan="3" colspan="2">傳遞內容</td>
-        <td>傳遞內容</td>
+        <td rowspan="7">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [Compliance Rules for PlayReady Products](https://www.microsoft.com/playready/licensing/compliance/)</td>
+        <td rowspan="3" colspan="2">Passes content</td>
+        <td>Passes content</td>
     </tr>
     <tr>
         <th>101-150</th>
-        <td>使用 CGMS-A CopyNever 或無法使用 CGMS-A 時傳遞內容</td>
+        <td>Passes content when CGMS-A CopyNever is engaged or if CGMS-A can't be engaged</td>
     </tr>
     <tr>
         <th>151-200</th>
-        <td>使用 CGMS-A CopyNever 時傳遞內容</td>
+        <td>Passes content when CGMS-A CopyNever is engaged</td>
     </tr>
     <tr>
         <th>201-250</th>
-        <td colspan="2">嘗試使用 HDCP，但無論結果如何皆傳遞內容</td>
-        <td rowspan="4">「不」傳遞內容</td>
+        <td colspan="2">Attempts to engage HDCP, but passes content regardless of result</td>
+        <td rowspan="4">Does NOT pass content</td>
     </tr>
     <tr>
         <th>251-270</th>
-        <td>**SWDRM**：嘗試使用 HDCP。 若 HDCP 無法使用，則電腦會將每個畫面的有效解析度限制為 520,000 像素，並傳遞內容</td>
-        <td>**HWDRM**：使用 HDCP 傳遞內容。 若 HDCP 無法使用，則會將傳送到 HDMI/DVI 連接埠的播放封鎖</td>
+        <td>**SWDRM**: Attempts to engage HDCP. If HDCP fails to engage, the PC will constrain the effective resolution to 520,000 pixels per frame and pass the content</td>
+        <td>**HWDRM**: Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked</td>
     </tr>
     <tr>
         <th>271-300</th>
         <td colspan="2">
             <p>
-                **「未」定義 HDCP 類型限制時：**會使用 HDCP 來傳遞內容。 若 HDCP 無法使用，則會將傳送到 HDMI/DVI 連接埠的播放封鎖。
+                **When HDCP type restriction is NOT defined:** Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked.
             </p>
             <p>
-                **「已」定義 HDCP 類型限制時：**會使用 HDCP 2.2 來傳遞內容並將內容串流類型設定為 1。 若 HDCP 無法使用或是內容串流類型無法設定為 1，則會將傳送到 HDMI/DVI 連接埠的播放封鎖。
+                **When HDCP type restriction IS defined**: Passes content with HDCP 2.2 and content stream type set to 1. If HDCP fails to engage or content stream type can't be set to 1, playback to HDMI/DVI ports is blocked.
             </p>
         </td>
     </tr>
     <tr>
-        <th>\&gt;300</th>
-        <td colspan="2">「不」傳遞內容</td>
+        <th>\>300</th>
+        <td colspan="2">Does NOT pass content</td>
     </tr>
 </table>
-
-#### 音訊
+<br/>
+#### Audio
 
 <table>
     <tr>
         <th rowspan="2">OPL</th>
-        <th>壓縮的數位音訊</th>
-        <th>未壓縮的數位音訊</th>
-        <th>類比或 USB 音訊</th>
+        <th>Compressed digital audio</th>
+        <th>Uncompressed digital audio</th>
+        <th>Analog or USB audio</th>
     </tr>
     <tr>
-        <th>HDMI、DisplayPort、MHL</th>
-        <th>HDMI、DisplayPort、MHL</th>
-        <th>不限</th>
+        <th>HDMI, DisplayPort, MHL</th>
+        <th>HDMI, DisplayPort, MHL</th>
+        <th>Any</th>
     </tr>
     <tr>
         <th>0-100</th>
-        <td rowspan="2">傳遞內容</td>
-        <td>傳遞內容</td>
-        <td rowspan="4">傳遞內容</td>
+        <td rowspan="2">Passes content</td>
+        <td>Passes content</td>
+        <td rowspan="4">Passes content</td>
     </tr>
     <tr>
         <th>101-200</th>
-        <td rowspan="4">「不」傳遞內容</td>
+        <td rowspan="4">Does NOT pass content</td>
     </tr>
     <tr>
         <th>201-250</th>
-        <td>若在 HDMI、DisplayPort 或 MHL 上使用 HDCP，或是使用 SCMS 並設為 CopyNever，即會傳遞內容</td>
+        <td>Passes content when HDCP is engaged on HDMI, DisplayPort, or MHL, or when SCMS is engaged and set to CopyNever</td>
     </tr>
     <tr>
         <th>251-300</th>
-        <td>若在 HDMI、DisplayPort 或 MHL 上使用 HDCP，即會傳遞內容</td>
+        <td>Passes content when HDCP is engaged on HDMI, DisplayPort, or MHL</td>
     </tr>
     <tr>
-        <th>\&gt;300</th>
-        <td>「不」傳遞內容</td>
-        <td>「不」傳遞內容</td>
+        <th>\>300</th>
+        <td>Does NOT pass content</td>
+        <td>Does NOT pass content</td>
     </tr>
 </table>
-
+<br/>
 ### Miracast
 
-PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast 輸出播放內容。 不過在 Windows 10 上，Miracast 會視為*數位*輸出。 如需關於 Miracast 案例的詳細資訊，請參閱 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)。 下表概述 PlayReady 授權中各個 OPL 間的對應，以及 PlayReady DRM 如何在 Miracast 輸出上強制執行這些對應。
+PlayReady DRM allows you to play content over Miracast output as soon as HDCP 2.0 or later is engaged. On Windows 10, however, Miracast is considered a *digital* output. For more information about Miracast scenarios, see the [PlayReady Compliance Rules](https://www.microsoft.com/playready/licensing/compliance/). The following table outlines the mappings between various OPLs in the PlayReady license and how PlayReady DRM enforces them on Miracast outputs.
 
 <table>
     <tr>
         <th>OPL</th>
-        <th>壓縮的數位音訊</th>
-        <th>未壓縮的數位音訊</th>
-        <th>壓縮的數位視訊</th>
-        <th>未壓縮的數位視訊</th>
+        <th>Compressed digital audio</th>
+        <th>Uncompressed digital audio</th>
+        <th>Compressed digital video</th>
+        <th>Uncompressed digital video</th>
     </tr>
     <tr>
         <th>0-100</th>
-        <td rowspan="3">使用 HDCP 2.0 或更新版本時傳遞內容。 若無法使用，則「不會」傳遞內容</td>
-        <td>使用 HDCP 2.0 或更新版本時傳遞內容。 若無法使用，則「不會」傳遞內容</td>
-        <td rowspan="4">Windows 10 絕對不會將壓縮的數位視訊內容傳遞至輸出，無論後續 OPL 值為何皆然。 如需有關壓縮的數位視訊內容詳細資訊，請參閱 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)</td>
-        <td rowspan="2">使用 HDCP 2.0 或更新版本時傳遞內容。 若無法使用，則「不會」傳遞內容</td>
+        <td rowspan="3">Passes content when HDCP 2.0 or later is engaged. If it fails to engage, it does NOT pass content</td>
+        <td>Passes content when HDCP 2.0 or later is engaged. If it fails to engage, it does NOT pass content</td>
+        <td rowspan="4">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [PlayReady Compliance Rules](https://www.microsoft.com/playready/licensing/compliance/)</td>
+        <td rowspan="2">Passes content when HDCP 2.0 or later is engaged. If it fails to engage, it does NOT pass content</td>
     </tr>
     <tr>
         <th>101-270</th>
-        <td rowspan="3">「不」傳遞內容</td>
+        <td rowspan="3">Does NOT pass content</td>
     </tr>
     <tr>
         <th>271-300</th>
         <td>
             <p>
-                **「未」定義 HDCP 類型限制時：**會在使用 HDCP 2.0 或更新版本的情況下傳遞內容。 若無法使用，則「不會」傳遞內容。
+                **When HDCP type restriction is NOT defined:** Passes content when HDCP 2.0 or later is engaged. If it fails to engage, it does NOT pass content.
             </p>
             <p>
-                **「已」定義 HDCP 類型限制時：**會使用 HDCP 2.2 來傳遞內容並將內容串流類型設定為 1。 若 HDCP 無法使用或是內容串流類型無法設定為 1，則「不會」傳遞內容。
+                **When HDCP type restriction IS defined:** Passes content with HDCP 2.2 and content stream type set to 1. If HDCP fails to engage or content stream type can't be set to 1, it does NOT pass content.
             </p>        
         </td>
     </tr>
     <tr>
-        <th>\&gt;300</th>
-        <td>「不」傳遞內容</td>
-        <td>「不」傳遞內容</td>
+        <th>\>300</th>
+        <td>Does NOT pass content</td>
+        <td>Does NOT pass content</td>
     </tr>
 </table>
+<br/>
+### Additional explicit output restrictions
 
-### 其他的明確輸出限制
-
-下表說明適用於 Windows 10 的 PlayReady DRM，如何實作明確的數位視訊輸出保護限制。
+The following table describes the PlayReady DRM for Windows 10 implementation of explicit digital video output protection restrictions.
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>Scenario</th>
         <th>GUID</th>
-        <th>如果...</th>
-        <th>則...</th>
+        <th>If...</th>
+        <th>Then...</th>
     </tr>
     <tr>
-        <th>最大有效解析度解碼大小</th>
+        <th>Maximum effective resolution decode size</th>
         <td>9645E831-E01D-4FFF-8342-0A720E3E028F</td>
-        <td>連接的輸出為：數位視訊輸出、Miracast、HDMI、DVI 等等。</td>
+        <td>Connected output is: digital video output, Miracast, HDMI, DVI, etc.</td>
         <td>
             <p>
-                採用下列限制時傳遞內容︰  
-            </p>
+Passes content when constrained to: </p>
             <ul>
-                <li>(a) 畫面寬度必須小於或等於最大像素畫面寬度，且畫面高度小於或等於最大像素畫面高度，或</li>
-                <li>(b) 畫面高度必須小於或等於最大像素畫面寬度，且畫面寬度小於或等於最大像素畫面高度</li>
+                <li>(a) the width of the frame must be less than or equal to the maximum frame width in pixels and the height of the frame less than or equal to the maximum frame height in pixels, or</li>
+                <li>(b) the height of the frame must be less than or equal to the maximum frame width in pixels and the width of the frame less than or equal to the maximum frame height in pixels</li>
             </ul>                   
         </td>
     </tr>
     <tr>
-        <th>HDCP 類型限制</th>
+        <th>HDCP type restriction</th>
         <td>ABB2C6F1-E663-4625-A945-972D17B231E7</td>
-        <td>連接的輸出為：數位視訊輸出、Miracast、HDMI、DVI 等等。</td>
-        <td>使用 HDCP 2.2 傳遞內容並將內容串流類型設為 1。 若 HDCP 2.2 無法使用或是內容串流類型無法設定為 1，則「不會」傳遞內容。 此外，也必須指定一個值大於或等於 271 的未壓縮數位視訊輸出保護層級</td>
+        <td>Connected output is: digital video output, Miracast, HDMI, DVI, etc.</td>
+        <td>Passes content with HDCP 2.2 and the content stream type set to 1. If HDCP 2.2 fails to engage or the content stream type can't be set to 1, it does NOT pass content. Uncompressed digital video output protection level of a value greater than or equal to 271 must also be specified</td>
     </tr>
 </table>
-
-下表說明適用於 Windows 10 的 PlayReady DRM 如何實作明確的類比視訊輸出保護限制。
+<br/>
+The following table describes the PlayReady DRM for Windows 10 implementation of explicit analog video output protection restrictions.
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>Scenario</th>
         <th>GUID</th>
-        <th>如果...</th>
-        <th colspan="2">則...</th>
+        <th>If...</th>
+        <th colspan="2">Then...</th>
     </tr>
     <tr>
-        <th>類比電腦監視器</th>
+        <th>Analog computer monitor</th>
         <td>D783A191-E083-4BAF-B2DA-E69F910B3772</td>
-        <td>連接的輸出為：VGA、DVI &ndash;類比等等。</td>
-        <td>**SWDRM：**電腦會將每個畫面的有效解析度限制為 520,000 像素，並傳遞內容</td>
-        <td>**HWDRM：**「不」傳遞內容</td>
+        <td>Connected output is: VGA, DVI&ndash;analog, etc.</td>
+        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td>**HWDRM:** Does NOT pass content</td>
     </tr>
     <tr>
-        <th>類比色差</th>
+        <th>Analog component</th>
         <td>811C5110-46C8-4C6E-8163-C0482A15D47E</td>
-        <td>連接的輸出為：色差</td>
-        <td>**SWDRM：**電腦會將每個畫面的有效解析度限制為 520,000 像素，並傳遞內容</td>
-        <td>**HWDRM：**「不」傳遞內容</td>
+        <td>Connected output is: component</td>
+        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td>**HWDRM:** Does NOT pass content</td>
     </tr>
     <tr>
-        <th rowspan="2">類比電視輸出</th>
+        <th rowspan="2">Analog TV outputs</th>
         <td>2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3</td>
-        <td>類比電視 OPL 小於 151</td>
-        <td colspan="2">必須使用 CGMS-A</td>
+        <td>Analog TV OPL is less than 151</td>
+        <td colspan="2">CGMS-A must be engaged</td>
     </tr>
     <tr>
         <td>225CD36F-F132-49EF-BA8C-C91EA28E4369</td>
-        <td>類比電視 OPL 小於 101，且授權不包含 2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3</td>
-        <td colspan="2">必須嘗試使用 CGMS-A，但無論結果如何皆可播放內容</td>
+        <td>Analog TV OPL is less than 101 and license doesn't contain 2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3</td>
+        <td colspan="2">CGMS-A engagement must be attempted, but content may play regardless of result</td>
     </tr>
     <tr>
-        <th>自動增益控制項和色條</th>
+        <th>Automatic gain control and color stripe</th>
         <td>C3FD11C6-F8B7-4D20-B008-1DB17D61F2DA</td>
-        <td>傳遞內容的解析度小於或等於 520,000 像素，以類比電視輸出</td>
-        <td colspan="2">解析度小於 520,000 像素時針對色差視訊和 PAL 模式設為「僅 AGC」，並在解析度小於 520,000 像素時針對 NTSC 設定「AGC」和色條資訊，根據表格 3.5.7.3 而定 (位於「相容性規則」中)。</td>
+        <td>Passing content with resolution less than or equal to 520,000 px to analog TV output</td>
+        <td colspan="2">Sets AGC only for component video and PAL mode when resolution is less than 520,000 px and sets AGC and color stripe information for NTSC when resolution is less than 520,000 px, according to table 3.5.7.3. in Compliance Rules</td>
     </tr>
     <tr>
-        <th>僅數位輸出</th>
+        <th>Digital-only output</th>
         <td>760AE755-682A-41E0-B1B3-DCDF836A7306</td>
-        <td>連接的輸出為類比</td>
-        <td colspan="2">不傳遞內容</td>
+        <td>Connected output is analog</td>
+        <td colspan="2">Does not pass content</td>
     </tr>
 </table>
+<br/>
+> [!NOTE]
+> When using an adapter dongle such as "Mini DisplayPort to VGA" for playback, Windows 10 sees the output as digital video output, and can't enforce analog video policies.
 
-> **注意**：播放時若使用諸如「Mini DisplayPort 轉 VGA」等轉接卡硬體鎖，則 Windows 10 會將輸出視為數位視訊輸出，而無法強制執行類比視訊規則。
-
-下表說明可在其他情況下播放之適用於 Windows 10 的 PlayReady DRM 實作。
+The following table describes the PlayReady DRM for Windows 10 implementation that enables playing in other circumstances.
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>Scenario</th>
         <th>GUID</th>
-        <th>如果...</th>
-        <th colspan="2">則...</th>
+        <th>If...</th>
+        <th colspan="2">Then...</th>
     </tr>
     <tr>
-        <th>未知輸出</th>
+        <th>Unknown output</th>
         <td>786627D8-C2A6-44BE-8F88-08AE255B01A7</td>
-        <td>若無法適度判斷輸出，或是無法使用圖形驅動程式建立 OPM</td>
-        <td>**SWDRM：**傳遞內容</td>
-        <td>**HWDRM：**「不」傳遞內容</td>
+        <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
+        <td>**SWDRM:** Passes content</td>
+        <td>**HWDRM:** Does NOT pass content</td>
     </tr>
     <tr>
-        <th>具限制的不明輸出</th>
+        <th>Unknown output with constriction</th>
         <td>B621D91F-EDCC-4035-8D4B-DC71760D43E9</td>
-        <td>若無法適度判斷輸出，或是無法使用圖形驅動程式建立 OPM</td>
-        <td>**SWDRM：**電腦會將每個畫面的有效解析度限制為 520,000 像素，並傳遞內容</td>
-        <td>**HWDRM：**「不」傳遞內容</td>
+        <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
+        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td>**HWDRM:** Does NOT pass content</td>
     </tr>
 </table>
+<br/>
+## Prerequisites
 
-## 先決條件
+Before you begin creating your PlayReady-protected UWP app, the following software needs to be installed on your system:
 
-開始建立 PlayReady 保護的 UWP app 之前，需要在系統上安裝下列軟體：
+-   Windows 10.
+-   If you are compiling any of the samples for PlayReady DRM for UWP apps, you must use Microsoft Visual Studio 2015 or later to compile the samples. You can still use Microsoft Visual Studio 2013 to compile any of the samples from PlayReady DRM for Windows 8.1 Store Apps.
 
--   Windows 10。
--   如果您正在針對適用於 UWP app 的 PlayReady DRM 編譯任何範例，就必須使用 Microsoft Visual Studio 2015 或更新版本來編譯範例。 您仍然可以使用 Microsoft Visual Studio 2013，來編譯任何來自適用於 Windows 8.1 市集 app 的 PlayReady DRM 的範例。
+If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).
 
-如果您計劃在 app 上播放 MPEG-2/H.262 內容，也必須下載並安裝 [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876)。
+## PlayReady Windows Store app migration guide
 
-## PlayReady Windows 市集應用程式移轉指南
+This section includes information on how to migrate your existing PlayReady Windows 8.x Store apps to Windows 10.
 
-本節包含如何將現有的 PlayReady Windows 8.x 市集 app 移轉到 Windows 10 的相關資訊。
+The namespace for PlayReady UWP apps on Windows 10 was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). This means that you will need to search and replace the old namespace with the new one in your code. You will still be referencing a winmd file. It is part of windows.media.winmd on the Windows 10 operating system. It is in windows.winmd as part of the TH’s Windows SDK. For UWP, it’s referenced in windows.foundation.univeralappcontract.winmd.
 
-Windows 10 上適用於 PlayReady UWP app 的命名空間已從 **Microsoft.Media.PlayReadyClient** 變更為 [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 這表示您必須在程式碼中搜尋舊的命名空間，並取代為新的命名空間。 您仍將參考 winmd 檔案。 它是 Windows 10 作業系統上 windows.media.winmd 的一部分。 它屬於 Windows SDK 中的 windows.winmd。 對於 UWP，會在 windows.foundation.univeralappcontract.winmd 中參照它。
+To play back PlayReady-protected high definition (HD) content (1080p) and ultra-high definition (UHD) content, you will need to implement PlayReady hardware DRM. For information on how to implement PlayReady hardware DRM, see [Hardware DRM](hardware-drm.md).
 
-若要播放 PlayReady 保護的高畫質 (HD) 內容 (1080p) 及超高畫質 (UHD) 內容，您需要實作 PlayReady 硬體 DRM。 如需如何實作 PlayReady 硬體 DRM 的相關資訊，請參閱[硬體 DRM](hardware-drm.md)。
+Some content is not supported in hardware DRM. For information on disabling hardware DRM and enabling software DRM, see [Override Hardware DRM](hardware-drm.md#override-hardware-drm).
 
-硬體 DRM 不支援某些內容。 如需停用硬體 DRM 和啟用軟體 DRM 的相關資訊，請參閱[覆寫硬體 DRM](hardware-drm.md#override-hardware-drm)。
-
-關於媒體保護管理員，請確定您的程式碼包含下列設定 (如果程式碼中還未包含)。
+Regarding the media protection manager, make sure your code has the following settings if it doesn’t already:
 
 ```cs
 var mediaProtectionManager = new Windows.Media.Protection.MediaProtectionManager();
@@ -392,13 +393,13 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 
-## 播放之前主動取得非永久性授權
+## Proactively acquire a non-persistent license before playback
 
-本節說明如何在開始播放之前，主動取得非永久性授權。
+This section describes how to acquire non-persistent licenses proactively before playback begins.
 
-在舊版的 PlayReady DRM 中，非永久性授權只能在播放期間被動取得。 在這個版本中，您可以在開始播放之前，主動取得非永久性授權。
+In previous versions of PlayReady DRM, non-persistent licenses could only be acquired reactively during playback. In this version, you can acquire non-persistent licenses proactively before playback begins.
 
-1.  主動建立播放工作階段，讓非永久性授權可儲存於其中。 例如：
+1.  Proactively create a playback session where the non-persistent license can be stored. For example:
 
     ```cs
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -410,7 +411,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  將該播放工作階段繫結到授權取得類別。 例如：
+2.  Tie that playback session to the license acquisition class. For example:
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -418,36 +419,47 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  建立授權服務要求。 例如：
+3.  Create a license service request. For example:
 
     ```cs
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
-4.  使用從步驟 3 所建立的服務要求來執行授權取得。 授權會儲存在播放工作階段中。
-5.  將該播放工作階段繫結到媒體來源，以進行播放。 例如：
+4.  Perform the license acquisition using the service request created from step 3. The license will be stored in the playback session.
+5.  Tie the playback session to the media source for playback. For example:
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
-## 新增安全停止功能
+## Add secure stop
 
-本節說明如何將安全停止功能新增到您的 UWP app。
+This section describes how to add secure stop to your UWP app.
 
-安全停止功能讓 PlayReady 裝置能夠確實向媒體串流處理服務宣告任何指定內容的媒體播放已停止。 此功能確保您的媒體串流處理服務能在不同裝置上，針對指定帳戶正確地強制執行和報告使用限制。
+Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
-傳送安全停止挑戰的主要案例有兩種：
+There are two primary scenarios for sending a secure stop challenge:
 
--   當媒體呈現因已到達內容結尾，或當使用者在中間的某處停止呈現媒體而停止。
--   當先前的工作階段意外結束 (例如，因為系統或 App 當機)。 App 將需要針對任何待處理的安全停止工作階段進行查詢 (可能是在開機或關機時)，並從任何其他媒體播放個別傳送挑戰。
+-   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
+-   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-如需安全停止功能的實作範例，請參閱 PlayReady 範例中的 securestop.cs 檔案，其位於 [http://go.microsoft.com/fwlink/p/?linkid=331670&amp;clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670)。
+For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
 
- 
+## Use PlayReady DRM on Xbox One
 
- 
+To use PlayReady DRM in a UWP app on Xbox One, you need to add an additional `<DeviceCapability>` to the app manifest. You'll have to add this manually because there is currently no setting available in the App Manifest Designer. Follow these steps to configure it:
+
+1. With the project open in Visual Studio, open the **Solution Explorer** and right-click **Package.appxmanifest**.
+2. Select **Open With...**, choose **XML (Text) Editor**, and click **OK**.
+3. Between the `<Capabilities>` tags, add the following `<DeviceCapability>`:
+```xml
+<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+```
+4. Save the file.
+
+## See also
+- [Media playback](media-playback.md)
 
 
 
@@ -455,6 +467,6 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: "移植 GLSL"
-description: "一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。"
+title: Port the GLSL
+description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d1d203fa74bd80fe26401e64d4e15bb11e5c1050
+ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
 
 ---
 
-# 移植 GLSL
+# Port the GLSL
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要 API**
+**Important APIs**
 
--   [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [著色器常數 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574)
+-   [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
 
-一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。
+Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 
-在 OpenGL ES 2.0 中，著色器會在使用像是 **gl\_Position**、**gl\_FragColor** 或 **gl\_FragData\[n\]** (其中 n 是特定轉譯目標的索引) 的內建函式執行之後傳回資料。 在 Direct3D 中，沒有特定的內建函式，而且著色器會傳回資料做為其各自 main() 函式的傳回類型。
+In OpenGL ES 2.0, shaders return data after execution using intrinsics such as **gl\_Position**, **gl\_FragColor**, or **gl\_FragData\[n\]** (where n is the index for a specific render target). In Direct3D, there are no specific intrinsics, and the shaders return data as the return type of their respective main() functions.
 
-您想要在著色器階段之間插補的資料 (例如，頂點位置或法向量) 是藉由使用 **varying** 宣告來處理。 但是，Direct3D 沒有這個宣告；而是必須使用 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb205574)來標示您要在著色器階段之間傳送的任何資料。 所選擇的特定語意表示資料的用途及意義。 例如，您要將在片段著色器之間插補的頂點資料宣告為：
+Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](https://msdn.microsoft.com/library/windows/desktop/bb205574). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
 
 `float4 vertPos : POSITION;`
 
-或
+or
 
 `float4 vertColor : COLOR;`
 
-其中 POSITION 是用來表示頂點位置資料的語意。 POSITION 也是一個特殊案例，因為在插補之後，像素著色器便無法存取它。 因此，您必須使用 SV\_POSITION 來指定像素著色器的輸入，而系統會將插補的頂點資料放入該變數。
+Where POSITION is the semantic used to indicate vertex position data. POSITION is also a special case, since after interpolation, it cannot be accessed by the pixel shader. Therefore, you must specify input to the pixel shader with SV\_POSITION and the interpolated vertex data will be placed in that variable.
 
 `float4 position : SV_POSITION;`
 
-語意可以在著色器的主體 (main) 方法中進行宣告。 針對像素著色器，主體方法中需要有表示轉譯目標的 SV\_TARGET\[n\] (不含數字尾碼預設值的 SV\_TARGET，以轉譯目標索引 0)。
+Semantics can be declared on the body (main) methods of shaders. For pixel shaders, SV\_TARGET\[n\], which indicates a render target, is required on the body method. (SV\_TARGET without a numeric suffix defaults to render target index 0.)
 
-另請注意，需要有頂點著色器，才能輸出 SV\_POSITION 系統值語意。 這個語意可以將頂點位置資料解析成座標值，其中 x 介於 -1 與 1 之間、y 介於 -1 與 1 之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。 像素著色器會使用 SV\_POSITION 系統值語意來擷取螢幕上的像素位置，其中 x 介於 0 與轉譯目標寬度之間，而 y 介於 0 與轉譯目標高度之間 (每個都會位移 0.5)。 功能層級 9\_x 像素著色器無法從 SV\_POSITION 值中讀取。
+Also note that vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w). Pixel shaders use the SV\_POSITION system value semantic to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5). Feature level 9\_x pixel shaders cannot read from the SV\_POSITION value.
 
-常數緩衝區必須使用 **cbuffer** 來宣告，而且必須與特定的起始暫存器產生關聯，以供查詢。
+Constant buffers must be declared with **cbuffer** and be associated with a specific starting register for lookup.
 
-Direct3D 11：HLSL 常數緩衝區宣告
+Direct3D 11: An HLSL constant buffer declaration
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -51,16 +51,16 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-此處的常數緩衝區使用暫存器 b0 來保留封裝的緩衝區。 所有的暫存器都是以 b\# 形式來參考。 如需關於常數緩衝區、暫存器及資料封裝的 HLSL 實作的詳細資訊，請參閱[著色器常數 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
+Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
 
-指示
+Instructions
 ------------
 
-### 步驟 1：移植頂點著色器
+### Step 1: Port the vertex shader
 
-在我們的簡單 OpenGL ES 2.0 範例中，頂點著色器會有三個輸入：常數模型-檢視-投影 4x4 矩陣，以及兩個 4 座標的向量。 這兩個向量包含頂點位置及其色彩。 著色器會將位置向量轉換成透視座標，並將它指派給 gl\_Position 內建函式以進行點陣化。 同時也會將頂點色彩複製到一個變化變數，以便在點陣化期間進行插補。
+In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
 
-OpenGL ES 2.0：立方體物件的頂點著色器 (GLSL)
+OpenGL ES 2.0: Vertex shader for the cube object (GLSL)
 
 ``` syntax
 uniform mat4 u_mvpMatrix; 
@@ -75,9 +75,9 @@ void main()
 }
 ```
 
-現在，在 Direct3D 中，常數模型-檢視-投影矩陣會包含在暫存器 b0 中封裝的常數緩衝區，而頂點位置與色彩會特別使用個別適用的 HLSL 語意來標記：POSITION 與 COLOR。 因為我們的輸入配置會指出這兩個頂點值的特定排列方式，所以您可以建立結構來保有它們，並在著色器主體函式 (main) 上將結構宣告為輸入參數的類型 (您也可以將它們指定成兩個個別的參數，但可能很麻煩)。您也可以指定這個階段的輸出類型，其中包含插補的位置與色彩，並將它宣告為頂點著色器的主體函式的傳回值。
+Now, in Direct3D, the constant model-view-projection matrix is contained in a constant buffer packed at register b0, and the vertex position and color are specifically marked with the appropriate respective HLSL semantics: POSITION and COLOR. Since our input layout indicates a specific arrangement of these two vertex values, you create a struct to hold them and declare it as the type for the input parameter on the shader body function (main). (You could also specify them as two individual parameters, but that could get cumbersome.) You also specify an output type for this stage, which contains the interpolated position and color, and declare it as the return value for the body function of the vertex shader.
 
-Direct3D 11：立方體物件的頂點著色器 (HLSL)
+Direct3D 11: Vertex shader for the cube object (HLSL)
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -113,13 +113,13 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-輸出資料類型 PixelShaderInput 是在點陣化期間所填入，並提供給片段 (像素) 著色器。
+The output data type, PixelShaderInput, is populated during rasterization and provided to the fragment (pixel) shader.
 
-### 步驟 2：移植片段著色器
+### Step 2: Port the fragment shader
 
-我們在 GLSL 中的片段著色器範例相當簡單：使用插補的色彩值來提供 gl\_FragColor 內建函式。 OpenGL ES 2.0 會將它寫入預設的轉譯目標。
+Our example fragment shader in GLSL is extremely simple: provide the gl\_FragColor intrinsic with the interpolated color value. OpenGL ES 2.0 will write it to the default render target.
 
-OpenGL ES 2.0：立方體物件的片段著色器 (GLSL)
+OpenGL ES 2.0: Fragment shader for the cube object (GLSL)
 
 ``` syntax
 varying vec4 destColor;
@@ -130,9 +130,9 @@ void main()
 } 
 ```
 
-Direct3D 幾乎一樣簡單。 唯一的顯著差異在於像素著色器的主體函式必須傳回值。 由於色彩是一個 4 座標 (RGBA) 的浮點值，您可以指示 float4 做為傳回類型，然後指定預設轉譯目標做為 SV\_TARGET 系統值語意。
+Direct3D is almost as simple. The only significant difference is that the body function of the pixel shader must return a value. Since the color is a 4-coordinate (RGBA) float value, you indicate float4 as the return type, and then specify the default render target as the SV\_TARGET system value semantic.
 
-Direct3D 11：立方體物件的像素著色器 (HLSL)
+Direct3D 11: Pixel shader for the cube object (HLSL)
 
 ``` syntax
 struct PixelShaderInput
@@ -148,47 +148,47 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-系統會將位置的像素色彩寫入轉譯目標。 現在，讓我們來看看在[繪製到螢幕](draw-to-the-screen.md)中如何顯示該轉譯目標的內容！
+The color for the pixel at the position is written to the render target. Now, let's see how to display the contents of that render target in [Draw to the screen](draw-to-the-screen.md)!
 
-## 上一步
+## Previous step
 
 
-[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md) 下一步
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md) Next step
 ---------
 
-[繪製到螢幕](draw-to-the-screen.md) 備註
+[Draw to the screen](draw-to-the-screen.md) Remarks
 -------
 
-了解 HLSL 語意與常數緩衝區的封裝，除了可為您省掉一些令人頭痛的偵錯工作，還能提供最佳化的時機。 如果有機會，請完整閱讀[變數語法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)、[Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)以及[使用方法：建立常數緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果沒有機會，那麼此處提供一些有關語意與常數緩衝區的入門提示，請謹記在心。
+Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
--   總是重複檢查轉譯器的 Direct3D 設定程式碼，以確定常數緩衝區的結構符合 HLSL 中的 cbuffer struct 宣告，且這兩個宣告中的元件純量類型是相符的。
--   在轉譯器的 C++ 程式碼中，於常數緩衝區宣告中使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 類型，以確保進行適當的資料封裝。
--   有效使用常數緩衝區的最佳方法是根據它們的更新頻率，將著色器變數組織到常數緩衝區。 例如，如果您有一些每個框架都要更新一次的制式資料，而其他制式資料只會在相機移動時更新，那麼，請考慮將該資料分隔成兩個不同的常數緩衝區。
--   您忘記套用或未正確套用的語意將是最早出現的著色器編譯 (FXC) 錯誤來源。 請仔細檢查它們！ 相關文件可能有一點混亂，因為許多較舊的頁面和範例會參考 Direct3D 11 之前不同版本的 HLSL 語意。
--   請確定您知道要將每個著色器目標設定為哪一個 Direct3D 功能層級。 功能層級 9\_\* 的語意與 11\_1 的語意不同。
--   SV\_POSITION 語意可以將相關聯的插補後位置資料解析為座標值，其中 x 介於 0 與轉譯目標寬度之間、y 介於 0 與轉譯目標高度之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
+-   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.
+-   In your renderer's C++ code, use [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) types in your constant buffer declarations to ensure proper data packing.
+-   The best way to efficiently use constant buffers is to organize shader variables into constant buffers based on their frequency of update. For example, if you have some uniform data that is updated once per frame, and other uniform data that is updated only when the camera moves, consider separating that data into two separate constant buffers.
+-   Semantics that you have forgotten to apply or which you have applied incorrectly will be your earliest source of shader compilation (FXC) errors. Double-check them! The docs can be a bit confusing, as many older pages and samples refer to different versions of HLSL semantics prior to Direct3D 11.
+-   Make sure you know which Direct3D feature level you are targeting for each shader. The semantics for feature level 9\_\* are different from those for 11\_1.
+-   The SV\_POSITION semantic resolves the associated post-interpolation position data to coordinate values where x is between 0 and the render target width, y is between 0 and the render target height, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
 
-## 相關主題
+## Related topics
 
 
-[使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[移植著色器物件](port-the-shader-config.md)
+[Port the shader objects](port-the-shader-config.md)
 
-[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
 
-[繪製到螢幕](draw-to-the-screen.md)
-
- 
+[Draw to the screen](draw-to-the-screen.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,53 +1,52 @@
 ---
 author: mijacobs
-Description: "音效有助於讓應用程式的使用者體驗變完整，並提供他們額外的音訊銳度，以符合所有平台的 Windows 操作方式。"
+Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
 label: Sound
-title: "音效"
+title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
-ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
+ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
+ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
 
 ---
-[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。] 本文提供尚未提供功能的預覽。**
 
-# 音效
+# Sound
 
-有許多方式可以使用音效來增強您的 App。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 針對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
+There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.
 
-## 音效全域 API
+## Sound Global API
 
-UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
+UWP provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
 
-**ElementSoundPlayer** 是 XAML 中的整合式音效系統，而開啟所有預設控制項就會自動播放音效。
+The **ElementSoundPlayer** is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** 有三種不同的狀態︰[On]****、[Off]**** 和 [Auto]****。
+The **ElementSoundPlayer** has three different states: **On** **Off** and **Auto**.
 
-如果設定為 [Off]****，不論您的應用程式在何處執行，絕對不會播放音效。 如果設定為 [On]****，您的應用程式的音效將會在每個平台上播放。
+If set to **Off**, no matter where your app is run, sound will never play. If set to **On** sounds for your app will play on every platform.
 
-### 電視和 Xbox 的音效
+### Sound for TV and Xbox
 
-音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]****，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
-若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](http://go.microsoft.com/fwlink/?LinkId=760736)文章。
+Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
+To understand more about designing for Xbox and TV, please see [Designing for Xbox and TV](http://go.microsoft.com/fwlink/?LinkId=760736).
 
-## 音效音量覆寫
+## Sound Volume Override
 
-應用程式內的所有音效都可以透過 **Volume** 控制項停用。 不過，應用程式內的音效不能「比系統音效大聲」**。
+All sounds within the app can be dimmed with the **Volume** control. However, sounds within the app cannot get *louder than the system volume*.
 
-若要設定應用程式的音效層級，請呼叫︰
+To set the app volume level, call:
 ```C#
 ElementSoundPlayer.Volume = 0.5f;
 ```
-其中最大音量 (相對於系統音量) 是 1.0，而最小音量是 0.0 (基本上是靜音)。
+Where maximum volume (relative to system volume) is 1.0, and minimum is 0.0 (essentially silent).
 
-## 控制項層級狀態
+## Control Level State
 
-如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
+If a control's default sound is not desired, it can be disabled. This is done through the **ElementSoundMode** on the control.
 
-**ElementSoundMode** 有兩種狀態︰[Off]**** 和 [Default]****。 未設定時，則為 [Default]****。 如果設定為 [Off]****，則控制項所播放的每個音效都會是靜音，但「焦點除外」**。
+The **ElementSoundMode** has two states: **Off** and **Default**. When not set, it is **Default**. If set to **Off**, every sound that control plays will be muted *except for focus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -57,97 +56,97 @@ ElementSoundPlayer.Volume = 0.5f;
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## 這是正確的音效嗎？
+## Is This The Right Sound?
 
-當建立自訂控制項，或變更現有控制項的音效時，請務必了解系統提供的所有音效的用法。
+When creating a custom control, or changing an existing control's sound, it is important to understand the usages of all the sounds the system provides.
 
-每個音效會與某個基本使用者互動相關，雖然可以將音效自訂成在任何互動時播放，但本節主要說明應使用音效而讓所有 UWP 應用程式維持一致體驗的案例。
+Each sound relates to a certain basic user interaction, and although sounds can be customized to play on any interaction, this section serves to illustrate the scenarios where sounds should be used to maintain a consistent experience across all UWP apps.
 
-### 叫用元素
+### Invoking an Element
 
-我們的系統中目前最常見的控制項觸發音效為 **Invoke** 音效。 當使用者透過點選/按一下/Enter/空格或按遊戲台的 'A' 按鈕叫用控制項時，就會播放這個音效。
+The most common control-triggered sound in our system today is the **Invoke** sound. This sound plays when a user invokes a control through a tap/click/enter/space or press of the 'A' button on a gamepad.
 
-通常，只有在使用者透過[輸入裝置](../input-and-devices/input-primer.md)明確地以簡單控制項或控制項部分為目標時，才會播放這個音效。
+Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input-and-devices/input-primer.md).
 
-&lt;SelectButtonClick.mp3 音效剪輯在此&gt;
+<SelectButtonClick.mp3 sound clip here>
 
-若要從任何控制項事件播放這個音效，只需從 **ElementSoundPlayer** 呼叫 Play 方法，然後傳入 **ElementSound.Invoke**：
+To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```
 
-### 顯示及隱藏內容
+### Showing & Hiding Content
 
-XAML 中有許多飛出視窗、對話方塊及可解除的 UI，而任何觸發其中一個重疊的動作應該呼叫 **Show** 或 **Hide** 音效。
+There are many flyouts, dialogs and dismissible UIs in XAML, and any action that triggers one of these overlays should call a **Show** or **Hide** sound.
 
-當重疊內容視窗出現時，應該呼叫 **Show** 音效︰
+When an overlay content window is brought into view, the **Show** sound should be called:
 
-&lt;OverlayIn.mp3 音效剪輯在此&gt;
+<OverlayIn.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
-相反地，當重疊內容視窗關閉 (或消失關閉) 時，應該呼叫 **Hide** 音效︰
+Conversely when an overlay content window is closed (or is light dismissed), the **Hide** sound should be called:
 
-&lt;OverlayOut.mp3 音效剪輯在此&gt;
+<OverlayOut.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
-### 頁面內的瀏覽
+### Navigation Within a Page
 
-在應用程式頁面中的面板或檢視之間瀏覽時 (請參閱[中樞](../controls-and-patterns/hub.md)或[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md))，通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
+When navigating between panels or views within an app's page (see [Hub](../controls-and-patterns/hub.md) or [Tabs and Pivots](../controls-and-patterns/tabs-pivot.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
 
-**MovePrevious** 和 **MoveNext** 音效可達成以此瀏覽概念為主的音訊體驗。
+The audio experience around this navigation concept is encompassed by the **MovePrevious** and **MoveNext** sounds.
 
-移至清單中被視為「下一個項目」**的檢視/面板時，呼叫︰
+When moving to a view/panel that is considered the *next item* in a list, call:
 
-&lt;PageTransitionRight.mp3 音效剪輯在此&gt;
+<PageTransitionRight.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
-而移至清單中被視為「上一個項目」**的上一個檢視/面板時，呼叫︰
+And when moving to a previous view/panel in a list considered the *previous item*, call:
 
-&lt;PageTransitionLeft.mp3 音效剪輯在此&gt;
+<PageTransitionLeft.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```
-### 向後巡覽
+### Back Navigation
 
-從目前頁面瀏覽到應用程式中前一個頁面時，應呼叫 **GoBack** 音效︰
+When navigating from the current page to the previous page within an app the **GoBack** sound should be called:
 
-&lt;BackButtonClick.mp3 音效剪輯在此&gt;
+<BackButtonClick.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```
-### 將焦點放在某個元素
+### Focusing on an Element
 
-**Focus** 音效我們的系統中唯一隱含的音效。 這表示使用者並未直接與任何項目互動，但仍會聽到音效。
+The **Focus** sound is the only implicit sound in our system. Meaning a user isn't directly interacting with anything, but is still hearing a sound.
 
-使用者瀏覽應用程式時會發生對焦，這可利用遊戲台/鍵盤/遙控器或 Kinect 進行。 **Focus** 音效通常不會在 PointerEntered 或滑鼠暫留事件**播放。
+Focusing happens when a user navigates through an app, this can be with the gamepad/keyboard/remote or kinect. Typically the **Focus** sound *does not play on PointerEntered or mouse hover events*.
 
-若要設定控制項以在控制項取得焦點時播放 **Focus** 音效，請呼叫︰
+To set up a control to play the **Focus** sound when your control receives focus, call:
 
-&lt;ElementFocus1.mp3 音效剪輯在此&gt;
+<ElementFocus1.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
-### 循環播放焦點音效
+### Cycling Focus Sounds
 
-音效系統預設會在每個瀏覽觸發程序循環播放 4 個不同的音效，這是呼叫 **ElementSound.Focus** 的新增功能。 這表示任意兩個焦點音效不會彼此接連播放。
+As an added feature to calling **ElementSound.Focus**, the sound system will, by default, cycle through 4 different sounds on each navigation trigger. Meaning that no two exact focus sounds will play right after the other.
 
-此循環功能背後的目的是為了避免焦點音效變單調，以及避免無法引起使用者的注意；焦點音效將會最常播放，因此應該最為精緻。
+The purpose behind this cycling feature is to keep the focus sounds from becoming monotonous and from being noticeable by the user; focus sounds will be played most often and therefore should be the most subtle.
 
-## 相關文章
+## Related articles
 
-* [針對 Xbox 和電視進行設計](http://go.microsoft.com/fwlink/?LinkId=760736)
+* [Designing for Xbox and TV](http://go.microsoft.com/fwlink/?LinkId=760736)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

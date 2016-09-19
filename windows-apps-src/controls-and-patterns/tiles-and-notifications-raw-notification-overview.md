@@ -1,124 +1,124 @@
 ---
 author: mijacobs
-Description: "原始通知是簡短、一般用途的推播通知。"
-title: "原始通知概觀"
+Description: Raw notifications are short, general purpose push notifications.
+title: Raw notification overview
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 ---
-
-# 原始通知概觀
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Raw notification overview
 
 
 
-原始通知是簡短、一般用途的推播通知。 它們只是指示，不會包含 UI 元件。 正如其他推播通知一樣，Windows 推播通知服務 (WNS) 功能會將原始通知從雲端服務傳送到應用程式。
-
-您可以將原始通知用於各種用途，包括觸發您的應用程式執行背景工作 (如果使用者授與應用程式執行背景工作的權限)。 使用 WNS 與 app 通訊可以避免建立持續通訊端連線、傳送 HTTP GET 訊息以及其他服務對 app 連線的額外負荷。
-
-**重要：**若要了解原始通知，請務必熟悉 [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)中討論的概念。
-
- 
-
-至於使用快顯通知、磚及徽章推播通知時，原始通知是從您 app 的雲端服務透過指派的通道統一資源識別元 (URI) 推播至 WNS。 然後，WNS 再將通知傳遞至與該通道關聯的裝置和使用者帳戶。 和其他推播通知不同的是，原始通知沒有特定的格式。 裝載的內容完全由 app 定義。
-
-為了說明 app 如何從原始通知獲益，讓我們看看虛構的文件協作 app。 假設有兩個使用者在同一個時間編輯同一份文件。 裝載共用文件的雲端服務，可以在其中一位使用者變更文件時使用原始通知來通知另一位使用者。 原始通知不一定會包含對文件所做的變更，但是會通知每個使用者應用程式連絡中央位置並同步可用的變更。 使用原始通知，應用程式及其雲端服務可以免去文件開啟期間持續保持連線的額外負荷。
-
-## <span id="How_raw_notifications_work"></span><span id="how_raw_notifications_work"></span><span id="HOW_RAW_NOTIFICATIONS_WORK"></span>原始通知的運作方式
 
 
-所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
+Raw notifications are short, general purpose push notifications. They are strictly instructional and do not include a UI component. As with other push notifications, the Windows Push Notification Services (WNS) feature delivers raw notifications from your cloud service to your app.
 
--   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能]**** 索引標籤下找到此 [網際網路 (用戶端)]**** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)。
+You can use raw notifications for a variety of purposes, including to trigger your app to run a background task if the user has given the app permission to do so. By using WNS to communicate with your app, you can avoid the processing overhead of creating persistent socket connections, sending HTTP GET messages, and other service-to-app connections.
 
-通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
-
-如果用戶端處於離線狀態，只有通知中包含 [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) 標頭時，WNS 才會快取原始通知。 不過，只會快取一個原始通知，並在裝置恢復連線狀態後進行傳送。
-
-在用戶端上原始通知只能使用三種可能的途徑進行傳送：透過通知傳送事件傳送到正在執行的應用程式、傳送到背景工作或捨棄。 所以，如果用戶端處於離線狀態且 WNS 嘗試傳送原始通知，則會捨棄通知。
-
-## <span id="Creating_a_raw_notification"></span><span id="creating_a_raw_notification"></span><span id="CREATING_A_RAW_NOTIFICATION"></span>建立原始通知
-
-
-傳送原始通知的方式與傳送磚、快顯通知或徽章推播通知類似，但是有一些差異：
-
--   HTTP Content-Type 標頭必須設定為 "application/octet-stream"。
--   HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) 標頭必須設定為 "wns/raw"。
--   通知本文可以包含小於 5 KB 的任何字串裝載。
-
-原始通知旨在做為可觸發應用程式採取動作的簡短訊息，例如直接連線服務以同步較大量的資料或根據通知內容修改本機狀態。 請注意，WNS 推播通知不保證一定能傳送，所以您的應用程式和雲端服務必須考慮原始通知可能不會送達用戶端的可能性，例如用戶端處於離線狀態時。
-
-如需傳送推播通知的詳細資訊，請參閱[快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
-
-## <span id="Receiving_a_raw_notification"></span><span id="receiving_a_raw_notification"></span><span id="RECEIVING_A_RAW_NOTIFICATION"></span>接收原始通知
-
-
-App 有兩個管道可以接收原始通知：
-
--   在應用程式執行時透過[通知傳送事件](#notification_delivery_events)接收。
--   如果 app 能夠執行背景工作，透過[原始通知觸發的背景工作](#bg_tasks)接收。
-
-應用程式可以使用這兩種機制來接收原始通知。 如果應用程式同時實作通知傳送事件處理常式以及由原始通知觸發的背景工作，則應用程式執行時會優先使用通知傳送事件。
-
--   如果應用程式正在執行，通知傳送事件會優先於背景工作，讓應用程式能夠儘速處理通知。
--   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到 app 的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
-
-### <span id="notification_delivery_events"></span><span id="NOTIFICATION_DELIVERY_EVENTS"></span>通知傳送事件
-
-您的 app 可以使用通知傳送事件 ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) 在 app 使用中時接收原始通知。 當雲端服務傳送原始通知的時候，正在執行的應用程式可以在通道 URI 上處理通知傳送事件來接收通知。
-
-如果 app 沒有執行，也沒有使用[背景工作](#bg_tasks)，那麼傳送到該 app 的任何原始通知，都會在收到後遭 WNS 捨棄。 為了避免浪費雲端服務的資源，您應該考慮在服務實作邏輯，以追蹤應用程式是否正在使用中。 可以從兩個來源獲得這個資訊：應用程式可以明確告訴服務它已準備好開始接收通知，以及 WNS 可以告訴服務何時停止。
-
--   **App 通知雲端服務**：App 可以連絡服務，讓它知道 app 正在前景執行。 這種方式的缺點是應用程式可能會非常頻繁地連絡服務。 不過，它的優點是服務永遠可以知道應用程式何時準備好接收傳入的原始通知。 另一個優點是當應用程式連絡服務時，服務會知道要將原始通知傳送到該應用程式的特定執行個體而不是使用廣播。
--   **雲端服務回應 WNS 回應訊息**：App 服務可以使用 WNS 傳回的 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 與 [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) 資訊，判斷何時停止傳送原始通知給 app。 服務以 HTTP POST 的形式將通知傳送到通道時，它可以在回應中接收下列其中一種訊息：
-
-    -   **X-WNS-NotificationStatus: dropped**：這表示用戶端沒有接收到通知。 因此可以大膽假設收到 **dropped** 回應的原因是由於您的 app 已不在使用者裝置的前景執行。
-    -   **X-WNS-DeviceConnectionStatus: disconnected** 或 **X-WNS-DeviceConnectionStatus: tempconnected**：這表示 Windows 用戶端與 WNS 中斷連線。 請注意，若要從 WNS 接收這個訊息，您必須在通知的 HTTP POST 中設定 [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) 標頭來要求該訊息。
-
-    應用程式的雲端服務可以使用這些狀態訊息中的資訊，停止使用原始通知進行通訊。 當應用程式回到前景並連線服務時，服務就可以繼續傳送原始通知。
-
-    請注意，您不應該依賴 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 來判斷通知是否已經成功傳送到用戶端。
-
-    如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
-
-### <span id="bg_tasks"></span><span id="BG_TASKS"></span>原始通知觸發的背景工作
-
-**重要：**使用原始通知背景工作之前，必須透過 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 授與 App 背景存取權限。
+**Important**   To understand raw notifications, it's best to be familiar with the concepts discussed in the [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
 
  
 
-您的背景工作必須使用 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 進行登錄。 如果沒有登錄，收到原始通知時將不會執行工作。
+As with toast, tile, and badge push notifications, a raw notification is pushed from your app's cloud service over an assigned channel Uniform Resource Identifier (URI) to WNS. WNS, in turn, delivers the notification to the device and user account associated with that channel. Unlike other push notifications, raw notifications don't have a specified format. The content of the payload is entirely app-defined.
 
-原始通知觸發的背景工作，能夠讓應用程式的雲端服務連絡應用程式，即使沒有執行應用程式也一樣 (儘管可能會觸發應用程式執行)。 應用程式不需要持續保持連線。 原始通知是唯一可以觸發背景工作的通知類型。 不過，雖然快顯通知、磚及徽章推播通知無法觸發背景工作，但是原始通知觸發的背景工作可以透過本機 API 呼叫來更新磚及叫用快顯通知。
+As an illustration of an app that could benefit from raw notifications, let's look at a theoretical document collaboration app. Consider two users who are editing the same document at the same time. The cloud service, which hosts the shared document, could use raw notifications to notify each user when changes are made by the other user. The raw notifications would not necessarily contain the changes to the document, but instead would signal each user's copy of the app to contact the central location and sync the available changes. By using raw notifications, the app and the its cloud service can save the overhead of maintaining persistent connections the entire time the document is open.
 
-為了說明原始通知如何觸發背景工作，讓我們看看用來閱讀電子書的應用程式。 首先，使用者可能使用其他裝置在線上購買一本書。 應用程式雲端服務的回應是傳送原始通知給使用者的每個裝置，其中包含說明已購買書籍，且應用程式應下載該書籍的裝載。 接著，應用程式會直接連絡應用程式的雲端服務，開始在背景下載這本新書，如此一來，當使用者啟動應用程式時，這本書就會已經在裝置中，而且可以隨時閱讀。
-
-若要使用原始通知觸發背景工作，您的 app 必須：
-
-1.  使用 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 要求在背景執行工作的權限 (使用者可隨時撤銷)。
-2.  實作背景工作。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/library/windows/apps/hh977046)
-
-之後，每次收到 app 的原始通知時，就會叫用背景工作來回應 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)。 背景工作會轉譯原始通知的應用程式特定裝載，並據此採取動作。
-
-每個應用程式一次只能執行一個背景工作。 如果對已經執行背景工作的應用程式觸發背景工作，必須先完成第一個背景工作，才能執行新的工作。
-
-## <span id="Other_resources"></span><span id="other_resources"></span><span id="OTHER_RESOURCES"></span>其他資源
+## How raw notifications work
 
 
-若要深入了解，您可以下載適用於 Windows 8.1 的[原始通知範例](http://go.microsoft.com/fwlink/p/?linkid=241553)和適用於 Windows 8.1 的[推播與定期通知範例](http://go.microsoft.com/fwlink/p/?LinkId=231476)，並在 Windows 10 App 中重複使用其原始程式碼。
+All raw notifications are push notifications. Therefore, the setup required to send and receive push notifications applies to raw notifications as well:
 
-## <span id="related_topics"></span>相關主題
+-   You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412).
+-   You must include the **Internet** capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**. For more information, see [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422).
+
+The body of the notification is in an app-defined format. The client receives the data as a null-terminated string (**HSTRING**) that only needs to be understood by the app.
+
+If the client is offline, raw notifications will be cached by WNS only if the [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) header is included in the notification. However, only one raw notification will be cached and delivered once the device comes back online.
+
+There are only three possible paths for a raw notification to take on the client: they will be delivered to your running app through a notification delivery event, sent to a background task, or dropped. Therefore, if the client is offline and WNS attempts to deliver a raw notification, the notification is dropped.
+
+## Creating a raw notification
 
 
-* [原始通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [快速入門：建立和登錄原始通知背景工作](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [快速入門：攔截執行中應用程式的推播通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
+Sending a raw notification is similar to sending a tile, toast, or badge push notification, with these differences:
+
+-   The HTTP Content-Type header must be set to "application/octet-stream".
+-   The HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) header must be set to "wns/raw".
+-   The notification body can contain any string payload smaller than 5 KB in size.
+
+Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content. Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.
+
+For more information on sending push notifications, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
+
+## Receiving a raw notification
+
+
+There are two avenues through which your app can be receive raw notifications:
+
+-   Through [notification delivery events](#notification_delivery_events) while your application is running.
+-   Through [background tasks triggered by the raw notification](#bg_tasks) if your app is enabled to run background tasks.
+
+An app can use both mechanisms to receive raw notifications. If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.
+
+-   If the app is running, the notification delivery event will take priority over the background task and the app will have the first opportunity to process the notification.
+-   The notification delivery event handler can specify, by setting the event's [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) property to **true**, that the raw notification should not be passed to its background task once the handler exits. If the **Cancel** property is set to **false** or is not set (the default value is **false**), the raw notification will trigger the background task after the notification delivery event handler has done its work.
+
+### Notification delivery events
+
+Your app can use a notification delivery event ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.
+
+If your app is not running and does not use [background tasks](#bg_tasks), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
+
+-   **The app notifies the cloud service**: The app can contact its service to let it know that the app is running in the foreground. The disadvantage of this approach is that the app can end up contacting your service very frequently. However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications. Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.
+-   **The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) and [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:
+
+    -   **X-WNS-NotificationStatus: dropped**: This indicates that the notification was not received by the client. It's a safe assumption that the **dropped** response is caused by your app no longer being in the foreground on the user's device.
+    -   **X-WNS-DeviceConnectionStatus: disconnected** or **X-WNS-DeviceConnectionStatus: tempconnected**: This indicates that the Windows client no longer has a connection to WNS. Note that to receive this message from WNS, you have to ask for it by setting the [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) header in the notification's HTTP POST.
+
+    Your app's cloud service can use the information in these status messages to cease communication attempts through raw notifications. The service can resume sending raw notifications once it is contacted by the app, when the app switches back into the foreground.
+
+    Note that you should not rely on [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) to determine whether the notification was successfully delivered to the client.
+
+    For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
+
+### Background tasks triggered by raw notifications
+
+**Important**   Before using raw notification background tasks, an app must be granted background access via [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+
+ 
+
+Your background task must be registered with a [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). If it is not registered, the task will not run when a raw notification is received.
+
+A background task that is triggered by a raw notification enables your app's cloud service to contact your app, even when the app is not running (though it might trigger it to run). This happens without the app having to maintain a continuous connection. Raw notifications are the only notification type that can trigger background tasks. However, while toast, tile, and badge push notifications cannot trigger background tasks, background tasks triggered by raw notifications can update tiles and invoke toast notifications through local API calls.
+
+As an illustration of how background tasks that are triggered by raw notifications work, let's consider an app used to read e-books. First, a user purchases a book online, possibly on another device. In response, the app's cloud service can send a raw notification to each of the user's devices, with a payload that states that the book was purchased and the app should download it. The app then directly contacts the app's cloud service to begin a background download of the new book so that later, when the user launches the app, the book is already there and ready for reading.
+
+To use a raw notification to trigger a background task, your app must:
+
+1.  Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+2.  Implement the background task. For more information, see [Supporting your app with background tasks](https://msdn.microsoft.com/library/windows/apps/hh977046)
+
+Your background task is then invoked in response to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.
+
+For each app, only one background task can run at a time. If a background task is triggered for an app for which a background task is already running, the first background task must complete before the new one is run.
+
+## Other resources
+
+
+You can learn more by downloading the [Raw notifications sample](http://go.microsoft.com/fwlink/p/?linkid=241553) for Windows 8.1, and the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?LinkId=231476) for Windows 8.1, and re-using their source code in your Windows 10 app.
+
+## Related topics
+
+
+* [Guidelines for raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761463)
+* [Quickstart: Creating and registering a raw notification background task](https://msdn.microsoft.com/library/windows/apps/jj676800)
+* [Quickstart: Intercepting push notifications for running apps](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://msdn.microsoft.com/library/windows/apps/br241304)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)
  
@@ -131,6 +131,6 @@ App 有兩個管道可以接收原始通知：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

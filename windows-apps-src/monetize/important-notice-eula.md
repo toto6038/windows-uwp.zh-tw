@@ -1,35 +1,35 @@
 ---
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
-description: "完整閱讀使用者授權合約 (EULA) 以了解重要資訊。"
-title: "重要須知 - EULA"
+description: Read the end user license agreement (EULA) in its entirety for important information.
+title: Important Notice - EULA
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1482450a8e5039ffd61a90f7cd38738115c5f2f0
 
 ---
 
-# 重要須知 - EULA
+# Important Notice - EULA
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-完整閱讀使用者授權合約 (EULA)。
 
-EULA 中的重要資訊包括當您的 App 使用廣告時，**必須出現在您自有隱私權原則和/或其他使用規定中的文字**。 請確定您的 App 遵循 EULA 中的各節，包括和＜轉散發需求＞****、＜資料收集＞****和＜使用及其他合約＞****相關的小節。
+Read the end user license agreement (EULA) in its entirety.
 
-EULA 位於擴充功能 SDK 所在的資料夾中。 視您安裝時選擇的選項，資料夾的位置可能會有所不同。 預設的安裝路徑是 C:\\Program Files (x86)\\Microsoft SDKs\\Windows Kits\\10\\ExtensionSDKs\\Microsoft.AdMediator.Universal\\1.0。
+The EULA contains important information **including text that must appear within your own privacy policy and/or terms of use statement** when your app uses advertising. Make sure your app complies with all sections of the EULA, including those related to **Redistribution Requirements**, **Data Collection** and **Use and Additional Agreements**.
 
-## 相關主題
+The EULA can be found in the folder where your Extension SDKs are located. Your folder may be different depending on the options you chose during installation. The default installation path is C:\\Program Files (x86)\\Microsoft SDKs\\Windows Kits\\10\\ExtensionSDKs\\Microsoft.AdMediator.Universal\\1.0.
 
-[提交包含廣告的 App 到 Windows 市集](submit-an-app-with-ads-to-the-windows-store.md)
+## Related topics
 
- 
+[Submit an app with ads to the Windows Store](submit-an-app-with-ads-to-the-windows-store.md)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

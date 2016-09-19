@@ -1,56 +1,56 @@
 ---
 author: jnHs
-Description: "如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的 Qpp 包含在其映像中。"
-title: "針對 OEM 產生預先安裝套件"
+Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages that an OEM can use to include your app in their image.
+title: Generate preinstall packages for OEMs
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dba1c1f754b4200bd00395e0b71d18bee30e3a2d
+ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
 
 ---
 
-# 針對 OEM 產生預先安裝套件
+# Generate preinstall packages for OEMs
 
 
-如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的 app 包含在其映像中。 只有在 OEM 贊助的開發人員帳戶上才會啟用預先安裝權限。
+If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages that an OEM can use to include your app in their image. Preinstall permissions are only enabled on developer accounts that are sponsored by OEMs.
 
-## 重要的預先安裝原則與限制
-
-
-預先安裝 app 必須透過 Windows 開發人員中心認證，才能擁有最新的市集授權，app 才能連線到市集接收 app 更新。
-
-已經預先安裝的所有 app 在所有市場都必須維持免費。
-
-## 產生預先安裝套件
+## Important preinstall policy & limitations
 
 
-在使用預先安裝權限啟用帳戶之後，請完成以下步驟：
+Preinstall apps must be certified through Windows Dev Center to have the latest Store license so that they are able to connect to the Store and receive app updates.
 
-1.  在儀表板中，瀏覽至要預先安裝的 app。
-2.  在左瀏覽功能表中，展開 [App 管理]****，然後按一下 [目前的套件]****。
-3.  在 [索取作業系統預先安裝的套件]**** 區段中，按一下 [啟用可下載套件]****。
-4.  此時會出現一個確認對話方塊，告知在 Windows 10 之前作業系統上預先安裝的 app 必須是免費的。 選取 [啟用]****。
-5.  尋找您要下載的套件，然後按一下適當的 [**產生套件**] 連結。
-    > **注意** 預先安裝套件的產生時間將會隨著已選取套件的大小而有所不同。 您可以先離開此頁面並於稍後再回來，或是讓此頁面保持開啟狀態。
-6.  套件產生之後，將會出現一個指向 [下載套件]**** 的連結。 按一下此連結可下載 .zip 檔案。
+Any app that is already preinstalled must be and remain free in all markets.
 
-接著，您可以將此 .zip 檔案提供給 OEM，以便包含在其作業系統映像中。
-
-## 支援
+## Generating preinstall packages
 
 
-如果您對於產生預先安裝套件有其他疑問，請寄送電子郵件到 <partnerops@microsoft.com>。
+Once an account has been enabled with preinstall permissions, complete the following steps:
 
- 
+1.  In your dashboard, navigate to the app that is to be preinstalled.
+2.  In the left navigation menu, expand **App management** and then click **Current packages**.
+3.  In the **Request packages for OS preinstallation** section, click **Enable downloadable packages**.
+4.  A confirmation dialog will appear, noting that apps preinstalled on an OS prior to Windows 10 must be free. Select **Enable.**
+5.  Find the package that you want to download, and click the appropriate **Generate package** link.
+    > **Note**  Generation time for preinstall packages will vary depending on the size of the package you have selected. You can leave this page and come back later, or leave the page open.
+6.  When the package has been generated, a link to **Download package** will appear. Click this link to download the .zip file.
+
+You can then provide this .zip file to the OEM for inclusion in their OS image.
+
+## Support
+
+
+If you have further questions about generating preinstall packages, please email <partnerops@microsoft.com>.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

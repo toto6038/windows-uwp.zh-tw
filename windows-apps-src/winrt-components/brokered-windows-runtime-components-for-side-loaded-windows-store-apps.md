@@ -1,74 +1,74 @@
 ---
 author: msatranjr
-title: "Windows 執行階段元件"
-description: "本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+title: Windows Runtime components
+description: This paper discusses an enterprise-targeted feature supported by Windows 10, which allows touch-friendly .NET apps to use the existing code responsible for key business-critical operations.
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
+ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
+ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
 
 ---
 
-#側載 Windows 市集應用程式的代理 Windows 執行階段元件
+#Brokered Windows Runtime Components for a side-loaded Windows Store app
 
-本文章討論 Windows 10 所支援的企業導向功能，該功能允許方便觸控的 .NET 應用程式可使用負責重要業務關鍵作業的現有程式碼。
+This article discusses an enterprise-targeted feature supported by Windows 10, which allows touch-friendly .NET apps to use the existing code responsible for key business-critical operations.
 
-##簡介
+##Introduction
 
->**注意** 這份白皮書隨附的範例程式碼可能會[從這個位置下載](http://go.microsoft.com/fwlink/p/?LinkID=393655)，而用來建置代理 Windows 執行階段元件的 Microsoft Visual Studio 範本可以於此處下載：[以適用於 Windows 10 的通用 Windows 應用程式為目標的 Visual Studio 2015 範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Note**  The sample code that accompanies this paper may be [downloaded from this location](http://go.microsoft.com/fwlink/p/?LinkID=393655), and Microsoft Visual Studio template to build Brokered Windows Runtime Component can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows 10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
-Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 Windows 執行階段元件*。 我們使用 IPC (處理程序間通訊) 一詞來說明在一個處理程序 (桌面元件) 執行現有桌面軟體資產，同時在 UWP App 中與此程式碼進行互動的能力。 這對企業開發人員來說是很熟悉的模型，因為資料庫應用程式和使用 Windows NT 服務的應用程式共用很類似的多個處理程序架構。
+Windows includes a new feature called *Brokered Windows Runtime Components for side-loaded applications*. We use the term IPC (inter-process communication) to describe the ability to run existing desktop software assets in one process (desktop component) while interacting with this code in a UWP App. This is a familiar model to enterprise developers as database applications and applications utilizing NT Services in Windows share a similar multi-process architecture.
 
-應用程式側載是這個功能很重要的元件。
-企業特定應用程式在一般消費者 Windows 市集中沒有市場，而且公司對安全性、隱私權、發佈、設定和服務有非常特定的需求。 因此，側載模型不但是使用此功能之人員的必要項目，也是重要的實作詳細資料。
+Side-loading of the app is a critical component of this feature.
+Enterprise-specific applications have no place in the general consumer Windows Store and corporations have very specific requirements around security, privacy, distribution, setup, and servicing. As such, the side-loading model is both a requirement of those who would use this feature and a critical implementation detail.
 
-以資料為中心的應用程式是這個應用程式架構的主要對象。 例如，它預想隱藏在 SQL Server 的現有商業規則，將成為桌面元件很常見的一部分。 這當然不是桌面元件唯一可以提供的功能類型，但這個功能很大一部分需求與現有資料和商務邏輯有關。
+Data-centric applications are a key target for this application architecture. It is envisioned that existing business rules ensconced, for example, in SQL Server, will be a common part of the desktop component. This is certainly not the only type of functionality that can be proffered by the desktop component, but a large part of the demand for this feature is related to existing data and business logic.
 
-最後，由於企業開發大量使用 .NET 執行階段和 C# 語言，這個功能的開發著重在 Windows 市集應用程式和桌面元件端使用 .NET。 雖然 Windows 市集應用程式可以使用其他語言和執行階段，隨附的範例只說明 C\#，而僅限於 .NET 執行階段。
+Lastly, given the overwhelming penetration of the .NET runtime and the C\# language in enterprise development, this feature was developed with an emphasis on using .NET for both the Windows Store app and the desktop component sides. While there are other languages and runtimes possible for the Windows Store app, the accompanying sample only illustrates C\#, and is restricted to the .NET runtime exclusively.
 
-##應用程式元件
+##Application components
 
->**注意** 這項功能是專門針對 .NET 的使用。 用戶端應用程式和桌面元件都必須使用 .NET 撰寫。
+>**Note**  This feature is exclusively for the use of .NET. Both client app and the desktop component must be authored using .NET.
 
-**應用程式模型**
+**Application model**
 
-這個功能是以一般應用程式架構所建置，該架構稱為 MVVM (模型檢視檢視模型)。 因此，它假設「模型」完全位於桌面元件中。 所以，您可以立即確定桌面元件將會是「無周邊」(也就是，不包含 UI)。 檢視將會整個包含在側載企業應用程式中。 雖然此應用程式沒有規定一定要使用「檢視模型」建構，但我們預期以後這個模式將會很普遍的使用。
+This feature is built around the general application architecture known as MVVM (Model View View-Model). As such, it is assumed that the "model" is housed entirely in the desktop component. Therefore, it should be immediately obvious that the desktop component will be "headless" (i.e. contains no UI). The view will be entirely contained in the side-loaded enterprise application. While there is no requirement that this application be built with the "view-model" construct, we anticipate that usage of this pattern will be common.
 
-**桌面元件**
+**Desktop component**
 
-這個功能中的桌面元件是這個功能引進的新應用程式類型。 這個桌面元件只能使用 C\# 撰寫且必須以適用於 Windows 10 的 .NET 4.6 或更高版本為目標。 這個專案類型混合了以 UWP 為目標的 CLR，因為處理程序間通訊格式是由 UWP 類型和類別所組成，而且桌面元件可呼叫 .NET 執行階段類別庫的所有部分。 對 Visual Studio 專案產生的影響將會在稍後詳細討論。 這種混合式設定可在桌面元件上建置的應用程式間封送處理 UWP 類型，同時可以在桌面元件實作內呼叫桌面 CLR 程式碼。
+The desktop component in this feature is a new application type being introduced as part of this feature. This desktop component can only be written in C\# and must target .NET 4.6 or greater for Windows 10. The project type is a hybrid between the CLR targeting UWP as the inter-process communication format comprises UWP types and classes, while the desktop component is allowed to call all parts of the .NET runtime class library. The impact on the Visual Studio project will be described in detail later. This hybrid configuration allows marshaling UWP types between the application built on the desktop components while allowing desktop CLR code to be called inside the desktop component implementation.
 
-**協定**
+**Contract**
 
-我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這包括宣告可代表 UWP 的一或多個 C\# 類別。 如需使用 C\# 建立 Windows 執行階段類別的特定需求，請參閱 MSDN 主題[以 C\# 和 Visual Basic 建立 Windows 執行階段元件](https://msdn.microsoft.com/en-us/library/br230301.aspx)。
+The contract between the side-loaded application and the desktop component is described in terms of the UWP type system. This involves declaring one or more C\# classes that can represent a UWP. See MSDN topic [Creating Windows Runtime Components in C\# and Visual Basic](https://msdn.microsoft.com/library/br230301.aspx) for specific requirement of creating Windows Runtime Class using C\#.
 
->**注意** 目前在桌面元件和側載應用程式之間的 Windows 執行階段元件協定中不支援列舉。
+>**Note**  Enums are not supported in the Windows Runtime Components Contract between desktop component and side-loaded application at this time.
 
-**側載應用程式**
+**Side-loaded application**
 
-側載應用程式與一般 UWP app 一樣，除了一個地方不同：它使用側載而不是透過 Windows 市集安裝。 大部分的安裝機制都相同：資訊清單和應用程式封裝都很類似 (資訊清單還有一個相似處將在稍後詳細說明)。 一旦啟用側載，一個簡單的 PowerShell 指令碼就可以安裝所需的憑證和應用程式本身。 一般最佳做法是讓側載應用程式通過 Visual Studio [專案/市集] 功能表內含的 WACK 認證測試。
+The side-loaded application is a normal UWP app in every respect except one: it is side-loaded instead of installed via the Windows Store. Most of the installation mechanisms are identical: the manifest and application packaging are similar (one addition to the manifest is described in detail later). Once side-loading is enabled, a simple PowerShell script can install the necessary certificates and the application itself. It is the normal best practice that the side-loaded application passes the WACK certification test that is included in the Project / Store menu in Visual Studio
 
->**注意** 側載可以在 [設定] -&gt; [更新與安全性] -&gt;
- [適用於開發人員] 中開啟。
+>**Note** Side-loading can be turned on in Settings-&gt; Update & security -&gt;
+For developers.
 
-請特別注意，Windows10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
-側載應用程式可以是 64 位元 (前提是要同時登錄 64 位元和 32 位元 Proxy)，但這不常見。 建置使用 C\# 的側載應用程式時，使用一般「中性」設定和「建議使用 32 位元」預設值就能建立 32 位元的側載應用程式。
+One important point to note is that the App Broker mechanism shipped as part of Windows 10 is 32-bit only. The desktop component must be 32-bit.
+Side-loaded applications can be 64-bit (provided there is both a 64-bit and 32-bit proxies registered), but this will be atypical. Building the side-loaded application in C\# using the normal "neutral" configuration and the "prefer 32-bit" default naturally creates 32-bit side-loaded applications.
 
-**伺服器執行個體和 AppDomain**
+**Server instancing and AppDomains**
 
-每個側載應用程式都會收到自己的應用程式代理人伺服器執行個體 (也就是「多重執行個體」)。 伺服器程式碼在單一 AppDomain 中執行。 這可讓多個版本的程式庫在獨立的執行個體中執行。 例如，應用程式 A 需要 V1.1 版本的元件，而應用程式 B 需要 V2 版本。 將 V1.1 版本和 V2 版本的元件放在獨立的伺服器目錄，然後把應用程式指向支援正確版本的伺服器，將這兩者完全分開。
+Each sided-loaded application receives its own instance of an App Broker server (so-called "multi-instancing"). The server code runs inside of a single AppDomain. This allows for having multiple version of libraries run in separate instances. For example, application A needs V1.1 of a component and application B needs V2. These are cleanly separated by having V1.1 and V2 components in separate server directories and pointing the application to whichever server supports the correct version desired.
 
-把多個應用程式指向相同的伺服器目錄，可以在多個應用程式代理人伺服器執行個體間共用伺服器程式碼實作。 雖然仍然有多個應用程式代理人伺服器執行個體，但會執行相同的程式碼。 在單一應用程式使用的所有實作元件都應該在相同的路徑中。
+Server code implementation can be shared amongst multiple App Broker server instance by pointing multiple applications to the same server directory. There will still be multiple instances of the App Broker server but they will be running identical code. All implementation components used in a single application should be present in the same path.
 
-##定義協定
+##Defining the contract
 
-使用這個功能建立應用程式的第一個步驟是，建立側載應用程式和桌面元件間的協定。 這只能使用 Windows 執行階段類型來完成。
-幸好這些可以使用 C\# 類別來輕鬆宣告。 不過，定義這些交談時，需要考量一些重要的效能問題，這會在稍後的章節中討論。
+The first step in creating an application using this feature is to create the contract between the side-loaded application and the desktop component. This must be done exclusively using Windows Runtime types.
+Fortunately, these are easy to declare using C\# classes. There are important performance considerations, however, when defining these conversations, which is covered in a later section.
 
-定義協定的順序如下所示：
+The sequence to define the contract is introduced as following:
 
-**步驟 1：**在 Visual Studio 中建立新類別程式庫。 請確定使用「類別程式庫」範本而非 Windows 執行階段元件範本建立專案
+**Step 1:** Create a new class library in Visual Studio. Make sure to create the project using Class Library template not Windows Runtime Component template
 
-之後明顯會有實作，但本節只涵蓋定義處理程序間協定。 隨附的範例包含下列類別 (EnterpriseServer.cs)，雛型看起來像這樣：
+An implementation obviously follows, but this section is only covering the definition of the inter-process contract. The accompanying sample includes the following class (EnterpriseServer.cs), the beginning shape of which looks like:
 
 ```csharp
 namespace Fabrikam
@@ -96,21 +96,21 @@ namespace Fabrikam
 }
 ```
 
-這會定義可以從側載應用程式具現化的類別 "EnterpriseServer"。 這個類別提供 RuntimeClass 中承諾的功能。 RuntimeClass 可以用來產生側載應用程式中會包含的參考 winmd。
+This defines a class "EnterpriseServer" that can be instantiated from the side-loaded application. This class provides the functionality promised in the RuntimeClass. The RuntimeClass can be used to generate the reference winmd that will be included in the side-loaded application.
 
-**步驟 2：**以手動方式編輯專案檔案將專案的輸出類型變更為 Windows 執行階段元件
+**Step 2:** Edit the project file manually to change the output type of project to Windows Runtime Component
 
-若要在 Visual Studio 中這麼做，在剛建立的專案上按一下滑鼠右鍵並選取 [卸載專案]，然後再按一下滑鼠右鍵並選取 [編輯 EnterpriseServer.csproj] 以開啟專案檔案 (XML 檔案) 來進行編輯。
+To do this in Visual Studio, right click on the newly created project and select “Unload Project”, then right click again and select “Edit EnterpriseServer.csproj” to open the project file, an XML file, for editing.
 
-在開啟的檔案中，搜尋 <OutputType> 標記，並將其值變更為 "winmdobj"。
+In the opened file, search for the <OutputType> tag and change its value to “winmdobj”.
 
-**步驟 4：**建立建置規則，以建立 "reference" Windows 中繼資料檔案 (.winmd 檔案)。 也就是有沒有實作。
+**Step 4:** Create a build rule that creates a "reference" Windows metadata file (.winmd file). i.e. has no implementation.
 
-**步驟 5：**建立建置規則，以建立 "implementation" Windows 中繼資料檔案，也就是有相同的中繼資料資訊，但也包含實作。
+**Step 5:** Create a build rule that creates an "implementation" Windows metadata file, i.e. has the same metadata information, but also includes the implementation.
 
-這會由下列指令碼完成。 在專案中的**Properties** > **Build Events**，將指令碼新增到建置後事件命令列
+This will is done by the following scripts. Add the scripts to the Post-build event command line, in project **Properties** > **Build Events**.
 
-> **注意** 根據您所針對的 Windows 版本 (Windows 10) 以及使用中的 Visual Studio 版本，指令碼會有所不同。
+> **Note** the script is different based on the version of Windows you are targeting (Windows 10) and the version of Visual Studio in use.
 
 ```cmd
 call "$(DevEnvDir)..\..\vc\vcvarsall.bat" x86 10.0.10240.0
@@ -134,10 +134,10 @@ midl /metadata_dir "%WindowsSdkDir%UnionMetadata" /iid "$(SolutionDir)SampleProx
 mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%WindowsSdkDir%UnionMetadata" -partial
 ```
 
-參考 **winmd** 建立後 (在專案的 [目標] 資料夾底下的 [參考] 資料夾中)，會帶到 (複製到) 每個使用的側載應用程式專案並加以參考。 下節會有更詳盡的說明。 上述建置規則內含的專案結構可確保實作和參考 **winmd** 會位在建置階層完全不同的目錄中，以避免混淆。
+Once the reference **winmd** is created (in folder “reference” under the project’s Target folder), it is hand carried (copied) to each consuming side-loaded application project and referenced. This will be described further in the next section. The project structure embodied in the build rules above ensure that the implementation and the reference **winmd** are in clearly segregated directories in the build hierarchy to avoid confusion.
 
-##側載應用程式詳細資料
-如上所述，側載應用程式的建置方式與任何其他 UWP app 相同，但還有一個額外的細節：在側載應用程式資訊清單中宣告 RuntimeClass 的可用性。 這可讓應用程式只要寫新項目就能存取桌面元件中的功能。 <Extension> 區段中的新資訊清單項目說明桌面元件中實作的 RuntimeClass，以及其所在位置的資訊。 在應用程式資訊清單中的這些宣告內容與針對 Windows 10 的 App 是相同的。 例如：
+##Side-loaded applications in detail
+As stated previously, the side-loaded application is built like any other UWP app, but there is one additional detail: declaring the availability of the RuntimeClass (es) in the side-loaded application's manifest. This allows the application to simply write new to access the functionality in the desktop component. A new manifest entry in the <Extension> section describes the RuntimeClass implemented in the desktop component and information on where it is located. These declaration content in application’s manifest is the same for apps targeting Windows 10. For example:
 
 ```XML
 <Extension Category="windows.activatableClass.inProcessServer">
@@ -150,24 +150,24 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 </Extension>
 ```
 
-類別是 inProcessServer，因為 outOfProcessServer 類別中有多個項目不適用於這個應用程式設定。 請注意，<Path> 元件一定要包含 clrhost.dll (不過，這**不是**強制性的，且指定不同的值將會以未定義的方式失敗)。
+The category is inProcessServer because there are several entries in the outOfProcessServer category that are not applicable to this application configuration. Note that the <Path> component must always contain clrhost.dll (however this is **not** enforced and specifying a different value will fail in undefined ways).
 
-<ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的元素，且屬性 Name="DesktopApplicationPath" 和 Type="string" 是強制且不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
+The <ActivatableClass> section is the same as a true in-process RuntimeClass preferred by a Windows Runtime component in the app's package. <ActivatableClassAttribute> is a new element, and the attributes Name="DesktopApplicationPath" and Type="string" are mandatory and invariant. The Value attribute points to the location where the desktop component's implementation winmd resides (more detail on this in the next section). Each RuntimeClass preferred by the desktop component should have its own <ActivatableClass> element tree. The ActivatableClassId must match the fully namespace-qualified name of the RuntimeClass.
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..]****  按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
+As mentioned in the section "Defining the contract", a project reference must be made to the desktop component's reference winmd. The Visual Studio project system normally creates a two level directory structure with the same name. In the sample it is EnterpriseIPCApplication\\EnterpriseIPCApplication. The reference **winmd** is manually copied to this second level directory and then the Project References dialog is used (click the **Browse..** button) to locate and reference this **winmd**. After this, the top level namespace of the desktop component (e.g. Fabrikam) should appear as a top level node in the References part of the project.
 
->**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
+>**Note** It is very important to use the **reference winmd** in the side-loaded application. If you accidentally carry over the **implementation winmd** to the side-loaded app directory and reference it, you will likely receive an error related to "cannot find IStringable". This is one sure sign that the wrong **winmd** has been referenced. The post-build rules in the IPC server app (detailed in the next section) carefully segregate these two **winmd** into separate directories.
 
-環境變數 (特別是 %ProgramFiles%) 僅能在 <ActivatableClassAttribute Value="path"> 中使用。如之前所述，應用程式代理人只支援 32 位元，因此若應用程式在 64 位元的作業系統上執行，%ProgramFiles% 會解析為 C:\Program Files (x86)。
+Environment variables (especially %ProgramFiles%) can be used in <ActivatableClassAttribute Value="path"> .As noted earlier, the App Broker only supports 32-bit so %ProgramFiles% will resolve to C:\\Program Files (x86) if the application is run on a 64-bit OS.
 
-##桌面 IPC 伺服器詳細資料
+##Desktop IPC server detail
 
-上面兩節說明類別宣告，以及將參考 **winmd** 傳輸到側載應用程式專案的機制。 剩下的大量桌面元件工作則牽涉到實作。 由於使用桌面元件的目的就是要能呼叫桌面程式碼 (通常用來重複使用現有的程式碼資產)，因此專案必須以特別的方式設定。
-一般而言，使用 .NET 的 Visual Studio 專案使用兩種「設定檔」的其中一種。
-一個用在桌面 (".NetFramework")，另一個用在 CLR (".NetCore") 的 UWP app 部分。 這個功能的桌面元件是這兩種的混合。 因此，建構參考區段時非常謹慎，以便將這兩種設定檔融合在一起。
+The previous two sections describe declaration of the class and the mechanics of transporting the reference **winmd** to the side-loaded application project. The bulk of the remaining work in the desktop component involves implementation. Since the whole point of the desktop component is to be able to call desktop code (usually to re-utilize existing code assets), the project must be configured in a special way.
+Normally, a Visual Studio project using .NET uses one of two "profiles".
+One is for desktop (".NetFramework") and one is targeting the UWP app portion of the CLR (".NetCore"). A desktop component in this feature is a hybrid between these two. As a result, the references section is very carefully constructed to blend these two profiles.
 
-一般 UWP app 專案不含明確的專案參考，因為隱含整個 Windows 執行個體 API 表面。
-通常只會進行其他專案間參考。 不過，桌面元件專案有一個非常特別的參考集。 它一開始是「傳統式桌面\\類別庫」專案，因此是桌面專案。 所以，必須明確參考 Windows 執行階段 API (透過參考 **winmd** 檔案)。 新增適當的參考，如下所示。
+A normal UWP app project contains no explicit project references because the entirety of the Windows Runtime API surface is implicitly included.
+Normally only other inter-project references are made. However, a desktop component project has a very special set of references. It starts life as a "Classic Desktop\\Class Library" project and therefore is a desktop project. So explicit references to the Windows Runtime API (via references to **winmd** files) must be made. Add proper references as shown below.
 
 ```XML
 <ItemGroup>
@@ -377,45 +377,45 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 ```
 
-上述參考非常謹慎地混合參考，對此混合式伺服器的正常運作非常重要。 通訊協定就是用來開啟 .csproj 檔案 (就像如何編輯專案 OutputType 中所述)，然後視需要新增這些參考。
+The references above are a careful mix of eferences that are critical to the proper operation of this hybrid server. The protocol is to open the .csproj file (as described in how to edit the project OutputType) and add these references as necessary.
 
-正確設定參考後，下一個工作是實作伺服器功能。 請參閱 MSDN 主題：[Windows 執行階段元件互通的最佳做法 (使用 C#/VB/C++ 和 XAML 的 Windows 市集應用程式)](https://msdn.microsoft.com/en-us/library/windows/apps/hh750311.aspx)。
-這項工作要建立 Windows 執行階段元件 dll，以便在實作時呼叫桌面程式碼。 隨附的範例包含 Windows 執行階段中使用的主要模式：
+Once the references are properly configured, the next task is to implement the server's functionality. See the MSDN topic [Best practices for interoperability with Windows Runtime Components (Windows Store apps using C\#/VB/C++ and XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+The task is to create a Windows Runtime component dll that is able to call desktop code as part of its implementation. The accompanying sample includes the major patterns used in Windows Runtime:
 
--   方法呼叫
+-   Method calls
 
--   桌面元件取得的 Windows 執行階段事件來源
+-   Windows Runtime Events sources by the desktop component
 
--   Windows 執行階段非同步作業
+-   Windows Runtime Async operations
 
--   傳回基本類型的陣列
+-   Returning arrays of basic types
 
-**安裝**
+**Install**
 
-若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 winmd**** 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與****可見例外狀況無關。
-如果因這個設定錯誤發生例外狀況，可能會以「無效的轉型」表示。
+To install the app, copy the implementation **winmd** to the correct directory specified in the associated side-loaded application's manifest: <ActivatableClassAttribute>'s Value="path". Also copy any associated support files and the proxy/stub dll (this latter detail is covered below). Failing to copy the implementation **winmd** to the server directory location will cause all of the side-loaded application's calls to new on the RuntimeClass will throw a "class not registered" error. Failure to install the proxy/stub (or failure to register) will cause all calls to fail with no return values. This latter error is frequently **not** associated with visible exceptions.
+If exceptions are observed due to this configuration error, they may refer to "invalid cast".
 
-**伺服器實作考量**
+**Server implementation considerations**
 
-桌面 Windows 執行階段伺服器可以想像成 "worker" 或 "task" 型。 傳入伺服器的每個呼叫會在非 UI 執行緒運作，且所有程式碼必須是多執行緒感知且是安全的。 側載應用程式中哪個部分呼叫伺服器功能也很重要。 在側載應用程式中務必一律禁止從任何 UI 執行緒呼叫長時間執行程式碼。 有兩個主要方法可以達到這個目的：
+The desktop Windows Runtime server can be thought of as "worker" or "task" based. Every call into the server operates on a non-UI thread and all code must be multi-thread aware and safe. Which part of the side-loaded application is calling the server's functionality is also important. It is critical to always avoid calling long-running code from any UI thread in the side-loaded application. There are two main ways to accomplish this:
 
-1.  如果從 UI 執行緒呼叫伺服器功能，一律使用伺服器公用介面區和實作中的非同步模式。
+1.  If calling server functionality from a UI thread, always use an async pattern in the server's public surface area and implementation.
 
-2.  在側載應用程式中，從背景執行緒呼叫伺服器功能。
+2.  Call the server's functionality from a background thread in the side-loaded application.
 
-**伺服器中的 Windows 執行階段非同步作業**
+**Windows Runtime async in the server**
 
-由於應用程式模型的跨處理程序特性，伺服器呼叫比使用只在同處理程序執行的程式碼負荷更重。 通常呼叫傳回記憶體值的簡單屬性很安全，因為執行速度夠快，所以不會有阻擋 UI 執行緒的問題。 不過，所有涉及任何 I/O 形式的呼叫 (這包含所有檔案處理和資料庫擷取) 都可能阻擋呼叫 UI 執行緒，導致應用程式因無回應而終止。 此外，基於效能的原因，不建議在這個應用程式架構呼叫物件上的屬性。
-下節將針對這個部分提供更詳盡的說明。
+Given the cross-process nature of the application model, calls to the server have more overhead than code that runs exclusively in-process. It is normally safe to call a simple property that returns an in-memory value because it will execute quickly enough that blocking the UI thread is not a concern. However, any call that involves I/O of any sort (this includes all file handling and database retrievals) can potentially block the calling UI thread and cause the application to be terminated due to unresponsiveness. In addition, property calls on objects are discouraged in this application architecture for performance reasons.
+This is covered in more depth in the following section.
 
-正確實作的伺服器通常會實作透過 Windows 執行階段非同步模式直接從 UI 執行緒進行的呼叫。 依照下列模式進行，可實作這個作業。 首先，宣告 (還是隨附的範例)：
+A properly implemented server will normally implement calls made directly from UI threads via the Windows Runtime async pattern. This can be implemented by following this pattern. First, the declaration (again, from the accompanying sample):
 
 ```csharp
 public IAsyncOperation<int> FindElementAsync(int input)
 ```
 
-這會宣告傳回整數的 Windows 執行階段非同步作業。
-非同步作業的實作通常以下列形式進行：
+This declares a Windows Runtime async operation that returns an integer.
+The implementation of the async operation normally takes the form:
 
 ```csharp
 return Task<int>.Run( () =>
@@ -426,7 +426,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**注意** 寫入實作時，等待一些其他可能的長時間執行作業是很常見的。 如果是這樣，需要宣告 **Task.Run** 程式碼：
+>**Note** It is common to await some other potentially long running operations while writing the implementation. If so, the **Task.Run** code needs to be declared:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -437,42 +437,42 @@ return Task<int>.Run(async () =>
 }).AsAsyncOperation<int>();
 ```
 
-這個非同步方法的用戶端可像等待任何其他 Windows 執行階段非同步作業一樣等待這個作業。
+Clients of this async method can await this operation like any other Windows Runtime aysnc operation.
 
-**從應用程式背景執行緒呼叫伺服器功能**
+**Call server functionality from an application background thread**
 
-由於用戶端和伺服器通常都是由同一個組織所撰寫，因此可以採用一種程式設計做法，也就是從側載應用程式中的背景執行緒進行所有伺服器呼叫。 背景執行緒可以發出從伺服器收集一或多個資料批次的直接呼叫。 擷取全部結果後，應用程式處理程序記憶體中的資料批次通常可以直接從 UI 執行緒擷取。 C\# 物件可在背景執行緒和 UI 執行緒間靈活運作，所以對這種類型的呼叫模式特別有用。
+Since it is typical that both client and server will be written by the same organization, a programming practice can be adopted that all calls to the server will be made by a background thread in the side-loaded application. A direct call that collects one or more batches of data from the server can be made from a background thread. When the result(s) are completely retrieved, the batch of data that is in-memory in the application process can usually be directly retrieved from the UI thread. C\# objects are naturally agile between background threads and UI threads so are especially useful for this kind of calling pattern.
 
-##建立和部署 Windows 執行階段 Proxy
+##Creating and deploying the Windows Runtime proxy
 
-由於 IPC 方法涉及在這兩個處理程序間封送處理 Windows 執行階段介面，因此必須使用全域登錄的 Windows 執行階段 Proxy 和虛設常式。
+Since the IPC approach involves marshaling Windows Runtime interfaces between two processes, a globally registered Windows Runtime proxy and stub must be used.
 
-**在 Visual Studio 建立 Proxy**
+**Creating the proxy in Visual Studio**
 
-建立並登錄 Proxy 和虛設常式以便在一般 Windows 市集應用程式套件中使用的處理程序，在 [Windows 執行階段元件中引發事件](https://msdn.microsoft.com/en-us/library/windows/apps/dn169426.aspx)主題中有相關說明。
-本文所述的步驟比下方說明的處理程序更加複雜，因為它涉及在應用程式套件內登錄 Proxy/虛設常式 (與全域登錄不同)。
+The process for creating and registering proxies and stubs for use inside a regular Windows Store app package are described in the topic [Raising Events in Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
+The steps described in this article are more complicated than the process described below because it involves registering the proxy/stub inside the application package (as opposed to registering it globally).
 
-**步驟 1：**使用桌面元件專案的方案，在 Visual Studio 中建立 Proxy/虛設常式專案：
+**Step 1:** Using the solution for the desktop component project, create a Proxy/Stub project in Visual Studio:
 
-**方案 &gt; 新增 &gt; 專案 &gt; Visual C++ &gt; Win32 主控台選取 DLL 選項。**
+**Solution > Add > Project > Visual C++ > Win32 Console Select DLL option.**
 
-針對下列步驟，我們假設伺服器元件名為 **MyWinRTComponent**。
+For the steps below, we assume the server component is called **MyWinRTComponent**.
 
-**步驟 3：**從專案刪除所有 CPP/H 檔案。
+**Step 3:** Delete all the CPP/H files from the project.
 
-**步驟 4：**上面的＜定義協定＞一節包含執行 **winmdidl.exe**、**midl.exe**、**mdmerge.exe** 等的建置後命令。 這個建置後命令的其中一個 midl 步驟輸出會產生四個重要的輸出：
+**Step 4:** The previous section "Defining the Contract" contains a Post-Build command that runs **winmdidl.exe**, **midl.exe**, **mdmerge.exe**, and so on. One of the outputs from the midl step of this post-build command generates four important outputs:
 
 a) Dlldata.c
 
-b) 一個標頭檔 (例如 MyWinRTComponent.h)
+b) A header file (e.g. MyWinRTComponent.h)
 
-c) 一個 *_i.c 檔案 (例如 MyWinRTComponent_i.c)
+c) A \*\_i.c file (e.g. MyWinRTComponent\_i.c)
 
-d) 一個 *_p.c 檔案 (例如 MyWinRTComponent_p.c)
+d) A \*\_p.c file (e.g. MyWinRTComponent\_p.c)
 
-**步驟 5：**將這四個產生的檔案新增到 "MyWinRTProxy" 專案。
+**Step 5:** Add these four generated files to the "MyWinRTProxy" project.
 
-**步驟 6：**將定義檔新增到 "MyWinRTProxy" 專案 **(專案 &gt; 加入新項目 &gt; 程式碼 &gt; 模組定義檔案**)，並將內容更新為：
+**Step 6:** Add a def file to "MyWinRTProxy" project **(Project > Add New Item > Code > Module-Definition File**) and update the contents to be:
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -486,47 +486,47 @@ DllRegisterServer PRIVATE
 
 DllUnregisterServer PRIVATE
 
-**步驟 7：**開啟 "MyWinRTProxy" 專案的屬性：
+**Step 7:** Open properties for the "MyWinRTProxy" project:
 
-**設定屬性 &gt; 一般 &gt; 目標名稱：**
+**Comfiguration Properties > General > Target Name :**
 
 MyWinRTComponent.Proxies
 
-**C/C++ &gt; 前置處理器定義 &gt; 新增**
+**C/C++ > Preprocessor Definitions > Add**
 
 "WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
 
-**C/C++ &gt; 先行編譯標頭檔：選取 [未使用先行編譯標頭檔] **
+**C/C++ > Precompiled Header : Select "Not Using Precompiled Header"**
 
-**連結器 &gt; 一般 &gt; 忽略匯入程式庫：選取 [是]**
+**Linker > General > Ignore Import Library : Select "Yes"**
 
-**連結器 &gt; 輸入 &gt; 其他相依性：加入 rpcrt4.lib;runtimeobject.lib**
+**Linker > Input > Additional Dependencies : Add rpcrt4.lib;runtimeobject.lib**
 
-**連結器 &gt; Windows 中繼資料 &gt; 產生 Windows 中繼資料：選取 [否]**
+**Linker > Windows Metadata > Generate Windows Metadata : Select "No"**
 
-**步驟 8：**建置 "MyWinRTProxy" 專案。
+**Step 8:** Build the "MyWinRTProxy" project.
 
-**部署 Proxy**
+**Deploying the proxy**
 
-必須全域登錄此 Proxy。 執行這個作業最簡單的方法就是讓您的安裝處理程序呼叫 Proxy dll 上的 DllRegisterServer。 請注意，由於這個功能只支援 x86 的伺服器組建 (也就是，不支援 64 位元)，最簡單的設定是使用 32 位元伺服器、32 位元 Proxy 和 32 位元側載應用程式。 Proxy 通常會與桌面元件的實作 **winmd** 放在一起。
+The proxy must be globally registered. The simplest way to do this is to have your install process call DllRegisterServer on the proxy dll. Note that since the feature only supports servers built for x86 (i.e. no 64-bit support), the simplest configuration is to use a 32-bit server, a 32-bit proxy, and a 32-bit side-loaded application. The proxy normally sits alongside the implementation **winmd** for the desktop component.
 
-還有一個額外的設定步驟要執行。 為了讓側載處理程序載入和執行 Proxy，目錄必須將 ALL_APPLICATION_PACKAGES 標記為 "read / execute"。 這要透過 **icacls.exe** 命令列工具完成。 這個命令應該在實作 **winmd** 和 Proxy/虛設常式 dll 所在的目錄中執行：
+One additional configuration step must be performed. In order for the side-loaded process to load and execute the proxy, the directory must be marked "read / execute" for ALL_APPLICATION_PACKAGES. This is done via the **icacls.exe** command line tool. This command should execute in the directory where the implementation **winmd** and proxy/stub dll resides:
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
-##模式和效能
+##Patterns and performance
 
-仔細監視跨處理程序傳輸的效能非常重要。 跨處理程序呼叫的成本至少是同處理程序呼叫的兩倍。 建立 "chatty" 交談跨處理程序或執行大型物件 (如點陣圖) 的重複傳輸會導致未預期和不佳的應用程式效能。
+It is very important that performance of the cross-process transport be carefully monitored. A cross-process call is at least twice as expensive than an in-process call. Creating "chatty" conversations cross-process or performing repeated transfers of large objects like bitmap images, can cause unexpected and undesirable application performance.
 
-下列為需考量的簡短清單：
+Here is a non-exhaustive list of things to consider:
 
--   應一律避免從應用程式 UI 執行緒到伺服器的同步方法呼叫。 從應用程式的背景執行緒呼叫方法，然後視需要使用 CoreWindowDispatcher 將結果傳到 UI 執行緒。
+-   Synchronous method calls from application's UI thread to the server should always be avoided. Call the method from a background thread in the application and then use CoreWindowDispatcher to get the results onto the UI thread if necessary.
 
--   從應用程式 UI 執行緒呼叫非同步作業很安全，但要考慮以下討論的效能問題。
+-   Calling async operations from an application UI thread is safe, but consider the performance problems discussed below.
 
--   大量傳輸結果會降低跨處理程序的交談功能。 這通常是使用 Windows 執行階段陣列建構來執行。
+-   Bulk transfer of results reduces cross-process chattiness. This is normally performed by using the Windows Runtime Array construct.
 
--   傳回 *List<T>*，其中 *T* 是來自非同步作業或屬性擷取的物件，會產生很多跨處理程序交談。 例如，假設您傳回 *List&lt;People&gt;*物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個傳回的 *People* 物件都以 Proxy 表示，每個個別物件方法或屬性的呼叫會產生跨處理程序呼叫。 *Count* 中單純的 *List&lt;People&gt;* 物件是大型物件，會導致大量緩慢的呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如：
+-   Returning *List<T>* where *T* is an object from an async operation or property fetch, will cause a lot of cross-process chattiness. For example, assume you return a*List&lt;People&gt;* objects. Each iteration pass will be a cross-process call. Each *People* object returned is represented by a proxy and each call to a method or property on that individual object will result in a cross-process call. So an "innocent" *List&lt;People&gt;* object where *Count* is large will cause a large number of slow calls. Better performance results from bulk transfer of structs of the content in an array. For example:
 
 ```csharp
 struct PersonStruct
@@ -538,47 +538,47 @@ struct PersonStruct
 }
 ```
 
-然後會傳回 *PersonStruct\[\]* 而不是 *List&lt;PersonObject&gt;*。
-這會在一個跨處理程序 "hop" 取得所有的資料。
+Then return* PersonStruct\[\]* instead of *List&lt;PersonObject&gt;*.
+This gets all the data across in one cross-process "hop"
 
-與所有效能考量一樣，測量和測試非常重要。 在理想的情況下，應該將遙測插入各種作業以判斷作業所花的時間。 務必要測量一整個範圍：例如，側載應用程式中的特定查詢實際上花了多少時間使用所有的 *People* 物件？
+As with all performance considerations, measurement and testing is critical. Ideally telemetry should be inserted into the various operations to determine how long they take. It is important to measure across a range: for example, how long does it actually take to consume all the *People* objects for a particular query in the side-loaded application?
 
-另一個技巧是可變載入測試。 您可以將效能測試攔截放入應用程式，將可變延遲載入引進伺服器處理來完成此作業。 這可以模擬各種載入，以及應用程式對不同伺服器效能的反應。
-此範例說明如何使用適當的非同步技術將時間延遲放入程式碼。 要插入的實際延遲時間及要放入該人工載入的隨機範圍會因應用程式設計和應用程式預期執行環境而有所不同。
+Another technique is variable load testing. This can be done by putting performance test hooks into the application that introduce variable delay loads into the server processing. This can simulate various kinds of load and the application's reaction to varying server performance.
+The sample illustrates how to put time delays into code using proper async techniques. The exact amount of delay to inject and the range of randomization to put into that artificial load will vary by application design and the anticipated environment in which the application will run.
 
-##開發處理序
+##Development process
 
-當您變更伺服器時，必須確定所有先前執行中的執行個體已不再執行。 COM 最終將清除這個處理序，但是取消計時器的時間會比反覆開發的有效時間還長。 因此，刪除先前執行中的執行個體是開發期間的一個標準步驟。 這需要開發人員持續追蹤哪一個 dllhost 執行個體正在裝載伺服器。
+When you make changes to the server, it is necessary to make sure any previously running instances are no longer running. COM will eventually scavenge the process, but the rundown timer takes longer than is efficient for iterative development. Thus, killing a previously running instance is a normal step during development. This requires that the developer keep track of which dllhost instance is hosting the server.
 
-您可以使用 [工作管理員] 或其他協力廠商應用程式，找出伺服器處理序並予以刪除。 同時也會隨附命令列工具 **TaskList.exe **，其中包含彈性語法，例如：
+The server process can be found and killed using Task Manager or other third party apps. The command line tool **TaskList.exe **is also included and has flexible syntax, for example:
 
   
- | **命令** | **動作** |
+ | **Command** | **Action** |
  | ------------| ---------- |
- | Tasklist | 依建立時間的大致順序列出所有執行中的處理序，最近建立的處理序會列於底部附近。 |
- | tasklist /FI "IMAGENAME eq dllhost.exe" /M | 列出所有 dllhost.exe 執行個體的相關資訊。 /M 參數會列出已載入的模組。 |
- | tasklist /FI "PID eq 12564" /M | 如果您知道 dllhost.exe 的 PID，就可使用這個選項來加以查詢。 |
+ | tasklist | Lists all the running processes in approximate order of creation time, with the most recently created processes near the bottom. |
+ | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Lists info on all the dllhost.exe instances. The /M switch lists the modules that they have loaded. |
+ | tasklist /FI "PID eq 12564" /M | You can use this option to query the dllhost.exe if you know its PID. |
 
-代理人伺服器的模組清單應該會在其載入模組的清單中列出 *clrhost.dll*。
+The module list for a broker server should list *clrhost.dll* in its list of loaded modules.
 
-##資源
+##Resources
 
--   [適用於 Windows 10 與 VS 2015 的代理 WinRT 元件專案範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
--   [NorthwindRT 代理 WinRT 元件範例](http://go.microsoft.com/fwlink/p/?LinkID=397349)
+-   [NorthwindRT Brokered WinRT Component Sample](http://go.microsoft.com/fwlink/p/?LinkID=397349)
 
--   [傳遞可靠且可信任的 Windows 市集應用程式](http://go.microsoft.com/fwlink/p/?LinkID=393644)
+-   [Delivering reliable and trustworthy Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=393644)
 
--   [應用程式協定與延伸 (Windows 市集應用程式)](https://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx)
+-   [App contracts and extensions (Windows Store apps)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
--   [如何在 Windows 10 上側載應用程式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
+-   [How to sideload apps on Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
--   [將 Windows 市集應用程式部署到企業](http://go.microsoft.com/fwlink/p/?LinkID=264770)
-
-
+-   [Deploying Windows Store apps to businesses](http://go.microsoft.com/fwlink/p/?LinkID=264770)
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+
+<!--HONumber=Sep16_HO2-->
 
 

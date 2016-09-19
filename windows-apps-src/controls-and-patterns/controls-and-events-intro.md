@@ -1,82 +1,90 @@
 ---
 author: Jwmsft
-Description: "您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。"
-title: "新增控制項和處理事件"
+Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
+title: Intro to controls and patterns
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and events
+label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 
 ---
-# 控制項和事件的簡介
+# Intro to controls and patterns
 
-您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的應用程式建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的應用程式。 將控制項新增到您應用程式的主要步驟有 3 個： 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-- 將控制項新增到您的應用程式 UI。 
-- 設定控制項上的屬性，例如寬度、高度或前景色彩。 
-- 在控制項的事件處理常式中新增程式碼，使其執行某些功能。 
+In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
 
-## 新增控制項
-您可以使用數種方式將控制項新增到應用程式：
+A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [Nav pane](nav-pane.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [Pivot](tabs-pivot.md) control to implement the tab pattern.
+
+In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](xaml-styles.md) and [control templates](control-templates.md) to modify a control.
+
+In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app: 
+
+- Add a control to your app UI. 
+- Set properties on the control, such as width, height, or foreground color. 
+- Add code to the control's event handlers so that it does something. 
+
+## Add a control
+You can add a control to an app in several ways:
  
-- 使用設計工具，例如 Blend for Visual Studio 或 Microsoft Visual Studio Extensible Application Markup Language (XAML) 設計工具。 
-- 在 Visual Studio XAML 編輯器中將控制項新增到 XAML 標記。 
-- 在程式碼中新增控制項。 您在程式碼中新增的控制項會在應用程式執行時顯示，但不會顯示在 Visual Studio XAML 設計工具中。
+- Use a design tool like Blend for Visual Studio or the Microsoft Visual Studio Extensible Application Markup Language (XAML) designer. 
+- Add the control to the XAML markup in the Visual Studio XAML editor. 
+- Add the control in code. Controls that you add in code are visible when the app runs, but are not visible in the Visual Studio XAML designer.
 
-在 Visual Studio 中的應用程式新增和操作控制項時，您可以使用程式的許多功能，包括 [工具箱]、XAML 設計工具、XAML 編輯器以及 [屬性] 視窗。 
+In Visual Studio, when you add and manipulate controls in your app, you can use many of the program's features, including the Toolbox, XAML designer, XAML editor, and the Properties window. 
 
-Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應用程式。 若要將控制項新增至您的應用程式，請在 [工具箱] 中按兩下該控制項。 例如，當您按兩下 TextBox 控制項，這個 XAML 就會新增到 [XAML] 檢視。 
+The Visual Studio Toolbox displays many of the controls that you can use in your app. To add a control to your app, double-click it in the Toolbox. For example, when you double-click the TextBox control, this XAML is added to the XAML view. 
 
 ```xaml
 <TextBox HorizontalAlignment="Left" Text="TextBox" VerticalAlignment="Top"/>
 ```
 
-您也可以將控制項從 [工具箱] 拖曳到 XAML 設計工具。
+You can also drag the control from the Toolbox to the XAML designer.
 
-## 設定控制項的名稱 
+## Set the name of a control 
 
-若要在程式碼中處理控制項，您需設定其 [x:Name](../xaml-platform/x-name-attribute.md) 屬性，然後在您的程式碼中以名稱參照該控制項。 您可以在 Visual Studio [屬性] 視窗或 XAML 中設定名稱。 以下說明如何使用 [屬性] 視窗頂端的 [名稱] 文字方塊來變更目前所選控制項的名稱。 
+To work with a control in code, you set its [x:Name](../xaml-platform/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window. 
 
-命名控制項
-1. 選取要命名的元素。
-2. 在 [屬性] 面板中，在 [名稱] 文字方塊中輸入名稱。
-3. 按 Enter 確認名稱。
+To name a control
+1. Select the element to name.
+2. In the Properties panel, type a name into the Name text box.
+3. Press Enter to commit the name.
 
-![Visual Studio 設計工具中的 [名稱] 屬性](images/add-controls-control-name-designer.png)
+![Name property in the Visual Studio designer](images/add-controls-control-name-designer.png)
 
-以下說明如何在 XAML 編輯器中，透過變更 x:Name 屬性設定控制項的名稱。
+Here's how to set the name of a control in the XAML editor by adding the x:Name attribute.
 
 ```xaml
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## 設定控制項屬性 
+## Set the control properties 
 
-您可以使用屬性 (Property) 來指定控制項的外觀、內容以及其他屬性 (Attribute)。 當您使用設計工具新增控制項時，Visual Studio 可能會幫您設定控制大小、位置和內容的一些屬性。 在 [設計] 檢視中選取和操作控制項，就可以變更部分屬性 (例如 Width、Height 或 Margin)。 這個圖例顯示 [設計] 檢視中的部分調整大小工具。 
+You use properties to specify the appearance, content, and other attributes of controls. When you add a control using a design tool, some properties that control size, position, and content might be set for you by Visual Studio. You can change some properties, such as Width, Height or Margin, by selecting and manipulating the control in the Design view. This illustration shows some of the resizing tools available in Design view. 
 
-![Visual Studio 設計工具中的調整大小工具](images/add-controls-resizing-designer.png)
+![Resizing tools in the Visual Studio designer](images/add-controls-resizing-designer.png)
 
-您可以讓控制項自動變更大小和位置。 在這種情況下，您可以重設 Visual Studio 為您設定的大小和位置屬性。
+You might want to let the control be sized and positioned automatically. In this case, you can reset the size and position properties that Visual Studio set for you.
 
-重設屬性
-1. 在 [屬性] 面板中，按一下屬性值旁邊的屬性標記。 屬性功能表隨即開啟。
-2. 在屬性功能表中，按一下 [重設]。
+To reset a property
+1. In the Properties panel, click the property marker next to the property value. The property menu opens.
+2. In the property menu, click Reset.
 
-![Visual Studio 屬性重設功能表選項](images/add-controls-property-reset.png)
+![Visual Studio property reset menu option](images/add-controls-property-reset.png)
 
-您可以在 [屬性] 視窗、XAML 或在程式碼中設定控制項屬性。 例如，若要變更按鈕的前景色彩，您可以設定控制項的 [前景] 屬性。 這個圖例說明如何使用 [屬性] 視窗的色彩選擇器來設定 [前景] 屬性。 
+You can set control properties in the Properties window, in XAML, or in code. For example, to change the foreground color for a Button, you set the control's Foreground property. This illustration shows how to set the Foreground property by using the color picker in the Properties window. 
 
-![Visual Studio 設計工具中的色彩選擇器](images/add-controls-foreground-designer.png)
+![Color picker in the Visual Studio designer](images/add-controls-foreground-designer.png)
 
-以下說明如何在 XAML 編輯器中設定 Foreground 屬性。 請注意，開啟的 Visual Studio IntelliSense 視窗可協助您使用語法。 
+Here's how to set the Foreground property in the XAML editor. Notice the Visual Studio IntelliSense window that opens to help you with the syntax. 
 
-![XAML 中的 Intellisense 第 1 部分](images/add-controls-foreground-xaml.png)
+![Intellisense in XAML part 1](images/add-controls-foreground-xaml.png)
 
-![XAML 中的 Intellisense 第 2 部分](images/add-controls-foreground-xaml-2.png)
+![Intellisense in XAML part 2](images/add-controls-foreground-xaml-2.png)
 
-以下是設定 Foreground 屬性之後產生的 XAML。 
+Here's the resulting XAML after you set the Foreground property. 
 
 ```xaml
 <Button x:Name="Button1" Content="Button" 
@@ -84,23 +92,23 @@ Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應
         Foreground="Beige"/>
 ```
 
-以下說明如何在程式碼中設定 Foreground 屬性。 
+Here's how to set the Foreground property in code. 
 
 ```csharp
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## 建立事件處理常式 
+## Create an event handler 
 
-每個控制項都有事件可讓您回應使用者的動作，或是應用程式的其他變更。 例如，Button 控制項有一個 Click 事件，會在使用者按一下 Button 時引發。 您可以建立方法來處理事件，該方法稱為事件處理常式。 您可以在 [屬性] 視窗、XAML 或程式碼中建立控制項事件和事件處理常式方法的關聯。 如需事件的詳細資訊，請參閱[事件與路由事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
+Each control has events that enable you to respond to actions from your user or other changes in your app. For example, a Button control has a Click event that is raised when a user clicks the Button. You create a method, called an event handler, to handle the event. You can associate a control's event with an event handler method in the Properties window, in XAML, or in code. For more info about events, see [Events and routed events overview](../xaml-platform/events-and-routed-events-overview.md).
 
-若要建立事件處理常式，請選取控制項，然後按一下 [屬性] 視窗頂端的 [事件] 索引標籤。 [屬性] 視窗會列出該控制項可用的所有事件。 以下是 Button 的一些事件。
+To create an event handler, select the control and then click the Events tab at the top of the Properties window. The Properties window lists all of the events available for that control. Here are some of the events for a Button.
 
-![Visual Studio 事件清單](images/add-controls-add-event-designer.png)
+![Visual Studio event list](images/add-controls-add-event-designer.png)
 
-若要以預設名稱建立事件處理常式，請在 [屬性] 視窗中按兩下事件名稱旁邊的文字方塊。 若要以自訂名稱建立事件處理常式，請在文字方塊中輸入您選擇的名稱，然後按 Enter。 這時會建立事件處理常式，並在程式碼編輯器中開啟程式碼後置檔案。 事件處理常式方法有 2 個參數。 第一個參數是 `sender`，這是附加處理常式之物件的參照。 `sender` 參數是 **Object** 類型。 如果您打算檢查或變更 `sender` 物件本身的狀態，通常需將 `sender` 轉換成更精準的類型。 依據您自己的 app 設計，您會想要一個能夠依據處理程式附加位置來放心轉換 `sender` 的類型。 第二個值是事件資料，通常以 `e` 或 `args` 參數的形式顯示在簽章中。
+To create an event handler with the default name, double-click the text box next to the event name in the Properties window. To create an event handler with a custom name, type the name of your choice into the text box and press enter. The event handler is created and the code-behind file is opened in the code editor. The event handler method has 2 parameters. The first is `sender`, which is a reference to the object where the handler is attached. The `sender` parameter is an **Object** type. You typically cast `sender` to a more precise type if you expect to check or change the state on the `sender` object itself. Based on your own app design, you expect a type that is safe to cast the `sender` to, based on where the handler is attached. The second value is event data, which generally appears in signatures as the `e` or `args` parameter.
 
-以下程式碼用來處理 Button (名為 `Button1`) 的 Click 事件。 當您按一下按鈕，按下之 Button 的 Foreground 屬性會設成藍色。 
+Here's code that handles the Click event of a Button named `Button1`. When you click the button, the Foreground property of the Button you clicked is set to blue. 
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -110,19 +118,19 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-您也可以在 XAML 中關聯事件處理常式。 在 XAML 編輯器中，輸入您想要處理的事件名稱。 當您開始輸入時，Visual Studio 會顯示 IntelliSense 視窗。 指定事件之後，您可以在 IntelliSense 視窗中按兩下 [`<New Event Handler>`]，建立以預設名稱命名的新事件處理常式，或從清單中選取現有的事件處理常式。 
+You can also associate an event handler in XAML. In the XAML editor, type in the event name that you want to handle. Visual Studio shows an IntelliSense window when you begin typing. After you specify the event, you can double-click `<New Event Handler>` in the IntelliSense window to create a new event handler with the default name, or select an existing event handler from the list. 
 
-以下是出現的 IntelliSense 視窗。 它可協助您建立新的事件處理常式，或選取現有的事件處理常式。
+Here's the IntelliSense window that appears. It helps you create a new event handler or select an existing event handler.
 
-![click 事件的 Intellisense](images/add-controls-add-event-xaml.png)
+![Intellisense for the click event](images/add-controls-add-event-xaml.png)
 
-這個範例說明如何在 XAML 建立 Click 事件和名為 Button_Click 之事件處理常式的關聯。 
+This example shows how to associate a Click event with an event handler named Button_Click in XAML. 
 
 ```xaml
 <Button Name="Button1" Content="Button" Click="Button_Click"/>
 ```
 
-您也可以在程式碼後置中讓事件與其事件處理常式產生關聯。 以下說明如何在程式碼中關聯事件處理常式。
+You can also associate an event with its event handler in the code-behind. Here's how to associate an event handler in code.
 
 ```csharp
 Button1.Click += new RoutedEventHandler(Button_Click);
@@ -130,14 +138,16 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-## 相關主題
+## Related topics
 
--   [**命令列**](app-bars.md)
--   [搜尋](search.md)
--   [飛出視窗](dialogs-popups-menus.md)
+-   [Index of controls by function](controls-by-function.md)
+-   [Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [Layout](../layout/index.md)
+-   [Style](../style/index.md)
+-   [Usability](../usability/index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

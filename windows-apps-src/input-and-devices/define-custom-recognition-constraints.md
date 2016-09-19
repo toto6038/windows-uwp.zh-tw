@@ -7,7 +7,7 @@ label: Define custom recognition constraints
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
+ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 
 ---
 
@@ -32,9 +32,9 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
 這裡涵蓋了三種從 app 內部使用的語音辨識限制式。 (關於語音命令限制式，請參閱[利用 Cortana 語音命令啟動前景應用程式](launch-a-foreground-app-with-voice-commands-in-cortana.md))。
 
--   [ **SpeechRecognitionTopicConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
--   [ **SpeechRecognitionListConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
--   [ **SpeechRecognitionGrammarFileConstraint** ](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) 是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式。
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) 是以字詞或片語清單為基礎的限制式。
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) 是語音辨識文法規格 (SRGS) 檔案中定義的限制式。
 
 每個語音辨識器可以有一個限制式集合。 只有下列限制式組合是有效的：
 
@@ -241,6 +241,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

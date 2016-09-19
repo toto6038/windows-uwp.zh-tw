@@ -5,7 +5,7 @@ description: "呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 
 ---
 
@@ -138,6 +138,6 @@ town = Redmond
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

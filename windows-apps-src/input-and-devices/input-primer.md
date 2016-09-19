@@ -1,36 +1,36 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、Cortana、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景 App 服務)。"
-title: "互動基本資訊"
+Description: User interactions in the Universal Windows Platform (UWP) are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, Cortana, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
+title: Interaction primer
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c65bb525e953228e95286d5c6a5bffdb11475e53
-ms.openlocfilehash: 6084a49a8d8d9884c3bd777160ca219059d1654b
+ms.sourcegitcommit: fe012189566a20203b2bf8cae72f80655eeadfd1
+ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
 
 ---
 
-# 互動基本資訊
+# Interaction primer
 
 
-![Windows 輸入類型](images/input-interactions/icons-inputdevices03.png)
+![windows input types](images/input-interactions/icons-inputdevices03.png)
 
-通用 Windows 平台 (UWP) 中的使用者介面是輸入與輸出來源的組合 (例如，滑鼠、鍵盤、手寫筆、觸控、觸控板、語音、**Cortana**、控制器、手勢、注視等)，以及啟用延伸體驗的各種不同模式或輔助按鍵 (包括滑鼠滾輪和按鈕、手寫筆橡皮擦和筆身按鈕、觸控式鍵盤及背景 App 服務)。
+User interactions in the Universal Windows Platform (UWP) are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, **Cortana**, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
 
-UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情況下，就不需要個別處理您 app 所接收的獨特輸入類型。 這包含了做為一般指標類型的處理觸控、觸控板、滑鼠和手寫筆輸入，以支援靜態手勢 (例如點選或長按)、操作手勢 (例如滑動進行移動瀏覽，或呈現數位筆跡)。
+The UWP uses a "smart" contextual interaction system that, in most cases, eliminates the need to individually handle the unique types of input received by your app. This includes handling touch, touchpad, mouse, and pen input as a generic pointer type to support static gestures such as tap or press-and-hold, manipulation gestures such as slide for panning, or rendering digital ink.
 
-與特定尺寸規格配對使用時，請熟悉各個輸入裝置類型及其行為、功能與限制。 這可以協助您判斷您的 app 是否有足夠的平台控制項與能供性，或者需要您提供自訂的互動體驗。
+Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. This can help you decide whether the platform controls and affordances are sufficient for your app, or require you to provide customized interaction experiences.
 
 ## Cortana
 
-在 Windows 10 中，**Cortana** 擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
+In Windows 10, **Cortana** extensibility lets you handle voice commands from a user and launch your application to carry out a single action.
 
-### 裝置支援
+### Device support
 
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -38,289 +38,289 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 
 ![cortana](images/input-interactions/icons-cortana01.png)
 
-### 一般使用方式
+### Typical usage
 
-語音命令會定義於語音命令定義 (VCD) 檔中，它是一種單次語言表達，會透過 **Cortana** 導向已安裝的 app。 根據互動的層次和複雜性，您可以在前景或背景啟動這個 app。 例如，某些語音命需要參考前後文或者需要使用者輸入資料，那麼在前景進行處理最合適；而基本的命令，則可以在背景進行處理。
+A voice command is a single utterance, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**. The app can be launched in the foreground or background, depending on the level and complexity of the interaction. For instance, voice commands that require additional context or user input are best handled in the foreground, while basic commands can be handled in the background.
 
-整合 app 的基本功能，並提供一個中心進入點，讓使用者不需要開啟 app 就能完成大部分的工作，這讓 **Cortana** 成為您的 app 與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)。
+Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233).
 
-### 其他資訊
+### More info
 
-[Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)
+[Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
  
 
-## 語音
+## Speech
 
-語音是使用者可用來與應用程式互動的有效且自然的方式。 這是與應用程式通訊的簡單且精確的方式，並讓使用者能夠提高生產力，且在各種不同的情況下收到通知。
+Speech is an effective and natural way for people to interact with applications. It's an easy and accurate way to communicate with applications, and lets people be productive and stay informed in a variety of situations.
 
-根據使用者的裝置，語音可以做為補充項，或者，在許多情況下，可以是主要的輸入類型。 例如，像是 HoloLens 和 XBox 的裝置不支援傳統的輸入類型 (但特定案例中的軟體鍵盤除外)。 相反地，它們依賴語音輸入和輸出 (通常會與其他非傳統的輸入類型相結合，例如注視和手勢) 來進行大部分的使用者互動。
+Speech can complement or, in many cases, be the primary input type, depending on the user's device. For example, devices such as HoloLens and Xbox do not support traditional input types (aside from a software keyboard in specific scenarios). Instead, they rely on speech input and output (often combined with other non-traditional input types such as gaze and gesture) for most user interactions.
 
-文字轉換語音 (也稱為 TTS 或語音合成) 可用來通知或引導使用者。
+Text-to-speech (also known as TTS, or speech synthesis) is used to inform or direct the user.
 
-### 裝置支援
+### Device support
 
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
 -   Surface Hub
 -   IoT
 -   Xbox
 -   HoloLens
 
-![語音](images/input-interactions/icons-speech01.png)
+![speech](images/input-interactions/icons-speech01.png)
 
-### 一般使用方式
+### Typical usage
 
-有三種語音互動的模式：
+There are three modes of Speech interaction:
 
-**自然語言**
+**Natural language**
 
-自然語言是我們平常口頭上與人們互動的方式。 我們的語音會根據對象及狀況而不同，且通常能夠理解。 如果不是，我們通常會使用不同的文字和文字順序，來取得其中的相同概念。
+Natural language is how we verbally interact with people on a regular basis. Our speech varies from person to person and situation to situation, and is generally understood. When it's not, we often use different words and word order to get the same idea across.
 
-與 app 的自然語言互動類似：我們透過裝置對 app 說話，就像裝置是人一樣，並預期它會了解並據以回應。
+Natural language interactions with an app are similar: we speak to the app through our device as if it were a person and expect it to understand and react accordingly.
 
-自然語言是最先進的語音互動模式，可透過 **Cortana** 來實作和公開。
+Natural language is the most advanced mode of speech interaction, and can be implemented and exposed through **Cortana**.
 
-**命令和控制項**
+**Command and control**
 
-命令和控制項就是使用口頭命令來啟動控制項和功能，例如，按一下按鈕或選取功能表項目。
+Command and control is the use of verbal commands to activate controls and functionality such as clicking a button or selecting a menu item.
 
-由於命令和控制項是成功使用者經驗的關鍵，所以通常不建議使用單一輸入類型。 根據使用者的喜好設定或硬體功能，語音對使用者而言通常是數種輸入選項的其中一個。
+As command and control is critical to a successful user experience, a single input type is generally not recommended. Speech is typically one of several input options for a user based on their preferences or hardware capabilities.
 
-**聽寫**
+**Dictation**
 
-最基本的語音輸入方法。 每次說話都會轉換成文字。
+The most basic speech input method. Each utterance is converted to text.
 
-當 app 不需要了解意義或意圖時，通常會使用聽寫。
+Dictation is typically used when an app doesn’t need to understand meaning or intent.
 
-### 其他資訊
+### More info
 
-[語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## 手寫筆
+## Pen
 
-手寫筆可以當做像素精確指標裝置 (例如滑鼠)，而且是適用於數位筆跡輸入的最佳裝置。
+A pen (or stylus) can serve as a pixel precise pointing device, like a mouse, and is the optimal device for digital ink input.
 
-**注意** 有兩種類型的手寫筆裝置：主動式及被動式。
-  -   被動式手寫筆不包含電子產品，可有效地模擬來自手指的觸控輸入。 它們需要基本的裝置顯示器，根據接觸點的壓力來辨識輸入。 由於使用者在輸入介面上書寫時通常會將手擱在上面，因此，輸入資料會因為未順利防手掌誤觸而受到干擾。
-  -   主動式手寫筆包含電子產品，而且可與複雜的裝置顯示器一起使用，為系統和 app 提供更廣泛的輸入資料 (包括暫留或鄰近性資料)。 防手掌誤觸的功能更加強固。
+**Note**  There are two types of pen devices: active and passive.
+  -   Passive pens do not contain electronics, and effectively emulate touch input from a finger. They require a basic device display that recognizes input based on contact pressure. Because users often rest their hand as they write on the input surface, input data can become polluted due to unsuccessful palm rejection.
+  -   Active pens contain electronics and can work with complex device displays to provide much more extensive input data (including hover, or proximity data) to the system and your app. Palm rejection is much more robust.
 
-當我們在此處提到手寫筆裝置時，指的是可提供豐富的輸入資料且主要用於精確筆跡和指標互動的主動式手寫筆。
+When we refer to pen devices here, we are referring to active pens that provide rich input data and are used primarily for precise ink and pointing interactions.
 
-### 裝置支援
+### Device support
 
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
 -   Surface Hub
 -   IoT
 
-![手寫筆](images/input-interactions/icons-pen01.png)
+![pen](images/input-interactions/icons-pen01.png)
 
-### 一般使用方式
+### Typical usage
 
-Windows 筆跡平台搭配手寫筆之後，使用者就可以自然的方式手寫筆記、繪圖以及註解。 這個平台支援擷取數位板輸入的筆跡資料、產生筆跡資料、將資料轉譯成輸出裝置上的筆跡筆觸、管理筆跡資料，以及執行手寫辨識。 當使用者書寫或畫圖時，除了感應手寫筆的空間移動外，應用程式還可以收集各種資訊，例如壓力、形狀、顏色以及不透明度，讓使用者感受如同用鋼筆、鉛筆或筆刷在紙上繪圖一樣。
+The Windows ink platform, together with a pen, provides a natural way to create handwritten notes, drawings, and annotations. The platform supports capturing ink data from digitizer input, generating ink data, rendering that data as ink strokes on the output device, managing the ink data, and performing handwriting recognition. In addition to capturing the spatial movements of the pen as the user writes or draws, your app can also collect info such as pressure, shape, color, and opacity, to offer user experiences that closely resemble drawing on paper with a pen, pencil, or brush.
 
-手寫筆和觸控輸入的區別在於觸控能夠透過在這些物件上實際運用手勢 (如撥動、滑動、拖曳、旋轉等等)，在畫面上模擬對 UI 元素的直接操作。
+Where pen and touch input diverge is the ability for touch to emulate direct manipulation of UI elements on the screen through physical gestures performed on those objects (such as swiping, sliding, dragging, rotating, and so on).
 
-您應該提供手寫筆特定的 UI 命令或能供性來支援這些互動。 例如，使用上一個和下一個 (或是 + 與 -) 按鈕讓使用者翻頁內容，或旋轉、調整物件大小，以及縮放物件。
+You should provide pen-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
 
-### 其他資訊
+### More info
 
-[手寫筆設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[Pen design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## 觸控
+## Touch
 
-利用觸控功能，一或多隻手指的實際手勢就能用來模擬直接操作 UI 元素 (例如移動瀏覽、旋轉、調整大小或移動)、做為替代輸入法 (類似滑鼠或手寫筆)，或做為互補輸入法 (修改其他輸入法的外觀比例，例如手寫筆繪製之筆跡筆觸的汙點部分)。 類似這樣的觸覺經驗可以在使用者與螢幕上的元素互動時，提供更為自然、貼近真實世界的感覺。
+With touch, physical gestures from one or more fingers can be used to either emulate the direct manipulation of UI elements (such as panning, rotating, resizing, or moving), as an alternative input method (similar to mouse or pen), or as a complementary input method (to modify aspects of other input, such as smudging an ink stroke drawn with a pen). Tactile experiences such as this can provide more natural, real-world sensations for users as they interact with elements on a screen.
 
-### 裝置支援
+### Device support
 
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
 -   Surface Hub
 -   IoT
 
-![觸控](images/input-interactions/icons-touch01.png)
+![touch](images/input-interactions/icons-touch01.png)
 
-### 一般使用方式
+### Typical usage
 
-針對觸控輸入的支援可能會根據裝置的不同而有顯著差異。
+Support for touch input can vary significantly, depending on the device.
 
-有些裝置並未完全支援觸控、有些裝置支援單點觸控點，其他的裝置則支援多點觸控 (兩個或多個接觸點)。
+Some devices don't support touch at all, some devices support a single touch contact, while others support multi-touch (two or more contacts).
 
-大多數支援多點觸控輸入的裝置通常可辨識十個獨特的並行處理接觸點。
+Most devices that support multi-touch input, typically recognize ten unique, concurrent contacts.
 
-Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
+Surface Hub devices recognize 100 unique, concurrent touch contacts.
 
-一般而言，觸控是：
+In general, touch is:
 
--   單一使用者，除非是和像是 Surface Hub 的 Microsoft 小組裝置搭配使用，否則就會強調共同作業。
--   不受限於裝置方向。
--   用於所有互動，包括文字輸入 (觸控式鍵盤) 和筆跡 (app 設定)。
+-   Single user, unless being used with a Microsoft Team device like Surface Hub, where collaboration is emphasized.
+-   Not constrained to device orientation.
+-   Used for all interactions, including text input (touch keyboard) and inking (app-configured).
 
-### 其他資訊
+### More info
 
-[觸控設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[Touch design guidelines](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## 觸控板
+## Touchpad
 
-觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這項結合讓觸控板既適用於觸控最佳化 UI，也適用於較小的生產力 App 目標。
+A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
 
-### 裝置支援
+### Device support
 
--   電腦和膝上型電腦
+-   PCs and laptops
 -   IoT
 
-![觸控板](images/input-interactions/icons-touchpad01.png)
+![touchpad](images/input-interactions/icons-touchpad01.png)
 
-### 一般使用方式
+### Typical usage
 
-觸控板通常支援一組觸控手勢，可提供類似於直接操作物件與 UI 的觸控支援。
+Touchpads typically support a set of touch gestures that provide support similar to touch for direct manipulation of objects and UI.
 
-因為這個觸控板支援的整合互動體驗，建議您也提供滑鼠樣式 UI 命令或能供性，而不僅是仰賴觸控輸入支援。 提供觸控板特定的 UI 命令或能供性來支援這些互動。
+Because of this convergence of interaction experiences supported by touchpads, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. Provide touchpad-specific UI commands, or affordances, to support these interactions.
 
-您應該提供滑鼠特定的 UI 命令或能供性來支援這些互動。 例如，使用上一個和下一個 (或是 + 與 -) 按鈕讓使用者翻頁內容，或旋轉、調整物件大小，以及縮放物件。
+You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
 
-### 其他資訊
+### More info
 
-[觸控板設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[Touchpad design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## 鍵盤
+## Keyboard
 
-鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與 app 互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
+A keyboard is the primary input device for text, and is often indispensable to people with certain disabilities or users who consider it a faster and more efficient way to interact with an app.
 
-透過 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
+With [Continuum for Phone](http://go.microsoft.com/fwlink/p/?LinkID=699431), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
 
-### 裝置支援
+### Device support
 
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
-
-![鍵盤](images/input-interactions/icons-keyboard01.png)
-
-### 一般使用方式
-
-使用者與通用 Windows app 互動的方式可透過硬體鍵盤和兩種軟體鍵盤來進行：螢幕小鍵盤 (OSK) 和觸控式鍵盤。
-
-OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、滑鼠、畫筆/手寫筆或其他指標裝置 (不需要觸控式螢幕) 來輸入資料。 提供 OSK 的用意是針對沒有實體鍵盤的系統，或者使用者因行動不便而無法使用傳統實體輸入裝置的情況。 OSK 模擬了大部分的 (如果沒有全部) 硬體鍵盤功能。
-
-觸控式鍵盤是視覺化的軟體鍵盤，使用觸控輸入來輸入文字。 觸控式鍵盤不能取代 OSK，因為它只能輸入文字 (它不會模擬硬體鍵盤)，而且只有文字欄位或其他可編輯的文字控制項得到焦點之後，才會顯示。 觸控式鍵盤不支援 app 或系統命令。
-
-**注意** OSK 的優先順序高於觸控式鍵盤，當顯示 OSK 時就不會顯示觸控式鍵盤。
-
-一般而言，鍵盤是：
-
--   單一使用者。
--   不受限於裝置方向。
--   用於文字輸入、瀏覽、遊戲，以及協助工具。
--   一律提供 (不論是主動或被動)。
-
-### 其他資訊
-
-[鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)
- 
-
-## 滑鼠
-
-滑鼠最適合用於生產力 app 和高密度 UI，其中的使用者互動要求適用於目標和命令的像素層級精確度。
-
-### 裝置支援
-
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
--   Surface Hub
--   IoT
-
-![滑鼠](images/input-interactions/icons-mouse01.png)
-
-### 一般使用方式
-
-滑鼠輸入可以利用加入各種鍵盤按鍵 (Ctrl、Shift、Alt 等等) 進行修改。 這些按鍵可以和滑鼠左鍵、滑鼠右鍵、滾輪按鈕，以及擴充的滑鼠最佳化命令集的 [X] 按鈕結合使用。 (部分 Microsoft 滑鼠裝置具有兩個稱為 X 按鈕的額外按鍵，通常會用來在 Web 瀏覽器中來回瀏覽)。
-
-類似於手寫筆，滑鼠和觸控輸入的區別在於觸控能夠透過在這些物件上實際運用手勢 (如撥動、滑動、拖曳、旋轉等等)，在畫面上模擬對 UI 元素的直接操作。
-
-您應該提供滑鼠特定的 UI 命令或能供性來支援這些互動。 例如，使用上一個和下一個 (或是 + 與 -) 按鈕讓使用者翻頁內容，或旋轉、調整物件大小，以及縮放物件。
-
-### 其他資訊
-
-[滑鼠設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456351)
- 
-
-## 手勢
-
-手勢是辨識為輸入之任何形式的使用者動作，用來控制或與應用程式互動。 手勢有許多種形式，從簡單的用手在螢幕上指定目標，到學習特定的動作模式、使用全身的一連串連續動作。 設計自訂手勢時請注意，因為手勢的意義可能會因地區和文化特性而有所不同。
-
-### 裝置支援
-
--   電腦和膝上型電腦
--   IoT
--   Xbox
--   HoloLens
-
-![手勢](images/input-interactions/icons-gesture01.png)
-
-### 一般使用方式
-
-靜態手勢事件會在互動完成之後引發。
-
-- 靜態手勢事件包含 Tapped、DoubleTapped、RightTapped 及 Holding。
-
-操作手勢事件指出進行中的互動。 當使用者觸控元素並繼續進行，直到該使用者舉起手指或操作取消為止，就會開始引發它們。
-
-- 操作事件包括多點觸控互動 (例如縮放、移動瀏覽或旋轉)，以及使用慣性和速度資料的互動 (例如拖曳)。 (操作事件所提供的資訊不會識別互動，而是會提供像是位置、平移量及速度等資料。)
-
-- 指標事件 (例如 PointerPressed 和 PointerMoved) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
-
-因為 Windows 所支援的整合互動體驗，建議您也提供滑鼠樣式 UI 命令或能供性，而不僅是仰賴觸控輸入支援。 例如，使用上一個和下一個 (或是 + 與 -) 按鈕讓使用者翻頁內容，或旋轉、調整物件大小，以及縮放物件。
-
-
-## 遊戲台/控制器
-
-遊戲台/控制器是高度特殊化裝置，通常專用於玩遊戲。 不過，它也能用來模擬基本鍵盤輸入，並提供與鍵盤非常類似的 UI 瀏覽體驗。
-
-### 裝置支援
-
--   電腦和膝上型電腦
--   IoT
--   Xbox
-
-![控制器](images/input-interactions/icons-controller01.png)
-
-### 一般使用方式
-
-玩遊戲和與特殊的主機互動。
-
-
-## 多重輸入
-
-儘可能容納多個使用者和裝置、將 app 設計為可以使用各種輸入類型 (手勢、語音、觸控、觸控板、滑鼠與鍵盤)，以將彈性、可用性及可存取性最大化。
-
-### 裝置支援
-
--   手機和平板手機
--   平板電腦
--   電腦和膝上型電腦
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
 -   Surface Hub
 -   IoT
 -   Xbox
 -   HoloLens
 
-![多重輸入](images/input-interactions/icons-inputdevices03-vertical.png)
+![keyboard](images/input-interactions/icons-keyboard01.png)
 
-### 一般使用方式
+### Typical usage
 
-就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。 不過，這些組合的互動必須盡可能直覺且自然，因為它們也可能造成非常令人混淆的體驗。
+Users can interact with Universal Windows apps through a hardware keyboard and two software keyboards: the On-Screen Keyboard (OSK) and the touch keyboard.
+
+The OSK is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The OSK is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The OSK emulates most, if not all, the functionality of a hardware keyboard.
+
+The touch keyboard is a visual, software keyboard used for text entry with touch input. The touch keyboard is not a replacement for the OSK as it is used for text input only (it doesn't emulate the hardware keyboard) and appears only when a text field or other editable text control gets focus. The touch keyboard does not support app or system commands.
+
+**Note**  The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.
+
+In general, a keyboard is:
+
+-   Single user.
+-   Not constrained to device orientation.
+-   Used for text input, navigation, gameplay, and accessibility.
+-   Always available, either proactively or reactively.
+
+### More info
+
+[Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345)
+ 
+
+## Mouse
+
+A mouse is best suited for productivity apps and high-density UI where user interactions require pixel-level precision for targeting and commanding.
+
+### Device support
+
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
+-   Surface Hub
+-   IoT
+
+![mouse](images/input-interactions/icons-mouse01.png)
+
+### Typical usage
+
+Mouse input can be modified with the addition of various keyboard keys (Ctrl, Shift, Alt, and so on). These keys can be combined with the left mouse button, the right mouse button, the wheel button, and the X buttons for an expanded mouse-optimized command set. (Some Microsoft mouse devices have two additional buttons, referred to as X buttons, typically used to navigate back and forward in Web browsers).
+
+Similar to pen, where mouse and touch input diverge is the ability for touch to emulate direct manipulation of UI elements on the screen through physical gestures performed on those objects (such as swiping, sliding, dragging, rotating, and so on).
+
+You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
+
+### More info
+
+[Mouse design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456351)
+ 
+
+## Gesture
+
+A gesture is any form of user movement that is recognized as input for controlling or interacting with an application. Gestures take many forms, from simply using a hand to target something on the screen, to specific, learned patterns of movement, to long stretches of continuous movement using the entire body. Be careful when designing custom gestures, as their meaning can vary depending on locale and culture.
+
+### Device support
+
+-   PCs and laptops
+-   IoT
+-   Xbox
+-   HoloLens
+
+![gesture](images/input-interactions/icons-gesture01.png)
+
+### Typical usage
+
+Static gesture events are fired after an interaction is complete.
+
+- Static gesture events include Tapped, DoubleTapped, RightTapped, and Holding.
+
+Manipulation gesture events indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
+
+- Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. (The information provided by the manipulation events doesn't identify the interaction, but rather provides data such as position, translation delta, and velocity.)
+
+- Pointer events such as PointerPressed and PointerMoved provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+
+Because of the convergence of interaction experiences supported by Windows, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
+
+
+## Gamepad/Controller
+
+The gamepad/controller is a highly specialized device typically dedicated to playing games. However, it is also used for to emulate basic keyboard input and provides a UI navigation experience very similar to the keyboard.
+
+### Device support
+
+-   PCs and laptops
+-   IoT
+-   Xbox
+
+![controller](images/input-interactions/icons-controller01.png)
+
+### Typical usage
+
+Playing games and interacting with a specialized console.
+
+
+## Multiple inputs
+
+Accommodating as many users and devices as possible and designing your apps to work with as many input types (gesture, speech, touch, touchpad, mouse, and keyboard) as possible maximizes flexibility, usability, and accessibility.
+
+### Device support
+
+-   Phones and phablets
+-   Tablet
+-   PCs and laptops
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
+
+![multiple inputs](images/input-interactions/icons-inputdevices03-vertical.png)
+
+### Typical usage
+
+Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app. However, these combined interactions need to be as intuitive and natural as possible as they can also create a very confusing experience.
 
 
 
@@ -332,6 +332,6 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,35 +1,33 @@
 ---
 author: mijacobs
-Description: "本文涵蓋四個通知選項&amp;\\#8212;本機、排程、定期和推播&amp;\\#8212;，它們會傳遞磚和徽章更新及快顯通知內容。"
-title: "選擇通知傳遞方法"
+Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
+title: Choose a notification delivery method
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 
 ---
+# Choose a notification delivery method
 
-# 選擇通知傳遞方法
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-本文涵蓋四個通知選項：本機、排程、定期和推播，它們會傳遞磚和徽章更新及快顯通知內容。 即使使用者沒有與應用程式直接互動，磚或快顯通知仍然可以將資訊傳遞給使用者。 App 的性質及內容與您想傳遞的資訊，可以協助您判斷哪種通知方法最適合您的案例。
+This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content. A tile or a toast notification can get information to your user even when the user is not directly engaged with your app. The nature and content of your app and the information that you want to deliver can help you determine which notification method or methods is best for your scenario.
 
-## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>通知傳遞方法概觀
+## Notification delivery methods overview
 
 
-App 可以使用四種機制來傳遞通知：
+There are four mechanisms that an app can use to deliver a notification:
 
--   **本機**
--   **排程**
--   **定期**
--   **推播**
+-   **Local**
+-   **Scheduled**
+-   **Periodic**
+-   **Push**
 
-下表摘要說明通知傳遞類型。
+This table summarizes the notification delivery types.
 
 <table>
 <colgroup>
@@ -40,50 +38,50 @@ App 可以使用四種機制來傳遞通知：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">傳遞方法</th>
-<th align="left">搭配使用項目</th>
-<th align="left">說明</th>
-<th align="left">範例</th>
+<th align="left">Delivery method</th>
+<th align="left">Use with</th>
+<th align="left">Description</th>
+<th align="left">Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">本機</td>
-<td align="left">磚、徽章、快顯通知</td>
-<td align="left">在 App 執行時傳送通知的一組 API 呼叫，會直接更新磚或徽章，或傳送快顯通知。</td>
+<td align="left">Local</td>
+<td align="left">Tile, Badge, Toast</td>
+<td align="left">A set of API calls that send notifications while your app is running, directly updating the tile or badge, or sending a toast notification.</td>
 <td align="left"><ul>
-<li>音樂 App 會更新磚以顯示「現正播放」&quot;&quot;的內容。</li>
-<li>遊戲 App 在使用者離開遊戲時，會以使用者的最高分數來更新磚。</li>
-<li>啟動 app 時，便會清除其字符指出 app 有新資訊的徽章。</li>
+<li>A music app updates its tile to show what's &quot;Now Playing&quot;.</li>
+<li>A game app updates its tile with the user's high score when the user leaves the game.</li>
+<li>A badge whose glyph indicates that there's new info int the app is cleared when the app is activated.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">排程</td>
-<td align="left">磚、快顯通知</td>
-<td align="left">預先排程通知以在您指定的時間更新的一組 API 呼叫。</td>
+<td align="left">Scheduled</td>
+<td align="left">Tile, Toast</td>
+<td align="left">A set of API calls that schedule a notification in advance, to update at the time you specify.</td>
 <td align="left"><ul>
-<li>行事曆應用程式會為即將發生的會議設定快顯通知提醒。</li>
+<li>A calendar app sets a toast notification reminder for an upcoming meeting.</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left">定期</td>
-<td align="left">磚、徽章</td>
-<td align="left">透過輪詢雲端服務來取得新內容，並以固定時間間隔來定期更新磚與徽章的通知。</td>
+<td align="left">Periodic</td>
+<td align="left">Tile, Badge</td>
+<td align="left">Notifications that update tiles and badges regularly at a fixed time interval by polling a cloud service for new content.</td>
 <td align="left"><ul>
-<li>氣象 App 每 30 分鐘會更新一次顯示氣象預測的磚。</li>
-<li>「每日特賣」&quot;&quot;網站會在每天早上更新當日的特價商品。</li>
-<li>顯示事件倒數天數的磚會在每日午夜更新顯示的倒數天數。</li>
+<li>A weather app updates its tile, which shows the forecast, at 30-minute intervals.</li>
+<li>A &quot;daily deals&quot; site updates its deal-of-the-day every morning.</li>
+<li>A tile that displays the days until an event updates the displayed countdown each day at midnight.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">推播</td>
-<td align="left">磚、徽章、快顯通知、原始通知</td>
-<td align="left">即使您的應用程式未執行，仍然會從雲端伺服器傳送的通知。</td>
+<td align="left">Push</td>
+<td align="left">Tile, Badge, Toast, Raw</td>
+<td align="left">Notifications sent from a cloud server, even if your app isn't running.</td>
 <td align="left"><ul>
-<li>購物應用程式會傳送快顯通知，讓使用者知道他們所追蹤物品的拍賣活動。</li>
-<li>新聞應用程式會在發生突發新聞時更新磚。</li>
-<li>運動應用程式會隨時以即時賽況來更新磚。</li>
-<li>通訊應用程式會提供關於內送郵件或電話的警示。</li>
+<li>A shopping app sends a toast notification to let a user know about a sale on an item that they're watching.</li>
+<li>A news app updates its tile with breaking news as it happens.</li>
+<li>A sports app keeps its tile up-to-date during an ongoing game.</li>
+<li>A communication app provides alerts about incoming messages or phone calls.</li>
 </ul></td>
 </tr>
 </tbody>
@@ -91,77 +89,77 @@ App 可以使用四種機制來傳遞通知：
 
  
 
-## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>本機通知
+## Local notifications
 
 
-在應用程式執行時更新應用程式磚或徽章，或是產生快顯通知，是最簡單的通知傳遞機制；它只需要本機 API 呼叫。 每個應用程式都可以在磚上顯示實用或有趣的資訊，即使該內容只會在使用者啟動並與應用程式互動時才變更。 即使您也使用了其他的通知機制，本機通知還是讓應用程式磚保持最新狀態的好辦法。 例如，相片應用程式磚可以顯示最近新增相簿中的相片。
+Updating the app tile or badge or raising a toast notification while the app is running is the simplest of the notification delivery mechanisms; it only requires local API calls. Every app can have useful or interesting information to show on the tile, even if that content only changes after the user launches and interacts with the app. Local notifications are also a good way to keep the app tile current, even if you also use one of the other notification mechanisms. For instance, a photo app tile could show photos from a recently added album.
 
-我們建議第一次啟動您的應用程式時在本機更新它的磚，或者至少在使用者進行變更之後立即更新磚 (您的應用程式正常會在磚做出的反映)。 該更新要等到使用者離開應用程式才能顯示，但在應用程式使用期間進行此變更，可確保使用者離開時磚已經更新為最新資訊。
+We recommended that your app update its tile locally on first launch, or at least immediately after the user makes a change that your app would normally reflect on the tile. That update isn't seen until the user leaves the app, but by making that change while the app is being used ensures that the tile is already up-to-date when the user departs.
 
-當 API 呼叫是本機呼叫時，通知可以參考網頁影像。 如果網路影像無法下載、已損毀或不符合影像規格，磚與快顯通知的應對方式是不同的：
+While the API calls are local, the notifications can reference web images. If the web image is not available for download, is corrupted, or doesn't meet the image specifications, tiles and toast respond differently:
 
--   磚：不會顯示更新
--   快顯通知：會顯示通知，但是包含預留位置影像
+-   Tiles: The update is not shown
+-   Toast: The notification is displayed, but with a placeholder image
 
-本機通知不會過期，但是最佳做法是設定明確的到期時間。
+Although local notifications don't expire, it's a best practice to set an explicit expiration time.
 
-如需詳細資訊，請參閱這些主題：
+For more information, see these topics:
 
--   [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>排程通知
-
-
-排程通知是本機通知的子集，它們可以指定應該更新磚或顯示快顯通知的確切時間。 排程通知適合事先已知道要更新之內容 (像是會議邀請) 的情況。 如果您事先並不清楚通知內容，那就應該使用推播或定期通知。
-
-根據預設，排程的通知會在傳遞的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
-
-如需詳細資訊，請參閱這些主題：
-
--   [排程通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761464)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
-
-## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>定期通知
+## Scheduled notifications
 
 
-定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 它們也是將相同內容散佈給廣大群眾的絕佳方式。 您的用戶端程式碼可以指定雲端位置 URL，好讓 Windows 輪詢以取得磚或徽章的更新，以及指定輪詢該位置的頻率。 Windows 會在每個輪詢間隔期間連線 URL，下載指定的 XML 內容並在磚上顯示內容。
+Scheduled notifications are the subset of local notifications that can specify the precise time when a tile should be updated or a toast notification should be shown. Scheduled notifications are ideal in situations where the content to be updated is known in advance, such as a meeting invitation. If you don't have advance knowledge of the notification content, you should use a push or periodic notification.
 
-應用程式必須裝載雲端服務才能使用定期通知，而所有已安裝應用程式的使用者將以指定的間隔輪詢這項服務。 請注意，定期更新無法用於快顯通知；快顯通知適合排程或推播通知。
+By default, scheduled notifications expire three days from the time that they are delivered. If needed, you can override this default with an explicit expiration time.
 
-根據預設，定期通知會在輪詢發生的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
+For more information, see these topics:
 
-如需詳細資訊，請參閱這些主題：
+-   [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
--   [定期通知概觀](tiles-and-notifications-periodic-notification-overview.md)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
-
-## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>推播通知
+## Periodic notifications
 
 
-若要交流即時資料或針對使用者個人化的資料，就非常適合使用推播通知。 推播通知用於在無法預測的時間產生的內容，像是突發新聞、社交網路更新或立即訊息。 當資料 (像是遊戲進行時的遊戲分數) 有時效性而不適合定期通知時，也可以使用推播通知。
+Periodic notifications give you live tile updates with a minimal cloud service and client investment. They are also an excellent method of distributing the same content to a wide audience. Your client code specifies the URL of a cloud location that Windows polls for tile or badge updates, and how often the location should be polled. At each polling interval, Windows contacts the URL to download the specified XML content and display it on the tile.
 
-推播通知需要能夠管理推播通知通道與選擇何時將通知傳送給何人的雲端服務。
+Periodic notifications require the app to host a cloud service, and this service will be polled at the specified interval by all users who have the app installed. Note that periodic updates cannot be used for toast notifications; toast notifications are best served by scheduled or push notifications.
 
-根據預設，推播通知會在 Windows 推播通知服務 (WNS) 收到它們的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
+By default, periodic notifications expire three days from the time that the polling occurs. If needed, you can override this default with an explicit expiration time.
 
-如需詳細資訊，請參閱：
+For more information, see these topics:
 
--   [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
--   [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-
-## <span id="related_topics"></span>相關主題
+## Push notifications
 
 
-* [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [排程通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761464)
-* [快顯通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465391)
-* [定期通知概觀](tiles-and-notifications-periodic-notification-overview.md)
-* [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
-* [GitHub 上的通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+Push notifications are ideal to communicate real-time data or data that is personalized for your user. Push notifications are used for content that is generated at unpredictable times, such as breaking news, social network updates, or instant messages. Push notifications are also useful in situations where the data is time-sensitive in a way that would not suit periodic notifications, such as sports scores during a game.
+
+Push notifications require a cloud service that manages push notification channels and chooses when and to whom to send notifications.
+
+By default, push notifications expire three days from the time that they are received by Windows Push Notification Services (WNS). If needed, you can override this default with an explicit expiration time.
+
+For more information, see:
+
+-   [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+-   [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+
+
+## Related topics
+
+
+* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
+* [Guidelines for toast notifications](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
+* [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+* [Universal Windows Platform (UWP) notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
@@ -172,6 +170,6 @@ App 可以使用四種機制來傳遞通知：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

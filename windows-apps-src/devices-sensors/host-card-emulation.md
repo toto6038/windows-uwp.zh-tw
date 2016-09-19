@@ -1,96 +1,96 @@
 ---
 author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-title: "建立 NFC 智慧卡 App"
-description: "Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 App，但該模型需要安全的付款 App 才能與行動網路運算子 (MNO) 緊密結合。"
+title: Create an NFC Smart Card app
+description: Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure element, but that model required secure payment apps to be tightly coupled with mobile-network operators (MNO).
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
+ms.openlocfilehash: 52a8be1df522c6b5512a7fe560d01e8d840194af
 
 ---
-# 建立 NFC 智慧卡 App
+# Create an NFC Smart Card app
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要** 本主題僅適用於 Windows 10 行動裝置版。
+**Important**  This topic applies to Windows 10 Mobile only.
 
-Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 app，但該模型需要安全的付款 app 才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置版中，我們已導入新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的 app 直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE app，讓您的客戶可以透過他們的手機而不是實體卡片存取您的服務，而不需要使用 MNO 共同作業。
+Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure element, but that model required secure payment apps to be tightly coupled with mobile-network operators (MNO). This limited the variety of possible payment solutions by other merchants or developers that are not coupled with MNOs. In Windows 10 Mobile, we have introduced a new card emulation technology called, Host Card Emulation (HCE). HCE technology allows your app to directly communicate with an NFC card reader. This topic illustrates how Host Card Emulation (HCE) works on Windows 10 Mobile devices and how you can develop an HCE app so that your customers can access your services through their phone instead of a physical card without collaborating with an MNO.
 
-## 開發 HCE app 所需的項目
+## What you need to develop an HCE app
 
 
-若要開發適用於 Windows 10 行動裝置版且以 HCE 為基礎的卡片模擬 app，您需要開始設定開發環境。 您可以藉由安裝 Microsoft Visual Studio 2015 開始進行設定，其中包括 Windows 開發人員工具，以及具備 NFC 模擬支援的 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](https://msdn.microsoft.com/library/windows/apps/Dn726766)
+To develop an HCE-based card emulation app for Windows 10 Mobile, you will need to get your development environment setup. You can get set up by installing Microsoft Visual Studio 2015, which includes the Windows developer tools and the Windows 10 Mobile emulator with NFC emulation support. For more information about getting setup, see, [Get set up](https://msdn.microsoft.com/library/windows/apps/Dn726766)
 
-或者，如果您想要使用實際的 Windows 10 行動裝置版裝置，而不是隨附的 Windows 10 行動裝置版模擬器來測試，也需要下列項目。
+Optionally, if you want to test with a real Windows 10 Mobile device instead of the included Windows 10 Mobile emulator, you will also need the following items.
 
--   具備 NFC HCE 支援的 Windows 10 行動裝置版裝置。 Lumia 730、830、640 和 640 XL 目前提供硬體來支援 NFC HCE app。
--   支援 ISO/IEC 14443-4 和 ISO/IEC 7816-4 通訊協定的讀卡機終端機
+-   A Windows 10 Mobile device with NFC HCE support. Currently, the Lumia 730, 830, 640, and the 640 XL have the hardware to support NFC HCE apps.
+-   A reader terminal that supports protocols ISO/IEC 14443-4 and ISO/IEC 7816-4
 
-Windows 10 行動裝置版會實作 HCE 服務來提供下列功能。
+Windows 10 Mobile implements an HCE service that provides the following functionalities.
 
--   App 可以登錄它們想要模擬之卡片的小程式識別碼 (AID)。
--   根據外部讀卡機卡片選取和使用者喜好設定，對於某一個已登錄的 app 進行應用程式通訊協定資料單位 (APDU) 命令和回應組的衝突解決和路由。
--   處理 app 的事件和通知做為使用者動作的結果。
+-   Apps can register the applet identifiers (AIDs) for the cards they would like to emulate.
+-   Conflict resolution and routing of the Application Protocol Data Unit (APDU) command and response pairs to one of the registered apps based on the external reader card selection and user preference.
+-   Handling of events and notifications to the apps as a result of user actions.
 
-Windows 10 支援以 ISO-DEP (ISO-IEC 14443-4) 為基礎的智慧卡模擬，以及使用 ISO-IEC 7816-4 規格中定義的 APDU 進行通訊。 Windows 10 支援適用於 HCE app 的 ISO/IEC 14443-4 類型 A 技術。 根據預設，會將類型 B、類型 F 及非 ISO-DEP (例如 MIFARE) 技術路由傳送到 SIM 卡。
+Windows 10 supports emulation of smart cards that are based on ISO-DEP (ISO-IEC 14443-4) and communicates using APDUs as defined in the ISO-IEC 7816-4 specification. Windows 10 supports ISO/IEC 14443-4 Type A technology for HCE apps. Type B, type F, and non-ISO-DEP (eg MIFARE) technologies are routed to the SIM by default.
 
-只有 Windows 10 行動裝置版裝置會啟用卡片模擬功能。 其他的 Windows 10 版本上未提供以 SIM 為基礎和以 HCE 為基礎的卡片模擬。
+Only Windows 10 Mobile devices are enabled with the card emulation feature. SIM-based and HCE-based card emulation is not available on other versions of Windows 10.
 
-下圖顯示以 HCE 和 SIM 為基礎的卡片模擬支援架構。 
+The architecture for HCE and SIM based card emulation support is shown in the diagram below. 
 
 ![](./images/nfc-architecture.png)
 
-## App 選取和 AID 路由
+## App selection and AID routing
 
-若要開發 HCE app，由於使用者可以安裝多個不同的 HCE app，因此您必須了解 Windows 10 行動裝置版裝置如何將 AID 路由傳送到特定 app。 每個 app 都可登錄多個以 HCE 和 SIM 卡為基礎的卡片。 只要使用者在 [NFC 設定] 功能表中選擇 [SIM 卡] 選項做為預設付款卡，以 SIM 卡為基礎的舊版 Windows Phone 8.1 app 將會在 Windows 10 行動裝置版上繼續運作。 此選項為首次開啟裝置時的預設設定。
+To develop an HCE app, you must understand how Windows 10 Mobile devices route AIDs to a specific app because users can install multiple different HCE apps. Each app can register multiple HCE and SIM-based cards. Legacy Windows Phone 8.1 apps that are SIM-based will continue to work on Windows 10 Mobile as long as the user chooses the "SIM Card" option as their default payment card in the NFC Setting menu. This is set by default when turning the device on for the first time.
 
-當使用者將他們的 Windows 10 行動裝置版裝置輕觸終端機時，資料即會自動路由傳送到安裝於裝置上的適當 app。 這個路由是以小程式識別碼 (AID) 為根據，這類識別碼是 5-16 位元組的識別碼 。 輕觸期間，外部終端機將傳輸 SELECT 命令 APDU 來指定 AID，它就像所有後續要路由傳送的 APDU 命令一樣。 後續的 SELECT 命令將再次變更路由。 根據 app 登錄的 AID 和使用者設定，會將 APDU 流量路由傳送到特定的 app，這將會傳送回應 APDU。 請注意，終端機可能想要在同一個輕觸期間，與數種不同的 app 進行通訊。 因此，您必須確定 app 的背景工作會在停用時儘快結束，以便為另一個 app 的背景工作產生更多空間來回應 APDU。 我們將在本主題稍後討論背景工作。
+When the user taps their Windows 10 Mobile device to a terminal, the data is automatically routed to the proper app installed on the device. This routing is based on the applet IDs (AIDs) which are 5-16 byte identifiers. During a tap, the external terminal will transmit a SELECT command APDU to specify the AID it would like all subsequent APDU commands to be routed to. Subsequent SELECT commands, will change the routing again. Based on the AIDs registered by apps and user settings, the APDU traffic is routed to a specific app, which will send a response APDU. Be aware that a terminal may want to communicate with several different apps during the same tap. So you must ensure your app's background task exits as quickly as possible when deactivated to make room for another app's background task to respond to the APDU. We will discuss background tasks later in this topic.
 
-HCE app 必須利用它們可處理的特殊 AID 來登錄自己，讓它們能夠接收 AID的 APDU。 App 會使用 AID 群組來宣告 AID。 AID 群組在概念上相當於個別的實體卡。 例如，某一張信用卡是使用一個 AID 群組來宣告，而第二張來自其他銀行的信用卡則是利用不同的第二個 AUD 群組來宣告，儘管這兩張信用卡具備同一個 AID 也一樣。
+HCE apps must register themselves with particular AIDs they can handle so they will receive APDUs for an AID. Apps decalre AIDs by using AID groups. An AID group is conceptually equivalent to an individual physical card. For example, one credit card is declared with an AID group and a second credit card from a different bank is declared with a different, second AID group, even though both of them may have the same AID.
 
-## 針對付款 AID 群組的衝突解決
+## Conflict resolution for payment AID groups
 
-當 app 登錄實體卡片 (AID 群組) 時，可將 AID 群組類別宣告為 [付款] 或 [其他]。 儘管在任何指定期間內可登錄多個付款 AID 群組，但針對「輕觸以付款」一次只能啟用一個付款 AID 群組，該群組將會由使用者選取。 這種行為存在是因為使用者預期能夠控制自行選擇要使用單一付款、信用卡或轉帳卡，如此一來，當他們將其裝置輕觸終端機時，就不會用到其他不想使用的卡片來支付。
+When an app registers physical cards (AID groups), it can declare the AID group category as either "Payment" or "Other." While there can be multiple payment AID groups registered at any given time, only one of these payment AID groups may be enabled for Tap and Pay at a time, which is selected by the user. This behavior exists because the user expects be in control of consciously choosing a single payment, credit, or debit card to use so they don't pay with a different unintended card when tapping their device to a terminal.
 
-不過，已登錄為 [其他] 的多個 AID 群組可以在不需使用者互動的情況下同時啟用。 這種行為之所以存在，是因為使用者透過點選手機使用其他類型的卡片 (例如，忠誠卡、折價券或大眾運輸卡) 時，應該不須要花費任何心力或收到任何提示便可以使用。
+However, multiple AID groups registered as "Other" can be enabled at the same time without user interaction. This behavior exists because other types of cards like loyalty, coupons, or transit are expected to just work without any effort or prompting whenever they tap their phone.
 
-已登錄為 [付款] 的所有 AID 群組會出現在 [NFC 設定] 頁面的卡片清單中，使用者可在其中選取預設付款卡。 選取預設付款卡之後，已登錄這個付款 AID 群組的預設付款卡就會成為預設付款 app。 預設付款 app 可以在沒有使用者互動的情況下，啟用或停用它們的任何 AID 群組。 如果使用者拒絕預設付款 app 的提示，則目前的預設付款 app (如果有的話) 就會繼續保持為預設值。 下列螢幕擷取畫面會顯示 [NFC 設定] 頁面。
+All the AID groups that are registered as "Payment" appear in the list of cards in the NFC Settings page, where the user can select their default payment card. When a default payment card is selected, the app that registered this payment AID group becomes the default payment app. Default payment apps can enable or disable any of their AID groups without user interaction. If the user declines the default payment app prompt, then the current default payment app (if any) continues to remain as default. The following screenshot shows the NFC Settings page.
 
 ![](./images/nfc-settings.png)
 
-以上述的範例螢幕擷取畫面為例，如果使用者將預設付款卡變更為另一張未向「HCE Application 1」登錄的卡片，則系統會建立確認提示來取得該使用者的同意。 不過，如果使用者將預設付款卡變更為另一張已向「HCE Application 1」登錄的卡片，則系統不會為使用者建立確認提示，因為「HCE Application 1」已經是預設的付款 app。
+Using the example screenshot above, if the user changes his default payment card to another card that is not registered by "HCE Application 1," the system creates a confirmation prompt for the user’s consent. However, if the user changes his default payment card to another card that is registered by "HCE Application 1," the system does not create a confirmation prompt for the user, because "HCE Application1" is already the default payment app.
 
-## 針對非付款 AID 群組的衝突解決
+## Conflict resolution for non-payment AID groups
 
-分類為 [其他] 的非付款卡不會出現在 [NFC設定] 頁面中。
+Non-payment cards categorized as "Other" do not appear in the NFC settings page.
 
-您的 app 可以使用與付款 AID 群組的相同方式，來建立、登錄並啟用非付款 AID 群組。 主要差異在於非付款 AID 群組已將模擬類別設定為 [其他] 而不是 [付款]。 向系統登錄 AID 群組之後，您需要啟用 AID 群組來接收 NFC 流量。 當您嘗試啟用非付款 AID 群組來接收流量時，除非與其他 app 已經登錄於系統中的其中一個 AID 發生衝突，否則系統不會提示使用者進行確認。 如果發生衝突，若使用者選擇啟用最新登錄的 AID 群組，系統將提示使用者關於哪一張卡片及其相關聯 app 即將停用的相關資訊。
+Your app can create, register and enable non-payment AID groups in the same manner as payment AID groups. The main difference is that for non-payment AID groups the emulation category is set to "Other" as opposed to "Payment". After registering the AID group with the system, you need to enable the AID group to receive NFC traffic. When you try to enable a non-payment AID group to receive traffic, the user is not prompted for a confirmation unless there is a conflict with one of the AIDs already registered in the system by a different app. If there is a conflict, the user will be prompted with information about which card and it's associated app will be disabled if the user chooses to enable the newly registered AID group.
 
-**和以 SIM 卡為基礎的 NFC 應用程式共存**
+**Coexistence with SIM based NFC applications**
 
-在 Windows 10 行動裝置版中，系統會設定 NFC 控制器路由表，此表格是用來在控制器層級進行路由決策。 此表格包含下列項目的路由資訊。
+In Windows 10 Mobile, the system sets up the NFC controller routing table that is used to make routing decisions at the controller layer. The table contains routing information for the following items.
 
--   個別的 AID 路由。
--   以通訊協定為基礎的路由 (ISO-DEP)。
--   以技術為基礎的路由 (NFC-A/B/F)。
+-   Individual AID routes.
+-   Protocol based route (ISO-DEP).
+-   Technology based routing (NFC-A/B/F).
 
-當外部讀卡機傳送「SELECT AID」命令時，NFC 控制器會先檢查路由表中的 AID 路由來尋找相符項目。 如果沒有相符項目，將使用以通訊協定為基礎的路由做為 ISO-DEP (14443-4-A) 流量的預設路由。 對於任何其他非 ISO-DEP 流量，將使用以技術基礎的路由。
+When an external reader sends a "SELECT AID" command, the NFC controller first checks AID routes in the routing table for a match. If there is no match, it will use the protocol-based route as the default route for ISO-DEP (14443-4-A) traffic. For any other non-ISO-DEP traffic it will use the technology based routing.
 
-Windows 10 行動裝置版會在 [NFC 設定] 頁面中提供 [SIM 卡] 功能表選項，以繼續使用以 SIM 卡為基礎的舊版 Windows Phone 8.1 app，這類 app 不會向系統登錄它們的 AID。 如果使用者選取 [SIM 卡] 做為預設付款卡，則 ISO-DEP 路由會設定為 UICC，針對下拉式功能表中的所有其他選取項目，ISO-DEP 路由會指向到主機。
+Windows 10 Mobile provides a menu option "SIM Card" in the NFC Settings page to continue to use legacy Windows Phone 8.1 SIM-based apps, which do not register their AIDs with the system. If the user selects "SIM card" as their default payment card, then the ISO-DEP route is set to UICC, for all other selections in the drop-down menu the ISO-DEP route is to the host.
 
-當裝置第一次使用 Windows 10 行動裝置版啟動時，即會針對具備已啟用 SE 之 SIM 卡的裝置，將 ISO-DEP 路由設定為 [SIM 卡]。 當使用者安裝已啟用 HCE 的 app，且該 app 會啟用任何 HCE AID 群組登錄時，ISO-DEP 路由將會指向主機。 以 SIM卡為基礎的新應用程式需針對要在控制器路由表中填入的特定 AID 路由，在 SIM 卡中依序登錄 AID。
+The ISO-DEP route is set to "SIM Card" for devices that have an SE enabled SIM card when the device is booted for the first time with Windows 10 Mobile. When the user installs an HCE enabled app and that app enables any HCE AID group registrations, the ISO-DEP route will be pointed to the host. New SIM-based applications need to register the AIDs in the SIM in order for the specific AID routes to be populated in the controller routing table.
 
-## 建立以 HCE 為基礎的 app
+## Creating an HCE based app
 
-您的 HCE app 具有兩個部分。
+Your HCE app has two parts.
 
--   適用於使用者互動的主要前景 app。
--   由系統觸發來處理指定 AID 之 APDU 的背景工作。
+-   The main foreground app for the user interaction.
+-   A background task that is triggered by the system to process APDUs for a given AID.
 
-由於對於載入背景工作以回應 NFC 輕觸效能需求非常嚴謹，因此建議您在 C++/CX 原生程式碼 (包括任何相依性、資源或您相依的程式庫) 而非 C# 或 Managed 程式碼中實作整個背景工作。 儘管 C# 和 Managed 程式碼通常能夠順利執行，但還是會產生額外負荷，例如，載入 .NET CLR，而您可以使用 C++/CX 進行撰寫來避免。
-## 建立並登錄您的背景工作
+Because of the extremely tight performance requirements for loading your background task in response to an NFC tap, we recommend that your entire background task be implementing in C++/CX native code (including any dependencies, references, or libraries you depend on) rather than C# or managed code. While C# and managed code normally performs well, there is overhead, like loading the .NET CLR, that can be avoided by writing it in C++/CX.
+## Create and register your background task
 
-您必須在 HCE app 中建立背景工作，來處理和回應系統要路由傳送到它的 APDU。 在第一次啟動您的 app 期間，前景會登錄實作 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803) 介面的 HCE 背景工作，如下列程式碼所示。
+You need to create a background task in your HCE app for processing and responding to APDUs routed to it by the system. During the first time your app is launched, the foreground registers an HCE background task that implements the [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803) interface as shown in the following code.
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -100,16 +100,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 **EmulatorHostApplicationActivated**。 這表示每當要解析 app 的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
+Notice that the task trigger is set to [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017). **EmulatorHostApplicationActivated**. This means that whenever a SELECT AID command APDU is received by the OS resolving to your app, your background task will be launched.
 
-## 接收和回應 APDU
+## Receive and respond to APDUs
 
-如果有 APDU 的目標是您的 app 時，系統將會啟動您的背景工作。 您的背景工作將會接收透過 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 物件的 [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 屬性傳遞的 APDU，並使用相同物件的 [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) 方法來回應 APDU。 基於效能考量，請考慮讓您的背景工作保持為輕量型作業。 例如，在完成所有處理時，立即回應 APDU，並結束您的背景工作。 由於 NFC 交易的性質，使用者通常只會在讀卡機上持有其裝置一段極短暫的時間。 您的背景工作將繼續接收來自讀卡機的流量，直到您的連線停用為止，在這種情況下，您將會接收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 物件。 您的連線會因為下列原因 (如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 屬性中所示) 而停用。
+When there is an APDU targeted for your app, the system will launch your background task. Your background task receives the APDU passed through the [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) object’s [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) property and responds to the APDU using the [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) method of the same object. Consider keeping your background task for light operations for performance reasons. For example, respond to the APDUs immediately and exit your background task when all processing is complete. Due to the nature of NFC transactions, users tend to hold their device against the reader for only a very short amount of time. Your background task will continue to receive traffic from the reader until your connection is deactivated, in which case you will receive a [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) object. Your connection can be deactivated because of the following reasons as indicated in the [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) property.
 
--   如果連線是使用 **ConnectionLost** 值來停用，就表示使用者已將他們的裝置抽離讀卡機。 如果您的 app 需要使用者輕觸終端機較長的時間，您可能要考慮透過回饋來提示他們。 您應該快速終止背景工作 (藉由完成您的延遲)，以確保使用者再次輕觸它時，它不會因等待前一個背景工作結束而延遲。
--   如果連線是使用 **ConnectionRedirected** 值來停用，就表示終端機所傳送的新 SELECT AID 命令 APDU 並導向至不同的 AID。 在此情況下，您的 app 應該立即結束背景工作 (藉由完成您的延遲)，以便讓另一個背景工作能夠執行。
+-   If the connection is deactivated with the **ConnectionLost** value, it means that the user pulled their device away from the reader. If your app needs the user to tap to the terminal longer, you might want to consider prompting them with feedback. You should terminate your background task quickly (by completing your deferral) to ensure if they tap again it won’t be delayed waiting for the previous background task to exit.
+-   If the connection is deactivated with the **ConnectionRedirected**, it means that the terminal sent a new SELECT AID command APDU directed to a different AID. In this case, your app should exit the background task immediately (by completing your deferral) to allow another background task to run.
 
-背景工作也應該在 [**IBackgroundTaskInstance interface**](https://msdn.microsoft.com/library/windows/apps/BR224797) 上針對 [**Canceled event**](https://msdn.microsoft.com/library/windows/apps/BR224798) 進行登錄，然後同樣地快速結束背景工作 (藉由完成您的延遲)，因為這個事件會在您的背景工作完成它時由系統所引發。 以下是示範 HCE app 背景工作的程式碼。
+The background task should also register for the [**Canceled event**](https://msdn.microsoft.com/library/windows/apps/BR224798) on [**IBackgroundTaskInstance interface**](https://msdn.microsoft.com/library/windows/apps/BR224797), and likewise quickly exit the background task (by completing your deferral) because this event is fired by the system when it is finished with your background task. Below is code that demonstrates an HCE app background task.
 
 ```csharp
 void BgTask::Run(
@@ -202,13 +202,13 @@ void BgTask::HandleHceActivation()
  }
 }
 ```
-## 建立並登錄 AID 群組
+## Create and register AID groups
 
-當您的 app 在佈建卡片時首次啟動期間，您將會建立 AID 群組並向系統登錄。 系統會根據登錄的 AID 和使用者設定，來判斷外部讀卡機想要交談並據以路由傳送 APDU 的 app。
+During the first launch of your application when the card is being provisioned, you will create and register AID groups with the system. The system determines the app that an external reader would like to talk to and route APDUs accordingly based on the registered AIDs and user settings.
 
-大部分的付款卡都會針對同一個 AID (其為 PPSE AID) 以及其他付款網路卡特定的 AID 進行登錄。 每個 AID 群組都代表一張卡片，而且當使用者啟用該卡片時，群組中的所有 AID 都會啟用。 同樣地，當使用者會停用卡片時，群組中的所有 AID 都會停用。
+Most of the payment cards register for the same AID (which is PPSE AID) along with additional payment network card specific AIDs. Each AID group represents a card and when the user enables the card, all AIDs in the group are enabled. Similarly, when the user deactivates the card, all AIDs in the group are disabled.
 
-若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+To register an AID group, you need to create a [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) object and set its properties to reflect that this is an HCE-based payment card. Your display name should be descriptive to the user because it will show up in the NFC settings menu as well as user prompts. For HCE payment cards, the [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) property should be set to **Payment** and the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -226,7 +226,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+For non-payment HCE cards, the [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) property should be set to **Other** and the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) property should be set to **Host**.
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -243,23 +243,23 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-您最多可以針對每個 AID 群組包含 9 個 AID (每個長度為 5-16 位元組)。
+You can include up to 9 AIDs (of length 5-16 bytes each) per AID group.
 
-使用 [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) 方法來向系統登錄您的 AID 群組，這樣將會傳回 [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) 物件。 根據預設，會將登錄物件的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 屬性設定為 **Disabled**。 這表示即使您的 AID 已向系統登錄，但它們仍未啟用且將不會接收流量。
+Use the [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) method to register your AID group with the system, which will return a [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) object. By default, the [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) property of the registration object is set to **Disabled**. This means even though your AIDs are registered with the system, they are not enabled yet and won’t receive traffic.
 
 ```csharp
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-您可以使用 [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) 類別的 [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) 方法來啟用登錄的卡片 (AID 群組)，如下所示。 由於系統上一次只能啟用單一付款卡，因此將付款 AID 群組的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 設定為 **Enabled**，與設定預設付款卡相同。 系統將提示使用者允許此卡片做為預設付款卡，不論是否已經選取預設付款卡。 如果您的 app 已經是預設付款應用程式，而且只會在它自己的 AID 群組之間變更，則這個論點並不正確。 您最多可以針對每個 app 登錄 10 個 AID 群組。
+You can enable your registered cards (AID groups) by using the [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) method of the[**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) class as shown below. Because only a single payment card can be enabled at a time on the system, setting the [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) of a payment AID group to **Enabled** is the same as setting the default payment card. The user will be prompted to allow this card as a default payment card, regardless of whether there is a default payment card already selected or not. This statement is not true if your app is already the default payment application, and is merely changing between it’s own AID groups. You can register up to 10 AID groups per app.
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-您可以查詢 app 已向作業系統登錄的 AID 群組，並使用 [**GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) 方法來檢查它們的啟用原則。
+You can query your app’s registered AID groups with the OS and check their activation policy using the [**GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) method.
 
-當您將付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時，唯有在您的 app 不是預設付款 app 的情況下，使用者才會收到提示。 如果發生 AID 衝突，使用者將會在您將非付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時收到提示。
+Users will be prompted when you change the activation policy of a payment card from **Disabled** to **Enabled**, only if your app is not already the default payment app. Users will only be prompted when you change the activation policy of a non-payment card from **Disabled** to **Enabled** if there is an AID conflict.
 
 ```csharp
 var registrations = await SmartCardEmulator.GetAppletIdGroupRegistrationsAsync();
@@ -269,9 +269,9 @@ registration.RequestActivationPolicyChangeAsync (AppletIdGroupActivationPolicy.E
     }
 ```
 
-**啟用原則變更時的事件通知**
+**Event notification when activation policy change**
 
-在您的背景工作中，您可以登錄以在其中一個 AID 登錄的啟用原則在 app 外部發生變更時接收到相關事件。 例如，使用者可能透過 NFC 設定功能表來變更預設付款 app，從您的某一張卡片變更為其他 app 裝載的另一張卡片。 如果您的 app 需要了解這個對於內部設定的變更 (例如更新動態磚)，您可以接收關於此變更的事件通知，並在 app 中據以採取動作。
+In your background task, you can register to receive events for when the activation policy of one of your AID group registrations changes outside of your app. For example, the user may change the default payment app through the NFC settings menu from one of your cards to another card hosted by another app. If your app needs to know about this change for internal setup such as updating live tiles, you can receive event notifications for this change and take action in your app accordingly.
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -281,15 +281,15 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorAppletI
 bgTask = taskBuilder.Register();
 ```
 
-## 前景覆寫行為
+## Foreground override behavior
 
-您可以在您的 app 仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的 app 仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的 app。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的 app 離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景 app 中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) 方法只能從前景 app 呼叫，無法從背景工作呼叫。
+You can change the [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) of any of your AID group registrations to **ForegroundOverride** while your app is in the foreground without prompting the user. When the user taps their device to a terminal while your app is in the foreground, the traffic is routed to your app even if none of your payment cards were chosen by the user as their default payment card. When you change a card’s activation policy to **ForegroundOverride**, this change is only temporary until your app leaves the foreground and it will not change the current default payment card set by the user. You can change the **ActivationPolicy** of your payment or non-payment cards from your foreground app as follows. Note that the [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) method can only be called from a foreground app and cannot be called from a background task.
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-此外，您可以登錄由單一 0 長度的 AID 所組成的 AID 群組，這將導致系統路由傳送所有 APDU (無論 AID 為何)，這也包含接收到 SELECT AID 命令之前傳送的任何命令 APDU。 不過，這類 AID 群組僅能在您的 app 於前景執行時運作，因為它只能設定為 **ForegroundOverride** 且無法永久啟用。 此外，此機制可針對 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639) 列舉的 **Host** 和 **UICC** 值進行運作，以便將所有流量路由傳送到 HCE 背景工作或 SIM 卡。
+Also, you can register an AID group consisting of a single 0-length AID which will cause the system to route all APDUs regardless of the AID and including any command APDUs sent before a SELECT AID command is received. However, such an AID group only works while your app is in the foreground because it can only be set to **ForegroundOverride** and cannot be permanently enabled. Also, this mechanism works both for **Host** and **UICC** values of the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639) enumeration to either route all traffic to your HCE background task, or to the SIM card.
 
 ```csharp
 public static byte[] AID_Foreground =
@@ -304,33 +304,33 @@ reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-## 檢查 NFC 和 HCE 支援
+## Check for NFC and HCE support
 
-您的 app 應該檢查裝置是否具備 NFC 硬體、支援卡片模擬功能，以及支援主機卡模擬，然後再將這類功能提供給使用者。
+Your app should check whether a device has NFC hardware, supports the card emulation feature, and supports host card emulation prior to offering such features to the user.
 
-NFC 智慧卡模擬功能只能在 Windows 10 行動裝置版上啟用，因此，嘗試在 Windows 10 的任何其他版本中使用智慧卡模擬器 API，將會導致錯誤。 您可以在下列程式碼片段中查看智慧卡 API 支援。
+The NFC smart card emulation feature is only enabled on Windows 10 Mobile, so trying to use the smart card emulator APIs in any other versions of Windows 10, will cause errors. You can check for smart card API support in the following code snippet.
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
 ```
 
-您可以藉由檢查 [**SmartCardEmulator.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/Dn608008) 方法是否會傳回 Null 來進行額外檢查，以查看裝置是否具備某種形式卡片模擬功能的 NFC 硬體。 若是如此，則裝置上不支援任何 NFC 卡片模擬。
+You can additionally check to see if the device has NFC hardware capable of some form of card emulation by checking if the [**SmartCardEmulator.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/Dn608008) method returns null. If it does, then no NFC card emulation is supported on the device.
 
 ```csharp
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-只有在目前啟動的裝置上 (例如，Lumia 730、830、640 及 640 XL) 才支援以 HCE 和 AID 為基礎的 UICC 路由。 任何執行 Windows 10 行動裝置版或更新版本且具備 NFC 功能的新裝置都應該支援 HCE。 您的 app 可以檢查是否有 HCE 支援，如下所示。
+Support for HCE and AID-based UICC routing is only available on recently launched devices such as the Lumia 730, 830, 640, and 640 XL. Any new NFC capable devices running Windows 10 Mobile and after should support HCE. Your app can check for HCE support as follows.
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
 ```
 
-## 鎖定畫面和螢幕關閉行為
+## Lock screen and screen off behavior
 
-Windows 10 行動裝置版具有裝置層級的卡片模擬設定，可透過行動電信業者或裝置製造商來設定。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 [輕觸支付] 切換，並將 [裝置層級的啟用原則] 設定為 [自動]。
+Windows 10 Mobile has device-level card emulation settings, which can be set by the mobile operator or the manufacturer of the device. By default, "tap to pay" toggle is disabled and the "enablement policy at device level" is set to "Always", unless the MO or OEM overwrites these values.
 
-您的應用程式可以在裝置層級上查詢 [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) 的值，並根據 app 在每個狀態中所需的行為，針對每個案例採取動作。
+Your application can query the value of the [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) at device level and take action for each case depending on the desired behavior of your app in each state.
 
 ```csharp
 SmartCardEmulator emulator = await SmartCardEmulator.GetDefaultAsync();
@@ -353,10 +353,10 @@ return "Card emulation always on";
 }
 ```
 
-即使手機已鎖定，您的 app 背景工作還是會啟動，和/或唯有當外部讀卡機選取某個 AID 來解析您的 app 時，螢幕才會關閉。 您可以在背景工作中回應來自讀卡機的命令，但是，如果您需要任何來自使用者的輸入，或者需要為使用者顯示訊息，則可使用相同引數來啟動前景 app。 您的背景工作會使用下列行為來啟動前景 app。
+Your app's background task will be launched even if the phone is locked and/or the screen is off only if the external reader selects an AID that resolves to your app. You can respond to the commands from the reader in your background task, but if you need any input from the user or if you want to show a message to the user, you can launch your foreground app with some arguments. Your background task can launch your foreground app with the following behavior.
 
--   在裝置鎖定畫面下方 (只有在使用者解除鎖定裝置之後，才會看到您的前景 app)
--   在裝置鎖定畫面上方 (在使用者關閉您的 app 之後，裝置仍會處於鎖定狀態)
+-   Under the device lock screen (the user will see your foreground app only after she unlocks the device)
+-   Above the device lock screen (after the user dismisses your app, the device is still in locked state)
 
 ```csharp
         if (Windows::Phone::System::SystemProtection::ScreenLocked)
@@ -366,9 +366,9 @@ return "Card emulation always on";
         } 
 ```
 
-## AID 登錄以及適用於以 SIM 為基礎之 app 的其他更新
+## AID registration and other updates for SIM based apps
 
-使用 SIM 卡做為安全元素的卡片模擬 app 可向 Windows 服務進行登錄，以宣告 SIM 卡上支援的 AID。 此登錄非常類似以 HCE 為基礎的 app 登錄。 唯一的差別是 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639)，您應該針對以 SIM 卡為基礎的 app 將它設定為 Uicc。 登錄付款卡之後，也會將該卡片的顯示名稱填入 NFC 設定功能表中。
+Card emulation apps that use the SIM as the secure element can register with the Windows service to declare the AIDs supported on the SIM. This registration is very similar to an HCE-based app registration. The only difference is the [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639), which should be set to Uicc for SIM-based apps. As the result of the payment card registration, the display name of the card will also be populated in the NFC setting menu.
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -378,14 +378,14 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** 重要 **  
-Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用 Windows 10 行動裝置版中更廣泛的新 SMS 支援來取代，但任何依賴該功能的舊版 Windows Phone 8.1 App 都必須更新，以使用新的 Windows 10 行動裝置版 SMS API。
+** Important **  
+The legacy binary SMS intercept support in Windows Phone 8.1 has been removed and replaced with new broader SMS support in Windows 10 Mobile, but any legacy Windows Phone 8.1 apps relying on that must update to use the new Windows 10 Mobile SMS APIs.
 
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

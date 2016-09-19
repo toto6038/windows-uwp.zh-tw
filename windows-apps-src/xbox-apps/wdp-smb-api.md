@@ -1,60 +1,60 @@
 ---
 author: payzer
-title: "裝置入口網站 SMB API 參考"
-description: "了解如何以程式設計方式存取 SMB API。"
+title: Device Portal SMB API reference
+description: Learn how to access the SMB APIs programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: 3d76bf181baa9dfd973467d43241230fddf2daf7
-ms.openlocfilehash: 5efe2af3524d97e6014c4d6be2a8f1aef22f2e66
+ms.openlocfilehash: d6a097c84e6b967c41507d9e60c266f0bacb93fe
 
 ---
 
-# 開發人員資料夾 API 參考   
-您可以使用標準的 [檔案總管] 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
+# Developer folder API reference   
+You can access development-related files on your Xbox One using a standard file explorer. This allows you to easily view and replace files from your PC to the console.
 
-**要求**
+**Request**
 
-您可以使用下列要求存取開發人員資料夾。 要求會傳回：    
-* 檔案共用的位置。 此位置可以輸入至 [檔案總管] 的位址列中。
-* 存取檔案共用的使用者名稱。
-* 存取檔案共用的密碼。
+You can access the developer folder using the following request. The request will return:    
+* The location of the file share. This location can be entered into the address bar in a file explorer.
+* The username to access the file share.
+* The password to access the file share.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 GET | /ext/smb/developerfolder
 <br />
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 無
+- None
 
-**回應**   
-路徑 - 檔案開發人員檔案共用的路徑。   
-使用者名稱 - 存取開發人員檔案共用所需要的使用者名稱。   
-密碼 - 存取開發人員檔案共用所需要的密碼。   
+**Response**   
+Path - the path to the file developer files share.   
+Username - the username needed to access the developer files share.   
+Password - the password needed to access the developer files share.   
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-200 | 已授與存取檔案共用認證的要求。
-4XX | 錯誤碼
-5XX | 錯誤碼
+200 | The request to access the credentials for the file share was granted.
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Xbox
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

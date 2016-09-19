@@ -1,41 +1,41 @@
 ---
 author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
-title: "使用光感應器"
-description: "了解如何使用周遭環境光感應器來偵測光線的變化。"
+title: Use the light sensor
+description: Learn how to use the ambient light sensor to detect changes in lighting.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ---
-# 使用光感應器
+# Use the light sensor
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
 
-了解如何使用周遭環境光感應器來偵測光線的變化。
+Learn how to use the ambient light sensor to detect changes in lighting.
 
-周遭環境光感應器是數種環境感應器的其中一種，可讓應用程式回應使用者環境中的變化。
+An ambient light sensor is one of the several types of environmental sensors that allow apps to respond to changes in the user's environment.
 
-## 先決條件
+## Prerequisites
 
-您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-您使用的裝置或模擬器必須支援周遭環境光感應器。
+The device or emulator that you're using must support an ambient light sensor.
 
-## 建立簡單的光感應器應用程式
+## Create a simple light-sensor app
 
-本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單光感應器應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple light-sensor application from scratch. The following subsection explains the app you have just created.
 
-###  指示
+###  Instructions
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   開啟專案的 BlankPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
+-   Open your project's BlankPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -101,9 +101,9 @@ ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
     }
 ```
 
-您需要將之前程式碼片段中的命名空間重新命名為您專案的名稱。 例如，如果您已建立名為 **LightingCS** 的專案，則應該將 `namespace App1` 取代為 `namespace LightingCS`。
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **LightingCS**, you'd replace `namespace App1` with `namespace LightingCS`.
 
--   開啟 MainPage.xaml 檔案，並以下列 XML 取代原始內容。
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -125,53 +125,53 @@ ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
     </Page>
 ```
 
-您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **LightingCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="LightingCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:LightingCS"`。
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **LightingCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="LightingCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:LightingCS"`.
 
--   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-App 開始執行之後，您就可以改變感應器可用的光線或使用模擬器工具來變更光感器值。
+Once the app is running, you can change the light sensor values by altering the light available to the sensor or using the emulator tools.
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  說明
+###  Explanation
 
-前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的光感應器輸入。
+The previous example demonstrates how little code you'll need to write in order to integrate light-sensor input in your app.
 
-App 會與 **BlankPage** 方法中的預設感應器建立連線。
+The app establishes a connection with the default sensor in the **BlankPage** method.
 
 ```csharp
 _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
 ```
 
-App 會在 **BlankPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
+The app establishes the report interval within the **BlankPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _lightsensor.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _lightsensor.ReportInterval = reportInterval;
 ```
-會在 **ReadingChanged** 方法中擷取新的光感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+The new light-sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the value to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-這些新的值會寫入專案 XAML 中的 TextBlock。
+These new values are written to a TextBlock found in the project's XAML.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## 相關主題
+## Related topics
 
-* [LightSensor 範例](http://go.microsoft.com/fwlink/p/?linkid=241381)
+* [LightSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

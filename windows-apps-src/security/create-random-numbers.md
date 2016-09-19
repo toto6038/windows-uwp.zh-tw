@@ -1,20 +1,20 @@
 ---
-title: "建立隨機數字"
-description: "這個範例程式碼說明如何在通用 Windows 平台 (UWP) 應用程式中建立要用於加密編譯的隨機數字或緩衝區。"
+title: Create random numbers
+description: This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 1faa3477acd0cf1a5a2acc7c6c0a62910299254b
+ms.openlocfilehash: 71ac4a6bffe5004a044ee6feba21eb44762ab781
 
 ---
 
-# 建立隨機數字
+# Create random numbers
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-這個範例程式碼說明如何在通用 Windows 平台 (UWP) 應用程式中建立要用於加密編譯的隨機數字或緩衝區。
+This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
 
 ```cs
 public string GenerateRandomData()
@@ -40,6 +40,6 @@ public uint GenerateRandomNumber()
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

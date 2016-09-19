@@ -1,147 +1,230 @@
 ---
 author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: "本文會引導您完成以各種部署和偵錯目標為目標的步驟。"
-title: "部署和偵錯通用 Windows 平台 (UWP) app"
+description: This article guides you through the steps to target various deployment and debugging targets.
+title: Deploying and debugging Universal Windows Platform (UWP) apps
 translationtype: Human Translation
-ms.sourcegitcommit: 14f6684541716034735fbff7896348073fa55f85
-ms.openlocfilehash: e2209e90080c7346bb363304b1a28f6446300332
+ms.sourcegitcommit: 3fe300a88c9b4fbb5a8ee21485269ea150111ed6
+ms.openlocfilehash: 00693e6debfba6511a75164ef6e1964088ae3516
 
 ---
 
-# 部署和偵錯通用 Windows 平台 (UWP) app
+# Deploying and debugging Universal Windows Platform (UWP) apps
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文會引導您完成以各種部署和偵錯目標為目標的步驟。
+This article guides you through the steps to target various deployment and debugging targets.
 
-Microsoft Visual Studio 可讓您在各種不同的 Windows 10 裝置上部署和偵錯您的通用 Windows 平台 (UWP) app。 Visual Studio 會處理在目標裝置上建立並登錄應用程式的處理程序。
+Microsoft Visual Studio allows you to deploy and debug your Universal Windows Platform (UWP) apps on a variety of Windows 10 devices. Visual Studio will handle the process of building and registering the app on the target device.
 
-## 挑選部署目標
-
-若要挑選一個目標，請瀏覽到 [開始偵錯]**** 按鈕旁的偵錯目標下拉式清單，並選取您想要部署應用程式的目標。 選取目標之後，請選擇 [開始偵錯 (F5)]**** 在該目標上部署與偵錯，或按 **Ctrl+F5** 只部署到該目標。
-
-![](images/debug-device-target-list.png)
-
--   **本機電腦**會將應用程式部署到您目前的開發電腦。 如果您應用程式的「目標平台最小版本」****小於或等於您開發電腦上的作業系統，才能使用此選項。
--   **模擬器**會將應用程式部署到您目前的開發電腦上的模擬環境。 如果您應用程式的「目標平台最小版本」****小於或等於您開發電腦上的作業系統，才能使用此選項。
--   **裝置**會將應用程式部署到已連接的 USB 裝置。 裝置必須是開發人員解除鎖定，並且解除鎖定畫面。
--   **模擬器**目標會開機，並以名稱中指定的設定將應用程式部署到模擬器。 模擬器僅在執行 Windows 8.1 或以上版本的 Hyper-V 電腦上提供使用。
--   **遠端電腦**可讓您指定遠端目標來部署應用程式。 如需部署到遠端電腦的詳細資訊，請參閱[指定遠端裝置](#specifying-a-remote-device)。
-
-## 偵錯已部署的應用程式
-Visual Studio 也可以依序選取 [偵錯]****、[附加至處理序]****，來附加至任何執行中的 UWP app 處理序。 附加至執行中的處理序不需要原始的 Visual Studio 專案，但偵錯沒有原始程式碼的處理序時，載入處理序的[符號](#symbols)將會有顯著的幫助。  
-  
-此外，任何已安裝的應用程式套件皆可被附加或偵錯，方法是選取 [偵錯]****，[其他]****，然後選取 [偵錯已安裝的應用程式套件]****。   
+## Picking a deployment target
  
-![[偵錯已安裝的應用程式套件] 對話方塊](images/gs-debug-uwp-apps-002.png)  
+To pick a target, go to the debug target drop-down next to the **Start Debugging** button and choose which target you want to deploy your app to. After the target is selected, select **Start Debugging (F5)** to deploy and debug on that target, or select **Ctrl+F5** to just deploy to that target.
 
-選取 [不啟動，但在我的程式碼啟動時進行偵錯]**** 會在您於自訂時間啟動 UWP app 時，讓 Visual Studio 偵錯工具附加到您的 UWP app。 這是偵錯來自[不同啟動方法](../xbox-apps/automate-launching-uwp-apps.md)之控制路徑的有效方式，例如使用自訂參數的通訊協定啟用。  
+![Debug device target list](images/debug-device-target-list.png)
 
-UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows 10 才能執行。 如果您在 Windows 8.1 電腦上開發 UWP app，而假設主機和目標電腦在相同的 LAN 上，您就可以遠端偵錯在另一部 Windows 10 裝置上執行的 UWP app。 若要這樣做，請在兩部電腦上下載並安裝 [Visual Studio 遠端工具](http://aka.ms/remotedebugger)。 安裝的版本必須符合您現有已安裝的 Visual Studio 版本，且選取的架構 (x86、x64) 必須與您的目標應用程式相符。   
+-   **Simulator** will deploy the app to a simulated environment on your current development machine. This option is only available if your app's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
+-   **Local Machine** will deploy the app to your current development machine. This option is only available if your app's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
+-   **Remote Machine** will let you specify a remote target to deploy the app. More information about deploying to a remote machine can be found in [Specifying a remote device](#specifying-a-remote-device).
+-   **Device** will deploy the app to a USB connected device. The device must be developer unlocked and have the screen unlocked.
+-   An **Emulator** target will boot up and deploy the app to an emulator with the configuration specified in the name. Emulators are only available on Hyper-V enabled machines running Windows 8.1 or beyond.
+
+
+## Debugging deployed apps
+Visual Studio can also attach to any running UWP app process by selecting **Debug**, and then **Attach to Process**. Attaching to a running process doesn’t require the original Visual Studio project, but loading the process's [symbols](#symbols) will help significantly when debugging a process that you don't have the original code for.  
   
+In addition, any installed app package can be attached and debugged by selecting **Debug**, **Other**, and then **Debug Installed App Packages**.   
+ 
+![Debug Installed App Package dialog box](images/gs-debug-uwp-apps-002.png)   
 
-## 指定遠端裝置
+Selecting **Do not launch, but debug my code when it starts** will cause the Visual Studio debugger to attach to your UWP app when you launch it at a custom time. This is an effective way to debug control paths from [different launch methods](../xbox-apps/automate-launching-uwp-apps.md), such as protocol activation with custom parameters.  
 
-### C# 和 Microsoft Visual Basic
+UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](http://aka.ms/remotedebugger) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.   
+  
+## Package layout
+With Visual Studio 2015 Update 3, we have added the option for developers to specify the layout path for their UWP apps. This determines where the package layout is copied to on disk when you build your app. By default, this property is set relative to the project’s root directory. If you do not modify this property, the behavior will remain the same as it has for previous versions of Visual Studio.
 
-若要針對 C# 或 Microsoft Visual Basic app 指定遠端電腦，請選取偵錯目標下拉式清單中的 [遠端電腦]****。 [遠端連線]**** 對話方塊會隨即出現，這可讓您指定 IP 位址，或選取探索到的裝置。 根據預設，會選取 [通用]**** 驗證模式。 若要判斷要使用何種驗證模式，請參閱[驗證模式](#authentication-modes)。
+This property can be modified in the project's **Debug** properties. 
 
-![](images/debug-remote-connections.png)
+If you want to include all layout files in your package when you create a package for your app, you must add the project property `<IncludeLayoutFilesInPackage>true</IncludeLayoutFilesInPackage>`. 
 
-若要返回這個對話方塊，您可以開啟專案內容並瀏覽到 [偵錯]**** 索引標籤。 從該處選取 [尋找]**** ([遠端電腦:]**** 旁邊)
+To add this property:
 
-![](images/debug-remote-machine-config.png)
+1. Right-click the project, and then select **Unload Project**. 
+2. Right-click the project, and then select **Edit [projectname].xxproj** (.xxproj will change depending on project language). 
+3. Add the property, and then reload the project. 
 
-若要將應用程式部署到遠端電腦，您也需要在目標電腦上下載並安裝 Visual Studio 遠端工具。 如需完整指示，請參閱[遠端電腦指示](#remote-pc-instructions)。
+## Specifying a remote device
 
-### C++ 和 JavaScript
+### C# and Microsoft Visual Basic
 
-若要針對 C++ 或 JavaScript UWP app 指定遠端電腦目標，請在 [方案總管]**** 中的專案上按一下滑鼠右鍵，並按一下 [屬性]**** 移至專案屬性。 瀏覽到 [偵錯]**** 設定，並將 [要啟動的偵錯工具]**** 變更為 [遠端電腦]****。 然後填入 [電腦名稱]**** (或按一下 [尋找]**** 來尋找) 並設定 [驗證類型]**** 屬性。
+To specify a remote machine for C# or Microsoft Visual Basic apps, select **Remote Machine** in the debug target drop-down. The **Remote Connections** dialog will appear, which will let you specify an IP address or select a discovered device. By default, the **Universal** authentication mode is selected. To determine which authentication mode to use, see [Authentication modes](#authentication-modes).
 
-![](images/debug-property-pages.png)
-指定電腦之後，您可以選取偵錯目標下拉式清單中的 [遠端電腦]****，返回到指定的電腦。 一次只能選取一個遠端電腦。
+![Remote Connections dialog box](images/debug-remote-connections.png)
 
-### 遠端電腦指示
+To return to this dialog, you can open project properties and go to the **Debug** tab. From there, select **Find** next to **Remote machine:**
 
-若要部署到遠端電腦，目標電腦必須先安裝 Visual Studio 遠端工具。 遠端電腦也必須執行大於或等於 app 的「目標平台最小版本」**** 屬性的 Windows 版本。 一旦安裝遠端工具之後，您必須啟動目標電腦上的遠端偵錯工具。 若要這樣做，請在 [開始]**** 功能表中搜尋 [遠端偵錯工具]**** 加以啟動，如果系統提示您，請允許偵錯工具設定您的防火牆設定。 根據預設，偵錯工具會使用 Windows 驗證啟動。 如果兩部電腦上的登入使用者不相同，將會需要使用者認證。 若要將它變更成 [非驗證]****，請移至 [遠端偵錯工具]**** 中的 [工具]**** -&gt;[選項]****，然後將它設定為 [非驗證]****。 設定遠端偵錯工具之後，您可以從您的開發電腦進行部署。
+![Debug tab](images/debug-remote-machine-config.png)
 
-如需詳細資訊，請參閱 [Visual Studio 遠端工具]( http://go.microsoft.com/fwlink/?LinkId=717039)下載頁面。
+To deploy an app to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. For full instructions, see [Remote PC instructions](#remote-pc-instructions). 
 
-## 驗證模式
+### C++ and JavaScript
 
-有三種遠端電腦部署的驗證模式：
+To specify a remote machine target for a C++ or JavaScript UWP app:
 
-- **通用 (未加密的通訊協定)**：Use this authentication mode 每當您部署至非 Windows 電腦 (桌上型電腦或膝上型電腦) 的遠端裝置時，請使用此驗證模式。 目前僅限 IoT 裝置。 「通用 (未加密通訊協定)」只能使用在受信任的網路。 偵錯連接容易受到惡意使用者的攻擊，這些使用者可以攔截與變更在開發電腦與遠端電腦之間傳送的資料。
-- **Windows**：此驗證模式只適用於遠端電腦部署 (桌上型電腦或膝上型電腦)。 當您有權存取目標電腦之登入使用者的認證時，請使用這個驗證模式。 這是進行遠端部署最安全的通道。
-- **無**：此驗證模式只適用於遠端電腦部署 (桌上型電腦或膝上型電腦)。 當您在使用測試帳戶登入的環境中有安裝測試電腦，而您無法輸入認證時，請使用這個驗證模式。 請確定遠端偵錯工具設定為接受非驗證。
+1. In the **Solution Explorer**, right-click the project, and then click **Properties**. 
+2. Go to **Debugging** settings, and under **Debugger to launch**, select **Remote Machine**. 
+3. Enter the **Machine Name** (or click **Locate** to find one), and then set the **Authentication Type** property.
 
-## 偵錯選項
+![Debug property pages](images/debug-property-pages.png)
 
-在 Windows 10 上，藉由使用稱為[預先啟動](https://msdn.microsoft.com/library/windows/apps/Mt593297)的技術來主動啟動並暫停應用程式，UWP 應用程式的啟動效能比以前更好。 許多應用程式不需要特別在此模式中執行任何動作，但某些應用程式可能需要調整它們的行為。 若要協助偵錯這些程式碼路徑中的任何問題，您可以在預先啟動模式中從 Visual Studio 開始偵錯 app。 偵錯同時支援從 Visual Studio 專案 ([偵錯]**** -&gt;[其他偵錯目標]**** -&gt;[偵錯通用 Windows 應用程式預先啟動]****)，和已安裝在電腦上的 app ([偵錯]**** -&gt;[其他偵錯目標]**** -&gt;[偵錯安裝的應用程式套件]****，並選取 [使用預先啟動來啟動應用程式]**** 方塊)。 如需詳細資訊，請閱讀關於如何[偵錯 UWP 預先啟動]( http://go.microsoft.com/fwlink/?LinkId=717245)。
+After the machine is specified, you can select **Remote Machine** in the debug target drop-down to return to that specified machine. Only one remote machine can be selected at a time.
 
-您可以在啟始專案的 [偵錯]**** 屬性頁面，設定下列部署選項。
+### Remote PC instructions
 
-**允許網路回送**
+To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. After you have installed the remote tools, you must launch the remote debugger on the target PC. 
 
-基於安全性考量，以標準方式安裝的 UWP 應用程式不允許對其安裝所在之裝置進行網路呼叫。 根據預設，Visual Studio 部署會從這個已部署的應用程式規則建立免套用原則。 這個免套用原則可讓您在單一電腦上測試通訊程序。 將應用程式送出到 Windows 市集之前，您應該在沒有免套用原則的情況下測試您的應用程式。
+To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
-移除 app 的網路回送免套用原則：
+To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
--   在 C# 和 Visual Basic 的 [偵錯]**** 屬性頁面上，清除 [允許網路回送]**** 核取方塊。
--   在 JavaScript 和 C++ 的 [偵錯]**** 屬性頁面上，將 [允許網路回送]**** 值設定為 [否]****。
+For more information, see the [Remote Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=717039) download page.
 
-**不要啟動，但在啟動時 (C# 和 Visual Basic) / 啟動應用程式 (JavaScript 和 C++) 時偵錯我的程式碼**
+## Authentication modes
 
-設定部署於啟動應用程式時自動啟動偵錯工作階段：
+There are three authentication modes for remote machine deployment:
 
--   在 C# 和 Visual Basic 的 [偵錯]**** 屬性頁面上，核取 [不啟動，但在我的程式碼啟動時進行偵錯]**** 核取方塊。
--   在 JavaScript 和 C++ 的 [偵錯]**** 屬性頁面上，將 [啟動應用程式]**** 值設定為 [是]****。
+- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is for IoT devices, Xbox devices, and HoloLens devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
+- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the signed-in user of the target machine. This is the most secure channel for remote deployment.
+- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine set up in an environment that has a test account signed in and you cannot enter the credentials. Ensure that the remote debugger settings are set to accept no authentication.
 
-## 符號
+## Advanced remote deployment options
+With the release of Visual Studio 2015 Update 3, and the Windows 10 Anniversary Update, there are new advanced remote deployment options for certain Windows 10 devices. The advanced remote deployment options can be found on the **Debug** menu for project properties.
 
-偵錯程式碼時，符號檔案包含各種非常有用的資料，例如變數、函式名稱和進入點位址，可讓您更清楚地了解意外狀況和呼叫堆疊執行順序。 針對 Windows 大部分變體的符號，可透過[Microsoft 符號伺服器](http://msdl.microsoft.com/download/symbols)取得，或在[下載 Windows 符號套件](http://aka.ms/winsymbols)下載以進行更快速的離線查閱。
+The new properties include:
+* Deployment type
+* Package registration path
+* Keep all files on device – even those that are no longer a part of your layout
 
-若要設定 Visual Studio 的符號選項，請選取 [工具] &gt; [選項]****，然後在對話方塊視窗中瀏覽至 [偵錯] &gt; [符號]****。
+### Requirements
+To utilize the advanced remote deployment options, you must satisfy the following requirements:
+* Have Visual Studio 2015 Update 3 installed with Windows 10 Tools 1.4.1 (which includes the Windows 10 Anniversary Update SDK)
+* Target a Windows 10 Anniversary Update Xbox remote device
+* Use Universal Authentication mode 
 
-**圖 4. [選項] 對話方塊。** 
-![[選項] 對話方塊](images/gs-debug-uwp-apps-004.png)
+### Properties pages
+For a C# or Visual Basic UWP app, the properties page will look like the following.
 
-若要使用 [WinDbg](#windbg) 在偵錯工作階段中載入符號，請將 **sympath** 變數設定到符號套件位置。 例如，執行下列命令將會從 Microsoft 符號伺服器載入符號，然後將它們快取到 C:\Symbols 目錄中：
+![CS or VB properties](images/advanced-remote-deploy-cs.png)
+
+For a C++ UWP app, the properties page will look like the following.
+
+![Cpp properties](images/advanced-remote-deploy-cpp.png)
+
+### Copy files to device
+**Copy files to device** will physically transfer the files over the network to the remote device. It will copy and register the package layout that is built to the **Layout folder path**. Visual Studio will keep the files that are copied to the device in sync with the files in your Visual Studio project; however, there is an option to **keep all files on device – even those that are no longer a part of your layout**. Selecting this option means that any files that were previously copied to the remote device, but are no longer a part of your project, will remain on the remote device.
+
+The **package registration path** specified when you **copy files to device** is the physical location on the remote device where the files are copied. This path can be specified as any relative path. The location where the files are deployed will be relative to a development files root that will vary depending on the target device. Specifying this path is useful for multiple developers sharing the same device and working on packages with some build variance.
+
+> [!NOTE]
+> **Copy files to device** is currently supported on Xbox running Windows 10 Anniversary Update.
+
+On the remote device, the layout gets copied to the following default location depending on the device family:
+  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+
+### Register layout from network
+When you choose to register the layout from the network, you can build your package layout to a network share and then register the layout on the remote device directly from the network. This requires that you specify a layout folder path (a network share) that is accessible from the remote device. The **Layout folder path** property is the path set relative to the PC running Visual Studio, while the **Package registration path** property is the same path, but specified relative to the remote device. 
+
+To successfully register the layout from the network, you must first make **Layout folder path** a shared network folder. To do this, right-click the folder in File Explorer, select **Share with > Specific people**, and then choose the users you would like to share the folder with. When you try to register the layout from the network, you will be prompted for credentials to ensure that you are registering as a user with access to the share.
+
+For help with this, see the following examples:
+
+- Example 1 (local layout folder, accessible as a network share):
+  * **Layout folder path** = `D:\Layouts\App1` 
+  * **Package registration path** = `\\NETWORK-SHARE\Layouts\App1`
+
+- Example 2 (network layout folder):
+  * **Layout folder path** = `\\NETWORK-SHARE\Layouts\App1`
+  * **Package registration path** = `\\NETWORK-SHARE\Layouts\App1` 
+
+When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command. 
+
+You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device. 
+
+> [!NOTE]
+> **Register layout from network** is currently supported on Xbox running Windows 10 Anniversary Update.
+
+On the remote device, the layout gets registered to the following default location depending on the device family:
+  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
+
+
+## Debugging options
+
+On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode. 
+
+Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package** by selecting the **Activate app with Prelaunch** check box). For more information, see [Debug UWP Prelaunch](http://go.microsoft.com/fwlink/p/?LinkId=717245).
+
+You can set the following deployment options on the **Debug** property page of the startup project:
+
+- **Allow local network loopback**
+
+  For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
+  
+  To remove the network loopback exemption from the app:
+  
+  -   On the C# and Visual Basic **Debug** property page, clear the **Allow local network loopback** check box.
+  -   On the JavaScript and C++ **Debugging** property page, set the **Allow Local Network Loopback** value to **No**.
+
+- **Do not launch, but debug my code when it starts / Launch Application**
+
+  To configure the deployment to automatically start a debugging session when the app is launched:
+  
+  -   On the C# and Visual Basic **Debug** property page, select the **Do not launch, but debug my code when it starts** check box.
+  -   On the JavaScript and C++ **Debugging** property page, set the **Launch Application** value to **Yes**.
+
+## Symbols
+
+Symbol files contain a variety of very useful data when debugging code, such as variables, function names, and entry point addresses, allowing you to better understand exceptions and callstack execution order. Symbols for most variants of Windows are available through the [Microsoft Symbol Server](http://msdl.microsoft.com/download/symbols) or can be downloaded for faster, offline lookups at [Download Windows Symbol Packages](http://aka.ms/winsymbols).
+
+To set symbol options for Visual Studio, select **Tools > Options**, and then go to **Debugging > Symbols** in the dialog window.
+
+![Options dialog box](images/gs-debug-uwp-apps-004.png)
+
+To load symbols in a debugging session with [WinDbg](#windbg), set the **sympath** variable to the symbol package location. For example, running the following command will load symbols from the Microsoft Symbol Server, and then cache them in the C:\Symbols directory:
 
 ```
 .sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
 .reload
 ```
 
-您可以利用 ‘;’ 分隔符號，或使用 `.sympath+` 命令新增更多路徑。 如需使用 WinDbg 的進階符號作業詳細資訊，請參閱[公用與專用符號](https://msdn.microsoft.com/library/windows/hardware/ff553493)。
+You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://msdn.microsoft.com/library/windows/hardware/ff553493).
 
 ## WinDbg
 
-WinDbg 是功能強大的偵錯工具，隨附於 Windows 偵錯工具套件，此套件包含在 [Windows SDK](http://go.microsoft.com/fwlink/p?LinkID=271979) 中。 Windows SDK 安裝可讓您將 Windows 偵錯工具安裝為獨立產品。 雖然偵錯原生程式碼時非常有用，我們並不建議將 WinDbg 用於以 Managed 程式碼或 HTML 5 撰寫的應用程式。 
+WinDbg is a powerful debugger that is shipped as part of the Debugging Tools for Windows suite, which is included in the [Windows SDK](http://go.microsoft.com/fwlink/p/?LinkID=271979). The Windows SDK installation allows you to install Debugging Tools for Windows as a standalone product. While highly useful for debugging native code, we don’t recommend WinDbg for apps written in managed code or HTML5. 
 
-若要對 UWP app 使用 WinDbg，您必須先使用 PLMDebug 來停用您應用程式套件的 PLM，如先前小節中所述。 
+To use WinDbg with UWP apps, you will need to first disable Process Lifetime Management (PLM) for your app package by using PLMDebug, as described in [Testing and debugging tools for Process Lifetime Management (PLM)](testing-debugging-plm.md). 
 
 ```
 plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"
 ```
 
-相較於 Visual Studio，大部分 WinDbg 的核心功能依賴將命令提供給命令視窗。 提供的命令可讓您檢視執行狀態、調查使用者模式損毀傾印，並在不同的模式中偵錯。 
+In contrast to Visual Studio, most of the core functionality of WinDbg relies on providing commands to the command window. The provided commands allow you to view execution state, investigate user mode crash dumps, and debug in a variety of modes. 
 
-WinDbg 當中最常用的其中一個命令是 `!analyze -v`，這是用來擷取目前例外狀況的相關詳細資訊量，包括：
+One of the most popular commands in WinDbg is `!analyze -v`, which is used to retrieve a verbose amount of information about the current exception, including:
 
-- FAULTING_IP：錯誤時間的指令指標
-- EXCEPTION_RECORD：目前例外狀況的位址、程式碼和旗標
-- STACK_TEXT：例外狀況之前的堆疊追蹤
+- FAULTING_IP: instruction pointer at the time of fault
+- EXCEPTION_RECORD: address, code, and flags of the current exception
+- STACK_TEXT: stack trace prior to exception
 
-如需所有 WinDbg 命令的完整清單，請參閱[偵錯工具命令](https://msdn.microsoft.com/library/ff540507)。
+For a complete list of all WinDbg commands, see [Debugger Commands](https://msdn.microsoft.com/library/ff540507).
 
-## 相關主題
-- [處理程序生命週期管理 (PLM) 的測試與偵錯工具](testing-debugging-plm.md)
-- [偵錯、測試及效能](index.md)
+## Related topics
+- [Testing and debugging tools for Process Lifetime Management (PLM)](testing-debugging-plm.md)
+- [Debugging, testing, and performance](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

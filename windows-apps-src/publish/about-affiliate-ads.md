@@ -1,54 +1,54 @@
 ---
 author: jnHs
-Description: "如果您的應用程式使用 AdMediatorControl 或 AdControl 來顯示橫幅廣告，您可以在您的應用程式中顯示 Microsoft 加盟廣告，以提高您的廣告投放率和營收。"
-title: "關於聯盟廣告"
+Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
+title: About affiliate ads
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
+ms.openlocfilehash: e60ed6b6237b053a370a42bdb87f9366b265e4d0
 
 ---
 
-# 關於聯盟廣告
+# About affiliate ads
 
-如果您的 App 使用 **AdMediatorControl** 或 **AdControl** 來顯示橫幅廣告，您可以在您的應用程式中顯示市集中產品的 Microsoft 聯盟廣告，以提高您的營收和廣告投放率。 當使用者在指定的屬性視窗內按一下聯盟廣告並購買產品時，您就能從核可購買項目的營收中賺取利潤。
+If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you could increase your revenue and ad fill rate by showing Microsoft affiliate ads in your app for products in the Store. When users click the affiliate ads and buy products within a given attribution window, you earn revenue on approved purchases.
 
-以下是此計劃的運作方式：
+Here's how this program works:
 
-* 在您於開發人員中心[選擇加入 Microsoft 聯盟廣告計劃](#how-to-opt-in-to-affiliate-ads)，Microsoft 就會挑選市集中最熱門的產品在您的 App 中打廣告。 這些產品可能包括應用程式、遊戲、音樂、電影、硬體及軟體。
+* After you [opt-in to the Microsoft affiliate ads program](#how-to-opt-in-to-affiliate-ads) in Dev Center, Microsoft picks ads for top products in the Store to serve to your app. These products may include apps, games, music, movies, hardware, and software.
 
- > **注意** Microsoft 僅提供下列大小的聯盟廣告：300 x 50、480 x 80、160 x 600、300 x 250 或 728 x 90。
+ > **Note** Microsoft only serves affiliate ads into the following ad unit sizes: 300 x 50, 480 x 80, 160 x 600, 300 x 250, or 728 x 90.
 
-* Microsoft 將只有在沒有來自其他廣告網路的廣告時，才會提供聯盟廣告給您的 App。 這是為了協助您在曝光數不足的情況下賺取營收，以及讓您獲得最高的廣告投放率。
-* 當使用者在指定的屬性視窗內按一下聯盟廣告並購買市集中的任何產品時，將會給付您部分營收或固定的購買佣金 (最高 10% 的佣金)。 
+* Microsoft will serve affiliate ads to your app only when no ads from other ad networks are available. This is intended to help to monetize your unfilled impressions and maximize your ad fill rate.
+* When a user clicks an affiliate ad and buys any product in the Store within a given attribution window, you will be paid a revenue share or a fixed commission for the purchase (up to 10% commission). 
   
-  若要符合傭金資格，聯盟廣告必須在「Windows 10 裝置的市集」或「網頁型市集」中產生合格的銷售；在「Windows 8.x 裝置的市集」中的銷售不符合傭金資格。 數位市集產品的聯盟廣告 (包含 App、遊戲及影片) 只於 Windows 10 裝置上提供。 網頁型市集 (包含裝置和軟體) 中產品的聯盟廣告會在 Windows 10 及 Windows 8.x 裝置上提供。
+  To be eligible for a commission, the affiliate ad must result in an eligible sale in either the Store on Windows 10 devices or the web-based Store; sales in the Store on Windows 8.x devices are not eligible for a commission. Affiliate ads for digital Store products (including apps, games, music and movies) are only served on Windows 10 devices. Affiliate ads for products in the web-based Store (including devices and software) are served on Windows 10 and Windows 8.x devices.
 
-    > **注意** 除了在您 App 中推銷的產品之外，您也可以從使用者在屬性視窗中購買的*任何*產品賺取利潤。 對於在您的 App 中推銷的免費 App，您可以賺取使用者在屬性視窗中進行 App 內購買的部分營收。
+    > **Note**  You can get paid for *any* product the user purchases within the attribution window, not just the product that was promoted in your app. For free apps that are promoted in your app, you can earn a revenue share for in-app purchases made by the user within the attribution window.
 
-* 您所累積之和 Microsoft 聯盟廣告計劃有關的任何營收，都將會透過您在[開發人員中心設定的支付帳戶](setting-up-your-payout-account-and-tax-forms.md)，和您的 Microsoft 廣告營收一起支付給您。
-* 若要追蹤您 App 中聯盟廣告的績效，請參閱[聯盟績效報告](affiliates-performance-report.md)。 您可以追蹤每天透過您 App 中的聯盟廣告所進行的購買，以及您賺取的部分營收。  
+* Any earnings you accrue in connection with the Microsoft affiliate ads program will be distributed to you in the [payout account you set up in Dev Center](setting-up-your-payout-account-and-tax-forms.md), along with your Microsoft advertising earnings.
+* To track the performance of the affiliate ads in your app, refer to the [affiliates performance report](affiliates-performance-report.md). You can track daily purchases made through affiliate ads in your app and the revenue share that you received.  
 
-  > **注意** 使用者在市集購買產品之後，到購買可被聯盟廣告計畫核准之前，會有 45 天的等候期。 **注意** 因為此等候期所致，在購買獲得核准或遭到拒絕之後，聯盟績效報告上指定日期的**估計營收**、**購買 (已核准)** 及[購買 (等待核准)](affiliates-performance-report.md) 資料可能會改變。
+  > **Note** After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated revenue**, **Purchases (approved)** and **Purchases (pending approval)** data on the [affiliates performance report](affiliates-performance-report.md) for a given day can change after purchases are approved or rejected.
 
-## 如何選擇加入聯盟廣告計劃
+## How to opt in to the affiliate ads program
 
-選擇加入 Microsoft 聯盟廣告計劃：
+To opt in to the Microsoft affiliate ads program:
 
-1. 移至 Windows 開發人員中心儀表板中的 [營利]****&gt;[利用廣告營利]**** 頁面。
-2. 在 [Microsoft 聯盟廣告]**** 區段中，選取 [在我的應用程式中顯示 Microsoft 聯盟廣告]**** 核取方塊。
+1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
+2. In the **Microsoft affiliate ads** section, check the **Show Microsoft affiliate ads in my app** box.
 
-在您選取或取消選取此核取方塊之後，不需要重新發佈您的應用程式，變更就會生效。
-
-
-## 相關主題
+After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
 
 
-* [利用廣告獲利](monetize-with-ads.md)
-* [聯盟績效報告](affiliates-performance-report.md)
+## Related topics
+
+
+* [Monetize with ads](monetize-with-ads.md)
+* [Affiliates performance report](affiliates-performance-report.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

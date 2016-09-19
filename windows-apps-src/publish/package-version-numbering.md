@@ -1,87 +1,87 @@
 ---
 author: jnHs
-Description: "Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。"
-title: "套件版本編號"
+Description: The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: Package version numbering
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+ms.sourcegitcommit: ca273ab6d881b350c2f5a48eafee38c74ac0f36a
+ms.openlocfilehash: 2668152ba471986e00831bdcf46e5a2feba54dcd
 
 ---
 
-# 套件版本編號
+# Package version numbering
 
 
-您提供的每個套件必須具有版本號碼 (做為 app 資訊清單之 **Package/Identity** 元素的 **Version** 屬性中的值)。 Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
+Each package you provide must have a version number (provided as a value in the **Version** attribute of the **Package/Identity** element in the app manifest). The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 
-> **注意：**本主題是關於「套件」，但是除非另行註明，相同的規則適用於 .appx 和 .appxbundle 檔案兩者的版本號碼。
+> **Note**  This topic refers to "packages", but unless noted, the same rules apply to version numbers for both .appx and .appxbundle files.
 
-## Windows 10 套件的版本編號
+## Version numbering for Windows 10 packages
 
 
-任何 Windows 10 套件的版本號碼都必須高於您正對相同 app 發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的任何版本號碼 (或者適用於您先前發佈之作業系統版本套件的版本號碼)。 (如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。)
+The version number of any Windows 10 package must always be higher than any version number for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. (For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
-> **注意：**版本號碼的最後一個 (第四個) 區段已保留給市集使用，必須保留為 0。
+> **Important**  The last (fourth) section of the version number is reserved for Store use and must be left as 0 when you build your package (although the Store may change the value in this section).
 
-從您發佈的提交中選擇 Windows 10 套件時，Windows 市集將永遠使用適用於客戶裝置的最高版本套件。 這可讓您有更大的彈性，並讓您可以控制對於特定裝置類型的客戶提供哪個套件。 重要的是，您可以任何順序提交這些套件；您並不受限於在每個後續提交提供較高版本的套件。
+When choosing a Windows 10 package from your published submission, the Windows Store will always use the highest-versioned package that is applicable to the customer’s device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
 
-您甚至可以提供具有相同版本號碼的多個 Windows 10 套件。 不過，因為市集用於每個套件的完整身分識別必須是唯一的，所以共用版本號碼的套件不能同時具有相同的架構。 如需詳細資訊，請參閱 [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441)。
+You can even provide multiple Windows 10 packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441).
 
-如果您提供使用相同版本號碼的多個 Windows 10 套件，在考量要將哪個套件提供給指定的裝置時，架構 (依照 x64、x86、ARM、中性的順序) 將用來決定哪一個套件的等級較高。 當排名使用相同版本號碼的 app 套件組合時，會考量套件組合中最高架構等級：包含 x64 套件的 app 套件組合比只包含 x86 套件的套件組合具有較高的等級。
+If you do provide multiple Windows 10 packages that use the same version number, the architecture (in the order x64, x86, ARM, neutral) will be used to decide which one is of higher rank when considering which package to provide to the given device. When ranking app bundles that use the same version number, the highest architecture rank within the bundle is considered: an app bundle that contains an x64 package will have a higher rank than one that only contains an x86 package.
 
-給予您許多彈性讓 app 隨著時間進化。 您可以上傳並提交使用較低版本號碼的新套件，為您先前未支援的價格實惠裝置新增支援，您可以新增具有較嚴格相依性的較高版本套件，以利用硬體或作業系統功能，或者您可以新增較高版本的套件，做為部分或所有現有客戶的更新。
+This gives you a lot of flexibility to evolve your app over time. You can upload and submit new packages that use lower version numbers to add support for affordable devices that you did not previously support, you can add higher-versioned packages that have stricter dependencies to take advantage of hardware or OS features, or you can add higher-versioned packages that serve as updates to some or all of your existing customer base.
 
-下列範例說明如何管理版本編號以透過多重提交將想要的套件傳遞給客戶。
+The following example illustrates how version numbering can be managed to deliver the intended packages to your customers over multiple submissions.
 
-### 範例：透過多重提交移至單一套件
+### Example: Moving to a single package over multiple submissions
 
-Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 如此一來，開始新的跨平台專案就更容易。 不過，基於許多原因，您可能不想要合併現有的程式碼基底以立即建立單一專案。
+Windows 10 enables you to write a single codebase that runs everywhere. This makes starting a new cross-platform project much easier. However, for a number of reasons, you might not want to merge existing codebases to create a single project right away.
 
-您可以使用套件版本規則，在針對特定裝置系列 (包括利用 Windows 10 API 的裝置系列) 提供一些中期更新的同時，逐漸將您的客戶移至通用裝置套件的單一套件。 下列範例說明如何一致地套用相同的規則。
+You can use the package versioning rules to gradually move your customers to a single package for the Universal device family, while shipping a number of interim updates for specific device families (including ones that take advantage of Windows 10 APIs). The example below illustrates how the same rules are consistently applied.
 
-| 提交 | 內容                                                  | 客戶體驗                                                                                                                                                                             |
+| Submission | Contents                                                  | Customer experience                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1          | - 套件版本：1.1.10.0 <br> - 裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - 套件版本：1.1.0.0 <br> - 裝置系列：Windows.Mobile, minVersion 10.0.10240.0     | - Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> - Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> - 其他裝置系列無法購買及安裝 app |
-| 2          | - 套件版本：1.1.10.0 <br> - 裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - 套件版本：1.1.0.0 <br> - 裝置系列：Windows.Mobile, minVersion 10.0.10240.0 <br> <br> - 套件版本：1.0.0.0 <br> - 裝置系列：Windows.Universal, minVersion 10.0.10240.0    | - Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> - Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> - 其他 (非傳統型、非行動) 裝置系列在被引入時將會取得 1.0.0.0 <br> - 已安裝 app 的傳統型和行動裝置不會看到任何更新 (因為它們已經有最佳的可用版本—1.1.10.0 和 1.1.0.0 都高於 1.0.0.0) |
-| 3          | - 套件版本：1.1.10.0 <br> - 裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - 套件版本：1.1.5.0 <br> - 裝置系列：Windows.Universal, minVersion 10.0.10250.0 <br> <br> - 套件版本：1.0.0.0 <br> - 裝置系列：Windows.Universal, minVersion 10.0.10240.0    | - Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> - Windows 10 行動裝置組建 10.0.10250.0 和更新版本的裝置會取得 1.1.5.0 <br> - Windows 10 行動裝置組建 &gt;=10.0.10240.0 和 &lt; 10.010250.0 的裝置會取得 1.1.0.0 
-| 4          | - 套件版本：2.0.0.0 <br> - 裝置系列：Windows.Universal, minVersion 10.0.10240.0   | - 在 Windows 10 組建 10.0.10240.0 版和更高版本上所有裝置系列的所有客戶會取得套件 2.0.0.0 | 
+| 1          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0     | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other device families will not be able to purchase and install the app |
+| 2          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other (non-desktop, non-mobile) device families when they are introduced will get 1.0.0.0 <br> -   Desktop and mobile devices that already have the app installed will not see any update (because they already have the best available version—1.1.10.0 and 1.1.0.0 are both higher than 1.0.0.0) |
+| 3          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.5.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10250.0 and above will get 1.1.5.0 <br> -   Devices on Windows 10 Mobile build >=10.0.10240.0 and < 10.010250.0 will get 1.1.0.0 
+| 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 | 
 
-> **注意：**在所有情況下，客戶裝置會收到符合資格的最高可能版本號碼的套件。 例如，在上述的第三個提交中，所有傳統型裝置將會收到 v1.1.10.0，即使他們有作業系統版本 10.0.10250.0 或更高版本，因此也可以接受 v1.1.5.0。 因為 1.1.10.0 是它們可用的最高版本號碼，所以這是它們會取得的套件。
+> **Note**  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or higher and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
 
-### 針對新的擷取使用版本編號回復到先前發佈的套件
+### Using version numbering to roll back to a previously-shipped package for new acquisitions
 
-如果您保留舊版 Windows 10 套件檔案的複本，如果您發現有版本問題，您可以將市集中的 app 套件回復到舊版的 Windows 10 套件。 這是暫時的方式，在您修正問題時限制對客戶的中斷。
+If you keep copies of your earlier Windows 10 package files, you'll be able to roll back your app’s package in the Store to an earlier Windows 10 package if you discover problems with a release. This is a temporary way to limit the disruption to your customers while you fix the issue.
 
-若要這樣做，請建立新的提交。 移除有問題的套件，並上傳您想要在市集中提供的舊套件。 已經收到您復原的套件的客戶仍然有問題套件 (因為您的舊版套件會有較早的版本號碼)。 但這會阻止任何人取得問題套件，同時讓 app 仍然可以在市集中取得。
+To do this, create a new submission. Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.
 
-若要修正客戶已收到有問題的套件的問題，您可以立即提交具有比損壞的套件更高版本號碼的新 Windows 10 套件。 提交進行認證程序之後，所有客戶都會更新為新套件，因為它將會有較高的版本號碼。
+To fix the issues for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.
 
-## Windows 8.1 (和舊版) 和 Windows Phone 8.1 套件的版本編號
+## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
 
-對於以 Windows Phone 8.1 為目標的 .appx 套件，新提交套件的版本號碼必須一律高於最後提交 (或任何先前的提交) 中包含的套件的版本號碼。
+For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
 
-對於以Windows 8 和 Windows 8.1 為目標的 .appx 套件，每個架構會套用相同規則：新提交套件的版本號碼必須一律高於最後針對架構發佈至 Windows 市集的套件的版本號碼。
+For .appx packages that target Windows 8 and Windows 8.1, the same rule applies per architecture: the version number of the package in a new submission must always be greater than that of the package last shipped to the Windows Store for the same architecture.
 
-此外，Windows 8.1 套件的版本編號必須永遠高於同一個 app 的任何 Windows 8 套件版本編號。 換句話說，您提交的任何 Windows 8 套件版本編號必須低於您為相同 app 提交的任何 Windows 8.1 套件版本編號。
+Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
 
-> **注意：**如果您也有 Windows 10 套件，Windows 10 套件的版本號碼必須高於您正在發佈或已發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的版本號碼。 如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。
+> **Note**  If you also have Windows 10 packages, the version number of the Windows 10 packages must be higher than those for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing or have published. For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
-以下是一些 Windows 8 和 Windows 8.1 的不同版本號碼更新案例中發生情形的範例。
+Here are some examples of what happens in different version number update scenarios for Windows 8 and Windows 8.1.
 
-| 市集中您 app 的版本  | 您上傳這個版本 | 在 Windows 市集中提供新的版本之後，將會安裝於新的擷取中 | 在 Windows 市集中提供新的版本之後，將會更新 (如果客戶已經擁有該 app) |
+| With this version of your app in the Store  | And you upload this version | After the new version is in the Windows Store, this will be installed in a new acquisition | After the new version is in the Windows Store, this will be updated if a customer already has the app |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| 無                                     | x86, v1.0.0.0               | x86 和 x64 電腦上都是 x86, v1.0.0.0                                                | 無。 |
-| x86, v1.0.0.0                               | x64, v1.0.0.0               | 客戶的架構為 v1.0.0.0                                                   | 無。 版本號碼相同。 |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | x86 的客戶為 v1.0.0.0 <br> x64 的客戶為 v1.0.0.1                 | 在 x86 電腦上執行應用程式的客戶不顯示任何資訊。 <br> 針對在 x64 電腦上執行 app 的客戶，v1.0.0.0 會更新為 v1.0.0.1。 <br> **注意：**如果 app 的 x86 版本是在 x64 電腦上執行，則除非客戶先將 app 解除安裝再重新安裝，否則 app 不會更新成 x64 版本。 |
-| 無                                     | 中性, v1.0.0.1           | 所有電腦上都是中性, v1.0.0.1                                                         | 無。 |
-| 中性, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | 客戶電腦的架構為 v1.0.0.0。          | 無。 擁有中性, v1.0.0.1 版本 app 的客戶將繼續使用。 |
-| 中性, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | 客戶電腦的架構為 v1.0.0.1。 | 執行中性, v1.0.0.1 版本應用程式的客戶不顯示任何資訊。 <br> 執行為電腦特定架構建置的 v1.0.0.0 應用程式的客戶，v1.0.0.0 將更新為 v1.0.0.1。 |
-| x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 客戶電腦的架構為 v1.0.0.2。  | 對於執行為電腦特定架構建置的 v1.0.0.1 應用程式的客戶，v1.0.0.1 將更新為 v1.0.0.2。 |
+| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 on both x86 and x64 computers                                                | Nothing. |
+| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 for the customer's architecture                                                   | Nothing. The version numbers are the same. |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 for customers with an x86 <br> v1.0.0.1 for customers with an x64                 | Nothing for customers running the app on an x86 computer. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running the app on an x64 computer. <br> **Note**  If the x86 version of the app is running on an x64 computer, the app won’t get updated to the x64 version unless the customer uninstalls and reinstalls. |
+| Nothing                                     | neutral, v1.0.0.1           | neutral, v1.0.0.1 on all computers                                                         | Nothing. |
+| neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 for the architecture of the customer's computer.          | Nothing. Those who have the neutral, v1.0.0.1 version of the app will continue to use it. |
+| neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 for the architecture of the customer's computer. | Nothing for customers running the neutral, v1.0.0.1 version app. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running v1.0.0.0 of the app built for their computer's specific architecture. |
+| x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 for the architecture of the customer's computer.  | v1.0.0.1 will be updated to v1.0.0.2 for customers running either v1.0.0.1 of the app built for their computer's specific architecture. |
  
-> **注意：**不同於 .appx 套件，在判斷要為特定客戶提供哪一個套件時，不會考慮任何 .xap 套件中的版本號碼。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。
+> **Note**  Unlike .appx packages, the version numbers in any .xap packages are not considered when determining which package to provide a given customer. To update a customer from one .xap package to a newer one, make sure to remove the older .xap in the new submission.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

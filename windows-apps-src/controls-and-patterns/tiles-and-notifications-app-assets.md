@@ -1,47 +1,45 @@
 ---
 author: mijacobs
-Description: "以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。"
-title: "磚和圖示資產"
+Description: App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app.
+title: Tile and icon assets
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ---
+# Guidelines for tile and icon assets
 
-# 磚和圖示資產的指導方針
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。
+App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.
 
-![Windows 10 開始畫面和磚](images/assetguidance01.jpg)
+![windows 10 start and tiles](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>彈性縮放比例
-
-
-首先，簡短概述彈性縮放比例，以便更清楚了解縮放比例如何使用資產。 Windows 10 引進現有縮放比例模型的進化。 除了縮放比例向量內容之外，還有統一的縮放比例集合，跨各種不同的螢幕大小和顯示器解析度，針對 UI 元素提供一致的大小。 縮放比例也相容於 iOS 與 Android 等其他作業系統的縮放比例，讓您能夠更輕鬆地在這些平台之間共用資產。
-
-市集會根據裝置的 DPI 部分來選取要下載的資產。 只會下載最符合裝置的資產。
-
-## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>磚元素
+## Adaptive scaling
 
 
-開始畫面磚的基本元件是由一個背板、一個圖示、一個商標列、邊界及一個 App 標題所構成：
+First, a brief overview on adaptive scaling to better understand how scaling works with assets. Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android, which makes it easier to share assets between these platforms.
 
-![磚元素的分析](images/assetguidance02.png)
+The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
 
-磚底部的商標列是顯示應用程式名稱、徽章及計數器 (如有使用) 的位置：
+## Tile elements
 
-![磚中的商標列](images/assetguidance03.png)
 
-商標列的高度是以顯示裝置上的縮放比例為基礎：
+The basic components of a Start tile consist of a back plate, an icon, a branding bar, margins, and an app title:
 
-| 縮放比例 | 像素 |
+![breakdown of tile elements](images/assetguidance02.png)
+
+The branding bar at the bottom of a tile is where the app name, badging, and counter (if used) appear:
+
+![branding bar in tile](images/assetguidance03.png)
+
+The height of the branding bar is based on the scale factor of the device on which it appears:
+
+| Scale factor | Pixels |
 |--------------|--------|
 | 100%         | 32     |
 | 125%         | 40     |
@@ -51,13 +49,13 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
  
 
-系統會設定磚的邊界且無法加以修改。 大部分的內容都會顯示在邊界內部，如下列範例所示：
+The system sets tile margins and cannot be modified. Most content appears inside the margins, as seen in this example:
 
-![磚邊界](images/assetguidance04.png)
+![tile margins](images/assetguidance04.png)
 
-邊界高度是以顯示裝置上的縮放比例為基礎：
+Margin width is based on the scale factor of the device on which it appears:
 
-| 縮放比例 | 像素 |
+| Scale factor | Pixels |
 |--------------|--------|
 | 100%         | 8      |
 | 125%         | 10     |
@@ -67,141 +65,141 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
  
 
-## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>磚資產
+## Tile assets
 
 
-每個磚資產都與它所在的磚等大小。 您可以資產的兩個不同的呈現方式在您的應用程式磚上打印商標：
+Each tile asset is the same size as the tile on which it is placed. You can brand your app's tiles with two different representations of an asset:
 
-1. 圖示或標誌置中，含有邊框間距。 這樣可讓背板色彩顯示：
+1. An icon or logo centered with padding. This lets the back plate color show through:
 
-![磚和背板](images/assetguidance05.png)
+![tile and back plate](images/assetguidance05.png)
 
-2.  跨頁的商標磚，不含邊框間距：
+2. A full-bleed, branded tile without padding:
 
-![磚會跨頁顯示](images/assetguidance06.png)
+![tile showing full bleed](images/assetguidance06.png)
 
-為了在裝置間保持一致性，每個磚大小 (小型、中型、寬形和大型) 都有自己的大小調整關聯性。 為了讓磚有一致的圖示放置方式，我們針對下列的磚大小建議了一些基本的邊框間距指導方針。 其中兩個紫色重疊交集的區域代表最理想的圖示擺設區域。 雖然圖示不會永遠剛好落在擺設區域內，但圖示視覺上的體積應該約等於提供的範例。
+For consistency across devices, each tile size (small, medium, wide, and large) has its own sizing relationship. In order to achieve a consistent icon placement across tiles, we recommend a few basic padding guidelines for the following tile sizes. The area where the two purple overlays intersect represents the ideal footprint for an icon. Although icons won't always fit inside the footprint, the visual volume of an icon should be roughly equivalent to the provided examples.
 
-小型磚大小調整：
+Small tile sizing:
 
-![小型磚大小調整範例](images/assetguidance07a.png)
+![small tile sizing example](images/assetguidance07a.png)
 
-中型磚大小調整：
+Medium tile sizing:
 
-![中型磚大小調整範例](images/assetguidance07b.png)
+![medium tile sizing example](images/assetguidance07b.png)
 
-寬型磚大小調整：
+Wide tile sizing:
 
-![寬型磚大小調整範例](images/assetguidance07c.png)
+![wide tile sizing example](images/assetguidance07c.png)
 
-大型磚大小調整：
+Large tile sizing:
 
-![大型磚大小調整範例](images/assetguidance07d.png)
+![large tile sizing example](images/assetguidance07d.png)
 
-在這個範例中，圖示對磚而言過大：
+In this example, the icon is too large for the tile:
 
-![磚的圖示過大](images/assetguidance08a.png)
+![icon too big for tile](images/assetguidance08a.png)
 
-在這個範例中，圖示對磚而言過小：
+In this example, the icon is too small for the tile:
 
-![磚的圖示過小](images/assetguidance08b.png)
+![icon too small for tile](images/assetguidance08b.png)
 
-下列邊框間距比例對水平或垂直方向的圖示而言是最佳的。
+The following padding ratios are optimal for horizontally or vertically oriented icons.
 
-對於小型磚，將圖示寬度和高度限制為磚大小的 66%：
+For small tiles, limit the icon width and height to 66% of the tile size:
 
-![小型磚大小調整比例](images/assetguidance09.png)
+![small tile sizing ratios](images/assetguidance09.png)
 
-對於中型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這樣可以防止商標列中的元素重疊：
+For medium tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![中型磚大小調整比例](images/assetguidance10.png)
+![medium tile sizing ratios](images/assetguidance10.png)
 
-對於寬型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%。 這樣可以防止商標列中的元素重疊：
+For wide tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![寬型磚大小調整比例](images/assetguidance11.png)
+![wide tile sizing ratios](images/assetguidance11.png)
 
-對於大型磚，將圖示寬度和高度限制為磚大小的 50%：
+For large tiles, limit the icon width and height to 50% of tile size:
 
-![大型磚大小比例](images/assetguidance12.png)
+![large tile size ratios](images/assetguidance12.png)
 
-有些圖示是水平或垂直方向，但其他圖示卻有著更複雜的圖形，使其無法恰好符合目標尺寸。 看起來像置中的圖示可能偏向另一側。 在這個案例中，假如圖示的視覺大小與恰好符合的圖示相同，則部分圖示可能會超出建議的擺設區域：
+Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions. Icons that appear to be centered can be weighted to one side. In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:
 
-![三個置中的圖示](images/assetguidance13.png)
+![three centered icons](images/assetguidance13.png)
 
-對於跨頁資產，請考量在磚的邊界和邊緣內互動的元素。 將邊界維持在至少是磚高或磚寬的 16%。 如為最小型磚大小，這個百分比表示邊界寬度的兩倍：
+With full-bleed assets, take into account elements that interact within the margins and edges of the tiles. Maintain margins of at least 16% of the height or width of the tile. This percentage represents double the width of the margins at the smallest tile sizes:
 
-![含邊界的跨頁磚](images/assetguidance14.png)
+![full-bleed tile with margins](images/assetguidance14.png)
 
-在這個範例中，邊界太擠了：
+In this example, margins are too tight:
 
-![邊界過小的跨頁磚](images/assetguidance15.png)
+![full bleed tile with margins that are too small](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>清單檢視中的磚資產
+## Tile assets in list views
 
 
-磚也會出現在清單檢視中。 對於出現在清單檢視的磚資產的大小調整指導方針，與前述的磚資產稍有不同。 本節詳細說明這些大小調整特性。
+Tiles can also appear in a list view. Sizing guidelines for tile assets that appear in list views are a bit different than tile assets previously outlined. This section details those sizing specifics.
 
-![清單檢視中的磚資產](images/assetguidance16.png)
+![tile assets in a list view](images/assetguidance16.png)
 
-將圖示寬度和高度限制為磚大小的 75%：
+Limit icon width and height to 75% of the tile size:
 
-![清單檢視磚的圖示大小調整](images/assetguidance17.png)
+![sizing of icon of list view tile](images/assetguidance17.png)
 
-對於垂直和水平圖示格式，將寬度和高度限制為磚大小的 75%：
+For vertical and horizontal icon formats, limit width and height to 75% of the tile size:
 
-![清單檢視磚的圖示大小調整](images/assetguidance18.png)
+![sizing of icon of list view tile](images/assetguidance18.png)
 
-對於重要商標元素的跨頁圖檔，請維持至少 12.5% 的邊界：
+For full bleed artwork of important brand elements, maintain margins of at least 12.5%:
 
-![清單檢視磚中的跨頁圖檔](images/assetguidance19.png)
+![full-bleed artwork in list view tile](images/assetguidance19.png)
 
-在這個範例中，圖示對磚而言過大：
+In this example, the icon is too big inside its tile:
 
-![對磚而言過大的圖示](images/assetguidance20a.png)
+![icon that is too big for tile](images/assetguidance20a.png)
 
-在這個範例中，圖示對磚而言過小：
+In this example, the icon is too small inside its tile:
 
-![對磚而言過小的圖示](images/assetguidance20b.png)
+![icon that is too small for tile](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>以目標為基礎的資產
+## Target-based assets
 
 
-以目標為基礎的資產適用於圖示和磚，會顯示在 Windows 工作列、工作檢視、ALT + TAB 及貼齊小幫手上，以及開始畫面磚的右下角。 您不需要將邊框間距新增至這些資產；如果需要，Windows 會新增邊框間距。 這些資產至少需要 16 個像素的擺設區域。 以下是這些資產出現在 Windows 工作列上之圖示中的範例：
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You don't have to add padding to these assets; Windows adds padding if needed. These assets should account for a minimum footprint of 16 pixels. Here's an example of these assets as they appear in icons on the Windows taskbar:
 
-![Windows 工作列中的資產](images/assetguidance21.png)
+![assets in windows taskbar](images/assetguidance21.png)
 
-雖然這些 UI 在彩色背板上方預設會使用以目標為基礎的資產，但您也可以使用以目標為基礎的無背板資產。 建立無背板資產的時機，就是當它們可能會顯示在各種背景色彩時：
+Although these UI will use a target-based asset on top of a colored backplate by default, you may use a target-based unplated asset as well. Unplated assets should be created with the possibility that they may appear on various background colors:
 
-![無背板和有背板資產](images/assetguidance22.png)
+![unplated and plated assets](images/assetguidance22.png)
 
-這些是以目標為基礎的資產的大小建議 (縮放比例 100%)：
+These are size recommendations for target-based assets, at 100% scale:
 
-![以目標為基礎的資產的大小調整 (縮放比例 100%)](images/assetguidance23.png)
+![target-based asset sizing at 100% scale](images/assetguidance23.png)
 
-**圖示範本 app 資產**
+**Iconic template app assets**
 
-圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本 (在[特殊的磚範本](tiles-and-notifications-special-tile-templates-catalog.md)一文中，了解如何建立圖示磚)。
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
 
-使用圖示範本的 app (例如傳訊、電話和市集) 具有以目標為基礎的資產，可使用徽章做為其特色 (含有動態計數器)。 正如其他以目標為基礎的資產一樣，不需要邊框間距。 圖示資產不是應用程式資訊清單的一部分，而是動態磚裝載的一部分。 資產會調整大小以落在 3:2 比例的容器內並置中：
+Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
 
-![含/不含徽章的資產大小調整](images/assetguidance24.png)
+![sizing for assets with and without badge](images/assetguidance24.png)
 
-對於正方形資產，會自動於容器內置中：
+For square assets, automatic centering within the container occurs:
 
-![含/不含徽章的正方形資產大小調整](images/assetguidance25.png)
+![square asset sizing, with and without badge](images/assetguidance25.png)
 
-對於非正方形資產，會自動水平/垂直置中並貼齊至容器寬度/高度：
+For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
 
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26a.png)
+![non-square asset sizing, with and without badge](images/assetguidance26a.png)
 
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
+![non-square asset sizing, with and without badge](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>啟動顯示畫面資產
+## Splash screen assets
 
 
-您可以提供啟動顯示畫面影像，做為影像檔案的直接路徑或做為資源。 藉由使用資源參考，您可以提供不同縮放比例的影像，讓 Windows 可以為裝置和螢幕解析度選擇最佳大小。 您也可以提供協助工具的高對比影像和當地語系化的影像，以符合不同的 UI 語言。
+The splash screen image can be given either as a direct path to an image file or as a resource. By using a resource reference, you can supply images of different scales so that Windows can choose the best size for the device and screen resolution. You can also supply high contrast images for accessibility and localized images to match different UI languages.
 
-如果您在文字編輯器中開啟 "Package.appxmanifest"，[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) 元素即會顯示為 [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) 元素的子項。 資訊清單檔案中的預設啟動顯示畫面標記在文字編輯器中看起來像這樣：
+If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) element appears as a child of the [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) element. The default splash screen markup in the manifest file looks like this in a text editor:
 
 ```XML
 <uap:SplashScreen Image="Assets\SplashScreen.png" /></code></pre></td>
@@ -210,75 +208,75 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 </table>
 ```
 
-無論使用何種裝置，啟動顯示畫面資產都會置中：
+The splash screen asset is centered by whichever device it appears on:
 
-![啟動顯示畫面資產的大小調整](images/assetguidance27.png)
+![sizing of splash screen asset](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>高對比資產
-
-
-高對比模式使用不同的資產集合，高對比白色使用白色背景和黑色文字，高對比黑色使用黑色背景和白色文字。 如果您沒有為應用程式提供高對比資產，將使用標準資產。
-
-如果您應用程式的標準資產在黑白背景上的呈現是可接受的視覺體驗，那麼您的應用程式在高對比模式時看起來應該至少是令人滿意的。 如果您的標準資產在黑白背景上的呈現是無法接受的視覺體驗，請考慮具體包含高對比資產。 這些範例示範高對比資產的兩種類型：
-
-![高對比比例資產範例](images/assetguidance28.png)
-
-如果您決定提供高對比資產，您需要包含兩組 — 黑底白字和白底黑字。 在您的套件中包含這些資產時，您可以為黑底白字資產建立一個「對比 - 黑色」資料夾，為白底黑字資產建立一個「對比 - 白色」資料夾。
-
-## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>資產大小表格
+## High-contrast assets
 
 
-我們強烈建議您起碼為 100、200 及 400 的縮放比例提供資產。 針對所有縮放比例提供資產將可提供最佳的使用者體驗。
+High-contrast mode makes use of separate sets of assets for high-contrast white (white background with black text) and high-contrast black (black background with white text). If you don't provide high-contrast assets for your app, standard assets will be used.
 
-**以縮放比例為基礎的資產**
+If your app's standard assets provide an acceptable viewing experience when rendered on a black-and-white background, then your app should look at least satisfactory in high-contrast mode. If your standard assets don't afford an acceptable viewing experience when rendered on a black-and-white background, consider specifically including high-contrast assets. These examples illustrate the two types of high-contrast assets:
 
-| 類別             | 元素名稱      | 縮放比例 100% | 縮放比例 125% | 縮放比例 150% | 縮放比例 200% | 縮放比例 400% |
+![high-contrast ratio asset examples](images/assetguidance28.png)
+
+If you decide to provide high-contrast assets, you need to include both sets—both white-on-black and black-on-white. When including these assets in your package, you could create a "contrast-black" folder for white-on-black assets, and a "contrast-white" folder for black-on-white assets.
+
+## Asset size tables
+
+
+At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
+
+**Scale-based assets**
+
+| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
 |----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| 小型                | Square71x71Logo   | 71x71         | 89 x 89         | 107 x 107       | 142 x 142       | 284x284       |
-| 中型               | Square150x150Logo | 150x150       | 188 x 188       | 225 x 225       | 300 x 300       | 600x600       |
-| 寬形                 | Square310x150Logo | 310x150       | 388 x 188       | 465 x 225       | 620x300       | 1240x600      |
-| 大型 (僅限桌面) | Square310x310Logo | 310x310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240 x 1240     |
-| App 清單 (圖示)      | Square44x44Logo   | 44x44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
+| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
+| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
+| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
+| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
 
  
 
-**以縮放比例為基礎的資產的檔案名稱範例**
+**File name examples for scale-based assets**
 
-| 類別             | 元素名稱      | 縮放比例 100%                  | 縮放比例 125%                  | 縮放比例 150%                  |
+| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| 小型                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| 中型               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| 寬形                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| 大型 (僅限桌面) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| App 清單 (圖示)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
 
  
 
-| 類別             | 元素名稱      | 縮放比例 200%                  | 縮放比例 400%                  |
+| Category             | Element name      | At 200% scale                  | At 400% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|
-| 小型                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| 中型               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| 寬形                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| 大型 (僅限桌面) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| App 清單 (圖示)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
 
  
 
-**以目標為基礎的資產**
+**Target-based assets**
 
-以目標為基礎的資產用於多個縮放比例。 以目標為基礎的資產的元素名稱是 **Square44x44Logo**。 我們強烈建議您起碼提交下列資產：
+Target-based assets are used across multiple scale factors. The element name for target-based assets is **Square44x44Logo**. We strongly recommend submitting the following assets as a bare minimum:
 
-16x16、24x24、32x32、48x48、256 x 256
+16x16, 24x24, 32x32, 48x48, 256x256
 
-下表列出所有以目標為基礎的資產大小及對應的檔案名稱範例：
+The following table lists all target-based asset sizes and corresponding file name examples:
 
-| 資產大小 | 檔案名稱範例                 |
+| Asset size | File name example                 |
 |------------|-----------------------------------|
-| 16x16*    | AppNameAppList.targetsize-16.png  |
-| 24x24    | AppNameAppList.targetsize-24.png  |
-| 32x32*    | AppNameAppList.targetsize-32.png  |
-| 48x48*    | AppNameAppList.targetsize-48.png  |
-| 256x256*  | AppNameAppList.targetsize-256.png |
+| 16x16\*    | AppNameAppList.targetsize-16.png  |
+| 24x24\*    | AppNameAppList.targetsize-24.png  |
+| 32x32\*    | AppNameAppList.targetsize-32.png  |
+| 48x48\*    | AppNameAppList.targetsize-48.png  |
+| 256x256\*  | AppNameAppList.targetsize-256.png |
 | 20x20      | AppNameAppList.targetsize-20.png  |
 | 30x30      | AppNameAppList.targetsize-30.png  |
 | 36x36      | AppNameAppList.targetsize-36.png  |
@@ -291,94 +289,94 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
  
 
-\* 提交這些資產大小做為基準線
+\* Submit these asset sizes as a baseline
 
-## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>資產類型
+## Asset types
 
 
-此處列出所有資產類型、資產用途和建議的檔案名稱。
+Listed here are all asset types, their uses, and recommended file names.
 
-**磚資產**
+**Tile assets**
 
--   置中的資產一般使用於 [開始] 畫面上，以展示您的應用程式。
--   檔案名稱格式：\*Tile.scale-\*.PNG
--   受影響的應用程式：每個 UWP app
--   用途：
-    -   預設的 [開始] 畫面磚 (桌面和行動)
-    -   重要訊息中心 (桌面和行動)
-    -   工作切換器 (行動)
-    -   共用選擇器 (行動)
-    -   選擇器 (行動)
-    -   市集
+-   Centered assets are generally used on the Start to showcase your app.
+-   File name format: \*Tile.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Default Start tiles (desktop and mobile)
+    -   Action center (desktop and mobile)
+    -   Task switcher (mobile)
+    -   Share picker (mobile)
+    -   Picker (mobile)
+    -   Store
 
-**含有背板的可調式清單資產**
+**Scalable list assets with plate**
 
--   這些資產用於要求縮放比例的介面。 資產可能使用系統提供的背板，或附帶本身的背景色彩 (如果應用程式有包含的話)。
--   檔案名稱格式：\*AppList.scale-\*.PNG
--   受影響的應用程式：每個 UWP app
--   用途：
-    -   [開始] 畫面的所有 App 清單 (桌面)
-    -   [開始] 畫面的最常用清單 (桌面)
-    -   工作管理員 (桌面)
-    -   Cortana 搜尋結果
-    -   [開始] 畫面的所有 App 清單 (行動)
-    -   設定
+-   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
+-   File name format: \*AppList.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start all apps list (desktop)
+    -   Start most-frequently used list (desktop)
+    -   Task manager (desktop)
+    -   Cortana search results
+    -   Start all apps list (mobile)
+    -   Settings
 
-**含有背板的目標大小清單資產**
+**Target-size list assets with plate**
 
--   這些是固定不調整的資產大小。 主要用於傳統體驗。 系統會檢查資產。
--   檔案名稱格式：\*AppList.targetsize-\*.PNG
--   受影響的應用程式：每個 UWP app
--   用途：
-    -   [開始] 畫面的捷徑清單 (桌面)
-    -   [開始] 畫面的右下角的磚 (桌面)
-    -   捷徑 (桌面)
-    -   控制台 (桌面)
+-   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
+-   File name format: \*AppList.targetsize-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start jump list (desktop)
+    -   Start lower corner of tile (desktop)
+    -   Shortcuts (desktop)
+    -   Control Panel (desktop)
 
-**不含背板的目標大小清單資產**
+**Target-size list assets without plate**
 
--   這些是系統不會提供背板或調整的資產。
--   檔案名稱格式：\*AppList.targetsize-\*\_altform-unplated.PNG
--   受影響的應用程式：每個 UWP app
--   用途：
-    -   工作列和工作列縮圖 (桌面)
-    -   工作列捷徑清單
-    -   工作檢視
+-   These are assets that don't get plated or scaled by the system.
+-   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Taskbar and taskbar thumbnail (desktop)
+    -   Taskbar jumplist
+    -   Task view
     -   ALT+TAB
 
-**副檔名資產**
+**File extension assets**
 
--   這些是副檔名特定的資產。 它們顯示在檔案總管中的 Win32 樣式檔案關聯圖示旁，而且必須不限佈景主題。 大小調整在桌面和行動平台上各不相同。
--   檔案名稱格式：\*LogoExtensions.targetsize-\*.PNG
--   受影響的應用程式：音樂、影片、相片、Microsoft Edge、Microsoft Office
--   用途：
-    -   檔案總管
+-   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
+-   File name format: \*LogoExtensions.targetsize-\*.PNG
+-   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
+-   Uses:
+    -   File Explorer
     -   Cortana
-    -   不同的 UI 介面 (桌面)
+    -   Various UI surfaces (desktop)
 
-**啟動顯示畫面**
+**Splash screen**
 
--   在您的應用程式啟動顯示畫面上出現的資產。 在桌面和行動平台上自動調整。
--   檔案名稱格式：\*SplashScreen.screen-100.PNG
--   受影響的應用程式：每個 UWP app
--   用途：
-    -   應用程式的啟動顯示畫面
+-   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
+-   File name format: \*SplashScreen.screen-100.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   App's splash screen
 
-**圖示磚資產**
+**Iconic tile assets**
 
--   這些是使用圖示範本的應用程式的資產。
--   檔案名稱格式：不適用
--   受影響的應用程式：傳訊、電話和市集等
--   用途：
-    -   圖示磚
-
-
-
-## <span id="related_topics"></span>相關主題
+-   These are assets for apps that make use of the iconic template.
+-   File name format: Not applicable
+-   Impacted apps: Messaging, Phone, Store, more
+-   Uses:
+    -   Iconic tile
 
 
 
-* [特殊的磚範本](tiles-and-notifications-special-tile-templates-catalog.md)
+## Related topics
+
+
+
+* [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -389,6 +387,6 @@ ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

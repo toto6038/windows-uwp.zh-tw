@@ -1,107 +1,106 @@
 ---
 author: WilliamsJason
-title: "Device Portal Fiddler API 參考"
-description: "了解如何以程式設計方式啟用/停用 Fiddler 追蹤。"
-area: Xbox
+title: Device Portal Fiddler API reference
+description: Learn how to enable/disable Fiddler tracing programatically.
 translationtype: Human Translation
-ms.sourcegitcommit: eeb3bc5c4843fe86c54930315d4e112166664e45
-ms.openlocfilehash: 435a00eaf9c1f0d8e0c0043229c2adc80638ace3
+ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
+ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
 
 ---
 
-# Fiddler 設定 API 參考   
-您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
+# Fiddler settings API reference   
+You can enable and disable Fiddler network tracing on your devkit using this REST API.
 
-## 啟用 Fiddler 追蹤
+## Enable Fiddler tracing
 
-**要求**
+**Request**
 
-您可以使用下列要求，啟用開發套件的 Fiddler 追蹤。  請注意，裝置必須重新啟動才會生效。
+You can enable Fiddler tracing for the devkit using the following request.  Note that the device must be restarted before this takes effect.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 POST | /ext/fiddler
 <br />
-**URI 參數**
+**URI parameters**
 
-您可以在要求 URI 上指定下列其他參數：
+You can specify the following additional parameters on the request URI:
 
-| URI 參數      | 描述     | 
+| URI parameter      | Description     | 
 | ------------------ |-----------------|
-| proxyAddress       | 執行 Fiddler 之裝置的 IP 位址或主機名稱 |
-| proxyPort          | Fiddler 用來監視流量的連接埠。 預設值為 8888 |
-| updateCert (可省略)| 布林值，指出是否有提供根 Fiddler 憑證。 如果從未在此開發套件上設定 Fiddler，或是在曾其他主機上設定 Fiddler，則這個值必須為 true。  |
+| proxyAddress       | The IP address or hostname of the device running Fiddler |
+| proxyPort          | The port which Fiddler is using for monitoring traffic. Defaults to 8888 |
+| updateCert (optional)| A boolean value indicating if the root Fiddler cert is provided. This must be true if Fiddler has never been configured on this devkit or was configured for a different host.  |
 <br>
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**
+**Request body**
 
-- 若 updateCert 為 false 或未提供，則為無。 否則，多部分合格的 http 本文包含 FiddlerRoot.cer 檔案。
+- None if updateCert is false or not provided. Multi-part conforming http body containing the FiddlerRoot.cer file otherwise.
 
-**回應**   
+**Response**   
 
-- 無  
+- None  
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-204 | 已接受啟用 Fiddler 的要求。 Fiddler 將在裝置下次重新啟動時啟用。
-4XX | 錯誤碼
-5XX | 錯誤碼
+204 | The request to enable Fiddler was accepted. Fiddler will be enabled the next time the device reboots.
+4XX | Error codes
+5XX | Error codes
 
-## 停用在開發套件上的 Fiddler 追蹤
+## Disable Fiddler tracing on the devkit
 
-**要求**
+**Request**
 
-您可以使用下列要求，停用裝置上的 Fiddler 追蹤。 請注意，裝置必須重新啟動才會生效。
+You can disable Fiddler tracing on the device using the following request. Note that the device must be restarted before this takes effect.
 
-方法      | 要求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /ext/fiddler
 <br />
-**URI 參數**
+**URI parameters**
 
-- 無
+- None
 
-**要求標頭**
+**Request headers**
 
-- 無
+- None
 
-**要求主體**   
+**Request body**   
 
-- 無
+- None
 
-**回應**   
+**Response**   
 
-- 無 
+- None 
 
-**狀態碼**
+**Status code**
 
-此 API 具有下列預期狀態碼。
+This API has the following expected status codes.
 
-HTTP 狀態碼      | 描述
+HTTP status code      | Description
 :------     | :-----
-204 | 停用 Fiddler 追蹤的要求成功。 追蹤將在裝置下次重新啟動時停用。
-4XX | 錯誤碼
-5XX | 錯誤碼
+204 | The request to disable Fiddler tracing was successful. Tracing will be disabled on the next reboot of the device.
+4XX | Error codes
+5XX | Error codes
 
 <br />
-**可用裝置系列**
+**Available device families**
 
 * Windows Xbox
 
-## 另請參閱
-- [在 Xbox 上針對 UWP 設定 Fiddler](uwp-fiddler.md)
+## See also
+- [Configuring Fiddler for UWP on Xbox](uwp-fiddler.md)
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,31 +1,37 @@
 ---
 author: normesta
-description: 'Shows how to integrate social feeds into the People app'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Provide social feeds to the People app'
+description: "說明如將社交動向摘要整合到連絡人 app 中"
+MSHAttr: PreferredLib:/library/windows/apps
+title: "提供社交動向摘要給連絡人 app"
+translationtype: Human Translation
+ms.sourcegitcommit: 767acdc847e1897cc17918ce7f49f9807681f4a3
+ms.openlocfilehash: c5b9666d8654a4065bc0e4e400d3e47de4773b8b
+
 ---
 
-# Provide social feeds to the People app
+# 提供社交動向摘要給連絡人 app
 
-Integrate social feed data from your database into the People app.
+將來自您資料庫的社交動向摘要資料整合到連絡人 app 中
 
-Your feed data will appear in the **What's New** pages of the People app or in the **Profile** page of a contact.
+您的摘要資料將會顯示在連絡人 app 的 [最新動向]**** 頁面，或連絡人的 [個人資料]**** 頁面中。
 
-![Social Feeds in People App](images/social-feeds.png)
+使用者可以點選摘要項目來開啟您的 app。
 
-To get started, create a foreground app that tags contacts for social feeds and a background agent that sends feed data to the People app.
+![連絡人 App 中的社交動向摘要](images/social-feeds.png)
 
-For a more complete sample, see [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp).
+若要開始，請建立針對社交動向摘要標記連絡人的前景 app，以及將摘要資料傳送給連絡人 app 的背景代理程式。
 
-## Create a foreground app
+如需更完整的範例，請參閱[社交動向資訊範例](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)。
 
-First, create a Universal Windows Platform (UWP) project and then add the **Windows Mobile Extensions for UWP** to it.
+## 建立前景 app
 
-![Mobile Extensions](images/mobile-extensions.png)
+首先，請建立通用 Windows 平台 (UWP) 專案，然後將 **UWP 適用的 Windows Mobile 擴充功能**新增至專案。
 
-### Find or create contacts
+![Mobile 擴充功能](images/mobile-extensions.png)
 
-You can find contacts by using a name, email address, or phone number.
+### 尋找或建立連絡人
+
+您可以使用姓名、電子郵件地址或電話號碼來尋找連絡人。
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -36,7 +42,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 
 Contact contact = contacts[0];
 ```
-You can also create contacts and then add them to a contact list.
+您也可以建立連絡人，然後將他們新增到連絡人清單。
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +73,11 @@ else
 await contactList.SaveContactAsync(contact);
 ```
 
-### Tag each contact with an annotation
+### 使用註解來標記每個連絡人
 
-This *annotation* causes the People app to request feed data for the contact from your background agent.
+此「註解」**會讓連絡人 app 向您的背景代理程式要求連絡人的摘要資料。
 
-As part of the annotation, associate the ID of the contact to an ID that your app uses internally to identify that contact.
+請將連絡人的識別碼與您 app 內部用來識別連絡人的識別碼相關聯，以做為註解的一部份。
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -94,11 +100,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.SocialFeeds;
 await annotationList.TrySaveAnnotationAsync(annotation);
 
 ```
-### Provision the background agent
+### 佈建背景代理程式
 
-Make sure that the [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API contract is available on the device that will run your app.
+請確定將執行您 app 的裝置上有 [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API 協定可用。
 
-If it's available, then provision the background agent.
+如果有，就請佈建背景代理程式。
 
 ```cs
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
@@ -114,21 +120,21 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
     }
 }
 ```
-## Create the background agent
+## 建立背景代理程式
 
-The background agent is a Windows Runtime Component that responds to feed requests from the People app.
+背景代理程式為「Windows 執行階段元件」，可回應來自連絡人 app 的摘要要求。
 
-In your agent, you'll respond to those requests by giving the People app feed data from your database.
+在您的代理程式中，您將會透過向連絡人 app 提供來自您資料庫的摘要資料以回應那些要求。
 
-### Create a Windows Runtime Component
+### 建立 Windows 執行階段元件
 
-Add a **Windows Runtime Component (Universal Windows)** project to your solution.
+將 **Windows 執行階段元件 (通用 Windows)** 專案新增到您的解決方案。
 
-![Windows Runtime Component](images/windows-runtime-component.png)
+![Windows 執行階段元件](images/windows-runtime-component.png)
 
-### Register the background agent as an app service
+### 將背景代理程式登錄為一項 app 服務
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+透過將通訊協定處理常式新增到資訊清單的 ``Extensions`` 元素來登錄。
 
 ```xml
 <Extensions>
@@ -137,27 +143,27 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+您也可以在 Visual Studio 中資訊清單設計工具的 [宣告]**** 索引標籤中新增這些處理常式。
 
-![App Service in Manifest Designer](images/manifest-designer-app-service.png)
+![資訊清單設計工具中的 app 服務](images/manifest-designer-app-service.png)
 
-### Request operations from the People app
+### 向連絡人 app 要求作業
 
-Ask the People app what type of data it wants next. The People app will respond to your request with a code that indicates which feed it wants data for.
+詢問連絡人 app 接下來需要哪種類型的資料。 連絡人 app 將會向您提供指示它需要哪些摘要資料的代碼來回應您的要求。
 
-This table describes each feed:
+此表格描述每項摘要：
 
-| Feed | Description |
+| 摘要 | 說明 |
 |-------|-------------|
-| Home | Feed that appears in the What's New page of the People app. |
-| Contact | Feed that appears in the What's New page of a contact. |
-| Dashboard | Feed that appears in the contact card next to the profile picture. |
+| 首頁 | 連絡人 app [最新動向] 頁面中顯示的摘要 |
+| 連絡人 | 連絡人 [最新動向] 頁面中顯示的摘要 |
+| 儀表板 | 個人資料圖片旁邊的連絡人卡片中顯示的摘要。 |
 <br>
-You'll ask the People app by requesting an *operation*. Implement the [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) interface and override the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method.
+您將會透過要求「作業」**來向連絡人 app 提出要求。 實作 [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) 介面並複寫 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法。
 
-In the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method, send the People app two key-value pairs. One of them contains the version of the protocol and the other one contains the type of the operation.
+在 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法中，向連絡人 app 傳送兩個機碼值組。 其中一個包含通訊協定版本，另一個包含作業類型。
 
-Then listen for a response from the People app. That response will contain a code.
+然後接聽來自連絡人 app 的回應。 該回應將包含代碼。
 
 ```cs
 public sealed class BackgroundAgent : IBackgroundTask
@@ -225,41 +231,41 @@ public sealed class BackgroundAgent : IBackgroundTask
 }
 ```
 
-Refer to the ``Type`` element of the [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property to get that code. Here's a complete list of the codes.
+請參閱 [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) 屬性的 ``Type`` 元素來取得該代碼。 以下是代碼的完整清單。
 
-| Type| Description |
+| 類型| 說明 |
 |-----|-------------|
-| 0x10 | A request to the People app for the next operation. |
-| 0x11 | A request from the People app to provide the home feed for the primary user. |
-| 0x13 | A request from the People app to get the contact feed for the selected contact. |
-| 0x15 | A request from the People app to get the dashboard item of the selected contact. |
-| 0x80 | Indicates that the operation is completed. This notifies the People app that the data is now available. |
-| 0xF1 | A message from the People app indicating that it does not require any other operations. The background agent can shut down now. |
+| 0x10 | 向連絡人 app 要求下一項作業的要求。 |
+| 0x11 | 來自連絡人 app，用來提供主要使用者首頁摘要的要求。 |
+| 0x13 | 來自連絡人 app，用來取得所選連絡人的連絡人摘要的要求。 |
+| 0x15 | 來自連絡人 app，用來取得所選連絡人的儀表板項目的要求。 |
+| 0x80 | 指示作業已經完成。 這會通知連絡人 app 資料現在可供使用。 |
+| 0xF1 | 來自連絡人 app 並指示它不需要任何其他作業的訊息。 現在可以關閉背景代理程式。 |
 <br>
-The [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property also returns a collection of other key-value pairs that describe the response. Here's a list of them.
+[AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) 屬性也會傳回描述回應的其他機碼值組集合。 以下是機碼值組的清單。
 
-| Key | Type | Description |
+| 機碼 | 類型 | 說明 |
 |-----|------|-------------|
-| Version | UINT32 | (Required) Identifies the version of the message protocol. The upper 16 bits are the major version, and the lower 16 bits are the minor version. |
-| Type | UINT32 | (Required) The type of operation to perform. The previous example uses the Type key to determine what operation the People app is asking for.
-| OperationId | UINT32 | The ID of the operation. |
-| OwnerRemoteId | String | ID that your app uses internally to identify that contact. |
-| LastFeedItemTimeStamp | String | The ID of the last feed item that was retrieved. |
-| LastFeedItemTimeStamp | DateTime | The time stamp of the last feed item that was retrieved. |
-| ItemCount | UINT32 | The number of items that the People app asks for. |
-| IsFetchMore | BOOLEAN | Determines when the internal cache is updated. |
-| ErrorCode | UINT32 | The error code associated with the background agent operation. |
+| 版本 | UINT32 | (必要) 識別訊息通訊協定的版本。 較高的 16 位元是主要版本，較低的 16 位元是次要版本。 |
+| 類型 | UINT32 | (必要) 要執行的作業類型。 前一個範例是使用 Type 機碼來判斷連絡人 app 要求哪些作業。
+| OperationId | UINT32 | 作業的識別碼。 |
+| OwnerRemoteId | 字串 | 您的 app 內部用來識別該連絡人的識別碼。 |
+| LastFeedItemTimeStamp | 字串 | 上一個所擷取摘要項目的識別碼。 |
+| LastFeedItemTimeStamp | DateTime | 上一個所擷取摘要項目的時間戳記。 |
+| ItemCount | UINT32 | 連絡人 app 所要求項目的數目。 |
+| IsFetchMore | 布林值 | 決定何時更新內部快取。 |
+| ErrorCode | UINT32 | 與背景代理程式作業關聯的錯誤代碼。 |
 <br>
-### Provide a data feed to the People app
+### 向連絡人 app 提供資料摘要
 
-A **Type** value of ``0x11``, ``0x13``, or ``0x15`` is a request from the People app for feed data.  
+``0x11``、``0x13`` 或 ``0x15`` 的 **Type** 值是連絡人 app 對摘要資料的要求。  
 
-The next few snippets show an approach to providing that data to the People app.
+接下來幾個程式碼片段說明向連絡人 app 提供資料的方式。
 
 > [!NOTE]
-> These snippets come from the [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp). They contain references to interfaces, classes and members that are defined elsewhere in the sample. Use these snippets along with the other examples in this topic to understand the flow of tasks and refer to the sample if you're interested in diving further into the stack of interfaces, classes, and types.
+> 這些程式碼片段是來自[社交動向資訊範例](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)。 它們包含對範例中其他位置所定義介面、類別及成員的參考。 請搭配此主題中的其他範例使用這些程式碼片段來了解工作流程，且如果您有興趣進一步區分至介面、類別與類型的堆疊，請參閱樣本。
 
-**Get contact feed items**
+**取得連絡人摘要項目**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -311,7 +317,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get dashboard items**
+**取得儀表板項目**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -354,7 +360,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get home feed items**
+**取得首頁摘要項目**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -406,9 +412,9 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-### Send success or failure notification back to the People app
+### 向連絡人 app 回傳成功或失敗通知
 
-Encapsulate your calls in a try catch block and then pass back a success or failure message to the People app after you've provided feed data.
+在 Try Catch 區塊中封裝您的呼叫，然後在您已經提供摘要資料之後向連絡人 app 回傳成功或失敗訊息。
 
 ```cs
 try
@@ -433,3 +439,9 @@ fields.Add("OperationId", operationID);
 await this.mAppServiceConnection.SendMessageAsync(fields);
 
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

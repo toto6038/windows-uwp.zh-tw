@@ -1,147 +1,147 @@
 ---
 author: DelfCo
-Description: "藉由使用 Windows 所提供的各種語言及地區設定，即可控制 Windows 如何選取 UI 資源，以及如何將 app 的 UI 元素格式化。"
-title: "管理語言和地區"
+Description: Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.
+title: Manage language and region
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+ms.openlocfilehash: 5a7519d9ea7a121e3e3087debba6d6193b1d8155
 
 ---
 
-# 管理語言和地區
+# Manage language and region
 
 
 
 
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)
 -   [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**WinJS.Resources 命名空間**](https://msdn.microsoft.com/library/windows/apps/br229779)
+-   [**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)
 
-藉由使用 Windows 所提供的各種語言及地區設定，即可控制 Windows 如何選取 UI 資源，以及如何將 app 的 UI 元素格式化。
+Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>簡介
-
-
-如需示範如何管理語言及地區設定的範例 app，請參閱[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
-
-Windows 使用者不需要從一組有限的語言中只選擇一種語言。 使用者可以告訴 Windows 他們使用世界上的任一種語言，即使 Windows 本身並未翻譯為該種語言。 使用者甚至可以指定他們可以使用多種語言。
-
-Windows 使用者可以指定他們的位置，可以是世界上的任一處。 此外，使用者還可以指定他們是在任何位置使用任何語言。 位置和語言不會彼此限制。 只因為使用者使用法文，並不表示他們位於法國，或者只因為使用者身處法國，並不代表他們慣用法文。
-
-Windows 使用者可以利用與 Windows 完全不同的語言來執行應用程式。 例如，使用者可以執行西班牙文版的應用程式，而 Windows 執行的是英文版。
-
-對於 Windows 市集應用程式，語言是以 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)代表的。 Windows 執行階段、HTML 以及 XAML 中大部分的 API 可以傳回或接受這些 BCP-47 語言標記的字串表示法。 另請參閱 [IANA 語言清單](http://go.microsoft.com/fwlink/p/?linkid=227303)。
-
-如需 Windows 市集具體支援的語言標記清單，請參閱[支援的語言](https://msdn.microsoft.com/library/windows/apps/jj657969)。
-
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>工作
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-### <span id="Users_can_set_their_language_preferences."></span><span id="users_can_set_their_language_preferences."></span><span id="USERS_CAN_SET_THEIR_LANGUAGE_PREFERENCES."></span>使用者可以設定他們的語言喜好設定。
+For a sample app that demonstrates how to manage language and region settings, see [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
 
-使用者語言喜好設定清單是排序的語言清單，依照使用者慣用的語言順序來說明它們。
+A Windows user doesn't need to choose just one language from a limited set of languages. Instead, the user can tell Windows that they speak any language in the world, even if Windows itself isn't translated into that language. The user can even specify that they can speak multiple languages.
 
-使用者可以在 [設定]****&gt;[時間與語言]****&gt;[地區與語言]**** 中設定此清單。 或者，他們也可以使用 [控制台]****&gt;[時鐘、語言和區域]**** 來設定此清單。
+A Windows user can specify their location, which can be anywhere in the world. Also, the user can specify that they speak any language in any location. The location and language do not limit each other. Just because the user speaks French doesn't mean they are located in France, or just because the user is in France doesn't mean they prefer to speak French.
 
-使用者的語言喜好設定清單可包含多種語言，以及地區變體或特定變體。 例如，使用者可能慣用 fr-CA，但是也可以了解 en-GB。
+A Windows user can run apps in a completely different language than Windows. For example, the user can run an app in Spanish while Windows is running in English.
 
-### <span id="Specify_the_supported_languages_in_the_app_s_manifest."></span><span id="specify_the_supported_languages_in_the_app_s_manifest."></span><span id="SPECIFY_THE_SUPPORTED_LANGUAGES_IN_THE_APP_S_MANIFEST."></span>在 app 資訊清單中指定支援的語言。
+For Windows Store apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the Windows Runtime, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
 
-請在 app 資訊清單檔 (通常是 Package.appxmanifest) 中的 [**Resources element**](https://msdn.microsoft.com/library/windows/apps/dn934770) 指定您 app 支援的語言，否則 Visual Studio 會根據在專案中找到的語言，自動在資訊清單檔中產生語言清單。 資訊清單應該在適當的精細度層級正確說明支援的語言。 資訊清單中列出的語言，便是使用者在 Windows 市集中所見的語言。
+See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Windows Store.
 
-### <span id="Specify_the_default_language."></span><span id="specify_the_default_language."></span><span id="SPECIFY_THE_DEFAULT_LANGUAGE."></span>指定預設語言。
-
-在 Visual Studio 開啟 package.appxmanifest，前往 [應用程式]**** 索引標籤，並將您的預設語言設為撰寫應用程式所使用的語言。
-
-當 app 不支援使用者選擇的任何語言時，會使用預設語言。 Visual Studio 會使用預設語言將中繼資料加入以該語言標記的資產中，以便在執行階段選擇適當的資產。
-
-預設語言屬性也必須設定為資訊清單中的第一個語言，以便適當設定應用程式語言 (如下列的＜建立應用程式語言清單＞步驟所述)。 預設語言中的資源仍然必須符合它們的語言資格 (例如，en-US/logo.png)。 預設語言不會指定不符合資產的隱含語言。 若要深入了解，請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
-
-### <span id="Qualify_resources_with_their_language."></span><span id="qualify_resources_with_their_language."></span><span id="QUALIFY_RESOURCES_WITH_THEIR_LANGUAGE."></span>使用他們的語言限定資源。
-
-仔細考量您的對象以及您的目標使用者的語言和位置。 許多同住在一個地區的人，並不是慣用該地區的主要語言。 例如，美國有數百萬家庭的主要語言是西班牙文。
-
-當您使用語言限定資源時：
-
--   如果語言沒有定義抑制指令碼值，則包含指令碼。 如需語言標記詳細資訊，請參閱 [IANA 子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)。 例如，使用 zh-Hant、zh-Hant-TW 或 zh-Hans，不使用 zh-CN 或 zh-TW。
--   使用某種語言標示所有語言內容。 預設的語言專案屬性不是未標示之資源的語言 (即中性語言)；它會指定在沒有其他標示的語言資源符合使用者的情況下，應該選擇哪個標示的語言資源。
-
-使用正確的內容表示法來標示資產。
-
--   Windows 會執行複雜比對 (包括跨地區變體 (例如 en-US 對 en-GB) 在內)，因此應用程式可以自由使用正確的內容表示法來標示資產，然後讓 Windows 為每位使用者進行適當的比對。
--   Windows 市集會向查看應用程式的使用者顯示資訊清單中的內容。
--   請注意，某些工具和其他元件 (如電腦翻譯工具) 可能會找到特定語言標記 (如地區方言資訊)，這有助於了解資料。
--   請務必以完整詳細資料標示資產，尤其在有多種變體存在時。 例如，請標示 en-GB 和 en-US (如果兩者都是該地區的特定語言)。
--   如果語言只有單一標準方言，則不需要新增地區。 在某些情況下，一般標記是合理的，例如使用 ja (而非 ja-JP) 標示資產。
-
-有時候，可能不需要當地語系化所有資源。
-
--   對於含有所有語言的資源 (如 UI 字串)，請以它們的適當語言標示，並確認這些資源全都使用預設語言。 不需要指定中性資源 (未標示語言的資源)。
--   對於含有整個應用程式的語言集之子集的資源 (部分當地語系化)，請指定資產確實含有的語言集，並確定這些資源全都使用預設語言。 Windows 會依照使用者喜好設定順序查看他們使用的所有語言，藉此為使用者挑選最適合的語言。 例如，如果應用程式含有西班牙文的完整資源集合，則並非所有應用程式的 UI 都可以當地語系化成卡達隆尼亞文。 對於優先使用卡達隆尼亞文、其次為西班牙文的使用者來說，未以卡達隆尼亞文提供的資源會以西班牙文顯示。
--   對於某些語言有特定例外，而其他所有語言則對應至某個共通資源的資源來說，應用在所有語言的資源應以未定語言標記 'und' 標示。 Windows 會以類似 '\*' 的方式解譯 'und' 語言標記，即它會比對任何其他特定的相符項目後的最上層應用程式語言。 例如，如果芬蘭文的少數資源 (如元素的寬度) 不相同，但所有語言的其餘資源均相同，則芬蘭文資源應以芬蘭文語言標記標示，其餘則應以 'und' 標示。
--   對於以語言的指令碼 (而非語言) 為基礎的資源 (例如字型或文字高度)，請使用含有指定之指令碼 'und-&lt;script&gt;' 的未定語言標記。 例如，對於拉丁文字型，請使用 und-Latn\fonts.css，對於斯拉夫文字型，請使用 und-Cryl\fonts.css。
-
-### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>建立應用程式語言清單。
-
-在執行階段，系統會判斷應用程式在其資訊清單宣告支援的使用者語言喜好設定，然後建立*應用程式語言清單*。 它使用這個清單判斷應用程式應使用的語言。 這個清單會判斷針對 app 和系統資源、日期、時間及數字，以及其他元件使用的語言。 例如，資源管理系統 ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WinJS.Resources**](https://msdn.microsoft.com/library/windows/apps/br229779) 命名空間) 會根據應用程式語言載入 UI 資源。 [ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也會根據應用程式語言清單選擇格式。 應用程式語言清單可以使用 [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) 取得。
-
-比對語言和資源並不容易。 建議您讓 Windows 處理比對，因為一種語言標記有許多選用元件會影響比對的優先順序，而實際上可能會遇到這些元件。
-
-語言標記中的選用元件範例有：
-
--   抑制指令碼語言的指令碼。 例如，en-Latn-US 與 en-US 相符。
--   地區。 例如，en-US 與 en 相符。
--   變體。 例如，de-DE-1996 與 de-DE 相符。
--   -x 和其他延伸。 例如，en-US-x-Pirate 與 en-US 相符。
-
-語言標記還有許多元件不是 xx 或 xx-yy 格式，而且並非全部相符。
-
--   zh-Hant 與 zh-Hans 不相符。
-
-Windows 會以標準且眾所周知的方式來排列語言相符結果的優先順序。 例如，依照優先順序，en-US 與 en-US、en、en-GB 等相符。
-
--   Windows 會執行跨地區比對。 例如，en-US 與 en-US 相符，然後是 en，然後是 en-\*。
--   Windows 含有用於地區內之親和性比對的其他資料，例如某種語言的主要地區。 例如，fr-FR 與 fr-BE 的相符性比 fr-CA 更高。
--   當您仰賴 Windows API 時，將可免費取得 Windows 中任何的後續語言比對改良功能。
-
-系統會先比對清單中的第一個語言，然後再比對清單中的第二個語言，即使是其他地區變體也一樣。 例如，如果應用程式語言為 en-US，則會優先選擇 en-GB 資源，而不是 fr-CA 資源。 只在 en 形式都沒有資源時，才會選擇 fr-CA 資源。
-
-應用程式語言清單會設定為使用者的地區變體，即使它與應用程式提供的地區變體不同也一樣。 例如，如果使用者使用的是 en-GB，但是應用程式支援 en-US，則應用程式語言清單會包含 en-GB。 這確保日期、時間及數字的格式化方式會更貼近使用者的預期 (en-GB)，但是仍然會在應用程式支援的語言 (en-US) 中載入 UI 資源 (由於語言比對的緣故)。
-
-應用程式語言清單由以下項目組成：
-
-1.  **(選擇性) 主要語言覆寫** [**PrimaryLanguageOverride**](https://msdn.microsoft.com/library/windows/apps/hh972398) 是一個簡單的 app 覆寫設定，可讓使用者選擇自己的語言，或是讓 app 有充分的理由可覆寫預設語言選擇。 若要深入了解，請參閱[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
-2.  **app 支援的使用者語言。** 這是一份使用者的語言喜好設定清單，以語言喜好設定排序。 此清單是由 app 資訊清單中的支援語言清單所篩選出。 依 app 支援的語言篩選使用者的語言可在軟體開發套件 (SDK)、類別庫、相依架構套件及 app 之間維持一致性。
-3.  **如果第 1 項和第 2 項空白，則為預設語言或 app 所支援的第一個語言。** 如果使用者使用的是 app 不支援的語言，選擇的應用程式語言會是 app 支援的第一個語言。
-
-如需範例，請參閱下方的＜備註＞一節。
-
-### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>設定 HTTP Accept Language 標頭。
-
-在典型 Web 要求和 XMLHttpRequest (XHR) 中，從 Windows 市集 app 和傳統型 app 提出的要求，會使用標準的 HTTP Accept-Language 標頭。 HTTP 標頭預設會設定為使用者的語言喜好設定 (依據使用者慣用的順序)，此順序指定於 [設定]****&gt;[時間與語言]****&gt;[地區與語言]**** 中。 清單中的每個語言都可進一步展開，以包含中性語言和加權 (q)。 例如，fr-FR 和 en-US 的使用者語言清單會產生 fr-FR、fr、en-US、en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3") 的 HTTP Accept-Language 標頭。
-
-### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>在 Windows.Globalization 命名空間中使用 API。
-
-通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空間中的 API 元素會使用應用程式語言清單來判斷語言。 如果沒有找到具有相符格式的語言，就會使用使用者地區設定。 這是用於系統時鐘的相同地區設定。 使用者地區設定可以從 [設定]****&gt;[時間與語言]****&gt;[地區與語言]****&gt;[其他日期、時間及區域設定]****&gt;[地區: 變更日期、時間或數字格式]**** 中取得。 **Windows.Globalization** API 也接受覆寫以指定要使用的語言清單，取代應用程式語言清單。
-
-[ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件。 這個物件讓應用程式可以檢查有關語言的詳細資料，例如語言的指令碼、顯示名稱及原始名稱。
-
-### <span id="Use_geographic_region_when_appropriate."></span><span id="use_geographic_region_when_appropriate."></span><span id="USE_GEOGRAPHIC_REGION_WHEN_APPROPRIATE."></span>適當使用地理區域。
-
-您可以利用使用者的住家地理區域設定 (而不使用語言) 來選擇要為使用者顯示哪些內容。 例如，新聞 app 可以預設為顯示來自使用者住家位置的內容，該位置是在安裝 Windows 時所設定，如先前的工作中所述，可以從 [地區: 變更日期、時間或數字格式]**** 中取得。 您可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) 來抓取目前使用者的住家地區設定。
-
-[ **Windows.Globalization** ](https://msdn.microsoft.com/library/windows/apps/br206813) 也有提供做為協助程式物件的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 物件。 這個物件可讓 app 檢查有關特定地區的詳細資料，例如它的顯示名稱、原始名稱及使用中的貨幣。
-
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>備註
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
 
 
-下表包含一些範例，說明使用者在各種語言與地區設定下，在 app UI 中會看見的內容。
+### <span id="Users_can_set_their_language_preferences."></span><span id="users_can_set_their_language_preferences."></span><span id="USERS_CAN_SET_THEIR_LANGUAGE_PREFERENCES."></span>Users can set their language preferences.
+
+The user language preferences list is an ordered list of languages that describe the user's languages in the order that they prefer them.
+
+The user sets the list in **Settings** &gt; **Time & language** &gt; **Region & language**. Alternatively, they can use **Control Panel** &gt; **Clock, Language, and Region**.
+
+The user's language preferences list can contain multiple languages and regional or otherwise specific variants. For example, the user might prefer fr-CA, but can also understand en-GB.
+
+### <span id="Specify_the_supported_languages_in_the_app_s_manifest."></span><span id="specify_the_supported_languages_in_the_app_s_manifest."></span><span id="SPECIFY_THE_SUPPORTED_LANGUAGES_IN_THE_APP_S_MANIFEST."></span>Specify the supported languages in the app's manifest.
+
+Specify the list of your app's supported languages in the [**Resources element**](https://msdn.microsoft.com/library/windows/apps/dn934770) of the app's manifest file (typically Package.appxmanifest), or Visual Studio automatically generates the list of languages in the manifest file based on the languages found in the project. The manifest should accurately describe the supported languages at the appropriate level of granularity. The languages listed in the manifest are the languages displayed to users in the Windows Store.
+
+### <span id="Specify_the_default_language."></span><span id="specify_the_default_language."></span><span id="SPECIFY_THE_DEFAULT_LANGUAGE."></span>Specify the default language.
+
+Open package.appxmanifest in Visual Studio, go to the **Application** tab, and set your default language to the language you are using to author your application.
+
+An app uses the default language when it doesn't support any of the languages that the user has chosen. Visual Studio uses the default language to add metadata to assets marked in that language, enabling the appropriate assets to be chosen at runtime.
+
+The default language property must also be set as the first language in the manifest to appropriately set the application language (described in the step "Create the application language list", below). Resources in the default language must still be qualified with their language (for example, en-US/logo.png). The default language does not specify the implicit language of unqualified assets. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+
+### <span id="Qualify_resources_with_their_language."></span><span id="qualify_resources_with_their_language."></span><span id="QUALIFY_RESOURCES_WITH_THEIR_LANGUAGE."></span>Qualify resources with their language.
+
+Consider your audience carefully and the language and location of users you want to target. Many people who live in a region don't prefer the primary language of that region. For example, there are millions of households in the United States in which the primary language is Spanish.
+
+When you qualify resources with language:
+
+-   Include script when there is no suppress script value defined for the language. See the [IANA subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303) for language tag details. For example, use zh-Hant, zh-Hant-TW, or zh-Hans, and not zh-CN or zh-TW.
+-   Mark all linguistic content with a language. The default language project property is not the language of unmarked resources (that is, neutral language); it specifies which marked language resource should be chosen if no other marked language resource matches the user.
+
+Mark assets with an accurate representation of the content.
+
+-   Windows does complex matching, including across regional variants (such as en-US to en-GB), so applications are free to mark assets with an accurate representation of the content and let Windows match appropriately for each user.
+-   The Windows Store displays what's in the manifest to users looking at the application.
+-   Be aware that some tools and other components such as machine translators may find specific language tags, such as regional dialect info, helpful in understanding the data.
+-   Be sure to mark assets with full details, especially when multiple variants are available. For example, mark en-GB and en-US if both are specific to that region.
+-   For languages that have a single standard dialect, there is no need to add region. General tagging is reasonable in some situations, such as marking assets with ja instead of ja-JP.
+
+Sometimes there are situations where not all resources need to be localized.
+
+-   For resources such as UI strings that come in all languages, mark them with the appropriate language they are in and make sure to have all of these resources in the default language. There is no need to specify a neutral resource (one not marked with a language).
+-   For resources that come in a subset of the entire application's set of languages (partial localization), specify the set of the languages the assets do come in and make sure to have all of these resources in the default language. Windows picks the best language possible for the user by looking at all the languages the user speaks in their preference order. For example, not all of an app's UI may be localized into Catalan if the app has a full set of resources in Spanish. For users who speak Catalan and then Spanish, the resources not available in Catalan appear in Spanish.
+-   For resources that have specific exceptions in some languages and all other languages map to a common resource, the resource that should be used for all languages should be marked with the undetermined language tag 'und'. Windows interprets the 'und' language tag in a manner similar to '\*', in that it matches the top application language after any other specific match. For example, if a few resources (such as the width of an element) are different for Finnish, but the rest of the resources are the same for all languages, the Finnish resource should be marked with the Finnish language tag, and the rest should be marked with 'und'.
+-   For resources that are based on a language's script instead of the language, such as a font or height of text, use the undetermined language tag with a specified script: 'und-&lt;script&gt;'. For example, for Latin fonts use und-Latn\\fonts.css and for Cyrillic fonts use und-Cryl\\fonts.css.
+
+### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>Create the application language list.
+
+At runtime, the system determines the user language preferences that the app declares support for in its manifest, and creates an *application language list*. It uses this list to determine the language(s) that the application should be in. The list determines the language(s) that is used for app and system resources, dates, times, and numbers, and other components. For example, the Resource Management System ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022), [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) and [**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)) loads UI resources according to the application language. [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) also chooses formats based on the application language list. The application language list is available using [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396).
+
+The matching of languages to resources is difficult. We recommend that you let Windows handle the matching because there are many optional components to a language tag that influence priority of match, and these can be encountered in practice.
+
+Examples of optional components in a language tag are:
+
+-   Script for suppress script languages. For example, en-Latn-US matches en-US.
+-   Region. For example, en-US matches en.
+-   Variants. For example, de-DE-1996 matches de-DE.
+-   -x and other extensions. For example, en-US-x-Pirate matches en-US.
+
+There are also many components to a language tag that are not of the form xx or xx-yy, and not all match.
+
+-   zh-Hant does not match zh-Hans.
+
+Windows prioritizes matching of languages in a standard well-understood way. For example, en-US matches, in priority order, en-US, en, en-GB, and so forth.
+
+-   Windows does cross regional matching. For example, en-US matches en-US, then en, and then en-\*.
+-   Windows has additional data for affinity matching within a region, such as the primary region for a language. For example, fr-FR is a better match for fr-BE than is fr-CA.
+-   Any future improvements in language matching in Windows will be obtained for free when you depend on Windows APIs.
+
+Matching for the first language in a list occurs before matching of the second language in a list, even for other regional variants. For example, a resource for en-GB is chosen over an fr-CA resource if the application language is en-US. Only if there are no resources for a form of en is a resource for fr-CA chosen.
+
+The application language list is set to the user's regional variant, even if it is different than the regional variant that the app provided. For example, if the user speaks en-GB but the app supports en-US, the application language list would include en-GB. This ensures that dates, times, and numbers are formatted more closely to the user's expectations (en-GB), but the UI resources are still loaded (due to language matching) in the app's supported language (en-US).
+
+The application language list is made up of the following items:
+
+1.  **(Optional) Primary Language Override** The [**PrimaryLanguageOverride**](https://msdn.microsoft.com/library/windows/apps/hh972398) is a simple override setting for apps that give users their own independent language choice, or apps that have some strong reason to override the default language choices. To learn more, see the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
+2.  **The user's languages supported by the app.** This is a list of the user's language preferences, in order of language preference. It is filtered by the list of supported languages in the app's manifest. Filtering the user's languages by those supported by the app maintains consistency among software development kits (SDKs), class libraries, dependent framework packages, and the app.
+3.  **If 1 and 2 are empty, the default or first language supported by the app.** If the user doesn't speak any languages that the app supports, the chosen application language is the first language supported by the app.
+
+See the Remarks section below for examples.
+
+### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>Set the HTTP Accept Language header.
+
+HTTP requests made from Windows Store apps and Desktop apps in typical web requests and XMLHttpRequest (XHR), use the standard HTTP Accept-Language header. By default, the HTTP header is set to the user's language preferences, in the user's preferred order, as specified in **Settings** &gt; **Time & language** &gt; **Region & language**. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3").
+
+### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>Use the APIs in the Windows.Globalization namespace.
+
+Typically, the API elements in the [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) namespace use the application language list to determine the language. If none of the languages has a matching format, the user locale is used. This is the same locale that is used for the system clock. The user locale is available from the **Settings** &gt; **Time & language** &gt; **Region & language** &gt; **Additional date, time, & regional settings** &gt; **Region: Change date, time, or number formats**. The **Windows.Globalization** APIs also accept an override to specify a list of languages to use, instead of the application language list.
+
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) also has a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object that is provided as a helper object. It lets apps inspect details about the language, such as the script of the language, the display name, and the native name.
+
+### <span id="Use_geographic_region_when_appropriate."></span><span id="use_geographic_region_when_appropriate."></span><span id="USE_GEOGRAPHIC_REGION_WHEN_APPROPRIATE."></span>Use geographic region when appropriate.
+
+Instead of language, you can use the user's home geographic region setting for choosing what content to display to the user. For example, a news app might default to displaying content from a user's home location, which is set when Windows is installed and is available in the Windows UI under **Region: Change date, time, or number formats** as described in the previous task. You can retrieve the current user's home region setting by using [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829).
+
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) also has a [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) object that is provided as a helper object. It lets apps inspect details about a particular region, such as its display name, native name, and currencies in use.
+
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
+
+
+The following table contains examples of what the user would see in the app's UI under various language and region settings.
 
 <table border="1">
 <colgroup>
@@ -153,68 +153,68 @@ Windows 會以標準且眾所周知的方式來排列語言相符結果的優先
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">應用程式支援的語言 (定義於資訊清單中)</th>
-<th align="left">使用者語言喜好設定 (設定於控制台中)</th>
-<th align="left">應用程式的主要語言覆寫 (選擇性)</th>
-<th align="left">應用程式語言</th>
-<th align="left">使用者在應用程式中看見的內容</th>
+<th align="left">App-supported languages (defined in manifest)</th>
+<th align="left">User language preferences (set in control panel)</th>
+<th align="left">App's primary language override (optional)</th>
+<th align="left">App languages</th>
+<th align="left">What the user sees in the app</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">英文 (英國) (預設值)； 德文 (德國)</td>
-<td align="left">英文 (英國)</td>
-<td align="left">無</td>
-<td align="left">英文 (英國)</td>
-<td align="left">UI：英文 (英國)<br>日期/時間/數字：英文 (英國)</td>
+<td align="left">English (GB) (default); German (Germany)</td>
+<td align="left">English (GB)</td>
+<td align="left">none</td>
+<td align="left">English (GB)</td>
+<td align="left">UI: English (GB)<br>Dates/Times/Numbers: English (GB)</td>
 </tr>
 <tr>
-<td align="left">德文 (德國) (預設值)；法文 (法國)；義大利文 (義大利)</td>
-<td align="left">法文 (奧地利)</td>
-<td align="left">無</td>
-<td align="left">法文 (奧地利)</td>
-<td align="left">UI：法文 (法國) (從法文 (奧地利) 後援)<br>日期/時間/數字：法文 (奧地利)</td>
+<td align="left">German (Germany) (default); French (France); Italian (Italy)</td>
+<td align="left">French (Austria)</td>
+<td align="left">none</td>
+<td align="left">French (Austria)</td>
+<td align="left">UI: French (France) (fallback from French (Austria))<br>Dates/Times/Numbers: French (Austria)</td>
 </tr>
 <tr>
-<td align="left">英文 (美國) (預設值)；法文 (法國)；英文 (英國)</td>
-<td align="left">英文 (加拿大)；法文 (加拿大)</td>
-<td align="left">無</td>
-<td align="left">英文 (加拿大)；法文 (加拿大)</td>
-<td align="left">UI：英文 (美國) (從英文 (加拿大) 後援)<br>日期/時間/數字：英文 (加拿大)</td>
+<td align="left">English (US) (default); French (France); English (GB)</td>
+<td align="left">English (Canada); French (Canada)</td>
+<td align="left">none</td>
+<td align="left">English (Canada); French (Canada)</td>
+<td align="left">UI: English (US) (fallback from English (Canada))<br>Dates/Times/Numbers: English (Canada)</td>
 </tr>
 <tr>
-<td align="left">西班牙文 (西班牙) (預設值)；西班牙文 (墨西哥)；西班牙文 (拉丁美洲)；葡萄牙文 (巴西)</td>
-<td align="left">英文 (美國)</td>
-<td align="left">無</td>
-<td align="left">西班牙文 (西班牙)</td>
-<td align="left">UI：西班牙文 (西班牙) (使用預設值，因為英文沒有可用的後援)<br>日期/時間/數字：西班牙文 (西班牙)</td>
+<td align="left">Spanish (Spain) (default); Spanish (Mexico); Spanish (Latin America); Portuguese (Brazil)</td>
+<td align="left">English (US)</td>
+<td align="left">none</td>
+<td align="left">Spanish (Spain)</td>
+<td align="left">UI: Spanish (Spain) (uses default since no fallback available for English)<br>Dates/Times/Numbers Spanish (Spain)</td>
 </tr>
 <tr>
-<td align="left">卡達隆尼亞文 (預設值)；西班牙文 (西班牙)；法文 (法國)</td>
-<td align="left">卡達隆尼亞文；法文 (法國)</td>
-<td align="left">無</td>
-<td align="left">卡達隆尼亞文；法文 (法國)</td>
-<td align="left">UI：大部分卡達隆尼亞文和部分法文 (法國)，因為不是所有字串都是卡達隆尼亞文<br>日期/時間/數字：卡達隆尼亞文</td>
+<td align="left">Catalan (default); Spanish (Spain); French (France)</td>
+<td align="left">Catalan; French (France)</td>
+<td align="left">none</td>
+<td align="left">Catalan; French (France)</td>
+<td align="left">UI: Mostly Catalan and some French (France) because not all the strings are in Catalan<br>Dates/Times/Numbers: Catalan</td>
 </tr>
 <tr>
-<td align="left">英文 (英國) (預設值)；法文 (法國)；德文 (德國)</td>
-<td align="left">德文 (德國)； 英文 (英國)</td>
-<td align="left">英文 (英國) (使用者在 app 的 UI 中選擇)</td>
-<td align="left">英文 (英國)；德文 (德國)</td>
-<td align="left">UI：英文 (英國) (語言覆寫)<br>日期/時間/數字：英文 (英國)</td>
+<td align="left">English (GB) (default); French (France); German (Germany)</td>
+<td align="left">German (Germany); English (GB)</td>
+<td align="left">English (GB) (chosen by user in app's UI)</td>
+<td align="left">English (GB); German (Germany)</td>
+<td align="left">UI: English (GB) (language override)<br>Dates/Times/Numbers English (GB)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics"></span>相關主題
+## <span id="related_topics"></span>Related topics
 
 
-* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA 語言清單](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)
-* [支援的語言](https://msdn.microsoft.com/library/windows/apps/jj657969)
+* [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969)
  
 
  
@@ -224,6 +224,6 @@ Windows 會以標準且眾所周知的方式來排列語言相符結果的優先
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

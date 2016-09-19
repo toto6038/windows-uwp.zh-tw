@@ -1,31 +1,31 @@
 ---
 author: Jwmsft
-Description: "使用版面配置面板，在 app 中排列與群組 UI 元素。"
-title: "通用 Windows 平台 (UWP) app 的版面配置面板"
+Description: Use layout panels to arrange and group UI elements in your app.
+title: Layout panels for Universal Windows Platform (UWP) apps
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
+ms.openlocfilehash: 58187f34de283b407278a75f1b7b6de61908387f
 
 ---
-# 版面配置面板
+# Layout panels
 
-您使用版面配置面板，在 App 中排列與群組 UI 元素。 內建的 XAML 版面配置面板包含 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)、[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) 及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)。 我們將在此處說明每個面板，以及示範如何使用它來為 XAML UI 元素進行版面配置。
+You use layout panels to arrange and group UI elements in your app. The built-in XAML layout panels include [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx), [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), and [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx). Here, we describe each panel and show how to use it to layout XAML UI elements.
 
-選擇版面配置面板時需要考量下列數個事項：
-- 面板如何放置它的子元素。
-- 面板如何調整它的子元素大小。
-- 重疊的子元素如何彼此交疊 (圖層順序)。
-- 建立所需版面配置之必要巢狀面板元素的個數與複雜性。
+There are several things to consider when choosing a layout panel:
+- How the panel positions its child elements.
+- How the panel sizes its child elements.
+- How overlapping child elements are layered on top of each other (z-order).
+- The number and complexity of nested panel elements needed to create your desired layout.
 
 
-**面板附加屬性**
+**Panel attached properties**
 
-大多數 XAML 版面配置面板都是使用附加屬性，以讓其子元素通知父面板應該如何將它們放置在 UI 中。 附加屬性使用的語法是 *AttachedPropertyProvider.PropertyName*。 如果您的面板會巢串於其他面板內，則 UI 元素上為父項指定版面配置特性的附加屬性只會由最接近的父項面板來解譯。
+Most XAML layout panels use attached properties to let their child elements inform the parent panel about how they should be positioned in the UI. Attached properties use the syntax *AttachedPropertyProvider.PropertyName*. If you have panels that are nested inside other panels, attached properties on UI elements that specify layout characteristics to a parent are interpreted by the most immediate parent panel only.
 
-以下範例示範如何使用 XAML，在 Button 控制項上設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) 附加屬性。 這會通知父項 Canvas 應該將 Button 放置在從 Canvas 的左邊緣算起 50 個有效像素的位置。
+Here is an example of how you can set the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) attached property on a Button control in XAML. This informs the parent Canvas that the Button should be positioned 50 effective pixels from the left edge of the Canvas.
 
 ```xaml
 <Canvas>
@@ -33,15 +33,15 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 </Canvas>
 ```
 
-如需有關附加屬性的詳細資訊，請參閱[附加屬性概觀](../xaml-platform/attached-properties-overview.md)。
+For more info about attached properties, see [Attached properties overview](../xaml-platform/attached-properties-overview.md).
 
-> **注意**&nbsp;&nbsp;附加屬性是一種 XAML 概念，需要特殊語法以從程式碼設定或取得。 若要在程式碼中使用附加屬性，請參閱*附加屬性概觀*一文的*程式碼中的附加屬性*小節。
+> **Note**&nbsp;&nbsp;An attached property is a XAML concept that requires special syntax to get or set from code. To use attached properties in code, see the *Attached properties in code* section of the *Attached properties overview* article.
 
-**面板框線**
+**Panel borders**
 
-RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠繪製面板周圍的框線，而不需在額外的 Border 元素中包裝它們。 這些框線屬性包含 **BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。
+The RelativePanel, StackPanel, and Grid panels define border properties that let you draw a border around the panel without wrapping them in an additional Border element. The border properties are **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**.
 
-以下是如何在 Grid 上設定框線屬性的範例。
+Here’s an example of how to set border properties on a Grid.
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="12" CornerRadius="12" Padding="12">
@@ -49,17 +49,17 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 </Grid>
 ```
 
-![含有框線的方格](images/layout-panel-grid-border.png)
+![A Grid with borders](images/layout-panel-grid-border.png)
 
-使用內建的框線屬性，可降低 XAML 元素計數，這樣可以提升 App 的 UI 效能。 如需版面配置面板和 UI 效能的詳細資訊，請參閱[最佳化您的 XAML 版面配置](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx)。
+Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx).
 
 ## RelativePanel
 
-[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) 可讓您藉由為 UI 元素指定相對於其他元素和相對於面板的位置，為其進行版面配置。 元素預設會放置在面板的左上角。 您可以使用 RelativePanel 搭配 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 和 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx)，針對不同的視窗大小重新排列 UI。
+[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) lets you layout UI elements by specifying where they go in relation to other elements and in relation to the panel. By default, an element is positioned in the upper left corner of the panel. You can use RelativePanel with a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) and [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx)s to rearrange your UI for different window sizes.
 
-下表顯示可用來將元素與面板的邊緣或中心對齊的附加屬性，或是以相對於其他元素的方式對齊並放置該元素。
+This table shows the attached properties you can use to align an element with the edge or center of the panel, and align and position it in relation to other elements.
 
-面板對齊方式 | 同層級對齊方式 | 同層級位置
+Panel alignment | Sibling alignment | Sibling position
 ----------------|-------------------|-----------------
 [**AlignTopWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwithpanel.aspx) | [**AlignTopWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwith.aspx) | [**Above**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.above.aspx)  
 [**AlignBottomWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwithpanel.aspx) | [**AlignBottomWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwith.aspx) | [**Below**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.below.aspx)  
@@ -69,7 +69,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 [**AlignVerticalCenterWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanel.aspx) | [**AlignVerticalCenterWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwith.aspx) | &nbsp;   
 
  
-這個 XAML 示範如何在 RelativePanel 中排列元素。
+This XAML shows how to arrange elements in a RelativePanel.
 
 ```xaml
 <RelativePanel BorderBrush="Gray" BorderThickness="1">
@@ -91,22 +91,22 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 </RelativePanel>
 ```
 
-結果看起來就像這樣。 
+The result looks like this. 
 
-![相對路徑](images/layout-panel-relative-panel.png)
+![Relative panel](images/layout-panel-relative-panel.png)
 
-以下提供在調整矩形大小時應注意的一些事項。
-- 已針對紅色矩形指定明確的大小：44x44。 此矩形會放置於面板左上角，這是預設位置。
-- 已針對綠色矩形指定明確的高度：44。 它的左側會與紅色矩形對齊，而其右側會與藍色矩形對齊，這會決定它的寬度。
-- 並未針對黃色矩形指定明確的大小。 它的左側會與藍色矩形對齊。 它的右邊和底部邊緣會與面板的邊緣對齊。 它的大小取決於這些對齊方式，而它將會在面板調整大小時調整其大小。
+Here are a few thing to note about the sizing of the rectangles.
+- The red rectangle is given an explicit size of 44x44. It's placed in the upper left corner of the panel, which is the default position.
+- The green rectangle is given an explicit height of 44. Its left side is aligned with the red rectangle, and its right side is aligned with the blue rectangle, which determines its width.
+- The yellow rectangle isn't given an explicit size. Its left side is aligned with the blue rectangle. Its right and bottom edges are aligned with the edge of the panel. Its size is determined by these alignments and it will resize as the panel resizes.
 
 ## StackPanel
 
-[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) 是一種簡易的版面配置面板，可將子元素按水平或垂直方向排列到單行中。 StackPanel 控制項通常用來在頁面上排列小型的 UI 子區段。
+[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) is a simple layout panel that arranges its child elements into a single line that can be oriented horizontally or vertically. StackPanel controls are typically used in scenarios where you want to arrange a small subsection of the UI on your page.
 
-您可以使用 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) 屬性來指定子元素的方向。 預設方向是 [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx)。
+You can use the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) property to specify the direction of the child elements. The default orientation is [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
-下列 XAML 示範如何建立項目的垂直 StackPanel。
+The following XAML shows how to create a vertical StackPanel of items.
 
 ```xaml
 <StackPanel>
@@ -118,21 +118,21 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 ```
 
 
-結果看起來就像這樣。
+The result looks like this.
 
-![堆疊面板](images/layout-panel-stack-panel.png)
+![Stack panel](images/layout-panel-stack-panel.png)
 
-在 StackPanel 中，如果沒有明確設定子元素的大小，它會向兩邊延伸以填滿可用的寬度 (或如果 Orientation 是 **Horizontal**，則為填滿可用的高度)。 在這個範例中，未設定矩形的寬度。 矩形會展開以填滿 StackPanel 的完整寬度。
+In a StackPanel, if a child element's size is not set explicitly, it stretches to fill the available width (or height if the Orientation is **Horizontal**). In this example, the width of the rectangles is not set. The rectangles expand to fill the entire width of the StackPanel.
 
 ## Grid
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 面板支援在多列與多欄版面配置中排列控制項。 您可以使用 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) 和 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) 屬性，來指定 Grid 面板的列與欄。 在 XAML 中，使用屬性元素語法來宣告 Grid 元素內的列和欄。 您可以使用 **Auto** 或星號調整來分配欄內或列內的空間。
+The [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) panel supports arranging controls in multi-row and multi-column layouts. You can specify a Grid panel's rows and columns by using the [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) and [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) properties. In XAML, use property element syntax to declare the rows and columns within the Grid element. You can distribute space within a column or a row by using **Auto** or star sizing.
 
-您可以使用 [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) 和 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx) 附加屬性，將物件放置在 Grid 的特定儲存格中。
+You position objects in specific cells of the Grid by using the [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) and [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx) attached properties.
 
-您可以使用 [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) 和 [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) 附加屬性，將內容延伸到多個列與欄。
+You can make content span across multiple rows and columns by using the [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) and [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) attached properties.
 
-這個 XAML 範例示範如何建立具有三列兩欄的 Grid。 第一列和第三列的高度只夠包含文字。 第二列的高度為剩餘的高度空間。 欄寬則是平均分配容器可用寬度後的寬度。
+This XAML example shows how to create a Grid with three rows and two columns. The height of the first and third rows is just large enough to contain the text. The height of the second row fills up the rest of the available height. The width of the columns is split equally within the available container width.
 
 ```xaml
 <Grid>
@@ -152,26 +152,26 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 ```
 
 
-結果看起來就像這樣。
+The result looks like this.
 
 ![Grid](images/layout-panel-grid.png)
 
-在這個範例中，調整大小的運作方式如下： 
-- 第二列具有明確的高度：44 個有效像素。 根據預設，第一列的高度會填滿所有遺留下來的空間。
-- 第一欄的寬度會設定為 **Auto**，因此會是其子系所需的寬度。 在此案例中，寬度必須為 44 個有效像素，才能容納紅色矩形的寬度。
-- 矩形上沒有任何其他的大小限制，因此，每一個都會向兩邊延伸以填滿其所在的方格儲存格。
+In this example, the sizing works like this: 
+- The second row has an explicit height of 44 effective pixels. By default, the height of the first row fills whatever space is left over.
+- The width of the first column is set to **Auto**, so it's as wide as needed for its children. In this case, it's 44 effective pixels wide to accommodate the width of the red rectangle.
+- There are no other size constraints on the rectangles, so each one stretches to fill the grid cell it's in.
 
 ## VariableSizedWrapGrid
 
-[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) 會提供方格樣式的版面配置面板，其中的元素會以列或欄的方式排列，並在達到 [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) 值時自動換行到新列或新欄。 
+[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) provides a grid-style layout panel where elements are arranged in rows or columns that automatically wrap to a new row or column when the [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) value is reached. 
 
-[**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) 屬性指定方格是否會在換行之前將項目新增到列或欄。 預設方向是 **Vertical**，這表示方格會從上到下新增項目，直到該欄滿了為止然後換行到新欄。 當值為 **Horizontal** 時，方格會從左到右新增項目，然後換行到新列。
+The [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) property specifies whether the grid adds its items in rows or columns before wrapping. The default orientation is **Vertical**, which means the grid adds items from top to bottom until a column is full, then wraps to a new column. When the value is **Horizontal**, the grid adds items from left to right, then wraps to a new row.
 
-儲存格尺寸是透過 [**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) 和 [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx) 來指定。 每個儲存格都是相同的大小。 如果未指定 ItemHeight 或 ItemWidth，則第一個儲存格會調整大小以符合其內容，而其他的每一個儲存格都是第一個儲存格的大小。
+Cell dimensions are specified by the [**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) and [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx). Each cell is the same size. If ItemHeight or ItemWidth is not specified, then the first cell sizes to fit its content, and every other cell is the size of the first cell.
 
-您可以使用 [**VariableSizedWrapGrid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) 和 [**VariableSizedWrapGrid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) 附加屬性，來指定子元素應該填滿多少個相鄰的儲存格。
+You can use the [**VariableSizedWrapGrid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) and [**VariableSizedWrapGrid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) attached properties to specify how many adjacent cells a child element should fill.
 
-以下示範如何在 XAML 中使用 VariableSizedWrapGrid。
+Here's how to use a VariableSizedWrapGrid in XAML.
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -187,21 +187,21 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 ```
 
 
-結果看起來就像這樣。
+The result looks like this.
 
-![可變動的大小換行方格](images/layout-panel-variable-size-wrap-grid.png)
+![Variable size wrap grid](images/layout-panel-variable-size-wrap-grid.png)
 
-在這個範例中，每個欄中的列數上限為 3。 由於藍色矩形會橫跨 2 列，因此第一欄只會包含 2 個項目 (紅色和藍色矩形)。 綠色矩形接著會換行到下一欄的頂端。
+In this example, the maximum number of rows in each column is 3. The first column contains only 2 items (the red and blue rectangles) because the blue rectangle spans 2 rows. The green rectangle then wraps to the top of the next column.
 
 ## Canvas
 
-[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) 面板使用固定座標點定位子元素。 您可以在每個元素上設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) 附加屬性，以指定個別子元素上的點。 在版面配置期間，父項 Canvas 會從其子系讀取這些附加屬性值，然後在版面配置的 [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) 階段使用這些值。
+The [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) panel positions its child elements using fixed coordinate points. You specify the points on individual child elements by setting the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) attached properties on each element. During layout, the parent Canvas reads these attached property values from its children and uses these values during the [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) pass of layout.
 
-Canvas 中的物件可以重疊，將某一個物件繪製於另一個物件上方。 根據預設，Canvas 會以宣告子物件的順序來呈現它們，因此最後一個子系會呈現在最上方 (每個元素的預設 z 索引為 0)。 這等同於其他內建的面板。 但是，Canvas 也支援 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) 附加屬性，您可以在每一個子元素上設定它們。 您可以在程式碼中設定這個屬性，在執行階段期間變更元素的繪製順序。 含有最高 Canvas.ZIndex 值的元素是最後繪製的，因此會繪製於共用相同空間或以任何方式重疊的任何其他元素上。 請注意，因為會採用 Alpha 值 (透明度)，所以如果最上層元素的 Alpha 值不是最大的，即使元素重疊，重疊區域顯示的內容也可能會混合。
+Objects in a Canvas can overlap, where one object is drawn on top of another object. By default, the Canvas renders child objects in the order in which they’re declared, so the last child is rendered on top (each element has a default z-index of 0). This is the same as other built-in panels. However, Canvas also supports the [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) attached property that you can set on each of the child elements. You can set this property in code to change the draw order of elements during run time. The element with the highest Canvas.ZIndex value draws last and therefore draws over any other elements that share the same space or overlap in any way. Note that alpha value (transparency) is respected, so even if elements overlap, the contents shown in overlap areas might be blended if the top one has a non-maximum alpha value.
 
-Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都必須指定其大小。
+The Canvas does not do any sizing of its children. Each element must specify its size.
 
-以下是 XAML 中的 Canvas 範例。
+Here's an example of a Canvas in XAML.
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -213,18 +213,18 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 ```
 
 
-結果看起來就像這樣。
+The result looks like this.
 
 ![Canvas](images/layout-panel-canvas.png)
 
-請謹慎使用 Canvas 面板。 雖然在某些情況下，能夠精確控制 UI 元素的位置是非常方便的，但是，固定位置的版面配置面板會導致 UI 區域較無法適應整體 app 視窗大小變更。 當裝置方向變更、分割 App 視窗、變更監視器，以及一些其他使用者案例，都可能需要調整 App 視窗的大小。
+Use the Canvas panel with discretion. While it's convenient to be able to precisely control positions of elements in UI for some scenarios, a fixed positioned layout panel causes that area of your UI to be less adaptive to overall app window size changes. App window resize might come from device orientation changes, split app windows, changing monitors, and a number of other user scenarios.
 
-## ItemsControl 的面板
+## Panels for ItemsControl
 
-有數個具有特殊用途的面板，只能用來做為 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)，以顯示 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 中的項目。 這些是 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) 及 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx)。 您無法針對一般 UI 版面配置使用這些面板。
+There are several special-purpose panels that can be used only as an [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) to display items in an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). These are [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx), and [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). You can't use these panels for general UI layout.
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,35 +1,35 @@
 ---
 author: mtoepke
-title: "通用 Windows 平台 (UWP) app 中的多重取樣"
-description: "了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。"
+title: Multisampling in Universal Windows Platform (UWP) apps
+description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+ms.openlocfilehash: cf82c34e23a1c66bfc2d59f9ea3b4ebce99ab52e
 
 ---
 
-# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 通用 Windows 平台 (UWP) app 中的多重取樣
+# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
+Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
 
-## 多重取樣與翻轉模型交換鏈結
+## Multisampling and the flip model swap chain
 
 
-使用 DirectX 的 UWP app 必須使用翻轉模型交換鏈結。 翻轉模型交換鏈結不直接支援多重取樣，但多重取樣仍能以不同方式套用，方法是將場景轉譯到多重取樣的轉譯目標檢視，然後將多重取樣的轉譯目標解析為背景緩衝區後再呈現。 本文說明將多重取樣新增至 UWP app 所需的步驟。
+UWP apps that use DirectX must use flip model swap chains. Flip model swap chains don't support multisampling directly, but multisampling can still be applied in a different way by rendering the scene to a multisampled render target view, and then resolving the multisampled render target to the back buffer before presenting. This article explains the steps required to add multisampling to your UWP app.
 
-### 如何使用多重取樣
+### How to use multisampling
 
-Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保證提供可支援多重取樣的某些緩衝區格式。 圖形裝置支援的格式和取樣計數範圍，通常比基本所需的要多。 多重取樣支援可以在執行階段決定，方法是檢查是否有以特定 DXGI 格式進行多重取樣的功能支援，然後檢查每種支援格式可用的取樣計數。
+Direct3D feature levels guarantee support for specific, minimum sample count capabilities, and guarantee certain buffer formats will be available that support multisampling. Graphics devices often support a wider range of formats and sample counts than the minimum required. Multisampling support can be determined at run-time by checking feature support for multisampling with specific DXGI formats, and then checking the sample counts you can use with each supported format.
 
-1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 轉譯目標與解析目標必須使用相同格式，因此，請同時檢查 [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) 與 **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**。
+1.  Call [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **功能層級 9：**功能層級 9 裝置雖然[保證支援多重取樣轉譯目標格式](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，但不保證支援多重取樣解析目標。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
+    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
 
-    下列程式碼會檢查所有 DXGI\_FORMAT 值的多重取樣支援：
+    The following code checks multisampling support for all the DXGI\_FORMAT values:
 
     ```cpp
     // Determine the format support for multisampling.
@@ -52,9 +52,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-2.  對於每種支援的格式，可呼叫 [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) 以查詢取樣計數支援。
+2.  For each supported format, query for sample count support by calling [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499).
 
-    下列程式碼會檢查支援的 DXGI 格式的取樣大小支援：
+    The following code checks sample size support for supported DXGI formats:
 
     ```cpp
     // Find available sample sizes for each supported format.
@@ -79,13 +79,13 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **注意：**如果您必須檢查區塊式資源緩衝區的多重取樣支援，請改用 [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)。
+    > **Note**   Use [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) instead if you need to check multisample support for tiled resource buffers.
 
      
 
-3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用相同的 DXGI\_FORMAT、寬度及高度做為交換鏈結，但指定大於 1 的取樣計數，並使用多重取樣材質維度 (例如 **D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**)。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
+3.  Create a buffer and render target view with the desired sample count. Use the same DXGI\_FORMAT, width, and height as the swap chain, but specify a sample count greater than 1 and use a multisampled texture dimension (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** for example). If necessary, you can re-create the swap chain with new settings that are optimal for multisampling.
 
-    下列程式碼會建立多重取樣的轉譯目標：
+    The following code creates a multisampled render target:
 
     ```cpp
     float widthMulti = m_d3dRenderTargetSize.Width;
@@ -122,9 +122,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
         );
     ```
 
-4.  深度緩衝區必須有相同的寬度、高度、取樣計數及材質維度，才能符合多重取樣的轉譯目標。
+4.  The depth buffer must have the same width, height, sample count, and texture dimension to match the multisampled render target.
 
-    下列程式碼會建立多重取樣的深度緩衝區：
+    The following code creates a multisampled depth buffer:
 
     ```cpp
     // Create a depth stencil view for use with 3D rendering if needed.
@@ -160,9 +160,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
         );
     ```
 
-5.  現在是建立檢視區的好時機，因為檢視區寬度與高度也必須符合轉譯目標。
+5.  Now is a good time to create the viewport, because the viewport width and height must also match the render target.
 
-    下列程式碼會建立檢視區：
+    The following code creates a viewport:
 
     ```cpp
     // Set the 3D rendering viewport to target the entire window.
@@ -176,9 +176,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  將每個框架轉譯為多重取樣的轉譯目標。 在轉譯完成後，先呼叫 [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) 再呈現框架。 這會指示 Direct3D 執行多重取樣作業、計算用於顯示的每個像素值，並將結果放在背景緩衝區。 背景緩衝區便會包含可呈現的最終消除鋸齒影像。
+6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
 
-    下列程式碼會在呈現框架之前先解析子資源：
+    The following code resolves the subresource before presenting the frame:
 
     ```cpp
     if (m_sampleSize > 1)
@@ -210,6 +210,6 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,46 +1,46 @@
 ---
 author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: "最佳化您的 XAML 版面配置"
-description: "版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。"
+title: Optimize your XAML layout
+description: Layout can be an expensive part of a XAML app&\#8212;both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
+ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 ---
-# 最佳化您的 XAML 版面配置
+# Optimize your XAML layout
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要 API**
+**Important APIs**
 
--   [**面板**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
-版面配置是為 UI 定義視覺化結構的程序。 用來說明 XAML 版面配置的主要機制是透過面板，這類面板是讓您能夠在其中放置與排列 UI 元素的容器物件。 在 CPU 使用量與記憶體負荷方面，版面配置可說是 XAML app 中高度耗費資源的一部分。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
+Layout is the process of defining the visual structure for your UI. The primary mechanism for describing layout in XAML is through panels, which are container objects that enable you to position and arrange the UI elements within them. Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
 
-## 減少版面配置結構
+## Reduce layout structure
 
-簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 的「像素產生的元素」**。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
+The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
 
-許多 UI 都是透過巢狀面板來實作，因而產生了既深且複雜的面板與元素樹狀結構。 巢串面板是非常簡便的，但在許多情況下，您可以利用更複雜的單一面板來達成相同的 UI。 使用單一面板可提供較佳的效能。
+Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
 
-### 減少版面配置結構的時機
+### When to reduce layout structure
 
-使用簡單的方式來減少版面配置結構—例如，從最上層頁面減少一個巢狀面板—並不會有顯著的效果。
+Reducing layout structure in a trivial way—for example, reducing one nested panel from your top-level page—does not have a noticeable effect.
 
-最大的效能提升是來自減少 UI 中重複的版面配置結構，例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)。 這些 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 元素會使用 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 來定義 UI 元素的樹狀子目錄 (其已多次具現化)。 當同一個樹狀子目錄在您的 app 中多次重複出現時，任何對於該樹狀子目錄的效能提升，都會使對 app 整體效能所產生的影響倍增。
+The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). These [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) elements use a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
 
-### 範例
+### Examples
 
-考量下列 UI。
+Consider the following UI.
 
-![表單版面配置範例](images/layout-perf-ex1.png)
+![Form layout example](images/layout-perf-ex1.png)
 
-下列範例示範 3 種實作同一個 UI 的方式。 每個實作選項都會在畫面上產生幾乎完全相同的像素，但在實作細節上卻大不相同。
+These examples shows 3 ways of implementing the same UI. Each implementation choice results in nearly identical pixels on the screen, but differs substantially in the implementation details.
 
-選項 1：巢狀 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 元素
+Option1: Nested [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) elements
 
-雖然這是最簡單的模型，但它使用了 5 個面板元素，並產生了顯著的負荷。
+Although this is the simplest model, it uses 5 panel elements and results in significant overhead.
 
 ```xml
   <StackPanel>
@@ -66,9 +66,9 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </StackPanel>
 ```
 
-選項 2：單一 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些複雜度，但只使用單一面板元素。
+The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
 
 ```xml
   <Grid>
@@ -99,9 +99,9 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </Grid>
 ```
 
-選項 3：單一 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)
+Option 3: A single [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
 
-比起使用巢狀面板，此單一面板同樣較為複雜，但可能會比 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 更容易了解和維護。
+This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
 ```xml
 <RelativePanel>
@@ -124,15 +124,15 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </RelativePanel>
 ```
 
-如下列範例所示，有許多方式可用來達成相同的 UI。 您應該謹慎地進行全面考量 (包括效能、可讀性和可維護性)，然後做出取捨。
+As these examples show, there are many ways of achieving the same UI. You should choose by carefully considering all the tradeoffs, including performance, readability, and maintainability.
 
-## 針對重疊的 UI 使用單一儲存格格線
+## Use single-cell grids for overlapping UI
 
-常見的 UI 需求是讓元素彼此重疊的版面配置。 通常會使用這種方式，利用邊框間距、邊界、對齊和轉換來放置元素。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控制項已最佳化，可改善重疊元素的版面配置效能。
+A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) control is optimized to improve layout performance for elements that overlap.
 
-**重要** 若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**Important**  To see the improvement, use a single-cell [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704). Do not define [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) or [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
-### 範例
+### Examples
 
 ```xml
 <Grid>
@@ -143,7 +143,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </Grid>
 ```
 
-![圓圈上重疊的文字](images/layout-perf-ex2.png)
+![Text overlaid on a circle](images/layout-perf-ex2.png)
 
 ```xml
 <Grid Width="200" BorderBrush="Black" BorderThickness="1">
@@ -152,15 +152,15 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </Grid>
 ```
 
-![格線內的兩個文字區塊](images/layout-perf-ex3.png)
+![Two text blocks in a grid](images/layout-perf-ex3.png)
 
-## 使用面板內建的框線屬性
+## Use a panel's built-in border properties
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 及 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控制項具有內建的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中加入額外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支援內建框線的新屬性如下：**BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), and [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
 
-如果您的 UI 在這些面板周圍具有 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素，請改用內建的框線，以便在 app 的版面配置結構中省下額外的元素。 如先前所述，這樣能夠大幅節省，特別是在重複 UI 的情況下。
+If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
 
-### 範例
+### Examples
 
 ```xml
 <RelativePanel BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12">
@@ -169,23 +169,23 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 </RelativePanel>
 ```
 
-## 使用 **SizeChanged** 事件來回應版面配置變更
+## Use **SizeChanged** events to respond to layout changes
 
-[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
+The [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) and [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
 
-如需良好的效能，[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 幾乎一向是正確的選擇。 **SizeChanged** 具備直覺式語意。 它會在進行版面配置期間更新 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小時引發。
+For good performance, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) has been updated.
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
+[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
 
-## 選擇面板
+## Choosing between panels
 
-在選擇個別面板時，通常不會將效能納入考量。 通常是藉由考量哪一個面板可提供最接近您正在實作之 UI 的版面配置行為來選擇。 例如，如果您在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 和 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 之間進行選擇，則應該選擇最能對應到您在腦中實作之模型的面板。
+Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) , and [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), you should choose the panel that provides the closest mapping to your mental model of the implementation.
 
-每個 XAML 面板都已針對良好的效能進行最佳化，而所有的面板都可為類似 UI 提供類似的效能。
-
-
+Every XAML panel is optimized for good performance, and all the panels provide similar performance for similar UI.
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

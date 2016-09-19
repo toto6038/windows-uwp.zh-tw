@@ -1,106 +1,104 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: "本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
-title: "PlayReady 加密媒體延伸"
+description: This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+title: PlayReady Encrypted Media Extension
 translationtype: Human Translation
-ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
-ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
+ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 
 ---
 
-# PlayReady 加密媒體延伸
+# PlayReady Encrypted Media Extension
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
+This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
 
-使用 Internet Explorer 中的 PlayReady 媒體元素讓開發人員可以建立 Web App，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明如何只使用 HTML5 和 JavaScript，將 PlayReady 媒體元素新增到現有的 Web app。
+Using PlayReady media elements in Internet Explorer enables developers to create web apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes how to add PlayReady media elements to your existing web apps by using only HTML5 and JavaScript.
 
-## PlayReady 加密媒體延伸的新功能
+## What's new in PlayReady Encrypted Media Extension
 
-本節提供對於 PlayReady 加密媒體延伸所做的變更清單，可用來在 Windows 10 上啟用 PlayReady 內容保護。
+This section provides a list of changes made to the PlayReady Encrypted Media Extension (EME) to enable PlayReady content protection on Windows 10.
 
-下列清單會針對適用於 Windows 10 的 PlayReady 加密媒體延伸說明新功能及所做的變更：
+The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
 
--   已新增硬體數位版權管理 (DRM)。
+-   Added hardware digital rights management (DRM).
 
-    硬體式內容保護支援能夠在多個裝置的平台上安全播放高畫質 (HD) 和超高畫質 (UHD) 的內容。 金鑰內容 (包括私密金鑰、內容金鑰，以及其他用來衍生或解除鎖定上述金鑰的金鑰內容)，以及已解密的壓縮和未壓縮的視訊範例會利用硬體安全性來進行保護。
+    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
 
--   提供主動取得非永久性授權。
--   提供在一則訊息中取得多個授權的功能。
+-   Provides proactive acquisition of non-persistent licenses.
+-   Provides acquisition of multiple licenses in one message.
 
-    您可以使用 PlayReady 物件搭配多個金鑰識別碼 (KeyID) (就像在 Windows 8.1 中)，或者使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 搭配多個 KeyID。
+    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
 
-    **注意：**在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
+    > [!NOTE]
+    > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
 
-     
+-   Added real time expiration support, or limited duration license (LDL).
 
--   已新增即時到期支援或限時授權 (LDL)。
+    Provides the ability to set real-time expiration on licenses.
 
-    能夠設定授權的即時到期。
+-   Added HDCP Type 1 (version 2.2) policy support.
+-   Miracast is now implicit as an output.
+-   Added secure stop.
 
--   已新增 HDCP 類型 1 (版本 2.2) 原則的支援。
--   現已內含 Miracast 做為輸出。
--   已新增安全停止功能。
+    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.
 
-    安全停止功能讓 PlayReady 裝置能夠確實向媒體串流處理服務宣告任何指定內容的媒體播放已停止。
+-   Added audio and video license separation.
 
--   已新增音訊與視訊各別授權。
+    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
 
-    分離曲目可防止視訊被解碼為音訊，進而使內容保護能力更為健全。 新的標準要求音訊與視覺曲目要個別提供金鑰。
+-   Added MaxResDecode.
 
--   新增 MaxResDecode。
+    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
 
-    即使擁有功能更強的金鑰 (但非授權)，這項新功能仍限制以最高解析度來播放內容。 其支援使用單一金鑰編碼多個資料流大小的情況。
+## Encrypted Media Extension support in PlayReady
 
-## PlayReady 的加密媒體延伸支援
+This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.
 
-本節說明 PlayReady 支援的 W3C 加密媒體延伸版本。
+PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
 
-適用於 Web apps 的 PlayReady 目前已繫結至 [2013 年 5 月 10 日的 W3C 加密媒體延伸 (EME) 草稿](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)。 在未來的 Windows 版本中，此支援將變更為更新的 EME 規格。
+## Use hardware DRM
 
-## 使用硬體 DRM
+This section describes how your web app can use PlayReady hardware DRM, and how to disable hardware DRM if the protected content does not support it.
 
-本節說明 Web app 如何使用 PlayReady 硬體 DRM，以及如果受保護的內容不支援硬體 DRM，該如何停用它。
+To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSupported** EME method with a key system identifier of `com.microsoft.playready.hardware` to query for PlayReady hardware DRM support from the browser.
 
-若要使用 PlayReady 硬體 DRM，您的 JavaScript Web app 應該使用 **isTypeSupported** EME 方法搭配 `com.microsoft.playready.hardware` 的金鑰系統識別碼，從瀏覽器查詢 PlayReady 硬體 DRM 支援。
+Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
 
-硬體 DRM 有時不支援某些內容。 硬體 DRM 從未支援混合式內容 (雞尾酒內容)；若想要播放混合式內容，您必須選擇不使用硬體 DRM。 部分硬體 DRM 會支援 HEVC，部分則不支援；若想要播放 HEVC 內容，但硬體 DRM 不支援，則您可能也會選擇不使用。
+> [!NOTE]
+> To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.
 
-**注意：**若要判斷是否支援 HEVC 內容，請在具現化 `com.microsoft.playready` 之後，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
+## Add secure stop to your web app
 
- 
+This section describes how to add secure stop to your web app.
 
-## 在 Web app 中新增安全停止功能
+Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
-本節說明如何將安全停止功能新增到您的 Web app。
+There are two primary scenarios for sending a secure stop challenge:
 
-安全停止功能讓 PlayReady 裝置能夠確實向媒體串流處理服務宣告任何指定內容的媒體播放已停止。 此功能確保您的媒體串流處理服務能在不同裝置上，針對指定帳戶正確地強制執行和報告使用限制。
+-   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
+-   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-傳送安全停止挑戰的主要案例有兩種：
+The following procedures describe how to set up secure stop for various scenarios.
 
--   當媒體呈現因已到達內容結尾，或當使用者在中間的某處停止呈現媒體而停止。
--   當先前的工作階段意外結束 (例如，因為系統或 App 當機)。 App 將需要針對任何待處理的安全停止工作階段進行查詢 (可能是在開機或關機時)，並從任何其他媒體播放個別傳送挑戰。
+To set up secure stop for a normal end of a presentation:
 
-下列程序說明如何針對各種案例設定安全停止功能。
+1.  Register the **onEnded** event before playback starts.
+2.  The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
+3.  You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.
 
-設定安全停止以使呈現能夠正常結束：
+To set up secure stop if the user navigates away from the page or closes down the tab or browser:
 
-1.  播放開始之前，先登錄 **onEnded** 事件。
-2.  **onEnded** 事件處理常式必須從視訊/音訊元素物件呼叫 `removeAttribute(“src”)`，將來源設定為 **NULL**，這將觸發媒體基礎來中斷拓撲、毀損解碼程式，以及設定停止狀態。
-3.  您可以在處理常式內部啟動安全停止 CDM 工作階段，將安全停止挑戰傳送到伺服器，通知目前已停止播放，但它也能在稍後完成。
+-   No app action is required to record the stop state; it will be recorded for you.
 
-若要在使用者離開該網頁瀏覽或者關閉索引標籤或瀏覽器時設定安全停止：
+To set up secure stop for custom page controls or user actions (such as custom navigation buttons or starting a new presentation before the current presentation completed):
 
--   不需使用任何 App 動作來記錄停止狀態；系統會為您記錄此狀態。
+-   When custom user action occurs, the app needs to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
 
-若要針對自訂頁面控制項或使用者動作設定安全停止 (例如，自訂瀏覽按鈕或在目前版面完成之前啟動新的呈現)：
-
--   發生自訂的使用者動作時，app 需要將來源設定為 **NULL**，這將觸發媒體基礎來中斷拓撲、毀損解碼程式，以及設定停止狀態。
-
-下列範例示範如何在 Web app 中使用安全停止：
+The following example demonstrates how to use secure stop in your web app:
 
 ```JavaScript
 // JavaScript source code
@@ -260,13 +258,14 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**注意：**在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
+> [!NOTE]
+> The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
 
-## 適用於加密媒體延伸的程式設計考量
+## Programming considerations for Encrypted Media Extension
 
-本節列出您在建立適用於 Windows 10 且已啟用 PlayReady 的 Web app 時應納入考慮的程式設計考量。
+This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
 
-在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會將變數 *g\_msMediaKeys* 和 *g\_mediaKeySession* 指派為全域變數，接著將其指派給函式中的 **MSMediaKeys** 和 **MSMediaKeySession** 物件。
+The **MSMediaKeys** and **MSMediaKeySession** objects created by your app must be kept alive until your app closes. One way of ensuring these objects stay alive is to assign them as global variables (the variables would become out of scope and subject to garbage collection if declared as a local variable inside of a function). For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
 
 ``` syntax
 var g_msMediaKeys;
@@ -294,18 +293,17 @@ function foo() {
 }
 ```
 
-如需詳細資訊，請參閱[範例應用程式](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
+For more information, see the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
- 
-
- 
-
+## See also
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,53 +1,55 @@
 ---
 author: Jwmsft
-Description: "索引標籤和樞紐讓使用者可以在經常存取的內容之間瀏覽。"
-title: "索引標籤與樞紐"
+Description: Tabs and pivots are enable users to navigate between frequently accessed content.
+title: Tabs and pivots
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 
 ---
-# 樞紐和索引標籤
+# Pivot and tabs
 
-Pivot 控制項和相關的索引標籤模式可用於瀏覽經常存取、不同的內容類別。 樞紐可允許在兩個或更多個內容窗格之間進行瀏覽，並依賴文字標頭來表達不同區段的內容。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![索引標籤範例](images/pivot_Hero_main.png)
+The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and relies on text headers to articulate the different sections of content.
 
-索引標籤是樞紐的視覺變體，索引標籤會使用圖示和文字的組合或僅使用圖示來表達區段內容。 建置索引標籤時是使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控制項來建置。 [**樞紐範例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)示範如何將 Pivot 控制項自訂成索引標籤模式。
+![An examples of tabs](images/pivot_Hero_main.png)
+
+Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
 
 
 
--   [**Pivot 類別**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+-   [**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## 樞紐模式
+## The pivot pattern
 
-建置含有樞紐的 App 時，有一些需要考量的主要設計變數。
+When building an app with pivot, there are a few key design variables to consider.
 
-- **標頭標籤。**  標頭可以有包含文字的圖示、只有圖示或只有文字。
-- **標頭對齊。**  標頭可以靠左對齊或置中。
-- **最上層或子層瀏覽。**  樞紐可以用於這兩種層級瀏覽中的任一種。 您也可以選擇將[瀏覽窗格](nav-pane.md)做為主要層級，而將樞紐做為次要層級。
-- **觸控手勢支援。**  對於支援觸控手勢的裝置，您可以使用兩個互動集合的其中一個在內容類別之間瀏覽：
-    1. 點選索引標籤/樞紐標頭以瀏覽至該類別。
-    2. 在內容區域上向左或向右撥動以瀏覽至相鄰的類別。
+- **Header labels.**  Headers can have an icon with text, icon only, or text only.
+- **Header alignment.**  Headers can be left-justified or centered.
+- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](nav-pane.md) can serve as the primary level with pivot acting as secondary.
+- **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
+    1. Tap on a tab/pivot header to navigate to that category.
+    2. Swipe left or right on the content area to navigate to the adjacent category.
 
-## 範例
+## Examples
 
-手機上的 Pivot 控制項
+Pivot control on phone.
 
-![樞紐範例](images/pivot_example.png)
+![An example of Pivot](images/pivot_example.png)
 
-「鬧鐘與時鐘」App 中的索引標籤模式。
+Tabs pattern in the Alarms & Clock app.
 
-![「鬧鐘與時鐘」中的索引標籤模式範例](images/tabs_alarms-and-clock.png)
+![An example of tabs pattern in Alarms and Clock](images/tabs_alarms-and-clock.png)
 
-## 建立 Pivot 控制項
+## Create a pivot control
 
-[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控制項內建了這一節中所述的基本功能。
+The [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control comes with the basic functionality described in this section.
 
-這段 XAML 會建立包含 3 個內容區段的基本 Pivot 控制項。
+This XAML creates a basic pivot control with 3 sections of content.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Pivot Title">
@@ -66,57 +68,57 @@ Pivot 控制項和相關的索引標籤模式可用於瀏覽經常存取、不�
 </Pivot>
 ```
 
-### Pivot 項目
+### Pivot items
 
-Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何型別的項目集合。 所有新增到 Pivot 且不是明確為 [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) 的項目，都會隱含地包裝在 PivotItem 中。 因為 Pivot 通常是用來在頁面內容之間瀏覽，所以通常會直接使用 XAML UI 元素填入 [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 或者，您可以將 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設為資料來源。 ItemsSource 中繫結的項目可以是任何型別，但如果它們不是明確為 PivotItems，則您必須定義 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 和 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) 來指定如何顯示這些項目。
+Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
 
-您可以使用 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) 屬性擷取或設定選取的項目。 使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) 屬性擷取或設定選取的項目。
+You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item.
 
-### 樞紐標頭
+### Pivot headers
 
-您可以使用 [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) 和 [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) 屬性來將其他控制項新增到樞紐標頭。
+You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
 
-### 樞紐互動
+### Pivot interaction
 
-以下是該控制項主要的觸控手勢互動：
+The control features these touch gesture interactions:
 
--   點選樞紐項目標頭可瀏覽到該標頭的區段內容。
--   在樞紐項目標頭上向左或向右撥動可瀏覽到相鄰的區段。
--   在區段內容上向左或向右撥動可瀏覽到相鄰的區段。
-![在區段內容上向左撥動的範例](images/pivot_w_hand.png)
+-   Tapping on a pivot item header navigates to that header's section content.
+-   Swiping left or right on a pivot item header navigates to the adjacent section.
+-   Swiping left or right on section content navigates to the adjacent section.
+![Example swiping left on section content](images/pivot_w_hand.png)
 
-此控制項有兩種模式：
+The control comes in two modes:
 
-**靜止**
+**Stationary**
 
--   當所有的樞紐標頭大小符合允許的空間時，樞紐會靜止。
--   雖然樞紐本身不會移動，但點選樞紐標籤會瀏覽到對應的頁面。 使用中的樞紐會反白顯示。
-
-
-**浮動切換**
-
--   當所有的樞紐標頭大小不符合允許的空間時，樞紐會浮動切換。
--   點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
--   各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
+-   Pivots are stationary when all pivot headers fit within the allowed space.
+-   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
 
 
-## 建議事項
+**Carousel**
 
--   根據螢幕大小對齊索引標籤/樞紐標頭。 對於寬度小於 720 epx 的螢幕，置中對齊通常比較好，而大多數情況是寬度大於 720 epx 的螢幕建議使用靠左對齊。
--   當使用浮動切換 (反覆) 模式時請避免使用超過 5 個標頭，因為循環超過 5 個標頭可能會混淆使用者。
--   當您的樞紐項目有個別的圖示時才使用索引標籤模式。
--   在樞紐項目標頭包含文字，以幫助使用者了解每個樞紐區段的意義。 圖示並非對於所有使用者都一目了然。
-
+-   Pivots carousel when all pivot headers don't fit within the allowed space.
+-   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
+-   Pivot items in a carousel loop from last to first pivot section.
 
 
-## 相關主題
+## Recommendations
 
-- [瀏覽設計基本知識](../layout/navigation-basics.md)
-
-- [**樞紐範例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
+-   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
+-   Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
+-   Use the tabs pattern only if your pivot items have distinct icons.
+-   Include text in pivot item headers to help users understand the meaning of each pivot section. Icons are not necessarily self-explanatory to all users.
 
 
 
-<!--HONumber=Jul16_HO1-->
+## Related topics
+
+- [Navigation design basics](../layout/navigation-basics.md)
+
+- [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

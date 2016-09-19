@@ -1,41 +1,41 @@
 ---
 author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: "使用傾角計"
-description: "了解如何使用傾角計來決定俯仰、翻滾及偏擺。"
+title: Use the inclinometer
+description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
+ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 ---
-# 使用傾角計
+# Use the inclinometer
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**傾角計**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-了解如何使用傾角計來決定俯仰、翻滾及偏擺。
+Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
-有些 3D 遊戲需要以傾角計做為輸入裝置。 一個常見範例是飛行模擬器，它需將傾角計的三個軸 (X、Y 以及 Z) 對應至飛機的升降舵、補助翼以及方向舵輸入。
+Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
 
- ## 先決條件
+ ## Prerequisites
 
-您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-您使用的裝置或模擬器必須支援傾角計。
+The device or emulator that you're using must support a inclinometer.
 
- ## 建立簡單的傾角計應用程式
+ ## Create a simple inclinometer app
 
-本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單傾角計應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch. The following subsection explains the app you have just created.
 
-###  指示
+###  Instructions
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -100,9 +100,9 @@ ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
     }
 ```
 
-您需要將之前程式碼片段中的命名空間重新命名為您專案的名稱。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `namespace App1` 取代為 `namespace InclinometerCS`。
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
 
--   開啟 MainPage.xaml 檔案，並以下列 XML 取代原始內容。
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -126,25 +126,25 @@ ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
     </Page>
 ```
 
-您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="InclinometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:InclinometerCS"`。
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
 
--   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
+Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  說明
+###  Explanation
 
-前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的傾角計輸入。
+The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.
 
-App 會與 **MainPage** 方法中的預設傾角計建立連線。
+The app establishes a connection with the default inclinometer in the **MainPage** method.
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-App 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -152,14 +152,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _inclinometer.ReportInterval = reportInterval;
 ```
 
-會在 **ReadingChanged** 方法中擷取新的傾角計資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
+The new inclinometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-這些新的值會寫入專案 XAML 中的 TextBlock。
+These new values are written to the TextBlocks found in the project's XAML.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -170,13 +170,13 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## 相關主題
+ ## Related topics
 
-* [傾角計範例](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
+* [Inclinometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241380)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,125 +1,129 @@
 ---
 author: mijacobs
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
-title: Tiles, badges, and notifications
+Description: "了解如何使用磚、徽章、快顯通知以及通知提供您 App 的進入點，並將使用者維持在最新狀態。"
+title: "磚、徽章及通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+
 ---
+# UWP App 的徽章通知
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Badge notifications for UWP apps
-
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
-<img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>A tile with a numeric badge displaying<br/> the number 63 to indicate 63 unread mails.</div>
+<img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>有顯示數字徽章的磚<br/> 數字 63 表示 63 封未讀取的郵件。</div>
 
-A notification badge conveys summary or status information specific to your app. They can be numeric (1-99) or one of a set of system-provided glyphs. Examples of information best conveyed through a badge include network connection status in an online game, user status in a messaging app, number of unread mails in a mail app, and number of new posts in a social media app. 
+通知徽章可傳遞您 App 專屬的摘要或狀態資訊。 這些資訊可以是數值 (1-99) 或是一組系統提供的字符。 最適合徽章傳遞的資訊範例包括線上遊戲的網路連線狀態、立即訊息 App 的使用者狀態、郵件 App 中未讀取郵件的數目，以及社交媒體 App 中的新文章數目。 
 
-Notification badges appear on your app's taskbar icon and in the lower-right corner of its start tile, regardless of whether the app is running. Badges can be displayed on all tile sizes.  
+不論 App 是否在執行，通知徽章都會顯示在 App 工作列圖示上，以及其開始磚的右下角。 徽章能在所有大小的磚上顯示。  
 
-**Note**&nbsp;&nbsp;You cannot provide your own badge image; only system-provided badge images can be used.
+**注意**&nbsp;&nbsp;您不能提供自己的徽章影像，只能使用系統提供的徽章影像。
 
-## Numeric badges
+## 數字徽章
 
 <table>
     <tr>
-        <th>Value</th>
-        <th>Badge</th>
+        <th>值 (Value)</th>
+        <th>徽章</th>
         <th>XML</th>
     </tr>
     <tr>
-        <td>A number from 1 to 99. A value of 0 is equivalent to the glyph value "none" and will clear the badge.</td>
-        <td>![A numeric badge less than 100.](images/badges/badge-numeric.png)</td>
+        <td>從 1 到 99 的數字。 值為 0 相當於字符的 value 屬性為 "none"，而且將會清除徽章。</td>
+        <td>![小於 100 的數字徽章。](images/badges/badge-numeric.png)</td>
         <td>`<badge value="1"/>`</td>
     </tr>
     <tr>
-        <td>Any number greater than 99.</td>
-        <td>![A numeric badge greater than 99.](images/badges/badge-numeric-greater.png)</td></td>
+        <td>任何大於 99 的數字徽章。</td>
+        <td>![大於 99 的數字徽章。](images/badges/badge-numeric-greater.png)</td></td>
         <td>`<badge value="100"/>`</td>
     </tr>    
 </table>
 
-## Glyph badges
-Instead of a number, a badge can display one of a non-extensible set of status glyphs. 
+## 字符徽章
+除了數字之外，徽章也可以顯示一個字符，其屬於一組不可延伸之狀態字符。 
 
 <table>
 <tr>
-    <th>Status</th>
-    <th>Glyph</th>
+    <th>狀態</th>
+    <th>字符</th>
     <th>XML</th>
 </tr>
 <tr>
-    <td>none</td>
-    <td>(No badge shown.)</td>
+    <td>無 (none)</td>
+    <td>(沒有顯示徽章。)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>activity</td>
-    <td>![Glyph](images/badges/badge-activity.png)</td>
+    <td>活動 (activity)</td>
+    <td>![字符](images/badges/badge-activity.png)</td>
     <td>`<badge value="activity"/>`</td>
 </tr>
 <tr>
-    <td>alarm</td>
-    <td>![Glyph](images/badges/badge-alarm.png)</td>
+    <td>鬧鐘 (alarm)</td>
+    <td>![字符](images/badges/badge-alarm.png)</td>
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
-    <td>alert</td>
-    <td>![Glyph](images/badges/badge-alert.png)</td>
+    <td>提醒 (alert)</td>
+    <td>![字符](images/badges/badge-alert.png)</td>
     <td>`<badge value="alert"/>`</td>
 </tr>
 <tr>
-    <td>attention</td>
-    <td>![Glyph](images/badges/badge-attention.png)</td>
+    <td>注意 (attention)</td>
+    <td>![字符](images/badges/badge-attention.png)</td>
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
-    <td>available</td>
-    <td>![Glyph](images/badges/badge-available.png)</td>
+    <td>線上 (available)</td>
+    <td>![字符](images/badges/badge-available.png)</td>
     <td>`<badge value="available"/>`</td>
 </tr>
 <tr>
-    <td>away</td>
-    <td>![Glyph](images/badges/badge-away.png)</td>
+    <td>離開 (away)</td>
+    <td>![字符](images/badges/badge-away.png)</td>
     <td>`<badge value="away"/>`</td>
 </tr>
 <tr>
-    <td>busy</td>
-    <td>![Glyph](images/badges/badge-busy.png)</td>
+    <td>忙碌 (busy)</td>
+    <td>![字符](images/badges/badge-busy.png)</td>
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>error</td>
-    <td>![Glyph](images/badges/badge-error.png)</td>
+    <td>錯誤 (error)</td>
+    <td>![字符](images/badges/badge-error.png)</td>
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
-    <td>newMessage</td>
-    <td>![Glyph](images/badges/badge-newMessage.png)</td>
+    <td>新訊息 (newMessage)</td>
+    <td>![字符](images/badges/badge-newMessage.png)</td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
 <tr>
-    <td>paused</td>
-    <td>![Glyph](images/badges/badge-paused.png)</td>
+    <td>暫停 (paused)</td>
+    <td>![字符](images/badges/badge-paused.png)</td>
     <td>`<badge value="paused"/>`</td>
 </tr>
 <tr>
-    <td>playing</td>
-    <td>![Glyph](images/badges/badge-playing.png)</td>
+    <td>正在播放 (playing)</td>
+    <td>![字符](images/badges/badge-playing.png)</td>
     <td>`<badge value="playing"/>`</td>
 </tr>
 <tr>
-    <td>unavailable</td>
-    <td>![Glyph](images/badges/badge-unavailable.png)</td>
+    <td>離線 (unavailable)</td>
+    <td>![字符](images/badges/badge-unavailable.png)</td>
     <td>`<badge value="unavailable"/>`</td>
 </tr>
 </table>
 
-## Create a badge
+## 建立徽章
 
-These examples show you how to to create a badge update.
+以下範例名如何建立徽章更新。
 
-### Create a numeric badge
+### 建立數字徽章
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -146,7 +150,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### Create a glyph badge
+### 建立字符徽章
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -174,7 +178,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### Clear a badge
+### 清除徽章
 
 ````csharp
 private void clearBadge()
@@ -183,12 +187,17 @@ private void clearBadge()
 }
 ````
 
-## Get the samples
+## 取得範例
 
-* [Notifications sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Shows how to create live tiles, send badge updates, and display toast notifications. 
+* [通知範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> 說明如何建立動態磚、傳送徽章更新，以及顯示快顯通知。 
 
-## Related articles
+## 相關文章
 
-* [Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)
-* [Create tiles](tiles-and-notifications-creating-tiles.md)
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [調適型和互動式快顯通知](tiles-and-notifications-adaptive-interactive-toasts.md)
+* [建立磚](tiles-and-notifications-creating-tiles.md)
+* [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
+
+
+<!--HONumber=Aug16_HO3-->
+
+

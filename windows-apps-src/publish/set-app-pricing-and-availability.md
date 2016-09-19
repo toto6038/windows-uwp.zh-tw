@@ -1,98 +1,85 @@
 ---
 author: jnHs
-Description: "您可以從應用程式提交程序的 [價格與可用性] 頁面決定您的應用程式價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的應用程式。"
-title: "設定應用程式價格與可用性"
+Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
+ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 ---
 
-# 設定應用程式價格與可用性
+# Set app pricing and availability
 
 
-您可以從 [app 提交程序](app-submissions.md)的 [價格與可用性]**** 頁面決定您的 app 價格、您是否提供免費試用，以及客戶如何、何時、何處可取得您的 app。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
-## 基本價格
-
-
-此頁面上的第一個項目可讓您選取 app 的基本價格。 您可以選擇免費提供，或者選取其中一個適用的價格區間。 您必須指定基本價格，才能提交 app。
-
-如需詳細資訊，請參閱[制定價格和選擇市場](define-pricing-and-market-selection.md)。
-
-## 免費試用
+## Base price
 
 
-許多開發人員選擇使用市集提供的試用功能，讓客戶免費試用 app。 根據預設，app 無法免費試用，但如果您願意提供，請從 [免費試用]**** 下拉式清單選取值。
+The first item on this page lets you select a base price for your app. You can choose to offer it for free, or you can select one of the available price tiers. Specifying a base price is required in order to submit your app.
 
-選擇 [**試用版永久有效**]，讓客戶無限期免費存取您的 app。 您會想要鼓勵他們購買完整版本，所以請務必新增程式碼以[排除或限制試用版中的功能](https://msdn.microsoft.com/library/windows/apps/mt219685)。
+For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
 
-您也可以選取 [**1 天**]、[**7 天**]、[**15 天**] 或 [**30 天**] 的時間限定試用版的選項。 您在試用期間仍然可以限制功能，或者可以讓客戶在該時間期間存取完整功能。
-
-> **注意** Windows Phone 8.1 和較舊版本不會對客戶顯示限時試用。
-
-## 市場和自訂價格
+## Free trial
 
 
-根據預設，您的 app 會以基本價格列在所有可能的市場中。 您可以在 [市場和自訂價格]**** 區段中變更這些設定以便納入或排除特定市場，以及變更任何販售市場中的 app 價格。 如需詳細資訊，請參閱[制定價格和選擇市場](define-pricing-and-market-selection.md)。
+Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, an app will not be available as a free trial, but if you'd like to offer one, select a value from the **Free trial** dropdown.
 
-## 銷售定價
+Choose **Trial never expires** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](https://msdn.microsoft.com/library/windows/apps/mt219685).
 
+You also have the option to select a time-limited trial of **1 day**, **7 days**, **15 days**, or **30 days**. You can still limit features during the trial period, or you can let customers access the full functionality during that period of time.
 
-如果您想要以降低的價格提供 app 一段有限的時間，您可以建立及排程銷售。 如需詳細資訊，請參閱[銷售 app 和 IAP](put-apps-and-iaps-on-sale.md)。
+> **Note**  Time-limited trials are not shown to customers on Windows Phone 8.1 and earlier.
 
-## 配送和可見性
-
-
-[配送和可見性]**** 區段可讓您設定探索及取得您 app 之方式的限制。
-
-預設設定為 [在市集推出此 app]****。 這表示您的 app 將列於市集中，讓客戶能夠透過 app 的直接連結和/或其他方法來尋找，包括搜尋、瀏覽和包含於經過挑選的清單中。
-
-如果您想要在市集中隱藏您的 app，但仍要讓特定人員能夠使用它，請選取下列其中一個選項來限制 app 的可用性。 請注意，如果您選擇這其中一個選項，Windows 8 和 Windows 8.1 的客戶將無法取得該 app。
-
--   **隱藏這個 app 並避免購買。具備促銷碼的客戶仍然能夠在 Windows 10 裝置上下載該 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是您可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 他們可以使用連結和代碼以免費取得您的 app，即使您並未將該 app 提供給其他任何客戶也一樣。
--   **在市集中隱藏這個 app。具有 app 清單直接連結的客戶仍能下載該 app，但在 Windows 8 與 Windows 8.1 上除外**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，但是具有 app 清單直接連結的任何客戶可以在執行 Windows 10 或 Windows Phone 8.1 和較舊版本的裝置上下載您的 app。
--   **隱藏這個 app，而且只有您在下方指定的人員可以使用它，這類人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app**：沒有客戶可以在市集中透過搜尋或瀏覽找到您的 app，只有您在方塊中 (使用分號分隔) 輸入其電子郵件地址 (與其 Microsoft 帳戶相關聯) 的 Windows Phone 8.x 客戶可以使用直接連至其清單的連結來下載您的 app。 您也可以[產生促銷碼](generate-promotional-codes.md)以配送給 Windows 10 上的特定人員。 這個選項通常用於 Windows Phone 8.1 和更舊版本的[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。 請注意，只有當您先前發行 app 時，未將 [配送和可見性]****] 選項設定為 [任何人都可以在市集中找到您的 app]****，才能夠選取此選項。
-
-> **注意** 若要完全停止為新客戶提供某個 app，請按一下 [App 概觀] 頁面的 [停止提供 app]****。 在確認您想要停止提供該 app 之後，在數小時內，將無法在市集中看見該 app，而所有的新客戶都將無法透過任何方法來取得它。 這個動作將覆寫您在此處選擇的所有選項：新客戶將完全無法取得它。 若要再次為新客戶提供該 app，可隨時按一下 [App 概觀] 頁面的 [提供 app]****。 如需詳細資訊，請參閱[從市集移除 app](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
-
-## Windows 10 裝置系列
-
-本節可讓您指出客戶可以使用何種類型的 Windows 10 裝置來取得您的應用程式。 (如果您的套件不會在特定的裝置類型上執行，我們將不會提供它下載至該類型的裝置。)
-
-> **重要** 若要完全防止特定 Windows 10 裝置系列取得您的應用程式，您需要更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，讓目標僅限於要支援的裝置系列 (也就是 **Windows.Mobile** 或 **Windows.Desktop**)，而不是讓它做為 Microsoft Visual Studio 預設包含在 appx 資訊清單中的 **Windows.Universal** 值 (適用於通用裝置系列)。
-
-根據預設，將會勾選 [行動]**** 和 [桌面]**** 方塊。 我們建議您讓這些方塊保持核取狀態，除非有特殊原因必須限制可以取得您的應用程式的 Windows 10 裝置類型。 例如，您可能已建立 Windows 通用套件，但是您仍然需要測試應用程式在行動裝置上的一些問題。 若要防止新客戶在 Windows 10 行動裝置上下載 app，您可以取消核取這裡的 [**行動裝置**] 核取方塊。 然後，如果您之後決定要提供給 Windows 10 行動裝置的客戶，您可以建立新的提交並且勾選 [行動裝置]**** 方塊。
-
-如果您已測試您的應用程式以確保它可以在 Microsoft HoloLens 上適當地執行，您也可以勾選 [全像攝影]**** 方塊將此應用程式提供給 HoloLens 客戶。 如需建置、測試及發佈全像攝影應用程式的詳細資訊，請參閱 [Windows 全像攝影開發概觀](http://dev.windows.com/holographic/development_overview)。
-
-請注意，您在此區段中選取的選項將套用到您應用程式的所有套件，而不論它們的目標作業系統為何 (Windows 10、Windows 8.x、Windows Phone 8.x 等)。 但是，它們只影響到使用 Windows 10 裝置 (且不是 Windows 8.x 或 Windows Phone 8.x 裝置) 的客戶的可用性。
-
-另請注意，您在這裡所做的選擇僅會套用至新的下載。 已經有您的 app 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除該裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 app 的客戶。 例如，如果您有具有 Windows Phone 8.1 套件的已發佈 app，您稍後將 Windows 10 (UWP) 套件新增至目標為通用裝置系列的相同 app，具有您的 Windows Phone 8.1 套件的 Windows 10 行動裝置客戶就會取得這個 Windows 10 (UWP) 套件的更新，即使您已經取消核取 [行動裝置]**** 方塊 (因為這不是新購買而是更新)。 但是，如果您未提供目標為通用或行動裝置系列的任何 Windows 10 (UWP) 套件，則您的 Windows 10 行動裝置客戶仍然保持為 Windows Phone 8.1 套件。
-
-如需裝置系列的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)和 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)。
-
-> **注意** 您也將看到一個核取方塊，讓您可以指出是否要讓 Microsoft 將 app 提供給未來的 Windows 10 裝置系列。 我們建議您保持核取此方塊，讓您的 app 在新裝置系列引入時可供更多潛在客戶使用。
-
-## 組織授權
+## Markets and custom prices
 
 
-根據預設，您的 app 可能會提供給組織大量購買。 您可以指出是否在此區段提供您的 app 以及其方式。
+By default, your app will be listed in all possible markets at its base price. You can change these settings to include or exclude specific markets, and change the app's price in any market in which you offer it, in the **Markets and custom prices** section. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
 
-如需詳細資訊，請參閱[組織授權選項](organizational-licensing.md)。
-
-## 發佈日期
+## Sale pricing
 
 
-您可以在 [發佈日期]**** 區段中選擇選項，指出何時要發佈您的 app (或更新)。
+If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
 
--   選擇 [通過認證之後就立即發佈此提交項目]**** 可讓此提交項目在市集中以最快方式取得。
--   如果您希望提交項目要到您明確指定時才發佈，請選擇 [手動發佈此提交項目]****。 您可以從認證狀態頁面按一下 [立即發佈]**** 或依照下面描述選取特定日期進行手動發佈。
--   選擇 [**不早於 \[日期\]**] 可確保提交項目要到某個日期之後才會發佈。 使用此選項，您的提交項目會在指定日期的當天或之後立即發行。 此日期至少必須是未來的 24 小時後。 除了日期，您還能指定應開始發佈提交項目的時間。
-    > **注意** 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的 app (或更新)。
+## Distribution and visibility
 
-您也可以在提交 app 之後變更發行日期，只要還沒有進入 [發佈]**** 步驟即可。
+
+The **Distribution and visibility** section allows you to set restrictions on how your app can be discovered and acquired.
+
+The default setting is **Make this app available in the Store**. This means that your app will be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
+
+If you want to hide your app in the Store but still make it available to certain people, select one of the following options to limit your app's availability. Note that customers on Windows 8 and Windows 8.1 won't be able to get the app at all if you choose any of these options.
+
+-   **Hide this app and prevent acquisition. Customers with a promotional code can still download it on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, but you can [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. They can use the link and code to get your app for free, even though you aren't offering it to any other customers
+-   **Hide this app in the Store. Customers with a direct link to the app’s listing can still download it, except on Windows 8 and Windows 8.1**: No customers can find your app in the Store via searching or browsing, but any customer with the direct link to your app's listing can download your app on devices running Windows 10 or Windows Phone 8.1 and earlier.
+-   **Hide this app and make it available only to the people you specify below, who can download this app on Windows Phone 8.x devices. A promotional code may be used to download this app on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, and only the Windows Phone 8.x customers whose email addresses (associated with their Microsoft accounts) that you enter in the box (separated by semicolons) can download your app by using the direct link to its listing. You can also [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. This option is often used for [beta testing](beta-testing-and-targeted-distribution.md) on Windows Phone 8.1 and earlier. Note that this option can only be selected if you have never previously published the app with the **Distribution and visibility** option set to **Anyone can find your app in the Store**.
+
+> **Note**  To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+
+## Windows 10 device families
+
+Device family availability is now managed on the **Packages** page of your submission. For more info, see [Device family availability](upload-app-packages.md#device-family-availability).
+
+## Organizational licensing
+
+
+By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
+
+For more info, see [Organizational licensing options](organizational-licensing.md).
+
+## Publish date
+
+
+You can indicate when your app (or update) will be published by choosing an option in the **Publish date** section.
+
+-   Choose **Publish this submission as soon as it passes certification** to make this submission available in the Store as soon as possible.
+-   Choose **Publish this submission manually** if you don't want your submission to be published until you indicate that it should be. You can do this from the certification status page by clicking **Publish now**, or by selecting a specific date as described below.
+-   Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
+
+   > **Note**  Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your app (or update) will be available on a specific date.
+
+You can also change the release date after submitting your app, as long as it hasn’t entered the **Publish** step yet.
  
 
  
@@ -103,6 +90,6 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

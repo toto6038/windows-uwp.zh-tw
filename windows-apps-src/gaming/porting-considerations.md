@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: "從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)"
-description: "本節提供將 DirectX 9 傳統型遊戲移植到 DirectX 11 和通用 Windows 平台 (UWP) 的指導方針。"
+title: Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
+description: This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
+ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
 
 ---
 
-# 從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
+# Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節提供將 DirectX 9 傳統型遊戲移植到 DirectX 11 和通用 Windows 平台 (UWP) 的指導方針。
+This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
 
 <table>
 <colgroup>
@@ -23,22 +23,22 @@ ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[計劃 DirectX 移植](plan-your-directx-port.md)</p></td>
-<td align="left"><p>計劃從 DirectX 9 到 DirectX 11 與 UWP 的遊戲移植專案：升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。</p></td>
+<td align="left"><p>[Plan your DirectX port](plan-your-directx-port.md)</p></td>
+<td align="left"><p>Plan your game porting project from DirectX 9 to DirectX 11 and UWP: upgrade your graphics code, and put your game in the Windows Runtime environment.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[從 Direct3D 9 到 Direct3D 11.1 的重要變更](understand-direct3d-11-1-concepts.md)</p></td>
-<td align="left"><p>本主題說明 DirectX 9 和 DirectX 11 的概要差異。</p></td>
+<td align="left"><p>[Important changes from Direct3D 9 to Direct3D 11.1](understand-direct3d-11-1-concepts.md)</p></td>
+<td align="left"><p>This topic explains the high-level differences between DirectX 9 and DirectX 11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[將 DirectX 9 功能對應到 DirectX 11.1 API](feature-mapping.md)</p></td>
-<td align="left"><p>了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與 UWP。</p></td>
+<td align="left"><p>[Map DirectX 9 features to DirectX 11.1 APIs](feature-mapping.md)</p></td>
+<td align="left"><p>Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the UWP.</p></td>
 </tr>
 </tbody>
 </table>
@@ -55,6 +55,6 @@ ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
