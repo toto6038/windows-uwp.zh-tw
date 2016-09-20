@@ -1,98 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 6
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/a86002c944841536d37735bb8c4b657905582144/windows-apps-src/get-started/application-development-for-windows-as-a-service.md) | InSyncHandedBackSuccess | [Details](#561f5ea0ab4ba5b456456cedf786479ef168e7c03559)
- [windows-apps-src\get-started\images\vs-2015-community-setup.png](https://github.com/Microsoft/windows-apps/blob/a528d7e48f858250d2cbe779eb2babcf5d492318/windows-apps-src/get-started/images/vs-2015-community-setup.png) | InSyncHandedBackSuccess | [Details](#ec3c2f27223c35a423a5e5a5ff189e39b179f8d83794)
- [windows-apps-src\get-started\images\win10-cs-09.png](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/images/win10-cs-09.png) | InSyncHandedBackSuccess | [Details](#dc43ec1d2c973718cd80c0785ebbd12fd108ca6e3851)
- [windows-apps-src\get-started\images\winjs-tut-newproject.png](https://github.com/Microsoft/windows-apps/blob/2587ce2e57eb2092b6650c0820f021d136864603/windows-apps-src/get-started/images/winjs-tut-newproject.png) | InSyncHandedBackSuccess | [Details](#7920f4f0ea31e50c7c7ca69054f969df435453193855)
- [windows-apps-src\updates-and-versions\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/a86002c944841536d37735bb8c4b657905582144/windows-apps-src/updates-and-versions/application-development-for-windows-as-a-service.md) | InSyncHandedBackSuccess | [Details](#72ac67b17fc519d374798e5121b309f664ff6b1b8005)
- [windows-apps-src\xbox-apps\images\activation-step-5.png](https://github.com/Microsoft/windows-apps/blob/83e7159e0ccb9298a619fd6f9e53a364907e4cd5/windows-apps-src/xbox-apps/images/activation-step-5.png) | InSyncHandedBackSuccess | [Details](#62db1be80faeaf94583b66e693f822da4f66d5d28078)
 
 ## Item Details
-##### <a name='561f5ea0ab4ba5b456456cedf786479ef168e7c03559'></a> Source: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/a86002c944841536d37735bb8c4b657905582144/windows-apps-src/get-started/application-development-for-windows-as-a-service.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/bb1048f4a05e613275bbd6635692de0d11539e75/windows-apps-src/get-started/application-development-for-windows-as-a-service.md)
-* Handoff File: [application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/7068f5f3c78bf7cfdd43cc8f93b5d0383985b52a/ol-handoff/Microsoft/windows-apps.zh-tw/master/application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.zh-tw.xlf)
-* Handoff Datetime: 2016-08-30 20:10:05
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/3b12b8a3f06805e713d3b0624518642e0301b0c0/ol-handback/Microsoft/windows-apps.zh-tw/master/application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.zh-tw.xlf)
-* Handback Datetime: 2016-09-19 23:06:27
-* Current Target File: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/get-started/application-development-for-windows-as-a-service.md)
-* Current Handback File: [application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf)
-* Current Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
-##### <a name='ec3c2f27223c35a423a5e5a5ff189e39b179f8d83794'></a> Source: [windows-apps-src\get-started\images\vs-2015-community-setup.png](https://github.com/Microsoft/windows-apps/blob/a528d7e48f858250d2cbe779eb2babcf5d492318/windows-apps-src/get-started/images/vs-2015-community-setup.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\images\vs-2015-community-setup.png](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/get-started/images/vs-2015-community-setup.png)
-* Handoff File: [ec3c2f27223c35a423a5e5a5ff189e39b179f8d8.png](https://github.com/Microsoft/WDG.handoff/blob/8b3b797934754967d99e1cc7c31e07a648ce7649/ol-handoff/Microsoft/windows-apps.zh-tw/master/ec3c2f27223c35a423a5e5a5ff189e39b179f8d8.png)
-* Handoff Datetime: 2016-08-24 19:53:13
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\get-set-up.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [ec3c2f27223c35a423a5e5a5ff189e39b179f8d8.png](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/ec3c2f27223c35a423a5e5a5ff189e39b179f8d8.png)
-* Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
-##### <a name='dc43ec1d2c973718cd80c0785ebbd12fd108ca6e3851'></a> Source: [windows-apps-src\get-started\images\win10-cs-09.png](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/images/win10-cs-09.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\images\win10-cs-09.png](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/get-started/images/win10-cs-09.png)
-* Handoff File: [dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png](https://github.com/Microsoft/WDG.handoff/blob/573385e1ba1a7b2b540c37624358f2873fa80fb8/ol-handoff/Microsoft/windows-apps.zh-tw/master/dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png)
-* Handoff Datetime: 2016-08-18 00:41:27
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png)
-* Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
-##### <a name='7920f4f0ea31e50c7c7ca69054f969df435453193855'></a> Source: [windows-apps-src\get-started\images\winjs-tut-newproject.png](https://github.com/Microsoft/windows-apps/blob/2587ce2e57eb2092b6650c0820f021d136864603/windows-apps-src/get-started/images/winjs-tut-newproject.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\images\winjs-tut-newproject.png](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/get-started/images/winjs-tut-newproject.png)
-* Handoff File: [7920f4f0ea31e50c7c7ca69054f969df43545319.png](https://github.com/Microsoft/WDG.handoff/blob/573385e1ba1a7b2b540c37624358f2873fa80fb8/ol-handoff/Microsoft/windows-apps.zh-tw/master/7920f4f0ea31e50c7c7ca69054f969df43545319.png)
-* Handoff Datetime: 2016-08-18 00:41:27
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [7920f4f0ea31e50c7c7ca69054f969df43545319.png](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/7920f4f0ea31e50c7c7ca69054f969df43545319.png)
-* Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
-##### <a name='72ac67b17fc519d374798e5121b309f664ff6b1b8005'></a> Source: [windows-apps-src\updates-and-versions\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/a86002c944841536d37735bb8c4b657905582144/windows-apps-src/updates-and-versions/application-development-for-windows-as-a-service.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/get-started/application-development-for-windows-as-a-service.md)
-* Handoff File: [application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/7068f5f3c78bf7cfdd43cc8f93b5d0383985b52a/ol-handoff/Microsoft/windows-apps.zh-tw/master/application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf)
-* Handoff Datetime: 2016-08-30 20:10:05
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.zh-tw.xlf)
-* Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
-##### <a name='62db1be80faeaf94583b66e693f822da4f66d5d28078'></a> Source: [windows-apps-src\xbox-apps\images\activation-step-5.png](https://github.com/Microsoft/windows-apps/blob/83e7159e0ccb9298a619fd6f9e53a364907e4cd5/windows-apps-src/xbox-apps/images/activation-step-5.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\xbox-apps\images\activation-step-5.png](https://github.com/Microsoft/windows-apps.zh-tw/blob/08f2c2d22e37ab3248a274878c284d1fcb2bb53b/windows-apps-src/xbox-apps/images/activation-step-5.png)
-* Handoff File: [62db1be80faeaf94583b66e693f822da4f66d5d2.png](https://github.com/Microsoft/WDG.handoff/blob/1610294b14e06f9ec972949c75ae234271d79b53/ol-handoff/Microsoft/windows-apps.zh-tw/master/62db1be80faeaf94583b66e693f822da4f66d5d2.png)
-* Handoff Datetime: 2016-08-25 20:55:11
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\xbox-apps\devkit-activation.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [62db1be80faeaf94583b66e693f822da4f66d5d2.png](https://github.com/Microsoft/WDG.handback/blob/e20bf953ee2b00e62e68750c301618987a61873d/ol-handback/Microsoft/windows-apps.zh-tw/master/62db1be80faeaf94583b66e693f822da4f66d5d2.png)
-* Handback Datetime: 2016-09-19 23:57:40
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
