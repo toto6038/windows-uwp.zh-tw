@@ -1,39 +1,34 @@
 ---
 author: PatrickFarley
 ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
-title: 3D Printing
-description: This section describes how to utilize 3D printing functionality in your Universal Windows app.
+title: "3D 列印"
+description: "本節描述如何利用通用 Windows app 中的 3D 列印功能。"
 translationtype: Human Translation
-ms.sourcegitcommit: d6158b654b3d9edcb9bd3a52b0fe58154ce40565
-ms.openlocfilehash: f3e01344bf7879e8992f4f7976c65ca0b7e616b1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
 
 ---
-# 3D Printing
+# 3D 列印
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section describes how to utilize the [3D print API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) to add 3D printing functionality to your Universal Windows app.  
+本節描述如何利用通用 Windows app 中的 3D 列印功能。
 
-<!-- ![the 3D printing from Unity sample uses Windows 3D print APIs to facilitate the printing of a textured model asset from Unity software](images/unity-app-screenshot-002.png) -->
-
-For more information on 3D printing with Windows 10, including resources for hardware partners, community discussion forums, and general info on 3D print capabilities, see the [3D printing with Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) site on the Hardware Dev Center.
-
-| Topic | Description | 
+| 主題 | 說明 | 
 |-------|-------------|
-| [3D print from your app](3d-print-from-app.md) | Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format. |
-| [Generate a 3MF package](generate-3mf.md) | Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API. |
+| [從您的 App 進行 3D 列印](3d-print-from-app.md) | 了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。 |
+| [產生 3MF 套件](generate-3mf.md) | 描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。 |
 
-## Related topics
+## 相關主題
 
-* [3D printing with Windows 10 (Hardware Dev Center)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
-* [UWP 3D print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
-* [UWP 3D printing from Unity sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
-
+* [UWP 3D 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+* [從 Unity 進行 UWP 3D 列印的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
+* [硬體：使用 Windows 10 進行 3D 列印](https://msdn.microsoft.com/windows/hardware/bg183398.aspx)
  
 
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jul16_HO2-->
 
 

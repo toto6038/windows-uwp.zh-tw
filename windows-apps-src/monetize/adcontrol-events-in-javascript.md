@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
-description: Learn how to handle the events of the AdControl class.
-title: AdControl events in JavaScript
+description: "了解如何處理 AdControl 類別的事件。"
+title: "JavaScript 中的 AdControl 事件"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d24030dfae92451924000ba4f1ac19cf6c4d4abe
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
 
 
 ---
 
-# AdControl events in JavaScript
+# JavaScript 中的 AdControl 事件
 
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [HTML 屬性範例](html-properties-example.md)。
 
-The following examples demonstrate how to handle the events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class. These examples assume that you have previously assigned the event handlers to the **AdControl** events. For more information about how to do this, see [HTML properties example](html-properties-example.md).
+在 JavaScript 中，**AdControl** 事件必須包含在 [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函式中。 如需在 JavaScript 中處理事件的詳細資訊，請參閱[撰寫基本應用程式的程式碼 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers)。
 
-In JavaScript, the **AdControl** events must be enclosed by the [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) function. For more information about handling events in JavaScript, see [Coding basic apps (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers).
-
-## Examples
+## 範例
 
 ``` syntax
 WinJS.Utilities.markSupportedForProcessing(
@@ -44,18 +44,18 @@ window.myAdEngagedChanged = function (sender) {
 });
 ```
 
-## Related topics
+## 相關主題
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
-* [AdControl error handling](adcontrol-error-handling.md)
-* [RoutedEventArgs Class](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
-
- 
+* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [AdControl 錯誤處理](adcontrol-error-handling.md)
+* [RoutedEventArgs 類別](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO2-->
 
 

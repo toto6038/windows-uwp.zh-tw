@@ -1,65 +1,63 @@
 ---
 author: jwmsft
-title: xDeferLoadStrategy attribute
-description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
+title: "xDeferLoadStrategy 屬性"
+description: "xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 ---
 
-# x:DeferLoadStrategy attribute
+# x&#58;DeferLoadStrategy 屬性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**x:DeferLoadStrategy="Lazy"** is a feature that can be used to optimize the performance of the startup or tree creation scenarios of a XAML app. Using **x:DeferLoadStrategy="Lazy"** delays the creation of an element and its children, decreasing startup time and memory costs by not needing to create the element(s). This is useful to reduce the costs of elements that are not often or conditionally needed. The element will be realized when its referred to from code or VisualStateManager.
+**x:DeferLoadStrategy="Lazy"** 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。 延遲的元素樹狀結構愈大，節省的啟動時間就愈多，但代價是記憶體使用量較大。 因此，過度使用此屬性可能導致效能降低。
 
-However the book keeping for deferral adds about 600 bytes to the memory usage for each element affected. The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint. Therefore it's possible to overuse this attribute to the extent that your performance decreases.
-
-## XAML attribute usage
+## XAML 屬性用法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## Remarks
+## 備註
 
-The restrictions for using **x:DeferLoadStrategy** are:
+**x:DeferLoadStrategy** 的使用限制如下：
 
--   Requires an [x:Name](x-name-attribute.md) defined, as there needs to be a way to find the element later.
--   Only a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) can be marked as deferred, with the exception of types deriving from [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
--   Elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) cannot be deferred.
--   Does not work with loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
--   Moving a parent element will clear out any elements that have not been realized.
+-   必須定義 [x:Name](x-name-attribute.md)，因為後續必須要有尋找元素的方法。
+-   只有 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 可標示為延遲，但衍生自 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的類型例外。
+-   根元素不可在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延遲。
+-   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不可延遲。
+-   不使用透過 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 載入的鬆散 XAML。
+-   移動父元素將會清除任何尚未辨識的元素。
 
-There are several different ways to realize the deferred elements:
+有幾種不同的方式可用來辨識延遲的元素：
 
--   Call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) with the name that was defined on the element.
--   Call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) with the name that was defined on the element.
--   In a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), use a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) or **Storyboard** animation that is targeting the deferred element.
--   Target the deferred element in any **Storyboard**.
--   Use a binding that is targeting the deferred element.
--   NOTE: Once the instantiation of an element has started, it is created on the UI thread, so it could cause the UI to stutter if too much is created at once.
+-   使用在元素上定義的名稱呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
+-   使用在元素上定義的名稱呼叫 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416)。
+-   在 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 中，使用以延遲的元素為目標的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 **Storyboard** 動畫。
+-   在 **Storyboard** 中以任何延遲的元素做為目標。
+-   使用以延遲的元素為目標的繫結。
+-   注意：元素在開始具現化後，就會建立在 UI 執行緒上，因此如果同時建立太多，就可能造成 UI 間斷。
 
-Once a deferred element is created by any of the methods listed above, several things will happen:
+以任何前述方法建立延遲的元素後，將會發生幾件事：
 
--   The [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) event on the element will get raised.
--   Any bindings on the element will get evaluated.
--   If the application has registered to receive property change notifications on the property containing the deferred element(s), the notification will be raised.
+-   將會引發元素的 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 事件。
+-   將會評估元素的任何繫結。
+-   如果應用程式已登錄而會接收包含延遲元素之屬性的屬性變更通知，就會引發通知。
 
-You can nest deferred elements, however they have to be realized from the outer-most element in.  If you try to realize a child element before the parent has been realized, an exception will be raised.
+您可以內嵌延遲的元素，但必須從最外層元素開始辨識這些元素。  如果您嘗試在辨識父元素之前辨識子元素，將會引發例外狀況。
 
-In general, the recommendation is to defer things that are not viewable in the first frame.  A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992).  Also incidental UI (that is, UI that is triggered by user interaction) is a good place to look for deferring elements.  
+一般而言，建議延遲無法在第一個畫面格中檢視的項目。  在尋找要延遲的候選項目時，建議您尋找以摺疊的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 建立的元素。  附帶性 UI (也就是使用者互動所觸發的 UI) 也是您尋找延遲元素的理想之處。  
 
-Be wary of deferring elements in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) scenario, as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating.  If you are looking to increase panning performance, please refer to the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
+請留意 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 案例中的延遲元素，因為它雖然可減少您的啟動時間，但也可能隨著您所建立的項目而導致移動瀏覽效能下降。  如果您想要提升移動瀏覽效能，請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)和 [x:Phase 屬性](x-phase-attribute.md)文件。
 
-If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings will be applied up to and including the current phase. The phase specified for **x:Phase** will not affect or control the deferral of the element. When a list item is recycled as part of panning, realized elements will behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) will be processed using the same rules, including phasing.
+如果 [x:Phase 屬性](x-phase-attribute.md)結合 **x:DeferLoadStrategy** 使用，則當元素或元素樹狀結構實現之後，繫結會向上套用且包含目前階段。 針對 **x:Phase** 指定的階段將不會影響或控制元素的延遲。 當清單項目被視為移動瀏覽的一部分回收時，實現的元素會與其他作用中元素的行為相同，而已編譯的繫結 (**{x:Bind}** 繫結) 將會使用相同的規則處理 (包括階段處理)。
 
-A general guideline is to measure your application before and after to make sure you are getting the performance that you want.
+一般會建議您在之前或之後測量您的應用程式，以確保您得到想要的效能。
 
-## Example
+## 範例
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -90,6 +88,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

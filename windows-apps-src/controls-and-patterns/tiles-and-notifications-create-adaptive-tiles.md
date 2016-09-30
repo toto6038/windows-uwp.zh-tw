@@ -1,42 +1,44 @@
 ---
 author: mijacobs
-Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
-title: Create adaptive tiles
+Description: "彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。"
+title: "建立彈性磚"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
+ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
+ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 ---
-# Create adaptive tiles
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md).
-
-(If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](https://msdn.microsoft.com/library/windows/apps/hh761491) when designing notifications for Windows 10.)
-
-## Getting started
+# 建立彈性磚
 
 
-**Install NotificationsExtensions.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). The C# samples provided in this article use NotificationsExtensions.
-
-**Install Notifications Visualizer.** This free UWP app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
-
-## Usage guidance
 
 
-Adaptive templates are designed to work across different form factors and notification types. Elements such as group and subgroup link together content and don't imply a particular visual behavior on their own. The final appearance of a notification should be based on the specific device on which it will appear, whether it's phone, tablet, or desktop, or another device.
 
-Hints are optional attributes that can be added to elements in order to achieve a specific visual behavior. Hints can be device-specific or notification-specific.
+彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為通用 Windows 平台 (UWP) app 建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
 
-## A basic example
+(設計適用於 Windows 10 的通知時，如果您想要，仍然可以使用 [Windows 8 磚範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761491)中的預設範本)。
+
+## 開始使用
 
 
-This example demonstrates what the adaptive tile templates can produce.
+**安裝 NotificationsExtensions。** 若您想要使用 C# 而不是 XML 產生通知，請安裝名為 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的 NuGet 套件。 本文中所提供的 C# 範例使用 NotificationsExtensions。
+
+**安裝通知視覺化工具。** 這個免費的 UWP 應用程式可協助您透過在編輯磚時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，以設計彈性動態磚。 您可以閱讀[此部落格文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)以取得詳細資訊，您也可以從[這裡](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下載通知視覺化工具。
+
+## 用法指導方針
+
+
+彈性範本的設計可跨不同的尺寸規格和通知類型運作。 諸如群組和子群組之類的元素會將內容連結在一起，而且並不代表自己的特定視覺行為。 無論是手機、平板電腦、傳統型裝置或其他裝置，通知的最終外觀應該以將會顯示在其上的特定裝置為基礎。
+
+提示是選用的屬性，可以新增至元素以達到特定的視覺行為。 提示可以是針對裝置或針對通知。
+
+## 基本範例
+
+
+此範例示範彈性磚範本可以產生的內容。
 
 ```XML
 <tile>
@@ -99,21 +101,21 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果：**
 
-![quick sample tile](images/adaptive-tiles-quicksample.png)
+![快速範例磚](images/adaptive-tiles-quicksample.png)
 
-## Tile sizes
+## 磚大小
 
 
-Content for each tile size is individually specified in separate [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
+每個磚大小的內容是分別在 XML 承載內的不同 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素中指定。 將範本屬性設定為下列其中一個值，以選擇目標大小：
 
 -   TileSmall
 -   TileMedium
 -   TileWide
--   TileLarge (only for desktop)
+-   TileLarge (僅適用於桌上型電腦)
 
-For a single tile notification XML payload, provide &lt;binding&gt; elements for each tile size that you'd like to support, as shown in this example:
+對於單一磚通知 XML 承載，為您想要支援的每個磚大小提供 &lt;binding&gt; 元素，如此範例中所示：
 
 ```XML
 <tile>
@@ -191,16 +193,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tile sizes: small, medium, wide, and large](images/adaptive-tiles-sizes.png)
+![彈性磚大小：小、中、寬及大](images/adaptive-tiles-sizes.png)
 
-## Branding
+## 商標
 
 
-You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display "none," only the "name," only the "logo," or both with "nameAndLogo."
+您可以使用通知承載的商標屬性，控制動態磚底部的商標 (顯示名稱和角標誌)。 您可以選擇顯示 "none"、僅顯示 "name"、僅顯示 "logo"，或使用 "nameAndLogo" 來顯示兩者。
 
-**Note**  Windows Mobile doesn't support the corner logo, so "logo" and "nameAndLogo" default to "name" on Mobile.
+**注意：**Windows Mobile 不支援角落標誌，因此在行動裝置上，"logo" 和 "nameAndLogo" 預設會是 "name"。
 
  
 
@@ -224,14 +226,14 @@ new TileVisual()
 }
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tiles, name and logo](images/adaptive-tiles-namelogo.png)
+![彈性磚、名稱和標誌](images/adaptive-tiles-namelogo.png)
 
-Branding can be applied for specific tile sizes one of two ways:
+可以針對特定磚大小，以下列其中一種方式套用商標：
 
-1. By applying the attribute on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element
-2. By applying the attribute on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
+1. 透過在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上套用屬性
+2. 透過在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上套用屬性，這會影響整個通知承載。如果您沒有指定繫結的商標，它將會使用 visual 元素上提供的商標。
 
 ```XML
 <tile>
@@ -272,22 +274,22 @@ TileContent content = new TileContent()
 };
 ```
 
-**Default branding result:**
+**預設商標結果：**
 
-![default branding on tiles](images/adaptive-tiles-defaultbranding.png)
+![磚的預設品牌](images/adaptive-tiles-defaultbranding.png)
 
-If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to "name." Otherwise, the branding will default to "none" if the display name isn't shown.
+如果您沒有指定通知承載中的品牌，基底磚的屬性將決定品牌。 如果基底磚顯示顯示名稱，則品牌將會預設為 "name"。 否則若未出現顯示名稱，品牌將會預設為 "none"。
 
-**Note**   This is a change from Windows 8.x, in which the default branding was "logo."
+**注意：**這是與 Windows 8.x 不同的地方，其預設商標為 "logo"。
 
  
 
-## Display name
+## 顯示名稱
 
 
-You can override the display name of a notification by entering the text string of your choice with the **displayName** attribute. As with branding, you can specify this on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload, or on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which only affects individual tiles.
+您可以使用 **displayName** 屬性來輸入您所選擇的文字字串，來覆寫通知的顯示名稱。 和商標一樣，您可以在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這會影響整個通知承載，您也可以在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定此顯示名稱，這將只會影響個別的磚。
 
-**Known Issue**  On Windows Mobile, if you specify a ShortName for your Tile, the display name provided in your notification will not be used (the ShortName will always be displayed). 
+**已知問題：**在 Windows Mobile 上，如果您為磚指定了 ShortName，系統就不會使用通知中提供的顯示名稱 (一律會顯示 ShortName)。 
 
 ```XML
 <tile>
@@ -329,14 +331,14 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tiles display name](images/adaptive-tiles-displayname.png)
+![彈性磚顯示名稱](images/adaptive-tiles-displayname.png)
 
-## Text
+## 文字
 
 
-The [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element is used to display text. You can use hints to modify how text appears.
+[&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用來顯示文字。 您可以使用此提示修改文字的顯示方式。
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -363,14 +365,14 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tile text](images/adaptive-tiles-text.png)
+![彈性磚文字](images/adaptive-tiles-text.png)
 
-## Text wrapping
+## 文字換行
 
 
-By default, text doesn't wrap and will continue off the edge of the tile. Use the **hint-wrap** attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using **hint-minLines** and **hint-maxLines**, both of which accept positive integers.
+根據預設，文字不會換行，而且將會繼續超出磚的邊緣。 使用 **hint-wrap** 屬性在文字元素上設定文字換行。 您也可以使用 **hint-minLines** 和 **hint-maxLines** (皆接受正整數) 控制最小和最大行數。
 
 ```XML
 <text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
@@ -398,14 +400,14 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tile with text wrapping](images/adaptive-tiles-textwrapping.png)
+![含文字換行的彈性磚](images/adaptive-tiles-textwrapping.png)
 
-## Text styles
+## 文字樣式
 
 
-Styles control the font size, color, and weight of text elements. There are a number of available styles, including a "subtle" variation of each style that sets the opacity to 60%, which usually makes the text color a shade of light gray.
+樣式可控制文字元素的字型大小、色彩及粗細。 有許多可用的樣式，包括每個可將不透明度設定為 60% 的樣式的「細微」變化，這通常會使文字色彩變成淺灰色網底。
 
 ```XML
 <text hint-style="base">Header content</text>
@@ -426,20 +428,20 @@ new TileText()
 }
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tiles text styles](images/adaptive-tiles-textstyles.png)
+![彈性磚文字樣式](images/adaptive-tiles-textstyles.png)
 
-**Note**  The style defaults to caption if hint-style isn't specified.
+**注意：**如果沒有指定 hint-style，則樣式預設為 caption。
 
  
 
-**Basic text styles**
+**基本文字樣式**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
-| caption                        | 12 effective pixels (epx) | Regular     |
+| &lt;text hint-style="\*" /&gt; | 字型高度               | 字型寬度 |
+| caption                        | 12 個有效像素 (epx) | Regular     |
 | body                           | 15 epx                    | Regular     |
 | base                           | 15 epx                    | Semibold    |
 | subtitle                       | 20 epx                    | Regular     |
@@ -449,9 +451,9 @@ new TileText()
 
  
 
-**Numeral text style variations**
+**數字的文字樣式變化**
 
-These variations reduce the line height so that content above and below come much closer to the text.
+這些變化會減少行高，讓上方和下方的內容會更接近文字。
 
 |                  |
 |------------------|
@@ -461,9 +463,9 @@ These variations reduce the line height so that content above and below come muc
 
  
 
-**Subtle text style variations**
+**細微的文字樣式變化**
 
-Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
+每個樣式都有可提供文字 60% 不透明度的細微變化，這通常會使文字色彩變成淺灰色網底。
 
 |                        |
 |------------------------|
@@ -480,10 +482,10 @@ Each style has a subtle variation that gives the text a 60% opacity, which usual
 
  
 
-## Text alignment
+## 文字對齊方式
 
 
-Text can be horizontally aligned left, center, or right. In left-to-right languages like English, text defaults to left-aligned. In right-to-left languages like Arabic, text defaults to right-aligned. You can manually set alignment with the **hint-align** attribute on elements.
+文字可以水平靠左對齊、置中對齊或靠右對齊。 對於由左到右的語言 (如英文)，文字預設為靠左對齊。 對於由右到左的語言 (如阿拉伯文)，文字預設為靠右對齊。 您可以對元素使用 **hint-align** 屬性，來手動設定對齊方式。
 
 ```XML
 <text hint-align="center">Hello</text></code></pre></td>
@@ -511,18 +513,18 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tiles text alignment](images/adaptive-tiles-textalignment.png)
+![彈性磚文字對齊方式](images/adaptive-tiles-textalignment.png)
 
-## Groups and subgroups
+## 群組與子群組
 
 
-Groups allow you to semantically declare that the content inside the group is related and must be displayed in its entirety for the content to make sense. For example, you might have two text elements, a header, and a subheader, and it would not make sense for only the header to be shown. By grouping those elements inside a subgroup, the elements will either all be displayed (if they can fit) or not be displayed at all (because they can't fit).
+群組可以讓您從語意宣告群組內的內容相關，而且必須以內容的完整性顯示，才會具有意義。 例如，您可能會有兩個文字元素、一個標頭和一個子標頭，如果只顯示標頭，將不具任何意義。 為子群組內的這些元素分組，將會顯示所有元素 (如果可以容納)，或完全不顯示任何元素 (因為無法容納)。
 
-To provide the best experience across devices and screens, provide multiple groups. Having multiple groups allows your tile to adapt to larger screens.
+若要在裝置和螢幕上提供最佳體驗，請提供多個群組。 擁有多個群組可讓您的磚配合較大的螢幕。
 
-**Note**  The only valid child of a group is a subgroup.
+**注意：**唯一有效的群組子系是子群組。
 
  
 
@@ -613,16 +615,16 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 }
 ```
 
-**Result:**
+**結果：**
 
-![adaptive tiles groups and subgroups](images/adaptive-tiles-groups-subgroups.png)
+![彈性磚群組以及子群組](images/adaptive-tiles-groups-subgroups.png)
 
-## Subgroups (columns)
+## 子群組 (欄)
 
 
-Subgroups also allow you to divide data into semantic sections within a group. For live tiles, this visually translates to columns.
+子群組也可讓您在群組中，將資料分成多個語意式區段。 對於動態磚，這在視覺上會翻譯成欄。
 
-The **hint-weight** attribute lets you to control the widths of columns. The value of **hint-weight** is expressed as a weighted proportion of available space, which is identical to **GridUnitType.Star** behavior. For equal-width columns, assign each weight to 1.
+**hint-weight** 屬性可讓您控制欄寬。 **hint-weight** 的值會表示為可用空間的加權比例，這與 **GridUnitType.Star** 行為相同。 對於等寬的欄，將每個加權指派為 1。
 
 <table>
 <colgroup>
@@ -632,7 +634,7 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">寬度百分比</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
@@ -651,7 +653,7 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 <td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 4</td>
+<td align="left">總加權：4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -659,9 +661,9 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 
  
 
-![subgroups, even columns](images/adaptive-tiles-subgroups01.png)
+![子群組，甚至欄](images/adaptive-tiles-subgroups01.png)
 
-To make one column twice as large as another column, assign the smaller column a weight of 1 and the larger column a weight of 2.
+若要讓一欄是另一欄兩倍的大小，為較小的欄指派加權 1，並為較大的欄指派加權 2。
 
 <table>
 <colgroup>
@@ -671,7 +673,7 @@ To make one column twice as large as another column, assign the smaller column a
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">寬度百分比</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
@@ -682,7 +684,7 @@ To make one column twice as large as another column, assign the smaller column a
 <td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 3</td>
+<td align="left">總加權：3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -690,9 +692,9 @@ To make one column twice as large as another column, assign the smaller column a
 
  
 
-![subgroups, one column twice the size of the other](images/adaptive-tiles-subgroups02.png)
+![子群組，一欄是另一欄兩倍的大小](images/adaptive-tiles-subgroups02.png)
 
-If you want your first column to take up 20% of the total width and your second column to take up 80% of the total width, assign the first weight to 20 and the second weight to 80. If your total weights equal 100, they'll act as percentages.
+如果您希望您的第一欄最多佔 20% 的總寬度，且第二欄最多佔 80% 的總寬度，請將第一個加權指派為 20，並將第二個加權指派為 80。 如果您的總加權等於 100，它們就會成為百分比。
 
 <table>
 <colgroup>
@@ -702,7 +704,7 @@ If you want your first column to take up 20% of the total width and your second 
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">寬度百分比</td>
 </tr>
 <tr class="even">
 <td align="left">20</td>
@@ -713,7 +715,7 @@ If you want your first column to take up 20% of the total width and your second 
 <td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 100</td>
+<td align="left">總加權：100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -721,15 +723,15 @@ If you want your first column to take up 20% of the total width and your second 
 
  
 
-![subgroups, with weights totalling 100](images/adaptive-tiles-subgroups03.png)
+![子群組，加權總計為 100](images/adaptive-tiles-subgroups03.png)
 
-**Note**  An 8-pixel margin is automatically added between the columns.
+**注意：**欄與欄之間會自動加入 8 個像素的邊界。
 
  
 
-When you have more than two subgroups, you should specify the **hint-weight**, which only accepts positive integers. If you don't specify hint-weight for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified hint-weight will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
+當您有超過兩個子群組時，應該指定 **hint-weight**，這只會接受正整數。 如果您沒有為第一個子群組指定 hint-weight，則會將加權指派為 50。 對於沒有指定的 hint-weight 的下一個子群組，其獲指派的加權將等於 100 減去之前加權的加總，如果結果為零，則獲指派的加權將等於 1。 置於沒有指定的 hint-weight 的其餘子群組，其獲指派的加權為 1。
 
-Here's sample code for a weather tile that shows how you can achieve a tile with five columns of equal width:
+以下是天氣磚的範例程式碼，可顯示如何完成五個欄寬相等的磚：
 
 ```XML
 ...
@@ -838,20 +840,20 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果：**
 
-![example of a weather tile](images/adaptive-tiles-weathertile.png)
+![天氣磚的範例](images/adaptive-tiles-weathertile.png)
 
-## Images
+## 影像
 
 
-The &lt;image&gt; element is used to display images on the tile notification. Images can be placed inline within the tile content (default), as a background image behind your content, or as a peek image that animates in from the top of the notification.
+&lt;image&gt; 元素用來顯示磚通知上的影像。 影像可以內嵌於磚內容內 (預設值)、當做內容後方的背景影像，或當做以動畫方式從通知上方進入的預覽影像。
 
-**Note**   There are [restrictions on the file size and dimensions of images](https://msdn.microsoft.com/library/windows/apps/hh781198).
+**注意：**對於[檔案大小和影像尺寸有一些限制](https://msdn.microsoft.com/library/windows/apps/hh781198)。
 
  
 
-With no extra behaviors specified, images will uniformly shrink or expand to fill the available width. The sample below shows a tile using two columns and inline images. The inline images stretch to fill the width of the column.
+未指定任何額外的行為時，影像將會統一壓縮或延伸以填滿可用的寬度。 下列範例顯示使用兩欄與內嵌影像的磚。 內嵌影像會伸展以填滿欄寬。
 
 ```XML
 ...
@@ -934,15 +936,15 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果：**
 
-![image example](images/adaptive-tiles-images01.png)
+![影像範例](images/adaptive-tiles-images01.png)
 
-Images placed in the &lt;binding&gt; root, or in the first group, will also stretch to fit the available height.
+放置在 &lt;binding&gt; 根目錄或第一個群組中的影像也會伸展以填滿可用的高度。
 
-### Image alignment
+### 影像對齊方式
 
-Images can be set to align left, center, or right using the **hint-align** attribute. This will also cause images to display at their native resolution instead of stretching to fill width.
+您可以使用 **hint-align** 屬性，將影像設為靠左對齊、置中對齊或靠右對齊。 這也會使影像以原始解析度顯示，而不會自動伸展以填滿寬度。
 
 ```XML
 ...
@@ -971,13 +973,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Result:**
+**結果：**
 
-![image alignment example (left, center, right)](images/adaptive-tiles-imagealignment.png)
+![影像對齊方式範例 (靠左、置中、靠右)](images/adaptive-tiles-imagealignment.png)
 
-### Image margins
+### 影像邊界
 
-By default, inline images have an 8-pixel margin between any content above or below the image. This margin can be removed by using the **hint-removeMargin** attribute on the image. However, images always retain the 8-pixel margin from the edge of the tile, and subgroups (columns) always retain the 8-pixel padding between columns.
+根據預設，內嵌影像在影像上方或下方的任何內容之間有 8 個像素的邊界。 此邊界也可以使用影像的 **hint-removeMargin** 屬性移除。 不過，影像距離磚的邊緣一律會保留 8 個像素的邊界，且子群組 (欄) 在各欄之間一律會保留 8 個像素的邊框距離。
 
 ```XML
 ...
@@ -1063,11 +1065,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-![hint remove margin example](images/adaptive-tiles-removemargin.png)
+![hint remove margin 範例](images/adaptive-tiles-removemargin.png)
 
-### Image cropping
+### 影像裁剪
 
-Images can be cropped into a circle using the **hint-crop** attribute, which currently only supports the values "none" (default) or "circle."
+使用 **hint-crop** 屬性可將影像裁剪成圓形，此屬性目前僅支援 "none" (預設) 或 "circle" 的值。
 
 ```XML
 ...
@@ -1139,13 +1141,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Result:**
+**結果：**
 
-![image cropping example](images/adaptive-tiles-imagecropping.png)
+![影像裁剪範例](images/adaptive-tiles-imagecropping.png)
 
-### Background image
+### 背景影像
 
-To set a background image, place an image element in the root of the &lt;binding&gt; and set the placement attribute to "background."
+若要設定背景影像，將 image 元素放在 &lt;binding&gt; 的根目錄中，並將 placement 屬性設定為 "background"。
 
 ```XML
 ...
@@ -1228,11 +1230,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果：**
 
-![background image example](images/adaptive-tiles-backgroundimage.png)
+![背景影像範例](images/adaptive-tiles-backgroundimage.png)
 
-Additionally, you can set a black overlay on your background image using **hint-overlay**, which accepts integers from 0-100, with 0 being no overlay and 100 being full black overlay. The default value is 20.
+此外，您可以使用 **hint-overlay** 在背景影像上設定黑色重疊，其可接受 0-100 的整數，0 是沒有重疊，而 100 則是完全黑色重疊。 預設值為 20。
 
 ```XML
 ...
@@ -1263,13 +1265,13 @@ TileWide = new TileBinding()
 ...
 ```
 
-**hint-overlay Result:**
+**hint-overlay 結果：**
 
-![example of an image hint overlay](images/adaptive-tiles-image-hintoverlay.png)
+![影像 hint overlay 的範例](images/adaptive-tiles-image-hintoverlay.png)
 
-### Peek image
+### 預覽影像
 
-You can specify an image that "peeks" in from the top of the tile. The peek image uses an animation to slide down/up from the top of the tile, peeking into view, and then later sliding back out to reveal the main content on the tile. To set a peek image, place an image element in the root of the &lt;binding&gt;, and set the placement attribute to "peek."
+您可以指定從磚的上方「預覽」的影像。 預覽影像使用動畫，從磚的上方向下/向上滑動以進入檢視，之後再向後滑出，以在磚上顯示主要內容。 若要設定預覽影像，將 image 元素放在 &lt;binding&gt; 的根目錄中，並將 placement 屬性設定為 "peek"。
 
 ```XML
 ...
@@ -1315,44 +1317,44 @@ TileWide = new TileBinding()
 ...
 ```
 
-![examples of peeking images](images/adaptive-tiles-imagepeeking.png)
+![預覽影像的範例](images/adaptive-tiles-imagepeeking.png)
 
-**Circle crop for peek and background images**
+**預覽和背景影像的圓形裁剪**
 
-Use the following attribute on peek and background images to do a circle crop:
+在預覽和背景影像上使用下列屬性以進行圓形裁剪：
 
 hint-crop="circle"
 
-The result will look like this:
+結果將看起來如下：
 
-![circle crop for peek and background image](images/circlecrop-image.png)
+![預覽和背景影像的圓形裁剪](images/circlecrop-image.png)
 
-**Use both peek and background image**
+**同時使用預覽和背景影像**
 
-To use both a peek and a background image on a tile notification, specify both a peek image and a background image in your notification payload.
+若要在磚通知上同時使用預覽和背景影像，請在您的通知承載中指定預覽影像和背景影像。
 
-The result will look like this:
+結果將看起來如下：
 
-![peek and background image used together](images/peekandbackground.png)
+![一起使用的預覽和背景影像](images/peekandbackground.png)
 
-**Use hint-overlay on a peek image**
+**在預覽影像上使用 hint-overlay**
 
-You can use **hint-overlay** on a peek image to add opacity and make the tile's display name more legible. If you specify **hint-overlay** on the &lt;binding&gt; element, the overlay will be applied to both the background and the peek image.
+您可以在預覽影像上使用 **hint-overlay** 增加不透明度，並讓磚的顯示名稱更為清楚。 如果您將 **hint-overlay** 指定到 &lt;binding&gt; 元素上，則會在背景和預覽影像上套用重疊。
 
-You can also apply **hint-overlay** to an &lt;image&gt; element that has placement="peek" or placement="background" to have discrete opacity levels for each of those images. If you don't specify an overlay, the background image opacity defaults to 20% and the peek image opacity defaults to 0%.
+您也可以將 **hint-overlay** 套用到有 placement="peek" 或 placement="background" 的 &lt;image&gt; 元素，讓這些影像有各自的不透明度。 如果您沒有指定重疊，則背景影像的不透明度預設為 20%，預覽影像的不透明度預設為 0%。
 
-This example shows a background image at 20% opacity (left) and at 0% opacity (right):
+這個範例顯示 20% 不透明度 (左) 以及 0% 不透明度 (右) 的背景影像：
 
-![hint-overlay on a peek image](images/hintoverlay.png)
+![預覽影像上的 hint-overlay](images/hintoverlay.png)
 
-## Vertical alignment (text stacking)
+## 垂直對齊方式 (文字堆疊)
 
 
-You can control the vertical alignment of content on your tile by using the **hint-textStacking** attribute on both the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element and [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
+您也可以使用 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素和 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上的 **hint-textStacking** 屬性，控制內容在您的磚上的垂直對齊方式。 根據預設，所有內容都會垂直靠上對齊，但是您也可以將內容靠下對齊或置中對齊。
 
-### Text stacking on binding element
+### binding 元素上的文字堆疊
 
-When applied at the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
+在 [&gt;binding&lt;](tiles-and-notifications-adaptive-tiles-schema.md) 層級套用時，文字堆疊會將通知內容當做一個整體來設定其垂直對齊方式，在品牌/徽章區域上方的可用垂直空間內對齊。
 
 ```XML
 ...
@@ -1396,11 +1398,11 @@ TileMedium = new TileBinding()
 ...
 ```
 
-![text stacking on binding element](images/adaptive-tiles-textstack-bindingelement.png)
+![binding 元素上的文字堆疊](images/adaptive-tiles-textstack-bindingelement.png)
 
-### Text stacking on subgroup element
+### 子群組元素上的文字堆疊
 
-When applied at the [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
+在 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 層級套用時，文字堆疊會設定子群組 (欄) 的垂直對齊方式，在整個群組中的可用垂直空間內對齊。
 
 ```XML
 ...
@@ -1477,12 +1479,12 @@ TileWide = new TileBinding()
 ...
 ```
 
-## Related topics
+## 相關主題
 
 
-* [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Special tile templates catalog](tiles-and-notifications-special-tile-templates-catalog.md)
+* [彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)
+* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [特殊磚範本目錄](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -1493,6 +1495,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

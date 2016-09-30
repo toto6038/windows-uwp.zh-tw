@@ -1,52 +1,52 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: Learn about solutions to common development issues with the Microsoft advertising libraries in XAML apps.
-title: XAML and C# troubleshooting guide
+description: "深入了解在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
+title: "XAML 和 C# 的疑難排解指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
 ---
 
-# XAML and C# troubleshooting guide
+# XAML 和 C# 的疑難排解指南
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-This topic contains solutions to common development issues with the Microsoft advertising libraries in XAML apps.
+本主題包含在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
 -   [XAML](#xaml)
 
-    -   [AdControl not appearing](#xaml-notappearing)
+    -   [沒有顯示 AdControl](#xaml-notappearing)
 
-    -   [Black box blinks and disappears](#xaml-blackboxblinksdisappears)
+    -   [黑色方塊閃爍然後消失](#xaml-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#xaml-adsnotrefreshing)
+    -   [廣告沒有重新整理](#xaml-adsnotrefreshing)
 
 -   [C#](#csharp)
 
-    -   [AdControl not appearing](#csharp-adcontrolnotappearing)
+    -   [沒有顯示 AdControl](#csharp-adcontrolnotappearing)
 
-    -   [Black box blinks and disappears](#csharp-blackboxblinksdisappears)
+    -   [黑色方塊閃爍然後消失](#csharp-blackboxblinksdisappears)
 
-    -   [Ads bot refreshing](#csharp-adsnotrefreshing)
+    -   [廣告沒有重新整理](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 ## XAML
 
 <span id="xaml-notappearing"/>
-### AdControl not appearing
+### 沒有顯示 AdControl
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
-2.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}" ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
     ```
 
-3.  Check the **Height** and **Width** properties. These must be set to one of the [Supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+3.  檢查 **Height** 和 **Width** 屬性。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -54,9 +54,9 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-4.  Check the element position. The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) must be inside the viewable area.
+4.  檢查元素的位置。 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必須在可檢視區域內。
 
-5.  Check the **Visibility** property. The optional **Visibility** property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
+5.  檢查 **Visibility** 屬性。 選擇性的 **Visibility** 屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -65,7 +65,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-6.  Check the **IsEnabled** property. The optional `IsEnabled` property must be set to `True`.
+6.  檢查 **IsEnabled** 屬性。 選用的 `IsEnabled` 屬性必須設為 `True`。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -74,7 +74,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-7.  Check the parent of the **AdControl**. If the **AdControl** element resides in a parent element, the parent must be active and visible.
+7.  檢查 **AdControl** 的父項。 如果 **AdControl** 元素位於父元素中，則父元素的狀態必須是使用中且可見。
 
     ``` syntax
     <StackPanel>
@@ -84,18 +84,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     </StackPanel>
     ```
 
-8.  Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
+8.  確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
 
-9.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+9.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="xaml-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### 黑色方塊閃爍然後消失
 
-1.  Double-check all steps in the previous [AdControl not appearing](#xaml-notappearing) section.
+1.  再次檢查前述[沒有顯示 AdControl](#xaml-notappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for more information.
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
-    This example demonstrates an **ErrorOccurred** event handler. The first snippet is the XAML UI markup.
+    此範例示範 **ErrorOccurred** 事件處理常式。 第一個程式碼片段是 XAML UI 標記。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -106,7 +106,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    This example demonstrates of the the corresponding code.
+    此範例示範對應的程式碼。
 
     ``` syntax
     private void adControl_ErrorOccurred(object sender,               
@@ -116,16 +116,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) is behaving normally.
+3.  [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 運作正常。
 
-    By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
+    根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
 <span id="xaml-adsnotrefreshing"/>
-### Ads not refreshing
+### 廣告沒有重新整理
 
-1.  Check the [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property. By default, this optional property is set to **True**. When set to **False**, the [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method must be used to retrieve another ad.
+1.  檢查 [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性。 根據預設，這個選用的屬性會設為 **True**。 當設為 **False** 時，必須使用 [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法來擷取另一個廣告。
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -134,9 +134,9 @@ This topic contains solutions to common development issues with the Microsoft ad
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  Check calls to the **Refresh** method. When using automatic refresh, **Refresh** cannot be used to retrieve another ad. When using manual refresh, **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  檢查對 **Refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **Refresh** 來擷取另一個廣告。 使用手動重新整理時，**Refresh** 應於最少 30 秒至 60 秒 (依裝置目前的數據連線而定) 之後才呼叫。
 
-    The following code snippets show an example of how to use the **Refresh** method. The first snippet is the XAML UI markup.
+    下列程式碼片段顯示如何使用 **Refresh** 方法的範例。 第一個程式碼片段是 XAML UI 標記。
 
     ``` syntax
     <UI:AdControl x:Name="adControl1"
@@ -146,7 +146,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   IsAutoRefreshEnabled="False" />
     ```
 
-    This code snippet shows an example of the C# code behind the UI markup.
+    這個程式碼片段顯示 UI 標記後置的 C# 程式碼範例。
 
     ``` syntax
     public Ads()
@@ -157,17 +157,17 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp"/>
 ## C\# #
 
 <span id="csharp-adcontrolnotappearing"/>
-### AdControl not appearing
+### 沒有顯示 AdControl
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
-2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated it will not be available.
+2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
@@ -194,7 +194,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
     ``` syntax
     adControl = new AdControl();
@@ -203,7 +203,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Width = 728;
     ```
 
-4.  Check the **Height** and **Width** parameters. These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+4.  檢查 **Height** 和 **Width** 參數。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
     ``` syntax
     adControl = new AdControl();
@@ -212,15 +212,15 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Height = 90;adControl.Width = 728;
     ```
 
-5.  Ensure the **AdControl** is added to a parent element. To display, the **AdControl** must be added as a child to a parent control (for example, a **StackPanel** or **Grid**).
+5.  確保 **AdControl** 新增至父元素。 若要顯示，**AdControl** 必須新增為父控制項的子項 (例如，**StackPanel** 或 **Grid**)。
 
     ``` syntax
     ContentPanel.Children.Add(adControl);
     ```
 
-6.  Check the **Margin** parameter. The **AdControl** must be inside the viewable area.
+6.  檢查 **Margin** 參數。 **AdControl** 必須在可檢視區域內。
 
-7.  Check the **Visibility** property. The optional **Visibility** property must be set to **Visible**.
+7.  檢查 **Visibility** 屬性。 選用的 **Visibility** 屬性必須設為 **Visible**。
 
     ``` syntax
     adControl = new AdControl();
@@ -231,7 +231,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Visibility = System.Windows.Visibility.Visible;
     ```
 
-8.  Check the **IsEnabled** property. The optional **IsEnabled** property must be set to **True**.
+8.  檢查 **IsEnabled** 屬性。 選用的 **IsEnabled** 屬性必須設為 **True**。
 
     ``` syntax
     adControl = new AdControl();
@@ -242,24 +242,24 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.IsEnabled = True;
     ```
 
-9.  Check the parent of the **AdControl**. The parent must be active and visible.
+9.  檢查 **AdControl** 的父項。 該父元素必須為使用中且可見。
 
-10. Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+10. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="csharp-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### 黑色方塊閃爍然後消失
 
-1.  Double-check all steps in the [AdControl not appearing](#csharp-adcontrolnotappearing) section above.
+1.  再次檢查上方[沒有顯示 AdControl](#csharp-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for more information.
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
-    The following examples show the basic code needed to implement an error call. This XAML code defines a **TextBlock** that is used to display the error message.
+    下列範例顯示實作錯誤呼叫所需的基本程式碼。 這個 XAML 程式碼會定義用來顯示錯誤訊息的 **TextBlock**。
 
     ``` syntax
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    This C# code retrieves the error message and displays it in the **TextBlock**.
+    這個 C# 程式碼會擷取錯誤訊息並在 **TextBlock** 中顯示。
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
@@ -288,16 +288,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp-adsnotrefreshing"/>
-### Ads not refreshing
+### 廣告沒有重新整理
 
-1.  Check the **IsAutoRefreshEnabled** property. By default, this optional property is set to **True**. When set to **False**, the **Refresh** method must be used to retrieve another ad.
+1.  檢查 **IsAutoRefreshEnabled** 屬性。 根據預設，這個選用的屬性會設為 **True**。 當設為 **False** 時，必須使用 **Refresh** 方法來擷取另一個廣告。
 
-    The following example demonstrates how to use the **IsAutoRefreshEnabled** property.
+    以下範例示範如何使用 **IsAutoRefreshEnabled** 屬性。
 
     ``` syntax
     adControl = new AdControl();
@@ -308,9 +308,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.IsAutoRefreshEnabled = true;
     ```
 
-2.  Check calls to the **Refresh** method. When using automatic refresh, **Refresh** cannot be used to retrieve another ad. When using manual refresh, **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  檢查對 **Refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **Refresh** 來擷取另一個廣告。 使用手動重新整理時，**Refresh** 應於最少 30 秒至 60 秒 (依裝置目前的數據連線而定) 之後才呼叫。
 
-    The following example demonstrates how to call the **Refresh** method.
+    下列範例示範如何呼叫 **Refresh** 方法。
 
     ``` syntax
     public MainPage()
@@ -332,7 +332,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
  
 
@@ -340,6 +340,6 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

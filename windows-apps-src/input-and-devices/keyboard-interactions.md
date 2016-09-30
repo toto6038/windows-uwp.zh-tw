@@ -6,17 +6,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f9c475a90c270270217999c5a7289e29e7fef208
-ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
 
 ---
 
 # 鍵盤互動
 
 
-鍵盤輸入是 app 之整體使用者互動經驗的一個重要部分。 對於某些行動不便的人或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的 app、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。  
-
+鍵盤輸入是 app 之整體使用者互動經驗的一個重要部分。 對於某些行動不便的人或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的 app、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。
 ![鍵盤主角影像](images/input-patterns/input-keyboard-small.jpg)
+
+
 
 **重要 API**
 
@@ -77,25 +78,25 @@ ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
 以下是觸控式鍵盤各種模式的範例。 第一個影像是預設版面配置，第二個是拇指版面配置 (不是所有語言都有提供)。
 <table>
 <tr>
-    <td>**預設配置模式的觸控式鍵盤：  **</td>
-    <td>![預設配置模式的觸控式鍵盤](images/touchkeyboard-standard.png)</td>
+    <td>**預設版面配置模式的觸控式鍵盤：  **</td>
+    <td>![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)</td>
 </tr>
 <tr>
-    <td>**展開配置模式的觸控式鍵盤：  **</td>
-    <td>![展開配置模式的觸控式鍵盤](images/touchkeyboard-expanded.png)</td>
+    <td>**展開版面配置模式的觸控式鍵盤：  **</td>
+    <td>![the touch keyboard in expanded layout mode](images/touchkeyboard-expanded.png)</td>
 </tr>
 <tr>
-    <td>**預設拇指配置模式的觸控式鍵盤：  **</td>
-    <td>![拇指配置模式的觸控式鍵盤](images/touchkeyboard-thumb.png)</td>
+    <td>**預設姆指版面配置模式的觸控式鍵盤：  **</td>
+    <td>![the touch keyboard in thumb layout mode](images/touchkeyboard-thumb.png)</td>
 </tr>
 <tr>
-    <td>**數字拇指配置模式的觸控式鍵盤：  **</td>
-    <td>![數字拇指配置模式的觸控式鍵盤](images/touchkeyboard-numeric-thumb.png)</td>
+    <td>**數字姆指版面配置模式的觸控式鍵盤：  **</td>
+    <td>![the touch keyboard in numeric thumb layout mode](images/touchkeyboard-numeric-thumb.png)</td>
 </tr>
 </table>
 
 
-成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的 app 操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
+成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的應用程式操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
 
 **注意** 觸控式鍵盤不支援切換和大多數的系統命令 (請參閱[模式](#keyboard_command_patterns))。
 
@@ -354,7 +355,7 @@ ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
 
 -   事件發送者。 發送者會回報附加了事件處理常式的物件。
 -   事件資料。 以鍵盤事件來說，該資料將會是 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) 的執行個體。 處理常式的委派是 [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904)。 對大多數處理常式案例來說，最相關的 **KeyRoutedEventArgs** 屬性是 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)，也有可能是 [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)。
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)。 由於鍵盤事件是路由事件，因此事件資料會提供 **OriginalSource**。 如果您是刻意讓物件透過物件樹反昇，有時 **OriginalSource** (而不是發送者) 就會成為較為重要的物件。 不過這需要視您的設計而定。 如需如何使用 **OriginalSource** 而非發送者的相關資訊，請參閱這個主題的＜鍵盤路由事件＞一節，或參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)。
+-   [ **OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810)。 由於鍵盤事件是路由事件，因此事件資料會提供 **OriginalSource**。 如果您是刻意讓物件透過物件樹反昇，有時 **OriginalSource** (而不是發送者) 就會成為較為重要的物件。 不過這需要視您的設計而定。 如需如何使用 **OriginalSource** 而非發送者的相關資訊，請參閱這個主題的＜鍵盤路由事件＞一節，或參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
 ### 附加鍵盤事件處理常式
 
@@ -399,7 +400,7 @@ void MyProject::MainPage::Grid_KeyUp(
 -   [**按鍵**](https://msdn.microsoft.com/library/windows/apps/hh943074)
 -   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
 -   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) (繼承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
+-   [ **OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810) (繼承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
 
 ### 按鍵
 
@@ -574,7 +575,7 @@ Private Sub MediaButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-**注意** 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) 或 [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) 可提供字串資訊，其中記載用於叫用該特定動作的捷徑。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在 app 中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確地為助憶鍵中的特定鍵加上文字底線。
+**注意** 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) 或 [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) 可提供字串資訊，其中記載用於叫用該特定動作的捷徑。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在 app 中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確的為助憶鍵中的特定鍵加上文字底線。
 
  
 
@@ -702,6 +703,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

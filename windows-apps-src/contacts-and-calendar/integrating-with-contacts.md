@@ -1,31 +1,27 @@
 ---
 author: normesta
-description: "說明如何在連絡人卡片中動作的旁邊新增您的 app"
-MSHAttr: PreferredLib:/library/windows/apps
-title: "將 App 連結到連絡人卡片上的動作"
-translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
-
+description: 'Shows how to add your app next to actions in a contact card'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+title: 'Connect your app to actions on a contact card'
 ---
 
-# 將 App 連結到連絡人卡片上的動作
+# Connect your app to actions on a contact card
 
-您的 app 可以顯示在連絡人卡片或迷你連絡人卡片上的動作旁邊。 使用者可以選擇您的 app 來執行動作，例如開啟個人資料頁面、撥打電話，或傳送訊息。
+Your app can appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message.
 
-![連絡人卡片與迷你連絡人卡片](images/all-contact-cards.png)
+![Contact card and mini contact card](images/all-contact-cards.png)
 
-若要開始，請尋找現有的連絡人或建立新的連絡人。 接下來，請建立「註解」**和幾個封裝資訊清單項目，以描述您的 app 支援哪些動作。 然後，撰寫執行動作的程式碼。
+To get started, find existing contacts or create new ones. Next, create an *annotation* and a few package manifest entries to describe which actions your app supports. Then, write code that perform the actions.
 
-如需更完整的範例，請參閱[連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)。
+For a more complete sample, see [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
 
-## 尋找或建立連絡人
+## Find or create a contact
 
-如果您的 app 可協助連絡人與其他人聯繫，請搜尋 Windows 以尋找連絡人，然後為他們加上註解。 如果您的 app 可管理連絡人，您可以將他們新增到 Windows 連絡人清單，然後為他們加上註解。
+If your app helps people connect with others, search Windows for contacts and then annotate them. If your app manages contacts, you can add them to a Windows contact list and then annotate them.
 
-### 尋找連絡人
+### Find a contact
 
-使用姓名、電子郵件地址或電話號碼來尋找連絡人。
+Find contacts by using a name, email address, or phone number.
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -37,9 +33,9 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### 建立連絡人
+### Create a contact
 
-如果您的 app 比較像通訊錄，請建立連絡人，然後將他們新增到連絡人清單。
+If your app is more like an address book, create contacts and then add them to a contact list.
 
 ```cs
 Contact contact = new Contact();
@@ -71,11 +67,11 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## 使用註解來標記每個連絡人
+## Tag each contact with an annotation
 
-使用您的 app 可以執行 (例如：視訊通話與傳訊) 的動作 (作業) 清單來標記每個連絡人。
+Tag each contact with a list of actions (operations) that your app can perform (for example: video calls and messaging).
 
-然後，將連絡人的識別碼與您 app 內部用來識別連絡人的識別碼相關聯。
+Then, associate the ID of a contact to an ID that your app uses internally to identify that user.
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -101,11 +97,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## 登錄每項作業
+## Register for each operation
 
-在您的封裝資訊清單中，登錄您在註解中列出的每項作業。
+In your package manifest, register for each operation that you listed in your annotation.
 
-透過將通訊協定處理常式新增到資訊清單的 ``Extensions`` 元素來登錄。
+Register by adding protocol handlers to the ``Extensions`` element of the manifest.
 
 ```xml
 <Extensions>
@@ -131,25 +127,25 @@ await annotationList.TrySaveAnnotationAsync(annotation);
   </uap:Extension>
 </Extensions>
 ```
-您也可以在 Visual Studio 中資訊清單設計工具的 [宣告]**** 索引標籤中新增這些處理常式。
+You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
 
-![資訊清單設計工具的 [宣告] 索引標籤](images/manifest-designer-protocols.png)
+![Declarations tab of the manifest designer](images/manifest-designer-protocols.png)
 
-## 在連絡人卡片中動作的旁邊尋找您的 app
+## Find your app next to actions in a contact card
 
-開啟連絡人 app。 您的 app 會顯示在您於註解和封裝資訊清單中指定的每個動作 (作業) 旁邊。
+Open the People app. Your app appears next to each action (operation) that you specified in your annotation and package manifest.
 
-![連絡人卡片](images/a-contact-card.png)
+![Contact Card](images/a-contact-card.png)
 
-如果使用者針對某項動作選擇您的 app，它就會在使用者下次開啟連絡人卡片時顯示為該動作的預設 app。
+If users choose your app for an action, it appears as the default app for that action the next time users open a contact card.
 
-## 在迷你連絡人卡片中動作的旁邊尋找您的 app
+## Find your app next to actions in a mini contact card
 
-在迷你連絡人卡片中，您的 app 會顯示在代表動作的索引標籤中。
+In mini contact cards, your app appears in tabs that represent actions.
 
-![迷你連絡人卡片](images/mini-contact-card.png)
+![Mini Contact Card](images/mini-contact-card.png)
 
-像**郵件**這樣的 app 會開啟迷你連絡人卡片。 您的 app 也可以開啟它們。 這個程式碼會示範做法。
+Apps such as the **Mail** app open mini contact cards. Your app can open them too. This code shows you how to do that.
 
 ```cs
 public async void OpenContactCard(object sender, RoutedEventArgs e)
@@ -170,21 +166,21 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 }
 ```
 
-若要查看更多使用迷你連絡人卡片的範例，請參閱[連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)。
+To see more examples with mini contact cards, see [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards).
 
-就像連絡人卡片一樣，每個索引標籤都會記住使用者上次使用的 app，以方便使用者繼續使用您的 app。
+Just like the contact card, each tab remembers the app that the user last used so it's easy for them to return to your app.
 
-## 在使用者於連絡人卡片中選取您的 app 時執行作業
+## Perform operations when users select your app in a contact card
 
-複寫您 **App.cs** 檔案中的 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，並將使用者導覽至您 app 中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
+Override the [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) method  in your **App.cs** file and navigate users to a page in your app. The [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) shows one way to do that.
 
-在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
+In the code behind file of the page, override the [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) method. The contact card passes this method the name of operation and the ID of the user.
 
-若要開始視訊或語音通話，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 命名空間中發現完整的 API。
+To start a video or audio call, see this sample: [VoIP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). You'll find the complete API in the [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) namespace.
 
-若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) 命名空間。
+To facilitate messaging, see the [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) namespace.
 
-您也可以啟動另一個 app。 這就是此程式碼所執行的動作。
+You can also start another app. That's what this code does.
 
 ```cs
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -208,10 +204,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-```args.uri.scheme``` 屬性包含作業的名稱，```args.uri.Query``` 屬性則包含使用者的識別碼。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+The ```args.uri.scheme``` property contains the name of the operation, and the ```args.uri.Query``` property contains the ID of the user.

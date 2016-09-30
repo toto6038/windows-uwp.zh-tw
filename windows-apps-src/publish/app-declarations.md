@@ -1,72 +1,72 @@
 ---
 author: jnHs
-Description: You can provide additional information about your app in the App declarations section of the App properties page during the submission process.
-title: App declarations
+Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。"
+title: "應用程式宣告"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 ---
 
-# App declarations
+# 應用程式宣告
 
-You can provide additional information about your app in the **App declarations** section of the **App properties** page during the [submission process](app-submissions.md). These declarations can help make sure your app is displayed appropriately and offered to the right set of customers, or can indicate how customers can use your app.
+您可以在[提交程序](app-submissions.md)中，於 [應用程式內容]**** 頁面的 [應用程式宣告]**** 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
 
-The following sections describe each declaration and what you need to consider when determining whether each declaration applies to your app.
+下列各節說明每個宣告，以及您在決定每個宣告是否適合 app 時應考量的事項。
 
-## This app allows users to make purchases, but does not use the Windows Store commerce system.
+## 這個應用程式允許使用者進行購買，但不是使用 Windows 市集商務系統。
 
-Most apps should leave this box unchecked, since apps which offer opportunities to make in-app purchases generally use the Microsoft in-app purchase API to create and [submit the add-ons](add-on-submissions.md). Per the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), apps that were created and submitted prior to June 29, 2015, may continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
+大部分 app 應該讓此方塊保留未選取，因為提供機會進行 App 內購買的 app 通常使用 Microsoft app 內購買 API 來建立和[提交 IAP](iap-submissions.md)。 根據 [app 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前建立並送出的 app 得以繼續提供 app 內購買功能，而不需使用 Microsoft 的商務引擎，只要購買功能符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
-## This app has been tested to meet accessibility guidelines.
+## 這個應用程式已經過測試，符合協助工具指導方針。
 
-Checking this box makes your app discoverable to customers who are specifically looking for accessible apps in the Store.
+勾選此核取方塊，讓特地在市集中尋找無障礙應用程式的客戶能夠探索您的應用程式。
 
-You should only check this box if you have done all of the following items:
+如果您已完成下列項目，則應該只勾選此方塊：
 
--   Set all the relevant accessibility info for UI elements, such as accessible names.
--   Implemented keyboard navigation and operations, taking into account tab order, keyboard activation, arrow keys navigation, shortcuts.
--   Ensured an accessible visual experience by including such things as a 4.5:1 text contrast ratio, and don't rely on color alone to convey info to the user.
--   Used accessibility testing tools, such as Inspect or AccChecker, to verify your app, and resolve all high-priority errors detected by those tools.
--   Verified the app’s key scenarios from end to end using such facilities and tools as Narrator, Magnifier, On Screen Keyboard, High Contrast, and High DPI.
+-   已設定 UI 元素的所有相關協助工具資訊，例如，無障礙的名稱。
+-   已實作鍵盤瀏覽與操作、考慮 Tab 鍵順序、鍵盤啟動、方向鍵瀏覽、捷徑。
+-   已透過納入像是 4.5:1 文字對比率，而不只是依賴色彩來向使用者傳達資訊，確保無障礙的視覺經驗。
+-   已使用像是 Inspect 或 AccChecker 等協助工具測試工具來驗證您的應用程式，並解決那些工具偵測到的所有高優先順序錯誤。
+-   已使用像是朗讀程式、放大鏡、螢幕小鍵盤、高對比及高 DPI 等設備與工具，全盤檢驗應用程式的重要情境。
 
-When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
+當您將應用程式宣告為無障礙應用程式時，表示同意所有客戶 (包含殘障人士) 都能使用您的應用程式。 例如，這表示您已使用高對比模式和螢幕助讀程式測試過應用程式。 您也已經確認當使用鍵盤、放大鏡以及其他協助工具時，使用者介面都可以正常運作。
 
-For more info, see [Accessibility for Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/dn263101), [Accessibility testing](https://msdn.microsoft.com/library/windows/apps/mt297664), and [Accessibility in the Store](https://msdn.microsoft.com/library/windows/apps/mt297663).
+如需詳細資訊，請參閱 [Windows 執行階段 app 的協助工具](https://msdn.microsoft.com/library/windows/apps/dn263101)、[協助工具測試](https://msdn.microsoft.com/library/windows/apps/mt297664)和[市集中的協助工具](https://msdn.microsoft.com/library/windows/apps/mt297663)。
 
-> **Important**  Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.
+> **重要：**請勿將您的 app 列示為無障礙 app，除非您已經特別針對該用途為 app 進行了工程設計及測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
-## Customers can install this app to alternate drives or removable storage.
+## 客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-This box is checked by default, to allow customers to install your app to removable storage media such as an SD card, or to a non-system volume drive such as an external drive.
+預設會勾選此方塊，讓客戶能夠將您的應用程式安裝至抽取式存放裝置媒體 (例如 SD 記憶卡)，或是安裝至非系統磁碟區磁碟機 (例如外部磁碟機)。
 
-If you want to prevent your app from being installed to alternate drives or removable storage, uncheck this box.
+如果您想防止 app 安裝至備用磁碟機或抽取式存放裝置，請取消選取此方塊。
 
-Note that there is no option to restrict installation so that an app can only be installed to removable storage media.
+請注意，沒有選項可用來限制 app 只能安裝到抽取式存放裝置媒體。
 
-> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
+> **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
 
-## Windows can include this app's data in automatic backups to OneDrive.
+## Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
-This box is checked by default, to allow your app's data to be included when a customer chooses to have Windows make automated backups to OneDrive.
+預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。
 
-If you want to prevent your app's data from being included in automated backups, uncheck this box.
+如果您想要防止 app 的資料包含於自動備份中，請取消選取此方塊。
 
-> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
-
- 
+> **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,68 +1,68 @@
 ---
 author: mtoepke
-title: Optimize input latency for Universal Windows Platform (UWP) DirectX games
-description: Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished.
+title: "最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲"
+description: "輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
+ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
 
 ---
 
-#  Optimize input latency for Universal Windows Platform (UWP) DirectX games
+#  最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished. Additionally, proper input event optimization can improve battery life. Learn how to choose the right CoreDispatcher input event processing options to make sure your game handles input as smoothly as possible.
+輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。 此外，適當的輸入事件最佳化可以增加電池使用時間。 了解如何選擇正確的 CoreDispatcher 輸入事件處理選項，可確保您的遊戲可以盡可能順暢地處理輸入。
 
-## Input latency
-
-
-Input latency is the time it takes for the system to respond to user input. The response is often a change in what's displayed on the screen, or what's heard through audio feedback.
-
-Every input event, whether it comes from a touch pointer, mouse pointer, or keyboard, generates a message to be processed by an event handler. Modern touch digitizers and gaming peripherals report input events at a minimum of 100 Hz per pointer, which means that apps can receive 100 events or more per second per pointer (or keystroke). This rate of updates is amplified if multiple pointers are happening concurrently, or a higher precision input device is used (for example, a gaming mouse). The event message queue can fill up very quickly.
-
-It's important to understand the input latency demands of your game so that events are processed in a way that is best for the scenario. There is no one solution for all games.
-
-## Power efficiency
+## 輸入延遲
 
 
-In the context of input latency, "power efficiency" refers to how much a game uses the GPU. A game that uses less GPU resources is more power efficient and allows for longer battery life. This also holds true for the CPU.
+輸入延遲是指系統回應使用者輸入所需的時間。 此回應通常是畫面上顯示內容的變更，或透過音訊回饋聽到的內容。
 
-If a game can draw the whole screen at less than 60 frames per second (currently, the maximum rendering speed on most displays) without degrading the user's experience, it will be more power efficient by drawing less often. Some games only update the screen in response to user input, so those games should not draw the same content repeatedly at 60 frames per second.
+每個輸入事件 (無論是來自觸控指標、滑鼠指標或鍵盤) 都會產生一個事件處理常式需要處理的訊息。 現代的觸控數位板和遊戲周邊裝置以每個指標最低 100 Hz 的速度回報輸入事件，這表示應用程式每秒至少可以接收每個指標 (或按鍵輸入) 的 100 個事件。 如果多個指標同時發生，或使用精確度更高的輸入裝置 (例如，遊戲用滑鼠)，則會增加這個更新率。 事件訊息佇列可能會非常快速地填滿。
 
-## Choosing what to optimize for
+您務必了解遊戲的輸入延遲需求，讓事件可以透過最適合該情況的方式處理。 沒有一個解決方案適用於所有遊戲。
 
-
-When designing a DirectX app, you need to make some choices. Does the app need to render 60 frames per second to present smooth animation, or does it only need to render in response to input? Does it need to have the lowest possible input latency, or can it tolerate a little bit of delay? Will my users expect my app to be judicious about battery usage?
-
-The answers to these questions will likely align your app with one of the following scenarios:
-
-1.  Render on demand. Games in this category only need to update the screen in response to specific types of input. Power efficiency is excellent because the app doesn’t render identical frames repeatedly, and input latency is low because the app spends most of its time waiting for input. Board games and news readers are examples of apps that might fall into this category.
-2.  Render on demand with transient animations. This scenario is similar to the first scenario except that certain types of input will start an animation that isn’t dependent on subsequent input from the user. Power efficiency is good because the game doesn’t render identical frames repeatedly, and input latency is low while the game is not animating. Interactive children’s games and board games that animate each move are examples of apps that might fall into this category.
-3.  Render 60 frames per second. In this scenario, the game is constantly updating the screen. Power efficiency is poor because it renders the maximum number of frames the display can present. Input latency is high because DirectX blocks the thread while content is being presented. Doing so prevents the thread from sending more frames to the display than it can show to the user. First person shooters, real-time strategy games, and physics-based games are examples of apps that might fall into this category.
-4.  Render 60 frames per second and achieve the lowest possible input latency. Similar to scenario 3, the app is constantly updating the screen, so power efficiency will be poor. The difference is that the game responds to input on a separate thread, so that input processing isn’t blocked by presenting graphics to the display. Online multiplayer games, fighting games, or rhythm/timing games might fall into this category because they support move inputs within extremely tight event windows.
-
-## Implementation
+## 電源效率
 
 
-Most DirectX games are driven by what is known as the game loop. The basic algorithm is to perform these steps until the user quits the game or app:
+在輸入延遲的內容中，「電源效率」指的是某個遊戲使用多少 GPU。 使用 GPU 資源越少的遊戲，其電源效率越好，而且電池使用時間越長。 對於 CPU 而言也是如此。
 
-1.  Process input
-2.  Update the game state
-3.  Draw the game content
+如果某個遊戲可以用每秒少於 60 個畫面格 (目前在大多數顯示器上的最大轉譯速度) 繪製整個場景，而且不會降低使用者的體驗品質，繪製較少的場景通常會使電源更有效率。 有些遊戲更新畫面只為回應使用者輸入，因此，那些遊戲應該不會以每秒 60 個畫面格重複繪製相同的內容。
 
-When the content of a DirectX game is rendered and ready to be presented to the screen, the game loop waits until the GPU is ready to receive a new frame before waking up to process input again.
-
-We’ll show the implementation of the game loop for each of the scenarios mentioned earlier by iterating on a simple jigsaw puzzle game. The decision points, benefits, and tradeoffs discussed with each implementation can serve as a guide to help you optimize your apps for low latency input and power efficiency.
-
-## Scenario 1: Render on demand
+## 選擇要最佳化的內容
 
 
-The first iteration of the jigsaw puzzle game only updates the screen when a user moves a puzzle piece. A user can either drag a puzzle piece into place or snap it into place by selecting it and then touching the correct destination. In the second case, the puzzle piece will jump to the destination with no animation or effects.
+設計 DirectX 應用程式時，您需要做一些選擇。 應用程式需要每秒轉譯 60 個畫面格才能呈現順暢的動畫？或者只需要轉譯以回應輸入？ 應用程式需要有最低的輸入延遲？或者能夠容忍些許延遲？ 我的使用者是否期望我的應用程式對於電池使用有最妥善的利用？
 
-The code has a single-threaded game loop within the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method that uses **CoreProcessEventsOption::ProcessOneAndAllPending**. Using this option dispatches all currently available events in the queue. If no events are pending, the game loop waits until one appears.
+這些問題的回答可能會將您的應用程式與下列其中一種案例對應：
+
+1.  視需求轉譯。 此類別中的遊戲只需要更新畫面以回應特定類型的輸入。 因為應用程式不會重複轉譯相同的畫面格，所以電源效率良好；而因為應用程式大部分的時間是在等待輸入，所以輸入延遲很低。 棋盤遊戲與新聞閱讀程式可歸到此類別的應用程式範例。
+2.  包含暫時動畫的視需求轉譯。 此案例與第一個案例類似，不同的是某些類型的輸入會啟動動畫，而不需仰賴使用者後續的輸入。 因為遊戲不會重複轉譯相同的畫面格，所以電源效率良好，而當遊戲未顯示動畫時，輸入延遲很低。 每次移動都顯示動畫的互動式兒童遊戲與棋盤遊戲可歸到此類別的應用程式範例。
+3.  每秒轉譯 60 個畫面格。 在此案例中，遊戲會不斷更新畫面。 因為轉譯的畫面格數目達到顯示器可呈現的上限，所以電源效率不佳。 因為 DirectX 會在呈現內容時封鎖執行緒，所以輸入延遲很高。 這樣做可避免執行緒傳送的畫面格數目超過顯示器可向使用者顯示的數目。 第一人稱射擊的即時戰略遊戲與物理原理遊戲可歸到此類別的應用程式範例。
+4.  每秒轉譯 60 個畫面格並達到最低的輸入延遲。 與案例 3 類似，app 會不斷更新畫面，因此電源效率將變差。 差別在於遊戲是在個別的執行緒上回應輸入，因此輸入處理不會因為呈現圖形到顯示器而被封鎖。 線上的多人遊戲、格鬥遊戲或律動/計時遊戲可歸到此類別，因為它們支援在極密集的事件時段內輸入操作。
+
+## 實作
+
+
+大部分的 DirectX 遊戲都是透過所謂的遊戲迴圈所驅動。 基本的演算法就是執行這些步驟，直到使用者結束遊戲或應用程式為止：
+
+1.  處理輸入
+2.  更新遊戲狀態
+3.  繪製遊戲內容
+
+當 DirectX 遊戲的內容經過轉譯，並準備好呈現到畫面上時，遊戲迴圈會等到 GPU 準備好接收新的畫面，然後才喚醒以再次處理輸入。
+
+我們將會針對簡單的拼圖遊戲進行反覆處理，以便為稍早提到的每個案例顯示遊戲迴圈的實作。 與每個實作一起討論的決策點、優點以及取捨可以當做指南，協助您針對低延遲輸入以及電源效率最佳化您的 app。
+
+## 案例 1：視需求轉譯
+
+
+拼圖遊戲的第一個反覆運算只會在使用者移動拼圖時更新畫面。 使用者可以選取一塊拼圖然後觸碰正確的目的地，將其拖曳到定位或貼齊定位。 在第二個情況下，這塊拼圖會在沒有動畫或效果的情況下跳到目的地。
+
+此程式碼在使用 **CoreProcessEventsOption::ProcessOneAndAllPending** 的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法內，有一個單一執行緒的遊戲迴圈。 使用這個選項會在佇列中分派所有目前可用的事件。 如果沒有任何事件擱置中，遊戲迴圈會等到有事件出現為止。
 
 ``` syntax
 void App::Run()
@@ -88,12 +88,12 @@ void App::Run()
 }
 ```
 
-## Scenario 2: Render on demand with transient animations
+## 案例 2：包含暫時動畫的視需求轉譯
 
 
-In the second iteration, the game is modified so that when a user selects a puzzle piece and then touches the correct destination for that piece, it animates across the screen until it reaches its destination.
+在第二個反覆運算中，遊戲經過修改，所以使用者選取一塊拼圖然後觸碰這塊拼圖的正確目的地時，拼圖會以動畫形式越過畫面，直到到達其目的地為止。
 
-As before, the code has a single-threaded game loop that uses **ProcessOneAndAllPending** to dispatch input events in the queue. The difference now is that during an animation, the loop changes to use **CoreProcessEventsOption::ProcessAllIfPresent** so that it doesn’t wait for new input events. If no events are pending, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) returns immediately and allows the app to present the next frame in the animation. When the animation is complete, the loop switches back to **ProcessOneAndAllPending** to limit screen updates.
+和之前一樣，此程式碼有一個使用 **ProcessOneAndAllPending** 的單一執行緒遊戲迴圈，以分派佇列中的輸入事件。 現在的差異是在動畫期間，迴圈改為使用 **CoreProcessEventsOption::ProcessAllIfPresent**，所以它不會等待新的輸入事件。 如果沒有任何事件擱置中，[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 會立即傳回，並讓 app 呈現動畫中的下一個畫面。 當動畫完成時，迴圈會切換回 **ProcessOneAndAllPending** 以限制畫面更新。
 
 ``` syntax
 void App::Run()
@@ -134,14 +134,14 @@ void App::Run()
 }
 ```
 
-To support the transition between **ProcessOneAndAllPending** and **ProcessAllIfPresent**, the app must track state to know if it’s animating. In the jigsaw puzzle app, you do this by adding a new method that can be called during the game loop on the GameState class. The animation branch of the game loop drives updates in the state of the animation by calling GameState’s new Update method.
+為支援 **ProcessOneAndAllPending** 和 **ProcessAllIfPresent** 之間的轉換，app 必須追蹤狀態以了解是否有動畫效果。 在拼圖應用程式中，您可以在 GameState 類別，透過加入可在遊戲迴圈期間呼叫的新方法來完成。 遊戲迴圈的動畫分支透過呼叫 GameState 的新 Update 方法更新動畫的狀態。
 
-## Scenario 3: Render 60 frames per second
+## 案例 3：每秒轉譯 60 個畫面格
 
 
-In the third iteration, the app displays a timer that shows the user how long they’ve been working on the puzzle. Because it displays the elapsed time up to the millisecond, it must render 60 frames per second to keep the display up to date.
+在第三個反覆運算中，應用程式顯示一個計時器，這個計時器會向使用者顯示他們已經花在處理拼圖上的時間。 由於它所顯示的經過時間以毫秒為單位，因此每秒必須轉譯 60 個畫面格，才能將顯示維持在最新狀態。
 
-As in scenarios 1 and 2, the app has a single-threaded game loop. The difference with this scenario is that because it’s always rendering, it no longer needs to track changes in the game state as was done in the first two scenarios. As a result, it can default to use **ProcessAllIfPresent** for processing events. If no events are pending, **ProcessEvents** returns immediately and proceeds to render the next frame.
+如同案例 1 和 2，應用程式有一個單一執行緒的遊戲迴圈。 與此案例的差異在於，由於應用程式一直在轉譯，所以不再需要和前兩個案例一樣追蹤遊戲狀態的變更。 因此，它可以預設為使用 **ProcessAllIfPresent** 處理事件。 如果沒有任何事件擱置中，**ProcessEvents** 會立即傳回，並繼續轉譯下一個畫面。
 
 ``` syntax
 void App::Run()
@@ -170,16 +170,16 @@ void App::Run()
 }
 ```
 
-This approach is the easiest way to write a game because there’s no need to track additional state to determine when to render. It achieves the fastest rendering possible along with reasonable input responsiveness on a timer interval.
+這是撰寫遊戲最簡單的方式，因為不需要追蹤其他狀態就可以判斷轉譯時機。 此方式可在計時器間隔達到最快的轉譯以及合理的輸入回應。
 
-However, this ease of development comes with a price. Rendering at 60 frames per second uses more power than rendering on demand. It’s best to use **ProcessAllIfPresent** when the game is changing what is displayed every frame. It also increases input latency by as much as 16.7 ms because the app is now blocking the game loop on the display’s sync interval instead of on **ProcessEvents**. Some input events might be dropped because the queue is only processed once per frame (60 Hz).
+不過，這個簡單的開發方式要付出代價。 每秒轉譯 60 個畫面格所使用的電源比視需求轉譯還多。 當遊戲要變更每個畫面所顯示的內容時，最好使用 **ProcessAllIfPresent**。 此方式也會增加 16.7 毫秒的輸入延遲，因為 app 現在會在顯示器的同步間隔而非 **ProcessEvents** 封鎖遊戲迴圈。 由於每個畫面只會處理一次佇列 (60 Hz)，因此可能會捨棄一些輸入事件。
 
-## Scenario 4: Render 60 frames per second and achieve the lowest possible input latency
+## 案例 4：每秒轉譯 60 個畫面格並達到最低的輸入延遲
 
 
-Some games may be able to ignore or compensate for the increase in input latency seen in scenario 3. However, if low input latency is critical to the game’s experience and sense of player feedback, games that render 60 frames per second need to process input on a separate thread.
+有些遊戲或許能夠忽略或補償案例 3 中所看到的輸入延遲增加。 不過，如果輸入延遲低對於遊戲的體驗以及玩家意見反應來說非常重要，每秒轉譯 60 個畫面格的遊戲就必須針對個別的執行緒處理輸入。
 
-The fourth iteration of the jigsaw puzzle game builds on scenario 3 by splitting the input processing and graphics rendering from the game loop into separate threads. Having separate threads for each ensures that input is never delayed by graphics output; however, the code becomes more complex as a result. In scenario 4, the input thread calls [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), which waits for new events and dispatches all available events. It continues this behavior until the window is closed or the game calls [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
+拼圖遊戲的第四個反覆運算建立在案例 3 之上，方法是，將遊戲迴圈的輸入處理和圖形轉譯分割成個別的執行緒。 每個遊戲迴圈擁有個別的執行緒可確保圖形輸出絕不會延遲輸入，不過，程式碼會因此變得更為複雜。 在案例 4 中，輸入執行緒會使用 [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217) 呼叫 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，以等待新的事件並分派所有可用的事件。 它會繼續這個行為，直到視窗關閉或遊戲呼叫 [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 為止。
 
 ``` syntax
 void App::Run()
@@ -230,37 +230,37 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-The **DirectX 11 and XAML App (Universal Windows)** template in Microsoft Visual Studio 2015 splits the game loop into multiple threads in a similar fashion. It uses the [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) object to start a thread dedicated to handling input and also creates a rendering thread independent of the XAML UI thread. For more details on these templates, read [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+Microsoft Visual Studio 2015 中的 **DirectX 11 和 XAML App (通用 Windows)** 範本會以類似的方式，將遊戲迴圈分割成多個執行緒。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
-## Additional ways to reduce input latency
+## 降低輸入延遲的其他方式
 
 
-### Use waitable swap chains
+### 使用可等候的交換鏈結
 
-DirectX games respond to user input by updating what the user sees on-screen. On a 60 Hz display, the screen refreshes every 16.7 ms (1 second/60 frames). Figure 1 shows the approximate life cycle and response to an input event relative to the 16.7 ms refresh signal (VBlank) for an app that renders 60 frames per second:
+DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用者輸入。 在 60 Hz 顯示器上，畫面每 16.7 毫秒 (1 秒/60 個畫面格) 會重新整理一次。 圖 1 顯示大約的生命週期以及對輸入事件的回應 (相對於每秒轉譯 60 個畫面格的應用程式 16.7 毫秒的重新整理訊號 (VBlank))：
 
-Figure 1
+圖 1
 
-![figure 1 input latency in directx ](images/input-latency1.png)
+![圖 1 Directx 的輸入延遲 ](images/input-latency1.png)
 
-In Windows 8.1, DXGI introduced the **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** flag for the swap chain, which allows apps to easily reduce this latency without requiring them to implement heuristics to keep the Present queue empty. Swap chains created with this flag are referred to as waitable swap chains. Figure 2 shows the approximate life cycle and response to an input event when using waitable swap chains:
+在 Windows 8.1 中，DXGI 為交換鏈結引進了 **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** 旗標，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持 Present 佇列空白。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
 
-Figure 2
+圖 2
 
-![figure2 input latency in directx waitable](images/input-latency2.png)
+![圖 2 Directx 可等候的輸入延遲](images/input-latency2.png)
 
-What we see from these diagrams is that games can potentially reduce input latency by two full frames if they are capable of rendering and presenting each frame within the 16.7 ms budget defined by the display’s refresh rate. The jigsaw puzzle sample uses waitable swap chains and controls the Present queue limit by calling:` m_deviceResources->SetMaximumFrameLatency(1);`
-
- 
+我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 拼圖範例透過呼叫下行來使用可等候的交換鏈結，並控制 Present 佇列的限制：` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,7 +5,7 @@ description: "在這裡，我們將示範如何在基本型別上使用深度、
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
+ms.openlocfilehash: 47547a226a69b2631313972ed67b39b1f29de402
 
 ---
 
@@ -458,6 +458,6 @@ private:
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

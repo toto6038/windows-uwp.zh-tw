@@ -1,202 +1,202 @@
 ---
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: Test with the Microsoft Emulator for Windows 10 Mobile
-description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
+title: "使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試"
+description: "使用「適用於 Windows 10 行動裝置版的 Microsoft 模擬器」隨附的工具來模擬與裝置的實際互動，以及測試應用程式的功能。"
 translationtype: Human Translation
 ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
-ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
+ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
 
 ---
-# Test with the Microsoft Emulator for Windows 10 Mobile
+# 使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.
+使用「適用於 Windows 10 行動裝置版的 Microsoft 模擬器」隨附的工具來模擬與裝置的實際互動，以及測試應用程式的功能。 模擬器是模擬執行 Windows 10 之行動裝置的傳統型 app。 它提供虛擬化環境，讓您可以在其中針對 Windows app 進行偵錯與測試，而不需要擁有實體裝置。 它也提供隔離的環境供您的應用程式原型使用。
 
-The emulator is designed to provide comparable performance to an actual device. Before you publish your app to the Windows Store, however, we recommend that you test your app on a physical device.
+模擬器的設計是要提供相當於實體裝置的效能。 不過，在將應用程式發佈到 Windows 市集之前，建議您先在實體裝置上測試您的應用程式。
 
-You can test your universal app using a unique Windows 10 Mobile emulator image for various screen resolution and screen size configurations. You can simulate real-world interaction with a device and test various features of your app by using the tools included in the Microsoft Emulator.
+您可以針對各種螢幕解析度與螢幕大小設定，使用獨特的 Windows 10 Mobile 模擬器映像來測試您的通用應用程式。 您可以使用 Microsoft 模擬器來模擬與裝置的實際互動，並測試應用程式的各功能。
 
-## System requirements
+## 系統需求
 
-Your computer must meet the following requirements:
+您的電腦必須符合下列需求：
 
 BIOS
 
--   Hardware-assisted virtualization.
--   Second Level Address Translation (SLAT).
--   Hardware-based Data Execution Prevention (DEP).
+-   硬體協助虛擬化。
+-   第二層位址轉譯 (SLAT)。
+-   硬體型資料執行防止 (DEP)。
 
 RAM
 
--   4 GB or more.
+-   4 GB 或更多。
 
-Operating system
+作業系統
 
--   Windows 8 or higher (Windows 10 strongly recommended)
--   64-bit
--   Pro edition or higher
+-   Windows 8 或更高的版本 (強烈建議使用 Windows 10)
+-   64 位元
+-   Pro 版本或更高的版本
 
-To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
+若要檢查 BIOS 需求，請參閱[如何為 Windows Phone 8 的模擬器啟用 Hyper-V](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx)。
 
-To check requirements for RAM and operating system, in Control Panel, click **System and Security**, and then click **System**.
+若要檢查 RAM 與作業系統的需求，請在 [控制台] 中，按一下 [系統及安全性]****，然後按一下 [系統]****。
 
-Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
+適用於 Windows 10 Mobile 的 Microsoft 模擬器需要 Visual Studio 2015，它無法與舊版 Visual Studio 回溯相容。
 
-Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
+適用於 Windows 10 Mobile 的 Microsoft 模擬器無法載入以 Windows Phone OS 7.1 之前的 Windows Phone OS 版本為目標的應用程式。
 
-## Installing and uninstalling
+## 安裝與解除安裝
 
--   **Installing**.
+-   **安裝**。
 
-    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio 2015 install. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+    適用於 Windows 10 Mobile 的 Microsoft 模擬器隨附於 Windows 10 SDK。 安裝 Visual Studio 2015 時也可以安裝 Windows 10 SDK 與模擬器。 請參閱 [Visual Studio 下載頁面](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
 
-    You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
+    您也可以使用 Microsoft 模擬器安裝程式來安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器。 請參閱 [Windows 10 工具下載頁面](https://go.microsoft.com/fwlink/p/?LinkID=534189)。
 
--   **Uninstalling**.
+-   **解除安裝**。
 
-    You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
+    您可以使用 Visual Studio 安裝程式/修復功能來解除安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器。 或者，您可以使用 [控制台]**** 下的 [程式和功能]**** 來移除模擬器。
 
-    When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
+    當您解除安裝適用於 Windows 10 Mobile 的 Microsoft 模擬器時，系統並不會自動移除建立供模擬器使用的 Hyper-V 虛擬乙太網路介面卡。 您可以從 [控制台]**** 中的 [網路連線]**** 手動移除此虛擬介面卡。
 
-## What’s new in Microsoft Emulator for Windows 10 Mobile
+## 適用於 Windows 10 Mobile 的 Microsoft 模擬器中的新增功能
 
-In addition to providing support for Universal Windows Platform (UWP), the emulator has added the following functionality:
+除了提供對通用 Windows 平台 (UWP) 的支援之外，模擬器也新增下列功能：
 
--   Mouse input mode support to differentiate between mouse and single touch input.
--   NFC Support. The emulator allows you to simulate NFC and make it possible to test and develop NFC/Proximity-enabled universal apps.
--   Native hardware acceleration improves graphics performance in the emulator by using the local graphics card. You must have a supported graphics card installed, and enable acceleration on the **Sensors** tab of the emulator's **Additional Tools** settings user interface in order to use acceleration.
+-   滑鼠輸入模式支援，以區分滑鼠與單點觸控輸入。
+-   NFC 支援。 模擬器可讓您模擬 NFC，並測試及開發具有 NFC/近接功能的通用 App。
+-   原生硬體加速可在模擬器中使用本機顯示卡提升圖形效能。 您必須已安裝支援的顯示卡，並在模擬器的 [其他工具]**** 設定使用者介面的 [感應器]**** 索引標籤上啟用加速，才能使用加速。
 
-## Features that you can test in the emulator
+## 您可以在模擬器中測試的功能
 
-In addition to the new features mentioned in the previous section, you can test the following commonly used features in the Microsoft Emulator for Windows 10 Mobile.
+除了上一節所述的新功能，您可以測試適用於 Windows 10 行動裝置版的 Microsoft 模擬器中的下列常用功能。
 
--   **Screen resolution, screen size, and memory**. Reach a broad market for your app by testing it on various emulator images to simulate various screen resolutions, physical sizes, and memory constraints.
+-   **螢幕解析度、螢幕大小及記憶體**。 透過在各種不同的模擬器影像上測試您的應用程式，以模擬各種螢幕解析度、實際大小及記憶體限制，可將您的應用程式推廣到更廣泛的市場。
 
-    ![Available emulators with resolution, size, and memory](images/em-list.png)
+    ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 
--   **Screen configuration**. Change the emulator from portrait to landscape mode. Change the zoom setting to fit the emulator to your desktop screen.
+-   **螢幕設定**。 將模擬器從直向變更為橫向模式。 變更縮放設定，讓模擬器符合您的桌面螢幕大小。
 
--   **Networking**. Networking support is integrated with Windows Phone Emulator. Networking is enabled by default. You do not have to install network drivers for Windows Phone Emulator or configure networking options manually in most environments.
+-   **網路功能**。 網路功能支援已與 Windows Phone 模擬器整合。 預設會啟用網路功能。 您不需為 Windows Phone 模擬器安裝網路驅動程式，或是在大多數的環境中手動設定網路功能選項。
 
-    The emulator uses the network connection of the host computer. It does not appear as a separate device on the network. This eliminates some of the configuration issues that users encountered with the Windows Phone SDK 8.0 emulator.
+    模擬器會使用主機電腦的網路連線。 它不會以個別裝置的形式出現在網路上。 這樣能夠消除一些使用者使用 Windows Phone SDK 8.0 模擬器時所遇到的設定問題。
 
--   **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
+-   **語言和地區設定**。 變更 Windows Phone 模擬器中的顯示語言和地區設定，藉以針對國際市場來準備您的應用程式。
 
-    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
+    在執行中的模擬器上，移至 [設定]**** 應用程式，然後選取 [系統]**** 設定，接著選取 [語言]**** 或 [地區]****。 變更要測試的設定。 如果系統提示您，請按一下 [重新啟動手機]****，套用新設定並重新啟動模擬器。
 
--   **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
+-   **應用程式週期和標記**。 在專案屬性的 [偵錯]**** 頁面上變更 [於偵錯時停用的標記]**** 選項的值，測試在停用或標記應用程式時行為。
 
--   **Local folder storage (previously known as isolated storage)**. Data in isolated storage persists while the emulator is running, but is lost once the emulator closes.
+-   **本機資料夾儲存區 (先前稱為隔離儲存區)**。 當模擬器正在執行時，隔離儲存區中的資料會保留，但在模擬器關閉之後即會遺失。
 
--   **Microphone**. Requires and uses the microphone on the host computer.
+-   **麥克風**。 要求和使用主機電腦上的麥克風。
 
--   **Phone keyboard**. The emulator supports mapping of the hardware keyboard on your development computer to the keyboard on a Windows Phone. The behavior of the keys is the same as on a Windows Phone device
+-   **手機鍵盤**。 模擬器支援將您的開發電腦上的硬體鍵盤對應到 Windows Phone 鍵盤。 按鍵的作用就和在 Windows Phone 裝置上一樣
 
--   **Lock screen**. With the emulator open, press F12 on your computer keyboard twice. The F12 key emulates the power button on the phone. The first key press turns off the display. The second key press turns the display on again with the lock screen engaged. Unlock the screen by using the mouse to slide the lock screen upward.
+-   **鎖定畫面**。 當模擬器開啟時，請按電腦鍵盤上的 F12 兩次。 F12 鍵會模擬手機上的電源按鈕。 第一次按下按鍵時會關閉顯示器。 第二次按下按鍵時會再次開啟顯示器，並顯示鎖定畫面。 使用滑鼠將鎖定畫面往上滑動，即可取消鎖定畫面。
 
-## Features that you can't test in the emulator
+## 您無法在模擬器中測試的功能
 
-Test the following features only on a physical device.
+只能在實際裝置上測試下列功能。
 
--   Compass
--   Gyroscope
--   Vibration controller
--   Brightness. The brightness level of the emulator is always High.
--   High-resolution video. Videos with a resolution higher than VGA resolution (640 x 480) cannot be displayed reliably, especially on emulator images with only 512MB of memory.
+-   指南針
+-   迴轉儀
+-   震動控制器
+-   亮度。 模擬器的亮度等級一律為高。
+-   高解析度視訊。 解析度高於 VGA 解析度 (640 x 480) 的影片無法正常顯示，在只有 512MB 記憶體的模擬器影像更是如此。
 
-## Mouse input
+## 滑鼠輸入
 
-Simulate mouse input using the physical mouse or trackpad on your Windows PC and the mouse input button on the emulator toolbar. This feature is useful if your app provides the user with an ability to utilize a mouse paired to their Windows 10 device to provide input.
+使用 Windows 電腦上的實體滑鼠或觸控板以及模擬器工具列上的滑鼠輸入按鈕來模擬滑鼠輸入。 若應用程式為使用者提供使用滑鼠搭配 Windows 10 裝置提供輸入的功能，此功能非常實用。
 
-Tap the mouse input button on the emulator toolbar to enable mouse input. Any click events within the emulator chrome will now be sent to the Windows 10 Mobile OS running inside the emulator VM as mouse events.
+點選模擬器工具列上的滑鼠輸入按鈕來啟用滑鼠輸入。 模擬器組建區塊內的任何按一下事件現在都會以滑鼠事件形式傳送到在模擬器 VM 中執行的 Windows 10 Mobile OS。
 
-![Emulator screen with mouse input enabled](images/emulator-with-mouse-enabled.png)
+![已啟用滑鼠輸入的模擬器畫面](images/emulator-with-mouse-enabled.png)
 
-The emulator screen with the mouse input enabled.
+已啟用滑鼠輸入的模擬器畫面。
 
-![The mouse input button on the emulator toolbar](images/emulator-showing-mouse-input-button-bar.png)
+![模擬器工具列上的滑鼠輸入按鈕](images/emulator-showing-mouse-input-button-bar.png)
 
-The mouse input button on the emulator toolbar.
+模擬器工具列上的滑鼠輸入按鈕。
 
-## Keyboard input
+## 鍵盤輸入
 
-The emulator supports mapping of the hardware keyboard on your development computer to the keyboard on a Windows Phone. The behavior of the keys is the same as on a Windows Phone device. 
+模擬器支援將您的開發電腦上的硬體鍵盤對應到 Windows Phone 鍵盤。 按鍵的作用就和在 Windows Phone 裝置上一樣。 
 
-By default, the hardware keyboard is not enabled. This implementation is equivalent to a sliding keyboard that must be deployed before you can use it. Before you enable the hardware keyboard, the emulator accepts key input only from the control keys.
+預設不會啟用硬體鍵盤。 這個實作是等同於滑動鍵盤，必須先部署才能使用。 啟用硬體鍵盤之前，模擬器只接受控制鍵的按鍵輸入。
 
-Special characters on the keyboard of a localized version of a Windows development computer are not supported by the emulator. To enter special characters that are present on a localized keyboard, use the Software Input Panel (SIP) instead. 
+模擬器不支援當地語系化版本 Windows 開發電腦之鍵盤上的特殊字元。 若要輸入出現在當地語系化鍵盤上的特殊字元，請改為使用軟體輸入面板 (SIP)。 
 
-To use your computer’s keyboard in the emulator, press F4.
+若要在模擬器中使用電腦的鍵盤，按 F4。
 
-To stop using your computer’s keyboard in the emulator, press F4.
+若要停止在模擬器中使用電腦的鍵盤，按 F4。
 
-The following table lists the keys on a hardware keyboard that you can use to emulate the buttons and other controls on a Windows Phone.
+下表列出硬體鍵盤上，您可以用來模擬 Windows Phone 上的按鈕和其他控制項的按鍵。
 
-Note that in Emulator Build 10.0.14332 the computer hardware key mapping was changed. Values in the second column of the table below represent these new keys. 
+請注意，模擬器組建 10.0.14332 中的電腦硬體鍵盤對應已變更。 下表的第二欄中的值代表這些新按鍵。 
 
-Computer hardware keys (Emulator Build 10.0.14295 and earlier) | Computer hardware keys (Emulator Build 10.0.14332 and newer) | Windows Phone hardware button | Notes
+電腦硬體按鍵 (模擬器組建 10.0.14295 及較舊) | 電腦硬體按鍵 (模擬器組建 10.0.14332 及較新) | Windows Phone 硬體按鈕 | 注意事項
 --------------------- | ------------------------- | ----------------------------- | -----
-F1 | WIN + ESC | BACK | Long presses work as expected.
-F2 | WIN + F2 | START | Long presses work as expected.
-F3 | WIN + F3 | SEARCH |  
-F4 | F4 (no change) | Toggles between using the local computer’s keyboard and not using the local computer’s keyboard. | 
-F6 | WIN + F6 | CAMERA HALF | A dedicated camera button that is pressed halfway.
-F7 | WIN + F7 | CAMERA FULL | A dedicated camera button.
-F9 | WIN + F9 | VOLUME UP | 
-F10 | WIN + F10 | VOLUME DOWN | 
-F12 | WIN + F12 | POWER | Press the F12 key twice to enable the lock screen. Long presses work as expected.
-ESC | WIN + ESC | BACK | Long presses work as expected.
+F1 | WIN + ESC | 返回 | 長按可如預期運作。
+F2 | WIN + F2 | 開始 | 長按可如預期運作。
+F3 | WIN + F3 | 搜尋 |  
+F4 | F4 (沒有變更) | 切換為使用或不使用本機電腦的鍵盤。 | 
+F6 | WIN + F6 | 相機鍵半按 | 專用的相機按鈕按到一半。
+F7 | WIN + F7 | 相機鍵全按 | 專用的相機按鈕。
+F9 | WIN + F9 | 提高音量 | 
+F10 | WIN + F10 | 降低音量 | 
+F12 | WIN + F12 | 電源 | 按 F12 鍵兩次啟用鎖定畫面。 長按可如預期運作。
+ESC | WIN + ESC | 返回 | 長按可如預期運作。
  
 
 
-## Near Field Communications (NFC)
+## 近距離無線通訊 (NFC)
 
-Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator’s **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
+使用模擬器 [其他工具]**** 功能表中的 [NFC]**** 索引標籤，在 Windows 10 行動裝置版上建置及測試使用近距離無線通訊 (NFC) 功能的應用程式。 NFC 對於一些情節而言非常實用，包括近接情節 (例如「輕觸以分享」) 或卡片模擬 (例如「輕觸以支付」)。
 
-You can test your app by simulating a pair of phones tapping together by using a pair of emulators, or you can test your app by simulating a tap to a tag. Also in Windows 10, mobile devices are enabled with HCE (Host Card Emulation) feature and by using the phone emulator you can simulate tapping your device to a payment terminal for APDU command-response traffic.
+您可以使用一組模擬器，透過模擬一組手機彼此輕觸來測試您的應用程式，或者您可以透過輕觸標籤來測試您的應用程式。 此外，在 Windows 10 中，行動裝置也已啟用 HCE (主機卡模擬) 功能，而且您也可以使用手機模擬器來模擬將您的裝置與付款終端機彼此輕觸以處理 APDU 命令回應流量。
 
-The NFC tab supports three modes:
+NFC 索引標籤支援三種模式：
 
--   Proximity Mode
--   HCE (Host Card Emulation) Mode
--   Smart Card Reader Mode
+-   近接模式
+-   HCE (主機卡模擬) 模式
+-   智慧卡讀卡機模式
 
-In all modes, the emulator window has three areas of interest.
+在所有模式中，模擬器視窗都有三個區域。
 
--   The top left section is specific to the mode selected. The features of this section depend on the mode, and are detailed in the mode-specific sections below.
--   The top right section lists the logs. When you tap a pair of devices together (or tap to the POS terminal) the tap event is logged and when the devices are untapped the untap event is logged. This section also records if your app responded before the connection is broken or any other action you have taken in the emulator UI with time stamps. Logs are persistent between mode switches, and you can clear the logs at any point by hitting the **Clear** button above the **Logs** screen.
--   The bottom half of the screen is the message log and shows the transcript of all messages sent or received over the currently selected connection, depending on the mode selected.
+-   左上角區段視選取的模式而異。 此區段的功能取決於選取的模式，我們將在下面的模式特定小節詳細說明。
+-   右上角區段會列出記錄檔。 當您將一組裝置彼此輕觸 (或與 POS 終端機輕觸) 時，系統會記錄輕觸事件；而當裝置結束輕觸時，系統會記錄結束輕觸事件。 此區段也會記錄您的應用程式是否在連線中斷之前回應，或您是否在模擬器 UI 中採取任何其他動作 (以及其時間戳記)。 記錄檔在模式切換時仍會保留，而且您可以隨時點選 [記錄檔]**** 畫面上的 [清除]**** 按鈕來清除記錄檔。
+-   畫面下半部是訊息記錄檔，其中顯示目前所選連線上傳送或接收之訊息的文字記錄 (視選取的模式而定)。
 
-> **Important**  When you first launch the tapper tool, you will get a Windows Firewall prompt. You MUST select ALL 3 check boxes and allow the tool through the firewall, or the tool will silently fail to work.
+> **重要** 第一次啟動 Tapper 工具時，您會看到 Windows 防火牆提示。 您必須選取全部 3 個核取方塊，並允許該工具通過防火牆，否則該工具會失敗，而且不會顯示任何訊息。
 
-After launching the quick start installer, make sure you follow the above instruction to select all 3 check boxes on the firewall prompt. Also, the tapper tool must be installed and used on the same physical host machine as the Microsoft Emulator.
+啟動快速啟動安裝程式之後，請確認您已按照上面的指示在防火牆提示上選取全部 3 個核取方塊。 此外，您也必須在已安裝 Microsoft 模擬器的相同實體主機電腦上安裝並使用 Tapper 工具。
 
-### Proximity mode
+### 近接模式
 
-To simulate a pair of phones tapping together you'll need to launch a pair of Windows Phone 8 emulators. Since Visual Studio doesn't support running two identical emulators at the same time, you'll need to select different resolutions for each of the emulators to work around it.
+若要模擬一組手機彼此輕觸，您將需要啟動一組 Windows Phone 8 模擬器。 因為 Visual Studio 不支援同時執行兩個相同的模擬器，您必須為每個模擬器選取不同的解析度，以因應此問題。
 
-![The NFC Proximity page](images/emulator-nfc-proximity.png)
+![NFC 近接頁面](images/emulator-nfc-proximity.png)
 
-When you check the **Enable discovery of peer devices** checkbox, the **Peer device** dropdown box shows Microsoft Emulators (running on the same physical host machine or in the local network) as well as the Windows machines running the simulator driver (running on the same machine or in the local network).
+當您選取 [啟用對等裝置的探索]**** 核取方塊時，[對等裝置]**** 下拉方塊會顯示 Microsoft 模擬器 (在相同的實體主機電腦上或區域網路中執行) 與執行模擬器驅動程式的 Windows 電腦 (在相同的電腦上或區域網路中執行)。
 
-Once both emulators are running:
+兩個模擬器都執行之後：
 
--   Select the emulator you would like to target in the **Peer device** list.
--   Select the **Send to peer device** radio button.
--   Click **Tap** button. This will simulate the two devices tapping together and you should be hearing the NFC tap notification sound
--   To disconnect the 2 devices, simply hit the **Untap** button.
+-   在 [對等裝置]**** 清單中選取要做為目標的模擬器。
+-   選取 [傳送到對等裝置]**** 選項按鈕。
+-   按一下 [輕觸]**** 按鈕。 這樣會模擬兩部裝置彼此輕觸，而且您應該會聽到 NFC 輕觸通知音效
+-   若要將 2 個裝置中斷連線，只要按一下 [取消輕觸]**** 按鈕。
 
-Alternatively, you can enable **Automatically untap in (seconds)** check box where you can specify the number of seconds you want the devices to be tapped and they will be automatically untapped after the specified number of seconds (simulating what would be expected of a user in real life, they would only hold their phones together for a short time). Note however that currently the message log isn't available after the connection has been untapped.
+或者，您可以啟用 [在 (秒) 後自動取消輕觸]**** 核取方塊，並在其中指定您要讓裝置輕觸的秒數，這樣裝置將會在指定的秒數過後自動取消輕觸 (模擬使用者實際操作時會遇到的情況，他們只需要短暫地輕觸手機)。 請注意，連線取消輕觸之後，目前的訊息記錄檔無法使用。
 
-To simulate reading messages from a tag or receiving messages from another device:
+模擬從標籤讀取訊息或從另一部裝置接收訊息：
 
--   Select the **Send to self** radio button to test scenarios that require only one NFC enabled device.
--   Click **Tap** button. This will simulate the tapping a device to a tag and you should be hearing the NFC tap notification sound
--   To disconnect, simply hit the **Untap** button.
+-   選取 [傳送給自己]**** 選項按鈕，以測試只需要一部已啟用 NFC 之裝置的情節。
+-   按一下 [輕觸]**** 按鈕。 這樣會模擬將裝置與標籤輕觸，而且您應該會聽到 NFC 輕觸通知音效
+-   若要中斷連線，只要按一下 [取消輕觸]**** 按鈕。
 
-Using the proximity mode you can inject messages as if they came from a tag or another peer device. The toolallows you to send messages of the following types.
+使用近接模式，您可以插入訊息，就像訊息來自標籤或另一個對等裝置。 工具可讓您傳送下列類型的訊息。
 
 -   WindowsURI
 -   WindowsMime
@@ -207,35 +207,35 @@ Using the proximity mode you can inject messages as if they came from a tag or a
 -   NDEF:URI
 -   NDEF:wkt.U
 
-You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) reference page.
+您可以透過編輯 [承載]**** 視窗或在檔案中提供訊息，來建立這些訊息。 如需這些類型與其使用方式的詳細資訊，請參閱 [**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) 參考頁面的＜備註＞一節。
 
-The Windows 8 Driver Kit (WDK) includes a driver sample that exposes the same protocol as the Windows Phone 8 emulator. You'll need to download the DDK, build that sample driver, install it on a Windows 8 device, then add the Windows 8 device's IP address or hostname to the devices list and tap it either with another Windows 8 device or with a Windows Phone 8 emulator.
+Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與 Windows Phone 8 模擬器相同的通訊協定。 您將需要下載 DDK、建置範例驅動程式、在 Windows 8 裝置上安裝，接著將 Windows 8 裝置的 IP 位址或主機名稱新增到裝置清單，並將它與另一部 Windows 8 裝置或 Windows Phone 8 模擬器輕觸。
 
-### Host Card Emulation (HCE) Mode
+### 主機卡模擬 (HCE) 模式
 
-In Host Card Emulation (HCE) mode you can test your HCE-based card emulation application by writing your own custom scripts to simulate a smart card reader terminal, such as a Point of Sale (POS) terminal. This tool assumes that you are familiar with the command response pairs (compliant with ISO-7816-4) that are sent between a reader terminal (such as POS, badge reader or transit card reader) and the smart card (that you are emulating in your application).
+在主機卡模擬 (HCE) 模式中，您可以測試您的 HCE 型卡模擬應用程式，方式是撰寫您的自訂指令碼以模擬智慧卡讀卡機終端機，例如銷售點 (POS) 終端機。 此工具假設您熟悉在讀取器終端機 (例如 POS、識別卡讀取器或大眾運輸卡讀取器) 與智慧卡 (您在您的應用程式中所模擬) 之間傳送的命令回應組合 (與 ISO-7816-4 相容)。
 
-![The NFC HCE page](images/emulator-nfc-hce.png)
+![NFC HCE 頁面](images/emulator-nfc-hce.png)
 
--   Create a new script by clicking the **Add** button in the script editor section. You can provide a name for your script and after you are done with editing, you can save your script using the **Save** button.
--   Your saved scripts will be available the next time you launch the emulator.
--   Run your scripts by hitting the **Play** button in the scripts editor window. This action results in simulating of tapping your phone to the terminal and sending commands written in your script. Alternatively you can hit the **Tap** button and then the **Play** button, until you hit **Play** the script will not run.
--   Stop sending commands by hitting the **Stop** button, which stops sending the commands to your application but the devices remain tapped until you hit the **Untap** button.
--   Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
--   The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
+-   按一下指令碼編輯器區段中的 [新增]**** 按鈕，以建立新的指令碼。 您可以提供指令碼名稱，而且可以在完成編輯之後使用 [儲存]**** 按鈕來儲存指令碼。
+-   下次啟動模擬器時，您將可以使用儲存的指令碼。
+-   按一下指令碼編輯器視窗中的 [播放]**** 按鈕，以執行您的指令碼。 此動作會執行模擬將您的手機與終端機輕觸並傳送您在指令碼中撰寫之命令的動作。 或者，您可以按一下 [輕觸]**** 按鈕，然後按一下 [播放]**** 按鈕，在您按一下 [播放]**** 之後，才會執行指令碼。
+-   按一下 [停止]**** 按鈕以停止傳送命令，這樣會停止傳送命令到您的應用程式，但在您按一下 [取消輕觸]**** 按鈕之前，裝置將維持輕觸狀態。
+-   在下拉式功能表中選取指令碼並按一下 [刪除]**** 按鈕，以刪除您的指令碼。
+-   在您使用 [播放]**** 按鈕執行指令碼之前，模擬器工具不會檢查您的指令碼語法。 由您的指令碼傳送的訊息取決於您卡片模擬器應用程式的實作。
 
-You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
+您也可以使用 MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) 提供的終端機模擬器工具來進行付款應用程式測試。
 
--   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
--   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
+-   選取指令碼編輯器視窗下方的 [啟用 MasterCard]**** 接聽程式核取方塊，然後啟動 MasterCard 的模擬器。
+-   使用該工具時，您可以產生轉送到您應用程式 (透過 NFC 工具在模擬器上執行) 的命令。
 
-To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](http://go.microsoft.com/fwlink/?LinkId=534749).
+若要深入了解 HCE 支援以及如何在 Windows 10 行動裝置版中開發 HCE 應用程式，請參閱 [Microsoft NFC 小組部落格](http://go.microsoft.com/fwlink/?LinkId=534749)。
 
-### How to Create Scripts for HCE Testing
+### 如何針對 HCE 測試建立指令碼
 
-The scripts are written as C# code and your script’s Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
+指令碼是以 C# 程式碼撰寫，且當您按一下 [播放]**** 按鈕時，會呼叫您指令碼的 Run 方法，此方法接受 IScriptProcessor 介面，此介面是用來收發 APDU 命令、輸出到記錄檔視窗，以及控制等候來自手機之 APDU 回應的逾時。
 
-Below is a reference on what functionality is available:
+以下是可用功能的參考：
 
 ```csharp     
         public interface IScriptProcessor
@@ -258,332 +258,332 @@ Below is a reference on what functionality is available:
         }
 ```
 
-### Smart Card Reader Mode
+### 智慧卡讀卡機模式
 
-The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
+模擬器可以連線到您主機電腦上的智慧卡讀卡機裝置，如此插入或輕觸的智慧卡將顯示在您的手機 app 中，而且可以使用 [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) 類別來與 APDU 通訊。 為了讓此功能運作，您需要將相容的智慧卡讀卡機裝置連接到您的電腦，USB 智慧卡讀卡機 (NFC/無接觸式與插入式/接觸式) 非常普及。 若要讓模擬器可搭配已連接的智慧卡讀卡機運作，請先選擇 [讀卡機]**** 模式 (這樣會顯示一個下拉方塊，其中列出已連接到主機系統的所有相容智慧卡讀卡機)，然後從下拉式清單中選擇要連線的智慧卡讀卡機裝置。
 
-Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
+請注意，並非所有 NFC 相容智慧卡讀卡機都支援所有類型的 NFC 卡，而且部分不支援標準 PC/SC 儲存卡 APDU 命令。
 
-## Multi-point input
+## 多點輸入
 
-Simulate multi-touch input for pinching and zooming, rotating, and panning objects by using the **Multi-touch Input** button on the emulator toolbar. This feature is useful if your app displays photos, maps, or other visual elements that users can pinch and zoom, rotate, or pan.
+使用模擬器工具列上的 [多點觸控輸入]**** 按鈕，模擬可用於捏合及縮放、旋轉和移動瀏覽物件的多點觸控輸入。 如果您的應用程式會顯示使用者可以捏合及縮放、旋轉或移動瀏覽的相片、地圖或其他視覺元素，則這個功能非常有用。
 
-1.  Tap the **Multi-touch Input** button on the emulator toolbar to enable multi-point input. Two touch points appear on the emulator screen around a center point.
-2.  Right-click and drag one of the touch points to position them without touching the screen.
-3.  Left-click and drag one of the touch points to simulate pinching and zooming, rotating, or panning.
-4.  Tap the **Single Point Input** button on the emulator toolbar to restore normal input.
+1.  點選模擬器工具列上的 [多點觸控輸入]**** 按鈕來啟用多點輸入。 模擬器畫面的中心點周圍即會出現兩個觸控點。
+2.  使用滑鼠右鍵按一下並拖曳其中一個觸控點來讓它們就定位，而不需觸控螢幕。
+3.  使用滑鼠左鍵按一下並拖曳其中一個觸控點，以模擬捏合及縮放、旋轉或移動瀏覽。
+4.  點選模擬器工具列上的 [單點輸入]**** 按鈕，還原為正常輸入。
 
-The following screenshot shows multi-touch input.
+下列螢幕擷取畫面顯示多點觸控輸入。
 
-1.  The small left image shows the **Multi-touch Input** button on the emulator toolbar.
-2.  The middle image shows the emulator screen after tapping the **Multi-touch Input** button to display the touch points.
-3.  The right image shows the emulator screen after dragging the touch points to zoom the image.
+1.  左邊的小影像顯示模擬器工具列上的 [多點觸控輸入]**** 按鈕。
+2.  中間的影像顯示在點選 [多點觸控輸入]**** 按鈕以顯示觸控點之後的模擬器畫面。
+3.  右邊的影像顯示在拖曳觸控點以縮放影像之後的模擬器畫面。
 
-![Multi-point input option on the Emulator toolbar](images/em-multipoint.png)
+![模擬器工具列上的多點輸入選項](images/em-multipoint.png)
 
-## Accelerometer
+## 加速計
 
-Test apps that track the movement of the phone by using the **Accelerometer** tab of the emulator's **Additional Tools**.
+使用模擬器 [其他工具]**** 的 [加速計]**** 索引標籤，測試可追蹤手機移動的應用程式。
 
-You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that’s available simulates shaking the phone. You can’t record or save your own simulations for the accelerometer.
+您可以使用即時輸入或預先錄製的輸入來測試加速計感應器。 只有一種可用的錄製資料類型可以模擬手機的搖晃方式。 您無法針對加速計錄製或儲存您自己的模擬。
 
-1.  Select the desired starting orientation in the **Orientation** drop-down list.
+1.  在 [方向]**** 下拉式清單中選取所需的起始方向。
 
-2.  -   Select the type of input.
+2.  -   選取輸入的類型。
 
-        **To run the simulation with live input**
+        **使用即時輸入執行模擬**
 
-        In the middle of the accelerometer simulator, drag the colored dot to simulate movement of the device in a 3D plane.
+        在加速計模擬器的中間，拖曳彩色的點，在 3D 平面中模擬裝置的移動方式。
 
-        Moving the dot on the horizontal access rotates the simulator from side to side. Moving the dot on the vertical access rotates the simulator back and forth, rotating around the x-axis. As you drag the dot, the X, Y, and Z coordinates update based on the rotation calculations. You cannot move the dot outside the bounding circle in the touch pad area.
+        以水平存取方式來移動點，會以逐邊旋轉的方式旋轉模擬器。 以垂直存取方式來移動點，則會以前後互換的方式旋轉模擬器 (繞著 x 軸旋轉)。 當您拖曳點時，X、Y 及 Z 座標會根據旋轉計算來更新。 您無法將點移到觸控板區域中的週框圓形外部。
 
-        Optionally, click **Reset** to restore the starting orientation.
+        您可以選擇性地按一下 [重設]****，還原起始方向。
 
-    -   **To run the simulation with recorded input**
+    -   **使用錄製的輸入執行模擬**
 
-        In the **Recorded Data** section, click the **Play** button to start playback of the simulated data. The only option available in the **Recorded Data** list is shake. The simulator does not move on the screen when it plays back the data.
+        在 [錄製的資料]**** 區段中，按一下 [播放]**** 按鈕，開始播放模擬的資料。 [錄製的資料]**** 清單中唯一可用的選項是搖動。 當模擬器播放資料時，無法在螢幕上移動。
 
-![Accelerometer page in Additional Tools for the Emulator](images/em-accelerometer.png)
+![模擬器 [其他工具] 中的 [加速計] 頁面](images/em-accelerometer.png)
 
-## Location and driving
+## 定位和規劃路線
 
-Test apps that use navigation or geofencing by using the **Location** tab of the emulator's **Additional Tools**. This feature is useful for simulating driving, biking, or walking in conditions similar to the real world.
+使用模擬器 [其他工具]**** 的 [位置]**** 索引標籤，測試可使用瀏覽或地理柵欄的應用程式。 若要在類似真實世界的情況中模擬開車、騎單車或步行，這個功能非常有用。
 
-You can test your app while you simulate moving from one location to another at different speeds and with different accuracy profiles. The location simulator can help you to identify changes in your usage of the location APIs usage that improve the user experience. For example, the tool can help you identify that you have to tune geofence parameters, such as size or dwell time, to detect the geofences successfully in different scenarios.
+當您使用不同速度以及利用不同的準確度設定檔，模擬從某一個位置移動到另一個位置時，可以測試您的應用程式。 定位模擬器可以協助識別您在位置 API 用法中的用法變更，以改善使用者體驗。 例如，這個工具可以協助識別您必須調整地理柵欄參數 (例如，大小或停留時間)，才能在不同案例中順利偵測地理柵欄。
 
-The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) event or to respond to a [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) call in your location-aware app.
+[位置]**** 索引標籤支援三種模式。 在所有模式中，當模擬器接收到新的位置時，即可使用該位置來觸發 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) 事件，或者回應您定位感知應用程式中的 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) 呼叫。
 
--   In **Pin** mode, you place pushpins on the map. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval specified in the **Seconds per pin** text box.
+-   在 [釘選]**** 模式中，您可以在地圖上放置圖釘圖示。 當您按一下 [播放所有點]**** 時，定位模擬器會以 [每個釘選的秒數]**** 文字方塊中指定的間隔，將每個釘選的位置逐一傳送到模擬器。
 
--   In **Live** mode, you place pushpins on the map. The location simulator sends the location of each pin to the emulator immediately as you place them on the map.
+-   在 [即時]**** 模式中，您可以在地圖上放置圖釘圖示。 當您在地圖上放置釘選時，定位模擬器會立即將每個釘選的位置傳送到模擬器。
 
--   In **Route** mode, you place pushpins on the map to indicate waypoints, and the location simulator automatically calculates a route. The route includes invisible pins at one-second intervals along the route. For example, if you have select the **Walking** speed profile, which assumes a speed of 5 kilometers per hour, then invisible pins are generated at intervals of 1.39 meters. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval determined by the speed profile selected in the drop-down list.
+-   在 [路線]**** 模式中，您可以在地圖上放置圖釘圖示以表示導航點，而定位模擬器會自動計算路線。 路線包含沿線一秒間隔的隱形釘選。 例如，如果您選取 [步行]**** 速度設定檔，即假設每小時速度為 5 公里，則會以每 1.39 公尺的間隔方式產生隱形的釘選。 當您按一下 [播放所有點]**** 時，定位模擬器會使用在下拉式清單中選取的速度設定檔來判斷間隔，並將每個釘選的位置逐一傳送到模擬器。
 
-In all modes of the location simulator, you can do the following things.
+在定位模擬器的所有模式中，您可以執行下列動作。
 
--   You can search for a location by using the **Search** box.
+-   您可以使用 [搜尋]**** 方塊來搜尋位置。
 
--   You can **Zoom in** and **Zoom out** on the map.
+-   您可以在地圖上 [放大]**** 和 [縮小]****。
 
--   You can save the current set of data points to an XML file, and reload the file later to reuse the same data points.
+-   您可以將目前設定的資料點儲存到 XML 檔案，以便日後重新載入這個檔案來重複使用相同的資料點。
 
--   You can **Toggle pushpin mode on or off** and **Clear all points**.
+-   您可以 [切換開啟或關閉圖釘模式]**** 和 [清除所有點]****。
 
-In Pin and Route mode, you can also do the following things.
+在 [釘選] 和 [路線] 模式中，您也可以執行下列動作。
 
--   Save a route you created for later use.
+-   儲存您建立的路線，以供日後使用。
 
--   Load a route previously created. You can even load route files created in previous versions of the tool.
+-   載入先前建立的路線。 您甚至可以載入舊版工具所建立的路線檔案。
 
--   Modify a route by deleting pushpins (in Pin mode) or waypoints (in Route mode).
+-   刪除圖釘圖示 (在 [釘選] 模式中) 或導航點 (在 [路線] 模式中) 來修改路線。
 
-**Accuracy profiles**
+**準確度設定檔**
 
-In all modes of the location simulator, you can select one of the following accuracy profiles in the **Accuracy profile** drop-down list.
+在定位模擬器的所有模式中，您可以在 [準確度設定檔]**** 下拉式清單中選取下列其中一個準確度設定檔。
 
-| Profile  | Description                                        |
+| 設定檔  | 說明                                        |
 |----------|----------------------------------------------------|
-| Pinpoint | Assumes perfectly accurate location readings. This setting is not realistic, but it's useful for testing the logic of your app.  |
-| Urban    | Assumes that buildings are restricting the number of satellites in view, but there is often a high density of cell towers and Wi-Fi access points that can be used for positioning. |
-| Suburban | Assumes that satellite positioning is relatively good and there is good density of cell towers, but the density of Wi-Fi access points is not high.  |
-| Rural    | Assumes that satellite positioning is good, but there is low density of cell towers and almost no Wi-Fi access points that can be used for positioning. |
+| 固定點 | 假設完全準確的位置讀數。 這個設定並不切實際，但在測試應用程式的邏輯時非常有用。  |
+| 城市    | 假設建築物受限於視線範圍內的衛星數量，但通常會有高密度的行動電話基地台，以及可用來定位的 Wi-Fi 存取點。 |
+| 郊區 | 假設衛星定位相對來說比較好，而且行動電話基地台的密度良好，但是 Wi-Fi 存取點的密度不高。  |
+| 鄉村    | 假設衛星定位良好，但行動電話基地台的密度低且幾乎沒有可用來定位的 Wi-Fi 存取點。 |
 
-**Speed profiles**
+**速度設定檔**
 
-In **Route** mode, you can select one of the following speed profiles in the drop-down list.
+在 [路線]**** 模式中，您可以在下拉式清單中選取下列其中一個速度設定檔。
 
-| Profile | Speed per hour               | Speed per second | Description | 
+| 設定檔 | 每小時的速度               | 每秒的速度 | 說明 | 
 |---------|------------------------------|------------------|-------------|
-| Speed Limit | Speed limit of the route | Not applicable   | Traverse the route at the posted speed limit. |
-| Walking     | 5 km/h                   | 1.39 m           | Traverse the route at a natural walking pace of 5 km/h. |
-| Biking      | 25 km/h                  | 6.94 m           | Traverse the route at a natural biking pace of 25 km/h. |
-| Fast        |                          |                  |Traverse the route faster than the posted speed limit. | 
+| 速限 | 路線的速限 | 不適用   | 以公布的速限越過該路線。 |
+| 步行     | 5 公里/小時                   | 1.39 公尺           | 以正常的步行速度 (5 公里/小時) 越過該路線。 |
+| 騎單車      | 25 公里/小時                  | 6.94 公尺           | 以正常騎單車的速度 (25 公里/小時) 越過該路線。 |
+| 快速        |                          |                  |以比公布的速限還快的速度越過該路線。 | 
 
-**Route mode**
+**路線模式**
 
-Route mode has the following features and limitations.
+路線模式具備下列功能與限制。
 
--   Route mode requires an Internet connection.
+-   路線模式要求網際網路連線。
 
--   When the Urban, Suburban, or Rural accuracy profile is selected, the location simulator calculates a simulated satellite-based position, a simulated Wi-Fi position, and a simulated cellular position for each pin. Your app receives only one of these positions. The three sets of coordinates for the current location are displayed in different colors on the map and in the **Current location** list.
+-   選取 [城市]、[郊區] 或 [鄉村] 準確度設定檔時，定位模擬器會計算以衛星為基準的模擬位置、模擬的 Wi-Fi 位置，以及每個釘選的模擬行動電話位置。 您的應用程式只能接收這其中一個位置。 適用於目前位置的這三組座標會以不同色彩顯示於地圖上和 [目前位置]**** 清單中。
 
--   The accuracy of the pins along route the route is not uniform. Some of the pins use satellite accuracy, some use Wi-Fi accuracy, and some use cellular accuracy.
+-   沿線釘選的路線準確度並不一致。 部分釘選會使用衛星準確度、部分會使用 Wi-Fi 準確度，而部分會使用行動電話準確度。
 
--   You cannot select more than 20 waypoints for the route.
+-   您無法針對路線選取超過 20 個導航點。
 
--   Positions for the visible and invisible pins on the map are generated only once when you select a new accuracy profile. When you play the route more than once with the same accuracy profile during the same emulator session, the previously generated positions are reused.
+-   地圖上可見釘選與隱形釘選的位置只會在您選取新的準確度設定檔時產生一次。 當您在同一個模擬器工作階段期間多次使用相同的準確度設定檔來播放該路線時，會重複使用先前產生的位置。
 
-The following screenshot shows Route mode. The orange line indicates the route. The blue dot indicates the accurate location of the car determined by satellite-based positioning. The red and green dots indicate less accurate locations calculated by using Wi-Fi and cellular positioning and the Suburban accuracy profile. The three calculated locations are also displayed in the **Current location** list.
+下列螢幕擷取畫面顯示路線模式。 橘線表示路線。 藍點表示由根據衛星定位判斷的汽車準確度位置。 紅點和綠點表示是使用 Wi-Fi 和行動電話定位及 [郊區] 準確度設定檔計算而得的較不準確的位置。 這三個計算出來的位置也會顯示於 [目前位置]**** 清單中。
 
-![Location page in Additional Tools for the Emulator](images/em-drive.png)
+![模擬器 [其他工具] 中的 [位置] 頁面](images/em-drive.png)
 
-**More info about the location simulator**
+**關於定位模擬器的更多資訊**
 
--   You can request a position with the accuracy set to Default. A limitation that existed in the Windows Phone 8 version of the location simulator, and required you to request a position with the accuracy set to High, has been fixed.
+-   您可以將準確度設為 [預設值] 來要求位置。 已經修正 Windows Phone 8 版本的定位模擬器中現有的限制，以及要求您將準確度設為 [高] 來要求位置的限制。
 
--   When you test geofencing in the emulator, create a simulation that gives the geofencing engine a “warm-up” period to learn and adjust to the movement patterns.
+-   當您在模擬器中測試地理柵欄時，請建立可為地理柵欄引擎提供「暖機」期間的模擬，以了解並調整移動模式。
 
--   The only position properties that are simulated are the Latitude, Longitude, Accuracy, and PositionSource. The location simulator does not simulate other properties such as Speed, Heading, and so forth.
+-   只會模擬下列位置屬性：Latitude、Longitude、Accuracy 及 PositionSource。 定位模擬器不會模擬像是 Speed、Heading 等其他屬性。
 
-## Network
+## 網路
 
-Test your app with different network speeds and different signal strengths by using the **Network** tab of the emulator's **Additional Tools**. This feature is useful if your app calls web services or transfers data.
+使用模擬器 [其他工具]**** 的 [網路]**** 索引標籤，利用不同的網路速度和不同的訊號強度來測試您的應用程式。 如果您的應用程式會呼叫 Web 服務或傳輸資料，則這個功能非常有用。
 
-The network simulation feature helps you to make sure that your app runs well in the real world. The Windows Phone Emulator runs on a computer that usually has a fast WiFi or Ethernet connection. Your app, however, runs on phones that are typically connected over a slower cellular connection.
+網路模擬功能可協助確定您的應用程式可以在實際世界中正常運作。 Windows Phone 模擬器可在通常配有快速 WiFi 或乙太網路連線的電腦上執行。 不過，您的應用程式可以在一般透過速度較慢的行動電話連線來連線的手機上執行。
 
-1.  Check **Enable network simulation** to test your app with different network speeds and different signal strengths.
-2.  In the **Network speed** dropdown list, select one of the following options:
-    -   No network
+1.  檢查 [啟用網路模擬]****，利用不同的網路速度和不同的訊號強度來測試您的應用程式。
+2.  在 [網路速度]**** 下拉式清單中，選取下列其中一個選項：
+    -   沒有網路
     -   2G
     -   3G
     -   4G
 
-3.  In the **Signal strength** dropdown list, select one of the following options:
-    -   Good
-    -   Average
-    -   Poor
+3.  在 [訊號強度]**** 下拉式清單中，選取下列其中一個選項：
+    -   良好
+    -   平均
+    -   不佳
 
-4.  Clear **Enable network simulation** to restore the default behavior, which uses the network settings of your development computer.
+4.  清除 [啟用網路模擬]**** 以還原預設行為，預設行為會使用開發電腦的網路設定。
 
-You can also review the current network settings on the **Network** tab.
+您也可以在 [網路]**** 索引標籤中檢閱目前的網路設定。
 
-![Network page in Additional Tools for the Emulator](images/em-network.png)
+![模擬器 [其他工具] 中的 [網路] 頁面](images/em-network.png)
 
-## SD card
+## SD 記憶卡
 
-Test your app with a simulated removable SD card by using the **SD Card** tab of the emulator's **Additional Tools**. This feature is useful if your app reads or write files.
+使用模擬器 [其他工具]**** 的 [SD 記憶卡]**** 索引標籤，利用模擬的卸除式 SD 記憶卡來測試您的應用程式。 如果您的 app 會讀取或寫入檔案，則這個功能非常有用。
 
-![SD Card page in Additional Tools for the Emulator](images/em-sdcard.png)
+![模擬器 [其他工具] 中的 [SD 記憶卡] 頁面](images/em-sdcard.png)
 
-The **SD Card** tab uses a folder on the development computer to simulate a removable SD card in the phone.
+[SD 記憶卡]**** 索引標籤使用開發電腦上的資料夾來模擬手機上的卸除式 SD 記憶卡。
 
-1.  **Select a folder**.
+1.  **選取資料夾**。
 
-    Click **Browse** to pick a folder on the development computer to hold the contents of the simulated SD card.
+    按一下 [瀏覽]**** 以挑選開發電腦上的資料夾，來保留模擬的 SD 記憶卡內容。
 
-2.  **Insert the SD card**.
+2.  **插入 SD 記憶卡**。
 
-    After selecting a folder, click **Insert SD card**. When you insert the SD card, the following things happen:
+    選取資料夾之後，按一下 [插入 SD 記憶卡]****。 當您插入 SD 記憶卡時，會發生下列情況：
 
-    -   If you didn't specify a folder, or the folder's not valid, an error occurs.
-    -   The files in the specified folder on the development computer are copied to the root folder of the simulated SD card on the emulator. A progress bar indicates the progress of the sync operation.
-    -   The **Insert the SD card** button changes to **Eject SD card**.
-    -   If you click **Eject SD card** while the sync operation is in progress, the operation is canceled.
+    -   如果未指定資料夾或是資料夾無效，即會發生錯誤。
+    -   位於開發電腦上指定資料夾中的檔案會複製到模擬器上模擬的 SD 記憶卡的根資料夾中。 進度列會指出同步操作的進度。
+    -   [插入 SD 記憶卡]**** 按鈕會變更為 [退出 SD 記憶卡]****。
+    -   如果您在同步操作正在進行的同時按一下 [退出 SD 記憶卡]****，操作即會取消。
 
-3.  Optionally, select or clear **Sync updated files back to the local folder when I eject the SD card**.
+3.  您可以選擇性地選取或清除 [當我退出 SD 記憶卡時將更新的檔案同步到本機資料夾]****。
 
-    This option is enabled by default. When this option is enabled, files are synced from the emulator back to the folder on the development computer when you eject the SD card.
+    此選項預設為啟用。 啟用這個選項時，若您退出 SD 記憶卡，即會將檔案從模擬器同步到開發電腦上的資料夾。
 
-4.  **Eject the SD card**.
+4.  **退出 SD 記憶卡**。
 
-    Click **Eject SD card**. When you eject the SD card, the following things happen:
+    按一下 [退出 SD 記憶卡]****。 當您退出 SD 記憶卡時，會發生下列情況：
 
-    -   if you have selected **Sync updated files back to the local folder when I eject the SD card**, the following things happen:
-        -   The files on the simulated SD card on the emulator are copied to the specified folder on the development computer. A progress bar indicates the progress of the sync operation.
-        -   The **Eject SD card** button changes to **Cancel sync**.
-        -   If you click **Cancel sync** while the sync operation is in progress, the card is ejected and the results of the sync operation are incomplete.
-    -   The **Eject SD card** button changes back to **Insert SD card**.
+    -   如果已選取 [當我退出 SD 記憶卡時將更新的檔案同步到本機資料夾]****，即會發生下列情況：
+        -   位於模擬器中模擬的 SD 記憶卡上的檔案會複製到開發電腦上指定的資料夾。 進度列會指出同步操作的進度。
+        -   [退出 SD 記憶卡]**** 按鈕會變更為 [取消同步]****。
+        -   如果您在同步操作正在進行的同時按一下 [取消同步]****，即會退出記憶卡，而同步操作的結果是不完整的。
+    -   [退出 SD 記憶卡]**** 按鈕會變更回 [插入 SD 記憶卡]****。
 
-> **Note**  Since an SD card used by the phone is formatted with the FAT32 file system, 32GB is the maximum size.
+> **注意：**由於手機使用的 SD 記憶卡是以 FAT32 檔案系統進行格式化，因此大小上限為 32GB。
 
-The speed of reading from and writing to the simulated SD card is throttled to imitate real-world speeds. Accessing an SD card is slower than accessing the computer's hard drive.
+系統會對從模擬的 SD 記憶卡讀取和寫入的速度進行流速控制，以模擬真實世界的速度。 存取 SD 記憶卡的速度會比存取電腦硬碟還要慢。
 
-## Notifications
+## 通知
 
-Send push notifications to your app by using the **Notifications** tab of the emulator's **Additional Tools**. This feature is useful if your app receives push notifications.
+使用模擬器 [其他工具]**** 的 [通知]**** 索引標籤，將推播通知傳送到您的應用程式。 如果您的應用程式會接收推播通知，則這個功能非常有用。
 
-You can easily test push notifications without creating the working cloud service that's required after you publish your app.
+您可以輕鬆測試推播通知，而不需建立在發佈應用程式之後所需的工作雲端服務。
 
-1.  **Enable simulation.**
+1.  **啟用模擬。**
 
-    After you select **Enabled**, all apps deployed on the emulator use the simulation engine instead of the WNS or MPN service until you disable simulation.
+    選取 [已啟用]**** 之後，模擬器上部署的所有應用程式都會使用模擬引擎，而不是 WNS 或 MPN 服務，直到您停用模擬為止。
 
-2.  **Select an app to receive notifications.**
+2.  **選取要接收通知的應用程式。**
 
-    The **AppId** list is automatically populated with all apps deployed to the emulator that are enabled for push notifications. Select an app in the drop-down list.
+    系統會使用所有部署到模擬器 (已針對推播通知啟用) 的應用程式自動填入 [AppId]**** 清單。 從下拉式清單中選取應用程式。
 
-    If you deploy another push-enabled app after enabling simulation, click **Refresh** to add the app to the list.
+    如果您在啟用模擬之後部署其他具備推播功能的 app，請按一下 [重新整理]****，將該 app 新增到清單中。
 
-3.  **Select a notification channel.**
+3.  **選取通知通道。**
 
-    After you select an app in the **AppId** list, the **URI** list is automatically populated with all the notification channels registered for the selected app. Select a notification channel in the drop-down list.
+    當您在 [AppId]**** 清單中選取應用程式之後，系統會使用已向選取的應用程式登錄的所有通知通道自動填入 [URI]**** 清單。 從下拉式清單中選取通知通道。
 
-4.  **Select a notification type.**
+4.  **選取通知類型。**
 
-    After you select a notification channel in the **URI** list, the **Notification Type** list is automatically populated with all the types available for the notification service. Select a notification type in the drop-down list.
+    當您在 [URI]**** 清單中選取通知通道之後，系統會使用所有可供通知服務使用的類型自動填入 [通知類型]**** 清單。 從下拉式清單中選取通知類型。
 
-    The simulator uses the Uri format of the notification channel to determine whether the app is using WNS or MPN push notifications.
+    模擬器會使用通知通道的 URI 格式，判斷應用程式是否正在使用 WNS 或 MPN 推播通知。
 
-    Simulation supports all notification types. The default notification type is **Tile**.
+    模擬支援所有通知類型。 預設通知類型為 [磚]****。
 
-    -   The following WNS notification types are supported.
+    -   下列是支援的 WNS 通知類型。
 
-        -   Raw
-        -   Toast
+        -   原始
+        -   快顯通知
 
-            When your app uses WNS notifications and you select the **Toast** notification type, the simulation tab displays the **Tag** and **Group** fields. You can select these options and enter **Tag** and **Group** values to manage toast notifications in the Notification Center.
+            當您的應用程式使用 WNS 通知且您選取 [快顯通知]**** 通知類型時，模擬索引標籤會顯示 [標記]**** 和 [群組]**** 欄位。 您可以選取這些選項並輸入 [標記]**** 和 [群組]**** 值，以管理通知中心內的快顯通知。
 
-        -   Tile
-        -   Badge
+        -   磚
+        -   徽章
 
-    -   The following MPN notification types are supported.
+    -   下列是支援的 MPN 通知類型。
 
-        -   Raw
-        -   Toast
-        -   Tile
+        -   原始
+        -   快顯通知
+        -   磚
 
-5.  **Select a notification template.**
+5.  **選取通知範本。**
 
-    After you select a notification type in the **Notification Type** list, the **Templates** list is automatically populated with all the templates available for the notification type. Select a template in the drop-down list.
+    當您在 [通知類型]**** 清單中選取通知類型之後，系統會使用所有可供通知類型使用的範本自動填入 [範本]**** 清單。 從下拉式清單中選取範本。
 
-    Simulation supports all template types.
+    模擬支援所有範本類型。
 
-6.  **Optionally, change the notification payload.**
+6.  **您可以選擇性地變更通知承載。**
 
-    After you select a template in the **Templates** list, the **Notification Payload** text box is automatically populated with a sample payload for the template. Review the sample payload in the **Notification Payload** text box.
+    當您在 [範本]**** 清單中選取範本之後，系統會使用範本的承載範例自動填入 [通知承載]**** 文字方塊。 檢閱 [通知承載]**** 文字方塊中的承載範例。
 
-    -   You can send the sample payload without changing it.
+    -   您可以傳送承載範例，而不需加以變更。
 
-    -   You can edit the sample payload in the text box.
+    -   您可以在文字方塊中編輯承載範例。
 
-    -   You can click **Load** to load a payload from a text or XML file.
+    -   您可以按一下 [載入]****，以從文字檔或 XML 檔中載入承載。
 
-    -   You can click **Save** to save the XML text of the payload to use again later.
+    -   您可以按一下 [儲存]****，以儲存承載的 XML 文字供日後再次使用。
 
-    The simulator does not validate the XML text of the payload.
+    模擬器不會驗證承載的 XML 文字。
 
-7.  **Send the push notification.**
+7.  **傳送推播通知。**
 
-    Click **Send** to deliver the push notification to the selected app.
+    按一下 [傳送]****，將推播通知傳遞到選取的應用程式。
 
-    The screen displays a message to indicate success or failure.
+    螢幕會顯示訊息，指出成功或失敗。
 
-![Notifications page in Additional Tools for the Emulator](images/em-notifications.png)
+![模擬器 [其他工具] 中的 [通知] 頁面](images/em-notifications.png)
 
-## Sensors
+## 感應器
 
-Test how your app works on low-cost phones that don't have all the optional sensors or camera features by using the **Sensors** tab of the emulator's **Additional Tools**. This feature is useful if your app uses the camera or some of the phone's sensors, and you want your app to reach the largest possible market.
+使用模擬器 [其他工具]**** 的 [感應器]**** 索引標籤，測試應用程式如何在低成本的手機上運作，這類手機並未配備所有的選用感應器或相機功能。 如果應用程式會使用相機或手機的某些感應器，而您想要將應用程式盡可能推廣到最廣泛的市場，則這個功能非常有用。
 
--   By default, all sensors are enabled in the **Optional sensors** list. Select or clear individual check boxes to enable or disable individual sensors.
--   After you change your selections, click **Apply**. Then you have to restart the emulator.
--   If you make changes, and then you switch tabs or close the **Additional Tools** window without clicking **Apply**, your changes are discarded.
--   Your settings are persisted between for the emulator session until you change them or reset them. If you capture a checkpoint, the settings are saved with the checkpoint. The settings are persisted only for the specific emulator that you're using - for example, **Emulator 8.1 WVGA 4" 512MB**.
+-   根據預設，會啟用 [選用感應器]**** 清單中的所有感應器。 選取或清除個別核取方塊，以啟用或停用個別的感應器。
+-   變更選項之後，請按一下 [套用]****。 接著必須重新啟動模擬器。
+-   如果您進行變更，接著切換索引標籤或者不以按一下 [套用]**** 的方式關閉 [其他工具]**** 視窗，則系統會捨棄變更。
+-   從模擬器工作階段一直到您變更設定或重設的這段期間，均會保留您的設定。 如果您擷取檢查點，即會使用該檢查點來儲存設定。 設定僅會針對您正在使用的特定模擬器加以保留，例如，**Emulator 8.1 WVGA 4" 512MB**。
 
-![Sensors page in Additional Tools for the Emulator](images/em-sensors.png)
+![模擬器 [其他工具] 中的 [感應器] 頁面](images/em-sensors.png)
 
-**Sensor options**
+**感應器選項**
 
-You can enable or disable the following optional hardware sensors:
+您可以啟用或停用下列選用的硬體感應器：
 
--   Ambient light sensor
--   Front-facing camera
--   Gyroscope
--   Compass (magnetometer)
+-   周遭環境光感應器
+-   前方相機
+-   迴轉儀
+-   指南針 (磁力儀)
 -   NFC
--   Software buttons (only on some high-resolution emulator images)
+-   軟體按鈕 (僅存在於某些高解析度的模擬器影像中)
 
-**Camera options**
+**相機選項**
 
-You can enable or disable the optional front-facing camera by selecting or clearing the check box in the **Optional sensors** list.
+您可以選取或清除 [選用感應器]**** 清單中的核取方塊來啟用或停用選用的前方相機。
 
-You can also select one of the following camera profiles in the **Camera** dropdown list.
+您也可以在 [相機]**** 下拉式清單中，選取下列其中一個相機設定檔。
 
--   Windows Phone 8.0 camera.
--   Windows Phone 8.1 camera.
+-   Windows Phone 8.0 相機。
+-   Windows Phone 8.1 相機。
 
-Here is the list of camera features supported by each of the profiles.
+下列為每個設定檔所支援的相機功能清單。
 
-| Feature            | Windows Phone 8.0 camera | Windows Phone 8.1 camera  |
+| 功能            | Windows Phone 8.0 相機 | Windows Phone 8.1 相機  |
 |--------------------|--------------------------|---------------------------|
-| Resolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
-| Autofocus          | Yes                      | Yes                       |
-| Flash              | No                       | Yes                       |
-| Zoom               | 2x (digital or optical)  | 2x (digital or optical)   |
-| Video resolution   | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
-| Preview resolution | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
+| 解析度         | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更佳 |
+| 自動對焦          | 是                      | 是                       |
+| 閃光燈              | 否                       | 是                       |
+| 縮放               | 2x (數位或光學)  | 2x (數位或光學)   |
+| 影片解析度   | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更佳 |
+| 預覽解析度 | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
-## Frame rate counters
+## 畫面播放速率計數器
 
-Use the frame rate counters in Windows Phone emulator to monitor the performance of your running app.
+使用 Windows Phone 模擬器中的畫面播放速率計數器，監視執行中應用程式的效能。
 
-![Frame rate counters in Windows Phone emulator](images/em-frameratecounters.PNG)
+![Windows Phone 模擬器中的畫面播放速率計數器](images/em-frameratecounters.PNG)
 
-**Descriptions of the frame rate counters**
+**畫面播放速率計數器的說明**
 
-The following table describes each frame rate counter.
+下表說明每個畫面播放速率計數器。
 
-| Frame rate counter                           | Description        |
+| 畫面播放速率計數器                           | 說明        |
 |----------------------------------------------|--------------------|
-| Composition (Render) Thread Frame Rate (FPS) | The rate at which the screen is updated.  |
-| User Interface Thread Frame Rate (FPS)       | The rate at which the UI thread is running.    |
-| Texture Memory Usage                         | The video memory and system memory copies of textures being used in the app.    |
-| Surface Counter                              | The number of explicit surfaces being passed to the GPU for processing.     |
-| Intermediate Surface Counter                 | The number of implicit surfaces generated as a result of cached surfaces.    |
-| Screen Fill Rate Counter                     | The number of pixels being painted per frame in terms of screens. A value of 1 represents the number of pixels in the current screen resolution – for example, 480 x 800 pixels. |
+| 撰寫 (轉譯) 執行緒畫面播放速率 (FPS) | 用來更新畫面的速率。  |
+| 使用者介面執行緒畫面播放速率 (FPS)       | 用來執行 UI 執行緒的速率。    |
+| 紋理記憶體使用量                         | 應用程式中所使用之紋理的視訊記憶體和系統記憶體複本。    |
+| 表面計數器                              | 明確傳送到 GPU 進行處理的表面數量。     |
+| 中繼表面計數器                 | 產生做為快取表面結果的隱含表面數目。    |
+| 畫面填滿速率計數器                     | 就螢幕而言，每個畫面繪製的像素數目。 值為 1 表示目前螢幕解析度中的像素數目，例如，480 x 800 像素。 |
 
-**Enabling and disabling the frame rate counters**
+**啟用和停用畫面播放速率計數器**
 
-You can enable or disable the display of the frame rate counters in your code. When you create a Windows Phone app project in Visual Studio, the following code to enable the frame rate counters is added by default in the file App.xaml.cs. To disable the frame rate counters, set **EnableFrameRateCounter** to **false** or comment out the line of code.
+您可以在程式碼中啟用或停用畫面播放速率計數器的顯示。 當您在 Visual Studio 中建立 Windows Phone 應用程式專案時，預設會將下列啟用畫面播放速率計數器的程式碼新增到 App.xaml.cs 檔案中。 若要停用畫面播放速率計數器，請將 **EnableFrameRateCounter** 設定為 **false**，或將該行程式碼標記為註解。
 
 > [!div class="tabbedCodeSnippets"]
 >```csharp
@@ -607,58 +607,58 @@ You can enable or disable the display of the frame rate counters in your code. W
 >End If
 >```
 
-## Known Issues
+## 已知問題
 
-The following are known issues with the emulator, with suggested ways to work around problems if you encounter them.
+以下是關於模擬器的已知問題，以及當您遇到這類問題時該如何解決的建議方法。
 
-### Error message: “Failed while removing virtual Ethernet switch”
+### 錯誤訊息：「移除虛擬乙太網路交換器時發生錯誤」
 
-In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
+在某些情況下 (包括在您更新為新的 Windows 10 正式發行前小眾測試版之後)，與模擬器相關聯的虛擬網路交換器會進入無法透過使用者介面刪除它的狀態。
 
-To recover from this situation run "netcfg -d" from an administrator command prompt: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. When the command is finished running, reboot your computer to complete the recovery process.
+若要從此情況中復原，請從系統管理員命令提示字元執行 "netcfg -d"：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 當命令完成執行時，需重新啟動電腦，才能完成修復程序。
 
-**Note**  This command will delete all networking devices, not just those associated with the emulator. When your computer starts again, all hardware networking devices will be discovered automatically.
+**注意：**這個命令將會刪除所有網路裝置，而不只是與模擬器相關聯的裝置。 當您的電腦重新啟動時，將會自動探索所有硬體網路裝置。
  
-### Unable to launch the emulators
+### 無法啟動模擬器
 
-Microsoft Emulator includes XDECleanup.exe, a tool that deletes all VMs, diff disks, and emulator specific network switches, and it ships with the emulator (XDE) binaries already. You should use this tool to clean up emulator VMs if they get into a bad state. Run the tool from an administrator command prompt:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有的 VM、差異磁碟及模擬器特定的網路交換器，而它已經隨附於模擬器 (XDE) 二進位檔中。 如果模擬器 VM 進入錯誤狀態，您應該使用這個工具來清除這些 VM。 請從系統管理員命令提示字元執行此工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Note**  XDECleanup.exe deletes all emulator specific Hyper-V VMs, and it also deletes any VM checkpoints or saved states.
+> **注意：**XDECleanup.exe 會刪除所有模擬器特定的 Hyper-V VM，而且也會刪除任何的 VM 檢查點或儲存狀態。
 
-### Uninstall Windows 10 for Mobile Image
+### 解除安裝 Windows 10 行動裝置版映像
 
-When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image - <version>** in the list of installed programs, right-click on it, and choose **Uninstall**.
+當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]**** 清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 - <version>]****、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]****。
 
-In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
+在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 若您將模擬器安裝至預設路徑，則 VHD 檔案會位於 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd。
 
-###How to disable hardware accelerated graphics
+###如何停用硬體加速圖形
 
-By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
+根據預設，Windows 10 行動裝置版模擬器會使用硬體加速圖形。 如果您無法啟動已啟用硬體加速的模擬器，您可以藉由設定登錄值將它關閉。
 
-To disable hardware acceleration:
+若要停用硬體加速：
 
-1. Start Registry Editor.
-2. Create the following registry subkey if it doesn't exist: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
-3. Right click the 10.0 folder, point to **New**, and then click **DWORD Value**.
-4. Type **DisableRemoteFx**, and then press Enter.
-5. Double-click **DisableRemoteFx**, enter 1 in the **Value** data box, select the **Decimal** option, and then click **OK**.
-6. Close Registry Editor.
+1. 啟動 [登錄編輯程式]。
+2. 如果下列登錄子機碼不存在，請建立一個︰HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+3. 以滑鼠右鍵按一下 10.0 資料夾，指向 [新增]****，然後按一下 [DWORD 值]****。
+4. 輸入 **DisableRemoteFx**，然後按 Enter 鍵。
+5. 按兩下 **DisableRemoteFx**，在 [值]**** 資料方塊中輸入 1，選取 [十進位]**** 選項，然後按一下 [確定]****。
+6. 關閉登錄編輯程式。
 
-**Note:** After setting this registry value, you must delete the virtual machine in Hyper-V manager for the configuration that you launched in Visual Studio, and then relaunch the emulator with software-rendered graphics.
+**注意︰**設定此登錄值之後，您必須在 Hyper-V 管理員中針對您在 Visual Studio 中啟動的組態刪除虛擬機器，然後以軟體呈現的圖形重新啟動模擬器。
 
-## Support Resources
+## 支援資源
 
-To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](http://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](http://go.microsoft.com/fwlink/?LinkId=535000).
+若要尋找使用 Windows 10 工具遇到的問題及解決問題，請瀏覽 [Windows 10 工具論壇](http://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看所有 Windows 10 開發論壇，請瀏覽[此連結](http://go.microsoft.com/fwlink/?LinkId=535000)。
 
-## Related topics
+## 相關主題
 
-* [Run Windows Phone apps in the emulator](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
-* [Windows and Windows Phone SDK archive](https://dev.windows.com/downloads/sdk-archive)
+* [在模擬器中執行 Windows Phone 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
+* [Windows 和 Windows Phone SDK 封存](https://dev.windows.com/downloads/sdk-archive)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

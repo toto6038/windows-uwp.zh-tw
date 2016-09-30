@@ -1,145 +1,136 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "啟用鍵盤存取以使用 Tab 瀏覽和便捷鍵，讓使用者可以利用鍵盤瀏覽整個 UI 元素。"
-title: "便捷鍵"
+Description: Enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
+title: Access keys
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
 keyword: Access keys, keyboard, accessibility
-translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
-
 ---
 
-# 便捷鍵
+# Access keys
 
-不方便使用滑鼠的使用者 (例如受到某種程度運動神經傷害的使用者) 通常依賴鍵盤來瀏覽 app 並與之互動。  XAML 架構可讓您透過 Tab 瀏覽和便捷鍵，提供對 UI 元素的鍵盤存取。
+Users who cannot easily use a mouse, such as those with motor disabilities, often rely on the keyboard to navigate and interact with an app.  The XAML framework lets you enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
 
-- Tab 瀏覽是基本的鍵盤協助工具能供性 (預設為啟用)，可讓使用者利用鍵盤上的 Tab 鍵和方向鍵，在 UI 元素之間移動焦點。
-- 便捷鍵是補充性質的協助工具能供性 (您要在 app 中實作)，可以使用鍵盤功能鍵 (Alt 鍵) 與一或多個英數字元鍵 (通常是與命令相關聯的字母) 的組合來快速存取應用程式命令。 常用的便捷鍵包括 _Alt+F_ 以開啟 [檔案] 功能表，和 _Alt +AL_ 以靠左對齊。  
+- Tab navigation is a basic keyboard accessibility resource that’s enabled by default. Users press the tab and arrow keys on the keyboard to move focus around the UI elements.  
+- Access keys are an additional accessibility aid that you can implement. An access key uses the Alt key plus one or more alphanumeric characters associated with a UI element. For example, _Alt, F_ is commonly used to open the File menu, while _Alt, AL_ could invoke the Align Left option.  
 
-如需鍵盤瀏覽與協助工具的詳細資訊，請參閱[鍵盤互動](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)與[鍵盤協助工具](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)。 本文假設您了解這些文章中討論的概念。
+For more info about keyboard navigation and accessibility, see [Keyboard interaction](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and [Keyboard accessibility](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). This article assumes you understand the concepts discussed in those articles.
 
-## 便捷鍵概觀
+## Access key overview
 
-便捷鍵可讓使用者利用鍵盤直接叫用按鈕或設定焦點，而不需要重複地按方向鍵或 Tab。 便捷鍵的用意在於能輕鬆地被搜尋，因此您應該將它們直接記載在 UI 中；例如，在控制項上含有便捷鍵的浮動徽章。
+Access keys let users directly invoke buttons or set focus with the keyboard without requiring them to repeatedly press the arrow keys and tab. Access keys are intended to be easily discoverable, so you should document them directly in the UI; for example, a floating badge over the control with the access key.
 
-![Microsoft Word 中便捷鍵的範例與相關聯的按鍵提示](images/keyboard/accesskeys-keytips.png)
 
-_圖 1：Microsoft Word 中便捷鍵的範例與相關聯的按鍵提示。_
+_Figure 1: Example of Key Tips; floating badge access keys from Microsoft Word._
 
-便捷鍵是與 UI 元素相關聯的一或多個英數字元。 例如，Microsoft Word 針對 [常用] 索引標籤使用 _H_，針對 [復原] 按鈕使用 _2_，或是針對 [繪製] 索引標籤使用 _JI_。
+An access key is one or several alphanumeric characters associated with a UI element. For example, Microsoft Word uses _H_ for the Home tab, _2_ for Undo button, or _JI_ for the Draw tab.
 
-**便捷鍵範圍**
+**Access key scope**
 
-便捷鍵屬於特定的範圍。 例如，在圖 1 中，_F_、_H_、_N_ 和 _JI_ 屬於頁面的範圍。  當使用者按下 _H_ 時，範圍會變更為 [常用] 索引標籤的範圍，而其便捷鍵會如圖 2 所示。 便捷鍵 _V_、_FP_、_FF_ 和 _FS_ 屬於 [常用] 索引標籤的範圍。
+An access key belongs to a specific scope. For example, in Figure 1, _F_, _H_, _N_, and _JI_, belong to the page’s scope.  When the user presses _H_, the scope changes to the Home tab’s scope and its access keys are shown as seen in Figure 2. The access keys, _V_, _FP_, _FF_, and _FS_ belong to the Home tab’s scope.
 
-![Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相關聯的按鍵提示](images/keyboard/accesskeys-keytips-hometab.png)
 
-_圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相關聯的按鍵提示。_
+_Figure 2: Access keys that belong to the Home tab’s scope_
 
-如果兩個元素屬於不同的範圍，則元素可以使用相同的便捷鍵。 例如，_2_ 是頁面範圍的 [復原] 便捷鍵 (圖 1)，同使也是 [常用] 索引標籤範圍中的 [斜體] (圖 2)。 所有的便捷鍵都屬於預設的範圍，除非另有指定另一個範圍。
+Two elements can have the same access keys if the elements belong to different scopes. For example, _2_ is the access key for Undo on the page’s scope (Figure 1), and also for Italic in the Home tab’s scope (Figure 2). All access keys belong to the default scope unless another scope is specified.
 
-**便捷鍵組合**
+**Access key sequence**
 
-便捷鍵組合通常是一次按一個按鍵來達成動作，而不是同時按下多個按鍵。 (但其中有例外，我們將在下一節討論。) 達成動作所需的按鍵輸入順序就是「便捷鍵組合」__。 使用者按下 Alt 鍵以起始便捷鍵組合。 當使用者按下便捷鍵組合中的最後一個按鍵時，就會叫用便捷鍵。 例如，若要在 Word 中開啟 [檢視] 索引標籤，使用者會按下 _Alt、W_ 便捷鍵組合。
+To use access keys, users typically press one key at a time to achieve an action rather than pressing keys simultaneously. (There is an exception to this that we discuss in the next section.) The sequence of keystrokes needed to achieve the action is an _access key sequence_. The user presses the Alt key to initiate the access key sequence. An access key is invoked when the user presses the last key in an access key sequence. For example, to open the View tab in Word, the user would press the _Alt, W_ access key sequence.
 
-使用者可以在一個便捷鍵組合中叫用數個便捷鍵。 例如，若要在 Word 文件中開啟 [複製格式]，使用者會按下 Alt 以起始組合，然後按下 _H_ 來瀏覽 [常用] 區段並變更便捷鍵範圍，然後按下 _F_，最後是 _P_。_H_ 和 _FP_ 分別為 [常用] 索引標籤和 [複製格式] 的便捷鍵。
+A user can invoke several access keys in an access key sequence. For example, to open the Format Painter in a Word document, the user presses Alt to initialize the sequence, then presses _H_ to navigate to the Home section and change the access key scope, then _F_, and eventually _P_. _H_ and _FP_ are the access keys for the Home tab and the Format Painter button respectively.
 
-有些項目在叫用之後會完成便捷鍵組合 (例如 [複製格式] 按鈕) 而某些則不會 (例如 [常用] 索引標籤)。 叫用便捷鍵會產生執行命令、移動焦點、變更便捷鍵範圍，或某些其他相關聯的動作。
+Some elements finalize an access key sequence after they’re invoked (like the Format Painter button) and others don’t (like the Home tab). Invoking an access key can result in executing a command, moving the focus, changing the access key scope, or some other action associated with it.
 
-## 便捷鍵使用者互動
+## Access Key User Interaction
 
-若要了解便捷鍵 API，則必須先了解使用者互動模型。 您可以在下面找到便捷鍵使用者互動模型的摘要：
+To understand the Access Key APIs, it is necessary to first understand the user interaction model. Below you can find a summary of the access key user interaction model:
 
-- 當使用者按下 Alt 鍵時，就會啟動便捷鍵組合，即使焦點位在輸入控制項時亦同。 然後，使用者可以按便捷鍵來叫用相關聯的動作。 這種使用者互動需要您在 UI 中搭配一些視覺能供性，記載可用的便捷鍵，例如當按下 Alt 鍵時會顯示的浮動徽章
-- 當使用者同時按下 Alt 鍵加上便捷鍵時，會立即叫用便捷鍵。 這類似於使用 Alt+「便捷鍵」__定義的鍵盤快速鍵。 在此情況下，不會顯示便捷鍵視覺能供性。 不過，叫用便捷鍵可能導致變更便捷鍵範圍。 在此情況下，會起始便捷鍵組合，並且顯示新範圍的視覺能供性。
-    > [!NOTE]
-    > 只有使用單一字元的便捷鍵可以利用這種使用者互動。 Alt+「便捷鍵」__組合不支援使用多個字元的便捷鍵。    
-- 當多字元便捷鍵共用某些字元時，在使用者按下共用的字元時，便會篩選便捷鍵。 例如，假設有顯示三個便捷鍵：_A1_、_A2_ 和 _C_。如果使用者按下 _A_，則只會顯示 _A1_ 和 _A2_ 便捷鍵，並隱藏 C 的視覺能供性。
-- Esc 鍵會移除一層篩選。 例如，如果有便捷鍵為 _B_、_ABC_、_ACD_ 和 _ABD_，而使用者按下 _A_，則只會顯示 _ABC_、_ACD_ 和 _ABD_。 如果使用者接著按下 _B_、則只會顯示 _ABC_ 與 _ABD_。 如果使用者按下 Esc，則會移除一層篩選，並顯示 _ABC_、_ACD_ 和 _ABD_ 便捷鍵。 如果使用者再按一次 Esc，則會再移除另一層篩選，而所有的便捷鍵 - _B_、_ABC_、_ACD_ 和 _ABD_ – 都會啟用，並顯示它們的視覺能供性。
-- Esc 鍵瀏覽回先前的範圍。 便捷鍵可能屬於不同的範圍，以便在有許多命令的 app 中能更輕鬆地瀏覽。 便捷鍵組合一律在主要範圍開始。 所有的便捷鍵都屬於主要範圍，除了那些指定為範圍擁有者的特定 UI 元素。 當使用者叫用其為範圍擁有者元素的便捷鍵時，XAML 架構會自動將範圍移動到該元素，並將它加入內部便捷鍵瀏覽堆疊。 Esc 鍵可在各便捷鍵瀏覽堆疊之間向後移動。
-- 有數種方式可以關閉便捷鍵組合：
-    - 使用者可以按 Alt 來關閉進行中的便捷鍵組合。 請記住，按 Alt 也可以起始便捷鍵組合。
-    - 如果便捷鍵在主要範圍中且未經篩選，則 Esc 鍵會關閉便捷鍵組合。
-        > [!NOTE]
-        > Esc 按鍵輸入也會傳遞至要在該處處理的的 UI 層。
-- Tab 鍵會關閉便捷鍵組合，並返回 Tab 瀏覽。
-- Enter 鍵會關閉便捷鍵組合，並傳送按鍵輸入到具有焦點的元素。
-- 方向鍵會關閉便捷鍵組合，並傳送按鍵輸入到具有焦點的元素。
-- 指標向下事件 (例如按一下滑鼠或觸碰) 會關閉便捷鍵組合。
-- 根據預設，當叫用便捷鍵之後，會關閉便捷鍵組合。  不過，您可以藉由將 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 屬性設定為 **false** 來覆寫這個行為。
-- 當決定性的有限自動化無法進行時，便會會發生便捷鍵衝突。 便捷鍵衝突令人困擾，但仍可能因為大量的命令、當地語系化問題或便捷鍵的執行階段世代而產生。
+- When the user presses the Alt key, the access key sequence starts, even when the focus is on an input control. Then, the user can press the access key to invoke the associated action. This user interaction requires that you document the available access keys within the UI with some visual affordance, such as floating badges, that are shown when the Alt key is pressed
+- When the user presses the Alt key plus the access key simultaneously, the access key is invoked immediately. This is similar to having a keyboard shorcut defined by Alt+_access key_. In this case, the access key visual affordances are not shown. However, invoking an access key could result in changing the access key scope. In this case, an access key sequence is initiated and the visual affordances are shown for the new scope.
 
- 有兩種情況會發生衝突：
- - 當兩個 UI 元素具有相同的便捷鍵值，並屬於相同便捷鍵範圍時。 例如，`button1` 的便捷鍵 _A1_ 和 `button2` 的便捷鍵 _A1_ 均屬於預設範圍。 在此情況下，系統會處理第一個加入到視覺化樹狀結構中的便捷鍵來解決衝突。 其餘的部分將會忽略。
- - 當相同的便捷鍵範圍中有多個計算選項。 例如，_A_ 和 _A1_。 當使用者按下 _A_，系統有兩種選項：叫用 _A_ 便捷鍵，或是繼續並使用 _A1_ 便捷鍵的 A 字元。 在此情況下，系統只會處理自動機制中第一個到達的便捷鍵叫用。 例如，_A_ 和 _A1_，系統只會叫用 _A_ 便捷鍵。
--   當使用者在便捷鍵組合中按下無效的便捷鍵值時，則沒有作用。 在便捷鍵組合中，有兩種類別的按鍵可視為有效便捷鍵：
- - 可結束便捷鍵組合的特殊按鍵：Esc、Alt、方向鍵、Enter 和 Tab。
- - 指派給便捷鍵的英數字元。
+    **NOTE**&nbsp;&nbsp;Only access keys with one character can take advantage of this user interaction. The Alt+_access key_ combination is not supported for access keys with more than one character.
+- When there are several multi-character access keys that share some characters, when the user presses a shared character, the access keys are filtered. For example, assume there are three access keys shown: _A1_, _A2_, and _C_. If the user presses _A_, then only the _A1_ and _A2_ access key are shown and the visual affordance for C is hidden.
+- The Esc key removes one level the filtering. For example, if there are access keys _B_, _ABC_, _ACD_, and _ABD_ and the user presses _A_, then only _ABC_, _ACD_ and _ABD_ are shown. If the user then presses _B_, only _ABC_ and _ABD_ are shown. If user presses Esc, one level of filtering is removed and _ABC_, _ACD_ and _ABD_ access keys are shown. If the user presses Esc again, another level of filtering is removed and all the access keys -   _B_, _ABC_, _ACD_, and _ABD_ – are enabled and their visual affordances are shown.
+- The Esc key navigates back to the previous scope. Access keys can belong to different scopes to make it easier to navigate across apps that have a lot of commands. The access key sequence always starts on the main scope. All access keys belong to the main scope except those that specify a particular UI element as their scope owner. When the user invokes the access key of an element that is a scope owner, the XAML framework automatically moves the scope to it and adds it to an internal access key navigation stack. The Esc key moves back through the access key navigation stack.
+- There are several ways to dismiss the access key sequence:
+    - The user can press Alt to dismiss an access key sequence that is in progress. Remember that pressing Alt initiates the access key sequence as well.
+    - The Esc key dismisses the access key sequence if it is in the main scope and is not filtered.
 
-## 便捷鍵 API
+        **NOTE**&nbsp;&nbsp;The Esc keystroke is passed to the UI layer to be handled there as well.
+    - The Tab key dismisses the access key sequence and returns to the Tab navigation.
+    - The Enter key dismisses the access key sequence and sends the keystroke to the element that has the focus.
+    - The arrow keys dismiss the access key sequence and send the keystroke to the element that has the focus.
+    - A pointer down event such a mouse click or a touch dismisses the access key sequence.
+    - By default, when an access key is invoked, the access key sequence is dismissed.  However, you can override this behavior by setting the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false**.
+- Access key collisions occur when a deterministic finite automaton is not possible. Access key collisions are not desirable but can happen because of a large number of commands, localization issues, or runtime generation of access keys.
 
-為了支援便捷鍵使用者互動，XAML 架構提供 API，如下所述。
+ There are two cases where collisions happen:
+ - When two UI elements have the same access key value and belong to the same access key scope. For example, an access key _A1_ for a `button1` and access key _A1_ for a `button2` that belongs to the default scope. In this case, the system resolves the collision by processing the access key of the first element added to the visual tree. The rest are ignored.
+ - When there is more than one computational option in the same access key scope. For example, _A_ and _A1_. When user presses _A_, the system has two options: invoke the _A_ access key or keep going and consume the A character from the _A1_ access key. In this case, the system will process only the first access key invocation reached by the automata. For the example, _A_ and _A1_, the system will only invoke the _A_ access key.
+- 	When the user presses an invalid access key value in an access key sequence, nothing happens. There are two categories of keys considered as valid access keys in an access key sequence:
+ - Special keys to exit the access key sequence: This is Esc, Alt, the arrow keys, Enter, and Tab.
+ - The alphanumeric characters assigned to the access keys.
+
+## Access key APIs
+
+To support the access key user interaction, the XAML framework provides the APIs described here.
 
 **AccessKeyManager**
 
-[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) 是一種協助程式類別，當顯示或是隱藏便捷鍵時，可用來管理 UI。 [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件每當 app 輸入和結束便捷鍵組合時便會引發。 您可以查詢 [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) 屬性來判斷視覺能供性是否為顯示或隱藏。  您也可以呼叫 [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) 來強制關閉便捷鍵組合。
+The [AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) is a helper class that you can use to manage your UI when access keys are shown or hidden. The [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised each time the app enters and exits from the access key sequence. You can query the [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) property to determine whether the visual affordances are shown or hidden.  You can also call [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) to force dismissal of an access key sequence.
 
-> [!NOTE]
-> 便捷鍵的視覺項目沒有任何內建的實作；您必須提供實作。  
+**NOTE**&nbsp;&nbsp;There is no built-in implementation of the access key's visual; you have to provide it.  
 
 **AccessKey**
 
-[AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性可讓您指定 UIElement 或 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx) 上的便捷鍵。 如果兩個元素有相同的便捷鍵和範圍，則只會處理第一個加入到視覺化樹狀結構的元素。
+The [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property lets you specify an access key on a UIElement or [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx). If two elements have the same access key and the same scope, only the first element added to the visual tree will be processed.
 
-若要確保 XAML 架構會處理便捷鍵，UI 元素必須要能在視覺化樹狀結構中辨識。 如果視覺化樹狀結構中沒有任何元素含有便捷鍵，則不會引發任何便捷鍵事件。
+To ensure the XAML Framework processes the access keys, the UI elements must be realized in the visual tree. If there are no elements in the visual tree with an access key, no access key events are raised.
 
-便捷鍵 API 不支援需要兩個按鍵輸入才能產生的字元。 個別的字元必須對應到特定語言原生鍵盤配置上的按鍵。  
+Access key APIs don’t support characters that need two keystrokes to be generated. An individual character must correspond to a key on a particular language’s native keyboard layout.  
 
 **AccessKeyDisplayRequested/Dismissed**
 
-[AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) 和 [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) 事件會在便捷鍵視覺能供性應該顯示或關閉時引發。 當元素的 [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) 屬性設定為 **Collapsed** 時，不會引發這些事件。 每次使用者按下便捷鍵所使用的字元時，在便捷鍵組合期間會引發 AccessKeyDisplayRequested 事件。 例如，如果有一設定為 _AB_ 的便捷鍵，在使用者按下 Alt 就會引發此事件，並在使用者按下 _A_ 時再次引發。當使用者按下 _B_ 時，會引發 AccessKeyDisplayDismissed 事件
+The [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) and the [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) events are raised when an access key visual affordance should be displayed or dismissed. These events are not raised for elements with their [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) property set to **Collapsed**. The AccessKeyDisplayRequested event is raised during an access key sequence every time the user presses a character that is used by the access key. For example, if an access key is set to _AB_, this event is raised when the user presses Alt, and again when the user presses _A_. When user presses _B_, the AccessKeyDisplayDismissed event is raised
 
 **AccessKeyInvoked**
 
-[AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件會在使用者到達便捷鍵的最後一個字元時引發。 便捷鍵可以有一或數個字元。 例如，若有便捷鍵 _A_ 和 _BC_，當使用者按下 _Alt、A_ 或 _Alt、B、C_時，就會引發事件，但不會在使用者僅按下 _Alt、B_ 時引發。這個事件在按鍵按下時就會引發，而非放開時。
+The [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event is raised when a user reaches the last character of an access key. An access key can have one or several characters. For example, for access keys _A_ and _BC_, when a user presses _Alt, A_, or _Alt,  B, C_, the event is raised, but not when the user presses just _Alt, B_. This event is raised when the key is pressed, not when it’s released.
 
 **IsAccessKeyScope**
 
-[IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) 屬性可讓您指定其為便捷鍵範圍根項目的 UIElement。 對於此元素會引發 AccessKeyDisplayRequested 事件，但其子項不會。 當使用者叫用此元素時，XAML 架構會自動變更範圍，並在其子項上引發 AccessKeyDisplayRequested 事件，以及在其他 UI 元素上 (包括父項) 引發 AccessKeyDisplayDismissed 事件。  當範圍變更後，不會結束便捷鍵組合。
+The [IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) property lets you specify that a UIElement is the root of an access key scope. The AccessKeyDisplayRequested event is raised for this element, but not for its children. When a user invokes this element, the XAML framework changes the scope automatically and raises the AccessKeyDisplayRequested event on its children and the AccessKeyDisplayDismissed event on other UI elements (including the parent).  The access key sequence is not exited when the scope is changed.
 
 **AccessKeyScopeOwner**
 
-若要讓元素參與另一個元素 (來源) 的範圍，而另一個元素在視覺化樹狀結構中並非該元素的父項，您可以設定 [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) 屬性。 繫結到 AccessKeyScopeOwner 屬性的元素必須將 IsAccessKeyScope 設定為 **true**。 否則，會擲回例外狀況。
+To make an element participate in the scope of another element (the source) that is not its parent in the visual tree, you can set the [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) property. The element bound to the AccessKeyScopeOwner property must have IsAccessKeyScope set to **true**. Otherwise, an exception is thrown.
 
 **ExitDisplayModeOnAccessKeyInvoked**
 
-根據預設，當叫用便捷鍵且元素不是範圍擁有者時，就會完成便捷鍵組合，並引發 [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件。 您可以將 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 屬性設定為 **false** 來覆寫此行為，並防止便捷鍵組合在叫用後結束。 ([UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 和 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx) 都有這項屬性)。
+By default, when an access key is invoked and the element is not a scope owner, the access key sequence is finalized and the [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised. You can set the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false** to override this behavior and prevent exiting from the access key sequence after its invoked. (This property is on both [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) and [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx)).
 
-> [!NOTE]
-> 如果元素是範圍擁有者 (`IsAccessKeyScope="True"`)，app 進入新的便捷鍵範圍時不會引發 IsDisplayModeEnabledChanged 事件。
+**NOTE**&nbsp;&nbsp;If the element is a scope owner (`IsAccessKeyScope="True"`), the app enters a new access key scope and the IsDisplayModeEnabledChanged event is not raised.
 
-**當地語系化**
+**Localization**
 
-便捷鍵可以使用多種語言當地語系化，並使用 [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API 在執行階段載入。
+Access keys can be localized in multiple languages and loaded at runtime using the [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) APIs.
 
-## 叫用便捷鍵時使用的控制項模式
+## Control patterns used when an access key is invoked
 
-控制項模式是公開常用控制項功能的介面實作；例如，按鈕會實作 **Invoke** 控制項模式，而這會引發 **Click** 事件。 當叫用便捷鍵時，XAML 架構會查詢叫用的元素是否實作控制項模式，並在有實作時執行控制項模式。 如果元素有一個以上的控制項模式，則只會叫用其中一個，其餘的部分將會忽略。 控制項模式會以下列順序來搜尋：
+Control patterns are interface implementations that expose common control functionality; for example, buttons implement the **Invoke** control pattern and this raises the **Click** event. When an access key is invoked, the XAML framework looks up whether the invoked element implements a control pattern and executes it if it does. If the element has more than one control pattern, only one is invoked, the rest are ignored. Control patterns are searched in the following order:
 
-1.  叫用。 例如 Button。
-2.  切換。 例如 Checkbox。
-3.  選項。 例如 RadioButton。
-4.  展開/摺疊。 例如 ComboBox。
+1.	Invoke. For example, a Button.
+2.	Toggle. For example, a Checkbox.
+3.	Selection. For example, a RadioButton.
+4.	Expand/Collapse. For example, a ComboBox.
 
-如果找不到控制項模式，便捷鍵叫用會顯示為 no-op，並且會記錄偵錯訊息以協助您偵錯此情況：「找不到此元件的自動化模式。 請在 AccessKeyInvoked 的事件處理常式中實作所需的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」
+If a control pattern is not found, the access key invocation will appear as a no-op and a debug message is recorded to assist you in debugging this situation: "No automation patterns for this component found. Implement desired behavior in the event handler for AccessKeyInvoked. Setting Handled to true in your event handler will suppress this message."
 
-> [!NOTE]
-> Visual Studio 的 [偵錯設定] 中的偵錯程式 [應用程式處理類型] 必須為 [混合 (Managed 和原生)]__ 或 [原生]__ 才能看到此訊息。
+**NOTE**&nbsp;&nbsp;The debugger's Application process type must be _Mixed (Managed and Native)_ or _Native_ in Visual Studio's Debug Settings to see this message.
 
-如果您不想要讓便捷鍵執行其預設控制項模式，或元素不具有控制項模式，則您應該處理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件，並實作所需的行為。
+If you do not want an access key to execute its default control pattern, or if the element does not have a control pattern, you should handle the [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event and implement the desired behavior.
 ```csharp
 private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
 {
@@ -148,20 +139,19 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 }
 ```
 
-如需控制項模式的詳細資訊，請參閱[使用者介面自動化控制項模式概觀](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)。
+For more info about control patterns, see [UI Automation Control Patterns Overview](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
 
-## 便捷鍵和朗讀程式
+## Access keys and Narrator
 
-Windows 執行階段具有使用者介面自動化提供者，它會公開 Microsoft UI 自動化元素上的屬性。 這些屬性可讓使用者介面自動化用戶端應用程式探索關於使用者介面部分的相關資訊。 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性可讓用戶端 (例如朗讀程式) 探索與元素相關聯的便捷鍵。 每當元素取得焦點時，朗讀程式將會讀取此屬性。 如果 AutomationProperties.AccessKey 不具有值，則 XAML 架構會從 UIElement 或 TextElement 傳回 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性值。 如果 AccessKey 屬性已經有值，您就不需要設定 AutomationProperties.AccessKey。
+Windows Runtime has UI Automation providers that expose properties on Microsoft UI Automation elements. These properties enable UI Automation client applications to discover information about pieces of the user interface. The [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) property lets clients, such as Narrator, discover the access key associated with an element. Narrator will read this property every time an element gets focus. If AutomationProperties.AccessKey is does not have value, the XAML framework returns the [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property value from the UIElement or TextElement. You don't need to setup AutomationProperties.AccessKey if the AccessKey property already has a value.
 
-## 範例：按鈕的便捷鍵
+## Example: Access key for button
 
-本範例說明如何為按鈕建立便捷鍵。 範例使用 Tooltip 做為視覺能供性，以實作包含便捷鍵的浮動徽章。
+This example shows how to create an access key for a Button. It uses Tooltips as a visual affordance to implement a floating badge that contains the access key.
 
-> [!NOTE]
-> Tooltip 是為了簡單起見而使用，但建議您使用如 [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx) 類別建立您自己的控制項來顯示它。
+**NOTE**&nbsp;&nbsp;Tooltip is used for simplicity, but we recommend that you create your own control to display it using, for example, [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
 
-XAML 架構會自動呼叫 Click 事件的處理常式，因此您不需要處理 AccessKeyInvoked 事件。 範例使用 [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) 屬性，只針對叫用便捷鍵剩餘的字元提供視覺能供性。 例如，如果有顯示三個便捷鍵：_A1_、_A2_ 和 _C_，而使用者按下 _A_，則只會有 _A1_ 和 _A2_ 便捷鍵未經篩選，並且會顯示為 _1_ 和 _2_，而非 _A1_ 和 _A2_。
+The XAML framework automatically calls the handler for the Click event, so you don't need to handle the AccessKeyInvoked event. The example provides visual affordances for only the characters that are remaining to invoke the access key by using the [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) property. For example, if there are three displayed access keys: _A1_, _A2_, and _C_, and the user presses _A_, then only _A1_ and _A2_ access key are unfiltered, and are displayed as _1_ and _2_ instead of _A1_ and _A2_.
 
 ```xaml
 <StackPanel
@@ -229,13 +219,13 @@ XAML 架構會自動呼叫 Click 事件的處理常式，因此您不需要處�
     }
 ```
 
-## 範例：限定範圍的便捷鍵
+## Example: Scoped access keys
 
-本範例說明如何建立限定範圍的便捷鍵。 PivotItem 的 IsAccessKeyScope 屬性可在使用者按下 Alt 時，避免顯示 PivotItem 子元素的便捷鍵。 這些便捷鍵只有在使用者叫用 PivotItem 時才會顯示，因為 XAML 架構會自動切換範圍。 架構也會隱藏其他範圍的便捷鍵。
+This example shows how to create scoped access keys. The PivotItem’s IsAccessKeyScope property prevents the access keys of the PivotItem's child elements from showing when user presses Alt. These access keys are shown only when the user invokes the PivotItem because the XAML framework automatically switches the scope. The framework also hides the access keys of the other scopes.
 
-本範例也會示範如何處理 AccessKeyInvoked 事件。 PivotItem 不會實作任何控制項模式，因此 XAML 架構預設不會叫用任何動作。 這個實作會示範如何使用便捷鍵選取已叫用的 PivotItem。
+This example also shows how to handle the AccessKeyInvoked event. The PivotItem doesn’t implement any control pattern, so the XAML framework doesn't invoke any action by default. This implementation shows how to select the PivotItem that was invoked using the access key.
 
-最後，範例會示範 IsDisplayModeChanged 事件，當顯示模式變更時，您可以在其中執行一些動作。 在本範例中，Pivot 控制項已摺疊，直到使用者按下 Alt 為止。 當使用者完成與 Pivot 的互動之後，它會再次摺疊。 您可以使用 IsDisplayModeEnabled 來檢查便捷鍵顯示模式為啟用或停用。
+Finally, the example shows the IsDisplayModeChanged event where you can do something when the display mode changes. In this example, the Pivot control is collapsed until the user presses Alt. When the user finishes interacting with the Pivot, it collapses again. You can use IsDisplayModeEnabled to check if the access key display mode is enabled or disabled.
 
 ```xaml   
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -382,9 +372,3 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -1,46 +1,36 @@
 ---
 author: mcleanbyron
-Description: "您必須先在開發人員中心儀表板中建立專案並定義您的遠端變數，然後方可在通用 Windows 平台 (UWP) app 中運用 A/B 測試執行實驗。"
-title: "在開發人員中心儀表板中建立專案與定義遠端變數"
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in the Dev Center dashboard.
+title: Create a project and define remote variables in the Dev Center dashboard
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
-translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
-
 ---
 
-# 在開發人員中心儀表板中建立專案與定義遠端變數
+# Create a project and define remote variables in the Dev Center dashboard
 
-若要開始進行實驗，請在開發人員中心儀表板中定義適用於您 app 的實驗[專案](run-app-experiments-with-a-b-testing.md#terms)，並定義您的 app 可以存取的遠端變數。
+To get started with experimentation, create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) for your app in the Dev Center dashboard and define the remote variables that your app can access.
 
-1. 登入[開發人員中心儀表板](https://dev.windows.com/overview)。
-2. 在 **您的應用程式**下方，選取您要建立實驗的 app。
-3. 在瀏覽窗格中，選取 [服務]****，然後選取 [實驗]****。
-4. 在 [實驗]**** 頁面中，按一下 [專案]**** 區段中的 [新增專案]**** 按鈕。 如果您已經建立一或多個專案，這些專案就會列在 [專案]**** 區段中。
-5. 在 [新增專案]**** 頁面中，輸入您的新專案名稱。
-6. 在 [遠端變數]**** 區段中，新增您想要提供給此專案中所有實驗使用的[變數](run-app-experiments-with-a-b-testing.md#terms)，並定義每個變數的預設值。 您在此處指定的預設值會用於實驗的控制群組，以及所有未參與實驗的使用者。
-  1. 如果 [遠端變數]**** 區段已摺疊，請按一下區段標題上的 [顯示]****。
-  2. 按一下 [新增變數]**** 來建立每個您想要在這個專案中提供給任何實驗的新變數，然後輸入變數名稱和變數的預設值。
-  3. 當您完成新增變數之後，按一下 [儲存]****。
-3. 在 [SDK 整合]**** 區段中，記下[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)值。 當您[編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)時，必須在您的程式碼中參考此專案識別碼，讓您能夠接收變化資料，並向開發人員中心報告檢視和轉換事件。
+1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
+2. Under **Your apps**, select the app for which you want to create an experiment.
+3. In the navigation pane, select **Services** and then select **Experimentation**.
+4. On the **Experimentation** page, click the **New project** button in the **Projects** section. If you have already created one or more projects, those projects are listed in the **Projects** section.
+5. In the **New project** page, enter a name for your new project.
+6. In the **Remote variables** section, add the [variables](run-app-experiments-with-a-b-testing.md#terms) that you want to be available to all experiments in this project, and define default values for each variable. The default values you specify here are used for the control group of the experiments, and for any users who do not participate in the experiment.
+  1. If the **Remote variables** section is collapsed, click **Show** on the section heading.
+  2. Click **Add variable** to create each new variable that you want to be available to any experiment in this project, and type the variable name and the default value of the variable.
+  3. When you are done adding variables, click **Save**.
+3. In the **SDK integration** section, make note of the [API key](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this API key in your code so you can receive variation data and report view and conversion events to Dev Center.
 
->**注意**&nbsp;&nbsp;當專案中的實驗處於作用中時，您無法編輯、新增或移除遠端變數。 此限制可針對作用中的實驗協助保護控制群組資料的完整性。
-
-
-## 後續步驟
-
-建立專案之後，您可以[編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)以開始在 app 中擷取遠端變數值，而您可以[在專案中建立實驗](define-your-experiment-in-the-dev-center-dashboard.md)。
-
-## 相關主題
-
-* [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)
-* [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
-* [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
-* [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
+>**Note** You cannot edit, add, or remove remote variables while an experiment in the project is active. This limitation helps protect the integrity of the data for the control group for the active experiment.
 
 
+## Next steps
 
-<!--HONumber=Aug16_HO5-->
+After you create a project, you can [code your app for experimentation](code-your-experiment-in-your-app.md) to start retrieving remote variable values in your app, and you can [create an experiment in the project](define-your-experiment-in-the-dev-center-dashboard.md).
 
+## Related topics
 
+* [Code your app for experimentation](code-your-experiment-in-your-app.md)
+* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
+* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)

@@ -1,20 +1,20 @@
 ---
-title: Convert between strings and binary data
-description: This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
+title: "在字串與二進位資料間轉換"
+description: "這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 的字串與二進位資料間轉換。"
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 06c035e336039fd08cc5f3b9bcbb7d2783cff089
+ms.openlocfilehash: 667338ed3808f79b75230bc0c3ea00cc7e274d5a
 
 ---
 
-# Convert between strings and binary data
+# 在字串與二進位資料間轉換
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
+這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 的字串與二進位資料間轉換。
 
 ```cs
 public void ConvertData()
@@ -34,6 +34,6 @@ public void ConvertData()
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

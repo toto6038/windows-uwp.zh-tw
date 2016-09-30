@@ -1,65 +1,65 @@
 ---
 author: jnHs
-Description: The Ad mediation report lets you see your effective fill rate and the respective fill rates for the ad networks you're using.
-title: Ad mediation report
+Description: "廣告流量分配報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。"
+title: "廣告流量分配報告"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 07b4e34cc5e91ec70b88631560dd1429f11d2d6b
+ms.openlocfilehash: 1597e21414dbb5d1b540a2dd67478fbcc83d574e
 
 ---
 
-# Ad mediation report
+# 廣告流量分配報告
 
 
-The **Ad mediation** report lets you see your effective fill rate and the respective fill rates for the ad networks you're using. It also shows the adoption rates of each of your mediation configurations and provides visibility into errors reported by ad networks and the mediator. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+[廣告流量分配]**** 報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。 也會顯示每個流量分配所設定的採用率，以及提供由廣告網路與流量分配器所報告錯誤的能見度。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
 
-**Important**  The **Ad mediation** report only provides data if you are using [Windows ad mediation](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) in your app.
-
- 
-
-## Page filters
-
-
-Near the top of the page, you can expand **Page filters** to filter all of the data on this page by date range and/or by market.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
--   **Platform**: The default setting is **All platforms**. If your app targets multiple platforms, you can choose a specific platform.
-
-The info in all of the charts listed below will reflect the period of time selected in **Page filters**. By default this will include data from all of the markets and platforms in which your app is listed, unless you've used the **Page filters** to specify a specific market and/or platform.
-
-## Ad mediation performance
-
-
-The **Ad mediation performance** chart shows the average total fill rate over the selected period of time. This is the average fill rate across all user sessions, regardless of your mediation configuration or how often different ad networks were called.
-
-You can click the **Mediation requests** heading to see the average number of individual mediation requests, or click **Ads delivered** to see the average total number of ads delivered.
-
-## Ad provider fill rates
-
-
-The **Ad provider fill rates** chart shows the average fill rate of each of your ad networks over the selected period of time.
-
-Info for each ad network is shown together to help you compare each ad network's performance.
-
-## Unique users per mediation configuration
-
-
-The **Unique users per mediation configuration** chart shows the total number of unique users who received each version of your mediation configuration over the selected period of time.
-
-## Errors by ad network
-
-
-The **Errors by ad network** chart shows the total number of requests and errors for each of your ad networks, along with the percentage of requests that resulted in an error.
-
-## Errors by type
-
-
-The **Errors by type** chart shows the specific errors experienced by each ad network. It also shows the percentage of total errors for that network that a specific error represents, so you can get an idea of which errors are coming up frequently per ad network.
+[重要](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) 只有當您於 app 中使用 **Windows 廣告流量分配** 時，[廣告流量分配]**** 報告才會提供相關資料。
 
  
 
+## 頁面篩選
+
+
+您可以在接近頁面頂端的地方，展開 [頁面篩選]****，依日期範圍和/或市場來篩選此頁面上的所有日期。
+
+-   **日期**：預設篩選為 [過去 30 天]****，但是您可以擴展此範圍，最多可達 [過去 12 個月]****。
+-   **市場**：預設設定為 [所有市場]****。 如果您只想在此頁面上顯示某特定市場中客戶所給予的評等，則可選擇該市場。
+-   **平台**：預設設定為 [所有平台]****。 如果您的 app 針對多種平台，那就可以選擇特定的平台。
+
+下列所有圖表中的資訊將反映 [頁面篩選]**** 中選取的時段。 除非您使用 [頁面篩選]**** 來指定特定的市場和/或平台，否則，根據預設，這將包含列出您 app 的所有市場與平台資訊。
+
+## 廣告流量分配效能
+
+
+[廣告流量分配效能]**** 圖表會顯示選取時段內的平均總投放率。 不論您的流量分配設定為何，或者呼叫不同廣告網路的頻率為何，這是橫跨所有使用者工作階段的平均投放率。
+
+您可以按一下 [流量分配要求]**** 標題，來查看個別流量分配要求的平均數，或者按一下 [已送出廣告]**** 來查看已送出廣告的平均總數。
+
+## 廣告提供者投放率
+
+
+[廣告提供者投放率]**** 圖表會顯示在選取時段內，您每個廣告網路的平均投放率。
+
+每個廣告網路的資訊會顯示在一起，協助您比較每個廣告網路的效能。
+
+## 每個流量分配設定中的單獨使用者數
+
+
+[每個流量分配設定中的單獨使用者數]**** 圖表會顯示在選取時段內，接收到您每個流量分配設定版本的單獨使用者總數。
+
+## 依廣告網路的錯誤數
+
+
+[依廣告網路的錯誤數]**** 圖表會顯示您每個廣告網路的要求與錯誤總數，以及發生錯誤佔要求數的百分比。
+
+## 依類型的錯誤數
+
+
+[依類型的錯誤數]**** 圖表會顯示每個廣告網路所遇到的特定錯誤數。 其中也會顯示該網路中特定錯誤佔總錯誤的百分比，因此，您可以了解每個廣告網路中經常發生哪些錯誤。
+
+ 
+
  
 
 
@@ -68,6 +68,6 @@ The **Errors by type** chart shows the specific errors experienced by each ad ne
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

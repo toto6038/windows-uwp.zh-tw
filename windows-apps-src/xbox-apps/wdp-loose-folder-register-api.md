@@ -1,67 +1,67 @@
 ---
 author: WilliamsJason
-title: Device Portal Loose folder registration API reference
-description: Learn how to access the loose folder registration APIs programatically.
+title: "裝置入口網站鬆散資料夾註冊 API 參考"
+description: "了解如何以程式設計方式存取鬆散資料夾登錄 API。"
 translationtype: Human Translation
 ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
-ms.openlocfilehash: 42dc5e16065f1a2252f63743269970cf85fb0b95
+ms.openlocfilehash: 41e4cc67120b9e32fac34404ca918edcf58ba267
 
 ---
 
-# Register an app in a loose folder  
+# 登錄鬆散資料夾中的 App  
 
-**Request**
+**要求**
 
-You can register an app in a loose folder by using the following request format.
+您可以使用下列要求格式登錄鬆散資料夾中的 App。
 
-Method      | Request URI
+方法      | 要求 URI
 :------     | :------
 POST | /api/app/packagemanager/register
 <br />
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI Parameter      | Description
+URI 參數      | 說明
 :------     | :-----
-folder (required) | The destination folder name of the package to be registered. This folder must exist under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is in a subfolder under LooseApps.
+folder (必要) | 登錄套件的目的地資料夾名稱。 這個資料夾必須存在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾位於 LooseApps 下的子資料夾中)。
 <br />
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-**Status code**
+**狀態碼**
 
-This API has the following expected status codes.
+此 API 具有下列預期狀態碼。
 
-HTTP status code      | Description
+HTTP 狀態碼      | 描述
 :------     | :-----
-200 | Deploy request accepted and being processed
-4XX | Error codes
-5XX | Error codes
+200 | 部署要求已受理並正在處理
+4XX | 錯誤碼
+5XX | 錯誤碼
 <br />
-**Available device families**
+**可用裝置系列**
 
 * Windows Xbox
 
-**Notes**
+**注意事項**
 
-There are at least three different ways to get the loose app on the console in the desired folder. The easiest is to simply copy the files via SMB to \\<IP_Address>\DevelopmentFiles\LooseApps. This will require a username and password on UWA kits which can be obtained via [/ext/smb/developerfolder](wdp-smb-api.md). 
+至少有三種不同的方式，可以取得主機上所需資料夾中的鬆散 App。 最簡單的方式是透過 SMB 將檔案複製到 \\&lt;IP_Address&gt;\DevelopmentFiles\LooseApps。 這將需要 UWA 套件上的使用者名稱和密碼 (可以透過 [/ext/smb/developerfolder](wdp-smb-api.md) 取得)。 
 
-The second way is by copying over individual files to the correct location by doing a POST to /api/filesystem/apps/file where knownfolderid is DevelopmentFiles, packagefullname is empty, and filename and path are properly supplied (path should begin with LooseApps).
+第二種方法是針對 /api/filesystem/apps/file 執行 POST (其中 knownfolderid 是 DevelopmentFiles、packagefullname 是空的，且已適當提供檔案名稱和路徑 (路徑開頭應為 LooseApps))，來將個別檔案複製到正確的位置。
 
-The third way is to copy an entire folder at a time via [/api/app/packagemanager/upload](wdp-folder-upload.md) where destinationFolder is the name of the folder to be placed under d:\developmentfiles\looseapps and the payload is a multi-part conforming http body of the directory contents.
-
-
+第三種方法是透過 [/api/app/packagemanager/upload](wdp-folder-upload.md) (其中 destinationFolder 是要放置於 d:\developmentfiles\looseapps 底下資料夾的名稱，且裝載是目錄內容的多部分合格 http 本文)，同時複製整個資料夾。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jul16_HO1-->
 
 

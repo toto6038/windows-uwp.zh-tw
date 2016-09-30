@@ -1,33 +1,23 @@
 ---
+title: "使用通用 Windows 平台 (UWP) 在 Xbox 上的 C++ 遊戲開發"
 author: JordanEllis6809
-title: C++ game development on Xbox using the Universal Windows Platform (UWP)
-description: C++ UWP game development on Xbox.
 translationtype: Human Translation
-ms.sourcegitcommit: 1902dd7e47d6d257a90313014ba85d9ae3880493
-ms.openlocfilehash: 585f8a38cec698110f5ba7e23fa6c0f14d19d5bb
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 55869096787bb88502c0454723f519a306c3ae0b
 
 ---
-# Bringing custom C++ games to UWP on Xbox
 
-If you are writing a custom C++ engine, Xbox One has full support for C++. 
+如果您正在撰寫自訂的 C++ 引擎，Xbox One 具有完整的 C++ 支援。 UWP C++ 遊戲使用 DirectX 進行轉譯。 [深入了解](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx)
 
-C++ games on the Universal Windows Platform (UWP) use DirectX for rendering. Learn more at [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx).
+您可以撰寫 [C++ 搭配元件擴充](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) (C++/CX) 或[標準的 C++](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx) (Win32 和 COM)。
 
-You can write [C++ with component extensions](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) (C++/CX) or [standard C++](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx) (Win32 and COM).
+若要開始，請閱讀[遊戲和 DirectX](https://msdn.microsoft.com/windows/uwp/gaming/index) 和[入門](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)指南以了解如何將主機變成開發套件，以及如何從 Visual Studio 部署。
 
-To learn how to turn your console into a development kit and how to deploy from Visual Studio, see [Games and DirectX](../gaming/index.md) and the [getting started](getting-started.md) guide.
-
-> [!NOTE]
-> Xbox One does not support DirectX 12 at this time.
-
-
-## See also
-- [Bringing existing games to Xbox](development-lanes-landing.md)
-- [UWP on Xbox One](index.md)
+**注意：**Xbox One 目前不支援 DirectX 12。
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -1,52 +1,52 @@
 ---
 author: Xansky
-Description: Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Windows Store.
+Description: "說明在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。"
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: Accessibility in the Store
+title: "市集中的協助工具"
 label: Accessibility in the Store
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
-ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
 
 ---
 
-# Accessibility in the Store  
+# 市集中的協助工具  
 
 
 
-Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Windows Store.
+描述在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
 
-While submitting your app to the Windows Store for certification, you can declare your app as accessible. Declaring your app as accessible makes it easier to discover for users who are interested in accessible apps, such as users who have visual impairments. Users discover accessible apps by using the **Accessible** filter while searching the Windows Store. Declaring your app as accessible also adds the **Accessible** tag to your app’s description.
+將您的 App 送出到 Windows 市集進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Windows 市集時，可以使用 [無障礙]**** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙]**** 標記。
 
-By declaring your app as accessible, you state that it has the [basic accessibility information](basic-accessibility-information.md) that users need for primary scenarios using one or more of the following:
+將 app 宣告為無障礙 app，說明該 app 具有符合使用者主要案例所需的[基本協助工具資訊](basic-accessibility-information.md)，可使用下列一或多個項目：
 
-* The keyboard.
-* A high contrast theme.
-* A variable dots per inch (dpi) setting.
-* Common assistive technology such as the Windows accessibility features, including Narrator, Magnifier, and On-Screen Keyboard.
+* 鍵盤。
+* 高對比佈景主題。
+* 可變的每英吋點數 (DPI) 設定。
+* 常見的輔助技術，例如 Windows 協助工具功能，包含朗讀程式、放大鏡及螢幕小鍵盤。
 
-You should declare your app as accessible if you built and tested it for accessibility. This means that you did the following:
+如果您的應用程式建置時已考量無障礙性並已加以測試，則應該將它宣告為無障礙應用程式。 這表示您已執行下列動作：
 
-* Set all the relevant accessibility information for UI elements, including name, role, value, and so on.
-* Implemented full keyboard accessibility, enabling the user to:
-    * Accomplish primary app scenarios by using only the keyboard.
-    * Tab among UI elements in a logical order.
-    * Navigate among UI elements within a control by using the arrow keys.
-    * Use keyboard shortcuts to reach primary app functionality.
-    * Use Narrator touch gestures for Tab and arrow equivalency for devices with no keyboard.
-* Ensured that your app UI is visually accessible: has a minimum text contrast ratio of 4.5:1, does not rely on color alone to convey information, and so on.
-* Used accessibility testing tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) to verify your accessibility implementation, and resolved all priority 1 errors reported by such tools.
-* Verified your app’s primary scenarios from end to end by using Narrator, Magnifier, On-Screen Keyboard, a high contrast theme, and adjusted dpi settings.
+* 針對 UI 元素 (包含名稱、角色、值等) 設定所有相關的協助工具資訊。
+* 實作完整的鍵盤協助工具，可讓使用者：
+    * 只使用鍵盤就能完成主要的應用程式案例。
+    * 使用 Tab 鍵，以邏輯順序在 UI 元素之間輪換。
+    * 使用方向鍵，在控制項內的 UI 元素之間瀏覽。
+    * 使用鍵盤快速鍵，存取主要的應用程式功能。
+    * 在未配置鍵盤的裝置，針對等同於 Tab 鍵和方向鍵的動作使用朗讀程式觸控手勢。
+* 確保您的應用程式 UI 不會造成視覺上的障礙；文字對比率至少要 4.5:1，且不會單獨依賴色彩來傳達資訊等。
+* 使用協助工具測試工具 (例如 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986)) 驗證您實作的無障礙功能，並解決此類工具報告的所有第 1 優先順序錯誤。
+* 使用朗讀程式、放大鏡、螢幕小鍵盤、高對比佈景主題，以及調整過的 DPI 設定，全盤檢驗 App 的各個主要功能。
 
-See the [Accessibility checklist](accessibility-checklist.md) for a review of these procedures and links to resources that will help you accomplish them.
+請參閱[協助工具檢查清單](accessibility-checklist.md)，了解可協助您完成工作的相關程序和資源連結。
 
 <span id="related_topics"/>
-## Related topics    
-* [Accessibility](accessibility.md) 
+## 相關主題    
+* [協助工具](accessibility.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

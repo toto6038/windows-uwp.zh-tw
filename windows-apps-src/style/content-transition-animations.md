@@ -1,58 +1,58 @@
 ---
 author: mijacobs
-Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
-title: Guidelines for content transition animations
+Description: "內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。"
+title: "內容轉換動畫的指導方針"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 ---
 
-# Content transition animations
+# 內容轉換動畫
 
 
 
 
 
-**Important APIs**
+**重要 API**
 
--   [**ContentThemeTransition class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+-   [**ContentThemeTransition 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 -   [**enterContent function (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
 
-Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
+內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-## Do's and don'ts
-
-
--   Use an entrance animation when there is a set of new items to bring into an empty container. For example, after the initial load of an app, part of the app's content might not be immediately available for display. When that content is ready to be shown, use a content transition animation to bring that late content into the view.
--   Use content transitions to replace one set of content with another set of content that already resides in the same container within a view.
--   When bringing in new content, slide that content up (from bottom to top) into the view against the general page flow or reading order.
--   Introduce new content in a logical manner, for example, introduce the most important piece of content last.
--   If you have more than one container whose content is to be updated, trigger all of the transition animations simultaneously without any staggering or delay.
--   Don't use content transition animations when the entire page is changing. In that case, use the page transition animations instead.
--   Don't use content transition animations if the content is only refreshing. Content transition animations are meant to show movement. For refreshes, use fade animations.
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>可行與禁止事項
 
 
+-   如果要將一組新項目放入空的容器，可使用進入動畫。 例如，初次載入應用程式後，應用程式的內容部分可能無法立即顯示。 等到內容準備好可以顯示後，使用內容轉換動畫，將最新內容帶入檢視中。
+-   使用內容轉換動畫，以一組已經存在於檢視內相同容器中的內容來取代另一組內容。
+-   帶入新內容時，針對一般頁面流程或閱讀順序，將該內容向上 (從下到上) 滑入至檢視中。
+-   以邏輯方式介紹新的內容，例如，最後介紹最重要的內容。
+-   如果您要更新一個以上的容器內容，請同時觸發所有轉換動畫，且不要有任何交錯或延遲。
+-   變更整個頁面時請勿使用內容轉換動畫。 在這種情況下，請改用頁面轉換動畫。
+-   如果只是重新整理內容，請勿使用內容轉換動畫。 內容轉換動畫是為了顯示移動。 如果是重新整理內容，請使用淡入/淡出動畫。
 
-## Related articles
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating content transitions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**ContentThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
- 
+## <span id="related_topics"></span>相關文章
+
+**適用於開發人員 (XAML)**
+* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [讓內容轉換產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**ContentThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

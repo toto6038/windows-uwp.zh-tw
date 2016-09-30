@@ -1,55 +1,55 @@
 ---
 author: jwmsft
-description: Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
-title: xUid directive
+description: "提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。"
+title: "x&#58;Uid 指示詞"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c94db1dc1095f53dc836f78768ecc826470343d5
+ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
 
 ---
 
-# x:Uid directive
+# x&#58;Uid 指示詞
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
+提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
 
-## XAML attribute usage
+## XAML 屬性用法
 
 ``` syntax
 <object x:Uid="stringID".../>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 詞彙 | 說明 |
 |------|-------------|
-| stringID | A string that uniquely identifies a XAML element in an app, and becomes part of the resource path in a resource file. See Remarks.| 
+| stringID | 這是可以在應用程式中唯一識別 XAML 元素的字串，並且會成為資源檔中資源路徑的一部分。 請參閱＜備註＞。| 
 
-## Remarks
+## 備註
 
-Use **x:Uid** to identify an object element in your XAML. Typically this object element is an instance of a control class or other element that is displayed in a UI. The relationship between the string you use in **x:Uid** and the strings you use in a resources file is that the resource file strings are the **x:Uid** followed by a dot (.) and then by the name of a specific property of the element that's being localized. Consider this example:
+請使用 **x:Uid** 來識別您 XAML 中的物件元素。 一般而言，這個物件元素是控制項類別或 UI 中顯示的其他元素的執行個體。 您在 **x:Uid** 中使用的字串與在資源檔中使用的字串之間的關係是，資源檔字串是 **x:Uid** 後面跟著一個 (.)，然後再跟著被當地語系化的元素的特定屬性名稱。 請參考下列範例：
 
 ``` syntax
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-To specify content to replace the display text **Go**, you must specify a new resource that comes from a resource file. Your resource file should contain an entry for the resource named "GoButton.Content". [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) in this case is a specific property that's inherited by the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class. You might also provide localized values for other properties of this button, for example you could provide a resource-based value for "GoButton.FlowDirection". For more info on how to use **x:Uid** and resource files together, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+若要指定內容來取代顯示文字 [**執行**]，您必須指定一個來自資源檔的新資源。 您的資源檔應該包含一個名稱為 "GoButton.Content" 的資源項目。 在這種情況下，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) 會是 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 類別所繼承的特定屬性。 您也可以為這個按鈕的其他屬性提供當地語系化值，例如您可以為 "GoButton.FlowDirection" 提供一個以資源為基礎的值。 如需如何將 **x:Uid** 與資源檔搭配使用的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
-The validity of which strings can be used for an **x:Uid** value is controlled in a practical sense by which strings are legal as an identifier in a resource file and a resource path.
+要使用哪些字串做為 **x:Uid** 值才有效，實際上取決於哪些字串在資源檔和資源路徑中可以做為合法識別碼。
 
-**x:Uid** is discrete from **x:Name** both because of the stated XAML localization scenario, and so that identifiers that are used for localization have no dependencies on the programming model implications of **x:Name**. Also, **x:Name** is governed by the XAML namescope concept, whereas uniqueness for **x:Uid** is controlled by the package resource index (PRI) system. For more info, see [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947).
+因為指定的 XAML 當地語系化案例將 **x:Uid** 與 **x:Name** 分開使用，因此，用於當地語系化的識別碼與 **x:Name** 的程式撰寫模型含意沒有相依性。 此外，**x:Name** 是由 XAML 命名範圍概念所規範，而 **x:Uid** 的唯一性則是由封裝資源索引 (PRI) 系統所控制。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)。
 
-UWP XAML has somewhat different rules for **x:Uid** uniqueness than previous XAML-utilizing technologies used. For UWP XAML it is legal for the same **x:Uid** ID value to exist as a directive on multiple XAML elements. However, each such element must then share the same resolution logic when resolving the resources in a resource file. Also, all XAML files in a project share a single resource scope for purposes of **x:Uid** resolution, there is no concept of **x:Uid** scopes being aligned to individual XAML files.
+UWP XAML 的 **x:Uid** 唯一性，和之前使用的 XAML-utilizing 技術有些不同的規則。 對於 UWP XAML 來說，同樣的 **x:Uid** 識別碼值可以做為多個 XAML 元素的指示詞。 不過，在解析資源檔中的資源時，每個這類元素都必須共用相同的解析邏輯。 而且，一個專案中的所有 XAML 檔案會共用單一資源範圍以進行 **x:Uid** 解析，沒有將 **x:Uid** 範圍對齊到個別 XAML 檔案的概念。
 
-In some cases you'll be using a resource path rather than built-in functionality of the package resource index (PRI) system. Any string used as an **x:Uid** value defines a resource path that begins with ms-resource:///Resources/ and includes the **x:Uid** string. The path is completed by the names of the properties you specify in a resources file or are otherwise targeting.
+在某些情況下，您將會使用資源路徑，而不是封裝資源索引 (PRI) 系統的內建功能。 任何做為 **x:Uid** 值的字串都會定義一個開頭是 ms-resource:///Resources/ 並且包含 **x:Uid** 字串的資源路徑。 這個路徑結尾會是您在資源檔中指定的屬性的名稱，或是做為目標的屬性的名稱。
 
-Don't put **x:Uid** on property elements, that isn't allowed in Windows Runtime XAML.
-
-
+請勿將 **x:Uid** 放在屬性元素上，在 Windows 執行階段 XAML 中並不允許這樣做。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

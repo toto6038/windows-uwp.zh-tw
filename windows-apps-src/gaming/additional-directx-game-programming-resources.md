@@ -1,75 +1,75 @@
 ---
 author: mtoepke
-title: Game programming resources
-description: For more info about game programming on Windows, check out the following resources.
+title: "遊戲程式設計資源"
+description: "如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。"
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
+ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 
 ---
 
-# Game programming resources
+# 遊戲程式設計資源
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-For more info about game programming on Windows, check out the following resources.
+如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
 
-## Game programming reference
-
-
--   [Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663279)
--   [OpenGL reference](http://go.microsoft.com/fwlink/p/?LinkID=288875)
-
-## Game design guidance
+## 遊戲程式設計參考資料
 
 
--   [Index of UX guidelines for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [圖形和遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663279)
+-   [OpenGL 參考資料](http://go.microsoft.com/fwlink/p/?LinkID=288875)
 
-## Blogs
-
-
--   [Games for Windows and the DirectX SDK]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX Developer Blog]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves Blog]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA game info).
-
-## Toolkits
+## 遊戲設計指引
 
 
--   [DirectX Tool Kit](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex texture processing library](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
--   Microsoft Visual Studio[Graphics Diagnostics](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
--   [Win2D](https://github.com/Microsoft/Win2D) - An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
--   [ANGLE for Windows Store](http://go.microsoft.com/fwlink/p/?linkid=618387) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+-   [適用於 Windows 市集 App 的 UX 指導方針索引](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
-## GDC 2015 game dev session videos
+## 部落格
 
 
--   [The Future of Gaming Across the Microsoft Ecosystem](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
--   [Developing Games for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector, Don Xbox
--   [Advanced DirectX 12 Graphics and Performance](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
--   [Gaming Consumer Experience on Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
--   [New Opportunities for Independent Developers](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
--   [Developing with Xbox Live for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala, Brian Tyler
--   [Xbox Live Multiplayer: Introducing services for cross-platform matchmaking and gameplay](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
--   [Fable Legends: Cross-device Gameplay with Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto, Julian Davis
--   [Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
--   [Solve the Tough Graphics Problems with Your Game Using DirectX Tools](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz, Rong Lu, Jason Strayer
--   [Better Power, Better Performance: Your Game on DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
--   [Sustained Gaming Performance in multi-core mobile devices](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
--   [Designing Games for a Windows Core World](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams, Shai Hinitz
--   [PC Games for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
+-   [適用於 Windows 與 DirectX SDK 的遊戲]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [DirectX 開發人員部落格]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Shawn Hargreaves 部落格]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA 遊戲資訊)。
 
-## //build 2015 session videos
+## 工具組
 
 
--   [Introducing Win2D: DirectX-Powered Drawing in C#](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
--   [ANGLE: Running OpenGL ES 2.0 Graphics Code on Windows](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
--   [Advanced DirectX12 Graphics and Performance](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
+-   [DirectX 工具組](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [DirectXTex 紋理處理程式庫](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   Microsoft Visual Studio [圖形診斷](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
+-   [Win2D](https://github.com/Microsoft/Win2D) - 方便使用的 Windows 執行階段 API，適用於搭配 GPU 加速的直接模式 2D 圖形轉譯。
+-   [適用於 Windows 市集的 ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - 透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
 
-## Other resources
+## GDC 2015 遊戲開發課程影片
+
+
+-   [Microsoft 生態圈遊戲的未來](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
+-   [開發 Windows 10 的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector、Don Xbox
+-   [進階 DirectX 12 圖形與效能](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
+-   [Windows 10 上的遊戲消費者體驗](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
+-   [獨立開發人員的新機會](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
+-   [使用 Windows 10 的 Xbox Live 來開發](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala、Brian Tyler
+-   [Xbox Live 多人遊戲：跨平台配對和遊戲服務簡介](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) – Ferdinand Schober
+-   [Fable Legends：使用 Xbox Live 的跨裝置遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) – Raymond Arifianto、Julian Davis
+-   [利用 Xbox Live 雲端使用者統計資料與成就的最佳做法](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) – Cierra McDonald
+-   [使用 DirectX 工具，解決遊戲難纏的圖形問題](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) – Rudolph Balaz、Rong Lu、Jason Strayer
+-   [功能更強，效能更佳：DirectX 12 的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) – Bennett Sorbo
+-   [多核心行動裝置中持續的遊戲效能](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) – Julian Calinov
+-   [設計 Windows Core 世界的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams、Shai Hinitz
+-   [Windows 10 的電腦遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
+
+## //2015 建置會議影片
+
+
+-   [嶄新推出 Win2D：在 C# 中由 DirectX 提供的繪圖](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
+-   [角度：在 Windows 上執行 OpenGL ES 2.0 圖形程式碼](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
+-   [進階 DirectX12 圖形與效能](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
+
+## 其他資源
 
 
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
@@ -85,6 +85,6 @@ For more info about game programming on Windows, check out the following resourc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,60 +1,60 @@
 ---
 author: DelfCo
-Description: Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
-title: Put UI strings into resources
+Description: "將 UI 的字串資源放入資源檔。 接著您就可以從程式碼或標記中參照這些字串。"
+title: "將 UI 字串放入資源"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: e404eceb4aad562474cff264bb992a3d71a3bed4
+ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
 
 ---
 
-# Put UI strings into resources
+# 將 UI 字串放入資源
 
 
 
 
 
-**Important APIs**
+**重要 API**
 
 -   [**ApplicationModel.Resources.ResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br206014)
 -   [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)
 
-Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
+將 UI 的字串資源放入資源檔。 接著您就可以從程式碼或標記中參照這些字串。
 
-This topic shows the steps to add several language string resources to your Universal Windows app, and how to briefly test it.
+本主題說明將數個語言的字串資源新增到您的通用 Windows 應用程式，以及如何短暫測試的步驟。
 
-## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>Put strings into resource files, instead of putting them directly in code or markup.
+## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>將字串放入資源檔中，而不是直接放入程式碼或標記當中。
 
 
-1.  Open your solution (or create a new one) in Visual Studio.
+1.  在 Visual Studio 中開啟您的方案 (或建立新的方案)。
 
-2.  Open package.appxmanifest in Visual Studio, go to the **Application** tab, and (for this example) set the Default language to "en-US". If there are multiple package.appxmanifest files in your solution, do this for each one.
-    <br>**Note**  This specifies the default language for the project. The default language resources are used if the user's preferred language or display languages do not match the language resources provided in the application.
-3.  Create a folder to contain the resource files.
-    1.  In the Solution Explorer, right-click the project (the Shared project if your solution contains multiple projects) and select **Add** &gt; **New Folder**.
-    2.  Name the new folder "Strings".
-    3.  If the new folder is not visible in Solution Explorer, select **Project** &gt; **Show All Files** from the Microsoft Visual Studio menu while the project is still selected.
+2.  在 Visual Studio 中開啟 package.appxmanifest，移至 [應用程式]**** 索引標籤，並且 (針對此範例) 將預設語言設定為 [en-US]。 如果您的方案中有多個 package.appxmanifest 檔案，請針對每個項目執行這個動作。
+    <br>**注意：**這樣會指定專案的預設語言。 如果使用者的慣用語言或顯示語言不符合應用程式提供的語言資源，就會使用預設語言資源。
+3.  建立資料夾以包含資源檔案。
+    1.  在 [方案總管] 中，用滑鼠右鍵按一下專案 (如果您的方案包含多個專案則為「共用」專案) 並選取 [新增]**** &gt; [新資料夾]****。
+    2.  將新資料夾命名為 "Strings"。
+    3.  如果在 [方案總管] 中沒有看到新資料夾，請保持選取該專案，同時從 Microsoft Visual Studio 功能表中，選取 [專案]**** &gt; [顯示所有檔案]****。
 
-4.  Create a sub-folder and a resource file for English (United States).
-    1.  Right-click the Strings folder and add a new folder beneath it. Name it "en-US". The resource file is to be placed in a folder that has been named for the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) language tag. See [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) for details on the language qualifier and a list of common language tags.
-    2.  Right-click the en-US folder and select **Add** &gt; **New Item…**.
-    3.  **XAML:** Select "Resources File (.resw)".
-        <br>**HTML:** Select "Resources File (.resjson)".
+4.  建立適用於英文 (美國) 的子資料夾和資源檔案。
+    1.  在 Strings 資料夾上按一下滑鼠右鍵，然後在下面新增資料夾。 將它命名為 "en-US"。 資源檔案會放入針對 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 語言標籤命名的資料夾中。 如需語言限定詞與通用語言標籤清單的詳細資料，請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
+    2.  在 en-US 資料夾上按一下滑鼠右鍵，然後選取 [加入]**** &gt; [新增項目]****。
+    3.  **XAML：**選取 [資源檔 (.resw)]。
+        <br>**HTML：**選取 [資源檔 (.resjson)]。
 
-    4.  Click **Add**. This adds a resource file with the default name "Resources.resw" (for **XAML**) or "resources.rejson" (for **HTML**). We recommend that you use this default filename. Apps can partition their resources into other files, but you must be careful to refer to them correctly (see [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XAML only:** If you have .resx files with only string resources from previous .NET projects, select **Add** &gt; **Existing Item…**, add the .resx file, and rename it to .resw.
-    6.  Open the file and use the editor to add these resources:
+    4.  按一下 [新增]****。 這會新增預設名稱為 "Resources.resw" (針對 **XAML**) 或 "resources.rejson" (針對 **HTML**) 的資源檔案。 建議您使用此預設檔名。 應用程式可將其資源分割到其他檔案，但您必須謹慎小心以正確地參照這些資源 (請參閱[如何載入字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323))。
+    5.  **僅 XAML：**如果您的 .resx 檔案只包含先前 .NET 專案的字串資源，請選取 [加入]**** &gt; [現有項目]****，然後新增 .resx 檔案，再將它重新命名為 .resw。
+    6.  開啟檔案並使用編輯器新增這些資源：
 
-        **XAML:**
+        **XAML：**
 
-        Strings/en-US/Resources.resw ![add resource, english](images/addresource-en-us.png) In this example, "Greeting.Text" and "Farewell" identify the strings that are to be displayed. "Greeting.Width" identifies the Width property of the "Greeting" string. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        Strings/en-US/Resources.resw ![新增資源，英文](images/addresource-en-us.png) 在這個範例中，"Greeting.Text" 和 "Farewell" 識別要顯示的字串。 "Greeting.Width" 會識別 "Greeting" 字串的 Width 屬性。 註解是為負責將字串當地語系化成其他語言的譯者提供特殊指示的好位置。
 
-        **HTML:**
+        **HTML：**
 
-        The new file contains default content. Replace the content with the following (which may be similar to the default):
+        新檔案包含預設內容。 以下列內容取代預設內容 (可能會和預設內容相似)：
 
         Strings/en-US/resources.resjson
 
@@ -68,33 +68,33 @@ This topic shows the steps to add several language string resources to your Univ
         }
         ```
 
-        This is strict JavaScript Object Notation (JSON) syntax where a comma must be placed after each name/value pair, except the last one. In this sample, "greeting" and "farewell" identify the strings that are to be displayed. The other pairs ("\_greeting.comment" and "\_farewell.comment") are comments that describe the strings. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        這是嚴格的 JavaScript 物件標記法 (JSON) 語法，每個名稱/值組後面都必須放置逗號，最後一個除外。 在這個範例中，"greeting" 和 "farewell" 會識別將要顯示的字串。 另一組 ("\_greeting.comment" 與 "\_farewell.comment") 則是說明字串的註解。 註解是為負責將字串當地語系化成其他語言的譯者提供特殊指示的好位置。
 
-## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>Associate controls to resources.
+## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>關聯控制項與資源。
 
 
-**XAML only:**
+**僅 XAML：**
 
-You need to associate every control that needs localized text with the .resw file. You do this using the **x:Uid** attribute on your XAML elements like this:
+您必須將每個需要當地語系化文字的控制項與 .resw 檔案產生關聯。 完成這項動作的方式是在 XAML 元素上使用 **x:Uid** 屬性，就像這樣：
 
 ```XML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
-For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
+對於資源名稱，您必須提供 **Uid** 屬性值並指定哪個屬性要取得翻譯字串 (在此例中為 Text 屬性)。 您可以為不同的語言指定其他屬性/值，例如 Greeting.Width，但是請小心這類的配置相關屬性。 您應該努力讓控制項根據裝置的螢幕來動態配置。
 
-Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
+請注意，附加屬性在 resw 檔案 (例如 AutomationPeer.Name) 中以不同的方式來處理。 您需要明確寫出命名空間，如下所示：
 
 ```XML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
-## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>Add string resource identifiers to code and markup.
+## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>將字串資源識別碼新增到程式碼和標記。
 
 
-**XAML:**
+**XAML：**
 
-In your code, you can dynamically reference strings:
+在您的程式碼中，您可以動態參考字串：
 
 **C#**
 ```CSharp
@@ -108,11 +108,11 @@ auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
 auto str = loader->GetString("Farewell");
 ```
 
-**HTML:**
+**HTML：**
 
-1.  Add references to the Windows Library for JavaScript to your HTML file, if they aren't already there.
+1.  將適用於 JavaScript 的 Windows Library 的參考新增到您的 HTML 檔案 (如果尚未新增)。
 
-    **Note**  The following code shows the HTML for the default.html file of the Windows project that is generated when you create a new **Blank App (Universal Windows)** JavaScript project in Visual Studio. Note that the file already contains references to the WinJS.
+    **注意：**以下程式碼顯示當您在 Visual Studio 建立新的 [空白應用程式 (通用 Windows)]**** JavaScript 專案時，所產生的 Windows 專案之 default.html 檔案的 HTML。 請注意，檔案已包含 WinJS 的參考。
 
     ```    HTML
     <!-- WinJS references -->
@@ -121,7 +121,7 @@ auto str = loader->GetString("Farewell");
     <script src="WinJS/js/ui.js"></script>
     ```
 
-2.  In the JavaScript code that accompanies your HTML file, call the [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) function when your HTML is loaded.
+2.  在隨 HTML 檔案提供的 JavaScript 程式碼中，當載入 HTML 時呼叫 [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) 函式。
 
     ```    JavaScript
     WinJS.Application.onloaded = function(){
@@ -129,7 +129,7 @@ auto str = loader->GetString("Farewell");
     }
     ```
     
-    If additional HTML is loaded into a [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) object, call [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*) in the page control's [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) method, where *element* is the HTML element (and its child elements) being loaded. This example is based on scenario 6 of the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=227301):
+    如果有其他 HTML 載入至 [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) 物件，請在頁面控制項的 [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) 方法中呼叫 [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*)，其中 *element* 是要載入的 HTML 元素 (及其子元素)。 這個範例是以[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=227301)的案例 6 為根據：
 
     ```    JavaScript
     var output;
@@ -146,23 +146,23 @@ auto str = loader->GetString("Farewell");
     });
     ```
 
-3.  In the HTML, refer to the string resources using the resource identifiers ('greeting' and 'farewell') from the resource files.
+3.  在 HTML 中，使用資源檔中的資源識別碼 ('greeting' 和 'farewell') 參考字串資源。
     ```    HTML
     <h2><span data-win-res="{textContent: 'greeting';}"></span></h2>
     <h2><span data-win-res="{textContent: 'farewell'}"></span></h2>
     ```
 
-4.  Refer to string resources for attributes.
+4.  參考屬性的字串資源。
 
     ```    HTML
     <div data-win-res="{attributes: {'aria-label'; : 'String1'}}" >
     ```
 
-    The general pattern of the data-win-res attribute for HTML replacement is data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}".
+    HTML 取代項目的 data-win-res 屬性的一般模式是 data-win-res="{*屬性名稱1*: '*資源識別碼1*', *屬性名稱2*: '*資源識別碼2*'}"。
 
-    **Note**  If the string does not contain any markup, then bind the resource wherever possible to the textContent property instead of innerHTML. The textContent property is much faster to replace than innerHTML.
+    **注意：**如果字串不包含任何標記，請盡可能將資源繫結到 textContent 屬性，而不是 innerHTML。 取代 textContent 屬性的速度會比 innerHTML 快許多。
 
-5.  Refer to string resources in JavaScript.
+5.  在 JavaScript 中參考字串資源。
     <span codelanguage="JavaScript"></span>
     ```    JavaScript
     var el = element.querySelector('#header');
@@ -171,19 +171,19 @@ auto str = loader->GetString("Farewell");
     el.setAttribute('lang', res.lang);
     ```
 
-## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>Add folders and resource files for two additional languages.
+## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>針對兩個其他語言新增資料夾與資源檔案。
 
 
-1.  Add another folder under the Strings folder for German. Name the folder "de-DE" for Deutsch (Deutschland).
-2.  Create another resources file in the de-DE folder, and add the following:
+1.  在適用於德文的 Strings 資料夾之下，建立另一個資料夾。 將資料夾命名為 "de-DE"，用以代表德文 (德國)。
+2.  在 de-DE 資料夾中，建立另一個資源檔案，然後新增下列內容：
 
-    **XAML:**
+    **XAML：**
 
     strings/de-DE/Resources.resw
 
-    ![add resource, german](images/addresource-de-de.png)
+    ![新增資源, 德文](images/addresource-de-de.png)
 
-    **HTML:**
+    **HTML：**
 
     strings/de-DE/resources.resjson
 
@@ -197,12 +197,12 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
+3.  再建立一個名為 "fr-FR" 的資料夾，用以代表法文 (法國)。 建立新的資源檔案，然後新增下列內容：
 
-    **XAML:**
+    **XAML：**
 
-    strings/fr-FR/Resources.resw ![add resource, french](images/addresource-fr-fr.png)
-    **HTML:**
+    strings/fr-FR/Resources.resw ![新增資源，法文](images/addresource-fr-fr.png)
+    **HTML：**
 
     strings/fr-FR/resources.resjson
 
@@ -216,30 +216,30 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>Build and run the app.
+## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>建置並執行應用程式。
 
 
-Test the app for your default display language.
+針對您的預設顯示語言來測試應用程式。
 
-1.  Press F5 to build and run the app.
-2.  Note that the greeting and farewell are displayed in the user's preferred language.
-3.  Exit the app.
+1.  按 F5 來建置並執行應用程式。
+2.  請注意，greeting 與 farewell 將以使用者偏好的語言顯示。
+3.  結束應用程式。
 
-Test the app for the other languages.
+針對其他語言來測試應用程式。
 
-1.  Bring up **Settings** on your device.
-2.  Select **Time & language**.
-3.  Select **Region & language** (or on a phone or phone emulator, **Language**).
-4.  Note that the language that was displayed when you ran the app is the top language listed that is English, German, or French. If your top language is not one of these three, the app falls back to the next one on the list that the app supports.
-5.  If you do not have all three of these languages on your machine, add the missing ones by clicking **Add a language** and adding them to the list.
-6.  To test the app with another language, select the language in the list and click **Set as default** (or on a phone or phone emulator, tap and hold the language in the list and then tap **Move up** until it is at the top). Then run the app.
+1.  顯示您裝置上的 [設定]****。
+2.  選取 [時間與語言]****。
+3.  選取 [地區及語言]**** (或者選取手機或手機模擬器上的 [語言]****)。
+4.  請注意，當您執行應用程式時所顯示的語言是列在最上方的語言，也就是英文、德文或法文。 如果列在最上方的語言不是這三種語言之一，應用程式將切換回清單上支援的下一個語言。
+5.  如果您的電腦上沒有上述三種語言，可以按一下 [新增語言]****，然後將遺漏的語言新增至清單。
+6.  若要測試另一種語言的應用程式，在清單中選取該語言並按一下 [設為預設值]**** (或者在手機或手機模擬器上，在清單中長按該語言然後點選 [上移]**** 直到它在頂端顯示為止)。 然後執行該應用程式。
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>相關主題
 
 
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
-* [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
-* [The BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [如何載入字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
  
 
  
@@ -249,6 +249,6 @@ Test the app for the other languages.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,37 +1,37 @@
 ---
 author: DelfCo
-Description: Prepare your app for localization to other markets, languages, or regions.
-title: Prepare your app for localization
+Description: "準備 app 以針對其他市場、語言或地區進行當地語系化。"
+title: "準備 app 以進行當地語系化"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
+ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 
 ---
 
-# Prepare your app for localization
+# 準備 app 以進行當地語系化
 
 
 
 
 
-Prepare your app for localization to other markets, languages, or regions. Before you get started, be sure to read through the [do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md).
+準備 app 以針對其他市場、語言或地區進行當地語系化。 在您開始之前，請務必閱讀[可行與禁止事項](guidelines-and-checklist-for-globalizing-your-app.md)。
 
-## <span id="use_resource_files_and_qualifiers."></span><span id="USE_RESOURCE_FILES_AND_QUALIFIERS."></span>Use resource files and qualifiers.
-
-
-Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](put-ui-strings-into-resources.md).
-
-Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
-
-## <span id="add_contextual_comments."></span><span id="ADD_CONTEXTUAL_COMMENTS."></span>Add contextual comments.
+## <span id="use_resource_files_and_qualifiers."></span><span id="USE_RESOURCE_FILES_AND_QUALIFIERS."></span>使用資源檔案和限定詞
 
 
-Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
+請務必在資源檔中指定您應用程式的 UI 字串，而不是將它們放在您的程式碼中 如需詳細資訊，請參閱[將 UI 字串放入資源](put-ui-strings-into-resources.md)。
 
-**XAML:** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
+在影像或其他檔案資源的檔案或資料夾中，以適當的語言標記指定它們的資源。 請注意，當地語系化影像、音訊及視訊需要使用大量的系統資源，因此，最好盡量使用中性媒體資產。 若要深入了解，請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
+
+## <span id="add_contextual_comments."></span><span id="ADD_CONTEXTUAL_COMMENTS."></span>加入內容相關的註解
+
+
+在應用程式的資源檔案中加入當地語系化的註解。 當地語系化人員可以看見這些註解，而且這些註解應該提供內容相關的資訊，以協助當地語系化人員準確翻譯資源。 這些註解也應該在資源上提供足夠的限制資訊，讓翻譯不會破壞軟體。 當地語系化人員可以選擇使用 Makepri.exe 工具記錄註解。
+
+**XAML：**Resw 檔案 (針對使用 XAML 的應用程式在 Visual Studio 中建立的資源) 有一個註解元素。 例如：
 
 ```XML
 <data name="String1">
@@ -40,7 +40,7 @@ Add localization comments to your app resource files. The comments are visible t
 </data>
 ```
 
-**HTML:** Resjson files (resources created in Visual Studio for apps using HTML) allow metadata in fields that begin with an underscore, such as comments:
+**HTML：**Resjson 檔案 (針對使用 HTML 的應用程式在 Visual Studio 中建立的資源) 允許開頭為底線之欄位中的中繼資料，例如註解：
 
 ```json
 {
@@ -49,111 +49,111 @@ Add localization comments to your app resource files. The comments are visible t
 }
 ```
 
-## <span id="localize_sentences_instead_of_words."></span><span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."></span>Localize sentences instead of words.
+## <span id="localize_sentences_instead_of_words."></span><span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."></span>當地語系化句子而不是字詞。
 
 
-Consider the following string: "The {0} could not be synchronized."
+考量以下字串："The {0} could not be synchronized" ({0} 不能同步)。
 
-A variety of words could replace {0}, such as appointment, task, or document. While this example would appear to work for the English language, it will not work in all cases for the corresponding sentence in German. Notice that in the following German sentences, some of the words in the template string ("Der", "Die", "Das") need to match the parameterized word:
+其中的 {0} 可能會以各種字詞來取代，例如約會、工作或文件。 雖然這個範例似乎對於英文沒有問題，不過在德文版的對應句子中不見得適用。 請注意，在下列德文句子中，範本字串 ("Der"、"Die"、"Das") 中的部分字詞需要符合參數化的字詞：
 
-| English                                    | German                                           |
+| 英文                                    | 德文                                           |
 |:------------------------------------------ |:------------------------------------------------ |
-| The appointment could not be synchronized. | Der Termin konnte nicht synchronisiert werden.   |
-| The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
-| The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
+| The appointment could not be synchronized. (約會不能同步。) | Der Termin konnte nicht synchronisiert werden.   |
+| The task could not be synchronized. (工作不能同步。)        | Die Aufgabe konnte nicht synchronisiert werden.  |
+| The document could not be synchronized. (文件不能同步。)    | Das Dokument konnte nicht synchronisiert werden. |
 
  
 
-As another example, consider the sentence "Remind me in {0} minute(s)." While using "minute(s)" works for the English language, other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
+在另一個範例中，假設有一個句子 "Remind me in {0} minute(s)" (在 {0} 分鐘後提醒我)。 使用 "minute(s)" (分鐘) 適用於英文，但其他語言可能會使用不同的詞彙。 例如，波蘭文會根據上下文使用 "minuta"、"minuty" 或 "minut"。
 
-To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:
+若要解決這個問題，請將完整句子當地語系化，而不是單一字詞。 這看起來好像是額外的工作而且不是很好的解決方案，但卻是最佳解決方案，因為：
 
--   A clean error message will be displayed for all languages.
--   Your localizer will not need to ask about what the strings will be replaced with.
--   You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.
+-   將針對所有語言顯示清楚的錯誤訊息。
+-   您的當地語系化人員不需要詢問要用來取代字串的內容。
+-   在應用程式完成之後出現這種問題時，您不需要實作耗費成本的程式碼修正。
 
-## <span id="ensure_the_correct_parameter_order."></span><span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."></span>Ensure the correct parameter order.
-
-
-Don't assume that all languages use parameters in the same order. For example, consider the string "Every %s %s", where the first %s is replaced by the name of a month, and the second %s is replaced by the date of a month. This example works for the English language, but will fail when the app is localized into the German language, where the date and month are displayed in the reverse order.
-
-To solve this problem, change the string to "Every %1 %2", so that the order is interchangeable depending on the language.
-
-## <span id="don_t_over_localize."></span><span id="DON_T_OVER_LOCALIZE."></span>Don’t over localize.
+## <span id="ensure_the_correct_parameter_order."></span><span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."></span>確保正確的參數順序。
 
 
-Localize specific strings, not tags. Consider the following examples:
+不要假設所有的語言都會以相同順序使用參數。 例如，假設有一個字串是 "Every %s %s"，其中第一個 %s 會以月份名稱取代，而第二個 %s 會以一個月中的某一個日期取代。 這個範例在英文版中可以運作，但是在將應用程式當地語系化為德文版時便會失敗，因為日期和月份會以相反的順序顯示。
 
-| Over-localized string                   | Correctly-localized string |
+若要解決這個問題，請將這個字串變更為 "Every %1 %2"，如此一來，就可以根據語言來交換順序。
+
+## <span id="don_t_over_localize."></span><span id="DON_T_OVER_LOCALIZE."></span>不要過度當地語系化。
+
+
+當地語系化特定的字串，不是標記。 請考量以下範例：
+
+| 過度當地語系化的字串                   | 適度當地語系化的字串 |
 |:--------------------------------------- |:-------------------------- |
-| &lt;link&gt;terms of use&lt;/link&gt;   | terms of use               |
-| &lt;link&gt;privacy policy&lt;/link&gt; | privacy policy             |
+| &lt;連結&gt;使用規定&lt;/連結&gt;   | 使用規定               |
+| &lt;連結&gt;隱私權原則&lt;/連結&gt; | 隱私權原則             |
 
  
 
-Including the above &lt;link&gt; tag in the resources means that it too will be localized. This renders the tag not valid. Only the strings themselves should be localized. Generally, you should think of tags as code that should be kept separate from localizable content. However, some long strings should include markup to keep context and ensure ordering.
+在資源中包含上面的 &lt;link&gt; 標記，表示會當地語系化。 這樣會讓標記失去作用。 只有字串本身需要當地語系化。 通常，您應該將標記視為程式碼，應該讓標記與當地語系化的內容有所區隔。 不過，某些長字串應該包含標記，以保留內容並確保順序。
 
-## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."></span><span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."></span>Do not use the same strings in dissimilar contexts.
-
-
-Reusing a string may seem like the best solution, but it can cause localization problems if the same word or phrase can have different meanings or contexts.
-
-You can reuse strings if the two contexts are the same. For instance, you can reuse the string "Volume" for both sound effect volume and music volume because both refer to intensity of sound. You should not reuse that same string when referring to a hard disk volume because the context and meaning are different, and the word might be translated differently.
-
-Another example is the use of the strings "on" and "off". In the English language, "on" and "off" can be used for a toggle for Flight Mode, Bluetooth, and devices. But in Italian, the translation depends on the context of what is being turned on and off. You would need to create a pair of strings for each context.
-
-Additionally, a string like "text" or "fax" could be used as both a verb and a noun in the English language, which can confuse the translation process. Instead, create a separate string for both the verb and noun format. When you're not sure whether the contexts are the same, err on the safe side and use a distinct string.
-
-## <span id="identify_resources_with_unique_attributes."></span><span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."></span>Identify resources with unique attributes.
+## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."></span><span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."></span>不要在不同的內容中使用相同字串。
 
 
-Resource identifiers are case insensitive and must be unique per resource file. When accessing a resource, use the resource identifier, not the actual value of the resource. Resource identifiers don't change, but the actual values of the resources do change depending on the language.
+重複使用字串看似最佳解決方案，但是如果相同的字詞或片語含有不同的意義或內容，就會產生當地語系化的問題。
 
-Be sure to use meaningful resource identifiers to provide additional context for translation.
+如果兩個字串的內容一樣，可以重複使用字串。 例如，您可以在音效音量和音樂音量重複使用 "Volume" (音量) 這個字串，因為這兩者都是指稱聲音的強度。 您不應該重複使用相同的字串來指稱硬碟的磁碟區，因為內容和意義都不同，而且字詞的翻譯方式可能也不一樣。
 
-Don't change the resource identifiers after the string resources are sent to translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers—also known as "resource identifiers shift"—require strings to be retranslated, because it will appear as though strings were deleted and others added.
+另一個範例是使用字串 "on" (開) 和 "off" (關)。 在英文中，"on" (開) 和 "off" (關) 可以用於飛安模式、藍牙及裝置的切換。 但是在義大利文中，翻譯會根據內容是開啟或關閉而定。 您需要針對每個內容建立一對字串。
 
-## <span id="choose_an_appropriate_translation_approach."></span><span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."></span>Choose an appropriate translation approach.
+此外，像是 "text" 或 "fax" 的字串在英文中可以用來做為動詞和名詞，這會在翻譯過程中產生混淆。 替代方式是改為建立適合動詞和名詞格式的個別字串。 當您不確定內容是否相同時，為了慎重起見，請使用不同的字串。
 
-
-After strings are separated into resource files, they can be translated. The ideal time to translate strings is after the strings in your project are finalized, which usually happens toward the end of a project. You can approach the translation process in number of ways. This may depend on the volume of strings to be translated, the number of languages to be translated, and how the translation will be done (such as in-house versus hiring an external vendor).
-
-Consider the following options:
-
--   **The resource files can be translated by opening them directly in the project.** This approach works well for a project that has a small volume of strings and that needs to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits by being quick, requires no tools, and minimizes the risk of mistranslations, but it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.
--   **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the [Multilingual App Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx) to generate XLIFF files from other resource files, such as .resw or .resjson.
-
-Handoffs to localizers may need to occur for other files, such as images or audio files. Typically, we don't recommend creating culturally dependent files because they can be difficult to localize.
-
-Additionally, consider the following suggestions:
-
--   **Use a localization tool.** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings, but a small number of languages. To learn more, see [How to use the Multilingual App Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx).
--   **Use a localization vendor.** Consider using a localization vendor if your project contains a large volume of strings and needs to be translated for many languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.
--   **Keep your localizers informed.** Inform localizers of strings that can be considered a noun or a verb. Explain fabricated words to your localizers by using terminology tools. Keep strings grammatically correct, unambiguous, and as nontechnical as possible to avoid confusion.
-
-## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>Keep access keys and labels consistent.
+## <span id="identify_resources_with_unique_attributes."></span><span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."></span>利用唯一的屬性識別資源。
 
 
-It is a challenge to "synchronize" the access keys used in accessibility with the display of the localized access keys, because the two string resources are categorized in two separate sections. Be sure to provide comments for the label string such as: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+資源識別碼不區分大小寫，在每個資源檔案中都必須是唯一的。 存取資源時，請使用資源識別碼，而不是資源的實際值。 資源識別碼不會變更，但是資源的實際值會根據語言而變更。
 
-**HTML:**
+請確定使用有意義的資源識別碼提供其他內容以進行翻譯。
 
-You can follow the implementation shown below. Again, be sure to properly comment the label string to link it to the access key definition.
+在傳送字串資源進行翻譯之後，請勿變更資源識別碼。 當地語系化團隊會使用資源識別碼，來追蹤資源中的新增、刪除及更新。 資源識別碼中的變更 (又稱為「資源識別碼轉換」) 需要重新翻譯字串，因為會出現像是字串已刪除或加入其他字串的情況。
+
+## <span id="choose_an_appropriate_translation_approach."></span><span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."></span>選擇適當的翻譯方式。
+
+
+將字串分成資源檔案之後，就可以進行翻譯。 翻譯字串的理想時機是在完成專案中的字串之後，這通常是在專案結束之前發生。 您可以透過一些方法處理翻譯程序。 這取決於要翻譯的字串數量、要翻譯的語言數量，以及完成翻譯的方式 (例如，內部作業和雇用外部廠商)。
+
+請考慮以下選項：
+
+-   **直接在專案中開啟資源檔案進行翻譯。** 這個方式適用於含有少量字串的專案，以及需要翻譯為兩到三種語言的專案。 如果開發人員了解多種語言，而且願意處理翻譯程序，則適用這個案例。 這個處理方式的好處是非常快速，不需要工具，而且可以將錯譯的風險降至最低，但是無法擴充。 特別是使用不同語言的資源很容易就變得不同步，因而產生不良的使用者經驗且不易維護。
+-   **字串資源檔案為 XML 或 ResJSON 文字格式，因此可以使用任何文字編輯器處理翻譯。 接著將翻譯的檔案複製回專案中。** 這個處理方式的風險在於翻譯人員可能會意外編輯 XML 標記，但是它讓翻譯人員可以在 Microsoft Visual Studio 專案以外的地方進行處理。 這個處理方式適合需要翻譯少數語言的專案。 XLIFF 格式是特別設計用於當地語系化的 XML 格式，一些當地語系化廠商或當地語系化工具應該都能支援。 您可以使用[多語應用程式工具組](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)，從其他資源檔案 (如 .resw 或 .resjson) 產生 XLIFF 檔案。
+
+其他檔案也可能需要提交給當地語系化人員進行翻譯，例如影像或音訊檔案。 通常，我們不建議建立具備文化特性的相依檔案，因為很難進行當地語系化。
+
+此外，請考慮下列建議：
+
+-   **使用當地語系化工具。** 有許多當地語系化工具可以用來剖析資源檔案，並且讓翻譯人員只能編輯可翻譯的字串。 這個方法可以降低翻譯人員不小心編輯到 XML 標記的風險。 但是它的缺點是要學習使用新的工具及當地語系化程序。 如果是含有大量字串但少量語言的專案，則適合使用當地語系化工具。 若要深入了解，請參閱[如何使用多語應用程式工具組](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)。
+-   **使用當地語系化廠商。** 如果您的專案包含大量的字串且需要翻譯為多種語言，請考慮透過當地語系化廠商來進行。 當地語系化廠商可以提供工具和程序，以及翻譯資源檔案的相關建議。 這是一個理想的解決方案，但也是最耗費成本的選項，而且可能會增加翻譯內容的往返時間。
+-   **讓當地語系化人員掌握最新資訊。** 讓當地語系化人員知道字串應視為名詞或動詞。 使用詞彙工具為當地語系化人員說明使用的字詞。 以正確的文法清楚表達字串，盡量使用非技術性的說法，避免造成混淆。
+
+## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>保持便捷鍵和標籤一致。
+
+
+「同步處理」協助工具中使用的便捷鍵與顯示當地語系化的便捷鍵是一項挑戰，因為這兩個字串資源分屬於兩個不同的區段。 務必為標籤字串提供註解，例如： `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+
+**HTML：**
+
+您可以依照如下所示的實作。 同樣地，請務必適當地註解標籤字串，以便將它連結到存取金鑰定義。
 
 ```HTML
 <label id="theLabel" data-win-res="{accessKey: 'theLabelAccessKey'}" for="xPrinterRedirection" accessKey="L">The <u>L</u>abel</label>
 <input type="checkbox" value="OFF" id="xPrinterRedirection" name="xPrinterRedirection" />
 ```
 
-## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."></span><span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."></span>Support Furigana for Japanese strings that can be sorted.
+## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."></span><span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."></span>支援可以排序的日文字串假名註解。
 
 
-Japanese Kanji characters have the unique property of having more than one pronunciation depending on the word and context they are used in. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese Kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.
+日文漢字字元具備可根據使用它們的字詞和內容而有一個以上發音的獨特屬性。 這會在嘗試排序日文命名的物件 (例如，應用程式名稱、檔案、歌曲等) 時發生問題。 日文漢字過去通常是以機器可以了解的順序 (稱為 XJIS) 來排序。 可惜因為這個排序順序不是拼音的順序，所以對人們而言不是很有用。
 
-Furigana works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add Furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains Kanji characters and Furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing Kanji characters in their names) is to provide a Furigana version of their app name as part of the Japanese localization process.
+假名註解可以藉由允許使用者或建立者為他們所使用的字元指定拼音來解決這個問題。 如果您使用下列程序將假名註解加入應用程式名稱，可以確定它會在應用程式清單的正確位置進行排序。 如果應用程式名稱包含漢字字元，而且當使用者的 UI 語言或排序順序設定為日文時未提供假名註解，則 Windows 會盡最大的努力產生適當的發音。 不過，要排序的應用程式名稱可能會包含少見或獨特的讀法，而不是較常見的讀法。 因此，日文應用程式 (特別是名稱中包含漢字字元的應用程式) 的最佳做法是，在日文當地語系化程序期間提供假名註解版的應用程式名稱。
 
-1.  Add "ms-resource:Appname" as the Package Display Name and the Application Display Name.
-2.  Create a ja-JP folder under strings, and add two resource files as follows:
+1.  新增 "ms-resource:Appname" 做為「套件顯示名稱」與「應用程式顯示名稱」。
+2.  在 strings 底下建立 ja-JP 資料夾，然後新增兩個資源檔案，如下所示：
 
     ``` syntax
     strings\
@@ -163,26 +163,26 @@ Furigana works around this problem by allowing the user or creator to specify th
             Resources.resw
     ```
 
-3.  In Resources.resw for general ja-JP: Add a string resource for Appname "希蒼"
-4.  In Resources.altform-msft-phonetic.resw for Japanese furigana resources: Add Furigana value for AppName "のあ"
+3.  在一般 ja-JP 的 Resources.resw 中：為應用程式名稱「希蒼」新增字串資源
+4.  在日文假名註解資源的 Resources.altform-msft-phonetic.resw 中：為應用程式名稱「のあ」新增假名註解值
 
-The user can search for the app name "希蒼" using both the Furigana value "のあ" (noa),　and the phonetic value (using the **GetPhonetic** function from Input Method Editor (IME)) "まれあお" (mare-ao).
+使用者可以使用假名註解值「のあ」(noa) 和拼音值 (從輸入法 (IME) 使用 **GetPhonetic** 函式)「まれあお」(mare-ao)，搜尋應用程式名稱「希蒼」。
 
-Sorting follows the **Regional Control Panel** format:
+排序會遵循**地區控制台**格式：
 
--   Under Japanese user locale,
-    -   If Furigana is enabled, the "希蒼" is sorted under "の".
-    -   If Furigana is missing, the "希蒼" is sorted under "ま".
--   Under non-Japanese user locale,
-    -   If Furigana is enabled, the "希蒼" is sorted under "の".
-    -   If Furigana is missing, the "希蒼" is sorted under "漢字".
+-   在日文版使用者地區設定下，
+    -   如果已啟用假名註解，「希蒼」會排序於「の」下方。
+    -   如果遺漏了假名註解，「希蒼」會排序於「ま」下方。
+-   在非日文版使用者地區設定下，
+    -   如果已啟用假名註解，「希蒼」會排序於「の」下方。
+    -   如果遺漏了假名註解，「希蒼」會排序於「漢字」下方。
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>相關主題
 
 
-* [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Put UI strings into resources](put-ui-strings-into-resources.md)
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [全球化和當地語系化的可行與禁止事項](guidelines-and-checklist-for-globalizing-your-app.md)
+* [將 UI 字串放入資源](put-ui-strings-into-resources.md)
+* [如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
  
 
  
@@ -192,6 +192,6 @@ Sorting follows the **Regional Control Panel** format:
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -1,13 +1,13 @@
 ---
 author: Xansky
-Description: "本主題說明 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
+Description: "本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "協助工具文字的需求"
 label: Accessible text requirements
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f36c6a8c191f48c6fb04820c19a98891e46ecf9d
-ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 
 
 
-本主題說明 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
+本主題描述 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -38,69 +38,16 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
 ## 文字元素角色  
-UWP App 可以使用這些預設元素 (一般稱為「文字元素」**或「文字編輯控制項」**)：
+UWP App 可以使用這些預設元素 (一般稱為「文字元素」或「文字編輯控制項」)：
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (以及 overflow 類別[**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow))：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **TextBox** ](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (以及 overflow 類別[**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow))：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **RichEditBox** ](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色是 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 當控制項報告它有一個 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) 角色，輔助技術會假設使用者有各種方法可變更這些值。 因此，如果您將靜態文字放到 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中，就會報告錯誤的角色，也向協助工具使用者報告錯誤的應用程式結構。
 
-在適用於 XAML 的文字模型中，主要用於靜態文字的元素有兩個：[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)。 這兩個元素都不能是 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 子類別，因此它們都無法取得鍵盤焦點，或是以 Tab 順序顯示。 但是，這不表示輔助技術無法或不會讀取它們。 螢幕助讀程式通常設計成可支援多種模式以閱讀應用程式中的內容，包含超越焦點與 Tab 順序的專用閱讀模式或瀏覽模式，例如「虛擬游標」。 因此，請不要只是因為定位順序能將使用者帶至可設定焦點的容器，就將您的靜態文字放入該處。 輔助技術使用者預期定位順序中的每個項目都能進行互動，而如果他們在該處遇到靜態文字，則所帶來的混亂就會大過助益。 您應自行使用朗讀程式測試這一點，以了解透過螢幕助讀程式檢閱您 App 中靜態文字的使用者體驗。
-
-<span id="Auto-suggest_accessibility"/>
-<span id="auto-suggest_accessibility"/>
-<span id="AUTO-SUGGEST_ACCESSIBILITY"/>
-## 自動建議的協助工具  
-當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的「收件者」****欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
-
-朗讀程式已經更新，讓這個體驗能透過特殊的建議模式成為無障礙類型體驗。 整體來說，適當地連結編輯欄位與清單之後，使用者將能：
-
-* 在清單出現及清單關閉的時候知道
-* 知道有多少建議可用
-* 知道已選取的項目 (如果有)
-* 能將朗讀程式焦點移動到清單
-* 以其他閱讀模式瀏覽建議
-
-![建議清單](images/autosuggest-list.png)<br/>
-_建議清單的範例_
-
-<span id="Implementing_auto-suggest"/>
-<span id="implementing_auto-suggest"/>
-<span id="IMPLEMENTING_AUTO-SUGGEST"/>
-### 實作自動建議  
-為了讓這個體驗無障礙，輸入欄位和清單必須在 UIA 樹狀結構中相關聯。 在傳統型應用程式和 UWP App 中，此關聯分別是以 [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) 屬性和 [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 屬性建立。
-
-自動建議體驗大致上有 2 種類型。
-
-**預設選取**  
-如果清單中有預設選取的項目，在傳統型應用程式中，朗讀程式會尋找 [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) 事件，在 UWP App 中則會尋找要引發的 [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件。 每當選取的項目變更 (使用者輸入其他字母而使建議項目更新，或使用者瀏覽清單)，就會引發 **ElementSelected** 事件。
-
-![包含預設選取項目的清單](images/autosuggest-default-selection.png)<br/>
-_有預設選取項目的範例_
-
-**沒有預設選取**  
-如果沒有預設選取的項目 (如「天氣」App 的位置方塊)，則每當清單更新時，朗讀程式就會在清單上尋找要引發的傳統型 [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 ) 事件，或 UWP [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件。
-
-![不含預設選取項目的清單](images/autosuggest-no-default-selection.png)<br/>
-_沒有預設選取項目的範例_
-
-### XAML 實作  
-如果您是使用預設的 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox)，則一切都已經為您設定好。 如果您是使用 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) 和清單建立自己的自動建議體驗，則您需要在 **TextBox** 上將清單設為 [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)。 每當新增或移除這個屬性時，您必須針對 [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 屬性引發 **AutomationPropertyChanged** 事件，同時也要引發您自己的 [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件或 [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件，如本文稍早前所說明，這必須視您案例的類型而定。
-
-### HTML 實作  
-如果您是使用 HTML 中的內建控制項，則已經為您對應 UIA實作。 以下是已經為您設定好的實作範例：
-
-``` HTML
-<label>Sites <input id="input1" type="text" list="datalist1" /></label>
-<datalist id="datalist1">
-        <option value="http://www.google.com/" label="Google"></option>
-        <option value="http://www.reddit.com/" label="Reddit"></option>
-</datalist>
-```
-
- 如果要建立您自己的控制項，您必須設定自己的 ARIA 控制項，這在 W3C 標準中有說明。
+在適用於 XAML 的文字模型中，主要用於靜態文字的元素有兩個：[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)。 這兩個元素都不能是 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 子類別，因此它們都無法取得鍵盤焦點，或是以 Tab 順序顯示。 但是，這不表示輔助技術無法或不會讀取它們。 螢幕助讀程式通常設計成可支援多種模式以閱讀應用程式中的內容，包含超越焦點與 Tab 順序的專用閱讀模式或瀏覽模式，例如「虛擬游標」。 因此，請不要只是因為定位順序能將使用者帶至可設定焦點的容器，就將您的靜態文字放入該處。 輔助技術使用者預期定位順序中的每個項目都能進行互動，而如果他們在該處遇到靜態文字，則所帶來的混亂就會大過助益。 在使用螢幕助讀程式檢驗應用程式的靜態文字時，您應自行使用朗讀程式充分測試這一點，以了解使用者使用您應用程式的體驗。
 
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
@@ -156,11 +103,11 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 這些類型都有 **IsTextScaleFactorEnabled** 屬性：  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 和衍生類別
+* [ **Control** ](https://msdn.microsoft.com/library/windows/apps/BR209390) 和衍生類別
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) 和衍生類別
+* [ **TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) 和衍生類別
 
 <span id="related_topics"/>
 ## 相關主題  
@@ -168,10 +115,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [基本協助工具資訊](basic-accessibility-information.md)
 * [XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: Move-look controls for games
-description: Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
+title: "適用於遊戲的移動視角控制項"
+description: "了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。"
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
+ms.openlocfilehash: 7adbfdb77af6992be9448969f635bdebac58344b
 
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-look controls for games
+# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
+了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。
 
-We also discuss move-look support for touch devices, with the move controller defined as the lower-left section of the screen that behaves like a directional input, and the look controller defined for the remainder of the screen, with the camera centering on the last place the player touched in that area.
+我們也會討論觸控裝置的移動視角支援：將螢幕左下區域定義為移動控制器 (行為類似方向輸入)，以及將螢幕的其他區域定義為視角控制器 (將相機放置在玩家上次觸碰的位置中央)。
 
-If this is an unfamiliar control concept to you, think of it this way: the keyboard (or the touch-based directional input box) controls your legs in this 3D space, and behaves as if your legs were only capable of moving forward or backward, or strafing left and right. The mouse (or touch pointer) controls your head. You use your head to look in a direction -- left or right, up or down, or somewhere in that plane. If there is a target in your view, you would use the mouse to center your camera view on that target, and then press the forward key to move towards it, or back to move away from it. To circle the target, you would keep the camera view centered on the target, and move left or right at the same time. You can see how this is a very effective control method for navigating 3D environments!
+如果您對這種控制項概念不熟悉，請想像一下：在這個 3D 空間中，鍵盤 (或觸控式方向輸入鍵) 控制您的腿，而您的腿只能前後或左右移動。 滑鼠 (或觸控指標) 控制您的頭。 轉動頭即可看往一個方向：左右、上下，或平面中的任一方向。 如果視角中有射擊目標，您應該使用滑鼠讓相機視角對準這個目標，然後按前進按鍵來接近目標，或是按後退按鍵以遠離目標。 若要繞著目標移動，您應該讓相機視角對準這目標，並同時向左或向右移動。 您會發現，這些控制方式可讓您在 3D 環境中非常順暢地進行瀏覽！
 
-These controls are commonly known as WASD controls in gaming, where the W, A, S, and D keys are used for x-z plane fixed camera movement, and the mouse is used to control camera rotation around the x and y axes.
+這些控制項在遊戲中通稱為 WASD 控制項，您可以使用 W、A、S 及 D 按鍵來控制 x-z 立體固定相機的移動方向，滑鼠則是用來控制相機在 x 和 y 軸上的旋轉方式。
 
-## Objectives
-
-
--   Add basic move-look controls to your DirectX game for both mouse and keyboard, and touch screens.
--   Implement a first-person camera used to navigate a 3D environment.
-
-## A note on touch control implementations
+## 目標
 
 
-For touch controls, we implement two controllers: the move controller, which handles movement in the x-z plane relative to the camera's look point; and the look controller, which aims the camera's look point. Our move controller maps to the keyboard WASD buttons, and the look controller maps to the mouse. But for touch controls, we need to define a region of the screen that serves as the directional inputs, or the virtual WASD buttons, with the remainder of the screen serving as the input space for the look controls.
+-   將基本移動視角控制項加入使用滑鼠和鍵盤 (以及使用觸控式螢幕) 的 DirectX 遊戲中。
+-   實作用來瀏覽 3D 環境的第一人稱相機。
 
-Our screen looks like this.
-
-![the move-look controller layout](images/movelook-touch.png)
-
-When you move the touch pointer (not the mouse!) in the lower left of the screen, any movement upwards will make the camera move forward. Any movement downwards will make the camera move backwards. The same holds for left and right movement inside the move controller's pointer space. Outside of that space, and it becomes a look controller -- you just touch or drag the camera to where you'd like it to face.
-
-## Set up the basic input event infrastructure
+## 觸控控制項實作的注意事項
 
 
-First, we must create our control class that we use to handle input events from the mouse and keyboard, and update the camera perspective based on that input. Because we're implementing move-look controls, we call it **MoveLookController**.
+我們會針對觸控控制項實作兩個控制器：移動控制器 (處理與相機視點相對的 x-z 立體移動) 以及視角控制器 (瞄準相機的視點)。 我們的移動控制器會對應到鍵盤的 WASD 按鍵，而視角控制器則是對應到滑鼠。 但是在觸控控制項中，我們不但需要定義可輸入方向的螢幕區域或虛擬 WASD 按鍵，也需要定義作為視角控制項輸入區域的螢幕其他區域。
+
+我們的螢幕看起來像這樣。
+
+![移動視角控制器配置](images/movelook-touch.png)
+
+當您移動螢幕左下角的觸控指標 (不是滑鼠 ！) 時，任何向上的移動會讓相機向前移動。 任何向下的移動則會讓相機向後移動。 而在移動控制器的指標範圍內左右移動相機就會左右移動。 在這個範圍外 (就是視角控制器)，您只需觸碰或拖曳相機即可調整您要面對的方向。
+
+## 設定基本的輸入事件基礎結構
+
+
+首先，我們必須建立用來處理滑鼠和鍵盤輸入事件的控制項類別，並根據該輸入來更新相機視角。 因為我們要實作移動視角控制項，所以呼叫 **MoveLookController**。
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -57,7 +57,7 @@ ref class MoveLookController
 };  // class MoveLookController
 ```
 
-Now, let's create a header that defines the state of the move-look controller and its first-person camera, plus the basic methods and event handlers that implement the controls and that update the state of the camera.
+現在，讓我們建立一個標頭來定義移動視角控制器的狀態以及它的第一人稱相機，並建立基本方法和事件處理常式來實作 控制項及更新相機狀態。
 
 ```cpp
 #define ROTATION_GAIN 0.004f    // Sensitivity adjustment for the look controller
@@ -138,56 +138,56 @@ internal:
 };  // class MoveLookController
 ```
 
-Our code contains 4 groups of private fields. Let's review the purpose of each one.
+我們的程式碼包含 4 組私用欄位。 讓我們看看每個欄位的用途。
 
-First, we define some useful fields that hold our updated info about our camera view.
+我們首先定義一些欄位來儲存相機視角的更新資訊。
 
--   **m\_position** is the position of the camera (and therefore the viewplane) in the 3D scene, using scene coordinates.
--   **m\_pitch** is the pitch of the camera, or its up-down rotation around the viewplane's x-axis, in radians.
--   **m\_yaw** is the yaw of the camera, or its left-right rotation around the viewplane's y-axis, in radians.
+-   **m\_position** 是 3D 場景中使用場景座標的相機位置 (即為視圖平面)。
+-   **m\_pitch** 是相機的上下移動，或以弧形繞著視圖平面 x 軸上下旋轉。
+-   **m\_yaw** 是相機的左右偏移，或以弧形繞著視圖平面 y 軸左右旋轉。
 
-Now, let's define the fields that we use to store info about the status and position of our controllers. First, we'll define the fields we need for our touch-based move controller. (There's nothing special needed for the keyboard implementation of the move controller. We just read keyboard events with specific handlers.)
+現在，讓我們定義用來存放控制器狀態和位置資訊的欄位。 我們先為觸控式移動控制器定義所需的欄位。 (移動控制器的鍵盤實作並沒有特別的需求。 我們只需要使用特定處理常式讀取鍵盤事件即可。)
 
--   **m\_moveInUse** indicates whether the move controller is in use.
--   **m\_movePointerID** is the unique ID for the current move pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
--   **m\_moveFirstDown** is the point on the screen where the player first touched the move controller pointer area. We use this value later to set a dead zone to keep tiny movements from jittering the view.
--   **m\_movePointerPosition** is the point on the screen the player has currently moved the pointer to. We use it to determine what direction the player wanted to move by examining it relative to **m\_moveFirstDown**.
--   **m\_moveCommand** is the final computed command for the move controller: up (forward), down (back), left, or right.
+-   **m\_moveInUse** 指示移動控制器是否正在使用中。
+-   **m\_movePointerID** 是目前移動指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
+-   **m\_moveFirstDown** 是玩家在螢幕上第一次觸碰移動控制器指標區域的點。 我們稍後會使用這個值來設定靜止區域，不讓細微的移動造成視角抖動。
+-   **m\_movePointerPosition** 是螢幕上玩家目前將指標移過去的目標點。 我們透過檢查它與 **m\_moveFirstDown** 的相對位置，以判斷玩家想要移動的方向。
+-   **m\_moveCommand** 是移動控制器最後計算出來的命令：上 (前)、下 (後)、左、右。
 
-Now, we define the fields we use for our look controller, both the mouse and touch implementations.
+現在，我們定義視角控制器的欄位 (針對滑鼠與觸控實作)。
 
--   **m\_lookInUse** indicates whether the look control is in use.
--   **m\_lookPointerID** is the unique ID for the current look pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
--   **m\_lookLastPoint** is the last point, in scene coordinates, that was captured in the previous frame.
--   **m\_lookLastDelta** is the computed difference between the current **m\_position** and **m\_lookLastPoint**.
+-   **m\_lookInUse** 指示視角控制項是否正在使用中。
+-   **m\_lookPointerID** 是目前視角指標的唯一識別碼。 當我們檢查指標識別碼值時，會使用它來區別視角指標和移動指標。
+-   **m\_lookLastPoint** 是場景座標中的最後一點 (從先前的畫面中擷取而來)。
+-   **m\_lookLastDelta** 是目前的 **m\_position** 和 **m\_lookLastPoint** 之間計算出來的差異。
 
-Finally, we define 6 Boolean values for the 6 degrees of movement, which we use to indicate the current state of each directional move action (on or off):
+最後，讓我們為 6 個角度的移動方向定義 6 個布林值，我們會使用這些值來指示每個方向移動動作的目前狀態 (開或關)：
 
--   **m\_forward**, **m\_back**, **m\_left**, **m\_right**, **m\_up** and **m\_down**.
+-   **m\_forward**、**m\_back**、**m\_left**、**m\_right**、**m\_up** 及 **m\_down**。
 
-We use the 6 event handlers to capture the input data we use to update the state of our controllers:
+我們使用 6 個事件處理常式來擷取更新控制器狀態的輸入資料：
 
--   **OnPointerPressed**. The player pressed the left mouse button with the pointer in our game screen, or touched the screen.
--   **OnPointerMoved**. The player moved the mouse with the pointer in our game screen, or dragged the touch pointer on the screen.
--   **OnPointerReleased**. The player released the left mouse button with the pointer in our game screen, or stopped touching the screen.
--   **OnKeyDown**. The player pressed a key.
--   **OnKeyUp**. The player released a key.
+-   **OnPointerPressed**。 玩家按下代表遊戲螢幕指標的滑鼠左鍵，或觸碰螢幕。
+-   **OnPointerMoved**。 玩家移動滑鼠來移動遊戲螢幕上的指標，或在螢幕上拖曳觸控指標。
+-   **OnPointerReleased**。 玩家放開代表遊戲螢幕指標的滑鼠左鍵，或停止觸碰螢幕。
+-   **OnKeyDown**。 玩家按下按鍵。
+-   **OnKeyUp**。 玩家放開按鍵。
 
-And finally, we use these methods and properties to initialize, access, and update the controllers' state info.
+最後，我們使用這些方法和屬性來初始化、存取以及更新控制器的狀態資訊。
 
--   **Initialize**. Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes our display window.
--   **SetPosition**. Our app calls this method to set the (x, y, and z) coordinates of our controls in the scene space.
--   **SetOrientation**. Our app calls this method to set the pitch and yaw of the camera.
--   **get\_Position**. Our app accesses this property to get the current position of the camera in the scene space. You use this property as the method of communicating the current camera position to the app.
--   **get\_LookPoint**. Our app accesses this property to get the current point toward which the controller camera is facing.
--   **Update**. Reads the state of the move and look controllers and updates the camera position. You continually call this method from the app's main loop to refresh the camera controller data and the camera position in the scene space.
+-   **Initialize**。 我們的 app 會呼叫這個事件處理常式來初始化控制項，並將它們附加到描述我們顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **SetPosition**。 我們的 app 會呼叫這個方法來設定場景區域中控制項的 x、y 及 z 座標。
+-   **SetOrientation**。 我們的 app 會呼叫這個方法來設定相機的上下移動和左右偏移。
+-   **get\_Position**。 我們的 app 會存取這個屬性來取得場景區域中相機的目前位置。 把這個屬性當作將目前相機位置傳送到 app 的方法。
+-   **get\_LookPoint**。 我們的應用程式會存取這個屬性來取得控制器相機目前面對的視點。
+-   **Update**。 讀取移動和視角控制器的狀態並更新相機位置。 您會從 app 的主迴圈持續呼叫這個方法，進而重新整理相機控制器資料以及場景區域中的相機位置。
 
-Now, you have here all the components you need to implement your move-look controls. So, let's connect these pieces together.
+到目前為止，您已經有了實作移動視角控制項所需的全部元件了。 所以，讓我們將這些元件連結起來。
 
-## Create the basic input events
+## 建立基本輸入事件
 
 
-The Windows Runtime event dispatcher provides 5 events we want instances of the **MoveLookController** class to handle:
+Windows 執行階段事件發送器提供了要讓 **MoveLookController** 類別執行個體處理的 5 個事件：
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
@@ -195,11 +195,11 @@ The Windows Runtime event dispatcher provides 5 events we want instances of the 
 -   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
 -   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
 
-These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如果您不知道如何取得這個物件，請參閱[如何設定您的通用 Windows 平台 (UWP) C++ app 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
-As these events fire while our app is running, the handlers update the controllers' state info defined in our private fields.
+如果在 app 執行時引發了這些事件，處理常式會更新我們在私用欄位中定義的控制器狀態資訊。
 
-First, let's populate the mouse and touch pointer event handlers. In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user clicks the mouse or touches the screen in the look controller region.
+首先，讓我們填入滑鼠和觸控指標事件處理常式。 在第一個事件處理常式 **OnPointerPressed()** 中，我們要從 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中取得指標的 x-y 座標，這個類別可在使用者於視角控制器區域中按一下滑鼠或觸控螢幕時，管理我們的顯示。
 
 **OnPointerPressed**
 
@@ -248,9 +248,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-This event handler checks whether the pointer is not the mouse (for the purposes of this sample, which supports both mouse and touch) and if it is in the move controller area. If both criteria are true, it checks whether the pointer was just pressed, specifically, whether this click is unrelated to a previous move or look input, by testing if **m\_moveInUse** is false. If so, the handler captures the point in the move controller area where the press happened and sets **m\_moveInUse** to true, so that when this handler is called again, it won't overwrite the start position of the move controller input interaction. It also updates the move controller pointer ID to the current pointer's ID.
+這個事件處理常式會檢查指標是否不是滑鼠 (因為在這個範例中同時支援滑鼠和觸控)，以及指標是否位於移動控制器區域。 如果上述兩個條件為 True，則它會測試 **m\_moveInUse** 是否為 False，藉此檢查指標是否剛剛被按下，並特別檢查這個按一下的動作是否與之前的移動或視角輸入無關。 如果是這樣，處理常式會擷取移動控制器區域中發生按下動作的點，並將 **m\_moveInUse** 設成 True，這樣再次呼叫這個處理常式時，它 就不會覆寫移動控制器輸入互動的起點。 它也會將移動控制器指標識別碼更新為目前指標的識別碼。
 
-If the pointer is the mouse or if the touch pointer isn't in the move controller area, it must be in the look controller area. It sets **m\_lookLastPoint** to the current position where the user pressed the mouse button or touched and pressed, resets the delta, and updates the look controller's pointer ID to the current pointer ID. It also sets the state of the look controller to active.
+如果指標是滑鼠或者如果觸控指標沒有在移動控制器區域中，那麼它就一定是在視角控制器區域中。 它會將 **m\_lookLastPoint** 設成使用者按下滑鼠按鍵或觸控按下的目前位置，並重設距離差異，然後將視角控制器指標識別碼更新為目前指標的識別碼。 它也會將視角控制器的狀態設成作用中。
 
 **OnPointerMoved**
 
@@ -294,13 +294,13 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-The **OnPointerMoved** event handler fires whenever the pointer moves (in this case, if a touch screen pointer is being dragged, or if the mouse pointer is being moved while the left button is pressed). If the pointer ID is the same as the move controller pointer's ID, then it's the move pointer; otherwise, we check if it's the look controller that's the active pointer.
+每當指標移動時 (以此為例，即在使用者拖曳觸控式螢幕指標，或按住滑鼠左鍵並移動滑鼠指標的情況下)，都會引發 **OnPointerMoved** 事件處理常式。 如果指標識別碼與移動控制器指標的識別碼相同，那麼它就是移動指標；不然我們會檢查它是否為視角控制器的作用中指標。
 
-If it's the move controller, we just update the pointer position. We keep updating it as long the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.
+如果它是移動控制器，我們就只要更新指標位置。 只要 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 事件持續引發，我們就會一直更新它，因為我們要將最後位置與使用 **OnPointerPressed** 事件處理常式擷取的最初位置進行比對。
 
-If it's the look controller, things are a little more complicated. We need to calculate a new look point and center the camera on it, so we calculate the delta between the last look point and the current screen position, and then we multiply versus our scale factor, which we can tweak to make the look movements smaller or larger relative to the distance of the screen movement. Using that value, we calculate the pitch and the yaw.
+如果它是視角控制器，就會比較複雜。 我們需要計算新的視點並把相機放在它中央，因此我們會計算最後視點與目前螢幕位置的距離差異，然後乘以縮放係數，讓視角移動相對於螢幕移動的距離縮小或放大。 我們會使用這個值計算上下移動或左右偏移。
 
-Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen. We use **OnPointerReleased**, which we call when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.
+最後，當玩家停止移動滑鼠或觸控螢幕時，我們需要停用移動或視角控制器行為。 我們使用 **OnPointerReleased** ([**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 引發時呼叫它)，將 **m\_moveInUse** 或 **m\_lookInUse** 設成 FALSE 並關閉相機平移移動，然後將指標識別碼全部用零來表示。
 
 **OnPointerReleased**
 
@@ -326,7 +326,7 @@ _In_ PointerEventArgs ^args)
 }
 ```
 
-So far, we handled all the touch screen events. Now, let's handle the key input events for a keyboard-based move controller.
+到這裡，我們處理了所有的觸控式螢幕事件。 現在，讓我們處理鍵盤移動控制器的按鍵輸入事件。
 
 **OnKeyDown**
 
@@ -350,7 +350,7 @@ void MoveLookController::OnKeyDown(
 }
 ```
 
-As long as one of these keys is pressed, this event handler sets the corresponding directional move state to true.
+只要按下任何一個按鍵，這個事件處理常式就會將對應的方向移動狀態設成 True。
 
 **OnKeyUp**
 
@@ -374,12 +374,12 @@ void MoveLookController::OnKeyUp(
 }
 ```
 
-And when the key is released, this event handler sets it back to false. When we call **Update**, it checks these directional move states, and move the camera accordingly. This is a bit simpler than the touch implementation!
+而放開按鍵時，這個處理常式就會將它設回 False。 當我們呼叫 **Update** 時，它會檢查這些方向移動狀態，並據此移動相機。 這比觸控實作稍稍簡單一點！
 
-## Initialize the touch controls and the controller state
+## 初始化觸控控制項以及控制器狀態
 
 
-Let's hook up the events now, and initialize all the controller state fields.
+讓我們開始執行事件，並初始化所有的控制器狀態欄位。
 
 **Initialize**
 
@@ -421,12 +421,12 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**. It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.
+**Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。 在應用程式啟動時，它會初始化移動和視角指標的識別碼，將觸控式螢幕移動控制器實作的命令向量設成零，並將相機視角設成正前方。
 
-## Getting and setting the position and orientation of the camera
+## 取得和設定相機的位置和方向
 
 
-Let's define some methods to get and set the position of the camera with respect to the viewport.
+讓我們定義一些方法來取得和設定檢視區中的相機位置。
 
 ```cpp
 void MoveLookController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -464,10 +464,10 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## Updating the controller state info
+## 更新控制器狀態資訊
 
 
-Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_movePointerPosition** into new coordinate information respective of our world coordinate system. Our app calls this method every time we refresh the main app loop. So, it is here that we compute the new look point position info we want to pass to the app for updating the view matrix before projection into the viewport.
+現在，我們要執行計算來將 **m\_movePointerPosition** 中追蹤到的指標座標資訊，轉換為使用世界座標系統的新座標資訊。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 所以此時我們會計算要傳送給 app 的新視點位置資訊，以便在投影到檢視區前更新檢視矩陣。
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -550,16 +550,16 @@ void MoveLookController::Update(CoreWindow ^window)
 }
 ```
 
-Because we don't want jittery movement when the player uses our touch-based move controller, we set a virtual dead zone around the pointer with a diameter of 32 pixels. We also add velocity, which is the command value plus a movement gain rate. (You can adjust this behavior to your liking, to slow down or speed up the rate of movement based on the distance the pointer moves in the move controller area.)
+因為我們不希望玩家在使用觸控式移動控制器時發生抖動的情形，所以會在指標周圍建立一個靜止區域 (直徑為 32 個像素)。 我們同時也會加入速度 (命令值加上移動增率)。 (您可以根據自己的喜愛調整這個行為，根據指標在移動控制器區域中的移動距離來減慢或加速移動速率。)
 
-When we compute the velocity, we also translate the coordinates received from the move and look controllers into the movement of the actual look point we send to the method that computes our view matrix for the scene. First, we invert the x coordinate, because if we click-move or drag left or right with the look controller, the look point rotates in the opposite direction in the scene, as a camera might swing about its central axis. Then, we swap the y and z axes, because an up/down key press or touch drag motion (read as a y-axis behavior) on the move controller should translate into a camera action that moves the look point into or out of the screen (the z-axis).
+當我們計算速度時，也會將從移動和視角控制器收到的座標，轉譯為實際視點的移動 (我們會將這個移動傳送給計算場景視圖矩陣的方法)。 首先，先反轉 x 座標，因為如果使用視角控制器來按一下移動或左右拖曳，場景中的視點會以相反的方向旋轉，相機可能會在中央軸線上晃動。 接著，我們交換 y 和 z 軸，因為移動控制器上的向上/向下鍵按下動作或觸碰拖曳動作 (讀取為 y 軸行為)，應該轉譯為將視點移入或移出螢幕的相機動作 (z 軸)。
 
-The final position of the look point for the player is the last position plus the calculated velocity, and this is what is read by the renderer when it calls the **get\_Position** method (most likely during the setup for each frame). After that, we reset the move command to zero.
+玩家視點的最後位置會是最後位置加上計算的速度，而且當它呼叫 **get\_Position** 方法 (最可能發生在設定每個畫面時) 時轉譯器就會讀取這個資料。 之後，我們要將移動命令重設為零。
 
-## Updating the view matrix with the new camera position
+## 使用新相機位置來更新視圖矩陣
 
 
-We can obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
+我們可以取得相機聚焦的場景區域座標，只需通知應用程式就可以更新它 (例如，在主應用程式迴圈中每 60 秒一次)。 這個虛擬程式碼會建議您可以實作的呼叫行為：
 
 ```cpp
 myMoveLookController->Update( m_window );   
@@ -572,23 +572,23 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Congratulations! You've implemented basic move-look controls for both touch screens and keyboard/mouse input touch controls in your game!
+恭喜！ 您已經在遊戲中實作觸控式螢幕和鍵盤/滑鼠輸入觸控控制項的基本移動視角控制項！
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

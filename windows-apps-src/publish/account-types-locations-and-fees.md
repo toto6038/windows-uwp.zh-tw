@@ -1,265 +1,265 @@
 ---
 author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
-title: Account types, locations, and fees
-description: We offer individual developer accounts and company developer accounts in many countries and regions.
+title: "帳戶類型、位置和費用"
+description: "我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。"
 translationtype: Human Translation
 ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
-ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
+ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
 
 ---
 
-# Account types, locations, and fees
+# 帳戶類型、位置和費用
 
-We offer two types of developer accounts: individual accounts, and company accounts. Developer accounts are offered in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft developer programs.
+我們提供兩種開發人員帳戶類型：個人帳戶和公司帳戶。 許多[國家和地區](#developer-account-and-app-submission-markets)都提供開發人員帳戶。 任一種類型的帳戶都會為您提供存取權來將 App 發佈到市集，以及參與其他的 Microsoft 開發人員計劃。
 
-> **Note**  Whether you create an account for a company or an individual, you can associate only one Microsoft account with the developer account. When signing up for an account, make sure to sign in with the Microsoft account that you want to use for your developer account.
+> **請注意**無論您建立的是公司或個人帳戶，這個開發人員帳戶只能與一個 Microsoft 帳戶產生關聯。 註冊帳戶時，請務必使用要用於開發人員帳戶的 Microsoft 帳戶登入。
 
-When you [begin the signup process](http://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Individual accounts are intended for a single developer working on their own. Company accounts are intended for organizations and businesses. Company accounts give you access to some additional app capabilities. We also require greater verification for company accounts after you register, to confirm that you’re authorized to set up the account for your company. This verification can take from a few days to a couple of weeks, and often includes a phone call to your company. Both types of accounts will allow you to submit apps, add-ins, and services.
+當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 個人帳戶適用於獨立作業的單一開發人員。 公司帳戶則適用於組織與企業。 公司帳戶能提供您一些其他 App 功能的存取權。 在您註冊公司帳戶之後，我們也會要求較高的驗證，以確認您已獲授權為您的公司設定帳戶。 驗證可能需要花費數天至數個星期，且通常會電話連絡您的公司。 兩種帳戶類型都允許您將 App、增益集與服務提交至市集。
 
-> **Important**  You cannot change the account type once you make your selection, so be sure to choose the right type.
+> **重要事項** 選擇帳戶類型之後無法變更，所以務必選擇正確的類型。
 
-Here are the essential differences between the two account types.
+以下是這兩種帳戶類型的主要差異。
 
-| Individual account | Company account |
+| 個人帳戶 | 公司帳戶 |
 |--------------------|-----------------|
-| <ul><li>Restricted from using certain app capabilities</li><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> | <ul><li>Requires verification through Symantec or Dun & Bradstreet</li><li>Greater access to app capabilities</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> |
+| <ul><li>使用某些應用程式功能的限制</li><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> | <ul><li>需要透過賽門鐵克 (Symantec) 或鄧白氏 (Dun &amp; Bradstreet) 認證</li><li>存取更多應用程式功能</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> |
 
-> **Important**   If you decide to create a company account, be sure to review our [guidelines for company accounts](opening-a-developer-account.md#additional-guidelines-for-company-accounts).
+> [重要事項](opening-a-developer-account.md#additional-guidelines-for-company-accounts) 如果您決定建立公司帳戶，請務必檢閱**公司帳戶的指導方針**。
 
-Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. One of the main benefits of having a company account is the ability to submit apps that declare additional [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 擁有公司帳戶的主要優點之一是，能夠送出宣告其他 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)的 App。
 
-Specifically, you must have a company account in order to publish apps that use the following three capabilities:
+具體來說，您必須擁有公司帳戶，才能發佈使用下列三種功能的 App：
 
--   **enterpriseAuthentication**—Uses Windows credentials for access to a corporate intranet. This is typically used in line-of-business apps that connect to servers within an enterprise. (You don't need this capability for generic communication across the internet.)
--   **sharedUserCertificates**—Enables an app to access software and hardware certificates, such as certificates stored on a smart card. This is typically used for financial or enterprise apps that require a smart card for authentication.
--   **documentsLibrary**—Allows programmatic access to the user's Documents, filtered to the file type associations declared in the package manifest. (You don't need to declare this capability in order to access a user's Documents with the [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174)). Note that apps targeting Windows Phone 8.1 or earlier cannot use the documentsLibrary capability.
+-   **enterpriseAuthentication**—使用 Windows 認證存取公司內部網路。 此功能通常用於企業中與伺服器連線的企業營運應用程式。 (您不需要針對網際網路上的一般通訊使用這種功能)。
+-   **sharedUserCertificates**—可以讓 App 存取軟體和硬體憑證，例如儲存在智慧卡的憑證。 這個功能通常用於需要使用智慧卡進行身分驗證的金融或企業 App。
+-   **documentsLibrary**—可讓您以程式設計方式存取使用者的 文件 \(已篩選出封裝資訊清單所宣告的檔案類型關聯\)。 (您不需要宣告此功能，即可使用[檔案選擇器](https://msdn.microsoft.com/library/windows/apps/Hh465174)存取使用者的 \[文件\])。 請注意針對 Windows Phone 8.1 或更早版本的 App 不能使用 documentsLibrary 功能。
 
-> **Note**  In addition, you must contact support and get approval before you can submit apps that declare the **documentsLibrary** capability.
+> **注意** 除此之外，您必須先連絡支援並獲得核准，才能提交宣告 **documentsLibrary** 功能的 App。
 
-Having a company account does not guarantee that apps using these capabilities will pass certification. These capabilities are intended for very specific scenarios, and most apps shouldn't declare them. For more information, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+擁有公司帳戶並不保證使用這些功能的 App 會通過認證。 這些功能是應用於非常特定的案例，大多數應用程式不應宣告這些功能。 如需詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
-For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](https://msdn.microsoft.com/library/windows/apps/JJ657967), access your Windows Dev Center dashboard, and continue building and testing your app.
+針對公司帳戶，我們使用賽門鐵克或鄧白氏來驗證您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時所提供的連絡資訊是最新的)。 公司帳戶必須通過驗證才能送出 App，等待期間可以[保留 App 名稱](https://msdn.microsoft.com/library/windows/apps/JJ657967)、存取 Windows 開發人員中心儀表板，以及持續建置和測試 App。
 
-## Developer account and app-submission markets
+## 開發人員帳戶與 App 提交市場
 
-You can register for your developer account and submit apps if you live or operate a business in a country or region listed below.
+如果您在以下列出的國家或地區居住或經商，將可以註冊開發人員帳戶以及送出應用程式。
 
-In the following table, the **Registration fee** is the current cost to register for your developer account. Prices are subject to change.
+在下表中，\[註冊費用\]**** 是目前註冊開發人員帳戶所需的花費。 價格可能會有所變動。
 
-> **Note**  We'll add any applicable taxes and fees to the registration fee when you sign up. Also, when we pay you, your bank might charge a fee to receive the payment.
+> **注意** 我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
 
-The **Payout** column describes how we'll pay you the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
+\[支付\]**** 欄說明我們如何支付您的 App 獲利。 您可以選擇要供我們存入這筆款項的[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)。
 
-> **Note**  Some markets do not support paid apps (**payout**). In those markets, only free apps can be submitted.
+> **注意** 有些市場不支援付費 App (\[支付\]****)。 在這些市場中，只能提交免費 App。
 
-The **PayPal** column indicates whether PayPal is a supported payment method that can be used for your [payout account](https://msdn.microsoft.com/library/windows/apps/Bg124529) (and, except where noted, for your developer account registration fee).
+\[PayPal\]**** 欄指出 PayPal 是否為可適用於您[支付帳戶](https://msdn.microsoft.com/library/windows/apps/Bg124529)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。
 
-| Country/region | Individual Reg. fee | Company Reg. fee | Payout | PayPal |
+| 國家/地區 | 個人註冊 費用 | 公司註冊 費用 | 支付 | PayPal |
 |----------------|---------------------|------------------|--------|--------|
-| Afghanistan | 19 USD | 99 USD | USD paid to bank | No |
-| Albania | 19 USD | 99 USD | USD paid to bank | No |
-| Algeria | 1535 DZD | 7000 DZD | USD paid to bank | No | 
-|  Andorra | 14 EUR | 75 EUR | No payout | No | 
-|  Angola | 19 USD | 99 USD | USD paid to bank | No | 
-|  Antigua and Barbuda | 19 USD | 99 USD | XCD paid to bank | No | 
-|  Argentina | 106 ARS | 420 ARS | USD paid to bank | No | 
-|  Armenia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Australia | 21 AUD | 110 AUD | AUD paid to bank | Yes | 
-|  Austria | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Azerbaijan | 19 USD | 99 USD | AZN paid to bank | No | 
-|  The Bahamas | 19 USD | 99 USD | No payout | No | 
-|  Bahrain | 7 BHD | 38 BHD | BHD paid to bank | No | 
-|  Bangladesh | 1468 BDT | 7600 BDT | BDT paid to bank | No | 
-|  Barbados | 19 USD | 99 USD | No payout | No | 
-|  Belarus | 19 USD | 99 USD | USD paid to bank | No | 
-|  Belgium | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Belize | 19 USD | 99 USD | No payout | No | 
-|  Benin | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Bhutan | 19 USD | 99 USD | No payout | No | 
-|  Bolivia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Bosnia and Herzegovina | 19 USD | 99 USD | USD paid to bank | No | 
-|  Botswana | 19 USD | 99 USD | BWP paid to bank | No | 
-|  Brazil | 46 BRL | 160 BRL | USD paid to bank | No | 
-|  Brunei | 19 USD | 99 USD | No payout | No | 
-|  Bulgaria | 28 BGN | 160 BGN | BGN paid to bank | No | 
-|  Burkina Faso | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Burundi | 19 USD | 99 USD | USD paid to bank | No | 
-|  Cabo Verde | 19 USD | 99 USD | No payout | No | 
-|  Cambodia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Cameroon | 19 USD | 99 USD | XAF paid to bank | No | 
-|  Canada | 20 CAD | 99 CAD | CAD paid to bank | Yes | 
-|  Central African Republic | 19 USD | 99 USD | XAF paid to bank | No | 
-|  Chad | 19 USD | 99 USD | XAF paid to bank | No | 
-|  Chile | 9776 CLP | 46000 CLP | USD paid to bank | No | 
-|  China | 116 CNY | 600 CNY | USD paid to bank | Yes* | 
-|  Colombia | 36543 COP | 180000 COP | USD paid to bank | No | 
-|  Comoros | 19 USD | 99 USD | USD paid to bank | No | 
-|  Congo | 19 USD | 99 USD | XAF paid to bank | No | 
-|  Congo (DRC) | 19 USD | 99 USD | USD paid to bank | No | 
-|  Costa Rica | 9578 CRC | 49725 CRC | CRC paid to bank | No | 
-|  Côte d'Ivoire | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Croatia | 107 HRK | 500 HRK | HRK paid to bank | No | 
-|  Cyprus | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Czech Republic | 365 CZK | 1720 CZK | CZK paid to bank | Yes | 
-|  Denmark | 106 DKK | 530 DKK | DKK paid to bank | Yes | 
-|  Djibouti | 19 USD | 99 USD | No payout | No | 
-|  Dominica | 19 USD | 99 USD | XCD paid to bank | No | 
-|  Dominican Republic | 19 USD | 99 USD | DOP paid to bank | No | 
-|  Ecuador | 19 USD | 99 USD | USD paid to bank | No | 
-|  Egypt | 133 EGP | 600 EGP | EGP paid to bank | No | 
-|  El Salvador | 19 USD | 99 USD | USD paid to bank | No | 
-|  Equatorial Guinea | 19 USD | 99 USD | No payout | No | 
-|  Eritrea | 19 USD | 99 USD | USD paid to bank | No | 
-|  Estonia | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Ethiopia | 19 USD | 99 USD | ETB paid to bank | No | 
-|  Faroe Islands | 19 USD | 99 USD | No payout | No | 
-|  Fiji | 19 USD | 99 USD | FJD paid to bank | No | 
-|  Finland | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  France | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Gabon | 19 USD | 99 USD | No payout | No | 
-|  The Gambia | 19 USD | 99 USD | No payout | No | 
-|  Georgia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Germany | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Ghana | 19 USD | 99 USD | GHS paid to bank | No | 
-|  Greece | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Greenland | 19 USD | 99 USD | No payout | No | 
-|  Grenada | 19 USD | 99 USD | No payout | No | 
-|  Guatemala | 145 GTQ | 750 GTQ | GTQ paid to bank | No | 
-|  Guinea | 19 USD | 99 USD | USD paid to bank | No | 
-|  Guinea-Bissau | 19 USD | 99 USD | No payout | No | 
-|  Guyana | 19 USD | 99 USD | No payout | No | 
-|  Haiti | 19 USD | 99 USD | USD paid to bank | No | 
-|  Honduras | 19 USD | 99 USD | USD paid to bank | No | 
-|  Hong Kong SAR | 147 HKD | 760 HKD | HKD paid to bank | Yes | 
-|  Hungary | 4237 HUF | 18800 HUF | HUF paid to bank | Yes* | 
-|  Iceland | 2319 ISK | 11929 ISK | USD paid to bank | No | 
-|  India | 1201 INR | 4500 INR | INR paid to bank | No | 
-|  Indonesia | 203015 IDR | 1000000 IDR | IDR paid to bank | No | 
-|  Iraq | 22078 IQD | 120000 IQD | USD paid to bank | No | 
-|  Ireland | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Israel | 67 ILS | 350 ILS | ILS paid to bank | Yes | 
-|  Italy | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Jamaica | 19 USD | 99 USD | JMD paid to bank | No | 
-|  Japan | 1847 JPY | 9800 JPY | JPY paid to bank | Yes | 
-|  Jordan | 13 JOD | 70 JOD | JOD paid to bank | No | 
-|  Kazakhstan | 2897 KZT | 15038 KZT | KZT paid to bank | No | 
-|  Kenya | 1900 KES | 9999 KES | KES paid to bank | No | 
-|  Kiribati | 19 USD | 99 USD | No payout | No | 
-|  Korea | 21216 KRW | 108000 KRW | USD paid to bank | No | 
-|  Kuwait | 5 KWD | 28 KWD | KWD paid to bank | No | 
-|  Kyrgyzstan | 19 USD | 99 USD | No payout | No | 
-|  Laos | 19 USD | 99 USD | USD paid to bank | No | 
-|  Latvia | 14 EUR | 75 EUR | EUR paid to bank | No | 
-|  Lebanon | 28690 LBP | 149686 LBP | LBP paid to bank | No | 
-|  Lesotho | 19 USD | 99 USD | No payout | No | 
-|  Liberia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Libya | 19 USD | 99 USD | No payout | No | 
-|  Liechtenstein | 17 CHF | 93 CHF | CHF paid to bank | Yes | 
-|  Lithuania | 14 EUR | 75 EUR | EUR paid to bank | No | 
-|  Luxembourg | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Macao SAR | 19 USD | 99 USD | No payout | No | 
-|  Macedonia (FYROM) | 19 USD | 99 USD | USD paid to bank | No | 
-|  Madagascar | 19 USD | 99 USD | USD paid to bank | No | 
-|  Malawi | 19 USD | 99 USD | MWK paid to bank | No | 
-|  Malaysia | 62 MYR | 300 MYR | USD paid to bank | No | 
-|  Maldives | 19 USD | 99 USD | No payout | No | 
-|  Mali | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Malta | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Marshall Islands | 19 USD | 99 USD | No payout | No | 
-|  Mauritania | 5681 MRO | 30046 MRO | No payout | No | 
-|  Mauritius | 19 USD | 99 USD | MUR paid to bank | No | 
-|  Mexico | 247 MXN | 1140 MXN | MXN paid to bank | Yes | 
-|  Micronesia | 19 USD | 99 USD | No payout | No | 
-|  Monaco | 14 EUR | 75 EUR | EUR paid to bank | No | 
-|  Mongolia | 19 USD | 99 USD | USD paid to bank | No | 
-|  Montenegro | 14 EUR | 75 EUR | EUR paid to bank | No | 
-|  Morocco | 158 MAD | 800 MAD | MAD paid to bank | No | 
-|  Mozambique | 19 USD | 99 USD | USD paid to bank | No | 
-|  Myanmar | 19 USD | 99 USD | No payout | No | 
-|  Namibia | 19 USD | 99 USD | No payout | No | 
-|  Nauru | 19 USD | 99 USD | No payout | No | 
-|  Nepal | 19 USD | 99 USD | USD paid to bank | No | 
-|  Netherlands | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  New Zealand | 24 NZD | 140 NZD | NZD paid to bank | Yes | 
-|  Nicaragua | 19 USD | 99 USD | USD paid to bank | No | 
-|  Niger | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Nigeria | 3700 NGN | 19500 NGN | NGN paid to bank | No | 
-|  Norway | 113 NOK | 580 NOK | NOK paid to bank | Yes | 
-|  Oman | 7 OMR | 40 OMR | OMR paid to bank | No | 
-|  Pakistan | 1959 PKR | 9000 PKR | PKR paid to bank | No | 
-|  Palau | 19 USD | 99 USD | No payout | No | 
-|  Panama | 19 USD | 99 USD | USD paid to bank | No | 
-|  Papua New Guinea | 19 USD | 99 USD | No payout | No | 
-|  Paraguay | 19 USD | 99 USD | USD paid to bank | No | 
-|  Peru | 54 PEN | 280 PEN | PEN paid to bank | No | 
-|  Philippines | 832 PHP | 4400 PHP | PHP paid to bank | Yes | 
-|  Poland | 59 PLN | 280 PLN | PLN paid to bank | Yes | 
-|  Portugal | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Qatar | 69 QAR | 360 QAR | QAR paid to bank | No | 
-|  Romania | 14 EUR | 75 EUR | USD paid to bank | No | 
-|  Russia | 626 RUB | 3000 RUB | RUB paid to bank | Yes* | 
-|  Rwanda | 19 USD | 99 USD | RWF paid to bank | No | 
-|  Saint Kitts and Nevis | 19 USD | 99 USD | No payout | No | 
-|  Saint Lucia | 19 USD | 99 USD | No payout | No | 
-|  Saint Vincent and the Grenadines | 19 USD | 99 USD | XCD paid to bank | No | 
-|  Samoa | 19 USD | 99 USD | No payout | No | 
-|  San Marino |  14 EUR | 75 EUR | No payout | No | 
-|  São Tomé and Príncipe | 19 USD | 99 USD | No payout | No | 
-|  Saudi Arabia | 71 SAR | 380 SAR | SAR paid to bank | No | 
-|  Senegal | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Serbia | 1619 RSD | 7000 RSD | USD paid to bank | No | 
-|  Seychelles | 19 USD | 99 USD | No payout | No | 
-|  Sierra Leone | 19 USD | 99 USD | USD paid to bank | No | 
-|  Singapore | 24 SGD | 120 SGD | SGD paid to bank | Yes | 
-|  Slovakia | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Slovenia | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Solomon Islands | 19 USD | 99 USD | No payout | No | 
-|  Somalia | 19 USD | 99 USD | USD paid to bank | No | 
-|  South Africa | 193 ZAR | 700 ZAR | ZAR paid to bank | No | 
-|  Spain | 14 EUR | 75 EUR | EUR paid to bank | Yes | 
-|  Sri Lanka | 19 USD | 99 USD | LKR paid to bank | No | 
-|  Suriname | 19 USD | 99 USD | No payout | No | 
-|  Swaziland | 19 USD | 99 USD | No payout | No | 
-|  Sweden | 123 SEK | 700 SEK | SEK paid to bank | Yes | 
-|  Switzerland | 17 CHF | 90 CHF | CHF paid to bank | Yes | 
-|  Taiwan | 568 TWD | 2840 TWD | USD paid to bank | Yes | 
-|  Tajikistan | 19 USD | 99 USD | USD paid to bank | No | 
-|  Tanzania | 19 USD | 99 USD | TZS paid to bank | No | 
-|  Thailand | 601 THB | 3000 THB | THB paid to bank | Yes | 
-|  Timor-Leste | 19 USD | 99 USD | USD paid to bank | No | 
-|  Togo | 19 USD | 99 USD | XOF paid to bank | No | 
-|  Tonga | 19 USD | 99 USD | TOP paid to bank | No | 
-|  Trinidad and Tobago | 122 TTD | 636 TTD | TTD paid to bank | No | 
-|  Tunisia | 31 TND | 140 TND | TND paid to bank | No | 
-|  Turkey | 37 TRY | 160 TRY | TRY paid to bank | No | 
-|  Turkmenistan | 19 USD | 99 USD | USD paid to bank | No | 
-|  Tuvalu | 19 USD | 99 USD | No payout | No | 
-|  Uganda | 19 USD | 99 USD | UGX paid to bank | No | 
-|  Ukraine | 156 UAH | 800 UAH | USD paid to bank | No | 
-|  United Arab Emirates | 19 USD | 99 USD | EUR paid to bank | Yes | 
-|  United Kingdom | 12 GBP | 65 GBP | GBP paid to bank | Yes | 
-|  United States | 19 USD | 99 USD | USD paid to bank | Yes | 
-|  Uruguay | 19 USD | 99 USD | UYU paid to bank | No | 
-|  Uzbekistan | 19 USD | 99 USD | USD paid to bank | No | 
-|  Vanuatu | 19 USD | 99 USD | No payout | No | 
-|  Venezuela | 119 VEF | 420 VEF | USD paid to bank | No | 
-|  Vietnam | 400425 VND | 2000000 VND | VND paid to bank | No | 
-|  Yemen | 4080 YER | 21245 YER | No payout | No | 
-|  Zambia | 19 USD | 99 USD | ZMK paid to bank | No | 
-|  Zimbabwe | 19 USD | 99 USD | USD paid to bank | No |
+| 阿富汗 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 |
+| 阿爾巴尼亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 |
+| 阿爾及利亞 | 1535 DZD (阿爾及利亞第納爾) | 7000 DZD (阿爾及利亞第納爾) | 美元 (已支付給銀行) | 否 | 
+|  安道爾 | 14 歐元 | 75 歐元 | 不支付 | 否 | 
+|  安哥拉 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  安地卡及巴布達 | 19 美元 | 99 美元 | 東加勒比海元 (已支付給銀行) | 否 | 
+|  阿根廷 | 106 ARS (阿根廷比索) | 420 ARS (阿根廷比索) | 美元 (已支付給銀行) | 否 | 
+|  亞美尼亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  澳大利亞 | 21 澳大利亞元 | 110 澳大利亞元 | 澳大利亞元 (已支付給銀行) | 是 | 
+|  奧地利 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  亞塞拜然 | 19 美元 | 99 美元 | 亞塞拜然馬納特 (已支付給銀行) | 否 | 
+|  巴哈馬 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  巴林 | 7 BHD (巴林第納爾) | 38 BHD (巴林第納爾) | 巴林第納爾 (已支付給銀行) | 否 | 
+|  孟加拉 | 1468 BDT (孟加拉塔卡) | 7600 BDT (孟加拉塔卡) | 孟加拉塔卡 (已支付給銀行) | 否 | 
+|  巴貝多 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  白俄羅斯 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  比利時 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  貝里斯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  貝南 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  不丹 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  玻利維亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  波士尼亞赫塞哥維納 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  波札那 | 19 美元 | 99 美元 | 波札那普拉 (已支付給銀行) | 否 | 
+|  巴西 | 46 巴西里耳 | 160 巴西里耳 | 美元 (已支付給銀行) | 否 | 
+|  汶萊 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  保加利亞 | 28 BGN (保加利亞列弗) | 160 BGN (保加利亞列弗) | 保加利亞列弗 (已支付給銀行) | 否 | 
+|  布吉納法索 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  蒲隆地 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  維德角 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  柬埔寨 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  喀麥隆 | 19 美元 | 99 美元 | 中非金融合作法郎 (已支付給銀行) | 否 | 
+|  加拿大 | 20 加拿大元 | 99 加拿大元 | 加拿大元 (已支付給銀行) | 是 | 
+|  中非共和國 | 19 美元 | 99 美元 | 中非金融合作法郎 (已支付給銀行) | 否 | 
+|  查德 | 19 美元 | 99 美元 | 中非金融合作法郎 (已支付給銀行) | 否 | 
+|  智利 | 9776 智利披索 | 46000 智利披索 | 美元 (已支付給銀行) | 否 | 
+|  中國 | 116 人民幣 | 600 人民幣 | 美元 (已支付給銀行) | 是* | 
+|  哥倫比亞 | 36543 哥倫比亞披索 | 180000 哥倫比亞披索 | 美元 (已支付給銀行) | 否 | 
+|  葛摩 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  剛果共和國 | 19 美元 | 99 美元 | 中非金融合作法郎 (已支付給銀行) | 否 | 
+|  剛果民主共和國 (DRC) | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  哥斯大黎加 | 9578 哥斯大黎加貨幣 | 49725 哥斯大黎加貨幣 | 哥斯大黎加貨幣 (已支付給銀行) | 否 | 
+|  科特迪瓦 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  克羅埃西亞 | 107 HRK (克羅地亞) | 500 HRK (克羅地亞) | 克羅地亞庫納 (已支付給銀行) | 否 | 
+|  賽普勒斯 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  捷克共和國 | 365 捷克克朗 | 1720 捷克克朗 | 捷克克朗 (已支付給銀行) | 是 | 
+|  丹麥 | 106 丹麥克朗 | 530 丹麥克朗 | 丹麥克朗 (已支付給銀行) | 是 | 
+|  吉布地 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  多米尼克 | 19 美元 | 99 美元 | 東加勒比海元 (已支付給銀行) | 否 | 
+|  多明尼加共和國 | 19 美元 | 99 美元 | 多明尼加共和國披索 (已支付給銀行) | 否 | 
+|  厄瓜多 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  埃及 | 133 埃及鎊 | 600 埃及鎊 | 埃及鎊 (已支付給銀行) | 否 | 
+|  薩爾瓦多 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  赤道幾內亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  厄利垂亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  愛沙尼亞 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  衣索比亞 | 19 美元 | 99 美元 | 衣索比亞比爾 (已支付給銀行) | 否 | 
+|  法羅群島 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  斐濟群島 | 19 美元 | 99 美元 | 斐濟元 (已支付給銀行) | 否 | 
+|  芬蘭 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  法國 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  加彭 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  甘比亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  喬治亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  德國 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  迦納 | 19 美元 | 99 美元 | 迦納塞地 (已支付給銀行) | 否 | 
+|  希臘 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  格陵蘭 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  格瑞那達 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  瓜地馬拉 | 145 瓜地馬拉格查爾 | 750 瓜地馬拉格查爾 | 瓜地馬拉格查爾 (已支付給銀行) | 否 | 
+|  幾內亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  幾內亞比索 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  蓋亞納 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  海地 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  宏都拉斯 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  香港特別行政區 | 147 港幣 | 760 港幣 | 港幣 (已支付給銀行) | 是 | 
+|  匈牙利 | 4237 匈牙利福林 | 18800 匈牙利福林 | 匈牙利福林 (已支付給銀行) | 是* | 
+|  冰島 | 2319 ISK (冰島克朗) | 11929 ISK (冰島克朗) | 美元 (已支付給銀行) | 否 | 
+|  印度 | 1201 印度幣 | 4500 印度幣 | 印度盧比 (已支付給銀行) | 否 | 
+|  印尼 | 203015 IDR (印尼盧比) | 1000000 IDR (印尼盧比) | 印尼盧比 (已支付給銀行) | 否 | 
+|  伊拉克 | 22078 IQD (伊拉克第納爾) | 120000 IQD (伊拉克第納爾) | 美元 (已支付給銀行) | 否 | 
+|  愛爾蘭 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  以色列 | 67 以色列錫客爾 | 350 以色列錫客爾 | 以色列新錫克爾 (已支付給銀行) | 是 | 
+|  義大利 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  牙買加 | 19 美元 | 99 美元 | 牙買加元 (已支付給銀行) | 否 | 
+|  日本 | 1847 日圓 | 9800 日圓 | 日圓 (已支付給銀行) | 是 | 
+|  約旦 | 13 JOD (約旦第納爾) | 70 JOD (約旦第納爾) | 約旦第納爾 (已支付給銀行) | 否 | 
+|  哈薩克 | 2897 哈薩克斯坦堅戈貨幣 | 15038 哈薩克斯坦堅戈貨幣 | 哈薩克斯坦堅戈貨幣 (已支付給銀行) | 否 | 
+|  肯亞 | 1900 肯亞先令 | 9999 肯亞先令 | 肯亞先令 (已支付給銀行) | 否 | 
+|  吉里巴斯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  韓國 | 21216 韓元 | 108000 韓元 | 美元 (已支付給銀行) | 否 | 
+|  科威特 | 5 KWD (科威特第納爾) | 28 KWD (科威特第納爾) | 科威特第納爾 (已支付給銀行) | 否 | 
+|  吉爾吉斯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  寮國 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  拉脫維亞 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 否 | 
+|  黎巴嫩 | 28690 黎巴嫩鎊 | 149686 黎巴嫩鎊 | 黎巴嫩鎊 (已支付給銀行) | 否 | 
+|  賴索托 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  賴比瑞亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  利比亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  列支敦斯登 | 17 CHF (瑞士法郎) | 93 CHF (瑞士法郎) | 瑞士法郎 (已支付給銀行) | 是 | 
+|  立陶宛 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 否 | 
+|  盧森堡 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  澳門特別行政區 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  前南斯拉夫馬其頓共和國 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  馬達加斯加 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  馬拉威 | 19 美元 | 99 美元 | 馬拉威克瓦查 (已支付給銀行) | 否 | 
+|  馬來西亞 | 62 MYR (馬來西亞林吉特) | 300 MYR (馬來西亞林吉特) | 美元 (已支付給銀行) | 否 | 
+|  馬爾地夫 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  馬利 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  馬爾他 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  馬紹爾群島 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  茅利塔尼亞 | 5681 MRO (茅利塔尼亞烏吉亞) | 30046 MRO (茅利塔尼亞烏吉亞) | 不支付 | 否 | 
+|  模里西斯 | 19 美元 | 99 美元 | 模里西斯盧比 (已支付給銀行) | 否 | 
+|  墨西哥 | 247 MXN (墨西哥披索) | 1140 MXN (墨西哥披索) | 墨西哥披索 (已支付給銀行) | 是 | 
+|  密克羅尼西亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  摩納哥 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 否 | 
+|  蒙古 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  蒙特內哥羅 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 否 | 
+|  摩洛哥 | 158 MAD (摩洛哥迪拉姆) | 800 MAD (摩洛哥迪拉姆) | 摩洛哥迪拉姆 (已支付給銀行) | 否 | 
+|  莫三比克 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  緬甸 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  納米比亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  諾魯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  尼泊爾 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  荷蘭 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  紐西蘭 | 24 紐西蘭元 | 140 紐西蘭元 | 紐西蘭元 (已支付給銀行) | 是 | 
+|  尼加拉瓜 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  尼日 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  奈及利亞 | 3700 奈及利亞奈拉 | 19500 奈及利亞奈拉 | 奈及利亞奈拉 (已支付給銀行) | 否 | 
+|  挪威 | 113 挪威克朗 | 580 挪威克朗 | 挪威克朗 (已支付給銀行) | 是 | 
+|  阿曼 | 7 OMR (阿曼里亞爾) | 40 OMR (阿曼里亞爾) | 阿曼里亞爾 (已支付給銀行) | 否 | 
+|  巴基斯坦 | 1959 PKR (巴基斯坦盧比) | 9000 PKR (巴基斯坦盧比) | 巴基斯坦盧比 (已支付給銀行) | 否 | 
+|  帛琉 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  巴拿馬 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  巴布亞紐幾內亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  巴拉圭 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  秘魯 | 54 PEN (秘魯索爾) | 280 PEN (秘魯索爾) | 秘魯索爾 (已支付給銀行) | 否 | 
+|  菲律賓 | 832 PHP (菲律賓比索) | 4400 PHP (菲律賓比索) | 菲律賓比索 (已支付給銀行) | 是 | 
+|  波蘭 | 59 波蘭茲羅提 | 280 波蘭茲羅提 | 波蘭茲羅提 (已支付給銀行) | 是 | 
+|  葡萄牙 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  卡達 | 69 QAR (卡達里亞爾) | 360 QAR (卡達里亞爾) | 卡達里亞爾 (已支付給銀行) | 否 | 
+|  羅馬尼亞 | 14 歐元 | 75 歐元 | 美元 (已支付給銀行) | 否 | 
+|  俄羅斯 | 626 俄羅斯盧布 | 3000 俄羅斯盧布 | 俄羅斯盧布 (已支付給銀行) | 是* | 
+|  盧安達 | 19 美元 | 99 美元 | 盧安達法郎 (已支付給銀行) | 否 | 
+|  聖克里斯多福及尼維斯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  聖露西亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  聖文森及格瑞那丁 | 19 美元 | 99 美元 | 東加勒比海元 (已支付給銀行) | 否 | 
+|  薩摩亞 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  聖馬利諾 |  14 歐元 | 75 歐元 | 不支付 | 否 | 
+|  聖多美普林西比 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  沙烏地阿拉伯 | 71 SAR (沙烏地阿拉伯里亞爾) | 380 SAR (沙烏地阿拉伯里亞爾) | 沙烏地阿拉伯里亞爾 (已支付給銀行) | 否 | 
+|  塞內加爾 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  賽爾維亞 | 1619 RSD (賽爾維亞第納爾) | 7000 RSD (賽爾維亞第納爾) | 美元 (已支付給銀行) | 否 | 
+|  塞席爾 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  獅子山 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  新加坡 | 24 新加坡幣 | 120 新加坡幣 | 新加坡幣 (已支付給銀行) | 是 | 
+|  斯洛伐克 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  斯洛維尼亞 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  索羅門群島 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  索馬利亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  南非 | 193 南非幣 | 700 南非幣 | 南非幣 (已支付給銀行) | 否 | 
+|  西班牙 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
+|  斯里蘭卡 | 19 美元 | 99 美元 | 斯里蘭卡盧比 (已支付給銀行) | 否 | 
+|  蘇利南 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  史瓦濟蘭 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  瑞典 | 123 瑞典克朗 | 700 瑞典克朗 | 瑞典克朗 (已支付給銀行) | 是 | 
+|  瑞士 | 17 CHF (瑞士法郎) | 90 CHF (瑞士法郎) | 瑞士法郎 (已支付給銀行) | 是 | 
+|  台灣 | 568 新臺幣 | 2840 新臺幣 | 美元 (已支付給銀行) | 是 | 
+|  塔吉克 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  坦尚尼亞 | 19 美元 | 99 美元 | 坦尚尼亞先令 (已支付給銀行) | 否 | 
+|  泰國 | 601 泰銖 | 3000 泰銖 | 泰銖 (已支付給銀行) | 是 | 
+|  東帝汶 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  多哥 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
+|  東加 | 19 美元 | 99 美元 | 東加潘加 (已支付給銀行) | 否 | 
+|  千里達及托巴哥 | 122 千里達及托巴哥元 | 636 千里達及托巴哥元 | 千里達及托巴哥元 (已支付給銀行) | 否 | 
+|  突尼西亞 | 31 TND (突尼西亞第納爾) | 140 TND (突尼西亞第納爾) | 突尼西亞第納爾 (已支付給銀行) | 否 | 
+|  土耳其 | 37 土耳其里拉 | 160 土耳其里拉 | 土耳其里拉 (已支付給銀行) | 否 | 
+|  土庫曼 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  吐瓦魯 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  烏干達 | 19 美元 | 99 美元 | 烏干達先令 (已支付給銀行) | 否 | 
+|  烏克蘭 | 156 UAH (烏克蘭赫夫納) | 800 UAH (烏克蘭赫夫納) | 美元 (已支付給銀行) | 否 | 
+|  阿拉伯聯合大公國 | 19 美元 | 99 美元 | 歐元 (已支付給銀行) | 是 | 
+|  英國 | 12 英鎊 | 65 英鎊 | 英鎊 (已支付給銀行) | 是 | 
+|  美國 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 是 | 
+|  烏拉圭 | 19 美元 | 99 美元 | 烏拉圭比索 (已支付給銀行) | 否 | 
+|  烏茲別克 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  萬那杜 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  委內瑞拉 | 119 VEF (委內瑞拉博利瓦) | 420 VEF (委內瑞拉博利瓦) | 美元 (已支付給銀行) | 否 | 
+|  越南 | 400425 VND (越南盾) | 2000000 VND (越南盾) | 越南盾 (已支付給銀行) | 否 | 
+|  葉門 | 4080 YER (葉門里亞爾) | 21245 YER (葉門里亞爾) | 不支付 | 否 | 
+|  尚比亞 | 19 美元 | 99 美元 | 尚比亞克瓦查 (已支付給銀行) | 否 | 
+|  辛巴威 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 |
 
-\* PayPal can be used as a payment method for payout accounts in this market, but can't be used to pay for the developer account registration fee.
+\* 在此市場中 PayPal 可做為支付帳戶的付款方式，但無法用於支付開發人員帳戶註冊費用。
 
-## Related topics
+## 相關主題
 
-* [Opening a developer account](opening-a-developer-account.md)
-* [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md)
-* [Getting paid](getting-paid-apps.md)
+* [開立開發人員帳戶](opening-a-developer-account.md)
+* [設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)
+* [獲得報酬](getting-paid-apps.md)
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

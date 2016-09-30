@@ -1,67 +1,60 @@
 ---
 author: mcleanbyron
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
-description: "了解如何使用 Windows.Services.Store 命名空間來搭配使用消費性附加元件。"
-title: "啟用消費性附加元件購買"
-keywords: "App 內的購買選項程式碼範例"
-translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
-
+description: Learn how to use the Windows.Services.Store namespace to work with consumable add-ons.
+title: Enable consumable add-on purchases
+keywords: in-app offer
+keywords: consumable
+keywords: in-app purchase
+keywords: in-app product
+keywords: how to support in-app
+keywords: in-app purchase code sample
+keywords: in-app offer code sample
 ---
 
-# 啟用消費性附加元件購買
+# Enable consumable add-on purchases
 
-目標為 Windows 10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來管理使用者如何在您的 UWP app 中完成消費性附加元件 (也稱為 App 內產品或 IAP)。 請針對可購買、使用，然後再次購買的項目使用消費性附加元件。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
+Apps that target Windows 10, version 1607 or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage the user's fulfillment of consumable add-ons in your UWP apps (add-ons are also known as in-app products or IAPs). Use consumable add-ons for items that can be purchased, used, and purchased again. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.
 
->**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的 app。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## 消費性附加元件概觀
+## Overview of consumable add-ons
 
-目標為 Windows 10 版本 1607 或更新版本的 app，可提供兩種類型的消費性附加元件，其差別在於管理完成的方式：
+Apps that target Windows 10, version 1607 or later can offer two types of consumable add-ons that differ in the way that fulfillments are managed:
 
-* **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向市集回報已完成附加元件的購買。 在您的 App 回報已完成先前的附加元件購買之前，使用者將無法再次購買該附加元件。
+* **Developer-managed consumable**. For this type of consumable, you are responsible for keep tracking of the user's balance of items that the add-on represents. For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app must report the add-on as fulfilled to the Store and your app or service must maintain the new remaining balance for the user.
+* **Store-managed consumable**. For this type of consumable, Microsoft keeps track of the user's balance of items that the add-on represents. For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store maintains the remaining balance. **This type is available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.**
 
-  例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的 App 或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。
+To offer a consumable add-on to a user, follow this general process:
 
-* **市集管理的消費性產品**。 針對這種類型的消費性產品，市集會持續追蹤使用者對該附加元件所代表之項目的餘額。 當使用者取用任何項目時，您必須負責向市集回報這些項目已完成，而市集會更新使用者的餘額。 您的 App 可以隨時查詢使用者目前的餘額。 當使用者用完所有項目之後，該使用者就能再次購買該附加元件。
+1. Enable users to [purchase the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app.
+3. When the user consumes the add-on (for example, they spend coins in a game), [report the add-on as fulfilled](enable-consumable-add-on-purchases.md#report_fulfilled).
 
-  例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 10 個金幣，則您的 App 會向市集回報已完成附加元件的 10 個單位，而市集會更新剩下的餘額。 當使用者花光 100 個金幣之後，該使用者就能再次購買 100 個金幣的附加元件。
+At any time, you can also [get the remaining balance](enable-consumable-add-on-purchases.md#get_balance) for a Store-managed consumable.
 
-  >**注意**&nbsp;&nbsp;市集管理的消費性產品是從 Windows 10 版本 1607 開始提供。 即將推出在 Windows 開發人員中心儀表板建立市集管理的消費性產品的能力。
+## Prerequisites
 
-若要為使用者提供消費性附加元件，請依照下列一般程序執行：
+These examples have the following prerequisites:
+* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
+* You have created an app in the Windows Dev Center dashboard with consumable add-ons (also known as in-app products or IAPs), and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 
-1. 讓使用者能夠從您的 App [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)。
-3. 當使用者取用附加元件 (例如，他們在遊戲中花費金幣) 時，[將附加元件回報為已完成](enable-consumable-add-on-purchases.md#report_fulfilled)。
-
-您也可以隨時針對市集管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
-
-## 先決條件
-
-這些範例包含下列先決條件：
-* 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
-* 您已在 Windows 開發人員中心儀表板中建立 app 並具備消費性附加元件 (亦稱為App 內購買或 IAP)，而且已在市集中發佈此 app 且可供使用。 這可以是您想要釋出給客戶的 app，或者可以是符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求的基本 app，而您只能基於測試目的加以使用。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
-
-這些範例中的程式碼假設：
-* 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
-* 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
-* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
-
-如需完整範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+The code in these examples assume:
+* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
+* The code file has a **using** statement for the **Windows.Services.Store** namespace.
+* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
 <span id="report_fulfilled" />
-## 將消費性附加元件回報為已完成
+## Report a consumable add-on as fulfilled
 
-當使用者從您的 app [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)並取用您的附加元件之後，您的 app 必須藉由呼叫 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) 方法來將附加元件回報為已完成。 您必須將下列資訊傳遞給此方法：
+After the user [purchases the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app and they consume your add-on, your app must report the add-on as fulfilled by calling the [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. You must pass the following information to this method:
 
-* 您想要回報為已完成之附加元件的[市集識別碼](in-app-purchases-and-trials.md#store_ids)。
-* 您想要回報為已完成之附加元件的單位數。
-  * 對於開發人員管理的消費性產品，請針對 *quantity* 參數指定 1。 這會警示市集，消費性產品已完成，而客戶接著可再次購買消費性產品。 在您的 app 通知市集該消費性產品已完成之前，使用者將無法再次購買該產品。
-  * 針對市集管理的消費性產品，指定實際已取用的單位數。 市集將會更新該消費性產品剩下的餘額。
-* 適用於完成操作的追蹤識別碼。 這是開發人員提供的 GUID，可基於追蹤目的用來識別與完成操作相關聯的特定交易。 如需詳細資訊，請參閱 [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) 中的備註。
+* The [Store ID](in-app-purchases-and-trials.md#store_ids) of the add-on that you want to report as fulfilled.
+* The units of the add-on you want to report as fulfilled.
+  * For a developer-managed consumable, specify 1 for the *quantity* parameter. This alerts the Store that the consumable has been fulfilled, and the customer can then purchase the consumable again. The user cannot purchase the consumable again until your app has notified the Store that it was fulfilled.
+  * For a Store-managed consumable, specify the actual number of units that have been consumed. The Store will update the remaining balance for the consumable.
+* The tracking ID for the fulfillment. This is a developer-supplied GUID that identifies the specific transaction that the fulfillment operation is associated with for tracking purposes. For more information, see the remarks in [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx).
 
-這個範例示範如何將市集管理的消費性產品回報為已完成。
+This example demonstrates how to report a Store-managed consumable as fulfilled.
 
 ```csharp
 private StoreContext context = null;
@@ -121,9 +114,9 @@ public async void ConsumeAddOn(string storeId)
 ```
 
 <span id="get_balance" />
-## 取得市集管理的消費性產品剩下的餘額。
+## Get the remaining balance for a Store-managed consumable
 
-這個範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) 方法，來取得市集管理的消費性產品剩下的餘額。
+This example demonstrates how to use the [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class to get the remaining balance for a Store-managed consumable add-on.
 
 ```csharp
 private StoreContext context = null;
@@ -169,17 +162,10 @@ public async void GetRemainingBalance(string storeId)
 }
 ```
 
-## 相關主題
+## Related topics
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
-* [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
-
+* [In-app purchases and trials](in-app-purchases-and-trials.md)
+* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)

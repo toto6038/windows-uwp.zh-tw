@@ -1,55 +1,51 @@
 ---
 author: Jwmsft
-Description: "搭配使用拖動重新整理模式和清單檢視。"
-title: "拖動重新整理"
+Description: Use the pull-to-refresh pattern with a list view.
+title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
-
 ---
-# 拖動以重新整理
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-拖動重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 拖動重新整理廣泛地用於行動裝置 App，且對任何配備觸控式螢幕的裝置都很實用。 您可以處理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)，以在 App 中實作拖動重新整理。
+# Pull to refresh
 
-[拖動重新整理範例](http://go.microsoft.com/fwlink/p/?LinkId=620635) (英文) 示範如何延伸 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 控制項以支援此模式。 在本文中。我們使用這個範例說明實作拖動重新整理的要點。
+The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events]() to implement pull-to-refresh in your app.
 
-![拖動重新整理範例](images/ptr-phone-1.png)
+The [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635) shows how to extend a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) control to support this pattern. In this article, we use this sample to explain the key points of implementing pull-to-refresh.
 
-## 這是正確的模式嗎？
+![pull-to-refresh sample](images/ptr-phone-1.png)
 
-當您有使用者會想經常重新整理的資料清單或方格，且您的 App 應是在觸控為主的行動裝置上執行時，請使用拖動重新整理模式。
+## Is this the right pattern?
 
-## 實作拖動重新整理
+Use the pull-to-refresh pattern when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on mobile, touch-first devices.
 
-若要實作拖動重新整理，您需要處理操作事件，以偵測使用者向下拖動清單的時刻、提供視覺化回饋，並重新整理資料。 讓我們在[拖動重新整理範例](http://go.microsoft.com/fwlink/p/?LinkId=620635) (英文) 中看看如何實作。 我們沒有在這裡顯示所有的程式碼，所以您需要下載該範例，或在 GitHub 上檢視程式碼。
+## Implement pull-to-refresh
 
-拖動重新整理範例會建立延伸 **ListView** 控制項的自訂控制項，其稱為 `RefreshableListView`。 這個控制項會加入重新整理指示器來提供視覺化回饋，並處理清單檢視的內部捲動檢視器上的操作事件。 它也會新增 2 個事件，以通知您拖動清單的時刻，以及應重新整理資料的時刻。 RefreshableListView 僅提供應重新整理資料的通知。 您需要在您的 App 中處理該事件以更新資料，且每個 App 的程式碼都不同。
+To implement pull-to-refresh, you need to handle manipulation events to detect when a user has pulled the list down, provide visual feedback, and refresh the data. Here, we look at how this is done in the [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635). We don't show all the code here, so you should download the sample or view the code on GitHub.
 
-RefreshableListView 提供「自動重新整理」模式，可判斷要求重新整理的時刻，及重新整理指示器如何離開檢視。 可開啟或關閉自動重新整理。
-- 關閉：只有在超過 `PullThreshold` 的時候放開清單，才會要求重新整理。 當使用者放開捲動器時，指示器會以動畫方式離開檢視。 (在手機上) 如果狀態列指示器可供使用，則會顯示。
-- 開啟：一超過 `PullThreshold` 就會重新整理，不論是否放開。 指示器會留在檢視中，直到已抓取新資料，然後才以動畫方式離開檢視。 當資料抓取完成時，會使用 **Deferral** 通知 App。
+The pull-to-refresh sample creates a custom control called `RefreshableListView` that extends the **ListView** control. This control adds a refresh indicator to provide visual feedback and handles the manipulation events on the list view's internal scroll viewer. It also adds 2 events to notify you when the list is pulled and when the data should be refreshed. RefreshableListView only provides notification that the data should be refreshed. You need to handle the event in your app to update the data, and that code will be different for every app.
 
-> **注意**&nbsp;&nbsp;範例中的程式碼也適用於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，請自 GridView 衍生自訂類別，而不是 ListView，並修改預設的 GridView 範本。
+RefreshableListView provides an 'auto refresh' mode that determines when the refresh is requested and how the refresh indicator goes out of view. Auto refresh can be on or off.
+- Off: A refresh is requested only if the list is released while the `PullThreshold` is exceded. The indicator animates out of view when the user releases the scroller. The status bar indicator is shown if it's available (on phone).
+- On: A refresh is requested as soon as the `PullThreshold` is exceded, whether released or not. The indicator remains in view until the new data is retrieved, then animates out of view. A **Deferral** is used to notify the app when fetching the data is complete.
 
-## 新增重新整理指示器
+> **Note**&nbsp;&nbsp;The code in sample is also applicable to a [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). To modify a GridView, derive the custom class from GridView instead of ListView and modify the default GridView template.
 
-請務必提供視覺化回饋，讓使用者知道 App 支援拖動重新整理。 RefreshableListView 的 `RefreshIndicatorContent` 屬性可讓您在 XAML 中設定指示器的視覺效果。 如果您未設定 `RefreshIndicatorContent`，則會改為使用其中包含的預設文字指示器。
+## Add a refresh indicator
 
-以下是重新整理指示器的建議指導方針。
+It's important to provide visual feedback to the user so they know that your app supports pull-to-refresh. RefreshableListView has a `RefreshIndicatorContent` property that lets you set the indicator visual in your XAML. It also includes a default text indicator that it falls back to if you don't set the `RefreshIndicatorContent`.
 
-![重新整理指示器參考線](images/ptr-redlines-1.png)
+Here are recommended guidelines for the refresh indicator.
 
-**修改清單檢視範本**
+![refresh indicator redlines](images/ptr-redlines-1.png)
 
-在拖動重新整理範例中，`RefreshableListView` 控制項範本會透過新增重新整理指示器，來修改標準的 **ListView** 範本。 重新整理指示器是放在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 中，且在 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) (顯示清單項目的部分) 上方。
+**Modify the list view template**
 
-> **注意**&nbsp;&nbsp;只有未設定 `RefreshIndicatorContent` 屬性時，`DefaultRefreshIndicatorContent` 文字方塊才會提供後援文字指示器。
+In the pull-to-refresh sample, the `RefreshableListView` control template modifies the standard **ListView** template by adding a refresh indicator. The refresh indicator is placed in a [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) above the [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), which is the part that shows the list items.
 
-以下是由預設 ListView 範本修改的控制項範本之部分。
+> **Note**&nbsp;&nbsp;The `DefaultRefreshIndicatorContent` text box provides a text fallback indicator that is shown only if the `RefreshIndicatorContent` property is not set.
+
+Here's the part of the control template that's modified from the default ListView template.
 
 **XAML**
 ```xaml
@@ -79,9 +75,9 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 </Grid>
 ```
 
-**在 XAML 中設定內容**
+**Set the content in XAML**
 
-您會在 XAML 中設定清單檢視的重新整理指示器內容。 您設定的 XAML 內容是由重新整理指示器的 [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`) 顯示。 如果您未設定此內容，則會顯示預設的文字指示器。
+You set the content of the refresh indicator in the XAML for your list view. The XAML content you set is displayed by the refresh indicator's [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`). If you don't set this content, the default text indicator is shown instead.
 
 **XAML**
 ```xaml
@@ -115,9 +111,9 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 </c:RefreshableListView>
 ```
 
-**動畫顯示旋轉指示器**
+**Animate the spinner**
 
-將清單向下拖動之後，RefreshableListView 的 `PullProgressChanged` 事件會發生。 您會在您的 App 中處理這個事件，以控制重新整理指示器。 在此範例中，這個腳本即開始以動畫顯示指示器的 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx)，並旋轉重新整理指示器。 
+When the list is pulled down, RefreshableListView's `PullProgressChanged` event occurs. You handle this event in your app to control the refresh indicator. In the sample, this storyboard is started to animate the indicator's [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) and spin the refresh indicator. 
 
 **XAML**
 ```xaml
@@ -134,31 +130,31 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 </Storyboard>
 ```
 
-## 處理捲動檢視器操作事件
+## Handle scroll viewer manipulation events
 
-清單檢視控制項範本中包含內建的 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)，可讓使用者捲動瀏覽清單項目。 若要實作拖動重新整理，您必須處理內建捲動檢視器上的操作事件，和數個相關事件。 如需操作事件的詳細資訊，請參閱[觸控互動](../input-and-devices/touch-interactions.md)。
+The list view control template includes a built-in [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that lets a user scroll through the list items. To implement pull-to-refresh, you have to handle the manipulation events on the built-in scroll viewer, as well as several related events. For more info about manipulation events, see [Touch interactions](../input-and-devices/touch-interactions.md).
 
 ** OnApplyTemplate**
 
-您必須覆寫 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) 方法，才能存取捲動檢視器及其他範本組件，以新增事件處理常式並稍後於程式碼中呼叫它們。 在 OnApplyTemplate 中，呼叫 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx)，以取得控制項範本中已命名部分的參考，並可將它儲存到您的程式碼中以稍後使用。
+To get access to the scroll viewer and other template parts so that you can add event handlers and call them later in your code, you must override the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) method. In OnApplyTemplate, you call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) to get a reference to a named part in the control template, which you can save to use later in your code.
 
-在範例中，用來儲存範本組件的變數是在 Private Variable (私用變數) 區域中宣告。 在 OnApplyTemplate 方法中抓取它們之後，會針對 [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx)、[**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx)、[**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件新增事件處理常式。
+In the sample, the variables used to store the template parts are declared in the Private Variables region. After they are retrieved in the OnApplyTemplate method, event handlers are added for the [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events.
 
 **DirectManipulationStarted**
 
-為了初始化拖動重新整理動作，當使用者向下拖動時，內容必須已捲動到捲動檢視器頂端。 否則，會假設使用者拖動是要在清單中向上移動瀏覽。 這個處理常式中的程式碼會判斷是否要從捲動檢視器頂端的內容開始操作，並且最後能使清單被重新整理。 控制項的「可重新整理」(refreshable) 狀態是據此來設定。 
+In order to initiate a pull-to-refresh action, the content has to be scrolled to the top of the scroll viewer when the user starts to pull down. Otherwise, it's assumed that the user is pulling in order to pan up in the list. The code in this handler determines whether the manipulation started with the content at the top of the scroll viewer, and can result in the list being refreshed. The control's 'refreshable' status is set accordingly. 
 
-如果可以重新整理該控制項，則也會新增動畫的事件處理常式。
+If the control can be refreshed, event handlers for animations are also added.
 
 **DirectManipulationCompleted**
 
-當使用者停止將清單向下拖動時，這個處理常式中的程式碼會檢查操作期間是否有啟動重新整理。 如果有啟動重新整理，就會引發 `RefreshRequested` 事件並執行 `RefreshCommand` 命令。
+When the user stops pulling the list down, the code in this handler checks whether a refresh was activated during the manipulation. If a refresh was activated, the `RefreshRequested` event is raised and the `RefreshCommand` command is executed.
 
-也會移除動畫的事件處理常式。
+The event handlers for animations are also removed.
 
-根據 `AutoRefresh` 屬性的值而定，清單可立即以動畫方式回到上方，或等候重新整理完成再以動畫方式回到上方。 會使用 [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 物件來標示重新整理完成的狀態。 屆時會隱藏重新整理指示器 UI。
+Based on the value of the `AutoRefresh` property, the list can animate back up immediately, or wait until the refresh is complete and then animate back up. A [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object is used to to mark the completion of the refresh. At that point the refresh indicator UI is hidden.
 
-這部分的 DirectManipulationCompleted 事件處理常式會引發 `RefreshRequested` 事件，並在需要時取得 Deferral。
+This part of the DirectManipulationCompleted event handler raises the `RefreshRequested` event and get's the Deferral if needed.
 
 **C#**
 ```csharp
@@ -182,27 +178,27 @@ if (this.RefreshRequested != null)
 
 **ViewChanged**
 
-有兩種案例是在 ViewChanged 事件處理常式中處理。
+Two cases are handled in the ViewChanged event handler.
 
-第一種，如果檢視因為捲動檢視器縮放而變更，則會取消控制器的「可重新整理」狀態。
+First, if the view changed due to the scroll viewer zooming, the control's 'refreshable' status is canceled.
 
-第二種，如果在自動重新整理結束時，內容已由動畫方式回到上方，則會隱藏填補的矩形、重新啟用與捲動檢視器的互動，且將 [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) 設為 0。
+Second, if the content finished animating up at the end of an auto refresh, the padding rectangles are hidden, touch interactions with the scroll viewer are re-anabled, the [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) is set to 0.
 
 **PointerPressed**
 
-只有當清單是以觸控操作向下拖動時，才會發生拖動重新整理。 在 PointerPressed 事件處理常式中，程式碼會檢查造成事件的是何種指標，並設定變數 (`m_pointerPressed`) 以指示是否為觸控指標。 這個變數用於 DirectManipulationStarted 處理常式。 如果指標不是觸控指標，則傳回的 DirectManipulationStarted 不會執行任何事。
+Pull-to-refresh happens only when the list is pulled down by a touch manipulation. In the PointerPressed event handler, the code checks what kind of pointer caused the event and sets a variable (`m_pointerPressed`) to indicate whether it was a touch pointer. This variable is used in the DirectManipulationStarted handler. If the pointer is not a touch pointer, the DirectManipulationStarted handler returns without doing anything.
 
-## 新增拖動和重新整理事件
+## Add pull and refresh events
 
-'RefreshableListView' 會新增 2 個您可以在 App 中處理的事件，以重新整理資料及管理重新整理指示器。
+'RefreshableListView' adds 2 events that you can handle in your app to refresh the data and manage the refresh indicator.
 
-如需事件的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
+For more info about events, see [Events and routed events overview](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 **RefreshRequested**
 
-若使用者已經拖動清單來重新整理，'RefreshRequested' 事件會通知您的 App。 您需處理這個事件以擷取新資料並更新清單。
+The 'RefreshRequested' event notifies your app that the user has pulled the list to refresh it. You handle this event to fetch new data and update your list.
 
-以下是範例中的事件處理常式。 請注意重要的一點，它會檢查清單檢視的 `AutoRefresh` 屬性，如果為 **true**，就會取得 Deferral。 因為有 Deferral，直到重新整理完成時，重新整理指示器才會停止並隱藏。
+Here's the event handler from the sample. The important thing to notice is that it check's the list view's `AutoRefresh` property and get's a Deferral if it's **true**. With a Deferral, the refresh indicator is not stopped and hidden until the refresh is complete.
 
 **C#**
 ```csharp
@@ -222,23 +218,18 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 **PullProgressChanged**
 
-在範例中，重新整理指示器的內容是由 App 提供及控制。 當使用者拖動清單時，'PullProgressChanged' 事件會通知您的 App，讓您可以啟動、停止及重設重新整理指示器。 
+In the sample, content for the refresh indicator is provided and controlled by the app. The 'PullProgressChanged' event notifies your app when the use is pulling the list so that you can start, stop, and reset the refresh indicator. 
 
-## 組合動畫
+## Composition animations
 
-根據預設，捲動檢視器中的內容會在捲軸到達頂端時停止。 為了讓使用者繼續向下拖動清單，您需要存取視覺層，並以動畫方式顯示清單內容。 此範例是使用[組合動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)這麼做，更明確地說，是 [Expression 動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)。
+By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
 
-在範例中，這項工作主要是在 `CompositionTarget_Rendering` 事件和 `UpdateCompositionAnimations` 方法中完成。
+In the sample, this work is done primarily in the `CompositionTarget_Rendering` event handler and the `UpdateCompositionAnimations` method.
 
-## 相關文章
+## Related articles
 
-- [設定控制項的樣式](styling-controls.md)
-- [觸控互動](../input-and-devices/touch-interactions.md)
-- [清單檢視和方格檢視](listview-and-gridview.md)
-- [清單檢視項目範本](listview-item-templates.md)
-- [Expression 動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+- [Styling controls](styling-controls.md)
+- [Touch interactions](../input-and-devices/touch-interactions.md)
+- [List view and grid view](listview-and-gridview.md)
+- [List view item templates](listview-item-templates.md)
+- [Expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)

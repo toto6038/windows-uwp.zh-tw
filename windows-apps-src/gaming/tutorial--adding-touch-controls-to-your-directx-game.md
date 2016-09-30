@@ -1,38 +1,38 @@
 ---
 author: mtoepke
-title: Touch controls for games
-description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
+title: "適用於遊戲的觸控控制項"
+description: "了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
+ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
 
 ---
 
-# Touch controls for games
+# 適用於遊戲的觸控控制項
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX. We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.
+了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。 我們將示範如何在 Direct3D 環境中加入觸控控制項來移動固定面相機，透過拖曳手指或手寫筆來移動相機的視角。
 
-You can incorporate these controls in games where you want the player to drag to scroll or pan over a 3D environment, such as a map or playfield. For example, in a strategy or puzzle game, you can use these controls to let the player view a game environment that is larger than the screen by panning left or right.
+您可以將這些控制項納入遊戲，讓玩家可以在 3D 環境 (例如地圖或比賽場) 中拖曳、捲動或移動瀏覽。 例如，在策略或益智遊戲中，您可以使用這些控制項左右移動瀏覽，讓玩家檢視比螢幕還大的遊戲環境。
 
-> **Note**  Our code also works with mouse-based panning controls. The pointer related events are abstracted by the Windows Runtime APIs, so they can handle either touch- or mouse-based pointer events.
+> **注意** 我們的程式碼也適用於滑鼠移動瀏覽控制項。 Windows 執行階段 API 已將指標相關事件抽取出來，因此它們可以處理觸控或滑鼠指標事件。
 
  
 
-## Objectives
+## 目標
 
 
--   Create a simple touch drag control for panning a fixed-plane camera in a DirectX game.
+-   建立簡單的觸控拖曳控制項，以便在 DirectX 遊戲中移動瀏覽固定面相機。
 
-## Set up the basic touch event infrastructure
+## 設定基本的觸控事件基礎結構
 
 
-First, we define our basic controller type, the **CameraPanController**, in this case. Here, we define a controller as an abstract idea, the set of behaviors the user can perform.
+首先，我們要定義基本的控制器類型，在這個範例為 **CameraPanController**。 在這裡，我們將控制器定義為一個抽象的概念，也就是使用者可以執行的一組行為。
 
-The **CameraPanController** class is a regularly refreshed collection of information about the camera controller state, and provides a way for our app to obtain that information from its update loop.
+**CameraPanController** 類別是會定期重新整理的相機控制器狀態資訊集合，可提供方法讓 app 從它的更新迴圈取得這些資訊。
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -47,7 +47,7 @@ ref class CameraPanController
 }
 ```
 
-Now, let's create a header that defines the state of the camera controller, and the basic methods and event handlers that implement the camera controller interactions.
+現在，讓我們建立一個定義相機控制器狀態的標頭，以及實作相機控制器互動的基本方法和事件處理常式。
 
 ```cpp
 ref class CameraPanController
@@ -99,47 +99,47 @@ public:
 };  // Class CameraPanController
 ```
 
-The private fields contain the current state of the camera controller. Let's review them.
+私用欄位包含相機控制器目前的狀態。 我們來看看這些狀態。
 
--   **m\_position** is the position of the camera in the scene space. In this example, the z-coordinate value is fixed at 0. We could use a DirectX::XMFLOAT2 to represent this value, but for the purposes of this sample and future extensibility, we use a DirectX::XMFLOAT3. We pass this value through the **get\_Position** property to the app itself so it can update the viewport accordingly.
--   **m\_panInUse** is a Boolean value that indicates whether a pan operation is active; or, more specifically, whether the player is touching the screen and moving the camera.
--   **m\_panPointerID** is a unique ID for the pointer. We won't use this in the sample, but it's a good practice to associate your controller state class with a specific pointer.
--   **m\_panFirstDown** is the point on the screen where the player first touched the screen or clicked the mouse during the camera pan action. We use this value later to set a dead zone to prevent jitter when the screen is touched, or if the mouse shakes a little.
--   **m\_panPointerPosition** is the point on the screen where the player has currently moved the pointer. We use it to determine what direction the player wanted to move by examining it relative to **m\_panFirstDown**.
--   **m\_panCommand** is the final computed command for the camera controller: up, down, left, or right. Because we are working with a camera fixed to the x-y plane, this could be a DirectX::XMFLOAT2 value instead.
+-   **m\_position** 是場景區域中的相機位置。 在這個範例中，z 座標值固定在 0。 我們可以使用 DirectX::XMFLOAT2 來表示這個值，但是為了顧及這個範例及未來的擴充性，我們使用 DirectX::XMFLOAT3。 我們透過 **get\_Position** 屬性將這個值傳遞給 app，讓 app 可以按照此值更新檢視區。
+-   **m\_panInUse** 是布林值，可指出移動瀏覽作業是否在使用中，或者更具體一點，玩家是否正在觸控螢幕或移動相機。
+-   **m\_panPointerID** 是指標的唯一識別碼。 我們不會在這個範例使用它，但這是在控制器狀態類別與特定指標間建立關聯的最佳做法。
+-   **m\_panFirstDown** 是相機平移動作期間，玩家第一次在螢幕上觸控或按一下滑鼠的點。 我們稍後會使用這個值來設定靜止區域，以避免觸碰到螢幕時，或稍微移動滑鼠時造成抖動。
+-   **m\_panPointerPosition** 是螢幕上玩家目前將指標移過去的點。 我們透過檢查它與 **m\_panFirstDown** 的相對位置，以判斷玩家想要移動的方向。
+-   **m\_panCommand** 是相機控制項最後計算出來的命令：上、下、左或右。 因為我們使用固定在 x-y 平面上的相機，所以這裡可以改用 DirectX::XMFLOAT2 值。
 
-We use these 3 event handlers to update the camera controller state info.
+我們使用這 3 個事件處理常式來更新相機控制器狀態資訊。
 
--   **OnPointerPressed** is an event handler that our app calls when the players presses a finger onto the touch surface and the pointer is moved to the coordinates of the press.
--   **OnPointerMoved** is an event handler that our app calls when the player swipes a finger across the touch surface. It updates with the new coordinates of the drag path.
--   **OnPointerReleased** is an event handler that our app calls when the player removes the pressing finger from the touch surface.
+-   **OnPointerPressed** 是玩家在觸控式螢幕上按下手指且指標移動到按下位置的座標時，app 會呼叫的事件處理常式。
+-   **OnPointerMoved** 是玩家在觸控式螢幕上撥動手指時，app 會呼叫的事件處理常式。 它會使用拖曳路徑的新座標進行更新。
+-   **OnPointerReleased** 是玩家從觸控式螢幕上移開按住的手指時，app 會呼叫的事件處理常式。
 
-Finally, we use these methods and properties to initialize, access, and update the camera controller state information.
+最後，我們使用這些方法和屬性來初始化、存取以及更新相機控制器狀態資訊。
 
--   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes your display window.
--   **SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space. Note that our z-coordinate is 0 throughout this tutorial.
--   **get\_Position** is a property that our app accesses to get the current position of the camera in the scene space. You use this property as the way of communicating the current camera position to the app.
--   **get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing. In this example, it is locked normal to the x-y plane.
--   **Update** is a method that reads the controller state and updates the camera position. You continually call this &lt;something&gt; from the app's main loop to refresh the camera controller data and the camera position in the scene space.
+-   **Initialize** 是一個事件處理常式，app 會呼叫它來初始化控制項，並將它們附加到描述顯示視窗的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+-   **SetPosition** 是 app 呼叫來設定場景區域中控制項的 x、y 以及 z 座標的方法。 請注意，這個教學課程中 z 座標會一直保持為 0。
+-   **get\_Position** 是 app 用來取得場景區域中相機目前位置的屬性。 您使用這個屬性做為告知 app 相機目前位置的方法。
+-   **get\_FixedLookPoint** 是 app 用來根據控制器相機面對的方向取得目前點的屬性。 在這個範例中，它是鎖定與 x-y 平面垂直。
+-   **Update** 是讀取控制器狀態並更新相機位置的方法。 您將從 App 的主迴圈中持續呼叫這個 &lt;something&gt;，以重新整理相機控制器資料及場景區域中相機的位置。
 
-Now, you have here all the components you need to implement touch controls. You can detect when and where the touch or mouse pointer events have occurred, and what the action is. You can set the position and orientation of the camera relative to the scene space, and track the changes. Finally, you can communicate the new camera position to the calling app.
+您現在已經了解實作觸控控制項所需的全部元件。 您可以偵測發生觸控或滑鼠指標事件的時間和位置，以及發生的動作。 您可以設定相機與場景區域的相對位置和方向，並追蹤變更。 最後，您可以將新的相機位置傳送到呼叫應用程式。
 
-Now, let's connect these pieces together.
+現在，我們將這些設定連繫起來。
 
-## Create the basic touch events
+## 建立基本觸控事件
 
 
-The Windows Runtime event dispatcher provides 3 events we want our app to handle:
+Windows 執行階段事件調派程式提供 3 個我們要應用程式處理的事件：
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
 -   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+這些事件都在 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型上實作。 我們假設您有一個要使用的 **CoreWindow** 物件。 如需詳細資訊，請參閱[如何設定您的 UWP C++ app 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
-As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.
+由於我們的 app 會在執行時觸發這些事件，因此處理常式會更新我們在私用欄位中定義的相機控制器狀態資訊。
 
-First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user touches the screen or clicks the mouse.
+首先，我們填入觸控指標事件處理常式。 在第一個事件處理常式 (**OnPointerPressed**) 中，當使用者觸碰螢幕或按一下滑鼠時，我們會取得指標的 x-y 座標 (從管理顯示的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 取得)。
 
 **OnPointerPressed**
 
@@ -167,11 +167,11 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-We use this handler to let the current **CameraPanController** instance know that camera controller should be treated as active by setting **m\_panInUse** to TRUE. That way, when the app calls **Update** , it will use the current position data to update the viewport.
+我們將這個處理常式的 **m\_panInUse** 設為 TRUE，告知目前的 **CameraPanController** 執行個體應該將相機控制器視為使用中。 如此一來，當 app 呼叫 **Update** 時，會使用目前的位置資料來更新檢視區。
 
-Now that we've established the base values for the camera movement when the user touches the screen or click-presses in the display window, we must determine what to do when the user either drags the screen press or moves the mouse with button pressed.
+我們已經建立當使用者觸控螢幕或在顯示視窗中按一下時，相機移動的基本值，現在必須決定當使用者按住螢幕拖曳或按住滑鼠按鍵移動時應該執行的動作。
 
-The **OnPointerMoved** event handler fires whenever the pointer moves, at every tick that the player drags it on the screen. We need to keep the app aware of the current location of the pointer, and this is how we do it.
+只要玩家在螢幕上拖曳指標讓它移動時，就會啟動 **OnPointerMoved** 事件處理常式。 我們需要讓 app 知道指標的目前位置，而這就是我們的方式。
 
 **OnPointerMoved**
 
@@ -187,7 +187,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
+最後，我們需要在玩家停止觸控螢幕時停用相機平移動作。 我們會在引發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) 時呼叫 **OnPointerReleased**，以便將 **m\_panInUse** 設為 FALSE 並關閉相機平移動作，然後將指標識別碼設為 0。
 
 **OnPointerReleased**
 
@@ -204,10 +204,10 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## Initialize the touch controls and the controller state
+## 初始化觸控控制項以及控制器狀態
 
 
-Let's hook the events and initialize all the basic state fields of the camera controller.
+讓我們連結事件並初始化相機控制器的所有基本狀態欄位。
 
 **Initialize**
 
@@ -236,12 +236,12 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
+**Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。
 
-## Getting and setting the position of the camera controller
+## 取得和設定相機控制器的位置
 
 
-Let's define some methods to get and set the position of the camera controller in the scene space.
+讓我們定義一些方法，以取得和設定場景區域中相機控制項的位置。
 
 ```cpp
 void CameraPanController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -266,16 +266,16 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 }
 ```
 
-**SetPosition** is a public method that we can call from our app if we need to set the camera controller position to a specific point.
+**SetPosition** 是公用方法，如果我們需要將相機控制器位置設定在特定點上，可以從 app 進行呼叫。
 
-**get\_Position** is our most important public property: it's the way our app gets the current position of the camera controller in the scene space so it can update the viewport accordingly.
+**get\_Position** 是我們最重要的公用屬性：它是 app 取得場景區域中相機控制器目前位置的方法，這樣它就可以根據位置更新檢視區。
 
-**get\_FixedLookPoint** is a public property that, in this example, obtains a look point that is normal to the x-y plane. You can change this method to use the trigonometric functions, sin and cos, when calculating the x, y, and z coordinate values if you want to create more oblique angles for the fixed camera.
+**get\_FixedLookPoint** 是公用屬性，在這個範例中，可用來取得與 x-y 平面垂直的視角點。 如果您想要為固定相機建立更多斜視角度，那麼計算 x、y 及 z 的座標值時，您可以變更這個方法來使用三角函數 sin 和 cos。
 
-## Updating the camera controller state information
+## 更新相機控制器狀態資訊
 
 
-Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_panPointerPosition** into new coordinate info respective of our 3D scene space. Our app calls this method every time we refresh the main app loop. In it we compute the new position information we want to pass to the app which is used to update the view matrix before projection into the viewport.
+現在，我們要進行計算，將 **m\_panPointerPosition** 中追蹤到的指標座標轉換為與 3D 場景區域的新座標資訊。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 此時我們會計算要傳送給 app 的新位置 資訊，用於投影到檢視區前更新檢視矩陣。
 
 ```cpp
 
@@ -318,12 +318,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-Because we don't want touch or mouse jitter to make our camera panning jerky, we set a dead zone around the pointer with a diameter of 32 pixels. We also have a velocity value, which in this case is 1:1 with the pixel traversal of the pointer past the dead zone. You can adjust this behavior to slow down or speed up the rate of movement.
+因為我們不希望觸控或滑鼠抖動而讓相機移動瀏覽不穩定，所以要在指標周圍建立一個靜止區域，直徑為 32 個像素。 我們也可以設定速度比，在這個範例是 1:1，在指標穿越靜止區域時追蹤像素。 您可以調整這個行動，減慢或加速移動速率。
 
-## Updating the view matrix with the new camera position
+## 使用新相機位置來更新視圖矩陣
 
 
-We can now obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
+我們現在可以取得相機聚焦的場景區域座標，而且可以指定 app 更新的時間 (例如，在主應用程式迴圈每 60 秒更新一次)。 這個虛擬程式碼會建議您可以實作的呼叫行為：
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -336,23 +336,23 @@ We can now obtain a scene space coordinate that our camera is focused on, and wh
         );  
 ```
 
-Congratulations! You've implemented a simple set of camera panning touch controls in your game.
+恭喜！ 您已經在遊戲中實作一組簡單的相機移動瀏覽觸控控制項。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

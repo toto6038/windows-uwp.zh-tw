@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: How to-- port a simple OpenGL ES 2.0 renderer to Direct3D 11
-description: For the first porting exercise, we'll start with the basics-- bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.
+title: "使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11"
+description: "針對首次移植練習，我們將從頭開始 -- 將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
+ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
 
 ---
 
-# How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11
+# 使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-For this porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015. As we walk through this port process, you will learn the following:
+針對此移植練習，我們將從頭開始：將適用於頂點已著色旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。 當我們逐步解說這個移植程序時，您將了解下列內容：
 
--   How to port a simple set of vertex buffers to Direct3D input buffers
--   How to port uniforms and attributes to constant buffers
--   How to configure Direct3D shader objects
--   How basic HLSL semantics are used in Direct3D shader development
--   How to port very simple GLSL to HLSL
+-   如何將一組簡單的頂點緩衝區移植到 Direct3D 輸入緩衝區
+-   如何將 Uniform 與屬性移植到常數緩衝區
+-   如何設定 Direct3D 著色器物件
+-   如何在 Direct3D 著色器開發中使用基本的 HLSL 語意
+-   如何將非常簡單的 GLSL 移植到 HLSL
 
-This topic starts after you have created a new DirectX 11 project. To learn how to create a new DirectX 11 project, read [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).
+本主題一開始假設您已建立新的 DirectX 11 專案。 若要了解如何建立新的 DirectX 11 專案，請閱讀[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)。
 
-The project created from either of these links has all the code for the [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) infrastructure prepared, and you can immediately start into the process of porting your renderer from Open GL ES 2.0 to Direct3D 11.
+從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
 
-This topic walks two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube in a window. In both cases, the code covers the following process:
+本主題將逐步解說兩個執行相同基本圖形工作的程式碼路徑：在視窗中顯示旋轉的頂點著色立方體。 在這兩個案例中，程式碼會涵蓋下列程序：
 
-1.  Creating a cube mesh from hardcoded data. This mesh is represented as a list of vertices, with each vertex possessing a position, a normal vector, and a color vector. This mesh is put into a vertex buffer for the shading pipeline to process.
-2.  Creating shader objects to process the cube mesh. There are two shaders: a vertex shader that processes the vertices for rasterization, and a fragment (pixel) shader that colors the individual pixels of the cube after rasterization. These pixels are written into a render target for display.
-3.  Forming the shading language that is used for vertex and pixel processing in the vertex and fragment shaders, respectively.
-4.  Displaying the rendered cube on the screen.
+1.  從硬式編碼的資料建立立方體網格。 此網格會顯示為頂點清單，每個頂點都會處理一個位置、一個一般向量及一個色彩向量。 此網格會放入著色管線的頂點緩衝區以進行處理。
+2.  建立著色器物件以處理立方體網格。 著色器有兩種：頂點著色器 (可處理要點陣化的頂點)，以及片段 (像素) 著色器 (可在點陣化之後將立方體的個別像素上色)。 這些像素會寫入轉譯器目標以供顯示。
+3.  組成著色語言，可分別用來處理頂點和片段著色器中的頂點與像素。
+4.  在畫面上顯示轉譯的立方體。
 
-![simple opengl cube](images/simple-opengl-cube.png)
+![簡單的 OpenGL 立方體](images/simple-opengl-cube.png)
 
-Upon completing this walkthrough, you should be familiar with the following basic differences between Open GL ES 2.0 and Direct3D 11:
+完成這個逐步解說之後，您應該會熟悉在 Open GL ES 2.0 與 Direct3D 11 之間的下列基本差異：
 
--   The representation of vertex buffers and vertex data.
--   The process of creating and configuring shaders.
--   Shading languages, and the inputs and outputs to shader objects.
--   Screen drawing behaviors.
+-   頂點緩衝區與頂點資料的表示方式。
+-   建立與設定著色器的程序。
+-   著色語言，以及著色器物件的輸入與輸出。
+-   螢幕繪製行為。
 
-In this walkthrough, we refer to an simple and generic OpenGL renderer structure, which is defined like this:
+在這個逐步解說中，我們會參考一個簡單又一般的 OpenGL 轉譯器結構，其定義如下：
 
 ``` syntax
 typedef struct 
@@ -75,25 +75,25 @@ typedef struct
 } Renderer;
 ```
 
-This structure has one instance and contains all the necessary components for rendering a very simple vertex-shaded mesh.
+這個結構含有一個執行個體，並包含所有用來轉譯非常簡單且頂點已著色的網格所需的元件。
 
-> **Note**  Any OpenGL ES 2.0 code in this topic is based on the Windows API implementation provided by the Khronos Group, and uses Windows C programming syntax.
+> **注意**：本主題中的任何 OpenGL ES 2.0 程式碼都是以 Khronos Group 所提供的 Windows API 實作為基礎，並使用 Windows C 程式設計語法。
 
  
 
-## What you need to know
+## 您需要知道的事項
 
 
-### Technologies
+### 技術
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### Prerequisites
+### 先決條件
 
--   Optional. Review [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md). Read this topic to better understand the graphics interface provided by DirectX.
+-   選用。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
 
-## <span id="keylinks_steps_heading"></span>Steps
+## <span id="keylinks_steps_heading"></span>步驟
 
 
 <table>
@@ -103,49 +103,49 @@ This structure has one instance and contains all the necessary components for re
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">主題</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Port the shader objects](port-the-shader-config.md)</p></td>
-<td align="left"><p>When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</p></td>
+<td align="left"><p>[移植著色器物件](port-the-shader-config.md)</p></td>
+<td align="left"><p>從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)</p></td>
-<td align="left"><p>In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.</p></td>
+<td align="left"><p>[移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)</p></td>
+<td align="left"><p>在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the GLSL](port-the-glsl.md)</p></td>
-<td align="left"><p>Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).</p></td>
+<td align="left"><p>[移植 GLSL](port-the-glsl.md)</p></td>
+<td align="left"><p>一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Draw to the screen](draw-to-the-screen.md)</p></td>
-<td align="left"><p>Finally, we port the code that draws the spinning cube to the screen.</p></td>
+<td align="left"><p>[繪製到螢幕](draw-to-the-screen.md)</p></td>
+<td align="left"><p>最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="additional_resources"></span>Additional resources
+## <span id="additional_resources"></span>其他資源
 
 
--   [Prepare your dev environment for UWP DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Create a new DirectX 11 project for UWP](user-interface.md)
--   [Map OpenGL ES 2.0 concepts and infrastructure to Direct3D 11](map-concepts-and-infrastructure.md)
-
- 
+-   [為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [建立適用於 UWP 的新 DirectX 11 專案](user-interface.md)
+-   [將 OpenGL ES 2.0 概念與基礎結構對應到 Direct3D 11](map-concepts-and-infrastructure.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,57 +1,57 @@
 ---
 author: jwmsft
-description: Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a CustomXamlResourceLoader class implementation.
-title: CustomResource markup extension
+description: "透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。"
+title: "CustomResource 標記延伸"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
 
 ---
 
-# {CustomResource} markup extension
+# {CustomResource} 標記延伸
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class implementation.
+透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別實作執行。
 
-## XAML attribute usage
+## XAML 屬性用法
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 詞彙 | 說明 |
 |------|-------------|
-| key | The key for the requested resource. How the key is initially assigned is specific to the implementation of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class that is currently registered for use. |
+| 索引鍵 | 要求的資源的索引鍵。 最初指派索引鍵的方式取決於目前已登錄使用的 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別實作。 |
 
-## Remarks
+## 備註
 
-**CustomResource** is a technique for obtaining values that are defined elsewhere in a custom resource repository. This technique is relatively advanced and isn't used by most Windows Runtime app scenarios.
+**CustomResource** 是取得定義在自訂資源存放庫其他位置的值的一種方法。 這項技術相對來說較為先進，而大多數的 Windows 執行階段應用程式案例並未使用這項技術。
 
-How a **CustomResource** resolves to a resource dictionary is not described in this topic, because that can vary widely depending on how [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) is implemented.
+這個主題不會描述 **CustomResource** 如何解析為資源字典，原因是這些方法會因為實作 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 的方式而有很大的差異。
 
-The [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) implementation is called by the Windows Runtime XAML parser whenever it encounters a `{CustomResource}` usage in markup. The *resourceId* that is passed to **GetResource** comes from the *key* argument, and the other input parameters come from context, such as which property the usage is applied to.
+Windows 執行階段 XAML 剖析器只要在標記中遇到使用 `{CustomResource}` 時，就會呼叫 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 實作的 [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) 方法。 傳遞到 **GetResource** 的 *resourceId* 來自於 *key* 引數，而其他輸入參數則來自於內容，例如用法所套用的屬性。
 
-A `{CustomResource}` usage doesn't work by default (the base implementation of [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) is incomplete). To make a valid `{CustomResource}` reference, you must perform each of these steps:
+`{CustomResource}` 用法預設無法運作 ([**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) 的基底實作不完整)。 為了讓 `{CustomResource}` 參考有效，您必須執行下列每個步驟：
 
-1.  Derive a custom class from [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) and override [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method. Do not call base in the implementation.
-2.  Set [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) to reference your class in initialization logic. This must happen before any page-level XAML that includes the `{CustomResource}` extension usage is loaded. One place to set **CustomXamlResourceLoader.Current** is in the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) subclass constructor that's generated for you in the App.xaml code-behind templates.
-3.  Now you can use `{CustomResource}` extensions in the XAML that your app loads as pages, or from within XAML resource dictionaries.
+1.  從 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 衍生自訂類別並覆寫 [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) 方法。 不要在實作中呼叫基底。
+2.  設定 [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) 使其參考初始化邏輯中的類別。 這必須在載入任何包含 `{CustomResource}` 延伸用法的頁面層級 XAML 之前完成。 其中一個設定 **CustomXamlResourceLoader.Current** 的位置，就是在 App.xaml 程式碼後置範本中為您產生的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 子類別建構函式。
+3.  現在您可以在應用程式載入為頁面的 XAML 中使用 `{CustomResource}` 延伸，或是從 XAML 資源字典內使用。
 
-**CustomResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**CustomResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用 "\{" 和 "\}" 字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-## Related topics
+## 相關主題
 
-* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

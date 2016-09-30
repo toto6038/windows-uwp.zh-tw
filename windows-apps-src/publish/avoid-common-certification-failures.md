@@ -1,42 +1,42 @@
 ---
 author: jnHs
-Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
-title: Avoid common certification failures
+Description: "檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。"
+title: "避免常見的認證失敗"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
+ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
 
 ---
 
-# Avoid common certification failures
+# 避免常見的認證失敗
 
 
-Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
+檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 
-> **Note**  You should also review the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944) to ensure your app meets all of the requirements listed there.
-
- 
-
--   Submit your app only when it's finished. You're welcome to use your app's description to mention upcoming features, but make sure that your app doesn't contain incomplete sections, links to web pages that are under construction, or anything else that would give a customer the impression that your app is incomplete.
-
--   [Test your app with the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) before you submit your app.
-
--   Test your app on several different configurations to ensure that it's as stable as possible.
-
--   Make sure that your app doesn't crash without network connectivity. Even if a connection is required to actually use your app, it needs to perform appropriately when no connection is present.
--   Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](write-a-great-app-description.md).
-
--   Be sure to provide complete and accurate answers to all of the questions in the [Age ratings](age-ratings.md) section.
-
--   If your app uses the commerce APIs from the [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) namespace, make sure to test the app and verify that it handles typical exceptions. Also, make sure that your app uses the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class (not the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) class, which is for testing purposes only).
-
--   Don't [declare your app as accessible](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines) unless you have specifically engineered and tested it for accessibility scenarios.
-
--   Make sure that you [provide any necessary info](notes-for-certification.md) required to use your app, such as the user name and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
+> **注意：**您也應該檢閱 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)，以確認您的 app 符合此處所列的所有需求。
 
  
 
+-   只有在完成上述檢閱之後，才提教您的 app。 您可以使用應用程式的介紹來提及即將推出的新功能，但務必確定應用程式中沒有包含未完成的區段或建構中的網頁連結，或是讓客戶覺得您的應用程式有未完成的任何其他項目。
+
+-   在您送出 app 之前，請[使用 Windows 應用程式認證套件測試 app](https://msdn.microsoft.com/library/windows/apps/mt186449)。
+
+-   在數種不同的設定上測試您的應用程式，盡可能確保它的穩定性。
+
+-   請確定在沒有網路連線時您的應用程式不會當機。 即使需要連線才能實際使用您的應用程式，仍需要確保在沒有連線的情況下應用程式仍能適當執行。
+-   確定應用程式描述可清楚說明應用程式的功能。 如需說明，請參閱[撰寫一份具有吸引力的應用程式介紹](write-a-great-app-description.md)的指導方針。
+
+-   在[年齡分級](age-ratings.md)區段中，請務必針對所有的問題提供完整且準確的回答。
+
+-   如果您的 app 使用來自 [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) 命名空間的商務 API，請務必測試 app，確認它可以處理一般的例外狀況。 另外，請確定您的應用程式使用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 類別 (而不是 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，這僅供測試使用)。
+
+-   請勿[將您的 app 宣告為無障礙應用程式](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines)，除非您特別針對協助工具案例建置 app 並進行測試。
+
+-   確定您[提供任何所需的資訊](notes-for-certification.md)來使用應用程式，例如測試帳戶的使用者名稱和密碼 (若您的應用程式需要使用者登入服務)，或存取隱藏或鎖定功能的任何所需步驟。
+
+ 
+
  
 
 
@@ -45,6 +45,6 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

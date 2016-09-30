@@ -1,21 +1,21 @@
 ---
 author: GrantMeStrength
-Description: Compare platform features between iOS, Android, and Windows 10.
+Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: Windows apps concept mapping for Android and iOS developers
+title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 ---
 
-#Windows apps concept mapping for Android and iOS developers
+#適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
-If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
+如果您是具備 Android 或 iOS 技巧和 (或) 程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台 (UWP)，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。
 
-Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This document is also available as a [download](https://www.microsoft.com/download/details.aspx?id=52041).
+另請參閱[從 iOS 移到 UWP](ios-to-uwp-root.md) 中的移植內容。 這份文件也可供[下載](https://www.microsoft.com/download/details.aspx?id=52041)。
 
-## User-interface (UI)
+## 使用者介面 (UI)
 
 
 <table style="width:100%">
@@ -27,7 +27,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -35,68 +35,68 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Design language.</strong><br><br>A set of conventions that prescribe how apps on the platform should look and behave.</td>
-<td align="left"><strong>Android Material Design</strong> guidelines provide a visual language for Android designers and developers to follow.</td>
-<td align="left"><strong>Human Interface Guidelines</strong> provide advice for iOS designers and developers.</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
+<td align="left"><strong>設計語言。</strong><br><br>一組擬定平台上 app 外觀和行為的慣例。</td>
+<td align="left"><strong>Android Material Design (Android 材料設計)</strong> 指導方針提供 Android 設計人員與開發人員需要遵循的視覺化語言。</td>
+<td align="left"><strong>Human Interface Guidelines (人性化介面指導方針)</strong> 為 iOS 設計人員與開發人員提供建議。</td>
+<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上具有出色外觀的 app。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>User interface markup language.</strong> <br><br>A markup language that renders and describes a UI and its components. Each platform provides an editor for both visual and markup editing.<br/></td>
-<td align="left"><strong>XML layouts</strong>, edited using <strong>Android Studio</strong> or <strong>Eclipse</strong>.</td>
-<td align="left"><strong>XIB</strong> and <strong>Storyboards</strong> edited using <strong>Interface Builder</strong> inside Xcode.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">XAML</a></strong>, edited using <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> and <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">XAML platform</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">Create a UI with XAML</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">Define Layouts with XAML</a></td>
+<td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
+<td align="left"><strong>XML 版面配置</strong>，使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong> 編輯。</td>
+<td align="left"><strong>XIB</strong> 和 <strong>Storyboard (腳本)</strong>，使用 Xcode 內的 <strong>Interface Builder (介面建立器)</strong> 編輯。</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">XAML</a></strong>，使用 <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> 編輯。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">XAML 平台</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">使用 XAML 建立 UI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">使用 XAML 定義版面配置</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Built-in user interface controls.</strong> <br><br>Reusable UI elements provided by the platform such as buttons, list controls, and text controls.</td>
-<td align="left">Prebuilt <strong>view</strong> and <strong>view group</strong> classes referred to as widgets, layouts, text fields, containers, date/time controls and expert controls.</td>
-<td align="left"><strong>Views</strong> and <strong>controls</strong> found in the Xcode object library and listed in the UIKit user interface catalog. Views include image views, picker views and scroll views. Controls include buttons, date pickers and text fields.</td>
-<td align="left">The XAML platform provides you with a generous set of <strong>built-in controls</strong> such as buttons, list controls, panels, text controls, command bars, pickers, media, and inking.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a></td>
+<td align="left"><strong>內建的使用者介面控制項。</strong> <br><br>平台提供的可重複使用的 UI 元素，例如按鈕、清單控制項與文字控制項。</td>
+<td align="left">預先建置的 <strong>view (檢視)</strong> 和 <strong>view group (檢視群組)</strong> 類別，稱為小工具、版面配置、文字欄位、容器、日期/時間控制項與專家控制項。</td>
+<td align="left"><strong>View (檢視)</strong> 和 <strong>Control (控制項)</strong> 可在 Xcode 物件程式庫中找到，並列示於 UIKit 使用者介面的類別目錄中。 View (檢視) 包含影像檢視、選擇器檢視和捲動檢視。 Controls (控制項) 包含按鈕、日期選擇器和文字欄位。</td>
+<td align="left">XAML 平台提供一組豐富的<strong>內建控制項</strong>，例如按鈕、清單控制項、面板、文字控制項、命令列、選擇器、媒體與筆跡。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">新增控制項和處理事件</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Control event-handling.</strong> <br><br>Defining the logic that runs when events are triggered within UI controls.</td>
-<td align="left"><strong>Event handlers</strong> and <strong>event listeners</strong> are added in XML or programmatically.</td>
-<td align="left">Controls send <strong>action</strong> messages to <strong>targets</strong>.</td>
-<td align="left">You can define methods to handle the events of a XAML control in a <strong>code-behind file</strong> attached to the XAML page. <strong>Event handlers</strong> are always written in code. But you can hook those handlers to events either in XAML markup or in code.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">Events and routed events overview</a></td>
+<td align="left"><strong>控制項事件處理。</strong> <br><br>定義觸發 UI 控制項內事件時要執行的邏輯。</td>
+<td align="left"><strong>Event handlers (事件處理常式)</strong> 和 <strong>Event listeners (事件接聽程式)</strong>以 XML 或以程式設計方式新增。</td>
+<td align="left">控制項可將 <strong>action (動作)</strong> 訊息傳送到 <strong>targets (目標)</strong>。</td>
+<td align="left">您可以定義方法來處理附加到 XAML 頁面之<strong>程式碼後置檔案</strong>中 XAML 控制項的事件。 <strong>事件處理常式</strong>一律以程式碼撰寫。 但是您可以使用 XAML 標記或程式碼將這些處理常式勾連到事件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">新增控制項和處理事件</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">事件與路由事件概觀</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Data binding.</strong> <br><br>A software design pattern that allows your app UI to render data and optionally stay in sync with that data.</td>
-<td align="left">There is a <strong>Data Binding Library</strong> provided, although it is still in beta.</td>
-<td align="left">No built-in bindings system exists on iOS. <strong>Key-value observing</strong> can be built upon to perform data binding, either with the use of a third-party library, or writing additional code. Controls use a delegate/callback approach for obtaining data.</td>
-<td align="left">The UWP platform handles <strong>data binding</strong> for you. You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> markup extension to take advantage of high performance binding or <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> to take advantage of more features. It’s then just a case of configuring your binding to choose whether the platform uses <strong>one-way binding</strong> to display values from a data source in your UI, or whether it also observes those values and updates your UI when they change with <strong>two-way binding</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">Data Binding</a></td>
+<td align="left"><strong>資料繫結。</strong> <br><br>一種軟體設計模式，可讓 app UI 轉譯資料，而且可以選擇與該資料保持同步。</td>
+<td align="left">目前已提供 <strong>Data Binding Library (資料繫結程式庫)</strong>，不過仍是搶鮮版 (Beta)。</td>
+<td align="left">iOS 上沒有內建的繫結系統。 <strong>可透過使用第三方程式庫或撰寫額外的程式碼，以 Key-Value Observing (索引鍵值觀察)</strong> 為基礎進行建置，以執行資料繫結。 控制項使用委派/回呼方法來取得資料。</td>
+<td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{X:bind}</a></strong> 標記延伸來利用高效能繫結，或使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> 來利用更多的功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">資料繫結</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>UI Automation.</strong> <br><br>Programmatic access to UI elements, making apps accessible to assistive technology products and enabling automated test scripts to interact with your UI.</td>
-<td align="left"><strong>Text labels</strong>, <strong>contentDescription</strong> and <strong>hint</strong> values help ensure UI elements can be found by automation. Android Studio allows you to write UI tests using the <strong>UI Automator</strong> and <strong>Espresso</strong> testing frameworks.</td>
-<td align="left">The <strong>Automation instrument</strong> allows you to write automated UI test scripts which identify elements using the <strong>accessibility</strong> settings or the element's position in the <strong>element hierarchy</strong>.</td>
-<td align="left">You get programmatic access to built-in UI elements in UWP out-of-box with <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI Automation</a></strong>.<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">Custom Automation Peers</a></strong> allow you to provide automation support for your own custom UI classes. The <strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">Coded UI Test Project</a></strong> in Visual Studio allows you to automatically test your whole application through the UI, or to test the UI in isolation.</td>
+<td align="left"><strong>使用者介面自動化。</strong> <br><br>以程式設計方式存取 UI 元素，讓輔助技術產品可以存取 app，以及讓自動化測試指令碼與您的 UI 互動。</td>
+<td align="left"><strong>Text labels (文字標籤)</strong>、<strong>contentDescription</strong> 和 <strong>hint (提示)</strong> 值有助於確保自動化可找到 UI 元素。 Android Studio 可讓您使用 <strong>UI Automator</strong> 和 <strong>Espresso</strong> 測試架構撰寫 UI 測試。</td>
+<td align="left"><strong>Automation instrument (自動化檢測)</strong> 可讓您撰寫自動化的 UI 測試指令碼，識別使用 <strong>accessibility (協助工具)</strong> 設定的元素或識別元素在 <strong>element hierarchy (元素階層)</strong> 中的位置。</td>
+<td align="left">透過<strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">使用者介面自動化</a></strong>，您能以程式設計方式直接存取 UWP 中的內建 UI 元素。<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">自訂自動化對等</a></strong>可讓您為自己的自訂 UI 類別提供自動化支援。 Visual Studio 中的<strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">自動程式化 UI 測試專案</a></strong>可讓您自動測試整個應用程式的 UI，或分別測試 UI。</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Changing the appearance of a control.</strong> <br><br>Editing size, color and other attributes.</td>
-<td align="left">Controls have <strong>properties</strong> which can be edited using the designer tool, in XML markup or programmatically.</td>
-<td align="left">Controls have <strong>attributes</strong> which you can edit using the <strong>Attributes Inspector</strong> in Interface Builder or programmatically.</td>
-<td align="left">You can edit the <strong>properties</strong> of controls in the XAML markup or programmatically, using Visual Studio and Blend for Visual Studio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a></td>
+<td align="left"><strong>變更控制項的外觀。</strong> <br><br>編輯大小、色彩與其他屬性。</td>
+<td align="left">控制項包含可使用設計工具在 XML 標記中或以程式設計方式編輯的<strong>屬性 (property)</strong>。</td>
+<td align="left">控制項包含可使用 Interface Builder (介面建立器) 中的 <strong>Attributes Inspector (屬性檢查程式)</strong> 或以程式設計方式編輯的<strong>屬性 (attribute)</strong>。</td>
+<td align="left">您可以使用 Visual Studio 和 Blend for Visual Studio 以 XAML 標記或程式設計方式編輯控制項的<strong>屬性 (property)</strong>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">新增控制項和處理事件</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Reusable visual styles.</strong> <br><br>Apply visual changes to a number of controls, in a reusable format.</td>
-<td align="left"><strong>XML styles</strong> are sets of properties that are applied to one or more controls.</td>
-<td align="left">iOS does not support reusable visual styles out-of-box, but the UIAppearance protocol allows multiple controls to share common attributes.</td>
-<td align="left">You can create reusable <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">styles</a></strong>, which can be applied to multiple controls and stored in a <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> for easy reuse.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Quickstart: Styling Controls</a></td>
+<td align="left"><strong>可重複使用的視覺樣式。</strong> <br><br>將視覺變更套用到多個控制項 (以可重複使用的格式)。</td>
+<td align="left"><strong>XML 樣式</strong> 是套用到一或多個控制項的屬性 (property) 集。</td>
+<td align="left">iOS 原生不支援可重複使用的視覺樣式，但是 UIAppearance 通訊協定可讓多個控制項共用通用屬性 (attribute)。</td>
+<td align="left">您可以建立可重複使用的<strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">樣式</a></strong>，它可以套用至多個控制項並儲存在 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> 中，以便重複使用。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">快速入門：設定控制項的樣式</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Editing the visual structure of controls.</strong> <br><br>Customize the visual structure of a control beyond just modifying properties or attributes, e.g. moving the checkbox text underneath the checkbox.</td>
-<td align="left">No simple method of editing the visual structure of controls exists in Android.</td>
-<td align="left">No simple method of editing the visual structure of controls exists in iOS.</td>
-<td align="left">To customize the visual structure of a control, you can copy and edit its <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">control template</a></strong> in XAML markup.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">Quickstart: Control Templates</a></td>
+<td align="left"><strong>編輯控制項的視覺結構。</strong> <br><br>自訂控制項的視覺結構，不只是修改屬性 (property) 或屬性 (attribute)，例如將核取方塊文字移到核取方塊的下方。</td>
+<td align="left">Android 中沒有編輯控制項之視覺結構的簡單方法。</td>
+<td align="left">iOS 中沒有編輯控制項之視覺結構的簡單方法。</td>
+<td align="left">若要自訂控制項的視覺結構，您可以在 XAML 標記中複製並編輯其<strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">控制項範本</a></strong>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">快速入門：控制項範本</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Built-in touch gestures.</strong> <br><br>Provide customized touch support by handling high level abstracted gesture events such as tap and double tap in views and controls.</td>
-<td align="left"><strong>Gesture detectors</strong> detect common touch gestures including scrolling, long-press, tap, double-tap and fling.</td>
-<td align="left">UIKit framework provides built-in <strong>gesture recognizers</strong> which detect touch gestures including tap, pinch, pan, swipe, rotate and long-press.</td>
-<td align="left"><strong>UI elements</strong> allow you to handle <strong>static gesture events</strong> including tap, double-tap, right-tap and holding, as well as <strong>manipulation gesture events</strong> including slide, swipe, turn, pinch and stretch. Gesture events are <strong>routed events</strong> and can be handled by parent objects containing the child UIElement.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">Touch interactions</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">Custom user interactions - gestures, manipulations, and interactions</a></td>
+<td align="left"><strong>內建的觸控手勢。</strong> <br><br>透過處理高階抽象手勢事件 (例如在檢視和控制項中點選和點兩下)，可提供自訂的觸控支援。</td>
+<td align="left"><strong>Gesture detector (手勢偵測器)</strong> 會偵測常用觸控手勢，包括捲動、長按、點選、點兩下和丟擲。</td>
+<td align="left">UIKit 架構提供內建 <strong>gesture recognizer (手勢辨識器)</strong>，它會偵測觸控手勢，包括點選、捏合、移動瀏覽、撥動、旋轉和長按。</td>
+<td align="left"><strong>UI 元素</strong>可讓您處理<strong>靜態手勢事件</strong>，包括點選、點兩下、右鍵點選和按住不放，以及<strong>操作手勢事件</strong>，包括滑動、撥動、轉動、捏合和伸展。 手勢事件是<strong>路由事件</strong>，而且可以由包含子 UIElement 的父物件處理。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">觸控互動</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">自訂使用者互動 - 手勢、操作及互動</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="navigation-and-app-structure">Navigation and app structure</h2>
+<h2 id="navigation-and-app-structure">瀏覽和 app 結構</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -106,7 +106,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -114,38 +114,38 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Layouts.</strong> <br><br>The layout defines the structure of the user interface.</td>
-<td align="left">Layout is composed of <strong>view groups</strong> such as the <strong>LinearLayout</strong> and the <strong>RelativeLayout</strong> which can nest other view groups or views.</td>
-<td align="left">Layout is composed of a <strong>UIViewController</strong> containing <strong>UIView</strong>'s which can be nested.</td>
-<td align="left">XAML which provides a flexible layout system composed of <strong>layout panel classes</strong> such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> for static and responsive layouts. <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">Properties</a></strong> are used to control the size and position of the elements.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">Define layouts with XAML</a><br/></td>
+<td align="left"><strong>版面配置。</strong> <br><br>版面配置定義使用者介面的結構。</td>
+<td align="left">版面配置是由 <strong>view group (檢視群組)</strong> (例如能以巢狀方式包含其他檢視群組或檢視的 <strong>LinearLayout</strong> 和 <strong>RelativeLayout</strong>) 組成。</td>
+<td align="left">版面配置是由包含能以巢狀方式包含 <strong>UIView</strong> 的 <strong>UIViewController</strong> 組成。</td>
+<td align="left">由<strong>版面配置面板類別</strong>組成、提供彈性版面配置系統的 XAML，例如用於靜態和回應式版面配置的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> 及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong>。 <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">屬性</a></strong>用來控制元素的大小和位置。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">使用 XAML 定義版面配置</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Peer navigation.</strong> <br><br>Presenting the user with methods of navigating between pages of equal hierarchical importance.</td>
-<td align="left"><strong>Tabs</strong>, <strong>swipe views</strong> and <strong>navigation drawers</strong> provide <strong>lateral navigation</strong>.</td>
-<td align="left"><strong>Tab bar controllers</strong>, <strong>split view controllers</strong> and <strong>page view controllers</strong> allow navigation between views of equal hierarchy.</td>
-<td align="left">You can display a persistent list of links/tabs above the content using <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">tabs/pivots</a></strong>. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">navigation pane/split view</a></strong> lets you display a list of links alongside the content.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Navigate between two pages</a></td>
+<td align="left"><strong>對等瀏覽。</strong> <br><br>為使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
+<td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong>提供<strong>橫式瀏覽</strong>。</td>
+<td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">兩個頁面之間的對等瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Hierarchical navigation.</strong> <br><br>Navigating between parent and child pages of a hierarchy.</td>
-<td align="left"><strong>Lists</strong>, and <strong>grid lists</strong>, <strong>buttons</strong> and other controls provide <strong>descendent navigation</strong> when used with <strong>intents</strong> to load other <strong>activities</strong>.</td>
-<td align="left"><strong>Navigation controllers</strong> allow users to navigate between levels of a hierarchy.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Hubs</a></strong> let you show the user a preview of content which can be selected to navigate to child pages. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Master/details</a></strong> let users pick from a list of item summaries which display next to the corresponding detail section.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Navigate between two pages</a></td>
+<td align="left"><strong>階層式瀏覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
+<td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供<strong>下階瀏覽</strong>以載入其他 <strong>activity (活動)</strong>。</td>
+<td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可讓使用者在階層的層級之間瀏覽。</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">瀏覽</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Back button navigation.</strong> <br><br>Navigating back through an application.</td>
-<td align="left">The <strong>back</strong> and <strong>up</strong> buttons inside the action bar provide <strong>ancestral</strong> and <strong>temporal</strong> navigation using the <strong>back stack</strong>.</td>
-<td align="left">The <strong>navigation controller</strong> can have a back button added to it.<br/></td>
-<td align="left">You can handle software or hardware back button presses easily using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.backstack.aspx">back stack property</a></strong> which allows your users to traverse the <strong>navigation history</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465734.aspx">Back button navigation</a></td>
+<td align="left"><strong>返回按鈕瀏覽。</strong> <br><br>在應用程式內往回瀏覽。</td>
+<td align="left">動作列內的 [返回]<strong></strong> 和 [上一層]<strong></strong> 按鈕，可使用<strong>返回堆疊</strong>提供<strong>上階</strong>和<strong>暫時</strong>瀏覽。</td>
+<td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可以新增返回按鈕。<br/></td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.backstack.aspx">返回堆疊屬性</a></strong>輕鬆處理軟體或硬體返回按鈕的按壓動作，這可讓您的使用者周遊<strong>瀏覽歷程記錄</strong>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465734.aspx">返回按鈕瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Splash screen.</strong> <br><br>Showing an image on app launch, used primarily for branding.</td>
-<td align="left">Splash screens are not provided by default, and are implemented by editing the first activities <strong>theme background</strong>.</td>
-<td align="left">Apps must either have a <strong>static launch image</strong> or <strong>XIB/storyboard launch file</strong>.</td>
-<td align="left">You create a splash screen using an <strong>image</strong> and colored background. <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">Splash screen time can be extended</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">Add a splash screen</a></td>
+<td align="left"><strong>啟動顯示畫面。</strong> <br><br>在 app 啟動時顯示影像，主要用於顯示商標。</td>
+<td align="left">預設不提供啟動顯示畫面，實作的方式是編輯第一個活動<strong>佈景主題背景</strong>。</td>
+<td align="left">App 必須具有<strong>靜態啟動影像</strong>或 <strong>XIB/storyboard (腳本) 啟動檔案</strong>。</td>
+<td align="left">您可以使用<strong>影像</strong>和彩色背景來建立啟動顯示畫面。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">啟動顯示畫面的時間可以延長</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">新增啟動顯示畫面</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="custom-inputs">Custom inputs</h2>
+<h2 id="custom-inputs">自訂輸入</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -155,7 +155,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -163,20 +163,20 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Voice.</strong> <br><br>Speech recognition for speech input, and additional voice capabilities.</td>
-<td align="left">Speech input can be provided by any app which implements a <strong>RecognizerIntent</strong>, such as <strong>Google Voice Search</strong>. The <strong>SpeechRecognizer</strong> class allows apps to use Google's speech recognition API.</td>
-<td align="left">No built-in speech recognition or speech input APIs exist.</td>
-<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">speech recognition</a></strong> API to interact with your app in the foreground. You can use speech-based <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana interactions</a></strong> to launch apps in the foreground or background, and to ​interact with background apps.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Speech interactions</a></td>
+<td align="left"><strong>語音。</strong> <br><br>語音輸入的語音辨識及其他語音功能。</td>
+<td align="left">實作 <strong>RecognizerIntent</strong> (例如 <strong>Google 語音搜尋</strong>) 的任何 app 都可提供語音輸入。 <strong>SpeechRecognizer</strong> 類別可以讓 app 使用 Google 的語音辨識 API。</td>
+<td align="left">沒有內建的語音辨識或語音輸入 API。</td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 App 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動 App，以及與背景應用程式互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Custom user inputs.</strong> <br><br>Handling keyboard, mouse, stylus and other inputs.</td>
-<td align="left">Support for interactions includes <strong>touch</strong>, <strong>touchpad</strong>, <strong>stylus</strong>, <strong>mouse</strong> and <strong>keyboard</strong>. Movements and inputs are reported in the same way as touch, but it is possible to detect more information about the <strong>input device</strong>.</td>
-<td align="left">Support for <strong>touch</strong>, the <strong>Apple Pencil</strong> and hardware <strong>keyboards</strong> are provided.</td>
-<td align="left">You will find support for a wide range of interactions including <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">touch</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx">touchpad</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">pen/stylus</a></strong> with digital ink, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">mouse</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">keyboard</a></strong>. Your apps can handle the data without needing to know which input device was used, and raw input device data can be accessed if needed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">Handle pointer input</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">Custom user interactions</a></td>
+<td align="left"><strong>自訂使用者輸入。</strong> <br><br>處理鍵盤、滑鼠、手寫筆及其他輸入方式。</td>
+<td align="left">對互動的支援包括<strong>觸控</strong>、<strong>觸控板</strong>、<strong>手寫筆</strong>、<strong>滑鼠</strong>和<strong>鍵盤</strong>。 移動和輸入的報告方式與觸控相同，但是可能會偵測到有關<strong>輸入裝置</strong>的更多資訊。</td>
+<td align="left">提供對<strong>觸控</strong>、<strong>Apple Pencil</strong> 和硬體<strong>鍵盤</strong>的支援。</td>
+<td align="left">支援各種互動方式，包括<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">觸控</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx">觸控板</a></strong>、使用數位筆跡的<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">畫筆/手寫筆</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">滑鼠</a></strong>和<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">鍵盤</a></strong>。 您的 app 可以處理資料，不需要知道使用了哪種輸入裝置，如有需要，也可以存取原始輸入裝置資料。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">處理指標輸入</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">自訂使用者互動</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="data">Data</h2>
+<h2 id="data">資料</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -186,7 +186,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -194,56 +194,56 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Local app data.</strong> <br><br>Storing settings and files related to your app locally.</td>
-<td align="left">Local files can be saved using <strong>openFileOutput</strong> and <strong>openFileInput</strong>. Settings in a <strong>shared preferences file</strong> can be accessed using <strong>getSharedPreferences</strong>.</td>
-<td align="left">Local files can be stored in the <strong>application support</strong> directory, accessed via the <strong>NSFileManager</strong> class. Settings in <strong>preferences</strong> files can be accessed by the <strong>NSUserDefaults</strong> class.</td>
-<td align="left">The <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/br230562.aspx">Windows.Storage</a></strong> classes handle local data storage for you in a unified way. You store settings as an <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdatacontainer.aspx">ApplicationDataContainer</a></strong> object, accessed via the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localsettings.aspx">ApplicationData.LocalSettings</a></strong> property. You store files in a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx">StorageFolder</a></strong> object accessed via the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localfolder.aspx">ApplicationData.LocalFolder</a></strong> property.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt299098.aspx">Store and retrieve settings and other app data</a></td>
+<td align="left"><strong>本機 app 資料。</strong> <br><br>將與 app 相關的設定和檔案儲存在本機。</td>
+<td align="left">使用 <strong>openFileOutput</strong> 和 <strong>openFileInput</strong> 可以儲存本機檔案。 使用 <strong>getSharedPreferences</strong> 可存取<strong>共用喜好設定檔案</strong>中的設定。</td>
+<td align="left">本機檔案可以儲存在 <strong>application support (應用程式支援)</strong> 目錄中，並透過 <strong>NSFileManager</strong> 類別存取。 <strong>Preferences (喜好設定)</strong> 檔案中的設定可以透過 <strong>NSUserDefaults</strong> 類別存取。</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/br230562.aspx">Windows.Storage</a></strong> 類別可利用統一的方式為您處理本機資料儲存區。 您可將設定儲存為 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdatacontainer.aspx">ApplicationDataContainer</a></strong> 物件，並透過 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localsettings.aspx">ApplicationData.LocalSettings</a></strong> 屬性存取。 您可將檔案儲存在 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx">StorageFolder</a></strong> 物件中，並透過 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localfolder.aspx">ApplicationData.LocalFolder</a></strong> 屬性存取。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt299098.aspx">儲存及擷取設定和其他 app 資料</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Local database storage.</strong> <br><br>Storing app data in a relational database, with object-relational mappers (ORM) if applicable.</td>
-<td align="left">The <strong>SQLite</strong> database is provided. No ORM is built-in. SQL queries are run using the <strong>SQLiteDatabase</strong> class.</td>
-<td align="left">The <strong>SQLite</strong> database is provided. <strong>CoreData</strong> is the built-in object graph framework which can be used with SQLite and provide functionality comparable with an ORM.</td>
-<td align="left">You can store data using <strong>SQLite</strong>. <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong> is a built-in ORM which eliminates the need to write lots of data access code and enables you to easily query the database without writing SQL. You can run SQL queries directly with the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">SQLite library</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">Data Access</a></td>
+<td align="left"><strong>本機資料庫儲存區。</strong> <br><br>將 app 資料儲存在關聯式資料庫，如果適用，請使用具有物件關聯式對應程式 (ORM) 功能的關聯式資料庫。</td>
+<td align="left">提供 <strong>SQLite</strong> 資料庫。 沒有內建 ORM。 使用 <strong>SQLiteDatabase</strong> 類別執行 SQL 查詢。</td>
+<td align="left">提供 <strong>SQLite</strong> 資料庫。 <strong>CoreData</strong> 是可與 SQLite 搭配使用的內建物件圖形架構，它提供相當於 ORM 的功能。</td>
+<td align="left">您可以使用 <strong>SQLite</strong> 存放資料。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong> 是內建 ORM，它可以讓您不需要撰寫大量的資料存取程式碼，並可讓您輕鬆地查詢資料庫，而不用撰寫 SQL。 您可以使用 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">SQLite 程式庫</a>直接執行 SQL 查詢。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">資料存取</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>HTTP libraries for REST access.</strong> <br><br>Built-in libraries that let you communicate with web services and web servers using HTTP(S).<br/></td>
-<td align="left">HTTP libraries <strong>HttpURLConnection</strong> and <strong>Volley</strong>.</td>
-<td align="left"><strong>NSURLSession</strong>, <strong>NSURLConnection</strong> and <strong>NSURLDownload</strong>.</td>
-<td align="left">You can use the built-in <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpclient">HttpClient</a></strong> API to access common HTTP functionality including GET, DELETE, PUT, POST, common authentication patterns, SSL, cookies and progress info.</td>
+<td align="left"><strong>適用於 REST 存取的 HTTP 程式庫。</strong> <br><br>讓您能夠使用 HTTP(S) 與 Web 服務及網頁伺服器通訊的內建程式庫。<br/></td>
+<td align="left">HTTP 程式庫 <strong>HttpURLConnection</strong> 和<strong>Volley</strong>。</td>
+<td align="left"><strong>NSURLSession</strong>、<strong>NSURLConnection</strong> 和 <strong>NSURLDownload</strong>。</td>
+<td align="left">您可以使用內建 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpclient">HttpClient</a></strong> API 來存取常用的 HTTP 功能，包括 GET、DELETE、PUT、POST、常用驗證模式、SSL、Cookie 及進度資訊。</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Cloud backup services.</strong> <br><br>Platform-provided backup services for app data.</td>
-<td align="left">Android's <strong>backup manager</strong> handles the backing up of application data in Google's <strong>Android Backup Service</strong>.</td>
-<td align="left"><strong>iCloud Backup</strong> can be configured by a user to handle their backups, including app data. Apps which use iCloud compatible <strong>Core Data</strong>, the <strong>iCloud key-value store</strong> and <strong>iCloud document storage</strong>.</td>
-<td align="left">Any app data that you store using the roaming <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData APIs</a></strong> (including <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>) will be automatically synced to the cloud and to the user’s other devices, too. The syncing is done by way of the user’s Microsoft account.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">Guidelines for roaming app data</a></td>
+<td align="left"><strong>雲端備份服務。</strong> <br><br>平台為 app 資料提供的備份服務。</td>
+<td align="left">Android 的 <strong>backup manager (備份管理員)</strong> 可以處理 Google 的 <strong>Android Backup Service (Android 備份服務)</strong> 中應用程式資料的備份。</td>
+<td align="left"><strong>iCloud Backup (iCloud 備份)</strong> 可由使用者設定來處理其備份，包括 app 資料。 使用與 iCloud 相容的 <strong>Core Data (核心資料)</strong>、<strong>iCloud key-value store (iCloud 索引鍵值存放區)</strong> 和 <strong>iCloud document storage (iCloud 文件儲存區)</strong> 的 App。</td>
+<td align="left">使用漫遊 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData API</a></strong> (包括 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>) 儲存區的任何 app 資料，都會自動同步到雲端，也會自動同步到使用者的其他裝置。 同步是利用使用者的 Microsoft 帳戶來完成。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">app 資料漫遊的指導方針</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>HTTP file downloads.</strong> <br><br>Downloading large and small files over HTTP.</td>
-<td align="left"><strong>URLConnection</strong> and <strong>HTTPURLConnection</strong> are used to download over HTTP and FTP, it is also possible to make use of the system <strong>download manager</strong> to download in the background.</td>
-<td align="left"><strong>NSURLSession</strong> and <strong>NSURLConnection</strong> can be used to download files over HTTP and FTP.</td>
-<td align="left">The <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">background transfer API</a></strong> lets you reliably transfer files over HTTP(S) and FTP, taking into account app suspension, connectivity loss and adjusting based on connectivity and battery life. You can also use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong> which is ideal for smaller files.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Background transfers</a></td>
+<td align="left"><strong>HTTP 檔案下載。</strong> <br><br>透過 HTTP 下載大型和小型檔案。</td>
+<td align="left"><strong>URLConnection</strong> 和 <strong>HTTPURLConnection</strong> 可用來透過 HTTP 和 FTP 下載，也可以使用系統的 <strong>download manager (下載管理員)</strong> 在背景下載。</td>
+<td align="left"><strong>NSURLSession</strong> 和 <strong>NSURLConnection</strong> 可用來透過 HTTP 和 FTP 下載檔案。</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">背景傳輸 API</a></strong> 可讓您透過 HTTP(S) 和 FTP 可靠地傳輸檔案，顧及 app 暫停、連線中斷，並根據連線能力和電池使用時間進行調整。 您也可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong>，它非常適用於較小的檔案。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">哪一種網路功能技術？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">背景傳輸</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Sockets.</strong> <br><br>Creating low level UDP datagram and TCP sockets to communicate with other devices using your own protocol.</td>
-<td align="left"><strong>Socket</strong> class provides TCP sockets, <strong>DatagramSocket</strong> class provides a UDP socket.</td>
-<td align="left"><strong>NSStream</strong> and <strong>CFStream</strong> provide TCP sockets, <strong>CFSocket</strong> provides UDP sockets.</td>
-<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> class to communicate using a UDP datagram socket and the <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> class to communicate over TCP or Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Networking basics</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Sockets overview</a></td>
+<td align="left"><strong>通訊端。</strong> <br><br>建立低層級的 UDP 資料包和 TCP 通訊端，使用您自己的通訊協定與其他裝置通訊。</td>
+<td align="left"><strong>Socket</strong> 類別提供 TCP 通訊端，而 <strong>DatagramSocket</strong> 類別提供 UDP 通訊端。</td>
+<td align="left"><strong>NSStream</strong> 和 <strong>CFStream</strong> 提供 TCP 通訊端，而 <strong>CFSocket</strong> 提供 UDP 通訊端。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> 類別透過 UDP 資料包通訊端進行通訊，以及使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> 類別透過 TCP 或藍牙 RFCOMM 進行通訊。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">網路功能基本知識</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">哪一種網路功能技術？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">通訊端概觀</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>WebSockets.</strong> <br><br>Provide two-way communication between a client and server, enabling real-time data transfer.</td>
-<td align="left">No built-in WebSockets libraries exist on Android.</td>
-<td align="left">No built-in WebSockets libraries exist on iOS.</td>
-<td align="left">Secure connections to servers supporting WebSockets can be made with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> class for smaller messages with receipt notifications and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> for larger binary file transfers which can be read in sections.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Networking basics</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">WebSockets overview</a></td>
+<td align="left"><strong>WebSocket。</strong> <br><br>在用戶端與伺服器之間提供雙向通訊，實現即時資料傳輸。</td>
+<td align="left">Android 上沒有內建 WebSockets 程式庫。</td>
+<td align="left">iOS 上沒有內建 WebSockets 程式庫。</td>
+<td align="left">您可以透過下面的類別建立與支援 WebSocket 之伺服器間的安全連線<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> 類別 (適用具有接收通知的小型訊息)，以及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> (適用於可分段讀取的較大二進位檔案傳輸)。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">網路功能基本知識</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">哪一種網路功能技術？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Websocket 概觀</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>OAuth libraries.</strong> <br><br>OAuth libraries allowing access to third party OAuth providers, and any account management built into the platform.</td>
-<td align="left">No generic OAuth library is provided. The <strong>GoogleAuthUtil</strong> class is provided for OAuth authentication with Google Play Services .<br/></td>
-<td align="left">No generic OAuth library is provided. The <strong>accounts framework</strong> provides access to user accounts already stored on the device such as Facebook and Twitter.</td>
-<td align="left">The generic OAuth library <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270196.aspx">Web authentication broker</a></strong> lets you connect to third-party identity provider services. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270189.aspx">Credential locker</a></strong> allows your users to save their login and use it on multiple devices. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn896755.aspx">Microsoft.Live</a></strong> namespace lets you easily access Live SDK OAuth for access to Microsoft services.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt270184.aspx">Authentication and user identity</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.aspx">Windows.Security.Authentication.Web API documentation</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker code example</a></td>
+<td align="left"><strong>OAuth 程式庫。</strong> <br><br>OAuth 程式庫允許存取第三方 OAuth 提供者，以及平台中內建的任何帳戶管理。</td>
+<td align="left">不提供一般的 OAuth 程式庫。 針對 Google Play 服務的 OAuth 驗證提供 <strong>GoogleAuthUtil</strong> 類別。<br/></td>
+<td align="left">不提供一般的 OAuth 程式庫。 <strong>帳戶架構</strong> 提供對裝置上已經儲存之使用者帳戶 (例如 Facebook 和 Twitter) 的存取權。</td>
+<td align="left">一般 OAuth 程式庫 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270196.aspx">Web 驗證代理人</a></strong>可讓您連線到第三方身分識別提供者服務。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270189.aspx">認證保險箱</a></strong>可讓使用者儲存他們的登入並在多個裝置上使用。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn896755.aspx">Microsoft.Live</a></strong> 命名空間可以讓您輕鬆地存取 Live SDK OAuth 以存取 Microsoft 服務。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt270184.aspx">驗證和使用者識別</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.aspx">Windows.Security.Authentication.Web API 文件</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker 程式碼範例</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="tooling">Tooling</h2>
+<h2 id="tooling">工具</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -253,7 +253,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -261,20 +261,20 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>IDE.</strong> <br><br>The toolset used to create your app.</td>
-<td align="left"><strong>Android Studio</strong> and <strong>Eclipse</strong>, with Google pushing developers toward the use of Android Studio.</td>
+<td align="left"><strong>IDE。</strong> <br><br>用來建立 app 的工具組。</td>
+<td align="left"><strong>Android Studio</strong> 和 <strong>Eclipse</strong> 與 Google 一起推動開發人員朝向使用 Android Studio。</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> and <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> has all the tools you need to code, design, connect, debug, analyze, optimize and test UWP apps. Visual Studio also provides you with <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">emulators</a></strong> for Windows 10 devices, so you can test your app across a range of emulated devices.<br/><br/><a href="https://dev.windows.com/downloads">Downloads and tools for UWP</a></td>
+<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> 擁有撰寫程式碼、設計、連線、偵錯、分析、最佳化及測試 UWP app 所需的所有工具。 Visual Studio 也為您提供適用於 Windows 10 裝置的<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">模擬器</a></strong>，以便您在各種模擬的裝置上測試 app。<br/><br/><a href="https://dev.windows.com/downloads">適用於 UWP 的下載項目與工具</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Code organization.</strong> <br><br>The basic folder structure of an app, often created from an initial template.</td>
-<td align="left"><strong>AndroidManifest</strong> file, <strong>java</strong> folder containing source files, <strong>res</strong> folder with resources including layouts and values, <strong>Gradle</strong> build scripts in Android Studio and <strong>Ant</strong> build scripts in Eclipse.</td>
-<td align="left">Source files and <strong>Supporting Files</strong>, <strong>Info.plist</strong> file, <strong>Main.storyboard</strong> and <strong>LaunchScreen.storyboard</strong>. Images are stored in <strong>Asset libraries</strong>.</td>
-<td align="left">Your UWP app contains XAML and code files for your app named Example.xaml and Example.xaml.cs, various images in the <strong>Assets folder</strong>, a start page such as <strong>MainPage.xaml</strong> and <strong>MainPage.xaml.cs</strong> and a manifest.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn765018.aspx">Create a hello world app</a></td>
+<td align="left"><strong>程式碼組織。</strong> <br><br>App 的基本資料夾結構 (通常從初始範本建立)。</td>
+<td align="left"><strong>AndroidManifest</strong> 檔案、包含來源檔案的 <strong>java</strong> 資料夾、包含資源 (含版面配置和值) 的 <strong>res</strong> 資料夾、Android Studio 中的 <strong>Gradle</strong> 建置指令碼，以及 Eclipse 中的 <strong>Ant</strong> 建置指令碼。</td>
+<td align="left">來源檔案和 <strong>Supporting Files (支援檔案)</strong>、<strong>Info.plist</strong> 檔案、<strong>Main.storyboard</strong> 以及 <strong>LaunchScreen.storyboard</strong>。 影像會儲存在 <strong>Asset libraries (資產庫)</strong> 中。</td>
+<td align="left">您的 UWP app 包含 XAML 及名為 Example.xaml 和 Example.xaml.cs 的程式碼檔案、<strong>Assets 資料夾</strong>中的各種影像、開始頁面 (例如 <strong>MainPage.xaml</strong> 和 <strong>MainPage.xaml.cs</strong>) 以及資訊清單。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn765018.aspx">建立 hello world app</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="app-lifecycle">App lifecycle</h2>
+<h2 id="app-lifecycle">App 週期</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -284,7 +284,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -292,20 +292,20 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>App lifecycle.</strong> <br><br>Handling events on app launch, suspension, resume and close, providing an opportunity to save/restore application state and run other tasks.</td>
-<td align="left">Each activity has its own <strong>activity lifecycle</strong> with states such as <strong>resumed</strong>. <strong>Lifecycle callbacks</strong> such as <strong>onResume</strong> are implemented in in your <strong>activity classes</strong>.</td>
-<td align="left">The <strong>application lifecycle</strong> has states such as <strong>suspended</strong>. Methods such as <strong>applicationDidEnterBackground:</strong> are implemented in the <strong>application delegate object</strong> to run code on state changes.</td>
-<td align="left">Your application has the <strong>app execution states</strong> NotRunning, Activated, Running, Suspending, Suspended and Resuming.<br/><br/>You can implement the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application class</a></strong> methods OnLaunched, OnActivated, Suspending or Resuming in your app to run code when the state changes.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App lifecycle</a></td>
+<td align="left"><strong>App 週期。</strong> <br><br>處理 app 啟動、暫停、繼續和關閉的事件，讓您可以儲存/還原應用程式狀態並執行其他工作。</td>
+<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼</strong> (例如 <strong>onResume</strong>) 是在 <strong>activity 類別</strong>中實作。</td>
+<td align="left"><strong>應用程式週期</strong>具有<strong>已暫停</strong>之類的狀態。 <strong>applicationDidEnterBackground:</strong> 之類的方法是在<strong>應用程式委派物件</strong>中實作，可在狀態變更時執行程式碼。</td>
+<td align="left">您的 app 具有 NotRunning、Activated、Running、Suspending、Suspended 及 Resuming 的 <strong>app 執行狀態</strong>。<br/><br/>您可以在 app 中實作 OnLaunched、OnActivated、Suspending 或 Resuming 等 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application 類別</a></strong>方法，以在狀態變更時執行程式碼。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App 週期</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Background tasks.</strong> <br><br>Tasks that perform background operations and continue to run when the app is no longer in the foreground.</td>
-<td align="left">Apps can launch <strong>services</strong> which perform background operations when the app is no longer in the foreground. Services have their own <strong>lifecycle</strong> and are registered in the manifest.</td>
-<td align="left"><strong>Background execution</strong> is only permitted for specific task types.<br/><br/>Apps declare <strong>supported background tasks</strong> in the Info.plist file using the <strong>UIBackgroundModes</strong>.<br/><br/>The system controls when background tasks are run and for how long.</td>
-<td align="left">You can create a background task by implementing the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx">IBackgroundTask</a></strong> interface and registering the task in the application manifest. You can set a task to be triggered with a <a href="https://msdn.microsoft.com/library/windows/apps/mt186458.aspx"><strong>timer</strong></a>, <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtriggertype.aspx"><strong>system trigger</strong></a>, and <a href="https://msdn.microsoft.com/library/windows/apps/mt185632.aspx"><strong>maintenance trigger</strong></a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299103.aspx">Support your app with background tasks</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299100.aspx">Create and register a background task</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187310.aspx">Guidelines for background tasks</a></td>
+<td align="left"><strong>背景工作。</strong> <br><br>執行背景作業的工作以及當 app 不再在前景時繼續執行的工作。</td>
+<td align="left">當 app 不再在前景時，app 可以啟動執行背景作業的<strong>服務</strong>。 服務有自己<strong>週期</strong>，而且已登錄到資訊清單中。</td>
+<td align="left"><strong>只有特定工作類型才允許背景執行</strong>。<br/><br/>App 使用 <strong>UIBackgroundModes</strong> 在 Info.plist 檔案中宣告<strong>支援的背景工作</strong>。<br/><br/>系統會控制背景工作的執行時間和持續時間。</td>
+<td align="left">實作 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx">IBackgroundTask</a></strong> 介面並在應用程式資訊清單中註冊工作，即可建立背景工作。 您可以使用<a href="https://msdn.microsoft.com/library/windows/apps/mt186458.aspx"><strong>計時器</strong></a>、<a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtriggertype.aspx"><strong>系統觸發程序</strong></a>及<a href="https://msdn.microsoft.com/library/windows/apps/mt185632.aspx"><strong>維護觸發程序</strong></a>來設定觸發工作。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299103.aspx">使用背景工作支援 app</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299100.aspx">建立並註冊背景工作</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187310.aspx">背景工作的指導方針</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="performance">Performance</h2>
+<h2 id="performance">效能</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -315,7 +315,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -323,38 +323,38 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Performance best practices.</strong> <br><br>Guidelines for building apps that are fast, responsive, considerate of battery life with a fast startup time.</td>
-<td align="left">Android provides the <strong>Best Practices for Performance</strong> training guide.</td>
-<td align="left">iOS provides the <strong>Performance Overview</strong> document.</td>
-<td align="left">You can read the detailed <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270266.aspx">Performance guide</a></strong> with sections covering topics such as; setting performance goals, measuring performance, memory management, smooth animations, efficient file system access and the tools available for profiling and performance.</td>
+<td align="left"><strong>效能最佳做法。</strong> <br><br>建置執行速度快、回應靈敏、啟動時間短且可延長電池使用時間之 app 的指導方針。</td>
+<td align="left">Android 提供 <strong>Best Practices for Performance (效能的最佳做法)</strong> 訓練指南。</td>
+<td align="left">iOS 提供 <strong>Performance Overview (效能概觀)</strong> 文件。</td>
+<td align="left">您可以閱讀詳細的<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270266.aspx">效能指南</a></strong>中涵蓋下列主題的章節：設定效能目標、測量效能、記憶體管理、流暢的動畫、高效率的檔案系統存取，以及用於分析和效能的工具。</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>View optimization for a responsive UI.</strong> <br><br>Improving performance by optimizing views.</td>
-<td align="left">Optimizing <strong>layout hierarchies</strong> using the Hierarchy Viewer tool, <strong>reusing layouts</strong> and loading <strong>views on demand</strong> are all techniques to help keep the UI thread responsive and avoid &quot;Application Not Responding&quot; dialogs (<strong>ANR's</strong>).<br/></td>
-<td align="left">Fixing UI issues with <strong>offscreen rendering</strong>, <strong>blended layers</strong>, <strong>rasterization</strong> using the <strong>Core Animation</strong> tool help keep the UI thread responsive.</td>
-<td align="left">You can easily <strong>optimize</strong> XAML <strong>markup</strong> and <strong>layouts</strong> by following a few simple steps. Techniques include reducing layout structure, minimizing the element count and minimizing overdrawing. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">Keep the UI thread responsive</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">Optimize your XAML markup</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">Optimize your XAML layout</a></td>
+<td align="left"><strong>針對回應式 UI 的檢視最佳化。</strong> <br><br>透過將檢視最佳化以改善效能。</td>
+<td align="left">使用 Hierarchy Viewer (階層檢視器) 工具最佳化<strong>版面配置階層</strong>、<strong>重複使用版面配置</strong>和<strong>隨需載入檢視</strong>，都是可以協助保持 UI 執行緒回應性和避免 [應用程式未回應]&quot;&quot; 對話方塊 (<strong>ANR</strong>) 的技術。<br/></td>
+<td align="left">修正<strong>螢幕範圍以外的轉譯</strong>、<strong>混合層</strong>、<strong>點陣化</strong>的 UI 問題，使用 <strong>Core Animation (核心動畫)</strong> 工具協助讓 UI 執行緒保持回應。</td>
+<td align="left">依照幾個簡單步驟操作，即可輕鬆地<strong>最佳化</strong> XAML <strong>標記</strong>和<strong>版面配置</strong>。 這些技術包括精簡版面配置結構、盡量減少元素數目及過度繪製。 <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">讓 UI 執行緒保持回應</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">最佳化您的 XAML 標記</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">最佳化您的 XAML 配置</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Threading.</strong> <br><br>Use of threading to maintain a <strong>responsive UI</strong> and run multiple <strong>tasks in parallel</strong>.</td>
-<td align="left">Threading is achieved using the classes <strong>Runnable</strong>, <strong>Handler</strong>, <strong>ThreadPoolExecutor</strong>, and the higher level <strong>AsyncTask</strong>.</td>
-<td align="left">Threading is achieved using <strong>NSThread</strong>, <strong>Grand Central Dispatch</strong>, and the higher level <strong>NSOperation</strong>.</td>
-<td align="left">You can work with threads by submitting <strong>work items</strong> to the <strong>threadpool</strong> with <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpool.runasync.aspx">RunAsync</a></strong>. You can use a timer to submit a work item with <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230590.aspx">CreateTimer</a></strong> and create a repeating work item with <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230589.aspx">CreatePeriodicTimer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187339.aspx">Submit a work item to the thread pool</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187341.aspx">Use a timer to submit a work item</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187338.aspx">Create a periodic work item</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187336.aspx">Best practices for using the thread pool</a></td>
+<td align="left"><strong>執行緒處理。</strong> <br><br>使用執行緒處理來維護<strong>回應式 UI</strong> 並執行多個<strong>平行工作</strong>。</td>
+<td align="left">實現執行緒處理的方法是使用 <strong>Runnable</strong>、<strong>Handler</strong>、<strong>ThreadPoolExecutor</strong> 及更高階的 <strong>AsyncTask</strong> 類別。</td>
+<td align="left">實現執行緒處理的方法是使用 <strong>NSThread</strong>、<strong>Grand Central Dispatch</strong> 及更高階的 <strong>NSOperation</strong>。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpool.runasync.aspx">RunAsync</a></strong> 將<strong>工作項目</strong>提交到<strong>執行緒集區</strong>來處理執行緒。 您可以使用計時器，使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230590.aspx">CreateTimer</a></strong> 提交工作項目，以及使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230589.aspx">CreatePeriodicTimer</a></strong> 建立重複性工作項目。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187339.aspx">將工作項目提交至執行緒集區</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187341.aspx">使用計時器提交工作項目</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187338.aspx">建立定期工作項目</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187336.aspx">使用執行緒集區的最佳做法</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Asynchronous programming.</strong> <br><br>Avoid threading complexity by taking advantage of asynchronous programming patterns to keep the UI thread responsive.</td>
-<td align="left">The use of <strong>threading is required</strong> to create your own asynchronous classes. Some built-in classes are asynchronous.</td>
-<td align="left">The use of <strong>threading is required</strong> is required to create your own asynchronous classes. Some built-in classes are asynchronous.</td>
-<td align="left">You can use asynchronous patterns to avoid blocking the main thread when you create your own APIs, e.g. using <strong>async</strong> and <strong>await</strong> in C# and Visual Basic. You can use the asynchronous built-in APIs which end in the word <strong>Async</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187335.aspx">Asynchronous programming</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187337.aspx">Call asynchronous APIs in C# or Visual Basic</a></td>
+<td align="left"><strong>非同步程式設計。</strong> <br><br>利用非同步程式設計模式避免執行緒處理的複雜度，以便讓 UI 執行緒保持回應。</td>
+<td align="left">建立您自己的非同步類別時，<strong>必須使用執行緒處理</strong>。 某些內建類別是非同步的。</td>
+<td align="left">建立您自己的非同步類別時，<strong>必須使用執行緒處理</strong>。 某些內建類別是非同步的。</td>
+<td align="left">建立您自己的 API 時，可以使用非同步模式來避免封鎖主要執行緒，例如，在 C# 和 Visual Basic 中使用 <strong>async</strong> 和 <strong>await</strong>。 您可以使用結尾為文字 <strong>Async</strong> 的非同步內建 API。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187335.aspx">非同步程式設計</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187337.aspx">在 C# 或 Visual Basic 中呼叫非同步 API</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>List view optimization.</strong> <br><br>Built-in patterns to aid with optimizing lists of data, which often have poor performance when large amounts of data need to be shown</td>
-<td align="left">The <strong>ViewHolder</strong> design pattern is used to avoid multiple view lookups, which allows you to use reusable UI elements.</td>
-<td align="left">A range of optimizations can be made to improve the performance of <strong>UITableView</strong>, nothing is built-in.</td>
-<td align="left">You can use the <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> controls which provide <strong>UI virtualization</strong> out-of-box, providing a smooth panning and scrolling experience and a faster startup time. You can also implement <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> and <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a> in your data source, providing <strong>data virtualization</strong> and further improving performance.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">ListView and GridView UI optimization</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">ListView and GridView data virtualization</a></td>
+<td align="left"><strong>清單檢視最佳化。</strong> <br><br>用來協助將資料清單最佳化的內建模式，這種清單需要顯示大量資料時，通常會發生效能不佳的情況</td>
+<td align="left"><strong>ViewHolder</strong> 設計模式是用來避免多個檢視查閱，可讓您使用重複使用的 UI 元素。</td>
+<td align="left">可進行一些最佳化以改善 <strong>UITableView</strong> 的效能，沒有任何內建項目。</td>
+<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> 和 <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">ListView 與 GridView UI 最佳化</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">ListView 與 GridView 資料虛擬化</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="monetization">Monetization</h2>
+<h2 id="monetization">營利</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -364,7 +364,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -372,32 +372,32 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>In-app purchases.</strong> <br><br>Platform features that allow users to make purchases in your apps.</td>
-<td align="left"><strong>In-app billing</strong> is provided by Google Services. Products are added to the <strong>Google Play Developer Console</strong>. In-app purchases are implemented with the <strong>Google Play Billing Library</strong>.</td>
-<td align="left">Products are added to <strong>iTunes Connect</strong>. In-app purchases are implemented using the <strong>StoreKit</strong> framework.<br/><br/>Products are purchased using <strong>SKMutablePayment</strong> and <strong>SKPaymentQueue</strong>.</td>
-<td align="left">You create in-app product purchases for your app by <a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">adding them to your app and submitting them to the Store</a>. <br/><br/>You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp class</a></strong> to define in-app purchases. <br/><br/>You use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> to display the UI that allows customers to purchase the product.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">Enable in-app product purchases</a></td>
+<td align="left"><strong>App 內購買。</strong> <br><br>允許使用者在您的 app 中進行購買的平台功能。</td>
+<td align="left"><strong>App 內帳單功能</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
+<td align="left">產品已新增至 <strong>iTunes Connect</strong>。 App 內購買使用 <strong>StoreKit</strong> 架構實作。<br/><br/>產品的購買使用 <strong>SKMutablePayment</strong> 和 <strong>SKPaymentQueue</strong>。</td>
+<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Consumable in-app purchases.</strong> <br><br>In-app products which can be purchased, used and then purchased again.</td>
-<td align="left">Consumable purchases are enabled by making a regular purchase and then consuming it with <strong>consumePurchase</strong>, enabling it to be purchased, used, and then purchased again.</td>
-<td align="left">Consumable products are <strong>defined as consumable products</strong> in iTunes Connect.</td>
-<td align="left">You can support consumables by <a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">defining their product type as Consumable when you submit them to</a> the Store. You then call <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong> after a consumable purchase has been made to allow the customer to access it.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">Enable consumable in-app purchases</a></td>
+<td align="left"><strong>App 內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
+<td align="left">消耗性物品購買是使用 <strong>consumePurchase</strong> 定期購買然後消耗，讓使用者能夠購買、使用並再次購買。</td>
+<td align="left">消耗性物品在 iTunes Connect 中是<strong>定義為消耗性物品</strong>。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">當您將產品類型定義為「消耗性物品」並提交到市集</a>時，即可支援消耗性物品。 接著，您可以在有人購買消耗性物品之後呼叫 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong>，以允許客戶存取它。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">啟用 App 內購買消耗性物品</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Testing in-app purchases.</strong> <br><br>Enabling you to test your in-app purchase code without putting your app in the Store.</td>
-<td align="left">The <strong>in-app billing sandbox</strong> is used for testing.</td>
-<td align="left"><strong>Sandbox tester accounts</strong> are used for testing.</td>
-<td align="left">You can test in-app purchases by simply using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> class in place of CurrentApp.<br/><br/></td>
+<td align="left"><strong>測試 App 內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試 App 內購買的程式碼。</td>
+<td align="left"><strong>App 內帳單功能沙箱</strong>用於測試。</td>
+<td align="left"><strong>沙箱測試人員帳戶</strong>用於測試。</td>
+<td align="left">只要使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試 App 內購買。<br/><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Trials.</strong> <br><br>Enabling you to easily limit content or remove advertising based on a trial version of an app.</td>
-<td align="left">Google Play <strong>doesn't officially support app trials</strong>. Trials or removing advertising is achieved by creating an in-app purchase and taking the appropriate code path when confirming the purchase was successful.</td>
-<td align="left">The App Store <strong>doesn't officially support app trials</strong>. Trials or removing advertising is achieved by creating an in-app purchase and taking the appropriate code path when confirming the purchase was successful.</td>
-<td align="left">You can offer a free trial version of your app by using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt148548.aspx">'Free Trial' option</a></strong> when submitting your app to the Store. You can then use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.istrial.aspx">LicenseInformation.IsTrial</a></strong> to check the trial status of the app and present different code paths accordingly. You can register for the <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.licensechanged">LicenseChanged event</a> to be notified when the user changes the trial status while the app is running.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219685.aspx">Exclude or limit features in a trial version</a></td>
+<td align="left"><strong>試用版。</strong> <br><br>讓您在 app 試用版上輕鬆地限制內容或移除廣告。</td>
+<td align="left">Google Play <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立 App 內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
+<td align="left">App Store <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立 App 內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
+<td align="left">提交 app 到市集時，使用 [免費試用]<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt148548.aspx"></a></strong> 選項，即可提供 app 的免費試用版。 接著您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.istrial.aspx">LicenseInformation.IsTrial</a></strong> 檢查 app 的試用狀態，並據此提供不同的程式碼路徑。 您也可以登錄 <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.licensechanged">LicenseChanged 事件</a>，在使用者於 app 正在執行時變更試用狀態時接收通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219685.aspx">在試用版本中排除或限制某些功能</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="adapting-to-multiple-platforms">Adapting to multiple platforms</h2>
+<h2 id="adapting-to-multiple-platforms">適應多個平台</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -407,7 +407,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -415,38 +415,38 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Adaptive UI: flexible layouts.</strong> <br><br>Supporting different screen sizes with a flexible height and width.</td>
-<td align="left">Flexible layouts can be achieved using the <strong>wrap_content</strong> and <strong>match_parent</strong> values in LinearLayout objects, or by making use of RelativeLayout objects for alignment.</td>
-<td align="left">Flexible layouts can be achieved using the <strong>adaptive model</strong> with universal Storyboards, making use of <strong>Auto Layout</strong> with <strong>constraints</strong> and <strong>traits</strong> such as horizontalSizeClass and displayScale which are applied to view controllers.</td>
-<td align="left">You can create a fluid layout using <strong>layout properties</strong> and <strong>panels</strong> with a combination of fixed and dynamic sizing.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">Define layouts with XAML - layout properties and panels</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Responsive design 101</a></td>
+<td align="left"><strong>調適型 UI︰彈性的版面配置。</strong> <br><br>使用彈性的高度和寬度支援不同的螢幕大小。</td>
+<td align="left">使用 LinearLayout 物件中的 <strong>wrap_content</strong> 和 <strong>match_parent</strong> 值，或是使用用於對齊的 RelativeLayout 物件，可建立彈性版面配置。</td>
+<td align="left">使用 <strong>adaptive model (調適型模型)</strong> 搭配通用 Storyboard (腳本)、使用 <strong>Auto Layout (自動版面配置)</strong> 搭配 <strong>constraints (限制式)</strong> 和 <strong>traits (特性)</strong> (例如 horizontalSizeClass 和 displayScale，它們可套用到檢視控制器)，可建立彈性版面配置。</td>
+<td align="left">使用<strong>版面配置屬性</strong>和<strong>面板</strong>搭配固定和動態調整大小的組合，可建立流暢版面配置。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">使用 XAML 定義版面配置 - 版面配置屬性與面板</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">回應式設計 101</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Adaptive UI: tailored layouts.</strong> <br><br>Supporting different screen sizes with separate targeted layouts.</td>
-<td align="left">Providing alternative layout files for different screen configurations in the resources directory using <strong>configuration qualifiers</strong> such as <strong>small</strong>, <strong>large</strong>, <strong>ldpi</strong>, and <strong>hdpi</strong> allows you to target custom layouts to screens of varying size and density.</td>
-<td align="left">Define a <strong>separate iPhone and iPad Storyboard</strong> to tailor layouts to different device families in a universal app.</td>
-<td align="left">You can build a tailored layout by defining <strong>different XAML markup files</strong> per device family.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#tailored_layouts">Define layouts with XAML - tailored layouts</a></td>
+<td align="left"><strong>調適型 UI︰量身訂做的版面配置。</strong> <br><br>使用適用目標不同的個別版面配置來支援不同的螢幕大小。</td>
+<td align="left">使用<strong>設定限定詞</strong>，例如 <strong>small</strong>、<strong>large</strong>、<strong>ldpi</strong> 和 <strong>hdpi</strong>，讓您針對各種大小和密度的螢幕自訂版面配置，在資源目錄中為不同的螢幕設定提供替代的版面配置檔案。</td>
+<td align="left">定義<strong>個別的 iPhone 和 iPad Storyboard (腳本)</strong>，在通用 app 中針對不同裝置系列量身打造版面配置。</td>
+<td align="left">依每個裝置系列定義<strong>不同的 XAML 標記檔案</strong>，可建置量身訂做的版面配置。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#tailored_layouts">使用 XAML 定義版面配置 - 量身訂做的版面配置</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Adaptive UI: responsive layouts.</strong> <br><br>Responding to changes in screen size, such as rotation, or a change in the size of a window.</td>
-<td align="left">Use of flexible layouts with <strong>LinearLayout</strong> and <strong>RelativeLayout</strong>, or providing alternative layout files for different orientations enable responsive layouts.</td>
-<td align="left">When the <strong>size</strong> or <strong>traits</strong> of a view change, the <strong>constraints</strong> specified in storyboards are applied.</td>
-<td align="left">You can easily reflow, reposition, resize, reveal, or replace sections of your UI at runtime in response to window size changes using <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>, the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">Define layouts with XAML - visual states and state triggers</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Responsive design 101</a></td>
+<td align="left"><strong>調適型 UI︰回應式版面配置。</strong> <br><br>回應螢幕大小的變更 (例如旋轉螢幕) 或視窗大小的變更。</td>
+<td align="left">使用彈性版面配置搭配 <strong>LinearLayout</strong> 和 <strong>RelativeLayout</strong>，或針對不同的方向提供替代版面配置檔案以啟用回應式版面配置。</td>
+<td align="left">當檢視的 <strong>size (大小)</strong> 或 <strong>traits (特性)</strong> 變更時，會套用 storyboard (腳本) 中指定的 <strong>constraint (限制式)</strong>。</td>
+<td align="left">使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>，可輕鬆在執行階段自動重排、重新定位、調整大小、顯示或取代 UI 區段以回應視窗大小變更。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">使用 XAML 定義版面配置 - 視覺狀態和狀態觸發程序</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">回應式設計 101</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Supporting different device capabilities.</strong> <br><br>Take advantage of advanced hardware features while still supporting devices without them.</td>
-<td align="left">Testing for device features at runtime using <strong>PackageManager.hasSystemFeature</strong> enables you to decide if hardware specific code can run.</td>
-<td align="left">There is <strong>no single check</strong> you can perform at runtime to test for device features, you test for each feature in a specific way to decide if hardware specific code can be run.</td>
-<td align="left">You can add <strong>platform extension SDKs</strong> to your package to target additional functionality found in different device families including phone, desktop, and IoT. You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> to test for the presence of types and members at runtime, and can call those types and members only if they're present.</td>
+<td align="left"><strong>支援不同的裝置功能。</strong> <br><br>利用進階的硬體功能，同時也支援沒有這些功能的裝置。</td>
+<td align="left">使用 <strong>PackageManager.hasSystemFeature</strong> 在執行階段測試裝置功能，可讓您決定硬體特定程式碼是否可以執行。</td>
+<td align="left">沒有可在執行階段測試裝置功能的<strong>單一檢查</strong>，您必須以特定方式測試每個功能，以決定硬體特定程式碼是否可以執行。</td>
+<td align="left">您可以新增<strong>平台擴充功能 SDK</strong> 到您的套件，以針對不同目標裝置系列 (例如手機、電腦及 IoT) 中的額外功能提供支援。 您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> 在執行階段測試某些類型和成員是否存在，並在這些類型和成員存在時呼叫它們。</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Supporting different device capabilities.</strong> <br><br>Take advantage of advanced hardware features while still supporting devices without them.</td>
-<td align="left">The <strong>Android Support Library</strong> can be packaged with your app to make some newer APIs available to those with older versions of Android. Testing for the API level at runtime can be done using <strong>Build.Version.SDK_INT</strong>.</td>
-<td align="left">Standard runtime checks are used to find out if APIs are available, such as the <strong>class</strong> method to check if a class exists and <strong>respondsToSelector:</strong> to check for methods on classes.</td>
-<td align="left">You can use <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn949005.aspx">ApiInformation.IsApiContractPresent</a></strong> to identify if an API contract with a specified major and minor number is present. You also use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> to test for the presence of types and members at runtime, and can call those types and members only if they're present.</td>
+<td align="left"><strong>支援不同的裝置功能。</strong> <br><br>利用進階的硬體功能，同時也支援沒有這些功能的裝置。</td>
+<td align="left"><strong>Android Support Library (Android 支援程式庫)</strong> 可以封裝到您的 app 中，讓舊版的 Android 也可以使用一些較新的 API。 使用 <strong>Build.Version.SDK_INT</strong> 可在執行階段測試 API 層級。</td>
+<td align="left">標準的執行階段檢查是用來了解 API 是否可用，例如，<strong>class</strong> 方法是用來檢查類別是否存在，而 <strong>respondsToSelector:</strong> 是用來檢查類別上的方法。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn949005.aspx">ApiInformation.IsApiContractPresent</a></strong>，識別是否存在指定的主版本和副版本數字的 API 協定。 您也可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> 在執行階段測試某些類型和成員是否存在，並在這些類型和成員存在時呼叫它們。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="notifications">Notifications</h2>
+<h2 id="notifications">通知</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -456,7 +456,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -464,26 +464,26 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Tiles and badges.</strong> <br><br>Present updates to users on the home screen.</td>
-<td align="left"><strong>App Widgets</strong> are views on your application that can be embedded into the home screen and can receive periodic updates. <strong>No badge system</strong> exists on Android. No identical system to tiles exists.</td>
-<td align="left"><strong>No tiles or widgets</strong> exist on iOS. You can add a <strong>badge</strong> to your icon with a number which can change in response to local or remote notifications.</td>
-<td align="left">Your app has a <strong>tile</strong> which can be pinned to the start screen and is used to display your choice of text, images, and a <strong>badge</strong> with glyphs and numbers. You can update the content of tiles from the app; via push notifications or at predefined schedules. Tiles can be adaptive, and can change according to where they are being displayed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">Create tiles</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">Create adaptive tiles</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choose a notification delivery method</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">Guidelines for tiles and badges</a></td>
+<td align="left"><strong>磚與徽章。</strong> <br><br>在主畫面上對使用者顯示更新。</td>
+<td align="left"><strong>App Widgets (小工具)</strong> 是應用程式上的檢視，可內嵌到主畫面，也可以接收定期更新。 <strong>Android 上沒有徽章系統</strong>。 此外，也沒有與磚完全一樣的系統。</td>
+<td align="left"><strong>iOS 上沒有磚或小工具</strong>。 您可以新增包含數字的<strong>徽章</strong>到圖示，這個數字會隨著本機或遠端通知的數目而變更。</td>
+<td align="left">您的 app 有可以釘選到開始畫面的<strong>磚</strong>，您用它來顯示您所選的文字、影像，以及包含字符和數字的<strong>徽章</strong>。 您可以從 app 更新磚的內容 (透過推播通知或根據預先定義的排程)。 磚可以具有彈性，根據顯示的位置來變更。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">建立磚</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">建立彈性磚</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">選擇通知傳遞方法</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">磚與徽章的指導方針</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Displaying notifications.</strong> <br><br>Types of notifications that can be displayed.</td>
-<td align="left">Notifications can be shown in the <strong>notification area</strong> and <strong>notification drawer</strong>, <strong>heads-up notifications</strong> present a notification in a small floating window. Notifications can have actions added to them by defining a <strong>PendingIntent</strong>.</td>
-<td align="left">Pop-up notifications appear as <strong>banners</strong> or <strong>alerts</strong>. You can add custom action buttons to <strong>actionable notifications</strong> which are defined with <strong>UIMutableUserNotificationAction</strong>.</td>
-<td align="left">You can create adaptive pop-up notifications called <strong>toast notifications</strong>. You can define toasts in XML with visual content, <strong>actions</strong> which can be buttons, or inputs and audio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Adaptive and interactive toast notifications</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choose a notification delivery method</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465391.aspx">Guidelines for toast notifications</a></td>
+<td align="left"><strong>顯示通知。</strong> <br><br>可以顯示的通知類型。</td>
+<td align="left">通知可以顯示在<strong>通知區域</strong>和<strong>通知選單</strong>，<strong>預告通知</strong>會在小型的浮動視窗中顯示通知。 定義 <strong>PendingIntent</strong> 可在通知中新增動作。</td>
+<td align="left">快顯通知會顯示為<strong>橫幅</strong>或<strong>警示</strong>。 您可以新增自訂動作按鈕到<strong>可執行動作的通知</strong>，該通知是使用 <strong>UIMutableUserNotificationAction</strong> 來定義的。</td>
+<td align="left">您可以建立稱為<strong>快顯通知</strong>的調適型快顯通知。 您可以在 XML 中定義包含視覺化內容、<strong>動作</strong> (可以是按鈕) 或輸入和音訊的快顯通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">調適型和互動式快顯通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">選擇通知傳遞方法</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465391.aspx">快顯通知的指導方針</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Scheduling local notifications.</strong> <br><br>Local notifications sent by your app at a scheduled time.</td>
-<td align="left">Notifications and actions are defined using a <strong>NotificationCompat.Builder</strong> and can be scheduled and handled in-app using <strong>AlarmManager</strong> and <strong>BroadcastReceiver</strong>.</td>
-<td align="left">Local notifications are created using <strong>UILocalNotification</strong>, and can be scheduled with ** UILocalNotification.scheduleLocalNotification:<strong>. | You can schedule a toast notification using </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong>. You can send a tile notification from your app using the </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification class</a><strong>, or schedule a tile notification with <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Adaptive and interactive toast notifications</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">Send a local tile notification</a> | | </strong>Sending push notifications.** A notification sent from a push notification server and optionally handled in-app.</td>
-<td align="left"><strong>Google Cloud Messaging</strong> provides push notification support for Android.</td>
+<td align="left"><strong>排程本機通知。</strong> <br><br>由您的 app 在排定的時間傳送的本機通知。</td>
+<td align="left">通知與動作是使用 <strong>NotificationCompat.Buildr</strong> 來定義的，而且可以在 app 中使用 <strong>AlarmManager</strong> 和 <strong>BroadcastReceiver</strong> 來排程並處理。</td>
+<td align="left">本機通知是使用 <strong>UILocalNotification</strong> 來建立的，而且可以使用 ** UILocalNotification.scheduleLocalNotification:<strong> 來排程。 您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> 排程快顯通知。 您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification 類別</a><strong>從 app 傳送磚通知，或使用 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> 排程磚通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">調適型和互動式快顯通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">傳送本機磚通知</a> | | </strong>傳送推播通知。**從推播通知伺服器傳送，而且可選擇在 app 內處理的通知。</td>
+<td align="left"><strong>Google 雲端通訊</strong>為 Android 提供推播通知支援。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="media-capture-and-rendering">Media capture and rendering</h2>
+<h2 id="media-capture-and-rendering">媒體擷取與轉譯</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -493,7 +493,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -501,26 +501,26 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Capturing media.</strong> <br><br>Recording audio and visual content.</td>
-<td align="left">Using an <strong>intent</strong> such as MediaStore.ACTION_VIDEO_CAPTURE allows media to be captured with an existing camera app. Using the <strong>android.hardware.camera2</strong> or <strong>camera</strong> library enables the implementation of a custom camera interface. <strong>MediaRecorder</strong> APIs can be used to capture audio.</td>
-<td align="left">The <strong>UIImagePickerController</strong> allows for the capture of video and photos with the system UI. The <strong>AVFoundation</strong> classes such as <strong>AVCaptureSession</strong> enable direct access to the camera. <br/>The <strong>AVAudioRecorder</strong> class enables audio recording.</td>
-<td align="left">You can capture photos and video while using the built-in camera UI with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.cameracaptureui.aspx">CameraCaptureUI class</a></strong>. You can interact with the camera at a low level, and capture audio with classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.aspx">Windows.Media.Capture</a></strong> such as the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.mediacapture.aspx">MediaCapture API</a></strong>. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt282142.aspx">Capture photos and video with CameraCaptureUI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243896.aspx">Capture photos and video with MediaCapture</a></td>
+<td align="left"><strong>擷取媒體。</strong> <br><br>錄製音訊和視覺化內容。</td>
+<td align="left">使用 <strong>intent</strong> (例如 MediaStore.ACTION_VIDEO_CAPTURE) 可利用現有的相機 app 擷取媒體。 使用 <strong>android.hardware.camera2</strong> 或 <strong>camera</strong> 程式庫可實作自訂相機介面。 <strong>MediaRecorder</strong> API 可用來擷取音訊。</td>
+<td align="left"><strong>UIImagePickerController</strong> 允許使用系統 UI 擷取視訊和相片。 <strong>AVFoundation</strong> 類別 (例如 <strong>AVCaptureSession</strong>) 可啟用對相機的直接存取。 <br/><strong>AVAudioRecorder</strong> 類別可啟用音訊錄製。</td>
+<td align="left">使用內建相機 UI 搭配 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.cameracaptureui.aspx">CameraCaptureUI 類別</a></strong>可擷取相片和視訊。 您可以與相機進行低階互動，並使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.aspx">Windows.Media.Capture</a></strong> 中的類別 (例如 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.mediacapture.aspx">MediaCapture API</a></strong>) 來擷取音訊。 <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt282142.aspx">使用 CameraCaptureUI 擷取相片和視訊</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243896.aspx">使用 MediaCapture 擷取相片和視訊</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Media playback.</strong> <br><br>Playing audio and video files.</td>
-<td align="left">The <strong>MediaPlayer</strong> and <strong>AudioManager</strong> classes are used to play audio and video files.</td>
-<td align="left">The <strong>AVKit framework</strong>, <strong>AVAudioPlayer</strong>, and <strong>Media Player Framework</strong> are used to play audio and video files.</td>
-<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.core.mediasource.aspx">MediaSource class</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx">MediaElement</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx">MediaPlayer</a></strong> classes to play back audio and video from sources such as local and remote files.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592657.aspx">Media playback with MediaSource</a></td>
+<td align="left"><strong>媒體播放。</strong> <br><br>播放音訊和視訊檔案。</td>
+<td align="left"><strong>MediaPlayer</strong> 和 <strong>AudioManager</strong> 類別可用來播放音訊和視訊檔案。</td>
+<td align="left"><strong>AVKit 架構</strong>、<strong>AVAudioPlayer</strong> 及 <strong>Media Player Framework (媒體播放程式架構)</strong> 可用來播放音訊和視訊檔案。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.core.mediasource.aspx">MediaSource 類別</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx">MediaElement</a></strong> 及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx">MediaPlayer</a></strong> 類別，播放本機和遠端檔案等來源的音訊與視訊。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592657.aspx">使用 MediaSource 進行媒體播放</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Editing media.</strong> <br><br>Composing new media files from existing recordings and applying special effects.</td>
-<td align="left">Low level classes such as <strong>MediaCodec</strong>, <strong>MediaMuxer</strong>, and <strong>android.media.effect</strong> can be used for content editing.</td>
-<td align="left">Classes in the <strong>AV Foundation</strong> framework such as <strong>AVMutableComposition</strong>, <strong>AVMutableVideoComposition</strong>, and <strong>AVMutableAudioMix</strong> can be used for content editing.</td>
-<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.aspx">Windows.Media.Editing</a></strong> APIs such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediacomposition.aspx">MediaComposition</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediaclip.aspx">MediaClip</a></strong> to create media compositions from audio and video files. You are able to add video and image overlays, combine video clips, add background audio, and apply audio and video effects.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204792.aspx">Media compositions and editing</a></td>
+<td align="left"><strong>編輯媒體。</strong> <br><br>從現有的錄製組成新的媒體檔案並套用特殊效果。</td>
+<td align="left"><strong>MediaCodec</strong>、<strong>MediaMuxer</strong> 及 <strong>android.media.effect</strong> 等低階類別可用來編輯內容。</td>
+<td align="left"><strong>AV Foundation</strong> 架構中的類別 (例如 <strong>AVMutableComposition</strong>、<strong>AVMutableVideoComposition</strong> 及 <strong>AVMutableAudioMix</strong>) 可用來編輯內容。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.aspx">Windows.Media.Editing</a></strong> API (例如 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediacomposition.aspx">MediaComposition</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediaclip.aspx">MediaClip</a></strong>)，從音訊與視訊檔案建立媒體組合。 您可以新增視訊與影像重疊、結合視訊剪輯、新增背景音訊，以及套用音訊與視訊效果。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204792.aspx">媒體組合和編輯</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="sensors">Sensors</h2>
+<h2 id="sensors">感應器</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -530,7 +530,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -538,14 +538,14 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Sensors.</strong> <br><br>Detect device movement, position and environmental properties.</td>
-<td align="left">The <strong>sensor framework</strong> is used to access hardware and software sensors with classes such as <strong>SensorManager</strong> and <strong>SensorEvent</strong>.</td>
-<td align="left">The <strong>Core Motion framework</strong> is used to access raw and processed sensor data.</td>
-<td align="left">You can use classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.aspx">Windows.Devices.Sensors</a></strong> to access sensor readings and events triggered when new reading data is received from the sensor.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187358.aspx">Sensors</a></td>
+<td align="left"><strong>感應器。</strong> <br><br>偵測裝置的移動、位置與環境屬性。</td>
+<td align="left"><strong>感應器架構</strong> 是用來搭配 <strong>SensorManager</strong> 和 <strong>SensorEvent</strong> 等類別存取硬體與軟體感應器。</td>
+<td align="left"><strong>Core Motion (核心動作) 架構</strong>是用來存取原始和已處理的感應器資料。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.aspx">Windows.Devices.Sensors</a></strong> 中的類別，來存取感應器讀數，以及存取從感應器接收新的讀數資料時觸發的事件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187358.aspx">感應器</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="location-and-mapping">Location and mapping</h2>
+<h2 id="location-and-mapping">位置與地圖功能</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -555,7 +555,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -563,38 +563,38 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Location.</strong> <br><br>Finding the device's <strong>current</strong> location and tracking <strong>changes</strong>.</td>
-<td align="left">The Google Play services location APIs provide high-level access to the <strong>last known location</strong> with the <strong>fused location provider</strong> using the <strong>getLastLocation</strong> and <strong>requestLocationUpdates</strong> methods. Low-level access is provided in the Android libraries with the <strong>LocationManager</strong>.</td>
-<td align="left">The <strong>Core Location</strong> <strong>CLLocationManager</strong> class is used to monitor a device's location, with <strong>startUpdatingLocation</strong> for the standard location service and <strong>startMonitoringSignificantLocationChanges</strong> for the <strong>significant-change</strong> location service.</td>
-<td align="left">You can track device location with classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.aspx">Windows.Devices.Geolocation</a></strong>. Use <strong><a href="https://msdn.microsoft.com/library/windows/apps/br225537.aspx">Geolocator.GetGeopositionAsync</a></strong> for a one-time reading. Use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.positionchanged.aspx">Geolocator.PositionChanged</a></strong> to obtain the location regularly using a timer, or be informed when the location has changed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219698.aspx">Get the user's location</a></td>
+<td align="left"><strong>位置。</strong> <br><br>尋找裝置的<strong>目前</strong>位置和追蹤<strong>變更</strong>。</td>
+<td align="left">Google Play 服務位置 API 使用 <strong>getLastLocation</strong> 和 <strong>requestLocationUpdates</strong> 方法搭配<strong>聯合的定位提供者</strong>，提供<strong>最後已知的位置</strong>的高階存取權。 低階存取權是透過 Android 程式庫中的 <strong>LocationManager</strong> 提供。</td>
+<td align="left"><strong>Core Location</strong> <strong>CLLocationManager</strong> 類別是用來監視裝置的位置 (搭配 <strong>startUpdatingLocation</strong> 用於標準位置服務；搭配 <strong>startMonitoringSignificantLocationChanges</strong> 用於<strong>重大變更</strong>位置服務)。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.aspx">Windows.Devices.Geolocation</a></strong> 中的類別來追蹤裝置位置。 針對單次讀取使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br225537.aspx">Geolocator.GetGeopositionAsync</a></strong>。 使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.positionchanged.aspx">Geolocator.PositionChanged</a></strong> 以計時器定期取得位置，或在位置變更時接收通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219698.aspx">取得使用者的位置</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Displaying maps.</strong> <br><br>Displaying an <strong>interactive built-in map</strong> and adding <strong>points of interest</strong>.</td>
-<td align="left">The <strong>GoogleMap</strong>, <strong>MapFragment</strong>, and <strong>MapView</strong> classes within the <strong>Google Maps Android API</strong> allow maps to be embedded in apps. Points of interest can be displayed using <strong>markers</strong> and the customizable <strong>Marker</strong> class.</td>
-<td align="left">Maps are embedded into iOS apps with the <strong>MKMapView</strong> class in the <strong>MapKit framework</strong>. <strong>Annotations</strong> can be added to apps to display points of interest using object classes such as <strong>MKPointAnnotation</strong> and view classes such as <strong>MKPinAnnotationView</strong>.</td>
-<td align="left">You can embed maps in your apps using the built-in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML control which provides 2D, 3D, and streetside views. You can add points of interest with a pushpin, image, or shape using classes such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">Display maps with 2D, 3D, and Streetside views</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">Display points of interest (POI) on a map</a></td>
+<td align="left"><strong>顯示地圖。</strong> <br><br>顯示<strong>互動式內建地圖</strong>及新增<strong>興趣點</strong>。</td>
+<td align="left"><strong>Google Maps Android API</strong> 內的 <strong>GoogleMap</strong>、<strong>MapFragment</strong> 和 <strong>MapView</strong> 類別可讓您將地圖內嵌到 app。 使用<strong>標記</strong>和可自訂的 <strong>Marker</strong> 類別可顯示興趣點。</td>
+<td align="left">使用 <strong>MapKit 架構</strong>中的 <strong>MKMapView</strong> 類別，可將地圖內嵌到 iOS app。 <strong>使用物件類別 (例如 <strong>MKPointAnnotation</strong>) 和檢視類別 (例如 <strong>MKPinAnnotationView</strong>)，可將註解</strong>新增到 app 以顯示興趣點。</td>
+<td align="left">您可以使用內建的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML 控制項 (可提供 2D、3D 和 Streetside 檢視)，以將地圖內嵌到 app。 您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong> 等類別，新增包含圖釘、影像或圖形的興趣點。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">顯示地圖的 2D、3D 和 Streetside 檢視</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">在地圖上顯示興趣點 (POI)</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Geofencing.</strong> <br><br>Monitor the entering and leaving of a particular geographic region.</td>
-<td align="left">Geofences are monitored using the <strong>Location Services</strong> in the Google Play Services SDK.</td>
-<td align="left">Regions are monitored with the <strong>CLCircularRegion</strong> class and registered with the <strong>CLLocationManager.startMonitoringForRegion:</strong>.</td>
-<td align="left">You can create a geofence with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofence.aspx">Geofence</a></strong> class and define your <strong>monitored states</strong> such as entering or leaving a region. Handle geofence events in the foreground with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofencemonitor.aspx">GeofenceMonitor class</a></strong>, and in the background with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.locationtrigger.aspx">LocationTrigger background class</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219702.aspx">Set up a geofence</a></td>
+<td align="left"><strong>地理柵欄。</strong> <br><br>監視進入和離開的特定地理區域。</td>
+<td align="left">使用 Google Play 服務 SDK 中的<strong>定位服務</strong>來監視地理柵欄。</td>
+<td align="left">使用 <strong>CLCircularRegion</strong> 類別監視區域，並使用 <strong>CLLocationManager.startMonitoringForRegion:</strong> 登錄區域。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofence.aspx">Geofence</a></strong> 類別建立地理柵欄並定義<strong>受監視狀態</strong> (例如進入或離開某個區域)。 使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofencemonitor.aspx">GeofenceMonitor 類別</a></strong>在前景處理地理柵欄事件，使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.locationtrigger.aspx">LocationTrigger 背景類別</a></strong>在背景處理地理柵欄事件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219702.aspx">設定地理柵欄</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Geocoding and reverse geocoding.</strong> <br><br>Converting addresses to geographic locations (geocoding) and converting geographic locations to addresses (reverse geocoding).<br/></td>
-<td align="left">The <strong>Geocoder</strong> class is used for geocoding and reverse geocoding.</td>
-<td align="left">The <strong>CLGeocoder</strong> class is used for geocoding.</td>
-<td align="left">You can perform geocoding using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx">MapLocationFinder class</a></strong> in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. You use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsasync.aspx">FindLocationsAsync</a></strong> for geocoding and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsatasync.aspx">FindLocationsAtAsync</a></strong> for reverse geocoding.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219697.aspx">Perform geocoding and reverse geocoding</a></td>
+<td align="left"><strong>地理編碼和反向地理編碼。</strong> <br><br>將地址轉換成地理位置 (地理編碼)，以及將地理位置轉換成地址(反向地理編碼)。<br/></td>
+<td align="left"><strong>Geocoder</strong> 類別用於地理編碼與反向地理編碼。</td>
+<td align="left"><strong>CLGeocoder</strong> 類別用於地理編碼。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx">MapLocationFinder 類別</a></strong>來執行地理編碼。 您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsasync.aspx">FindLocationsAsync</a></strong> 執行地理編碼，並使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsatasync.aspx">FindLocationsAtAsync</a></strong> 執行反向地理編碼。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219697.aspx">執行地理編碼和反向地理編碼</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Routes and directions.</strong> <br><br>Providing routes, distances, and directions between two geographical locations.</td>
-<td align="left">Google provides the web service <strong>Google Maps Directions API</strong> which can be used on Android although no SDK is provided.</td>
-<td align="left">Map Kit provides the <strong>MKDirections</strong> API which can be used to fetch information about a route and directions.</td>
-<td align="left">You can request a walking or driving route with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutefinder.aspx">MapRouteFinder</a></strong> class in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. Routes are returned as a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproute.aspx">MapRoute</a></strong> instance which can be easily shown on a MapControl. Directions are returned inside the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutemaneuver.aspx">MapRouteManeuver</a></strong> object.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219701.aspx">Display routes and directions on a map</a></td>
+<td align="left"><strong>路線和路線指引。</strong> <br><br>提供兩個地理位置之間的路線、距離與路線指引。</td>
+<td align="left">Google 提供 Web 服務 <strong>Google Maps Directions API</strong>，它可在 Android 上使用，雖然未提供 SDK。</td>
+<td align="left">地圖套件提供 <strong>MKDirections</strong> API，可用來取得路線和路線指引的相關資訊。</td>
+<td align="left">使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong> 中的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutefinder.aspx">MapRouteFinder</a></strong> 類別，可要求步行或行車路線。 路線會以 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproute.aspx">MapRoute</a></strong> 執行個體傳回，在 MapControl 上可輕鬆地顯示它。 路線指引會在 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutemaneuver.aspx">MapRouteManeuver</a></strong> 物件內傳回。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219701.aspx">在地圖上顯示路線和路線指引</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="app-to-app-communication">App-to-app communication</h2>
+<h2 id="app-to-app-communication">App 間通訊</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -604,7 +604,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -612,32 +612,32 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Invoking another app.</strong> <br><br>Launching another app, and optionally sharing data such as links, text, photos, videos, and files.</td>
-<td align="left">An <strong>implicit intent</strong> is used to launch another app, by defining an <strong>action</strong> and optional data in an <strong>Intent</strong> and calling it with <strong>startActivityForResult</strong>.<br/></td>
-<td align="left"><strong>App extensions</strong> can be used to provide access to app data to another app. <strong>URL schemes</strong> enable a URL to be passed to another app.</td>
-<td align="left">You can launch another app which has registered for a URI with <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx">Launcher.LaunchUriAsync</a></strong>, or <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriforresultsasync.aspx">Launcher.LaunchUriForResultsAsync</a></strong> to launch for results and get data back from the launched app. You can use <strong><a href="https://msdn.microsoft.com/library/windows/apps/hh701471.aspx">Launcher.LaunchFileAsync</a></strong> to pass a file to another app to handle.<br/><br/>You can use a <strong>share contract</strong> to easily share data between apps.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228340.aspx">Launch the default app for a URI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Launch an app for results</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299102.aspx">Launch the default app for a file</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243293.aspx">Share data</a></td>
+<td align="left"><strong>叫用另一個 app。</strong> <br><br>啟動另一個 app，以及選擇性地分享資料 (例如，連結、文字、相片、影片及檔案)。</td>
+<td align="left"><strong>隱含意圖</strong> 是用來啟動另一個 app，方法是定義 <strong>Intent (意圖)</strong> 中的<strong>動作</strong>和選擇性資料，並使用 <strong>startActivityForResult</strong> 呼叫它。<br/></td>
+<td align="left"><strong>App 延伸模組</strong>可用來將 App 資料的存取權提供給另一個 App。 <strong>URL 配置</strong>可讓您將 URL 傳遞給另一個 App。</td>
+<td align="left">您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx">Launcher.LaunchUriAsync</a></strong> 來啟動已登錄 URI 的另一個 app，或使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriforresultsasync.aspx">Launcher.LaunchUriForResultsAsync</a></strong> 來啟動以取得結果，並從已啟動的 app 取回資料。 您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/hh701471.aspx">Launcher.LaunchFileAsync</a></strong> 將檔案傳送到另一個 app 進行處理。<br/><br/>您可以使用<strong>分享協定</strong>輕鬆在 app 之間分享資料。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228340.aspx">啟動 URI 的預設 app</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">啟動 app 以取得結果</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299102.aspx">啟動檔案的預設 app</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243293.aspx">分享資料</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Allowing your app to be invoked.</strong> <br><br>Allow your app to respond to a request from another app.</td>
-<td align="left">Apps register an <strong>intent handling activity</strong> with an <strong>intent filter</strong> to respond to an implicit intent from another app.</td>
-<td align="left">Packaging an <strong>app extension</strong> enables data to be shared with other apps. Apps can register a <strong>custom URL scheme</strong> using the <strong>CFBundleURLTypes</strong> key in Info.plist.</td>
-<td align="left">You can register your app to be the default handler for a <strong>URI scheme name</strong> by registering a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.activationkind.aspx#Protocol">protocol</a></strong> in the package manifest and updating the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx">Application.OnActivated</a></strong> event handler, optionally returning results. In the same way you can register your app to be the default handler for certain file types by adding a declaration in the package manifest and handling the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onfileactivated.aspx">Application.OnFileActivated</a></strong> event.<br/><br/>You can handle share contract requests by registering your app as a share target in the manifest and handling the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onsharetargetactivated.aspx">Application.OnShareTargetActivated</a></strong> event.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Launch an app for results</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269385.aspx">Handle file activation</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243292.aspx">Receive data</a></td>
+<td align="left"><strong>允許叫用您的 app。</strong> <br><br>允許您的 app 回應另一個 app 的要求。</td>
+<td align="left">App 使用<strong>意圖篩選器</strong>登錄<strong>意圖處理活動</strong>，以回應另一個 app 的隱含意圖。</td>
+<td align="left">封裝 <strong>app 延伸模組</strong>可讓資料與其他 app 分享。 App 可以使用 Info.plist 中的 <strong>CFBundleURLTypes</strong> 機碼來登錄<strong>自訂 URL 配置</strong>。</td>
+<td align="left">您可以登錄 app 做為 <strong>URI 配置名稱</strong>的預設處理常式，方法是在套件資訊清單中登錄<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.activationkind.aspx#Protocol">通訊協定</a></strong>並更新 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx">Application.OnActivated</a></strong> 事件處理常式，也可以選擇性傳回結果。 同樣地，您可以登錄 app 做為特定檔案類型的預設處理常式，方法是在套件資訊清單中新增宣告並處理 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onfileactivated.aspx">Application.OnFileActivated</a></strong> 事件。<br/><br/>您可以處理分享協定要求，方法是在資訊清單中將 app 登錄為分享目標並處理 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onsharetargetactivated.aspx">Application.OnShareTargetActivated</a></strong> 事件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">啟動 app 以取得結果</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269385.aspx">處理檔案啟用</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243292.aspx">接收資料</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Copy and paste.</strong> <br><br>Copy and pasting text and other content between apps.</td>
-<td align="left">The <strong>clipboard framework</strong> can be used to implement copy and paste with the <strong>ClipboardManager</strong> and <strong>ClipData</strong> classes.</td>
-<td align="left">The <strong>UIPasteboard</strong>, <strong>UIMenuController</strong>, and <strong>UIResponderStandardEditActions</strong> can be used to implement copy and paste.</td>
-<td align="left">Many default XAML controls already support copy and paste. You can implement copy and paste yourself using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx">DataPackage</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.aspx">Clipboard</a></strong> classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/br205967">Windows.ApplicationModel.DataTransfer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243291.aspx">Copy and paste</a></td>
+<td align="left"><strong>複製和貼上。</strong> <br><br>在 app 之間複製和貼上文字與其他內容。</td>
+<td align="left"><strong>剪貼簿架構</strong>可讓您使用 <strong>ClipboardManager</strong> 和 <strong>ClipData</strong> 類別來實作複製和貼上。</td>
+<td align="left"><strong>UIPasteboard</strong>、<strong>UIMenuController</strong> 與 <strong>UIResponderStandardEditActions</strong> 可以用來實作複製和貼上。</td>
+<td align="left">許多預設 XAML 控制項已經支援複製和貼上。 使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/br205967">Windows.ApplicationModel.DataTransfer</a></strong> 中的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx">DataPackage</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.aspx">Clipboard</a></strong> 類別，即可自行實作複製和貼上。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243291.aspx">複製和貼上</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Drag and drop.</strong> <br><br>Dragging and dropping content between apps.</td>
-<td align="left">Drag and drop can be implemented within a single application by using the <strong>Android drag/drop framework</strong>.</td>
-<td align="left">No high-level drag and drop APIs are provided by iOS.</td>
-<td align="left">You can implement dragging and dropping in your app to enable app-to-app, desktop-to-app, and app-to-desktop drag and drop capabilities. You implement drag and drop support in the UIElement class with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx">AllowDrop</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx">CanDrag</a></strong> properties, and the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx">DragOver</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx">Drop</a></strong> events.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt227651.aspx">Drag and drop</a></td>
+<td align="left"><strong>拖放功能。</strong> <br><br>在 app 之間拖放內容。</td>
+<td align="left">使用 <strong>Android 拖放架構</strong>即可在單一 app 內部實作拖放功能。</td>
+<td align="left">iOS 沒有提供高階的拖放功能 API。</td>
+<td align="left">您可以在 app 中實作拖放功能，以啟用 app 到 app、桌面到 app 及 app 到桌面之間的拖放功能。 使用 UIElement 類別搭配 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx">AllowDrop</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx">CanDrag</a></strong> 屬性，以及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx">DragOver</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx">Drop</a></strong> 事件，即可實作拖放支援。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt227651.aspx">拖放</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="software-design">Software design</h2>
+<h2 id="software-design">軟體設計</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -647,7 +647,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>General concept</strong></th>
+<th align="left"><strong>一般概念</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
 <th align="left"><strong>Windows 10 UWP</strong></th>
@@ -655,16 +655,16 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Software design patterns.</strong> <br><br>Recommended or well-used patterns for the platform.</td>
-<td align="left">No formal pattern has been recommended or provided for Android development, although the beta Data Binding Framework may enable more widespread use of the <strong>Model-View-ViewModel (MVVM)</strong> pattern. A number of third party articles and frameworks recommend the <strong>Model-View-Presenter (MVP)</strong> and <strong>MVVM</strong> approaches.</td>
-<td align="left"><strong>Model-View-Controller (MVC)</strong> is a common pattern used with iOS and is integrated into the platform.</td>
-<td align="left">You are not limited towards a specific pattern when building for UWP.<br/><br/>You can use the built-in <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">data binding</a> pattern to ensure clean separation of data concerns and UI concerns, and avoid having to code up UI event handlers which then update property values.<br/><br/>You can extend data binding to follow the <strong>Model-View-ViewModel (MVVM)</strong> pattern, either by making use of third-party MVVM libraries such as <a href="https://mvvmlight.codeplex.com/">MVVM Light Toolkit</a>, or rolling your own and keeping logic out of code-behind.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">The MVVM Pattern</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Template 10 Visual Studio project templates</a></td>
+<td align="left"><strong>軟體設計模式。</strong> <br><br>適用於平台的建議模式或常用模式。</td>
+<td align="left">對於 Android 開發沒有建議或提供官方模式，不過搶鮮版 (Beta) 的「資料繫結架構」可能會讓 <strong>Model-View-ViewModel (MVVM)</strong> 模式更廣泛地使用。 許多協力廠商文章和架構建議 <strong>Model-View-Presenter (MVP)</strong> 和 <strong>MVVM</strong> 方法。</td>
+<td align="left"><strong>Model-View-Controller (MVC)</strong> 是與 iOS 搭配的常用模式，而且已整合到平台中。</td>
+<td align="left">針對 UWP 進行建置時，並沒有限制您必須使用特定模式。<br/><br/>您可以使用內建<a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">資料繫結</a>模式以確保清楚區分資料和 UI 的考量，而且無需撰寫稍後會更新屬性值之 UI 事件處理常式的程式碼。<br/><br/>您可以延伸資料繫結以遵循 <strong>Model-View-ViewModel (MVVM)</strong> 模式，方法是使用第三方 MVVM 程式庫 (例如 <a href="https://mvvmlight.codeplex.com/">MVVM Light Toolkit</a>)，或是啟動您自己的而不使用程式碼後置的邏輯。<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">MVVM 模式</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Template 10 Visual Studio 專案範本</a></td>
 </tr>
 </tbody>
 </table>
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

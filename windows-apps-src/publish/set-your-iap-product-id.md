@@ -1,17 +1,51 @@
 ---
-redirect_url: https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id
+author: jnHs
+Description: "當您在 Windows 開發人員中心儀表板建立新的 IAP (應用程式內產品) 時，您將需要指定產品類型並指派產品識別碼給它。"
+title: "設定您的 IAP 產品類型和產品識別碼"
+ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 1552dc14937c704e1db710cf5226d8b698ce890f
+ms.sourcegitcommit: ae4727974af632a275c102a6328734597cee3e9b
+ms.openlocfilehash: 9faee009cd907cd8ccdeded019e23713cbc058f0
 
 ---
 
-# Set your IAP product type and product ID
+# 設定您的 IAP 產品類型和產品識別碼
 
-This page has been redirected to: Set your add-on product type and product ID
+IAP 必須與您已經在儀表板中建立的 app 相關聯 (即使您尚未送出 app)。 您可以在 app 的 [概觀]**** 頁面或其 [IAP]**** 頁面上找到 [建立新的 IAP]**** 按鈕。
+
+按下按鈕之後，就會看到 [建立新的 IAP]**** 頁面。 您需要在這裡指定產品類型並指派其產品識別碼。
+
+## 產品類型
+
+首先，您必須表明您所提供的 IAP 類型。 此選取項目指的是客戶可以如何使用您的 IAP。
+
+> **注意** 儲存此頁面建立 IAP 之後，您將無法變更產品類型。 如果不慎選錯了產品類型，您隨時可以刪除進行中的 IAP 提交，並建立新的 IAP 以重新開始。
+
+選取適合您的 IAP 的產品類型：
+
+- [消耗性物品]：可以購買、使用 (消耗)，然後再次購買的產品。 消耗型 IAP 通常用於遊戲內的貨幣 (金幣、錢幣等)，客戶可以購買設定的量並使用。
+- [耐久品]：買家購買後可擁有一段特定期間的產品。 耐用型 IAP 通常用於解除鎖定 app 中的額外功能。 耐用型 IAP 無法消耗，但是您可以設定 [產品存留期]****，在設定的期間後會到期 (可選擇 1-365 天)。 耐用型 IAP 的預設 [產品存留期]**** 為 [永久]****，這表示 IAP 永久有效。 您可以在 IAP 提交程序的 [IAP 屬性](enter-iap-properties.md)步驟中變更為其他持續時間。
+
+## 產品識別碼
+
+請輸入您 IAP 的唯一產品識別碼。 這和您在[您的 app 程式碼中呼叫 IAP](https://msdn.microsoft.com/library/windows/apps/mt219684) 所需參照的識別碼相同。
+
+以下是一些選擇產品識別碼時值得注意的事項：
+
+-   客戶不會看到這個產品識別碼。 (您之後可以輸入要對客戶顯示的[標題和描述](create-iap-descriptions.md))。
+-   您在 IAP 發佈之後，無法變更或刪除 IAP 的產品識別碼。
+-   產品識別碼的長度不能超過 100 個字元。
+-   產品識別碼不能包含下列任何字元：**&lt;&gt; \* % &amp; : \\ ? + ,**
+-   若要在所有裝置上提供您的 IAP，您只能使用英數字元、句點和/或底線。 如果您使用任何其他類型的字元，IAP 將無法供執行 Windows Phone 8.1 或更舊版本的客戶購買。
+-   產品識別碼在 Windows 市集中不一定要是唯一的，但是對您的開發人員帳戶則必須是唯一的。
+ 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

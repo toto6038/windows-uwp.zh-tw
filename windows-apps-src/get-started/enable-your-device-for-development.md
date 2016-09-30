@@ -1,218 +1,185 @@
 ---
-author: GrantMeStrength
+author: martinekuan
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: Enable your device for development
-description: Configure your Windows 10 device for development and debugging.
+title: "啟用您的裝置以用於開發"
+description: "針對 Windows 10 裝置的開發已有不同的方法。"
 keywords: enable device
 translationtype: Human Translation
-ms.sourcegitcommit: 6e8849b2ed067206ab14c4339f74c5219dcca16b
-ms.openlocfilehash: 66413b43e5b9fd285324fd139fe14527dbee940a
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c890d6202a3151e8fc0cf03b3ff33b98cd6a863
 
 ---
-# Enable your device for development
+# 啟用您的裝置以用於開發
 
-Before you can write apps, you will need to enable Developer Mode on both your development PC, and on any devices on which you'll test your code.
+針對 Windows 10 裝置的開發已有不同的方法。 對於您要用來開發、安裝或測試 app 的每個裝置，您不再需要開發人員授權。 您只需從裝置的設定針對這些工作啟用一次即可。 就這麼簡單。 不需要再每隔 30 或 90 天更新您的開發人員授權。
 
-## Use developer features
+若您仍使用 Windows 8.1 裝置，利用 Microsoft Visual Studio 2013 或 Microsoft Visual Studio 2015 開發或測試 app，則還是需要[取得開發人員授權](https://msdn.microsoft.com/library/windows/apps/Hh974578)或[註冊您的 Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128)。
 
-### Develop your app with Microsoft Visual Studio
+## 使用開發人員功能
 
-You must enable Developer Mode on your PC before you can open a UWP app project in Visual Studio. If you open a UWP project and Developer Mode is not enabled, the **For developers** settings page opens automatically. Follow the instructions in the next section to enable Developer Mode.
+### 使用 Microsoft Visual Studio 開發您的 app
 
-When you open a UWP app project in Visual Studio on Windows 10, version 1511 or earlier, you will see this dialog in Visual Studio. 
+如果您在 Windows 10 裝置上使用 Microsoft Visual Studio，且開啟 Windows 8.1 或 Windows 10 app 的方案，系統會提示您使用此對話方塊來啟用您的裝置。 您需要啟用裝置，才能使用設計工具以及為您的應用程式偵錯。
 
-![Enable developer mode dialog that is displayed in Visual Studio](images/latestenabledialog.png)
+![Visual Studio 中顯示的 [啟用開發人員模式] 對話方塊](images/latestenabledialog.png)
 
-When you see this dialog, click **settings for developers** to open the **For developers** settings page and enable Developer Mode.
+當您看到這個對話方塊時，按一下 [**開發人員的設定**] 直接前往 [**更新與安全性**] 頁面，如下所示。 或按一下 [確定]****，然後依照下列步驟，啟用您的 Windows 10 裝置來進行開發。
 
-> You can go to the **For developers** page at any time to enable or disable Developer Mode: simply enter "developer settings" into the Cortana search box in the taskbar.
+### 啟用您的 Windows 10 裝置
 
-### Enable your Windows 10 devices
+針對 Windows 10，您可以選擇要在裝置上啟用的開發人員功能。 這包括任何裝置：Windows 10 桌上型電腦、平板電腦與手機。 您可以啟用裝置進行開發，或直接側載。
 
-You can enable a device for development, or just for sideloading.
+-   「側載」**是安裝並執行或測試未經 Windows 市集認證的 app。 例如，僅供公司內部使用的 app。
+-   「開發人員模式」**可讓您側載 app，也可從 Visual Studio 的偵錯模式中執行 app。
 
--   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
--   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
+**注意**：如果您要側載 app，您仍只應安裝來自受信任來源的 app。 當您安裝未經 Windows 市集認證的側載 app 時，表示您同意您已具備側載這些 app 所需的所有權利，並為安裝和執行 app 造成的任何損害負全責。 請參閱這份[隱私權聲明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; ＜Windows 市集＞小節。
 
-    When you enable Developer Mode, a package of options is installed that includes:
-    - Installs Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
-    - Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
-    - (Desktop only) Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
+**使用開發人員功能**
 
-For more detailed info about the options, see [Which settings should I choose: sideload apps or developer mode?](https://msdn.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#which-settings-should-i-choose-sideload-apps-or-developer-mode)
+1.  在您要啟用的裝置上，移至 [設定]****。 選擇 [更新與安全性]****，然後選擇 [適用於開發人員]****。
+2.  選擇您需要的存取層級。 如需更多有關選項的詳細資訊，請參閱[應該選擇哪一個設定：側載 app 或開發人員模式？](#WhichSettings)
+3.  閱讀您選擇的設定免責聲明，然後按一下 [是]**** 接受變更。
 
-**To use developer features**
+以下是在傳統型裝置系列上的 [設定] 頁面。
 
-1.  On your device that you want to enable, go to **Settings**. Choose **Update & security**, then choose **For developers**.
-2.  Choose the level of access that you need - to develop UWP apps, choose **Developer Mode**. 
-3.  Read the disclaimer for the setting you chose, then click **Yes** to accept the change.
+![請移至 [設定] 並選擇 [更新與安全性]，然後選擇 [適用於開發人員] 以檢視您的選項](images/devmode-pc-options.png)
 
-> [!NOTE]
-> If your device is owned by an organization, some options might be disabled by your organization as shown here.
+以下是在行動裝置系列上的 [設定] 頁面。
 
-Here's the settings page on the desktop device family.
+![從手機上的 [設定]，選擇 [更新與安全性]](images/devmode-mob.png)
 
-![Go to Settings, choose Update and security and then choose For developers to view your options](images/devmode-pc-options.png)
+### 應該選擇哪一個設定：側載 app 或開發人員模式？
 
-Here's the settings page on the mobile device family.
+根據預設，您只能從 Windows 市集安裝通用 Windows 平台 (UWP) app。 變更這些設定來使用開發人員功能，可以變更裝置的安全性層級。 您不應該從未驗證的來源安裝 app。
 
-![From Settings on your phone, choose Update and security](images/devmode-mob.png)
+**側載 app**
 
-## Developer Mode features
+通常是需要在受管理裝置上安裝自訂 app 而不經過 Windows 市集的公司或學校才會使用側載 app 設定。 在這個案例中，常見的情況是組織要強制執行停用「Windows 市集 app」**設定的原則，如先前在手機 [設定] 頁面的影像中所示。 組織也會提供側載 app 所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
 
-For each device family, additional developer features might be available. These features are available only when Developer Mode is enabled on the device, and might vary depending on your OS version.
+裝置系列特定的資訊
 
-This image shows developer features for the mobile device family on Windows 10, Version 1511.
+-   在傳統型裝置系列上：您可以執行使用套件 ("Add-AppDevPackage.ps1") 建立的 Windows PowerShell 指令碼，來安裝 app 套件 (.appx) 以及執行該 app 所需的任何憑證。
 
-![Developer mode options for mobile devices](images/devmode-mob-options.png) 
+-   在行動裝置系列上：如果已經安裝所需的憑證，您可以點選檔案來安裝任何要透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
 
-### <span id="device-discovery-and-pairing"></span>Device Portal
+因為您無法在不具受信任憑證的裝置上安裝 app，所以**側載 app** 會是比開發人員模式更安全的選項。
 
-To learn more about device discovery and Device Portal, see [Windows Device Portal overview](../debug-test-perf/device-portal.md).
+**開發人員模式**
 
-For device specific setup instructions, see:
-- [Device Portal for Desktop](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Device Portal for HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [Device Portal for IoT](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
-- [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
-- [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
+除了側載功能，開發人員模式設定還會啟用偵錯和其他部署選項。 它取代了 Windows 8.1 對開發人員授權的需求。
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues. 
+裝置系列特定的資訊
 
-###SSH
+-   在傳統型裝置系列上：
 
-SSH services are enabled when you enable Developer Mode on your device.  This is used when your device is a deployment target for UWP applications.   The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
+    啟用開發人員模式，在 Visual Studio 中開發和偵錯 app。 如先前所述，若未啟用開發人員模式，系統將會在 Visual Studio 中提示您。
 
-> [!NOTE]
-> This is not Microsoft's OpenSSH implementation, which you can find on [GitHub](https://github.com/PowerShell/Win32-OpenSSH).
+-   在行動裝置系列上：
 
-In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, simply disable Developer Mode.  
+    啟用開發人員模式，從 Visual Studio 部署 app 並在裝置上進行偵錯。
 
-### Device Discovery
+    您可以點選檔案來安裝透過電子郵件傳送給您或 SD 記憶卡上的任何 .appx。 請勿從未驗證的來源安裝應用程式。
 
-When you enable device discovery, you are allowing your device to be visible to other devices on the network through mDNS.  This feature also allows you to get the SSH pin for pairing to this device.  
+**提示**  
+有數個工具可讓您用來將應用程式從 Windows 10 電腦部署到 Windows 10 行動裝置。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。 列出的任一個方法只會安裝 app 套件 (.appx)。它們不會安裝憑證。
 
-![Pin pairing](images/devmode-pc-pinpair.PNG)
+-   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)。
+-   從 Windows 10 版本 1511 開始，您可以使用 [Device Portal](#device_portal)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal (&lt;IP&gt;/appmanager.md) 中的 [應用程式]**** 頁面來上傳 app 套件 (.appx)，並將其安裝在裝置上。
 
-You should enable device discovery only if you intend to make the device a deployment target. For example, if you use Device Portal to deploy an app to a phone for testing, you need to enable device discovery on the phone, but not on your development PC.
+ 
 
-### Error reporting (Mobile only)
+### 設定群組原則或登錄機碼
 
-Set this value to specify how many crash dumps are saved on your phone.
+您也可以使用群組原則或登錄機碼，做為啟用您的 Windows 10 傳統型裝置來進行開發的替代方法。
 
-Collecting crash dumps on your phone gives you instant access to important crash information directly after the crash occurs. Dumps are collected for developer-signed apps only. You can find the dumps in your phone's storage in the Documents\\Debug folder. For more info about dump files, see [Using dump files](https://msdn.microsoft.com/library/d5zhxt22.aspx).
+**在傳統型裝置系列上**
 
-### Optimizations for Windows Explorer, Remote Desktop, and PowerShell (Desktop only)
+除非您有 Windows 10 家用版，否則請使用 gpedit.msc 設定群組原則來啟用您的裝置。 如果您有 Windows 10 家用版，您需要使用 regedit 或 PowerShell 命令，直接設定登錄機碼來啟用您的裝置。
 
- On the desktop device family, the **For developers** settings page has shortcuts to settings that you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply**, or click the **Show settings** link to open the settings page for that option. 
+**使用 gpedit 啟用您的裝置**
 
-## Which settings should I choose: sideload apps or developer mode?
+1.  執行 **Gpedit.msc**。
+2.  移至 [本機電腦原則] &gt; [電腦設定] &gt; [系統管理範本] &gt; [Windows 元件] &gt; [應用程式套件部署]
+3.  若要啟用側載功能，請編輯原則來啟用：
 
-By default, you can only install Universal Windows Platform (UWP) apps from the Windows Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
+    -   **允許安裝所有受信任的 app**
 
-### Sideload apps
+    - 或 -
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+    若要啟用開發人員模式，請編輯原則來啟用這兩者：
 
-Device family specific info
+    -   **允許安裝所有受信任的 app**
+    -   **允許開發 Windows 市集 app，並從整合式開發環境 (IDE) 安裝它們。**
 
--   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
+4.  將電腦重新開機。
 
--   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
+**使用 regedit 啟用您的裝置**
 
-**Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
-
-> [!NOTE]
-> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
-
-### Developer Mode
-
-Developer Mode replaces the Windows 8.1 requirements for a developer license.  In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow this device to be deployed to. In order to stop this service, you have to disable Developer Mode.
-
-Device family specific info
-
--   On the desktop device family:
-
-    Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
-
-    Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
-
--   On the mobile device family:
-
-    Enable developer mode to deploy apps from Visual Studio and debug them on the device.
-
-    You can tap the file to install any .appx sent to you via email or on an SD card. Do not install apps from unverified sources.
-
-**Tip**  
-There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 mobile device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Either of the ways listed installs only the app package (.appx); they do not install certificates.
-
--   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   Starting in Windows 10, Version 1511, you can use [Device Portal](#device_portal) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
-
-## Use group policies or registry keys to enable a device
-
-For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.
-
-You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home. If you do have Windows 10 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
-
-**Use gpedit to enable your device**
-
-1.  Run **Gpedit.msc**.
-2.  Go to Local Computer Policy &gt; Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; App Package Deployment
-3.  To enable sideloading, edit the policies to enable:
-
-    -   **Allow all trusted apps to install**
-
-    - OR -
-
-    To enable developer mode, edit the policies to enable both:
-
-    -   **Allow all trusted apps to install**
-    -   **Allows development of Windows Store apps and installing them from an integrated development environment (IDE)**
-
-4.  Reboot your machine.
-
-**Use regedit to enable your device**
-
-1.  Run **regedit**.
-2.  To enable sideloading, set the value of this DWORD to 1:
+1.  執行 **regedit**。
+2.  若要啟用側載功能，請將此 DWORD 的值設定為 1：
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
-    - OR -
+    - 或 -
 
-    To enable developer mode, set the values of this DWORD to 1:
+    若要啟用開發人員模式，請將此 DWORD 的值設定為 1：
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
-**Use PowerShell to enable your device**
+**使用 PowerShell 啟用您的裝置**
 
-1.  Run PowerShell with administrator privileges.
-2.  To enable sideloading, run this command:
+1.  使用系統管理員權限執行 PowerShell。
+2.  若要啟用側載功能，請執行下列命令：
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
-    - OR -
+    - 或 -
 
-    To enable developer mode, run this command:
+    若要啟用開發人員模式，請執行下列命令：
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## Upgrade your device from Windows 8.1 to Windows 10
+## 開發人員模式功能
 
-When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10, this information remains. Run the following command to remove this information from your upgraded Windows 10 device. This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.
+每個裝置系列可能都會有額外的開發人員功能。 只有在裝置上啟用 [**開發人員模式**] 時才能使用這些功能，而且可能會根據 OS 版本而不同。
 
-**To unregister a developer license**
+此圖顯示 Windows 10 1511 版上行動裝置系列的開發人員功能。
 
-1.  Run PowerShell with administrator privileges.
-2.  Run this command: **unregister-windowsdeveloperlicense**.
+![適用於行動裝置的開發人員模式選項](images/devmode-mob-options.png)
 
-After this you need to enable your device for development as described in this topic so that you can continue to develop on this device. If you don't do that, you might get an error when you debug your app, or you try to create a package for it. Here is an example of this error:
+### <span id="device-discovery-and-pairing"></span>裝置探索和 Device Portal
 
-Error : DEP0700 : Registration of the app failed.
+若要深入了解裝置探索和 Device Portal，請參閱 [Windows Device Portal 概觀](../debug-test-perf/device-portal.md)。
+
+如需裝置特定的安裝指示，請參閱︰
+- [HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [IoT 的 Device Portal](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [行動裝置的 Device Portal](../debug-test-perf/device-portal-mobile.md)
+- [Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
+
+### 錯誤報告
+
+設定此值，以指定手機上儲存了多少損毀傾印。
+
+收集手機上的損毀傾印，讓您能夠在發生當機之後，即時直接存取重要的毀損資訊。 系統只會針對開發人員簽署的 app 收集傾印。 您可以在手機儲存體的 Documents\Debug 資料夾中找到傾印。 如需傾印檔案的詳細資訊，請參閱[使用傾印檔案](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
+
+## 將裝置從 Windows 8.1 升級至 Windows 10
+
+在 Windows 8.1 裝置上建立或側載 app 時，您必須安裝開發人員授權。 如果您將裝置從 Windows 8.1 升級為 Windows 10，則會保留此資訊。 執行下列命令，從升級後的 Windows 10 裝置移除此資訊。 如果您直接從 Windows 8.1 升級為 Windows 10 版本 1511 或更新版本，就不需要執行此步驟。
+
+**取消註冊開發人員授權**
+
+1.  使用系統管理員權限執行 PowerShell。
+2.  執行此命令：**unregister-windowsdeveloperlicense**。
+
+在這之後，您需要啟用裝置來進行開發 (如本主題所述)，讓您能夠繼續在此裝置上進行開發。 如果您沒有這樣做，在偵錯您的 app 或嘗試為它建立套件時可能會收到錯誤。 以下是此錯誤的範例：
+
+錯誤：DEP0700：app 的註冊失敗。
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

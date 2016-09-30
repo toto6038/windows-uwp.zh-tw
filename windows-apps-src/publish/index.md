@@ -1,37 +1,37 @@
 ---
 author: jnHs
-Description: See how to publish your Windows apps to the Windows Store.
+Description: "了解如何將您的 Windows 應用程式發佈到 Windows 市集。"
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
+ms.sourcegitcommit: c13c51c26998fba4bf54c221905fc917ccac3035
+ms.openlocfilehash: ff3988998951ae8569dc6d8fd2f28ba19b509c6f
 
 
 ---
 
-# Publish Windows apps
+# 發行 Windows 應用程式
 
-You can use the Windows Dev Center dashboard to publish your apps to the Windows Store. 
+您可以使用 Windows 開發人員中心儀表板將您的 App 發佈到 Windows 市集。 
 
-> **Note** You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.
+> **注意** 您必須具有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能存取 Windows 開發人員中心儀表板並提交 App。
 
-This section contains info about publishing and managing your apps.
+本節包含發行和管理您的 App 的相關資訊。
 
-| **Topic** | **Description** |
+| **主題** | **說明** |
 |-----------|-----------------|
-| [Using the Windows Dev Center dashboard](using-the-windows-dev-center-dashboard.md) | Learn [how to register for an account](opening-a-developer-account.md) and get an overview of what you can do in the Dev Center dashboard. |
-| [Create your app by reserving a name](create-your-app-by-reserving-a-name.md) | See how to reserve names and find suggestions for choosing a great app name. |
-| [App submissions](app-submissions.md) | An app submission includes [pricing and availability details](set-app-pricing-and-availability.md), [properties](enter-app-properties.md), [age ratings](age-ratings.md), [packages](upload-app-packages.md), and [Store listing details](create-app-store-listings.md). Your submission will go through the [certification process](the-app-certification-process.md) before it's published to the Store. Optional features you can use include [package flighting](package-flights.md), [beta testing](beta-testing-and-targeted-distribution.md), and [LOB distribution directly to enterprises](distribute-lob-apps-to-enterprises.md). |
-| [Add-on submissions](add-on-submissions.md) | Learn how to publish add-ons (in-app products) through the Windows Dev Center dashboard. |
-| [Monetize with ads](monetize-with-ads.md) | Manage your use of ads, including custom ad mediation configurations and affiliate advertising. |
-| [App management and services](app-management-and-services.md) | Use services like push notifications, experimentation, and maps, and see how to [view app identity details](view-app-identity-details.md) and [reserve additional app names](manage-app-names.md) |
-| [Analytics](analytics.md) | Get detailed analytic data for your apps to see how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find info on app health, ad usage, and more. |
-| [App promotion and customer engagement](app-promotion-and-customer-engagement.md) | Promote your app with [ad campaigns](create-an-ad-campaign-for-your-app.md), [promotional codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), and more. 
-| [Getting paid](getting-paid-apps.md) | Get details about receiving earnings from your apps, add-ons, and Microsoft Advertising. |
-| [Store Policies and Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | This section includes the [Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) and [App Quality](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx) criteria that apply to Windows apps and content, and the [Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx) that developers should follow. |
+| [使用 Windows 開發人員中心儀表板](using-the-windows-dev-center-dashboard.md) | 了解[如何註冊帳戶](opening-a-developer-account.md)，並取得您可以在開發人員中心儀表板中執行哪些工作的概觀。 |
+| [透過保留名稱建立您的 App](create-your-app-by-reserving-a-name.md) | 了解如何保留名稱，並尋找選擇最佳應用程式名稱的建議。 |
+| [App 提交](app-submissions.md) | App 提交包含[價格與可用性的詳細資料](set-app-pricing-and-availability.md)、[屬性](enter-app-properties.md)、[年齡分級](age-ratings.md)、[套件](upload-app-packages.md)，以及[市集清單詳細資料](create-app-descriptions.md)。 您的提交在發佈到市集之前，將會經過[認證程序](the-app-certification-process.md)。 您可以使用的選用功能包括[套件正式發行前小眾測試版](package-flights.md)、[測試版測試](beta-testing-and-targeted-distribution.md)，以及[直接對企業的 LOB 發佈](distribute-lob-apps-to-enterprises.md)。 |
+| [IAP 提交](iap-submissions.md) | 了解如何透過 Windows 開發人員中心儀表板發佈應用程式內產品 (IAP)。 |
+| [利用廣告獲利](monetize-with-ads.md) | 管理您的廣告用量，包括自訂的廣告流量分配設定，以及分支機構廣告。 |
+| [App 管理與服務](app-management-and-services.md) | 使用像是推播通知、探究和地圖等服務，以及查看如何[檢視應用程式身分識別詳細資料](view-app-identity-details.md)與[保留額外的應用程式名稱](manage-app-names.md) |
+| [分析](analytics.md) | 取得您 App 的詳細分析資料，以查看您 App 的目前狀況，範圍從您已達到多少客戶，到客戶使用您 App 的狀況以及他們對 App 的相關反應。 您也可以找到 App 健康情況、廣告使用量及其他更多項目的相關資訊。 |
+| [App 促銷與客戶參與](app-promotion-and-customer-engagement.md) | 透過[廣告行銷活動](create-an-ad-campaign-for-your-app.md)、[促銷代碼](generate-promotional-codes.md)、[銷售定價](put-apps-and-iaps-on-sale.md)等等來宣傳您的 App。 
+| [獲得報酬](getting-paid-apps.md) | 取得有關從您的 App、應用程式內產品 (IAP)，以及 Microsoft Advertising 接收獲利的詳細資料。 |
+| [市集原則與管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | 本節包含適用於 Windows 應用程式和內容的[市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)和[應用程式品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)條件，以及開發人員應該遵循的[管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)。 |
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

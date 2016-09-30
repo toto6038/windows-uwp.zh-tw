@@ -1,61 +1,61 @@
 ---
 author: mtoepke
-title: Assemble the rendering framework
-description: Now, it's time to look at how the sample game uses that structure and state to display its graphics.
+title: "組合轉譯架構"
+description: "現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
 
 ---
 
-# Assemble the rendering framework
+# 組合轉譯架構
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-By now, you've seen how to structure a Universal Windows Platform (UWP) game to work with the Windows Runtime, and how to define a state machine to handle the flow of the game. Now, it's time to look at how the sample game uses that structure and state to display its graphics. Here, we look at how to implement a rendering framework, starting from the initialization of the graphics device through the presentation of the graphics objects for display.
+到目前為止，您已經了解如何建立通用 Windows 平台 (UWP) 遊戲的結構與 Windows 執行階段搭配使用，以及如何定義狀態電腦來處理遊戲的流程。 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。 我們在這裡要看看如何實作轉譯架構，先從使用圖形顯示物件初始化圖形裝置開始。
 
-## Objective
+## 目標
 
 
--   To understand how to set up a basic rendering framework to display the graphics output for a UWP DirectX game.
+-   了解如何設定基本轉譯架構，以顯示 UWP DirectX 遊戲的圖形輸出。
 
-> **Note**   The following code files are not discussed here, but provide classes and methods referred to in this topic and are [provided as code at the end of this topic](#code_sample):
--   **Animate.h/.cpp**.
--   **BasicLoader.h/.cpp**. Provides methods for loading meshes, shaders and textures, both synchronously and asynchronously. Very useful!
--   **MeshObject.h/.cpp**, **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp**. Contains the definitions of the object primitives used in the game, such as the ammo spheres, the cylinder and cone obstacles, and the walls of the shooting gallery. (**GameObject.cpp**, briefly discussed in this topic, contains the method for rendering these primitives.)
--   **Level.h/.cpp** and **Level\[1-6\].h/.cpp**. Contains the configuration for each of the games six levels, including the success criteria and the number and position of the targets and obstacles.
--   **TargetTexture.h/.cpp**. Contains a set of methods for drawing the bitmaps used as the textures on the targets.
+> **注意** 本主題不會討論下列程式碼檔案，但是會提供本主題所述的類別和方法，並在[本主題的結尾提供其程式碼](#code_sample)：
+-   **Animate.h/.cpp**。
+-   **BasicLoader.h/.cpp**。 提供已同步和非同步方式載入網格、著色器和紋理的方法。 非常實用！
+-   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 以及 **WorldMesh.h/.cpp**。 包含遊戲中所使用物件基本類型的定義，例如子彈、圓柱型和圓錐體障礙物，以及射擊場的牆。 (本主題中簡要討論的 **GameObject.cpp** 包含轉譯這些基本類型的方法。)
+-   **Level.h/.cpp** 和 **Level\[1-6\].h/.cpp**。 包含 6 個遊戲關卡中每個關卡的設定，包括過關條件以及目標和障礙物的數目和位置。
+-   **TargetTexture.h/.cpp**。 包含一組方法，用於繪製點陣圖做為目標上的紋理。
 
-These files contain code that is not specific to UWP DirectX games. But you can review them separately if you'd like more implementation details.
+這些檔案包含非 UWP DirectX 遊戲專用的程式碼。 不過，如果您想了解更多實作詳細資料，可以分別檢視這些程式碼。
 
  
 
-This section covers three key files from the game sample ([provided as code at the end of this topic](#code_sample)):
+本節涵蓋遊戲範例中的三個關鍵檔案 ([於本主題最後以程式碼提供](#code_sample))：
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
 -   **PrimObject.h/.cpp**
 
-Again, we assume that you understand basic 3D programming concepts like meshes, vertices, and textures. For more info about Direct3D 11 programming in general, see [Programming Guide for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
-With that said, let's look at the work that must be done to put our game on the screen.
+同樣地，我們假設您了解基本的 3D 程式設計概念，像是網格、頂點和紋理。 如需一般 Direct3D 11 程式設計的詳細資訊，請參閱 [Direct3D 11 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
+接下來，我們來看看將遊戲呈現到螢幕上必須完成的工作。
 
-## An overview of the Windows Runtime and DirectX
-
-
-DirectX is a fundamental part of the Windows Runtime and of the Windows 10 experience. All of Windows 10's visuals are built on top of DirectX, and you have the same direct line to the same low-level graphics interface, [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534), which provides an abstraction layer for the graphics hardware and its drivers. All the Direct3D 11 APIs are available for you to talk to DXGI directly. The result is fast, high performing graphics in your games that give you access to all the latest graphics hardware features.
-
-To add DirectX support to a UWP app, you create a view provider for DirectX resources by implementing the [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) and [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) interfaces. These provide a factory pattern for your view provider type and the implementation of your DirectX view provider, respectively. The UWP singleton, represented by the [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) object, runs this implementation.
-
-In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at how the renderer fit into the game sample's app framework. Now, let's look at how the game renderer connects to the view and builds the graphics that define the look of the game.
-
-## Defining the renderer
+## Windows 執行階段與 DirectX 概觀
 
 
-The **GameRenderer** abstract type inherits from the **DirectXBase** renderer type, adds support for stereo 3-D, and declares constant buffers and resources for the shaders that create and define our graphic primitives.
+DirectX 是 Windows 執行階段與 Windows 10 使用經驗的基本部分。 Windows 10 中所有的視覺物件都是採用 DirectX 建立的，而且您可以直接使用相同的低階圖形介面 [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)，為圖形硬體及驅動程式提供抽象層。 所有的 Direct3D 11 API 都能讓您用來與 DXGI 直接交談。 這可以為您的遊戲帶來快速且高效能的圖形，並讓您存取所有最新的圖形硬體功能。
 
-Here's the definition of **GameRenderer**.
+若要在 UWP app 中新增對 DirectX 的支援，您要實作 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 和 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 介面來為 DirectX 資源建立一個檢視提供者。 它們會分別為您的檢視提供者類型提供一個 Factory 模式以及提供 DirectX 檢視提供者實作。 UWP 單例 (由 [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) 物件表示) 會執行這個實作。
+
+在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)時，我們會先了解轉譯器在遊戲範例 app 架構中所扮演的角色。 現在，我們來看看遊戲轉譯器如何連接到檢視，並建立定義遊戲外觀的圖形。
+
+## 定義轉譯器
+
+
+**GameRenderer** 抽象類型繼承自 **DirectXBase** 轉譯器類型，加入了 Stereo 3D 的支援，並且為建立及定義圖形基本類型的著色器宣告常數緩衝區和資源。
+
+以下是 **GameRenderer** 的定義。
 
 ```cpp
 ref class GameRenderer : public DirectXBase
@@ -124,29 +124,29 @@ protected private:
 };
 ```
 
-Because the Direct3D 11 APIs are defined as COM APIs, you must provide [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) references to the objects defined by these APIs. These objects are automatically freed when their last reference goes out of scope when the app terminates.
+因為 Direct3D 11 API 會定義為 COM API，所以您必須提供這些 API 所定義之物件的 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) 參考。 當 app 終止時，這些物件會在最後一個參考超出範圍時，自動被釋放。
 
-The game sample declares 4 specific constant buffers:
+遊戲範例會宣告 4 個特定的常數緩衝區：
 
--   **m\_constantBufferNeverChanges**. This constant buffer contains the lighting parameters. It's set one time and never changes again.
--   **m\_constantBufferChangeOnResize**. This constant buffer contains the projection matrix. The projection matrix is dependent on the size and aspect ratio of the window. It's updated only when the window size changes.
--   **m\_constantBufferChangesEveryFrame**. This constant buffer contains the view matrix. This matrix is dependent on the camera position and look direction (the normal to the projection) and changes only one time per frame.
--   **m\_constantBufferChangesEveryPrim**. This constant buffer contains the model matrix and material properties of each primitive. The model matrix transforms vertices from local coordinates into world coordinates. These constants are specific to each primitive and are updated for every draw call.
+-   **m\_constantBufferNeverChanges**。 這個常數緩衝區包含光線參數。 只需設定一次，永遠不再變更。
+-   **m\_constantBufferChangeOnResize**。 這個常數緩衝區包含投影矩陣。 投影矩陣取決於視窗的大小和外觀比例。 只有在視窗大小變更時才會更新。
+-   **m\_constantBufferChangesEveryFrame**。 這個常數緩衝區包含視圖矩陣。 這個矩陣取決於相機位置和觀看方向 (與投影垂直)，而且每個畫面只變更一次。
+-   **m\_constantBufferChangesEveryPrim**。 這個常數緩衝區包含模型矩陣和每個基本類型的內容屬性。 模型矩陣會將頂點從區域座標轉換成全局座標。 這些常數為每個基本類型專用，而且會針對每次繪圖呼叫進行更新。
 
-The whole idea of multiple constant buffers with different frequencies is to reduce the amount of data that must be sent to the GPU per frame. Therefore, the sample separates constants into different buffers based on the frequency that they must be updated. This is a best practice for Direct3D programming.
+為多個常數緩衝區採用不同頻率的整體概念，就是為了減少每個畫面必須傳送到 GPU 的資料量。 因此，範例會根據必須更新的頻率，將常數分成不同的緩衝區。 這是 Direct3D 程式設計的最佳做法。
 
-The renderer contains the shader objects that compute our primitives and textures: **m\_vertexShader** and **m\_pixelShader**. The vertex shader processes the primitives and the basic lighting, and the pixel shader (sometimes called a fragment shader) processes the textures and any per-pixel effects. There are two versions of these shaders (regular and flat) for rendering different primitives. The flat versions are much simpler and don't do specular highlights or any per pixel lighting effects. These are used for the walls and make rendering faster on lower powered devices.
+轉譯器包含能夠計算基本類型和紋理的著色器物件：**m\_vertexShader** 和 **m\_pixelShader**。 頂點著色器會處理基本類型和基本光源，而像素著色器 (有時稱為片段著色器) 會處理紋理和任何個別像素的效果。 用來轉譯不同基本類型的這些著色器有兩種版本 (一般和平面)。 平面版本簡單許多，而且不處理反射強光光線或任何每個像素的光線效果。 它們是用來轉譯牆，讓低電量裝置上的轉譯變得更快速。
 
-The renderer class contains the [DirectWrite and Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) resources used for the overlay and the Heads Up Display (the **GameHud** object). The overlay and HUD are drawn on top of the render target when projection is complete in the graphics pipeline.
+轉譯器類別包含 [DirectWrite 和 Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) 資源，用於重疊以及平視顯示器 (**GameHud** 物件)。 重疊和 HUD 會在圖形管線中的投射完成時，繪製於轉譯目標之上。
 
-The renderer also defines the shader resource objects that hold the textures for the primitives. Some of these textures are pre-defined (DDS textures for the walls and floor of the world as well as the ammo spheres).
+轉譯器還會定義保存基本類型紋理的著色器資源物件。 有些紋理是預先定義的 (世界的牆和地板及子彈的 DDS 紋理)。
 
-Now, it's time to see how this object is created!
+現在，讓我們來看看如何建立這個物件！
 
-## Initializing the renderer
+## 初始化轉譯器
 
 
-The sample game calls this **Initialize** method as part of the CoreApplication initialization sequence in **App::SetWindow**.
+範例遊戲會呼叫這個 **Initialize** 方法作為 **App::SetWindow** 中 CoreApplication 初始化序列的一部分。
 
 ```cpp
 void GameRenderer::Initialize(
@@ -173,28 +173,28 @@ void GameRenderer::Initialize(
 }
 ```
 
-This is a pretty straightforward method. It checks to see if the renderer had been previously initialized, and if it hasn't, it instantiates the **GameHud** and **GameInfoOverlay** objects.
+這是相當直接的方法。 它會檢查轉譯器是否之前被初始化過，如果還未初始化，則會具現化 **GameHud** 和 **GameInfoOverlay** 物件。
 
-After that, the renderer initialization process runs the base implementation of **Initialize** provided on the **DirectXBase** class it inherited from.
+之後，轉譯器初始化程序會執行 **Initialize** (由所繼承的 **DirectXBase** 類別提供) 的基底實作。
 
-When the DirectXBase initialization completes, the **GameInfoOverlay** object is initialized. After initialization is complete, it's time to look at the methods for creating and loading the graphics resources for the game.
+當 DirectXBase 初始化完成時，會初始化 **GameInfoOverlay** 物件。 初始化完成後，現在來看看建立和載入遊戲圖形資源的方法。
 
-## Creating and loading DirectX graphics resources
+## 建立和載入 DirectX 圖形資源
 
 
-The first order of business in any game is to establish a connection to our graphics interface, create the resources we need to draw the graphics, and then set up a render target into which we can draw those graphics. In the game sample (and in the Microsoft Visual Studio**DirectX 11 App (Universal Windows)** template), this process is implemented with three methods:
+任何遊戲的第一個工作就是建立與圖形介面的連線、建立繪製圖形所需的資源，然後設定轉譯目標以繪製這些圖形。 在遊戲範例 (以及 Microsoft Visual Studio **DirectX 11 應用程式 (通用 Windows)** 範本) 中，這個程序是會以三種方法實作：
 
 -   **CreateDeviceIndependentResources**
 -   **CreateDeviceResources**
 -   **CreateWindowSizeDependentResources**
 
-Now, in the game sample, we override two of these methods (**CreateDeviceIndependentResources** and **CreateDeviceResources**) provided on the **DirectXBase** class implemented in the **DirectX 11 App (Universal Windows)** template. For each of these override methods, we first call the **DirectXBase** implementations they override, and then add more implementation details specific to the game sample. Be aware that the **DirectXBase** class implementation included with the game sample has been modified from the version provided in the Visual Studio template to include stereoscopic view support and includes pre-rotation of the **SwapBuffer** object.
+現在，在遊戲範例中，我們要覆寫這些方法的其中兩個 (**CreateDeviceIndependentResources** 和 **CreateDeviceResources**)，它們是在 **DirectX 11 應用程式 (Universal Windows)** 範本中實作的 **DirectXBase** 類別上提供的。 對於每個覆寫方法，我們首先呼叫它們覆寫的 **DirectXBase** 實作，然後在遊戲範例中新增更多實作的特定詳細資料。 請注意，遊戲範例中內含的 **DirectXBase** 類別實作已根據 Visual Studio 範例提供的版本加以修改，以便包含立體視覺檢視支援，並包含預先旋轉的 **SwapBuffer** 物件。
 
-**CreateWindowSizeDependentResources** is not overridden by the **GameRenderer** object. We use the implementation of it provided in the **DirectXBase** class.
+**CreateWindowSizeDependentResources** 不是由 **GameRenderer** 物件覆寫。 我們使用 **DirectXBase** 類別中提供的它的實作。
 
-For more info about the **DirectXBase** base implementations of these methods, see [How to set up your UWP DirectX app to display a view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+如需這些方法的 **DirectXBase** 基底實作詳細資訊，請參閱[如何設定您的 UWP DirectX 應用程式來顯示檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
-The first of these overridden methods, **CreateDeviceIndependentResources**, calls the **GameHud::CreateDeviceIndependentResources** method to create the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) text resources that use the Segoe UI font, which is the font used by most UWP apps.
+這些覆寫方法的第一種 **CreateDeviceIndependentResources** 會呼叫 **GameHud::CreateDeviceIndependentResources** 方法來建立 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 文字資源，並使用大部分 UWP app 使用的 Segoe UI 字型。
 
 CreateDeviceIndependentResources
 
@@ -275,9 +275,9 @@ void GameHud::CreateDeviceIndependentResources(
 }
 ```
 
-The sample uses four text formatters: two for title header and title body text, and two for body text. This is used in much of the overlay text.
+這個範例使用四種文字格式子：兩種用於標題標頭和標題內文文字，另兩種則用於內文文字。 這在重疊文字很常使用。
 
-The second method, **CreateDeviceResources**, loads the specific resources for the game that will be computed on the graphics device. Let's look at the code for this method.
+第二種方法 **CreateDeviceResources** 會載入遊戲的特定資源，以便在圖形裝置進行計算。 我們來看看這個方法的程式碼。
 
 CreateDeviceResources
 
@@ -377,9 +377,9 @@ void GameHud::CreateDeviceResources(_In_ ID2D1DeviceContext* d2dContext)
 }
 ```
 
-In this example, in normal execution, the **CreateDeviceResources** method just calls the base class method and then calls the **GameHud::CreateDeviceResources** method (also listed previously). If there's a problem later with the underlying graphics device, it might have to be re-initialized. In this case, the **CreateDeviceResources** method initiates a set of async tasks to create the game device resources. This is done through a sequence of two methods: a call to **CreateDeviceResourcesAsync**, and then, when it completes, **FinalizeCreateGameDeviceResources**.
+這個範例中，在正常執行時，**CreateDeviceResources** 方法會呼叫基底類別方法，然後再呼叫 **GameHud::CreateDeviceResources** 方法 (上面也有列出)。 如果稍後基礎圖形裝置出現問題，可能必須將它重新初始化。 在這種情形下，**CreateDeviceResources** 方法會初始化一組非同步工作來建立遊戲裝置資源。 這是利用一個包含兩個方法的序列來完成的：呼叫 **CreateDeviceResourcesAsync**，然後在它完成時，再呼叫 **FinalizeCreateGameDeviceResources**。
 
-CreateGameDeviceResourcesAsync and FinalizeCreateGameDeviceResources
+CreateGameDeviceResourcesAsync 和 FinalizeCreateGameDeviceResources
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -662,47 +662,47 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 }
 ```
 
-**CreateDeviceResourcesAsync** is a method that runs as a separate set of async tasks to load the game resources. Because it's expected to run on a separate thread, it only has access to the Direct3D 11 device methods (those defined on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) and not the device context methods (the methods defined on [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), so it has the option to not perform any rendering. The **FinalizeCreateGameDeviceResources** method runs on the main thread and does have access to the Direct3D 11 device context methods.
+**CreateDeviceResourcesAsync** 是當作另一組非同步工作執行以載入遊戲資源的方法。 因為它應該是在另一個執行緒上執行，它只能存取 Direct3D 11 裝置方法 (在 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 上定義的方法) 而不能存取裝置內容方法 (在 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 上定義的方法)，所以它可以選擇不執行任何轉譯。 **FinalizeCreateGameDeviceResources** 方法在主執行緒上執行，且無法存取 Direct3D 11 裝置內容方法。
 
-The sequence of events for loading the game devices resources proceeds as follows.
+載入遊戲裝置資源的事件序列的進行方式如下。
 
-**CreateDeviceResourcesAsync** first initializes constant buffers for the primitives. Constant buffers are low-latency, fixed-width buffers that hold the data that a shader uses during shader execution. (Think of these buffers as passing data to the shader that is constant over the execution of the particular draw call.) In this sample, the buffers contain the data that the shaders will use to:
+**CreateDeviceResourcesAsync** 會先為基本類型初始化常數緩衝區。 常數緩衝區是低延遲、寬度固定的緩衝區，保存了著色器在著色器執行期間所使用的資料 (將這些緩衝區想像為在執行特定繪圖呼叫時將資料傳送到常數著色器)。在這個範例中，緩衝區包含著色器將用來執行下列動作的資料：
 
--   Place the light sources and set their color when the renderer initializes
--   Compute the view matrix whenever the window is resized
--   Compute the projection matrix for every frame update
--   Compute the transformations of the primitives on every render update
+-   在轉譯器初始化時放置光源及設定其色彩
+-   在視窗調整大小時計算視圖矩陣
+-   計算每次畫面更新的投影矩陣
+-   計算每次轉譯更新時基本類型的轉換
 
-The constants receive the source information (vertices) and transform the vertex coordinates and data from model space into the device space. Ultimately, this data results in texel coordinates and pixels in the render target.
+這些常數會接收來源資訊 (頂點)，然後將頂點座標和資料模型空間轉換為裝置空間。 這些資料最後會在轉譯目標中產生圖素座標和像素。
 
-Next, the game renderer object creates a loader for the shaders that will perform the computation. (See **BasicLoader.cpp** in the sample for the specific implementation.)
+接下來，遊戲轉譯器物件會為將執行計算的著色器建立載入器。 (請參閱特定實作範例中的 **BasicLoader.cpp**)。
 
-Then, **CreateDeviceResourcesAsync** initiates async tasks for loading all the texture resources into **ShaderResourceViews**. These texture resources are stored in the DirectDraw Surface (DDS) textures that came with the sample. DDS textures are a lossy texture format that work with DirectX Texture Compression (DXTC). We use these textures on the walls, ceiling and floor of the world, and on the ammo spheres and pillar obstacles.
+然後，**CreateDeviceResourcesAsync** 會初始化非同步工作，將所有紋理資源載入 **ShaderResourceViews**。 這些紋理資源儲存在範例隨附的 DirectDraw Surface (DDS) 紋理中。 DDS 紋理是失真紋理格式，可與 DirectX 材質壓縮 (DXTC) 搭配使用。 我們將這些紋理運用在世界的牆、天花板及地板，以及子彈和柱型障礙物。
 
-Finally, it returns a task group that contains all the async tasks created by the method. The calling function waits for the completion of all these async tasks, and then calls **FinalizeCreateGameDeviceResources**.
+最後，它會傳回包含方法建立的所有非同步工作的工作群組。 呼叫函式在等候所有這些非同步工作完成之後，會接著呼叫 **FinalizeCreateGameDeviceResources**。
 
-**FinalizeCreateGameDeviceResources** loads the initial data into the constant buffers with a device context method call to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486): `m_deviceContext->UpdateSubresource`. This method creates the mesh objects for the sphere, cylinder, face, and world game objects and the associated materials. It then walks the game object list associating the appropriate device resources with each object.
+**FinalizeCreateGameDeviceResources** 使用裝置內容方法呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 將初始資料載入常數緩衝區：`m_deviceContext->UpdateSubresource` 這個方法會為球體、圓柱、表面、遊戲世界物件及其關聯的材質建立網格物件。 接著它會逐個查看遊戲物件清單，將每個物件與適當的裝置資源建立關聯。
 
-The textures for the ringed and numbered target objects are procedurally generated using the code in **TargetTexture.cpp**. The renderer creates an instance of the **TargetTexture** type, which creates the bitmap texture for the target objects in the game when we call the **TargetTexture::CreateTextureResourceView** method. The resulting texture is composed of concentric colored rings, with a numeric value on the top. These generated resources are associated with the appropriate target game objects.
+環型和編號的目標物件的紋理是使用 **TargetTexture.cpp** 中的程式碼，透過程序產生的。 轉譯器會建立 **TargetTexture** 類型的執行個體，當我們呼叫 **TargetTexture::CreateTextureResourceView** 方法時，它會在遊戲中為目標物件建立點陣圖紋理。 所產生的紋理由彩色的同心環組成，上方還有數字值。 這些產生的資源是與適當的目標遊戲物件關聯的。
 
-Lastly, **FinalizeCreateGameDeviceResources** set the `m_gameResourcesLoaded` Boolean global variable to indicate that all resources are now loaded.
+最後，**FinalizeCreateGameDeviceResources** 設定 `m_gameResourcesLoaded` 布林值全域變數，指示現在所有資源都已載入。
 
-The game has the resources to display the graphics in the current window, and it can recreate those resources as the window changes. Now, let's look at the camera used to define the player's view of the scene in that window.
+遊戲具有在目前視窗中顯示圖形的資源，而且可以在視窗變更時重新建立這些資源。 現在，我們來看看用來定義該視窗中玩家場景視野的相機。
 
-## Implementing the camera object
+## 實作相機物件
 
 
-The game has the code in place to update the world in its own coordinate system (sometimes called the world space or scene space). All objects, including the camera, are positioned and oriented in this space. In the sample game, the camera's position along with the look vectors (the "look at" vector that points directly into the scene from the camera, and the "look up" vector that is upwards perpendicular to it) define the camera space. The projection parameters determine how much of that space is actually visible in the final scene; and the Field of View (FoV), aspect ratio, and clipping planes define the projection transformation. A vertex shader does the heavy lifting of converting from the model coordinates to device coordinates with the following algorithm (where V is a vector and M is a matrix):
+遊戲有現成的程式碼可以用自己的座標系統來更新世界 (有時候稱為世界空間或場景空間)。 所有物件 (包括相機) 都在這個空間設定放置及方向。 在範例遊戲中，會使用相機的位置以及視角向量 (「視線」向量是從相機直接看到場景，而「仰視」向量則是垂直向上看) 定義相機空間。 投影參數決定最終場景可實際看到的空間量；而視野範圍 (FoV)、外觀比例以及裁剪平面則可定義投影轉換。 頂點著色器則負責使用下列演算法 (其中 V 是向量而 M 是矩陣)，將模型座標轉換為裝置座標的繁重工作：
 
 `              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
--   `M(model-to-world)` is a transformation matrix for model coordinates to world coordinates. This is provided by the primitive. (We'll review this in the section on primitives, here.)
--   `M(world-to-view)` is a transformation matrix for world coordinates to view coordinates. This is provided by the view matrix of the camera.
--   `M(view-to-device)` is a transformation matrix for view coordinates to device coordinates. This is provided by the projection of the camera.
+-   `M(model-to-world)` 是模型座標到全局座標的轉換矩陣。 這是由基本類型提供。 (我們將在這裡的基本類型一節中討論相關資訊)。
+-   `M(world-to-view)` 是全局座標到視覺座標的轉換矩陣。 這是由相機的視圖矩陣提供的。
+-   `M(view-to-device)` 是視覺座標到裝置座標的轉換矩陣。 這是由相機的投影提供的。
 
-The shader code in **VertexShader.hlsl** is loaded with these vectors and matrices from the constant buffers, and performs this transformation for every vertex.
+**VertexShader.hlsl** 中的著色器程式碼會使用這些常數緩衝區向量及矩陣進行載入，並為每個頂點執行這個轉換。
 
-The **Camera** object defines the view and projection matrices. Let's look at how the sample game declares it.
+**Camera** 物件會定義視圖矩陣和投影矩陣。 我們來看看範例遊戲如何宣告它。
 
 ```cpp
 ref class Camera
@@ -752,12 +752,12 @@ protected private:
 };
 ```
 
-There are two 4x4 matrices that define the transformations to the view and projection coordinates, **m\_viewMatrix** and **m\_projectionMatrix**. (For stereo projection, you use two projection matrices: one for each eye's view.) They are calculated with these two methods, respectively:
+有兩個 4x4 矩陣 (**m\_viewMatrix** 和 **m\_projectionMatrix**) 可定義視覺座標到投影座標的轉換 (您在立體投影時會使用兩個投影矩陣：分別為每個眼睛的視野)。它們分別使用下列兩種方法進行計算：
 
 -   **SetViewParams**
 -   **SetProjParams**
 
-The code for these two methods looks like this:
+這兩種方法的程式碼看起來像這樣：
 
 ```cpp
 void Camera::SetViewParams(
@@ -847,18 +847,18 @@ void Camera::SetProjParams(
 }
 ```
 
-We get the resulting view and projection data by calling the **View** and **Projection** methods, respectively, on the **Camera** object. These calls occur in the next step we review, the **GameRenderer::Render** method called in the game loop.
+我們在 **Camera** 物件上分別呼叫 **View** 和 **Projection** 方法，以取得產生的視覺資料和投影資料。 這些呼叫發生於我們要討論的下一個步驟，遊戲迴圈中呼叫的 **GameRenderer::Render** 方法。
 
-Now, let's look at how the game creates the framework to draw our game graphics using the camera. This includes defining the primitives that comprise the game world and its elements.
+現在，我們來看看遊戲如何建立架構，以使用相機來繪製我們的遊戲圖形。 這包括定義組成遊戲世界及其元素的基本類型。
 
-## Defining the primitives
+## 定義基本類型
 
 
-In the game sample code, we define and implement the primitives in two base classes and the corresponding specializations for each primitive type.
+在遊戲範例程式碼中，我們定義和實作兩個基底類別中的基本類型，並為每個基本類型定義對應的專屬特性。
 
-**MeshObject.h/.cpp** defines the base class for all mesh objects. The **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp** files contain the code that populates the constant buffers for each primitive with the vertex and vertex normal data that defines the primitive's geometry. These code files are a good place to start if you're looking to understand how to create Direct3D primitives in your own game app, but we won't cover them here as it's too specific to this game's implementation. For now, we assume that the vertex buffers for each primitive have been populated, and look at how the game sample handles those buffers to update the game itself.
+**MeshObject.h/.cpp** 定義所有網格物件的基底類別。 **SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 以及 **WorldMesh.h/.cpp** 檔案包含的程式碼會將每個基本類型的常數緩衝區填入定義基本類型幾何的頂點和頂點標準資料。 如果您想要了解如何在自己的遊戲 app 中建立 Direct3D 基本類型，這些程式碼檔案是一個很好的起點，但是在本文中我們不會涵蓋這些內容，因為這對於這個遊戲實作而言太過專精。 就目前而言，我們假設已填入每個基本類型的頂點緩衝區，然後看看遊戲範例如何處理這些緩衝區來更新遊戲本身。
 
-The base class for objects that represent the primitives from the perspective of the game is defined in **GameObject.h./.cpp.** This class, **GameObject**, defines the fields and methods for the common behaviors across all primitives. Each primitive object type derives from it. Let's look at how it's defined:
+代表遊戲觀點之基本類型物件的基底類別會在 **GameObject.h./.cpp** 中定義。 這個類別 **GameObject** 定義所有基本類型中常見行為的欄位及方法。 每個基本物件類型都從它衍生出來。 我們來看看如何定義：
 
 ```cpp
 ref class GameObject
@@ -951,22 +951,22 @@ protected private:
 };
 ```
 
-Most of the fields contain data about the state, visual properties, or position of the primitive in the game world. There are a few methods in particular that are necessary in most games:
+大部分的欄位都包含有關遊戲世界中基本類型的狀態、視覺屬性或位置的資料。 大部分遊戲特別需要幾個方法：
 
--   **Mesh**. Gets the mesh geometry for the primitive, which is stored in **m\_mesh**. This geometry is defined in **MeshObject.h/.cpp**.
--   **IsTouching**. This method determines if the primitive is within a specific distance of a point, and returns the point on the surface closest to the point and the normal to the surface of the object at that point. Because the sample is only concerned with ammo-primitive collisions, this is enough for the game's dynamics. It is not a general purpose primitive-primitive intersection function, although it could be used as the basis for one.
--   **AnimatePosition**. Updates the movement and animation for the primitive.
--   **UpdatePosition**. Updates the position of the object in the world coordinate space.
--   **Render**. Puts the material properties of the primitive into the primitive constant buffer and then renders (draws) the primitive geometry using the device context.
+-   **Mesh**。 取得基本類型的網格幾何 (儲存於 **m\_mesh** 中)。 這個幾何定義在 **MeshObject.h/.cpp** 中。
+-   **IsTouching**。 這個方法判斷基本類型是否位於某點的特定距離內，並傳回表面上與該點最靠近的點，以及與該點之物件表面垂直的點。 因為這個範例僅關心子彈基本類型的撞擊，因此這對於遊戲的動態設定已經足夠。 它不是基本類型-基本類型交集函數的一般用途，雖然它可以作為其基本。
+-   **AnimatePosition**。 更新基本類型的移動及動畫。
+-   **UpdatePosition**。 更新全局座標空間中物件的位置。
+-   **Render**。 將基本類型的材質屬性放入基本類型常數緩衝區，然後使用裝置內容轉譯 (繪製) 基本類型幾何。
 
-It's a good practice to create a base object type that defines the minimum set of methods for a primitive because most games have a very large number of primitives, and the code can quickly become difficult to manage. It also simplifies game code when the update loop can treat the primitives polymorphically, letting the objects themselves define their own update and rendering behaviors.
+建立基底物件類型來定義基本類型的最少方法，是一個很好的做法，因為大部分的遊戲都有非常大量的基本類型，而程式碼很快就會變得難於管理。 當更新迴圈可以多種型態的方式處理基本類型時，它同時也簡化了遊戲程式碼，讓物件本身定義自己的更新及轉譯行為。
 
-Let's look at the basic rendering of a primitive in the game sample.
+我們來看看遊戲範例中基本類型的基本轉譯。
 
-## Rendering the primitives
+## 轉譯基本類型
 
 
-The primitives in the game sample use the base **Render** method implemented on the parent **GameObject** class, as here:
+遊戲範例中的基本類型使用父系 **GameObject** 類別上實作的基底 **Render** 方法，如這裡所示：
 
 ```cpp
 void GameObject::Render(
@@ -1000,15 +1000,15 @@ void GameObject::Render(
 }
 ```
 
-The **GameObject::Render** method updates the primitive constant buffer with the data specific to a given primitive. The game uses multiple constant buffers, but only needs to update these buffers one time per primitive.
+**GameObject::Render** 方法使用指定基本類型的特定資料來更新基本類型常數緩衝區。 遊戲使用多個常數緩衝區，但是只要在每個基本類型更新這些緩衝區一次。
 
-Think of the constant buffers as input to the shaders that run for each primitive. Some data is static (**m\_constantBufferNeverChanges**); some data is constant over the frame (**m\_constantBufferChangesEveryFrame)**, like the position of the camera; and some data is specific to the primitive, like its color and textures (**m\_constantBufferChangesEveryPrim**). The game renderer separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use. This approach also helps to minimize the amount of data the GPU needs to keep track of. Remember, the GPU has a big queue of commands, and each time the game calls **Draw**, that command is queued along with the data associated with it. When the game updates the primitive constant buffer and issues the next **Draw** command, the graphics driver adds this next command and the associated data to the queue. If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue. We want to minimize the amount of data the game is sending to the GPU, so the game uses a separate primitive constant buffer that only contains the updates for each primitive.
+將常數緩衝區想像是為每個基本類型執行的著色器輸入。 有些資料是靜態的 (**m\_constantBufferNeverChanges**)；有些資料在架構上是常數 (**m\_constantBufferChangesEveryFrame**)，像是相機的位置；有些資料是專用於基本類型，像色彩和紋理 (**m\_constantBufferChangesEveryPrim**)。 遊戲轉譯器將這些輸入分成不同的常數緩衝區，以最佳化 CPU 與 GPU 使用的記憶體頻寬。 這種方式也有助於將 GPU 需要追蹤的資料數量減到最少。 請記住，GPU 有很大的命令佇列，而每次遊戲呼叫 **Draw** 時，該命令連同與其關聯的資料一起進入佇列。 當遊戲更新基本類型常數緩衝區並發出下一個 **Draw** 命令時，圖形驅動程式會將下一個命令及關聯的資料新增到佇列。 如果遊戲繪製 100 個基本類型，則佇列中可能會有 100 個常數緩衝區資料的複本。 我們想要將傳送到 GPU 的遊戲資料數量減到最少，所以遊戲會使用不同的基本類型常數緩衝區，其中僅包含每個基本類型的更新。
 
-If a collision (a hit) is detected, **GameObject::Render** checks the current context, which indicates whether the target has been hit by an ammo sphere. If the target has been hit, this method applies a hit material, which reverses the colors of the rings of the target to indicate a successful hit to the player. Otherwise, it applies the default material with the same method. In both cases, it sets the material by calling **Material::RenderSetup**, which sets the appropriate constants into the constant buffer. Then, it calls [**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) to set the corresponding texture resource for the pixel shader, and [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to set the vertex shader and pixel shader objects themselves, respectively.
+如果偵測到撞擊 (擊中)，**GameObject::Render** 會檢查目前的內容，該內容會指出子彈是否擊中目標。 如果擊中目標，這個方法會套用擊中材質，反轉目標圓圈的顏色，以指出玩家已成功射中目標。 否則，它會使用相同的方法套用預設材質。 在這兩個情況中，它會呼叫 **Material::RenderSetup** (將適當常數設定到常數緩衝區中) 來設定材質。 接著，它呼叫 [**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) 來設定像素著色器的對應紋理資源，並呼叫 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 和 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 分別設定頂點著色器和像素著色器物件本身。
 
-Here's how **Material::RenderSetup** configures the constant buffers and assigns the shader resources. Again, note that the constant buffer is the one used for updating changes to primitives, specifically.
+這裡提供 **Material::RenderSetup** 如何設定常數緩衝區及指派著色器資源的方式。 再次請您注意，常數緩衝區是專門用來更新對基本類型所作的變更。
 
-> **Note**   The **Material** class is defined in **Material.h/.cpp**.
+> **注意** **Material** 類別定義在 **Material.h/.cpp** 中。
 
  
 
@@ -1029,7 +1029,7 @@ void Material::RenderSetup(
 }
 ```
 
-Finally, the **PrimObject::Render** calls the **Render** method for the underlying **MeshObject** object.
+最後，**PrimObject::Render** 會為基礎 **MeshObject** 物件呼叫 **Render** 方法。
 
 ```cpp
 void MeshObject::Render(_In_ ID3D11DeviceContext *context)
@@ -1044,21 +1044,21 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 }
 ```
 
-Now, the game sample’s **MeshObject::Render** method queues the drawing command to execute the shaders on the GPU using the current scene state. The vertex shader converts the geometry (vertices) from model coordinates into device (world) coordinates, taking into account where the camera is and the perspective transformation. Lastly, the pixel shaders render the transformed triangles into the back buffer using the texture set above.
+現在，遊戲範例的 **MeshObject::Render** 方法會佇列繪圖命令，使用目前的場景狀態，在 GPU 上執行著色器。 頂點著色器會將模型座標的幾何 (頂點) 轉換為裝置 (全局) 座標，將相機位置及透視轉換列入考慮。 最後，像素著色器使用之前設定的紋理，將轉換過的三角形轉譯到背景緩衝區。
 
-This happens on the actual rendering process!
+實際轉譯程序就是這樣！
 
-## Creating the vertex and pixel shaders
+## 建立頂點著色器和像素著色器
 
 
-At this point, the game sample has defined the primitives to draw and the constant buffers that define their rendering. These constant buffers serve as the sets of parameters to the shaders that run on the graphics device. These shader programs come in two types:
+此時，遊戲範例已定義了要繪製的基本類型，以及定義其轉譯的常數緩衝區。 這些常數緩衝區會做為在圖形裝置上執行的著色器的參數集。 這些著色器程式有兩種類型：
 
--   Vertex shaders perform per-vertex operations, such as vertex transformations and lighting.
--   Pixel (or fragment) shaders perform per-pixel operations, such as texturing and per-pixel lighting. They can also be used to perform post-processing effects on bitmaps, such as the final render target.
+-   頂點著色器執行個別頂點作業，例如頂點轉換和光線。
+-   像素 (或稱片段) 著色器執行個別像素作業，例如紋理和個別像素光線。 它們還可以用來執行點陣圖的後處理效果，例如最終轉譯目標。
 
-The shader code is defined using High-Level Shader Language (HLSL), which, in Direct3D 11, is compiled from a program created with a C-like syntax. (The complete syntax can be found [here](https://msdn.microsoft.com/library/windows/desktop/bb509635).) The two principal shaders for the sample game are defined in **PixelShader.hlsl** and **VertexShader.hlsl**. (There are also two "low power" shaders defined for low power devices: **PixelShaderFlat.hlsl** and **VertexShaderFlat.hlsl**. These two shaders provide reduced effects, such as a lack of specular highlights on textures surfaces.) FInally, there is an .hlsli file that contains the format of the constant buffers, **ConstantBuffers.hlsli**.
+著色器程式碼是以高階著色器語言 (HLSL) 定義，在 Direct3D 11 中，是從使用與 C 類似之語法建立的程式編譯而成。 (完整的語法可以在[這裡](https://msdn.microsoft.com/library/windows/desktop/bb509635)找到。) 範例遊戲的兩個主要著色器定義在 **PixelShader.hlsl** 和 **VertexShader.hlsl** 中。 (另外也為低電量裝置定義了兩個「低電量」著色器：**PixelShaderFlat.hlsl** 和 **VertexShaderFlat.hlsl**。 這兩個著色器提供降低過的效果，像是不在紋理表面上反射強光光線。) 最後，還有包含常數緩衝區的格式的 .hlsli 檔案 **ConstantBuffers.hlsli**。
 
-**ConstantBuffers.hlsli** is defined like this:
+**ConstantBuffers.hlsli** 的定義如下所示：
 
 ```cpp
 Texture2D diffuseTexture : register(t0);
@@ -1116,7 +1116,7 @@ struct PixelShaderFlatInput
 };
 ```
 
-**VertexShader.hlsl** is defined like this:
+**VertexShader.hlsl** 的定義如下所示：
 
 VertexShader.hlsl
 
@@ -1146,7 +1146,7 @@ PixelShaderInput main(VertextShaderInput input)
 }
 ```
 
-The **main** function in **VertexShader.hlsl** performs the vertex transformation sequence we discussed in the camera section. It's run one time per vertex. The resultant outputs are passed to the pixel shader code for texturing and material effects.
+**VertexShader.hlsl** 中的 **main** 函式會執行我們在相機一節中討論的頂點轉換序列。 它在每個頂點上執行一次。 結果輸出會傳遞到像素著色器程式碼，以產生紋理及材質效果。
 
 PixelShader.hlsl
 
@@ -1177,14 +1177,14 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-The **main** function in **PixelShader.hlsl** takes the 2-D projections of the triangle surfaces for each primitive in the scene, and computes the color value for each pixel of the visible surfaces based on the textures and effects (in this case, specular lighting) applied to them.
+**PixelShader.hlsl** 中的 **main** 函式使用場景中每個基本類型的三角形表面 2D 投影，並根據套用的紋理和效果 (在此例中是反射光源)，以計算可見表面上每個像素的色彩值。
 
-Now, let's bring all these ideas (primitives, camera, and shaders) together, and see how the sample game builds the complete rendering process.
+現在，我們將這些概念 (基本類型、相機及著色器) 組合在一起，然後看看範例遊戲如何建立完整的轉譯程序。
 
-## Rendering the frame for output
+## 轉譯輸出畫面
 
 
-We briefly discussed this method in [Defining the main game object](tutorial--defining-the-main-game-loop.md). Now, let's look at it in a little more detail.
+我們在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中簡短討論了這個方法。 現在，我們再深入看看更多細節。
 
 ```cpp
 void GameRenderer::Render()
@@ -1334,26 +1334,26 @@ void GameRenderer::Render()
 }
 ```
 
-The game has all the pieces to assemble a view for output: primitives and the rules for their behavior, a camera object to provide the player's view of the game world, and the graphics resources for drawing.
+遊戲具備組合輸出檢視的所有部分：基本類型及其行為規則、提供玩家遊戲世界視野的相機物件，以及用於繪製的圖形資源。
 
-Now, let's look at the process that brings it all together.
+現在，我們來看看將它們組合在一起的程序。
 
-1.  If stereo 3D is enabled, set the following rendering process to run two times, one time for each eye.
-2.  The whole scene is enclosed in a bounding world volume, so draw every pixel (even those we don’t need) to clear the color planes of the render target. Set the depth stencil buffer to the default value.
-3.  Update the constant buffer for frame update data by using the camera's view matrix and data.
-4.  Set up the Direct3D context to use the four content buffers that were defined earlier.
-5.  Call the **Render** method on each primitive object. This results in a **Draw** or **DrawIndexed** call on the context to draw the geometry of that each primitive. Specifically, this **Draw** call queues commands and data to the GPU, as parameterized by the constant buffer data. Each draw call executes the vertex shader one time per vertex, and then the pixel shader one time for every pixel of each triangle in the primitive. The textures are part of the state that the pixel shader uses to do the rendering.
-6.  Draw the HUD and the overlay using the Direct2D context.
-7.  Call **DirectXBase::Present**.
+1.  如果啟用 Stereo 3D，請將下列轉譯程序設定為執行兩次，針對每個眼睛執行一次。
+2.  整個場景是包含在外圍世界體積中，所以繪製每個像素 (即使是我們不需要的像素) 來清除轉譯目標的色彩平面。 將深度樣板緩衝區重設為預設值。
+3.  使用相機的視圖矩陣及資料，更新畫面更新資料的常數緩衝區。
+4.  將 Direct3D 內容設定為使用之前定義的 4 個內容緩衝區。
+5.  在每個基本類型物件上呼叫 **Render** 方法。 這會讓內容的 **Draw** 或 **DrawIndexed** 呼叫，繪製每個基本類型的幾何。 具體來說，這個 **Draw** 呼叫會將命令和資料排到 GPU 的佇列，由常數緩衝區資料進行參數化處理。 每個繪圖呼叫會在每個頂點上執行頂點著色器一次，然後像素著色器會在基本類型中每個三角形的每個像素中執行一次。 紋理是像素著色器用來進行轉譯之狀態的一部分。
+6.  使用 Direct2D 內容繪製 HUD 和重疊。
+7.  呼叫 **DirectXBase::Present**。
 
-And the game has updated the display! Altogether, this is the basic process for implementing the graphics framework of a game. Of course, the larger your game, the more abstractions you must put in place to handle that complexity, such as entire hierarchies of object types and animation behaviors, and more complex methods for loading and managing assets such as meshes and textures.
+而遊戲也已經更新了顯示畫面！ 上述的所有程序都實作遊戲圖形架構的基本程序。 當然，您的遊戲越大，就需要放入更多抽像物件來處理其複雜程度，例如物件類型的整個階層和動畫行為，以及更複雜的載入和管理資產 (網格及紋理) 的方法。
 
-## Next steps
+## 後續步驟
 
 
-Moving forward, let's look at a few important parts of the game sample that we've only discussed in passing: [the user interface overlay](tutorial--adding-a-user-interface.md), [the input controls](tutorial--adding-controls.md), and [the sound](tutorial--adding-sound.md).
+我們再繼續看看遊戲範例中之前簡略討論過的幾個重要部分：[使用者介面重疊](tutorial--adding-a-user-interface.md)、[輸入控制項](tutorial--adding-controls.md)以及[音效](tutorial--adding-sound.md)。
 
-## Complete sample code for this section
+## 這個章節的完整範例程式碼
 
 
 Camera.h
@@ -6306,26 +6306,26 @@ void Material::RenderSetup(
             
 ```
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
-## Related topics
+## 相關主題
 
 
-* [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+* [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,94 +1,81 @@
 ---
 author: Jwmsft
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
-title: Check boxes
+Description: "用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。"
+title: "核取方塊"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
-# Check boxes
+# 核取方塊
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+核取方塊可用於選取或取消選取動作項目。 它可以用於單一項目或使用者可從中選擇的多個項目清單。 這個控制項有三個選項狀態：未選取、已選取，以及不確定。 當子選項集合同時含有未選取和已選取狀態時，請使用不確定狀態。
 
-A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.
-
-![Example of check box states](images/templates-checkbox-states-default.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>CheckBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked event</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked property</strong></a> </li>
-</ul>
-
-</div>
-</div>
+![核取方塊狀態範例](images/templates-checkbox-states-default.png)
 
 
+-   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316)
+-   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
+-   [**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
 
+## 這是正確的控制項嗎？
 
+針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用**單一核取方塊** 登入案例或是用於服務合約條款。
 
+![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
-## Is this the right control?
+對於二元選項，將主要之間的差異 **核取方塊** 和 [**切換開關**](toggles.md) 核取方塊針對狀態而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
 
-Use a **single check box** for a binary yes/no choice, such as with a "Remember me?" login scenario or with a terms of service agreement.
+針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用**多個核取方塊**。
 
-![A single check box used for an individual choice](images/checkbox1.png)
+當使用者可以選取任何選項組合時，建立核取方塊群組。
 
-For a binary choice, the main difference between a **check box** and a [**toggle switch**](toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
+![使用核取方塊選取多個選項](images/checkbox2.png)
 
-Use **multiple check boxes** for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.
+將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
-Create a group of check boxes when users can select any combination of options.
+![用來顯示混合選項的核取方塊](images/checkbox3.png)
 
-![Selecting multiple options with check boxes](images/checkbox2.png)
+**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
 
-When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.
+## 範例
 
-![Check boxes used to show a mixed choice](images/checkbox3.png)
+Microsoft Edge 瀏覽器中對話方塊上的核取方塊。
 
-Both **check box** and **radio button** controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.
+![Microsoft Edge 瀏覽器中對話方塊上的核取方塊](images/control-examples/check-box-edge.png)
 
-## Examples
+Windows 中 [鬧鐘與時鐘] app 上的核取方塊。
 
-A check box in a dialog in the Microsoft Edge browser.
+![Windows 中 [鬧鐘與時鐘] app 上的核取方塊](images/control-examples/check-box-alarm.png)
 
-![A check box in a dialog in the Microsoft Edge browser](images/control-examples/check-box-edge.png)
+## 建立核取方塊
 
-Check boxes in the Alarms & Clock app in Windows.
+若要對核取方塊指派標籤，請使用 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
 
-![Check boxes in the Alarms & Clock app in Windows](images/control-examples/check-box-alarm.png)
-
-## Create a checkbox
-
-To assign a label to the checkbox, set the [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property. The label displays next to the checkbox.
-
-This XAML creates a single check box that is used to agree to terms of service before a form can be submitted. 
+這個 XAML 會建立單一核取方塊，以便在可提交表單之前用來同意服務條款。 
 
 ```xaml
 <CheckBox x:Name="termsOfServiceCheckBox" 
           Content="I agree to the terms of service."/>
 ```
 
-Here's the same check box created in code.
+以下是使用程式碼建立的同一個核取方塊。
 
 ```csharp
 CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### Bind to IsChecked
+### 繫結到 IsChecked
 
-Use the [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) boolean value, you must use a value converter to bind it to a boolean value.
+使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
-In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
+在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 [提交] 按鈕。
 
-> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding and value converters, see [Data binding overview](../data-binding/data-binding-quickstart.md).
+> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -127,17 +114,17 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### Handle Click and Checked events
+### 處理 Click 和 Checked 事件
 
-To perform an action when the check box state changes, you can handle either the [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event, or the [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) and [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) events. 
+若要在核取方塊狀態變更時執行動作，您可以處理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件，或者 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
-The **Click** event occurs whenever the checked state changes. If you handle the Click event, use the **IsChecked** property to determine the state of the check box.
+**Click** 事件會在已核取的狀態變更時發生。 如果要處理 Click 事件，請使用 **IsChecked** 屬性來判斷核取方塊的狀態。
 
-The **Checked** and **Unchecked** events occur independently. If you handle these events, you should handle both of them to repsond to state changes in the check box.
+**Checked** 和 **Unchecked** 事件會單獨發生。 如果您處理這些事件，您應該同時處理這兩個事件，以回應核取方塊中的狀態變更。
 
-In the following examples, we show handling the Click event, and the Checked and Unchecked events. 
+在下列範例中，我們會示範如何處理 Click 事件，以及 Checked 和 Unchecked 事件。 
 
-Multiple checkboxes can share the same event handler. This example creates four checkboxes for selecting pizza toppings. The four checkboxes share the same **Click** event handler to update the list of selected toppings.
+多個核取方塊可以共用相同的事件處理常式。 這個範例會建立四個核取方塊來選取披薩餡料。 這四個核取方塊會共用相同的 **Click** 事件處理常式，來更新選取的餡料清單。
 
 ```XAML
 <StackPanel Margin="40">
@@ -157,7 +144,7 @@ Multiple checkboxes can share the same event handler. This example creates four 
 </StackPanel>
 ```
 
-Here's the event handler for the Click event. Every time a checkbox is clicked, it examines the checkboxes to see which ones are checked and update list of selected toppings.
+以下是 Click 事件的事件處理常式。 每次按一下核取方塊時，它會檢查核取方塊以查看哪些方塊已核取，並更新選取的餡料清單。
 
 ```csharp
 private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
@@ -180,21 +167,21 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Use the indeterminate state
+### 使用不確定狀態
 
-The CheckBox control inherits from [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) and can have three states: 
+CheckBox 控制項是繼承自 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx)，且可以有三種狀態︰ 
 
-State | Property | Value
+狀態 | 屬性 | 值
 ------|----------|------
-checked | IsChecked | **true** 
-unchecked | IsChecked | **false** 
-indeterminate | IsChecked | **null** 
+已核取 | IsChecked | **true** 
+未核取 | IsChecked | **false** 
+不確定 | IsChecked | **null** 
 
-For the check box to report the indeterminate state, you must set the [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) property to **true**. 
+針對要報告不確定狀態的核取方塊，您必須將 [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 屬性設為 **true**。 
 
-When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.
+將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
-In the following example, the "Select all" checkbox has its IsThreeState property set to **true**. The "Select all" checkbox is checked if all child elements are checked, unchecked if all child elements are unchecked, and indeterminate otherwise.
+在下列範例中，[全選] 核取方塊已將其 IsThreeState 屬性設為 **true**。 針對 [全選] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
 
 ```xaml
 <StackPanel>
@@ -276,38 +263,38 @@ private void SetCheckedState()
 }
 ```
 
-## Do's and don'ts
+## 可行與禁止事項
 
--   Verify that the purpose and current state of the check box is clear.
--   Limit check box text content to no more than two lines.
--   Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.
--   Use the default font unless your brand guidelines tell you to use another.
--   If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.
--   If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).
--   Don't put two check box groups next to each other. Use group labels to separate the groups.
--   Don't use a check box as an on/off control or to perform a command; instead, use a toggle switch.
--   Don't use a check box to display other controls, such as a dialog box.
--   Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.
--   When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
--   Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:
+-   確認核取方塊的目的和目前狀態非常明確。
+-   將核取方塊文字內容限制在兩行以內。
+-   核取方塊標籤的措辭陳述應該是有核取記號表示「是」，沒有核取記號則是「否」。
+-   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
+-   如果文字內容是動態的，請考慮如何調整控制項的大小以及調整後周圍的視覺項目會發生什麼變化。
+-   如果有兩個或多個互斥選項可供選擇，請考慮使用[選項按鈕](radio-button.md)。
+-   不要並列核取方塊群組。 使用群組標籤分隔群組。
+-   不要使用核取方塊做為開/關控制項或執行命令；請改用切換開關。
+-   不要使用核取方塊顯示其他控制項 (例如對話方塊)。
+-   使用不確定狀態，指示為部分子選項 (而非全部子選項) 設定某個選項。
+-   使用不確定狀態時，使用附屬核取方塊來顯示選取或未選取哪些選項。 設計讓使用者可以看到子選項的 UI。
+-   不要使用不確定狀態來表示第三個狀態。 不確定狀態是用來指示選項僅適用於部分子選項 (而非全部子選項)。 所以，不要讓使用者直接設定不確定狀態。 對於不應該執行的範例，此核取方塊使用不確定狀態來指示中等辣度：
 
-    ![An indeterminate check box](images/checkbox4_spicy.png)
+    ![不確定核取方塊](images/checkbox4_spicy.png)
 
-    Instead, use a radio button group that has three options: Not spicy, Spicy, and Extra spicy.
+    改用含三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」。
 
-    ![Radio button group with three options: Not spicy, Spicy, and Extra spicy](images/spicyoptions.png)
-
-
-## Related articles
-
--   [**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316) 
--   [Radio buttons](radio-button.md)
--   [Toggle switch](toggles.md)
+    ![含有三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」](images/spicyoptions.png)
 
 
+## 相關文章
+
+-   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [選項按鈕](radio-button.md)
+-   [切換開關](toggles.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO5-->
 
 

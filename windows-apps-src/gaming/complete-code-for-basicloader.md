@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: Complete code for BasicLoader
-description: Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+title: "BasicLoader 的完整程式碼"
+description: "轉換並載入一般圖形資源 (例如網格、紋理及多種著色器物件) 的類別與方法的完整程式碼。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
 ---
 
-# Complete code for BasicLoader
+# BasicLoader 的完整程式碼
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+轉換並載入一般圖形資源 (例如網格、紋理及多種著色器物件) 的類別與方法的完整程式碼。
 
-This topic contains these sections:
+這個主題包含這些小節：
 
--   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c-)
+-   [技術](#technologies)
+-   [需求](#requirements)
+-   [檢視程式碼 (C++)](#view-the-code-c-)
 
 <span id="download_locations"></span>
-## Download location
+## 下載位置
 
 
-This sample is not available for download.
+此範例不提供下載。
 
-## Technologies
+## 技術
 
-**Programming languages** - C++  
-**Programming models** - Windows Runtime
+**程式設計語言** - C++  
+**程式設計模型** - Windows 執行階段
 
-## Requirements
+## 需求
 
-**Minimum supported client** - Windows 10                              
-**Minimum supported server** - Windows Server 2016 Technical Preview 
+**最低支援的用戶端** - Windows 10                              
+**最低支援的伺服器** - Windows Server 2016 Technical Preview 
 
 
-## View the code (C++)
+## 檢視程式碼 (C++)
 
 ## BasicLoader.h
 
@@ -1111,6 +1111,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

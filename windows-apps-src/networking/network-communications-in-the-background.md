@@ -4,8 +4,8 @@ description: "當 app 不在前景時，它們會使用背景工作和兩個主�
 title: "背景網路通訊"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 translationtype: Human Translation
-ms.sourcegitcommit: eea01135c60df0323b73bf3fda8b44e6d02cd04b
-ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
 
 ---
 
@@ -18,22 +18,18 @@ ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-當 App 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊：通訊端代理程式和控制通道觸發程序。 針對長期連線使用通訊端的 App，可以在它們離開前景時，將通訊端的擁有權委派給系統通訊端代理程式。 當流量抵達通訊端時，代理程式會啟動應用程式，並將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
-
-## 在背景工作中執行短期網路作業
-
-SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論) 是針對即使在 App 於背景執行時仍維持長期網路連線的 App 所設計。 在背景工作邏輯 (例如，傳送一個 HTTP 要求) 中需要短期網路連線的 App，可能會直接呼叫核心網路 API ([**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906))。 不過，這類工作必須以特定方式設定，以便在所有情況下正常運作。 背景工作必須搭配其背景工作使用 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 條件，或在其背景工作登錄上使用 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) 旗標。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。
-
-如果您的背景工作不會使用這裡所說明的 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 或 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx)，您的背景工作將無法在處於 [連線待命] 模式時存取網路 (例如，當手機螢幕關閉時。)
+當 app 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊：通訊端代理程式和控制通道觸發程序。 使用通訊端的 app 離開前景時，可以委派系統通訊端代理程式通訊端的擁有權。 當流量抵達通訊端時，代理程式會啟動應用程式，並將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
 
 ## 通訊端代理程式和 SocketActivityTrigger
 
 如果 app 使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，則應使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和通訊端代理程式，這樣 app 的流量於 app 不在前景時抵達就會收到通知。
 
-為了讓 App 在非使用狀態時可以接收並處理通訊端上接收的資料，App 必須在啟動時執行一些一次性設定，然後在其轉為非使用狀態時將通訊端擁有權移轉給通訊端代理程式。
+為了讓 app 在非使用狀態時可以接收並處理通訊端上接收的資料，app 必須在啟動時執行一些一次性設定，然後在其轉為非使用狀態時將通訊端擁有權移轉給通訊端代理程式。
 
-一次設定步驟是建立觸發程序、登錄觸發程序的背景工作，並啟用通訊端代理程式的通訊端：
-  - 建立 **SocketActivityTrigger** 並登錄觸發程序的背景工作，並在您的程式碼中設定 TaskEntryPoint 參數以處理收到的封包。
+-   一次性設定步驟包括：
+
+    -   建立 SocketActivityTrigger 並將 TaskEntryPoint 參數設為您的程式碼來登錄背景工作，以在收到封包時進行處理。
+
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
             socketTaskBuilder.Name = _backgroundTaskName; 
@@ -42,7 +38,10 @@ SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論)
             socketTaskBuilder.SetTrigger(trigger); 
             _task = socketTaskBuilder.Register(); 
 ```
-  - 繫結通訊端之前，先在通訊端上呼叫 **EnableTransferOwnership**。
+
+    -   Call EnableTransferOwnership on the socket, before you bind the socket.
+
+
 ```csharp
            _tcpListener = new StreamSocketListener(); 
           
@@ -55,12 +54,15 @@ SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論)
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
-正確設定您的通訊端之後，當您的 App 即將暫停時，就會在通訊端上呼叫 **TransferOwnership** 來將 App 傳輸到通訊端代理程式。 代理程式會監視通訊端，並在收到資料時啟動背景工作。 以下範例包含執行 **StreamSocketListener** 通訊端移轉的公用程式 **TransferOwnership** 函式。 (請注意，不同類型的通訊端有各自的 **TransferOwnership** 方法，所以您必須針對要移轉擁有權的通訊端呼叫適當的方法。 程式碼可能會包含一個多載的 **TransferOwnership** 協助程式，每個所使用之通訊端類型會有一個實作，這樣 **OnSuspending** 程式碼會更易於閱讀。)
+-   暫停時採取的動作為：
 
-App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列其中一個適當的方法傳遞背景作業的識別碼。
--   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法。
--   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法。
--   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法。
+    當 app 即將暫停時，在通訊端上呼叫 **TransferOwnership** 來將它移轉給通訊端代理程式。 代理程式會監視通訊端，並在收到資料時啟動背景工作。 以下範例包含執行 **StreamSocketListener** 通訊端移轉的公用程式 **TransferOwnership** 函式。 (請注意，不同類型的通訊端有各自的 **TransferOwnership** 方法，所以您必須針對要移轉擁有權的通訊端呼叫適當的方法。 程式碼可能會包含一個多載的 **TransferOwnership** 協助程式，每個所使用之通訊端類型會有一個實作，這樣 **OnSuspending** 程式碼會更易於閱讀。)
+
+    App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列其中一個適當的方法傳遞背景作業的識別碼。
+
+    -   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法。
+    -   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法。
+    -   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法。
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -82,20 +84,26 @@ App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列�
         deferral.Complete(); 
     } 
 ```
-在背景工作的事件處理常式中：
+
+-  在背景工作的事件處理常式中：
+
    -  首先，取得背景工作延遲以使用非同步方法處理事件。
+
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
+
    -  接下來，從事件引數擷取 SocketActivityTriggerDetails，並尋找引發事件的原因：
+
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
     switch (details.Reason) 
 ```
-   -   如果事件是因為通訊端活動而引發，請在通訊端建立 DataReader，並以非同步方式載入讀取器，然後按照 app 的設計使用資料。 請注意，您必須將擁有權移轉回通訊端代理程式，之後通訊端再次活動時才會收到通知。
 
-   以下範例中，在通訊端上接收的文字會以快顯通顯示。
+    -   If the event was raised because of socket activity, create a DataReader on the socket, load the reader asynchronously, and then use the data according to your app's design. Note that you must return ownership of the socket back to the socket broker, in order to be notified of further socket activity again.
+
+        In the following example, the text received on the socket is displayed in a toast.
 
 ```csharp
 case SocketActivityTriggerReason.SocketActivity: 
@@ -109,7 +117,7 @@ case SocketActivityTriggerReason.SocketActivity:
             break; 
 ```
 
-   -   如果事件是因為保持運作計時器到期而引發，則您的程式碼應透過通訊端傳送一些資料，以保持通訊端運作並重新啟動保持運作計時器。 同樣地，務必將擁有權移轉回通訊端代理程式以接收後來的事件通知：
+    -   If the event was raised because a keep alive timer expired, then your code should send some data over the socket in order to keep the socket alive and restart the keep alive timer. Again, it is important to return ownership of the socket back to the socket broker in order to receive further event notifications:
 
 ```csharp
 case SocketActivityTriggerReason.KeepAliveTimerExpired: 
@@ -123,7 +131,7 @@ case SocketActivityTriggerReason.KeepAliveTimerExpired:
             break; 
 ```
 
-   -   如果事件因為通訊端關閉而引發，請確認在建立新的通訊端之後，將擁有權移轉給通訊端代理程式。 在此範例中，主機名稱和連接埠會儲存在本機設定中，以供用來建立新的通訊端連線：
+    -   If the event was raised because the socket was closed, re-establish the socket, making sure that after you create the new socket, you transfer ownership of it to the socket broker. In this sample, the hostname and port are stored in local settings so that they can be used to establish a new socket connection:
 
 ```csharp
 case SocketActivityTriggerReason.SocketClosed: 
@@ -140,7 +148,7 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
-   -   一旦事件通知處理完成，請記得將延遲完成：
+-   一旦事件通知處理完成，請記得將延遲完成：
 
 ```csharp
   deferral.Complete();
@@ -156,7 +164,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
-## ControlChannelTrigger 搭配 WebSockets
+## ontrolChannelTrigger 搭配 WebSockets
 
 使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
 
@@ -590,6 +598,6 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,90 +1,90 @@
 ---
 author: jnHs
-Description: Follow these guidelines to prepare your app's packages for submission to the Windows Store.
-title: App package requirements
+Description: "遵循這些指導方針來準備要提交到 Windows 市集的 app 套件。"
+title: "應用程式套件需求"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 translationtype: Human Translation
-ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
-ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
 
 ---
 
-# App package requirements
+# 應用程式套件需求
 
-Follow these guidelines to prepare your app's packages for submission to the Windows Store.
+遵循這些指導方針來準備要提交至 Windows 市集的 app 套件。
 
-## Before you build your app's package for the Windows Store
+## 在您建置 Windows 市集的 app 套件之前
 
-Make sure to [test your app with the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Windows Store, it can only be installed and run on computers that have developer licenses.
+請確定[使用 Windows 應用程式認證套件測試您的 app](https://msdn.microsoft.com/library/windows/apps/mt186449)。 我們也建議您在不同類型的硬體上測試您的 app。 請注意，除非您的 app 經過我們的認證，並在 Windows 市集發行，否則只能在有開發人員授權的電腦上安裝和執行 app。
 
-## Building the app package using Microsoft Visual Studio
+## 使用 Microsoft Visual Studio 建置應用程式套件
 
-If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
+如果您使用 Microsoft Visual Studio 做為開發環境，則您已經擁有內建的工具可以快速並輕易地建立應用程式套件。 如需詳細資訊，請參閱[封裝 app](https://msdn.microsoft.com/library/windows/apps/mt270969)。
 
-> **Note**  Be sure that all your filenames use ANSI. 
-
-
-When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically.
-
-When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
-
-Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
-
-### App bundles
-
-For apps that target Windows 8.1, Windows Phone 8.1, and later, Visual Studio can generate an app bundle (.appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
-
-> **Note**  One app bundle can contain your packages for all architectures. You should submit only one bundle for each targeted OS.
+> **注意：**務必讓您的所有檔案名稱都使用 ANSI。 
 
 
-With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969) and [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+在 Visual Studio 中建立套件時，請確定您已經使用與開發人員帳戶相關聯的相同 Microsoft 帳戶登入。 套件資訊清單的某些部分具有與您帳戶相關的特定詳細資料。 系統會自動偵測並新增此資訊。
 
-## Building the app package manually
+當您建置 app 套件時，Visual Studio 可以建立 .appx 檔案或 .appxupload 檔案 (或適用於 Windows Phone 8.1 及較舊版本的 .xap 檔案)。 對於目標為 Windows 10 的 app，請一律在 [套件](upload-app-packages.md) 頁面上傳 .appxupload 檔案。 如需針對市集封裝 UWP app 詳細資訊，請參閱[封裝適用於 Windows 10 的通用 Windows app](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
-If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://msdn.microsoft.com/library/windows/apps/br211476).
+您的 app 套件不一定要以根目錄在受信任之憑證授權單位的憑證簽署。
 
-Be sure to review the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
+### App 套件組合
 
-Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+針對 Windows 8.1、Windows Phone 8.1 及更新版本設計的 app 可以產生 app 套件組合 (.appxbundle)，以便縮減供使用者下載的 app 大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
-> **Note**  Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
-
-
-App bundles use a different manifest. Review the [Bundle manifest](https://msdn.microsoft.com/library/windows/apps/dn263089) documentation for the details and requirements for app bundle manifests.
-
-> **Tip**  Be sure to run the [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
+> **注意：**一個應用程式套件組合可以包含所有架構的套件。 只能針對每個目標 OS 提交一個套件組合。
 
 
-If your app has more than one package, these app manifest elements must be the same in each package (per targeted OS):
+有了 app 套件組合，使用者只需要下載相關的檔案，不需要下載所有可能的資源。 如需 app 套件組合的詳細資訊，請參閱[封裝 app](https://msdn.microsoft.com/library/windows/apps/mt270969) 和[封裝適用於 Windows 10 的通用 Windows app](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
--   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+## 手動建置 app 套件
 
-## Package format requirements
+如果您沒有使用 Visual Studio 建立套件，必須[手動建立套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211476)。
 
-Your app’s packages must comply with these requirements.
+如需完整的資訊清單詳細資料和需求，請務必檢閱 [App 套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474)文件。 您的資訊清單必須遵循套件資訊清單結構描述才能通過認證。
 
-| App package property | Requirement                                                          |
+您的資訊清單必須包含一些關於帳戶與 app 的特定資訊。 您可以在儀表板中，查看 app 概觀頁面 **應用程式管理** 區段中的[檢視應用程式身分識別詳細資料](view-app-identity-details.md)，來找到此資訊。
+
+> **注意：**資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
+
+
+App 套件組合使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://msdn.microsoft.com/library/windows/apps/dn263089)文件。
+
+> **提示：**在您提交套件之前，請務必執行 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/mt186449)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
+
+
+如果您的 app 具有多個套件，每個套件中的 app 資訊清單元素必須是相同的 (針對每個目標 OS)：
+
+-   [**套件/功能**](https://msdn.microsoft.com/library/windows/apps/br211422)
+-   [**套件/相依性**](https://msdn.microsoft.com/library/windows/apps/br211428)
+-   [**套件/資源**](https://msdn.microsoft.com/library/windows/apps/br211462)
+
+## 套件格式需求
+
+您的應用程式套件必須符合下列需求。
+
+| 應用程式套件屬性 | 需求                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Package size         | .appxbundle: 25 GB maximum per bundle <br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
-| Block map hashes     | SHA2-256 algorithm                                                   |
+| 套件大小         | .appxbundle：每個套件組合上限為 25 GB <br>以 Windows 8.1 為目標的 .appx 套件：每個套件上限為 8 GB <br> 以 Windows 8 為目標的 .appx 套件：每個套件上限為 2 GB <br> 以 Windows Phone 8.1 為目標的 .appx 套件：每個套件上限為 4 GB <br> .xap 套件：每個套件上限為 1 GB                                                                           |
+| 區塊對應雜湊     | SHA2-256 演算法                                                   |
  
 
-## StoreManifest XML file
+## StoreManifest XML 檔案
 
-StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Windows Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://msdn.microsoft.com/library/windows/apps/mt617325).
-
- 
+StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Windows 市集裝置 app，或是宣告套件仰賴的需求適用於某裝置。 StoreManifest.xml 會與 app 套件一起提交，且必須位於您 app 主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://msdn.microsoft.com/library/windows/apps/mt617325)。
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

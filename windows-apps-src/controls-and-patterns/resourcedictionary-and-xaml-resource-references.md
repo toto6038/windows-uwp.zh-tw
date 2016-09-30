@@ -9,13 +9,14 @@ ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 352514139f6c9d096dc0b04de46231c8a5ed8034
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fddd345507aace54aca66fe1caa2d9f89a74a299
 
 ---
+
 # ResourceDictionary 與 XAML 資源參考
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 
 您可以使用 XAML 來定義您 app 的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
 
@@ -50,7 +51,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 -   `<x:String>` - 使用 "greeting" 索引鍵來定義資源。
 -   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源，此索引鍵會指派給 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 屬性。
 
-> **注意**&nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
+> **注意** &nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
 
 資源不一定要是字串；它們可以是任何可共用的物件，例如樣式、範本、筆刷和色彩。 不過，控制項、形狀和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 無法共用，因此無法宣告為可重複使用的資源。 如需有關共用的詳細資訊，請參閱本主題稍後的 [XAML 資源必須是可共用的](#xaml_resources_must_be_sharable)一節。
 
@@ -104,7 +105,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 
 您可以像存取任何其他字典一樣存取資源字典的成員。
 
-> **注意**&nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
+> **注意** &nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
 
  
 
@@ -192,7 +193,7 @@ sealed partial class App : Application
 
 ## 每個 FrameworkElement 都可以有一個 ResourceDictionary
 
-[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 是控制項可從中繼承的一個基底類別，而且具備 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 因此，您可以將本機資源字典新增至任何 **FrameworkElement**。
+[ **FrameworkElement** ](https://msdn.microsoft.com/library/windows/apps/br208706) 是控制項可從中繼承的一個基底類別，而且具備 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 因此，您可以將本機資源字典新增至任何 **FrameworkElement**。
 
 在這裡，資源字典會新增至頁面元素。
 
@@ -252,9 +253,9 @@ sealed partial class App : Application
 
 ## 合併的資源字典
 
-「合併的資源字典」**是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
+*合併的資源字典*是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
 
-> **祕訣**&nbsp;&nbsp;您可以使用 [專案]**** 功能表的 [新增] &gt; [新增項目] &gt; [資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典。
+> **提示** &nbsp;&nbsp;您可以使用 [專案]**** 功能表的 [新增 &gt; 新增項目... &gt; 資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典。
 
 在這裡，您會在另一個名為 Dictionary1.xaml 的 XAML 檔案中，定義資源字典。
 
@@ -396,7 +397,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 查詢序列會接著檢查 app 執行階段物件樹狀目錄中的下一個父物件。 如果 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 存在並包含 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，便會要求包含指定索引鍵字串的字典項目。 如果找到資源，查詢序列會停止，並將物件放置在參考的位置。 否則，查詢行為會朝著物件樹狀根目錄繼續前進到下一個父層級。 此搜尋會一直持續向上遞迴到 XAML 的根元素為止，以搜尋完所有可能的直接資源位置。
 
-> **注意**&nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
+> **注意** &nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
 
  
 
@@ -432,8 +433,8 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 -   筆刷和色彩 (衍生自 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 的類別以及 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值)
 -   包含 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 的動畫類型
 -   轉換 (衍生自 [**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034) 的類別)
--   [**Matrix**](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
--   [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值
+-   [ **Matrix** ](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
+-   [ **Point** ](https://msdn.microsoft.com/library/windows/apps/br225870) 值
 -   某些其他 UI 相關結構，如 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 和 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)
 -   [XAML 內建資料類型](https://msdn.microsoft.com/library/windows/apps/mt186448)
 
@@ -501,6 +502,6 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

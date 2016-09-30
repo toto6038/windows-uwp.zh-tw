@@ -1,1420 +1,1420 @@
 ---
 author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
-title: Device Portal API reference for HoloLens
-description: Learn about the Windows Device Portal for HoloLens REST API's that you can use to access the data and control your device programmatically.
+title: "HoloLens 的 Device Portal API 參考"
+description: "了解 HoloLens 的 Windows Device Portal REST API，您可以用來存取資料，並以程式設計方式控制您的裝置。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
+ms.openlocfilehash: 5ed8ffe0a409569777fbf4e56a90ab3b80cd395c
 
 ---
-# Device Portal API reference for HoloLens
+# HoloLens 的 Device Portal API 參考
 
-Everything in the Windows Device Portal is built on top of REST API's that you can use to access the data and control your device programmatically.
+Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
 
-## Holographic OS
+## 全像攝影版 OS
 ---
-### Get HTTPS requirements for the Device Portal
+### 取得 Device Portal 的 HTTPS 需求
 
-**Request**
+**要求**
 
-You can get the HTTPS requirements for the Device Portal by using the following request format.
+您可以透過使用下列要求格式，以取得 Device Portal 的 HTTPS 需求。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/webmanagement/settings/https
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the stored interpupillary distance (IPD)
+### 取得儲存的瞳孔距離 (IPD)
 
-**Request**
+**要求**
 
-You can get the stored IPD value by using the following request format. The value is returned in millimeters.
+您可以透過使用下列要求格式，以取得儲存的 IPD 值。 傳回的值以公釐表示。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get a list of HoloLens specific ETW providers
+### 取得 HoloLens 特定 ETW 提供者的清單
 
-**Request**
+**要求**
 
-You can get a list of HoloLens specific ETW providers that are not registered with the system by using the following request format.
+您可以透過使用下列要求格式，以取得一份沒有在系統中登錄之 HoloLens 特定 ETW 提供者的清單。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/etw/customproviders
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Return the state for all active services
+### 傳回所有作用中服務的狀態
 
-**Request**
+**要求**
 
-You can get the state of all services that are currently running by using the following request format.
+您可以透過使用下列要求格式，以取得目前執行中之所有服務的狀態。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/services
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Set the HTTPS requirement for the Device Portal.
+### 設定 Device Portal 的 HTTPS 需求。
 
-**Request**
+**要求**
 
-You can set the HTTPS requirements for the Device Portal by using the following request format.
+您可以透過使用下列要求格式，以設定 Device Portal 的 HTTPS 需求。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/management/settings/https
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-required   | (**required**) Determines whether or not HTTPS is required for the Device Portal. Possible values are **yes**, **no**, and **default**.
+required   | (**required**) 決定 Device Portal 是否需要 HTTPS。 可能的值為 **yes**、**no** 與 **default**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Set the interpupillary distance (IPD)
+### 設定瞳孔距離 (IPD)
 
-**Request**
+**要求**
 
-You can set the stored IPD by using the following request format.
+您可以透過使用下列要求格式，以設定儲存的 IPD。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-ipd   | (**required**) The new IPD value to be stored. This value should be in millimeters.
+ipd   | (**required**) 要儲存的新 IPD 值。 此值應該以公釐表示。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## Holographic perception
+## 全息影像感知
 ---
-### Accept websocket upgrades and run a mirage client that sends updates
+### 接受 WebSocket 升級並執行傳送更新的 Mirage 用戶端
 
-**Request**
+**要求**
 
-You can accept websocket upgrades and run a mirage client that sends updates at 30 fps by using the following request format.
+您可以透過使用下列要求格式，以接受 WebSocket 升級，並執行以 30 fps 傳送更新的 Mirage 用戶端。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/holographic/perception/client
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-clientmode   | (**required**) Determines the tracking mode. A value of **active** forces visual tracking mode when it can't be established passively.
+clientmode   | (**必要**) 決定追蹤模式。 **active** 的值會在無法被動地建立視覺追蹤模式時強制建立它。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## Holographic thermal
+## 全息影像熱溫
 ---
-### Get the thermal stage of the device
+### 取得裝置的熱溫階段
 
-**Request**
+**要求**
 
-You can get the thermal stage of the device by using the following request format.
+您可以透過使用下列要求格式，以取得裝置的熱溫階段。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-The possible values are indicated by the following table.
+下表指明可能的值。
 
-Value | Description
+值 | 描述
 --- | ---
-1 | Normal
-2 | Warm
-3 | Critical
+1 | 正常
+2 | 暖
+3 | 熱
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## HSimulation control
+## HSimulation 控制項
 ---
-### Create a control stream or post data to a created stream
+### 建立控制項的串流，或將資料張貼到已建立的串流
 
-**Request**
+**要求**
 
-You can create a control stream or post data to a created stream by using the following request format. The posted data is expected to be of type **application/octet-stream**.
+您可以透過使用下列要求格式，以建立控制項串流或將資料張貼到已建立的串流。 張貼的資料應該是 **application/octet-stream** 類型。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-priority   | (**required if creating a control stream**) Indicates the priority of the stream.
-streamid   | (**required if posting to a created stream**) The identifier for the stream to post to.
+priority   | (**建立控制項串流時為必要**) 指出串流的優先順序。
+streamid   | (**張貼到已建立的串流時為必要**) 要張貼到之串流的識別碼。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Delete a control stream
+### 刪除控制項串流
 
-**Request**
+**要求**
 
-You can delete a control stream by using the following request format.
+您可以使用下列要求格式刪除控制項串流。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get a control stream
+### 取得控制項串流
 
-**Request**
+**要求**
 
-You can open a web socket connection for a control stream by using the following request format.
+您可以透過使用下列要求格式，為控制項串流開啟網路通訊端連線。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the simluation mode
+### 取得模擬模式
 
-**Request**
+**要求**
 
-You can get the simluation mode by using the following request format.
+您可以使用下列要求格式取得模擬模式。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/control/mode
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Set the simluation mode
+### 設定模擬模式
 
-**Request**
+**要求**
 
-You can set the simulation mode by using the following request format.
+您可以使用下列要求格式設定模擬模式。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simluation/control/mode
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-mode   | (**required**) Indicates the simulation mode. Possible values include **default**, **simulation**, **remote**, and **legacy**.
+mode   | (**必要**) 指出模擬模式。 可能的值包括 **default**、**simulation**、**remote** 與 **legacy**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## HSimulation playback
+## HSimulation 播放
 ---
-### Delete a recording
+### 刪除錄製
 
-**Request**
+**要求**
 
-You can delete a recording by using the following request format.
+您可以使用下列要求格式刪除錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to delete.
+recording   | (**必要**) 要刪除之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get all recordings
+### 取得所有錄製
 
-**Request**
+**要求**
 
-You can get all the available recordings by using the following request format.
+您可以使用下列要求格式取得所有可用的錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/files
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the types of data in a loaded recording
+### 取得已載入之錄製中的資料類型
 
-**Request**
+**要求**
 
-You can get the types of data in a loaded recording by using the following request format.
+您可以使用下列要求格式取得已載入之錄製中的資料類型。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/types
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording you are interested in.
+recording   | (**必要**) 要取得之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get all the loaded recordings
+### 取得所有已載入的錄製
 
-**Request**
+**要求**
 
-You can get all the loaded recordings by using the following request format.
+您可以使用下列要求格式取得所有已載入的錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/files
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the current playback state of a recording 
+### 取得錄製的目前播放狀態 
 
-**Request**
+**要求**
 
-You can get the current playback state of a recording by using the following request format.
+您可以使用下列要求格式取得錄製的目前播放狀態。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording that you are interested in.
+recording   | (**必要**) 要取得之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Load a recording
+### 載入錄製
 
-**Request**
+**要求**
 
-You can load a recording by using the following request format.
+您可以使用下列要求格式載入錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to load.
+recording   | (**必要**) 要載入之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Pause a recording
+### 暫停錄製
 
-**Request**
+**要求**
 
-You can pause a recording by using the following request format.
+您可以使用下列要求格式暫停錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/pause
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to pause.
+recording   | (**必要**) 要暫停之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Play a recording
+### 播放錄製
 
-**Request**
+**要求**
 
-You can play a recording by using the following request format.
+您可以使用下列要求格式播放錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/play
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to play.
+recording   | (**必要**) 要播放之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Stop a recording
+### 停止錄製
 
-**Request**
+**要求**
 
-You can stop a recording by using the following request format.
+您可以使用下列要求格停止錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/stop
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to stop.
+recording   | (**必要**) 要停止之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Unload a recording
+### 卸載錄製
 
-**Request**
+**要求**
 
-You can unload a recording by using the following request format.
+您可以使用下列要求格式卸載錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-recording   | (**required**) The name of the recording to unload.
+recording   | (**必要**) 要卸載之錄製的名稱。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Upload a recording
+### 上傳錄製
 
-**Request**
+**要求**
 
-You can upload a recording by using the following request format.
+您可以使用下列要求格式上傳錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## HSimulation recording
+## HSimulation 錄製
 ---
-### Get the recording state
+### 取得錄製狀態
 
-**Request**
+**要求**
 
-You can get the current recording state by using the following request format.
+您可以使用下列要求格式取得目前的錄製狀態
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/recording/status
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Start a recording
+### 開始錄製
 
-**Request**
+**要求**
 
-You can start a recording by using the following request format. There can only be one active recording at a time. 
+您可以使用下列要求格式開始錄製。 一次只能有一個使用中的錄製。 
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/recording/start
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-head   | (**see below**) Set this value to 1 to indicate the system should record head data.
-hands   | (**see below**) Set this value to 1 to indicate the system should record hands data.
-spatialMapping   | (**see below**) Set this value to 1 to indicate the system should record spatial mapping data.
-environment   | (**see below**) Set this value to 1 to indicate the system should record environment data.
-name   | (**required**) The name of the recording.
-singleSpatialMappingFrame   | (**optional**) Set this value to 1 to indicate that only a single sptial mapping frame should be recorded.
+head   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄頭部資料。
+hands   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄手勢資料。
+spatialMapping   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄空間對應資料。
+environment   | (**請參閱下面的內容**) 將此值設定為 1 來指出系統應該記錄環境資料。
+name   | (**必要**) 錄製的名稱。
+singleSpatialMappingFrame   | (**選用**) 將此值設定為 1 來指出應該只記錄單一空間對應框架。
 
-For these parameters, exactly one of the following parameters must be set to 1: *head*, *hands*, *spatialMapping*, or *environment*.
+對於這些參數，下列其中一個參數必須設定為 1：*head*、*hands*、*spatialMapping* 或 *environment*。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Stop the current recording
+### 停止目前的錄製
 
-**Request**
+**要求**
 
-You can stop the current recording by using the following request format. The recording will be returned as a file.
+您可以使用下列要求格式停止目前的錄製。 錄製會以檔案的形式傳回。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/recording/stop
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## Mixed reality capture
+## 混合實境擷取
 ---
-### Delete a mixed reality capture (MRC) recording from the device
+### 從裝置刪除混合實境擷取 (MRC) 錄製
 
-**Request**
+**要求**
 
-You can delete an MRC recording by using the following request format.
+您可以使用下列要求格式刪除 MRC 錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/mrc/file
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-filename   | (**required**) The name of the video file to delete. The name should be hex64 encoded.
+filename   | (**必要**) 要刪除的影片檔名稱。 名稱應該是 hex64 編碼。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Download a mixed reality capture (MRC) file
+### 下載混合實境擷取 (MRC) 檔案
 
-**Request**
+**要求**
 
-You can download an MRC file from the device by using the following request format.
+您可以透過使用下列要求格式，以從裝置下載 MRC 檔案。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/file
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-filename   | (**required**) The name of the video file you want to get. The name should be hex64 encoded.
-op   | (**optional**) Set this value to **stream** if you want to download a stream.
+filename   | (**必要**) 要取得的影片檔名稱。 名稱應該是 hex64 編碼。
+op   | (**選用**) 若要下載串流，請將此值設定為 **stream**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the mixed reality capture (MRC) settings
+### 取得混合實境擷取 (MRC) 設定
 
-**Request**
+**要求**
 
-You can get the MRC settings by using the following request format.
+您可以使用下列要求格式取得 MRC 設定。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the status of the mixed reality capture (MRC) recording
+### 取得混合實境擷取 (MRC) 錄製的狀態
 
-**Request**
+**要求**
 
-You can get the MRC recording status by using the following request format. The possible values include **running** and **stopped**.
+您可以使用下列要求格式取得 MRC 錄製狀態。 可能的值包括 **running** 與 **stopped**。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/status
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Get the list of mixed reality capture (MRC) files
+### 取得混合實境擷取 (MRC) 檔案的清單
 
-**Request**
+**要求**
 
-You can get the MRC files stored on the device by using the following request format.
+您可以使用下列要求格式取得儲存在裝置上的 MRC 檔案。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/files
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Set the mixed reality capture (MRC) settings
+### 設定混合實境擷取 (MRC) 設定
 
-**Request**
+**要求**
 
-You can set the MRC settings by using the following request format.
+您可以使用下列要求格式設定 MRC 設定。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Starts a mixed reality capture (MRC) recording
+### 開始混合實境擷取 (MRC) 錄製
 
-**Request**
+**要求**
 
-You can start an MRC recording by using the following request format.
+您可以使用下列要求格式開始 MRC 錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/video/control/start
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Stop the current mixed reality capture (MRC) recording
+### 停止目前的混合實境擷取 (MRC) 錄製
 
-**Request**
+**要求**
 
-You can stop the current MRC recording by using the following request format.
+您可以使用下列要求格式停止目前的 MRC 錄製。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/video/control/stop
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Take a mixed reality capture (MRC) photo
+### 拍攝混合實境擷取 (MRC) 相片
 
-**Request**
+**要求**
 
-You can take an MRC photo by using the following request format. The photo is returned in JPEG format.
+您可以使用下列要求格式拍攝 MRC 相片。 會傳回 JPEG 格式的相片。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/photo
 
 
-**URI parameters**
+**URI 參數**
 
-- None
+- 無
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-## Mixed reality streaming
+## 混合實境串流
 ---
-### Initiates a chunked download of a fragmented mp4
+### 起始分段下載 mp4 片段
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the default quality.
+您可以使用下列要求格式來起始分段下載 mp4 片段。 此 API 會使用預設品質。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live.mp4
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。
+holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。
+mic   | (**選用**) 指出是否擷取麥克風。 應該是 **true** 或 **false**。
+loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **true** 或 **false**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### 起始分段下載 mp4 片段
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the high quality.
+您可以使用下列要求格式來起始分段下載 mp4 片段。 此 API 會使用高品質。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_high.mp4
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。
+holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。
+mic   | (**選用**) 指出是否擷取麥克風。 應該是 **true** 或 **false**。
+loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **true** 或 **false**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### 起始分段下載 mp4 片段
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the low quality.
+您可以使用下列要求格式來起始分段下載 mp4 片段。 此 API 會使用低品質。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_low.mp4
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。
+holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。
+mic   | (**選用**) 指出是否擷取麥克風。 應該是 **true** 或 **false**。
+loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **true** 或 **false**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### 起始分段下載 mp4 片段
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the medium quality.
+您可以使用下列要求格式來起始分段下載 mp4 片段。 此 API 會使用中品質。
  
-Method      | Request URI
+方法      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_med.mp4
 
 
-**URI parameters**
+**URI 參數**
 
-You can specify the following additional parameters on the request URI:
+您可以在要求 URI 上指定下列其他參數：
 
-URI parameter | Description
+URI 參數 | 描述
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**選用**) 指出是否擷取 PV 相機。 應該是 **true** 或 **false**。
+holo   | (**選用**) 指出是否擷取全像投影。 應該是 **true** 或 **false**。
+mic   | (**選用**) 指出是否擷取麥克風。 應該是 **true** 或 **false**。
+loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **true** 或 **false**。
 
-**Request headers**
+**要求標頭**
 
-- None
+- 無
 
-**Request body**
+**要求主體**
 
-- None
+- 無
 
-**Response**
+**回應**
 
-- None
+- 無
 
-**Status code**
+**狀態碼**
 
-- Standard status codes.
+- 標準狀態碼。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

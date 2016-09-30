@@ -1,85 +1,85 @@
 ---
 author: mcleblanc
-description: If you have a Universal 8.1 app&\#8212;whether it's targeting Windows 8.1, Windows Phone 8.1, or both&\#8212;then you'll find that your source code and skills will port smoothly to Windows 10.
-title: Move from Windows Runtime 8.x to UWP'
+description: "如果您有通用 8.1 app&amp;\\#8212;無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計&amp;\\#8212;則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。"
+title: "從 Windows Runtime 8.x 移至 UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
+ms.openlocfilehash: 3aa24e61482054dadd9b798063d46abf36623e9b
 
 ---
 
-# Move from Windows Runtime 8.x to UWP
+# 從 Windows Runtime 8.x 移至 UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a Universal Windows Platform (UWP) app, which is a single app package that your customers can install onto every kind of device. For more background on Windows 10, UWP apps, and the concepts of adaptive code and adaptive UI that we'll mention in this porting guide, see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+如果您有通用 8.1 app (無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計)，則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在本移植指南中提及之 Windows 10、UWP 應用程式，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱 [UWP 應用程式指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-While porting, you'll find that Windows 10 shares the majority of APIs with the previous platforms, as well as XAML markup, UI framework, and tooling, and you'll find it all reassuringly familiar. Just as before, you can still choose between C++, C#, and Visual Basic for the programming language to use along with the XAML UI framework. Your first steps in planning exactly what to do with your current app or apps will depend on the kinds of apps and projects you have. That's explained in the following sections.
+在移植時，您將發現 Windows 10 會與先前的平台共用大部分的 API，以及 XAML 標記、UI 架構及工具，而且全都讓人非常熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
 
-## If you have a Universal 8.1 app
+## 如果您有通用 8.1 應用程式
 
-A Universal 8.1 app is built from an 8.1 Universal App project. Let's say the project's name is AppName\_81. It contains these sub-projects.
+通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName\_81。 它包含這些子專案。
 
--   AppName\_81.Windows. This is the project that builds the app package for Windows 8.1.
--   AppName\_81.WindowsPhone. This is the project that builds the app package for Windows Phone 8.1.
--   AppName\_81.Shared. This is the project that contains source code, markup files, and other assets and resources that are used by both of the other two projects.
+-   AppName\_81.Windows。 這是建置適用於 Windows 8.1 之應用程式套件的專案。
+-   AppName\_81.WindowsPhone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
+-   AppName\_81.Shared。 這個專案當中包含其他兩個專案都會用到的原始程式碼、標記檔案及其他資產與資源。
 
-Often, an 8.1 Universal Windows app offers the same features—and does so using the same code and markup—in both its Windows 8.1 and Windows Phone 8.1 forms. An app like that is an ideal candidate for porting to a single Windows 10 app that targets the Universal device family (and that you can install onto the widest range of devices). You'll essentially port the contents of the Shared project and you'll need to use little or nothing from the other two projects because there'll be little or nothing in them.
+通常，8.1 通用 Windows app 會以Windows 8.1 與 Windows Phone 8.1 兩種形式—使用相同的程式碼和標記—來提供相同的功能。 這類 app 最適合移植到針對通用裝置系列設計的單一 Windows 10 應用程式 (這表示它所能安裝的裝置種類最廣泛)。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
 
-Other times, the Windows 8.1 and/or the Windows Phone 8.1 form of the app contain unique features. Or they contain the same features but they implement those features using different techniques or different technology. With an app like that, you can choose to port it to a single app that targets the Universal device family (in which case you will want the app to adapt itself to different devices), or you can choose to port it as more than one app, perhaps one targeting the Desktop device family and another targeting the Mobile device family. The nature of the Universal 8.1 app will determine which of these options is best for your case.
+其他時候，Windows 8.1 和/或 Windows Phone 8.1 形式的應用程式會包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
 
-1.  Port the contents of the Shared project to an app targeting the Universal device family. If applicable, salvage any other content from the Windows and WindowsPhone projects, and use that content either unconditionally in the app or conditional on the device that your app happens to be running on at the time (the latter behavior is known as *adaptive*).
-2.  Port the contents of the WindowsPhone project to an app targeting the Universal device family. If applicable, salvage any other content from the Windows project, using it either unconditionally or adaptively.
-3.  Port the contents of the Windows project to an app targeting the Universal device family. If applicable, salvage any other content from the WindowsPhone project, using it either unconditionally or adaptively.
-4.  Port the contents of the Windows project to an app targeting the Universal or the Desktop device family and also port the contents of the WindowsPhone project to an app targeting the Universal or the Mobile device family. You can create a solution with a Shared project, and continue to share source code, markup files, and other assets and resources between the two projects. Or, you can create different solutions and still share the same items using links.
+1.  將共用專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 和 WindowsPhone 專案的任何其他內容，以便在應用程式中無條件地使用那些內容，或在您的應用程式當時執行所在的裝置上有條件地使用那些內容 (後者的行為稱為「調適型」**行為)。
+2.  將 WindowsPhone 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
+3.  將 Windows 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 WindowsPhone 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
+4.  將 Windows 專案的內容移植到針對通用或傳統型裝置系列設計的應用程式，以及將 WindowsPhone 專案的內容移植到針對通用或行動裝置系列設計的應用程式。 您可以建立一個包含共用專案的解決方案，然後繼續在兩個專案之間共用原始程式碼、標記檔案及其他資產和資源。 或者您可以建立不同的解決方案，但仍然使用連結來共用相同的項目。
 
-## If you have a Windows 8.1 app
+## 如果您有 Windows 8.1 應用程式
 
-Port the project to an app targeting the Universal or the Desktop device family. If you choose the Universal device family, and your app calls APIs that are implemented only in the Desktop device family, then you can guard those calls with adaptive code.
+請將專案移植到針對通用或傳統型裝置系列設計的應用程式。 如果您選擇通用裝置系列，且您的應用程式會呼叫只在傳統型裝置系列中實作的 API，您就可以使用調適型程式碼來保護那些呼叫。
 
-## If you have a Windows Phone 8.1 app
+## 如果您有 Windows Phone 8.1 應用程式
 
-Port the project to an app targeting the Universal or the Mobile device family. If you choose the Universal device family, and your app calls APIs that are implemented only in the Mobile device family, then you can guard those calls with adaptive code.
+請將專案移植到針對通用或行動裝置系列設計的應用程式。 如果您選擇通用裝置系列，且您的應用程式會呼叫只在行動裝置系列中實作的 API，您就可以使用調適型程式碼來保護那些呼叫。
 
-## Adapting your app to multiple form factors
+## 調整您的應用程式以適應多種尺寸
 
-The option you choose from the previous sections will determine the range of devices that your app or apps will run on, and that may well be a very wide range of devices. Even limiting your app to the Mobile device family still leaves you with a wide range of screen sizes to support. So, if your app will be running on form factors that it didn't formerly support, then test your UI on those form factors and make any change necessary, so that your UI adapts appropriately on each. You can think of this is a post-porting task, or a porting stretch-goal, and there are some examples of it in practice in the [Bookstore2](w8x-to-uwp-case-study-bookstore2.md) and [QuizGame](w8x-to-uwp-case-study-quizgame.md) case studies.
+您在前面小節中所做的選擇將決定用來執行應用程式的裝置範圍，而且此裝置範圍可能非常廣泛。 即使將您的應用程式限制只在行動裝置系列上執行，您還是必須支援非常多種不同的螢幕尺寸。 因此，如果您的應用程式將以之前未支援的尺寸執行，請用那些尺寸來測試 UI 並進行任何必要的變更，讓 UI 可針對各個尺寸適當地調適。 您可以將這個當成後續移植工作[Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 與 [QuizGame](w8x-to-uwp-case-study-quizgame.md) 案例研究中會有一些實際操作範例。
 
-## Approaching porting layer-by-layer
+## 逐層進行移植
 
-When porting a Universal 8.1 app to the model for UWP apps, virtually all of your knowledge and experience will transfer, as will most of your source code and markup and the software patterns you use.
+將通用 8.1 應用程式移植到 UWP 應用程式的模型時，您所有的知識和經驗，以及大部分您所使用的原始程式碼、標記及軟體模式，都會一併轉移過去。
 
--   **View**. The view (together with the view model) makes up your app's UI. Ideally, the view consists of markup bound to observable properties of a view model. Another pattern (common and convenient, but only in the short term) is for imperative code in a code-behind file to directly manipulate UI elements. In either case, your UI markup and design—and even imperative code that manipulates UI elements—will be straightforward to port.
--   **View models and data models**. Even if you don't formally embrace separation-of-concerns patterns (such as MVVM), there is inevitably code present in your app that performs the function of view model and data model. View model code makes use of types in the UI framework namespaces. Both view model and data model code also use non-visual operating system and .NET Framework APIs (including APIs for data-access). And those APIs are [available for UWP apps, too](https://msdn.microsoft.com/library/windows/apps/br211369), so most if not all of this code will port without change.
--   **Cloud services**. It's likely that some of your app (perhaps a great deal of it) runs in the cloud in the form of services. The part of the app running on the client device connects to those. This is the part of a distributed app most likely to remain unchanged when porting the client part. If you don't already have one, a good cloud services option for your UWP app is [Microsoft Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/), which provides powerful back-end components that your app can call for services ranging from simple notifications for live tiles updates up to the kind of heavy-lifting scalability a server farm can provide.
+-   **檢視**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的 UI 標記和設計—甚至是操作 UI 元素的命令式程式碼—都會直接移植。
+-   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型和資料模型程式碼也都使用非視覺作業系統和 .NET Framework API (包括用於資料存取的 API)。 而且那些 API 也都[適用於 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/br211369)，所以此程式碼大部分 (如果不是全部的話) 都將在沒有任何改變的情況下移植。
+-   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](http://azure.microsoft.com/services/mobile-services/)會是您 UWP 應用程式的一個絕佳雲端服務選項，它提供強大的後端元件，可供您的應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，一直到伺服器陣列可提供的那種高難度延展性。
 
-Before or during the porting, consider whether your app could be improved by refactoring it so that code with a similar purpose is gathered together in layers and not scattered arbitrarily. Factoring your app into layers like those described above makes it easier for you to make your app correct, to test it, and then subsequently to read and maintain it. You can make functionality more reusable by following the Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) pattern. This pattern keeps the data, business, and UI parts of your app separate from one another. Even within the UI it can keep state and behavior separate, and separately testable, from the visuals. With MVVM, you can write your data and business logic once and use it on all devices no matter the UI. It's likely that you'll be able to re-use much of the view model and view parts across devices, too.
+在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
-## If you have a Microsoft Visual Studio 2015 RC project
+## 如果您有 Microsoft Visual Studio 2015 RC 專案
 
-If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then see [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
+如果您有使用 Visual Studio 2015 RC 建立的 Windows 10 專案， 請參閱[將您的 UWP Microsoft Visual Studio 2015 RC 專案更新為 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md)。
  
-| Topic | Description |
+| 主題 | 說明 |
 |-------|-------------|
-| [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md) | You have two options when you begin the porting process. One is to edit a copy of your existing project files, including the app package manifest (for that option, see the info about updating your project files in [Migrate apps to the Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/mt148501.aspx)). The other option is to create a new Windows 10 project in Visual Studio and copy your files into it. |
-| [Troubleshooting](w8x-to-uwp-troubleshooting.md) | We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs. To that end, you can make temporary progress by commenting or stubbing out any non-essential code, and then returning to pay off that debt later. The table of troubleshooting symptoms and remedies in this topic may be helpful to you at this stage, although it's not a substitute for reading the next few topics. You can always refer back to the table as you progress through the later topics. |
-| [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md) | The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to UWP apps. You'll find that most of your markup is compatible, although you may need to make some adjustments to the system Resource keys or custom templates that you're using. |
-| [Porting for I/O, device, and app model](w8x-to-uwp-input-and-sensors.md) | Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer or the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen. |
-| [Case study: Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | This topic presents a case study of porting a very simple Universal 8.1 app to a Windows 10 UWP app. A Universal 8.1 app is one that builds one app package for Windows 8.1, and a different app package for Windows Phone 8.1. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631). |
-| [Case study: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | This case study—which builds on the info given in [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) control. In the view model, each instance of the class Author represents the group of the books written by that author, and in the SemanticZoom, we can either view the list of books grouped by author or we can zoom out to see a jump list of authors. |
-| [Case study: QuizGame](w8x-to-uwp-case-study-quizgame.md) | This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 UWP app. |
+| [移植專案](w8x-to-uwp-porting-to-a-uwp-project.md) | 當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中。 |
+| [疑難排解](w8x-to-uwp-troubleshooting.md) | 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。 為此，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。 本主題中的疑難排解問題和解決方式表格雖然無法用來替代閱讀接下來的幾個主題，但是在這個階段可能對您很有幫助。 在您進展到後續的主題時，隨時可以回來參考這個表格。 |
+| [移植 XAML 與 UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至 UWP app。 您會發現大部分標記都相容，雖然您可能需要對系統的「資源」索引鍵或您使用的自訂範本進行一些調整。 |
+| [I/O、裝置與 app 模型的移植](w8x-to-uwp-input-and-sensors.md) | 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。 |
+| [案例研究：Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主題提供的案例研究可將非常簡單的通用 8.1 app 移植到 Windows 10 UWP app。 通用 8.1 app 會針對 Windows 8.1 建置一個應用程式套件，並針對 Windows Phone 8.1 建置另一個應用程式套件。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。 |
+| [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 這個案例研究是以 [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項中提供的資訊為基礎建置。 在檢視模型中，每個 Author 類別執行個體都代表該作者所著之書籍的群組，而在 SemanticZoom 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
+| [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 app 範例移植到 Windows 10 UWP app。 |
 
-## Related topics
+## 相關主題
 
-**Documentation**
-* [Windows Runtime reference](https://msdn.microsoft.com/library/windows/apps/br211377)
-* [Building Universal Windows apps for all Windows devices](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Designing UX for apps](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-
+**文件**
+* [Windows 執行階段參考](https://msdn.microsoft.com/library/windows/apps/br211377)
+* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [設計 app 的 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

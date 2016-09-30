@@ -1,42 +1,42 @@
 ---
 author: msatranjr
-title: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
-description: This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.
+title: "在 C++ 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C\\# 呼叫該元件#"
+description: "本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。"
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
+ms.openlocfilehash: 860333e3239198cd54eea061195e2a51d786821b
 
 ---
 
-<h1>Walkthrough: Creating a Windows Runtime component in C++ and calling it from JavaScript or C#</h1>
+<h1>逐步解說：在 C++ 中建立 Windows 執行階段元件，然後從 JavaScript 或 C 呼叫該元件#</h1>
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic. Before you begin this walkthrough, make sure that you understand concepts such as the Abstract Binary Interface (ABI), ref classes, and the Visual C++ Component Extensions that make working with ref classes easier. For more information, see [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和 [Visual C++ 語言參考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
-## Creating the C++ component DLL
+## 建立 C++ 元件 DLL
 
-In this example, we create the component project first, but you could create the JavaScript project first. The order doesn’t matter.
+此範例會先建立元件專案，但您也可以先建立 JavaScript 專案。 順序並不重要。
 
-Notice that the main class of the component contains examples of property and method definitions, and an event declaration. These are provided just to show you how it's done. They are not required, and in this example, we'll replace all of the generated code with our own code.
+請注意，元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了示範它的進行方式。 這些並不是必要項目，而且在此範例中，我們會以自己的程式碼來取代所有產生的程式碼。
 
-## **To create the C++ component project**
+## **建立 C++ 元件專案**
 
-On the Visual Studio menu bar, choose **File, New, Project**.
+在 Visual Studio 功能表列上，依序選擇 [檔案]、[新增] 及 [專案]****。
 
-In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
+在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
 
-In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.
+在中央窗格，選取 [**Windows 執行階段元件**]，然後將專案命名為 WinRT\_CPP。
 
-Choose the **OK** button.
+選擇 [確定]**** 按鈕。
 
-## **To add an activatable class to the component**
+## **將可啟用的類別加入至元件**
 
-An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++). In your component, you declare it as **public ref class sealed**. In fact, the Class1.h and .cpp files already have a ref class. You can change the name, but in this example we’ll use the default name—Class1. You can define additional ref classes or regular classes in your component if they are required. For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
-Add these \#include directives to Class1.h:
+將下列 \#include 指示詞加入至 Class1.h：
 
 ```cpp
 #include <collection.h>
@@ -45,23 +45,23 @@ Add these \#include directives to Class1.h:
 #include <amp_math.h>
 ```
 
-collection.h is the header file for C++ concrete classes such as the Platform::Collections::Vector class and the Platform::Collections::Map class, which implement language-neutral interfaces that are defined by the Windows Runtime. The amp headers are used to run computations on the GPU. They have no Windows Runtime equivalents, and that’s fine because they are private. In general, for performance reasons you should use ISO C++ code and standard libraries internally within the component; it’s just the Windows Runtime interface that must be expressed in Windows Runtime types.
+collection.h 是 C++ 具象類別 (例如 Platform::Collections::Vector 類別和 Platform::Collections::Map 類別，這會實作 Windows 執行階段所定義之非語言相關的介面) 的標頭檔。 amp 標頭是用來在 GPU 上執行計算。 它們沒有 Windows 執行階段的對等用法，不過沒關係，因為它們是私用的。 一般而言，基於效能考量，您應該在元件內部使用 ISO C++ 程式碼和標準程式庫，因為它只是必須以 Windows 執行階段類型表示的 Windows 執行階段介面。
 
-## To add a delegate at namespace scope
+## 在命名空間範圍內加入委派
 
-A delegate is a construct that defines the parameters and return type for methods. An event is an instance of a particular delegate type, and any event handler method that subscribes to the event must have the signature that's specified in the delegate. The following code defines a delegate type that takes an int and returns void. Next the code declares a public event of this type; this enables client code to provide methods that are invoked when the event is fired.
+委派是可定義方法的參數和傳回類型的建構。 事件是特定委派類型的執行個體，而且訂閱事件的所有事件處理常式方法都必須包含委派中所指定的簽章。 下列程式碼會定義使用 int 並傳回 void 的委派類型。 接著，程式碼會宣告此類型的公用事件，這讓用戶端程式碼能夠在事件引發時提供所叫用的方法。
 
-Add the following delegate declaration at namespace scope in Class1.h, just before the Class1 declaration.
+在 Class1 宣告之前，於 Class1.h 的命名空間範圍內加入下列委派宣告。
 
 ```cpp
 public delegate void PrimeFoundHandler(int result);
 ```
 
-If the code isn’t lining up correctly when you paste it into Visual Studio, just press Ctrl+K+D to fix the indentation for the entire file.
+如果在 Visual Studio 中貼上程式碼時，程式碼並未正確對齊，請按 Ctrl+K+D 來修正整個檔案的縮排格式。
 
-## To add the public members
+## 加入公用成員
 
-The class exposes three public methods and one public event. The first method is synchronous because it always executes very fast. Because the other two methods might take some time, they are asynchronous so that they don’t block the UI thread. These methods return IAsyncOperationWithProgress and IAsyncActionWithProgress. The former defines an async method that returns a result, and the latter defines an async method that returns void. These interfaces also enable client code to receive updates on the progress of the operation.
+這個類別會公開三個公用方法和一個公用事件。 第一個方法是同步方法，因為它一律會以飛快的速度來執行。 另外兩個方法是非同步方法，因為可能需要一些時間才能執行完畢，如此才不會阻擋 UI 執行緒。 這些方法會傳回 IAsyncOperationWithProgress 和 IAsyncActionWithProgress。 前者會定義傳回結果的非同步方法，而後者則會定義傳回 void 的非同步方法。 這些介面也可讓用戶端程式碼接收作業進度的更新。
 
 ```cpp
 public:
@@ -78,9 +78,9 @@ public:
         event PrimeFoundHandler^ primeFoundEvent;
 
 ```
-## To add the private members
+## 加入私用成員
 
-The class contains three private members: two helper methods for the numeric computations and a CoreDispatcher object that’s used to marshal the event invocations from worker threads back to the UI thread.
+此類別包含三個私用成員：兩個用於數值計算的 Helper 方法以及一個 CoreDispatcher 物件，後者是用來從背景工作執行緒將事件叫用封送處理回 UI 執行緒。
 
 ```cpp
 private:
@@ -88,16 +88,16 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## To add the header and namespace directives
+## 加入標題和命名空間指示詞
 
-In Class1.cpp, add these #include directives:
+在 Class1.cpp 中，加入下列 #include 指示詞：
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-Now add these using statements to pull in the required namespaces:
+現在，加入下列 using 陳述式來引進所需的命名空間：
 
 ```cpp
 using namespace concurrency;
@@ -107,9 +107,9 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## To add the implementation for ComputeResult
+## 加入 ComputeResult 的實作
 
-In Class1.cpp, add the following method implementation. This method executes synchronously on the calling thread, but it is very fast because it uses C++ AMP to parallelize the computation on the GPU. For more information, see C++ AMP Overview. The results are appended to a Platform::Collections::Vector<T> concrete type, which is implicitly converted to a Windows::Foundation::Collections::IVector<T> when it is returned.
+在 Class1.cpp 中，加入下列方法實作。 這個方法會在呼叫執行緒上同步執行，因為它會使用 C++ AMP 在 GPU 上平行處理計算，因此執行速度非常快。 如需詳細資訊，請參閱＜C++ AMP 概觀＞。 結果會附加至 Platform::Collections::Vector<T> 具象類型，它會在傳回時隱含轉換為 Windows::Foundation::Collections::IVector<T>。
 
 ```cpp
 //Public API
@@ -141,11 +141,11 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## To add the implementation for GetPrimesOrdered and its helper method
+## 加入 GetPrimesOrdered 及其 Helper 方法的實作
 
-In Class1.cpp, add the implementations for GetPrimesOrdered and the is_prime helper method. GetPrimesOrdered uses a concurrent_vector class and a parallel_for function loop to divide up the work and use the maximum resources of the computer on which the program is running to produce results. After the results are computed, stored, and sorted, they are added to a Platform::Collections::Vector<T> and returned as Windows::Foundation::Collections::IVector<T> to client code.
+在 Class1.cpp 中，加入 GetPrimesOrdered 及 is_prime Helper 方法的實作。 GetPrimesOrdered 會使用 concurrent_vector 類別和 parallel_for 函式迴圈來劃分工作，並利用程式執行所在電腦上的最大資源來產生結果。 經過計算、儲存及排序之後的結果會加入 Platform::Collections::Vector<T>，並以 Windows::Foundation::Collections::IVector<T> 的形式傳回至用戶端程式碼。
 
-Notice the code for the progress reporter, which enables the client to hook up a progress bar or other UI to show the user how much longer the operation is going to take. Progress reporting has a cost. An event must be fired on the component side and handled on the UI thread, and the progress value must be stored on each iteration. One way to minimize the cost is by limiting the frequency at which a progress event is fired. If the cost is still prohibitive, or if you can't estimate the length of the operation, then consider using a progress ring, which shows that an operation is in progress but doesn't show time remaining until completion.
+請注意進度報告程式的程式碼，它可讓用戶端連接進度列或其他 UI，讓使用者得知作業還要多久才完成。 使用進度報告也必須付出代價。 您必須在元件端引發事件，並在 UI 執行緒上處理該事件，而且每個反覆項目都必須儲存進度值。 將這個代價降到最低的其中一種方式，就是限制引發進度事件的頻率。 如果不願意付出這個代價，或者您無法評估作業要多久才能完成，請考慮使用進度環來表示作業正在進行中，但直到完成為止都不會顯示剩餘的時間。
 
 ```cpp
 // Determines whether the input value is prime.
@@ -211,9 +211,9 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## To add the implementation for GetPrimesUnordered
+## 加入 GetPrimesUnordered 的實作
 
-The last step to create the C++ component is to add the implementation for the GetPrimesUnordered in Class1.cpp. This method returns each result as it is found, without waiting until all results are found. Each result is returned in the event handler and displayed on the UI in real time. Again, notice that a progress reporter is used. This method also uses the is_prime helper method.
+建立 C++ 元件的最後一個步驟是在 Class1.cpp 中加入 GetPrimesUnordered 的實作。 這個方法會傳回找到的每個結果，而不會等待直到找到所有結果為止。 事件處理常式中的每個結果都會傳回並即時顯示於 UI 上。 同樣地，請注意這裡也使用了進度報告程式。 這個方法也會使用 is_prime Helper 方法。
 
 ```cpp
 // This method returns no value. Instead, it fires an event each time a
@@ -273,31 +273,31 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## Creating a JavaScript client app
+## 建立 JavaScript 用戶端 App
 
-If you just want to create a C# client, you can skip this section.
+如果您只想建立 C# 用戶端，則可略過本節。
 
-## To create a JavaScript project
+## 建立 JavaScript 專案
 
-In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.
+在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]****。
 
-Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.
+展開 \[JavaScript\] \(它可能是以巢狀方式置於 \[其他語言\]**** 底下\)，然後選擇 \[空白應用程式 \(通用 Windows\)\]****。
 
-Accept the default name—App1—by choosing the **OK** button.
+選擇 [確定]**** 按鈕，接受 App1 這個預設名稱。
 
-Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.
+開啟 App1 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]****。
 
-Add a project reference to WinRT_CPP:
+將專案參考加入至 WinRT_CPP：
 
-Open the shortcut menu for the References node and choose **Add Reference**.
+開啟 [參考] 節點的捷徑功能表，然後選擇 [加入參考]****。
 
-In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.
+在 [參考管理員] 對話方塊的左窗格中，依序選取 [專案]**** 和 [方案]****。
 
-In the center pane, select WinRT_CPP and then choose the **OK** button
+在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定]**** 按鈕。
 
-## To add the HTML that invokes the JavaScript event handlers
+## 加入可叫用 JavaScript 事件處理常式的 HTML
 
-Paste this HTML into the <body> node of the default.html page:
+將此 HTML 貼到 default.html 頁面的 <body> 節點中：
 
 ```HTML
 <div id="LogButtonDiv">
@@ -333,9 +333,9 @@ Paste this HTML into the <body> node of the default.html page:
  </div>
 ```
 
-## To add styles
+## 加入樣式
 
-In default.css, remove the body style and then add these styles:
+移除 default.css 中的 body 樣式，然後加入下列樣式：
 
 ```css
 #LogButtonDiv {
@@ -368,9 +368,9 @@ font-size:smaller;
 }
 ```
 
-## To add the JavaScript event handlers that call into the component DLL
+## 加入可呼叫元件 DLL 的 JavaScript 事件處理常式
 
-Add the following functions at the end of the default.js file. These functions are called when the buttons on the main page are chosen. Notice how JavaScript activates the C++ class, and then calls its methods and uses the return values to populate the HTML labels.
+在 default.js 檔案的結尾加入下列函式。 選擇主頁面上的按鈕時，就會呼叫這些函式。 請注意 JavaScript 啟用 C++ 類別的方式，然後呼叫其方法並使用傳回值來填入 HTML 標籤。
 
 ```JavaScript
 var nativeObject = new WinRT_CPP.Class1();
@@ -433,7 +433,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Add code to add the event listeners by replacing the existing call to WinJS.UI.processAll in app.onactivated in default.js with the following code that implements event registration in a then block. For a detailed explanation of this, see Create a "Hello World" app (JS).
+新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需此動作的詳細說明，請參閱＜建立 "Hello World" app (JS)＞。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -448,31 +448,31 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 }));
 ```
 
-Press F5 to run the app.
+按 F5 來執行 app。
 
-## Creating a C# client app
+## 建立 C# 用戶端 App
 
-## To create a C# project
+## 建立 C# 專案
 
-In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.
+在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 [加入] 和 [新增專案]****。
 
-Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.
+展開 \[Visual C#\] (它可能是以巢狀方式置於 \[其他語言\]**** 底下\)、選取 \[Windows\]****，接著選取左窗格中的 \[通用\]****，然後選取中間窗格的 \[空白應用程式\]****。
 
-Name this app CS_Client and then choose the **OK** button.
+將這個 app 命名為 CS_Client，然後選擇 [確定]**** 按鈕。
 
-Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.
+開啟 CS_Client 專案節點的捷徑功能表，然後選擇 [設定為啟始專案]****。
 
-Add a project reference to WinRT_CPP:
+將專案參考加入至 WinRT_CPP：
 
-Open the shortcut menu for the **References** node and choose **Add Reference**.
+開啟 [參考]**** 節點的捷徑功能表，然後選擇 [加入參考]****。
 
-In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.
+在 [參考管理員]**** 對話方塊的左窗格中，依序選取 [專案]**** 和 [方案]****。
 
-In the center pane, select WinRT_CPP and then choose the **OK** button.
+在中央窗格，選取 [WinRT_CPP]，然後選擇 [確定]**** 按鈕。
 
-## To add the XAML that defines the user interface
+## 加入定義使用者介面的 XAML
 
-Copy the following code into the Grid element in MainPage.xaml.
+將下列程式碼複製到 MainPage.xaml 中的 Grid 元素。
 
 ```xaml
 <ScrollViewer>
@@ -492,9 +492,9 @@ Copy the following code into the Grid element in MainPage.xaml.
 </ScrollViewer>
 ```
 
-## To add the event handlers for the buttons
+## 為按鈕加入事件處理常式
 
-In Solution Explorer, open MainPage.xaml.cs. (The file might be nested under MainPage.xaml.) Add a using directive for System.Text, and then add the event handler for the Logarithm calculation in the MainPage class.
+在 [方案總管] 中，開啟 MainPage.xaml.cs (這個檔案可能是以巢狀方式置於 MainPage.xaml 底下。) 針對 System.Text 加入 using 指示詞，然後在 MainPage 類別中加入事件處理常式以進行 Logarithm 計算。
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -514,7 +514,7 @@ private void Button1_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Add the event handler for the ordered result:
+為已排序的結果加入事件處理常式：
 
 ```csharp
 async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -552,7 +552,7 @@ async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Add the event handler for the unordered result, and for the button that clears the results so that you can run the code again.
+為未排序的結果加入事件處理常式，並為清除結果的按鈕加入事件處理常式，方便您再次執行程式碼。
 
 ```csharp
 private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -593,48 +593,48 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Running the app
+## 執行 App
 
-Select either the C# project or JavaScript project as the startup project by opening the shortcut menu for the project node in Solution Explorer and choosing **Set As Startup Project**. Then press F5 to run with debugging, or Ctrl+F5 to run without debugging.
+在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 [設定為啟始專案]****，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
 
-## Inspecting your component in Object Browser (optional)
+## 在物件瀏覽器中檢查您的元件 (選擇性)
 
-In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files. This includes the types in the Platform namespace and the default namespace. However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.
+在 [物件瀏覽器] 中，您可以檢查 .winmd 檔案中定義的所有 Windows 執行階段類型。 這包含 Platform 命名空間和預設命名空間中的類型。 不過，由於 Platform::Collections 命名空間中的類型是定義於標頭檔 collections.h (而非 winmd 檔案) 中，因此它們不會出現在 [物件瀏覽器] 中。
 
-## **To inspect a component**
+## **檢查元件**
 
-On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
+在功能表列上，依序選擇 **[檢視] 和 [物件瀏覽器]** (Ctrl+Alt+J)。
 
-In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
+在 [物件瀏覽器] 的左窗格中，展開 [WinRT\_CPP] 節點，以顯示在您的元件中定義的類型和方法。
 
-## Debugging tips
+## 偵錯提示
 
-For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:
+若想獲得較佳的偵錯經驗，請從公用 Microsoft 符號伺服器下載偵錯符號：
 
-## **To download debugging symbols**
+## **下載偵錯符號**
 
-On the menu bar, choose **Tools, Options**.
+在功能表列上，依序選擇 [工具] 和 [選項]****。
 
-In the **Options** dialog box, expand **Debugging** and select **Symbols**.
+在 [選項]**** 對話方塊中，展開 [偵錯]****，然後選取 [符號]****。
 
-Select **Microsoft Symbol Servers** and the choose the **OK** button.
+選取 [Microsoft 符號伺服器]****，然後選擇 [確定]**** 按鈕。
 
-It might take some time to download the symbols the first time. For faster performance the next time you press F5, specify a local directory in which to cache the symbols.
+第一次下載這些符號時可能需要一些時間。 若要縮短下載時間，當您下次按 F5 時，請指定用來快取符號的本機目錄。
 
-When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script or stepping through native code in the component, but not both at the same time. To change the setting, open the shortcut menu for the JavaScript project node in Solution Explorer and choose **Properties, Debugging, Debugger Type**.
+對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 [屬性]、[偵錯] 及 [偵錯工具類型]****。
 
-Be sure to select appropriate capabilities in the package designer. You can open the package designer by opening the Package.appxmanifest file. For example, if you are attempting to programmatically access files in the Pictures folder, be sure to select the **Pictures Library** check box in the **Capabilities** pane of the package designer.
+請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 [功能]**** 窗格中選取 [圖片庫]**** 核取方塊 。
 
-If your JavaScript code doesn't recognize the public properties or methods in the component, make sure that in JavaScript you are using camel casing. For example, the `ComputeResult` C++ method must be referenced as `computeResult` in JavaScript.
+如果 JavaScript 程式碼無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用 Camel 命名法的大小寫慣例。 例如，`ComputeResult` C++ 方法必須當做 JavaScript 中的 `computeResult` 來參考。
 
-If you remove a C++ Windows Runtime Component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
+如果從方案中移除 C++ Windows 執行階段元件專案，也必須手動從 JavaScript 專案中移除該專案的參考。 若未執行此動作，後續的偵錯或建置作業將無法執行。 之後如有必要，您可以加入 DLL 的組件參考。
 
-## Related topics
+## 相關主題
 
-* [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
+* [在 C++ 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,98 +1,98 @@
 ---
 author: mtoepke
-title: Marble Maze sample fundamentals
-description: This document describes the fundamental characteristics of the Marble Maze project, for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built.
+title: "Marble Maze 範例基礎觀念"
+description: "本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。"
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
+ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
 
 ---
 
-# Marble Maze sample fundamentals
+# Marble Maze 範例基礎觀念
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This document describes the fundamental characteristics of the Marble Maze project, for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built. The document also describes several of the conventions that are used in the code.
+本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本文件也描述程式碼中採用的幾種慣例。
 
-> **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **注意：**與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 ## 
-Here are some of the key points that this document discusses for when you plan and develop your Universal Windows Platform (UWP) game.
+以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   Use the **DirectX 11 App (Universal Windows)** template in a C++ application to create your DirectX UWP game. Use Visual Studio to build a UWP app project as you would build a standard project.
--   The Windows Runtime provides classes and interfaces so that you can develop UWP apps in a more modern, object-oriented manner.
--   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) to manage the lifetime of COM objects, and [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) or [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) to manage the lifetime of all other heap-allocated C++ objects.
--   In most cases, use exception handling, instead of result codes, to deal with unexpected errors.
--   Use SAL annotations together with code analysis tools to help discover errors in your app.
+-   在 C++ 應用程式中使用 [DirectX 11 App (通用 Windows)]**** 範本來建立 DirectX UWP 遊戲。 使用 Visual Studio 建置 UWP App 專案，就像建立標準專案一樣。
+-   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
+-   使用物件參考搭配 ^ 符號來管理 Windows 執行階段變數的存留期、搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理 COM 物件的存留期，以及搭配 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) 來管理其他所有堆積配置的 C++ 物件的存留期。
+-   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
+-   使用 SAL 註釋並搭配程式碼分析工具，協助找出應用程式中的錯誤。
 
-## Creating the Visual Studio project
-
-
-If you've downloaded and extracted the sample, you can open the MarbleMaze.sln solution file in Visual Studio, and you'll have the code in front of you. You can also view the source on the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN Samples Gallery page by selecting the **Browse Code** tab.
-
-When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3-D application.
-
-One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template.
-
-> **Caution**   The **/ZW** option is not compatible with options such as **/clr**.In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
-
- 
-
-Every UWP app that you acquire from the Windows Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. For more info about app packages, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
-
-##  Building, deploying, and running the game
+## 建立 Visual Studio 專案
 
 
-Build a UWP app project as you would build a standard project. (On the menu bar, choose **Build, Build Solution**.) The build step compiles the code and also packages it for use as a UWP app.
+如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 MarbleMaze.sln 方案檔，程式碼會隨即顯示出來。 您也可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN 範例庫頁面中選取 [瀏覽程式碼]**** 索引標籤來檢視原始檔。
 
-After you build the project, you must deploy it.(On the menu bar, choose **Build, Deploy Solution**.) Visual Studio also deploys the project when you run the game from the debugger.
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 Direct UWP 遊戲所需的基本功能，建議您根據 Visual Studio [DirectX 11 App (通用 Windows)]**** 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。
 
-After you deploy the project, pick the Marble Maze tile to run the game. Alternatively, from Visual Studio, on the menu bar, choose **Debug, Start Debugging**.
+[DirectX 11 App (通用 Windows)]**** 範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
 
-###  Controlling the game
-
-You can use touch, the accelerometer, the Xbox 360 controller, or the mouse to control Marble Maze.
-
--   Use the directional pad on the controller to change the active menu item.
--   Use touch, the A button, the Start button, or the mouse to pick a menu item.
--   Use touch, the accelerometer, the left thumbstick, or the mouse to tilt the maze.
--   Use touch, the A button, the Start button, or the mouse to close menus such as the high score table.
--   Use the Start button or the P key to pause or resume the game.
--   Use the Back button on the controller or the Home key on the keyboard to restart the game.
--   When the high-score table is visible, use the Back button or Home key to clear all scores.
-
-##  Code conventions
-
-
-The Windows Runtime is a programming interface that you can use to create UWP apps that run only in a special application environment. Such apps use authorized functions, data types, and devices, and are distributed from the Windows Store. At the lowest level, the Windows Runtime consists of an Application Binary Interface (ABI). The ABI is a low-level binary contract that makes Windows Runtime APIs accessible to multiple programming languages such as JavaScript, the .NET languages, and Visual C++.
-
-In order to call Windows Runtime APIs from JavaScript and .NET, those languages require projections that are specific to each language environment. When you call a Windows Runtime API from JavaScript or .NET, you are invoking the projection, which in turn calls the underlying ABI function. Although you can call the ABI functions directly in C++, Microsoft provides projections for C++ as well, because they make it much simpler to consume the Windows Runtime APIs, while still maintaining high performance. Microsoft also provides language extensions to Visual C++ that specifically support the Windows Runtime projections. Many of these language extensions resemble the syntax for the C++/CLI language. However, instead of targeting the common language runtime (CLR), native apps use this syntax to target the Windows Runtime. The object reference, or hat (^), modifier is an important part of this new syntax because it enables the automatic deletion of runtime objects by means of reference counting. Instead of calling methods such as **AddRef** and **Release** to manage the lifetime of a Windows Runtime object, the runtime deletes the object when no other component references it, for example, when it leaves scope or you set all references to **nullptr**. Another important part of using Visual C++ to create UWP apps is the **ref new** keyword. Use **ref new** instead of **new** to create reference-counted Windows Runtime objects. For more info, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
-
-> **Important**  
-You only have to use **^** and **ref new** when you create Windows Runtime objects or create Windows Runtime components. You can use the standard C++ syntax when you write core application code that does not use the Windows Runtime.
-
-Marble Maze uses **^** together with [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) to manage heap-allocated objects and minimize memory leaks. We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and std::[**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) or [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) to manage the lifetime of all other heap-allocated C++ objects.
+> **注意****/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
-For more info about the language extensions that are available to a C++ UWP app, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871).
+您從 Windows 市集取得的每一個 UWP app 都是 app 套件格式。 App 套件包含套件資訊清單，內含 App 的相關資訊。 例如，您可以指定應用程式的功能 (也就是對受保護系統資源或使用者資料的必要存取權)。 如果您認為應用程式需要特定的功能，請使用封裝資訊清單來宣告所需的功能。 資訊清單也可讓您指定專案屬性，例如支援的裝置旋轉、影像填滿和啟動顯示畫面。 如需有關 App 套件的詳細資訊，請參閱[封裝 App](https://msdn.microsoft.com/library/windows/apps/mt270969)。
 
-###  Error handling
+##  建置、部署及執行遊戲
 
-Marble Maze uses exception handling as the primary way to deal with unexpected errors. Although game code traditionally uses logging or error codes, such as **HRESULT** values, to indicate errors, exception handling has two main advantages. First, it can make the code easier to read and maintain. From a code perspective, exception handling is a more efficient way to propagate an error to a routine that can handle that error. The use of error codes typically requires each function to explicitly propagate errors. A second advantage is that you can configure the Visual Studio debugger to break when an exception occurs so that you can stop immediately at the location and context of the error. The Windows Runtime also uses exception handling extensively. Therefore, by using exception handling in your code, you can combine all error handling into one model.
 
-We recommend that you use the following conventions in your error handling model:
+依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
 
--   Use exceptions to communicate unexpected errors.
--   Do not use exceptions to control the flow of code.
--   Catch only the exceptions that you can safely handle and recover from. Otherwise, do not catch the exception and allow the app to terminate.
--   When you call a DirectX routine that returns **HRESULT**, use the **DX::ThrowIfFailed** function. This function is defined in DirectXSample.h.**ThrowIfFailed** throws an exception if the provided **HRESULT** is an error code. For example, **E\_POINTER** causes **ThrowIfFailed** to throw [**Platform::NullReferenceException**](https://msdn.microsoft.com/library/windows/apps/hh755823.aspx).
+建置專案之後，就必須部署它 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
 
-    When you use **ThrowIfFailed**, put the DirectX call on a separate line to help improve code readability, as shown in the following example.
+在您部署專案之後，請挑選 [Marble Maze] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 [偵錯]、[開始偵錯]****。
+
+###  控制遊戲
+
+您可以使用觸控、加速計、Xbox 360 控制器或滑鼠來控制 Marble Maze。
+
+-   使用控制器的方向鍵來變更現用功能表項目。
+-   使用觸控、A 按鈕、[開始] 按鈕或滑鼠來選擇功能表項目。
+-   使用觸控、加速計、左搖桿或滑鼠使迷宮傾斜。
+-   使用觸控、A 按鈕、[開始] 按鈕或滑鼠來關閉功能表，例如計分排行榜。
+-   使用 [開始] 按鈕或 P 鍵來暫停或繼續遊戲。
+-   使用控制器的 [返回] 按鈕或鍵盤的 Home 鍵來重新啟動遊戲。
+-   當計分排行榜出現時，使用 [返回] 按鈕或 Home 鍵可清除所有分數。
+
+##  程式碼慣例
+
+
+Windows 執行階段是一個程式設計介面，您可以使用它來建立只能在特定應用程式環境中執行的 UWP App。 這類 App 會使用授權的函式、資料類型及裝置，並從 Windows 市集發佈。 Windows 執行階段在最低層級包含「應用程式二進位介面」(ABI)。 ABI 是讓 Windows 執行階段 API 可供多種程式設計語言 (例如 JavaScript、.NET 語言和 Visual C++) 存取的低階二進位合約。
+
+若要從 JavaScript 和 .NET 呼叫 Windows 執行階段 API，這些語言需要每個語言環境特有的投射。 當您從 JavaScript 或 .NET 呼叫 Windows 執行階段 API 時，就會叫用投射，而投射再呼叫基礎 ABI 函式。 雖然您可以在 C++ 中直接呼叫 ABI 函式，但 Microsoft 也為 C++ 提供投射，因為它們可讓 Windows 執行階段 API 的使用變得更為輕鬆，但不會降低效能。 Microsoft 也為 Visual C++ 提供專門支援 Windows 執行階段投射的語言擴充功能。 這些語言擴充功能有很多都類似 C++/CLI 語言的語法。 不過，原生應用程式使用此語法來以 Windows 執行階段為目標，而不是以 Common Language Runtime (CLR) 為目標。 物件參考或 ^ 修飾詞是這個新語法的重要部分，因為它能夠透過參考計數的功能來自動刪除執行階段物件。 若沒有其他元件參考 Windows 執行階段物件 (例如，離開範圍或將所有參考設為 **nullptr**)，執行階段就會刪除該物件，而不是呼叫 **AddRef** 和 **Release** 等方法來管理該物件的存留期。 另一個使用 Visual C++ 來建立 UWP app 的重要部分就是 **ref new** 關鍵字。 請使用 **ref new** (而不使用 **new**) 來建立計算參考次數的 Windows 執行階段物件。 如需詳細資訊，請參閱[型別系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822)。
+
+> **重要**  
+當您建立 Windows 執行階段物件或建立 Windows 執行階段元件時，您只需要使用 **^** 和 **ref new**。 當您撰寫的核心應用程式碼不使用 Windows 執行階段時，您可以使用標準 C++ 語法。
+
+Marble Maze 使用 **^** 並搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理堆積配置的物件，並使記憶體流失情況降到最低。 建議您使用 ^ 來管理 Windows 執行階段變數的存留期、使用 **ComPtr** 來管理 COM 變數的存留期 (例如當您使用 DirectX 時)，以及使用 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) 來管理其他所有堆積配置的 C++ 物件的存留期。
+
+ 
+
+如需 C++ UWP app 可用的語言擴充功能的詳細資訊，請參閱 [Visual C++ 語言參考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871)。
+
+###  錯誤處理
+
+Marble Maze 使用例外狀況處理做為處理意外錯誤的主要方法。 遊戲程式碼習慣上使用記錄或錯誤碼 (例如 **HRESULT** 值) 來指出錯誤，但例外狀況處理有兩大優點。 首先，可讓程式碼易於閱讀和維護。 從程式碼的角度來說，例外狀況處理可更有效率地將錯誤傳播到可處理該錯誤的常式。 使用錯誤碼通常需要由每一個函式明確地傳播錯誤。 第二個優點是您可以將 Visual Studio 偵錯工具設為在例外狀況發生時中斷，以立即在錯誤的位置和上下文停止。 Windows 執行階段也廣泛使用例外狀況處理。 因此，藉由在程式碼中使用例外狀況處理，您可以將所有錯誤處理結合到一個模型中。
+
+建議您在錯誤處理模型中採用下列慣例：
+
+-   使用例外狀況來傳達意外錯誤。
+-   不要使用例外狀況來控制程式碼的流程。
+-   只攔截您可以安全處理和復原的例外狀況。 否則，不要攔截例外狀況，請讓 app 終止。
+-   當您呼叫 DirectX 常式傳回 **HRESULT** 時，請使用 **DX::ThrowIfFailed** 函式。 這個函式定義於 DirectXSample.h 中。如果提供的 **HRESULT** 是錯誤碼，**ThrowIfFailed** 即會擲回例外狀況。 例如，**E\_POINTER** 會導致 **ThrowIfFailed** 擲回 [**Platform::NullReferenceException**](https://msdn.microsoft.com/library/windows/apps/hh755823.aspx)。
+
+    當您使用 **ThrowIfFailed** 時，請將 DirectX 呼叫寫在單獨一行，以改善程式碼的可讀性，如下列範例所示。
 
     ```cpp
     // Identify the physical adapter (GPU or card) this device is running on.
@@ -102,15 +102,15 @@ We recommend that you use the following conventions in your error handling model
         );
     ```
 
--   Although we recommend that you avoid the use of **HRESULT** for unexpected errors , it is more important to avoid the use of exception handling to control the flow of code. Therefore, it is preferred to use an **HRESULT** return value when necessary to control the flow of code.
+-   雖然我們建議您避免使用 **HRESULT** 來處理意外錯誤，但更要避免使用例外狀況處理來控制程式碼的流程。 因此，需要控制程式碼的流程時，最好使用 **HRESULT** 傳回值。
 
-###  SAL annotations
+###  SAL 註釋
 
-Use SAL annotations together with code analysis tools to help discover errors in your app.
+使用 SAL 註釋並搭配程式碼分析工具，協助找出應用程式中的錯誤。
 
-By using Microsoft source-code annotation language (SAL), you can annotate, or describe, how a function uses its parameters. SAL annotations also describe return values. SAL annotations work with the C/C++ Code Analysis tool to discover possible defects in C and C++ source code. Common coding errors reported by the tool include buffer overruns, uninitialized memory, null pointer dereferences, and memory and resource leaks.
+您可以使用 Microsoft 原始程式碼註釋語言 (SAL) 來註釋或描述函式如何使用參數。 SAL 註釋也可描述傳回值。 SAL 註釋可搭配 C/C++ 程式碼分析工具來尋找 C 和 C++原始程式碼中可能的瑕疵。 這個工具所報告的常見程式碼錯誤包括：緩衝區滿溢、未初始化的記憶體、Null 指標取值以及記憶體和資源流失。
 
-Consider the **BasicLoader::LoadMesh** method, which is declared in BasicLoader.h. This method uses \_In\_ to specify that *filename* is an input parameter (and therefore will only be read from), \_Out\_ to specify that *vertexBuffer* and *indexBuffer* are output parameters (and therefore will only be written to), and \_Out\_opt\_ to specify that *vertexCount* and *indexCount* are optional output parameters (and might be written to). Because *vertexCount* and *indexCount* are optional output parameters, they are allowed to be **nullptr**. The C/C++ Code Analysis tool examines calls to this method to ensure that the parameters it passes meet these criteria.
+考慮使用 BasicLoader.h 中宣告的 **BasicLoader::LoadMesh** 方法。 這個方法使用 \_In\_ 指定 *filename* 是輸入參數 (因此只能讀取)、使用 \_Out\_ 指定 *vertexBuffer* 和 *indexBuffer* 是輸出參數 (因此只能寫入)，以及使用 \_Out\_opt\_ 指定 *vertexCount* 和 *indexCount* 是選擇性輸出參數 (可能寫入)。 因為 *vertexCount* 和 *indexCount* 是選擇性輸出參數，所以允許為 **nullptr**。 C/C++ 程式碼分析工具會檢查這個方法的呼叫，以確定傳遞的參數符合這些準則。
 
 ```cpp
 void LoadMesh(
@@ -122,31 +122,31 @@ void LoadMesh(
     );
 ```
 
-To perform code analysis on your app, on the menu bar, choose **Build, Run Code Analysis on Solution**. For more info about code analysis, see [Analyzing C/C++ Code Quality by Using Code Analysis](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx).
+若要對 app 執行程式碼分析，請在功能表列上依序選擇 [建置] 和 [針對方案執行程式碼分析]****。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
 
-The complete list of available annotations is defined in sal.h. For more info, see [SAL Annotations](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx).
+可用註釋的完整清單定義在 sal.h 中。 如需詳細資訊，請參閱 [SAL 註釋](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 
-## Next steps
-
-
-Read [Marble Maze application structure](marble-maze-application-structure.md) for information about how the Marble Maze application code is structured and how the structure of a DirectX UWP app differs from that of a traditional desktop application.
-
-## Related topics
+## 後續步驟
 
 
-* [Marble Maze application structure](marble-maze-application-structure.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+如需如何建構 Marble Maze 應用程式碼的詳細資訊，以及 DirectX UWP app 的結構與傳統型應用程式有何不同，請參閱 [Marble Maze 應用程式結構](marble-maze-application-structure.md)。
 
- 
+## 相關主題
+
+
+* [Marble Maze 應用程式結構](marble-maze-application-structure.md)
+* [使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

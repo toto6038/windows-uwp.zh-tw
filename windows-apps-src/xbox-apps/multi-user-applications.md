@@ -1,58 +1,49 @@
 ---
 author: Mtoepke
-title: Introduction to multi-user applications
-description: A simple high-level introduction to the Xbox multi-user model.
+title: "多使用者應用程式的簡介"
+description: 
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 098683ae1ad594eee3cb3b197431ddfa3998a30d
-ms.openlocfilehash: e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf
+ms.sourcegitcommit: f225811bd18be22807160e8670a1b7b8d51e4b10
+ms.openlocfilehash: 20f84783131122343fd01e6cb1f5a60cf50158cd
 
 ---
 
-# Introduction to multi-user applications
+# 多使用者應用程式的簡介
 
-This topic is intended to be a simple high-level introduction to the Xbox multi-user model.
+本主題是 Xbox 多使用者模型的簡單高階簡介。
 
-> [!NOTE]
-> Multi-user applications are currently not enabled. 
+> **注意** &nbsp;&nbsp;在這個初步開發人員預覽中，不會啟用多使用者的應用程式。 在未來開發人員預覽中，將會啟用多使用者的應用程式，屆時我們將會發佈更詳細的文件、指導方針和範例。 
 
-The Xbox One user model is tuned to the requirements of a gaming console that supports multiple users playing games cooperatively on a single device. It enables multiple users, each with their own controller, to be signed in and using the console at the same time in a single interactive session. This is different from other Windows devices. For example:
-* **Windows desktop PCs** allow multiple users to use the same device, but each user has their own interactive session and each session is completely independent of the other sessions on the device.
-* **Windows phones** allow only a single user to use the device. That single user is determined during the OOBE (out-of-box-experience) and the user cannot sign out after they are signed in. In effect, if a different user wants to use the device, the device has to be reset. 
-* **Xbox One** allows multiple users to be signed in and use the device at the same time in a single interactive session.
+Xbox One 使用者模型已針對支援多個使用者在單一裝置上合作玩遊戲之遊戲主機的需求進行調整。 它可讓多個使用者 (每個使用者都有自己的控制器) 在單一互動式工作階段中同時登入並且使用主機。 這與其他 Windows 裝置不同。 例如：
+* **Windows 桌上型電腦**允許多個使用者使用相同的裝置，但是每個使用者有自己的互動工作階段，而且每個工作階段與裝置上的其他工作階段完全獨立。
+* **Windows 手機**只允許單一使用者使用裝置。 該單一使用者是在 OOBE (全新體驗) 期間決定，而且登入之後便無法登出。 實際上，如果其他使用者想要使用此裝置，則必須重設裝置。 
+* **Xbox One** 允許多個使用者在單一互動式工作階段中同時登入並使用此裝置。
 
-Each user in the Xbox One user model is backed by a local user account. This local user account is associated with an Xbox Live account (and therefore a Microsoft account). This means that there is a strict one-to-one mapping of an Xbox user account to an Xbox Live account and to a Microsoft account.
+Xbox One 使用者模型中的每個使用者都是由本機使用者帳戶支援。 此本機使用者帳戶會與 Xbox Live 帳戶 (以及 Microsoft 帳戶) 相關聯。 這表示 Xbox 使用者帳戶與 Xbox Live 帳戶及 Microsoft 帳戶有嚴格的一對一對應。
 
-## Single user applications
-By default, Universal Windows Platform (UWP) apps run in the context of the user that launched the application. These *single user applications* (SUAs) are only aware of that single user, and run in a mode that is compatible with the user model on other Windows devices. The Xbox user model manages which user is associated with the app and guarantees that a user is signed in when the app is launched. In this model, UWP app and game authors do not have to do anything special to run on Xbox. 
+## 單一使用者應用程式
+根據預設，UWP app 會在已啟動應用程式在使用者內容中執行。 這些「單一使用者的應用程式」(SUA) 只會注意該單一使用者，並且以與其他 Windows 裝置上的使用者模型相容的模式執行。 Xbox 使用者模型會管理哪個使用者與應用程式相關聯，並保證使用者在 app 啟動時登入。 在這個模型中，UWP app 和遊戲作者不需要特別執行任何動作即可在 Xbox 上執行。 
 
-## Multi-user applications
-UWP games can choose to opt into the Xbox One multi-user model. These *multi-user applications* (MUAs) run in the context of a system account (called the Default Account) and can take full advantage of the flexibility and power of the Xbox One user model. For these games, the Xbox user model does not manage which user is associated with the game and does not even require that a user is signed in for the game to run. This means that they have to be written to be explicitly aware of, and manage their user requirements: whether they require a signed-in user or not, whether they implement the concept of a current user, whether they allow simultaneous input from multiple users, and so on.
+## 多使用者應用程式
+UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用者應用程式」(MUA) 會在系統帳戶 (稱為預設帳戶) 的內容中執行，而且可以充分利用 Xbox One 使用者模型的彈性和功用。 對於這些遊戲中，Xbox 使用者模型不會管理哪個使用者與遊戲相關聯，使用者甚至不需要登入即可執行遊戲。 這表示這些遊戲必須撰寫成明確知道並管理其使用者需求︰是否需要登入的使用者、是否實作目前使用者的概念、是否允許來自多個使用者的同時輸入等等。
    
-To opt into the multi-user model:   
-1. Open your project in Visual Studio.   
-2. Select the package.appxmanifest.xml file.   
-3. Right-click and select **View Code**.   
-4. Add the following line in the `<Properties></Properties>` section:
+若要選擇加入多使用者模型：   
+1. 在 Visual Studio 中，開啟您的專案。   
+2. 選取 package.appxmanifest.xml 檔案。   
+3. 以滑鼠右鍵按一下，選取 [檢視程式碼]。   
+4. 在 `<Properties></Properties>` 區段中加入以下這一行：
 
-```
-<uap:SupportedUsers>multiple</uap:SupportedUsers>
-```
+`<uap:SupportedUsers>multiple</uap:SupportedUsers>`
 
-### Identifying users and inputs
-Developers can use KeyRoutedEventArgs.DeviceId, used by KeyUp and KeyDown routed events, to differentiate the events generated from different inputs.
-Using the Windows.System.UserDeviceAssociation.FindUserFromDeviceId method will help to identify the user associated to a specific input.
+##要選擇哪一個模型的指導方針
+所有 UWP app 和大部分的單一使用者遊戲都可以撰寫成 SUA。 我們建議只考慮讓多人合作遊戲加入 Xbox One 多使用者模型。 我們將於未來開發人員預覽中提供更詳細的文件、指導方針與範例。
 
-See the [KeyRoutedEventArgs.DeviceId](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.deviceid) topic for more information.
-
-
-## Guidance on which model to choose
-All UWP apps and the majority of single user games can be written to be SUAs. We recommend that only cooperative multi-player games consider opting into the Xbox One multi-user model.
-
-## See also
-- [UWP on Xbox One](index.md)
+## 另請參閱
+- [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,21 +1,21 @@
 ---
 author: jwmsft
-description: Provides a means to specify the source of a binding in terms of a relative relationship in the run-time object graph.
-title: RelativeSource markup extension
+description: "提供在執行階段物件圖形中指定繫結來源的相對關係的方法。"
+title: "RelativeSource 標記延伸"
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 translationtype: Human Translation
 ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
-ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
+ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 ---
 
-# {RelativeSource} markup extension
+# {RelativeSource} 標記延伸
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provides a means to specify the source of a binding in terms of a relative relationship in the run-time object graph.
+提供在執行階段物件圖形中指定繫結來源的相對關係的方法。
 
-## XAML attribute usage (Self mode)
+## XAML 屬性用法 (Self 模式)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource Self}" .../>
@@ -23,7 +23,7 @@ Provides a means to specify the source of a binding in terms of a relative relat
 <object property="{Binding RelativeSource={RelativeSource Self} ...}" .../>
 ```
 
-## XAML attribute usage (TemplatedParent mode)
+## XAML 屬性用法 (TemplatedParent 模式)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource TemplatedParent}" .../>
@@ -31,22 +31,22 @@ Provides a means to specify the source of a binding in terms of a relative relat
 <object property="{Binding RelativeSource={RelativeSource TemplatedParent} ...}" .../>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 詞彙 | 說明 |
 |------|-------------|
-| {RelativeSource Self} | Produces a [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) value of <strong>Self</strong>. The target element should be used as the source for this binding. This is useful for binding one property of an element to another property on the same element. |
-| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) that is applied as the source for this binding. This is useful for applying runtime information to bindings at the template level. | 
+| {RelativeSource Self} | 產生的 [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 值是 <strong>Self</strong>。 目標元素應做為這個繫結的來源。 在同一個元素中繫結一個元素的屬性到另一個元素時，這個值很有用。 |
+| {RelativeSource TemplatedParent} | 產生 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，以套用來做為這個繫結的來源。 在範本層級將執行階段資訊套用到繫結時，這個值很有用。 | 
 
-## Remarks
+## 備註
 
-A [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) can set [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) either as an attribute on a **Binding** object element or as a component within a [{Binding} markup extension](binding-markup-extension.md). This is why two different XAML syntaxes are shown.
+[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以將 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 設成 **Binding** 物件元素上的屬性，或是設成 [{Binding} 標記延伸](binding-markup-extension.md)內的元件。 這就是為什麼顯示兩個不同 XAML 語法的緣故。
 
-**RelativeSource** is similar to [{Binding} markup extension](binding-markup-extension.md).  It is a markup extension that is capable of returning instances of itself, and supporting a string-based construction that essentially passes an argument to the constructor. In this case, the argument being passed is the [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) value.
+**RelativeSource** 與 [{Binding} 標記延伸](binding-markup-extension.md)類似。  它也是可以傳回本身的執行個體的標記延伸，並且支援實質上會傳遞引數到建構函式的字串型建構。 在此案例中，所傳遞的引數為 [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 值。
 
-The **Self** mode is useful for binding one property of an element to another property on the same element, and is a variation on [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) binding but does not require naming and then self-referencing the element. If you bind one property of an element to another property on the same element, either the properties must use the same property type, or you must also use a [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) on the binding to convert the values. For example, you could use [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) as a source for [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) without conversion, but you'd need a converter to use [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) as a source for [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006).
+將元素的一個屬性繫結到同一元素的另一個屬性時，**Self** 模式就很有用，且這也是不需命名然後再自我參考元素的 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 繫結的變化型。 如果您將一個元素的屬性繫結到同一元素的另一個屬性，這兩個屬性必須使用相同的屬性類型，或者是您也必須在要轉換值的繫結中使用 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。 例如，您可以使用 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 做為 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 的來源而不需轉換，但是如果要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 做為 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 的來源，就需要轉換器。
 
-Here's an example. This [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) uses a [{Binding} markup extension](binding-markup-extension.md) so that its [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) are always equal and it renders as a square. Only the Height is set as a fixed value. For this **Rectangle** its default [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null**, not **this**. So to establish the data context source to be the object itself (and enable binding to its other properties) we use the `RelativeSource={RelativeSource Self}` argument in the {Binding} markup extension usage.
+這裡提供一個範例。 這個 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 使用一個 [{Binding} 標記延伸](binding-markup-extension.md)，這樣便能讓它的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 一律相等，且會轉譯成正方形。 只有 Height 是設定成固定值。 針對這個 **Rectangle**，它的預設 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 為 **null**，而不是 **this**。 因此，若要建立資料內容來源以做為物件本身 (並啟用繫結至它的其他屬性)，我們會在 {Binding} 標記延伸用法中使用 `RelativeSource={RelativeSource Self}` 引數。
 
 ```XML
 <Rectangle
@@ -55,21 +55,21 @@ Here's an example. This [**Rectangle**](https://msdn.microsoft.com/library/windo
 />
 ```
 
-Another use of `RelativeSource={RelativeSource Self}` is as a way to set an object's [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) to itself.  For example, you may see this technique in some of the SDK examples where the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class has been extended with a custom property that's already providing a ready-to-go view model for its own data binding such as: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+另一個 `RelativeSource={RelativeSource Self}` 的用法，是將物件的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 設定到其本身的做法。  例如，您可能在某些 SDK 範例中看見此技術，其中的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別已使用自訂屬性加以延伸，這個自訂屬性已經為它自己的資料繫結提供「準備就緒」檢視模型，例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Note**  The XAML usage for **RelativeSource** shows only the usage for which it is intended: setting a value for [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) in XAML as part of a binding expression. Theoretically, other usages are possible if setting a property where the value is [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**注意：****RelativeSource** 的 XAML 用法僅顯示它的預期用法：在 XAML 中設定 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 的值以做為繫結運算式的一部分。 理論上，如果設定值為 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) 的屬性，也可以有其他用法。
 
-## Related topics
+## 相關主題
 
-* [XAML overview](xaml-overview.md)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [{Binding} markup extension](binding-markup-extension.md)
+* [XAML 概觀](xaml-overview.md)
+* [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [{Binding} 標記延伸](binding-markup-extension.md)
 * [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

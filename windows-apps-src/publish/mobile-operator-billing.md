@@ -1,112 +1,112 @@
 ---
 author: jnHs
-Description: The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
-title: Mobile operator billing
+Description: "Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。"
+title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
+ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 ---
 
-# Mobile operator billing
+# 電信業者帳單
 
 
-The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
+Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。 如果客戶的電信業者支援這項功能，客戶就能使用他們的行動裝置帳戶在市集購物。
 
-> **Note**  If a customer’s mobile operator offers Mobile Operator Billing, but the customer does not have this option on their device, see these [troubleshooting steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
-
- 
-
-We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest that we support a mobile operator that you don’t see in the lists below, contact the mobile operator.
-
-## Mobile Operator Billing for Windows 10 devices
-
-
-Windows 10 introduces a new implementation of Mobile Operator Billing. On devices that include this implementation, customers can add Mobile Operator Billing as a payment method to the device. This implementation is available for PCs and tablets running Windows 10 and phones running Windows 10 Mobile.
-
-The Windows 10 implementation of Mobile Operator Billing is currently supported by these mobile operators.
-
-| Country/region  | Mobile operators |
-|-----------------|------------------|
-| Finland         | DNA, Elisa       |
-| Germany         | O2               |
-| Hungary         | Telenor          |
-| Italy           | Wind             |
-| Norway          | Telenor          |
-| Switzerland     | Swisscom         |
-| United States   | Sprint           |
-| United Kingdom  | O2               |
+> **注意：**如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上沒有這個選項，請參閱這些[疑難排解步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
  
 
-## Mobile Operator Billing for Windows Phone 8.x and Windows 10 Mobile devices
+我們會定期與電信業者合作，拓展此付款方式的可用性。 如果您想要建議我們支援未在下面清單中列出的電信業者，請聯絡電信業者。
+
+## 適用於 Windows 10 裝置的電信業者帳單
 
 
-A legacy implementation of Mobile Operator Billing is available to Windows Phone 8.x devices. Some mobile operators may choose to include this implementation on phones designed for Windows 10 Mobile. On devices that include this implementation, Mobile Operator Billing is offered automatically as a payment to users.
+Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作的裝置上，客戶可以將「電信業者帳單」加入到裝置上做為付款方式。 這個實作適用於執行 Windows 10 的電腦和平板電腦，以及執行 Windows 10 行動裝置版的手機。
 
-The legacy implementation of Mobile Operator Billing is supported by these mobile operators.
+目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
 
-| Country/region       | Mobile operators                                                   |
+| 國家/地區 | 電信業者 |
+|----------------|------------------|
+| 芬蘭        | DNA、Elisa       |
+| 德國        | O2               |
+| 義大利          | Wind             |
+| 挪威         | Telenor          |
+| 瑞士    | Swisscom         |
+| 美國  | Sprint           |
+
+ 
+
+## 適用於 Windows Phone 8.x 和 Windows 10 行動裝置版裝置的電信業者帳單
+
+
+舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows 10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
+
+下列電信業者支援舊版的電信業者帳單實作。
+
+| 國家/地區       | 電信業者                                                   |
 |----------------------|--------------------------------------------------------------------|
-| Australia            | Telstra                                                            |
-| Austria              | A1 Telekom, T-Mobile                                               |
-| Bahrain              | Zain, VIVA                                                         |
-| Belgium              | BASE, Mobistar, Proximus                                           |
-| Brazil               | Claro                                                              |
-| Bulgaria             | Telenor                                                            |
-| Canada               | Fido, Rogers                                                       |
-| Chile                | Claro                                                              |
-| China                | China Mobile                                                       |
-| Colombia             | Claro, Movistar                                                    |
-| Costa Rica           | Claro                                                              |
-| Croatia              | Tomato, VIPnet, Tele2                                              |
-| Czech Republic       | T-Mobile, Vodafone, O2                                             |
-| Ecuador              | Claro                                                              |
-| Egypt                | Mobinil                                                            |
-| Estonia              | EMT, Tele2                                                         |
-| Finland              | Elisa, TeliaSonera, DNA                                            |
-| France               | Orange, Orange Réunion (La Réunion), SFR, Bouygues                 |
-| Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
-| Greece               | Vodafone                                                           |
-| Guatemala            | Claro                                                              |
-| Hungary              | Telenor, T-Mobile                                                  |
-| India                | Idea                                                               |
-| Indonesia            | Indosat, Telkomsel, XL Axiata, Hutchinson CP Telecommunications (HCPT)     |
-| Ireland              | O2, Vodafone, Three                                                |
-| Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
-| Jordan               | Zain, Umniah                                                       |
-| Kenya                | Safaricom                                                          |
-| Kuwait               | Zain, Viva, Ooredoo                                                |
-| Latvia               | Tele2                                                              |
-| Lithuania            | Tele2                                                              |
-| Malaysia             | DiGi                                                               |
-| Mexico               | Iusacell, Telcel, Movistar                                         |
-| Netherlands          | T-Mobile, Vodafone                                                 |
-| Norway               | Telenor                                                            |
-| Oman                 | Ooredoo                                                            |
-| Pakistan             | Telenor                                                            |
-| Peru                 | Claro                                                              |
-| Philippines          | Globe, Sun, Smart Communications                                   |
-| Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
-| Romania              | Orange, Vodafone                                                   |
-| Russia               | Beeline, MTS                                                       |
-| Saudi Arabia         | Zain                                                               |
-| Singapore            | M1, SingTel, StarHub                                               |
-| Slovakia             | T-Mobile                                                           |
-| Slovenia             | Si.mobil                                                           |
-| South Africa         | Vodacom                                                            |
-| Spain                | Movistar, Vodafone, Orange                                         |
-| Sweden               | Telenor, Tele2                                                     |
-| Switzerland          | Swisscom                                                           |
-| United Arab Emirates | Etisalat, Du                                                       |
-| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| United States        | AT&T, Sprint, T-Mobile, Verizon                                    |
-| Vietnam              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
+| 澳大利亞            | Telstra                                                            |
+| 奧地利              | A1 Telekom、T-Mobile                                               |
+| 巴林              | Zain、VIVA                                                         |
+| 比利時              | BASE、Mobistar、Proximus                                                     |
+| 巴西               | Claro                                                              |
+| 保加利亞             | Telenor                                                            |
+| 加拿大               | Fido、Rogers、Telus                                                |
+| 智利                | Claro                                                              |
+| 中國                | 中國移動                                                       |
+| 哥倫比亞             | Claro、Movistar                                                    |
+| 哥斯大黎加           | Claro                                                              |
+| 克羅埃西亞              | Tomato、VIPnet、Tele2                                              |
+| 捷克共和國       | T-Mobile、Vodafone、O2                                             |
+| 厄瓜多              | Claro                                                              |
+| 埃及                | Mobinil                                                            |
+| 愛沙尼亞              | EMT、Tele2                                                         |
+| 芬蘭              | Elisa、TeliaSonera、DNA                                            |
+| 法國               | Orange、Orange Réunion (La Réunion)、SFR、Bouygues                 |
+| 德國              | Telefonica、Telekom Deutschland、Vodafone                          |
+| 希臘               | Vodafone                                                           |
+| 瓜地馬拉            | Claro                                                              |
+| 匈牙利              | Telenor、T-Mobile                                                  |
+| 印度                | Idea                                                               |
+| 印尼            | Indosat、Telkomsel、XL Axiata、AXIS                                |
+| 愛爾蘭              | O2、Vodafone、Three                                                      |
+| 義大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
+| 約旦               | Zain、Umniah                                                       |
+| 肯亞                | Safaricom                                                          |
+| 科威特               | Zain、VIVA                                                         |
+| 拉脫維亞               | Tele2                                                              |
+| 立陶宛            | Tele2                                                              |
+| 馬來西亞             | DiGi                                                               |
+| 墨西哥               | Iusacell、Telcel、Unefon、Movistar                                 |
+| 荷蘭          | T-Mobile、Vodafone                                                 |
+| 挪威               | Telenor                                                            |
+| 阿曼                 | Ooredoo                                                            |
+| 巴基斯坦             | Telenor                                                            |
+| 秘魯                 | Claro                                                              |
+| 菲律賓          | Globe、Sun                                                         |
+| 波蘭               | T-Mobile、Orange、Polkomtel (Plus)                                 |
+| 波多黎各          | Claro                                                              |
+| 羅馬尼亞              | Orange、Vodafone                                                   |
+| 俄羅斯               | Beeline、MTS                                                          |
+| 沙烏地阿拉伯         | Zain                                                               |
+| 新加坡            | M1、SingTel、StarHub                                               |
+| 斯洛伐克             | T-Mobile                                                           |
+| 斯洛維尼亞             | Si.mobil                                                           |
+| 南非         | Vodacom                                                            |
+| 西班牙                | Movistar、Vodafone、Orange                                         |
+| 瑞典               | Telenor、Tele2                                                     |
+| 瑞士          | Swisscom                                                           |
+| 泰國             | DTAC                                                               |
+| 阿拉伯聯合大公國 | Etisalat、Du                                                       |
+| 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
+| 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
+| 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
 
-This list will be regularly updated as we expand support for Mobile Operator Billing.
+此清單將隨我們擴充「電信業者帳單」支援而定期更新。
 
  
 
@@ -118,6 +118,6 @@ This list will be regularly updated as we expand support for Mobile Operator Bil
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jun16_HO5-->
 
 

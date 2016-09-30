@@ -5,7 +5,7 @@ title: "腳本動畫"
 description: "腳本動畫不只是視覺意義上的動畫。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 361765de700af2a701e16fc27a5867d80907865a
+ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 ---
 # 腳本動畫
@@ -333,6 +333,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

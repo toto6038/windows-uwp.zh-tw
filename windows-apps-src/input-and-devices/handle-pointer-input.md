@@ -1,50 +1,50 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Universal Windows Platform (UWP) apps.
-title: Handle pointer input
+Description: "在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。"
+title: "處理指標輸入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
+ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
 
 ---
 
-# Handle pointer input
+# 處理指標輸入
 
-Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Universal Windows Platform (UWP) apps.
+在通用 Windows 平台 (UWP) App 中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
 
-**Important APIs**
+**重要 API**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-**Important**  
-If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406) to keep things consistent and discoverable. The platform controls provide the full Universal Windows Platform (UWP) user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
+**重要**  
+如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您以[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)來模型化您的自訂互動，以保持一致且可探索的 UI 體驗。 這些平台控制項提供完整的通用 Windows 平台 (UWP) 使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
 
-## Pointers
+## 指標
 
 
-Many interaction experiences involve the user identifying the object they want to interact with by pointing at it using input devices such as touch, mouse, pen/stylus, and touchpad. Because the raw Human Interface Device (HID) data provided by these input devices includes many common properties, the info is promoted into a unified input stack and exposed as consolidated, device-agnostic pointer data. Your UWP apps can then consume this data without worrying about the input device being used.
+許多互動體驗牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將資訊升級到整合的輸入堆疊，並公開為已合併且無從驗證裝置的指標資料。 您的 UWP app 之後就能取用此資料，而不需擔心所使用的輸入裝置。
 
-**Note**  Device-specific info is also promoted from the raw HID data should your app require it.
+**注意** 裝置特定的資訊也會視您 app 的需求，從原始 HID 資料中升級。
 
  
 
-Each input point (or contact) on the input stack is represented by a [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) object exposed through the [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) parameter provided by various pointer events. In the case of multi-pen or multi-touch input, each contact is treated as a unique input point.
+輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 物件來表示，此物件是透過各種不同指標事件所提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入點。
 
-## Pointer events
+## 指標事件
 
 
-Pointer events expose basic info such as detection state (in range or in contact) and device type, and extended info such as location, pressure, and contact geometry. In addition, specific device properties such as which mouse button a user pressed or whether the pen eraser tip is being used are also available. If your app needs to differentiate between input devices and their capabilities, see [Identify input devices](identify-input-devices.md).
+指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及取得延伸資訊 (例如位置、壓力和接觸幾何)。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的 app 必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-UWP apps can listen for the following pointer events:
+UWP app 可以接聽下列指標事件：
 
-**Note**  Call [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) to constrain pointer input to a specific UI element. When a pointer is captured by an element, only that object receives the pointer input events, even when the pointer moves outside the bounding area of the object. You typically capture the pointer within a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler as [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
+**注意** 呼叫 [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) 來將指標輸入限制為特定的 UI 元素。 當元素擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 由於 [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (按下滑鼠按鈕、觸控或手寫筆接觸點) 必須為 True，**CapturePointer** 才能成功，您通常會在 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件處理常式內擷取指標。
 
  
 
@@ -55,27 +55,27 @@ UWP apps can listen for the following pointer events:
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Event</th>
-<th align="left">Description</th>
+<th align="left">事件</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
-<td align="left"><p>Occurs when a pointer is canceled by the platform.</p>
+<td align="left"><p>這會在平台取消指標時發生。</p>
 <ul>
-<li>Touch pointers are canceled when a pen is detected within range of the input surface.</li>
-<li>An active contact is not detected for more than 100 ms.</li>
-<li>Monitor/display is changed (resolution, settings, multi-mon configuration).</li>
-<li>The desktop is locked or the user has logged off.</li>
-<li>The number of simultaneous contacts exceeded the number supported by the device.</li>
+<li>在輸入表面的範圍內偵測到手寫筆時，即會取消觸控指標。</li>
+<li>偵測作用中接觸點的時間不會超過 100 毫秒。</li>
+<li>監視器/顯示器已變更 (解析度、設定、多重監視器設定)。</li>
+<li>桌面已鎖定，或者使用者已登出。</li>
+<li>同時發生的接觸點數目超過裝置支援的數目。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
-<td align="left"><p>Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.</p>
+<td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
-<strong>Note</strong>  There is no corresponding pointer capture event.
+<strong>注意</strong> 沒有對應的指標擷取事件。
 </div>
 <div>
  
@@ -83,62 +83,62 @@ UWP apps can listen for the following pointer events:
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
-<td align="left"><p>Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<td align="left"><p>當指標進入元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
-<li>Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.</li>
-<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true, fires this event.</li>
+<li>觸控需要手指接觸點來引發此事件，不論是從元素上直接向下觸碰，或是移到元素的界限區域內均可。</li>
+<li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
+<li>如同觸控，手寫筆會透過從元素上直接向下觸碰，或是移到元素的界限區域內來引發此事件。 不過，手寫筆也有暫留狀態 ([<strong>IsInRange</strong>] (https://msdn.microsoft.com/library/windows/apps/br227977))，當此狀態為 True 時，就會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
-<td align="left"><p>Occurs when a pointer leaves the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<td align="left"><p>當指標離開元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
-<li>Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.</li>
-<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that fires this event when the state changes from true to false.</li>
+<li>觸控需要手指接觸點，並且在將指標移出元素的界限區域時引發此事件。</li>
+<li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
+<li>如同觸控，手寫筆會在移出元素的界限區域時引發此事件。 不過，手寫筆也有暫留狀態 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，當此狀態從 True 變更為 False 時，就會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
-<td align="left"><p>Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<td align="left"><p>當指標在元素的界限區域內變更座標、按鈕狀態、壓力、傾斜或接觸幾何時 (例如，寬度與高度)，就會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
-<li>Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.</li>
-<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true and within the bounding area of the element, fires this event.</li>
+<li>觸控需要手指接觸點，而且只會在接觸點位於元素的界限區域內時引發此事件。</li>
+<li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
+<li>如同觸控，手寫筆會在接觸點位於元素的界限區域內時引發此事件。 不過，手寫筆也有暫留狀態 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，當此狀態為 True 並位於元素的界線區域內時，就會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
-<td align="left"><p>Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.</p>
-<p>[<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) must be called from the handler for this event.</p></td>
+<td align="left"><p>當指標指出元素界限區域內的按下動作 (例如，觸控向下、滑鼠向下、手寫筆向下或觸控板按鈕向下) 時，即會發生此情況。</p>
+<p>[<strong>CapturePointer</strong>] (https://msdn.microsoft.com/library/windows/apps/br208918) 針對此事件必須從處理常式呼叫。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
-<td align="left"><p>Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area.</p></td>
+<td align="left"><p>當指標指出元素界限區域內的放開動作 (例如，觸控向上、滑鼠按鈕向上、手寫筆向上或觸控版按鈕向上)，或如果指標在界限區域外部被擷取時，即會發生此情況。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
-<td align="left"><p>Occurs when the mouse wheel is rotated.</p>
-<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) event.</p></td>
+<td align="left"><p>旋轉滑鼠滾輪時，即會發生此情況。</p>
+<p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) 事件建立指標與該按鈕的次要關聯。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Example
+## 範例
 
 
-Here's some code examples from a basic pointer tracking app that show how to listen for and handle pointer events and get various properties for active pointers.
+以下提供一些來自基本指標追蹤 App 的程式碼範例，示範如何進行接聽，以及處理指標事件並取得各種適用於作用中指標的屬性。
 
-### Create the UI
+### 建立 UI
 
-For this example, we use a rectangle (`targetContainer`) as the target object for pointer input. The color of the target changes when the pointer status changes.
+針對這個範例，我們使用矩形 (`targetContainer`) 做為指標輸入的目標物件。 當指標狀態變更時，目標的色彩就會變更。
 
-Details for each pointer are displayed in a floating text block that moves with the pointer. The pointer events themselves are displayed to the left of the rectangle (for reporting event sequence).
+每個指標的詳細資料都會顯示於浮動的文字區塊中，該區塊會與指標一起移動。 指標事件本身會顯示於矩形左邊 (適用於回報事件順序)。
 
-This is the Extensible Application Markup Language (XAML) for this example.
+這是適用於此範例的 Extensible Application Markup Language (XAML)。
 
 ```XAML
 <Page
@@ -195,15 +195,15 @@ This is the Extensible Application Markup Language (XAML) for this example.
 </Page>
 ```
 
-### Listen for pointer events
+### 接聽指標事件
 
-In most cases, we recommend that you get pointer info through the [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) of the event handler.
+在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 來取得指標資訊。
 
-If the event argument doesn't expose the pointer details required, you can get access to extended [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) info exposed through the [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) and [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) methods of [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076).
+如果事件引數未公開所需的指標詳細資料，您可以透過 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 與 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法，取得公開的延伸 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 資訊。
 
-For this example, we use a rectangle (`targetContainer`) as the target object for pointer input. The color of the target changes when the pointer status changes.
+針對這個範例，我們使用矩形 (`targetContainer`) 做為指標輸入的目標物件。 當指標狀態變更時，目標的色彩就會變更。
 
-The following code sets up the target object, declares global variables, and identifies the various pointer event listeners for the target.
+下列程式碼會設定目標物件、宣告全域變數，並為目標識別不同的指標事件接聽程式。
 
 ```CSharp
         // For this example, we track simultaneous contacts in case the 
@@ -244,13 +244,13 @@ The following code sets up the target object, declares global variables, and ide
 
 ```
 
-### Handle pointer events
+### 處理指標事件
 
-Next, we use UI feedback to demonstrate basic pointer event handlers.
+接下來，將使用 UI 回饋來示範基本指標事件處理常式。
 
--   This handler manages a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event. We add the event to the event log, add the pointer to the pointer array used for tracking the pointers of interest, and display the pointer details.
+-   這個處理常式會管理 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件。 我們將事件新增到事件記錄檔，將指標新增到用於追蹤相關指標的指標陣列，並顯示指標詳細資料。
 
-    **Note**  [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down action (such as [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964), and [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
+    **注意** [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 與 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件不會永遠成對出現。 您的 app 應接聽和處理可能得出指標向下動作 (例如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、 以及 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)) 的任何事件。
 
      
 
@@ -295,7 +295,7 @@ Next, we use UI feedback to demonstrate basic pointer event handlers.
             }
 ```
 
--   This handler manages a [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.
+-   這個處理常式會管理 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標集合，並顯示指標詳細資料。
 
 ```    CSharp
         private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -329,9 +329,9 @@ Next, we use UI feedback to demonstrate basic pointer event handlers.
             }
 ```
 
--   This handler manages a [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) event. We add the event to the event log and update the pointer details.
+-   這個處理常式會管理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件。 我們將事件新增到事件記錄檔，並更新指標詳細資料。
 
-    **Important**  Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event. The [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) event.
+    **重要** 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件進行路由。
 
      
 
@@ -379,7 +379,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   This handler manages a [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973) event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.
+-   這個處理常式會管理 [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標陣列 (必要時)，並顯示指標詳細資料。
 
 ```    CSharp
 private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
@@ -407,7 +407,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   This handler manages a [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.
+-   這個處理常式會管理終止與數位板接觸的 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件。 我們將事件新增到事件記錄檔、從指標集合移除指標，並更新指標詳細資料。
 
 ```    CSharp
 void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -453,7 +453,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   This handler manages a [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event where contact with the digitizer is maintained. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   這個處理常式會管理與數位板保持接觸的 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
 ```    CSharp
 private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
@@ -484,7 +484,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   This handler manages a [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   這個處理常式會管理 [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
 ```    CSharp
 // Fires for for various reasons, including: 
@@ -518,9 +518,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   This handler manages a [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   這個處理常式會管理 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
-    **Note**  [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) can occur instead of [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). Pointer capture can be lost for various reasons.
+    **注意** [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 可能會發生，而非 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。 指標擷取可能因為各種原因而遺失。
 
      
 
@@ -556,11 +556,11 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### Get pointer properties
+### 取得指標屬性
 
-As stated earlier, you must get most extended pointer info from a [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) object obtained through the [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) and [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) methods of [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076).
+如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 與 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法，從 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 物件取得最延伸的指標資訊。
 
--   First, we create a new [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) for each pointer.
+-   首先，為每個指標建立一個新的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
 ```    CSharp
         void createInfoPop(PointerRoutedEventArgs e)
@@ -580,7 +580,7 @@ As stated earlier, you must get most extended pointer info from a [**Windows.UI.
             }
 ```
 
--   Then we provide a way to update the pointer info in an existing [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) associated with that pointer.
+-   接著，我們提供一個方法，用來更新與該指標相關之現有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 中的指標資訊。
 
 ```    CSharp
         void updateInfoPop(PointerRoutedEventArgs e)
@@ -607,7 +607,7 @@ As stated earlier, you must get most extended pointer info from a [**Windows.UI.
             }
 ```
 
--   Finally, we query various pointer properties.
+-   最後，我們查詢幾個指標屬性。
 
 ```    CSharp
          String queryPointer(PointerPoint ptrPt)
@@ -652,9 +652,9 @@ As stated earlier, you must get most extended pointer info from a [**Windows.UI.
              }
 ```
 
-### Complete example
+### 完整範例
 
-The following is the C\# code for this example. For links to more complex samples, see Related articles at the bottom of this page .
+以下是這個範例的 C\# 程式碼。 如需較複雜範例的連結，請參閱本頁面下方的相關文章。
 
 ```CSharp
 using System;
@@ -1080,22 +1080,22 @@ namespace PointerInput
 }
 ```
 
-## Related articles
+## 相關文章
 
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**範例**
+* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+**封存範例**
+* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
  
 
  
@@ -1106,6 +1106,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

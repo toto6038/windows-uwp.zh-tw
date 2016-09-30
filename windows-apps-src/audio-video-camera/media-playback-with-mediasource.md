@@ -1,24 +1,28 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: This article shows you how to use MediaSource, which provides a common way to reference and play back media from different sources such as local or remote files, and exposes a common model for accessing media data, regardless of the underlying media format.
-title: Media items, playlists, and tracks
+description: "MediaSource 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。"
+title: "使用 MediaSource 進行媒體播放"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 ---
 
-# Media items, playlists, and tracks
+# 使用 MediaSource 進行媒體播放
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
- This article shows you how to use the [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) class, which provides a common way to reference and play back media from different sources such as local or remote files and exposes a common model for accessing media data, regardless of the underlying media format. The [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) class extends the functionality of **MediaSource**, allowing you to manage and select from multiple audio, video, and metadata tracks contained in a media item. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create playback lists from one or more media playback items.
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-## Create and play a MediaSource
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
-Create a new instance of **MediaSource** by calling one of the factory methods exposed by the class:
+[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 類別延伸了 **MediaSource** 的功能，可讓您針對包含在媒體項目中的多個音訊、視訊及中繼資料播放軌進行管理和選取。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 可讓您從一或多個媒體播放項目建立播放清單。
+
+本文中的程式碼是從[視訊播放 SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) 改編而來。 您可以下載此範例以查看程式碼在內容中的使用方式，或使用它做為自己 app 的起點。
+
+## 建立和播放 MediaSource
+
+呼叫類別所公開的其中一個 Factory 方法以建立新的 **MediaSource** 執行個體：
 
 -   [**CreateFromAdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930906)
 -   [**CreateFromIMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn965527)
@@ -29,68 +33,52 @@ Create a new instance of **MediaSource** by calling one of the factory methods e
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-After creating a **MediaSource** you can play it with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property. Starting with Windows 10, version 1607, you can assign a **MediaPlayer** to a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) by calling [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) in order to render the media player content in a XAML page. This is the preferred method over using **MediaElement**. For more information on using **MediaPlayer**, see [**Play audio and video with MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
+建立 **MediaSource** 之後，您便可以使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) (藉由呼叫 [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085)) 或使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) (藉由設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 屬性) 來直接播放來源。 下列範例示範如何使用 **MediaSource** 來播放 **MediaElement** 中使用者選取的媒體檔案。
 
-The following example shows how to play back a user-selected media file in a **MediaPlayer** using **MediaSource**.
-
-You will need to include the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) and [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespaces in order to complete this scenario.
+您將需要包含 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 和 [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間，才能完成這個案例。
 
 [!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-Declare a variable of type **MediaSource**. For the examples in this article, the media source is declared as a class member so that it can be accessed from multiple locations.
+宣告類型為 **MediaSource** 的變數。 在本文的範例中，是將媒體來源宣告為類別成員，以便能夠從多個位置存取它。
 
 [!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
-Declare a variable to store the **MediaPlayer** object and, if you want to render the media content in XAML, add a **MediaPlayerElement** control to your page.
-
-[!code-cs[DeclareMediaPlayer](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
-
-[!code-xml[MediaPlayerElement](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetMediaPlayerElement)]
-
-To allow the user to pick a media file to play, use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). With the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned from the picker's [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) method, initialize a new MediaObject by calling [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Finally, set the media source as the playback source for the **MediaElement** by calling the [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) method.
+若要允許使用者挑選要播放的媒體檔案，請使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)。 使用從選擇器的 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 方法傳回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件，藉由呼叫 [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909)，初始化一個新的 MediaObject。 最後，藉由呼叫 [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) 方法，將媒體來源設定為 **MediaElement** 的播放來源。
 
 [!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
-By default, the **MediaPlayer** does not begin playing automatically when the media source is set. You can manually begin playback by calling [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play).
+## 使用 MediaPlaybackItem 處理多個音訊、視訊及中繼資料播放軌
 
-[!code-cs[Play](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
+使用 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) 來進行播放相當便利，因為它提供一個可從不同種類的來源播放媒體的常見方法，而使用 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 則可存取較進階的行為。 這包括能夠存取和管理媒體項目的多個音訊、視訊及資料播放軌。
 
-You can also set the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) property of the **MediaPlayer** to true to tell the player to begin playing as soon as the media source is set.
-
-[!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
-
-## Handle multiple audio, video, and metadata tracks with MediaPlaybackItem
-
-Using a [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) for playback is convenient because it provides a common way to playback media from different kinds of sources, but more advanced behavior can be accessed by creating a [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) from the **MediaSource**. This includes the ability to access and manage multiple audio, video, and data tracks for a media item.
-
-Declare a variable to store your **MediaPlaybackItem**.
+宣告變數來儲存您的 **MediaPlaybackItem**。
 
 [!code-cs[DeclareMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackItem)]
 
-Create a **MediaPlaybackItem** by calling the constructor and passing in an initialized **MediaSource** object.
+呼叫建構函式並傳入已初始化的 **MediaSource** 物件來建立 **MediaPlaybackItem**。
 
-If your app supports multiple audio, video, or data tracks in a media playback item, register event handlers for the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948), [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954), or [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) events.
+如果您的 app 支援一個媒體播放項目中有多個音訊、視訊或資料播放軌，請為 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948)、[**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) 或 [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) 事件註冊事件處理常式。
 
-Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackItem**.
+最後，將 **MediaElement** 或 **MediaPlayer** 的播放來源設定為您的 **MediaPlaybackItem**。
 
 [!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
-> [!NOTE] 
-> A **MediaSource** can only be associated with a single **MediaPlaybackItem**. After creating a **MediaPlaybackItem** from a source, attempting to create another playback item from the same source will result in an error. Also, after creating a **MediaPlaybackItem** from a media source, you can't set the **MediaSource** object directly as the source for a **MediaPlayer** but should instead use the **MediaPlaybackItem**.
+**注意**  
+一個 **MediaSource** 只能與一個 **MediaPlaybackItem** 關聯。 從來源建立 **MediaPlaybackItem** 之後，嘗試從相同的來源建立另一個播放項目將會導致錯誤。 此外，從媒體來源建立 **MediaPlaybackItem** 之後，您就不能將 **MediaSource** 物件直接設定為 **MediaElement** 或 **MediaPlayer** 的來源物件，而是應該改為使用 **MediaPlaybackItem**。
 
-The [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) event is raised after a **MediaPlaybackItem** containing multiple video tracks is assigned as a playback source, and can be raised again if the list of video tracks changes for the item changes. The handler for this event gives you the opportunity to update your UI to allow the user to switch between available tracks. This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) to display the available video tracks.
+將包含多個視訊播放軌的 **MediaPlaybackItem** 指派為播放來源之後，將會引發 [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) 事件，並且如果因項目變更而導致視訊播放軌清單發生變更，就會再次引發該事件。 這個事件的處理常式可讓您更新 UI，以允許使用者在可用的播放軌之間切換。 這個範例使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 來顯示可用的視訊播放軌。
 
 [!code-xml[VideoComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetVideoComboBox)]
 
-In the **VideoTracksChanged** handler, loop through all of the tracks in the playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list. For each track, a new [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) is created. If the track does not already have a label, a label is generated from the track index. The [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) property of the combo box item is set to the track index so that it can be identified later. Finally, the item is added to the combo box. Note that these operations are performed within a [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) call because all UI changes must be made on the UI thread and this event is raised on a different thread.
+請在 **VideoTracksChanged** 處理常式中，循環處理播放項目之 [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) 清單中的所有播放軌。 針對每個播放軌，將會建立一個新的 [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349)。 如果播放軌尚未擁有標籤，將會從播放軌索引產生標籤。 下拉式方塊項目的 [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) 屬性是設定為播放軌索引，以便稍後可供識別。 最後，該項目會新增到下拉式方塊中。 請注意，這些操作是在 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 呼叫內執行，因為所有 UI 變更都必須在 UI 執行緒上進行，而這個事件是在不同的執行緒上引發。
 
 [!code-cs[VideoTracksChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) handler for the combo box, the track index is retrieved from the selected item's **Tag** property. Setting the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) property of the media playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list causes the **MediaElement** or **MediaPlayer** to switch the active video track to the specified index.
+在下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 處理常式中，會從所選項目的 **Tag** 屬性抓取播放軌索引。 設定媒體播放項目之 [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) 清單的 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) 屬性會使 **MediaElement** 或 **MediaPlayer** 將使用中的視訊播放軌切換到指定的索引。
 
 [!code-cs[VideoTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
 
-Managing media items with multiple audio tracks works exactly the same as with video tracks. Handle the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) to update your UI with the audio tracks found in the playback item's [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) list. When the user selects an audio track, set the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) property of the **AudioTracks** list to cause the **MediaElement** or **MediaPlayer** to switch the active audio track to the specified index.
+管理含有多個音軌的媒體項目與管理含有視訊播放軌的媒體項目方式完全相同。 請處理 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948)，以使用在播放項目的 [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) 清單中找到的音軌更新您的 UI。 當使用者選取音軌時，設定 **AudioTracks** 清單的 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) 屬性以使 **MediaElement** 或 **MediaPlayer** 將使用中的音軌切換到指定的索引。
 
 [!code-xml[AudioComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetAudioComboBox)]
 
@@ -98,134 +86,100 @@ Managing media items with multiple audio tracks works exactly the same as with v
 
 [!code-cs[AudioTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAudioTracksSelectionChanged)]
 
-In addition to audio and video, a **MediaPlaybackItem** object may contain zero or more [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) objects. A timed metadata track can contain subtitle or caption text, or it may contain custom data that is proprietary to your app. A timed metadata track contains a list of cues represented by objects that inherit from [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899), such as a [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) or a [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655). Each cue has a start time and a duration that determines when the cue is activated and for how long.
+除了音訊和視訊之外，**MediaPlaybackItem** 物件可能會包含零個或多個 [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) 物件。 定時中繼資料播放軌可以包含字幕或輔助字幕文字，也可以包含您 app 專屬的自訂資料。 定時中繼資料播放軌包含由繼承 [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899) 的物件 (例如 [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) 或 [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655)) 所代表的提示清單。 每個提示都有一個開始時間和持續時間，用來決定何時啟用提示及要持續多久。
 
-Similar to audio tracks and video tracks, the timed metadata tracks for a media item can be discovered by handling the [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) event of a **MediaPlaybackItem**. With timed metadata tracks, however, the user may want to enable more than one metadata track at a time. Also, depending on your app scenario, you may want to enable or disable metadata tracks automatically, without user intervention. For illustration purposes, this example adds a [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) for each metadata track in a media item to allow the user to enable and disable the track. The **Tag** property of each button is set to the index of the associated metadata track so that it can be identified when the button is toggled.
+與音軌和視訊播放軌類似，透過處理 **MediaPlaybackItem** 的 [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) 事件，即可探索媒體項目的定時中繼資料播放軌。 不過，使用定時中繼資料播放軌時，使用者可能會想要一次啟用多個中繼資料播放軌。 此外，視您的 app 情況而定，您可能會想要自動啟用或停用中繼資料播放軌，而不需要使用者介入。 為了方便說明，這個範例會為媒體項目中的每個中繼資料播放軌新增一個 [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795)，以允許使用者啟用和停用播放軌。 每個按鈕的 **Tag** 屬性都設定為相關中繼資料播放軌的索引，以便在切換按鈕時能夠加以識別。
 
 [!code-xml[MetaStackPanel](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetMetaStackPanel)]
 
 [!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
-Because more than one metadata track can be active at a time, you don't simply set the active index for the metadata track list. Instead, call the **MediaPlaybackItem** object's [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) method, passing in the index of the track you want to toggle, and then providing a value from the [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) enumeration. The presentation mode you choose depends on the implementation of your app. In this example, the metadata track is set to **PlatformPresented** when enabled. For text-based tracks, this means that the system will automatically display the text cues in the track. When the toggle button is toggled off, the presentation mode is set to **Disabled**, which means that no text is displayed and no cue events are raised. Cue events are discussed later in this article.
+由於一次可以有多個中繼資料播放軌處於使用中，因此您不是直接設定中繼資料播放軌清單的使用中索引。 而是改為呼叫 **MediaPlaybackItem** 物件的 [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) 方法，藉此傳入您想要切換之播放軌的索引，然後從 [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 列舉提供值。 您選擇的呈現模式取決於您 app 的實作。 在這個範例中，中繼資料播放軌在啟用時會設定為 **PlatformPresented**。 就文字型播放軌而言，這表示系統會自動顯示播放軌中的文字提示。 當切換按鈕被關閉時，呈現模式會設定成 **Disabled**，這表示不會顯示任何文字，也不會引發任何提示事件。 本文稍後會討論提示事件。
 
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
 [!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
 
-As you are processing the metadata tracks, you can access the set of cues within the track by accessing the [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) or [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) properties. You can do this to update your UI to show the cue locations for a media item.
+## 使用 TimedTextSource 新增外部定時文字
 
-## Handle unsupported codecs and unknown errors when opening media items
-Starting with Windows 10, version 1607, you can check whether the codec required to playback a media item is supported or partially supported on the device on which your app is running. In the event handler for the **MediaPlaybackItem** tracks-changed events, such as [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), first check to see if the track change is an insertion of a new track. If so, you can get a reference to the track being inserted by using the index passed in the **IVectorChangedEventArgs.Index** parameter with the appropriate track collection of the **MediaPlaybackItem** parameter, such as the [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) collection.
+在某些情況下，您可能會有包含與媒體項目關聯之定時文字的外部檔案，例如包含不同地區設定之字幕的個別檔案。 使用 [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) 類別以從串流或 URI 載入外部定時文字檔案。
 
-Once you have a reference to the inserted track, check the [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) of the track's [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) property. If the value is [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the appropriate codec needed to play back the track is present on the device. If the value is [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the track can be played by the system, but the playback will be degraded in some way. For example, a 5.1 audio track may be played back as 2-channel stereo instead. If this is the case, you may want to update your UI to alert the user of the degradation. If the value is [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) or [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the track can't be played back at all with the current codecs on the device. You may wish to alert the user and skip playback of the item or implement UI to allow the user to download the correct codec. The track's [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) method can be used to determine the required codec for playback.
-
-Finally, you can register for the track's [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) event, which will be raised if the track is supported on the device but failed to open due to an unknown error in the pipeline.
-
-[!code-cs[AudioTracksChanged_CodecCheck](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged_CodecCheck)]
-
-In the [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) event handler, you can check to see if the **MediaSource** status is unknown, and if so, you can programatically select a different track to play, allow the user to choose a different track, or abandon playback.
-
-[!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
-
-## Set display properties used by the System Media Transport Controls
-Starting with Windows 10, version 1607, media played in a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) is automatically integrated into the System Media Transport Controls (SMTC) by default. You can specify the metadata that will be displayed by the SMTC by updating the display properties for a **MediaPlaybackItem**. Get an object representing the display properties for an item by calling [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Set whether the playback item is music or video by setting the [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) property. Then, set the properties of the object's [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) or [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties). Call [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) to set the update the item's properties to the values you provided. Typically, an app will retrieve the display values dynamically from a web service, but the following example illustrates this process with hardcoded values.
-
-[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
-
-[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
-
-## Add external timed text with TimedTextSource
-
-For some scenarios, you may have external files that contains timed text associated with a media item, such as separate files that contain subtitles for different locales. Use the [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) class to load in external timed text files from a stream or URI.
-
-This example uses a **Dictionary** collection to store a list of the timed text sources for the media item using the source URI and the **TimedTextSource** object as the key/value pair in order to identify the tracks after they have been resolved.
+這個範例使用 **Dictionary** 集合來儲存媒體項目的定時文字來源清單，其中會使用來源 URI 和 **TimedTextSource** 物件做為「機碼/值」組，以在解析播放軌之後識別播放軌。
 
 [!code-cs[TimedTextSourceMap](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
 
-Create a new **TimedTextSource** for each external timed text file by calling [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190). Add an entry to the **Dictionary** for the timed text source. Add a handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event to handle if the item failed to load or to set additional properties after the item was loaded successfully.
+呼叫 [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190) 來為每個外部定時文字檔案建立一個新的 **TimedTextSource**。 在 **Dictionary** 中為定時文字來源新增一個項目。 為 [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) 事件新增一個處理常式，以處理在順利載入項目之後，項目無法載入或設定其他屬性的情況。
 
-Register all of your **TimedTextSource** objects with the **MediaSource** by adding them to the [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) collection. Note that external timed text sources are added to directly the **MediaSource** and not the **MediaPlaybackItem** created from the source. To update your UI to reflect the external text tracks, register and handle the **TimedMetadataTracksChanged** event as described previously in this article.
+將您所有的 **TimedTextSource** 物件新增到 [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) 集合，以向 **MediaSource** 註冊這些物件。 請注意，外部定時文字來源會直接新增到 **MediaSource**，而不是新增到從來源建立的 **MediaPlaybackItem**。 若要更新您的 UI 以反映外部文字播放軌，請依照本文先前所述的方式註冊並處理 **TimedMetadataTracksChanged** 事件。
 
 [!code-cs[TimedTextSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
 
-In the handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
+在 [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) 事件的處理常式中，檢查傳遞給處理常式之 [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) 的 **Error** 屬性，以判斷嘗試載入定時文字資料時是否發生錯誤。 如果已順利解析項目，您可以使用這個處理常式來更新已解析之播放軌的其他屬性。 這個範例會根據先前儲存在 **Dictionary** 中的 URI，為每個播放軌新增一個標籤。
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
-## Add additional metadata tracks
+## 新增其他中繼資料播放軌
 
-You can dynamically create custom metadata tracks in code and associate them with a media source. The tracks you create can contain subtitle or caption text, or they can contain your proprietary app data.
+您可以在程式碼中動態建立自訂的中繼資料播放軌，然後將它們與媒體來源建立關聯。 您建立的播放軌可以包含字幕或輔助字幕文字，也可包含您的專屬 App 資料。
 
-Create a new [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) by calling the constructor and specifying an ID, the language identifier, and a value from the [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) enumeration. Register handlers for the [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) and [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) events. These events are raised when the start time for a cue has been reached and when the duration for a cue has expired, respectively.
+呼叫建構函式並指定識別碼、語言識別碼及來自 [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) 列舉的值，以建立新的 [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580)。 註冊 [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) 和 [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) 事件的處理常式。 當已達到提示的開始時間，以及當提示的持續時間已過期時，將會分別引發這些事件。
 
-Create a new cue object, appropriate for the type of metadata track you created, and set the ID, start time, and duration for the track. This example creates a data track, so a set of [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) objects are generated and a buffer containing app-specific data is provided for each cue. To register the new track, add it to the [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) collection of the **MediaSource** object.
+為您建立的中繼資料播放軌建立適用其類型的新提示物件，並設定播放軌的識別碼、開始時間及持續時間。 這個範例會建立一個資料播放軌，因此會產生一組 [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) 物件，並為每個提示提供一個包含 app 特定資料的緩衝區。 若要註冊新播放軌，請將它新增到 **MediaSource** 物件的 [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) 集合。
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
+只要相關播放軌的呈現模式為 **ApplicationPresented**、**Hidden** 或 **PlatformPresented**，當達到提示的開始時間時，便會引發 **CueEntered** 事件。 如果播放軌的呈現模式為 **Disabled** 時，則不會為中繼資料播放軌引發提示事件。 這個範例只會將與提示關聯的自訂資料輸出到偵錯視窗。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
-This example adds a custom text track by specifying **TimedMetadataKind.Caption** when creating the track and using [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) objects to add cues to the track.
+這個範例會藉由在建立播放軌時指定 **TimedMetadataKind.Caption**，並使用 [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) 物件將提示新增到播放軌，來新增自訂文字播放軌。
 
 [!code-cs[AddTextTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddTextTrack)]
 
 [!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
-## Play a list of media items with MediaPlaybackList
+## 使用 MediaPlaybackList 播放媒體項目清單
 
-The [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create a playlist of media items, which are represented by **MediaPlaybackItem** objects.
+[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 可讓您建立媒體項目 (由 **MediaPlaybackItem** 物件代表) 的播放清單。
 
-**Note**  Items in a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) are rendered using gapless playback. The system will use provided metadata in MP3 or AAC encoded files to determine the delay or padding compensation needed for gapless playback. If the MP3 or AAC encoded files don't provide this metadata, then the system determines the delay or padding heuristically. For lossless formats, such as PCM, FLAC, or ALAC, the system takes no action because these encoders don't introduce delay or padding.
+**注意** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的項目會使用無間斷播放呈現。 系統會使用 MP3 或 AAC 編碼檔案中所提供的中繼資料，以判斷無間斷播放所需的延遲或間隔補償。 如果 MP3 或 AAC 編碼檔案未提供此中繼資料，則系統會啟發式地判斷延遲或間隔。 針對不失真的格式 (例如 PCM、FLAC 或 ALAC)，系統不會採取任何動作，因為這些編碼器不會導致延遲或間隔。
 
-To get started, declare a variable to store your **MediaPlaybackList**.
+若要開始，請宣告變數來儲存您的 **MediaPlaybackList**。
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-Create a **MediaPlaybackItem** for each media item you want to add to your list using the same procedure described previously in this article. Initialize your **MediaPlaybackList** object and add the media playback items to it. Register a handler for the [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) event. This event allows you to update your UI to reflect the currently playing media item. Finally, set the playback source of the **MediaPlayer** to your **MediaPlaybackList**.
+使用本文先前所述的相同程序，為您想要新增到清單中的每個媒體項目建立 **MediaPlaybackItem**。 將您的 **MediaPlaybackList** 物件初始化，然後將媒體播放項目新增到此物件中。 註冊 [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) 事件的處理常式。 這個事件可讓您更新 UI 以反映目前播放的媒體項目。 最後，將 **MediaElement** 或 **MediaPlayer** 的播放來源設定為您的 **MediaPlaybackList**。
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
-In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) so that the updates are made on the UI thread.
-
-> [!NOTE] 
-> The system does not automatically dispose of media items after they are played. This means that if the user navigates backwards through the list, previous played songs can be played again gaplessly, but this means that as more items in the list are played, the memory usage of your app will increase. You must be sure to free up the resources for previously played media items periodically. This is especially important to address when your app is playing in the background and more tightly resource-constrained. 
-
-You can use the **CurrentItemChanged** event as an opportunity to release the resources from previously played media items. To keep a reference to previously played items, create a **Queue** collection. And set a variable that determines the maximum number of media items to keep in memory. In the handler, get a reference to the previously played item and add it to the queue and dequeue the oldest entry in the queue. Call [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) on the returned item to free up its resources, but first check to make sure it's not still on the queue or currently being played to handle cases where the item is played multiple times.
-
-[!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
+在 **CurrentItemChanged** 事件處理常式中，更新您的 UI 以反映目前正在播放的項目 (藉由使用傳遞給事件之 [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) 物件的 [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) 屬性即可抓取此項目)。 請記住，如果您是從這個事件更新 UI，您應該在對 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫中執行此操作，以便在 UI 執行緒上進行更新。
 
 [!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
-Call [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) or [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) to cause the media player to play the previous or next item in your **MediaPlaybackList**.
+呼叫 [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) 或 [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454)，以使媒體播放器播放您 **MediaPlaybackList** 中的上一個或下一個項目。
 
 [!code-cs[PrevButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPrevButton)]
 
 [!code-cs[NextButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetNextButton)]
 
-Set the [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) property to specify whether the media player should play the items in your list in random order.
+設定 [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) 屬性，以指定媒體播放器是否應該以隨機順序播放您清單中的項目。
 
 [!code-cs[ShuffleButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetShuffleButton)]
 
-Set the [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) property to specify whether the media player should loop playback of your list.
+設定 [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) 屬性，以指定媒體播放器是否應該循環播放您清單中的項目。
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
+ 
 
-###Handle the failure of media items in a playback list
-The [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) event is raised when an item in the list fails to open. The [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) property of the [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) object passed into the handler enumerates the specific cause of the failure when possible, including network errors, decoding errors, or encryption errors.
-
-[!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
-
-## Related topics
-* [Media playback](media-playback.md)
-* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
-* [Play media in the background](background-audio.md)
+ 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,61 +1,59 @@
 ---
 author: Jwmsft
-Description: Provides a list by function of some of the controls that you can use in your apps.
-title: Controls by function
+Description: "提供可用於 app 的部分控制項清單 (依功能分類)。"
+title: "依功能分類的控制項"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 
 ---
-# Controls by function
+# 依功能分類的控制項
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式庫。 部分控制項以視覺方式呈現；其餘控制項則當做其他控制項或內容 (例如影像與媒體) 的容器。 
 
-The XAML UI framework for Windows provides an extensive library of controls that support UI development. Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media. 
+您可以下載 [**XAML UI 基本知識範例**](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。 
 
-You can see many of the Windows UI controls in action by downloading the [**XAML UI Basics sample**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+以下是可用於 App 的常用 XAML 控制項清單 (依功能分類)。 
 
-Here's a list by function of the common XAML controls you can use in your app. 
+## 應用程式列與命令
 
-## Appbars and commands
+### 應用程式列
+顯示應用程式特定命令的工具列。 請參閱＜命令列＞。
 
-### App bar
-A toolbar for displaying application-specific commands. See Command bar.
+參考：[AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx) 
 
-Reference: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx) 
+### 應用程式列按鈕
+使用應用程式列樣式顯示命令的按鈕。
 
-### App bar button
-A button for showing commands using app bar styling.
+![應用程式列按鈕圖示](images/controls/app-bar-buttons.png) 
 
-![App bar button icons](images/controls/app-bar-buttons.png) 
+參考：[AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
 
-Reference: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx), [BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx), [FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx), [PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
+設計和作法︰[應用程式列和命令列控制項指南](app-bars.md) 
 
-Design and how-to: [App bar and command bar control guide](app-bars.md) 
+範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+### 應用程式列分隔符號
+在視覺上分隔命令列中的命令群組。
 
-### App bar separator
-Visually separates groups of commands in a command bar.
+參考：[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Reference: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
+範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+### 應用程式列切換按鈕
+用於在命令列中切換命令的按鈕。
 
-### App bar toggle button
-A button for toggling commands in a command bar.
+參考：[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Reference: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
+範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+### 命令列
+一個處理應用程式列按鈕元素大小調整的特殊化應用程式列。
 
-### Command bar
-A specialized app bar that handles the resizing of app bar button elements.
-
-![Command bar control](images/command-bar-compact.png)
+![命令列控制項](images/command-bar-compact.png)
 
 ```xaml
 <CommandBar>
@@ -64,63 +62,63 @@ A specialized app bar that handles the resizing of app bar button elements.
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-Reference: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
+參考：[CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
 
-Design and how-to: [App bar and command bar control guide](app-bars.md)
+設計和作法︰[應用程式列和命令列控制項指南](app-bars.md)
 
-Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-## Buttons
+## 按鈕
 
-### Button
-A control that responds to user input and raises a **Click** event.
+### 按鈕
+回應使用者輸入並引發 **Click** 事件的控制項。
 
-![A standard button](images/controls/button.png)
+![標準按鈕](images/controls/button.png)
 
 ```xaml
 <Button x:Name="button1" Content="Button" 
         Click="Button_Click" />
 ```
 
-Reference: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
+參考：[Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
-Design and how-to: [Buttons control guide](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
-### Hyperlink
-See Hyperlink button.
+### 超連結
+請參閱＜超連結按鈕＞。
 
-### Hyperlink button
-A button that appears as marked up text and opens the specified URI in a browser.
+### 超連結按鈕
+顯示為標記文字並且會在瀏覽器中開啟指定 URI 的按鈕。
 
-![Hyperlink button](images/controls/hyperlink-button.png)
+![超連結按鈕](images/controls/hyperlink-button.png)
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
                  NavigateUri="http://www.microsoft.com"/>
 ```
 
-Reference: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
+參考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
-Design and how-to: [Hyperlinks control guide](hyperlinks.md)
+設計和作法︰[超連結控制項指南](hyperlinks.md)
 
-### Repeat button
-A button that raises its **Click** event repeatedly from the time it's pressed until it's released. 
+### 重複按鈕
+一個按鈕，從按下到放開的這段期間，會重複引發 **Click** 事件。 
 
-![A repeat button control](images/controls/repeat-button.png) 
+![重複按鈕控制項](images/controls/repeat-button.png) 
 
 ```xaml
 <RepeatButton x:Name="repeatButton1" Content="Repeat Button" 
               Click="RepeatButton_Click" />
 ```
 
-Reference: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
+參考：[RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
 
-Design and how-to: [Buttons control guide](buttons.md) 
+設計和作法︰[按鈕控制項指南](buttons.md) 
 
-## Collection/data controls
+## 集合/資料控制項
 
-### Flip view
-A control that presents a collection of items that the user can flip through, one item at a time.
+### 翻轉檢視
+讓使用者可以逐一瀏覽項目集合 (一次瀏覽一個項目) 的控制項。
 
 ```xaml
 <FlipView x:Name="flipView1" SelectionChanged="FlipView_SelectionChanged">
@@ -130,12 +128,12 @@ A control that presents a collection of items that the user can flip through, on
 </FlipView>
 ```
 
-Reference: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
+參考：[FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
 
-Design and how-to: [Flip view control guide](flipview.md) 
+設計和作法︰[翻轉檢視控制項指南](flipview.md) 
 
-### Grid view
-A control that presents a collection of items in rows and columns that can scroll horizontally.
+### 格線檢視
+在可以水平捲動的列和欄中顯示項目集合的控制項。
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -144,23 +142,23 @@ A control that presents a collection of items in rows and columns that can scrol
 </GridView>
 ```
 
-Reference: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 
+參考：[GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 
 
-Design and how-to: [Lists](lists.md) 
+設計和作法︰[Lists](lists.md) 
 
-Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+範例程式碼：[ListView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-### Items control
-A control that presents a collection of items in a UI specified by a data template. 
+### 項目控制項
+在資料範本指定的 UI 中顯示項目集合的控制項。 
 
 ```xaml
 <ItemsControl/>
 ```
 
-Reference: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 
+參考：[ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 
 
-### List view
-A control that presents a collection of items in a list that can scroll vertically.
+### 清單檢視
+在可以垂直捲動的清單中顯示項目集合的控制項。
 
 ```xaml
 <ListView x:Name="listView1" SelectionChanged="ListView_SelectionChanged">
@@ -169,73 +167,73 @@ A control that presents a collection of items in a list that can scroll vertical
 </ListView>
 ```
 
-Reference: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 
+參考：[ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 
 
-Design and how-to: [Lists](lists.md) 
+設計和作法︰[Lists](lists.md) 
 
-Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+範例程式碼：[ListView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-## Date and time controls
+## 日期和時間控制項
 
-### Calendar date picker
-A control that lets a user select a date using a drop-down calendar display.
+### 行事曆日期選擇器
+可讓使用者使用下拉式行事曆顯示畫面選取日期的控制項。
 
-![A calendar date picker with open calendar view](images/controls/calendar-date-picker-open.png)
+![已開啟行事曆檢視的行事曆日期選擇器](images/controls/calendar-date-picker-open.png)
 
 ```xaml
 <CalendarDatePicker/>
 ```
 
-Reference: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
+參考：[CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
 
-Design and how-to: [Calendar, date, and time controls](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
  
-### Calendar view
-A configurable calendar display that lets a user select single or multiple dates.
+### 行事曆檢視
+可讓使用者選取單一或多個日期的可設定式行事曆顯示畫面。
 
 ```xaml
 <CalendarView/>
 ```
 
-Reference: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
+參考：[CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
 
-Design and how-to: [Calendar, date, and time controls](date-and-time.md) 
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md) 
 
-### Date picker
-A control that lets a user select a date.
+### 日期選擇器
+讓使用者能夠選取日期的控制項。
 
-![Date picker control](images/controls/date-picker.png)
+![日期選擇器控制項](images/controls/date-picker.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
 ```
 
-Reference: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
+參考：[DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
 
-Design and how-to: [Calendar, date, and time controls](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
  
-### Time picker
-A control that lets a user set a time value.
+### 時間選擇器
+讓使用者能夠設定時間值的控制項。
 
-![TimePicker control](images/controls/time-picker.png) 
+![TimePicker 控制項](images/controls/time-picker.png) 
 
 ```xaml
 <TimePicker Header="Arrival Time"/>
 ```
 
-Reference: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
+參考：[TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
 
-Design and how-to: [Calendar, date, and time controls](date-and-time.md)
+設計和作法︰[行事曆、日期和時間控制項](date-and-time.md)
 
-## Flyouts
+## 飛出視窗
 
-### Context menu
-See Menu flyout and Popup menu.
+### 操作功能表
+請參閱＜功能表飛出視窗＞和＜快顯功能表＞。
 
-### Flyout
-Displays a message that requires user interaction. (Unlike a dialog, a flyout does not create a separate window, and does not block other user interaction.)
+### 飛出視窗
+顯示一則要求使用者互動的訊息。 (與對話方塊不同的是，飛出視窗不會建立另一個視窗，也不會封鎖其他使用者互動)。
 
-![Flyout control](images/controls/flyout.png)
+![飛出視窗控制項](images/controls/flyout.png)
 
 ```xaml
 <Flyout>
@@ -246,14 +244,14 @@ Displays a message that requires user interaction. (Unlike a dialog, a flyout do
 </Flyout>
 ```
 
-Reference: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
+參考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs-popups-menus.md) 
+設計和作法︰[操作功能表和對話方塊](dialogs-popups-menus.md) 
 
-### Menu flyout
-Temporarily displays a list of commands or options related to what the user is currently doing.
+### 功能表飛出視窗
+暫時顯示與使用者目前正在執行之動作相關的命令或選項清單。
 
-![Menu flyout control](images/controls/menu-flyout.png) 
+![功能表飛出視窗控制項](images/controls/menu-flyout.png) 
 
 ```xaml
 <MenuFlyout>
@@ -266,64 +264,64 @@ Temporarily displays a list of commands or options related to what the user is c
 </MenuFlyout>
 ```
 
-Reference: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
+參考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs-popups-menus.md) 
+設計和作法︰[操作功能表和對話方塊](dialogs-popups-menus.md) 
 
-Sample code: [XAML Context Menu sample](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+範例程式碼：[XAML 操作功能表範例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
-### Popup menu
-A custom menu that presents commands that you specify.
+### 快顯功能表
+顯示您所指定命令的自訂功能表。
 
-Reference: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
+參考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Design and how-to: [Context menus and dialogs](dialogs-popups-menus.md) 
+設計和作法︰[操作功能表和對話方塊](dialogs-popups-menus.md) 
 
-### Tooltip
-A pop-up window that displays information for an element. 
+### 工具提示
+顯示元素資訊的快顯視窗。 
  
-![Tool tip control](images/controls/tool-tip.png)
+![工具提示控制項](images/controls/tool-tip.png)
 
 ```xaml
 <Button Content="Button" Click="Button_Click" 
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-Reference: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
+參考：[ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)、[ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-Design and how-to: Guidelines for tooltips 
+設計和作法：工具提示的指導方針 
 
-## Images
+## 影像
 
-### Image
-A control that presents an image.
+### 影像
+顯示影像的控制項。
 
 ```xaml
 <Image Source="Assets/Logo.png" />
 ```
 
-Reference: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
+參考：[Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
 
-Design and how-to: [Image and ImageBrush](images-imagebrushes.md) 
+設計和作法：[Image 和 ImageBrush](images-imagebrushes.md) 
 
-Sample code: [XAML images sample](http://go.microsoft.com/fwlink/p/?linkid=226867)
+範例程式碼：[XAML 影像範例](http://go.microsoft.com/fwlink/p/?linkid=226867)
 
-## Graphics and ink
+## 圖形與筆墨
 
 ### InkCanvas
-A control that receives and displays ink strokes.
+接收及顯示筆墨筆觸的控制項。
 
 ```xaml
 <InkCanvas/>
 ```
 
-Reference: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
+參考：[InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
 
-### Shapes
-Various retained mode graphical objects that can be presented like ellipses, rectangles, lines, Bezier paths, etc.
+### 形狀
+各種保留模式圖形物件，可以使用橢圓形、長方形、直線、貝茲路徑之類的物件顯示。
 
-![A polygon](images/controls/shapes-polygon.png) 
-![A path](images/controls/shapes-path.png) 
+![多邊形](images/controls/shapes-polygon.png) 
+![路徑](images/controls/shapes-path.png) 
 
 ```xaml
 <Ellipse/>
@@ -331,18 +329,18 @@ Various retained mode graphical objects that can be presented like ellipses, rec
 <Rectangle/>
 ```
 
-Reference: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+參考：[Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
-How to: [Drawing shapes](../graphics/drawing-shapes.md) 
+作法：[繪製形狀](../graphics/drawing-shapes.md) 
 
-Sample code: [XAML vector-based drawing sample](http://go.microsoft.com/fwlink/p/?linkid=226866)
+範例程式碼：[XAML 向量繪製範例](http://go.microsoft.com/fwlink/p/?linkid=226866)
 
-## Layout controls
+## 配置控制項
 
-### Border
-A container control that draws a border, background, or both, around another object.
+### 框線
+在另一個物件周圍繪製框線、背景或兩者皆繪製的容器控制項。
 
-![A border around 2 rectangles](images/controls/border.png) 
+![兩個矩形的框線](images/controls/border.png) 
 
 ```xaml
 <Border BorderBrush="Blue" BorderThickness="4" 
@@ -355,12 +353,12 @@ A container control that draws a border, background, or both, around another obj
 </Border>
 ```
 
-Reference: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
+參考：[Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
-### Canvas
-A layout panel that supports the absolute positioning of child elements relative to the top left corner of the canvas.
+### 畫布
+支援將子元素以畫布左上角為起點進行絕對定位的配置面板。
  
-![Canvas layout panel](images/controls/canvas.png) 
+![畫布配置面板](images/controls/canvas.png) 
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -371,12 +369,12 @@ A layout panel that supports the absolute positioning of child elements relative
 </Canvas>
 ```
 
-Reference: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+參考：[Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
 ### Grid
-A layout panel that supports the arranging of child elements in rows and columns.
+支援以列和欄排列子元素的配置面板。
 
-![Grid layout panel](images/controls/grid.png) 
+![格線配置面板](images/controls/grid.png) 
 
 ```xaml
 <Grid>
@@ -395,15 +393,15 @@ A layout panel that supports the arranging of child elements in rows and columns
 </Grid>
 ```
 
-Reference: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
+參考：[Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
  
-### Panning scroll viewer
-See Scroll viewer.
+### 移動瀏覽捲動檢視器
+請參閱＜捲動檢視器＞。
 
 ### RelativePanel
-A panel that lets you position and align child objects in relation to each other or the parent panel.
+一個面板，可讓您定位及排列彼此有關係或與上層面板有關係的子物件。
 
-![Relative panel layout panel](images/controls/relative-panel.png) 
+![相對面板配置面板](images/controls/relative-panel.png) 
 
 ```xaml
 <RelativePanel>
@@ -412,15 +410,15 @@ A panel that lets you position and align child objects in relation to each other
 </RelativePanel>
 ```
 
-Reference: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
+參考：[RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
-### Scroll bar
-See scroll viewer. (ScrollBar is an element of ScrollViewer. You don't typically use it as a stand-alone control.)
+### 捲軸
+請參閱＜捲動檢視器＞。 (ScrollBar 是 ScrollViewer 的元素。 您通常不會將它做為獨立控制項)。
 
-Reference: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+參考：[ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
-### Scroll viewer
-A container control that lets the user pan and zoom its content.
+### 捲動檢視器
+讓使用者移動瀏覽和縮放內容的容器控制項。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
@@ -431,16 +429,16 @@ A container control that lets the user pan and zoom its content.
 </ScrollViewer>
 ```
 
-Reference: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
+參考：[ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
 
-Design and how-to: [Scroll and panning controls guide](scroll-controls.md) 
+設計和作法︰[捲動和移動瀏覽控制項指南](scroll-controls.md) 
 
-Sample code: [XAML scrolling, panning and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=238577)
+範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=238577)
 
-### Stack panel
-A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.
+### 堆疊面板
+可以將子元素按水平或垂直方向排列到單行中的配置面板。
 
-![Stack panel layout control](images/controls/stack-panel.png) 
+![堆疊面板配置控制項](images/controls/stack-panel.png) 
 
 ```xaml
 <StackPanel>
@@ -451,12 +449,12 @@ A layout panel that arranges child elements into a single line that can be orien
 </StackPanel>
 ```
 
-Reference: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)
+參考：[StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)
  
 ### VariableSizedWrapGrid
-A layout panel that supports the arranging of child elements in rows and columns. Each child element can span multiple rows and columns.
+支援以列和欄排列子元素的配置面板。 每個子元素可以橫跨多列和多欄。
 
-![Variable sized wrap grid layout panel](images/controls/variable-sized-wrap-grid.png) 
+![不同大小換行格線配置面板](images/controls/variable-sized-wrap-grid.png) 
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -471,12 +469,12 @@ A layout panel that supports the arranging of child elements in rows and columns
 </VariableSizedWrapGrid>
 ```
 
-Reference: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)
+參考：[VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)
 
 ### Viewbox
-A container control that scales its content to a specified size.
+將內容縮放為指定大小的容器控制項。
 
-![Viewbox control](images/controls/view-box.png) 
+![Viewbox 控制項](images/controls/view-box.png) 
 
 ```xaml
 <Viewbox MaxWidth="25" MaxHeight="25">
@@ -490,49 +488,49 @@ A container control that scales its content to a specified size.
 </Viewbox>
 ```
 
-Reference: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)
+參考：[Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)
  
-### Zooming scroll viewer
-See Scroll viewer.
+### 縮放捲動檢視器
+請參閱＜捲動檢視器＞。
 
-## Media controls
+## 媒體控制項
 
-### Audio
-See Media element.
+### 音訊
+請參閱＜媒體元素＞。
 
-### Media element
-A control that plays audio and video content.
+### 媒體元素
+播放音訊和視訊內容的控制項。
 
 ```xaml
 <MediaElement x:Name="myMediaElement"/>
 ```
 
-Reference: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
+參考：[MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
 
-Design and how-to: [Media element control guide](media-playback.md)
+設計和作法︰[媒體元素控制項指南](media-playback.md)
 
 ### MediaTransportControls
-A control that provides playback controls for a MediaElement.
+為 MediaElement 提供播放控制項的控制項。
 
-![Media element with transport controls](images/controls/media-transport-controls.png) 
+![具有傳輸控制項的媒體元素](images/controls/media-transport-controls.png) 
 
 ```xaml
 <MediaTransportControls MediaElement="myMediaElement"/>
 ```
 
-Reference: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
+參考：[MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
 
-Design and how-to: [Media element control guide](media-playback.md) 
+設計和作法︰[媒體元素控制項指南](media-playback.md) 
 
-Sample code: [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+範例程式碼：[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)
 
-### Video
-See Media element.
+### 影片
+請參閱＜媒體元素＞。
 
-## Navigation
+## 瀏覽
 
-### Hub
-A container control that lets the user view and navigate to different sections of content.
+### 中樞
+可讓使用者檢視並瀏覽到不同內容區段的容器控制項。
 
 ```xaml
 <Hub>
@@ -545,25 +543,25 @@ A container control that lets the user view and navigate to different sections o
 </Hub>
 ```
 
-Reference: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+參考：[Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
 
-Design and how-to: [Hub control guide](hub.md) 
+設計和作法︰[中樞控制項指南](hub.md) 
 
-Sample code:[XAML Hub control sample](http://go.microsoft.com/fwlink/p/?LinkID=309828)
+範例程式碼：[XAML中樞控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=309828)
 
-### Pivot
-A full-screen container and navigation model that also provides a quick way to move between different pivots (views or filters), typically in the same set of data.
+### 樞紐分析
+全螢幕容器和瀏覽模型也可讓您迅速在不同的樞紐分析 (檢視或篩選) 之間移動，而通常是在同一組資料。
 
-The Pivot control can be styled to have a "tab" layout.
+樞紐分析控制項的樣式可設定為具有「索引標籤」版面配置。
 
-Reference: [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
+參考：[Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
 
-Design and how-to: [Tabs and pivot control guide](tabs-pivot.md) 
+設計和作法︰[索引標籤和樞紐分析控制項指南](tabs-pivot.md) 
 
-Sample code: [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
+範例程式碼：[樞紐分析範例](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
 
-### Semantic zoom
-A container control that lets the user zoom between two views of a collection of items.
+### 語意式縮放
+讓使用者在項目集合的兩個檢視之間縮放的容器控制項。
 
 ```xaml
 <SemanticZoom>
@@ -576,16 +574,16 @@ A container control that lets the user zoom between two views of a collection of
 </SemanticZoom>
 ```
 
-Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+參考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-Design and how-to: [Semantic zoom control guide](semantic-zoom.md) 
+設計和作法︰[語意式縮放控制項指南](semantic-zoom.md) 
 
-Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)
+範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ### SplitView
-A container control with two views; one view for the main content and another view that is typically used for a navigation menu.
+具有兩個檢視的容器控制項；一個檢視供主要內容使用，另一個檢視則通常用於導覽功能表。
 
-![Split view control](images/controls/split-view.png) 
+![分割檢視控制項](images/controls/split-view.png) 
 
 ```xaml
 <SplitView>
@@ -598,167 +596,167 @@ A container control with two views; one view for the main content and another vi
 </SplitView>
 ```
 
-Reference: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
+參考：[SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
-Design and how-to: [Split view control guide](split-view.md)
+設計和作法：[分割檢視控制項指南](split-view.md)
 
-### Web view
-A container control that hosts web content.
+### 網頁檢視
+裝載網頁內容的容器控制項。
 
 ```xaml
 <WebView x:Name="webView1" Source="http://dev.windows.com" 
          Height="400" Width="800"/>
 ```
 
-Reference: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
+參考：[WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
-Design and how-to: Guidelines for Web views 
+設計和作法：網頁檢視的指導方針 
 
-Sample code: [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?linkid=238582)
+範例程式碼：[XAML WebView 控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238582)
 
-## Progress controls
+## 進度控制項
 
-### Progress bar
-A control that indicates progress by displaying a bar.
+### 進度列
+顯示一條列來指示進度的控制項。
 
-![Progress bar control](images/controls/progress-bar-determinate.png)
+![進度列控制項](images/controls/progress-bar-determinate.png)
 
-A progress bar that shows a specific value.
+顯示特定值的進度列。
 
 ```xaml
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-![Indeterminate progress bar control](images/controls/progress-bar-indeterminate.png)
+![不確定的進度列控制項](images/controls/progress-bar-indeterminate.png)
 
-A progress bar that shows indeterminate progress.
+顯示不確定進度的進度列。
 
 ```xaml
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-Reference: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
+參考：[ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
 
-Design and how-to: [Progress controls guide](progress-controls.md) 
+設計和作法︰[進度控制項指南](progress-controls.md) 
 
-### Progress ring
-A control that indicates indeterminate progress by displaying a ring. 
+### 進度環
+顯示一個環形來指示不確定進度的控制項。 
 
-![Progress ring control](images/controls/progress-ring.png) 
+![進度環控制項](images/controls/progress-ring.png) 
 
 ```xaml
 <ProgressRing x:Name="progressRing1" IsActive="True"/>
 ```
 
-Reference: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx) 
+參考：[ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx) 
 
-Design and how-to: [Progress controls guide](progress-controls.md) 
+設計和作法︰[進度控制項指南](progress-controls.md) 
 
-## Text controls
+## 文字控制項
 
-### Auto suggest box
-A text input box that provides suggested text as the user types.
+### 自動建議方塊
+在使用者輸入時提供建議文字的文字輸入方塊。
 
-![An auto suggest box for search](images/controls/auto-suggest-box.png) 
+![搜尋的自動建議方塊](images/controls/auto-suggest-box.png) 
 
-Reference: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
+參考：[AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 
-Design and how-to: [Text controls](text-controls.md), [Auto suggest box control guide](auto-suggest-box.md)
+設計和作法︰[文字控制項](text-controls.md)、[自動建議方塊控制項指南](auto-suggest-box.md)
 
-Sample code: [AutoSuggestBox migration sample](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+範例程式碼：[AutoSuggestBox 移轉範例](http://go.microsoft.com/fwlink/p/?LinkId=619996)
 
-### Multi-line text box
-See Text box.
+### 多行文字方塊
+請參閱＜文字方塊＞。
 
-### Password box
-A control for entering passwords.
+### 密碼方塊
+用於輸入密碼的控制項。
 
- ![A password box](images/controls/password-box.png)
+ ![密碼方塊](images/controls/password-box.png)
 
 ```xaml
 <PasswordBox x:Name="passwordBox1" 
              PasswordChanged="PasswordBox_PasswordChanged" />
 ```
 
-Reference: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
+參考：[PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
 
-Design and how-to: [Text controls](text-controls.md), [Password box control guide](password-box.md) 
+設計和作法︰[文字控制項](text-controls.md)、[密碼方塊控制項指南](password-box.md) 
 
-Sample code: [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579), [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)
+範例程式碼：[XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
 
-### Rich edit box
-A control that lets a user edit rich text documents with content like formatted text, hyperlinks, and images.
+### Rich Edit 方塊
+讓使用者能夠編輯 RTF 文件 (內容包括格式化文字、超連結及影像等) 的控制項。
 
 ```xaml
 <RichEditBox />
 ```
 
-Reference: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
+參考：[RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
 
-Design and how-to: [Text controls](text-controls.md), [Rich edit box control guide](rich-edit-box.md)
+設計和作法︰[文字控制項](text-controls.md)、[Rich Edit 方塊控制項指南](rich-edit-box.md)
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### Search box
-See Auto suggest box.
+### 搜尋方塊
+請參閱＜自動建議方塊＞。
 
-### Single-line text box
-See Text box.
+### 單行文字方塊
+請參閱＜文字方塊＞。
 
-### Static text/paragraph
-See Text block.
+### 靜態文字/段落
+請參閱＜文字區塊＞。
 
-### Text block
-A control that displays text.
+### 文字區塊
+顯示文字的控制項。
 
-![Text block control](images/controls/text-block.png) 
+![文字區塊控制項](images/controls/text-block.png) 
 
 ```xaml
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-Reference: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
+參考：[TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
 
-Design and how-to: [Text controls](text-controls.md), [Text block control guide](text-block.md), [Rich text block control guide](rich-text-block.md)
+設計和作法︰[文字控制項](text-controls.md)、[文字區塊控制項指南](text-block.md)、[RTF 區塊控制項指南](rich-text-block.md)
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### Text box
-A single-line or multi-line plain text field.
+### 文字方塊
+單行或多行純文字欄位。
 
-![Text box control](images/controls/text-box.png) 
+![文字方塊控制項](images/controls/text-box.png) 
 
 ```xaml
 <TextBox x:Name="textBox1" Text="I am a TextBox" 
          TextChanged="TextBox_TextChanged"/>
 ```
 
-Reference: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
+參考：[TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
-Design and how-to: [Text controls](text-controls.md), [Text box control guide](text-box.md) 
+設計和作法︰[文字控制項](text-controls.md)、[文字方塊控制項指南](text-box.md) 
 
-Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-## Selection controls
+## 選取控制項
 
-### Check box
-A control that a user can select or clear.
+### 核取方塊
+使用者可以選取或清除的控制項。
 
-![The 3 states of a check box](images/templates-checkbox-states-default.png)
+![核取方塊的三種狀態](images/templates-checkbox-states-default.png)
 
 ```xaml
 <CheckBox x:Name="checkbox1" Content="CheckBox" 
           Checked="CheckBox_Checked"/>
 ```
 
-Reference: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
+參考：[CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
-Design and how-to: [Check box control guide](checkbox.md) 
+設計和作法︰[核取方塊控制項指南](checkbox.md) 
 
-### Combo box
-A drop-down list of items a user can select from.
+### 下拉式方塊
+使用者可以選取項目的下拉式清單。
 
-![Open combo box](images/controls/combo-box-open.png) 
+![開啟下拉式方塊](images/controls/combo-box-open.png) 
 
 ```xaml
 <ComboBox x:Name="comboBox1" Width="100"
@@ -769,14 +767,14 @@ A drop-down list of items a user can select from.
 </ComboBox>
 ```
 
-Reference: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
+參考：[ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
-Design and how-to: [Lists](lists.md) 
+設計和作法︰[Lists](lists.md) 
 
-### List box
-A control that presents an inline list of items that the user can select from. 
+### 清單方塊
+顯示使用者可以選取項目的內嵌項目清單的控制項。 
 
-![List box control](images/controls/list-box.png)
+![清單方塊控制項](images/controls/list-box.png)
 
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
@@ -787,14 +785,14 @@ A control that presents an inline list of items that the user can select from.
 </ListBox>
 ```
 
-Reference: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+參考：[ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
-Design and how-to: [Lists](lists.md) 
+設計和作法︰[Lists](lists.md) 
 
-### Radio button
-A control that allows a user to select a single option from a group of options. When radio buttons are grouped together, they are mutually exclusive.
+### 選項按鈕
+允許使用者從選項群組中選取單一選項的控制項。 當選項按鈕被群組在一起時，彼此是互斥的。
 
-![Radio button controls](images/controls/radio-button.png)
+![選項按鈕控制項](images/controls/radio-button.png)
 
 ```xaml
 <RadioButton x:Name="radioButton1" Content="RadioButton 1" GroupName="Group1" 
@@ -805,39 +803,39 @@ A control that allows a user to select a single option from a group of options. 
              Checked="RadioButton_Checked"/>
 ```
 
-Reference: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
+參考：[RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
-Design and how-to: [Radio button control guide](radio-button.md)
+設計和作法︰[選項按鈕控制項指南](radio-button.md)
  
-### Slider
-A control that lets the user select from a range of values by moving a Thumb control along a track.
+### 滑桿
+一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
 
-![Slider control](images/controls/slider.png)
+![滑桿控制項](images/controls/slider.png)
 
 ```xaml
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-Reference: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
+參考：[Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
 
-Design and how-to: [Slider control guide](slider.md) 
+設計和作法︰[滑桿控制項指南](slider.md) 
 
-### Toggle button
-A button that can be toggled between 2 states.
+### 切換按鈕
+可以在兩種狀態之間切換的按鈕。
 
 ```xaml
 <ToggleButton x:Name="toggleButton1" Content="Button" 
               Checked="ToggleButton_Checked"/>
 ```
 
-Reference: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
+參考：[ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
 
-Design and how-to: [Toggle control guide](toggles.md) 
+設計和作法︰[切換控制項指南](toggles.md) 
 
-### Toggle switch
-A switch that can be toggled between 2 states.
+### 切換開關
+可以在兩種狀態之間切換的開關。
 
-![Toggle switch control](images/controls/toggle-switch.png) 
+![切換開關控制項](images/controls/toggle-switch.png) 
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" Header="ToggleSwitch" 
@@ -845,12 +843,12 @@ A switch that can be toggled between 2 states.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Reference: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
+參考：[ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
-Design and how-to: [Toggle control guide](toggles.md) 
+設計和作法︰[切換控制項指南](toggles.md) 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

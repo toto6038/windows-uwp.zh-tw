@@ -1,106 +1,105 @@
 ---
 author: jnHs
-Description: "The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid."
-title: Payout summary
+Description: "支付摘要 說明您透過 app 和 app 內產品所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。"
+title: "支付摘要"
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 translationtype: Human Translation
-ms.sourcegitcommit: 6b3b4480395d361397d508c576e1128a3278440e
-ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
+ms.sourcegitcommit: 82ff562a192aa42d383f4cd7221c495c3bfbad0f
+ms.openlocfilehash: 86355a194eb61b8d13eba22d9f6e7c566339cd28
 
 ---
 
-# Payout summary
+# 支付摘要
 
 
-The **Payout summary** shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+\[支付摘要\]**** 說明您透過 app 和 app 內產品所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 
-If you use Microsoft Advertising to earn money, as of April 1, 2016, you'll also see payment info for advertising proceeds in the **Payout summary**. We’ll show the app in which these proceeds were earned, or “unmapped” for ad units utilized in multiple apps or that otherwise can’t be mapped to a specific app. 
+如果您使用 Microsoft Advertising 來獲利，到 2016 年 4 月 1 日為止，您也可以在 [支出摘要]**** 中看到廣告收益的付款資訊。 我們將顯示賺取這些收益的 app，若是在多個 app 中使用的廣告單位或是無法對應至特定 app 的收益則會顯示「未對應」。 如需廣告支付的詳細資訊，請參閱 [Microsoft Advertising 付款處理程序](https://msdn.microsoft.com/windows/uwp/publish/microsoft-advertising-payment-process)。
 
-If you sell products in the Azure Marketplace, you’ll also see info on successful payouts from November 1, 2015 and forward in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](http://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about viewing earlier Azure Marketplace payout info can be found [here](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+如果您在 Azure Marketplace 銷售產品，您也會在 [支付摘要]**** 中看到 2015 年 11 月 1 日後成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](http://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 您可以在[這裡](http://go.microsoft.com/fwlink/p/?LinkID=722439)檢視較早之前 Azure Marketplace 支付資訊的詳細資訊。
 
-> **Note**  To be eligible for payout, your proceeds must reach the applicable payment threshold. If the proceeds are less than the payment threshold, they will remain in the Reserved category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For Microsoft Advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
+> **注意：**為符合支付資格，您 app 的收益必須達到適用的付款門檻。 如果收益少於付款門檻，將會維持在 [保留] 類別中，直到達到門檻為止。 如需詳細資訊，請參閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。
 >
-> Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
+> 付款是每月進行一次 (假設已符合任何適用的付款門檻)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何應付款項。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。
 
-## Current proceeds and payments
-
-
-Near the top of the page, you’ll find your **Current proceeds and payments**, which contains three sections: **Reserved**, **Upcoming payment**, and **Most recent payment**.
-
--   **Reserved** shows the amount of money your account has accumulated but which has not yet been scheduled for payment, including advertising proceeds. (Azure Marketplace proceeds do not appear in the Reserved section; if you only participate in the Azure Marketplace, you will see $0.00 here.) Proceeds from your most recent app sales remain in a pending state for about 30 days before they become eligible for payout. After that, the proceeds will be scheduled for payment the following month (assuming the payment threshold has been met). When a payment is attempted, your reserved balance will decrease by the payment amount and you will see the amount reflected in **Upcoming payment**. Note that the amount shown in **Reserved** is an estimate, because exchange rates for sales in other currencies may fluctuate prior to payment creation. You may notice your reserved balance change slightly at the beginning of every month. Your reserved balance is updated monthly to reflect monthly exchange rates, so that it represents a more accurate estimate. You can click **View details** to see additional information, or click the link to **Download your reserved transactions** to view a .csv file of all your **Reserved** transactions.
--   **Upcoming payment** shows the number of upcoming payments, the amount of your next payment(s), and the payment creation date(s). If your eligible proceeds haven’t met the payment threshold yet, no upcoming payment will be shown here. You can click **View details** to see additional information, including the payment amount(s) and their respective revenue source. When an amount is shown in the **Upcoming payment** section, you will see a temporary link to **Download transactions**.  If you click the link, you can view a .csv file of all the transactions that make up your upcoming payment(s).  Please note: when the **Upcoming payment** amount moves to **Most recent payment**, the **Download transactions** link will no longer appear.
--   **Most recent payment** shows the amount of the last payment attempted. If the payment was successful, the **View details** link will be blue, and you can click it to see the details for each payment. Note that if we attempted to make multiple payments and only one of them was successful, only the amount of the successful payment will be shown here. If one or more payments failed, the **View details** link will be red and the number of failed payments will be displayed. You can click **View details** to see more details about the problem so that you can remedy the situation.
-
-## Proceeds by app and adjustments
+## 目前的收益與付款
 
 
-This section breaks down the summary info to let you see specifics by app. If you earned money through Microsoft Advertising, the total amount of your advertising proceeds is shown here as a single line item.
+在頁面頂端附近，您會發現您 [目前的收益與付款]****，其中包含三個區段：[保留]****、[近期付款]**** 與 [最近付款]****。
 
-By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for Microsoft Advertising proceeds are not currently shown here.)
+-   [保留]**** 顯示您的帳戶已累計，但是尚未排定付款的金額，包括廣告收益 (Azure Marketplace 收益不會出現在 [保留] 區段，如果您只是參與 Azure Marketplace，您將看到這裡顯示 $0.00)。在最新的廣告和 app 銷售收益符合支付的資格之前，會維持暫緩大約 30 天。 之後，收益將會排程於後續月份付款 (假設達到付款門檻)。 嘗試付款時，您的保留餘額將會減少付款金額的數額，且您會看到此數額反映在 [近期付款]**** 中。 請注意，[保留]**** 中顯示的金額是估計值，因為在建立付款之前，其他貨幣的銷售匯率會變動。 您可能會注意到您的保留餘額在每個月初都會稍微變動。 您的保留餘額會每個月更新，以反映每個月的匯率，這可以使您得到更準確的估計值。 您可以按一下 [檢視詳細資料]**** 以查看其他資訊，或按一下 [下載您的保留交易]**** 連結來檢閱您所有 [保留]**** 交易的 .csv 檔案。
+-   [近期付款]**** 顯示近期付款的數字、您下次付款的金額，以及付款建立日期。 如果符合資格的收益尚未達到付款門檻，此處就不會顯示任何近期付款。 您可以按一下 [檢視詳細資料]**** 以查看其他資訊，包括付款金額以及其個別的收入來源。
+-   [最近付款]**** 會顯示最後一次嘗試付款的金額。 如果付款成功，[檢視詳細資料]**** 連結會變成藍色，而您可以按一下連結以查看各個付款的詳細資料。 請注意，如果我們嘗試進行多個付款，而只有一個成功，則只有付款成功的金額會於此處顯示。 如果一或多個付款失敗，[檢視詳細資料]**** 連結會變成紅色，並顯示付款失敗的數目。 您可以按一下 [檢視詳細資料]****，以查看關於問題的詳細資料，以解決這種情況。
 
-## Payment statements
-
-
-In this section you can view statements for all successful monthly payments and see the total amount of money you've been paid.
-
-The **Total paid to date** section shows the total amount you've been paid for all your sales. Click **View details** to see the amounts that came from each revenue source.
-
-Below the **Total paid to date** section, you will see your last three statements by default. To see the full statement (for successful payments), click **View**. You can access your historical payment statements through the drop-down box.
-
-At the top of each statement, you’ll see the total amount of your monthly payment. Immediately below, in **Payments issued**, you’ll see a summary of how your payment amount was calculated.
-
-Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Windows Phone Store, Windows Store 8, Windows Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
-
-Note that the sections mentioned above only show info on your proceeds (and adjustments) from app sales; if you earned money through advertising, you’ll see a separate Microsoft Advertising section with details about the payouts and currency conversions.
-
-## Adjustments
+## App 的收益與調整
 
 
-| Adjustment category     | Description                                                                                                |
+本節細分摘要資訊，讓您查看依 app 區分的詳細資訊。 如果您透過 Microsoft Advertising 賺取報酬，會在此處以單行項目的方式顯示您廣告收益的總金額。
+
+透過檢閱本節，您可以判斷那些 app 所賺取的金額目前仍在 [保留]**** 或 [最新付款]**** 類別中。 您也可以看到您針對每個 app 所收到的總金額。 如果有必要對您的帳戶餘額進行[調整](#proceeds-by-app-and-adjustments)，您也可以在此檢視。 (請注意 Microsoft Advertising 收益的調整目前不會顯示於此處)。
+
+## 付款對帳單
+
+
+在此區段中，您可以檢閱所有每月付款成功的對帳單，並查看您所支付的總金額。
+
+[目前已付金額總計]**** 區段會顯示您針對所有銷售所支付的總金額。 按一下 [檢視詳細資料]**** 以查看各收入來源的金額。
+
+在 [目前已付金額總計]**** 區段底下，根據預設您會看見最近的三份對帳單。 若要查看完整的對帳單 (成功付款)，請按一下 [檢視]****。 您可以透過下拉式方塊存取您的付款對帳單歷程記錄。
+
+在每份對帳單的上方，您會看見每月付款的總金額。 在下方的 [核發付款]**** 中，您即可看到如何計算您付款金額的摘要。
+
+在 [收益解析]**** 區段底下，您可以依 app 檢閱各個市場與收益來源 (例如 Windows Phone 市集、Windows 市集 8、Windows 市集等等) 的營收詳細資料。 您也會看見任何[調整](#proceeds-by-app-and-adjustments)的詳細資料，包括日期、金額，以及調整的原因。
+
+請注意上述提及的區段只會顯示來自 app 銷售的收益 (及調整) 的相關資訊；如果您透過廣告來賺取報酬，則您會看到另一個不同的 Microsoft Advertising 區段，提供有關支付和貨幣轉換的詳細資料。
+
+## 調整
+
+
+| 調整類別     | 描述                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| Compensatory adjustment | Any adjustment made to your payout balance that does not pertain to the other adjustment categories listed |
-| Historic balance        | Payout balances from a historic payment system                                                             |
-| Passin tax              | Tax adjustment related to sales in Korea                                                                   |
+| 補償性調整 | 針對您支付餘額所進行的任何調整，與所列出的其他調整類別無關 |
+| 歷史餘額        | 來自歷史支付系統的支付餘額                                                             |
+| 通過稅              | 與韓國銷售相關的稅金調整                                                                   |
 
  
 
-## Downloading payment transactions
+## 下載付款交易
 
 
-At the top of each statement, you’ll see a link to **Download transactions**. Click this link to get a .csv file with detailed info about each of the transactions included in your payment.
+在每個對帳單上方，您會看見 [下載交易]**** 的連結。 按一下此連結，以取得包含付款中各交易相關詳細資訊的 .csv 檔案。
 
-The following table describes the fields that appear in the .csv file. Note that the exact fields you see may vary as we continue to update our reporting.
+下表描述 .csv 檔案中出現的欄位。 請注意，您實際會看見的欄位，會隨著我們持續更新報告而有所不同。
 
-| Field name              | Description                                                                                                                              |
+| 欄位名稱              | 說明                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Store, Windows Phone Store, Windows Store 8, Microsoft Advertising, etc.) |
-| Order ID          |  Unique order identifier. This ID allows you to identify purchase transactions with their respective non-purchase transactions (such as refunds, chargebacks, etc.). Both will have the same Order ID. Also, in the case of a split charge, where multiple payment methods were used for a single purchase, it will allow you to link the purchase transactions.                                                                                                          |
-| Transaction ID          |       Unique transaction identifier.  |
-| Transaction Date Time   | The date and time the transaction occurred (UTC).                                                                                        |
-| Parent Product ID       | Unique parent product identifier. Please note: if there isn’t a parent product for the transaction, then Parent Product ID = Product ID. |
-| Product ID              | Unique product identifier.                                                                                                                |
-| Parent Product Name     | Name of the parent product. Please note: if there isn’t a parent product for the transaction, then Parent Product Name = Product Name.   |
-| Product Name            | Name of the product.                                                                                                                      |
-| Product Type            | Type of product (such as App, In-App, Game, etc.)                                                                                        |
-| Quantity                | When the Revenue Source is Windows Store for Business, the Quantity represents the number of licenses purchased. For all other Revenue Sources, the Quantity will always be 1. Note: even when a single transaction is split into two line items because two different payment methods were used, each line item will show a Quantity of 1.                                                                     |
-| Transaction Type        | Type of transaction (such as purchase, refund, reversal, chargeback, etc.)                                                               |
-| Payment Method          | Customer payment instrument used for the transaction (such as Card, Mobile Carrier Billing, PayPal, etc.)                                        |
-| Country / Region        | Country/region where the transaction occurred.                                                                                            |
-| Local Provider / Seller | Local provider/seller of record.                                                                                                          |
-| Transaction Currency    | Currency of the transaction.                                                                                                              |
-| Transaction Amount      | Amount of the transaction.                                                                                                                |
-| Tax Remitted            | Amount of tax remitted (sales, use, or VAT/GST taxes).                                                                                    |
-| Net Receipts            | Transaction amount less tax remitted.                                                                                                    |
-| Store Fee               | The percentage of Net Receipts retained by Microsoft as a fee for making the app or add-on available in the Store.                |
-| App Proceeds            | Net receipts minus the Store Fee.                                                                                                         |
-| Taxes Withheld          | Amount of income tax withheld. (Not included in **Reserved** .csv file.)                                                                                                           |
-| Payment                 | App Proceeds less any applicable income tax withholding (amount shown in Transaction Currency). (Not included in **Reserved** .csv file.)                                           |
-| FX Rate                 | Foreign exchange rate used to convert Transaction Currency to Payment Currency.                                                           |
-| Payment Currency        | Currency your payment is made in.                                                                                                         |
-| Converted Payment       | Payment amount converted to Payment Currency using the FX Rate.                                                                           |
-| Tax Remit Model         | Party responsible for remitting taxes (sales, use, or VAT/GST taxes).                                                                     |
-| Eligibility Date Time   | The date and time when transaction proceeds become eligible for payout (UTC). When a payout is created, it includes transaction proceeds which have an Eligibility Date Time prior to the payout creation date. (Only included in **Reserved** .csv file.)                                                                     |
-| Charges                 | Shows a breakdown of all the charge details aggregated in the Transaction Amount column. (Only included for Azure Marketplace; not included in **Reserved** .csv file.)          |
+| 收入來源          | 您的收入來源，根據該筆交易發生的位置 (例如 Windows 市集、Windows Phone 市集、 Windows 市集 8、Microsoft Advertising 等等)。 |
+| 訂單識別碼          |  唯一的訂單識別碼。 此識別碼可讓您識別購買交易與其各自的非購買交易 (如退款等)。 兩者具有相同的訂單識別碼。 此外，如果是分割付款的情況 (單一購買使用多種付款方式)，這樣可讓您連結各購買交易。                                                                                                          |
+| 交易識別碼          |       唯一的交易識別碼  |
+| 交易日期時間   | 發生該筆交易的日期與時間 (UTC)                                                                                         |
+| 父系產品識別碼       | 唯一的父系產品識別碼。 請注意：如果該交易沒有父系產品，則父系產品識別碼 = 產品識別碼。 |
+| 產品識別碼              | 唯一的產品識別碼                                                                                                                |
+| 父系產品名稱     | 父系產品的名稱。 請注意：如果該交易沒有父系產品，則父系產品名稱 = 產品名稱。   |
+| 產品名稱            | 產品名稱                                                                                                                      |
+| 產品類型            | 產品類型 (例如 app、app 內、遊戲等等)                                                                                        |
+| 數量                | 當收入來源為商務用 Windows 市集時，數量代表購買的授權數目。 針對所有其他的收入來源，數量永遠都會是 1。 注意︰即使單一交易分成兩個行項目，因為使用兩個不同的付款方式，每個行項目會顯示數量 1。                                                                     |
+| 交易類型        | 交易類型 (例如購買、退貨、作廢、退款等等)                                                               |
+| 付款方式          | 交易使用的客戶付款方式 (例如，卡片、行動裝置電信業者帳單、PayPal 等)。                                        |
+| 國家/地區        | 發生該筆交易的國家/地區                                                                                            |
+| 當地提供者/賣方 | 記錄的當地提供者/賣方                                                                                                          |
+| 交易貨幣    | 交易的貨幣                                                                                                              |
+| 交易金額      | 交易的金額                                                                                                                |
+| 免稅            | 免稅金額 (銷售、使用或 VAT/GST 稅額)                                                                                    |
+| 淨收入            | 交易金額減去免稅額                                                                                                     |
+| 市集費用               | Microsoft 保留做為在市集提供 app 或 app 內產品之費用的淨收入百分比                |
+| App 收益            | 淨收入減去市集費用                                                                                                         |
+| 代扣稅額          | 代扣稅額的收入金額                                                                                                            |
+| 付款                 | App 收益減去任何適用的代扣稅額收入 ([交易貨幣] 中顯示的金額)                                           |
+| FX 匯率                 | 用來將「交易貨幣」轉換為「付款貨幣」的外匯匯率                                                           |
+| 付款貨幣        | 付款給您時使用的貨幣                                                                                                         |
+| 已轉換付款       | 使用匯率轉換為付款貨幣的付款金額                                                                           |
+| 代繳稅模型         | 負責代繳稅額之一方 (銷售、使用或 VAT/GST 稅額)                                                                     |
+| 費用                 | 顯示 [交易金額] 欄位中所有彙總之收費詳細資料的明細。 (只有 Azure Marketplace 包含。)          |
 
  
 
@@ -114,6 +113,6 @@ The following table describes the fields that appear in the .csv file. Note that
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO5-->
 
 

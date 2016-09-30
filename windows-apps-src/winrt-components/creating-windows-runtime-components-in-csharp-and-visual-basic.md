@@ -1,88 +1,88 @@
 ---
 author: msatranjr
-title: Creating Windows Runtime Components in C# and Visual Basic
-description: Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component.
+title: "在 C# 和 Visual Basic 中建立 Windows 執行階段元件"
+description: "從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 
 ---
 
-# Creating Windows Runtime Components in C# and Visual Basic
+# 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#. This article outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime. In general, that support is designed to be transparent to the .NET Framework programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
+從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。 您可以在通用 Windows 平台 (UWP) app 中，將元件與 C++、JavaScript、Visual Basic 或 C# 搭配使用。 本文將概述建立元件的規則，並就某些層面討論 .NET Framework 對於 Windows 執行階段的支援。 一般而言，該支援依設計應可讓 .NET Framework 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。
 
-If you are creating a component for use only in UWP apps with Visual Basic or C#, and the component does not contain UWP controls, consider using the **Class Library** template instead of the **Windows Runtime Component** template. There are fewer restrictions on a simple class library.
+如果您要建立僅在 UWP app 中與 Visual Basic 或 C# 搭配使用的元件，而且元件中不含 UWP 控制項，請考慮使用**類別庫**範本，而不使用 **Windows 執行階段元件**範本。 簡單類別庫的限制比較少。
 
-This article contains the following sections:
+本文包括下列章節：
 
-## Declaring types in Windows Runtime Components
-
-
-Internally, the Windows Runtime types in your component can use any .NET Framework functionality that's allowed in a Universal Windows app. (See [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) overview for more information.) Externally, the members of your types can expose only Windows Runtime types for their parameters and return values. The following list describes the limitations on .NET Framework types that are exposed from Windows Runtime Components.
-
--   The fields, parameters, and return values of all the public types and members in your component must be Windows Runtime types.
-
-    This restriction includes the Windows Runtime types that you create as well as types that are provided by the Windows Runtime itself. It also includes a number of .NET Framework types. The inclusion of these types is part of the support the .NET Framework provides to enable the natural use of the Windows Runtime in managed code: Your code appears to use familiar .NET Framework types instead of the underlying Windows Runtime types. For example, you can use .NET Framework primitive types such as Int32 and Double, certain fundamental types such as DateTimeOffset and Uri, and some commonly used generic interface types such as IEnumerable&lt;T&gt; (IEnumerable(Of T) in Visual Basic) and IDictionary&lt;TKey,TValue&gt;. (Note that the type arguments of these generic types must be Windows Runtime types.) This is discussed in the sections Passing Windows Runtime types to managed code and Passing managed types to the Windows Runtime, later in this article.
-
--   Public classes and interfaces can contain methods, properties, and events. You can declare delegates for your events, or use the EventHandler&lt;T&gt; delegate. A public class or interface cannot:
-
-    -   Be generic.
-    -   Implement an interface that is not a Windows Runtime interface. (However, you can create your own Windows Runtime interfaces and implement them.)
-    -   Derive from types that are not in the Windows Runtime, such as System.Exception and System.EventArgs.
--   All public types must have a root namespace that matches the assembly name, and the assembly name must not begin with "Windows".
-
-    > **Tip**  By default, Visual Studio projects have namespace names that match the assembly name. In Visual Basic, the Namespace statement for this default namespace is not shown in your code.
-
--   Public structures can't have any members other than public fields, and those fields must be value types or strings.
--   Public classes must be **sealed** (**NotInheritable** in Visual Basic). If your programming model requires polymorphism, you can create a public interface and implement that interface on the classes that must be polymorphic.
-
-## Debugging your component
+## 在 Windows 執行階段元件中宣告類型
 
 
-If both your Universal Windows app and your component are built with managed code, you can debug them at the same time.
+您元件中的 Windows 執行階段類型可以在內部使用通用 Windows app 允許的任何 .NET Framework 功能 (如需詳細資訊，請參閱[適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) 概觀)。您的類型成員在外部只能公開其參數和傳回值的 Windows 執行階段類型。 下列清單將說明從 Windows 執行階段元件公開的 .NET Framework 類型有何限制。
 
-When you're testing your component as part of a Universal Windows app using C++, you can debug managed and native code at the same time. The default is native code only.
+-   在您的元件中，所有公用類型和成員的欄位、參數及傳回值都必須是 Windows 執行階段類型。
 
-## **To debug both native C++ code and managed code**
+    此限制也適用於您建立的 Windows 執行階段類型以及 Windows 執行階段本身提供的類型。 其中也包括多種 .NET Framework 類型。 納入這些類型，是 .NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供的支援：您的程式碼能夠使用熟悉的 .NET Framework 類型，而非基礎的 Windows 執行階段類型。 您可以使用 .NET Framework 基本類型 (例如 Int32 和 Double)、特定的基礎類型 (例如 DateTimeOffset 和 Uri)，以及一些常用的泛型介面類型，例如 IEnumerable&lt;T&gt; (在 Visual Basic 中為 IEnumerable(Of T)) 和 IDictionary&lt;TKey,TValue&gt;。 (請注意，這些泛型類型的類型引數必須是 Windows 執行階段類型)。這將在本文稍後的＜將 Windows 執行階段類型傳遞至 Managed 程式碼＞與＜將 Managed 類型傳遞至 Windows 執行階段＞中討論。
 
-1.  Open the shortcut menu for your Visual C++ project, and choose **Properties**.
-2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
-3.  Choose **Debugger Type**, and in the drop-down list box change **Native Only** to **Mixed (Managed and Native)**. Choose **OK**.
-4.  Set breakpoints in native and managed code.
+-   公用類別與介面可包含方法、屬性與事件。 您可以為事件宣告委派，或使用 EventHandler&lt;T&gt; 委派。 公用類別或介面不能：
 
-When you're testing your component as part of a Universal Windows app using JavaScript, by default the solution is in JavaScript debugging mode. In Visual Studio, you can't debug JavaScript and managed code at the same time.
+    -   屬於泛型。
+    -   實作不是 Windows 執行階段介面的介面 (不過，您可以建立自己的 Windows 執行階段介面並加以實作)。
+    -   從不在 Windows 執行階段中的類型 (例如 System.Exception 與 System.EventArgs) 衍生。
+-   所有的公用類型都必須具有符合組件名稱的根命名空間，且組件名稱的開頭不可以是 "Windows"。
 
-## **To debug managed code instead of JavaScript**
+    > **提示** 根據預設，Visual Studio 專案具有符合組件名稱的命名空間名稱。 在 Visual Basic 中，此預設命名空間的 Namespace 陳述式不會顯示在您的程式碼中。
 
-1.  Open the shortcut menu for your JavaScript project, and choose **Properties**.
-2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
-3.  Choose **Debugger Type**, and in the drop-down list box change **Script Only** to **Managed Only**. Choose **OK**.
-4.  Set breakpoints in managed code and debug as usual.
+-   公用結構不可以有公用欄位以外的任何成員，而且這些欄位必須是實值類型或字串。
+-   公用類別必須是 **sealed** (在 Visual Basic 中為 **NotInheritable**)。 如果您的程式設計模型需要使用多型，您可以建立公用介面，然後在必須是多型的類別上實作該介面。
 
-## Passing Windows Runtime types to managed code
+## 偵錯您的元件
 
 
-As mentioned previously in the section Declaring types in Windows Runtime Components, certain .NET Framework types can appear in the signatures of members of public classes. This is part of the support that the .NET Framework provides to enable the natural use of the Windows Runtime in managed code. It includes primitive types and some classes and interfaces. When your component is used from JavaScript or from C++ code, it's important to know how your .NET Framework types appear to the caller. See [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) for examples with JavaScript. This section discusses commonly used types.
+如果您的通用 Windows app 與元件都是使用 Managed 程式碼所建置，則可同時針對這兩者進行偵錯。
 
-In the .NET Framework, primitive types like the Int32 structure have many useful properties and methods, such as the TryParse method. By contrast, primitive types and structures in the Windows Runtime only have fields. When you pass these types to managed code, they appear to be .NET Framework types, and you can use the properties and methods of the .NET Framework types as you normally would. The following list summarizes the substitutions that are made automatically in the IDE:
+當您使用 C++ 在通用 Windows app 中測試您的元件時，可以同時對 Managed 程式碼和機器碼進行偵錯。 預設值為僅限機器碼。
 
--   For the Windows Runtime primitives Int32, Int64, Single, Double, Boolean, String (an immutable collection of Unicode characters), Enum, UInt32, UInt64, and Guid, use the type of the same name in the System namespace.
--   For UInt8, use System.Byte.
--   For Char16, use System.Char.
--   For the IInspectable interface, use System.Object.
+## **同時對 C++ 機器碼與 Managed 程式碼進行偵錯**
 
-If C# or Visual Basic provides a language keyword for any of these types, you can use the language keyword instead.
+1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 [屬性]****。
+2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
+3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限機器碼]**** 變更為 [混合 (Managed 和機器碼)]****。 選擇 [確定]****。
+4.  在機器碼與 Managed 程式碼中設定中斷點。
 
-In addition to primitive types, some basic, commonly used Windows Runtime types appear in managed code as their .NET Framework equivalents. For example, suppose your JavaScript code uses the Windows.Foundation.Uri class, and you want to pass it to a C# or Visual Basic method. The equivalent type in managed code is the .NET Framework System.Uri class, and that's the type to use for the method parameter. You can tell when a Windows Runtime type appears as a .NET Framework type, because IntelliSense in Visual Studio hides the Windows Runtime type when you're writing managed code, and presents the equivalent .NET Framework type. (Usually the two types have the same name. However, note that the Windows.Foundation.DateTime structure appears in managed code as System.DateTimeOffset and not as System.DateTime.)
+當您使用 JavaScript 在通用 Windows app 中測試元件時，方案依預設會處於 JavaScript 偵錯模式。 在 Visual Studio 中，您無法同時偵錯 JavaScript 和 Managed 程式碼。
 
-For some commonly used collection types, the mapping is between the interfaces that are implemented by a Windows Runtime type and the interfaces that are implemented by the corresponding .NET Framework type. As with the types mentioned above, you declare parameter types by using the .NET Framework type. This hides some differences between the types and makes writing .NET Framework code more natural. The following table lists the most common of these generic interface types, along with other common class and interface mappings. For a complete list of Windows Runtime types that the .NET Framework maps, see .NET Framework mappings of Windows Runtime types.
+## **偵錯 Managed 程式碼，而不偵錯 JavaScript**
 
-| Windows Runtime                                  | .NET Framework                                    |
+1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 [屬性]****。
+2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
+3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限指令碼]**** 變更為 [僅限 Managed]****。 選擇 [確定]****。
+4.  在 Managed 程式碼中設定中斷點，然後如常進行偵錯。
+
+## 將 Windows 執行階段類型傳遞至 Managed 程式碼
+
+
+如先前在＜在 Windows 執行階段元件中宣告類型＞一節中所述，特定的 .NET Framework 類型可以出現在公用類別成員的簽章中。 這是 .NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供的支援。 其中包括基本類型以及一些類別和介面。 從 JavaScript 或 C++ 程式碼使用您的元件時，請務必了解您的 .NET Framework 類型如何對呼叫端顯示的方式。 如需 JavaScript 的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 本節將討論常用的類型。
+
+在 .NET Framework 中，基本類型 (例如 Int32 結構) 具有許多有用的屬性和方法，例如 TryParse 方法。 相對地，Windows 執行階段中的基本類型和結構就只有欄位而已。 當您將這些類型傳遞至 Managed 程式碼時，它們將顯示為 .NET Framework 類型，而您可以如常使用 .NET Framework 類型的屬性和方法。 下列清單將摘要說明在 IDE 中自動執行的替代：
+
+-   對於 Windows 執行階段基本 Int32、Int64、Single、Double、Boolean、String (Unicode 字元的不可變集合)、Enum、UInt32、UInt64 與 Guid，請在 System 命名空間中使用相同名稱的類型。
+-   對於 UInt8，使用 System.Byte。
+-   對於 Char16，使用 System.Char。
+-   對於 IInspectable 介面，使用 System.Object。
+
+如果 C# 或 Visual Basic 為其中任何類型提供了語言關鍵字，您就能改用該語言關鍵字。
+
+除了基本類型以外，有些基本且常用的 Windows 執行階段類型在 Managed 程式碼中也會顯示為其 .NET Framework 對等類型。 例如，假設您的 JavaScript 程式碼使用 Windows.Foundation.Uri 類別，而您要將其傳遞至 C# 或 Visual Basic 方法。 在 Managed 程式碼中的對等類型是 .NET Framework System.Uri 類別，而這就是要用於方法參數的類型。 由於 Visual Studio 中的 IntelliSense 在您撰寫 Managed 程式碼時會隱藏 Windows 執行階段類型，並顯示對等的 .NET Framework 類型，因此您知道 Windows 執行階段類型何時會呈現為 .NET Framework 類型。 (這兩個類型通常會具備相同的名稱。 但請注意，Windows.Foundation.DateTime 結構在 Managed 程式碼中會顯示為 System.DateTimeOffset，而不是 System.DateTime。)
+
+對於某些常用的集合類型，會在 Windows 執行階段類型所實作的介面與相對應的 .NET Framework 類型所實作的介面之間進行對應。 如同先前提到的類型，您也可以使用 .NET Framework 類型來宣告參數類型。 這會隱藏不同類型之間的某些差異，以方便撰寫 .NET Framework 程式碼。 下表列出其中最常見的泛型介面類型，以及其他的通用類別與介面對應。 如需 .NET Framework 對應的 Windows 執行階段類型完整清單，請參閱＜Windows 執行階段類型的 .NET Framework 對應＞。
+
+| Windows 執行階段                                  | .NET Framework                                    |
 |--------------------------------------------------|---------------------------------------------------|
 | IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
 | IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
@@ -98,23 +98,23 @@ For some commonly used collection types, the mapping is between the interfaces t
 
  
 
-When a type implements more than one interface, you can use any of the interfaces it implements as a parameter type or return type of a member. For example, you can pass or return a Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) in Visual Basic) as IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, or IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
+當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以將 Dictionary&lt;int, string&gt; (在 Visual Basic 中為 Dictionary(Of Integer, String)) 傳遞或傳回為 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
+**重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
-In the Windows Runtime, IMap&lt;K, V&gt; and IMapView&lt;K, V&gt; are iterated by using IKeyValuePair. When you pass them to managed code, they appear as IDictionary&lt;TKey, TValue&gt; and IReadOnlyDictionary&lt;TKey, TValue&gt;, so naturally you use System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; to enumerate them.
+在 Windows 執行階段中，IMap&lt;K, V&gt; 與 IMapView&lt;K, V&gt; 可透過 IKeyValuePair 反覆執行。 當您將其傳遞至 Managed 程式碼時，它們會顯示為 IDictionary&lt;TKey, TValue&gt; 與 IReadOnlyDictionary&lt;TKey, TValue&gt;，以便您使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 加以列舉。
 
-The way interfaces appear in managed code affects the way types that implement these interfaces appear. For example, the PropertySet class implements IMap&lt;K, V&gt;, which appears in managed code as IDictionary&lt;TKey, TValue&gt;. PropertySet appears as if it implemented IDictionary&lt;TKey, TValue&gt; instead of IMap&lt;K, V&gt;, so in managed code it appears to have an Add method, which behaves like the Add method on .NET Framework dictionaries. It doesn't appear to have an Insert method. You can see this example in the article [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+介面顯示於 Managed 程式碼中的方式會影響實作這些介面之類型的顯示方式。 例如，PropertySet 類別會實作 IMap&lt;K, V&gt;，而這在 Managed 程式碼中會顯示為 IDictionary&lt;TKey, TValue&gt;。 PropertySet 會以實作了 IDictionary&lt;TKey, TValue&gt; (而不是 IMap&lt;K, V&gt;) 的形態出現，因此在 Managed 程式碼中，其看似具有 Add 方法 (此方法的行為類似於 .NET Framework 字典上的 Add 方法)。 它看起來並沒有 Insert 方法。 您可以在[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)一文中檢視此範例。
 
-## Passing managed types to the Windows Runtime
-
-
-As discussed in the previous section, some Windows Runtime types can appear as .NET Framework types in the signatures of your component's members, or in the signatures of Windows Runtime members when you use them in the IDE. When you pass .NET Framework types to these members or use them as the return values of your component's members, they appear to the code on the other side as the corresponding Windows Runtime type. For examples of the effects this can have when your component is called from JavaScript, see the "Returning managed types from your component" section in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
-
-## Overloaded methods
+## 將 Managed 類型傳遞至 Windows 執行階段
 
 
-In the Windows Runtime, methods can be overloaded. However, if you declare multiple overloads with the same number of parameters, you must apply the [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to only one of those overloads. That overload is the only one you can call from JavaScript. For example, in the following code the overload that takes an **int** (**Integer** in Visual Basic) is the default overload.
+如上一節所討論，某些 Windows 執行階段類型在您元件成員的簽章中 (如果在 IDE 中使用這些類型，則是在 Windows 執行階段成員的簽章中) 會顯示為 .NET Framework 類型。 當您將 .NET Framework 類型傳遞給這些成員，或使用這些類型做為元件成員的傳回值時，它們在另一端的程式碼上便會顯示為對應的 Windows 執行階段類型。 若想透過範例了解這在從 JavaScript 呼叫您的元件時將有何效用，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中的＜從您的元件傳回 Managed 類型＞一節。
+
+## 多載方法
+
+
+在 Windows 執行階段中，方法可以是多載的。 不過，如果您宣告多個具有相同參數數量的多載，則只能將 [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 屬性套用至其中一個多載。 這就是您唯一可從 JavaScript 呼叫的多載。 例如，在下列程式碼中，使用 **int** (在 Visual Basic 中為 **Integer**) 的多載是預設多載。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -138,31 +138,31 @@ In the Windows Runtime, methods can be overloaded. However, if you declare multi
 > End Function
 > ```
 
- **Caution**  JavaScript allows you to pass any value to OverloadExample, and coerces the value to the type that is required by the parameter. You can call OverloadExample with "forty-two", "42", or 42.3, but all those values are passed to the default overload. The default overload in the previous example returns 0, 42, and 42 respectively.
+ **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
 
-You cannot apply the DefaultOverloadAttribute attribute to constructors. All the constructors in a class must have different numbers of parameters.
+您無法將 DefaultOverloadAttribute 屬性套用至建構函式。 一個類別中的所有建構函式必須要有不同數量的參數。
 
-## Implementing IStringable
+## 實作 IStringable
 
 
-Starting with Windows 8.1, the Windows Runtime includes an IStringable interface whose single method, IStringable.ToString, provides basic formatting support comparable to that provided by Object.ToString. If you do choose to implement IStringable in a public managed type that is exported in a Windows Runtime component, the following restrictions apply:
+從 Windows 8.1 開始，Windows 執行階段會包含 IStringable 介面，此介面只有一個 IStringable.ToString 方法，可提供相當於 Object.ToString 的基本格式支援。 如果您選擇要在從 Windows 執行階段元件匯出的公用 Managed 類型中實作 IStringable，將會有下列限制：
 
--   You can define the IStringable interface only in a "class implements" relationship, such as the following code in C#:
+-   您只能在「類別實作」關聯性中定義 IStringable 介面，例如，下列在 C# 中的程式碼：
 
     ```cs
     public class NewClass : IStringable
     ```
 
-    Or the following Visual Basic code:
+    或是下列 Visual Basic 程式碼：
 
     ```vb
     Public Class NewClass : Implements IStringable
     ```
 
--   You cannot implement IStringable on an interface.
--   You cannot declare a parameter to be of type IStringable.
--   IStringable cannot be the return type of a method, property, or field.
--   You cannot hide your IStringable implementation from base classes by using a method definition such as the following:
+-   您無法針對介面實作 IStringable。
+-   您無法將參數宣告為類型 IStringable。
+-   IStringable 不能是方法的傳回類型、屬性或欄位。
+-   您無法使用以下所示的方法定義，從基底類別隱藏您的 IStringable 實作：
 
     ```cs
     public class NewClass : IStringable
@@ -174,20 +174,20 @@ Starting with Windows 8.1, the Windows Runtime includes an IStringable interface
     }
     ```
 
-    Instead, the IStringable.ToString implementation must always override the base class implementation. You can hide a ToString implementation only by invoking it on a strongly typed class instance.
+    相反地，IStringable.ToString 實作必須一律覆寫基底類別實作。 您只能藉由針對強類型的類別執行個體叫用 ToString 實作來隱藏該實作。
 
-Note that under a variety of conditions, calls from native code to a managed type that implements IStringable or hides its ToString implementation can produce unexpected behavior.
+請注意，在各種情況下，從機器碼傳送至實作 IStringable 或隱藏其 ToString 實作的 Managed 類型可能會導致非預期的行為。
 
-## Asynchronous operations
+## 非同步作業
 
 
-To implement an asynchronous method in your component, add "Async" to the end of the method name and return one of the Windows Runtime interfaces that represent asynchronous actions or operations: IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt;, or IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
+若要在元件中實作非同步方法，請在方法名稱結尾處加上 "Async"，並傳回代表非同步動作或作業的 Windows 執行階段介面之一：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
 
-You can use .NET Framework tasks (the [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) class and generic [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) class) to implement your asynchronous method. You must return a task that represents an ongoing operation, such as a task that is returned from an asynchronous method written in C# or Visual Basic, or a task that is returned from the [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) method. If you use a constructor to create the task, you must call its [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) method before returning it.
+您可以使用 .NET Framework 工作 ([Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 類別和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 類別) 來實作您的非同步方法。 您必須傳回代表進行中作業的工作，例如，從使用 C# 或 Visual Basic 撰寫的非同步方法傳回的工作，或是從 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法傳回的工作。 如果您使用建構函式來建立此工作，就必須先呼叫其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法，再加以傳回。
 
-A method that uses await (Await in Visual Basic) requires the **async** keyword (**Async** in Visual Basic). If you expose such a method from a Windows Runtime component, apply the **async** keyword to the delegate that you pass to the Run method.
+使用 await (在 Visual Basic 中為 Await) 的方法，必須要有 **async** 關鍵字 (在 Visual Basic 中為 **Async**)。 如果您從 Windows 執行階段元件公開此類方法，請將 **async** 關鍵字套用至您傳遞給 Run 方法的委派。
 
-For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) or [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the Task.Run&lt;TResult&gt; method to start a task. The AsAsyncOperation&lt;TResult&gt; extension method returns the task as a Windows Runtime asynchronous operation.
+對於不支援取消或進度報告的非同步動作與作業，您可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 擴充方法，將工作包覆在適當的介面中。 例如，下列程式碼會使用 Task.Run&lt;TResult&gt; 方法來啟動工作，以實作非同步方法。 AsAsyncOperation&lt;TResult&gt; 擴充方法會以 Windows 執行階段非同步作業的形式傳回工作。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -212,7 +212,7 @@ For asynchronous actions and operations that do not support cancellation or prog
 > End Function
 > ```
 
-The following JavaScript code shows how the method could be called by using a [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) object. The function that is passed to the then method is executed when the asynchronous call completes. The stringList parameter contains the list of strings that is returned by the DownloadAsStringAsync method, and the function does whatever processing is required.
+下列 JavaScript 程式碼示範如何使用 [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 物件來呼叫方法。 完成非同步呼叫時，便會執行傳遞至 then 方法的函式。 StringList 參數包含 DownloadAsStringAsync 方法傳回的字串清單，而該函式會執行任何必要的處理。
 
 ```javascript
 function asyncExample(id) {
@@ -224,9 +224,9 @@ function asyncExample(id) {
 }
 ```
 
-For asynchronous actions and operations that support cancellation or progress reporting, use the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class to generate a started task and to hook up the cancellation and progress reporting features of the task with the cancellation and progress reporting features of the appropriate Windows Runtime interface. For an example that supports both cancellation and progress reporting, see [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+對於支援取消或進度報告的非同步動作與作業，請使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別來產生啟動的工作，並將該工作的取消和進度報告功能與適當的 Windows 執行階段介面的取消和進度報告功能相連結。 如需支援取消與進度報告的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-Note that you can use the methods of the AsyncInfo class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) method overload instead:
+請注意，即使您的非同步方法不支援取消或進度報告，您仍可使用 AsyncInfo 類別的方法。 如果您使用 Visual Basic Lambda 函式或 C# 匿名方法，請不要提供語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面的參數。 如果您使用 C# Lambda 函式，請提供語彙基元參數，但加以忽略。 上一個範例中使用了 AsAsyncOperation&lt;TResult&gt; 方法，如果改用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法多載，將如下所示：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -251,49 +251,49 @@ Note that you can use the methods of the AsyncInfo class even if your asynchrono
 > End Function
 > ```
 
-If you create an asynchronous method that optionally supports cancellation or progress reporting, consider adding overloads that don't have parameters for a cancellation token or the IProgress&lt;T&gt; interface.
+如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不具備取消語彙基元或 IProgress&lt;T&gt; 介面參數的多載。
 
-## Throwing exceptions
-
-
-You can throw any exception type that is included in the .NET for Windows apps. You can't declare your own public exception types in a Windows Runtime component, but you can declare and throw non-public types.
-
-If your component doesn't handle the exception, a corresponding exception is raised in the code that called your component. The way the exception appears to the caller depends on the way the calling language supports the Windows Runtime.
-
--   In JavaScript, the exception appears as an object in which the exception message is replaced by a stack trace. When you debug your app in Visual Studio, you can see the original message text displayed in the debugger exception dialog box, identified as "WinRT Information". You can't access the original message text from JavaScript code.
-
-    > **Tip**  Currently, the stack trace contains the managed exception type, but we don't recommend parsing the trace to identify the exception type. Instead, use an HRESULT value as described later in this section.
-
--   In C++, the exception appears as a platform exception. If the managed exception's HResult property can be mapped to the HRESULT of a specific platform exception, the specific exception is used; otherwise, a [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) exception is thrown. The message text of the managed exception is not available to C++ code. If a specific platform exception was thrown, the default message text for that exception type appears; otherwise, no message text appears. See [Exceptions (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx).
--   In C# or Visual Basic, the exception is a normal managed exception.
-
-When you throw an exception from your component, you can make it easier for a JavaScript or C++ caller to handle the exception by throwing a non-public exception type whose HResult property value is specific to your component. The HRESULT is available to a JavaScript caller through the exception object's number property, and to a C++ caller through the [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) property.
-
-> **Note**  Use a negative value for your HRESULT. A positive value is interpreted as success, and no exception is thrown in the JavaScript or C++ caller.
-
-## Declaring and raising events
-
-When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET Framework application.
-
-When your Windows Runtime component is used from JavaScript or C++, the event follows the Windows Runtime event pattern that those languages expect. When you use the component from C# or Visual Basic, the event appears as an ordinary .NET Framework event. An example is provided in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript]().
-
-If you implement custom event accessors (declare an event with the **Custom** keyword, in Visual Basic), you must follow the Windows Runtime event pattern in your implementation. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md). Note that when you handle the event from C# or Visual Basic code, it still appears to be an ordinary .NET Framework event.
-
-## Next steps
+## 擲回例外狀況
 
 
-After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](https://msdn.microsoft.com/library/jj614475.aspx).
+您可以擲回適用於 Windows app 的 .NET 所包含的任何例外狀況類型。 您無法在 Windows 執行階段元件中宣告自己的公用例外狀況類型，但可宣告和擲回非公用類型。
 
-For more information about Visual Basic and C# language features, and .NET Framework support for the Windows Runtime, see [Visual Basic and C# language reference](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
+如果您的元件不會處理例外狀況，呼叫該元件的程式碼中將會引發對應的例外狀況。 例外狀況對呼叫端的顯示方式，取決於呼叫的語言支援 Windows 執行階段的方式。
 
-## Related topics
+-   在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 [例外狀況] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。 您無法從 JavaScript 程式碼存取原始訊息文字。
 
-* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+    > **提示** 雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。
+
+-   在 C++ 中，例外狀況會顯示為平台例外狀況。 如果 Managed 例外狀況的 HResult 屬性可以對應至某個特定平台例外狀況的 HRESULT，就會使用該特定例外狀況，否則會擲回 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外狀況。 C++ 程式碼無法使用 Managed 例外狀況的訊息文字。 如果是擲回特定平台例外狀況，則會顯示該例外狀況類型的預設訊息文字，否則不會顯示任何訊息文字。 請參閱[例外狀況 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
+-   在 C# 或 Visual Basic 中，例外狀況就是一般的 Managed 例外狀況。
+
+當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。 JavaScript 呼叫端可以透過例外狀況物件的 number 屬性來存取 HRESULT，而 C++ 呼叫端可透過 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 屬性來存取。
+
+> **注意** 請使用負值做為 HRESULT 的值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。
+
+## 宣告和引發事件
+
+當您宣告某個類型包含事件的資料時，請從 Object 衍生，而不要從 EventArgs 衍生，因為 EventArgs 不是 Windows 執行階段類型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 做為事件的類型，並以您的事件引數類型做為泛型類型引數。 引發事件的方式與 .NET Framework 應用程式中的一樣。
+
+從 JavaScript 或 C++ 使用您的 Windows 執行階段元件時，事件會依循這些語言所預期的 Windows 執行階段事件模式。 當您從 C# 或 Visual Basic 使用元件時，事件會顯示為一般的 .NET Framework 事件。 請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件]()中的範例。
+
+如果您實作自訂事件存取子 (在 Visual Basic 中為使用 **Custom** 關鍵字宣告事件)，則您在實作時必須依循 Windows 執行階段事件模式。 請參閱 [Windows 執行階段元件中的自訂事件和事件存取子](custom-events-and-event-accessors-in-windows-runtime-components.md)。 請注意，當您處理來自 C# 或 Visual Basic 程式碼的事件時，該事件仍會顯示為一般的 .NET Framework 事件。
+
+## 後續步驟
+
+
+在您建立要供自己使用的 Windows 執行階段元件之後，可能會發現它封裝的功能對其他開發人員也很有用。 有兩種方式可供您選擇來包裝元件並發佈給其他開發人員。 請參閱[發佈 Managed Windows 執行階段元件](https://msdn.microsoft.com/library/jj614475.aspx)。
+
+如需 Visual Basic 和 C# 語言功能以及 Windows 執行階段之 .NET Framework 支援的詳細資訊，請參閱 [Visual Basic 和 C# 語言參考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。
+
+## 相關主題
+
+* [適用於 Windows 市集 app 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

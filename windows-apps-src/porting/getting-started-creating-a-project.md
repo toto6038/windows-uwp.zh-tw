@@ -1,61 +1,61 @@
 ---
 author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
-description: Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio.
-title: Creating a project in Visual Studio
+description: "Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。"
+title: "在 Visual Studio 中建立專案"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
+ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
 
 ---
 
-# Getting started: Creating a project
+# 開始使用：建立專案
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Creating a project
+## 建立專案
 
-Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio. It shows you the absolute basics you'll need to know to get started. Each time you create an app, you'll follow steps similar to these.
+Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。 其中會說明某些您在開始之前必須知道的基本資訊。 每次建立應用程式時，您將遵循與這些步驟類似步驟。
 
-The following video compares Xcode and Visual Studio.
+下列影片提供 Xcode 與 Visual Studio 的比較。
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Comparing Xcode to Visual Studio</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">開發人員短片 - 比較 Visual Studio 與 Xcode</iframe>
 
-You will also find this [Building apps for Windows blog posting](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) very helpful.
+您也會發現此[建置適用於 Windows 之應用程式的部落格文章](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)非常有用。
 
-Creating an app for Windows 10 (more formally referred to as a Universal Windows Platform (UWP) app) is rather like creating an iOS app using Storyboards. The Windows 10 app is often constructed over several pages, each page containing a different part of the user interface, like a web site. Each page usually has two associated source files: one to store the user interface in [XAML overview](https://msdn.microsoft.com/library/windows/apps/mt185595) format, and one that contains the source code, often C#. As your user interacts with your app, they will navigate between these pages. In this walkthrough, you will create an app with two pages.
+建立適用於 Windows 10 的 app (正式名稱是通用 Windows 平台 (UWP) app) 比較像是使用腳本建立 iOS app。 Windows 10 App 通常是建構於數個頁面上，每個頁面都會包含不同部分的使用者介面，例如網站。 每個頁面通常都有兩個相關聯的來源檔案：一個用來以 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/mt185595)格式儲存使用者介面，另一個則包含原始程式碼，通常是 C#。 當使用者與您的 App 互動時，他們將在這些頁面中瀏覽。 在這個逐步解說中，您將建立含有兩個頁面的 app。
 
-**Note**  An important feature of Windows 10 apps is the fact that the same source code, and the same API set, is available to you no matter the platform. As you know, when you are writing a universal iOS app for iPhone and iPad, you can determine at run-time which platform your app is running on, and take the appropriate action. In a similar way, Windows 10 apps can tell, at run-time, the device they are running on. With a UWP app, there is no need to use \#ifdef's in your source code to create phone versus desktop builds. Conveniently, Windows 10 apps also intelligently use their user interface controls depending on the device: for example, your app may reference a date picker control, and the control will automatically look and function differently depending on whether it's running on a desktop or a phone screen. Your source code, however, remains the same.
+**注意** Windows 10 app 的一個重要功能是，無論平台為何，您都可以使用相同的原始程式碼和相同的 API 集。 如您所知，當您在撰寫適用於 iPhone 和 iPad 的通用 iOS app 時，您在執行階段就可以判斷您的 app 會在什麼平台上執行，並採取適當動作。 同樣地，Windows 10 的 app 在執行階段就可以知道它們會在什麼裝置上執行。 UWP app 無需在原始程式碼中使用 \#ifdef，就可以建立電話與桌上型電腦的不同組建。 為了方便起見，Windows 10 app 也會根據裝置聰明地使用使用者介面控制項：例如，您的 app 可能會參考日期選擇器控制項，而控制項則會根據 app 是在桌面或電話螢幕上執行，自動顯示不同的外觀並以不同的方式運作。 然而，您的原始程式碼仍將維持不變。
 
-Let's see how we can create a Windows 10 app. Start by running Visual Studio. The first time you run it, Visual Studio will ask you to get a developer license. A developer license lets you install and test Windows Store apps on your local computer before you submit them to the Windows Store. To get a license, follow the on-screen directions to sign in with a Microsoft account. If you don't have one, click the **Sign up** link in the **Developer License** dialog box, and follow the on-screen directions.
+我們來看看如何建立 Windows 10 app。 從執行 Visual Studio 開始。 第一次執行 Visual Studio 的時候，它會要求您取得開發人員授權。 開發人員授權讓您在本機電腦上安裝和測試 Windows 市集應用程式，然後再將應用程式送出到 Windows 市集。 若要取得授權，請按照螢幕上的指示操作，以使用 Microsoft 帳戶登入。 如果您沒有授權，請按一下 [開發人員授權]**** 對話方塊中的 [註冊]**** 連結，然後按照螢幕上的指示操作。
 
-For comparison, when you start Xcode, the first thing you see is the **Welcome to Xcode** screen, similar to the following figure.
+做為比較，在您啟動 Xcode 的時候，會看到的第一個畫面是 [**Welcome to Xcode**]，與下圖類似。
 
-![xcode welcome screen](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
+![Xcode 歡迎畫面](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
 
-Visual Studio is very similar. You'll see the **Start Page**, as shown in the following figure.
+Visual Studio 是非常相似的。 您會看見如下圖中顯示的 [**開始頁面**]。
 
-![visual studio start screen](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
+![Visual Studio 開始畫面](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
 
-To create a new app, start by making a project by doing one of the following:
+若要建立新 app，請執行下列其中一個動作，以從建立專案開始：
 
--   In the **Start** area, tap **New Project**.
--   Tap the **File** menu, and then tap **New Project**.
+-   在 [開始]**** 區域，點選 [新增專案]****。
+-   點選 [檔案]**** 功能表，然後點選 [新增專案]****。
 
-For comparison, when you create a new project in Xcode, you see a list of project templates like those shown in the following figure.
+做為比較，當您在 Xcode 中建立新專案的時候，會看到如下圖中類似的專案範本清單。
 
-![xcode new project dialog box](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
+![Xcode 新增專案對話方塊](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
 
-In Visual Studio, there are also several project templates to choose from, as shown in the following figure.
+Visual Studio 中也提供好幾個可以選用的專案範本，如下圖中所示。
 
-![visual studio new project dialog box](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) For this walkthrough, tap **Visual C#**, and then tap **Windows**, **Windows Universal** and **Blank App (Windows Universal)**. In the **Name** box, type "MyApp", and then tap **OK**. Visual Studio creates and then displays your first project. Now, you can begin to design your app and add code to it.
+![Visual Studio [新建專案] 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)如需此逐步解說，請依序點選 [**Visual C#**]、[**Windows**]、[**Windows 通用**] 以及 [**空白 App (Windows 通用)**]。 在 [**名稱**] 方塊中，輸入「MyApp」，然後點選 [**確定**]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
 
-## Next step
+## 下一步
 
-[Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md)
+[開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

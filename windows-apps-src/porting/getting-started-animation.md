@@ -1,59 +1,59 @@
 ---
 author: mcleblanc
-title: Getting started with Animation
+title: "動畫入門"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: In this project, we're going to move a rectangle, apply a fade effect, and then bring it back into view.
+description: "在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
 
 ---
 
-# Getting started: Animation
+# 開始使用：動畫
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Adding animations
+## 新增動畫
 
-In iOS, you most often create animation effects programmatically. For example, you might use animations provided by the block-based **UIView** class's **animateWithDuration** methods, or the older non-block based methods. Or, you might explicitly use the **CALayer** class to animate layers. Animations in Windows apps can be created programmatically, but they can also be defined declaratively with Extensible Application Markup Language (XAML). You can use Microsoft Visual Studio to edit XAML code directly, but Visual Studio also comes with a tool called **Blend**, which creates XAML code for you as you work with animations in a designer. In fact, Blend allows you to open, design, build, and run complete Visual Studio projects, graphically. The following walkthrough lets you try this out.
+在 iOS 中，您經常會以程式設計的方式來建立動畫效果。 例如，您可以使用區塊型 **UIView** 類別的 **animateWithDuration** 方法或舊版非區塊型方法所提供的動畫。 或者，您可以明確使用 **CALayer** 類別將圖層製作成動畫。 Windows 應用程式中的動畫也可以透過程式設計的方式建立，但是也可以透過 Extensible Application Markup Language (XAML) 以宣告的方式進行定義。 您可以使用 Microsoft Visual Studio 直接編輯 XAML 程式碼，但是 Visual Studio 另外隨附了一個稱為 **Blend** 的工具，當您在設計工具中處理動畫時，它可以為您建立 XAML 程式碼。 事實上，Blend 讓您能夠以圖形方式開啟、設計、建置以及執行完整的 Visual Studio 專案。 下列逐步解說可讓您嘗試一下。
 
-Create a new Universal Windows Platform (UWP) app and name it something like "SimpleAnimation". In this project, we're going to move a rectangle, apply a fade effect, and then bring it back into view. Animations in XAML are based on the concept of *storyboards* (not to be confused with iOS storyboards). Storyboards use *keyframes* to animate property changes.
+建立一個新的通用 Windows 平台(UWP) app，並將它命名為「SimpleAnimation」之類的名稱。 在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。 XAML 中的動畫是以「*腳本*」(請勿與 iOS 腳本混淆) 的概念為基礎。 腳本使用「*主要畫面格*」產生屬性變更的動畫效果。
 
-With your project open, in **Solution Explorer**, right-click the project's name and then select **Open in Blend** or **Design in Blend**, as shown in the following figure. Visual Studio continues to run in the background.
+在專案開啟的時候，於 [**方案總管**] 中，以滑鼠右鍵按一下專案名稱，然後點取 [**在 Blend 中開啟**] 或 [**在 Blend 中設計**]，如下圖中所示。 Visual Studio 會繼續在背景執行。
 
-![open in blend menu command](images/ios-to-uwp/vs-open-in-blend.png)
+![[在 Blend 中開啟] 功能表命令](images/ios-to-uwp/vs-open-in-blend.png)
 
-After Blend starts, you should see something similar to the following figure.
+Blend 啟動之後，您應該會看到和下圖類似的畫面。
 
-![blend development environment](images/ios-to-uwp/blend-1.png)
+![Blend 開發環境](images/ios-to-uwp/blend-1.png)
 
-Double-click on **MainPage.xaml** in the **Solution Explorer** on the left hand side. Next, from the vertical strip of tools on the edge of the central **Design View**, select the **Rectangle** tool, and then draw a rectangle in **Design View**, as shown in the following figure.
+於左側的 [**方案總管**] 視窗中按兩下 **MainPage.xaml**。 接下來，在中央邊緣的 [**設計檢視**] 的垂直帶狀工具中，選取 [**矩形**] 工具，然後在 [**設計檢視**] 中繪製一個矩形，如下圖中所示。
 
-![adding a rectangle to design view](images/ios-to-uwp/blend-2.png)
+![將矩形新增到設計檢視](images/ios-to-uwp/blend-2.png)
 
-To make the rectangle green, look in the **Properties** window, and in the **Brush** area, click on the **Solid color brush** button, and then click the **Color eyedropper** icon. Click somewhere in the green band of hues.
+若要讓矩形填滿綠色，請看到 [**屬性**] 視窗的 [**筆刷**] 區域，按一下 [**單色筆刷**] 按鈕，然後按一下 [**色彩滴管**] 圖示。 按一下綠色色調區段的任意位置。
 
-To begin animating the rectangle, in the **Objects and Timeline** window, tap the plus symbol (**New**) button as shown in the following figure, and then tap **OK**.
+若要開始建立矩形的動畫效果，在 [**物件與時間軸**] 視窗中，點選加號 ([**新增**]) 按鈕，如下圖中所示，然後點選 [**確定**]。
 
-![adding a storyboard](images/ios-to-uwp/blend-3.png)
+![新增腳本](images/ios-to-uwp/blend-3.png)
 
-A storyboard appears in the **Objects and Timeline** window (you may need to resize the view to see it properly). The **Design View** display changes to show that **Storyboard1 timeline recording is on**. To capture the current state of the rectangle, in the **Objects and Timeline** window, tap the **Record Keyframe** button just above the yellow arrow, as shown in the following figure.
+[**物件與時間軸**] 視窗中就會顯示腳本 (您可能需要調整檢視，才能正確看到腳本)。 [**設計檢視**] 會顯示變更，以顯示 [**Storyboard1 時間軸錄製中**]。 若要捕捉矩形的目前狀態，請在 [**物件與時間軸**] 視窗中，點選黃色箭頭正上方的 [**錄製主要畫面格**] 按鈕，如下圖中所示。
 
-![recording a keyframe](images/ios-to-uwp/blend-4.png)
+![錄製主要畫面格](images/ios-to-uwp/blend-4.png)
 
-Now, let's move the rectangle and fade it away. To do this, drag the orange/yellow arrow to the 2-second position, and then move your green rectangle slightly to the right. Then, in the **Properties** window, in the **Appearance** area, change the **Opacity** property to **0**, as shown in the following figure. To preview the animation, tap the **Play** button in the Storyboard panel.
+現在我們要移動矩形並讓它淡出。 若要這樣做，將橘免/黃色箭頭拖曳到 2 秒的位置，然後將矩形向右移一點點。 接下來，在 [**屬性**] 視窗的 [**外觀**] 區域中，將 [**不透明度**] 屬性變更為 [**0**]，如下圖中所示。 若要預覽動畫，請點選 [腳本] 面板中的 [**播放**] 按鈕。
 
-![properties windows and play button](images/ios-to-uwp/blend-5.png)
+![[屬性] 視窗及 [播放] 按鈕](images/ios-to-uwp/blend-5.png)
 
-Next, let's bring the rectangle back into view. In the **Objects and Timeline** window, double-click **Storyboard1**. Then, in the **Properties** window, in the **Common** area, select **AutoReverse**, as shown in the following figure.
+接下來，我們將矩形帶回檢視中。 在 [**物件與時間軸**] 視窗中，按兩下 [**Storyboard1**]。 然後，在 [**屬性**] 視窗的 [**通用**] 區域中，選取 [**自動反轉**]，如下圖中所示。
 
-![selecting a storyboard](images/ios-to-uwp/blend-6.png)
+![選取腳本](images/ios-to-uwp/blend-6.png)
 
-Finally, click on the **Play** button to see what happens.
+最後，按一下 [**播放**] 按鈕看看發生了什麼事。
 
-You can build and run the project by clicking on the green run button at the top of the window (or just press F5). If you do this, you'll see your project will indeed build and run, but the green rectangle will stubbornly sit perfectly still, like a toddler denied candy in a supermarket aisle. To start the animation, you'll need to add a line of code to the project. Here's how.
+您可以按一下視窗頂端的綠色執行按鈕 (或只按下 F5) 來建置和執行專案。 如果您這樣做，您將看到您的專案會確實地建置和執行，但綠色矩形卻動也不動，就像在超市走道看到糖果賴著不走的小孩一樣。 若要開始動畫，則需要在專案新增一行程式碼。 方法如下。
 
-Save the project, by opening the **File** menu, and selecting **Save MainPage.xaml**. Return to Visual Studio. If Visual Studio displays a dialog box asking whether you want to reload the modified file, select **Yes**. Double-click the **MainPage.xaml.cs** file, which is hidden under **MainPage.xaml**, to open it, and add the following code just above the public MainPage() method:
+開啟 [**檔案**] 功能表，然後選取 [**儲存 MainPage.xaml**] 來儲存專案。 返回 Visual Studio。 如果 Visual Studio 顯示一個對話方塊，詢問您是否要重新載入已修改過的檔案，請選取 [**是**]。 按兩下隱藏在 **MainPage.xaml** 底下的 **MainPage.xaml.cs** 檔案以將它開啟，並在 public MainPage() 方法正上方加入下列程式碼：
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -63,9 +63,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Run the project again, and watch the rectangle animate. Hurrah!
+重新執行專案，看看矩形的動畫效果。 萬歲！
 
-If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code that Blend added for you as you worked in the designer. In particular, look at the code in the `<Storyboard>` and `<Rectangle>` elements. The following code shows an example. Ellipses indicate unrelated code omitted for brevity, and line breaks have been added for code readability.)
+如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼顯示一個範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
 
 ```xml
 ...
@@ -121,16 +121,16 @@ If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code t
 ...
 ```
 
-You can edit this XAML manually, or return to Blend to continue working on it there. Blend makes it fun to create interesting user interfaces, and the ability to animate them using a graphical tool can dramatically speed up development time. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350).
+您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**Note**  For info about animations for Windows Store apps using JavaScript and HTML, see [Animating your UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**注意** 如需使用 JavaScript 和 HTML 之 Windows 市集應用程式中動畫的詳細資訊，請參閱[讓 UI 產生動畫效果 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
-### Next step
+### 下一步
 
-[Getting started: What next?](getting-started-what-next.md)
+[開始使用：後續動作？](getting-started-what-next.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

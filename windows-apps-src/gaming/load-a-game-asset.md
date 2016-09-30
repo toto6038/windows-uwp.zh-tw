@@ -1,43 +1,43 @@
 ---
 author: mtoepke
-title: Load resources in your DirectX game
-description: Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream.
+title: "在 DirectX 遊戲中載入資源"
+description: "大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
+ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
 
 ---
 
-# Load resources in your DirectX game
+# 在 DirectX 遊戲中載入資源
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream. Here, we walk you through a high-level view of what you must consider when loading these files to use in your Universal Windows Platform (UWP) game.
+大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。 本文會引導您了解在通用 Windows 平台 (UWP) 遊戲中載入這些檔案來使用時必須考量的整體事項。
 
-For example, the meshes for polygonal objects in your game might have been created with another tool, and exported to a specific format. The same is true for textures, and more so: while a flat, uncompressed bitmap can be commonly written by most tools and understood by most graphics APIs, it can be extremely inefficient for use in your game. Here, we guide you through the basic steps for loading three different types of graphic resources for use with Direct3D: meshes (models), textures (bitmaps), and compiled shader objects.
+例如，您可能使用另一種工具建立遊戲中多邊形物件的網格，然後再以特定格式匯出。 紋理也是一樣 (甚至更是如此)：雖然通常可以使用大多數的工具來撰寫多數圖形 API 都能辨識的一般未壓縮點陣圖，但是用在遊戲中卻非常沒有效率。 本文說明載入下列三種不同類型的圖形資源以搭配 Direct3D 使用時的基本步驟：網格 (模型)、紋理 (點陣圖) 及編譯的著色器物件。
 
-## What you need to know
+## 您需要知道的事項
 
 
-### Technologies
+### 技術
 
--   Parallel Patterns Library (ppltasks.h)
+-   平行模式程式庫 (ppltasks.h)
 
-### Prerequisites
+### 先決條件
 
--   Understand the basic Windows Runtime
--   Understand asynchronous tasks
--   Understand the basic concepts of 3-D graphics programming.
+-   了解基本 Windows 執行階段
+-   了解非同步工作
+-   了解 3D 圖形程式設計的基本概念。
 
-This sample also includes three code files for resource loading and management. You'll encounter the code objects defined in these files throughout this topic.
+這個範例也包含資源載入和管理的三個程式碼檔案。 您將在本主題中遇到定義於這些檔案中的程式碼物件。
 
 -   BasicLoader.h/.cpp
 -   BasicReaderWriter.h/.cpp
 -   DDSTextureLoader.h/.cpp
 
-The complete code for these samples can be found in the following links.
+您可以在下列連結中找到這些範例的完整程式碼。
 
 <table>
 <colgroup>
@@ -46,41 +46,41 @@ The complete code for these samples can be found in the following links.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">主題</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
-<td align="left"><p>Complete code for a class and methods that convert and load graphics mesh objects into memory.</p></td>
+<td align="left"><p>[BasicLoader 的完整程式碼](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>將圖形網格物件轉換並載入記憶體的類別與方法的完整程式碼。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.</p></td>
+<td align="left"><p>[BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。 專供 [BasicLoader](complete-code-for-basicloader.md) 類別使用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
-<td align="left"><p>Complete code for a class and method that loads a DDS texture from memory.</p></td>
+<td align="left"><p>[DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>從記憶體載入 DDS 紋理的類別與方法的完整程式碼。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Instructions
+## 指示
 
-### Asynchronous loading
+### 非同步載入
 
-Asynchronous loading is handled using the **task** template from the Parallel Patterns Library (PPL). A **task** contains a method call followed by a lambda that processes the results of the async call after it completes, and usually follows the format of:
+非同步載入使用平行模式程式庫 (PPL) 中的 **task** 範本進行處理。 **task** 包含一個後面跟著 Lambda 的方法呼叫，可以在完成後處理非同步呼叫的結果，格式通常如下：
 
 `task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
-Tasks can be chained together using the **.then()** syntax, so that when one operation completes, another async operation that depends on the results of the prior operation can be run. In this way, you can load, convert, and manage complex assets on separate threads in a way that appears almost invisible to the player.
+使用 **.then()** 語法可以將多個工作鏈結在一起，因此，當一個作業完成後，便可執行相依於前一作業之結果的另一個非同步操作。 如此一來，您就能以玩家幾乎看不見的方式，載入、轉換及管理個別執行緒上的複雜資產。
 
-For more details, read [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+如需詳細資訊，請閱讀 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
-Now, let's look at the basic structure for declaring and creating an async file loading method, **ReadDataAsync**.
+現在，我們來看看宣告和建立非同步檔案載入方法 **ReadDataAsync** 的基本結構。
 
 ```cpp
 #include <ppltasks.h>
@@ -109,7 +109,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-In this code, when your code calls the **ReadDataAsync** method defined above, a task is created to read a buffer from the file system. Once it completes, a chained task takes the buffer and streams the bytes from that buffer into an array using the static [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) type.
+在這個程式碼中，當您的程式碼呼叫上述定義的 **ReadDataAsync** 方法時，會建立一個從檔案系統讀取緩衝區的工作。 完成這個工作後，鏈結的工作會擷取緩衝區，並使用靜態的 [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) 類型將該緩衝區中的位元組串流處理到陣列。
 
 ```cpp
 m_basicReaderWriter = ref new BasicReaderWriter();
@@ -121,13 +121,13 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
     });
 ```
 
-Here's the call you make to **ReadDataAsync**. When it completes, your code receives an array of bytes read from the provided file. Since **ReadDataAsync** itself is defined as a task, you can use a lambda to perform a specific operation when the byte array is returned, such as passing that byte data to a DirectX function that can use it.
+下列是您對 **ReadDataAsync** 進行的呼叫。 呼叫完成後，您的程式碼會收到讀取自提供的檔案的位元組陣列。 由於 **ReadDataAsync** 本身定義為工作，因此當位元組陣列傳回時，您可以使用 Lambda 來執行特定的作業，像是將該位元組資料傳送到可使用該資料的 DirectX 函式。
 
-If your game is sufficiently simple, load your resources with a method like this when the user starts the game. You can do this before you start the main game loop from some point in the call sequence of your [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) implementation. Again, you call your resource loading methods asynchronously so the game can start quicker and so the player doesn't have to wait until the loading completes before engaging in early interactions.
+如果您的遊戲夠簡單，請在使用者開始遊戲時，使用類似這個的方法來載入您的資源。 您可以在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 實作的呼叫順序中開始主要遊戲迴圈之前，先執行此動作。 再次提醒您以非同步方式呼叫資源載入方法，如此可讓遊戲更快速地開始，而玩家不需等到載入完成，就能提早開始與遊戲互動。
 
-However, you don't want to start the game proper until all of the async loading has completed! Create some method for signaling when loading is complete, such as a specific field, and use the lambdas on your loading method(s) to set that signal when finished. Check the variable before starting any components that use those loaded resources.
+但是，不要在所有非同步載入完成之前就開始遊戲！ 建立一些方法在載入完成後通知使用者 (例如特定的欄位)，並在完成時使用載入方法中的 Lambda 來設定該通知。 啟動使用那些載入資源的任一元件之前，請先檢查變數。
 
-Here's an example using the async methods defined in BasicLoader.cpp to load shaders, a mesh, and a texture when the game starts up. Notice that it sets a specific field on the game object, **m\_loadingComplete**, when all of the loading methods finish.
+下列範例會在遊戲啟動時，使用定義在 BasicLoader.cpp 中的非同步方法來載入著色器、網格及紋理。 請注意，當所有載入方法完成後，它會在遊戲物件 **m\_loadingComplete** 中設定一個特定欄位。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -188,30 +188,30 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-Note that the tasks have been aggregated using the && operator such that the lambda that sets the loading complete flag is triggered only when all of the tasks complete. Note that if you have multiple flags, you have the possibility of race conditions. For example, if the lambda sets two flags sequentially to the same value, another thread may only see the first flag set if it examines them before the second flag is set.
+請注意，工作已經使用 &amp;&amp; 運算子彙總，因此只有在所有工作完成後，才會觸發設定載入完成旗標的 Lambda。 請注意，如果您有多個旗標，可能會生競爭情況。 例如，假設 Lambda 連續將兩個旗標設為相同的值，如果另一個執行緒在第二個旗標設定之前就檢查了旗標，則可能只會看到設定的第一個旗標。
 
-You've seen how to load resource files asynchronously. Synchronous file loads are much simpler, and you can find examples of them in [Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md) and [Complete code for BasicLoader](complete-code-for-basicloader.md).
+您已經了解如何以非同步方式載入資源檔案。 以同步方式載入檔案就更簡單了，您可以在 [BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)和 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)中找到它們的範例。
 
-Of course, different resource and asset types often require additional processing or conversion before they are ready to be used in your graphics pipeline. Let's take a look at three specific types of resources: meshes, textures, and shaders.
+當然，不同的資源和資產類型通常必須先進行額外的處理或轉換，才能用在您的圖形管線中。 我們來看看三個特定類型的資源：網格、紋理及著色器。
 
-### Loading meshes
+### 載入網格
 
-Meshes are vertex data, either generated procedurally by code within your game or exported to a file from another app (like 3DStudio MAX or Alias WaveFront) or tool. These meshes represent the models in your game, from simple primitives like cubes and spheres to cars and houses and characters. They often contain color and animation data, as well, depending on their format. We'll focus on meshes that contain only vertex data.
+網格是頂點資料，可以是由遊戲的程式碼產生，或是從另一個應用程式 (像是 3DStudio MAX 或 Alias WaveFront) 或工具匯出到檔案。 這些網格代表您遊戲中的模型，可能是像立方體和球體的簡單基本類型，或者是房子或人物。 依格式而定，它們通常也包含色彩與動畫資料。 我們將重點放在僅包含頂點資料的網格。
 
-To load a mesh correctly, you must know the format of the data in the file for the mesh. Our simple **BasicReaderWriter** type above simply reads the data in as a byte stream; it doesn't know that the byte data represents a mesh, much less a specific mesh format as exported by another application! You must perform the conversion as you bring the mesh data into memory.
+為正確載入網格，您必須知道網格檔案中的資料格式。 我們上述的簡易 **BasicReaderWriter** 類型只會讀入位元組串流格式的資料；它並不知道位元組資料代表網格，更別說是由另一個應用程式所匯出的特定網格格式！ 當您將網格資料放入記憶體時必須執行轉換。
 
-(You should always try to package asset data in a format that's as close to the internal representation as possible. Doing so will reduce resource utilization and save time.)
+(您應該永遠盡可能地將資產資料以接近內部表示法的格式封裝。 這樣可以減少資源使用量並節省時間。)
 
-Let's get the byte data from the mesh's file. The format in the example assumes that the file is a sample-specific format suffixed with .vbo. (Again, this format is not the same as OpenGL's VBO format.) Each vertex itself maps to the **BasicVertex** type, which is a struct defined in the code for the obj2vbo converter tool. The layout of the vertex data in the .vbo file looks like this:
+讓我們從網格的檔案取得位元組資料吧。 範例中的格式假設檔案是尾碼 .vbo 的範例特定格式  (再次提醒，這個格式與 OpenGL's VBO 格式不同)。每個頂點本身均對應 **BasicVertex** 類型，那是定義在 obj2vbo 轉換器工具程式碼中的結構。 .vbo 檔案中的頂點資料版面配置看起來像這樣：
 
--   The first 32 bits (4 bytes) of the data stream contain the number of vertices (numVertices) in the mesh, represented as a uint32 value.
--   The next 32 bits (4 bytes) of the data stream contain the number of indices in the mesh (numIndices), represented as a uint32 value.
--   After that, the subsequent (numVertices \* sizeof(**BasicVertex**)) bits contain the vertex data.
--   The last (numIndices \* 16) bits of data contain the index data, represented as a sequence of uint16 values.
+-   資料串流的前 32 個位元 (4 個位元組) 包含網格中的頂點數目 (numVertices)，以一個 uint32 值表示。
+-   資料串流的後 32 個位元 (4 個位元組) 包含網格中的索引數目 (numIndices)，以一個 uint32 值表示。
+-   在那之後，後續的 (numVertices \* sizeof(**BasicVertex**)) 位元則包含頂點資料。
+-   資料最後的 (numIndices \* 16) 位元包含索引資料，以一連串的 uint16 值表示。
 
-The point is this: know the bit-level layout of the mesh data you have loaded. Also, be sure you are consistent with endian-ness. All Windows 8 platforms are little-endian.
+重點在於：了解您載入的網格資料的位元層級版面配置。 此外，也請確定使用一致的位元組順序。 所有 Windows 8 平台均是位元組由小到大排列。
 
-In the example, you call a method, CreateMesh, from the **LoadMeshAsync** method to perform this bit-level interpretation.
+在範例中，您從 **LoadMeshAsync** 方法中呼叫方法 CreateMesh 以執行此位元層級的解譯。
 
 ```cpp
 task<void> BasicLoader::LoadMeshAsync(
@@ -236,7 +236,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** interprets the byte data loaded from the file, and creates a vertex buffer and an index buffer for the mesh by passing the vertex and index lists, respectively, to [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) and specifying either D3D11\_BIND\_VERTEX\_BUFFER or D3D11\_BIND\_INDEX\_BUFFER. Here's the code used in **BasicLoader**:
+**CreateMesh** 會解譯從檔案載入的位元組資料，然後會分別將頂點和索引清單傳送到 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)，並指定 D3D11\_BIND\_VERTEX\_BUFFER 或 D3D11\_BIND\_INDEX\_BUFFER，進而為網格建立頂點緩衝區和索引緩衝區。 下列是 **BasicLoader** 中使用的程式碼：
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -297,34 +297,34 @@ void BasicLoader::CreateMesh(
 }
 ```
 
-You typically create a vertex/index buffer pair for every mesh you use in your game. Where and when you load the meshes is up to you. If you have a lot of meshes, you may only want to load some from the disk at specific points in the game, such as during specific, pre-defined loading states. For large meshes, like terrain data, you can stream the vertices from a cache, but that is a more complex procedure and not in the scope of this topic.
+您通常會為遊戲所使用的每個網格建立一個頂點/索引緩衝區組。 您可以自行決定載入網格的位置和時機。 如果您有許多網格，則可能只想在遊戲的某些特定時間點從磁碟中載入一些網格，例如在特定的預先定義載入狀態期間。 對於大型網格 (如地形資料)，您可以從快取中串流處理頂點，但那是更複雜的程序，不在本主題的範圍內。
 
-Again, know your vertex data format! There are many, many ways to represent vertex data across the tools used to create models. There are also many different ways to represent the input layout of the vertex data to Direct3D, such as triangle lists and strips. For more information about vertex data, read [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) and [Primitives](https://msdn.microsoft.com/library/windows/desktop/bb147291).
+再次提醒您，請了解您的頂點資料格式！ 在用來建立模型的許多工具中，有非常多的方法可以呈現頂點資料。 也有許多不同的方法可以將頂點資料的輸入配置呈現為 Direct3D，像是三角形清單和寬帶。 如需頂點資料的詳細資訊，請閱讀 [Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)與[基元](https://msdn.microsoft.com/library/windows/desktop/bb147291)。
 
-Next, let's look at loading textures.
+接下來，讓我們來看看載入紋理。
 
-### Loading textures
+### 載入紋理
 
-The most common asset in a game—and the one that comprises most of the files on disk and in memory—are textures. Like meshes, textures can come in a variety of formats, and you convert them to a format that Direct3D can use when you load them. Textures also come in a wide variety of types and are used to create different effects. MIP levels for textures can be used to improve the look and performance of distance objects; dirt and light maps are used to layer effects and detail atop a base texture; and normal maps are used in per-pixel lighting calculations. In a modern game, a typical scene can potentially have thousands of individual textures, and your code must effectively manage them all!
+遊戲中最常見的資產 (和組成磁碟和記憶體中大多數檔案的資產) 就是紋理。 紋理和網格一樣也有多種格式，您會在載入它們時將它們轉換成 Direct3D 可以使用的格式。 紋理也有多種類型，並可用來建立不同的效果。 紋理的 MIP 層級可用來改善距離物件的外觀與效能；污漬貼圖和光照貼圖可用來層疊效果，而細節可放在基本紋理上層；一般貼圖則用於每一像素光源計算。 在新型的遊戲中，一個典型的場景可能有數千種個別的紋理，您的程式碼必須有效地管理所有的紋理！
 
-Also like meshes, there are a number of specific formats that are used to make memory usage for efficient. Since textures can easily consume a large portion of the GPU (and system) memory, they are often compressed in some fashion. You aren't required to use compression on your game's textures, and you can use any compression/decompression algorithm(s) you want as long as you provide the Direct3D shaders with data in a format it can understand (like a [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) bitmap).
+也和網格一樣，有多種特定格式可用來節省記憶體使用量。 由於紋理很容易便會耗用大量的 GPU (和系統) 記憶體，因此通常會以某些方式壓縮。 您不需在遊戲的紋理中使用壓縮，只要您提供 Direct3D 著色器可以理解之格式 (像是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 點陣圖) 的資料，就可以使用您想要的任何壓縮/解壓縮演算法。
 
-Direct3D provides support for the DXT texture compression algorithms, although every DXT format may not be supported in the player's graphics hardware. DDS files contain DXT textures (and other texture compression formats as well), and are suffixed with .dds.
+Direct3D 可為 DXT 紋理壓縮演算法提供支援，然而玩家的圖形硬體未必能夠支援每種 DXT 格式。 DDS 檔案包含 DXT 紋理 (還有其他紋理壓縮格式)，尾碼為 .dds。
 
-A DDS file is a binary file that contains the following information:
+DDS 檔案是包含下列資訊的二進位檔案：
 
--   A DWORD (magic number) containing the four character code value 'DDS ' (0x20534444).
+-   包含四個字元的代碼值 'DDS ' (0x20534444) 的 DWORD (魔術數字)。
 
--   A description of the data in the file.
+-   檔案中的資料描述。
 
-    The data is described with a header description using [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982); the pixel format is defined using [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Note that the **DDS\_HEADER** and **DDS\_PIXELFORMAT** structures replace the deprecated DDSURFACEDESC2, DDSCAPS2 and DDPIXELFORMAT DirectDraw 7 structures. **DDS\_HEADER** is the binary equivalent of DDSURFACEDESC2 and DDSCAPS2. **DDS\_PIXELFORMAT** is the binary equivalent of DDPIXELFORMAT.
+    資料會使用 [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) 的標頭描述來加以描述；而像素格式則是使用 [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) 加以定義。 請注意，**DDS\_HEADER** 和 **DDS\_PIXELFORMAT** 結構取代了已過時的 DDSURFACEDESC2、DDSCAPS2 及 DDPIXELFORMAT DirectDraw 7 結構。 **DDS\_HEADER** 等同於 DDSURFACEDESC2 與 DDSCAPS2 的二進位檔案。 **DDS\_PIXELFORMAT** 是等同於 DDPIXELFORMAT 的二進位檔案。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    If the value of **dwFlags** in [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) is set to DDPF\_FOURCC and **dwFourCC** is set to "DX10" an additional [**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) structure will be present to accommodate texture arrays or DXGI formats that cannot be expressed as an RGB pixel format such as floating point formats, sRGB formats etc. When the **DDS\_HEADER\_DXT10** structure is present, the entire data description will looks like this.
+    如果 [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) 中的 **dwFlags** 值設為 DDPF\_FOURCC，而 **dwFourCC** 設為 "DX10"，額外的 [**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 結構將會存在以便配合無法以 RGB 像素格式 (例如浮點數格式及 sRGB 格式等) 表示的紋理陣列或 DXGI 格式。當 **DDS\_HEADER\_DXT10** 結構存在時，整個資料描述看起來會像這樣。
 
     ```cpp
     DWORD               dwMagic;
@@ -332,20 +332,20 @@ A DDS file is a binary file that contains the following information:
     DDS_HEADER_DXT10    header10;
     ```
 
--   A pointer to an array of bytes that contains the main surface data.
+-   包含主要表面資料的位元組陣列指標。
     ```cpp
     BYTE bdata[]
     ```
 
--   A pointer to an array of bytes that contains the remaining surfaces such as; mipmap levels, faces in a cube map, depths in a volume texture. Follow these links for more information about the DDS file layout for a: [texture](https://msdn.microsoft.com/library/windows/desktop/bb205578), a [cube map](https://msdn.microsoft.com/library/windows/desktop/bb205577), or a [volume texture](https://msdn.microsoft.com/library/windows/desktop/bb205579).
+-   包含其餘的表面 (如 Mipmap 層級、立方體貼圖中的面及容積紋理中的深度) 的位元組陣列指標。 請點選下列連結，以了解下列的 DDS 檔案配置相關資訊：[紋理](https://msdn.microsoft.com/library/windows/desktop/bb205578)、[立方體貼圖](https://msdn.microsoft.com/library/windows/desktop/bb205577)或[容積紋理](https://msdn.microsoft.com/library/windows/desktop/bb205579)。
 
     ```cpp
     BYTE bdata2[]
     ```
 
-Many tools export to the DDS format. If you don't have a tool to export your texture to this format, consider creating one. For more detail on the DDS format and how to work with it in your code, read [Programming Guide for DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991). In our example, we'll use DDS.
+許多工具會匯出 DDS 格式。 如果您沒有可將紋理匯出為這個格式的工具，請考慮建立一個工具。 如需 DDS 格式和如何在您的程式碼中使用它的詳細資訊，請閱讀 [DDS 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。 在我們的範例中，我們將使用 DDS。
 
-As with other resource types, you read the data from a file as a stream of bytes. Once your loading task completes, the lambda call runs code (the **CreateTexture** method) to process the stream of bytes into a format that Direct3D can use.
+和其他資源類型一樣，您會從檔案中以位元組串流的形式讀取此資料。 在您的載入工作完成後，Lambda 呼叫會執行程式碼 (**CreateTexture** 方法)，以將位元組的串流處理為 Direct3D 可使用的格式。
 
 ```cpp
 task<void> BasicLoader::LoadTextureAsync(
@@ -368,7 +368,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-In the previous snippet, the lambda checks to see if the filename has an extension of "dds". If it does, you assume that it is a DDS texture. If not, well, use the Windows Imaging Component (WIC) APIs to discover the format and decode the data as a bitmap. Either way, the result is a [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) bitmap (or an error).
+在先前的程式碼片段中，Lambda 會查看檔案名稱是否包含副檔名 "dds"。 如果包含，假設其為 DDS 紋理。 如果不包含，則使用 Windows 影像處理元件 (WIC) API 來探索格式，並將資料解碼為點陣圖。 無論是何種方法，結果都會是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 點陣圖 (或錯誤)。
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -508,19 +508,19 @@ void BasicLoader::CreateTexture(
 }
 ```
 
-When this code completes, you have a [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) in memory, loaded from an image file. As with meshes, you probably have a lot of them in your game and in any given scene. Consider creating caches for regularly accessed textures per-scene or per-level, rather than loading them all when the game or level starts.
+當此程式碼完成後，您的記憶體中就會有從影像檔載入的 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)。 和網格一樣，您的遊戲和任一個場景中都會包含很多紋理。 請考慮為經常存取的每一場景或每一關卡紋理建立快取，而不要在遊戲或關卡開始時全部載入它們。
 
-(The **CreateDDSTextureFromMemory** method called in the above sample can be explored in full in [Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md).)
+(上述範例中呼叫的 **CreateDDSTextureFromMemory** 方法將在 [DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)中完整探討。)
 
-Also, individual textures or texture "skins" may map to specific mesh polygons or surfaces. This mapping data is usually exported by the tool an artist or designer used to create the model and the textures. Make sure that you capture this information as well when you load the exported data, as you will use it map the correct textures to the corresponding surfaces when you perform fragment shading.
+此外，個別的紋理或紋理「面板」可能會與特定的網格多邊形或表面對應。 此對應資料通常是由美術人員或設計師用來建立模型和紋理的工具所匯出的。 請確定在載入匯出的資料時也會擷取此資訊，因為當您執行片段著色時，將會使用它來對應正確的紋理和對應的表面。
 
-### Loading shaders
+### 載入著色器
 
-Shaders are compiled High Level Shader Language (HLSL) files that are loaded into memory and invoked at specific stages of the graphics pipeline. The most common and essential shaders are the vertex and pixel shaders, which process the individual vertices of your mesh and the pixels in the scene's viewport(s), respectively. The HLSL code is executed to transform the geometry, apply lighting effects and textures, and perform post-processing on the rendered scene.
+著色器是編譯的高階著色器語言 (HLSL) 檔案，它會載入記憶體，並在圖形管線的特定階段叫用。 最常見和基本的著色器是頂點和像素著色器，它們分別會處理網格中的個別頂點和場景檢視區中的像素。 執行 HLSL 程式碼可轉換幾何、套用光源效果與紋理，以及對轉譯的場景執行後續處理。
 
-A Direct3D game can have a number of different shaders, each one compiled into a separate CSO (Compiled Shader Object, .cso) file. Normally, you don't have so many that you need to load them dynamically, and in most cases, you can simply load them when the game is starting, or on a per-level basis (such as a shader for rain effects).
+Direct3D 遊戲可以有數種不同的著色器，每種各編譯成不同的 CSO (編譯的著色器物件，.cso) 檔案。 您的著色器通常不會多到需要動態載入它們，在大多數情況下，您只需要在遊戲開始時或在每個關卡開始時載入它們即可 (像是下雨效果的著色器)。
 
-The code in the **BasicLoader** class provides a number of overloads for different shaders, including vertex, geometry, pixel, and hull shaders. The code below covers pixel shaders as an example. (You can review the complete code in [Complete code for BasicLoader](complete-code-for-basicloader.md).)
+**BasicLoader** 類別中的程式碼為不同的著色器 (包括頂點、幾何、像素和輪廓著色器) 提供數個超載。 下列程式碼以像素著色器為例。 (您可以在 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)中檢視完整的程式碼。)
 
 ```cpp
 concurrency::task<void> LoadShaderAsync(
@@ -548,11 +548,11 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-In this example, you use the **BasicReaderWriter** instance (**m\_basicReaderWriter**) to read in the supplied compiled shader object (.cso) file as a byte stream. Once that task completes, the lambda calls [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) with the byte data loaded from the file. Your callback must set some flag indicating that the load was successful, and your code must check this flag before running the shader.
+在此範例中，您使用 **BasicReaderWriter** 執行個體 (**m\_basicReaderWriter**) 以位元組串流的形式讀取提供的編譯著色器物件 (.cso) 檔案。 在該工作完成後，Lambda 會以從檔案載入的位元組資料呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 您的回呼必須設定一些旗標以指示載入完成，而您的程式碼必須在執行著色器之前檢查此旗標。
 
-Vertex shaders are bit more complex. For a vertex shader, you also load a separate input layout that defines the vertex data. The following code can be used to asynchronously load a vertex shader along with a custom vertex input layout. Be sure that the vertex information that you load from your meshes can be correctly represented by this input layout!
+頂點著色器就比較複雜一些。 在頂點著色器中，您也必須載入定義頂點資料的個別輸入配置。 您可以使用下列程式碼，以非同步方式載入頂點著色器和自訂的頂點輸入配置。 請確定此輸入配置可以正確地呈現您從網格載入的頂點資訊！
 
-Let's create the input layout before you load the vertex shader.
+在載入頂點著色器之前，讓我們先建立輸入配置。
 
 ```cpp
 void BasicLoader::CreateInputLayout(
@@ -592,15 +592,15 @@ void BasicLoader::CreateInputLayout(
 }
 ```
 
-In this particular layout, each vertex has the following data processed by the vertex shader:
+在這個配置中，每個頂點的下列資料是由頂點著色器所處理：
 
--   A 3D coordinate position (x, y, z) in the model's coordinate space, represented as a trio of 32-bit floating point values.
--   A normal vector for the vertex, also represented as three 32-bit floating point values.
--   A transformed 2D texture coordinate value (u, v) , represented as a pair of 32-bit floating values.
+-   模型座標空間中的 3D 座標位置 (x, y, z)，以三個為一組的 32 位元浮點數值表示。
+-   頂點的一般向量，也是以三個 32 位元浮點數值表示。
+-   轉換的 2D 紋理座標值 (u, v)，以一對 32 位元的浮點數值表示。
 
-These per-vertex input elements are called [HLSL semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647), and they are a set of defined registers used to pass data to and from your compiled shader object. Your pipeline runs the vertex shader once for every vertex in the mesh that you've loaded. The semantics define the input to (and output from) the vertex shader as it runs, and provide this data for your per-vertex computations in your shader's HLSL code.
+這些每一頂點的輸入元素稱為 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)，它們是一組定義的登錄，用於傳送資料到您編譯的著色器物件，或從您編譯的著色器物件傳送資料。 您的管線會為您載入的每個網格頂點執行一次頂點著色器。 語意會在頂點著色器執行時定義它的輸入 (和輸出)，並為著色器的 HLSL 程式碼中的每一頂點運算提供此資料。
 
-Now, load the vertex shader object.
+現在，請載入頂點著色器物件。
 
 ```cpp
 concurrency::task<void> LoadShaderAsync(
@@ -685,31 +685,31 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-In this code, once you've read in the byte data for the vertex shader's CSO file, you create the vertex shader by calling [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524). After that, you create your input layout for the shader in the same lambda.
+在此程式碼中，一旦您讀取頂點著色器 CSO 檔案的位元組資料，就會呼叫 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 來建立頂點著色器。 在這之後，您要在相同的 Lambda 中建立著色器的輸入配置。
 
-Other shader types, such as hull and geometry shaders, can also require specific configuration. Complete code for a variety of shader loading methods is provided in [Complete code for BasicLoader](complete-code-for-basicloader.md) and in the [Direct3D resource loading sample]( http://go.microsoft.com/fwlink/p/?LinkID=265132).
+其他著色器類型 (例如輪廓和幾何著色器) 可能也需要進行特定的設定。 在 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)和 [Direct3D 資源載入範例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)中，提供了多種著色器載入方法的完整程式碼。
 
-## Remarks
+## 備註
 
-At this point, you should understand and be able to create or modify methods for asynchronously loading common game resources and assets, such as meshes, textures, and compiled shaders.
+此時，您應該了解並能夠建立或修改非同步載入一般遊戲資源和資產 (如網格、紋理及編譯的著色器) 的方法。
 
-## Related topics
+## 相關主題
 
-* [Direct3D resource loading sample]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
-* [Complete code for BasicLoader](complete-code-for-basicloader.md)
-* [Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)
-* [Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)
-
- 
+* [Direct3D 資源載入範例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)
+* [BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)
+* [DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

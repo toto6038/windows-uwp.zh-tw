@@ -1,131 +1,131 @@
 ---
 author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Best practices for your app's startup performance
-description: Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
+title: "App 啟動效能的最佳做法"
+description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
+ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
 
 ---
-# Best practices for your app's startup performance
+# App 啟動效能的最佳做法
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
+透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 
-## Best practices for your app's startup performance
+## App 啟動效能的最佳做法
 
-In part, users perceive whether your app is fast or slow based on how long it takes to start up. For the purposes of this topic, an app's startup time begins when the user starts the app, and ends when the user can interact with the app in some meaningful way. This section provides suggestions on how to get better performance out of your app when it starts.
+使用者對您 App 回應速度快慢的感受，部分取決於 App 啟動時間的長短。 基於這個主題的目的，App 的啟動時間是從使用者啟動 App 時算起，到使用者可以用一些有意義的方式與 App 互動時為止。 本節提供有關如何在 App 啟動時獲得較佳效能的建議。
 
-### Measuring your app's startup time
+### 評估您 App 的啟動時間
 
-Be sure to start your app a few times before you actually measure its startup time. This gives you a baseline for your measurement and ensures that you're measuring as reasonably short a startup time as possible.
+請務必先啟動 App 幾次，再實際評估其啟動時間。 這將為您的評估提供一個基準，並確保您評估出的啟動時間儘可能在合理的範圍內。
 
-By the time your UWP app arrives on your customers' computers, your app has been compiled with the .NET Native toolchain. .NET Native is an ahead-of-time compilation technology that converts MSIL into natively-runnable machine code. .NET Native apps start faster, use less memory, and use less battery than their MSIL counterparts. Applications built with .NET Native statically link in a custom runtime and the new converged .NET Core that can run on all devices, so they don’t depend on the in-box .NET implementation. On your development machine, by default your app uses .NET Native if you’re building it in “Release” mode, and it uses CoreCLR if you’re building it in “Debug” mode. You can configure this in Visual Studio from the Build page in “Properties” (C#) or Compile->Advanced in "My Project" (VB). Look for a checkbox that says “Compile with .NET Native Toolchain”.
+您的 UWP App 在到達您客戶的電腦上時，已經過「.NET 原生」工具鏈編譯。 「.NET 原生」是一種事先編譯技術，可將 MSIL 轉換成原生可執行機器碼。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。 使用「.NET 原生」建置的應用程式會在自訂執行階段和可於所有裝置上執行的新聚合式「.NET 核心」中以靜態方式連結，因此它們並不依存於附隨的 .NET 實作。 在您的開發電腦上，如果您是以「發行」模式建置您的 App，它預設會使用「.NET 原生」，如果您是以「偵錯」模式建置 App，則它會使用 CoreCLR。 您可以在 Visual Studio 從 \[建置\] 頁面中的 \[屬性\] \(C#\)，或 \[我的專案\] \(VB\) 中的 \[編譯\] -&gt; \[進階\]，進行這項設定。 尋找名為 \[利用 .NET 原生工具鏈進行編譯\] 的核取方塊。
 
-Of course, you should take measurements that are representative of what the end user will experience. So, if you're not sure you're compiling your app to native code on your development machine, you could run the Native Image Generator (Ngen.exe) tool to precompile your app before you measure its startup time.
+當然，您應該進行代表使用者將擁有之體驗的評估。 因此，如果您不確定是否要在開發電腦上將您的 App 編譯成機器碼，您可以先執行「原生映像產生器」(Ngen.exe) 工具來預先編譯 App，再評估其啟動時間。
 
-The following procedure describes how to run Ngen.exe to precompile your app.
+下列程序說明如何執行 Ngen.exe 以重新編譯 app。
 
-**To run Ngen.exe**
+**執行 Ngen.exe**
 
-1.  Run your app at least one time to ensure that Ngen.exe detects it.
-2.  Open the **Task Scheduler** by doing one of the following:
-    -   Search for "Task Scheduler" from the start screen.
-    -   Run "taskschd.msc."
-3.  In the left-hand pane of **Task Scheduler**, expand **Task Scheduler Library**.
-4.  Expand **Microsoft.**
-5.  Expand **Windows.**
-6.  Select **.NET Framework**.
-7.  Select **.NET Framework NGEN 4.x** from the task list.
+1.  至少執行 app 一次，以確保 Ngen.exe 可以偵測到它。
+2.  若要開啟 \[**工作排程器**\]，請執行下列其中一個動作：
+    -   從 \[開始\] 畫面搜尋「工作排程器」。
+    -   執行 "taskschd.msc"。
+3.  在 \[**工作排程器**\] 的左窗格中，展開 \[**工作排程器程式庫**\]。
+4.  展開 \[**Microsoft**\]。
+5.  展開 \[**Windows**\]。
+6.  選取 \[**.NET Framework**\]。
+7.  從工作清單選取 \[**.NET Framework NGEN 4.x**\]。
 
-    If you are using a 64-bit computer, there is also a **.NET Framework NGEN v4.x 64**. If you are building a 64-bit app, select .**NET Framework NGEN v4.x 64**.
+    如果您是使用 64 位元電腦，也有 \[**.NET Framework NGEN v4.x 64**\]。 如果您要建立 64 位元應用程式，請選取 \[**.NET Framework NGEN v4.x 64**\]。
 
-8.  From the **Action** menu, click **Run**.
+8.  從 \[**動作**\] 功能表，按一下 \[**執行**\]。
 
-Ngen.exe precompiles all the apps on the machine that have been used and do not have native images. If there are a lot of apps that need to be precompiled, this can take a long time, but subsequent runs are much faster.
+Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應用程式。 如果有許多需要預先編譯的應用程式，這可能需要花很長的時間，但是後續的執行會快許多。
 
-When you recompile your app, the native image is no longer used. Instead, the app is just-in-time compiled, which means that it is compiled as the app runs. You must rerun Ngen.exe to get a new native image.
+當您重新編譯應用程式時，就不會再使用原生映像。 而是應用程式以 Just-In-Time 的方式編譯，這表示它會在應用程式執行時進行編譯。 您必須重新執行 Ngen.exe 以取得新的原生映像。
 
-### Defer work as long as possible
+### 盡可能將工作延長
 
-To increase your app's startup time, do only the work that absolutely needs to be done to let the user start interacting with the app. This can be especially beneficial if you can delay loading additional assemblies. The common language runtime loads an assembly the first time it is used. If you can minimize the number of assemblies that are loaded, you might be able to improve your app's startup time and its memory consumption.
+若要增加應用程式的啟動時間，請只做絕對必須做的工作，讓使用者開始與應用程式互動。 如果您可以延遲載入其他組件，這將特別實用。 Common Language Runtime 會在第一次使用組件時載入它。 如果您可以將要載入的組件數目減至最少，就可能改善 App 的啟動時間及其記憶體的消耗量。
 
-### Do long-running work independently
+### 讓長時間執行的工作獨立執行
 
-Your app can be interactive even though there are parts of the app that aren't fully functional. For example, if your app displays data that takes a while to retrieve, you can make that code execute independently of the app's startup code by retrieving the data asynchronously. When the data is available, populate the app's user interface with the data.
+即使您的 App 有部分無法完整運作，它仍然可以與使用者互動。 例如，如果應用程式顯示資料時需要一些時間抓取，您可以在不考慮應用程式啟動程式碼的情況下，用非同步的方式抓取資料來執行程式碼。 等到資料可供使用時，再將該資料填入 App 的使用者介面。
 
-Many of the Universal Windows Platform (UWP) APIs that retrieve data are asynchronous, so you will probably be retrieving data asynchronously anyway. For more info about asynchronous APIs, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). If you do work that doesn't use asynchronous APIs, you can use the Task class to do long running work so that you don't block the user from interacting with the app. This will keep your app responsive to the user while the data loads.
+許多抓取資料的「通用 Windows 平台」(UWP) API 都是非同步的，因此無論如何，您可能都會以非同步的方式抓取資料。 如需有關非同步 API 的詳細資訊，請參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。 如果您執行未使用非同步 API 的工作，則可以使用 Task 類別來進行長時間執行的工作，這樣您就不會阻礙使用者與 App 互動。 這將可使 App 在載入資料時，仍然可以回應使用者。
 
-If your app takes an especially long time to load part of its UI, consider adding a string in that area that says something like, "Getting latest data," so that your users know that the app is still processing.
+如果 App 在載入其部分 UI 時花費的時間特別長，請考慮在該部分新增像是「正在取得最新資料」的字串，讓使用者知道應用程式仍然在進行處理。
 
-## Minimize startup time
+## 將啟動時間縮到最短
 
-All but the simplest apps require a perceivable amount of time to load resources, parse XAML, set up data structures, and run logic at activation. Here, we analyze the process of activation by breaking it into three phases. We also provide tips for reducing the time spent in each phase, and techniques for making each phase of your app's startup more palatable to the user.
+除了最簡單的 App 之外，所有 App 在啟用時都需要花費一段時間來載入資源、剖析 XAML、設定資料結構，以及執行邏輯。 在這裡，我們將把啟用程序分成三個階段來加以分析。 此外，我們也會提供縮減每個階段所費時間的祕訣，以及一些可讓 App 的每個啟動階段對使用者來說更為輕鬆愉快的秘訣。
 
-The activation period is the time between the moment a user starts the app and the moment the app is functional. This is a critical time because it’s a user’s first impression of your app. They expect instant and continuous feedback from the system and apps. The system and the app are perceived to be broken or poorly designed when apps don't start quickly. Even worse, if an app takes too long to activate, the Process Lifetime Manager (PLM) might kill it, or the user might uninstall it.
+啟用期間是從使用者啟動 App 到 App 正常運作所經歷的時間。 這段時間非常重要，因為這是使用者對您 App 的第一印象。 使用者會期待從系統和應用程式得到立即和持續的回應。 如果 App 無法快速啟動，使用者便會覺得系統和 App 已損毀或設計不良。 甚至更糟，如果 App 在啟用時花費太長的時間，「處理程序生命週期管理員」(PLM) 可能就會將它刪除，或使用者可能會將它解除安裝。
 
-### Introduction to the stages of startup
+### 啟動階段簡介
 
-Startup involves a number of moving pieces, and all of them need to be correctly coordinated for the best user experience. The following steps occur between your user clicking on your app tile and the application content being shown.
+啟動包含一些活動的片段，必須正確地協調所有這些片段，才能獲得最佳的使用者體驗。 從使用者按一下您的 App 磚到開始顯示應用程式內容之間，會發生下列步驟。
 
--   The Windows shell starts the process and Main is called.
--   The Application object is created.
-    -   (Project template) Constructor calls InitializeComponent, which causes App.xaml to be parsed and objects created.
--   Application.OnLaunched event is raised.
-    -   (ProjectTemplate) App code creates a Frame and navigates to MainPage.
-    -   (ProjectTemplate) Mainpage constructor calls InitializeComponent which causes MainPage.xaml to be parsed and objects created.
-    -   ProjectTemplate) Window.Current.Activate() is called.
--   XAML Platform runs the Layout pass including Measure & Arrange.
-    -   ApplyTemplate will cause control template content to be created for each control, which is typically the bulk of Layout time for startup.
--   Render is called to create visuals for all the window contents.
--   Frame is presented to the Desktop Windows Manager (DWM).
+-   Windows 殼層啟動處理程序，然後 Main 被呼叫。
+-   建立 Application 物件。
+    -   (專案範本) 建構函式呼叫 InitializeComponent，這會導致剖析 App.xaml 並建立物件。
+-   引發 Application.OnLaunched 事件。
+    -   (ProjectTemplate) App 程式碼建立一個 Frame 並瀏覽至 MainPage。
+    -   (ProjectTemplate) MainPage 建構函式呼叫 InitializeComponent，這會導致剖析 MainPage.xaml 並建立物件。
+    -   (ProjectTemplate) 呼叫 Window.Current.Activate()。
+-   「XAML 平台」執行包括 Measure 與 Arrange 的「版面配置」階段。
+    -   ApplyTemplate 會導致為每個控制項建立控制項範本內容，這通常會佔啟動時「版面配置」時間的大部分。
+-   呼叫 Render 來建立所有視窗內容的視覺效果。
+-   對「桌面視窗管理員」(DWM) 呈現 Frame。
 
-### Do less in your Startup path
+### 精簡您啟動路徑中的動作
 
-Keep your startup code path free from anything that is not needed for your first frame.
+讓您的啟動程式碼路徑中不含第一個框架所不需的一切項目。
 
--   If you have user dlls containing controls that are not needed during first frame, consider delay loading them.
--   If you have a portion of your UI dependent on data from the cloud, then split that UI. First, bring up the UI that is not dependent on cloud data and asynchronously bring up the cloud-dependent UI. You should also consider caching data locally so that the application will work offline or not be affected by slow network connectivity.
--   Show progress UI if your UI is waiting for data.
--   Be cautious of app designs that involve a lot of parsing of configuration files, or UI that is dynamically generated by code.
+-   如果您有包含控制項的使用者 dll 是第一個框架期間所不需要的，請考慮延遲載入它們。
+-   如果您的 UI 有部分倚賴來自雲端的資料，則請分割該 UI。 先顯示不依賴雲端資料的 UI，再以非同步方式顯示雲端相依 UI。 您也應該考慮在本機快取資料，以便讓應用程式離線工作，或不受緩慢的網路連線影響。
+-   如果您的 UI 正在等待資料，請顯示進度 UI。
+-   請小心處理涉及許多組態檔剖析的 App 設計，或是由程式碼動態產生的 UI。
 
-### Reduce element count
+### 縮減元素計數
 
-Startup performance in a XAML app is directly correlated to the number of elements you create during startup. The fewer elements you create, the less time your app will take to start up. As a rough benchmark, consider each element to take 1ms to create.
+XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相關。 建立的元素越少，您 App 啟動時所花費的時間將會越短。 做為概略的基準，請將建立每個元素所需花費的時間視為 1 毫秒。
 
--   Templates used in items controls can have the biggest impact, as they are repeated multiple times. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
--   UserControls and control templates will be expanded, so those should also be taken into account.
--   If you create any XAML that does not appear on the screen, then you should justify whether those pieces of XAML should be created during your startup.
+-   項目控制項中所使用範本的影響最大，因為它們會重複很多次。 請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
+-   UserControl 和控制項範本將會擴充，因此也應將這些納入考量。
+-   如果您建立任何不會顯示在螢幕上的 XAML，則您應該要有正當的理由確定這些 XAML 片段是否應該在啟動時建立。
 
-The [Visual Studio Live Visual Tree](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) window shows the child element counts for each node in the tree.
+[Visual Studio 即時視覺化樹狀結構](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)視窗會顯示樹狀結構中每個節點的子元素計數。
 
-![Live visual tree.](images/live-visual-tree.png)
+![即時視覺化樹狀結構。](images/live-visual-tree.png)
 
-**Use x:DeferLoadStrategy**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:DeferLoadStrategy attribute](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**使用 x:DeferLoadStrategy**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:DeferLoadStrategy，您便可延遲載入某個 UI 片段，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例或詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
 
-**Virtualization**. If you have list or repeater content in your UI then it’s highly advised that you use UI virtualization. If list UI is not virtualized then you are paying the cost of creating all the elements up front, and that can slow down your startup. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
+**虛擬化**。 如果您的 UI 中有清單或重複器內容，則強烈建議您使用 UI 虛擬化。 如果不將清單 UI 虛擬化，代價就是會在最前面建立所有元素，而這會導致啟動變慢。 請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 
-Application performance is not only about raw performance, it’s also about perception. Changing the order of operations so that visual aspects occur first will commonly make the user feel like the application is faster. Users will consider the application loaded when the content is on the screen. Commonly, applications need to do multiple things as part of the startup, and not all of that is required to bring up the UI, so those should be delayed or prioritized lower than the UI.
+應用程式效能不僅僅與原始效能相關，也與感受相關。 變更操作順序以讓視覺層面先發生，通常會讓使用者感覺操作速度較快。 當內容出現在螢幕上時，使用者會認為應用程式已載入。 通常，應用程式在啟動過程中需要執行多項作業，但並非所有作業都是顯示 UI 時所需的作業，因此應該將這些作業延遲或將優先順序排在 UI 之後。
 
-This topic talks about the “first frame” which comes from animation/TV, and is a measure of how long until content is seen by the end user.
+本主題討論來自動畫/電視的「第一個畫面」，並且做為要多久時間使用者才會看到內容的一種評估方式。
 
-### Improve startup perception
+### 改善啟動感受
 
-Let’s use the example of a simple online game to identify each phase of startup and different techniques to give the user feedback throughout the process. For this example, the first phase of activation is the time between the user tapping the game’s tile and the game starting to run its code. During this time, the system doesn’t have any content to display to the user to even indicate that the correct game has started. But providing a splash screen gives that content to the system. The game then informs the user that the first phase of activation has completed by replacing the static splash screen with its own UI when it begins running code.
+讓我們使用一個簡單的線上遊戲範例來認明每個啟動階段，並使用不同的技巧在整個過程中持續回應使用者。 就這個範例而言，第一個啟用階段是從使用者點選遊戲的磚到遊戲開始執行其程式碼為止。 在這段期間，系統沒有任何內容可向使用者顯示，甚至無法指出已啟動正確的遊戲。 但是提供啟動顯示畫面即可將該內容提供給系統。 遊戲接著會在開始執行程式碼時，以自己的 UI 取代靜態的啟動顯示畫面，藉此通知使用者第一個啟用階段已經完成。
 
-The second phase of activation encompasses creating and initializing structures critical for the game. If an app can quickly create its initial UI with the data available after the first phase of activation, then the second phase is trivial and you can display the UI immediately. Otherwise we recommend that the app display a loading page while it is initialized.
+第二個啟用階段包括進行遊戲重要結構的建立和初始化。 如果 App 在第一個啟用階段後能夠以可用的資料快速建立其初始 UI，第二個階段就會相當微不足道，而您將可以立即顯示 UI。 否則，我們建議 App 在初始化時顯示載入頁面。
 
-What the loading page looks like is up to you and it can be as simple as displaying a progress bar or a progress ring. The key point is that the app indicates that it is performing tasks before becoming responsive. In the case of the game, it would like to display its initial screen but that UI requires that some images and sounds be loaded from disk into memory. These tasks take a couple of seconds, so the app keeps the user informed by replacing the splash screen with a loading page, which shows a simple animation related to the theme of the game.
+載入頁面的外觀由您決定，它可以簡單到只是顯示一個進度列或進度環。 關鍵點在於讓 App 在產生回應之前指出它正在執行工作。 在遊戲的例子中，雖然遊戲想要顯示初始畫面，但需要從磁碟將一些影像和聲音載入記憶體才能顯示 UI。 這些工作需花費幾秒的時間才能完成，因此 App 會以載入畫面 (顯示與遊戲主題相關的簡單動畫) 取代啟動顯示畫面，讓使用者得知進度。
 
-The third stage begins after the game has a minimal set of info to create an interactive UI, which replaces the loading page. At this point the only info available to the online game is the content that the app loaded from disk. The game can ship with enough content to create an interactive UI; but because it’s an online game it won’t be functional until it connects to the internet and downloads some additional info. Until it has all the info it needs to be functional, the user can interact with the UI, but features that need additional data from the web should give feedback that content is still loading. It may take some time for an app to become fully functional, so it’s important that functionality be made available as soon as possible.
+第三個階段會在遊戲取得建立互動式 UI (將取代載入頁面) 所需的一組最基本資料後開始。 此時，線上遊戲唯一可用的資訊是從磁碟載入的應用程式內容。 遊戲會隨附足夠的內容來建立互動式 UI；不過因為它是線上遊戲，所以必須先連線到網際網路並下載一些額外資訊，才能開始運作。 在它取得運作所需的一切資訊之前，使用者可以與 UI 進行互動，但是需要從網路取得額外資料的功能應該提供回應，讓使用者知道內容仍在載入中。 App 可能需要一些時間才能完整運作，因此儘快提供使用者可用的功能相當重要。
 
-Now that we have identified the three stages of activation in the online game, let’s tie them to actual code.
+現在，我們已指出線上遊戲的三個啟用階段，讓我們將它們與實際程式碼連結在一起。
 
-### Phase 1
+### 階段 1
 
-Before an app starts, it needs to tell the system what it wants to display as the splash screen. It does so by providing an image and background color to the SplashScreen element in an app’s manifest, as in the example. Windows displays this after the app begins activation.
+應用程式啟動前，它需要告知系統要做為啟動顯示畫面的項目。 若要這樣做，請在應用程式資訊清單的 SplashScreen 元素中提供影像和背景色彩，如範例所示。 Windows 會在 App 開始啟用程序後顯示這個畫面。
 
 ```xml
 <Package ...>
@@ -142,13 +142,13 @@ Before an app starts, it needs to tell the system what it wants to display as th
 </Package>
 ```
 
-For more info, see [Add a splash screen](https://msdn.microsoft.com/library/windows/apps/Mt187306).
+如需詳細資訊，請參閱[新增啟動顯示畫面](https://msdn.microsoft.com/library/windows/apps/Mt187306)。
 
-Use the app’s constructor only to initialize data structures that are critical to the app. The constructor is called only the first time the app is run and not necessarily each time the app is activated. For example, the constructor isn't called for an app that has been run, placed in the background, and then activated via the search contract.
+請只使用 App 的建構函式來初始化對應用程式非常重要的資料結構。 只有第一次執行應用程式時需要呼叫建構函式，不需要在每次啟用應用程式時呼叫它。 例如，不會為已執行、置於背景然後透過搜尋協定啟用的應用程式呼叫建構函式。
 
-### Phase 2
+### 階段 2
 
-There are a number of reasons for an app to be activated, each of which you may want to handle differently. You can override [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336), and [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) methods to handle each reason of activation. One of the things that an app must do in these methods is create a UI, assign it to [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), and then call [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). At this point the splash screen is replaced by the UI that the app created. This visual could either be loading screen or the app's actual UI if enough info is available at activation to create it.
+啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) 以及 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051)，然後呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或應用程式實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -263,9 +263,9 @@ There are a number of reasons for an app to be activated, each of which you may 
 > End Class 
 > ```
 
-Apps that display a loading page in the activation handler begin work to create the UI in the background. After that element has been created, its [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) event occurs. In the event handler you replace the window's content, which is currently the loading screen, with the newly created home page.
+在啟用處理常式中顯示載入頁面的應用程式會開始在背景建立 UI。 建立該元素之後，會發生元素的 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件。 在事件處理常式中，您可以將視窗的內容 (目前的載入畫面) 取代成新建立的首頁。
 
-It’s critical that an app with an extended initialization period show a loading page. Aside from providing the user feedback about the activation process, the process will be terminated if [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) is not called within 15 seconds of the start of the activation process.
+對於具有延長式初始化期間的應用程式來說，顯示載入頁面是非常重要的。 除了可提供使用者啟用程序的回應之外，如果在啟用程序開始的 15 秒內未呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)，這個程序就會終止。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -319,51 +319,51 @@ It’s critical that an app with an extended initialization period show a loadin
 > End Class
 > ```
 
-For an example of using extended splash screens, see [Splash screen sample](http://go.microsoft.com/fwlink/p/?linkid=234889).
+如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
 
-### Phase 3
+### 階段 3
 
-Just because the app displayed the UI doesn't mean it is completely ready for use. In the case of our game, the UI is displayed with placeholders for features that require data from the internet. At this point the game downloads the additional data needed to make the app fully functional and progressively enables features as data is acquired.
+應用程式顯示 UI 時並不代表使用者已經可以使用完整的應用程式功能。 以我們的遊戲為例，UI 會與需要從網際網路取得資料的功能預留位置一起顯示。 此時，遊戲會下載讓應用程式可以完整運作所需的額外資料，並透過取得的資料逐漸啟用應用程式功能。
 
-Sometimes much of the content needed for activation can be packaged with the app. Such is the case with a simple game. This makes the activation process quite simple. But many programs (such as news readers and photo viewers) must pull information from the web to become functional. This data can be large and take a fair amount of time to download. How the app gets this data during the activation process can have a huge impact on the perceived performance of an app.
+有時，啟用所需的大多數內容會與應用程式封裝在一起。 簡單的遊戲就是其中一例。 這讓啟用程序變得相當簡單。 但是許多程式 (例如，新聞閱讀程式和相片檢視器) 必須從網路取得資訊才能正常運作。 這個資料可能很大，並且需要花費相當長的時間下載。 應用程式在啟用程序期間取得這個資料的方式會大幅影響使用者對應用程式效能的感受。
 
-You could display a loading page, or worse, a splash screen, for minutes if an app tried to download an entire data set it needs for functionality in phase one or two of activation. This makes an app look like it’s hung or cause it to be terminated by the system. We recommend that an app download the minimal amount of data to show an interactive UI with placeholder elements in phase 2 and then progressively load data, which replaces the placeholder elements, in phase 3. For more info on dealing with data, see [Optimize ListView and GridView](optimize-gridview-and-listview.md).
+如果應用程式嘗試在啟用的階段 1 或 2 下載功能所需的整個資料集，而且應用程式必須顯示長達數分鐘的載入頁面或 (更糟的是) 啟動顯示畫面。 這會讓應用程式看起來像是沒有反應，或是被系統終止。 我們建議 app 在階段 2 中先下載最少的資料量來顯示與預留位置元素一起顯示的互動式 UI，然後在階段 3 中逐漸載入取代預留位置元素的資料。 如需處理資料的詳細資訊，請參閱[最佳化 ListView 與 GridView](optimize-gridview-and-listview.md)。
 
-How exactly an app reacts to each phase of startup is completely up to you, but providing the user as much feedback as possible (splash screen, loading screen, UI while data loads) makes the user feel as though an app, and the system as a whole, are fast.
+app 對每個啟動階段的反應方式完全取決於您，但是請盡可能提供使用者更多回應 (資料載入時的啟動顯示畫面、載入畫面、UI)，這會讓使用者感覺 app 和整個系統執行起來是快速的。
 
-### Minimize managed assemblies in the startup path
+### 將啟動路徑中的 Managed 組件減到最少
 
-Reusable code often comes in the form of modules (DLLs) included in a project. Loading these modules requires accessing the disk, and as you can imagine, the cost of doing so can add up. This has the greatest impact on cold startup, but it can have an impact on warm startup, too. In the case of C# and Visual Basic, the CLR tries to delay that cost as much as possible by loading assemblies on demand. That is, the CLR doesn’t load a module until an executed method references it. So, reference only assemblies that are necessary to the launch of your app in startup code so that the CLR doesn’t load unnecessary modules. If you have unused code paths in your startup path that have unnecessary references, you can move these code paths to other methods to avoid the unnecessary loads.
+可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
-Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) or the [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) to find out what modules are loaded on startup.
+減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
 
-### Make smart web requests
+### 聰明的 Web 要求
 
-You can dramatically improve the loading time of an app by packaging its contents locally, including XAML, images, and any other files important to the app. Disk operations are faster than network operations. If an app needs a particular file at initialization, you can reduce the overall startup time by loading it from disk instead of retrieving it from a remote server.
+您可以透過在本機封裝應用程式內容 (包括 XAML、影像，以及任何其他對應用程式很重要的檔案) 來大幅提升應用程式的載入時間。 磁碟操作的速度比網路操作快。 如果 App 在初始化時需要某個特定的檔案，您可以從磁碟載入 (而不是從遠端伺服器抓取) 該檔案，以減少整體的啟動時間。
 
-## Journal and Cache Pages Efficiently
+## 有效率地記錄日誌和快取頁面
 
-The Frame control provides navigation features. It offers navigation to a Page (Navigate method), navigation journaling (BackStack/ForwardStack properties, GoForward/GoBack method), Page caching (Page.NavigationCacheMode), and serialization support (GetNavigationState method).
+「框架」控制項可提供瀏覽功能。 它提供「頁面」瀏覽 (Navigate 方法)、瀏覽日誌 (BackStack/ForwardStack 屬性、GoForward/GoBack 方法)、「頁面」快取 (Page.NavigationCacheMode)，以及序列化支援 (GetNavigationState 方法)。
 
-The performance to be aware of with Frame is primarily around the journaling and page caching.
+「框架」相關效能方面要注意的主要是圍繞著日誌和頁面快取。
 
-**Frame journaling**. When you navigate to a page with Frame.Navigate(), a PageStackEntry for the current page is added to Frame.BackStack collection. PageStackEntry is relatively small, but there’s no built-in limit to the size of the BackStack collection. Potentially, a user could navigate in a loop and grow this collection indefinitely.
+**框架日誌記錄**。 當您使用 Frame.Navigate() 來瀏覽到頁面時，目前頁面的 PageStackEntry 會被新增到 Frame.BackStack 集合。 PageStackEntry 相對較小，但 BackStack 集合並沒有內建的大小限制。 使用者有可能以迴圈方式瀏覽，而讓這個集合無限地成長。
 
-The PageStackEntry also includes the parameter that was passed to the Frame.Navigate() method. It’s recommended that that parameter be a primitive serializable type (such as an int or string), in order to allow the Frame.GetNavigationState() method to work. But that parameter could potentially reference an object that accounts for more significant amounts of working set or other resources, making each entry in the BackStack that much more expensive. For example, you could potentially use a StorageFile as a parameter, and consequently the BackStack is keeping an indefinite number of files open.
+PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使用基本可序列化類型 (例如整數或字串) 的參數，以便讓 Frame.GetNavigationState() 方法能夠運作。 但該參數有可能參考負責更大量工作集或其他資源的物件，使得 BackStack 中的每個項目更加耗費資源。 例如，您有可能使用 StorageFile 做為參數，因而導致 BackStack 讓不限數目的檔案保持開啟。
 
-Therefore it’s recommended to keep the navigation parameters small, and to limit the size of the BackStack. The BackStack is a standard vector (IList in C#, Platform::Vector in C++/CX), and so can be trimmed simply by removing entries.
+因此，建議您讓瀏覽參數維持在較小的狀態，並限制 BackStack 的大小。 BackStack 是一個標準的向量 (在 C# 中為 IList，在 C++/CX 中為 Platform::Vector)，因此可以藉由移除項目來進行刪減。
 
-**Page caching**. By default, when you navigate to a page with the Frame.Navigate method, a new instance of the page is instantiated. Similarly, if you then navigate back to the previous page with Frame.GoBack, a new instance of the previous page is allocated.
+**頁面快取**。 根據預設，當您使用 Frame.Navigate 方法來瀏覽到頁面時，該頁面的新執行個體將會具現化。 同樣地，如果您接著使用 Frame.GoBack 往回瀏覽到上一頁，就會配置上一頁的新執行個體。
 
-Frame, though, offers an optional page cache that can avoid these instantiations. To get a page put into the cache, use the Page.NavigationCacheMode property. Setting that mode to Required will force the page to be cached, setting it to Enabled will allow it to be cached. By default the cache size is 10 pages, but this can be overridden with the Frame.CacheSize property. All Required pages will be cached, and if there are fewer than CacheSize Required pages, Enabled pages can be cached as well.
+不過，「框架」有提供一個可避免這些具現化的選擇性頁面快取。 若要將頁面放入快取中，請使用 Page.NavigationCacheMode 屬性。 將該模式設定為 Required 會強制快取頁面，將它設定為 Enabled 則可允許快取頁面。 預設的快取大小是 10 頁，但是可以使用 Frame.CacheSize 屬性來覆寫該預設值。 將會快取所有 Required 頁面，如果數量比 CacheSize Required 頁面少，則也可以快取 Enabled 頁面。
 
-Page caching can help performance by avoiding instantiations, and therefore improving navigation performance. Page caching can hurt performance by over-caching and therefore impacting working set.
+頁面快取可藉由避免具現化來協助改善效能，進而提升瀏覽效能。 頁面快取可能因過度快取，進而影響到工作集，而導致效能降低。
 
-Therefore it’s recommend to use page caching as appropriate for your application. For example, say you have an app that shows a list of items in a Frame, and when you tap on an item, it navigates the frame to a detail page for that item. The list page should probably be set to cache. If the detail page is the same for all items, it should probably be cached as well. But if the detail page is more heterogeneous, it might be better to leave caching off.
-
-
+因此，建議針對您的應用程式適當地使用頁面快取。 例如，假設您有一個會在「框架」中顯示項目清單的 App，而當您點選某個項目時，框架會瀏覽到該項目的詳細資料頁面。 清單頁面或許就應該設定為要快取。 如果所有項目的詳細資料頁面都相同，則或許也應該快取該頁面。 但是，如果詳細資料頁面是較異質的頁面，則將快取維持關閉可能較好。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,350 +1,335 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: This article shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.
-title: Manual camera controls for photo and video capture
+description: "本文說明視訊裝置控制項如何啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。"
+title: "相片和視訊擷取的擷取裝置控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
-ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ---
 
-# Manual camera controls for photo and video capture
+# 相片和視訊擷取的擷取裝置控制項
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.
+本文說明視訊裝置控制項如何啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。
 
-The controls discussed in this article are all added to your app using the same pattern. First, check to see if the control is supported on the current device on which your app is running. If the control is supported, set the desired mode for the control. Typically, if a particular control is unsupported on the current device, you should disable or hide the UI element that allows the user to enable the feature.
+本文中討論的控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
-The code in this article was adapted from the [Camera Manual Controls SDK sample](http://go.microsoft.com/fwlink/p/?LinkId=619479). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+本文中的程式碼是從[相機手動控制項 SDK 範例](http://go.microsoft.com/fwlink/?LinkId=619479)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範圍做為自己的 app 起點。
 
-> [!NOTE]
-> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**注意** 本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
-All of the device control APIs discussed in this article are members of the [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) namespace.
+此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空間的成員。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## Exposure
+## 曝光
 
-The [**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) allows you to set the shutter speed used during photo or video capture.
+[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 可讓您設定擷取相片或視訊時使用的快門速度。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure value and a checkbox to toggle automatic exposure adjustment.
+這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光值，以及使用核取方塊來切換自動曝光調整。
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-Check to see if the current capture device supports the **ExposureControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) property. If the control is supported, you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic exposure adjustment is currently active to the value of the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) property.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 屬性以查看目前的擷取裝置是否支援 **ExposureControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動曝光調整的核取方塊的核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 屬性的值。
 
-The exposure value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) properties, which are used to set the corresponding properties of the slider control.
+曝光值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
-Set the slider control's value to the current value of the **ExposureControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **ExposureControl** 目前的值，如此才不會在設定值時觸發事件。
 
 [!code-cs[ExposureControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the exposure value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927).
+在 **ValueChanged** 事件處理常式中，藉由呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927) 來取得控制項目前的值並設定曝光值。
 
 [!code-cs[ExposureSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureSlider)]
 
-In the **CheckedChanged** event handler of the auto exposure checkbox, turn automatic exposure adjustment on or off by calling [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn278920) and passing in a boolean value.
+在自動曝光核取方塊的 **CheckedChanged** 事件處理常式中，藉由呼叫 [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn278920) 並傳入布林值來開啟或關閉自動曝光調整。
 
 [!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
 
-> [!IMPORTANT]
-> Automatic exposure mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on automatic exposure.
+**重要事項** 只有當預覽串流處於執行狀態時，才支援自動曝光模式。 開啟自動曝光之前，請先檢查以確定預覽串流處於執行狀態。
 
-## Exposure compensation
+## 曝光補償
 
-The [**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) allows you to set the exposure compensation used during photo or video capture.
+[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 可讓您設定擷取相片或視訊時使用的曝光補償。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure compensation value.
+這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值。
 
 [!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
 
-Check to see if the current capture device supports the **ExposureCompensationControl** by checking the [Supported](supported-codecs.md) property. If the control is supported, you can show and enable the UI for this feature.
+請檢查 [Supported](supported-codecs.md) 屬性以查看目前的擷取裝置是否支援 **ExposureCompensationControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
 
-The exposure compensation value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) properties, which are used to set the corresponding properties of the slider control.
+曝光補償值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
-Set slider control's value to the current value of the **ExposureCompensationControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **ExposureCompensationControl** 目前的值，如此才不會在設定值時觸發事件。
 
 [!code-cs[EvControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the exposure value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278903).
+在 **ValueChanged** 事件處理常式中，藉由呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278903) 來取得控制項目前的值並設定曝光值。
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## Flash
+## 閃光燈
 
-The [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) allows you to enable or disable the flash or to enable automatic flash, where the system dynamically determines whether to use the flash. This control also allows you to enable automatic red eye reduction on devices that support it. These settings all apply to capturing photos. The [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) is a separate control for turning the torch on or off for video capture.
+[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 可讓您啟用或停用閃光燈，或是啟用自動閃光燈，讓系統自動判斷是否要使用閃光燈。 這個控制項也可讓您在支援自動消除紅眼的裝置上使用該功能。 這些設定全部都可套用至相片擷取。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是個別的控制項，可針對視訊擷取開啟或關閉手電筒。
 
-This example uses a set of radio buttons to allow the user to switch between on, off, and auto flash settings. A checkbox is also provided to allow toggling of red eye reduction and the video torch.
+這個範例使用一組選項按鈕，可讓使用者在開啟、關閉及自動閃光燈設定之間做切換。 此外也提供一個核取方塊，可切換消除紅眼和視訊手電筒。
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) property. If the control is supported, you can show and enable the UI for this feature. If the **FlashControl** is supported, automatic red eye reduction may or may not be supported, so check the [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) property before enabling the UI. Because the **TorchControl** is separate from the flash control, you must also check its [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) property before using it.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 如果支援 **FlashControl**，不一定支援自動消除紅眼，因此在啟用 UI 之前，請先檢查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 屬性。 由於 **TorchControl** 是與閃光燈控制項分開的，因此，使用它之前，也必須先檢查其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 屬性。
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) property to true and the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) property to false.
+在每個閃光燈選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，啟用或停用適當的對應閃光燈設定。 請注意，若要設定為一律使用閃光燈，您必須將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) 屬性設為 true，將 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) 屬性設為 false。
 
 [!code-cs[FlashControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashControl)]
 
 [!code-cs[FlashRadioButtons](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashRadioButtons)]
 
-In the handler for the red eye reduction checkbox, set the [**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) property to the appropriate value.
+在消除紅眼核取方塊的處理常式中，將 [**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) 屬性設定為適當的值。
 
-[!code-cs[RedEye](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
+[!code-cs[紅眼](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
 
-Finally, in the handler for the video torch checkbox, set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) property to the appropriate value.
+最後，在視訊手電筒核取方塊的處理常式中，將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 屬性設定為適當的值。
 
-[!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
+[!code-cs[手電筒](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
-> [!NOTE] 
->  On some devices the torch will not emit light, even if [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) is set to true, unless the device has a preview stream running and is actively capturing video. The recommended order of operations is to turn on the video preview, turn on the torch by setting **Enabled** to true, and then initiate video capture. On some devices the torch will light up after the preview is started. On other devices, the torch may not light up until video capture is started.
+**注意** 在某些裝置上，除非裝置的預覽串流處於執行狀態且正在主動擷取視訊，否則即使將 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 設定為 true，手電筒也不會發光。 建議的操作順序是開啟視訊預覽，接著將 **Enabled** 設定為 true 來開啟手電筒，然後起始視訊擷取。 在某些裝置上，要在啟動預覽後，手電筒才會亮起。 在其他裝置上，則是在啟動視訊擷取後，手電筒才會亮起。
 
-## Focus
+## 對焦
 
-Three different commonly used methods for adjusting the focus of the camera are supported by the [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) object, continuous autofocus, tap to focus, and manual focus. A camera app may support all three of these methods, but for readability, this article discusses each technique separately. This section also discusses how to enable the focus assist light.
+[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 物件支援三種不同的常用方法來調整相機的焦點：連續自動對焦、點選以對焦以及手動對焦。 相機 App 可支援這三種方法全部，但為了方便閱讀起見，本文將分開討論每一種技術。 本節也會討論如何啟用對焦輔助燈。
 
-### Continuous autofocus
+### 連續自動對焦
 
-Enabling continuous autofocus instructs the camera to adjust the focus dynamically to try to keep the subject of the photo or video in focus. This example uses a radio button to toggle continuous autofocus on and off.
+啟用連續自動對焦可指示相機動態調整焦點，以嘗試將焦點對準相片或視訊主體。 這個範例使用選項按鈕來開啟和關閉連續自動對焦。
 
 [!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. Next, determine if continuous autofocus is supported by checking the [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) list to see if it contains the value [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084), and if so, show the continuous autofocus radio button.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 接著，檢查 [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) 清單是否包含 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084) 值以查看是否支援連續自動對焦，如果包含該值，便顯示連續自動對焦選項按鈕。
 
 [!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for the continuous autofocus radio button, use the [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) property to get an instance of the control. Call [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) to unlock the control in case your app has previously called [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) to enable one of the other focus modes.
+在連續自動對焦選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 屬性來取得控制項的執行個體。 呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 來解除鎖定控制項，以防萬一您的 App 先前已呼叫 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 來啟用其中一種其他對焦模式。
 
-Create a new [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) object and set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) property to **Continuous**. Set the [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) property to a value appropriate for your app scenario or selected by the user from your UI. Pass your **FocusSettings** object into the [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) method, and then call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) to initiate continuous autofocus.
+建立一個新的 [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) 物件，然後將 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) 屬性設定為 **Continuous**。 將 [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) 屬性設定為適合您 App 案例的值，或是使用者從您 UI 中選取的值。 將 **FocusSettings** 物件傳遞給 [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 方法，然後呼叫 [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) 來起始連續自動對焦。
 
 [!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
 
-> [!IMPORTANT]
-> Autofocus mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on continuous autofocus.
+**重要事項** 只有當預覽串流處於執行狀態時，才支援自動對焦模式。 開啟連續自動對焦之前，請先檢查以確定預覽串流處於執行狀態。
 
-### Tap to focus
+### 點選以對焦
 
-The tap-to-focus technique uses the [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) and the [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) to specify a subregion of the capture frame where the capture device should focus. The region of focus is determined by the user tapping on the screen displaying the preview stream.
+點選以對焦技術使用 [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 和 [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) 來指定擷取裝置應該對焦的擷取框架子區域。 對焦區域是由使用者在顯示預覽串流的螢幕上點選來決定。
 
-This example uses a radio button to enable and disable tap-to-focus mode.
+這個範例使用選項按鈕來啟用和停用點選以對焦模式。
 
 [!code-xml[TapFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetTapFocusXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. The **RegionsOfInterestControl** must be supported, and must support at least one region, in order to use this technique. Check the [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) and [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) properties to determine whether to show or hide the radio button for tap-to-focus.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 必須支援 **RegionsOfInterestControl** 且必須至少支援一個區域，才能使用這項技術。 檢查 [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) 和 [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) 屬性以判斷是否要顯示或隱藏點選以對焦選項按鈕。
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for the tap-to-focus radio button, use the [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) property to get an instance of the control. Call [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) to lock the control in case your app has previously called [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) to enable continuous autofocus, and then wait for the user to tap the screen to change the focus.
+在點選以對焦選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 屬性來取得控制項的執行個體。 呼叫 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 以將控制項鎖定，以防萬一您的 App 先前已呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 來啟用連續自動對焦。 然後，等候使用者點選螢幕來變更焦點。
 
 [!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
 
-This example focuses on a region when the user taps the screen, and then removes the focus from that region when the user taps again, like a toggle. Use a boolean variable to track the current toggled state.
+這個範例會在使用者點選螢幕時對區域對焦，然後在使用者再次點選時從該區域移除焦點，就像是一種切換。 使用布林值變數來追蹤目前的切換狀態。
 
 [!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
 
-The next step is to listen for the event when the user taps the screen by handling the [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) event of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) that is currently displaying the capture preview stream. If the camera isn't currently previewing, or if tap-to-focus mode is disabled, return from the handler without doing anything.
+下一步是透過處理目前正在顯示擷取預覽串流之 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件，在使用者點選螢幕時接聽事件。 如果相機目前沒有進行預覽，或是點選以對焦模式已停用，則請從處理常式返回而不進行任何動作。
 
-If the tracking variable *\_isFocused* is toggled to false, and if the camera isn't currently in the process of focus (determined by the [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) property of the **FocusControl**), begin the tap-to-focus process. Get the position of the user's tap from the event args passed into the handler. This example also uses this opportunity to pick the size of the region that will be focused upon. In this case, the size is 1/4 of the smallest dimension of the capture element. Pass the tap position and the region size into the **TapToFocus** helper method that is defined in the next section.
+如果將追蹤變數 *_isFocused* 切換為 false，且如果相機目前並未進行對焦 (由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 屬性判斷)，則請開始點選以對焦程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
 
-If the *\_isFocused* toggle is set to true, the user tap should clear the focus from the previous region. This is done in the **TapUnfocus** helper method shown below.
+如果將 *\_isFocused* 切換設定為 true，則使用者點選時，應該會從先前的區域清除焦點。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-In the **TapToFocus** helper method, first set the *\_isFocused* toggle to true so that the next screen tap will release the focus from the tapped region.
+在 **TapToFocus** 協助程式方法中，請先將 *\_isFocused* 切換設定為 true，以便在下次點選螢幕時將焦點從點選的區域釋出。
 
-The next task in this helper method is to determine the rectangle within the preview stream that will be assigned to the focus control. This requires two steps. The first step is to determine the rectangle that the preview stream takes up within the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control. This depends on the dimensions of the preview stream and the orientation of the device. The helper method **GetPreviewStreamRectInControl**, shown at the end of this section, performs this task and returns the rectangle containing the preview stream.
+這個協助程式方法的下一個工作，是要決定位於將被指派給對焦控制項之預覽串流內的矩形。 這需要兩個步驟。 第一個步驟是決定預覽串流在 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項內佔用的矩形。 這取決於預覽串流的尺寸和裝置的方向。 本節結尾顯示的協助程式方法 **GetPreviewStreamRectInControl** 會執行此工作，並傳回包含預覽串流的矩形。
 
-The next task in **TapToFocus** is to convert the tap location and desired focus rectangle size, which were determined within the **CaptureElement.Tapped** event handler, into coordinates within capture stream. The **ConvertUiTapToPreviewRect** helper method, shown later in this section, performs this conversion and returns the rectangle, in capture stream coordinates, where the focus will be requested.
+**TapToFocus** 的下一個工作是將點選位置和所需的焦點矩形大小 (在 **CaptureElement.Tapped** 事件處理常式內判斷) 轉換成擷取串流內的座標。 本節稍後顯示的 **ConvertUiTapToPreviewRect** 協助程式方法會執行這項轉換，然後以擷取串流座標傳回將被要求對焦的矩形。
 
-Now that the target rectangle has been obtained, create a new [**RegionOfInterest**](https://msdn.microsoft.com/library/windows/apps/dn279058) object, setting the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn279062) property to the target rectangle obtained in the previous steps.
+既然已取得目標矩形，請建立一個新 [**RegionOfInterest**](https://msdn.microsoft.com/library/windows/apps/dn279058) 物件，將 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn279062) 屬性設定為在先前步驟中取得的目標矩形。
 
-Get the capture device's [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788). Create a new [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) object and set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608076) and [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) to your desired values, after checking to make sure that they are supported by the **FocusControl**. Call [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) on the **FocusControl** to make your settings active and signal the device to begin focusing on the specified region.
+取得擷取裝置的 [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788)。 建立新的 [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) 物件，並檢查以確定 **FocusControl** 支援 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608076) 和 [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086)，然後將它們設定成您所需的值。 呼叫 **FocusControl** 上的 [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 以讓您的設定生效，並向裝置發出訊號來開始對指定的區域進行對焦。
 
-Next, get the capture device's [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) and call [**SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) to set the active region. Multiple regions of interest can be set on devices that support it, but this example only sets a single region.
+接著，取得擷取裝置的 [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) 並呼叫 [**SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 來設定使用中區域。 如果裝置支援多個感興趣的區域，便可在裝置上設定多個區域，但此範例只設定單一區域。
 
-Finally, call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) on the **FocusControl** to initiate focusing.
+最後，在 **FocusControl** 上呼叫 [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) 來起始對焦。
 
-> [!IMPORTANT]
-> When implementing tap to focus, the order of operations is important. You should call these APIs in the following order:
->
-> 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
-> 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
-> 3. [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+**重要事項** 實作點選以對焦時，作業的程序非常重要。 您應該依照以下順序呼叫這些 API：
+
+**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
+           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
+           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
-In the **TapUnfocus** helper method, obtain the **RegionsOfInterestControl** and call [**ClearRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279068) to clear the region that was registered with the control within the **TapToFocus** helper method. Then, get the **FocusControl** and call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) to cause the device to refocus without a region of interest.
+在 **TapUnfocus** 協助程式方法中，取得 **RegionsOfInterestControl** 並呼叫 [**ClearRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279068) 以清除已向 **TapToFocus** 協助程式方法內的控制項註冊的區域。 然後，取得 **FocusControl** 並呼叫 [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)，讓裝置在不對特定區域對焦的情況下重新對焦。
 
 [!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
 
-The **GetPreviewStreamRectInControl** helper method uses the resolution of the preview stream and the orientation of the device to determine the rectangle within the preview element that contains the preview stream, trimming off any letterboxed padding that the control may provide to maintain the stream's aspect ratio. This method uses class member variables defined in the basic media capture example code found in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
+**GetPreviewStreamRectInControl** 協助程式方法會使用預覽串流的解析度和裝置的方向，來決定包含預覽串流之預覽元素內的矩形，其中會剪除控制項可能提供來維持串流外觀比例的所有上下黑邊的邊框間距。 這個方法會使用在[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中找到的基本媒體擷取範例程式碼中定義的類別成員變數。
 
 [!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
 
-The **ConvertUiTapToPreviewRect** helper method takes as arguments the location of the tap event, the desired size of the focus region, and the rectangle containing the preview stream obtained from the **GetPreviewStreamRectInControl** helper method. This method uses these values and the device's current orientation to calculate the rectangle within the preview stream that contains the desired region. Once again, this method uses class member variables defined in the basic media capture example code found in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+**ConvertUiTapToPreviewRect** 協助程式方法會將點選事件的位置、所需的對焦區域大小，以及包含從 **GetPreviewStreamRectInControl** 協助程式方法取得之預覽串流的矩形，做為引數。 這個方法會使用這些值和裝置的目前方向，來計算包含所需區域的預覽串流內的矩形。 同樣地，這個方法也會使用在[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中找到的基本媒體擷取範例程式碼中定義的類別成員變數。
 
 [!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
 
-### Manual focus
+### 手動對焦
 
-The manual focus technique uses a **Slider** control to set the current focus depth of the capture device. A radio button is used to toggle manual focus on and off.
+手動對焦技術使用 **Slider** 控制項來設定擷取裝置的目前對焦深度。 有一個選項按鈕用來開啟和關閉手動對焦。
 
 [!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) property. If the control is supported, you can show and enable the UI for this feature.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
 
-The focus value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) properties, which are used to set the corresponding properties of the slider control.
+對焦值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
-Set the slider control's value to the current value of the **FocusControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **FocusControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[對焦](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
-In the **Checked** event handler for the manual focus radio button, get the **FocusControl** object and call [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) in case your app had previously unlocked the focus with a call to [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081).
+在手動對焦選項按鈕的 **Checked** 事件處理常式中，取得 **FocusControl** 物件並呼叫[**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075)，以防萬一您的 App 先前已透過呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 將焦點解除鎖定。
 
 [!code-cs[ManualFocusChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetManualFocusChecked)]
 
-In the **ValueChanged** event handler of the manual focus slider, get the current value of the control and the set the focus value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn297828).
+在手動對焦滑桿的 **ValueChanged** 事件處理常式中，藉由呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn297828) 來取得控制項目前的值並設定對焦值。
 
 [!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
 
-### Enable the focus light
+### 啟用對焦燈
 
-On devices that support it, you can enable a focus assist light to help the device focus. This example uses a checkbox to enable or disable the focus assist light.
+在支援對焦輔助燈的裝置上，您可以啟用該功能來協助裝置對焦。 這個範例使用核取方塊來啟用或停用對焦輔助燈。
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. Also check the [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) to make sure the assist light is also supported. If these are both supported, you can show and enable the UI for this feature.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 同時也檢查 [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) 以確定是否也支援輔助燈。 如果兩者都支援，您便可以顯示和啟用此功能的 UI。
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
-In the **CheckedChanged** event handler, get the capture devices [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) object. Set the [**AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) property to enable or disable the focus light.
+在 **CheckedChanged** 事件處理常式中，取得擷取裝置 [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 物件。 設定 [**AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) 屬性以啟用或停用對焦燈。
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
-## ISO speed
+## ISO 速度
 
-The [**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) allows you to set the ISO speed used during photo or video capture.
+[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 可讓您設定擷取相片或視訊時使用的 ISO 速度。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure compensation value and a checkbox to toggle automatic ISO speed adjustment.
+這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的曝光補償值，以及使用核取方塊來切換自動 ISO 速度調整。
 
 [!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
 
-Check to see if the current capture device supports the **IsoSpeedControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) property. If the control is supported, you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic ISO speed adjustment is currently active to the value of the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) property.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) 屬性以查看目前的擷取裝置是否支援 **IsoSpeedControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動 ISO 速度調整的核取方塊核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) 屬性的值。
 
-The ISO speed value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) properties, which are used to set the corresponding properties of the slider control.
+ISO 速度值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
-Set the slider control's value to the current value of the **IsoSpeedControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **IsoSpeedControl** 目前的值，如此才不會在設定值時觸發事件。
 
 [!code-cs[IsoControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the ISO speed value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128).
+在 **ValueChanged** 事件處理常式中，藉由呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) 來取得控制項目前的值並設定 ISO 速度值。
 
 [!code-cs[IsoSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoSlider)]
 
-In the **CheckedChanged** event handler of the auto ISO speed checkbox, turn on automatic ISO speed adjustment by calling [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn608127). Turn automatic ISO speed adjustment off by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) and passing in the current value of the slider control.
+在自動 ISO 速度核取方塊的 **CheckedChanged** 事件處理常式中，藉由呼叫 [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn608127) 來開啟自動 ISO 速度調整。 呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) 並傳入滑桿控制項目前的值，以關閉自動 ISO 速度調整。
 
 [!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
 
-## Optical image stabilization
+## 光學防手震
 
-Optical image stabilization (OIS) stabilizes a the captured video stream by mechanically manipulating the hardware capture device, which can provide a superior result than digital stabilization. On devices that don't support OIS, you can use the VideoStabilizationEffect to perform digital stabilization on your captured vide. For more information, see [Effects for video capture](effects-for-video-capture.md).
+光學防手震 (OIS) 透過機械方式操作硬體擷取裝置，可提供優於數位防手震的結果，進而穩定所擷取的視訊資料流。 在不支援 OIS 的裝置上，您可以使用 VideoStabilizationEffect 對所擷取的視訊執行數位防手震。 如需詳細資訊，請參閱[視訊擷取的效果](effects-for-video-capture.md)。
 
-Determine if OIS is supported on the current device by checking the [**OpticalImageStabilizationControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926689) property.
+檢查 [**OpticalImageStabilizationControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926689) 屬性，以判斷目前的裝置是否支援 OIS。
 
-The OIS control supports three modes: on, off, and automatic, which means that the device dynamically determines if OIS would improve the media capture and, if so, enables OIS. To determine if a particular mode is supported on a device, check to see if the [**OpticalImageStabilizationControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926690) collection contains the desired mode.
+OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動態判斷 OIS 是否可改進媒體擷取，若是可以，則會啟用 OIS。 若要判斷裝置是否支援特定的模式，請查看 [**OpticalImageStabilizationControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926690) 集合是否包含所需的模式。
 
-Enable or disable OIS by setting the [**OpticalImageStabilizationControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926691) to the desired mode.
+將 [**OpticalImageStabilizationControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926691) 設為所需的模式，以啟用或停用 OIS。
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
-## Powerline frequency
-Some camera devices support anti-flicker processing that depends on knowing the AC frequency of the powerlines in the current environment. Some devices support automatic determination of the powerline frequency, while others require that the frequency be set manually. The following code example shows how to determine powerline frequency support on the device and, if needed, how to set the frequency manually. 
+## 白平衡
 
-First, call the **VideoDeviceController** method [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898), passing in an output parameter of type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency); if this call fails, the powerline frequency control is not supported on the current device. If the feature is supported, you can determine if automatic mode is available on the device by trying to set auto mode. Do this by calling [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) and passing in the value **Auto**. If the call succeeds, that means that your auto powerline frequency is supported. If the powerline frequency controller is supported on the device but automatic frequency detection is not, you can still manually set the frequency by using **TrySetPowerlineFrequency**. In this example, **MyCustomFrequencyLookup** is a custom method that you implement to determine the correct frequency for the device's current location. 
+[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
 
-[!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
-
-## White balance
-
-The [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) allows you to set the white balance used during photo or video capture.
-
-This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) control to select from built-in color temperature presets and a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control for manual white balance adjustment.
+這個範例使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 控制項以從內建的色溫預設進行選取，以及使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來進行手動白平衡調整。
 
 [!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
 
-Check to see if the current capture device supports the **WhiteBalanceControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) property. If the control is supported, you can show and enable the UI for this feature. Set the items of the combo box to the values of the [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) enumeration. And set the selected item to the current value of the [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) property.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) 屬性以查看目前的擷取裝置是否支援 **WhiteBalanceControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將下拉式方塊的項目設定為 [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 列舉的值。 並將選取的項目設定為 [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) 屬性目前的值。
 
-For manual control, the white balance value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) properties, which are used to set the corresponding properties of the slider control. Before enabling manual control, check to make sure that the range between the minimum and maximum supported values is greater than the step size. If it is not, manual control is not supported on the current device.
+就手動控制而言，白平衡值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。 啟用手動控制之前，請檢查以確定最小和最大支援值之間的範圍大於分段大小。 如果不是，則表示目前的裝置不支援手動控制。
 
-Set the slider control's value to the current value of the **WhiteBalanceControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **WhiteBalanceControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[WhiteBalance](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
+[!code-cs[白平衡](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event handler of the color temperature preset combo box, get the currently selected preset and set the value of the control by calling [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113). If the selected preset value is not **Manual**, disable the manual white balance slider.
+在色溫預設下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件處理常式中，藉由呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 來取得目前選取的預設並設定控制項的值。 如果選取的預設值不是 **Manual**，則請停用手動白平衡滑桿。
 
 [!code-cs[WhiteBalanceComboBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceComboBox)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the white balance value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927).
+在 **ValueChanged** 事件處理常式中，藉由呼叫 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927) 來取得控制項目前的值並設定白平衡值。
 
 [!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
 
-> [!IMPORTANT]
-> Adjusting the white balance is only supported while the preview stream is running. Check to make sure that the preview stream is running before setting the white balance value or preset.
+**重要事項** 只有當預覽串流處於執行狀態時，才支援調整白平衡。 設定白平衡值或預設之前，請先檢查以確定預覽串流處於執行狀態。
 
-> [!IMPORTANT]
-> The **ColorTemperaturePreset.Auto** preset value instructs the system to automatically adjust the white balance level. For some scenarios, such as capturing a photo sequence where the white balance levels should be the same for each frame, you may want to lock the control to the current automatic value. To do this, call [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) and specify the **Manual** preset and do not set a value on the control using [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114). This will cause the device to lock the current value. Do not attempt to read the current control value and then pass the returned value into **SetValueAsync** because this value is not guaranteed to be correct.
+**重要事項** **ColorTemperaturePreset.Auto** 預設值會指示系統自動調整白平衡層級。 針對某些情況 (例如擷取每個畫面的白平衡層級應該都相同的相片序列)，您可能會想要將控制項鎖定在目前的自動值。 若要這樣做，請呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 並指定 **Manual** 預設，而不要使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 在控制項上設定值。 這會導致裝置鎖定目前的值。 請勿嘗試讀取目前的控制項值，然後將傳回的值傳遞給 **SetValueAsync**，因為這個值不一定是正確的。
 
-## Zoom
+## 縮放
 
-The [**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) allows you to set the zoom level used during photo or video capture.
+[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 可讓您設定擷取相片或視訊時使用的縮放比例。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current zoom level. The following section shows how to adjust zoom based on a pinch gesture on the screen.
+這個範例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控制項來調整目前的縮放比例。 下節將說明如何根據螢幕上的捏合手勢調整縮放。
 
 [!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
 
-Check to see if the current capture device supports the **ZoomControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) property. If the control is supported, you can show and enable the UI for this feature.
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 屬性以查看目前的擷取裝置是否支援 **ZoomControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
 
-The zoom level value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) properties, which are used to set the corresponding properties of the slider control.
+縮放比例值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
-Set the slider control's value to the current value of the **ZoomControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **ZoomControl** 目前的值，如此才不會在設定值時觸發事件。
 
 [!code-cs[ZoomControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomControl)]
 
-In the **ValueChanged** event handler, create a new instance of the [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) class, setting the [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) property to the current value of the zoom slider control. If the [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) property of the **ZoomControl** contains [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), it means the device supports smooth transitions between zoom levels. Since this modes provides a better user experience, you will typically want to use this value for the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) property of the **ZoomSettings** object.
+在 **ValueChanged** 事件處理常式中，建立新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 類別執行個體，將 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 屬性設定為縮放滑桿控制項目前的值。 如果 **ZoomControl** 的 [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) 屬性包含 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，即表示裝置支援在縮放比例之間順暢轉換。 由於這個模式提供較佳的使用者經驗，因此您通常會想要使用這個值做為 **ZoomSettings** 物件的 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 屬性。
 
-Finally, change the current zoom settings by passing your **ZoomSettings** object into the [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) method of the **ZoomControl** object.
+最後，將您的 **ZoomSettings** 物件傳送給 **ZoomControl** 物件的 [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 方法，以變更目前的縮放設定。
 
 [!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
 
-### Smooth zoom using pinch gesture
+### 使用捏合手勢進行平滑變焦
 
-As discussed in the previous section, on devices that support it, smooth zoom mode allows the capture device to smoothly transition between digital zoom levels, allowing the user to dynamically adjust the zoom level during the capture operation without discrete and jarring transitions. This section describes how to adjust the zoom level in response to a pinch gesture.
+如上一節所述，在支援平滑變焦的裝置上，平滑變焦模式可允許擷取裝置在數位縮放比例之間平滑轉換，讓使用者可以在進行擷取操作時動態調整縮放比例，而不會產生不連貫且突兀的轉換。 本節說明如何調整回應捏合手勢的縮放比例。
 
-First, determine if the digital zoom control is supported on the current device by checking the [**ZoomControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) property. Next, determine if smooth zoom mode is available by checking the [**ZoomControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) to see if it contains the value [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726).
+首先，檢查 [**ZoomControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 屬性，以判斷目前的裝置是否支援數位縮放控制項。 接下來，檢查 [**ZoomControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) 來看看它是否包含值 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，以判斷平滑變焦模式是否可用。
 
 [!code-cs[IsSmoothZoomSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsSmoothZoomSupported)]
 
-On a multi-touch enabled device, a typical scenario is to adjust the zoom factor based on a two-finger pinch gesture. Set the [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) property of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control to [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934) to enable the pinch gesture. Then, register for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event which is raised when the pinch gesture changes size.
+在支援多點觸控功能的裝置上，典型的案例是調整以兩指捏合手勢為基礎的縮放係數。 將 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 控制項的 [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) 屬性設為 [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934)，以啟用捏合手勢。 接著，註冊捏合手勢變更大小時引發的 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-In the handler for the **ManipulationDelta** event, update the zoom factor based on the change in the user's pinch gesture. The [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) value represents the change in scale of the pinch gesture such that a small increase in the size of the pinch is a number slightly larger than 1.0 and a small decrease in the pinch size is a number slightly smaller than 1.0. In this example, the current value of the zoom control is multiplied by the scale delta.
+在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
 
-Before setting the zoom factor, you must make sure that the value is not less than the minimum value supported by the device as indicated by the [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) property. Also, make sure that the value is less than or equal to the [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) value. Finally, you must make sure that the the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) property. If your zoom factor does not meet these requirements, an exception will be thrown when you attempt to set the zoom level on the capture device.
+在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放係數是裝置所支援的縮放分段大小的倍數 (以 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 屬性表示)。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
 
-Set the zoom level on the capture device by creating a new [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) object. Set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) property to [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) and then set the [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) property to your desired zoom factor. Finally, call [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) to set the new zoom value on the device. The device will smoothly transition to the new zoom value.
+建立新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 物件，以在擷取裝置上設定縮放比例。 將 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 屬性設為 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，然後將 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 屬性設為所需的縮放係數。 最後，呼叫 [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 以在裝置上設定新的縮放值。 裝置將會順暢地轉換到新的縮放值。
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## Related topics
+## 相關主題
 
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
+* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,37 +1,37 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
-title: Mouse interactions
+Description: "處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。"
+title: "滑鼠互動"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
+ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 ---
 
-# Mouse interactions
+# 滑鼠互動
 
 
-Optimize your Universal Windows Platform (UWP) app design for touch input and get basic mouse support by default.
+針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。
 
  
 
-![mouse](images/input-patterns/input-mouse.jpg)
+![滑鼠](images/input-patterns/input-mouse.jpg)
 
 
 
-Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
+滑鼠輸入最適合在指向及點選方面要求精確的使用者互動。 Windows 的 UI 已針對觸控的不精確本質進行最佳化，可自然地支援這種固有的精確度。
 
-Where mouse and touch input diverge is the ability for touch to more closely emulate the direct manipulation of UI elements through physical gestures performed directly on those objects (such as swiping, sliding, dragging, rotating, and so on). Manipulations with a mouse typically require some other UI affordance, such as the use of handles to resize or rotate an object.
+滑鼠和觸控輸入的區別在於觸控能夠透過直接在這些物件上實際運用手勢 (如撥動、滑動、拖曳、旋轉等等)，在畫面上更仔細地模擬對 UI 元素的直接操作。 使用滑鼠操作通常需要一些其他 UI 能供性，例如使用控制代碼以調整物件大小或旋轉物件。
 
-This topic describes design considerations for mouse interactions.
+這個主題說明滑鼠互動的設計考量。
 
-## The UWP app mouse language
+## UWP app 滑鼠語言
 
 
-A concise set of mouse interactions are used consistently throughout the system.
+一組可用於整個系統的簡單滑鼠互動。
 
 <table>
 <colgroup>
@@ -40,111 +40,111 @@ A concise set of mouse interactions are used consistently throughout the system.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Term</th>
-<th align="left">Description</th>
+<th align="left">詞彙</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Hover to learn</p></td>
-<td align="left"><p>Hover over an element to display more detailed info or teaching visuals (such as a tooltip) without a commitment to an action.</p></td>
+<td align="left"><p>暫留以了解</p></td>
+<td align="left"><p>暫留於某個元素上方可在不進行任何動作下，顯示更詳細的資訊或教學視覺物件 (例如工具提示)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Left-click for primary action</p></td>
-<td align="left"><p>Left-click an element to invoke its primary action (such as launching an app or executing a command).</p></td>
+<td align="left"><p>按滑鼠左鍵以執行主要動作</p></td>
+<td align="left"><p>在元素上按滑鼠左鍵即可叫用它的主要動作 (例如啟動應用程式或執行命令)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Scroll to change view</p></td>
-<td align="left"><p>Display scroll bars to move up, down, left, and right within a content area. Users can scroll by clicking scroll bars or rotating the mouse wheel. Scroll bars can indicate the location of the current view within the content area (panning with touch displays a similar UI).</p></td>
+<td align="left"><p>捲動以變更檢視</p></td>
+<td align="left"><p>顯示捲軸，以在內容區域內上、下、左、右移動。 使用者可以按捲軸或者滾動滑鼠滾輪來進行捲動。 捲軸可以指出目前檢視在內容區域內的位置 (利用觸控進行移動瀏覽會顯示相似的 UI)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Right-click to select and command</p></td>
-<td align="left"><p>Right-click to display the navigation bar (if available) and the app bar with global commands. Right-click an element to select it and display the app bar with contextual commands for the selected element.</p>
+<td align="left"><p>按滑鼠右鍵選取與命令</p></td>
+<td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>Note</strong>  Right-click to display a context menu if selection or app bar commands are not appropriate UI behaviors. But we strongly recommend that you use the app bar for all command behaviors.
+<strong>注意：</strong>如果「選取」或「應用程式列命令」不是適當的 UI 行為，則以按滑鼠右鍵來顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>UI commands to zoom</p></td>
-<td align="left"><p>Display UI commands in the app bar (such as + and -), or press Ctrl and rotate mouse wheel, to emulate pinch and stretch gestures for zooming.</p></td>
+<td align="left"><p>用於縮放的 UI 命令</p></td>
+<td align="left"><p>在應用程式列中顯示 UI 命令 (例如 + 和 -)，或者按 Ctrl 並滾動滑鼠滾輪，以模擬用於縮放的捏合和伸展手勢。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>UI commands to rotate</p></td>
-<td align="left"><p>Display UI commands in the app bar, or press Ctrl+Shift and rotate mouse wheel, to emulate the turn gesture for rotating. Rotate the device itself to rotate the entire screen.</p></td>
+<td align="left"><p>用於旋轉的 UI 命令</p></td>
+<td align="left"><p>在應用程式列中顯示 UI 命令，或者按 Ctrl+Shift 並滾動滑鼠滾輪，以模擬用於旋轉的轉動手勢。 旋轉裝置本身即可旋轉整個螢幕。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Left-click and drag to rearrange</p></td>
-<td align="left"><p>Left-click and drag an element to move it.</p></td>
+<td align="left"><p>按滑鼠左鍵並拖曳以重新排列</p></td>
+<td align="left"><p>按滑鼠左鍵並拖曳元素來移動元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Left-click and drag to select text</p></td>
-<td align="left"><p>Left-click within selectable text and drag to select it. Double-click to select a word.</p></td>
+<td align="left"><p>按滑鼠左鍵並拖曳以選取文字</p></td>
+<td align="left"><p>在可選取的文字內按滑鼠左鍵並拖曳即可選取文字。 按兩下即可選取某個字。</p></td>
 </tr>
 </tbody>
 </table>
 
-## Mouse events
+## 滑鼠事件
 
-Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
 
-Use [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events to implement basic input functionality without having to write code for each pointer input device. However, you can still take advantage of the special capabilities of each device (such as mouse wheel events) using the pointer, gesture, and manipulation events of this object.
+使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件實作基本的輸入功能，不必為每一種指標輸入裝置撰寫程式碼。 不過，您仍然可以透過使用此物件的指標、手勢及操作事件，利用每個裝置的特殊功能 (例如滑鼠滾輪事件)。
 
-**Samples:  **See this functionality in action in our [app samples](http://go.microsoft.com/fwlink/p/?LinkID=264996).
-
-
-- [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-
-- [Input sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-
-- [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
-
-## Guidelines for visual feedback
+**範例：**請參閱 [App 範例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中此功能的執行方式。
 
 
--   When a mouse is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the mouse doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the mouse UI gradually fade away. This keeps the UI clean and uncluttered.
--   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see Cursors below).
--   Don't display visual feedback if an element doesn't support interaction (such as static text).
--   Don't use focus rectangles with mouse interactions. Reserve these for keyboard interactions.
--   Display visual feedback concurrently for all elements that represent the same input target.
--   Provide buttons (such as + and -) for emulating touch-based manipulations such as panning, rotating, zooming, and so on.
+- [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
-For more general guidance on visual feedback, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
+- [輸入範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
+- [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## Cursors
+## 視覺化回饋的指導方針
 
 
-A set of standard cursors is available for a mouse pointer. These are used to indicate the primary action of an element.
+-   偵測到滑鼠時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果滑鼠有一段時間沒有移動，或者使用者起始觸控互動，讓滑鼠 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
+-   請勿為暫留回饋使用游標，元素提供的回饋已經足夠 (請參閱下方的游標說明)。
+-   如果元素不支援互動 (例如靜態文字)，請勿顯示視覺化回饋。
+-   請勿搭配滑鼠互動使用焦點矩形。 請保留這些給鍵盤互動。
+-   如果所有元素均代表相同的輸入目標，請同時顯示視覺化回饋。
+-   提供模擬觸控式操作 (例如移動瀏覽、旋轉、縮放等等) 的按鈕 (例如 + 和 -)。
 
-Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
+如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-If you need to customize the mouse cursor:
 
--   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
--   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
--   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
--   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
--   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
+## 游標
 
-## Related articles
 
-* [Handle pointer input](handle-pointer-input.md)
-* [Identify input devices](identify-input-devices.md)
+我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或 app 可以隨時取代與任何標準游標相關聯的預設影像。 透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
 
-**Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+如果您需要自訂滑鼠游標：
+
+-   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
+-   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
+-   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
+-   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+-   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+
+## 相關文章
+
+* [處理指標輸入](handle-pointer-input.md)
+* [識別輸入裝置](identify-input-devices.md)
+
+**範例**
+* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+**封存範例**
+* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
@@ -156,6 +156,6 @@ If you need to customize the mouse cursor:
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,21 +1,21 @@
 ---
 author: jwmsft
-description: Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
-title: xClass attribute
+description: "設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。"
+title: "x&#58;Class 屬性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 translationtype: Human Translation
-ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
-ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 ---
 
-# x:Class attribute
+# x&#58;Class 屬性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
+設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
 
-## XAML attribute usage
+## XAML 屬性用法
 
 
 ``` syntax
@@ -24,28 +24,28 @@ Configures XAML compilation to join partial classes between markup and code-behi
 </object>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 詞彙 | 說明 |
 |------|-------------|
-| namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
-| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
+| 命名空間 | 選用。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
+| classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
 
-## Remarks
+## 備註
 
-**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a root node, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
+**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 [**頁面**] 建置動作編譯的 XAML 檔案在頁面根目錄或應用程式根目錄以外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
 
-The class used as **x:Class** cannot be a nested class.
+做為 **x:Class** 的類別不可以是巢狀類別。
 
-The value of the **x:Class** attribute must be a string that specifies the fully qualified name of a class. You can omit namespace information so long as that is how the code-behind is structured also (your class definition starts at the class level). The code-behind file for a page or application definition must be within a code file that is included as part of the project. The code-behind class must be public. The code-behind class must be partial.
+**x:Class** 屬性的值，必須是指定類別完整名稱的字串。 只要命名空間資訊是關於程式碼後置如何建構 (而且您的類別定義在該類別層級定義開始)，您就可以省略該資訊。 頁面或應用程式定義的程式碼後置檔案，必須在專案所包含的程式碼檔案中。 程式碼後置類別必須是公開類別。 程式碼後置類別必須是部分類別。
 
-## CLR language rules
+## CLR 語言規則
 
-Although your code-behind file can be a C++ file, there are certain conventions that still follow the CLR language form, so that there is no difference in the XAML syntax. In particular, the separator between the namespace and classname components of any **x:Class** value is always a dot ("."), even though the separator between namespace and classname in the C++ code file associated with the XAML is "::". If you declare nested namespaces in C++, then the separator between the successive nested namespace strings should also be "." rather than "::" when you specify the *namespace* part of the **x:Class** value.
-
-
+雖然您的程式碼後置檔案可能是 C++ 檔案，但某些慣例仍舊依循 CLR 語言格式，因此，在 XAML 語法上並無差異。 特別的是，任何 **x:Class** 值的命名空間與類別名稱元件之間的分隔符號永遠都是點 (".")，雖然在與 XAML 關聯的 C++ 程式碼檔案中，命名空間與類別名稱之間的分隔符號是 "::"。 如果您使用 C++ 宣告巢狀命名空間，則當您指定 **x:Class** 值的 *namespace* 部分時，後續巢狀命名空間字串之間的分隔符號也應該是 "." 而不是 "::"。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

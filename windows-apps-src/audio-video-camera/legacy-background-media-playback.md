@@ -1,130 +1,120 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "本文提供針對使用舊版背景媒體模型進行播放之 app 的支援，以及移轉至新的模型的指導方針。"
-title: "舊版背景媒體播放"
-translationtype: Human Translation
-ms.sourcegitcommit: 545841e00af8324ae023378e666b71ef49a4a3b5
-ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
-
+description: This article provides support for apps using the legacy background media model for playback and provides guidance for migrating to the new model.
+title: Legacy background media playback
 ---
 
-# 舊版背景媒體播放
+# Legacy background media playback
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文說明用來新增 UWP app 背景音訊支援的舊版雙處理序模型。 從 Windows 10 版本 1607 開始，背景音訊的單一處理程序模型變得更容易實作。 如需有關背景音訊目前建議的詳細資訊，請參閱[在背景播放媒體](background-audio.md)。 本文用來提供已使用舊版雙處理序模型開發之 app 的支援。
+This article describes the legacy, two-process model for adding background audio support to your UWP app. Starting with Windows 10, version 1607, a single-process model for background audio that is much simpler to implement. For more information on the current recommendations for background audio, see [Play media in the background](background-audio.md). This article is intended to provide support for apps that are have already been developed using the legacy two-process model.
 
-## 背景音訊架構
+## Background audio architecture
 
-執行背景播放的應用程式包含兩個處理程序。 第一個處理程序是在前景執行的主應用程式，其包含應用程式 UI 和用戶端邏輯。 第二個處理程序是背景播放工作，可如同所有的 UWP app 背景工作一樣實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。 背景工作包含音訊播放邏輯和背景服務。 背景工作會透過系統媒體傳輸控制項與系統進行通訊。
+An app performing background playback consists of two processes. The first process is the main app, which contains the app UI and client logic, running in the foreground. The second process is the background playback task, which implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) like all UWP app background tasks. The background task contains the audio playback logic and background services. The background task communicates with the system through the System Media Transport Controls.
 
-下圖是系統設計方式的概觀。
+The following diagram is an overview of how the system is designed.
 
-![Windows 10 背景音訊架構](images/backround-audio-architecture-win10.png)
+![windows 10 background audio architecture](images/backround-audio-architecture-win10.png)
 ## MediaPlayer
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 app 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
+The [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespace contains APIs used to play audio in the background. There is a single instance of [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) per app through which playback occurs. Your background audio app calls methods and sets properties on the **MediaPlayer** class to set the current track, start playback, pause, fast forward, rewind, and so on. The media player object instance is always accessed through the [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) property.
 
-## MediaPlayer Proxy 和虛設常式
+## MediaPlayer Proxy and Stub
 
-從 app 的背景處理程序存取 **BackgroundMediaPlayer.Current** 時，**MediaPlayer** 執行個體會在背景工作主機中啟動並可直接進行操作。
+When **BackgroundMediaPlayer.Current** is accessed from your app's background process, the **MediaPlayer** instance is activated in the background task host and can be manipulated directly.
 
-從前景 app 存取 **BackgroundMediaPlayer.Current** 時，傳回的 **MediaPlayer** 執行個體實際上是與背景處理程序中的虛設常式進行通訊的 Proxy。 這個虛設常式會與實際 **MediaPlayer** 執行個體進行通訊，該執行個體也裝載在背景處理程序中。
+When **BackgroundMediaPlayer.Current** is accessed from the foreground application, the **MediaPlayer** instance that is returned is actually a proxy that communicates with a stub in the background process. This stub communicates with the actual **MediaPlayer** instance, which is also hosted in the background process.
 
-前景和背景處理程序兩者都可以存取 **MediaPlayer** 執行個體的大部分屬性，但 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 和 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 除外，它們只能從背景處理程序存取。 前景 app 和背景處理程序兩者都可以收到媒體特定事件的通知，如 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603) 及 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606)。
+Both the foreground and background process can access most of the properties of the **MediaPlayer** instance, with the exception of [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) and [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) which can only be accessed from the background process. The foreground app and the background process can both receive notifications of media-specific events like [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609), [**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603), and [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606).
 
-## 播放清單
+## Playback Lists
 
-背景音訊 App 的常見案例就是連續播放多個項目。 此案例最容易在您的背景處理程序中使用 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 物件完成，而將該物件指派給 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 屬性，即可在 **MediaPlayer** 上將它設為來源。
+A common scenario for background audio applications is to play multiple items in a row. This is most easily accomplished in your background process by using a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) object, which can be set as a source on the **MediaPlayer** by assigning it to the [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property.
 
-不可能從在背景處理程序中設定的前景處理程序存取 **MediaPlaybackList**。
+It is not possible to access a **MediaPlaybackList** from the foreground process that was set in the background process.
 
-## 系統媒體傳輸控制項
+## System Media Transport Controls
 
-使用者不需直接使用 App 的 UI，即可透過藍牙裝置、SmartGlass 和系統媒體傳輸控制項來控制音訊播放。 您的背景工作會使用 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別，訂閱這些使用者起始的系統事件。
+A user may control audio playback without directly using your app's UI through means such as Bluetooth devices, SmartGlass, and the System Media Transport Controls. Your background task uses the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) class to subscribe to these user-initiated system events.
 
-若要在背景處理程序中取得 **SystemMediaTransportControls** 執行個體，請使用 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 屬性。 前景 app 可藉由呼叫 [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 來取得此類別的執行個體，但傳回的執行個體是與背景工作無關的僅限前景執行個體。
+To get a **SystemMediaTransportControls** instance from within the background process, use the [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) property. Foreground apps get an instance of the class by calling [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), but the instance returned is a foreground-only instance that does not relate to the background task.
 
-## 在工作間傳送訊息
+## Sending Messages Between Tasks
 
-有時候，您會想在背景音訊 app 的兩個處理程序間進行通訊。 例如，開始播放新曲目時，您可能希望背景工作通知前景工作，然後將新的歌曲標題傳送到前景工作以顯示在畫面上。
+There are times when you will want to communicate between the two processes of a background audio app. For example, you might want the background task to notify the foreground task when a new track starts playing, and then send the new song title to the foreground task to display on the screen.
 
-簡單的通訊機制可同時在前景和背景處理程序中引發事件。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法會個別叫用對應處理程序中的事件。 訂閱 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件，可以接收訊息。
+A simple communication mechanism raises events in both the foreground and background processes. The [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) and [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) methods each invoke events in the corresponding process. Messages can be received by subscribing to the [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) and [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) events.
 
-資料可以做為引數傳遞至傳送訊息方法，然後再傳入收到訊息事件處理常式。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別傳遞資料。 此類別是一個字典，其中包含的字串為索引鍵，而其他值類型則是值。 您可以傳送簡易的值類型，例如整數、字串和布林值。
+Data can be passed as an argument to the send message methods that are then passed into the message received event handlers. Pass data using the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) class. This class is a dictionary that contains a string as a key and other value types as values. You can pass simple value types such as integers, strings, and booleans.
 
-## 背景工作週期
+## Background Task Life Cycle
 
-背景工作的存留期與 App 的目前播放狀態有很緊密的關係。 例如，當使用者暫停音訊播放時，系統可能會根據情況終止或取消您的 App。 在一段沒有音訊播放的時間之後，系統可能會自動關閉背景工作。
+The lifetime of a background task is closely tied to your app's current playback status. For example, when the user pauses audio playback, the system may terminate or cancel your app depending on the circumstances. After a period of time without audio playback, the system may automatically shut down the background task.
 
-[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息的處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
+The [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method is called the first time your app accesses either [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) from code running in the foreground app or when you register a handler for the [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) event, whichever occurs first. It is recommended that you register for the message received handler before calling **BackgroundMediaPlayer.Current** for the first time so that the foreground app doesn't miss any messages sent from the background process.
 
-若要讓背景工作持續執行，您的 app 必須在 **Run** 方法中要求 [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，並在工作執行個體收到 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) 或 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) 事件時呼叫 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 不要在 **Run** 方法中執行迴圈或等待，因為這樣會消耗資源，而且可能導致系統終止 app 的背景工作。
+To keep the background task alive, your app must request a [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) from within the **Run** method and call [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) when the task instance receives the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) or [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) events. Do not loop or wait in the **Run** method because this consumes resources and may cause your app's background task to be terminated by the system.
 
-當 **Run** 方法完成且沒有要求延遲時，您的背景工作會取得 **Completed** 事件。 在某些情況下，當您的 app 取得 **Canceled** 事件時，稍後也可能會收到 **Completed** 事件。 執行 **Run** 時，您的工作可能會收到 **Canceled** 事件，所以請務必管理此潛在的同時發生情形。
+Your background task gets the **Completed** event when the **Run** method is completed and deferral is not requested. In some cases, when your app gets the **Canceled** event, it can be also followed by the **Completed** event. Your task may receive a **Canceled** event while **Run** is executing, so be sure to manage this potential concurrence.
 
-可能會取消背景工作的情況包含：
+Situations in which the background task can be cancelled include:
 
--   具備音訊播放功能的新 App 會在強制執行專屬性子原則的系統上啟動。 請參閱下面[背景音訊工作存留期的系統原則](#system-policies-for-background-audio-task-lifetime)一節。
+-   A new app with audio playback capabilities starts on systems that enforce the exclusivity sub-policy. See the [System policies for background audio task lifetime](#system-policies-for-background-audio-task-lifetime) section below.
 
--   背景工作已啟動但尚未播放音樂，然後前景應用程式就暫停。
+-   A background task has been launched but music is not yet playing, and then the foreground app is suspended.
 
--   其他媒體中斷，例如來電或 VoIP 通話。
+-   Other media interruptions, such as incoming phone calls or VoIP calls.
 
-可能未經通知即終止背景工作的情況包含：
+Situations in which the background task can be terminated without notice include:
 
--   VoIP 通話到來，而系統上沒有足夠的可用記憶體可讓背景工作持續執行。
+-   A VoIP call comes in and there is not enough available memory on the system to keep the background task alive.
 
--   違反資源原則。
+-   A resource policy is violated.
 
--   工作取消或完成沒有正常結束。
+-   Task cancellation or completion does not end gracefully.
 
-## 背景音訊工作存留期的系統原則
+## System policies for background audio task lifetime
 
-下列原則有助於判斷系統如何管理背景音訊工作的存留期。
+The following policies help determine how the system manages the lifetime of background audio tasks.
 
-### 專屬性
+### Exclusivity
 
-若已啟用，這個子原則會限制任何指定時間的背景音訊工作數目最多為 1。 它已在行動裝置和其他非桌上型電腦 SKU 上啟用。
+If enabled, this sub-policy limits the number of background audio tasks to be at most 1 at any given time. It is enabled on Mobile and other non-Desktop SKUs.
 
-### 閒置逾時
+### Inactivity Timeout
 
-由於資源限制，系統可能會在一段閒置時間之後終止您的背景工作。
+Due to resource constraints, the system may terminate your background task after a period of inactivity.
 
-如果符合下列兩個條件，背景工作會被視為「非使用中」：
+A background task is considered “inactive” if both of the following conditions are met:
 
--   看不見前景處理程序 (已暫停或已終止)。
+-   The foreground app is not visible (it is suspended or terminated).
 
--   背景媒體播放程式不在播放狀態中。
+-   The background media player is not in the playing state.
 
-如果這些條件都已符合，則背景媒體系統原則會啟動計時器。 如果在計時器到期時兩個條件均未變更，則背景媒體系統原則會終止背景工作。
+If both of these conditions are satisfied, the background media system policy will start a timer. If neither condition has changed when the timer expires, the background media system policy will terminate the background task.
 
-### 共用的存留期
+### Shared Lifetime
 
-若已啟用，這個子原則會強制背景工作相依於前景工作的存留期。 如果使用者或系統已關閉前景工作，則背景工作也會關閉。
+If enabled, this sub-policy forces the background task to be dependent on the lifetime of the foreground task. If the foreground task is shut down, either by the user or the system, the background task will also shut down.
 
-不過，請注意這不表示前景相依於背景。 如果背景工作已關閉，這不會強制關閉前景工作。
+However, note that this does not mean that the foreground is dependent on the background. If the background task is shut down, this does not force the foreground task to shut down.
 
-下表列出各裝置類型上會強制執行的原則。
+The following table lists the which policies are enforced on which device types.
 
-| 子原則             | 桌上型電腦  | 行動裝置版   | 其他    |
+| Sub-policy             | Desktop  | Mobile   | Other    |
 |------------------------|----------|----------|----------|
-| **專屬性**        | 已停用 | 已啟用  | 已啟用  |
-| **閒置逾時** | 已停用 | 已啟用  | 已停用 |
-| **共用的存留期**    | 已啟用  | 已停用 | 已停用 |
+| **Exclusivity**        | Disabled | Enabled  | Enabled  |
+| **Inactivity Timeout** | Disabled | Enabled  | Disabled |
+| **Shared Lifetime**    | Enabled  | Disabled | Disabled |
 
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

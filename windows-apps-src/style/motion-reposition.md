@@ -1,44 +1,44 @@
 ---
 author: mijacobs
-Description: Use the reposition animation to move an element or elements into a new position.
-title: Reposition animations in UWP apps
+Description: "使用重新定位動畫將單一元素或多個元素移入新位置。"
+title: "UWP app 中的重新定位動畫"
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 38c3cb8a31708722bb207f2ad39b073262c6ce6f
+ms.openlocfilehash: ba8679a5f06895cef52cbc229f4487997a17bf35
 
 ---
 
-# Reposition animations
+# 重新定位動畫
 
 
 
 
-Use the reposition animation to move an element or elements into a new position.
+使用重新定位動畫將單一元素或多個元素移入新位置。
 
-**Important APIs**
+**重要 API**
 
--   [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
--   [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
-
-
-## Do's and don'ts
+-   [**RepositionThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210421)
+-   [**RepositionThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
--   If you're showing or hiding edge-based UI, use [edge-based UI animations](motion-edgebased.md). Edge-based UI is an element or container that is anchored at one edge of the screen.
+## 可行與禁止事項
 
 
-## Related articles
+-   如果您要顯示或隱藏以邊緣為基礎的 UI，使用[以邊緣為基礎的 UI 動畫](motion-edgebased.md)。 以邊緣為基礎的 UI 是錨定在螢幕上某一個邊緣的元素或容器。
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating repositions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
-* [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
+## 相關文章
+
+
+**適用於開發人員 (XAML)**
+* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [讓重新定位產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**RepositionThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210421)
+* [**RepositionThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
  
@@ -49,6 +49,6 @@ Use the reposition animation to move an element or elements into a new position.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,41 +1,41 @@
 ---
-title: Intro to certificates
-description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
+title: "憑證簡介"
+description: "本文討論通用 Windows 平台 (UWP) app 的憑證用法。"
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: e46d31e2f90b9336ea19632099741c1957521578
+ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
 
 ---
 
-# Intro to certificates
+# 憑證簡介
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article discusses the use of certificates in Universal Windows Platform (UWP) apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy.
+本文討論通用 Windows 平台 (UWP) app 的憑證用法。 數位憑證用於公開金鑰密碼編譯，將公開金鑰繫結至個人、電腦或組織。 這種繫結身分常被用來在實體之間互相驗證。 例如，憑證通常是用來向使用者驗證網頁伺服器，或是向網頁伺服器驗證使用者。 您可以建立憑證要求並安裝或匯入已發出的憑證。 您也可以在憑證階層中註冊憑證。
 
-### Shared certificate stores
+### 共用的憑證存放區
 
-UWP apps use the new isolationist application model introduced in Windows 8. In this model, apps run in low-level operating system construct, called an app container, that prohibits the app from accessing resources or files outside of itself unless explicitly permitted to do so. The following sections describe the implications this has on public key infrastructure (PKI).
+UWP app 使用 Windows 8 引進的新 Isolationist 應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
 
-### Certificate storage per app container
+### 每一個 app 容器有一個憑證存放區
 
-Certificates that are intended for use in a specific app container are stored in per user, per app container locations. An app running in an app container has write access to only its own certificate storage. If the application adds certificates to any of its stores, these certificates cannot be read by other apps. If an app is uninstalled, any certificates specific to it are also removed. An app also has read access to local machine certificate stores other than the MY and REQUEST store.
+打算在特定應用程式容器中使用的憑證是儲存在每個使用者的每個應用程式容器位置。 在應用程式容器中執行的應用程式只擁有對本身憑證存放區的寫入權限。 如果應用程式將憑證新增到它的任何存放區，則其他應用程式無法讀取這些憑證。 解除安裝應用程式之後，也會移除應用程式專用的任何憑證。 除了 MY 和 REQUEST 存放區之外，應用程式也擁有本機電腦憑證存放區的讀取權限。
 
-### Cache
+### 快取
 
-Each app container has an isolated cache in which it can store issuer certificates needed for validation, certificate revocation lists (CRL), and online certificate status protocol (OCSP) responses.
+每個應用程式容器有一個隔離的快取，其中可以儲存驗證所需的簽發者憑證、憑證撤銷清單 (CRL) 以及線上憑證狀態通訊協定 (OCSP) 回應。
 
-### Shared certificates and keys
+### 共用的憑證和金鑰
 
-When a smart card is inserted into a reader, the certificates and keys contained on the card are propagated to the user MY store where they can be shared by any full-trust application the user is running. By default, however, app containers do not have access to the per user MY store.
+當智慧卡插入讀卡機時，卡片中的憑證和金鑰會傳輸至使用者 MY 存放區，讓使用者執行的任何完全信任應用程式可以共用憑證和金鑰。 不過根據預設，應用程式容器無權使用每個使用者的 MY 存放區。
 
-To address this issue and enable groups of principals to access groups of resources, the app container isolation model supports the capabilities concept. A capability allows an app container process to access a specific resource. The sharedUserCertificates capability grants an app container read access to the certificates and keys contained in the user MY store and the Smart Card Trusted Roots store. The capability does not grant read access to the user REQUEST store.
+為了解決這個問題以及讓主體群組可以存取資源群組，應用程式容器隔離模型支援功能概念。 功能可以讓應用程式容器處理程序存取特定的資源。 sharedUserCertificates 功能會授權應用程式容器讀取使用者 MY 存放區以及智慧卡信任根目錄存放區中的憑證和金鑰。 這個功能不會授與使用者 REQUEST 存放區的讀取權限。
 
-You specify the sharedUserCertificates capability in the manifest as shown in the following example.
+如下列範例所示，您可以在資訊清單中指定 sharedUserCertificates 功能。
 
 ```xml
 <Capabilities>
@@ -43,63 +43,63 @@ You specify the sharedUserCertificates capability in the manifest as shown in th
 </Capabilities>
 ```
 
-## Certificate fields
+## 憑證欄位
 
 
-The X.509 public key certificate standard has been revised over time. Each successive version of the data structure has retained the fields that existed in the previous versions and added more, as shown in the following illustration.
+X.509 公開金鑰憑證標準已隨著時間不斷修訂。 每個後續的資料結構版本都保留了舊版中的現有欄位，並新增更多欄位，如下圖所示。
 
-![x.509 certificate versions 1, 2, and 3](images/x509certificateversions.png)
+![x.509 憑證版本 1、2 及 3](images/x509certificateversions.png)
 
-Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
+部分欄位和延伸可以在使用 [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) 類別建立憑證要求時直接指定。 但大部分無法直接指定。 這些欄位可由發行授權單位填寫或留白。 如需欄位的詳細資訊，請參閱下列各節：
 
-### Version 1 fields
+### 版本 1 欄位
 
-| Field               | Description                                                                                                                                                                                                                                                                 |
+| 欄位               | 說明                                                                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Version             | Specifies the version number of the encoded certificate. Currently, the possible values of this field are 0, 1, or 2.                                                                                                                                                       |
-| Serial Number       | Contains a positive, unique integer assigned by the certification authority (CA) to the certificate.                                                                                                                                                                        |
-| Signature Algorithm | Contains an object identifier (OID) that specifies the algorithm used by the CA to sign the certificate. For example, 1.2.840.113549.1.1.5 specifies a SHA-1 hashing algorithm combined with the RSA encryption algorithm from RSA Laboratories.                            |
-| Issuer              | Contains the X.500 distinguished name (DN) of the CA that created and signed the certificate.                                                                                                                                                                               |
-| Validity            | Specifies the time interval during which the certificate is valid. Dates through the end of 2049 use the Coordinated Universal Time (Greenwich Mean Time) format (yymmddhhmmssz). Dates beginning with January 1st, 2050 use the generalized time format (yyyymmddhhmmssz). |
-| Subject             | Contains an X.500 distinguished name of the entity associated with the public key contained in the certificate.                                                                                                                                                             |
-| Public Key          | Contains the public key and associated algorithm information.                                                                                                                                                                                                               |
+| 版本             | 指定編碼憑證的版本編號。 目前，此欄位可以接受的值為 0、1 或 2。                                                                                                                                                       |
+| 序號       | 包含一個由憑證授權單位 (CA) 指派給憑證的唯一正整數。                                                                                                                                                                        |
+| 簽章演算法 | 包含一個物件識別碼 (OID)，指定 CA 用來簽署憑證時使用的演算法。 例如，1.2.840.113549.1.1.5 指定 SHA-1 雜湊演算法結合來自 RSA Laboratories 制定的 RSA 加密演算法。                            |
+| 簽發者              | 包含建立並簽署憑證之 CA 的 X.500 辨別名稱 (DN)。                                                                                                                                                                               |
+| 有效性            | 指定憑證有效的時間間隔。 直至 2049 年底的日期都使用國際標準時間 (格林威治標準時間) 格式 (yymmddhhmmssz)。 從 2050 年 1 月 1 日開始的日期則使用一般時間格式 (yyyymmddhhmmssz)。 |
+| 主體             | 包含實體的 X.500 辨別名稱，該實體與憑證中包含的公開金鑰相關聯。                                                                                                                                                             |
+| 公開金鑰          | 包含公開金鑰和相關聯的演算法資訊。                                                                                                                                                                                                               |
 
  
 
-### Version 2 fields
+### 版本 2 欄位
 
-An X.509 version 2 certificate contains the basic fields defined in version 1 and adds the following fields.
+X.509 版本 2 憑證包含版本 1 中定義的基本欄位，並新增下列欄位。
 
-| Field                     | Description                                                                                                                                         |
+| 欄位                     | 說明                                                                                                                                         |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Issuer Unique Identifier  | Contains a unique value that can be used to make the X.500 name of the CA unambiguous when reused by different entities over time.                  |
-| Subject Unique Identifier | Contains a unique value that can be used to make the X.500 name of the certificate subject unambiguous when reused by different entities over time. |
+| 簽發者唯一識別碼  | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用 CA 時，清楚識別該 CA 的 X.500 名稱。                  |
+| 主體唯一識別碼 | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用憑證主體時，清楚識別該憑證主體的 X.500 名稱。 |
  
 
-### Version 3 extensions
+### 版本 3 延伸
 
-An X.509 version 3 certificate contains the fields defined in version 1 and version 2 and adds certificate extensions.
+X.509 版本 3 憑證包含版本 1 和版本 2 中定義的欄位，並新增憑證延伸。
 
-| Field                        | Description                                                                                                                                                                                              |
+| 欄位                        | 說明                                                                                                                                                                                              |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authority Key Identifier     | Identifies the certification authority (CA) public key that corresponds to the CA private key used to sign the certificate.                                                                              |
-| Basic Constraints            | Specifies whether the entity can be used as a CA and, if so, the number of subordinate CAs that can exist beneath it in the certificate chain.                                                           |
-| Certificate Policies         | Specifies the policies under which the certificate has been issued and the purposes for which it can be used.                                                                                            |
-| CRL Distribution Points      | Contains the URI of the base certificate revocation list (CRL).                                                                                                                                          |
-| Enhanced Key Usage           | Specifies the manner in which the public key contained in the certificate can be used.                                                                                                                   |
-| Issuer Alternative Name      | Specifies one or more alternative name forms for the issuer of the certificate request.                                                                                                                  |
-| Key Usage                    | Specifies restrictions on the operations that can be performed by the public key contained in the certificate.                                                                                           |
-| Name Constraints             | Specifies the namespace within which all subject names in a certificate hierarchy must be located. The extension is used only in a CA certificate.                                                       |
-| Policy Constraints           | Constrains path validation by prohibiting policy mapping or by requiring that each certificate in the hierarchy contain an acceptable policy identifier. The extension is used only in a CA certificate. |
-| Policy Mappings              | Specifies the policies in a subordinate CA that correspond to policies in the issuing CA.                                                                                                                |
-| Private Key Usage Period     | Specifies a different validity period for the private key than for the certificate with which the private key is associated.                                                                             |
-| Subject Alternative Name     | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs.                           |
-| Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs.                                                              |
-| Subject Key Identifier       | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key.                                                                   |
+| 授權單位金鑰識別元     | 識別憑證授權單位 (CA) 公開金鑰，這個金鑰會對應到用來簽署憑證的 CA 私密金鑰。                                                                              |
+| 基本限制            | 指定實體是否可以用來做為 CA，如果可以，可以存在於憑證鏈結中該 CA 下方的次級 CA 數目。                                                           |
+| 憑證原則         | 指定簽發憑證的原則和憑證的用途。                                                                                            |
+| CRL 發佈點      | 包含基本憑證撤銷清單 (CRL) 的 URI。                                                                                                                                          |
+| 增強金鑰使用方法           | 指定憑證所含公開金鑰的使用方法。                                                                                                                   |
+| 簽發者別名      | 針對憑證要求的簽發者指定一或多個別名形式。                                                                                                                  |
+| 金鑰使用方法                    | 指定憑證中所含公開金鑰可以執行的操作限制。                                                                                           |
+| 名稱限制             | 指定憑證階層中所有主體名稱必須放置的命名空間。 這個延伸只能用於一個 CA 憑證中。                                                       |
+| 原則限制           | 透過禁止原則對應，或是要求階層中的每個憑證包含可接受的原則識別碼來限制路徑驗證。 這個延伸只能用於一個 CA 憑證中。 |
+| 原則對應              | 指定次級 CA 中的原則，這個次級 CA 會對應到發行 CA 中的原則。                                                                                                                |
+| 私密金鑰使用期限     | 指定私密金鑰的有效期間，且要與該私密金鑰相關聯憑證不同的有效期間。                                                                             |
+| 主體別名     | 針對憑證要求的主體指定一或多個別名形式。 別名形式範例包含電子郵件地址、DNS 名稱、IP 位址及 URI。                           |
+| 主體目錄屬性 | 傳遞身分識別屬性，例如憑證主體的國籍。 延伸值是 OID 值配對的序列。                                                              |
+| 主體金鑰識別碼       | 區別憑證主體持有的多個公開金鑰。 延伸值通常是金鑰的 SHA-1 雜湊。                                                                   |
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

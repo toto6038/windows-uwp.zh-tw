@@ -1,134 +1,134 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Use visual feedback to show users when their interactions with a Windows Store app are detected, interpreted, and handled.
-title: Visual feedback
+Description: "使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們與 Windows 市集應用程式的互動。"
+title: "視覺化回饋"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
+ms.openlocfilehash: 2bf873f35192c20f15c6cb445b6be6436354c8c2
 
 ---
 
-# Guidelines for visual feedback
+# 視覺化回饋的指導方針
 
-Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
+使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
-**Important APIs**
+**重要 API**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
-## Recommendations
+## 建議事項
 
--   Try to remain as close to the original control template as possible, for optimal control and application performance.
--   Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
--   Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
--   Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
+-   儘可能嘗試與原始控制項範本保持接近，以獲得最佳的控制項及應用程式效能。
+-   如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
+-   不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
+-   不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
 
-## Additional usage guidance
+## 其他用法指導方針
 
-Contact visualizations are especially critical for touch interactions that require accuracy and precision. For example, your app should clearly indicate the location of a tap to let a user know if they missed their target, how much they missed it by, and what adjustments they must make.
+接觸點視覺效果對於要求準確度和精確度的觸控互動相當重要。 例如，您的 App 應該清楚地指示點選位置，讓使用者在未命中目標時能夠知到未命中、誤差有多少，以及必須要做什麼調整。
 
-Using the default XAML platform controls available will ensure that your app works correctly on all devices and in all input situations. If your app features custom interactions that require customized feedback, you should ensure the feedback is appropriate, spans input devices, and doesn't distract a user from their task. This can be a particular issue in game or drawing apps, where the visual feedback might conflict with or obscure critical UI.
+使用可用的預設 XAML 平台控制項，將可確保您的 App 在所有裝置上及在所有輸入情況下都能正確運作。 如果您的 App 包含需要自訂回饋的自訂互動，那麼您應當確保回饋適當、可跨輸入裝置，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
 
-[!IMPORTANT] We don't recommend changing the interaction behavior of the built-in gestures. 
+[!IMPORTANT] 建議您不要變更內建手勢的互動行為。 
 
-**Feedback Across Devices**
+**跨裝置回饋**
 
-Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.
+視覺化回饋通常取決於輸入裝置 (觸控、觸控板、滑鼠、畫筆/手寫筆、鍵盤等等)。 例如，內建的滑鼠回饋通常涉及移動和變更游標，觸控和手寫筆需要的是接觸點視覺效果，而鍵盤輸入和瀏覽則是使用焦點矩形和醒目提示。
 
-Use [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) to set feedback behavior for the platform gestures.
+使用 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) 設定平台手勢的回饋行為。
 
-If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.
+如果自訂回饋 UI，請確定您提供支援且適合所有輸入模式的回饋。
 
-Here are some examples of built-in contact visualizations in Windows.
+以下是 Windows 中一些內建的接觸點視覺效果範例。
 
-| ![Touch Feedback](images/TouchFeedback.png) | ![Mouse Feedback](images/MouseFeedback.png) | ![Pen Feedback](images/PenFeedback.png) | ![Keyboard Feedback](images/KeyboardFeedback.png) |
+| ![觸控回饋](images/TouchFeedback.png) | ![滑鼠回饋](images/MouseFeedback.png) | ![手寫筆回饋](images/PenFeedback.png) | ![鍵盤回饋](images/KeyboardFeedback.png) |
 | --- | --- | --- | --- |
-| Touch visualization | Mouse/touchpad visualization | Pen visualization | Keyboard visualization |
+| 觸控視覺效果 | 滑鼠/觸控板視覺效果 | 手寫筆視覺效果 | 鍵盤視覺效果 |
 
-## High Visibility Focus Visuals
+## 高可見度焦點視覺效果
 
-All Windows apps sport a more defined focus visual around interactable controls within the application. These new focus visuals are fully customizable as well as disableable when needed.
+所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
 
-## Color Branding & Customizing
+## 色彩商標和自訂
 
-**Border Properties**
+**框線屬性**
 
-There are two parts to the high visibility focus visuals: the primary border and the secondary border. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border.
-![High visibility focus visual redlines](images/FocusRectRedlines.png)
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線「內」**。
+![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
-To change the thickness of either border type (primary or secondary) use the **FocusVisualPrimaryThickness** or **FocusVisualSecondaryThickness**, respectively:
+若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
-![High visibility focus visual margin thicknesses](images/FocusMargin.png)
+![高可見度焦點視覺效果邊界粗細](images/FocusMargin.png)
 
-The margin is a property of type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below: ![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
+邊界是 [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 參見下方：![高可見度焦點視覺效果邊界粗細 (僅限底部)](images/FocusThicknessSide.png)
 
-The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
+邊界是控制項視覺界限與焦點視覺效果「次要框線」**起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
-![High visibility focus visual margin differences](images/FocusPlusMinusMargin.png)
+![高可見度焦點視覺效果邊界差異](images/FocusPlusMinusMargin.png)
 
-*A negative margin will push the border away from the center of the control, and a positive margin will move the border closer to the center of the control.*
+*邊界為負值時，會將框線推離控制項的中心，邊界為正值時，則會將框線向控制項的中心靠攏。*
 
-To turn off focus visuals on the control entirely, simply disabled **UseSystemFocusVisuals**:
+若要將控制項上的焦點視覺效果完全關閉，只要停用 **UseSystemFocusVisuals** 即可：
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
 
-The thickness, margin, or whether or not the app-developer wishes to have the focus visuals at all, is determined on a per-control basis.
+粗細、邊界或 App 開發人員是否想要使用焦點視覺效果是在個別控制項上決定。
 
-**Color Properties**
+**色彩屬性**
 
-There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on an page level, and globally on an app-wide level:
+焦點視覺效果只有兩個色彩屬性︰主要框線色彩和次要框線色彩。 您可以在頁面層級上變更個別控制項的這些焦點視覺效果框線色彩，以及在全應用程式層級上全域變更這些色彩︰
 
-To brand focus visuals app-wide, override the system brushes:
+若要設計全應用程式的焦點視覺效果商標，請覆寫系統筆刷：
 ```XAML
 <SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush" Color="DarkRed"/>
 <SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="Pink"/>
 ```
-![High visibility focus visual color changes](images/FocusRectColorChanges.png)
+![高可見度焦點視覺效果色彩變更](images/FocusRectColorChanges.png)
 
-To change the colors on a per-control basis, just edit the focus visual properties on the desired control:
+若要變更個別控制項上的色彩，只要編輯所需控制項上的焦點視覺效果屬性即可︰
 ```XAML
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## Related articles
+## 相關文章
 
-**For designers**
-* [Guidelines for panning](guidelines-for-panning.md)
+**適用於設計人員**
+* [移動瀏覽的指導方針](guidelines-for-panning.md)
 
-**For developers**
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**適用於開發人員**
+* [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**範例**
+* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**封存範例**
+* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

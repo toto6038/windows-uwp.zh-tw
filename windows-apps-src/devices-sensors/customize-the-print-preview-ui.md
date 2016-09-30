@@ -1,33 +1,33 @@
 ---
 author: DBirtolo
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
-title: Customize the print preview UI
-description: This section describes how to customize the print options and settings in the print preview UI.
+title: "自訂預覽列印 UI"
+description: "本節說明如何在預覽列印 UI 中自訂列印選項和設定。"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
+ms.openlocfilehash: 36c1499b51aa5b8b5ab4b0b354197c67dc89801f
 
 ---
-# Customize the print preview UI
+# 自訂預覽列印 UI
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+** 重要 API **
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
 -   [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426)
 
-This section describes how to customize the print options and settings in the print preview UI. For more info about printing, see [Print from your app](print-from-your-app.md).
+本節說明如何在預覽列印 UI 中自訂列印選項和設定。 如需列印的詳細資訊，請參閱[從您的 app 進行列印](print-from-your-app.md)。
 
-**Tip**  Most of the examples in this topic are based on the print sample. To see the full code, download the [Universal Windows Platform (UWP) print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**提示**：本主題中大部分的範例是以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
  
 
-## Customize print options
+## 自訂列印選項
 
-By default, the print preview UI shows the [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479), and [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) print options. In addition to those, there are several other common printer options that you can add to the print preview UI:
+根據預設，預覽列印 UI 會顯示 [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478)、[**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) 和 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) 選項。 除了上述選項，還有數個其他常見的印表機選項，讓您可以新增到預覽列印 UI：
 
 -   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
 -   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
@@ -40,19 +40,19 @@ By default, the print preview UI shows the [**ColorMode**](https://msdn.microsof
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
 -   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 
-These options are defined in the [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) class. You can add to or remove options from the list of options displayed in the print preview UI. You can also change the order in which they appear, and set the default settings that are shown to the user.
+這些選項會在 [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) 類別中定義。 您可以在預覽列印 UI 中顯示的選項清單中新增或移除選項。 您也可以變更選項出現的順序，以及設定對使用者顯示的預設設定。
 
-However, the modifications that you make by using this method affect only the print preview UI. The user can always access all of the options that the printer supports by tapping **More settings** in the print preview UI.
+不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 [更多設定]**** 連結，使用者就可以存取印表機支援的所有選項。
 
-**Note**  Although your app can specify any print options to be displayed, only those that are supported by the selected printer are shown in the print preview UI. The print UI won't show options that the selected printer doesn't support.
+**注意** 雖然您的應用程式可以指定要顯示的任何列印選項，但是只有選定的印表機支援的選項才會在預覽列印 UI 中顯示。 列印 UI 不會顯示選定的印表機不支援的選項。
 
  
 
-### Define the options to display
+### 定義要顯示的選項
 
-When the app's screen is loaded, it registers for the Print contract. Part of that registration includes defining the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler. The code to customize the options displayed in the print preview UI is added to the **PrintTaskRequested** event handler.
+App 的畫面載入時，會登錄列印協定。 該登錄包含定義 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式。 自訂預覽列印 UI 中所顯示選項的程式碼會新增到 **PrintTaskRequested** 事件處理常式中。
 
-Modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to include the [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) instructions that configure the print settings that you want to display in the print preview UI.For the screen in your app for which you want to show a customized list of print options, override the **PrintTaskRequested** event handler in the helper class to include code that specifies the options to display when the screen is printed.
+修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式以包含 [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) 指示，這些指示可用來設定您要在預覽列印 UI 中顯示的列印設定。對於要顯示自訂列印選項清單的 app 畫面，請覆寫協助程式類別中的 **PrintTaskRequested** 事件處理常式以加入程式碼，這個程式碼會指定列印畫面時要顯示的選項。
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -92,22 +92,22 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Important**  Calling [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() removes all of the print options from the print preview UI, including the **More settings** link. Be sure to append the options that you want to show on the print preview UI.
+**重要** 呼叫 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 會移除預覽列印 UI 中的所有列印選項，包括 [更多設定]**** 連結。 務必在預覽列印 UI 上附加要顯示的選項。
 
-### Specify default options
+### 指定預設選項
 
-You can also set the default values of the options in the print preview UI. The following line of code, from the last example, sets the default value of the [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) option.
+您也可以在預覽列印 UI 中設定選項的預設值。 下列這行程式碼來自上一個範例，會設定 [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) 選項的預設值。
 
 ``` csharp
          // Preset the default value of the printer option
          printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
 ```         
 
-## Add new print options
+## 新增列印選項
 
-This section shows how to create a new print option, define a list of values that the option supports, and then add the option to the print preview. As in the previous section, add the new print option in the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler.
+本節顯示如何建立新的列印選項、定義選項支援的值清單，以及將選項新增至預覽列印。 如同上一節，在 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式中加入新的列印選項。
 
-First, get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object. This is used to add the new print option to the print preview UI. Then clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app. After that, create the new print option and initialize the list of option values. Finally, add the new option and assign a handler for the **OptionChanged** event.
+首先，取得 [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) 物件。 此物件用來將新列印選項加入至預覽列印 UI。 然後清除預覽列印 UI 中顯示的選項清單，並且新增當使用者想要從 app 列印時所要顯示的選項。 接著，建立新的列印選項並初始化選項值的清單。 最後，加入新選項並指派 **OptionChanged** 事件的處理常式。
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -155,9 +155,9 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window. In this example, the custom option is appended last so that it appears at the bottom of the list of options. However, you could put it anywhere in the list; custom print options don't need to be added last.
+這些選項會依照附加的順序出現在預覽列印 UI 中，第一個選項會在視窗的頂端顯示。 在這個範例中，自訂選項會最後附加，如此該選項就會出現在選項清單的底部。 不過，您可以將它放到清單中的任意位置；自訂列印選項不一定要最後新增。
 
-When the user changes the selected option in your custom option, update the print preview image. Call the [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) method to redraw the image in the print preview UI, as shown below.
+當使用者變更自訂選項中選取的選項時，更新預覽列印影像。 呼叫 [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) 方法以在預覽列印 UI 中重新繪製影像，如下所示。
 
 ``` csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -179,15 +179,15 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## Related topics
+## 相關主題
 
-* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
+* [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

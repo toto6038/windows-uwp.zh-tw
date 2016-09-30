@@ -1,37 +1,35 @@
 ---
 author: TylerMSFT
-title: Monitor background task progress and completion
-description: Learn how your app can recognize progress and completion reported by a background task.
+title: "監視背景工作進度和完成"
+description: "了解 app 如何辨識背景工作所報告的進度與完成。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
+ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
+ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 ---
 
-# Monitor background task progress and completion
+# 監視背景工作進度和完成
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要 API**
 
 -   [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Learn how your app can recognize progress and completion reported by a background task that runs in a separate process. (For single-process background tasks, you can set shared variables to signify progress and completion.)
+了解 app 如何辨識背景工作所報告的進度與完成。 背景工作會與應用程式分離，而且它們會分開執行，但是應用程式程式碼可以監視背景工作的進度與完成。 為了執行這項作業，app 會訂閱本身已在系統中登錄的背景工作事件。
 
- Background tasks are decoupled from the app, and they run separately, but background task progress and completion can be monitored by app code. To make this happen, the app subscribes to events from the background task(s) it has registered with the system.
+-   這個主題假設您有一個會登錄背景工作的 app。 若要快速開始建立背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
--   This topic assumes that you have an app that registers background tasks. To get started quickly building a background task, see [Create and register a background task](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+## 建立事件處理常式，以處理完成的背景工作。
 
-## Create an event handler to handle completed background tasks
+1.  建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置，其中包括 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 物件與 [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) 物件。
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) object.
-
-    Use the following footprint for the OnCompleted background task event handler method:
+    針對 OnCompleted 背景工作事件處理常式方法使用下列配置：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -47,9 +45,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >  };
     > ```
 
-2.  Add code to the event handler that deals with the background task completion.
+2.  將程式碼新增至會處理背景工作完成的事件處理常式。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI.
+    例如，[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會更新 UI。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -65,11 +63,11 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     > ```
 
-## Create an event handler function to handle background task progress
+## 建立事件處理常式函式，以處理背景工作進度。
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) object:
+1.  建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置，其中包括 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 物件與 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 物件：
 
-    Use the following footprint for the OnProgress background task event handler method:
+    針對 OnProgress 背景工作事件處理常式方式使用下列配置：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -85,9 +83,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     > ```
 
-2.  Add code to the event handler that deals with the background task completion.
+2.  將程式碼新增至會處理背景工作完成的事件處理常式。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI with the progress status passed in via the *args* parameter:
+    例如，[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會使用透過 *args* 參數所傳遞的進度狀態來更新 UI：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -109,12 +107,12 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     > ```
 
-## Register the event handler functions with new and existing background tasks
+## 使用新的和現有的背景工作來登錄事件處理函式
 
 
-1.  When the app registers a background task for the first time, it should register to receive progress and completion updates for it, in case the task runs while the app is still active in the foreground.
+1.  當應用程式第一次登錄背景工作時，它應該登錄以接收其進度和完成更新，以防應用程式在前景仍然為使用中時執行工作。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) calls the following function on each background task that it registers:
+    例如，[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在它登錄的每個背景工作上呼叫下列函式：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -146,9 +144,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     > ```
 
-2.  When the app launches, or navigates to a new page where background task status is relevant, it should get a list of background tasks currently registered and associate them with the progress and completion event handler functions. The list of background tasks currently registered by the application is kept in the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property.
+2.  當應用程式啟動或是瀏覽至背景工作狀態是相關的新頁面時，它應該取得目前登錄的背景工作清單，並將它們與進度和完成事件處理函式關聯。 應用程式目前登錄的背景工作清單保留在 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性中。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) uses the following code to attach event handlers when the SampleBackgroundTask page is navigated to:
+    例如，[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會使用下列程式碼來附加瀏覽 SampleBackgroundTask 頁面時要執行的事件處理常式：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -195,23 +193,24 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     > ```
 
-## Related topics
+## 相關主題
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
+* [登錄背景工作](register-a-background-task.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
+* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
+* [背景工作的指導方針](guidelines-for-background-tasks.md)
+* [偵錯背景工作](debug-a-background-task.md)
+* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO1-->
 
 

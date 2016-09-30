@@ -1,70 +1,60 @@
 ---
 author: mcleanbyron
-Description: You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
-title: Run app experiments with A/B testing
+Description: "您可以利用 Windows 開發人員中心儀表板，使用 A/B 測試執行通用 Windows 平台 (UWP) app 的實驗。"
+title: "使用 A/B 測試執行 app 實驗"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 50f7ad90c04d5b5672fa7910f2df669798761472
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
 
 ---
 
-# Run app experiments with A/B testing
+# 使用 A/B 測試執行 app 實驗
 
-You can use the Windows Dev Center dashboard to define remote variables that you can retrieve at run time from your Universal Windows Platform (UWP) apps, and you can test variations of these values with your users to identify the most effective values for driving desired user behavior. Your app can use remote variables to configure app experiences such as in-app purchases, sign-up flow, captions, and ad placements.
+您可以利用 Windows 開發人員中心儀表板，使用 A/B 測試執行通用 Windows 平台 (UWP) app 的實驗。
 
-The goal of your A/B test should be to identify a variation of your remote variable values that is likely to earn you improved conversion rates (for example, more in-app purchases) by providing a more engaging app experience. After you have identified a successful variation, you can immediately end the experiment and enable that variation for your entire user audience from the Dev Center dashboard, without having to republish your app.
+在 A/B 測試中，您會透過開發人員中心在您的 app 中實驗程式變數指派。 藉由建立以 A/B 可測試程式變數為主的 app 邏輯，您可以對您的使用者群的隨機化區段啟用您 app 的變化。 A/B 測試的目的是要找出可能改善轉換率的變化 (例如，更多的應用程式內購買)。
 
-## Create and run an A/B test
+在您找出最符合您的業務目標的變化之後，您可以立即結束實驗，並從開發人員中心儀表板對整個使用者群啟用該變化，而不必重新發佈您的應用程式。
 
-To create and run an A/B test, follow these steps:
+## 建立和執行 A/B 測試
 
-1. [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). This project contains the variables and default variable values for your experiments.  
-2. [Code your app for experimentation](code-your-experiment-in-your-app.md). Use an API in the Microsoft Store Services SDK to get remote variable values from the project you created in the dashboard, use this data to modify the behavior of the feature you are testing, and send view event and conversion events to Dev Center.
-3. [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md). Create an experiment in your project that defines the unique goals and variations for your A/B test.
-4. [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md). Activate your experiment, and use the dashboard to review the results of the experiment and complete the experiment.
+若要建立和執行 A/B 測試，請遵循下列步驟：
 
-For a walkthrough that demonstrates the end-to-end process, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+1. [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 每個實驗都包含下列項目︰
+  * 「檢視事件」**，表示使用者開始檢視屬於實驗一部分的變化的時候。
+  * 具有「轉換事件」**的一或多個目標，表示已達到目標的時候。
+  * 一或多個「變化」**，定義您的實驗所使用的設定。
+2. [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)。 使用 Microsoft Store Engagement and Monetization SDK 中的 API 來取得實驗的變化設定、使用此資料來修改您測試的功能行為，以及將檢視事件和轉換事件傳送到開發人員中心。
+3. [在開發人員中心儀表板中執行和管理您的實驗](manage-your-experiment.md)。 使用此儀表板來檢閱實驗的結果並完成實驗。
 
-## Requirements
+如需示範端對端處理程序的逐步解說，請參閱[使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
-A/B testing in Windows Dev Center is supported only for UWP apps.
+## 需求
 
-Before you can run experiments with A/B testing, you must set up your development computer:
+只有 UWP app 支援在 Windows 開發人員中心進行 A/B 測試。
 
-* Follow the instructions [here](../get-started/get-set-up.md) to set up your development computer for UWP development.
-* Install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). In addition to the API for experiments, this SDK also provides APIs for other features such as displaying ads and directing your customers to Feedback Hub to collect feedback on your app. For more information about this SDK, see [Microsoft Store Services SDK](microsoft-store-services-sdk.md).
+您必須先設定您的開發電腦，才可以使用 A/B 測試執行實驗︰
 
-## Best practices
+* 依照[這裡](../get-started/get-set-up.md)的指示，設定 UWP 開發用的開發電腦。
+* 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。 除了實驗的 API，此 SDK 也會提供其他功能的 API，例如顯示廣告以及將您的客戶導向至意見反應中樞來收集有關您的 app 的意見反應。 如需這個 SDK 的詳細資訊，請參閱[利用 Store Engagement and Monetization SDK 讓您的 app 獲利](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)。
 
-For the most useful results, we recommend that you follow these recommendations when running experiments with A/B testing:
+## 最佳作法
 
-* Consider running experiments with only two variations with a randomized 50/50 split distribution for variation assignments.
-* Run experiments for at least 2 – 4 weeks to gather sufficient data that is statistically significant and actionable.
+如需最實用的結果，我們建議您在使用 A/B 測試執行實驗時遵循下列建議︰
 
-<span id="terms" />
-## Related terms
+* 請考慮執行只有兩項變化的實驗，並以隨機化 50/50 分割分佈進行變化指派。
+* 執行實驗至少 2-4 週，以收集具統計顯著性和可行動性的足夠資料。
 
-|  Term  |  Definition  |
-|--------|--------------|
-| Project    |   A collection of remote variables with default values that your app can access by using the Microsoft Store Services SDK. A project can also optionally contain one or more experiments that share the same remote variables.  |
-| Experiment    |   A set of parameters that define an A/B test that your users will receive. Experiments are defined in the scope of a project, and each experiment consists of: <p></p><ul><li>A *view event* that indicates when the user starts viewing a variation that is part of your experiment.</li><li>One or more goals with *conversion events* that indicate when an objective has been reached.</li><li>One or more *variations* that define the variable data used by your experiment. The *control* variation uses the default variable values that are defined in the project for the experiment. In addition to the control variation, experiments typically have at least one additional variation with variable values that are unique to the experiment. </li></ul>          |
-| Project ID    |   A unique ID that associates your app with a project in your Dev Center account. You must use this ID to connect with the A/B testing service in your app code to receive variation data and report view and conversion events to Dev Center. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).<p></p><p>Each project, and all experiments in the project, are associated with exactly one project ID. You can use project IDs to help differentiate between different sets of experiments. For example, you might have one set of experiments that you release to testers in your organization and another set of experiments that you release only to external users of your app.  An app can reference multiple project IDs if it implements multiple experiments.</p>         |
-| Variation    |   A collection of one or more variables that you are testing in your experiment. Every experiment must have at least one variable and two variations (including the control). An experiment can have up to five variations.           |
-| Variable    |  A value that your app uses to initialize a property or some other value in your app. During an experiment, the value of the variable changes from variation to variation. After you end an experiment, the variable is assigned the value from the variation that you choose release to all users of your app. Variables can have the following types: string, Boolean, double, and integer.
-| View event    |  An arbitrary string that represents an activity when the user starts viewing a variation that is part of your experiment. Typically, this is the name of an event in your code. Your app code will send this view event string to Dev Center when the user starts viewing a variation. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).
-| Conversion event    |  An arbitrary string that represents an objective for a goal of an experiment. Typically, this is the name of an event in your code. Your app code will send this conversion event string to Dev Center when the user reaches an objective. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).  
+## 相關主題
 
-## Related topics
-
-* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
-* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
+* [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)
+* [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
+* [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

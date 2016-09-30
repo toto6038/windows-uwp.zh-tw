@@ -1,35 +1,38 @@
 ---
 author: TylerMSFT
-title: Launch the Windows Settings app
-description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+title: "啟動 Windows 設定 app"
+description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 translationtype: Human Translation
-ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
-ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 
 ---
 
-# Launch the Windows Settings app
+# 啟動 Windows 設定 app
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要 API**
 
 -   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
 -   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
 -   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-Learn how to launch the Windows Settings app from your app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 **ms-settings:** URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。
 
-Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
+啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 如需詳細資訊，請參閱[隱私權感知 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223)。
 
-## How to launch the Settings app
+## 如何啟動設定 app
 
-To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.
 
-In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.
+如果隱私權設定不允許您的 app 存取敏感資源，建議讓使用者能夠方便地連結到**設定** app 中的隱私權設定。 這會讓使用者更容易變更其設定。
+
+若要直接啟動到**設定** app，請使用 `ms-settings:` URI 配置，如下列範例所示。
+
+在這個範例中，會使用超連結 XAML 控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
@@ -43,7 +46,7 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
+或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [**設定**] app。
 
 ```cs
 using Windows.System;
@@ -51,87 +54,80 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-The code above launches the privacy settings page for the camera:
+這個範例示範如何使用 `ms-settings:privacy-webcam` URI 啟動相機的隱私權設定頁面。
 
-![camera privacy settings.](images/privacyawarenesssettingsapp.png)
+![相機隱私權設定。](images/privacyawarenesssettingsapp.png)
 
+如需啟動 URI 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
 
-
-For more info about launching URIs, see [Launch the default app for a URI](launch-default-app.md).
-
-## ms-settings: URI scheme reference
+## ms-settings: URI 配置參考
 
 
-Use the following URIs to open various pages of the Settings app. Note that the Supported SKUs column indicates whether the settings page exists in Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), Windows 10 Mobile, or both.
+使用下列 URI 可開啟 [設定] app 的各個頁面。 請注意，[支援的 SKU] 欄會指出適用於傳統型版本 (家用版、專業版、企業版及教育版) 的 Windows 10、「Windows 10 行動裝置版」或兩者中是否有設定頁面。
 
-| Category           | Settings page                          | Supported SKUs | URI                                       |
+| 類別           | 設定頁面                          | 支援的 SKU | URI                                       |
 |--------------------|----------------------------------------|----------------|-------------------------------------------|
-| Home Page          | Landing page for Settings              | Both           | ms-settings:                              |
-| System             | Display                                | Both           | ms-settings:screenrotation                |
-|                    | Notifications & actions                | Both           | ms-settings:notifications                 |
-|                    | Phone                                  | Mobile only    | ms-settings:phone                         |
-|                    | Messaging                              | Mobile only    | ms-settings:messaging                     |
-|                    | Battery Saver                          | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver                  |
-|                    | Battery Saver / Battery saver settings | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver-settings         |
-|                    | Battery Saver / Battery use            | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver-usagedetails     |
-|                    | Power & sleep                          | Desktop only   | ms-settings:powersleep                    |
-|                    | Desktop: About                         | Both           | ms-settings:deviceencryption              |
+| 首頁          | [設定] 的登陸頁面              | 兩者           | ms-settings:                              |
+| 系統             | 顯示器                                | 兩者           | ms-settings:screenrotation                |
+|                    | 通知與動作                | 兩者           | ms-settings:notifications                 |
+|                    | 手機                                  | 僅限行動裝置版    | ms-settings:phone                         |
+|                    | 訊息中心                              | 僅限行動裝置版    | ms-settings:messaging                     |
+|                    | 省電模式                          | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver                  |
+|                    | 省電模式 / 省電模式設定 | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本 | ms-settings:batterysaver-settings         |
+|                    | 省電模式 / 電池使用情況            | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver-usagedetails     |
+|                    | 電源與睡眠                          | 僅限傳統型版本   | ms-settings:powersleep                    |
+|                    | 傳統型版本：關於                         | 兩者           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
-|                    | Mobile: Device encryption              |                |                                           |
-|                    | Offline Maps                           | Both           | ms-settings:maps                          |
-|                    | About                                  | Both           | ms-settings:about                         |
-| Devices            | Default camera                         | Mobile only    | ms-settings:camera                        |
-|                    | Bluetooth                              | Desktop only   | ms-settings:bluetooth                     |
-|                    | Mouse & touchpad                       | Both           | ms-settings:mousetouchpad                 |
-|                    | NFC                                    | Both           | ms-settings:nfctransactions               |
-| Network & Wireless | Wi-Fi                                  | Both           | ms-settings:network-wifi                  |
-|                    | Airplane mode                          | Both           | ms-settings:network-airplanemode          |
-| Network & Internet | Data usage                             | Both           | ms-settings:datausage                     |
-|                    | Cellular & SIM                         | Both           | ms-settings:network-cellular              |
-|                    | Mobile hotspot                         | Both           | ms-settings:network-mobilehotspot         |
-|                    | Proxy                                  | Both           | ms-settings:network-proxy                 |
-|                    | Status                                 | Desktop only   | ms-settings:network-status                |
-| Personalization    | Personalization (category)             | Both           | ms-settings:personalization               |
-|                    | Background                             | Desktop only   | ms-settings:personalization-background    |
-|                    | Colors                                 | Both           | ms-settings:personalization-colors        |
-|                    | Sounds                                 | Mobile only    | ms-settings:sounds                        |
-|                    | Lock screen                            | Both           | ms-settings:lockscreen                    |
-| Accounts           | Access work or school                  | Both           | ms-settings:workplace                     |
-|                    | Email & app accounts                   | Both           | ms-settings:emailandaccounts              |
-|                    | Family & other people                  | Both           | ms-settings:otherusers                    |
-|                    | Sign-in options                        | Both           | ms-settings:signinoptions                 |
-|                    | Sync your settings                     | Both           | ms-settings:sync                          |
-|                    | Other people                           | Both           | ms-settings:otherusers                    |
-|                    | Your info                              | Both           | ms-settings:yourinfo                      |
-| Time and language  | Date & time                            | Both           | ms-settings:dateandtime                   |
-|                    | Region & language                      | Desktop only   | ms-settings:regionlanguage                |
-| Ease of Access     | Narrator                               | Both           | ms-settings:easeofaccess-narrator         |
-|                    | Magnifier                              | Both           | ms-settings:easeofaccess-magnifier        |
-|                    | High contrast                          | Both           | ms-settings:easeofaccess-highcontrast     |
-|                    | Closed captions                        | Both           | ms-settings:easeofaccess-closedcaptioning |
-|                    | Keyboard                               | Both           | ms-settings:easeofaccess-keyboard         |
-|                    | Mouse                                  | Both           | ms-settings:easeofaccess-mouse            |
-|                    | Other options                          | Both           | ms-settings:easeofaccess-otheroptions     |
-| Privacy            | Location                               | Both           | ms-settings:privacy-location              |
-|                    | Camera                                 | Both           | ms-settings:privacy-webcam                |
-|                    | Microphone                             | Both           | ms-settings:privacy-microphone            |
-|                    | Motion                                 | Both           | ms-settings:privacy-motion                |
-|                    | Speech, inking & typing                | Both           | ms-settings:privacy-speechtyping          |
-|                    | Account info                           | Both           | ms-settings:privacy-accountinfo           |
-|                    | Contacts                               | Both           | ms-settings:privacy-contacts              |
-|                    | Calendar                               | Both           | ms-settings:privacy-calendar              |
-|                    | Call history                           | Both           | ms-settings:privacy-callhistory           |
-|                    | Email                                  | Both           | ms-settings:privacy-email                 |
-|                    | Messaging                              | Both           | ms-settings:privacy-messaging             |
-|                    | Radios                                 | Both           | ms-settings:privacy-radios                |
-|                    | Background Apps                        | Both           | ms-settings:privacy-backgroundapps        |
-|                    | Other devices                          | Both           | ms-settings:privacy-customdevices         |
-|                    | Feedback & diagnostics                 | Both           | ms-settings:privacy-feedback              |
-| Update & security  | For developers                         | Both           | ms-settings:developers                    |
+|                    | 行動裝置版：裝置加密              |                |                                           |
+|                    | 離線地圖                           | 兩者           | ms-settings:maps                          |
+|                    | 關於                                  | 兩者           | ms-settings:about                         |
+| 裝置            | 預設相機                         | 僅限行動裝置版    | ms-settings:camera                        |
+|                    | 藍牙                              | 僅限傳統型版本   | ms-settings:bluetooth                     |
+|                    | 滑鼠與觸控板                       | 兩者           | ms-settings:mousetouchpad                 |
+|                    | NFC                                    | 兩者           | ms-settings:nfctransactions               |
+| 網路與無線網路 | Wi-Fi                                  | 兩者           | ms-settings:network-wifi                  |
+|                    | 飛航模式                          | 兩者           | ms-settings:network-airplanemode          |
+| 網路和網際網路 | 數據使用量                             | 兩者           | ms-settings:datausage                     |
+|                    | 行動數據與 SIM 卡                         | 兩者           | ms-settings:network-cellular              |
+|                    | 行動熱點                         | 兩者           | ms-settings:network-mobilehotspot         |
+|                    | Proxy                                  | 兩者           | ms-settings:network-proxy                 |
+| 個人化    | 個人化 (類別)             | 兩者           | ms-settings:personalization               |
+|                    | 背景                             | 僅限傳統型版本   | ms-settings:personalization-background    |
+|                    | 色彩                                 | 兩者           | ms-settings:personalization-colors        |
+|                    | 音效                                 | 僅限行動裝置版    | ms-settings:sounds                        |
+|                    | 鎖定畫面                            | 兩者           | ms-settings:lockscreen                    |
+| 帳戶           | 您的電子郵件與帳戶                | 兩者           | ms-settings:emailandaccounts              |
+|                    | 公司存取                            | 兩者           | ms-settings:workplace                     |
+|                    | 同步您的設定                     | 兩者           | ms-settings:sync                          |
+| 時間與語言  | 日期和時間                            | 兩者           | ms-settings:dateandtime                   |
+|                    | 地區及語言                      | 僅限傳統型版本   | ms-settings:regionlanguage                |
+| 輕鬆存取     | 朗讀程式                               | 兩者           | ms-settings:easeofaccess-narrator         |
+|                    | 放大鏡                              | 兩者           | ms-settings:easeofaccess-magnifier        |
+|                    | 高對比                          | 兩者           | ms-settings:easeofaccess-highcontrast     |
+|                    | 隱藏式輔助字幕                        | 兩者           | ms-settings:easeofaccess-closedcaptioning |
+|                    | 鍵盤                               | 兩者           | ms-settings:easeofaccess-keyboard         |
+|                    | 滑鼠                                  | 兩者           | ms-settings:easeofaccess-mouse            |
+|                    | 其他選項                          | 兩者           | ms-settings:easeofaccess-otheroptions     |
+| 隱私權            | 位置                               | 兩者           | ms-settings:privacy-location              |
+|                    | 相機                                 | 兩者           | ms-settings:privacy-webcam                |
+|                    | 麥克風                             | 兩者           | ms-settings:privacy-microphone            |
+|                    | 動作                                 | 兩者           | ms-settings:privacy-motion                |
+|                    | 語音、筆跡與輸入                | 兩者           | ms-settings:privacy-speechtyping          |
+|                    | 帳戶資訊                           | 兩者           | ms-settings:privacy-accountinfo           |
+|                    | 連絡人                               | 兩者           | ms-settings:privacy-contacts              |
+|                    | 行事曆                               | 兩者           | ms-settings:privacy-calendar              |
+|                    | 通訊記錄                           | 兩者           | ms-settings:privacy-callhistory           |
+|                    | 電子郵件                                  | 兩者           | ms-settings:privacy-email                 |
+|                    | 訊息中心                              | 兩者           | ms-settings:privacy-messaging             |
+|                    | 無線通訊                                 | 兩者           | ms-settings:privacy-radios                |
+|                    | 背景應用程式                        | 兩者           | ms-settings:privacy-backgroundapps        |
+|                    | 其他裝置                          | 兩者           | ms-settings:privacy-customdevices         |
+|                    | 意見反應與診斷                 | 兩者           | ms-settings:privacy-feedback              |
+| 更新與安全性  | 適用於開發人員                         | 兩者           | ms-settings:developers                    |
  
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,38 +1,34 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "所述的筆跡工具"
-title: "手寫筆跡控制項"
+Description: Ink tools described
+title: Inking Controls
 label: Inking Controls
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7198f4084df8ce484cdc5f6b3231a4bdb02f18b5
-
 ---
-# 手寫筆跡控制項
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-有兩個不同的控制項可協助在通用 Windows 平台 (UWP) 應用程式中使用手寫筆跡：[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
+# Inking controls
 
-InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與粗細的預設設定) 或擦去筆劃。 此控制項為完全透明的重疊，不會包含任何用於變更預設筆墨筆劃屬性的內建 UI。
+There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
->**注意**&nbsp;&nbsp;InkCanvas 可以同時針對滑鼠與觸控輸入設定，以支援類似功能。
+The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.
 
-因為 InkCanvas 控制項不包含變更預設筆墨筆劃設定的支援，所以它可以與 InkToolbar 控制項配對。 InkToolbar 包含了可自訂與可擴充的按鈕集合，可在相關聯的 InkCanvas 中啟用筆跡相關的功能。
+>**Note**&nbsp;&nbsp;InkCanvas can be configured to support similar functionality for both mouse and touch input.
 
-根據預設，InkToolbar 包含用於繪圖、清除、反白顯示，以及顯示尺規的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆劃粗細、清除所有筆跡) 將會在飛出視窗中提供。
+As the InkCanvas control does not include support for changing the default ink stroke settings, it can be paired with an InkToolbar control. The InkToolbar contains a customizable and extensible collection of buttons that activate ink-related features in an associated InkCanvas.
 
->**注意**&nbsp;&nbsp;InkToolbar 支援手寫筆以及滑鼠輸入，並可設定為辨識觸控輸入設定。
+By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
+
+>**Note**&nbsp;&nbsp;InkToolbar supports pen and mouse input and can be configured to recognize touch input.
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
 <div class="important-apis" >
-<b>重要 API</b><br/>
+<b>Important APIs</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>InkCanvas 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>InkToolbar 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>InkPresenter 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>InkCanvas class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>InkToolbar class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>InkPresenter class</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/apps/br208524"><strong>Windows.UI.Input.Inking</strong></a></li>
 </ul>
 
@@ -42,124 +38,118 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 
 
 
-## 這是正確的控制項嗎？
+## Is this the right control?
 
-當您的 App 中需要在不提供任何筆跡設定給使用者的情況下支援基本手寫筆跡功能時，請使用 InkCanvas。
+Use the InkCanvas when you need to enable basic inking features in your app without providing any ink settings to the user.
 
-根據預設，使用筆尖時會轉譯為筆跡 (粗細為 2 像素的黑色鋼珠筆) 而使用橡皮擦時會轉譯為橡皮擦。 如果橡皮擦不存在，InkCanvas 可以設定為將筆尖輸入做為擦去筆劃處理。
+By default, strokes are rendered as ink when using the pen tip (a black ballpoint pen with a thickness of 2 pixels) and as an eraser when using the eraser tip. If an eraser tip is not present, the InkCanvas can be configured to process input from the pen tip as an erase stroke.
 
-將 InkCanvas 與 InkToolbar 配對來提供用於啟用筆跡功能和設定基本筆跡屬性 (例如筆觸大小、色彩及筆尖形狀) 的 UI。
+Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.
 
->**注意**&nbsp;&nbsp;如需更多 InkCanvas 上轉譯的筆墨筆劃自訂項目，請使用基礎 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
+>**Note**&nbsp;&nbsp;For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object.
 
-## 範例
+## Examples
 
 **Microsoft Edge**
 
-Edge 瀏覽器針對**網頁筆記**使用了 InkCanvas 與 InkToolbar。  
-![InkCanvas 是用於 Microsoft Edge 中的筆跡](images/ink-tools-edge.png)
+The Edge browser uses the InkCanvas and InkToolbar for **Web Notes**.  
+![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
 
-**Windows Ink 工作區**
+**Windows Ink Workspace**
 
-InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板**和**螢幕繪圖**。  
-![Windows Ink 工作區中的 InkToolbar](images/ink-tools-ink-workspace.png)
+The InkCanvas and InkToolbar are also used for both **Sketchpad** and **Screen sketch** in the **Windows Ink Workspace**.  
+![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
 
-## 建立 InkCanvas 與 InkToolbar
+## Create an InkCanvas and InkToolbar
 
-將 InkCanvas 新增到您的 App 只需要一行的標記︰
+Adding an InkCanvas to your app requires just one line of markup:
 
 ```xaml
 <InkCanvas x:Name=“myInkCanvas”/>
 ```
 
->**注意**&nbsp;&nbsp;如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱[UWP app 中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)一文。
+>**Note**&nbsp;&nbsp;For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/) article.
 
-InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所有內建工具) 併入您的 App 時需要額外的一行標記︰
+The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
  ```xaml
 <InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
  ```
 
-這會顯示下列 InkToolbar：
+This displays the following InkToolbar:
 <img src="images/ink-tools-uninvoked-toolbar.png" width="250">
 
-### 內建按鈕
+### Built-in buttons
 
-InkToolbar 包含下列內建按鈕︰
+The InkToolbar includes the following built-in buttons:
 
-**畫筆**
+**Pens**
 
-- 鋼珠筆 - 以圓形筆尖繪製實心、不透明的筆觸。 筆觸大小是根據偵測到的手寫筆壓力。
-- 鉛筆 - 以圓形筆尖繪製柔邊、具紋理，以及半透明的筆觸 (適用於分層的陰影效果)。 筆觸色彩 (濃度) 是根據偵測到的手寫筆壓力。
-- 螢光筆 – 以矩形筆尖繪製半透明的筆觸。
+- Ballpoint pen - draws a solid, opaque stroke with a circle pen tip. The stroke size is dependent on the pen pressure detected.
+- Pencil - draws a soft-edged, textured, and semi-transparent stroke (useful for layered shading effects) with a circle pen tip. The stroke color (darkness) is dependent on the pen pressure detected.
+- Highlighter – draws a semi-transparent stroke with a rectangle pen tip.
 
-您可以在各個畫筆的飛出視窗中自訂色彩調色盤和大小屬性 (最小值、最大值、預設值)。
+You can customize both the color palette and size attributes (min, max, default) in the flyout for each pen.
 
-**工具**
+**Tool**
 
-- 橡皮擦 – 刪除任何觸碰到的筆墨筆劃。 請注意，這會刪除整個筆墨筆劃，而不只是橡皮擦筆觸下的部分。
+- Eraser – deletes any ink stroke touched. Note that the entire ink stroke is deleted, not just the portion under the eraser stroke.
 
-**切換**
+**Toggle**
 
-- 尺規 – 顯示或隱藏尺規。 在尺規邊緣繪製會造成筆墨筆劃貼齊尺規。  
- ![與 InkToolbar 相關聯的尺規視覺效果](images/inking-tools-ruler.png)
+- Ruler – shows or hides the ruler. Drawing near the ruler edge causes the ink stroke to snap to the ruler.  
+ ![Ruler visual associated with InkToolbar](images/inking-tools-ruler.png)
 
-雖然這是預設設定，但對於您 App 的 InkToolbar 所包含的內建按鈕，您還是擁有完整的控制權。
+Although this is the default configuration, you have complete control over which built-in buttons are included in the InkToolbar for your app.
 
-### 自訂按鈕
+### Custom buttons
 
-InkToolbar 包含兩個不同群組的按鈕類型︰
+The InkToolbar consists of two distinct groups of button types:
 
-1. 包含內建繪圖、清除以及醒目提示按鈕的「工具」按鈕群組。 在此處新增自訂的畫筆與工具。
-> **注意**&nbsp;&nbsp;功能選項互斥。
+1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
+> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
 
-2. 包含內建尺規按鈕的「切換」按鈕群組。 在此處新增自訂的切換。
-> **注意**&nbsp;&nbsp;功能不會互斥，因此可以和其他使用中的工具同時使用。
+2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
+> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
 
-根據您的應用程式和所需的手寫筆跡功能，您可以將下列任何按鈕 (繫結到您自訂的筆跡功能) 新增到 InkToolbar：
+Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:
 
-- 自訂畫筆 – 適用於由主機應用程式定義的筆跡調色盤和筆尖屬性 (例如圖形、旋轉和大小) 的畫筆。
-- 自訂工具 – 由主機應用程式定義的非畫筆工具。
-- 自訂切換 – 將應用程式定義功能的狀態設定為開啟或關閉。 開啟時，功能會與使用中的工具搭配使用。
+- Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.
+- Custom tool – a non-pen tool, defined by the host app.
+- Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.
 
-> **注意**&nbsp;&nbsp;您無法變更內建按鈕的顯示順序。 預設的顯示順序是︰鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
+> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
 
-雖然 InkToolbar 可能是最上層項目，但它通常會透過「手寫筆跡」按鈕或命令公開。 建議您使用 Segoe MLD2 Assets 字型的 EE56 字符做為最上層圖示。
+Although the InkToolbar can be a top level item, it is typically exposed through an “Inking” button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
 
-## InkToolbar 互動
+## InkToolbar Interaction
 
-所有的內建畫筆和工具按鈕都包含飛出視窗功能表，其中可以設定筆跡屬性、筆尖形狀與大小。 「延伸字符」 ![InkToolbar 字符](images/ink-tools-glyph.png) 會顯示在按鈕上，以表示飛出視窗存在。
+All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" ![InkToolbar glyph](images/ink-tools-glyph.png) is displayed on the button to indicate the existence of the flyout.
 
-再次選取作用中工具的按鈕時，會顯示飛出視窗。 色彩或大小變更時，飛出視窗會自動關閉並且可以繼續使用手寫筆跡。 自訂畫筆和工具可以使用預設飛出視窗，或指定自訂飛出視窗。
+The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.
 
-橡皮擦也有飛出視窗，可提供 [清除所有筆跡]**** 命令。  
-![叫用橡皮擦飛出視窗的 InkToolbar](images/ink-tools-erase-all-ink.png)
+The eraser also has a flyout that provides the **Erase All Ink** command.  
+![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
 
- 如需自訂項目及擴充功能的資訊，請查看 [SimpleInk 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)。
+ For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
-## 可行與禁止事項
+## Do's and don'ts
 
-- InkCanvas (以及一般的手寫筆跡) 最能夠透過主動式手寫筆來體驗。 不過，如果您的 App 要求，建議您使用滑鼠與觸控式輸入 (包括被動式手寫筆) 支援手寫筆跡。
-- 搭配 InkCanvas 使用 InkToolbar 控制項，以提供基本的手寫筆跡功能與設定。 InkCanvas 與 InkToolbar 兩者都可透過程式設計的方式自訂。
-- InkToolbar (以及一般的手寫筆跡) 最能夠透過主動式手寫筆來體驗。 不過，如果您的 App 要求，也可支援使用滑鼠與觸控的手寫筆跡。
-- 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 Segoe MLD2 Assets 字型的 ED5F 圖示。
-- 如果使用一個以上的 InkCanvas，建議您使用單一 InkToolbar 來控制所有畫布上的手寫筆跡。
-- 為獲得最佳效能，建議您更改預設飛出視窗，而不是針對預設與自訂工具建立自訂飛出視窗。
+- The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.
+- Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.
+- The InkToolbar, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.
+- If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a “Touch writing” tooltip.
+- If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.
+- For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.
 
-## 取得範例
+## Get the samples
 
-[SimpleInk 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)示範 InkCanvas 與 InkToolbar 控制項的自訂項目和擴充功能的 8 種案例。 每個案例都提供了常見手寫筆跡情況與控制項實作的基本指導方針。
+[SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.
 
-如需更進階的手寫筆跡範例，請參閱 [ComplexInk 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。
+For a more advanced inking sample, see [ComplexInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
 
-## 相關文章
+## Related articles
 
-- [UWP app 中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
-- [辨識筆墨筆劃](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
-- [儲存和擷取筆墨筆劃](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+- [Pen and stylus interactions in UWP apps](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
+- [Recognize ink strokes](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
+- [Store and retrieve ink strokes](http://windowsstyleguide/input-and-devices/save-and-load-ink/)

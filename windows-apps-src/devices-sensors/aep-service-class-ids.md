@@ -1,120 +1,120 @@
 ---
 author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
-title: AEP service class IDs
-description: Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them.
+title: "AEP 服務類別識別碼"
+description: "關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.openlocfilehash: f201293d1288c8a065723ee2c05a7da45e5e95ab
 
 ---
-# AEP service class IDs
+# AEP 服務類別識別碼
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them. These contracts are identified with the **System.Devices.AepService.ServiceClassId** property. This topic lists several well-known AEP service class IDs. The AEP service class ID is also applicable to protocols with custom class IDs.
+關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。 這些協定可使用 **System.Devices.AepService.ServiceClassId** 屬性進行識別。 這個主題列出數個已知的 AEP 服務類別識別碼。 AEP 服務類別識別碼也適用於使用自訂類別識別碼的通訊協定。
 
-An app developer should use advanced query syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
+app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩選器，來將查詢限制在他們想要使用的 AEP 服務內。 這同時會將查詢結果限制在相關的服務中，這將會大幅提高裝置的效能、電池使用時間，以及服務品質。 例如，應用程式可以使用這些服務類別識別碼，來使用如 Miracast 同步或 DLNA 數位媒體轉譯器 (DMR) 的裝置。 如需裝置和服務如何彼此互動的詳細資訊，請參閱[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。
 
-## Bluetooth and Bluetooth LE services
+## 藍芽和藍牙 LE 服務
 
-Bluetooth services fall under one of two protocols, either the Bluetooth protocol or the Bluetooth LE protocol. The identifiers for these protocols are:
+藍芽服務會使用下列其中一個通訊協定：藍牙通訊協定或藍牙 LE 通訊協定。 這些通訊協定的識別碼是：
 
--   Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}
--   Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
+-   藍牙通訊協定識別碼：{e0cbf06c-cd8b-4647-bb8a263b43f0f974}
+-   藍牙 LE 通訊協定識別碼：{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
-The Bluetooth protocol supports several services, all following the same basic format. The first four digits of the GUID vary based upon the service, but all Bluetooth GUIDs end with **0000-0000-1000-8000-00805F9B34FB**. For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00030000-0000-1000-8000-00805F9B34FB**. The following table lists some common Bluetooth services.
+藍牙通訊協定支援全都遵循相同基本格式的多個服務。 GUID 的前四個數字會因服務而有所不同，但所有的藍芽 GUID 都會以 **0000-0000-1000-8000-00805F9B34FB** 結尾。 例如，RFCOMM 服務都有 0x0003 的前導碼，因此完整的識別碼會是 **00030000-0000-1000-8000-00805F9B34FB**。 下表列出一些常見的藍芽服務。
 
-| Service name                         | GUID                                     |
+| 服務名稱                         | GUID                                     |
 |--------------------------------------|------------------------------------------|
 | RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
-| GATT - Alert notification service    | **18110000-0000-1000-8000-00805F9B34FB** |
-| GATT - Automation IO                 | **18150000-0000-1000-8000-00805F9B34FB** |
-| GATT - Battery service               | **180F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Blood pressure                | **18100000-0000-1000-8000-00805F9B34FB** |
-| GATT - Body composition              | **181B0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Bond management               | **181E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Continuous glucose monitoring | **181F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Current time service          | **18050000-0000-1000-8000-00805F9B34FB** |
-| GATT - Cycling power                 | **18180000-0000-1000-8000-00805F9B34FB** |
-| GATT - Cycling speed and cadence     | **18160000-0000-1000-8000-00805F9B34FB** |
-| GATT - Device information            | **180A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Environmental sensing         | **181A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Generic access                | **18000000-0000-1000-8000-00805F9B34FB** |
-| GATT - Generic attribute             | **18010000-0000-1000-8000-00805F9B34FB** |
-| GATT - Glucose                       | **18080000-0000-1000-8000-00805F9B34FB** |
-| GATT - Health thermometer            | **18090000-0000-1000-8000-00805F9B34FB** |
-| GATT - Heart rate                    | **180D0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Human interface device        | **18120000-0000-1000-8000-00805F9B34FB** |
-| GATT - Immediate alert               | **18020000-0000-1000-8000-00805F9B34FB** |
-| GATT - Indoor positioning            | **18210000-0000-1000-8000-00805F9B34FB** |
-| GATT - Internet protocol support     | **18200000-0000-1000-8000-00805F9B34FB** |
-| GATT - Link loss                     | **18030000-0000-1000-8000-00805F9B34FB** |
-| GATT - Location and navigation       | **18190000-0000-1000-8000-00805F9B34FB** |
-| GATT - Next DST change service       | **18070000-0000-1000-8000-00805F9B34FB** |
-| GATT - Phone alert status service    | **180E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Pulse oximeter                | **18220000-0000-1000-8000-00805F9B34FB** |
-| GATT - Reference time update service | **18060000-0000-1000-8000-00805F9B34FB** |
-| GATT - Running speed and cadence     | **18140000-0000-1000-8000-00805F9B34FB** |
-| GATT - Scan parameters               | **18130000-0000-1000-8000-00805F9B34FB** |
-| GATT - Tx power                      | **18040000-0000-1000-8000-00805F9B34FB** |
-| GATT - User data                     | **181C0000-0000-1000-8000-00805F9B34FB** |
-| GATT - Weight scale                  | **181D0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 警示通知服務    | **18110000-0000-1000-8000-00805F9B34FB** |
+| GATT - 自動化 IO                 | **18150000-0000-1000-8000-00805F9B34FB** |
+| GATT - 電池服務               | **180F0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 血壓計                | **18100000-0000-1000-8000-00805F9B34FB** |
+| GATT - 內容組合              | **181B0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 證券管理               | **181E0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 連續血糖監視 | **181F0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 目前的時間服務          | **18050000-0000-1000-8000-00805F9B34FB** |
+| GATT - 輪轉動力                 | **18180000-0000-1000-8000-00805F9B34FB** |
+| GATT - 輪轉速度和頻率     | **18160000-0000-1000-8000-00805F9B34FB** |
+| GATT - 裝置資訊            | **180A0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 環境感應器         | **181A0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 標準存取                | **18000000-0000-1000-8000-00805F9B34FB** |
+| GATT - 標準屬性             | **18010000-0000-1000-8000-00805F9B34FB** |
+| GATT - 葡萄糖                       | **18080000-0000-1000-8000-00805F9B34FB** |
+| GATT - 健康體溫計            | **18090000-0000-1000-8000-00805F9B34FB** |
+| GATT - 心率                    | **180D0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 人性化介面裝置        | **18120000-0000-1000-8000-00805F9B34FB** |
+| GATT - 即時警示               | **18020000-0000-1000-8000-00805F9B34FB** |
+| GATT - 室內定位            | **18210000-0000-1000-8000-00805F9B34FB** |
+| GATT - 網際網路通訊協定支援     | **18200000-0000-1000-8000-00805F9B34FB** |
+| GATT - 連結中斷                     | **18030000-0000-1000-8000-00805F9B34FB** |
+| GATT - 位置與瀏覽       | **18190000-0000-1000-8000-00805F9B34FB** |
+| GATT - 下一個 DST 變更服務       | **18070000-0000-1000-8000-00805F9B34FB** |
+| GATT - 電話警示狀態服務    | **180E0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 脈搏血氧儀                | **18220000-0000-1000-8000-00805F9B34FB** |
+| GATT - 參照時間更新服務 | **18060000-0000-1000-8000-00805F9B34FB** |
+| GATT - 跑步速度和頻率     | **18140000-0000-1000-8000-00805F9B34FB** |
+| GATT - 掃描參數               | **18130000-0000-1000-8000-00805F9B34FB** |
+| GATT - Tx 電量                      | **18040000-0000-1000-8000-00805F9B34FB** |
+| GATT - 使用者資料                     | **181C0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 體重計                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
  
 
-For a more complete listing of available Bluetooth services, see Bluetooth's protocol and service pages [here](http://go.microsoft.com/fwlink/p/?LinkID=619586) and [here](http://go.microsoft.com/fwlink/p/?LinkID=619587). You can also use the [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API to get some common GATT services.
+如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)API 來取得一些常見的 GATT 服務。
 
-## Custom Bluetooth LE services
+## 自訂藍芽 LE 服務
 
-Custom Bluetooth LE services use the following protocol identifier: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
+自訂藍牙 LE 服務會使用下列通訊協定識別碼：{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
-Custom profiles are defined with their own defined GUIDs. This custom GUID should be used for **System.Devices.AepService.ServiceClassId**.
+自訂設定檔會使用自己定義的 GUID 進行定義。 這個自訂 GUID 應該用於**System.Devices.AepService.ServiceClassId**。
 
-## UPnP services
+## UPnP 服務
 
-UPnP services use the following protocol identifier: {0e261de4-12f0-46e6-91ba428607ccef64}
+UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba428607ccef64}
 
-In general, all UPnP services have their name hashed into a GUID using the algorithm defined in RFC 4122. The following table lists some common UPnP services defined in Windows.
+一般而言，所有 UPnP 服務都會使用 RFC 4122 中定義的演算法，將其名稱雜湊為 GUID。 下表列出一些在 Windows 中定義的常見 UPnP 服務。
 
-| Service name                       | GUID                                     |
+| 服務名稱                       | GUID                                     |
 |------------------------------------|------------------------------------------|
-| Connection manager                 | **ba36014c-b51f-51cc-bf711ad779ced3c6**  |
-| AV transport                       | **deeacb78-707a-52df-b1c66f945e7e25bf**  |
-| Rendering control                  | **cc7fe721-a3c7-5a14-8c494419dc895513**  |
-| Layer 3 forwarding                 | **97d477fa-f403-577b-a714b29a9007797f**  |
-| WAN common interface configuration | **e4c1c624-c3c4-5104-b72eac425d9d157c**  |
-| WAP IP connection                  | **e4ac1c23-b5ac-5c27-88146bd837d8832c**  |
-| WFA WLAN configuration             | **23d5f7db-747f-5099-8f213ddfd0c3c688**  |
-| Printer enhanced                   | **fb9074da-3d9f-5384-922e9978ae51ef0c**  |
-| Printer basic                      | **5d2a7252-d45c-5158-87-a405212da327e1** |
-| Media receiver registrar           | **0b4a2add-d725-5198-b2ba852b8bf8d183**  |
-| Content directory                  | **89e701dd-0597-5279-a31c235991d0db1c**  |
-| DIAL                               | **085dfa4a-3948-53c7-a0d716d8ec26b29b**  |
+| 連線管理員                 | **ba36014c-b51f-51cc-bf711ad779ced3c6**  |
+| AV 傳輸                       | **deeacb78-707a-52df-b1c66f945e7e25bf**  |
+| 轉譯控制                  | **cc7fe721-a3c7-5a14-8c494419dc895513**  |
+| 第三層轉送                 | **97d477fa-f403-577b-a714b29a9007797f**  |
+| WAN 通用介面設定 | **e4c1c624-c3c4-5104-b72eac425d9d157c**  |
+| WAP IP 連線                  | **e4ac1c23-b5ac-5c27-88146bd837d8832c**  |
+| WFA WLAN 設定             | **23d5f7db-747f-5099-8f213ddfd0c3c688**  |
+| 功能加強的印表機                   | **fb9074da-3d9f-5384-922e9978ae51ef0c**  |
+| 印表機基本                      | **5d2a7252-d45c-5158-87-a405212da327e1** |
+| 媒體接收器登錄           | **0b4a2add-d725-5198-b2ba852b8bf8d183**  |
+| 內容目錄                  | **89e701dd-0597-5279-a31c235991d0db1c**  |
+| 撥號                               | **085dfa4a-3948-53c7-a0d716d8ec26b29b**  |
 
  
 
-## WSD services
+## WSD 服務
 
-WSD services use the following protocol identifier: {782232aa-a2f9-4993-971baedc551346b0}
+WSD 服務會使用下列通訊協定識別碼：{782232aa-a2f9-4993-971baedc551346b0}
 
-In general, all WSD services have their name hashed into a GUID using the algorithm defined in RFC 4122. The following table lists some common WSD services defined in Windows.
+一般而言，所有 WSD 服務都會使用 RFC 4122 中定義的演算法，將其名稱雜湊為 GUID。 下表列出一些在 Windows 中定義的常見 WSD 服務。
 
-| Service name | GUID                                    |
+| 服務名稱 | GUID                                    |
 |--------------|-----------------------------------------|
-| Printer      | **65dca7bd-2611-583e-9a12ad90f47749cf** |
-| Scanner      | **56ec8b9e-0237-5cae-aa3fd322dd2e6c1e** |
+| 印表機      | **65dca7bd-2611-583e-9a12ad90f47749cf** |
+| 掃描器      | **56ec8b9e-0237-5cae-aa3fd322dd2e6c1e** |
 
  
 
-## AQS sample
+## AQS 範例
 
-This AQS will filter for all UPnP **AssociationEndpointService** objects that support DIAL. In this case, [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) is set to **AsssociationEndpointService**.
+這個 AQS 將會篩選所有支援撥號的 UPnP **AssociationEndpointService** 物件。 在此情況下，[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 會設定為 **AsssociationEndpointService**。
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
@@ -131,6 +131,6 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

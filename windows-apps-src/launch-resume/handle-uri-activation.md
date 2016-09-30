@@ -1,60 +1,60 @@
 ---
 author: TylerMSFT
-title: Handle URI activation
-description: Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
+title: "處理 URI 啟用"
+description: "了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 translationtype: Human Translation
-ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
-ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 
 ---
 
-# Handle URI activation
+# 處理 URI 啟用
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要 API**
 
 -   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
 -   [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
-Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. Both Windows desktop apps and Universal Windows Platform (UWP) apps can register to be a default handler for a URI scheme name. If the user chooses your app as the default handler for a URI scheme name, your app will be activated every time that type of URI is launched.
+了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。 傳統 Windows 平台 (CWP) app 和通用 Windows 平台 (UWP) app 皆可登錄為 URI 配置名稱的預設處理常式。 如果使用者選擇您的 app 做為 URI 配置名稱的預設處理常式，則每次啟動該類型的 URI 時就會啟用您的 app。
 
-We recommend that you only register for a URI scheme name if you expect to handle all URI launches for that type of URI scheme. If you do choose to register for a URI scheme name, you must provide the end user with the functionality that is expected when your app is activated for that URI scheme. For example, an app that registers for the mailto: URI scheme name should open to a new e-mail message so that the user can compose a new e-mail. For more info on URI associations, see [Guidelines and checklist for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
+建議您只有當您希望處理某個 URI 配置類型的所有 URI 啟動時，才登錄該 URI 配置名稱。 如果您選擇登錄某個 URI 配置名稱，則在針對該 URI 配置名稱啟用您的 app 時，您必須為使用者提供預期的功能。 例如，登錄 mailto: URI 配置名稱的 app 必須開啟新的電子郵件訊息，以便讓使用者撰寫新的電子郵件。 如需 URI 關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
-These steps show how to register for a custom URI scheme name, alsdk://, and how to activate your app when the user launches a alsdk:// URI.
+這些步驟示範如何登錄自訂 URI 配置名稱 alsdk://，以及如何在使用者啟動 alsdk:// URI 時啟用您的 app。
 
-> **Note**  In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your UWP apps because they are either reserved or forbidden.
+> **注意** 在 UWP App 中，會將特定的 URI 和副檔名保留給內建 App 和作業系統使用。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 請在[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)中，參閱 URI 配置依字母排列的檔案類型清單，以了解遭保留或禁止而不能為 UWP app 登錄的檔案類型。
 
-## Step 1: Specify the extension point in the package manifest
+## 步驟 1：在封裝資訊清單中指定擴充點
 
 
-The app receives activation events only for the URI scheme names listed in the package manifest. Here's how you indicate that your app handles the `alsdk`URI scheme name.
+App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件。 以下是如何指示 app 處理 `alsdk`URI 配置名稱的方法。
 
-1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **Protocol** and then click **Add**.
+1.  在 [方案總管]**** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告]**** 索引標籤，然後在 [可用宣告] ****下拉式清單中選取 [通訊協定]****，然後按一下 [新增]****。
 
-    Here is a brief description of each of the fields that you may fill in the manifest designer for the Protocol (see [**AppX Package Manifest**](https://msdn.microsoft.com/library/windows/apps/dn934791) for details):
+    以下簡短說明可在資訊清單設計工具中為通訊協定填寫的每個欄位 (如需詳細資訊請參閱 [**AppX 封裝資訊清單**](https://msdn.microsoft.com/library/windows/apps/dn934791))：
 
-| Field | Description |
+| 欄位 | 說明 |
 |-------|-------------|
-| **Logo** | Specify the logo that is used to identify the URI scheme name in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. If no Logo is specified, the small logo for the app is used. |
-| **Display Name** | Specify the display name to identify the URI scheme name in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. |
-| **Name** | Choose a name for the Uri scheme. |
-|  | **Note**  The Name must be in all lower case letters. |
-|  | **Reserved and forbidden file types** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your UWP apps because they are either reserved or forbidden. |
-| **Executable** | Specifies the default launch executable for the protocol. If not specified, the app's executable is used. If specified, the string must be between 1 and 256 characters in length, must end with ".exe", and cannot contain these characters: &gt;, &lt;, :, ", &#124;, ?, or \*. If specified, the **Entry point** is also used. If the **Entry point** isn't specified, the entry point defined for the app is used. |
-| **Entry point** | Specifies the task that handles the protocol extension. This is normally the fully namespace-qualified name of a Windows Runtime type. If not specified, the entry point for the app is used. |
-| **Start page** | The web page that handles the extensibility point. |
-| **Resource group** | A tag that you can use to group extension activations together for resource management purposes. |
-| **Desired View** (Windows-only) | Specify the **Desired View** field to indicate the amount of space the app's window needs when it is launched for the URI scheme name. The possible values for **Desired View** are **Default**, **UseLess**, **UseHalf**, **UseMore**, or **UseMinimum**. <br/>**Note**  Windows takes into account multiple different factors when determining the target app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. Setting **Desired View** doesn't guarantee a specific windowing behavior for the target app.<br/> **Mobile device family:  Desired View** isn't supported on the mobile device family. |
-2.  Enter `images\Icon.png` as the **Logo**.
-3.  Enter `SDK Sample URI Scheme` as the **Display name**
-4.  Enter `alsdk` as the **Name**.
-5.  Press Ctrl+S to save the change to package.appxmanifest.
+| **標誌** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的標誌。 如果沒有指定標誌，則會使用 app 的小標誌。 |
+| **顯示名稱** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的顯示名稱。 |
+| **名稱** | 選擇 URI 配置的名稱。 |
+|  | **注意** [名稱] 必須全都是小寫字母。 |
+|  | **保留和禁止的檔案類型** 請參閱[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)，以取得因為已經被保留或禁止使用，而無法為 UWP app 登錄之 URI 配置的字母排序清單。 |
+| **執行檔** | 指定通訊協定預設的啟動執行檔。 如果沒有指定，則會使用 App 的執行檔。 如果已指定，字串長度必須介於 1 到 256 個字元，且結尾必須為「.exe」，同時不能包含下列字元：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，則也會使用**進入點**。 如果沒有指定**進入點**，則會使用針對 App 定義的進入點。 |
+| **進入點** | 指定處理通訊協定延伸的工作。 這必須符合 Windows 執行階段類型的完整命名空間名稱。 如果沒有指定，則會使用 app 的進入點。 |
+| **開始頁面** | 處理擴充點的網頁 |
+| **資源群組** | 您可以用來基於資源管理目的、將延伸啟用群組在一起的標記。 |
+| **所需的檢視** (僅限 Windows) | 指定 [所需的檢視]**** 欄位，指示當針對 URI 配置名稱啟動 app 時，app 視窗所需的空間大小。 [所需的檢視]**** 的可能值為 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意** Windows 在判斷目標 app 的最終視窗大小時會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目以及螢幕方向等。 設定 [所需的檢視]**** 並無法保證目標 app 的特定視窗行為。<br/> 行動裝置系列上不支援**行動裝置系列：所需的檢視**。 |
+2.  輸入 `images\Icon.png` 做為 [標誌]****。
+3.  輸入 `SDK Sample URI Scheme` 做為 [顯示名稱]****
+4.  輸入 `alsdk` 做為 [名稱]****。
+5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
-    This adds an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.protocol** category indicates that the app handles the `alsdk` URI scheme name.
+    這樣會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.protocol** 類別指示 app 處理 `alsdk` URI 配置名稱。
 
     ```xml
           <Extensions>
@@ -67,19 +67,19 @@ The app receives activation events only for the URI scheme names listed in the p
           </Extensions>
     ```
 
-## Step 2: Add the proper icons
+## 步驟 2：新增適當圖示
 
 
-Apps that become the default for a URI scheme name have their icons displayed in various places throughout the system, for example, in the Default programs control panel.
+成為 URI 配置名稱預設程式的 app，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。
 
-We recommend that you include the proper icons with your project so that your logo looks great in all of these places. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. For example icons, see the [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=620490).
+建議您使用適當圖示來代表專案，這樣能讓標誌在所有位置上看起來都很美觀。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
 
-![the solution explorer with a view of the files in the images folder. there are 16, 32, 48, and 256 pixel versions of both 'icon.targetsize' and 'smalltile-sdk'](images/seviewofimages.png)
+![方案總管及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
 
-## Step 3: Handle the activated event
+## 步驟 3：處理啟用的事件
 
 
-The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event handler receives all activation events. The **Kind** property indicates the type of activation event. This example is set up to handle [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) activation events.
+[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件處理常式會收到所有啟用事件。 **Kind** 屬性指示啟用事件的類型。 這個範例是設定來處理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 啟用事件。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -120,53 +120,53 @@ The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 
 > }
 > ```
 
-> **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+> **注意** 當透過「通訊協定協定」啟動時，請確定 [返回] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
 
-It is recommended that apps create a new XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) for each activation event that opens a new page. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML **Frame** for Launch and File Contracts should clear the pages on the **Frame** navigation journal before navigating to a new page.
+建議 app 針對每個開啟新頁面的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。 決定針對啟動和檔案協定使用單一 XAML **Frame** 的 app，應該先清除 **Frame** 瀏覽日誌上的頁面，然後再瀏覽到新頁面。
 
-When launched via Protocol activation, apps should consider including UI that allows the user to go back to the top page of the app.
+當透過通訊協定啟用啟動時，app 應該考慮包含能讓使用者回到 app 頂端頁面的 UI。
 
-## Remarks
+## 備註
 
 
-Any app or website can use your URI scheme name, including malicious ones. So any data that you get in the URI could come from an untrusted source. We recommend that you never perform a permanent action based on the parameters that you receive in the URI. For example, URI parameters could be used to launch the app to a user's account page, but we recommend that you never use them to directly modify the user's account.
+任何 app 或網站都可以使用您的 URI 配置名稱，包含惡意 app 或網站。 因此您透過 URI 取得的任何資料都可能來自不受信任的來源。 建議您絕對不要採用透過 URI 接收的參數來執行永久動作。 例如，URI 參數可以用來啟動 app 進入使用者的帳戶頁面，但是建議您絕對不要使用它們直接修改使用者的帳戶。
 
-> **Note**  If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
+> **注意** 如果您要為 app 建立新的 URI 配置名稱，請務必遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指導方針。 這樣可確保您的名稱符合 URI 配置的標準。
 
-> **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
+> **注意** 當透過「通訊協定協定」啟動時，請確定 [返回] 按鈕會將使用者帶回到啟動 App 的畫面，而不是 App 先前的內容。
 
-We recommend that apps create a new XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
+建議 app 針對每個開啟新 URI 目標的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。
 
-If you decide that you want your apps to use a single XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) for Launch and Protocol Contracts, clear the pages on the **Frame** navigation journal before navigating to a new page. When launched via Protocol Contract, consider including UI into your apps that allows the user to go back to the top of the app.
+如果您決定讓 app 針對啟動和通訊協定協定使用單一 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，請先清除 **Frame** 瀏覽日誌上的頁面，然後再瀏覽到新頁面。 當透過通訊協定協定啟動時，請考慮在 app 中包含能讓使用者回到 app 頂端的 UI。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
-## Related topics
+## 相關主題
 
 
-**Complete example**
+**完整範例**
 
-* [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**Concepts**
+**概念**
 
-* [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [File Type and URI Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [檔案類型與 URI 關聯模型](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Tasks**
+**工作**
 
-* [Launch the default app for a URI](launch-default-app.md)
-* [Handle file activation](handle-file-activation.md)
+* [啟動 URI 的預設 app](launch-default-app.md)
+* [處理檔案啟用](handle-file-activation.md)
 
-**Guidelines**
+**指導方針**
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Reference**
+**參考資料**
 
-* [**AppX Package Manifest**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**AppX 封裝資訊清單**](https://msdn.microsoft.com/library/windows/apps/dn934791)
 * [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
 * [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
@@ -176,6 +176,6 @@ If you decide that you want your apps to use a single XAML [**Frame**](https://m
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

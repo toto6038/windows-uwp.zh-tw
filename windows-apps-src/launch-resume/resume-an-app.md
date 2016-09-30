@@ -1,27 +1,34 @@
 ---
 author: TylerMSFT
-title: Handle app resume
-description: Learn how to refresh displayed content when the system resumes your app.
+title: "處理 app 繼續執行"
+description: "了解如何在系統繼續執行您的 app 時，重新整理已顯示的內容。"
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 translationtype: Human Translation
-ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
-ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
+ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
+ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 
 ---
 
-# Handle app resume
+# 處理 app 繼續執行
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
--   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-Learn where to refresh your UI when the system resumes your app. The example in this topic registers an event handler for the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
+**重要 API**
 
-## Register the resuming event handler
+-   [**繼續**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, which indicates that the user switched away from your app and then back to it.
+了解如何在系統繼續執行您的 app 時，重新整理已顯示的內容。 這個主題中的範例會登錄 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的事件處理常式。
+
+**藍圖：**這個主題與其他主題的相關性？ 請參閱：
+
+-   [使用 C# 或 Visual Basic 建立 Windows 執行階段應用程式的藍圖](https://msdn.microsoft.com/library/windows/apps/br229583)
+-   [使用 C++ 建立 Windows 執行階段 app 的藍圖](https://msdn.microsoft.com/library/windows/apps/hh700360)
+
+## 登錄繼續事件處理常式
+
+登錄以處理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，它指示使用者跳出然後又返回您的 app。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -53,13 +60,9 @@ Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows
 > }
 > ```
 
-## Refresh displayed content and reacquire resources
+## 暫停之後重新整理顯示的內容
 
-The system suspends your app a few seconds after the user switches to another app or to the desktop. The system resumes your app when the user switches back to it. When the system resumes your app, the content of your variables and data structures are the same as they were before the system suspended the app. The system restores the app where it left off. To the user, it appears as if the app has been running in the background.
-
-When your app handles the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, your app may be been suspended for hours or days. It should refresh any content that might have become stale while the app was suspended, such as news feeds or the user's location.
-
-This is also a good time to restore any exclusive resources that you released when your app was suspended such as file handles, cameras, I/O devices, external devices, and network resources.
+當您的 app 處理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件時，它有機會來重新整理自己已顯示的內容。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -67,7 +70,7 @@ This is also a good time to restore any exclusive resources that you released wh
 > {
 >     private void App_Resuming(Object sender, Object e)
 >     {
->         // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+>         // TODO: Refresh network data
 >     }
 > }
 > ```
@@ -76,7 +79,7 @@ This is also a good time to restore any exclusive resources that you released wh
 >
 >     Private Sub App_Resuming(sender As Object, e As Object)
 >  
->         ' TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+>         ' TODO: Refresh network data
 >
 >     End Sub
 >
@@ -85,26 +88,32 @@ This is also a good time to restore any exclusive resources that you released wh
 > ```cpp
 > void MainPage::App_Resuming(Object^ sender, Object^ e)
 > {
->     // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
+>     // TODO: Refresh network data
 > }
 > ```
 
-> **Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used in your handler to dispatch any calls to your UI.
+> **注意：**因為 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件不是從 UI 執行緒引發，所以調派程式必須用來取得 UI 執行緒並將更新置入 UI (如果處理常式中有需要處理的項目)。
 
-## Remarks
-
-When your app is attached to the Visual Studio debugger, it will not be suspended. You can suspend it from the debugger, however, and then send it a **Resume** event so that you can debug your code. Make sure the **Debug Location toolbar** is visible and click the drop-down next to the **Suspend** icon. Then choose **Resume**.
-
-For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
-
-## Related topics
-
-* [App lifecycle](app-lifecycle.md)
-* [Handle app activation](activate-an-app.md)
-* [Handle app suspend](suspend-an-app.md)
+## 備註
 
 
+當使用者切換至另一個應用程式或桌面時，系統會暫停您的應用程式。 當使用者切換回您的 app 時，系統就會繼續執行 app。 當系統繼續執行您的 app 時，您的變數和資料結構內容和系統暫停 app 之前一樣，沒有變化。 系統會將 app 回復成暫停之前的相同狀態，如此使用者會以為 app 一直在背景中執行。 不過，app 可能已經暫停一段時間，所以必須重新整理 app 暫停期間可能已變更的顯示內容，例如新聞摘要或使用者的位置。
 
-<!--HONumber=Aug16_HO3-->
+如果 app 沒有任何要重新整理的顯示內容，就不需要為它處理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
+
+> **注意：**當您的應用程式連接至 Visual Studio 偵錯工具時，您可以傳送給它一個 **Resume** 事件。 確定可看見 [偵錯位置工具列]****，然後按一下 [暫停]**** 圖示旁邊的下拉式清單。 然後選擇 [繼續]****。
+
+> **注意**：就 Windows Phone 市集 App 而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在 App 目前已被暫停，而使用者從主要磚或 App 清單重新啟動 App 的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+
+## 相關主題
+
+* [處理 app 啟用](activate-an-app.md)
+* [處理 app 暫停](suspend-an-app.md)
+* [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [App 週期](app-lifecycle.md)
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

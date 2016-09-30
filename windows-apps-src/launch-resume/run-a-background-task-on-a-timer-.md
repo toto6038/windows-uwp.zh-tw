@@ -1,43 +1,47 @@
 ---
 author: TylerMSFT
-title: Run a background task on a timer
-description: Learn how to schedule a one-time background task, or run a periodic background task.
+title: "在計時器上執行背景工作"
+description: "了解如何排程一次性的背景工作，或執行定期的背景工作。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 16202eeb37421acf75a9032dfc1eec397d23ce4f
-ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
 
 ---
 
-# Run a background task on a timer
+# 在計時器上執行背景工作
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+**重要 API**
 
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)
 -   [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)
 
-Learn how to schedule a one-time background task, or run a periodic background task.
+了解如何排程一次性的背景工作，或執行定期的背景工作。
 
--   This example assumes that you have a background task that needs to run periodically, or at a specific time, to support your app. A background task will only run using a [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) if you have called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
--   This topic assumes you have already created a background task class. To get started quickly building a background task, see [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md) or [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+-   這個範例假設您有需要定期或在特定時間執行以支援 app 的背景工作。 如果您已呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，背景工作將只會使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 來執行。
+-   本主題假設您已建立背景工作類別，包括做為背景工作進入點的 Run 方法。 若要快速開始建立背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-## Create a time trigger
+## 建立時間觸發程序
 
--   Create a new [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). The second parameter, *OneShot*, specifies whether the background task will run only once or keep running periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency at which the background task will run.
 
-    The built-in timer for Universal Windows Platform (UWP) apps that target the desktop or mobile device family runs background tasks in 15-minute intervals.
+-   建立一個新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二個參數 *OneShot* 指定背景工作是要執行一次或定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (單位：分鐘)。 如果 *OneShot* 設定成 False，*FreshnessTime* 會指定背景工作的執行頻率。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is true, the task will be scheduled to run once starting between 15 and 30 minutes from the time it is registered. If it is set to 25 minutes and *OneShot* is true, the task will be scheduled to run once starting between 25 and 40 minutes from the time it is registered.
+    以桌面或行動裝置系列為目標之通用 Windows 平台 (UWP) app 的內建計時器每隔 15 分鐘會執行背景工作。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is false, the task will be scheduled to run every 15 minutes starting between 15 and 30 minutes from the time it is registered. If it is set to n minutes and *OneShot* is false, the task will be scheduled to run every n minutes starting between n and n + 15 minutes after it is registered.
+    -   如果 *FreshnessTime* 設定為 15 分鐘，而且 *OneShot* 為 True，表示工作將會在工作登錄時間的 0 到 15 分鐘之間開始執行一次。
 
-    **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
- 
+    -   如果 *FreshnessTime* 設定為 15 分鐘，而且 *OneShot* 為 False，表示工作將會在工作登錄時間的 0 到 15 分鐘之間開始每隔 15 分鐘執行。
 
-    For example, this trigger will cause a background task to run once an hour:
+    **注意**：如果 *FreshnessTime* 設定為少於 15 分鐘，則嘗試登錄背景工作時會擲回例外狀況。
+
+     
+
+    例如，這個觸發程序將導致背景工作一個小時執行一次：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -47,11 +51,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## (Optional) Add a condition
+## (選用) 新增條件
 
--   If necessary, create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met - for more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-    In this example the condition is set to **UserPresent** so that, once triggered, the task only runs once the user is active. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+-   如有需要，可建立背景工作條件以控制何時執行工作。 在符合條件之前，條件會防止背景工作執行，如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
+
+    這個範例中，條件是設成 **UserPresent**，因此觸發後工作只有在使用者作用中時才會執行一次。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -61,9 +66,10 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  Call RequestAccessAsync()
+##  呼叫 RequestAccessAsync()
 
--   Before trying to register the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+
+-   嘗試登錄 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 背景工作之前，請先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -73,14 +79,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## Register the background task
+## 登錄背景工作
 
--   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
 
-> [!Important]
-> For background tasks that run in the same process as your app, do not set `entryPoint` For background tasks that run in a separate process from your app, set `entryPoint` to be the namespace, '.', and name of the class that contains your background task implementation.
+-   呼叫背景工作登錄函式以登錄背景工作。 如需登錄背景工作的詳細資訊，請參閱[登錄背景工作](register-a-background-task.md)。
 
-    The following code registers a background task that runs in a separate process:
+    下列程式碼會登錄背景工作：
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -96,33 +100,39 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+    > **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 確認您的 app 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 app 依賴有效的驗證物件，嘗試登錄工作之後，可能會當機。
 
 
-## Remarks
+## 備註
 
-> **Note**  Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks. For guidance on the types of background task triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+> **注意：**從 Windows 10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
-## Related topics
-
-* [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md).
-* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
+## 相關主題
 
-<!--HONumber=Sep16_HO2-->
+
+* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+* [登錄背景工作](register-a-background-task.md)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
+* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [背景工作的指導方針](guidelines-for-background-tasks.md)
+
+* [偵錯背景工作](debug-a-background-task.md)
+* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+ 
+
+ 
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

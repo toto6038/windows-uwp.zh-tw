@@ -1,156 +1,145 @@
 ---
 author: DBirtolo
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
-title: Enumerate devices
-description: The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
+title: "列舉裝置"
+description: "列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
-ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 ---
-# Enumerate devices
+# 列舉裝置
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Samples
 
-The simplest way to enumerate all available devices is to take a snapshot with the [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) command (explained further in a section below).
+** 重要 API **
 
-```CSharp
-async void enumerateSnapshot(){
-  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
-}
-```
+-   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-To download a sample showing the more advanced usages of the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](http://go.microsoft.com/fwlink/?LinkID=620536).
+列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。 您用來列舉可能裝置的 API 是 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間。 使用這些 API 的部份原因如下。
 
-## Enumeration APIs
+-   尋找要與您的 app 連線的裝置。
+-   取得與系統連線或可由系統搜索的裝置相關資訊。
+-   當新增裝置、連線、中斷連線、變更線上狀態或變更其他屬性時，讓 app 可以收到通知。
+-   當裝置連接、中斷連接、變更線上狀態或變更其他屬性時，讓 app 可以收到背景觸發程序。
 
-The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. The APIs that you use to enumerate through the possible devices are the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace. Some reasons for using these APIs include the following.
+這些 API 可透過下列任何通訊協定和匯流排來列舉裝置，前提是執行 app 的個別裝置和系統必須支援該技術。 這不是完整清單，而且特定裝置可能支援其他通訊協定。
 
--   Finding a device to connect to with your application.
--   Getting information about devices connected to or discoverable by the system.
--   Have an app receive notifications when devices are added, connect, disconnect, change online status, or change other properties.
--   Have an app receive background triggers when devices connect, disconnect, change online status, or change other properties.
-
-These APIs can enumerate devices over any of the following protocols and buses, provided the individual device and the system running the app support that technology. This is not an exhaustive list, and other protocols may be supported by a specific device.
-
--   Physically connected buses. This includes PCI and USB. For example, anything that you can see in the **Device Manager**.
+-   實際連線的匯流排。 這包含 PCI 和 USB。 例如，您可以在[**裝置管理員**] 中看到的任何項目。
 -   [UPnP](https://msdn.microsoft.com/library/windows/desktop/Aa382303)
--   Digital Living Network Alliance (DLNA)
--   [**Discovery and Launch (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
--   [**DNS Service Discovery (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
--   [Web Services on Devices (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
--   [Bluetooth](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
+-   數位生活網路聯盟 (DLNA)
+-   [**探索並啟動 (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
+-   [**DNS 服務探索 (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
+-   [裝置上的 Web 服務 (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
+-   [藍牙](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
 -   [**Wi-Fi Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
 -   WiGig
--   [**Point of Service**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**服務點**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
-In many cases, you will not need to worry about using the enumeration APIs. This is because many APIs that use devices will automatically select the appropriate default device or provide a more streamlined enumeration API. For example, [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) will automatically use the default audio renderer device. As long as your app can use the default device, there is no need to use the enumeration APIs in your application. The enumeration APIs provide a general and flexible way for you to discover and connect to available devices. This topic provides information about enumerating devices and describes the four common ways to enumerate devices.
+在許多情況下，您並不需要擔心列舉 API 的使用。 這是因為許多使用裝置的 API 會自動選取適當的預設裝置，或提供更順暢的列舉 API。 例如，[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 會自動使用預設的音訊轉譯器裝置。 只要您的 app 可以使用預設的裝置，就沒有必要在應用程式中使用列舉 API。 列舉 API 提供一般的彈性方式，可讓您探索並連接到可用的裝置。 本主題提供列舉裝置的相關資訊，並說明四個列舉裝置的常用方式。
 
--   Using the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) UI
--   Enumerating a snapshot of devices currently discoverable by the system
--   Enumerating devices currently discoverable and watch for changes
--   Enumerating devices currently discoverable and watch for changes in a background task
+-   使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) UI
+-   列舉系統目前可探索的裝置快照
+-   列舉目前可探索且監看變更的裝置
+-   列舉背景工作中目前可探索且監看變更的裝置
 
-## DeviceInformation objects
+## DeviceInformation 物件
 
 
-Working with the enumeration APIs, you will frequently need to use [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects. These objects contain most of the available information about the device. The following table explains some of the **DeviceInformation** properties you will be interested in. For a complete list, see the reference page for **DeviceInformation**.
+使用列舉 API，您會經常需要使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件。 這些物件包含大部分關於裝置的可用資訊。 下表說明您會感興趣的一些 **DeviceInformation** 屬性。 如需完整清單，請參閱 **DeviceInformation** 的參考頁面。
 
-| Property                         | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 屬性                         | 註解                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **DeviceInformation.Id**         | This is the unique identifier of the device and is provided as a string variable. In most cases, this is an opaque value you will just pass from one method to another to indicate the specific device you are interested in. You can also use this property and the **DeviceInformation.Kind** property after closing down your app and reopening it. This will ensure that you can recover and reuse the same [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. |
-| **DeviceInformation.Kind**       | This indicates the kind of device object represented by the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. This is not the device category or type of device. A single device can be represented by several different **DeviceInformation** objects of different kinds. The possible values for this property are listed in [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) as well as how they relate to one another.                           |
-| **DeviceInformation.Properties** | This property bag contains information that is requested for the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. The most common properties are easily referenced as properties of the **DeviceInformation** object, such as with [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). For more information, see [Device information properties](device-information-properties.md).                                                                |
+| **DeviceInformation.Id**         | 這是裝置的唯一識別碼，並以字串變數的方式提供。 在大部分情況下，這是一個您會從一種方法傳遞到另一種方法，來指出您感興趣之特定裝置的不透明值。 您也可以在關閉並重新開啟您的 app 之後使用這個屬性和 **DeviceInformation.Kind** 屬性。 這將能確保您可以復原並重複使用相同的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件。 |
+| **DeviceInformation.Kind**       | 這表示 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件所代表的裝置物件類型。 這不是裝置類別或裝置類型。 單一裝置可由數個不同類型的不同 **DeviceInformation** 物件來呈現。 這個屬性的可能值及其彼此關聯的方式都列於 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中。                           |
+| **DeviceInformation.Properties** | 這個屬性包涵蓋針對 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件要求的資訊。 您可以輕鬆地將最常見的屬性當成 **DeviceInformation** 物件的屬性進行參照，例如 [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name)。 如需詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。                                                                |
 
  
 
 ## DevicePicker UI
 
 
-The [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) is a control provided by Windows that creates a small UI that enables the user to select a device from a list. You can customize the **DevicePicker** window in a few ways.
+[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控制項，可用來建立讓使用者能夠從清單中選取裝置的小型 UI。 您可以透過幾種方式來自訂 [**DevicePicker**] 視窗。
 
--   You can control the devices that are displayed in the UI by adding a [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx), a [**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx), or both to the [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter). In most cases, you only need to add one selector or class, but if you do need more than one you can add multiple. If you do add multiple selectors or classes, they are conjoined using an OR logic function.
--   You can specify the properties you want to retrieve for the devices. You can do this by adding properties to [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties).
--   You can alter the appearance of the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) using [**Appearance**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.appearance).
--   You can specify the size and location of the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) when it is displayed.
+-   您可以控制顯示在 UI 中的裝置，方法是將 [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx)、[**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx)，或兩者新增至 [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter)。 在大部分情況下，您只需要新增一個選取器或類別，但如果您需要不止一個，您可以新增多個選取器或類別。 如果您新增多個選取器或類別，它們會使用 OR 邏輯函式結合在一起。
+-   您可以指定想要為裝置擷取的屬性。 您可以藉由將屬性新增至 [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties) 來執行此操作。
+-   您可以使用 [**Appearance**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.appearance) 來變更 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 的外觀。
+-   您可以指定 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 顯示時的大小和位置。
 
-While the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) is displayed, the contents of the UI will be automatically updated if devices are added, removed, or updated.
+顯示 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 時，UI 的內容會在新增、移除或更新裝置時自動更新。
 
-**Note**  You cannot specify the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) using the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841). If you want to have devices of a specific **DeviceInformationKind**, you will need to build a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) and provide your own UI.
-
- 
-
-Casting media content and DIAL also each provide their own pickers if you want to use them. They are [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) and [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783), respectively.
-
-## Enumerate a snapshot of devices
-
-
-In some scenarios, the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) will not be suitable for your needs and you need something more flexible. Perhaps you want to build your own UI or need to enumerate devices without displaying a UI to the user. In these situations, you could enumerate a snapshot of devices. This involves looking through the devices that are currently connected to or paired with the system. However, you need to be aware that this method only looks at a snapshot of devices that are available, so you will not be able to find devices that connect after you enumerate through the list. You also will not be notified if a device is updated or removed. Another potential downside to be aware of is that this method will hold back any results until the entire enumeration is completed. For this reason, you should not use this method when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are found over a network or wireless protocol. This can take up to 30 seconds to complete. In that scenario, you should use a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) object to enumerate through the possible devices.
-
-To enumerate through a snapshot of devices, use the [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) method. This method waits until the entire enumeration process is complete and returns all the results as one [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) object. This method is also overloaded to provide you with several options for filtering your results and limiting them to the devices that you are interested in. You can do this by providing a [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) or passing in a device selector. The device selector is an AQS string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md).
-
-An example of a device enumeration snapshot is provided below:
-
-
-
-In addition to limiting the results, you can also specify the properties that you want to retrieve for the devices. If you do, the specified properties will be available in the property bag for each of the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects returned in the collection. It is important to note that not all properties are available for all device kinds. To see what properties are available for which device kinds, see [Device information properties](device-information-properties.md).
-
-
-
-## Enumerate and watch devices
-
-
-A more powerful and flexible method of enumerating devices is creating a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446). This option provides the most flexibility when you are enumerating devices. It allows you to enumerate devices that are currently present, and also receive notifications when devices that match your device selector are added, removed, or properties change. When you create a **DeviceWatcher**, you provide a device selector. For more information about device selectors, see [Build a device selector](build-a-device-selector.md). After creating the watcher, you will receive the following notifications for any device that matches your provided criteria.
-
--   Add notification when a new device is added.
--   Update notification when a property you are interested in is changed.
--   Remove notification when a device is no longer available or no longer matches your filter.
-
-In most cases where you are using a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), you are maintaining a list of devices and adding to it, removing items from it, or updating items as your watcher receives updates from the devices that you are watching. When you receive an update notification, the updated information will be available as a [**DeviceInformationUpdate**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationupdate.aspx) object. In order to update your list of devices, first find the appropriate [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) that changed. Then call the [**Update**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.update) method for that object, providing the **DeviceInformationUpdate** object. This is a convenience function that will automatically update your **DeviceInformation** object.
-
-Since a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) sends notifications as devices arrive and when they change, you should use this method of enumerating devices when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are enumerated over networking or wireless protocols.
-
-To create a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), use one of the [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) methods. These methods are overloaded to enable you to specify the devices that you are interested in. You can do this by providing a [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) or passing in a device selector. The device selector is an AQS string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md). You can also specify the properties that you want to retrieve for the devices and are interested in. If you do, the specified properties will be available in the property bag for each of the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects returned in the collection. It is important to note that not all properties are available for all device kinds. To see what properties are available for which device kinds, see [Device information properties](device-information-properties.md)
-
-## Watch devices as a background task
-
-
-Watching devices as a background task is very similar to creating a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) as described above. In fact, you will still need to create a normal **DeviceWatcher** object first as described in the previous section. Once you create it, you call [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) instead of [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). When you call **GetBackgroundTrigger**, you must specify which of the notifications you are interested in: add, remove, or update. You cannot request update or remove without requesting add as well. Once you register the trigger, the **DeviceWatcher** will start running immediately in the background. From this point forward, whenever it receives a new notification for your application that matches your criteria, the background task will trigger and it will provide you the latest changes since it last triggered your application.
-
-**Important**  The first time that a [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) triggers your application will be when the watcher reaches the **EnumerationCompleted** state. This means it will contain all of the initial results. Any future times it triggers your application, it will only contain the add, update, and remove notifications that have occurred since the last trigger. This is slightly different from a foreground [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) object because the initial results do not come in one at a time and are only delivered in a bundle after the **EnumerationCompleted** is reached.
+**注意** 您無法使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 來指定 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
 
  
 
-Some wireless protocols behave differently if they are scanning in the background versus the foreground, or they may not support scanning in the background at all. There are three possibilities with relation to background scanning. The following table lists the possibilities and the effects this may have on your application. For example, Bluetooth and Wi-Fi Direct do not support background scans, so by extension, they do not support a [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838).
+如果您想要使用傳播媒體內容和 DIAL，它們也會各自提供自己的選擇器。 這些選擇器分別是 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) 和 [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783)。
 
-| Behavior                                  | Impact                                                                                                                                  |
+## 列舉裝置的快照
+
+
+在某些情況下，[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 不會適合您的需求，而您需要更多彈性。 或許您想要建置自己的 UI，或者需要在不向使用者顯示 UI 的情況下列舉裝置。 在這些情況下，您可以列舉裝置的快照。 這包含仔細尋找目前已與系統連接或配對的裝置。 不過，您需要注意這個方法只會查看可使用的裝置快照，所以您找不到在列舉清單之後連接的裝置。 如果裝置已更新或移除，您也不會收到通知。 另一個需要注意的潛在缺點是，這個方法在整個列舉完成之前，將不會顯示任何結果。 基於這個原因，當您對 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 物件感興趣時，便不應該使用這個方法，因為它們是透過網路或無線通訊協定找到的物件。 這最多可能需要 30 秒才能完成。 在這個案例中，您應該使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件來列舉可能的裝置。
+
+若要列舉裝置的快照，您可以使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 方法。 這個方法會等待，直到整個列舉處理程序完成，並以一個 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) 物件形式傳回所有結果為止。 這個方法也同時會多載以提供您數個選項，讓您可以篩選結果並將結果限制在您感興趣的裝置。 您可以藉由提供 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 或傳入裝置選取器來執行這個動作。 裝置選取器是一個 AQS 字串，可指定您想要列舉的裝置。 如需詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。
+
+除了限制結果之外，您也可以指定想要為裝置擷取的屬性。 如果這樣做，指定的屬性就能在集合中傳回的每個 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件的屬性包中使用。 請務必注意，並非所有屬性都可供所有裝置類型使用。 若要查看哪些屬性可供哪些裝置類型使用，請參閱[裝置資訊屬性](device-information-properties.md)。
+
+## 列舉並監看裝置
+
+
+有一個可用來列舉裝置、功能更強大且彈性的方法是建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)。 這個選項可在您列舉裝置時提供最大的彈性。 它讓您能夠列舉目前存在的裝置，也可以在新增或移除符合您裝置選取器的裝置，或進行該裝置的屬性變更時接收通知。 當您建立 **DeviceWatcher** 時，您將會提供裝置選取器。 如需裝置選取器的詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。 建立監看員之後，您將會收到下列針對所有符合您所提供準則之裝置的通知。
+
+-   在加入新裝置時的新增通知。
+-   在您感興趣的屬性變更時的更新通知。
+-   當裝置不再可用或不再符合您的篩選時的移除通知。
+
+在使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 的多數情況下，您會維護一份裝置清單，並在您的監看員收到您正在監看之裝置的更新時，新增、移除或更新清單中的項目。 當您收到更新通知時，更新的資訊將會以 [**DeviceInformationUpdate**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationupdate.aspx) 物件供使用。 若要更新您的裝置清單，請先尋找已變更的適當 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)。 然後呼叫該物件的 [**Update**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.update) 方法，提供 **DeviceInformationUpdate** 物件。 這個便利的函式將會自動更新您的 **DeviceInformation** 物件。
+
+由於 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 會在裝置連接及變更時傳送通知，您應該在對 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 物件感興趣時使用這個列舉裝置的方法，因為它們會透過網路或無線通訊協定加以列舉。
+
+若要建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，請使用其中一種 [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) 方法。 這些方法已多載以讓您指定感興趣的裝置。 您可以藉由提供 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 或傳入裝置選取器來執行這個動作。 裝置選取器是一個 AQS 字串，可指定您想要列舉的裝置。 如需詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。 您也可以指定想要為裝置擷取以及感興趣的屬性。 如果這樣做，指定的屬性就能在集合中傳回的每個 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件的屬性包中使用。 請務必注意，並非所有屬性都可供所有裝置類型使用。 若要查看哪些屬性可供哪些裝置類型使用，請參閱[裝置資訊屬性](device-information-properties.md)
+
+## 以背景工作的方式監看裝置
+
+
+以背景工作的方式監看裝置很類似上述建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 的方式。 事實上，您仍然需要先建立如上節所述的標準 **DeviceWatcher** 物件。 一旦建立該物件之後，您會呼叫 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx)，而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 當您呼叫 **GetBackgroundTrigger** 時，必須指定您所感興趣的通知：新增、移除或更新。 您無法在沒有要求新增的情況下要求更新或移除。 一旦登錄觸發程序之後，**DeviceWatcher** 就會立即開始在背景中執行。 自此之後，每當收到適用於您應用程式且符合您準則的新通知時，將會觸發背景工作，並提供自從上次觸發您的應用程式之後所做的最新變更。
+
+**重要** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 第一次觸發您的應用程式的時機，便是在監看員達到 **EnumerationCompleted** 狀態時。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
+
+ 
+
+某些無線通訊協定在背景進行掃描時，可能會和在前景進行掃描時擁有不一樣的行為。它們也有可能完全不支援在背景中掃描。 有三種與背景掃瞄相關的可能性。 下表列出這些可能性，以及這可能會對您的應用程式產生的效果。 例如，藍牙和 Wi-Fi Direct 不支援背景掃描，因而可推測出它們不支援 [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)。
+
+| 行為                                  | 影響                                                                                                                                  |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Same behavior in background               | None                                                                                                                                    |
-| Only passive scans possible in background | Device may take longer to discover while waiting for a passive scan to occur.                                                           |
-| Background scans not supported            | No devices will be detectable by the [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838), and no updates will be reported. |
+| 背景中的相同行為               | 無                                                                                                                                    |
+| 可能在背景中的唯一被動掃描 | 裝置在等待被動掃瞄執行時，可能需要較長的時間來探索。                                                           |
+| 不支援背景掃描            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
 
  
 
-If your [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) includes a protocol that does not support scanning in as a background task, your trigger will still work. However, you will not be able to get any updates or results over that protocol. The updates for other protocols or devices will still be detected normally.
+如果您的 [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 包含不支援以背景工作方式進行掃瞄的通訊協定，則觸發程序仍可運作。 不過，您將無法透過該通訊協定取得任何更新或結果。 通常仍會偵測到其他通訊協定或裝置的更新。
 
-## Using DeviceInformationKind
-
-
-In most scenarios, you will not need to worry about the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) of a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. This is because the device selector returned by the device API you're using will often guarantee you are getting the correct kinds of device objects to use with their API. However, in some scenarios you will want to get the **DeviceInformation** for devices, but there is not a corresponding device API to provide a device selector. In these cases you will need to build your own selector. For example, Web Services on Devices does not have a dedicated API, but you can discover those devices and get information about them using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs and then use them using the socket APIs.
-
-If you are building your own device selector to enumerate through device objects, [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) will be important for you to understand. All of the possible kinds, as well as how they relate to one another, are described on the reference page for **DeviceInformationKind**. One of the most common uses of **DeviceInformationKind** is to specify what kind of devices you are searching for when submitting a query in conjunction with a device selector. By doing this, it makes sure that you only enumerate over devices that match the provided **DeviceInformationKind**. For example, you could find a **DeviceInterface** object and then run a query to get the information for the parent **Device** object. That parent object may contain additional information.
-
-It is important to note that the properties available in the property bag for a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object will vary depending on the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) of the device. Certain properties are only available with certain kinds. For more information about which properties are available for which kinds, see [Device information properties](device-information-properties.md). Hence, in the above example, searching for the parent **Device** will give you access to more information that was not available from the **DeviceInterface** device object. Because of this, when you create your AQS filter strings, it is important to ensure that the requested properties are available for the **DeviceInformationKind** objects you are enumerating. For more information about building a filter, see [Build a device selector](build-a-device-selector.md).
-
-When enumerating **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects, you are enumerating over a wireless or network protocol. In these situations, we recommend that you don't use [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) and instead use [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). This is because searching over a network often results in search operations that won't timeout for 10 or more seconds before generating [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx). **FindAllAsync** doesn't complete its operation until **EnumerationCompleted** is triggered. If you are using a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), you'll get results closer to real time regardless of when **EnumerationCompleted** is called.
-
-## Save a device for later use
+## 使用 DeviceInformationKind
 
 
-Any [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object is uniquely identified by a combination of two pieces of information: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) and [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). If you keep these two pieces of information, you can recreate the **DeviceInformation** object after it lost by supplying this information to [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). If you do this, you can save user preferences for a device that integrates with your app.
+在大部分情況下，您不需要擔心 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 這是因為您正在使用之裝置 API 所傳回的裝置選取器，通常能保證您會取得可與其 API 搭配使用的正確裝置物件類型。 不過，某些情況下，雖然您想要取得裝置的 **DeviceInformation**，卻沒有對應的裝置 API 可提供裝置選取器。 在這些情況下，您便需要建置自己的選取器。 例如，裝置上的 Web 服務沒有專用的 API，但您可以探索這些裝置，並使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 來取得相關資訊，然後利用通訊端 API 來使用它們。
 
+如果您正在建置自己的裝置選取器來列舉裝置物件，請務必了解 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如需所有可能的類型及其彼此關聯的方式，請參閱 **DeviceInformationKind** 參考頁面中的說明。 **DeviceInformationKind** 最常見的用法之一，便是指定您在搭配裝置選取器送出查詢時正在搜尋的裝置類型。 如此可確保您只會列舉符合所提供之 **DeviceInformationKind** 的裝置。 例如，您可以尋找 **DeviceInterface** 物件，然後執行查詢來取得父項 **Device** 物件的資訊。 該父項物件可能包含其他資訊。
+
+需要特別注意的是，[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件屬性包中的可用屬性會根據裝置的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 而不同。 某些屬性僅供特定類型使用。 如需哪些屬性可供哪些類型使用的詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。 因此，在上述範例中，搜尋父項 **Device** 將讓您能夠存取更多無法從 **DeviceInterface** 裝置物件取得的資訊。 因此，當您建立 AQS 篩選字串時，請務必確認所要求的屬性適用於您正在列舉的 **DeviceInformationKind** 物件。 如需建置篩選器的詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。
+
+列舉 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 物件時，您是透過網路或網路通訊協定來列舉。 在這些情況下，建議您不要使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx)，並改用 [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx)。 這是因為在網路上搜尋，通常會造成 [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 產生之前無法逾時達 10 秒 (或以上) 的搜尋操作。 **FindAllAsync** 不會完成其操作，直到觸發 **EnumerationCompleted** 為止。 如果您正在使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，不論何時呼叫 **EnumerationCompleted**，您都會取得接近即時的結果。
+
+## 儲存裝置以供稍後使用
+
+
+任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，在遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
+
+## 範例
+
+
+若要下載示範如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的範例，可按一下[這裡](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
  
 
@@ -162,6 +151,6 @@ Any [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR22
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

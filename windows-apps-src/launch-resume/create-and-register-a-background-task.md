@@ -1,48 +1,48 @@
 ---
 author: TylerMSFT
-title: Create and register a background task that runs in a separate process
-description: Create a background task class and register it to run when your app is not in the foreground.
+title: "建立並登錄背景工作"
+description: "建立背景工作類別並加以登錄，即使您的 App 不在前景也能執行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
-ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
+ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
+ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 ---
 
-# Create and register a background task that runs in a separate process
+# 建立並登錄背景工作
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+**重要 API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Create a background task class and register it to run when your app is not in the foreground. This topic demonstrates how to create and register a background task that runs in a separate process than your foreground process. To do background work directly in the foreground application, see [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).
+建立背景工作類別並加以登錄，即使您的 App 不在前景也能執行。
 
-> [!Note]
-> If you use a background task to play media in the background, see [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) for information about improvements in Windows 10, version 1607, that make it much easier.
+## 建立背景工作類別
 
-## Create the Background Task class
 
-You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. This code will run when a specific event is triggered by using, for example, [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) or [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517).
+您可以撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別，在背景執行程式碼。 這個程式碼會在觸發特定事件後執行，例如使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 或 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)。
 
-The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. Before getting started, create a new project in your solution for background tasks. Add a new empty class for your background task and import the [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) namespace.
+下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 開始之前，請先在您的方案中為背景工作建立一個新專案。 請為您的背景工作新增一個空的類別，然後匯入 [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空間。
 
-1.  Create a new project for background tasks and add it to your solution. To do this, right-click on your solution node in the **Solution Explorer** and select Add-&gt;New Project. Then select the **Windows Runtime Component (Universal Windows)** project type, name the project, and click OK.
-2.  Reference the background tasks project from your Universal Windows Platform (UWP) app project.
+1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這麼做，請以滑鼠右鍵按一下您在 [方案總管]**** 中的方案節點，然後選取 [新增] -&gt; [新增專案]。 接著，選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型、為專案命名，然後按一下 [確定]。
+2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。
 
-    For a C++ app, right-click on your app project and select **Properties**. Then go to **Common Properties** and click **Add New Reference**, check the box next to your background tasks project, and click **OK** on both dialogs.
+    如果是 C++ 應用程式，請在您的應用程式專案上按一下滑鼠右鍵，然後選取 [屬性]****。 接著，移至 [通用屬性]**** 並按一下 [加入新參考]****，核取您背景工作專案旁邊的方塊，然後在兩個對話方塊中都按一下 [確定]****。
 
-    For a C# app, in your app project, right click on **References** and select **Add New Reference**. Under **Solution**, select **Projects** and then select the name of your background task project and click **Ok**.
+    如果是 C# 應用程式，請在您的應用程式專案中，於 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入新參考]****。 在 [方案]**** 下選取 [專案]****，然後選取您背景工作專案的名稱並按一下 [確定]****。
 
-3.  Create a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. The [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
+3.  建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一個在觸發指定事件時將會呼叫的必要進入點；這是每個背景工作都需要的方法。
 
     > [!NOTE]
-    > The background task class itself - and all other classes in the background task project - need to be **public** classes that are **sealed**.
+    > 背景工作類別本身及背景工作專案中的所有其他類別都必須是 **sealed** 的 **public** 類別。
 
-    The following sample code shows a very basic starting point for a background task class:
+    下列範例程式碼示範一個非常基本的背景工作起點：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -102,18 +102,17 @@ The following steps show you how to write a new class that implements the [**IBa
     >     }
     >  ```
 
-4.  If you run any asynchronous code in your background task, then your background task needs to use a deferral. If you don't use a deferral, then the background task process can terminate unexpectedly if the Run method completes before your asynchronous method call has completed.
+4.  如果您在背景工作中執行任何非同步程式碼，您的背景工作就需要使用延遲。 如果沒有使用延遲，當 Run 方法在您的非同步方法呼叫完成之前先完成時，背景工作處理程序就可能意外終止。
 
-    Request the deferral in the Run method before calling the asynchronous method. Save the deferral to a global variable so it can be accessed from the asynchronous method. Declare the deferral complete after the asynchronous code completes.
+    在呼叫非同步方法之前，請先在 Run 方法中要求延遲。 請將延遲儲存為全域變數，以便能夠從非同步方法存取它。 在非同步程式碼執行完成之後，請宣告延遲完成。
 
-    The following sample code gets the deferral, saves it, and releases it when the asynchronous code is complete:
+    下列範例程式碼會取得延遲、儲存它，然後在非同步程式碼執行完成時釋出它：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
+    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
-    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -125,7 +124,7 @@ The following steps show you how to write a new class that implements the [**IBa
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -143,20 +142,21 @@ The following steps show you how to write a new class that implements the [**IBa
     > ```
 
 > [!NOTE]
-> In C#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++, a similar result can be achieved by using a task chain.
+> 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在 C++ 中，可以使用工作鏈結達成類似的結果。
 
-For more information about asynchronous patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+如需有關非同步模式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187335)。 如需有關如何使用延遲防止背景工作提前停止的其他範例，請參閱[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
-The following steps are completed in one of your app classes (for example, MainPage.xaml.cs).
+下列步驟是在您 app 的其中一個類別 (例如 MainPage.xaml.cs) 中完成。
 
 > [!NOTE]
-> You can also create a function dedicated to registering background tasks - see [Register a background task](register-a-background-task.md). In that case, instead of using the next 3 steps, you can simply construct the trigger and provide it to the registration function along with the task name, task entry point, and (optionally) a condition.
+> 您也可以建立專門用來登錄背景工作的函式，請參閱[登錄背景工作](register-a-background-task.md)。 在這種情況下，您不需要使用以下三個步驟；只需建構觸發程序，並將它和工作名稱、工作進入點及 (選用) 條件提供給登錄函式即可。
 
-## Register the background task to run
 
-1.  Find out if the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property. This step is important; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete.
+## 註冊要執行的背景工作
 
-    The following example iterates on the AllTasks property and sets a flag variable to true if the task is already registered:
+1.  逐一查看 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性，以了解是否已經註冊背景工作。 這個步驟很重要；如果您的 app 不會檢查現有背景工作的註冊情況，就很容易多次註冊同一工作，因而造成效能問題，且將耗費大量 CPU 時間才能完成工作。
+
+    下列範例會逐一查看 AllTasks 屬性，並在工作已經登錄時，將旗標變數設為 true：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -193,11 +193,11 @@ The following steps are completed in one of your app classes (for example, MainP
     >     }
     > ```
 
-2.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
+2.  如果應用程式工作尚未登錄，則使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 建立您背景工作的執行個體。 工作進入點應該是您的背景工作類別名稱，並以命名空間為前置詞。
 
-    The background task trigger controls when the background task will run. For a list of possible triggers, see [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
+    背景工作觸發程序會控制背景工作將在何時執行。 如需可用觸發程序的清單，請參閱 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-    For example, this code creates a new background task and sets it to run when the **TimeZoneChanged** trigger is fired:
+    例如，這段程式碼會建立新的背景工作，並設定在引發 **TimeZoneChanged** 觸發程序時執行：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -215,9 +215,9 @@ The following steps are completed in one of your app classes (for example, MainP
     >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
     > ```
 
-3.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+3.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您希望在使用者上線時執行工作，則可使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-    The following sample code assigns a condition requiring the user to be present:
+    下列範例程式碼會指派條件，要求必須要有使用者：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -227,9 +227,9 @@ The following steps are completed in one of your app classes (for example, MainP
     >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
     > ```
 
-4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Store the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) result so it can be used in the next step.
+4.  透過呼叫 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件的 Register 方法來註冊背景工作。 儲存 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 結果以便在下一個步驟使用。
 
-    The following code registers the background task and stores the result:
+    下列程式碼會註冊背景工作並儲存結果：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -240,19 +240,18 @@ The following steps are completed in one of your app classes (for example, MainP
     > ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+> 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
-To ensure that your Universal Windows app continues to run properly after you release an update, use the **ServicingComplete** (see [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) trigger to perform any post-update configuration changes such as migrating the app's database and registering background tasks. It is best practice to unregister background tasks associated with the previous version of the app (see [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)) and register background tasks for the new version of the app (see [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)) at this time.
+為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+## 使用事件處理常式來處理背景工作完成
 
-## Handle background task completion using event handlers
 
-You should register a method with the [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), so that your app can get results from the background task. When the app is launched or resumed, the mark method will be called if the background task has completed since the last time the app was in the foreground. (The OnCompleted method will be called immediately if the background task completes while your app is currently in the foreground.)
+您應該向 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 註冊方法，以便讓 app 可以從背景工作取得結果。 啟動或繼續執行 app 時，如果背景工作自 app 上次在前景時即已完成，將會呼叫 mark 方法 (如果背景工作是在您 app 目前處於前景時完成，將會立即呼叫 OnCompleted 方法)。
 
-1.  Write an OnCompleted method to handle the completion of background tasks. For example, the background task result might cause a UI update. The method footprint shown here is required for the OnCompleted event handler method, even though this example does not use the *args* parameter.
+1.  在 OnCompleted 方法中處理背景工作的完成。 例如，背景工作結果可能會導致 UI 更新。 OnCompleted 事件處理常式方法需要在此處顯示的方法配置，即使這個範例未使用 *args* 參數亦同。
 
-    The following sample code recognizes background task completion and calls an example UI update method that takes a message string.
+    下列範例程式碼會辨識背景工作完成並呼叫範例 UI 更新方法，以取得訊息字串。
 
      > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -275,12 +274,13 @@ You should register a method with the [**BackgroundTaskCompletedEventHandler**](
     > ```
 
     > [!NOTE]
-    > UI updates should be performed asynchronously, to avoid holding up the UI thread. For an example, see the UpdateUI method in the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+    > UI 更新應該以非同步方式執行，以避免 UI 執行緒阻塞。 例如，請參閱[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的 UpdateUI 方法。
 
 
-2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
 
-    The following sample code adds a [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) to the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786):
+2.  返回登錄背景工作的位置。 在該行的程式碼後面，新增 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 物件。 提供您的 OnCompleted 方法做為 **BackgroundTaskCompletedEventHandler** 建構函式的參數。
+
+    下列範例程式碼會將 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 新增到 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)：
 
      > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -290,18 +290,18 @@ You should register a method with the [**BackgroundTaskCompletedEventHandler**](
     >     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
     > ```
 
-## Declare that your app uses background tasks in the app manifest
+## 宣告您的應用程式有使用應用程式資訊清單的背景工作
 
-Before your app can run background tasks, you must declare each background task in the app manifest. If your app attempts to register a background task with a trigger that isn't listed in the manifest, the registration will fail.
+在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的 app 嘗試使用未列在資訊清單中的觸發程序來註冊背景工作，註冊將會失敗。
 
-1.  Open the package manifest designer by opening the file named Package.appxmanifest.
-2.  Open the **Declarations** tab.
-3.  From the **Available Declarations** drop-down, select **Background Tasks** and click **Add**.
-4.  Select the **System event** checkbox.
-5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is RuntimeComponent1.ExampleBackgroundTask.
-6.  Close the manfiest designer.
+1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
+2.  開啟 [宣告]**** 索引標籤。
+3.  從 [可用宣告]**** 下拉式清單中選擇 [背景工作]****，然後按一下 [新增]****。
+4.  選取 [系統事件]**** 核取方塊。
+5.  在 [進入點:]**** 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
+6.  關閉資訊清單設計工具。
 
-    The following Extensions element is added to your Package.appxmanifest file to register the background task:
+    下列 Extensions 元素會新增至您的 Package.appxmanifest 檔案中以註冊背景工作：
 
     ```xml
     <Extensions>
@@ -313,44 +313,43 @@ Before your app can run background tasks, you must declare each background task 
     </Extensions>
     ```
 
-## Summary and next steps
+## 摘要與後續步驟
 
-You should now understand the basics of how to write a background task class, how to register the background task from within your app, and how to make your app recognize when the background task is complete. You should also understand how to update the application manifest so that your app can successfully register the background task.
 
-> [!NOTE]
-> Download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
-
-See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
+您現在應該了解如何撰寫背景工作類別的基本概念，如何在 app 內註冊背景工作，以及如何讓 app 辨識背景工作已經完成。 您也應該了解如何更新 app 資訊清單，才能讓您的 app 成功登錄背景工作。
 
 > [!NOTE]
-> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> 下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)，以查看使用背景工作、完整且健全的 UWP app 內容中的類似程式碼範例。
 
-## Related topics
+請參閱下列 API 參考的相關主題、背景工作概念指引，以及撰寫使用背景工作之 app 的更詳細說明。
 
-**Detailed background task instructional topics**
+> [!NOTE]
+> 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Register a background task](register-a-background-task.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).
-[Convert a multi-process background task to a single-process background task](convert-multiple-process-background-task.md)  
+## 相關主題
 
-**Background task guidance**
+**詳細的背景工作說明主題**
 
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+* [登錄背景工作](register-a-background-task.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 
-**Background Task API Reference**
+**背景工作指引**
+
+* [背景工作的指導方針](guidelines-for-background-tasks.md)
+* [偵錯背景工作](debug-a-background-task.md)
+* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+**背景工作 API 參考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

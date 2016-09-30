@@ -1,86 +1,83 @@
 ---
 author: mcleanbyron
-Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
-title: Launch Feedback Hub from your app
+Description: "您可以鼓勵客戶從您的應用程式啟動意見反應中樞，來留下意見反應。"
+title: "從您的應用程式啟動意見反應中樞"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 translationtype: Human Translation
-ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
-ms.openlocfilehash: c0c55c78751a7990cc7690c2ba5975a57387989c
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5
 
 ---
 
-# Launch Feedback Hub from your app
+# 從您的應用程式啟動意見反應中樞
 
-You can encourage your customers to leave feedback by adding a control (such as a button) to your Universal Windows Platform (UWP) app that launches Feedback Hub. Feedback Hub is a preinstalled app that provides a single place to gather feedback on Windows and installed apps. All customer feedback that is submitted for your app through Feedback Hub is collected and presented to you in the [Feedback report](../publish/feedback-report.md) in the Windows Dev Center dashboard, so you can see the problems, suggestions, and upvotes that your customers have submitted in one report.
+您可以鼓勵客戶將控制項 (例如按鈕) 新增到啟動意見反應中樞的通用 Windows 平台 (UWP) 應用程式，來留下意見反應。 意見反應中樞是預先安裝的應用程式，提供單一位置來收集 Windows 和已安裝應用程式的意見反應。 在 Windows 開發人員中心儀表板的 [意見反應報告](../publish/feedback-report.md) 中，收集透過意見反應中樞針對您的應用程式所提交的所有客戶意見反應，並向您呈現它們，因此，您可以在一份報告中查看客戶已提交的問題、建議和附議。
 
-To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
+>**注意：** **意見反應**報告目前只提供給已加入[開發人員中心測試人員計畫](../publish/dev-center-insider-program.md)的開發人員帳戶。 
 
->**Note**&nbsp;&nbsp;Feedback Hub is available only on devices that are running Windows 10 version 10.0.14271 or later. We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
+若要從您的應用程式啟動意見反應中樞，請使用 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) 所提供的 API。 建議您使用這個 API 從應用程式的 UI 元素啟動意見反應中樞，而應用程式遵循我們的設計指導方針。
 
-## How to launch Feedback Hub from your app
+>**注意** 意見反應中樞僅適用於執行 Windows 10 10.0.14271 版或更新版本的裝置。 建議您只在使用者裝置上可以使用意見反應中樞時，才在您的應用程式中顯示意見反應控制項。 本主題中的程式碼示範操作方法。
 
-To launch Feedback Hub from your app:
+## 如何從您的應用程式啟動意見反應中樞
 
-1. Install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). In addition to the API for launching Feedback Hub, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads. For more information about this SDK, see [Microsoft Store Services SDK](microsoft-store-services-sdk.md).
-2. Open your project in Visual Studio.
-3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
-4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
-6. In your project, add the control that you want to show to users to launch Feedback Hub, such as a button. We recommend that you configure the control as follows:
-  * Set the font of the content shown in the control to **Segoe MDL2 Assets**.
-  * Set the text in the control to the hexadecimal Unicode character code E939. This is the character code for the recommended feedback icon in the **Segoe MDL2 Assets** font.
-  * Set the visibility of the control to hidden.
+從您的應用程式啟動意見反應中樞：
 
-    > **Note**&nbsp;&nbsp;Feedback Hub is available only on devices that are running Windows 10 version 10.0.14271 or later. We recommend that you hide your feedback control by default and show it in your initialization code only if the Feedback Hub is available on the user's device. The next step demonstrates how to do this.
+1. 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。 除了用於啟動意見反應中樞的 API 之外，此 SDK 也會針對其他功能 (例如，在應用程式中使用 A/B 測試來執行實驗，以及顯示廣告) 提供 API。 如需這個 SDK 的詳細資訊，請參閱[利用 Store Engagement and Monetization SDK 讓您的應用程式獲利及吸引客戶](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)。
+2. 在 Visual Studio 中，開啟您的專案。
+3. 在 [方案總管] 中，於專案的 [參考]**** 節點上按一下滑鼠右鍵，然後按一下 [加入參考]****。
+4. 在 [參考管理員]**** 中，展開 [通用 Windows]****，然後按一下 [擴充功能]****。
+5. 在 SDK 清單中，按一下 [Microsoft Store Engagement SDK]**** 旁邊的核取方塊，然後按一下 [確定]****。
+6. 在專案中，新增您想要向使用者顯示以啟動意見反應中樞的控制項 (例如按鈕)。 建議您設定控制項，如下所示︰
+  * 將控制項中所顯示內容的字型設定為 **Segoe MDL2 Assets**。
+  * 將控制項中的文字設定為十六進位 Unicode 字元碼 E939。 這是 **Segoe MDL2 Assets** 字型的建議意見反應圖示的字元碼。
+  * 將控制項的可見度設定為隱藏。
 
-  The following code demonstrates the XAML definition of a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) that is configured as described above.
+    > **注意** 意見反應中樞僅適用於執行 Windows 10 10.0.14271 版或更新版本的裝置。 建議您隱藏意見反應控制項 (預設值)，並且只有在使用者裝置上可以使用意見反應中樞時，才使用初始化程式碼來顯示意見反應控制項。 下一步示範操作方法。
 
+  下列程式碼示範如上所述設定的 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的 XAML 定義。
   ```xml
   <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
   ```
-7. In your initialization code for the app page that hosts your feedback control, use the static [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) method of the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class to determine whether the Feedback Hub is available on the user's device. If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
-
-  ```CSharp
-  if (Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.IsSupported())
-  {
+7. 在裝載意見反應控制項之應用程式頁面的初始化程式碼中，使用 [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) 類別的 [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.issupported.aspx) 屬性判斷是否可以在使用者裝置上使用意見反應中樞。 如果這個屬性傳回 **true**，請將控制項設為可見。 下列程式碼示範 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的操作方法。
+```CSharp
+if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
+{
         this.feedbackButton.Visibility = Visibility.Visible;
-  }
-  ```
+}
+```
+8. 在使用者按一下控制項時執行的事件處理常式中，呼叫 [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) 類別的靜態 [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) 方法，來啟動意見反應中樞應用程式。 這個方法有兩個多載︰一個不含參數，另一個接受索引鍵/值組的字典，而此字典包含您想要與意見反應產生關聯的中繼資料。 下列範例示範如何在 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件處理常式中啟動意見反應中樞。
+```CSharp
+private async void feedbackButton_Click(object sender, RoutedEventArgs e)
+{
+        await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
+}
+```
 
-8. In the event handler that runs when the user clicks the control, get a [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) object and call the [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) method to launch the Feedback Hub app. There are two overloads for this method: one without parameters, and another one that accepts a dictionary of key and value pairs that contain metadata that you want to associate with the feedback. The following example demonstrates how to launch Feedback Hub in the [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event handler for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+## 意見反應 UI 的設計建議
 
-  ```CSharp
-  private async void feedbackButton_Click(object sender, RoutedEventArgs e)
-  {
-        var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
-        await launcher.LaunchAsync();
-  }
-  ```
+若要啟動意見反應中樞，建議您在應用程式中新增 UI 元素 (例如按鈕)，而應用程式使用 Segoe MDL2 Assets 字型和字元碼 E939 來顯示下列標準意見反應圖示。
 
-## Design recommendations for your feedback UI
+![]意見反應圖示](images/feedback_icon.PNG)
 
-To launch Feedback Hub, we recommend that you add a UI element in your app (such as a button) that displays the following standard feedback icon from the Segoe MDL2 Assets font and the character code E939.
+我們也建議您使用下列一個或多個位置選項來連結到您應用程式中的意見反應中樞。
+* **直接在應用程式列中**。 根據您的實作，您可能只想要使用圖示，或新增文字 (如下所示)。
 
-![]Feedback icon](images/feedback_icon.PNG)
+  ![]意見反應圖示](images/feedback_appbar_placement.png)
 
-We also recommend that you use one or more of the following placement options for linking to Feedback Hub in your app.
-* **Directly in the app bar**. Depending on your implementation, you may wish to use the icon only or add text (as shown below).
+* **在應用程式的設定中**。 這是存取意見反應中樞的更精緻方式。 在下列範例中，意見反應連結會顯示為應用程式下的其中一個連結。
 
-  ![]Feedback icon](images/feedback_appbar_placement.png)
+  ![]意見反應圖示](images/feedback_settings_placement.png)
 
-* **In your app's settings**. This is a more subtle way to provide access to Feedback Hub. In the example below, the Feedback link appears as one of the links under App.
-
-  ![]Feedback icon](images/feedback_settings_placement.png)
-
-* **In an event-driven flyout**. This is useful when you want to query your customers about a specific question before launching into the Windows Feedback Hub. For example, after your app uses a certain feature, you might prompt the customer with a specific question about their satisfaction with that feature. If the customer chooses to respond, your app launches Feedback Hub.
+* **在事件驅動的飛出視窗中**。 當您想要在啟動到 Windows 意見反應中樞之前查詢您的客戶有關特定問題時，這十分有用。 例如，在您的應用程式使用特定功能之後，您可能會向客戶提示他們對該功能滿意度的特定問題。 如果客戶選擇回應，您的應用程式就會啟動意見反應中樞。
 
 
-## Related topics
+## 相關主題
 
-* [Feedback report](../publish/feedback-report.md)
+* [意見反應報告](../publish/feedback-report.md)
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

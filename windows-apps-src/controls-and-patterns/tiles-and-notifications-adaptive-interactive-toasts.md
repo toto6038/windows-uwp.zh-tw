@@ -1,41 +1,44 @@
 ---
 author: mijacobs
-Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
-title: Adaptive and interactive toast notifications
+Description: "調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。"
+title: "調適型和互動式快顯通知"
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 ---
-# Adaptive and interactive toast notifications
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 調適型和互動式快顯通知
 
-Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 
-The adaptive and interactive toast notifications model has these updates over the legacy toast template catalog:
 
--   The option to include buttons and inputs on the notifications.
--   Three different activation types for the main toast notification and for each action.
--   The option to create a notification for certain scenarios, including alarms, reminders, and incoming calls.
 
-**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+
+調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
+
+相較於舊版快顯通知範本目錄，調適型和互動式快顯通知模型具有以下更新：
+
+-   在通知上包括按鈕和輸入項目選項。
+-   針對主要快顯通知和每項動作提供三種不同的啟用類型。
+-   針對特定案例 (包括警示、提醒及來電) 建立通知的選項。
+
+**注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
  
 
-## Toast notification structure
+## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>快顯通知結構
 
 
-Toast notifications are constructed using XML, which would typically contain these key elements:
+快顯通知是使用 XML 建構，並通常包含下列重要元素：
 
--   &lt;visual&gt; covers the content available for the users to visually see, including text and images
--   &lt;actions&gt; contains buttons/inputs the developer wants to add inside the notification
--   &lt;audio&gt; specifies the sound played when the notification pops
+-   &lt;visual&gt; 涵蓋可供使用者目視檢視的內容，包括文字和影像
+-   &lt;actions&gt; 包含開發人員要在通知中加入的按鈕/輸入項目
+-   &lt;audio&gt; 會指定通知快顯時播放的音效
 
-Here's a code example:
+以下是程式碼範例：
 
 ```XML
 <toast launch="app-defined-string">
@@ -54,67 +57,67 @@ Here's a code example:
 </toast>
 ```
 
-And a visual representation of the structure:
+以及結構的視覺化呈現方式：
 
-![toast notification structure](images/adaptivetoasts-structure.jpg)
+![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
-### Visual
+### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>視覺
 
-Inside the visual element, you must have exactly one binding element that contains the visual content of the toast.
+在視覺元素內部，必須有且只有一個包含快顯通知視覺內容的繫結元素。
 
-Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
+通用 Windows 平台 (UWP) App 中的通知依據不同的磚大小支援多種範本。 但是，快顯通知只有一個範本名稱：**ToastGeneric**。 只有一個範本名稱表示：
 
--   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
--   You can use the same code to construct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
+-   您可以變更快顯內容，例如新增另一行文字、新增內嵌影像，或將應用程式圖示的縮圖影像變更為顯示其他項目，而且執行這些動作時不需要擔心會變更整個範本，或擔心因為範本名稱和內容不符而建立無效的承載。
+-   您可以使用相同的程式碼，針對要供不同類型 Microsoft Windows 裝置 (包括手機、平板電腦、電腦及 Xbox One) 使用的**快顯通知**建構相同的承載。 這些裝置每一個都將能夠接受通知，並依據其 UI 原則以適當的視覺能供性和互動模型方式向使用者顯示。
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### Actions
+### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>動作
 
-In UWP apps, you can add buttons and other inputs to your toast notifications, which lets users do more outside of the app. These actions are specified under the &lt;actions&gt; element, of which there are two types that you can specify:
+在 UWP App 中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在 App 外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
 
--   &lt;action&gt; This appears as a button on desktop and mobile devices. You can specify up to five custom or system actions inside a toast notification.
--   &lt;input&gt; This allows users to provide input, such as quick replying to a message, or selecting an option from a drop-down menu.
+-   &lt;action&gt; 這會在傳統型與行動裝置上顯示為按鈕。 您最多可以在快顯通知中指定五個自訂或系統動作。
+-   &lt;input&gt; 這可以允許使用者提供輸入，例如快速回覆訊息，或從下拉式功能表中選取選項。
 
-Both &lt;action&gt; and &lt;input&gt; are adaptive within the Windows family of devices. For example, on mobile or desktop devices, an &lt;action&gt; to a user is a button on which to tap/click. A text &lt;input&gt; is a box in which users can input text using either a physical keyboard or an on-screen keyboard. These elements will also adapt to future interaction scenarios, such as an action announced by voice or a text input taken by dictation.
+&lt;action&gt; 和 &lt;input&gt; 在 Windows 系列裝置內部皆具備調整彈性。 例如，在行動或傳統型裝置中，提供給使用者的 &lt;action&gt; 是可以點選/按一下的按鈕。 文字 &lt;input&gt; 則是一個方塊，使用者可使用實體鍵盤或螢幕小鍵盤在其中輸入文字。 這些元素也可以針對未來的互動案例 (例如透過語音宣告動作，或透過聽寫方式輸入文字) 調整。
 
-When an action is taken by the user, you can do one of the following by specifying the [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) attribute inside the &lt;action&gt; element:
+當使用者採取動作時，您可以指定 &lt;action&gt; 元素內部的 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 屬性來執行下列其中一項動作：
 
--   Activating the app in the foreground, with an action-specific argument that can be used to navigate to a specific page/context.
--   Activating the app's background task without affecting the user.
--   Activating another app via protocol launch.
--   Specify a system action to perform. The current available system actions are snoozing and dismissing scheduled alarm/reminder, which will be further explained in a section below.
+-   使用可用來瀏覽特定頁面/內容的動作特定引數在前景啟用 App。
+-   在不影響使用者的情況下啟用 app 的背景工作。
+-   透過通訊協定啟動來啟用另一個 app。
+-   指定要執行的系統動作。 目前可用的系統動作為延期及解除排定的鬧鐘/提醒，將在下面的小節中進一步說明。
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### Audio
+### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>音訊
 
-Custom sounds aren't currently supported on UWP apps that target the desktop platform; instead, you can choose from the list of ms-winsoundevents for your app on desktop. UWP apps on mobile platforms support both ms-winsoundevents, along with custom sounds in these formats:
+針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的 app 從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
 
 -   ms-appx:///
 -   ms-appdata:///
 
-See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications, which includes a complete list of ms-winsoundevents.
+請參閱[音訊結構描述頁面](https://msdn.microsoft.com/library/windows/apps/br230842)了解快顯通知音訊的相關資訊，包括完整的 ms-winsoundevents 清單。
 
-## Alarms, reminders, and incoming calls
-
-
-You can use toast notifications for alarms, reminders, and incoming calls. These special toasts have an appearance that's consistent with standard toasts, though special toasts feature some custom, scenario-based UI and patterns:
-
--   A reminder toast notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the reminder toast notifications will also show up pre-expanded.
--   In addition to sharing the above behaviors with reminder notifications, alarm notifications also automatically play looping audio.
--   Incoming call notifications are displayed full screen on Windows Mobile devices. This is done by specifying the scenario attribute inside the root element of a toast notification – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
-
-## XML examples
+## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>鬧鐘、提醒及來電
 
 
-**Note**  The toast notification screenshots for these examples were taken from an app on desktop. On mobile devices, a toast notification may be collapsed when it pops up, with a grabber at the bottom of the toast to expand it.
+您可以針對鬧鐘、提醒及來電使用快顯通知。 這些特殊快顯通知的外觀和標準快顯通知一致，但是特殊快顯通知具備一些自訂、以案例為基礎的 UI 和圖案：
+
+-   提醒快顯通知將停留在螢幕上，直到使用者將它關閉或採取動作。 在 Windows Mobile 上，提醒快顯通知也會以預先展開的方式顯示。
+-   除了和提醒通知共用上述行為之外，鬧鐘通知也會自動播放循環音效。
+-   來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 這可以透過在以下的快顯通知根元素內部指定 scenario 屬性來完成 – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
+
+## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 範例
+
+
+**注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
 
  
 
-**Notification with rich visual contents**
+**包含豐富視覺內容的通知**
 
-This example shows how you can have multiple lines of text, an optional small image to override the application logo, and an optional inline image thumbnail.
+此範例說明如何使用多行文字、使用選用小型影像複寫應用程式標誌，以及使用選用內嵌影像縮圖。
 
 ```XML
 <toast launch="app-defined-string">
@@ -130,13 +133,13 @@ This example shows how you can have multiple lines of text, an optional small im
 </toast>
 ```
 
-![notification with rich visual contents](images/adaptivetoasts-xmlsample01.png)
+![包含豐富視覺內容的通知](images/adaptivetoasts-xmlsample01.png)
 
  
 
-**Notification with actions, example 1**
+**包含動作的通知，範例 1**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast launch="app-defined-string">
@@ -154,13 +157,13 @@ This example shows...
 </toast>
 ```
 
-![notification with actions, example 1](images/adaptivetoasts-xmlsample02.png)
+![包含動作的通知，範例 1](images/adaptivetoasts-xmlsample02.png)
 
  
 
-**Notification with actions, example 2**
+**包含動作的通知，範例 2**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast launch="app-defined-string">
@@ -179,13 +182,13 @@ This example shows...
 </toast>
 ```
 
-![notification with actions, example 2](images/adaptivetoasts-xmlsample03.png)
+![包含動作的通知，範例 2](images/adaptivetoasts-xmlsample03.png)
 
  
 
-**Notification with text input and actions, example 1**
+**包含文字輸入和動作的通知，範例 1**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -204,13 +207,13 @@ This example shows...
 </toast>
 ```
 
-![notification with text and input actions](images/adaptivetoasts-xmlsample04.png)
+![包含文字和輸入動作的通知](images/adaptivetoasts-xmlsample04.png)
 
  
 
-**Notification with text input and actions, example 2**
+**包含文字輸入和動作的通知，範例 2**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -228,13 +231,13 @@ This example shows...
 </toast>
 ```
 
-![notification with text input and actions](images/adaptivetoasts-xmlsample05.png)
+![包含文字輸入和動作的通知](images/adaptivetoasts-xmlsample05.png)
 
  
 
-**Notification with selection input and actions**
+**包含選取項目輸入和動作的通知**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -257,13 +260,13 @@ This example shows...
 </toast>
 ```
 
-![notification with selection input and actions](images/adaptivetoasts-xmlsample06.png)
+![包含選取項目輸入和動作的通知](images/adaptivetoasts-xmlsample06.png)
 
  
 
-**Reminder notification**
+**提醒通知**
 
-This example shows...
+這個範例顯示...
 
 ```XML
 <toast scenario="reminder" launch="developer-pre-defined-string">
@@ -283,20 +286,20 @@ This example shows...
 </toast>
 ```
 
-![reminder notification](images/adaptivetoasts-xmlsample07.png)
+![提醒通知](images/adaptivetoasts-xmlsample07.png)
 
  
 
-## Activation samples
+## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>啟用範例
 
 
-Like mentioned above, the body and actions in the toast are capable of activating apps in different ways. The below sample will show you how to handle different type of activations from the toast body and/or toast actions.
+如上述說明，快顯通知的內文和動作可以透過不同方式啟動 app。 下面的範例將說明如何處理來自快顯通知內文和/或快顯通知動作的不同類型啟用。
 
-**Foreground**
+**前景**
 
-In this scenario, an app uses foreground activation to respond to an action inside an actionable toast notification by launching the app and navigating to the correct content.
+在這個案例中，app 會透過啟動 app 並瀏覽至正確內容，以使用前景啟用來回應可執行動作之快顯通知內部的動作。
 
-Activation from toast notifications used to invoke OnLaunched(). In Windows 10, toast has its own activation kind and will invoke OnActivated().
+從用來叫用 OnLaunched() 的快顯通知啟用。 在 Windows 10 中，快顯通知有自己的啟用類型且將會叫用 OnActivated()。
 
 ```
 async protected override void OnActivated(IActivatedEventArgs args)
@@ -315,9 +318,9 @@ async protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-**Background**
+**背景**
 
-In this scenario, an app uses a background task to handle an action inside an interactive toast notification. The below code shows how to declare this background task for handling toast activations inside your app manifest, and how to get arguments from the action and user inputs when the buttons are clicked.
+在這個案例中，app 會使用背景工作來處理可執行動作之快顯通知內部的動作。 下面的程式碼說明如何宣告此背景工作，以處理您應用程式資訊清單內部的快顯通知啟用，以及說明如何在按鈕被按下時從動作和使用者輸入取得引數。
 
 ```
 <!-- Manifest Declaration -->
@@ -349,10 +352,10 @@ namespace ToastNotificationTask
 }
 ```
 
-## Schemas: &lt;visual&gt; and &lt;audio&gt;
+## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>結構描述：&lt;visual&gt; 和 &lt;audio&gt;
 
 
-In the following schemas, a "?" suffix means that an attribute is optional.
+在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -369,130 +372,130 @@ In the following schemas, a "?" suffix means that an attribute is optional.
 </toast>
 ```
 
-**Attributes in &lt;toast&gt;**
+**&lt;toast 中的屬性&gt;**
 
 launch?
 
 -   launch? = string
--   This is an optional attribute.
--   A string that is passed to the application when it is activated by the toast.
--   Depending on the value of activationType, this value can be received by the app in the foreground, inside the background task, or by another app that's protocol launched from the original app.
--   The format and contents of this string are defined by the app for its own use.
--   When the user taps or clicks the toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the toast content, rather than launching in its default way.
--   If the activation is happened because user clicked on an action, instead of the body of the toast, the developer retrieves back the "arguments" pre-defined in that &lt;action&gt; tag, instead of "launch" pre-defined in the &lt;toast&gt; tag.
+-   這是選擇性屬性。
+-   快顯通知啟動應用程式時，傳遞給應用程式的字串。
+-   視 activationType 的值而定，此值可由在前景的 app 於背景工作內部 app 接收，或由透過通訊協定從原始 app 啟動的其他 app 接收。
+-   此字串的格式和內容是由 app 定義以供 app 自己使用。
+-   當使用者點選或按一下快顯通知來啟動其相關聯 App 時，啟動字串會提供相關內容給 App，以允許 App 向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。
+-   如果是因為使用者按下某個動作 (而非按一下快顯通知內文) 而啟用，開發人員會取回在該 &lt;action&gt; 標記中預先定義的 "arguments"，而非取回 &lt;toast&gt; 標記中預先定義的 "launch"。
 
 duration?
 
 -   duration? = "short|long"
--   This is an optional attribute. Default value is "short".
--   This is only here for specific scenarios and appCompat. You don't need this for the alarm scenario anymore.
--   We don't recommend using this property.
+-   這是選擇性屬性。 預設值為 "short"。
+-   這個屬性僅供特定案例和 appCompat 使用。 對於鬧鐘案例，您已經不需要再用到這個屬性。
+-   我們不建議使用這個屬性。
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   This is an optional attribute.
--   The default value is "foreground".
+-   這是選擇性屬性。
+-   預設值為 "foreground"。
 
 scenario?
 
 -   scenario? = "default | alarm | reminder | incomingCall"
--   This is an optional attribute, default value is "default".
--   You do not need this unless your scenario is to pop an alarm, reminder, or incoming call.
--   Do not use this just for keeping your notification persistent on screen.
+-   這是選擇性屬性，預設值為 "default"。
+-   除非您的案例是要快顯鬧鐘、提醒或來電，否則您不需要使用此屬性。
+-   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
-**Attributes in &lt;visual&gt;**
+**&lt;visual 中的屬性&gt;**
 
 version?
 
 -   version? = nonNegativeInteger
--   This attribute isn't necessary because versioning will be deprecated on &lt;visual&gt;. Stay tuned for a new versioning model that you'll specify from a higher hierarchy, if needed.
+-   這個屬性是不必要的，因為版本設定在 &lt;visual&gt; 中將被取代。 如有需要，請持續留意您將可從較高階層指定的新版本設定模型。
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**Attributes in &lt;binding&gt;**
+**&lt;binding 中的屬性&gt;**
 
 template?
 
--   \[Important\] template? = "ToastGeneric"
--   If you are using any of the new adaptive and interactive notification features, please make sure you start using "ToastGeneric" template instead of the legacy template.
--   Using the legacy templates with the new actions might work now, but that is not the intended use case, and we cannot guarantee that will continue working.
+-   [Important] template? = "ToastGeneric"
+-   如果您使用新的調適型和互動式通知，請確定您是從使用 "ToastGeneric" 範本開始，而非使用舊版範本。
+-   目前可能可以搭配新動作使用舊版範本，但那並非預期的使用情況，因此我們無法保證該使用方式將會持續有效。
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**Attributes in &lt;text&gt;**
+**&lt;text 中的屬性&gt;**
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230847)，以了解此選擇性屬性的詳細資料。
 
-**Attributes in &lt;image&gt;**
+**&lt;image 中的屬性&gt;**
 
 src
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this required attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此必要屬性的詳細資料。
 
 placement?
 
 -   placement? = "inline" | "appLogoOverride"
--   This attribute is optional.
--   This specifies where this image will be displayed.
--   "inline" means inside the toast body, below the text; "appLogoOverride" means replace the application icon (that shows up on the top left corner of the toast).
--   You can have up to one image for each placement value.
+-   這是選擇性屬性。
+-   此屬性可指定將顯示影像的位置。
+-   "inline" 表示位於快顯通知內文內部、文字下方; "appLogoOverride" 表示取代應用程式圖示 (顯示於快顯通知左上角)。
+-   您可以為每個位置值最多提供一個影像。
 
 alt?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230844)，以了解此選擇性屬性的詳細資料。
 
 hint-crop?
 
 -   hint-crop? = "none" | "circle"
--   This attribute is optional.
--   "none" is the default value which means no cropping.
--   "circle" crops the image to a circular shape. Use this for profile images of a contact, images of a person, and so on.
+-   這是選擇性屬性。
+-   "none" 為預設值，表示沒有裁剪。
+-   "circle" 會將影像裁剪為圓形。 請針對連絡人設定檔影像、人員影像等項目使用此屬性。
 
-**Attributes in &lt;audio&gt;**
+**&lt;audio 中的屬性&gt;**
 
 src?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
 loop?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
 silent?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
-## Schemas: &lt;action&gt;
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>結構描述：&lt;action&gt;
 
 
-In the following schemas, a "?" suffix means that an attribute is optional.
+在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
 
 ```
 <toast>
@@ -508,85 +511,85 @@ In the following schemas, a "?" suffix means that an attribute is optional.
 </toast>
 ```
 
-**Attributes in &lt;input&gt;**
+**&lt;input 中的屬性&gt;**
 
 id
 
 -   id = string
--   This attribute is required.
--   The id attribute is required and is used by developers to retrieve user inputs once the app is activated (in the foreground or background).
+-   這是必要屬性。
+-   id 是必要屬性，並且是由開發人員用來在 app 啟用之後抓取使用者輸入 (於前景或背景)。
 
 type
 
 -   type = "text | selection"
--   This attribute is required.
--   It is used to specify a text input or input from a list of pre-defined selections.
--   On mobile and desktop, this is to specify whether you want a textbox input or a listbox input.
+-   這是必要屬性。
+-   這個屬性是用來指定文字輸入或來自預先定義選取項目之清單的輸入。
+-   在行動裝置與桌上型裝置上，這是用來指定您是要使用文字方塊輸入或清單方塊輸入。
 
 title?
 
 -   title? = string
--   The title attribute is optional and is for developers to specify a title for the input for shells to render when there is affordance.
--   For mobile and desktop, this title will be displayed above the input.
+-   title 是選擇性屬性，且是供開發人員在有能供性時，指定要轉譯之 Shell 的輸入的標題。
+-   對於行動裝置和桌上型裝置，此標題將顯示在輸入上方。
 
 placeHolderContent?
 
 -   placeHolderContent? = string
--   The placeHolderContent attribute is optional and is the grey-out hint text for text input type. This attribute is ignored when the input type is not "text".
+-   placeHolderContent 是選擇性屬性，且是文字輸入類型的灰色提示文字。 當輸入類型不是 "text" 時，會忽略此屬性。
 
 defaultInput?
 
 -   defaultInput? = string
--   The defaultInput attribute is optional and is used to provide a default input value.
--   If the input type is "text", this will be treated as a string input.
--   If the input type is "selection", this is expected to be the id of one of the available selections inside this input's elements.
+-   defaultInput 是選擇性屬性，且是用來提供預設輸入值。
+-   如果輸入類型是 "text"，此屬性將被視為字串輸入。
+-   如果輸入類型是 "selection"，此屬性預期為此輸入元素內部其中一個可用選取項目的 id。
 
-**Attributes in &lt;selection&gt;**
+**&lt;selection 中的屬性&gt;**
 
 id
 
--   This attribute is required. It's used to identify user selections. The id is returned to your app.
+-   這是必要屬性。 這個屬性是用來識別使用者選取項目。 會傳回 id 給您的 app。
 
 content
 
--   This attribute is required. It provides the string to display for this selection element.
+-   這是必要屬性。 這個屬性可為此選取項目元素提供字串以供顯示。
 
-**Attributes in &lt;action&gt;**
+**&lt;action 中的屬性&gt;**
 
 content
 
 -   content = string
--   The content attribute is required. It provides the text string displayed on the button.
+-   content 是必要屬性。 它會提供在按鈕上顯示的文字字串。
 
 arguments
 
 -   arguments = string
--   The arguments attribute it required. It describes the app-defined data that the app can later retrieve once it is activated from user taking this action.
+-   arguments 是必要屬性。 這個屬性描述使用者採取此動作以啟用 app 之後，app 可抓取之 app 定義的資料。
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   The activationType attribute is optional and its default value is "foreground".
--   It describes the kind of activation this action will cause: foreground, background, or launching another app via protocol launch, or invoking a system action.
+-   activationType 是選擇性屬性，且其預設值為 "foreground"。
+-   這個屬性描述此動作將造成的啟動類型：前景、背景或透過通訊協定啟動來啟動其他 app，或叫用系統動作。
 
 imageUri?
 
 -   imageUri? = string
--   imageUri is optional and is used to provide an image icon for this action to display inside the button alone with the text content.
+-   imageUri 是選擇性屬性，且是用來為此動作提供影像圖示，以供在按鈕內部和文字內容一起顯示。
 
 hint-inputId
 
 -   hint-inputId = string
--   The hint-inpudId attribute is required. It's specifically used for the quick reply scenario.
--   The value needs to be the id of the input element desired to be associated with.
--   In mobile and desktop, this will put the button right next to the input box.
+-   hint-inpudId 是必要屬性。 這個屬性專門用於快速回覆案例。
+-   值必須是要關聯之輸入屬性的 id。
+-   在行動裝置與桌上型裝置中，這個屬性會將按鈕放在輸入方塊旁邊。
 
-## Attributes for system-handled actions
+## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>系統處理之動作的屬性
 
 
-The system can handle actions for snoozing and dismissing notifications if you don't want your app to handle the snoozing/rescheduling of notifications as a background task. System-handled actions can be combined (or individually specified), but we don't recommend implementing a snooze action without a dismiss action.
+如果您不想要由 app 以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
 
-System commands combo: SnoozeAndDismiss
+系統命令組合：SnoozeAndDismiss
 
 ```
 <toast>
@@ -597,7 +600,7 @@ System commands combo: SnoozeAndDismiss
 </toast>
 ```
 
-Individual system-handled actions
+個別的系統處理的動作
 
 ```
 <toast>
@@ -618,32 +621,32 @@ Individual system-handled actions
 </toast>
 ```
 
-To construct individual snooze and dismiss actions, do the following:
+若要建構個別的延期和關閉動作，請執行以下作業：
 
--   Specify activationType = "system"
--   Specify arguments = "snooze" | "dismiss"
--   Specify content:
-    -   If you want localized strings of "snooze" and "dismiss" to be displayed on the actions, specify content to be an empty string: &lt;action content = ""/&gt;
-    -   If you want a customized string, just provide its value: &lt;action content="Remind me later" /&gt;
--   Specify input:
-    -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
-    -   If you want to provide snooze interval selections:
-        -   Specify hint-inputId in the snooze action
-        -   Match the id of the input with the hint-inputId of the snooze action: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Specify selection id to be a nonNegativeInteger which represents snooze interval in minutes: &lt;selection id="240" /&gt; means snoozing for 4 hours
-        -   Make sure that the value of defaultInput in &lt;input&gt; matches with one of the ids of the &lt;selection&gt; children elements
-        -   Provide up to (but no more than) 5 &lt;selection&gt; values
-
- 
+-   指定 activationType = "system"
+-   指定 arguments = "snooze" | "dismiss"
+-   指定內容：
+    -   如果您想要在動作上顯示當地語系化的 "snooze" 和 "dismiss" 字串，請將內容指定為空白字串：&lt;action content = ""/&gt;
+    -   如果您想要自訂字串，只要提供其值即可：&lt;action content="Remind me later" /&gt;
+-   指定輸入：
+    -   如果您不想讓使用者選取延遲間隔，而只想讓您的通知延遲一段系統定義的時間間隔 (整個系統一致)，那就不要建置任何 &lt;input&gt;。
+    -   如果您想要提供延遲間隔選取項目：
+        -   請在延遲動作中指定 hint-inputId
+        -   讓輸入的 ID 和延遲動作的 hint-inputId 相符：&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   將選取項目 id 指定為代表延期間隔 (分鐘) 的 nonNegativeInteger：&lt;selection id="240" /&gt; 表示延期 4 小時
+        -   確定 &lt;input&gt; 中 defaultInput 的值與 &lt;selection&gt; 子元素的其中一個 id 相符
+        -   提供最多 (但不要超過) 5 個 &lt;selection&gt; 值
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

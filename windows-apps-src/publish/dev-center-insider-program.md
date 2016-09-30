@@ -1,31 +1,29 @@
 ---
-title: Dev Center Insider Program
-description: Try out new Dev Center features before they become available to all developers and let us know what you think.
+title: "開發人員中心測試人員計畫"
+description: "在向所有開發人員提供之前，讓我們搶先體驗全新的開發人員中心功能，並讓我們了解您的想法。"
 author: JnHs
 translationtype: Human Translation
-ms.sourcegitcommit: c3a8b083272fc421763eb153372f660ef357f044
-ms.openlocfilehash: 67aacbbcdf066ec22bcf18bc6bad1e0f0e17c7d0
+ms.sourcegitcommit: ee75eb3ee3bff61666513dcf57384675a07c56ee
+ms.openlocfilehash: b889769f6a23c2830274a72bc392a4409377c142
 
 ---
 
-# Dev Center Insider Program
+# 開發人員中心測試人員計畫
 
-As a [registered developer](http://go.microsoft.com/fwlink/?LinkID=615100), you can help influence the functionality we make available in the Dev Center dashboard by joining the Dev Center Insider Program. This program allows you to try out new features before they become available to all developers. We encourage you to give us your feedback on these features by using the Feedback link in the bottom right corner of Dev Center. All of the feedback we receive from Dev Center Insiders will be read closely and given priority consideration.
+[註冊的開發人員](http://go.microsoft.com/fwlink/?LinkID=615100)可加入開發人員中心測試人員計畫，以協助決定我們要在開發人員中心儀表板中提供哪些功能。 此計畫可讓您在我們向所有開發人員提供全新功能之前，享有搶先體驗的機會。 我們歡迎您使用開發人員中心右下角的 [意見反應] 連結，與我們分享對於這些功能的意見反應。 我們將會仔細閱讀從開發人員中心測試人員那裡收到的所有意見反應，並列入優先考量。
 
-To join the program, opt in on the **Account settings** page in your Dev Center dashboard. You can opt out at any time.
+若要加入此計畫，請從您的開發人員中心儀表板的 [帳戶設定]**** 頁面選擇加入。 您隨時可以選擇退出。
 
-> **Important** The terms of the [App Developer Agreement](https://msdn.microsoft.com/windows/apps/hh694058.aspx) apply to your participation in the program. Please read them, particularly Exhibit I, before you join the program. Keep in mind that the features made available exclusively to people in the Dev Center Insider Program may include experimental and early prerelease services. This means that these features often don’t have documentation available yet, and you may experience unintended results when using them. 
+> **重要** 您參與本計畫即適用[應用程式開發人員合約](https://msdn.microsoft.com/windows/apps/hh694058.aspx)條款。 加入計畫前，請詳閱這些條款，特別是「附件 I」。 請留意，僅供參與開發人員中心測試人員計畫的人員使用的功能可能包含實驗性與早期發行前版本的服務。 這表示這些功能通常無文件可用，而您在使用這些功能時可能會遇到非預期的結果。 
 
-Here are some of the features that we’ve made available exclusively to members of the Dev Center Insider Program. This list will change over time as new features are added (and as features introduced to the Insider Program are made available to everyone).
+下列是我們僅提供給開發人員中心測試人員計畫成員的一些功能。 此清單會隨著新功能加入 (以及隨著將功能引入測試人員計畫中以開放給所有人) 而變更。
 
-| Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
+| 開發人員中心測試人員計畫功能   | 開發人員中心測試人員可以如何試用 | 新增日期 |
 |--------------------------------------|------------------------------------|------------|
-|**Analytics overview page**: View key metrics about your apps, all in one page. You can select any of your apps, or select up to five to get a combined view; coming soon we’ll show your top five apps by default. | Click the **Analyze** dropdown near the top of the page and select **Overview**. Please share your feedback to let us know what additional info you’d like to see here and what you think of this design.  |September 2016|
-|**Real time analytics**: See details about your app's most recent acquisitions and add-ons. The new report uses real-time event collection from your Windows 10 customers. | Choose Real time report in the left menu under Analytics. Select the time range to review data over the last 7 days or up to the last hour on a per-minute basis. Note that the report includes only data from customers on Windows 10.  |August 2016|
-|**Targeted push notifications**: Create custom notifications to send to your app's customers - all of them, or only a selected segment based on specific criteria that you define. | Go to the Push notifications page (under Services) for an app. Click **New notification** to create and schedule the notification. You can send it to all of your app's users, or click **Create new customer group** to define a specific segment of your app's customers. [Learn more](http://go.microsoft.com/fwlink/p/?LinkId=718017).  |August 2016|
-|**Segments**: Create a segment of your app’s customers by selecting specific criteria, and get a breakdown of stats about that segment. | Near the top of your dashboard overview page, click **Customers** and then **Create new group**. |July 2016|
-|**Manage add-ons in bulk**: Make changes to multiple add-ons at once rather than submitting each update individually. | Click **Manage add-ons in bulk** on an app’s Overview or Add-ons page. |June 2016|
-|**Page history for multi-user accounts**: Account owners can access detailed browsing history for any additional users they’ve added to the account.|On the **Manage users** page, click the link shown under “Last activity” for the user whose browsing history you’d like to review.|April 2016|
+|**管理大量的 IAP**：同時變更多個 IAP，而不是個別送出每個更新。 | 按一下 App 的 [概觀] 或 IAP 頁面上的 [管理大量的 IAP]****。 |2016 年 6 月|
+|**裝置系列可用性**：管理您 app 的裝置系列可用性，並以排序的方式查看特定 Windows 10 裝置系列 (以及較舊的 OS 版本，若適用) 會收到的封裝。|在 app 提交的 [封裝]**** 頁面檢視此資訊並進行選擇。|2016 年 5 月|
+|**多使用者帳戶的頁面歷程記錄**：帳戶擁有者可以存取他們已加入帳戶之任何其他使用者的詳細瀏覽歷程記錄。|在 [管理使用者]**** 頁面中，針對您想檢閱其瀏覽歷程紀錄的使用者按一下 [上次活動] 底下顯示的連結。|2016 年 4 月|
+|**新的儀表板設計**︰在同一處取得 app 和關鍵計量的更新檢視。|新的設定會顯示在您的儀表板概觀頁面上。|2016 年 3 月|
 
 
 
@@ -34,6 +32,6 @@ Here are some of the features that we’ve made available exclusively to members
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jul16_HO2-->
 
 

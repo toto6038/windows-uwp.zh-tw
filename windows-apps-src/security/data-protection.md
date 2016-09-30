@@ -1,34 +1,34 @@
 ---
-title: Data protection
-description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
+title: "資料保護"
+description: "本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。"
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
+ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
 
 ---
 
-# Data protection
+# 資料保護
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
+本文說明如何使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 類別，來加密和解密 UWP 應用程式中的數位資料。
 
-You can use the data protection APIs in multiple ways:
+使用資料保護 API 有多種方式：
 
--   To protect data to an Active Directory (AD) security principal like an AD group. Any member of the group can decrypt the data.
--   To protect data to the public key contained in an X.509 certificate. The owner of the private key can decrypt the data.
--   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
--   To protect data to the credentials (password) used during logon to a website.
+-   利用 Active Directory (AD) 安全性主體 (例如 AD 群組) 來保護資料。 群組的任何成員都可以解密資料。
+-   保護 X.509 憑證中包含的公開金鑰資料。 私密金鑰的擁有者可以解密資料。
+-   使用對稱金鑰來保護資料。 例如，這種方式可以保護非 AD 主體的資料 (如 Live ID)。
+-   利用登入網站時使用的認證資料 (密碼) 來保護資料。
 
-To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
+若要保護資料，當您建立 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 物件時，必須在呼叫 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 或 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 之前先指定保護描述元。 下列範例顯示可能的範例保護描述元。
 
-## Protecting static data
+## 保護靜態資料
 
 
-The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
+下列範例示範如何使用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 和 [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) 方法，用非同步方式來保護目前使用者 SID 的靜態資料。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -110,10 +110,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## Protecting stream data
+## 保護串流資料
 
 
-The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
+下列範例示範如何使用 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 和 [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) 方法，以非同步方式來保護目前使用者 SID 的串流資料。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -264,6 +264,6 @@ namespace SampleProtectStreamAsync
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

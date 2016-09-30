@@ -1,48 +1,48 @@
 ---
 author: QuinnRadich
-Description: Design external help pages for detailed instructions and advice about your app.
-title: Guidelines for designing external help pages
+Description: "設計您應用程式的詳細指示和建議的外部說明頁面。"
+title: "設計外部說明頁面的指導方針"
 label: External help
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
-ms.openlocfilehash: de371e39dc98049545b81329f240fbe94df78de5
+ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
 
 ---
 
-# External help pages
+# 外部說明頁面
 
-\[ Updated for Universal Windows Platform (UWP) apps in Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的通用 Windows 平台 (UWP) app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-If your app requires detailed help for complex content, consider hosting these instructions on a web page.
+如果您的應用程式需要複雜內容的詳細說明，請考慮將這些指示裝載在網頁。
 
-## <span id="when_to_use_external_help_pages"></span><span id="WHEN_TO_USE_EXTERNAL_HELP_PAGES"></span>When to use external help pages
+## <span id="when_to_use_external_help_pages"></span><span id="WHEN_TO_USE_EXTERNAL_HELP_PAGES"></span>何時使用外部說明頁面
 
-External help pages are less convenient for general use or quick reference, but they are suitable for help content that is too extensive to be incorporated into the app itself, as well as for tutorials and instructions for advanced functions of an app that won't be used by its general audience.
+外部說明頁面對一般用途或快速參考來說較不方便，但適合用於本身太龐大而無法納入 app 的說明內容，以及 app 的一般對象不會使用的進階功能教學課程與指示。
 
-If your help content is brief or specific enough to be displayed in-app, you should do so. Avoid directing users outside of the app for help unless it's necessary.
+如果您的說明內容簡短或夠明確可顯示在應用程式內，則應該這樣做。 除非必要，否則避免將使用者導向至 app 外部尋求協助。
 
-## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>Navigating external help pages
+## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>瀏覽外部說明頁面
 
-When a user is directed to an external help page, the experience should reflect one of two scenarios:
--   They are linked directly to the page that corresponds with their known issue. This is contextual help, and should be used whenever possible.
--   They are linked to a general help page that provides a clear display of categories and subcategories to choose from.
+當使用者導向至外部說明頁面時，體驗應該反映兩種情況：
+-   它們直接連結到對應已知問題的頁面。 這是內容說明，而且應該盡可能使用。
+-   它們會連結到一般說明頁面，可清楚顯示可從中選擇的類別和子類別。
 
-Providing users with a way to search your help can be useful, but don't make this search the only way of navigating your help. It can sometimes be difficult for users to describe their problems, which can make searching difficult. Users should be able to quickly find pages relevant to their problems without needing to search.
+為使用者提供搜尋您說明的方法可能十分有用，但不要讓這個搜尋成為瀏覽您說明的唯一方式。 使用者有時很難描述其問題，這樣會讓搜尋變得困難。 使用者應該能夠快速找到與其問題相關的頁面，而不需要進行搜尋。
 
-## <span id="tutorials_and_detailed_walkthroughs"></span><span id="TUTORIALS_AND_DETAILED_WALKTHROUGHS"></span>Tutorials and detailed walkthroughs
+## <span id="tutorials_and_detailed_walkthroughs"></span><span id="TUTORIALS_AND_DETAILED_WALKTHROUGHS"></span>教學課程和詳細逐步解說
 
-External help pages are the ideal place to provide users with tutorials and walkthroughs, whether video or textual.
--   Tutorials should focus on more complicated ideas and advanced functions. Users shouldn't need a tutorial to use your app.
--   Make sure that these tutorials are displayed differently from standard help instructions. Users who are looking for advanced instructions are more eager to search for them than users who want straightforward solutions to their problems.
--   Consider linking to tutorials from both a directory and from individual help pages that correspond to each tutorial.
+外部說明頁面是為使用者提供教學課程和逐步解說的理想位置 (不論是視訊還是文字)。
+-   教學課程應著重在更複雜的概念和進階函式。 使用者應該不需要教學課程，就能使用您的應用程式。
+-   請確定這些教學課程的顯示方式與標準說明指示不同。 與想要其問題的直接解決方法的使用者比較起來，尋找進階指示的使用者會更想要進行搜尋。
+-   請考慮從目錄和對應到每個教學課程的個別說明頁面連結到教學課程。
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>相關文章
 
-* [Guidelines for app help](guidelines-for-app-help.md)
+* [App 說明的指導方針](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,23 +1,23 @@
 ---
 author: TylerMSFT
-title: Launch the People app
-description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
+title: "啟動連絡人 app"
+description: "本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。"
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
 ---
 
-# Launch the People app
+# 啟動連絡人 app
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
+本主題描述 **ms-people:** URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。
 
-## ms-people: URI scheme reference
+## ms-people: URI 配置參考
 
 
 <table>
@@ -27,25 +27,25 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Results</th>
-<th align="left">URI scheme</th>
+<th align="left">結果</th>
+<th align="left">URI 配置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Allows other apps to launch the People app Main page.</td>
+<td align="left">可讓其他 app 啟動連絡人 app 主頁面。</td>
 <td align="left">ms-people:</td>
 </tr>
 <tr class="even">
-<td align="left">Allows other apps to launch the People app Settings page.</td>
+<td align="left">可讓其他 app 啟動連絡人 app 設定頁面。</td>
 <td align="left">ms-people:settings</td>
 </tr>
 <tr class="odd">
-<td align="left">Allows other apps to provide a search string that will launch the People app with the result page of the search.
+<td align="left">可讓其他 app 提供將會啟動含有搜尋結果頁面之連絡人 app 的搜尋字串。
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>If you do not enter the syntax correctly, or are missing the search string value, the default behavior is to return a full list of contacts without any filtering.</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
+<p>如果您未正確輸入語法或遺失搜尋字串值，預設行為將是傳回未經篩選的完整連絡人清單。</p>
 </div>
 <div>
  
@@ -53,12 +53,12 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 <td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
-<td align="left">Launches to an existing contact card, if the contact is found. Or, launches to a temporary contact card, if no contact is found. If no input parameter is supplied, we will launch the People App with a contact list.
+<td align="left">如果找到連絡人，就會啟動到現有的連絡人卡片。 如果找不到連絡人，就會啟動到暫時連絡人卡片。 如果未提供輸入參數，我們將會啟動含有連絡人清單的連絡人 app。
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>The order of the parameters doesn’t matter.</p>
-<p>If there is more than one match, we will return the first match of the contact.</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
+<p>參數的順序並不重要。</p>
+<p>如果有多個相符項目，我們會傳回第一個相符的連絡人。</p>
 </div>
 <div>
  
@@ -66,11 +66,11 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 <td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
-<td align="left">Launches to a Save-contact page within the People app to save the given contact with the supplied phone number or email address.
+<td align="left">啟動到連絡人 app 內的儲存連絡人頁面，以提供的電話號碼或電子郵件地址與儲存指定的連絡人。
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>The order of the parameters doesn’t matter.</p>
+**注意**  
+<p>這些參數區分大小寫。</p>
+<p>參數的順序並不重要。</p>
 </div>
 <div>
  
@@ -82,7 +82,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:search: parameter reference
+## ms-people:search: 參數參考
 
 
 <table>
@@ -93,17 +93,17 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">參數</th>
+<th align="left">說明</th>
+<th align="left">範例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**SearchString**</td>
-<td align="left"><p>Optional.</p>
-<p>The search string for the contact search information.</p>
-<p>The phone number or the contact name.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人搜尋資訊的搜尋字串。</p>
+<p>電話號碼或連絡人名稱。</p></td>
 <td align="left"><p>ms-people:search?SearchString=Smith</p></td>
 </tr>
 </tbody>
@@ -111,7 +111,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:viewcontact: parameter reference
+## ms-people:viewcontact: 參數參考
 
 
 <table>
@@ -122,40 +122,40 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">參數</th>
+<th align="left">說明</th>
+<th align="left">範例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**ContactId**</td>
-<td align="left"><p>Optional.</p>
-<p>Contact Id of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的連絡人識別碼。</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>Optional.</p>
-<p>Phone number of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的電話號碼。</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**Email**</td>
-<td align="left"><p>Optional.</p>
-<p>Email of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的電子郵件。</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
 <td align="left">**ContactName**</td>
-<td align="left"><p>Optional.</p>
-<p>Name of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的名稱。</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**Contact**</td>
-<td align="left"><p>Optional.</p>
-<p>Contact object.</p></td>
+<td align="left"><p>選用。</p>
+<p>Contact 物件。</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
 </tr>
 </tbody>
@@ -163,7 +163,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:savetocontact: parameter reference
+## ms-people:savetocontact: 參數參考
 
 
 <table>
@@ -174,28 +174,28 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">參數</th>
+<th align="left">說明</th>
+<th align="left">範例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>Optional.</p>
-<p>Phone number of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的電話號碼。</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
 <td align="left">**Email**</td>
-<td align="left"><p>Optional.</p>
-<p>Email of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的電子郵件。</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**ContactName**</td>
-<td align="left"><p>Optional.</p>
-<p>Name of the contact.</p></td>
+<td align="left"><p>選用。</p>
+<p>連絡人的名稱。</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
 </tr>
 </tbody>
@@ -209,6 +209,6 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

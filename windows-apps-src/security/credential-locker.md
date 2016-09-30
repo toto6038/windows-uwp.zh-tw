@@ -1,31 +1,31 @@
 ---
-title: Credential locker
-description: This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
+title: "認證保險箱"
+description: "本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
+ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
 
 ---
 
-# Credential locker
+# 認證保險箱
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
+本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。
 
-For example, you have an app that connects to a service to access protected resources such as media files, or social networking. Your service requires login information for each user. You’ve built UI into your app that gets the username and password for the user, which is then used to log the user into the service. Using the Credential Locker API, you can store the username and password for your user and easily retrieve them and log the user in automatically the next time they open your app, regardless of what device they're on.
+例如，您有一個 app 會連線至服務以存取受保護的資源 (如媒體檔案或社交網路)。 而您的服務需要每個使用者的登入資訊。 您在 app 中已經建立能取得使用者的使用者名稱及密碼的 UI，之後會使用這些資訊將使用者登入服務。 使用認證保險箱 API 時，您可以儲存並輕鬆地擷取使用者的使用者名稱與密碼，並在使用者下次開啟 app 時，無論他們使用什麼裝置都可以將他們自動登入。
 
-Credential locker works a little differently for domain accounts. If there are credentials stored with your Microsoft account, and you associate that account with a domain account (such as the account that you use at work), your credentials will roam to that domain account. However, any new credentials added when signed on with the domain account won’t roam. This ensures that private credentials for the domain aren’t exposed outside of the domain.
+網域帳戶的認證保險箱運作方式有些不同。 如果有隨您的 Microsoft 帳戶儲存的認證，而您將該帳戶與網域帳戶 (例如您的工作帳戶) 關聯，則您的認證會漫遊至該網域帳戶。 但使用該網域帳戶登入時所新增的任何新認證則不會漫遊。 這樣可確保網域的私密認證不會暴露到網域外。
 
-## Storing user credentials
+## 儲存使用者認證
 
 
-1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
-2.  Create a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that contains an identifier for your app, the username and the password, and pass that to the [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) method to add the credential to the locker.
+1.  使用 [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 命名空間中的 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 物件取得認證保險箱的參考。
+2.  建立一個包含您的應用程式識別碼、使用者名稱及密碼的 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 物件，並將它傳送到 [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) 方法以在保險箱新增認證。
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -33,20 +33,20 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Retrieving user credentials
+## 擷取使用者認證
 
 
-You have several options for retrieving user credentials from the Credential Locker after you have a reference to the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object.
+在具備 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 物件的參考後，您有幾個選項可從認證保險箱擷取使用者認證。
 
--   You can retrieve all the credentials the user has supplied for your app in the locker with the [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) method.
+-   您可以使用 [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) 方法來擷取保險箱中使用者為您的應用程式提供的所有認證。
 
--   If you know the username for the stored credentials, you can retrieve all the credentials for that username with the [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) method.
+-   如果您知道所儲存認證的使用者名稱，您可以使用 [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) 方法來擷取該使用者名稱的所有認證。
 
--   If you know the resource name for the stored credentials, you can retrieve all the credentials for that resource name with the [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) method.
+-   如果您知道所儲存認證的資源名稱，您可以使用 [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) 方法來擷取該資源名稱的所有認證。
 
--   Finally, if you know both the username and the resource name for a credential, you can retrieve just that credential with the [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) method.
+-   最後，如果您知道某個認證的使用者名稱與資源名稱，您可以使用 [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) 方法來擷取該認證。
 
-Let’s look at an example where we have stored the resource name globally in an app and we log the user on automatically if we find a credential for them. If we find multiple credentials for the same user, we ask the user to select a default credential to use when logging on.
+請看以下範例，在此範例中，我們將資源名稱以全域方式儲存在應用程式中，如果我們找到使用者的認證，就會自動將使用者登入。 如果我們找到同一位使用者有多個認證，則會要求使用者選取登入時要使用的預設認證。
 
 ```cs
 private string resourceName = "My App";
@@ -104,14 +104,14 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## Deleting user credentials
+## 刪除使用者認證
 
 
-Deleting user credentials in the Credential Locker is also a quick, two-step process.
+刪除儲存在認證保險箱的使用者認證也是一個快速的雙步驟程序。
 
-1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
+1.  使用 [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 命名空間中的 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 物件取得認證保險箱的參考。
 
-2.  Pass the credential you want to delete to the [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) method.
+2.  將您想刪除的認證傳送到 [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) 方法。
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -119,19 +119,19 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Best practices
+## 最佳做法
 
 
-Only use the credential locker for passwords and not for larger data blobs.
+僅使用認證保險箱來儲存密碼，不要儲存較大的資料 blob。
 
-Save passwords in the credential locker only if the following criteria are met:
+只在符合下列條件時才會將密碼儲存至認證保險箱：
 
--   The user has successfully signed in.
--   The user has opted to save passwords.
+-   使用者已成功登入過。
+-   使用者已選擇儲存密碼。
 
-Never store credentials in plain-text using app data or roaming settings.
+請勿使用應用程式資料或漫遊設定儲存純文字形式的認證。
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

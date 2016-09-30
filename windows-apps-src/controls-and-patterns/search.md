@@ -1,223 +1,214 @@
 ---
 author: Jwmsft
-Description: Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
-title: Search and find-in-page
+Description: "搜尋是使用者在您的 app 中尋找內容的主要方法之一。 本文中的指導方針涵蓋搜尋體驗、搜尋範圍、實作，以及在內容中搜尋的範例等元素。"
+title: "搜尋和在頁面中尋找"
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cd746f81e8cca27c5111f3d15342d1def0f874dc
 
 ---
-# Search and find-in-page
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 搜尋和在頁面中尋找
 
-Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
+搜尋是使用者在您的 app 中尋找內容的主要方法之一。 本文中的指導方針涵蓋搜尋體驗、搜尋範圍、實作，以及在內容中搜尋的範例等元素。
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn633874"><strong>AutoSuggestBox class (XAML)</strong></a></li>
-</ul>
+**重要 API**
 
-</div>
-</div>
+-   [**AutoSuggestBox 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 
 
+## <span id="Elements_of_the_search_experience"></span><span id="elements_of_the_search_experience"></span><span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"></span>搜尋體驗的元素
 
 
+**輸入。**  文字是最常見的搜尋輸入模式，也是本指導方針的重點。 其他常見的輸入模式包括語音和相機，但它們通常需要與裝置硬體聯繫的能力，且可能要求 app 內額外的控制項或自訂 UI。
 
+**零輸入。**  當使用者啟用輸入欄位後，在他們輸入文字前，您可以顯示所謂的「零輸入畫布」。 零輸入畫布會經常出現在 app 畫布中，當使用者開始輸入查詢時，就會由[自動建議](auto-suggest-box.md)取代這個內容。 最近的搜尋歷程記錄、熱門搜尋、與內容相關的搜尋建議、提示和秘訣都是當作零輸入狀態內容的絕佳選項。
 
-
-## Elements of the search experience
-
-
-**Input.**  Text is the most common mode of search input and is the focus of this guidance. Other common input modes include voice and camera, but these typically require the ability to interface with device hardware and may require additional controls or custom UI within the app.
-
-**Zero input.**  Once the user has activated the input field, but before the user has entered text, you can display what's called a "zero input canvas." The zero input canvas will commonly appear in the app canvas, so that [auto-suggest](auto-suggest-box.md) replaces this content when the user begins to input their query. Recent search history, trending searches, contextual search suggestions, hints and tips are all good candidates for the zero input state.
-
-![example of cortana on a zero input canvas](images/search-cortana-example.png)
+![Cortana 零輸入畫布的範例](images/search-cortana-example.png)
 
  
 
-**Query formulation/auto-suggest.**  Query formulation replaces zero input content as soon as the user begins to enter input. As the user enters a query string, they are provided with a continuously updated set of query suggestions or disambiguation options to help them expedite the input process and formulate an effective query. This behavior of query suggestions is built into the [auto-suggest control](auto-suggest-box.md), and is also a way to show the icon inside the search (like a microphone or a commit icon). Any behavior outside of this falls to the app.
+**查詢公式/自動建議。**  使用者一開始輸入，查詢公式就會取代零輸入內容。 在使用者輸入查詢字串時，系統會提供他們持續更新的查詢建議或去除混淆選項，以協助他們加速輸入程序，並編寫有效的查詢公式。 查詢建議的行為建置在 [自動建議控制項](auto-suggest-box.md) 中，而且也是在搜尋中顯示圖示 (像是麥克風或確認圖示) 的方法。 除此之外的行為都屬於 app。
 
-![example of query/formulation auto-suggest](images/search-autosuggest-example.png)
-
- 
-
-**Results set.**  Search results commonly appear directly under the search input field. While this isn't a requirement, the juxtaposition of input and results maintains context and provides the user with immediate access to edit the previous query or enter a new query. This connection can be further communicated by replacing the hint text with the query that created the results set.
-
-One method to enable efficient access to both edit the previous query and enter a new query is to highlight the previous query when the field is reactivated. This way, any keystroke will replace the previous string, but the string is maintained so that the user can position a cursor to edit or append the previous string.
-
-The results set can appear in any form that best communicates the content. A [list view](lists.md) provides a good deal of flexibility and is well-suited to most searches. A grid view works well for images or other media, and a map can be used to communicate spatial distribution.
-
-## Search scopes
-
-
-Search is a common feature, and users will encounter search UI in the shell and within many apps. Although search entry points tend to be similarly visualized, they can provide access to results that range from broad (web or device searches) to narrow (a user's contact list). The search entry point should be juxtaposed against the content being searched.
-
-Some common search scopes include:
-
-**Global** and **contextual/refine.**  Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
-
-**Web.**  Search a web index. Results include pages, entities, and answers.
-
-**My stuff.**  Search across device(s), cloud, social graphs, and more. Results are varied, but are constrained by the connection to user account(s).
-
-Use hint text to communicate search scope. Examples include:
-
-"Search Windows and the Web"
-
-"Search contacts list"
-
-"Search mailbox"
-
-"Search settings"
-
-"Search for a place"
-
-![example of search hint text](images/search-windowsandweb.png)
+![查詢公式/自動建議的範例](images/search-autosuggest-example.png)
 
  
 
-By effectively communicating the scope of a search input point, you can help to ensure that the user expectation will be met by the capabilities of the search you are performing and reduce the possibility of frustration.
+**結果集。**  搜尋結果通常顯示在搜尋輸入欄位的正下方。 雖然這不是必要條件，但是輸入和結果並列可維持內容相關，並能讓使用者立即存取以編輯先前的查詢或輸入新查詢。 這項關聯可透過以提示文字取代查詢，來進一步傳達。
 
-## Implementation
+可以有效率地編輯先前的查詢和輸入新查詢的方法，是在搜尋欄位重新啟動時反白先前的查詢。 如此一來，任何按鍵輸入都會取代先前的字串，但字串會保留讓使用者可以移動游標位置來編輯，或在先前的字串後附加。
 
+結果集可以透過任何能有效傳達內容的方式來顯示。 [清單檢視](lists.md)提供良好的彈性，非常適合大部分的搜尋。 格線檢視適用於影像或其他媒體，而地圖可以用來傳達空間分布。
 
-For most apps, it's best to have a text input field as the search entry point, which provides a prominent visual footprint. In addition, hint text helps with discoverability and communicating the search scope. When search is a more secondary action, or when space is constrained, the search icon can serve as an entry point without the accompanying input field. When visualized as an icon, be sure that there's room for a modal search box, as seen in the below examples.
-
-Before clicking search icon:
-
-![example of a search icon and collapsed search box](images/search-icon-collapsed.png)
-
- 
-
-After clicking search icon:
-
-![example of a search icon and expanded search box](images/search-icon-expanded.png)
-
- 
-
-Search always uses a right-pointing magnifying glass glyph for the entry point. The glyph to use is Segoe UI Symbol, hex character code 0xE0094, and usually at 15 epx font size.
-
-The search entry point can be placed in a number of different areas, and its placement communicates both search scope and context. Searches that gather results from across an experience or external to the app are typically located within top-level app chrome, such as global command bars or navigation.
-
-As the search scope becomes more narrow or contextual, the placement will typically be more directly associated with the content to be searched, such as on a canvas, as a list header, or within contextual command bars. In all cases, the connection between search input and results or filtered content should be visually clear.
-
-In the case of scrollable lists, it's helpful to always have search input be visible. We recommend making the search input sticky and have content scroll behind it.
-
-Zero input and query formulation functionality is optional for contextual/refine searches in which the list will be filtered in real-time by user input. Exceptions include cases where query formatting suggestions may be available, such as inbox filtering options (to:&lt;input string&gt;, from: &lt;input string&gt;, subject: &lt;input string&gt;, and so on).
-
-## Example
+## <span id="Search_scopes"></span><span id="search_scopes"></span><span id="SEARCH_SCOPES"></span>搜尋範圍
 
 
-The examples in this section show search placed in context.
+搜尋是常見的功能，且使用者會在介面和許多應用程式中遇到搜尋 UI。 雖然搜尋進入點通常以類似的方式視覺化，他們提供搜尋結果的存取範圍卻從廣泛 (網頁或裝置搜尋) 到狹隘 (使用者的連絡人清單) 都有。 搜尋進入點應該與搜尋的內容並列。
 
-Search as an action in the Windows tool bar:
+部分常見的搜尋範圍包括：
 
-![an example of search as an action in the windows tool bar](images/search-toolbar-action.png)
+**全域**和**關聯式/精簡**。  跨多個雲端和本機內容來源搜尋。 包含 URL、文件、媒體、動作、app 等不同結果。
+
+**網路。**  搜尋網路索引。 結果包含頁面、實體和解答。
+
+**我的專區。**  跨裝置、雲端、社交關係圖等搜尋。 結果會有所不同，但會受限於使用者帳戶的連接。
+
+使用提示文字傳達搜尋範圍。 範例包含：
+
+「搜尋 Windows 和網際網路」
+
+「搜尋連絡人清單」
+
+「收尋信箱」
+
+「搜尋設定」
+
+「搜尋地點」
+
+![搜尋提示文字的範例](images/search-windowsandweb.png)
 
  
 
-Search as an input on the app canvas:
+藉由有效傳達搜尋輸入點的範圍，您可以確保執行的搜尋功能會符合使用者的期望，並減少感到挫折的可能。
 
-![example of search on an app canvas](images/search-canvas-contacts.png)
-
- 
-
-Search in a navigation pane:
-
-![example of search in a navigation menu](images/search-navmenu.png)
-
- 
-
-Inline search is best reserved for cases where search is infrequently accessed or is highly contextual:
-
-![example of inline search](images/patterns-search-results-desktop.png)
+## <span id="Implementation"></span><span id="implementation"></span><span id="IMPLEMENTATION"></span>實作
 
 
-## Guidelines for find-in-page
+對於大多數應用程式，最好的做法是以文字輸入欄位當作搜尋進入點，它會提供顯著的視覺記號。 此外，提示文字也有助於探索性和傳達搜尋範圍。 當搜尋為較次要的動作，或當空間有限時，搜尋圖示可以當作沒有伴隨輸入欄位的進入點。 以圖示來視覺化時，請確定有足夠空間給強制回應搜尋方塊，如下面範例所示。
 
+按一下搜尋圖示之前：
 
-Find-in-page enables users to find text matches in the current body of text. Document viewers, readers, and browsers are the most typical apps that provide find-in-page.
-
-## Recommendations
-
-
--   Place a command bar in your app with find-in-page functionality to let the user search for on-page text. For placement details, see the Examples section.
-
-    -   Apps that provide find-in-page should have all necessary controls in a command bar.
-    -   If your app includes a lot of functionality beyond find-in-page, you can provide a **Find** button in the top-level command bar as an entry point to another command bar that contains all of your find-in-page controls.
-    -   The find-in-page command bar should remain visible when the user is interacting with the touch keyboard. The touch keyboard appears when a user taps the input box. The find-in-page command bar should move up, so it's not obscured by the touch keyboard.
-
-    -   Find-in-page should remain available while the user interacts with the view. Users need to interact with the in-view text while using find-in-page. For example, users may want to zoom in or out of a document or pan the view to read the text. Once the user starts using find-in-page, the command bar should remain available with a **Close** button to exit find-in-page.
-
-    -   Enable the keyboard shortcut (CTRL+F). Implement the keyboard shortcut CTRL+F to enable the user to invoke the find-in-page command bar quickly.
-
-    -   Include the basics of find-in-page functionality. These are the UI elements that you need in order to implement find-in-page:
-
-        -   Input box
-        -   Previous and Next buttons
-        -   A match count
-        -   Close (desktop-only)
-    -   The view should highlight matches and scroll to show the next match on screen. Users can move quickly through the document by using the **Previous** and **Next** buttons and by using scroll bars or direct manipulation with touch.
-
-    -   Find-and-replace functionality should work alongside the basic find-in-page functionality. For apps that have find-and-replace, ensure that find-in-page doesn't interfere with find-and-replace functionality.
-
--   Include a match counter to indicate to the user the number of text matches there are on the page.
--   Enable the keyboard shortcut (CTRL+F).
-
-## Examples
-
-
-Provide an easy way to access the find-in-page feature. In this example on a mobile UI, "Find on page" appears after two "Add to..." commands in an expandable menu:
-
-![find-on-page example 1](images/findinpage-01.png)
+![搜尋圖示和已折疊之搜尋方塊的範例](images/search-icon-collapsed.png)
 
  
 
-After selecting find-in-page, the user enters a search term. Text suggestions can appear when a search term is being entered:
+按一下搜尋圖示之後：
 
-![find-on-page example 2](images/findinpage-02.png)
-
- 
-
-If there isn't a text match in the search, a "No results" text string should appear in the results box:
-
-![find-on-page example 3](images/findinpage-03.png)
+![搜尋圖示和已展開之搜尋方塊的範例](images/search-icon-expanded.png)
 
  
 
-If there is a text match in the search, the first term should be highlighted in a distinct color, with succeeding matches in a more subtle tone of that same color palette, as seen in this example:
+搜尋一律使用指向右方的放大鏡字符當作進入點。 使用的字符是 Segoe UI Symbol，十六進位字元代碼是 0xE0094，且通常為 15 epx 字型大小。
 
-![find-on-page example 4](images/findinpage-04.png)
+搜尋進入點有數種不同區域可放置，且放置的區域會傳達搜尋範圍和內容。 跨應用程式經驗或從應用程式外部收集結果的搜尋，通常位於最上層的應用程式控制項內，例如全域命令列或瀏覽。
+
+隨著搜尋範圍變得狹隘或與內容相關，放置的位置通常會與搜尋的內容更直接相關，例如在畫布上、當作清單標題，或在內容相關命令列中。 不論如何，搜尋的輸入與結果或已篩選內容間的關聯應該在視覺上清楚傳達。
+
+在可捲動清單的案例中，保持搜尋輸入為可見會非常有幫助。 建議您可以讓搜尋輸入固定位置，內容則在它後方捲動。
+
+對於會根據使用者輸入即時篩選清單的內容相關/精簡搜尋，零輸入和查詢公式功能是選擇性的。 例外狀況包括能使用搜尋格式化建議的查詢，例如收件匣的篩選選項 (收件者：&lt;輸入字串&gt;、寄件者：&lt;輸入字串&gt;、主旨：&lt;輸入字串&gt; 等等)。
+
+## <span id="examples"></span><span id="EXAMPLES"></span>範例
+
+
+本節中的範例說明放在內容中的搜尋。
+
+在 Windows 工具列當作動作的搜尋：
+
+![在 Windows 工具列當作動作的搜尋之範例](images/search-toolbar-action.png)
 
  
 
-Find-in-page has a match counter:
+在 app 畫布上當作輸入的搜尋：
 
-![example of find-in-page search counter](images/findinpage-counter.png)
+![在 app 畫布上搜尋的範例](images/search-canvas-contacts.png)
+
+ 
+
+瀏覽窗格中的搜尋：
+
+![在瀏覽功能表中搜尋的範例](images/search-navmenu.png)
+
+ 
+
+內嵌文字搜尋最好留在很少存取的搜尋，或與內容高度相關的案例使用：
+
+![內嵌文字搜尋的範例](images/patterns-search-results-desktop.png)
+
+
+## 在頁面中尋找的指導方針
+
+
+「在頁面中尋找」可以讓使用者在目前的文字主體中尋找文字相符項目。 文件檢視器、閱讀程式和瀏覽器是提供「在頁面中尋找」的最典型應用程式。
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建議事項
+
+
+-   在您的應用程式中放置具有「在頁面中尋找」功能的命令列，讓使用者可以搜尋頁面上的文字。 如需位置詳細資料，請參閱「範例」一節。
+
+    -   可提供「在頁面中尋找」的應用程式在命令列中應含有所有必要的控制項。
+    -   如果您的應用程式含有許多超越「在頁面中尋找」的功能，您可以在最上層的命令列中提供 [尋找]**** 按鈕，以做為另一個含有所有「在頁面中尋找」控制項之命令列的進入點。
+    -   當使用者在與觸控式鍵盤互動時，「在頁面中尋找」命令列應維持可見。 當使用者點選輸入方塊時，觸控式鍵盤就會顯示。 [在頁面中尋找] 命令列應該上移，才不會被觸控式鍵盤遮掩。
+
+    -   在使用者與檢視互動時，「在頁面中尋找」應維持可用。 使用「在頁面中尋找」時，使用者必須與檢視中文字互動。 例如，使用者可能想放大或縮小文件，或是移動瀏覽檢視以讀取文字。 一旦使用者開始使用「在頁面中尋找」時，命令列應維持可用，並提供一個結束「在頁面中尋找」的 [關閉]**** 按鈕。
+
+    -   啟用鍵盤快速鍵 (CTRL+F)。 實作鍵盤快速鍵 CTRL+F 可以讓使用者快速叫用「在頁面中尋找」命令列。
+
+    -   包含「在頁面中尋找」功能的基礎。 下列是實作「在頁面中尋找」所需的 UI 元素：
+
+        -   輸入方塊
+        -   [上一頁] 和 [下一頁] 按鈕
+        -   相符項目計數
+        -   關閉 (桌面專用)
+    -   檢視應強調顯示相符項目，並且要能捲動以顯示畫面上的下一個相符項目。 使用者可以使用 [上一頁]**** 和 [下一頁]**** 按鈕和捲軸在文件中快速移動，或是使用觸控直接操作。
+
+    -   「尋找和取代」功能應和基本的「在頁面中尋找」功能相輔相成。 對於擁有「尋找和取代」功能的應用程式，請確認「在頁面中尋找」不會影響「尋找和取代」功能。
+
+-   包含相符項目計數器，讓使用者知道頁面上有多少文字相符項目。
+-   啟用鍵盤快速鍵 (CTRL+F)。
+
+## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>範例
+
+
+可供輕鬆存取「在頁面中尋找」功能。 在行動裝置 UI 的這個範例中，「在頁面上尋找」會出現在可展開的功能表中兩個 [新增至] 命令之後：
+
+![在頁面上尋找範例 1](images/findinpage-01.png)
+
+ 
+
+選取「在頁面中尋找」之後，使用者可輸入搜尋字詞。 輸入搜尋字詞時可顯示文字建議：
+
+![在頁面上尋找範例 2](images/findinpage-02.png)
+
+ 
+
+如果搜尋中沒有文字相符項目，則 [結果] 方塊中應顯示「沒有結果」文字字串：
+
+![在頁面上尋找範例 3](images/findinpage-03.png)
+
+ 
+
+如果搜尋中有文字相符項目，第一個字詞應該會以不同的色彩反白顯示，而後續的相符項目則會以該相同色系的較淡色調顯示，如下列範例所示：
+
+![在頁面上尋找範例 4](images/findinpage-04.png)
+
+ 
+
+在頁面中尋找具有相符項目計數器：
+
+![在頁面中尋找搜尋計數器範例](images/findinpage-counter.png)
 
 
 
 
-## **Implementing find-in-page**
+## <span id="implementing_find_in_page"></span><span id="IMPLEMENTING_FIND_IN_PAGE"></span>
 
--   Document viewers, readers, and browsers are the likeliest app types to provide find-in-page, and enable the user to have a full screen viewing/reading experience.
--   Find-in-page functionality is secondary and should be located in a command bar.
+**實作在頁面中尋找**
 
-For more info about adding commands to your command bar, see [Command bar](app-bars.md).
+-   文件檢視器、閱讀程式和瀏覽器是最有可能提供「在頁面中尋找」的應用程式類型，可讓使用者擁有完整的全螢幕檢視/閱讀體驗。
+-   「在頁面中尋找」功能是次要的，因此應放在命令列中。
+
+如需如何替您的命令列新增命令的詳細資訊，請參閱[命令列](app-bars.md)。
 
 
 
-## Related articles
+## <span id="related_topics"></span>相關文章
 
-* [**Auto-suggest box**](auto-suggest-box.md)
+* [**自動建議方塊**](auto-suggest-box.md)
 
 
  
@@ -226,6 +217,10 @@ For more info about adding commands to your command bar, see [Command bar](app-b
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

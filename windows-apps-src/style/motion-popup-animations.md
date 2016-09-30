@@ -1,57 +1,57 @@
 ---
 author: mijacobs
-Description: Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
-title: Pop-up UI animations in UWP apps
+Description: "使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。"
+title: "UWP app 中的快顯 UI 動畫"
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 45219532db704e76e8e85e2926ea9190fba3c7a4
+ms.openlocfilehash: 2b135fb62d871c559892e6b1e968767b7be716bd
 
 ---
 
-# Pop-up UI animations
+# 快顯 UI 動畫
 
-Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
-
-
-
-
-**Important APIs**
-
--   [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383)
--   [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
 
 
 
-## Do's and don'ts
+
+**重要 API**
+
+-   [**PopInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210383)
+-   [**PopupThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
--   Use pop-up animations to show or hide custom pop-up UI elements that aren't a part of the app page itself. The common controls provided by Windows already have these animations built in.
--   Don't use pop-up animations for tooltips or dialogs.
--   Don't use pop-up animations to show or hide UI within the main content of your app; only use pop-up animations to show or hide a pop-up container that displays on top of the main app content.
 
-## Related articles
+## 可行與禁止事項
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating pop-up UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383)
-* [**PopOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210391)
-* [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
- 
+-   使用快顯動畫顯示或隱藏非應用程式頁面本身一部分的自訂快顯 UI 元素。 Windows 提供的常用控制項已經內建這些動畫。
+-   請勿對工具提示或對話方塊使用快顯動畫。
+-   請勿使用快顯動畫顯示或隱藏 app 主要內容中的 UI；僅使用快顯動畫顯示或隱藏會顯示在主應用程式內容最上方的快顯容器。
+
+## 相關文章
+
+**適用於開發人員 (XAML)**
+* [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [讓快顯 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**PopInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210383)
+* [**PopOutThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210391)
+* [**PopupThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

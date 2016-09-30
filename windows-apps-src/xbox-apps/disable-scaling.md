@@ -1,24 +1,23 @@
 ---
 author: payzer
-title: How to turn off scaling
-description: Instructions for turning off the default scale factor.
+title: "如何關閉縮放比例"
+description: 
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 582f5677c15f7cd62c398103b48743ba4bea6c5b
-ms.openlocfilehash: 8079be9685558277565766fa8d0ebbfd4a555904
+ms.sourcegitcommit: 192de32bf3afd11cd375655ad92d194ccb09dae1
+ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 
 ---
 
-# How to turn off scaling   
-By default, applications are scaled to 200% for XAML and 150% for HTML apps. It is possible to turn off the default scale factor. This will cause your application to use the actual pixel dimensions of the device (1910 x 1080 pixels).   
+# 如何關閉縮放比例   
+根據預設，若為 XAML，應用程式會調整為 200%，若為 HTML app 則為 150%。 您可以關閉預設縮放比例。 這會導致應用程式使用裝置的實際像素尺寸 (1910 x 1080 像素)。   
    
 ## HTML   
-You can opt out of scale factor by using the following code snippet: 
+您可以使用下列程式碼片段，選擇不使用縮放比例︰ 
    
-```
-var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);
-```
+`var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);` 
 
-Or, you can use a web-friendly method:   
+或者，您可以使用 Web 適用的方法：   
 
 ```   
 @media (max-height: 1080px) {   
@@ -29,21 +28,15 @@ Or, you can use a web-friendly method:
 ```
 
 ## XAML
-You can opt out of scale factor by using the following code snippet:   
+您可以使用下列程式碼片段，選擇不使用縮放比例︰   
    
-```
-bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
-```
+`bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);`   
    
 ## DirectX/C++   
-DirectX/C++ applications are not scaled. Automatic scaling only applies to HTML and XAML applications.  
-
-## See also
-- [Best practices for Xbox](tailoring-for-xbox.md)
-- [UWP on Xbox One](index.md)
+DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 XAML 應用程式。   
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

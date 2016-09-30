@@ -1,55 +1,45 @@
 ---
 author: Jwmsft
-Description: Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.
-title: Hyperlinks
+Description: "超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。"
+title: "超連結"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ---
-# Hyperlinks
+# 超連結
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+超連結會讓使用者瀏覽到 App 的其他部分、到其他 App，或使用不同的瀏覽器 App 啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
 
-Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
-
-![A hyperlink button](images/controls/hyperlink-button.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Hyperlink text element</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>HyperlinkButton control</strong></a></li>
-</ul>
-
-</div>
-</div>
+![超連結按鈕](images/controls/hyperlink-button.png)
 
 
 
+-   [**Hyperlink 文字元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+-   [**HyperlinkButton 控制項**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-## Is this the right control?
+## 這是正確的控制項嗎？
 
-Use a hyperlink when you need text that responds when selected and navigates the user to more information about the text that was selected.
+當您需要在選取文字時會產生回應，並將使用者瀏覽到該文字相關的詳細資訊，請使用超連結。
 
-Choose the right type of hyperlink based on your needs:
+根據您的需求選擇正確的超連結類型：
 
--   Use an inline **Hyperlink** text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.
--   Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
--   Use a **HyperlinkButton** with an [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) as its content to make a clickable image.
+-   使用文字控制項內的內嵌 **Hyperlink** 文字元素。 Hyperlink 元素會與其他文字元素一起流動，而且您可以在任何 InlineCollection 中使用它。 若您希望超連結會自動換行，且不需要大的點擊目標，請使用文字超連結。 超連結文字通常比較小且不易對準，特別是使用觸控時。
+-   如果是獨立超連結，請使用 **HyperlinkButton**。 HyperlinkButton 是一個特殊 Button 控制項，可在要使用 Button 的任何位置使用。
+-   使用具有 [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) 的 **HyperlinkButton** 做為其內容，以設為可點選的影像。
 
-## Examples
+## 範例
 
-Hyperlinks in the Calculator app.
+小算盤應用程式中的超連結。
 
-![Example of a hyperlink in the Calculator app](images/control-examples/hyperlinks-calculator.png)
+![小算盤應用程式中的超連結範例。](images/control-examples/hyperlinks-calculator.png)
 
-## Create a Hyperlink text element
+## 建立 Hyperlink 文字元素
 
-This example shows how to use a Hyperlink text element inside of a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
+此範例示範如何在 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 內使用 Hyperlink 文字元素。
 
 ```xml
 <StackPanel Width="200">
@@ -60,15 +50,15 @@ This example shows how to use a Hyperlink text element inside of a [TextBlock](h
 </StackPanel>
 
 ```
-The hyperlink appears inline and flows with the surrounding text:
+超連結顯示於行內且隨著周圍文字一起流動：
 
-![Example of a hyperlink as a text element](images/controls_hyperlink-element.png) 
+![超連結做為文字元素的範例](images/controls_hyperlink-element.png) 
 
-> **Tip**&nbsp;&nbsp;When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
+> **提示** &nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="default"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
 
-## Create a HyperlinkButton
+## 建立 HyperlinkButton
 
-Here's how to use a HyperlinkButton, both with text and with an image.
+以下是如何使用同時包含文字和影像的 HyperlinkButton。
 
 ```xml
 <StackPanel>
@@ -83,88 +73,88 @@ Here's how to use a HyperlinkButton, both with text and with an image.
 </StackPanel>
 
 ```
-The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:
+包含文字內容的超連結按鈕會顯示為標記文字。 Contoso 標誌影像也是可點選的超連結︰
 
-![Example of a hyperlink as a button control](images/controls_hyperlink-button-image.png)
+![超連結做為按鈕控制項的範例](images/controls_hyperlink-button-image.png)
 
-## Handle navigation
+## 處理瀏覽
 
-For both kinds of hyperlinks, you handle navigation the same way; you can set the **NavigateUri** property, or handle the **Click** event.
+針對這兩種類型的超連結，您可以使用相同的方式來處理瀏覽；您可以設定 **NavigateUri** 屬性，或處理 **Click** 事件。
 
-**Navigate to a URI**
+**瀏覽至 URI**
 
-To use the hyperlink to navigate to a URI, set the NavigateUri property. When a user clicks or taps the hyperlink, the specified URI opens in the default browser. The default browser runs in a separate process from your app.
+若要使用超連結瀏覽至 URI，請設定 NavigateUri 屬性。 使用者按一下或點選超連結時，會在預設瀏覽器中開啟指定的 URI。 預設瀏覽器會在與您 App 不同的處理程序中執行。
 
-> **Note**&nbsp;&nbsp;You don't have to use http: or https: schemes. You can use schemes such as ms-appx:, ms-appdata:, or ms-resources:, if there's resource content at these locations that's appropriate to load in a browser. However, the file: scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> **注意** &nbsp;&nbsp;您不需要使用 http: 或 https: 配置。 如果適合在瀏覽器中載入這些位置中的資源內容，則可以使用 ms-appx:、ms-appdata: 或 ms-resources: 這類配置。 不過，會特別封鎖 file: 配置。 如需詳細資訊，請參閱 [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
-> When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.
+> 使用者按一下超連結時，會將 NavigateUri 屬性的值傳遞給 URI 類型和配置的系統處理常式。 系統接著會啟動針對 NavigateUri 所提供的 URI 配置登錄的 app。
 
-If you don't want the hyperlink to load content in a default Web browser (and don't want a browser to appear), then don't set a value for NavigateUri. Instead, handle the Click event, and write code that does what you want.
+如果您不想要超連結在預設網頁瀏覽器中載入內容 (並且不想要顯示瀏覽器)，請不要設定 NavigateUri 的值， 而是處理 Click 事件，並且撰寫您所要執行之動作的程式碼。
 
 
-**Handle the Click event**
+**處理 Click 事件**
 
-Use the Click event for actions other than launching a URI in a browser, such as navigation within the app. For example, if you want to load a new app page rather than opening a browser, call a [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) method within your Click event handler to navigate to the new app page. If you want an external, absolute URI to load within a [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) control that also exists in your app, call [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) as part of your Click handler logic.
+將 Click 事件用於在瀏覽器中啟動 URI 以外的動作 (例如，在 app 內進行瀏覽)。 例如，如果您要載入新的 app 頁面，而不是開啟瀏覽器，請在 Click 事件處理常式內呼叫 [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) 方法，以瀏覽至新的 app 頁面。 如果您要在 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 控制項內載入也存在於您 app 中的外部絕對 URI，請呼叫 [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) 做為 Click 處理常式邏輯的一部分。
 
-You don't typically handle the Click event as well as specifying a NavigateUri value, as these represent two different ways of using the hyperlink element. If your intent is to open the URI in the default browser, and you have specified a value for NavigateUri, don't handle the Click event. Conversely, if you handle the Click event, don't specify a NavigateUri.
+您通常不會處理 Click 事件以及指定 NavigateUri 值，因為這兩者代表兩種使用超連結元素的不同方式。 如果您的目的是要在預設瀏覽器中開啟 URI，而且已指定 NavigateUri 值，請不要處理 Click 事件。 相反地，如果您處理 Click 事件，請不要指定 NavigateUri。
 
-There's nothing you can do within the Click event handler to prevent the default browser from loading any valid target specified for NavigateUri; that action takes place automatically (asynchronously) when the hyperlink is activated and can't be canceled from within the Click event handler. 
+您在 Click 事件處理常式內無法執行任何動作來防止預設瀏覽器載入任何針對 NavigateUri 指定的有效目標；超連結已啟用但無法透過 Click 事件處理常式予以取消時，會自動 (非同步) 執行該動作。 
 
-## Hyperlink underlines
-By default, hyperlinks are underlined. This underline is important because it helps meet accessibility requirements. Color-blind users use the underline to distinguish between hyperlinks and other text. If you disable underlines, you should consider adding some other type of formatting difference to distinguish hyperlinks from other text, such as FontWeight or FontStyle.
+## 超連結底線
+超連結預設會加上底線。 這個底線相當重要，因為它有助於符合協助工具需求。 色盲使用者使用底線來區別超連結與其他文字。 如果您停用底線，則應該考慮新增一些其他類型的格式差異，來區別超連結與其他文字 (例如 FontWeight 或 FontStyle)。
 
-**Hyperlink text elements**
+**Hyperlink 文字元素**
 
-You can set the [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) property to disable the underline. If you do, consider using [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) or [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) to differentiate your link text.
+您可以設定 [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) 屬性來停用底線。 如果這麼做，請考慮使用 [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) 或 [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) 來區別您的連結文字。
 
 **HyperlinkButton** 
 
-By default, the HyperlinkButton appears as underlined text when you set a string as the value for the [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property.
+設定字串做為 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性的值時，HyperlinkButton 預設會顯示為加底線文字。
 
-The text does not appear underlined in the following cases:
-- You set a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) as the value for the Content property, and set the [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) property on the TextBlock.
-- You re-template the HyperlinkButton and change the name of the [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) template part.
+在下列情況下，文字不會加上底線︰
+- 您將 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 設為 Content 屬性的值，並在 TextBlock 上設定 [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) 屬性。
+- 您重新建立 HyperlinkButton 的範本，以及變更 [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) 範本組件的名稱。
 
-If you need a button that appears as non-underlined text, consider using a standard Button control and applying the built-in `TextBlockButtonStyle` system resource to its Style property.
+如果您需要按鈕顯示為非底線文字，請考慮使用標準 Button 控制項，並將內建 `TextBlockButtonStyle` 系統資源套用至其 Style 屬性。
 
-## Notes for Hyperlink text element
+## Hyperlink 文字元素的附註
 
-This section applies only to the Hyperlink text element, not to the HyperlinkButton control.
+本節僅適用於 Hyperlink 文字元素，而非 HyperlinkButton 控制項。
 
-**Input events**
+**輸入事件**
 
-Because a Hyperlink is not a [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), it does not have the set of UI element input events such as Tapped, PointerPressed, and so on. Instead, a Hyperlink has its own Click event, plus the implicit behavior of the system loading any URI specified as the NavigateUri. The system handles all input actions that should invoke the Hyperlink actions and raises the Click event in response.
+因為 Hyperlink 不是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)，所以沒有一組 UI 元素輸入事件 (例如 Tapped、PointerPressed 等)。 相反地，Hyperlink 有它自己的 Click 事件，以及載入任何指定為 NavigateUri 之 URI 的系統的隱含行為。 系統會處理應該叫用 Hyperlink 動作的所有輸入動作，並引發 Click 事件予以回應。
 
-**Content**
+**內容**
 
-Hyperlink has restrictions on the content that can exist in its [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) collection. Specifically, a Hyperlink only permits [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) and other [Span]() types that aren't another Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.
+Hyperlink 對可存在於其 [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) 集合中的內容有所限制。 具體而言，Hyperlink 僅允許 [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) 以及不是另一個 Hyperlink 的其他 [Span]() 類型。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) 不能在 Hyperlink 的 Inlines 集合中。 嘗試新增限制內容，會擲回無效引數例外狀況或 XAML 剖析例外狀況。
 
-**Hyperlink and theme/style behavior**
+**Hyperlink 和佈景主題/樣式行為**
 
-Hyperlink doesn't inherit from [Control](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx), so it doesn't have a [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) property or a [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx). You can edit the properties that are inherited from [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx), such as Foreground or FontFamily, to change the appearance of a Hyperlink, but you can't use a common style or template to apply changes. Instead of using a template, consider using common resources for values of Hyperlink properties to provide consistency. Some properties of Hyperlink use defaults from a {ThemeResource} markup extension value provided by the system. This enables the Hyperlink appearance to switch in appropriate ways when the user changes the system theme at run-time.
+Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx)，因此沒有 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) 屬性或 [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx)。 您可以編輯繼承自 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) 的屬性 (例如 Foreground 或 FontFamily) 來變更 Hyperlink 的外觀，但無法使用常用樣式或範本來套用變更。 請考慮使用常見資源做為 Hyperlink 屬性的值以提供一致性，而不是使用範本。 部分 Hyperlink 屬性使用系統所提供 {ThemeResource} 標記延伸值的預設值。 使用者在執行階段變更系統佈景主題時，這會以適當的方式切換 Hyperlink 外觀。
 
-The default color of the hyperlink is the accent color of the system. You can set the [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) property to override this.
+超連結的預設色彩是系統的輔色。 您可以設定 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) 屬性來覆寫這個值。
 
-## Recommendations
+## 建議
 
--   Only use hyperlinks for navigation; don't use them for other actions.
--   Use the Body style from the type ramp for text-based hyperlinks. Read about [**fonts and the Windows 10 type ramp**](fonts.md).
--   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
--   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
-
-
-
-## Related articles
-
-- [Text controls](text-controls.md)
-- [Guidelines for tooltips](tooltips.md)
-
-**For developers (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink class**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton class**](https://msdn.microsoft.com/library/windows/apps/br242739)
+-   只使用超連結來瀏覽；不要用於其他動作。
+-   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**字型和 Windows 10 字體坡形**](fonts.md)。
+-   在各個超連結之間保持足夠距離，讓使用者能分辨它們，並容易選取每個超連結。
+-   在超連結新增工具提示，以指示使用者將被導向的位置。 如果使用者將被導向至外部網站，請在工具提示包含最上層網域名稱，並將文字樣式設為次要字型色彩。
 
 
 
-<!--HONumber=Aug16_HO3-->
+## 相關文章
+
+- [文字控制項](text-controls.md)
+- [工具提示的指導方針](tooltips.md)
+
+**適用於開發人員 (XAML)**
+- [**Windows.UI.Xaml.Documents.Hyperlink 類別**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [**Windows.UI.Xaml.Controls.HyperlinkButton 類別**](https://msdn.microsoft.com/library/windows/apps/br242739)
+
+
+
+<!--HONumber=Jul16_HO1-->
 
 

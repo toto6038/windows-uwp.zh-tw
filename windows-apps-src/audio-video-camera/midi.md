@@ -4,8 +4,8 @@ ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。"
 title: MIDI
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 ---
 
@@ -63,10 +63,10 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 **DeviceWatcher** 具有下列事件：
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新的裝置新增至系統時引發。
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - 在從系統移除裝置時引發。
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 在與現有裝置相關聯的資訊更新時引發。
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - 在監控程式已完成其要求裝置類型的列舉時引發。
+-   [ **Added** ](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新的裝置新增至系統時引發。
+-   [ **Removed** ](https://msdn.microsoft.com/library/windows/apps/br225453) - 在從系統移除裝置時引發。
+-   [ **Updated** ](https://msdn.microsoft.com/library/windows/apps/br225458) - 在與現有裝置相關聯的資訊更新時引發。
+-   [ **EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) - 在監控程式已完成其要求裝置類型的列舉時引發。
 
 在每個事件的事件處理常式中，會呼叫協助程式方法 **UpdateDevices**，以使用目前的裝置清單更新 **ListBox**。 因為 **UpdateDevices** 更新 UI 元素與這些事件處理常式不是在 UI 執行緒上呼叫，每個呼叫必須包裝於對 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的呼叫中，這會使指定的程式碼在 UI 執行緒上執行。
 
@@ -128,12 +128,11 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 **在 app 專案中包含 General MIDI Synth SDK 擴充功能**
 
-1.  在 \[方案總管\] 中您的專案底下，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
-2.  展開 \[Universal Windows\] 節點。
+1.  在 [**方案總管**] 中您的專案底下，以滑鼠右鍵按一下 [**參考**]，然後選取 [**加入參考**]。
+2.  展開 [**Universal Windows**] 節點。
 3.  選取 [**擴充功能**]。
-4.  從擴充功能清單選取 [Microsoft General MIDI DLS for Universal Windows Apps]****。
-    > [!NOTE] 
-    > 如果擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 [屬性]、[應用程式]**** 索引標籤上查看設為 app 目標的 SDK 版本。
+4.  從擴充功能清單選取 [**Microsoft General MIDI DLS for Universal Windows Apps**]。
+    **請注意**如果有擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 [屬性]、[**應用程式**] 索引標籤上查看設為 app 目標的 SDK 版本。
 
  
 
@@ -145,6 +144,6 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

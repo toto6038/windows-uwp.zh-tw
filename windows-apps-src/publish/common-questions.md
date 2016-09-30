@@ -1,66 +1,66 @@
 ---
 author: jnHs
-Description: Common questions about ad campaigns
-title: Common questions about ad campaigns
+Description: "關於廣告活動的常見問題"
+title: "關於廣告活動的常見問題"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 translationtype: Human Translation
 ms.sourcegitcommit: 3f0664e0387e206c432ce92aa221bb5c604bb675
-ms.openlocfilehash: 737ae16e7a6b0219730520f09ac4f79fe4da7a7f
+ms.openlocfilehash: c61866aa6fb71d41d4c6150cfe6af449da21a1da
 
 ---
 
-# Common questions about ad campaigns
+# 關於廣告活動的常見問題
 
-## How much does it cost to run an ad for my app?
+## 我的 app 廣告的執行成本是多少？
 
-It’s really up to you, but remember: the more you spend, the more people will see your ad. The more people see your ad, the more clicks and installs you should get. Take a look at [this article](create-an-ad-campaign-for-your-app.md) for information about creating an ad campaign for your app.
+這取決於您，但請記住：您花費的越多，越多人會看見您的廣告。 越多人看見您的廣告，您就應該會得到越多點擊數與安裝數。 如需有關建立您 app 廣告活動的資訊，請查看[這篇文章](create-an-ad-campaign-for-your-app.md)。
 
-## Can I run ads for one of my apps in my other apps?
+## 我能夠在我其他的 app 中執行我其中一個 app 的廣告嗎？
 
-Yes. We call these *house ads*, and you can run them free of charge. Check out [this article](about-house-ads.md) for more information about community ads.
+是的。 這些廣告通稱為*自家廣告*，而您可以免費執行它們！ 如需社群廣告的詳細資訊，請查看[這篇文章](about-house-ads.md)。
 
-## Can I cross-promote my app with apps from other developers in the Store?
+## 我可以利用市集中其他開發人員的 app 宣傳我的 app 嗎？
 
-Yes. We call these *community ads*, and you can run them free of charge. After you [opt-in to community ads](about-community-ads.md#how-to-opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads. Check out [this article](about-community-ads.md) for more information.
+可以。 我們會呼叫這些*社群廣告*，您就可以免費執行它們。 在您[選擇加入社群廣告](about-community-ads.md#how-to-opt-in-to-community-ads)後，您可以[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)且您的 app 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 如需詳細資訊，請查看[這篇文章](about-community-ads.md)。
 
-## How can I customize my ad?
+## 如何自訂我的廣告？
 
-If you use one of the default ad templates, you can choose the size, imagery, and background color of your ad. You can also add a custom tag line to your ad if you want. Alternatively, you can upload your own ad designs that meet our requirements. For more information, see [Create an ad campaign for your app.](create-an-ad-campaign-for-your-app.md)
+如果使用其中一個預設廣告範例，您可以選擇廣告的大小、圖像與背景色彩。 您也可以將自訂標籤列新增到您的廣告 (如果您想要這麼做的話)。 或者，您可以上傳您自己的且符合我們要求的廣告設計。 如需詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
-## Where will my ad appear?
+## 我的廣告會在哪裡顯示？
 
-Your ad will appear in apps that share your app's age rating and OS version. You set these properties when you publish your app in the Windows Store.
+您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Windows 市集中發行 app 時，您可以設定這些屬性。
 
-Ad campaigns are currently supported in these countries and regions:
+目前下列國家與地區支援廣告活動：
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+阿爾及利亞、阿根廷、澳大利亞、奧地利、巴哈馬、巴林、巴貝多、比利時、貝里斯、玻利維亞、巴西、加拿大、智利、中國、哥倫比亞、丹麥、多明尼加、厄瓜多、埃及、薩爾瓦多、芬蘭、法國、德國、瓜地馬拉、海地、宏都拉斯、香港特別行政區、印度、印尼、伊拉克、愛爾蘭、義大利、牙買加、約旦、科威特市、黎巴嫩、馬來西亞、墨西哥、摩洛哥、紐西蘭、荷蘭、尼加拉瓜、挪威、阿曼、巴拿馬、巴拉圭、秘魯、菲律賓、波多黎各、卡達、沙烏地阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台灣、泰國、千里達及托巴哥、突尼西亞、阿拉伯聯合大公國、英國、美國、烏拉圭、委內瑞拉、越南。
 
-## What languages are supported for ad campaigns?
+## 廣告活動支援哪些語言？
 
-You can create ad campaigns in the following languages:
+可以使用下列語言建立廣告活動：
 
-Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English, Finnish, French, German, Italian, Norwegian, Portuguese (Brazil), Portuguese (Portugal), Spanish, Swedish.
+阿拉伯文、簡體中文、繁體中文、丹麥文、荷蘭文、英文、芬蘭文、法文、德文、義大利文、挪威文、葡萄牙文 (巴西)、葡萄牙文 (葡萄牙)、西班牙文、瑞典文。
 
-## When will I be billed?
+## 何時將開始付費？
 
-You will be billed each time your account accrues $50 of charges (or the equivalent amount in the local currency of your market or region) for all paid campaigns for your account.
+每當您帳戶的所有付費活動的收費累積到達美金 50 元 (或以您的市場或地區的貨幣計算的同等數量) 即會向您收費。
 
-If your account accrues less than $50 of charges in the 30-day period after your last billing date, you will be billed for those charges early in the following month. This helps to ensure that your account doesn’t maintain a running balance of ad campaign charges for more than a month.
+如果距上次收費日期之後 30 天內，您帳戶的收費累積少於美金 50 元，將會在次月提早向您收取這些費用。 這可以確保您的帳戶不會有累計收費超過一個月的廣告活動餘款。
 
-## How do I delete a credit card or edit the details of a credit card?
+## 我要如何刪除信用卡或編輯信用卡的詳細資料？
 
-Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.
+請移至 <http://commerce.microsoft.com>，使用您的 Microsoft 帳戶認證登入，並進行必要的變更。
 
-## Related topics
+## 相關主題
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [About community ads](about-community-ads.md)
-* [App install ads report](app-install-ads-reports.md)
+* [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
+* [管理您的廣告活動](managing-your-ad-campaign.md)
+* [關於自家廣告](about-house-ads.md)
+* [關於社群廣告](about-community-ads.md)
+* [App 安裝廣告報告](app-install-ads-reports.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

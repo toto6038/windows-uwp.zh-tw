@@ -1,47 +1,52 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: Use this method in the Windows Store analytics API to get aggregate acquisition data for an application during a given date range and other optional filters.
-title: Get app acquisitions
+description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。"
+title: "取得應用程式下載數"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: e28c309a51d28e14e57b8bd027dc8c353311d89a
 
 ---
 
-# Get app acquisitions
+# 取得應用程式下載數
 
 
-Use this method in the Windows Store analytics API to get aggregate acquisition data for an application during a given date range and other optional filters. This method returns the data in JSON format.
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Prerequisites
+在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。 這個方法會傳回 JSON 格式的資料。
 
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-
-## Request
+## 先決條件
 
 
-### Request syntax
+若要使用這個方法，您需要進行下列動作：
 
-| Method | Request URI                                                              |
+-   將您會用來呼叫此方法的 Azure AD 應用程式與您的開發人員中心帳戶產生關聯。
+
+-   取得您應用程式的 Azure AD 存取權杖。
+
+如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
+
+## 要求
+
+
+### 要求的語法
+
+| 方法 | 要求 URI                                                              |
 |--------|--------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions``` |
 
 <span/>
 
-### Request header
+### 要求的標頭
 
-| Header        | Type   | Description                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
 
 <span/> 
 
-### Request parameters
+### 要求參數
 
 <table>
 <colgroup>
@@ -52,61 +57,61 @@ To use this method, you need to first do the following:
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
+<th align="left">參數</th>
+<th align="left">類型</th>
+<th align="left">描述</th>
+<th align="left">必要</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">string</td>
-<td align="left">The Store ID of the app for which you want to retrieve acquisition data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
-<td align="left">Yes</td>
+<td align="left">字串</td>
+<td align="left">您想要擷取下載數資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
+<td align="left">是</td>
 </tr>
 <tr class="even">
 <td align="left">startDate</td>
-<td align="left">date</td>
-<td align="left">The start date in the date range of acquisition data to retrieve. The default is the current date.</td>
-<td align="left">No</td>
+<td align="left">日期</td>
+<td align="left">要擷取下載數資料之日期範圍的開始日期。 預設為目前的日期。</td>
+<td align="left">否</td>
 </tr>
 <tr class="odd">
 <td align="left">endDate</td>
-<td align="left">date</td>
-<td align="left">The end date in the date range of acquisition data to retrieve. The default is the current date.</td>
-<td align="left">No</td>
+<td align="left">日期</td>
+<td align="left">要擷取下載數資料之日期範圍的結束日期。 預設為目前的日期。</td>
+<td align="left">否</td>
 </tr>
 <tr class="even">
 <td align="left">top</td>
-<td align="left">int</td>
-<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
-<td align="left">No</td>
+<td align="left">整數</td>
+<td align="left">在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。</td>
+<td align="left">否</td>
 </tr>
 <tr class="odd">
 <td align="left">skip</td>
-<td align="left">int</td>
-<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
-<td align="left">No</td>
+<td align="left">整數</td>
+<td align="left">在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。</td>
+<td align="left">否</td>
 </tr>
 <tr class="even">
 <td align="left">filter</td>
-<td align="left">string</td>
-<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
-<td align="left">No</td>
+<td align="left">字串</td>
+<td align="left">在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。</td>
+<td align="left">否</td>
 </tr>
 <tr class="odd">
 <td align="left">aggregationLevel</td>
-<td align="left">string</td>
-<td align="left">Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>.</td>
-<td align="left">No</td>
+<td align="left">字串</td>
+<td align="left">指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。</td>
+<td align="left">否</td>
 </tr>
 <tr class="even">
 <td align="left">orderby</td>
-<td align="left">string</td>
-<td align="left">A statement that orders the result data values for each acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
+<td align="left">字串</td>
+<td align="left">對每個下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：
 <ul>
-<li><strong>date</strong></li>
+<li><strong>日期</strong></li>
 <li><strong>acquisitionType</strong></li>
 <li><strong>ageGroup</strong></li>
 <li><strong>storeClient</strong></li>
@@ -116,23 +121,23 @@ To use this method, you need to first do the following:
 <li><strong>deviceType</strong></li>
 <li><strong>orderName</strong></li>
 </ul>
-<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
-<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
-<td align="left">No</td>
+<p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p>
+<p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p></td>
+<td align="left">否</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
  
-### Filter fields
+### 篩選欄位
 
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
+要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。 下列為一些範例 *filter* 參數：
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
 
-For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
+如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
 
 <table>
 <colgroup>
@@ -141,25 +146,25 @@ For a list of the supported fields, see the following table. String values must 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Fields</th>
-<th align="left">Description</th>
+<th align="left">欄位</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">acquisitionType</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>free</strong></li>
 <li><strong>trial</strong></li>
 <li><strong>paid</strong></li>
 <li><strong>promotional code</strong></li>
-<li><strong>iap</strong></li>
+<li><strong>IAP</strong></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left">ageGroup</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>less than 13</strong></li>
 <li><strong>13-17</strong></li>
@@ -173,7 +178,7 @@ For a list of the supported fields, see the following table. String values must 
 </tr>
 <tr class="odd">
 <td align="left">storeClient</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>Windows Phone Store (client)</strong></li>
 <li><strong>Windows Store (client)</strong></li>
@@ -184,7 +189,7 @@ For a list of the supported fields, see the following table. String values must 
 </tr>
 <tr class="even">
 <td align="left">gender</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>m</strong></li>
 <li><strong>f</strong></li>
@@ -193,11 +198,11 @@ For a list of the supported fields, see the following table. String values must 
 </tr>
 <tr class="odd">
 <td align="left">market</td>
-<td align="left">A string that contains the ISO 3166 country code of the market where the acquisition occurred.</td>
+<td align="left">內含發生下載之市場的 ISO 3166 國家/地區碼的字串。</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -211,7 +216,7 @@ For a list of the supported fields, see the following table. String values must 
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">One of the following strings:
+<td align="left">下列其中一個字串：
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -225,16 +230,16 @@ For a list of the supported fields, see the following table. String values must 
 </tr>
 <tr class="even">
 <td align="left">orderName</td>
-<td align="left">A string that specifies the name of the order for the promotional code that was used to acquire the app (this only applies if the user acquired the app by redeeming a promotional code).</td>
+<td align="left">指定用來取得 app 之促銷碼訂單名稱的字串 (這只適用於使用者透過兌換促銷碼來取得 app 的情況)。</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### Request example
+### 要求範例
 
-The following example demonstrates several requests for getting app acquisition data. Replace the *applicationId* value with the Store ID for your app.
+下列範例示範數個取得 app 下載數資料的要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
@@ -244,43 +249,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?app
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## 回應
 
 
-### Response body
+### 回應主體
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Value      | array  | An array of objects that contain aggregate ratings data. For more information about the data in each object, see the [acquisition values](#acquisition-values) section below.                                                                                                                      |
-| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
+| 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[下載數數值](#acquisition-values)＞一節。                                                                                                                      |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
+| TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
 <span/>
  
-### Acquisition values
+### 下載數數值
 
-Elements in the *Value* array contain the following values.
+*Value* 陣列中的元素包含下列值。
 
-| Value               | Type   | Description                                                                                                                                                                                                                              |
+| 值               | 類型   | 描述                                                                                                                                                                                                                              |
 |---------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                | string | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId       | string | The Store ID of the app for which you are retrieving acquisition data.                                                                                                                                                                 |
-| applicationName     | string | The display name of the app.                                                                                                                                                                                                             |
-| deviceType          | string | The type of device that completed the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                  |
-| orderName           | string | The name of the order.                                                                                                                                                                                                                   |
-| storeClient         | string | The version of the Store where the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                            |
-| osVersion           | string | The OS version on which the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                   |
-| market              | string | The ISO 3166 country code of the market where the acquisition occurred.                                                                                                                                                                  |
-| gender              | string | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| ageGroup            | string | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
-| acquisitionType     | string | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level.                                                                                                                                                         |
+| 日期                | 字串 | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
+| applicationId       | 字串 | 您正在擷取下載數資料之 app 的市集識別碼。                                                                                                                                                                 |
+| applicationName     | 字串 | App 的顯示名稱。                                                                                                                                                                                                             |
+| deviceType          | 字串 | 完成下載的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                  |
+| orderName           | 字串 | 訂單的名稱。                                                                                                                                                                                                                   |
+| storeClient         | 字串 | 發生下載之市集的版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                            |
+| osVersion           | 字串 | 發生下載的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                   |
+| market              | 字串 | 發生下載之市場的 ISO 3166 國家/地區碼。                                                                                                                                                                  |
+| gender              | 字串 | 做出下載之使用者的性別。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                    |
+| ageGroup            | 字串 | 做出下載之使用者的年齡層。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                 |
+| acquisitionType     | 字串 | 下載的類型 (免費、付費等等)。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                    |
+| acquisitionQuantity | 數字 | 指定彙總層級期間發生的下載數目。                                                                                                                                                         |
 
 <span/> 
 
-### Response example
+### 回應範例
 
-The following example demonstrates an example JSON response body for this request.
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -305,16 +310,16 @@ The following example demonstrates an example JSON response body for this reques
 }
 ```
 
-## Related topics
+## 相關主題
 
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
+* [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得 IAP 下載數](get-in-app-acquisitions.md)
+* [取得錯誤報告資料](get-error-reporting-data.md)
+* [取得 app 評分](get-app-ratings.md)
+* [取得 app 評論](get-app-reviews.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

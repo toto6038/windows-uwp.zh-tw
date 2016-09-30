@@ -1,38 +1,38 @@
 ---
 author: mcleblanc
-description: Getting started with UWP for iOS developers
-title: Getting started with UWP for iOS developers
+description: "開始使用適用於 iOS 開發人員的 UWP"
+title: "開始使用適用於 iOS 開發人員的 UWP"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
+ms.openlocfilehash: 3fef53e5d6c9259bf5157b1221643d07e1d8be5e
 
 ---
 
-# Getting started with UWP for iOS developers
+# 開始使用適用於 iOS 開發人員的 UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-If you're an iOS developer considering developing for Windows 10, these docs are a great place to start. They'll introduce you to some of the concepts you'll need to know as you get started writing apps, and they'll cover how you can publish your work on the Windows Store.
+如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 文件中也會介紹在開始撰寫應用程式之前，您需要知道的部分概念，並涵蓋您如何在 Windows 市集上發佈您的作品。
 
-In this section, we'll start gradually, and examine how to use Microsoft Visual Studio and the C# programming language to create a trivial app, and in particular how the process might vary from the tools you currently use. (Not a C# fan? Don't worry, other programming languages and tools are available, and we'll touch on this in [Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md)).
+在本節中，我們將漸進式開始並檢查如何使用 Microsoft Visual Studio 和 C# 程式設計語言來建立簡單的 app，特別是您目前使用之工具的程序可能會有哪些不同。 (不喜歡 C#？ 別擔心，您可以使用其他程式設計語言和工具，我們將會在[開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md)中稍做說明)。
 
-Windows 10 introduces a new platform for creating engaging apps on desktop, laptop, tablet, phone devices and more. As Universal Windows Platform (UWP) apps provide many unique capabilities, a straight port of your iOS app will miss out on these features. We therefore encourage you to try out the new controls and abilities to see how they will make your life as a developer easier, and new apps possible.
+Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、平板電腦、手機裝置及其他裝置上建立吸引目光的 App。 由於通用 Windows 平台 (UWP) 應用程式提供許多獨特的功能，因此單純移植您的 iOS 應用程式將會失去這些功能。 建議您嘗試新的控制項和功能，看看它們如何讓您的開發工作更加容易，以及如何開發新的 app。
 
-The bottom line is this: don't just port your app, but **reimagine** your app, and take advantage of new features and new devices. Don't settle for the lowest common denominator, but create rich experiences that use unique Windows 10 features, such as live tiles, notifications, and interacting with Cortana.
+最重要的是：不要只是移植您的 app，而是**重新構想**您的 app，並充分利用這些新的功能和裝置。 不要僅將及格邊緣當成您的目標，並建立能運用 Windows 10 獨特功能的豐富體驗，例如動態磚、通知及與 Cortana 互動。
 
-To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed. You can download these from the [Developer downloads for programming Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkId=302144). Don't have a PC? Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).
+為了開始進行這些逐步解說，您需要一部已安裝 Windows 10 與 Microsoft Visual Studio 的電腦。 您可以從[程式設計 Windows 市集應用程式的開發人員下載](http://go.microsoft.com/fwlink/p/?LinkId=302144)下載它們。 沒有 Windows 電腦嗎？ 不用擔心，您可以使用您的 Mac：請參閱[在 Mac 上安裝 Windows 和開發工具](setting-up-your-mac-with-windows-10.md)。
 
-| Topic | Description |
+| 主題 | 說明 |
 |-------|-------------|
-| [Getting started: Creating a project](getting-started-creating-a-project.md) | Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio. |
-| [Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md) | Before we go any further, you should know about the programming languages that you can choose from when you develop UWP apps. |
-| [Getting started: Getting around in Visual Studio](getting-started-getting-around-in-visual-studio.md) | Let's now get back to the project that we created earlier, and look at how you might find your way around the Visual Studio integrated development environment (IDE). |
-| [Getting started: Common Controls](getting-started-common-controls.md) | Here are some common controls you'll be using in your apps, and their iOS equivalents. |
-| [Getting started: Navigation](getting-started-navigation.md) | One of the ways to manage this navigation in a Windows 10 app is to use the [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) class. The following walkthrough shows you how to try this out. |
-| [Getting started: Animation](getting-started-animation.md) | Animations in Windows apps can be created programmatically, but they can also be defined declaratively with Extensible Application Markup Language (XAML). |
-| [Getting started: What next?](getting-started-what-next.md) | With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps. For your next steps, have a read through the following topics, and then fire up Visual Studio and start writing some code! |
-| [Windows app concept mapping](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | How to think of iOS concepts in terms of Windows (and Android) features |
+| [開始使用：建立專案](getting-started-creating-a-project.md) | Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。 |
+| [開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md) | 在我們繼續進行之前，您必須了解開發 UWP app 時可以選用的程式設計語言。 |
+| [開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md) | 現在讓我們回到先前建立的專案，並看看如何使用 Visual Studio 整合式開發環境 (IDE)。 |
+| [開始使用：常用控制項](getting-started-common-controls.md) | 以下是一些您會在 app 及其 iOS 對等項目中使用的常用控制項。 |
+| [開始使用：瀏覽](getting-started-navigation.md) | 在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) 類別。 下列逐步解說會說明如何嘗試使用這種方式。 |
+| [開始使用：動畫](getting-started-animation.md) | Windows 應用程式中的動畫也可以透過程式設計的方式建立，但是也可以透過 Extensible Application Markup Language (XAML) 以宣告的方式進行定義。 |
+| [開始使用：後續動作？](getting-started-what-next.md) | 利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。 在後續步驟中，請仔細閱讀下列主題，然後啟動 Visual Studio 並開始撰寫一些程式碼！ |
+| [Windows app 概念對應](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | 如何以 iOS 概念思考 Windows (與 Android) 功能 |
 
  
 
@@ -42,6 +42,6 @@ To get started with these walkthroughs, you'll need a computer with both Windows
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

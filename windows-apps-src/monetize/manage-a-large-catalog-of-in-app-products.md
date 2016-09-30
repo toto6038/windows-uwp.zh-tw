@@ -1,38 +1,36 @@
 ---
 author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-description: If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.
-title: Manage a large catalog of in-app products
+description: "如果您的 app 提供大型的 app 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。"
+title: "管理大型的 app 內產品型錄"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 529735319848fc0b8fac12e51b8536b178db0646
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0927df3cd696e5a6fbd3a235d2b87074f1d63929
 
 ---
 
-# Manage a large catalog of in-app products
+# 管理大型的 app 內產品型錄
 
 
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+如果您的 app 提供大型的 app 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 您將針對特定的價格區間建立一些產品項目，其中每個產品項目都能夠代表型錄中的數百個產品。
 
->**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+若要啟用這項功能，請使用 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) 方法多載指定 app 定義的選項 (與市集中所列的 app 內產品相關聯)。 除了在呼叫期間指定購買選項和產品關聯，您的 App 也應該傳送包含大型型錄購買選項詳細資料的 [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384) 物件。 如果未提供這些詳細資料，即會改用所列出產品的詳細資料。
 
-If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog. You will create a handful of product entries for specific price tiers, with each one able to represent hundreds of products within a catalog.
+市集只會使用產生的 [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) 中來自購買要求的 *offerId*。 這個程序不會直接修改[在市集中列出 app 內的產品](https://msdn.microsoft.com/library/windows/apps/mt148551)時原本提供的資訊。
 
-To enable this capability, use the [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) method overload that specifies an app-defined offer associated with an in-app product listed in the Store. In addition to specifying an offer and product association during the call, your app should also pass a [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384) object that contains the large catalog offer details. If these details are not provided, the details for the listed product will be used instead.
+**注意** 從 Windows 10 開始，市集不會限制每個開發人員帳戶的產品清單數目。 在先前的版本中，市集將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。
 
-The Store will only use the *offerId* from the purchase request in the resulting [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392). This process does not directly modify the information originally provided when [listing the in-app product in the Store](https://msdn.microsoft.com/library/windows/apps/mt148551).
+## 先決條件
 
-**Note**  Starting with Windows 10, the Store has no limit to the number of product listings per developer account. In previous releases, the Store has a limit of 200 product listings per developer account, and the process described in this topic can be used to work around that limitation.
+-   本主題涵蓋使用市集中列出的單一應用程式內產品呈現多個應用程式內的購買選項之市集支援。 如果您不熟悉 app 內購買，請檢閱[啟用 App 內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出您的 app 內購買。
+-   初次撰寫並測試新的應用程式內購買選項程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 **CurrentAppSimulator**。
+-   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
-## Prerequisites
+## 針對應用程式內產品提出購買要求
 
--   This topic covers Store support for the representation of multiple in-app offers using a single in-app product listed in the Store. If you are unfamiliar with in-app purchases please review [Enable in-app product purchases](enable-in-app-product-purchases.md) to learn about license information, and how to properly list your in-app purchase in the Store.
--   When you code and test new in-app offers for the first time, you must use the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) object instead of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named "WindowsStoreProxy.xml" in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see **CurrentAppSimulator**.
--   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
-
-## Make the purchase request for the in-app product
-
-The purchase request for a specific product within a large catalog is handled in much the same way as any other purchase request within an app. When your app calls the new [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) method overload, your app provides both an *OfferId* and a [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263390) object populated with the name of the in-app product.
+處理針對大型型錄內特定產品的購買要求時，方式與處理 app 內的任何其他購買要求大致相同。 您的 app 在呼叫新的 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) 方法多載時，會提供 *OfferId*，以及當中已填入 app 內產品名稱的 [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263390) 物件。
 
 ```CSharp
 string offerId = "1234";
@@ -64,13 +62,13 @@ catch (Exception)
 }
 ```
 
-## Report fulfillment of the in-app offer
+## 回報 app 內購買選項的履行
 
-Your app will need to report product fulfillment to the Store as soon as the offer has been fulfilled locally. In a large catalog scenario, if your app does not report offer fulfillment, the user will be unable to purchase any in-app offers using that same Store product listing.
+當購買選項已在本機履行之後，您的應用程式需要儘速將產品履行回報給市集。 在大型型錄案例中，如果您的應用程式未回報購買選項已履行，使用者將無法使用該相同市集產品清單來購買任何應用程式內的購買選項。
 
-As mentioned earlier, the Store only uses provided offer info to populate the [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392), and does not create a persistent association between a large catalog offer and Store product listing. As a result you need to track user entitlement for products, and provide product-specific context (such as the name of the item being purchased or details about it) to the user outside of the [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) operation.
+如先前所提及，市集只會使用提供的購買選項資訊來填入 [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392)，不會在大型型錄購買選項和市集產品清單之間建立永久性關聯。 因此，您需要追蹤使用者對產品的權益，並除了 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) 操作之外，為使用者提供產品專屬內容 (例如所購買項目的名稱，或項目相關詳細資料)。
 
-The following code demonstrates the fulfillment call, and a UI messaging pattern in which the specific offer info is inserted. In the absence of that specific product info, the example uses info from the product [**ListingInformation**](https://msdn.microsoft.com/library/windows/apps/br225163).
+下列程式碼會示範履行呼叫，並示範當中插入特定購買選項資訊的 UI 訊息模式。 如果沒有該特定產品資訊，此範例就會使用來自產品 [**ListingInformation**](https://msdn.microsoft.com/library/windows/apps/br225163) 的資訊。
 
 ```CSharp
 string offerId = "1234";
@@ -110,16 +108,16 @@ switch (result)
 }
 ```
 
-## Related topics
+## 相關主題
 
-* [Enable in-app product purchases](enable-in-app-product-purchases.md)
-* [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)
-* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [啟用 app 內產品購買](enable-in-app-product-purchases.md)
+* [啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)
+* [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
 * [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

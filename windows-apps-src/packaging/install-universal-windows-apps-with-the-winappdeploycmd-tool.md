@@ -1,28 +1,28 @@
 ---
 author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-title: Install apps with the WinAppDeployCmd.exe tool
-description: Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device.
+title: "使用 WinAppDeployCmd.exe 工具安裝 App"
+description: "Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) App 部署到任何 Windows 10 裝置的命令列工具。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
-ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5f6bfb13e2e80f21902ec923e32f68046f313a13
 
 ---
-# Install apps with the WinAppDeployCmd.exe tool
+# 使用 WinAppDeployCmd.exe 工具安裝 App
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device. You can use this tool to deploy an .appx package when the Windows 10 device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. You can also deploy the app without packaging first to a remote PC or Xbox One. This article describes how to install UWP apps using this tool.
+Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) App 部署到任何 Windows 10 裝置的命令列工具。 當 Windows 10 裝置是透過 USB 連接，或可在相同的子網路上使用而不需要 Microsoft Visual Studio 或該 App 適用的方案時，您就可以使用此工具來部署 .appx 套件。 您也可以不用封裝就將 App 部署到遠端的電腦或 Xbox One。 本文章說明如何使用此工具安裝 UWP App。
 
-You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx file or AppxManifest(for loose files) to side-load your app onto a Windows 10 device. This command does not install the certificate required for your app. To run the app, the Windows 10 device must be in developer mode or already have the certificate installed.
+您只需要安裝 Windows 10 SDK，即可從命令提示字元或指令碼檔案執行 WinAppDeployCmd 工具。 當您使用 WinAppDeployCmd.exe 安裝 App 時，此工具會使用 .appx 檔案或 AppxManifest (針對鬆散檔案) 將您的 App 側載到 Windows 10 裝置。 此命令不會安裝您 App 所需的憑證。 若要執行 App，Windows 10 裝置必須處於開發人員模式或是已安裝憑證。
 
-To deploy to mobile devices, you must first create a package. For more information, see [here](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+若要部署到行動裝置，您必須先建立套件。 如需詳細資訊，請參閱[此處](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
+**WinAppDeployCmd.exe** 工具位於 Windows 10 電腦上的下列位置：**C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (根據您 SDK 的安裝路徑而定)。 首先，將您的 Windows 10 裝置連接到相同的子網路，或使用 USB 連線直接將它連接到您的 Windows 10 電腦。 然後使用下列語法與本文稍後此命令的範例來部署您的 UWP App：
 
-## WinAppDeployCmd syntax and options
+## WinAppDeployCmd 語法和選項
 
-Here is the possible syntax that you can use for **WinAppDeployCmd.exe**
+以下是您可以針對 **WinAppDeployCmd.exe** 使用的語法
 
 ``` syntax
 WinAppDeployCmd command -option <argument> ...
@@ -45,113 +45,102 @@ WinAppDeployCmd command -option <argument> ...
 
 ```
 
-You can install or uninstall an app on the target device, or you can update an app that's already installed. To keep data or settings saved by an app that's already installed, use the **update** options instead of the **install** options.
+您可以在目標裝置上安裝或解除安裝 app，或者您可以更新已經安裝的 app。 若要保留已安裝的 app 儲存的資料或設定，請使用 **update** 選項，而不是 **install** 選項。
 
-The following table describes the commands for **WinAppDeployCmd.exe**.
+下表描述 **WinAppDeployCmd.exe** 的命令。
 
 
-| **Command**  | **Description**                                                     |
+| **命令**  | **說明**                                                     |
 |--------------|---------------------------------------------------------------------|
-| devices      | Show the list of available network devices.                         |
-| install      | Install a UWP app package to the target device.                     |
-| update       | Update a UWP app that is already installed on the target device.    |
-| list         | Show the list of UWP apps installed on the specified target device. |
-| uninstall    | Uninstall the specified app package from the target device.         |
-| deployfiles  | Copy over loose file app at the target path to the remote relative path on the device.|
-| registerfiles| Register the loose file app at the remote deploy directory.         |
-| addcreds     | Add credentials to an Xbox to allow it to access a network location for app registration.|
-| getcreds     | Get network credentials for the target uses when running an application from a network share.|
-| deletecreds  | Delete network credentials the target uses when running an application from a network share.|
+| 裝置      | 顯示可用網路裝置的清單。                         |
+| install      | 將 UWP 應用程式套件安裝到目標裝置。                     |
+| update       | 更新已經安裝在目標裝置的 UWP 應用程式。    |
+| list         | 顯示已安裝在指定的目標裝置上的 UWP 應用程式清單。 |
+| uninstall    | 從目標裝置解除安裝指定的 App 套件。         |
+| deployfiles  | 將位於目標路徑的鬆散檔案 App 複製到遠端裝置上的相對路徑。|
+| registerfiles| 在遠端部署目錄註冊鬆散檔案 App。         |
+| addcreds     | 將認證新增到 Xbox 以允許它存取 App 註冊的網路位置。|
+| getcreds     | 取得目標從網路共用執行應用程式時所使用的網路認證。|
+| deletecreds  | 刪除目標從網路共用執行應用程式時所使用的網路認證。|
 
  
-The following table describes the options for **WinAppDeployCmd.exe**
+下表描述 **WinAppDeployCmd.exe** 的選項
 
-| **Command**  | **Description**                                                     |
+| **命令**  | **說明**                                                     |
 |--------------|---------------------------------------------------------------------|
-| -h (-help)       | Show the commands, options and arguments.|
-| -ip              | IP address of the target device.|
-| -g (-guid)       | Unique identifier of the target device.|
-| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. <br />If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
-| -f (-file)       | File path for the app package to install, update or uninstall.|
-| -p (-package)    | The full package name for the app package to uninstall. <br />(You can use the list command to find the full names for packages already installed on the device.)|
-| -pin             | A pin if it is required to establish a connection with the target device. <br />(You will be prompted to retry with the -pin option if authentication is required.)|
-| -credserver      | The server name of the network credentials for use by the target.|
-| -credusername    | The user name of the network credentials for use by the target.|
-| -credpassword    | The password of the network credentials for use by the target.|
-| -connecttimeout  | The timeout in seconds used when connecting to the device.|
-| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; <br />This will be a well-known, automatically determined remote deployment folder.|
-| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory.|
+| -h (-help)       | 顯示命令、選項和引數。|
+| -ip              | 目標裝置的 IP 位址|
+| -g (-guid)       | 目標裝置的唯一識別碼。|
+| -d (-dependency) | (選擇性) 指定每個套件相依性的相依性路徑。 <br />如果未指定路徑，工具會在應用程式套件和 SDK 目錄的根目錄中搜尋相依性。|
+| -f (-file)       | 要安裝、更新或解除安裝的應用程式套件檔案路徑。|
+| -p (-package)    | 要解除安裝的應用程式套件的完整套件名稱。 <br />(您可以使用清單命令來尋找已安裝在裝置上的套件完整名稱)。|
+| -pin             | 如果與目標裝置建立連線需要的 PIN。 <br />(如果需要驗證，系統會提示您使用 -pin 選項重試)。|
+| -credserver      | 目標使用之網路認證的伺服器名稱。|
+| -credusername    | 目標使用之網路認證的使用者名稱。|
+| -credpassword    | 目標使用之網路認證的密碼。|
+| -connecttimeout  | 連線到裝置時的逾時 (以秒為單位)。|
+| -remotedeploydir | 在遠端裝置上要將檔案複製到的相對目錄路徑/名稱。 <br />這會是已知且自動決定的遠端部署資料夾。|
+| -deleteextrafile | 切換來指示是否要清除遠端目錄中的現有檔案以符合來源目錄。|
  
 
-The following table describes the options for **WinAppDeployCmd.exe**.
+下表描述 **WinAppDeployCmd.exe** 的選項。
 
-| **Argument**           | **Description**                                                              |
+| **引數**           | **說明**                                                              |
 |------------------------|------------------------------------------------------------------------------|
-| &lt;x&gt;              | Timeout in seconds. (Default is 10)                                          |
-| &lt;address&gt;        | IP address or unique identifier of the target device.                        |
-| &lt;a&gt;&lt;b&gt; ... | Dependency path for each of the app package dependencies.                    |
-| &lt;p&gt;              | An alpha-numeric pin shown in the device settings to establish a connection. |
-| &lt;path&gt;           | File system path.                                                            |
-| &lt;name&gt;           | Full package name for the app package to uninstall.                          |
-| &lt;server&gt;         | Server on the file network.                                                  |
-| &lt;username&gt;       | User for the credentials with access to the server on the file network.      |
-| &lt;password&gt;       | Password for the credentials with access to the server on the files network. |
-| &lt;remotedeploydir&gt;| Directory on device relative to the deployment location                      |
+| &lt;x&gt;              | 逾時 (秒)。 (預設值為 10)                                          |
+| &lt;位址&gt;        | 目標裝置的 IP 位址或唯一識別碼。                        |
+| &lt;a&gt;&lt;b&gt; ... | 每個應用程式套件相依性的相依性路徑。                    |
+| &lt;p&gt;              | 裝置設定中顯示用於建立連線的英數字元 PIN。 |
+| &lt;path&gt;           | 檔案系統路徑。                                                            |
+| &lt;name&gt;           | 要解除安裝之應用程式套件的完整套件名稱。                          |
+| &lt;server&gt;         | 檔案網路上的伺服器。                                                  |
+| &lt;username&gt;       | 具有檔案網路上伺服器存取權限之認證的使用者名稱。      |
+| &lt;password&gt;       | 具有檔案網路上伺服器存取權限之認證的密碼。 |
+| &lt;remotedeploydir&gt;| 裝置上相對於部署位置的目錄。                      |
 
  
-## WinAppDeployCmd.exe examples
+## WinAppDeployCmd.exe 範例
 
-Here are some examples of how to deploy from the command-line using the sytax for **WinAppDeployCmd.exe**.
+以下是如何使用 **WinAppDeployCmd.exe** 的語法從命令列部署的一些範例。
 
-Shows the devices that are available for deployment. The command times out in 3 seconds.
+顯示可供部署的裝置。 命令會在 3 秒後逾時。
 
 ``` syntax
 WinAppDeployCmd devices 3
 ```
 
-Installs the app from MyApp.appx package that is in your PC's Downloads directory to a Windows 10 device with an IP address of 192.168.0.1 with a PIN of A1B2C3 to establish a connection with the device
+從您電腦 [下載] 目錄中的 MyApp.appx 套件，將 App 安裝到 IP 位址是 192.168.0.1 的 Windows 10 裝置，使用值為 A1B2C3 的 PIN 與裝置建立連線
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
-Uninstalls the specified package (based on its full name) from a Windows 10 device with an IP address of 192.168.0.1. You can use the list command to see the full names of any packages that are installed on a device.
+從 IP 位址是 192.168.0.1 的 Windows 10 裝置解除安裝指定的套件 (根據其完整名稱)。 您可以使用清單命令來查看安裝在裝置上任何套件的完整名稱。
 
 ``` syntax
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Updates the app that is already installed on the Windows 10 device with an IP address of 192.168.0.1 using the specified .appx package.
+使用指定的 .appx 套件更新已安裝在 IP 位址是 192.168.0.1 的 Windows 10 裝置上的 App。
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 ```
 
-Deploys the files of an app to a PC or Xbox with an IP address of 192.168.0.1 in the same folder as the AppxManifest to the app1_F5 directory under the deployment path of the device.
+將 App 的檔案部署到 IP 位址為 192.168.0.1 的電腦或 Xbox 上；從和 AppxManifest 相同的資料夾，部署到該裝置部署路徑下的 app1_F5 目錄。
 
 ``` syntax
 WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
-Registers the app at the app1_F5 directory under the deployment path of the PC or Xbox at 192.168.0.1.
+在位於 192.168.0.1 的電腦或 Xbox 部署路徑下的 app1_F5 目錄註冊 App。
 
 ``` syntax
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
-## Using WinAppDeployCmd to set up Run from PC deployment on Xbox One
-
-Run from PC allows you to deploy a UWP application to an Xbox One without copying the binaries over, instead the binaries are hosted on a network share on the same network as the Xbox.  In order to do this, you need a developer unlocked Xbox One, and a loose file UWP application on a network drive that the Xbox can access.
-
-Run this to register the app:
-``` syntax
-WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
-
-ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
-```
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

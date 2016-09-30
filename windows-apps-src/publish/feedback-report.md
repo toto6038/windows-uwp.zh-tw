@@ -1,62 +1,62 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
-title: Feedback report
+Description: "Windows 開發人員中心儀表板中的意見反應報告可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。"
+title: "意見反應報告"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
+ms.sourcegitcommit: 4e857ec7ee98459afdd0d8ec85b5ec3a761049f3
+ms.openlocfilehash: 9ad3025f7890de3677801b309b6714b1b46a0607
 
 ---
 
-# Feedback report
+# 意見反應報告
 
-The **Feedback report** in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in your dashboard, or export the data to view offline.
+鼓勵客戶提供有關您應用程式的意見反應，是了解對他們而言最重要的問題和功能的不錯方式。 當客戶知道他們可以直接將意見反應傳送給您時，較不可能留下負面評論的意見反應。 
 
-Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review.
+> **注意** 本文章中所述的意見反應報告尚未提供給所有開發人員帳戶使用。
 
-> **Note** You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.
+您可以使用 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您應用程式的所有客戶，都可以使用意見反應中樞應用程式留下意見反應。 因此，您可能會在此報告中看到客戶的意見反應，即使您未在應用程式內明確要求意見反應也是一樣。
 
-You can use the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically asked for feedback from within your app.
+> **提示** 如果您是使用[套件正式發行前小眾測試](package-flights.md)，則意見反應會變得特別有價值，因為意見反應報告將顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
 
-> **Tip** Feedback becomes especially valuable if you are using [package flighting](package-flights.md), since the Feedback report will show you the specific package that each customer had installed on their device when they left the feedback.
+Windows 開發人員中心儀表板中的**意見反應**報告可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。 您可以在儀表板檢視此資料，或匯出資料以便離線檢視。 
 
-## Viewing feedback details
+## 檢視意見反應詳細資料
 
-In the **Details** section of this report, you’ll find the individual feedback left by your customers. To the left of the feedback text, you’ll see the number of times the feedback was upvoted by other customers in the Feedback Hub. You can sort the feedback in three ways:
+在這份報告的 [**詳細資料**] 區段，您會發現您客戶留下的個人意見反應。 在意見反應文字的左邊，您會看到其他客戶在意見反應中樞中附議該意見反應的次數。 您可以使用三種方式來排序意見反應︰
 
-- **Upvoted** (default): Shows feedback that has been upvoted by other customers, starting with the feedback which received the most upvotes.
-- **Trending**: Shows feedback that has been upvoted by other customers in the last seven days, starting with the feedback which has been getting the most recent activity.
-- **Most recent**: Shows all feedback, starting with the feedback most recently left.
+- **附議** (預設值)：顯示其他客戶已附議的意見反應，而收到最多附議的意見反應顯示在最前面。
+- **新鮮貨**：顯示其他客戶在最後七天附議的意見反應，而取得最新活動的意見反應顯示在最前面。
+- **最近**︰顯示所有意見反應，而最近留下的意見反應顯示在最前面。 
 
-Next to each comment you’ll see the date on which the feedback was left, and the type of feedback. You’ll also see the customer’s market, the specific package of your app that was installed on the device they were using when they left the feedback, the type of that device, and **Windows Insider** if the customer submitting the feedback is a member of the Windows Insider program.
-
-
-## Apply filters
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
-
-> **Tip** If you don't see any feedback on the page, check to make sure your filters haven't excluded all of your feedback. For example, if you filter by a **Device type** that your app doesn't support, you won't see any feedback.
-
-- **Date**: The default filter is **All time**. You can select shorter timeframes ranging from **Last 30 days** up to **Last 12 months**.
-- **Feedback type**: The default setting is **All**. You can select **Problem** or **Suggestion** to show only that type of feedback.
-- **Device type**: The default setting is **All devices**. You can select **Phone**, **PC**, or **Tablet** to show only feedback left from that type of device.
-- **Package version**: The default setting is **All packages**. You can select one of your packages to show only feedback left from customers who were using that particular package when they left feedback.
-- **Market**: The default setting is **All markets**. You can choose a specific to show only feedback from customers in that market.
-- **Group**: The default setting is **All**. You can choose to view only feedback submitted by [Windows Insiders](http://insider.windows.com).
-
-## Translating feedback
-
-By default, reviews that were not written in your preferred language are translated for you. If you prefer, feedback translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of feedback.
-
-Please note that feedback is translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
-
-## Launching Feedback Hub directly from your app
-
-As noted above, we recommend incorporating a link to Feedback Hub directly in your app to encourage customers to provide feedback. For more info, see [Launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md).
+在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場、客戶留下意見反應時所使用裝置上已安裝的您應用程式的特定套件、該裝置的類型，以及 **Windows 測試人員** (如果提交意見反應的客戶是 Windows 測試人員計畫的成員)。
 
 
+## 套用篩選
 
-<!--HONumber=Aug16_HO5-->
+您可以在接近頁面頂端處，展開 [**套用篩選**]，來篩選此頁面上的所有資料。
+
+> **提示** 如果您在頁面上看不到任何意見反應，請檢查以確定您的篩選並未排除所有意見反應。 例如，如果您依應用程式不支援的 [**裝置類型**] 進行篩選，則看不到任何意見反應。
+
+- **日期**：預設篩選為 [**所有時間**]。 您可以選取較短的時間範圍，範圍從 [**過去 30 天**] 到 [**過去 12 個月**]。
+- **意見反應類型**：預設設定為 [**全部**]。 您可以選取 [**問題**] 或 [**建議**] 僅顯示該類型的意見反應。
+- **裝置類型**：預設設定為 [**所有裝置**]。 您可以選取 [**手機**]、[**電腦**] 或 [**平板電腦**] 僅顯示從該類型的裝置留下的意見反應。
+- **套件版本**：預設設定為 [**所有套件**]。 您可以選取其中一個套件，僅顯示在留下意見反應時使用該特定套件的客戶所留下的意見反應。
+- **市場**：預設設定為 [**所有市場**]。 您可以選擇特定市場，僅顯示來自該市場中客戶的意見反應。
+- **群組**：預設設定為 [**全部**]。 您可以選擇僅檢視 [Windows 測試人員](http://insider.windows.com)所提交的意見反應。
+
+## 翻譯評論
+
+根據預設，會幫您翻譯不是使用您慣用語言撰寫的評論。 您也可以取消核取意見反應清單右上角的 [**翻譯評論**] 核取方塊，停用意見反應翻譯的功能。
+
+請注意：意見反應是由系統自動翻譯，結果不一定正確。 我們也提供原文，供您與翻譯比較，或透過其他方式翻譯。
+
+## 從您的應用程式直接啟動意見反應中樞
+
+如前所述，建議直接在您的應用程式中納入意見反應中樞的連結，鼓勵客戶提供意見反應。 如需詳細資訊，請參閱[從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

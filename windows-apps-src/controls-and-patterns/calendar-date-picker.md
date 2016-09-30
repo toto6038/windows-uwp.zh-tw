@@ -1,51 +1,40 @@
 ---
 author: Jwmsft
-Description: "The calendar date picker is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important."
-title: Calendar date picker
+Description: "行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。"
+title: "行事曆日期選擇器"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 7ae444d9e096834daa2eef71c691b9bb8b86d7c4
 
 ---
-# Calendar date picker
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 行事曆日期選擇器
 
-The calendar date picker is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx"><strong>Date property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx"><strong>DateChanged event</strong></a></li>
-</ul>
-
-</div>
-</div>
+行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如天次或行事曆行程密度。 您可以修改行事曆來提供其他內容，或限制可用的日期。
 
 
 
+-   [**CalendarDatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**Date 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+-   [**DateChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
+## 這是正確的控制項嗎？
+使用者可以使用**行事曆日期選擇器**，從內容相關行事曆檢視中挑選單一日期。 它的用途包括選擇約會或出發日期。
 
+若要讓使用者挑選已知的日期，例如出生日期 (行事曆內容不重要)，請考慮使用[**日期選擇器**](date-picker.md)。
 
-## Is this the right control?
-Use a **calendar date picker** to let a user pick a single date from a contextual calendar view. Use it for things like choosing an appointment or departure date.
+如需有關如何選擇正確控制項的詳細資訊，請參閱[日期和時間控制項](date-and-time.md)文章。
 
-To let a user pick a known date, such as a date of birth, where the context of the calendar is not important, consider using a [**date picker**](date-picker.md).
+## 範例
 
-For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
+如果尚未設定日期，進入點會顯示預留位置文字；否則，它會顯示所選的日期。 當使用者選取進入點時，行事曆檢視會展開，方便使用者選擇日期。 行事曆檢視與其他 UI 重疊；它不會將其他 UI 移開。
 
-## Examples
+![行事曆日期選擇器的範例](images/calendar-date-picker-2-views.png)
 
-The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
-
-![Example of calendar date picker](images/calendar-date-picker-2-views.png)
-
-## Create a date picker
+## 建立日期選擇器
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
@@ -56,37 +45,37 @@ CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
 arrivalCalendarDatePicker.Header = "Arrival date";
 ```
 
-The resulting calendar date picker looks like this:
+產生的行事曆日期選擇器看起來像這樣︰
 
-![Example of calendar date picker](images/calendar-date-picker-closed.png)
+![行事曆日期選擇器的範例](images/calendar-date-picker-closed.png)
 
-The calendar date picker has an internal [**CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) for picking a date. A subset of CalendarView properties, like [**IsTodayHighlighted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) and [**FirstDayOfWeek**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it. 
+行事曆日期選擇器有一個內部 [**CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)，可用來挑選日期。 CalendarView 屬性的子集 (例如 [**IsTodayHighlighted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) 和 [**FirstDayOfWeek**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx)) 存在於 CalendarDatePicker 上面，而且會被轉送到內部 CalendarView 供您修改。 
 
-However, you can't change the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the [Calendar view](calendar-view.md) article for more info on how you can modify the calendar display.
+不過，您無法變更內部 CalendarView 的 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 以允許複選。 如果您想讓使用者挑選多個日期或一律顯示行事曆，請考慮使用行事曆檢視，而不要使用行事曆日期選擇器。 請參閱[行事曆檢視](calendar-view.md)文章，以取得有關如何修改行事曆顯示方式的詳細資訊。
 
-### Selecting dates
+### 選取日期
 
-Use the [**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) property to get or set the selected date. By default, the Date property is **null**. When a user selects a date in the calendar view, this property is updated. A user can clear the date by clicking the selected date in the calendar view to deselect it. 
+使用 [**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) 屬性來取得日期或設定選取的日期。 根據預設，Date 屬性是 **null**。 當使用者在行事曆檢視中選取一個日期時，便會更新這個屬性。 使用者可以按一下行事曆檢視中選取的日期，以取消選取該日期。 
 
-You can set the date in your code like this.
+您可以在程式碼中按照以下方式設定日期。
 
 ```csharp
 myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
-When you set the Date in code, the value is constrained by the [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) and [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx) properties.
-- If **Date** is smaller than **MinDate**, the value is set to **MinDate**.
-- If **Date** is greater than **MaxDate**, the value is set to **MaxDate**.
+當您在程式碼中設定日期時，值會受到 [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) 和 [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx) 屬性的約束。
+- 如果 **Date** 小於 **MinDate**，值會設定為 **MinDate**。
+- 如果 **Date** 大於 **MaxDate**，值會設定為 **MaxDate**。
 
-You can handle the [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) event to be notified when the Date value has changed.
+您可以處理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以便在 Date 值變更時收到通知。
 
-> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
+> **注意**：&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和行事曆值](date-and-time.md#datetime-and-calendar-values)。
 
-### Setting a header and placeholder text
+### 設定標頭與預留位置文字
 
-You can add a [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (or label) and [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (or watermark) to the calendar date picker to give the user an indication of what it's used for. To customize the look of the header, you can set the [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) property instead of Header.
+您可以新增 [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (或標籤) 與 [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (或浮水印) 到行事曆日期選擇器，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) 屬性，而不是 Header。
 
-The default placeholder text is "select a date". You can remove this by setting the PlaceholderText property to an empty string, or you can provide custom text as shown here.
+預設預留位置文字是「選取日期」。 您可以將 PlaceholderText 屬性設定為空字串以移除預設文字，或者您可以提供自訂文字，如下所示。
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
@@ -94,15 +83,15 @@ The default placeholder text is "select a date". You can remove this by setting 
 ```
 
 
-## Related articles
+## 相關文章
 
-- [Date and time controls](date-and-time.md)
-- [Calendar view](calendar-view.md)
-- [Date picker](date-picker.md)
-- [Time picker](time-picker.md)
+- [日期和時間控制項](date-and-time.md)
+- [行事曆檢視](calendar-view.md)
+- [日期選擇器](date-picker.md)
+- [時間選擇器](time-picker.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

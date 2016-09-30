@@ -1,73 +1,73 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired your app, along with demographic and platform details.
-title: Acquisitions report
+Description: "Windows 開發人員中心儀表板的 下載數 報告讓您能夠查看已取得您 app 的對象、人數統計資料及平台詳細資訊。"
+title: "下載數報告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2556e7bd8f827287c917c3b9ffa2da980d0d5d88
+ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
 
 ---
 
-# Acquisitions report
+# 下載數報告
 
 
-The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired your app, along with demographic and platform details. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows 開發人員中心儀表板的 **下載數** 報告讓您能夠查看已取得您 app 的對象、人數統計資料及平台詳細資訊。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
-In this report, an acquisition means a new customer has obtained a license to your app (whether you charged money or you've offered it for free).
+在此報告中，一個下載數表示一位新客戶已取得您 app 的授權 (不論是付費或免費取得)。
 
-> **Important**  The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
-
-
-
-## Apply filters
+> **注意** **下載數** 報告不包含有關退款、解除安裝、信用卡退款等相關資料。若要評估您的 app 收益，請造訪 [支付摘要](payout-summary.md)。 在 \[**保留**\] 區段中，按一下 [\**下載保留的交易**\] 連結。
 
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by device type.
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only, you can choose a specific one here.
-
-The info in the charts listed below will reflect the period of time selected in the **Apply filters** section.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all device types, unless you've used **Apply filters** to choose only one.
-
-## Acquisitions
+## 套用篩選
 
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to filter the data over a longer duration, the data will be grouped by week.)
+您可以在接近頁面頂端的地方，展開 [\**套用篩選**\]，依日期範圍和/或裝置類型來篩選此頁面上的所有資料。
 
-You can also see the lifetime number of acquisitions for your app. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+-   **日期**：預設篩選為 \[**過去 30 天**\]，但是您可以擴展此範圍，最多可達 [\**過去 12 個月**\]。
+-   **裝置類型**：預設設定為 \[**所有裝置**\]。 如果您只想要顯示來自特定裝置類型的下載數資料，您可以在此處選擇特定的類型。
 
-You can optionally filter the results by market and/or by OS version.
+下列圖表中的資訊將反映在 \[**套用篩選**\] 中所選取的時段。
 
-## Customer demographic
+下列所有圖表中的資訊將反映 [套用篩選]**** 區段中選取的時段。 根據預設，除非您使用 \[**套用篩選**\] 只選擇一個裝置類型，否則這將包含所有裝置類型的資料。
 
-
-The **Customer demographic** chart shows demographic info about the people who acquired your app. You can see how many acquisitions (over the selected period of time) were made by people in a certain age group and by which gender.
-
-> **Note**  Some customers have opted not to share this info. If we were unable to determine the age group or gender, the acquisition is categorized as **Unknown**.
-
- 
-
-## Markets
+## 下載數
 
 
-The **Markets** chart shows the total number of acquisitions over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
+**下載數** 圖表會顯示在選取時段內，每日或每週您 app 的下載數。 (當您利用 \[**套用篩選**\] 篩選較長期間的資料時，資料將會以週為單位分組)。
 
-## OS version
+您也可以看到您 app 生命週期內的下載數。 這會顯示所有下載數的累計總數 (從您 app 第一次發行開始)。
+
+您可以選擇依市場和 (或) 作業系統版本篩選結果。
+
+## 客戶人數統計
 
 
-The **OS version** chart shows the total number of acquisitions based on the customer's operating system (or via [volume acquisition by organizations](organizational-licensing.md)). In some cases we may not be able to determine this info. In that case, the OS version will be listed as **Unknown**.
+[客戶人數統計]**** 圖表顯示取得您 app 對象的人數統計資訊。 您可以依特定年齡層和依性別來查看取得對象在選取時段內的下載數。
 
-
+> **注意** 部分客戶選擇不分享此資訊。 如果我們無法判斷年齡層或性別，即會將該次下載數分類為 \[**未知**\]。
 
  
 
+## 市場
+
+
+\[**市場**\] 圖表會依市場顯示選取時段內的下載數總數。 根據預設，您會在最上方看到最高下載數的市場，然後依序往下排序。 您也可以切換此圖表中 **下載數** 欄中的箭號來變更此順序。
+
+## 作業系統版本
+
+
+[作業系統版本]**** 圖表會根據客戶的作業系統 (或透過[組織大量取得](organizational-licensing.md)) 來顯示下載數總數。 在某些情況下，我們可能無法判斷此資訊。 如果發生此狀況，就會將作業系統版本列為 [未知]****。
+
+
+
+ 
+
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

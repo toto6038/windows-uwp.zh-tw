@@ -1,109 +1,108 @@
 ---
 author: mijacobs
-description: Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
-title: Color
+Description: "色彩可提供 app 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。"
+title: "色彩"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
+label: Color
 template: detail.hbs
 extraBodyClass: style-color
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 8e253c93f932e04b825478cf0801e4c8c0d43b9d
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
 
 ---
 
-# Color
+# 色彩
 
-Color provides intuitive way of finding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
+色彩可提供 app 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。
 
-In Windows, color is also personal. Users can choose a color and a light or dark theme to be reflected throughout their experience.
+在 Windows 中，色彩也可以個人化。 使用者可以選擇在他們的體驗中要反映的色彩和淺色或深色的佈景主題。
 
-## Accent color
+## 輔色
 
-The user can pick a single color called the accent from *Settings > Personalization > Colors*. They have their choice from a curated set of 48 color swatches, except on Xbox which has a palette of 21 TV-safe colors.
+使用者可以從 [設定] &gt; [個人化] &gt; [色彩]** 挑選稱為輔色的單一色彩。 他們可以從 48 種色樣規劃中選擇 (除了擁有 21 種 TV-safe 色彩調色盤的 Xbox 以外)。
 
 <!-- Alternate version for the dev center. Need to add hex values. -->
-![Default accent colors](images/accentcolorswatch.png) Default accent colors
+![預設輔色](images/accentcolorswatch.png) 預設輔色
 
-![Xbox accent colors](images/accentcolorswatch_xbox.png) Xbox accent colors
+![Xbox 輔色](images/accentcolorswatch_xbox.png) Xbox 輔色
 
 
-When users choose an accent color, it appears as part of their system theme. The areas affected are Start, Taskbar, window chrome, selected interaction states and hyperlinks within [common controls](https://dev.windows.com/design/controls-patterns). Each app can further incorporate the accent color through their typography, backgrounds, and interactions—or override it to preserve their specific branding.
 
-## Color palette building blocks
+當使用者選擇輔色時，它會顯示為其系統佈景主題的一部分。 受影響的區域是開始畫面、工作列、視窗、選取的互動狀態，以及[通用控制項](https://dev.windows.com/design/controls-patterns)內的超連結。 每個 app 都可透過其印刷樣式、背景及互動進一步併入輔色，或覆寫它以保留其特定品牌。
 
-Once an accent color is selected, light and dark shades of the accent color are created based on HSB values of color luminosity. Apps can use shade variations to create visual hierarchy and to provide an indication of interaction.
+## 色彩上的色彩
 
-By default, hyperlinks will use the user's accent color. If the page background is a similar color, you can choose to assign a lighter (or darker) shade of accent to the hyperlinks for better contrast.
+一旦選取輔色之後，該輔色的淺色和深色色調都會根據色彩亮度的 HSB 值來建立。 App 可以使用色調變化來建立視覺階層，並提供互動的指示。
 
-![A single accent color with its 6 shades](images/shades.png) The various light/dark shades of the default accent color.
+根據預設，超連結會使用使用者的輔色。 如果頁面背景是類似的色彩，您可以選擇為超連結指派較淺的 (或較深的) 輔色漸層，以獲得較佳的對比。
 
-![Redlines for Colored Action Center](images/action_center_redline_zoom.png) An example of how color logic gets applied to a design spec.
+<figure class="figure-img" >
+    <img src="images/shades.png" alt="A single accent color with its 6 shades"  />
+        <figcaption><p>預設輔色的各種淺色/深色漸層。</p>
+</figcaption>
+</figure>
 
-**Note**&nbsp;&nbsp;In XAML, the primary accent color is exposed as a [theme resource](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) named `SystemAccentColor`. The shades are available as `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2`, and `SystemAccentColorDark3`. Also available programmatically via [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) and the [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) enum.
+<figure class="figure-img" >
+    <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center"  />
+        <figcaption><p>色彩邏輯如何套用到設計規格的範例。</p>
+</figcaption>
+</figure>
 
-## Color theming
+<aside class="aside-dev">
+    <div class="aside-dev-title">
+    </div>
+    <div class="aside-dev-content">
+在 XAML 中，主要輔色公開為名稱為`SystemAccentColor` 的 [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 這些漸層可用來做為 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 以及 `SystemAccentColorDark3`。 也可以透過 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 與 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列舉，以程式設計的方式提供使用。
+    </div>
+</aside>
 
-The user may also choose between a light or dark theme for the system. Some apps choose to change their theme based on the user’s preference, while others opt out.
+## 色彩佈景主題
 
-Apps using light theme are for scenarios involving productivity apps. Examples would be the suite of apps available with Microsoft Office. Light theme affords the ease of reading long lengths of text in conjunction with prolonged periods of time-at-task.
+使用者也可以在系統的淺色或深色佈景主題之間選擇。 有些 app 選擇根據使用者的喜好設定變更其佈景主題，而其他則會退出。
 
-Dark theme allows more visible contrast of content for apps that are media centric or scenarios where users are presented with an abundance of videos or imagery. In these scenarios, reading is not necessarily the primary task, though a movie watching experience might be, and shown under low-light ambient conditions.
+使用淺色佈景主題的 app 適用於有關生產力 app 的案例。 範例是搭配 Microsoft Office 的可用 app 套件。 淺色佈景主題讓使用者能輕鬆閱讀冗長文字，以及長時間處理工作。
 
-If your app doesn’t quite fit either of these descriptions, consider following the system theme to let the user decide what's right for them.
+深色佈景主題讓 app 的內容對比更顯著，而這類 app 是可向使用者顯示大量視訊或影像的媒體中心或案例。 在這些案例中，閱讀不一定是主要工作，有可能是電影觀賞體驗，也可能是在周遭環境光線不足的情況下顯示。
 
-To make designing for themes easier, Windows provides an additional color palette that automatically adapts to the theme.
+如果您的 app 與這些描述中任何一種都不相符，請考慮使用下列系統佈景主題，讓使用者決定最適合他們的佈景主題。
+
+為了讓佈景主題的設計更容易，Windows 會提供會自動調整為佈景主題的其他調色盤。
 
 <!-- OP version -->
-### Light theme
-#### Base
-![The base light theme](images/themes-light-base.png)
+### 淺色佈景主題
+#### 基本
+![基本淺色佈景主題](images/themes-light-base.png)
 #### Alt
-![The alt light theme](images/themes-light-alt.png)
-#### List
-![The list light theme](images/themes-light-list.png)
+![Alt 淺色佈景主題](images/themes-light-alt.png)
+#### 清單
+![清單淺色佈景主題](images/themes-light-list.png)
 #### Chrome
-![The chrome light theme](images/themes-light-chrome.png)
-### Dark theme
-#### Base
-![The base dark theme](images/themes-dark-base.png)
+![Chrome 淺色佈景主題](images/themes-light-chrome.png)
+### 深色佈景主題
+#### 基本
+![基本深色佈景主題](images/themes-dark-base.png)
 #### Alt
-![The alt dark theme](images/themes-dark-alt.png)
-#### List
-![The list dark theme](images/themes-dark-list.png)
+![Alt 深色佈景主題](images/themes-dark-alt.png)
+#### 清單
+![清單深色佈景主題](images/themes-dark-list.png)
 #### Chrome
-![The chrome dark theme](images/themes-dark-chrome.png)
+![Chrome 深色佈景主題](images/themes-dark-chrome.png)
 
+<aside class="aside-dev">
+    <div class="aside-dev-title">
+    </div>
+    <div class="aside-dev-content">
+每個色彩都能夠以遵循 `System*Color` 命名慣例 (例如：`SystemChromeHighColor`) 的 XAML [佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)方式提供使用。 您可以透過 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制您 app 的佈景主題。
+    </div>
+</aside>
 
-## Changing the theme
+## 協助工具
 
-You can change themes easily by changing the **RequestedTheme** property in your App.xaml:
-
-```XAML
-<Application
-    x:Class="App9.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:App9"
-    RequestedTheme="Dark">
-
-</Application>
-```
-
-Removing the **RequestedTheme** means that your application will honor the user’s app mode settings, and they will be able to choose to view your app in either the dark or light theme. 
-
-Make sure that you take the theme into consideration when creating your app, as the theme has a big impact on the look of your app.
-
-## Accessibility
-
-Our palette is optimized for screen usage. We recommend maintaining a contrast ratio for text of 4.5:1 against the background for optimal readability. There are many free tools available to test whether or not your colors pass, like [Contrast Ratio](http://leaverou.github.io/contrast-ratio/).
-
-## Related articles
-
-* [XAML Styles](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
-* [XAML Theme Resources](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
+針對螢幕的使用方式，將調色盤最佳化。 建議您針對背景維持 4.5:1 的文字對比率，以獲得最佳可讀性。 有許多免費工具可用來測試您的顏色是否通過，例如[對比率](http://leaverou.github.io/contrast-ratio/)。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

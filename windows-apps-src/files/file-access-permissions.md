@@ -1,29 +1,29 @@
 ---
-author: normesta
+author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: File access permissions
-description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+title: "檔案存取權限"
+description: "App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
-ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
 ---
-# File access permissions
+# 檔案存取權限
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
 
-## The locations that all apps can access
+## 所有 app 都能存取的位置
 
-When you create a new app, you can access the following file system locations by default:
+當您建立新的 app 時，預設可以存取下列檔案系統位置：
 
--   **Application install directory**. The folder where your app is installed on the user’s system.
+-   **應用程式安裝目錄**。 在使用者系統上安裝您 app 的資料夾。
 
-    There are two primary ways to access files and folders in your app’s install directory:
+    有兩種主要方式可以存取 app 安裝目錄的檔案和資料夾：
 
-    1.  You can retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's install directory, like this:
+    1.  您可以抓取代表 app 安裝目錄的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -32,9 +32,9 @@ When you create a new app, you can access the following file system locations by
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
 
-       You can then access files and folders in the directory using [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) methods. In the example, this **StorageFolder** is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory by downloading the [App package information sample](http://go.microsoft.com/fwlink/p/?linkid=231526) for Windows 8.1 and re-using its source code in your Windows 10 app.
+       您可以接著使用 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 方法，來存取目錄中的檔案和資料夾。 在此範例中，這個 **StorageFolder** 儲存在 `installDirectory` 變數中。 您可以下載適用於 Windows 8.1 的 [App 套件資訊範例](http://go.microsoft.com/fwlink/p/?linkid=231526)，並在您的 Windows 10 app 中重複使用其原始程式碼，以深入了解如何使用 app 套件和安裝目錄。
 
-    2.  You can retrieve a file directly from your app's install directory by using an app URI, like this:
+    2.  您可以使用 App URI，從 App 的安裝目錄直接擷取檔案，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;            
@@ -47,22 +47,22 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+        
+        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 App 安裝目錄 (範例中為 `file`) 中的 *file.txt* 檔案。
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's install directory (`file` in the example).
+        URI 中的「ms-appx:///」前置詞是指 app 的安裝目錄。 您可以在[如何使用 URI 來參考內容](https://msdn.microsoft.com/library/windows/apps/hh781215)中，深入了解如何使用 app URI。
 
-        The "ms-appx:///" prefix in the URI refers to the app's install directory. You can learn more about using app URIs in [How to use URIs to reference content](https://msdn.microsoft.com/library/windows/apps/hh781215).
+    此外，與其他位置不同的是，您也可以使用[通用 Windows 平台 (UWP) app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 [Microsoft Visual Studio 的 C/C++ 標準程式庫功能](http://msdn.microsoft.com/library/hh875057.aspx)，來存取 app 安裝目錄中的檔案。
 
-    In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some [C/C++ Standard Library functions from Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
+    app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目錄的存取權。
 
-    The app's install directory is a read-only location. You can’t gain access to the install directory through the file picker.
+-   **應用程式資料位置。** 您的 app 可以儲存資料的資料夾。 這些資料夾 (本機、漫遊及暫存) 都是在您 app 安裝時所建立。
 
--   **Application data locations.** The folders where your app can store data. These folders (local, roaming and temporary) are created when your app is installed.
+    有兩種主要方式可以從應用程式資料位置存取檔案和資料夾：
 
-    There are two primary ways to access files and folders from your app’s data locations:
+    1.  使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) 屬性來抓取應用程式資料資料夾。
 
-    1.  Use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) properties to retrieve an app data folder.
-
-        For example, you can use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) to retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's local folder like this:
+        例如，您可以使用 [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621)，以抓取代表應用程式本機資料夾的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，如下：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -71,16 +71,16 @@ When you create a new app, you can access the following file system locations by
         ```javascript
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
+ 
+        如果您想要存取 App 的漫遊或暫存資料夾，請改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性。
 
-        If you want to access your app's roaming or temporary folder, use the [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) or [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property instead.
+        在您擷取代表應用程式資料位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之後，可以使用 **StorageFolder** 方法存取該位置中的檔案和資料夾。 在此範例中，這些 **StorageFolder** 物件儲存在 `localFolder` 變數中。 您可以在[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)中，以及藉由下載適用於 Windows 8.1 的[應用程式資料範例](http://go.microsoft.com/fwlink/p/?linkid=231478)，並在您的 Windows 10 app 中重複使用其原始程式碼，來深入了解如何使用 app 資料位置。
 
-        After you retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents an app data location, you can access files and folders in that location by using **StorageFolder** methods. In the example, these **StorageFolder** objects are stored in the `localFolder` variable. You can learn more about using app data locations in [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109), and by downloading the [Application data sample](http://go.microsoft.com/fwlink/p/?linkid=231478) for Windows 8.1 and re-using its source code in your Windows 10 app.
-
-    2.  For example, you can retrieve a file directly from your app's local folder by using an app URI, like this:
+    2.  例如，您可以使用 App URI 從 App 的本機資料夾直接擷取檔案，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appdata:///local/file.txt");
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
@@ -90,29 +90,29 @@ When you create a new app, you can access the following file system locations by
         );
         ```
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's local folder (`file` in the example).
+        當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 App 本機資料夾 (範例中為 `file`) 中的 *file.txt* 檔案。
 
-        The "ms-appdata:///local/" prefix in the URI refers to the app's local folder. To access files in the app's roaming or temporary folders use "ms-appdata:///roaming/" or "ms-appdata:///temporary/" instead. You can learn more about using app URIs in [How to load file resources](https://msdn.microsoft.com/library/windows/apps/hh781229).
+        URI 中的「ms-appdata:///local/」前置詞是指 app 的本機資料夾。 若要存取 app 的漫遊或暫存資料夾中的檔案，請改用「ms-appdata:///roaming/」或「ms-appdata:///temporary/」。 您可以在[如何載入檔案資源](https://msdn.microsoft.com/library/windows/apps/hh781229)中，深入了解如何使用 app URI。
 
-    In addition, and unlike other locations, you can also access files in your app data locations by using some [Win32 and COM for UWP apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some C/C++ Standard Library functions from Visual Studio.
+    此外，與其他位置不同的是，您也可以使用[適用於 UWP app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 Visual Studio 的 C/C++ 標準程式庫功能，來存取 app 資料位置中的檔案。
 
-    You can’t access the local, roaming, or temporary folders through the file picker.
+    您無法透過檔案選擇器存取本機、漫遊或暫存資料夾。
 
--   **Removable devices.** Additionally, your app can access some of the files on connected devices by default. This is an option if your app uses the [AutoPlay extension](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) to launch automatically when users connect a device, like a camera or USB thumb drive, to their system. The files your app can access are limited to specific file types that are specified via File Type Association declarations in your app manifest.
+-   **卸除式裝置。** 此外，您的 app 預設可以存取連接裝置上的部分檔案。 如果您的 app 在使用者連接裝置 (例如相機或 USB 快閃磁碟機) 時，會使用[自動播放延伸](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)來自動啟動，就可以使用這個選項。 您的 app 可以存取的檔案受限於特定的檔案類型，這些檔案類型是在應用程式資訊清單中的檔案類型關聯宣告中指定。
 
-    Of course, you can also gain access to files and folders on a removable device by calling the file picker (using [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) and letting the user pick files and folders for your app to access. Learn how to use the file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    當然，您也可以藉由呼叫檔案選擇器 (使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881))，並讓使用者為您的 app 挑選要存取的檔案和資料夾，以取得卸除式裝置上檔案和資料夾的存取權。 在[使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)中，深入了解如何使用檔案選擇器。
 
-    **Note**  For more info about accessing an SD card from a mobile app, see [Access the SD card](access-the-sd-card.md).
+    **注意** 如需從行動 app 存取 SD 記憶卡的詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
      
 
-## Locations Windows Store apps can access
+## Windows 市集應用程式可以存取的位置
 
--   **User’s Downloads folder.** The folder where downloaded files are saved by default.
+-   **使用者的 [下載] 資料夾** 預設儲存下載檔案的資料夾。
 
-    By default, your app can only access files and folders in the user's Downloads folder that your app created. However, you can gain access to files and folders in the user's Downloads folder by calling a file picker ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) or [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) so that users can navigate and pick files or folders for your app to access.
+    根據預設，您的 app 只能存取 app 在使用者的 [下載] 資料夾中建立的檔案和資料夾。 不過，您可以藉由呼叫檔案選擇器 ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 或 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881))，以取得使用者下載資料夾中檔案和資料夾的存取權，如此一來，使用者便能針對您的應用程式瀏覽和挑選要存取的檔案或資料夾。
 
-    -   You can create a file in the user's Downloads folder like this:
+    -   您可以在使用者的下載資料夾中建立檔案，如下：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -125,10 +125,10 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+ 
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的檔案時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
 
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) is overloaded so that you can specify what the system should do if there is already an existing file in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the file that was created. This file is called `newFile` in the example.
-
-    -   You can create a subfolder in the user's Downloads folder like this:
+    -   您可以在使用者的 [下載] 資料夾中建立子資料夾，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -141,30 +141,31 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+ 
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的子資料夾時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
 
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents the subfolder that was created. This file is called `newFolder` in the example.
+    如果您在下載資料夾中建立檔案或資料夾，建議您將該項目新增到應用程式的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，如此一來，您的應用程式未來便能輕易存取該項目。
 
-    If you create a file or folder in the Downloads folder, we recommend that you add that item to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) so that your app can readily access that item in the future.
+## 存取其他位置
 
-## Accessing additional locations
+除了預設位置，App 還可以在應用程式資訊清單中宣告功能 (請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968))，或是呼叫檔案選擇器來讓使用者挑選 App 要存取的檔案和資料夾 (請參閱[使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md))，藉以存取其他檔案和資料夾。
 
-In addition to the default locations, an app can access additional files and folders by declaring capabilities in the app manifest (see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968)), or by calling a file picker to let the user pick files and folders for the app to access (see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)).
+下表列出可透過宣告功能及使用關聯的 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API 來存取的其他位置：
 
-The following table lists additional locations that you can access by declaring a capability (or capabilities) and using the associated [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API:
-
-| Location | Capability | Windows.Storage API |
+| 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user’s OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
-| Music     | MusicLibrary <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
-| Pictures  | PicturesLibrary<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
-| Videos    | VideosLibrary<br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
-| Removable devices  | RemovableDevices <br><br>Note  You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Also see [Access the SD card](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
-| Homegroup libraries  | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
-| Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- PrivateNetworkClientServer <br><br>And at least one internet and public networks capability: <br>- InternetClient <br>- InternetClientServer <br><br>And, if applicable, the domain credentials capability:<br>- EnterpriseAuthentication <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+| 文件 | DocumentsLibrary <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>- 在離線時自動將開啟的檔案儲存到使用者的 OneDrive | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| 音樂     | MusicLibrary <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
+| 圖片  | PicturesLibrary<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
+| 影片    | VideosLibrary<br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
+| 卸除式裝置  | RemovableDevices <br><br>請注意，您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>另請參閱[存取 SD 記憶卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
+| 家用群組媒體櫃  | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
+| 媒體伺服器裝置 (DLNA) | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) | 
+| 通用命名慣例 (UNC) 資料夾 | 需要下列功能的組合。 <br><br>家用與工作場所網路功能： <br>- PrivateNetworkClientServer <br><br>同時至少要有一個網際網路和公用網路功能： <br>- InternetClient <br>- InternetClientServer <br><br>此外，如果適當，還要有網域認證功能：<br>- EnterpriseAuthentication <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 | 使用下列方式擷取資料夾： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用下列方式擷取檔案： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 
 
-<!--HONumber=Aug16_HO4-->
+
+<!--HONumber=Jul16_HO2-->
 
 

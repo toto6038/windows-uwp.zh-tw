@@ -1,28 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
-description: Use the test application ID and ad unit ID values from this article to see how your app renders ads during testing.
-title: Test mode values
+description: "使用本文中的測試應用程式識別碼和廣告單位識別碼值，以查看您的 app 於測試期間呈現廣告的方式。"
+title: "測試模式值"
 translationtype: Human Translation
-ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
-ms.openlocfilehash: e1462ae48e8aae8f5ed0e5a7e46a6660bf33e786
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
 
 ---
 
-# Test mode values
+# 測試模式值
 
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+當您在 app 中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 來顯示廣告時，您必須指定應用程式識別碼和廣告單元識別碼。 當您開發您的 app 時，使用本文中的測試應用程式識別碼和廣告單元識別碼值，以查看您的 app 於測試期間呈現廣告的方式。
 
-When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  to display ads in your app, you must specify an application ID and ad unit ID. While you are developing your app, use the test application ID and ad unit ID values from this article to see how your app renders ads during testing.
+> **重要：**如果您的 app 使用廣告流量分配 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需指定廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
 
-
-If you try to use test values in your app after you publish it, your live app not receive ads. To receive ads in your published app, you must update your code to use an application ID and ad unit ID provided by the Windows Dev Center dashboard. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+如果您嘗試在您已經發佈的 app 中使用測試值，您的實際 app 將不會收到廣告。 若要再已發佈的 app 中收到廣告，您必須更新您的程式碼，使用 Windows 開發人員中心儀表板所提供的應用程式識別碼和廣告單元識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
  
 
-Here are the test values to use for video interstitial and banner ads.
+以下是影片插入式和橫幅廣告的測試值。
 
-* For video interstitial ads:
+* 影片插入式廣告：
 
     <table>
     <colgroup>
@@ -44,7 +45,7 @@ Here are the test values to use for video interstitial and banner ads.
     </table>
 
      
-* For banner ads:
+* 橫幅廣告︰
 
     <table>
     <colgroup>
@@ -66,7 +67,7 @@ Here are the test values to use for video interstitial and banner ads.
     </table>
 
 
-> **Important**   The size of a live ad is defined by the **Width** and **Height** properties of the **AdControl**. For best results, make sure that the **Width** and **Height** properties in your code are one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md). The **Width** and **Height** properties will not change based on the size of a live ad.
+> **重要：**即時廣告的大小是由 **AdControl** 的 **Width** 和 **Height** 屬性定義。 為獲得最佳結果，請確定程式碼中的 **Width** 和 **Height** 屬性是[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)其中之一。 **Width** 和 **Height** 屬性不會隨即時廣告的大小變更。
 
 
 
@@ -76,6 +77,6 @@ Here are the test values to use for video interstitial and banner ads.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

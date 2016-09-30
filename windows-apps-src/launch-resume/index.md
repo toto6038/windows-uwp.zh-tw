@@ -4,23 +4,18 @@ title: "啟動、繼續和背景工作"
 description: "本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 5d0fffc46b1fc4ca2fba1422f2094bd411a65058
-ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
+ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
+ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
 ---
 
 # 啟動、繼續和背景工作
 
+
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節說明下列內容︰
 
-- 通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。
-- 如何使用協定或擴充功能來啟用 app。  
-- 如何使用背景工作，讓 UWP app 即使在不在前景的情況下仍能執行。
-- 應用程式服務可讓您的通用 Windows 平台 (UWP) app 提供其他 UWP app 可以取用的服務，因此您可以建置彼此衍生的 app。
-- 如何探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊，建立在裝置間橫向流動的使用者經驗。
-- 如何將啟動顯示畫面新增到您的 app。
+本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。 其內容涵蓋如何使用協定或延伸來啟用 app，以及如何使用背景工作，讓 UWP app 即使在不在前景的情況下仍能執行。 最後會說明如何將啟動顯示畫面新增到您的 app。
 
 ## App 週期
 
@@ -31,38 +26,39 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [處理 app 啟用](activate-an-app.md)     | 了解如何處理 app 啟用。                                                                             |
 | [處理 app 暫停](suspend-an-app.md)         | 了解如何在系統暫停您的 app 時，儲存重要的應用程式資料。                                 |
 | [處理 app 繼續執行](resume-an-app.md)           | 了解如何在系統繼續執行您的 app 時，重新整理已顯示的內容。                                        |
-| [當 app 移至背景時釋出記憶體](reduce-memory-usage.md)           | 了解如何減少 app 使用的記憶體量，如此處於背景狀態時才不會遭到終止。                                        |
+
+ 
 
 ## 啟動 app
 
+
 | URI 和檔案啟用                                                                         | 說明                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [已連線的 app 與裝置 (專案 "Rome")](connected-apps-and-devices.md) | 了解如何探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊。 |
-| [啟動 app 以取得結果](how-to-launch-an-app-for-results.md)                               | 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 |
-| [啟動 URI 的預設 app](launch-default-app.md)                                      | 了解如何啟動統一資源識別項 (URI) 的預設 app。  |
-| [啟動遠端裝置上的 app](launch-a-remote-app.md)                                     | 了解如何在遠端裝置上啟動 URI 的 app。 |
-| [處理 URI 啟用](handle-uri-activation.md)                                              | 了解 app 如何透過登錄，成為 URI 配置名稱的預設處理常式。 |
-| [透過 App URI 處理常式支援網站至 App 連結](web-to-app-linking.md) | 了解如何將 app 登錄為 http 或 https 連結的預設處理常式。 |
-| [啟動檔案的預設 app](launch-the-default-app-for-a-file.md)                      | 了解如何啟動檔案類型的預設 app。  |
-| [處理檔案啟用](handle-file-activation.md)                                            | 了解如何將您的 app 登錄為某檔案類型的預設處理常式。  |
-| [保留檔案和 URI 配置名稱](reserved-uri-scheme-names.md)                             | 此主題列出您的 app 無法使用的保留檔案和 URI 配置名稱。  |
-| [使用自動播放功能來自動啟動](auto-launching-with-autoplay.md)                                | 了解當使用者將裝置連接至電腦時，您要如何使用「自動播放」，將您的 app 提供為選項。  |
-| [啟動 Windows 設定 app](launch-settings-app.md)                                      | 了解如何啟動 Windows 設定 app。  |
-| [啟動 Windows 市集 app](launch-store-app.md)                                            | 了解如何啟動 Windows 市集 app。  |
-| [啟動 Windows 地圖 app](launch-maps-app.md)                                              | 了解如何啟動 Windows 地圖 app。  |
-| [啟動 Windows 連絡人 app](launch-people-apps.md)                                                 | 了解如何啟動 Windows 連絡人 app。  |
+| [啟動 app 以取得結果](how-to-launch-an-app-for-results.md)                               | 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。                                                                                             |
+| [啟動 URI 的預設 app](launch-default-app.md)                                      | 了解如何啟動統一資源識別項 (URI) 的預設 app。                                                                                               |
+| [處理 URI 啟用](handle-uri-activation.md)                                              | 了解 app 如何透過登錄成為 URI 配置名稱的預設處理常式。                                                                                          |
+| [啟動檔案的預設 app](launch-the-default-app-for-a-file.md)                      | 了解如何啟動檔案類型的預設 app。                                                                                                                       |
+| [處理檔案啟用](handle-file-activation.md)                                            | 了解您的 app 如何登錄為檔案類型的預設處理常式。                                                                                                  |
+| [檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321) | 只要了解 UWP app 和所支援之檔案類型和通訊協定間的關係，您就可以為使用者提供更一致、更順暢的使用經驗。 |
+| [保留檔案和 URI 配置名稱](reserved-uri-scheme-names.md)                             | 此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。                                                                                |
+| [啟動 Windows 設定 app](launch-settings-app.md)                                      | 了解如何啟動 Windows 設定 app。                                                                                                                              |
+| [啟動 Windows 市集 app](launch-store-app.md)                                            | 了解如何啟動 Windows 市集 app。                                                                                                                                 |
+| [啟動 Windows 地圖 app](launch-maps-app.md)                                              | 了解如何啟動 Windows 地圖 app。                                                                                                                                  |
 
-## 背景工作
+ 
+
+## 背景工作和服務
+
+
 
 | 主題                                                                                                            | 說明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用背景工作支援 app](support-your-app-with-background-tasks.md)                             | 本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。                                                       |
-| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。 |
+| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)       | [ **DeviceUseTrigger** ](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景 App 已暫停也一樣。 |
 | [背景工作的指導方針](guidelines-for-background-tasks.md)                                           | 確保您的 app 符合執行背景工作的需求。                                                                                                                          |
-| [建立並註冊會在個別處理序中執行的背景工作](create-and-register-a-background-task.md)                               | 建立背景工作類別並註冊，即使您的 app 不在前景也能以個別的處理序執行。                                                                                                 |
-| [建立並註冊會在單一處理序中執行的背景工作](create-and-register-a-singleprocess-background-task.md)                               | 建立的背景工作類別可以和前景 app 在相同的處理序中執行。                                                                                                 |
-| [將多處理序的背景工作轉換成單一處理序的背景工作](convert-multiple-process-background-task.md)                               | 了解當您的 app 在背景時，如何將設計成在個別處理序中執行的背景工作，轉換成可以和前景 app 在相同處理序中執行的單一處理序背景工作。
-| [對背景工作進行偵錯](debug-a-background-task.md)                                                           | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。                                                                        |
+| [建立和使用 app 服務](how-to-create-and-consume-an-app-service.md)                                | 了解如何撰寫可為其他 UWP app 提供服務的 UWP app，以及如何取用這些服務。                                                                                  |
+| [建立並註冊背景工作](create-and-register-a-background-task.md)                               | 建立背景工作類別並註冊它，即使您的 app 不在前景也能執行。                                                                                                 |
+| [偵錯背景工作](debug-a-background-task.md)                                                           | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。                                                                        |
 | [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在 app 資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。                                                                                                       |
 | [處理已取消的背景工作](handle-a-cancelled-background-task.md)                                     | 了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。                                     |
 | [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)           | 了解 app 如何辨識背景工作的進度與完成度。                                                                                                                     |
@@ -72,17 +68,12 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)                 | 了解如何設定條件以控制背景工作的執行時間。                                                                                                                  |
 | [在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用背景傳輸 API 在背景中複製檔案。                                                                                                                              |
 | [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)                       | 使用背景工作來更新含有最新內容的 app 動態磚。                                                                                                                      |
-| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                       | 了解如何在裝置插電時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。                             |
+| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                       | 了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。                             |
 
-## 應用程式服務
-
-| 主題                                                                                                            | 說明                                                                                                                                                                                   |
-|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)                                | 了解如何撰寫可為其他 UWP app 提供服務的 UWP app，以及如何取用這些服務。                                                                                  |
-| [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上執行的應用程式服務交換訊息。 |
-| [轉換應用程式服務，以便與其主控 app 在相同處理序中執行](convert-app-service-single-process.md)                                | 了解如何在個別背景處理序中執行的應用程式服務程式碼，轉換成和應用程式服務主控 app 在相同處理序內執行的程式碼。                                                                                  |
+ 
 
 ## 新增啟動顯示畫面
+
 
 所有 UWP app 都必須具備啟動顯示畫面，也就是啟動顯示畫面影像與背景色彩 (兩者都可以自訂) 的組合。
 
@@ -111,6 +102,6 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

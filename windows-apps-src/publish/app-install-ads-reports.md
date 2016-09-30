@@ -1,65 +1,65 @@
 ---
 author: jnHs
-title: App install ads report
+title: "App 安裝廣告報告"
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 45dd0b2cb34e724313fe431a5b8b7a6df9b5a5cf
+ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 ---
 
-# App install ads report
+# App 安裝廣告報告
 
-There are two ways to get to the **App install ads reports** page in Dev Center:
+有兩種方式可以進入開發人員中心的 [應用程式安裝廣告報告]**** 頁面：
 
--   From the left navigation menu on your app's page, click **Analytics** &gt; **App install ads**.
--   From the left navigation menu on your app's page, click **Monetization** &gt; **Promote your app**, and then click a campaign's **Report** link.
+-   在您應用程式頁面左邊的導覽功能表上，按一下 [分析]****&gt;[應用程式安裝廣告]****。
+-   在您應用程式頁面左邊的導覽功能表上，按一下 [獲利]****&gt;[促銷您的應用程式]****，然後按一下活動的 [報告]**** 連結。
 
-Here you'll see two sections: **Ad performance** and **Account billing history**.
+您將會在這裡看到兩個區段：[廣告績效]**** 和 [帳戶帳單記錄]****。
 
-## Ad performance
+## 廣告效果
 
-Here, performance metrics are displayed as lines plotted on a graph, with the selected metric on the y-axis and time on the x-axis. The default report shows Impressions. Click the tab headers to view data for other performance metrics. The metrics tracked here are:
+在這裡，效果衡量標準會以在圖形上繪製線條來表示，Y 軸為選取的衡量標準，X 軸則是時間。 預設報告為顯示曝光數。 按一下索引標籤標頭即可顯示其他效果衡量標準的資料。 這裡追蹤的衡量標準為：
 
--   **Impressions**: The number of times your ad has been shown.
--   **Clicks**: The number of times someone clicked on your ad.
--   **Installs**: The number of times someone clicked on your ad and then installed your app. See below for more information on install tracking.
+-   **曝光數**：您的廣告的顯示次數。
+-   **點閱數**：使用者點閱您的廣告的次數。
+-   **安裝數**：使用者點閱您的廣告然後安裝您的應用程式的次數。 請參閱下面的有關安裝追蹤的詳細資訊。
 
-You can display performance data for up to four different ad campaigns at a time. Click **More campaigns** to choose which campaigns to display. You can also click the minus symbol by a displayed campaign to remove it.
+您一次可顯示最多四個不同廣告活動的效果資料。 按一下 [更多活動]**** 以選擇要顯示哪些活動。 您也可以按一下顯示之活動旁邊的減號來將該活動移除。
 
-### What is install tracking?
+### 何謂安裝追蹤？
 
-Running an install ad campaign through **Promote your app** on Dev Center provides much-needed exposure for developers trying to advertise their apps. Ad impressions are shown to users who are most likely to be interested in the app, and the users click on the ad and install the app from the Store. Until today, it was hard to distinguish between installs that were the result of an ad campaign versus installs that came from other sources.
+透過開發人員中心的 [促銷您的應用程式]**** 執行安裝廣告活動，可為嘗試替 app 打廣告的開發人員提供必要的曝光。 廣告曝光會向最可能對應用程式感興趣的使用者顯示廣告，使用者就可能會按一下廣告並從市集安裝應用程式。 到今天為止，我們很難區分使用者安裝應用程式時是因為廣告活動而安裝，或是從其他來源安裝。
 
-We have now enabled Install reports for app install campaigns that tell developers how many installs they have earned by running the ad campaign. This only represents downloads that are a direct outcome of the ad campaign, and does not include downloads from other sources.
+我們現在已經啟用應用程式安裝活動的安裝報告，可告知開發人員在執行廣告活動之後他們的應用程式已經被安裝幾次。 這只能代表因為廣告活動而直接產生的下載次數，並不包括從其他來源下載的次數。
 
-By monitoring installs for their ad campaigns, developers can measure the true return on investment from the money spent on promoting their apps. It also helps in comparing the cost of obtaining a new user with the lifetime value of users.
+透過監督廣告活動的安裝次數，開發人員就能夠衡量他們在行銷應用程式上所投資的費用可產生多少真實的收入。 這也有助於比較獲得一位新使用者和使用者存留期價值的成本。
 
-### How are installs measured?
+### 安裝次數衡量方式為何？
 
-**Promote your app** ad campaigns deliver ad impressions within other apps. Users who are exposed to the ad are likely to install the app in one of two ways: by clicking the ad or based on viewing the ad impression.
+[促銷您的應用程式]**** 廣告活動可在其他 app 中曝光廣告。 看到廣告的使用者可能會透過下列兩種方式的其中一種來安裝應用程式：按一下廣告或依據檢視廣告曝光數。
 
-If a user is shown an ad and he or she installs the app within 24 hours -- by either clicking the ad, or directly going to the Store page of the app -- that install is attributed to the campaign that delivered the impression.
+如果看到廣告的使用者在 24 小時內安裝應用程式 (透過按一下廣告或直接到市集中應用程式的頁面)，該次安裝就會被視為因廣告曝光活動而產生的安裝。
 
-An install is tracked in the Store -- across phone, tablet, and PC -- based on the user who installed the app. The advertising engine tracks users who see the ad and we use this information to correlate the users who viewed the ad with the users who installed the app. In order for the app install to be counted, a few requirements must be met:
+市集會依據安裝應用程式的使用者來追蹤安裝 (跨手機、平板電腦與電腦)。 廣告引擎會追蹤看到廣告的使用者，我們就會使用此資訊來關聯檢視廣告的使用者和安裝應用程式的使用者。 若要能夠計算應用程式安裝次數，必須滿足幾個需求：
 
-1.  The user has not opted out of targeting.
-2.  The user is logged in to a Microsoft account.
-3.  The user meets [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) requirements (users that don’t meet COPPA requirements cannot be tracked).
+1.  使用者尚未從目標使用者範圍中退出。
+2.  使用者已經登入 Microsoft 帳戶。
+3.  使用者需符合 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 需求 (無法追蹤不符合 COPPA 需求的使用者)。
 
-As a result, it is possible the app install tracking may *underreport* the actual number of installs generated by a **Promote your app** campaign. Please note that the total number of downloads for an app is viewable in the **Acquisitions** report in Dev Center.
+因此，app 安裝追蹤記錄到的數字可能「低於」**因為 [促銷您的 App]**** 活動所產生的安裝次數。 請注意，app 的總下載次數可在開發人員中心的 [營收]**** 報告中檢視。
 
-## Account billing history
+## 帳戶帳單記錄
 
-Here you can see all of the transactions associated with your account. For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment instrument** charged, and the **Total amount** of the charge.
+您可以在此處看到與您的帳戶關聯的所有交易。 針對每個交易，我們會顯示 [交易日期]****、適當的 [行銷活動名稱]****、收取費用的 [付款方式]****，以及收費的 [總金額]****。
 
-## Related topics
+## 相關主題
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [Common questions](common-questions.md)
+* [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
+* [管理您的廣告活動](managing-your-ad-campaign.md)
+* [關於自家廣告](about-house-ads.md)
+* [常見問題](common-questions.md)
  
 
  
@@ -70,6 +70,6 @@ Here you can see all of the transactions associated with your account. For each 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

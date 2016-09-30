@@ -1,45 +1,45 @@
 ---
 author: jnHs
-Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
-title: About community ads
+Description: "您可以交叉推銷您的應用程式和其他開發人員發佈的應用程式。 我們將此功能稱為社群廣告。"
+title: "關於社群廣告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
+ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 ---
 
-# About community ads
+# 關於社群廣告
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
+如果您使用 **AdMediatorControl** 或 **AdControl** 顯示橫幅廣告，您可以在 Windows 市集中免費交叉推銷您的應用程式和其他開發人員發佈的 App。 我們將此功能稱為「社群廣告」**。  
 
-Here's how this program works:
+以下是此計劃的運作方式：
 
-* After you [opt-in to community ads](#how-to-opt-in-to-community-ads) and [create a free community ad campaign](create-an-ad-campaign-for-your-app.md), your app will share promotional ad space with other developers who also opt in to community ads. Your app will show ads for apps published by other developers who participate in community ads, and their apps will show ads for your app.
-* You earn credits for promotional ad space in other apps by showing community ads in your app. Credits are calculated according to the following process:
-  * For each country or region where an app that is serving community ads is available, the current market-rate eCPM (effective cost per thousand impressions) value for the country or region is multiplied by the number of requests for community ads made by your app in that country or region. This value is the credits you have earned for your app in that country or region.
-  * Your total credits earned for a given time period is equal to the sum of all credits earned in each country or region for each of your apps that is serving community ads.
-* Your credits are divided equally across all active community ad campaigns, and are converted to ad impressions for your app based on the current market-rate eCPM values of the countries your community ad campaigns target.
-* To track the performance of the community ads in your app, refer to the [account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report).
+* 在您[選擇加入社群廣告](#how-to-opt-in-to-community-ads)及[建立免費社群廣告行銷活動](create-an-ad-campaign-for-your-app.md)之後，您的 App 將會與其他同樣加入社群廣告的開發人員共用推銷廣告空間。 您的應用程式將顯示參與社群廣告之其他開發人員所發佈的應用程式的廣告，而他們的應用程式也將會顯示您應用程式的廣告。
+* 您可以透過在您的應用程式中顯示社群廣告來賺取其他應用程式中之推銷廣告空間的點數。 點數會依據以下程序計算：
+  * 對於可使用提供社群廣告之應用程式的每個國家與地區，國家或地區的目前市場利率 eCPM (每千個曝光數有效成本) 值會乘以您的應用程式在該國家或地區的社群廣告要求數。 此值就是您為您的應用程式在該國家或地區賺取的點數。
+  * 您在指定期間賺取的總點數等於您提供社群廣告的每個應用程式在每個國家或地區賺取之所有點數的總和。
+* 您的點數會平均分配給所有正在進行的社群廣告行銷活動，並且會依據您社群廣告行銷活動所針對之國家的目前市場利率 eCPM 值，轉換成您應用程式的廣告曝光數。
+* 若要追蹤您 App 中社群廣告的績效，請參閱[帳戶等級廣告績效報告](advertising-performance-report.md#account-level-advertising-performance-report)。
 
-## How to opt in to community ads
+## 如何選擇加入社群廣告
 
-To opt in to community ads:
+選擇加入社群廣告：
 
-1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
-2. In the **Community ads** section, check the **Show community ads in my app** box.
-   > **Note**  After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
+1. 移至 Windows 開發人員中心儀表板中的 [營利]****&gt;[利用廣告營利]**** 頁面。
+2. 在 [社群廣告]**** 區段中，選取 [在我的應用程式中顯示社群廣告]**** 核取方塊。
+   > **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
 
-3. [Create an ad campaign](create-an-ad-campaign-for-your-app.md) for your app. For the campaign type, select **Free community ads**.
-
-
-## Related topics
-
-* [Monetize with ads](monetize-with-ads.md)
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+3. 為您的 App [建立廣告行銷活動](create-an-ad-campaign-for-your-app.md) 對於行銷活動類型，請選取 [免費社群廣告]****。
 
 
+## 相關主題
 
-<!--HONumber=Aug16_HO3-->
+* [利用廣告獲利](monetize-with-ads.md)
+* [為您的 app 建立廣告行銷活動](create-an-ad-campaign-for-your-app.md)
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

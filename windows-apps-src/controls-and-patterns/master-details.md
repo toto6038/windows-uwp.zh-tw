@@ -1,94 +1,92 @@
 ---
 author: Jwmsft
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
-title: Master/details
+Description: "主要/詳細資料模式會顯示主要清單和目前所選項目的詳細資料。 這個模式通常用於電子郵件和連絡人清單/通訊錄。"
+title: "主要/詳細資料"
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5845aaf69bbcf561164c519f76f93578bf0da6db
 
 ---
-# Master/details pattern
+# 主要/詳細資料模式
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
 
-The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
-![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
+## 這是正確的模式嗎？
 
-## Is this the right pattern?
+在下列情況中，主要/詳細資料模式都能運作：
 
-The master/details pattern works well if you want to:
+-   建置電子郵件應用程式、通訊錄，或任何以清單詳細資料配置為基礎的應用程式。
+-   找出大量內容並排定優先順序。
+-   在內容之間往返工作時允許清單項目的快速新增和移除。
 
--   Build an email app, address book, or any app that is based on a list-details layout.
--   Locate and prioritize a large collection of content.
--   Allow the quick addition and removal of items from a list while working back-and-forth between contexts.
+## 選擇正確的樣式
 
-## Choose the right style
+實作主要/詳細資料模式時，建議您根據可用的螢幕空間量，使用堆疊樣式或並排樣式。
 
-When implementing the master/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.
-
-| Available window width | Recommended style |
+| 可用視窗寬度 | 建議樣式 |
 |------------------------|-------------------|
-| 320 epx-719 epx        | Stacked           |
-| 720 epx or wider       | Side-by-side      |
+| 320 epx-719 epx        | 堆疊           |
+| 720 epx 或更寬       | 並排      |
 
  
-## Stacked style
+## 堆疊樣式
 
-In the stacked style, only one pane is visible at a time: the master or the details.
+在堆疊樣式中，一次只能看到一個檢視：主要或詳細資料檢視。
 
-![A master detail in stacked mode](images/patterns-md-stacked.png)
+![堆疊模式中的主要詳細資料](images/patterns-md-stacked.png)
 
-The user starts at the master pane and "drills down" to the details pane by selecting an item in the master list. To the user, it appears as though the master and details views exist on two separate pages.
+使用者開始於主要窗格，並透過選取主要清單中的項目，「向下探查」到詳細資料窗格。 對使用者而言，主要與詳細資料檢視似乎是存在於兩個個別頁面上。
 
-### Create a stacked master/details pattern
+### 建立堆疊的主要/詳細資料模式
 
-One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
+建立堆疊的主要/詳細資料模式的一種方式是針對主要窗格和詳細資料窗格使用不同的頁面。 將提供主要清單的清單檢視放在某一個頁面，然後將詳細窗格的內容元素放在另一個頁面。
 
-![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
+![堆疊樣式主要詳細資料的組件](images/patterns-md-stacked-parts.png)
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+針對詳細資料窗格，請使用最適合的內容元素。 如果您有許多個別的欄位，請考慮使用格線配置來將元素排列成表單。
 
-## Side-by-side style
+## 並排樣式
 
-In the side-by-side style, the master pane and details pane are visible at the same time.
+在並排樣式中，可同時看見主要窗格和詳細資料窗格。
 
-![The master/detail pattern](images/patterns-masterdetail-400x227.png)
+![主要/詳細資料模式](images/patterns-masterdetail-400x227.png)
 
-The list in the master pane has a selection visual to indicate the currently selected item. Selecting a new item in the master list updates the details pane.
+主要窗格中的清單具有用來表示目前選取項目的視覺化選取。 在主要清單中選取新項目會更新詳細資料窗格。
 
-### Create a side-by-side master/details pattern
+### 建立並排主要/詳細資料模式
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+針對詳細資料窗格，請使用最適合的內容元素。 如果您有許多個別的欄位，請考慮使用格線配置來將元素排列成表單。
 
-## Examples
+## 範例
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
+這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於手機上的應用程式範例中，主要窗格/清單會位於左邊，而詳細資料窗格會位於右邊。
 
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
+![手機上使用主要/詳細資料模式的應用程式範例](images/uap-finance-phone-masterdetails-600.png)
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
+這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於桌面上的應用程式範例中，可同時看見主要窗格/清單和詳細資料窗格，並以全螢幕顯示。 主要窗格頂端會有搜尋方塊，底部會有命令列。
 
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
-
-
-
-## Related articles
-
-- [Lists](lists.md)
-- [Search](search.md)
-- [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+![桌面上使用主要/詳細資料模式的 app 範例](images/uap-finance-desktop700.png)
 
 
 
-<!--HONumber=Aug16_HO3-->
+## 相關文章
+
+- [清單](lists.md)
+- [搜尋](search.md)
+- [應用程式列和命令列](app-bars.md)
+- [**ListView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

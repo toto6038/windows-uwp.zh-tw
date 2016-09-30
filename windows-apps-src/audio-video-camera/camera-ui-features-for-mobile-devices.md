@@ -1,71 +1,63 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。"
-title: "適用於行動裝置的相機 UI 功能"
-translationtype: Human Translation
-ms.sourcegitcommit: 77d1709cd42253c229b01df21ae3416e57c1c2ab
-ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
-
+description: This article show you how to take advantage of special camera UI features that are only present on mobile devices.
+title: Camera UI features for mobile devices
 ---
 
-#適用於行動裝置的相機 UI 功能
+#Camera UI features for mobile devices
 
-本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。 
+This article show you how to take advantage of special camera UI features that are only present on mobile devices. 
 
-## 將行動裝置擴充功能新增到您的專案 
+## Add the mobile extension to your project 
 
-若要使用這些功能，您必須將 Microsoft Mobile Extension SDK for Universal App Platform 的參照新增到您的專案。
+To use these features, you must add a reference to the Microsoft Mobile Extension SDK for Universal App Platform to your project.
 
-**新增硬體相機按鈕支援的行動擴充功能 SDK 的參照**
+**To add a reference to the mobile extension SDK for hardware camera button support**
 
-1.  在 [方案總管]**** 中的 [參照]**** 上按一下滑鼠右鍵，然後選取 [加入參照]****。
+1.  In **Solution Explorer**, right-click **References** and select **Add Reference...**
 
-2.  展開 [Windows 通用]**** 節點，然後選取 [擴充功能]****。
+2.  Expand the **Windows Universal** node and select **Extensions**.
 
-3.  選取 [Microsoft Mobile Extension SDK for Universal App Platform]**** 核取方塊。
+3.  Click the checkbox next to **Microsoft Mobile Extension SDK for Universal App Platform**.
 
-## 隱藏狀態列
+## Hide the status bar
 
-行動裝置的 [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 控制項可為使用者提供有關裝置的狀態資訊。 此控制項會佔掉螢幕上可能會干擾媒體擷取 UI 的空間。 您可以呼叫 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 以隱藏狀態列，但是您必須在條件性區塊中進行此呼叫，而此種區塊中您會使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) 方法來判斷 API 是否可用。 這個方法只會在支援狀態列的行動裝置上傳回 true。 您應該在 app 啟動時或在您開始從相機進行預覽時隱藏狀態列。
+Mobile devices have a [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) control that provides the user with status information about the device. This control takes up space on the screen that can interfere with the media capture UI. You can hide the status bar by calling [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), but you must make this call from within a conditional block where you use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) method to determine if the API is available. This method will only return true on mobile devices that support the status bar. You should hide the status bar when your app launches or when you begin previewing from the camera.
 
 [!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-當 app 關閉或使用者離開 app 的媒體擷取頁面時，您可讓此控制項再次顯現。
+When your app is shutting down or when the user navigates away from the media capture page of your app, you make the control visible again.
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-## 使用硬體相機按鈕
+## Use the hardware camera button
 
-相較於螢幕上的控制項，有些行動裝置有某些使用者偏好的專用硬體相機按鈕。 若要在按下硬體相機按鈕時收到通知，請登錄 [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) 事件的處理常式。 因為此 API 只能用於行動裝置，所以您必須再次使用 **IsTypePresent** 來確定目前的裝置支援此 API，再嘗試進行存取。
+Some mobile devices have a dedicated hardware camera button that some users prefer over an on-screen control. To be notified when the hardware camera button is pressed, register a handler for the [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) event. Because this API is available on mobile devices only, you must again use the **IsTypePresent** to make sure the API is supported on the current device before attempting to access it.
 
 [!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
 [!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-在 **CameraPressed** 事件的處理常式中，您可以起始相片擷取。
+In the handler for the **CameraPressed** event, you can initiate a photo capture.
 
 [!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-當 app 關閉或使用者離開 app 的媒體擷取頁面時，請取消登錄硬體按鈕處理常式。
+When your app is shutting down or the user moves away from the media capture page of your app, unregister the hardware button handler.
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-> [!NOTE]
-> 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。                                                                                   |
+[!NOTE]
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).                                                                                   |
 
-## 相關主題
+## Related topics
 
-* [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+ 
 
-
-
-
-
+ 
 
 
-
-<!--HONumber=Aug16_HO3-->
 
 

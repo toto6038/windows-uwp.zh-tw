@@ -1,21 +1,21 @@
 ---
 author: jwmsft
-description: Uniquely identifies elements that are created and referenced as resources, and which exist within a ResourceDictionary.
-title: xKey attribute
+description: "唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。"
+title: "x&#58;Key 屬性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
 
 ---
 
-# x:Key attribute
+# x&#58;Key 屬性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Uniquely identifies elements that are created and referenced as resources, and which exist within a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
+唯一識別建立和參照為資源的元素，存在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
 
-## XAML attribute usage
+## XAML 屬性用法
 
 ``` syntax
 <ResourceDictionary>
@@ -23,7 +23,7 @@ Uniquely identifies elements that are created and referenced as resources, and w
 </ResourceDictionary>
 ```
 
-## XAML attribute usage (implicit **ResourceDictionary**)
+## XAML 屬性用法 (隱含 **ResourceDictionary**)
 
 ``` syntax
 <object.Resources>
@@ -31,16 +31,16 @@ Uniquely identifies elements that are created and referenced as resources, and w
 </object.Resources>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 詞彙 | 說明 |
 |------|-------------|
-| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273). |
-| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. | 
+| object | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
+| stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
 
-##  XamlName grammar
+##  XamlName 文法
 
-The following is the normative grammar for a string that is used as a key in the Universal Windows Platform (UWP) XAML implementation:
+下列是字串的基準文法，該字串在通用 Windows 平台 (UWP) XAML 實作中被當做是一個索引鍵：
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -51,25 +51,25 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Characters are restricted to the lower ASCII range, and more specifically to Roman alphabet uppercase and lowercase letters, digits, and the underscore (\_) character.
--   The Unicode character range is not supported.
--   A name cannot begin with a digit.
+-   字元限制在低 ASCII 範圍，更具體地說，僅限羅馬字母大寫與小寫字元、數字以及底線 (\_) 字元。
+-   不支援 Unicode 字元範圍。
+-   名稱開頭不可以是數字。
 
-## Remarks
+## 備註
 
-Child elements of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) generally include an **x:Key** attribute that specifies a unique key value within that dictionary. Key uniqueness is enforced at load time by the XAML processor. Non-unique **x:Key** values will result in XAML parse exceptions. If requested by [{StaticResource} markup extension](staticresource-markup-extension.md), a non-resolved key will also result in XAML parse exceptions.
+[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
 
-**x:Key** and [x:Name](x-name-attribute.md) are not identical concepts. **x:Key** is used exclusively in resource dictionaries. x:Name is used for all areas of XAML. A [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call using a key value will not retrieve a keyed resource. Objects defined in a resource dictionary may have an **x:Key**, an **x:Name** or both. The key and name are not required to match.
+**x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼叫將不會抓取索引資源。
 
-Note that in the implicit syntax shown, the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) object is implicit in how the XAML processor produces a new object to populate a [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) collection.
+請注意，在顯示的隱含語法中，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 物件在 XAML 處理器如何產生新物件以填入 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 集合方面是隱含的。
 
-The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.
+等同於指定 **x:Key** 的程式碼，是使用含有基礎 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的索引鍵的任何作業。 例如，當您新增資源到 **ResourceDictionary** 時，在資源的標記中套用的 **x:Key** 等同於 **Insert** 的 *key* 參數值。
 
-An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) or [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](https://msdn.microsoft.com/library/windows/apps/hh465498) and [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
-
-
+如果資源字典中的項目為目標的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 或 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，則可以忽略 **x:Key** 的值；不管是哪一種情況，資源項目的隱含索引鍵都是會解譯為字串的 **TargetType** 值。 如需詳細資訊，請參閱[快速入門：設定控制項的樣式](https://msdn.microsoft.com/library/windows/apps/hh465498)和 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

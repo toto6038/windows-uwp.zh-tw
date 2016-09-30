@@ -1,79 +1,66 @@
 ---
 author: Jwmsft
-Description: Radio buttons let users select one option from two or more choices.
-title: Guidelines for radio buttons
+Description: "選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。"
+title: "選項按鈕的指導方針"
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
 
 ---
-# Radio buttons
+# 選項按鈕
+選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。 每個選項都由一個選項按鈕表示；使用者在選項按鈕群組中只能選取一個選項按鈕。
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+(如果您對名稱感到好奇，選項按鈕 (Radio Button) 的名稱來自於收音機 (Radio) 上的頻道預設按鈕。)
 
-Radio buttons let users select one option from two or more choices. Each option is represented by one radio button; a user can select only one radio button in a radio button group.
+![選項按鈕](images/controls/radio-button.png)
 
-(If you're curious about the name, radio buttons are named for the channel preset buttons on a radio.)
+<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
-![Radio buttons](images/controls/radio-button.png)
+-   [**RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)
+-   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
+-   [**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked event</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked property</strong></a></li>
-</ul>
+## 這是正確的控制項嗎？
 
-</div>
-</div>
+使用選項按鈕將二或多個互斥選項呈現給使用者，如下所示。
 
+![選項按鈕群組](images/radiobutton_basic.png)
 
+選項按鈕可讓應用程式中非常重要的選項變得更清楚和明顯。 當呈現的選項重要到需要更多螢幕空間，且其中選擇範圍的清晰度需要非常明確的選項時，請使用選項按鈕。
 
+選項按鈕同樣強調所有選項，因此可能會對選項引起不必要的注意。 除非選項值得使用者額外的注意，否則請考慮使用其他控制項。 例如，如果在大多數情況下會建議大部分使用者使用預設選項，請改用[下拉式清單](lists.md)。
 
+如果只有兩個互斥的選項，請將它們組成單一[核取方塊](checkbox.md)或[切換開關](toggles.md)。 例如，使用「我同意」的一個核取方塊來代替「我同意」和「我不同意」兩個選項按鈕。
 
+![表示二元選擇的兩個方式](images/radiobutton_vs_checkbox.png)
 
-## Is this the right control?
+使用者可以選取多個選項時，請改用[核取方塊](checkbox.md)或[清單方塊](lists.md)控制項。
 
-Use radio buttons to present users with two or more mutually exclusive options, as here.
+![使用核取方塊選取多個選項](images/checkbox2.png)
 
-![A group of radio buttons](images/radiobutton_basic.png)
+當選項是有固定階段的數字時，如 10、20、30，請不要使用選項按鈕。 請改用[滑桿](slider.md)控制項。
 
-Radio buttons add clarity and weight to very important options in your app. Use radio buttons when the options being presented are important enough to command more screen space and where the clarity of the choice demands very explicit options.
+如果有超過 8 個選項，請改用[下拉式清單](lists.md)、單選[清單方塊](lists.md)或[清單方塊](lists.md)。
 
-Radio buttons emphasize all options equally, and that may draw more attention to the options than necessary. Consider using other controls, unless the options deserve extra attention from the user. For example, if the default option is recommended for most users in most situations, use a [drop-down list](lists.md) instead.
+如果可用的選項取決於應用程式目前的內容，或者可能會不斷地變化，請改用單選[清單方塊](lists.md)。
 
-If there are only two mutually exclusive options, combine them into a single [checkbox](checkbox.md) or [toggle switch](toggles.md). For example, use a checkbox for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
+## 範例
+Microsoft Edge 瀏覽器設定中的選項按鈕。
 
-![Two ways of presenting a binary choice](images/radiobutton_vs_checkbox.png)
+![Microsoft Edge 瀏覽器設定中的選項按鈕](images/control-examples/radio-buttons-edge.png)
 
-When the user can select multiple options, use a [checkbox](checkbox.md) or [list box](lists.md) control instead.
+## 建立選項按鈕
 
-![Selecting multiple options with check boxes](images/checkbox2.png)
+選項按鈕以群組方式運作。 您可以用 2 種方式來將選項按鈕控制項方組︰
+- 將它們放入同一個父容器。
+- 將每個選項按鈕的 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
 
-Don't use radio buttons when the options are numbers that have fixed steps, like 10, 20, 30. Use a [slider](slider.md) control instead.
+> **注意** &nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
 
-If there are more than 8 options, use a [drop-down list](lists.md), a single-select [list box](lists.md), or a [list box](lists.md) instead.
-
-If the available options are based on the app’s current context, or can otherwise vary dynamically, use a single-select [list box](lists.md) instead.
-
-## Example
-Radio buttons in the Microsoft Edge browser settings.
-
-![Radio buttons in the Microsoft Edge browser settings](images/control-examples/radio-buttons-edge.png)
-
-## Create a radio button
-
-Radio buttons work in groups. There are 2 ways you can group radio button controls:
-- Put them inside the same parent container.
-- Set the [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) property on each radio button to the same value.
-
-> **Note**&nbsp;&nbsp;A group of radio buttons behaves like a single control when accessed via the keyboard. Only the selected choice is accessible using the Tab key but users can cycle through the group using arrow keys.
-
-In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between 2 stack panels, so they're explicitly grouped by GroupName.
+在這個範例中，第一個選項按鈕群組位於相同的堆疊面板中，藉此以隱含方式群組化。 第二個群組分成 2 個堆疊面板，所以是依 GroupName 明確群組化。
 
 ```xaml
 <StackPanel>
@@ -155,49 +142,49 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-The radio button groups look like this.
+選項按鈕群組如下所示。
 
-![Radio buttons in two groups](images/radio-button-groups.png)
+![兩個群組中的選項按鈕](images/radio-button-groups.png)
 
-A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**.
+選項按鈕有兩個狀態：[已選取]** 或 [已清除]**。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
 
-## Recommendations
+## 建議
 
--   Make sure that the purpose and current state of a set of radio buttons is clear.
--   Always give visual feedback when the user taps a radio button.
--   Give visual feedback as the user interacts with radio buttons. Normal, pressed, checked, and disabled are examples of radio button states. A user taps a radio button to activate the related option. Tapping an activated option doesn’t deactivate it, but tapping another option transfers activation to that option.
--   Reserve visual effects and animations for touch feedback, and for the checked state; in the unchecked state, radio button controls should appear unused or inactive (but not disabled).
--   Limit the radio button’s text content to a single line. You can customize the radio button’s visuals to display a description of the option in smaller font size below the main line of text.
--   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
--   Use the default font unless your brand guidelines tell you to use another.
--   Enclose the radio button in a label element so that tapping the label selects the radio button.
--   Place the label text after the radio button control, not before or above it.
--   Consider customizing your radio buttons. By default, a radio button consists of two concentric circles—the inner one filled (and shown when the radio button is checked), the outer one stroked—and some text content. But we encourage you to be creative. Users are comfortable interacting directly with the content of an app. So you may choose to show the actual content on offer, whether that’s presented with graphics or as subtle textual toggle buttons.
--   Don't put more than 8 options in a radio button group. When you need to present more options, use a [drop-down list](lists.md), [list box](lists.md), or a [list view](lists.md) instead.
--   Don't put two radio button groups next to each other. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group. Use group labels to separate them.
+-   確定一組選項按鈕的目的和目前狀態非常明確。
+-   一律在使用者點選選項按鈕時顯示視覺化回饋。
+-   在使用者與選項按鈕互動時顯示視覺化回饋。 選項按鈕狀態的範例有正常、已按下、已核選和已停用。 使用者點選選項按鈕以啟用相關的選項。 點選已啟用的選項不會停用它，但是點選另一個選項會將啟用轉移給該選項。
+-   為觸控回饋和核取狀態保留視覺效果和動畫；在未核取狀態下，選項按鈕控制項應該顯示為未使用或未啟用 (但不是已停用)。
+-   將選項按鈕的文字限制為單行。 您可以自訂選項按鈕的視覺效果，在主要文字行下方以較小的字型大小顯示選項的描述。
+-   如果文字內容是動態的，請考慮如何調整按鈕的大小以及調整後周圍的視覺效果會發生什麼變化。
+-   除非您的品牌指導方針指示您使用其他字型，否則使用預設字型。
+-   在標籤元素內包含選項按鈕，這樣點選標籤就可以選取選項按鈕。
+-   將標籤文字放在選項按鈕控制項後面，而非其前面或上方。
+-   考慮自訂您的選項按鈕。 選項按鈕預設由兩個同心圓組成—內圓是填滿的 (核取選項按鈕就會顯示)，外圓是空心的—還有一些文字內容。 但是我們鼓勵您發揮創造力。 使用者可安心地和應用程式的內容直接互動。 所以您可以選擇以圖形或精巧的文字切換按鈕顯示實際內容。
+-   不要在選項按鈕群組中放置超過 8 個選項。 當您需要呈現更多選項時，請改用[下拉式清單](lists.md)、[清單方塊](lists.md)或[清單檢視](lists.md)。
+-   不要並列兩個選項按鈕群組。 當兩個選項按鈕群組並列時，很難判斷哪個按鈕屬於哪個群組。 使用群組標籤加以區隔。
 
-## Additional usage guidance
+## 其他用法指導方針
 
-This illustration shows the proper way to position and space radio buttons.
+下圖顯示放置選項按鈕及其間隔的正確方法。
 
-![A set of radio buttons](images/radiobutton_layout1.png)
-## Related topics
+![一組選項按鈕](images/radiobutton_layout1.png)
+## 相關主題
 
-**For designers**
-- [Guidelines for buttons](buttons.md)
-- [Guidelines for toggle switches](toggles.md)
-- [Guidelines for checkboxes](checkbox.md)
-- [Guidelines for drop-down lists](lists.md)
-- [Guidelines for list view and grid view controls](lists.md)
-- [Guidelines for sliders](slider.md)
-- [Guidelines for the select control](lists.md)
-
-
-**For developers (XAML)**
-- [**Windows.UI.Xaml.Controls RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)
+**適用於設計人員**
+- [按鈕的指導方針](buttons.md)
+- [切換開關的指導方針](toggles.md)
+- [核取方塊的指導方針](checkbox.md)
+- [下拉式清單的指導方針](lists.md)
+- [清單檢視和格線檢視控制項的指導方針](lists.md)
+- [滑桿的指導方針](slider.md)
+- [選取控制項的指導方針](lists.md)
 
 
+**適用於開發人員 (XAML)**
+- [**Windows.UI.Xaml.Controls RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

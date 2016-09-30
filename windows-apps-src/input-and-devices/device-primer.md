@@ -1,204 +1,204 @@
 ---
 author: mijacobs
-Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
-title: Device primer for Universal Windows Platform (UWP) apps
+Description: "認識支援通用 Windows 平台 (UWP) App 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。"
+title: "通用 Windows 平台 (UWP) App 的裝置基本資訊"
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
-ms.openlocfilehash: 8821af9bc160dc2636871c3a3b2a558987707766
+ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
 
 ---
 
-#  Device primer for Universal Windows Platform (UWP) apps
+#  通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 
 
 
 
 
-![windows-powered devices](images/device-primer/1894834-hig-device-primer-01-500.png)
+![執行 Windows 的裝置](images/device-primer/1894834-hig-device-primer-01-500.png)
 
-Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
+認識支援通用 Windows 平台 (UWP) App 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 為特定裝置設計時，主要的考量包括應用程式在該裝置上如何顯示，何處、何時與如何在該裝置上使用應用程式，以及使用者如何與該裝置互動。
 
-## Phones and phablets
-
-
-The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
-
-With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
-
-Screen sizes
--   4'' to 5'' for phone
--   5.5'' to 7'' for phablet
-
-![windows phone](images/device-primer/1894834-hig-device-primer-03.png)
-
-Typical usage
--   Primarily used in portrait orientation, mostly due to the ease of holding the phone with one hand and being able to fully interact with it that way, but there are some experiences that work well in landscape, such as viewing photos and video, reading a book, and composing text.
--   Mostly used by just one person, the owner of the device.
--   Always within reach, usually stashed in a pocket or a bag.
--   Used for brief periods of time.
--   Users are often multitasking when using the phone.
--   Text is entered in short bursts.
-
-UI considerations
--   The small size of a phone's screen allows only one frame at a time to be viewed in both portrait and landscape orientations. All hierarchical navigation patterns on a phone use the "drill" model, with the user navigating through single-frame UI layers.
-
--   Similar to phones, phablets in portrait mode can view only one frame at a time. But with the greater screen real estate available on a phablet, users have the ability to rotate to landscape orientation and stay there, so two app frames can be visible at a time.
-
--   In both landscape and portrait orientations, be sure that there's enough screen real estate for the app bar when the on-screen keyboard is up.
-
-Inputs
--   Touch
--   Voice
-
-Typical device capabilities
--   Microphone
--   Camera
--   Movement sensors
--   Location sensors
-
- 
-
-## Tablets
+## 手機和平板手機
 
 
-Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7” to 13.3”.
+所有計算裝置中最被廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-Screen sizes
--   7” to 13.3”
+透過 Continuum 手機版 (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作 (如需詳細資訊，請參閱 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
 
-![a tablet device](images/device-primer/1894834-hig-device-primer-05.png)
+螢幕大小
+-   手機 (4 吋 到 5 吋)
+-   平板手機 (5.5 吋 到 7 吋)
 
-Typical usage
--   About 80% of tablet use is by the owner, with the other 20% being shared use.
--   It’s most commonly used at home as a companion device while watching TV.
--   It’s used for longer periods than phones and phablets.
--   Text is entered in short bursts.
+![Windows Phone](images/device-primer/1894834-hig-device-primer-03.png)
 
-UI considerations
--   In both landscape and portrait orientations, tablets allow two frames at a time.
--   System back is located on the navigation bar.
+一般使用方式
+-   主要以直式方向使用，大部分是因為可以用一隻手輕鬆握住手機，並以此方式完整地與手機互動，但也有些在橫向中運作良好的體驗，例如檢視相片和影片、閱讀電子書，以及撰寫文字等。
+-   大部分只有一個人使用，也就是裝置的擁有者。
+-   總是觸手可及，通常放在口袋或是包包中。
+-   使用時間不長。
+-   在使用手機時使用者通常在進行多工作業。
+-   輸入的文字很簡短。
 
-Inputs
--   Touch
--   Stylus
--   External keyboard (occasionally)
--   Mouse (occasionally)
--   Voice (occasionally)
+UI 考量
+-   以直向或橫向檢視小尺寸手機螢幕時，一次都只能檢視一個畫面。 手機上的所有階層式瀏覽模式都使用「深入」模型，使用者一層一層深入瀏覽單一畫面的 UI。
 
-Typical device capabilities
--   Camera
--   Microphone
--   Movement sensors
--   Location sensors
+-   平板手機類似手機，在直向模式中一次只能檢視一個畫面。 但是，平板手機因為有較大的螢幕實際可用空間，當使用者旋轉為橫向並停留時，就可以一次顯示兩個應用程式畫面。
+
+-   請確定當螢幕小鍵盤開啟時，直向和橫向兩者的應用程式列有足夠的螢幕實際可用空間。
+
+輸入
+-   觸控
+-   語音
+
+一般裝置功能
+-   麥克風
+-   相機
+-   動作感應器
+-   定位感應器
 
  
 
-## PCs and laptops
+## 平板電腦
 
 
-Windows PCs and laptops include a wide array of devices and screen sizes. In general, PCs and laptops can display more info than phone or tablets.
+超級輕便好攜帶的平板電腦配備觸控式螢幕、相機、麥克風和加速計。 平板電腦的螢幕大小通常介於 7 吋到 13.3 吋之間。
 
-Screen sizes
--   13” and greater
+螢幕大小
+-   7 吋 到 13.3 吋
 
-![a pc](images/device-primer/1894834-hig-device-primer-06-349.png)
+![平板裝置](images/device-primer/1894834-hig-device-primer-05.png)
 
-Typical usage
--   Apps on desktops and laptops see shared use, but by one user at a time, and usually for longer periods.
+一般使用方式
+-   平板電腦有大約 80% 的時間是由擁有者使用，其他 20% 的時間則是分享他人使用。
+-   最常在家裡做為看電視時使用的隨附裝置。
+-   使用的時間比手機和平板手機更長。
+-   輸入的文字很簡短。
 
-UI considerations
--   Apps can have a windowed view, the size of which is determined by the user. Depending on window size, there can be between one and three frames. On larger monitors, the app can have more than three frames.
+UI 考量
+-   平板電腦的直向和橫向模式，都允許同時顯示兩個畫面。
+-   系統返回位於瀏覽列上。
 
--   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app’s content. Consider including commands and features such as "Save As", "Recent files", and so on.
+輸入
+-   觸控
+-   手寫筆
+-   外接式鍵盤 (偶而)
+-   滑鼠 (偶而)
+-   語音 (偶而)
 
--   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
-
-Inputs
--   Mouse
--   Keyboard
--   Touch on laptops and all-in-one desktops.
--   Gamepads, such as the Xbox controller, are sometimes used.
-
-Typical device capabilities
--   Camera
--   Microphone
-
- 
-
-## Surface Hub devices
-
-
-Microsoft Surface Hub is a large-screen team collaboration device designed for simultaneous use by multiple users.
-
-Screen sizes
--   55” and 84''
-
-![a surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
-
-Typical usage
--   Apps on Surface Hub see shared use for short periods of time, such as in meetings.
-
--   Surface Hub devices are mostly stationary and rarely moved.
-
-UI considerations
--   Apps on Surface Hub can appear in one of four states - full (standard full-screen view), background (hidden from view while the app is still running, available in task switcher), fill (a fixed view that occupies the available stage area), and snapped (variable view that occupies the right or left sides of the stage).
--   In snapped mode or fill modes, the system displays the Skype sidebar and shrinks the app horizontally.
--   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
-
-Inputs
--   Touch
--   Pen
--   Voice
--   Keyboard (on-screen/remote)
--   Touchpad (remote)
-
-Typical device capabilities
--   Camera
--   Microphone
+一般裝置功能
+-   相機
+-   麥克風
+-   動作感應器
+-   定位感應器
 
  
 
-## Windows IoT devices
+## 電腦和筆記型電腦
 
 
-Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as “headless” devices) or are connected to a small screen (known as “headed” devices) with a screen size usually 3.5” or smaller.
+Windows 電腦和膝上型電腦涵蓋各種裝置和螢幕大小。 一般而言，電腦和膝上型電腦可顯示比手機或平板電腦的更多的資訊。
 
-Screen sizes
--   3.5'' or smaller
--   Some devices have no screen
+螢幕大小
+-   13 吋或更大
 
-![an iot device](images/device-primer/1894834-hig-device-primer-02.png)
+![電腦](images/device-primer/1894834-hig-device-primer-06-349.png)
 
-Typical usage
--   Usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it.
--   These devices can only run one application at a time unlike phones or other larger devices.
--   It isn’t something that is interacted with all the time, but instead is available when you need it, out of the way when you don’t.
--   App doesn’t have a dedicated back affordance, that is the developers responsibility.
+一般使用方式
+-   桌上型電腦和膝上型電腦上的應用程式可以共用，但一次只能由一位使用者使用，而且使用時間通常較長。
 
-UI considerations
--   "headless" devices have no screen.
--   Display for “headed” devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
--   Orientation is most times locked, so your app only needs to consider one display direction.
+UI 考量
+-   應用程式可以有視窗型的檢視，視窗大小由使用者決定。 根據視窗大小，可以有一到三個畫面。 在較大的螢幕上，應用程式甚至可以有三個以上的畫面。
 
-Inputs
--   Variable, depending on the device
+-   在桌上型電腦或膝上型電腦使用應用程式時，使用者可以控制應用程式檔案。 身為應用程式設計師，請務必提供管理應用程式內容的機制。 請考慮包含如「另存新檔」、「最近的檔案」等等的命令和功能。
 
-Typical device capabilities
--   Variable, depending on the device
+-   系統返回是選擇性的。 當應用程式開發人員選擇顯示它時，它會顯示在應用程式標題列。
+
+輸入
+-   滑鼠
+-   鍵盤
+-   膝上型電腦和多合一電腦桌面上的觸控功能。
+-   有時候會使用遊戲手把，例如 Xbox 控制器。
+
+一般裝置功能
+-   相機
+-   麥克風
+
+ 
+
+## Surface Hub 裝置
+
+
+Microsoft Surface Hub 是一個大型螢幕的小組共同作業裝置，針對多個使用者同時使用所設計。
+
+螢幕大小
+-   55 吋和 84 吋
+
+![Surface Hub](images/device-primer/1894834-hig-device-primer-07-349.png)
+
+一般使用方式
+-   Surface Hub 上的應用程式可以在短時間內共用，例如在會議當中。
+
+-   Surface Hub 裝置大部分是固定的，而且很少移動。
+
+UI 考量
+-   Surface Hub 上的 App 會以 4 種狀態之一顯示 - 完整 (標準的全螢幕檢視)、背景 (在 App 仍在執行時從檢視隱藏，可使用工作切換器切換)、填滿 (固定的檢視，佔用可用的顯示區域)，以及貼齊 (可變的檢視，佔用顯示區域的左或右側)。
+-   在貼齊模式或填滿模式下，系統會顯示 Skype 資訊看板並水平地壓縮 App。
+-   系統返回是選擇性的。 當應用程式開發人員選擇顯示它時，它會顯示在應用程式標題列。
+
+輸入
+-   觸控
+-   手寫筆
+-   語音
+-   鍵盤 (螢幕/遠端)
+-   觸控板 (遠端)
+
+一般裝置功能
+-   相機
+-   麥克風
 
  
 
+## Windows IoT 裝置
 
 
- 
+Windows IoT 裝置是新興的裝置類別，以嵌入式小型電子、感應器，以及實體物件內含的連線能力為中心。 這些裝置通常透過網路或是網際網路，回報在真實世界感測到的資料，並在某些情況下執行動作。 裝置可以沒有螢幕 (也稱為「無周邊」裝置) 或與尺寸小於 3.5 吋或更小的螢幕連接 (也稱為「周邊」裝置)。
+
+螢幕大小
+-   3.5 吋或更小
+-   部分裝置沒有螢幕
+
+![IoT 裝置](images/device-primer/1894834-hig-device-primer-02.png)
+
+一般使用方式
+-   通常透過網路或是網際網路，回報在真實世界感測到的資料，並在某些情況下執行動作。
+-   這些裝置一次只能執行一種應用程式，不像手機或是其他較大的裝置。
+-   它並非隨時可以進行互動的裝置，但相對來說是你需要時即可使用，不用時即可放在一邊。
+-   應用程式沒有專用的返回能供性，那是開發人員的要負責的。
+
+UI 考量
+-   「無周邊」裝置沒有螢幕。
+-   因為受限的螢幕實際可用空間和功能， 「周邊」裝置的顯示很小，僅顯示必要的資訊。
+-   方向大部分時間是鎖定的，所以應用程式只需要考量一種顯示方向。
+
+輸入
+-   視裝置不同而可變
+
+一般裝置功能
+-   視裝置不同而可變
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+ 
+
+ 
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

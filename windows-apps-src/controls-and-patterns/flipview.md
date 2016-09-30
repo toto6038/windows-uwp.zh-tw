@@ -1,61 +1,49 @@
 ---
 author: Jwmsft
-Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
-title: Guidelines for flip view controls
+Description: "顯示集合中的影像 (一次一個影像)，例如相簿中的相片或是產品詳細資料頁面中的項目。"
+title: "翻轉檢視控制項的指導方針"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
-# Flip view
+# 翻轉檢視
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate property</strong></a></li>
-</ul>
-
-</div>
-</div>
+針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
 
 
 
+-   [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
+-   [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
+-   [**ItemTemplate 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
+## 這是正確的控制項嗎？
 
+翻轉檢視最適合用來瀏覽小型到中型集合 (最高可達 25 個項目) 中的影像。 這類集合的範例包含產品詳細資料頁面中的項目，或是相簿中的相片。 雖然我們不建議針對大部分大型集合使用翻轉檢視，但該控制項一般會用來檢視相簿中的個別影像。
 
-## Is this the right control?
+## 範例
 
-Flip view is best for perusing images in small to medium collections (up to 25 or so items). Examples of such collections include items in a product details page or photos in a photo album. Although we don't recommend flip view for most large collections, the control is common for viewing individual images in a photo album.
+水平瀏覽 (從最左邊的項目開始，在右邊翻轉) 是翻轉檢視典型的配置。 此種配置可在所有裝置的直向或橫向方向使用：
 
-## Examples
+![水平翻轉檢視配置的範例](images/controls_flipview_horizonal.jpg)
 
-Horizontal browsing, starting at the left-most item and flipping right, is the typical layout for a flip view. This layout works well in either portrait or landscape orientation on all devices:
+翻轉檢視也可以垂直瀏覽：
 
-![Example of horizontal flip view layout](images/controls_flipview_horizonal.jpg)
+![垂直翻轉檢視的範例](images/controls_flipview_vertical.jpg)
 
-A flip view can also be browsed vertically:
+## 建立翻轉檢視
 
-![Example of vertical flip view](images/controls_flipview_vertical.jpg)
+FlipView 是一種 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何類型的項目集合。 若要填入檢視，請新增項目至 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或將 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設定至資料來源。
 
-## Create a flip view
+根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 若要指定項目在翻轉檢視中的確切顯示方式，請建立 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) 以定義用來顯示個別項目的控制項配置。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 將 DataTemplate 指派給 FlipView 的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 屬性。
 
-FlipView is an [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. To populate the view, add items to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection, or set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source.
+### 新增項目到 Items 集合
 
-By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) to define the layout of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. You assign the DataTemplate to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the FlipView.
-
-### Add items to the Items collection
-
-You can add items to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. Here's a flip view with items defined inline.
+您可以使用 XAML 或程式碼，將項目新增到 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 如果您只有少量不會變更且很容易在 XAML 中定義的項目，或是如果您在執行階段於程式碼中產生項目，便通常會用這種方式新增項目。 以下的翻轉檢視含有以內嵌方式定義的項目。
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -76,15 +64,15 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-When you add items to a flip view they are automatically placed in a [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) property. 
+將項目新增到翻轉檢視時，它們會自動放置到 [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx) 容器中。 若要變更項目的顯示方式，您可以設定 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) 屬性，將樣式套用到項目容器。 
 
-When you define the items in XAML, they are automatically added to the Items collection.
+在 XAML 中定義項目時，項目會自動新增到 Items 集合。
 
-### Set the items source
+### 設定項目來源
 
-You typically use a flip view to display data from a source such as a database or the Internet. To populate a flip view from a data source, you set its [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a collection of data items.
+您通常會使用翻轉檢視以顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入翻轉檢視，您要將它的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設定為資料項目的集合。
 
-Here, the flip view's ItemsSource is set in code directly to an instance of a collection.
+在這裡，翻轉檢視的 ItemsSource 會在程式碼中直接設定至集合的執行個體。
 
 ```csharp
 // Data source.
@@ -102,9 +90,9 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](../data-binding/data-binding-quickstart.md).
+您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需詳細資訊，請參閱[與 XAML 的資料繫結](../data-binding/data-binding-quickstart.md)。
 
-Here, the ItemsSource is bound to a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) named `itemsViewSource`. 
+此處的 ItemsSource 是繫結至名為 `itemsViewSource` 的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。 
 
 ```xaml
 <Page.Resources>
@@ -118,13 +106,13 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](https://msdn.micr
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Note**&nbsp;&nbsp;You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+>**注意** &nbsp;&nbsp;填入 FlipView 有兩種方法，您可以新增項目到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
-### Specify the look of the items
+### 指定項目的外觀
 
-By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the FlipView control.
+根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 您通常會想要以更多樣化的表示方式顯示資料。 為了明確指定項目在翻轉檢視內的顯示方式，您需要建立一個 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 DataTemplate 是指派給 FlipView 控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 屬性。
 
-In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name. 
+在這個範例中，FlipView 的 ItemTemplate 是以內嵌方式定義。 重疊會新增至影像以顯示影像名稱。 
 
 ```XAML
 <FlipView x:Name="flipView1" Width="480" Height="270" 
@@ -145,15 +133,15 @@ In this example, the ItemTemplate of a FlipView is defined inline. An overlay is
 </FlipView>
 ```
 
-Here's what the layout defined by the data template looks like.
+這裡是資料範本定義的配置看起來的樣子。
 
-Flip view data template.
+翻轉檢視資料範本。
 
-### Set the orientation of the flip view
+### 設定翻轉檢視的方向
 
-By default, the flip view flips horizontally. To make the it flip vertically, use a stack panel with a vertical orientation as the flip view's [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx).
+根據預設，翻轉檢視是以水平翻轉。 若要讓它垂直翻轉，請以具有垂直方向的堆疊面板做為翻轉檢視的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)。
 
-This example shows how to use a stack panel with a vertical orientation as the ItemsPanel of a FlipView.
+這個範例顯示如何以具有垂直方向的堆疊面板做為 FlipView 的 ItemsPanel。
 
 ```XAML
 <FlipView x:Name="flipViewVertical" Width="480" Height="270" 
@@ -182,47 +170,47 @@ This example shows how to use a stack panel with a vertical orientation as the I
 </FlipView>
 ```
 
-Here's what the flip view looks like with a vertical orientation.
+以下為以垂直方向顯示之翻轉檢視的外觀。
 
-![Example of vertical flip view](images/controls_flipview_vertical.jpg)
+![垂直翻轉檢視的範例](images/controls_flipview_vertical.jpg)
 
-## Adding a context indicator
+## 新增內容指示器
 
-A context indicator in a flip view provides a useful point of reference. The dots in a standard context indicator aren't interactive. As seen in this example, the best placement is usually centered and below the gallery:
+翻轉檢視中的內容指示器提供有用的參考點。 標準內容指示器中的點並非互動式。 如此範例所示，最佳擺放位置通常為圖庫下方的中心位置：
 
-![Example of a page indicator](images/controls_pageindicator.png)
+![頁面指示器的範例](images/controls_pageindicator.png)
 
-For larger collections (10-25 items), consider using an indicator that provides more context, such as a film strip of thumbnails. Unlike a context indicator that uses simple dots, each thumbnail in the film strip shows a small version of the corresponding image and should be selectable:
+如果是較大型的集合 (10-25 個項目)，請考慮使用可提供更多內容的指示器 (例如縮圖影片)。 有別於使用簡易點的內容指示器，影片區域中的每個縮圖會顯示對應影像的小型版本，並且應該是可選的：
 
-![Example of context indicator](images/controls_contextindicator.jpg)
+![內容指示器的範例](images/controls_contextindicator.jpg)
 
-## Do's and don'ts
+## 可行與禁止事項
 
--   Flip views work best for collections of up to 25 or so items.
--   Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](lists.md).
--   For context indicators:
-    -   The order of dots (or whichever visual marker you choose) works best when centered and below a horizontally-panning gallery.
-    -   If you want a context indicator in a vertically-panning gallery, it works best centered and to the right of the images.
-    -   The highlighted dot indicates the current item. Usually the highlighted dot is white and the other dots are gray.
-    -   The number of dots can vary, but don't have so many that the user might struggle to find his or her place - 10 dots is usually the maximum number to show.
+-   翻轉檢視最適合用於最多 25 個項目的集合。
+-   避免針對較大型集合使用翻轉檢視控制項，因為翻閱各個項目的重複動作可能會很煩人。 相簿則是一個例外，因為它通常有數百或數千個影像。 在格線檢視配置中選取相片之後，相簿幾乎一律會切換為翻轉檢視。 對於其他大型集合，請考量[清單檢視或格線檢視](lists.md)。
+-   對於內容指示器：
+    -   點 (或您選擇的任一種視覺標記) 的順序在置中且位於水平移動瀏覽圖庫下方時的效果最好。
+    -   如果您想在垂直移動瀏覽的圖庫中使用內容指示器，則它在置中且位於影像右側時的效果最好。
+    -   反白顯示的點表示目前的項目。 通常反白顯示的點是白色，其他點則是灰色。
+    -   點數目可能會改變，但不會多到讓使用者可能必須努力尋找他或她的位置 - 10 個點通常是顯示的數目上限。
 
-## Globalization and localization checklist
+## 全球化和當地語系化檢查清單
 
 <table>
 <tr>
-<th>Bi-directional considerations</th><td>Use standard mirroring for RTL languages. The back and forward controls should be based on the language's direction, so for RTL languages, the right button should navigate backwards and the left button should navigate forward.</td>
+<th>雙向考量</th><td>使用 RTL 語言的標準鏡像。 上一頁和下一頁控制項應該根據語言的方向，因此針對 RTL 語言，右邊的按鈕應該往後瀏覽，左邊的按鈕則應該往前瀏覽。</td>
 </tr>
 
 </table>
 
 
-## Related articles
+## 相關文章
 
-- [Guidelines for lists](lists.md)
-- [**FlipView class**](https://msdn.microsoft.com/library/windows/apps/br242678)
+- [清單的指導方針](lists.md)
+- [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

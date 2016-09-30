@@ -1,88 +1,88 @@
 ---
 author: jnHs
-Description: You can manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as push notifications and Maps.
-title: App management and services
+Description: "您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。"
+title: "App 管理與服務"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 ---
 
-# App management and services
+# App 管理與服務
 
-You can manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as push notifications and Maps.
+您可以在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知和地圖等服務。
 
-When working with an app in your dashboard, you'll see sections in the left navigation menu for Services and App management. You can expand these sections to access the functionality described below.
+當您在儀表板中使用 app 時，將會在 [服務] 與 [App 管理] 的左導覽功能表中看見一些區段。 您可以展開這些區段來存取如下所述的功能。
 
-## Services
+## 服務
 
-The **Services** section lets you manage several different services for your apps.
+[服務]**** 區段可讓您管理您 app 的數個不同服務。
 
-### Push notifications
+### 推播通知
 
-Depending on your app's package type and its specific requirements, you can use one of the following options for push notifications:
+根據應用程式的套件類型及其特定需求而定，您可以針對推播通知使用下列其中一個選項：
 
--   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **Windows 推播通知服務 (WNS)** 讓您能夠從自己的雲端服務傳送快顯通知、磚、徽章及原始更新。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
 
--   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](http://go.microsoft.com/fwlink/p/?LinkId=221116).
+-   **Microsoft Azure Mobile App** 讓您能夠傳送推播通知、驗證和管理 app 使用者，以及在雲端中儲存 app 資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft Push Notifications Service (MPNS)** can be used with your .xap packages for Windows Phone. You can send a limited number of unauthenticated notifications without doing any configuration here, although we recommend using authenticated notifications to avoid throttling limits. If you're using MPNS, you'll need to upload a certificate to the field provided on the **Push notifications** page. For more info, see [Setting up an authenticated web service to send push notifications for Windows Phone 8](http://go.microsoft.com/fwlink/p/?LinkId=528736).
+-   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果使用的是 MPNS，就需要將憑證上傳至 [推播通知]**** 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
 
-### Experimentation
+### 實驗
 
-Use the **Experimentation** page to create and run experiments for your Universal Windows Platform (UWP) apps with A/B testing. In an A/B test, you measure the effectiveness of feature changes (or variations) in your app on some customers before you enable the changes for everyone.
+利用**實驗**頁面，使用 A/B 測試為您的通用 Windows 平台 (UWP) app 建立及執行實驗。 在 A/B 測試中，您可以先在一些客戶身上測量您 app 中功能變更 (或變化) 的有效性，然後再為每個人啟用變更。
 
-For more info, see [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md).
+如需詳細資訊，請參閱[使用 A/B 測試執行 app 實驗](../monetize/run-app-experiments-with-a-b-testing.md)。
 
-### Maps
+### 地圖
 
-To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token on the **Maps** page in the **Services** section.
+若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 [地圖]**** 頁面的 [服務]**** 區段中取得這個權杖。
 
-> **Note**  To use map services in apps targeting other operating systems, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://msdn.microsoft.com/library/windows/apps/mt219694) for more info.
+> **注意：**若要在目標為其他作業系統的 app 中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://msdn.microsoft.com/library/windows/apps/mt219694)。
 
-For more info, see [Use map services](use-map-services.md).
+如需詳細資訊，請參閱[使用地圖服務](use-map-services.md)。
 
-### Product collections and purchases
+### 產品集合與購買
 
-To use the Windows Store collection API and the Windows Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
+若要使用 Windows 市集集合 API 與 Windows 市集購買 API 來存取 app 及 IAP 的擁有權資訊，您必須在這裡輸入相關聯的 Azure AD 用戶端識別碼。 請注意，這些變更可能要花費最多 16 個小時才會生效。
 
-For more info, see [View and grant products from a service](https://msdn.microsoft.com/library/windows/apps/mt609002).
+如需詳細資訊，請參閱[從服務檢視與授與產品](https://msdn.microsoft.com/library/windows/apps/mt609002)。
 
-## App management
+## 應用程式管理
 
-The **App management** section lets you view identity and package details and manage your app's names.
+[App 管理]**** 區段讓您能夠檢視身分識別和套件詳細資料，並管理您的 app 名稱。
 
-### App identity
+### 應用程式身分識別
 
-This page shows you details related to your app's unique identity within the Store, including the URL(s) to link to your app's listing.
+此頁面顯示市集內與您應用程式唯一身分識別相關的詳細資料，包含連結至您應用程式清單的 URL。
 
-For more info, see [View app identity details](view-app-identity-details.md).
+如需詳細資訊，請參閱[檢視 app 身分識別詳細資料](view-app-identity-details.md)。
 
-### Manage app names
+### 管理 app 名稱
 
-This is where you can view all of the names that you've reserved for your app. You can reserve additional names here, or delete names you're no longer using.
+您可以在此處檢視為應用程式保留的所有名稱。 您可以在此處保留其他名稱，或是刪除不再使用的名稱。
 
-For more info, see [Manage app names](manage-app-names.md).
+如需詳細資訊，請參閱[管理 app 名稱](manage-app-names.md)。
 
-### Current packages
+### 目前的套件
 
-This page lets you view details related to all of your published packages.
+此頁面讓您能夠檢視與您所有已發行套件相關的詳細資料。
 
-> **Note**  You won't see any info here until after your app has been published.
+> **注意：**在您發行 app 之前，將無法在此處看見任何資訊。
 
-The name, version, and architecture of each package is shown. Click **Details** to show additional info such as supported language, app capabilities, and file sizes.
+系統會顯示每個套件的名稱、版本及架構。 按一下 [詳細資料]****，以顯示支援的語言、應用程式功能及檔案大小等其他資訊。
 
-The exact info you see for each package may differ depending on its targeted operating system and other factors. For example, if you've added [Windows ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219691) into your package, you'll find a link to configure mediation for that package here.
+您對每個套件可以看到的精確資訊，可能會因其目標作業系統以及其他因素有所不同。 例如，如果您已新增 [Windows 廣告流量分配](https://msdn.microsoft.com/library/windows/apps/mt219691)到您的套件，您會在這裡發現設定該套件的流量分配的連結。
 
-Developers with OEM permissions can also [generate preinstall packages](generate-preinstall-packages-for-oems.md) from the **Current packages** page.
-
- 
+具備 OEM 權限的開發人員也可以從 [目前的套件]**** 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

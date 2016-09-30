@@ -1,106 +1,106 @@
 ---
 author: seksenov
-title: Hosted Web Apps - Convert your Chrome app to a Universal Windows Platform app
-description: Convert your Chrome App or Chrome Extension in to a Universal Windows Platform (UWP) app for the Windows Store.
+title: "託管的 Web 應用程式 - 將您的 Chrome 應用程式轉換為通用 Windows 平台 App"
+description: "將您的 Chrome 應用程式或 Chrome Extension 轉換為適用於 Windows 市集的通用 Windows 平台 (UWP) App。"
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7847f69c85708cb42b878253839b06929f837708
+ms.openlocfilehash: 7d1cceb931d3ee9d128c6ba47113f501625830da
 
 ---
 
-# Convert your existing Chrome app to a Universal Windows Platform app
+# 將您的現有 Chrome 應用程式轉換為通用 Windows 平台 App
 
-We have made it easy to convert your existing Chrome hosted app to an app running on the Universal Windows Platform (UWP). There are two ways to convert your Chrome app:
+您可輕鬆地將現有的 Chrome 託管應用程式，轉換為在通用 Windows 平台 (UWP) 上執行的 App。 您可使用兩種方式來轉換 Chrome 應用程式：
 
-- Option #1: [ManifoldJS](http://manifoldjs.com/) now accepts Chrome manifests as a form of input. 
+- 選項 #1：[ManifoldJS](http://manifoldjs.com/) 現支援使用 Chrome 資訊清單做為輸入形式。 
 
-- Option #2: We have developed a [CLI tool](https://github.com/MicrosoftEdge/hwa-cli) that generates an `.appx` package from your existing `.zip` or `.crx` files.
+- 選項 #2：運用我們開發的 [CLI 工具](https://github.com/MicrosoftEdge/hwa-cli)，自您的現有 `.zip` 或 `.crx` 檔案產生 `.appx` 套件。
 
-## Convert your existing Chrome app using the Command-Line Interface
+## 使用命令列介面轉換您的現有 Chrome 應用程式
 
-1. Install [NodeJS](https://nodejs.org/en/) and it's package manager, [npm](https://www.npmjs.com/). 
-
-
-2. Open a command prompt window to the directory of your choice
+1. 安裝 [NodeJS](https://nodejs.org/en/) 及其套件管理員 [npm](https://www.npmjs.com/)。 
 
 
-3. Install Hosted Web Apps (HWA) Command Line Interface (CLI) by entering the following in your command line: `npm i -g hwa-cli`
+2. 開啟命令提示字元視窗瀏覽至您選擇的目錄
 
-4. Convert your Chrome package (`.crx` and `.zip` are the supported package formats), by entering the following in your command line: `hwa convert path/to/chrome/app.crx` or `hwa convert path/to/chrome/app.zip`
 
-    **Replace `path/to/chrome/app` with the path information leading to your chrome app.*
+3. 在命令列中輸入下列命令，以安裝 Hosted Web Apps (HWA) Command Line Interface (CLI)： `npm i -g hwa-cli`
+
+4. 在命令列中輸入下列命令，以轉換您的 Chrome 套件 (`.crx` 和 `.zip` 為支援的套件格式)：`hwa convert path/to/chrome/app.crx` 或 `hwa convert path/to/chrome/app.zip`
+
+    **將 `path/to/chrome/app` 取代為導向您 Chrome 應用程式的路徑資訊。*
     
-5. The generated `.appx` will appear in the same folder as your Chrome package. You are now ready to upload your app to the Windows Store. 
+5. 產生的 `.appx` 會出現在與您 Chrome 套件相同的資料夾。 現在您可隨時將 App 上傳至 Windows 市集。 
 
-## Uploading your app to the Windows Store
+## 將您的 App 上傳至 Windows 市集
 
-To upload your app, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows). Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and and reserve your app name.
-![Windows Dev Center Dashboard Reserve a Name](images/hwa-to-uwp/reserve_a_name.png)
+若要上傳您的 App，請造訪位於 [Windows 開發人員中心](https://developer.microsoft.com/windows)的 [儀表板]。 按一下 [[建立新的應用程式](https://developer.microsoft.com/dashboard/Application/New)]，並保留您的 App 名稱。
+![Windows 開發人員中心儀表板保留名稱](images/hwa-to-uwp/reserve_a_name.png)
 
 
-Upload your `AppX` package by navigating to the "Packages" page in the Submissions section.
+瀏覽至 [提交] 區段中的 [套件] 頁面，以上傳您的 `AppX` 套件。
 
-Fill out the Windows Store prompts.
+填寫 Windows 市集提示。
 
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
-![Windows Dev Center Dashboard Reserve a Name](images/hwa-to-uwp/reserve_a_name.png)
-    - Next, click on "App identity" in the menu on the left under the "App management" section.
-    ![Windows Dev Center Dashboard App Identity](images/hwa-to-uwp/app_identity.png)
-    - You should see the three values for which you are prompted listed on the page: 1. Identity Name: `Package/Identity/Name`
-        2. Publisher Identity: `Package/Identity/Publisher`
-        3. Publisher Display Name: `Package/Properties/PublisherDisplayName`
+![Windows 開發人員中心儀表板保留名稱](images/hwa-to-uwp/reserve_a_name.png)
+ - 接著在左側功能表的 /[應用程式管理/] 區段下方，按一下 /[應用程式身分識別/]。
+    ![Windows 開發人員中心儀表板應用程式身分識別](images/hwa-to-uwp/app_identity.png)
+ - 您應會看見頁面上所列提示的三個值：1. 身分識別名稱：`Package/Identity/Name`
+ 2. 發行者身分識別：`Package/Identity/Publisher`
+ 3. 發行者顯示名稱： `Package/Properties/PublisherDisplayName`
 
 
-## Guide for migrating your Hosted Web App
+## 託管的 Web 應用程式移轉指南
 
-After packaging your web app for the Windows Store, customize it so that it works great across all Windows-based devices, including PCs, tablets, phones, HoloLens, Surface Hub, Xbox and Raspberry Pi.
+針對 Windows 市集完成 Web 應用程式封裝作業後，您可進行自訂使 App 可跨越所有的 Windows 裝置順暢運作，包括電腦、平板電腦、手機、HoloLens、Surface Hub、Xbox 和 Raspberry Pi。
 
-### Application Content URI Rules
+### 應用程式內容 URI 規則
 
-[Application Content URI Rules (ACURs)](/hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs) or Content URIs define the scope of your Hosted Web App through a URL allow list in your app package manifest. In order to control the communication to and from remote content, you must define which URLs are included in, and/or excluded from, this list. If a user clicks a URL that is not explicitly included, Windows will open the target path in the default browser. With ACURs, you are also able to grant a URL access to [Universal Windows APIs](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+[應用程式內容 URI 規則 (ACUR)](/hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs) 或內容 URI 會透過您應用程式套件資訊清單中的 URL 允許清單，定義託管 Web 應用程式的範圍。 為了控制遠端內容的雙向通訊，您必須定義要從此清單中包含和/或排除的 URL。 若使用者按一下未明確包含的 URL，Windows 會在預設瀏覽器中開啟目標路徑。 您亦可透過 ACUR 授與 URL [通用 Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) 存取權。
 
-At the very minimum, your rules should include your app’s start page. The conversion tool will automatically create a set of ACURs for you, based on your start page and its domain. However, if there are any programmatic redirects, whether on the server or on the client, those destinations will need to be added to the allow list.
+規則至少必須包含您 App 的開始頁面。 此轉換工具會根據您的開始頁面及其網域，自動為您建立一組 ACUR。 不過，若有任何程式設計方式重新導向操作 (無論是伺服器或用戶端)，則必須將這些目的地新增至允許清單。
 
-*Note: ACURs only apply to page navigation. Images, JavaScript libraries, and other similar assets are not affected by these restrictions.*
+*注意︰ACUR 僅適用於頁面瀏覽。 影像、JavaScript 程式庫以及其他類似資產不會受到這些限制所影響。*
 
-Many apps use third-party sites for their login flows, e.g. Facebook and Google. The conversion tool will automatically create a set of ACURs for you, based on the most popular sites. If your method of authentication is not included in that list, and it’s a redirect flow, you will need to add its path(s) as an ACUR. You can also consider using a [web authentication broker](/hwa-access-features.md#web-authentication-broker).
+許多應用程式皆使用第三方網站執行登入流程，例如 Facebook 和 Google。 此轉換工具會根據最熱門的網站，自動為您建立一組 ACUR。 若該清單未包含您的驗證方法，且其為重新導向流程，則您必須新增其路徑做為 ACUR。 您也可以考慮使用 [Web 驗證代理人](/hwa-access-features.md#web-authentication-broker)。
 
 ### Flash
 
-Flash is not allowed in Windows 10 apps. You will need to make sure your app experience is not affected by its absence.
+Windows 10 App 不允許使用 Flash。 您必須確定您的 App 使用體驗不會因缺少 Flash 而受到影響。
 
-For ads, you will need to make sure your ad provider has an HTML5 option. You can check out [Bing Ads](https://bingads.microsoft.com/) and [Ads in Apps](http://adsinapps.microsoft.com/).
+若為廣告，則您必須確定廣告提供者具有 HTML5 選項。 您可查看 [Bing 廣告](https://bingads.microsoft.com/)與 [App 中的廣告](http://adsinapps.microsoft.com/)。
 
-YouTube videos should still work, as they now [default to HTML5 `<video>`,](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html) so long as you are using the [`<iframe>` embed method](https://developers.google.com/youtube/iframe_api_reference). If your app still uses the Flash API, you will need to switch to the aforementioned style of embed.
+YouTube 影片現已[預設使用 HTML5`<video>`，](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html)因此只要您使用[`<iframe>`內嵌方法](https://developers.google.com/youtube/iframe_api_reference)，其仍可正常運作。 若您的應用程式仍使用 Flash API，則您必須切換至先前述及的內嵌樣式。
 
-### Image assets
+### 影像資產
 
-The Chrome web store already [requires a 128x128 app icon image](https://developer.chrome.com/webstore/images) in your app package. For Windows 10 apps, you must supply 44x44, 50x50, 150x150, and 600x350 app icon images, at the very minimum. The conversion tool will automatically create these images for you, based on the 128x128 image. For a richer, more polished app experience, we highly recommend creating your own image files. Here are some [guidelines for tile and icon assets](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx).
+Chrome 網路商店已[要求在您的應用程式套件中使用 128x128 的 App 圖示影像](https://developer.chrome.com/webstore/images)。 針對 Windows 10 App，您至少必須提供 44x44、50x50、150x150 和 600x350 應用程式圖示影像。 此轉換工具會根據 128x128 影像，自動為您建立這些影像。 為了提供更豐富、完美的 App 使用體驗，我們強烈建議建立您建立專屬的影像檔案。 這裡有一些關於[磚和圖示資產的指導方針](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx)。
 
-### Capabilities
+### 功能
 
-App capabilities must be [declared](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations) in your package manifest in order to access certain APIs and resources. The conversion tool will automatically enable three popular device capabilities for you: location, microphone, and webcam. With the former, the system will still prompt the user for permission before granting access.
+必須在套件資訊清單中[宣告](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations) App 功能，才能存取特定的 API 和資源。 此轉換工具會自動為您啟用三個常用的裝置功能：位置、麥克風和網路攝影機。 針對上述功能，系統仍會提示使用者授與存取權限。
 
-*Note: Users are notified of all the capabilities that an app declares. We would recommend removing any capabilities that your app does not need.*
+*注意︰對於 App 宣告的所有功能使用者都會收到通知。 我們建議移除任何您的 App 不需要的功能。*
 
-### File downloads
+### 檔案下載
 
-Traditional file downloads, like you see in the browser, are not currently supported.
+目前不支援傳統的檔案下載，如您在瀏覽器中所見。
 
-### Chrome platform APIs
+### Chrome 平台 API
 
-Chrome provides apps with [special-purpose APIs](https://developer.chrome.com/apps/api_index) that can be run as background script. These are not supported. You can find equivalent functionality, and much more, with the [Windows Runtime APIs](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+Chrome 為 App 提供[特殊用途的 API](https://developer.chrome.com/apps/api_index)，其可做為背景指令碼執行。 不支援使用這些 API。 您可透過 [Windows 執行階段 API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx)，找到更多的同等功能。
 
-## Related topics
+## 相關主題
 
-- [Enhance your web app by accessing Universal Windows Platform (UWP) features](/hwa-access-features.md)
-- [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [存取通用 Windows 平台 (UWP) 功能以增強您的 Web 應用程式](/hwa-access-features.md)
+- [通用 Windows 平台 (UWP) App 指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+- [下載 Windows 市集應用程式的設計資產](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

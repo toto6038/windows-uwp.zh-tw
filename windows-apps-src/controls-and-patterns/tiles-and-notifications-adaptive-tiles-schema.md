@@ -1,25 +1,24 @@
 ---
 author: mijacobs
-Description: Here are the elements and attributes you use to create adaptive tiles.
-title: Adaptive tile schema and templates
+Description: "以下是用來建立彈性磚的元素和屬性。"
+title: "彈性磚結構描述與範本"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 ---
-# Adaptive tile templates: schema and guidance
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 彈性磚範本：結構描述和指導方針
 
-Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).
+以下是用來建立彈性磚的元素和屬性。 如需相關指示與範例，請參閱[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)。
 
-## tile element
+## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>磚元素
 
 
-``` xml
+``` syntax
 <tile>
   
   <!-- Child elements -->
@@ -28,10 +27,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </tile>
 ```
 
-## visual element
+## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>視覺元素
 
 
-``` xml
+``` syntax
 <visual
   version? = integer
   lang? = string
@@ -47,10 +46,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </visual>
 ```
 
-## binding element
+## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>正在繫結元素
 
 
-``` xml
+``` syntax
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -72,10 +71,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </binding>
 ```
 
-## image element
+## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>影像元素
 
 
-``` xml
+``` syntax
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -86,10 +85,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## text element
+## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>文字元素
 
 
-``` xml
+``` syntax
 <text
   lang? = string
   hint-style? = textStyle
@@ -103,12 +102,12 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </text>
 ```
 
-textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle 字幕 subtitleSubtle 標題 titleSubtle titleNumeral 次標題 subheaderSubtle subheaderNumeral 標題 headerSubtle headerNumber
 
-## group element
+## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>群組元素
 
 
-``` xml
+``` syntax
 <group>
 
   <!-- Child elements -->
@@ -117,10 +116,10 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## subgroup element
+## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>子群組元素
 
 
-``` xml
+``` syntax
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -133,10 +132,10 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-## Related topics
+## <span id="related_topics"></span>相關主題
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  
@@ -147,6 +146,6 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

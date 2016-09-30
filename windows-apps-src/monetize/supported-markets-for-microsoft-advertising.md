@@ -1,313 +1,313 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: Learn about the supported countries and regions for interstitial and banner ads.
-title: Supported markets for Microsoft advertising
+description: "了解插入式和橫幅廣告支援的國家和地區。"
+title: "Microsoft Advertising 支援的市場"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
 
 ---
 
-# Supported markets for Microsoft advertising
+# Microsoft Advertising 支援的市場
 
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-Interstitial ads and banner ads are supported in the following countries and regions.
+在下列國家和地區可取得插入式廣告和橫幅廣告。
 
 <span id="interstitialads"/>
-## Interstitial ads
+## 插入式廣告
 
--   Australia
+-   澳大利亞
 
--   Brazil
+-   巴西
 
--   Canada
+-   加拿大
 
--   France
+-   法國
 
--   Germany
+-   德國
 
--   Italy
+-   義大利
 
--   Japan
+-   日本
 
--   Spain
+-   西班牙
 
--   United Kingdom
+-   英國
 
--   United States
+-   美國
 
 <span id="bannerads"/>
-## Banner ads
+## 橫幅廣告
 
 
--   Afghanistan
+-   阿富汗
 
--   Albania
+-   阿爾巴尼亞
 
--   Algeria
+-   阿爾及利亞
 
--   Angola
+-   安哥拉
 
--   Antigua and Barbuda
+-   安地卡及巴布達
 
--   Argentina
+-   阿根廷
 
--   Armenia
+-   亞美尼亞
 
--   Australia
+-   澳大利亞
 
--   Austria
+-   奧地利
 
--   Azerbaijan
+-   亞塞拜然
 
--   Bahrain
+-   巴林
 
--   Bangladesh
+-   孟加拉
 
--   Belarus
+-   白俄羅斯
 
--   Belgium
+-   比利時
 
--   Benin
+-   貝南
 
--   Bolivia
+-   玻利維亞
 
--   Bosnia and Herzegovina
+-   波士尼亞赫塞哥維納
 
--   Botswana
+-   波札那
 
--   Brazil
+-   巴西
 
--   Burkina Faso
+-   布吉納法索
 
--   Burundi
+-   蒲隆地
 
--   Cambodia
+-   柬埔寨
 
--   Cameroon
+-   喀麥隆
 
--   Canada
+-   加拿大
 
--   Central African Republic
+-   中非共和國
 
--   Chad
+-   查德
 
--   Chile
+-   智利
 
--   China
+-   中國
 
--   Colombia
+-   哥倫比亞
 
--   Comoros
+-   葛摩
 
--   Congo
+-   剛果共和國
 
--   Congo (DRC)
+-   剛果民主共和國
 
--   Costa Rica
+-   哥斯大黎加
 
--   Côte d'Ivoire
+-   科特迪瓦 (象牙海岸)
 
--   Denmark
+-   丹麥
 
--   Dominica
+-   多米尼克
 
--   Dominican Republic
+-   多明尼加共和國
 
--   Ecuador
+-   厄瓜多
 
--   Egypt
+-   埃及
 
--   El Salvador
+-   薩爾瓦多
 
--   Eritrea
+-   厄利垂亞
 
--   Ethiopia
+-   衣索比亞
 
--   Fiji
+-   斐濟群島
 
--   Finland
+-   芬蘭
 
--   France
+-   法國
 
--   Georgia
+-   喬治亞
 
--   Germany
+-   德國
 
--   Ghana
+-   迦納
 
--   Greece
+-   希臘
 
--   Guatemala
+-   瓜地馬拉
 
--   Guinea
+-   幾內亞
 
--   Haiti
+-   海地
 
--   Honduras
+-   宏都拉斯
 
--   Hong Kong
+-   香港
 
--   Iceland
+-   冰島
 
--   India
+-   印度
 
--   Indonesia
+-   印尼
 
--   Iraq
+-   伊拉克
 
--   Ireland
+-   愛爾蘭
 
--   Israel
+-   以色列
 
--   Italy
+-   義大利
 
--   Jamaica
+-   牙買加
 
--   Japan
+-   日本
 
--   Jordan
+-   約旦
 
--   Kazakhstan
+-   哈薩克
 
--   Kenya
+-   肯亞
 
--   Kuwait
+-   科威特市
 
--   Laos
+-   寮國
 
--   Lebanon
+-   黎巴嫩
 
--   Liberia
+-   賴比瑞亞
 
--   Liechtenstein
+-   列支敦斯登
 
--   Luxembourg
+-   盧森堡
 
--   Macedonia (FYROM)
+-   前南斯拉夫馬其頓共和國
 
--   Madagascar
+-   馬達加斯加
 
--   Malawi
+-   馬拉威
 
--   Malaysia
+-   馬來文
 
--   Mali
+-   馬利
 
--   Malta
+-   馬爾他
 
--   Mauritius
+-   模里西斯
 
--   Mexico
+-   墨西哥
 
--   Monaco
+-   摩納哥
 
--   Mongolia
+-   蒙古
 
--   Montenegro
+-   蒙特內哥羅
 
--   Morocco
+-   摩洛哥
 
--   Mozambique
+-   莫三比克
 
--   Nepal
+-   尼泊爾
 
--   New Zealand
+-   紐西蘭
 
--   Nicaragua
+-   尼加拉瓜
 
--   Niger
+-   尼日
 
--   Nigeria
+-   奈及利亞
 
--   Norway
+-   挪威
 
--   Oman
+-   阿曼
 
--   Pakistan
+-   巴基斯坦
 
--   Panama
+-   巴拿馬
 
--   Paraguay
+-   巴拉圭
 
--   Peru
+-   秘魯
 
--   Philippines
+-   菲律賓
 
--   Poland
+-   波蘭
 
--   Portugal
+-   葡萄牙
 
--   Qatar
+-   卡達
 
--   Russia
+-   俄羅斯
 
--   Rwanda
+-   盧安達
 
--   Saint Vincent and the Grenadines
+-   聖文森及格瑞那丁
 
--   Saudi Arabia
+-   沙烏地阿拉伯
 
--   Senegal
+-   塞內加爾
 
--   Sierra Leone
+-   獅子山
 
--   Singapore
+-   新加坡
 
--   Somalia
+-   索馬利亞
 
--   South Africa
+-   南非
 
--   South Korea
+-   南韓
 
--   Spain
+-   西班牙
 
--   Sri Lanka
+-   斯里蘭卡
 
--   Sweden
+-   瑞典
 
--   Switzerland
+-   瑞士
 
--   Taiwan
+-   台灣
 
--   Tajikistan
+-   塔吉克
 
--   Tanzania
+-   坦尚尼亞
 
--   Thailand
+-   泰國
 
--   The Netherlands
+-   荷蘭
 
--   Timor-Leste
+-   東帝汶
 
--   Togo
+-   多哥
 
--   Tonga
+-   東加
 
--   Tunisia
+-   突尼西亞
 
--   Turkey
+-   土耳其
 
--   Turkmenistan
+-   土庫曼
 
--   Uganda
+-   烏干達
 
--   Ukraine
+-   烏克蘭
 
--   United Arab Emirates
+-   阿拉伯聯合大公國
 
--   United Kingdom
+-   英國
 
--   Uzbekistan
+-   烏茲別克
 
--   Venezuela
+-   委內瑞拉
 
--   Vietnam
+-   越南
 
--   Zimbabwe
+-   辛巴威
 
  
 
@@ -315,6 +315,6 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

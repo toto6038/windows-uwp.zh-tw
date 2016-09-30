@@ -1,82 +1,82 @@
 ---
 author: TylerMSFT
-title: Add a splash screen
-description: Set your app's splash screen image and background color using Microsoft Visual Studio 2015.
+title: "新增啟動顯示畫面"
+description: "使用 Microsoft Visual Studio 2015 設定 app 的啟動顯示畫面影像與背景色彩。"
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
+ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 
 ---
 
-# Add a splash screen
+# 新增啟動顯示畫面
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Set your app's splash screen image and background color using Microsoft Visual Studio 2015.
+使用 Microsoft Visual Studio 2015 設定 app 的啟動顯示畫面影像與背景色彩。
 
-## Set the splash screen image and background color in Visual Studio 2015
+## 在 Visual Studio 2015 中設定啟動顯示畫面影像與背景色彩
 
 
-When you use a Visual Studio 2015 template to create your app, a default image is added to your project and set as the splash screen image. The background color for your splash screen defaults to a light gray. If you want to change the default image or color of your app's splash screen, follow these steps:
+當您使用 Visual Studio 2015 範本建立 app 時，會將預設影像新增到您的專案，並設定為啟動顯示畫面影像。 啟動顯示畫面的背景色彩預設為淺灰。 如果您想變更 app 啟動顯示畫面的預設影像或色彩，請遵循以下步驟：
 
-1.  Open your existing Universal Windows Platform (UWP) app project in Visual Studio 2015.
-2.  From **Solution Explorer**, open the "Package.appxmanifest" file. You can also open this file from the menu bar by choosing **Project** &gt; **Store** &gt; **Edit App Manifest**.
-3.  Open the **Visual Assets** tab and select **Splash Screen** from the **All Image Assets** pane on the left side of the "Package.appxmanifest" window. If you're changing your splash screen for the first time, you'll see the "Assets\\SplashScreen.png" path in the **Splash Screen** field.
+1.  開啟 Visual Studio 2015 中的現有通用 Windows 平台 (UWP) app 專案。
+2.  在 [方案總管]**** 中，開啟 Package.appxmanifest 檔案。 您也可以依序選擇 [專案]****&gt;[市集]****&gt;[編輯 App 資訊清單]****，從功能表列開啟這個檔案。
+3.  開啟 [視覺資產]**** 索引標籤，然後從 Package.appxmanifest 視窗左側的 [所有影像資產]**** 窗格選取 [啟動顯示畫面]****。 如果您是第一次變更啟動顯示畫面，會在 [啟動顯示畫面]**** 欄位看到 "Assets\\SplashScreen.png" 路徑。
 
-    The following screen shot shows the "Package.appxmanifest" window in Visual Studio 2015. Depending on the type of project, you will see a slightly different set of visual assets.
+    以下螢幕擷取畫面顯示 Visual Studio 2015 中的 [Package.appxmanifest] 視窗。 根據專案類型，您會看到一組稍有不同的視覺資產。
 
-    ![a screen shot of the "package.appxmanifest" window in visual studio 2013](images/appmanifest.png)
+    ![顯示 visual studio 2013 中 [package.appxmanifest] 視窗的螢幕擷取畫面](images/appmanifest.png)
 
-    If you open "Package.appxmanifest" in a text editor, the [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467) appears as a child of the [**VisualElements element**](https://msdn.microsoft.com/library/windows/apps/br211471). The default splash screen markup in the manifest file looks like this in a text editor:
+    如果您在文字編輯器中開啟 Package.appxmanifest，[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) 元素即會顯示為 [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) 元素的子項。 在文字編輯器中，資訊清單檔中的預設啟動顯示畫面標記看起來像這樣：
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
     ```
 
-4.  To select a new splash screen image for a UWP app, press the button with an ellipsis that appears next to the **1240 x 600 px** label below **Scaled Assets**. Choose the 1240 x 600 pixel image (.png, .jpg, or .jpeg) you'd like to use for your splash screen image.
+4.  若要為 UWP app 選取新的啟動顯示畫面影像，請按顯示在 [縮放的資產]**** 下方 [1240 x 600 px]**** 標籤旁含有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1240 x 600 像素影像 (.png、.jpg 或 .jpeg)。
 
-    **Important**  The splash screen image you choose must be 620 x 300 pixels using a 1x scaling factor. Also, when designing your splash screen, note that it is smaller than the screen, and centered. It does not fill the screen like a splash screen for a Windows Phone Store app does.
-
-     
-
-5.  To select a new splash screen image for a Windows Phone Store app, press the button with an ellipsis that appears next to the **1152 x 1920 px** label below **Scaled Assets**. Choose the 1152 x 1920 pixel image (.png, .jpg, or .jpeg) you'd like to use for your splash screen image.
-
-    **Important**  The splash screen image you choose must be 1152 x 1920 pixels which is the correct size for a 2.4x scaling factor. If this is the only asset you provide then it will be scaled down for 1.4x and 1x scaling factors.
+    **重要** 您選擇的啟動顯示畫面影像必須使用 1x 縮放比例的 620 x 300 像素。 此外，設計您的啟動顯示畫面時，請注意它將小於螢幕，並且置中對齊。 它並不像 Windows Phone 市集應用程式的啟動顯示畫面會填滿螢幕。
 
      
 
-6.  In the **Background Color** field of the **Splash Screen** section, set the background color displayed with your splash screen image. You can enter either the name of a color or '\#' and the hex value of a color. For a list of the names of available colors, see [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467).
+5.  若要為 Windows Phone 市集應用程式選取新的啟動顯示畫面影像，請按 [縮放的資產]**** 下方顯示在 [1152 x 1920 px]**** 標籤旁具有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1152 x 1920 像素影像 (.png、.jpg 或 .jpeg)。
 
-    Setting a background color for your splash screen is optional. If you don't specify a color for a UWP app, the splash screen background color defaults to a light gray (hex value \#464646). This is the same color as the default **Tile** background color (see the **Background Color** field of the **Tile Images and Logos** section in the **Visual Assets** tab). If you don't specify a color for a Windows Phone, or set it to "transparent", then the splash screen background color will be transparent.
+    **重要** 您所選擇的啟動顯示畫面影像必須是 1152 x 1920 像素，這是 2.4x 縮放比例的正確大小。 如果這是您所提供的唯一資產，它將會針對 1.4x 和 1x 的縮放比例縮小。
 
-## Summary and next steps
+     
+
+6.  在 [啟動顯示畫面]**** 區段的 [背景色彩]**** 欄位中，設定與您的啟動顯示畫面影像一起顯示的背景色彩。 您可以輸入色彩名稱，或是輸入 '\#' 與色彩的十六進位值。 如需可用色彩的名稱清單，請參閱 [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467)。
+
+    您不一定要設定啟動顯示畫面的背景色彩。 如果您沒有為 UWP app 指定色彩，啟動顯示畫面背景色彩預設會是淺灰色 (十六進位值 \#464646)。 這個色彩與預設的 [磚]**** 背景色彩相同 (請參閱 [視覺資產]**** 索引標籤中 [磚影像和標誌]**** 區段的 [背景色彩]**** 欄位)。 如果您沒有為 Windows Phone 指定色彩，或是將它設定成「透明」，啟動顯示畫面背景色彩就會是透明的。
+
+## 摘要與後續步驟
 
 
-If your app takes a while to load, consider adding an extended splash screen. For step-by-step guidance, seen [Create a customized splash screen](create-a-customized-splash-screen.md).
+如果您的 app 需要一些時間載入，可考慮加入延長式啟動顯示畫面。 如需逐步指引，請參閱[建立自訂的啟動顯示畫面](create-a-customized-splash-screen.md)。
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Related topics
-
-* [Create a customized splash screen](create-a-customized-splash-screen.md)
-
-**Reference**
-
-* [**Package manifest schema reference: SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [**Windows.ApplicationModel.Activation.SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+**注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
+## 相關主題
+
+* [建立自訂的啟動顯示畫面](create-a-customized-splash-screen.md)
+
+**參考資料**
+
+* [**封裝資訊清單結構描述參考：SplashScreen 元素**](https://msdn.microsoft.com/library/windows/apps/br211467)
+* [**Windows.ApplicationModel.Activation.SplashScreen 類別**](https://msdn.microsoft.com/library/windows/apps/br224763)
+
+ 
+
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

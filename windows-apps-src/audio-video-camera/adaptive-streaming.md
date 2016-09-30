@@ -1,77 +1,61 @@
 ---
 author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
-title: Adaptive streaming
+description: "本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP Live Streaming (HLS) 與 Dynamic Adaptive Streaming over HTTP (DASH) 內容播放。"
+title: "彈性資料流"
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
 
 ---
 
-# Adaptive streaming
+# 彈性資料流
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
+本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
 
-For a list of supported HLS protocol tags, see [HLS tag support](hls-tag-support.md). 
+## 使用 MediaElement 的簡單彈性資料流
 
-> [!NOTE] 
-> The code in this article was adapted from the UWP [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming).
+如果要在 XAML 型 app 中顯示彈性資料流多媒體，請將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項新增到您的頁面。
 
-## Simple adaptive streaming with MediaPlayer and MediaPlayerElement
+[!code-xml[MediaElementXAML](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml#SnippetMediaElementXAML)]
 
-To play adaptive streaming media in a UWP app, create a **Uri** object pointing to a DASH or HLS manifest file. Create an instance of the [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) class. Call [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) to create a new **MediaSource** object and then set that to the [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) property of the **MediaPlayer**. Call [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) to start playback of the media content.
+將 **MediaElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) 屬性設定為 DASH 或 HLS 資訊清單檔的 URI。
 
-[!code-cs[DeclareMediaPlayer](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
+[!code-cs[ManifestSource](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
-[!code-cs[ManifestSourceNoUI](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSourceNoUI)]
+## 使用 AdaptiveMediaSource 的彈性資料流
 
-The above example will play the audio of the media content but it doesn't automatically render the content in your UI. Most apps that play video content will want to render the content in a XAML page.  To do this, add a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) control to your XAML page.
+如果您的 app 需要更多進階彈性資料流功能 (例如提供自訂 HTTP 標頭、監視目前下載與播放位元速率，或調整判斷系統切換彈性資料流位元速率時機的比率)，請使用 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 物件。
 
-[!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
+可在 [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) 命名空間中找到彈性資料流 API。
 
-Call [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) to create a **MediaSource** from the URI of a DASH or HLS manifest file. Then set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) property of the **MediaPlayerElement**. The **MediaPlayerElement** will automatically create a new **MediaPlayer** object for the content. You can call **Play** on the **MediaPlayer** to start playback of the content.
+[!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
-[!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
+透過呼叫 [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261)，使用彈性資料流資訊清單檔的 URI 初始化 **AdaptiveMediaSource**。 此方法傳回的 [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) 值會讓您知道是否順利建立媒體來源。 如果已建立，您可以呼叫 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029)，將該物件設為 **MediaElement** 的串流來源。 在這個範例中，會查詢 [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) 屬性來判斷串流的位元速率支援上限，然後將該值設為初始位元速率。 此範例也會登錄 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272)、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) 和 [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) 事件的處理常式，稍後會於本文章中討論。
 
-> [!NOTE] 
-> Starting with Windows 10, version 1607, it is recommended that you use the **MediaPlayer** class to play media items. The **MediaPlayerElement** is a lightweight XAML control that is used to render the content of a **MediaPlayer** in a XAML page. The **MediaElement** control continues to be supported for backwards compatibility. For more information about using **MediaPlayer** and **MediaPlayerElement** to play media content, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md). For information about using **MediaSource** and related APIs to work with media content, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
+[!code-cs[InitializeAMS](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
-## Adaptive streaming with AdaptiveMediaSource
+如果您需要設定自訂的 HTTP 標頭以取得資訊清單檔，您可以建立 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 物件、設定想要的標題，然後將物件傳遞到 **CreateFromUriAsync** 的多載中。
 
-If your app requires more advanced adaptive streaming features, such as providing custom HTTP headers, monitoring the current download and playback bitrates, or adjusting the ratios that determine when the system switches bitrates of the adaptive stream, use the [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) object.
+[!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-The adaptive streaming APIs are found in the [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) namespace.
+當系統即將從伺服器擷取資源時，會引發 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) 事件。 傳遞至事件處理常式的 [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) 會公開提供要求之資源的相關資訊 (例如資源類型和 URI) 的內容。
 
-[!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
+您可以使用 **DownloadRequested** 事件處理常式，透過更新事件引數所提供之 [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) 物件的內容，來修改資源要求。 在下列範例中，會透過更新結果物件的 [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) 內容來修改要從中擷取資源的 URI。
 
-Initialize the **AdaptiveMediaSource** with the URI of an adaptive streaming manifest file by calling [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261). The [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) value returned from this method lets you know if the media source was created successfully. If so, you can set the object as the stream source for your **MediaPlayer** by calling [**SetMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn652653). In this example, the [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) property is queried to determine the maximum supported bitrate for this stream, and then that value is set as the inital bitrate. This example also registers handlers for the [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272), [**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269), and [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) events which are discussed later in this article.
+您可以透過設定結果物件的 [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) 或 [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) 屬性，來覆寫要求之資源的內容。 在下列範例中，會透過設定 **Buffer** 屬性來取代資訊清單資源的內容。 請注意，如果您是使用非同步取得的資料來更新資源要求 (例如從遠端伺服器或非同步使用者驗證擷取資料)，您必須呼叫 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) 取得延遲，然後在作業完成時呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934)，通知系統可以繼續下載要求作業。
 
-[!code-cs[InitializeAMS](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
+[!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
-If you need to set custom HTTP headers for getting the manifest file, you can create an [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) object, set the desired headers, and then pass the object into the overload of **CreateFromUriAsync**.
+**AdaptiveMediaSource** 物件提供了可讓您在下載或播放位元速率變更時用來反應的事件。 在此範例中，目前的位元速率僅在 UI 中更新。 請注意，您可以修改判斷系統切換彈性資料流位元速率時機的比率。 如需詳細資訊，請參閱 [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697) 屬性。
 
-[!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
+[!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-The [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) event is raised when the system is about to retrieve a resource from the server. The [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) passed into the event handler exposes properties that provide information about the resource being requested such as the type and URI of the resource.
+ 
 
-You can use the **DownloadRequested** event handler to modify the resource request by updating the properties of the [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) object provided by the event args. In the example below, the URI from which the resource will be retrieved is modified by updating the [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) properties of the result object.
-
-You can override the content of the requested resource by setting the [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) or [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) properties of the result object. In the example below, the contents of the manifest resource are replaced by setting the **Buffer** property. Note that if you are updating the resource request with data that is obtained asynchronously, such as retrieving data from a remote server or asynchronous user authentication, you must call [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) to get a deferral and then call [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) when the operation is complete to signal the system that the download request operation can continue.
-
-[!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
-
-The **AdaptiveMediaSource** object provides events that allow you to react when the download or playback bitrates change. In this example, the current bitrates are simply updated in the UI. Note that you can modify the ratios that determine when the system switches bitrates of the adaptive stream. For more information, see the [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697) property.
-
-[!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
-
-## Related topics
-* [Media playback](media-playback.md)
-* [HLS tag support](hls-tag-support.md) 
-* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Play media in the background](background-audio.md) 
+ 
 
 
 
@@ -79,7 +63,6 @@ The **AdaptiveMediaSource** object provides events that allow you to react when 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

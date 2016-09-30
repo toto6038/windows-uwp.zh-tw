@@ -1,53 +1,53 @@
 ---
 author: mijacobs
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
-title: Send a local tile notification
+Description: "本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。"
+title: "傳送本機磚通知"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# Send a local tile notification
+
+# 傳送本機磚通知
 
 
 
 
 
-Primary app tiles in Windows 10 are defined in your app manifest, while secondary tiles are programmatically created and defined by your app code. This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates. (A local notification is one that's sent from app code as opposed to one that's pushed or pulled from a web server.)
+Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中，次要磚則是以程式設計方式建立，而且是由您的應用程式程式碼定義。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
-**Note**   Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [adaptive tile template schema](tiles-and-notifications-adaptive-tiles-schema.md).
+**注意**：請了解[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
 
  
 
-## Install the NuGet package
+## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>安裝 NuGet 套件
 
 
-We recommend installing the [NotificationsExtensions NuGet package](https://www.nuget.org/packages/NotificationsExtensions.Win10/), which simplifies things by generating tile payloads with objects instead of raw XML.
+我們建議您安裝 [NotificationsExtensions NuGet 套件](https://www.nuget.org/packages/NotificationsExtensions.Win10/)，透過產生含有物件的磚承載 (而非原始 XML) 以簡化項目。
 
-The inline code examples in this article are for C# with the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package installed. (If you'd prefer to create your own XML, you can find code examples without [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) toward the end of the article.)
+本文中的內嵌程式碼範例是針對已安裝 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 封裝的 C#。 (如果您想要建立您自己的 XML，您可以在文章後面找到不含 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的程式碼範例。)
 
-## Add namespace declarations
+## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>加入命名空間宣告
 
 
-To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package to access these APIs).
+若要存取磚 API，請包含 [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 命名空間。 我們也建議您包含 **NotificationsExtensions.Tiles** 命名空間，這樣您就能利用我們的磚協助程式 API (您必須安裝 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 套件才能存取這些 API)。
 
 ```
 using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ```
 
-## Create the notification content
+## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>建立通知內容
 
 
-In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see the [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [Adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md) articles.)
+在 Windows 10 中，磚承載是彈性磚範本定義的，可讓您為您的通知建立自訂的視覺配置。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本](tiles-and-notifications-adaptive-tiles-schema.md)文章。)
 
-This code example creates adaptive tile content for medium and wide tiles.
+這個程式碼範例會建立中型和寬形磚的彈性磚內容。
 
 ```
 // In a real app, these would be initialized with actual data
@@ -117,28 +117,28 @@ TileContent content = new TileContent()
 };
 ```
 
-The notification content looks like the following when displayed on a medium tile:
+通知內容在中型磚上顯示時看起來就像下面這樣：
 
-![notification content on a medium tile](images/sending-local-tile-02.png)
+![中型磚上的通知內容](images/sending-local-tile-02.png)
 
-## Create the notification
+## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>建立通知
 
 
-Once you have your notification content, you'll need to create a new [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) object, which you can obtain from the **TileContent.GetXml** method if you're using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
+擁有通知內容後，您需要建立一個新的 [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)。 **TileNotification** 建構函式採用 Windows 執行階段 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) 物件，如果您使用 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)，即可透過 **TileContent.GetXml** 方法取得。
 
-This code example creates a notification for a new tile.
+這個程式碼範例會為新的磚建立通知。
 
 ```
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## Set an expiration time for the notification (optional)
+## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>設定通知的到期時間 (選擇性)
 
 
-By default, local tile and badge notifications don't expire, while push, periodic, and scheduled notifications expire after three days. Because tile content shouldn't persist longer than necessary, it's a best practice to set an expiration time that makes sense for your app, especially on local tile and badge notifications.
+根據預設，本機磚和徽章通知不會到期，而推播、定期以及排程通知則會在三天後到期。 磚內容持續的時間不應太長，最佳做法是設定適合您的應用程式的到期時間，特別是針對本機磚和徽章通知。
 
-This code example creates a notification that expires and will be removed from the tile after ten minutes.
+這個程式碼範例會建立一個到期的通知，而它會在 10 分鐘後移除。
 
 ```
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
@@ -147,18 +147,18 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 </table>
 ```
 
-## Send the notification
+## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>傳送通知
 
 
-Although locally sending a tile notification is simple, sending the notification to a primary or secondary tile is a bit different.
+雖然在本機傳送磚通知很簡單，但傳送通知到主要或次要磚則稍有不同。
 
-**Primary tile**
+**主要磚**
 
-To send a notification to a primary tile, use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
+若要將通知傳送到主要磚，請使用 [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) 為主要磚建立磚更新程式，並呼叫 "Update" 來傳送通知。 無論是否可見，您的應用程式主要磚一律會存在，因此即使未釘選它，也可以傳送通知給它。 如果使用者之後釘選您的主要磚，屆時就會顯示您傳送的通知。
 
-This code example sends a notification to a primary tile.
+這個程式碼範例會傳送通知到主要磚。
 
-
+<span codelanguage=""></span>
 ```
 <colgroup>
 <col width="100%" />
@@ -169,11 +169,11 @@ This code example sends a notification to a primary tile.
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
-**Secondary tile**
+**次要磚**
 
-To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
+若要傳送通知到次要磚，請先確定次要磚已經存在。 如果您嘗試為不存在的次要磚建立磚更新程式 (例如，如果使用者取消釘選次要磚) ，就會擲回例外狀況。 您可以使用 [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) 探索您的次要磚是否已釘選，然後再為次要磚建立磚更新程式並傳送通知。
 
-This code example sends a notification to a secondary tile.
+這個程式碼範例會傳送通知到次要磚。
 
 ```
 // If the secondary tile is pinned
@@ -187,14 +187,14 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 }
 ```
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
-## Clear notifications on the tile (optional)
+## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>清除磚上的通知 (選擇性)
 
 
-In most cases, you should clear a notification once the user has interacted with that content. For example, when the user launches your app, you might want to clear all the notifications from the tile. If your notifications are time-bound, we recommend that you set an expiration time on the notification instead of explicitly clearing the notification.
+在大部分情況下，在使用者與通知內容互動後就該清除通知。 例如，使用者啟動您的應用程式後，您可能要清除磚的所有通知。 如果通知有時間限制，建議您設定通知的到期時間，而不是明確清除通知。
 
-This code example clears the tile notification.
+這個程式碼範例會清除磚通知。
 
 ```
 TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
@@ -203,28 +203,28 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 </table>
 ```
 
-For a tile with the notification queue enabled and notifications in the queue, calling the Clear method empties the queue. You can't, however, clear a notification via your app's server; only the local app code can clear notifications.
+對於啟用了通知佇列的磚以及佇列中的通知，請呼叫 Clear 方法清除佇列。 不過，您無法透過您的應用程式伺服器清除通知；只有本機應用程式程式碼才可以清除通知。
 
-Periodic or push notifications can only add new notifications or replace existing notifications. A local call to the Clear method will clear the tile whether or not the notifications themselves came via push, periodic, or local. Scheduled notifications that haven't yet appeared are not cleared by this method.
+定期或推播通知只能新增通知或取代現有的通知。 不論通知本身的來源是推播、定期或本機，本機呼叫 Clear 方法將會清除磚。 這個方法不會清除尚未顯示的排程通知。
 
-![tile with notification and tile after being cleared](images/sending-local-tile-03.png)
+![含有通知的磚與清除後的磚](images/sending-local-tile-03.png)
 
-## Next steps
-
-
-**Using the notification queue**
-
-Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
-
-**Other notification delivery methods**
-
-This article shows you how to send the tile update as a notification. To explore other methods of notification delivery, including scheduled, periodic, and push, see [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md).
-
-**XmlEncode delivery method**
-
-If you're not using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), this notification delivery method is another alternative.
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>後續步驟
 
 
+**使用通知佇列**
+
+您已經完成第一次的磚更新，現在可以透過啟用[通知佇列](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)來擴充磚的功能。
+
+**其他通知傳遞方法**
+
+本文說明如何以通知傳送磚更新。 若要探索其他通知傳遞方法，包括排程、定期及推播，請參閱[傳遞通知](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
+
+**XmlEncode 傳遞方法**
+
+如果您不是使用 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)，這個通知傳遞方法是另一個替代方案。
+
+<span codelanguage=""></span>
 ```
 <colgroup>
 <col width="100%" />
@@ -243,19 +243,19 @@ public string XmlEncode(string text)
 }
 ```
 
-## Code examples without NotificationsExtensions
+## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>不含 NotificationsExtensions 的程式碼範例
 
 
-If you prefer to work with raw XML instead of the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package, use these alternate code examples to first three examples provided in this article. The rest of the code examples can be used either with [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) or with raw XML.
+如果您偏好使用原始的 XML 而非 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 套件，請將這些替代程式碼範例運用到本文的前三個範例。 其餘的程式碼範例則可搭配 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 或原始 XML 使用。
 
-Add namespace declarations
+加入命名空間宣告
 
 ```
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
-Create the notification content
+建立通知內容
 
 ```
 // In a real app, these would be initialized with actual data
@@ -288,7 +288,7 @@ string content = $@"
 </tile>";
 ```
 
-Create the notification
+建立通知
 
 ```
 // Load the string into an XmlDocument
@@ -299,17 +299,17 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## Related topics
+## <span id="related_topics"></span>相關主題
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions.Win10 (NuGet package)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)
-* [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)
+* [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
+* [彈性磚範本：結構描述和文件](tiles-and-notifications-adaptive-tiles-schema.md)
+* [NotificationsExtensions.Win10 (NuGet 套件)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
+* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Windows.UI.Notifications 命名空間**](https://msdn.microsoft.com/library/windows/apps/br208661)
+* [如何使用通知佇列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [傳遞通知](tiles-and-notifications-choosing-a-notification-delivery-method.md)
  
 
  
@@ -320,6 +320,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

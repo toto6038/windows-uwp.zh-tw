@@ -1,24 +1,27 @@
 ---
-description: "Learn how to use color, typography and motion to define your UWP app’s personality with Windows Dev Center UWP style guide."
+description: "使用 Windows 開發人員中心 UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP app 的特質。"
 keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
-title: UWP style guide - Windows app development
+title: "UWP 樣式指南 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
+ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
+ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 ---
-# UWP style guide
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+<div class="uwpd-banner">
+<h1 class="uwpd-ruledheader">UWP 樣式指南</h1>
+</div>
+
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  <p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
+  <p>教導您如何透過色彩、印刷樣式和動作定義您 UWP app 特質的設計指導方針與程式碼範例。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
+    ![色彩、圖示、動作、音效，和印刷樣式指導方針](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -27,12 +30,12 @@ ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Color](color.md)</b><br/>
-Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.</p>
+   <p><b>[色彩](color.md)</b><br/>
+色彩可提供 App 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。</p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>[Icons](icons.md)</b><br/>
-Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.</p>
+   <p><b>[圖示](icons.md)</b><br/>
+設計優良的圖示能與印刷格式以及其餘的設計語言協調搭配 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。</p>
   </div>
 </div>
 </div>
@@ -40,12 +43,12 @@ Good icons harmonize with typography and with the rest of the design language. T
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Motion](motion.md)</b><br/>
-Purposeful, well-designed animations bring apps to life and make the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.</p>
+   <p><b>[動作](motion.md)</b><br/>
+有意義且精心設計的動畫會讓應用程式更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。</p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>[Sound](sound.md)</b><br/>
-Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.</p>
+   <p><b>[音效](sound.md)</b><br/>
+音效有助於讓應用程式的使用者體驗變完整，並提供他們額外的音訊銳度，以符合所有平台的 Windows 操作方式。</p>
   </div>
 </div>
 </div>
@@ -53,20 +56,20 @@ Sound helps complete an application's user experience, and gives them that extra
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Typography](typography.md)</b><br/>
-As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.</p>
+   <p><b>[印刷樣式](typography.md)</b><br/>
+如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但印刷格式也負有版面配置元件的重要角色，這對設計的密度與複雜度，以及使用者對於該設計的經驗，都造成強大的影響。</p>
    <div class="uwpd-no-bullet-list">
    <ul>
-    <li>[Fonts](fonts.md)</li>
-    <li>[Segoe MDL2 icons](segoe-ui-symbol-font.md)</li>
+    <li>[字型](fonts.md)</li>
+    <li>[Segoe MDL2 圖示](segoe-ui-symbol-font.md)</li>
    </ul>
    </div>
   </div>
   
   
   <div class="side-by-side-content-right">
-   <p><b>[Styling controls](../controls-and-patterns/styling-controls.md)</b><br/>
-You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+   <p><b>[設定控制項的樣式](../controls-and-patterns/styling-controls.md)</b><br/>
+您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
   </div>
 </div>
 </div>
@@ -74,6 +77,6 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

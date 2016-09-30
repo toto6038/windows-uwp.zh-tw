@@ -1,24 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
-description: Learn how to handle the events of the AdControl class.
-title: AdControl events in C#
+description: "了解如何處理 AdControl 類別的事件。"
+title: "C 中的 AdControl 事件#"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 969d668c89b40e37245a8168879842159b4f5c14
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f92cbbb00a064ce7569d44ad952838df4d21ac8c
 
 ---
 
-# AdControl events in C\# #  
+# C\ 中的 AdControl 事件# #  
 
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 XAML 中的 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [XAML 屬性範例](xaml-properties-example.md)。
 
-The following examples demonstrate how to handle the events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class. These examples assume that you have previously assigned the event handlers to the **AdControl** events in XAML. For more information about how to do this, see [XAML properties example](xaml-properties-example.md).
+如需處理 C# 中事件的詳細資訊，請參閱[事件與路由事件概觀 (使用 C#/VB/C++ 和 XAML 的通用 Windows app)](http://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-For more information about handling events in C#, see [Events and routed events overview (Universal Windows apps using C#/VB/C++ and XAML)](http://msdn.microsoft.com/library/windows/apps/hh758286).
-
-## Examples
+## 範例
 
 
 ``` syntax
@@ -40,18 +40,18 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 }
 ```
 
-## Related topics
+## 相關主題
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
-* [AdControl error handling](adcontrol-error-handling.md)
-* [RoutedEventArgs Class](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
-
- 
+* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [AdControl 錯誤處理](adcontrol-error-handling.md)
+* [RoutedEventArgs 類別](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO2-->
 
 

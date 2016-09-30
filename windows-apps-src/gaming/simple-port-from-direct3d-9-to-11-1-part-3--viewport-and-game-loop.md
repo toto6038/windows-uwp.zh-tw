@@ -1,42 +1,42 @@
 ---
 author: mtoepke
-title: Port the game loop
-description: Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an IFrameworkView to control a full-screen CoreWindow.
+title: "移植遊戲迴圈"
+description: "說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 IFrameworkView 以控制全螢幕的 CoreWindow。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
+ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 
 ---
 
-# Port the game loop
+# 移植遊戲迴圈
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Summary**
+**摘要**
 
--   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Part 3: Port the game loop
-
-
-Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Part 3 of the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
-
-## Create a window
+-   [第一部分：初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [第二部分：轉換轉譯架構](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   第三部分：移植遊戲迴圈
 
 
-To set up a desktop window with a Direct3D 9 viewport, we had to implement the traditional windowing framework for desktop apps. We had to create an HWND, set the window size, provide a window processing callback, make it visible, and so on.
+說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 以控制全螢幕的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第三部分。
 
-The UWP environment has a much simpler system. Instead of setting up a traditional window, a Windows Store game using DirectX implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) inside the app container.
+## 建立視窗
 
-> **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+
+若要使用 Direct3D 9 檢視區來設定桌面視窗，必須針對傳統型應用程式實作傳統視窗架構。 我們過去必須建立 HWND、設定視窗大小、提供視窗處理回呼、讓它變成可見，以及其他動作等等。
+
+UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Windows 市集遊戲會實作 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，而不是設定傳統視窗。 為了 DirectX app 與遊戲存在的這個介面，可直接在 app 容器內的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中執行。
+
+> **注意** Windows 會將受管理的指標提供給諸如來源應用程式物件與 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的資源。 See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
  
 
-Your "main" class needs to inherit from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) and implement the five **IFrameworkView** methods: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). In addition to creating the **IFrameworkView**, which is (essentially) where your game will reside, you need to implement a factory class that creates an instance of your **IFrameworkView**. Your game still has an executable with a method called **main()**, but all main can do is use the factory to create the **IFrameworkView** instance.
+您的 "main" 類別需要繼承自 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，並實作五種 **IFrameworkView** 方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 及 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 除了建立 **IFrameworkView** (這 (基本上) 將是您遊戲所在的位置)，您還需要實作 Factory 類別，以建立 **IFrameworkView** 的執行個體。 您的遊戲仍含有名稱為 **main()** 方法的可執行檔，但是所有的 main 都會使用 Factory 來建立 **IFrameworkView** 執行個體。
 
-Main function
+Main 函式
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -52,7 +52,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-IFrameworkView factory
+IFrameworkView Factory
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -69,12 +69,12 @@ public:
 };
 ```
 
-## Port the game loop
+## 移植遊戲迴圈
 
 
-Let's look at the game loop from our Direct3D 9 implementation. This code exists in the app's main function. Each iteration of this loop processes a window message or renders a frame.
+讓我們看看來自 Direct3D 9 實作的遊戲迴圈。 這個程式碼存在於應用程式的 main 函式。 這個迴圈的每一個反覆項目都會處理視窗訊息或轉譯框架。
 
-Game loop in Direct3D 9 desktop game
+Direct3D 9 傳統型遊戲中的遊戲迴圈
 
 ```cpp
 while(WM_QUIT != msg.message)
@@ -98,13 +98,13 @@ while(WM_QUIT != msg.message)
 }
 ```
 
-The game loop is similar - but easier - in the UWP version of our game:
+在遊戲的 UWP 版本中，遊戲迴圈很類似 - 但更簡單：
 
-The game loop goes in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method (instead of **main()**) because our game functions within the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) class.
+遊戲迴圈會在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中執行 (而非 **main()**)，因為我們的遊戲會在 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 類別中運作。
 
-Instead of implementing a message handling framework and calling [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), we can call the [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method built in to our app window's [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). There's no need for the game loop to branch and handle messages - just call **ProcessEvents** and proceed.
+我們可以呼叫內建於應用程式視窗的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 的 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，而不需實作訊息處理架構並呼叫 [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943)。 遊戲迴圈不需要有分支和處理訊息 - 只需呼叫 **ProcessEvents** 並繼續。
 
-Game loop in Direct3D 11 Windows Store game
+Direct3D 11 Windows 市集遊戲中的遊戲迴圈
 
 ```cpp
 // Windows Store apps should not exit. Use app lifecycle events instead.
@@ -119,31 +119,31 @@ while (true)
 }
 ```
 
-Now we have a UWP app that sets up the same basic graphics infrastructure, and renders the same colorful cube, as our DirectX 9 example.
+現在，我們的 UWP app 已設定與 DirectX 9 範例相同的基本圖形基礎架構，以及轉譯相同的彩色立方體。
 
-## Where do I go from here?
+## 接下來該怎麼做
 
 
-Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
+將[移植 DirectX 11 常見問題集](directx-porting-faq.md)設定為書籤。
 
-The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
+DirectX UWP 範本包含可靠的 Direct3D 裝置基礎結構，且已準備好與您的遊戲搭配使用。 如需挑選正確範本的指導方針，請參閱[從範本建立 DirectX 遊戲專案](user-interface.md)。
 
-Visit the following in-depth Windows Store game game development articles:
+請參閱下列深入探討的 Windows 市集遊戲開發文章：
 
--   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Audio for games](working-with-audio-in-your-directx-game.md)
--   [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md)
-
- 
+-   [逐步解說：使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
+-   [遊戲的音訊](working-with-audio-in-your-directx-game.md)
+-   [適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

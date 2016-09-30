@@ -1,103 +1,50 @@
 ---
 author: jnHs
-Description: The Packages page is where you upload all of the package files (.xap, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step.
-title: Upload app packages
+Description: "套件 頁面是為您要提交的應用程式上傳所有套件檔案 (.xap、.appx、.appxupload 和/或 .appxbundle) 的所在之處。 您可以在此步驟中，為您的應用程式對象上傳適用於任何作業系統的套件。"
+title: "上傳應用程式套件"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 translationtype: Human Translation
-ms.sourcegitcommit: 9440d1343141edf92f5d9e8aafc63ca88b176354
-ms.openlocfilehash: 2ca755568ff3697d5e0fe94900799f9dd98b7f72
+ms.sourcegitcommit: 7f1a40f33a3137e4e0ded674b5bfdf35f11135dc
+ms.openlocfilehash: f628820747f51f7200e2748c2c3f41b58455b2fa
 
 ---
 
-# Upload app packages
+# 上傳應用程式套件
 
 
-The **Packages** page is where you upload all of the package files (.appx, .appxupload, .appxbundle, and/or .xap) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step. When a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device. After you upload your packages, you’ll see a table indicating [which packages will be offered to specific Windows 10 device families](#device-family-availability) (and earlier OS versions, if applicable) in ranked order.
+\[套件\] 頁面是為您要提交的 app 上傳所有套件檔案 (.xap、.appx、.appxupload 和/或 .appxbundle) 所在之處。 您可以在此步驟中，為您的應用程式對象上傳適用於任何作業系統的套件。 當客戶下載您的 app 時，市集將會查看您所有 app 的套件，並自動為每個客戶提供最適合他們的裝置的套件。
 
-For details about what a package includes and how it must be structured, see [App package requirements](app-package-requirements.md). You'll also want to learn about [how version numbers may impact which packages are delivered to specific customers](package-version-numbering.md), and [how packages are distributed to different operating systems](guidance-for-app-package-management.md).
+如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要了解[版本號碼可能會影響哪個套件傳遞給特定客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
 
-## Uploading packages to your submission
-
-To upload packages, drag them into the upload field or click to browse your files. The **Packages** page will let you upload .xap, .appx, .appxupload, and/or .appxbundle files.
-
-If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
-
-> **Important**  For Windows 10, you should always upload the .appxupload file here, not the .appx or .appxbundle. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](../packaging/packaging-uwp-apps.md).
-
-If we detect issues with your packages while validating them, you'll need to remove the package, fix the issue, and then try uploading it again. For more info, see [Resolve package upload errors](resolve-package-upload-errors.md).
-
-You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
-
-## Device family availability
-
-After your packages have been successfully uploaded, the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether to offer the submission to customers on specific Windows 10 device families.
-
-> **Note** If you haven't uploaded packages yet, the **Device family availability** section will show the Windows 10 device families with checkboxes to indicate whether or not the submission will be offered to customers on those device families. The table will not appear until you upload your packages.
-
-You'll also see a checkbox where you can indicate whether you want to allow Microsoft to make the app available to future Windows 10 device families. We recommend keeping this box checked so that your app can be available to more potential customers as new device families are introduced.
-
-### Choosing which device families to support
-
-You can uncheck the box for any Windows 10 device family if you don’t want to offer your submission to customers on that type of device. If a device family’s box is unchecked, new customers on that type of device won’t be able to acquire the app (though customers who already have the app can still use it, and will get any updates you submit). 
-
-> **Note** There are no checkboxes for **Windows 8/8.1** and **Windows Phone 8.x and earlier**. If your submission includes packages that can run on those OS versions, those packages will be made available to customers. To stop offering your app to customers on earlier OS versions, you’ll need to remove the corresponding packages from your submission.
-
-If your app supports the mobile and desktop device families, we recommend keeping the boxes for **Windows 10 Mobile** and **Windows 10 Desktop** checked unless you have a specific reason to limit the types of Windows 10 devices which can acquire your app. For example, you may have created Windows Universal packages, but you know that you still need to test some issues with the app on mobile devices. To prevent new customers from downloading the app on Windows 10 mobile devices, you can uncheck the **Windows 10 Mobile** checkbox here. Then if you later decide you're ready to offer it to customers on Windows 10 mobile devices, you can create a new submission with the **Windows 10 Mobile** box checked.
-
-If your app is not a game (or if it is a game and you have gone through the [concept approval](../gaming/concept-approval.md) process), and your submission includes UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the **Windows 10 Xbox** box to offer the app to customers on Xbox. 
-
-> **Important** In order for your app to launch on Xbox devices, your package must be compiled with Windows SDK version 14393 or higher. However, if you check Windows 10 Xbox, your highest-versioned package that’s applicable to Xbox (that is, a package that targets the Xbox or Universal device family) will always be offered to customers on Xbox, even if it is compiled with an earlier SDK version. Because of this, it’s critical to ensure that the highest-versioned package applicable to Xbox is compiled with Windows SDK version 14393 or higher. If it is not, you will see an error message indicating that Xbox customers will not be able to launch your app. 
-> 
-> To resolve this error, you can do one of the following:
-> - Replace the applicable packages with new ones that are compiled using Windows SDK version 14393 or higher.
-> - If you already have a package that supports Xbox and is compiled with Windows SDK version 14393 or higher, increase its version number so that it is the highest-versioned package in the submission.
-> - Uncheck the box for **Windows 10 Xbox**.
->   
-> If you are still unable to resolve the issue, contact support.
-
-If you have tested your app to ensure that it runs appropriately on Microsoft HoloLens, you can also check the **Windows 10 Holographic** box to offer the app to HoloLens customers. For more about building, testing, and publishing holographic apps, see the [Windows Holographic Development Overview](http://dev.windows.com/holographic/development_overview).
-
-> **Important** To completely prevent a specific Windows 10 device family from getting your app, you need to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to target only the device family that you want to support (i.e., Windows.Mobile or Windows.Desktop), rather than leaving it as the Windows.Universal value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default.
-
-It's important to be aware that selections you make here apply to new acquisitions only. Anyone who already has your app can continue to use it and will get any updates you submit, even if you remove that device family here. This applies even to customers who acquired your app before upgrading to Windows 10. For example, if you have a published app with Windows Phone 8.1 packages, and you later add a Windows 10 (UWP) package to the same app that targets the universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Windows 10 Mobile** (since this is not a new acquisition, but an update). However, if you don't provide any Windows 10 (UWP) package that targets the universal or mobile device family, your Windows 10 mobile customers will remain on the Windows Phone 8.1 package.
-
-For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/dn894631) and [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
-
-### Understanding ranking
-
-Aside from letting you indicate which Windows 10 device families can download your submission, this section also shows you which of your specific packages will be made available to specific device families. If you have more than one package that can run on a certain device family, the table will indicate the order in which packages will be offered, based on the version numbers of the packages. For more info about how the Store ranks packages based on version numbers, see [Package version numbering](package-version-numbering.md). 
-
-For example, say that you have two packages: Package_A.appxupload and Package_B.appxupload. For a given device family, if Package_A.appxupload is ranked 1 and Package_B.appxupload is ranked 2, that means when a customer on that type of device acquires your app, the Store will first attempt to deliver Package_A.appxupload. If the customer’s device is unable to run Package_A.appxupload, the Store will offer Package_B.appxupload. If the customer’s device can’t run any of the packages for that device family—for example, if the **MinVersion** your app supports is higher than the version on the customer’s device—the customer won’t be able to download the app on that device.
-
-> **Note** The version numbers in .xap packages are not considered when determining which package to provide a given customer. Because of this, if you have more than one .xap package of equal rank, you will see an asterisk rather than a number, and customers may receive either package. To update customers from one .xap package to a newer one, make sure to remove the older .xap in the new submission.
+## 將套件上傳到您的提交
 
 
+若要上傳套件，請將套件拖曳到欄位內，或按一下以瀏覽您的檔案。 \[套件\] 頁面可讓您上傳 .xap、.appx、.appxupload 和/或 .appxbundle 檔案。
 
-## Package details
+當您建立新的提交時，您將會在 [套件](package-flights.md)頁面上看到一個下拉式清單，其中包含從其中一個套件正式發行前小眾測試版複製套件的選項。 選取含有您要納入之套件的套件正式發行前小眾測試版。 然後，您可選取其任一或所有套件，以包含在此提交中。
 
-After your packages have been successfully uploaded, we'll list them, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click **Show details**.
+> **重要事項**：針對 Windows 10，您應一律在此處上傳 .appxupload 檔案，而非 .appx 或 .appxbundle。 如需針對市集封裝 UWP 應用程式詳細資訊，請參閱[封裝適用於 Windows 10 的通用 Windows 應用程式](../packaging/packaging-uwp-apps.md)。
 
-If you are using [Windows ad mediation](../monetize/use-ad-mediation-to-maximize-revenue.md), you'll also see a link to configure ad mediation for each package.
+如果我們在進行驗證時偵測到您套件的問題時，您必須移除套件、修正問題，然後再重新上傳。 如需詳細資訊，請參閱[解決套件上傳錯誤](resolve-package-upload-errors.md)。
 
-If you need to remove a package from your submission, click the **Remove** link at the bottom of each package's **Details** section.
+您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
 
-## Removing redundant packages
+## 套件詳細資料
 
-If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.
 
-When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.
+成功上傳套件之後，我們將會依照目標作業系統分組，列出這些套件。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、app 功能，以及檔案大小的詳細資訊，可以按一下 **詳細資料**。
 
-## Gradual package rollout
+如果您使用 [Windows 廣告流量分配](../monetize/use-ad-mediation-to-maximize-revenue.md)，您也會看到可以為每個套件設定廣告流量分配的連結。
 
-If your submission is an update to a previously published app, you'll see a checkbox that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data  to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
+如果您需要移除您提交的某個套件，可以按一下每個套件的 \[詳細資料\] 區段底部的 \[移除\] 連結。
 
-For more info, see [Gradual package rollout](gradual-package-rollout.md).
+## 移除重複的套件
 
-## Mandatory update
 
-If your submission is an update to a previously published app, you'll see a checkbox that says **Make this update mandatory**. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.
+如果我們偵測到您的一或多個套件重複，我們將顯示一個警告，建議您從此提交中移除重複的套件。 當您先前已上傳套件，而現在又提供支援相同客戶群的更新版本套件時，通常會發生這個狀況。 在此情況下，客戶將不會取得重複的套件，因為您有更好 (更高版本) 的套件可以支援這些客戶。
 
-For more info, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).
+當我們偵測到您有重複的套件時，我們將提供一個自動從此提交移除所有重複套件的選項。 如果需要，您也可以從此提交個別移除套件。
+
 
  
 
@@ -107,6 +54,6 @@ For more info, see [Download and install package updates for your app](../packag
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO5-->
 
 

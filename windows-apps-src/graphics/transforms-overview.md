@@ -5,7 +5,7 @@ title: "轉換概觀"
 description: "了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段&amp;\\#160;API 中使用轉換。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 6534e7337ecaa081d0bb05335425f5b58557ab32
+ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 
 ---
 
@@ -139,6 +139,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

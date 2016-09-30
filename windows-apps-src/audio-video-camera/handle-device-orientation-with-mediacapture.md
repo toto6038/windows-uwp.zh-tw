@@ -1,123 +1,113 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "本文示範如何在使用協助程式類別擷取相片和視訊時處理裝置方向。"
-title: "使用 MediaCapture 處理裝置方向"
-translationtype: Human Translation
-ms.sourcegitcommit: 9f1d65d73bdf50697d75b0d57429aed66898e1b5
-ms.openlocfilehash: eb6487e7f2c19a8227320c5a7f087e4b3c3c6270
-
+description: This article shows you how to handle device orientation when capturing photos and videos by using a helper class.
+title:  Handle device orientation with mediacapture
 ---
 
-# 使用 MediaCapture 處理裝置方向
-當您的 app 擷取要在 app 以外檢視的相片或影片時 (例如，儲存到使用者裝置上的檔案或線上分享)，請務必使用正確的方向中繼資料來為影像編碼，如此一來，當其他 app 或裝置顯示該影像時，就能以正確方向顯示它。 判斷要在媒體檔案中包含的正確方向資料是一項複雜的工作，因為有數個變數需要考量，包括裝置底座的方向、顯示器的方向，以及相機在底座上的位置 (其為前方或後方相機)。 
+# Handle device orientation with mediacapture
+When your app captures a photo or video that is intended to be viewed outside of your app, such as saving to a file on the user's device or sharing online, it's important that you encode the image with the proper orientation metadata so that when another app or device displays the image, it is oriented correctly. Determining the correct orientation data to include in a media file can be a complex task because there are several variables to consider, including the orientation of the device chassis, the orientation of the display, and the placement of the camera on the chassis (whether it is a front or back-facing camera). 
 
-為了簡化處理方向的程序，我們建議使用協助程式類別 **CameraRotationHelper**，本文結尾將提供此類別的完整定義。 您可以將這個類別新增到專案，然後依照本文的步驟來將方向支援新增到您的相機 app。 此協助程式類別也可讓您更容易在相機 UI 中旋轉控制項，因此，從使用者觀點來看時就能正確呈現它們。
+In order to simplify the process of handling orientation, we recommend using a helper class, **CameraRotationHelper**, for which the full definition is provided at the bottom of this article. You can add this class to your project and then follow the steps described below to add orientation support to your camera app. The helper class also makes it easier for you to rotate the controls in your camera UI so that they are rendered correctly from the user's point of view.
 
 > [!NOTE] 
-> 本文是以[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文中所討論的程式碼與概念為基礎。 我們建議您先熟悉使用 **MediaCapture** 的基本概念，然後再將方向支援新增到 app。
+> This article is builds on the code and concepts discussed in the article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md). It is recommended that you familiarize yourself with the basic concepts of using the **MediaCapture** class before adding orientation support to your app.
 
-## 本文中使用的命名空間
-本文中的範例程式碼會使用來自下列命名空間的 API，您應該在程式碼中包含這些命名空間。 
+# Namespaces used in this article
+The example code in this article uses APIs from the following namespaces which you should include in your code. 
 
 [!code-cs[OrientationUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOrientationUsing)]
 
-將方向支援新增到 app 的第一個步驟是鎖定顯示器，讓它不會在裝置旋轉時自動旋轉。 對於大多數類型的 app 而言，自動 UI 旋轉都能運作順暢，但當相機預覽旋轉時，對使用者來說，並不是直接易懂的。 藉由將 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) 屬性設為 [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) 來鎖定顯示方向。 
+The first step in adding orientation support to your app is to lock the display so that it doesn't automatically rotate when the device is rotated. Automatic UI rotation works well for most types of apps, but it is unintuitive for users when the camera preview rotates. Lock the display orientation by setting the [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) property to [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations). 
 
 [!code-cs[AutoRotationPreference](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAutoRotationPreference)]
 
-## 追蹤相機裝置位置
-若要計算所擷取媒體的正確方向，您的 app 必須判斷相機裝置在底座上的位置。 新增布林值成員變數，以追蹤相機是否為外接式裝置，例如 USB 網路攝影機。 新增另一個布林值變數，以追蹤是否應該對預覽進行鏡像處理，如果使用的是前方相機，即為此情況。 此外，新增用來儲存 **DeviceInformation** 物件的變數，此物件代表所選取的相機。
+# Tracking the camera device location
+In order to calculate the correct orientation for captured media, you app must determine the location of the camera device on the chassis. Add a boolean member variable to track whether the camera is external to the device, such as a USB web cam. Add another boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used. Also, add a variable for storing a **DeviceInformation** object which represents the selected camera.
 
 [!code-cs[CameraDeviceLocationBools](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCameraDeviceLocationBools)]
 [!code-cs[DeclareCameraDevice](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareCameraDevice)]
 
-## 選取相機裝置並初始化 MediaCapture 物件
-[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何只利用幾行程式碼來初始化 **MediaCapture** 物件。 為了支援相機方向，我們將在初始化程序中新增數個步驟。
+# Select a camera device and initialize the MediaCapture object
+The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to initialize the **MediaCapture** object with just a couple of lines of code. To support camera orientation, we will add a few more steps to the initialization process.
 
-首先，呼叫 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync)，其會傳入裝置選取器 [**DeviceClass.VideoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceClass)，以取得所有可用視訊擷取裝置的清單。 接下來，選取清單中的第一個裝置，其中已知相機的面板位置，而且它符合所提供的值，此範例中的相機為前方相機。 如果在所需的面板上找不到相機，即會使用第一台或預設可用的相機。
+First, call [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync) passing in the device selector [**DeviceClass.VideoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceClass) to get a list of all available video capture devices. Next, select the first device in the list where the panel location of the camera is known and where it matches the supplied value, which in this example is front-facing camera. If no camera is found on the desired panel, the first or default available camera is used.
 
-如果找到相機裝置，即會建立新的 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings) 物件，並將 [**VideoDeviceId**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.VideoDeviceId) 屬性設為所選取的裝置。 接下來，建立 MediaCapture 物件並呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync)，其會傳入設定物件以告知系統使用所選取的相機。
+If a camera device is found, a new [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings) object is created and the [**VideoDeviceId**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.VideoDeviceId) property is set to the selected device. Next, create the MediaCapture object and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync), passing in the settings object to tell the system to use the selected camera.
 
-最後，檢查所選取的裝置面板是否為 null 或未知。 若是如此，則相機為外接式裝置，這表示它的旋轉與裝置旋轉無關。 如果面板是已知且位於裝置底座正面，我們就知道應該要對預覽進行鏡像處理，因此，會設定追蹤此情況的變數。
+Finally, check to see if the selected device panel is null or unknown. If so, the camera is external which means that it's rotation is unrelated to the rotation of the device. If the panel is known and is on the front of the device chassis, then we know the preview should be mirrored and so the variable tracking this is set.
 
 [!code-cs[InitMediaCaptureWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCaptureWithOrientation)]
-## 初始化 CameraRotationHelper 類別
+## Initialize the CameraRotationHelper class
 
-現在，我們開始使用 **CameraRotationHelper** 類別。 宣告類別成員變數來儲存物件。 呼叫建構函式，其會傳入所選取相機的機殼位置。 協助程式類別會使用這項資訊來計算擷取媒體、預覽資料流和 UI 的正確方向。 為協助程式類別的 **OrientationChanged** 事件登錄處理常式，它將會在我們需要更新 UI 或預覽資料流的方向時引發。
+Now we begin using the **CameraRotationHelper** class. Declare a class member variable to store the object. Call the constructor, passing in the enclosure location of the selected camera. The helper class uses this information to calculate the correct orientation for captured media, the preview stream, and the UI. Register a handler for the helper class's **OrientationChanged** event, which will be raised when we need to update the orientation of the UI or the preview stream.
 
 [!code-cs[DeclareRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareRotationHelper)]
 
 [!code-cs[InitRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitRotationHelper)]
 
-## 在相機預覽資料流中新增方向資料
-將正確的方向新增到預覽資料流的中繼資料，不會影響為使用者顯示預覽的方式，也能協助系統為擷取自預覽資料流的畫面進行正確編碼。
+## Add orientation data to the camera preview stream
+Adding the correct orientation to the metadata of the preview stream does not affect how the preview appears to the user, but it helps the system encode any frames captured from the preview stream correctly.
 
-您可以藉由呼叫 [**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync) 來啟動相機預覽。 執行此動作之前，請檢查成員變數，以查看是否應該對預覽進行鏡像處理 (適用於前方相機)。 如果是，將 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement) 的 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性 (在這個範例中，名稱為 *PreviewControl*) 設為 [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection)。 啟動預覽之後，呼叫協助程式方法 **SetPreviewRotationAsync** 來設定預覽旋轉。 以下是此方法的實作。
+You start the camera preview by calling [**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync). Before you do this, check the member variable to see if the preview should be mirrored (for a front-facing camera). If so, set the [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) property of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement), named *PreviewControl* in this example, to [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection). After starting the preview, call the helper method **SetPreviewRotationAsync** to set the preview rotation. The implementation of this method is shown below.
 
 [!code-cs[StartPreviewWithRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewWithRotationAsync)]
 
-我們會在個別方法中設定預覽旋轉，讓它可以在手機旋轉時更新，而不需重新初始化預覽資料流。 如果相機是外接式裝置，就不會採取任何動作。 否則會呼叫 **CameraRotationHelper** 方法 **GetCameraPreviewOrientation**，並傳回預覽資料流的適當方向。 
+We set the preview rotation in a separate method so that it can be updated when the phone orientation changes without reinitializing the preview stream. If the camera is external to the device, then no action is taken. Otherwise, the **CameraRotationHelper** method, **GetCameraPreviewOrientation**, is called and returns the proper orientation for the preview stream. 
 
-若要設定中繼資料，藉由呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.VideoDeviceController.GetMediaStreamProperties) 來擷取預覽資料流屬性。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx)，但在 C# 中，您必須手動指定 GUID 值。 
+To set the metadata, the preview stream properties are retreived by calling [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.VideoDeviceController.GetMediaStreamProperties). Next, create the GUID representing the Media Foundation Transform (MFT) attribute for video stream rotation. In C++ you can use the constant [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx), but in C# you must manually specify the GUID value. 
 
-將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定預覽旋轉做為值。 這個屬性預期值是以逆時針旋轉度數的單位來表示，因此可使用 **CameraRotationHelper** 方法 **ConvertSimpleOrientationToClockwiseDegrees** 來轉換簡單的方向值。 最後，呼叫 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet))，將新的旋轉屬性套用到資料流。
+Add a property value to the stream properties object, specifying the GUID as the key and the preview rotation as the value. This property expects values to be in units of counterclockwise degrees, so the **CameraRotationHelper** method **ConvertSimpleOrientationToClockwiseDegrees** is used to convert the simple orientation value. Finally, call [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet)) to apply the new rotation property to the stream.
 
 [!code-cs[SetPreviewRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSetPreviewRotationAsync)]
 
-接下來，新增適用於 **CameraRotationHelper.OrientationChanged** 事件的處理常式。 此事件會傳入引數，可讓您知道是否需要旋轉預覽資料流。 如果裝置的方向已變更為朝上或朝下，則這個值將會是 false。 如果需要預覽旋轉，請呼叫 **SetPreviewRotationAsync** (已於先前定義)。
+Next, add the handler for the **CameraRotationHelper.OrientationChanged** event. This event passes in an argument that lets you know whether the preview stream needs to be rotated. If the orientation of the device was changed to face up or face down, this value will be false. If the preview does need to be rotated, call **SetPreviewRotationAsync** which was defined above.
 
-接著，在 **OrientationChanged** 事件處理常式中，視需要更新您的 UI。 藉由呼叫 **GetUIOrientation**，來取得協助程式類別目前建議的 UI 方向，並將值轉換為順時針旋轉度數，這適用於 XAML 轉換。 從方向值建立 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.RotateTransform)，並設定 XAML 控制項的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.RenderTransform) 屬性。 根據您的 UI 配置，除了簡單旋轉控制項之外，您可能還需要在此處進行額外調整。 此外請記住，UI 的所有更新都必須在 UI 執行緒上進行，因此，您應該將這個程式碼放置於 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler)) 的呼叫內。  
+Next, in the **OrientationChanged** event handler, update your UI if needed. Get the current recommended UI orientation from the helper class by calling **GetUIOrientation** and convert the value to clockwise degrees, which is used for XAML transforms. Create a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.RotateTransform) from the orientation value and set the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.RenderTransform) property of your XAML controls. Depending on your UI layout, you may need to make additional adjustments here in addition to simply rotating the controls. Also, remember that all updates to your UI must be made on the UI thread, so you should place this code inside a call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler)).  
 
 [!code-cs[HelperOrientationChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetHelperOrientationChanged)]
 
-## 使用方向資料擷取相片
-[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)一文示範如何將相片擷取到檔案，方法是先擷取到記憶體內部的資料流，然後使用解碼器讀取來自資料流的影像資料，並使用編碼器來將影像資料轉碼為檔案。 取自 **CameraRotationHelper** 類別的方向資料，可以在轉碼作業期間新增到影像檔案。
+## Capture a photo with orientation data
+The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to capture a photo to a file by capturing first to an in-memory stream and then using a decoder to read the image data from the stream and an encoder to transcode the image data to a file. Orientation data, obtained from the **CameraRotationHelper** class, can be added to the image file during the transcoding operation.
 
-在下列範例中，會呼叫 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) 來將相片擷取到 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream)，並從資料流中建立 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder)。 接下來，建立並開啟 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) 以擷取 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) 來寫入檔案。 
+In the example below, a photo is captured to an [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) with a call to [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) and a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) is created from the stream. Next a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) is created and opened to retreive an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) for writing to the file. 
 
-進行檔案轉碼之前，會從協助程式類別方法 **GetCameraCaptureOrientation** 擷取相片的方向。 這個方法會傳回 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) 物件，其會利用協助程式方法 **ConvertSimpleOrientationToPhotoOrientation** 轉換為 [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) 物件。 接著，建立新的 **BitmapPropertySet** 物件，以及新增機碼為 "System.Photo.Orientation" 且值為相片方向的屬性 (以 **BitmapTypedValue** 表示)。 "System.Photo.Orientation" 可以中繼資料形式新增到影像檔案的數個 Windows 屬性之一。 如需所有相片相關的屬性清單，請參閱 [**Windows 屬性 - 相片**](https://msdn.microsoft.com/en-us/library/windows/desktop/ff516600)。 如需在影像中使用中繼資料的詳細資訊，請參閱[**影像中繼資料**](image-metadata.md)。
+Before transcoding the file, the photo's orientation is retrieved from the helper class method **GetCameraCaptureOrientation**. This method returns a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) object which is converted to a [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) object with the helper method **ConvertSimpleOrientationToPhotoOrientation**. Next, a new **BitmapPropertySet** object is created and a property is added where the key is "System.Photo.Orientation" and the value is the photo orientation, expressed as a **BitmapTypedValue**. "System.Photo.Orientation" is one of many Windows properties that can be added as metadata to an image file. For a list of all of the photo-related properties, see [**Windows Properties - Photo**](https://msdn.microsoft.com/en-us/library/windows/desktop/ff516600). For more information about workine with metadata in images, see [**Image metadata**](image-metadata.md).
 
-最後，藉由呼叫 [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/) 來為編碼器設定包含方向資料的屬性集，並呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync) 來為影像轉碼。
+Finally, the property set which includes the orientation data is set for the encoder by with a call to [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/) and the image is transcoded with a call to [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync).
 
 [!code-cs[CapturePhotoWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCapturePhotoWithOrientation)]
 
-## 使用方向資料擷取視訊
-基本的視訊擷取說明請參閱[**使用 MediaCapture 進行基本相片、視訊和音訊的擷取**](basic-photo-video-and-audio-capture-with-mediacapture.md)。 將方向資料新增到所擷取視訊的編碼，是使用先前將方向資料新增到預覽資料流的相關章節中所述的相同方式來完成。
+## Capture a video with orientation data
+Basic video capture is described in the article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md). Adding orientation data to the encoding of the captured video is done using the same technique as described above in the section on adding orientation data to the preview stream.
 
-在下列範例中，會建立一個檔案來寫入所擷取的視訊。 使用靜態方法 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) 來建立 MP4 編碼設定檔。 藉由呼叫 **GetCameraCaptureOrientation**，從 **CameraRotationHelper** 類別取得視訊的正確方向。由於旋轉屬性需要以逆時針旋轉度數表示方向，因此，會呼叫 **ConvertSimpleOrientationToClockwiseDegrees** 協助程式方法來轉換方向值。 接著，建立代表視訊資料流旋轉的媒體基礎轉換 (MFT) 屬性的 GUID。 在 C++ 中，您可以使用常數 [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx)，但在 C# 中，您必須手動指定 GUID 值。 將屬性值新增到資料流屬性物件，指定 GUID 做為機碼並指定旋轉做為值。 最後會呼叫 [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile))，開始利用方向資料來為錄製的視訊編碼。
+In the example below, a file is created to which the captured video will be written. An MP4 encoding profile is create using the static method [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4). The proper orientation for the video is obtained from the **CameraRotationHelper** class with a call to **GetCameraCaptureOrientation** Because the rotation property requires the orientation to be expressed in counterclockwise degrees, the **ConvertSimpleOrientationToClockwiseDegrees** helper method is called to convert the orientation value. Next, create the GUID representing the Media Foundation Transform (MFT) attribute for video stream rotation. In C++ you can use the constant [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx), but in C# you must manually specify the GUID value. Add a property value to the stream properties object, specifying the GUID as the key and the rotation as the value. Finally call [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) to begin recording video encoded with orientation data.
 
 [!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
 
-## CameraRotationHelper 完整的程式碼清單
-下列程式碼片段會列出 **CameraRotationHelper** 類別的完整程式碼，此類別會管理硬體方向感應器、為相片和視訊計算適當的方向值，並提供協助程式方法在不同 Windows 功能所使用的不同方向表示法之間進行切換。 如果您遵循上述文章中所示的指導方針，就可以將這個類別依原樣新增到您的專案，而不需進行任何變更。 當然，您可以隨意地自訂下列程式碼，以符合您的特定案例需求。
+## CameraRotationHelper full code listing
+The following code snippet lists the full code for the **CameraRotationHelper** class that manages the hardware orientation sensors, calculates the proper orientation values for photos and videos, and provides helper methods to convert between the different representations of orientation that are used by different Windows features. If you follow the guidance shown in the article above, you can add this class to your project as-is without having to make any changes. Of course, you can feel free to customize the code below to meet the needs of your particular scenario.
 
-這個協助程式類別會使用裝置的 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientationSensor) 來判斷裝置底座目前的方向，以及使用 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation) 類別來判斷顯示器目前的方向。 這其中每一個類別都提供會在目前方向變更時引發的事件。 掛接擷取裝置的面板 (前方、後方或外接式) 可用來判斷是否應該對預覽資料流進行鏡像處理。 此外，部分裝置支援的 [**EnclosureLocation.RotationAngleInDegreesClockwise**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.EnclosureLocation.RotationAngleInDegreesClockwise) 屬性，可用來判斷在底座上掛接相機的方向。
+This helper class uses the device's [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientationSensor) to determine the current orientation of the device chassis and the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation) class to determine the current orientation of the display. Each of these classes provide events that are raised when the current orientation changes. The panel on which the capture device is mounted - front-facing, back-facing, or external - is used to determine whether the preview stream should be mirrored. Also, the [**EnclosureLocation.RotationAngleInDegreesClockwise**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.EnclosureLocation.RotationAngleInDegreesClockwise) property, supported by some devices, is used to determine the orientation in which the camera is mounted on the chasses.
 
-下列方法可用來取得針對指定相機 app 工作所建議的方向值︰
+The following methods can be used to get recommended orientation values for the specified camera app tasks:
 
-* **GetUIOrientation** - 傳回相機 UI 元素的建議方向。
-* **GetCameraCaptureOrientation** - 傳回用來編碼至影像中繼資料的建議方向。
-* **GetCameraPreviewOrientation** - 傳回預覽資料流的建議方向，以提供更自然的使用者體驗。
+* **GetUIOrientation** - Returns the suggested orientation for camera UI elements.
+* **GetCameraCaptureOrientation** - Returns the suggested orientation for encoding into image metadata.
+* **GetCameraPreviewOrientation** - Returns the suggested orientation for the preview stream to provide a natural user experience.
 
 [!code-cs[CameraRotationHelperFull](./code/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs#SnippetCameraRotationHelperFull)]
 
 
 
-## 相關主題
+## Related topics
 
-* [相機](camera.md)
-* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+ 
 
- 
-
-
+ 
 
 
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

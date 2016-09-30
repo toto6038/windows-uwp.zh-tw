@@ -1,43 +1,43 @@
 ---
 author: TylerMSFT
-title: Launch an app for results
-description: Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results.
+title: "啟動 app 以取得結果"
+description: "了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
+ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 
 ---
 
-# Launch an app for results
+# 啟動 app 以取得結果
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要 API**
 
 -   [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 -   [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
-Learn how to launch an app from another app and exchange data between the two. This is called *launching an app for results*. The example here shows you how to use [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) to launch an app for results.
+了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為「啟動 App 以取得結果」**。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 來啟動 App 以取得結果。
 
-New app-to-app communication APIs in Windows 10 make it possible for Windows apps (and Windows Web apps) to launch an app and exchange data and files. This enables you to build mash-up solutions from multiple apps. Using these new APIs, complex tasks that would have required the user to use multiple apps can now be handled seamlessly. For example, your app could launch a social networking app to choose a contact, or launch a checkout app to complete a payment process.
+在 Windows 10 中，新的 App 間通訊 API 讓 Windows App (以及 Windows Web App) 能夠使用它，來啟動某個 App 並交換資料與檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
 
-The app that you'll launch for results will be referred to as the launched app. The app that launches the app will be referred to as the calling app. For this example you will write both the calling app and the launched app.
+您將啟動以取得結果的 App 將稱為啟動的 App。 啟動該 App 的 App 將稱為呼叫的 App。 您將針對此範例撰寫呼叫的 app 和啟動的 app。
 
-## Step 1: Register the protocol to be handled in the app that you'll launch for results
+## 步驟 1：在您將啟動以取得結果的 App 中，登錄要處理的通訊協定
 
 
-In the Package.appxmanifest file of the launched app, add a protocol extension to the **&lt;Application&gt;** section. The example here uses a fictional protocol named **test-app2app**.
+在已啟動 App 的 Package.appxmanifest 檔案中，將通訊協定延伸模組新增到 **&lt;Application&gt;** 區段。 下列範例會使用名為 **test-app2app** 的虛構通訊協定。
 
-The **ReturnResults** attribute in the protocol extension accepts one of these values:
+通訊協定延伸模組中的 **ReturnResults** 屬性會接受下列其中一個值：
 
--   **optional**—The app can be launched for results by using the [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) method, or not for results by using [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). When you use **optional**, the launched app must determine whether it was launched for results. It can do that by checking the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event argument. If the argument's [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) property returns [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693), or if the type of the event argument is [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), the app was launched via **LaunchUriForResultsAsync**.
--   **always**—The app can be launched only for results; that is, it can respond only to [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   **none**—The app cannot be launched for results; it can respond only to [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   **optional**—您可以使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 方法來啟動 app 以取得結果，或者使用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 來啟動 app 而不取得結果。 當您使用 **optional** 時，啟動的 app 必須判斷是否要啟動它來取得結果。 您可以藉由檢查 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件引數來執行這個動作。 如果引數的 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 屬性傳回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693)，或者事件引數的類型是 [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)，則 app 會透過 **LaunchUriForResultsAsync** 來啟動。
+-   **always**—可以只為了取得結果來啟動 app，也就是它只會回應 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)。
+-   **none**—無法啟動 app 來取得結果；它只會回應 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)。
 
-In this protocol-extension example, the app can be launched only for results. This simplifies the logic inside the **OnActivated** method, discussed below, because we have to handle only the "launched for results" case and not the other ways that the app could be activated.
+在這個通訊協定延伸模組範例中，可以只為了取得結果來啟動 app。 這會簡化 **OnActivated** 方法內部的邏輯 (如下所述)，因為我們只需處理「啟動以取得結果」的案例，而且沒有其他方法可用以啟動 app。
 
 ```xml
 <Applications>
@@ -55,12 +55,12 @@ In this protocol-extension example, the app can be launched only for results. Th
 </Applications>
 ```
 
-## Step 2: Override Application.OnActivated in the app that you'll launch for results
+## 步驟 2：在您將啟動以取得結果的 app 中覆寫 Application.OnActivated
 
 
-If this method does not already exist in the launched app, create it within the `App` class defined in App.xaml.cs.
+如果這個方法尚未存在於啟動的 app 中，請在 App.xaml.cs 中定義的 `App` 類別內建立它。
 
-In an app that lets you pick your friends in a social network, this function could be where you open the people-picker page. In this next example, a page named **LaunchedForResultsPage** is displayed when the app is activated for results. Ensure that the **using** statement is included at the top of the file.
+在讓您能夠於社交網路中挑選朋友的 app 中，此函式也是您開啟人員選擇器頁面的所在之處。 在下列範例中，名為 **LaunchedForResultsPage** 的頁面會在啟動 app 以取得結果時顯示。 確保 **using** 陳述式已包含於檔案頂端。
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -85,29 +85,29 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-Because the protocol extension in the Package.appxmanifest file specifies **ReturnResults** as **always**, the code just shown can cast `args` directly to [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905) with confidence that only **ProtocolForResultsActivatedEventArgs** will be sent to **OnActivated** for this app. If your app can be activated in ways other than launching for results, you can check whether [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) property returns [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) to tell whether the app was launched for results.
+針對此 app，由於 Package.appxmanifest 檔案中的通訊協定延伸模組已將 **ReturnResults** 指定為 **always**，因此，上述程式碼可放心地將 `args` 直接轉換為 [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905)，只有 **ProtocolForResultsActivatedEventArgs** 會傳送到 **OnActivated**。 如果您的 app 是利用啟動以取得結果以外的方式來啟動，則您可以檢查 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 屬性是否傳回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693)，以了解是否要啟動 app 來取得結果。
 
-## Step 3: Add a ProtocolForResultsOperation field to the app you launch for results
+## 步驟 3：在您啟動以取得結果的 app 中新增 ProtocolForResultsOperation 欄位
 
 
 ```cs
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-You'll use the [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) field to signal when the launched app is ready to return the result to the calling app. In this example, the field is added to the **LaunchedForResultsPage** class because you'll complete the launch-for-results operation from that page and will need access to it.
+您將使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 欄位，在啟動的 app 已準備好將結果傳回給呼叫的 app 時發出訊號。 在這個範例中，已將欄位新增到 **LaunchedForResultsPage** 類別，因為您將從該頁面完成「啟動以取得結果」作業，而且需要存取它。
 
-## Step 4: Override OnNavigatedTo() in the app you launch for results
+## 步驟 4：在您啟動以取得結果的 app 中覆寫 OnNavigatedTo()
 
 
-Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) method on the page that you'll display when your app is launched for results. If this method does not already exist, create it within the class for the page defined in &lt;pagename&gt;.xaml.cs. Ensure that the following **using** statement is included at the top of the file:
+在啟動 App 以取得結果時顯示的頁面上，覆寫 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果這個方法尚未存在，請在 &lt;pagename&gt;.xaml.cs 中定義的頁面類別內建立它。 確保下列 **using** 陳述式已包含於檔案頂端：
 
 ```cs
 using Windows.ApplicationModel.Activation
 ```
 
-The [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) object in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) method contains the data passed from the calling app. The data may not exceed 100KB and is stored in a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) object.
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的 app 所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
 
-In this example code, the launched app expects the data sent from the calling app to be in a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) under a key named **TestData**, because that's what the example's calling app is coded to send.
+在下列範例程式碼中，啟動的 app 預期呼叫的 app 所傳送的資料會在名為 **TestData** 之機碼下方的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，而這就是撰寫呼叫的 app 範例程式碼來傳送的原因。
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -127,10 +127,10 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## Step 5: Write code to return data to the calling app
+## 步驟 5：撰寫程式碼以將資料傳回呼叫的 app
 
 
-In the launched app, use [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) to return data to the calling app. In this example code, a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) object is created that contains the value to return to the calling app. The **ProtocolForResultsOperation** field is then used to send the value to the calling app.
+在啟動的 app 中，使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 來將資料傳回呼叫的 app。 下列範例程式碼會建立 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件，其中包含要傳回呼叫之 app 的值。 接著，使用 **ProtocolForResultsOperation** 欄位，將值傳送給呼叫的 app。
 
 ```cs
     ValueSet result = new ValueSet();
@@ -138,10 +138,10 @@ In the launched app, use [**ProtocolForResultsOperation**](https://msdn.microsof
     _operation.ReportCompleted(result);
 ```
 
-## Step 6: Write code to launch the app for results and get the returned data
+## 步驟 6：撰寫程式碼來啟動 app 以取得結果，並取得傳回的資料
 
 
-Launch the app from within an async method in your calling app as shown in this example code. Note the **using** statements, which are necessary for the code to compile:
+在呼叫之 app 中的非同步方法內啟動 app，如下列範例程式碼所示。 請注意 **using** 陳述式，這是程式碼編譯所需的陳述式：
 
 ```cs
 using System.Threading.Tasks;
@@ -170,28 +170,28 @@ async Task<string> LaunchAppForResults()
 }
 ```
 
-In this example, a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) containing the key **TestData** is passed to the launched app. The launched app creates a **ValueSet** with a key named **ReturnedData** that contains the result returned to the caller.
+這個範例會將包含機碼 **TestData** 的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 傳送到啟動的 app。 啟動的 app 會建立包含機碼名稱為 **ReturnedData** 的 **ValueSet**，其中包含傳回給呼叫者的結果。
 
-You must build and deploy the app that you'll launch for results before running your calling app. Otherwise, [**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) will report **LaunchUriStatus.AppUnavailable**.
+您必須先建置並部署將啟動來取得結果的 app，才能執行呼叫的 app。 否則，[**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) 將會報告 **LaunchUriStatus.AppUnavailable**。
 
-You'll need the family name of the launched app when you set the [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511). One way to get the family name is to make the following call from within the launched app:
+當您設定 [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511) 時，需要啟動的 app 系列名稱 。 取得系列名稱的一種方式是在啟動的 app 內進行下列呼叫：
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## Remarks
+## 備註
 
 
-The example in this how-to provides a "hello world" introduction to launching an app for results. The key things to note are that the new [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API lets you asynchronously launch an app and communicate via the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) class. Passing data via a **ValueSet** is limited to 100KB. If you need to pass larger amounts of data, you can share files by using the [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) class to create file tokens that you can pass between apps. For example, given a **ValueSet** named `inputData`, you could store the token to a file that you want to share with the launched app:
+此做法中的範例提供可用來啟動 app 以取得結果的 "hello world" 簡介。 要注意的重點是新的 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API 讓您能夠以非同步方式啟動 app，並透過 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別進行通訊。 透過 **ValueSet** 傳送的資料大小上限為 100KB。 如果需要傳送更大量的資料，可使用 [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) 類別來共用檔案，以建立可在 app 之間傳送的檔案權杖。 例如，假設有一個名為 `inputData` 的 **ValueSet**，您可以將權杖儲存到想要與啟動的 app 共用的檔案中：
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 ```
 
-Then pass it to the launched app via **LaunchUriForResultsAsync**.
+然後透過 **LaunchUriForResultsAsync** 將它傳送給啟動的 app。
 
-## Related topics
+## 相關主題
 
 
 * [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
@@ -204,6 +204,6 @@ Then pass it to the launched app via **LaunchUriForResultsAsync**.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

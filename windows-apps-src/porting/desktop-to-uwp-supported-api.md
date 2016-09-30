@@ -1,39 +1,39 @@
-# 已轉換的傳統型應用程式所支援的 UWP API
+# Supported UWP APIs for converted desktop apps
 
-已轉換的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出了您已轉換的應用程式可以使用的類別。 
+Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the availble classes your converted app can use. 
 
-大部分的 UWP API 都可以在已轉換的傳統型應用程式上正確運作。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。 
+Most UWP APIs work well on converted desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended. 
 
-<table><tr><th>功能區域</th><th>詳細資料</th><tr>
-<tr><td>約會、連絡人和電子郵件</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>驗證和使用者識別</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>背景工作</td><td>雖然已轉換的應用程式可以登錄背景工作，但只有完整的 UWP app 可以*做為*背景工作執行。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。</td></tr>
-<tr><td>藍牙</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>聊天和通話</td><td>已轉換的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
-<tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以透過協定啟用。</td></tr>
-<tr><td>密碼編譯</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>地理位置</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>檔案和資料夾選擇器</td><td>已轉換的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。</td></tr>
-<tr><td>媒體</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>服務點</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>智慧卡</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>PlayReady</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>VPN</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>電子錢包</td><td>已轉換的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
-<tr><td>XAML UI</td><td>您不能將 XAML UI 新增至 Win32 app 處理程序。</td></tr>
+<table><tr><th>Feature area</th><th>Details</th><tr>
+<tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Authentication and user identity</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Background tasks</td><td>While converted apps can register background tasks, only fully UWP apps can run *as* a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
+<tr><td>Bluetooth</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Chat and phone calls</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
+<tr><td>Contract activation</td><td>Only full UWP apps can be activated by by a contract.</td></tr>
+<tr><td>Cryptography</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Geolocation</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>File and folder pickers</td><td>Converted apps have full file system access and do not need UWP pickers.</td></tr>
+<tr><td>Media</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Point of service</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Smart cards</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>PlayReady</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>VPN</td><td>Not all APIs are currently supported for converted apps.</td></tr>
+<tr><td>Wallet</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
+<tr><td>XAML UI</td><td>Converted apps won't have a UWP XAML UI until they are fully ported to UWP.</td></tr>
 </table>
 
 
-有時候，這些區域中的 API 可能會正常運作。 不過，如果 API 並未被明確列出為受支援的 API，您應該避免使用，因為它可能會有非預期的副作用或行為。 未來版本中可能會支援這些 API。 在過渡期間，您的 App 應該改用相關的 Win32 或 .NET API。 
+Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become availble in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead. 
 
-已轉換的應用程式不支援某些完全傳統型應用程式可以使用的 UWP API。 如果您的傳統型應用程式在轉換之前是使用 UWP API，您應該確認那些 API 仍受支援。 如需詳細資訊，請參閱[適用於傳統型應用程式的 Windows 執行階段 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
+Some UWP APIs availble to full desktop applications are not supported for converted apps. If your desktop application used UWP APIs before conversion, you should verify those APIs are still supported. For more information, see [Windows Runtime APIs for desktop apps](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
-## API 清單
+## List of APIs
 
-下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的應用程式中新支援的 API](#new) 或[已轉換的應用程式與傳統型應用程式中支援的 API](#both)。 
+The following is a full list of UWP APIs supported in converted apps. You can view [APIs newly supported in converted apps](#new) or [APIs supported in both converted apps and desktop applications](#both). 
 
 <span id="new" />
-### 新轉換的應用程式中支援的 API
+### APIs newly supported in converted apps
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -359,7 +359,7 @@
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### 已轉換的應用程式與傳統型應用程式中支援的 API
+### APIs supported in both converted apps and desktop applications
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -614,15 +614,15 @@
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
-* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -1025,9 +1025,4 @@
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-
-
-
-<!--HONumber=Sep16_HO1-->
-
 

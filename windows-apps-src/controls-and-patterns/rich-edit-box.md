@@ -1,61 +1,48 @@
 ---
 author: Jwmsft
-Description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
+Description: "您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。"
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
 
 ---
-# Rich edit box
+# Rich Edit 方塊
+您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
 
-You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
+-   [**RichEditBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
+-   [**Document 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
+-   [**IsReadOnly 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
+-   [**IsSpellCheckEnabled 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Document property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>IsReadOnly property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>IsSpellCheckEnabled property</strong></a></li>
-</ul>
+## 這是正確的控制項嗎？
 
-</div>
-</div>
+使用 **RichEditBox** 顯示和編輯文字檔案。 您不會透過您使用其他標準文字輸入方塊的方式，使用 RichEditBox 取得針對您應用程式的使用者輸入內容。 但是，您會使用它來處理與您應用程式不同的文字檔案。 您通常會將輸入到 RichEditBox 的文字儲存為 .rtf 檔案。
+-   如果多行文字方塊的主要目的為建立文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則使用 RTF 方塊。
+-   如果您希望使用者能夠格式化文字，請使用 RTF 方塊。
+-   擷取只會消耗且不會再對使用者顯示的文字時，請使用純文字輸入控制項。
+-   針對所有其他案例，請使用純文字輸入控制項。
 
+如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
+## 範例
 
+此 Rich Edit 方塊已在其中開啟一個 RTF 文件。 格式和檔案的按鈕不屬於 Rich Edit 方塊的一部分，但您應該至少提供最小一組樣式按鈕，並實作其動作。
 
+![包含已開啟文件的 RTF 方塊](images/rich-edit-box.png)
 
+## 建立 Rich Edit 方塊
 
-## Is this the right control?
+根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 屬性設為 **false**。 如需詳細資訊，請參閱＜拼字檢查的指導方針和檢查清單＞。
 
-Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
--   If the primary purpose of the multi-line text box is for creating documents (such as blog entries or the contents of an email message), and those documents require rich text, use a rich text box.
--   If you want users to be able to format their text, use a rich text box.
--   When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
--   For all other scenarios, use a plain text input control.
+您可以使用 RichEditBox 的 [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) 物件，與使用[Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
 
-For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
-
-## Examples
-
-This rich edit box has a rich text document open in it. The formatting and file buttons aren't part of the rich edit box, but you should provide at least a minimal set of styling buttons and implement their actions.
-
-![A rich text box with an open document](images/rich-edit-box.png)
-
-## Create a rich edit box
-
-By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) property to **false**. For more info, see the [Guidelines for spell checking](spell-checking-and-prediction.md) article.
-
-You use the [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) property of the RichEditBox to get its content. The content of a RichEditBox is a [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) object, unlike the RichTextBlock control, which uses [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
-
-This example shows how to edit, load, and save a Rich Text Format (.rtf) file in a RichEditBox.
+這個範例說明如何在 RichEditBox 中編輯、載入和儲存 RTF 格式 (rtf) 檔案。
 
 ```xaml
 <RelativePanel Margin="20" HorizontalAlignment="Stretch">
@@ -64,20 +51,20 @@ This example shows how to edit, load, and save a Rich Text Format (.rtf) file in
             <Setter Property="IsCompact" Value="True"/>
         </Style>
     </RelativePanel.Resources>
-    <AppBarButton x:Name="openFileButton" Icon="OpenFile"
+    <AppBarButton x:Name="openFileButton" Icon="OpenFile" 
                   Click="OpenButton_Click" ToolTipService.ToolTip="Open file"/>
-    <AppBarButton Icon="Save" Click="SaveButton_Click"
-                  ToolTipService.ToolTip="Save file"
+    <AppBarButton Icon="Save" Click="SaveButton_Click" 
+                  ToolTipService.ToolTip="Save file" 
                   RelativePanel.RightOf="openFileButton" Margin="8,0,0,0"/>
 
-    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
+    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold" 
                   RelativePanel.LeftOf="italicButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
+    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click" 
                   ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
+    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click" 
                   ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
 
-    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton"
+    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton" 
                  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
 </RelativePanel>
 ```
@@ -133,7 +120,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
     Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
     if (file != null)
     {
-        // Prevent updates to the remote version of the file until we
+        // Prevent updates to the remote version of the file until we 
         // finish making changes and call CompleteUpdatesAsync.
         Windows.Storage.CachedFileManager.DeferUpdates(file);
         // write to file
@@ -142,7 +129,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
 
         editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
 
-        // Let Windows know that we're finished changing the file so the
+        // Let Windows know that we're finished changing the file so the 
         // other app can update the remote version of the file.
         Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
         if (status != Windows.Storage.Provider.FileUpdateStatus.Complete)
@@ -194,40 +181,41 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Choose the right keyboard for your text control
+## 選擇文字控制項的正確鍵盤
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
+為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 預設鍵盤配置通常適用於處理 RTF 文件。
 
-For more info about how to use input scopes, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229).
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤]()。
 
-## Recommendations
+## 建議
 
--   When you create a rich text box, provide styling buttons and implement their actions.
--   Use a font that's consistent with the style of your app.
--   Make the height of the text control tall enough to accommodate typical entries.
--   Don't let your text input controls grow in height while users type.
--   Don't use a multi-line text box when users only need a single line.
--   Don't use a rich text control if a plain text control is adequate.
-
-
+-   建立 RTF 方塊時，提供設定樣式按鈕並實作其動作。
+-   使用與您的應用程式樣式一致的字型。
+-   文字控制項的高度必須能夠容納一般輸入。
+-   不要讓文字輸入控制項的高度隨著使用者輸入增加。
+-   使用者只需要單行時，不要使用多行文字方塊。
+-   使用純文字控制項就足夠時，不要使用 RTF 控制項。
 
 
 
-## Related articles
-
-[Text controls](text-controls.md)
-
-**For designers**
-- [Guidelines for spell checking](spell-checking-and-prediction.md)
-- [Adding search](search.md)
-- [Guidelines for text input](text-controls.md)
-
-**For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
+## 相關文章
 
-<!--HONumber=Aug16_HO3-->
+[文字控制項](text-controls.md)
+
+**適用於設計人員**
+- [拼字檢查的指導方針](spell-checking-and-prediction.md)
+- [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [文字輸入的指導方針](text-controls.md)
+
+**適用於開發人員 (XAML)**
+- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

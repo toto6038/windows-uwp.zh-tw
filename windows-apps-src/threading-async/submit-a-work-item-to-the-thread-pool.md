@@ -1,33 +1,33 @@
 ---
 author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: Submit a work item to the thread pool
-description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
+title: "將工作項目提交至執行緒集區"
+description: "了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d41f53a40c46087c5a1c21367a34c0f60486f24d
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
-# Submit a work item to the thread pool
+# 將工作項目提交至執行緒集區
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要 API **
 
 -   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
 
-Learn how to do work in a separate thread by submitting a work item to the thread pool. Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.
+了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。 工作若還要好一段時間才能完成，可使用這種方式讓 UI 保持回應，還可用來以並行方式完成多個工作。
 
-## Create and submit the work item
+## 建立及提交工作項目
 
-Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.
+透過呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 物件；請將這個物件儲存起來以在下個步驟中使用。
 
-Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
+提供三個版本的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
-**Note**  Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.
+**注意：**使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 從工作項目存取 UI 執行緒及顯示進度。
 
-The following example creates a work item and supplies a lambda to do the work:
+下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -191,15 +191,15 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
-Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
+呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
 
-Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.
+請注意，工作項目會檢查 [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) 屬性，並在取消工作項目時結束。
 
-## Handle work item completion
+## 處理工作項目的完成
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.
+透過設定工作項目的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 存取 UI 執行緒及顯示結果。
 
-The following example updates the UI with the result of the work item submitted in step 1:
+下列範例以在步驟 1 提交之工作項目的結果更新 UI：
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -247,22 +247,22 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.
+請注意，完成處理常式在分派 UI 更新之前，會檢查是否已取消工作項目。
 
-## Summary and next steps
+## 摘要與後續步驟
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+您可以在[建立 ThreadPool 工作項目範例](http://go.microsoft.com/fwlink/p/?LinkID=328569)中，從針對 Windows 8.1 而撰寫的快速入門下載程式碼，並在 win\_unap Windows 10 應用程式中重複使用原始程式碼，以進行深入了解。
 
-## Related topics
+## 相關主題
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
+* [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
+* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

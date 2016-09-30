@@ -1,95 +1,95 @@
 ---
 author: mtoepke
-title: DirectX game project templates
-description: Learn about the templates for creating a Universal Windows Platform (UWP) and DirectX game.
+title: "DirectX 遊戲專案範本"
+description: "了解建立通用 Windows 平台 (UWP) 和 DirectX 遊戲的範本。"
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
+ms.openlocfilehash: b7d01fda0bc8dbafebb7485ec01acb5c7431a815
 
 ---
 
-# DirectX game project templates
+# DirectX 遊戲專案範本
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The DirectX and Universal Windows Platform (UWP) templates allow you to quickly create a project as a starting point for your game.
+DirectX 與通用 Windows 平台 (UWP) 範本可讓您快速建立做為遊戲起點的專案。
 
-## Prerequisites
-
-
-To create the project you need to:
-
--   [Download Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 has tools for graphics programming, such as debugging tools. For an overview of DirectX graphics and gaming features and tools, see [Visual Studio tools for DirectX game development](set-up-visual-studio-for-game-development.md).
-
-## Choosing a template
+## 先決條件
 
 
-Visual Studio 2015 includes three DirectX and UWP templates:
+若要建立專案，您需要：
 
--   DirectX 11 App (Universal Windows) - The DirectX 11 App (Universal Windows) template creates a UWP project, which renders directly to an app window using DirectX 11.
--   DirectX 12 App (Universal Windows) - The DirectX 12 App (Universal Windows) template creates a project UWP, which renders directly to an app window using DirectX 12.
--   DirectX 11 and XAML App (Universal Windows) - The DirectX 11 and XAML App (Universal Windows) template creates a UWP project, which renders inside a XAML control using DirectX 11. This template uses a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), so you can use XAML UI controls. This can make adding user interface elements easier, but using the XAML template may result in lower performance.
+-   [下載 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 具備圖形程式設計的工具，例如偵錯工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
-Which template you choose depends on the performance and what technologies you want to use.
-
-## Template structure
+## 選擇範本
 
 
-The DirectX Universal Windows templates contain the following files:
+Visual Studio 2015 包含三個 DirectX 和 UWP 範本：
 
--   pch.h and pch.cpp - Precompiled header support.
--   Package.appxmanifest - The properties of the deployment package for the app.
--   \*.pfx - Certificates for the application.
--   External Dependencies - Links to external files the project use.s
--   \*Main.h and \*Main.cpp - Methods for managing application assets, updating application state, and rendering the frame.
--   App.h and App.cpp - Main entry point for the application. Connects the app with the Windows shell and handles application lifecycle events. These files only appear in the DirectX 11 App (Universal Windows) and DirectX 12 App (Universal Windows) templates.
--   App.xaml, App.xaml.cpp, and App.xaml.h - Main entry point for the application. Connects the app with the Windows shell and handles application lifecycle events. These files only appear in the DirectX 11 and XAML App (Universal Windows) template.
--   DirectXPage.xaml, DirectXPage.xaml.cpp, and DirectXPage.xaml.h - A page that hosts a DirectX SwapChainPanel. These files only appear in the DirectX 11 and XAML App (Universal Windows) template.
--   Content
-    -   Sample3DSceneRenderer.h and Sample3DSceneRenderer.cpp - A sample renderer that instantiates a basic rendering pipeline.
-    -   SampleFpsTextRenderer.h and SampleFpsTextRenderer.cpp - Renders the current FPS value in the bottom right corner of the screen using Direct2D and DirectWrite. These files only appear in the DirectX 11 App (Universal Windows) and DirectX 11 and XAML App (Universal Windows) templates.
-    -   SamplePixelShader.hlsl - A simple example pixel shader.
-    -   SampleVertexShader.hlsl - A simple example vertex shader.
-    -   ShaderStructures.h - Structures used to send date to the example vertex shader.
--   Common
-    -   StepTimer.h - A helper class for animation and simulation timing.
-    -   DirectXHelper.h - Misc Helper functions.
-    -   DeviceResources.h and Device Resources.cpp - Provides an interface for an application that owns DeviceResources to be notified of the device being lost or created.
-    -   d3dx12.h - Contains the D3DX12 utility library. This file only appears in the DirectX 12 App (Universal Windows).
--   Assets - Logo and splashscreen images used by the application.
+-   DirectX 11 應用程式 (通用 Windows) - DirectX 11 應用程式 (通用 Windows) 範本會建立使用 DirectX 11 直接轉譯為應用程式視窗的 UWP 專案。
+-   DirectX 12 應用程式 (通用 Windows) - DirectX 12 應用程式 (通用 Windows) 範本會建立使用 DirectX 12 直接轉譯為應用程式視窗的 UWP 專案。
+-   DirectX 11 和 XAML App (通用 Windows) - DirectX 11 和 XAML App (通用 Windows) 範本會建立使用 DirectX 11 在 XAML 控制項內轉譯的 UWP 專案。 此範本採用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，因此您可以使用 XAML UI 控制項。 這讓新增使用者介面元素變得更容易，但是使用 XAML 範本可能會導致 效能變差。
 
-## Next steps
+您可以根據效能和想要使用的技術來選擇範本。
+
+## 範本結構
 
 
-Now that you have a starting point, add to it to build your game development knowledge and Windows Store game development skills.
+DirectX 通用 Windows 範本包含下列檔案：
 
-If you are porting an existing game, see the following topics.
+-   pch.h 和 pch.cpp - 預先編譯的標頭支援。
+-   Package.appxmanifest - app 部署套件的屬性。
+-   \*.pfx - 應用程式的憑證。
+-   外部相依性 - 專案所使用之外部檔案的連結。
+-   \*Main.h 和 \*Main.cpp - 用來管理應用程式資產、更新應用程式狀態和轉譯畫面的方法。
+-   App.h 和 App.cpp - 應用程式的主要進入點。 連接 App 與 Windows 殼層，並處理應用程式週期事件。 這些檔案只會出現在 DirectX 11 應用程式 (通用 Windows) 和 DirectX 12 應用程式 (通用 Windows) 範本中。
+-   App.xaml、App.xaml.cpp 和 App.xaml.h - 應用程式的主要進入點。 連接 App 與 Windows 殼層，並處理應用程式週期事件。 這些檔案只會出現在 DirectX 11 和 XAML 應用程式 (通用 Windows) 範本中。
+-   DirectXPage.xaml、DirectXPage.xaml.cpp 和 DirectXPage.xaml.h - 裝載 DirectX SwapChainPanel 的頁面。 這些檔案只會出現在 DirectX 11 和 XAML 應用程式 (通用 Windows) 範本中。
+-   內容
+    -   Sample3DSceneRenderer.h 和 Sample3DSceneRenderer.cpp - 具現化基本轉譯管線的範例轉譯器。
+    -   SampleFpsTextRenderer.h 和 SampleFpsTextRenderer.cpp - 使用 Direct2D 和 DirectWrite 轉譯螢幕右下角目前的 FPS 值。 這些檔案只會出現在 DirectX 11 應用程式 (通用 Windows) 和 DirectX 11 與 XAML 應用程式 (通用 Windows) 範本中。
+    -   SamplePixelShader.hlsl - 簡單範例像素著色器。
+    -   SampleVertexShader.hlsl - 簡單範例頂點著色器。
+    -   ShaderStructures.h - 用來將日期傳送到範例頂點著色器的結構。
+-   通用
+    -   StepTimer.h - 動畫和模擬計時的協助程式類別。
+    -   DirectXHelper.h - 其他 Helper 函式。
+    -   DeviceResources.h 和 Device Resources.cpp - 提供一個介面，供所擁有的 DeviceResources 要被通知裝置即將遺失或建立的應用程式使用。
+    -   d3dx12.h - 包含 D3DX12 公用程式庫。 此檔案只會出現在 DirectX 12 應用程式 (通用 Windows) 中。
+-   資產 - 應用程式所使用的標誌和 Splashscreen 影像。
 
--   [Port from OpenGL ES 2.0 to Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Port from DirectX 9 to Universal Windows Platform](porting-your-directx-9-game-to-windows-store.md)
+## 後續步驟
 
-If you are creating a new DirectX game, see the following topics.
 
--   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+現在您已經有了起點，可以將它納入您的遊戲開發知識及 Windows 市集遊戲開發技能。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+如果您要移植現有的遊戲，請參閱以下主題。
 
- 
+-   [從 OpenGL ES 2.0 移植到 Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [從 DirectX 9 移植到通用 Windows 平台](porting-your-directx-9-game-to-windows-store.md)
+
+如果您要建立新的 DirectX 遊戲，請參閱以下主題。
+
+-   [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
+-   [使用 C++ 和 DirectX 開發 Marble Maze (通用 Windows 平台遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

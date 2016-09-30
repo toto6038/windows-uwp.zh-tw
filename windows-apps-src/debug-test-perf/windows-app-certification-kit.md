@@ -1,95 +1,95 @@
 ---
 author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
-title: Windows App Certification Kit
-description: To give your app the best chance of being published on the Windows Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit.
+title: "Windows 應用程式認證套件"
+description: "為了讓您的 App 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
+ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 
 ---
-# Windows App Certification Kit
+# Windows 應用程式認證套件
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-To give your app the best chance of being [published on the Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), or becoming [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx), validate and test it locally before you submit it for certification. This topic shows you how to install and run the [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666).
+為了讓您的 app 能順利[在 Windows 市集上發行](https://msdn.microsoft.com/library/windows/apps/Hh694062)或成為 [Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 [Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)。
 
-## Prerequisites
+## 先決條件
 
-Prerequisites for testing a Universal Windows app:
+測試通用 Windows app 的先決條件：
 
--   You must install and run Windows 10.
--   You must install [Windows App Certification Kit version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
--   You must have a valid developer license for your computer. See [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578) to learn how.
--   You must deploy the Windows app that you want to test to your computer.
+-   您必須安裝和執行 Windows 10。
+-   您必須安裝 [Windows 應用程式認證套件 10 版]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
+-   您必須要有電腦的有效開發人員授權。 請參閱[取得開發人員授權](https://msdn.microsoft.com/library/windows/apps/Hh974578)，以了解如何取得該授權。
+-   您必須將要測試的 Windows App 部署至電腦。
 
-**A note about in-place upgrades**
+**關於就地升級的附註**
 
-The installation of a more recent [Windows App Certification Kit]( http://go.microsoft.com/fwlink/p/?LinkID=309666) will replace any previous version of the kit that is installed on the machine.
+安裝更新版本的 [Windows 應用程式認證套件]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，將會取代電腦上安裝的任何舊版套件。
 
-## Validate your Windows app using the Windows App Certification Kit interactively
+## 以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
 
-1.  From the **Start** menu, search **Apps**, find **Windows Kits**, and click **Windows App Cert Kit**.
+1.  從 [開始]**** 功能表中，搜尋 [應用程式]****，找到 [Windows 套件]****，然後按一下 [Windows 應用程式認證套件]****。
 
-2.  From the Windows App Certification Kit, select the category of validation you would like to perform. For example: If you are validating a Windows app, select **Validate a Windows app**.
+2.  從 [Windows 應用程式認證套件] 中，選取您要執行的驗證類別。 例如：如果您要驗證 Windows 應用程式，請選取 [驗證 Windows 應用程式]****。
 
-    You may browse directly to the app you're testing, or choose the app from a list in the UI. When the Windows App Certification Kit is run for the first time, the UI lists all the Windows apps that you have installed on your computer. For any subsequent runs, the UI will display the most recent Windows apps that you have validated. If the app that you want to test is not listed, you can click on **My app isn't listed** to get a comprehensive list of all apps installed on your system.
+    您可以直接瀏覽到要測試的 app，或從 UI 中的清單中選擇 app。 首次執行 Windows 應用程式認證套件時，UI 會列出已安裝在您電腦上的所有 Windows 應用程式。 其後每次執行時，UI 將會顯示您最近已驗證過的 Windows 應用程式。 如果沒有列出您要測試的 app，可以按一下 [我的 app 未列在裡面]****，以取得系統上已安裝的所有 app 的完整清單。
 
-3.  After you have input or selected the app that you want to test, click **Next**.
+3.  輸入或選取要測試的 app 之後，請按一下 [下一步]****。
 
-4.  From the next screen, you will see the test workflow that aligns to the app type you are testing. If a test is grayed out in the list, the test is not applicable to your environment. For example, if you are testing a Windows 10 app on Windows 7, only static tests will apply to the workflow. Note that the Windows Store may apply all tests from this workflow. Select the tests you want to run and click **Next**.
+4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意，Windows 市集可能會套用來自此工作流程的所有測試。 選取要執行的測試，然後按一下 [下一步]****。
 
-    The Windows App Certification Kit begins validating the app.
+    Windows 應用程式認證套件隨即開始驗證該應用程式。
 
-5.  At the prompt after the test, enter the path to the folder where you want to save the test report.
+5.  測試之後，在提示字元輸入您要儲存測試報告的資料夾路徑。
 
-    The Windows App Certification Kit creates an HTML along with an XML report and saves it in this folder.
+    Windows 應用程式認證套件會建立一個 HTML 以及一份 XML 報告，並將它儲存到這個資料夾。
 
-6.  Open the report file and review the results of the test.
+6.  開啟報告檔案，然後檢閱測試結果。
 
-**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://msdn.microsoft.com/library/windows/apps/Mt627715) to learn how.
+**注意** 如果您使用的是 Visual Studio，可以在建立 app 套件時執行 Windows 應用程式認證套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
 
  
 
-## Validate your Windows app using the Windows App Certification Kit from a command line
+## 從命令列使用 Windows 應用程式認證套件來驗證 Windows app
 
-**Important**  The Windows App Certification Kit must be run within the context of an active user session.
+**重要** Windows 應用程式認證套件必須在使用中的使用者工作階段內容中執行。
 
-1.  In the command window, navigate to the directory that contains the Windows App Certification Kit.
+1.  在命令視窗中，瀏覽到包含 Windows 應用程式認證套件的目錄。
 
-    **Note**   The default path is C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
+    **注意** 預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
-2.  Enter the following commands in this order to test an app that is already installed on your test computer:
+2.  依序輸入下列命令，以測試電腦上已安裝的 app：
 
     `appcert.exe reset`
 
     `appcert.exe test -packagefullname [package full name] -reportoutputpath [report file name]`
 
-    Or you can use the following commands if the app is not installed. The Windows App Certification Kit will open the package and apply the appropriate test workflow:
+    或者，若應用程式未安裝，您可以使用下列命令。 Windows 應用程式認證套件將開啟套件，並套用適當的測試工作流程：
 
     `appcert.exe reset`
 
     `appcert.exe test -appxpackagepath [package path] -reportoutputpath [report file name]`
 
-3.  After the test completes, open the report file named `[report file name]` and review the test results.
+3.  測試完成之後，開啟名為 `[report file name]` 的報告檔案，然後檢閱測試結果。
 
-**Note**  The Windows App Certification Kit can be run from a service, but the service must initiate the kit process within an active user session and cannot be run in Session0.
+**注意** Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
 
-**Note**   For more info about the Windows App Certification Kit command line, enter the command `appcert.exe /?`
+**注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
 
-## Testing with a low-power computer
+## 使用低功率電腦進行測試
 
-The performance test thresholds of the Windows App Certification Kit are based on the performance of a low-power computer.
+Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
-The characteristics of the computer on which the test is performed can influence the test results. To determine if your app’s performance meets the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+執行測試之電腦的特性會影響測試結果。 若要判斷您 app 的效能是否符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，建議您在低功率電腦上測試 app，例如 Intel Atom 處理器電腦搭配使用 1366x768 (或更高) 的螢幕解析度與旋轉式硬碟 (而非固態硬碟)。
 
-As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並使用最新版的 Windows 應用程式認證套件來測試 app，以確保您的 app 符合最新的效能需求。
 
-## Related topics
+## 相關主題
 
-* [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
-* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)
+* [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  
@@ -100,6 +100,6 @@ As low-power computers evolve, their performance characteristics might change ov
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,77 +1,77 @@
 ---
 author: mtoepke
-title: 2D graphics for DirectX games
-description: We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
+title: "適用於 DirectX 遊戲的 2D 圖形"
+description: "我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。"
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
+ms.openlocfilehash: 50782c5923f9c811f5d8e91aa9aee897876e6c24
 
 ---
 
-# 2D graphics for DirectX games
+# 適用於 DirectX 遊戲的 2D 圖形
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
+我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。
 
-2D graphics are a subset of 3D graphics that deal with 2D primitives or bitmaps. More generally, they don't use a z-coordinate in the way a 3D game might, since the game play is usually confined to the x-y plane. They sometimes use 3D graphics techniques to create their visual components, and they are generally simpler to develop. If you are new to gaming, a 2D game is a great place to start, and 2D graphics development can be a good place for you to get a handle on DirectX.
+2D 圖形是 3D 圖形的子集，可處理 2D 基本類型或點陣圖。 較普遍的說法是，2D 圖形不使用 3D 遊戲中會使用的 z 座標，因為遊戲通常是限定在 x-y 平面上。 它們偶爾會使用 3D 圖形技術來建立自己的視覺元件，而且它們的開發通常也比較簡單。 如果您是遊戲的初學者，2D 遊戲是很好的起點，而且 2D 圖形開發也是適合您學習處理 DirectX 的好方法。
 
-You can develop 2D gaming graphics in DirectX using either Direct2D or Direct3D, or some combination. Many of the more useful classes for 2D game development are in Direct3D, such as the [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) class. Direct2D is a set of APIs that primarily target user interfaces and apps that require support for drawing primitives (such as circles, lines, and flat polygon shapes). With that in mind, it still provides a powerful and performant set of classes and methods for creating game graphics as well, especially when creating game overlays, interfaces, and heads-up displays (HUDs) -- or for creating a variety of 2D games, from simple to reasonably detailed. The most effective approach when creating 2D games, though, is to use elements from both libraries, and that's the way we will approach 2D graphics development in this topic.
+您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
 
-## Concepts at a glance
-
-
-Before the advent of modern 3D graphics and the hardware that supports it, games were primarily 2D, and many of their graphics techniques involved moving blocks of memory around -- usually arrays of color data that would be translated or transformed to pixels on the screen in a 1:1 fashion.
-
-In DirectX, 2D graphics are part of the 3D pipeline. There is a much greater variety of screen resolutions and graphics hardware available, and your 2D graphics engine must be able to support them without a significant change in fidelity.
-
-Here are a few of the basic concepts you should be familiar with when starting 2D graphics development.
-
--   Pixels and raster coordinates. A pixel is a single point on a raster display, and has its own (x, y) coordinate pair indicating its location on the display. (The term "pixel" is often used interchangeably between the physical pixels that comprise the display and the addressable memory elements used to hold the color and alpha values of the pixels before they are sent to the display.) The raster is treated by APIs as a rectangular grid of pixel elements, which often has a 1:1 correspondence with the physical pixel grid of a display. Raster coordinate systems start from the upper left, with the pixel at (0, 0) in the upper leftmost corner of the grid.
--   Bitmap graphics (sometimes called raster graphics) are graphic elements represented as a rectangular grid of pixel values. Sprites -- computed pixel arrays managed independent of the raster -- are one type of bitmap graphic, commonly used for the active characters or background-independent animated objects in a game. The various frames of animation for a sprite are represented as collections of bitmaps called "sheets" or "batches." Backgrounds are larger bitmap objects that are the same resolution or greater than that of the screen raster, and often serve as the backdrop(s) for a game's playfield.
--   Vector graphics are graphics that use geometric primitives, such as points, lines, circles, and polygons to define 2D objects. They are represented not as arrays of pixels, but as the mathematical equations that define them in a 2D space. They do not necessarily have a 1:1 correspondence with the pixel grid of the display, and must be transformed from the coordinate system that you rendered them in into the raster coordinate system of the display.
--   Translation is when you take a point or vertex and calculate its new location in the same coordinate system.
--   Scaling is when you enlarge or shrink an object by a specified scale factor. With a vector image, you shrink and enlarge its component vertices; with a bitmap, you enlarge the pixel elements or diminish them. With bitmap images, you lose pixel data when the image shrinks, and you enlarge the individual pixels when the image is scaled closer. For the latter, you can use pixel color interpolation operations, like bilinear filtering, to smooth out the harsh color boundaries between the enlarged pixels.
--   Rotation is when you rotate an object about a specified axis or axes. With a vector image, the vertices of the geometry are multiplied against a rotation matrix to obtain the rotated vertex; with a bitmap image, different algorithms can be employed, each with a lesser or greater degree of fidelity in the results. As with scaling and translation, there are APIs specifically for rotation operations.
--   Transformation is when you take one point or vertex in one coordinate system and calculate its corresponding point or vertex in another coordinate system. This includes translation, scaling, and rotation, as well as other coordinate calculation operations.
--   Clipping is when you remove portions of bitmaps or geometry that are not within the viewable area of the display, or are hidden by objects with higher view priority.
--   The frame buffer is an area in memory -- often in the memory of the graphics hardware itself -- that contains the final raster map that you will draw to the screen. The swap chain is a collection of buffers, where you draw in a back buffer and, when the image is ready, you "swap" it to the front and display it.
-
-## Design considerations
+## 概念簡介
 
 
-2D graphics development is a great way to get accustomed to developing with Direct3D, and will allow you to spend more time on other critical aspects of game development: audio, controls, and the game mechanics.
+在現代 3D 圖形和支援這種圖形的硬體出現之前，遊戲主要都是 2D 的，而且它們的許多圖形技術都牽涉到移動記憶體區塊，通常是色彩資料陣列，以 1:1 的比例轉譯或轉換為螢幕上的像素。
 
-Always draw to a back buffer. Drawing directly to your frame buffer means that your image will be displayed when the signal for display is received (usually every 1/60th of second), even if your drawing operation hasn't completed!
+在 DirectX 中，2D 圖形是 3D 管線的一部分。 現在有更多種螢幕解析度和圖形硬體，而且您的 2D 圖形引擎必須能夠加以支援但對逼真度不會有顯著改變。
 
-Design your graphics engine to support a good selection of resolutions, from 1024x600 to 1920x1080 (or higher). Your audience will thank you if you support their LCD monitor's native resolution, especially with 2D graphics.
+這裡是您開始進行 2D 圖形開發時必須熟悉的一些基本概念。
 
-Great artwork will be your greatest asset, when it comes to visuals. While your bitmap graphics may lack the punch of 3D photorealistic visuals using the latest shader model features, great high-resolution artwork can often convey as much or more style and personality -- and with far less of a performance penalty.
+-   像素和光柵座標。 像素是光柵顯示器上的單個點，而且具有自己的 (x, y) 座標組，指示它在顯示器上的位置 (「像素」這個詞是個互通名詞，它可以用來指組成顯示器的實際像素，或者是指傳送到顯示器前先存放在可定址記憶體元素中像素的色彩和 Alpha 值)。光柵被 API 視為像素元件的矩形格線，通常與顯示器上實際像素格線具有 1:1 的對應比例。 光柵座標系統從左上方開始，格線最左上角的像素為 (0, 0)。
+-   點陣圖圖形 (有時候也稱為光柵圖形) 是圖形元素，以矩形格線的像素值來表示。 子畫面技術是獨立於光柵以外管理的計算處理像素陣列，它是點陣圖圖形的其中一種，常用於遊戲中的主要角色或與背景無關的動畫物件。 子畫面技術的動畫的各種畫面是以稱為「表」或「批次」的點陣圖集合表示的。 背景是較大的點陣圖物件，與螢幕光柵具有相同或更高的解析度，通常是作為遊戲區域的底圖。
+-   向量圖形是使用幾何基本類型 (如點、線、圓形和多邊形) 來定義 2D 物件。 它們不是用像素陣列來表示的，而是使用算術等式在 2D 空間中定義。 它們與顯示器的像素格線不一定具有 1:1 的對應比例，而且必須從轉譯它們的座標系統轉換為顯示器上的光柵座標系統。
+-   轉譯是使用一點或一個頂點，然後計算它在相同座標系統上的新位置。
+-   縮放是使用指定的縮放比率來放大或縮小物件。 對於向量影像，您可縮小和放大它的元件頂點；對於點陣圖，您可放大或縮小像素元素。 對於點陣圖影像，您在縮小影像時會遺失像素資料，而影像縮放得較接近時會放大個別像素。 對於後者，您可以使用像素色彩內插補點操作 (就像雙線性篩選)，將放大的像素之間的粗糙色彩邊緣變得平滑。
+-   旋轉是以指定的軸來旋轉物件。 對於向量影像，幾何的頂點會對照旋轉矩陣來相乘，取得旋轉的頂點；對於點陣圖影像，則可以使用不同的演算法，每種方式的結果分別是較差或較好的逼真度。 對於縮放和轉譯，有專用於旋轉作業的 API。
+-   轉換是使用一個座標系統上的一點或一個頂點，然後計算它在另一個座標系統上的對應點或對應頂點。 這包含轉譯、縮放以及旋轉，還有其他座標計算作業。
+-   裁剪是將點陣圖或幾何沒有在顯示器上可檢視區域內的部分移除，或是將被具有更高檢視優先權的物件所隱藏的部分移除。
+-   框架緩衝區是記憶體中的區域，通常位於圖形硬體本身的記憶體中，它包含將要繪製到螢幕上的最後光柵對應。 交換鏈結是緩衝區的集合，您在背景緩衝區繪製而且當影像繪製好時，就把它「交換」到前面來顯示。
 
-## Reference
+## 設計考量
 
 
--   [Direct2D overview](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D quickstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D and Direct3D interoperability overview](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+2D 圖形開發是熟悉使用 Direct3D 進行開發的絕佳方式，而且可讓您將更多時間投入遊戲開發中的其他重要部分：音訊、控制項以及遊戲機制。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+永遠繪製到背景緩衝區。 直接繪製到您的框架緩衝區，表示在接收到顯示訊號時 (通常是每 1/60 秒)，即使您的繪圖作業還沒有完成，還是會顯示影像！
 
- 
+設計您的圖形引擎來支援不錯的解析度選項，從 1024x600 到 1920x1080 (或更高)。 如果您支援其 LCD 監視器原始的解析度 (特別是使用 2D 圖形)，您的玩家們一定對您充滿感激。
+
+出色的作品變成視覺化呈現時，是您最大的資產。 雖然您的點陣圖圖形在使用最新的著色器模型功能時不一定具有 3D 照相寫實視覺效果的震撼力，但是絕佳的高解析度作品，通常能夠表達更多風格和個性，而且不會耗用太多效能。
+
+## 參考資料
+
+
+-   [Direct2D 概觀](https://msdn.microsoft.com/library/windows/desktop/dd370987)
+-   [Direct2D 快速入門](https://msdn.microsoft.com/library/windows/desktop/dd535473)
+-   [Direct2D 和 Direct3D 互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+
+> **注意**  
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

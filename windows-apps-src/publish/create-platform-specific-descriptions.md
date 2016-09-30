@@ -1,16 +1,55 @@
 ---
-redirect_url: https://msdn.microsoft.com/windows/uwp/publish/create-platform-specific-store-listings
+author: jnHs
+Description: "如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂有哪些介紹的部分。"
+title: "建立特定平台的介紹"
+ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 4901812fa55451718548fd4624a92a921ab2aaa7
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 00be0238af7969a84abe79f9aee3bec485fbb3e3
 
 ---
 
-# Create platform-specific descriptions
-
-This page has been redirected to: Create platform-specific Store listings
+# 建立特定平台的介紹
 
 
-<!--HONumber=Aug16_HO5-->
+如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂有哪些介紹的部分。
+
+> **重要** Windows 10 上的客戶一律可以看到您的預設介紹。
+
+如果您想要提及只會出現在一個作業系統版本中的功能，或想要提供特定作業系統專屬的螢幕擷取畫面 (與裝置類型無關)，而不是讓所有客戶看到相同的介紹，特定平台的介紹就非常有用。
+
+> **注意** 使用某一種語言建立的特定平台介紹，不會建立您 app 支援之其他語言的特定平台介紹，即使您已經為那些語言[輸入介紹資訊](create-app-descriptions.md)。 您必須分別為每個語言建立平台特定介紹。
+
+## 建立平台特定介紹
+
+
+在您的 [介紹]**** 頁面上方附近，您會看到**建立特定平台的 app 介紹**連結。 當您按一下這個連結時，會出現快顯視窗，要求您從支援的目標作業系統中選擇。 Windows 10 不會包含在選擇清單中，因為 Windows 10 上的客戶一律會看到 app 的預設介紹。
+
+> **注意** 如果您並未提供目標為多個作業系統版本的套件，或者，如果您已經為應用程式的所有目標作業系統版本建立特定平台的介紹，將無法進行選擇。
+
+您可以選擇使用預設介紹做為起點，這將會帶出您已針對預設介紹輸入的所有文字和影像；接著您就能進行任何所需的變更，然後儲存。
+
+如有需要，您也可以從完全空白的介紹開始。
+
+按一下 [繼續]**** 之後，您的 [介紹]**** 頁面現在將會包含您剛建立的特定平台的介紹區段 (在[預設介紹](create-app-descriptions.md#default-description-fields)區段下)。 本區段將包含自己的一組欄位，其中有**介紹** (必要)、**版本資訊**、**螢幕擷取畫面**、**App 磚圖示**、**App 功能**和**建議的硬體**。 請務必在您要在自訂介紹中顯示資訊的每個欄位中輸入資訊，即使它與您的預設介紹的資訊相同。 如果您讓任何欄位保留空白，則自訂介紹中的該欄位中不會出現任何資訊。
+
+> **注意** 並非應用程式介紹的所有欄位都可針對特定目標作業系統進行自訂。 如需詳細資訊，請參閱[共用欄位](create-app-descriptions.md#shared-fields)。
+
+## 移除特定平台的介紹
+
+
+如果您建立特定平台的介紹，並稍後決定您傾向在該作業系統上向客戶顯示您的預設介紹，請按一下 [刪除]**** 連結。 在確認您想要為這些客戶顯示預設介紹之後，按一下 [確定]****。 將移除特定平台的介紹。 如果稍後決定要取回該介紹，您一律可以依照上述的步驟來為該作業系統建立新的特定平台的介紹。
+
+ 
+
+ 
+
+
+
+
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
-title: Health report
+Description: "Windows 開發人員中心儀表板的 [健康] 報告可讓您取得與您 app 效能與品質相關的資料，包括當機和無回應事件。"
+title: "健康情況報告"
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 72c5974da441e76f2fad8e844d3391999e42cd72
+ms.openlocfilehash: 78bedc3e0551feef8efe61b3b664145e29281714
 
 ---
 
-# Health report
+# 健康情況報告
 
 
-The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces for further debugging. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows 開發人員中心儀表板的 [**健康**] 報告可讓您取得與您 app 效能與品質相關的資料，包括當機和無回應事件。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。 如果適用，您可以檢視堆疊追蹤以進一步偵錯。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
-> **Note**  If you had previously published apps and viewed performance data in the earlier dashboards, you may notice an increased number of crashes and events reported here. This is because we are able to include more data in this report to give you a more complete picture.
+> **注意** 如果您之前曾經發行 app，且曾在之前的儀表板中檢視過效能資料，您可能會注意到此處報告的當機與事件樹目有所增加。 這是因為我們在此報告中加入了更多資料，來為您提供更完整的分析。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by package version.
-
--   **Date**: The default filter is **Last 72 hours**, but you can expand this up to **Last 6 months**.
--   **Package version**: The default setting is **All versions**. If your app includes more than one package version, you can choose a specific one.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all of your package versions, unless you've used the **Apply filters** to choose only one.
-
-## Total crashes and events
+## 套用篩選
 
 
-The **Total crashes and events** chart shows the number of daily crashes and events that customers experienced when using your app during the selected period of time. Each type of event that your app experienced is tracked separately: crashes, hangs, JavaScript exceptions, or memory failures.
+您可以在接近頁面頂端的地方，展開 [套用篩選]****，依日期範圍和/或套件版本來篩選此頁面上的所有日期。
 
-You can optionally filter the results by market and/or by OS version.
+-   **日期**：預設篩選為 [過去 72 小時]****，但是您可以擴展此範圍，最多可達 [過去 6 個月]****。
+-   **套件版本**：預設設定為 [所有版本]****。 如果您的 app 包含多個套件版本，您可以選擇一個特定的版本。
 
-## Crash and event breakdown
+下列所有圖表中的資訊將反映 [套用篩選]**** 區段中選取的時段。 根據預設，除非您只選擇一個套件版本來使用 [套用篩選]****，否則這將包含所有套件版本的資料。
 
-
-The **Crash and event breakdown** chart lets you see charts that track specific details related to the customers' configurations when a crash or unresponsive event occurred. Click the section headings to see details about:
-
--   OS version
--   Device type
--   Memory (MB)
--   Mass storage (GB)
--   CPU speed (GHz)
-
-You can optionally filter the results by **Crash type**: crashes, hangs, JavaScript exceptions, or memory failures. (The default setting is to show all crash types.)
-
-## Market
+## 當機和事件的總計
 
 
-The **Market** chart shows the total number of crashes and events over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Crashes** column of this chart.
+[當機和事件的總計]**** 圖表顯示客戶在所選時段使用 App 時，碰到的每日當機和事件的數目。 會對您 App 所碰到的每種事件類型進行個別追蹤：當機、停止回應、JavaScript 例外狀況或記憶體失敗。
 
-## Failure log
+您可以對結果選擇篩選市場和 (或) 作業系統版本。
+
+## 當機和事件解析
 
 
-If you have included PDB symbol files, the **Failure log** chart will show details related to occurrences of specific symbols, including the total number of crashes and the average daily number of crashes per symbol.
+[當機和事件解析]**** 圖表可讓您在發生當機或無回應事件時，查看用來追蹤客戶設定相關的特定詳細資料的圖表。 按一下區段標題可查看下列項目的相關詳細資料：
 
-This info is based on a percentage of your total events. Near the top of the chart, we'll indicate what percentage of events was sampled to provide this data.
+-   作業系統版本
+-   裝置類型
+-   記憶體 (MB)
+-   大型存放裝置 (GB)
+-   CPU 速度 (GHz)
 
- 
+您可以選擇性地依據 [當機類型]****：損毀、停止回應、 JavaScript 例外狀況或記憶體失敗，來篩選結果。 (預設設定為顯示所有的當機類型)。
+
+## 市場
+
+
+[市場]**** 圖表會依市場顯示所選時段內的當機和事件總數。 根據預設，您會在最上方看到最高下載數的市場，然後依序往下排序。 您可以切換此圖表中 [當機]**** 欄中的箭號來變更此順序。
+
+## 失敗記錄
+
+
+如果您已經納入 PDB 符號檔，[失敗記錄]**** 圖表將會顯示與特定符號發生次數相關的詳細資料，包括當機的總次數，以及每個符號的平均每日當機次數。
+
+此資訊是以事件總數的百分比為基礎顯示。 我們會在接近圖表頂端處，顯示為了提供此資料所取樣的活動百分比。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

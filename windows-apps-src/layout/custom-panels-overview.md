@@ -10,7 +10,7 @@ label: XAML custom panels overview
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aebe6b873fff2a4284f03ca519f998ded742f677
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 
 ---
 
@@ -194,6 +194,6 @@ protected override Size ArrangeOverride(Size finalSize)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

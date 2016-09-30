@@ -6,8 +6,8 @@ title: "鍵盤協助工具"
 label: Keyboard accessibility
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2215aeae041ff975d99d29ea42350f6ce0f2a681
-ms.openlocfilehash: 112c7be4cb5418332a19565be9b739e7032ba834
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
 
 ---
 
@@ -238,10 +238,10 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 * [輸入：觸控式鍵盤範例](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [回應螢幕小鍵盤外觀的範例](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+ 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

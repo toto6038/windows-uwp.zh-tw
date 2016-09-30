@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: Add a user interface
-description: You've seen how the sample game implements the main game object as well as the basic rendering framework.
+title: "新增使用者介面"
+description: "您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
+ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
 
 ---
 
-# Add a user interface
+# 新增使用者介面
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output.
+您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。 現在，讓我們看看範例遊戲如何對玩家回應遊戲的狀態。 在這裡，您會了解如何在 3D 圖形管線輸出上面加入簡單的功能表選項以及平視顯示器元件。
 
-## Objective
-
-
--   To add basic user interface graphics and behaviors to a Universal Windows Platform (UWP) DirectX game.
-
-## The user interface overlay
+## 目標
 
 
-While there are many ways to display text and user interface elements in a DirectX game, we are going to focus on one, [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (with [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) for the text elements).
+-   將基本的使用者介面圖形和行為加入通用 Windows 平台 (UWP) DirectX 遊戲。
 
-First, let's be clear about what Direct2D is not. It's not specifically designed for user interfaces or layouts, like HTML or XAML. It doesn't provide user interface components, like list boxes or buttons; and it doesn't provide layout components like divs, tables, or grids.
+## 使用者介面重疊
 
-Direct2D is a set of 2-D drawing APIs used to draw pixel-based primitives and effects. When starting out with Direct2D, keep it simple. Complex layouts and interface behaviors need time and planning. If your game requires a complex user interface to play, like those found in simulation and strategy games, consider XAML instead.
 
-(For info about developing a user interface with XAML in a UWP DirectX game, see [Extending the game sample](tutorial-resources.md).)
+雖然有許多方式可以在 DirectX 遊戲中顯示文字和使用者介面元素，但是我們僅討論其中一種方式：[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (搭配 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 建立文字元素)。
 
-In this game sample, we have two major UI components: the heads-up display for the score and in-game controls; and an overlay used to display game state text and options (such as pause info and level start options).
+首先，我們必須先清楚了解 Direct2D 不包含的功能。 它不是專為使用者介面或配置 (如 HTML 或 XAML) 所設計的。 它不提供使用者介面元件 (如清單方塊或按鈕)；也不提供配置元件 (如 div、table 或 grid)。
 
-### Using Direct2D for a heads-up display
+Direct2D 是一組 2D 繪圖 API，可用來繪製像素基本類型及效果。 開始使用 Direct2D 時，請盡可能保持簡單。 複雜的配置和介面行為會花費相當多的時間並需要長時間的規劃。 如果您的遊戲需要複雜的使用者介面才能進行 (例如模擬遊戲和策略遊戲的介面)，請考慮改用 XAML。
 
-This is the in-game heads-up display for the game sample without the game visuals. It's simple and uncluttered, allowing the player to focus on navigating the 3-D world and shooting the targets. A good interface or heads-up display must never obfuscate the ability of the player to process and react to the events in the game.
+(如需在 UWP DirectX 遊戲中使用 XAML 開發使用者介面的詳細資訊，請參閱[延伸遊戲範例](tutorial-resources.md)。)
 
-![a screen shot of the game overlay](images/sample3dgame-overlay-nogame.png)
+在這個遊戲範例中，我們有兩個主要 UI 元件：平視顯示器，用來顯示分數和遊戲內控制項；重疊，用來顯示遊戲狀態文字和選項 (如暫停資訊及關卡開始選項)。
 
-As you can see, the overlay consists of basic primitives: two intersecting line segments for the cross hairs, and two rectangles for the [move-look controller](tutorial--adding-controls.md). In the upper-right corner, DirectWrite text informs the player of the current number of successful hits, the number of shots the player has made, the time remaining in the level, and the current level number. The in-game heads-up display state of the overlay is drawn in the **Render** method of the **GameHud** class, and is coded like this:
+### 為平視顯示器使用 Direct2D
+
+這是沒有遊戲視覺效果的遊戲內平視顯示器範例。 它並不複雜，因此可讓玩家專注在瀏覽 3D 世界和射擊目標。 好的介面或平視顯示器不能混淆玩家處理和應對遊戲事件的能力。
+
+![遊戲重疊的螢幕擷取畫面](images/sample3dgame-overlay-nogame.png)
+
+就像您在這裡看到的，重疊是由基本類型組成的：兩個交叉線組成的十字準星，以及兩個作為[移動視角控制項](tutorial--adding-controls.md)的矩形。 右上角的 DirectWrite 文字會告知玩家目前成功的擊中數、玩家已進行的射擊數、關卡剩餘的時間以及目前所在的關卡。 重疊的遊戲內平視顯示器狀態會在 **GameHud** 類別的 **Render** 方法中繪製，程式碼如下：
 
 ```cpp
 void GameHud::Render(
@@ -171,43 +171,43 @@ void GameHud::Render(
 }
 ```
 
-In this code, the Direct2D render target established for the overlay is updated to reflect the changes in the number of hits, the time remaining, and the level number. The rectangles are drawn with calls to [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), and the cross hairs are drawn with a pair of calls to [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
+我們會在這個程式碼中更新針對重疊建立的 Direct2D 轉譯目標，進而反映擊中數、剩餘時間以及所在關卡的變化。 矩形透過呼叫 [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902) 進行繪製，而十字準星則透過呼叫一對 [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895) 進行繪製。
 
-> **Note**   You probably noticed the call to **GameHud::Render** takes a [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) parameter, which contains the size of the main window rectangle. This demonstrates an essential part of UI programming: obtaining the size of window in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, and it does so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using DirectWrite, you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
+> **注意** 您可能注意到呼叫 **GameHud::Render** 使用 [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 參數，其中包含了主視窗矩形的大小。 這示範了 UI 程式設計最重要的部分：以 DIP (裝置獨立像素) 度量單位取得視窗的大小，其中 DIP 定義為每英吋的 1/96。 進行繪圖時，Direct2D 會將繪圖單位縮放為實際像素，這個動作就是使用 Windows 每英吋的點數 (DPI) 設定所完成的。 同樣地，使用 DirectWrite 來繪製文字時，您指定 的是 DIP，而不是字型大小。 DIP 以浮點數表示。
 
  
 
-### Displaying game state information with an overlay
+### 使用重疊顯示遊戲狀態資訊
 
-Besides the heads-up display, the game sample has an overlay that represents five game states, and all of which feature a large black rectangle primitive with text for the player to read. (Be aware that the move-look controller rectangles are not drawn, because they are not active in these states.) These overlay states are:
+除了平視顯示器，遊戲範例還有一個表示 5 個遊戲狀態的重疊，這些所有會顯示為一個大型黑色矩形基本類型，且矩形中會顯示要讓玩家閱讀的文字。 (請注意，這裡不繪製移動視角控制器矩形，因為它們在這些狀態中沒有作用。) 這些重疊狀態為：
 
--   The game start overlay. We show this when the player starts the game. It contains the high score across game sessions.
+-   遊戲開始重疊。 當玩家開始遊戲時，我們會顯示這個狀態。 它會顯示玩家在整個遊戲階段的高分記錄。
 
-    ![a screen shot of the start screen for simple3dgamedx](images/simple3dgamestart.png)
+    ![simple3dgamedx 開始畫面的螢幕擷取畫面](images/simple3dgamestart.png)
 
--   The pause state.
+-   暫停狀態。
 
-    ![a screen shot of the pause screen for simple3dgamedx](images/simple3dgame-overlay-pause.png)
+    ![simple3dgamedx 暫停畫面的螢幕擷取畫面](images/simple3dgame-overlay-pause.png)
 
--   The level start state. We show this when the player starts a new level.
+-   關卡開始狀態。 當玩家開始新的關卡時，我們會顯示這個狀態。
 
-    ![a screen shot of the level start screen for simple3dgamedx](images/simple3dgame-overlay-newgame.png)
+    ![simple3dgamedx 關卡開始畫面的螢幕擷取畫面](images/simple3dgame-overlay-newgame.png)
 
--   The game over state. We show this when the player fails a level.
+-   遊戲結束狀態。 當玩家沒有通過關卡時，我們會顯示這個狀態。
 
-    ![a screen shot of the game over screen for simple3dgamedx](images/simple3dgame-overlay-gameover.png)
+    ![simple3dgamedx 遊戲結束畫面的螢幕擷取畫面](images/simple3dgame-overlay-gameover.png)
 
--   The game stat display state. We show this when the player wins. It contains the final score the player has achieved.
+-   遊戲統計資料顯示狀態。 當玩家贏的時候，我們會顯示這個狀態。 它會顯示玩家得到的最後分數。
 
-    ![the victory screen for simple3dgamedx](images/simple3dgame-overlay-gamestats.png)
+    ![simple3dgamedx 的勝利畫面](images/simple3dgame-overlay-gamestats.png)
 
-Let's look at how we initialize and draw the overlay for these five states.
+讓我們看看如何為這 5 個狀態初始化和繪製重疊。
 
-### Initializing and drawing the overlay
+### 初始化並繪製重疊
 
-The five explicit states have some things in common: one, they all use a black rectangle in the center of the screen as their background; two, the displayed text is either title text or body text; and three, the text uses the Segoe UI font and is drawn on top of the back rectangle. As a result, the resources they need and the methods that implement them are very similar.
+這 5 個明確狀態有一些共同點：第一，它們都在螢幕中央使用黑色矩形當作背景；第二，顯示的文字不是標題文字就是內文文字；第三，文字使用 Segoe UI 字型，且繪製在黑色矩形的上方。 因此，它們所需的資源和實作方法會非常類似。
 
-The game sample has four methods( **GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources**, and **GameInfoOverlay::RecreateDpiDependentResources**) that it uses to initialize, set the dots per inch, recreate the DirectWrite resources (the text elements), and construct this overlay for display, respectively. This is the code for these four methods:
+遊戲範例有四個方法 (**GameInfoOverlay::Initialize**、 **GameInfoOverlay::SetDpi**、**GameInfoOverlay::RecreateDirectXResources** 以及 **GameInfoOverlay::RecreateDpiDependentResources**)，分別用來初始化、設定每英吋點數、重新建立 DirectWrite 資源 (文字元素) 以及建構這個要顯示的重疊。 以下是這四個方法的程式碼：
 
 ```cpp
 void GameInfoOverlay::Initialize(
@@ -364,17 +364,17 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 ```
 
-The **Initialize** method obtains a factory from the [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) that the overlay object itself can draw into, and sets the **m\_dWriteFactory** field to the provided [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) reference. It also sets the DPI for the context. Then, it calls **RecreateDeviceResources** to assemble and draw the overlay.
+**Initialize** 方法會從傳遞給它的 [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) 物件取得 Factory，它使用這個 Factory 來建立一個重疊物件自己可以在其中繪製的 [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479)，並將 **m\_dWriteFactory** 欄位設成提供的 [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) 參考。 它也會設定內容的 DPI。 接著，它會呼叫 **RecreateDeviceResources** 來組合和繪製重疊。
 
-**RecreateDeviceResources** uses the DirectWrite factory object to create formatters (brushes) for the title and body text strings that will be displayed on the overlay. It creates a white brush to draw the text, a black brush to draw the background, and an orange brush to draw action messages. Then, it calls **RecreateDpiDependentResources** to prepare a bitmap to draw the text on by calling [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Lastly, **RecreateDpiDependentResources** sets the render target for the Direct2D device context to the bitmap and clears it, which then sets each pixel in the bitmap to the color black.
+**RecreateDeviceResources** 使用 DirectWrite Factory 物件，針對要在重疊顯示的標題和內文文字字串建立格式子 (筆刷)。 它會建立一個白色筆刷來繪製文字、一個黑色筆刷來繪製背景，以及一個橙色筆刷來繪製動作訊息。 接著它會呼叫 [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480) 來呼叫 **RecreateDpiDependentResources** 準備繪製文字的點陣圖。 最後，**RecreateDpiDependentResources** 會將 Direct2D 裝置內容的轉譯目標設成點陣圖並清除它，然後將點陣圖中的每個像素設成黑色。
 
-Now, all the overlay needs is some text to display!
+現在，所有的重疊只需要文字即可顯示！
 
-### Representing game state in the overlay
+### 在重疊中顯示遊戲狀態
 
-Each of the five overlay states in the game sample has a corresponding method on the **GameInfoOverlay** object. These methods draw a variation of the overlay to communicate explicit info to the player about the game itself. This communication is, of course, represented as two strings: a title string, and a body string. Because the sample already configured the resources and layout for this info in the **RecreateDeviceResources** method, it only needs to provide the overlay state-specific strings.
+遊戲範例中的 5 個重疊狀態在 **GameInfoOverlay** 物件中都各自有一個對應的方法。 這些方法會繪製各種重疊，玩家可從此了解遊戲的明確資訊。 這些資訊會透過兩個字串顯示：標題字串以及內文字串。 因為範例已經在 **RecreateDeviceResources** 方法中設定了這個資訊的資源和配置，現在您只需要提供各個重疊狀態使用的字串。
 
-Now, in the definition of the **GameInfoOverlay** class, the sample declared three rectangular areas that correspond to specific regions of the overlay, as shown here:
+現在，範例在 **GameInfoOverlay** 類別的定義中宣告了三個矩形區域，分別對應到重疊的特定區域，如下所示：
 
 ```cpp
 static const D2D1_RECT_F titleRectangle = D2D1::RectF(50.0f, 50.0f, GameInfoOverlayConstant::Width - 50.0f, 100.0f);
@@ -382,13 +382,13 @@ static const D2D1_RECT_F bodyRectangle = D2D1::RectF(50.0f, 110.0f, GameInfoOver
 static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayConstant::Height - 45.0f, GameInfoOverlayConstant::Width - 50.0f, GameInfoOverlayConstant::Height - 5.0f);
 ```
 
-These areas each have a specific purpose:
+這些區域各有專屬用途：
 
--   **titleRectangle** is where the title text is drawn.
--   **bodyRectangle** is where the body text is drawn.
--   **actionRectangle** is where the text that informs the player to take a specific action is drawn. (It's in the bottom left of the overlay bitmap.)
+-   **titleRectangle** 是繪製標題文字的位置。
+-   **bodyRectangle** 是繪製內文文字的位置。
+-   **actionRectangle** 是繪製通知玩家採取特定動作的文字位置。 (位於重疊點陣圖的左下方。)
 
-With these areas in mind, let's look at one of the state-specific methods, **GameInfoOverlay::SetGameStats**, and see how the overlay is drawn.
+記住這些區域的用途，讓我們看看其中一個狀態特定方法 (**GameInfoOverlay::SetGameStats**)，並了解重疊是如何繪製的。
 
 ```cpp
 void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
@@ -440,11 +440,11 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-Using the Direct2D device context that the **GameInfoOverlay** object initialized and configured using **Initialize** and **RecreateDirectXResources**, this method fills the title and body rectangles with black using the background brush. It draws the text for the "High Score" string to the title rectangle and a string containing the updates game state information to the body rectangle using the white text brush.
+藉由使用 **GameInfoOverlay** 物件以 **Initialize** 和 **RecreateDirectXResources** 初始化及設定的 Direct2D 裝置內容，這個方法會使用背景筆刷將標題和內文矩形以黑色填滿。 它會使用白色文字筆刷，在標題矩形中繪製 "High Score" 文字字串，並在內文矩形中繪製包含更新遊戲狀態資訊的字串。
 
-The action rectangle is updated by a subsequent call to **GameInfoOverlay::SetAction** from a method on the **DirectXApp** object, which provides the game state info needed by **SetAction** to determine the right message to the player (such as "Tap to continue").
+動作矩形會接著從 **DirectXApp** 物件的方法中呼叫 **GameInfoOverlay::SetAction** 來更新，提供 **SetAction** 所需的遊戲狀態資訊，並藉此判斷要顯示給玩家的正確訊息 (例如，「點選以繼續」)。
 
-The overlay for any given state is chosen in the **SetGameInfoOverlay** method on **DirectXApp**, like this:
+您可以在 **DirectXApp** 上的 **SetGameInfoOverlay** 方法中選擇任何指定的重疊狀態，如下所示：
 
 ```cpp
 void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -500,13 +500,13 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-And now the game sample has a way to communicate text info to the player based on game state.
+現在遊戲範例可根據遊戲的狀態，使用文字資訊來與玩家溝通。
 
-### Next steps
+### 後續步驟
 
-In the next topic, [Adding controls](tutorial--adding-controls.md), we look at how the player interacts with the game sample, and how input changes game state.
+在下一個主題[新增控制項](tutorial--adding-controls.md)中，我們會說明玩家如何與遊戲範例互動，以及輸入如何變更遊戲狀態。
 
-### Complete sample code for this section
+### 這個章節的完整範例程式碼
 
 GameHud.h
 
@@ -1478,21 +1478,21 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## Related topics
+## 相關主題
 
 
-[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

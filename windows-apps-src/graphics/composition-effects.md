@@ -1,61 +1,61 @@
 ---
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: Composition effects
-description: The effect APIs enable developers to customize how their UI is rendered.
+title: "組合效果"
+description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
 translationtype: Human Translation
 ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
+ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
 
 ---
-# Composition effects
+# 組合效果
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API allows Real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
+[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
-To support [Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Namespace.
+為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空間來使用效果描述。
 
-Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
+筆刷效果可用來將效果套用到一組現有的影像，以繪製應用程式的部分區域。 Windows 10 組合效果 API 著重在 SpriteVisual 上。 SpriteVisual 在色彩、影像和效果建立上提供彈性和相互作用。 SpriteVisual 是一種可利用筆刷填滿 2D 矩形的視覺化組合類型。 視覺化定義矩形的界線，筆刷則定義用來繪製矩形的像素。
 
-Effect brushes are used on composition tree visuals whose content comes from the output of an effect graph. Effects can reference existing surfaces/textures, but not the output of other composition trees.
+筆刷效果用於視覺化組合樹狀結構，這種效果的內容來自效果圖形的輸出。 效果可以參考現有表面/紋理，但沒有其他組合樹狀結構的輸出。
 
-## Effect Features
+## 效果功能
 
--   [Effect Library](./composition-effects.md#effect-library)
--   [Chaining Effects](./composition-effects.md#chaining-effects)
--   [Animation Support](./composition-effects.md#animation-support)
--   [Effect properties – Constant vs. Animated](./composition-effects.md#effect-properties-constant-vs-animated)
--   [Multiple Effect Instances with Independent Properties](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+-   [效果程式庫](./composition-effects.md#effect-library)
+-   [鏈結效果](./composition-effects.md#chaining-effects)
+-   [動畫支援](./composition-effects.md#animation-support)
+-   [效果屬性 – 常數與動畫效果](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [使用獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### Effect Library
+### 效果程式庫
 
-Currently composition supports the following effects:
+目前組合支援下列效果：
 
-| Effect               | Description                                                                                                                                                                                                                |
+| 效果               | 說明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D affine transform  | Applies a 2D affine transform matrix to an image. We used this effect to animate alpha mask in our effect [samples](http://go.microsoft.com/fwlink/?LinkId=785341).       |
-| Arithmetic composite | Combines two images using a flexible equation. We used arithmetic composite to create a crossfade effect in our [samples](http://go.microsoft.com/fwlink/?LinkId=785341). |
-| Blend effect         | Creates a blend effect that combines two images. Composition provides 21 of the 26 [blend modes](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) supported in Win2D.        |
-| Color source         | Generates an image containing a solid color.                                                                                                                                                                               |
-| Composite            | Combines two images. Composition provides all 13 [composite modes](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) supported in Win2D.                                              |
-| Contrast             | Increases or decreases the contrast of an image.                                                                                                                                                                           |
-| Exposure             | Increases or decreases the exposure of an image.                                                                                                                                                                           |
-| Grayscale            | Converts an image to monochromatic gray.                                                                                                                                                                                   |
-| Gamma transfer       | Alters the colors of an image by applying a per-channel gamma transfer function.                                                                                                                                           |
-| Hue rotate           | Alters the color of an image by rotating its hue values.                                                                                                                                                                   |
-| Invert               | Inverts the colors of an image.                                                                                                                                                                                            |
-| Saturate             | Alters the saturation of an image.                                                                                                                                                                                         |
-| Sepia                | Converts an image to sepia tones.                                                                                                                                                                                          |
-| Temperature and tint | Adjusts the temperature and/or tint of an image.                                                                                                                                                                           |
+| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
+| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
+| 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md)的 21 種。        |
+| 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
+| 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md)。                                              |
+| 對比             | 增加或減少影像的對比。                                                                                                                                                                           |
+| 曝光             | 增加或減少影像的曝光。                                                                                                                                                                           |
+| 灰階            | 將影像轉換為灰色。                                                                                                                                                                                   |
+| 色差補正移轉       | 藉由套用各頻道色差補正移轉功能改變影像的色彩。                                                                                                                                           |
+| 色相旋轉           | 旋轉影像的色相值改變影像的色彩。                                                                                                                                                                   |
+| 負片               | 反轉影像的色彩。                                                                                                                                                                                            |
+| 飽和度             | 改變影像的飽和度。                                                                                                                                                                                         |
+| 懷舊                | 將影像轉換成懷舊色調。                                                                                                                                                                                          |
+| 色溫和色調 | 調整影像的色溫和/或色調。                                                                                                                                                                           |
 
  
 
-See Win2D’s [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Namespace for more detailed information. Effects not supported in composition are noted as \[NoComposition\].
+如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
 
-### Chaining Effects
+### 鏈結效果
 
-Effects can be chained, allowing an application to simultaneously use multiple effects on an image. Effect graphs can support multiple effects that can refer to one and other. When describing your effect, simply add an effect as input to your effect.
+效果可以鏈結，允許應用程式同時在影像上使用多個效果。 效果圖形可以支援可互相參照的多個效果。 當描述您的效果時，只需新增效果做為您效果的輸入。
 
 ```cs
 IGraphicsEffect graphicsEffect =
@@ -75,25 +75,25 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   
 ```
 
-The example above describes an arithmetic composite effect which has two inputs. The second input has a saturation effect with a .5 saturation property.
+上述範例說明一個有二項輸入的算數複合效果。 第二個輸入包含飽和度屬性為 0.5 的效果。
 
-### Animation Support
+### 動畫支援
 
-Effect properties support animation, during effect compilation you can specify effect properties can be animated and which can be "baked in" as constants. The animatable properties are specified through strings of the form “effect name.property name”. These properties can be animated independently over multiple instantiations of the effect.
+效果屬性支援動畫，您可以在效果編譯期間指定用動畫顯示，且「一律」做為常數的效果屬性。 可展示動畫的屬性是透過表單 "effect name.property name" 的字串來指定。 這些屬性可以透過多個效果的具現化，來獨立產生動畫效果。
 
-### Effect properties – Constant vs Animated
+### 效果屬性 – 常數與動畫效果
 
-During effect compilation you can specify effect properties as dynamic or as properties that are "baked in" as constants. The dynamic properties are specified through strings of the form “<effect name>.<property name>”. The dynamic properties can be set to a specific value or can be animated using the composition animation system.
+您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過「<effect name>.<property name>」格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
 
-When compiling the effect description above, you have the flexibility of either baking in saturation to be equal to 0.5 or making it dynamic and setting it dynamically or animating it.
+在編譯上述效果時，您有彈性可以選擇飽和度一律等於 0.5，或將它設為動態值並以動態或動畫效果顯示。
 
-Compiling an effect with saturation baked in:
+編譯固定飽和度的效果：
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);              
 ```
 
-Compiling an effect with dynamic saturation:
+編譯動態飽和度的效果：
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
@@ -102,9 +102,9 @@ _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
 ```
 
-The saturation property of the effect above can then be either set to a static value or animated using either Expression or ScalarKeyFrame animations.
+上述效果的飽和度屬性可接著設為靜態值，或者使用 Expression 或 ScalarKeyFrame 動畫來以動畫效果顯示。
 
-You can create a ScalarKeyFrame that will be used to animate the Saturation property of an effect like this:
+您可以建立如下的 ScalarKeyFrame，來以動畫顯示 Saturation 屬性：
 
 ```cs
 ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -115,58 +115,58 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
             effectAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 ```
 
-Start the animation on the Saturation property of the effect like this:
+啟動效果的 Saturation 屬性動畫的方法：
 
 ```cs
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-See the [Desaturation - Animation sample](http://go.microsoft.com/fwlink/?LinkId=785342) for effect properties animated with key frames and the [AlphaMask sample](http://go.microsoft.com/fwlink/?LinkId=785343) for use of effects and expressions.
+請參閱[去飽和度 - 動畫範例](http://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](http://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
 
-### Multiple Effect Instances with Independent Properties
+### 使用獨立屬性的多個效果執行個體
 
-By specifying that a parameter should be dynamic during effect compilation, the parameter can then be changed on a per-effect instance basis. This allows two Visuals to use the same effect but be rendered with different effect properties. See the ColorSource and Blend [sample](http://go.microsoft.com/fwlink/?LinkId=785344) for more information.
+藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](http://go.microsoft.com/fwlink/?LinkId=785344)。
 
-## Getting Started with Composition Effects
+## 開始使用組合效果
 
-This quick start tutorial shows you how to make use of some of the basic capabilities of effects.
+這個快速入門教學課程會示範如何使用效果的一些基本功能。
 
--   [Installing Visual Studio](./composition-effects.md#installing-visual-studio)
--   [Creating a new project](./composition-effects.md#creating-a-new-project)
--   [Installing Win2D](./composition-effects.md#installing-win2d)
--   [Setting your Composition Basics](./composition-effects.md#setting-your-composition-basics)
--   [Creating a CompositionSurface Brush](./composition-effects.md#creating-a-compositionsurface-brush)
--   [Creating, Compiling and Applying Effects](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [安裝 Visual Studio](./composition-effects.md#installing-visual-studio)
+-   [建立新的專案](./composition-effects.md#creating-a-new-project)
+-   [安裝 Win2D](./composition-effects.md#installing-win2d)
+-   [設定您的組合基本知識](./composition-effects.md#setting-your-composition-basics)
+-   [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
+-   [建立、編譯以及套用效果](./composition-effects.md#creating,-compiling-and-applying-effects)
 
-### Installing Visual Studio
+### 安裝 Visual Studio
 
--   If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+-   如果您沒有安裝支援的 Visual Studio 版本，請移至[這裡](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下載頁面。
 
-### Creating a new project
+### 建立新的專案
 
--   Go to File->New->Project...
--   Select 'Visual C#'
--   Create a 'Blank App (Windows Universal)' (Visual Studio 2015)
--   Enter a project name of your choosing
--   Click 'OK'
+-   移至 [檔案] -&gt; [新增] -&gt; [專案]...
+-   選取 [Visual C#]
+-   建立 [空白的應用程式 \(Windows 通用\)] \(Visual Studio 2015\)
+-   輸入您選擇的專案名稱
+-   按一下 [確定]
 
-### Installing Win2D
+### 安裝 Win2D
 
-Win2D is released as a Nuget.org package and needs to be installed before you can use effects.
+Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 
-There are two package versions, one for Windows 10 and one for Windows 8.1. For Composition effects you’ll use the Windows 10 version.
+有兩種版本的套件，其中一個適用於 Windows 10，另一個適用於 Windows 8.1。 若是組合效果，則您必須使用 Windows 10 版本。
 
--   Launch the NuGet Package Manager by going to Tools → NuGet Package Manager → Manage NuGet Packages for Solution.
--   Search for "Win2D" and select the appropriate package for your target version of Windows. Because Windows.UI. Composition supports Windows 10 (not 8.1), select Win2D.uwp.
--   Accept the license agreement
--   Click 'Close'
+-   移至 [工具] → [NuGet 套件管理員] → [管理方案的 NuGet 套件] 啟動 NuGet 套件管理員。
+-   搜尋 "Win2D"，然後針對您的 Windows 目標版本選取適當的套件。 因為 Windows.UI。 組合支援 Windows 10 (不支援 8.1)，選取 Win2D.uwp。
+-   接受授權合約
+-   按一下 [關閉]
 
-In the next few steps we will use composition API’s to apply a saturation effect to this cat image which will remove all saturation. In this model the effect is created and then applied to an image.
+在接下來的幾個步驟中，我們會使用組合 API，把移除所有飽和度的飽和度效果套用至這個貓咪影像。 在這個模型中，效果會在建立後套用至影像。
 
-![Source image](images/composition-cat-source.png)
-### Setting your Composition Basics
+![來源影像](images/composition-cat-source.png)
+### 設定您的組合基本知識
 
-See the [Composition Visual Tree Sample](http://go.microsoft.com/fwlink/?LinkId=785345) on our GitHub for an example of how to set up Windows.UI.Composition Compositor, root ContainerVisual, and associate with the Core Window.
+如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](http://go.microsoft.com/fwlink/?LinkId=785345)。
 
 ```cs
 _compositor = new Compositor();
@@ -177,16 +177,16 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### Creating a CompositionSurface Brush
+### 建立 CompositionSurface 筆刷
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### Creating, Compiling and Applying Effects
+### 建立、編譯以及套用效果
 
-1.) Create the graphics effect
+1.) 建立圖形效果
 ```cs
 var graphicsEffect = new SaturationEffect
 {
@@ -195,7 +195,7 @@ var graphicsEffect = new SaturationEffect
 };
 ```
 
-2.) Compile the effect and create effect brush
+2.) 編譯效果及建立筆刷效果
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
@@ -203,7 +203,7 @@ var catEffect = effectFactory.CreateBrush();
 catEffect.SetSourceParameter("mySource", surfaceBrush);
 ```
 
-3.) Create a SpriteVIsual in the composition tree and apply the effect
+3.) 在組合樹狀結構中建立 SpriteVIsual 並套用效果
 ```cs
 var catVisual = _compositor.CreateSpriteVisual();
   catVisual.Brush = catEffect;
@@ -212,31 +212,31 @@ var catVisual = _compositor.CreateSpriteVisual();
 }
 ```
 
-4.) Create your image source to load.
+4.) 建立您要載入的影像來源。
 ```cs
 CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
 CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
 if (result.Status == CompositionImageLoadStatus.Success)
 ```
 
-5.) Size and brush the surface on the SpriteVisual
+5.) 在 SpriteVisual 上調整大小並粉刷表面
 ```cs
 brush.Surface = imageSource.Surface;
 ```
 
-6.) Run your app – your results should be a desaturated cat:
+6.) 執行您的應用程式 – 您的結果應該是一隻去除飽和度的貓：
 
-![Desaturated image](images/composition-cat-desaturated.png)
-## More Information
+![去除飽和度的影像](images/composition-cat-desaturated.png)
+## 其他資訊
 
--   [Microsoft – Composition GitHub](https://github.com/Microsoft/composition)
+-   [Microsoft – 組合 GitHub](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
--   [Windows Composition team on Twitter](https://twitter.com/wincomposition)
--   [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
--   [Visual Tree Basics](composition-visual-tree.md)
--   [Composition Brushes](composition-brushes.md)
--   [Animation Overview](composition-animation.md)
--   [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
+-   [Twitter 上的 Windows 組合小組](https://twitter.com/wincomposition)
+-   [組合概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+-   [視覺化樹狀結構基本知識](composition-visual-tree.md)
+-   [組合筆刷](composition-brushes.md)
+-   [動畫概觀](composition-animation.md)
+-   [組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作](composition-native-interop.md)
 
  
 
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

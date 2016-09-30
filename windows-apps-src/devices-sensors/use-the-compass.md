@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-title: Use the compass
-description: Learn how to use the compass to determine the current heading.
+title: "使用指南針"
+description: "了解如何使用指南針來判斷目前朝向何方。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
+ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
 
 ---
-# Use the compass
+# 使用指南針
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要 API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**指南針**](https://msdn.microsoft.com/library/windows/apps/BR225705)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
-Learn how to use the compass to determine the current heading.
+了解如何使用指南針來判斷目前朝向何方。
 
-An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
+應用程式可以根據磁極或正北方來擷取目前所朝向的方向。 導航應用程式會使用指南針來判斷裝置所朝向的方向，然後據此設定地圖方位。
 
-## Prerequisites
+## 先決條件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
-The device or emulator that you're using must support a compass.
+您使用的裝置或模擬器必須支援指南針。
 
-## Create a simple compass app
+## 建立簡單的指南針應用程式
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple compass application from scratch. The following subsection explains the app you have just created.
+本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單指南針應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### Instructions
+### 指示
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
 ```csharp
     using System;
@@ -126,25 +126,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **CompassCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="CompassCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:CompassCS"`.
+您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="CompassCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:CompassCS"`。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
 
-Once the app is running, you can change the compass values by moving the device or using the emulator tools.
+App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-### Explanation
+### 說明
 
-The previous example demonstrates how little code you'll need to write in order to integrate compass input in your app.
+前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的指南針輸入。
 
-The app establishes a connection with the default compass in the **MainPage** method.
+App 會與 **MainPage** 方法中的預設指南針建立連線。
 
 ```csharp
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+App 會在 **MainPage** 方法內建立報告間隔。 這段程式碼會擷取裝置所支援的最短間隔，並和所要求的 16 毫秒間隔 (重新整理的速率大約是 60-Hz) 比較。 如果支援的最短間隔大於要求的間隔，程式碼會將該值設定為最小值。 否則，就會將該值設定為要求的間隔。
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -152,14 +152,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _compass.ReportInterval = reportInterval;
 ```
 
-The new compass data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+會在 **ReadingChanged** 方法中擷取新的指南針資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
 _compass.ReadingChanged += new TypedEventHandler<Compass, 
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+這些新的值會寫入專案 XAML 中的 TextBlock。
 
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
@@ -168,9 +168,9 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## Related topics
+## 相關主題
 
-* [Compass Sample](http://go.microsoft.com/fwlink/p/?linkid=241378)
+* [指南針範例](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
@@ -181,6 +181,6 @@ These new values are written to the TextBlocks found in the project's XAML.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

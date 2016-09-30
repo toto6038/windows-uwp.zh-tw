@@ -1,64 +1,54 @@
 ---
 author: Jwmsft
-Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
-title: Labels
+Description: "使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。"
+title: "標籤"
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: aa605b3862c33633904822bb88de7e647a2b3d5b
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
 
 ---
-# Labels
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 標籤
 
-A label is the name or title of a control or a group of related controls.
+標籤是控制項或一組相關控制項的名稱或標題。
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>Header property</li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209652"><strong>TextBlock class</strong></a></li>
-</ul>
+**重要 API**
 
-</div>
-</div>
+-   Header 屬性
+-   [**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 
+在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
 
+## 範例
 
 
-In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) instead.
+![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建議事項
 
 
-## Example
+-   使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
+-   為控制項加上標籤時，可填寫名詞或簡要的名詞片語，而非長句或說明文字。 請避免使用冒號或其他標點符號。
+-   當您的標籤中有說明文字時，您對於文字字串的長度可能會更寬厚，而且也會使用標點符號。
 
+## <span id="related_topics"></span>相關主題
+* [文字控制項](text-controls.md)
 
-![a screenshot that illustrates the standard label control](images/label-standard.png)
-
-## Recommendations
-
-
--   Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
--   When labeling controls, write the label as a noun or a concise noun phrase, not as a sentence, and not as instructional text. Avoid colons or other punctuation.
--   When you do have instructional text in a label, you can be more generous with text-string length and also use punctuation.
-
-## Related topics
-* [Text controls](text-controls.md)
-
-**For developers**
-* [**TextBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**PasswordBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**ToggleSwitch.Header property**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**DatePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**TimePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Slider.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**ComboBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**RichEditBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**適用於開發人員**
+* [**TextBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [**PasswordBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [**ToggleSwitch.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [**DatePicker.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [**TimePicker.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [**Slider.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [**ComboBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [**RichEditBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 
@@ -70,6 +60,6 @@ In XAML, many controls have a built-in Header property that you use to display t
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,135 +1,135 @@
 ---
 author: msatranjr
-title: Diagnosing Windows Runtime Component error conditions
-description: This article provides additional information about restrictions on Windows Runtime Components written with managed code.
+title: "診斷 Windows 執行階段元件錯誤狀況"
+description: "本文提供關於以 Managed 程式碼撰寫之 Windows 執行階段元件有何限制的其他資訊。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
+ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 ---
 
-# Diagnosing Windows Runtime Component error conditions
+# 診斷 Windows 執行階段元件錯誤狀況
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article provides additional information about restrictions on Windows Runtime Components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), and complements the information on restrictions that is provided in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+本文提供以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。 其中詳述 [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx) 中錯誤訊息所提供的資訊，並補充[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制相關資訊。
 
-This article doesn’t cover all errors. The errors discussed here are grouped by general category, and each category includes a table of associated error messages. Search for message text (omitting specific values for placeholders) or for message number. If you don’t find the information you need here, please help us improve the documentation by using the feedback button at the end of this article. Include the error message. Alternatively, you can file a bug at the Microsoft Connect website.
+本文並未涵蓋所有錯誤。 本文討論的錯誤會依照一般類別分門別類，而每個類別都有一個相關錯誤訊息的表格。 請搜尋訊息文字 (省略預留位置的特定值) 或訊息編號。 如果您在此處找不到所需的資訊，請使用本文結尾處的意見反應按鈕來協助我們改善本文。 請納入錯誤訊息。 或者，您也可以將 Bug 歸檔在 Microsoft Connect 網站上。
 
-## Error message for implementing async interface provides incorrect type
+## 實作非同步介面提供不正確類型的錯誤訊息
 
 
-Managed Windows Runtime Components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Instead, the .NET Framework provides the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class for generating async operations in Windows Runtime Components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. The .NET Framework no longer includes the AsyncInfoFactory class.
+Managed Windows 執行階段元件無法實作表示非同步動作或作業 ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) 的通用 Windows 平台 (UWP) 介面。 相反地，.NET Framework 會提供 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 類別，用來在 Windows 執行階段元件中產生非同步作業。 當您嘗試以不正確的方式實作非同步介面時，Winmdexp.exe 顯示的錯誤訊息會根據這個類別的舊名稱 AsyncInfoFactory 指出這個類別， 因為 .NET Framework 不再包含 AsyncInfoFactory 類別。
 
-| Error number | Message Text                                                                                                                                                                                                                                                          |
+| 錯誤代碼 | 訊息文字                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1084      | Type '{0}' implements Windows Runtime async interface '{1}'. Windows Runtime types cannot implement async interfaces. Please use the System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory class to generate async operations for export to Windows Runtime. |
+| WME1084      | 類型 '{0}' 實作了 Windows 執行階段非同步介面 '{1}'。 Windows 執行階段類型不能實作非同步介面。 請使用 System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory 類別產生非同步作業，以匯出到 Windows 執行階段。 |
 
  
 
-> **Note** The error messages that refer to the Windows Runtime use an old terminology. This is now referred to as the Universal Windows Platform (UWP). For example, Windows Runtime types are now called UWP types.
+> **注意** 參考 Windows 執行階段的錯誤訊息使用了舊的詞彙。 這現在稱為通用 Windows 平台 (UWP)。 例如，Windows 執行階段類型現在稱為 UWP 類型。
 
  
 
-## Missing references to mscorlib.dll or System.Runtime.dll
+## 遺失 mscorlib.dll 或 System.Runtime.dll 的參考
 
 
-This issue occurs only when you use Winmdexp.exe from the command line. We recommend that you use the /reference option to include references to both mscorlib.dll and System.Runtime.dll from the .NET Framework core reference assemblies, which are located in "%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\..." on a 32-bit computer).
+僅在從命令列使用 Winmdexp.exe 時，才會發生此問題。 建議您使用 /reference 選項來包含對於來自 .NET Framework 核心參考組件之 mscorlib.dll 和 System.Runtime.dll 的參考，其位於 "%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" (在 32 位元電腦上為 "%ProgramFiles%\\...") 中。
 
-| Error number | Message Text                                                                                                                                     |
+| 錯誤號碼 | 訊息文字                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1009      | No reference was made to mscorlib.dll. A reference to this metadata file is required in order to export correctly.                               |
-| WME1090      | Could not determine the core reference assembly. Please make sure mscorlib.dll and System.Runtime.dll is referenced using the /reference switch. |
+| WME1009      | 未參考 mscorlib.dll。 必須有這個中繼資料檔的參考，才能正確匯出。                               |
+| WME1090      | 無法判斷核心參考組件。 請確定已使用 /reference 參數參考 mscorlib.dll 和 System.Runtime.dll。 |
 
  
 
-## Operator overloading is not allowed
+## 不允許運算子多載
 
 
-In a Windows Runtime Component written in managed code, you cannot expose overloaded operators on public types.
+在使用 Managed 程式碼撰寫的 Windows 執行階段元件中，您無法公開公用類型的多載運算子。
 
-> **Note** In the error message, the operator is identified by its metadata name, such as op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (implicit conversion), and so on.
+> **注意** 在錯誤訊息中，會以運算子的中繼資料名稱來識別運算子，例如 op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (隱含轉換) 等。
 
  
 
-| Error number | Message Text                                                                                          |
+| 錯誤代碼 | 訊息文字                                                                                          |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| WME1087      | '{0}' is an operator overload. Managed types cannot expose operator overloads in the Windows Runtime. |
+| WME1087      | '{0}' 是運算子多載。 Managed 類型無法在 Windows 執行階段中公開運算子多載。 |
 
  
 
-## Constructors on a class have the same number of parameters
+## 一個類別的建構函式具有相同數量的參數
 
 
-In the UWP, a class can have only one constructor with a given number of parameters; for example, you can't have one constructor that has a single parameter of type **String** and another that has a single parameter of type **int** (**Integer** in Visual Basic). The only workaround is to use a different number of parameters for each constructor.
+在 UWP 中，一個類別只能有一個具有指定數量參數的建構函式，例如，您不能有一個建構函式具有類型 **String** 的單一參數，同時又有一個建構函式具有類型 **int** (在 Visual Basic 中為 **Integer**) 的單一參數。 唯一的解決方法是對每個建構函式使用不同數量的參數。
 
-| Error number | Message Text                                                                                                                                            |
+| 錯誤代碼 | 訊息文字                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1099      | Type '{0}' has multiple constructors with '{1}' argument(s). Windows Runtime types cannot have multiple constructors with the same number of arguments. |
+| WME1099      | 類型 '{0}' 有多個具有 '{1}' 個引數的建構函式。 Windows 執行階段類型不能有多個引數數目相同的建構函式。 |
 
  
 
-## Must specify a default for overloads that have the same number of parameters
+## 對於具有相同參數數量的多載，必須指定預設值
 
 
-In the UWP, overloaded methods can have the same number of parameters only if one overload is specified as the default overload. See "Overloaded Methods" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+在 UWP 中，只有將某個多載指定為預設多載後，多載方法才可以有相同數量的參數。 如需詳細資訊，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中的＜多載方法＞。
 
-| Error number | Message Text                                                                                                                                                                      |
+| 錯誤代碼 | 訊息文字                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1059      | Multiple {0}-parameter overloads of '{1}.{2}' are decorated with Windows.Foundation.Metadata.DefaultOverloadAttribute.                                                            |
-| WME1085      | The {0}-parameter overloads of {1}.{2} must have exactly one method specified as the default overload by decorating it with Windows.Foundation.Metadata.DefaultOverloadAttribute. |
+| WME1059      | ' {1}.{2}' 的多個 {0} 參數多載是使用 Windows.Foundation.Metadata.DefaultOverloadAttribute 裝飾。                                                            |
+| WME1085      | {1}.{2} 的 {0} 參數多載必須有一個方法指定為預設多載，指定方式是使用 Windows.Foundation.Metadata.DefaultOverloadAttribute 裝飾。 |
 
  
 
-## Namespace errors and invalid names for the output file
+## 命名空間錯誤且輸出檔的名稱無效
 
 
-In the Universal Windows Platform, all the public types in a Windows metadata (.winmd) file must be in a namespace that shares the .winmd file name, or in sub-namespaces of the file name. For example, if your Visual Studio project is named A.B (that is, your Windows Runtime Component is A.B.winmd), it can contain public classes A.B.Class1 and A.B.C.Class2, but not A.Class3 (WME0006) or D.Class4 (WME1044).
+在通用 Windows 平台中，Windows 中繼資料 (.winmd) 檔案中的所有公用類型必須位於共用 .winmd 檔案名稱的命名空間中，或位於該檔案名稱的子命名空間中。 例如，如果您的 Visual Studio 專案名稱為 A.B (也就是說，您的 Windows 執行階段元件為 A.B.winmd)，則此專案可包含公用類別 A.B.Class1 與 A.B.C.Class2，但不可包含 A.Class3 (WME0006) 或 D.Class4 (WME1044)。
 
-> **Note**  These restrictions apply only to public types, not to private types used in your implementation.
-
- 
-
-In the case of A.Class3, you can either move Class3 to another namespace or change the name of the Windows Runtime Component to A.winmd. Although WME0006 is a warning, you should treat it as an error. In the previous example, code that calls A.B.winmd will be unable to locate A.Class3.
-
-In the case of D.Class4, no file name can contain both D.Class4 and classes in the A.B namespace, so changing the name of the Windows Runtime Component is not an option. You can either move D.Class4 to another namespace, or put it in another Windows Runtime Component.
-
-The file system can't distinguish between uppercase and lowercase, so namespaces that differ by case are not allowed (WME1067).
-
-Your component must contain at least one **public sealed** type (**Public NotInheritable** in Visual Basic). If not, you will get WME1042 or WME1043, depending on whether your component contains private types.
-
-A type in a Windows Runtime Component cannot have a name that is the same as a namespace (WME1068).
-
-> **Caution**  If you call Winmdexp.exe directly and don't use the /out option to specify a name for your Windows Runtime Component, Winmdexp.exe tries to generate a name that includes all the namespaces in the component. Renaming namespaces can change the name of your component.
+> **注意** 這些限制僅適用於公用類型，而不適用於您的實作所使用的私用類型。
 
  
 
-| Error number | Message Text                                                                                                                                                                                                                                                                                                                                             |
+以 A.Class3 為例，您可以將 Class3 移至其他命名空間，或將 Windows 執行階段元件的名稱變更為 A.winmd。 雖然 WME0006 是警告，但您應將其視為錯誤。 在上述範例中，呼叫 A.B.winmd 的程式碼將找不到 A.Class3。
+
+以 D.Class4 為例，沒有任何檔案名稱可同時包含 D.Class4 與 A.B 命名空間中的類別，因此變更 Windows 執行階段元件的名稱是不可行的。 您可以將 D.Class4 移至另一個命名空間，或將其放在另一個 Windows 執行階段元件中。
+
+檔案系統無法區分大小寫，因此不允許只有大小寫不同的命名空間 (WME1067)。
+
+您的元件至少必須包含一個 **public sealed** 類型 (在 Visual Basic 中為 **Public NotInheritable**)。 否則，根據您的元件是否包含私用類型而定，將會出現 WME1042 或 WME1043。
+
+Windows 執行階段元件中的類型不可與命名空間同名 (WME1068)。
+
+> **警告** 如果您直接呼叫 Winmdexp.exe，而未使用 /out 選項來為您的 Windows 執行階段元件指定名稱，Winmdexp.exe 即會嘗試產生包含元件中所有命名空間的名稱。 為命名空間重新命名，可變更元件的名稱。
+
+ 
+
+| 錯誤代碼 | 訊息文字                                                                                                                                                                                                                                                                                                                                             |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME0006      | '{0}' is not a valid winmd file name for this assembly. All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name. Types that do not exist in such a sub namespace cannot be located at runtime. In this assembly, the smallest common namespace that could serve as a filename is '{1}'. |
-| WME1042      | Input module must contain at least one public type that is located inside a namespace.                                                                                                                                                                                                                                                                   |
-| WME1043      | Input module must contain at least one public type that is located inside a namespace. The only types found inside namespaces are private.                                                                                                                                                                                                               |
-| WME1044      | A public type has a namespace ('{1}') that shares no common prefix with other namespaces ('{0}'). All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name.                                                                                                                              |
-| WME1067      | Namespace names cannot differ only by case: '{0}', '{1}'.                                                                                                                                                                                                                                                                                                |
-| WME1068      | Type '{0}' cannot have the same name as namespace '{1}'.                                                                                                                                                                                                                                                                                                 |
+| WME0006      | '{0}' 不是這個組件的有效 winmd 檔名。 Windows 中繼資料檔中的所有類型都必須存在檔名所隱含之命名空間的子命名空間內。 執行階段找不到不存在於這種子命名空間的類型。 在這個組件中，可做為檔名的最小通用命名空間是 '{1}'。 |
+| WME1042      | 輸入模組必須至少包含一個位在命名空間內的公用類型。                                                                                                                                                                                                                                                                   |
+| WME1043      | 輸入模組必須至少包含一個位在命名空間內的公用類型。 在命名空間內只發現私用類型。                                                                                                                                                                                                               |
+| WME1044      | 公用類型有命名空間 ('{1}')，但該命名空間與其他命名空間 ('{0}') 沒有共通的前置詞。 Windows 中繼資料檔中的所有類型都必須存在檔名所隱含之命名空間的子命名空間內。                                                                                                                              |
+| WME1067      | 命名空間名稱不能只有大小寫不同：'{0}'、'{1}'。                                                                                                                                                                                                                                                                                                |
+| WME1068      | 類型 '{0}' 不能與命名空間 '{1}' 同名。                                                                                                                                                                                                                                                                                                 |
 
  
 
-## Exporting types that aren't valid Universal Windows Platform types
+## 匯出的類型不是有效的通用 Windows 平台類型
 
 
-The public interface of your component must expose only UWP types. However, the .NET Framework provides mappings for a number of commonly used types that are slightly different in the .NET Framework and the UWP. This enables the .NET Framework developer to work with familiar types instead of learning new ones. You can use these mapped .NET Framework types in the public interface of your component. See "Declaring types in Windows Runtime Components" and "Passing Universal Windows Platform types to managed code" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md), and [.NET Framework mappings of Windows Runtime types](net-framework-mappings-of-windows-runtime-types.md).
+元件的公用介面必須只公開 UWP 類型。 但是，.NET Framework 針對許多在 .NET Framework 與 UWP 中只有些許差異的通用類型提供了對應。 這可讓 .NET Framework 開發人員使用熟悉的類型，而不用學習新的類型。 您可以在元件的公用介面中使用這些對應的 .NET Framework 類型。 請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)與 [Windows 執行階段類型的 .NET Framework 對應](net-framework-mappings-of-windows-runtime-types.md)中的＜在 Windows 執行階段元件中宣告類型＞與＜將 Windows 執行階段類型傳遞至 Managed 程式碼＞。
 
-Many of these mappings are interfaces. For example, [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) maps to the UWP interface [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). If you use List&lt;string&gt; (`List(Of String)` in Visual Basic) instead of IList&lt;string&gt; as a parameter type, Winmdexp.exe provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) in Visual Basic), Winmdexp.exe offers choices for each level of nesting. These lists can become quite long.
+其中有許多對應都是介面。 例如，[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) 會對應至 UWP 介面 [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)。 若您使用 List&lt;string&gt; (在 Visual Basic 中為 `List(Of String)`)，而非使用 IList &lt;string&gt; 做為參數類型，則 Winmdexp.exe 會提供包含所有由 List&lt;T&gt; 實作之對應介面的替代項目清單。 若您使用 List&lt;Dictionary&lt;int, string&gt;&gt; 之類的巢狀泛型類型 (在 Visual Basic 中為 List(Of Dictionary(Of Integer, String)))，則 Winmdexp.exe 會提供適用於各個巢狀層級的選項。 這些清單可能會變得相當長。
 
-In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.
+一般而言，最接近類型的介面就是最好的選擇。 以 Dictionary&lt;int, string&gt; 為例，IDictionary&lt;int, string&gt; 最有可能是最佳選擇。
 
-> **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
+> **重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
-> **Caution**  Avoid using the non-generic [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) and [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) and [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
+> **警告** 如果 JavaScript 會使用您的元件，請避免使用非泛型 [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) 和 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 介面。 這兩個介面會分別對應至 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它們支援 XAML 控制項的繫結，且不會對 JavaScript 顯示。 JavaScript 會發出執行階段錯誤「函式 'X' 具有無效簽章，無法呼叫」。
 
  
 
@@ -140,84 +140,84 @@ In general, the best choice is the interface that is closest to the type. For ex
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Error number</th>
-<th align="left">Message Text</th>
+<th align="left">錯誤代碼</th>
+<th align="left">訊息文字</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">WME1033</td>
-<td align="left">Method '{0}' has parameter '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime parameter type.</td>
+<td align="left">方法 '{0}' 有類型 '{2}' 的參數 '{1}'。 '{2}' 不是有效的 Windows 執行階段參數類型。</td>
 </tr>
 <tr class="even">
 <td align="left">WME1038</td>
-<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Although this type is not a valid Windows Runtime type, it implements interfaces that are valid Windows Runtime types. Consider changing the method signature to use one of the following types instead: '{2}'.</td>
+<td align="left">方法 '{0}' 的簽章中有類型 '{1}' 的參數。 雖然這種類型不是有效的 Windows 執行階段類型，但它實作了有效 Windows 執行階段類型的介面。 請考慮將方法簽章變更為使用下列其中一種類型：'{2}'。</td>
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>Method '{0}' has a parameter of type '{1}' in its signature. Although this generic type is not a valid Windows Runtime type, the type or its generic parameters implement interfaces that are valid Windows Runtime types. {2}</p>
-> **Note**  For {2}, Winmdexp.exe appends a list of alternatives, such as "Consider changing the type 'System.Collections.Generic.List&lt;T&gt;' in the method signature to one of the following types instead: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
+<td align="left"><p>方法 '{0}' 的簽章中有類型 '{1}' 的參數。 雖然這種泛型類型不是有效的 Windows 執行階段類型，但此類型或其泛型參數實作了有效 Windows 執行階段類型的介面。 {2}</p>
+> **注意** 針對 {2}，Winmdexp.exe 會附加替代項目清單，例如「請考慮將方法簽章中的類型 'System.Collections.Generic.List&lt;T&gt;' 變更為下列其中一種類型：'System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'」。
 </td>
 </tr>
 <tr class="even">
 <td align="left">WME1040</td>
-<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Instead of using a managed Task type, use Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation, or one of the other Windows Runtime async interfaces. The standard .NET await pattern also applies to these interfaces. Please see System.Runtime.InteropServices.WindowsRuntime.AsyncInfo for more information about converting managed task objects to Windows Runtime async interfaces.</td>
+<td align="left">方法 '{0}' 的簽章中有類型 '{1}' 的參數。 請勿使用 Managed 工作類型，應改用 Windows.Foundation.IAsyncAction、Windows.Foundation.IAsyncOperation，或其他 Windows 執行階段非同步介面其中之一。 標準的 .NET await 模式也適用於這些介面。 如需將 Managed 工作物件轉換成 Windows 執行階段非同步介面的詳細資訊，請參閱 System.Runtime.InteropServices.WindowsRuntime.AsyncInfo。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Structures that contain fields of disallowed types
+## 結構中包含不允許的欄位類型
 
 
-In the UWP, a structure can contain only fields, and only structures can contain fields. Those fields must be public. Valid field types include enumerations, structures, and primitive types.
+在 UWP 中，結構只能包含欄位，而且只有結構可以包含欄位。 這些欄位必須是公用的。 有效的欄位類型包括列舉、結構及基本類型。
 
-| Error number | Message Text                                                                                                                                                                                                                                                            |
+| 錯誤代碼 | 訊息文字                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1060      | Structure '{0}' has field '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime field type. Each field in a Windows Runtime structure can only be UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, or itself a structure. |
+| WME1060      | 結構 '{0}' 有類型 '{2}' 的欄位 '{1}'。 '{2}' 不是有效的 Windows 執行階段欄位類型。 Windows 執行階段結構中的每個欄位只能是 UInt8、Int16、UInt16、Int32、UInt32、Int64、UInt64、Single、Double、Boolean、String、Enum，或本身是結構。 |
 
  
 
-## Restrictions on arrays in member signatures
+## 成員簽章中的陣列限制
 
 
-In the UWP, arrays in member signatures must be one-dimensional with a lower bound of 0 (zero). Nested array types such as `myArray[][]` (`myArray()()` in Visual Basic) are not allowed.
+在 UWP 中，成員簽章中的陣列必須是下限為 0 (零) 的一維陣列。 不允許 `myArray[][]` 之類的巢狀陣列類型 (在 Visual Basic 中為 `myArray()()`)。
 
-> **Note** This restriction does not apply to arrays you use internally in your implementation.
+> **注意** 這項限制不適用於您在實作中內部使用的陣列。
 
  
 
-| Error number | Message Text                                                                                                                                                     |
+| 錯誤代碼 | 訊息文字                                                                                                                                                     |
 |--------------|--------------------|
-| WME1034      | Method '{0}' has an array of type '{1}' with non-zero lower bound in its signature. Arrays in Windows Runtime method signatures must have a lower bound of zero. |
-| WME1035      | Method '{0}' has a multi-dimensional array of type '{1}' in its signature. Arrays in Windows Runtime method signatures must be one dimensional.                  |
-| WME1036      | Method '{0}' has a nested array of type '{1}' in its signature. Arrays in Windows Runtime method signatures cannot be nested.                                    |
+| WME1034      | 方法 '{0}' 的簽章中有類型 '{1}' 的陣列，且其下限不是零。 Windows 執行階段方法簽章中的陣列的下限必須是零。 |
+| WME1035      | 方法 '{0}' 的簽章中有類型 '{1}' 的多維陣列。 Windows 執行階段方法簽章中的陣列必須是一維陣列。                  |
+| WME1036      | 方法 '{0}' 的簽章中有類型 '{1}' 的巢狀陣列。 Windows 執行階段方法簽章中的陣列不能是巢狀陣列。                                    |
 
  
 
-## Array parameters must specify whether array contents are readable or writable
+## 陣列參數必須指定陣列的內容是否可讀取或寫入
 
 
-In the UWP, parameters must be read-only or write-only. Parameters cannot be marked **ref** (**ByRef** without the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic). This applies to the contents of arrays, so array parameters must indicate whether the array contents are read-only or write-only. The direction is clear for **out** parameters (**ByRef** parameter with the OutAttribute attribute in Visual Basic), but array parameters that are passed by value (ByVal in Visual Basic) must be marked. See [Passing arrays to a Windows Runtime Component](passing-arrays-to-a-windows-runtime-component.md).
+在 UWP 中，參數必須是唯讀或唯寫的。 參數不可標示 **ref** (在 Visual Basic 中為不含 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 屬性的 **ByRef**)。 這適用於陣列的內容，因此陣列參數必須指出陣列內容是否為唯讀或唯寫。 這項指示對於 **out** 參數是明確的 (在 Visual Basic 中為具有 OutAttribute 屬性的 **ByRef** 參數)，但是以傳值方式傳遞的陣列參數 (在 Visual Basic 中為 ByVal) 則必須標示。 請參閱[將陣列傳遞到 Windows 執行階段元件](passing-arrays-to-a-windows-runtime-component.md)。
 
-| Error number | Message Text         |
+| 錯誤代碼 | 訊息文字         |
 |--------------|----------------------|
-| WME1101      | Method '{0}' has parameter '{1}' which is an array, and which has both {2} and {3}. In the Windows Runtime, the contents array parameters must be either readable or writable. Please remove one of the attributes from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| WME1102      | Method '{0}' has an output parameter '{1}' which is an array, but which has {2}. In the Windows Runtime, the contents of output arrays are writable. Please remove the attribute from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | Method '{0}' has parameter '{1}' which is an array, and which has either a System.Runtime.InteropServices.InAttribute or a System.Runtime.InteropServices.OutAttribute. In the Windows Runtime, array parameters must have either {2} or {3}. Please remove these attributes or replace them with the appropriate Windows Runtime attribute if necessary.                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | Method '{0}' has parameter '{1}' which is not an array, and which has either a {2} or a {3}. Windows Runtime does not support marking non-array parameters with {2} or {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| WME1105      | Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime does not support marking parameters with System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Please consider removing System.Runtime.InteropServices.InAttribute and replace System.Runtime.InteropServices.OutAttribute with 'out' modifier instead. Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime only supports marking ByRef parameters with System.Runtime.InteropServices.OutAttribute, and does not support other usages of those attributes. |
-| WME1106      | Method '{0}' has parameter '{1}' which is an array. In the Windows Runtime, the contents of array parameters must be either readable or writable. Please apply either {2} or {3} to '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1101      | 方法 '{0}' 有陣列參數 '{1}'，該陣列有 {2} 和 {3}。 在 Windows 執行階段中，內容陣列參數必須是可讀取或可寫入的。 請從 '{1}' 移除其中一個屬性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| WME1102      | 方法 '{0}' 有陣列的輸出參數 '{1}'，但該陣列有 {2}。 在 Windows 執行階段中，輸出陣列的內容是可寫入的。 請從 '{1}' 移除屬性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| WME1103      | 方法 '{0}' 有一個陣列參數 '{1}'，這個參數具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute。 在 Windows 執行階段中，陣列參數必須具有 {2} 或 {3}。 請移除這些屬性，或視需要以適當的 Windows 執行階段屬性取代。                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | 方法 '{0}' 有不是陣列的參數 '{1}'，該陣列有 {2} 或 {3}。 Windows 執行階段不支援使用 {2} 或 {3} 標記非陣列參數。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1105      | 方法 '{0}' 有一個具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 的參數 '{1}'。 Windows 執行階段不支援以 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 標記參數。 請考慮移除 System.Runtime.InteropServices.InAttribute，並改以 'out' 修飾詞取代 System.Runtime.InteropServices.OutAttribute。 方法 '{0}' 有一個具有 System.Runtime.InteropServices.InAttribute 或 System.Runtime.InteropServices.OutAttribute 的參數 '{1}'。 Windows 執行階段只支援以 System.Runtime.InteropServices.OutAttribute 標記 ByRef 參數，不支援這些屬性的其他用法。 |
+| WME1106      | 方法 '{0}' 有陣列參數 '{1}'。 在 Windows 執行階段中，陣列參數的內容必須是可讀取或可寫入的。 請將 {2} 或 {3} 套用到 '{1}'。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## Member with a parameter named "value"
+## 參數名稱為 "value" 的成員
 
 
-In the UWP, return values are considered to be output parameters, and the names of parameters must be unique. By default, Winmdexp.exe gives the return value the name "value". If your method has a parameter named "value", you will get error WME1092. There are two ways to correct this:
+在 UWP 中，傳回值會視為輸出參數，且參數名稱必須是唯一的。 根據預設，Winmdexp.exe 會爲傳回值指定名稱 "value"。 如果您的方法有名稱為 "value" 的參數，就會發生 WME1092 錯誤。 有兩種方式可以修正這種情形：
 
--   Give your parameter a name other than "value" (in property accessors, a name other than "returnValue").
--   Use the ReturnValueNameAttribute attribute to change the name of the return value, as shown here:
+-   使用 "value" 以外的名稱命名您的參數 (在屬性存取子中，則為 "returnValue" 以外的名稱)。
+-   使用 ReturnValueNameAttribute 屬性變更傳回值的名稱，如下所示：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -235,23 +235,23 @@ In the UWP, return values are considered to be output parameters, and the names 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
+> **注意** 如果您變更傳回值的名稱，而新的名稱與另一個參數的名稱發生衝突，就會收到錯誤 WME1091。
 
-JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) attribute.
+JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在內。 如需範例，請參閱 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 屬性。
 
-| Error number | Message Text |
+| 錯誤代碼 | 訊息文字 |
 |---------------|------------|
-| WME1091 | The method '\{0}' has the return value named '\{1}' which is the same as a parameter name. Windows Runtime method parameters and return value must have unique names. |
-| WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value.<br/>**Note**  The default name is "returnValue" for property accessors and "value" for all other methods. |
+| WME1091 | 方法 '\{0}' 有一個名稱為'\{1}' 的傳回值，該值與某個參數名稱相同。 Windows 執行階段方法參數和傳回值必須具有唯一的名稱。 |
+| WME1092 | 方法 '\{0}' 有一個名稱為 '\{1}' 的參數，該參數與預設傳回值名稱相同。 請考慮使用不同的參數名稱，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 明確指定傳回值的名稱。<br/>**注意** 屬性存取子的預設名稱為 "returnValue"，而其他所有方法的預設名稱為 "value"。 |
  
 
-## Related topics
+## 相關主題
 
-* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

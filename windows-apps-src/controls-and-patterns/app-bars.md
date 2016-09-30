@@ -3,31 +3,23 @@ author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4ce59951387542124bcea1cbd0f636c0e44e0d1e
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
 
 ---
-# 應用程式列與命令列
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 應用程式列與命令列
 
 命令列 (亦稱為「應用程式列」) 可讓使用者輕鬆存取 app 的最常見工作，也可以用來顯示使用者內容特定的命令或選項，如相片選取或繪圖模式。 它們也可以用來在 app 頁面或 app 區段之間瀏覽。 命令列可用於任何瀏覽模式。
 
 ![具有圖示之命令列的範例](images/controls_appbar_icons.png)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx"><strong>CommandBar</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx"><strong>AppBarButton</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx"><strong>AppBarToggleButton</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx"><strong>AppBarSeparator</strong></a></li>
-</ul>
-
-</div>
-</div>
 
 
+-   [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
+-   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
+-   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
+-   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ## 這是正確的控制項嗎？
 
@@ -221,7 +213,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注意**&nbsp;&nbsp;此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
+>**注意** &nbsp;&nbsp;此範例不討論如何實作編輯命令。 如需詳細資訊，請參閱 [RichEditBox](rich-edit-box.md) 文章。
 
 雖然在某些情況下，Minimal 與 Hidden 模式很有用，但是請記住，隱藏所有動作可能造成使用者的混淆。
 
@@ -287,14 +279,14 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## 相關文章
 
-**適用於設計人員**
-[UWP app 的命令設計基本知識](../layout/commanding-basics.md)
+**適用於設計人員** 
+           [UWP app 的命令設計基本知識](../layout/commanding-basics.md)
 
-**適用於開發人員 (XAML)**
-[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**適用於開發人員 (XAML)** 
+           [ **CommandBar** ](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

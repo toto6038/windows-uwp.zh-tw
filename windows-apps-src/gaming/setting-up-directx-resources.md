@@ -5,7 +5,7 @@ description: "我們將在此處示範如何建立 Direct3D 裝置、交換鏈�
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
+ms.openlocfilehash: f60d7c5b526fcdea8552256a6ebe4b92d5736264
 
 ---
 
@@ -292,6 +292,6 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

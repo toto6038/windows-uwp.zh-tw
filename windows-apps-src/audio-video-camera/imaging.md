@@ -1,127 +1,125 @@
 ---
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: This article explains how to load and save image files using BitmapDecoder and BitmapEncoder and how to use the SoftwareBitmap object to represent bitmap images.
-title: Create, edit, and save bitmap images
+description: "本文說明如何使用 BitmapDecoder 和 BitmapEncoder 來載入及儲存影像檔，以及如何使用 SoftwareBitmap 物件來代表點陣圖影像。"
+title: "影像處理"
 translationtype: Human Translation
-ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
-ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 ---
 
-# Create, edit, and save bitmap images
+# 影像處理
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article explains how to load and save image files using [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) and [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) and how to use the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object to represent bitmap images.
+本文說明如何使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 和 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 來載入及儲存影像檔，以及如何使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來代表點陣圖影像。
 
-The **SoftwareBitmap** class is a versatile API that can be created from multiple sources including image files, [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) objects, Direct3D surfaces, and code. **SoftwareBitmap** allows you to easily convert between different pixel formats and alpha modes, and allows low-level access to pixel data. Also, **SoftwareBitmap** is a common interface used by multiple features of Windows, including:
+**SoftwareBitmap** 類別是可從多個來源建立的多用途 API，包括影像檔、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) 物件、Direct3D 外觀和程式碼。 **SoftwareBitmap** 可讓您輕鬆地在不同的像素格式與 Alpha 模式之間轉換，並允許低階存取像素資料。 此外，**SoftwareBitmap** 是許多 Windows 功能經常使用的介面，包括：
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) allows you to get frames captured by the camera as a **SoftwareBitmap**.
+-   [ **CapturedFrame** ](https://msdn.microsoft.com/library/windows/apps/dn278725) 可讓您以 **SoftwareBitmap** 取得相機所拍攝的畫面。
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) allows you to get a **SoftwareBitmap** representation of a **VideoFrame**.
+-   [ **VideoFrame** ](https://msdn.microsoft.com/library/windows/apps/dn930917) 可讓您取得 **VideoFrame** 的 **SoftwareBitmap** 表示。
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) allows you to detect faces in a **SoftwareBitmap**.
+-   [ **FaceDetector** ](https://msdn.microsoft.com/library/windows/apps/dn974129) 可讓您偵測 **SoftwareBitmap** 中的人臉。
 
-The sample code in this article uses APIs from the following namespaces.
+本文中的範例程式碼使用下列命名空間中的 API。
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[命名空間](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
-## Create a SoftwareBitmap from an image file with BitmapDecoder
+## 使用 BitmapDecoder 從影像檔建立 SoftwareBitmap
 
-To create a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) from a file, get an instance of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) containing the image data. This example uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to allow the user to select an image file.
+若要從檔案建立 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358)，請取得包含影像資料的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 執行個體。 這個範例使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者選取影像檔。
 
 [!code-cs[PickInputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickInputFile)]
 
-Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream containing the image data. Call the static method [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) to get an instance of the [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) class for the specified stream. Call [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) to get a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object containing the image.
+呼叫 **StorageFile** 物件的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，取得包含影像資料的隨機存取資料流。 呼叫靜態方法 [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182)，取得指定資料流的 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 類別執行個體。 呼叫 [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332)，取得包含影像的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件。
 
 [!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
 
-## Save a SoftwareBitmap to a file with BitmapEncoder
+## 使用 BitmapEncoder 將 SoftwareBitmap 儲存為檔案
 
-To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved. This example uses a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to select an output file.
+若要將 **SoftwareBitmap** 儲存為檔案，請取得用來儲存影像的 **StorageFile** 執行個體。 這個範例使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者選取輸出檔。
 
 [!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream to which the image will be written. Call the static method [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) to get an instance of the [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) class for the specified stream. The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image. **BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
+呼叫 **StorageFile** 物件的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，取得將寫入影像的隨機存取資料流。 呼叫靜態方法 [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211)，取得指定資料流的 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 類別執行個體。 **CreateAsync** 的第一個參數是 GUID，代表應該用來編碼影像的轉碼器。 **BitmapEncoder** 類別公開的一個屬性包含編碼器支援的每個轉碼器的識別碼，例如 [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226)。
 
-Use the [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) method to set the image that will be encoded. You can set values of the [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) property to apply basic transforms to the image while it is being encoded. The [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) property determines whether a thumbnail is generated by the encoder. Note that not all file formats support thumbnails, so if you use this feature, you should catch the unsupported operation error that will be thrown if thumbnails are not supported.
+使用 [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) 方法來設定將編碼的影像。 您可以設定 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 屬性的值，對正在編碼的影像套用基本轉換。 [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) 屬性決定編碼器是否產生縮圖。 請注意，並非所有檔案格式都支援縮圖，當您使用這項功能時，如果不支援縮圖，則會擲回不支援的作業錯誤。
 
-Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to write the image data to the specified file.
+呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216)，使編碼器將影像資料寫入指定的檔案。
 
 [!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-You can specify additional encoding options when you create the **BitmapEncoder** by creating a new [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) object and populating it with one or more [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) objects representing the encoder settings. For a list of supported encoder options, see [BitmapEncoder options reference](bitmapencoder-options-reference.md).
+您可以在建立 **BitmapEncoder** 時指定額外的編碼選項，方法是建立新的 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) 物件，在其中填入一或多個代表編碼器設定的 [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) 物件。 如需支援的編碼器選項清單，請參閱 [BitmapEncoder 選項參考](bitmapencoder-options-reference.md)。
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## Use SoftwareBitmap with a XAML Image control
+## 透過 XAML 影像控制項使用 SoftwareBitmap
 
-To display an image within a XAML page using the [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) control, first define an **Image** control in your XAML page.
+若要在 XAML 頁面內使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控制項顯示影像，請先在 XAML 頁面中定義 **Image** 控制項。
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Currently, the **Image** control only supports images that use BGRA8 encoding and pre-multiplied or no alpha channel. Before attempting to display an image, test to make sure it has the correct format, and if not, use the **SoftwareBitmap** static [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) method to convert the image to the supported format.
-
-Create a new [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) object. Set the contents of the source object by calling [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856), passing in a **SoftwareBitmap**. Then you can set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) property of the **Image** control to the newly created **SoftwareBitmapSource**.
+建立新的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) 物件。 呼叫 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856)，同時傳入 **SoftwareBitmap**，以設定來源物件的內容。 然後，您就可以將 **Image** 控制項的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 屬性，設定為新建立的 **SoftwareBitmapSource**。
 
 [!code-cs[SoftwareBitmapToWriteableBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
 
-You can also use **SoftwareBitmapSource** to set a **SoftwareBitmap** as the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) for an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
+您也可以使用 **SoftwareBitmapSource** 將 **SoftwareBitmap** 設定為 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 的 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105)。
 
-## Create a SoftwareBitmap from a WriteableBitmap
+## 從 WriteableBitmap 建立 SoftwareBitmap
 
-You can create a **SoftwareBitmap** from an existing **WriteableBitmap** by calling [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) and supplying the **PixelBuffer** property of the **WriteableBitmap** to set the pixel data. The second argument allows you to request a pixel format for the newly created **WriteableBitmap**. You can use the [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) and [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) properties of the **WriteableBitmap** to specify the dimensions of the new image.
+您可以呼叫 [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370)，並提供 **WriteableBitmap** 的 **PixelBuffer** 屬性來設定像素資料，從現有的 **WriteableBitmap** 建立 **SoftwareBitmap**。 第二個引數可讓您要求新建立的 **WriteableBitmap** 的像素格式。 您可以使用 **WriteableBitmap** 的 [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) 和 [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) 屬性，指定新影像的尺寸。
 
 [!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
 
-## Create or edit a SoftwareBitmap programmatically
+## 以程式設計方式建立或編輯 SoftwareBitmap
 
-So far this topic has addressed working with image files. You can also create a new **SoftwareBitmap** programatically in code and use the same technique to access and modify the **SoftwareBitmap**'s pixel data.
+本主題到目前為止已討論影像檔的處理方式。 您也可以在程式碼中建立新的 **SoftwareBitmap**，並使用相同的技術來存取和修改 **SoftwareBitmap** 的像素資料。
 
-**SoftwareBitmap** uses COM interop to expose the raw buffer containing the pixel data.
+**SoftwareBitmap** 使用 COM Interop 公開包含像素資料的原始緩衝區。
 
-To use COM interop, you must include a reference to the **System.Runtime.InteropServices** namespace in your project.
+若要使用 COM Interop，您必須在專案中加入 **System.Runtime.InteropServices** 命名空間的參考。
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Initialize the [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM interface by adding the following code within your namespace.
+在您的命名空間內新增下列程式碼，以初始化 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 介面。
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
-Create a new **SoftwareBitmap** with pixel format and size you want. Or, use an existing **SoftwareBitmap** for which you want to edit the pixel data. Call [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380) to obtain an instance of the [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) class representing the pixel data buffer. Cast the **BitmapBuffer** to the **IMemoryBufferByteAccess** COM interface and then call [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) to populate a byte array with data. Use the [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) method to get a [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) object that will help you calculate the offset into the buffer for each pixel.
+以您想要的像素格式和大小，建立新的 **SoftwareBitmap**。 或者，使用您想要編輯像素資料的現有 **SoftwareBitmap**。 呼叫 [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380)，取得代表像素資料緩衝區的 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 類別執行個體。 將 **BitmapBuffer** 轉型為 **IMemoryBufferByteAccess** COM 介面，然後呼叫 [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506)，將資料填入位元組陣列中。 使用 [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 方法來取得 [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) 物件，幫助您計算每個像素在緩衝區中的位移。
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
+因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
 
-## Create a SoftwareBitmap from a Direct3D surface
+## 從 Direct3D 外觀建立 SoftwareBitmap
 
-To create a **SoftwareBitmap** object from a Direct3D surface, you must include the [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) namespace in your project.
+若要從 Direct3D 表面建立 **SoftwareBitmap** 物件，您必須在專案中加入 [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) 命名空間。
 
 [!code-cs[Direct3DNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
 
-Call [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) to create a new **SoftwareBitmap** from the surface. As the name indicates, the new **SoftwareBitmap** has a separate copy of the image data. Modifications to the **SoftwareBitmap** will not have any effect on the Direct3D surface.
+呼叫 [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) 以從表面建立新的 **SoftwareBitmap**。 顧名思義，新的 **SoftwareBitmap** 有個別的影像資料複本。 修改 **SoftwareBitmap** 完全不會影響 Direct3D 表面。
 
 [!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
-## Convert a SoftwareBitmap to a different pixel format
+## 將 SoftwareBitmap 轉換成不同的像素格式
 
-The **SoftwareBitmap** class provides the static method, [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362), that allows you to easily create a new **SoftwareBitmap** that uses the pixel format and alpha mode you specify from an existing **SoftwareBitmap**. Note that the newly created bitmap has a separate copy of the image data. Modifications to the new bitmap will not affect the source bitmap.
+**SoftwareBitmap** 類別提供靜態方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362)，可讓您從現有的 **SoftwareBitmap**，使用您指定的像素格式和 Alpha 模式，輕鬆地建立新的 **SoftwareBitmap**。 請注意，新建立的點陣圖有個別的影像資料複本。 修改新的點陣圖不會影響原始點陣圖。
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## Transcode an image file
+## 對影像檔進行轉碼
 
-You can transcode an image file directly from a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) to a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Create a [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) from the file to be transcoded. Create a new **BitmapDecoder** from the input stream. Create a new [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) for the encoder to write to and call [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), passing in the in-memory stream and the decoder object. Set the encoding properties you want. Any properties in the input image file that you do not specifically set on the encoder, will be written to the output file unchanged. Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to encode to the in-memory stream. Finally, seek the file stream and the in-memory stream to the beginning and call [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) to write the in-memory stream out to the file stream.
+您可以將影像檔直接從 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 轉碼成 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 從要轉碼的檔案建立 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 從輸入資料流建立新的 **BitmapDecoder**。 建立新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 供編碼器寫入，然後呼叫 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，並傳入記憶體內部資料流和解碼器物件。 設定您想要的編碼屬性。 輸入影像檔中未明確設定於編碼器的任何屬性，將會原封不動寫入輸出檔。 呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216)，使編碼器將記憶體內部資料流編碼。 最後，移至檔案資料流和記憶體內部資料流的開頭，並呼叫 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 將記憶體內部資料流寫出至檔案資料流。
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## Related topics
+## 相關主題
 
-* [BitmapEncoder options reference](bitmapencoder-options-reference.md)
-* [Image Metadata](image-metadata.md)
+* [BitmapEncoder 選項參考](bitmapencoder-options-reference.md)
+* [影像中繼資料](image-metadata.md)
  
 
  
@@ -132,6 +130,6 @@ You can transcode an image file directly from a [**BitmapDecoder**](https://msdn
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

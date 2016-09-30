@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
-description: Learn how to programmatically create an **AdControl** using JavaScript.
-title: Create an AdControl in Javascript
+description: "了解如何以程式設計方式，使用 JavaScript 建立 **AdControl**。"
+title: "使用 JavaScript 建立 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
 
 
 ---
 
-# Create an AdControl in Javascript
+# 使用 JavaScript 建立 AdControl
 
 
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+此範例說明如何以程式設計方式，使用 JavaScript 建立 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)。
 
-This example shows how to programmatically create an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) using JavaScript.
+## 適用於 AdControl 的 HTML div
 
-## HTML div for an AdControl
-
-An **AdControl** needs to have a **div** on the html page that will show the ad. The code below provides an example of such a **div**.
+在顯示廣告的 HTML 頁面上，**AdControl** 必須具有 **div**。 下列程式碼提供此類 **div** 的範例。
 
 ``` syntax
 <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -27,11 +27,11 @@ An **AdControl** needs to have a **div** on the html page that will show the ad.
 </div>
 ```
 
-## JavaScript for creating an AdControl
+## 適用於建立 AdControl 的 JavaScript
 
-The following example assumes that you are using an existing **div** in your HTML with the ID **myAd**.
+下列範例假設您透過識別碼 **myAd**，在 HTML 中使用現有的 **div**。
 
-Instantiate the **AdControl** in the **app.onactivated** function.
+在 **app.onactivated** 函式中，具現化 **AdControl**。
 
 ``` syntax
 // TODO: This application has been newly launched. Initialize
@@ -48,20 +48,20 @@ myAdControl.onAdRefreshed = myAdRefreshed;
 myAdControl.onEngagedChanged = myAdEngagedChanged;
 ```
 
-The values are examples. In your code you will set the values of these functions and properties appropriate for your app.
+這些值為範例。 您會在您的程式碼中設定適合您 App 的這些函式和屬性的值。
 
-If you use this code and do not see ads, you can try inserting an attribute of **position:relative** in the **div** that contains the **AdControl**. This will override the default setting of the **IFrame**. Ads will be displayed correctly, unless they are not being shown due to the value of this attribute. Note that new ad units may not be available for up to 30 minutes.
+若您使用此程式碼但未看到廣告，則可嘗試將 **position:relative** 的屬性，插入於包含 **AdControl** 的 **div**。 這將會覆寫 **IFrame** 的預設設定。 將會正確顯示廣告，除非由於此屬性的值致使未顯示這些廣告。 請注意，可能會有長達 30 分鐘的時間無法使用新廣告單位。
 
-## Related topics
+## 相關主題
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
-
- 
+* [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

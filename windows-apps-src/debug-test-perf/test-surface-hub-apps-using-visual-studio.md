@@ -1,23 +1,23 @@
 ---
 author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: Test Surface Hub apps using Visual Studio
-description: The Visual Studio simulator provides an environment to design, develop, debug, and test UWP apps, including apps built for Surface Hub.
+title: "使用 Visual Studio 測試 Surface Hub app"
+description: "Visual Studio 模擬器提供了可設計、開發、偵錯和測試 UWP 應用程式 (包括針對 Surface Hub 建置的應用程式) 的環境。"
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
+ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
 
 ---
 
-# Test Surface Hub apps using Visual Studio
-The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves at the Surface Hub's screen size and resolution.
+# 使用 Visual Studio 測試 Surface Hub app
+Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用 Windows 平台 (UWP) app (包括針對 Microsoft Surface Hub 建置的應用程式) 的環境。 此模擬器不會使用與 Surface Hub 相同的使用者介面，但很適合以 Surface Hub 的畫面大小與解析度測試您應用程式的外觀和行為。
 
-For more information, see [Run Windows Store apps in the simulator](https://msdn.microsoft.com/library/hh441475.aspx).
+如需詳細資訊，請參閱[在模擬器中執行 Windows 市集應用程式](https://msdn.microsoft.com/library/hh441475.aspx)。
 
-## Add Surface Hub resolutions to the simulator
-To add Surface Hub resolutions to the simulator:
+## 將 Surface Hub 解析度新增到模擬器
+若要將 Surface Hub 解析度新增到模擬器：
 
-1. Create a configuration for the 55" Surface Hub by saving the following XML into a file named **HardwareConfigurations-SurfaceHub55.xml**.  
+1. 將下列 XML 儲存到名為 **HardwareConfigurations-SurfaceHub55.xml** 的檔案中，以建立適用於 55 吋 Surface Hub 的設定。  
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -36,7 +36,7 @@ To add Surface Hub resolutions to the simulator:
     </ArrayOfHardwareConfiguration>
     ```
 
-2. Create a configuration for the 84" Surface Hub by saving the following XML into a file named  **HardwareConfigurations-SurfaceHub84.xml**.
+2. 將下列 XML 儲存到名為 **HardwareConfigurations-SurfaceHub84.xml** 的檔案中，以建立適用於 84 吋 Surface Hub 的設定。
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -55,53 +55,53 @@ To add Surface Hub resolutions to the simulator:
     </ArrayOfHardwareConfiguration>
     ```
 
-3. Copy the two XML files into **C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Simulator\\&lt;version number&gt;\HardwareConfigurations**.
+3. 將這兩個 XML 檔案複製到 **C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Simulator\\&lt;版本號碼&gt;\HardwareConfigurations** 中。
 
-   > **Note**&nbsp;&nbsp;Administrative privileges are required to save files into this folder.
+   > **注意** &nbsp;&nbsp;需要有系統管理權限，才能將檔案儲存到這個資料夾。
 
-4. Run your app in the Visual Studio simulator. Click the **Change Resolution** button on the palette and select a Surface Hub configuration from the list.
+4. 在 Visual Studio 模擬器中執行 app。 按一下調色盤上的 [變更解析度]**** 按鈕，然後從清單中選取 Surface Hub 設定。
 
-    ![Visual Studio simulator resolutions](images/vs-simulator-resolutions.png)
+    ![Visual Studio 模擬器解析度](images/vs-simulator-resolutions.png)
 
-   > **Tip**&nbsp;&nbsp;[Turn on Tablet mode](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) to better simulate the experience on a Surface Hub.
+   > **提示** &nbsp;&nbsp; [開啟平板電腦模式](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet)可模擬更貼近 Surface Hub 上的體驗。
 
-## Deploy apps to a Surface Hub from Visual Studio
-Manually deploying an app is a simple process.
+## 從 Visual Studio 將應用程式部署到 Surface Hub
+以手動方式部署應用程式是很簡單的程序。
 
-### Enable developer mode
-By default, Surface Hub only installs apps from the Windows Store. To install apps signed by other sources, you must enable developer mode.
+### 啟用開發人員模式
+根據預設，Surface Hub 只會從 Windows 市集安裝應用程式。 若要安裝其他來源所簽署的應用程式，您必須啟用開發人員模式。
 
-> **Note**&nbsp;&nbsp;After developer mode has been enabled, you will need to reset the Surface Hub to disable it again. Resetting the device removes all local user files and configurations and then reinstalls Windows.
+> **注意** &nbsp;&nbsp;啟用開發人員模式之後，您必須重設 Surface Hub 才能再次將它停用。 重設裝置會移除所有本機使用者檔案和設定，然後重新安裝 Windows。
 
-1. From the Surface Hub's **Start** menu, open the Settings app.
+1. 從 Surface Hub 的 [開始]**** 功能表，開啟 [設定] 應用程式。
 
-   >  **Note**&nbsp;&nbsp;Administrative privileges are required to access the Settings app.
+   >  **注意** &nbsp;&nbsp;需要有系統管理權限，才能存取 [設定] 應用程式。
 
-2. Navigate to **Update & security > For developers**.
+2. 瀏覽至 [更新與安全性] &gt; [適用於開發人員]****。
 
-3. Choose **Developer mode** and accept the warning prompt.
+3. 選擇 [開發人員模式]**** 並接受警告提示。
 
-### Deploy your app from Visual Studio
-For more information, see [Deploying and debugging Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+### 從 Visual Studio 部署您的應用程式。
+如需詳細資訊，請參閱[部署和偵錯通用 Windows 平台 (UWP) 應用程式](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
-   > **Note**&nbsp;&nbsp;This feature requires at least **Visual Studio 2015 Update 1**.
+   > **注意** &nbsp;&nbsp;此功能至少需要 **Visual Studio 2015 Update 1**。
 
-1. Navigate to the debug target dropdown next to the **Start Debugging** button and select **Remote Machine**.
+1. 請瀏覽到 [開始偵錯]**** 按鈕旁的偵錯目標下拉式清單，並選取 [遠端電腦]****。
 
     <!--lcap: in your screenshot, you have local machine selected-->
 
-   ![Visual Studio debug targets dropdown](images/vs-debug-target.png)
+   ![Visual Studio 偵錯目標下拉式清單](images/vs-debug-target.png)
 
-2. Enter the Surface Hub's IP address. Ensure that the **Universal** authentication mode is selected.
+2. 輸入 Surface Hub 的 IP 位址。 確定已選取 [通用]**** 驗證模式。
 
-   > **Tip**&nbsp;&nbsp;After you have enabled developer mode, you can find the Surface Hub's IP address on the welcome screen.
+   > **提示** &nbsp;&nbsp;啟用開發人員模式之後，即可在歡迎畫面上找到 Surface Hub 的 IP 位址。
 
-3. Choose **Start Debugging (F5)** to deploy and debug your app on the Surface Hub, or press Ctrl+F5 to just deploy your app.
+3. 選擇 [開始偵錯 (F5)]**** 可在 Surface Hub 上部署及偵錯您的應用程式，或按 Ctrl+F5 只部署您的應用程式。
 
-   > **Tip**&nbsp;&nbsp;If the Surface Hub is on the welcome screen, dismiss it by choosing any button.
+   > **提示** &nbsp;&nbsp;如果 Surface Hub 在歡迎畫面上，選擇任何按鈕即可將它關閉。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

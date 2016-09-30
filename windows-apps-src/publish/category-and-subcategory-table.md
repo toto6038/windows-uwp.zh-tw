@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
-title: Category and subcategory table
+Description: "將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。"
+title: "類別與子類別表格"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
-ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
 
 ---
 
-# Category and subcategory table
+# 類別與子類別表格
 
 
-Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
 
-Choose the category that best describes your app. Then choose a subcategory, if available.
+選擇最能說明您 app 的類別。 然後選擇子類別 (如果有的話)。
 
-> **Note**  If you choose **Games** for your category, a subcategory is required.
+> **注意** 如果您選擇的類別是 [**遊戲**]，則子類別為必要項。
 
-An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, choose the one that you think customers are most likely to look at when trying to find apps like yours.
-
-If you want to change the category or subcategory of an app that's already in the Store, you can do that by [creating a new submission](app-submissions.md) and selecting the new category.
-
-> **Important** If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission. You also can't choose the **Games** category in an update to an app that you previously published in a different category.
-
-The Windows Store organizes apps into the following categories and subcategories.
-
-Only some categories have subcategories. Keep in mind that you can only use a subcategory if it belongs to the category you picked.
-
-
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Educational <br> Family + kids <br> Fighting <br> Music <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security <br>         |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
  
 
-> **Note**  For info on the categories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, and how they relate to the category list above, see [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
+一個 app 只能列在一個類別 (以及一個子類別，如果有的話)。如果您不確定要使用哪個類別或子類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
+
+如果您想要變更已經在市集上架之 app 的類別或子類別，您可以[建立新的提交](app-submissions.md)並選取新類別來執行此動作。
+
+Windows 市集可以組織 app，以分成下列類別與子類別。
+
+只有一些類別有子類別。 請記得，只有在子類別屬於您所挑選的類別時，才能使用該子類別。
+
+
+| 類別                    | 子類別                                       |
+|-----------------------------|---------------------------------------------------|
+| 書籍 + 參考資料           | 電子書閱讀程式 <br> 小說 <br> 非小說 <br> 參考資料 |
+| 商業                    | 會計 + 財務 <br> 協同作業 <br> CRM <br> 資料 + 分析 <br> 檔案管理 <br> 庫存 + 物流  <br> 法務 + 人力資源 <br> 專案管理 <br> 遠端桌面 <br> 銷售 + 行銷 <br> 時間 + 費用 |
+| 開發人員工具             | 資料庫 <br> 設計工具 <br> 開發套件 <br> 網路功能 <br> 參考 + 訓練 <br> 伺服器 <br> 公用程式 <br> 虛擬主機 |
+| 教育                   | 書籍 + 參考資料 <br> 學齡前學習 <br> 教學工具 <br> 語言 <br> 學習幫手 |
+| 娛樂               | (無)                                            |
+| 食品 + 餐飲               | (無)                                            |
+| 遊戲                       | 動作 + 冒險 <br> 撲克牌 + 棋盤遊戲 <br> 賭場 <br> 教育性 <br> 家庭 + 兒童 <br> 格鬥 <br> 音樂 <br> 平台遊戲 <br> 拼圖 + 邏輯 <br> 賽車 + 飛行 <br> 角色扮演 <br> 射擊 <br> 模擬 <br> 運動 <br> 策略 <br> 猜字 |
+| 政府 + 政治       | (無)                                            |
+| 健康 + 健身            | (無)                                            |
+| 兒童 + 家庭               | 書籍 + 參考資料 <br> 娛樂 <br> 嗜好 + 玩具 <br> 運動 + 活動 <br> 旅遊 |
+| 生活型態                   | 汽車 <br> DIY <br> 居家 + 園藝 <br> 人際關係 <br> 特殊興趣 <br> 生活型態 + 流行 |
+| 醫學                     | (無)                                            |
+| 媒體設計           | 插畫 + 圖形設計 <br> 音樂創作 <br> 相片 + 影片創作 |
+| 音樂                       | (無)                                            |
+| 導航 + 地圖           | (無)                                            |
+| 新聞 + 天氣              | 新聞 <br> 天氣                                 |
+| 個人財務            | 銀行 + 投資 <br> 預算 + 稅      |
+| 個人化             | 鈴聲 + 音效 <br> 佈景主題 <br> 桌布 + 鎖定畫面 |
+| 相片 + 影片               | (無)                                            |
+| 生產力                | (無)                                            |
+| 安全性                    | 電腦保護 <br> 個人安全性 <br>         |
+| 購物                    | (無)                                            |
+| 社交活動                      | (無)                                            |
+| 運動                      | (無)                                            |
+| 旅遊                      | 城市指南 <br> 旅館                           |
+| 公用程式 + 工具           | 備份 + 管理 <br> 檔案管理工具                |
+ 
+
+> **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [App 如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

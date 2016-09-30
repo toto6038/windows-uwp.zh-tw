@@ -1,28 +1,28 @@
 ---
 author: mtoepke
-title: Support shadow maps on a range of hardware
-description: Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.
+title: "支援各種硬體上的陰影圖"
+description: "在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
+ms.openlocfilehash: 0cdc31f07560e7f1747806d1436bccbc1e50f8b9
 
 ---
 
-# Support shadow maps on a range of hardware
+# 支援各種硬體上的陰影圖
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices. Part 4 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第四部分。
 
-## Comparison filter types
+## 比較篩選器類型
 
 
-Only use linear filtering if the device can afford the performance penalty. Generally, Direct3D feature level 9\_1 devices don't have enough power to spare for linear filtering on shadows. Use point filtering instead on these devices. When you use linear filtering, adjust the pixel shader so that it blends the shadow edges.
+如果裝置能夠承擔效能損失，就只使用線性篩選。 一般來說，Direct3D 功能層級 9\_1 裝置沒有足夠的能力，能夠為陰影中的線性篩選進行備援。 請在這些裝置上改用點篩選。 當您使用線性篩選時，請調整像素著色器，讓它能混合陰影邊緣。
 
-Create the comparison sampler for point filtering:
+建立適用於點篩選的比較取樣器：
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -54,7 +54,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Then create a sampler for linear filtering:
+接著針對線性篩選建立取樣器：
 
 ```cpp
 comparisonSamplerDesc.Filter = D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR;
@@ -66,7 +66,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Choose a sampler:
+選擇取樣器：
 
 ```cpp
 ID3D11PixelShader* pixelShader;
@@ -93,7 +93,7 @@ context->PSSetSamplers(0, 1, comparisonSampler);
 context->PSSetShaderResources(0, 1, m_shadowResourceView.GetAddressOf());
 ```
 
-Blend shadow edges with linear filtering:
+利用線性篩選混合陰影邊緣：
 
 ```cpp
 // Blends the shadow area into the lit area.
@@ -102,22 +102,22 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## Shadow buffer size
+## 陰影緩衝區大小
 
 
-Larger shadow maps won't look as blocky but they take up more space in graphics memory. Experiment with different shadow map sizes in your game and observe the results in different types of devices and different display sizes. Consider an optimization like cascaded shadow maps to get better results with less graphics memory. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+較大的陰影圖不會看起來濃淡不均勻，但是它們會在圖形記憶體中佔據更多空間。 在遊戲中試驗不同的陰影圖大小，並觀察不同裝置類型與不同顯示大小的結果。 請考量像是階層式陰影圖的最佳化，以使用較少的圖形記憶體來取得更好的結果。 請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
-## Shadow buffer depth
-
-
-Greater precision in the shadow buffer will give more accurate depth test results, which helps avoid issues like z-buffer fighting. But like larger shadow maps, greater precision takes up more memory. Experiment with different depth precision types in your game - DXGI\_FORMAT\_R24G8\_TYPELESS versus DXGI\_FORMAT\_R16\_TYPELESS - and observe the speed and quality on different feature levels.
-
-## Optimizing precompiled shaders
+## 陰影緩衝區深度
 
 
-Universal Windows Platform (UWP) apps can use dynamic shader compilation, but it's faster to use dynamic shader linking. You can also use compiler directives and `#ifdef` blocks to create different versions of shaders. This is done by opening the Visual Studio project file in a text editor and adding multiple `<FxcCompiler>` entries for the HLSL (each with the appropriate preprocessor definitions). Note that this necessitates different filenames; in this case, Visual Studio appends \_point and \_linear to the different versions of the shader.
+陰影緩衝區中較高的精確度將能提供更準確的深度測試結果，這可協助避免發生像是 z 緩衝區衝突的問題。 但是，與較大的陰影圖一樣，較高的精確度會佔用較多的記憶體。 在遊戲中使用不同的深度精確度類型來進行試驗 (DXGI\_FORMAT\_R24G8\_TYPELESS 與 DXGI\_FORMAT\_R16\_TYPELESS)，然後觀察不同功能層級上的速度與品質。
 
-The project file entry for the linear filtered version of the shader defines LINEAR:
+## 將預先編譯的著色器最佳化
+
+
+雖然通用 Windows 平台 (UWP) 應用程式能夠使用動態著色器編譯，但是使用動態著色器連結更為快速。 您也可以使用編譯器指示詞和 `#ifdef` 區塊來建立不同版本的著色器。 您可以在文字編輯器中開啟 Visual Studio 專案檔，然後為 HLSL 新增多個 `<FxcCompiler>` 項目 (每個都有適當的前置處理器定義) 來這樣做。 請注意，這樣會使用不同的檔案名稱；在此例中，Visual Studio 會將 \_point 和 \_linear 附加到不同版本的著色器。
+
+適用於著色器線性篩選版本的專案檔項目會定義 LINEAR：
 
 ```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -146,7 +146,7 @@ The project file entry for the linear filtered version of the shader defines LIN
 </FxCompile>
 ```
 
-The project file entry for the linear filtered version of the shader does not include preprocessor definitions:
+適用於著色器線性篩選版本的專案檔項目不會包含前置處理器定義：
 
 ```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -179,6 +179,6 @@ The project file entry for the linear filtered version of the shader does not in
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

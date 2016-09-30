@@ -7,7 +7,7 @@ label: Specify the speech recognizer language
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1a70ac671c11d2ab3c34a95f2571685f4f851836
+ms.openlocfilehash: 8af4fe64e586037d68ab5cd422d7195bd3a64b94
 
 ---
 
@@ -68,9 +68,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 
 勾選 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
--   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
+-   [ **SupportedTopicLanguages** ](https://msdn.microsoft.com/library/windows/apps/dn653251)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
 
--   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
+-   [ **SupportedGrammarLanguages** ](https://msdn.microsoft.com/library/windows/apps/dn653250)：[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
 
 ## 指定語言
 
@@ -108,10 +108,10 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 **開發人員**
-* [語音互動](speech-interactions.md)
-**設計人員**
-* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**範例**
+* [語音互動](speech-interactions.md) 
+           **設計人員**
+* [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -123,6 +123,6 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

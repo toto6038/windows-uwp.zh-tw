@@ -1,27 +1,27 @@
 ---
 author: jwmsft
-description: Explains the concept of an attached property in XAML, and provides some examples.
-title: Attached properties overview
+description: "說明 XAML 中附加屬性的概念並提供一些範例。"
+title: "附加屬性概觀"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 ---
 
-# Attached properties overview
+# 附加屬性概觀
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-An *attached property* is a XAML concept. Attached properties enable additional property/value pairs to be set on an object, but the properties are not part of the original object definition. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.
+「附加屬性」**是一種 XAML 概念。 它在概念上與全域屬性類似，可以在 XAML 的任何物件元素中設定。 附加屬性一般定義為特製格式的相依性屬性，在擁有者類型的物件模型中沒有傳統的屬性包裝函式。
 
-## Prerequisites
+## 先決條件
 
-We assume that you understand the basic concept of dependency properties, and have read [Dependency properties overview](dependency-properties-overview.md).
+我們假設您已了解相依性屬性的基本概念，並已閱讀[相依性屬性概觀](dependency-properties-overview.md)。
 
-## Attached properties in XAML
+## XAML 中的附加屬性
 
-In XAML, you set attached properties by using the syntax _AttachedPropertyProvider.PropertyName_. Here is an example of how you can set [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML.
+附加屬性之所以存在，主要是因為它們啟用了 XAML 語法。 在 XAML 中，您使用 _AttachedPropertyProvider.PropertyName_ 語法來設定附加屬性。 這裡是您如何在 XAML 中設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例。
 
 ```XML
 <Canvas>
@@ -29,45 +29,47 @@ In XAML, you set attached properties by using the syntax _AttachedPropertyProvid
 </Canvas>
 ```
 
-**Note**  We're just using [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) handles its layout children, see the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) reference topic or [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+請注意，它的用法與靜態屬性類似；您一律會參考擁有和登錄附加屬性的類型 **Canvas**，而不是依名稱參考任何執行個體。
 
-## Why use attached properties?
+**注意：**我們只是使用 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 做為附加屬性範例，而沒有充分解說您為何要使用。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
-Attached properties are a way to escape the coding conventions that might prevent different objects in a relationship from communicating information to each other at run time. It's certainly possible to put properties on a common base class so that each object could just get and set that property. But eventually the sheer number of scenarios where you might want to do this will bloat your base classes with shareable properties. It might even introduce cases where there might just be two of hundreds of descendants trying to use a property. That's not good class design. To address this, the attached property concept enables an object to assign a value for a property that its own class structure doesn't define. The defining class can read the value from child objects at run time after the various objects are created in an object tree.
+## 為什麼要使用附加屬性？
 
-For example, child elements can use attached properties to inform their parent element of how they are to be presented in the UI. This is the case with the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. **Canvas.Left** is created as an attached property because it is set on elements that are contained within a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element, rather than on the **Canvas** itself. Any possible child element then uses **Canvas.Left** and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) to specify its layout offset within the **Canvas** layout container parent. Attached properties make it possible for this to work without cluttering the base element's object model with lots of properties that each apply to only one of the many possible layout containers. Instead, many of the layout containers implement their own attached property set.
+對於可能防止有關係的不同物件在執行階段彼此互通資訊的編碼慣例，附加屬性是一種可以避開這種編碼慣例的方式。 將屬性放在共同的基底類別上，讓每個物件都剛好能夠取得並設定該屬性，當然是一種可行的方式。 但是，到最後，僅僅是您可能想要這麼做的案例數目，就會讓您的基底類別塞滿可共用屬性。 它甚至可能引發一些情況，就是在數以百計的子系中，可能只有兩個嘗試使用某個屬性。 這並不是一個好的類別設計。 為了處理這樣的情況，便有了附加屬性的概念，讓物件可以為屬性指派它自己的類別結構所未定義的值。 在物件樹中建立各種有關係的物件之後，定義類別就可以在執行階段從子物件讀取這個值。
 
-To implement the attached property, the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) class defines a static [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field named [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272). Then, **Canvas** provides the [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) and [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) methods as public accessors for the attached property, to enable both XAML setting and run-time value access. For XAML and for the dependency property system, this set of APIs satisfies a pattern that enables a specific XAML syntax for attached properties, and stores the value in the dependency property store.
+例如，子元素可以使用附加屬性來通知父元素它們在 UI 中的顯示方式。 這是 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加屬性的例子。 **Canvas.Left** 會建立為附加屬性，因為它是要在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素內含的元素中設定，而非在 **Canvas** 本身設定。 任何可能的子元素接著就可以使用 **Canvas.Left** 與 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)，在 **Canvas** 配置容器父系內指定其配置位移。 附加屬性不但會完成這個動作，而且基本元素物件模型不會塞滿各種只能套用到一個可能的配置容器的屬性。 相反地，許多配置容器會實作自己的附加屬性集。
 
-## How the owning type uses attached properties
+為了實作附加屬性，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 類別會定義一個名稱為 [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) 的靜態 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 欄位。 接著，**Canvas** 提供 [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) 與 [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 方法做為附加屬性的公開存取子，讓 XAML 設定及執行階段值都能被存取。 對於 XAML 與相依性屬性系統來說，這組 API 可以滿足啟用附加屬性的特定 XAML 語法的樣式，並將值儲存在相依性屬性儲存區。
 
-Although attached properties can be set on any XAML element (or any underlying [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)), that doesn't automatically mean that setting the property produces a tangible result, or that the value is ever accessed. The type that defines the attached property typically follows one of these scenarios:
+## 擁有者類型如何使用附加屬性
 
--   The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
--   The type that defines the attached property is used as the child element for a variety of possible parent elements and content models, but the info isn't necessarily layout info.
--   The attached property reports info to a service, not to another UI element.
+雖然可以在任何 XAML 元素 (或任何基礎 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)) 中設定附加屬性，但並不表示設定該屬性將會產生明確的結果，或是必定會存取該值。 定義附加屬性的類型通常依循下列其中一種案例：
 
-For more info on these scenarios and owning types, see the "More about Canvas.Left" section of [Custom attached properties](custom-attached-properties.md).
+-   定義附加屬性的類型在其他物件的關係中是父項。 子物件會設定附加屬性的值。 附加屬性擁有者類型具有某種固有的行為，這個行為會逐一查看其子元素、取得值，並在物件存留期中的某個時間點作用於這些值 (一個配置動作、[**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) 等等)。
+-   定義附加屬性的類型會用來做為各種可能的父元素和內容模型的子元素，但是資訊不一定是配置資訊。
+-   附加屬性會向服務報告資訊，而不會向另一個 UI 元素報告資訊。
 
-## Attached properties in code
+如需這些案例和擁有者類型的詳細資訊，請參閱[自訂附加屬性](custom-attached-properties.md)的＜深入了解 Canvas.Left＞一節。
 
-Attached properties don't have the typical property wrappers for easy get and set access like other dependency properties do. This is because the attached property is not necessarily part of the code-centered object model for instances where the property is set. (It is permissible, though uncommon, to define a property that is both an attached property that other types can set on themselves, and that also has a conventional property usage on the owning type.)
+## 程式碼中的附加屬性
 
-There are two ways to set an attached property in code: use the property-system APIs, or use the XAML pattern accessors. These techniques are pretty much equivalent in terms of their end result, so which one to use is mostly a matter of coding style.
+附加屬性有別於其他相依性屬性，並沒有簡單的取得和設定存取權的一般屬性包裝函式。 這是因為附加屬性對於設定該屬性的執行個體而言，不是以程式碼為中心的物件模型的必須部分。 (雖然不常見，但是可以定義含兩種用途的屬性，一個是讓其他類型可以在自身上設定的附加屬性，另一個是在擁有者類型含有傳統的屬性用法)。
 
-### Using the property system
+有兩種方法可以在程式碼中設定附加屬性：使用屬性系統 API，或使用 XAML 樣式存取子。 就最終結果而言，這兩種技術大致上是相等的，因此使用何種技術通常取決於編碼樣式。
 
-Attached properties for the Windows Runtime are implemented as dependency properties, so that the values can be stored in the shared dependency-property store by the property system. Therefore attached properties expose a dependency property identifier on the owning class.
+### 使用屬性系統
 
-To set an attached property in code, you call the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method, and pass the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier for that attached property. (You also pass the value to set.)
+Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如許多傳統執行個體屬性的儲存方式一樣，屬性系統就可以將值儲存在共用的相依性屬性儲存區中。 因此，附加屬性會在擁有的類別中公開相依性屬性識別碼。
 
-To get the value of an attached property in code, you call the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) method, again passing the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier.
+如果要以程式碼設定附加屬性，您必須呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 方法，然後傳遞做為該附加屬性識別碼的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 欄位。 (也必須傳遞要設定的值)。
 
-### Using the XAML accessor pattern
+如果要以程式碼取得附加屬性的值，可以呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 方法，接著同樣傳遞做為識別碼的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 欄位。
 
-A XAML processor must be able to set attached property values when XAML is parsed into an object tree. The owner type of the attached property must implement dedicated accessor methods named in the form **Get***PropertyName* and **Set***PropertyName*. These dedicated accessor methods are also one way to get or set the attached property in code. From a code perspective, an attached property is similar to a backing field that has method accessors instead of property accessors, and that backing field can exist on any object rather than having to be specifically defined.
+### 使用 XAML 存取子樣式
 
-The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
+當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性的擁有者類型必須實作專用的存取子方法 (以格式 **Get***PropertyName* 與 **Set***PropertyName* 命名)。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
+
+下面的範例顯示如何透過 XAML 存取子 API，在程式碼中設定附加屬性。 在此範例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 類別的執行個體。 最後一行是實際設定值的程式碼，前一行會建立執行個體與它們的父系-子系關係。 如果您使用屬性系統，語法是未標記為註解的最後一行。 如果您使用 XAML 存取子樣式，語法是標記為註解的最後一行。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -95,32 +97,32 @@ The next example shows how you can set an attached property in code via the XAML
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## Custom attached properties
+## 自訂附加屬性
 
-For code examples of how to define custom attached properties, and more info about the scenarios for using an attached property, see [Custom attached properties](custom-attached-properties.md).
+如需如何定義自訂附加屬性的程式碼範例，以及使用附加屬性的案例詳細資訊，請參閱[自訂附加屬性](custom-attached-properties.md)。
 
-## Special syntax for attached property references
+## 附加屬性參照的特殊語法
 
-The dot in an attached property name is a key part of the identification pattern. Sometimes there are ambiguities when a syntax or situation treats the dot as having some other meaning. For example, a dot is treated as an object-model traversal for a binding path. In most cases involving such ambiguity, there is a special syntax for an attached property that enables the inner dot still to be parsed as the *owner***.***property* separator of an attached property.
+附加屬性名稱中的點，是識別碼樣式的重要部分。 有時候，如果某個語法或某個狀況將點視為含有其他意義時，意思就會不明確。 例如，在繫結路徑的情況下，會將點視為物件模型周遊。 在這類不明確的大多數情況下，附加屬性有一個特殊語法可以將內部的點仍舊剖析為附加屬性的 *owner***.***property* 分隔符號。
 
-- To specify an attached property as part of a target path for an animation, enclose the attached property name in parentheses ("()")—for example, "(Canvas.Left)". For more info, see [Property-path syntax](property-path-syntax.md).
+- 如果要將附加屬性指定為動畫之目標路徑的一部分，請用括號 ("()") 括住附加屬性名稱，例如 "(Canvas.Left)"。 如需詳細資訊，請參閱 [Property-path 語法](property-path-syntax.md)。
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+**注意：**目前 Windows 執行階段 XAML 實作的侷限是您無法讓自訂附加屬性產生動畫效果。
  
-- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element '<TextBlock x:Uid="Title" />', the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設有一個元素 '<TextBlock x:Uid="Title" />'，則資源檔中指向該執行個體上的 **Canvas.Top** 值的資源索引鍵會是 "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
-## Related topics
+## 相關主題
 
-* [Custom attached properties](custom-attached-properties.md)
-* [Dependency properties overview](dependency-properties-overview.md)
-* [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
-* [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/hh943060)
+* [自訂附加屬性](custom-attached-properties.md)
+* [相依性屬性概觀](dependency-properties-overview.md)
+* [使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)
+* [快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-* [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+* [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

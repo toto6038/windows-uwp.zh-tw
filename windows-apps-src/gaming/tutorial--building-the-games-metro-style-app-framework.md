@@ -1,36 +1,36 @@
 ---
 author: mtoepke
-title: Define the game's Universal Windows Platform (UWP) app framework
-description: The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows.
+title: "定義遊戲的通用 Windows 平台 (UWP) App 架構"
+description: "撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。"
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
+ms.openlocfilehash: 2ebc7bca06454f78ab375058e49f012cacb00cc8
 
 ---
 
-#  Define the game's Universal Windows Platform (UWP) app framework
+#  定義遊戲的通用 Windows 平台 (UWP) App 架構
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction.
+撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及定格，還有使用者介面的事件、互動和轉換。 我們要看看如何架構範例遊戲，以及它如何為玩家及系統互動定義高階狀態電腦。
 
-## Objective
-
-
--   To set up the framework for a UWP DirectX game, and implement the state machine that defines the overall game flow.
-
-## Initializing and starting the view provider
+## 目標
 
 
-In any UWP DirectX game, you must obtain a view provider that the app singleton, the Windows Runtime object that defines an instance of your running app, can use to access the graphics resources it needs. Through the Windows Runtime, your app has a direct connection with the graphics interface, but you need to specify the resources you need and how to handle them.
+-   設定 UWP DirectX 遊戲的架構，以及實作定義整體遊戲流程的狀態電腦。
 
-As we discussed in [Setting up the game project](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 provides an implementation of a basic renderer for DirectX in the **Sample3DSceneRenderer.cpp** file that is available when you pick the **DirectX 11 App (Universal Windows)** template.
+## 初始化並啟動檢視提供者
 
-For more details about understanding and creating a view provider and renderer, see [How to set up your UWP with C++ and DirectX to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Suffice to say, you must provide the implementation for 5 methods that the app singleton calls:
+在任何 UWP DirectX 遊戲中，您都必須取得應用程式單例 (定義執行應用程式之執行個體的 Windows 執行階段物件) 的檢視提供者，以存取所需的圖形資源。 透過 Windows 執行階段，您的 app 可以直接與圖形介面連接，但是需要指定所需的資源及處理方式。
+
+如我們在[設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md)中所討論，Microsoft Visual Studio 2015 在 **Sample3DSceneRenderer.cpp** 檔案中提供了 DirectX 基本轉譯器的實作；當您挑選 **DirectX 11 應用程式 (通用 Windows)** 範本時，該檔案便可供使用。
+
+如需了解及建立檢視提供者和轉譯器的詳細資料，請參閱[如何使用 C++ 和 DirectX 設定 UWP 來顯示 DirectX 檢視](https://msdn.microsoft.com/library/windows/apps/hh465077)。
+
+簡單的來說，您必須提供應用程式單例呼叫的 5 種方法實作：
 
 -   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)
 -   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)
@@ -38,9 +38,9 @@ Suffice to say, you must provide the implementation for 5 methods that the app s
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-In the DirectX11 App (Universal Windows) template, these 5 methods are defined on the **App** object in [App.h](#code_sample). Let's take a look at the way they are implemented in this game.
+在 DirectX 11 應用程式 (通用 Windows) 範本中，這 5 個方法定義在 [XApp.h](#code_sample) 的 **App** 物件中。 我們來看看它們在這個遊戲中的實作方式。
 
-The Initialize method of the view provider
+檢視提供者的 Initialize 方法
 
 ```cpp
 void App::Initialize(
@@ -62,13 +62,13 @@ void App::Initialize(
 }
 ```
 
-The app singleton first calls **Initialize**. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
+應用程式單例首先呼叫 **Initialize**。 因此，這個方法必須處理大部分的 UWP 遊戲基礎行為， 例如處理主視窗的啟用，以及確定遊戲可以處理突然暫停 (可能在稍後繼續) 的事件。
 
-When the game app is initialized, it allocates specific memory for the controller to allow the player to begin providing input. It also creates new, uninitialized instances of the game's renderer and state machine. We discuss the details in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
+當遊戲應用程式初始化時，它會為控制器配置特定的記憶體，以便讓玩家開始提供輸入。 它也會為遊戲的轉譯器和狀態電腦建立新的未初始化執行個體。 我們會在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中詳細討論這個部分。
 
-At this point, the game app can handle a suspend (or resume) message, and has memory allocated for the controller, the renderer, and the game itself. But there's no window to work with, and the game is uninitialized. There's a few more things that need to happen!
+現在，遊戲應用程式可以處理暫停 (或繼續) 訊息，而且擁有為控制器、轉譯器及遊戲本身配置的記憶體。 但是沒有可以使用的視窗，而且遊戲還未初始化。 我們還需要完成幾個工作！
 
-The SetWindow method of the view provider
+檢視提供者的 SetWindow 方法
 
 ```cpp
 void App::SetWindow(
@@ -106,15 +106,15 @@ void App::SetWindow(
 }
 ```
 
-Now, with a call to an implementation of [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), the app singleton provides a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that represents the game's main window, and makes its resources and events available to the game. Because there's a window to work with, the game can now start adding in the basic user interface components and events: a pointer (used by both mouse and touch controls), and the basic events for window resizing, closing, and DPI changes (if the display device changes).
+現在，透過呼叫 [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) 的實作，應用程式單例提供一個 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件來代表遊戲的主視窗，並將其中的資源和事件提供給遊戲使用。 因為現在有視窗可以使用了，遊戲可以開始新增基本使用者介面元件及事件：指標 (由滑鼠及觸控控制項使用)，以及視窗重新調整大小、關閉及 DPI 變更 (如果顯示裝置變更) 的基本事件。
 
-The game app also initializes the controller, because there's a window to interact with, and initializes the game object itself. It can read input from the controller (touch, mouse, or XBox 360 controller).
+遊戲應用程式也會初始化控制器 (因為有視窗可以互動) 及初始化遊戲物件本身。 它可以從控制器 (觸控、滑鼠或 XBox 360 控制器) 讀取輸入。
 
-After the controller is initialized, the app defines two rectangular areas in the lower-left and lower-right corners of the screen for the move and camera touch controls, respectively. The player uses the lower-left rectangle, defined by the call to **SetMoveRect**, as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle, defined by the **SetFireRect** method, is used as a virtual button to fire the ammo.
+初始化控制器之後，應用程式在畫面的左下角和右下角分別為移動和相機觸控控制項定義兩個矩形區域。 玩家使用左下角矩形 (呼叫 **SetMoveRect** 來定義) 當作前後左右移轉相機的虛擬控制鍵。 右下角矩形 (由 **SetFireRect** 方法定義) 當作發射子彈的虛擬按鈕。
 
-It's all starting to come together.
+現在開始慢慢成形了。
 
-The Load method of the view provider
+檢視提供者的 Load 方法
 
 ```cpp
 void App::Load(
@@ -158,23 +158,23 @@ void App::Load(
 }
 ```
 
-After the main window is set, the app singleton calls **Load**. In the sample, this method uses a set of asynchronous tasks (the syntax for which is defined in the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) to create the game objects, load graphics resources, and initialize the game’s state machine. By using the async task pattern, the Load method completes quickly and allows the app to start processing input. In this method, the app also displays a progress bar as the resource files load.
+設定好主視窗後，應用程式單例會呼叫 **Load**。 在範例中，這個方法使用一組非同步工作 (它的語法定義於[平行模式程式庫](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) 中) 來建立遊戲物件、載入圖形資源以及初始化遊戲的狀態電腦。 使用非同步工作模式時，Load 方法即可快速完成並允許 app 開始處理輸入。 在這個方法中，app 也會在資源檔案載入時顯示進度列。
 
-We break resource loading into two separate stages, because access to the Direct3D 11 device context is restricted to the thread the device context was created on, while access to the Direct3D 11 device for object creation is free-threaded. The **CreateGameDeviceResourcesAsync** task runs on a separate thread from the completion task (*FinalizeCreateGameDeviceResources*), which runs on the original thread. We use a similar pattern for loading level resources with **LoadLevelAsync** and **FinalizeLoadLevel**.
+我們將資源載入分成兩個不同的階段，因為 Direct3D 11 裝置內容的存取受限於建立裝置內容的執行緒中，而為物件建立存取 Direct3D 11 裝置則是自由不受限的執行緒。 **CreateGameDeviceResourcesAsync** 工作在與完成工作 (*FinalizeCreateGameDeviceResources*) 的不同執行緒中執行，而完成工作是在原始執行緒中執行。 我們使用 **LoadLevelAsync** 和 **FinalizeLoadLevel** 時會以類似的模式來載入關卡資源。
 
-After we create the game’s objects and load the graphics resources, we initialize the game's state machine to the starting conditions (for example: setting the initial ammo count, level number, and object positions). If the game state indicates that the player is resuming a game, we load the current level (the level that player was on when the game was suspended).
+在建立遊戲物件和載入圖形資源之後，我們將遊戲的狀態電腦初始化成開始狀況 (例如，設定初始子彈計數、關卡級數以及物件位置)。 如果遊戲狀態表示玩家是要繼續遊戲，我們要載入目前的關卡 (遊戲暫停時玩家所在的關卡)。
 
-In the **Load** method, we do any necessary preparations before the game begins, like setting any starting states or global values. If you want to pre-fetch game data or assets, this is a better place for it rather than in **SetWindow** or **Initialize**. Use async tasks in your game for any loading as Windows imposes restrictions on the time your game can take before it must start processing input. If loading takes awhile—if there are lots of resources — then provide your users with a regularly updated progress bar.
+在 **Load** 方法中，我們要在遊戲開始前進行任何必要的準備，像是設定任何開始狀態或全域值。 如果您想要預先擷取遊戲資料或資產，這個方法相較於 **SetWindow** 或 **Initialize** 方法更為適合。 在遊戲中為任何載入使用非同步工作，因為 Windows 強制限制遊戲必須開始處理輸入之前可以使用的時間。 如果載入需要一些時間 — 如果有許多資源 — 那麼請為您的使用者提供定期更新的進度列。
 
-When developing your own game, design your startup code around these methods. Here's a simple list of basic suggestions for each method:
+開發您自己的遊戲時，請圍繞這些方法設計啟動程式碼。 這裡是每個方法基本建議的簡單清單：
 
--   Use **Initialize** to allocate your main classes and connect up the basic event handlers.
--   Use **SetWindow** to create your main window and connect any window-specific events.
--   Use **Load** to handle any remaining setup, and to initiate the async creation of objects and loading of resources. If you need to create any temporary files or data, such as procedurally generated assets, do it here too.
+-   使用 **Initialize** 配置主要類別並連接基本事件處理常式。
+-   使用 **SetWindow** 建立主視窗並連接任何視窗特定事件。
+-   使用 **Load** 處理任何其餘的設定，並初始化物件和載入資源的非同步建立。 如果需要建立任何暫存的檔案或資料 (如由程序產生的資產)，也請在這裡設定。
 
-So, the sample game creates an instance of the game's state machine and sets it to the starting configuration. It handles all the system and input events. It provides a window to display content in. The gameplay code is now ready to run.
+範例遊戲建立了遊戲狀態電腦的執行個體，並將它設定為開始設定。 它處理了所有的系統及輸入事件。 它提供了可以顯示內容的視窗。 遊戲程式碼已經準備就緒可以開始執行了。
 
-The Run method of the view provider
+檢視提供者的 Run 方法
 
 ```cpp
 void App::Run()
@@ -210,22 +210,22 @@ void App::Run()
 }
 ```
 
-Here's where we get to the play part of the game app. Having run the 3 methods and set the stage, the game app runs the **Run** method, starting the fun!
+現在，我們到了遊戲 app 的遊戲部分。 執行 3 個方法並設定遊戲的關卡，接著遊戲 app 執行 **Run** 方法，就可以開始盡情享受遊戲了！
 
-In the game sample, we start a while loop that terminates when the player closes the game window. The sample code transitions to one of two states in the game engine state machine:
+在遊戲範例中，我們開始了一個會在玩家關閉遊戲視窗時終止的 while 迴圈。 範例程式碼會在遊戲引擎狀態電腦中轉換成兩種狀態的其中一種：
 
--   The game window gets deactivated (loses focus) or snapped. When this happens, the game suspends event processing and waits for the window to focus or unsnap.
--   Otherwise, the game updates its own state and renders the graphics for display.
+-   遊戲視窗會停用 (失去焦點) 或定格。 發生這種情況時，遊戲會暫停事件處理，並且等候視窗取得焦點或取消定格。
+-   否則，遊戲會更新自己的狀態，並且轉譯圖形進行顯示。
 
-When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which makes your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
+當使用者與您的遊戲互動時，您必須處理位於訊息佇列的每個事件，因此必須使用 **ProcessAllIfPresent** 選項呼叫 [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。 其他選項會在處理訊息事件時造成延遲，這會讓您的遊戲顯得沒有回應，或是讓觸控行為變得遲緩而不敏銳。
 
-Of course, when the app is not visible, suspended or snapped, we don't want it to consume any resources cycling to dispatch messages that will never arrive. So your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) then immediately returns after the queue has been processed.
+當然，app 處於不可見、暫停或定格的狀態時，我們不希望它佔用任何資源循環來發送永遠不會傳入的訊息。 所以您的遊戲必須使用 **ProcessOneAndAllPending**，它會持續封鎖直到取得事件，然後處理該事件，並處理在處理第一個事件期間抵達處理佇列中的任何其他事件。 接著，在處理完佇列後，立即傳回 [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)。
 
-The game is running! The events that it uses to transition between game states are being dispatched and processed. The graphics are being updated as the game loop cycles. We hope the player is having fun. But eventually, the fun has to end...
+遊戲開始執行了！ 用來轉換遊戲狀態的事件正在進行發送及處理。 圖形在遊戲迴圈循環期間進行更新。 我們希望玩家玩得很開心。 但是遊戲也有結束的時候...
 
-...and we need to clean up the place. This is where **Uninitialize** comes in.
+...我們需要開始清理環境了。 這時就需要使用 **Uninitialize**。
 
-The Uninitialize method of the view provider
+檢視提供者的 Uninitialize 方法
 
 ```cpp
 void App::Uninitialize()
@@ -233,24 +233,24 @@ void App::Uninitialize()
 }
 ```
 
-In the game sample, we let the app singleton for the game clean everything up after the game is terminated. In Windows 10, closing the app window doesn't kill the app's process, but instead writes the state of the app singleton to memory. If anything special must happen when the system must reclaim this memory, any special cleanup of resources, then put the code for that cleanup in this method.
+在遊戲範例中，我們讓遊戲的應用程式單例在遊戲結束後清理掉所有的物件。 在 Windows 10 中，關閉應用程式視窗並不會終止應用程式的程序，而是將應用程式單例的狀態寫入到記憶體。 如需在系統必須回收此記憶體時執行任何特殊的資源清理動作，請在這個方法中放入該清理動作的程式碼。
 
-We refer back to these 5 methods in this tutorial, so keep them in mind. Now, let's look at the game engine's overall structure and the state machines that define it.
+我們在這個教學課程中重新提到這 5 個方法，請牢記它們。 現在，我們來看看遊戲引擎的整體結構及定義它的狀態電腦。
 
-## Initializing the game engine state
+## 初始化遊戲引擎狀態
 
 
-Because a user can resume a UWP game app from a suspended state at any time, the app can have any number of possible states.
+由於使用者可以隨時從暫停狀態繼續 UWP 遊戲應用程式，因此應用程式可能會有任意數目的可能狀態。
 
-The game sample can be in one of the three states when it starts:
+遊戲範例啟動時，可能處於下列三種狀態的其中一種：
 
--   The game loop was running and was in the middle of a level.
--   The game loop was not running because a game had just been completed. (The high score is set.)
--   No game has been started, or the game was between levels. (The high score is 0.)
+-   遊戲迴圈正在執行，而且正在進行某個關卡。
+-   遊戲迴圈未執行，因為遊戲才剛結束。 (已設定高分記錄。)
+-   未啟動任何遊戲，或遊戲進行到兩個關卡之間。 (高分記錄為 0。)
 
-Obviously, in your own game, you could have more or fewer states. Again, always be aware that your UWP game can be terminated at any time, and when it resumes, the player expects the game to behave as though they had never stopped playing.
+很明顯地，您自己的遊戲中，可能會有更多或更少的狀態。 同時，請注意您的 UWP 遊戲可以隨時終止，而在繼續進行遊戲時，玩家會希望從上一次的狀態繼續玩下去，就像沒有停止遊戲一樣。
 
-In the game sample, the code flow looks like this.
+在遊戲範例中，程式碼流程看起來像這樣。
 
 ```cpp
 void App::InitializeGameState()
@@ -279,22 +279,22 @@ void App::InitializeGameState()
 }
 ```
 
-Initialization is less about cold starting the app, and more about restarting the app after it has been terminated. The sample game always saves state, which gives the appearance that the app is always running. The suspended state is just that: the game play is suspended, but the resources of the game are still in memory. Likewise, the resume event indicates that the sample game is picking up where it was last suspended or terminated. When the sample game restarts after termination, it starts up normally and then determines the last known state so the player can immediately continue playing.
+初始化與冷啟動 app 較不相關，而是較著重在 qpp 終止之後重新啟動。 範例遊戲會固定儲存狀態，讓應用程式看起來像是一直在執行。 暫停狀態是指：暫停玩遊戲，但遊戲的資源仍在記憶體中。 同樣地，繼續事件是指範例遊戲從上一次暫停或終止的地方繼續。 範例遊戲在終止之後重新啟動時會正常啟動，然後判斷上次的已知狀態，讓玩家能夠立即繼續進行遊戲。
 
-The flowchart lays out the initial states and transitions for the game sample's initialization process.
+流程圖會配置遊戲範例的初始化程序的初始狀態和轉換。
 
-![the process for initializing and preparing our game before the main loop starts](images/simple3dgame-appstartup.png)
+![主迴圈開始前初始化及準備遊戲的程序](images/simple3dgame-appstartup.png)
 
-Depending on the state, different options are presented to the player. If the game resumes mid-level, it appears as paused, and the overlay presents a continue option. If the game resumed in a state where the game is completed, it displays the high scores and an option to play a new game. Lastly, if the game resumes before a level has started, the overlay presents a start option to the user.
+根據狀態而定，會對玩家顯示不同的選項。 如果遊戲要從關卡的中途繼續，它會顯示暫停狀態，重疊則會顯示一個繼續選項。 如果是從遊戲已完成的狀態繼續，則會顯示高分記錄和玩新遊戲的選項。 最後，如果遊戲在關卡尚未開始之前繼續，則重疊會對使用者顯示開始選項。
 
-The game sample doesn't distinguish between the game itself cold starting, that is a game that is launching for the first time without a suspend event, and the game resuming from a suspended state. This is proper design for any UWP app.
+遊戲範例不會區分遊戲本身是冷啟動 (也就是初次啟動遊戲，沒有暫停事件)，或是從暫停狀態繼續。 這是任何 UWP app 的適當設計。
 
-## Handling events
+## 處理事件
 
 
-Our sample code registered a number of handlers for specific events in **Initialize**, **SetWindow**, and **Load**. You probably guessed that these were important events, because the code sample did this work well before it got into any game mechanics or graphics development. You're right! These events are fundamental to a proper UWP app experience, and because a UWP app can be activated, deactivated, resized, snapped, unsnapped, suspended, or resumed at any time, the game must register for those very events as soon as it can, and handle them in a way that keeps the experience smooth and predictable for the player.
+我們的範例程式碼在 **Initialize**、**SetWindow** 以及 **Load** 中登錄了數個特定事件的處理常式。 您可能猜到這些是重要事件，因為程式碼範例在進入任何遊戲機制或圖形開發前就先做好這項工作。 您猜得沒錯！ 這些事件是提供正確 UWP app 經驗的基礎，而且因為 UWP app 可以隨時啟動、停用、調整大小、定格、解除定格、暫停或繼續，因此遊戲必須儘速登錄這些特別的事件，並透過保持遊戲經驗順暢及使用者預期的方式來處理它們。
 
-Here's the event handlers in the sample, and the events they handle. You can find the full code for these event handlers in [Complete code for this section](#code_sample).
+以下是範例中的事件處理常式，以及它們處理的事件。 您可以在[這個章節的完整程式碼](#code_sample)中找到這些事件處理常式的完整程式碼。
 
 <table>
 <colgroup>
@@ -303,20 +303,20 @@ Here's the event handlers in the sample, and the events they handle. You can fin
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Event handler</th>
-<th align="left">Description</th>
+<th align="left">事件處理常式</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Handles [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018). The game app has been brought to the foreground, so the main window is activated.</td>
+<td align="left">處理 [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018)。 遊戲 app 已經被帶到前景，因此啟動主視窗。</td>
 </tr>
 <tr class="even">
 <td align="left">OnLogicalDpiChanged</td>
-<td align="left">Handles [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). The DPI for the main game window has changed, and the game app adjusts its resources accordingly.
+<td align="left">處理 [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150)。 主遊戲視窗的 DPI 已變更，而且遊戲 App 據此調整其資源。
 <div class="alert">
-<strong>Note</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) coordinates are in DIPs (Device Independent Pixels), as in [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
+<strong>注意</strong> [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標的單位是 DIP (裝置獨立畫素)，和在 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) 中相同。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
  
@@ -324,49 +324,49 @@ Here's the event handlers in the sample, and the events they handle. You can fin
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Handles [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859). The game app restores the game from a suspended state.</td>
+<td align="left">處理 [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859)。 遊戲應用程式從暫停狀態還原遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Handles [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860). The game app saves its state to disk. It has 5 seconds to save state to storage.</td>
+<td align="left">處理 [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860)。 遊戲 app 將它的狀態儲存到磁碟。 它有 5 秒的時間將狀態儲存到存放區。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Handles [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). The game app has changed visibility, and has either become visible or been made invisible by another app becoming visible.</td>
+<td align="left">處理 [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591)。 遊戲 app 已經變更可見度，可以是已經變成可見，或因為另一個 app 成為可見而變成不可見。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Handles [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255). The game app's main window has been deactivated or activated, so it must remove focus and pause the game, or regain focus. In both cases, the overlay indicates that the game is paused.</td>
+<td align="left">處理 [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255)。 遊戲 app 主視窗已經停用或啟動，因此必須移除焦點並暫停遊戲，或重新取得焦點。 在這兩種情況下，重疊會指示遊戲已經暫停。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Handles [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261). The game app closes the main window and suspends the game.</td>
+<td align="left">處理 [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261)。 遊戲 app 關閉主視窗並暫停遊戲。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Handles [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283). The game app reallocates the graphics resources and overlay to accommodate the size change, and then updates the render target.</td>
+<td align="left">處理 [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283)。 遊戲應用程式重新分配圖形資源及重疊，以容納大小變更，然後更新轉譯目標。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-Your own game must handle these events, because they are part of UWP app design.
+您自己的遊戲必須處理這些事件，因為這些是 UWP 應用程式設計的一部分。
 
-## Updating the game engine
+## 更新遊戲引擎
 
 
-Within the game loop in **Run**, the sample has implemented a basic state machine for handling all the major actions the player can take. The highest level of this state machine deals with loading a game, playing a specific level, or continuing a level after the game has been paused (by the system or the player).
+在 **Run** 的遊戲迴圈內，範例已經實作基本狀態電腦，以處理玩家可以採取的所有主要動作。 這個狀態電腦的最高層級負責處理遊戲載入、進行特定關卡或在遊戲暫停後 (系統或玩家暫停) 繼續之前所玩的關卡。
 
-In the game sample, there are 3 major states (UpdateEngineState) the game can be in:
+在遊戲範例中，遊戲可能處於 3 種主要狀態 (UpdateEngineState)：
 
--   **Waiting for resources**. The game loop is cycling, unable to transition until resources (specifically graphics resources) are available. When the async tasks for loading resources completes, it updates the state to **ResourcesLoaded**. This usually happens between levels when the level needs to load new resources from disk. In the game sample, we simulate this behavior because the sample doesn't need any additional per-level resources at that time.
--   **Waiting for press**. The game loop is cycling, waiting for specific user input. This input is a player action to load a game, start a level, or continue a level. The sample code refers to these sub-states as PressResultState enumeration values.
--   **Dynamics**. The game loop is running with the user playing. While the user is playing, the game checks for 3 conditions that it can transition on: the expiration of the set time for a level, the completion of a level by the player, or the completion of all levels by the player.
+-   **Waiting for resources**。 遊戲迴圈正在循環，在資源 (尤其是圖形資源) 可用之前無法轉換。 當載入資源的非同步工作完成時，它會將狀態更新為 **ResourcesLoaded**。 這種情況通常發生在兩個關卡之間，此時關卡需要從磁碟載入新資源。 在遊戲範例中，我們模擬這個行為，因為範例此時並不需要任何額外的個別關卡資源。
+-   **Waiting for press**。 遊戲迴圈正在循環，等候特定使用者輸入。 這項輸入是玩家載入遊戲、開始關卡或繼續關卡的動作。 範例程式碼將這些子狀態稱為 PressResultState 列舉值。
+-   **Dynamics**。 遊戲迴圈正在執行且使用者正在玩遊戲。 使用者正在玩遊戲時，遊戲會檢查可能轉換的 3 種條件：關卡設定的時間到期、玩家完成關卡，或玩家完成所有關卡。
 
-Here's the code structure. The complete code is in [Complete code for this section](#code_sample).
+以下是程式碼結構。 完整程式碼在[這個章節的完整程式碼](#code_sample)中。
 
-The structure of the state machine used to update the game engine
+用來更新遊戲引擎的狀態電腦結構
 
 ```cpp
 void App::Update()
@@ -465,27 +465,27 @@ void App::Update()
 }
 ```
 
-Visually, the main game state machine looks like this:
+主要遊戲狀態電腦看起來就像這樣：
 
-![the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+![我們遊戲的主要狀態電腦](images/simple3dgame-mainstatemachine.png)
 
-We talk about the game logic itself in more detail in [Defining the main game object](tutorial--defining-the-main-game-loop.md). For now, the important takeaway is that your game is a state machine. Each specific state must have very specific criteria to define it, and the transitions from one state to another must be based on discrete user input or system actions (such as graphics resource loading). When you are planning your game, draw out a diagram like the one we use, making sure you address all possible actions the user or system can take at a high level. Games can be very complicated, and the state machine is a powerful tool to visualize this complexity and make it very manageable.
+我們會在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中詳細討論遊戲邏輯本身。 目前來說，最重要的是您的遊戲是狀態電腦。 每個特定狀態都必須有非常具體的定義條件，而且從一個狀態到另一個狀態的轉換，必須分別根據使用者的輸入或系統的動作 (如載入資源圖形) 執行。 規劃遊戲時，先繪製出類似我們使用的圖表，確定您已解決使用者或系統在高階可能採取的所有動作。 遊戲可以很複雜，而狀態電腦是一個很強大的工具，可以視覺化這些複雜的程序，讓它變得更容易管理。
 
-Of course, as you saw, there are state machines within state machines. There's one for the controller, that handles all of the acceptable inputs the player can generate. In the diagram, a press is some form of user input. This state machine doesn't care what it is, because it works at a higher level; it assumes that the state machine for the controller will handle any transitions that affect movement and shooting behaviors, and the associated rendering updates. We talk about managing input states in [Adding controls](tutorial--adding-controls.md).
+當然，就像您之前看到的，狀態電腦內還有狀態電腦。 有一個是用於控制器，可以處理玩家產生的所有可接受輸入。 在圖表中，按下的動作就是某種形式的使用者輸入。 這個狀態電腦不在乎輸入是什麼，因為它在更高階工作；它假設控制器的狀態電腦會處理影響移動及射擊行為的任何轉換，以及相關的轉譯更新。 我們會在[新增控制項](tutorial--adding-controls.md)中討論輸入狀態的管理。
 
-## Updating the user interface
+## 更新使用者介面
 
 
-We need to keep the player apprised of the state of the system, and allow him to change the high-level state according to the rules of the game. For most games, this game sample included, this is done with a heads-up display that contains representations of game state, and other play-specific info such as score, or ammo, or the number of chances remaining. We call this the overlay, because it is rendered separate from the main graphics pipeline and placed on top the 3D projection. In the sample game, we create this overlay using the Direct2D APIs. We can also create this overlay using XAML, which we discuss in [Extending the game sample](tutorial-resources.md).
+我們需要持續通知玩家系統的狀態，允許使用者根據遊戲規則來變更高階狀態。 對於這個遊戲範例包含的大部分遊戲而言，會使用包含代表遊戲狀態和其他遊戲特定資訊 (如分數、子彈或還剩幾次機會) 的平視顯示器進行通知。 我們將這個稱為重疊，因為與主要圖形管線分開轉譯，而且放置在 3D 投影上層。 在範例遊戲中，我們使用 Direct2D API 建立這個重疊。 我們也可以使用 XAML 來建立這個重疊，如[延伸遊戲範例](tutorial-resources.md)中的討論。
 
-There are two components to the user interface:
+使用者介面有兩個元件：
 
--   The heads-up display that contains the score and info about the current state of game play.
--   The pause bitmap, which is a black rectangle with text overlaid during the paused/suspended state of the game. This is the game overlay. We discuss it further in [Adding a user interface](tutorial--adding-a-user-interface.md).
+-   包含遊戲目前狀態之分數和資訊的平視顯示器。
+-   暫停點陣圖，是遊戲暫停狀態期間上面重疊文字的黑色矩形。 這就是遊戲重疊。 我們會在[新增使用者介面](tutorial--adding-a-user-interface.md)中進一步討論。
 
-Unsurprisingly, the overlay has a state machine too. The overlay can display a level start or game over message. It is essentially a canvas to output any info about game state that we display to the player when the game is paused or suspended.
+不難想像，重疊也有狀態電腦。 重疊可以顯示關卡開始或遊戲結束的訊息。 基本上，它就是遊戲暫停或中斷時，用來顯示我們對使用者顯示之任何遊戲狀態資訊的畫布。
 
-Here's how the game sample structures the overlay's state machine.
+以下是遊戲範例如何建立重疊狀態電腦的結構。
 
 ```cpp
 void App::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -521,18 +521,18 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-There are 6 state screens that the overlay displays, depending on the state of the game itself: a resources loading screen at the start of the game, a game play screen, a level start message screen, a game over screen when all of the levels are competed without time running out, a game over screen when time runs out, and a pause menu screen.
+根據遊戲本身的狀態，重疊可以顯示 6 種狀態畫面：遊戲開始時的資源載入畫面、遊戲畫面、關卡開始訊息畫面、在時間之內完成所有關卡的遊戲結束畫面、時間用完的遊戲結束畫面以及暫停功能表畫面。
 
-Separating your user interface from your game's graphics pipeline allows you to work on it independent of the game's graphics rendering engine and decreases the complexity of your game's code significantly.
+將您的使用者介面與遊戲圖形管線分開，可讓您不用依賴遊戲圖形轉譯引擎獨立使用使用者介面，並大幅降低遊戲程式碼的複雜程度。
 
-## Next steps
+## 後續步驟
 
 
-This covers the basic structure of the game sample, and presents a good model for UWP game app development with DirectX. Of course, there's more to it than this. We only walked through the skeleton of the game. Now, we take an in-depth look at the game and its mechanics, and how those mechanics are implemented as the core game object. We review that part in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
+這已經涵蓋遊戲範例的基本結構，並示範以 DirectX 開發 UWP 遊戲應用程式的最佳模型。 當然，還有更多內容。 我們僅逐步解說了遊戲的基本架構而已。 現在，我們要深入了解遊戲及其機制，以及如何實作這些機制以做為核心遊戲物件。 我們會在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中討論這個部分。
 
-It's also time to consider the sample game's graphics engine in greater detail. That part is covered in [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).
+同時也該更仔細的探討範例遊戲的圖形引擎。 這個部分涵蓋在[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)的內容中。
 
-## Complete sample code for this section
+## 這個章節的完整範例程式碼
 
 
 App.h
@@ -1427,6 +1427,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

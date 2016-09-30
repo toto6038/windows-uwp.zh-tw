@@ -1,133 +1,133 @@
 ---
 author: jnHs
-Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
-title: Guidance for app package management
+Description: "了解您的 app 套件是如何提供給您的客戶，以及如何管理特定套件案例。"
+title: "App 套件管理指導方針"
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68ed87147ed3cc3e1155eb1ab6d301867ba1ae55
+ms.openlocfilehash: ac8d150f426c7d32e8a3b61b7f08cc0b84feedb8
 
 ---
 
-# Guidance for app package management
+# App 套件管理指導方針
 
 
-Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
+了解您的應用程式套件如何提供給您的客戶，以及如何管理特定套件案例。
 
--   [OS versions and package distribution](#os-versions-and-package-distribution)
--   [Adding packages for Windows 10 to a previously-published app](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Maintaining package compatibility for Windows Phone 8.1](#maintaining-package-compatibility-for-windows-phone-8-1)
--   [Removing an app from the Store](#removing-an-app-from-the-store)
--   [Removing packages for a previously-supported device family](#removing-packages-for-a-previously-supported-device-family)
+-   [作業系統版本和套件發佈](#os-versions-and-package-distribution)
+-   [將適用於 Windows 10 的套件新增至先前發佈的 app](#adding-packages-for-windows-10-to-a-previously-published-app)
+-   [維護 Windows Phone 8.1 的套件相容性](#maintaining-package-compatibility-for-windows-phone-8-1)
+-   [從市集移除 App](#removing-an-app-from-the-store)
+-   [移除先前支援之裝置系列的套件](#removing-packages-for-a-previously-supported-device-family)
 
-## OS versions and package distribution
+## 作業系統版本和套件發佈
 
 
-Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Windows Store will provide the best available match.
+不同的作業系統上可以執行不同類型的套件。 如果有一個以上的套件可以在客戶的裝置上執行，則 Windows 市集將提供最佳絕配。
 
-Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. However, customers will only get those packages if the app doesn't include a package that targets the current OS version.
+一般而言，較新的作業系統版本可以針對相同的裝置系列，執行以之前作業系統版本為目標的套件。 不過，如果 app 不包含以目前作業系統版本為目標的套件，則客戶只會取得那些套件。
 
-For example, Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x.
+例如，Windows 10 裝置可以執行所有先前支援的作業系統版本 (每個裝置系列)。 Windows 10 桌面裝置可以執行針對 Windows 8.1 或 Windows 8 建置的 app；Windows 10 行動裝置可以執行針對 Windows Phone 8.1、Windows Phone 8 和 Windows Phone 7.x 所建置的 app。
 
-The following examples illustrate various scenarios for an app that includes packages targeting different OS versions. In some cases, specific constraints of your packages may not allow them to run on every OS versions and device types listed here (for example, the architecture must be appropriate), but these examples should help you to understand which OS versions can run your specific packages.
+下列範例針對包含以不同作業系統版本為目標之套件的 app，說明各種的案例。 在某些情況下，您套件的特定限制可能不允許它們在此處所列的每一個作業系統版本和裝置類型上執行 (例如，架構必須適當)，但這些範例應可協助您了解哪些作業系統版本可以執行特定套件。
 
-### Example app 1
+### 範例 app 1
 
-| Package's targeted operating system | Operating systems that will get this package |
+| 套件的目標作業系統 | 將取得此套件的作業系統 |
 |-------------------------------------|----------------------------------------------|
-| Windows 8.1                         | Windows 10 desktop devices, Windows 8.1      |
-| Windows Phone 8.1                   | Windows 10 mobile devices, Windows Phone 8.1 |
+| Windows 8.1                         | Windows 10 桌上型電腦裝置、Windows 8.1      |
+| Windows Phone 8.1                   | Windows 10 行動裝置、Windows Phone 8.1 |
 | Windows Phone 8                     | Windows Phone 8                              |
 | Windows Phone 7.1                   | Windows Phone 7.x                            |
 
-In example app 1, the app does not yet have Universal Windows Platform (UWP) packages that are specifically built for Windows 10 devices, but customers on Windows 10 can still get the app. Those customers will get the best packages available, depending on their device type.
+在 app 範例 1，app 還沒有特別針對 Windows 10 裝置建置的通用 Windows 平台 (UWP) 套件，但 Windows 10 的客戶仍可取得 app。 這些客戶會根據其裝置類型取得最佳的套件。
 
-### Example app 2
+### 範例 app 2
 
-| Package's targeted operating system  | Operating systems that will get this package |
+| 套件的目標作業系統  | 將取得此套件的作業系統 |
 |--------------------------------------|----------------------------------------------|
-| Windows 10 (universal device family) | Windows 10 (all device families)             |
+| Windows 10 (通用裝置系列) | Windows 10 (所有裝置系列)             |
 | Windows 8.1                          | Windows 8.1                                  |
 | Windows Phone 8.1                    | Windows Phone 8.1                            |
-| Windows Phone 7.1                    | Windows Phone 7.x, Windows Phone 8           |
+| Windows Phone 7.1                    | Windows Phone 7.x、Windows Phone 8           |
 
-In example app 2, there is no package that can run on Windows 8. Customers who are running all other OS versions can get the app.
+在範例 app 2 中，沒有可在 Windows 8 上執行的套件。 在所有其他作業系統版本上執行的客戶可以取得 app。
 
-### Example app 3
+### 範例 app 3
 
-| Package's targeted operating system | Operating systems that will get this package                  |
+| 套件的目標作業系統 | 將取得此套件的作業系統                  |
 |-------------------------------------|---------------------------------------------------------------|
-| Windows 10 (desktop device family)  | Windows 10 desktop devices                                    |
-| Windows Phone 8                     | Windows 10 mobile devices, Windows Phone 8, Windows Phone 8.1 |
+| Windows 10 (桌面裝置系列)  | Windows 10 桌面裝置                                    |
+| Windows Phone 8                     | Windows 10 行動裝置、Windows Phone 8、Windows Phone 8.1 |
 
-In example app 3, since there is no UWP package that targets the mobile device family, customers on Windows 10 mobile devices will get the Windows Phone 8 package. If this app later adds a package that targets the mobile device family (or the universal device family), that packages will then be available to customers on Windows 10 mobile devices instead of the Windows Phone 8 package.
+在範例 app 3 中，因為沒有以行動裝置系列為目標的 UWP 套件，所以 Windows 10 行動裝置的客戶將會取得 Windows Phone 8 套件。 如果此 app 後來新增以行動裝置系列 (或通用裝置系列) 為目標的套件，則該套用即可供 Windows 10 行動裝置的客戶，而非 Windows Phone 8 套件的客戶使用。
 
-Also note that this example app does not include any package that can run on Windows 7.x.
+也請注意，這個範例 app 不包含任何可在 Windows 7.x 上執行的套件。
 
-### Example app 4
+### 範例 app 4
 
-| Package's targeted operating system  | Operating systems that will get this package |
+| 套件的目標作業系統  | 將取得此套件的作業系統 |
 |--------------------------------------|----------------------------------------------|
-| Windows 10 (universal device family) | Windows 10 (all device families)             |
+| Windows 10 (通用裝置系列) | Windows 10 (所有裝置系列)             |
 
-In example app 4, any device that is running Windows 10 can get the app, but it will not be available to customers on any previous OS version. Because the UWP package targets the universal device family, it will be available to both desktop and mobile Windows 10 devices.
+在範例 app 4 中，任何執行 Windows 10 的裝置均可取得 app，但舊版作業系統的客戶無法使用該 app。 因為 UWP 套件以通用裝置系列為目標，所以可供桌面和行動 Windows 10 裝置使用。
 
-## Adding packages for Windows 10 to a previously-published app
+## 將適用於 Windows 10 的套件新增至先前發佈的 app
 
 
-If you have an app in the Store and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, customers who already had your app before upgrading to Windows 10 will be able to get your UWP package as an update from the Store. The UWP package will also be available for new acquisitions by customers on Windows 10.
+如果您在市集中有一個 app 並想要針對 Windows 10 更新您的 app，請在 [[套件](upload-app-packages.md)] 步驟期間建立新的提交並新增您的 UWP .appxupload 套件。 在您的 app 通過認證程序後，客戶如果在升級為 Windows 10 之前就已經擁有您的 app，就可以從市集以更新的形式取得您的 UWP 套件。 Windows 10 上的客戶也可以透過全新取得的方式獲取 UWP 套件。
 
-> **Important**  Once a customer on Windows 10 gets your UWP package, you won't be able to roll that customer back to using a package for any previous OS version. Make sure you have thoroughly tested your UWP packages on Windows 10 before adding them to your submission.
+> **重要** 一旦 Windows 10 客戶取得您的 UWP 套件後，您將無法讓該客戶回復到使用任何之前作業系統版本的套件。 在將您的 UWP 套件新增到提交之前，請務必在 Windows 10 上徹底測試您的 UWP 套件。
 
-You can update any of your other packages at the same time or make other changes to the submission (for example, you may want to [create platform-specific descriptions](create-platform-specific-descriptions.md) to be shown to customers on the earlier OS versions). You can also leave everything else exactly the same, if you prefer.
+您可以同時更新任何其他套件或對此提交進行其他變更 (例如，您可能要對舊版作業系統的客戶顯示[建立特定平台的介紹](create-platform-specific-descriptions.md))。 如果您想要，也能讓其他項目保持相同。
 
-> **Note**  The version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. For more info about version numbering on Windows 10, see [Package version numbering](package-version-numbering.md).
+> **注意** 針對相同的 app，您的 Windows 10 套件版本號碼必須高於您正在發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件 (或是適用於您先前發佈之作業系統版本的套件) 的版本號碼。 如需 Windows 10 版本編號的詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。
 
-Once the new submission completes the certification process, the UWP packages will be available, along with any other packages you've made available for those customers who aren't on Windows 10 yet.
+一旦新的提交完成認證程序，即可使用 UWP 套件，以及您已提供給尚未採用 Windows 10 客戶使用的其他套件。
 
-For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+如需針對市集封裝 UWP app 詳細資訊，請參閱[封裝適用於 Windows 10 的通用 Windows app](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
-> **Important**  Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to your Windows 10 universal package.
+> **重要** 請記住，如果您提供以通用裝置系列為目標的套件，則在任何舊版作業系統 (Windows Phone 8、Windows 8.1 等) 上已擁有您的 app，而後升級至 Windows 10 的客戶，將會被更新至 Windows 10 通用套件。
 > 
-> This happens even if you have excluded a specific device family in the [Pricing and availability](set-app-pricing-and-availability.md#windows-10-device-families) step of your submission, since the **Device families** selection only applies to new acquisitions. If you don't want every previous customer to get your new Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to include only the particular device family you wish to support.
+> 即使您已在提交的[定價和可用性](set-app-pricing-and-availability.md#windows-10-device-families)步驟中排除特定裝置系列，也會發生這種情況，因為**裝置系列**選項僅適用於全新取得的情況。 如果您不想每一位先前客戶取得您的新 Windows 10 套件，請務必更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，只包含您想要支援的特定裝置系列。
 > 
-> For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default. Do not submit any UWP packages that target either the universal or mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 mobile customers will not get any of your UWP packages.
+> 例如，假設您只想要讓已升級至 Windows 10 的 Windows 8 和 Windows 8.1 客戶取得您的 UWP app，而且您想要 Windows Phone 8.1 和更早版本的客戶保留您先前提供的套件 (針對 Windows Phone 8 或 Windows Phone 8.1)。 若要這麼做，您必須更新您 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)，確定它只包含 **Windows.Desktop** (針對桌面裝置系列)，而不是保留 Microsoft Visual Studio 預設在 appx 資訊清單中包含的 **Windows.Universal** 值 (針對通用裝置系列)。 請勿提交任何針對通用或行動裝置系列的 UWP 套件 (**Windows.Universal** 或 **Windows.Universal**)。 如此一來，您的 Windows 10 行動客戶將不會取得任何 UWP 套件。
 > 
-> For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+> 如需裝置系列的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-## Maintaining package compatibility for Windows Phone 8.1
-
-
-Certain requirements for package types apply when updating apps that were previously published for Windows Phone 8.1:
-
--   After an app has a published Windows Phone 8.1 package, all subsequent updates must also contain a Windows Phone 8.1 package.
--   After an app has a published Windows Phone 8.1 XAP, subsequent updates must either have a Windows Phone 8.1 XAP, Windows Phone 8.1 appx, or Windows Phone 8.1 appxbundle.
--   When an app has a published Windows Phone 8.1 .appx, subsequent updates must either have a Windows Phone 8.1 .appx or Windows Phone 8.1 .appxbundle. In other words, a Windows Phone 8.1 XAP is not allowed. This applies to an .appxupload that contains a Windows Phone 8.1 .appx as well.
--   After an app has a published Windows Phone 8.1 .appxbundle, subsequent updates must have a Windows Phone 8.1 .appxbundle. In other words, a Windows Phone 8.1 XAP or Windows Phone 8.1 .appx is not allowed. This applies to an .appxupload that contains a Windows Phone 8.1 .appxbundle as well.
-
-Failure to follow these rules will result in package upload errors that will prevent you from completing your submission.
-
-## Removing an app from the Store
+## 維護 Windows Phone 8.1 的套件相容性
 
 
-At times, you may want to completely stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method, including promotional codes.
+在更新先前針對 Windows Phone 8.1 發佈的 app 時，會套用某些套件類型的特定要求：
 
-> **Important**  This will override any [distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) settings that you have selected in your submissions.
+-   在 app 擁有已發佈的 Windows Phone 8.1 套件後，所有後續的更新也必須包含 Windows Phone 8.1 套件。
+-   在 app 擁有已發佈的 Windows Phone 8.1 XAP 後，後續的更新必須具有 Windows Phone 8.1 XAP、Windows Phone 8.1 appx 或 Windows Phone 8.1 appxbundle。
+-   當 app 擁有已發佈的 Windows Phone 8.1 .appx 時，後續的更新必須具有 Windows Phone 8.1 .appx 或 Windows Phone 8.1 .appxbundle。 換句話說，不允許 Windows Phone 8.1 XAP。 這也適用於包含 Windows Phone 8.1.appx 的 .appxupload。
+-   在 app 擁有已發佈的 Windows Phone 8.1 .appxbundle 後，後續的更新必須具有 Windows Phone 8.1 .appxbundle。 換句話說，不允許 Windows Phone 8.1 XAP 或 Windows Phone 8.1 .appx。 這也適用於包含 Windows Phone 8.1 .appxbundle 的 .appxupload。
 
-Note that any customers who already have the app will still be able to use it (and could even get updates if you submit new packages later).
+未遵循這些規則將導致套件上傳錯誤，而使您無法完成提交。
 
-After making the app unavailable, you'll still see it in your dashboard. If you decide to offer the app to customers again, you can click **Make app available** from the App overview page. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.
-
-> **Note**  If you want to keep your app available, but don't want to continuing offering it to customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8, Windows Phone 8.1, and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8, remove your Windows Phone 8 packages from the submission. After the update is published, no new customers on Windows Phone 8 will be able to acquire the app (though customers who already have it can continue to use it). The app will still be available for new customers on Windows Phone 8.1 and Windows 10.
-
-## Removing packages for a previously-supported device family
+## 從市集移除 App
 
 
-If you remove all packages for a certain device family that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.
+有時，您可能想要完全停止為客戶提供某個 app，有效地「取消發佈」該 app。 若要執行此動作，請按一下 [App 概觀] 頁面上的 [停止提供 App]****。 在您確認想要停止提供該 app 之後，該 app 在數小時內便無法在市集中看見，而所有的新客戶都將無法透過任何方法 (包括促銷碼) 來取得它。
 
-When you publish a submission that removes packages for a device family that your app previously supported, new customers will not be able to acquire the app on that device family. You can always publish another update later to provide packages for that device family again.
+> **重要** 這將會覆寫您已在提交中選取的所有[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)設定。
 
-Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.
+請注意，任何已擁有此 app 的客戶仍可使用它 (甚至可以在您於稍後提交新的套件時取得更新)。
+
+停止提供該 app 之後，您仍能在儀表板中看見它。 如果您決定再次為客戶提供該 app，就可以按一下 [App 概觀] 頁面上的 [提供 App]****。 當您確認之後，該 app 即可在數小時內提供給新的客戶使用 (除非受到您在最新提交中的設定所限制)。
+
+> **注意** 如果您想保持 app 的可用性，但不想繼續提供給特定作業系統版本上的客戶，您可以建立新的提交，並針對您想要在其上防止新取得的作業系統版本移除所有套件。 例如，如果您先前已有適用於 Windows Phone 8、Windows Phone 8.1 及 Windows 10 的套件，而您不想持續提供該 app 給 Windows Phone 8 上的客戶，則可從提交中移除 Windows Phone 8 套件。 發佈更新之後，就不會有任何 Windows Phone 8 上的新客戶能夠擷取該 app (但已經擁有該 app 的客戶仍能繼續使用)。 該 app 仍然可供 Windows Phone 8.1 和 Windows 10 上的新客戶使用。
+
+## 移除先前支援之裝置系列的套件
+
+
+如果您要移除您 app 先前支援之特定裝置系列的所有套件，系統會先提示以確認您確實要這樣做，您才能在 [套件]**** 頁面上儲存變更。
+
+當您發佈移除 app 先前所支援裝置系列之套件的提交時，使用該裝置系列的新客戶將無法取得您的 app。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
+
+請注意，即使您移除支援特定裝置系列的所有套件，任何已安裝該 app 的現有客戶仍能夠使用它，且他們會取得您之後所提供的任何更新。
 
  
 
@@ -139,6 +139,6 @@ Be aware that even if you remove all of the packages that support a certain devi
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

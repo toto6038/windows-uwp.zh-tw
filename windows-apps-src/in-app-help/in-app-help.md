@@ -1,62 +1,62 @@
 ---
 author: QuinnRadich
-Description: Design effective help to be displayed reactively inside your app.
-title: Guidelines for designing in-app help.
+Description: "設計有效說明，以在應用程式內反應性地顯示。"
+title: "設計應用程式內說明的指導方針。"
 label: In-app help
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 0d13ca6850df1b575eddebdb36b345423392664f
-ms.openlocfilehash: 0c606e3b5be2889e83efce77d4c98ca646fef725
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
 
 ---
 
-# In-app help pages
+# 應用程式內說明頁面
 
-Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.
+在大部分的情況下，說明最好是在應用程式內，於使用者選擇檢視它時顯示。
 
-## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>When to use in-app help pages
+## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>使用 App 內說明頁面的時機
 
-In-app help should be the default method of displaying help for the user. It should be used for any help that is simple, straightforward, and does not introduce new content to the user. Instructions, advice, and tips and tricks are all suitable for in-app help.
+App 內說明應該是顯示使用者說明的預設方法。 它應該用於簡單、易懂且不會對使用者產生新內容的任何說明。 指示、建議以及提示與訣竅都適用於應用程式內說明。
 
-Complex instructions or tutorials are not easy to reference quickly, and they take up large amounts of space, so these materials should be hosted externally, and not incorporated into the app itself.
+複雜的指示或教學課程不容易快速參考，並且會佔用大量空間。 因此，它們應該裝載在外部，不要納入應用程式本身。
 
-Users should not have to seek out help for basic instructions or to discover new features. If you need to have help that educates users, use instructional UI.
+對於基本指示或探索新功能，使用者應不需要尋找其說明。 如果您需要有教育使用者的說明，請使用指示性 UI。
 
-## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>Types of in-app help
+## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>App 內說明的類型
 
-In-app help can come in several forms, though they all follow the same general principles of design and usability.
+App 內說明可以有數種形式，但都遵循相同的設計和可用性一般原則。
 
-### <span id="help_pages"></span><span id="HELP_PAGES"></span>Help pages
+#### <span id="help_pages"></span><span id="HELP_PAGES"></span>說明頁面
 
-Having a separate page or pages of help within your app is a quick and easy way of displaying useful instructions:
+在 App 內包含個別的說明頁面，是一種能快速且簡單地顯示實用指示的方式。
 
--   **Be concise:** A large library of help topics is unwieldy and unsuited for in-app help.
--   **Be consistent:** Make sure that users can reach your help pages the same way from any part of your app. They should never have to search for it.
--   **Be aware that users scan, not read:** Because the help a user is looking for might be on the same page as other help topics, make sure they can easily tell which one they need to focus on.
-
-
-### <span id="popups"></span><span id="POPUPS"></span>Popups
-
-Popups allow for highly contexual help, displaying instructions and advice that is relevant to the specific task that the user is attempting:
-
--   **Focus on one issue:** Space is even more restricted in a popup than a help page. Help popups need to refer specifically to a single task to be effective.
--   **Visibility is important:** Because help popups can only be viewed from one location, make sure that they're clearly visible to the user without being obstructive. If the user misses it, they might move away from the popup in search of a help page.
--   **Don't use too many resources:** Help shouldn't lag or be slow-loading. Using videos or audio files or high resolution images in popups is more likely to frustrate the user than it is to help them.
-
-### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>Descriptions
-
-Sometimes, it can be useful to provide more information about a feature when a user inspects it. Descriptions are similar to instructive UI, but the key difference is that instructional UI attempts to teach and educate the user about features that they don't know about, whereas detailed descriptions enhance a user's understanding of app features that they're already interested in:
-
--   **Don't teach the basics:** Assume that the user already knows the fundamentals of how to use the item being described. Clarifying or offering further information is useful. Telling them what they already know is not.
--   **Describe interesting interactions:** One of the best uses for descriptions is to educate the user on how a features that they already know about can interact. This helps users learn more about things they already like to use.
--   **Stay out of the way:** Much like instructional UI, descriptions need to avoid interfering with a user's enjoyment of the app.
-
-## <span id="related_topics"></span>Related articles
-
-* [Guidelines for app help](guidelines-for-app-help.md)
+-   **簡潔︰**大型說明主題庫十分龐大，不適合應用程式內說明。
+-   **一致：**確定使用者可以使用相同的方式，從您應用程式的任何部分到達您的說明頁面。 他們應該永遠不需要進行搜尋。
+-   **使用者會掃視，而非閱讀：**因為使用者所尋找的說明可能與其他說明主題位在相同的頁面上，請確定他們可以輕易分辨出需要聚焦的部分。
 
 
+#### <span id="popups"></span><span id="POPUPS"></span>快顯
 
-<!--HONumber=Aug16_HO3-->
+快顯允許高度內容相關的說明，能顯示與使用者正在嘗試執行之特定工作相關的指示和建議。
+
+-   **聚焦一個問題︰**快顯中的空間比說明頁面更為受限。 說明快顯需要特別參考單一工作才會生效。
+-   **可見度十分重要︰**因為說明快顯只能從一個位置進行檢視，所以請確定使用者可以不受防礙清楚地看到它們。 如果使用者錯過它，則可能離移開快顯，來搜尋說明頁面。
+-   **不要使用太多的資源︰**說明不應該延遲或讓載入變慢。 在快顯中使用視訊或音訊檔案，或是高解析度的影像，反而更可能為使用者造成不便。
+
+#### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>描述
+
+在某些情況下，描述很適合用來在使用者檢查某項功能時，為該功能提供更詳細的資訊。 描述與指示性 UI 類似，但主要差異在於指示性 UI 嘗試教導和訓練使用者有關他們不知道的功能，而詳細的描述可增強使用者對已感興趣的應用程式功能的了解。
+
+-   **不教導基本知識︰**假設使用者已經知道如何使用所描述項目的基本概念。 釐清或提供更進一步的資訊十分有用。 但不告訴他們已經知道的資訊。
+-   **描述有趣的互動：**描述的一種最佳使用方式是教育使用者有關他們已知道的功能如何進行互動。 這可協助使用者深入了解他們已經想要使用的項目。
+-   **不造成干擾：**描述與指示性 UI 一樣，需要避免干擾使用者使用 App 的體驗。
+
+## <span id="related_topics"></span>相關文章
+
+* [App 說明的指導方針](guidelines-for-app-help.md)
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

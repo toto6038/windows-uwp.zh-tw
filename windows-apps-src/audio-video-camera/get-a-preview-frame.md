@@ -1,60 +1,59 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: This topic shows you how to get a single preview frame from the media capture preview stream.
-title: Get a preview frame
+description: "本主題說明如何從媒體擷取預覽資料流取得預覽框架。"
+title: "取得預覽框架"
 translationtype: Human Translation
-ms.sourcegitcommit: e19fa2a574e6824941c89db1db1e7e69f9e38ae9
-ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 ---
 
-# Get a preview frame
+# 取得預覽框架
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic shows you how to get a single preview frame from the media capture preview stream.
+本主題說明如何從媒體擷取預覽資料流取得預覽框架。
 
-> [!NOTE] 
-> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized, and that you have a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) with an active video preview stream.
+**注意**  
+本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體，而且您有一個具有使用中視訊預覽資料流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
 
-In addition to the namespaces required for basic media capture, capturing a preview frame requires the following namespace.
+除了基本媒體擷取所需的命名空間，擷取預覽框架還需要下列命名空間。
 
 [!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
 
-When you request a preview frame, you can specify the format in which you would like to receive the frame by creating a [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) object with the format you desire. This example creates a video frame that is the same resolution as the preview stream by calling [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to request the properties for the preview stream. The width and height of the preview stream is used to create the new video frame.
+當您要求預覽框架時，您可以使用想要的格式建立 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件，以指定您要用來接收框架的格式。 這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 來要求預覽資料流的屬性，以建立與預覽資料流解析度相同的視訊框架。 預覽資料流的寬度和高度將用來建立新的視訊框架。
 
 [!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
 
-If your [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is initialized and you have an active preview stream, call [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) to get a preview stream. Pass in the video frame created in the last step to specify the format of the returned frame.
+如果您的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件已初始化，而且您有使用中的預覽資料流，請呼叫 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) 取得預覽資料流。 傳入上一個步驟中建立的視訊框架，以指定傳回框架的格式。
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
-Get a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) representation of the preview frame by accessing the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) property of the [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) object. For information about saving, loading, and modifying software bitmaps, see [Imaging](imaging.md).
+存取 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性，以取得預覽框架的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示。 如需有關儲存、載入和修改軟體點陣圖的資訊，請參閱[影像處理](imaging.md)。
 
 [!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
 
-You can also get a [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) representation of the preview frame if you want to use the image with Direct3D APIs.
+如果您想要透過 Direct3D API 使用影像，您也可以取得預覽框架的 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 表示。
 
 [!code-cs[GetPreviewSurface](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
 
-> [!IMPORTANT]
-> Either the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) property or the [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) property of the returned **VideoFrame** may be null depending on how you call **GetPreviewFrameAsync** and also depending on the device on which your app is running.
+**重要**  
+無論是傳回之 **VideoFrame** 的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，根據您如何呼叫 **GetPreviewFrameAsync** 以及根據正在執行您 app 的裝置，這些屬性可能會是 Null。
 
-> - If you call the overload of [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) that accepts a **VideoFrame** argument, the returned **VideoFrame** will have a non-null **SoftwareBitmap** and the **Direct3DSurface** property will be null.
-> - If you call the overload of [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) that has no arguments on a device that uses a Direct3D surface to represent the frame internally, the **Direct3DSurface** property will be non-null and the **SoftwareBitmap** property will be null.
-> - If you call the overload of [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) that has no arguments on a device that does not use a Direct3D surface to represent the frame internally, the **SoftwareBitmap** property will be non-null and the **Direct3DSurface** property will be null.
+-   如果您呼叫能接受 **VideoFrame** 引數之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) 的多載，則傳回的 **VideoFrame** 會有非 Null 的 **SoftwareBitmap**，且 **Direct3DSurface** 屬性將會是 Null。
+-   如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在使用 Direct3D 表面來在內部代表框架的裝置上沒有任何引數，則 **Direct3DSurface** 屬性將會是非 Null，且 **SoftwareBitmap** 屬性將會是 Null。
+-   如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在不使用 Direct3D 表面來在內部代表框架的裝置上沒有任何引數，則 **SoftwareBitmap** 屬性將會是非 Null，且 **Direct3DSurface** 屬性將會是 Null。
 
-Your app should always check for a null value before trying to operate on the objects returned by the **SoftwareBitmap** or **Direct3DSurface** properties.
+您的 app 在嘗試於 **SoftwareBitmap** 或 **Direct3DSurface** 屬性傳回的物件上操作之前，應該先檢查是否有 Null 值。
 
-When you are done using the preview frame, be sure to call its [**Close**](https://msdn.microsoft.com/library/windows/apps/dn930918) method (projected to Dispose in C#) to free the resources used by the frame. Or, use the **using** pattern, which automatically disposes of the object.
+預覽框架使用完畢後，請務必呼叫其 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn930918) 方法 (對應於 C# 中的 Dispose)，以釋放框架使用的資源。 或者，使用 **using** 模式來自動處置物件。
 
 [!code-cs[CleanUpPreviewFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpPreviewFrame)]
 
-## Related topics
+## 相關主題
 
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
  
 
  
@@ -65,6 +64,6 @@ When you are done using the preview frame, be sure to call its [**Close**](https
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

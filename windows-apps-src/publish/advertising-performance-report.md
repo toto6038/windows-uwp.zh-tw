@@ -1,104 +1,104 @@
 ---
 author: jnHs
-Description: To view performance data for the ad units in your apps, use the app-level and account-level advertising performance reports on the Windows Dev Center dashboard.
-title: Advertising performance report
+Description: "若要檢視 app 中廣告單位的績效資料，您可以在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的廣告績效報告："
+title: "廣告績效報告"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 translationtype: Human Translation
 ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
+ms.openlocfilehash: 2b06e25a7e96c3645d7067dc0082da3fc942249d
 
 ---
 
-# Advertising performance report
+# 廣告績效報告
 
 
-To view performance data for the ad units in your apps, you can use the following reports on the Windows Dev Center dashboard:
+若要檢視 app 中廣告單位的績效資料，您可以在 Windows 開發人員中心儀表板上使用下列報告：
 
--   [App-level advertising performance report](advertising-performance-report.md#app-level-advertising-performance-report). This report provides performance data for the Microsoft ad units in the currently selected app in the dashboard.
--   [Account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report). This report provides detailed performance data for Microsoft ad units and community ads for all apps that are registered to your developer account.
+-   [App 層級的廣告績效報告](advertising-performance-report.md#app-level-advertising-performance-report)。 這份報告提供儀表板目前所選 app 中 Microsoft 廣告單位的績效資料。
+-   [帳戶層級的廣告績效報告](advertising-performance-report.md#account-level-advertising-performance-report)。 這份報告提供註冊到您開發人員帳戶之所有 App 的 Microsoft 廣告單位和社群廣告的詳細績效資料。
 
-By default, the reports are filtered on performance from the last 30 days, on all devices. To change these filters, select **Apply filters**, and then choose a different time frame (one of the preset periods or a custom date range) or choose an individual device type. 
+根據預設，報告是針對所有裝置上最近 30 天的績效進行篩選。 若要變更篩選條件，請選取 [套用篩選條件]****，然後選擇其他時間範圍 (其中一個預設期間，或是自訂日期範圍)。 
 
 > [!TIP]
-> To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
+> 若要更深入分析您的資料，請選取 [下載報告]****，然後在 Microsoft Excel 或類似的程式中開啟該 CSV (逗號分隔值) 檔案。
 
-The following sections provide more details about these reports.
+下列各節提供更多有關這些報告的詳細資料。
 
-## App-level advertising performance report
+## App 層級的廣告績效報告
 
-This page provides performance data in graph, world map, and table form for the Microsoft ad units in the currently selected app in the dashboard. To view this report, select one of your apps in the dashboard and click **Analytics** &gt; **Advertising performance** in the navigation pane.
+此頁面會在儀表板中以圖表、世界地圖和表格方式提供目前選取 App 中 Microsoft 廣告單位的績效資料。 若要檢視這份報告，請在儀表板中選取其中一個 App，然後在瀏覽窗格中按一下 [分析]**** &gt; [廣告績效]****。
 
-The data is obtained from the following performance metrics we track for the ads in your app:
+該資料是來自我們針對您 App 中廣告所追蹤的下列績效衡量指標：
 
--   **Estimated revenue**: The estimated amount of money you received from the ads running on your app.
--   **eCPM**: Effective cost per thousand impressions.
--   **Requests**: The number of times an ad request was sent from your app.
--   **Impressions**: The number of times an ad was shown in your app.
--   **Fill rate**: The percentage of ad requests sent from your app in which an ad was shown.
--   **Clicks**: The number of times someone clicked on an ad in your app.
--   **CTR**: Click-through rate, meaning the number of times an ad was clicked, divided by the number of impressions.
+-   **估計營收**：您從 app 上播放廣告所收到的估計金額。
+-   **eCPM**：每千個曝光數的有效成本。
+-   **要求數**：從您的 app 傳送廣告要求的次數。
+-   **曝光數**：廣告顯示在您 app 中的次數。
+-   **投放率**：從顯示廣告所在的 app 傳送廣告要求的百分比。
+-   **點閱數**：使用者點閱您 app 中的廣告的次數。
+-   **CTR**：點閱率，即廣告點閱數除以曝光數。
 
-To review all these performance metrics for the ad units in your app, refer to the table below the graph and map views.
+若要檢閱您 app 中廣告單位的這些績效衡量指標，請參照下列表格的圖形與地圖檢視。
 
-To analyze the data for one of these metrics in a graph or world map view, click **Graph** or **Map**. Click the headers above the graph or map to switch between the different metrics. By default, the graph and map views show performance data for all of the ad units in your app, but you can click **Choose ad units** to select up to six individual ad units to compare.
+若要分析圖形或世界地圖檢視中這些衡量指標中的一項資料，請按一下 [圖形]**** 或 [地圖]****。 按一下圖形或地圖上方的標題可以在不同的衡量指標間切換。 根據預設，圖形與地圖檢視會顯示您 app 中所有廣告單位的績效資料，但您可以按一下 [選擇廣告單位]****，最多選取六個要比較的個別廣告單位。
 
-In the map view, darker shades represent higher values and lighter shades represent lower values. You can hover over a specific country or region on the map to analyze the value of the selected metric. You can also zoom in on any area of the map to view data for smaller countries.
+在地圖檢視中，比較深色的網底表示較高的值而比較淺色的網底表示較低的值。 您可以將游標暫留在地圖上特定的國家或地區上，以便分析所選取的衡量指標值。 您也可以放大地圖上的任何區域，以檢視較小國家/地區的資料。
 
-To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
+若要更深入分析您的資料，請選取 [下載報告]****，然後在 Microsoft Excel 或類似的程式中開啟該 CSV (逗號分隔值) 檔案。
 
-## Account-level advertising performance report
+## 帳戶層級的廣告績效報告
 
-This page provides performance data for Microsoft ad units and community ads used in apps that are registered to your developer account. To view this report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+此頁面提供您的開發人員帳戶註冊之所有 app 中使用的 Microsoft 廣告單位和社群廣告的績效資料。 若要檢視這份報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
 
-This page includes the following sections.
+此頁面包含以下各節。
 
 ### Microsoft Advertising
 
-This report provides performance data for all the Microsoft ad units used in your apps. This report also includes performance data for any pubCenter ad units that were not successfully mapped to your Dev Center apps.
+此報告提供您應用程式中使用之所有 Microsoft 廣告單位的績效資料。 其中也提供未成功對應到您的開發人員中心 app 的任何 pubCenter 廣告單位其績效資料。
 
-This report shows the same seven performance metrics and views (graph, world map, and table) as the app-level advertising performance report described above. You can apply the following filters to this report:
+這份報告顯示的七項績效衡量指標，與 app 層級廣告績效報告所使用的相同。 您可以將下列篩選器套用到這份報告：
 
--   **All ad units**. When you select this filter, you can choose to display data from all ad units or from up to six specific ad units.
--   **All apps**. When you select this filter, you can choose to display data from all apps or from up to six specific apps.
--   **Individual app**. When you select an app, you can choose to display data from all ad units used by the app or from up to six specific ad units used by the app.
+-   **所有廣告單位**。 當您選取此篩選器時，可以選擇顯示所有廣告單位的資料，或顯示最多六個特定廣告單位的資料。
+-   **所有 app**。 當您選取此篩選器時，可以選擇顯示所有 app 的資料，或顯示最多六個特定 app 的資料。
+-   **個別 app**。 當您選取 app 時，可以選擇顯示 app 使用的所有廣告單位的資料，或顯示 app 使用的最多六個特定廣告單位的資料。
 
-If you created ad units for an app using Microsoft pubCenter, it’s possible that not all of them were mapped successfully to your apps in Dev Center. In this report, these ad units are associated with app names that you specified in pubCenter, with the string **(pubCenter)** appended to the app name.
+如果您使用 Microsoft pubCenter 建立 app 的廣告單位，可能有一些廣告單位無法成功對應到開發人員中心的 app。 在這份報告中，這些廣告單位都會與您在 pubCenter 中使用 **(pubCenter)** 字串附加到 app 名稱而指定的 app 名稱關聯。
 
-If you created ad units for an app using pubCenter, and you don’t see data for them in either report page, click **Link a pubCenter account** to link that account to your Dev Center account. Enter the email address you associated with this pubCenter account and your account linking code. You can find the account linking code by signing into this pubCenter account and going to the **My information** page.
+如果您使用 pubCenter 建立 app 的廣告單位，但是您沒有在任何報告頁面中看到這些資料，請按一下 [連結 pubCenter 帳戶]****，將該帳戶連結到您的開發人員中心帳戶。 輸入與此 pubCenter 帳戶相關聯的電子郵件地址以及您的帳戶連結代碼。 登入此 pubCenter 帳戶並前往 [我的資訊]**** 頁面，就可以找到帳戶連結代碼。
 
-For more information about migrating pubCenter accounts to Dev Center, see [pubCenter-DevCenter integration](pubcenter-dev-center-integration.md).
+如需移轉 pubCenter 帳戶至開發人員中心的詳細資訊，請參閱 [pubCenter-DevCenter 整合](pubcenter-dev-center-integration.md)。
 
-To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
+若要更深入分析您的資料，請選取 [下載報告]****，然後在 Microsoft Excel 或類似的程式中開啟該 CSV (逗號分隔值) 檔案。
 
-### Microsoft community ads
+### Microsoft 社群廣告
 
-This section provides performance data in graph and world map form for community ads in the currently selected app in the dashboard. For more information about community ads, see [About community ads](about-community-ads.md).
+此區段以圖表和世界地圖形式提供儀表板中目前所選 app 中社群廣告的績效資料。 如需社群廣告的詳細資訊，請參閱[關於社群廣告](about-community-ads.md)。
 
-The data is obtained from the following performance metrics we track for the ads in your app:
+該資料是來自我們針對您 App 中廣告所追蹤的下列績效衡量指標：
 
--   **Requests**: The number of times a community ad request was sent from your app.
--   **Fill rate**: The percentage of community ad requests sent from your app in which an ad was shown.
--   **Clicks**: The number of times someone clicked on a community ad in your app.
--   **CTR**: Click-through rate, meaning the number of times a community ad was clicked, divided by the number of impressions.
--   **Credits earned**: The number of community ad credits you have earned from this app. For more details about how credits are earned, see [About community ads](about-community-ads.md).
--   **Credits spent**: The number of community ad credits you have spent for this app. For more details about how credits are spent, see [About community ads](about-community-ads.md).
+-   **要求數**：從您的 app 傳送社群廣告要求的次數。
+-   **投放率**：從顯示廣告所在的 app 傳送社群廣告要求的百分比。
+-   **點閱數**：使用者點閱您 app 中的社群廣告的次數。
+-   **CTR**：點閱率，即社群廣告點閱數除以曝光數。
+-   **賺取的點數**：您已從此 app 賺取的社群廣告點數。 如需如何賺取點數的更多詳細資料，請參閱[關於社群廣告](about-community-ads.md)。
+-   **花費的點數**：您已為此 app 花費的社群廣告點數。 如需如何賺取點數的更多詳細資料，請參閱[關於社群廣告](about-community-ads.md)。
 
-To analyze the data for one of these metrics in a graph or world map view, click **Graph** or **Map**. Click the headers above the graph or map to switch between the different metrics. In the map view, darker shades represent higher values and lighter shades represent lower values. You can hover over a specific country or region on the map to analyze the value of the selected metric. You can also zoom in on any area of the map to view data for smaller countries.
+若要分析圖形或世界地圖檢視中這些衡量指標中的一項資料，請按一下 [圖形]**** 或 [地圖]****。 按一下圖形或地圖上方的標題可以在不同的衡量指標間切換。 在地圖檢視中，比較深色的網底表示較高的值而比較淺色的網底表示較低的值。 您可以將游標暫留在地圖上特定的國家或地區上，以便分析所選取的衡量指標值。 您也可以放大地圖上的任何區域，以檢視較小國家/地區的資料。
 
-## Notes about the reports
+## 報告相關的注意事項
 
-Here are a few things to keep in mind when using the advertising performance reports.
+以下是幾點使用廣告績效報告時應留意的事項。
 
-- There may be differences between advertising performance reports in Dev Center and pubCenter. Advertising performance data in Dev Center is aggregated based on UTC (not your particular time zone), while pubCenter reports are aggregated based on your particular time zone.
-- Reporting data for the last three days might change as we receive and process new data from various sources.
-- Data restatements can happen up to 90 days in the past.
-
- 
+- 開發人員中心和 pubCenter 中的廣告績效報告之間可能會有差異。 開發人員中心的廣告績效資料是根據 UTC (而不是您的特定時區) 來彙總，而 pubCenter 的報告則是根據您的特定時區來彙總。
+- 最近三天的報告資料可能會隨著我們從不同來源接收並處理新的資料而有所變更。
+- 過去 90 天的資料都可能發生資料明細重列。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO2-->
 
 

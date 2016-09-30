@@ -1,21 +1,40 @@
 # [通用 Windows 平台入門](https://developer.microsoft.com/windows/getstarted)
 ## [什麼是 UWP app？](get-started/whats-a-uwp.md)
+<<<<<<< HEAD
 ## [通用 Windows 平台 app 指南](get-started/universal-application-platform-guide.md)
+=======
+## [通用 Windows 平台 App 指南](get-started/universal-application-platform-guide.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [開始設定](get-started/get-set-up.md)
 ### [啟用您的裝置以用於開發](get-started/enable-your-device-for-development.md)
 ## [註冊](get-started/sign-up.md)
 ## [您的第一個 App](get-started/your-first-app.md)
 ### [建立 "Hello, world" App (C#)](get-started/create-a-hello-world-app-xaml-universal.md)
 ### [建立 "Hello, world" App (JS)](get-started/create-a-hello-world-app-js-universal.md)
+<<<<<<< HEAD
 ### [建立 "Hello, world" App (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
 ### [規劃您的 App](get-started/plan-your-app.md)
 ### [接下來要做什麼？](get-started/learn-more.md)
+=======
+### [建立 "hello world" App (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
+### [規劃您的 App](get-started/plan-your-app.md)
+### [接下來要做什麼？](get-started/learn-more.md)
+## [適用於開發人員的 Windows 的新功能](whats-new/windows-10-version-1607.md)
+### [Windows 10 版本 1607 中的 API 新增項目](whats-new/windows-10-version-1607-api-diff.md)
+### [Windows 10 年度 SDK Preview 的新功能](whats-new/windows-10-sdk-preview.md)
+### [Windows 10 版本 1511 中的新功能](whats-new/windows-10-version-1511.md)
+### [Windows 10 RTM 的新功能](whats-new/windows-10-rtm.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 # [設計與 UI](https://developer.microsoft.com/windows/design)
 ## [配置](layout/index.md)
 ### [App UI 設計簡介](layout/design-and-ui-intro.md)
 ### [瀏覽基本知識](layout/navigation-basics.md)
 #### [歷程記錄和向後瀏覽](layout/navigation-history-and-backwards-navigation.md)
+<<<<<<< HEAD
 #### [在兩個頁面之間瀏覽](layout/navigate-between-two-pages.md)
+=======
+#### [實作對等瀏覽](layout/peer-to-peer-navigation-between-two-pages.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [顯示多重檢視](layout/show-multiple-views.md)
 ### [命令基本知識](layout/commanding-basics.md)
 #### [主動式畫布](layout/active-canvas.md)
@@ -101,14 +120,22 @@
 ### [切換](controls-and-patterns/toggles.md)
 ### [工具提示](controls-and-patterns/tooltips.md)
 ### [網頁檢視](controls-and-patterns/web-view.md)
+<<<<<<< HEAD
 ## [輸入和裝置](input-and-devices/index.md)
+=======
+## [輸入與裝置](input-and-devices/index.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [輸入基本資訊](input-and-devices/input-primer.md)
 #### [Cortana](input-and-devices/cortana-interactions.md)
 ##### [設計指導方針](input-and-devices/cortana-design-guidelines.md)
 ##### [啟動前景 App](input-and-devices/launch-a-foreground-app-with-voice-commands-in-cortana.md)
 ##### [修改 VCD 片語清單](input-and-devices/dynamically-modify-voice-command-definition--vcd--phrase-lists.md)
 ##### [啟動背景 App](input-and-devices/launch-a-background-app-with-voice-commands-in-cortana.md)
+<<<<<<< HEAD
 ##### [與背景應用程式互動](input-and-devices/interact-with-a-background-app-in-cortana.md)
+=======
+##### [與背景 App 互動](input-and-devices/interact-with-a-background-app-in-cortana.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ##### [背景 App 的深層連結](input-and-devices/deep-link-into-your-app-from-cortana.md)
 ##### [支援自然語言語音命令](input-and-devices/support-natural-language-voice-commands-in-cortana.md)
 #### [鍵盤](input-and-devices/keyboard-interactions.md)
@@ -157,10 +184,17 @@
 #### [協助工具應避免的做法](accessibility/practices-to-avoid.md)
 #### [自訂自動化對等](accessibility/custom-automation-peers.md)
 ##### [控制項模式和介面](accessibility/control-patterns-and-interfaces.md)
+<<<<<<< HEAD
 ### [應用程式設定](app-settings/app-settings-and-data.md)
 #### [指導方針](app-settings/guidelines-for-app-settings.md)
 #### [儲存和擷取 App 設定及資料](app-settings/store-and-retrieve-app-data.md)
 ### [全球化與當地語系化](globalizing/globalizing-portal.md)
+=======
+### [App 設定](app-settings/app-settings-and-data.md)
+#### [指導方針](app-settings/guidelines-for-app-settings.md)
+#### [儲存和擷取 App 設定及資料](app-settings/store-and-retrieve-app-data.md)
+### [全球化和當地語系化](globalizing/globalizing-portal.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [可行與禁止事項](globalizing/guidelines-and-checklist-for-globalizing-your-app.md)
 #### [調整配置和字型並支援 RTL](globalizing/adjust-layout-and-fonts--and-support-rtl.md)
 #### [格式化日期和時間](globalizing/use-patterns-to-format-dates-and-times.md)
@@ -170,7 +204,11 @@
 #### [使用全球通用格式](globalizing/use-global-ready-formats.md)
 ### [App 說明的指導方針](in-app-help/guidelines-for-app-help.md)
 #### [指示性 UI](in-app-help/instructional-ui.md)
+<<<<<<< HEAD
 #### [應用程式內說明](in-app-help/in-app-help.md)
+=======
+#### [App 內說明](in-app-help/in-app-help.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [外部說明](in-app-help/external-help.md)
 ## [Microsoft 設計語言](https://developer.microsoft.com/windows/design/microsoft-design-language)
 ## [下載](design-downloads/index.md)
@@ -193,10 +231,16 @@
 #### [相片和視訊擷取的手動相機控制項](audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
 #### [視訊擷取的手動相機控制項](audio-video-camera/capture-device-controls-for-video-capture.md)
 #### [視訊擷取的影像防震效果](audio-video-camera/effects-for-video-capture.md)
+<<<<<<< HEAD
 #### [媒體擷取的場景分析](audio-video-camera/scene-analysis-for-media-capture.md)
 #### [使用 VariablePhotoSequence 擷取相片序列](audio-video-camera/variable-photo-sequence.md)
 #### [使用 MediaFrameReader 處理媒體畫面](audio-video-camera/process-media-frames-with-mediaframereader.md)
 #### [取得預覽畫面](audio-video-camera/get-a-preview-frame.md)
+=======
+#### [MediaCapture 的場景分析](audio-video-camera/scene-analysis-for-media-capture.md)
+#### [使用 VariablePhotoSequence 擷取相片序列](audio-video-camera/variable-photo-sequence.md)
+#### [使用 MediaFrameReader 處理媒體畫面](audio-video-camera/process-media-frames-with-mediaframereader.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [媒體播放](audio-video-camera/media-playback.md)
 #### [使用 MediaPlayer 播放音訊和視訊](audio-video-camera/play-audio-and-video-with-mediaplayer.md)
 #### [媒體項目、播放清單與曲目](audio-video-camera/media-playback-with-mediasource.md)
@@ -212,7 +256,11 @@
 ##### [硬體 DRM](audio-video-camera/hardware-drm.md)
 ##### [搭配使用彈性資料流與 PlayReady](audio-video-camera/adaptive-streaming-with-playready.md)
 #### [PlayReady 加密媒體延伸](audio-video-camera/playready-encrypted-media-extension.md)
+<<<<<<< HEAD
 ### [偵測影像或影片中的臉部](audio-video-camera/detect-and-track-faces-in-an-image.md)
+=======
+### [偵測影像或視訊中的臉部](audio-video-camera/detect-and-track-faces-in-an-image.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [自訂視訊效果](audio-video-camera/custom-video-effects.md)
 ### [媒體組合和編輯](audio-video-camera/media-compositions-and-editing.md)
 ### [音訊裝置資訊屬性](audio-video-camera/audio-device-information-properties.md)
@@ -234,7 +282,11 @@
 ### [將 App 連結到連絡人卡片上的動作](contacts-and-calendar/integrating-with-contacts.md)
 ### [提供社交摘要給連絡人 App](contacts-and-calendar/integrating-social-feeds-into-contact-cards.md)
 ## [資料存取](data-access/index.md)
+<<<<<<< HEAD
 ### [針對 C# app 使用 Entity Framework 7 搭配 SQLite](data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
+=======
+### [針對 C# App 使用 Entity Framework 7 搭配 SQLite](data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [SQLite 資料庫](data-access/sqlite-databases.md)
 ## [資料繫結](data-binding/index.md)
 ### [資料繫結概觀](data-binding/data-binding-quickstart.md)
@@ -270,8 +322,11 @@
 #### [Windows 執行階段元件和最佳化互通性](debug-test-perf/windows-runtime-components-and-optimizing-interop.md)
 #### [分析和效能的工具](debug-test-perf/tools-for-profiling-and-performance.md)
 ### [版本調適型程式碼](debug-test-perf/version-adaptive-code.md)
+<<<<<<< HEAD
 ## [開發 UWP 教育 App](apps-for-education/index.md)
 ### [進行測驗 API](apps-for-education/take-a-test-api.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [裝置、感應器及電源](devices-sensors/index.md)
 ### [啟用裝置功能](devices-sensors/enable-device-capabilities.md)
 ### [啟用使用者模式存取](devices-sensors/enable-usermode-access.md)
@@ -281,9 +336,13 @@
 #### [裝置資訊屬性](devices-sensors/device-information-properties.md)
 #### [AEP 服務類別識別碼](devices-sensors/aep-service-class-ids.md)
 ### [配對裝置](devices-sensors/pair-devices.md)
+<<<<<<< HEAD
 ### [服務點](devices-sensors/point-of-service.md)
 #### [頻外配對](devices-sensors/out-of-band-pairing.md)
 #### [具有格式化功能的 Epson ESC/POS](devices-sensors/epson-esc-pos-with-formatting.md)
+=======
+### [頻外配對](devices-sensors/out-of-band-pairing.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [感應器](devices-sensors/sensors.md)
 #### [校正感應器](devices-sensors/calibrate-sensors.md)
 #### [感應器方向](devices-sensors/sensor-orientation.md)
@@ -298,6 +357,7 @@
 #### [GATT](devices-sensors/gatt-scenarios.md)
 #### [藍牙開發人員常見問題集](devices-sensors/bluetooth-dev-faq.md)
 ### [列印與掃描](devices-sensors/printing-and-scanning.md)
+<<<<<<< HEAD
 #### [從您的 App 列印](devices-sensors/print-from-your-app.md)
 #### [自訂預覽列印 UI](devices-sensors/customize-the-print-preview-ui.md)
 #### [從您的應用程式掃描](devices-sensors/scan-from-your-app.md)
@@ -306,6 +366,17 @@
 #### [產生 3MF 套件](devices-sensors/generate-3mf.md)
 ### [NFC](devices-sensors/nfc.md)
 #### [建立 NFC 智慧卡應用程式](devices-sensors/host-card-emulation.md)
+=======
+#### [用來設定格式的 Epson ESC/POS](devices-sensors/epson-esc-pos-with-formatting.md)
+#### [從您的 App 列印](devices-sensors/print-from-your-app.md)
+#### [自訂預覽列印 UI](devices-sensors/customize-the-print-preview-ui.md)
+#### [從您的 App 掃描](devices-sensors/scan-from-your-app.md)
+### [3D 列印](devices-sensors/3d-printing.md)
+#### [從 App 進行 3D 列印](devices-sensors/3d-print-from-app.md)
+#### [產生 3MF 套件](devices-sensors/generate-3mf.md)
+### [NFC](devices-sensors/nfc.md)
+#### [建立 NFC 智慧卡 App](devices-sensors/host-card-emulation.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [取得電池資訊](devices-sensors/get-battery-info.md)
 ## [企業](enterprise/index.md)
 ### [Windows 資訊保護 (WIP)](enterprise/wip-hub.md)
@@ -332,9 +403,15 @@
 #### [圖形診斷工具](gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)
 ### [App 物件和 DirectX](gaming/about-the-metro-style-user-interface-and-directx.md)
 ### [啟動和繼續 App](gaming/launching-and-resuming-apps-directx-and-cpp.md)
+<<<<<<< HEAD
 #### [如何啟用應用程式](gaming/how-to-activate-an-app-directx-and-cpp.md)
 #### [如何暫停應用程式](gaming/how-to-suspend-an-app-directx-and-cpp.md)
 #### [如何繼續應用程式](gaming/how-to-resume-an-app-directx-and-cpp.md)
+=======
+#### [如何啟用 App](gaming/how-to-activate-an-app-directx-and-cpp.md)
+#### [如何暫停 App](gaming/how-to-suspend-an-app-directx-and-cpp.md)
+#### [如何繼續 App](gaming/how-to-resume-an-app-directx-and-cpp.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [適用於 DirectX 遊戲的 2D 圖形](gaming/working-with-2d-graphics-in-your-directx-game.md)
 ### [適用於 DirectX 遊戲的基本 3D 圖形](gaming/an-introduction-to-3d-graphics-with-directx.md)
 #### [設定 DirectX 資源及顯示影像](gaming/setting-up-directx-resources.md)
@@ -365,7 +442,10 @@
 ### [遊戲的音訊](gaming/working-with-audio-in-your-directx-game.md)
 ### [適用於遊戲的觸控控制項](gaming/tutorial--adding-touch-controls-to-your-directx-game.md)
 ### [適用於遊戲的移動視角控制項](gaming/tutorial--adding-move-look-controls-to-your-directx-game.md)
+<<<<<<< HEAD
 ### [相對滑鼠移動](gaming/relative-mouse-movement.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [最佳化輸入和轉譯迴圈](gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md)
 ### [交換鏈結縮放和重疊](gaming/multisampling--scaling--and-overlay-swap-chains.md)
 ### [透過 DXGI 1.3 交換鏈結減少延遲](gaming/reduce-latency-with-dxgi-1-3-swap-chains.md)
@@ -377,14 +457,21 @@
 ### [遊戲的雲端](gaming/cloud-for-games.md)
 ### [DirectX 與 XAML 互通性](gaming/directx-and-xaml-interop.md)
 ### [封裝您的遊戲](gaming/package-your-windows-store-directx-game.md)
+<<<<<<< HEAD
 ### [概念核准](gaming/concept-approval.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [遊戲移植指南](gaming/porting-guides.md)
 #### [從 DirectX 9 移植到通用 Windows 平台](gaming/porting-your-directx-9-game-to-windows-store.md)
 ##### [從 DirectX 9 移到 DirectX 11.1 和通用 Windows 平台](gaming/porting-considerations.md)
 ###### [計劃 DirectX 移植](gaming/plan-your-directx-port.md)
 ###### [從 Direct3D 9 到 Direct3D 11.1 的重要變更](gaming/understand-direct3d-11-1-concepts.md)
 ###### [將 DirectX 9 功能對應到 DirectX 11.1 API](gaming/feature-mapping.md)
+<<<<<<< HEAD
 ##### [逐步解說：將簡單的 Direct3D 9 app 移植到 DirectX 11.1 和通用 Windows 平台](gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md)
+=======
+##### [逐步解說：將簡單的 Direct3D 9 App 移植到 DirectX 11.1 和通用 Windows 平台](gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ###### [初始化 Direct3D 11](gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 ###### [轉換轉譯架構](gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
 ###### [移植遊戲迴圈](gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
@@ -406,7 +493,11 @@
 ###### [移植 GLSL](gaming/port-the-glsl.md)
 ###### [繪製到螢幕](gaming/draw-to-the-screen.md)
 ##### [從 OpenGL ES 2.0 到 Direct3D 11.1 的參考](gaming/opengl-es-2-0-to-directx-11-1-reference.md)
+<<<<<<< HEAD
 ###### [從 GLSL 到 HLSL 的參考](gaming/glsl-to-hlsl-reference.md)
+=======
+###### [GLSL-to-HLSL 參考](gaming/glsl-to-hlsl-reference.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [遊戲程式設計資源](gaming/additional-directx-game-programming-resources.md)
 ## [圖形和動畫](graphics/index.md)
 ### [繪製形狀](graphics/drawing-shapes.md)
@@ -431,16 +522,23 @@
 #### [處理 App 繼續執行](launch-resume/resume-an-app.md)
 #### [當 App 移至背景時釋出記憶體](launch-resume/reduce-memory-usage.md)
 ### [已連線的 App 與裝置](launch-resume/connected-apps-and-devices.md)
+<<<<<<< HEAD
 #### [探索遠端裝置](launch-resume/discover-remote-devices.md)
+=======
+#### [探索遠端裝置](launch-resume/discover-connected-devices.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [啟動遠端裝置上的 App](launch-resume/launch-a-remote-app.md)
 #### [與遠端 App 服務通訊](launch-resume/communicate-with-a-remote-app-service.md)
 ### [啟動 App 以取得結果](launch-resume/how-to-launch-an-app-for-results.md)
 ### [啟動 URI 的預設 App](launch-resume/launch-default-app.md)
+<<<<<<< HEAD
 #### [使用 ms-tonepicker URI 配置來選擇與儲存音調](launch-resume/launch-ringtone-picker.md)
 #### [啟動 Windows 設定 App](launch-resume/launch-settings-app.md)
 #### [啟動 Windows 市集 App](launch-resume/launch-store-app.md)
 #### [啟動 Windows 地圖 App](launch-resume/launch-maps-app.md)
 #### [啟動連絡人 App](launch-resume/launch-people-apps.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [啟動遠端裝置上的 App](launch-resume/launch-a-remote-app.md)
 ### [處理 URI 啟用](launch-resume/handle-uri-activation.md)
 ### [透過 App URI 處理常式處理網站至 App 連結](launch-resume/web-to-app-linking.md)
@@ -449,6 +547,13 @@
 ### [檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)
 ### [保留檔案和 URI 配置名稱](launch-resume/reserved-uri-scheme-names.md)
 ### [使用自動播放功能來自動啟動](launch-resume/auto-launching-with-autoplay.md)
+<<<<<<< HEAD
+=======
+### [啟動 Windows 設定 App](launch-resume/launch-settings-app.md)
+### [啟動 Windows 市集 App](launch-resume/launch-store-app.md)
+### [啟動 Windows 地圖 App](launch-resume/launch-maps-app.md)
+### [啟動連絡人 App](launch-resume/launch-people-apps.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [使用背景工作支援 App](launch-resume/support-your-app-with-background-tasks.md)
 #### [從背景工作存取感應器和裝置](launch-resume/access-sensors-and-devices-from-a-background-task.md)
 #### [背景工作的指導方針](launch-resume/guidelines-for-background-tasks.md)
@@ -479,7 +584,11 @@
 ### [重疊顯示並排影像](maps-and-location/overlay-tiled-images.md)
 ### [執行地理編碼](maps-and-location/geocoding.md)
 ### [取得目前的位置](maps-and-location/get-location.md)
+<<<<<<< HEAD
 ### [定位感知應用程式的設計指導方針](maps-and-location/guidelines-and-checklist-for-detecting-location.md)
+=======
+### [定位感知 App 的設計指導方針](maps-and-location/guidelines-and-checklist-for-detecting-location.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [設定地理柵欄](maps-and-location/set-up-a-geofence.md)
 ### [地理柵欄設計指導方針](maps-and-location/guidelines-for-geofencing.md)
 ## [營利、客戶參與及市集服務](monetize/index.md)
@@ -487,6 +596,7 @@
 #### [取得 App 和附加元件的產品資訊](monetize/get-product-info-for-apps-and-add-ons.md)
 #### [取得 App 和附加元件的授權資訊](monetize/get-license-info-for-apps-and-add-ons.md)
 #### [啟用 App 和附加元件的 App 內購買](monetize/enable-in-app-purchases-of-apps-and-add-ons.md)
+<<<<<<< HEAD
 #### [啟用消費性附加元件購買](monetize/enable-consumable-add-on-purchases.md)
 #### [實作 App 的試用版](monetize/implement-a-trial-version-of-your-app.md)
 #### [使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
@@ -543,10 +653,75 @@
 ### [使用 Windows 市集服務](monetize/using-windows-store-services.md)
 #### [存取分析資料](monetize/access-analytics-data-using-windows-store-services.md)
 ##### [取得應用程式下載數](monetize/get-app-acquisitions.md)
+=======
+#### [啟用消耗性附加元件購買](monetize/enable-consumable-add-on-purchases.md)
+#### [實作 App 的試用版](monetize/implement-a-trial-version-of-your-app.md)
+#### [使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+##### [在試用版中排除或限制某些功能](monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md)
+##### [啟用 App 內產品購買](monetize/enable-in-app-product-purchases.md)
+##### [啟用消費性 App 內產品購買](monetize/enable-consumable-in-app-product-purchases.md)
+##### [管理大型的 App 內產品型錄](monetize/manage-a-large-catalog-of-in-app-products.md)
+##### [使用收據來驗證產品購買](monetize/use-receipts-to-verify-product-purchases.md)
+### [Microsoft Store Engagement and Monetization SDK](monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
+### [在您的 App 中顯示廣告](monetize/display-ads-in-your-app.md)
+#### [使用 Microsoft Advertising 程式庫顯示廣告](monetize/display-ads-using-the-microsoft-advertising-libraries.md)
+##### [開始使用 Microsoft Advertising 程式庫](monetize/get-started-with-microsoft-advertising-libraries.md)
+###### [安裝 Microsoft Advertising 程式庫](monetize/install-the-microsoft-advertising-libraries.md)
+###### [有何差異：AdMediatorControl 或 AdControl](monetize/what-is-the-difference-admediatorcontrol-or-adcontrol.md)
+###### [建立包含廣告之 App 的工作流程](monetize/workflows-for-creating-apps-with-ads.md)
+###### [版本資訊](monetize/release-notes-for-the-advertising-libraries.md)
+###### [已知問題](monetize/known-issues-for-the-advertising-libraries.md)
+###### [其他說明](monetize/additional-help.md)
+###### [重要須知 - EULA](monetize/important-notice-eula.md)
+##### [開發人員資訊](monetize/developer-information.md)
+###### [UI 和使用者體驗指導方針](monetize/ui-and-user-experience-guidelines.md)
+###### [測試模式值](monetize/test-mode-values.md)
+###### [在您的 App 中設定廣告單元](monetize/set-up-ad-units-in-your-app.md)
+###### [錯誤處理](monetize/error-handling-with-advertising-libraries.md)
+###### [提交包含廣告的 App 到 Windows 市集](monetize/submit-an-app-with-ads-to-the-windows-store.md)
+###### [橫幅廣告支援的廣告大小](monetize/supported-ad-sizes-for-banner-ads.md)
+###### [Microsoft Advertising 支援的市場](monetize/supported-markets-for-microsoft-advertising.md)
+##### [開發人員逐步解說](monetize/developer-walkthroughs.md)
+###### [插入式廣告](monetize/interstitial-ads.md)
+###### [XAML 和 .NET 中的 AdControl](monetize/adcontrol-in-xaml-and--net.md)
+###### [HTML 5 和 JavaScript 中的 AdControl](monetize/adcontrol-in-html-5-and-javascript.md)
+###### [Windows Phone Silverlight 中的 AdControl](monetize/adcontrol-in-windows-phone-silverlight.md)
+##### [程式碼範例](monetize/code-samples.md)
+###### [HTML 屬性範例](monetize/html-properties-example.md)
+###### [XAML 屬性範例](monetize/xaml-properties-example.md)
+###### [使用 JavaScript 建立 AdControl](monetize/create-an-adcontrol-in-javascript.md)
+###### [JavaScript 中的 AdControl 事件](monetize/adcontrol-events-in-javascript.md)
+###### [C 中的 AdControl 事件#](monetize/adcontrol-events-in-c.md)
+###### [AdControl 錯誤處理](monetize/adcontrol-error-handling.md)
+####### [XAML/C# 錯誤處理的逐步解說](monetize/error-handling-in-xamlc-walkthrough.md) 
+#######  [JavaScript 錯誤處理的逐步解說](monetize/error-handling-in-javascript-walkthrough.md)
+###### [使用 C 的插入式廣告範例程式碼#](monetize/interstitial-ad-sample-code-in-c.md)
+###### [使用 JavaScript 的插入式廣告範例程式碼](monetize/interstitial-ad-sample-code-in-javascript.md)
+##### [疑難排解指南](monetize/troubleshooting-guides.md)
+###### [HTML 和 JavaScript 疑難排解指南](monetize/html-and-javascript-troubleshooting-guide.md)
+###### [XAML 和 C# 的疑難排解指南](monetize/xaml-and-c-troubleshooting-guide.md)
+#### [使用廣告流量分配來獲得最佳收益](monetize/use-ad-mediation-to-maximize-revenue.md)
+##### [選取和管理廣告網路](monetize/select-and-manage-your-ad-networks.md)
+##### [新增和使用廣告流量分配者控制項](monetize/add-and-use-the-ad-mediator-control.md)
+##### [測試您的廣告流量分配實作](monetize/test-your-ad-mediation-implementation.md)
+##### [送出您的 App 並設定廣告流量分配](monetize/submit-your-app-and-configure-ad-mediation.md)
+##### [疑難排解廣告流量分配](monetize/troubleshoot-ad-mediation.md)
+### [使用 A/B 測試執行 App 實驗](monetize/run-app-experiments-with-a-b-testing.md)
+#### [在開發人員中心儀表板中建立專案與定義遠端變數](monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+#### [編寫實驗用的 App 程式碼](monetize/code-your-experiment-in-your-app.md)
+#### [在開發人員中心儀表板中定義您的實驗](monetize/define-your-experiment-in-the-dev-center-dashboard.md)
+#### [在開發人員中心儀表板中管理您的實驗](monetize/manage-your-experiment.md)
+#### [使用 A/B 測試建立和執行您的第一個實驗](monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
+### [從您的 App 啟動意見反應中樞](monetize/launch-feedback-hub-from-your-app.md)
+### [使用 Windows 市集服務](monetize/using-windows-store-services.md)
+#### [存取分析資料](monetize/access-analytics-data-using-windows-store-services.md)
+##### [取得 App 下載數](monetize/get-app-acquisitions.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ##### [取得 IAP 下載數](monetize/get-in-app-acquisitions.md)
 ##### [取得錯誤報告資料](monetize/get-error-reporting-data.md)
 ##### [取得 App 評分](monetize/get-app-ratings.md)
 ##### [取得 App 評論](monetize/get-app-reviews.md)
+<<<<<<< HEAD
 #### [建立及管理提交。](monetize/create-and-manage-submissions-using-windows-store-services.md)
 ##### [取得 App 資料](monetize/get-app-data.md)
 ###### [取得所有 App](monetize/get-all-apps.md)
@@ -587,6 +762,8 @@
 ###### [C# 程式碼範例](monetize/csharp-code-examples-for-the-windows-store-submission-api.md)
 ###### [Java 程式碼範例](monetize/java-code-examples-for-the-windows-store-submission-api.md)
 ###### [Python 程式碼範例](monetize/python-code-examples-for-the-windows-store-submission-api.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [從服務檢視及授與產品](monetize/view-and-grant-products-from-a-service.md)
 ##### [查詢產品](monetize/query-for-products.md)
 ##### [將消費性產品回報為已完成](monetize/report-consumable-products-as-fulfilled.md)
@@ -602,10 +779,16 @@
 ### [RSS/Atom 摘要](networking/web-feeds.md)
 ### [背景傳輸](networking/background-transfers.md)
 ## [封裝 App](packaging/index.md)
+<<<<<<< HEAD
 ### [封裝 UWP 應用程式](packaging/packaging-uwp-apps.md)
 ### [使用 WinAppDeployCmd.exe 工具安裝 App](packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
 ### [App 功能宣告](packaging/app-capability-declarations.md)
 ### [下載與安裝 App 的套件更新](packaging/self-install-package-updates.md)
+=======
+### [封裝 UWP app](packaging/packaging-uwp-apps.md)
+### [使用 WinAppDeployCmd.exe 工具安裝 App](packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
+### [App 功能宣告](packaging/app-capability-declarations.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [將 App 移植到 Windows 10](porting/index.md)
 ### [從 Windows Phone Silverlight 移到 UWP](porting/wpsl-to-uwp-root.md)
 #### [命名空間與類別對應](porting/wpsl-to-uwp-namespace-and-class-mappings.md)
@@ -626,7 +809,11 @@
 #### [案例研究：Bookstore2](porting/w8x-to-uwp-case-study-bookstore2.md)
 #### [案例研究：QuizGame](porting/w8x-to-uwp-case-study-quizgame.md)
 ### [從 Windows 傳統型移動到 UWP](porting/desktop-to-uwp-root.md)
+<<<<<<< HEAD
 #### [傳統型應用程式轉換器](porting/desktop-to-uwp-run-desktop-app-converter.md)
+=======
+#### [傳統型應用程式轉換器預覽 (Project Centennial)](porting/desktop-to-uwp-run-desktop-app-converter.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [將 Windows 傳統型應用程式手動轉換成 UWP](porting/desktop-to-uwp-manual-conversion.md)
 #### [已轉換的傳統型應用程式擴充功能](porting/desktop-to-uwp-extensions.md)
 #### [已轉換的傳統型應用程式支援的 UWP API](porting/desktop-to-uwp-supported-api.md)
@@ -639,7 +826,11 @@
 #### [開始使用適用於 iOS 開發人員的 UWP](porting/getting-started-with-uwp-for-ios-developers.md)
 ##### [開始使用：建立專案](porting/getting-started-creating-a-project.md)
 ##### [開始使用：選擇程式設計語言](porting/getting-started-choosing-a-programming-language.md)
+<<<<<<< HEAD
 ##### [開始使用：探索 Visual Studio](porting/getting-started-getting-around-in-visual-studio.md)
+=======
+##### [開始使用：使用 Visual Studio](porting/getting-started-getting-around-in-visual-studio.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ##### [開始使用：常用控制項](porting/getting-started-common-controls.md)
 ##### [開始使用：瀏覽](porting/getting-started-navigation.md)
 ##### [開始使用：動畫](porting/getting-started-animation.md)
@@ -648,7 +839,11 @@
 ### [託管的 Web 應用程式](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 #### [在 Windows 上轉換](porting/hwa-create-windows.md)
 #### [在 Mac 上轉換](porting/hwa-create-mac.md)
+<<<<<<< HEAD
 #### [存取 UWP 功能](porting/hwa-access-features.md)
+=======
+#### [存取功能](porting/hwa-access-features.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [轉換 Chrome App](porting/hwa-chrome-conversion.md)
 ## [安全性](security/index.md)
 ### [安全開發 Windows 應用程式的簡介](security/intro-to-secure-windows-app-development.md)
@@ -656,7 +851,11 @@
 #### [認證保險箱](security/credential-locker.md)
 #### [指紋生物識別技術](security/fingerprint-biometrics.md)
 #### [Microsoft Passport 及 Windows Hello](security/microsoft-passport.md)
+<<<<<<< HEAD
 ##### [建立 Microsoft Passport 登入應用程式](security/microsoft-passport-login.md)
+=======
+##### [建立 Microsoft Passport 登入 App](security/microsoft-passport-login.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ##### [建立 Microsoft Passport 登入服務](security/microsoft-passport-login-auth-service.md)
 #### [智慧卡](security/smart-cards.md)
 #### [共用的憑證](security/share-certificates.md)
@@ -686,14 +885,23 @@
 ## [Xbox One 上的 UWP](xbox-apps/index.md)
 ### [開始使用](xbox-apps/getting-started.md)
 ### [新功能](xbox-apps/whats-new.md)
+<<<<<<< HEAD
 ### [Xbox 最佳做法](xbox-apps/tailoring-for-xbox.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [已知問題](xbox-apps/known-issues.md)
 ### [常見問題集](xbox-apps/frequently-asked-questions.md)
 ### [啟用 Xbox One 開發人員模式](xbox-apps/devkit-activation.md)
 ### [工具](xbox-apps/introduction-to-xbox-tools.md)
+<<<<<<< HEAD
 #### [Xbox 開發人員模式小幫手](xbox-apps/xbox-dev-mode-companion.md)
 #### [Fiddler](xbox-apps/uwp-fiddler.md)
 ### [開發環境設定](xbox-apps/development-environment-setup.md)
+=======
+#### [Fiddler](xbox-apps/uwp-fiddler.md)
+### [開發環境設定](xbox-apps/development-environment-setup.md)
+### [最佳做法](xbox-apps/tailoring-for-xbox.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [如何停用滑鼠模式](xbox-apps/how-to-disable-mouse-mode.md)
 #### [如何關閉縮放比例](xbox-apps/disable-scaling.md)
 #### [如何關閉溢出掃描](xbox-apps/turn-off-overscan.md)
@@ -716,8 +924,13 @@
 #### [/ext/xboxlive/sandbox](xbox-apps/wdp-sandbox-api.md)
 ## [Windows 執行階段元件](winrt-components/index.md)
 ### [在 C++ 中建立 Windows 執行階段元件](winrt-components/creating-windows-runtime-components-in-cpp.md)
+<<<<<<< HEAD
 ### [逐步解說：使用 C++ 建立基本 Windows 執行階段元件，然後從 JavaScript 或 C 呼叫該元件#](winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
 ### [使用 C# 和 Visual Basic 建立 Windows 執行階段元件](winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+=======
+### [逐步解說：在 C++ 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C 呼叫該元件#](winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+### [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 #### [Windows 執行階段元件中的自訂事件和事件存取子](winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md)
 #### [將陣列傳遞到 Windows 執行階段元件](winrt-components/passing-arrays-to-a-windows-runtime-component.md)
 #### [診斷 Windows 執行階段元件錯誤狀況](winrt-components/diagnosing-windows-runtime-component-error-conditions.md)
@@ -725,7 +938,11 @@
 #### [Windows 執行階段類型的 .NET Framework 對應](winrt-components/net-framework-mappings-of-windows-runtime-types.md)
 ### [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 ### [在 Windows 執行階段元件中引發事件](winrt-components/raising-events-in-windows-runtime-components.md)
+<<<<<<< HEAD
 ### [側載 Windows 市集應用程式的代理 Windows 執行階段元件](winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md)
+=======
+### [側載 Windows 市集 App 的代理 Windows 執行階段元件](winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [XAML 平台](xaml-platform/index.md)
 ### [XAML 概觀](xaml-platform/xaml-overview.md)
 #### [XAML 語法指南](xaml-platform/xaml-syntax-guide.md)
@@ -757,6 +974,7 @@
 ### [自訂附加屬性](xaml-platform/custom-attached-properties.md)
 ### [事件與路由事件概觀](xaml-platform/events-and-routed-events-overview.md)
 ## [API 參考資料](https://msdn.microsoft.com/library/windows/apps/bg124285.aspx)
+<<<<<<< HEAD
 ## [「Windows 即服務」應用程式開發](updates-and-versions/application-development-for-windows-as-a-service.md)
 ## [選擇 UWP 版本](updates-and-versions/choose-a-uwp-version.md)
 ## [服務](https://developer.microsoft.com/windows/develop/microsoft-services)
@@ -765,6 +983,9 @@
 ### [Windows 10 (版本 1607 預覽) 中的新功能](whats-new/windows-10-sdk-preview.md)
 ### [Windows 10 (版本 1511) 中的新功能](whats-new/windows-10-version-1511.md)
 ### [Windows 10 (版本 1507) 中的新功能](whats-new/windows-10-version-1507.md)
+=======
+## [服務](https://developer.microsoft.com/windows/develop/microsoft-services)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [Windows 8.x 指南](https://msdn.microsoft.com/library/windows/apps/mt244353.aspx)
 ## [Windows Phone Silverlight 8.x 指南](https://msdn.microsoft.com/library/windows/apps/ff402535.aspx)
 # [發行 Windows 應用程式](publish/index.md)
@@ -783,7 +1004,11 @@
 #### [組織授權選項](publish/organizational-licensing.md)
 ### [輸入 App 屬性](publish/enter-app-properties.md)
 #### [類別與子類別表格](publish/category-and-subcategory-table.md)
+<<<<<<< HEAD
 #### [App 宣告](publish/app-declarations.md)
+=======
+#### [應用程式宣告](publish/app-declarations.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [年齡分級](publish/age-ratings.md)
 ### [上傳應用程式套件](publish/upload-app-packages.md)
 #### [應用程式套件管理指導方針](publish/guidance-for-app-package-management.md)
@@ -791,15 +1016,23 @@
 #### [套件版本編號](publish/package-version-numbering.md)
 #### [支援的語言](publish/supported-languages.md)
 #### [解決套件上傳錯誤](publish/resolve-package-upload-errors.md)
+<<<<<<< HEAD
 ### [建立 App 市集清單](publish/create-app-store-listings.md)
 #### [撰寫一份出色的 App 介紹](publish/write-a-great-app-description.md)
 #### [App 螢幕擷取畫面與影像](publish/app-screenshots-and-images.md)
 #### [建立特定平台的市集清單](publish/create-platform-specific-store-listings.md)
+=======
+### [建立 App 描述](publish/create-app-descriptions.md)
+#### [撰寫一份出色的 App 介紹](publish/write-a-great-app-description.md)
+#### [App 螢幕擷取畫面與影像](publish/app-screenshots-and-images.md)
+#### [建立特定平台的介紹](publish/create-platform-specific-descriptions.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [認證注意事項](publish/notes-for-certification.md)
 ### [應用程式認證程序](publish/the-app-certification-process.md)
 #### [解決提交錯誤](publish/resolve-submission-errors.md)
 #### [避免常見的認證失敗](publish/avoid-common-certification-failures.md)
 ### [套件正式發行前小眾測試版](publish/package-flights.md)
+<<<<<<< HEAD
 ### [漸進式套件推出](publish/gradual-package-rollout.md)
 ### [搶鮮版 (Beta) 測試和特定對象的發佈](publish/beta-testing-and-targeted-distribution.md)
 ### [將 LOB App 發佈到企業](publish/distribute-lob-apps-to-enterprises.md)
@@ -809,6 +1042,16 @@
 ### [設定附加元件價格與可用性](publish/set-add-on-pricing-and-availability.md)
 ### [建立附加元件市集清單](publish/create-add-on-store-listings.md)
 ### [管理大量附加元件](publish/manage-add-ons-in-bulk.md)
+=======
+### [搶鮮版 (Beta) 測試和特定對象的發佈](publish/beta-testing-and-targeted-distribution.md)
+### [將 LOB App 發佈到企業](publish/distribute-lob-apps-to-enterprises.md)
+## [IAP 提交](publish/iap-submissions.md)
+### [設定您的 IAP 產品識別碼](publish/set-your-iap-product-id.md)
+### [輸入 IAP 屬性](publish/enter-iap-properties.md)
+### [設定 IAP 價格與可用性](publish/set-iap-pricing-and-availability.md)
+### [建立 IAP 描述](publish/create-iap-descriptions.md)
+### [大量管理 IAP](publish/manage-iaps-in-bulk.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ## [利用廣告獲利](publish/monetize-with-ads.md)
 ### [關於聯盟廣告](publish/about-affiliate-ads.md)
 ### [pubCenter 開發人員中心整合](publish/pubcenter-dev-center-integration.md)
@@ -825,11 +1068,19 @@
 ### [評論報告](publish/reviews-report.md)
 ### [意見反應報告](publish/feedback-report.md)
 ### [使用方式報告](publish/usage-report.md)
+<<<<<<< HEAD
 ### [附加元件下載數報告](publish/add-on-acquisitions-report.md)
 ### [廣告流量分配報告](publish/ad-mediation-report.md)
 ### [廣告績效報告](publish/advertising-performance-report.md)
 ### [聯盟績效報告](publish/affiliates-performance-report.md)
 ### [應用程式安裝廣告報告](publish/app-install-ads-reports.md)
+=======
+### [IAP 下載數報告](publish/iap-acquisitions-report.md)
+### [廣告流量分配報告](publish/ad-mediation-report.md)
+### [廣告績效報告](publish/advertising-performance-report.md)
+### [聯盟績效報告](publish/affiliates-performance-report.md)
+### [App 安裝廣告報告](publish/app-install-ads-reports.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [管道和轉換的報告](publish/channels-and-conversions-report.md)
 ### [下載分析報告](publish/download-analytic-reports.md)
 ## [App 促銷與客戶參與](publish/app-promotion-and-customer-engagement.md)
@@ -840,26 +1091,40 @@
 #### [關於廣告活動的常見問題](publish/common-questions.md)
 ### [建立自訂 App 促銷活動](publish/create-a-custom-app-promotion-campaign.md)
 ### [產生促銷碼](publish/generate-promotional-codes.md)
+<<<<<<< HEAD
 ### [促銷 App 和附加元件](publish/put-apps-and-add-ons-on-sale.md)
 ### [回應客戶意見反應](publish/respond-to-customer-feedback.md)
+=======
+### [銷售 App 和 IAP](publish/put-apps-and-iaps-on-sale.md)
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [回應客戶評論](publish/respond-to-customer-reviews.md)
 ### [App 行銷指導方針](publish/app-marketing-guidelines.md)
 ### [App 的連結](publish/link-to-your-app.md)
 ### [讓您的 App 更容易促銷](publish/make-your-app-easier-to-promote.md)
 ## [獲得報酬](publish/getting-paid-apps.md)
 ### [設定您的支付帳戶和納稅申報表](publish/setting-up-your-payout-account-and-tax-forms.md)
+<<<<<<< HEAD
 ### [支付臨界值、方法和時間範圍](publish/payment-thresholds-methods-and-timeframes.md)
+=======
+>>>>>>> parent of bb1048f... open localization: commit translated files
 ### [支付摘要](publish/payout-summary.md)
 ### [付費 App 的稅務詳細資料](publish/tax-details-for-paid-apps.md)
 ### [電信業者帳單](publish/mobile-operator-billing.md)
 ### [VAT 資訊](publish/vat-info.md)
 ## [市集原則與管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx)
 ### [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)
+<<<<<<< HEAD
 #### [變更歷程記錄](https://msdn.microsoft.com/library/windows/apps/dn764945.aspx)
 ### [App 品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)
 ### [開發人員管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)
+=======
+#### [歷程記錄](https://msdn.microsoft.com/library/windows/apps/dn764945.aspx)
+### [App 品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)
+### [開發人員管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)
+
+>>>>>>> parent of bb1048f... open localization: commit translated files
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jul16_HO5-->
 
 

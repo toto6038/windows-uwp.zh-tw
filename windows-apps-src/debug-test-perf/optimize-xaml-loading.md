@@ -5,7 +5,7 @@ title: "最佳化您的 XAML 標記"
 description: "剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
 
 ---
 # 最佳化您的 XAML 標記
@@ -291,6 +291,6 @@ XAML 內建控制項和架構提供的字典已經完全啟用 XBF2。 針對您
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

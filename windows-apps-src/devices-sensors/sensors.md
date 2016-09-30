@@ -1,134 +1,134 @@
 ---
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: Sensors
-description: Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device.
+title: "感應器"
+description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
+ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 ---
-# Sensors
+# 感應器
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device. These sensors can help make your game, augmented reality app, or utility app more useful and interactive by providing a unique form of input, such as using the motion of the device to arrange the characters on the screen or to simulate being in a cockpit and using the device as the steering wheel.
+感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。 這些感應器提供獨特的輸入形式 (例如透過裝置的動作來排列螢幕上的字元，或模擬在駕駛艙中以及將裝置當成方向盤操縱)，有助您提高遊戲、擴增實境應用程式或公用應用程式的實用性與互動性。
 
-As a general rule, decide from the outset whether your app will depend exclusively on sensors or if sensors will just offer an additional control mechanism. For example, a driving game using a device as a virtual steering wheel could alternatively be controlled through an on-screen GUI – this way, the app works regardless of the sensors available on the system. On the other hand, a marble tilt maze could be coded to only work on systems that have the appropriate sensors. You must make the strategic choice of whether to fully rely on sensors. Note that a mouse/touch control scheme trades immersion for greater control.
+您應該從最開始就決定應用程式是否只仰賴感應器，或是只讓感應器提供額外的控制機制，這是一個普遍規則。 例如，將裝置當成虛擬方向盤的駕駛遊戲可以選擇透過螢幕上的 GUI 來控制。這樣一來，無論系統是否有感應器，應用程式都能夠運作。 另一方面，您撰寫彈珠傾斜迷宮的程式碼時，可讓它只能在具備適當感應器的系統上運作。 您必須進行策略抉擇，決定是否要完全倚賴感應器。 請注意，雖然滑鼠/觸控的操作方式比較不容易覺得身歷其境，但控制性較佳。
 
-The following video demonstrates some of the sensors available to you when you are building your app. This is not an exhaustive list, but goes over some of the more common sensors and demonstrates their purpose.
+下列影片示範您在建置 app 時可用的某些感應器。 這並不是完整清單，但列出了某些較常用的感應器，並示範其用途。
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Sensors Overview</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">開發人員短片 - 感應器概觀</iframe>
 
-| Topic                                                       | Description  |
+| 主題                                                       | 說明  |
 |-------------------------------------------------------------|--------------|
-| [Calibrate sensors](calibrate-sensors.md)                   | Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration can help determine a course of action when your device is in need of calibration. |
-| [Sensor orientation](sensor-orientation.md)                 | Sensor data from the [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. |
-| [Use the accelerometer](use-the-accelerometer.md)           | Learn how to use the accelerometer to respond to user movement. |
-| [Use the compass](use-the-compass.md)                       | Learn how to use the compass to determine the current heading. |
-| [Use the gyrometer](use-the-gyrometer.md)                   | Learn how to use the gyrometer to detect changes in user movement. | 
-| [Use the inclinometer](use-the-inclinometer.md)             | Learn how to use the inclinometer to determine pitch, roll, and yaw. |
-| [Use the light sensor](use-the-light-sensor.md)             | Learn how to use the ambient light sensor to detect changes in lighting. |
-| [Use the orientation sensor](use-the-orientation-sensor.md) | Learn how to use the orientation sensors to determine the device orientation.|
+| [校正感應器](calibrate-sensors.md)                   | 以磁力儀 (指南針、傾角計及方向感應器) 為基礎的裝置感應器會因為環境因素而需要校正。 [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列舉可以在您的裝置需要校正時協助判斷可採取的步驟。 |
+| [感應器方向](sensor-orientation.md)                 | 取自 [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。 |
+| [使用加速計](use-the-accelerometer.md)           | 了解如何使用加速計來回應使用者移動。 |
+| [使用指南針](use-the-compass.md)                       | 了解如何使用指南針來判斷目前朝向何方。 |
+| [使用陀螺儀](use-the-gyrometer.md)                   | 了解如何使用陀螺儀來偵測使用者的移動變化。 | 
+| [使用傾角計](use-the-inclinometer.md)             | 了解如何使用傾角計來決定俯仰、翻滾及偏擺。 |
+| [使用光感應器](use-the-light-sensor.md)             | 了解如何使用周遭環境光感應器來偵測光線的變化。 |
+| [使用方向感應器](use-the-orientation-sensor.md) | 了解如何使用方向感應器來判斷裝置方向。|
 
-## Sensor batching
+## 感應器批次處理
 
-Some sensors support the concept of batching. This will vary depending on the individual sensor available. When a sensor implements batching, it collects several points of data over a specified time interval and then transfers all of that data at one time. This is different from normal behavior where a sensor reports its findings as soon as it performs a reading. Consider the following diagram which shows how data is collected and then delivered, first with normal delivery and then with batched delivery.
+某些感應器支援批次處理的概念。 這取決於使用者所用的感應器。 當感應器執行批次處理時，會根據指定的時間間隔收集多個資料點，然後一次傳送所有的資料。 某些感應器開始讀取數據後，一有結果便會立即回報，這和此處介紹的感應器不同。 請參閱下圖，您可以了解資料的收集和傳送方式，一開始是常規的資料傳送，然後是批次方式的資料傳送。
 
-![Sensor batch collection](images/batchsample.png)
+![感應器批次收集](images/batchsample.png)
 
-The primary advantage for sensor batching is prolonging battery life. When the data is not sent immediately, that saves on processor power and prevents the data from needing to be immediately processed. Parts of the system can sleep until they are needed, which generates a significant power savings.
+感應器批次處理的主要優點就是延長電池續航力。 不立即傳送資料的話，處理器可以節省耗電，也免去需要立即處理資料的工夫。 系統的某些組件在不用的時候，可以持續進入睡眠狀態，可大幅節省耗電
 
-You can influence how often the sensor sends batches by adjusting the latency. For example, the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor has the [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) property. When this property is set for an application, the sensor will send data after the specified amount of time. You can control how much data is accumulated over a given latency by setting the [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) property.
+您可以調整延遲時間，即可控制感應器傳送批次資料的頻率。 例如，[**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) 的 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 屬性。 為應用程式設定這個屬性之後，感應器就會在指定的時間之後傳送資料。 您可以設定 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval)，這樣就可以在規定的延遲時間內，控制可以累積的資料數量。
 
-There are a couple of caveats to keep in mind with respect to setting the latency. The first caveat is that each sensor has a [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) that it can support based on the sensor itself. This is the number of events that the sensor can cache before it is forced to send them. If you multiply **MaxBatchSize** by [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), that determines the maximum [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) value. If you specify a higher value than this, the maximum latency will be used so that you do not lose data. In addition, multiple applications can each set a desired latency. In order to meet the needs of all applications, the shortest latency period will be used. Because of these facts, the latency you set in your application may not match the observed latency.
+設定延遲性時，有幾點重要聲明，請您牢記於心。 第一點重要聲明是：根據感應器自身情況，它們可以接受的 [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) 各自不同。 這是指感應器最多可以快取的事件數量，超過此限之後，就必須傳送出去。 將 **MaxBatchSize** 乘以 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) 之後，就會得出 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 最大值。 如果指定的值大於這個最大值，就會使用延遲時間上限，以免您遺失資料。 此外，即使有多個應用程式，每一個還是可以設定自己的延遲時間。 為了滿足所有的應用程式的需求，系統會採用最短的延遲時間。 因為這些種種的因素，所以您在應用程式中設定的延遲時間，有可能會與觀察到的延遲時間不一致。
 
-If a sensor is using batch reporting, calling [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) will clear the current batch of data and start a new latency period.
+感應器使用批次報告時，呼叫 [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) 即可清除目前的批次資料，然後開始新的延遲時間。
 
-## Accelerometer
+## 加速計
 
-The [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor measures G-force values along the X, Y, and Z axes of the device and is great for simple motion-based applications. Note that G-force values include acceleration due to gravity. If the device has the [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) of **FaceUp** on a table, then the accelerometer would read -1 G on the Z axis. Thus, accelerometers do not necessarily measure just coordinate acceleration – the rate of change of velocity. When using an accelerometer, make sure to differentiate between the gravitational vector from gravity and the linear acceleration vector from motion. Note that the gravitational vector should normalize to 1 for a stationary device.
+[**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) 感應器可測量裝置沿著 X 軸、Y 軸及 Z 軸的重力值，很適合簡單動作應用程式。 請注意，所謂的重力值包括因重力而產生的加速度。 如果裝置在桌面上的 **FaceUp** 為 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)，加速計的 Z 軸讀數就是 -1 G。 因此，加速計不見得只會測量座標加速度 (速度的變動率)。 當使用加速計時，請務必區別重力向量與重力的區隔，以及線性加速向量與動作的區隔。 請注意，靜止裝置的重力向量應該正規化為 1。
 
-The following diagrams illustrate:
+下圖說明：
 
--   V1 = Vector 1 = Force due to gravity
--   V2 = Vector 2 = -Z axis of device chassis (points out of back of screen)
--   Θi = Tilt angle (inclination) = angle between –Z axis of device chassis and gravity vector
+-   V1 = 向量 1 = 因重力而產生的力
+-   V2 = 向量 2 = 裝置底座的 -Z 軸 (自螢幕背面向外指)
+-   Θi = 斜度 (傾斜角度) = 裝置底座 –Z 軸與重力向量之間的角度
 
-![Accelerometer](images/accelerometer1.png)![Accelerometer measurement](images/accelerometer2.png)
+![加速計](images/accelerometer1.png)![加速計測量](images/accelerometer2.png)
 
-Apps that might use the accelerometer sensor include a game where a marble on the screen rolls in the direction you tilt the device (gravitational vector). This type of functionality closely mirrors that of the [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) and could also be done with that sensor by using a combination of pitch and roll. Using the accelerometer’s gravity vector simplifies this somewhat by providing an easily mathematically manipulated vector for device tilt. Another example would be an app that makes a whip’s cracking sound when the user flicks the device through the air (linear acceleration vector).
+可使用加速計感應器的應用程式，包括以您傾斜裝置的方向 (重力向量) 讓彈珠在螢幕上滾動的遊戲。 這類功能會密切對應到 [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 的功能，且也可利用該感應器或結合使用俯仰與翻滾動作來完成。 使用加速計的重力向量，為裝置傾斜提供輕鬆以數學方式操控的向量，可稍微簡化此動作。 另一個範例是使用者在空中揮動裝置 (線性加速向量) 時，讓鞭子發出霹啪聲的 app。
 
-## Activity sensor
+## 活動感應器
 
-The [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor determines the current status of the device attached to the sensor. This sensor is frequently used in fitness applications to keep track of when a user carrying a device is running or walking. See [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128) for a list of possible activities that can be detected by this sensor API.
+[**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器會判斷連接至感應器的裝置目前的狀態。 此感應器通常用於健身 app，可在攜帶裝置的使用者跑步或步行時進行追蹤。 若想了解此感應器 API 可偵測到哪些可能的活動，請參閱 [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128)。
 
-## Altimeter
+## 高度表
 
-The [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) sensor returns a value that indicates the altitude of the sensor. This enables you to keep track of a change in altitude in terms of meters from sea level. One example of an app that might use this would be a running app that keeps track of the elevation changes during a run to calculate the calories burned. In this case, this sensor data could be combined with the [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor to provide more accurate tracking information.
+[**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 感應器會傳回一個值，指出感應器的高度。 這可讓您追蹤距離海平面的高度變化 (以公尺為單位)。 舉例來說，會在跑步期間追蹤高度變化以計算卡路里燃燒量的跑步 app，就是可能會使用此感應器的 app 之一。 在此案例中，這個感應器的資料可與 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器相結合，以提供更精確的追蹤資訊。
 
-## Barometer
+## 氣壓計
 
-The [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) sensor enables an application to get barometric readings. A weather application could use this information to provide the current atmospheric pressure. This could be used to provide more detailed information and predict potential weather changes.
+[**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) 感應器可讓 app 取得氣壓計讀數。 天氣 app 可使用這項資訊提供目前的氣壓。 這可以用來提供更詳細的資訊，並預測可能的天氣變化。
 
-## Compass
+## 指南針
 
-The [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) sensor returns a 2D heading with respect to magnetic north based on the horizontal plane of the earth. The compass sensor should not be used in determining specific device orientation or for representing anything in 3D space. Geographical features can cause natural declination in the heading, so some systems support both [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) and [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Think about which one your app prefers, but remember that not all systems will report a true north value. The gyrometer and magnetometer (a device measuring magnetic strength magnitude) sensors combine their data to produce the compass heading, which has the net effect of stabilizing the data (magnetic field strength is very unstable due to electrical system components).
+[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
 
-![Compass readings in regards to Magnetic North Pole](images/compass.png)
+![關於磁北極的指南針讀數](images/compass.png)
 
-Apps that want to display a compass rose or navigate a map would typically use the compass sensor.
+想要顯示羅盤或巡覽地圖的 app，通常都會使用指南針感應器。
 
-## Gyrometer
+## 陀螺儀
 
-The [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) sensor measures angular velocities along the X, Y, and Z axes. These are very useful in simple motion-based apps that do not concern themselves with device orientation but care about the device rotating at different speeds. Gyrometers can suffer from noise in the data or a constant bias along one or more of the axes. You should query the accelerometer to verify whether the device is moving in order to determine if the gyrometer suffers from a bias, and then compensate accordingly in your app.
+[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) 感應器可測量沿著 X 軸、Y 軸及 Z 軸的角速度。 這在簡單動作應用程式中非常有用，因為這些應用程式不受裝置指向影響，但會受到裝置以不同速度旋轉所影響。 陀螺儀會因為資料中的雜訊或沿著一或多軸的常數偏差而受到影響。 您應該查詢加速計以確認裝置是否正在移動，以判斷陀螺儀是否受到偏差所影響，然後據此在應用程式中加以補償。
 
-![Gyrometer with pitch, roll, and yaw](images/gyrometer.png)
+![陀螺儀：俯仰、翻滾及偏擺](images/gyrometer.png)
 
-An example of an app that could use the gyrometer sensor is a game that spins a roulette wheel based on a quick rotational jerk of the device.
+使用陀螺儀感應器的 app 範例，就是將裝置猛然快速旋轉來旋轉輪盤的遊戲。
 
-## Inclinometer
+## 傾角計
 
-The [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) sensor specifies the yaw, pitch, and roll values of a device and work best with apps that care about how the device is situated in space. Pitch and roll are derived by taking the accelerometer’s gravity vector and by integrating the data from the gyrometer. Yaw is established from magnetometer and gyrometer (similar to compass heading) data. Inclinometers offer advanced orientation data in an easily digestible and understandable way. Use inclinometers when you need device orientation but do not need to manipulate the sensor data.
+[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 感應器可指定裝置的偏擺、俯仰及翻滾的值，最適合以裝置在空間之定位方式為基準的應用程式。 俯仰與翻滾是採用加速計的重力向量以及整合陀螺儀提供的資料所衍生。 偏擺則是以磁力儀與陀螺儀 (類似指南針朝向) 的資料建立。 傾角計以易於解讀和理解的方式提供高階指向資料。 當您需要裝置指向但不需要操控感應器資料時，可以使用傾角計。
 
-![Inclinometer with pitch, roll and yaw data](images/inclinometer.png)
+![傾角計：俯仰、翻滾以及偏擺資料](images/inclinometer.png)
 
-Apps that change their view to match the orientation of the device can use the inclinometer sensor. Also, an app that displays an airplane that matches the yaw, pitch, and roll of the device would also use the inclinometer readings.
+本身會變更檢視方式以符合裝置指向的應用程式，都可以使用傾角計感應器。 再者，本身會根據裝置偏擺、俯仰及翻滾而顯示飛機動作的 app，也可以使用傾角計讀數。
 
-## Light sensor
+## 光感應器
 
-The [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) sensor is capable of determining the ambient light surrounding the sensor. This enables an app to determine when the light setting surrounding a device has changed. For example, a user with a slate device might walk from indoors to outdoors on a sunny day. A smart application could use this value to increase the contrast between the background and the font being rendered. That would make the content still readable in the brighter, outdoor setting.
+[**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) 感應器可判斷感應器周圍的周遭環境光線。 這可讓 app 判斷裝置周圍的光線設定何時有所變化。 例如，平板電腦的使用者可能會在晴天從室內移到室外去。 智慧型 app 可以使用此值，來提高背景與呈現的字型之間的對比。 如此，即使是在較亮的室外設定下也可閱讀內容。
 
-## Orientation sensor
+## 方向感應器
 
-Device orientation is expressed through both quaternion and a rotation matrix. The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) offers a high degree of precision in determining how the device is situated in space with respect to absolute heading. The **OrientationSensor** data is derived from the accelerometer, gyrometer, and magnetometer. As such, both the inclinometer and compass sensors can be derived from the quaternion values. Quaternions and rotation matrices lend themselves well to advanced mathematical manipulation and are often used in graphical programming. Apps using complex manipulation should favor the orientation sensor as many transforms are based off of quaternions and rotation matrices.
+裝置指向可透過四元數與旋轉矩陣來表達。 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 提供的高精確度可用來判斷裝置在空間中相對於絕對指向的定位方式。 **OrientationSensor** 資料衍生自加速計、陀螺儀及磁力儀。 因此，傾角計感應器與指南針感應器都可以從四元數的值衍生。 四元數與旋轉矩陣對於高階數學操作很有助益，通常用於圖形程式設計。 因為許多轉換方式都是以四元數與旋轉矩陣為基礎，所以使用複雜操作的應用程式應該會偏好使用方向感應器。
 
-![Orientation sensor data](images/orientation-sensor.png)
+![方向感應器資料](images/orientation-sensor.png)
 
-The orientation sensor is often used in advanced augmented reality apps that paint an overlay on your surroundings based on the direction the back of the device is pointing.
+方向感應器通常用於高階擴增實境 app，這種 app 會根據裝置背面所指的方向，對您的周遭環境繪製覆疊。
 
-## Pedometer
+## 計步器
 
-The [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) sensor keeps track of the number of steps taken by the user carrying the connected device. The sensor is configured to keep track of the number of steps over a given time period. Several fitness applications like to keep track of the number of steps taken in order to help the user set and reach various goals. This information can then be collected and stored to show progress over time.
+[**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) 感應器會追蹤攜帶連線裝置的使用者行走的步數。 感應器依設定會追蹤一段指定時間內的步數。 有些健身 app 會追蹤使用者的行走步數，以幫助他們設定並達到各種目標。 後續可以收集並儲存這項資訊，以顯示一段時間的進度。
 
-## Proximity sensor
+## 鄰近性感測器
 
-The [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) sensor can be used to indicate whether or not objects are detected by the sensor. In addition to determining whether or not an object is within range of the device, the proximity sensor also can determine the distance to the detected object. One example where this could be used is with an application that wants to emerge from a sleep state when a user comes within a specified range. The device could be in a low-powered sleep state until the proximity sensor detects an object, and then could enter a more active state.
+[**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) 感應器可用來指出感應器是否偵測到物件。 除了可判斷物件是否在裝置的範圍內、鄰近性感測器也可判斷與偵測的物件之間相隔多少距離。 舉例來說，想要在使用者進入指定範圍時從睡眠狀態啟動的 app，就可能會使用此感應器。 在鄰近性感測器偵測到物件之前，裝置會處於低耗電的睡眠狀態，之後則可進入較活躍的狀態。
 
-## Simple orientation
+## 簡單方向
 
-The [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) detects the current quadrant orientation of the specified device or it’s face-up or face-down. It has six possible [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) states (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
+[**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
-A reader app that changes its display based on the device being held parallel or perpendicular to the ground would use the values from the SimpleOrientationSensor to determine how the device is being held.
+根據裝置是平行於地面或與地面成直角而變更其顯示方式的閱讀程式，都可以使用 SimpleOrientationSensor 的值來判斷裝置的手持姿勢。
 
-## Samples
+## 範例
 
-For some samples that demonstrate using a couple of different sensors, see [Windows Sensor Samples](http://go.microsoft.com/fwlink/?LinkID=616041).
-
-
+如需示範使用其他幾個感應器的範例，請參閱 [Windows 感應器範例](http://go.microsoft.com/fwlink/?LinkID=616041)。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jul16_HO2-->
 
 
