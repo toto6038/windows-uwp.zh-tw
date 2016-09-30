@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/ed4da94f2732c279c3071135168da9e4b18953cb/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#c0ed8386cb823ea83e5b1f80cd584f370a85f2784910)
+ [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/e59147158fc6917e6e761356716bd0d38b3a170d/windows-apps-src/porting/desktop-to-uwp-supported-api.md) | HandedOffSuccess | [Details](#2582cacb6333cd90440caa3c57a3cd8f06bf94e34912)
 
 ## Item Details
-##### <a name='c0ed8386cb823ea83e5b1f80cd584f370a85f2784910'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/ed4da94f2732c279c3071135168da9e4b18953cb/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+##### <a name='2582cacb6333cd90440caa3c57a3cd8f06bf94e34912'></a> Source: [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/e59147158fc6917e6e761356716bd0d38b3a170d/windows-apps-src/porting/desktop-to-uwp-supported-api.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/664a4540f58b41f85d4cb6a059cbbac95df34cd8/ol-handoff/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-tw.xlf)
-* Handoff Datetime: 2016-09-29 23:50:35
+* Handoff File: [desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.zh-tw.xlf](https://github.com/Microsoft/WDG.handoff/blob/c236cfa0251d214a2ff225bc772f00ea6542c7e9/ol-handoff/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.zh-tw.xlf)
+* Handoff Datetime: 2016-09-30 17:18:28
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/bb1048f4a05e613275bbd6635692de0d11539e75/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
-* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/3b12b8a3f06805e713d3b0624518642e0301b0c0/ol-handback/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-tw.xlf)
-* Current Handback Datetime: 2016-09-19 23:06:27
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps.zh-tw/blob/92e1910b07aa8cdaa11ce55983e11181cc1d195c/windows-apps-src/porting/desktop-to-uwp-supported-api.md)
+* Current Handback File: [desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.zh-tw.xlf](https://github.com/Microsoft/WDG.handback/blob/680c1a728b11ebd841b91ff49a8b72b77dcb2e7e/ol-handback/Microsoft/windows-apps.zh-tw/master/desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.zh-tw.xlf)
+* Current Handback Datetime: 2016-09-23 12:34:23
 * [Back to Top](#report-top)
 
 
