@@ -5,7 +5,7 @@ title: "將 Windows Runtime 8.x XAML 與 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
+ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 ---
 
@@ -97,8 +97,8 @@ ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 市集應用程式中，永遠可以看到 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 的次要命令。 在 Windows Phone 市集應用程式以及 Windows 10 應用程式中，不會顯示這些命令，直到命令列開啟為止。 |
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 針對 Windows Phone 市集應用程式，[**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) 的值不會影響命令列是否會消失關閉。 針對 Windows 10 應用程式，如果將 **IsSticky** 設定為 True，則 **CommandBar** 會略過消失關閉手勢。 |
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 10 應用程式中，[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 不會處理 [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) 事件，也不會處理 [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 事件。 它不會回應點選也不會回應向上撥動。 您仍然可以選擇處理這些事件，並設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939)。 |
-| [ **DatePicker** ](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 檢閱在視覺變更為 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 之後您應用程式的外觀。 針對在行動裝置上執行的 Windows 10 應用程式，這些控制項便不再瀏覽到選取頁面，而是改用會消失關閉的快顯視窗。 |
-| [ **DatePicker** ](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 應用程式中，您無法將 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放在飛出視窗內。 如果您希望在快顯類型控制項中顯示這些控制項，則您可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 檢閱在視覺變更為 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 之後您應用程式的外觀。 針對在行動裝置上執行的 Windows 10 應用程式，這些控制項便不再瀏覽到選取頁面，而是改用會消失關閉的快顯視窗。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 應用程式中，您無法將 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放在飛出視窗內。 如果您希望在快顯類型控制項中顯示這些控制項，則您可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
 | **GridView**、**ListView** | 針對 **GridView**/**ListView**，請參閱 [GridView/ListView 變更](#gridview)。 |
 | [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 市集應用程式和 Windows 10 應用程式中，中樞區段不會迴繞。 |
 | [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項的背景影像不會以相對於中樞區段的視差移動。 在 Windows 市集應用程式和 Windows 10 應用程式中，將不會使用視差。 |
@@ -109,7 +109,7 @@ ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 | [**樞紐分析**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) 控制項現在是通用的，不再受限於只能在行動裝置上使用。 |
 | [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | 雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox)。 |
 | **SemanticZoom** | 針對 **SemanticZoom**，請參閱 [SemanticZoom 變更](#semantic-zoom)。 |
-| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [ **ScrollViewer** ](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些預設屬性已經變更。 [ **HorizontalScrollMode** ](https://msdn.microsoft.com/library/windows/apps/br209549) 為 **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 為 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 為 **Disabled**。 如果新的預設值不適用於您的 app，則您可以在樣式上進行變更，或當做控制項本身的本機值變更。  |
+| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些預設屬性已經變更。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 為 **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 為 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 為 **Disabled**。 如果新的預設值不適用於您的 app，則您可以在樣式上進行變更，或當做控制項本身的本機值變更。  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | 在 Windows 市集應用程式中，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 預設關閉拼字檢查。 在 Windows Phone 市集應用程式和 Windows 10 應用程式中，它預設為開啟。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的預設字型大小已從 11 變更為 15。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) 的預設值已從 **Default** 變更為 **DetectFromContent**。 如果不適當，則使用 **UseFlowDirection**。 **Default** 已過時。 |
@@ -411,7 +411,7 @@ ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 
 使用者開始輸入後即會引發 **TextChanged** 事件，原因為 **UserInput**。 接著，您可以填入建議清單，並設定 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 的 **ItemsSource**。 使用者瀏覽清單時會引發 **SuggestionChosen** 事件 (且如果您已設定 **TextMemberDisplayPath**，文字方塊將會自動填入指定的屬性)。 當使用者以 Enter 鍵提交選擇時，會引發 **QuerySubmitted** 事件，此時您可以採取該建議動作 (在此情況下，很可能是瀏覽至其他含有指定內容之詳細資料的其他頁面)。 請注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 屬性已不再受支援 (有對等的 API 可支援該功能)。 **KeyModifiers** 也不再受支援。
 
-[ **AutoSuggestBox** ](https://msdn.microsoft.com/library/windows/apps/dn633874) 也具有輸入法編輯器 (IME) 的支援。 而且，如果您想要顯示「尋找」圖示，您也可以這麼做 (與該圖示互動將會引發 **QuerySubmitted** 事件)。
+[**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 也具有輸入法編輯器 (IME) 的支援。 而且，如果您想要顯示「尋找」圖示，您也可以這麼做 (與該圖示互動將會引發 **QuerySubmitted** 事件)。
 
 ```xml
    <AutoSuggestBox ... >
@@ -485,6 +485,6 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,15 @@
 ---
 author: TylerMSFT
-title: "通用 Windows 平台 (UWP) app 指南"
-description: "在本指南中，深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。"
+title: "通用 Windows 平台 (UWP) App 指南"
+description: "深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
-ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
+ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
+ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
 
 ---
 
-# 通用 Windows 平台 (UWP) app 指南
+# 通用 Windows 平台 (UWP) App 指南
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -34,7 +34,7 @@ Windows 10 引進了通用 Windows 平台 (UWP)，進一步進化 Windows 執行
 
 Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 Windows Phone。 使用 Windows 10，您不再是以作業系統為目標，而是以一或多個裝置系列做為您的 app 的目標。 裝置系列會識別 API、系統特性以及您對於裝置系列中的裝置可以預期的行為。 它也會判斷可以從市集安裝您的 app 的一組裝置。 以下是裝置系列階層。
 
-![裝置系列](images/devicefamilytree.png)
+![裝置系列](images/device-family-tree.png)
 
 裝置系列是一起收集的一組 API，並且給予名稱和版本號碼。 裝置系列是作業系統的基礎。 電腦執行傳統型作業系統，是以傳統型裝置系列為基礎。 手機和平板電腦等等執行行動裝置作業系統，是以行動裝置系列為基礎。 依此類推。
 
@@ -51,6 +51,8 @@ Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 W
 -   可以從市集安裝您的 app 的一組裝置 (以及您後續需要考量的表單係數)。
 
 進行裝置系列選擇有兩個主要的後果：可以由 app 無條件地呼叫 API 表面，以及 app 可連線的裝置數目。 這兩項因素需要做出取捨並且成反比相關。 例如，UWP app 是專門針對通用裝置系列，因此後續適用於所有裝置。 以通用裝置系列為目標的 app 可以假設 API 僅存在於通用裝置系列中 (因為這是它的目標)。 其他 API 必須有條件地呼叫。 此外，這類 app 必須具有高度彈性的 UI 和完整的輸入的功能，因為它可以在各種裝置上執行。 Windows 行動裝置 app 是特別針對行動裝置系列的 app，適用於其作業系統是以行動裝置系列為基礎的裝置 (包括手機、平板電腦和類似的裝置)。 行動裝置系列 app 可以假設所有 API 存在於行動裝置系列中，且其 UI 必須適度調整。 以 IoT 裝置系列為目標的 app 只可以安裝在 IoT 裝置上，並且可以假設所有 API 存在於 IoT 裝置系列中。 因為您知道 app 將只在特定裝置類型上執行，所以該 app 的 UI 和輸入能力可以非常特殊。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 以下是一些可協助您決定要以哪個裝置系列為目標的考量：
 
@@ -280,12 +282,8 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 請參閱[使用整合的 Windows 開發人員中心儀表板](../publish/using-the-windows-dev-center-dashboard.md)以了解如何提交您的 app 在 Windows 市集中發行。
 
- 
-
- 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

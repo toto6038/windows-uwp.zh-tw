@@ -1,107 +1,115 @@
 ---
 author: normesta
-Description: 'This guide helps you enlighten your app to handle enterprise data managed by Windows Information Protection (WIP) policy as well as personal data.'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本指南可協助您啟發應用程式，以處理 Windows 資訊保護 (WIP) 原則管理的企業資料和個人資料。"
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Build an enlightened app that consumes both enterprise data and personal data'
+title: "建置同時使用企業和個人資料的啟發式應用程式"
+translationtype: Human Translation
+ms.sourcegitcommit: 0da731e1211544ce6b07e783ddc2407da57781c2
+ms.openlocfilehash: 8ead30471371b9b6aca32088f115da9f68784922
+
 ---
 
-# Build an enlightened app that consumes both enterprise data and personal data
+# 建置同時使用企業和個人資料的啟發式應用程式
 
-__Note__ Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.
+__注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
-An *enlightened* app differentiates between corporate and personal data and knows which to protect based on Windows Information Protection (WIP) policies defined by the administrator.
+ **應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
 
-In this guide, we'll show you how to build one. When you're done, policy administrators will be able to trust your app to consume their organization's data. And employees will love that you've kept their personal data intact on their device even if they un-enroll from the organization's mobile device management (MDM) or leave the organization entirely. You can read more about WIP and enlightened apps here: [Windows Information Protection (WIP)](wip-hub.md).
+在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工最愛的是，就算他們從組織的行動裝置管理 (MDM) 取消註冊或是完全離該組織，其裝置上的個人資料也能完好如初。
 
-If you're ready, let's start.
+如需 WIP 與啟發式應用程式的詳細資訊，請參閱︰[Windows 資訊保護 (WIP)](wip-hub.md)。
 
-## First, gather what you need
+[您可以在](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)找到完整的範例。
 
-You'll need these:
+如果您已準備好進行每項工作，我們就開始吧。
 
-* Access to a Microsoft Intune account.
+## 首先請備妥您需要的項目：
 
-* A development computer that runs Windows 10, version 1607.
+您將需要：
 
-* A test device that runs Windows 10, version 1607. You'll debug your app against this test device.
+* Microsoft Intune 帳戶的存取權。
 
-  You can't debug against the same device that is enrolled in MDM. That's why you'll need a separate test device.
+* 執行 Windows 10 (版本 1607) 的開發電腦。
 
-  To keep things simple, we'll assume that your test device is a computer or virtual machine.
+* 執行 Windows 10 (版本 1607) 的測試裝置。 這個裝置將用來對您的應用程式偵錯。
 
-## Setup your development environment
+  您總不能對已在 MDM 註冊的裝置偵錯， 所以您需要一個測試裝置。
 
-You'll do these things:
+  為了簡化工作，我們假設您的測試裝置是一台電腦或虛擬機器。
 
-* Enroll your test computer.
+## 設定開發環境
 
-* Create a protection policy.
+您將執行下列工作︰
 
-* Download the policy to your test computer.
+* 註冊您的測試電腦。
 
-* Setup a Visual Studio project.
+* 建立保護原則。
 
-* Setup remote debugging.
+* 將原則下載到您的測試電腦。
 
-* Add namespaces to your code files
+* 設定 Visual Studio 專案。
 
-**Enroll your test computer**
+* 設定遠端偵錯。
 
- To enroll your test computer, add your Intune account to the **Settings**->**Access work or school** page on your test computer.
+* 將命名空間新增到程式碼檔案
 
- ![connect to MDM](images/connect-v2.png)
+**註冊您的測試電腦**
 
- Your computer name will then appear in the Intune administrator console.
+ 若要註冊您的測試電腦，請將您的 Intune 帳戶新增到測試電腦上的[設定]****->[存取公司或學校]**** 頁面。
 
-**Create a protection policy**
+ ![連線到 MDM](images/connect-v2.png)
 
-Create a policy and deploy it onto your test computer. See [Create a Windows Information Protection (WIP) policy using Microsoft Intune](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune).
+ 您的電腦名稱會出現在 Intune 系統管理員主控台。
 
-**Download the policy to your device**
+**建立保護原則**
 
-On your test computer, go to the **Settings** page, and then select  **Access work or school**-> **Info**->**Sync**.
+建立原則，並將它部署到測試電腦。 請參閱[使用 Microsoft Intune 建立 Windows 資訊保護 (WIP) 原則](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune)。
 
-![Sync settings with MDM](images/sync.png)
+**將原則下載到您的裝置**
 
-**Setup a Visual Studio project**
+在測試電腦上，移至 [設定]**** 頁面，然後選取 [存取公司或學校]****-> [資訊]****->[同步]****。
 
-1. On your development computer, open your project.
+![使用 MDM 同步設定](images/sync.png)
 
-2. Add a reference to the desktop and mobile extensions for Universal Windows Platform (UWP).
+**設定 Visual Studio 專案**
 
-    ![Add UWP Extensions](images/extensions.png)
+1. 在開發電腦上開啟您的專案。
 
-3. Add these capabilities to your package manifest file:
+2. 針對通用 Windows 平台 (UWP)，加入對桌面和行動延伸模組的參考。
+
+    ![新增 UWP 延伸模組](images/extensions.png)
+
+3. 將這些功能新增至封裝資訊清單檔案︰
 
     ```xml
        <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*Optional Reading*: The "rescap" prefix means *Restricted Capability*. See [Special and restricted capabilities](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+   >*選擇性閱讀*："rescap" 前置詞表示「受限制的功能」**。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
-4. Add this namespace to your package manifest file:
+4. 將這個命名空間新增到您的封裝資訊清單檔案︰
 
     ```xml
       xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
     ```
-5. Add the namespace prefix to the ``<ignorableNamespaces>`` element of your package manifest file.
+5. 將命名空間前置詞新增到封裝資訊清單檔案的 ``<ignorableNamespaces>`` 元素。
 
     ```xml
         <IgnorableNamespaces="uap mp rescap">
     ```
 
-    This way, if your app runs on a version of the Windows operating system that doesn't support restricted capabilities, Windows will ignore the ``enterpriseDataPolicy`` capability.
+    如此一來，如果您的應用程式在不支援受限制功能的 Windows 作業系統版本上執行，Windows 將會忽略 ``enterpriseDataPolicy`` 功能。
 
-**Setup remote debugging**
+**設定遠端偵錯**
 
-Install Visual Studio Remote Tools on your test computer. Then, on your development computer start the remote debugger and see if your app runs on the target computer.
+在測試電腦上安裝 Visual Studio 遠端工具。 然後，在開發電腦上啟動遠端偵錯工具，並查看您的應用程式是否在目標電腦上執行。
 
-See [Remote PC instructions](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions).
+請參閱[遠端電腦指示](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)。
 
-**Add these namespaces to your code files**
+**將這些命名空間新增到程式碼檔案**
 
-Add these using statements to the top of your code files(The snippets in this guide use them):
+將這些 using 陳述式新增到程式碼檔案的上方 (本指南中的程式碼片段會使用它們)：
 
 ```csharp
 using System.Threading.Tasks;
@@ -116,9 +124,9 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## Determine whether the operating system that runs your app supports WIP
+## 判斷執行應用程式的作業系統是否支援 WIP
 
-Use the [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) function to determine this.
+請使用 [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 函式來判定。
 
 ```csharp
 bool wipSupported = ApiInformation.IsApiContractPresent("Windows.Security.EnterpriseData.EnterpriseDataContract", 3);
@@ -133,19 +141,19 @@ else
 }
 ```
 
-Windows Information Protection is supported on Windows 10, version 1607.
+Windows 10 (版本 1607) 支援 Windows 資訊保護。
 
-## Read enterprise data
+## 讀取企業資料
 
-File, network endpoints, clipboard data and data that you accept from a Share contract all have an enterprise ID.
+檔案、網路端點、剪貼簿資料和您透過分享協定接受的資料都有一個企業識別碼。
 
-To read data from any of those sources, your app will have to verify that the enterprise ID is managed by policy.
+若要讀取上述任一來源中的資料，您的應用程式必須驗證企業識別碼是否受原則管理。
 
-Let's start with files.
+我們先從檔案開始。
 
-### Read data from a file
+### 從檔案讀取資料
 
-**Step 1: Get the file handle**
+**步驟 1︰ 取得檔案控制代碼**
 
 ```csharp
     Windows.Storage.StorageFolder storageFolder =
@@ -155,14 +163,14 @@ Let's start with files.
         await storageFolder.GetFileAsync(fileName);
 ```
 
-**Step 2: Determine whether your app can open the file**
+**步驟 2︰ 判斷您的應用程式是否可以開啟檔案**
 
-Determine whether the file is protected. If it is, your app can open that file if these two things are true:
+判斷檔案是否受到保護。 如果是，當下列兩個條件為 true 時，您的應用程式就可以開啟該檔案：
 
-* The file's identity is managed by policy.
-* Your app is on the allowed list of that policy.
+* 檔案的身分識別由原則管理。
+* 您的應用程式包含在該原則的允許清單上。
 
-If either of these conditions aren't true, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) returns **false** and you can't open that file.
+如果其中一個條件不為 true，則 [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) 會傳回 **false**，且無法開啟該檔案。
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
@@ -180,31 +188,31 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
     // saying that the user's data has been revoked.
 }
 ```
-> **APIs** <br>
+> **API** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
-**Step 3: Read the file into a stream or buffer**
+**步驟 3︰將檔案讀到資料流或緩衝區**
 
-*Read the file into a stream*
+*將檔案讀到資料流*
 
 ```csharp
 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
 
-*Read the file into a buffer*
+*將檔案讀到緩衝區*
 
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
 
-### Read data from a network endpoint
+### 從網路端點讀取資料
 
-Create a protected thread context to read from an enterprise endpoint.
+建立要從企業端點讀取的受保護執行緒內容。
 
-**Step 1: Get the identity of the network endpoint**
+**步驟 1︰取得網路端點的身分識別**
 
 ```csharp
 Uri resourceURI = new Uri("http://contoso.com/stockData.xml");
@@ -216,17 +224,17 @@ string identity = await ProtectionPolicyManager.
     GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
 ```
 
-If the endpoint isn't managed by policy, you'll get back an empty string.
+如果端點不受原則管理，則會傳回空字串。
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)
 
 
-**Step 2: Create a protected thread context**
+**步驟 2︰建立受保護的執行緒內容**
 
-If the endpoint is managed by policy, create a protected thread context. This tags any network connections that you make on the same thread to the identity.
+如果端點由原則管理，請建立受保護的執行緒內容。 這樣會將您在同一個執行緒上建立的任何網路連線標記到身分識別。
 
-It also gives you access to enterprise network resources that are managed by that policy.
+它也可以讓您存取該原則所管理的企業網路資源。
 
 ```csharp
 HttpClient client = null;
@@ -242,31 +250,31 @@ if (!string.IsNullOrEmpty(identity))
     }
 }
 ```
-This example encloses socket calls in a ``using`` block. If you don't do this, make sure that you close the thread context after you've retrieved your resource. See [ThreadNetworkContext.Close](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.close.aspx).
+這個範例將通訊端呼叫括在 ``using`` 區塊中。 如果您不要這樣做，請務必在您擷取資源之後結束執行緒內容。 請參閱 [ThreadNetworkContext.Close](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.close.aspx)。
 
-Don't create any personal files on that protected thread because those files will be automatically encrypted.
+請勿在受保護的執行緒上建立任何個人檔案，因為這些檔案會自動加密。
 
-The [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx) method returns a [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.aspx) object whether or not the endpoint is being managed by policy. If your app handles both personal and enterprise resources, call [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx) for all identities.  After you get the resource, dispose the ThreadNetworkContext to clear any identity tag from the current thread.
+無論端點是否由原則管理，[**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx) 方法一律會傳回 [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.aspx) 物件。 如果您的應用程式同時會處理個人和企業資源，請呼叫 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx) 以取得所有身分識別。  取得資源之後，請捨棄 ThreadNetworkContext 以清除來自目前執行緒的任何身份識別標記。
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-**Step 3: Read the resource into a buffer**
+**步驟 3︰將資源讀到緩衝區**
 
 ```csharp
 IBuffer data = await client.GetBufferAsync(resourceURI);
 ```
 
 
-**Handle page redirects**
+**處理頁面重新導向**
 
-Sometimes a web server will redirect traffic to a more current version of a resource.
+有時候，網頁伺服器會將流量重新導向至較新版本的資源。
 
-To handle this, make requests until the response status of your request has a value of **OK**.
+為因應這種情況，請在要求的回應狀態值為**確定**時再提出要求。
 
-Then use the URI of that response to get the identity of the endpoint. Here's one way to do this:
+接著再使用該回應的 URI 來取得端點的身分識別。 以下是其中一種做法：
 
 ```csharp
 public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
@@ -328,17 +336,17 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-### Read data from the clipboard
+### 從剪貼簿讀取資料
 
-**Get permission to use data from the clipboard**
+**取得使用剪貼簿資料的權限**
 
-To get data from the clipboard, ask Windows for permission. Use [**DataPackageView.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx) to do that.
+若要從剪貼簿取得資料，請向 Windows 要求權限。 請使用 [**DataPackageView.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx) 執行此作業。
 
 ```csharp
 public static async Task PasteText(TextBox textBox)
@@ -358,14 +366,14 @@ public static async Task PasteText(TextBox textBox)
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [DataPackageView.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx)
 
-**Hide or disable features that use clipboard data**
+**隱藏或停用使用剪貼簿資料的功能**
 
-Determine whether current view has permission to get data that is on the clipboard.
+判斷目前的檢視是否有權限取得剪貼簿上的資料。
 
-If it doesn't, you can disable or hide controls that let users paste information from the clipboard or preview its contents.
+如果沒有，您可以停用或隱藏讓使用者從剪貼簿貼上資訊或預覽其內容的控制項。
 
 ```csharp
 private bool IsClipboardAllowedAsync()
@@ -385,14 +393,14 @@ private bool IsClipboardAllowedAsync()
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-**Prevent users from being prompted with a consent dialog box**
+**避免提示使用者同意對話方塊**
 
-A new document isn't *personal* or *enterprise*. It's just new. If a user pastes enterprise data into it, Windows enforces policy and the user is prompted with a consent dialog. This code prevents that from happening. This task is not about helping to protect data. It's more about keeping users from receiving the consent dialog box in cases where your app creates a brand new item.
+有一份既不是「個人」**也不是「企業」**的新文件。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -425,17 +433,17 @@ private async void PasteText(bool isNewEmptyDocument)
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [DataPackageView.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn706645.aspx)<br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 
-### Read data from a Share contract
+### 從分享協定讀取資料
 
-When employees choose your app to share their information, your app will open a new item that contains that content.
+當員工選擇您的應用程式來分享資訊時，您的應用程式會開啟一個包含該內容的新項目。
 
-As we mentioned earlier, a new item isn't *personal* or *enterprise*. It's just new. If your code adds enterprise content to the item, Windows enforces policy and the user is prompted with a consent dialog. This code prevents that from happening.
+如先前所述，新項目不是「個人」**或「企業」**文件。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -480,24 +488,24 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/dn705789.aspx)<br>
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-## Protect enterprise data that leaves your app
+## 保護企業資料
 
-Data leaves your app when you show it in a page, save it to a file or network endpoint, or through a share contract.
+保護離開應用程式的企業資料。 當您在頁面中顯示資料、將資料儲存至檔案或網路端點或是透過分享協定時，資料會離開您的應用程式。
 
-### <a id="display-data"></a>Protect data that appears in pages
+### <a id="display-data"></a>保護出現在頁面的資料
 
-When you show data in a page, let Windows know what type of data it is (personal or enterprise). To do that, *tag* the current app view or tag the entire app process.
+當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請「標記」**目前的應用程式檢視，或標記整個應用程式處理程序。
 
-When you tag the view or the process, Windows enforces policy on it. This helps prevent data leaks that result from actions that your app doesn't control. For example, on a computer, a user could use CTRL-V to copy enterprise information from a view and then paste that information to another app. Windows protects against that. Windows also helps to enforce share contracts.
+當您標記檢視或處理程序時，Windows 會對它強制執行原則。 這有助於防止因為您的應用程式無法控制的動作所造成的資料遺漏。 例如在電腦上，使用者可以使用 CTRL-V 來複製檢視中的企業資訊，然後將該資訊貼到另一個應用程式。 Windows 會提供針對該動作的防護。 Windows 也可強制執行分享協定。
 
-**Tag the current app view**
+**標記目前的應用程式檢視。**
 
-Do this if your app has multiple views where some views consume enterprise data and some consume personal data.
+如果您的應用程式有多個檢視，其中的某些檢視使用企業資料，某些使用個人資料，則請執行這項操作。
 
 ```csharp
 
@@ -509,15 +517,15 @@ ProtectionPolicyManager.GetForCurrentView().Identity = identity;
 ProtectionPolicyManager.GetForCurrentView().Identity = String.Empty();
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-**Tag the process**
+**標記處理程序**
 
-Do this if all views in your app will work with only one type of data (personal or enterprise).
+如果您的應用程式中的所有檢視只會使用一種類型的資料 (個人或企業)，請執行這項操作。
 
-This prevents you from having to manage independently tagged views.
+這樣您就不需要管理單獨標記的檢視。
 
 ```csharp
 
@@ -532,26 +540,26 @@ bool result =
             ProtectionPolicyManager.TryApplyProcessUIPolicy(String.Empty());
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-### Protect data to a file
+### 保護寫入檔案的資料
 
-Create a protected file and then write to it.
+建立受保護的檔案，然後寫入資料。
 
-**Step 1: Determine if your app can create an enterprise file**
+**步驟 1︰判斷您的應用程式是否可以建立企業檔案**
 
-Your app can create an enterprise file if the identity string is managed by policy and your app is on the Allowed list of that policy.
+如果身分識別字串由原則管理，而且您的應用程式在該原則的允許清單中，您的應用程式就可以建立企業檔案。
 
 ```csharp
   if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
 
-**Step 2: Create the file and protect it to the identity**
+**步驟 2︰建立檔案，並保護身分識別**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -562,12 +570,12 @@ FileProtectionInfo fileProtectionInfo =
     await FileProtectionManager.ProtectAsync(storageFile, identity);
 ```
 
-> **APIs** <br>
+> **API** <br>
 [FileProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.protectasync.aspx)
 
-**Step 3: Write that stream or buffer to the file**
+**步驟 3︰將該資料流或緩衝區寫入檔案**
 
-*Write a stream*
+*寫入資料流*
 
 ```csharp
     if (fileProtectionInfo.Identity == identity &&
@@ -586,7 +594,7 @@ FileProtectionInfo fileProtectionInfo =
     }
 ```
 
-*Write a buffer*
+*寫入緩衝區*
 
 ```csharp
      if (fileProtectionInfo.Identity == identity &&
@@ -600,32 +608,32 @@ FileProtectionInfo fileProtectionInfo =
       }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
 
 
-### Protect data to a file as a background process
+### 以背景處理程序保護寫入檔案的資料
 
-This code can run while the screen of the device is locked. If the administrator configured a secure "Data protection under lock" (DPL) policy, Windows removes the encryption keys required to access protected resources from device memory. This prevents data leaks if the device is lost. This same feature also removes keys associated with protected files when their handles are closed.
+當裝置的畫面被鎖定時，可以執行這個程式碼。 如果系統管理員已設定「鎖定時的資料保護」(DPL) 原則，Windows 會移除從裝置記憶體存取受保護資源所需的加密金鑰。 這可防止裝置遺失時的資料遺漏問題。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。
 
-You'll have to use an approach that keeps the file handle open when you create a file.  
+您必須使用一種方法，以在建立檔案時讓檔案控制代碼保持開啟。  
 
-**Step 1: Determine if you can create an enterprise file**
+**步驟 1︰判斷您是否可以建立企業檔案**
 
-You can create an enterprise file if the identity that you're using is managed by policy and your app is on the allowed list of that policy.
+如果您使用的身分識別字串由原則管理，而且您的應用程式在該原則的允許清單中，您就可以建立企業檔案。
 
 ```csharp
 if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
 
-**Step 2: Create a file and protect it to the identity**
+**步驟 2︰建立檔案，並保護身分識別**
 
-The [**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) creates a protected file and keeps the file handle open while you write to it.
+[**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) 會建立一個受保護的檔案，並在您寫入該檔案時讓檔案控制代碼保持開啟。
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -635,12 +643,12 @@ ProtectedFileCreateResult protectedFileCreateResult =
         "sample.txt", identity, CreationCollisionOption.ReplaceExisting);
 ```
 
-> **APIs** <br>
+> **API** <br>
 [FileProtectionManager.CreateProtectedAndOpenAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx)
 
-**Step 3: Write a stream or buffer to the file**
+**步驟 3︰將資料流或緩衝區寫入檔案**
 
-This example writes a stream to a file.
+這個範例會將資料流寫入檔案。
 
 ```csharp
 if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
@@ -665,18 +673,18 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectedFileCreateResult.ProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.protectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
-### Protect part of a file
+### 保護檔案的一部分
 
-In most cases, it's cleaner to store enterprise and personal data separately but you can store them to the same file if you want. For example, Microsoft Outlook can store enterprise mails alongside of personal mails in a single archive file.
+在大部分情況下，個別儲存企業和個人資料會較為井然有序，但您也可以將它們儲存到同一個檔案。 例如，Microsoft Outlook 可以將企業郵件連同個人郵件儲存在單一封存檔案中。
 
-Encrypt the enterprise data but not the entire file. That way, users can continue using that file even if they un-enroll from MDM or their enterprise data access rights are revoked. Also, your app should keep track of what data it encrypts so that it knows what data to protect when it reads the file back into memory.
+請加密企業資料，而非整個檔案。 如此一來，即使使用者在 MDM 中取消註冊或企業資料的存取權限被撤銷，也能繼續使用該檔案。 此外，您的應用程式應記錄它所加密的資料，以分辨將檔案讀回記憶體時要保護的資料。
 
-**Step 1: Add enterprise data to an encrypted stream or buffer**
+**步驟 1︰將企業資料新增到加密的資料流或緩衝區**
 
 ```csharp
 string enterpriseDataString = "<employees><employee><name>Bill</name><social>xxx-xxx-xxxx</social></employee></employees>";
@@ -690,12 +698,12 @@ BufferProtectUnprotectResult result =
 enterpriseData= result.Buffer;
 ```
 
-> **APIs** <br>
+> **API** <br>
 [DataProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.protectasync.aspx)<br>
 [BufferProtectUnprotectResult.buffer](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.buffer.aspx)
 
 
-**Step 2: Add personal data to an unencrypted stream or buffer**
+**步驟 2︰將個人資料新增到未加密的資料流或緩衝區**
 
 ```csharp
 string personalDataString = "<recipies><recipe><name>BillsCupCakes</name><cooktime>30</cooktime></recipe></recipies>";
@@ -704,7 +712,7 @@ var personalData = Windows.Security.Cryptography.CryptographicBuffer.ConvertStri
     personalDataString, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
 ```
 
-**Step 3: Write both streams or buffers to a file**
+**步驟 3︰將資料流或緩衝區寫入檔案**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -729,13 +737,13 @@ using (var outputStream = stream.GetOutputStreamAt(0))
 }
 ```
 
-**Step 4: Keep track of the location of your enterprise data in the file**
+**步驟 4︰記錄您的企業資料在檔案中的位置**
 
-It's the responsibility of your app to keep track of the data in that file that is enterprise owned.
+您的應用程式應記錄該檔案中由企業擁有的資料。
 
-You can store that information in a property associated with the file, in a database, or in some header text in the file.
+您可以將該資訊儲存在與檔案關聯的屬性中、資料庫內或檔案的一部分標頭文字中。
 
-This example, saves that information to a separate XML file.
+這個範例會將該資訊儲存到不同的 XML 檔案。
 
 ```csharp
 StorageFile metaDataFile = await storageFolder.CreateFileAsync("metadata.xml",
@@ -746,11 +754,11 @@ await Windows.Storage.FileIO.WriteTextAsync
     "'></EnterpriseDataMarker>");
 ```
 
-### Read the protected part of a file
+### 讀取檔案受保護的部分
 
-Here's how you'd read the enterprise data out of that file.
+以下是從該檔案讀取企業資料的方式。
 
-**Step 1: Get the position of your enterprise data in the file**
+**步驟 1︰取得您的企業資料在檔案中的位置**
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -772,7 +780,7 @@ uint endPosition =
     Convert.ToUInt16((doc.FirstChild.Attributes.GetNamedItem("end")).InnerText);
 ```
 
-**Step 2: Open the data file and make sure that it's not protected**
+**步驟 2︰開啟資料檔案，確定資料未受保護**
 
 ```csharp
 Windows.Storage.StorageFile dataFile =
@@ -785,12 +793,12 @@ if (protectionInfo.Status == FileProtectionStatus.Protected)
     return false;
 ```
 
-> **APIs** <br>
+> **API** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
-**Step 3: Read the enterprise data from the file**
+**步驟 3：從檔案讀取企業資料**
 
 ```csharp
 var stream = await dataFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -802,7 +810,7 @@ Windows.Storage.Streams.Buffer tempBuffer = new Windows.Storage.Streams.Buffer(5
 IBuffer enterpriseData = await stream.ReadAsync(tempBuffer, endPosition, InputStreamOptions.None);
 ```
 
-**Step 4: Decrypt the buffer that contains enterprise data**
+**步驟 4︰解密包含企業資料的緩衝區**
 
 ```csharp
 DataProtectionInfo dataProtectionInfo =
@@ -821,14 +829,14 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 
 ```
 
-> **APIs** <br>
+> **API** <br>
 [DataProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectioninfo.aspx)<br>
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
 
-### Protect data to a folder
+### 保護寫入資料夾的資料
 
-You can create a folder and protect it. That way any items that you add to that folder are automatically protected.
+您可以建立一個受保護的資料夾。 如此一來，您新增至該資料夾的任何項目都會自動受到保護。
 
 ```csharp
 private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, string identity)
@@ -852,20 +860,20 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 }
 ```
 
-Make sure that the folder is empty before you protect it. You can't protect a folder that already contains items.
+保護資料夾之前，請確定該資料夾是空的。 您無法保護已包含項目的資料夾。
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)<br>
 [FileProtectionManager.ProtectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.protectasync.aspx)<br>
 [FileProtectionInfo.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.identity.aspx)<br>
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
 
-### Protect data to a network end point
+### 保護寫入網路端點的資料
 
-Create a protected thread context to send that data to an enterprise endpoint.  
+建立受保護的執行緒內容，將該資料傳送到企業端點。  
 
-**Step 1: Get the identity of the network endpoint**
+**步驟 1︰取得網路端點的身分識別**
 
 ```csharp
 Windows.Networking.HostName hostName =
@@ -875,10 +883,10 @@ string identity = await ProtectionPolicyManager.
     GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync.aspx)
 
-**Step 2: Create a protected thread context and send data to the network endpoint**
+**步驟 2︰建立受保護的執行緒內容，並將資料傳送到網路端點**
 
 ```csharp
 HttpClient client = null;
@@ -908,16 +916,16 @@ else
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-### Protect data that your app shares through a share contract
+### 保護您的應用程式透過分享協定共用的資料
 
-If you want users to share content from your app, you'll have to implement a share contract and handle the [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) event.
+如果您要讓使用者透過您的應用程式分享內容，您必須實作分享協定和處理 [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件。
 
-In your event handler, set the enterprise identity context in the data package.
+在您的事件處理常式中，設定資料套件中的企業身分識別內容。
 
 ```csharp
 private void OnShareSourceOperation(object sender, RoutedEventArgs e)
@@ -940,12 +948,12 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
 
-### Protect files that you copy to another location
+### 保護您複製到其他位置的檔案
 
 ```csharp
 private async void CopyProtectionFromOneFileToAnother
@@ -963,23 +971,23 @@ private async void CopyProtectionFromOneFileToAnother
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 
-## Protect enterprise data when the screen of the device is locked
+### 於裝置畫面鎖定時保護企業資料
 
-Remove all sensitive data in memory when the device is locked. When the user unlocks the device, your app can safely add that data back.
+當裝置鎖定時，移除記憶體中所有的敏感資料。 當使用者解除鎖定裝置後，您的應用程式可以安全地重新加回該資料。
 
-Handle the [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending.aspx) event so that your app knows when the screen is locked. This event is raised only if the administrator configures a secure data protection under lock policy. Windows temporarily removes the data protection keys that are provisioned on the device. Windows removes these keys to ensure that there is no unauthorized access to encrypted data while the device is locked and possibly not in possession of its owner.  
+處理 [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending.aspx) 事件，使您的應用程式知道螢幕何時鎖定。 只有當系統管理員根據鎖定原則設定安全的資料保護時，才會引發這個事件。 Windows 會暫時移除裝置上佈建的資料保護金鑰。 當裝置被鎖定，而且可能不在其擁有者手上時，Windows 會移除這些金鑰，以確保無法對加密資料進行未授權的存取。  
 
-Handle the [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) event so that your app knows when the screen is unlocked. This event is raised regardless of whether the administrator configures a secure data protection under lock policy.
+處理 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) 事件，使您的應用程式知道螢幕何時解除鎖定。 無論系統管理員是否根據鎖定原則設定安全的資料保護，都會引發這個事件。
 
-### Remove sensitive data in memory when the screen is locked
+#### 當螢幕鎖定時，移除記憶體中的敏感資料
 
-Protect sensitive data, and close any file streams that your app has opened on protected files to help ensure that the system doesn't cache any sensitive data in memory.
+保護敏感資料，並關閉您的應用程式在受保護的檔案上開啟的任何檔案資料流，以協助確保系統不會快取記憶體中的所有敏感資料。
 
-This example saves content from a textblock to an encrypted buffer and removes the content from that textblock.
+這個範例會將文字區塊中的內容儲存至加密的緩衝區，並移除該文字區塊的內容。
 
 ```csharp
 private async void ProtectionPolicyManager_ProtectedAccessSuspending(object sender, ProtectedAccessSuspendingEventArgs e)
@@ -1012,7 +1020,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.ProtectedAccessSuspending](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)</br>
@@ -1021,13 +1029,13 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 [ProtectedAccessSuspendingEventArgs.GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral.aspx)<br>
 [Deferral.Complete](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)<br>
 
-### Add back sensitive data when the device is unlocked
+#### 當裝置解除鎖定後，將敏感資料重新加回
 
-[**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) is raised when the device is unlocked and the keys are available on the device again.
+當裝置解除鎖定，而且裝置上的金鑰又再次可用時，就會引發 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)。
 
-[**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccessresumedeventargs.identities.aspx) is an empty collection if the administrator hasn't configured a secure data protection under lock policy.
+如果系統管理員未根據鎖定原則設定安全的資料保護，[**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccessresumedeventargs.identities.aspx) 會是空集合。
 
-This example does the reverse of the previous example. It decrypts the buffer, adds information from that buffer back to the textbox and then disposes of the buffer.
+這個範例與前面的範例相反。 它會解密緩衝區，將該緩衝區中的資訊重新加回文字區塊，然後捨棄該緩衝區。
 
 ```csharp
 private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender, ProtectedAccessResumedEventArgs e)
@@ -1049,18 +1057,18 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager.ProtectedAccessResumed](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)<br>
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)</br>
 [DataProtectionManager.UnprotectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.unprotectasync.aspx)<br>
 [BufferProtectUnprotectResult.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.aspx)<br>
 
-## Handle enterprise data when protected content is revoked
+## 在受保護的內容被撤銷時處理企業資料
 
-If you want your app to be notified when the device is un-enrolled from MDM or when the policy administrator explicitly revokes access to enterprise data, handle the [**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx) event.
+如果您想要您的應用程式在裝置從 MDM 取消註冊時收到通知，或是原則系統管理員明確撤銷企業資料的存取權時，請處理 [**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx) 事件。
 
-This example determines if the data in an enterprise mailbox for an email app has been revoked.
+這個範例會判斷是否已撤銷電子郵件應用程式的企業信箱資料。
 
 ```csharp
 private string mailIdentity = "contoso.com";
@@ -1084,12 +1092,18 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 }
 ```
 
-> **APIs** <br>
+> **API** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
-## Related topics
+## 相關主題
 
-[Windows Information Protection (WIP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
- 
+[Windows 資訊保護 (WIP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+ 
 
- 
+ 
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

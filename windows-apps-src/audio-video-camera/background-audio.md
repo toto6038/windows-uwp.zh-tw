@@ -1,20 +1,16 @@
 ---
 author: drewbatgit
-ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: "本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) 應用程式。"
-title: "背景音訊"
+ms.assetid: 
+description: "本文說明當您的 app 在背景執行時如何播放媒體。"
+title: "在背景播放媒體"
 translationtype: Human Translation
-ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
-ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+ms.sourcegitcommit: c8cbc538e0979f48b657197d59cb94a90bc61210
+ms.openlocfilehash: a477827553ac1780ac625deeee08d84ab638d4c2
 
 ---
 
-# 背景音訊
-
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-本文說明如何建立可在背景播放音訊的通用 Windows 平台 (UWP) App。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 本文討論背景音訊 App 的元件，以及它們如何搭配運作。
+# 在背景播放媒體
+本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
 
 背景音訊播放的案例包含：
 
@@ -22,116 +18,103 @@ ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 
 -   **使用工作切換器：**使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
 
-本文中描述的背景音訊實作可讓 App 在所有的 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
+本文中描述的背景音訊實作可讓您的 app 在所有 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
-**注意**  
-[背景音訊 UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619485)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+> [!NOTE]
+> 本文中的程式碼是採用 UWP [背景音訊範例](http://go.microsoft.com/fwlink/p/?LinkId=800141)的程式碼。
 
- 
+## 一個處理程序模型的說明。
+從 Windows 10 版本 1607 開始，引進了新的單一處理程序模型，可大幅簡化啟用背景音訊的處理程序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。
 
-## 背景音訊架構
+藉由消除複雜的跨處理程序通訊與狀態管理，新模型可讓您藉由大幅減少程式碼，更快速地實作背景音訊。 不過，目前的回溯相容性版本仍然支援兩個處理程序的模型。 如需詳細資訊，請參閱[舊版的背景音效模型](background-audio.md)。
 
-執行背景播放的應用程式包含兩個處理程序。 第一個處理程序是在前景執行的主應用程式，其包含應用程式 UI 和用戶端邏輯。 第二個處理程序是背景播放工作，可如同所有的 UWP app 背景工作一樣實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。 背景工作包含音訊播放邏輯和背景服務。 背景工作會透過系統媒體傳輸控制項與系統進行通訊。
+## 背景音訊的需求
+當您的 app 處於背景時，該 app 必須符合下列需求才能播放音訊。
 
-下圖是系統設計方式的概觀。
+* 將**背景媒體播放**功能新增到您的應用程式資訊清單，如本文稍後所述。
+* 如果您的 app 會停用 **MediaPlayer** 與系統媒體傳輸控制項 (SMTC) 的自動整合 (例如，將 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 屬性設為 false)，則您必須實作與 SMTC 的手動整合，以啟用背景媒體播放。 如果您使用 **MediaPlayer** 以外的 API (例如 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph)) 來播放音訊，而且想要在您的 app 移至背景時繼續播放音訊，也必須手動與 SMTC 整合。 最低的 SMTC 整合需求請參閱[系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)的＜針對背景音訊使用系統媒體傳輸控制項＞一節中所述。
+* 當您的 app 處於背景時，您必須維持在系統針對背景 app 所設定的記憶體使用量限制之下。 本文稍後將提供處於背景時用於管理記憶體的指導方針。
 
-![Windows 10 背景音訊架構](images/backround-audio-architecture-win10.png)
-## MediaPlayer
+## 背景媒體播放資訊清單功能
+若要啟用背景音訊，您必須將背景媒體播放功能新增到應用程式資訊清單檔案 Package.appxmanifest。 
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空間包含用來在背景播放音訊的 API。 每個 app 都有一個可發生播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 執行個體。 您的背景音訊 app 會呼叫方法並設定 **MediaPlayer** 類別的屬性，以設定目前的曲目、開始播放、暫停、向前快轉、倒轉等。 媒體播放程式物件執行個體一律透過 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 屬性存取。
+**使用資訊清單設計工具以將功能新增到應用程式資訊清單**
 
-## MediaPlayer Proxy 和虛設常式
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能]**** 索引標籤。
+3.  選取 [背景媒體播放]**** 核取方塊。
 
-從 app 的背景處理程序存取 **BackgroundMediaPlayer.Current** 時，**MediaPlayer** 執行個體會在背景工作主機中啟動並可直接進行操作。
+若要藉由手動編輯應用程式資訊清單 xml 來設定功能，請先確認已在 **Package** 元素中定義 *uap3* 命名空間前置詞。 如果沒有，請新增它，如下所示。
+```xml
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap uap3 mp">
+```
 
-從前景 app 存取 **BackgroundMediaPlayer.Current** 時，傳回的 **MediaPlayer** 執行個體實際上是與背景處理程序中的虛設常式進行通訊的 Proxy。 這個虛設常式會與實際 **MediaPlayer** 執行個體進行通訊，該執行個體也裝載在背景處理程序中。
+接下來，將 *backgroundMediaPlayback* 功能新增到 **Capabilities** 元素︰
+```xml
+<Capabilities>
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+</Capabilities>
+```
 
-前景和背景處理程序兩者都可以存取 **MediaPlayer** 執行個體的大部分屬性，但 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 和 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 除外，它們只能從背景處理程序存取。 前景 app 和背景處理程序兩者都可以收到媒體特定事件的通知，如 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603) 及 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606)。
+##處理前景與背景之間的轉換
+當您的 app 從前景移到背景時，會引發 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 當您的 app 回到前景時，會引發 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 因為這些是應用程式週期事件，您應該在建立 app 時登錄這些事件的處理常式。 在預設專案範本中，這表示將它新增到 App.xaml.cs 中的 **App** 類別建構函式。 因為在背景中執行將會減少系統允許您 app 保留的記憶體資源，所以，您也應該登錄 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) 和 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件，這將用來檢查您 app 目前的記憶體使用量與目前的限制。 下列範例將示範這些事件的處理常式。 如需 UWP app 的應用程式週期詳細資訊，請參閱 [App 週期](../\launch-resume\app-lifecycle.md)。
 
-## 播放清單
+[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
 
-背景音訊 App 的常見案例就是連續播放多個項目。 此案例最容易在您的背景處理程序中使用 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 物件完成，而將該物件指派給 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 屬性，即可在 **MediaPlayer** 上將它設為來源。
+建立變數以追蹤您目前是否正在背景中執行。
 
-不可能從在背景處理程序中設定的前景處理程序存取 **MediaPlaybackList**。
+[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-## 系統媒體傳輸控制項
+引發 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件時，請設定追蹤變數，以指出您目前正在背景中執行。 您不應該在 **EnteredBackground** 事件中執行長時間執行的工作，因為這會在轉換到背景時導致使用者看見緩慢的轉換過程。
 
-使用者不需直接使用 App 的 UI，即可透過藍牙裝置、SmartGlass 和系統媒體傳輸控制項來控制音訊播放。 您的背景工作會使用 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別，訂閱這些使用者起始的系統事件。
+[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
-若要在背景處理程序中取得 **SystemMediaTransportControls** 執行個體，請使用 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 屬性。 前景 app 可藉由呼叫 [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 來取得此類別的執行個體，但傳回的執行個體是與背景工作無關的僅限前景執行個體。
+當您的 app 轉換到背景時，系統會降低 app 的記憶體限制，以便確保目前的前景 app 有足夠的資源來提供立即回應的使用者體驗。 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件處理常式可讓您的 app 了解其分配的記憶體已經降低，並且在傳入處理常式的事件引數中提供新的限制。 比較事件引數的 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 屬性 (提供您 app 目前的使用量) 與 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 屬性 (指定新的限制)。 如果您的記憶體使用量超過限制，就需要降低記憶體使用量。 這個範例是在協助程式方法 **ReduceMemoryUsage** 中完成此動作，此方法會在本文後續內容中加以定義。
 
-## 在工作間傳送訊息
+[!code-cs[MemoryUsageLimitChanging](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
 
-有時候，您會想在背景音訊 app 的兩個處理程序間進行通訊。 例如，開始播放新曲目時，您可能希望背景工作通知前景工作，然後將新的歌曲標題傳送到前景工作以顯示在畫面上。
+> [!NOTE] 
+> 有些裝置設定可讓應用程式在新的記憶體限制下繼續執行，直到系統感受到資源壓力為止，而有些則不行。 特別的是在 Xbox 上，如果 app 未在將 2 &gt; &gt; &gt; 秒內將記憶體降到新限制之下，將會被暫停或終止。 這表示，您可以使用這個事件，在引發事件後的 2 秒內將資源使用量降到限制之下，以便在範圍最廣泛的裝置上提供最佳體驗。
 
-簡單的通訊機制可同時在前景和背景處理程序中引發事件。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法會個別叫用對應處理程序中的事件。 訂閱 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件，可以接收訊息。
 
-資料可以做為引數傳遞至傳送訊息方法，然後再傳入收到訊息事件處理常式。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別傳遞資料。 此類別是一個字典，其中包含的字串為索引鍵，而其他值類型則是值。 您可以傳送簡易的值類型，例如整數、字串和布林值。
+可能的情況是，當您的 app 第一次轉換到背景時，它的記憶體使用量低於背景 app 的記憶體限制，但之後它的使用量會在後續某個時間點增加，而其開始處理限制。 處理常式 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) 讓您有機會在其增加時檢查您目前的使用量，並視需要釋出記憶體。 檢查 [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLevel) 是否為 **High** 或 **OverLimit**，如果是，請降低記憶體使用量。 同樣地，在此範例中，這個處理程序是由協助程式方法 **ReduceMemoryUsage** 來處理。 您也可以訂閱 [**AppMemoryUsageDecreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageDecreased) 事件，檢查您的 app 是否低於限制，如果是，則您就會知道您可以配置其他資源。
 
-**注意**  
-前景 App 若在執行中，則 App 僅應呼叫 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533)。 若前景 App 未在執行中而嘗試呼叫此方法，則會擲回例外狀況。 App 負責前景 App 狀態到背景處理程序的通訊。 您可使用 App 週期事件、本機存放區中保留的狀態值以及各處理程序間的訊息，來完成此操作。 
+[!code-cs[MemoryUsageIncreased](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-## 背景工作週期
+**ReduceMemoryUsage** 是一個協助程式方法，當您的 app 超過可在背景執行之 app 的使用量限制時，您可以實作此方法來釋出記憶體。 釋出記憶體的方式取決於您 app 的特性，但有一個釋出記憶體的建議方式是處置您的 UI 以及與您 app 檢視相關聯的其他資源。 首先，請確定您是在背景模式中執行，接著將 app 視窗的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 屬性設為 null。 呼叫 **GC.Collect**，以指示系統立即回收釋出的出記憶體。
 
-背景工作的存留期與 App 的目前播放狀態有很緊密的關係。 例如，當使用者暫停音訊播放時，系統可能會根據情況終止或取消您的 App。 在一段沒有音訊播放的時間之後，系統可能會自動關閉背景工作。
+[!code-cs[UnloadViewContent](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
-[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法會在 app 從在前景 app 中執行的程式碼存取 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 時，或在您登錄 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 事件的處理常式時首次呼叫，以較早發生者為準。 建議您在首次呼叫 **BackgroundMediaPlayer.Current** 之前，先註冊收到訊息的處理常式，如此前景 app 就不會錯過任何從背景處理程序傳送的訊息。
+收集到視窗內容時，每個 Frame 就會開始中斷連線處理程序。 如果視窗內容下的視覺物件樹狀結構中具有 Page，這些項目就會開始觸發它們的 [**Unloaded**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.Unloaded) 事件。 除非已移除對 Page 的所有參考，否則將無法從記憶體中完全清除它們。 在 **Unloaded** 回呼中，執行下列動作，以確定會快速釋放記憶體︰
+* 清除並設定 Page 中的任何大型資料結構為 null。
+* 取消登錄 Page 內具有回呼方法的所有事件處理常式。 請確定會在 Page 的 Loaded 事件處理常式期間登錄這些回呼。 已重新建置 UI 且已將 Page 新增到視覺物件樹狀結構時，即會引發 Loaded 事件。
+* 在 Unloaded 回呼結尾呼叫 **GC.Collect**，針對您剛剛設定為 null 的任何大型資料結構快速進行記憶體回收。
 
-若要讓背景工作持續執行，您的 app 必須在 **Run** 方法中要求 [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，並在工作執行個體收到 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) 或 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) 事件時呼叫 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 不要在 **Run** 方法中執行迴圈或等待，因為這樣會消耗資源，而且可能導致系統終止 app 的背景工作。
+[!code-cs[Unloaded](./code/BackgroundAudio_RS1/cs/MainPage.xaml.cs#SnippetUnloaded)]
 
-當 **Run** 方法完成且沒有要求延遲時，您的背景工作會取得 **Completed** 事件。 在某些情況下，當您的 app 取得 **Canceled** 事件時，稍後也可能會收到 **Completed** 事件。 執行 **Run** 時，您的工作可能會收到 **Canceled** 事件，所以請務必管理此潛在的同時發生情形。
+在 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件處理常式中，您應該設定追蹤變數，以指出您的 app 已不在背景執行。 接下來，檢查目前視窗的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 是否為 null，如果您正在背景中執行，且您已處置了 app 檢視以清除記憶體，則其會是 null。 如果視窗內容為 null，請重建您的 app 檢視。 在這個範例中，視窗內容是在協助程式方法 **CreateRootFrame** 中所建立。
 
-可能會取消背景工作的情況包含：
+[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
 
--   具備音訊播放功能的新 App 會在強制執行專屬性子原則的系統上啟動。 請參閱下面[背景音訊工作存留期的系統原則](#system-policies-for-background-audio-task-lifetime)一節。
+**CreateRootFrame** 協助程式方法會重新建立您 app 的檢視內容。 這個方法中的程式碼與預設專案範本中提供的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式程式碼完全相同。 唯一的差異在於 **Launching** 處理常式會從 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) 屬性判斷先前的執行狀態，而 **CreateRootFrame** 方法只需取得以引數形式傳入的先前執行狀態。 若要將重複的程式碼最小化，您可以視需要重構預設的 **Launching** 事件處理常式程式碼來呼叫 **CreateRootFrame**。
 
--   背景工作已啟動但尚未播放音樂，然後前景應用程式就暫停。
+[!code-cs[CreateRootFrame](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
--   其他媒體中斷，例如來電或 VoIP 通話。
+## 背景媒體 app 的網路可用性
+所有網路感知的媒體來源 (不是從資料流或檔案建立的媒體來源) 會在擷取遠端內容時，讓網路連線保持使用中狀態，並且在不需擷取遠端內容時釋放網路連線。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) 特別依賴應用程式使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)，正確地向平台報告正確的緩衝範圍。 針對整個內容完整進行緩衝處理之後，就不會再代替 app 保留網路了。
 
-可能未經通知即終止背景工作的情況包含：
+如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
--   VoIP 通話到來，而系統上沒有足夠的可用記憶體可讓背景工作持續執行。
-
--   違反資源原則。
-
--   工作取消或完成沒有正常結束。
-
-## 背景音訊工作存留期的系統原則
-
-下列原則有助於判斷系統如何管理背景音訊工作的存留期。
-
-### 專屬性
-
-若已啟用，這個子原則會限制任何指定時間的背景音訊工作數目最多為 1。 它已在行動裝置和其他非桌上型電腦 SKU 上啟用。
-
-### 閒置逾時
-
-由於資源限制，系統可能會在一段閒置時間之後終止您的背景工作。
-
-如果符合下列兩個條件，背景工作會被視為「非使用中」：
-
--   看不見前景處理程序 (已暫停或已終止)。
-
--   背景媒體播放程式不在播放狀態中。
-
-如果這些條件都已符合，則背景媒體系統原則會啟動計時器。 如果在計時器到期時兩個條件均未變更，則背景媒體系統原則會終止背景工作。
-
-### 共用的存留期
-
-若已啟用，這個子原則會強制背景工作相依於前景工作的存留期。 如果使用者或系統已關閉前景工作，則背景工作也會關閉。
-
-不過，請注意這不表示前景相依於背景。 如果背景工作已關閉，這不會強制關閉前景工作。
-
-下表列出各裝置類型上會強制執行的原則。
-
-| 子原則             | 桌上型電腦  | 行動裝置版   | 其他    |
-|------------------------|----------|----------|----------|
-| **專屬性**        | 已停用 | 已啟用  | 已啟用  |
-| **閒置逾時** | 已停用 | 已啟用  | 已停用 |
-| **共用的存留期**    | 已啟用  | 已停用 | 已停用 |
-
- 
+## 相關主題
+* [媒體播放](media-playback.md)
+* [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
+* [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)
+* [背景音訊範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 
@@ -143,6 +126,6 @@ ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

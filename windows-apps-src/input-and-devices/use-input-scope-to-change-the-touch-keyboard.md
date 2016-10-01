@@ -9,7 +9,7 @@ ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 02f06ee498b136f811b4b3b8080a9cb043693504
+ms.openlocfilehash: 692905c1c6d9b3d706baeadc480041c77163c272
 
 ---
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 02f06ee498b136f811b4b3b8080a9cb043693504
 
 您的 app 中可用的輸入範圍是 [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 列舉的成員。 您可以將 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 或 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 的 **InputScope** 屬性設定成這些值的其中之一。
 
-> **重要** &nbsp;&nbsp;[**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) 上的[**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) 屬性僅支援 **Password** 和 **NumericPin** 值。 會略過其他任何值。
+> **重要**&nbsp;&nbsp;[**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) 上的[**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) 屬性僅支援 **Password** 和 **NumericPin** 值。 會忽略任何其他的值。
 
 您會在這裡變更數個文字方塊的輸入範圍，使其符合每個文字方塊的預期資料。
 
@@ -117,25 +117,25 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 控制項有數個影響 SIP 行為的屬性。 若要為使用者提供最佳的體驗，了解這些屬性如何影響使用觸控進行的文字輸入，就相當重要。
 
--   [ **IsSpellCheckEnabled** ](https://msdn.microsoft.com/library/windows/apps/br209688) ─ 當為文字控制項啟用拼字檢查時，該控制項會與系統的拼字檢查引擎互動，將無法辨識的單字標示出來。 您可以點選單字以查看建議的校正清單。 預設會啟用拼字檢查功能。
+-   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) ─ 當為文字控制項啟用拼字檢查時，該控制項會與系統的拼字檢查引擎互動，將無法辨識的單字標示出來。 您可以點選單字以查看建議的校正清單。 預設會啟用拼字檢查功能。
 
     對於 **Default** 輸入範圍，這個屬性也可以自動大寫句子中的第一個字，並自動校正您輸入的文字。 這些自動校正功能在其他輸入範圍可能會停用。 如需詳細資訊，請參閱本主題稍後的表格。
 
--   [ **IsTextPredictionEnabled** ](https://msdn.microsoft.com/library/windows/apps/br209690) — 文字控制項啟用文字預測時，系統會顯示您可能正開始輸入的文字清單。 您可以從清單中選取單字，這樣您就不必輸入整個單字。 文字預測預設為啟用。
+-   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) — 文字控制項啟用文字預測時，系統會顯示您可能正開始輸入的文字清單。 您可以從清單中選取單字，這樣您就不必輸入整個單字。 文字預測預設為啟用。
 
     如果輸入範圍不是 **Default**，則即使 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 屬性為 **true**，也可能停用文字預測功能。能。 如需詳細資訊，請參閱本主題稍後的表格。
 
-    **注意** &nbsp;&nbsp;在行動裝置系列上，文字預測和拼字校正是顯示在鍵盤上方區域的 SIP 中。 如果 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 設為 **false**，則即使 [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) 為 **true**，SIP 的這個部分也會隱藏，並且會停用自動校正。
+    **注意**&nbsp;&nbsp;在行動裝置系列上，文字預測和拼字校正是顯示在鍵盤上方區域的 SIP 中。 如果 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 設為 **false**，則即使 [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) 為 **true**，SIP 的這個部分也會隱藏，並且會停用自動校正。
 
--   [ **PreventKeyboardDisplayOnProgrammaticFocus** ](https://msdn.microsoft.com/library/windows/apps/dn299273) — 此屬性是 **true** 時，當焦點透過程式設計設定在文字控制項上時，系統將不會顯示 SIP。 取而代之的是，只有當使用者與控制項互動時，才會顯示鍵盤。
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273) — 此屬性是 **true** 時，當焦點透過程式設計設定在文字控制項上時，系統將不會顯示 SIP。 取而代之的是，只有當使用者與控制項互動時，才會顯示鍵盤。
 
 ## 適用於 Windows 和 Windows Phone 的觸控式鍵盤索引
 
 這些表格會針對通用輸入範圍值顯示桌面和行動裝置上的螢幕輸入面板 (SIP) 配置。 針對每個輸入範圍，會列出對 **IsSpellCheckEnabled** 和 **IsTextPredictionEnabled** 屬性所啟用之功能的輸入範圍效果。 這並非可用之輸入範圍的完整清單。
 
-> **注意** &nbsp;&nbsp;行動裝置上的 SIP 大小越小，就會讓您針對行動 App 設定正確的輸入範圍特別重要。 如這裡所示，Windows Phone 提供更多樣的專用鍵盤配置。 文字欄位如果在 Windows 市集應用程式中不需要設定輸入範圍，在 Windows Phone 市集應用程式中設定輸入範圍可能會有好處。
+> **注意**&nbsp;&nbsp;行動裝置上的 SIP 大小越小，就會讓您針對行動裝置 app 設定正確的輸入範圍特別重要。 如這裡所示，Windows Phone 提供更多樣的專用鍵盤配置。 文字欄位如果在 Windows 市集應用程式中不需要設定輸入範圍，不過在 Windows Phone 市集應用程式中設定輸入範圍可能會有好處。
 
-> **提示** &nbsp;&nbsp;大部分觸控式鍵盤皆可供您在字母配置與數字和符號配置之間切換。 在 Windows 上，請切換 [&amp;123]**** 鍵。 在 Windows Phone 上，按 [&amp;123]**** 鍵以變更為數字和符號配置，然後按 [abcd]**** 鍵以變更為字母配置。
+> **秘訣**&nbsp;&nbsp;大部分觸控式鍵盤皆可供您在字母配置與數字和符號配置之間切換。 在 Windows 上，請切換 **&amp;123** 鍵。 在 Windows Phone 上，按 [&amp;123]**** 鍵以變更為數字和符號配置，然後按 [abcd]**** 鍵以變更為字母配置。
 
 ### 預設值
 
@@ -233,7 +233,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows 電話公式觸控式鍵盤](images/input-scopes/kbdpcformula.png)<br>也包含 [%]****、[$]**** 及 [+]**** 鍵。| ![Windows Phone 公式觸控式鍵盤](images/input-scopes/kbdwpformula.png)<br>按住句點鍵可顯示其他選項 ( - ! ? , ). 按住 [=]**** 可顯示其他選項 ( ( ) : &lt;&gt; )。 |
+| ![Windows 電話公式觸控式鍵盤](images/input-scopes/kbdpcformula.png)<br>也包含 [%]****、[$]**** 及 [+]**** 鍵。| ![Windows Phone 公式觸控式鍵盤](images/input-scopes/kbdwpformula.png)<br>按住句點鍵可顯示其他選項 ( - ! ? , ). 按住 [=]**** 鍵可顯示其他選項 ( ( ) : &lt; &gt; )。 |
 |功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：一律停用</li><li>自動大寫：一律停用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：預設為開啟，可以停用</li><li>自動大寫：一律停用</li><li>文字預測：預設為開啟，可以停用</li></ul> |
 
 ### Chat
@@ -256,6 +256,6 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

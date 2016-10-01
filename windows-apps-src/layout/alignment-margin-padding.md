@@ -7,7 +7,7 @@ label: Alignment, margin, and padding
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 ---
 # 對齊、邊界及邊框間距
@@ -18,7 +18,7 @@ ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
 
 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 與 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) 屬性描述應該如何在父元素分配的配置空間內放置子元素。 同時使用這些屬性，容器的配置邏輯便能夠將子元素放在容器內 (面板或控制項)。 對齊屬性的用途是向調適型配置容器提示所需的配置，因此基本上是在 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 子系上設定，並由另一個 **FrameworkElement** 容器父系來解譯。 對齊值可以指定元素要與哪個方向的邊緣對齊，或是置中對齊。 不過，兩個對齊屬性的預設值都是 **Stretch**。 採用 **Stretch** 對齊，元素會填滿提供給它們的配置空間。 **Stretch** 是預設值，可在沒有明確度量值或配置的度量階段未提供任何 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的情況下，較容易使用調適型配置技術。 使用此預設值時，不會有明確高度/寬度無法放進容器內而被裁剪 (除非調整每個容器大小) 的風險。
 
-> **注意：**&nbsp;&nbsp;一般的配置原則是，最好只對特定的主要元素套用度量值，針對其他元素則使用調適型配置行為。 這樣可隨時在使用者調整最上層應用程式視窗時，提供彈性的配置行為。
+> **注意**&nbsp;&nbsp;一般的配置原則是，最好只對特定主要元素套用度量值，並讓其他元素使用調適型配置行為。 這樣可隨時在使用者調整最上層應用程式視窗時，提供彈性的配置行為。
 
  
 如果彈性容器內有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或裁剪的情況，即使將 **Stretch** 設定為對齊值，配置仍是由其容器的行為控制。 在面板中，已經被 **Height** 與 **Width** 去除的 **Stretch** 值，即有如 **Center** 值。
@@ -82,6 +82,6 @@ ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

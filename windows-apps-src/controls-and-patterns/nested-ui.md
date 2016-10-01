@@ -1,144 +1,148 @@
 ---
 author: Jwmsft
-Description: Use nested UI to enable multiple actions on a list item
-title: Nested UI in list items
+Description: "使用巢狀 UI 在清單項目上啟用多個動作"
+title: "清單項目中的巢狀 UI"
 label: Nested UI in list items
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+
 ---
+# 清單項目中的巢狀 UI
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Nested UI in list items
+巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在可同時接受獨立焦點之容器內的巢狀可動作控制項。
 
-Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.
+您可以使用巢狀 UI 來向使用者顯示其他可協助加快執行重要動作的選項。 不過公開越多動作，將會使 UI 變得越加複雜。 請務必在選擇使用此 UI 模式時額外注意此狀況。 本文提供可協助您針對您特定的 UI 判斷最佳動作的指導方針。
 
-You can use nested UI to present a user with additional options that help accelerate taking important actions. However, the more actions you expose, the more complicated your UI becomes. You need to take extra care when you choose to use this UI pattern. This article provides guidelines to help you determine the best course of action for your particular UI.
+在本文中，我們將會針對在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
 
-In this article, we discuss the creation of nested UI in [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
+在本文中，我們所使用的「清單」**、「清單項目」**及「巢狀 UI」**等詞彙的定義如下：
+- 「清單」**指的是包含在清單檢視或方格檢視中的項目集合。
+- 「清單項目」**指的是清單上使用者可以採取動作的個別項目。
+- 「巢狀 UI」**指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
 
-In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
-- *List* refers to a collection of items contained in a list view or grid view.
-- *List item* refers to an individual item that a user can take action on in a list.
-- *Nested UI* refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
+![巢狀 UI 組件](images/nested-ui-example-1.png)
 
-![Nested UI parts](images/nested-ui-example-1.png)
+> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
-> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
+## 主要和次要動作
 
-## Primary and secondary actions
+建立具有清單的 UI 時，請考慮使用者會針對那些清單項目所採取的動作。  
 
-When creating UI with a list, consider what actions the user might take from those list items.  
+- 使用者可以按一下項目來執行動作嗎？
+    - 一般而言，按一下清單項目會起始一項動作，但那並非是絕對的。
+- 使用者可能採取的動作是否超過一項？
+    - 例如，點選清單中的電子郵件將會開啟該封電子郵件。 不過，使用者可能會有其他想在不先開啟電子郵件的情況下執行的動作，例如刪除該封電子郵件。 如果使用者能夠直接在清單中存取此動作，將會非常有幫助。
+- 動作應該以何種方式向使用者公開？
+    - 請考慮到所有輸入類型。 某些巢狀 UI 的形式可能很適合某種輸入方法，但卻無法搭配其他方法使用。  
 
-- Can a user click on the item to perform an action?
-    - Typically, clicking a list item initiates an action, but it doesn't have too.
-- Is there more than one action the user can take?
-    - For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.
-- How should the actions be exposed to the user?
-    - Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.  
+「主要動作」**為使用者按下清單項目時所預期發生的情況。
 
-The *primary action* is what the user expects to happen when they press the list item.
+「次要動作」**通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
 
-*Secondary actions* are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.
+## 次要動作的選項
 
-## Options for secondary actions
+建立清單 UI 時，請先確定您已考慮到所有 UWP 所支援的輸入方法。 如需不同輸入種類的詳細資訊，請參閱[輸入基本資訊](../input-and-devices/input-primer.md)。
 
-When creating list UI, you first need to make sure you account for all input methods that UWP supports. For more info about different kinds of input, see [Input primer](../input-and-devices/input-primer.md).
+當您確定 App 已支援所有 UWP 所支援的輸入之後，您應該決定該 App 的次要動作是否具有足夠的重要性，需要在主要清單中公開為加速器。 請記得，公開越多動作，將會使 UI 變得越加複雜。 您是否真的需要在主要清單 UI 中公開次要動作？還是可以將它們放到別處？
 
-After you have made sure that your app supports all inputs that UWP supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
+如果有其他動作是所有輸入隨時都需要使用的，您可以考慮在主要清單 UI 中公開那些動作。
 
-You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.
+如果您決定不需要在主要清單 UI 中放置次要動作，還有數種其他方法可以將它們公開給使用者。 以下為一些可以考慮放置次要動作的位置選項。
 
-If you decide that putting secondary actions in the main list UI is not necessary, there are several other ways you can expose them to the user. Here are some options you can consider for where to place secondary actions.
+### 將次要動作放在詳細資料頁面上
 
-### Put secondary actions on the detail page
+將次要動作放在按下清單項目後會瀏覽到的頁面上。 當您使用主要/詳細資料模式時，詳細資料頁面通常是個放置次要動作的好位置。
 
-Put the secondary actions on the page that the list item navigates to when it’s pressed. When you use the master/details pattern, the detail page is often a good place to put secondary actions.
+如需詳細資訊，請參閱[主要/詳細資料模式](master-details.md)。
 
-For more info, see the [Master/detail pattern](master-details.md).
+### 將次要動作放在操作功能表中
 
-### Put secondary actions in a context menu
+將次要動作放在使用者能以滑鼠右鍵按一下或是長按來存取的操作功能表中。 這能在不需要載入詳細資料頁面的情況下，讓使用者可以執行動作 (例如刪除電子郵件)。 同時在詳細資料頁面上提供這些選項是一個良好的做法，因為操作功能表的目的是做為加速器，而非主要 UI。
 
-Put the secondary actions in a context menu that the user can access via right-click or press-and-hold. This provides the benefit of letting the user perform an action, such as deleting an email, without having to load the detail page. It's a good practice to also make these options available on the detail page, as context menus are intended to be accelerators rather than primary UI.
+如果要在輸入是來自控制器或遙控器的情況下公開次要動作，我們建議您使用操作功能表。
 
-To expose secondary actions when input is from a gamepad or remote control, we recommend that you use a context menu.
+如需詳細資訊，請參閱[操作功能表和飛出視窗](menus.md)。
 
-For more info, see [Context menus and flyouts](menus.md).
+### 將次要動作放在暫留 UI 中以針對游標輸入最佳化
 
-### Put secondary actions in hover UI to optimize for pointer input
+如果您預期 App 經常會搭配游標輸入 (例如滑鼠和手寫筆) 使用，並想要使次要動作可以方便提供那些輸入使用，您可以只在暫留上顯示次要動作。 此加速器只會在使用游標輸入時可見，因此請務必同時使用其他選項來支援其他輸入類型。
 
-If you expect your app to be used frequently with pointer input such as mouse and pen, and want to make secondary actions readily available only to those inputs, then you can show the secondary actions only on hover. This accelerator is visible only when a pointer input is used, so be sure to use the other options to support other input types as well.
-
-![Nested UI shown on hover](images/nested-ui-hover.png)
+![於暫留上顯示的巢狀 UI](images/nested-ui-hover.png)
 
 
-For more info, see [Mouse interactions](../input-and-devices/mouse-interactions.md).
+如需詳細資訊，請參閱[互動](../input-and-devices/mouse-interactions.md)。
 
-## UI placement for primary and secondary actions
+## 主要和次要動作的 UI 放置
 
-If you decide that secondary actions should be exposed in the main list UI, we recommend the following guidelines.
+如果您決定在主要清單 UI 中公開次要動作，我們建議您遵循下列指導方針。
 
-When you create a list item with primary and secondary actions, place the primary action to the left and secondary actions to the right. In left-to-right reading cultures, users associate actions on the left side of list item as the primary action.
+當您建立具有主要和次要動作的清單項目時，請將主要動作放在左方，並將次要動作放在右方。 對於閱讀方式是從左到右的文化來說，使用者會將位於清單項目左方的動作視為主要動做。
 
-In these examples, we talk about list UI where the item flows more horizontally (it is wider than its height). However, you might have list items that are more square in shape, or taller than their width. Typically, these are items used in a grid. For these items, if the list doesn't scroll vertically, you can place the secondary actions at the bottom of the list item rather than to the right side.
+在這些範例中，我們所討論的清單 UI，其項目主要會以水平方向做為流向 (其寬度大於其高度)。 不過，您可能會有更加方正，或是高度大於寬度的清單項目。 通常這些項目會用於方格中。 針對這些項目，如果清單不會垂直捲動，您可以將次要動作放在清單項目的下方，而非清單項目的右方。
 
-## Consider all inputs
+## 請考慮到所有輸入
 
-When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your UWP works with all input types.
+當您決定使用巢狀 UI 時，請同時評估所有輸入類型的使用者體驗。 如先前所述，巢狀 UI 很適合某些輸入類型。 不過它並不一定可以搭配其他類型使用。 鍵盤、控制器及遙控輸入特別可能在使用巢狀 UI 元素時遇到困難。 請務必遵循下列指導方針，以確保您的 UWP 能夠搭配所有輸入類型使用。
 
-## Nested UI handling
+## 巢狀 UI 處理
 
-When you have more than one action nested in the list item, we recommend this guidance to handle navigation with a keyboard, gamepad, remote control, or other non-pointer input.
+當您有超過一個動作巢狀於清單項目中時，我們建議使用本指導方針來處理使用鍵盤、控制器、遙控器或其他非游標輸入的瀏覽。
 
-### Nested UI where list items perform an action
+### 清單項目會執行動作的巢狀 UI
 
-If your list UI with nested elements supports actions such as invoking, selection (single or multiple), or drag-and-drop operations, we recommend these arrowing techniques to navigate through your nested UI elements.
+如果您具有巢狀元素的清單 UI 支援叫用、選取 (單一或多個) 或拖放作業等動作，我們建議使用下列方向鍵技巧來瀏覽您的巢狀 UI 元素。
 
-![Nested UI parts](images/nested-ui-navigation.png)
+![巢狀 UI 組件](images/nested-ui-navigation.png)
 
-**Gamepad**
+**控制器**
 
-When input is from a gamepad, provide this user experience:
+當輸入是來自控制器時，將會提供此使用者體驗：
 
-- From **A**, right directional key puts focus on **B**.
-- From **B**, right directional key puts focus on **C**.
-- From **C**, right directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **C**, left directional key puts focus on **B**.
-- From **B**, left directional key puts focus on **A**.
-- From **A**, left directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **A**, **B**, or **C**, down directional key puts focus on **D**.
-- From UI element to the left of List Item, right directional key puts focus on **A**.
-- From UI element to the right of List Item, left directional key puts focus on **A**.
+- 如果焦點位於 **A** 上，右方向鍵會將焦點放到 **B** 上。
+- 如果焦點位於 **B** 上 ，右方向鍵會將焦點放到 **C** 上。
+- 如果焦點位於 **C** 上，右方向鍵會沒有選項，或是在清單右方具有可設定焦點的元素時，將焦點放到那裡。
+- 如果焦點位於 **C** 上，左方向鍵會將焦點放到 **B** 上。
+- 如果焦點位於 **B** 上，左方向鍵會將焦點放到 **A** 上。
+- 如果焦點位於 **A** 上，左方向鍵會沒有選項，或是在清單左方具有可設定焦點的元素時，將焦點放到那裡。
+- 如果焦點位於 **A**、**B** 或 **C** 上，下方向鍵會將焦點放到 **D** 上。
+- 如果焦點位於清單項目左方的 UI 元素上，右方向鍵會將焦點放到 **A** 上。
+- 如果焦點位於清單項目右方的 UI 元素上，左方向鍵會將焦點放到 **A** 上。
 
-**Keyboard**
+**鍵盤**
 
-When input is from a keyboard, this is the experience user gets:
+當輸入是來自鍵盤時，以下將是使用者會獲得的體驗：
 
-- From **A**, tab key puts focus on **B**.
-- From **B**, tab key puts focus on **C**.
-- From **C**, tab key puts focus on next focusable UI element in the tab order.
-- From **C**, shift+tab key puts focus on **B**.
-- From **B**, shift+tab or left arrow key puts focus on **A**.
-- From **A**, shift+tab key puts focus on next focusable UI element in the reverse tab order.
-- From **A**, **B**, or **C**, down arrow key puts focus on **D**.
-- From UI element to the left of List Item, tab key puts focus on **A**.
-- From UI element to the right of List Item, shift tab key puts focus on **C**.
+- 如果焦點位於 **A** 上，Tab 鍵會將焦點放到 **B** 上。
+- 如果焦點位於 **B** 上，Tab 鍵會將焦點放到 **C** 上。
+- 如果焦點位於 **C** 上，Tab 鍵會將焦點放到定位順序中的下一個可設定焦點 UI 元素。
+- 如果焦點位於 **C** 上，Shift+Tab 鍵會將焦點放到 **B** 上。
+- 如果焦點位於 **B** 上，Shift+Tab 或向左鍵會將焦點放到 **A** 上。
+- 如果焦點位於 **A** 上，Shift+Tab 鍵會將焦點放到反向定位順序中的下一個可設定焦點 UI 元素。
+- 如果焦點位於 **A**、**B** 或 **C** 上，向下鍵會將焦點放到 **D** 上。
+- 如果焦點位於清單項目左方的 UI 元素上，Tab 鍵會將焦點放到 **A** 上。
+- 如果焦點位於清單項目右方的 UI 元素上，Shift+Tab 鍵會將焦點放到 **C** 上。
 
-To achieve this UI, set [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **true** on your list. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) can be any value.
+如果要達成此 UI，請在清單上將 [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 設為 **true**。 [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 可以是任何值。
 
-For the code to implement this, see the [Example](#example) section of this article.
+如需實作此項目的程式碼，請參閱本文的[範例](#example)一節。
 
-### Nested UI where list items do not perform an action
+### 清單項目不會執行動作的巢狀 UI
 
-You might use a list view because it provides virtualization and optimized scrolling behavior, but not have an action associated with a list item. These UIs typically use the list item only to group elements and ensure they scroll as a set.
+您使用清單檢視的原因，可能是因為它能提供虛擬化並最佳化捲動行為，因此您不會將某個動作與清單項目做出關聯。 這類 UI 通常只會針對群組元素使用清單項目，並確保它們會以單一的集合進行捲動。
 
-This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
+這種 UI 通常會比先前的範例更加複雜，並具有許多使用者可採取動作的巢狀元素。
 
-![Nested UI parts](images/nested-ui-grouping.png)
+![巢狀 UI 組件](images/nested-ui-grouping.png)
 
 
-To achieve this UI, set the following properties on your list:
-- [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) to **None**.
-- [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **false**.
-- [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) to **true**.
+如果要達成此 UI，請在清單上設定下列屬性：
+- 將 [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 設為 **None**。
+- 將 [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 設為 **false**。
+- 將 [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) 設為 **true**。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >
@@ -150,30 +154,30 @@ To achieve this UI, set the following properties on your list:
 </ListView>
 ```
 
-When the list items do not perform an action, we recommend this guidance to handle navigation with a gamepad or keyboard.
+當清單項目不會執行動作時，我們建議使用本指導方針來處理使用控制器或鍵盤的瀏覽。
 
-**Gamepad**
+**控制器**
 
-When input is from a gamepad, provide this user experience:
+當輸入是來自控制器時，將會提供此使用者體驗：
 
-- From List Item, down directional key puts focus on next List Item.
-- From List Item, left/right key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From List Item, 'A' button puts the focus on Nested UI in top/down left/right priority.
-- While inside Nested UI, follow the XY Focus navigation model.  Focus can only navigate around Nested UI contained inside the current List Item until user presses 'B' button, which puts the focus back onto the List Item.
+- 如果焦點位於清單項目上，下方向鍵會將焦點放到下一個清單項目上。
+- 如果焦點位於清單項目上，左/右方向鍵會沒有選項，或是在清單右方具有可設定焦點的元素時，將焦點放到那裡。
+- 如果焦點位於清單項目上，'A' 按鈕會將焦點放在以「從上到下、從左到右」為優先順序的巢狀 UI 上。
+- 位於巢狀 UI 內時，將會遵循 XY 焦點瀏覽模型。  焦點將只能在目前清單項目內的巢狀 UI 中四處瀏覽，直到使用者按下 'B' 按鈕為止，那將會把焦點放回清單項目上。
 
-**Keyboard**
+**鍵盤**
 
-When input is from a keyboard, this is the experience user gets:
+當輸入是來自鍵盤時，以下將是使用者會獲得的體驗：
 
-- From List Item, down arrow key puts focus on the next List Item.
-- From List Item, pressing left/right key is no op.
-- From List Item, pressing tab key puts focus on the next tab stop amongst the Nested UI item.
-- From one of the Nested UI items, pressing tab traverses the nested UI items in tab order.  Once all the Nested UI items are traveled to, it puts the focus onto the next control in tab order after ListView.
-- Shift+Tab behaves in reverse direction from tab behavior.
+- 如果焦點位於清單項目上，向下鍵會將焦點放到下一個清單項目上。
+- 如果焦點位於清單項目上，按下向左/向右鍵會沒有選項。
+- 如果焦點位於清單項目上，按下 Tab 鍵會將焦點放到巢狀 UI 項目中的下一個定位停駐點。
+- 如果焦點位於其中一個巢狀 UI 項目上，按下 Tab 鍵將會以定位順序周遊巢狀 UI 項目。  當所有巢狀 UI 項目皆已周遊完畢，系統會將焦點放到 ListView 之後，定位順序中的下一個控制項。
+- Shift+Tab 所做出的行為會與 Tab 行為的方向相反。
 
-## Example
+## 範例
 
-This example shows how to implement [nested UI where list items perform an action](#nested-ui-where-list-items-perform-an-action).
+此範例示範如何實作[清單項目會執行動作的巢狀 UI](#nested-ui-where-list-items-perform-an-action)。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="True"
@@ -298,3 +302,9 @@ public static class DependencyObjectExtensions
     }
 }
 ```
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

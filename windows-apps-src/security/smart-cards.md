@@ -4,8 +4,8 @@ description: "本主題說明通用 Windows 平台 (UWP) 應用程式如何使�
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
+ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
+ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
 
 ---
 
@@ -15,7 +15,7 @@ ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。
+本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。 
 
 ## 設定 app 資訊清單
 
@@ -204,6 +204,6 @@ bool result = await SmartCardProvisioning
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

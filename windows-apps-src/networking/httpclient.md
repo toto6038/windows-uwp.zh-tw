@@ -5,7 +5,7 @@ title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
+ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 ---
 
@@ -41,15 +41,15 @@ ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間代表做為 HTTP 實體內容和標頭 (包含 Cookie) 的 HTTP 內容。 HTTP 內容可與 HTTP 要求或 HTTP 回應產生關聯。 **Windows.Web.Http** 命名空間提供一些不同的類別來代表 HTTP 內容。
 
--   [ **HttpBufferContent** ](https://msdn.microsoft.com/library/windows/apps/dn298625)。 緩衝區形式的內容
--   [ **HttpFormUrlEncodedContent** ](https://msdn.microsoft.com/library/windows/apps/dn298685)。 形式為以 **application/x-www-form-urlencoded** MIME 類型編碼之名稱/值 Tuple 的內容
--   [ **HttpMultipartContent** ](https://msdn.microsoft.com/library/windows/apps/dn298708)。 格式為 **multipart/\*** MIME 類型的內容。
--   [ **HttpMultipartFormDataContent** ](https://msdn.microsoft.com/library/windows/apps/dn279596)。 以 **multipart/form-data** MIME 類型編碼的內容。
--   [ **HttpStreamContent** ](https://msdn.microsoft.com/library/windows/apps/dn279649)。 串流形式的內容 (HTTP GET 方法用來接收資料以及 HTTP POST 方法用來上傳資料的內部類型)
--   [ **HttpStringContent** ](https://msdn.microsoft.com/library/windows/apps/dn279661)。 字串形式的內容
--   [ **IHttpContent** ](https://msdn.microsoft.com/library/windows/apps/dn279684) - 開發人員用來建立他們自己的內容物件的基底介面
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 緩衝區形式的內容
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 形式為以 **application/x-www-form-urlencoded** MIME 類型編碼之名稱/值 Tuple 的內容
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 格式為 **multipart/\*** MIME 類型的內容。
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 以 **multipart/form-data** MIME 類型編碼的內容。
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 串流形式的內容 (HTTP GET 方法用來接收資料以及 HTTP POST 方法用來上傳資料的內部類型)
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 字串形式的內容
+-   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 開發人員用來建立他們自己的內容物件的基底介面
 
-在 \[透過 HTTP 傳送簡單 GET 要求\] 一節的程式碼片段中，會使用 [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) 類別，以字串形式表示來自 HTTP GET 要求的 HTTP 回應。
+在 [透過 HTTP 傳送簡單 GET 要求] 一節的程式碼片段中，會使用 [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) 類別，以字串形式表示來自 HTTP GET 要求的 HTTP 回應。
 
 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空間支援建立 HTTP 標頭與 Cookie，接著將它們當成屬性來與 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 物件產生關聯。
 
@@ -118,6 +118,6 @@ catch (Exception ex)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

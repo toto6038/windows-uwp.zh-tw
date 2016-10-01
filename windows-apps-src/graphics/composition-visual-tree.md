@@ -5,7 +5,7 @@ title: "組合視覺化樹狀結構"
 description: "「組合視覺效果」構成組合 API 的所有其他功能所使用和倚賴的視覺化樹狀結構。 API 可讓開發人員定義及建立一或多個視覺物件，每個物件各代表視覺化樹狀結構中的單一節點。"
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
+ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 ---
 # 組合視覺化樹狀結構
@@ -508,6 +508,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

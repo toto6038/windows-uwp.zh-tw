@@ -1,55 +1,40 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: "SystemMediaTransportControls 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。"
-title: "系統媒體傳輸控制項"
+description: "SystemMediaTransportControls 類別可讓您的 App 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您 App 目前正在播放之媒體的相關中繼資料。"
+title: "系統媒體傳輸控制項的手動控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
+ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 ---
 
-# 系統媒體傳輸控制項
+# 系統媒體傳輸控制項的手動控制項
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+從 Windows 10 版本 1607 開始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別來播放媒體的 UWP App，預設將會自動與系統媒體傳輸控制項 (SMTC) 整合。 針對大部分的案例，這是與 SMTC 互動的建議方式。 如需自訂 SMTC 與 **MediaPlayer** 預設整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。
 
-[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。
-
-系統傳輸控制項不同於 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 物件上的傳輸控制項。 系統傳輸控制項是在使用者按下硬體媒體鍵 (例如耳機上的音量控制或鍵盤上的媒體按鈕) 時以快顯方式顯示的控制項。 如果使用者按下鍵盤上的暫停鍵且您的應用程式支援 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)，您的應用程式會收到通知，而且您可以採取適當的動作。
-
-您的 app 也可以更新媒體資訊，例如歌曲標題以及 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 顯示的縮圖影像。
-
-**注意**  
-[系統媒體傳輸控制項 UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619488)會實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+在某幾個案例中，您可能需要實作 SMTC 的手動控制項。 這包括使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 來控制一或多個媒體播放程式之播放的案例。 或是會使用多個媒體播放程式，但針對 App 只想要單一 SMTC 執行個體的案例。 如果您是使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) 來播放媒體，便必須手動控制 SMTC。
 
 ## 設定傳輸控制項
+如果您是使用 **MediaPlayer** 來播放媒體，您可以透過存取 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) 屬性來取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) 類別的執行個體。 如果您要手動控制 SMTC，您應該停用由 **MediaPlayer** 所提供的自動整合，方法是將 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 屬性設定為 false。
 
-在頁面的 XAML 檔案中定義 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，它是由系統媒體傳輸控制項控制。 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件是用來更新系統媒體傳輸控制項，將會在本文稍後討論。
+[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
-[!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
+您也可以透過呼叫 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 以取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的執行個體。 如果您是使用 **MediaElement** 來播放媒體，您必須透過此方法來取得該物件。
 
-將按鈕新增至 XAML 檔案，讓使用者選取要播放的檔案。
+[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
 
-[!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
+啟用您的 App 將會使用的按鈕，方法是設定 **SystemMediaTransportControls** 物件的相對應「is enabled」屬性，例如 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) 及 [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715)。 請參閱 **SystemMediaTransportControls** 參考文件，以取得可用控制項的完整清單。
 
-在程式碼後置頁面中，針對下列命名空間新增 using 指示詞。
+[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
 
-[!code-cs[Namespace](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
+註冊 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件的處理常式，以在使用者按下按鈕時接收通知。
 
-新增按鈕 click 處理常式，它使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 以允許使用者選取檔案，然後呼叫 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 讓它成為 **MediaElement** 的使用中檔案。
+[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
 
-[!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
-
-呼叫 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 以取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的執行個體。
-
-啟用您的 app 將會使用的按鈕，方法是設定 **SystemMediaTransportControls** 物件的「已啟用」屬性，例如 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) 和 [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715)。 請參閱 **SystemMediaTransportControls** 參考文件，以取得可用控制項的完整清單。
-
-註冊 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件的處理常式，當使用者按下按鈕時接收通知。
-
-[!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
-
-## 處理系統媒體傳輸控制項按鈕按下
+## 處理系統媒體傳輸控制項按鈕的按下動作
 
 當某個啟用的按鈕被按下時，系統傳輸控制項會引發 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件。 傳入事件處理常式的 [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) 的 [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) 屬性，是 [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) 列舉的成員，該列舉表示已按下哪個已啟用的按鈕。
 
@@ -112,22 +97,25 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## 針對背景音訊使用系統媒體傳輸控制項
 
-若要針對背景音訊使用系統媒體傳輸控制項，您必須將 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) 和 [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) 設為 true，以啟用播放和暫停按鈕。 您的 app 還必須處理 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件。
+如果您沒有使用由 **MediaPlayer** 所提供的自動 SMTC 整合，您必須手動與 SMTC 整合以啟用背景音訊。 您的 App 至少必須將 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) 和 [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) 設定成 true 來啟用播放和暫停按鈕。 您的 App 還必須處理 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件。 如果您的 App 沒有符合這些需求，音訊播放將會在 App 移至背景時停止。
 
-若要從您的 app 的背景工作取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的執行個體，您必須使用 [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635)，而不是 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708)，這僅適用從前景 app 內使用。
+針對背景音訊使用新的單處理程序模型的 App，應該能透過呼叫 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的執行個體。 針對背景音訊使用舊版的雙處理程序模型 的 App，必須使用 [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 以取得從背景處理程序存取 SMTC 的權限。
 
-如需有關在背景播放音訊的詳細資訊，請參閱[背景音訊](background-audio.md)。
+如需有關在背景播放音訊的詳細資訊，請參閱[在背景播放媒體](background-audio.md)。
+
+## 相關主題
+* [媒體播放](media-playback.md)
+* [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md) 
+* [系統媒體傳輸範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

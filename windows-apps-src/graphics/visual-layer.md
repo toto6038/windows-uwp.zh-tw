@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "視覺層"
 description: "Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
+ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
+ms.openlocfilehash: 3a3dbf7b529d5d2848b161869d2f77fef3651488
 
 ---
 # 視覺層
@@ -65,7 +65,7 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 -   閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[圖形與動畫 - Windows 組合邁向 10](https://msdn.microsoft.com/magazine/mt590968) (英文)
 -   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 有進階的 UI 和組合範例。
 -   [**API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
--   已知問題：[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
+-   已知問題：[已知問題](http://go.microsoft.com/fwlink/?LinkId=823237)。
 
  
 
@@ -77,6 +77,6 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

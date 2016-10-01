@@ -4,8 +4,8 @@ description: "使用背景傳輸 API 在網路上可靠地複製檔案。"
 title: "背景傳輸"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
-ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
+ms.sourcegitcommit: 177ada6ea8934ca74636454946dfa9c450285167
+ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 **重要 API**
 
--   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
+-   [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
@@ -312,11 +312,11 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間中非同步方法內遇到的錯誤會以 **HRESULT** 值的形式傳回。 使用 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法，將背景傳輸作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值都會對應到原始 HTTP 或 FTP 用戶端作業所傳回的錯誤。 app 可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
+針對參數驗證錯誤，App 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

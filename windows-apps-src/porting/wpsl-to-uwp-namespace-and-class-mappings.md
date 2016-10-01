@@ -5,7 +5,7 @@ title: "Windows Phone Silverlight 和 UWP 命名空間與類別對應"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 
 ---
 
@@ -87,7 +87,7 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | **System.Windows.Automation** 命名空間 | [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/br209179) 命名空間 | 
 | **System.Windows.Controls**、**System.Windows.Input** 命名空間 | [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空間 | 
 | **System.Windows.Controls.DrawingSurface**、**DrawingSurfaceBackgroundGrid** 類別 | [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 類別 | 
-| **System.Windows.Controls.RichTextBox** 類別 | [ **RichEditBox** ](https://msdn.microsoft.com/library/windows/apps/br227548) 類別 | 
+| **System.Windows.Controls.RichTextBox** 類別 | [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 類別 | 
 | **System.Windows.Controls.WrapPanel** 類別 | 沒有針對一般配置目的的直接對等項目。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) 可以用在項目控制項的項目面板範本中。 | 
 | **System.Windows.Controls.Primitives** 命名空間 | [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空間 |
 | **System.Windows.Controls.Shapes** 命名空間 | [**Windows.UI.Xaml.Controls.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 命名空間 | 
@@ -119,8 +119,8 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 屬性 |
 | 圖形和動畫 | |
 | **Microsoft.Xna.Framework.\*** 命名空間、[XNA Framework 類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 搭配 C++。 請參閱[開發遊戲](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
-| **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [ **MediaCapture** ](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 |
-| **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926)類別 |
+| **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別 |
+| **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 類別 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空間 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空間 |
 | **Microsoft.Xna.Framework.GamerServices.Guide** 類別 | 沒有直接的對等項目 | 
 | **Microsoft.Xna.Framework.Input.GamePad** 類別 | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別 |
@@ -128,13 +128,13 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** 類別 | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 類別 |
 | **Microsoft.Xna.Framework.Media.MediaQueue** 類別 | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別 |
 | **Microsoft.Xna.Framework.Media.Playlist** 類別 | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) 類別 |
-| **System.Windows.Media** 命名空間 | [ **Windows.UI.Xaml.Media** ](https://msdn.microsoft.com/library/windows/apps/br243045)  命名空間 |
+| **System.Windows.Media** 命名空間 | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 命名空間 |
 | **System.Windows.Media.RadialGradientBrush** 類別 | 沒有直接的對等項目。 請參閱[媒體和圖形](wpsl-to-uwp-porting-xaml-and-ui.md#media)。 |
 | **System.Windows.Media.Animation** 命名空間 | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 命名空間 |
 | **System.Windows.Media.Effects** 命名空間 | 沒有直接的對等項目 | 
 | **System.Windows.Media.Imaging** 命名空間 | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空間 |
 | **System.Windows.Media.Media3D** 命名空間 | [**Windows.UI.Xaml.Media.Media3D**](https://msdn.microsoft.com/library/windows/apps/br243274) 命名空間 |
-| **System.Windows.Shapes** 命名空間 | [ **Windows.UI.Xaml.Shapes** ](https://msdn.microsoft.com/library/windows/apps/br243401) namespace |
+| **System.Windows.Shapes** 命名空間 | [**Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 命名空間 |
 | 啟動程式與選擇器 | |
 | **Microsoft.Phone.Tasks.AddressChooserTask**、**EmailAddressChooserTask**、**PhoneNumberChooserTask** 類別 | [**ContactPicker**](https://msdn.microsoft.com/library/windows/apps/br224913) 類別 |
 | **Microsoft.Phone.Tasks.AddWalletItemTask**、**AddWalletItemResult** 類別 | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) 命名空間 |
@@ -151,7 +151,7 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | **Microsoft.Phone.Tasks.SaveContactTask**、**SaveEmailAddressTask**、**SavePhoneNumberTask** 類別 | [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) 類別 (僅限 Windows Phone) | 
 | **Microsoft.Phone.Tasks.SaveRingtoneTask** 類別 | 沒有直接的對等項目 | 
 | **Microsoft.Phone.Tasks.ShareLinkTask**、**ShareMediaTask**、**ShareStatusTask** 類別 | [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) 類別 |
-| 定位 | |
+| 位置 | |
 | **System.Device.Location** 命名空間 | [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空間 |
 | **System.Device.GeoCoordinateWatcher** 類別 | [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 類別 |
 | 地圖 | |
@@ -166,7 +166,7 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | 賺錢 | |
 | **Microsoft.Phone.Marketplace** 命名空間 | [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) 命名空間 |
 | 媒體 | |
-| **Microsoft.Phone.Media** 命名空間 | [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926)類別 |
+| **Microsoft.Phone.Media** 命名空間 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 類別 |
 | 網路功能 | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 類別 | [**Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113)、[**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 類別
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterface** 類別 | [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 類別 |
@@ -176,7 +176,7 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 類別 | 沒有直接的對等項目 | 
 | **Microsoft.Phone.Networking.Voip** 命名空間 | 沒有直接的對等項目 | 
 | **System.Net.CookieCollection** 類別 | 仍受支援，但缺少某些屬性 (例如 IsReadOnly) |
-| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [ **HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)) 衍生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) 以測量進度。 |
+| **System.Net.DownloadProgressChangedEventArgs** 類別，和與 **System.Net.WebClient** 相關的類似類別 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 衍生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) 以測量進度。 |
 | **System.Net.DnsEndPoint**、**IPAddress** 類別 | 這些類別仍受支援，但缺少某些屬性。 或者，移植到 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別。 |
 | **System.Net.HttpUtility** 類別 | [**HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) 類別 |
 | **System.Net.HttpWebRequest** 類別 | 部分支援，但具前瞻性的建議替代方案為 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別 (或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx))。 這些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 來代表 HTTP 要求。 |
@@ -249,6 +249,6 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
