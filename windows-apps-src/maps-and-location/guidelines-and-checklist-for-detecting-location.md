@@ -4,8 +4,8 @@ Description: "這個主題說明需要存取使用者位置之 app 的效能指�
 title: "定位感知 app 的指導方針"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
+ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
+ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 ---
 
@@ -100,7 +100,8 @@ ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
 
     Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
-**連線待命：**當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator 物件**](https://msdn.microsoft.com/library/windows/apps/br225534)。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
+**連線待命** 
+- 當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
 
 ## 其他用法指導方針
 
@@ -172,6 +173,6 @@ ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

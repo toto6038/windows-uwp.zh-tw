@@ -2,18 +2,15 @@
 description: "了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP App 並撰寫 App 程式碼。"
 title: "UWP app 配置設計 – Windows 應用程式開發"
 author: mijacobs
-keywords: uwp app layout, universal windows platform, app design, interface
+keywords: "uwp app 配置, 通用 Windows 平台, app 設計, 介面"
 translationtype: Human Translation
-ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
-ms.openlocfilehash: 7a1233724b9b0fd9af709bbf114669fe102e6f0d
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
 
 ---
-
+# UWP app 的配置
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="uwpd-banner">
-<h1 class="uwpd-ruledheader">UWP app 的配置</h1>
-</div>
 
 App 結構、版面配置及瀏覽都是您的 App 使用者體驗的基礎。 本節中的文章可協助您建立一個很容易瀏覽，且在不同裝置與螢幕大小上有不同外觀的 App。
 
@@ -86,6 +83,6 @@ UWP app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

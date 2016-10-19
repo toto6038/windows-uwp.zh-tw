@@ -4,8 +4,8 @@ title: "複製和貼上"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
-ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
+ms.sourcegitcommit: 0dceeb53737cc790e1c3810b0487e0a839968bef
+ms.openlocfilehash: 2655dc67b14ba665deabc879f13340202d97c494
 
 ---
 #複製和貼上
@@ -16,7 +16,6 @@ ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。 複製和貼上是在 App 間 (或是 App 內) 交換資料的傳統方式，而且幾乎每個 App 在某種程度上都能支援剪貼簿作業。
 
 ## 檢查內建式剪貼簿支援
-
 
 在很多情況下，您不需要撰寫程式碼就可以支援剪貼簿作業。 許多您可用來建立 app 的預設 XAML 控制項已經支援剪貼簿作業。 
 
@@ -29,11 +28,11 @@ ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 DataPackage dataPackage = new DataPackage();
 ```
 
-AuthenticateAsync
+<!-- AuthenticateAsync-->
 
 ## 複製和剪下
 
-複製和剪下 (也稱為移動) 的作用幾乎相同。 選擇您想使用 [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) 屬性的作業。
+複製和剪下 (也稱為*移動*) 的作用幾乎相同。 使用 [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) 屬性選擇您想執行的作業。
 
 ```cs
 // copy 
@@ -41,6 +40,8 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
+## 拖放
+
 接下來，您可以將使用者選取的資料新增至 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 物件。 如果 **DataPackage** 類別支援此資料，就可以使用 **DataPackage** 物件的其中一種對應方法。 以下是新增文字的方式：
 
 ```cs
@@ -85,6 +86,7 @@ Clipboard.ContentChanged += (s, e) =>
 
 ## 另請參閱
 
+* [App 間通訊](index.md)
 * [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
 * [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
 * [DataPackageView](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.aspx)
@@ -104,6 +106,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

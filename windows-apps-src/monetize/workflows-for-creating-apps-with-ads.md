@@ -4,8 +4,8 @@ ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "深入了解開發和發佈包含廣告之 App 的端對端處理程序。"
 title: "建立包含廣告之 App 的工作流程"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 # 建立包含廣告之 App 的工作流程
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 若要在您的 App 中顯示廣告，您的 App 需要能從廣告網路接收廣告。 Microsoft 提供了一個 Web 服務，可讓 Windows 應用程式開發人員接收廣告。 當使用者按一下 App 中的廣告，您 (廣告的「發行者」**) 就可以從廣告的建立者 (「廣告客戶」**) 賺取金額。 從廣告客戶方面賺取的金額會使用您的帳戶支付給您。
 
@@ -66,6 +66,6 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

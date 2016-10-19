@@ -4,8 +4,8 @@ ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "從您的 app 列印"
 description: "了解如何從通用 Windows app 列印文件。 本主題也示範如何列印特定頁面。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
 
 ---
 # 從您的 app 列印
@@ -90,24 +90,37 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-接下來，將事件處理常式新增至您的 app 的程式碼，以處理 Click 事件。 使用 [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) 方法，開始從 app 列印。 **ShowPrintUIAsync** 是非同步方法，會顯示適當的列印視窗。 如果當時無法執行列印，這個方法會擲回例外狀況。 我們建議攔截這些例外狀況，並在無法繼續進行列印時讓使用者知道，如下所示。
+接下來，將事件處理常式新增至您的 app 的程式碼，以處理 Click 事件。 使用 [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) 方法，開始從 app 列印。 **ShowPrintUIAsync** 是非同步方法，會顯示適當的列印視窗。 我們建議先呼叫 [**IsSupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Printing.PrintManager.IsSupported) 方法來檢查 App 是否是在支援列印的裝置上執行 (並處理不支援的情況)。 如果當下因任何其他原因而無法列印，**ShowPrintUIAsync** 會擲回例外狀況。 我們建議攔截這些例外狀況，並在無法繼續進行列印時讓使用者知道。
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 {
-    try
+    if (Windows.Graphics.Printing.PrintManager.IsSupported())
     {
-        // Show print UI
-        await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+        try
+        {
+            // Show print UI
+            await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
 
+        }
+        catch
+        {
+            // Printing cannot proceed at this time
+            ContentDialog noPrintingDialog = new ContentDialog()
+            {
+                Title = "Printing error",
+                Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            };
+            await noPrintingDialog.ShowAsync();
+        }
     }
-    catch
+    else
     {
-        // Printing cannot proceed at this time
+        // Printing is not supported on this device
         ContentDialog noPrintingDialog = new ContentDialog()
         {
-            Title = "Printing error",
-            Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            Title = "Printing not supported",
+            Content = "\nSorry, printing is not supported on this device.",PrimaryButtonText = "OK"
         };
         await noPrintingDialog.ShowAsync();
     }
@@ -383,6 +396,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

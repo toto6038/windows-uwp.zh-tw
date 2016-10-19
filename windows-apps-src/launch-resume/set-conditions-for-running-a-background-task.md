@@ -4,16 +4,14 @@ title: "設定執行背景工作的條件"
 description: "了解如何設定條件以控制背景工作的執行時間。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 ---
 
 # 設定執行背景工作的條件
 
-
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要 API**
 
@@ -21,22 +19,21 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 -   [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-了解如何設定條件以控制背景工作的執行時間。
+了解如何設定控制背景工作執行時機的條件。
 
-有時，除了會觸發工作的事件之外，背景工作還需要符合某些條件才能順利執行。 您可以在登錄背景工作時由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定一或多個條件。 在引發觸發程序之後，會檢查條件，將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
+有時，除了會觸發工作的事件之外，背景工作還需要在某些條件符合的情況下，才能順利執行。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的條件。 在引發觸發程序之後，會檢查條件，將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
 
-將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和 CPU 執行階段。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則登錄工作之前，請將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以透過讓工作在計時器已經過且網際網路可用時執行，以協助防止工作不必要地使用系統資源與電池使用時間。
+將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和 CPU 執行階段。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以藉由讓工作只有在計時器時間已經過「並且」**網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
 
-**注意：**藉由在相同的 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次呼叫 AddCondition，可以結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
-
- 
+您也可以藉由在相同的 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次呼叫 AddCondition 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
 
 ## 建立 SystemCondition 物件
 
+本主題假設您有一個已經與 App 關聯的背景工作，而且 App 已經包含會建立名為 **taskBuilder** 之 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件的程式碼。  如果您需要先建立背景工作，請參閱[建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)或[建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)。
 
-本主題假設您已經有和 app 相關聯的背景工作，而且 app 也已經包含了建立名為 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件。
+本主題既適用於與前景 App 在相同處理程序中執行的背景工作，也適用於與前景 App 在個別處理程序中執行的背景工作。
 
-新增條件之前，建立 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件，代表背景工作執行時必須生效的條件。 建構函式中，透過提供 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列舉數值的方式，指定必須滿足的條件。
+在新增條件之前，請先建立 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件，此物件代表背景工作執行時必須生效的條件。 建構函式中，透過提供 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列舉數值的方式，指定必須滿足的條件。
 
 下列程式碼會建立 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 物件，以指定網際網路可用性做為條件需求：
 
@@ -156,18 +153,16 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 ## 備註
 
 
-> **注意：**為背景工作選擇正確條件，讓工作只在需要時才執行，而且不會在工作無法運作時執行。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> **注意**：為背景工作選擇正確條件，讓工作只在需要時才執行，而不會在不該執行時執行。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 > **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
-
 ## 相關主題
-
 
 ****
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)
+* [建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
@@ -189,6 +184,6 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

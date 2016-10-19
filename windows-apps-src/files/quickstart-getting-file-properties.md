@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "取得檔案屬性"
 description: "取得由 StorageFile 物件所表示檔案的屬性 &amp;\\#8212;最上層、基本及延伸&amp;\\#8212;。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
 
 ---
 # 取得檔案屬性
@@ -79,14 +79,14 @@ foreach (Windows.Storage.StorageFile file in files)
     StringBuilder fileProperties = new StringBuilder();
 
     // Get file's basic properties.
-    Windows.Storage.FileProperties.BasicProperties basicProperties = 
+    Windows.Storage.FileProperties.BasicProperties basicProperties =
         await file.GetBasicPropertiesAsync();
     string fileSize = string.Format("{0:n0}", basicProperties.Size);
     fileProperties.AppendLine("File size: " + fileSize + " bytes");
     fileProperties.AppendLine("Date modified: " + basicProperties.DateModified);
 }
  ```
- 
+
 ## 取得檔案的延伸屬性
 
 除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法來存取 ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 物件可藉由呼叫 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性來取得)。當最上層和基本檔案屬性可以分別當成類別屬性 ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **BasicProperties**) 來存取時，您可以將 [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) 物件 (代表要擷取之屬性的名稱) 的 [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) 集合傳送到 **BasicProperties.RetrievePropertiesAsync** 方法，來取得延伸屬性。 這個方法接著會傳回 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
@@ -112,7 +112,7 @@ foreach (Windows.Storage.StorageFile file in files)
     propertyNames.Add(fileOwnerProperty);
 
     // Get extended properties.
-    IDictionary<string, object> extraProperties = 
+    IDictionary<string, object> extraProperties =
         await file.Properties.RetrievePropertiesAsync(propertyNames);
 
     // Get date-accessed property.
@@ -137,10 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: "利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 
 ---
 
@@ -38,6 +38,6 @@ ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

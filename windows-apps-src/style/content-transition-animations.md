@@ -4,8 +4,8 @@ Description: "內容轉換動畫可讓您變更畫面中區域的內容，同時
 title: "內容轉換動畫的指導方針"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 ---
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>可行與禁止事項
+## 可行與禁止事項
 
 
 -   如果要將一組新項目放入空的容器，可使用進入動畫。 例如，初次載入應用程式後，應用程式的內容部分可能無法立即顯示。 等到內容準備好可以顯示後，使用內容轉換動畫，將最新內容帶入檢視中。
@@ -35,7 +35,7 @@ ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 
 
-## <span id="related_topics"></span>相關文章
+## 相關文章
 
 **適用於開發人員 (XAML)**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -53,6 +53,6 @@ ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

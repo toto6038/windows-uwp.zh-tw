@@ -5,7 +5,7 @@ title: "使用陀螺儀"
 description: "了解如何使用陀螺儀來偵測使用者的移動變化。"
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: ad76837574b8887bceb135db156e2744542259b0
+ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 ---
 # 使用陀螺儀
@@ -179,6 +179,6 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

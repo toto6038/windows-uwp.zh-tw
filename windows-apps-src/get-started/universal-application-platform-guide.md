@@ -1,20 +1,17 @@
 ---
 author: TylerMSFT
-title: "通用 Windows 平台 (UWP) App 指南"
-description: "深入了解可以在各種裝置上執行的通用 Windows 平台 (UWP) app。"
+title: "通用 Windows 平台簡介"
+description: "了解可以在各式各樣執行 Windows 10 之裝置上執行的「通用 Windows 平台」(UWP) app。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
-ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
+ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
+ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
 
 ---
 
-# 通用 Windows 平台 (UWP) App 指南
+# 通用 Windows 平台簡介
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-在本指南中，您將深入了解：
+在本指南中，您將了解：
 
 -   什麼是*裝置系列*，以及如何決定要以哪一個做為目標。
 -   新的 UI 控制項和面板可讓您的 UI 適應不同裝置表單係數。
@@ -284,6 +281,6 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

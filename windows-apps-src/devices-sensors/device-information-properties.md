@@ -5,7 +5,7 @@ title: "裝置資訊屬性"
 description: "每個裝置都具有相關聯的 DeviceInformation 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d9cdd55df69941754729d8779ba11d7ce5fafc51
+ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 ---
 # 裝置資訊屬性
@@ -161,6 +161,6 @@ ms.openlocfilehash: d9cdd55df69941754729d8779ba11d7ce5fafc51
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

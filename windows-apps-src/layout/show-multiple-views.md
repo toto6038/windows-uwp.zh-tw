@@ -6,8 +6,8 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23e999f86fb0552b96cddbd3b9d11803106bf6c2
+ms.sourcegitcommit: 0d67e3cef26ca6aca07556312a18be93fe758c85
+ms.openlocfilehash: ccbcb1f3f5ee31724416f512138757865ffabc98
 
 ---
 
@@ -94,7 +94,7 @@ int newViewId = 0;</code></pre></td>
 
     您可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法，在 UI 執行緒上為新檢視排定工作。 您可以使用 [Lambda 運算式](http://go.microsoft.com/fwlink/p/?LinkId=389615)，將函式當成引數傳送給 **RunAsync** 方法。 您在 Lamdba 函式中進行的工作會在新檢視的執行緒上發生。
 
-    在 XAML 中，您通常會將 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 新增到 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 屬性，然後將 **Frame** 導覽到您已定義 app 內容的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 如需詳細資訊，請參閱[兩個頁面之間的對等瀏覽](peer-to-peer-navigation-between-two-pages.md)。
+    在 XAML 中，您通常會將 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 新增到 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 屬性，然後將 **Frame** 導覽到您已定義 app 內容的 XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 如需詳細資訊，請參閱[在兩個頁面之間瀏覽](navigate-between-two-pages.md)。
 
     在填入新的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 之後，您必須呼叫 **Window** 的 [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046) 方法，以便在稍後顯示 **Window**。 這項工作會在新檢視的執行緒上發生，因此會啟用新的 **Window**。
 
@@ -182,10 +182,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

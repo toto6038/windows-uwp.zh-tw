@@ -4,8 +4,8 @@ title: "針對 UWP 遊戲使用雲端服務"
 description: "深入了解將雲端實作為 UWP 遊戲的後端。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
+ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
+ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
 
 ---
 #  針對 UWP 遊戲使用雲端服務
@@ -152,7 +152,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 | 可調整的關聯式遊戲資料庫| 結構化的關聯式資料儲存體，例如傳輸到資料庫中的遊戲內交易 | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL 資料庫即服務 ([與 VM 上的 SQL 比較](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
 | 可調整的分散式低延遲遊戲資料庫| 使用彈性結構描述快速讀取、寫入及查詢遊戲與玩家資料 | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| 低延遲 NoSQL 文件資料庫即服務   |
 | 使用自己的資料中心搭配 Azure 服務 | 遊戲將擷取自您的資料中心並傳送到用戶端裝置 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 可讓您的組織從自己的資料中心傳遞 Azure 服務，以協助完成更多工作  |
-| 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊檔案) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者  | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
+| 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者    | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
 | 低延遲               | 執行快取以建置快速、可調整的遊戲，並針對隔離資料取得更多的控制和保證，也可以用於改善遊戲的配對功能。 | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | 高輸送量、穩定的低延遲資料存取，可提供快速、可調整的 Azure 應用程式  |
 | 高延展性、低延遲 | 以低延遲的讀取和寫入來處理遊戲使用者數量的波動 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 可以提供最複雜、低延遲、密集資料的案例及可靠的調整，以同時處理更多的使用者。 針對無狀態 App 的需求，Service Fabric 可讓您在不需要個別建立儲存區或快取的情況下建置遊戲 |
 | 能夠每秒從裝置收集數以百萬計事件的能力                         | 能夠每秒從裝置記錄數以百萬計的事件 | [Azure 事件中樞](https://azure.microsoft.com/services/event-hubs/) | 來自遊戲、網站、App 及裝置的雲端級別遙測擷取  |
@@ -202,6 +202,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

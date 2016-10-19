@@ -5,7 +5,7 @@ description: "本逐步解說示範如何建立可從 JavaScript、C# 或 Visual
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 860333e3239198cd54eea061195e2a51d786821b
+ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 ---
 
@@ -635,6 +635,6 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

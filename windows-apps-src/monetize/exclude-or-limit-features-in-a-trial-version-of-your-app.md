@@ -3,19 +3,21 @@ author: mcleanbyron
 Description: "如果您讓客戶在試用期間免費使用 app，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 app。"
 title: "在試用版本中排除或限制某些功能"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: free trial code sample
+keywords: "免費試用程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
 
 ---
 
 # 在試用版本中排除或限制某些功能
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果您讓客戶在試用期間免費使用 app，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 app。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
+
+>**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來實作試用版，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
+
+如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
 讓我們看看如何將它新增至 App。
 
@@ -73,7 +75,7 @@ void initializeLicense()
     // Initialize the license info for testing.
     // comment the next line for release
     licenseInformation = CurrentAppSimulator.LicenseInformation;
-      
+
 }
 ```
 
@@ -144,8 +146,8 @@ void DisplayTrialVersionExpirationTime()
         if (licenseInformation.IsTrial)
         {
             var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
-                                                
-            // Display the expiration date using the DateTimeFormatter. 
+
+            // Display the expiration date using the DateTimeFormatter.
             // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
 
             var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
@@ -222,7 +224,7 @@ void appInit()
 
 ## 相關主題
 
-* [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [市集範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [設定 app 價格與可用性](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
@@ -232,10 +234,6 @@ void appInit()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

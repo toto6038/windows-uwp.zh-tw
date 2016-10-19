@@ -1,18 +1,19 @@
 ---
 author: QuinnRadich
-title: "Windows 10 中的新功能"
-description: "Windows 10 Anniversary SDK Preview 組建與新的開發人員工具提供了由全新通用 Windows 平台支援的工具、功能和體驗。"
+title: "Windows 10 版本 1607 預覽中的新功能"
+description: "Windows 10 版本 1607 預覽與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。"
+keywords: "新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1607 預覽"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 33c1888620d4e3c2d95cbf701e9128ce006961da
 
 ---
 
 # Windows 的新功能
 
-Windows 10 Anniversary SDK Preview 組建 14295 與 Windows 開發人員工具更新會持續提供由通用 Windows 平台所支援的工具、功能與體驗。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 版本 1607 預覽與針對 Windows 開發人員工具的更新持續提供由通用 Windows 平台所提供的工具、功能及體驗。 在 Windows 10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
-## Windows 10 Anniversary SDK Preview 組建 12295
+## Windows 10 版本 1607 預覽
 
 功能 | 說明
  :---- | :----
@@ -29,6 +30,6 @@ Windows IoT | Windows 10 IoT 核心版可讓您以 Windows 的熟悉感來建立
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

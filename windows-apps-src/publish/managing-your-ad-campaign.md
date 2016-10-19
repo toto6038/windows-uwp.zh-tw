@@ -5,14 +5,14 @@ title: "管理您的廣告活動"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 ---
 
 # 管理您的廣告活動
 
 
-若要管理您 app 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 app 頁面的 [創造營收]****&gt;[促銷您的應用程式]****。 [促銷您的應用程式]**** 頁面會列出所有與您的 app 相關聯的廣告活動，並顯示每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)中這些詞彙的定義。
+若要管理您 App 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 App 頁面的 [創造營收]**** &gt; [促銷您的 App]****。 [促銷您的 App]**** 頁面會列出所有與您的 App 相關聯的廣告活動，並顯示每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)中這些詞彙的定義。
 
 若要篩選廣告活動的清單，請按一下 [**區段篩選器**] 下拉式清單，然後從下列篩選器中進行選擇：
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
 ## 報告
 
 
-若要查看廣告活動的執行方式，請在儀表板的瀏覽窗格中按一下 [分析]****&gt;[App 安裝廣告]****。 如需此報告的詳細資訊，請參閱[應用程式安裝廣告報告](app-install-ads-reports.md)。
+若要查看廣告活動的執行方式，請在儀表板的瀏覽窗格中按一下 [分析]**** &gt; [App 安裝廣告]****。 如需此報告的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)。
 
 ## 編輯廣告活動
 
@@ -51,6 +51,6 @@ ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

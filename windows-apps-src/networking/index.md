@@ -4,8 +4,8 @@ ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "存取網路和 Web 服務的技術。"
 title: "網路和 Web 服務"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 
 ---
 
@@ -25,10 +25,9 @@ ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
 | [HttpClient](httpclient.md)                                                             | 使用 [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。             |
 | [RSS/Atom 摘要](web-feeds.md)                                                          | 使用 [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。                   |
 | [背景傳輸](background-transfers.md)                                         | 使用背景傳輸 API 在網路上可靠地複製檔案。           |
-| [使用 EDP 身分識別標記網路連線](tagging_network_connections_with_edp_identity.md) | 本主題說明如何在企業資料保護 (EDP) 案例中建立網路連線之前，先建立受保護的對話內容。 |
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -6,20 +6,18 @@ ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
 ---
-
 # 通知視覺化工具
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 通知視覺化檢視是[市集](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中新的通用 Windows 平台 (UWP) app，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 
-## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概觀
+## 概觀
 
 
 和 Visual Studio 的 XAML 編輯器/設計檢視一樣，當您編輯時，通知視覺化檢視應用程式會提供即時的磚視覺預覽。 應用程式也會檢查錯誤，這可確保您建立的是有效的磚承載。
@@ -36,7 +34,7 @@ ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
 
  
 
-## <span id="Features"></span><span id="features"></span><span id="FEATURES"></span>功能
+## 功能
 
 
 通知視覺化檢視隨附數個範例承載，以展示彈性動態磚可能的型態並協助您開始。 您可以實驗所有不同的文字選項、群組/子群組、背景影像，而且您可以看到磚如何適應不同的裝置和螢幕。 在您變更後，您可以將更新的承載儲存為檔案以供日後使用。
@@ -51,7 +49,7 @@ ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
 
  
 
-## <span id="related_topics"></span>相關主題
+## 相關主題
 
 
 * [在市集中取得通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
@@ -69,6 +67,6 @@ ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

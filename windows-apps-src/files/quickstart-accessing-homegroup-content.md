@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "存取 HomeGroup 內容"
 description: "存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 ---
 # 存取 HomeGroup 內容
@@ -57,7 +57,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     picker.FileTypeFilter.Clear();
     picker.FileTypeFilter.Add("*");
     ```
-  
+
 2.  **顯示檔案選擇器並處理挑選的檔案。**
 
     建立和自訂檔案選擇器後，讓使用者呼叫 [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 以挑選一個檔案，或呼叫 [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 以挑選多個檔案。
@@ -93,11 +93,11 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     這個範例會設定先以相關性再以修改日期來排序搜尋結果的查詢選項。 搜尋篩選是使用者在前面步驟中輸入的查詢字詞：
     ```csharp
-    Windows.Storage.Search.QueryOptions queryOptions = 
+    Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
                 (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
     queryOptions.UserSearchFilter = queryTerm.Text;
-    Windows.Storage.Search.StorageFileQueryResult queryResults = 
+    Windows.Storage.Search.StorageFileQueryResult queryResults =
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
@@ -105,7 +105,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     下列範例會在 HomeGroup 中執行搜尋查詢，並將任何相符檔案的名稱儲存為字串清單。
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
 
     if (files.Count > 0)
@@ -127,7 +127,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     HomeGroup 中的每個第一層資料夾都代表不同的 HomeGroup 使用者。 因此，若要取得 HomeGroup 使用者的集合，請呼叫 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) 擷取最上層 HomeGroup 資料夾。
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
@@ -142,7 +142,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
         {
             // Found the target user's folder, now find all files in the folder.
             userFound = true;
-            Windows.Storage.Search.QueryOptions queryOptions = 
+            Windows.Storage.Search.QueryOptions queryOptions =
                 new Windows.Storage.Search.QueryOptions
                     (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
             queryOptions.UserSearchFilter = "*";
@@ -211,10 +211,6 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

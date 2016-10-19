@@ -4,8 +4,8 @@ Description: "Windows 市集提供「電信業者帳單」做為針對支援此�
 title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
-ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
+ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
+ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
 
 ---
 
@@ -27,14 +27,16 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 
 目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
 
-| 國家/地區 | 電信業者 |
-|----------------|------------------|
-| 芬蘭        | DNA、Elisa       |
-| 德國        | O2               |
-| 義大利          | Wind             |
-| 挪威         | Telenor          |
-| 瑞士    | Swisscom         |
-| 美國  | Sprint           |
+| 國家/地區  | 電信業者 |
+|-----------------|------------------|
+| 芬蘭         | DNA、Elisa       |
+| 德國         | O2               |
+| 匈牙利         | Telenor          |
+| 義大利           | Wind             |
+| 挪威          | Telenor          |
+| 瑞士     | Swisscom         |
+| 美國   | Sprint           |
+| 英國  | O2               |
 
  
 
@@ -50,10 +52,10 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 澳大利亞            | Telstra                                                            |
 | 奧地利              | A1 Telekom、T-Mobile                                               |
 | 巴林              | Zain、VIVA                                                         |
-| 比利時              | BASE、Mobistar、Proximus                                                     |
+| 比利時              | BASE、Mobistar、Proximus                                           |
 | 巴西               | Claro                                                              |
 | 保加利亞             | Telenor                                                            |
-| 加拿大               | Fido、Rogers、Telus                                                |
+| 加拿大               | Fido、Rogers                                                       |
 | 智利                | Claro                                                              |
 | 中國                | 中國移動                                                       |
 | 哥倫比亞             | Claro、Movistar                                                    |
@@ -70,26 +72,25 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 瓜地馬拉            | Claro                                                              |
 | 匈牙利              | Telenor、T-Mobile                                                  |
 | 印度                | Idea                                                               |
-| 印尼            | Indosat、Telkomsel、XL Axiata、AXIS                                |
-| 愛爾蘭              | O2、Vodafone、Three                                                      |
+| 印尼            | Indosat、Telkomsel、XL Axiata、Hutchinson CP Telecommunications (HCPT)     |
+| 愛爾蘭              | O2、Vodafone、Three                                                |
 | 義大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | 約旦               | Zain、Umniah                                                       |
 | 肯亞                | Safaricom                                                          |
-| 科威特               | Zain、VIVA                                                         |
+| 科威特               | Zain、Viva、Ooredoo                                                |
 | 拉脫維亞               | Tele2                                                              |
 | 立陶宛            | Tele2                                                              |
 | 馬來西亞             | DiGi                                                               |
-| 墨西哥               | Iusacell、Telcel、Unefon、Movistar                                 |
+| 墨西哥               | Iusacell、Telcel、Movistar                                         |
 | 荷蘭          | T-Mobile、Vodafone                                                 |
 | 挪威               | Telenor                                                            |
 | 阿曼                 | Ooredoo                                                            |
 | 巴基斯坦             | Telenor                                                            |
 | 秘魯                 | Claro                                                              |
-| 菲律賓          | Globe、Sun                                                         |
-| 波蘭               | T-Mobile、Orange、Polkomtel (Plus)                                 |
-| 波多黎各          | Claro                                                              |
+| 菲律賓          | Globe、Sun、Smart Communications                                   |
+| 波蘭               | T-Mobile、Orange、Polkomtel (Plus)、Play                           |
 | 羅馬尼亞              | Orange、Vodafone                                                   |
-| 俄羅斯               | Beeline、MTS                                                          |
+| 俄羅斯               | Beeline、MTS                                                       |
 | 沙烏地阿拉伯         | Zain                                                               |
 | 新加坡            | M1、SingTel、StarHub                                               |
 | 斯洛伐克             | T-Mobile                                                           |
@@ -98,7 +99,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 瑞典               | Telenor、Tele2                                                     |
 | 瑞士          | Swisscom                                                           |
-| 泰國             | DTAC                                                               |
 | 阿拉伯聯合大公國 | Etisalat、Du                                                       |
 | 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
@@ -118,6 +118,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

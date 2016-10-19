@@ -2,16 +2,14 @@
 description: "取得對您的 UWP app 新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的 App。"
 title: "UWP 控制項和模式 - Windows 應用程式開發"
 author: mijacobs
-keywords: uwp controls, user interface, app controls
+keywords: "uwp 控制項, 使用者介面, app 控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
-ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
 # 適用於 UWP app 的控制項和模式
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 在 UWP app 開發中，「控制項」<i></i>是顯示內容或啟用互動的 UI 元素。 控制項是使用者介面的基本要素。 我們提供超過 45 種控制項供您使用，從簡單的按鈕到強大的資料控制項 (例如資料格檢視) 都有。 「模式」<i></i>是可結合數個控制項以創造新項目的配方。
 
@@ -67,7 +65,7 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 </li>
 
 
-<li>[對話方塊、快顯及功能表](dialogs-popups-menus.md)</li>
+<li>[對話方塊和飛出視窗](dialogs.md)</li>
 
 <li>[翻轉檢視](flipview.md)</li>
 
@@ -88,6 +86,8 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 <li>[自訂傳輸控制項](custom-transport-controls.md)</li>
 </ul>
 </li>
+
+<li>[功能表和操作功能表](menus.md)</li>
 
 <li>[瀏覽窗格](nav-pane.md)</li>
 
@@ -143,6 +143,8 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 <li>[調適型和互動式快顯通知](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
 
+<li>[徽章通知](tiles-and-notifications-badges.md)</li>
+
 <li>[通知視覺化工具](tiles-and-notifications-notifications-visualizer.md)</li>
 
 <li>[通知傳遞方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
@@ -167,6 +169,6 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

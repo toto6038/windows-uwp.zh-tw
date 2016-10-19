@@ -4,8 +4,8 @@ ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: "了解如何使用 JavaScript/HTML 啟動插入式廣告。"
 title: "使用 JavaScript 的插入式廣告範例程式碼"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 5317895c2f28166c2905d0d49c5e98da5567943a
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
 # 使用 JavaScript 的插入式廣告範例程式碼
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本主題示範如何使用 JavaScript/HTML 啟動插入式廣告。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插入式廣告](interstitial-ads.md)。 如需示範如何將插入式廣告影片新增到 JavaScript/HTML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -238,6 +238,6 @@ ad.</b>");
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

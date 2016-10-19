@@ -5,7 +5,7 @@ title: "分析和效能的工具"
 description: "Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 
 ---
 # 分析和效能的工具
@@ -30,6 +30,6 @@ Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) App �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

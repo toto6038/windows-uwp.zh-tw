@@ -4,8 +4,8 @@ Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
 title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
@@ -120,16 +120,16 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 <td align="left">由<strong>版面配置面板類別</strong>組成、提供彈性版面配置系統的 XAML，例如用於靜態和回應式版面配置的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> 及 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong>。 <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">屬性</a></strong>用來控制元素的大小和位置。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">使用 XAML 定義版面配置</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>對等瀏覽。</strong> <br><br>為使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
+<td align="left"><strong>對等瀏覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong>提供<strong>橫式瀏覽</strong>。</td>
 <td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
-<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">兩個頁面之間的對等瀏覽</a></td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式瀏覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
 <td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供<strong>下階瀏覽</strong>以載入其他 <strong>activity (活動)</strong>。</td>
 <td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可讓使用者在階層的層級之間瀏覽。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">瀏覽</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>返回按鈕瀏覽。</strong> <br><br>在應用程式內往回瀏覽。</td>
@@ -665,6 +665,6 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

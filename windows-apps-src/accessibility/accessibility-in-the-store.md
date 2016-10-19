@@ -6,8 +6,8 @@ title: "市集中的協助工具"
 label: Accessibility in the Store
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
+ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
 
 ---
 
@@ -43,10 +43,10 @@ ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
 
 <span id="related_topics"/>
 ## 相關主題    
-* [協助工具](accessibility.md)
+* [協助工具](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

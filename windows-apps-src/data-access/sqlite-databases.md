@@ -5,7 +5,7 @@ title: "SQLite 資料庫"
 description: "SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 資料庫、在通用 Windows app 中封裝您自己的 SQLite 資料庫，或是從來源建立 SQLite 資料庫。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd628d16b3ee230ddc0c56b47fd381a518b8af00
+ms.openlocfilehash: 33148e8cfe301c6016d3f8a16bbcc904ca403d0e
 
 ---
 # SQLite 資料庫
@@ -39,7 +39,7 @@ SQLite 最適合 Windows 10 IoT 核心版 (IoT 核心版) 的手機 app 和內�
 
 `#include <winsqlite/winsqlite3.h>`
 
-設定專案以連結到 winsqlite3.lib。 在 [方案總管]**** 中，以滑鼠右鍵按一下您的專案並選取 [屬性]****&gt;[連結器]****&gt;[輸入]****，然後將 winsqlite3.lib 新增到 [其他相依性]****。
+設定專案以連結到 winsqlite3.lib。 在 [方案總管]**** 中，以滑鼠右鍵按一下您的專案並選取 [屬性]**** &gt; [連結器]**** &gt; [輸入]****，然後將 winsqlite3.lib 新增到 [其他相依性]****。
 
 ### 2. 在應用程式套件中包含 SQLite
 
@@ -95,6 +95,6 @@ SQLite 的原始程式碼可至 [SQLite.org 下載頁面](https://www.sqlite.org
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

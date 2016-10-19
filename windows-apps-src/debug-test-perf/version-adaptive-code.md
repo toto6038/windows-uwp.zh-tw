@@ -3,8 +3,8 @@ author: jwmsft
 title: "版本調適型程式碼"
 description: "了解如何利用新的 API 並維持與先前版本的相容性"
 translationtype: Human Translation
-ms.sourcegitcommit: 3f81d80cef0fef6d24cad1b42ce9726b03857b5a
-ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
+ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
+ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 
 ---
 
@@ -13,9 +13,6 @@ ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 每個版本的 Windows 10 SDK 都新增了令人興奮、讓您想要使用的新功能。 不過，並非您所有的客戶都會同時將他們的裝置更新至最新版 Windows 10，且您會想盡可能讓您的 App 可以適用廣泛的裝置類型。 在這裡，我們會說明如何設計您的 App，讓它可以在較早版本的 Windows 10 上執行，同時讓 App 在安裝最新更新的裝置上執行時也會利用新功能。
 
 若要確保您的 App 能支援廣泛的 Windows 10 裝置，需進行 2 個步驟。 首先，請將您的 Visual Studio 專案設定為以最新的 API 為目標。 這會影響當您編譯 App 時的情況。 接著，請執行執行階段檢查，以確保您僅呼叫正在執行您 App 之裝置上的 API。
-
-> [!NOTE] 
-> 本文會使用適用於 Windows 10 版本 1607 (年度更新) 的 Windows Insider Preview SDK 的範例。 Preview SDK 是發行前版本，因此無法使用於實際執行環境。 請僅在測試電腦上安裝該 SDK。 Preview SDK 包含錯誤修正和 API 表面區域的開發中變更。 如果您正在處理您需要提交至市集的應用程式，便不應該安裝預覽。
 
 ## 設定您的 Visual Studio 專案
 
@@ -43,7 +40,7 @@ ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 如需參考，以下是各個 SDK 的組建編號：
 - Windows 10 版本 1506：SDK 版本 10240
 - Windows 10 版本 1511 (11 月更新)：SDK 版本 10586
-- Windows 10 版本 1607 Insider Preview (年度更新)：截至本文發表為止，[最新的 Insider Preview SDK 版本為 14332](https://blogs.windows.com/buildingapps/2016/04/28/windows-10-anniversary-sdk-preview-build-14332-released/)。
+- Windows 10 版本 1607 (年度更新版)：SDK 版本 14393
 
 您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
 
@@ -481,6 +478,6 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

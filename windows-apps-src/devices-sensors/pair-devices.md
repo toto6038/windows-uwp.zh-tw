@@ -5,7 +5,7 @@ title: "配對裝置"
 description: "有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
+ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 ---
 # 配對裝置
@@ -76,6 +76,6 @@ ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

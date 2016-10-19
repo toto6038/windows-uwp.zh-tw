@@ -5,7 +5,7 @@ title: "開始使用適用於 iOS 開發人員的 UWP"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3fef53e5d6c9259bf5157b1221643d07e1d8be5e
+ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
 
 ---
 
@@ -42,6 +42,6 @@ Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

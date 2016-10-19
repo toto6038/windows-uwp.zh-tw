@@ -5,7 +5,7 @@ title: "非同步程式設計"
 description: "這個主題描述通用 Windows 平台 (UWP) 的非同步程式設計，以及它在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 元件延伸 (C\\+\\+/CX) 以及 JavaScript 中的表示方式。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
+ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
 ---
 # 非同步程式設計
@@ -81,6 +81,6 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

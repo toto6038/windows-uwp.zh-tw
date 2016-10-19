@@ -5,7 +5,7 @@ title: "藍牙 GATT"
 description: "本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼。"
 translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
+ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 ---
 # 藍牙 GATT
@@ -401,6 +401,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

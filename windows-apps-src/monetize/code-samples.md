@@ -4,17 +4,17 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "取得示範如何使用 Microsoft Advertising 媒體櫃中 AdControl 和 InterstitialAd 類別的屬性、方法和事件的其他範例。"
 title: "程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
 # 程式碼範例
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節提供示範如何使用 Microsoft Advertising 媒體櫃中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別的屬性、方法和事件，以將使用者設為目標、手動重新整理廣告和處理事件的範例。 如需示範如何將這些控制項新增到您的 app 的入門逐步解說，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
+
+本節提供示範如何使用 Microsoft Advertising 媒體櫃中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別的屬性、方法和事件，將使用者設為目標、手動重新整理廣告和處理事件的範例。 如需示範如何將這些控制項新增到您的 app 的入門逐步解說，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
 
 如需示範如何使用 C# 和 C++ 將橫幅及影片插入式廣告新增至 JavaScript/HTML App 以及XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -41,6 +41,6 @@ ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

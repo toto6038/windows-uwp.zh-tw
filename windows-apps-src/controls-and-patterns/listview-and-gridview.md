@@ -5,28 +5,38 @@ title: "清單檢視和方格檢視"
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: aeb339e54a1363dbfe5ee5a764ad762a42a40ed9
 
 ---
 # ListView 與 GridView
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 大部分應用程式都會操縱和顯示資料組 (例如影像圖庫) 或一組電子郵件訊息。 XAML UI 架構提供 ListView 和 GridView 控制項，讓您輕鬆顯示和操縱應用程式中的資料。  
 
 ListView 和 GridView 都是衍生自 ListViewBase 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論 ListView 時，除非另外指定，否則該資訊適用於 ListView 和 GridView 控制項。 我們可能會參考像是 ListView 或 ListViewItem 等類別，但對於對應的方格對等項目 (GridView 或 GridViewItem)，“List” 首碼可使用 “Grid” 來取代。 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx"><strong>Items 屬性</strong></a></li>
+</ul>
 
--   [**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
--   [**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
--   [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**ItemTemplate 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+</div>
+</div>
+
+
+
 
 ## 這是正確的控制項嗎？
 
-ListView 會在單一欄中以垂直堆疊的方式顯示資料。 這常用於顯示已排序的項目清單，例如電子郵件清單或搜尋結果。 [主要/詳細資料](master-details.md)案例 (也就是清單項目只包含少量資訊，且會另外顯示所選項目的詳細資料) 也非常適用。 
+ListView 會在單一欄中以垂直堆疊的方式顯示資料。 這常用於顯示已排序的項目清單，例如電子郵件清單或搜尋結果。 
 
-![主要/詳細資料模式範例](images/Stock_Tracker/uap_finance_desktop700.png)
+![具有分組資料的清單檢視](images/simple-list-view-phone.png)
 
 GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以水平方向進行堆疊，直到它填滿該欄為止，然後繼續進行下一列。 這常用於需要以豐富視覺效果顯示每個項目時，例如影像中心這類每個項目需要更多空間的情況。 
 
@@ -38,9 +48,9 @@ GridView 會在可垂直捲動的列和欄中顯示項目集合。 資料會以�
 
 清單檢視是一個 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可包含任何類型的項目集合。 在其 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合中必須有項目，才能在畫面上顯示任何內容。 若要填入檢視，您可以直接將項目新增至 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或將 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設為資料來源。 
 
-**重要** &nbsp;&nbsp;您可以使用 Items 或 ItemsSource 填入清單，但無法同時使用這兩者。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+**重要**&nbsp;&nbsp;您可以使用 Items 或 ItemsSource 來填入清單，但無法同時使用這兩者。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
-> **注意** &nbsp;&nbsp;為了簡化起見，本文的許多範例會直接填入 **Items** 集合。 不過，清單中較常見的項目是來自動態來源，例如，來自線上資料庫的書籍清單。 您可以使用 **ItemsSource** 屬性來達到此目的。 
+> **注意**&nbsp;&nbsp;為了簡化起見，本文的許多範例會直接填入 **Items** 集合。 不過，清單中較常見的項目是來自動態來源，例如，來自線上資料庫的書籍清單。 您可以使用 **ItemsSource** 屬性來達到此目的。 
 
 ### 將項目新增到 Items 集合
 
@@ -104,7 +114,7 @@ itemListView.ItemsSource = listItems;
 stackPanel1.Children.Add(itemListView);
 ```
 
-您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需詳細資訊，請參閱[與 XAML 的資料繫結](../data-binding/data-binding-quickstart.md)。
+您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
 
 在這裡，ItemsSource 會繫結至名為 `Items` 的公用屬性，此屬性可公開頁面的私用資料集合。
 
@@ -146,13 +156,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 在此範例中，資料項目是一個簡單字串。 您使用 DataTemplate 來將影像新增到字串左邊，並以藍色顯示字串。  
 
-> **注意** &nbsp;&nbsp;當您在 DataTemplate 中使用 [x:Bind 標記延伸](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。 若要設定 `x:DataType="System:String"` (如同在此範例中)，您必須將 `xmlns:System="using:System"`[XAML 命名空間宣告](https://msdn.microsoft.com/windows/uwp/xaml-platform/xaml-overview#xaml-namespaces)新增至您的頁面。
+> **注意**&nbsp;&nbsp;當您在 DataTemplate 中使用 [x:Bind 標記延伸](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 **XAML**
 ```XAML
 <ListView x:Name="listView1">
     <ListView.ItemTemplate>
-        <DataTemplate x:DataType="System:String">
+        <DataTemplate x:DataType="x:String">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="54"/>
@@ -177,7 +187,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ![使用資料範本的清單檢視項目](images/listview-itemstemplate.png)
 
-資料範本是您定義清單檢視外觀的主要方式。 如果您的清單會顯示大量項目，它們也會對效能產生顯著的影響。 在本文中，我們會針對大多數範例使用簡單的字串資料，而且不會指定資料範本。 如需如何使用 DataTemplates 和項目容器，在清單或方格中定義項目外觀的詳細資訊和範例，請參閱＜修改清單項目的外觀＞**。 
+資料範本是您定義清單檢視外觀的主要方式。 如果您的清單會顯示大量項目，它們也會對效能產生顯著的影響。 本文中的大多數範例，我們都會使用簡單的字串資料，而且不會指定資料範本。 如需如何使用資料範本和項目容器，在清單或方格中定義項目外觀的詳細資訊和範例，請參閱[清單檢視項目範本](listview-item-templates.md)。 
 
 ## 變更項目的配置
 
@@ -201,7 +211,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 - 將 [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx) 設為 **Disabled** 
 - 將 [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 設為 **Hidden** 
 
-> **注意** &nbsp;&nbsp;這些範例所顯示的清單檢視寬度是不受限制的，因此不會顯示水平捲軸。 如果您執行這個程式碼，可在 ListView 上設定 `Width="180"` 來顯示捲軸。
+> **注意**&nbsp;&nbsp;這些範例所顯示的清單檢視寬度不受限制，因此不會顯示水平捲軸。 如果您執行這個程式碼，可在 ListView 上設定 `Width="180"` 來顯示捲軸。
 
 **XAML**
 ```xaml
@@ -229,7 +239,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
  在下一個範例中，**ListView** 會使用 **ItemsWrapGrid** 而不是 **ItemsStackPanel**，在垂直換行清單中配置項目。 
  
-> **注意** &nbsp;&nbsp;清單檢視的高度必須受到限制，才能強制控制項在容器中換行。
+> **注意**&nbsp;&nbsp;清單檢視的高度必須受到限制，才能強制控制項在容器中換行。
 
 **XAML**
 ```xaml
@@ -263,19 +273,19 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以從各種方式進行選擇，讓使用者可以與清單檢視互動。 根據預設，使用者可以選取單一項目。 您可以變更 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 屬性，以啟用多重選取或停用選取。 您可以設定 [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 屬性，讓使用者可按一下項目來叫用動作 (例如按鈕)，而不需選取項目。
 
-> **注意** &nbsp;&nbsp;ListView 和 GridView 都會針對它們的 SelectionMode 屬性使用 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 列舉。 根據預設，IsItemClickEnabled 是 **False**，因此您只能設定它來啟用按一下模式。
+> **注意**&nbsp;&nbsp;ListView 和 GridView 都會針對其 SelectionMode 屬性使用 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 列舉。 根據預設，IsItemClickEnabled 是 **False**，因此您只能設定它來啟用按一下模式。
 
 下表顯示使用者可以與清單檢視互動的方式，以及您可以回應互動的方式。
 
 若要啟用此互動︰ | 使用這些設定： | 處理這個事件︰ | 使用此屬性來取得選取的項目：
 ----------------------------|---------------------|--------------------|--------------------------------------------
-沒有互動 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx)  =  **None**，[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | 無 | 無 
+沒有互動 | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**，[IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | 不適用 | 無 
 單一選取 | SelectionMode = **Single**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx)，[SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 多重選取 | SelectionMode = **Multiple**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 延伸選取 | SelectionMode = **Extended**，IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-按一下 | SelectionMode = **None**，IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 無 
+按一下 | SelectionMode = **None**，IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 不適用 
 
-> **注意** &nbsp;&nbsp;從 Windows 10 開始，您可以啟用 IsItemClickEnabled 來引發 ItemClick 事件，同時也將 SelectionMode 設定為 Single、Multiple 或 Extended。 如果您執行此動作，就會先引發 ItemClick 事件，接著引發 SelectionChanged 事件。 在某些情況下，假設您瀏覽到 ItemClick 事件處理常式的另一個頁面，就不會引發 SelectionChanged 事件且不會選取該項目。
+> **注意**&nbsp;&nbsp;從 Windows 10 開始，您可以啟用 IsItemClickEnabled 來引發 ItemClick 事件，同時也將 SelectionMode 設定為 Single、Multiple 或 Extended。 如果您執行此動作，就會先引發 ItemClick 事件，接著引發 SelectionChanged 事件。 在某些情況下，假設您瀏覽到 ItemClick 事件處理常式的另一個頁面，就不會引發 SelectionChanged 事件且不會選取該項目。
 
 您可以在 XAML 或程式碼中設定這些屬性，如下所示。
 
@@ -446,7 +456,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 與 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 屬性更有效率的方式來修改選取項目。 這些方法會使用項目索引的範圍來選取或取消選取。 由於只使用索引，因此，已虛擬化的項目仍會維持虛擬化狀態。 指定範圍中的所有項目都會選取 (或取消選取)，而無論其原始選取狀態為何。 針對這些方法的每一個呼叫，SelectionChanged 事件只會發生一次。
 
-> **重要** &nbsp;&nbsp;只有當 SelectionMode 屬性設為 Multiple 或 Extended 時，才能呼叫這些方法。 如果您在 SelectionMode 為 Single 或 None 時呼叫 SelectRange，即會擲回例外狀況。
+> **重要**&nbsp;&nbsp;只有當 SelectionMode 屬性設為 Multiple 或 Extended 時，才能呼叫這些方法。 如果您在 SelectionMode 為 Single 或 None 時呼叫 SelectRange，即會擲回例外狀況。
 
 當您使用索引範圍選取項目時，請使用 [**SelectedRanges**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx) 屬性來取得清單中的所有選取範圍。
 
@@ -490,14 +500,28 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+如需如何變更選取項目之外觀的資訊，請參閱[清單檢視項目範本](listview-item-templates.md)。
+
+### 拖放
+
+ListView 和 GridView 控制項支援在項目本身內部，以及在本身和其他 ListView 與 GridView 控制項之間進行拖放。 如需有關實作拖放模式的詳細資訊，請參閱[拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)。 
+
+## 取得範例
+
+*   [XAML ListView 和 GridView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)<br/>
+    這個範例說明 ListView 和 Gridview 控制項的用法。
+
+*   [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    以互動式格式查看所有 XAML 控制項。
 
 ## 相關文章
 
 - [清單](lists.md)
+- [清單檢視項目範本](listview-item-templates.md)
+- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

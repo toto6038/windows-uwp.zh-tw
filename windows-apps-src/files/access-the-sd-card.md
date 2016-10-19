@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "存取 SD 記憶卡"
 description: "您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 ---
 # 存取 SD 記憶卡
@@ -148,10 +148,6 @@ using Windows.Storage;
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

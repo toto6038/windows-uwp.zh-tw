@@ -4,8 +4,8 @@ Description: "Windows 開發人員中心儀表板會提供選項，讓您的 app
 title: "搶鮮版 (Beta) 測試和特定對象的發佈"
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a544565bf7bb82f2be1ded3e60836d5d191c6e93
+ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
+ms.openlocfilehash: 48164cd255f776f700a08e389ba1d2d6754ddeca
 
 ---
 
@@ -28,55 +28,57 @@ ms.openlocfilehash: a544565bf7bb82f2be1ded3e60836d5d191c6e93
 
 如需詳細資訊，請參閱[套件正式發行前小眾測試版](package-flights.md)。
 
-### 在市集中隱藏 app 及使用促銷碼
+> **注意** 若要將套件散佈給隨機選取的指定百分比 Windows 10 客戶，而不是散佈給指定的一組特定客戶，您可以使用[漸進式套件推出](gradual-package-rollout.md)。 如果您想要以漸進的方式，將更新散佈到您其中一個正式發行前小眾測試版群組，您也可以將推出結合套件正式發行前小眾測試版。
 
-如果您想要在發佈廣泛提供使用的提交之前，限制將 app 只發佈給特定群組的測試人員，您可以使用和您提交任何 app 時相同的 [app 提交程序](app-submissions.md)。 若要僅允許某些人員免費取得 app，並避免其他客戶看到 app 清單或下載 app，請執行以下作業：
+### 在市集中隱藏 App 及使用促銷碼
 
--   在您的提交中，於 [定價和可用性]**** 頁面上，選擇[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)區段中的 [隱藏這個 app 並避免購買。具備促銷碼的客戶仍能在 Windows 10 裝置上下載它]****。 這樣可以防止任何人在市集中透過搜尋或瀏覽來尋找您的 app。
+如果您想要限制將 App 只散佈給特定群組的測試人員，而**不**先發佈廣泛提供使用的提交，您可以使用和您提交任何 App 時相同的 [App 提交程序](app-submissions.md)。 若要僅允許某些人員免費取得 App，並避免其他客戶看到 App 清單或下載 App，請執行以下作業：
+
+-   在您的提交中，於 [定價和可用性] 頁面上，選擇 [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)區段中的 [隱藏這個 App 並避免購買。擁有直接連結的客戶可以看到 App 的清單，但是只有具備促銷碼而且使用 Windows 10 裝置的客戶可以下載 App]。 這樣可以防止任何人在市集中透過搜尋或瀏覽來尋找您的 App。
 -   在 app 通過認證之後，為 app [產生促銷碼](generate-promotional-codes.md)並提供給您的測試者。 在六個月內您可以為單一 app 產生最多 250 個促銷碼。 這些代碼會提供測試者 app 清單的直接連結，並讓他們免費下載，即使在您建立提交時已經為它設定價格。
 
-提供促銷碼連結給您的測試者後，他們就能免費下載您的 app、試用，並提供可協助您改善 app 的意見反應。 然後，當您準備好公開提供您的 app 時，只要建立新的提交，並將 [配送和可見性]**** 選項變更為 [任何人都可以在市集中找到您的 app]**** (和做您想要做的任何變更)。
+提供促銷碼連結給您的測試者後，他們就能免費下載您的 App、試用，並提供可協助您改善 App 的意見反應。 然後，當您準備好公開提供您的 App 時，只要建立新的提交，並將 [配送和可見性] 選項變更為 [在市集推出此 App] (以及您想要進行的其他任何變更) 即可。
 
 以下是執行此動作時應該牢記的一些事項：
 
--   建立新的送出即可隨時為測試者提供更新版本的 app。 請務必將 [配送和可見性]**** 選項設定為 [隱藏這個 app 並避免購買。具備促銷碼的客戶仍能在 Windows 10 裝置上下載它]****。 在通過認證程序之後，測試者會收到更新，但其他人將無法取得。
--   您的測試者必須有 Windows 10 裝置，才能在其上安裝 app。 (不過，您的 app 不需加入 Windows 10 套件，即可使用這個測試方法。)
--   您可以建立多個[促銷碼](generate-promotional-codes.md)，以隨時散佈 (每六個月最多 250 個代碼)。
--   在測試者下載 app 之後，您無法撤銷對 app 的存取。 下載 app 之後，他們可以繼續使用，並將可取得您後續發行的任何更新。
+-   建立新的提交即可隨時為測試者提供更新版本的 App。 請確定將 [配送和可見性] 選項設為 [隱藏這個 App 並避免購買。擁有直接連結的客戶可以看到 App 的清單，但是只有具備促銷碼而且使用 Windows 10 裝置的客戶可以下載 App]。 在通過認證程序之後，測試者會收到更新，但其他人將無法取得。
+-   您的測試者必須有 Windows 10 裝置，才能在其上安裝 app。 (不過，您的 App 不需加入 Windows 10 套件，即可使用這個測試方法)。
+-   您可以建立多個[促銷碼](generate-promotional-codes.md)，以隨時散佈 (每六個月最多 500 個代碼)。
+-   在測試者下載 App 之後，您就無法撤銷對 App 的存取。 下載 app 之後，他們可以繼續使用，並將可取得您後續發行的任何更新。
 -   您必須決定向測試者收集意見反應的方式。 請考慮在搶鮮版 app 中提供電子郵件或網站連結，讓他們可以輕鬆提供意見。
--   您可以檢閱 app 的[分析報告](analytics.md)，包含測試者留下的任何評分或評論。
--   發佈您的 app 給測試者時，您可以併入 app 內產品 (IAP)。 因為您可能不想要向他們收費，請務必在進行測試時將 IAP 的價格設定為免費。 然後，將 app 提供給其他客戶時，您可以為每個 IAP 建立新的提交，以變更它的價格。
+-   您可以檢閱 App 的[分析報告](analytics.md)，包含測試者留下的任何評分或評論。
+-   將您的 App 發佈給測試者時，您可以併入附加元件。 因為您可能不想要向他們收費，請務必在進行測試時將附加元件的價格設定為免費。 然後，將 App 提供給其他客戶時，您可以為每個附加元件建立新的提交，以變更其價格。
 
-## 散佈 app 給測試者的其他方法
+## 散佈 App 給測試者的其他方法
 
-您也可以限制將 app 只散佈給目標群組人員，方法是在提交 app 時使用 [價格和可用性]**** 頁面的 [銷售和能見度](set-app-pricing-and-availability.md#distribution-and-visibility) 區段中的額外選項。 請記住，並非所有作業系統的客戶都能使用這些選項。 上述選項是您在 Windows 10 裝置上測試您的 app 時的建議選項。
+您也可以限制將 app 只散佈給目標群組人員，方法是在提交 app 時使用 [價格和可用性] 頁面的 [銷售和能見度](set-app-pricing-and-availability.md#distribution-and-visibility) 區段中的額外選項。 請記住，並非所有作業系統的客戶都能使用這些選項。 上述選項是您在 Windows 10 裝置上測試您的 app 時的建議選項。
 
-如果選擇以上兩個選項中的一個，當您準備好結束測試期間並廣泛提供 app 時，一律可以送出更新並將[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)選項設定為 [在市集推出此應用程式]****。 您不需要變更 app 的名稱並建立完全不同的 app (除非您要這樣做)。
+如果選擇以上兩個選項中的一個，當您準備好結束測試期間並廣泛提供 app 時，一律可以送出更新並將[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)選項設定為 [在市集推出此應用程式]。 您不需要變更 app 的名稱並建立完全不同的 app (除非您要這樣做)。
 
 ### 以具備您的 app 清單連結的客戶為發佈目標
 
-使用這個選項，只有具有您的 app 清單直接連結的人員可以下載它。 您可以在儀表板的 [App 身分識別](view-app-identity-details.md)頁面找到這個連結 (使用 **Windows Phone 的 URL** 或 **Windows 10 的 URL**)。 沒有客戶可以透過搜尋或瀏覽市集找到 app，但具備連結的任何人都可以下載它。 (請注意，您的 app 的價格必須是免費，測試者才能**免費**下載。)
+使用這個選項時，只有擁有您 App 清單直接連結的人員可以下載它。 您可以在儀表板的 [App 身分識別](view-app-identity-details.md) 頁面上找到這個 **URL**。 沒有客戶可以透過搜尋或瀏覽市集找到 App，但具備連結的任何人都可以下載它。 (請注意，您的 app 的價格必須是免費，測試者才能**免費**下載。)
 
-若要使用此選項，請在提交 app 時，在 [定價和可用性]**** 頁面的[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)區段中選取 [在「市集」中隱藏此應用程式。具有應用程式清單直接連結的客戶仍能下載應用程式，但在 Windows 8 與 Windows 8.1 上除外。]****。
+若要使用此選項，請在提交 app 時，在 [定價和可用性] 頁面的[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)區段中選取 [在「市集」中隱藏此應用程式。具有應用程式清單直接連結的客戶仍能下載應用程式，但在 Windows 8 與 Windows 8.1 上除外。]。
 
 > **重要：**此選項不適用於 Windows 8 或 Windows 8.1 上的測試者。
 
-### 以具備指定的電子郵件地址的客戶為發佈目標
+### 以具備指定的電子郵件地址的客戶為散佈目標
 
-針對在 Windows Phone 8.1 及更舊的版本上測試，此選項提供限制發佈您 app 的方法。 只有您在方塊中輸入其電子郵件地址 (與其 Microsoft 帳戶相關聯) 的人員可以使用到清單的直接連結來下載您的 app。
+僅針對**在 Windows Phone 8.1 及更舊版本上**的測試，此選項提供限制散佈您 App 的方法。 只有您在方塊中輸入其電子郵件地址 (與其 Microsoft 帳戶相關聯) 的人員可以使用指向其清單的直接連結來下載您的 App。
 
-> **重要** 擁有您輸入之電子郵件地址的人員將只能在執行 Windows Phone 8.1 或較舊版本的裝置上下載 app。
+> **重要** 擁有您輸入之電子郵件地址的人員將只能在執行 Windows Phone 8.1 或更舊版本的裝置上下載 App。
  
-您可以在儀表板的[應用程式身分識別](view-app-identity-details.md)頁面上找到 app 的直接連結 (使用 **Windows Phone 的 URL**)。 沒有客戶可以透過搜尋或瀏覽市集找到 app，而即使他們擁有 app 清單的連結，他們也將無法下載 app，除非他們使用的 Microsoft 帳戶與您提交此 app 時提供的電子郵件地址相關聯。
+您可以在儀表板的 [App 身分識別](view-app-identity-details.md) 頁面上找到 App 的直接連結。 沒有客戶可以透過搜尋或瀏覽市集找到 App，而即使他們擁有 App 清單的連結，他們也將無法下載 App，除非他們使用的 Microsoft 帳戶與您提交此 App 時提供的電子郵件地址相關聯。
 
 > **注意：**如果您使用此選項，您仍然可以透過[產生促銷碼](generate-promotional-codes.md) (如上所述) 讓 app 供測試者在 Windows 10 裝置上使用。 擁有您的其中一個 app 促銷碼的任何人都可以在 Windows 10 裝置上下載它，即使您沒有在這裡輸入其電子郵件。
 
-若要使用此選項，在提交您的 app 時，請在 [定價和可用性]**** 頁面的 [[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)] 區段中，選取 [隱藏這個 app 並使其僅可供您在下方指定的人員使用，這些人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app]****。
+若要使用此選項，在提交您的 app 時，請在 [定價和可用性] 頁面的 [[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)] 區段中，選取 [隱藏這個 app 並使其僅可供您在下方指定的人員使用，這些人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app]。
 
 如果您選擇這個選項，請記住下列各項：
 
--   只有當您先前發行 app 時，未將 [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility) 選項設定為 [任何人都可以在市集中找到您的 app]****，才能夠選取此選項。
--   您 app 的價格必須是免費，測試者才能**免費**下載。
+-   只有當您先前發佈 App 時，未將[[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility) 選項設定為 **在市集推出此 App**，才能夠選取此選項。
+-   您 App 的價格必須是**免費**的，測試者才能免費下載。
 -   您的測試者只可以在 Windows Phone 8.1 和更早版本上下載 app。 測試者必須有零售版 Windows Phone 裝置，才能使用 app，但裝置不必解除鎖定或是進行註冊。
 -   測試者必須有 Microsoft 帳戶，才能存取 Windows 市集並下載您的 app。 您必須知道每位測試者的 Microsoft 帳戶相關聯電子郵件地址，才能將他們加入到您的清單中。 如果要建立新的 Microsoft 帳戶，測試者可以前往 [Microsoft 帳戶設定](http://go.microsoft.com/fwlink/p/?LinkId=618945)。
 -   您可以在文字方塊中提供最多 10,000 個電子郵件地址。
@@ -86,6 +88,6 @@ ms.openlocfilehash: a544565bf7bb82f2be1ded3e60836d5d191c6e93
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

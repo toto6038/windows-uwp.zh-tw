@@ -5,7 +5,7 @@ title: "管理約會"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
+ms.openlocfilehash: ae7fe9075a4c49c99a572087bf4b7b176555caef
 
 ---
 
@@ -504,7 +504,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## 新增可編輯的約會
 
-[ **ShowEditNewAppointmentAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 的作用與 [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 相同，唯一的差別在於用來新增約會的對話方塊可供編輯，讓使用者可以先修改約會資料再儲存。
+[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 的作用與 [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 相同，唯一的差別在於用來新增約會的對話方塊可供編輯，讓使用者可以先修改約會資料再儲存。
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -539,7 +539,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## 顯示約會詳細資料
 
-[ **ShowAppointmentDetailsAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) 會使系統顯示指定之約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
+[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) 會使系統顯示指定之約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -573,6 +573,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

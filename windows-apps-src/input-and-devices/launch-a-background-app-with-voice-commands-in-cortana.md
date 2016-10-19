@@ -8,7 +8,7 @@ template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-background-app-with-voice-commands-in-cortana
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: b50c3bc3adc6dead92567b80165f23a5318e6f76
+ms.openlocfilehash: f80678865c1dbdf84dbcfd44ae6b98b7eadc9446
 
 ---
 
@@ -16,10 +16,10 @@ ms.openlocfilehash: b50c3bc3adc6dead92567b80165f23a5318e6f76
 
 本主題已移到 https&#58;//msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-background-app-with-voice-commands-in-cortana。
 
-Github：https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.md
+Github：https&#58;//github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.md
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

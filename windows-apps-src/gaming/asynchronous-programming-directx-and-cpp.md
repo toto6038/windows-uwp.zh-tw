@@ -5,7 +5,7 @@ description: "本主題包含搭配 DirectX 使用非同步程式設計與執行
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
 
 ---
 
@@ -68,6 +68,6 @@ ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

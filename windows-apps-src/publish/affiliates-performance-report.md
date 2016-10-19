@@ -5,7 +5,7 @@ title: "聯盟績效報告"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
 ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
+ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 ---
 
@@ -22,9 +22,9 @@ ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
 
 ## 應用程式層級的聯盟廣告績效報告
 
-這份報告以圖表和表格形式提供儀表板中目前所選 app 的聯盟廣告績效資料。 若要檢視這份報告，請在儀表板中選取其中一個 app，然後在瀏覽窗格中按一下 [分析]****&gt;[聯盟績效]****。
+這份報告以圖表和表格形式提供儀表板中目前所選 App 的聯盟廣告績效資料。 若要檢視這份報告，請在儀表板中選取其中一個 App，然後在瀏覽窗格中按一下 [分析]**** &gt;[聯盟績效]****。
 
-資料來自我們追蹤您 app 中廣告的下列七項績效衡量指標：
+資料來自我們追蹤您 App 中廣告的下列七項績效衡量指標：
 
 -   **估計營收 (已核准)**：您透過使用者按一下您 app 中的聯盟廣告並進行購買之後，以佣金方式從已核准購買中賺取之收益的估計金額。
 -   **估計營收 (等待核准)**：您能以傭金方式從待核准購買中賺取之收益的估計金額。
@@ -50,6 +50,6 @@ ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

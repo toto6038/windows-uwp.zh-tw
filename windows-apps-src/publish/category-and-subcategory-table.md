@@ -4,8 +4,8 @@ Description: "將您的 app 列在正確的類別與子類別中，可協助客�
 title: "類別與子類別表格"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
+ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
 
 ---
 
@@ -18,13 +18,13 @@ ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
 
 > **注意** 如果您選擇的類別是 [**遊戲**]，則子類別為必要項。
 
- 
-
 一個 app 只能列在一個類別 (以及一個子類別，如果有的話)。如果您不確定要使用哪個類別或子類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
 
-如果您想要變更已經在市集上架之 app 的類別或子類別，您可以[建立新的提交](app-submissions.md)並選取新類別來執行此動作。
+如果您想要變更已經在市集上架之 App 的類別或子類別，您可以[建立新的提交](app-submissions.md)並選取新類別來執行此動作。
 
-Windows 市集可以組織 app，以分成下列類別與子類別。
+> **重要** 如果您發佈 [遊戲]**** 類別的 App，您將無法在新的提交中挑選不同的類別。 您也無法在您先前以不同類別發佈之 App 的更新中，選擇 [遊戲]**** 類別。
+
+Windows 市集可以組織 App，以分成下列類別與子類別。
 
 只有一些類別有子類別。 請記得，只有在子類別屬於您所挑選的類別時，才能使用該子類別。
 
@@ -64,6 +64,6 @@ Windows 市集可以組織 app，以分成下列類別與子類別。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

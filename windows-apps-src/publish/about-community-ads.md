@@ -5,7 +5,7 @@ title: "關於社群廣告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
+ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 選擇加入社群廣告：
 
-1. 移至 Windows 開發人員中心儀表板中的 [營利]****&gt;[利用廣告營利]**** 頁面。
+1. 移至 Windows 開發人員中心儀表板中的 [營利]**** &gt; [利用廣告營利]**** 頁面。
 2. 在 [社群廣告]**** 區段中，選取 [在我的應用程式中顯示社群廣告]**** 核取方塊。
    > **注意**在您選取或取消選取此核取方塊之後，不需要重新發佈您的 App，變更就會生效。
 
@@ -40,6 +40,6 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

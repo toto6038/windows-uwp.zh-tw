@@ -5,7 +5,7 @@ description: "開始使用常用控制項"
 title: "開始使用常用控制項"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
+ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
 
 ---
 
@@ -62,6 +62,6 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

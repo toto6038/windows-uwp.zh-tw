@@ -7,7 +7,7 @@ label: Speech interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ecd002e6f3a92702459426858693dd7547b0ca02
+ms.openlocfilehash: d32c38c2f939e03375630439f2aa512004601a70
 
 ---
 
@@ -231,8 +231,8 @@ TTS 從純文字或 SSML 產生語音輸出。
 ## 相關文章
 
 * [語音互動](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598) 
-            **範例**
+* [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/mt185598)
+ **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -243,6 +243,6 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,8 @@ title: "設計適用於 Windows 10 的通用軟體"
 label: Designing inclusive software
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
+ms.sourcegitcommit: c5ccae0e095b7c8e403a230fe8f3442754aa2ad7
+ms.openlocfilehash: 94848fd1acf51e7ab8dab0f45584d3214be58830
 
 ---
 
@@ -103,10 +103,11 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 * [通用設計](http://design.microsoft.com/inclusive)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
-* [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md)  
+* [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 
+* [協助工具](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

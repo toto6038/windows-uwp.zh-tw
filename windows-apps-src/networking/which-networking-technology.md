@@ -5,7 +5,7 @@ description: "適用於 UWP 開發人員的網路功能技術快速概觀，並�
 title: "哪一種網路功能技術？"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65
+ms.openlocfilehash: fc7793926275dd732ee6c814c9e65a6b656654d2
 
 
 ---
@@ -138,6 +138,6 @@ Windows 10 為廣泛的開發人員對象公開了一些先前僅公開給裝置
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

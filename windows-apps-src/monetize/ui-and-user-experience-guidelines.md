@@ -4,8 +4,8 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解關於在 App 中廣告的 UI 和使用者體驗指導方針。"
 title: "在 App 中廣告的 UI 和使用者體驗指導方針。"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 # 在 App 中廣告的 UI 和使用者體驗指導方針。
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 ## Windows 應用程式的一般 UI 資源
 
@@ -143,6 +143,6 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

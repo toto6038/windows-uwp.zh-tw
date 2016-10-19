@@ -5,7 +5,7 @@ description: "了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 ---
 
@@ -674,6 +674,6 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,22 +6,35 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
 
 ---
 # 選項按鈕
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。 每個選項都由一個選項按鈕表示；使用者在選項按鈕群組中只能選取一個選項按鈕。
 
 (如果您對名稱感到好奇，選項按鈕 (Radio Button) 的名稱來自於收音機 (Radio) 上的頻道預設按鈕。)
 
 ![選項按鈕](images/controls/radio-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 屬性</strong></a></li>
+</ul>
 
--   [**RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)
--   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
--   [**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -58,7 +71,7 @@ Microsoft Edge 瀏覽器設定中的選項按鈕。
 - 將它們放入同一個父容器。
 - 將每個選項按鈕的 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
 
-> **注意** &nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
+> **注意**&nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
 
 在這個範例中，第一個選項按鈕群組位於相同的堆疊面板中，藉此以隱含方式群組化。 第二個群組分成 2 個堆疊面板，所以是依 GroupName 明確群組化。
 
@@ -185,6 +198,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

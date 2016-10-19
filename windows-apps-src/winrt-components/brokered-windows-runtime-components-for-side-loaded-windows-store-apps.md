@@ -3,8 +3,8 @@ author: msatranjr
 title: "Windows 執行階段元件"
 description: "本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
+ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
+ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
 
 ---
 
@@ -39,7 +39,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 **協定**
 
-我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這包括宣告可代表 UWP 的一或多個 C\# 類別。 如需使用 C\# 建立 Windows 執行階段類別的特定需求，請參閱 MSDN 主題[以 C\# 和 Visual Basic 建立 Windows 執行階段元件](https://msdn.microsoft.com/en-us/library/br230301.aspx)。
+我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這包括宣告可代表 UWP 的一或多個 C\# 類別。 如需使用 C\# 建立 Windows 執行階段類別的特定需求，請參閱 MSDN 主題[以 C\# 和 Visual Basic 建立 Windows 執行階段元件](https://msdn.microsoft.com/library/br230301.aspx)。
 
 >**注意** 目前在桌面元件和側載應用程式之間的 Windows 執行階段元件協定中不支援列舉。
 
@@ -154,7 +154,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 <ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的元素，且屬性 Name="DesktopApplicationPath" 和 Type="string" 是強制且不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..]****  按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
+如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..]**** 按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
 
 >**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
 
@@ -379,7 +379,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 上述參考非常謹慎地混合參考，對此混合式伺服器的正常運作非常重要。 通訊協定就是用來開啟 .csproj 檔案 (就像如何編輯專案 OutputType 中所述)，然後視需要新增這些參考。
 
-正確設定參考後，下一個工作是實作伺服器功能。 請參閱 MSDN 主題：[Windows 執行階段元件互通的最佳做法 (使用 C#/VB/C++ 和 XAML 的 Windows 市集應用程式)](https://msdn.microsoft.com/en-us/library/windows/apps/hh750311.aspx)。
+正確設定參考後，下一個工作是實作伺服器功能。 請參閱 MSDN 主題：[Windows 執行階段元件互通的最佳做法 (使用 C#/VB/C++ 和 XAML 的 Windows 市集應用程式)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
 這項工作要建立 Windows 執行階段元件 dll，以便在實作時呼叫桌面程式碼。 隨附的範例包含 Windows 執行階段中使用的主要模式：
 
 -   方法呼叫
@@ -449,7 +449,7 @@ return Task<int>.Run(async () =>
 
 **在 Visual Studio 建立 Proxy**
 
-建立並登錄 Proxy 和虛設常式以便在一般 Windows 市集應用程式套件中使用的處理程序，在 [Windows 執行階段元件中引發事件](https://msdn.microsoft.com/en-us/library/windows/apps/dn169426.aspx)主題中有相關說明。
+建立並登錄 Proxy 和虛設常式以便在一般 Windows 市集應用程式套件中使用的處理程序，在 [Windows 執行階段元件中引發事件](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx)主題中有相關說明。
 本文所述的步驟比下方說明的處理程序更加複雜，因為它涉及在應用程式套件內登錄 Proxy/虛設常式 (與全域登錄不同)。
 
 **步驟 1：**使用桌面元件專案的方案，在 Visual Studio 中建立 Proxy/虛設常式專案：
@@ -569,7 +569,7 @@ struct PersonStruct
 
 -   [傳遞可靠且可信任的 Windows 市集應用程式](http://go.microsoft.com/fwlink/p/?LinkID=393644)
 
--   [應用程式協定與延伸 (Windows 市集應用程式)](https://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx)
+-   [應用程式協定與延伸 (Windows 市集應用程式)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
 -   [如何在 Windows 10 上側載應用程式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
@@ -579,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

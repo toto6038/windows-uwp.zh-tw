@@ -4,8 +4,8 @@ ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: "了解如何使用 C# 啟動插入式廣告。"
 title: "使用 C 的插入式廣告範例程式碼#"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 5969bfacd34bcfab5f1bebd2cfbade4fd16c5a39
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
 # 使用 C 的插入式廣告範例程式碼\# #  
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本主題示範如何使用 C# 啟動插入式廣告。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插入式廣告](interstitial-ads.md)。 如需示範如何將插入式廣告影片新增到使用 C# 之 XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -106,6 +106,6 @@ namespace BasicCSharpInterstitialUWP
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

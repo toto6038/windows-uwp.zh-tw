@@ -1,11 +1,11 @@
 ---
-description: "取得適用於 UWP app 使用者介面配置和控制項設計的最新下載和工具。"
-keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: "UWP app 的設計下載 - Windows 應用程式開發"
+description: "取得適用於 UWP App 使用者介面配置和控制項設計的最新下載和工具。"
+keywords: "uwp app layout, UI, user interface designs, downloads, uwp tools, UWP App 版面配置, 使用者介面設計, 下載, UWP 工具"
+title: "UWP App 的設計下載 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
-ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
+ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
+ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 
 ---
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>適用於 Adobe Illustrator 的 Redliner Tool</b><br/>
-輕鬆無比地從您的 Illustrator 原型產生參考線。 <br/>[下載適用於 Adobe Illustrator 的 Redliner Tool](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>    
+輕鬆地從您的 Illustrator 原型產生參考線。 (需要 Adobe Illustrator CC 或更新版本。)<br/>[下載適用於 Adobe Illustrator 的 Redliner Tool](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
@@ -109,6 +109,6 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <b>想要更多程式碼嗎？</b> 瀏覽 Windows 範本頁面取得所有我們的 UWP app 範本的清單。 [移至範本入口網站](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

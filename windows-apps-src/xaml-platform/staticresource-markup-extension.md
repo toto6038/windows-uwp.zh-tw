@@ -5,7 +5,7 @@ title: "StaticResource 標記延伸"
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 3f486a8ac56e37a7401b9a87a4d560cac6b68f6f
+ms.openlocfilehash: 48cdfd86705ff29e4ffc7e9f69de2f01e75f7f2a
 
 ---
 
@@ -87,6 +87,6 @@ ms.openlocfilehash: 3f486a8ac56e37a7401b9a87a4d560cac6b68f6f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

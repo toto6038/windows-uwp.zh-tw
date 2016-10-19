@@ -6,11 +6,13 @@ ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 
 ---
 # 樞紐和索引標籤
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Pivot 控制項和相關的索引標籤模式可用於瀏覽經常存取、不同的內容類別。 樞紐可允許在兩個或更多個內容窗格之間進行瀏覽，並依賴文字標頭來表達不同區段的內容。
 
@@ -117,6 +119,6 @@ Pivot 是一種 [**ItemsControl**](https://msdn.microsoft.com/library/windows/ap
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

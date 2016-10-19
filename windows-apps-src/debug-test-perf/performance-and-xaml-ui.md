@@ -5,7 +5,7 @@ title: "效能"
 description: "使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 
 ---
 # 效能
@@ -36,6 +36,6 @@ ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

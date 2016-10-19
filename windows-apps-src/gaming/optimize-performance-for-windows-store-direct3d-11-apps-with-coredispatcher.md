@@ -5,7 +5,7 @@ description: "輸入延遲可能大幅影響遊戲的體驗，因此，最佳化
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 ---
 
@@ -261,6 +261,6 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

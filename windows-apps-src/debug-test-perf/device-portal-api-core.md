@@ -4,8 +4,8 @@ ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 參考資料"
 description: "了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。"
 translationtype: Human Translation
-ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
-ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
+ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
+ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
 
 ---
 
@@ -40,7 +40,8 @@ package   | (**必要**) 要安裝之套件的檔案名稱。
 
 **要求主體**
 
-- 無
+- .appx 或 .appxbundle 檔案，以及 App 所需的任何相依性。 
+- 用來簽署 App 的憑證 (如果裝置是 IoT 或 Windows Desktop)。 其他平台並不需要憑證。 
 
 **回應**
 
@@ -58,6 +59,7 @@ HTTP 狀態碼      | 描述
 
 * Windows Mobile
 * Windows 電腦
+* Xbox
 * HoloLens
 * IoT
 
@@ -100,6 +102,7 @@ HTTP 狀態碼      | 描述
 
 * Windows Mobile
 * Windows 電腦
+* Xbox
 * HoloLens
 * IoT
 
@@ -117,7 +120,9 @@ DELETE | /api/app/packagemanager/package
 
 **URI 參數**
 
-- 無
+URI 參數 | 描述
+:---          | :---
+package   | (**必要**) 目標 App 的 PackageFullName (來自 GET /api/app/packagemanager/packages)
 
 **要求標頭**
 
@@ -3297,6 +3302,58 @@ HTTP 狀態碼      | 描述
 * IoT
 
 ---
+### 重新命名檔案
+
+**要求**
+
+重新命名資料夾中的檔案。
+
+方法      | 要求 URI
+:------     | :-----
+POST | /api/filesystem/apps/rename
+
+<br />
+**URI 參數**
+
+URI 參數 | 描述
+:------     | :-----
+knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載應用程式。 
+filename | (**必要**) 所要重新命名之檔案的原始名稱。 
+newfilename | (**必要**) 檔案的新名稱。
+packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+- 無
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定。 檔案已重新命名
+404 | 找不到檔案
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows Mobile
+* Windows 電腦
+* HoloLens
+* Xbox
+* IoT
+
+---
 ### 刪除檔案
 
 **要求**
@@ -3325,6 +3382,8 @@ path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 - 無
 
 **回應**
+
+- 無 
 
 **狀態碼**
 
@@ -3393,6 +3452,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

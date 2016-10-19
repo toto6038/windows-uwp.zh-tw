@@ -1,35 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: "在 Microsoft Store Engagement and Monetization SDK 中檢閱 Microsoft Advertising 程式庫的版本資訊。"
+description: "檢閱 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫的版本資訊。"
 title: "Microsoft Advertising 程式庫的版本資訊"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: b82c4385b0e7089bdddbe094f47f0766f90aa21b
 
 ---
 
 # Microsoft Advertising 程式庫的版本資訊
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節提供 Microsoft Store Engagement and Monetization SDK 中 Microsoft Advertising 程式庫目前版本的版本資訊。 這些程式庫支援 Windows 10、Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
+
+本節提供 Microsoft Store Services SDK (適用於 UWP app)，以及適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x App) 中 Microsoft Advertising 程式庫之目前版本的版本資訊。 這些程式庫支援 Windows 10、Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
 
 ## 安裝
 
 
-Microsoft advertising 程式庫是做為 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) 的一部分來提供使用。 針對 Windows Phone 8.x Silverlight 以外的所有專案類型，曾用來在較舊的 Microsoft Universal Ad Client SDK 及 Microsoft Advertising SDK 獨立版本中發佈的 Microsoft Advertising 組件，現在會利用 Microsoft Store Engagement and Monetization SDK 進行安裝。 如需有關如何安裝的 SDK，而且包含在它的程式庫的詳細資訊，請參閱[安裝 Microsoft Advertising 程式庫](install-the-microsoft-advertising-libraries.md)。
+Microsoft Advertising 程式庫隨附於 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (適用於 UWP app)，以及適用於 [Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App) 中。 如需有關如何安裝 SDK 及其中所包含的程式庫詳細資訊，請參閱[安裝 Microsoft Advertising 程式庫](install-the-microsoft-advertising-libraries.md)。
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]****  > [加入已連接服務]****  > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]**** > [加入已連接服務]**** > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
-## 了解 Microsoft Advertising 程式庫和廣告流量分配之間的差異
-
-雖然 Microsoft Advertising 程式庫和廣告流量分配是由 Microsoft Store Engagement and Monetization SDK 所提供，這些程式庫有不同的目的。 如果您想要在 XAML 或 JavaScript app 中顯示來自 Microsoft 的橫幅或影片插入式廣告，請使用 Microsoft Advertising 程式庫的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別。 如果您想要在 XAML 應用程式中 (JavaScript/HTML 應用程式不支援廣告流量分配) 顯示來自多個廣告網路的橫幅廣告，請在廣告流量分配程式庫中使用 **AdMediatorControl** 類別。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
 
 ## 解除安裝之前的版本
 
-安裝 Microsoft Store Engagement and Monetization SDK 之前，強烈建議您解除安裝 Microsoft Universal Ad Client SDK 或 Microsoft Advertising SDK 先前所有的執行個體。
+在您安裝 Microsoft Store Services SDK (適用於 UWP app) 或適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x App) 之前，強烈建議您先將所有舊版的 Microsoft Universal Ad Client SDK 或 Microsoft Advertising SDK 執行個體解除安裝。
 
 ## 目標架構特定的建置輸出
 
@@ -41,7 +38,7 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
 
 ## 沒有工具箱控制項
 
-在 Microsoft Store Engagement and Monetization SDK 目前版本的 Microsoft Advertising 程式庫中，沒有任何可供拖曳 **AdControl** 或 **InterstitialAd** 到您 app 中設計表面的工具箱控制項。 如需在您的標記和程式碼中新增這些控制項的相關指示，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
+在 Microsoft Store Services SDK 或適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 中目前版本的 Microsoft Advertising 程式庫中，沒有任何可供將 **AdControl** 或 **InterstitialAd** 拖曳到您 App 中設計介面的工具箱控制項。 如需在您的標記和程式碼中新增這些控制項的相關指示，請參閱[開發人員逐步解說](developer-walkthroughs.md)。
 
 ## 緯度和經度屬性不再提供
 
@@ -57,6 +54,6 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

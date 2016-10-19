@@ -6,20 +6,17 @@ ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
-ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 ---
-
 # 適用於 UWP App 的磚
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>設定預設磚
+## 設定預設磚
 
 
 在 Visual Studio 中建立新的專案時，它會建立一個顯示 app 名稱和標誌的簡單預設磚。
@@ -49,10 +46,10 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
     您應該以自己的影像取代這些影像。 您可以選擇為不同的視覺比例提供影像，但不需全部提供。 若要確保您的 app 在各種裝置上有很好的顯示效果，我們建議您提供每個影像的 100%、200% 及 400% 比例版本。
 
-    縮放影像按照以下命名慣例： 
+    縮放影像按照以下命名慣例：測試
     
-    &lt;影像名稱&gt;.scale-&lt;縮放比例&gt;.&lt;影像檔案副檔名&gt;  
-    
+    *&lt;影像名稱&gt;*.scale-*&lt;縮放比&gt;*.*&lt;影像檔案副檔名&gt;* 
+
     例如：SmallLogo.scale-100.png
 
     參考影像時，您將以 *&lt;影像名稱&gt;*.*&lt;影像檔案副檔名&gt;* 的格式來參考它 (在此範例中為 "SmallLogo.png")。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
@@ -79,7 +76,7 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>使用通知來自訂磚
+## 使用通知來自訂磚
 
 
 安裝 App 後，您可以使用通知來自訂磚。 您可以在第一次啟動 App 或在回應某些事件 (例如推播通知) 時進行這個動作。
@@ -107,6 +104,6 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

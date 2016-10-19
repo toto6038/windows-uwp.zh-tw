@@ -5,7 +5,7 @@ description: "這個案例研究根據 Bookstore1 中所提供的資訊來建置
 title: "Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
+ms.openlocfilehash: 2d142ddb5522daf5467ce5690b3fe8e7a356ac0a
 
 ---
 
@@ -174,6 +174,6 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "本主題說明 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
+Description: "本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "協助工具文字的需求"
 label: Accessible text requirements
@@ -16,7 +16,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 
 
 
-本主題說明 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
+本主題描述 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>

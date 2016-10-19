@@ -5,7 +5,7 @@ title: "商標與著作權保護"
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a
+ms.openlocfilehash: f4946ac6e163dd84806d52a1775301ac231d2b9d
 
 ---
 
@@ -69,6 +69,6 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

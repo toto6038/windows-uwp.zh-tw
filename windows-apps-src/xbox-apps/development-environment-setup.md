@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "在 Xbox 開發環境上設定 UWP"
 description: "在 Xbox 開發環境上設定並測試 UWP 的步驟。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
+ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
 
 ---
 
@@ -29,11 +28,16 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 安裝最新的 Windows 10 SDK 預覽版。 如需安裝資訊，請參閱[下載開發人員適用的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
 
-  > **重要** &nbsp;&nbsp;您必須安裝最新的 SDK，但您並_不_需要安裝作業系統最新的 Windows Insider Preview 版本。
+> [!IMPORTANT]
+> 您必須安裝最新的 SDK，但您並「不」__需要安裝作業系統最新的 Windows Insider Preview 版本。
+
+## 啟用開發人員模式
+
+在您可以從開發電腦上部署應用程式之前，您必須透過 Windows 功能表啟用開發人員模式：[設定 / 更新與安全性 / 開發人員專用 / 開發人員模式]。
 
 ## 設定 Xbox One
 
-在您將 app 部署到 Xbox One 之前，主機上必須已有使用者登入。 您可以使用現有的 Xbox Live 帳戶，或在開發人員模式中為主機建立一個新帳戶。 
+在您可以將 App 部署到 Xbox One 之前，主機上必須已有使用者登入。 您可以使用現有的 Xbox Live 帳戶，或在開發人員模式中為主機建立一個新帳戶。 
 
 ## 建立您的第一個應用程式
 
@@ -109,6 +113,6 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -9,7 +9,7 @@ ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 
 ---
 
-# 在 C++ 中建立 "hello world" 應用程式 (Windows 10)
+# 在 C++ 中建立 hello world 應用程式 (Windows 10)
 
 透過 Microsoft Visual Studio 2015，您可以使用 C++ 來開發在 Windows 10 上執行的 app，包括在執行 Windows 10 的手機上執行。 這些 app 具有使用 Extensible Application Markup Language (XAML) 定義的 UI。
 
@@ -266,11 +266,11 @@ MainPage::MainPage()
 
    按 F5。
 
-在行動裝置模擬器上，App 看起來會像這樣。
+在行動裝置模擬器上，應用程式看起來會像這樣。
 
 ![行動裝置上最初的應用程式畫面](images/hw10-screen1-mob.png)
 
-Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 您會注意到的第一件事便是在本機電腦上看起來很適當的 120 像素左邊界，在較小的行動裝置螢幕上卻會將您的內容往外推。 在本教學課程後面，您會學習如何隨著不同的螢幕大小調整 UI，讓您的 app 永遠保持美觀。
+Visual Studio 會啟動選取的模擬器，然後部署和啟動您的應用程式。 您會注意到的第一件事便是在本機電腦上看起來很適當的 120 像素左邊界，在較小的行動裝置螢幕上卻會將您的內容往外推。 在本教學課程後面，您會學習如何隨著不同的螢幕大小調整 UI，讓您的 app 永遠保持美觀。
 
 ## 步驟 2：建立事件處理常式
 

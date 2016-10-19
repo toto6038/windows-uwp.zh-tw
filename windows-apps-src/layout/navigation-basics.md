@@ -6,8 +6,8 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 ---
 
@@ -99,7 +99,7 @@ ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
 
 瀏覽元素可以提供兩種服務：它們能協助使用者取得想要的內容，而且某些元素可以讓使用者知道他們在應用程式的哪個部分。 不過，它們也會佔用應用程式用於內容或命令元素的空間，因此，使用適合您應用程式結構的瀏覽元素非常重要。
 
-### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>對等瀏覽元素
+### <span id="Peer_navigation_elements"></span><span id="peer_navigation_elements"></span><span id="PEER_NAVIGATION_ELEMENTS"></span>對等瀏覽元素
 
 對等瀏覽元素可在同子樹系且同層級的頁面之間瀏覽。
 
@@ -265,10 +265,6 @@ ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

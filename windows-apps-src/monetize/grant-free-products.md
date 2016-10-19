@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。"
+description: "在 Windows 市集購買 API 中使用這個方法，將免費 App 或附加元件授與指定的使用者。"
 title: "授與免費產品"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 ---
 
 # 授與免費產品
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-請在 Windows 市集購買 API 中使用這個方法，來將免費的 app 或應用程式內產品 (IAP) 授與給指定的使用者。
+
+在 Windows 市集購買 API 中使用這個方法，將免費 App 或附加元件 (也稱為應用程式內產品或 IAP) 授與指定的使用者。
 
 目前您只能授與免費的產品。 如果您的服務嘗試使用這個方法來授與非免費的產品，這個方法就會傳回錯誤。
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 | 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。                           |
+| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
@@ -58,7 +58,7 @@ ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 | language       | 字串 | 使用者所用的語言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字串 | 使用者所在的市場。                                                                                                                                                                                                                                                                                                | 是      |
 | orderId        | guid   | 為訂單所產生的 GUID。 此值對使用者來說是唯一的，但在所有訂單中並不需要是唯一的。                                                                                                                                                                                              | 是      |
-| productId      | 字串 | Windows 市集型錄中的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
+| productId      | 字串 | Windows 市集型錄中的市集識別碼。 若是 App，市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 若是附加元件，在 Windows 開發人員中心儀表板 [概觀] 頁面的 URL 可取得附加元件的「市集識別碼」。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 | 是      |
 | quantity       | 整數    | 要購買的數量。 目前唯一支援的值為 1。 如果沒有指定，則預設為 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字串 | Windows 市集型錄中的 SKU 識別碼。 舉例來說，SKU 識別碼可以是「0010」。                                                                                                                                                                                                                                                | 是      |
 
@@ -128,7 +128,7 @@ OrderLineItemV6 物件包含下列參數。
 | billingState            | 字串         | 訂單的帳單狀態。 完成時，此屬性會設定為 **Charged**。                                   | 否       |
 | campaignId              | 字串         | 此訂單的行銷活動識別碼。                                                                              | 否       |
 | currencyCode            | 字串         | 用於價格詳細資料的貨幣代碼。                                                                    | 是      |
-| 說明             | 字串         | 當地語系化的明細項目說明。                                                                    | 是      |
+| description             | 字串         | 當地語系化的明細項目說明。                                                                    | 是      |
 | devofferId              | 字串         | 特定訂單的優惠識別碼 (如果有的話)。                                                           | 否       |
 | fulfillmentDate         | DateTimeOffset | 履行發生時的日期。                                                                           | 否       |
 | fulfillmentState        | 字串         | 此項目的履行狀態。 完成時，此屬性會設定為 **Fulfilled**。                      | 否       |
@@ -137,9 +137,9 @@ OrderLineItemV6 物件包含下列參數。
 | legacyBillingOrderId    | 字串         | 舊版的帳單識別碼。                                                                                       | 否       |
 | lineItemId              | 字串         | 此訂單中項目的明細項目識別碼。                                                                 | 是      |
 | listPrice               | 十進位        | 此訂單中項目的定價。                                                                    | 是      |
-| productId               | 字串         | 該明細項目的 Windows 市集產品識別碼。                                                               | 是      |
+| productId               | 字串         | 明細項目的市集識別碼。                                                               | 是      |
 | productType             | 字串         | 產品的類型。 支援的值為 **Durable**、**Application** 及 **UnmanagedConsumable**。 | 是      |
-| Quantity                | 整數            | 已訂購項目的數量。                                                                            | 是      |
+| quantity                | 整數            | 已訂購項目的數量。                                                                            | 是      |
 | retailPrice             | 十進位        | 已訂購項目的零售價。                                                                        | 是      |
 | revenueRecognitionState | 字串         | 收益辨識的狀態。                                                                               | 是      |
 | skuId                   | 字串         | 該明細項目的 Windows 市集 SKU 識別碼。                                                                   | 是      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -4,8 +4,8 @@ title: "在 app 資訊清單中宣告背景工作"
 description: "在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 
 ---
 
@@ -20,9 +20,12 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 -   [**BackgroundTasks 結構描述**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-在 app 資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
+透過在應用程式資訊清單中將背景工作宣告為擴充功能的方式，啟用背景工作的使用。
 
-背景工作必須要在 app 資訊清單中進行宣告，否則您的 app 將無法登錄背景工作 (將會擲回例外狀況)。 此外，在應用程式資訊清單中必須宣告背景工作，才能通過認證。
+> [!Important]
+>  本文是針對在個別處理程序中執行的背景工作。 單一處理程序背景工作不會在資訊清單中進行宣告。
+
+您必須在應用程式資訊清單中宣告在個別處理程序中執行的背景工作，否則您的 App 將無法登錄它們 (將會擲回例外狀況)。 此外，必須在應用程式資訊清單中宣告背景工作，才能通過認證。
 
 這個主題假設您已建立了一或多個背景工作類別，而且您的 app 登錄要執行的每一項背景工作以回應至少一個觸發程序。
 
@@ -60,48 +63,46 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 將這個程式碼複製到 Extensions 元素 (您將在下列步驟新增屬性)。
 
 ```xml
-      <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="">
-          <BackgroundTasks>
-            <Task Type="" />
-          </BackgroundTasks>
-        </Extension>
-      </Extensions>
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="">
+      <BackgroundTasks>
+        <Task Type="" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
 ```
 
 1.  將 EntryPoint 屬性變更成具有登錄背景工作時您的程式碼用來做為進入點的相同字串 (**namespace.classname**)。
 
     在此範例中，進入點是 ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName：
 
-    ```xml
-          <Extensions>
-            <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
-              <BackgroundTasks>
-                <Task Type="" />
-              </BackgroundTasks>
-            </Extension>
-          </Extensions>
-    ```
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
+       <BackgroundTasks>
+         <Task Type="" />
+       </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
     **注意** 請確認列出您要使用的每一個觸發程序類型，否則背景工作將不會使用未宣告的觸發程序類型進行登錄 ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法將會失敗並擲回例外狀況)。
 
-    這個程式碼片段範例表示系統事件觸發程序和推播通知的用法：
+    這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 
-    ```xml
-                <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
-                  <BackgroundTasks>
-                    <Task Type="systemEvent" />
-                    <Task Type="pushNotification" />
-                  </BackgroundTasks>
-                </Extension>
-    ```
+```xml
+<Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
+    <BackgroundTasks>
+        <Task Type="systemEvent" />
+        <Task Type="pushNotification" />
+    </BackgroundTasks>
+</Extension>
+```
 
-    > **注意** 通常應用程式會在稱為 "BackgroundTaskHost.exe" 的特殊程序中執行。 您可以將 Executable 元素新增至 Extension 元素，讓背景工作能夠在應用程式內容中執行。 Executable 元素只可搭配需要該元素的背景工作使用，例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。    
 
-## 新增其他背景工作延伸
-
+## 新增其他背景工作擴充功能
 
 針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
 
@@ -146,7 +147,64 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 </Applications>
 ```
 
+## 宣告要在不同處理程序中執行的背景工作
+
+Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
+
+### 在前景應用程式中執行
+
+以下是一個範例 XML，當中宣告與前景應用程式在相同處理程序中執行的背景工作。 請注意，`Executable` 屬性：
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+        <BackgroundTasks>
+            <Task Type="systemEvent" />
+        </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+> [!Note]
+> 請只將 Executable 元素與需要它的背景工作 (例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)) 搭配使用。  
+
+### 在不同的背景主機處理程序中執行
+
+以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 請注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會一起執行。
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.SessionConnectedTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimeZoneTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="timer" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ApplicationTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.MaintenanceTriggerTask" ResourceGroup="foobar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+
 ## 相關主題
+
 
 * [偵錯背景工作](debug-a-background-task.md)
 * [登錄背景工作](register-a-background-task.md)
@@ -154,6 +212,6 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "事件與路由事件概觀"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+ms.openlocfilehash: 1debd0c60fbfb12ff63e27140c4a769565d98f2a
 
 ---
 
@@ -85,7 +85,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 ### 使用 **async** 模式的事件處理常式
 
-在某些情況下，您會想要在事件處理常式內使用運用 **async** 模式的 API。 例如，您可能會在 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 中使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 來顯示檔案選擇器並與其互動。 不過，許多檔案選擇器 API 都是非同步的。 它們必須在 **async**/awaitable 範圍內呼叫，而且編譯器會強制這項條件。 因此，您可以執行的動作是將 **async** 關鍵字新增至事件處理常式，而處理常式現在是 **async****void**。 現在允許您的事件處理常式進行 **async**/awaitable 呼叫。
+在某些情況下，您會想要在事件處理常式內使用運用 **async** 模式的 API。 例如，您可能會在 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 中使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 來顯示檔案選擇器並與其互動。 不過，許多檔案選擇器 API 都是非同步的。 它們必須在 **async**/awaitable 範圍內呼叫，而且編譯器會強制這項條件。 因此，您可以新增 **async** 關鍵字到您的事件處理常式，來使處理常式成為 **async** **void**。 現在，您的事件處理常式已可做出 **async**/awaitable 呼叫。
 
 如需使用 **async** 模式的使用者互動事件處理範例，請參閱[檔案存取和選擇器](https://msdn.microsoft.com/library/windows/apps/jj655411) ([使用 C# 或 Visual Basic 建立您的第一個 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/hh974581)系列中的一部分)。 另請參閱 [在 C 中呼叫非同步 API]。
 
@@ -159,7 +159,7 @@ ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 -   自訂靜態事件。
 -   適用於頁面瀏覽的處理常式。
 
-[ **FrameworkElement.Unloaded** ](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是在狀態管理中擁有適當位置和物件存留期的事件觸發程序，您可以使用這些事件觸發程序來移除其他事件的處理常式。
+[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是在狀態管理中擁有適當位置和物件存留期的事件觸發程序，您可以使用這些事件觸發程序來移除其他事件的處理常式。
 
 例如，您可以使用這個程式碼將名稱為 **textBlock1\_PointerEntered** 的事件處理常式從目標物件 **textBlock1** 中移除。
 
@@ -246,14 +246,14 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 判斷滑鼠、觸控以及手寫筆輸入是否能夠在 UI 中看見元素以及在何處看見的動作，稱為「點擊測試」**。 對於觸控動作以及因為觸控動作而引發的互動特定或操作事件，元素必須具有點擊測試可見性，才能成為事件來源並引發與動作相關聯的事件。 否則，動作會透過這個元素傳送至視覺化樹狀結構中可與該輸入進行互動的任何基礎元素或父項元素。 影響點擊測試的因素有很多，不過您可以檢查元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 屬性，判斷指定的元素是否會引發輸入事件。 這個屬性只在元素符合以下條件時才會傳回 **true**：
 
 -   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 屬性值是 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
--   元素的 **Background** 或 **Fill** 屬性值不是 **null**。 **null**[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值會導致透明而看不到點擊測試 (若要讓元素變成透明但仍可以進行點擊測試，請使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 筆刷而不要使用 **null**)。
+-   元素的 **Background** 或 **Fill** 屬性值不是 **null**。 **null** [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值會導致透明而看不到點擊測試。 (若要讓元素變成透明但仍可以進行點擊測試，請使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 筆刷而不要使用 **null**)。
 
 **注意** **Background** 和 **Fill** 不是由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定義的，而是由不同的衍生類別 (如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377)) 定義的。 不過，您為前景和背景屬性使用的筆刷含意，與點擊測試及輸入事件是相同的，無論該屬性是由哪個子類別實作。
 
 -   如果元素是控制項，它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 屬性值必須是 **true**。
 -   元素在配置中必須具有實際的尺寸。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 為 0 的元素不會引發輸入事件。
 
-部分控制項擁有特殊的點擊測試規則。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 沒有 **Background** 屬性，但是在其尺寸的整個區域內仍然可以進行點擊測試。 [ **Image** ](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項在它們的定義矩形尺寸中可以進行點擊測試，無論媒體來源檔案中的透明內容 (如 alpha 通道) 是否顯示。 [ **WebView** ](https://msdn.microsoft.com/library/windows/apps/br227702) 控制項具有特殊點擊測試行為，因為輸入可由裝載 HTML 處理並產生指令碼事件。
+部分控制項擁有特殊的點擊測試規則。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 沒有 **Background** 屬性，但是在其尺寸的整個區域內仍然可以進行點擊測試。 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項在它們的定義矩形尺寸中可以進行點擊測試，無論媒體來源檔案中的透明內容 (如 alpha 通道) 是否顯示。 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 控制項具有特殊點擊測試行為，因為輸入可由裝載 HTML 處理並產生指令碼事件。
 
 大部分的 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 類別和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 在自己的背景中無法進行點擊測試，但是仍然可以處理從它們包含之元素所路由的使用者輸入事件。
 
@@ -292,6 +292,6 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,18 +4,27 @@ ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "列舉裝置"
 description: "列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
+ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
+ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
 
 ---
 # 列舉裝置
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+## 範例
 
-** 重要 API **
+列舉所有可用裝置最簡單的方法是使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 命令拍攝快照 (會在後面的章節中近一步說明)。
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+```CSharp
+async void enumerateSnapshot(){
+  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
+}
+```
+
+若要下載示範 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 更進階使用方式的範例，可按一下[這裡](http://go.microsoft.com/fwlink/?LinkID=620536)。
+
+## 列舉 API
 
 列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。 您用來列舉可能裝置的 API 是 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間。 使用這些 API 的部份原因如下。
 
@@ -82,7 +91,13 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 若要列舉裝置的快照，您可以使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 方法。 這個方法會等待，直到整個列舉處理程序完成，並以一個 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) 物件形式傳回所有結果為止。 這個方法也同時會多載以提供您數個選項，讓您可以篩選結果並將結果限制在您感興趣的裝置。 您可以藉由提供 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 或傳入裝置選取器來執行這個動作。 裝置選取器是一個 AQS 字串，可指定您想要列舉的裝置。 如需詳細資訊，請參閱[建置裝置選取器](build-a-device-selector.md)。
 
+以下提供裝置列舉快照的範例：
+
+
+
 除了限制結果之外，您也可以指定想要為裝置擷取的屬性。 如果這樣做，指定的屬性就能在集合中傳回的每個 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件的屬性包中使用。 請務必注意，並非所有屬性都可供所有裝置類型使用。 若要查看哪些屬性可供哪些裝置類型使用，請參閱[裝置資訊屬性](device-information-properties.md)。
+
+
 
 ## 列舉並監看裝置
 
@@ -136,10 +151,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，在遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
 
-## 範例
-
-
-若要下載示範如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的範例，可按一下[這裡](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
  
 
@@ -151,6 +162,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

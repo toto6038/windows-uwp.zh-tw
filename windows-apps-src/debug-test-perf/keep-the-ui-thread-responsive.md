@@ -5,7 +5,7 @@ title: "讓 UI 執行緒保持回應"
 description: "不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。"
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 ---
 # 讓 UI 執行緒保持回應
@@ -106,6 +106,6 @@ public class AsyncExample
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

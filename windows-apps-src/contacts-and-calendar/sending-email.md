@@ -3,10 +3,10 @@ author: Xansky
 description: "示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。"
 title: "傳送電子郵件"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-keywords: contacts, email, send
+keywords: "連絡人, 電子郵件, 傳送"
 translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
+ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
 
 ---
 
@@ -76,6 +76,6 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

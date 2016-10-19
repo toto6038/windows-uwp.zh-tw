@@ -3,8 +3,8 @@ Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WP
 Search.Product: eADQiWindows 10XVcnh
 title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式"
 translationtype: Human Translation
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 
 使用轉換器相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定，這相當有用。 但如果您的應用程式是使用 xcopy 所安裝，或者您已熟悉應用程式的安裝程式對於系統所做的變更，您可以選擇手動建立應用程式套件和資訊清單。
 
-以下是手動建立 Centennial 套件的步驟︰
+以下是手動建立套件的步驟︰
 
 ## 手動建立資訊清單。
 
@@ -103,6 +103,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -5,7 +5,7 @@ title: "繫結階層式資料並建立主要/詳細資料檢視"
 description: "您可以將項目控制項繫結到已繫結成一個鏈的 CollectionViewSource 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。"
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
+ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
 
 ---
 # 繫結階層式資料並建立主要/詳細資料檢視
@@ -225,6 +225,6 @@ namespace MasterDetailsBinding
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

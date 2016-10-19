@@ -4,8 +4,8 @@ ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
 description: "了解如何處理 AdControl 類別的事件。"
 title: "JavaScript 中的 AdControl 事件"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d24030dfae92451924000ba4f1ac19cf6c4d4abe
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
 # JavaScript 中的 AdControl 事件
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [HTML 屬性範例](html-properties-example.md)。
 
@@ -56,6 +56,6 @@ window.myAdEngagedChanged = function (sender) {
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,24 +6,37 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 ---
 # 捲軸
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
-
--   [**ScrollViewer 類別**](https://msdn.microsoft.com/library/windows/apps/br209527)
--   [**ZoomMode 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
 
 捲動檢視器控制項能夠盡可能在檢視區內容納許多內容，以及一或兩個捲軸。 觸控手勢可用來移動瀏覽和縮放 (捲軸只在操作期間淡入)，而指標可用來捲動。 撥動手勢會依慣性移動瀏覽。
 
-**注意** Windows：根據偵測到的輸入裝置，有兩種移動瀏覽顯示模式：適用於觸控的移動瀏覽指示器；以及適用於其他輸入裝置 (包括滑鼠、觸控板、鍵盤和手寫筆) 的捲軸。
+**注意** Windows 有兩種捲動器視覺效果，並會根據使用者的輸入模式而定︰捲動指標適合在使用觸控板或控制器時使用，而使用滑鼠、鍵盤及手寫筆等其他輸入裝置時，則適合使用互動式捲軸。
 
 ![標準捲軸和移動瀏覽指示器控制項外觀的範例](images/SCROLLBAR.png)
+
+
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>ScrollViewer 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>ScrollBar 類別</strong></a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+
+
 
 ## 範例
 
@@ -32,11 +45,27 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 ![說明標準捲軸控制項的螢幕擷取畫面](images/ScrollBar_Standard.jpg)
 
 ## 建立捲動檢視器
-
-此 XAML 說明如何將影像放在捲動檢視器，並啟用縮放。
+若要將垂直捲動功能新增至頁面，請將頁面內容包裝在捲動檢視器中。
 
 ```xaml
-<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
+<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1">
+
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock Text="My Page Title" Style="{StaticResource TitleTextBlockStyle}"/>
+            <!-- more page content -->
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+```
+此 XAML 說明如何將影像放在捲動檢視器中，並啟用縮放功能。
+
+```xaml
+<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
               HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible"
               Height="200" Width="200">
     <Image Source="Assets/Logo.png" Height="400" Width="400"/>
@@ -54,18 +83,18 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 **ScrollViewer XAML 附加屬性**
 
 ScrollViewer 會定義下列 XAML 附加屬性︰
-- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx) 
-- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) 
+- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
+- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
-- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx) 
+- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx)
 - [ScrollViewer.IsHorizontalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
-- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx)
 - [ScrollViewer.IsScrollInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
 - [ScrollViewer.IsVerticalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
-- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx)
 - [ScrollViewer.IsZoomChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
 - [ScrollViewer.IsZoomInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx) 
+- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx)
 - [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
 - [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
 
@@ -73,19 +102,21 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 
 例如，以下是如何永遠為 ListView 的內建捲動檢視器顯示垂直捲軸。
 ```xaml
-<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/> 
+<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
 
 對於 ScrollViewer 在 XAML 中是明確的情況下 (如範例程式碼中所示)，您不需要使用附加屬性語法。 只要使用屬性語法，例如 `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`。
 
 
-## 建議
+## 建議事項
 
+-   可以的話，請採用垂直捲動的設計，而不是水平捲動。
 -   對延長超過一個檢視區界限 (垂直或水平) 的內容區域，使用單軸移動瀏覽。 對延長超過兩個檢視區界限 (垂直和水平) 的內容區域，使用雙軸移動瀏覽。
--   在清單方塊、下拉式清單、文字輸入方塊、資料格檢視、清單檢視及 Hub 控制項中使用內建的捲動功能。 如果要一次全部顯示的項目數量太多，請使用上述控制項，讓使用者能夠在項目清單水平或垂直捲動。
+-   在清單檢視、方格檢視、下拉式方塊、清單方塊、文字輸入方塊及中樞控制項中，使用內建的捲動功能。 如果要一次全部顯示的項目數量太多，請使用上述控制項，讓使用者能夠在項目清單水平或垂直捲動。
 -   如果您希望使用者能夠在大型區域雙向移動瀏覽，還能予以縮放，例如，您想讓使用者在完整大小的影像 (而不是根據畫面來調整影像大小) 移動瀏覽和縮放，請將影像放在捲動檢視器內。
 -   如果使用者將捲動很冗長的文字訊息，請將捲動檢視器設定為只能垂直捲動。
 -   使用捲動檢視器以只限包含一個物件。 請注意，這一個物件可以是配置面板，其本身可以包含數目不拘的物件。
+-   請不要將 [Pivot](tabs-pivot.md) 控制項放入捲動檢視器內，以避免與樞紐的捲動邏輯發生衝突。
 
 ## 相關主題
 
@@ -94,6 +125,6 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

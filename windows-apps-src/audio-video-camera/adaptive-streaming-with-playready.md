@@ -4,18 +4,18 @@ ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。"
 title: "搭配使用彈性資料流與 PlayReady"
 translationtype: Human Translation
-ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
-ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
+ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
 
 ---
 
 # 搭配使用彈性資料流與 PlayReady
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。 
+本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。 
 
-本功能目前支援播放 DASH (Dynamic Adaptive Streaming over HTTP) 內容。
+本功能目前支援播放 DASH (Dynamic Streaming over HTTP) 內容。
 
 PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
@@ -23,9 +23,9 @@ PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
 這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的 [Adaptive streaming sample (彈性資料流範例)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 Scenario 4 (案例 4) 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後按一下 \[Download ZIP\] \(下載 ZIP\)**** 按鈕。
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的[彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 案例 4 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後選取 [下載 ZIP]**** 按鈕。
 
-您將需要下列 using 陳述式：
+您將需要下列 **using** 陳述式：
 
 ```csharp
 using LicenseRequest;
@@ -41,7 +41,7 @@ using Windows.Media.Streaming.Adaptive;
 using Windows.UI.Xaml.Controls;
 ```
 
-**LicenseRequest** 命命空間是來自 **CommonLicenseRequest.cs** (Microsoft 提供給使用人的 PlayReady 檔案)。
+**LicenseRequest** 命名空間是來自 **CommonLicenseRequest.cs** (Microsoft 提供給使用人的 PlayReady 檔案)。
 
 您將需要宣告幾個全域變數：
 
@@ -189,7 +189,7 @@ async void ProActiveIndivRequest()
 
 ## 授權取得服務要求
 
-如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向 MediaProtectionServiceCompletion 物件告知我們傳入的要求是否成功，然後完成該要求：
+如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向傳入的 **MediaProtectionServiceCompletion** 物件告知要求是否成功，然後完成該要求：
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -290,18 +290,17 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 }
 ```
 
-您可以在任何處理啟動彈性資料流的事件中呼叫這個函式—例如，在按鈕點擊事件中。
+您可以在任何處理啟動彈性資料流的事件中呼叫這個函式；例如，在按鈕點擊事件中。
 
- 
-
- 
-
+## 另請參閱
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -2,18 +2,17 @@
 description: "針對特定類型的輸入與裝置自訂您的 UWP app。 利用觸控和語音命令。 在 Xbox、手機，甚至電視上執行您的 App。"
 title: "UWP app 輸入和裝置設計 - Windows 應用程式開發"
 author: mijacobs
-keywords: device primer, app inputs, customize UWP application
+keywords: "裝置基本資訊, app 輸入, 自訂 UWP 應用程式"
 translationtype: Human Translation
-ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
-ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
+ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
+ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
 
 ---
+# 輸入和裝置
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# 輸入和裝置
-
-UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如，您不需要額外執行任何動作，即可啟用觸控輸入或讓您的 App 在手機上執行。 
+UWP app 可自動處理各種輸入並在各種不同的裝置上執行 — 例如，您不需要額外做任何動作即可啟用觸控輸入，或讓您的 app 在手機上執行。 
 
 但是您有時候可能會想要針對特定類型的輸入或裝置將您的 app 最佳化。 例如，如果您建立繪圖 app，您可能想要自訂手寫筆輸入的處理方式。 
 
@@ -169,6 +168,6 @@ UWP app 可自動處理各種輸入並在各種不同的裝置上執行。例如
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

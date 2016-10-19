@@ -102,7 +102,7 @@ ms.openlocfilehash: 57f4fd2beeb04db44804689e3e46744b4fc03ce5
 * [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [對背景工作進行偵錯](debug-a-background-task.md)
+* [偵錯背景工作](debug-a-background-task.md)
 * [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  

@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音樂、圖片及影片媒體櫃中的檔案和資料夾"
 description: "將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
@@ -136,6 +136,33 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ## 查詢媒體櫃
 
+若要取得檔案集合，指定媒體櫃及您要的檔案類型
+
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
+
+    queryOption.FolderDepth = FolderDepth.Deep
+
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
+
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
+
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
+
+}
+```
 
 ### 查詢結果同時包含內部和卸除式儲存空間
 
@@ -149,110 +176,6 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 如果您透過呼叫 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 來查詢圖片媒體櫃的內容，結果會包含 internalPic.jpg 與 SDPic.jpg 兩者。
 
-### 深層查詢
-
-您可以使用深層查詢來快速列舉媒體櫃的整個內容。
-
-深層查詢只會傳回指定之媒體類型的檔案。 舉例來說，如果您使用深層查詢來查詢 [音樂媒體櫃]，查詢結果將不會包含在 [音樂] 資料夾中找到的任何圖片檔案。
-
-如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
-
-[手機相簿] 和 [儲存的圖片] 資料夾不支援深層查詢。
-
-以下是可用的深度查詢：
-
-**圖片媒體櫃**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**音樂媒體櫃**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**視訊庫**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### 單層查詢
-
-若要取得媒體櫃中所有檔案和資料夾的完整清單，請呼叫 `GetFilesAsync(CommonFileQuery.DefaultQuery)`。 這個方法會傳回媒體櫃中的所有檔案，不論其類型為何。 這是一個淺層查詢，因此如果使用者在媒體櫃中建立了子資料夾，您就必須以遞迴方式列舉子資料夾的內容。
-
-您可以使用單層查詢來傳回內建查詢無法辨識其類型的媒體檔案，或是傳回媒體櫃中的所有檔案，包括不屬於指定類型的檔案。 舉例來說，如果您使用單層查詢來查詢 [音樂媒體櫃]，查詢結果將會包含這個查詢在 [音樂] 資料夾中找到的任何圖片檔案。
-
-### 範例查詢
-
-假設裝置及其選用的 SD 記憶卡包含下圖中顯示的資料夾和檔案：
-
-![檔案 ](images/phone-media-queries.png)
-
-以下是一些查詢範例及它們所傳回的結果。
-
-| 查詢 | 結果 |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 來自內部儲存空間的 [手機相簿] 資料夾 <br>- 來自 SD 記憶卡的 [手機相簿] 資料夾 <br>- 來自內部儲存空間的 [儲存的圖片] 資料夾 <br>- 來自 SD 記憶卡的 [儲存的圖片] 資料夾 <br><br>這是一個單層查詢，因此只會傳回 [圖片] 資料夾中的直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | 沒有結果。 <br><br>這是一個單層查詢，[圖片] 資料夾未包含任何檔案做為其直屬子系。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br>- 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自內部儲存空間的 1-2-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 1-6-2014.jpg 檔案 <br><br>這是一個深層查詢，因此會傳回 [圖片] 資料夾及其子資料夾的內容。 |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - 來自內部儲存空間的 1-1-2014.jpg 檔案 <br>- 來自 SD 記憶卡的 4-3-2012.jpg 檔案 <br><br>這是一個單層查詢。 無法保證結果的排列順序。 |
-
- 
-## 媒體櫃功能和檔案類型
-
-
-您可以在應用程式資訊清單檔案中指定下列功能來存取應用程式中的媒體檔案。
-
--   **音樂**。 在應用程式資訊清單檔中指定**音樂媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .qcp
-    -   .wav
-    -   .mp3
-    -   .m4r
-    -   .m4a
-    -   .aac
-    -   .amr
-    -   .wma
-    -   .3g2
-    -   .3gp
-    -   .mp4
-    -   .wm
-    -   .asf
-    -   .3gpp
-    -   .3gp2
-    -   .mpa
-    -   .adt
-    -   .adts
-    -   .pya
--   **相片**。 在應用程式資訊清單檔中指定**圖片媒體櫃**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .jpeg
-    -   .jpe
-    -   .jpg
-    -   .gif
-    -   .tiff
-    -   .tif
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   **影片**。 在應用程式資訊清單檔中指定**視訊庫**功能，以便讓應用程式能夠看到及存取下列檔案類型的檔案：
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
 
 ## 使用相片
 
@@ -270,7 +193,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
@@ -323,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

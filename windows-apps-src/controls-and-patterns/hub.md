@@ -6,11 +6,13 @@ ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ---
 # 中樞控制項/模式
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 中樞控制項可讓您將 app 內容組織成不同但相關的區段或類別。 中樞中區段的目的是在於能夠以慣用的順序進行周遊，並可做為更詳細經驗的起點。
@@ -19,9 +21,19 @@ ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 中樞中的內容可以採用全景檢視方式顯示，讓使用者能夠檢視新功能、可用功能及相關項目。 中樞通常會有頁面標頭，而每個內容區段都會有一個區段標頭。
 
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Hub 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>HubSection 類別</strong></a></li>
+</ul>
 
--   [**Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection 類別**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+</div>
+</div>
+
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -112,6 +124,6 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,20 +6,19 @@ title: "開發通用 Windows 10 app"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
+ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
+ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 
 ---
 
-# 開發通用 Windows app  
+# 開發全人 Windows 應用程式  
 
-瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
-
-本文討論如何開發無障礙的通用 Windows 平台 (UWP) 應用程式。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。  
+本文討論如何開發無障礙的通用 Windows 平台 (UWP) App。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
 
 如果您還沒了解這部分的內容，請先閱讀[設計通用軟體](designing-inclusive-software.md)。
 
-若要確保您 App 為無障礙，您必須執行三個項目：
+若要確保您 App 為無障礙，您必須執行三件事項：
+
 1. 針對[程式設計存取](#programmatic-access)公開您的 UI 元素。
 2. 確保您的 app 支援[鍵盤瀏覽](#keyboard-navigation)，以供無法使用滑鼠或觸控螢幕的人使用。
 3. 確定您的 app 支援無障礙的[色彩和對比](#color-and-contrast)設定。
@@ -53,7 +52,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-如需使用系統色彩和資源的詳細資訊，請參閱 [XAML 佈景主題資源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。
+如需使用系統色彩和資源的詳細資訊，請參閱 [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md)。
 
 只要您沒有覆寫系統色彩，UWP App 預設可支援高對比佈景主題。 如果使用者已選擇要讓系統使用來自系統設定或協助工具的高對比佈景主題，架構就會自動針對 UI 中的控制項和元件，使用產生高對比配置和呈現方式的色彩和樣式設定。   
 
@@ -66,7 +65,8 @@ XAML
 **色彩組合** - 大約有 7% 的男性 (以及少於 1 % 的女性) 擁有某種形式的色彩缺陷。 患有色盲的使用者將無法區分部分顏色，因此請務必不要只使用色彩來傳達應用程式中的狀態或意義。 針對裝飾性的影像 (例如圖示或背景)，色彩組合應該要以色盲使用者能夠最大限度地認知該影像為前提做出選擇。  
 
 ## 協助工具檢查清單  
-下列為協助工具檢查清單的簡短版本：  
+下列為協助工具檢查清單的簡短版本：
+
 1. 為 App 的內容和互動式 UI 元素設定無障礙名稱 (必要) 以及描述 (選用)。
 2. 實作鍵盤協助工具。
 3. 用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
@@ -82,9 +82,10 @@ XAML
 * [協助工具應避免的做法](practices-to-avoid.md)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
+* [協助工具](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

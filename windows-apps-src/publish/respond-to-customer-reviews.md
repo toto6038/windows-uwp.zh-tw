@@ -4,8 +4,8 @@ Description: "您可以直接回應您 app 的評論，讓客戶知道您正在�
 title: "回應客戶評論"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+ms.sourcegitcommit: 934715cc2681f613982d081335155e29fa7af775
+ms.openlocfilehash: 24d327a92a6a58ecf265f9cdadd5a49d24c0857d
 
 ---
 
@@ -43,15 +43,15 @@ ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
 > **注意：**客戶可以將開發人員的不當評論回應回報給 Microsoft。 他們也可以選擇不收到評論回應。
 Microsoft 保留出於任何原因而撤銷開發人員傳送回應之權限的權利，包括您的回應是提示大量不尋常的不當回應報告，還是大量不尋常的客戶選擇不收到評論回應。
 
-您需全權負責您與客戶之間的關係。 Microsoft 不介入開發人員和客戶之間的糾紛。 不過，如果您認為客戶對於您 app 的評論內容不當，請提交[支援票證](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
+您需全權負責您與客戶之間的關係。 Microsoft 不會介入開發人員和客戶之間的糾紛。 不過，如果您的 App 的評論包含具有冒犯意味、褻瀆或粗俗的語言，請提交[支援票證](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
 
-## 使用客戶意見反應改進您的 app
+## 使用客戶意見反應改進您的 App
 
 
 聆聽客戶意見並予以回應只是一個開始。 針對其意見反應採取行動也非常重要。 如果您進行顯著的改進，請[建立新的提交](app-submissions.md)以更新您的 app，就可以在市集中安心地展示該 app。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

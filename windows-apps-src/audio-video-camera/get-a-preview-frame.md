@@ -1,11 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: "本主題說明如何從媒體擷取預覽資料流取得預覽框架。"
-title: "取得預覽框架"
+description: "本主題示範如何從媒體擷取預覽資料流取得單一預覽畫面。"
+title: "取得預覽畫面"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
+ms.sourcegitcommit: e19fa2a574e6824941c89db1db1e7e69f9e38ae9
+ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
 
 ---
 
@@ -13,12 +13,12 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主題說明如何從媒體擷取預覽資料流取得預覽框架。
+本主題示範如何從媒體擷取預覽資料流取得單一預覽畫面。
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體，而且您有一個具有使用中視訊預覽資料流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
+> [!NOTE] 
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體，而且您有一個具有使用中視訊預覽資料流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
 
-除了基本媒體擷取所需的命名空間，擷取預覽框架還需要下列命名空間。
+除了基本媒體擷取所需的命名空間，擷取預覽畫面還需要下列命名空間。
 
 [!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
-存取 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性，以取得預覽框架的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示。 如需有關儲存、載入和修改軟體點陣圖的資訊，請參閱[影像處理](imaging.md)。
+存取 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性，以取得預覽畫面的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示。 如需有關儲存、載入和修改軟體點陣圖的資訊，請參閱[影像處理](imaging.md)。
 
 [!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
 
@@ -38,12 +38,12 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 [!code-cs[GetPreviewSurface](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
 
-**重要**  
-無論是傳回之 **VideoFrame** 的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，根據您如何呼叫 **GetPreviewFrameAsync** 以及根據正在執行您 app 的裝置，這些屬性可能會是 Null。
+> [!IMPORTANT]
+> 無論是傳回之 **VideoFrame** 的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，根據您如何呼叫 **GetPreviewFrameAsync** 以及根據正在執行您 app 的裝置，這些屬性可能會是 Null。
 
--   如果您呼叫能接受 **VideoFrame** 引數之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) 的多載，則傳回的 **VideoFrame** 會有非 Null 的 **SoftwareBitmap**，且 **Direct3DSurface** 屬性將會是 Null。
--   如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在使用 Direct3D 表面來在內部代表框架的裝置上沒有任何引數，則 **Direct3DSurface** 屬性將會是非 Null，且 **SoftwareBitmap** 屬性將會是 Null。
--   如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在不使用 Direct3D 表面來在內部代表框架的裝置上沒有任何引數，則 **SoftwareBitmap** 屬性將會是非 Null，且 **Direct3DSurface** 屬性將會是 Null。
+> - 如果您呼叫能接受 **VideoFrame** 引數之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) 的多載，則傳回的 **VideoFrame** 會有非 Null 的 **SoftwareBitmap**，且 **Direct3DSurface** 屬性將會是 Null。
+> - 如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在使用 Direct3D 表面於內部呈現畫面的裝置上沒有任何引數，則 **Direct3DSurface** 屬性將會是非 Null，且 **SoftwareBitmap** 屬性將會是 Null。
+> - 如果您呼叫之 [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) 的多載，在不使用 Direct3D 表面來在內部代表框架的裝置上沒有任何引數，則 **SoftwareBitmap** 屬性將會是非 Null，且 **Direct3DSurface** 屬性將會是 Null。
 
 您的 app 在嘗試於 **SoftwareBitmap** 或 **Direct3DSurface** 屬性傳回的物件上操作之前，應該先檢查是否有 Null 值。
 
@@ -53,7 +53,8 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -64,6 +65,6 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

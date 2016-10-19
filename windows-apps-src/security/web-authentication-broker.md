@@ -5,7 +5,7 @@ ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
 ---
 
@@ -152,7 +152,7 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
 
 1.  由於 AuthHost 是在自己的 App 容器中執行以給予私人網路功能，因此您必須設定登錄機碼：Windows Registry Editor Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -178,6 +178,6 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
 3.  將連入流量防火牆規則新增到 Fiddler。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

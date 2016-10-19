@@ -5,7 +5,7 @@ description: "這系列主題提供一些不同複雜程度的 OpenGL ES 2.0 圖
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab56
+ms.openlocfilehash: 3a8ea00144b707bc4bf01a26a91ca7f7567b31de
 
 ---
 
@@ -50,6 +50,6 @@ ms.openlocfilehash: c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab56
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ title: "取得使用者的位置"
 description: "尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \\[設定\\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。"
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
+ms.sourcegitcommit: bdb6cbd0b0ccb7b6aa04cf6ba98bb154af325515
+ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
 
 ---
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
 
 ### 步驟 1：要求使用者位置的存取權
 
-**重要**：嘗試存取使用者的位置之前，您必須先使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法要求使用者位置的存取權。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
+除非您的 app 具有「免許可定位」功能 (請參閱附註)，否則您必須使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法要求使用者位置的存取權，才能嘗試存取位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -49,7 +49,11 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
+
+
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
+
+>附註：「免許可定位」功能可讓您的 app 取得經過刻意模糊處理 (不精確) 的位置，而不需要使用者的明確權限 (但全系統的位置仍必須切換為 [開啟]****)。 若要了解如何在您的 app 中使用免許可定位，請參閱 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 類別中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
 
 ### 步驟 2：取得使用者的位置並登錄位置權限的變更
 
@@ -268,6 +272,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

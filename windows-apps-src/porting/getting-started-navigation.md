@@ -5,7 +5,7 @@ description: "瀏覽入門"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
 
 ---
 
@@ -87,6 +87,6 @@ public BlankPage()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

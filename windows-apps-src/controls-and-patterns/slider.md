@@ -6,21 +6,33 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 64ae11c8c7e46d973c13cacb69482fd957e0488d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 ---
 # 滑桿
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 滑桿是一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
 
 ![滑桿控制項](images/controls/slider.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged 事件</strong></a></li>
+</ul>
 
--   [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Value 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -167,12 +179,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## 相關主題
 
 **適用於設計人員**
-- [切換開關的指導方針](toggles.md) 
-           **適用於開發人員 (XAML)**
+- [切換開關的指導方針](toggles.md)
+**適用於開發人員 (XAML)**
 - [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

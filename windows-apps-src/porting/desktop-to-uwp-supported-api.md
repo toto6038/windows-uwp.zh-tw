@@ -32,6 +32,8 @@
 
 下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的應用程式中新支援的 API](#new) 或[已轉換的應用程式與傳統型應用程式中支援的 API](#both)。 
 
+如需如何從已轉換的應用程式呼叫 UWP API 的範例，請參閱 [GitHub 上的傳統型橋接器程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)。
+
 <span id="new" />
 ### 新轉換的應用程式中支援的 API
 
@@ -1028,6 +1030,6 @@
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Sep16_HO5-->
 
 

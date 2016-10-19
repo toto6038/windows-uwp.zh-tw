@@ -1,49 +1,67 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: "Microsoft Store Engagement and Monetization SDK 可提供您幾種方式來使用廣告讓您的應用程式獲利。"
-title: "在您的應用程式中顯示廣告"
+description: "Microsoft Store Services SDK 提供您數種方式來透過廣告讓您的 App 獲利。"
+title: "在您的 App 中顯示廣告"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
-ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 
 ---
 
-# 在您的應用程式中顯示廣告
+# 在您的 App 中顯示廣告
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+通用 Windows 平台 (UWP) 和 Windows 市集提供數種方式來透過廣告讓您的 App 獲利。
 
-[Microsoft Store Engagement and Monetization SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 可提供您幾種方式來使用廣告讓您的應用程式獲利。
+## 顯示使用 Microsoft Advertising 程式庫的橫幅廣告和影片插入式廣告
 
-## 顯示使用 Microsoft Advertising 程式庫的橫幅廣告及影片插入式廣告
+藉由包含橫幅廣告和影片插入式廣告，從您的 UWP App 和您的 Windows 8.1 及 Windows Phone 8.x 應用程式賺取更多獲利。 顯示在電腦、平板電腦和手機之 Windows 應用程式中的廣告。 您可以使用 Windows 開發人員中心儀表板中的[廣告績效報告](../publish/advertising-performance-report.md)即時監視您的廣告績效。
 
-併入橫幅廣告及影片插入式廣告，以透過您的 Windows app 獲得更多利潤。 適用於電腦、平板電腦和手機之 Windows 應用程式中顯示的廣告。 您可以使用 Windows 開發人員中心儀表板即時監視您的廣告績效。
+若要在 App 中包含這些類型的廣告，可使用隨 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (適用於 UWP App) 及[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x 應用程式) 一起散發之廣告程式庫中的 **AdControl** 和 **InterstitialAd** 控制項。
 
-若要在您的 app 中包含廣告，請在發佈於 Microsoft Store Engagement and Monetization SDK 的廣告程式庫中，使用 **AdControl** 和 **InterstitialAd** 控制項。 您可在適用於 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 的 XAML 或 JavaScript/HTML app 中，使用這些控制項顯示 Microsoft 提供的橫幅廣告與影片插入式廣告。
 
-如需詳細資訊，請參閱[使用 Microsoft Advertising 程式庫顯示廣告](display-ads-using-the-microsoft-advertising-libraries.md)。 發佈含廣告的 app 後，使用[廣告績效報告](../publish/advertising-performance-report.md)追蹤廣告的效能。                                           
+下列主題提供關於 Windows Advertising 程式庫常見工作的資訊。
 
-## 針對多個廣告網路的橫幅廣告，使用廣告流量分配
+|  工作    | 主題 |               
+|----------|-------|
+| 安裝與開始使用 Microsoft Advertising 程式庫。     | 請參閱[開始使用 Microsoft Advertising 程式庫](get-started-with-microsoft-advertising-libraries.md)。        |
+| 在您的 XAML/C# app 中顯示橫幅廣告。     | 請參閱 [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)。        |
+| 在您的 HTML/JavaScript app 中顯示橫幅廣告。     | 請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。        |
+| 在您的 Windows Phone Silverlight 8.x 應用程式中顯示橫幅廣告。     | 請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。        |
+| 在您的 App 中顯示影片插入式廣告。     | 請參閱[插入式廣告](interstitial-ads.md)。       |
+| 在搭配使用 HTML 和 JavaScript 撰寫的通用 Windows 平台 (UWP) App 的影片內容中新增廣告。   |  請參閱[使用 HTML 5 與 JavaScript，將廣告新增至影片內容](add-advertisements-to-video-content.md)。  |
+| 下載示範如何將橫幅廣告和插入式廣告新增到 App 的範例專案。     |請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。       |
+| 處理您 app 中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤：     | 請參閱[錯誤處理](error-handling-with-advertising-libraries.md)和 [AdControl 錯誤處理](adcontrol-error-handling.md)下方的逐步解說。       |
+| 報告 Microsoft Advertising 程式庫錯誤。     | 造訪[支援頁面](https://go.microsoft.com/fwlink/p/?LinkId=331508)。        |
+| 取得社群支援。     | 造訪[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)。       |
 
-您可在 XAML app 中使用 **AdMediatorControl** 類別，以顯示來自多個廣告網路的橫幅廣告來最佳化廣告收益。 將此控制項新增至您的 app 後，在 Windows 開發人員中心儀表板中設定廣告流量分配設定，而我們會負責針對來自您選擇之廣告網路的橫幅廣告要求進行流量分配。 如需詳細資訊，請參閱[使用廣告流量分配來獲得最佳廣告收益](use-ad-mediation-to-maximize-revenue.md)。
+                            
 
-## Microsoft Advertising 程式庫和廣告流量分配之間的差異
+## 使用橫幅廣告的廣告流量分配 (Windows 8.1 和 Windows Phone 8.x)
 
-Microsoft Store Engagement and Monetization SDK 已包含適用於 Microsoft 廣告與廣告流量分配的程式庫。 不過，這些程式庫提供不同的類別且具備不同的用途。
+對於 Windows 8.1 和 Windows Phone 8.x 應用程式，您可使用 **AdMediatorControl** 類別，以顯示來自多個廣告網路的橫幅廣告來最佳化廣告收益。 將此控制項新增至您的 App 後，在 Windows 開發人員中心儀表板中設定廣告流量分配設定，而我們會負責針對來自您選擇之廣告網路的橫幅廣告要求進行流量分配。 如需詳細資訊，請參閱[使用廣告流量分配來獲得最佳廣告收益](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
-* 如果您想要在 XAML 或 JavaScript app 中顯示橫幅或影片插入式廣告，請使用 Microsoft Advertising 程式庫的 **AdControl** 和 **InterstitialAd** 類別。
-* 如果您想要在 XAML app 中顯示來自多個廣告網路的橫幅廣告，請使用廣告流量分配程式庫中的 **AdMediatorControl** 類別。
+>**注意**&nbsp;&nbsp;Windows 10 的 UWP app 目前不支援使用 **AdMediatorControl** 類別的廣告流量分配。 即將推出適用於 UWP app 的伺服器端流量分配，且其橫幅廣告 (**AdControl**) 和插入式影片廣告 (**InterstitialAd**) 使用相同 API。 如需將 UWP App 中的 **AdMediatorControl** 移轉至 **AdControl** 的指南，請參閱[針對 UWP App 從 AdMediatorControl 移轉到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
 
-如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+<span id="silverlight_support"/>
+## Windows Phone 8.x Silverlight 專案的廣告支援
+
+Windows Phone 8.x Silverlight 專案中已不再支援某些開發人員案例。 如需詳細資訊，請參閱下表。
+
+|  平台版本  |  現有專案    |   新專案  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  如果您現有的 Windows Phone 8.0 Silverlight 專案是使用之前所推出的 Universal Ad Client SDK 或 Microsoft Advertising SDK 中的 **AdControl** 或 **AdMediatorControl**，且該應用程式已在 Windows 市集發行，則您可以修改並重新建置該專案，並在裝置上偵錯或測試變更。 不支援在模擬器中偵錯或測試專案。  |  不支援。  |
+| Windows Phone 8.1 Silverlight    |  如果您現有的 Windows Phone 8.1 Silverlight 專案是使用先前 SDK 中的 **AdControl** 或 **AdMediatorControl**，您可以修改並重新建置該專案。 不過，若要偵錯或測試應用程式，您必須在模擬器中執行該應用程式，並針對「應用程式識別碼」和「廣告單位識別碼」使用[測試值](test-mode-values.md)。 不支援在裝置上偵錯或測試應用程式。  |   您可以在新的 Windows Phone 8.1 Silverlight 專案中新增 **AdControl** or **AdMediatorControl**。 不過，若要偵錯或測試應用程式，您必須在模擬器中執行該應用程式，並針對「應用程式識別碼」和「廣告單位識別碼」使用[測試值](test-mode-values.md)。 不支援在裝置上偵錯或測試應用程式。 |
 
 ## 相關主題
 
-* [Microsoft Store Engagement and Monetization SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
-* [利用廣告讓 App 獲利]( http://go.microsoft.com/fwlink/p/?LinkId=699559)
+* [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
+* [利用廣告讓 App 獲利](http://go.microsoft.com/fwlink/p/?LinkId=699559)
+* [廣告績效報告](../publish/advertising-performance-report.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

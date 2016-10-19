@@ -5,7 +5,7 @@ title: "最佳化動畫、媒體及影像"
 description: "建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 622df404dbf85740aa0029f53a0b4e0d541608f9
-ms.openlocfilehash: 8fd9ce5f43159ae00414d05ddb757c507aaa370d
+ms.openlocfilehash: 62e35ef31a5c2c4c3ca1ce6f6749057d59c22af3
 
 ---
 # 最佳化動畫、媒體及影像
@@ -256,7 +256,7 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 ### 使用 GetThumbnailAsync 以取得縮圖
 
-按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [ **GetThumbnailAsync** ](https://msdn.microsoft.com/library/windows/apps/BR227210) 會為已快取檔案系統的影像提供縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
+按比例調整影像的一個使用案例是建立縮圖。 雖然您可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 與 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 來提供較小的影像版本，但 UWP 提供更有效的 API 供您擷取縮圖。 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 會為已快取檔案系統的影像提供縮圖。 這樣做的效能比使用 XAML API 更好，因為不需要開啟或解碼影像。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -303,6 +303,6 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

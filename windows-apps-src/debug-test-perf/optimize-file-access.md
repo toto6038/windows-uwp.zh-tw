@@ -5,7 +5,7 @@ title: "最佳化檔案存取"
 description: "建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。"
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 
 ---
 # 最佳化檔案存取
@@ -238,6 +238,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ Description: "Windows 市集會強制執行某些與版本號碼相關的規則�
 title: "套件版本編號"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+ms.sourcegitcommit: ca273ab6d881b350c2f5a48eafee38c74ac0f36a
+ms.openlocfilehash: 2668152ba471986e00831bdcf46e5a2feba54dcd
 
 ---
 
@@ -19,9 +19,9 @@ ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
 ## Windows 10 套件的版本編號
 
 
-任何 Windows 10 套件的版本號碼都必須高於您正對相同 app 發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的任何版本號碼 (或者適用於您先前發佈之作業系統版本套件的版本號碼)。 (如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。)
+任何 Windows 10 套件的版本號碼都必須高於您正對相同 app 發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的任何版本號碼 (或者適用於您先前發佈之作業系統版本套件的版本號碼)。 (如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 App](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app))。
 
-> **注意：**版本號碼的最後一個 (第四個) 區段已保留給市集使用，必須保留為 0。
+> **重要** 版本號碼的最後一個 (第四個) 區段保留給市集使用，而且當您建置套件時，必須保留為 0 (但是市集可能會變更此區段中的值)。
 
 從您發佈的提交中選擇 Windows 10 套件時，Windows 市集將永遠使用適用於客戶裝置的最高版本套件。 這可讓您有更大的彈性，並讓您可以控制對於特定裝置類型的客戶提供哪個套件。 重要的是，您可以任何順序提交這些套件；您並不受限於在每個後續提交提供較高版本的套件。
 
@@ -82,6 +82,6 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
+ms.openlocfilehash: 58187f34de283b407278a75f1b7b6de61908387f
 
 ---
 # 版面配置面板
@@ -225,6 +225,6 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

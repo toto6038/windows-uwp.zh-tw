@@ -4,25 +4,26 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。"
 title: "使用收據來驗證產品購買"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
 
 ---
 
 # 使用收據來驗證產品購買
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+
+>**注意**&nbsp;&nbsp;本文中的範例使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理 App 內購買，而不是使用 Windows.ApplicationModel.Store 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 **重要 API**
 
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。 這個收據會為客戶提供所列產品和金錢花費的相關資訊。
+每個 Windows 市集交易只要結果為產品購買成功，都可以選擇傳回交易收據。 這個收據會為客戶提供所列產品和金錢花費的相關資訊。
 
-如果您的應用程式需要確認使用者已購買應用程式，或是已從 Windows 市集進行應用程式內產品購買，這項資訊的存取將可支援這些情況。 例如，想像有一個提供下載內容的遊戲。 如果購買遊戲內容的使用者想要在另一台裝置上玩遊戲，您就需要確認該使用者已經購買內容。 方法如下。
+如果您的 App 需要確認使用者已購買 App，或是已從 Windows 市集進行 App 內產品購買，這項資訊的存取將可支援這些情況。 例如，想像有一個提供下載內容的遊戲。 如果購買遊戲內容的使用者想要在另一台裝置上玩遊戲，您就需要確認該使用者已經購買內容。 方法如下。
 
 ## 要求收據
 
@@ -156,7 +157,7 @@ namespace ReceiptVerificationSample
             {
                 const int MaxCertificateSize = 10000;
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
+                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
                 String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
@@ -241,9 +242,6 @@ namespace ReceiptVerificationSample
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

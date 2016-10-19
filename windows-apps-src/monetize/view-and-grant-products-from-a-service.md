@@ -1,26 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: "如果您有 App 及 App 內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API 及 Windows 市集購買 API，來從您的服務存取這些產品的擁有權資訊。"
+description: "如果您有 App 及附加元件的型錄，就能使用「Windows 市集集合 API」及「Windows 市集購買 API」，來從您的服務存取這些產品的擁有權資訊。"
 title: "從服務檢視及授與產品"
 translationtype: Human Translation
-ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
-ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 2bd637985441cf2f8fbe8366f207369b3a4dc696
 
 ---
 
 # 從服務檢視及授與產品
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-如果您有 app 及應用程式內產品 (IAP) 的型錄，就能使用 Windows 市集集合 API** 及 Windows 市集購買 API**，來從您的服務存取這些產品的擁有權資訊。
 
-這些 API 是由幾個 REST 方法所構成的，而這些方法是專供開發人員用來與跨平台服務所支援的 IAP 型錄搭配使用。 這些 API 可讓您進行下列行動：
+如果您有 App 及附加元件 (又稱為應用程式內產品或 IAP) 的型錄，就能使用「Windows 市集集合 API」**及「Windows 市集購買 API」**，來從您的服務存取這些產品的擁有權資訊。
 
--   Windows 市集集合 API：查詢由特定使用者所擁有的應用程式和 IAP，或是將某個消費性產品回報為已完成。
--   Windows 市集購買 API：將免費的應用程式或 IAP 授與給特定的使用者。
+這些 API 是由幾個 REST 方法所構成的，而這些方法是專供開發人員用來與跨平台服務所支援的附加元件型錄搭配使用。 這些 API 可讓您進行下列行動：
+
+-   Windows 市集集合 API：查詢由特定使用者所擁有的 App 和附加元件，或是將某個消費性產品回報為已完成。
+-   Windows 市集購買 API：將免費的 App 或附加元件授與給特定的使用者。
 
 ## 使用 Windows 市集集合 API 與 Windows 市集購買 API
 
@@ -59,7 +59,7 @@ Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure A
 
 ### 步驟 2：在 Windows 開發人員中心儀表板中，將您的 Azure AD 用戶端識別碼與應用程式建立關聯
 
-Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端識別碼建立關聯的應用程式和 IAP，提供其使用者擁有權資訊的存取權。
+Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端識別碼建立關聯的 App 和附加元件，提供其使用者擁有權資訊的存取權。
 
 1.  登入 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)，然後選取您的 App
 2.  依序前往 [服務]**** &gt; [產品系列和購買]**** 頁面，然後在其中一個可用欄位中輸入您的 Azure AD 用戶端識別碼。
@@ -68,7 +68,7 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
 
 您的服務必須先要求三個代表您發行者身分識別的 Azure AD 存取權杖，才能擷取 Windows 市集索引鍵，或是呼叫 Windows 市集集合 API 或購買 API。 這些存取權杖中的每個都與不同的對象 URI 相關聯，且每個權杖都將搭配不同的 API 呼叫來使用。 每個權杖的存留期是 60 分鐘，且您可以在權杖到期後更新權杖。
 
-如要建立存取權杖，請依照[使用用戶端認證的服務對服務呼叫](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的指示，在您的服務中使用 OAuth 2.0 API。 請針對每個權杖指定下列參數資料：
+如要建立存取權杖，請依照[使用用戶端認證的服務對服務呼叫](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的指示，在您的服務中使用 OAuth 2.0 API。 請針對每個權杖指定下列參數資料：
 
 -   對於 *client\_id* 和 *client\_secret* 參數，請指定您從 [Azure 管理入口網站](http://manage.windowsazure.com/)取得的應用程式用戶端識別碼和用戶端密碼。 為了要產生 Windows 市集集合 API 或購買 API 所需驗證層級的存取權杖，這兩個參數都是必要的。
 -   對於 *resource* 參數，請指定下列其中一個應用程式識別碼 URI (這些 URI 與您先前新增到應用程式資訊清單之 `"identifierUris"` 區段的 URI 相同)。 在此程序結束時，您應該會有三個存取權杖，且每個都與下列其中一個應用程式識別碼 URI 相關聯：
@@ -78,7 +78,7 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
 
     > **重要：**請只搭配安全地儲存在您服務中的存取權杖，來使用 `https://onestore.microsoft.com` 對象。 在您服務以外的地方公開此對象的存取權杖，可能會讓您的服務容易遭受重新執行攻擊。
 
-如需有關存取權杖結構的詳細資訊，請參閱[支援的權杖和宣告類型](http://go.microsoft.com/fwlink/?LinkId=722501)。
+存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。 如需有關存取權杖結構的詳細資訊，請參閱[支援的權杖和宣告類型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
 > **重要**您應該只在您的服務中建立 Azure AD 存取權杖，而非在您的 app 中。 如果該存取權杖傳送到您的 app，您的用戶端密碼就可能會遭竊。
 
@@ -94,8 +94,8 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
 
 2.  在您的 app 程式碼中，呼叫下列其中一個 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 類別方法來擷取 Windows 市集識別碼金鑰。
 
-    -   [ **GetCustomerCollectionsIdAsync** ](https://msdn.microsoft.com/library/windows/apps/mt608674)：如果您想要使用 Windows 市集集合 API，請呼叫這個方法。
-    -   [ **GetCustomerPurchaseIdAsync** ](https://msdn.microsoft.com/library/windows/apps/mt608675)：如果您想要使用 Windows 市集購買 API，請呼叫這個方法。
+    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674)：如果您想要使用 Windows 市集集合 API，請呼叫這個方法。
+    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675)：如果您想要使用 Windows 市集購買 API，請呼叫這個方法。
 
     不論您選擇哪個方法，請將您的 Azure AD 存取權杖傳遞給 *serviceTicket* 參數。 您可以選擇性地把識別碼傳遞給可辨識您服務中目前使用者的 *publisherUserId* 參數。 如果您自行維護使用服務的使用者識別碼，就可以使用此參數來把這些使用者識別碼與您對 Windows 市集集合 API 或購買 API 的呼叫相互關聯。
 
@@ -176,6 +176,6 @@ Windows 市集識別碼索引鍵就是 JSON Web 權杖 (JWT)，代表您想要�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

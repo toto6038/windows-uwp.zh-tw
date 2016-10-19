@@ -5,7 +5,7 @@ description: "這個案例研究 (根據 Bookstore 中所提供的資訊來建�
 title: "Windows Phone Silverlight 至 UWP 案例研究：Bookstore2"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 ---
 
@@ -302,6 +302,6 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

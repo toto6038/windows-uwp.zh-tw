@@ -6,21 +6,19 @@ ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+ms.sourcegitcommit: aa0a1170332f00e482fca8466930af5da3295f64
+ms.openlocfilehash: 8ba114c2b920e321aecd92a5b4d53825bdb5d599
 
 ---
 
 # App 設定和資料
 
+本節包含用於呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
 
+*App 設定*是通用 Windows 平台 (UWP) app 的使用者可自訂部分。 例如，新聞閱讀程式 app 可讓使用者指定要顯示的新聞來源，或螢幕上要顯示的欄數。
 
+*App 資料*是 app 自身建立和管理的資料。 其中包含了執行階段狀態、app 設定、參考內容 (如字典 app 中的字典定義) 及其他設定。 App 資料只會在 app 存在時才存在，而且只對該 app 有意義。
 
-本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
-
-App 設定是通用 Windows 平台 (UWP) app 的使用者自訂部分。 例如，新聞閱讀程式 app 可讓使用者指定要顯示的新聞來源，或螢幕上要顯示的欄數。
-
-App 資料是 app 自身建立和管理的資料。 其中包含了執行階段狀態、app 設定、參考內容 (如字典 app 中的字典定義) 及其他設定。 App 資料只會在 app 存在時才存在，而且只對該 app 有意義。
 ## 本節內容
 <table>
 <colgroup>
@@ -30,26 +28,27 @@ App 資料是 app 自身建立和管理的資料。 其中包含了執行階段�
 <thead>
 <tr class="header">
 <th align="left">文章</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[指導方針](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p>[App 設定的指導方針](guidelines-for-app-settings.md)</p></td>
 <td align="left"><p>建立和顯示 app 設定的最佳做法。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[儲存和擷取應用程式資料](store-and-retrieve-app-data.md)</p></td>
-<td align="left"><p>如何儲存及擷取本機、漫遊和暫存的 app 資料。</p></td>
+<td align="left"><p>如何儲存及擷取本機、漫遊和暫存的 App 資料。</p></td>
 </tr>
 </tbody>
 </table>
 
 
+## 另請參閱
+- [可用性](../usability/index.md)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

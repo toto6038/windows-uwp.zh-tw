@@ -5,7 +5,7 @@ description: "組合遊戲的第一步是在 Microsoft Visual Studio 中設定�
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
+ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
 
 Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2015 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
 
-這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [檔案]**** &gt; [新增專案]****然後：
+這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [檔案]**** &gt; [新增專案]**** 然後：
 
 1.  從 [範本]**** 中，依序選取 [Visual C++]****、[Windows]****、[通用]****。
 2.  在中央窗格中，選取 [DirectX 11 應用程式 (通用 Windows)]****。
@@ -169,6 +169,6 @@ void App::Run()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

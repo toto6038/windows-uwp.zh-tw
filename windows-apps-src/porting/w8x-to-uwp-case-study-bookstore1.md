@@ -5,7 +5,7 @@ ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "本主題提供將一個非常簡單的通用 8.1 應用程式移植到 Windows 10 通用 Windows 平台 (UWP) app 的案例研究。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
+ms.openlocfilehash: fdb5414a0831d6bff607cc8cec9188d3861651fb
 
 ---
 
@@ -129,6 +129,6 @@ Bookstore1\_81 app 使用兩個不同的資源字典 (BookstoreStyles.xaml)，�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

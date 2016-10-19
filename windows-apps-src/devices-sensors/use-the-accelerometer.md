@@ -5,7 +5,7 @@ title: "使用加速計"
 description: "了解如何使用加速計來回應使用者移動。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
+ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 ---
 # 使用加速計
@@ -130,11 +130,11 @@ ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **AccelerometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="AccelerometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:AccelerometerCS"`。
 
--   按 F5 或選取 [偵錯]**** &gt; [開始偵錯]**** 以建置、部署及執行 App。
+-   按 F5 或選取 [偵錯]**** &gt; [開始偵錯]**** 以建置、部署及執行 app。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更加速器值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** &gt; [停止偵錯]**** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** &gt; [停止偵錯]**** 以停止應用程式。
 
 ### 說明
 
@@ -175,6 +175,6 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

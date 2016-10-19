@@ -4,8 +4,8 @@ ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: "本文章示範如何擷取可變相片序列，讓您以快速連續的方式拍攝多個影像畫面，並針對每個畫面使用不同焦點、閃光燈、ISO、曝光度及曝光補償設定進行設定。"
 title: "可變相片序列"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 ---
 
@@ -18,8 +18,8 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 如果您想要擷取 HDR 影像，但不想要實作您自己的處理演算法，您可以使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API 來使用 Windows 內建的 HDR 功能。 如需詳細資訊，請參閱[高動態範圍 (HDR) 相片擷取](high-dynamic-range-hdr-photo-capture.md)。
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE] 
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 ## 將您的 app 設定為使用可變相片序列擷取
 
@@ -90,7 +90,8 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -101,6 +102,6 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

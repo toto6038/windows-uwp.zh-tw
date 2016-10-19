@@ -4,15 +4,15 @@ Description: "當您建立完應用程式的提交作業並且按一下 [提交�
 title: "應用程式認證程序"
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 translationtype: Human Translation
-ms.sourcegitcommit: 4ea19e85d1e151dd1e03d5acf085c186613be35f
-ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
+ms.sourcegitcommit: 865d71374cf7d678804ce16548edd819faafed33
+ms.openlocfilehash: 07b3631ccc875222b8d2ea30a2b69e2995a09e23
 
 ---
 
 # 應用程式認證程序
 
 
-當您建立完 app 的提交作業並且按一下 [提交至市集]**** 時，app 就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要一個工作天。 當您的提交通過驗證之後，最多可能需要 16 小時，客戶才會在市集中看到 app 的清單 (或先前發行之 app 的更新)。 當您的提交已發行且可供客戶取得時，您會看到通知，且 app 在儀表板中的狀態會是 [在市集內]****。
+當您建立完 App 的提交作業並且按一下 [提交至市集]**** 時，App 就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 當您的提交通過驗證之後，最多可能需要 16 小時，客戶才會在市集中看到 App 的清單 (或先前發行之 App 的更新)。 當您的提交已發行且可供客戶取得時，您會看到通知，且 app 在儀表板中的狀態會是 [在市集內]****。
 
 ## 前置處理
 
@@ -56,6 +56,6 @@ ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

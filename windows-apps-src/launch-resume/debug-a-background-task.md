@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: "對背景工作進行偵錯"
+title: "偵錯背景工作"
 description: "了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 translationtype: Human Translation
@@ -9,7 +9,7 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 
 ---
 
-# 對背景工作進行偵錯
+# 偵錯背景工作
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -105,7 +105,7 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 * [建立並註冊會在個別處理序中執行的背景工作](create-and-register-a-background-task.md)
 * [建立並登錄單一處理序背景工作](create-and-register-a-singleprocess-background-task.md)
 * [登錄背景工作](register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [在 app 資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [利用 Visual Studio 程式碼分析來分析 Windows 的 Windows 市集應用程式的程式碼品質](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)

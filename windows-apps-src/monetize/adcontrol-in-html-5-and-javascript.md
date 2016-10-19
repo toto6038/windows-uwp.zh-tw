@@ -2,28 +2,29 @@
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML app 使用 AdControl 類別來顯示橫幅廣告。"
-title: "HTML 5 和 Javascript 中的 AdControl"
+title: "HTML 5 和 JavaScript 中的 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
-# HTML 5 和 Javascript 中的 AdControl
+# HTML 5 和 JavaScript 中的 AdControl
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文會逐步說明如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML app 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別來顯示橫幅廣告。 本文中不會使用 **AdMediatorControl** 或廣告流量分配。
+
+本文會逐步說明如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML App 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別來顯示橫幅廣告。 本文中不會使用 **AdMediatorControl** 或廣告流量分配。
 
 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 ## 先決條件
 
 
-* 使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
+* 對於 UWP app︰請安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 與 Visual Studio 2015。
+* 對於 Windows 8.1 或 Windows Phone 8.1 App：請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 與 Visual Studio 2015 或 Visual Studio 2013。
 
-> **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本，並搭配 Visual Studio 2015，您也必須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> **注意** 如果您已安裝 Windows 10 Anniversary SDK Preview Build 14295 或更新版本並搭配 Visual Studio 2015，您也必須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 Anniversary SDK 預覽版 14295 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
 ## 程式碼開發
 
@@ -65,12 +66,11 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意** 這一行必須放置於 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
+    > **注意**&nbsp;&nbsp;這一行必須放在 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
 
-8.  修改 default.html 檔案 (或其他 html 檔案，視您的專案而定) 中的 **&lt;body&gt;** 區段，以包含 **AdControl** 的 div。 指派 **AdControl** 中的 **applicationId** 和 **adUnitId** 屬性，以測試[測試模式值](test-mode-values.md)中所提供的值，並調整控制項的高度與寬度，以符合其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
+8.  修改 default.html 檔案 (或其他 html 檔案，視您的專案而定) 中的 **&lt;body&gt;** 區段，以包含 **AdControl** 的 div。 指派 **AdControl** 中的 **applicationId** 和 **adUnitId** 屬性為[測試模式值](test-mode-values.md)中所提供的值，並調整控制項的高度與寬度，以符合其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**  
-    在提交 App 之前，請以實際值取代測試的 **applicationId** 和 **adUnitId** 值。
+    > **注意**&nbsp;&nbsp;在提交 App 之前，請以實際值取代測試的 **applicationId** 和 **adUnitId** 值。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -84,7 +84,7 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 ## 使用 Windows 開發人員中心發行包含即時廣告的 App
 
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -133,6 +133,6 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

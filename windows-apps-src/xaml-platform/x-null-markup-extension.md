@@ -1,15 +1,15 @@
 ---
 author: jwmsft
 description: "在 XAML 標記中，為屬性指定 null 值。"
-title: "x&#58;Null 標記延伸"
+title: "x:Null 標記延伸"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
 
 ---
 
-# {x&#58;Null} 標記延伸
+# {x:Null} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -38,6 +38,6 @@ ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

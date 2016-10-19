@@ -5,7 +5,7 @@ description: "了解建立通用 Windows 平台 (UWP) 和 DirectX 遊戲的範�
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b7d01fda0bc8dbafebb7485ec01acb5c7431a815
+ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
 
 ---
 
@@ -90,6 +90,6 @@ DirectX 通用 Windows 範本包含下列檔案：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "使用執行緒集區的最佳做法"
 description: "本主題描述使用執行緒集區的最佳做法。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
+ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 ---
 # 使用執行緒集區的最佳做法
@@ -57,6 +57,6 @@ ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

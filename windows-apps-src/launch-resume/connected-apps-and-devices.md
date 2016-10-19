@@ -1,16 +1,16 @@
 ---
 author: TylerMSFT
-title: "已連線的 app 與裝置 (專案 &quot;Rome&quot;)"
-description: "本節說明如何使用專案 &quot;Rome&quot; 來探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊。"
+title: "已連線的 app 與裝置 (專案 Rome)"
+description: "本節說明如何使用專案 Rome 來探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊。"
 translationtype: Human Translation
 ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
 ms.openlocfilehash: 4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a
 
 ---
 
-# 已連線的 app 與裝置 (專案 "Rome")
+# 已連線的 app 與裝置 (專案 Rome)
 
-本節說明如何使用專案 "Rome" 跨裝置與平台來和 app 連線。 了解如何探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊。
+本節說明如何使用專案 Rome 跨裝置與平台來和 app 連線。 了解如何探索連線的裝置、啟動另一部裝置上的 app，以及與遠端裝置上的 app 通訊。
 
 大部分人都擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，app 需要跨越裝置與平台。
 

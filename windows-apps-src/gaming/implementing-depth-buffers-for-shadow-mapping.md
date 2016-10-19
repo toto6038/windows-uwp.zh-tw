@@ -5,7 +5,7 @@ description: "此逐步解說示範如何在所有 Direct3D 功能層級的裝�
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004
+ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
 ---
 
@@ -90,6 +90,6 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

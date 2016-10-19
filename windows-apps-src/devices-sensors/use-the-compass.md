@@ -5,7 +5,7 @@ title: "使用指南針"
 description: "了解如何使用指南針來判斷目前朝向何方。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 ---
 # 使用指南針
@@ -181,6 +181,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

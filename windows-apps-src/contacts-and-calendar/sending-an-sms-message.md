@@ -3,10 +3,10 @@ author: Xansky
 description: "本主題示範如何啟動 [撰寫 SMS] 對話方塊，讓使用者傳送 SMS 訊息。 您可以在顯示該對話方塊之前，使用資料預先填入 SMS 的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。"
 title: "傳送 SMS 訊息"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-keywords: contacts, SMS, send
+keywords: "連絡人, SMS, 傳送"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 738f7049b0a8fe5b42abfbc25f09501d0f6e7370
+ms.openlocfilehash: e00d2e9a701a2a23b5a98f2275abd55da12fa791
 
 ---
 
@@ -60,6 +60,6 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

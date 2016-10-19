@@ -5,7 +5,7 @@ title: "將 Windows 執行階段 8.x 專案移植到 UWP 專案"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 
 ---
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
 
 如果您收到有關找不到命名空間或型別或成員的編譯錯誤，原因可能在此。 開啟 API 參考文件中的 API 主題，並瀏覽到＜需求＞一節：文中會告訴您實作裝置系列為何。 如果那不是您的目標裝置系列，則您必須擁有該裝置系列之擴充功能 SDK 的參考，您的專案才能使用 API。
 
-按一下 [專案]**** &gt; [加入參考]**** &gt; [Windows 通用]**** &gt; [擴充功能]****，然後選取適當的擴充功能 SDK。 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，請選取 [適用於 UWP 的 Windows 行動擴充功能]****。
+按一下 [專案]**** &gt; [加入參考]**** &gt; [Windows 通用]**** &gt; [擴充功能]****，然後選取適當的擴充功能 SDK。 例如，如果您想要呼叫的 API 只能在行動裝置系列中使用且是在版本 10.0.x.y 引進，則選取 [適用於 UWP 的 Windows 行動擴充功能]****。
 
 如此便會將下列參考加入您的專案檔案：
 
@@ -177,6 +177,6 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

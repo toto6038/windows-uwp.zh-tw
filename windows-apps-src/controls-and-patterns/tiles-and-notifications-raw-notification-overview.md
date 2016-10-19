@@ -6,11 +6,11 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # 原始通知概觀
 
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
 
 為了說明 app 如何從原始通知獲益，讓我們看看虛構的文件協作 app。 假設有兩個使用者在同一個時間編輯同一份文件。 裝載共用文件的雲端服務，可以在其中一位使用者變更文件時使用原始通知來通知另一位使用者。 原始通知不一定會包含對文件所做的變更，但是會通知每個使用者應用程式連絡中央位置並同步可用的變更。 使用原始通知，應用程式及其雲端服務可以免去文件開啟期間持續保持連線的額外負荷。
 
-## <span id="How_raw_notifications_work"></span><span id="how_raw_notifications_work"></span><span id="HOW_RAW_NOTIFICATIONS_WORK"></span>原始通知的運作方式
+## 原始通知的運作方式
 
 
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
@@ -43,7 +43,7 @@ ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
 
 在用戶端上原始通知只能使用三種可能的途徑進行傳送：透過通知傳送事件傳送到正在執行的應用程式、傳送到背景工作或捨棄。 所以，如果用戶端處於離線狀態且 WNS 嘗試傳送原始通知，則會捨棄通知。
 
-## <span id="Creating_a_raw_notification"></span><span id="creating_a_raw_notification"></span><span id="CREATING_A_RAW_NOTIFICATION"></span>建立原始通知
+## 建立原始通知
 
 
 傳送原始通知的方式與傳送磚、快顯通知或徽章推播通知類似，但是有一些差異：
@@ -56,7 +56,7 @@ ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
 
 如需傳送推播通知的詳細資訊，請參閱[快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
 
-## <span id="Receiving_a_raw_notification"></span><span id="receiving_a_raw_notification"></span><span id="RECEIVING_A_RAW_NOTIFICATION"></span>接收原始通知
+## 接收原始通知
 
 
 App 有兩個管道可以接收原始通知：
@@ -69,7 +69,7 @@ App 有兩個管道可以接收原始通知：
 -   如果應用程式正在執行，通知傳送事件會優先於背景工作，讓應用程式能夠儘速處理通知。
 -   通知傳送事件處理常式可以將事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) 屬性設為 **true**，指定在處理常式結束後，原始通知不應該傳送到 app 的背景工作。 如果 **Cancel** 屬性設為 **false** 或未設定 (預設值為 **false**)，原始通知會在通知傳送事件處理常式完成工作後觸發背景工作。
 
-### <span id="notification_delivery_events"></span><span id="NOTIFICATION_DELIVERY_EVENTS"></span>通知傳送事件
+### 通知傳送事件
 
 您的 app 可以使用通知傳送事件 ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) 在 app 使用中時接收原始通知。 當雲端服務傳送原始通知的時候，正在執行的應用程式可以在通道 URI 上處理通知傳送事件來接收通知。
 
@@ -87,7 +87,7 @@ App 有兩個管道可以接收原始通知：
 
     如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)
 
-### <span id="bg_tasks"></span><span id="BG_TASKS"></span>原始通知觸發的背景工作
+### 原始通知觸發的背景工作
 
 **重要：**使用原始通知背景工作之前，必須透過 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 授與 App 背景存取權限。
 
@@ -108,12 +108,12 @@ App 有兩個管道可以接收原始通知：
 
 每個應用程式一次只能執行一個背景工作。 如果對已經執行背景工作的應用程式觸發背景工作，必須先完成第一個背景工作，才能執行新的工作。
 
-## <span id="Other_resources"></span><span id="other_resources"></span><span id="OTHER_RESOURCES"></span>其他資源
+## 其他資源
 
 
 若要深入了解，您可以下載適用於 Windows 8.1 的[原始通知範例](http://go.microsoft.com/fwlink/p/?linkid=241553)和適用於 Windows 8.1 的[推播與定期通知範例](http://go.microsoft.com/fwlink/p/?LinkId=231476)，並在 Windows 10 App 中重複使用其原始程式碼。
 
-## <span id="related_topics"></span>相關主題
+## 相關主題
 
 
 * [原始通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761463)
@@ -131,6 +131,6 @@ App 有兩個管道可以接收原始通知：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

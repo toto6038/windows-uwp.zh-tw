@@ -4,8 +4,8 @@ ms.assetid: 05b10814-4548-4dd4-bf71-72157a50986c
 description: "閱讀使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "疑難排解指南"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 4a8b43ac0b6752b78e998ac16776b84e9ddda09f
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
 # 疑難排解指南
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本節說明使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
@@ -29,6 +29,6 @@ ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

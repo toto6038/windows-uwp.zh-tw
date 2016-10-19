@@ -1,11 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "這個主題說明適用於視訊擷取案例的效果。 其中包括影像防震效果。"
+description: "本主題示範如何使用影像防震效果。"
 title: "視訊擷取的效果"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
+ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ---
 
@@ -13,10 +13,10 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-這個主題說明適用於視訊擷取案例的效果。 其中包括影像防震效果。
+本主題示範如何使用影像防震效果。
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE] 
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 ## 影像防震效果
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-在[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)文章所描述的基本視訊擷取實作中，因為媒體編碼設定檔物件不在程式碼中的其他地方使用，所以指派給區域變數。 在這個案例中，您應該將此物件指派給成員變數，以便稍後存取。
+在這個案例中，您應該將媒體編碼設定檔物件指派給成員變數，以便稍後存取。
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
@@ -78,7 +78,8 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -89,6 +90,6 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

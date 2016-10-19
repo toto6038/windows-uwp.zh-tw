@@ -4,8 +4,8 @@ title: "處理檔案啟用"
 description: "App 可以登錄為特定檔案類型的預設處理常式。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
+ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
 -   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 -   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
-App 可以登錄為特定檔案類型的預設處理常式。 傳統 Windows 平台 (CWP) app 和通用 Windows 平台 (UWP) app 皆可登錄為預設的檔案處理常式。 如果使用者選擇您的 app 做為特定檔案類型的預設處理常式，則在啟動該類型的檔案時就會啟用您的 app。
+App 可以登錄為特定檔案類型的預設處理常式。 Windows 傳統型應用程式和「通用 Windows 平台」(UWP) app 皆可登錄為預設檔案處理常式。 如果使用者選擇您的 App 作為特定檔案類型的預設處理常式，則在啟動該類型的檔案時就會啟用您的 App。
 
 建議只有當您希望處理某個檔案類型的所有檔案啟動時，才登錄該檔案類型。 如果您的應用程式只需在內部使用檔案類型，就不需要登錄為預設處理常式。 如果您選擇登錄某個檔案類型，則在針對該檔案類型啟用您的應用程式時，您必須為使用者提供預期的功能。 例如，圖片檢視器應用程式需要登錄以顯示 .jpg 檔案。 如需檔案關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
@@ -154,6 +154,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

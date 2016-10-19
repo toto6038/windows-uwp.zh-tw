@@ -1,26 +1,27 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: "本文說明視訊裝置控制項如何啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。"
-title: "相片和視訊擷取的擷取裝置控制項"
+description: "本文示範如何使用手動裝置控制項來啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。"
+title: "相片和視訊擷取的手動相機控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
+ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
+ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 ---
 
-# 相片和視訊擷取的擷取裝置控制項
+# 相片和視訊擷取的手動相機控制項
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文說明視訊裝置控制項如何啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。
+本文示範如何使用手動裝置控制項來啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。
 
 本文中討論的控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
-本文中的程式碼是從[相機手動控制項 SDK 範例](http://go.microsoft.com/fwlink/?LinkId=619479)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範圍做為自己的 app 起點。
+本文中的程式碼是從[相機手動控制項 SDK 範例](http://go.microsoft.com/fwlink/p/?LinkId=619479)改編而來。 您可以下載範例以查看內容中使用的程式碼，或以此範例做為自己的 app 起點。
 
-**注意** 本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE]
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空間的成員。
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 屬性以查看目前的擷取裝置是否支援 **ExposureControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動曝光調整的核取方塊的核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 屬性的值。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 屬性以查看目前的擷取裝置是否支援 **ExposureControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動曝光調整的核取方塊的核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 屬性的值。
 
 曝光值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -50,7 +51,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
 
-**重要事項** 只有當預覽串流處於執行狀態時，才支援自動曝光模式。 開啟自動曝光之前，請先檢查以確定預覽串流處於執行狀態。
+> [!IMPORTANT]
+> 只有當預覽串流處於執行狀態時，才支援自動曝光模式。 開啟自動曝光之前，請先檢查以確定預覽串流處於執行狀態。
 
 ## 曝光補償
 
@@ -60,7 +62,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
 
-請檢查 [Supported](supported-codecs.md) 屬性以查看目前的擷取裝置是否支援 **ExposureCompensationControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
+請檢查 [Supported](supported-codecs.md) 屬性以查看目前的擷取裝置是否支援 **ExposureCompensationControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。
 
 曝光補償值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -80,7 +82,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 如果支援 **FlashControl**，不一定支援自動消除紅眼，因此在啟用 UI 之前，請先檢查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 屬性。 由於 **TorchControl** 是與閃光燈控制項分開的，因此，使用它之前，也必須先檢查其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 屬性。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。 如果支援 **FlashControl**，不一定支援自動消除紅眼，因此在啟用 UI 之前，請先檢查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 屬性。 由於 **TorchControl** 是與閃光燈控制項分開的，因此，使用它之前，也必須先檢查其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 屬性。
 
 在每個閃光燈選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，啟用或停用適當的對應閃光燈設定。 請注意，若要設定為一律使用閃光燈，您必須將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) 屬性設為 true，將 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) 屬性設為 false。
 
@@ -96,7 +98,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[手電筒](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
-**注意** 在某些裝置上，除非裝置的預覽串流處於執行狀態且正在主動擷取視訊，否則即使將 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 設定為 true，手電筒也不會發光。 建議的操作順序是開啟視訊預覽，接著將 **Enabled** 設定為 true 來開啟手電筒，然後起始視訊擷取。 在某些裝置上，要在啟動預覽後，手電筒才會亮起。 在其他裝置上，則是在啟動視訊擷取後，手電筒才會亮起。
+> [!NOTE] 
+>  在某些裝置上，除非裝置的預覽串流處於執行狀態且正在主動擷取視訊，否則即使 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 設定為 true，手電筒也不會發光。 建議的操作順序是開啟視訊預覽，接著將 **Enabled** 設定為 true 來開啟手電筒，然後起始視訊擷取。 在某些裝置上，要在啟動預覽後，手電筒才會亮起。 在其他裝置上，則是在啟動視訊擷取後，手電筒才會亮起。
 
 ## 對焦
 
@@ -108,7 +111,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 接著，檢查 [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) 清單是否包含 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084) 值以查看是否支援連續自動對焦，如果包含該值，便顯示連續自動對焦選項按鈕。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 接著，檢查 [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) 清單是否包含 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084) 值以判斷是否支援連續自動對焦，如果包含該值，便顯示連續自動對焦選項按鈕。
 
 [!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
 
@@ -118,7 +121,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
 
-**重要事項** 只有當預覽串流處於執行狀態時，才支援自動對焦模式。 開啟連續自動對焦之前，請先檢查以確定預覽串流處於執行狀態。
+> [!IMPORTANT]
+> 只有當預覽串流處於執行狀態時，才支援自動對焦模式。 開啟連續自動對焦之前，請先檢查以確定預覽串流處於執行狀態。
 
 ### 點選以對焦
 
@@ -132,7 +136,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
-在點選以對焦選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 屬性來取得控制項的執行個體。 呼叫 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 以將控制項鎖定，以防萬一您的 App 先前已呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 來啟用連續自動對焦。 然後，等候使用者點選螢幕來變更焦點。
+在點選以對焦選項按鈕的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件處理常式中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 屬性來取得控制項的執行個體。 呼叫 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 以將控制項鎖定，以防萬一您的 App 先前已呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 來啟用連續自動對焦，接著等待使用者點選螢幕以變更焦點。
 
 [!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
 
@@ -140,11 +144,11 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
 
-下一步是透過處理目前正在顯示擷取預覽串流之 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件，在使用者點選螢幕時接聽事件。 如果相機目前沒有進行預覽，或是點選以對焦模式已停用，則請從處理常式返回而不進行任何動作。
+下一步是透過處理目前正在顯示擷取預覽串流之 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件，在使用者點選螢幕時接聽事件。 如果相機目前沒有進行預覽，或是點選以對焦模式已停用，請從處理常式返回而不進行任何動作。
 
-如果將追蹤變數 *_isFocused* 切換為 false，且如果相機目前並未進行對焦 (由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 屬性判斷)，則請開始點選以對焦程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
+如果將追蹤變數 *_isFocused* 切換為 false，且如果相機目前並未進行對焦 (由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 屬性判斷)，請開始點選以對焦程序。 從傳遞給處理常式的事件引數取得使用者的點選位置。 這個範例也會利用這個機會挑選將對焦的區域大小。 在此案例中，大小為擷取元素最小尺寸的 1/4。 將點選位置和區域大小傳遞給下一節中定義的 **TapToFocus** 協助程式方法。
 
-如果將 *\_isFocused* 切換設定為 true，則使用者點選時，應該會從先前的區域清除焦點。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
+如果將 *\_isFocused* 切換設定為 true，使用者點選時，應該會從先前的區域清除焦點。 這是在下面所示的 **TapUnfocus** 協助程式方法中進行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
@@ -162,11 +166,12 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 最後，在 **FocusControl** 上呼叫 [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) 來起始對焦。
 
-**重要事項** 實作點選以對焦時，作業的程序非常重要。 您應該依照以下順序呼叫這些 API：
-
-**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
-           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
-           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+> [!IMPORTANT]
+> 實作點選以對焦時，作業的程序非常重要。 您應該依照以下順序呼叫這些 API：
+>
+> 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
+> 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
+> 3. [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -174,7 +179,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
 
-**GetPreviewStreamRectInControl** 協助程式方法會使用預覽串流的解析度和裝置的方向，來決定包含預覽串流之預覽元素內的矩形，其中會剪除控制項可能提供來維持串流外觀比例的所有上下黑邊的邊框間距。 這個方法會使用在[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中找到的基本媒體擷取範例程式碼中定義的類別成員變數。
+**GetPreviewStreamRectInControl** 協助程式方法會使用預覽串流的解析度和裝置的方向，來決定包含預覽串流之預覽元素內的矩形，其中會剪除控制項可能提供來維持串流外觀比例的所有上下黑邊的邊框間距。 這個方法也會使用在[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中找到的基本媒體擷取範例程式碼中定義的類別成員變數。
 
 [!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
 
@@ -188,7 +193,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 屬性以查看目前的擷取裝置是否支援 **FocusControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。
 
 對焦值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -210,7 +215,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 同時也檢查 [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) 以確定是否也支援輔助燈。 如果兩者都支援，您便可以顯示和啟用此功能的 UI。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 屬性以查看目前的擷取裝置是否支援 **FlashControl**。 同時也檢查 [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) 以確定是否也支援輔助燈。 如果兩者都支援，您可以顯示和啟用此功能的 UI。
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
@@ -226,7 +231,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) 屬性以查看目前的擷取裝置是否支援 **IsoSpeedControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動 ISO 速度調整的核取方塊核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) 屬性的值。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) 屬性以查看目前的擷取裝置是否支援 **IsoSpeedControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。 將用來指出目前是否使用自動 ISO 速度調整的核取方塊核取狀態設定為 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) 屬性的值。
 
 ISO 速度值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -254,6 +259,13 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
+## 電源頻率
+有些相機裝置支援抗閃爍處理，而這取決於了解目前環境中電源的 AC 頻率。 有些裝置支援自動決定電源頻率，有些則需要手動設定頻率。 下列程式碼範例顯示如何判斷裝置上的電源頻率支援，以及必要時如何手動設定頻率。 
+
+首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 透過呼叫 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 並傳入 **Auto** 值以執行此操作。 如果呼叫成功，表示裝置支援您的自動電源頻率。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
+
+[!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
+
 ## 白平衡
 
 [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 可讓您設定擷取相片或視訊時使用的白平衡。
@@ -262,7 +274,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) 屬性以查看目前的擷取裝置是否支援 **WhiteBalanceControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。 將下拉式方塊的項目設定為 [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 列舉的值。 並將選取的項目設定為 [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) 屬性目前的值。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) 屬性以查看目前的擷取裝置是否支援 **WhiteBalanceControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。 將下拉式方塊的項目設定為 [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 列舉的值。 並將選取的項目設定為 [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) 屬性目前的值。
 
 就手動控制而言，白平衡值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。 啟用手動控制之前，請檢查以確定最小和最大支援值之間的範圍大於分段大小。 如果不是，則表示目前的裝置不支援手動控制。
 
@@ -270,7 +282,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[白平衡](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
 
-在色溫預設下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件處理常式中，藉由呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 來取得目前選取的預設並設定控制項的值。 如果選取的預設值不是 **Manual**，則請停用手動白平衡滑桿。
+在色溫預設下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件處理常式中，藉由呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 來取得目前選取的預設並設定控制項的值。 如果選取的預設值不是 **Manual**，請停用手動白平衡滑桿。
 
 [!code-cs[WhiteBalanceComboBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceComboBox)]
 
@@ -278,9 +290,11 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
 
-**重要事項** 只有當預覽串流處於執行狀態時，才支援調整白平衡。 設定白平衡值或預設之前，請先檢查以確定預覽串流處於執行狀態。
+> [!IMPORTANT]
+> 只有當預覽串流處於執行狀態時，才支援調整白平衡。 設定白平衡值或預設之前，請先檢查以確定預覽串流處於執行狀態。
 
-**重要事項** **ColorTemperaturePreset.Auto** 預設值會指示系統自動調整白平衡層級。 針對某些情況 (例如擷取每個畫面的白平衡層級應該都相同的相片序列)，您可能會想要將控制項鎖定在目前的自動值。 若要這樣做，請呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 並指定 **Manual** 預設，而不要使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 在控制項上設定值。 這會導致裝置鎖定目前的值。 請勿嘗試讀取目前的控制項值，然後將傳回的值傳遞給 **SetValueAsync**，因為這個值不一定是正確的。
+> [!IMPORTANT]
+> **ColorTemperaturePreset.Auto** 預設值會指示系統自動調整白平衡層級。 針對某些情況 (例如擷取每個畫面的白平衡層級應該都相同的相片序列)，您可能會想要將控制項鎖定在目前的自動值。 若要這樣做，請呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 並指定 **Manual** 預設，而不要使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 在控制項上設定值。 這會導致裝置鎖定目前的值。 請勿嘗試讀取目前的控制項值，然後將傳回的值傳遞給 **SetValueAsync**，因為這個值不一定是正確的。
 
 ## 縮放
 
@@ -290,7 +304,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 [!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
 
-請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 屬性以查看目前的擷取裝置是否支援 **ZoomControl**。 如果支援此控制項，您便可以顯示和啟用此功能的 UI。
+請檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 屬性以查看目前的擷取裝置是否支援 **ZoomControl**。 如果支援此控制項，您可以顯示和啟用此功能的 UI。
 
 縮放比例值必須在裝置所支援的範圍內，並且必須是所支援之分段大小的增量。 檢查 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 及 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 屬性 (用來設定對應的滑桿控制項屬性) 以取得目前裝置支援的值。
 
@@ -326,10 +340,11 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

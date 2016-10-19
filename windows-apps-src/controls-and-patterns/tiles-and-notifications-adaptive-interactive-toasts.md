@@ -6,16 +6,13 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 ---
-
 # 調適型和互動式快顯通知
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
 
@@ -29,7 +26,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
  
 
-## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>快顯通知結構
+## 快顯通知結構
 
 
 快顯通知是使用 XML 建構，並通常包含下列重要元素：
@@ -61,7 +58,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>視覺
+### 視覺
 
 在視覺元素內部，必須有且只有一個包含快顯通知視覺內容的繫結元素。
 
@@ -72,7 +69,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>動作
+### 動作
 
 在 UWP App 中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在 App 外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
 
@@ -90,7 +87,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>音訊
+### 音訊
 
 針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的 app 從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
 
@@ -99,7 +96,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 請參閱[音訊結構描述頁面](https://msdn.microsoft.com/library/windows/apps/br230842)了解快顯通知音訊的相關資訊，包括完整的 ms-winsoundevents 清單。
 
-## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>鬧鐘、提醒及來電
+## 鬧鐘、提醒及來電
 
 
 您可以針對鬧鐘、提醒及來電使用快顯通知。 這些特殊快顯通知的外觀和標準快顯通知一致，但是特殊快顯通知具備一些自訂、以案例為基礎的 UI 和圖案：
@@ -108,7 +105,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 -   除了和提醒通知共用上述行為之外，鬧鐘通知也會自動播放循環音效。
 -   來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 這可以透過在以下的快顯通知根元素內部指定 scenario 屬性來完成 – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 範例
+## XML 範例
 
 
 **注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
@@ -290,7 +287,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
  
 
-## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>啟用範例
+## 啟用範例
 
 
 如上述說明，快顯通知的內文和動作可以透過不同方式啟動 app。 下面的範例將說明如何處理來自快顯通知內文和/或快顯通知動作的不同類型啟用。
@@ -352,7 +349,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>結構描述：&lt;visual&gt; 和 &lt;audio&gt;
+## 結構描述：&lt;visual&gt; 和 &lt;audio&gt;
 
 
 在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
@@ -492,7 +489,7 @@ silent?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
-## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>結構描述：&lt;action&gt;
+## 結構描述：&lt;action&gt;
 
 
 在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
@@ -584,7 +581,7 @@ hint-inputId
 -   值必須是要關聯之輸入屬性的 id。
 -   在行動裝置與桌上型裝置中，這個屬性會將按鈕放在輸入方塊旁邊。
 
-## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>系統處理之動作的屬性
+## 系統處理之動作的屬性
 
 
 如果您不想要由 app 以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
@@ -647,6 +644,6 @@ hint-inputId
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

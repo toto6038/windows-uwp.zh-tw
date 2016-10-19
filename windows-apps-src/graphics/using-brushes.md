@@ -5,7 +5,7 @@ title: "使用筆刷"
 description: "Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
+ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 
 ---
 # 使用筆刷
@@ -179,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

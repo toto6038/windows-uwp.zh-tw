@@ -4,8 +4,8 @@ description: "這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI
 title: "相依性屬性概觀"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 translationtype: Human Translation
-ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
-ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+ms.sourcegitcommit: bd08d102aa5de2d9dec89136caf683755db72391
+ms.openlocfilehash: 7a8c39494b69d36553db3a2df7526ba61e57a228
 
 ---
 
@@ -48,8 +48,8 @@ ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
 | 詞彙 | 說明 |
 |------|-------------|
 | 相依性屬性 | 存在於 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼的屬性 (如下所示)。 這個識別碼通常是以負責定義 **DependencyObject** 衍生類別的靜態成員方式來提供。 |
-| 相依性屬性識別碼 | [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，這是它通常是公用的原因，即使它是唯讀的。 |
-| 屬性包裝函式 | Windows 執行階段屬性的可呼叫 **get** 與 **set** 實作。 或者是語言特定的原始定義投影。 **get** 屬性包裝函式實作會呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，將相關的相依性屬性識別碼傳遞為輸入，並傳遞要設為第二個輸入的值。 | 
+| 相依性屬性識別碼 | 用來識別屬性的常數值，通常是公用和唯讀的。 |
+| 屬性包裝函式 | Windows 執行階段屬性的可呼叫 **get** 與 **set** 實作。 或者是原始定義的語言特定投影。 **get** 屬性包裝函式實作會呼叫 [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，傳遞相關的相依性屬性識別碼。 | 
 
 屬性包裝函式不只對呼叫者方便，也可以向使用 Windows 執行階段屬性定義的任何程序、工具或投影公開相依性屬性。
 
@@ -100,7 +100,7 @@ public bool IsSpinning
 
 ###  繫結與優先順序
 
-繫結操作對於它們的使用範圍具有適當的優先順序。 例如，套用到本機值的繫結就像是本機值，而屬性 setter 的繫結 ([{TemplateBinding} 標記延伸](templatebinding-markup-extension.md)) 的套用方式與樣式 setter 一樣。 由於繫結必須等到執行階段從資料來源取得值，因此，判斷任何屬性的屬性值優先順序的程序也會延伸到執行階段。
+繫結操作針對將它們用於任何範圍的情況都具有適當的優先順序。 例如，套用到本機值的 [{Binding}](binding-markup-extension.md) 會以本機值的方式運作，而屬性 setter 的 [{TemplateBinding} 標記延伸](templatebinding-markup-extension.md)的套用方式與樣式 setter 一樣。 由於繫結必須等到執行階段從資料來源取得值，因此，判斷任何屬性的屬性值優先順序的程序也會延伸到執行階段。
 
 繫結不只和本機值具有相同優先順序，它們實際上也是本機值，其中繫結是已延遲之值的預留位置。 如果您的屬性值含有繫結，且您在執行階段於其上設定了本機值，則它會完全取代繫結。 同理，如果您呼叫 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 來定義只存在執行階段的繫結，則您可以取代任何已在 XAML 中套用的本機值，或者使用先前執行的程式碼來取代。
 
@@ -133,7 +133,7 @@ public bool IsSpinning
 
 ### 資料繫結
 
-相依性屬性可以透過套用資料繫結來設定它的值。 資料繫結使用 XAML 中的 [{Binding} 標記延伸](binding-markup-extension.md)語法，或程式碼中的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別。 針對資料繫結屬性，最終的屬性值判斷會延遲到執行階段。 那時就會從資料來源中取得該值。 相依性屬性系統在此處扮演的角色是，讓預留位置行為能夠運作，例如，在尚未知道值時載入 XAML，然後透過與 Windows 執行階段資料繫結引擎互動，在執行階段提供值。
+相依性屬性可以透過套用資料繫結來設定它的值。 資料繫結在 XAML 中使用 [{Binding} 標記延伸](binding-markup-extension.md)語法，在程式碼中使用 [{x:Bind} 標記延伸](x-bind-markup-extension.md)或 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別。 針對資料繫結屬性，最終的屬性值判斷會延遲到執行階段。 那時就會從資料來源中取得該值。 相依性屬性系統在此處扮演的角色是，讓預留位置行為能夠運作，例如，在尚未知道值時載入 XAML，然後透過與 Windows 執行階段資料繫結引擎互動，在執行階段提供值。
 
 下列範例會在 XAML 中使用繫結，以設定 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 值。 繫結會使用繼承的資料內容與物件資料來源 (這個簡短範例中並未顯示這兩者，如需顯示內容與來源的更完整範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946))。
 
@@ -145,17 +145,17 @@ public bool IsSpinning
 
 您也可以使用程式碼建立繫結，而不要使用 XAML。 請參閱 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)。
 
-**注意** 基於相依性屬性值優先順序的緣故，像這樣的繫結會被視為本機值。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。
+**注意** 基於相依性屬性值優先順序的緣故，像這樣的繫結會被視為本機值。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
 
 ### 繫結來源、繫結目標、FrameworkElement 的角色
 
-若要做為繫結來源，屬性不需是相依性屬性；儘管這會根據您的程式設計語言而定且每個都擁有特定的邊緣案例，但是您通常可以使用任一屬性做為繫結來源。 不過，若要做為繫結目標，屬性必須是相依性屬性。
+若要做為繫結來源，屬性不需是相依性屬性；儘管這會根據您的程式設計語言而定且每個都擁有特定的邊緣案例，但是您通常可以使用任一屬性做為繫結來源。 不過，要成為 [{Binding} 標記延伸](binding-markup-extension.md)或 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的目標，該屬性必須是相依性屬性。 {x:Bind} 不需要這項需求，因為它是使用產生的程式碼來套用它的繫結值。
 
 如果您正在程式碼中建立繫結，請注意，[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API 只針對 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 進行定義。 不過，您可以改用 [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) 來建立繫結定義，以參考任何 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 屬性。
 
 無論是使用程式碼或 XAML，請記住 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 是 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 屬性。 透過使用父系-子系屬性繼承格式 (通常建立在 XAML 標記中)，繫結系統可以解析存在父元素中的 **DataContext**。 即使子物件 (擁有目標屬性) 不是 **FrameworkElement**，這個繼承仍然可以評估，因此不會包含它自己的 **DataContext** 值。 不過，要繼承的父元素必須是 **FrameworkElement**，才能設定與包含 **DataContext**。 或者，您必須定義繫結，繫結才能以 **null** 值的 **DataContext** 作用。
 
-建立繫結不是大多數資料繫結案例唯一需要做的事。 如果要讓單向或雙向繫結生效，來源屬性必須支援傳播到繫結系統 (因此就是目標) 的來源屬性。 對於自訂的繫結來源而言，這表示屬性必須支援 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合應支援 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些類別在它們的實作中支援這些介面，因此使用它們做為基底類別對資料繫結案例來說很有用；[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 是這種類別的範例之一。 如需有關資料繫結以及資料繫結如何與屬性系統建立關聯的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+建立繫結不是大多數資料繫結案例唯一需要做的事。 如果要讓單向或雙向繫結生效，來源屬性必須支援傳播到繫結系統 (因此就是目標) 的來源屬性。 針對自訂的繫結來源，這表示屬性必須是相依性屬性，或物件必須支援 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合應支援 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些類別在它們的實作中支援這些介面，因此使用它們做為基底類別對資料繫結案例來說很有用；[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 是這種類別的範例之一。 如需有關資料繫結以及資料繫結如何與屬性系統建立關聯的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 **注意** 此處列出的類型支援 Microsoft .NET 資料來源。 C++/CX 資料來源會針對變更通知或可觀察的行為使用不同的介面，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
@@ -179,6 +179,8 @@ public bool IsSpinning
 
 屬性變更的行為是相依性屬性詞彙「相依性」部分的根源。 在許多架構中，當另一個屬性會影響第一個屬性的值時，要維持某個屬性的有效值是很棘手的開發問題。 在 Windows 執行階段屬性系統中，每個相依性屬性都可以指定一個回呼，該回呼會在它的屬性值變更時叫用。 使用這個回呼通常可以同時通知或變更相關屬性值。 許多現有的相依性屬性都包含一個屬性變更的行為。 您也可以新增類似的回呼行為到自訂相依性屬性，並實作您自己的屬性變更行為。 請參閱[自訂相依性屬性](custom-dependency-properties.md)中的範例。
 
+Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 這可讓應用程式程式碼在 [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 執行個體上的指定相依性屬性變更時登錄變更通知。
+
 ### 預設值與 **ClearValue**
 
 相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 (相依性屬性值的優先順序會在下一節中討論)。例如，您可能會刻意移除套用到屬性的樣式值或動畫，但卻希望這樣做之後，將該值設定為合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
@@ -199,14 +201,14 @@ public bool IsSpinning
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML 使用者與自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581) 
-           **與相依性屬性相關的 API**
+* [XAML 使用者與自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
+**與相依性屬性相關的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

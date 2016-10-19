@@ -5,7 +5,7 @@ title: "將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+ms.openlocfilehash: 4f7a73eb48d898ed99a5145eccc04da259fe4871
 
 ---
 
@@ -78,6 +78,6 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

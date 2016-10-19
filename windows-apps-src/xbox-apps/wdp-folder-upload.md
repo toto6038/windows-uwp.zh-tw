@@ -4,7 +4,7 @@ title: "裝置入口網站資料夾上傳 API 參考"
 description: "了解如何以程式設計方式存取資料夾上傳 API。"
 translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
@@ -54,6 +54,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

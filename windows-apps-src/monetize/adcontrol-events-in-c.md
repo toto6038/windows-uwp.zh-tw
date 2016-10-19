@@ -4,15 +4,15 @@ ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
 description: "了解如何處理 AdControl 類別的事件。"
 title: "C 中的 AdControl 事件#"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f92cbbb00a064ce7569d44ad952838df4d21ac8c
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 969d668c89b40e37245a8168879842159b4f5c14
 
 ---
 
 # C\ 中的 AdControl 事件# #  
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 XAML 中的 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [XAML 屬性範例](xaml-properties-example.md)。
 
@@ -52,6 +52,6 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

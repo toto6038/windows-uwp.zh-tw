@@ -1,22 +1,22 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "此文章說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。"
-title: "使用 CameraCaptureUI 擷取相片和視訊"
+description: "本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。"
+title: "使用 Windows 內建相機 UI 來擷取相片和視訊"
 translationtype: Human Translation
-ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
-ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
+ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
+ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 ---
 
-# 使用 CameraCaptureUI 擷取相片和視訊
+# 使用 Windows 內建相機 UI 來擷取相片和視訊
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 此文章說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。 這個功能很容易使用，可讓 app 只需幾行程式碼即可取得使用者所擷取的相片或視訊。
 
-如果您的案例需要更健全的擷取作業低階控制，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)。
+如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 ## 使用 CameraCaptureUI 擷取相片
 
@@ -26,13 +26,18 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 若要擷取相片，請建立新的 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 物件。 使用物件的 [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) 屬性，可以指定所傳回相片的屬性，例如相片的影像格式。 根據預設，相機擷取 UI 可讓使用者在傳回相片前進行裁剪，但可使用 [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) 屬性予以停用。 此範例會設定 [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) 以要求傳回的影像為 200 x 200 像素。
 
-**注意：**行動裝置系列中的裝置不支援在 CameraCaptureUI 中進行影像裁剪。 當您的 app 在這些裝置上執行時會忽略 [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) 屬性的值。
+> [!NOTE]
+> 行動裝置系列中的裝置不支援在 **CameraCaptureUI** 中進行影像裁剪。 當您的 app 在這些裝置上執行時會忽略 [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) 屬性的值。
 
 呼叫 [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) 並指定 [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040)，來指定應該要擷取相片。 這個方法會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 包含影像的執行個體 (如果擷取成功的話)。 如果使用者取消擷取，則傳回的物件為 Null。
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
-一旦擁有包含所擷取相片的 **StorageFile**，您即可建立 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件，該物件可搭配數個不同的通用 Windows app 功能使用。
+包含擷取的相片的 **StorageFile** 會被指定一個動態產生的名稱，並儲存在您的應用程式本機資料夾中。 為了更清楚地組織您擷取的相片，您可能想要將檔案移動到不同的資料夾。
+
+[!code-cs[CopyAndDeletePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCopyAndDeletePhoto)]
+
+若要在您的 app 中使用相片，您可能想建立 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件，該物件可搭配數個不同的通用 Windows app 功能使用。
 
 首先，您應該在專案中包含 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) 命名空間。
 
@@ -91,17 +96,18 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 [!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
 
-您可以繼續擷取視訊短片，並將它們新增到組合。 如需媒體組合的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
+您可以繼續擷取視訊短片，並將它們新增到組合。 如需媒體合成的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
 
-**注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> [!NOTE] 
+> 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
-* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 
  
@@ -112,6 +118,6 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

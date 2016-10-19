@@ -4,8 +4,8 @@ ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
 description: "了解如何以程式設計方式，使用 JavaScript 建立 **AdControl**。"
 title: "使用 JavaScript 建立 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
 # 使用 JavaScript 建立 AdControl
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 此範例說明如何以程式設計方式，使用 JavaScript 建立 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)。
 
@@ -62,6 +62,6 @@ myAdControl.onEngagedChanged = myAdEngagedChanged;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

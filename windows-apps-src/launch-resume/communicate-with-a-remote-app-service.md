@@ -1,7 +1,7 @@
 ---
 author: PatrickFarley
 title: "與遠端應用程式服務通訊"
-description: "使用專案 &quot;Rome&quot; 與遠端裝置上執行的應用程式服務交換訊息。"
+description: "使用專案 Rome 與遠端裝置上執行的應用程式服務交換訊息。"
 translationtype: Human Translation
 ms.sourcegitcommit: c90304b7ca3f7185fca9146aa2303b09cba5ab9a
 ms.openlocfilehash: bff77a63d0f88907410c74d4dce19fb422c1bd3f

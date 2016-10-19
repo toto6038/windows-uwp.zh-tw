@@ -4,8 +4,8 @@ title: "Windows 10 遊戲開發指南"
 description: "開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
-ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
+ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
+ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
 
 ---
 
@@ -62,7 +62,11 @@ ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
     </tr>
     <tr>
         <td>DirectX 參考與概觀</td>
-        <td>[DirectX 圖形與遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+        <td>[DirectX 圖形和遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>Xbox One 上的 UWP</td>
+        <td>[在 Xbox One 上建置 UWP App](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)</td>
     </tr>
     <tr>
         <td>Xbox Live 文件</td>
@@ -70,11 +74,11 @@ ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
     </tr>
     <tr>
         <td>Xbox One 開發人員文件 (GDN)</td>
-        <td>[Xbox One XDK 文件](https://developer.xboxlive.com/platform/development/documentation/Pages/home.aspx)</td>
+        <td>[Xbox One XDK 文件](https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx)</td>
     </tr>
     <tr>
         <td>Xbox One 開發人員白皮書 (GDN)</td>
-        <td>[白皮書](https://developer.xboxlive.com/platform/development/education/Pages/WhitePapers.aspx)</td>
+        <td>[白皮書](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
     </tr>     
 </table>
 
@@ -82,7 +86,7 @@ ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
 
 Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 若要在「Windows 市集」中發行遊戲，您將需要在「Windows 開發人員中心」建立一個開發人員帳戶。 視您的遊戲和工作室需求而定，其他計畫可能會有相關，並且可以創造像是 Xbox One 開發與 Xbox Live 整合的機會。
 
-### Windows 開發人員中心
+#### Windows 開發人員中心
 
 在「Windows 開發人員中心」註冊開發人員帳戶是邁向發行 Windows 遊戲的第一步。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交給「Windows 市集」。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。
 
@@ -95,10 +99,9 @@ Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員�
         <td>註冊開發人員帳戶</td>
         <td>[準備好註冊了嗎？](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
     </tr> 
-</table>  
+</table>
 
-
-### ID@Xbox
+#### ID@Xbox
 
 ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows 10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 向 ID@Xbox 提出申請之前，請先在「Windows 開發人員中心」註冊一個開發人員帳戶。
 
@@ -117,24 +120,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
 </table>
 
-
-### DirectX 優先使用計畫
-
-專業遊戲開發人員如果想要優先預覽 Direct3D 12 API 變更並想要在論壇中提供意見反應，可以加入 DirectX 優先使用計畫。
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>註冊 DirectX 12 優先使用計畫</td>
-        <td>[DirectX 優先使用計畫](http://1drv.ms/1dgelm6)</td>
-    </tr>
-</table>
-
-
-### Xbox 工具與中介軟體
+#### Xbox 工具與中介軟體
 
 「Xbox 工具與中介軟體計畫」會將 Xbox 開發套件授權給遊戲工具與中介軟體的專業開發人員。 接受加入計畫的開發人員可以將他們的 Xbox XDK 技術分享及散佈給其他獲授權的 Xbox 開發人員。
 
@@ -164,8 +150,16 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td>[Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples)</td>
     </tr>
     <tr>
+        <td>Xbox Advanced Technology Group 公開範例</td>
+        <td>[Xbox-ATG-Samples](https://github.com/Microsoft/Xbox-ATG-Samples)</td>
+    </tr>
+    <tr>
         <td>Direct3D 12 圖形範例</td>
-        <td>[DirectX 圖形範例](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
+        <td>[DirectX-Graphics-Samples](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
+    </tr>
+    <tr>
+        <td>Direct3D 11 圖形範例</td>
+        <td>[directx-sdk-samples](https://github.com/walbourn/directx-sdk-samples)</td>
     </tr>
     <tr>
         <td>Direct3D 11 第一人稱遊戲範例</td>
@@ -185,7 +179,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Xbox One 遊戲範例 (GDN)</td>
-        <td>[範例](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[範例](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 遊戲範例 (MSDN Code Gallery)</td>
@@ -588,8 +582,8 @@ Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模�
         <td>[將您的 iOS 應用程式轉移到 Windows](https://dev.windows.com/bridges/ios)</td>
     </tr>
     <tr>
-        <td>適用於 .NET 與 Win32 的 Windows 橋接 (百年專案 (Project Centennial)) 預覽</td>
-        <td>[Windows 開發人員預覽計畫](http://go.microsoft.com/fwlink/p/?LinkID=624543)</td>
+        <td>適用於傳統型應用程式 (.NET 和 Win32) 的 Windows 橋接器</td>
+        <td>[將您的傳統型應用程式轉換成 UWP App](https://developer.microsoft.com/windows/bridges/desktop)</td>
     </tr>
 </table>
  
@@ -619,7 +613,7 @@ Unity 5 是獲得獎項肯定、用於建立 2D 與3D 遊戲及互動式體驗�
     </tr>
     <tr>
         <td>適用於 Windows 的 Unity 文件</td>
-        <td>[Unity 手冊 / Windows](http://docs.unity3d.com/Manual/Windows.mdl)</td>
+        <td>[Unity 手冊 / Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
     </tr>
     <tr>
         <td>將您的 Unity 遊戲發行為通用 Windows 平台 app (影片)</td>
@@ -690,7 +684,7 @@ Cocos2d-X 是一個跨平台的開放原始碼遊戲開發引擎與工具套件�
 
 #### Unreal Engine
 
-Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲與開發人員採用。 全球的遊戲開發人員都使用 Unreal Engine 來處理對效能要求最高的遊戲主機與電腦遊戲。 訂閱 Unreal Engine 4 的 [DirectX 12 優先使用計畫](#dxeap)成員將可獲得存取權來存取支援 DirectX 12 的 Unreal Engine 4.4 開發專案。
+Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲與開發人員採用。 全球的遊戲開發人員都使用 Unreal Engine 來處理對效能要求最高的遊戲主機與電腦遊戲。
 
 <table>
     <colgroup>
@@ -699,14 +693,13 @@ Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲�
     </colgroup>
     <tr>
         <td>Unreal Engine 概觀</td>
-        <td>[什麼是 Unreal Engine 4？](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
+        <td>[Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
     </tr>
 </table>
- 
 
-### 中介軟體與合作夥伴
+#### BabylonJS
 
-有許多其他可根據您的遊戲開發需求提供解決方案的中介軟體與引擎合作夥伴。
+BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL 及 Web Audio 建置 3D 遊戲。
 
 <table>
     <colgroup>
@@ -714,12 +707,31 @@ Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 開發人員中心遊戲合作夥伴</td>
-        <td>[開發人員中心合作夥伴 (遊戲)](https://devcenterpartners.windows.com/directory#filter=gaming)</td>
+        <td>BabylonJS</td>
+        <td>[BabylonJS](http://www.babylonjs.com/)</td>
     </tr>
     <tr>
+        <td>WebGL 3D 搭配 HTML5 和 BabylonJS (系列影片)</td>
+        <td>[學習 WebGL 3D 和 BabylonJS](https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01)</td>
+    </tr>
+    <tr>
+        <td>使用 BabylonJS 建置跨平台 WebGL 遊戲</td>
+        <td>[使用 BabylonJS 開發跨平台遊戲](https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/)</td>
+    </tr>    
+</table>
+
+### 中介軟體與合作夥伴
+
+視您的遊戲開發需求而定，許多其他的中介軟體和引擎合作夥伴都能提供解決方案。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
         <td>Windows 開發人員中心合作夥伴</td>
-        <td>[開發人員中心合作夥伴](https://devcenterpartners.windows.com/directory)</td>
+        <td>[開發人員中心合作夥伴](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
  
@@ -755,7 +767,7 @@ Unreal Engine 4 是一整套的遊戲開發工具，適合所有類型的遊戲�
     </tr>
     <tr>
         <td>將 Xbox 遊戲移植到通用 Windows 平台 app</td>
-        <td>[從 Xbox One 移植到 Windows 10 UWP](https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
+        <td>[從 Xbox One 移植到 Windows 10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
     </tr>
     <tr>
         <td>從 DirectX 9 移植到 DirectX 11</td>
@@ -1267,9 +1279,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
 </table>
 
-
 ## 提交及發行您的遊戲
-
 
 下列指南與資訊可協助讓發行及提交程序儘可能順利。
 
@@ -1496,6 +1506,6 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

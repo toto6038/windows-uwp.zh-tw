@@ -7,7 +7,7 @@ label: Touchpad interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
+ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 ---
 
@@ -149,13 +149,13 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 
 * [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md) 
-           **範例**
+* [識別輸入裝置](identify-input-devices.md)
+**範例**
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**封存範例**
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -167,6 +167,6 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

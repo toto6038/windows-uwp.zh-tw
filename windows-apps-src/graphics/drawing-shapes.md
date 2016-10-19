@@ -5,7 +5,7 @@ title: "繪製形狀"
 description: "了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
+ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
 
 ---
 # 繪製圖形
@@ -200,6 +200,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

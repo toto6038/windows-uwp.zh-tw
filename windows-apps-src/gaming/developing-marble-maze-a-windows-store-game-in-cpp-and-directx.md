@@ -5,7 +5,7 @@ description: "本節說明如何使用 DirectX 和 Visual C++ 來建立 3D 通�
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c74a455f84618cb57147c8f0c9baf343b41b02be
+ms.openlocfilehash: d660e05ab43f1c45f21b028a78c6cfa3e0897164
 
 ---
 
@@ -106,6 +106,6 @@ Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/window
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "本主題提供的案例研究會將對等運作的測驗遊戲 Wi
 title: "Windows Runtime 8.x 至 UWP 的案例研究，QuizGame 對等應用程式範例"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
+ms.openlocfilehash: 353ee8511be38ad437a64e153d43523f355e080f
 
 ---
 
@@ -91,7 +91,7 @@ QuizGame 含有下列項目。
 
 **P2PHelper**
 
--   在方案中，建立新的 Windows 10 類別庫專案 ([新增專案]**** &gt;[Windows 通用]**** &gt; [類別庫 (Windows 通用)]****)，並將它命名為 P2PHelper。
+-   在方案中，建立新的 Windows 10 類別庫專案 ([新增專案]**** &gt; [Windows 通用]**** &gt; [類別庫 (Windows 通用)]****)，並將它命名為 P2PHelper。
 -   從新專案刪除 Class1.cs。
 -   將 P2PSession.cs、P2PSessionClient.cs 及 P2PSessionHost.cs 複製到新專案的資料夾，並在新專案中包含複製的檔案。
 -   不需進一步變更即可建置專案。
@@ -103,9 +103,9 @@ QuizGame 含有下列項目。
 
 **QuizGameHost**
 
--   建立新的 Windows 10 應用程式專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameHost。
+-   建立新的 Windows 10 app 專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameHost。
 -   新增 P2PHelper 的參考 ([加入參考]**** &gt; [專案]**** &gt; [方案]**** &gt; [P2PHelper]****)。
--   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt;[現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
+-   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt; [現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
 -   將 MainPage.xaml 從 \\QuizGame.Windows\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   我們不會覆寫 app.xaml.cs，而是在新專案中保留該版本，只需對它進行一個目標變更，就能支援本機測試模式。 在 app.xaml.cs 中，取代這行程式碼：
@@ -130,9 +130,9 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   建立新的 Windows 10 應用程式專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameClient。
+-   建立新的 Windows 10 app 專案 ([新增]**** &gt; [新增專案]**** &gt; [Windows 通用]**** &gt; [空白應用程式 (Windows 通用)]****)，並將它命名為 QuizGameClient。
 -   新增 P2PHelper 的參考 ([加入參考]**** &gt; [專案]**** &gt; [方案]**** &gt; [P2PHelper]****)。
--   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt;[現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
+-   在 [方案總管]**** 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛才建立的每個資料夾，然後按一下 [新增]**** &gt; [現有項目]**** 並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]****。
 -   將 MainPage.xaml 從 \\QuizGame.WindowsPhone\\ 複製到 \\QuizGameClient\\，然後將命名空間變更為 QuizGameClient。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGame.Shared\\，然後將命名空間變更為 QuizGameClient。
 -   在 package.appxmanifest 中，將功能名稱從 internetClient 變更為 internetClientServer。
@@ -196,6 +196,6 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

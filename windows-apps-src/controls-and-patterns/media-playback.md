@@ -7,20 +7,31 @@ dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 2dbc4e7fa227de3f37b8a337eded0004496dbe36
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
 
 ---
 # 媒體播放器
 
-媒體播放器可用來檢視及聆聽視訊、音訊及影像。 媒體播放功能可以內嵌 (內嵌在頁面中或內嵌在一組其他的控制項中)，或以專用的全螢幕檢視方式顯示。 您可以修改播放器的按鈕集、變更控制列的背景，以及自行調整版面配置。 但請記住，使用者只想要一組基本的控制項 (播放/暫停、倒轉跳過、快轉跳過)。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-![具有傳輸控制項的媒體元素](images/controls/media-transport-controls.png)
+媒體播放器可用來檢視及聆聽視訊和音訊。 媒體播放功能可以內嵌 (內嵌在頁面中或內嵌在一組其他的控制項中)，或以專用的全螢幕檢視方式顯示。 您可以修改播放器的按鈕集、變更控制列的背景，以及自行調整版面配置。 但請記住，使用者只想要一組基本的控制項 (播放/暫停、倒轉跳過、快轉跳過)。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+![具有傳輸控制項的媒體播放器元素](images/controls/mtc_double_video_inprod.png)
 
--   [**MediaElement 類別**](https://msdn.microsoft.com/library/windows/apps/br242926)
--   [**MediaTransportControls 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx"><strong>MediaPlayerElement 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols"><strong>MediaTransportControls 類別</strong></a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+> **注意**&nbsp;&nbsp; **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此頁面上的所有建議也適用於 MediaElement。
 
 ## 這是正確的控制項嗎？
 
@@ -28,60 +39,61 @@ ms.openlocfilehash: 2dbc4e7fa227de3f37b8a337eded0004496dbe36
 
 ## 範例
 
-Windows 10 入門 app 中的媒體元素。
+Windows 10 入門 app 中的媒體播放器。
 
-![Windows 10 入門 app 中的媒體元素](images/control-examples/media-element-getstarted.png)
+![Windows 10 入門 app 中的媒體元素。](images/control-examples/mtc_getstarted_example.png)
 
 ## 建立媒體播放器
-使用 XAML 建立 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 物件來新增媒體到您的 app，並將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 設定成指向音訊或視訊檔案的統一資源識別項 (URI)。
+在 XAML 中建立 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 物件，並將 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 設定成指向音訊或視訊檔案的 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)，來將媒體到新增您的 app。
 
-此 XAML 會建立 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 並將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定成指向 app 本機的視訊檔案的 URI。 **MediaElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) 屬性設定成 **false**。
+此 XAML 會建立 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 並將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 屬性設定成指向 app 的本機視訊檔案 URI。 **MediaPlayerElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) 屬性設定成 **false**。
 
 ```xaml
-<MediaElement x:Name="mediaSimple" 
-              Source="Videos/video1.mp4" 
-              Width="400" AutoPlay="False"/>
+<MediaPlayerElement x:Name="mediaSimple"
+                    Source="Videos/video1.mp4"
+                    Width="400" AutoPlay="True"/>
 ```
 
-此 XAML 會建立已啟用內建傳輸控制項的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，並將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) 屬性設定為 **false**。
+此 XAML 會建立已啟用內建傳輸控制項的 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，並將 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) 屬性設定為 **false**。
 
 
-```csharp
-<MediaElement x:Name="mediaPlayer" 
-              Source="Videos/video1.mp4" 
-              Width="400" 
-              AutoPlay="False"
-              AreTransportControlsEnabled="True"/>
+```xaml
+<MediaPlayerElement x:Name="mediaPlayer"
+                    Source="Videos/video1.mp4"
+                    Width="400"
+                    AutoPlay="False"
+                    AreTransportControlsEnabled="True"/>
 ```
 
 ### 媒體傳輸控制項
-MediaElement 具有內建的傳輸控制項，可處理播放、停止、暫停、音量、靜音、搜尋/進度，以及曲目選擇。 若要啟用這些控制項，請將 [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) 設定為 **true**。 若要停用，請將 **AreTransportControlsEnabled** 設定為 **false**。 傳輸控制項是由 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) 類別來表示。 您可以依原樣使用傳輸控制項，或是以各種方式自訂它們。 如需詳細資訊，請參閱 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) 類別參考和[建立自訂傳輸控制項](custom-transport-controls.md)。
+[**MediaPlayerElement**]((https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 有內建的傳輸控制項，可處理播放、停止、暫停、音量、靜音、搜尋/進度、隱藏式輔助字幕及曲目選取。 若要啟用這些控制項，請將 [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled.aspx) 設定為 **true**。 若要停用，請將 **AreTransportControlsEnabled** 設定為 **false**。 傳輸控制項是由 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) 類別來表示。 您可以依原樣使用傳輸控制項，或是以各種方式自訂它們。 如需詳細資訊，請參閱 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) 類別參考和[建立自訂傳輸控制項](custom-transport-controls.md)。
 
-傳輸控制項讓使用者能夠控制 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的大部分層面，但是 **MediaElement** 也提供許多屬性和方法，讓您可用來控制音訊和視訊播放。 如需詳細資訊，請參閱本文稍後的[以程式設計方式控制 MediaElement](#control_mediaelement_programmatically) 一節。
+傳輸控制項支援單列與雙列配置。 這裡的第一個範例是單列配置，播放/暫停按鈕位於媒體時間軸左邊。 此配置最適合保留給內嵌媒體播放與小型螢幕使用。
 
-傳輸控制項支援單列與雙列配置。 這裡的第一個範例是單列配置，播放/暫停按鈕位於媒體時間軸左邊。 此配置最適合保留給小型螢幕使用。 
+![單列 MTC 控制項範例](images/controls/mtc_single_inprod_02.png)
 
-![手機上單列 MTC 控制項範例](images/controls_mtc_singlerow_phone.png)
+在大部分使用情況下 (特別是在較大的螢幕上 )，建議使用下面的雙列控制項配置。 此配置可提供更多空間供控制項使用，並且可讓使用者更容易操作時間軸。
 
-在大部分使用情況下 (特別是在較大的螢幕上 ) 建議使用下面的雙列控制項配置。 此配置可提供更多空間供控制項使用，並且可讓使用者更容易操作時間軸。
-
-![手機上雙列 MTC 控制項範例](images/controls_mtc_doublerow_phone.png)
+![手機上雙列 MTC 控制項範例](images/controls/mtc_double_inprod.png)
 
 **系統媒體傳輸控制項**
 
-您也可以將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 與系統媒體傳輸控制項整合。 系統傳輸控制項是在使用者按下硬體媒體鍵 (例如鍵盤上的媒體按鈕) 時以快顯方式顯示的控制項。 如果使用者按下鍵盤上的暫停鍵且您的 app 支援 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)，您的 app 會收到通知，而且您可以採取適當的動作。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt228338)。
+[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 會自動與系統媒體傳輸控制項整合。 系統媒體傳輸控制項是指當使用者按下硬體媒體鍵 (例如鍵盤上的媒體按鈕) 時，會以快顯方式顯示的控制項。 如需詳細資訊，請參閱 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)。
+
+> **注意**&nbsp;&nbsp; [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 不會自動與系統媒體傳輸控制項整合，因此您必須自行加以連接。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt228338)。
+
 
 ### 設定媒體來源
-若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設定為檔案的路徑。
+若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 屬性設定為檔案的路徑。
 
 **提示：**若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
-此程式碼會嘗試將以 XAML 定義的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性，設定為在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 中輸入的檔案路徑。
+此程式碼會嘗試將 XAML 中定義之 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 屬性設定為在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 中輸入的檔案路徑。
 
 ```xaml
-<TextBox x:Name="txtFilePath" Width="400" 
+<TextBox x:Name="txtFilePath" Width="400"
          FontSize="20"
          KeyUp="TxtFilePath_KeyUp"
          Header="File path"
@@ -107,22 +119,22 @@ private void LoadMediaFromString(string path)
     try
     {
         Uri pathUri = new Uri(path);
-        mediaPlayer.Source = pathUri;
+        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
         if (ex is FormatException)
         {
-            // handle exception. 
+            // handle exception.
             // For example: Log error or notify user problem with file
         }
     }
 }
 ```
 
-若要將媒體來源設定為內嵌於 app 中的媒體檔案，請建立路徑以 **ms-appx:///** 開頭的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017)，然後將 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 設定為該路徑。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
+若要將媒體來源設定為內嵌於 app 中的媒體檔案，請初始化具有 **ms-appx:///** 為開頭之路徑的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017)，以此 Uri 建立 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)，然後將 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 設定為該 Uri。 例如，如果檔案名為 **video1.mp4** 並且位於 **Videos** 子資料夾中，則路徑應該看起來如下：**ms-appx:///Videos/video1.mp4**
 
-此程式碼會將先前使用 XAML 定義的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性，設定為 **ms-appx:///Videos/video1.mp4**。
+此程式碼會將先前在 XAML 中定義之 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 屬性設定為 **ms-appx:///Videos/video1.mp4**。
 
 ```csharp
 private void LoadEmbeddedAppFile()
@@ -130,13 +142,13 @@ private void LoadEmbeddedAppFile()
     try
     {
         Uri pathUri = new Uri("ms-appx:///Videos/video1.mp4");
-        mediaPlayer.Source = pathUri;
+        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
         if (ex is FormatException)
         {
-            // handle exception. 
+            // handle exception.
             // For example: Log error or notify user problem with file
         }
     }
@@ -144,7 +156,7 @@ private void LoadEmbeddedAppFile()
 ```
 
 ### 開啟本機媒體檔案
-若要開啟本機系統或 OneDrive 上的檔案，您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 來取得檔案，以及使用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 來設定媒體來源，或是以程式設計方式存取使用者媒體資料夾。
+若要開啟本機系統或 OneDrive 上的檔案，您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 來取得檔案，並使用 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 來設定媒體來源，或是以程式設計方式存取使用者媒體資料夾。
 
 如果您的 app 需要不藉助使用者互動就能存取 [音樂]**** 或 [影片]**** 資料夾 (例如，如果您要列舉使用者收藏中的所有音樂或影片檔案並將它們顯示在 app 中)，您就必須宣告「音樂媒體櫃」****和「影片媒體櫃」****功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://msdn.microsoft.com/library/windows/apps/mt188703)。
 
@@ -156,14 +168,15 @@ private void LoadEmbeddedAppFile()
 
     使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 類別選取媒體檔案。 設定 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)，來指定 **FileOpenPicker** 顯示的檔案類型。 呼叫 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275)，以啟動檔案選擇器並取得檔案。
 
-2.  呼叫 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338)，將所選的媒體檔案設定為 [**MediaElement.Source**](https://msdn.microsoft.com/library/windows/apps/br227419)。
+2.  使用 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)，將所選的媒體檔案設定為 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
 
-    若要將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 設定為從 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 傳回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，您需要開啟串流。 呼叫 **StorageFile** 上的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) 方法，其會傳回您可以傳入 [**MediaElement.SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 方法的串流。 接著，呼叫 **MediaElement** 上的 [**Play**](https://msdn.microsoft.com/library/windows/apps/br227402) 來啟動媒體。
+    若要使用從 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 傳回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，您需要呼叫 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) 上的 [**CreateFromStorageFile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) 方法，並將它設定為 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。 接著，請呼叫 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 上的 [**Play**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) 來啟動媒體。
 
-這個範例示範如何使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)來選擇檔案，並將該檔案設定為 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419)。
+
+這個範例示範如何使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 來選擇檔案，並將該檔案設定為 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
 
 ```xaml
-<MediaElement x:Name="mediaPlayer"/>
+<MediaPlayerElement x:Name="mediaPlayer"/>
 ...
 <Button Content="Choose file" Click="Button_Click"/>
 ```
@@ -184,34 +197,33 @@ async private System.Threading.Tasks.Task SetLocalMedia()
     openPicker.FileTypeFilter.Add(".mp3");
 
     var file = await openPicker.PickSingleFileAsync();
-    
-    // mediaPlayer is a MediaElement defined in XAML
+
+    // mediaPlayer is a MediaPlayerElement defined in XAML
     if (file != null)
     {
-        var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
-        mediaPlayer.SetSource(stream, file.ContentType);
+        mediaPlayer.Source = MediaSource.CreateFromStorageFile(file);
 
-        mediaPlayer.Play();
+        mediaPlayer.MediaPlayer.Play();
     }
 }
 ```
 
 ### 設定海報來源
-您可以使用 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) 屬性，在載入媒體之前，為 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供視覺表示。 **PosterSource** 是影像，例如螢幕擷取畫面或電影海報，會取代媒體顯示。 **PosterSource** 會在下列情況顯示：
+您可以使用 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) 屬性，來在載入媒體之前以視覺化呈現方式提供 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。 **PosterSource** 是指螢幕擷取畫面或電影海報等，這類會取代媒體顯示的影像。 **PosterSource** 會在下列情況顯示：
 
--   未設定有效的來源。 例如，未設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419)、已將 **Source** 設定為 **Null**，或來源無效 (如同發生 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/br227393) 事件的情況)。
--   媒體正在載入時。 例如，已設定有效來源，但尚未發生 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件。
+-   未設定有效的來源。 例如，未設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)、已將 **Source** 設定為 **Null**，或來源無效 (如同發生 [**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) 事件的情況)。
+-   媒體正在載入時。 例如，已設定有效來源，但尚未發生 [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 事件。
 -   媒體正在串流處理到另一個裝置時。
--   媒體只具有音效時。
+-   媒體只包含音訊時。
 
-以下的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 已將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 設定為專輯曲目，並將其 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) 設定為專輯封面的影像。
+以下的 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 已將其 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 設定為專輯曲目，並將其 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) 設定為專輯封面的影像。
 
 ```xaml
-<MediaElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/> 
+<MediaPlayerElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/>
 ```
 
 ### 讓裝置的螢幕保持使用中
-裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放全螢幕影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
+裝置通常會在使用者離開時讓顯示器變暗 (最後會將它關閉) 以延長電池壽命，但是視訊 app 需要讓螢幕一直開著，才能讓使用者觀賞視訊。 若要防止顯示器在未偵測到使用者動作時停用 (例如，app 正在播放影片時)，您可以呼叫 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 類別讓您告訴 Windows 保持開啟顯示器，讓使用者可以觀看影片。
 
 若要省電並延長電池壽命，您應該呼叫 [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819)，以便在不再需要時釋放顯示器要求。 當您的 App 未顯示於螢幕上時，Windows 會自動停用它的啟用顯示要求，並在 App 回到前景時重新啟用顯示要求。
 
@@ -220,6 +232,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 -   視訊播放暫停時，例如在因使用者動作、緩衝或因為頻寬有限而進行調整的情況下。
 -   播放停止時。 例如，視訊播放完畢或簡報結束。
 -   發生播放錯誤時。 例如，網路連線問題或檔案損毀。
+
+> **注意**&nbsp;&nbsp; 如果 [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 設為 true，且媒體正在播放，系統將會自動防止顯示器停用。
 
 **讓螢幕保持使用中**
 
@@ -233,95 +247,60 @@ private DisplayRequest appDisplayRequest = null;
 
 3.  每當影片播放停止、暫停或因播放錯誤而中斷時，呼叫 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) 以釋放顯示要求。 當 App 不再有任何啟用的顯示要求時，Windows 會在沒有使用裝置時將顯示器畫面變暗 (最後將它關閉) 以延長電池壽命。
 
-    您會在此處使用 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 事件來偵測這些情況。 然後，使用 [**IsAudioOnly**](https://msdn.microsoft.com/library/windows/apps/hh965334) 屬性來判斷是否正在播放音訊或視訊檔案，唯有當視訊正在播放時，才會讓螢幕保持使用中狀態。
+    每個 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 都有一個 [**MediaPlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) 類型 的 [**PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx)，可控制媒體播放的各種方面，例如 [**PlaybackRate**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[**PlaybackState**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) 及 [**Position**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx)。 在這裡，您將使用 [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 上的 [**PlaybackStateChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) 事件，來偵測何時應該釋放顯示器要求。 然後，使用 [**NaturalVideoHeight**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) 屬性來判斷是否正在播放音訊或視訊檔案，並只在播放視訊時才讓螢幕保持使用中狀態。
     ```xaml
-<MediaElement Source="Media/video1.mp4"
-              CurrentStateChanged="MediaElement_CurrentStateChanged"/>
+<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
- 
+
     ```csharp
-private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
-{
-    MediaElement mediaElement = sender as MediaElement;
-    if (mediaElement != null && mediaElement.IsAudioOnly == false)
+    protected override void OnNavigatedTo(NavigationEventArgs e)
     {
-        if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Playing)
-        {                
-            if (appDisplayRequest == null)
+        mpe.MediaPlayer.PlaybackSession.PlaybackStateChanged += MediaPlayerElement_CurrentStateChanged;
+        base.OnNavigatedTo(e);
+    }
+
+    private void MediaPlayerElement_CurrentStateChanged(object sender, RoutedEventArgs e)
+    {
+        MediaPlaybackSession playbackSession = sender as MediaPlaybackSession;
+        if (playbackSession != null && playbackSession.NaturalVideoHeight != 0)
+        {
+            if(playbackSession.PlaybackState == MediaPlaybackState.Playing)
             {
-                // This call creates an instance of the DisplayRequest object. 
-                appDisplayRequest = new DisplayRequest();
-                appDisplayRequest.RequestActive();
+                if(appDisplayRequest == null)
+                {
+                    // This call creates an instance of the DisplayRequest object
+                    appDisplayRequest = new DisplayRequest();
+                    appDisplayRequest.RequestActive();
+                }
+            }
+            else // PlaybackState is Buffering, None, Opening or Paused
+            {
+                if(appDisplayRequest != null)
+                {
+                      // Deactivate the displayr request and set the var to null
+                      appDisplayRequest.RequestRelease();
+                      appDisplayRequest = null;
+                }
             }
         }
-        else // CurrentState is Buffering, Closed, Opening, Paused, or Stopped. 
-        {
-            if (appDisplayRequest != null)
-            {
-                // Deactivate the display request and set the var to null.
-                appDisplayRequest.RequestRelease();
-                appDisplayRequest = null;
-            }
-        }            
+
     }
-} 
     ```
 
 ### 以程式設計方式控制媒體播放器
-[ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926) 提供許多屬性、方法及事件來控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 參考頁面。
-    
+[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供許多屬性、方法和事件，來透過 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 屬性控制音訊和視訊播放。 如需完整的屬性、方法及事件清單，請參閱 [**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx) 參考頁面。
 
-### 選取不同語言的音軌
-
-您可以使用 [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) 屬性和 [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) 方法，在視訊上將音訊變更為不同語言的音軌。 視訊也可以包含多個相同語言的音軌，例如，導演對於影片的評論。 這個範例特別示範如何在不同的語言之間切換，但您可以修改此程式碼，以便在任何音軌之間切換。
-
-**選取不同語言的音軌**
-
-1.  取得音軌。
-
-    若要搜尋特定語言的音軌，請透過逐一查看視訊上的每個音軌來開始。 使用 [**AudioStreamCount**](https://msdn.microsoft.com/library/windows/apps/br227356) 作為 **for** 迴圈的最大值。
-
-2.  取得音軌的語言。
-
-    使用 [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) 方法來取得音軌的語言。 音軌的語言是使用[語言代碼](http://msdn.microsoft.com/library/ms533052(vs.85).aspx)來識別，例如 **"en"** 代表英文，**"ja"** 代表日文。
-
-3.  設定目前播放的音軌。
-
-    當您尋找所需語言的音軌時，請將 [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) 設定為曲目的索引。 將 **AudioStreamIndex** 設為 **null** 會選取內容所定義的預設音軌。
-
-以下的部分程式碼會嘗試將音軌設定為指定的語言。 它會逐一查看 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 物件上的音軌，然後使用 [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) 取得每個音軌的語言。 如果所需的語言音軌存在，就會將 [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) 設定為該音軌的索引值。
-
-```csharp
-/// <summary>
-/// Attemps to set the audio track of a video to a specific language
-/// </summary>
-/// <param name="lcid">The id of the language. For example, "en" or "ja"</param>
-/// <returns>true if the track was set; otherwise, false.</returns>
-private bool SetAudioLanguage(string lcid, MediaElement media)
-{
-    bool wasLanguageSet = false;
-
-    for (int index = 0; index < media.AudioStreamCount; index++)
-    {
-        if (media.GetAudioStreamLanguage(index) == lcid)
-        {
-            media.AudioStreamIndex = index;
-            wasLanguageSet = true;
-        }
-    }
-
-    return wasLanguageSet;
-}
-```
+### 進階的媒體播放案例
+針對如播放播放清單、在音訊語言之間切換，或是建立自訂的中繼資料曲目等較為複雜的媒體播放案例，請將 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 設定為 [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 如需如何啟用各種進階媒體功能的詳細資訊，請參閱開發人員中心的[**媒體播放**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource)頁面。
 
 ### 啟用完整視窗視訊呈現
 
-設定 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) 屬性來啟用和停用完整視窗呈現。 如果要在 app 中以程式設計方式設定完整視窗呈現，您應該一律使用 **IsFullWindow** 而不是手動進行。 **IsFullWindow** 可保證執行系統層級最佳化，以增進效能及電池壽命。 如果未正確設定完整視窗呈現，將不會啟用這些最佳化。
+設定 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) 屬性來啟用和停用完整視窗呈現。 如果要在 app 中以程式設計方式設定完整視窗呈現，您應該一律使用 **IsFullWindow** 而不是手動進行。 **IsFullWindow** 可保證執行系統層級最佳化，以增進效能及電池壽命。 如果未正確設定完整視窗呈現，將不會啟用這些最佳化。
 
 以下的部分程式碼會建立能切換完整視窗呈現的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244)。
 
 ```xaml
-<AppBarButton Icon="FullScreen" 
+<AppBarButton Icon="FullScreen"
               Label="Full Window"
               Click="FullWindow_Click"/>>
 ```
@@ -335,17 +314,19 @@ private void FullWindow_Click(object sender, object e)
 
 ### 調整視訊大小和延展視訊
 
-使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性，來變更視訊內容填入所在容器的方式。 視 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值而定，這樣做可能會延展視訊。 **Stretch** 狀態和許多電視機上的影像大小設定類似。 您可以將勾點設定在按鈕上，並允許使用者依偏好選擇所要的設定。
+使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.stretch.aspx) 屬性，來變更視訊內容，和/或 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx) 填入所在容器的方式。 視 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值而定，這樣做可能會延展視訊。 **Stretch** 狀態和許多電視機上的影像大小設定類似。 您可以將勾點設定在按鈕上，並允許使用者依偏好選擇所要的設定。
 
--   [ **None** ](https://msdn.microsoft.com/library/windows/apps/br242968) 會以原始大小顯示內容的原生解析度。
--   [ **Uniform** ](https://msdn.microsoft.com/library/windows/apps/br242968) 會盡可能地填滿空間，同時維持影像內容的外觀比例。 這會導致視訊邊緣出現水平或垂直的黑色長條。 這和寬螢幕模式類似。
--   [ **UniformToFill** ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿個空間，同時維持外觀比例。 這會導致部分影像被裁切。 這和全螢幕模式類似。
--   [ **Fill** ](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
+-   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) 會以原始大小顯示內容的原生解析度。
+-   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) 會盡可能地填滿空間，同時維持影像內容的外觀比例。 這會導致視訊邊緣出現水平或垂直的黑色長條。 這和寬螢幕模式類似。
+-   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿個空間，同時維持外觀比例。 這會導致部分影像被裁切。 這和全螢幕模式類似。
+-   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 會填滿整個空間，但不會維持外觀比例。 影像不會被裁切，但可能發生延展現象。 這和延展模式類似。
 
-![伸展列舉值](images/Image_Stretch.jpg) 此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
+![伸展列舉值](images/Image_Stretch.jpg)
+
+此處的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 可用來循環顯示 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 選項。 **switch** 陳述式會檢查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 屬性目前的狀態，並將它設定成 **Stretch** 列舉中的下一個值。 這樣做可允許使用者循環使用不同的延展狀態。
 
 ```xaml
-<AppBarButton Icon="Switch" 
+<AppBarButton Icon="Switch"
               Label="Resize Video"
               Click="PictureSize_Click" />
 ```
@@ -375,33 +356,27 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### 啟用低延遲播放
 
-在 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 上，將 [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) 屬性設定為 **true** 時，可讓媒體元素減少播放的初始延遲。 這對於雙向通訊的 app 而言非常重要，也很適用於部分遊戲案例。 請注意，這個模式需要更大量的資源，而且比較耗電。
+在 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 上將 [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 屬性設定為 **true**，以讓媒體元素減少播放的初始延遲。 這對於雙向通訊的 app 而言非常重要，也很適用於部分遊戲案例。 請注意，這個模式需要更大量的資源，而且比較耗電。
 
-這個範例會建立一個 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，並將 [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) 設定成 **true**。
+這個範例會建立一個 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，並將 [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 設定為 **true**。
 
-```xaml
-<MediaElement x:Name="mediaPlayer" RealTimePlayback="True"/>
-```
 
 ```csharp
-MediaElement mediaPlayer = new MediaElement();
-mediaPlayer.RealTimePlayback = true;
+MediaPlayerElement mp = new MediaPlayerElement();
+mp.MediaPlayer.RealTimePlayback = true;
 ```
-    
-## 建議 
 
-媒體播放器內建一個深色佈景主題與一個淺色佈景主題，但是在大部分情況下會選擇深色佈景主題。 深色背景可提供較高對比，特別是在低光源的情況下，而且可以避免控制列干擾觀賞體驗。
+## 建議事項
 
-建議使用全螢幕模式取代內嵌模式，以獲得更好的觀賞體驗。 全螢幕檢視是最佳體驗模式，況且內嵌模式的選項有限。
+媒體播放器支援淺色和深色佈景主題，但是對於大多數的娛樂案例，深色佈景主題可提供較佳的體驗。 深色背景可提供較高對比，特別是在低光源的情況下，而且可以避免控制列干擾觀賞體驗。
 
-如果您的螢幕空間夠大，建議使用雙列配置。 相較於精簡的單列配置，雙列配置可以提供更多空間供控制項使用。
+播放視訊內容時，建議以全螢幕模式取代內嵌模式，以獲得更好的觀賞體驗。 全螢幕檢視是最佳體驗模式，況且內嵌模式的選項有限。
 
-請新增您需要的任何自訂選項到媒體播放器，來為您的 app 提供最佳體驗，但是請記住下列事項：
+如果您有螢幕實際可用空間，或是正在設計 10 呎體驗，請使用雙列配置。 它能比精簡的單列配置提供更多的控制項空間，而且能夠針對 10 呎體驗提供更佳的控制器瀏覽支援。
 
--   請勿大幅度自訂預設的控制項，因為這些預設控制項已經針對媒體播放器體驗最佳化。
--   在手機與其他行動裝置上，裝置色彩會維持黑色，但是在膝上型電腦與桌上型電腦上，裝置色彩會沿用使用者的佈景主題色彩。
--   盡量不要在控制列上放入太多選項。
--   請勿將媒體時間軸壓縮到比其預設大小下限更小，因為這將會嚴重限制其有效性。
+> **注意**&nbsp;&nbsp; 如需針對 10 呎體驗最佳化應用程式的詳細資訊，請造訪[針對 Xbox 和電視進行設計](../input-and-devices/designing-for-tv.md)文章。
+
+預設控制項已針對媒體播放最佳化，不過，您可以將所需的自訂選項新增至媒體播放器，以為您的 app 提供最佳體驗。 若要深入了解新增自訂控制項，請造訪[建立自訂傳輸控制項](custom-transport-controls.md)。
 
 ## 相關文章
 
@@ -410,6 +385,6 @@ mediaPlayer.RealTimePlayback = true;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "取得電池資訊"
 description: "了解如何使用 Windows.Devices.Power 命名空間中的 API 取得詳細的電池資訊。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9b1394c28b25b8b1b7401fcc794659dcf38fed6f
+ms.openlocfilehash: 0671ad8deef7c0062172e3a441d206efb15de7dd
 
 ---
 # 取得電池資訊
@@ -339,6 +339,6 @@ namespace App1
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

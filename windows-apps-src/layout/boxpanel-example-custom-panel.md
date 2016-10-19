@@ -10,7 +10,7 @@ label: BoxPanel, an example custom panel
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: e03a4c9d2116d779545cb1fb8e87fa86a632bca8
+ms.openlocfilehash: 4427219987f0524858233cf382cd13121cf77b07
 
 ---
 
@@ -128,7 +128,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 還有可能在 *availableSize* 的高度元件為無限時，使用此面板。 若是如此，面板不會有可供劃分的已知高度。 在這種情況下，度量階段的邏輯會通知各個子系，高度尚無界限。 方法是針對 [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) 為無限的子系，將 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 傳送至 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼叫。 上述為有效做法。 呼叫 **Measure** 時，邏輯是將 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 設定為下列各項的最小值：傳遞至 **Measure** 的項目，或來自明確設定的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等係數的元素原始大小。
 
-**注意** &nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有此行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
+**注意**&nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 的內部邏輯也有這項行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
 
 不過，面板本身不會從 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 傳回無限值的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)；造成在配置期間擲回例外狀況。 因此，部分邏輯是要找出任何子系要求的最大高度，並在面板本身的大小限制未提供儲存格高度時，使用該高度做為儲存格高度。 以下是先前程式碼中參照的協助程式函式 `LimitUnboundedSize`，會接受上述的最大儲存格高度，並用它提供面板一個可傳回的有限高度，以及確保在起始排列階段之前，`cellheight` 會是有限數字：
 
@@ -211,9 +211,9 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 再次擴充 `BoxPanel` 的進階案例 (這裡沒有說明) 可同時容納動態子系，並使用子系的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 作為調整個別資料格大小更強大的因素。 此案例可以使用不同的列或欄大小或非格線形狀，以減少「浪費」的空間。 這樣做需要擬定策略，找出如何將多個不同大小與外觀比例的矩形全部放入包含的矩形 (包含美觀和最小的大小)。 `BoxPanel` 不是這麼做，它是使用較簡單的技術來劃分空間。 `BoxPanel`使用的技術是判斷大於子系計數的最少方形數目。 例如，9 個項目可以放在 3x3 方形。 10 個項目需要 4x4 方形。 不過，通常在移除起始方形的一列或一欄的情況下，還是可以放入項目以節省空間。 在 count=10 範例中，可放入 4x3 或 3x4 矩形。
 
-您可能會疑惑，有 10 個項目的面板為什麼不選擇和項目數目完全符合的 5x2 矩形。 不過在實務上，會將面板的大小調整為較沒有強烈外觀比例的矩形。 採用最少量方形技術，可讓調整大小邏輯與一般配置形狀搭配使用並運作良好，而且也不鼓勵將儲存格形狀調整為奇特的外觀比例。
+您可能會疑惑，有 10 個項目的面板為什麼不選擇和項目數目完全符合的 5x2 矩形。 不過在實務上，會將面板的大小調整為較沒有強烈外觀比例的矩形。 採用最小二乘法技術，可讓調整大小邏輯與一般配置形狀搭配使用並運作良好，而且也不鼓勵將儲存格形狀調整為奇特的外觀比例。
 
-**注意：** &nbsp;&nbsp;本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**注意**&nbsp;&nbsp;本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 
@@ -231,6 +231,6 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

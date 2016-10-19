@@ -4,8 +4,8 @@ title: "接收資料"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
-ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
+ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
+ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 
 ---
 
@@ -18,11 +18,11 @@ ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 
 ## 將您的 app 宣告為分享目標
 
-當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 若要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
+當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 為了要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
 2.  開啟 [宣告]**** 索引標籤。
-3.  從 [可用宣告]**** 清單中選擇 [分享目標]****，然後按一下 [新增]****。
+3.  從 [可用宣告]**** 清單中選擇 [分享目標]****，然後選取 [新增]****。
 
 ## 選擇檔案類型和格式
 
@@ -33,14 +33,14 @@ ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 設定檔案類型：
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  在 [宣告]**** 頁面的 [支援的檔案類型]**** 區段中，按一下 [加入新的]****。
-3.  輸入想要支援的副檔名。 例如，.docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 [SupportsAnyFileType]**** 方塊。
+2.  在 [宣告]**** 頁面的 [支援的檔案類型]**** 區段中，選取 [加入新的]****。
+3.  輸入想要支援的副檔名，例如 .docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 [SupportsAnyFileType]**** 核取方塊。
 
 設定資料格式：
 
 1.  開啟資訊清單檔案。
-2.  在 [宣告]**** 頁面的 [資料格式]**** 區段中，按一下 [加入新的]****。
-3.  輸入支援的資料格式名稱。 例如，「Text」。
+2.  開啟 [宣告]**** 頁面的 [資料格式]**** 區段，然後選取 [加入新的]****。
+3.  輸入支援的資料格式名稱，例如 Text。
 
 ## 處理分享啟用
 
@@ -96,7 +96,7 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者按一下 [分享] 按鈕後才會呼叫 **ReportStarted**。
+當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 [分享]**** 按鈕後才會呼叫 **ReportStarted**。
 
 ## 如果分享成功，則傳回 QuickLink
 
@@ -130,6 +130,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 ## 另請參閱 
 
+* [App 間通訊](index.md)
 * [分享資料](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
@@ -141,6 +142,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

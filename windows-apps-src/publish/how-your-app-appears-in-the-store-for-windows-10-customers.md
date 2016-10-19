@@ -4,8 +4,8 @@ Description: "如果您先前在 Windows 或 Windows Phone 市集發行 App，Wi
 title: "App 如何在市集中顯示給 Windows 10 客戶"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 
 ---
 
@@ -21,14 +21,14 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 ## 在 Windows 市集和 Windows Phone 市集中共用身分識別之 app 的注意事項
 
 
-如果您已讓發佈到上述兩個市集的 app 使用相同的保留名稱 (通常稱為共用 app 的身分識別)，現在會將這些視為同一個 app，而不是兩個。 在儀表板中，您看到的會是含有 Windows 與 Windows Phone 套件的單一 app。
+如果您已讓發佈到上述兩個市集的 app 使用相同的保留名稱 (通常稱為共用 app 的身分識別)，現在會將這些視為同一個 app，而不是兩個。 在儀表板中，您看到的會是含有 Windows 與 Windows Phone 套件的單一 App。
 
-大部分開發人員會將每一個市集中 app 與 app 內產品 (IAP) 的價格與他屬性設為完全相同，但是如果其中有一些值不同，請務必弄清楚哪些才是要顯示給 Windows 10 客戶的值。
+大部分的開發人員都會將每一個市集中 App 與任何附加元件的價格與其他屬性設為相同，但是如果其中有一些值不同，請務必弄清楚哪些才是要顯示給 Windows 10 客戶的值。
 
 ### 價格
-如果您在每一個市集中為 app (或 IAP) 選擇的底價都不同，則一律以 Windows 市集的底價為準。
+如果您在每一個市集中為 App (或附加元件) 選擇的底價都不同，則一律以 Windows 市集的底價為準。
 
-**注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格會顯示給您的 Windows 10 客戶。
+**注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格也將會顯示給您的 Windows 10 客戶。
 
 ### 免費試用
 在之前的兩個市集中，試用選項是不一樣的，所以您可能會為每一個市集選擇不同的選項。 請查閱下表，了解提供給 Windows 10 客戶的選項。
@@ -55,12 +55,12 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 如果您的 app 有一個隱私權原則，也會向您的 Windows 10 客戶顯示當您送出 Windows 8 app 時所提供的隱私權原則。
 
 ### 螢幕擷取畫面
-我們會收集所有您提交的螢幕擷取畫面，然後根據 Windows 10 客戶使用的裝置類型，挑選正確的版本顯示給客戶。 在少數情況下，每一個市集中支援的語言會不同，部分客戶在購買 app 時看到的螢幕擷取畫面可能呈現另一種最適合客戶自身習慣的語言。
+我們會收集所有您提交的螢幕擷取畫面，然後根據 Windows 10 客戶使用的裝置類型，挑選正確的版本顯示給客戶。 在少數情況下，每一個市集支援的語言不同，部分客戶在購買 App 時看到的螢幕擷取畫面可能呈現另一種最適合客戶自身習慣的語言。
 
-### 描述
-我們嘗試根據 Windows 10 客戶的語言提供最合適的描述。 當相同語言的說明有多個來源可用時，就會向您的 Windows 10 客戶顯示 Windows 市集應用程式的說明。 在少數情況下，每一個市集中支援的語言會不同，如果只有您以客戶習慣的語言提供的 Windows Phone app 說明可用，部分客戶可能就會看到該說明。
+### 市集清單
+我們嘗試根據 Windows 10 客戶的語言提供最合適的市集清單。 當相同語言的市集清單有多個來源可用時，就會向您的 Windows 10 客戶顯示 Windows 市集 App 的清單。 在少數情況下，每一個市集支援的語言不同，如果只有您以客戶習慣的語言提供的 Windows Phone App 市集清單可用，部分客戶可能就會看到該市集清單。
 
-如果您想要更新 Windows 10 客戶看到的描述，讓他們知道在多個裝置上運作的體驗，您可以更新 [app 描述](create-app-descriptions.md)來達到這個目的。 Windows 10 上的客戶會看到您的 app 的預設描述，但是如果您想要讓您的描述針對不同作業系統版本的客戶有不同的顯示，您也可以[建立平台專屬描述](create-platform-specific-descriptions.md)。
+如果您想要更新 Windows 10 客戶看到的市集清單，讓他們知道在多個裝置上運作的體驗，您可以更新 [App 描述](create-app-store-listings.md)來達到這個目的。 Windows 10 的客戶將會看到您 App 的預設描述，但是如果您想要讓您的市集清單針對不同作業系統版本的客戶有不同的顯示，您也可以[建立平台專屬的市集清單](create-platform-specific-store-listings.md)。
 
 ## 類別變更
 
@@ -122,6 +122,6 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

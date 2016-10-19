@@ -4,8 +4,8 @@ ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
 title: "PlayReady 加密媒體延伸"
 translationtype: Human Translation
-ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
-ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
+ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
 ## PlayReady 加密媒體延伸的新功能
 
-本節提供對於 PlayReady 加密媒體延伸所做的變更清單，可用來在 Windows 10 上啟用 PlayReady 內容保護。
+本節提供對於 PlayReady 加密媒體延伸 (EME) 所做的變更清單，可用來在 Windows 10 上啟用 PlayReady 內容保護。
 
 下列清單會針對適用於 Windows 10 的 PlayReady 加密媒體延伸說明新功能及所做的變更：
 
@@ -33,9 +33,8 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
     您可以使用 PlayReady 物件搭配多個金鑰識別碼 (KeyID) (就像在 Windows 8.1 中)，或者使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 搭配多個 KeyID。
 
-    **注意：**在 Windows 10 中，多個金鑰識別碼會在 CDMData 中的 &lt;KeyID&gt; 下方受到支援。
-
-     
+    > [!NOTE]
+    > 在 Windows 10 中，CDMData 中的 &lt;KeyID&gt; 下方支援多個金鑰識別碼。
 
 -   已新增即時到期支援或限時授權 (LDL)。
 
@@ -69,9 +68,8 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
 硬體 DRM 有時不支援某些內容。 硬體 DRM 從未支援混合式內容 (雞尾酒內容)；若想要播放混合式內容，您必須選擇不使用硬體 DRM。 部分硬體 DRM 會支援 HEVC，部分則不支援；若想要播放 HEVC 內容，但硬體 DRM 不支援，則您可能也會選擇不使用。
 
-**注意：**若要判斷是否支援 HEVC 內容，請在具現化 `com.microsoft.playready` 之後，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
-
- 
+> [!NOTE]
+> 若要判斷是否支援 HEVC 內容，在具現化 `com.microsoft.playready` 之後，請使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
 
 ## 在 Web app 中新增安全停止功能
 
@@ -260,7 +258,8 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**注意：**在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
+> [!NOTE]
+> 在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
 
 ## 適用於加密媒體延伸的程式設計考量
 
@@ -296,16 +295,15 @@ function foo() {
 
 如需詳細資訊，請參閱[範例應用程式](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
 
- 
-
- 
-
+## 另請參閱
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

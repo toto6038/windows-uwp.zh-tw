@@ -5,7 +5,7 @@ title: "在 C# 或 Visual Basic 中呼叫非同步 API"
 description: "通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b13f6b3fac2ce6d264ed0c44e145a89ad8be5996
+ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 ---
 # 在 C# 或 Visual Basic 中呼叫非同步 API
@@ -112,6 +112,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

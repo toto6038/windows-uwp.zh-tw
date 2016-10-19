@@ -4,15 +4,15 @@ ms.assetid: 15d8cc6c-80f9-49b7-8036-0abf80ffebba
 description: "了解開發包含廣告的 App 的其他資源。"
 title: "其他說明"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bacda14bc48d6707a8f717c554fe7aaa22b202e0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: a45a09efabf7014658029b0302a56cefac8b0141
 
 ---
 
 # 其他說明
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 以下資源提供更多有關開發包含廣告的 App 的資源。
 
@@ -34,6 +34,6 @@ ms.openlocfilehash: bacda14bc48d6707a8f717c554fe7aaa22b202e0
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

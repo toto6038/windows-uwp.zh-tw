@@ -1,11 +1,11 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "此藍圖概述適用於 Windows 10&amp;\\#160; 通用 Windows 平台 (UWP) 應用程式的重要企業功能。"
+description: "此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) app 的重要企業功能。"
 title: "企業"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
+ms.sourcegitcommit: 8f4b9e7b1b30beb8974a17af77e4d7138bd8f829
+ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
 
 ---
 
@@ -29,8 +29,8 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 |-------|-------------|
 | [安全開發 Windows app 的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 本文涵蓋大範圍的主題，主要目的是協助 app 設計人員更充分地了解可快速且輕易地建立通用 Windows 平台 app 的 Windows 功能。 |
 | [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證，以產生方便且高度安全的使用經驗。 |
-| [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括如何輕鬆地加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰以及使用 MAC、雜湊和簽章這類進階主題。 |
-| [企業資料保護 (EDP)](edp-hub.md) | 這是中樞主題，涵蓋企業資料保護 (EDP) 與檔案的關聯、緩衝區、剪貼簿、網路、背景工作以及鎖定時的資料保護的完整開發人員描述。 |
+| [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括從如何輕鬆加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰，以及使用 MAC、雜湊和簽章這類進階主題。 |
+| [Windows 資訊保護 (WIP)](wip-hub.md) | 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。 |
 
  
 
@@ -113,9 +113,6 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 
 
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

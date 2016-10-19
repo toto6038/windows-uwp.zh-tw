@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "管理您的帳戶設定與個人檔案資訊"
 description: "您可以在整合的 Windows 開發人員中心儀表板中的 [帳戶設定] 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。"
 translationtype: Human Translation
-ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
-ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 ---
 # 管理您的帳戶設定與個人檔案資訊
 
-您可以在[Windows 開發人員中心儀表板](https://msdn.microsoft.com/library/windows/apps/Mt169843)中的 \[帳戶設定\]**** 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。
+您可以在[Windows 開發人員中心儀表板](using-the-windows-dev-center-dashboard.md)中的 \[帳戶設定\]**** 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。
 
 ## 帳戶設定
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 在 [帳戶詳細資料]**** 區段中，您可以查看帳戶的狀態和類型。 您也可以在此頁面上找到您的發行者識別碼資訊，包括賣方識別碼、Windows 發行者識別碼，以及 Windows Phone 發行者識別碼。 這些值是由 Microsoft 指派用以唯一識別您的開發人員帳戶，而且您不能修改這些值。
 
-**注意** 針對您個別 app 的身分識別詳細資料可以在每個 app 的 [app 身分識別](https://msdn.microsoft.com/library/windows/apps/Mt148561)頁面找到。
+**注意** 針對您個別 app 的身分識別詳細資料可以在每個 app 的 [app 身分識別](view-app-identity-details.md)頁面找到。
 
 ## 連絡資訊
 
@@ -30,13 +30,13 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 ## 其他設定與資訊
 
-本區段也包括[設定支出帳戶與納稅申報表](https://msdn.microsoft.com/library/windows/apps/Bg124529)的連結。 您需要先完成這部分，才能為應用程式或應用程式內產品 (IAP) 收取款項。
+本區段也包括[設定支出帳戶與納稅申報表](setting-up-your-payout-account-and-tax-forms.md)的連結。 您需要先完成這個部分，才能為 App 或附加元件收取款項。
 
 部分程式可能提供代碼讓您擴充帳戶功能；這些代碼可以在 [帳戶設定]**** 中輸入。 您也可以在此頁面檢視任何[您已解鎖用於測試的 Windows Phone 8 或 Windows Phone 8.1 裝置](http://go.microsoft.com/fwlink/p/?LinkId=533897)，以及選擇加入或退出[開發人員中心測試人員計畫](dev-center-insider-program.md)。
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

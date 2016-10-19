@@ -4,8 +4,8 @@ Description: "除了為您的 app 建立將在 Windows app 中執行的廣告行
 title: "建立自訂 app 促銷活動"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: a6e97968df4e9ab986d364b2573a31b4ba9d1958
 
 ---
 
@@ -21,8 +21,8 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 
 您可以以下列方式擷取您的 app 的自訂行銷活動效能資料：
 
--   如果您的 app 是通用 Windows 平台 (UWP) app，它可以使用 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法，以程式設計方式擷取導致轉換的自訂行銷活動識別碼。
--   您可以從開發人員中心儀表板上的[通道和轉換報告](channels-and-conversions-report.md)，看到有關您 app 或 IAP 頁面檢視和轉換的資料。
+-   如果您的 App 是通用 Windows 平台 (UWP) app，它可以使用 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法，以程式設計方式擷取導致轉換的自訂行銷活動識別碼。
+-   您可以從開發人員中心儀表板上的[管道和轉換報告](channels-and-conversions-report.md)，檢視有關您 App 或附加元件頁面檢視和轉換的資料。
 
 > **重要** 這個資料只能追蹤執行 Windows 10 的客戶。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
 
@@ -38,9 +38,9 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 -   她將張貼到 Facebook 網頁的 URL 包含自訂行銷活動識別碼 `my-facebook-campaign`。
 -   她將張貼至 Twitter 的 URL 包含自訂行銷活動識別碼 `my-twitter-campaign`。
 
-當她的 Facebook 和 Twitter 追隨者按一下 URL 時，Microsoft 會追蹤與對應的自訂行銷活動關聯的每個點按。 後續符合資格的遊戲購置和任何 app 內產品 (IAP) 購買會與自訂行銷活動產生關聯，並且回報為轉換。
+當她的 Facebook 和 Twitter 追隨者按一下 URL 時，Microsoft 會追蹤與對應的自訂行銷活動關聯的每個點按。 後續符合資格的遊戲購置和任何附加元件購買會與自訂行銷活動產生關聯，並且回報為轉換。
 
-## 了解 app 安裝如何符合轉換的資格
+## 了解 App 安裝如何符合轉換的資格
 
 
 [轉換]** 是 app 安裝，源自客戶透過自訂行銷活動促銷的 URL 按一下 app 的 Windows 市集頁面。 針對開發人員中心儀表板上的[管道和轉換報告](channels-and-conversions-report.md)，符合轉換的資格與[以程式設計方式擷取行銷活動識別碼](#programmatically)符合轉換的資格有不同的條件。
@@ -48,12 +48,12 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 針對[通道和轉換報告](channels-and-conversions-report.md)，若要符合轉換的資格，必須符合下列條件：
 
 -   具備可識別 Microsoft 帳戶的客戶按一下包含自訂行銷活動識別碼的 app URL，並被重新導向至 app 的 Windows 市集頁面。
--   相同客戶 (依相同的 Microsoft 帳戶識別) 在第一次按一下具有自訂行銷活動識別碼的 Windows 市集 URL 之後的 24 小時內安裝 app。 這會符合轉換的資格，即使客戶在與他們按一下具有自訂行銷活動識別碼的 Windows 市集 URL 不同的電腦或裝置上安裝 app。
-    > **注意** 針對計入為自訂行銷活動轉換的 app 安裝，在該 app 中的任何 IAP 購買也會計算為相同的自訂行銷活動的轉換。
+-   相同客戶 (依相同的 Microsoft 帳戶識別) 在第一次按一下具有自訂行銷活動識別碼的 Windows 市集 URL 之後的 24 小時內安裝 app。 這會符合轉換的資格，即使客戶在與他們按一下具有自訂行銷活動識別碼的 Windows 市集 URL 不同的電腦或裝置上安裝 App，亦是如此。
+    > **注意** 針對計入為自訂行銷活動轉換的 App 安裝，在該 App 中的任何附加元件購買也會計入為相同自訂行銷活動的轉換。
 
      
 
-若要在以程式設計方式擷取與 app 關聯的行銷活動識別碼時符合轉換的資格，必須符合下列條件：
+若要在以程式設計方式擷取與 App 關聯的行銷活動識別碼時符合轉換的資格，必須符合下列條件：
 
 -   具備可識別 Microsoft 帳戶的客戶按一下包含自訂行銷活動識別碼的 app URL，並被重新導向至 app 的 Windows 市集頁面。
 -   客戶在按一下 URL 之後，於相同的 Windows 市集頁面檢視中安裝 app。 如果使用者離開頁面，並在 24 小時內返回頁面並安裝 app (無論是在同一部電腦或裝置或不同電腦或裝置上)，這就會符合[管道和轉換報告](channels-and-conversions-report.md)上的轉換資格，但如果您以程式設計方式擷取行銷活動識別碼，則不符合轉換的資格。
@@ -135,6 +135,6 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

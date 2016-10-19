@@ -4,8 +4,8 @@ title: "監視背景工作進度和完成"
 description: "了解 app 如何辨識背景工作所報告的進度與完成。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
-ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 
 ---
 
@@ -21,7 +21,9 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-了解 app 如何辨識背景工作所報告的進度與完成。 背景工作會與應用程式分離，而且它們會分開執行，但是應用程式程式碼可以監視背景工作的進度與完成。 為了執行這項作業，app 會訂閱本身已在系統中登錄的背景工作事件。
+了解 App 如何辨識在個別處理程序中執行之背景工作所報告的進度與完成。 (針對單一處理程序背景工作，您可以設定共用變數來表示進度和完成)。
+
+ 背景工作會與 App 分離，而且會分開執行，但是應用程式程式碼可以監視背景工作的進度與完成。 為了執行這項作業，app 會訂閱本身已在系統中登錄的背景工作事件。
 
 -   這個主題假設您有一個會登錄背景工作的 app。 若要快速開始建立背景工作，請參閱[建立並登錄背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
@@ -210,7 +212,6 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

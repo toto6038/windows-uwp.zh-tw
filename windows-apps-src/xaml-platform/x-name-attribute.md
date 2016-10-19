@@ -4,12 +4,12 @@ description: "唯一識別用於從程式碼後置或一般程式碼中存取具
 title: "xName 屬性"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 1a70bffd6e6990ece4565b919846503b95ae8f61
 
 ---
 
-# x&#58;Name 屬性
+# x:Name 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -66,11 +66,11 @@ UWP XAML 中使用的一些類型也具有名為 **Name** 的屬性。 例如，
 
 ### x:Name 和 x:Key
 
-**x:Name** 可以當作屬性套用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 內的元素，用來替代 [x:Key 屬性](x-key-attribute.md) (**ResourceDictionary** 中的所有元素都必須具有 x:Key 屬性是一項常規)。這通用於[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)一節。
+**x:Name** 可以當作屬性套用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 內的元素，用來替代 [x:Key 屬性](x-key-attribute.md)。 (**ResourceDictionary** 中的所有元素都必須具有 x:Key 或 x:Name 屬性，是一項常規)。這通用於[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)一節。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

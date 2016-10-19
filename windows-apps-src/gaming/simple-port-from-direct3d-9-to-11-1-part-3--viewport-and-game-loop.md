@@ -5,7 +5,7 @@ description: "說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，�
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
+ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
 
 ---
 
@@ -144,6 +144,6 @@ DirectX UWP 範本包含可靠的 Direct3D 裝置基礎結構，且已準備好�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

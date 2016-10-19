@@ -1,73 +1,74 @@
 ---
 author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
-description: Learn how to use the Windows.Services.Store namespace to implement a trial version of your app.
-title: Implement a trial version of your app
-keywords: free trial
-keywords: free trial period
-keywords: free trial code example
-keywords: free trial code sample
+description: "了解如何使用 Windows.Services.Store 命名空間來實作 App 的試用版。"
+title: "實作 App 的試用版"
+keywords: "免費試用程式碼範例"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 22f355c23f4cc87932563e9885f390e9a5ac4130
+
 ---
 
-# Implement a trial version of your app
+# 實作 App 的試用版
 
-If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
+如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
-Apps that target Windows 10, version 1607 or later can use members of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to determine if the user has a trial license for your app and be notified if the state of the license changes while your app is running.
+目標為 Windows 10 版本 1607 或更新版本的 App，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您 App 的試用授權，而且如果授權狀態在 App 執行期間變更，則會收到通知。
 
->**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
-## Guidelines for implementing a trial version
+## 實作試用版的指導方針
 
-The current license state of your app is stored as properties of the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
+App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
 
-Also, decide how you want to handle changes to the app's license while the app is running. Your trial app can be full-featured, but have in-app ad banners where the paid-for version doesn't. Or, your trial app can disable certain features, or display regular messages asking the user to buy it.
+此外，決定您在應用程式執行時要如何處理應用程式授權的變更。 您的試用版應用程式可具備完整功能，但應用程式內會有付費版本所沒有的廣告橫幅。 或者，試用版應用程式可以停用特定功能，或是定期顯示訊息，詢問使用者是否要購買。
 
-Think about the type of app you're making and what a good trial or expiration strategy is for it. For a trial version of a game, a good strategy is to limit the amount of game content that a user can play. For a trial version of a utility, you might consider setting an expiration date, or limiting the features that a potential buyer can use.
+考慮您正在製作的應用程式類型，以及適合採用哪種試用或到期策略。 對於遊戲試用版，採用的策略最好是限制使用者可玩的遊戲內容。 對於試用版公用程式，您可考慮設定到期日，或是限制潛在買家會使用的功能。
 
-For most non-gaming apps, setting an expiration date works well, because users can develop a good understanding of the complete app. Here are a few common expiration scenarios and your options for handling them.
+對於大部分非遊戲類型的應用程式，設定到期日是一種很好的做法，因為使用者可以對完整的應用程式有比較深入的了解。 這裡提供幾個常見的到期日案例以及您如何處理的選項。
 
--   **Trial license expires while the app is running**
+-   **試用授權在應用程式執行時到期**
 
-    If the trial expires while your app is running, your app can:
+    如果您的應用程式正在執行時試用到期，應用程式可以：
 
-    -   Do nothing.
-    -   Display a message to your customer.
-    -   Close.
-    -   Prompt your customer to buy the app.
+    -   什麼也不做。
+    -   對客戶顯示訊息。
+    -   關閉。
+    -   提示客戶購買應用程式。
 
-    The best practice is to display a message with a prompt for buying the app, and if the customer buys it, continue with all features enabled. If the user decides not to buy the app, close it or remind them to buy the app at regular intervals.
+    最佳做法是顯示一個提示購買應用程式的訊息；如果客戶購買應用程式，就啟用所有功能讓他們繼續使用。 如果客戶決定不要購買，就關閉應用程式，或定期提示他們購買應用程式。
 
--   **Trial license expires before the app is launched**
+-   **試用授權在應用程式啟動之前到期**
 
-    If the trial expires before the user launches the app, your app won't launch. Instead, users see a dialog box that gives them the option to purchase your app from the Store.
+    如果試用期在使用者啟動應用程式之前就已到期，應用程式將無法啟動。 使用者將會看到一個對話方塊，提供他們從市集購買應用程式的選項。
 
--   **Customer buys the app while it is running**
+-   **客戶在應用程式執行時購買應用程式**
 
-    If the customer buys your app while it is running, here are some actions your app can take.
+    如果客戶在您的應用程式執行時購買它，這裡是您應用程式可以採取的動作。
 
-    -   Do nothing and let them continue in trial mode until they restart the app.
-    -   Thank them for buying or display a message.
-    -   Silently enable the features that are available with a full-license (or disable the trial-only notices).
+    -   什麼也不做，讓客戶在試用模式下繼續使用，直到重新啟動應用程式。
+    -   感謝他們購買，或是顯示一則訊息。
+    -   不顯示訊息直接啟用完整授權的所有功能 (或停用試用版通知)。
 
-Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior. For more info about describing your app, see [Create app descriptions](https://msdn.microsoft.com/library/windows/apps/mt148529).
+務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。 如需有關描述 App 的詳細資訊，請參閱[建立 App 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
 
-## Prerequisites
+## 先決條件
 
-This example has the following prerequisites:
-* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
-* You have created an app in the Windows Dev Center dashboard that is configured as a [free trial](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability), and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+這個範例包含下列先決條件：
+* 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
+* 您已在 Windows 開發人員中心儀表板中建立 App，並將其設定為沒有時間限制的[免費試用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，而且已在市集中發佈此 App 且可供使用。 這可以是您想要釋出給客戶的 App，或者可以是符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求的基本 App，以供您測試之用。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
 
-The code in this example assumes:
-* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
-* The code file has a **using** statement for the **Windows.Services.Store** namespace.
-* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
+這個範例中的程式碼假設：
+* 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
+* 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
+* App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
-## Code example
+## 程式碼範例
 
-When your app is initializing, get the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object for your app and handle the [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) event to receive notifications when the license changes while the app is running. For example, the app's license could change if the trial period expires or the customer buys the app through a Store. When the license changes, get the new license and enable or disable a feature of your app accordingly.
+當您的 App 進行初始化時，請取得 App 的 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 物件，並處理 [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) 事件，以在授權於 App 執行期間變更時收到通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。 當授權變更時，取得新的授權，並據以啟用或停用您的 App 功能。
 
-At this point, if a user bought the app, it is a good practice to provide feedback to the user that the licensing status has changed. You might need to ask the user to restart the app if that's how you've coded it. But make this transition as seamless and painless as possible.
+此時，如果使用者購買 App，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
 
 
 ```csharp
@@ -113,10 +114,19 @@ private async void context_OfflineLicensesChanged(StoreContext sender, object ar
 }
 ```
 
-## Related topics
+如需完整範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
-* [In-app purchases and trials](in-app-purchases-and-trials.md)
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+## 相關主題
+
+* [App 內購買和試用版](in-app-purchases-and-trials.md)
+* [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
+* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
+* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

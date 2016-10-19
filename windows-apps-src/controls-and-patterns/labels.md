@@ -6,19 +6,29 @@ ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: aa605b3862c33633904822bb88de7e647a2b3d5b
 
 ---
-
 # 標籤
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>Header 屬性</li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209652"><strong>TextBlock 類別</strong></a></li>
+</ul>
 
--   Header 屬性
--   [**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/br209652)
+</div>
+</div>
+
+
+
+
 
 
 在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
@@ -29,14 +39,14 @@ ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
 
 ![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建議事項
+## 建議事項
 
 
 -   使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
 -   為控制項加上標籤時，可填寫名詞或簡要的名詞片語，而非長句或說明文字。 請避免使用冒號或其他標點符號。
 -   當您的標籤中有說明文字時，您對於文字字串的長度可能會更寬厚，而且也會使用標點符號。
 
-## <span id="related_topics"></span>相關主題
+## 相關主題
 * [文字控制項](text-controls.md)
 
 **適用於開發人員**
@@ -60,6 +70,6 @@ ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

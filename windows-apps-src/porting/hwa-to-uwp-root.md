@@ -3,8 +3,8 @@ title: "託管 Web 應用程式 - 將 Web 應用程式轉換為通用 Windows �
 description: "從您的網站 URL 建立通用 Windows 平台 (UWP) 應用程式。 從您 Web 應用程式內部程式碼存取 Windows 10 原生裝置功能。 透過適用於託管 Web 應用程式的 Microsoft Windows 橋接器 (先前的 Project Westminster)，可讓您快速輕鬆地在 Windows Store 中加入 Web App。"
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
-ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
+ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
+ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
 
 ---
 
@@ -45,6 +45,6 @@ ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

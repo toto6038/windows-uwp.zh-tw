@@ -4,40 +4,46 @@ ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: "組合動畫"
 description: "許多組合物件和效果屬性都可藉由使用主要畫面格和運算式動畫來製作動畫效果，這些動畫可允許隨時間或根據計算來變更 UI 元素的屬性。"
 translationtype: Human Translation
-ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
-ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
+ms.sourcegitcommit: 9146f0d3771f1f3687c94dc9f4978b5db5765c5d
+ms.openlocfilehash: 9f098ef590e51547f066289965a7ce9fd02dc8cd
 
 ---
 # 組合動畫
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對組合物件，執行建立、產生動畫效果、轉換以及操控等作業。 組合動畫提供了功能強大且具效率的方式，可讓您在應用程式 UI 中執行動畫。 其經過徹底從頭開始的全新設計，確保讓動畫無論 UI 執行緒為何皆能以 60 FPS 運作，此外並提供優異操作彈性協助您打造令人驚艷的使用體驗，您不僅可運用時間，更可運用輸入和其他屬性來驅動動畫。
-本主題提供關於可用功能的概觀，協助您產生組合物件屬性動畫效果。
-本文件假設您已熟習關於熟悉視覺層結構的基本知識。 如需詳細資訊，[請參閱此處](./composition-visual-tree.md)。 共有以下兩種組合動畫類型：**KeyFrame 動畫**與 **Expression 動畫**  
+Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對撰寫器物件，執行建立、產生動畫效果、轉換以及操控等作業。 組合動畫提供了功能強大且具效率的方式，可讓您在應用程式 UI 中執行動畫。 其經過徹底從頭開始的全新設計，確保讓動畫無論 UI 執行緒為何皆能以 60 FPS 運作，此外並提供優異操作彈性以協助您打造令人驚艷的使用體驗，您不僅可運用時間，更可運用輸入和其他屬性來驅動動畫。
+本主題提供關於可用功能的概觀，協助您產生 Composition 物件屬性動畫效果。
+本文件假設您已熟悉視覺層結構的基本知識。 如需詳細資訊，[請參閱此處](./composition-visual-tree.md)。 共有以下兩種組合動畫類型：**KeyFrame 動畫**與 **Expression 動畫**  
 
 ![](./images/composition-animation-types.png)  
    
  
 ##組合動畫類型
-**KeyFrame 動畫**提供傳統的時間驅動型「逐格」**動畫體驗。 開發人員可明確定義「控制點」**，描述動畫時間軸上特定點所需的動畫屬性值。 更重要的是，您可使用 Easing 函數 (亦稱 Interpolator) 描述這些控制點間的轉換方式。  
+**KeyFrame 動畫**提供傳統的時間驅動型「逐格」**動畫體驗。 開發人員可明確定義「控制點」**，描述動畫時間軸上特定點所需的動畫屬性值。 更重要的是，您可使用 Easing 函式 (亦稱 Interpolator) 描述這些控制點間的轉換方式。  
 
-**Expression 動畫**是 Windows 10 11 月更新在視覺層中引入的新動畫類型 (組建 10586)。 Expression 動畫的背景概念，係指開發人員可在視覺屬性與離散值之間建立數學關係，之後再於每個畫面進行評估與更新。 開發人員可參考位於組合物件上的屬性或屬性集、使用數學函數協助程式，甚至可參考輸入以衍生這些數學關係。 Expression 可在 Windows 平台上，提供諸如視差與固定式標頭的順暢使用體驗。  
+**隱含動畫**是一種動畫類型，可讓開發人員定義可重複使用的個別動畫或一系列動畫，並與核心 app 邏輯分開處理。 隱含動畫可讓開發人員建立動畫「範本」**，並藉由觸發程序連結。 這些觸發程序是來自明確指派所造成的屬性變更。 開發人員可將範本定義為單一動畫或動畫群組。 動畫群組是一組動畫範本集合，可藉由明確指派或觸發程序來一起啟動。 隱含動畫可讓您在每次要變更值的屬性並看見其產生動畫效果時，免去建立明確 KeyFrameAnimations 的需求。
+
+**Expression 動畫**是 Windows 10 11 月更新 (組建 10586) 在視覺層中引入的動畫類型。 運算式動畫的背景概念，係指開發人員可在 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性與離散值之間建立數學關係，之後再於每個畫面進行評估與更新。 開發人員可參考位於 Composition 物件上的屬性或屬性集、使用數學函式協助程式，甚至可參考輸入以衍生這些數學關係。 Expression 可在 Windows 平台上，提供諸如視差與固定式標頭的順暢使用體驗。  
 
 ##為何使用組合動畫？
 **效能**  
- 建置通用 Windows 應用程式時，會在 UI 執行緒上執行大部分的開發人員程式碼。 因此，為了確保讓動畫能夠在各個不同的裝置類別上順暢運作，系統會執行動畫計算並於獨立執行緒上運作，以維持 60 FPS 的執行效能。 這表示開發人員可仰賴系統提供順暢的動畫，讓應用程式執行適用於進階使用者體驗的其他複雜操作。    
+ 建置通用 Windows 應用程式時，會在 UI 執行緒上執行大部分的開發人員程式碼。 為了確保讓動畫能夠在各個不同的裝置類別上順暢運作，系統會執行動畫計算並於獨立執行緒上運作，以維持 60 FPS 的執行效能。 這表示開發人員可以仰賴系統提供順暢的動畫，同時應用程式可執行其他複雜的運算以提供進階的使用者體驗。    
  
 **無限可能**  
-您可運用視覺層中的組合動畫，建立外型美觀的 UI。 我們想要為開發人員提供操作靈活性以及各種不同的動畫類型，協助其打造令人驚艷的優秀創意進一步挑戰 UWP 極限
+視覺層中組合動畫的目標是讓建立外型美觀的 UI 更為輕鬆。 我們想要提供開發人員不同類型的動畫，讓他們更輕鬆地打造酷炫的想法。
  
- (您亦可查看 [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439)，了解 API 使用方式以及逼真度更高的 API 運作相關資訊)  
+   
 
 **範本化**  
- 視覺層中的所有組合動畫皆為範本。這表示開發人員可在多個物件上使用動畫，而無須建立個別的動畫。 這可讓開發人員使用相同的動畫並調整屬性或參數，以符合其他的需求，但是又無須擔憂妨礙先前的使用。  
+ 視覺層中的所有組合動畫皆為範本 – 這表示開發人員可在多個物件上使用動畫，而無須建立個別的動畫。 這可讓開發人員使用相同的動畫並調整屬性或參數，以符合其他的需求，但是又無須擔憂妨礙先前的使用。  
+
+您可以查看我們的 [Expression Animations (Expression 動畫)](https://channel9.msdn.com/events/Build/2016/P486)、[Interactive Experiences (互動式體驗)](https://channel9.msdn.com/Events/Build/2016/P405)、[Implicit Animations (隱含動畫)](https://channel9.msdn.com/events/Build/2016/P484) 和 [Connected Animations (連接動畫)](https://channel9.msdn.com/events/Build/2016/P485) //BUILD 討論，來了解一些可能的範例。
+
+您亦可查看 [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439)，了解 API 使用方式以及逼真度更高的 API 運作相關資訊。
  
 ##您可使用組合動畫產生哪些動畫效果？
-組合動畫可套用至大部分的組合物件屬性，例如 Visual 和 InsetClip。 您亦可套用組合動畫至組合效果和屬性集。 **選擇要產生動畫效果的項目時請記下類型。使用此類型來判斷您所建構的 KeyFrame 動畫，或是必須解析產生的 Expression 類型。**  
+組合動畫可套用至大部分的組合物件屬性，例如 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 和 **InsetClip**。 您亦可將組合動畫套用至組合效果和屬性集。 **選擇要產生動畫效果的項目時請記下類型 – 使用此類型來判斷您所建構的 KeyFrame 動畫類型，或是運算式必須解析的類型。**  
  
 ###Visual
 |可產生動畫效果的 Visual 屬性|  類型|
@@ -53,7 +59,7 @@ Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對組合物件
 |Scale| Vector3|
 |Size|  Vector2|
 |TransformMatrix*|  Matrix4x4|
-* 若您想要將整個 TransformMatrix 屬性的動畫效果產生為 Matrix4x4，則必須使用 Expression 動畫執行此動作。 或者，您亦可鎖定矩陣的個別儲存格並在其中使用 KeyFrame 或 Expression 動畫。  
+* 如果您想要將整個 TransformMatrix 屬性的動畫效果產生為 Matrix4x4，則必須使用 ExpressionAnimation 執行此動作。 或者，您亦可鎖定矩陣的個別儲存格並在其中使用 KeyFrame 或 ExpressionAnimation。  
 
 ###InsetClip
 |可產生動畫效果的 InsetClip 屬性|   類型|
@@ -64,7 +70,7 @@ Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對組合物件
 |TopInset|  純量|
 
 ##Visual 子通道屬性
-除了能夠產生 Visual 屬性動畫效果外，您亦可鎖定這些屬性的「子通道」**元件產生動畫效果。 例如，動畫效果只需要有 Visual 的 X Offset，而非整個 Offset。 動畫可鎖定 Vector3 Offset 屬性，或是 Offset 屬性的純量 X 元件。 除了能夠鎖定屬性的個別子通道元件外，您亦可鎖定多個元件。 例如，您可鎖定 Scale 的 X 和 Y 元件。
+除了能夠產生 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性動畫效果外，您亦可鎖定這些屬性的「子通道」**元件產生動畫效果。 例如，動畫效果只需要有 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 X Offset，而非整個 Offset。 動畫可鎖定 Vector3 Offset 屬性，或是 Offset 屬性的純量 X 元件。 除了能夠鎖定屬性的個別子通道元件外，您亦可鎖定多個元件。 例如，您可鎖定 Scale 的 X 和 Y 元件。
 
 |可產生動畫效果的 Visual 子通道屬性|  類型|
 |----------------------------------------|------|
@@ -89,7 +95,7 @@ Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對組合物件
 *產生 Brush 屬性 Color 子通道的動畫效果時會略有差異。 您將 StartAnimation() 連結至 Visual.Brush 並宣告屬性，以在參數中產生「色彩」動畫效果。 (稍候會討論關於產生色彩動畫效果的更多詳細資料)
 
 ##屬性集與效果
-除了產生組合 Visual 與 InsetClip 屬性動畫效果外，您亦可產生 PropertySet 或效果屬性動畫效果。 針對屬性集，您會定義屬性並將其儲存於組合屬性集。稍後可將該屬性做為動畫的目標 (此外亦會同時由其他動畫參考)。 在下列小節中將會詳細說明此資訊。  
+除了產生 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 與 InsetClip 屬性動畫效果外，您亦可產生 PropertySet 或效果屬性動畫效果。 針對屬性集，您會定義屬性並將其儲存於組合屬性集。稍後可將該屬性做為動畫的目標 (此外亦會同時由其他動畫參考)。 在下列小節中將會詳細說明此資訊。  
 
 針對效果，您可使用組合效果 API 定義圖形效果 (如需[效果概觀](./composition-effects.md)，請參閱這裡)。 除了定義效果外，您亦可產生效果屬性值的動畫效果。 透過鎖定 Sprite Visual 上 Brush 屬性的屬性元件，即完成此動作。
 
@@ -102,7 +108,7 @@ Windows.UI.Composition WinRT API 可讓您在整合 API 層中針對組合物件
 3.  定義動畫內容 – 插入 Keyframe 或定義 Expression 字串  
     *  針對 KeyFrame 動畫，確認 KeyFrame 值類型與您想要產生動畫效果的屬性相同。  
     *  針對 Expression 動畫，確認 Expression 字串將解析為與您想要產生動畫效果之屬性相同的類型。  
-4.  針對您想要產生動畫效果的 Visual 屬性開始動畫 – 其稱為 StartAnimation 且可包含做為參數：您想要產生動畫效果 (使用字串格式) 之屬性名稱與動畫物件。  
+4.  針對您想要產生動畫效果的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性開始動畫 – 其稱為 StartAnimation 且可包含做為參數：您想要產生動畫效果 (使用字串格式) 之屬性名稱與動畫物件。  
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
@@ -154,9 +160,11 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 ```
 
 **注意：**使用 KeyFrame 動畫產生色彩動畫效果時，請格外留意以下事項：
-1.  將 StartAnimation 連結至 Visual.Brush 而非 Visual，且使用 **Color** 做為想要產生動畫效果的屬性值。
+1.  將 StartAnimation 連結至 Visual.Brush 而非 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)，且使用 **Color** 做為想要產生動畫效果的屬性值。
 2.  KeyFrame 的「值」元件，是由 Windows.UI 命名空間外部的色彩物件所定義。
-3.  您可選擇定義 InterpolationColorSpace 屬性，以定義內插補點的色彩空間。 可能的值包括：a.  CompositionColorSpace.Rgb b.  CompositionColorSpace.Hsl
+3.  您可選擇藉由設定 InterpolationColorSpace 屬性，以定義內插補點的色彩空間。 可能的值包括：
+    *   CompositionColorSpace.Rgb
+    *   CompositionColorSpace.Hsl
 
 
 ##KeyFrame 動畫屬性
@@ -165,8 +173,9 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 *   Duration – 動畫的持續時間
 *   IterationBehavior – 動畫的計數或無限重複行為
 *   IterationCount –「KeyFrame 動畫」將重複的有限次數
-*   KeyFrame 計數 – 特定 KeyFrame 動畫中的 KeyFrame 讀數
-*   StopBehavior – 指定呼叫 StopAnimation 時，動畫屬性值的行為。  
+*   KeyFrame Count – 特定 KeyFrame 動畫中的 KeyFrame 讀數
+*   StopBehavior – 指定呼叫 StopAnimation 時，動畫屬性值的行為  
+*   Direction – 指定動畫播放的方向  
 
 以下範例會將動畫的持續時間設為 5 秒：  
 ```cs
@@ -178,33 +187,35 @@ Easing 函數 (CompositionEasingFunction) 會指出中繼值如何從上一個�
 支援的 Easing 函數類型有兩種：
 *   線性
 *   三次方貝茲  
+*   步驟  
 
-三次方貝茲是一種參數函數，經常用來描述可縮放比例的平滑曲線。 搭配使用組合 KeyFrame 動畫時，您可定義兩個 Vector2 物件控制點。 這些控制點用來定義曲線的形狀。 建議您使用類似[此處](http://cubic-bezier.com/#0,-0.01,.48,.99)的網站，透過視覺化呈現方式了解這兩個控制點如何建構三次方貝茲的曲線。
+三次方貝茲是一種參數函數，經常用來描述可調整的平滑曲線。 搭配使用組合 KeyFrame 動畫時，您可定義兩個 Vector2 物件控制點。 這些控制點用來定義曲線的形狀。 建議您使用類似[此處](http://cubic-bezier.com/#0,-0.01,.48,.99)的網站，透過視覺化呈現方式了解這兩個控制點如何建構三次方貝茲的曲線。
 
-若要建立 Easing 函數，請使用 Compositor 物件以外的建構函數方法。 以下兩個範例會建立線性 Easing 函數和基本 easeIn 三次方貝茲。  
+若要建立 Easing 函式，請使用 Compositor 物件以外的建構函式方法。 以下兩個範例會建立線性 Easing 函式和基本三次方貝茲 Easing 函式。    
 ```cs
 var linear = _compositor.CreateLinearEasingFunction();
 var easeIn = _compositor.CreateCubicBezierEasingFunction(new Vector2(0.5f, 0.0f), new Vector2(1.0f, 1.0f));
+var step = _compositor.CreateStepEasingFunction();
 ```
-若要將 Easing 函數新增至 KeyFrame，只要在將 KeyFrame 插入動畫時，將第三個參數新增至 KeyFrame 即可：   
+若要將 Easing 函式新增至 KeyFrame，只要在將 KeyFrame 插入動畫時，將第三個參數新增至 KeyFrame 即可：   
 以下範例會使用 KeyFrame 新增至 easeIn Easing 函數：  
 ```cs
 animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 ```
 
 ##開始和停止 KeyFrame 動畫
-定義動畫與 KeyFrame 後，您即可隨時連結動畫。 開始動畫時，您可指定要產生動畫效果的 Visual、要產生動畫效果的目標屬性以及動畫的參考。 您可呼叫 StartAnimation() 函數執行此動作。 請謹記，在屬性上呼叫 StartAnimation() 將會中斷連線，並移除先前執行的所有動畫。  
+定義動畫與 KeyFrame 後，您即可隨時連結動畫。 開始動畫時，您可指定要產生動畫效果的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)、要產生動畫效果的目標屬性以及動畫的參考。 您可呼叫 StartAnimation() 函式執行此動作。 請謹記，在屬性上呼叫 StartAnimation() 將會中斷連線，並移除先前執行的所有動畫。  
 **注意︰**您選擇要產生動畫效果的屬性參考係採用字串形式。  
 
-以下範例會在 Visual 的 Offset 屬性上設定和開始動畫：  
+以下範例會在 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 屬性上設定和開始動畫：  
 ```cs
 targetVisual.StartAnimation("Offset", animation);
 ```  
 
 若您想要鎖定子通道屬性，可將 subchannel 新增至定義想要產生動畫效果屬性的字串。 在以上範例中，使用的語法會變更為 StartAnimation("Offset.X, animation2)，其中 animation2 為 ScalarKeyFrameAnimation。  
 
-開始動畫後，亦可在動畫結束前將其停止。 使用 StopAnimation() 函數可完成此動作。  
-以下範例會在 Visual 的 Offset 屬性上停止動畫：    
+開始動畫後，亦可在動畫結束前將其停止。 使用 StopAnimation() 函式可完成此動作。  
+以下範例會在 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 屬性上停止動畫：    
 ```cs
 targetVisual.StopAnimation("Offset");
 ```
@@ -306,7 +317,7 @@ Expression 動畫是組合團隊在 Windows 10 11 月更新中引入的新動畫
 ```cs
 var expression = _compositor.CreateExpressionAnimation("0.2 + 0.3");
 ```
-與 KeyFrame 動畫類似之處，在於一旦您定義 Expression 動畫，即必須將其連結至 Visual 並宣告想要產生動畫效果的動畫屬性。 下面會接續上述範例，將 Expression 動畫連結至 Visual 的 Opacity 屬性 (A 純量類型)：  
+與 KeyFrame 動畫類似，一旦您定義 Expression 動畫，即必須將其連結至 Visual 並宣告想要產生動畫效果的動畫屬性。 下面會接續上述範例，將 Expression 動畫連結至 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Opacity 屬性 (純量類型)：  
 ```cs
 targetVisual.StartAnimation("Opacity", expression);
 ```
@@ -324,6 +335,7 @@ Expression 字串支援使用您想要描述各個不同方程式元件間數學
 |一元| -|
 |乘法|    * /|
 |加法|  + -|
+|Mod| %|  
 
 同樣地，評估 Expression 時會遵守「C# 語言規格」中定義的運算子優先順序與關聯性。 換言之，其會遵守基本操作順序。  
 
@@ -333,9 +345,9 @@ Expression 字串支援使用您想要描述各個不同方程式元件間數學
 ```
 
 ###屬性參數
-屬性參數是 Expression 動畫的最強大元件之一。 在 Expression 字串中，您可參考來自諸如組合 Visual、組合屬性集等其他物件，或是其他 C# 物件的屬性值。   
+屬性參數是 Expression 動畫的最強大元件之一。 在 Expression 字串中，您可參考來自諸如組合 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)、組合屬性集等其他物件，或是其他 C# 物件的屬性值。   
 
-若要在 Expression 字串中使用這些值，僅須定義 Expression 動畫的參考參數即可。 將 Expression 使用的字串對應至實際物件，以完成此動作。 這可讓系統在評估方程式時，了解計算值所需檢查的項目。 提供各種不同類型的參數，其可與您想要在方程式中包含的物件類型相互關聯：  
+若要在 Expression 字串中使用這些值，僅須將參考定義為 Expression 動畫的參數即可。 將 Expression 使用的字串對應至實際物件，以完成此動作。 這可讓系統在評估方程式時，了解計算值所需檢查的項目。 提供各種不同類型的參數，其可與您想要在方程式中包含的物件類型相互關聯：  
 
 |類型|  建立參數的函數|
 |----|------------------------------|
@@ -345,8 +357,9 @@ Expression 字串支援使用您想要描述各個不同方程式元件間數學
 |四元數|    SetQuaternionParameter(String ref, Quaternion obj)|
 |色彩| SetColorParameter(String ref, Color obj)|
 |CompositionObject| SetReferenceParameter(String ref, Composition object obj)|
+|布林值| SetBooleanParameter(String ref, Boolean obj)|  
 
-在以下範例中，我們會建立 Expression 動畫來參考其他兩個組合 Visual 與基礎 System.Numerics Vector3 物件的位移。  
+在以下範例中，我們會建立 Expression 動畫，它會參考兩個其他組合 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 與基礎 System.Numerics Vector3 物件的 Offset。  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
 var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
@@ -367,10 +380,10 @@ expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
-最後在參考其他物件的屬性時，亦可參考位於 Expression 字串的子通道屬性，或是做為參考參數的一部分。  
+最後在參考其他物件的屬性時，亦可參考位於 Expression 字串中或屬於參考參數一部份的子通道屬性。  
  
-在以下範例中，我們參考來自兩個 Visual 的 Offset 屬性 x 子通道 – 其中一個位於 Expression 字串本身，另一個則在建立參數參考時使用。
-請注意，在參考偏移的 X 元件時，我們會將參數類型變更為純量參數，而非如先前範例般變更為 Vector3：  
+在以下範例中，我們參考來自兩個 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 屬性 x 子通道 – 其中一個位於 Expression 字串本身，另一個則在建立參數參考時使用。
+請注意，在參考 Offset 的 X 元件時，我們會將參數類型變更為純量參數，而非如先前範例般變更為 Vector3：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("xOffset/ ParentOffset.X");
 expression.SetScalarParameter("xOffset", childVisual.Offset.X);
@@ -530,7 +543,92 @@ exp.Expression = “ScrollManipulation.Translation.Y / ScrollBounds”;
 _target.StartAnimation(“Opacity”, exp);
 ```
 
+##使用隱含動畫  
+動畫是向使用者描述行為的絕佳方法。 有許多方法可讓您的內容產生動畫效果，但目前所有討論的方法都需要您明確地「開始」**動畫。 雖然這樣可讓您擁有完整的控制權來定義何時要開始動畫，但每當屬性值將要變更就需要產生動畫效果時，就會變得難以管理。 這常發生在應用程式已經從應用程式「邏輯」(其中定義應用程式的核心元件及基礎結構) 分離定義動畫的應用程式「特質」時。 隱含動畫提供更簡潔的方式，從核心應用程式邏輯之外定義動畫。 您可以連結這些要執行的動畫來搭配特定屬性變更觸發程序執行。
 
+###設定 ImplicitAnimationCollection  
+隱含動畫是由其他 **CompositionAnimation** 物件 (**KeyFrameAnimation** 或 **ExpressionAnimation**) 所定義。 **ImplicitAnimationCollection** 代表一組 **CompositionAnimation** 物件，當符合屬性變更「觸發程序」**條件時將會開始該組物件。 請注意，在定義動畫時，務必設定 **Target** 屬性，這會定義動畫開始時將會鎖定的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性。 **Target** 的屬性僅能為可產生動畫的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性。
+在以下的程式碼片段中，會建立單一的 **Vector3KeyFrameAnimation**，並且定義為 **ImplicitAnimationCollection** 的一部分。 **ImplicitAnimationCollection** 接著會附加到 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **ImplicitAnimation** 屬性，如此當符合觸發程序時，將會開始動畫。  
+```csharp
+Vector3KeyFrameAnimation animation = _compositor.CreateVector3KeyFrameAnimation();
+animation.DelayTime =  TimeSpan.FromMilliseconds(index);
+animation.InsertExpressionKeyFrame(1.0f, "this.FinalValue");
+animation.Target = "Offset";
+ImplicitAnimationCollection implicitAnimationCollection = compositor.CreateImplicitAnimationCollection();
+
+visual.ImplicitAnimations = implicitAnimationCollection;
+```
+
+
+###ImplicitAnimation 開始時觸發  
+觸發程序是用來描述動畫將以隱含方式開始時的詞彙。 目前的觸發程序定義，是根據 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 上可產生動畫屬性的任何變更而來 – 這些變更是透過對屬性的明確設定所發生。 例如，將 **Offset** 觸發程序放置於 **ImplicitAnimationCollection** 上，並將某個動畫與其產生關聯，則對於目標 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **Offset** 更新將會使用集合中的動畫，對其新的值產生動畫效果。  
+透過上述範例，我們加入此額外的程式行，來設定目標 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **Offset** 屬性的觸發程序。  
+```csharp
+implicitAnimationCollection["Offset"] = animation;
+```  
+請注意，**ImplicitAnimationCollection** 可以有多個觸發程序。 這代表隱含動畫或動畫群組可以因應不同的屬性變更來開始動畫。 在上述的範例中，開發人員可以為其他的屬性 (例如 Opacity) 加入觸發程序。  
+###this.FinalValue     
+在第一個隱含範例中，我們使用了 ExpressionKeyFrame 做為 “1.0” KeyFrame，並指派了 **this.FinalValue** 的運算式給它。 **this.FinalValue** 是運算式語言中的保留字，針對隱含動畫提供辨別行為。 **this.FinalValue** 會將 API 屬性上設定的值繫結到動畫。 這有助於建立真正的範本。 **this.FinalValue** 在明確動畫中並不好用，因為 API 屬性會立即設定，而在隱含動畫的情況下則是會延遲。  
+ 
+##使用動畫群組  
+**CompositionAnimationGroup** 提供開發人員輕鬆的方式來將動畫清單分組，並搭配隱含動畫或明確動畫使用。   
+###建立和填入動畫群組  
+Compositor 物件的 **CreateAnimationGroup** 方法可讓開發人員建立動畫群組：  
+```sharp
+CompositionAnimationGroup animationGroup = _compositor.CreateAnimationGroup();
+animationGroup.Add(animationA);
+animationGroup.Add(animationB);
+```   
+動畫群組一旦建立之後，就可將個別的動畫加入到動畫群組。 請記住，您不需要明確地開始個別的動畫 – 當呼叫 **StartAnimationGroup** (明確的情況) 或符合觸發程序 (隱含的情況) 時，這些動畫將會全部開始。  
+請注意，務必確認加入到群組的動畫已經定義 **Target** 屬性。 這將會定義它們將產生動畫效果的目標 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 屬性。
+
+###使用動畫群組搭配隱含動畫  
+開發人員可以建立隱含動畫，如此當符合觸發程序時，一組動畫群組形式的動畫便會開始。 在此案例中，動畫群組會定義為符合觸發程序時開始的一組動畫。  
+```csharp
+implicitAnimationCollection["Offset"] = animationGroup;
+```   
+###使用動畫群組搭配明確動畫  
+開發人員可以建立明確動畫，如此當呼叫 **StartAnimationGroup** 時，已加入群組的個別動畫將會開始。 請注意，在此 **StartAnimation** 呼叫中，群組沒有鎖定的屬性，因為個別的動畫可以鎖定不同的屬性。 請確定已設定每個動畫的目標屬性。  
+```csharp
+visual.StartAnimationGourp(AnimationGroup);
+```  
+
+###E2E 範例 
+此範例示範當設定新的值時，以隱含方式產生 Offset 屬性的動畫效果。  
+```csharp 
+class PropertyAnimation
+{
+    PropertyAnimation(Compositor compositor, SpriteVisual heroVisual, SpriteVisual listVisual)
+    {
+        // Define ImplicitAnimationCollection
+        ImplicitAnimationCollection implicitAnimations = 
+        compositor.CreateImplicitAnimationCollection();
+
+        // Trigger animation when the “Offset” property changes.
+        implicitAnimations["Offset"] = CreateAnimation(compositor);
+
+        // Assign ImplicitAnimations to a visual. Unlike Visual.Children,    
+        // ImplicitAnimations can be shared by multiple visuals so that they 
+        // share the same implicit animation behavior (same as Visual.Clip).
+        heroVisual.ImplicitAnimations = implicitAnimations;
+
+        // ImplicitAnimations can be shared among visuals 
+        listVisual.ImplicitAnimations = implicitAnimations;
+
+        listVisual.Offset = new Vector3(20f, 20f, 20f);
+    }
+
+    Vector3KeyFrameAnimation CreateAnimation(Compositor compositor)
+    {
+        Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+        animation.InsertExpressionKeyFrame(0f, "this.StartingValue");
+        animation.InsertExpressionKeyFrame(1f, "this.FinalValue");
+        animation.Target = “Offset”;
+        animation.Duration = TimeSpan.FromSeconds(0.25);
+        return animation;
+    }
+}
+```   
 
  
  
@@ -540,29 +638,29 @@ _target.StartAnimation(“Opacity”, exp);
 
 |函數和建構函數操作| 描述|  
 |-----------------------------------|--------------|  
-|Abs(Float value)|  傳回代表浮點參數絕對值的浮點數|  
-|Clamp(Float value, Float min, Float max)|  若值小於最小值或最大值，或是值大於最大值，則會傳回大於最小值以及小於最大值或最小值的浮點值|  
-|Max (Float value1, Float value2)|  傳回介於 value1 與 value2 之間的更大浮點數。|  
-|Min (Float value1, Float value2)|  傳回介於 value1 與 value2 之間的更小浮點數。|  
-|Lerp(Float value1, Float value2, Float progress)|  傳回代表根據進度計算兩個純量值間線性內差補點的浮點數 (注意：進度值介於 0.0 與 1.0 之間)|  
+|Abs(Float value)| 傳回代表浮點參數絕對值的浮點數|  
+|Clamp(Float value, Float min, Float max)| 若值小於最小值或最大值，或是值大於最大值，則會傳回大於最小值以及小於最大值或最小值的浮點值|  
+|Max (Float value1, Float value2)| 傳回介於 value1 與 value2 之間的更大浮點數。|  
+|Min (Float value1, Float value2)| 傳回介於 value1 與 value2 之間的更小浮點數。|  
+|Lerp(Float value1, Float value2, Float progress)| 傳回代表根據進度計算兩個純量值間線性內差補點的浮點數 (注意：進度值介於 0.0 與 1.0 之間)|  
 |Slerp(Float value1, Float value2, Float progress)| 傳回代表根據進度計算兩個浮點數值間球面內差補點的浮點數 (注意：進度值介於 0.0 與 1.0 之間)|  
-|Mod(Float value1, Float value2)|   傳回劃分 value1 與 value2 所產生的浮點數剩餘部分|  
-|Ceil(Float value)|     傳回四捨五入至更大整數的浮點數參數|  
-|Floor(Float value)|    傳回四捨五入至更小整數的浮點數參數|  
+|Mod(Float value1, Float value2)| 傳回劃分 value1 與 value2 所產生的浮點數剩餘部分|  
+|Ceil(Float value)| 傳回四捨五入至更大整數的浮點數參數|  
+|Floor(Float value)| 傳回四捨五入至更小整數的浮點數參數|  
 |Sqrt(Float value)| 傳回浮點數參數的平方根|  
-|Square(Float value)|   傳回浮點數參數的平方|  
-|Sin(Float value1)||
-|Asin(Float value2)|    傳回浮點數參數的 Sin 或 ArcSin|
-|Cos(Float value1)||
-|ACos(Float value2)|    傳回浮點數參數的 Cos 或 ArcCos|
-|Tan(Float value1)||
-|ATan(Float value2)|    傳回浮點數參數的 Tan 或 ArcTan|
-|Round(Float value)|    傳回四捨五入至最近整數的浮點數參數|
-|Log10(Float value)|    傳回浮點數參數的對數 (基數 10) 結果|
-|Ln(Float value)|   傳回浮點數參數的自然對數結果|
+|Square(Float value)| 傳回浮點數參數的平方|  
+|Sin(Float value1)| 傳回浮點數參數的 Sin|
+|Asin(Float value2)| 傳回浮點數參數的 ArcSin|
+|Cos(Float value1)| 傳回浮點數參數的 Cos|
+|ACos(Float value2)| 傳回浮點數參數的 ArcCos|
+|Tan(Float value1)| 傳回浮點數參數的 Tan|
+|ATan(Float value2)| 傳回浮點數參數的 ArcTan|
+|Round(Float value)| 傳回四捨五入至最近整數的浮點數參數|
+|Log10(Float value)| 傳回浮點數參數的對數 (基數 10) 結果|
+|Ln(Float value)| 傳回浮點數參數的自然對數結果|
 |Pow(Float value, Float power)| 傳回增加至特殊次方的浮點數結果|
-|ToDegrees(Float radians)|  傳回轉換為度的浮點數參數|
-|ToRadians(Float degrees)|  傳回轉換為弧度的浮點數參數|
+|ToDegrees(Float radians)| 傳回轉換為度的浮點數參數|
+|ToRadians(Float degrees)| 傳回轉換為弧度的浮點數參數|
 
 ###Vector2  
 
@@ -626,7 +724,12 @@ _target.StartAnimation(“Opacity”, exp);
 |Lerp(Matrix3x2 value1, Matrix3x2 value2, Float progress)|  傳回代表根據進度計算兩個 Matrix3x2 值間線性內差補點的 Matrix3x2 (注意：進度值介於 0.0 與 1.0 之間)|
 |Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|   使用 6 個浮點數參數建構 Matrix3x2|
 |Matrix3x2.CreateFromScale(Vector2 scale)|  透過代表縮放比例的 Vector2 建構 Matrix3x2<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
-|Matrix3x2.CreateFromTranslation(Vector2 translation)|  透過代表平移的 Vector2 建構 Matrix3x2<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|
+|Matrix3x2.CreateFromTranslation(Vector2 translation)|  透過代表平移的 Vector2 建構 Matrix3x2<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|  
+|Matrix3x2.CreateSkew(Float x, Float y, Vector2 centerpoint)| 透過兩個浮點數和代表扭曲的 Vector2 建構 Matrix3x2<br/>\[1.0, Tan(y),<br/>Tan(x), 1.0,<br/>-centerpoint.Y * Tan(x), -centerpoint.X * Tan(y)\]|  
+|Matrix3x2.CreateRotation(Float radians)| 透過旋轉的弧度建構 Matrix3x2<br/>\[Cos(radians), Sin(radians),<br/>-Sin(radians), Cos(radians),<br/>0.0, 0.0 \]|   
+|Matrix3x2.CreateTranslation(Vector2 translation)| 與 CreateFromTranslation 相同|      
+|Matrix3x2.CreateScale(Vector2 scale)| 與 CreateFromScale 相同|    
+
     
 ###Matrix4x4  
 
@@ -639,6 +742,10 @@ _target.StartAnimation(“Opacity”, exp);
 |Matrix4x4.CreateFromScale(Vector3 scale)|  透過代表縮放比例的 Vector3 建構 Matrix4x4<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
 |Matrix4x4.CreateFromTranslation(Vector3 translation)|  透過代表平移的 Vector3 建構 Matrix4x4<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
 |Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|  透過代表角度的 Vector3 軸和浮點數建構 Matrix4x4|
+|Matrix4x4(Matrix3x2 matrix)| 使用 Matrix3x2 建構 Matrix4x4 <br/>\[matrix.11, matrix.12, 0, 0,<br/>matrix.21, matrix.22, 0, 0,<br/>0, 0, 1, 0,<br/>matrix.31, matrix.32, 0, 1\]|  
+|Matrix4x4.CreateTranslation(Vector3 translation)| 與 CreateFromTranslation 相同|  
+|Matrix4x4.CreateScale(Vector3 scale)| 與 CreateFromScale 相同|  
+
 
 ###四元數  
 
@@ -668,6 +775,6 @@ _target.StartAnimation(“Opacity”, exp);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

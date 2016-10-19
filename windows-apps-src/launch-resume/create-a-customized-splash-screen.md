@@ -5,7 +5,7 @@ description: "您可以為 app 建立延長式啟動顯示畫面，讓啟動顯�
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 ---
 
@@ -43,9 +43,9 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 
 -   在 Visual Studio 2015 中開啟您的應用程式。
 -   從功能表列按或開啟 [專案]****，然後按一下 [加入新項目]****。 將會出現 [加入新項目]**** 對話方塊。
--   從這個對話方塊，將一個新的 [空白頁面]**** 新增到您的應用程式。 這個主題將延長式啟動顯示畫面頁面命名為 "ExtendedSplash"。
+-   從這個對話方塊，將一個新的 \[空白頁面\] 新增到您的應用程式。 這個主題將延長式啟動顯示畫面頁面命名為 "ExtendedSplash"。
 
-新增一個 [空白頁面]**** 項目會產生兩個檔案，一個用於標記 (ExtendedSplash.xaml)，另一個用於程式碼 (ExtendedSplash.xaml.cs)。
+新增一個 \[空白頁面\] 項目會產生兩個檔案，一個用於標記 (ExtendedSplash.xaml)，另一個用於程式碼 (ExtendedSplash.xaml.cs)。
 
 ## 延長式啟動顯示畫面的基本 XAML
 
@@ -551,6 +551,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

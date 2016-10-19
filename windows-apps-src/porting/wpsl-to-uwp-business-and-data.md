@@ -5,7 +5,7 @@ title: "移值 Windows Phone Silverlight 商務與資料層至 UWP"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 24e94e91adc0e5ef0b7a076d54299eab8c4ba527
+ms.openlocfilehash: 57288b13af0f2ff4f677e2425442b43f3e76d4d8
 
 ---
 
@@ -142,6 +142,6 @@ Windows Phone Silverlight 應用程式對選用的 SD 記憶卡具有唯讀存�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

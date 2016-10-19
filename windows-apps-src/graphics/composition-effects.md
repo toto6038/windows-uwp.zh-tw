@@ -5,7 +5,7 @@ title: "組合效果"
 description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
 translationtype: Human Translation
 ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
+ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
 ---
 # 組合效果
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

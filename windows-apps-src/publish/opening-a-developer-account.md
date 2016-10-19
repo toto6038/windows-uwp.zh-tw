@@ -5,7 +5,7 @@ title: "開立開發人員帳戶"
 description: "這份關於如何註冊 Windows 市集和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。"
 translationtype: Human Translation
 ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
-ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
+ms.openlocfilehash: b9ccd8e4756dd35fd775d91747710dd13b9ca7ed
 
 ---
 # 開立開發人員帳戶
@@ -82,6 +82,6 @@ ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

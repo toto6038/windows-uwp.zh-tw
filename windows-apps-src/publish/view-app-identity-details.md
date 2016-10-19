@@ -5,7 +5,7 @@ title: "檢視 app 身分識別詳細資料"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 translationtype: Human Translation
 ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 ---
 
@@ -58,6 +58,6 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

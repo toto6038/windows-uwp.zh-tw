@@ -6,13 +6,14 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 
 
 ---
-
 # 工具提示
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 
 
 
@@ -20,10 +21,18 @@ ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
 
 ![工具提示](images/controls/tool-tip.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService 類別</strong></a></li>
+</ul>
 
--   [**ToolTip 類別**](https://msdn.microsoft.com/library/windows/apps/br227608)
--   [**ToolTipService 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+</div>
+</div>
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -68,13 +77,13 @@ Bing 地圖服務應用程式中的工具提示。
 -   不要在工具提示內放置互動式控制項。
 -   不要在工具提示內放置看起來像是互動式影像的影像。
 
-<span id="related_topics"></span>相關主題
+相關主題
 -----------------------------------------------
 
 * [**ToolTip 類別**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

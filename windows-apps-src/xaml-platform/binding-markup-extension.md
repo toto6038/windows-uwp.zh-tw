@@ -1,11 +1,11 @@
 ---
 author: jwmsft
 description: "Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。"
-title: "Binding 標記延伸&#39;"
+title: "Binding 標記延伸'"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
+ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
 
 ---
 
@@ -15,9 +15,9 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 **注意：**Windows 10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
 
-**注意：**如需有關在 app 中使用資料繫結與 **{Binding}** (以及完整比較 **{x:Bind}** 和 **{Binding}**) 的一般資訊，請擦月[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意：**如需有關在 App 中搭配 **{Binding}** 使用資料繫結的一般資訊 (以及取得 **{x:Bind}** 和 **{Binding}** 的完整比較)，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會從資料來源上的屬性取得值。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更自我重新整理。 您也可以選擇性地設定繫結物件，以便將自己的值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
+**{Binding}** 標記延伸是用來將控制項上的屬性資料繫結至來自資料來源的值 (例如程式碼)。 **{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會取得資料來源上的屬性值，並推送至控制項上的屬性。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更對它做出更新。 您也可以選擇性地設定繫結物件，以便將控制項值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
 **{Binding}** 具有與本機值相同的相依性屬性優先順序，並且在命令式程式碼中設定本機值將會移除標記中任何 **{Binding}** 設定的效果。
 
@@ -42,13 +42,13 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 | 詞彙 | 說明 |
 |------|-------------|
 | *propertyPath* | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
-| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
-| *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 | 
+| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
+| *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 |
 | *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-binding)一節的屬性。 |
 
 ## 屬性路徑
 
-*PropertyPath* 可以設定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的值，這是您打算繫結的屬性 (來源屬性)。 您可以明確地提及屬性名稱：`{Binding Path=...}`。 或者，您可以將它省略：`{Binding ...}`。
+*PropertyPath* 可以設定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的值，它說明了您要繫結的屬性 (來源屬性)。 PropertyPath 是位置參數，因此您可以將它指定為第一個未命名的參數：`{Binding Path=...}`。 或者，您可以明確使用參數名稱︰`{Binding Path=...}`。
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的類型是屬性路徑，它是自訂類型或架構類型之屬性或子屬性的評估字串。 類型可以是 (但不一定要是) [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 屬性路徑中的步驟會使用句點 (.) 隔開，您可以納入多個分隔符號來周遊連續的子屬性。 使用句點分隔符號，無論用來實作繫結目標物件的程式設計語言為何。
 
@@ -69,21 +69,24 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 | 屬性 | 說明 |
 |----------|-------------|
-| [**路徑**](https://msdn.microsoft.com/library/windows/apps/br209830) | 請參閱先前的[屬性路徑](#property-path)一節。 |
-| [**轉換器**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定繫結引擎呼叫的轉換器物件。 轉換器可以在 XAML 中設定，但若您參考已在 [{StaticResource} 標記延伸](staticresource-markup-extension.md)中指派的物件執行個體，請在資源字典中參考該物件。 |
-| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定轉換器要使用的文化特性 (若您要設定 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826))。文化特性可以設定為標準式識別碼。 如需詳細資訊，請參閱 **ConverterLanguage** | 
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可用於轉換器邏輯的轉換器參數 (如果您要設定 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826))。大多數轉換器都可以使用簡單邏輯，從傳遞的值中取得所需的所有資訊進行轉換，而且不需要 **ConverterParameter** 值。 **ConverterParameter** 參數適用於中度進階轉換器實作，其中具備一個以上使用 **ConverterParameter** 傳遞內容的邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 **ConverterParameter** 中的＜備註＞，以了解詳細資訊。 |
+| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | 請參閱先前的[屬性路徑](#property-path)一節。 |
+| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定繫結引擎呼叫的轉換器物件。 轉換器可以使用 [{StaticResource} 標記延伸](staticresource-markup-extension.md)在標記中設定，以參考至資源字典中的該物件。 |
+| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定轉換器要使用的文化特性 (若您要設定 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826))。文化特性可以設定為標準式識別碼。 如需詳細資訊，請參閱 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
+| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可用於轉換器邏輯的轉換器參數。 (如果您要設定 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826))。大多數轉換器都可以使用簡單邏輯，從傳遞的值中取得所需的所有資訊進行轉換，而且不需要 **ConverterParameter** 值。 **ConverterParameter** 參數適用於更為複雜的轉換器實作，這些實作具備可切斷 **ConverterParameter** 中傳遞之內容的條件式邏輯。 您可以撰寫一個使用字串以外的值的轉換器，但這並不常見，請參閱 **ConverterParameter** 中的＜備註＞，以了解詳細資訊。 |
 | [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 透過參考相同 XAML 建構中具有 **Name** 屬性或 [x:Name](x-name-attribute.md) 屬性的另一個元素來指定資料來源。 這通常是用來共用相關的值，或使用一個 UI 元素的子屬性提供特定值給另一個元素 (例如，在 XAML 控制項範本中)。 |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定當無法解析來源或路徑時，所要顯示的值。 | 
-| [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定繫結模式，如下列其中一個字串："OneTime"、"OneWay" 或 "TwoWay"。 這些會對應 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列舉的常數名稱。 預設值會取決於繫結目標，但在大部分情況下，它會是 "OneWay"。 請注意，這與 **{x:Bind}** 的預設值 ("OneTime") 不同。 | 
-| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 透過描述相對於繫結目標位置的繫結來源位置，以指定資料來源。 這會以執行階段物件圖形 (例如，指定物件的父系) 來表示。 設定 [{RelativeSource} 標記延伸](relativesource-markup-extension.md)。 |
-| [**來源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 屬性需要物件參考，例如 [{StaticResource} 標記延伸](staticresource-markup-extension.md)參考。 如果未指定這個屬性，動作資料內容會指定來源。 通常不會在個別的繫結中指定 Source 值，而是倚賴共用的 **DataContext** 進行多重繫結。 如需詳細資訊，請參閱[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)或[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定當無法解析來源或路徑時，所要顯示的值。 |
+| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | 指定繫結模式，如下列其中一值："OneTime"、"OneWay" 或 "TwoWay"。 這些會對應 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列舉的常數名稱。 預設值會取決於繫結目標，但在大部分情況下，它會是 "OneWay"。 請注意，這與 **{x:Bind}** 的預設值 ("OneTime") 不同。 | 
+| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 透過描述相對於繫結目標位置的繫結來源位置，以指定資料來源。 這最常用於 XAML 控制項範本內的繫結中。 設定 [{RelativeSource} 標記延伸](relativesource-markup-extension.md)。 |
+| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定物件資料來源。 在 **Binding** 標記延伸內，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 屬性需要物件參考，例如 [{StaticResource} 標記延伸](staticresource-markup-extension.md)參考。 如果未指定這個屬性，動作資料內容會指定來源。 通常不會在個別的繫結中指定 Source 值，而是倚賴共用的 **DataContext** 進行多重繫結。 如需詳細資訊，請參閱[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)或[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定繫結來源更新的時機。 如果沒有指定，則預設為 **Default**。 |
 
 **注意：**如果要將標記從 **{x:Bind}** 轉換成 **{Binding}**，請留意 **Mode** 屬性的預設值不同。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 與 **ConverterLanguage** 皆與來自繫結來源的值或類型轉換成和繫結目標屬性相容的類型或值的案例相關。 如需詳細資訊和範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)中的＜資料轉換＞一節。
+
+> [!NOTE]
+> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 與 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可以指定繫結來源，因此彼此互斥。
 
@@ -112,7 +115,7 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
     <Slider x:Name="sliderValueConverter" ... />
     <TextBox Text="{Binding Path=Value, ElementName=sliderValueConverter,
         Mode=OneWay,
-        Converter={StaticResource GradeConverter}}"/> 
+        Converter={StaticResource GradeConverter}}"/>
 </Page>
 ```
 
@@ -128,7 +131,6 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

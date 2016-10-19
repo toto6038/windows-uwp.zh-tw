@@ -5,7 +5,7 @@ title: "使用方向感應器"
 description: "了解如何使用方向感應器來判斷裝置方向。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 ---
 # 使用方向感應器
@@ -353,6 +353,6 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

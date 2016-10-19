@@ -5,7 +5,7 @@ description: "存取通用 Windows 平台 (UWP) 原生功能與 Windows 10 執�
 kw: Hosted Web Apps, Accessing Windows 10 features from remote JavaScript, Building a Win10 Web Application, Windows JavaScript Apps, Microsoft Web Apps, HTML5 app for PC, ACUR URI Rules for Windows App, Call Live Tiles with web app, Use Cortana with web app, Access Cortana from website, msapplication-cortanavcd
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a7f7dccb9c7461e482bd43c8f370a2a7244eb735
+ms.openlocfilehash: fb74bfc40750941860dae0a8f811fde4a614e403
 
 ---
 
@@ -153,6 +153,6 @@ function updateTile(message, imgUrl, imgAlt) {
 - [應用程式功能宣告](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

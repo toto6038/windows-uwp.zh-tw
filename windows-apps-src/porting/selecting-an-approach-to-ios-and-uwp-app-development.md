@@ -5,7 +5,7 @@ title: "選取 iOS 和 UWP app 開發的方式"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
+ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
 ---
 
@@ -96,6 +96,6 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

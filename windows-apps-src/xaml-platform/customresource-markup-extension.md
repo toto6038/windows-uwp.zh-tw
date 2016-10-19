@@ -5,7 +5,7 @@ title: "CustomResource 標記延伸"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
+ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
 
 ---
 
@@ -52,6 +52,6 @@ Windows 執行階段 XAML 剖析器只要在標記中遇到使用 `{CustomResour
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

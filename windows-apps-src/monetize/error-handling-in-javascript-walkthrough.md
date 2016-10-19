@@ -4,8 +4,8 @@ ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: "了解如何在您的 app 中抓取 AdControl 錯誤。"
 title: "JavaScript 錯誤處理的逐步解說"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 
 ---
@@ -13,9 +13,9 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
 # JavaScript 錯誤處理的逐步解說
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何在您的 app 中抓取 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
+
+了解如何在您的 App 中抓取 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
 
 這些範例假設您有包含 **AdControl** 的 JavaScript/HTML app。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -87,6 +87,6 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

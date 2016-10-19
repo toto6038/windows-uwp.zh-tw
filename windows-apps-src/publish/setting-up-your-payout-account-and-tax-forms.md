@@ -4,8 +4,8 @@ Description: "若要在 Windows 市集收取銷售應用程式的費用，您必
 title: "設定您的支付帳戶和納稅申報表"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 translationtype: Human Translation
-ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
-ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+ms.sourcegitcommit: ea9ea2d39ecd0fc54381df8d5fa7dd7cdc2fae51
+ms.openlocfilehash: 7de230aeee932f781a282ab7555e1c90bcd76460
 
 ---
 
@@ -16,12 +16,12 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 > **注意：**到 2016 年 4 月 1 日為止，您的 Microsoft Advertising 獲利將會支付到您在開發人員中心設定的相同支付帳戶。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 
-如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果之後您改變想法，決定要銷售 app (或 app 內產品)，您可以到時候再設定支付帳戶或填寫納稅申報表。 您要先完成支付帳戶和稅金設定檔，才能提交任何付費 app 或 IAP。
+如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果之後您改變想法，決定要銷售 App (或 App 內產品)，您可以到時候再設定支付帳戶或填寫納稅申報表。 您要先完成支付帳戶和稅金設定檔，才能提交任何付費 App 或附加內容。
 
-> **注意** 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 app。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
+> **注意** 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
 
-[設定開發人員帳戶](opening-a-developer-account.md)後，您需要做兩件事，才能在 Windows 市集銷售 app (或 IAP)：
+[設定開發人員帳戶](opening-a-developer-account.md)後，您需要做兩件事，才能在 Windows 市集銷售 App (或附加內容)：
 
 -   [設定您的支付帳戶](#setting_up_your_payout_account)
 -   [填寫您的納稅申報表](#paying_taxes)
@@ -88,7 +88,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 如果您是住在俄羅斯的開發人員，可能需要先提供文件給您的銀行，您的銀行才能將資金存入您的帳戶。 當您具備受款資格之後，我們將透過電子郵件為您提供下列資訊：
 
-1.  驗收證明書 (CoA) - 包含轉帳到您帳戶的付款金額。
+1.  接受證書 (AC) - 包含轉帳到您帳戶的付款金額。
 2.  App 開發人員合約 (ADA) - 需要副簽的開發人員合約的簽署複本。
 
 為確保付款能夠成功，請記住下列內容：
@@ -102,11 +102,11 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 如果您是住在烏克蘭的開發人員，可能需要先提供文件給您的銀行，您的銀行才能將資金存入您的帳戶。 當您具備受款資格之後，我們將透過電子郵件為您提供下列資訊：
 
-1.  驗收證明書 (CoA) - 包含轉帳到您帳戶的付款金額。
+1.  接受證書 (AC) - 包含轉帳到您帳戶的付款金額。
 2.  App 開發人員合約 (ADA) - 需要副簽的開發人員合約的簽署複本。
 3.  增修條款合約 (AA) - 這份文件可協助您的銀行用來識別您的支付款項。
 
-嘗試支付您的第一筆款項時，Microsoft 會提供所有三份文件。 針對任何後續的支付，您只會收到 CoA 文件。 請保留 ADA 和 AA 文件，以防您需要它們來從您的銀行接收未來的支付款項。
+嘗試支付您的第一筆款項時，Microsoft 會提供所有三份文件。 針對任何後續的支付，您只會收到 AC 文件。 請保留 ADA 和 AA 文件，以防您需要它們來從您的銀行接收未來的支付款項。
 
 為確保付款能夠成功，請記住下列內容：
 
@@ -160,6 +160,6 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

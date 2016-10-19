@@ -5,7 +5,7 @@ description: "Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 
 title: "在 Visual Studio 中建立專案"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
+ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
 
 ---
 
@@ -48,7 +48,7 @@ Visual Studio 是非常相似的。 您會看見如下圖中顯示的 [**開始�
 
 Visual Studio 中也提供好幾個可以選用的專案範本，如下圖中所示。
 
-![Visual Studio [新建專案] 對話方塊](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)如需此逐步解說，請依序點選 [**Visual C#**]、[**Windows**]、[**Windows 通用**] 以及 [**空白 App (Windows 通用)**]。 在 [**名稱**] 方塊中，輸入「MyApp」，然後點選 [**確定**]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
+![Visual Studio \[新建專案\] 對話方塊如需此逐步解說，請依序點選 \[Visual C#\]、\[Windows\]、\[Windows 通用\] 以及 \[空白 App (Windows 通用)\]。 在 \[名稱\] 方塊中，輸入「MyApp」，然後點選 \[確定\]。 Visual Studio 會建立並接著顯示您的第一個專案。 現在您可以開始設計您的應用程式並在其中新增程式碼。
 
 ## 下一步
 
@@ -56,6 +56,6 @@ Visual Studio 中也提供好幾個可以選用的專案範本，如下圖中所
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

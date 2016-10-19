@@ -5,7 +5,7 @@ description: "大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更�
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
+ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 ---
 
@@ -83,7 +83,7 @@ ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
      
 
 -   使用 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 與 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 為您的 app 指定並載入地區設定特定資源。 此外，請使用不包含特定地區設定的資產參考，因為這些 API 會根據使用者的設定判斷正確的地區設定，然後為使用者擷取正確的資源。
--   在 Microsoft Visual Studio 2015 中，選取 [**專案-&gt;存放區-&gt;建立應用程式套件...**]，然後建立套件。
+-   在 Microsoft Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 
 ## 定義縮放尺寸資源套件
 
@@ -100,7 +100,7 @@ Windows 10 提供 3 個使用者介面縮放係數：1.0x、1.4x 與 1.8x。 使
      
 
 -   使用 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中的 API 載入資產。 系統應該將資產參考一般化 (無尾碼)，省去特定的縮放變化。 系統將會針對顯示器和使用者的設定，擷取適當的縮放資產。
--   在 Visual Studio 2015 中，選取 [**專案-&gt;存放區-&gt;建立應用程式套件...**]，然後建立套件。
+-   在 Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 
 ## 定義 DirectX 功能層級資源套件
 
@@ -209,7 +209,7 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   在 Visual Studio 2015 中，選取 [**專案-&gt;存放區-&gt;建立應用程式套件...**]，然後建立套件。
+-   在 Visual Studio 2015 中，選取 \[專案-&gt;存放區-&gt;建立應用程式套件...\]，然後建立套件。
 -   確定您在 package.appxmanifest 資訊清單設定中啟用應用程式組合套件。
 
 ## 相關主題
@@ -229,6 +229,6 @@ DirectX 功能層級 10 或更高層級支援的紋理格式應新增到資源�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

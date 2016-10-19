@@ -24,7 +24,7 @@ ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
 
 -   使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 類別，使用 Windows 內建 HDR 處理演算法來擷取相片。 如需詳細資訊，請參閱[高動態範圍 (HDR) 相片擷取](high-dynamic-range-hdr-photo-capture.md)。
 
--   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680)，以使用 Windows 內建 HDR 處理演算法來擷取視訊。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)。
+-   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680)，以使用 Windows 內建 HDR 處理演算法來擷取影片。 如需詳細資訊，請參閱[視訊擷取的擷取裝置控制項](capture-device-controls-for-video-capture.md)。
 
 -   使用 [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) 擷取一系列的畫面，您可以接著使用自訂的 HDR 實作進行組合。 如需詳細資訊，請參閱[可變相片序列](variable-photo-sequence.md)。
 

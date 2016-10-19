@@ -5,7 +5,7 @@ description: "此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非�
 title: "C++ 中的非同步程式設計"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
+ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
 
 ---
 
@@ -116,7 +116,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 ## Lambda 函式傳回類型和工作傳回類型
 
-在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」**，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
+在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
 
 在上一個範例中，請注意工作傳回的是 **task<void>** 事件 (即使它的 Lambda 傳回 [**IAsyncInfo**][IAsyncInfo] 物件)。 下表摘要說明 Lambda 函式和封入工作之間的類型轉換：
 
@@ -150,7 +150,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 取消作業時，會將 [**task\_canceled**][taskCanceled] 例外狀況往下傳送到工作鏈結。 數值型接續將不會執行，但工作型接續會在呼叫 [**task::get**][taskGet] 之後擲回例外狀況。 如果您有一個錯誤處理接續，請確定它會清楚地攔截 **task\_canceled** 例外狀況 (這個例外狀況不是從 [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx) 衍生的)。
 
-取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 [取消]**** 按鈕，則不會呼叫 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
+取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 \[取消\] 按鈕，則不會呼叫 [IAsyncInfo::CancelI][AsyncInfoCancel] 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
 
 如需詳細資訊，請參閱 [PPL 中的取消](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
@@ -319,6 +319,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

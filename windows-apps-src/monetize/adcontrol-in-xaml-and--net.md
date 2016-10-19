@@ -4,23 +4,24 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML app 使用 AdControl 類別來顯示橫幅廣告。"
 title: "XAML 和 .NET 中的 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
 
 ---
 
 # XAML 和 .NET 中的 AdControl
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文會逐步說明如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML app 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別來顯示橫幅廣告。 本文中不會使用 **AdMediatorControl** 或廣告流量分配。
+
+本文會逐步說明如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML App 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別來顯示橫幅廣告。 本文中不會使用 **AdMediatorControl** 或廣告流量分配。
 
 如需示範如何將橫幅廣告新增到使用 C# 和 C++ 的 XAML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 ## 先決條件
 
-* 使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
+* 對於 UWP app︰請安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 與 Visual Studio 2015。
+* 對於 Windows 8.1 或 Windows Phone 8.1 App：請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 與 Visual Studio 2015 或 Visual Studio 2013。
 
 ## 程式碼開發
 
@@ -134,7 +135,7 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 ## 使用 Windows 開發人員中心發行包含即時廣告的 App
 
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**ApplicationId** 和 **AdUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -160,6 +161,6 @@ C ++：目前版本的 Microsoft advertising 程式庫支援 C++。 **AdControl*
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

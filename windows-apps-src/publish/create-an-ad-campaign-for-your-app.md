@@ -5,7 +5,7 @@ title: "為您的 app 建立廣告行銷活動"
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 translationtype: Human Translation
 ms.sourcegitcommit: ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7
-ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
+ms.openlocfilehash: 856643dca5b7b25e20b7b5a782de6cef792b94a8
 
 ---
 
@@ -16,9 +16,9 @@ ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
 
 > **注意** 您可以只針對已通過[應用程式認證程序](the-app-certification-process.md)最後發佈階段的 app 建立廣告行銷活動。
 
-以下說明如何建立廣告行銷活動來促銷您的 app。
+以下說明如何建立廣告行銷活動來促銷您的 App。
 
-1.  在開發人員中心儀表板中，從您 app 頁面上的左側導覽功能表，按一下 [獲利]****&gt; [促銷您的應用程式]****。
+1.  在開發人員中心儀表板中，從您 App 頁面上的左側導覽功能表，按一下 [獲利]**** &gt; [促銷您的 App]****。
 2.  執行下列其中一項：
 
     -   如果您還沒為此 app 建立廣告行銷活動，[促銷您的應用程式]**** 頁面會顯示與廣告行銷活動優點有關的資訊。 按一下 [立即開始]**** 或 [建立廣告行銷活動]****。
@@ -85,6 +85,6 @@ ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

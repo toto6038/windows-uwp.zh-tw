@@ -5,7 +5,7 @@ description: "一旦將建立和設定緩衝區與著色器物件的程式碼移
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d1d203fa74bd80fe26401e64d4e15bb11e5c1050
+ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
 
 ---
 
@@ -189,6 +189,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

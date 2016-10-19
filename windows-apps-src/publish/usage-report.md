@@ -4,17 +4,17 @@ Description: "Windows 開發人員中心儀表板的 [使用方式] 報告可讓
 title: "使用方式報告"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
 # 使用方式報告
 
 
-Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客戶在 Windows 10 上使用您 App 的方式，以及取得您所定義之自訂事件的相關資訊。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
+Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客戶在 Windows 10 上使用您 App 的方式，以及取得您所定義之自訂事件的相關資訊。 您可以在儀表板中檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
 
-> **注意** 過去只有在 App 中啟用 Visual Studio Application Insights SDK，**使用量**報告才會提供資料。 有了更新的**使用量**報告，就不需要這麼做。
+> **注意** 過去**使用量**報告只提供資料，如果您在您的 App 中啟用 Visual Studio Application Insights SDK。 有了更新的**使用量**報告，這不再需要。
 
 ## 套用篩選
 
@@ -45,7 +45,7 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 
 **自訂活動**圖表顯示您為 App 定義的任何自訂活動發生次數總計。 這可能包括同一客戶的多次活動。
 
-自訂活動會在 [Microsoft Store Engagement and Monetization SDK](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 中使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法實作。
+自訂事件會使用 [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) 中的 [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法實作。
 
 
 
@@ -53,10 +53,6 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

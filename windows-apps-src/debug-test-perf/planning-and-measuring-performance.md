@@ -5,7 +5,7 @@ title: "規劃效能"
 description: "使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。"
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
+ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 ---
 # 規劃效能
@@ -161,7 +161,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   針對各種硬體設定進行測試，包含全方位電腦和桌上型電腦、膝上型電腦、輕量級筆記型電腦、平板電腦及其他行動裝置。
 -   針對各種螢幕大小進行測試。 雖然較寬的螢幕大小可以顯示更多內容，但是顯示這些額外內容可能對效能產生負面影響。
 -   盡可能排除測試變數。
-    -   關閉測試裝置上的背景 app。 若要這樣做，在 Windows 中從 [開始] 功能表選取 [設定]**** &gt;[個人化]****&gt;[鎖定畫面]****。 選取每個使用中的 app，然後選取 [無]****。
+    -   關閉測試裝置上的背景 App。 若要這樣做，請在 Windows 中，從 [開始] 功能表選取 [設定]**** &gt; [個人化]**** &gt; [鎖定畫面]****。 選取每個使用中的 App，然後選取 [無]****。
     -   將 app 編譯為原生程式碼，方法是在發行組態中建置，然後再將它部署到測試裝置。
     -   若要確保自動維護不會影響測試裝置的效能，請手動觸發程序並等候它完成。 在 Windows 中，於 [開始] 功能表中搜尋 [安全性與維護]****。 在 [維護]**** 區域的 [自動維護]**** 底下，選取 [開始維護]**** 並且等待狀態從 [正在進行維護]**** 變更。
     -   執行 app 多次有助於排除隨機測試變數，並確保測量結果一致。
@@ -194,6 +194,6 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

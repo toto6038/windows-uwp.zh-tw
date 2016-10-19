@@ -4,16 +4,18 @@ title: "xDeferLoadStrategy 屬性"
 description: "xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 ---
 
-# x&#58;DeferLoadStrategy 屬性
+# x:DeferLoadStrategy 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**x:DeferLoadStrategy="Lazy"** 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。 延遲的元素樹狀結構愈大，節省的啟動時間就愈多，但代價是記憶體使用量較大。 因此，過度使用此屬性可能導致效能降低。
+**x:DeferLoadStrategy="Lazy"** 是可用來最佳化 XAML 應用程式啟動效能或樹狀目錄建立案例的一項功能。 使用 **x:DeferLoadStrategy="Lazy"** 會延遲建立元素及它的子項，藉由不需要建立元素來減少啟動時間及記憶體的成本。 這在降低不常需要或只在特定條件下需要之元素的成本時很有用。 當從程式碼或 VisualStateManager 參考元素時，元素將會具現化。
+
+不過，處理延遲的作業會針對每個受影響的元素，增加大約 600 個位元組的記憶體使用量。 延遲的元素樹狀結構愈大，節省的啟動時間就愈多，但代價是記憶體使用量較大。 因此，過度使用此屬性可能導致效能降低。
 
 ## XAML 屬性用法
 
@@ -27,7 +29,7 @@ ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 -   必須定義 [x:Name](x-name-attribute.md)，因為後續必須要有尋找元素的方法。
 -   只有 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 可標示為延遲，但衍生自 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的類型例外。
--   根元素不可在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延遲。
+-   根元素不可在 [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延遲。
 -   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不可延遲。
 -   不使用透過 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 載入的鬆散 XAML。
 -   移動父元素將會清除任何尚未辨識的元素。
@@ -88,6 +90,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

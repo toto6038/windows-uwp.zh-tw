@@ -1,17 +1,16 @@
 ---
 description: "了解如何讓您的 app 包容世界各地的使用者且無障礙。"
-keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
+keywords: "uwp app 協助工具, 全球化, 設計包容性 app, 協助工具 app 需求"
 title: "UWP app 的可用性 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
-ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
+ms.sourcegitcommit: 589e3290a47a9245ddb5e43f64d13bae1244ac8b
+ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
 
 ---
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
 # UWP app 的可用性
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 在小地方的貼心設計和對細節的嚴苛要求，才能讓使用者體驗轉變成可滿足全球使用者需求，而成為真正具有包容性的使用者體驗。
 
@@ -104,7 +103,7 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ## 全球化與當地語系化
 
-全球不同文化特性、地區和語言的對象都使用 Windows。 使用者可能會說任何語言，甚至是多種語言。 使用者可能位於世界上的任何地方，而且可能會說任何位置的任何語言。 您可以使用全球化和當地語系化，將您的 App 設計成容易適應，以增加 App 的潛在市場。 
+全球不同文化特性、地區和語言的對象都使用 Windows。 使用者可能會說任何語言，甚至是多種語言。 使用者可能位於世界上的任何地方，而且可能會說任何位置的任何語言。 您可以使用全球化和當地語系化，將您的 App 設計成容易適應，以增加 App 的潛在市場。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -154,7 +153,7 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ## 應用程式設定
 
-應用程式設定可讓您的使用者自訂您的 app、將 app 最佳化以滿足他們的個別需求和喜好。 提供正確的設定並正確儲存設定甚至可讓良好的使用者體驗變得更好。 
+應用程式設定可讓您的使用者自訂您的 app、將 app 最佳化以滿足他們的個別需求和喜好。 提供正確的設定並正確儲存設定甚至可讓良好的使用者體驗變得更好。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -168,16 +167,16 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 </div>
 
 ## 應用程式內說明
-無論您的 App 設計有多完美，某些使用者也將會需要一些額外的說明。 
+無論您的 App 設計有多完美，某些使用者也將會需要一些額外的說明。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[App 說明的指導方針](../app-help-guidelines/guidelines-for-app-help.md)</b><br/>應用程式可能十分複雜，提供有效的說明，讓使用者可以大幅改善其體驗。 
+<p><b>[App 說明的指導方針](../in-app-help/guidelines-for-app-help.md)</b><br/>應用程式可能十分複雜，提供有效的說明，讓使用者可以大幅改善其體驗。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[指示性 UI](../app-help-guidelines/instructional-ui.md)</b><br/>有些時候，教導使用者有關 App 中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過 UI 對使用者顯示指示，讓他們可以探索和使用他們可能遺漏的功能。</p>
+<p><b>[指示性 UI](../in-app-help/instructional-ui.md)</b><br/>有些時候，教導使用者有關 App 中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過 UI 對使用者顯示指示，讓他們可以探索和使用他們可能遺漏的功能。</p>
   </div>
 </div>
 </div>
@@ -185,19 +184,16 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[應用程式內說明](../app-help-guidelines/in-app-help.md)</b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
+<p><b>[應用程式內說明](../in-app-help/in-app-help.md)</b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[外部說明](../app-help-guidelines/external-help.md)</b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
+<p><b>[外部說明](../in-app-help/external-help.md)</b><br/>大部分時間，最好是在應用程式內顯示說明，並在使用者選擇檢視時才顯示。 當建立應用程式內說明時，請考慮下列指導方針。</p>
   </div>
 </div>
 </div>
 
 
 
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

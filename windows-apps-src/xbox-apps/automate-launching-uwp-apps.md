@@ -3,8 +3,8 @@ title: "自動化啟動 Windows 10 通用 Windows 平台 (UWP) 應用程式"
 description: "開發人員可以使用通訊協定啟用和啟動啟用來自動化啟動他們的 UWP app 或遊戲，以自動進行測試。"
 author: listurm
 translationtype: Human Translation
-ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
-ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
+ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 ---
 
@@ -45,7 +45,7 @@ App 就可以透過使用包含 start 命令，後面接著之前設定的通訊
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-URI 物件都有剖析此格式之 URI 字串的方法。 如需詳細資訊，請參閱 [URI 類別 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx)。 
+URI 物件都有剖析此格式之 URI 字串的方法。 如需詳細資訊，請參閱 [URI 類別 (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx)。 
 
 範例：
 
@@ -98,7 +98,7 @@ Uri(URI));
        }
 }
 ```
-使用啟動程式應用程式的通訊協定啟用具有與使用命令列之通訊協定啟用相同的引數限制。 兩者都支援在原始 URI 上 Unicode 字元最多 2038 個字元的限制。 
+使用啟動程式應用程式的通訊協定啟用具有與使用命令列之通訊協定啟用相同的引數限制。 兩者在原始 URI 上都支援最多 2038 個字元的 Unicode 字元限制。 
 
 ## 啟動啟用
 
@@ -113,11 +113,11 @@ Uri(URI));
 
 3. 如果未列出 [套件系列名稱]****，請開啟 PowerShell 並執行 `>get-appxpackage MyPackageName` 以尋找 **PackageFamilyName**。
 
-應用程式識別碼可以在 `<Applications>` 元素底下的**Package.appxmanifest** 檔案 (在 XML 檢視中開啟) 中找到。
+應用程式識別碼可以在 `<Applications>` 元素底下的 **Package.appxmanifest** 檔案 (在 XML 檢視中開啟) 中找到。
 
 ### 命令列
 
-執行 UWP app 啟動啟用的工具，會與 Windows 10 SDK 一起安裝。 它可以從命令列執行，它需要 app 的 AUMID 做為引數啟動。
+執行 UWP App 啟動啟用的工具，會與 Windows 10 SDK 一起安裝。 它可以從命令列執行，它需要 app 的 AUMID 做為引數啟動。
 
 ```
 C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe <AUMID>
@@ -133,7 +133,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### 啟動程式應用程式
 
-您可以建立支援使用 COM 來進行啟動的個別應用程式。 下列範例顯示利用啟動程式中的啟動啟用進行啟動的 C++ 程式碼。 您可以使用這個程式碼建立 **ApplicationActivationManager** 物件並在先前發現的 AUMID 和任何引數中呼叫 **ActivateApplication** 傳遞。 如需其他參數的詳細資訊，請參閱 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx)。
+您可以建立支援使用 COM 來進行啟動的個別應用程式。 下列範例顯示利用啟動程式中的啟動啟用進行啟動的 C++ 程式碼。 您可以使用這個程式碼建立 **ApplicationActivationManager** 物件並在先前發現的 AUMID 和任何引數中呼叫 **ActivateApplication** 傳遞。 如需其他參數的詳細資訊，請參閱 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx)。
 
 ```
 #include <ShObjIdl.h>
@@ -205,10 +205,14 @@ Platform::String^ argval = launchArgs->Arguments;
 ```
 
 ## 摘要
-在摘要中，您可以使用各種方法來啟動 UWP app。 根據需求和使用情況，不同的方法可能比其他方法更適合。 
+在摘要中，您可以使用各種方法來啟動 UWP app。 根據需求和使用情況，某些方法可能會比其他方法更適合。 
+
+## 另請參閱
+- [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

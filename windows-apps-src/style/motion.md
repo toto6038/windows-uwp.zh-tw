@@ -1,13 +1,21 @@
 ---
-Description&#58; 作者：mijacobs 有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
-title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8-560B340AE966 label&#58; Motion template&#58; detail.hbs testmetadata&#58; testing tocnode&#58;design and ui
+author: mijacobs
+Description: "有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。"
+title: "UWP app 中的動作和動畫"
+ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
+label: Motion
+template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+
 ---
 
 # 適用於 UWP app 的動作
 
-有意義且精心設計的動畫會讓 App 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
+有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>動畫的優勢
+## 動畫的優勢
 
 
 動畫不只是讓物品移動。 動畫是一個用來為使用者建立實體生態系統的工具，以讓使用者沈浸其中，並透過觸控方式進行操縱。 體驗的品質高低依 app 如何回應使用者及 UI 的通訊特質種類而定。
@@ -54,7 +62,7 @@ title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8
         </td>
         <td>清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
         </td>
-    </tr> 
+    </tr>
     <tr>
         <td>[拖放](motion-dragdrop.md)
         </td>
@@ -103,10 +111,6 @@ title&#58; UWP app 中的動作與動畫 ms.assetid&#58; 21AA1335-765E-433A-85D8
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

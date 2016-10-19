@@ -6,8 +6,8 @@ title: "協助工具"
 label: Accessibility
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
+ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 | 文章 | 說明 |
 |---------|-------------|
 | [協助工具概觀](accessibility-overview.md) | 這篇文章提供 UWP app 協助工具案例相關概念和技術的概觀。 |
-| [設計全人軟體](designing-inclusive-software.md) | 了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) app 來改善全人設計。  在設計和建置全人軟體時考量提供無障礙功能。 |
+| [設計通用軟體](designing-inclusive-software.md) | 了解如何透過適用於 Windows 10 的 UWP App 來改善通用設計。  在設計和建置通用軟體時請隨時考量提供無障礙功能。 |
 | [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) | 此文章是適用於開發無障礙 UWP app 的藍圖。 |
 | [協助工具測試](accessibility-testing.md) | 確認 UWP app 可提供無障礙功能的測試程序。 |
 | [市集中的協助工具](accessibility-in-the-store.md) | 說明在 Windows 市集中，宣告 UWP app 提供無障礙功能的條件。 |
@@ -40,10 +40,10 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 
 <span id="related_topics"/>
 ## 相關主題  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

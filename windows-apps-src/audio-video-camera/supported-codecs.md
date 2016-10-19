@@ -4,8 +4,8 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文列出 UWP app 支援的音訊與視訊轉碼器和格式。"
 title: "支援的轉碼器"
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
@@ -22,8 +22,8 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 下表顯示各裝置系列支援的音訊編碼器和格式。
 
-**注意**  
--   指示支援 AMR-NB 時，表示在 Server SKU 上不支援這個編碼器。
+> [!NOTE] 
+> 指示支援 AMR-NB 時，表示在 Server SKU 上不支援這個編碼器。
 
  
 
@@ -1586,9 +1586,9 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 下表顯示各裝置系列支援的視訊編碼器和格式。
 
-**注意**  
--   指示支援 H.265 時，表示不是該裝置系列中的所有裝置都支援。
--   指示支援 MPEG-2/MPEG-1 時，表示只有安裝選用的 Microsoft DVD 通用 Windows app 之後才支援。
+> [!NOTE] 
+> 指示支援 H.265 時，表示不是該裝置系列中的所有裝置都支援。
+> 指示支援 MPEG-2/MPEG-1 時，表示只有安裝選用的 Microsoft DVD 通用 Windows app 之後才支援。
 
  
 
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

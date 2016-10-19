@@ -4,8 +4,8 @@ ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃光燈功能來管理。"
 title: "相機獨立閃光燈"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
@@ -42,7 +42,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 ## 調整燈光設定
 
-一旦擁有 [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) 類別的執行個體，請將 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) 屬性設定為 **true**，以開啟燈光。
+擁有 [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) 類別的執行個體後，請將 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) 屬性設定為 **true** 以開啟燈光。
 
 [!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
 
@@ -70,7 +70,8 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## 相關主題
+- [媒體播放](media-playback.md)
 
  
 
@@ -80,6 +81,6 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

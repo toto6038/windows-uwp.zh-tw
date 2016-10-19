@@ -7,8 +7,8 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
+ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>手機</td>
-        <td>![system back on a phone](images/back-systemback-phone.png)</td>
+        <td>![手機上的系統返回](images/back-systemback-phone.png)</td>
         <td>
         <ul>
 <li>一律顯示。</li>
@@ -41,7 +41,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
      <tr>
         <td>平板電腦</td>
-        <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
+        <td>![平板電腦上的系統返回 (平板電腦模式)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
 <li>在平板電腦模式中一律顯示。
@@ -56,7 +56,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>電腦、膝上型電腦、平板電腦</td>
-        <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
+        <td>![電腦或膝上型電腦上的系統返回](images/back-systemback-pc.png)</td>
         <td>
 <ul>
 <li>在桌面模式中為選擇性。
@@ -73,7 +73,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>Surface Hub</td>
-        <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
+        <td>![Surface Hub 上的系統返回](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
 <li>選用。</li>
@@ -90,74 +90,75 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 
 <table>
 <tr><td colspan="3">輸入裝置</td></tr>
-<tr><td>鍵盤</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows 鍵 + 退格鍵</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>請說「嗨 Cortana 返回」</td></tr>
+<tr><td>鍵盤</td><td>![鍵盤](images/keyboard-wireframe.png)</td><td>Windows 鍵 + 退格鍵</td></tr>
+<tr><td>Cortana</td><td>![語音](images/speech-wireframe.png)</td><td>請說「嗨 Cortana，返回」</td></tr>
 </table>
  
 
 當您的 app 在手機、平板電腦或啟用系統返回的電腦或膝上型電腦上執行時，按下返回按鈕後，系統就會通知您的 app。 使用者預期返回按鈕會瀏覽到應用程式瀏覽歷程的前一個位置。 您可以決定加入瀏覽歷程的瀏覽動作，以及如何回應按下返回按鈕。
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>如何啟用系統返回瀏覽支援
+## 如何啟用系統返回瀏覽支援
 
 
 App 必須啟用所有的硬體和軟體系統返回按鈕的返回瀏覽。 執行方式是登錄 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的接聽程式並定義對應的處理常式。
 
 我們現在在 App.xaml 程式碼後置檔案中登錄 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的全域接聽程式。 如果某些頁面不要有返回瀏覽，或者您想要在顯示頁面之前執行頁面層級的程式碼，可以在每個頁面中針對此事件登錄。
 
-```CSharp
+> [!div class="tabbedCodeSnippets"]
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
+    App_BackRequested;
+```
+```cpp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
         this, &amp;App::App_BackRequested);
 ```
 
-```CSharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
-```
-
 以下是對應的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件處理常式，在 app 根框架上呼叫 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)。
 
 這個處理常式會在發生全域返回事件時叫用。 如果 app 內的返回堆疊是空的，系統可能會瀏覽到 app 堆疊中的前一個 app 或 [開始] 畫面。 桌面模式沒有 app 返回堆疊，即使 app 內的返回堆疊用盡，使用者還是會留在 app 中。
 
-```CSharp
-void App::App_BackRequested(
-    Platform::Object^ sender, 
-    Windows::UI::Core::BackRequestedEventArgs^ e)
-{
-    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
-    if (rootFrame == nullptr)
-        return;
-
-    // Navigate back if possible, and if the event has not
-    // already been handled.
-    if (rootFrame->CanGoBack &amp;&amp; e->Handled == false)
-    {
-        e->Handled = true;
-        rootFrame->GoBack();
-    }
-}
+> [!div class="tabbedCodeSnippets"]
+```csharp
+>private void App_BackRequested(object sender, 
+>    Windows.UI.Core.BackRequestedEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>    if (rootFrame == null)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not 
+>    // already been handled .
+>    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    {
+>        e.Handled = true;
+>        rootFrame.GoBack();
+>    }
+>}
+```
+```cpp
+>void App::App_BackRequested(
+>    Platform::Object^ sender, 
+>    Windows::UI::Core::BackRequestedEventArgs^ e)
+>{
+>    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not
+>    // already been handled.
+>    if (rootFrame->CanGoBack && e->Handled == false)
+>    {
+>        e->Handled = true;
+>        rootFrame->GoBack();
+>    }
+>}
 ```
 
-```CSharp
-private void App_BackRequested(object sender, 
-    Windows.UI.Core.BackRequestedEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame == null)
-        return;
-
-    // Navigate back if possible, and if the event has not 
-    // already been handled .
-    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
-    {
-        e.Handled = true;
-        rootFrame.GoBack();
-    }
-}
-```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何啟用標題列返回按鈕
+## 如何啟用標題列返回按鈕
 
 
 支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
@@ -181,63 +182,64 @@ private void App_BackRequested(object sender,
 
 針對這個範例，如果框架之 [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) 屬性的值為 **true**，我們就列出返回堆疊中的每個頁面，然後啟用返回按鈕。
 
-```ManagedCPlusPlus
-void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>protected override void OnNavigatedTo(NavigationEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>
+>    string myPages = "";
+>    foreach (PageStackEntry page in rootFrame.BackStack)
+>    {
+>        myPages += page.SourcePageType.ToString() + "\n";
+>    }
+>    stackCount.Text = myPages;
+>
+>    if (rootFrame.CanGoBack)
+>    {
+>        // Show UI in title bar if opted-in and in-app backstack is not empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if in-app back stack is empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Collapsed;
+>    }
+>}
+>```
+>```cpp
+>void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
+>{
+>    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+>
+>    Platform::String^ myPages = "";
+>
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    for each (PageStackEntry^ page in rootFrame->BackStack)
+>    {
+>        myPages += page->SourcePageType.ToString() + "\n";
+>    }
+>    stackCount->Text = myPages;
+>
+>    if (rootFrame->CanGoBack)
+>    {
+>        // If we have pages in our in-app backstack and have opted in to showing back, do so
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if there are no pages in our in-app back stack
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
+>    }
+>}
+>```
 
-    Platform::String^ myPages = "";
-
-    if (rootFrame == nullptr)
-        return;
-
-    for each (PageStackEntry^ page in rootFrame->BackStack)
-    {
-        myPages += page->SourcePageType.ToString() + "\n";
-    }
-    stackCount->Text = myPages;
-
-    if (rootFrame->CanGoBack)
-    {
-        // If we have pages in our in-app backstack and have opted in to showing back, do so
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if there are no pages in our in-app back stack
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
-    }
-}
-```
-
-```CSharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-
-    string myPages = "";
-    foreach (PageStackEntry page in rootFrame.BackStack)
-    {
-        myPages += page.SourcePageType.ToString() + "\n";
-    }
-    stackCount.Text = myPages;
-
-    if (rootFrame.CanGoBack)
-    {
-        // Show UI in title bar if opted-in and in-app backstack is not empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if in-app back stack is empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Collapsed;
-    }
-}
-```
 
 ### 自訂返回瀏覽行為的指導方針
 
@@ -295,14 +297,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>繼續
+### 繼續
 
-當使用者切換到其他 app，再回到您的 app 時，我們建議回到瀏覽歷程中的最後一個頁面。
-
-
+當使用者切換到其他 app，再回到您的 app 時，我們建議回到瀏覽歷程記錄中的最後一個頁面。
 
 
+## 取得範例
+*   [返回按鈕範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
+    說明如何設定返回按鈕事件的事件處理常式，以及如何針對處於視窗桌面模式的 app 啟用標題列返回按鈕。
 
+## 相關文章
+* [瀏覽基本知識](navigation-basics.md)
 
  
 
@@ -312,6 +317,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

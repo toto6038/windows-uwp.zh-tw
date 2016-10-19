@@ -4,8 +4,8 @@ Description: "您可以從應用程式提交程序的 [價格與可用性] 頁�
 title: "設定應用程式價格與可用性"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
+ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 ---
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 ## 銷售定價
 
 
-如果您想要以降低的價格提供 app 一段有限的時間，您可以建立及排程銷售。 如需詳細資訊，請參閱[銷售 app 和 IAP](put-apps-and-iaps-on-sale.md)。
+如果您想要以降低的價格提供 App 一段有限的時間，您可以建立及排程銷售。 如需詳細資訊，請參閱[降價銷售應用程式與附加內容](put-apps-and-add-ons-on-sale.md)。
 
 ## 配送和可見性
 
@@ -59,21 +59,7 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 ## Windows 10 裝置系列
 
-本節可讓您指出客戶可以使用何種類型的 Windows 10 裝置來取得您的應用程式。 (如果您的套件不會在特定的裝置類型上執行，我們將不會提供它下載至該類型的裝置。)
-
-> **重要** 若要完全防止特定 Windows 10 裝置系列取得您的應用程式，您需要更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素，讓目標僅限於要支援的裝置系列 (也就是 **Windows.Mobile** 或 **Windows.Desktop**)，而不是讓它做為 Microsoft Visual Studio 預設包含在 appx 資訊清單中的 **Windows.Universal** 值 (適用於通用裝置系列)。
-
-根據預設，將會勾選 [行動]**** 和 [桌面]**** 方塊。 我們建議您讓這些方塊保持核取狀態，除非有特殊原因必須限制可以取得您的應用程式的 Windows 10 裝置類型。 例如，您可能已建立 Windows 通用套件，但是您仍然需要測試應用程式在行動裝置上的一些問題。 若要防止新客戶在 Windows 10 行動裝置上下載 app，您可以取消核取這裡的 [**行動裝置**] 核取方塊。 然後，如果您之後決定要提供給 Windows 10 行動裝置的客戶，您可以建立新的提交並且勾選 [行動裝置]**** 方塊。
-
-如果您已測試您的應用程式以確保它可以在 Microsoft HoloLens 上適當地執行，您也可以勾選 [全像攝影]**** 方塊將此應用程式提供給 HoloLens 客戶。 如需建置、測試及發佈全像攝影應用程式的詳細資訊，請參閱 [Windows 全像攝影開發概觀](http://dev.windows.com/holographic/development_overview)。
-
-請注意，您在此區段中選取的選項將套用到您應用程式的所有套件，而不論它們的目標作業系統為何 (Windows 10、Windows 8.x、Windows Phone 8.x 等)。 但是，它們只影響到使用 Windows 10 裝置 (且不是 Windows 8.x 或 Windows Phone 8.x 裝置) 的客戶的可用性。
-
-另請注意，您在這裡所做的選擇僅會套用至新的下載。 已經有您的 app 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除該裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 app 的客戶。 例如，如果您有具有 Windows Phone 8.1 套件的已發佈 app，您稍後將 Windows 10 (UWP) 套件新增至目標為通用裝置系列的相同 app，具有您的 Windows Phone 8.1 套件的 Windows 10 行動裝置客戶就會取得這個 Windows 10 (UWP) 套件的更新，即使您已經取消核取 [行動裝置]**** 方塊 (因為這不是新購買而是更新)。 但是，如果您未提供目標為通用或行動裝置系列的任何 Windows 10 (UWP) 套件，則您的 Windows 10 行動裝置客戶仍然保持為 Windows Phone 8.1 套件。
-
-如需裝置系列的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)和 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)。
-
-> **注意** 您也將看到一個核取方塊，讓您可以指出是否要讓 Microsoft 將 app 提供給未來的 Windows 10 裝置系列。 我們建議您保持核取此方塊，讓您的 app 在新裝置系列引入時可供更多潛在客戶使用。
+裝置系列可用性現在已在您提交的 [套件]**** 頁面上管理。 如需詳細資訊，請參閱[裝置系列可用性](upload-app-packages.md#device-family-availability)。
 
 ## 組織授權
 
@@ -90,7 +76,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 -   選擇 [通過認證之後就立即發佈此提交項目]**** 可讓此提交項目在市集中以最快方式取得。
 -   如果您希望提交項目要到您明確指定時才發佈，請選擇 [手動發佈此提交項目]****。 您可以從認證狀態頁面按一下 [立即發佈]**** 或依照下面描述選取特定日期進行手動發佈。
 -   選擇 [**不早於 \[日期\]**] 可確保提交項目要到某個日期之後才會發佈。 使用此選項，您的提交項目會在指定日期的當天或之後立即發行。 此日期至少必須是未來的 24 小時後。 除了日期，您還能指定應開始發佈提交項目的時間。
-    > **注意** 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的 app (或更新)。
+
+   > **注意** 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的 app (或更新)。
 
 您也可以在提交 app 之後變更發行日期，只要還沒有進入 [發佈]**** 步驟即可。
  
@@ -103,6 +90,6 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -156,7 +156,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
-## ControlChannelTrigger 搭配 WebSockets
+## ontrolChannelTrigger 搭配 WebSockets
 
 使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
 

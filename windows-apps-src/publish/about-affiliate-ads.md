@@ -5,7 +5,7 @@ title: "關於聯盟廣告"
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
+ms.openlocfilehash: e60ed6b6237b053a370a42bdb87f9366b265e4d0
 
 ---
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
 
 選擇加入 Microsoft 聯盟廣告計劃：
 
-1. 移至 Windows 開發人員中心儀表板中的 [營利]****&gt;[利用廣告營利]**** 頁面。
+1. 移至 Windows 開發人員中心儀表板中的 [營利]**** &gt; [利用廣告營利]**** 頁面。
 2. 在 [Microsoft 聯盟廣告]**** 區段中，選取 [在我的應用程式中顯示 Microsoft 聯盟廣告]**** 核取方塊。
 
 在您選取或取消選取此核取方塊之後，不需要重新發佈您的應用程式，變更就會生效。
@@ -49,6 +49,6 @@ ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

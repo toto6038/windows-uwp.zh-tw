@@ -6,20 +6,32 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ---
 # 翻轉檢視
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate 屬性</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
--   [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
--   [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**ItemTemplate 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -106,7 +118,7 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意** &nbsp;&nbsp;填入 FlipView 有兩種方法，您可以新增項目到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+>**注意**&nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
 ### 指定項目的外觀
 
@@ -211,6 +223,6 @@ stackPanel1.Children.Add(flipView1);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

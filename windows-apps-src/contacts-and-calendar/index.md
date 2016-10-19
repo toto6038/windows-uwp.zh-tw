@@ -4,8 +4,8 @@ description: "如何在 UWP app 中使用連絡人和行事曆資訊。"
 title: "連絡人和行事曆"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
+ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
+ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
 
 ---
 
@@ -19,10 +19,12 @@ ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
 
 | 主題 | 說明 |
 |-------|-------------|
-| [選取連絡人](selecting-contacts.md) | 在整個 [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空間中，有好幾種方法可以用來選取連絡人。 我們會在這裡示範如何選取單一連絡人或多位連絡人，也會示範如何設定連絡人選擇器，只抓取您 app 所需的連絡人資訊。 | 
+| [選取連絡人](selecting-contacts.md) | 在整個 [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空間中，有好幾種方法可以用來選取連絡人。 我們會在這裡示範如何選取單一連絡人或多位連絡人，也會示範如何設定連絡人選擇器，只抓取您 app 所需的連絡人資訊。 |
 | [傳送電子郵件](sending-email.md) | 示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。 |
 | [傳送 SMS 訊息](sending-an-sms-message.md) | 本主題示範如何啟動 [撰寫 SMS] 對話方塊，讓使用者傳送 SMS 訊息。 您可以在顯示該對話方塊之前，使用資料預先填入 SMS 的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。 |
 | [管理約會](managing-appointments.md) | 您可以透過 [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空間，在使用者的行事曆 app 建立和管理約會。 這裡，我們將示範如何建立約會、將約會新增到行事曆 app、在行事曆 app 替換約會，以及從行事曆 app 移除約會。 同時還會示範如何顯示行事曆 app 的時間範圍，以及建立約會週期物件。 |
+| [將 App 連結到連絡人卡片上的動作](integrating-with-contacts.md) | 說明如何讓您的 app 顯示在連絡人卡片或迷你連絡人卡片上的動作旁邊。 使用者可以選擇您的 app 來執行動作，例如開啟個人資料頁面、撥打電話，或傳送訊息。 |
+| [提供社交動向摘要給連絡人 app](integrating-social-feeds-into-contact-cards.md) | 將來自您資料庫的社交動向摘要資料整合到連絡人 app 中 您的摘要資料將會顯示在連絡人 app 的 [最新動向]<strong></strong> 頁面，或連絡人的 [個人資料]<strong></strong> 頁面中。 |
 
  
 
@@ -32,12 +34,11 @@ ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
 * [連絡人管理員 API 範例](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [連絡人選擇器應用程式範例](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [處理連絡人動作範例](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
+* [社交資訊範例](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

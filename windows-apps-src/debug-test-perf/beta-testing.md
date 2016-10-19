@@ -5,7 +5,7 @@ title: "搶鮮版 (Beta) 測試"
 description: "搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
+ms.openlocfilehash: 13857b2ba5946149d04ad4f6eda6828cc11a0640
 
 ---
 # 搶鮮版 (Beta) 測試
@@ -50,6 +50,6 @@ ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

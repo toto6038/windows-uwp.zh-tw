@@ -7,22 +7,35 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 1a2d5efbeacd5ce8a71f5261aa52f09400c75c97
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ---
 # 密碼方塊
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 密碼方塊是一個文字輸入方塊，會基於隱私權考量而隱藏輸入其中的字元。 密碼方塊看起來就像文字方塊，只不過它會將已輸入的文字轉譯成預留位置字元。 您可以設定預留位置字元。
 
 根據預設，密碼方塊會提供一種方式，讓使用者能夠藉由按住顯示按鈕來檢視他們的密碼。 您可以停用顯示按鈕，或提供替代機制來顯示密碼，例如核取方塊。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Password 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>PasswordChar 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>PasswordRevealMode 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>PasswordChanged 事件</strong></a></li>
+</ul>
 
--   [**PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
--   [**Password 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)
--   [**PasswordChar 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)
--   [**PasswordRevealMode 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
--   [**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -56,7 +69,7 @@ ms.openlocfilehash: 1a2d5efbeacd5ce8a71f5261aa52f09400c75c97
 <StackPanel>  
   <PasswordBox x:Name="passwordBox" Width="200" MaxLength="16"
              PasswordChanged="passwordBox_PasswordChanged"/>
-           
+
   <TextBlock x:Name="statusText" Margin="10" HorizontalAlignment="Center" />
 </StackPanel>   
 ```
@@ -116,7 +129,7 @@ PasswordBox 有一個內建按鈕，使用者按下該按鈕就會顯示密碼�
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 屬性的值並非決定是否要讓使用者看見密碼顯示按鈕的唯一因素。 其他因素包括控制項是否會以大於最小寬度的形式來顯示、PasswordBox 是否具有焦點，以及文字輸入欄位是否包含至少一個字元。 密碼顯示按鈕只有在 PasswordBox 第一次收到焦點且輸入字元時才會顯示。 如果 PasswordBox 失去焦點，然後重新取得焦點，除非將密碼清除並重新開始輸入字元，否則顯示按鈕將不會再次顯示。
 
-> **注意** &nbsp;&nbsp;在 Windows 10 之前，預設不會顯示密碼顯示按鈕。 如果您的 app 基於安全性要求一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
+> **注意**&nbsp;&nbsp;在 Windows 10 之前，預設不會顯示密碼顯示按鈕。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
 
 ### 隱藏和顯示模式
 
@@ -130,10 +143,10 @@ PasswordBox 有一個內建按鈕，使用者按下該按鈕就會顯示密碼�
 
 ```xaml
 <StackPanel Width="200">
-    <PasswordBox Name="passwordBox1" 
+    <PasswordBox Name="passwordBox1"
                  PasswordRevealMode="Hidden"/>
     <CheckBox Name="revealModeCheckBox" Content="Show password"
-              IsChecked="False" 
+              IsChecked="False"
               Checked="CheckBox_Changed" Unchecked="CheckBox_Changed"/>
 </StackPanel>
 ```
@@ -155,12 +168,12 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 這個 PasswordBox 看起來就像這樣。
 
 ![含自訂顯示按鈕的密碼方塊](images/passwordbox-custom-reveal.png)
-    
+
 ## 選擇文字控制項的正確鍵盤
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 PasswordBox 只支援 **Password** 和 **NumericPin** 輸入範圍值。 會略過其他任何值。
 
-如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤]()。
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
 ## 建議
 
@@ -192,6 +205,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
+ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
 
 ---
 
@@ -15,7 +15,7 @@ ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 App 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。
+本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。
 
 ## 檢查裝置是否有指紋辨識器
 
@@ -125,6 +125,6 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

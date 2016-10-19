@@ -4,7 +4,7 @@ title: "在 Windows 10 IoT 核心版上啟用使用者模式存取"
 description: "本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
+ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
 
 ---
 # 在 Windows 10 IoT 核心版上啟用使用者模式存取
@@ -269,7 +269,7 @@ SupportedDriveModes 屬性會指出 GPIO 控制器支援的驅動模式。 在�
 Windows 支援兩種針腳編號配置︰ 
 
 * 序列式針腳編號 – 使用者會看見諸如 0、1、2 等數字 至多不超過已公開針腳的數目。 0 為 ASL 中宣告的第一個 GpioIo 資源，1 為 ASL 中宣告的第二個 GpioIo 資源，以下類推。 
-* 原生針腳編號 – 使用者會看見在 GpioIo 描述元中指定的針腳編號，例如 4、5、12、13... .  
+* 原生針腳編號 – 使用者會看見在 GpioIo 描述元中指定的針腳編號，例如 4、5、12、13. .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
@@ -1086,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "針對 I/O、裝置與 app 模型將 Windows Phone Silverlight 移植到
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+ms.openlocfilehash: f3b3e32461b7804639c1c0e8ff9b55fa57a23cf0
 
 ---
 
@@ -29,11 +29,11 @@ ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
 
 ## 相機
 
-Windows Phone Silverlight 相機擷取程式碼使用 **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 或 **Microsoft.Phone.Tasks.CameraCaptureTask** 類別。 若要將該程式碼移植到通用 Windows 平台 (UWP)，您可以使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 在 [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) 主題中有提供程式碼範例。 該方法可讓您將相片擷取到存放檔案中，而它需要應用程式套件資訊清單中已設定**麥克風**與**網路攝影機**[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
+Windows Phone Silverlight 相機擷取程式碼使用 **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 或 **Microsoft.Phone.Tasks.CameraCaptureTask** 類別。 若要將該程式碼移植到通用 Windows 平台 (UWP)，您可以使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 在 [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) 主題中有提供程式碼範例。 該方法可讓您將相片擷取到存放檔案中，而它需要 app 套件資訊清單中已設定「麥克風」****與「網路攝影機」****[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
 
-另一個選項是 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 類別，這同樣需要**麥克風**與**網路攝影機**[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
+另一個選項是 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 類別，這同樣需要「麥克風」****與「網路攝影機」****[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
 
-UWP 應用程式不支援鏡頭應用程式。
+UWP app 不支援鏡頭 app。
 
 ## 偵測執行您 app 的平台
 
@@ -68,12 +68,12 @@ Windows Phone Silverlight app 可以使用 **Microsoft.Phone.Info.DeviceStatus**
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | [ **MemoryManager.AppMemoryUsage** ](https://msdn.microsoft.com/library/windows/apps/dn633832) 和 [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) 屬性                                                                                                                                    |
+| **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) 和 [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) 屬性                                                                                                                                    |
 | **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
-| **DeviceFirmwareVersion** 屬性                                                      | [ **EasClientDeviceInformation.SystemFirmwareVersion** ](https://msdn.microsoft.com/library/windows/apps/dn608144) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceHardwareVersion** 屬性                                                      | [ **EasClientDeviceInformation.SystemHardwareVersion** ](https://msdn.microsoft.com/library/windows/apps/dn608145) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceManufacturer** 屬性                                                         | [ **EasClientDeviceInformation.SystemManufacturer** ](https://msdn.microsoft.com/library/windows/apps/hh701398) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                |
-| **DeviceName** 屬性                                                                 | [ **EasClientDeviceInformation.SystemProductName** ](https://msdn.microsoft.com/library/windows/apps/hh701401) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                 |
+| **DeviceFirmwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
+| **DeviceHardwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
+| **DeviceManufacturer** 屬性                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                |
+| **DeviceName** 屬性                                                                 | [**EasClientDeviceInformation.SystemProductName**](https://msdn.microsoft.com/library/windows/apps/hh701401) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                 |
 | **DeviceTotalMemory** 屬性                                                          | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
 | **IsKeyboardDeployed** 屬性                                                         | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
 | **IsKeyboardPresent** 屬性                                                          | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
@@ -96,6 +96,6 @@ UWP app 中，與 **PhoneApplicationPage.SupportedOrientations** 和 **Orientati
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

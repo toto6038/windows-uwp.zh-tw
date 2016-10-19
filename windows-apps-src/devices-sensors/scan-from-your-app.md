@@ -5,7 +5,7 @@ title: "從您的 app 掃描"
 description: "在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: fe01ccf5b0b91ffcca7937842cf0152622d59f9e
+ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
 
 ---
 # 從您的 app 掃描
@@ -175,6 +175,6 @@ cancellationToken = new CancellationTokenSource();
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

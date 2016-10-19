@@ -5,7 +5,7 @@ title: "使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行�
 description: "使用「適用於 Windows 10 行動裝置版的 Microsoft 模擬器」隨附的工具來模擬與裝置的實際互動，以及測試應用程式的功能。"
 translationtype: Human Translation
 ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
-ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
 
 ---
 # 使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
@@ -659,6 +659,6 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

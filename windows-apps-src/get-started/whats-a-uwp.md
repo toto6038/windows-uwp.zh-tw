@@ -1,26 +1,32 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "何謂通用 Windows 平台 (UWP) app？"
 description: "了解我們稱為通用 Windows app 的 app 有哪些不同類型：Windows 市集 app、Windows Phone 市集 app，以及 Windows 執行階段 app。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
+ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
 
 ---
 
 # 何謂通用 Windows 平台 (UWP) app？
 
-通用 Windows 平台 (UWP) app 是在 Windows 8 作為 Windows 執行階段首次引入，是一項建立於通用 Windows 平台 (UWP) 的 Windows 體驗。 UWP 應用程式是以使用者想要他們的*體驗*能夠橫跨其所有裝置，並想要使用任何最方便或最有生產力之裝置來完成工作的概念為核心。
+如果您是 Windows 平台新手，或是來自 .NET、Windows Forms 或 Silverlight 的世界，您可能想要知道 UWP app 到底是「什麼」**。 
 
-Windows 10 讓開發 UWP 的 app 更容易，只需使用單一的 API 集、單一 app 套件和單一市集，就可以觸及所有 Windows 10 裝置 – 電腦、平板電腦、手機，以及其他更多裝置。 更容易支援多數的螢幕大小，同時支援各種互動模型，無論是觸控、滑鼠與鍵盤、遊戲控制器或手寫筆。
+就像一本名著曾說的一樣，「別慌！」 一切很快就會變得明朗。 
+
+「通用 Windows 平台」(UWP) app 是一項建立在「通用 Windows 平台」(UWP) 上的 Windows 體驗，最初是在 Windows 8 中以「Windows 執行階段」的形式引進。 UWP app 的核心是一個想法，就是使用者希望他們的「體驗」**能夠橫跨其「所有」裝置靈活移動，並想要使用任何最便利或最具生產力的裝置來完成手邊的工作。
+
+Windows 10 讓開發適用於 UWP 的 App 更容易，只需使用一個 API 集、一個 App 套件及一個市集，就可以觸及所有 Windows 10 裝置 – 電腦、平板電腦、手機、Xbox、HoloLens、Surface Hub 等等。 不僅更容易支援一些螢幕大小，同時也支援各種互動模型，無論是觸控、滑鼠與鍵盤、遊戲控制器還是手寫筆。
+
+結果︰您既可花費時間全都在單一專案中使用熟悉的程式設計語言和 API，又可讓完全相同的程式碼在現今存在的眾多 Windows 硬體上執行。
 
 ![執行 Windows 的裝置](images/1894834-hig-device-primer-01-500.png)
 
-##那麼，到底何謂 UWP 應用程式？
+##那麼，UWP app「到底」**是什麼？
 
 
-UWP 應用程式有什麼特別？ 以下是一些讓 Windows 10 上的 UWP 應用程式和別人不一樣的特性。
+UWP app 有什麼特別？ 以下是一些讓 Windows 10 上的 UWP 應用程式和別人不一樣的特性。
 
 -   您的目標是裝置系列，不是作業系統。
 
@@ -93,8 +99,14 @@ Microsoft Visual Studio 2015 為每種語言提供 UWP 應用程式範本，可�
 * [通用 Windows 平台 app 指南](universal-application-platform-guide.md)
 * [開始設定](get-set-up.md)
 
+## 其他進階主題
+
+* [.NET Native - 它對「通用 Windows 平台」(UWP) 開發人員有何意義](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+* [.NET 中的通用 Windows app](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
+* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO3-->
 
 

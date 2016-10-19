@@ -7,21 +7,32 @@ dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: 12f5905fce642a10656864e41325c8f4bd56c025
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 
 ---
 # 自動建議方塊
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
 ![自動建議方塊](images/controls/auto-suggest-box-open.png)
 
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx"><strong>TextChanged 事件</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx"><strong>SuggestionChose 事件</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx"><strong>QuerySubmitted 事件</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**AutoSuggestBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
--   [**TextChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
--   [**SuggestionChose 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)
--   [**QuerySubmitted 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -83,7 +94,7 @@ QuerySubmitted 事件會在使用者確認查詢字串時發生。 使用者可�
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-根據預設，文字輸入方塊沒有顯示 [查詢] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 [尋找] 圖示，如下所示。
+根據預設，文字輸入方塊沒有顯示 \[查詢\] 按鈕。 您可以設定 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請新增 \[尋找\] 圖示，如下所示。
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -157,6 +168,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

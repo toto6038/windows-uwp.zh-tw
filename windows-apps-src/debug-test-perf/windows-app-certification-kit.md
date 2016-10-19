@@ -5,7 +5,7 @@ title: "Windows 應用程式認證套件"
 description: "為了讓您的 App 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
+ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 ---
 # Windows 應用程式認證套件
@@ -100,6 +100,6 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,16 +5,16 @@ ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
+ms.openlocfilehash: 45dd0b2cb34e724313fe431a5b8b7a6df9b5a5cf
 
 ---
 
 # App 安裝廣告報告
 
-有兩種方式可以進入開發人員中心的 [應用程式安裝廣告報告]**** 頁面：
+有兩種方式可以進入開發人員中心的 [App 安裝廣告報告]**** 頁面：
 
--   在您應用程式頁面左邊的導覽功能表上，按一下 [分析]****&gt;[應用程式安裝廣告]****。
--   在您應用程式頁面左邊的導覽功能表上，按一下 [獲利]****&gt;[促銷您的應用程式]****，然後按一下活動的 [報告]**** 連結。
+-   在您應用程式頁面左邊的導覽功能表上，按一下 [分析]**** &gt; [App 安裝廣告]****。
+-   在您應用程式頁面左邊的導覽功能表上，按一下 [獲利]**** &gt; [宣傳您的 App]****，然後按一下活動的 [報告]**** 連結。
 
 您將會在這裡看到兩個區段：[廣告績效]**** 和 [帳戶帳單記錄]****。
 
@@ -70,6 +70,6 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

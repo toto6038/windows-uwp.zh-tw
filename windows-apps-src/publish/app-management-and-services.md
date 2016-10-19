@@ -4,8 +4,8 @@ Description: "您可以在 Windows 開發人員中心儀表板中，管理和檢
 title: "App 管理與服務"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
 
 ---
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 ### 產品集合與購買
 
-若要使用 Windows 市集集合 API 與 Windows 市集購買 API 來存取 app 及 IAP 的擁有權資訊，您必須在這裡輸入相關聯的 Azure AD 用戶端識別碼。 請注意，這些變更可能要花費最多 16 個小時才會生效。
+若要使用 Windows 市集集合 API 與 Windows 市集購買 API 來存取 App 及附加元件的擁有權資訊，您必須在這裡輸入相關聯的 Azure AD 用戶端識別碼。 請注意，這些變更可能要花費最多 16 個小時才會生效。
 
 如需詳細資訊，請參閱[從服務檢視與授與產品](https://msdn.microsoft.com/library/windows/apps/mt609002)。
 
@@ -83,6 +83,6 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

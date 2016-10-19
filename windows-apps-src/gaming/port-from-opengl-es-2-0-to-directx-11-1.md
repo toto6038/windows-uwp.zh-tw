@@ -5,7 +5,7 @@ description: "包含適用於將 OpenGL ES 2.0 圖形管線移植到 Direct3D 11
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
 
 ---
 
@@ -64,6 +64,6 @@ ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

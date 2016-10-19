@@ -3,8 +3,8 @@ title: "CPUSets 遊戲開發"
 description: "本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API 的概觀，並涵蓋遊戲與應用程式開發的相關核心資訊。"
 author: hammondsp
 translationtype: Human Translation
-ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
-ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
+ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
+ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 
 ---
 
@@ -38,7 +38,7 @@ PSYSTEM_CPU_SET_INFORMATION cpuSets = reinterpret_cast<PSYSTEM_CPU_SET_INFORMATI
 GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 ```
 
-每個傳回的 **SYSTEM_CPU_SET_INFORMATION** 執行個體會包含一個唯一的處理單元資訊，又稱為 CPU 集合。 這不一定表示它代表唯一的實際硬體。 利用超執行緒的 CPU 會有多個邏輯核心在單一實體處理核心上執行。 將多個執行緒排程在位於相同實體核心上的不同邏輯核心，可讓硬體層級資源最佳化，否則會需要在核心層級完成額外工作。 排程在相同實體核心上個別邏輯核心的兩個執行緒必須共用 CPU 時間，但如果將它們排程到相同的邏輯核心，執行起來會更有效率。
+每個傳回的 **SYSTEM_CPU_SET_INFORMATION** 執行個體會包含一個唯一的處理單元資訊，又稱為 CPU 集合。 這不一定表示它代表唯一的實際硬體。 利用超執行緒的 CPU 會有多個邏輯核心在單一實體處理核心上執行。 將多個執行緒排程在位於相同實體核心上的不同邏輯核心，可讓硬體層級資源最佳化，否則會需要在核心層級完成額外工作。 排程在相同實體核心上不同邏輯核心的兩個執行緒必須共用 CPU 時間，但比起將它們排程到同一個邏輯核心，執行起來會更有效率。
 
 ### SYSTEM_CPU_SET_INFORMATION
 
@@ -94,9 +94,9 @@ SetThreadSelectedCpuSets(audioHandle, cores, 2);
 
 ### 使用時效性執行緒與超執行緒
 
-若您的遊戲有幾個執行緒必須即時和其他需要相對較少 CPU 時間的背景工作執行緒搭配執行，這個方法很有效。 某些工作 (例如連續的背景音樂) 必須不間斷執行，以最佳化遊戲體驗。 即使音訊執行緒的單一畫面格耗盡，也可能導致顯示畫面跳動或顯示錯誤，因此每個畫面都接收到必要的 CPU 時間量非常重要。
+若您的遊戲有幾個執行緒必須即時和其他需要相對較少 CPU 時間的背景工作執行緒搭配執行，這個方法很有效。 某些工作 (例如連續的背景音樂) 必須不間斷執行，以最佳化遊戲體驗。 即使有任一畫面格發生音訊執行緒耗盡，都可能會導致跳動或不順的情況，因此每個畫面格都接收到必要的 CPU 時間量是非常重要的。
 
-使用 **SetThreadSelectedCpuSets** 搭配 **SetProcessDefaultCpuSets** 可確保您的大量執行緒維持不被任何背景工作執行緒中斷。 **SetThreadSelectedCpuSets** 可用來將您的大量執行緒指派到特定 CPU 集合。 **SetProcessDefaultCpuSets** 可接著用來確保任何未指派的已建立執行緒都會放置在其他 CPU 集合上。 如果是使用超執行緒的 CPU，考慮相同實體核心上的邏輯核心也很重要。 不應該允許背景工作執行緒在共用相同實體核心的邏輯核心上執行，因為您要執行的執行緒具有即時回應性。 下列程式碼示範如何判斷電腦是否使用超執行緒。
+使用 **SetThreadSelectedCpuSets** 搭配 **SetProcessDefaultCpuSets** 可確保您的重要執行緒維持不被任何背景工作執行緒中斷。 **SetThreadSelectedCpuSets** 可用來將您的大量執行緒指派到特定 CPU 集合。 **SetProcessDefaultCpuSets** 可接著用來確保任何未指派的已建立執行緒都會放置在其他 CPU 集合上。 如果是使用超執行緒的 CPU，考慮相同實體核心上的邏輯核心也很重要。 如果您要執行的執行緒具有即時回應性，那麼就不應該允許背景工作執行緒在與其共用相同實體核心的邏輯核心上執行。 下列程式碼示範如何判斷電腦是否使用超執行緒。
 
 ```
 unsigned long retsize = 0;
@@ -190,10 +190,11 @@ for (size_t i = 0; i < count; ++i)
 ## 其他資源
 - [CPU 集合 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
 - [ATG 提供的 CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Xbox One 上的 UWP](index.md)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,21 +4,20 @@ ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
 description: "使用本文中的測試應用程式識別碼和廣告單位識別碼值，以查看您的 app 於測試期間呈現廣告的方式。"
 title: "測試模式值"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: e1462ae48e8aae8f5ed0e5a7e46a6660bf33e786
 
 ---
 
 # 測試模式值
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-當您在 app 中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 來顯示廣告時，您必須指定應用程式識別碼和廣告單元識別碼。 當您開發您的 app 時，使用本文中的測試應用程式識別碼和廣告單元識別碼值，以查看您的 app 於測試期間呈現廣告的方式。
 
-> **重要：**如果您的 app 使用廣告流量分配 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需指定廣告單元。 在這個案例中，系統會自動產生廣告單元。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+當您在 App 中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 來顯示廣告時，您必須指定應用程式識別碼和廣告單元識別碼。 當您開發您的 App 時，使用本文中的測試應用程式識別碼和廣告單元識別碼值，以查看您的 App 於測試期間呈現廣告的方式。
 
-如果您嘗試在您已經發佈的 app 中使用測試值，您的實際 app 將不會收到廣告。 若要再已發佈的 app 中收到廣告，您必須更新您的程式碼，使用 Windows 開發人員中心儀表板所提供的應用程式識別碼和廣告單元識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+
+如果您嘗試在 App 發佈後使用測試值，您的實際 App 將不會收到廣告。 若要再已發佈的 app 中收到廣告，您必須更新您的程式碼，使用 Windows 開發人員中心儀表板所提供的應用程式識別碼和廣告單元識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
  
 
 以下是影片插入式和橫幅廣告的測試值。
@@ -77,6 +76,6 @@ ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

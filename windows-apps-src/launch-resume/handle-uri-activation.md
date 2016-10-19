@@ -4,8 +4,8 @@ title: "處理 URI 啟用"
 description: "了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 translationtype: Human Translation
-ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
-ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
+ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 -   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
 -   [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
-了解如何登錄 app 以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。 傳統 Windows 平台 (CWP) app 和通用 Windows 平台 (UWP) app 皆可登錄為 URI 配置名稱的預設處理常式。 如果使用者選擇您的 app 做為 URI 配置名稱的預設處理常式，則每次啟動該類型的 URI 時就會啟用您的 app。
+了解如何登錄 App 以使它成為「統一資源識別項」(URI) 配置名稱的預設處理常式。 Windows 傳統型應用程式和「通用 Windows 平台」(UWP) app 皆可登錄為 URI 配置名稱的預設處理常式。 如果使用者選擇您的 App 做為 URI 配置名稱的預設處理常式，則每次啟動該類型的 URI 時都會啟用您的 App。
 
 建議您只有當您希望處理某個 URI 配置類型的所有 URI 啟動時，才登錄該 URI 配置名稱。 如果您選擇登錄某個 URI 配置名稱，則在針對該 URI 配置名稱啟用您的 app 時，您必須為使用者提供預期的功能。 例如，登錄 mailto: URI 配置名稱的 app 必須開啟新的電子郵件訊息，以便讓使用者撰寫新的電子郵件。 如需 URI 關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
@@ -176,6 +176,6 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

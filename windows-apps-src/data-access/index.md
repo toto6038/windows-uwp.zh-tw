@@ -5,7 +5,7 @@ title: "資料存取"
 description: "本節討論在私人資料庫的裝置上儲存資料，以及在通用 Windows 平台 (UWP) app 中使用物件關聯對應。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
+ms.openlocfilehash: f67efa8a00439de719219f750f0244a17cc26182
 
 ---
 # 資料存取
@@ -24,6 +24,6 @@ UWP SDK 中包含 SQLite。 Entity Framework 7 可搭配 UWP app 中的 SQLite �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

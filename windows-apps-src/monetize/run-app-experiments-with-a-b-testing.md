@@ -4,29 +4,25 @@ Description: "您可以利用 Windows 開發人員中心儀表板，使用 A/B �
 title: "使用 A/B 測試執行 app 實驗"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 50f7ad90c04d5b5672fa7910f2df669798761472
 
 ---
 
-# 使用 A/B 測試執行 app 實驗
+# 使用 A/B 測試執行 App 實驗
 
-您可以利用 Windows 開發人員中心儀表板，使用 A/B 測試執行通用 Windows 平台 (UWP) app 的實驗。
+您可以使用 Windows 開發人員中心儀表板，定義於執行時要從通用 Windows 平台 (UWP) app 擷取的遠端變數，而且您可以與您的使用者測試這些值的變化，來找出針對推動所需使用者行為最有效的值。 您的 App 可以使用遠端變數來設定 App 體驗，例如 App 內購買、註冊流程、標題和廣告放置。
 
-在 A/B 測試中，您會透過開發人員中心在您的 app 中實驗程式變數指派。 藉由建立以 A/B 可測試程式變數為主的 app 邏輯，您可以對您的使用者群的隨機化區段啟用您 app 的變化。 A/B 測試的目的是要找出可能改善轉換率的變化 (例如，更多的應用程式內購買)。
-
-在您找出最符合您的業務目標的變化之後，您可以立即結束實驗，並從開發人員中心儀表板對整個使用者群啟用該變化，而不必重新發佈您的應用程式。
+您的 A/B 測試目的應該是找出遠端變數值的變化，以透過提供更吸引人的 App 體驗為您取得改善的轉換率 (例如更多的 App 內購買)。 在您找出成功的變化後，您可以立即結束實驗，並從開發人員中心儀表板對整個使用者群啟用該變化，而不必重新發佈您的 App。
 
 ## 建立和執行 A/B 測試
 
 若要建立和執行 A/B 測試，請遵循下列步驟：
 
-1. [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 每個實驗都包含下列項目︰
-  * 「檢視事件」**，表示使用者開始檢視屬於實驗一部分的變化的時候。
-  * 具有「轉換事件」**的一或多個目標，表示已達到目標的時候。
-  * 一或多個「變化」**，定義您的實驗所使用的設定。
-2. [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)。 使用 Microsoft Store Engagement and Monetization SDK 中的 API 來取得實驗的變化設定、使用此資料來修改您測試的功能行為，以及將檢視事件和轉換事件傳送到開發人員中心。
-3. [在開發人員中心儀表板中執行和管理您的實驗](manage-your-experiment.md)。 使用此儀表板來檢閱實驗的結果並完成實驗。
+1. [在開發人員中心儀表板中建立專案與定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 這個專案包括您實驗的變數和預設變數值。  
+2. [編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)。 使用 Microsoft Store Services SDK 中的 API 來取得儀表板中所建立之專案的遠端變數值，使用此資料來修改您測試的功能行為，並將檢視事件和轉換事件傳送到開發人員中心。
+3. [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 在您的專案中建立能定義 A/B 測試唯一目標和變化的實驗。
+4. [在開發人員中心儀表板中執行和管理您的實驗](manage-your-experiment.md)。 啟用實驗，並使用此儀表板來檢閱實驗的結果並完成實驗。
 
 如需示範端對端處理程序的逐步解說，請參閱[使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -37,24 +33,38 @@ ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
 您必須先設定您的開發電腦，才可以使用 A/B 測試執行實驗︰
 
 * 依照[這裡](../get-started/get-set-up.md)的指示，設定 UWP 開發用的開發電腦。
-* 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。 除了實驗的 API，此 SDK 也會提供其他功能的 API，例如顯示廣告以及將您的客戶導向至意見反應中樞來收集有關您的 app 的意見反應。 如需這個 SDK 的詳細資訊，請參閱[利用 Store Engagement and Monetization SDK 讓您的 app 獲利](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)。
+* 安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。 除了實驗的 API，此 SDK 也會提供其他功能的 API，例如顯示廣告以及將您的客戶導向至意見反應中樞來收集有關您 App 的意見反應。 如需這個 SDK 的詳細資訊，請參閱 [Microsoft Store Services SDK](microsoft-store-services-sdk.md)。
 
-## 最佳作法
+## 最佳做法
 
 如需最實用的結果，我們建議您在使用 A/B 測試執行實驗時遵循下列建議︰
 
 * 請考慮執行只有兩項變化的實驗，並以隨機化 50/50 分割分佈進行變化指派。
-* 執行實驗至少 2-4 週，以收集具統計顯著性和可行動性的足夠資料。
+* 執行實驗至少 2 - 4 週，以收集具統計顯著性和可行的足夠資料。
+
+<span id="terms" />
+## 相關詞彙
+
+|  詞彙  |  定義  |
+|--------|--------------|
+| 專案    |   具有預設值的遠端變數集合，可供您的 App 使用 Microsoft Store Services SDK 進行存取。 專案也可以選擇包含一或多個共用相同遠端變數的實驗。  |
+| 實驗    |   一組能定義使用者將會接收之 A/B 測試的參數。 實驗是在專案的範圍中定義，而每個實驗皆由以下項目組成： <p></p><ul><li>「檢視事件」**，表示使用者開始檢視屬於實驗一部分之變化的時候。</li><li>具有「轉換事件」**的一或多個目標，表示何時達到目標。</li><li>一或多個「變化」**，定義您的實驗所使用的變數資料。 「控制項」**變化會使用預設變數值，該值是在專案中針對實驗所定義。 除了控制項變化之外，實驗通常會有至少一個額外變化，其中含有針對實驗的唯一變數值。 </li></ul>          |
+| 專案識別碼    |   將您的 App 與開發人員中心的專案相關聯的唯一識別碼。 您必須使用此識別碼以連接您 App 程式碼中的 A/B 測試服務，以接收變化資料並將檢視與轉換事件回報給開發人員中心。 如需詳細資訊，請參閱[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)。<p></p><p>每個專案 (及專案中的所有實驗) 皆會與單一專案識別碼相關聯。 您可使用專案識別碼來協助區別不同的實驗組合。 例如，您可能會將一組實驗發行給組織當中的測試者，並將另一組實驗僅發行給您 App 的外部使用者。  如果 App 會實作多個實驗，則它可參考多個專案識別碼。</p>         |
+| 變化    |   您在實驗中進行測試的一或多個變數集合。 每個實驗至少必須具有一個變數和兩個變化 (包括控制項)。 實驗最多可具有五個變化。           |
+| 變數    |  您的 App 用來初始化屬性或 App 中的某些其他值的值。 在實驗進行期間，變數的值會根據各個變化而有所變更。 結束實驗之後，系統會透過您選擇發行至 App 所有使用者的變化來指派變數值。 變數可為下列類型：字串、布林值、雙精度浮點數及整數。
+| 檢視事件    |  表示使用者在開始檢視屬於您實驗一部份的變化時，代表其活動的任意字串。 通常，這是您程式碼中的事件名稱。 使用者開始檢視變化時，您的 App 程式碼會將此檢視事件字串傳送至開發人員中心。 如需詳細資訊，請參閱[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)。
+| 轉換事件    |  代表實驗目的之目標的任意字串。 通常，這是您程式碼中的事件名稱。 使用者達到該目標時，您的 App 程式碼會將此轉換事件字串傳送至開發人員中心。 如需詳細資訊，請參閱[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)。  
 
 ## 相關主題
 
+* [在開發人員中心儀表板中建立專案與定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)
 * [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
-* [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)
 * [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

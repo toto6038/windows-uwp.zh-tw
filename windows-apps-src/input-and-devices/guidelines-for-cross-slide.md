@@ -7,7 +7,7 @@ label: Cross-slide
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
+ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 ---
 
@@ -135,8 +135,8 @@ ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
 * [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **封存範例**
+* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**封存範例**
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -155,6 +155,6 @@ ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

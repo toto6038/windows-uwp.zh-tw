@@ -5,7 +5,7 @@ title: "建立 NFC 智慧卡 App"
 description: "Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬 App，但該模型需要安全的付款 App 才能與行動網路運算子 (MNO) 緊密結合。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
+ms.openlocfilehash: 52a8be1df522c6b5512a7fe560d01e8d840194af
 
 ---
 # 建立 NFC 智慧卡 App
@@ -386,6 +386,6 @@ Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

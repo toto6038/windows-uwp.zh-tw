@@ -5,7 +5,7 @@ title: "組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操
 description: "Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: c2086e703e3972d4dd38dc1b7147bfa5f01231cf
+ms.openlocfilehash: 4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394
 
 ---
 # 組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作
@@ -270,6 +270,6 @@ private:
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

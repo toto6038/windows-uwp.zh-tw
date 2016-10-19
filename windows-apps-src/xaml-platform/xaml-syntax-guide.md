@@ -5,7 +5,7 @@ title: "XAML 語法指南"
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 8e7819b02d7a22a16cf16091d08bef0aabc8d36e
+ms.openlocfilehash: 1fb5f64b5fe58843c06603045a3de9576887d1c7
 
 ---
 
@@ -124,11 +124,11 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 `<`*object*`>`
 
-`<`*object* `.` *property*`>`
+`<`*object*`.`*property*`>`
 
 *propertyValueAsObjectElement*
 
-`</`*object* `.` *property*`>`
+`</`*object*`.`*property*`>`
 
 `</`*object*`>`
 
@@ -298,7 +298,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 XAML 用法區段也使用各種一般化的預留位置。 這些預留位置不會每次在 [XAML 值]**** 中重新定義，因為您可以猜想到或是最後都能了解它們所代表的意義。 我們認為大部分的讀者應該都不想在 [XAML 值]**** 中重複看到它們出現，所以定義中予以省略。 如果需要參考資料，以下是部分預留位置及它們以廣義來說所代表的意義：
 
 -   *object*：理論上是任何物件值，但實際上通常限制為特定的物件類型，例如，string-or-object 選項，詳細資訊請參閱參考頁面的＜備註＞。
--   *object* *property*：當顯示的語法是類型的語法，而該類型可用來做為許多屬性的屬性值時，會將 *object* 和 *property* 搭配使用。 例如，針對 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 顯示的 [XAML 屬性用法]**** 包含：&lt;*object**property*="*predefinedColorName*"/&gt;
+-   *object* *property*：當顯示的語法是類型的語法，而該類型可用來做為許多屬性的屬性值時，會將 *object* 和 *property* 搭配使用。 例如，針對 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 顯示的 [**XAML 屬性用法**] 包含：&lt;*object* *property*="*predefinedColorName*"/&gt;
 -   *eventhandler*：這會顯示為事件屬性所顯示的每個 XAML 語法的屬性值。 您在這裡所提供的資訊，就是事件處理常式函式的函式名稱。 該函式必須定義在 XAML 頁面的程式碼後置中。 在程式設計層級，該函式必須符合您所處理事件的委派簽章，否則無法編譯應用程式程式碼。 不過這實際上是程式設計方面的考量，而非 XAML 的考量，所以我們不會嘗試提示任何關於 XAML 語法中的委派類型。 如果您想要知道應該為事件實作的委派，請參閱事件參考主題的 [事件資訊] ****區段中標示為**委派**的表格列。
 -   *enumMemberName*：顯示在所有列舉的屬性語法中。 使用列舉值的屬性也有類似的預留位置，但通常會在預留位置加上列舉名稱提示的首碼。 例如，針對 [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 顯示的語法為 &lt;*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/&gt;。 如果您正位於其中一個屬性參考頁面，按一下顯示在 [屬性值]**** 區段中 [類型:]**** 旁的列舉類型連結。 對於使用該列舉之屬性的屬性值，您可以使用列於 [成員]**** 清單的 [成員]**** 欄中的任何字串。
 -   *double*、*int*、*string*、*bool*：這些是 XAML 語言已知的基本類型。 如果您使用 C# 或 Visual Basic 進行程式設計，這些類型可對應 Microsoft .NET 的等同類型，例如 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) 和 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)，當您在 .NET 程式碼後置中使用 XAML 定義的值時，可以使用這些 .NET 類型的任何成員。 如果您使用 C++/CX 進行程式設計，可以使用 C++ 基本類型，也可以考慮使用等同於 [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空間所定義類型的這些項目，例如 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)。 針對特定的屬性值有時會有額外的限制。 但您通常會在 [屬性值]**** 區段或 [備註] 區段而不會在 XAML 區段中看到這些註解，因為這些限制同時適用於程式碼用法和 XAML 用法。
@@ -318,6 +318,6 @@ XAML 用法區段也使用各種一般化的預留位置。 這些預留位置�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

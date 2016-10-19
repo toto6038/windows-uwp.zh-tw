@@ -5,7 +5,7 @@ title: "使用傾角計"
 description: "了解如何使用傾角計來決定俯仰、翻滾及偏擺。"
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
+ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 ---
 # 使用傾角計
@@ -177,6 +177,6 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

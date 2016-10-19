@@ -4,12 +4,12 @@ title: "裝置入口網站 SMB API 參考"
 description: "了解如何以程式設計方式存取 SMB API。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3d76bf181baa9dfd973467d43241230fddf2daf7
-ms.openlocfilehash: 5efe2af3524d97e6014c4d6be2a8f1aef22f2e66
+ms.openlocfilehash: d6a097c84e6b967c41507d9e60c266f0bacb93fe
 
 ---
 
 # 開發人員資料夾 API 參考   
-您可以使用標準的 [檔案總管] 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
+您可以使用標準的 &#91;檔案總管&#93; 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
 
 **要求**
 
@@ -55,6 +55,6 @@ HTTP 狀態碼      | 描述
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

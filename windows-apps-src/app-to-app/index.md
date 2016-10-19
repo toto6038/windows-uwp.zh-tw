@@ -4,8 +4,8 @@ description: "本節說明如何在通用 Windows 平台 (UWP) 應用程式之�
 title: "App 間通訊"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
-ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
+ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 
 ---
 
@@ -28,11 +28,13 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 | [分享資料](share-data.md) | 本文說明如何在 UWP app 中支援分享協定。 分享協定是一種在 app 之間快速分享資料 (例如文字、連結，照片和影片) 的簡單方法。 舉例來說，使用者可能會想要使用社交網路 app 與朋友分享網頁，或是將連結儲存在筆記本 app 以供日後參考。 |
 | [接收資料](receive-data.md) | 本文說明如何使用分享協定在您的 UWP app 中接收從另一個 app 分享的內容。 分享協定可以在使用者叫用分享時，讓您的 app 成為一個選項。 |
 | [複製和貼上](copy-and-paste.md) | 本文說明如何使用剪貼簿在 UWP app 中支援複製和貼上。 複製和貼上是在 app 間 (或是 app 內) 交換資料的傳統方式，而且幾乎每個 app 在某種程度上都能支援剪貼簿作業。 |
-| [拖放](drag-and-drop.md) | 本文說明如何在您的 UWP app 中新增拖放功能。 拖放是一種與影像和檔案之類的內容進行互動的傳統、原始方式。 實作之後，拖放不論以哪一個方向都能順暢運作，包括應用程式間、應用程式到傳統型應用程式，以及傳統型應用程式到應用程式。 |
-| [使用 EDP 保護在應用程式之間傳輸的企業資料](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主題說明達成一些最常見的資料傳輸相關企業資料保護 EDP 案例所需的編碼工作範例。 |
+| [拖放](drag-and-drop.md) | 本文說明如何在您的 UWP app 中新增拖放功能。 拖放是一種與影像和檔案之類的內容進行互動的傳統、原始方式。 實作之後，不論向哪一個方向拖放都能順暢運作，包括應用程式之間、應用程式到傳統型應用程式，以及傳統型應用程式到應用程式。 |
+
+## 另請參閱
+- [開發 UWP app](https://developer.microsoft.com/en-us/windows/develop)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

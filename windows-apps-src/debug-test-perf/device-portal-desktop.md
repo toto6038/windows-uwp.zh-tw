@@ -4,8 +4,8 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "傳統型裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。"
 translationtype: Human Translation
-ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
-ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
+ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
 
 ---
 # 傳統型裝置的 Device Portal
@@ -72,10 +72,12 @@ HTTPS 需要進行驗證和安全通訊。
 - 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service 下
     - UseDynamicPorts：所需的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
     - HttpPort：所需的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。  
-    - HttpsPort：所需的 DWORD。 包含 Device Portal 針對 HTTPS 連線開啟接聽的連接埠號碼。
+    - HttpsPort：所需的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
 
-## 無法安裝開發人員模式套件
-有時會因網路或相容性問題，致使開發人員模式無法正確安裝。 開發人員模式套件是遠端部署 (Device Portal 和 SSH) 的必要項目，但並非用於本機開發。  
+## 無法安裝開發人員模式套件或啟動 Device Portal
+有時會因網路或相容性問題，致使「開發人員模式」無法正確安裝。 「遠端」****部署 (Device Portal 和 SSH) 必須使用「開發人員模式」套件，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 來部署您的 App。 
+
+若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。 
 
 ### 找不到套件
 
@@ -106,6 +108,6 @@ HTTPS 需要進行驗證和安全通訊。
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

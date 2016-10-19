@@ -6,11 +6,13 @@ ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 ---
 # 依功能分類的控制項
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式庫。 部分控制項以視覺方式呈現；其餘控制項則當做其他控制項或內容 (例如影像與媒體) 的容器。 
 
@@ -849,6 +851,6 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

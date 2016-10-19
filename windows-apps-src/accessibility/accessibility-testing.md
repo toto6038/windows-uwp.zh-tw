@@ -6,8 +6,8 @@ title: "協助工具測試"
 label: Accessibility testing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ec436f939c672d6e6d852d3dd6713fd6ca20a53b
+ms.sourcegitcommit: 82d43f6553be280831c0a739680a2f9c833286f9
+ms.openlocfilehash: cc988037a8b3270045c7dd5faac4bf7d69fd6274
 
 ---
 
@@ -33,7 +33,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="INSPECT"/>
 ### **Inspect**  
 
-[ **Inspect** ](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 **Inspect** 確認協助工具屬性如何在使用者介面自動化中公開。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性來自已經在 XAML 標記中設定的特定值，如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加屬性。
+[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 **Inspect** 確認協助工具屬性如何在使用者介面自動化中公開。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性來自已經在 XAML 標記中設定的特定值，如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加屬性。
 
 以下影像顯示 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具正在查詢「記事本」中 [編輯]**** 功能表元素的使用者介面自動化屬性。
 
@@ -60,7 +60,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="test_keyboard_accessibility"/>
 <span id="TEST_KEYBOARD_ACCESSIBILITY"/>
 ## 測試鍵盤協助工具  
-測試鍵盤協助工具最好的方法是拔掉滑鼠，或者如果您使用 Tablet PC 時，使用螢幕小鍵盤。 使用 Tab 鍵，測試鍵盤協助工具瀏覽功能。 使用 Tab 鍵的時候，您應該可以在所有互動式 UI 元素之間循環移動。 至於複合 UI 元素，請使用方向鍵，確認可以在元素組件之間移動。 例如，您應該能夠使用鍵盤上的按鍵瀏覽項目清單。 最後，確定當互動式 UI 元素具有焦點時，您可以使用鍵盤 (通常是使用 Enter 或空格鍵) 呼叫所有元素。
+測試鍵盤協助工具最好的方法是拔掉滑鼠，或者如果您使用平板電腦裝置時，使用螢幕小鍵盤。 使用 _Tab_ 鍵，測試鍵盤協助工具瀏覽功能。 使用 _Tab_ 鍵的時候，您應該可以在所有互動式 UI 元素之間循環移動。 至於複合 UI 元素，請使用方向鍵，確認可以在元素組件之間移動。 例如，您應該能夠使用鍵盤上的按鍵瀏覽項目清單。 最後，確定當互動式 UI 元素具有焦點時，您可以使用鍵盤 (通常是使用 Enter 或空格鍵) 呼叫所有元素。
 
 <span id="verify_the_contrast_ratio_of_visible_text"/>
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
@@ -86,15 +86,17 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 執行以下步驟，使用朗讀程式測試應用程式的螢幕助讀使用體驗。
 
 **透過下列步驟，使用朗讀程式搭配滑鼠和鍵盤來測試您的應用程式：**
-1.  按 Windows 標誌鍵 + Enter 鍵來啟動朗讀程式。
-2.  使用 Tab 鍵、方向鍵及 Caps Lock + 方向鍵，利用鍵盤來瀏覽您的應用程式。
+1.  按 _Windows 標誌鍵 + Enter 鍵_來啟動朗讀程式。
+2.  使用 _Tab_ 鍵、方向鍵及 _Caps Lock + 方向鍵_，利用鍵盤來瀏覽您的應用程式。
 3.  瀏覽應用程式時，聆聽朗讀程式朗讀 UI 的元素，並確認下列各項：
     * 對於每個控制項，確保朗讀程式朗讀所有顯示的內容。 此外，還需確保朗讀程式朗讀每個控制項的名稱、所有適當的狀態 (已勾選、已選取等)，以及控制項類型 (按鈕、核取方塊、清單項目等)。
-    * 如果元素是互動的，請確認您可以使用朗讀程式，透過按 Caps Lock + 空格鍵來叫用它的動作。
+    * 如果元素是互動的，請確認您可以使用朗讀程式，透過按 _Caps Lock + Enter 鍵_來叫用它的動作。
     * 對於每個表格，確保朗讀程式正確朗讀表格名稱、表格說明 (如果可用的話)，以及列與欄標題。
 
-4.  按 Caps Lock + Enter 鍵來搜尋您的應用程式，並確認您的所有控制項都會出現在搜尋清單中，而且控制項名稱都已當地語系化且可閱讀。
-5.  關閉您的顯示器，並嘗試只使用鍵盤和朗讀程式來完成主應用程式案例。 若要取得朗讀程式命令和捷徑的完整清單，請按 Caps Lock + F1 鍵。
+4.  按 _Caps Lock + Enter 鍵_來搜尋您的應用程式，並確認您的所有控制項都會出現在搜尋清單中，而且控制項名稱都已當地語系化且可閱讀。
+5.  關閉您的顯示器，並嘗試只使用鍵盤和朗讀程式來完成主應用程式案例。 若要取得朗讀程式命令和捷徑的完整清單，請按 _Caps Lock + F1_。
+
+從 Windows 10 版本 1607 開始，我們在朗讀程式中導入了新的開發人員模式。 在朗讀程式已經在執行時，按 _Caps Lock + Shift + F12_ 開啟開發人員模式。 啟用開發人員模式之後，螢幕將會被遮住且將會以醒目方式只顯示可存取的物件和透過程式設計方式向朗讀程式揭露的相關文字。 這可以透過很好的視覺方式向您展示向朗讀程式揭露的資訊。
 
 **利用這些步驟，使用朗讀程式的觸控模式來測試您的應用程式：**
 
@@ -103,12 +105,12 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 1.  熟悉 UI 並探索配置。
 
-    * **使用單指撥動手勢在 UI 之間瀏覽。** 使用向左或向右撥動以在項目之間移動，並使用向上或向下撥動來變更瀏覽的項目類別。 類別包含所有項目、連結、表格、標頭等。 利用單指撥動手勢進行瀏覽類似於使用 Caps Lock + 方向鍵來瀏覽。
-    * **使用 Tab 鍵手勢來在可設定焦點的元素之間瀏覽。** 使用三指向右或向左撥動，就和使用鍵盤上的 Tab 鍵與 Shift + Tab 鍵來瀏覽一樣。
+    * **使用單指撥動手勢在 UI 之間瀏覽。** 使用向左或向右撥動以在項目之間移動，並使用向上或向下撥動來變更瀏覽的項目類別。 類別包含所有項目、連結、表格、標頭等。 利用單指撥動手勢進行瀏覽類似於使用 _Caps Lock + 方向鍵_來瀏覽。
+    * **使用 Tab 鍵手勢來於可設定焦點的元素之間瀏覽。** 使用三指向右或向左撥動，就和使用鍵盤上的 _Tab_ 鍵與 _Shift + Tab_ 鍵來瀏覽一樣。
     * **使用單指大範圍地查看 UI。** 使用單指向上和向下拖曳，或是向左和向右拖曳，可以讓朗讀程式閱讀您手指下方的項目。 您可以使用滑鼠做為替代選項，因為滑鼠會使用和單指拖曳相同的點擊測試邏輯。
-    * **使用三指向上撥動來朗讀整個視窗及其所有內容**。 這相當於使用 Caps Lock + W 鍵。
+    * **使用三指向上撥動來朗讀整個視窗及其所有內容**。 這相當於使用 _Caps Lock + W_ 鍵。
 
-    如果有您無法到達的重要 UI，那麼您可能有協助工具問題。
+    如果有您無法觸及的重要 UI，那麼您可能有協助工具問題。
 
 2.  與控制項互動，以測試它的主要和次要動作及其捲動行為。
 
@@ -139,10 +141,10 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 * [協助工具](accessibility.md)
 * [應避免的做法](practices-to-avoid.md)
 * [UI 自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

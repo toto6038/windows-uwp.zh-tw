@@ -4,8 +4,8 @@ ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "閱讀有關在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "HTML 和 JavaScript 疑難排解指南"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 # HTML 和 JavaScript 疑難排解指南
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本主題包含在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
@@ -383,6 +383,6 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

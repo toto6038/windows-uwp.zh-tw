@@ -1,20 +1,20 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: "此文章說明視訊裝置控制項如何啟用增強的視訊擷取案例，包括 HDR 視訊和曝光優先順序。"
-title: "視訊擷取的擷取裝置控制項"
+description: "本文示範如何使用手動裝置控制項來啟用美化的視訊擷取案例，包括 HDR 視訊和曝光優先順序。"
+title: "視訊擷取的手動相機控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
+ms.sourcegitcommit: daeb92e51a005825f1e410da9c924afc723297f1
+ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
 
 ---
 
-# 視訊擷取的擷取裝置控制項
+# 視訊擷取的手動相機控制項
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-此文章說明視訊裝置控制項如何啟用增強的視訊擷取案例，包括 HDR 視訊和曝光優先順序。
+本文示範如何使用手動裝置控制項來啟用美化的視訊擷取案例，包括 HDR 視訊和曝光優先順序。
 
 本文中討論的視訊裝置控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
@@ -22,12 +22,12 @@ ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE] 
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 ## HDR 視訊
 
-高動態範圍 (HDR) 視訊功能可將 HDR 處理套用至擷取裝置的視訊資料流。 檢查 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 屬性，以判斷是否支援 HDR 視訊。
+高動態範圍 (HDR) 視訊功能可將 HDR 處理套用至擷取裝置的視訊資料流。 選取 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 屬性，以判斷是否支援 HDR 視訊。
 
 HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置會動態判斷 HDR 視訊處理是否可改進媒體擷取，若是可以，則會啟用 HDR 視訊。 若要判斷目前的裝置是否支援特定的模式，請查看 [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) 集合是否包含所需的模式。
 
@@ -47,7 +47,8 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -58,6 +59,6 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

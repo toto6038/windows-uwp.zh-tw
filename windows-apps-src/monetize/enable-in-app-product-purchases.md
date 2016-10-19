@@ -3,18 +3,20 @@ author: mcleanbyron
 Description: "無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。"
 title: "啟用應用程式內產品購買"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: in-app offer code sample
+keywords: "應用程式內的購買選項程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: bb28828463b14130deede9f7cf796c6e32fcb48b
-ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 531b5c5a5c70461e98b5809246fdce7215805a25
 
 ---
 
 # 啟用應用程式內產品購買
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
+
+>**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+
+無論您的 App 是否免費，都可以直接從 App 內銷售內容、其他 App，或新的 App 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
 
 > **注意：**試用版的應用程式無法提供應用程式內產品。 使用試用版 app 的客戶只有在購買 app 的完整版本後，才能購買應用程式內產品。
 
@@ -22,7 +24,7 @@ ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
 
 -   要新增功能讓客戶購買的 Windows 應用程式。
 -   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\AppData\local\packages\&lt;套件名稱&gt;\LocalState\Microsoft\Windows Store\ApiData 中名為 "WindowsStoreProxy.xml" 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 app 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
--   本主題也會參照[市集範例](http://go.microsoft.com/fwlink/p/?LinkID=627610) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
+-   本主題也會參照[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store) (英文) 中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
 ## 步驟 1：初始化應用程式的授權資訊
 
@@ -31,7 +33,7 @@ ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
 ```CSharp
 void AppInit()
 {
-    // some app initialization functions 
+    // some app initialization functions
 
     // Get the license info
     // The next line is commented out for testing.
@@ -55,9 +57,9 @@ void AppInit()
     您可以依權杖識別您應用程式中的每個應用程式內產品。 這個權杖是您定義的字串，並在應用程式和市集中用來識別特定的應用程式內產品。 請指定一個既唯一 (對您的應用程式來說) 又有意義的名稱，以便在撰寫程式碼時，可以快速地識別其正確功能。 以下是一些名稱的範例：
 
     -   "SpaceMissionLevel4"
-    
+
     -   "ContosoCloudSave"
-    
+
     -   "RainbowThemePack"
 
 2.  **以條件性區塊來撰寫功能的程式碼**
@@ -67,10 +69,10 @@ void AppInit()
     下列範例示範如何在授權專屬的條件性區塊中，撰寫 **featureName** 產品功能的程式碼。 **featureName** 字串是可在應用程式內唯一識別這個產品的權杖，同時也可用來在市集中識別此產品。
 
     ```    CSharp
-    if (licenseInformation.ProductLicenses["featureName"].IsActive) 
+    if (licenseInformation.ProductLicenses["featureName"].IsActive)
     {
         // the customer can access this feature
-    } 
+    }
     else
     {
         // the customer can' t access this feature
@@ -84,24 +86,24 @@ void AppInit()
     以下是如何測試以查看客戶是否已經擁有應用程式內產品，如果沒有，就顯示購買對話方塊來讓客戶購買。 請以您為購買對話方塊自訂的程式碼取代 "show the purchase dialog" 註解 (例如提供一個含有親切提醒「購買此應用程式！」 按鈕的頁面)。
 
     ```    CSharp
-    void BuyFeature1() 
+    void BuyFeature1()
     {
         if (!licenseInformation.ProductLicenses["featureName"].IsActive)
         {
             try
             {
-                // The customer doesn't own this feature, so 
+                // The customer doesn't own this feature, so
                 // show the purchase dialog.
                 await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
-        
+
                 //Check the license state to determine if the in-app purchase was successful.
             }
             catch (Exception)
             {
-                // The in-app purchase was not completed because 
+                // The in-app purchase was not completed because
                 // an error occurred.
             }
-        } 
+        }
         else
         {
             // The customer already owns this feature.
@@ -129,14 +131,10 @@ void AppInit()
 * [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)
 * [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
 * [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
-* [市集範例 (示範試用版和 app 內購買)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [市集範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

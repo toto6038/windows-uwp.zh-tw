@@ -6,32 +6,25 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 
 ---
-
 # UWP App 的磚、徽章及通知
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
+了解如何使用磚、徽章、快顯通知以及通知提供 App 的進入點，並將使用者維持在最新狀態。
 
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有一個磚。 您可以啟用不同的磚大小 (小、中、寬及大)。</p>
 
-了解如何使用磚、徽章、快顯通知以及通知提供您 App 的進入點，並將使用者維持在最新狀態。
+<p>您可以使用「磚通知」<em></em>更新磚，以將新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 傳遞給使用者。</p>
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
-<td align="left"><p>每個 app 都會有一個磚。 App 在 [開始] 功能表上以<em>磚</em>的形式顯示。 您可以啟用不同的磚大小 (小、中、寬及大)。 您可以使用<em>磚通知</em>更新磚，以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。 您可以使用<em>徽章</em>或<em>通知徽章</em>，以系統提供的字符或 1-99 的數字形式，提供狀態或摘要資訊。</p>
-<p><em>快顯通知</em>是您的 App 透過名為 <em>toast</em> (或 <em>banner</em>) 的快顯 UI 元素傳送給使用者的通知。 無論使用者是否在您的 App 中，都可以看到通知。</p>
-<p><em>推播通知</em>或<em>原始通知</em>是從 Windows 推播通知服務 (WNS) 或從背景工作傳送到您 app 的通知。 您的應用程式可以通知使用者有趣事發生 (透過徽章更新、磚更新或快顯通知) 以回應這些通知，或是以您所選擇的任何方式來回應。</p></td>
-</tr>
-</tbody>
-</table>
+<p>您可以使用「徽章」<em></em>以系統提供的字符或 1-99 的數字形式，提供狀態或摘要資訊。 徽章也會出現在 app 的工作列圖示上。 </p>
+
+<p>「快顯通知」<em></em>是您的 App 透過名為 <em>toast</em> (或 <em>banner</em>) 的快顯 UI 元素傳送給使用者的通知。 無論使用者是否在您的 App 中，都可以看到通知。</p>
+<p><em>推播通知</em>或<em>原始通知</em>是從 Windows 推播通知服務 (WNS) 或從背景工作傳送到您 app 的通知。 您的應用程式可以通知使用者有趣事發生 (透過徽章更新、磚更新或快顯通知) 以回應這些通知，或是以您所選擇的任何方式來回應。</p>
 
  
 ## 磚 
@@ -132,6 +125,6 @@ ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

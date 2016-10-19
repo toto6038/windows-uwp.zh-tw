@@ -6,8 +6,8 @@ title: "協助工具概觀"
 label: Accessibility overview
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 430484a9243abc644de75d35c03bb11cf47960c0
+ms.sourcegitcommit: a93f6fb154300ac27b9dc700182d90083fb2cbc8
+ms.openlocfilehash: 669672ecd8c15adb2e53eb8e4a8efd8483af14d1
 
 ---
 
@@ -177,9 +177,10 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [協助工具](accessibility.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

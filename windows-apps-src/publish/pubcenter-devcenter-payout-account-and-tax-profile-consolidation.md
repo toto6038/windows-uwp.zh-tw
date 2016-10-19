@@ -4,8 +4,8 @@ Description: "如果您先前曾為您的 Microsoft Advertising 獲利設定 pub
 title: "pubCenter 開發人員中心支付帳戶和稅金設定檔彙總"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+ms.sourcegitcommit: bcb57cd9418ae5bd5d7779a1b442d9a236d3eae6
+ms.openlocfilehash: 9b97ab818fdc14d0354e5e9ba4809ac3401d6053
 
 ---
 
@@ -14,9 +14,11 @@ ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
 
 如果您先前曾為您的 Microsoft Advertising 獲利設定 pubCenter 支付帳戶，在 2016 年 4 月 1 日之後將不再使用該帳戶進行支付。 現在透過開發人員中心支付帳戶付款。
 
+> **重要** 截至 2016 年 10 月 1 日，您將不再有 pubCenter 儀表板的存取權。 請造訪您的 [Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/apps/overview)以了解所有廣告管理和報告功能。 如果您還沒有將任何 pubCenter 帳戶連結至開發人員中心帳戶，請立即連結。 如需詳細資訊，請參閱 [pubCenter 開發人員中心整合](pubcenter-dev-center-integration.md)。
+
 為了確保會準時提交任何應付款項，請登入您的開發人員中心儀表板，並確認您的[支付帳戶和稅務設定檔](setting-up-your-payout-account-and-tax-forms.md)均已正確設定且是最新設定。
 
-> **重要：**如果您未曾在開發人員中心設定您的支付帳戶或稅金設定檔，則需立即執行該動作。 如需詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
+> **重要** 如果您未曾在開發人員中心設定您的支付帳戶或稅務設定檔，您必須執行該動作，才能收到付款。 如需詳細資訊，請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
 
 如需開發人員中心的付款詳細資訊，請參閱[支付摘要](payout-summary.md)。 如需不同國家與地區中用於支付的貨幣相關資訊，請參閱[開發人員帳戶與 App 提交市場](account-types-locations-and-fees.md#account_markets)。
 
@@ -24,54 +26,54 @@ ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
 
 ## 常見問題集
 
-### 我已在同一個地區/國家中使用同一個 Microsoft 帳戶註冊我的 pubCenter 和開發人員中心帳戶。 我該如何收到我的獲利？
+**我已在同一個地區/國家中使用同一個 Microsoft 帳戶註冊我的 pubCenter 和開發人員中心帳戶。 我該如何收到我的獲利？**
 
 您的 Microsoft Advertising 獲利將會支付到您在開發人員中心設定的支付帳戶 (PayPal 或銀行帳戶)。
 
-### 我在不同的地區/國家中使用同一個 Microsoft 帳戶註冊我的 pubCenter 和開發人員中心帳戶。 我該如何收到我的獲利？
+**我在不同的地區/國家中使用同一個 Microsoft 帳戶註冊我的 pubCenter 和開發人員中心帳戶。 我該如何收到我的獲利？**
 
 您的 Microsoft Advertising 獲利將會支付到您在開發人員中心設定的支付帳戶 (PayPal 或銀行帳戶)。 支付金額將會轉換為您開發人員中心帳戶所在國家或地區的貨幣。
 
-### 我已經將 pubCenter 帳戶手動連結到開發人員中心帳戶。 我將會在何處收到我的 Microsoft Advertising 獲利？
+**我已經將 pubCenter 帳戶手動連結到開發人員中心帳戶。 我將會在何處收到我的 Microsoft Advertising 獲利？**
 
 對於來自您於開發人員中心設定的支付帳戶 (PayPal 或銀行帳戶) 中所有連結的 pubCenter 帳戶的 Microsoft Advertising 獲利，您將會收到一筆單一支付。 支付金額將會轉換為您開發人員中心帳戶所在國家或地區的貨幣。
 
-### 我向同一個發行者註冊了多個 pubCenter 帳戶。 我將如何針對這所有帳戶收取我的獲利？
+**我向同一個發行者註冊了多個 pubCenter 帳戶。 我將如何針對這所有帳戶收取我的獲利？**
 
 對於來自您於開發人員中心設定的支付帳戶 (PayPal 或銀行帳戶) 中所有連結的 pubCenter 帳戶的 Microsoft Advertising 獲利，您將會收到一筆單一支付。 支付金額將會轉換為您開發人員中心帳戶所在國家或地區的貨幣。
 
-### 我在 pubCenter 中使用不同的稅金設定檔註冊了多個 pubCenter 帳戶。 為什麼我在開發人員中心只看見一個稅金設定檔？
+**我在 pubCenter 中使用不同的稅金設定檔註冊了多個 pubCenter 帳戶。 為什麼我在開發人員中心只看見一個稅金設定檔？**
 
 您的開發人員中心帳戶將針對您的所有支付使用單一稅金設定檔。 請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)，以了解如何在開發人員中心設定和管理您的付款和稅務資訊。
 
-### 為什麼我的支付會轉換為不同的貨幣？
+**為什麼我的支付會轉換為不同的貨幣？**
 
 您的 Microsoft Advertising 獲利將會轉換並支付到您在開發人員中心設定的支付帳戶 (PayPal 或銀行帳戶)。 如果您的 pubCenter 帳戶所在國家或地區不符合您的開發人員中心帳戶所在國家或地區，將會使用與您的開發人員中心帳戶所在國家或地區相關聯的貨幣來支付。
 
-### 為什麼我的支付會傳送到不同的 PayPal 或銀行帳戶？
+**為什麼我的支付會傳送到不同的 PayPal 或銀行帳戶？**
 
 如果您在開發人員中心和 pubCenter 中設定了不同的支付帳戶 (PayPal 或銀行帳戶)，就會發生此情況。 到 2016 年 4 月 1 日為止，所有的 Microsoft Advertising 支付都將支付到您在開發人員中心設定的支付帳戶。
 
-### 為什麼我未收到這個月的 Microsoft Advertising 支付？
+**為什麼我未收到這個月的 Microsoft Advertising 支付？**
 
 這通常是因為下列一或多個原因所導致：
 
 -   您在開發人員中心的[支付帳戶和稅金設定檔詳細資料](setting-up-your-payout-account-and-tax-forms.md)並未正確設定。
 -   您的 pubCenter 帳戶尚未[連結到您的開發人員中心帳戶](pubcenter-dev-center-integration.md)。
 
-### 我如何檢查將在開發人員中心用來進行支付的支付帳戶和稅金設定檔？
+**我如何檢查將在開發人員中心用來進行支付的支付帳戶和稅金設定檔？**
 
 請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)，以了解如何在開發人員中心檢視 (並視需要編輯) 您的付款和稅務資訊。
 
-### 我仍在 pubCenter 中看見我的稅金設定檔和支付帳戶資訊。 是否將針對我的支付使用這些資訊？
+**我仍在 pubCenter 中看見我的稅金設定檔和支付帳戶資訊。 是否將針對我的支付使用這些資訊？**
 
 否，從 2016 年 4 月 1 日開始，將不再使用您的 pubCenter 支付帳戶和稅金設定檔資訊進行付款。 請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)，以了解如何在開發人員中心設定和管理您的付款和稅務資訊。
 
-### 我仍然可以在 pubCenter 中管理我的稅金設定檔和支付帳戶資訊嗎？
+**我仍然可以在 pubCenter 中管理我的稅金設定檔和支付帳戶資訊嗎？**
 
 否，到 2016 年 4 月 1 日為止，將不再使用您的 pubCenter 支付帳戶和稅金設定檔資訊進行付款。 請參閱[設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)，以了解如何在開發人員中心設定和管理您的付款和稅務資訊。
 
-### 如果我需要有關支付的協助，可以與誰聯繫？
+**如果我需要有關支付的協助，可以與誰聯繫？**
 
 如有任何問題或疑問，請開啟[支援票證](http://go.microsoft.com/fwlink/p/?LinkId=733342)。
 
@@ -81,10 +83,6 @@ ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

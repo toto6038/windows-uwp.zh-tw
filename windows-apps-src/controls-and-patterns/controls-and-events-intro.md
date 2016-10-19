@@ -1,20 +1,28 @@
 ---
 author: Jwmsft
 Description: "您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。"
-title: "新增控制項和處理事件"
+title: "控制項和模式的簡介"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and events
+label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 
 ---
-# 控制項和事件的簡介
+# 控制項和模式的簡介
 
-您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的應用程式建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的應用程式。 將控制項新增到您應用程式的主要步驟有 3 個： 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-- 將控制項新增到您的應用程式 UI。 
+在 UWP app 開發中，「控制項」**是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
+
+「模式」**是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[瀏覽窗格](nav-pane.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽 app 的方式。 同樣地，您可以自訂 [Pivot](tabs-pivot.md) 控制項的範本來實作索引標籤模式。
+
+在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
+
+在本節中，我們會針對您可用來建置 app 之 UI 的每個 XAML 控制項提供指導方針。 做為開始，這篇文章會說明如何將控制項新增至 app。 在 app 使用控制項有 3 個主要步驟： 
+
+- 將控制項新增到 app UI。 
 - 設定控制項上的屬性，例如寬度、高度或前景色彩。 
 - 在控制項的事件處理常式中新增程式碼，使其執行某些功能。 
 
@@ -132,12 +140,14 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## 相關主題
 
--   [**命令列**](app-bars.md)
--   [搜尋](search.md)
--   [飛出視窗](dialogs-popups-menus.md)
+-   [依功能排序的控制項索引](controls-by-function.md)
+-   [Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [配置](../layout/index.md)
+-   [樣式](../style/index.md)
+-   [可用性](../usability/index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

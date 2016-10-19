@@ -5,7 +5,7 @@ ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
 
 ---
 
@@ -131,6 +131,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "檔案存取權限"
 description: "App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
+ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
+ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
 ---
 # 檔案存取權限
@@ -47,7 +47,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
             }
         );
         ```
-        
+
         當 [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 完成時，就會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表 App 安裝目錄 (範例中為 `file`) 中的 *file.txt* 檔案。
 
         URI 中的「ms-appx:///」前置詞是指 app 的安裝目錄。 您可以在[如何使用 URI 來參考內容](https://msdn.microsoft.com/library/windows/apps/hh781215)中，深入了解如何使用 app URI。
@@ -71,7 +71,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         ```javascript
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
- 
+
         如果您想要存取 App 的漫遊或暫存資料夾，請改用 [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 或 [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性。
 
         在您擷取代表應用程式資料位置的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 之後，可以使用 **StorageFolder** 方法存取該位置中的檔案和資料夾。 在此範例中，這些 **StorageFolder** 物件儲存在 `localFolder` 變數中。 您可以在[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)中，以及藉由下載適用於 Windows 8.1 的[應用程式資料範例](http://go.microsoft.com/fwlink/p/?linkid=231478)，並在您的 Windows 10 app 中重複使用其原始程式碼，來深入了解如何使用 app 資料位置。
@@ -80,7 +80,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appdata:///local/file.txt");
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
@@ -125,7 +125,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
             }
         );
         ```
- 
+
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的檔案時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)，代表已建立的檔案。 這個檔案在範例中稱為 `newFile`。
 
     -   您可以在使用者的 [下載] 資料夾中建立子資料夾，如下所示：
@@ -141,7 +141,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
             }
         );
         ```
- 
+
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 已超載，所以您可以在 [下載] 資料夾中已經存在相同名稱的子資料夾時，指定系統應該怎麼做。 當這些方法完成時，它們會傳回 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，代表已建立的子資料。 這個檔案在範例中稱為 `newFolder`。
 
     如果您在下載資料夾中建立檔案或資料夾，建議您將該項目新增到應用程式的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，如此一來，您的應用程式未來便能輕易存取該項目。
@@ -160,12 +160,11 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 | 影片    | VideosLibrary<br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
 | 卸除式裝置  | RemovableDevices <br><br>請注意，您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>另請參閱[存取 SD 記憶卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | 家用群組媒體櫃  | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| 媒體伺服器裝置 (DLNA) | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) | 
+| 媒體伺服器裝置 (DLNA) | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | 通用命名慣例 (UNC) 資料夾 | 需要下列功能的組合。 <br><br>家用與工作場所網路功能： <br>- PrivateNetworkClientServer <br><br>同時至少要有一個網際網路和公用網路功能： <br>- InternetClient <br>- InternetClientServer <br><br>此外，如果適當，還要有網域認證功能：<br>- EnterpriseAuthentication <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 | 使用下列方式擷取資料夾： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用下列方式擷取檔案： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

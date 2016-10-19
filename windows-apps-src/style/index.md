@@ -1,19 +1,16 @@
 ---
-description: "使用 Windows 開發人員中心 UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP app 的特質。"
-keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
+description: "透過「Windows 開發人員中心」UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP app 的特質。"
+keywords: "uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發"
 title: "UWP 樣式指南 - Windows 應用程式開發"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
-ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 
 ---
+# UWP 樣式指南
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="uwpd-banner">
-<h1 class="uwpd-ruledheader">UWP 樣式指南</h1>
-</div>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -77,6 +74,6 @@ ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

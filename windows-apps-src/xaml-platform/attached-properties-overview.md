@@ -4,8 +4,8 @@ description: "說明 XAML 中附加屬性的概念並提供一些範例。"
 title: "附加屬性概觀"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
 
 ---
 
@@ -13,7 +13,7 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-「附加屬性」**是一種 XAML 概念。 它在概念上與全域屬性類似，可以在 XAML 的任何物件元素中設定。 附加屬性一般定義為特製格式的相依性屬性，在擁有者類型的物件模型中沒有傳統的屬性包裝函式。
+「附加屬性」**是一種 XAML 概念。 附加屬性可在物件上設定其他的屬性/值組，但屬性不是原始物件定義的一部分。 附加屬性一般定義為相依性屬性的特殊格式，在擁有者類型的物件模型中沒有傳統的屬性包裝函式。
 
 ## 先決條件
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 ## XAML 中的附加屬性
 
-附加屬性之所以存在，主要是因為它們啟用了 XAML 語法。 在 XAML 中，您使用 _AttachedPropertyProvider.PropertyName_ 語法來設定附加屬性。 這裡是您如何在 XAML 中設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例。
+在 XAML 中，您使用 _AttachedPropertyProvider.PropertyName_ 語法來設定附加屬性。 這裡是您如何在 XAML 中設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的範例。
 
 ```XML
 <Canvas>
@@ -29,13 +29,11 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 </Canvas>
 ```
 
-請注意，它的用法與靜態屬性類似；您一律會參考擁有和登錄附加屬性的類型 **Canvas**，而不是依名稱參考任何執行個體。
-
-**注意：**我們只是使用 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 做為附加屬性範例，而沒有充分解說您為何要使用。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+**注意**：我們只是使用 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 做為附加屬性範例，而沒有充分解說您為何要使用。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## 為什麼要使用附加屬性？
 
-對於可能防止有關係的不同物件在執行階段彼此互通資訊的編碼慣例，附加屬性是一種可以避開這種編碼慣例的方式。 將屬性放在共同的基底類別上，讓每個物件都剛好能夠取得並設定該屬性，當然是一種可行的方式。 但是，到最後，僅僅是您可能想要這麼做的案例數目，就會讓您的基底類別塞滿可共用屬性。 它甚至可能引發一些情況，就是在數以百計的子系中，可能只有兩個嘗試使用某個屬性。 這並不是一個好的類別設計。 為了處理這樣的情況，便有了附加屬性的概念，讓物件可以為屬性指派它自己的類別結構所未定義的值。 在物件樹中建立各種有關係的物件之後，定義類別就可以在執行階段從子物件讀取這個值。
+對於可能防止有關係的不同物件在執行階段彼此互通資訊的編碼慣例，附加屬性是一種可以避開這種編碼慣例的方式。 將屬性放在共同的基底類別上，讓每個物件都剛好能夠取得並設定該屬性，當然是一種可行的方式。 但是，到最後，僅僅是您可能想要這麼做的案例數目，就會讓您的基底類別塞滿可共用屬性。 它甚至可能引發一些情況，就是在數以百計的子系中，可能只有兩個嘗試使用某個屬性。 這並不是一個好的類別設計。 為了處理這樣的情況，便有了附加屬性的概念，讓物件可以為屬性指派它自己的類別結構所未定義的值。 在物件樹中建立各種物件之後，定義類別就可以在執行階段從子物件讀取這個值。
 
 例如，子元素可以使用附加屬性來通知父元素它們在 UI 中的顯示方式。 這是 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加屬性的例子。 **Canvas.Left** 會建立為附加屬性，因為它是要在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素內含的元素中設定，而非在 **Canvas** 本身設定。 任何可能的子元素接著就可以使用 **Canvas.Left** 與 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)，在 **Canvas** 配置容器父系內指定其配置位移。 附加屬性不但會完成這個動作，而且基本元素物件模型不會塞滿各種只能套用到一個可能的配置容器的屬性。 相反地，許多配置容器會實作自己的附加屬性集。
 
@@ -59,7 +57,7 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 ### 使用屬性系統
 
-Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如許多傳統執行個體屬性的儲存方式一樣，屬性系統就可以將值儲存在共用的相依性屬性儲存區中。 因此，附加屬性會在擁有的類別中公開相依性屬性識別碼。
+Windows 執行階段的附加屬性會實作為相依性屬性，這樣一來值可由屬性系統儲存在共用的相依性屬性儲存區中。 因此，附加屬性會在擁有的類別中公開相依性屬性識別碼。
 
 如果要以程式碼設定附加屬性，您必須呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 方法，然後傳遞做為該附加屬性識別碼的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 欄位。 (也必須傳遞要設定的值)。
 
@@ -123,6 +121,6 @@ Windows 執行階段的附加屬性會實作為相依性屬性，因此，正如
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

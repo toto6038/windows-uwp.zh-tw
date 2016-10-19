@@ -6,11 +6,11 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: 9b37e79611520800ceb7c3f45d92044fbc44dae0
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # Windows 推播通知服務 (WNS) 概觀
 
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
 
 Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
 
-## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>運作方式
+## 運作方式
 
 
 下圖顯示傳送推播通知的完整資料流程。 流程有三個步驟：
@@ -33,7 +33,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 ![推播通知的 WNS 資料流程圖表](images/wns-diagram-01.png)
 
-## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>註冊您的 App 與接收雲端服務認證
+## 註冊您的 App 與接收雲端服務認證
 
 
 您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 [Windows 開發人員中心](http://go.microsoft.com/fwlink/p/?linkid=511146)，並選取 [儀表板]****。
@@ -42,21 +42,21 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 如需如何註冊 app 的詳細資訊，請參閱[如何使用 Windows 通知服務 (WNS) 進行驗證](https://msdn.microsoft.com/library/windows/apps/hh465407)。
 
-## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>要求通知通道
+## 要求通知通道
 
 
 執行可接收推播通知的 App 時，該 App 必須先透過 [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285) 要求通知通道。 如需查看完整討論與程式碼範例，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。 這個 API 可傳回以唯一方式連結至呼叫端應用程式及其磚的通道 URI，而所有的通知類型都可以透過它來傳送。
 
 應用程式順利建立通道 URI 後，會將通道 URI 連同應該與此 URI 關聯的任何應用程式特定中繼資料一起傳送到雲端服務。
 
-### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>重要事項
+### 重要事項
 
 -   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 Windows 10 應用程式會在背景中定期更新其通道，您可以下載適用於 Windows 8.1 的[推播與定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並重複使用其原始原始碼和/或其示範的模式。
 -   雲端服務與用戶端應用程式之間的介面要由您 (開發人員) 實作。 我們建議應用程式完成與本身服務的驗證程序，並透過安全通訊協定 (像是 HTTPS) 傳輸資料。
 -   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 如果不檢查網域，您的雲端服務可能會不知不覺地將資訊曝露給攻擊者。
 -   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。
 
-## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>驗證您的雲端服務
+## 驗證您的雲端服務
 
 
 若要傳送通知，雲端服務必須透過 WNS 進行驗證。 當您向 Windows 市集儀表板註冊您的應用程式時，便會發生這個程序的第一個步驟。 進行註冊期間，將會提供應用程式套件安全性識別碼 (SID) 與祕密金鑰。 您的雲端服務會使用這個資訊向 WNS 進行驗證。
@@ -76,7 +76,7 @@ WNS 驗證配置使用 [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=2267
 
  
 
-``` syntax
+``` http
  POST /accesstoken.srf HTTP/1.1
  Content-Type: application/x-www-form-urlencoded
  Host: https://login.live.com
@@ -89,7 +89,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 以下範例顯示成功的驗證回應，其中包括存取權杖。 如需語法詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435)。
 
-``` syntax
+``` http
  HTTP/1.1 200 OK   
  Cache-Control: no-store
  Content-Length: 422
@@ -101,14 +101,14 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
  }
 ```
 
-### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>重要事項
+### 重要事項
 
 -   這個程序支援草稿版本 V16 的 OAuth 2.0 通訊協定。
 -   OAuth 要求建議 (RFC) 使用「用戶端」一詞來表示雲端服務。
 -   當 OAuth 草稿完成時，這個程序可能會變更。
 -   存取權杖可在多個通知要求重複使用。 藉此雲端服務只需驗證一次便能夠傳送多個通知。 不過，當存取權杖到期時，雲端服務必須重新驗證才能收到新的存取權杖。
 
-## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>傳送通知
+## 傳送通知
 
 
 使用通道 URI，雲端服務就能在有提供給使用者的更新時傳送通知。
@@ -121,7 +121,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
     如需製作通知承載的詳細資訊，請參閱[快速入門：傳送推播通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。 磚、快顯通知或徽章推播通知的承載是以 XML 內容來提供的，它們遵守各自已定義的[彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)或[傳統磚結構描述](https://msdn.microsoft.com/library/windows/apps/br212853)。 原始通知的承載則沒有指定的結構。 它完全是由應用程式定義的。
 
-    ``` syntax
+    ``` http
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
      Content-Type: text/xml
      X-WNS-Type: wns/tile
@@ -139,7 +139,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 ![傳送通知的 WNS 圖表](images/wns-diagram-03.png)
 
-### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>重要事項
+### 重要事項
 
 -   WNS 不保證通知的可靠性或延遲。
 -   在任何情況下通知都不應該包含機密或敏感資料。
@@ -148,7 +148,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 -   當裝置離線時，WNS 預設將針對每個應用程式最多儲存五個磚通知 (已啟用佇列的情況，否則只儲存一個磚通知)，以及針對每個通道 URI 儲存一個徽章通知，而且不會有任何原始通知。 這個預設的快取行為可以透過 [X-WNS-Cache-Policy 標頭](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache)來變更。 請注意，當裝置離線時，絕不會儲存快顯通知。
 -   在通知內容針對使用者個人化的案例，WNS 建議雲端服務在收到更新後立即傳送更新。 這個情況的範例包括社交媒體摘要更新、立即通訊邀請、新訊息通知或警示。 或者，您可能遇到將相同的一般性更新頻繁傳送給大量使用者子集的情況；例如，氣象、股票與新聞更新。 WNS 指導方針規定，這些更新的頻率應該最多每 30 分鐘一次。 如果例行更新的頻率更頻繁，使用者或 WNS 可能會判斷有濫用的行為。
 
-## <span id="expiry"></span><span id="EXPIRY"></span>磚和徽章通知的到期時間
+## 磚和徽章通知的到期時間
 
 
 根據預設，磚和徽章通知會在下載後的三天到期。 當通知到期的時候，會從磚或佇列中移除內容，不再對使用者顯示。 最佳作法是在所有的磚和徽章通知上設定到期時間 (使用一個對您的 app 有意義的時間)，如此您的磚內容就不會超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務停止傳送通知或使用者從網路中斷連線一段期間時，這也可以確保會移除過時內容。
@@ -157,7 +157,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 例如，在股市交易日，您可以將股價更新到期時間設定為傳送間隔時間的兩倍 (例如，如果是每半小時傳送通知一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 
-## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>推播通知和省電模式
+## 推播通知和省電模式
 
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 [設定]**** App 中找到) 可讓您的 App 即使在省電模式開啟時，也會接收到推播通知。
@@ -175,7 +175,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 以下是如何在 Windows 10 中檢查省電模式是否開啟的範例。 此範例會通知使用者並啟動 [設定] App 以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
-```CSharp
+```cs
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -222,7 +222,7 @@ async public void CheckForEnergySaving()
 
 這是此範例之 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) 的 XAML。
 
-```XAML
+```xaml
 <ContentDialog x:Name="saveEnergyDialog"
                PrimaryButtonText="Open battery saver settings"
                SecondaryButtonText="Ignore"
@@ -245,7 +245,7 @@ async public void CheckForEnergySaving()
 
  
 
-## <span id="related_topics"></span>相關主題
+## 相關主題
 
 
 * [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -267,6 +267,6 @@ async public void CheckForEnergySaving()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "這個移植練習示範如何將簡單的轉譯架構從 Direct3D
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
+ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 ---
 
@@ -72,13 +72,13 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
 ## 相關主題
 
 
-**Direct3D** 
-           [在 Direct3D 9 中撰寫 HLSL 著色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+**Direct3D**
+[在 Direct3D 9 中撰寫 HLSL 著色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
 [建立適用於 UWP 的新 DirectX 11 專案](user-interface.md)
 
-**Windows 市集** 
-           [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+**Windows 市集**
+[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
 [**物件控制代碼運算子 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
@@ -92,6 +92,6 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

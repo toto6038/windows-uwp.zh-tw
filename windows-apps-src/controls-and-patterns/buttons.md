@@ -1,23 +1,34 @@
 ---
 author: Jwmsft
+Description: "按鈕讓使用者得以觸發立即動作。"
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 
 ---
 # 按鈕
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 按鈕為使用者提供觸發立即動作的方式。
 
 ![按鈕的範例](images/controls/button.png)
 
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Button 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>RepeatButton 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Click 事件</strong></a></li>
+</ul>
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+</div>
+</div>
 
--   [**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Click 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -71,7 +82,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
 
-您通常無法處理按鈕上的低階 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
+您通常無法處理按鈕上的低階 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)。
 
 您可以變更 [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 屬性，以變更按鈕引發 Click 事件的方式。 預設 ClickMode 值是 **Release**。 如果 ClickMode 是 **Hover**，則使用鍵盤或觸控方式並不能引發 Click 事件。 
 
@@ -150,85 +161,24 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   不要在按鈕內放入過多內容。 讓內容簡潔且容易理解 (一張圖片和一些文字就已足夠)。
 
 ## 返回按鈕
-返回按鈕是一種系統提供的 UI 能供性，可往回瀏覽上一頁堆疊或使用者的瀏覽歷程記錄。
+返回按鈕是一種系統提供的 UI 元素，可透過使用者的返回堆疊或瀏覽歷程記錄啟用向後瀏覽。 您不需要自行建立返回按鈕，但您可能必須花一點心力來提供良好的向後瀏覽體驗。 如需詳細資訊，請參閱[歷程記錄和向後瀏覽](../layout/navigation-history-and-backwards-navigation.md)
 
-瀏覽歷程記錄的範圍 (app 內或全域) 取決於裝置和裝置模式。
+## 取得範例
+*   [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    以互動式格式查看所有 XAML 控制項。
 
-## <span id="examples"></span><span id="EXAMPLES"></span>範例
-
-
-系統返回按鈕的 UI 適合每種裝置和輸入類型，但每個裝置和通用 Windows 平台 (UWP) app 的瀏覽體驗卻是全域且一致的。 這些不同的體驗包含：
-
-裝置手機 ![手機上的系統返回](images/nav-back-phone.png)
--   一律顯示。
--   裝置底部的軟體或硬體按鈕。
--   在 app 內和 app 間提供全域返回瀏覽。
-
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>平板電腦 ![平板電腦上的系統返回](images/nav-back-tablet.png)
--   在平板電腦模式中一律顯示。
-
-    在桌面模式中無法使用。 但是可改用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
-
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
-
--   裝置底部瀏覽列中的軟體按鈕。
--   在 app 內和 app 間提供全域返回瀏覽。
-
-<span id="PC"></span><span id="pc"></span>電腦、膝上型電腦、平板電腦 ![電腦或膝上型電腦上的系統返回](images/nav-back-pc.png)
--   在桌面模式中為選擇性。
-
-    在平板電腦模式中無法使用。 請參閱[平板電腦](#Tablet)。
-
-    預設為停用。 必須選擇加入才能啟用。
-
-    使用者若要在平板電腦模式和桌面模式之間切換，可移至 [設定 &gt; 系統 &gt; 平板電腦模式]**** 並設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。
-
--   App 標題列中的軟體按鈕。
--   只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。
-
-Surface Hub ![Surface Hub 上的系統返回](images/nav-back-surfacehub.png)
--   一律顯示。
--   裝置底部的軟體按鈕。
--   在 app 內和 app 間提供返回瀏覽。
-
- 
-
-## 可行與禁止事項
-
-
--   啟用返回瀏覽。
-
-    如果未啟用返回瀏覽，您的應用程式會包含在全域的上一頁堆疊中，但不會保留應用程式內頁面瀏覽歷程記錄。
-
--   在桌面模式中啟用標題列返回按鈕。
-
-    會保留 app 內頁面瀏覽歷程記錄，不支援 app 間的返回瀏覽。
-
-    **注意：**在平板電腦模式中，當使用者從裝置頂端向下撥動或將滑鼠指標移至裝置頂端附近時，即會顯示標題列。 為避免重複和混淆，在平板電腦模式中不會顯示標題列返回按鈕。
-
-     
-
--   當應用程式內瀏覽歷程記錄被清空或無法取得時，在桌面模式中隱藏或停用標題列返回按鈕。
-
-    提供清楚的指示，讓使用者知道他們已無法再更往前返回瀏覽。
-
--   每個返回命令應回到返回堆疊中的上一頁，或者，如果不在桌面模式，則是返回上一個應用程式。
-
-    如果返回瀏覽不是直覺式、一致且可預測的，使用者可能會混淆。
 
 ## 相關文章
 
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)
 - [核取方塊](checkbox.md)
-
-**適用於開發人員 (XAML)**
 - [**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

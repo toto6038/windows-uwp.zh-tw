@@ -5,7 +5,7 @@ title: "讓您的 app 更容易促銷"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
+ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
 
 ---
 
@@ -49,6 +49,6 @@ Windows 市集會依類別或主題分組展示不同的應用程式。 因為�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

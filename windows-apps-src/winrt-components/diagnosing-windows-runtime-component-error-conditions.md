@@ -5,7 +5,7 @@ description: "本文提供關於以 Managed 程式碼撰寫之 Windows 執行階
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
 ---
 
@@ -252,6 +252,6 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

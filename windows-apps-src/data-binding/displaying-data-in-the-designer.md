@@ -5,7 +5,7 @@ title: "設計介面上適用於原型設計的範例資料"
 description: "針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。"
 translationtype: Human Translation
 ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 2f7ac4b269a167c3b521fa94d77e27091fa490a8
+ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
 
 ---
 設計介面上適用於原型設計的範例資料
@@ -90,7 +90,7 @@ else
 
 **d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](http://go.microsoft.com/fwlink/p/?LinkId=272504)主題中，其仍適用於通用 Windows 平台 (UWP) app。
 
-[ **CollectionViewSource** ](https://msdn.microsoft.com/library/windows/apps/BR209833) 沒有 **DataContext** 屬性，但具有 **Source** 屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
+[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 沒有 **DataContext** 屬性，但具有 **Source** 屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
 
 ``` xaml
     <Page.Resources>
@@ -145,6 +145,6 @@ else
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

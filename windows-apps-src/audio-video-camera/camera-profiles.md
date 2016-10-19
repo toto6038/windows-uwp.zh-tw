@@ -1,23 +1,23 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。"
-title: "相機設定檔"
+description: "此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。"
+title: "使用相機設定檔探索並選取相機功能"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
+ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 ---
 
-# 相機設定檔
+# 使用相機設定檔探索並選取相機功能
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。
+此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。
 
-**注意**  
-本文是以[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> [!NOTE] 
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
  
 
@@ -26,8 +26,6 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 不同裝置上的相機支援不同的功能，包括支援的擷取解析度、視訊擷取的畫面播放速率，以及是否支援 HDR 或可變畫面播放速率擷取。 通用 Windows 平台 (UWP) 媒體擷取架構將這組功能存放在 [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) 中。 以 [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) 物件表示的相機設定檔有三個媒體描述集合；一個用於相片擷取、一個用於視訊擷取，另一個用於視訊預覽。
 
 在初始化 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 物件之前，您可以在目前裝置上查詢擷取裝置，以查看支援哪些設定檔。 當您選取支援的設定檔時，您知道此擷取裝置支援設定檔的媒體描述中的所有功能。 這樣就不需要試用與錯誤方法來判斷特定裝置上支援哪些功能組合。
-
-在有關基本媒體擷取的這篇[使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)文章中，只會使用擷取裝置的識別碼字串 (初始化所需的最小資料量) 來建立用於初始化媒體擷取的 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573)。
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
@@ -85,7 +83,7 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 靜態方法 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 會傳回由指定的裝置支援並依指定的 [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值分類的相機設定檔。 在這個案例中，指定 **VideoRecording** 值可將傳回的相機設定檔限制為支援視訊錄製的設定檔。
 
-循環顯示傳回的相機設定檔清單。 對於每個相機設定檔，在設定檔檢查中循環顯示每個 [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695)，以查看 [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) 屬性是否為 true。 一旦找到合適的媒體描述，請中斷迴圈並將設定檔和描述物件指派給 **MediaCaptureInitializationSettings** 物件。
+循環顯示傳回的相機設定檔清單。 對於每個相機設定檔，在設定檔檢查中循環顯示每個 [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695)，以查看 [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) 屬性是否為 true。 找到合適的媒體描述後，請中斷迴圈並將設定檔和描述物件指派給 **MediaCaptureInitializationSettings** 物件。
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
@@ -99,7 +97,8 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 ## 相關主題
 
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -110,6 +109,6 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

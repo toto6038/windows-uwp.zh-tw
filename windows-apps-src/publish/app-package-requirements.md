@@ -4,8 +4,8 @@ Description: "遵循這些指導方針來準備要提交到 Windows 市集的 ap
 title: "應用程式套件需求"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
+ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
 > **注意：**務必讓您的所有檔案名稱都使用 ANSI。 
 
 
-在 Visual Studio 中建立套件時，請確定您已經使用與開發人員帳戶相關聯的相同 Microsoft 帳戶登入。 套件資訊清單的某些部分具有與您帳戶相關的特定詳細資料。 系統會自動偵測並新增此資訊。
+在 Visual Studio 中建立套件時，請確定您已經使用與開發人員帳戶相關聯的相同帳戶登入。 套件資訊清單的某些部分具有與您帳戶相關的特定詳細資料。 系統會自動偵測並新增此資訊。
 
 當您建置 app 套件時，Visual Studio 可以建立 .appx 檔案或 .appxupload 檔案 (或適用於 Windows Phone 8.1 及較舊版本的 .xap 檔案)。 對於目標為 Windows 10 的 app，請一律在 [套件](upload-app-packages.md) 頁面上傳 .appxupload 檔案。 如需針對市集封裝 UWP app 詳細資訊，請參閱[封裝適用於 Windows 10 的通用 Windows app](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
@@ -85,6 +85,6 @@ StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

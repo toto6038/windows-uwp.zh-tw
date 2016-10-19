@@ -4,8 +4,8 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "了解如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight app 使用 AdControl 類別來顯示橫幅廣告。"
 title: "Windows Phone Silverlight 中的 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
+ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
+ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 ---
@@ -13,30 +13,36 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 # Windows Phone Silverlight 中的 AdControl
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-本文會逐步說明如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight app 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 類別來顯示橫幅廣告。
-
-## 先決條件
-
-*  使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
 
 
-## 新增廣告組件參考
+本文會逐步說明如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight App 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 類別來顯示橫幅廣告。
 
-適用於 Windows Phone Silverlight 專案的 Microsoft Advertising 組件不會隨 Microsoft Store Engagement 和 Monetization SDK 安裝在本機。 在您可以開始更新程式碼之前，您必須先搭配使用「已連接服務」**** 與 Microsoft Store Engagement 和 Monetization SDK 中支援的廣告流量分配，以下載組件並在專案中加入其參考。
+> **Windows Phone Silverlight 8.0 的注意事項**&nbsp;&nbsp;使用 Universal Ad Client SDK 或 Microsoft Advertising SDK 較早版本的 **AdControl** 且已經在市集中的現有 Windows Phone 8.0 Silverlight App 仍然支援橫幅廣告。 不過，新的 Windows Phone 8.0 Silverlight 專案不再支援橫幅廣告。 此外，Windows Phone 8.x Silverlight 專案中的某些偵錯和測試案例也有限。 如需詳細資訊，請參閱[在您的 App 中顯示廣告](display-ads-in-your-app.md#silverlight_support)。
 
-1.  在 Visual Studio 中，依序按一下 [專案]****、[加入已連接服務]****。
 
-2.  在 [加入已連接服務]**** 對話方塊中，按一下 [Ad Mediator]****，然後按一下 [設定]****。
+## 將廣告組件新增到您的專案
 
-3.  按一下 [選取廣告聯播網]****，並只選取 [Microsoft Advertising]****。
+一開始，將包含適用於 Windows Phone Silverlight 之 Microsoft Advertising 組件的 NuGet 套件下載並安裝到您的專案。
 
-    此時，適用於 Silverlight 的所有必要 Microsoft Advertising 組件都會透過 NuGet 封裝下載到您的本機專案，而且對這些組件的參考會自動新增到您的專案。 廣告流量分配組件的參考也會新增到專案。 在稍後的步驟中會移除廣告流量分配組件，因為此案例中不需要它。
+1.  在 Visual Studio 中，開啟您的專案。
 
-4.  在 [選取廣告聯播網]**** 對話方塊中，按一下 [確定]****。 於下面隨即顯示的 [擷取狀態]**** 頁面中再按一次 [確定]****，最後按一下 [加入]**** 來關閉 [Ad Mediator]**** 對話方塊。
+2.  按一下 [工具]****，指向 [NuGet 套件管理員]****，然後按一下 [套件管理器主控台]****。
 
-5.  在 [方案總管]**** 中，展開 [參考]**** 節點。 以滑鼠右鍵按一下 [Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising]****，然後按一下 [移除]****。 這個案例中不需要此組件參考。
+3.  在 [套件管理器主控台]**** 視窗中，輸入其中一個命令。
+
+  * 如果您的專案是針對 Windows Phone 8.0，請輸入這個命令。
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
+      ```
+
+  * 如果您的專案是針對 Windows Phone 8.1，請輸入這個命令。
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
+      ```
+
+    輸入這個指令之後，適用於 Silverlight 的所有必要 Microsoft Advertising 組件都會透過 NuGet 套件下載到您的本機專案，而且對這些組件的參考會自動新增到您的專案。
 
 ## 撰寫 App 程式碼
 
@@ -90,8 +96,7 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 
 6.  在 **Grid** 標籤中，加入以下 **AdControl** 程式碼。 將 **ApplicationId** 和 **AdUnitId** 屬性指派給[測試模式屬性](test-mode-values.md)中提供的屬性，並將 **Height** 和 **Width** 屬性調整為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**  
-    在提交 App 之前，請以實際值取代測試的 **ApplicationId** 和 **AdUnitId** 值。
+    > **注意**&nbsp;&nbsp;在提交 App 之前，請以實際值取代測試的 **ApplicationId** 和 **AdUnitId** 值。
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">
@@ -114,7 +119,7 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 ## 使用開發人員中心發行包含即時廣告的 App
 
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請選取 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -127,6 +132,6 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

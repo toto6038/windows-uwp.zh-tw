@@ -1,19 +1,17 @@
 ---
 author: TylerMSFT
-title: "建立並登錄背景工作"
-description: "建立背景工作類別並加以登錄，即使您的 App 不在前景也能執行。"
+title: "建立並登錄在個別處理程序中執行的背景工作"
+description: "建立背景工作類別並加以登錄，讓它在 App 不在前景時也能執行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
-ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
+ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
+ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
 
 ---
 
-# 建立並登錄背景工作
-
+# 建立並登錄在個別處理程序中執行的背景工作
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要 API**
 
@@ -21,10 +19,12 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-建立背景工作類別並加以登錄，即使您的 App 不在前景也能執行。
+建立背景工作類別並加以登錄，讓它在 App 不在前景時也能執行。 本主題示範如何建立並登錄在前景處理程序以外的個別處理程序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)。
+
+> [!Note]
+> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
 ## 建立背景工作類別
-
 
 您可以撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別，在背景執行程式碼。 這個程式碼會在觸發特定事件後執行，例如使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 或 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)。
 
@@ -110,9 +110,10 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
+    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -124,7 +125,7 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -150,7 +151,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 > [!NOTE]
 > 您也可以建立專門用來登錄背景工作的函式，請參閱[登錄背景工作](register-a-background-task.md)。 在這種情況下，您不需要使用以下三個步驟；只需建構觸發程序，並將它和工作名稱、工作進入點及 (選用) 條件提供給登錄函式即可。
-
 
 ## 註冊要執行的背景工作
 
@@ -240,12 +240,13 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
     > ```
 
 > [!NOTE]
-> 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
 
-為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
+為了確保您的通用 Windows app 在您發行更新之後繼續正常執行，請使用 **ServicingComplete** (請參閱 [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) 觸發程序來執行任何更新後的組態變更，例如移轉 App 的資料庫及登錄背景工作。 此時，最佳做法是將與舊版 App 關聯的背景工作取消登錄 (請參閱 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471))，然後為新版 App 登錄背景工作 (請參閱 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485))。
+
+如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
 ## 使用事件處理常式來處理背景工作完成
-
 
 您應該向 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 註冊方法，以便讓 app 可以從背景工作取得結果。 啟動或繼續執行 app 時，如果背景工作自 app 上次在前景時即已完成，將會呼叫 mark 方法 (如果背景工作是在您 app 目前處於前景時完成，將會立即呼叫 OnCompleted 方法)。
 
@@ -275,7 +276,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!NOTE]
     > UI 更新應該以非同步方式執行，以避免 UI 執行緒阻塞。 例如，請參閱[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的 UpdateUI 方法。
-
 
 
 2.  返回登錄背景工作的位置。 在該行的程式碼後面，新增 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 物件。 提供您的 OnCompleted 方法做為 **BackgroundTaskCompletedEventHandler** 建構函式的參數。
@@ -315,7 +315,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 ## 摘要與後續步驟
 
-
 您現在應該了解如何撰寫背景工作類別的基本概念，如何在 app 內註冊背景工作，以及如何讓 app 辨識背景工作已經完成。 您也應該了解如何更新 app 資訊清單，才能讓您的 app 成功登錄背景工作。
 
 > [!NOTE]
@@ -337,8 +336,10 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
+* [建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)。
+[將多處理程序背景工作轉換成單一處理程序背景工作](convert-multiple-process-background-task.md)  
 
-**背景工作指引**
+**背景工作指導方針**
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
@@ -350,6 +351,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

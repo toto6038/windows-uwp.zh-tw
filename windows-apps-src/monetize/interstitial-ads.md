@@ -1,22 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "了解如何使用 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。"
+description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。"
 title: "插入式廣告"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
 # 插入式廣告
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本逐步解說示範如何使用 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。
 
-如需示範如何使用 C# 和 C++ 將插入式廣告新增到 JavaScript/HTML app 以及XAML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+本逐步解說示範如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。
+
+如需示範如何使用 C# 和 C++ 將插入式廣告新增到 JavaScript/HTML App 及 XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 <span id="whatareinterstitialads10"/>
 ## 什麼是插入式廣告？
@@ -36,16 +36,13 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ### 先決條件
 
-1.  使用 Visual Studio 2015 或 Visual Studio 2013 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。
-
-2.  在 Visual Studio 中，開啟您的專案或建立新專案。
+* 對於 UWP app︰請安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 與 Visual Studio 2015。
+* 對於 Windows 8.1 或 Windows Phone 8.1 App：請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 與 Visual Studio 2015 或 Visual Studio 2013。
 
 ### 程式碼開發
 
 * [XAML/.NET App 的步驟](#interstitialadsxaml10)
-
 * [HTML/JavaScript 的步驟](#interstitialadshtml10)
-
 * [C++ (DirectX Interop) 的步驟](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
@@ -354,7 +351,7 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ### 使用 Windows 開發人員中心發行包含即時廣告的 App
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]****&gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 針對廣告單位類型，請指定 [插入式影片]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 針對廣告單位類型，指定 [插入式影片]****。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值，用在開發人員中心產生的實際值取代。
 
@@ -387,6 +384,6 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

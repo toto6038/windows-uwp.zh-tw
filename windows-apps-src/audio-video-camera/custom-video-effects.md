@@ -1,13 +1,13 @@
 ---
 author: drewbatgit
-Description: "本文章說明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。"
+Description: "本文章明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。"
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "自訂視訊效果"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+ms.sourcegitcommit: 2d10a9a3732612cff8da81ee1921eaed0e838099
+ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 ---
 
@@ -17,9 +17,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 \[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
-
-本文章說明如何建立能實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。 自訂效果可以搭配數個不同的 Windows 執行階段 API 使用，其中包括能提供裝置相機存取的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)，以及能允許您由媒體剪輯建立複雜組合的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
+本文明如何建立能實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面以為視訊串流建立自訂效果的 Windows 執行階段元件。 自訂效果可以搭配數個不同的 Windows 執行階段 API 使用，其中包括能提供裝置相機存取的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)，以及能允許您由媒體剪輯建立複雜組合的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
 
 ## 將自訂效果新增到您的 App
 
@@ -51,14 +49,14 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### Close 方法
 
-系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 MediaEffectClosedReason，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
+系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
 ### DiscardQueuedFrames 方法
 
-在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面格，以用於處理目前的畫面格之上。 呼叫此方法時，您應該處置已儲存的先前畫面格組合。 除了針對累計的視訊畫面格之外，此方法也可以用來重設任何與先前畫面相關的狀態。
+在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置已儲存的先前畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -67,9 +65,10 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### IsReadOnly 屬性
 
-[**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面格 (例如僅針對視訊畫面格執行分析的效果)，您便應該將此屬性設定為 true，這將能使系統有效率地為您將畫面格輸入複製到畫面格輸出。
+[**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面 (例如僅針對視訊畫面執行分析的效果)，您應該將此屬性設定為 true，這將能使系統有效率地為您將畫面輸入複製到畫面輸出。
 
-**提示** 當 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性設定為 true 時，系統會在呼叫 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前將輸入畫面格複製到輸出畫面格。 將 **IsReadOnly** 屬性設定為 true 並不會限制您在 **ProcessFrame** 中寫入至效果的輸出畫面格。
+> [!TIP]
+> 當 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性設定為 true 時，系統會在呼叫 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前將輸入畫面複製到輸出畫面。 將 **IsReadOnly** 屬性設定為 true 並不會限制您在 **ProcessFrame** 中寫入至效果的輸出畫面。
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
@@ -89,7 +88,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
 
 
-**注意** 如果您從 **SupportedEncodingProperties** 傳回 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的空白清單，系統預設將會使用 ARGB32 編碼。
+> [!NOTE] 
+> 如果您從 **SupportedEncodingProperties** 傳回 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的空白清單，系統預設將會使用 ARGB32 編碼。
 
  
 
@@ -100,7 +100,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
-**注意** 如果您指定 [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系統將會使用 GPU 或系統記憶體，視哪一項針對管線較有效率而定。 使用此值時，您必須檢查 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法，以查看傳遞至方法的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 或 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 是否包含資料，並據此處理畫面格。
+> [!NOTE]
+> 如果您指定 [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系統將會使用 GPU 或系統記憶體，視哪一項針對管線較有效率而定。 使用此值時，您必須檢查 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法，以查看傳遞至方法的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 或 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 是否包含資料，並據此處理畫面。
 
  
 
@@ -127,7 +128,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法可以讓您的效果修改視訊的影像資料。 此方法會於每個畫面格呼叫一次，並會被傳遞 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 物件。 此物件包含輸入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件 (該物件包含要處理的傳入畫面格)，以及輸出 **VideoFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘視訊管線的影像資料)。 每個 **VideoFrame** 物件皆擁有 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性及 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，並由您從 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性回傳的值來決定會使用上述哪一個參數。
 
-此範例顯示使用軟體處理之 **ProcessFrame** 方法的簡單實作。 如需使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的詳細資訊，請參閱[影像處理](imaging.md)。 本文章稍後將提供使用硬體處理之 **ProcessFrame** 實作的範例。
+此範例顯示使用軟體處理之 **ProcessFrame** 方法的簡單實作。 如需使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的詳細資訊，請參閱[影像處理](imaging.md)。 本文稍後將提供使用硬體處理之 **ProcessFrame** 實作的範例。
 
 存取 **SoftwareBitmap** 的資料緩衝區需要 COM interop，因此您應該將 **System.Runtime.InteropServices** 命名空間包含在您的效果類別檔案中。
 
@@ -139,10 +140,11 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
 
 
-**注意** 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性...]。
-2.  選取 [建置] 索引標籤。
-3.  選取 [容許 Unsafe 程式碼] 核取方塊
+> [!NOTE]
+> 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
+> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性]****。
+> 2.  選取 [建置]**** 索引標籤。
+> 3.  選取 [允許 unsafe 程式碼]**** 核取方塊。
 
  
 
@@ -158,14 +160,14 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)。
 
-使用下列步驟來將 Win2D NuGet 套件新增到您依照本文章一開始於[將自訂效果新增到您的 App](#addacustomeffect) 一節中所描述之方式建立的專案。
+使用下列步驟，將 Win2D NuGet 套件新增到您依照本文開頭的[將自訂效果新增到您的 App](#addacustomeffect) 一節建立的專案。
 
 **將 Win2D NuGet 套件新增到您的效果專案**
 
-1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [VideoEffectComponent]**** 專案，然後選取 [管理 NuGet 套件...]****。
+1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [VideoEffectComponent]**** 專案，然後選取 [管理 NuGet 套件]****。
 2.  在視窗頂端，選取 [瀏覽]**** 索引標籤。
-3.  在搜尋方塊中輸入「Win2D」。
-4.  按一下 [Win2D.uwp]****，然後按一下右窗格中的 [安裝]。
+3.  在搜尋方塊中輸入 **Win2D**。
+4.  選取 [Win2D.uwp]****，然後選取右窗格中的 [安裝]****。
 5.  [檢閱變更]**** 對話方塊會顯示要安裝的套件。 按一下 [確定]****。
 6.  接受套件授權。
 
@@ -179,7 +181,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
 
-使用 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 參數來設定您效果會支援的編碼屬性。 使用 Win2D 時，您必須使用 ARGB32 編碼。
+使用 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 屬性來設定您效果會支援的編碼屬性。 使用 Win2D 時，您必須使用 ARGB32 編碼。
 
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
@@ -189,7 +191,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和上述的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
+[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和先前的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -208,9 +210,9 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 如果要從您的 App 使用您的視訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中您的專案下方，以滑鼠右鍵按一下 [參考]，然後選取 [加入參考...]
-2.  展開 [專案] 索引標籤，按一下 [方案]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 VideoEffectComponent。
-3.  按一下 [確定]。
+1.  在 [方案總管] 中您的專案下方，以滑鼠右鍵按一下 [參考]****，然後選取 [加入參考]****。
+2.  展開 [專案]**** 索引標籤，選取 [方案]****，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
+3.  按一下 [確定]****。
 
 ### 將您的自訂效果新增到相機視訊串流
 
@@ -233,12 +235,10 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 
 ## 相關主題
-
-
-[簡單的相機預覽存取](simple-camera-preview-access.md) 
-           [媒體組合和編輯](media-compositions-and-editing.md) 
-           [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)
- 
+* [簡單的相機預覽存取](simple-camera-preview-access.md)
+* [媒體組合和編輯](media-compositions-and-editing.md)
+* [Win2D 文件](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [媒體播放](media-playback.md)
 
  
 
@@ -247,6 +247,6 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

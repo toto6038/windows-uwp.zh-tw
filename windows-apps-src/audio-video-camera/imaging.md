@@ -2,14 +2,14 @@
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "本文說明如何使用 BitmapDecoder 和 BitmapEncoder 來載入及儲存影像檔，以及如何使用 SoftwareBitmap 物件來代表點陣圖影像。"
-title: "影像處理"
+title: "建立、編輯和儲存點陣圖影像"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
+ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
 
 ---
 
-# 影像處理
+# 建立、編輯和儲存點陣圖影像
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -18,11 +18,11 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 **SoftwareBitmap** 類別是可從多個來源建立的多用途 API，包括影像檔、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) 物件、Direct3D 外觀和程式碼。 **SoftwareBitmap** 可讓您輕鬆地在不同的像素格式與 Alpha 模式之間轉換，並允許低階存取像素資料。 此外，**SoftwareBitmap** 是許多 Windows 功能經常使用的介面，包括：
 
--   [ **CapturedFrame** ](https://msdn.microsoft.com/library/windows/apps/dn278725) 可讓您以 **SoftwareBitmap** 取得相機所拍攝的畫面。
+-   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) 可讓您以 **SoftwareBitmap** 取得相機所拍攝的畫面。
 
--   [ **VideoFrame** ](https://msdn.microsoft.com/library/windows/apps/dn930917) 可讓您取得 **VideoFrame** 的 **SoftwareBitmap** 表示。
+-   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 可讓您取得 **VideoFrame** 的 **SoftwareBitmap** 表示。
 
--   [ **FaceDetector** ](https://msdn.microsoft.com/library/windows/apps/dn974129) 可讓您偵測 **SoftwareBitmap** 中的人臉。
+-   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 可讓您偵測 **SoftwareBitmap** 中的人臉。
 
 本文中的範例程式碼使用下列命名空間中的 API。
 
@@ -61,6 +61,8 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 若要在 XAML 頁面內使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控制項顯示影像，請先在 XAML 頁面中定義 **Image** 控制項。
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+
+目前，**Image** 控制項只支援使用 BGRA8 編碼、預乘或無 Alpha 色板的影像。 嘗試顯示影像之前，請先測試以確定它具有正確的格式，如果沒有，請使用 **SoftwareBitmap** 靜態[**轉換**](https://msdn.microsoft.com/library/windows/apps/dn887362)方法，將影像轉換成支援的格式。
 
 建立新的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) 物件。 呼叫 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856)，同時傳入 **SoftwareBitmap**，以設定來源物件的內容。 然後，您就可以將 **Image** 控制項的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 屬性，設定為新建立的 **SoftwareBitmapSource**。
 
@@ -130,6 +132,6 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "本主題說明如何使用 FaceDetector 來偵測影像中的臉部。 FaceTracker 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。"
 title: "偵測影像或影片中的臉部"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
+ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 ---
 
@@ -46,7 +46,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-將 **FaceDetector** 物件具現化，方法是呼叫 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132)，然後呼叫 [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134)，利用已將大小調整為合理大小且轉換成支援像素格式的點陣圖中進行傳遞。 這個方法會傳回 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 物件的清單。 **ShowDetectedFaces** 是一個協助程式方法 (如下所示)，會在影像中的臉部四周繪製方框。
+將 **FaceDetector** 物件具現化，方法是呼叫 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132)，然後呼叫 [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134)，在已將大小調整為合理大小且轉換成支援像素格式的點陣圖中進行傳遞。 這個方法會傳回 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 物件的清單。 **ShowDetectedFaces** 是一個協助程式方法 (如下所示)，會在影像中的臉部四周繪製方框。
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -88,7 +88,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 如同 **FaceDetector**，**FaceTracker** 支援一組有限的像素格式。 這個範例會在提供的畫面格式不是 Nv12 格式時放棄臉部偵測。
 
-呼叫 [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) 來抓取 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 物件清單，這類物件代表框架中的臉部。 一旦具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，由於臉部追蹤協助程式方法不會在 UI 執行緒上呼叫，因此，您必須在呼叫 [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 中進行任何 UI 更新。
+呼叫 [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) 來抓取 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 物件清單，這類物件代表畫面中的臉部。 具備臉部清單之後，就可以使用上述針對臉部偵測所說明的相同方式來顯示它們。 請注意，由於臉部追蹤協助程式方法不會在 UI 執行緒上呼叫，因此，您必須在呼叫 [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 中進行任何 UI 更新。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
@@ -97,10 +97,12 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 * [媒體擷取的場景分析](scene-analysis-for-media-capture.md)
 * [基本臉部偵測範例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [基本臉部追蹤範例](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)
+* [相機](camera.md)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [媒體播放](media-playback.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "改善記憶體回收效能"
 description: "使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f9626c644315884ea8605a4e69e7e580a44010b
-ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
+ms.openlocfilehash: 32290820d4732f1a8b28fd18682514e3948e0356
 
 ---
 # 改善記憶體回收效能
@@ -84,6 +84,6 @@ ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

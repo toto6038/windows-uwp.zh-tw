@@ -4,8 +4,8 @@ description: "您可以使用 PropertyPath 類別和字串語法，具現化 XAM
 title: "Property-path 語法"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 867fd859823c23cec9666095793871a4b78e7e52
 
 ---
 
@@ -13,7 +13,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-您可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 但是動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
+您可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
 
 您可以直接將屬性路徑字串設定為 XAML 中的屬性。 您可以使用相同的字串語法來建構 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，以便在程式碼中設定 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)，或是使用 [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503) 在程式碼中設定動畫目標。 Windows 執行階段中有兩個獨特的功能領域會使用屬性路徑：資料繫結和動畫目標。 在 Windows 執行階段實作中，動畫目標不會建立基礎的 Property-path 語法值，它會將資訊保持為字串，但是這兩者的物件-屬性周遊的概念非常類似。 資料繫結與動畫目標在評估屬性路徑上有些微的差異，所以我們會分別描述它們的屬性路徑語法。
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 在物件圖形中標示物件-屬性關係周遊的語法元素是點 (**.**) 字元。 屬性路徑字串中的每個點表示物件 (點的左邊) 與該物件之屬性 (點的右邊) 間的分隔。 字串的會由左到右逐步評估多個物件-屬性的關係。 讓我們看一下範例：
 
 ``` syntax
-<Binding Path="Customer.Address.StreetAddress1"
+"{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
 以下是這個路徑的評估方式：
@@ -119,6 +119,6 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

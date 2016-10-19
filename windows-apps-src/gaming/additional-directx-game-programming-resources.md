@@ -5,7 +5,7 @@ description: "如需關於 Windows 遊戲程式設計的詳細資訊，請查看
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
+ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 ---
 
@@ -85,6 +85,6 @@ ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

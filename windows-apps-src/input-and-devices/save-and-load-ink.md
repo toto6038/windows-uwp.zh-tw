@@ -7,8 +7,8 @@ label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
+ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
+ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
 ---
 
@@ -25,8 +25,8 @@ ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
 
 
 
-**注意**  
-ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
+> [!NOTE]
+> ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
 
  
 
@@ -157,13 +157,10 @@ public MainPage()
     }
 ```
 
-[!NOTE]  
-GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
-
- 
+> [!NOTE]  
+> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
 
 ## 從檔案載入筆墨筆劃
-
 
 我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上轉譯它們。
 
@@ -226,6 +223,10 @@ public MainPage()
     選取檔案之後，我們會開啟已設為 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
 
     接著呼叫 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607)，來讀取並還原序列化已儲存的筆墨筆劃，然後載入 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)。 將筆劃載入 **InkStrokeContainer**，會導致 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 立即將它們轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
+
+    > [!NOTE]
+    > InkStrokeContainer 中的所有現有筆劃都會先清除，然後再載入新的筆劃。
+
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -247,7 +248,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
         // Read from file.
         using (var inputStream = stream.GetInputStreamAt(0))
         {
-            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(stream);
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
         }
         stream.Dispose();
     }
@@ -259,8 +260,8 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意**  
-GIF 是唯一可用來儲存筆墨資料的支援格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法可以支援用於回溯相容性的下列格式。
+> [!NOTE]
+> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法可以支援用於回溯相容性的下列格式。
 
 | 格式                    | 說明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -445,6 +446,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

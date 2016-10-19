@@ -5,7 +5,7 @@ description: "針對首次移植練習，我們將從頭開始 -- 將適用於�
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
 
 ---
 
@@ -146,6 +146,6 @@ typedef struct
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

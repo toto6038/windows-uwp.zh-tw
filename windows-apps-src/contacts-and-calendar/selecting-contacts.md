@@ -3,10 +3,10 @@ author: Xansky
 description: "在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。"
 title: "選取連絡人"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: contact, selecting specific fields
+keywords: "連絡人, 選取特定欄位"
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 
 ---
 
@@ -232,6 +232,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

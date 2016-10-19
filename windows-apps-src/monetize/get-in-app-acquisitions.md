@@ -1,31 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式內產品 (IAP) 的彙總下載數資料。"
-title: "取得 IAP 下載數"
+description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得附加元件的彙總下載數資料。"
+title: "取得附加元件下載數"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
+ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
+ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 ---
 
-# 取得 IAP 下載數
+# 取得附加元件下載數
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式內產品 (IAP) 的彙總下載數資料。 這個方法會傳回 JSON 格式的資料。
+
+在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料。 這個方法會傳回 JSON 格式的資料。
 
 ## 先決條件
 
 
-若要使用這個方法，您需要進行下列動作：
+若要使用這個方法，您必須先進行下列動作：
 
--   將您會用來呼叫此方法的 Azure AD 應用程式與您的開發人員中心帳戶產生關聯。
-
--   取得您應用程式的 Azure AD 存取權杖。
-
-如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
+* 如果您尚未這樣做，請先完成 Windows 市集分析 API 的所有[先決條件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 ## 要求
 
@@ -42,13 +39,13 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
 ### 要求參數
 
-*applicationId* 或 *inAppProductId* 參數為必要。 若要擷取所有註冊至 app 之 IAP 的下載數資料，請指定 *applicationId* 參數。 若要擷取單一 IAP 的下載數資料，請指定 *inAppProductId* 參數。 如果您同時指定上面兩個參數，*inAppProductId* 參數將會被忽略。
+*applicationId* 或 *inAppProductId* 參數為必要。 若要擷取所有註冊至 App 之附加元件的下載數資料，請指定 *applicationId* 參數。 若要擷取單一附加元件的下載數資料，請指定 *inAppProductId* 參數。 如果您同時指定上面兩個參數，*applicationId* 參數將會被忽略。
 
 <table>
 <colgroup>
@@ -69,25 +66,25 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字串</td>
-<td align="left">您想要擷取 IAP 下載數資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
+<td align="left">您想要擷取附加元件下載數資料之 App 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
 <td align="left">inAppProductId</td>
 <td align="left">字串</td>
-<td align="left">您想要擷取下載數資料的 IAP 產品識別碼。</td>
+<td align="left">您想要擷取下載數資料之附加元件的市集識別碼。 在 Windows 開發人員中心儀表板 [概觀] 頁面的 URL 可取得附加元件的「市集識別碼」。 例如，如果附加元件的 [儀表板] 頁面 URL 為 ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```，附加元件的市集識別碼就是字串 9NBLGGH4SCZS。</td>
 <td align="left">是</td>
 </tr>
 <tr class="odd">
 <td align="left">startDate</td>
 <td align="left">日期</td>
-<td align="left">要擷取 IAP 下載數資料之日期範圍的開始日期。 預設為目前的日期。</td>
+<td align="left">要擷取附加元件下載數資料之日期範圍的開始日期。 預設為目前的日期。</td>
 <td align="left">否</td>
 </tr>
 <tr class="even">
 <td align="left">endDate</td>
 <td align="left">日期</td>
-<td align="left">要擷取 IAP 下載數資料之日期範圍的結束日期。 預設為目前的日期。</td>
+<td align="left">要擷取附加元件下載數資料之日期範圍的結束日期。 預設為目前的日期。</td>
 <td align="left">否</td>
 </tr>
 <tr class="odd">
@@ -117,7 +114,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">字串</td>
-<td align="left">對每個 IAP 下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：
+<td align="left">對每個附加元件下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：
 <ul>
 <li><strong>日期</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -247,7 +244,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ### 要求範例
 
-下列範例示範數個取得 IAP 下載數資料的要求。 將 *inAppProductId* 和 *applicationId* 值以適當的 IAP 產品識別碼和 app 市集識別碼取代。
+下列範例示範數個取得附加元件下載數資料的要求。 將 *inAppProductId* 和 *applicationId* 值以適當的附加元件或 App 的市集識別碼取代。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -267,22 +264,23 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 內含彙總 IAP 下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[IAP 下載數數值](#iap-acquisition-values)＞一節。                                                                                                              |
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的 IAP 下載數資料，就會傳回此值。 |
+| 值      | 陣列  | 內含彙總附加元件下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[＜附加元件下載數數值＞](#add-on-acquisition-values)一節。                                                                                                              |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的附加元件下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                                 |
 
 <span/>
 
-### IAP 下載數數值
+<span id="add-on-acquisition-values" />
+### 附加元件下載數數值
 
 *Value* 陣列中的元素包含下列值。
 
 | 值               | 類型    | 描述                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 日期                | 字串  | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| inAppProductId      | 字串  | 您正在擷取下載數資料的 IAP 產品識別碼。                                                                                                                                                                 |
-| inAppProductName    | 字串  | IAP 的顯示名稱。                                                                                                                                                                                                             |
-| applicationId       | 字串  | 您想要擷取 IAP 下載數資料之 app 的市集識別碼。                                                                                                                                                           |
+| inAppProductId      | 字串  | 您正在擷取下載數資料之附加元件的市集識別碼。                                                                                                                                                                 |
+| inAppProductName    | 字串  | 附加元件的顯示名稱。                                                                                                                                                                                                             |
+| applicationId       | 字串  | 您想要擷取附加元件下載數資料之 App 的市集識別碼。                                                                                                                                                           |
 | applicationName     | 字串  | App 的顯示名稱。                                                                                                                                                                                                             |
 | deviceType          | 字串  | 完成下載的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                  |
 | orderName           | 字串  | 訂單的名稱。                                                                                                                                                                                                                   |
@@ -306,7 +304,7 @@ Authorization: Bearer <your access token>
     {
       "date": "2015-01-02",
       "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso IAP 7",
+      "inAppProductName": "Contoso add-on 7",
       "applicationId": "9NBLGGGZ5QDR",
       "applicationName": "Contoso Demo",
       "deviceType": "Phone",
@@ -316,7 +314,7 @@ Authorization: Bearer <your access token>
       "market": "GB",
       "gender": "m",
       "ageGroup": "50orover",
-      "acquisitionType": "Iap",
+      "acquisitionType": "iap",
       "acquisitionQuantity": 1
     }
   ],
@@ -339,6 +337,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

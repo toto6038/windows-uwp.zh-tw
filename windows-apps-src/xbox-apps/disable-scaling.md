@@ -1,11 +1,10 @@
 ---
 author: payzer
 title: "如何關閉縮放比例"
-description: 
-area: Xbox
+description: "關閉預設縮放比例的指示。"
 translationtype: Human Translation
-ms.sourcegitcommit: 192de32bf3afd11cd375655ad92d194ccb09dae1
-ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
+ms.sourcegitcommit: 582f5677c15f7cd62c398103b48743ba4bea6c5b
+ms.openlocfilehash: 8079be9685558277565766fa8d0ebbfd4a555904
 
 ---
 
@@ -15,7 +14,9 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## HTML   
 您可以使用下列程式碼片段，選擇不使用縮放比例︰ 
    
-`var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);` 
+```
+var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);
+```
 
 或者，您可以使用 Web 適用的方法：   
 
@@ -30,13 +31,19 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## XAML
 您可以使用下列程式碼片段，選擇不使用縮放比例︰   
    
-`bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);`   
+```
+bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+```
    
 ## DirectX/C++   
-DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 XAML 應用程式。   
+DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 XAML 應用程式。  
+
+## 另請參閱
+- [Xbox 的最佳做法](tailoring-for-xbox.md)
+- [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

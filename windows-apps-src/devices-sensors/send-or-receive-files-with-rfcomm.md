@@ -5,7 +5,7 @@ title: "藍牙 RFCOMM"
 description: "本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a4d7b0c9e51f3d118c5ed9ac83af2cc6d502d6b3
+ms.openlocfilehash: 97b5128f8543ea8eab24be5aa8c6a71811e97896
 
 ---
 # 藍牙 RFCOMM
@@ -368,6 +368,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

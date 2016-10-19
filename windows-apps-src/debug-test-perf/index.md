@@ -5,7 +5,7 @@ title: "偵錯、測試及效能"
 description: "使用 Microsoft Visual Studio 偵錯並測試您的 app。 若要準備您的應用程式來進行 Windows 市集認證程序，請使用「Windows 應用程式認證套件」。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
-ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
+ms.openlocfilehash: 527ad3c4ade1df2a4737df5fba81a1a72ee35c0f
 
 ---
 # 偵錯、測試及效能
@@ -28,6 +28,6 @@ ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

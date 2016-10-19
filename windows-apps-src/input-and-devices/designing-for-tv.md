@@ -7,12 +7,10 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 translationtype: Human Translation
-ms.sourcegitcommit: 2e7515efa04f6335929e23d31da7d76cb64b9cc9
-ms.openlocfilehash: 54da89e33b81fc8c5439786f8a5133360dbd186c
+ms.sourcegitcommit: 96a35ded526b09dd1ce1cb8528bb4a99e3511b32
+ms.openlocfilehash: 734a0f0574ac7698dd6bd963bf3e20225b26d401
 
 ---
-
-> \[本文說明尚未提供的功能。 此功能在正式發行前可能會進行大幅修改。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 # 針對 Xbox 和電視進行設計
 
@@ -109,7 +107,7 @@ UWP 會自動將現有的鍵盤輸入行為對應到遊戲台與遙控器輸入�
 | Enter 鍵                 | A/選取按鈕                       |
 | ESC 鍵                | B/返回按鈕*                        |
 
-\*當 App 不處理 B 按鈕的 [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941) 事件及 [KeyUp](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) 事件時，將會觸發 [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) 事件，這會在 App 內導致往回瀏覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
+\*當 App 不處理 B 按鈕的 [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941) 事件及 [KeyUp](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) 事件時，將會觸發 [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) 事件，這會在 App 內導致往回瀏覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
 
 ```csharp
 // This code goes in the MainPage class
@@ -164,7 +162,7 @@ Xbox One 上的 UWP App 也支援透過按下 [功能表]**** 按鈕來開啟操
 | 互動   | 鍵盤   | 遊戲台      | 內建於︰  | 建議用於： |
 |---------------|------------|--------------|----------------|------------------|
 | 向上一頁/向下一頁  | 向上一頁/向下一頁 | LT 鍵/RT 鍵 | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支援垂直捲動的檢視
-| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支援水平捲動的檢視
+| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支援水平捲動的檢視
 | 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`、支援放大和縮小的檢視 |
 | 開啟/關閉瀏覽窗格 | 無 | 檢視 | 無 | 瀏覽窗格​​
 
@@ -273,17 +271,17 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ### 最少點選次數的路徑
 
-請嘗試讓使用者以最少的點選次數執行最常見的工作。 在下列範例中，[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 放在 [播放]**** 按鈕 (一開始會取得焦點) 與常用的元素之間，讓不必要的元素放在優先的工作之間。
+請嘗試讓使用者以最少的點選次數執行最常見的工作。 在下列範例中，[TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 放在 \[播放\] 按鈕 (一開始會取得焦點) 與常用的元素之間，讓不必要的元素放在優先的工作之間。
 
 ![最佳的瀏覽做法提供最少點選次數的路徑](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-在下列範例中，[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 改放在 [播放]**** 按鈕上方。 只要重新排列 UI，不要將不必要的元素放在優先的工作之間，即可大幅改善您 app 的可用性。
+在下列範例中，[TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 改放在 \[播放\] 按鈕上方。 只要重新排列 UI，不要將不必要的元素放在優先的工作之間，即可大幅改善您 app 的可用性。
 
 ![TextBlock 移動到 [播放] 按鈕上方，不再位於優先工作之間](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
 ### CommandBar 和 ContextFlyout
 
-使用 [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 時，請記住[問題︰UI 元素位於長捲動清單/格線之後](#problem-ui-elements-located-after-long-scrolling-list-grid)中所述的捲動清單問題。 下列影像顯示一個 `CommandBar` 位於清單/格線下方的 UI 配置。 使用者必須一直向下捲動完整個清單/格線，才能到達 `CommandBar`。
+使用 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 時，請記住[問題︰UI 元素位於長捲動清單/格線之後](#problem-ui-elements-located-after-long-scrolling-list-grid)中所述的捲動清單問題。 下列影像顯示一個 `CommandBar` 位於清單/格線下方的 UI 配置。 使用者必須一直向下捲動完整個清單/格線，才能到達 `CommandBar`。
 
 ![CommandBar 位於清單/格線的底部](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
@@ -355,7 +353,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 #### 問題：UI 元素位於長的捲動清單/格線之後 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-下列影像中所顯示的房地產的 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 是很長的捲動清單。 如果 `ListView` 上「不」**需要[佔用](#focus-engagement)，當使用者瀏覽到清單，焦點會放在清單中的第一個項目。 如果使用者要到達 [上一個]**** 或 [下一個]**** 按鈕時，他們必須瀏覽通過清單中的所有項目。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
+下列影像中所顯示的房地產的 [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 是很長的捲動清單。 如果 `ListView` 上「不」需要[佔用](#focus-engagement)，當使用者瀏覽到清單，焦點會放在清單中的第一個項目。 如果使用者要到達 [上一個]**** 或 [下一個]**** 按鈕時，他們必須瀏覽通過清單中的所有項目。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
 
 ![房地產 app︰50 個項目的清單需要點選 51 次才能到達下面的按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -375,7 +373,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 #### 問題︰ScrollViewer 沒有任何可設定焦點的元素
 
-由於 XY 焦點瀏覽仰賴一次僅瀏覽單一可設定 UI 元素的設計，因此沒有任何可設定焦點的元素的 [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) (例如本範例所示的只包含文字) 可能會造成使用者無法檢視 `ScrollViewer` 中的所有內容。 如需這個案例和其他相關案例的解決方案，請參閱[焦點佔用](#focus-engagement)。
+由於 XY 焦點瀏覽仰賴一次僅瀏覽單一可設定 UI 元素的設計，因此沒有任何可設定焦點的元素的 [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) (例如本範例所示的只包含文字) 可能會造成使用者無法檢視 `ScrollViewer` 中的所有內容。 如需這個案例和其他相關案例的解決方案，請參閱[焦點佔用](#focus-engagement)。
 
 ![房地產 app︰ScrollViewer 只包含文字](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
@@ -387,7 +385,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 ## 滑鼠模式
 
-如 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)中所述，在 Xbox One 上，焦點是使用 XY 瀏覽系統移動，讓使用者能夠透過向上、向下、向左和向右在控制項之間移動焦點。 不過，某些控制項 (例如 [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 和 [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx)) 需要類似滑鼠的互動，使用者可以自由地在控制項的界限內移動指標。 還有一些 app，使用者要能夠在整個頁面移動指標，讓使用遊戲台/遙控器的使用者能夠擁有類似使用電腦滑鼠的體驗。
+如 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)中所述，在 Xbox One 上，焦點是使用 XY 瀏覽系統移動，讓使用者能夠透過向上、向下、向左和向右在控制項之間移動焦點。 不過，某些控制項 (例如 [WebView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 和 [MapControl](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx)) 需要類似滑鼠的互動，使用者可以自由地在控制項的界限內移動指標。 還有一些 app，使用者要能夠在整個頁面移動指標，讓使用遊戲台/遙控器的使用者能夠擁有類似使用電腦滑鼠的體驗。
 
 對於這些案例，您應該對整個頁面或對某個頁面內的某個控制項要求指標 (滑鼠模式)。 例如，您的 app 可以有一個有 `WebView` 控制項的頁面，只有在這個控制項當中才使用滑鼠模式，而在其他地方則仍使用 XY 焦點瀏覽。 若要要求指標，您可以指定是要在「控制項或頁面被佔用時」****還是在「頁面為焦點所在時」****需要指標。
 
@@ -459,7 +457,7 @@ navigator.gamepadInputEmulation = "keyboard";
 ```
 
 > [!NOTE]
-> 只有在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 物件上才支援 `WhenFocused` 值。 如果您嘗試在控制項上設定這個值，就會擲回例外狀況。
+> 只有在 [Page](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.aspx) 物件上才支援 `WhenFocused` 值。 如果您嘗試在控制項上設定這個值，就會擲回例外狀況。
 
 ### 停用全螢幕內容的滑鼠模式
 
@@ -510,7 +508,7 @@ navigator.gamepadInputEmulation = "keyboard";
 > [!NOTE]
 > 設定焦點佔用並不會影響鍵盤或其他輸入裝置。
 
-當 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 物件上的屬性 `IsFocusEngagementEnabled` 設定為 `True` 時，它會將控制項標示為需要焦點佔用。 這表示，使用者必須按下 [A/選取]**** 按鈕來「佔住」控制項並與它互動。 完成動作時，使用者可以按 [B/返回]**** 按鈕來解除控制項佔用並瀏覽到其他位置。
+當 [FrameworkElement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 物件上的屬性 `IsFocusEngagementEnabled` 設定為 `True` 時，它會將控制項標示為需要焦點佔用。 這表示，使用者必須按下 \[A/選取\] 按鈕來「佔住」控制項並與它互動。 完成動作時，使用者可以按 [B/返回]**** 按鈕來解除控制項佔用並瀏覽到其他位置。
 
 > [!NOTE]
 > `IsFocusEngagementEnabled` 是新的 API，且尚未記載於文件。
@@ -523,7 +521,7 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ![按鈕在水平滑桿左邊和右邊](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-如果使用者想要從左邊的按鈕瀏覽到右邊的按鈕，合理的狀況是假設使用者只要按下方向鍵/左搖桿向右兩次。 不過，如果 [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 不需要佔用，就會發生下列行為︰當使用者第一次按右鍵，焦點會移到 `Slider`，然後當使用者再按右鍵一次，`Slider` 的控點會向右移動。 使用者會一直將控點往右移動，而無法到達按鈕。
+如果使用者想要從左邊的按鈕瀏覽到右邊的按鈕，合理的狀況是假設使用者只要按下方向鍵/左搖桿向右兩次。 不過，如果 [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 不需要佔用，就會發生下列行為︰當使用者第一次按右鍵，焦點會移到 `Slider`，然後當使用者再按右鍵一次，`Slider` 的控點會向右移動。 使用者會一直將控點往右移動，而無法到達按鈕。
 
 有幾種方法可以解決這個問題。 其中一個方法是設計不同的配置，類似 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)中的房地產 app 範例，我們將「上一個」****按鈕和「下一個」****按鈕重新配置在 `ListView` 上方。 垂直而非水平堆疊控制項可以解決問題，如下列影像所示。
 
@@ -539,12 +537,12 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ### 項目控制項
 
-除了 [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 控制項，還有其他您需要佔用的控制項，例如︰
+除了 [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 控制項，還有其他您需要佔用的控制項，例如︰
 
-- [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
-- [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
-- [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
-- [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
+- [ListBox](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
+- [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+- [FlipView](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
 
 這些控制項與 `Slider` 控制項不同，不會在自己本身內限制焦點，不過當它們包含大量資料時，可能會造成可用性問題。 以下是 `ListView` 包含大量資料的範例。
 
@@ -558,7 +556,7 @@ navigator.gamepadInputEmulation = "keyboard";
 
 #### ScrollViewer
 
-[ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 與這些控制項稍有不同，其具有待考量的個別原因。 如果您有具可設定焦點內容的 `ScrollViewer`，瀏覽至 `ScrollViewer` 預設可讓您在其可設定焦點的元素之間移動。 就像在 `ListView` 中一樣，您必須捲動每個項目才能瀏覽到 `ScrollViewer` 之外。 
+[ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 與這些控制項稍有不同，其具有待考量的個別原因。 如果您有具可設定焦點內容的 `ScrollViewer`，瀏覽至 `ScrollViewer` 預設可讓您在其可設定焦點的元素之間移動。 就像在 `ListView` 中一樣，您必須捲動每個項目才能瀏覽到 `ScrollViewer` 之外。 
 
 如果 `ScrollViewer` *沒有*可設定焦點的內容&mdash;例如如果只包含文字&mdash;，您可以設定 `IsFocusEngagementEnabled="True"` 讓使用者可以使用 [A/選取]**** 按鈕來佔用 `ScrollViewer`。 佔用之後，使用者可以使用 [方向鍵/左搖桿]**** 捲動所有文字，然後在完成時按 [B/返回]**** 按鈕離開。
 
@@ -591,7 +589,7 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ![變更文字、應用程式與其他項目的大小](images/designing-for-tv/ui-scaling.png) 
 
-Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，則預設會調整為 [200%]****。 只要 UI 元素能針對其他裝置適當調整大小，就能針對電視適當調整大小。 Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此在從電腦等其他裝置帶入 app 時，請確定採用[調適型技術](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)，以 100% 縮放讓 UI 呈現 960 x 540 像素最佳外觀。
+Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，則預設會調整為 [200%]****。 只要 UI 元素能針對其他裝置適當調整大小，就能針對電視適當調整大小。 Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此在從電腦等其他裝置帶入 app 時，請確定採用[調適型技術](https://msdn.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)，以 100% 縮放讓 UI 呈現 960 x 540 像素最佳外觀。
 
 針對 Xbox 設計與針對電腦設計稍有不同，因為您只需要考慮 1920 x 1080 一種解析度。 如果使用者的電視解析度比較高，就沒什麼關係&mdash;UWP app 一律會縮放至 1080p。
 
@@ -668,7 +666,7 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 
 ### 將 UI 繪製到邊緣
 
-我們建議您使用特定 UI 元素，延伸到螢幕邊緣，讓使用者感覺更投入。 這些包括 [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)、[瀏覽窗格](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)以及 [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)。
+我們建議您使用特定 UI 元素，延伸到螢幕邊緣，讓使用者感覺更投入。 這些包括 [ScrollViewers](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)、[瀏覽窗格](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/nav-pane)以及 [CommandBars](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)。
 
 但同樣重要的是，互動式元素和文字則一律要避開螢幕邊緣，以確保在一些電視上不會被裁切掉。 我們建議您在螢幕邊緣的 5% 以內，只繪製不重要的視覺效果。 如[調整 UI 元素大小](#ui-element-sizing)所述，遵循 Xbox One 主機預設縮放比例 200% 的 UWP app 會使用 960 x 540 epx 的區域，所以在您的 app UI 中，您應該避免在下列區域中放置重要的 UI：
 
@@ -688,7 +686,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-有了這行程式碼，app 視窗會延伸到螢幕邊緣，所以您必須將所有互動式和重要 UI 移入稍早所述的電視安全區域中。 暫時性 UI (例如操作功能表和開啟的[下拉式方塊](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)) 會自動留在電視安全區域內。
+有了這行程式碼，app 視窗會延伸到螢幕邊緣，所以您必須將所有互動式和重要 UI 移入稍早所述的電視安全區域中。 暫時性 UI (例如操作功能表和開啟的[下拉式方塊](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)) 會自動留在電視安全區域內。
 
 ![核心視窗界限](images/designing-for-tv/core-window-bounds.png)
 
@@ -696,7 +694,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 瀏覽窗格通常會繪製在螢幕邊緣附近，所以背景應該要延伸到電視不安全區域，以免產生不適當的間距。 若要這麼做，只要將瀏覽窗格的背景色彩變更為應用程式的背景色彩即可。
 
-使用先前所述的核心視窗界限將可讓您將 UI 繪製在螢幕的邊緣，但是您應該接著在 [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) 的內容上使用正值邊界，以便讓它保持在電視安全區域內。
+使用先前所述的核心視窗界限將可讓您將 UI 繪製在螢幕的邊緣，但是您應該接著在 [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) 的內容上使用正值邊界，以便讓它保持在電視安全區域內。
 
 ![延伸到螢幕邊緣的瀏覽窗格](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -721,7 +719,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </SplitView>
 ```
 
-[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也包含一個 [更多]**** 按鈕 (在右邊以 "..." 代表)，此按鈕應該留在電視安全區域中。 以下是可達到所需的互動和視覺效果的幾個不同策略。
+[CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也包含一個 [更多]**** 按鈕 (在右邊以 "..." 代表)，此按鈕應該留在電視安全區域中。 以下是可達到所需的互動和視覺效果的幾個不同策略。
 
 **選項 1**︰將 `CommandBar` 背景色彩變更為透明或與頁面背景相同的色彩︰
 
@@ -762,7 +760,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 ![捲動格線焦點應保留在電視安全區域內](images/designing-for-tv/scrolling-grid-focus.png)
 
-UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx) 內的功能，但是您必須新增邊框間距，以確保清單/格線項目可以捲動到安全區域的視野範圍內。 具體來說，您要對 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 的 [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) 新增正邊界，如下列程式碼片段所示︰
+UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx) 內的功能，但是您必須新增邊框間距，以確保清單/格線項目可以捲動到安全區域的視野範圍內。 具體來說，您要對 [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 的 [ItemsPresenter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) 新增正邊界，如下列程式碼片段所示︰
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle" 
@@ -813,7 +811,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 ```
 
 > [!NOTE]
-> 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 屬性都設定為 `GridView`。
+> 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 和 [Style](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.style.aspx) 的 [TargetType](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 屬性都設定為 `GridView`。
 
 ## 色彩
 
@@ -833,7 +831,7 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 另外，Xbox One 上的使用者色彩組與電腦、手機和其他裝置上的不同。 部分原因是因為這些色彩在 Xbox One 上是為了擁有最佳 10 英呎體驗，依照本文所述的方法和策略而手動挑選的。
 
-只要您的 app 使用筆刷資源 (例如 **SystemControlForegroundAccentBrush**) 或色彩資源 (**SystemAccentColor**)，或直接透過 [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API 改為呼叫輔色，這些色彩就會取代為適合電視的輔色。 高對比的筆刷色彩也會從系統 (就像在電腦和手機上一樣) 提取，但是是使用適合電視的色彩。
+只要您的 app 使用筆刷資源 (例如 **SystemControlForegroundAccentBrush**) 或色彩資源 (**SystemAccentColor**)，或直接透過 [UIColorType.Accent*](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API 改為呼叫輔色，這些色彩就會取代為適合電視的輔色。 高對比的筆刷色彩也會從系統 (就像在電腦和手機上一樣) 提取，但是是使用適合電視的色彩。
 
 若要深入了解一般的輔色，請參閱[輔色](../style/color.md#accent-color)。
 
@@ -966,7 +964,7 @@ if (IsTenFoot)
 
 ### Pivot 控制項
 
-[樞紐](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)可讓您在 App 內透過選取不同的標頭或索引標籤，快速瀏覽檢視。 控制項會在成為焦點的標頭加上底線，以便在使用遊戲台/遙控器時，更加凸顯目前選取的標頭。 
+[樞紐](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)可讓您在 App 內透過選取不同的標頭或索引標籤，快速瀏覽檢視。 控制項會在成為焦點的標頭加上底線，以便在使用遊戲台/遙控器時，更加凸顯目前選取的標頭。 
 
 ![樞紐底線](images/designing-for-tv/pivot-underline.png)
 
@@ -988,7 +986,7 @@ if (IsTenFoot)
 
 ### CommandBar 標籤
 
-在 [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 上，理想的做法是將標籤放在圖示右邊，以便使 CommandBar 高度最小化並保持一致。 您可以將 [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) 屬性設定為 `CommandBarDefaultLabelPosition.Right` 來達到此目的。
+在 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 上，理想的做法是將標籤放在圖示右邊，以便使 CommandBar 高度最小化並保持一致。 您可以將 [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) 屬性設定為 `CommandBarDefaultLabelPosition.Right` 來達到此目的。
 
 ![標籤在圖示右邊的 CommandBar](images/designing-for-tv/commandbar.png)
 
@@ -1000,7 +998,7 @@ if (IsTenFoot)
 
 ### 工具提示
 
-[Tooltip](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) 控制項是為了當使用者將滑鼠停留在元素上，或者點選並按住元素上的圖形時，在 UI 中提供更多資訊。 對於遊戲台和遙控器，當元素取得焦點一小段時間之後，`Tooltip` 就會出現在螢幕上停留一小段時間，然後消失。 如果使用了太多 `Tooltip`，這種行為可能會讓使用者分心。 針對電視進行設計時，請嘗試避免使用 `Tooltip`。
+[Tooltip](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) 控制項是為了當使用者將滑鼠停留在元素上，或者點選並按住元素上的圖形時，在 UI 中提供更多資訊。 對於遊戲台和遙控器，當元素取得焦點一小段時間之後，`Tooltip` 就會出現在螢幕上停留一小段時間，然後消失。 如果使用了太多 `Tooltip`，這種行為可能會讓使用者分心。 針對電視進行設計時，請嘗試避免使用 `Tooltip`。
 
 ### 按鈕樣式
 
@@ -1008,13 +1006,11 @@ if (IsTenFoot)
 
 ### 巢狀的 UI 元素
 
-當 UI 元素巢狀於其他 UI 元素內部時，使用者預設無法存取巢狀的 UI 元素。
+巢狀的 UI 會公開容器 UI 元素內部包含的巢狀可動作項目，其中巢狀項目與容器項目都可以各自獨立取得焦點。
 
-其中一個主要案例是當使用者將滑鼠停留在巢狀的 UI 元素上時才顯示 UI，否則不會顯示。
+對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 一個常見的解決方案是將巢狀的 UI 元素放入 `ContextFlyout` (請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout))。
 
-![顯示滑鼠游標暫留在 UI 元素上方時之情況的 UI 元素](images/designing-for-tv/2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png)
-
-就控制器/遙控器輸入而言，處理此情況的建議方式是將這些 UI 元素放在 `ContextFlyout` 中 (請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout))。
+如需巢狀 UI 的詳細資訊，請參閱[清單項目中的巢狀 UI](../controls-and-patterns/nested-ui.md)。
 
 ### MediaTransportControls
 
@@ -1109,6 +1105,6 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

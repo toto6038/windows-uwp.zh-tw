@@ -7,7 +7,7 @@ label: Put UI strings into resources
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+ms.openlocfilehash: e404eceb4aad562474cff264bb992a3d71a3bed4
 
 ---
 
@@ -34,13 +34,13 @@ ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
 2.  在 Visual Studio 中開啟 package.appxmanifest，移至 [應用程式]**** 索引標籤，並且 (針對此範例) 將預設語言設定為 [en-US]。 如果您的方案中有多個 package.appxmanifest 檔案，請針對每個項目執行這個動作。
     <br>**注意：**這樣會指定專案的預設語言。 如果使用者的慣用語言或顯示語言不符合應用程式提供的語言資源，就會使用預設語言資源。
 3.  建立資料夾以包含資源檔案。
-    1.  在 [方案總管] 中，用滑鼠右鍵按一下專案 (如果您的方案包含多個專案則為「共用」專案) 並選取 [新增]**** &gt; [新資料夾]****。
+    1.  在 [方案總管] 中，用滑鼠右鍵按一下 [專案] (如果您的方案包含多個專案則為 [共用的專案]) 並選取 [新增]**** &gt; [新資料夾]****。
     2.  將新資料夾命名為 "Strings"。
     3.  如果在 [方案總管] 中沒有看到新資料夾，請保持選取該專案，同時從 Microsoft Visual Studio 功能表中，選取 [專案]**** &gt; [顯示所有檔案]****。
 
 4.  建立適用於英文 (美國) 的子資料夾和資源檔案。
     1.  在 Strings 資料夾上按一下滑鼠右鍵，然後在下面新增資料夾。 將它命名為 "en-US"。 資源檔案會放入針對 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 語言標籤命名的資料夾中。 如需語言限定詞與通用語言標籤清單的詳細資料，請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
-    2.  在 en-US 資料夾上按一下滑鼠右鍵，然後選取 [加入]**** &gt; [新增項目]****。
+    2.  在 [en-US] 資料夾上按一下滑鼠右鍵，然後選取 [加入]**** &gt; [新增項目]****。
     3.  **XAML：**選取 [資源檔 (.resw)]。
         <br>**HTML：**選取 [資源檔 (.resjson)]。
 
@@ -249,6 +249,6 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,28 +4,26 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
 title: "取得應用程式評分"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 
 ---
 
-# 取得應用程式評分
+# 取得 App 評分
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。 這個方法會傳回 JSON 格式的資料。
 
 ## 先決條件
 
 
-若要使用這個方法，您需要進行下列動作：
+若要使用這個方法，您必須先進行下列動作：
 
--   將您會用來呼叫此方法的 Azure AD 應用程式與您的開發人員中心帳戶產生關聯。
+* 如果您尚未這樣做，請先完成 Windows 市集分析 API 的所有[先決條件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
--   取得您應用程式的 Azure AD 存取權杖。
-
-如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
 
 ## 要求
 
@@ -42,7 +40,7 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
@@ -265,12 +263,12 @@ Authorization: Bearer <your access token>
 
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得應用程式下載數](get-app-acquisitions.md)
-* [取得 IAP 下載數](get-in-app-acquisitions.md)
+* [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得應用程式評論](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

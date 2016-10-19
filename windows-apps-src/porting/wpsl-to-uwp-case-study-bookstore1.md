@@ -5,7 +5,7 @@ description: "本主題提供將一個非常簡單的 Windows Phone Silverlight 
 title: "Windows Phone Silverlight 至 UWP 案例研究：Bookstore1"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
 
 ---
 
@@ -84,7 +84,7 @@ ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，請在 **TextBlock** 上按一下滑鼠右鍵，然後按一下 [編輯樣式]**** &gt; [套用資源]****。 若要對項目範本中的 **TextBlock** 這樣做，請在 **ListBox** 上按一下滑鼠右鍵，然後按一下 [編輯其他範本]**** &gt; [編輯產生的項目 (ItemTemplate)]****。
+若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，在 **TextBlock** 上按一下滑鼠右鍵，然後按一下 [編輯樣式]**** &gt; [套用資源]****。 若要對項目範本中的 **TextBlock** 執行此動作，在 **ListBox** 上按一下滑鼠右鍵，然後按一下 [編輯其他範本]**** &gt; [編輯產生的項目 (ItemTemplate)]****。
 
 項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 **ListBox** 上設定 `Background="Transparent"` 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 **Margin** 都設定為 `"9.6,0"`。
 
@@ -136,6 +136,6 @@ ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "當使用者將裝置連接至電腦時，您可以使用「自動
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
+ms.openlocfilehash: 2c7dc2ad19867c9f721f7f4cc51c8a7096bc9501
 
 ---
 
@@ -253,8 +253,8 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 存取 Windows 可攜式裝置上存放區所需的 API ([**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654)) 是[傳統型裝置系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 這表示必須要有特殊的組件才能使用 API，且那些呼叫只會在傳統型裝置系列 (例如電腦) 的裝置上運作。
 
-1.  在 [方案總管]**** 中，在 [參照]**** 上按一下滑鼠右鍵，然後按一下 [加入參考]****。
-2.  展開 [通用 Windows]****，然後按一下 [擴充功能]****。
+1.  在 \[方案總管\] 中，在 \[參照\] 上按一下滑鼠右鍵，然後按一下 \[加入參考\]。
+2.  展開 \[通用 Windows\]，然後按一下 \[擴充功能\]。
 3.  然後選取 [UWP 的 Windows 桌面延伸]**** 並按一下 [確定]****。
 
 ### 步驟 3：新增 XAML UI
@@ -580,6 +580,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

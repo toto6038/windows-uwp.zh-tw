@@ -1,11 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 title: "規劃您的通用 Windows 平台 (UWP) app"
 description: "在 Microsoft 設計團隊中，我們建立 app 的程序包含五個不同階段 -- 概念、結構、動態、視覺化，以及原型。 我們鼓勵您採用類似的程序，享受開發的樂趣，為全球使用者打造前所未有的全新體驗。"
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: 4d17f7da6969910d2738377174cec9f1c1517dde
 
 ---
 
@@ -238,6 +238,6 @@ ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "將工作項目提交至執行緒集區"
 description: "了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
+ms.openlocfilehash: d41f53a40c46087c5a1c21367a34c0f60486f24d
 
 ---
 # 將工作項目提交至執行緒集區
@@ -263,6 +263,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: "取得關於 Microsoft Store Engagement and Monetization SDK 中之 Microsoft Advertising 程式庫的一般開發人員資訊。"
+description: "取得關於 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫的一般開發人員資訊。"
 title: "關於 Microsoft Advertising 程式庫的開發人員資訊"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 
 
 ---
@@ -13,11 +13,10 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 # 關於 Microsoft Advertising 程式庫的開發人員資訊
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節主題提供關於 Microsoft Store Engagement and Monetization SDK 中之 Microsoft Advertising 程式庫的開發人員實用資訊。
 
-  > **重要** Microsoft Advertising 程式庫是和廣告流量分配程式庫不同的一組擴充功能。 如果您想要在 XAML 或 JavaScript app 中顯示來自 Microsoft 的橫幅或影片插入式廣告，請使用 Microsoft Advertising 程式庫的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別。 如果您想要在 XAML app 中顯示來自多個廣告網路的橫幅廣告，請使用廣告流量分配程式庫中的 **AdMediatorControl** 類別。 如需詳細資訊，請參閱[有何差異：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+本主題中的章節為開發人員提供有關 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫 (適用於 UWP App)，以及適用於 Windows 和 Windows Phone 8.x 之 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x 應用程式) 的實用資訊。
+
 
 ## 本節內容
 
@@ -39,6 +38,6 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

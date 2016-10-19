@@ -1,33 +1,36 @@
 ---
 author: TylerMSFT
-title: Create and register a single-process background task
-description: Create and register a single-process task that runs in the same process as your foreground app.
+title: "建立並登錄單一處理程序背景工作"
+description: "建立並登錄與前景 App 在相同處理程序中執行的單一處理程序工作。"
+translationtype: Human Translation
+ms.sourcegitcommit: 9e959a8ae6bf9496b658ddfae3abccf4716957a3
+ms.openlocfilehash: 5a2461d00114ba71ced7cca64c197f253f33690d
+
 ---
 
-# Create and register a single-process background task
+# 建立並登錄單一處理程序背景工作
 
-**Important APIs**
+**重要 API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-This topic demonstrates how to create and register a background task that runs in the same process as your app.
+本主題示範如何建立並登錄與您 App 在相同處理程序中執行的背景工作。
 
-Single-process background tasks have the advantage of greater simplicity when compared with running your background work in a separate process. However, they are less resilient. If the code running in the background crashes, it will take down your app. Also note that [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) and **IoTStartupTask** cannot be used with the single process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the multiple-process background task model.
+實作單一處理程序背景工作比實作在個別處理程序中執行的背景工作簡單。 不過，它們較不具彈性。 如果在背景中執行的程式碼損毀，它將會關閉您的 App。 另請注意，[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 及 **IoTStartupTask** 無法與單一處理程序模型搭配使用。 此外，也不可能在應用程式內啟用 VoIP 背景工作。 使用多處理程序背景工作模型仍可支援這些觸發程序和工作。
 
-Be aware that background activity can be terminated even when running inside the app's foreground process if it runs past execution time limits. For some purposes the resiliency of separating work into a background task that runs in a separate process is still useful. Keeping background work as a task separate from the foreground application may be the best option for work that does not require communication with the foreground application.
+請注意，如果背景活動在執行時超過執行時間限制，則即使它是在 App 的前景處理程序內執行，也可能被終止。 就某些用途而言，將工作分散到在個別處理程序中執行的背景工作中仍然相當有用。 對於不需要與前景應用程式進行通訊的工作來說，將背景工作保持為與前景應用程式分開的工作可能是最佳選項。
 
-## Fundamentals
+## 基礎
 
-The single process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events fit into the application lifecycle based on the visibility state of your application
-Read more about these events and how they affect the application lifecycle at [App lifecycle](app-lifecycle.md).
+單一處理程序模型藉由提供 App 進入前景或背景時的改良式通知，增強應用程式週期。 應用程式物件針對這些轉換提供兩個新的事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 這些事件適用的應用程式週期取決於應用程式的可見度狀態。如需了解這些事件及它們如何影響應用程式週情，請參閱 [App 週期](app-lifecycle.md)。
 
-At a high level, you will handle the **EnteredBackground** event to run your code that will execute while your app is running in the background, and handle **LeavingBackground** to know when your app has moved to the foreground.
+大致說來，您將處理 **EnteredBackground** 事件來執行將在您 App 於背景中執行時執行的程式碼，以及處理 **LeavingBackground** 以在您 App 已移至前景時能夠得知。
 
-## Register your background task trigger
+## 登錄背景工作觸發程序
 
-Single-process background activity is registered much the same as multiple-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
+登錄單一處理程序背景活動的方式與登錄多處理程序背景活動的方式非常相似。 所有背景觸發程序都是從使用 [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396) 來進行登錄開始。 建立器可讓您在一個地方設定所有必要的值，讓您輕輕鬆鬆就可以登錄背景工作︰
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -40,16 +43,16 @@ Single-process background activity is registered much the same as multiple-proce
 > ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
-> To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+> 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
+> 為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-For single-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called `OnBackgroundActivated()`.
+針對單一處理程序背景活動，您將不設定 `TaskEntryPoint.`。將它留白會啟用預設進入點，這是應用程式物件上一個受保護的新方法，稱為 [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)。
 
-Once a trigger is registered, it will fire based on the type of trigger set in the `SetTrigger` method. In the example above a `TimeTrigger` is used, which will fire fifteen minutes from the time it was registered.
+登錄觸發程序之後，它就會根據 [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx) 方法中所設定的觸發程序類型引發。 在上述範例中，使用的是 [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx)，會在登錄它之後 15 分鐘引發。
 
-## Add a condition to control when your task will run (optional)
+## 新增條件來控制工作執行時機 (選擇性)
 
-You can add a condition to control when your task will run after the trigger event occurs. For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+您可以新增條件來控制觸發程序事件發生後工作的執行時機。 例如，如果您希望等到使用者在場時才執行工作，可以使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
     The following sample code assigns a condition requiring the user to be present:
 
@@ -58,50 +61,56 @@ You can add a condition to control when your task will run after the trigger eve
     >     builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
     > ```
 
-## Place your background activity code in OnBackgroundActivated()
+## 將您的背景活動程式碼放在 OnBackgroundActivated() 中
 
-Put your background activity code in `OnBackgroundActivated` to respond to your background trigger when it fires. `OnBackgroundActivated` can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a  BackgroundActivatedEventArgs parameter, which contains everything that the Run method delivers.
+將您的背景活動程式碼放在 [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 中，**以在引發背景觸發程序時予以回應。**您可以將 OnBackgroundActivated** 視為與 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 一樣。 此方法具有一個 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) 參數，其中包含 Run 方法提供的所有項目。
 
-## Handle background task progress and completion
+## 處理背景工作進度和完成
 
-Task progress and completion can be monitored the same way as for multi-process background tasks (See [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)) but you will likely find that you can more easily track them by using variables to track progress or completion status in your app. This is one of the advantages of having your background activity code running in the same process as your app.
+監視工作進度和完成的方式與監視多處理程序背景工作的方式相同 (請參閱[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md))，但是您可能會發現透過在 App 中使用變數來追蹤進度或完成狀態更加容易。 這是讓背景活動在與 App 相同的處理程序中執行的其中一個優點。
 
-## Handle background task cancellation
+## 處理背景工作取消
 
-Single-process background tasks are cancelled the same way as multi-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)).  But be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occured.
+取消單一處理程序背景工作的方式與取消多處理程序背景工作的方式相同 (請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md))。 請注意，在發生取消之前，您的 **BackgroundActivated** 事件處理常式必須先結束，否則系統會終止整個處理程序。 如果您的前景應用程式在您取消背景工作時意外關閉，請確認您的處理常式是否在發生取消之前已結束。
 
-## The manifest
+## 資訊清單
 
-Unlike multiple-process background tasks, you are not required to add background task information to the package manifest in order to run single-process background tasks.
+與多處理程序背景工作不同，您不需要將背景工作資訊新增到套件資訊清單中，即可執行單一處理程序背景工作。
 
-## Summary and next steps
+## 摘要與後續步驟
 
-You should now understand the basics of how to write a single-process background task.
+您現在應該對如何撰寫單一處理程序背景工作已經有基本的了解。
 
-See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
+請參閱下列 API 參考的相關主題、背景工作概念指導方針，以及撰寫使用背景工作之 App 的更詳細說明。
 
-## Related topics
+## 相關主題
 
-**Detailed background task instructional topics**
+**詳細的背景工作說明主題**
 
-* [Convert a multi-process background task to a single-process background task](convert-multiple-process-background-task.md)
-* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Register a background task](register-a-background-task.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).  
+* [將多處理程序背景工作轉換成單一處理程序背景工作](convert-multiple-process-background-task.md)
+* [建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)
+* [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
+* [登錄背景工作](register-a-background-task.md)
+* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [使用維護觸發程序](use-a-maintenance-trigger.md)
+* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
+* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
+* [建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)。  
 
-**Background task guidance**
+**背景工作指導方針**
 
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [背景工作的指導方針](guidelines-for-background-tasks.md)
+* [偵錯背景工作](debug-a-background-task.md)
+* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Background Task API Reference**
+**背景工作 API 參考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

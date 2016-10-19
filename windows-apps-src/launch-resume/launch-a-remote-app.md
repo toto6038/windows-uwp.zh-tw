@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: "啟動遠端裝置上的 app"
-description: "了解如何使用專案 &quot;Rome&quot; 啟動遠端裝置上的 app。"
+description: "了解如何使用專案 Rome 啟動遠端裝置上的 app。"
 translationtype: Human Translation
 ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
 ms.openlocfilehash: d8c3783d68a1b3b216058790d84255a7fb4b612c

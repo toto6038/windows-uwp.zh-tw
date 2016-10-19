@@ -5,7 +5,7 @@ title: "使用光感應器"
 description: "了解如何使用周遭環境光感應器來偵測光線的變化。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ---
 # 使用光感應器
@@ -172,6 +172,6 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

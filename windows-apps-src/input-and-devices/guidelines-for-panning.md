@@ -7,7 +7,7 @@ label: Panning
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
+ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 ---
 
@@ -121,7 +121,7 @@ Windows 8 支援三種移動瀏覽類型：
 ![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
 
 **移動瀏覽行為** 
-           **貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+ **貼齊點** 撥動手勢的移動瀏覽，能在提起手指時將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
 
 貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
 
@@ -195,6 +195,6 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

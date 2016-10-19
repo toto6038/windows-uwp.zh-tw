@@ -5,7 +5,7 @@ title: "啟用裝置功能"
 description: "本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
+ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 
 ---
 # 啟用裝置功能
@@ -77,6 +77,6 @@ ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

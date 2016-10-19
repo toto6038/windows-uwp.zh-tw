@@ -6,11 +6,13 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
+ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
+ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ---
 # 清單
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 會顯示清單，並啟用與集合內容的互動。 本文中涵蓋的四個清單模式包括：
 
@@ -21,11 +23,18 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 針對每個清單模式指定設計指導方針、功能和範例。 在文件的結尾是相關主題和 API 的連結。
 
-## 重要 API
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox 類別</strong></a></li>
+</ul>
 
--   [**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209348)
+</div>
+</div>
+
+
 
 
 ## 清單檢視
@@ -42,22 +51,52 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ### 範例
 
-使用[主要/詳細資料模式](master-details.md)時，可以使用清單檢視來組織主要窗格。 主要窗格會顯示可選項目的清單。 當使用者在主要窗格中選取某個項目時，該選取項目的其他資訊就會顯示在詳細資料窗格中。 詳細資料窗格通常包含格線檢視。
+以下是在手機上顯示分組資料的簡單清單檢視。
 
-![主要/詳細資料模式範例](images/Stock_Tracker/uap_finance_desktop700.png)
+![具有分組資料的清單檢視](images/simple-list-view-phone.png)
 
-您可以將幾個清單鍊結在一起，來建立複雜的主要/詳細資料階層。 如需詳細資訊，請參閱[主要/詳細資料模式](master-details.md)。
-
-清單配置的範例有群組標題且顯示為單欄：
-
-![有四種主要單位類型的清單檢視範例](images/controls_listview_4types.png)
-
-### 建議
+### 建議事項
 
 -   清單中的項目應該有相同的行為。
--   如果您的清單會分成群組，您可以使用[語意式縮放](semantic-zoom.md)，這樣能讓使用者更容易瀏覽群組的內容。
+-   如果您的清單會分成群組，您可以使用[語意式縮放](semantic-zoom.md)，這樣能讓使用者更容易瀏覽已分組的內容。
 
-## 資料格檢視
+### 清單檢視文章
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">主題</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[清單檢視和方格檢視](listview-and-gridview.md)</p></td>
+<td align="left"><p>了解在 app 中使用清單檢視或方格檢視的基本資訊。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[清單檢視項目範本](listview-item-templates.md)</p></td>
+<td align="left"><p>您以清單或方格顯示的項目，將能在 app 整體外觀上扮演重要的角色。 修改控制項範本和資料範本以定義項目的外觀，並讓您的 app 看起來更美觀。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[反轉清單](inverted-lists.md)</p></td>
+<td align="left"><p>反轉清單會從底部開始加入新項目，例如聊天 app。 遵循此指導方針以在 app 中使用反轉清單。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[拖動以重新整理](pull-to-refresh.md)</p></td>
+<td align="left"><p>拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 使用此指導方針以在清單檢視中實作拖動重新整理。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[巢狀 UI](nested-ui.md)</p></td>
+<td align="left"><p>巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在容器中的可動作控制項，供使用者採取動作。 例如，您有一個包含按鈕的清單檢視項目，而使用者可以選取該清單項目，或按下巢嵌在其中的按鈕。 請遵循這些最佳做法來為使用者提供最佳的巢狀 UI 體驗。</p></td>
+</tr>
+</tbody>
+</table>
+
+## 方格檢視
 
 資料格檢視適合用來排列和瀏覽以影像為基礎的內容集合。 資料格檢視版面配置垂直捲動和水平移動瀏覽。 項目會以從左至右，然後從上至下的閱讀順序進行配置。
 
@@ -82,7 +121,35 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 ### 建議
 
 -   清單中的項目應該有相同的行為。
--   如果您的清單會分成群組，您可以使用[語意式縮放](semantic-zoom.md)，這樣能讓使用者更容易瀏覽群組的內容。
+-   如果您的清單會分成群組，您可以使用[語意式縮放](semantic-zoom.md)，這樣能讓使用者更容易瀏覽已分組的內容。
+
+### 方格檢視文章
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">主題</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[清單檢視和方格檢視](listview-and-gridview.md)</p></td>
+<td align="left"><p>了解在 app 中使用清單檢視或方格檢視的基本資訊。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[清單檢視項目範本](listview-item-templates.md)</p></td>
+<td align="left"><p>您以清單或方格顯示的項目，將能在 app 整體外觀上扮演重要的角色。 修改控制項範本和資料範本以定義項目的外觀，並讓您的 app 看起來更美觀。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[巢狀 UI](nested-ui.md)</p></td>
+<td align="left"><p>巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在容器中的可動作控制項，供使用者採取動作。 例如，您有一個包含按鈕的清單檢視項目，而使用者可以選取該清單項目，或按下巢嵌在其中的按鈕。 請遵循這些最佳做法來為使用者提供最佳的巢狀 UI 體驗。</p></td>
+</tr>
+</tbody>
+</table>
 
 ## 下拉式清單
 
@@ -187,6 +254,7 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](nav-pane.md)
 - [語意式縮放](semantic-zoom.md)
+- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **適用於開發人員**
 - [**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/br242878)
@@ -196,6 +264,6 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,32 +1,31 @@
 ---
 author: v-angraf
 title: "Xbox One 上的 UWP 新功能"
-description: "重點摘要 Xbox One App 上的 UWP 新功能。"
-area: Xbox
+description: "針對 Xbox One 上的 UWP App 新功能進行重點摘要。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
+ms.sourcegitcommit: 044aac722180015586487dcc8738facccf209f5c
+ms.openlocfilehash: 4cc1e0b495a80e019296b9c3be9e75a37c60224a
 
 ---
 
-# Xbox One 上的 UWP 2016 年 7 月開發人員預覽的新功能
+# Xbox One 上的 UWP 最新更新中適用於開發人員的新功能
 
-Xbox One 上的通用 Windows 平台 (UWP) 2016 年 7 月開發人員預覽版本包含以下新功能、現有功能的更新與錯誤修正。
+Xbox One 上的通用 Windows 平台 (UWP) 2016 年 7 月版本包含以下新功能、現有功能的更新，以及錯誤修正。
 
 ## 使用 TCP/UDP 通訊端的網路功能現在已可使用  
 來自使用傳統 TCP/UDP 通訊端 (WinSock、Windows.Networking.Sockets) 的主機的輸入和輸出網路存取現在已可使用。
 
 ## Fiddler 支援
-對於已啟用 Xbox One 上通用 Windows 平台 (UWP) 的主機，您現在可以啟用 Fiddler 作為主機的 Proxy。 Fiddler 可讓您記錄與調查 Xbox 服務與信賴憑證者 Web 服務之所有 HTTP/HTTPS 的進出流量。 如需詳細資訊，請參閱[如何在開發 UWP 時使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)。
+您現在可以針對已在 Xbox One 上啟用 UWP 的主機，將 Fiddler 啟用為 Proxy。 Fiddler 可讓您記錄與調查 Xbox 服務與信賴憑證者 Web 服務的所有 HTTP/HTTPS 進出流量。 如需詳細資訊，請參閱[如何在開發 UWP 時使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)。
 
 ## 滑鼠模式現已預設為啟用
-針對 XAML 和託管的 Web 應用程式，滑鼠模式現已預設為啟用。
-強烈建議您關閉此功能，並針對方向控制器瀏覽最佳化。
+滑鼠模式現已預設針對 XAML 和託管的 Web 應用程式啟用。
+我們強烈建議您關閉此功能，並針對方向控制器瀏覽進行最佳化。
 若要了解如何關閉滑鼠模式，請參閱[如何停用滑鼠模式](how-to-disable-mouse-mode.md)。
-如需如何建立適用於 Xbox 的絕佳 App 詳細資訊，請參閱[針對 Xbox 與電視進行設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)。
+如需如何建立適用於 Xbox 的絕佳 App 詳細資訊，請參閱[針對 Xbox 與電視進行設計](../input-and-devices/designing-for-tv.md#mouse-mode)。
 
 ## 延伸的 UWP API 介面區域現已可在主機上正常運作
-其他的 UWP API 現在可在 Xbox 主機上正常運作。 如需 UWP API 支援的詳細資訊，請參閱 [Xbox 上尚未支援的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。 
+其他的 UWP API 現在可在 Xbox 主機上正常運作。 如需 UWP API 支援的詳細資訊，請參閱 [Xbox 上尚未支援的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkID=760755)。 
 
 ## 背景音樂和音訊功能
 您現在可以從在背景執行的 App 播放音樂與音訊。
@@ -49,11 +48,11 @@ XAML 平台已經做了下列改良：
  - 可以從開發電腦的 [檔案總管] 存取主機上的開發人員檔案。 如需透過 [檔案總管] 存取檔案的詳細資訊，請參閱 [/ext/smb/developerfolder](wdp-smb-api.md) 參考主題。
 
 ## 另請參閱
-- [Xbox One 上的 UWP](index.md)
 - [已知問題](known-issues.md)
+- [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

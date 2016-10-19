@@ -5,7 +5,7 @@ title: "App 啟動效能的最佳做法"
 description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
+ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
 
 ---
 # App 啟動效能的最佳做法
@@ -364,6 +364,6 @@ PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "使用 WinAppDeployCmd.exe 工具安裝 App"
 description: "Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) App 部署到任何 Windows 10 裝置的命令列工具。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5f6bfb13e2e80f21902ec923e32f68046f313a13
+ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
+ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
 
 ---
 # 使用 WinAppDeployCmd.exe 工具安裝 App
@@ -139,8 +139,19 @@ WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeployd
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
+## 使用 WinAppDeployCmd 在 Xbox One 上設定 [從電腦執行] 部署
+
+[從電腦執行] 可讓您將 UWP 應用程式部署到 Xbox One，且不複製其上的二進位檔，而是將二進位檔裝載於與 Xbox 相同網路中的網路共用上。  若要這樣做，您需要開發人員已解除鎖定的 Xbox One，以及 Xbox 可存取之網路磁碟機上的鬆散檔案 UWP 應用程式。
+
+執行下列程式碼來註冊 App︰
+``` syntax
+WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
+
+ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
+```
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

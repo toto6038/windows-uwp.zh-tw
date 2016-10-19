@@ -5,7 +5,7 @@ title: "行動裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。"
 translationtype: Human Translation
 ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 ---
 # 行動裝置的 Device Portal
@@ -77,6 +77,6 @@ ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

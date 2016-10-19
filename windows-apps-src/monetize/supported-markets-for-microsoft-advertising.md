@@ -4,17 +4,17 @@ ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "了解插入式和橫幅廣告支援的國家和地區。"
 title: "Microsoft Advertising 支援的市場"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 ---
 
 # Microsoft Advertising 支援的市場
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在下列國家和地區可取得插入式廣告和橫幅廣告。
+
+下列國家和地區支援插入式廣告和橫幅廣告。
 
 <span id="interstitialads"/>
 ## 插入式廣告
@@ -315,6 +315,6 @@ ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

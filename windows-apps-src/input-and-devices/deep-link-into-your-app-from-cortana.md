@@ -8,7 +8,7 @@ template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/deep-link-into-your-app-from-cortana
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: dc7a4bd6c993682f829637a8822f73e4322204a4
+ms.openlocfilehash: 1cfdfe6f5da1752db823477a2dabad84304406a0
 
 ---
 
@@ -16,10 +16,10 @@ ms.openlocfilehash: dc7a4bd6c993682f829637a8822f73e4322204a4
 
 本主題已移到 https&#58;//msdn.microsoft.com/en-us/cortana/voicecommands/deep-link-into-your-app-from-cortana。
 
-Github：https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/deep-link-into-your-app-from-cortana.md
+Github：https&#58;//github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/deep-link-into-your-app-from-cortana.md
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

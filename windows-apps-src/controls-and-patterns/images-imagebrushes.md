@@ -6,20 +6,32 @@ ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
-ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ---
 # 影像與影像筆刷
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 若要顯示影像，您可以使用 **Image** 物件或 **ImageBrush** 物件。 Image 物件會轉譯影像，而 ImageBrush 物件會以影像繪製另一個物件。 
 
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx"><strong>Image 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx"><strong>Source 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx"><strong>ImageBrush 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx"><strong>ImageSource 屬性</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**Image 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
--   [**Source 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
--   [**ImageBrush 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
--   [**ImageSource 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+
+
+
 
 ## 這些是正確的元素嗎？
 使用 **Image** 元素，以在您的 app 中顯示獨立影像。
@@ -116,6 +128,10 @@ ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 及 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包括任何用來編碼和解碼媒體格式的專用方法。 所有編碼及解碼作業都是內建作業，最多只會將編碼或解碼的各個層面呈現為載入事件的部分事件資料。 如果要利用影像編碼或解碼來執行任何特殊工作 (如果 app 正在執行影像轉換或操作，您就有可能這樣做)，則應該使用 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空間提供的 API。 Windows 的 Windows 影像處理元件 (WIC) 也支援這些 API。
 
+從 Windows 10 版本 1607 開始，**Image** 元素支援動畫 GIF 影像。 當您使用 **BitmapImage** 做為影像的 **Source** 時，您可以存取 BitmapImage API 來控制動畫 GIF 影像的播放。 如需詳細資訊，請參閱 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 類別頁面的＜備註＞。
+
+> **注意**&nbsp;&nbsp;當您的 app 是針對 Windows 10 版本 1607 進行編譯，並在版本 1607 (或更新版本) 上執行時，便能獲得動畫 GIF 支援。 當您的 app 是針對較舊版本進行編譯並在其上執行時，系統會顯示 GIF 的第一個畫面，但不會產生動畫效果。
+
 如需 app 資源以及如何封裝 app 影像來源的詳細資訊，請參閱[定義 app 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
 ### WriteableBitmap
@@ -138,7 +154,7 @@ ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (不是 URI)。 如果您的來源是資料流，請使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法來初始化該值。 如果您的來源是 URI，包含 app 中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **注意** &nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
+> **注意**&nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
 ## 相關文章
 
@@ -147,6 +163,6 @@ ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 -   [**ImageBrush 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

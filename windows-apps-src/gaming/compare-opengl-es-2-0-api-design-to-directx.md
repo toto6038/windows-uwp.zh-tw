@@ -5,7 +5,7 @@ description: "如果您是從 iOS 或 Android 平台移植遊戲，可能已經�
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
+ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
 
 ---
 
@@ -120,6 +120,6 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

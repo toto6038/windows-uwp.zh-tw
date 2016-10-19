@@ -4,8 +4,8 @@ title: "啟動 Windows 設定 app"
 description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 translationtype: Human Translation
-ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
-ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
+ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
 
 ---
 
@@ -25,14 +25,11 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 
 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 如需詳細資訊，請參閱[隱私權感知 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223)。
 
-## 如何啟動設定 app
+## 如何啟動設定 App
 
+若要啟動 [設定]**** App，請使用 `ms-settings:` URI 配置，如下列範例所示。
 
-如果隱私權設定不允許您的 app 存取敏感資源，建議讓使用者能夠方便地連結到**設定** app 中的隱私權設定。 這會讓使用者更容易變更其設定。
-
-若要直接啟動到**設定** app，請使用 `ms-settings:` URI 配置，如下列範例所示。
-
-在這個範例中，會使用超連結 XAML 控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
+在這個範例中，會使用「超連結 XAML」控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
@@ -46,7 +43,7 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 </TextBlock>
 ```
 
-或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [**設定**] app。
+或者，您的 app 也可以呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以從程式碼啟動 [**設定**] app。 這個範例示範如何使用 `ms-settings:privacy-webcam` URI 來啟動進入相機的隱私權設定頁面。
 
 ```cs
 using Windows.System;
@@ -54,9 +51,11 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-這個範例示範如何使用 `ms-settings:privacy-webcam` URI 啟動相機的隱私權設定頁面。
+上述程式碼會啟動相機的隱私權設定頁面：
 
 ![相機隱私權設定。](images/privacyawarenesssettingsapp.png)
+
+
 
 如需啟動 URI 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
 
@@ -72,9 +71,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 |                    | 通知與動作                | 兩者           | ms-settings:notifications                 |
 |                    | 手機                                  | 僅限行動裝置版    | ms-settings:phone                         |
 |                    | 訊息中心                              | 僅限行動裝置版    | ms-settings:messaging                     |
-|                    | 省電模式                          | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver                  |
+|                    | 省電模式                          | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本 | ms-settings:batterysaver                  |
 |                    | 省電模式 / 省電模式設定 | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本 | ms-settings:batterysaver-settings         |
-|                    | 省電模式 / 電池使用情況            | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本    | ms-settings:batterysaver-usagedetails     |
+|                    | 省電模式 / 電池使用情況            | 配備電池的裝置 (如平板電腦) 上的行動裝置版或傳統型版本 | ms-settings:batterysaver-usagedetails     |
 |                    | 電源與睡眠                          | 僅限傳統型版本   | ms-settings:powersleep                    |
 |                    | 傳統型版本：關於                         | 兩者           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -91,14 +90,19 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 |                    | 行動數據與 SIM 卡                         | 兩者           | ms-settings:network-cellular              |
 |                    | 行動熱點                         | 兩者           | ms-settings:network-mobilehotspot         |
 |                    | Proxy                                  | 兩者           | ms-settings:network-proxy                 |
+|                    | 狀態                                 | 僅限傳統型版本   | ms-settings:network-status                |
 | 個人化    | 個人化 (類別)             | 兩者           | ms-settings:personalization               |
 |                    | 背景                             | 僅限傳統型版本   | ms-settings:personalization-background    |
 |                    | 色彩                                 | 兩者           | ms-settings:personalization-colors        |
 |                    | 音效                                 | 僅限行動裝置版    | ms-settings:sounds                        |
 |                    | 鎖定畫面                            | 兩者           | ms-settings:lockscreen                    |
-| 帳戶           | 您的電子郵件與帳戶                | 兩者           | ms-settings:emailandaccounts              |
-|                    | 公司存取                            | 兩者           | ms-settings:workplace                     |
+| 帳戶           | 存取公司或學校資源                  | 兩者           | ms-settings:workplace                     |
+|                    | 電子郵件與 App 帳戶                   | 兩者           | ms-settings:emailandaccounts              |
+|                    | 家人與其他使用者                  | 兩者           | ms-settings:otherusers                    |
+|                    | 登入選項                        | 兩者           | ms-settings:signinoptions                 |
 |                    | 同步您的設定                     | 兩者           | ms-settings:sync                          |
+|                    | 其他使用者                           | 兩者           | ms-settings:otherusers                    |
+|                    | 您的資訊                              | 兩者           | ms-settings:yourinfo                      |
 | 時間與語言  | 日期和時間                            | 兩者           | ms-settings:dateandtime                   |
 |                    | 地區及語言                      | 僅限傳統型版本   | ms-settings:regionlanguage                |
 | 輕鬆存取     | 朗讀程式                               | 兩者           | ms-settings:easeofaccess-narrator         |
@@ -128,6 +132,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

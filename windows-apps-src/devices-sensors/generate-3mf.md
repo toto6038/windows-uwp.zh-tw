@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "產生 3MF 套件"
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+ms.sourcegitcommit: c790d57e72a75ec28e376722f8d87c2655b18c42
+ms.openlocfilehash: 1d291173cc68d4eedcbc2918f308be1489105a08
 
 ---
 
@@ -24,14 +24,14 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。
  Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
-描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 來建立和操作。
+本指南描述 3D 製造格式文件的結構以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 來建立和操作文件。
 
 ## 什麼是 3MF？
 
 3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。
  它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，最後是 C\# 中的 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -63,7 +63,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> **注意** 所有三角形都必須以逆時鐘順序定義其索引 (從網格物件外部檢視三角形時)，使其 face-normal 向量指向外部。
+> [!NOTE]
+> 所有三角形都必須以逆時鐘順序定義其索引 (從網格物件外部檢視三角形時)，使其 face-normal 向量指向外部。
 
 Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它新增至模型的 **Meshes** 屬性。 套件中的所有 **Printing3DMesh** 物件都必須儲存至 **Printing3DModel** 類別的 **Meshes** 屬性。
 
@@ -85,7 +86,8 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-**注意** 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰ 如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
+> [!NOTE]
+> 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
 
 ### 色彩材質
 
@@ -105,7 +107,8 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**注意** 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
+> [!NOTE]
+> 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
 
 接下來，我們必須填寫 **Texture3Coord 材質**。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。
 
@@ -140,14 +143,16 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ## 相關主題
 
-[從應用程式進行 3D 列印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
-
+[從 App 進行 3D 列印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[3D 列印 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO4-->
 
 

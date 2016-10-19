@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "停用 Xbox One 開發人員模式"
 description: "停用開發人員模式的方法。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
+ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
+ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 ---
 
@@ -45,7 +44,8 @@ ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
 您也可以透過重設主機來停用開發人員模式。  
 
-> **注意** &nbsp;&nbsp;當您重設主機時，所有本機存檔資料都會遺失。
+> [!NOTE]
+> 當您重設主機時，所有本機存檔資料都會遺失。
 
 如需重設主機，請執行下列步驟：
 
@@ -88,6 +88,6 @@ ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

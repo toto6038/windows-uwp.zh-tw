@@ -5,7 +5,7 @@ description: "DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
 
 ---
 
@@ -416,6 +416,6 @@ EGLBoolean eglTerminate(eglDisplay);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

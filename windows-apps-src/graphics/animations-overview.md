@@ -5,7 +5,7 @@ title: "動畫概觀"
 description: "使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的 app 中。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5d50bf2b24d134fd50ae2bea976509b30a511652
+ms.openlocfilehash: d622465ce3da70cdb8dbd064b68ea6983f9fe3f7
 
 ---
 # 動畫概觀
@@ -384,6 +384,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

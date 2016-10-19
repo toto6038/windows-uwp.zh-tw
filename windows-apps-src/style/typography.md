@@ -1,21 +1,18 @@
 ---
 author: mijacobs
-Description: "作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
-title: "印刷格式"
+description: "作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
+title: "印刷樣式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
-label: Typography
 template: detail.hbs
-extraBodyClass: style-typography
-brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
+ms.sourcegitcommit: 8338b4ebcdd73f1b7ebf1dedafe68d861cd9d93b
+ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
 
 ---
 
-# 適用於 UWP 應用程式的印刷格式
+# 印刷樣式
 
-作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
+如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
 
 ## 字樣
 
@@ -39,9 +36,9 @@ ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
 
 ![說明大型字體堆疊在小型字體上的方式](images/line-height-stacking.png)
 
-在 XAML 中，這會透過堆疊兩個 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 並設定適當的邊界來完成。
+在 XAML 中，這會透過堆疊兩個 [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 並設定適當的邊界來完成。
 
-```xaml
+```xml
 <StackPanel Width="200">
     <!-- Setting a bottom margin of 3px on the header
          puts the baseline of the body text exactly 24px
@@ -61,45 +58,48 @@ ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
 </StackPanel>
 ```
 
-<!-- OP version -->
+
 
 ## 字型間距調整和追蹤
 
 Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用以手寫文字為基礎的開放格式。 若要確保最佳的易讀性，並維持其人性化的完整性、字型間距調整和追蹤設定必須具有特定值。
 
-字型間距調整應設為「計量」，而追蹤應設為 "0"。
+字元間距調整應設為「計量」，而追蹤應設定為 "0"。
 
-<img src="images/kerning-tracking.png" alt="Shows the difference between kerning and tracking" />
+
+![顯示字元間距調整與追蹤之間的差異](images/kerning-tracking.png)
+
+
 
 ## 文字和字母間距
 
 類似於字型間距調整和追蹤，字距和字母間距會使用特定的設定，以確保最佳易讀性和人性化的完整性。
 
-字距一律預設為 100%，字母間距則應設為 "0"。
-
-<img src="images/word-letter.png" alt="Shows the difference between word and letter spacing" />
-
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 控制字型間距調整及使用 [FontStretch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設為 “true” 而 FontStretch 會設為 “Normal”，這些是建議的值。
-    </div>
-</aside>
+字距預設一律為 100%，字母間距則應設為 "0"。
 
 
-<!-- OP version -->
+![顯示文字與字母間距之間的差異](images/word-letter.png)
+
+**注意**&nbsp;&nbsp;在 XAML 文字控制項中，請使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 來控制字元間距調整，以及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 來控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
+
+
+
+
 ## 對齊方式
 
-一般而言，我們建議字體的視覺元素和欄應靠左對齊。 在大部分情況下，靠左和不齊右方法會提供一致的內容錨定與統一的配置。
+一般而言，我們建議字體的視覺元素和欄應靠左對齊。 在大部分情況下，這個靠左和不齊右方法可提供一致的內容錨定與統一的配置。
 
-<img src="images/alignment.png" alt="Shows flush-left text" />
+
+![顯示靠左文字](images/alignment.png)
+
+
 
 ## 行尾
 
-當印刷格式未定位為靠左和不齊右時，請試著保持整齊的行尾，並避免斷字。
+當印刷樣式未定位為靠左和不齊右時，請嘗試確保行尾整齊並避免斷字。
 
-<img src="images/line-endings.png" alt="Shows even line endings" />
+
+![顯示整齊行尾](images/line-endings.png)
 
 ## 段落
 
@@ -125,13 +125,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 ![顯示數個圖示和文字配對](images/hanging-text-alignment.png)
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型衡量標準的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
-    </div>
-</aside>
+**注意**&nbsp;&nbsp;XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
 
 ## 裁剪和省略符號
 
@@ -141,22 +135,13 @@ XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 
 ![顯示使用文字裁剪的裝置框架](images/clipping.png)
 
-# 字體坡形
+## 字體坡形
+字體坡形從標題到本文建立了一個重要的設計關係，確保不同層級之間有一個清楚明瞭的階層。 此階層建立了一個結構，可讓使用者輕鬆地瀏覽已撰寫的通訊。
 
-您應使用不同大小的 Segoe UI 在字體坡形中建立階層。 此階層可做為基礎結構，讓使用者輕鬆地瀏覽已撰寫的通訊。
+![顯示字體坡型](images/type-ramp.png) 所有大小皆採用有效像素。 
 
-<figure class="figure-img" >
-    <img src="images/type-ramp.png" alt="Shows the type ramp"  />
-        <figcaption>所有大小皆在有效像素中。 如需詳細資訊，請參閱 TODO: 連結。</figcaption>
-</figure>
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-大部分的坡形層級是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 提供 (例如：`HeaderTextBlockStyle`)。 
-    </div>
-</aside>
+**注意**&nbsp;&nbsp;大部分的坡形層級都是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 來提供 (例如：`HeaderTextBlockStyle`)。
 
 
 ## 主要和次要文字
@@ -168,16 +153,28 @@ XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 
 特定頁面標題應採用「全部大寫」的格式，以新增另一個階層維度。 這些標題應使用 BaseAlt，且字元間距應設為 em 的千分之 75。 這種處理方式也可用來輔助應用程式瀏覽。
 
-不過，在某些語言中，特定的名稱在採用大寫時會變更其意義，因此，任何以名稱或使用者輸入為基礎的頁面標題均*不應*轉換為全部大寫。
+不過，在某些語言中，特定的名稱在採用大寫時會變更其意義，因此，任何以名稱或使用者輸入為基礎的頁面標題均「不應」**轉換為全部大寫。
 
 
-## 可行與禁止事項
-* 大部分文字使用內文
+**可行事項**
+
+
+
+* 讓大部分文字使用 Body
 * 標題在空間有限使用基準
 * 納入 SubtitleAlt，以藉由強調最上層內容來建立對比和階層
-* 對於長字串或任何主要動作，請不要使用輔助字幕
+
+
+
+**禁止事項**
+
+
+
+* 對於長字串或任何主要動作，請不要使用 Caption
 * 如果文字需要自動換行，請不要使用標題或副標題
 * 請不要在同一頁面上結合 Subtitle 和 SubtitleAlt
+
+
 
 ## 相關文章
 
@@ -185,6 +182,6 @@ XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

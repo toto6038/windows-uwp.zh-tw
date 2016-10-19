@@ -4,15 +4,15 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "封裝 UWP 應用程式"
 description: "若要銷售您的通用 Windows 平台 (UWP) 應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+ms.sourcegitcommit: 68081887e16801cd28726a2a33fb7993edf71e89
+ms.openlocfilehash: e274557883071c65313893ce725cc2307856174b
 
 ---
 # 封裝 UWP app
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-若要銷售您的通用 Windows 平台應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。 當您建立 appxupload 時，將產生另一個 appx 套件以用於測試和側載。 您可以透過將 appx 套件側載到裝置以直接發佈您的應用程式。 本文描述設定、建立和測試 UWP 應用程式套件的程序。 如需側載的詳細資訊，請參閱[使用 DISM 側載 app](http://go.microsoft.com/fwlink/?LinkID=231020)。
+若要銷售您的通用 Windows 平台應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。 當您建立 appxupload 時，將產生另一個 appx 套件以用於測試和側載。 您可以透過將 appx 套件側載到裝置以直接發佈您的應用程式。 本文描述設定、建立和測試 UWP 應用程式套件的程序。 如需側載的詳細資訊，請參閱[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx)。
 
 針對 Windows 10，您要產生一個可上傳到 Windows 市集的套件 (.appxupload)。 您的應用程式就可供安裝，並可在任何 Windows 10 裝置上執行。 以下是建立應用程式套件的步驟。
 
@@ -141,6 +141,6 @@ Visual Studio 可以將您的套件與市集關聯。 當您這樣做時，會�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

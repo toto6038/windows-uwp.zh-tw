@@ -6,8 +6,8 @@ label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 743ce43be6220d96d7e9bc295ab72bdec4905edc
-ms.openlocfilehash: 4c50c8ded127b2261df901d9da3210ff397b00ca
+ms.sourcegitcommit: 71b73605bab71dad36977d0506c090c34359a3e2
+ms.openlocfilehash: c4a5b0ae2893fda7697457b9e7449a996707de4b
 
 ---
 
@@ -303,12 +303,14 @@ using Windows.UI.Input.Inking;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 ```
+
 4. 指定 CalligraphicPen 類別是衍生自 [InkToolbarCustomPen](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.aspx)。
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
 }
 ```
+
 5. 覆寫 [CreateInkDrawingAttributesCore](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore.aspx) 以指定您自己的筆刷和筆觸大小。
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
@@ -319,6 +321,7 @@ class CalligraphicPen : InkToolbarCustomPen
     }
 }
 ```
+
 6. 建立 [InkDrawingAttributes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.aspx) 物件，並設定[筆尖形狀](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentip.aspx)、[筆尖旋轉](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentiptransform.aspx)、[筆觸大小](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.size.aspx)和[筆跡色彩](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.color.aspx)。
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
@@ -365,6 +368,7 @@ class CalligraphicPen : InkToolbarCustomPen
     </BrushCollection>
 </Page.Resources>
 ```
+
 2. 然後，我們會使用子系 [InkToolbarCustomPenButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton.aspx) 元素新增 InkToolbar。
 
   自訂畫筆按鈕包含兩個在頁面資源中宣告的靜態資源參考︰`CalligraphicPen` 和 `CalligraphicPenPalette`。
@@ -410,6 +414,6 @@ Enable touch inking
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO2-->
 
 

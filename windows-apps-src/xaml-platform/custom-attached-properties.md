@@ -4,8 +4,8 @@ description: "說明如何將 XAML 附加屬性當作相依性屬性來實作，
 title: "自訂附加屬性"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
+ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
+ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 ---
 
@@ -39,21 +39,21 @@ ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
 
 **Get**_PropertyName_ 存取子的簽章必須是這個。
 
-`public static` _valueType_ **Get** _PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
-若為 Microsoft Visual Basic，它是這個。
+針對 Microsoft Visual Basic，它是這個。
 
-` Public Shared Function Get`_PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_`)`
+` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 傳回值也可以是實作中的更具體類型。 基本 **Object** 類型是可以被接受的，不過通常您會希望您的附加屬性強制執行類型安全技術。 建議的類型安全技術是在 getter 和 setter 簽章中使用類型。
 
 **Set***PropertyName* 存取子的簽章必須是這個。
 
-`  public static void Set`_PropertyName_ ` (DependencyObject target , ` _valueType_` value)`
+`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
-若為 Visual Basic，它是這個。
+針對 Visual Basic，它是這個。
 
-`Public Shared Sub Set`_PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_`)`
+`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 物件及它的 *valueType* 可以是實作中的更具體類型。 請記住，這個方法的值是 XAML 處理器在標記中遇到附加屬性時，來自於 XAML 處理器的輸入。 您使用的類型必須取得類型轉換或現有標記延伸的支援，這樣才能從屬性值建立適當的類型 (最終只是字串)。 基本 **Object** 類型是可以接受的，但是通常您會想要更進一步的類型安全性。 若要這樣做，請將類型強制放到存取子中。
 
@@ -84,6 +84,7 @@ ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
         }
     }
 ```
+
 ```vb
 Public Class GameService
     Inherits DependencyObject
@@ -246,6 +247,6 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

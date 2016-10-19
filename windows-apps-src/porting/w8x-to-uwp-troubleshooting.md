@@ -5,7 +5,7 @@ title: "將 Windows 執行階段 8.x 移植到 UWP 的疑難排解"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+ms.openlocfilehash: a6901946f873b751515cb5d9805158e4b78b92bb
 
 ---
 
@@ -54,6 +54,6 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

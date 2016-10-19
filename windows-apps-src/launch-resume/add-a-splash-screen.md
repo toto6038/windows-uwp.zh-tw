@@ -5,7 +5,7 @@ description: "使用 Microsoft Visual Studio 2015 設定 app 的啟動顯示畫�
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 ---
 
@@ -23,8 +23,8 @@ ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 當您使用 Visual Studio 2015 範本建立 app 時，會將預設影像新增到您的專案，並設定為啟動顯示畫面影像。 啟動顯示畫面的背景色彩預設為淺灰。 如果您想變更 app 啟動顯示畫面的預設影像或色彩，請遵循以下步驟：
 
 1.  開啟 Visual Studio 2015 中的現有通用 Windows 平台 (UWP) app 專案。
-2.  在 [方案總管]**** 中，開啟 Package.appxmanifest 檔案。 您也可以依序選擇 [專案]****&gt;[市集]****&gt;[編輯 App 資訊清單]****，從功能表列開啟這個檔案。
-3.  開啟 [視覺資產]**** 索引標籤，然後從 Package.appxmanifest 視窗左側的 [所有影像資產]**** 窗格選取 [啟動顯示畫面]****。 如果您是第一次變更啟動顯示畫面，會在 [啟動顯示畫面]**** 欄位看到 "Assets\\SplashScreen.png" 路徑。
+2.  從 [方案總管]**** 中，開啟 "Package.appxmanifest" 檔案。 您也可以從功能表列中，依序選擇 [專案]**** &gt; [市集]**** &gt; [編輯應用程式資訊清單]**** 來開啟這個檔案。
+3.  開啟 [視覺資產]**** 索引標籤，然後從 "Package.appxmanifest" 視窗左側的 [所有影像資產]**** 窗格中選取 [啟動顯示畫面]****。 如果您是第一次變更啟動顯示畫面，會在 [啟動顯示畫面]**** 欄位看到 "Assets\\SplashScreen.png" 路徑。
 
     以下螢幕擷取畫面顯示 Visual Studio 2015 中的 [Package.appxmanifest] 視窗。 根據專案類型，您會看到一組稍有不同的視覺資產。
 
@@ -77,6 +77,6 @@ ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

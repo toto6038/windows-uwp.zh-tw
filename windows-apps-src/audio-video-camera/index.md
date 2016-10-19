@@ -1,11 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: "本節提供建立通用 Windows App 以擷取、播放或編輯相片、視訊或音訊的資訊。"
+description: "本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。"
 title: "音訊、視訊和相機"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
+ms.sourcegitcommit: 18e97dd5e607960c1c1fd640fe6fe6ae5e9f9085
+ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 
 ---
 
@@ -13,30 +13,28 @@ ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節提供有關建立通用 Windows app 以擷取、播放或編輯相片、視訊或音訊的資訊。
+本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  
-| 主題                                                                                             | 說明                                                                                                                                                                                                                                                                                    |
+| 主題                                                                                             | 描述                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [使用 CameraCaptureUI 擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md) | 本文描述如何使用 [CameraCaptureUI](capture-photos-and-video-with-cameracaptureui.md) 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。                                                                                                            |
-| [使用 MediaCapture 擷取相片和視訊](capture-photos-and-video-with-mediacapture.md)       | 本文描述使用 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) API 擷取相片和視訊的步驟，包括初始化和關閉 MediaCapture 以及處理裝置方向的變更。                                  |
-| [偵測影像或影片中的臉部](detect-and-track-faces-in-an-image.md)                         | 本主題示範例如何使用已進行最佳化的 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150)，在一連串視訊畫面中用來追蹤隨著時間改變的臉部。                                                                                                               |
-| [媒體組合和編輯](media-compositions-and-editing.md)                               | 本文向您說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 App，讓使用者從音訊和視訊來源檔案建立媒體組合。                                    |
-                                                                                                                                        | [自訂視訊效果](custom-video-effects.md)                               | 本文章說明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。                                                                                                                                |
-| [影像處理](imaging.md)                                                                             | 本文說明如何使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來載入及儲存影像檔，以代表點陣圖影像。                                                                                                                     |
-| [音訊裝置資訊屬性](audio-device-information-properties.md)                                                                             | 本文列出與音訊裝置有關的裝置資訊屬性。                                                                                                                      |
-| [轉碼媒體檔案](transcode-media-files.md)                                                 | 您可以使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API，將視訊檔案從一種格式轉碼成另一種格式。                                                                                                                                |
-| [在背景處理媒體檔案](process-media-files-in-the-background.md)                 | 本文示範如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。                                                                                             |
-| [使用 MediaSource 進行媒體播放](media-playback-with-mediasource.md)                             | [MediaSource](https://msdn.microsoft.com/library/windows/apps/dn930905) 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。  |
-| [彈性資料流](adaptive-streaming.md)                                                       | 本文章說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。                                          |
-| [背景音訊](background-audio.md)                                                           | 本文描述如何建立可在背景播放音訊的 UWP app。                                                                                                                                                                                                               |
-| [系統媒體傳輸控制項](system-media-transport-controls.md)                             | [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別可讓您的 app 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您的 app 目前正在播放的媒體相關的中繼資料。 |
-| [媒體投射](media-casting.md)                                                                 | 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。                                                                                                                                                                                                       |
-| [音訊圖](audio-graphs.md)                                                                   | 本文示範如何使用 [Windows.Media.Audio](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。                                                                            |
-| [MIDI](midi.md)                                                                                   | 本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。                                                                                                                                   |
-| [相機獨立閃光燈](camera-independent-flashlight.md)                                 | 本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃燈功能進行管理。                                                                                                                 |
-| [支援的轉碼器](supported-codecs.md)                                                           | 本文列出 UWP app 支援的音訊與視訊轉碼器和格式。                                                                                                                                                                                                                  |
-| [PlayReady DRM](playready-client-sdk.md)                                                          | 本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。                                                                                                                                                                                |
-| [PlayReady 加密媒體延伸](playready-encrypted-media-extension.md)                     | 本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。                                                                                                                                       |
+| [相機](camera.md) | 列出適用於 UWP app 的相機功能，以及示範如何使用它們的操作說明文章的連結。 |
+| [媒體播放](media-playback.md) | 提供建立使用音訊和視訊播放的 UWP app 的相關資訊。 |
+| [偵測影像或影片中的臉部](detect-and-track-faces-in-an-image.md) | 示範如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150)，在一連串視訊畫面中追蹤隨著時間改變的臉部。 |
+| [媒體組合和編輯](media-compositions-and-editing.md) | 說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 |
+| [自訂視訊效果](custom-video-effects.md) | 說明如何建立能實作 **IBasicVideoEffect** 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。 |
+| [建立、編輯和儲存點陣圖影像](imaging.md) | 說明如何使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來載入及儲存影像檔，以代表點陣圖影像。  |
+| [音訊裝置資訊屬性](audio-device-information-properties.md)  | 列出與音訊裝置有關的裝置資訊屬性。 |
+| [轉碼媒體檔案](transcode-media-files.md) | 說明如何使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API，將視訊檔案從一種格式轉碼成另一種格式。 |
+| [在背景處理媒體檔案](process-media-files-in-the-background.md) | 示範如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。 |
+| [音訊圖](audio-graphs.md) | 示範如何使用 [Windows.Media.Audio](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空間中的 API 來建立音訊路由傳送、混音及處理案例的音訊圖。 |
+| [MIDI](midi.md) | 示範如何列舉 MIDI (樂器數位介面) 裝置，並且從 UWP app 傳送及接收 MIDI 訊息。 |
+| [從裝置匯入媒體](import-media-from-a-device.md) | 描述從裝置匯入媒體的方式，包括搜尋可用媒體來源、匯入如影片、相片和側車檔案的檔案，以及從來源裝置上刪除已匯入的檔案。 |
+| [相機獨立閃光燈](camera-independent-flashlight.md) | 說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃燈功能進行管理。 |
+| [支援的轉碼器](supported-codecs.md) | 列出 UWP app 支援的音訊與視訊轉碼器和格式。 |
+
+
+## 另請參閱
+- [開發 UWP app](https://developer.microsoft.com/en-us/windows/develop)
 
  
 
@@ -50,6 +48,6 @@ ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

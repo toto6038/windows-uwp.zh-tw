@@ -7,7 +7,7 @@ label: Icons
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 ---
 
@@ -25,10 +25,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>48px x 48px</td>
     </tr>
     <tr> 
-        <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
-        <td>![Icons at 24x24 effective pixels](images/icons-24x24.png)</td>
-        <td>![Icons at 32x32 effective pixels](images/icons-32x32.png)</td>
-        <td>![Icons at 48x48 effective pixels](images/icons-48x48.png)</td>
+        <td>![16x16 有效像素的圖示](images/icons-16x16.png)</td>
+        <td>![24x24 有效像素的圖示](images/icons-24x24.png)</td>
+        <td>![32x32 有效像素的圖示](images/icons-32x32.png)</td>
+        <td>![48x48 有效像素的圖示](images/icons-48x48.png)</td>
     </tr>
 </table>
 
@@ -47,17 +47,17 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>三角形</td>
     </tr>
     <tr>
-        <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
-        <td>![A square](images/icons-common-shapes-examples-2.png)</td>
-        <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
+        <td>![圓形](images/icons-common-shapes-examples-1.png)<td>
+        <td>![方形](images/icons-common-shapes-examples-2.png)</td>
+        <td>![三角形 ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
         <td>水平矩形<td>
         <td colspan="2">垂直矩形</td>        
         </tr>
     <tr>
-        <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
-        <td colspan="2">![A vertical rectangle](images/icons-common-shapes-examples-5.png)</td>
+        <td>![水平矩形](images/icons-common-shapes-examples-4.png)<td>
+        <td colspan="2">![垂直矩形](images/icons-common-shapes-examples-5.png)</td>
          
     </tr>
 
@@ -91,10 +91,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 <table>
     <tr>
-        <td>![A 1:1 angle example](images/icons-angles-examples-1.png)</td>
-        <td>![A 1:2 angle example](images/icons-angles-examples-2.png)</td>
-        <td>![A 1:3 angle example](images/icons-angles-examples-3.png)</td>
-        <td>![A 1:4 angle example](images/icons-angles-examples-4.png)</td>
+        <td>![1:1 角度範例](images/icons-angles-examples-1.png)</td>
+        <td>![1:2 角度範例](images/icons-angles-examples-2.png)</td>
+        <td>![1:3 角度範例](images/icons-angles-examples-3.png)</td>
+        <td>![1:4 角度範例](images/icons-angles-examples-4.png)</td>
     </tr>
 </table>
 
@@ -108,12 +108,12 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>1/8 圓</td>
     </tr>
     <tr>
-        <td>![1/4 circle](images/icons-curves-14circle.png)</td>
-        <td>![1/8 circle](images/icons-curves-18circle.png)</td>
+        <td>![1/4 圓](images/icons-curves-14circle.png)</td>
+        <td>![1/8 圓](images/icons-curves-18circle.png)</td>
     </tr>
     <tr>
-        <td>![1/4 cirlce example](images/icons-curves-examples-1.png)</td>
-        <td>![1/8 circle example](images/icons-curves-examples-2.png)</td>
+        <td>![1/4 圓範例](images/icons-curves-examples-1.png)</td>
+        <td>![1/8 圓範例](images/icons-curves-examples-2.png)</td>
     </tr>    
 </table>
 
@@ -145,8 +145,8 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
     <td>常見的動作徽章</td>
 </tr>
 <tr>
-    <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
-    <td>![Action badge ](images/icons-badge-common-states-2.png)</td>
+    <td>![狀態徽章 ](images/icons-badge-common-states-1.png)</td>
+    <td>![動作徽章 ](images/icons-badge-common-states-2.png)</td>
 </tr>
 </table>
 <p></p>
@@ -158,8 +158,8 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 <table>
 <tr><td>綠色 - #128B44</td><td>藍色 - #2C71B9</td><td>黃色 - #FDC214</td></tr>
 <tr><td>正向：作業結束、已完成 </td><td>中性：協助、通知 </td><td>注意：警示、警告 </td></tr>
-<tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
-<td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
+<tr><td>![綠色狀態](images/icons-color-inbadging-1.png)</td><td>![藍色狀態](images/icons-color-inbadging-2.png)</td>
+<td>![黃色狀態](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
@@ -177,6 +177,6 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

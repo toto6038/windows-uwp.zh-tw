@@ -1,14 +1,21 @@
 ---
-Unity：將遊戲移至 Xbox One 作者：JordanEllis6809 
+author: JordanEllis6809
+title: "將 Unity 遊戲移到 Xbox 上的 UWP"
+description: "在 Xbox 上進行 Unity UWP 開發。"
+translationtype: Human Translation
+ms.sourcegitcommit: ea3bea2e5d6de0e55615de701a69e90d81f0f553
+ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
+
 ---
 
-# Unity：將遊戲移至 Xbox One
+# 將 Unity 遊戲移到 Xbox 上的 UWP
+
 
 在這個逐步教學課程中，我們假設您已經有 Unity 的遊戲，並已準備好建置和部署。
 
-[本教學課程的影片版本。](https://www.youtube.com/watch?v=f0Ptvw7k-CE)
+另請參閱[本教學課程的影片版本](https://www.youtube.com/watch?v=f0Ptvw7k-CE)。
 
-要查看您的 Unity UWP 專案相關版本嗎？  [檢視此處](development-lanes-unity-versioning.md)。
+想要管理您 Unity UWP 專案的版本嗎？ 請參閱[針對您的 UWP 專案進行版本控制](development-lanes-unity-versioning.md)。
 
 ## 步驟 0：確定 Unity 已正確安裝
 
@@ -18,36 +25,40 @@ Unity：將遊戲移至 Xbox One 作者：JordanEllis6809
 
 ## 步驟 1︰建置 UWP 方案
 
-在您的 Unity 遊戲專案中，開啟 `File -> Build Settings...` 中的 \[ Build Settings\] \(建置設定\) 視窗，移至 \[Windows Store\] \(Windows 市集\) 選項功能表，如下所示。
+在您的 Unity 遊戲專案中，開啟位於 [檔案] -&gt; [建置設定]**** 的 [建置設定]**** 視窗，然後移至 [Windows Store] 選項功能表。
 
 ![建置設定視窗](images/build-settings.png)
 
-請確定 `SDK` 設定是設為 `Universal 10`。 接下來，按下功能表底部的 \[Build\] \(建置\) 按鈕，這會啟動要求目的地資料夾的檔案總管視窗。 在專案的 `Assets` 目錄中建立名為 `UWP` 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
+請確定 [SDK]**** 設定已設定為 [Universal 10]****，然後選取 [建置]**** 按鈕，這將會啟動檔案總管視窗並詢問目的地資料夾。 在專案的 [資產]**** 目錄旁邊建立名為 **UWP** 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
 
 ![建置目的地資料夾](images/build-destination.png)
 
-Unity 現在已經建立了新的 Visual Studio 解決方案，我們將在後續步驟中用來部署 UWP 遊戲。
+Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決方案。
 
 ![UWP VS 解決方案](images/uwp-vs-solution.png)
 
 ## 步驟 2︰部署您的遊戲
 
-開啟 `Assets/UWP` 資料夾中新產生的解決方案。  開啟後，將目標平台變更為 X64。
+開啟在 **UWP** 資料夾中新產生的解決方案，然後將目標平台變更為 [x64]****。
 
 ![x64 建置平台](images/x64-build-platform.png)
 
-現在您已經有遊戲的 UWP Visual Studio 解決方案，[遵循下列步驟](https://msdn.microsoft.com/windows/uwp/xbox-apps/getting-started)將可讓您順利將遊戲部署到零售版 Xbox One！
+現在您已經有遊戲的 UWP Visual Studio 解決方案，[遵循下列步驟](getting-started.md)將可讓您順利將遊戲部署到零售版 Xbox One！
 
 ## 步驟 3︰修改並重新建置
 
-如果對指令碼以外的項目進行變更，為了讓這些變更可以在您遊戲的 UWP 建置中顯示，專案必須在編輯器中重新建置 (如__步驟 1__ 中所述)。
+如果您對指令碼以外的項目做出變更，若要將這些變更套用到您遊戲的 UWP 建置中，專案必須在編輯器中重新建置 (以__步驟 1__ 中所述的方式)。
 
 ## 管理 UWP 專案的版本
 
-在一些常見的情況下，將新產生之 UWP 目錄的一部份加入版本控制已成為必要。  例如，假如您正在新增新的相依性到 UWP 專案 (也就是 Xbox Live SDK)。  我們將在[這裡](development-lanes-unity-versioning.md)詳細說明此範例。
+在一些常見的情況下，將新產生之 UWP 目錄的一部份加入版本控制，是一項必要的動作。 例如，假如您正在新增新的相依性到 UWP 專案 (例如 Xbox Live SDK)。  我們會在[針對您的 UWP 專案進行版本控制](development-lanes-unity-versioning.md)中詳細討論此範例。
+
+## 另請參閱
+- [將現有的遊戲移到 Xbox](development-lanes-landing.md)
+- [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

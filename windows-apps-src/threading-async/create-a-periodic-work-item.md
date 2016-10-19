@@ -5,7 +5,7 @@ title: "建立定期工作項目"
 description: "了解如何建立定期重複執行的工作項目。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
+ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
 
 ---
 # 建立定期工作項目
@@ -206,6 +206,6 @@ ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

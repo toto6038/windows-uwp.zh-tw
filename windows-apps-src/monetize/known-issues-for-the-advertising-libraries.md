@@ -1,28 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "了解 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。"
+description: "了解 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫之目前版本的已知問題。"
 title: "Microsoft Advertising 程式庫的已知問題"
 translationtype: Human Translation
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
 # Microsoft Advertising 程式庫的已知問題
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主題列出 Microsoft Store Engagement and Monetization SDK 中的 Microsoft Advertising 程式庫之目前版本的已知問題。
 
-## 需要適用於通用 Windows App 的 Visual Studio Tools 才能完成安裝
+本主題會列出 Microsoft Store Services SDK (適用於 UWP App)，以及適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x App) 中 Microsoft Advertising 程式庫之目前版本的已知問題。
 
-若要隨著 Visual Studio 2015 安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，您必須安裝適用於通用 Windows App 的 Visual Studio Tools 1.1 版或更新版本。 如需詳細資訊，請參閱 Visual Studio [版本資訊](http://go.microsoft.com/fwlink/?LinkID=624516)。
+## 需要適用於通用 Windows App 的 Visual Studio Tools 才能安裝 Microsoft Store Services SDK
+
+若要使用 Visual Studio 2015 安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)，您必須安裝適用於通用 Windows App 的 Visual Studio Tools 1.1 版或更新版本。 如需詳細資訊，請參閱 Visual Studio [版本資訊](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
 ## Windows Phone 8.x Silverlight 專案
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝 [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]****  > [加入已連接服務]****  > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請將 Ad Mediator 參照從您的專案中移除。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 對於 Windows Phone 8.x Silverlight 專案的支援有限。 如需詳細資訊，請參閱[在您的 App 中顯示廣告](display-ads-in-your-app.md#silverlight_support)。
+
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]**** > [加入已連接服務]**** > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## AdControl 介面於 XAML 中為未知
 
@@ -117,6 +119,6 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

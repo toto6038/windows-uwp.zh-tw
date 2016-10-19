@@ -5,7 +5,7 @@ description: "本逐步解說示範如何使用 .NET Framework 搭配 Visual Bas
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
+ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 
 ---
 
@@ -738,6 +738,6 @@ asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

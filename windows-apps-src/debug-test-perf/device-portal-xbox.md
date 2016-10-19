@@ -5,7 +5,7 @@ title: "Xbox 的 Device Portal"
 description: "了解如何啟用 Xbox One 的 Device Portal。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e1bfdf8e4ee4ed1f88c514acb9ef555c07fd0746
+ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
 
 ---
 # Xbox 的 Device Portal
@@ -38,6 +38,6 @@ Xbox 上的 Device Portal 提供標準頁面集。 如需詳細描述，請參�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

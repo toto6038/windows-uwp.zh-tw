@@ -5,7 +5,7 @@ title: "Windows 市集應用程式行銷指導方針"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
 
 ---
 
@@ -55,6 +55,6 @@ Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

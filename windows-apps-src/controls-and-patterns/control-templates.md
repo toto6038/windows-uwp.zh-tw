@@ -9,19 +9,27 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 ---
-
 # 控制項範本
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209391"><strong>ControlTemplate 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx"><strong>Control.Template 屬性</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
-**重要 API**
 
--   [**ControlTemplate 類別**](https://msdn.microsoft.com/library/windows/apps/br209391)
--   [**Control.Template 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+
 
 您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項的外觀。
 
@@ -105,7 +113,7 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 
 您可以使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 中元素外觀的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053)。 當控制項進入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上設定)。
 
-下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件。 此範例會設定在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) ([**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性。 `Checked`**VisualState** 指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 是 1。 `Indeterminate`**VisualState** 指定 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked`**VisualState** 沒有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 會回到其預設外觀。
+下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件。 此範例會設定在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) ([**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性。 `Checked` **VisualState** 指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 是 1。 `Indeterminate` **VisualState** 指定 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked` **VisualState** 沒有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 會回到其預設外觀。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -173,9 +181,9 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 狀態轉換                     | 發生什麼事                                                                                                                                                                                                                                                                                                                                   | 轉換完成時 CheckBox 的外觀 |
-| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。                                                                                                                                                         | 顯示 X。                                |
-| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。 會移除 `Checked`**VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 為 0。 | 顯示圓形。                            |
-| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
+| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。                                                                                                                                                         | 顯示 X。                                |
+| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 為 0。 | 顯示圓形。                            |
+| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
 
  
 如需有關如何建立控制項視覺狀態的詳細資訊，特別是如何使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 類別和動畫類型，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)。
@@ -214,6 +222,6 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

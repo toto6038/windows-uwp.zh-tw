@@ -1,15 +1,15 @@
 ---
 author: jwmsft
 description: "唯一識別建立和參照為資源的元素，存在 ResourceDictionary 中。"
-title: "x&#58;Key 屬性"
+title: "x:Key 屬性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
 
 ---
 
-# x&#58;Key 屬性
+# x:Key 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -59,7 +59,7 @@ CombiningCharacter::= none
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素通常包含 **x:Key** 屬性，該屬性會指定該字典內的唯一索引鍵值。 XAML 處理器在載入期間會強制執行索引鍵唯一性。 非唯一的 **x:Key** 值將導致 XAML 剖析例外狀況。 如果是 [{StaticResource} 標記延伸](staticresource-markup-extension.md)所要求，任何未解析的索引鍵也會導致 XAML 剖析例外狀況。
 
-**x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼叫將不會抓取索引資源。
+**x:Key** 與 [x:Name](x-name-attribute.md) 並非相同的概念。 **x:Key** 專門用在資源字典中。 x:Name 則用於 XAML 的所有區域。 使用索引鍵值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼叫將不會擷取索引資源。 資源字典中定義的物件可能會有 **x:Key**、**x:Name** 或是兩者。 金鑰和名稱不需要符合。
 
 請注意，在顯示的隱含語法中，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 物件在 XAML 處理器如何產生新物件以填入 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 集合方面是隱含的。
 
@@ -70,6 +70,6 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

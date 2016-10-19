@@ -1,16 +1,16 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: "建立 &quot;Hello, world&quot; app (JS)"
+title: "建立 Hello, world app (JS)"
 description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 2e0965f964f6f2e10b895d99244b66458eb15903
 ms.openlocfilehash: 6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77
 
 ---
-# 建立 "Hello, world" app (JS)
+# 建立 Hello, world app (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 "Hello, world" app。 使用 Microsoft Visual Studio 中的單一專案，您可以建置可在任何 Windows 10 裝置上執行的 app。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 使用 Microsoft Visual Studio 中的單一專案，您可以建置可在任何 Windows 10 裝置上執行的 app。
 
 您將在此處了解如何：
 
@@ -487,7 +487,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
     ```        
 
-    執行 App。 當您選取評分值時，它會在 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項下方輸出數值。
+    執行應用程式。 當您選取評分值時，它會在 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項下方輸出數值。
 
 ![電腦上完成的 Hello world app](images/helloworld-5-winjs.png)
 

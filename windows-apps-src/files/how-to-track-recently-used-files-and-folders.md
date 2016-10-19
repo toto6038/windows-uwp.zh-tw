@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "追蹤最近使用的檔案和資料夾"
 description: "將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
 ---
 # 追蹤最近使用的檔案和資料夾
@@ -46,13 +46,13 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
     ```CSharp
     ...
-    
+
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
     string mruToken = mru.Add(file, "profile pic");
     ```
-    
+
     [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
 
     **提示** 您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)。
@@ -106,10 +106,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "通用 Windows 平台元件和最佳化互通性"
 description: "建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5c7a49558ed11f82b7afea1ea96271c45c2f9139
-ms.openlocfilehash: b9300b3feb1e5229951f3e1ebe454b61ba8065ae
+ms.openlocfilehash: bfbf4a630b1874f718a1ebd41caf96c72e2f05c5
 
 ---
 # 通用 Windows 平台元件和最佳化互通性
@@ -90,6 +90,6 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

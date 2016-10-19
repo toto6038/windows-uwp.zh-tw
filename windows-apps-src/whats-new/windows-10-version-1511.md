@@ -2,15 +2,16 @@
 author: QuinnRadich
 title: "Windows 10 版本 1511 的新功能 - 2015 年 11 月"
 description: "Windows 10 版本 1511 與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。"
+keywords: "新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1511, 11 月"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0bcec2e82afd81f68b36eab5719902d5fb7991fb
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 7f6a0879db5e3ec660866c0c08b9b7c7ca773644
 
 ---
 
 # Windows 的新功能
 
-Windows 10 Anniversary SDK Preview 組建 14295 與 Windows 開發人員工具更新會持續提供由通用 Windows 平台所支援的工具、功能與體驗。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 版本 1511 與針對 Windows 開發人員工具的更新持續提供由通用 Windows 平台所提供的工具、功能及體驗。 在 Windows 10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
 ## Windows 10 version 1511 - November 2015
 
@@ -31,6 +32,6 @@ Windows 應用程式認證套件 | Windows 應用程式認證套已經更新，�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -5,14 +5,14 @@ title: "利用廣告獲利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+ms.openlocfilehash: af322795be849bdaa2b1babeaec29d09f5d73fcf
 
 ---
 
 # 利用廣告獲利
 
 
-如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項來顯示橫幅或影片插入式廣告，請使用 [創造營收]****&gt;[利用廣告獲利]**** 頁面來管理廣告的使用方式。
+如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項顯示橫幅或影片插入式廣告，請使用 [創造營收]**** &gt; [利用廣告獲利]**** 頁面管理廣告的使用方式。
 
 ## Windows 廣告流量分配
 
@@ -70,6 +70,6 @@ ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

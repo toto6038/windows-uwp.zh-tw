@@ -1,16 +1,20 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "開始設定"
 description: "開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。"
 translationtype: Human Translation
-ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
-ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
+ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
+ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
 
 ---
 # 開始設定
 
-開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) app。
+開始操作比您想像中容易。 請依照下列指示操作來開始建立適用於 Windows 10 的「通用 Windows 平台」(UWP) app。
+
+> [!NOTE]
+> 您是 Mac 使用者嗎？ 或是您還不想在您的電腦上安裝任何項目？ 請試試[適用於 Build2016 程式碼撰寫挑戰的 Web 型虛擬機器設定](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges)。
+
 
 ## 1. 取得 Windows 10
 
@@ -21,6 +25,8 @@ ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 您是 MSDN 訂閱者嗎？ 您可以從此處取得 ISO 下載：
 
 -   從 [MSDN 訂閱者下載](http://go.microsoft.com/fwlink/p/?LinkId=266384)中取得 Windows 10
+
+
 
 ## 2. 下載或更新 Visual Studio
 
@@ -59,7 +65,6 @@ Microsoft Visual Studio 2015 可協助您設計、撰寫、測試和偵錯您的
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

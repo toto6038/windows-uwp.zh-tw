@@ -23,7 +23,7 @@ ms.openlocfilehash: 8330ee43089207faab5f6f72e2ac7b32aada72ce
 
 **將功能新增到應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
 2.  選取 [功能]**** 索引標籤。
 3.  核取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
 

@@ -5,7 +5,7 @@ title: "MVVM 和語言效能祕訣"
 description: "本主題討論與您的軟體設計模式及程式設計語言選擇相關的一些效能考量。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
+ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
 
 ---
 # MVVM 和語言效能祕訣
@@ -45,6 +45,6 @@ MVVM 模式有多個具體的定義，以及協助實作此模式的協力廠商
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,11 +6,10 @@ title: "音效"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
-ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
+ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
+ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
 
 ---
-[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。] 本文提供尚未提供功能的預覽。**
 
 # 音效
 
@@ -20,13 +19,13 @@ ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
 
 UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
 
-**ElementSoundPlayer** 是 XAML 中的整合式音效系統，而開啟所有預設控制項就會自動播放音效。
+**ElementSoundPlayer** 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
 **ElementSoundPlayer** 有三種不同的狀態︰[On]****、[Off]**** 和 [Auto]****。
 
-如果設定為 [Off]****，不論您的應用程式在何處執行，絕對不會播放音效。 如果設定為 [On]****，您的應用程式的音效將會在每個平台上播放。
+如果設定為 [Off]****，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]****，您的應用程式的音效將會在每個平台上播放。
 
 ### 電視和 Xbox 的音效
 
@@ -148,6 +147,6 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,19 +6,32 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 ---
 # Rich Edit 方塊
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox 類別</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Document 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>IsReadOnly 屬性</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>IsSpellCheckEnabled 屬性</strong></a></li>
+</ul>
 
--   [**RichEditBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
--   [**Document 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
--   [**IsReadOnly 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
--   [**IsSpellCheckEnabled 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## 這是正確的控制項嗎？
 
@@ -38,7 +51,7 @@ ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
 
 ## 建立 Rich Edit 方塊
 
-根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 屬性設為 **false**。 如需詳細資訊，請參閱＜拼字檢查的指導方針和檢查清單＞。
+根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](spell-checking-and-prediction.md)文章。
 
 您可以使用 RichEditBox 的 [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) 物件，與使用[Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
 
@@ -51,20 +64,20 @@ ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
             <Setter Property="IsCompact" Value="True"/>
         </Style>
     </RelativePanel.Resources>
-    <AppBarButton x:Name="openFileButton" Icon="OpenFile" 
+    <AppBarButton x:Name="openFileButton" Icon="OpenFile"
                   Click="OpenButton_Click" ToolTipService.ToolTip="Open file"/>
-    <AppBarButton Icon="Save" Click="SaveButton_Click" 
-                  ToolTipService.ToolTip="Save file" 
+    <AppBarButton Icon="Save" Click="SaveButton_Click"
+                  ToolTipService.ToolTip="Save file"
                   RelativePanel.RightOf="openFileButton" Margin="8,0,0,0"/>
 
-    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold" 
+    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
                   RelativePanel.LeftOf="italicButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click" 
+    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
                   ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click" 
+    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
                   ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
 
-    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton" 
+    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton"
                  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
 </RelativePanel>
 ```
@@ -120,7 +133,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
     Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
     if (file != null)
     {
-        // Prevent updates to the remote version of the file until we 
+        // Prevent updates to the remote version of the file until we
         // finish making changes and call CompleteUpdatesAsync.
         Windows.Storage.CachedFileManager.DeferUpdates(file);
         // write to file
@@ -129,7 +142,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
 
         editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
 
-        // Let Windows know that we're finished changing the file so the 
+        // Let Windows know that we're finished changing the file so the
         // other app can update the remote version of the file.
         Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
         if (status != Windows.Storage.Provider.FileUpdateStatus.Complete)
@@ -185,7 +198,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 預設鍵盤配置通常適用於處理 RTF 文件。
 
-如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤]()。
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
 ## 建議
 
@@ -206,7 +219,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 **適用於設計人員**
 - [拼字檢查的指導方針](spell-checking-and-prediction.md)
-- [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
 
 **適用於開發人員 (XAML)**
@@ -215,7 +228,6 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,15 +4,15 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "請使用這個方法來更新 Windows 市集索引鍵。"
 title: "更新 Windows 市集識別碼索引鍵"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
 
 ---
 
-# 更新 Windows 市集識別碼索引鍵
+# 更新 Windows 市集識別碼金鑰
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 請使用這個方法來更新 Windows 市集索引鍵。 當您藉由呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法來產生 Windows 市集識別碼索引鍵時，該索引鍵會有效 90 天。 索引鍵到期之後，這個方法可讓您使用過期的索引鍵來重新交涉，以取得新的索引鍵。
 
@@ -119,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

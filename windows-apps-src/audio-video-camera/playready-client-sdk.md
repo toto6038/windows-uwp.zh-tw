@@ -4,8 +4,8 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。"
 title: PlayReady DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 5cae0870142282eaf2f3db05e0e202db7e74ef26
-ms.openlocfilehash: eef128afc0da6f55a76b8c664f9049dc1ec48da1
+ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
+ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
 
 ---
 
@@ -64,7 +64,7 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 
     即使擁有功能更強的金鑰 (但非授權)，這項新功能仍限制以最高解析度來播放內容。 其支援使用單一金鑰編碼多個資料流大小的情況。
 
-下列新介面、類別及列舉已新增到 PlayReady DRM 中：
+已將下列的新介面、類別及列舉新增到 PlayReady DRM：
 
 -   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) 介面
 -   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) 介面
@@ -97,7 +97,8 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 
 PlayReady DRM 支援 **Microsoft PlayReady 可延伸媒體權利規格**中包含的輸出保護層級。 您可在 PlayReady 授權產品的隨附文件套件中，找到這份文件。
 
-> **注意** &nbsp;&nbsp;授權伺服器可設定的輸入保護層級允許值，受到 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)所規範。
+> [!NOTE]
+> 授權伺服器可設定的輸出保護層級允許值，受到 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)所規範。
 
 PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器上，播放具輸出保護原則的內容。 如需有關 PlayReady 相容性規則指定連接器詞彙的詳細資訊，請參閱[適用於 PlayReady 相容性與穩健性規則的定義詞彙](https://www.microsoft.com/playready/licensing/compliance/)。
 
@@ -168,7 +169,7 @@ PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器�
         <td colspan="2">「不」傳遞內容</td>
     </tr>
 </table>
-
+<br/>
 #### 音訊
 
 <table>
@@ -207,7 +208,7 @@ PlayReady DRM 僅允許在 PlayReady 相容性規則中指定的輸出連接器�
         <td>「不」傳遞內容</td>
     </tr>
 </table>
-
+<br/>
 ### Miracast
 
 PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast 輸出播放內容。 不過在 Windows 10 上，Miracast 會視為*數位*輸出。 如需關於 Miracast 案例的詳細資訊，請參閱 [PlayReady 相容性規則](https://www.microsoft.com/playready/licensing/compliance/)。 下表概述 PlayReady 授權中各個 OPL 間的對應，以及 PlayReady DRM 如何在 Miracast 輸出上強制執行這些對應。
@@ -248,7 +249,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast �
         <td>「不」傳遞內容</td>
     </tr>
 </table>
-
+<br/>
 ### 其他的明確輸出限制
 
 下表說明適用於 Windows 10 的 PlayReady DRM，如何實作明確的數位視訊輸出保護限制。
@@ -266,8 +267,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast �
         <td>連接的輸出為：數位視訊輸出、Miracast、HDMI、DVI 等等。</td>
         <td>
             <p>
-                採用下列限制時傳遞內容︰  
-            </p>
+採用下列限制時傳遞內容︰ </p>
             <ul>
                 <li>(a) 畫面寬度必須小於或等於最大像素畫面寬度，且畫面高度小於或等於最大像素畫面高度，或</li>
                 <li>(b) 畫面高度必須小於或等於最大像素畫面寬度，且畫面寬度小於或等於最大像素畫面高度</li>
@@ -281,7 +281,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast �
         <td>使用 HDCP 2.2 傳遞內容並將內容串流類型設為 1。 若 HDCP 2.2 無法使用或是內容串流類型無法設定為 1，則「不會」傳遞內容。 此外，也必須指定一個值大於或等於 271 的未壓縮數位視訊輸出保護層級</td>
     </tr>
 </table>
-
+<br/>
 下表說明適用於 Windows 10 的 PlayReady DRM 如何實作明確的類比視訊輸出保護限制。
 
 <table>
@@ -329,8 +329,9 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast �
         <td colspan="2">不傳遞內容</td>
     </tr>
 </table>
-
-> **注意**：播放時若使用諸如「Mini DisplayPort 轉 VGA」等轉接卡硬體鎖，則 Windows 10 會將輸出視為數位視訊輸出，而無法強制執行類比視訊規則。
+<br/>
+> [!NOTE]
+播放時若使用諸如「Mini DisplayPort 轉 VGA」等轉接卡硬體鎖，則 Windows 10 會將輸出視為數位視訊輸出，而無法強制執行類比視訊規則。s.
 
 下表說明可在其他情況下播放之適用於 Windows 10 的 PlayReady DRM 實作。
 
@@ -356,7 +357,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，透過 Miracast �
         <td>**HWDRM：**「不」傳遞內容</td>
     </tr>
 </table>
-
+<br/>
 ## 先決條件
 
 開始建立 PlayReady 保護的 UWP app 之前，需要在系統上安裝下列軟體：
@@ -445,9 +446,20 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 如需安全停止功能的實作範例，請參閱 PlayReady 範例中的 securestop.cs 檔案，其位於 [http://go.microsoft.com/fwlink/p/?linkid=331670&amp;clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670)。
 
- 
+## 在 Xbox One 上使用 PlayReady DRM
 
- 
+若要在 Xbox One 上的 UWP app 中使用 PlayReady DRM，您需要新增其他的 `<DeviceCapability>` 到應用程式資訊清單。 您必須手動新增這個項目，因為目前在應用程式資訊清單設計工具中無法使用此設定。 執行下列步驟以進行設定：
+
+1. 在 Visual Studio 中開啟專案，開啟 [方案總管]****，以滑鼠右鍵按一下 [Package.appxmanifest]****。
+2. 選取 [開啟方式]****，選擇 [XML (文字) 編輯器]****，然後按一下 [確定]****。
+3. 在 `<Capabilities>` 標記之間，新增下列 `<DeviceCapability>`：
+```xml
+<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+```
+4. 儲存檔案。
+
+## 另請參閱
+- [媒體播放](media-playback.md)
 
 
 
@@ -455,6 +467,6 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

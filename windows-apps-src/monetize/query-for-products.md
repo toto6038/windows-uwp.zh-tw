@@ -4,17 +4,17 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。"
 title: "查詢產品"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
 
 ---
 
 # 查詢產品
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
+
+請在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
 
 這個方法是專門讓您的服務回應來自應用程式的訊息時所呼叫的方法。 您的服務不應該依排程定期輪詢所有的使用者。
 
@@ -42,7 +42,7 @@ ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 
 | 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為**持有人**&lt;*權杖*&gt;。                           |
+| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
@@ -57,7 +57,7 @@ ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 | continuationToken | 字串       | 如果有多組產品，回應主體會在達到頁面限制時傳回接續權杖。 為後續的呼叫提供該接續權杖，即可擷取剩餘的產品。                                                      | 否       |
 | maxPageSize       | 數字       | 為單一回應所傳回的產品數目上限。 預設及最大值為 100。                                                                                                                                                                      | 否       |
 | modifiedAfter     | datetime     | 如果已指定，該服務只會傳回在此日期之後修改過的產品。                                                                                                                                                                             | 否       |
-| parentProductId   | 字串       | 如果已指定，該服務只會傳回對應到特定應用程式的 IAP。                                                                                                                                                                                    | 否       |
+| parentProductId   | 字串       | 如果已指定，該服務只會傳回對應到特定 App 的附加元件。                                                                                                                                                                                    | 否       |
 | productSkuIds     | ProductSkuId | 如果已指定，該服務只會傳回適用於所提供產品/SKU 組的產品。                                                                                                                                                                        | 否       |
 | productTypes      | 字串       | 如果已指定，該服務只會傳回符合特定產品類型的產品。 支援的產品類型為 **Application**、**Durable** 及 **UnmanagedConsumable**。                                                                                       | 否       |
 | validityType      | 字串       | 設定為 **All** 時，會傳回某使用者的所有產品，包括已過期的項目。 設定為 **Valid** 時，只會傳回在當下有效的產品 (也就是該產品的狀態為使用中、開始日期 &lt; 目前時間，以及結束日期 &gt; 目前時間)。 | 否       |
@@ -93,25 +93,25 @@ Content-Length: 2531
 Content-Type: application/json
 
 {
-    "maxPageSize": 100,
-    "beneficiaries": [
-            {
-                "localTicketReference": "1055521810674918",
-                "identityValue": "eyJ0eXAiOiJ……",
-                "identityType": "b2b"
-            }
-        ],
-    "modifiedAfter": "\/Date(-62135568000000)\/",
-    "productSkuIds": [
-            {
-                "productId": "9NBLGGH5WVP6",
-                "skuId": "0010"
-            }
-        ],
-    "productTypes": [
-            "UnmanagedConsumable"
-        ],
-    "validityType": "All"
+  "maxPageSize": 100,
+  "beneficiaries": [
+    {
+      "localTicketReference": "1055521810674918",
+      "identityValue": "eyJ0eXAiOiJ……",
+      "identityType": "b2b"
+    }
+  ],
+  "modifiedAfter": "\/Date(-62135568000000)\/",
+  "productSkuIds": [
+    {
+      "productId": "9NBLGGH5WVP6",
+      "skuId": "0010"
+    }
+  ],
+  "productTypes": [
+    "UnmanagedConsumable"
+  ],
+  "validityType": "All"
 }
 ```
 
@@ -147,12 +147,12 @@ CollectionItemContractV6 物件包含下列參數。
 | productType          | 字串             | 下列其中一個產品類型：**Application**、**Durable** 及 **UnmanagedConsumable**。                                                     | 是      |
 | purchasedCountry     | 字串             | 不適用。                                                                                                                                               | 否       |
 | purchaser            | IdentityContractV6 | 如果存在，則代表項目購買者的身分識別。 請在下方參閱此物件的詳細資料。                                      | 否       |
-| Quantity             | 數字             | 項目的數量。 目前此值永遠為 1。                                                                                        | 否       |
+| quantity             | 數字             | 項目的數量。 目前此值永遠為 1。                                                                                        | 否       |
 | skuId                | 字串             | Windows 市集型錄中的 SKU 識別碼。 舉例來說，SKU 識別碼可以是「0010」。                                                                            | 是      |
 | skuType              | 字串             | SKU 的類型。 可能的值包括 **Trial**、**Full** 及 **Rental**。                                                                      | 是      |
 | startDate            | datetime           | 項目開始生效的日期。                                                                                                         | 是      |
-| Status               | 字串             | 項目的狀態。 可能的值包括 **Active**、**Expired**、**Revoked** 及 **Banned**。                                              | 是      |
-| Tags                 | 字串             | 不適用                                                                                                                                                | 是      |
+| status               | 字串             | 項目的狀態。 可能的值包括 **Active**、**Expired**、**Revoked** 及 **Banned**。                                              | 是      |
+| tags                 | 字串             | 不適用                                                                                                                                                | 是      |
 | transactionId        | guid               | 因購買此項目而產生的交易識別碼。 可用來回報某項目已完成。                                       | 是      |
 
 <span/> 
@@ -179,32 +179,32 @@ MS-ServerId: 020022359
 Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 {
-    "items" : [
-        {
-            "acquiredDate" : "2015-09-22T19:22:51.2068724+00:00",
-            "devOfferId" : "f9587c53-540a-498b-a281-8a349491ed47",
-            "endDate" : "9999-12-31T23:59:59.9999999+00:00",
-            "fulfillmentData" : [],
-            "inAppOfferToken" : "consumable2",
-            "itemId" : "4b8fbb13127a41f299270ea668681c1d",
-            "localTicketReference" : "1055521810674918",
-            "modifiedDate" : "2015-09-22T19:22:51.2513155+00:00",
-            "orderId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31",
-            "ownershipType" : "OwnedByBeneficiary",
-            "productId" : "9NBLGGH5WVP6",
-            "productType" : "UnmanagedConsumable",
-            "purchaser" : {
-                "identityType" : "pub",
-                "identityValue" : "user123"
-            },
-            "skuId" : "0010",
-            "skuType" : "Full",
-            "startDate" : "2015-09-22T19:22:51.2068724+00:00",
-            "status" : "Active",
-            "tags" : [],
-            "transactionId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31"
-        }
-    ]
+  "items" : [
+    {
+      "acquiredDate" : "2015-09-22T19:22:51.2068724+00:00",
+      "devOfferId" : "f9587c53-540a-498b-a281-8a349491ed47",
+      "endDate" : "9999-12-31T23:59:59.9999999+00:00",
+      "fulfillmentData" : [],
+      "inAppOfferToken" : "consumable2",
+      "itemId" : "4b8fbb13127a41f299270ea668681c1d",
+      "localTicketReference" : "1055521810674918",
+      "modifiedDate" : "2015-09-22T19:22:51.2513155+00:00",
+      "orderId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31",
+      "ownershipType" : "OwnedByBeneficiary",
+      "productId" : "9NBLGGH5WVP6",
+      "productType" : "UnmanagedConsumable",
+      "purchaser" : {
+        "identityType" : "pub",
+        "identityValue" : "user123"
+      },
+      "skuId" : "0010",
+      "skuType" : "Full",
+      "startDate" : "2015-09-22T19:22:51.2068724+00:00",
+      "status" : "Active",
+      "tags" : [],
+      "transactionId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31"
+    }
+  ]
 }
 ```
 
@@ -217,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

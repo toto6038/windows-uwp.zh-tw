@@ -5,7 +5,7 @@ title: "移動與繪製命令語法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
+ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 ---
 
@@ -26,7 +26,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[ **PathGeometry.Figures** ](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
+[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
 
 ## 使用移動與複製命令與使用 **PathGeometry** 比較
 
@@ -48,7 +48,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 -   除了關閉命令以外，每個命令後面通常會跟著一或多個數字。
 -   如果命令有一個以上的數字，請使用逗號或空格來分隔。
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
 許多繪製命令會使用點，由您提供 _x,y_ 值。 每當您看到 \*_points_ 預留位置時，都可以假設是要為一個點的 _x,y_ 值提供兩個十進位值。
 
@@ -240,6 +240,6 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

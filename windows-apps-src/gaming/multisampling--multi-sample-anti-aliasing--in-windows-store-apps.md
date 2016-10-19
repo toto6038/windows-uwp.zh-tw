@@ -5,7 +5,7 @@ description: "了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) a
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+ms.openlocfilehash: cf82c34e23a1c66bfc2d59f9ea3b4ebce99ab52e
 
 ---
 
@@ -210,6 +210,6 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

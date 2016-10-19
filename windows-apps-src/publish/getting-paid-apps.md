@@ -4,15 +4,15 @@ Description: "此處提供一些您需要用來確認收到應用程式、應用
 title: "獲得報酬"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+ms.sourcegitcommit: eaf2c2d7032d7df1184a988afce7dbd4f28d3622
+ms.openlocfilehash: 76bce0070da266cc2bc53cda785136a372e2f3bc
 
 ---
 
 # 獲得報酬
-此處提供一些您需要用來確認收到應用程式、應用程式內產品 (IAP) 及 Microsoft Advertising 營收之付款的重要資訊。
+此處提供一些您需要用來確認收到 App、附加元件及 Microsoft Advertising 營收之付款的重要資訊。
 
-> **重要** 在您可以接收來自 Windows 市集中之 app 銷售的金額之前，您必須[設定支付帳戶並填寫所需的納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
+> **重要** 在您可以接收來自 Windows 市集中之 App 銷售的金額之前，您必須[設定支付帳戶並填寫所需的納稅申報表](setting-up-your-payout-account-and-tax-forms.md)。
 
 ## 市集費用
 
@@ -20,13 +20,13 @@ ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
 
 在大部分情況下，市集費用為 30%。 費用在[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)中有正式的定義。 如果您有任何問題，請一律檢閱該文件。
 
-Windows 市集費用適用於 Windows 市集收取的所有 app 銷售金額，包含 IAP。
+Windows 市集費用適用於 Windows 市集收取的所有 App 銷售金額，包括附加元件。
 
 ## 價格區間
 
 價格區間會在您選擇散佈應用程式的所有國家/地區設定銷售價格。 您可以免費提供應用程式，或是挑選一個客戶必須支付才能取得應用程式的價格。 價格區間從 .99 美元開始，逐額遞增 (1.29 美元、1.49 美元、1.99 美元等)。 價格區間之間的遞增值會隨著價格變高而增加。
 
-> **注意** 這些價格區間也適用於您從 app 內提供的所有 IAP。
+> **注意** 這些價格區間也適用於您從 App 內提供的所有附加元件。
 
 每個價格區間對於市集所提供 60 種以上的貨幣都有對應值。 我們使用這些值協助您在全球以可資比較的價格帶來銷售應用程式。 不過，由於貨幣匯率隨時都在變化，因此確切的銷售金額可能會隨貨幣種類的不同而有些微差異。
 
@@ -38,7 +38,7 @@ Windows 市集費用適用於 Windows 市集收取的所有 app 銷售金額，�
 
 ## 支付時間範圍
 
-付款是每月進行一次 (假設已符合適用的付款門檻，而您尚未進行保留支付，如下所述)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何付款。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。
+付款是每月進行一次 (假設已符合適用的付款門檻，而您尚未進行保留支付，如下所述)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何付款。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。 如需詳細資訊，請參閱[付款門檻、方法和時間範圍](payment-thresholds-methods-and-timeframes.md)。
 
 ##  支付保留狀態
 
@@ -61,6 +61,6 @@ Windows 市集費用適用於 Windows 市集收取的所有 app 銷售金額，�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -4,8 +4,8 @@ title: "遊戲和 DirectX"
 description: "通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 translationtype: Human Translation
-ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
-ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
+ms.sourcegitcommit: adaff9abeb0ae8f9c9deb964b18e673c4d4c5f73
+ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
 
 ---
 
@@ -32,6 +32,7 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [遊戲的音訊](working-with-audio-in-your-directx-game.md) | 了解如何開發音樂和聲音，並將它們納入您的 DirectX 遊戲，以及如何處理音訊訊號來建立動態和聲音定位。 |
 | [適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md) | 了解如何在使用 DirectX 的 UWP C++ 遊戲中新增基本的觸控控制項。 我們將示範如何在 Direct3D 環境中加入觸控控制項來移動固定面相機，透過拖曳手指或手寫筆來移動相機的視角。 |
 | [適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) | 了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。 |
+| [相對滑鼠移動](relative-mouse-movement.md) | 了解如何新增相對滑鼠控制項，這種控制項不使用系統游標，也不會傳回絕對螢幕座標；而是會追蹤滑鼠移動之間的像素差異。 |
 | [最佳化輸入和轉譯迴圈](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。 此外，適當的輸入事件最佳化可以增加電池使用時間。 了解如何選擇正確的 [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) 輸入事件處理選項，可確保您的遊戲可以盡可能順暢地處理輸入。 |
 | [交換鏈結縮放和重疊](multisampling--scaling--and-overlay-swap-chains.md) | 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用重疊交換鏈結 (可供使用時) 來提高視覺品質。 |
 | [透過 DXGI 1.3 交換鏈結減少延遲](reduce-latency-with-dxgi-1-3-swap-chains.md) | 使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。 |
@@ -42,7 +43,8 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [遊戲的協助工具](accessibility-for-games.md) | 了解如何設計無障礙遊戲。 |
 | [遊戲的雲端](cloud-for-games.md) | 了解如何利用雲端技術進行遊戲開發。 |
 | [DirectX 與 XAML 互通性](directx-and-xaml-interop.md) | 您可以在 UWP 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 |
-| [封裝您的遊戲](package-your-windows-store-directx-game.md) | 大型 UWP 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。 在這個主題中，您將了解如何使用 app 套件與 app 套件組合來自訂 app，讓客戶只收到他們實際所需的資源。 |
+| [封裝您的遊戲](package-your-windows-store-directx-game.md) | 大型 UWP 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。 在這個主題中，您將了解如何使用應用程式套件與應用程式套件組合來自訂 app，讓客戶只收到他們實際所需的資源。 |
+| [概念核准](concept-approval.md) | 了解如何提交您的產品以進行概念核准，如果您的產品會在 Xbox 上執行或使用 Xbox Live，就需要進行概念核准。 |
 | [遊戲移植指南](porting-guides.md) | 提供將現有的遊戲移植到 Direct3D 11、UWP 和 Windows 10 的指南。 |
 | [遊戲程式設計資源](additional-directx-game-programming-resources.md) | 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。 |
 
@@ -70,6 +72,6 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

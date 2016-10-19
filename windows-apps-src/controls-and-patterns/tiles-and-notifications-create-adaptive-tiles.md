@@ -6,15 +6,13 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
-ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
 
 ---
-
 # 建立彈性磚
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為通用 Windows 平台 (UWP) app 建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
@@ -1495,6 +1493,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

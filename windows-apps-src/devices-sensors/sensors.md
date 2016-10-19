@@ -5,7 +5,7 @@ title: "感應器"
 description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
+ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 ---
 # 感應器
@@ -129,6 +129,6 @@ ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 
