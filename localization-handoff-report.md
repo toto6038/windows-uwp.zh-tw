@@ -1,33 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\images\windows-wheel\dial-pen-studio-600px.png](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6dc876d2a983bcde6558c8f00691e7b4eb9d66e1?path=windows-apps-src%2Finput-and-devices%2Fimages%2Fwindows-wheel%2Fdial-pen-studio-600px.png&_a=contents) | HandedOffSuccess | [Details](#6361eb8437dc3397df37bd5dc2162f3aa62424984626)
- [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6dc876d2a983bcde6558c8f00691e7b4eb9d66e1?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents) | HandedOffSuccess | [Details](#ecf70ab3526778f115aad2df06d289b16679e24c4663)
+ [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/68fea5f0abed83618833e7b1f242cd1167f33dac?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents) | HandedOffSuccess | [Details](#5a5c3bc08e7579b5a7496c88800ac76f48f931714663)
 
 ## Item Details
-##### <a name='6361eb8437dc3397df37bd5dc2162f3aa62424984626'></a> Source: [windows-apps-src\input-and-devices\images\windows-wheel\dial-pen-studio-600px.png](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6dc876d2a983bcde6558c8f00691e7b4eb9d66e1?path=windows-apps-src%2Finput-and-devices%2Fimages%2Fwindows-wheel%2Fdial-pen-studio-600px.png&_a=contents)
+##### <a name='5a5c3bc08e7579b5a7496c88800ac76f48f931714663'></a> Source: [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/68fea5f0abed83618833e7b1f242cd1167f33dac?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [6361eb8437dc3397df37bd5dc2162f3aa6242498.png](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/99e8e85d16b07513f5860cc577356a45495dcfca?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2F6361eb8437dc3397df37bd5dc2162f3aa6242498.png&_a=contents)
-* Handoff Datetime: 2016-11-02 01:06:35
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\input-and-devices\windows-wheel-interactions.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='ecf70ab3526778f115aad2df06d289b16679e24c4663'></a> Source: [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6dc876d2a983bcde6558c8f00691e7b4eb9d66e1?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [windows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/99e8e85d16b07513f5860cc577356a45495dcfca?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-02 01:06:35
+* Handoff File: [windows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/19968da5d082c765f9da2bc95c7141e0f779b99c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2016-11-02 17:03:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
