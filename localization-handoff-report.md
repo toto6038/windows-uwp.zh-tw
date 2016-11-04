@@ -1,100 +1,28 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 5
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\bitmapencoder-options-reference.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fbitmapencoder-options-reference.md&_a=contents) | HandedOffSuccess | [Details](#4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd155)
- [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents) | HandedOffSuccess | [Details](#958033bc054da292c85f8df0a57cf964696c82bd1635)
- [windows-apps-src\audio-video-camera\imaging.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimaging.md&_a=contents) | HandedOffSuccess | [Details](#ed153b4ebd2f1b6b26f922786b3c005a57d8255d1639)
- [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#6e67f57fbc00e596bb07cc37f2c9f762a5c9f5571641)
- [windows-apps-src\audio-video-camera\supported-codecs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7bd0002d62519757cf582d6070a22890a0e1837e?path=windows-apps-src%2Faudio-video-camera%2Fsupported-codecs.md&_a=contents) | HandedOffSuccess | [Details](#ec8ef39e3b1e014fb701e9d4bfa161faa8acbba81657)
+ [windows-apps-src\publish\common-questions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c777ea89c9278c88aecde58947f8c7219f60c56a?path=windows-apps-src%2Fpublish%2Fcommon-questions.md&_a=contents) | HandedOffSuccess | [Details](#542ef7c54850e1f2d4c635531dca5a318f0e7f915435)
 
 ## Item Details
-##### <a name='4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd155'></a> Source: [windows-apps-src\audio-video-camera\bitmapencoder-options-reference.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fbitmapencoder-options-reference.md&_a=contents)
+##### <a name='542ef7c54850e1f2d4c635531dca5a318f0e7f915435'></a> Source: [windows-apps-src\publish\common-questions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c777ea89c9278c88aecde58947f8c7219f60c56a?path=windows-apps-src%2Fpublish%2Fcommon-questions.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [bitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d42de91c686dda742440109d95cb05933e958154?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fbitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-03 23:03:27
+* Handoff File: [common-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/51f67498b9adce8ae142a855f3c38b2eab63b5a3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcommon-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2016-11-04 17:11:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\bitmapencoder-options-reference.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Faudio-video-camera%2Fbitmapencoder-options-reference.md&_a=contents)
-* Current Handback File: [bitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fbitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf&_a=contents)
+* Current Target File: [windows-apps-src\publish\common-questions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Fpublish%2Fcommon-questions.md&_a=contents)
+* Current Handback File: [common-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fcommon-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-19 17:23:55
-* Bilingual File: [bitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fbitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-19 18:02:32
-* [Back to Top](#report-top)
-
-##### <a name='958033bc054da292c85f8df0a57cf964696c82bd1635'></a> Source: [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d42de91c686dda742440109d95cb05933e958154?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-03 23:03:27
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents)
-* Current Handback File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-19 17:23:55
-* Bilingual File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-19 18:02:32
-* [Back to Top](#report-top)
-
-##### <a name='ed153b4ebd2f1b6b26f922786b3c005a57d8255d1639'></a> Source: [windows-apps-src\audio-video-camera\imaging.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimaging.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d42de91c686dda742440109d95cb05933e958154?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fimaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-03 23:03:27
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\imaging.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Faudio-video-camera%2Fimaging.md&_a=contents)
-* Current Handback File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fimaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-19 17:23:55
-* Bilingual File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fimaging.869beb1ae137fbf2081d00909eb60319630ecd6e.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-19 18:02:32
-* [Back to Top](#report-top)
-
-##### <a name='6e67f57fbc00e596bb07cc37f2c9f762a5c9f5571641'></a> Source: [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [index.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d42de91c686dda742440109d95cb05933e958154?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-03 23:03:27
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents)
-* Current Handback File: [index.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-19 17:23:55
-* Bilingual File: [index.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-19 18:02:32
-* [Back to Top](#report-top)
-
-##### <a name='ec8ef39e3b1e014fb701e9d4bfa161faa8acbba81657'></a> Source: [windows-apps-src\audio-video-camera\supported-codecs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7bd0002d62519757cf582d6070a22890a0e1837e?path=windows-apps-src%2Faudio-video-camera%2Fsupported-codecs.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d42de91c686dda742440109d95cb05933e958154?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fsupported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-03 23:03:27
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\supported-codecs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/366b6eabc0e35b950f4a57e441f1a05ce6dab579?path=windows-apps-src%2Faudio-video-camera%2Fsupported-codecs.md&_a=contents)
-* Current Handback File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fsupported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-19 17:23:55
-* Bilingual File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fsupported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-tw.xlf&_a=contents)
+* Bilingual File: [common-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/38621ea116e30258a5c0c192da6f8e9059a3bf4e?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-tw%2Fmaster%2Fcommon-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.zh-tw.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-19 18:02:32
 * [Back to Top](#report-top)
 
