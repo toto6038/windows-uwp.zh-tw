@@ -4,14 +4,14 @@ title: "在計時器上執行背景工作"
 description: "了解如何排程一次性的背景工作，或執行定期的背景工作。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 16202eeb37421acf75a9032dfc1eec397d23ce4f
-ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
 ---
 
 # 在計時器上執行背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 了解如何排程一次性的背景工作，或執行定期的背景工作。
 
 -   這個範例假設您有需要定期或在特定時間執行以支援 app 的背景工作。 如果您已呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，背景工作將只會使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 來執行。
--   本主題假設您已經建立背景工作類別。 若要快速開始建置背景工作，請參閱[建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)或[建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+-   本主題假設您已經建立背景工作類別。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
 ## 建立時間觸發程序
 
@@ -80,7 +80,7 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 > [!Important]
 > 針對與您 App 在相同處理程序中執行的背景工作，請勿設定 `entryPoint`。針對與您 App 在個別處理程序中執行的背景工作，請將 `entryPoint` 設定為命名空間、'.' 及包含您背景工作實作的類別名稱。
 
-    The following code registers a background task that runs in a separate process:
+    The following code registers a background task that runs out-of-process:
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -101,14 +101,16 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 
 ## 備註
 
-> **注意：**從 Windows 10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+> 
+  **注意：**從 Windows10 開始，使用者不再需要將您的 app 新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 
-* [建立並登錄單一處理序背景工作](create-and-register-a-singleprocess-background-task.md)。
-* [建立並註冊會在個別處理序中執行的背景工作](create-and-register-a-background-task.md)
+* [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
+* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
@@ -123,6 +125,6 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

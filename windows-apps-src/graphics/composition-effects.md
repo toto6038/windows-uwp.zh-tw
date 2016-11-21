@@ -4,8 +4,8 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "組合效果"
 description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
+ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
+ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 ---
 # 組合效果
@@ -14,7 +14,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
-為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空間來使用效果描述。
+為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
 
 筆刷效果可用來將效果套用到一組現有的影像，以繪製應用程式的部分區域。 Windows 10 組合效果 API 著重在 SpriteVisual 上。 SpriteVisual 在色彩、影像和效果建立上提供彈性和相互作用。 SpriteVisual 是一種可利用筆刷填滿 2D 矩形的視覺化組合類型。 視覺化定義矩形的界線，筆刷則定義用來繪製矩形的像素。
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
 | 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
-| 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md)的 21 種。        |
+| 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)的 21 種。        |
 | 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
-| 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md)。                                              |
+| 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
 | 對比             | 增加或減少影像的對比。                                                                                                                                                                           |
 | 曝光             | 增加或減少影像的曝光。                                                                                                                                                                           |
 | 灰階            | 將影像轉換為灰色。                                                                                                                                                                                   |
@@ -51,7 +51,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
  
 
-如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
+如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
 
 ### 鏈結效果
 
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

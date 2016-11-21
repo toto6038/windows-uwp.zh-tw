@@ -4,14 +4,14 @@ title: "登錄背景工作"
 description: "了解如何建立可重複用來安全登錄大多數背景工作的函式。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 ---
 
 # 登錄背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -19,11 +19,11 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 -   [**BackgroundTaskBuilder 類別**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**SystemCondition 類別**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-了解如何建立可重複用來安全登錄大多數背景工作的函式。
+了解如何建立可重複用來安全註冊大多數背景工作的函式。
 
-本主題是既適用於單一處理程序背景工作，也適用於在個別處理程序中執行的背景工作。 本主題假設您已經有一個需要登錄的背景工作。 (如果有關如何撰寫背景工作的資訊，請參閱[建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)或[建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md))。
+本主題同時適用於同處理序背景工作與跨處理序背景工作。 本主題假設您已經有一個需要註冊的背景工作。 (請參閱[建立及註冊在跨處理序中執行的背景工作](create-and-register-an-outofproc-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)了解如何撰寫背景工作的資訊)。
 
-本主題會逐步解說可登錄背景工作的公用程式函式。 這個公用程式函式會先檢查現有登錄，以避免多次登錄工作時可能產生的問題；也可以將系統條件套用到背景工作。 本逐步解說包括這個公用程式函式的完整工作範例。
+本主題會逐步解說可註冊背景工作的公用程式函式。 這個公用程式函式會先檢查現有登錄，以避免多次登錄工作時可能產生的問題；也可以將系統條件套用到背景工作。 本逐步解說包括這個公用程式函式的完整工作範例。
 
 **注意**  
 
@@ -36,8 +36,8 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 這個方法會採用背景工作的工作進入點、工作名稱、預先建構的背景工作觸發程序，以及 (選用) [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)。 這個方法會傳回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 物件。
 
 > [!Important]
-> `taskEntryPoint` - 針對在個別處理程序中執行的背景工作，這必須以下列形式來建構：命名空間、'.' 及包含您背景類別的類別名稱。 此字串有區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1"，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgruondTask1"。
-> 如果您的背景工作與您的 App 在相同處理程序中執行 (亦即單一處理程序背景工作)，就應該設定 `taskEntryPoint`。
+> `taskEntryPoint` - 針對在跨處理序中執行的背景工作，這必須以下列形式來建構：命名空間、'.' 及包含您背景類別的類別名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgruondTask1"。
+> 如果您的背景工作與您的 App 在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -65,7 +65,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 > }
 > ```
 
-## 檢查是否有現有的登錄
+## 檢查是否有現有的註冊
 
 檢查工作是否已登錄。 這是檢查的重點，因為如果多次登錄工作，則觸發該工作時，它就會多次執行；這樣可能會過量使用 CPU，也可能造成未預期的行為。
 
@@ -144,7 +144,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
 
-> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作登錄失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試登錄工作之後，可能會當機。
+> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 > **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `taskEntryPoint` 參數傳送 `String.Empty` 或 `null`。
 
 下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
@@ -182,7 +182,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 >
 >     builder.Name = name;
 >
->     // single-process background tasks don't set TaskEntryPoint
+>     // in-process background tasks don't set TaskEntryPoint
 >     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
 >     {
 >         builder.TaskEntryPoint = taskEntryPoint;
@@ -371,14 +371,15 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 
 ****
 
-* [建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)
-* [建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
@@ -388,9 +389,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-
-****
-
 * [偵錯背景工作](debug-a-background-task.md)
 * [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
@@ -400,6 +398,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

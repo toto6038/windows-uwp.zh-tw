@@ -4,8 +4,8 @@ ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取應用程式內購買相關資訊。"
 title: "使用 Windows 市集提交 API 取得 App 的附加元件"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 1edf52b45578078f7abb7e499723b072832d6628
+ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
+ms.openlocfilehash: 5a2dc318509b99c4d58632d5eedaeb3e465c524d
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 1edf52b45578078f7abb7e499723b072832d6628
 
 ## 要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -45,17 +45,18 @@ ms.openlocfilehash: 1edf52b45578078f7abb7e499723b072832d6628
 
 ### 要求參數
 
-| 名稱        | 類型   | 描述  |  必要  |    
-|---------------|--------|----------------------------------|
-| applicationId | 字串 | 必要。 您想要擷取附加元件之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
-|  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果 App 擁有的附加元件超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
-|  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
+
+|  名稱  |  類型  |  描述  |  必要  |
+|------|------|------|------|
+|  applicationId  |  字串  |  您想要擷取其附加元件之 App 的「市集識別碼」。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果 App 擁有的附加元件超過您在查詢中指定的值，回應主體會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
+|  skip |  整數  | 在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。   |  否  |
 
 <span/>
 
-### 要求本文
+### 要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### 要求範例
 
@@ -75,7 +76,7 @@ Authorization: Bearer <your access token>
 
 ## 回應
 
-下列範例示範針對含有總共 53 個附加元件的 App 成功要求前 10 個附加元件所傳回的 JSON 回應本文。 為求簡潔，這個範例僅會顯示由要求所傳回之前 3 個附加元件的資料。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
+下列範例示範針對含有總共 53 個附加元件的 App 成功要求前 10 個附加元件所傳回的 JSON 回應主體。 為求簡潔，這個範例僅會顯示由要求所傳回之前 3 個附加元件的資料。 如需回應主體中各個值的詳細資訊，請參閱下列各節。
 
 ```json
 {
@@ -96,11 +97,11 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 回應本文
+### 回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應本文會包含 ```applications/{applicationid}/listinappproducts/?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應主體會包含 ```applications/{applicationid}/listinappproducts/?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
 | value      | 陣列  | 列出指定 App 每個附加元件之市集識別碼的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[附加元件資源](get-app-data.md#add-on-object)。                                                                                                                           |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是指定 App 的附加元件總數目)。                                                                                                                                                                                                                             |
 
@@ -126,6 +127,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

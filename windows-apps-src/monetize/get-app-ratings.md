@@ -2,19 +2,16 @@
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
-title: "取得應用程式評分"
+title: "取得 App 評分"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 45df3a1296ba06551e08705e9d72a693ad3d33e5
 
 ---
 
 # 取得 App 評分
 
-
-
-
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。 這個方法會傳回 JSON 格式的資料。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總評分資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評分報告](../publish/ratings-report.md)也有提供這項資訊。
 
 ## 先決條件
 
@@ -119,6 +116,31 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p></td>
 <td align="left">否</td>
 </tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">字串</td>
+<td align="left"><p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>isRevised</strong></li>
+</ul>
+<p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p>
+<ul>
+<li><strong>日期</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>fiveStars</strong></li>
+<li><strong>fourStars</strong></li>
+<li><strong>threeStars</strong></li>
+<li><strong>twoStars</strong></li>
+<li><strong>oneStar</strong></li>
+</ul>
+<p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -156,9 +178,9 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -261,14 +283,15 @@ Authorization: Bearer <your access token>
 
 ## 相關主題
 
+* [評分報告](../publish/ratings-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得應用程式下載數](get-app-acquisitions.md)
+* [取得 App 下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得應用程式評論](get-app-reviews.md)
+* [取得 App 評論](get-app-reviews.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

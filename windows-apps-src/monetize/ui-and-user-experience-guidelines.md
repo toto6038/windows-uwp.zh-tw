@@ -4,8 +4,8 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解關於在 App 中廣告的 UI 和使用者體驗指導方針。"
 title: "在 App 中廣告的 UI 和使用者體驗指導方針。"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 * 將廣告設計融入您的體驗中。 提供設計人員範例廣告，以規劃廣告的外觀。 App 中兩個良好規劃的廣告範例是「廣告即內容」配置和分割配置。
 
-  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows 8.1 和 Windows 10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
+  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows8.1 和 Windows10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
 
 * 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的 App。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[錯誤處理](error-handling-with-advertising-libraries.md)。
 
@@ -40,10 +40,10 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 * 過多廣告和塞滿 App。 在 App 中有太多廣告會影響其外觀和可用性。 您想要透過廣告獲利，但不應犧牲 App 本身。
 
-* 混淆使用者的核心工作。 主要的焦點應一律在 App 上。 應整合廣告空間，讓它維持在次要焦點。
+* 混淆使用者的核心工作。 主要的焦點應一律在 App 上。 廣告空間應受到整合，以便讓它維持為次要焦點。
 
 <span id="interstitialbestpractices10"/>
-## 插入式廣告最佳做法
+## 插入式廣告最佳做法與原則
 
 * [插入式廣告最佳做法：可行事項](#interstitialbestpracticesdo10)
 * [插入式廣告最佳做法：避免事項](#interstitialbestpracticesavoid10)
@@ -124,18 +124,23 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 <span id="interstitialbestpracticesnever10"/>
 ### 插入式廣告最佳做法：禁止事項 (原則強制執行)
 
-* 將任何的 UI 元素放在廣告容器上。
+* 一律不要將任何 UI 元素放在廣告容器上。
 
-    * 全螢幕支付廣告。
+    * 廣告商已支付全螢幕費用。
 
+<span/>
 
-* 在使用者與 App 互動時呼叫 **Show**。
+* 一律不要在使用者與 App 互動時呼叫 **Show**。
 
-    * 因為 **InterstitialAd** 將會建立全螢幕覆蓋，使用者會覺得突兀。
+    * 因為 **InterstitialAd** 將會建立全螢幕重疊顯示畫面，使用者會覺得突兀。
 
-    * 這也會導致誇張的點閱率。
+    * 這也會導致點閱率誇大不實。
 
-* 使用廣告取得任何可消耗的貨幣或與其他使用者買賣的項目。
+* 一律不要使用廣告來取得任何可當作貨幣來消費或可與其他使用者交易的項目。
+
+* 一律不要在 [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件處理常式內容中要求新的廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
+
+* 一律不要在要求插入式廣告後，將提供給您 App 的廣告忽略而不顯示。 如果您要求某個廣告，然後在您的要求回應中收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，就必須顯示該廣告。 如果您要搭配其他廣告網路來實作自己的廣告流量分配解決方案，請只在對其他廣告網路發出的要求失敗時，才為 **InterstitialAd** 控制項要求廣告。
 
  
 
@@ -143,6 +148,6 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

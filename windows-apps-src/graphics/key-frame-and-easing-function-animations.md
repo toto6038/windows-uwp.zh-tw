@@ -4,13 +4,13 @@ title: "主要畫面格動畫和 Easing 函式動畫"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01
+ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
+ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 ---
 # 主要畫面格動畫和 Easing 函式動畫
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 線性主要畫面格動畫、含 **KeySpline** 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術：建立腳本動畫比較複雜，要使用從開始狀態到結束狀態的非線性動畫行為。
@@ -78,66 +78,63 @@ ms.openlocfilehash: 00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01
 
 ```xml
 <Storyboard x:Name="myStoryboard">
+    <!-- Animate the TranslateTransform's X property
+        from 0 to 350, then 50,
+        then 200 over 10 seconds. -->
+    <DoubleAnimationUsingKeyFrames
+        Storyboard.TargetName="MyAnimatedTranslateTransform"
+        Storyboard.TargetProperty="X"
+        Duration="0:0:10" EnableDependentAnimation="True">
 
-            <!-- Animate the TranslateTransform's X property
-             from 0 to 350, then 50,
-             then 200 over 10 seconds. -->
-            <DoubleAnimationUsingKeyFrames
-          Storyboard.TargetName="MyAnimatedTranslateTransform"
-          Storyboard.TargetProperty="X"
-          Duration="0:0:10" EnableDependentAnimation="True">
+        <!-- Using a LinearDoubleKeyFrame, the rectangle moves 
+            steadily from its starting position to 500 over 
+            the first 3 seconds.  -->
+        <LinearDoubleKeyFrame Value="500" KeyTime="0:0:3"/>
 
-                <!-- Using a LinearDoubleKeyFrame, the rectangle moves 
-                 steadily from its starting position to 500 over 
-                 the first 3 seconds.  -->
-                <LinearDoubleKeyFrame Value="500" KeyTime="0:0:3"/>
+        <!-- Using a DiscreteDoubleKeyFrame, the rectangle suddenly 
+            appears at 400 after the fourth second of the animation. -->
+        <DiscreteDoubleKeyFrame Value="400" KeyTime="0:0:4"/>
 
-                <!-- Using a DiscreteDoubleKeyFrame, the rectangle suddenly 
-                 appears at 400 after the fourth second of the animation. -->
-                <DiscreteDoubleKeyFrame Value="400" KeyTime="0:0:4"/>
+        <!-- Using a SplineDoubleKeyFrame, the rectangle moves 
+            back to its starting point. The
+            animation starts out slowly at first and then speeds up. 
+            This KeyFrame ends after the 6th second. -->
+        <SplineDoubleKeyFrame KeySpline="0.6,0.0 0.9,0.00" Value="0" KeyTime="0:0:6"/>
+    </DoubleAnimationUsingKeyFrames>
+</Storyboard>
+```
 
-                <!-- Using a SplineDoubleKeyFrame, the rectangle moves 
-                 back to its starting point. The
-                 animation starts out slowly at first and then speeds up. 
-                 This KeyFrame ends after the 6th
-                 second. -->
-                <SplineDoubleKeyFrame KeySpline="0.6,0.0 0.9,0.00" Value="0" KeyTime="0:0:6"/>
+### 加/減速主要畫面格
 
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        ```
+Easing 主要畫面格是套用內插補點的主要畫面格，內插補點一段時間的函式是由一些預先定義的數學公式所控制。 事實上，使用曲線主要畫面格可以產生與使用某些 easing 函式類型很類似的結果，但還是有些 easing 函式 (例如 [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)) 無法使用曲線重現。
 
-### Easing key frames
+若要將 easing 函式套用到加/減速主要畫面格，您要將 **EasingFunction** 屬性設定為該主要畫面格的 XAML 屬性元素。 至於值，則是要指定其中一個 easing 函式類型的物件元素。
 
-An easing key frame is a key frame where interpolation being applied, and the function over time of the interpolation is controlled by several pre-defined mathematical formulas. You can actually produce much the same result with a spline key frame as you can with some of the easing function types, but there are also some easing functions such as [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) that you can't reproduce with a spline.
-
-To apply an easing function to an easing key frame, you set the **EasingFunction** property as a property element in XAML for that key frame. For the value, specify an object element for one of the easing function types.
-
-This example applies a [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) and then a [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) as successive key frames to a [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) to create a bouncing effect.
+這個範例會將 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) 和 [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 以連續的主要畫面格先後套用至 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)，以建立彈跳的效果。
 
 ```xml
 <Storyboard x:Name="myStoryboard">
-            <DoubleAnimationUsingKeyFrames Duration="0:0:10"
-             Storyboard.TargetProperty="Height"
-             Storyboard.TargetName="myEllipse">
+    <DoubleAnimationUsingKeyFrames Duration="0:0:10"
+        Storyboard.TargetProperty="Height"
+        Storyboard.TargetName="myEllipse">
 
-                <!-- This keyframe animates the ellipse up to the crest 
-                     where it slows down and stops. -->
-                <EasingDoubleKeyFrame Value="-300" KeyTime="00:00:02">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <CubicEase/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
+        <!-- This keyframe animates the ellipse up to the crest 
+            where it slows down and stops. -->
+        <EasingDoubleKeyFrame Value="-300" KeyTime="00:00:02">
+            <EasingDoubleKeyFrame.EasingFunction>
+                <CubicEase/>
+            </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
 
-                <!-- This keyframe animates the ellipse back down and makes
-                     it bounce. -->
-                <EasingDoubleKeyFrame Value="0" KeyTime="00:00:06">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BounceEase Bounces="5"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+        !-- This keyframe animates the ellipse back down and makes
+            it bounce. -->
+        <EasingDoubleKeyFrame Value="0" KeyTime="00:00:06">
+            <EasingDoubleKeyFrame.EasingFunction>
+                <BounceEase Bounces="5"/>
+            </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+    </DoubleAnimationUsingKeyFrames>
+</Storyboard>
 ```
 
 這只是一個 Easing 函式範例， 下一節會有更詳細的說明。
@@ -204,40 +201,40 @@ Easing 函式套用到 **From**/**To**/**By** 動畫時，它會變更如何在�
 
 ```xml
 <Style x:Key="TextButtonStyle" TargetType="Button">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid Background="Transparent">
-                        <TextBlock x:Name="Text"
-                            Text="{TemplateBinding Content}"/>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal"/>
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Text" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ApplicationPointerOverForegroundThemeBrush}"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Text" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ApplicationPressedForegroundThemeBrush}"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                <Grid Background="Transparent">
+                    <TextBlock x:Name="Text"
+                        Text="{TemplateBinding Content}"/>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Text" Storyboard.TargetProperty="Foreground">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ApplicationPointerOverForegroundThemeBrush}"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Text" Storyboard.TargetProperty="Foreground">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ApplicationPressedForegroundThemeBrush}"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
 ...
-                           </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    ```
+                       </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Grid>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
+```
 
-You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) to animate properties that use an enumeration value. Here's another example from a named style that comes from the Windows Runtime default templates. Note how it sets the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) property that takes a [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR209006) enumeration constant. In this case you can set the value using attribute syntax. You only need the unqualified constant name from an enumeration for setting a property with an enumeration value, for example "Collapsed".
+您也可以使用 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 讓使用列舉值的屬性產生動畫效果。 以下是 Windows 執行階段預設範本的具名樣式的另一個範例。 請注意它如何設定採用 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR209006) 列舉常數的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 屬性。 在這種情況下，您可以使用屬性語法設定值。 您只需要不完整的列舉常數名稱，以列舉值設定屬性，例如 "Collapsed"。
 
 ```xml
 <Style x:Key="BackButtonStyle" TargetType="Button">
@@ -273,16 +270,8 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 * [相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)
 * [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
- 
-
- 
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

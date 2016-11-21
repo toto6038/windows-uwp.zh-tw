@@ -4,21 +4,24 @@ ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "SystemMediaTransportControls 類別可讓您的 App 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您 App 目前正在播放之媒體的相關中繼資料。"
 title: "系統媒體傳輸控制項的手動控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
-ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 471cf095109fc9bbfcb241dd6eb480603c3df655
 
 ---
 
 # 系統媒體傳輸控制項的手動控制項
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-從 Windows 10 版本 1607 開始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別來播放媒體的 UWP App，預設將會自動與系統媒體傳輸控制項 (SMTC) 整合。 針對大部分的案例，這是與 SMTC 互動的建議方式。 如需自訂 SMTC 與 **MediaPlayer** 預設整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。
+從 Windows10 版本 1607 開始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別來播放媒體的 UWP App，預設將會自動與系統媒體傳輸控制項 (SMTC) 整合。 針對大部分的案例，這是與 SMTC 互動的建議方式。 如需自訂 SMTC 與 **MediaPlayer** 預設整合的詳細資訊，請參閱[與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)。
 
 在某幾個案例中，您可能需要實作 SMTC 的手動控制項。 這包括使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 來控制一或多個媒體播放程式之播放的案例。 或是會使用多個媒體播放程式，但針對 App 只想要單一 SMTC 執行個體的案例。 如果您是使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) 來播放媒體，便必須手動控制 SMTC。
 
 ## 設定傳輸控制項
 如果您是使用 **MediaPlayer** 來播放媒體，您可以透過存取 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) 屬性來取得 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) 類別的執行個體。 如果您要手動控制 SMTC，您應該停用由 **MediaPlayer** 所提供的自動整合，方法是將 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 屬性設定為 false。
+
+> [!NOTE] 
+> 如果您透過將 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 設定為 false 來停用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager)，它將會破壞 **MediaPlayer** 和由 **MediaPlayerElement** 所提供的 [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) 之間的連結，使內建傳輸控制項無法繼續自動控制播放器的播放。 您必須改為實作自己的控制項以控制 **MediaPlayer**。
 
 [!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
@@ -116,6 +119,6 @@ ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "本文示範如何使用 MediaSource 提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。"
 title: "媒體項目、播放清單與曲目"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
+ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 ---
 
 # 媒體項目、播放清單與曲目
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
  本文示範如何使用 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 類別延伸了 **MediaSource** 的功能，可讓您針對包含在媒體項目中的多個音訊、視訊及中繼資料播放軌進行管理和選取。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 可讓您從一或多個媒體播放項目建立播放清單。
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-建立 **MediaSource** 之後，透過設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 屬性，即可使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 進行播放。 從 Windows 10 版本 1607 開始，您可以透過呼叫 [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) 來指派 **MediaPlayer** 到 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，以在 XAML 頁面中轉譯媒體播放程式內容。 這是優於使用 **MediaElement** 的慣用方法。 如需使用 **MediaPlayer** 的詳細資訊，請參閱[**使用 MediaPlayer 播放音訊和視訊**](play-audio-and-video-with-mediaplayer.md)。
+建立 **MediaSource** 之後，透過設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 屬性，即可使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 進行播放。 從 Windows10 版本 1607 開始，您可以透過呼叫 [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) 來指派 **MediaPlayer** 到 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，以在 XAML 頁面中轉譯媒體播放程式內容。 這是優於使用 **MediaElement** 的慣用方法。 如需使用 **MediaPlayer** 的詳細資訊，請參閱[**使用 MediaPlayer 播放音訊和視訊**](play-audio-and-video-with-mediaplayer.md)。
 
 下列範例示範如何使用 **MediaSource** 來播放 **MediaPlayer** 中使用者選取的媒體檔案。
 
@@ -115,7 +115,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 當您處理中繼資料曲目時，您可以透過存取 [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) 或 [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) 屬性來存取曲目內的提示集。 這樣做可以更新 UI 以顯示媒體項目的提示位置。
 
 ## 處理開啟媒體項目時不支援的轉碼器和不明的錯誤
-從 Windows 10 版本 1607 開始，您可以檢查執行您的應用程式所在的裝置是否支援或部分支援播放媒體項目需要的轉碼器。 在 **MediaPlaybackItem** 曲目變更事件 (例如 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged)) 的事件處理常式中，先檢查曲目變更是否為插入新曲目。 如果是，您可以透過使用在 **IVectorChangedEventArgs.Index** 參數中傳入的索引與適當的 **MediaPlaybackItem** 參數曲目集合 (例如 [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) 集合)，以取得插入中曲目的參照。
+從 Windows10 版本 1607 開始，您可以檢查執行您的應用程式所在的裝置是否支援或部分支援播放媒體項目需要的轉碼器。 在 **MediaPlaybackItem** 曲目變更事件 (例如 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged)) 的事件處理常式中，先檢查曲目變更是否為插入新曲目。 如果是，您可以透過使用在 **IVectorChangedEventArgs.Index** 參數中傳入的索引與適當的 **MediaPlaybackItem** 參數曲目集合 (例如 [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) 集合)，以取得插入中曲目的參照。
 
 取得已插入曲目的參照後，請檢查該曲目的 [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) 屬性的 [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus)。 如果值為 [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，則播放曲目需要的適當轉碼器會顯示在裝置上。 如果值為 [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，系統雖然可以播放曲目，但播放品質會降低。 例如，5.1 的音訊曲目可能會改播放為雙通道立體聲。 如果是這種情況，您可能想更新您的 UI 以提醒使用者播放品質降低。 如果值為 [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) 或 [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，則無法使用裝置上目前的轉碼器來播放曲目。 您可能想要對使用者發出警示並略過播放的項目，或是實作 UI 以供使用者下載正確的轉碼器。 曲目的 [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) 方法可用來判斷播放所需的轉碼器。
 
@@ -128,7 +128,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
 ## 設定系統媒體傳輸控制項使用的顯示屬性
-從 Windows 10 版本 1607 開始，[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 中播放的媒體預設會自動整合到系統媒體傳輸控制項 (SMTC)。 您可以更新 **MediaPlaybackItem** 的顯示屬性，以指定 SMTC 將顯示的中繼資料。 透過呼叫 [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties)，以取得代表項目顯示屬性的物件。 透過設定 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) 屬性，以設定播放項目是音樂或視訊。 接著設定物件的 [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) 或 [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) 屬性。 呼叫 [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923)，將更新項目的屬性設為您提供的值。 一般而言，應用程式會以動態方式擷取 Web 服務中的值，但下列範例使用硬式編碼值說明此程序。
+從 Windows10 版本 1607 開始，[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 中播放的媒體預設會自動整合到系統媒體傳輸控制項 (SMTC)。 您可以更新 **MediaPlaybackItem** 的顯示屬性，以指定 SMTC 將顯示的中繼資料。 透過呼叫 [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties)，以取得代表項目顯示屬性的物件。 透過設定 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) 屬性，以設定播放項目是音樂或視訊。 接著設定物件的 [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) 或 [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) 屬性。 呼叫 [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) 以將項目的屬性更新為您提供的值。 一般而言，App 會以動態方式擷取 Web 服務中的值，但下列範例會示範此程序搭配硬式編碼值。
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
@@ -226,6 +226,6 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

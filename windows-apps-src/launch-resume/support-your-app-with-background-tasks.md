@@ -4,37 +4,37 @@ title: "使用背景工作支援 app"
 description: "本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 30b3b8b3b40a96c4cd063ebab2794617568fa7a3
-ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 35b64637904e35413217d4cf500658999db07088
 
 ---
 
 # 使用背景工作支援 app
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節中的主題說明如何藉由使用背景工作，在背景執行您的輕量型程式碼。 您可以使用背景工作在 App 被暫停或未執行時提供功能。 您也可以將背景工作用於即時通訊 App，像是 VOIP、郵件和 IM。
 
 ## 在背景播放媒體
 
-從 Windows 10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放音訊](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+從 Windows10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
 
-## 多處理程序和單一處理程序背景工作
+## 同處理序與跨處理序背景工作
 
-有兩種實作背景工作的方法︰同處理程序和跨處理程序。 同處理程序背景支援是在 Windows 10 版本 1607 中導入，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
+有兩種方式可實作背景工作︰一是同處理序，App 及其背景處理序在相同的處理序中執行；二是跨處理序，App 及背景處理序在不同的處理序中執行。 同處理序背景支援是在 Windows10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
 
 跨處理程序背景工作較具彈性，因為如果發生錯誤，背景處理程序無法關閉您的 App 處理程序。 但是彈性的代價是在管理跨處理程序通訊方面複雜度變高。
 
 實作跨處理程序背景工作時，是作為作業系統在個別處理程序 (backgroundtaskhost.exe) 中執行的輕量型類別來實作。 跨處理程序背景工作是您所撰寫來實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別。 您可以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別來登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
 
-在 Windows 10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為在前景應用程式內直接執行背景程式碼。
+在 Windows10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為在前景應用程式內直接執行背景程式碼。
 
-若要快速開始使用單一處理程序背景工作，請參閱[建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)。
+若要快速開始使用同處理序背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
-若要快速開始使用多處理程序背景工作，請參閱[建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)。
+若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。
 
 > [!TIP]
-> 從 Windows 10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其登錄背景工作。
+> 從 Windows10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
 
 ## 系統事件的背景工作
 
@@ -68,7 +68,7 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 
 ## 應用程式資訊清單需求
 
-您必須先在應用程式資訊清單中宣告 App，App 才能成功登錄在個別處理程序中執行的背景工作。 背景工作如果是在與其主 App 相同的處理程序中執行，您就不需要在應用程式資訊清單中宣告它。 如需詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
+您必須先在應用程式資訊清單中宣告 App，App 才能成功註冊在跨處理序中執行的背景工作。 背景工作如果是在與其主控 App 相同的處理序中執行，您就不需要在應用程式資訊清單中宣告。 如需詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 
 ## 背景工作
 
@@ -140,7 +140,7 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 您的 App 可以使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 類別，從背景工作存取感應器和週邊裝置。 您可以在長時間執行的操作使用這個觸發程序，例如資料同步或監控。 與系統事件的工作不同，**DeviceUseTrigger** 工作只能在您的 App 於前景中執行時觸發，而且您不能對它設定任何條件。
 
 > [!IMPORTANT]
-> **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與單一處理程序背景工作搭配使用。
+> **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與同處理序背景工作搭配使用。
 
 部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 app (如果有的話) 指定為裝置的具有特殊權限的 app。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
@@ -152,11 +152,11 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 
 **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  ## 相關主題
 
-**在 Windows 10 中執行多工的概念指引**
+**在 Windows10 中執行多工的概念指引**
 
 * [啟動、繼續及多工處理](index.md)
 
@@ -165,9 +165,9 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 * [在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)
-* [建立並登錄單一處理程序背景工作](create-and-register-a-singleprocess-background-task.md)
-* [對背景工作進行偵錯](debug-a-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
+* [偵錯背景工作](debug-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
@@ -182,6 +182,6 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

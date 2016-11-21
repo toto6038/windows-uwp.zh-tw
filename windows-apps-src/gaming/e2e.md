@@ -1,43 +1,44 @@
 ---
 author: mtoepke
-title: "Windows 10 遊戲開發指南"
+title: "Windows10 遊戲開發指南"
 description: "開發「通用 Windows 平台」(UWP) 遊戲的資源與資訊的端對端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
-ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: af9252d172bab96ce50eb7ff12d8f0503f010d15
 
 ---
 
-# Windows 10 遊戲開發指南
+# Windows10 遊戲開發指南
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-歡迎使用 Windows 10 遊戲開發指南！
+歡迎使用 Windows10 遊戲開發指南！
 
 本指南說明有關您開發通用 Windows 平台 (UWP) 遊戲所需的端對端資源與資訊集合。
 
 ## 通用 Windows 平台 (UWP) 的遊戲開發簡介
 
 
-當您建立 Windows 10 遊戲時，便擁有一個可與全球數百萬個遍及手機、電腦及 Xbox One 玩家接觸的機會。 有了 Windows 上的 Xbox、Xbox Live、跨裝置多人遊戲、優質的遊戲社群，以及「通用 Windows 平台」(UWP) 和 DirectX 12 等威力強大的新功能，Windows 10 遊戲讓所有年齡及性別的玩家都興奮不已。 新的「通用 Windows 平台」(UWP) 提供用於手機、電腦及 Xbox One 的通用 API，以及可針對各種裝置體驗量身打造您遊戲的工具與選項，為您的遊戲帶來跨 Windows 10 裝置的相容性。
+當您建立 Windows10 遊戲時，便擁有一個可與全球數百萬個遍及手機、電腦及 Xbox One 玩家接觸的機會。 有了 Windows 上的 Xbox、Xbox Live、跨裝置多人遊戲、優質的遊戲社群，以及「通用 Windows 平台」(UWP) 和 DirectX 12 等威力強大的新功能，Windows10 遊戲讓所有年齡及性別的玩家都興奮不已。 新的「通用 Windows 平台」(UWP) 提供用於手機、電腦及 Xbox One 的通用 API，以及可針對各種裝置體驗量身打造您遊戲的工具與選項，為您的遊戲帶來跨 Windows10 裝置的相容性。
 
 本指南提供可在您開發遊戲的過程中協助您的端對端資源與資訊集合。 各個小節的編排是根據遊戲的開發階段，因此您會知道要從何處尋找所需的資訊。
 
 若要開始，[遊戲開發資源](#resources)一節提供文件、程式及其他在建立遊戲時相當實用之資源的概略綜覽。
 
-本指南將會隨著其他 Windows 10 遊戲開發資源和資料的推出進行更新。
+本指南將會隨著其他 Windows10 遊戲開發資源和資料的推出進行更新。
 
 ## 遊戲開發資源
 
-從文件到開發人員計劃、論壇、部落格及範例，有許多資源可在您的遊戲開發之路上協助您。 以下是您開發 Windows 10 遊戲時需了解的資源摘要報導。
+從文件到開發人員計劃、論壇、部落格及範例，有許多資源可在您的遊戲開發之路上協助您。 以下是您開發 Windows10 遊戲時需了解的資源摘要報導。
 
-> **注意：**管理 Xbox One 開發和選取 Windows 10 遊戲功能 (例如「Xbox Live 服務」) 時，是透過 ID@Xbox 和 Microsoft Studios 這類計畫來管理。 本指南涵蓋的資源範圍很廣，因此視您所參與的計畫或您的特定開發角色而定，您可能會發現有些資源無法使用。 解析成 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或「遊戲開發人員網路」(GDN) 的連結就是其中幾例。 如需有關與 Microsoft 合作的資訊，請參閱[開發人員計畫](#programs)。
+> 
+  **注意：**管理 Xbox One 開發和選取 Windows10 遊戲功能 (例如「Xbox Live 服務」) 時，是透過 ID@Xbox 和 Microsoft Studios 這類計畫來管理。 本指南涵蓋的資源範圍很廣，因此視您所參與的計畫或您的特定開發角色而定，您可能會發現有些資源無法使用。 解析成 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或「遊戲開發人員網路」(GDN) 的連結就是其中幾例。 如需有關與 Microsoft 合作的資訊，請參閱[開發人員計畫](#programs)。
 
 ### 遊戲開發文件
 
-在這整份指南中，您會發現相關文件的深層連結依工作、技術及遊戲開發階段編排。 為了讓您能夠完全檢視有哪些可用的文件，以下是 Windows 10 遊戲開發的主要文件入口網站。
+在這整份指南中，您會發現相關文件的深層連結依工作、技術及遊戲開發階段編排。 為了讓您能夠完全檢視有哪些可用的文件，以下是 Windows10 遊戲開發的主要文件入口網站。
 
 <table>
     <colgroup>
@@ -54,7 +55,7 @@ ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
     </tr>
     <tr>
         <td>通用 Windows 平台 app 開發</td>
-        <td>[Windows 10 應用程式使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)</td>
+        <td>[Windows10 應用程式使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)</td>
     </tr>
     <tr>
         <td>UWP 遊戲使用方法指南</td>
@@ -62,7 +63,11 @@ ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
     </tr>
     <tr>
         <td>DirectX 參考與概觀</td>
-        <td>[DirectX 圖形和遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+        <td>[DirectX 圖形與遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>用於遊戲的 Azure</td>
+        <td>[使用 Azure 建置及調整您的遊戲](https://azure.microsoft.com/solutions/gaming/)</td>
     </tr>
     <tr>
         <td>Xbox One 上的 UWP</td>
@@ -103,7 +108,7 @@ Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員�
 
 #### ID@Xbox
 
-ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows 10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 向 ID@Xbox 提出申請之前，請先在「Windows 開發人員中心」註冊一個開發人員帳戶。
+ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 向 ID@Xbox 提出申請之前，請先在「Windows 開發人員中心」註冊一個開發人員帳戶。
 
 <table>
     <colgroup>
@@ -138,7 +143,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 
 ### 遊戲範例
 
-有許多 Windows 10 遊戲與應用程式範例可協助您了解 Windows 10 遊戲功能，並在遊戲開發上快速入門。 將會有更多範例以定期方式開發及發行，因此請別忘了偶爾回到範例入口網站上查看有什麼最新內容。 您也可以[查看](https://help.github.com/articles/watching-repositories/) GitHub 存放庫以獲知變更和新內容。
+有許多 Windows10 遊戲與應用程式範例可協助您了解 Windows10 遊戲功能，並在遊戲開發上快速入門。 將會有更多範例以定期方式開發及發行，因此請別忘了偶爾回到範例入口網站上查看有什麼最新內容。 您也可以[查看](https://help.github.com/articles/watching-repositories/) GitHub 存放庫以獲知變更和新內容。
 
 <table>
     <colgroup>
@@ -182,7 +187,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td>[範例](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
-        <td>Windows 8 遊戲範例 (MSDN Code Gallery)</td>
+        <td>Windows8 遊戲範例 (MSDN Code Gallery)</td>
         <td>[Windows 市集遊戲範例](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
     </tr>
     <tr>
@@ -219,8 +224,8 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td>[使用 DirectX 建置 Windows 市集遊戲 (已封存)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
-        <td>Windows 10 受管理的合作夥伴開發人員論壇</td>
-        <td>[XBOX 開發人員論壇：Windows 10](http://aka.ms/win10devforums)</td>
+        <td>Windows10 受管理的合作夥伴開發人員論壇</td>
+        <td>[XBOX 開發人員論壇：Windows10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
         <td>DirectX 優先使用計畫論壇</td>
@@ -243,8 +248,8 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td>[建置適用於 Windows 的應用程式](http://blogs.windows.com/buildingapps/)</td>
     </tr>
     <tr>
-        <td>Windows 10 部落格 (部落格文章)</td>
-        <td>[Windows 10 文章](http://blogs.windows.com/blog/tag/windows-10/)</td>
+        <td>Windows10 部落格 (部落格文章)</td>
+        <td>[Windows10 文章](http://blogs.windows.com/blog/tag/windows-10/)</td>
     </tr>
     <tr>
         <td>Visual Studio 工程小組部落格</td>
@@ -300,7 +305,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 </table>
  
 
-這三個 GDC 2015 影片提供 Windows 10 遊戲開發與 Windows 10 遊戲體驗的絕佳概觀。
+這三個 GDC 2015 影片提供 Windows10 遊戲開發與 Windows10 遊戲體驗的絕佳概觀。
 
 <table>
     <colgroup>
@@ -308,12 +313,12 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 10 遊戲開發概觀 (影片)</td>
-        <td>[開發適用於 Windows 10 的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)</td>
+        <td>Windows10 遊戲開發概觀 (影片)</td>
+        <td>[開發適用於 Windows10 的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)</td>
     </tr>
     <tr>
-        <td>Windows 10 遊戲體驗 (影片)</td>
-        <td>[Windows 10 上的遊戲消費者體驗](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)</td>
+        <td>Windows10 遊戲體驗 (影片)</td>
+        <td>[Windows10 上的遊戲消費者體驗](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)</td>
     </tr>
     <tr>
         <td>遊戲在整個 Microsoft 生態系統的發展 (影片)</td>
@@ -344,13 +349,13 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 
 ### 選擇您的圖形技術與程式設計語言
 
-有數種程式設計語言與圖形技術可在 Windows 10 遊戲中使用。 您可以依據您正在開發的遊戲類型、開發工作室的經驗與喜好，以及遊戲的特定功能需求來選擇。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
+有數種程式設計語言與圖形技術可在 Windows10 遊戲中使用。 您可以依據您正在開發的遊戲類型、開發工作室的經驗與喜好，以及遊戲的特定功能需求來選擇。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
 
 #### DirectX
 
 Microsoft DirectX 是適用於高效能 2D 與 3D 圖形與多媒體的選擇。 
 
-Windows 10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows 10 電腦與 Xbox One 提供了最佳化的圖形。 如果您想要使用熟悉的 Direct3D 11 圖形管線，您仍然可以從 Direct3D 11.3 中加入的新轉譯與最佳化功能中獲益。 而且如果您正嘗試且確實是使用 Win32 的傳統型 Windows API 開發人員，您仍然可以在 Windows 10 中使用該選項。
+Windows10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows10 電腦與 Xbox One 提供了最佳化的圖形。 如果您想要使用熟悉的 Direct3D 11 圖形管線，您仍然可以從 Direct3D 11.3 中加入的新轉譯與最佳化功能中獲益。 而且如果您正嘗試且確實是使用 Win32 的傳統型 Windows API 開發人員，您仍然可以在 Windows10 中使用該選項。
 
 DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提供所需的強大功能與效能。
 
@@ -440,7 +445,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術�
 
 #### C++
 
-C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、相容性及平台存取的強大效能。 C++/CX 可讓您很容易地使用 Windows 10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C++/CX 可建立快速、原生，且不會因收集廢棄項目而產生額外負荷的程式碼，所以您的城市可以擁有優越的效能與低耗電量，進而延長電池使用時間。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
+C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、相容性及平台存取的強大效能。 C++/CX 可讓您很容易地使用 Windows10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C++/CX 可建立快速、原生，且不會因收集廢棄項目而產生額外負荷的程式碼，所以您的城市可以擁有優越的效能與低耗電量，進而延長電池使用時間。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
 
 <table>
     <colgroup>
@@ -512,9 +517,9 @@ Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物�
 
 如果您要為您的遊戲選擇 DirectX，您將需要決定要使用哪一個版本：Microsoft Direct3D 12 或 Microsoft Direct3D 11。
 
-Windows 10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows 10 電腦與 Xbox One 提供了最佳化的圖形。 由於 Direct3D 12 的運作層級非常低，因此它可以提供專業的圖形開發團隊或有經驗的 DirectX 11 開發團隊所有所需的控制，以最大化圖形最佳化。
+Windows10 的新功能 Direct3D 12 帶來了主機式 API 的強大功能，而且比以往來得更快更有效率。 您的遊戲可以充分利用新式圖形硬體來提供更多物件、更豐富的場景，以及更好的效果。 Direct3D 12 針對 Windows10 電腦與 Xbox One 提供了最佳化的圖形。 由於 Direct3D 12 的運作層級非常低，因此它可以提供專業的圖形開發團隊或有經驗的 DirectX 11 開發團隊所有所需的控制，以最大化圖形最佳化。
 
-Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模型，並且可以為您處理更多 GPU 轉譯所牽涉到的複雜度。 Windows 10 與 Xbox One 也支援它。 如果您有以 Direct3D 11 撰寫的現有引擎，並且尚未準備好改用 Direct3D 12，則您可以在 Direct3D 12 上使用 Direct3D 11 來達到一些效能改進。 11.3 以上的版本包含新的轉譯與最佳化功能，這些功能也可以在 Direct3D 12 中啟用。
+Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模型，並且可以為您處理更多 GPU 轉譯所牽涉到的複雜度。 Windows10 與 Xbox One 也支援它。 如果您有以 Direct3D 11 撰寫的現有引擎，並且尚未準備好改用 Direct3D 12，則您可以在 Direct3D 12 上使用 Direct3D 11 來達到一些效能改進。 11.3 以上的版本包含新的轉譯與最佳化功能，這些功能也可以在 Direct3D 12 中啟用。
 
 <table>
     <colgroup>
@@ -546,8 +551,8 @@ Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>適用於 Windows 10 的橋接與遊戲引擎 (部落格文章)</td>
-        <td>[更多將您的程式碼轉移到 Windows 10 市集的方式](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
+        <td>適用於 Windows10 的橋接與遊戲引擎 (部落格文章)</td>
+        <td>[更多將您的程式碼轉移到 Windows10 市集的方式](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
     </tr>
     <tr>
         <td>使用中介軟體進行遊戲開發 (影片)</td>
@@ -609,7 +614,7 @@ Unity 5 是獲得獎項肯定、用於建立 2D 與3D 遊戲及互動式體驗�
     </tr>
     <tr>
         <td>Unity 5.2 中的通用 Windows 平台 app 支援 (部落格文章)</td>
-        <td>[Unity 5.2 中的 Windows 10 通用平台 app](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
+        <td>[Unity 5.2 中的 Windows10 通用平台 app](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
     </tr>
     <tr>
         <td>適用於 Windows 的 Unity 文件</td>
@@ -654,6 +659,30 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
 </table>
  
 
+#### MonoGame
+
+MonoGame 是開放原始碼的跨平台遊戲開發架構，最初是以 Microsoft 的 XNA Framework 4.0 為基礎。 Monogame 目前支援 Windows、Windows Phone 和 Xbox，以及 Linux、macOS、iOS、Android 與數種其他平台。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>MonoGame</td>
+        <td>[MonoGame 網站](http://www.monogame.net)</td>
+    </tr>
+    <tr>
+        <td>MonoGame 文件</td>
+        <td>[MonoGame 文件 (最新)](http://www.monogame.net/documentation/)</td>
+    </tr>
+    <tr>
+        <td>Monogame 的下載項目</td>
+        <td>從 MonoGame 網站[下載發行版、開發版組建和原始程式碼](http://www.monogame.net/downloads/)，或透過 [NuGet 取得最新發行的版本](https://www.nuget.org/profiles/MonoGame)。
+    </tr>
+</table>
+
+
 #### Cocos2d
 
 Cocos2d-X 是一個跨平台的開放原始碼遊戲開發引擎與工具套件，可支援建置 UWP 遊戲。 從第 3 版開始，也新增了 3D 功能。
@@ -672,8 +701,8 @@ Cocos2d-X 是一個跨平台的開放原始碼遊戲開發引擎與工具套件�
         <td>[Cocos2d-x 程式設計人員指南 v3.8](http://www.cocos2d-x.org/programmersguide/)</td>
     </tr>
     <tr>
-        <td>Windows 10 上的 Cocos2d-x (部落格文章)</td>
-        <td>[在 Windows 10 上執行 Cocos2d-x](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)</td>
+        <td>Windows10 上的 Cocos2d-x (部落格文章)</td>
+        <td>[在 Windows10 上執行 Cocos2d-x](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)</td>
     </tr>
     <tr>
         <td>Cocos2d-x Windows 市集遊戲 (影片)</td>
@@ -746,12 +775,12 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL 及 Web
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>將 Windows 8 應用程式移植到通用 Windows 平台 app</td>
+        <td>將 Windows8 應用程式移植到通用 Windows 平台 app</td>
         <td>[從 Windows Runtime 8.x 移至 UWP](https://msdn.microsoft.com/library/windows/apps/mt238322)</td>
     </tr>
     <tr>
-        <td>將 Windows 8 應用程式移植到通用 Windows 平台 app (影片)</td>
-        <td>[將 8.1 應用程式移植到 Windows 10](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)</td>
+        <td>將 Windows8 應用程式移植到通用 Windows 平台 app (影片)</td>
+        <td>[將 8.1 應用程式移植到 Windows10](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)</td>
     </tr>
     <tr>
         <td>將 iOS app 移植到通用 Windows 平台 app</td>
@@ -763,11 +792,11 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL 及 Web
     </tr>
     <tr>
         <td>將 XAML 或 Silverlight 移植到通用 Windows 平台 app (影片)</td>
-        <td>[將應用程式從 XAML 或 Silverlight 移植到 Windows 10](https://channel9.msdn.com/Events/Build/2015/3-741)</td>
+        <td>[將應用程式從 XAML 或 Silverlight 移植到 Windows10](https://channel9.msdn.com/Events/Build/2015/3-741)</td>
     </tr>
     <tr>
         <td>將 Xbox 遊戲移植到通用 Windows 平台 app</td>
-        <td>[從 Xbox One 移植到 Windows 10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
+        <td>[從 Xbox One 移植到 Windows10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
     </tr>
     <tr>
         <td>從 DirectX 9 移植到 DirectX 11</td>
@@ -799,7 +828,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL 及 Web
 
 ### 通用 Windows 平台 (UWP) 簡介
 
-Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨所有 Windows 10 裝置的共同 API 平台。 UWP 發展及擴充了「Windows 執行階段」模型，並將它打造成一個緊密結合、統一的核心。 以 UWP 為目標的遊戲可以呼叫所有裝置通用的 WinRT API。 由於 UWP 提供一個保證的核心 API 層，因此您可以選擇建立一個將會在所有 Windows 10 裝置安裝的單一應用程式套件。 而且如果您想要的話，您的遊戲仍然可以呼叫其執行所在之裝置特定的 API (包括一些來自 Win32 和 .NET 的傳統型 Windows API)。
+Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨所有 Windows10 裝置的共同 API 平台。 UWP 發展及擴充了「Windows 執行階段」模型，並將它打造成一個緊密結合、統一的核心。 以 UWP 為目標的遊戲可以呼叫所有裝置通用的 WinRT API。 由於 UWP 提供一個保證的核心 API 層，因此您可以選擇建立一個將會在所有 Windows10 裝置安裝的單一應用程式套件。 而且如果您想要的話，您的遊戲仍然可以呼叫其執行所在之裝置特定的 API (包括一些來自 Win32 和 .NET 的傳統型 Windows API)。
 
 UWP 的目標是要擁有：
 
@@ -846,7 +875,7 @@ UWP 的目標是要擁有：
     </tr>
 </table>
 
-如果您是 UWP 程式設計的「初學者」，並且正考慮在您的遊戲中使用 XAML (請參閱[選擇您的圖形技術與程式設計語言](#choosing_technology))， 則[初學者的 Windows 10 開發入門](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)影片系列是一個很好的起始點。
+如果您是 UWP 程式設計的「初學者」，並且正考慮在您的遊戲中使用 XAML (請參閱[選擇您的圖形技術與程式設計語言](#choosing_technology))， 則[初學者的 Windows10 開發入門](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)影片系列是一個很好的起始點。
 
 <table>
     <colgroup>
@@ -854,12 +883,12 @@ UWP 的目標是要擁有：
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>使用 XAML 進行 Windows 10 開發的初學者指南 (影片系列)</td>
-        <td>[初學者的 Windows 10 開發入門](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)</td>
+        <td>使用 XAML 進行 Windows10 開發的初學者指南 (影片系列)</td>
+        <td>[初學者的 Windows10 開發入門](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)</td>
     </tr>
     <tr>
-        <td>發佈使用 XAML 的 Windows 10 初學者系列 (部落格文章)</td>
-        <td>[初學者的 Windows 10 開發入門](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/)</td>
+        <td>發佈使用 XAML 的 Windows10 初學者系列 (部落格文章)</td>
+        <td>[初學者的 Windows10 開發入門](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/)</td>
     </tr>
 </table>
 
@@ -1153,7 +1182,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
         <td>[磚與徽章的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465403)</td>
     </tr>
     <tr>
-        <td>適用於以互動方式開發動態磚範本的 Windows 10 應用程式</td>
+        <td>適用於以互動方式開發動態磚範本的 Windows10 應用程式</td>
         <td>[通知視覺化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
     </tr>
     <tr>
@@ -1196,7 +1225,7 @@ IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP
  
 ### 偵錯和效能監視工具
 
-Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 另一個用於產生傾印檔案以調查遊戲當機的好用工具是 ProcDump，它是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部份。
+Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 另一個用於產生傾印檔案以調查遊戲當機的好用工具是 ProcDump，它是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分。
 
 <table>
     <colgroup>
@@ -1204,8 +1233,8 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>從 Windows 10 SDK 取得 Windows Performance Toolkit (WPT)</td>
-        <td>[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
+        <td>從 Windows10 SDK 取得 Windows Performance Toolkit (WPT)</td>
+        <td>[Windows10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
     </tr>
     <tr>
         <td>從 Windows ADK 取得 Windows Performance Toolkit (WPT)</td>
@@ -1248,7 +1277,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>適用於偵錯 DirectX 12 的 Visual Studio 2015 工具 (影片)</td>
-        <td>[Visual Studio 2015 中適用於 Windows 10 的 DirectX 工具](https://channel9.msdn.com/Series/ConnectOn-Demand/212)</td>
+        <td>[Visual Studio 2015 中適用於 Windows10 的 DirectX 工具](https://channel9.msdn.com/Series/ConnectOn-Demand/212)</td>
     </tr>
     <tr>
         <td>Direct3D 12 程式設計指南</td>
@@ -1358,7 +1387,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>市集資訊清單結構描述</td>
-        <td>[StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)</td>
+        <td>[StoreManifest 結構描述 (Windows10)](https://msdn.microsoft.com/library/windows/apps/mt617335)</td>
     </tr>
 </table>
  
@@ -1377,7 +1406,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>開發人員中心 App</td>
-        <td>[開發人員中心 Windows 10 App 可檢視已發行 App 的效能](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
+        <td>[開發人員中心 Windows10 App 可檢視已發行 App 的效能](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
     </tr>  
     <tr>
         <td>Windows 開發人員中分析</td>
@@ -1454,11 +1483,11 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     </tr>
     <tr>
         <td>使用 Xbox Live 遊戲的需求</td>
-        <td>[Windows 10 上 Xbox Live 的 Xbox 需求](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
+        <td>[Windows10 上 Xbox Live 的 Xbox 需求](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
     </tr>
     <tr>
         <td>Xbox Live 遊戲開發概觀 (影片)</td>
-        <td>[使用適用於 Windows 10 的 Xbox Live 進行開發](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)</td>
+        <td>[使用適用於 Windows10 的 Xbox Live 進行開發](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)</td>
     </tr>
     <tr>
         <td>跨平台配對 (影片)</td>
@@ -1491,8 +1520,8 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
         <td>[多核心行動裝置中持續的遊戲效能](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices)</td>
     </tr>
     <tr>
-        <td>開發 Windows 10 傳統型遊戲 (影片)</td>
-        <td>[適用於 Windows 10 的電腦遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)</td>
+        <td>開發 Windows10 傳統型遊戲 (影片)</td>
+        <td>[適用於 Windows10 的電腦遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)</td>
     </tr>
 </table>
 
@@ -1506,6 +1535,6 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

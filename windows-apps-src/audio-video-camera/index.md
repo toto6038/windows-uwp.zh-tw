@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。"
 title: "音訊、視訊和相機"
 translationtype: Human Translation
-ms.sourcegitcommit: 18e97dd5e607960c1c1fd640fe6fe6ae5e9f9085
-ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 ---
 
 # 音訊、視訊和相機
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 | [MIDI](midi.md) | 示範如何列舉 MIDI (樂器數位介面) 裝置，並且從 UWP app 傳送及接收 MIDI 訊息。 |
 | [從裝置匯入媒體](import-media-from-a-device.md) | 描述從裝置匯入媒體的方式，包括搜尋可用媒體來源、匯入如影片、相片和側車檔案的檔案，以及從來源裝置上刪除已匯入的檔案。 |
 | [相機獨立閃光燈](camera-independent-flashlight.md) | 說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃燈功能進行管理。 |
-| [支援的轉碼器](supported-codecs.md) | 列出 UWP app 支援的音訊與視訊轉碼器和格式。 |
+| [支援的轉碼器](supported-codecs.md) | 列出 UWP App 支援的音訊、視訊及影像轉碼器和格式。 |
 
 
 ## 另請參閱
@@ -48,6 +48,6 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

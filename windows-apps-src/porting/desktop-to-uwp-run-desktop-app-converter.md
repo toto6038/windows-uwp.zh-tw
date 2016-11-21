@@ -4,8 +4,8 @@ Description: "執行 Desktop Converter App，將 Windows 傳統型應用程式 (
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter
 translationtype: Human Translation
-ms.sourcegitcommit: ed4da94f2732c279c3071135168da9e4b18953cb
-ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
+ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
+ms.openlocfilehash: fcff283e0d97d76fefe3f42a6cd1076b6cdd2aae
 
 ---
 
@@ -26,8 +26,9 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 ### 9/14/2016 (v1.0)
 
 * Desktop App Converter 現在已在 [Windows 市集](https://aka.ms/converter)中可供下載。 
-* 在[下載中心](https://www.microsoft.com/download/details.aspx?id=53833)抓取最新的 Windows 10 基礎映像 (.wim) 以搭配 DAC 使用。
+* 在[下載中心](https://aka.ms/converterimages)抓取最新的 Windows10 基礎映像 (.wim) 以搭配 DAC 使用。
 * 透過市集 app，您現在可以使用新的進入點 *DesktopAppConverter.exe <arguments>*，從提升權限的命令提示字元或 PowerShell 視窗中的任何位置執行轉換器。  
+
 
 ### 9/2/2016 (v0.1.25)
 
@@ -38,9 +39,9 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 ### 8/4/2016 (v0.1.24)
 
 * 已基於測試目的新增對自動簽署由 DAC 所產生且已轉換應用程式的支援 請查看 ```–Sign``` 旗標來試試看吧。 
-* 已新增警告，以在封裝的 AppX 內不支援虛擬登錄區中的任何 COM 註冊時提供警告。  
-* 已新增支援，以支援在 VC++ 程式庫上自動偵測 app 相依性，然後將它們轉換為 AppX 資訊清單相依性。 請注意，為了使用 VC++ 執行階段側載與測試 app，您將需要下載 VCLib 架構套件，如部落格文章[在 Centennial 專案中使用 Visual C++ 執行階段](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)中所述。 在電腦上的資料夾 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下方找到套件、瀏覽到您所需的版本 (例如 11.0、12.0、14.0)，然後按兩下適當的架構套件 (x64、x86) 加以安裝。
-* 更新資訊清單結構描述，以便與 Windows 10 年度更新版 (10.0.14393.0) 一致。 
+* 已新增警告，如果在封裝的 AppX 內不支援虛擬登錄區中的任何 COM 註冊時提供警告。  
+* 已新增支援，以支援在 VC++ 程式庫上自動偵測 App 相依性，然後將它們轉換為 AppX 資訊清單相依性。 請注意，為了使用 VC++ 執行階段側載與測試 App，您將需要下載 VCLib 架構套件，如部落格文章[在 Centennial 專案中使用 Visual C++ 執行階段](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)中所述。 在電腦上的資料夾 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下方找到套件、瀏覽到您所需的版本 (例如 11.0、12.0、14.0)，然後按兩下適當的架構套件 (x64、x86) 加以安裝。
+* 更新資訊清單結構描述，以便與 Windows10 年度更新版 (10.0.14393.0) 一致。 
 * 數個錯誤修正和改進的輸出配置。 
 
 ### 7/7/2016 (v0.1.22)
@@ -50,7 +51,7 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ### 6/16/2016 (v0.1.20)
 
-* 修正會致使無法順利在最新 Windows 10 Insider Preview 組建上成功轉換的任何問題。 
+* 修正會致使無法順利在最新 Windows10 Insider Preview 組建上成功轉換的任何問題。 
 * 使用 ```–PackageArch``` 取代 ```–CreateX86Package```，這可讓您指定產生的套件架構。 
 
 ### 6/8/2016
@@ -76,43 +77,53 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ## 系統需求
 
-### 支援的作業系統
-+ Windows 10 年度更新版企業版預覽 (組建 10.0.14342.0 和更新版本)
+### 作業系統
 
-### 必要的硬體組態
++ Windows10 年度更新版 (10.0.14393.0 和更新版本) 專業版或企業版。
 
-您的電腦必須具備下列基本功能︰
+### 硬體設定
+
 + 64 位元 (x64) 處理器
 + 硬體協助虛擬化
 + 第二層位址轉譯 (SLAT)
 
 ### 所需的資源
 
-+ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
++ [適用於 Windows10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
-## 安裝傳統型應用程式轉換器   
+## 安裝 Desktop App Converter
 
-傳統型應用程式轉換器依賴 Windows 10 功能，此為 Windows Insider Preview 組建的一部分，是正式發行前小眾測試版。 確定您是在最新組建上運用轉換器。
+Desktop App Converter 依賴最新的 Windows10 功能。 請確定您是執行 Windows10 年度更新版 (14393.0) 或更新組建。
 
-1. 確定您擁有最新的 Windows 10 Insider Preview 作業系統 – 企業版或專業版 (http://insider.windows.com)。 
-2. 下載與您的 Insider Preview 組建相符的 DesktopAppConverter.zip 和基本映像 .wim (http://aka.ms/converter)。 
-3. 將 DesktopAppConverter.zip 擷取到本機資料夾。
-4. 從系統管理員的 PowerShell 視窗︰  
-```CMD
-PS C:\> Set-ExecutionPolicy bypass
-```
-5. 從系統管理員的 PowerShell 視窗執行下列命令來安裝轉換器︰
-```CMD
-PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
-```
-6. 如果執行前一個命令提示字元會提示您重新開機，請重新啟動您的電腦，並再次執行命令。
+### 市集下載
 
-## 執行傳統型應用程式轉換器
-傳統型應用程式轉換器有兩個進入點︰PowerShell 和命令介面。 您可以使用這其中一個進入點開始轉換處理序。
+1.  從 [Windows 市集下載 DesktopAppConverter](https://aka.ms/converter) 和[符合您組建的基礎映像 .wim 檔案](https://aka.ms/converterimages)。  
+2.  以系統管理員身分執行 DesktopAppConverter。 您可以從開始功能表以滑鼠右鍵按一下磚，然後選取 [更多] 之下的 [以系統管理員身分執行]，或是從工作列以滑鼠右鍵按一下磚，再以滑鼠右鍵按一下快顯顯示的應用程式名稱，然後選取 [以系統管理員身分執行]，來執行此動作。
+3.  從 App 主控台視窗中，執行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
+4.  從 App 主控台視窗執行 ```CMD PS C:\> DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 以安裝轉換器。
+5.  如果系統在您執行前一個命令提示字元時提示您重新開機，請重新啟動您的電腦。
+
+### Zip 檔案 
+
+DAC 在[下載中心](https://aka.ms/converterimages)會繼續以 zip 檔案提供，以用來針對離線案例使用。 不過，所有未來的更新都只會以市集版本發佈。
+
+1.  下載 DAC zip 和[符合您組建的基礎映像 .wim 檔案](https://aka.ms/converterimages)。  
+2. 將 DesktopAppConverter.zip 解壓縮到本機資料夾。
+3. 從系統管理員 PowerShell 視窗執行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
+4. 從系統管理員 PowerShell 視窗執行 ```CMD PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 以安裝轉換器。
+5. 如果系統在您執行前一個命令提示字元時提示您重新開機，請重新啟動您的電腦。
+
+## 執行 Desktop App Converter
+
++ 
+            **市集下載**︰使用 ```DesktopAppConverter.exe``` 以執行轉換器。
++ 
+            **Zip 檔案**︰使用 ```DesktopAppConverter.ps1``` 以執行轉換器。 
 
 ### 使用方式
+
 ```CMD
-DesktopAppConverter.ps1
+DesktopAppConverter.exe
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
 -Destination <String>
 -PackageName <String>
@@ -132,11 +143,11 @@ DesktopAppConverter.ps1
 ```
 
 ### 範例
-下列範例示範如何透過 *&lt;publisher_name&gt;*，將命名為 *MyApp* 的傳統型應用程式轉換為 UWP 套件 (AppX)。
 
-+ 從系統管理員的 PowerShell 視窗執行下列命令︰
+下列範例示範如何將名為 *MyApp* by *&lt;publisher_name&gt;* 的傳統型應用程式轉換為 UWP 套件 (AppX)。
+
 ```CMD
-PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe 
+DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
 -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
 -Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
@@ -153,13 +164,13 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 
 ## 簽署您的 .Appx 套件
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 ```-Sign``` 旗標做為轉換器命令列的一部分或 SignTool.exe (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 ```-Sign``` 旗標做為轉換器命令列的一部分或 SignTool.exe (其隨附於 Microsoft Windows10 SDK) 來簽署 .appx 套件。
 
 如需如何簽署.appx 套件的詳細資訊，請參閱[簽署已轉換的傳統型應用程式](desktop-to-uwp-signing.md)。 
 
 ## 警告
 
-1. 主機電腦上的 Windows 10 組建必須符合您在傳統型應用程式轉換器下載中取得的基礎映像。  
+1. 主機電腦上的 Windows10 組建必須符合您在傳統型應用程式轉換器下載中取得的基礎映像。  
 2. 確定桌面安裝程式是在獨立的目錄中，因為轉換器會將目錄的所有內容複製到隔離的 Windows 環境。  
 3. 傳統型應用程式轉換器目前只支援在 64 位元作業系統上執行轉換處理序。 您只能將已轉換的 .appx 套件部署到 64 位元 (x64) 作業系統。  
 4. 傳統型應用程式轉換器需要桌面安裝程式，以便在自動安裝模式下執行。 確保您會使用 *-InstallerArguments* 參數，將適用於安裝程式的無訊息旗標傳遞至轉換器。
@@ -183,12 +194,15 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 + 若要啟用遙測，請移除此機碼或將值設為 0。
 
 ## 傳統型應用程式轉換器的使用方式
-以下是傳統型應用程式轉換器的參數清單。 您也可以執行下列命令，在 Windows Powershell 視窗中檢視此清單︰  
+
+以下是 Desktop App Converter 的參數清單。 您也可以執行下列命令來檢視此清單：   
+
 ```CMD
-get-help .\DesktopAppConverter.ps1 -detailed
+Get-Help DesktopAppConverter.exe -detailed
 ```
 
 ### 安裝程式參數  
+
 |參數|說明|
 |---------|-----------|
 |```-Setup [<SwitchParameter>]``` | 在安裝模式中執行 DesktopAppConverter。 安裝模式支援展開提供的基礎映像。|
@@ -198,14 +212,17 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-NoRestart [<SwitchParameter>]``` | 執行安裝時不顯示重新開機的提示 (需要重新開機才能啟用容器功能)。 |
 
 ### 轉換參數  
-|參數|說明|
+
+|參數|描述|
 |---------|-----------|
-|```-Installer <String>``` | 應用程式的安裝程式路徑 - 必須能夠自動執行或以無訊息方式執行|
+|```-AppInstallPath <String> [optional]``` | 您的應用程式在安裝之後，其已安裝檔案根資料夾的完整路徑 (例如 "C:\Program Files (x86)\MyApp")。| 
+|```-Destination <String>``` | 適用於轉換器 appx 輸出的所需目的地，如果尚未存在，DesktopAppConverter可以建立此位置。|
+|```-Installer <String>``` | 應用程式的安裝程式路徑，必須能夠自動執行或以無訊息方式執行|
 |```-InstallerArguments <String>``` [optional] | 以逗號分隔的引數清單或字串，可強制您的安裝程式自動執行或以無訊息方式執行。 如果您的安裝程式是 msi，則此為選用參數。 若要取得安裝程式的記錄，請提供此處的安裝程式記錄引數，然後使用路徑 ```<log_folder>```，此為轉換器會使用適當路徑來取代的語彙基元。 <br><br>**注意︰自動/無訊息旗標和記錄引數會隨著安裝程式技術而不同。** <br><br>此參數的一個用法範例︰```-InstallerArguments "/silent /log <log_folder>\install.log"``` 另一個不會產生記錄檔的範例可能看起來如下︰```-InstallerArguments "/quiet", "/norestart"``` 同樣地，如果您想要轉換器擷取它並將它放在最後一個記錄資料夾中，就必須照字面將任何記錄引導至語彙基元路徑 ```<log_folder>```。|
 |```-InstallerValidExitCodes <Int32>``` [optional] | 以逗號分隔的結束代碼清單，表示您的安裝程式已成功執行 (例如︰0, 1234, 5678)。  針對非 msi，這個值預設是 0，針對 msi 則為 0, 1641, 3010。|
-|```-Destination <String>``` | 適用於轉換器 appx 輸出的所需目的地 - 如果尚未存在，DesktopAppConverter可以建立此位置。|
 
 ### Appx 識別資訊參數  
+
 |參數|說明|
 |---------|-----------|
 |```-PackageName <String>``` | 通用 Windows 應用程式套件的名稱
@@ -213,6 +230,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-Version <Version>``` | 通用 Windows 應用程式套件的版本號碼
 
 ### 選用的 Appx 資訊清單參數  
+
 |參數|說明|
 |---------|-----------|
 |```-AppExecutable <String> [optional]``` [optional] | 應用程式主要可執行檔 (例如 "MyApp.exe") 的名稱。 |
@@ -224,6 +242,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-PackagePublisherDisplayName <String>``` [optional] | 指定要在 appx 資訊清單中設定套件發行者顯示名稱的值。 如果未指定，它將會設定為針對 *Publisher* 傳入的值。 |
 
 ### 其他轉換參數  
+
 |參數|說明|
 |---------|-----------|
 |```-ExpandedBaseImage <String>``` [optional] | 已經展開之基礎映像的完整路徑。|
@@ -233,6 +252,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```<Common parameters>``` | 這個 Cmdlet 支援一般參數：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 及 *OutVariable*。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
 
 ### 清理參數
+
 |參數|說明|
 |---------|-----------|
 |```Cleanup [<Option>]``` | 執行 DesktopAppConverter 成品的清理。 Cleanup 模式有 3 個有效的選項。 |
@@ -241,6 +261,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup ExpandedImage``` | 刪除所有已展開且安裝在主機電腦上的基本映像。 |
 
 ### 套件架構
+
 Desktop App Converter 現在支援建立可讓您在 x86 和 amd64 電腦上安裝與執行的 x86 與 x64 應用程式套件。 請注意，Desktop App Converter 仍需要在 AMD64 電腦上執行，才能成功轉換。
 
 |參數|說明|
@@ -267,15 +288,11 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 Desktop App Converter 不支援 Unicode；因此，無法在工具上使用中文字元或非 ASCII 字元。
 
 ## 另請參閱
-+ [取得傳統型應用程式轉換器](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [將您的傳統型應用程式移至通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
-+ [使用傳統型應用程式轉換器將傳統型應用程式移至 UWP](https://channel9.msdn.com/events/Build/2016/P504)
-+ [專案 Centennial︰將現有的傳統型應用程式移至通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
-+ [適用於傳統型橋接器的 UserVoice](http://aka.ms/UserVoiceDesktopToUwp)
-+ [GitHub 上傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+
++ [使用 Desktop App Converter 將傳統型應用程式移至 UWP](https://channel9.msdn.com/events/Build/2016/P504)
++ [Project Centennial︰將現有的傳統型應用程式移至通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
 
 
-
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

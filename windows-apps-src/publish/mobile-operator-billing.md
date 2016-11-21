@@ -4,8 +4,8 @@ Description: "Windows 市集提供「電信業者帳單」做為針對支援此�
 title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
+ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 ---
 
@@ -16,16 +16,13 @@ Windows 市集提供「電信業者帳單」做為針對支援此功能之電信
 
 > **注意：**如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上沒有這個選項，請參閱這些[疑難排解步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
- 
-
 我們會定期與電信業者合作，拓展此付款方式的可用性。 如果您想要建議我們支援未在下面清單中列出的電信業者，請聯絡電信業者。
 
-## 適用於 Windows 10 裝置的電信業者帳單
+## 適用於 Windows10 和 Xbox One 裝置的電信業者帳單
 
+Windows10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows10 的所有裝置、執行 Windows10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
 
-Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作的裝置上，客戶可以將「電信業者帳單」加入到裝置上做為付款方式。 這個實作適用於執行 Windows 10 的電腦和平板電腦，以及執行 Windows 10 行動裝置版的手機。
-
-目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
+目前已有下列電信業者支援 Windows10 的電信業者帳單實作。
 
 | 國家/地區  | 電信業者 |
 |-----------------|------------------|
@@ -34,16 +31,19 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 匈牙利         | Telenor          |
 | 義大利           | Wind             |
 | 挪威          | Telenor          |
+| 波蘭          | Orange           |
+| 俄羅斯          | Beeline          |
+| 瑞典          | Telenor          |
 | 瑞士     | Swisscom         |
 | 美國   | Sprint           |
 | 英國  | O2               |
 
  
 
-## 適用於 Windows Phone 8.x 和 Windows 10 行動裝置版裝置的電信業者帳單
+## 適用於 Windows Phone 8.x 和 Windows10 行動裝置版裝置的電信業者帳單
 
 
-舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows 10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
+舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
 
 下列電信業者支援舊版的電信業者帳單實作。
 
@@ -98,7 +98,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 | 南非         | Vodacom                                                            |
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 瑞典               | Telenor、Tele2                                                     |
-| 瑞士          | Swisscom                                                           |
 | 阿拉伯聯合大公國 | Etisalat、Du                                                       |
 | 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
@@ -118,6 +117,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 在含有此實作�
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

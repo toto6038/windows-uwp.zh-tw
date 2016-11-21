@@ -1,17 +1,17 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "本文列出可搭配 BitmapEncoder 使用的編碼選項。"
 title: "BitmapEncoder 選項參考"
 translationtype: Human Translation
-ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
-ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
 ---
 
 # BitmapEncoder 選項參考
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文列出可搭配 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 使用的編碼選項。 編碼選項是由它的名稱和值所定義，其中的名稱是一個字串，而值則是特定資料類型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871))。 如需使用影像的資訊，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
 ## 相關主題
 
 * [建立、編輯和儲存點陣圖影像](imaging.md)
- 
+* [支援的轉碼器](supported-codecs.md)
 
  
 
@@ -44,6 +44,6 @@ ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

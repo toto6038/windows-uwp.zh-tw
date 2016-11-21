@@ -4,13 +4,13 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "感應器方向"
 description: "取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
+ms.sourcegitcommit: 62b4042cf1c6296c908a12feb5b2fcbd2b9b8734
+ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 ---
 # 感應器方向
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要 API **
 
@@ -21,30 +21,30 @@ ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
 
 ## 顯示方向和裝置方向
 
-為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。 下圖的裝置方向與顯示方向都是 **Landscape**。
+為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。 在下圖中，裝置和顯示方向都是**橫向** (請注意，顯示的感應器軸線只適用於橫向優先裝置)。
 
-![顯示方向與裝置方向為 Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![顯示方向與裝置方向為 Landscape](images/sensor-orientation-a.PNG)
 
 下圖說明顯示方向與裝置方向都是 **LandscapeFlipped**。
 
-![顯示方向與裝置方向為 LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![顯示方向與裝置方向為 LandscapeFlipped](images/sensor-orientation-b.PNG)
 
 下一張圖說明顯示方向為 Landscape，而裝置方向為 LandscapeFlipped。
 
-![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![顯示方向為 Landscape，而裝置方向為 LandscapeFlipped](images/sensor-orientation-c.PNG)
 
 使用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法搭配 [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 屬性，即可透過 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
 
 ## 橫向優先裝置與直向優先裝置
 
-製造商會同時生產橫向優先裝置與直向優先裝置。 製造商會以一致的方式將元件整合到裝置，這樣所有裝置都能以相同的參考架構來運作。 下表顯示橫向優先裝置與直向優先裝置的感應器軸線。
+製造商會同時生產橫向優先裝置與直向優先裝置。 橫向優先裝置 (例如桌上型電腦和膝上型電腦) 與直向優先裝置 (例如手機和某些平板電腦) 之間的參考框架並不同。 下表顯示橫向優先裝置與直向優先裝置的感應器軸線。
 
 | 方向 | 橫向優先 | 直向優先 |
 |-------------|-----------------|----------------|
-| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/accelerometer-axis-orientation-landscape.png) | ![方向為 Landscape 的直向優先裝置](images/accelerometer-axis-orientation-portrait-270.png) |
-| **直向** | ![方向為 Portrait 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-90.png) | ![方向為 Portrait 的直向優先裝置](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-180.png) | ![方向為 LandscapeFlipped 的直向優先裝置](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/accelerometer-axis-orientation-landscape-270.png)| ![方向為 PortraitFlipped 的直向優先裝置](images/accelerometer-axis-orientation-portrait-180.png) |
+| **橫向** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
+| **直向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2.PNG) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3.PNG) |
+| **LandscapeFlipped ** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
+| **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6.PNG)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7.PNG) |
 
 ## 廣播顯示畫面和無周邊裝置的裝置
 
@@ -171,6 +171,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -2,17 +2,17 @@
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。"
-title: "取得應用程式下載數"
+title: "取得 App 下載數"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 
 ---
 
-# 取得應用程式下載數
+# 取得 App 下載數
 
 
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。 這個方法會傳回 JSON 格式的資料。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[下載數報告](../publish/acquisitions-report.md)也有提供這項資訊。
 
 ## 先決條件
 
@@ -120,6 +120,31 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 <p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p></td>
 <td align="left">否</td>
 </tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">字串</td>
+<td align="left"><p>將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p>
+<ul>
+<li><strong>日期</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -203,9 +228,9 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -234,7 +259,7 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 
 ### 要求範例
 
-下列範例示範數個取得 app 下載數資料的要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
+下列範例示範數個取得 App 下載數資料的要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
@@ -307,14 +332,15 @@ Authorization: Bearer <your access token>
 
 ## 相關主題
 
+* [下載數報告](../publish/acquisitions-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得 app 評分](get-app-ratings.md)
-* [取得 app 評論](get-app-reviews.md)
+* [取得 App 評分](get-app-ratings.md)
+* [取得 App 評論](get-app-reviews.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

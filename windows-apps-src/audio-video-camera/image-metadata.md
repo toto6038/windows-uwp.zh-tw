@@ -1,11 +1,11 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: "本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 GeotagHelper 公用程式類別以標記檔案的地理位置。"
 title: "影像中繼資料"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1f97bf89682bee430849a6b962c68a8c4877a609
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
 
 ---
 
@@ -92,6 +92,6 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

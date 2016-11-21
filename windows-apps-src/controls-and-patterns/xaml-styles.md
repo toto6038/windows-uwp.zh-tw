@@ -9,13 +9,13 @@ ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 ---
 # XAML 樣式
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 
@@ -29,7 +29,9 @@ ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
 
 您可以在 XAML 中定義控制項的樣式內崁，或當作可重複使用的資源。 在個別頁面的 XAML 檔案、在 App.xaml 檔案或在另一個資源字典 XAML 檔案中定義資源。 資源字典 XAML 檔案可以跨應用程式共用，而且一個以上的資源字典可以合併成一個應用程式。 定義資源的位置會決定資源可使用的範圍。 只有定義這些資源的頁面才可以使用頁面層級資源。 如果將包含相同索引鍵的資源定義在 App.xaml 和頁面中，則頁面中的資源會覆寫 App.xaml 中的資源。 如果資源是在不同的資源字典檔案中定義，則其範圍由資源字典的參照位置決定。
 
-在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義中，您需要一個 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 屬性以及包含一或多個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素的集合。 **TargetType** 屬性是一個字串，會指定要套用樣式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 類型。 **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
+在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義中，您需要一個 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 屬性以及包含一或多個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素的集合。 
+            **TargetType** 屬性是一個字串，會指定要套用樣式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 類型。 
+            **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
 
 每個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素都需要 [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 與 [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838)。 這些屬性設定會指出該設定套用了什麼控制項屬性，以及為該屬性設定的值。 您可以利用屬性 (Attribute) 或屬性 (Property) 元素語法來設定 **Setter.Value**。 這裡的 XAML 說明套用至先前所示的按鈕的樣式。 這個 XAML 的前兩個 **Setter** 元素使用屬性 (Attribute) 語法，而最後一個用於 [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) 屬性的 **Setter** 則是使用屬性 (Property) 元素語法。 此範例並未使用 [x:Key](../xaml-platform/x-key-attribute.md) 屬性，因此樣式會以隱含方式套用至按鈕。 下一節將說明如何以隱含或明確方式套用樣式。
 
@@ -141,7 +143,64 @@ ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
 
 ## 使用工具輕鬆處理樣式
 
-快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [編輯樣式]****或 [編輯範本]**** \(依按右鍵的控制項而定\)。 接著，您可以選取 \[套用資源\]**** 來套用現有的樣式，或選取 \[建立空白\]**** 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
+快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [編輯樣式]或 [編輯範本] \(依按右鍵的控制項而定\)。 接著，您可以選取 \[套用資源\] 來套用現有的樣式，或選取 \[建立空白\] 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
+
+## 輕量型樣式設定
+
+覆寫系統筆刷一般是在應用程式或頁面層級完成，而且在任一情況下，色彩覆寫都會影響參考該筆刷的所有控制項，而在 XAML 中，多個控制項可以參考相同的系統筆刷。
+
+![已設定樣式的按鈕](images/LightweightStyling_ButtonStatesExample.png)
+
+```XAML
+<Page.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary x:Key="Light">
+                 <SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
+                 <SolidColorBrush x:Key="ButtonForeground" Color="MediumSlateBlue"/>
+                 <SolidColorBrush x:Key="ButtonBorderBrush" Color="MediumSlateBlue"/>
+            </ResourceDictionary>
+        </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+</Page.Resources>
+```
+
+適合 PointerOver (滑鼠停留在按鈕上方)、**PointerPressed** (叫用按鈕) 或 Disabled (按鈕無法互動) 之類的狀態。 下列結尾會附加到原始的輕量型樣式設定名稱︰**ButtonBackgroundPointerOver**、**ButtonForegroundPointerPressed** 及 **ButtonBorderBrushDisabled** 等。同時修改這些筆刷可確保您的控制項色彩和您的應用程式佈景主題一致。
+
+將這些筆刷覆寫放在 **App.Resources** 層級會變更整個應用程式 (而非單一頁面) 內的所有按鈕。
+
+### 個別控制項樣式設定
+
+有時為了以某種方式查看，會需要變更單一頁面上的單一控制項，但不變更該控制項的任何其他版本︰
+
+![已設定樣式的按鈕](images/LightweightStyling_CheckboxExample.png)
+
+```XAML
+<CheckBox Content="Normal CheckBox" Margin="5"/>
+    <CheckBox Content="Special CheckBox" Margin="5">
+        <CheckBox.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                            Color="White"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                            Color="Purple"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+            </ResourceDictionary>
+        </CheckBox.Resources>
+    </CheckBox>
+<CheckBox Content="Normal CheckBox" Margin="5"/>
+```
+
+這只會影響該控制項所在頁面上的那個「特殊核取方塊」。
 
 ## 修改預設系統樣式
 
@@ -153,6 +212,6 @@ Style Setter 可以用於 [**Control**](https://msdn.microsoft.com/library/windo
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

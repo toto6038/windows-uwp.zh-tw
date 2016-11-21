@@ -1,18 +1,17 @@
 ---
+author: awkoren
 Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 手動轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式"
+title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) App"
 translationtype: Human Translation
-ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
-ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
 
 ---
 
-# 將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式
+# 使用傳統型橋接器將您的 App 手動轉換為 UWP
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
-
-使用轉換器相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定，這相當有用。 但如果您的應用程式是使用 xcopy 所安裝，或者您已熟悉應用程式的安裝程式對於系統所做的變更，您可以選擇手動建立應用程式套件和資訊清單。
+使用 Desktop App Converter (DAC) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定，這相當有用。 但如果您的 App 是使用 xcopy 所安裝，或者您已熟悉 App 的安裝程式對於系統所做的變更，您可以選擇手動建立應用程式套件和資訊清單。
 
 以下是手動建立套件的步驟︰
 
@@ -60,7 +59,7 @@ ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ## 執行 MakeAppX 工具
 
-使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows 10 SDK。 
+使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows10 SDK。 
 
 若要執行 MakeAppx，必須先確定您已建立資訊清單檔案，如上方所述。 
 
@@ -82,7 +81,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## 簽署您的 AppX 套件
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows10 SDK) 來簽署 .appx 套件。
 
 用法範例： 
 
@@ -103,6 +102,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

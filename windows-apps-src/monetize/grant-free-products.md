@@ -4,8 +4,8 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "在 Windows 市集購買 API 中使用這個方法，將免費 App 或附加元件授與指定的使用者。"
 title: "授與免費產品"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 2eca8712075ce1f9d876f3ae441381734bd52370
 
 ---
 
@@ -21,10 +21,10 @@ ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 若要使用這個方法，您將需要：
 
--   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
--   Windows 市集識別碼索引鍵是藉由從您 app 中的用戶端程式碼呼叫 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法所產生。
+* 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
+* 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。
 
-如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
 
 ## 要求
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 | 參數      | 類型   | 描述                                                                                                                                                                                                                                                                                                            | 必要 |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | availabilityId | 字串 | 要從 Windows 市集型錄購買之產品的可用性識別碼。                                                                                                                                                                                                                                     | 是      |
-| b2bKey         | 字串 | 代表客戶身分識別的 Windows 市集識別碼索引鍵。                                                                                                                                                                                                                                                        | 是      |
+| b2bKey         | 字串 | [從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。                                                                                                                                                                                                                                                        | 是      |
 | devOfferId     | 字串 | 會在購買之後出現在集合項目中的開發人員特定優惠識別碼。                                                                                                                                                                                                                                 | 否       |
 | language       | 字串 | 使用者所用的語言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字串 | 使用者所在的市場。                                                                                                                                                                                                                                                                                                | 是      |
@@ -155,7 +155,7 @@ IdentityV6 物件包含下列參數。
 | 參數     | 類型   | 描述                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
-| identityValue | 字串 | 來自特定 Windows 市集識別碼索引鍵之 *publisherUserId* 的字串值。 | 是      |
+| identityValue | 字串 | 來自特定 Windows 市集識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |
 
 <span/> 
 
@@ -227,7 +227,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | PartnerAadTicketRequired   | Azure AD 存取權杖沒有傳遞到 Authorization 標頭中的服務。                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
+| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼金鑰的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 | 400  | BadRequest   | InvalidParameter           | 詳細資料包含要求主體的相關資訊，以及哪些欄位的值無效。                                                                                    |
 
 <span/> 
@@ -238,13 +238,13 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 * [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)
 * [查詢產品](query-for-products.md)
 * [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
-* [更新 Windows 市集識別碼索引鍵](renew-a-windows-store-id-key.md)
+* [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

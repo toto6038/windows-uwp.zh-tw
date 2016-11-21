@@ -4,14 +4,14 @@ ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。"
 title: "媒體組合和編輯"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
+ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 ---
 
 # 媒體組合和編輯
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向您說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 架構的功能包括能夠以程式設計的方式一起新增多個視訊剪輯、新增視訊與影像重疊、新增背景音訊，以及套用音訊與視訊效果。 建立之後，媒體組合可以轉譯為一般媒體檔案來播放或共用，但是組合也可以序列化至磁碟和從磁碟還原序列化，允許使用者載入和修改他們之前建立的組合。 這項功能是以方便使用的 Windows 執行階段介面提供，相較於低階 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197) API時，大幅減少執行這些工作所需之程式碼的數量和複雜度。
@@ -21,6 +21,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+
 
 將會從您的程式碼的多個點存取 **MediaComposition** 物件，因此通常您會宣告其中的成員變數以儲存它。
 
@@ -54,7 +55,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## 預覽 MediaElement 中的組合
 
-若要讓使用者檢視媒體組合，請將 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 新增至定義您 UI 的 XAML 檔案。
+若要讓使用者檢視媒體組合，請將 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 新增至定義您 UI 的 XAML 檔案。
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -63,16 +64,16 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-呼叫 **MediaComposition** 物件的 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 方法來建立組合的 **MediaStreamSource**，然後呼叫 **MediaElement** 的 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 方法。 現在可以在 UI 中檢視組合。
+呼叫 **MediaComposition** 物件的 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 方法來建立組合的 **MediaStreamSource**。 透過呼叫 Factory 方法 [**CreateFromMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn930907)，並將它指派給 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) 參數，來建立 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 物件。 現在可以在 UI 中檢視組合。
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
 -   **MediaComposition** 必須包含至少一個媒體剪輯，然後才能呼叫 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，否則傳回的物件將會是 Null。
 
--   **MediaElement** 時間軸不會自動更新以反映組合中的變更。 當您每次對組合進行一組變更並且想要更新 UI 時，建議您同時呼叫 **GeneratePreviewMediaStreamSource** 和 **SetMediaStreamSource**。
+-   **MediaElement** 時間軸不會自動更新以反映組合中的變更。 當您每次對組合進行一組變更並且想要更新 UI 時，建議您同時呼叫 **GeneratePreviewMediaStreamSource** 並設定 **MediaPlayerElement** **Source** 屬性。
 
-當使用者離開頁面以釋放相關聯的資源時，建議您將 **MediaStreamSource** 物件和 **MediaElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設為 Null。
+當使用者離開頁面以釋放相關聯的資源時，建議您將 **MediaStreamSource** 物件和 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 屬性設為 Null。
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -94,7 +95,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用 **MediaElement** 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) 屬性，藉由檢查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先決定要在目前位置播放哪個 MediaClip。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
+-   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用與 **MediaPlayerElement** 相關聯之 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) 屬性，藉由檢查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先決定要在組合中的目前位置播放哪個 **MediaClip**。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
 -   **MediaClip** 物件的 [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) 屬性可讓您知道未套用任何剪輯的媒體剪輯的持續時間。
 -   [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
 -   指定大於媒體剪輯原始持續時間的修剪值不會擲回錯誤。 不過，如果組合只包含單一剪輯，並且藉由指定大的修剪值而修剪為零長度，[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的後續呼叫會傳回 Null，如同組合沒有任何剪輯。
@@ -127,7 +128,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## 將效果新增至媒體剪輯
 
-組合中的每個 **MediaClip** 都有一份可以加入多個效果的音訊與視訊效果清單。 效果必須分別實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 下列範例會使用目前的媒體元件位置以選擇目前檢視的 **MediaClip**，然後建立 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新執行個體，並將它附加到媒體剪輯的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 清單。
+組合中的每個 **MediaClip** 都有一份可以加入多個效果的音訊與視訊效果清單。 效果必須分別實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 下列範例會使用目前的 **MediaPlayerElement** 位置以選擇目前檢視的 **MediaClip**，然後建立 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新執行個體，並將它附加到媒體剪輯的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 清單。
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
@@ -155,6 +156,6 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

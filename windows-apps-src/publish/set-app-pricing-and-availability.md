@@ -4,8 +4,8 @@ Description: "您可以從應用程式提交程序的 [價格與可用性] 頁�
 title: "設定應用程式價格與可用性"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
-ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
+ms.sourcegitcommit: 2ce776b69eed7d5803db7a37b54c4b00f58dc6c0
+ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 許多開發人員選擇使用市集提供的試用功能，讓客戶免費試用 app。 根據預設，app 無法免費試用，但如果您願意提供，請從 [免費試用]**** 下拉式清單選取值。
 
-選擇 [**試用版永久有效**]，讓客戶無限期免費存取您的 app。 您會想要鼓勵他們購買完整版本，所以請務必新增程式碼以[排除或限制試用版中的功能](https://msdn.microsoft.com/library/windows/apps/mt219685)。
+選擇 [**試用版永久有效**]，讓客戶無限期免費存取您的 app。 您會想要鼓勵他們購買完整版本，所以請務必新增程式碼以[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)。
 
 您也可以選取 [**1 天**]、[**7 天**]、[**15 天**] 或 [**30 天**] 的時間限定試用版的選項。 您在試用期間仍然可以限制功能，或者可以讓客戶在該時間期間存取完整功能。
 
@@ -86,10 +86,6 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

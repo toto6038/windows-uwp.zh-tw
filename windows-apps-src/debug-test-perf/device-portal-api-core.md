@@ -900,7 +900,8 @@ HTTP 狀態碼      | 描述
 
 命令 | 說明
 :----- | :-----
-provider *{guid}* enable *{level}* | 在指定層級啟用標示為 *{guid}* (不含括號) 的提供者。 *{level}* 是介於 1 (粗略) 至 5 (詳細) 之間的 **int**。
+provider *{guid}* enable *{level}* | 在指定層級啟用標示為 *{guid}* (不含括號) 的提供者。 
+            *{level}* 是介於 1 (粗略) 至 5 (詳細) 之間的 **int**。
 provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者。
 
 此回應會從伺服器傳送至用戶端。 此回應會傳送為文字，而您可透過剖析 JSON 取得下列格式。
@@ -1507,7 +1508,7 @@ HTTP 狀態碼      | 描述
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/power/cfg/*<power scheme path>*
+GET | /api/power/cfg/
 <br />
 選項：
 - SCHEME_CURRENT
@@ -1642,7 +1643,7 @@ HTTP 狀態碼      | 描述
  
 方法      | 要求 URI
 :------     | :-----
-POST | /api/power/cfg/*<power scheme path>*
+POST | /api/power/cfg/
 <br />
 
 **URI 參數**
@@ -2242,8 +2243,8 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
 op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (****如果 op == connect** 則為必要) 要連線的 SSID。
-索引鍵   | (****如果 op == connect 且網路需要驗證**則為必要) 共用金鑰。
+ssid   | (如果 op == connect** 則為必要) 要連線的 SSID。
+索引鍵   | (如果 op == connect 且網路需要驗證**則為必要) 共用金鑰。
 createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
 
 **要求標頭**
@@ -2722,7 +2723,8 @@ GET | /api/wpr/trace
 
 **回應**
 
-- 無。  **注意︰**這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
+- 無。  
+            **注意︰**這是長時間執行的作業。  它在 ETL 完成寫入至磁碟後才會傳回。  
 
 **狀態碼**
 
@@ -2974,7 +2976,8 @@ GET | /api/dns-sd/tags
 
 - 無
 
-**回應** 目前以下列格式套用的標記。 
+
+            **回應** 目前以下列格式套用的標記。 
 ```
  {
     "tags": [
@@ -3167,7 +3170,8 @@ GET | /api/filesystem/apps/knownfolders
 
 - 無
 
-**回應** 以下列格式呈現的可用資料夾。 
+
+            **回應** 以下列格式呈現的可用資料夾。 
 ```
  {"KnownFolders": [
     "folder0",
@@ -3210,7 +3214,7 @@ GET | /api/filesystem/apps/files
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3221,7 +3225,8 @@ path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 - 無
 
-**回應** 以下列格式呈現的可用資料夾。 
+
+            **回應** 以下列格式呈現的可用資料夾。 
 ```
 {"Items": [
     {
@@ -3270,7 +3275,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 下載的檔案名稱。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
+packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3317,10 +3322,10 @@ POST | /api/filesystem/apps/rename
 
 URI 參數 | 描述
 :------     | :-----
-knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載應用程式。 
+knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 
 filename | (**必要**) 所要重新命名之檔案的原始名稱。 
 newfilename | (**必要**) 檔案的新名稱。
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3370,7 +3375,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 刪除的檔案名稱。 
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3419,7 +3424,7 @@ POST | /api/filesystem/apps/file
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。
-packagefullname | (****如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**

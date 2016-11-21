@@ -1,15 +1,15 @@
 ---
 author: PatrickFarley
 title: "探索遠端裝置"
-description: "了解如何使用專案 Rome 從 App 探索遠端裝置。"
+description: Learn how to discover remote devices from your app using Project "Rome".
 translationtype: Human Translation
-ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
-ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+ms.sourcegitcommit: dc5030fea8e149b3926b926b09bfec3eeb5092ee
+ms.openlocfilehash: b4b4eb28ea56ab3d84e2fe0bc0c281cb53149d5d
 
 ---
 
 # 探索遠端裝置
-您的 App 可以使用無線網路、藍牙及雲端連線，來探索使用與探索裝置相同 Microsoft 帳戶登入的 Windows 型裝置。 也可以搜尋接受匿名連線的公用裝置，例如 Surface Hub 和 Xbox One。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
+您的 app 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 也可以探索接受匿名連線的公用裝置，例如 Surface Hub 和 Xbox One。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
 
 > [!NOTE]
 > 本指南假設您已經依照[啟動遠端 app](launch-a-remote-app.md) 中的步驟，將存取權授與遠端系統功能。
@@ -50,6 +50,6 @@ ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

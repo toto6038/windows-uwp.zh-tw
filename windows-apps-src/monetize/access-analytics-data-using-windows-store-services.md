@@ -4,20 +4,21 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 app 分析資料。"
 title: "使用 Windows 市集服務存取分析資料"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 ---
 
 # 使用 Windows 市集服務存取分析資料
 
-使用「Windows 市集分析 API」**，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 App 分析資料。 這個 API 可讓您擷取 App 和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、App 評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
+使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的 App 分析資料。 這個 API 可讓您擷取 App 和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、App 評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
 1.  請確定您已經完成所有[先決條件](#prerequisites)。
 2.  在呼叫 Windows 市集分析 API 中的方法之前，請先[取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。 取得權杖之後，在權杖到期之前，您有 60 分鐘的時間可以使用這個權杖呼叫 Windows 市集分析 API。 權杖到期之後，您可以產生新的權杖。
-3.  [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
+3.  
+            [呼叫 Windows 市集分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
 ## 步驟 1：完成使用 Windows 市集分析 API 的先決條件
@@ -28,17 +29,19 @@ ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
 
 * 您必須將 Azure AD 應用程式與開發人員中心帳戶相關聯、擷取應用程式的租用戶識別碼和用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Windows 市集分析 API 的 App 或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
 
-  >**注意**&nbsp;&nbsp;您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
+  >
+            **注意**
+            &nbsp;&nbsp;您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯並擷取需要的值：
 
-1.  在開發人員中心，移至您的 [帳戶設定]****，按一下 [管理使用者]****，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在開發人員中心，移至您的 [帳戶設定]，按一下 [管理使用者]，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在 [管理使用者]**** 頁面中，按一下 [新增 Azure AD 應用程式]****，新增代表您要用來存取開發人員中心帳戶分析資料之 App 或服務的 Azure AD 應用程式，並指派 [管理員]**** 角色給它。 如果這個應用程式已經存在於您的 Azure AD 目錄中，則您可以在 [新增 Azure AD 應用程式]**** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 [新增 Azure AD 應用程式]**** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在 [管理使用者] 頁面中，按一下 [新增 Azure AD 應用程式]，新增代表您要用來存取開發人員中心帳戶分析資料之 App 或服務的 Azure AD 應用程式，並指派 [管理員] 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 [新增 Azure AD 應用程式] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 [新增 Azure AD 應用程式] 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回 [管理使用者]**** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 [租用戶識別碼]**** 和 [用戶端識別碼]**** 的值。
+3.  返回 [管理使用者] 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 [租用戶識別碼] 和 [用戶端識別碼] 的值。
 
-4. 按一下 [加入新的金鑰]****。 在下列畫面中，複製 [金鑰]**** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中管理金鑰的相關資訊。
+4. 按一下 [加入新的金鑰]。 在下列畫面中，複製 [金鑰] 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中管理金鑰的相關資訊。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## 步驟 2：取得 Azure AD 存取權杖
@@ -67,11 +70,13 @@ grant_type=client_credentials
 
 有了 Azure AD 存取權杖之後，就可以呼叫 Windows 市集分析 API。 如需每個方法之語法的相關資訊，請參閱下列文章。 您必須將存取權杖傳送給每個方法的 **Authorization** 標頭。
 
--   [取得應用程式下載數](get-app-acquisitions.md)
+-   [取得 App 下載數](get-app-acquisitions.md)
 -   [取得附加元件下載數](get-in-app-acquisitions.md)
 -   [取得錯誤報告資料](get-error-reporting-data.md)
--   [取得 app 評分](get-app-ratings.md)
--   [取得 app 評論](get-app-reviews.md)
+-   [取得 App 評分](get-app-ratings.md)
+-   [取得 App 評論](get-app-reviews.md)
+-   [取得廣告績效資料](get-ad-performance-data.md)
+-   [取得廣告活動績效資料](get-ad-campaign-performance-data.md)
 
 ## 程式碼範例
 
@@ -228,15 +233,17 @@ Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回�
 
 ## 相關主題
 
-* [取得應用程式下載數](get-app-acquisitions.md)
+* [取得 App 下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得 app 評分](get-app-ratings.md)
-* [取得 app 評論](get-app-reviews.md)
+* [取得 App 評分](get-app-ratings.md)
+* [取得 App 評論](get-app-reviews.md)
+* [取得廣告績效資料](get-ad-performance-data.md)
+* [取得廣告活動績效資料](get-ad-campaign-performance-data.md)
  
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

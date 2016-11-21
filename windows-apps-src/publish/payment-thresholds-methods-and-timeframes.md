@@ -3,9 +3,8 @@
 Description: "作者︰jnHs 轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。 本主題概述每個國家/地區支援的門檻和付款方式。"
 title: "付款門檻、方式和時間範圍"
 translationtype: Human Translation
-ms.sourcegitcommit: 842221e9596f5bb132e9109a1c4f8a5d9e9439dd
-ms.openlocfilehash: 1513c5b7714a1f2169ad7f5b08819dd06448d58c
-
+ms.sourcegitcommit: 85b9993334ecfb3ea2dc5a196cb5b5f9dc99c985
+ms.openlocfilehash: b4f98e31b52b77f6675771fc09bb492ca5cf9021
 
 ---
 
@@ -3383,6 +3382,6 @@ ms.openlocfilehash: 1513c5b7714a1f2169ad7f5b08819dd06448d58c
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

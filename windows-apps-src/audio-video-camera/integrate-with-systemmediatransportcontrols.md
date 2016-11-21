@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文說明如何與系統媒體傳輸控制項互動。"
 title: "與系統媒體傳輸控制項整合"
 translationtype: Human Translation
-ms.sourcegitcommit: 53b1cb94f90cd697a96bca49c5f2109d4749dbd1
-ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 ---
 
@@ -70,6 +70,7 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 如本文先前所提及，SMTC 會自動偵測與顯示您應用程式所建立之每個 **MediaPlayer** 執行個體的資訊。 如果您想要使用多個 **MediaPlayer** 執行個體但希望 SMTC 針對您的應用程式提供單一項目，則您必須手動控制 SMTC 的行為，而非仰賴自動整合。 此外，如果您使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 來控制一或多個媒體播放程式，您必須使用手動 SMTC 整合。 此外，如果您的應用程式使用 API 而不是 **MediaPlayer** (例如 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) 類別) 來播放媒體，您必須實作手動 SMTC 整合，讓使用者使用 SMTC 來控制您的應用程式。 如需如何手動控制 SMTC 的詳細資訊，請參閱[系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)。
 
 
+
 ## 相關主題
 * [媒體播放](media-playback.md)
 * [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
@@ -85,6 +86,6 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

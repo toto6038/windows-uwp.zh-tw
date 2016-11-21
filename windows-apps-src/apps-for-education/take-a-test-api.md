@@ -1,41 +1,40 @@
 ---
 author: TylerMSFT
 Description: "Microsoft 進行測驗 app 的 JavaScript API 可讓您執行安全性評定。 「進行測驗」提供了安全的瀏覽器，可防止學生在測驗期間使用其他電腦或網際網路資源。"
-title: "Microsoft 進行測驗 JavaScript API。"
+title: "進行測驗 JavaScript API。"
 translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
-ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
+ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
 
 ---
 
-# Microsoft 進行測驗 JavaScript API
+# 進行測驗 JavaScript API
 
-「**進行測驗**」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 它支援 SBAC 瀏覽器 API 標準，以用於高度利害攸關常見核心測試，並且可讓您將焦點放在評估內容，而不是如何鎖定 Windows。
+「[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 它支援 SBAC 瀏覽器 API 標準，以用於高度利害攸關常見核心測試，並且可讓您將焦點放在評估內容，而不是如何鎖定 Windows。
 
-**進行測驗**，是由 Microsoft 的 Edge 瀏覽器提供，它提供了 Web 應用程式可以用來提供鎖定體驗以進行測驗的 JavaScript API。
+進行測驗，是由 Microsoft 的 Edge 瀏覽器提供，它提供了 Web 應用程式可以用來提供鎖定體驗以進行測驗的 JavaScript API。
 
-API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) 為基礎) 可提供文字轉換語音功能，以及提供查詢裝置是否已鎖定及正在執行的使用者和系統正在執行處理程序等等事項的查詢功能。
+API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) 為基礎) 可提供文字轉換語音功能，以及提供查詢裝置是否已鎖定及正在執行的使用者和系統處理序等等事項的查詢功能。
 
 請參閱[進行測驗 app 技術參考](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)以了解 app 本身的相關資訊。
 
-**重要**
-
-API 無法在遠端工作階段中運作。  
-進行測驗不會處理 HTTP 新視窗要求。
+> [!Important]
+> 這些 API 無法在遠端工作階段中運作。  
 
 如需疑難排解協助，請參閱[使用事件檢視器對「Microsoft 進行測驗」進行疑難排解](troubleshooting.md)。
 
-**進行測驗 API 包含下列命名空間：**  
+## 參考文件
+進行測驗 API 包含下列命名空間。 
 
 | 命名空間 | 描述 |
 |-----------|-------------|
-|[安全性命名空間](#security-namespace)| 文字轉換語音功能|
-|[tts 命名空間](#tts-namespace)|可讓您鎖定裝置|
+|[安全性命名空間](#security-namespace)|可讓您鎖定裝置|
+|[tts 命名空間](#tts-namespace)|文字轉換語音功能|
 
 
- ## 安全性命名空間
+ ### 安全性命名空間
 
-可讓您鎖定裝置、檢查使用者與系統處理程序清單、取得 MAC 和 IP 位址，以及清除快取的 Web 資源。
+安全性命名空間可讓您鎖定裝置、檢查使用者與系統處理序清單、取得 MAC 和 IP 位址，以及清除快取的 Web 資源。
 
 | 方法 | 描述   |
 |--------|---------------|
@@ -45,9 +44,10 @@ API 無法在遠端工作階段中運作。
 |[getIPAddressList](#getIPAddressList) | 取得裝置 IP 位址的清單 |
 |[getMACAddress](#getMACAddress)|取得裝置 MAC 位址的清單|
 |[getProcessList](#getProcessList)|取得正在執行的使用者與系統處理程序的清單|
-|[isEnvironmentSecure](#isEnvironmentSecure)|判斷鎖定內容是否仍已套用到裝置|
+|[isEnvironmentSecure](#isEnvironmentSecure)|判斷鎖定內容是否仍已套用到裝置|  
 
-<span id="clearCache" />
+---
+<span id="clearCache"/>
 ### void clearCache()
 清除快取的 Web 資源。
 
@@ -61,7 +61,7 @@ API 無法在遠端工作階段中運作。
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -79,7 +79,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -97,7 +97,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -114,6 +114,8 @@ Windows 10 (版本 1607)
 **傳回值**  
 `An array of IP addresses.`
 
+---
+
 <span id="getMACAddress" />
 ### string[] getMACAddress()
 取得裝置 MAC 位址的清單。
@@ -128,7 +130,7 @@ Windows 10 (版本 1607)
 `An array of MAC addresses.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -148,7 +150,7 @@ Windows 10 (版本 1607)
 **備註** 清單中不包含系統處理程序。
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -166,11 +168,14 @@ Windows 10 (版本 1607)
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
-## tts 命名空間
+### tts 命名空間
+
+tts 命名空間會處理 App 的文字轉換語音功能。
+
 | 方法 | 描述 |
 |--------|-------------|
 |[getStatus](#getStatus) | 取得語音播放狀態|
@@ -181,7 +186,9 @@ Windows 10 (版本 1607)
 |[stop](#stop)|停止語音合成|
 
 > [!Tip]
-> [Microsoft Edge 語音合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) 是 [W3C 語音 API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) 的實作，且我們建議開發人員盡可能使用該 API。
+> [Microsoft Edge 語音合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) 是 [W3C 語音 API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) 的實作，且我們建議開發人員盡可能使用此 API。
+
+---
 
 <span id="getStatus" />
 ### string getStatus()
@@ -197,7 +204,7 @@ Windows 10 (版本 1607)
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -215,7 +222,7 @@ Windows 10 (版本 1607)
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -236,7 +243,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -254,13 +261,13 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-用戶端文字轉換語音合成。
+啟動用戶端文字轉換語音合成。
 
 **語法**  
 `void browser.tts.speak(“Hello world”, options, callback);`
@@ -283,13 +290,13 @@ var options = {
 
 **備註** 選項變數必須是小寫。 性別、語言及語音參數是採用字串。
 音量、音調及速率必須在語音合成標記語言檔案 (SSML) 中標記，而不是在選項物件中標記。
-
 選項物件必須遵循上述範例中所示的順序、命名和大小寫規則。
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
+
 <span id="stop" />
 ### void stop()
 停止語音合成。
@@ -304,10 +311,10 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

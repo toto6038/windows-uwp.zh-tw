@@ -1,23 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何在目標為 Windows 10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
+description: "了解如何在目標為 Windows10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
 title: "使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+ms.sourcegitcommit: 812fa1789c5c86657b8e73e45a851c7a58a1c84e
+ms.openlocfilehash: 5a4f943357660a22217351f04d735c14cab828ff
 
 ---
 
 # 使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 
-Windows SDK 提供 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間中的成員，讓您可用來將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利並加入新功能。 這些 API 也會提供您 App 授權資訊的存取。
+Windows SDK 提供 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間中的成員，讓您可用來將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利並加入新功能。 這些 API 也會提供對您 App 授權資訊的存取權。
 
->**注意**&nbsp;&nbsp;如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，而設計目的是與 Windows 開發人員中心和市集所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+本節中的文章針對數個常見的案例，提供使用 **Windows.ApplicationModel.Store** 命名空間中成員的深入指引及程式碼範例。 如需 UWP app 中 App 內購買相關概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
-本節中的文章提供深入的指引與程式碼範例，其中將針對數個常見的案例，使用 **Windows.ApplicationModel.Store** 命名空間中的成員。 如需 UWP app 中 App 內購買相關概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
-如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間實作試用版和 App 內購買的完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
+>**注意事項**&nbsp;&nbsp;
+>
+> * 如果您 App 的目標是 Windows10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，並且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+<br/><br/>
+> * 在使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中並不支援 **Windows.ApplicationModel.Store** 命名空間。 這些應用程式必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
 
 ## 本節內容
 
@@ -32,6 +36,6 @@ Windows SDK 提供 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/l
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

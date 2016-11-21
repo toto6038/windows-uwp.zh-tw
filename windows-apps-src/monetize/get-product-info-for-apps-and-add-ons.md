@@ -4,21 +4,23 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "了解如何使用 Windows.Services.Store 命名空間，來取得目前 app 或其中一個附加元件的市集相關產品資訊。"
 title: "取得 App 和附加元件的產品資訊"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
+ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
+ms.openlocfilehash: 8471dfd24b189ff6ca4f50c4461b72ac5d81659d
 
 ---
 
 # 取得 App 和附加元件的產品資訊
 
-目標為 Windows 10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來存取目前 app 及其中一個附加元件 (也稱為 App 內產品或 IAP) 的市集相關資訊。 本文中的下列範例示範如何針對不同案例執行此動作。 如需完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+目標為 Windows10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來存取目前 app 及其中一個附加元件 (也稱為 App 內產品或 IAP) 的市集相關資訊。 本文中的下列範例示範如何針對不同案例執行此動作。 如需完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
->**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的 app。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>
+  **注意**
+  &nbsp;&nbsp;本文適用於目標為 Windows10 版本 1607 或更新版本的 app。 如果您的 app 目標為較早版本的 Windows10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
 ## 先決條件
 
 這些範例包含下列先決條件：
-* 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
+* 適用於目標為 Windows10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
 * 您已在 Windows 開發人員中心儀表板中建立 app，而且已在市集中發佈此 app 且可供使用。 這可以是您想要釋出給客戶的 app，或者可以是符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求的基本 app，而您只能基於測試目的加以使用。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
 
 這些範例中的程式碼假設：
@@ -26,7 +28,9 @@ ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
 * 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
-如需完整範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+
+>**注意**&nbsp;&nbsp;如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增這些範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
 
 ## 取得目前 App 的資訊
 
@@ -40,6 +44,9 @@ public async void GetAppInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Get app store product details. Because this might take several moments,   
@@ -81,6 +88,9 @@ public async void GetProductInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -126,6 +136,9 @@ public async void GetAddOnInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -170,6 +183,9 @@ public async void GetUserCollection()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -209,6 +225,6 @@ public async void GetUserCollection()
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

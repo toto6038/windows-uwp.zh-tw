@@ -4,14 +4,14 @@ title: "處理已取消的背景工作"
 description: "了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 ---
 
 # 處理已取消的背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 了解如何建立一個可辨識取消要求、停止工作並使用永續性儲存體向 App 回報取消的背景工作。
 
-本主題假設您已經建立背景工作類別，包括作為背景工作進入點的 Run 方法。 若要快速開始建置背景工作，請參閱[建立並登錄在個別處理程序中執行的背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+本主題假設您已經建立背景工作類別，包括作為背景工作進入點的 Run 方法。 若要快速開始建立背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-此主題也適用於單一處理程序背景工作。 但不是使用 Run() 方法，而是以 OnBackgroundActivated() 取代。 單一處理程序背景工作並不需要您使用永續性儲存體來發出取消訊號，因為背景工作是在與您前景 App 相同的處理程序中執行，所以您可以使用 App 狀態來傳達取消。
+本主題也適用於同處理序背景工作。 但不是使用 Run() 方法，而是以 OnBackgroundActivated() 取代。 同處理序背景工作並不需要您使用永續性儲存體來發出取消訊號，因為背景工作是在與您前景 App 相同的處理序中執行，所以您可以使用 App 狀態來傳達取消。
 
 ## 使用 OnCanceled 方法辨識取消要求
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 >     }
 > ```
 
-在背景工作的 Run 方法中，在開始工作之前先登錄 OnCanceled 事件處理常式方法。 在單一處理程序背景工作中，您可以在應用程式初始化的過程中進行這項登錄。 例如，使用下面這一行程式碼：
+在背景工作的 Run 方法中，在開始工作之前先註冊 OnCanceled 事件處理常式方法。 在同處理序背景工作中，您可以在應用程式初始化的過程中進行這項註冊。 例如，使用下面這一行程式碼：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -98,7 +98,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ## 藉由結束背景工作來處理取消
 
-當收到取消要求時，執行背景工作的方法需要透過辨識 **\_cancelRequested** 何時設定為 **true**，來停止工作並結束。 對單一處理程序背景工作來說，這意謂著從 `OnBackgroundActivated()` 方法返回。 對在個別處理程序中執行的背景工作來說，這意謂著從 `Run()` 方法返回。
+收到取消要求時，執行背景工作的方法需要透過辨識 **\_cancelRequested** 何時設定為 **true**，來停止工作並結束。 對同處理序背景工作來說，這意謂著從 `OnBackgroundActivated()` 方法返回。 對跨處理序背景工作來說，這意謂著從 `Run()` 方法返回。
 
 修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果將 **\_cancelRequested** 設定為 true，便會阻止工作繼續。
 
@@ -134,7 +134,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 > **注意** 上方所顯示的程式碼範例使用用來記錄背景工作進度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 屬性。 進度會透過 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 類別回報給 app。
 
-修改 Run 方法，以便讓它在工作停止後，記錄工作是已完成還是被取消。 此步驟適用於在個別處理程序中執行的背景工作，因為您需要一個當背景工作被取消時，可在處理程序之間通訊的方法。 針對單一處理程序背景工作，您只能與應用程式分享狀態以指出工作已被取消。
+修改 Run 方法，以便讓它在工作停止後，記錄工作是已完成還是被取消。 此步驟適用於跨處理序背景工作，因為您需要一個當背景工作被取消時，可在處理序之間通訊的方法。 針對同處理序背景工作，您只能與應用程式分享狀態以指出工作已被取消。
 
 [背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態：
 
@@ -327,11 +327,13 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相關主題
 
-* [建立並登錄背景工作](create-and-register-a-background-task.md)
+* [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
+* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
@@ -341,12 +343,11 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 * [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
-
 * [偵錯背景工作](debug-a-background-task.md)
 * [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

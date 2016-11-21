@@ -5,8 +5,8 @@ title: "接下來要做什麼？"
 description: "現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供所含不同章節的簡介。"
 keywords: "開發人員中心, 入門"
 translationtype: Human Translation
-ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
-ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
+ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
+ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 ---
 
@@ -16,18 +16,17 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 您想要撰寫 App - 要從何處著手？ 以下是一些可協助您開始進行的「開發人員中心」主題。 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題。
 
-建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 XAML 的主要強大之處就在於使用「資料繫結」**，這會將控制項與您 App 想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。
+建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 XAML 的主要強大之處就在於使用「資料繫結」，這會將控制項與您 App 想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。
 
-您可能也會喜歡[開發人員工具組](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox)網站，此網站將許多入門資訊都集中在一起。
+如果您要瀏覽最新的 Windows10 程式設計技術，例如在 app 中新增動畫和效果，請參閱 [Windows 開發人員部落格](https://blogs.windows.com/buildingapps)。
 
 <table class="wdg-noborder">
-
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
     <td><h2>UWP 與 UWP App 週期</h2><p>App 如何啟動、當您啟動另一個 App 時會發生什麼情況？ 以下是說明。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) App 指南</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app 週期</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 中有哪些酷炫功能</a></ul></td>  
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows10 中有哪些酷炫功能</a></ul></td>  
 </tr>
  
  
@@ -40,6 +39,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
       <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">控制項和模式的簡介</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">設定控制項的樣式</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">回應式設計的螢幕大小與中斷點</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">使用 UWP 社群工具組選取預先建立的控制項和模式</a></li>
     </ul></td>  
 </tr>
  
@@ -58,7 +58,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
  <td width=60><img src="images/icon4.png" width=64></td>
     <td><h2>發行</h2><p>與全世界分享您的作品、大發利市。 我們將引導您逐步完成將 App 在市集上架的程序。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">發行 Windows 應用程式</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">封裝應用程式</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">封裝 App</a></li>
     </ul></td>  
 </tr>
  
@@ -72,7 +72,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
     <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 參考資料</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">撰寫適用於 Xbox One 的 App</a></li>
      <li><a href="https://www.microsoft.com/microsoft-hololens/developers">為 HoloLens 進行開發</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">將 App 移植到 Windows 10</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">將 App 移植到 Windows10</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">為企業撰寫 App</a></li>
       <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社群工具組</a></li>
     </ul>
@@ -87,7 +87,8 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 ## 在「開發人員中心」尋找說明
 
-[Microsoft 開發人員中心](http://devcenter.microsoft.com)包含許多不同工具、架構及平台的大量文件。 當您在搜尋主題和範例時，應該確定您閱讀的是 UWP 特定的內容。 您要如何確定所閱讀的是正確內容？
+
+            [Microsoft 開發人員中心](http://devcenter.microsoft.com)包含許多不同工具、架構及平台的大量文件。 當您在搜尋主題和範例時，應該確定您閱讀的是 UWP 特定的內容。 您要如何確定所閱讀的是正確內容？
 概念性內容 (也就是非 API 參考內容) 的主題 URL 中會有 UWP。 API 內容會有包含「Windows 執行階段」API 的路徑。 
 
 ![範例 UWP 概念性主題](images/devcenter-topic2.png)
@@ -146,7 +147,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows 10 的 App。</a></td>
+<td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows10 的 App。</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>工作程式碼片段</strong></td>
@@ -162,6 +163,6 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

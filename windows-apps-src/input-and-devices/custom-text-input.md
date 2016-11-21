@@ -6,8 +6,8 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
+ms.sourcegitcommit: 62ac7e8f49f4413d9423c027047341f9adcca6f9
+ms.openlocfilehash: 136e9ce1cede3fc09ebd31841e9d1b0be251837a
 
 ---
 
@@ -79,7 +79,7 @@ ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 類別可透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件及 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法，來啟用 Windows 和編輯控制項之間的文字流向。
 
-編輯控制項會透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件來接收文字，這類事件是在使用者與輸入法 (例如，鍵盤、語音或 INE) 互動時所產生。
+編輯控制項會透過 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件來接收文字，這類事件是在使用者與輸入法 (例如，鍵盤、語音或 IME) 互動時所產生。
 
 當您變更編輯控制項中的文字時 (例如，將文字貼入控制項)，需要呼叫 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 來通知 Windows。
 
@@ -152,19 +152,16 @@ ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 ## 相關文章
 
-
+**範例**
+* [自訂編輯控制項範例](https://go.microsoft.com/fwlink/?linkid=831024)
+ 
 **封存範例**
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
-
- 
 
 
 
 
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

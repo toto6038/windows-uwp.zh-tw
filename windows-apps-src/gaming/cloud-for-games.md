@@ -4,13 +4,13 @@ title: "針對 UWP 遊戲使用雲端服務"
 description: "深入了解將雲端實作為 UWP 遊戲的後端。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
-ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
 
 ---
 #  針對 UWP 遊戲使用雲端服務
 
-Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
+Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
 
 ##  什麼是雲端運算？
 
@@ -111,7 +111,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 ## 如何設計雲端後台
 
-在製作人與遊戲設計人員討論必須包含在遊戲內的特色及功能時，您最好開始考慮要如何設計遊戲的基礎結構。 當您想為不同裝置及不同的主要平台開發遊戲時，可以使用 Azure 雲端做為遊戲的後端。
+在製作人與遊戲設計師討論必須包含在遊戲內的特色及功能時，最好也開始考慮要如何設計遊戲的基礎結構。 當您想為不同裝置及不同的主要平台開發遊戲時，可以使用 Azure 做為遊戲的後端。
 
 ### 逐步解說學習指南
 
@@ -138,7 +138,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 ### 使用 Azure 設計遊戲基礎結構
 
-以下是可以針對遊戲使用 Azure 雲端供應項目的一些方法。 Azure 可以搭配 Windows、Linux，以及其他常見的開放原始碼技術 (例如 Ruby、Python、Java 和 PHP) 使用。 如需詳細資訊，請參閱 [Azure 雲端](https://azure.microsoft.com)。
+以下是可以針對遊戲使用 Azure 雲端供應項目的一些方法。 Azure 可以搭配 Windows、Linux，以及 Ruby、Python、Java 和 PHP 等常見的開放原始碼技術使用。 如需詳細資訊，請參閱[用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
 | 需求                 | 活動案例                            | 產品供應項目                      | 產品功能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
@@ -170,7 +170,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows 10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
+    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
 
 ## 適用於遊戲後端的軟體即服務
 
@@ -190,8 +190,8 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 ## 相關連結
 
-* [Windows 10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [Microsoft Azure](https://azure.microsoft.com/)
+* [Windows10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
@@ -202,6 +202,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

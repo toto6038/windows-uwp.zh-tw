@@ -1,15 +1,15 @@
 ---
 title: "使用 Web 帳戶管理員連線到身分識別提供者"
-description: "本文章說明如何利用新的 Windows 10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) App 連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。"
+description: "本文章說明如何利用新的 Windows10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) App 連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
-ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
+ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
+ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
 
 ---
 # 使用 Web 帳戶管理員連線到身分識別提供者
 
-本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) App 連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
+本文章說明如何使用新的 Windows10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) App 連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
 
 > 注意：如需完整的程式碼範例，請參閱 [GitHub 上的 WebAccountManagement 範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
 
 首先，在 Visual Studio 中建立新的空白 App。 
 
-其次，為了要連線到身分識別提供者，您必須將 App 與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集]****  >  [將 App 與市集建立關聯]****，然後遵循精靈的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將 App 與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集] >  [將 App 與市集建立關聯]，然後遵循精靈的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -121,9 +121,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers」授權可讓提供者知道我們對於前者選項有興趣。
-
-如果您正在開發企業 App，您可能想要改用 AAD Graph 端點。 如需如何執行這項操作的詳細資訊，請參閱 [GitHub 上完整的 WebAccountManagement 範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)和 Azure 文件。 
+請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers (消費者)」授權表示我們想要 MSA 選項。 如果您是在開發企業 App，請改為使用「organizations (組織)」字串。
 
 最後，建立新的 WebAccountProviderCommand，將提供者新增到 AccountsSettingsPane，如下所示： 
 
@@ -168,9 +166,22 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 服務提供者會提供文件，說明需要指定哪些範圍以取得權杖來使用他們的服務。 
 
-針對 Office 365 和 Outlook.com 範圍，請參閱(使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API)[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]。 
+* 針對 Office 365 和 Outlook.com 範圍，請參閱(使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API)[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]。 
+* 針對 OneDrive，請參閱 (OneDrive 驗證與登入)[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]。 
 
-針對 OneDrive，請參閱 (OneDrive 驗證與登入)[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]。 
+如果您是在開發企業 App，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
+
+```C#
+private async void GetAadTokenAsync(WebAccountProviderCommand command)
+{
+    string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
+    WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
+    request.Properties.Add("resource", "https://graph.microsoft.com");
+    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+}
+```
+
+本文其餘部分會繼續說明 MSA 案例，但 AAD 的程式碼是非常類似的。 如需 AAD/Graph 的詳細資訊，包括 GitHub 的完整範例，請參閱 [Microsoft Graph 文件](https://graph.microsoft.io/docs/platform/get-started)。
 
 ## 使用權杖
 
@@ -390,6 +401,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,33 +4,38 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "使用 Windows 市集提交 API 中的這個方法，更新現有的附加元件提交。"
 title: "使用 Windows 市集提交 API 更新附加元件提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
+ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
+ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 ---
 
 # 使用 Windows 市集提交 API 更新附加元件提交
 
 
-
-
 使用 Windows 市集提交 API 中的這個方法，更新現有的附加元件 (也稱為應用程式內產品或 IAP) 提交。 使用這個方法成功更新提交之後，您必須針對擷取和發佈[認可提交](commit-an-add-on-submission.md)。
 
-如需這個方法如何在使用 Windows 市集提交 API 建立附加元件提交的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
+如需有關如何在使用「Windows 市集提交 API」來建立附加元件提交的程序中套用此方法的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
+
+>
+            **重要**
+            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將會忽略此方法之要求主體中的「定價」資源，而您將暫時無法使用此方法來變更附加元件提交的定價和銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-add-on-submissions.md#pricing-object)。
 
 ## 先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* 
+            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>
+            **注意**
+            &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## 要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -43,7 +48,7 @@ ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer**&lt;*token*&gt;。 |
 
 <span/>
 
@@ -56,20 +61,20 @@ ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
 
 <span/>
 
-### 要求本文
+### 要求主體
 
-要求本文包含下列參數。
+要求主體包含下列參數。
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-iap-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-iap-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
+| contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
 | lifetime           | 字串  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 物件  | 此物件包含附加元件的清單資訊。 如需詳細資訊，請參閱[清單資源](manage-add-on-submissions.md#listing-object)。  |
 | pricing           | 物件  | 此物件包含附加元件的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-add-on-submissions.md#pricing-object)。  |
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
-| tag           | 字串  |  附加元件的[標記](../publish/enter-iap-properties.md#tag)。   |
+| tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為「標記」)。   |
 | visibility  | 字串  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
@@ -133,7 +138,7 @@ Content-Type: application/json
 
 ## 回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含更新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
+下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含更新提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
 
 ```json
 {
@@ -231,6 +236,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

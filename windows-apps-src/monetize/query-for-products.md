@@ -4,8 +4,8 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。"
 title: "查詢產品"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: d614919debd979a475e93909199851390d242deb
 
 ---
 
@@ -23,10 +23,10 @@ ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
 
 若要使用這個方法，您將需要：
 
--   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
--   藉由從應用程式中的用戶端程式碼來呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所產生的 Windows 市集識別碼索引鍵。
+* 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
+* 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。
 
-如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
 
 ## 要求
 
@@ -69,8 +69,8 @@ UserIdentity 物件包含下列參數。
 | 參數            | 類型   | 描述                                                                                                                                                                                                                  | 必要 |
 |----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。                                                                                                                                                                                            | 是      |
-| identityValue        | 字串 | Windows 市集識別碼索引鍵的字串值。                                                                                                                                                                                    | 是      |
-| localTicketReference | 字串 | 已傳回產品的要求識別碼。 回應主體中的已傳回項目將會有相符的 *localTicketReference*。 我們建議您使用與 Windows 市集識別碼索引鍵中 *userId* 宣告相同的值。 | 是      |
+| identityValue        | 字串 | [從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。                                                                                                                                                                                     | 是      |
+| localTicketReference | 字串 | 所傳回產品的要求識別碼。 回應主體中的已傳回項目將會有相符的 *localTicketReference*。 我們建議您使用與 Windows 市集識別碼金鑰中 *userId* 宣告相同的值。 | 是      |
 
 <span/> 
 
@@ -162,7 +162,7 @@ IdentityContractV6 物件包含下列參數。
 | 參數     | 類型   | 描述                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
-| identityValue | 字串 | 來自特定 Windows 市集識別碼索引鍵之 *publisherUserId* 的字串值。 | 是      |
+| identityValue | 字串 | 來自特定 Windows 市集識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |
 
 <span/> 
 
@@ -213,10 +213,10 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)
 * [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
-* [更新 Windows 市集識別碼索引鍵](renew-a-windows-store-id-key.md)
+* [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ Description: "您可以在 Windows 開發人員中心儀表板中，檢視 app �
 title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
+ms.sourcegitcommit: fa6e5945855defc99e9f5636543ec072eb777a5a
+ms.openlocfilehash: c628b1fb29601ff1d4ff3629da45409586274f6b
 
 ---
 
@@ -18,9 +18,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ## 您所有 App 的分析
 
-您的儀表板概觀頁面也包含可以用來蒐集關於您所有 app 詳細資料的縮合檢視。 概觀頁面上所顯示的統計資料會根據您的 app 而有所不同。
-
-當您[下載分析報告](download-analytic-reports.md)時，您也可以選擇下載有關您所有 app 的報告。 請注意，您必須存取您其中一個 app 其 [分析]**** 小節的 [下載報告]**** 頁面，但並不限於只能下載該特定 app 的資料。
+若要檢視您下載的多數 app 的關鍵分析，請選取頂端瀏覽功能表中的 [分析] >  [概觀]。 根據預設，[分析概觀] 頁面會顯示生命週期內下載數最多的五個 app 的資訊。 若要選擇顯示不同的應用程式，請選取 [變更篩選]。
 
 ## 每個 app 的可用報告
 
@@ -35,7 +33,8 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 -   [附加元件下載數報告](add-on-acquisitions-report.md)
 -   [廣告流量分配報告](ad-mediation-report.md)
 -   [廣告績效報告](advertising-performance-report.md)
--   [App 安裝廣告報告](app-install-ads-reports.md)
+-   [聯盟績效報告](affiliates-performance-report.md)
+-   [應用程式安裝廣告報告](app-install-ads-reports.md)
 -   [管道和轉換的報告](channels-and-conversions-report.md)
 
 > [!NOTE]
@@ -43,7 +42,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ## 頁面與區段篩選
 
-每個報告都會包含您可用來深入探索資料的篩選。 您在接近頁面頂端的地方會看到 [套用篩選]****。 您可以使用這類篩選來限制或擴展所有圖表的範圍以及頁面上的資訊。
+每個報告都會包含您可用來深入探索資料的篩選。 您在接近頁面頂端的地方會看到 [套用篩選]。 您可以使用這類篩選來限制或擴展所有圖表的範圍以及頁面上的資訊。
 
 在每個特定圖表內，您也可能會看見個別的 [區段篩選]。 這些可以限制資料，僅顯示符合該特定圖表的資料。
 
@@ -73,13 +72,13 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ### 開發人員中心 App
 
-安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows 10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。 
+安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。
 
 ## 相關主題
 - [發佈 Windows 應用程式](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

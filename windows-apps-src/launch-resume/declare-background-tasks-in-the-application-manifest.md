@@ -1,18 +1,18 @@
 ---
 author: TylerMSFT
-title: "在 app 資訊清單中宣告背景工作"
+title: "在應用程式資訊清單中宣告背景工作"
 description: "在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 ---
 
 # 在應用程式資訊清單中宣告背景工作
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -20,14 +20,14 @@ ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 -   [**BackgroundTasks 結構描述**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-透過在應用程式資訊清單中將背景工作宣告為擴充功能的方式，啟用背景工作的使用。
+在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。
 
 > [!Important]
->  本文是針對在個別處理程序中執行的背景工作。 單一處理程序背景工作不會在資訊清單中進行宣告。
+>  本文是針對跨處理序背景工作所撰寫。 同處理序背景工作不會在資訊清單中進行宣告。
 
-您必須在應用程式資訊清單中宣告在個別處理程序中執行的背景工作，否則您的 App 將無法登錄它們 (將會擲回例外狀況)。 此外，必須在應用程式資訊清單中宣告背景工作，才能通過認證。
+跨處理序背景工作必須在應用程式資訊清單中進行宣告，否則您的 App 將無法註冊背景工作 (將會擲回例外狀況)。 此外，跨處理序背景工作必須在應用程式資訊清單中進行宣告才能通過認證。
 
-這個主題假設您已建立了一或多個背景工作類別，而且您的 app 登錄要執行的每一項背景工作以回應至少一個觸發程序。
+這個主題假設您已建立了一或多個背景工作類別，而且您的 App 註冊要執行的每一項背景工作以回應至少一個觸發程序。
 
 ## 手動新增延伸
 
@@ -149,7 +149,7 @@ ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 
 ## 宣告要在不同處理程序中執行的背景工作
 
-Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
+Windows10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
 
 ### 在前景應用程式中執行
 
@@ -212,6 +212,6 @@ Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

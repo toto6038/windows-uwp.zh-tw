@@ -4,17 +4,14 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
 title: "取得錯誤報告資料"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 89b1c9b44aaabb49f78953877ae11d2d7a0a2a2f
 
 ---
 
 # 取得錯誤報告資料
 
-
-
-
-在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。 這個方法會傳回 JSON 格式的資料。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[健康情況報告](../publish/health-report.md)也有提供這項資訊。
 
 ## 先決條件
 
@@ -195,9 +192,9 @@ ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -322,14 +319,15 @@ Authorization: Bearer <your access token>
 
 ## 相關主題
 
+* [健康情況報告](../publish/health-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得應用程式下載數](get-app-acquisitions.md)
+* [取得 App 下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得 App 評分](get-app-ratings.md)
-* [取得 app 評論](get-app-reviews.md)
+* [取得 App 評論](get-app-reviews.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

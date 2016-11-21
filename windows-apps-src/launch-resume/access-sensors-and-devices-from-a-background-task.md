@@ -4,23 +4,23 @@ title: "從背景工作存取感應器和裝置"
 description: "DeviceUseTrigger 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 translationtype: Human Translation
-ms.sourcegitcommit: 42697a185eb941d44714a682931b3e418a123ad1
-ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 
 ---
 
 # 從背景工作存取感應器和裝置
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP App 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 App 已暫停也一樣。 例如，根據您的 App 在何處執行而定，它能夠使用背景工作，將資料與裝置或監視感應器同步。 為了協助延長電池使用時間並確保可適當取得使用者同意，[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的用法受限於本主題中所述的原則。
 
-若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需有關手機的範例，請參閱[背景感應器範例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
 > [!Important]
-> **DeviceUseTrigger** 無法與單一處理程序背景工作搭配使用。 本主題中的資訊僅適用於在個別處理程序中執行的背景工作。
+> **DeviceUseTrigger** 無法與同處理序背景工作搭配使用。 本主題中的資訊僅適用於在跨處理序中執行的背景工作。
 
 ## 裝置背景工作概觀
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 
 ### 限制：重要裝置操作
 
-部分重要裝置操作 (例如，長時間執行韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱 [Windows 市集裝置應用程式的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱 [Windows 市集裝置應用程式的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## DeviceUseTrigger 背景工作中支援的通訊協定/API
 
@@ -81,7 +81,7 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 **重要**  
 使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 時，請考量下列重點：
 
--   Windows 8.1 和 Windows Phone 8.1 中首次引進以程式設計方式觸發使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作的功能。
+-   Windows8.1 和 Windows Phone 8.1 中首次引進以程式設計方式觸發使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作的功能。
 
 -   更新電腦上的周邊裝置時，Windows 會強制執行某些原則，以確保能取得使用者同意。
 
@@ -178,6 +178,6 @@ Windows 會在工作於背景中執行的同時，強制執行下列執行階段
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

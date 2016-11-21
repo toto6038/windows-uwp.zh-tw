@@ -6,15 +6,15 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "自訂視訊效果"
 translationtype: Human Translation
-ms.sourcegitcommit: 2d10a9a3732612cff8da81ee1921eaed0e838099
-ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
+ms.sourcegitcommit: 26ed53934ab9237731deda544b8830a26e5ad914
+ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 ---
 
 # 自訂視訊效果
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP App 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文明如何建立能實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面以為視訊串流建立自訂效果的 Windows 執行階段元件。 自訂效果可以搭配數個不同的 Windows 執行階段 API 使用，其中包括能提供裝置相機存取的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)，以及能允許您由媒體剪輯建立複雜組合的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
@@ -26,12 +26,12 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 **為您的視訊效果新增 Windows 執行階段元件**
 
-1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 [檔案]**** 功能表，然後選取 [新增] -&gt; [新專案...]****。
-2.  選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型。
+1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 [檔案] 功能表，然後選取 [新增] -&gt; [新專案...]。
+2.  選取 [Windows 執行階段元件 (通用 Windows)] 專案類型。
 3.  針對此範例，請將專案命名為「VideoEffectComponent」。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 [確定]****。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 [方案總管]**** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 [重新命名]****。
-6.  將檔案重新命名為「ExampleVideoEffect.cs」。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]****。
+4.  按一下 [確定]。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 [方案總管] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 [重新命名]。
+6.  將檔案重新命名為「ExampleVideoEffect.cs」。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]。
 7.  開啟「ExampleVideoEffect.cs」並更新類別定義以實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -56,7 +56,7 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 ### DiscardQueuedFrames 方法
 
-在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置已儲存的先前畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
+在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -65,7 +65,10 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 ### IsReadOnly 屬性
 
-[**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面 (例如僅針對視訊畫面執行分析的效果)，您應該將此屬性設定為 true，這將能使系統有效率地為您將畫面輸入複製到畫面輸出。
+
+            [
+              **IsReadOnly**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性能讓系統知道您的效果是否會寫入至效果的輸出。 如果您的 App 並不會修改視訊畫面 (例如僅針對視訊畫面執行分析的效果)，您應該將此屬性設定為 true，這將能使系統有效率地為您將畫面輸入複製到畫面輸出。
 
 > [!TIP]
 > 當 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 屬性設定為 true 時，系統會在呼叫 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前將輸入畫面複製到輸出畫面。 將 **IsReadOnly** 屬性設定為 true 並不會限制您在 **ProcessFrame** 中寫入至效果的輸出畫面。
@@ -107,26 +110,35 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 ### TimeIndependent 屬性
 
-[**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果是否需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
+
+            [
+              **TimeIndependent**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
 ### SetProperties 方法
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
+
+            [
+              **SetProperties**
+            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
 
 
-此簡單範例會根據指定值使每個視訊畫面格中的像素變暗。 屬性已宣告，並使用 TryGetValue 來取得由呼叫 App 所設定的值。 如果沒有設定任何值，將會使用 0.5 的預設值。
+此簡單範例會根據指定值使每個視訊畫面格中的像素變暗。 將會宣告屬性，並使用 TryGetValue 來取得由呼叫 App 所設定的值。 如果沒有設定任何值，將會使用 0.5 的預設值。
 
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
 
 ### ProcessFrame 方法
 
-[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法可以讓您的效果修改視訊的影像資料。 此方法會於每個畫面格呼叫一次，並會被傳遞 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 物件。 此物件包含輸入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件 (該物件包含要處理的傳入畫面格)，以及輸出 **VideoFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘視訊管線的影像資料)。 每個 **VideoFrame** 物件皆擁有 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性及 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，並由您從 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性回傳的值來決定會使用上述哪一個參數。
+
+            [
+              **ProcessFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法可以讓您的效果修改視訊的影像資料。 此方法會於每個畫面格呼叫一次，並會被傳遞 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 物件。 此物件包含輸入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 物件 (該物件包含要處理的傳入畫面格)，以及輸出 **VideoFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘視訊管線的影像資料)。 每個 **VideoFrame** 物件皆擁有 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 屬性及 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 屬性，並由您從 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性回傳的值來決定會使用上述哪一個參數。
 
 此範例顯示使用軟體處理之 **ProcessFrame** 方法的簡單實作。 如需使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件的詳細資訊，請參閱[影像處理](imaging.md)。 本文稍後將提供使用硬體處理之 **ProcessFrame** 實作的範例。
 
@@ -142,13 +154,13 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性]****。
-> 2.  選取 [建置]**** 索引標籤。
-> 3.  選取 [允許 unsafe 程式碼]**** 核取方塊。
+> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性]。
+> 2.  選取 [建置] 索引標籤。
+> 3.  選取 [允許 unsafe 程式碼] 核取方塊。
 
  
 
-現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 物件。 請注意，輸出畫面格已針對寫入開啟，並且是讀取的輸入。 接下來，將會透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
+現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
 現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 緩衝區的配置是透過呼叫 [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 取得，這將能提供緩衝區寬度、Stride 及初始位移的資訊。 「每一像素位元數」是由先前透過 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 方法所設定的編碼屬性所決定。 緩衝區格式資訊是用來找出每個像素之緩衝區的索引。 來源緩衝區的像素值會被複製到目標緩衝區中，其色彩值會被乘以針對此效果定義的 FadeValue 屬性，來以指定的量將它們變暗。
 
@@ -164,11 +176,11 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 **將 Win2D NuGet 套件新增到您的效果專案**
 
-1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [VideoEffectComponent]**** 專案，然後選取 [管理 NuGet 套件]****。
-2.  在視窗頂端，選取 [瀏覽]**** 索引標籤。
+1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [管理 NuGet 套件]。
+2.  在視窗頂端，選取 [瀏覽] 索引標籤。
 3.  在搜尋方塊中輸入 **Win2D**。
-4.  選取 [Win2D.uwp]****，然後選取右窗格中的 [安裝]****。
-5.  [檢閱變更]**** 對話方塊會顯示要安裝的套件。 按一下 [確定]****。
+4.  選取 [Win2D.uwp]，然後選取右窗格中的 [安裝]。
+5.  [檢閱變更] 對話方塊會顯示要安裝的套件。 按一下 [確定]。
 6.  接受套件授權。
 
 除了包含在基本專案設定中的命名空間之外，您將需要包含下列由 Win2D 提供的命名空間。
@@ -191,7 +203,10 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和先前的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
+
+            [
+              **SetProperties**
+            ](https://msdn.microsoft.com/library/windows/apps/br240986) 實作和先前的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -200,7 +215,8 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 最後一個步驟為實作實際處理影像資料的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法。
 
-透過使用 Win2D API，將會從輸入畫面格的 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 參數建立 **CanvasBitmap**。 **CanvasRenderTarget** 會從輸出畫面格的 **Direct3DSurface** 建立，而 **CanvasDrawingSession** 將會從此轉譯目標建立。 新的 Win2D **GaussianBlurEffect** 將會使用效果透過 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 公開的 **BlurAmount** 參數進行初始化。 最後，將會呼叫 **CanvasDrawingSession.DrawImage** 方法來使用模糊效果將輸入點陣圖繪製到轉譯目標上。
+透過使用 Win2D API，將會從輸入畫面格的 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 參數建立 **CanvasBitmap**。 
+            **CanvasRenderTarget** 會從輸出畫面格的 **Direct3DSurface** 建立，而 **CanvasDrawingSession** 將會從此轉譯目標建立。 新的 Win2D **GaussianBlurEffect** 將會使用效果透過 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 公開的 **BlurAmount** 參數進行初始化。 最後，將會呼叫 **CanvasDrawingSession.DrawImage** 方法來使用模糊效果將輸入點陣圖繪製到轉譯目標上。
 
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
@@ -210,15 +226,16 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 如果要從您的 App 使用您的視訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中您的專案下方，以滑鼠右鍵按一下 [參考]****，然後選取 [加入參考]****。
-2.  展開 [專案]**** 索引標籤，選取 [方案]****，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
-3.  按一下 [確定]****。
+1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 [參考]，然後選取 [加入參考]。
+2.  展開 [專案] 索引標籤，選取 [方案]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
+3.  按一下 [確定]。
 
 ### 將您的自訂效果新增到相機視訊串流
 
 您可以遵循[簡單的相機預覽存取](simple-camera-preview-access.md)文章中的步驟，來從相機設定簡單的預覽串流。 遵循那些步驟將能提供您初始化的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件，該物件可以用來存取相機的視訊串流。
 
-如果要將您的自訂視訊效果新增到相機串流，請先建立新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 物件，並傳遞您效果的命名空間和類別名稱。 接著，請呼叫 **MediaCapture** 物件的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以將您的效果新增到指定的串流。 此範例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值來指定要將該效果新增到預覽串流。 如果您的 App 支援視訊擷取，您也應該使用 **MediaStreamType.VideoRecord** 來將該效果新增到擷取串流。 **AddVideoEffect** 會傳回代表您自訂效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 物件。 您可以使用 SetProperties 方法來為您的效果設定組態。
+如果要將您的自訂視訊效果新增到相機串流，請先建立新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 物件，並傳遞您效果的命名空間和類別名稱。 接著，請呼叫 **MediaCapture** 物件的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以將您的效果新增到指定的串流。 此範例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值來指定要將該效果新增到預覽串流。 如果您的 App 支援視訊擷取，您也應該使用 **MediaStreamType.VideoRecord** 來將該效果新增到擷取串流。 
+            **AddVideoEffect** 會傳回代表您自訂效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 物件。 您可以使用 SetProperties 方法來為您的效果設定組態。
 
 新增效果之後，將會呼叫 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 以開始預覽串流。
 
@@ -247,6 +264,6 @@ ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件提交。"
 title: "使用 Windows 市集提交 API 管理附加元件提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
+ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
+ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 ---
 
@@ -15,7 +15,13 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件 (亦稱為 App 內產品或 IAP) 提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
+>
+            **注意**
+            &nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的「Windows 市集提交 API」方法來建立附加元件。
+
+>
+            **重要**
+            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -33,7 +39,8 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 
 1. 如果您尚未執行此動作，請先完成[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先決條件，包括將 Azure AD 應用程式關聯至您的 Windows 開發人員中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
 
-2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+2. 
+            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 3. 在 Windows 市集提交 API 中執行下列方法。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。 如需詳細資訊，請參閱[建立附加元件提交](create-an-add-on-submission.md)。
 
@@ -51,7 +58,9 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
+  >
+            **注意**
+            &nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新圖示，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -77,7 +86,7 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
   GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
   ```
 
-  若要確認提交狀態，請檢閱回應主體中的「狀態」**值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+  若要確認提交狀態，請檢閱回應主體中的「狀態」值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
@@ -168,14 +177,14 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | 字串  | 提交的識別碼。  |
-| contentType           | 字串  |  附加元件中提供的[內容類型](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-iap-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
+| contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
 | lifetime           | 字串  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 物件  |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[清單資源](#listing-object)物件，其中包含附加元件的清單資訊。  |
 | pricing           | 物件  | 此物件包含附加元件的定價資訊。 如需詳細資訊，請參閱下方的[定價資源](#pricing-object)一節。  |
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
-| tag           | 字串  |  附加元件的[標記](../publish/enter-iap-properties.md#tag)。   |
+| tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為「標記」)。   |
 | visibility  | 字串  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  包含其他有關提交狀態的詳細資料 (包括任何錯誤的資訊)。 如需詳細資訊，請參閱下方的[狀態詳細資料](#status-details-object)一節。 |
@@ -206,19 +215,36 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 <span id="pricing-object" />
 ### 定價
 
-此資源包含附加元件的定價資訊。 此資源具有下列值。
+此資源包含附加元件的定價資訊。
+
+>
+            **重要**
+            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 您將會發現下列行為變更：
+
+   > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，「定價」資源將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的定價資料。
+   > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略「定價」資源中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的定價資料。
+
+> 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式取得及更新附加元件提交的定價資訊。
+
+此資源具有下列值。
 
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    物件     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
 |  sales               |   陣列      |  包含附加元件銷售資訊的物件陣列。 如需詳細資訊，請參閱下方的[銷售](#sale-object)一節。    |     
-|  priceId               |   字串      |  指定附加元件[基本價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[價格區間](#price-tier)。    |
+|  priceId               |   字串      |  指定附加元件[基本價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[價格區間](#price-tiers)。    |
 
 
 <span id="sale-object" />
 ### 銷售
 
-此資源包含附加元件的銷售資訊。 此資源具有下列值。
+此資源包含附加元件的銷售資訊。
+
+>
+            **重要**
+            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「銷售」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
+
+此資源具有下列值。
 
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -315,6 +341,6 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

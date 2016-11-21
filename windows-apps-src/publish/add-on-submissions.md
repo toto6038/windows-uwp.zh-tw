@@ -4,8 +4,8 @@ Description: "您要透過 Windows 開發人員中心儀表板發佈附加元件
 title: "附加元件提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
-ms.sourcegitcommit: d67931b4ab23d2b6aef945e839d193e140240cf9
-ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
+ms.sourcegitcommit: b0d877e46ba6958bfc61dd87687c30e91b6cd937
+ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 ---
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
 
 附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您就可以建立提交作業，讓您的附加元件可透過 Windows 市集購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到市集之後，您可以對附加元件[進行更新](#updating-an-add-on-after-submission)，不需要重新提交 App。
 
-> **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上建立附加元件提交。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
+> **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
 
 ## 提交附加元件的檢查清單
 
@@ -73,7 +73,8 @@ ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
 
 您可以隨時對已發佈的附加元件進行變更。 附加元件變更的提交與發佈獨立於您的 App 之外，因此您通常不需要更新整個 App，就可以對附加元件進行變更，例如更新 App 的價格或描述。
 
-> **重要** 如果您的 App 可供 Windows 8.x 的客戶使用，您必須建立並發佈新的 App 提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows 8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows 8.x 的客戶將無法看見新的附加元件。
+> 
+  **重要** 如果您的 App 可供 Windows8.x 的客戶使用，您必須建立並發佈新的 App 提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
 
 若要提交更新，請移至儀表板的附加元件頁面，然後按一下 [更新]。 這會使用您前一個提交作業的資訊做為起點，建立一個新的附加元件提交作業。 視需要變更資訊，然後按一下 [提交至市集]。
 
@@ -81,6 +82,6 @@ ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

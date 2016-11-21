@@ -4,14 +4,14 @@ title: "啟動、繼續和背景工作"
 description: "本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 5d0fffc46b1fc4ca2fba1422f2094bd411a65058
-ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
+ms.sourcegitcommit: 7ed2596c33338c3954b6cfe1e779284283ae7769
+ms.openlocfilehash: 3b1be5b6951b72d5699e7b31e95702b827b741b5
 
 ---
 
 # 啟動、繼續和背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節說明下列內容︰
 
@@ -59,11 +59,11 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [使用背景工作支援 app](support-your-app-with-background-tasks.md)                             | 本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。                                                       |
 | [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 app 已暫停也一樣。 |
 | [背景工作的指導方針](guidelines-for-background-tasks.md)                                           | 確保您的 app 符合執行背景工作的需求。                                                                                                                          |
-| [建立並註冊會在個別處理序中執行的背景工作](create-and-register-a-background-task.md)                               | 建立背景工作類別並註冊，即使您的 app 不在前景也能以個別的處理序執行。                                                                                                 |
-| [建立並註冊會在單一處理序中執行的背景工作](create-and-register-a-singleprocess-background-task.md)                               | 建立的背景工作類別可以和前景 app 在相同的處理序中執行。                                                                                                 |
-| [將多處理序的背景工作轉換成單一處理序的背景工作](convert-multiple-process-background-task.md)                               | 了解當您的 app 在背景時，如何將設計成在個別處理序中執行的背景工作，轉換成可以和前景 app 在相同處理序中執行的單一處理序背景工作。
-| [對背景工作進行偵錯](debug-a-background-task.md)                                                           | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。                                                                        |
-| [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在 app 資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。                                                                                                       |
+| [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)                               | 建立及註冊在與 App 不同處理序中執行的背景工作，以便在 App 不在前景時也能執行。                                                                                                 |
+| [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)                               | 建立及註冊與前景 App 在相同處理序中執行的背景工作。                                                                                                 |
+| [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)                               | 了解如何將跨處理序背景工作轉換成在與前景 App 相同處理序中執行的同處理序背景工作。
+| [偵錯背景工作](debug-a-background-task.md)                                                           | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。                                                                        |
+| [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。                                                                                                       |
 | [處理已取消的背景工作](handle-a-cancelled-background-task.md)                                     | 了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向 app 回報取消。                                     |
 | [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)           | 了解 app 如何辨識背景工作的進度與完成度。                                                                                                                     |
 | [登錄背景工作](register-a-background-task.md)                                                     | 了解如何建立可重複用來安全登錄大多數背景工作的函式。                                                                                                  |
@@ -72,15 +72,15 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)                 | 了解如何設定條件以控制背景工作的執行時間。                                                                                                                  |
 | [在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用背景傳輸 API 在背景中複製檔案。                                                                                                                              |
 | [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)                       | 使用背景工作來更新含有最新內容的 app 動態磚。                                                                                                                      |
-| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                       | 了解如何在裝置插電時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。                             |
+| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                       | 了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。                             |
 
 ## 應用程式服務
 
 | 主題                                                                                                            | 說明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)                                | 了解如何撰寫可為其他 UWP app 提供服務的 UWP app，以及如何取用這些服務。                                                                                  |
-| [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上執行的應用程式服務交換訊息。 |
-| [轉換應用程式服務，以便與其主控 app 在相同處理序中執行](convert-app-service-single-process.md)                                | 了解如何在個別背景處理序中執行的應用程式服務程式碼，轉換成和應用程式服務主控 app 在相同處理序內執行的程式碼。                                                                                  |
+| [建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)                                | 了解如何撰寫可為其他 UWP app 提供服務的 UWP app，以及如何取用這些服務。                                                                                  |
+| [與遠端 App 服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上執行的應用程式服務交換訊息。 |
+| [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md)                                | 了解如何將在不同背景處理序中執行的應用程式服務程式碼，轉換成與主控應用程式服務的 App 在相同處理序內執行的程式碼。                                                                                  |
 
 ## 新增啟動顯示畫面
 
@@ -111,6 +111,6 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

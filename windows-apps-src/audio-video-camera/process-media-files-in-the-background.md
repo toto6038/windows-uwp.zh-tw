@@ -4,19 +4,22 @@ ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "本文說明如何使用 MediaProcessingTrigger 和背景工作，在背景處理媒體檔案。"
 title: "在背景處理媒體檔案"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
+ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
+ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 ---
 
 # 在背景處理媒體檔案
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。
 
-本文中所描述的 App 範例可讓使用者選取要轉碼的輸入媒體檔案，以及指定轉碼結果的輸出檔案。 接著，就會啟動背景工作來執行轉碼作業。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 支援除了轉碼以外許多不同的媒體處理案例，包括轉譯媒體組合到磁碟，以及處理完成後上傳已處理的媒體檔案。
+本文中所描述的 App 範例可讓使用者選取要轉碼的輸入媒體檔案，以及指定轉碼結果的輸出檔案。 接著，就會啟動背景工作來執行轉碼作業。 
+            [
+              **MediaProcessingTrigger**
+            ](https://msdn.microsoft.com/library/windows/apps/dn806005) 支援除了轉碼以外許多不同的媒體處理案例，包括轉譯媒體組合到磁碟，以及處理完成後上傳已處理的媒體檔案。
 
 如需此範例中各種通用 Windows 應用程式功能的詳細資訊，請參閱：
 
@@ -45,10 +48,20 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 將下列成員變數新增到您的類別：
 
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)，將用來以背景工作的進度更新前景 App。
--   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，非同步執行媒體轉碼時，讓系統不要關閉您的背景工作。
--   **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
--   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 物件，用來轉碼媒體檔案。
+-   
+            [
+              **IBackgroundTaskInstance**
+            ](https://msdn.microsoft.com/library/windows/apps/br224797)，將用來以背景工作的進度更新前景 App。
+-   
+            [
+              **BackgroundTaskDeferral**
+            ](https://msdn.microsoft.com/library/windows/apps/hh700499)，非同步執行媒體轉碼時，讓系統不要關閉您的背景工作。
+-   
+            **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
+-   
+            [
+              **MediaTranscoder**
+            ](https://msdn.microsoft.com/library/windows/apps/br207080) 物件，用來轉碼媒體檔案。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
@@ -66,7 +79,8 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 呼叫 [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936)，傳入輸入檔案、輸出檔案和編碼設定檔。 從這個呼叫傳回的 [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) 物件可讓您知道是否可以執行轉碼。 如果 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) 屬性為 true，請呼叫 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 來執行轉碼作業。
 
-**AsTask** 方法可讓您追蹤非同步作業的進度或取消作業。 建立新的 **Progress** 物件，指定您想要的進度單位，以及要呼叫來通知您目前工作進度的方法名稱。 將 **Progress** 物件連同可讓您取消工作的取消權杖傳入 **AsTask** 方法。
+
+            **AsTask** 方法可讓您追蹤非同步作業的進度或取消作業。 建立新的 **Progress** 物件，指定您想要的進度單位，以及要呼叫來通知您目前工作進度的方法名稱。 將 **Progress** 物件連同可讓您取消工作的取消權杖傳入 **AsTask** 方法。
 
 [!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
@@ -74,16 +88,21 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-**SendToastNotification** 協助程式方法會取得只有文字內容的快顯通知的範本 XML 文件，建立新的快顯通知。 此時會設定快顯通知 XML 的文字項目，然後從 XML 文件建立新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 物件。 最後，呼叫 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 對使用者顯示快顯通知。
+
+            **SendToastNotification** 協助程式方法會取得只有文字內容的快顯通知的範本 XML 文件，建立新的快顯通知。 此時會設定快顯通知 XML 的文字項目，然後從 XML 文件建立新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 物件。 最後，呼叫 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 對使用者顯示快顯通知。
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
-## 登錄和啟動背景工作
+在 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled) 事件 (這會在系統取消您背景工作時呼叫) 的處理常式中，您可以針對遙測用途記錄錯誤。
+
+[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
+
+## 註冊和啟動背景工作
 
 您必須先更新您前景 App 的 Package.appmanifest 檔案讓系統知道您的 App 使用背景工作，您才能從前景 App 啟動背景工作。
 
-1.  在 [方案總管]**** 中按兩下 Package.appmanifest 檔案圖示，開啟資訊清單編輯器。
-2.  選取 [宣告]**** 索引標籤。
+1.  在 [方案總管] 中按兩下 Package.appmanifest 檔案圖示，開啟資訊清單編輯器。
+2.  選取 [宣告] 索引標籤。
 3.  從 [**可用宣告**]，選取 [**背景工作**]，然後按一下 [**新增**]。
 4.  在 [**支援的宣告**] 下，確認已選取 [**背景工作**] 項目。 在 [**屬性**] 下，選取 [**媒體處理**] 的核取方塊。
 5.  在 [**進入點**] 文字方塊中，為您的背景測試指定命名空間與類別名稱，以句點分隔。 對於這個範例，則是：
@@ -93,7 +112,7 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 接著，您必須將背景工作參考新增到前景 app。
 1.  在 \[方案總管\] 中的前景 App 專案下，以滑鼠右鍵按一下 \[參考\] 資料夾，然後選取 \[加入參考...\]。
 2.  展開 \[專案\] 節點，然後選取 \[方案\]。
-3.  核取您背景工作專案旁邊的方塊，並按一下 [確定]****。
+3.  核取您背景工作專案旁邊的方塊，並按一下 [確定]。
 
 此範例中的其餘程式碼，應該新增到您的前景 App。 首先，您必須將下列命名空間新增到專案。
 
@@ -103,7 +122,8 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 [!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-**PickFilesToTranscode** 協助程式方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，開啟轉碼的輸入檔案與輸出檔案。 使用者可能會選取您的 app 無法存取的位置中的檔案。 若要確定您的背景工作可以開啟檔案，請將這些檔案新增到您的 App 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)。
+
+            **PickFilesToTranscode** 協助程式方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，開啟轉碼的輸入檔案與輸出檔案。 使用者可能會選取您的 app 無法存取的位置中的檔案。 若要確定您的背景工作可以開啟檔案，請將這些檔案新增到您的 App 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)。
 
 最後，在您 app 的 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中設定輸入檔案與輸出檔案名稱的項目。 背景工作會擷取這個位置中的檔案名稱。
 
@@ -140,6 +160,6 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "在 Windows 市集提交 API 中使用這個方法，取得現有 App 提交的資料。"
 title: "使用 Windows 市集提交 API 取得 App 提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c
 
 ---
 
@@ -14,21 +14,28 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 
 
-在 Windows 市集提交 API 中使用這個方法，取得現有 App 提交的資料。 如需使用 Windows 市集提交 API 建立 App 提交的程序的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+在 Windows 市集提交 API 中使用這個方法，取得現有 App 提交的資料。 如需有關使用「Windows 市集提交 API」來建立 App 提交的程序詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+
+>
+            **重要**
+            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中 App 提交的定價資料模型。 實作這項變更之後，此方法之回應資料中的「定價」資源將會空白，而您將暫時無法使用此方法來取得 App 提交的試用期間、定價及銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取 App 提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-app-submissions.md#pricing-object)。
 
 ## 先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* 
+            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立 App 提交](create-an-app-submission.md)方法進行。
 
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>
+            **注意**
+            &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## 要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -41,7 +48,7 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer**&lt;*token*&gt;。 |
 
 <span/>
 
@@ -49,14 +56,14 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 您想要更新提交之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 您想要取得其提交之 App 的「市集識別碼」。 如需有關「市集識別碼」的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字串 | 必要。 要取得之提交的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立 App 提交](create-an-app-submission.md)要求的回應資料中。  |
 
 <span/>
 
-### 要求本文
+### 要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### 要求範例
 
@@ -69,7 +76,7 @@ Authorization: Bearer <your access token>
 
 ## 回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含指定提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
+下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含指定提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
 
 ```json
 {
@@ -148,6 +155,16 @@ Authorization: Bearer <your access token>
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -184,6 +201,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

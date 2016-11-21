@@ -4,8 +4,8 @@ ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取套件正式發行前小眾測試版資訊。"
 title: "使用 Windows 市集提交 API 取得 App 的套件正式發行前小眾測試版"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
+ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
+ms.openlocfilehash: eddac4b37f6f00bad33f543f0e55415a5dcea887
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
 
 ## 要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -45,17 +45,17 @@ ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
 
 ### 要求參數
 
-| 名稱        | 類型   | 描述  |  必要  |    
-|---------------|--------|------------------|----------------|
-| applicationId | 字串 | 必要。 您想要擷取套件正式發行前小眾測試版之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
-|  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的套件正式發行前小眾測試版數目)。 如果 App 擁有的套件正式發行前小眾測試版超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
+|  名稱  |  類型  |  描述  |  必要  |
+|------|------|------|------|
+|  applicationId  |  字串  |  您想要擷取其套件正式發行前小眾測試版之 App 的「市集識別碼」。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  top  |  整數  |  要在要求中傳回的項目數目 (也就是要傳回的套件正式發行前小眾測試版數目)。 如果您帳戶擁有的套件正式發行前小眾測試版數目超出您在查詢中指定的值，回應主體中就會包含一個相對 URI 路徑，您可以將此路徑附加到方法 URI 來要求下一頁資料。  |  否  |
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |
 
 <span/>
 
-### 要求本文
+### 要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### 要求範例
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 
 ## 回應
 
-下列範例說明針對含有總共 3 個套件正式發行前小眾測試版的 App 成功要求第一個套件正式發行前小眾測試版所傳回的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
+下列範例說明針對含有總共 3 個套件正式發行前小眾測試版的 App 成功要求第一個套件正式發行前小眾測試版所傳回的 JSON 回應主體。 如需回應主體中各個值的詳細資訊，請參閱下列各節。
 
 ```json
 {
@@ -101,11 +101,11 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 回應本文
+### 回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 2，但是 App 有 4 個套件正式發行前小眾測試版，回應本文會包含 ```applications/{applicationid}/listflights/?skip=2&top=2``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` 來要求接下來的 2 個套件正式發行前小眾測試版。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 2，但是 App 有 4 個套件正式發行前小眾測試版，回應主體會包含 ```applications/{applicationid}/listflights/?skip=2&top=2``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` 來要求接下來的 2 個套件正式發行前小眾測試版。 |
 | value      | 陣列  | 提供指定 App 之套件正式發行前小眾測試版相關資訊的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[正式發行前小眾測試版資源](get-app-data.md#flight-object)。                                                                                                                           |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是指定 App 的套件正式發行前小眾測試版總數目)。                                                                                                                                                                                                                             |
 
@@ -131,6 +131,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

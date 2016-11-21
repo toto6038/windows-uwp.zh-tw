@@ -5,8 +5,8 @@ title: "清單檢視和方格檢視"
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: aeb339e54a1363dbfe5ee5a764ad762a42a40ed9
+ms.sourcegitcommit: 8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f
+ms.openlocfilehash: 8a14fa69089f6d796a803c1c1ff9bb678af3c913
 
 ---
 # ListView 與 GridView
@@ -314,8 +314,8 @@ myGridView.IsItemClickEnabled = true;
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取單一項目。</li>
-Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取消選取單一項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
+無 | <ul><li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取單一項目。</li></ul>
+Ctrl | <ul><li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取消選取單一項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li></ul>
 
 當 SelectionMode 是 **Single** 時，您可以從 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) 屬性取得選取的資料項目。 您可以使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) 屬性來取得選取項目集合中的索引。 如果未選取任何項目，SelectedItem 即為 **null** 且 SelectedIndex 是 -1。 
  
@@ -327,8 +327,8 @@ Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來取
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
-Shift | <li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li>
+無 | <ul><li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li></ul>
+Shift | <ul><li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li></ul>
 
 ### 延伸選取
 
@@ -336,9 +336,9 @@ Shift | <li>使用者可以選取多個連續項目，方法是按一下或點�
 
 輔助按鍵 | 互動
 -------------|------------
-無 | <li>此行為與**單一**選取相同。</li>
-Ctrl | <li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li>
-Shift | <li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li>
+無 | <ul><li>此行為與**單一**選取相同。</li></ul>
+Ctrl | <ul><li>使用者可以使用空格鍵、按一下滑鼠或觸控點選來選取多個項目，以便在焦點項目上切換選取項目。</li><li>使用者可以使用方向鍵來移動各自獨立的選取焦點。</li></ul>
+Shift | <ul><li>使用者可以選取多個連續項目，方法是按一下或點選選取範圍中的第一個項目，然後按一下或點選選取範圍中的最後一個項目。</li><li>使用者可以使用方向鍵來建立連續的選取範圍，選取範圍的第一個項目是按下 Shift 鍵時所選取的項目。</li></ul>
 
 當 SelectionMode 是 **Multiple** 或 **Extended** 時，您可以從 [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx) 屬性取得選取的資料項目。 
 
@@ -522,6 +522,6 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

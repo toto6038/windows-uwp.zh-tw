@@ -4,20 +4,20 @@ ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。"
 title: "針對 C# app 搭配 SQLite 使用 Entity Framework 7"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b453a2a6c3ab0b9418122ae27bf6a3a1c56e5873
+ms.sourcegitcommit: a4680f50b8ef45e4e995d0b9997c0266478fe233
+ms.openlocfilehash: 07244b35b2ec20227bccc43638b56b9fda88956a
 
 ---
 
-# 針對 C# app 搭配 SQLite 使用 Entity Framework 7
+# 針對 C# app 搭配 SQLite 使用 Entity Framework Core 1
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。 本文說明如何在通用 Windows app 中使用 Entity Framework 7 搭配 SQLite 資料庫。
+Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。 本文說明如何在通用 Windows app 中使用 Entity Framework Core 1 搭配 SQLite 資料庫。
 
-Entity Framework 7 原本是專供 .NET 開發人員使用，可在通用 Windows 平台 (UWP) 上搭配 SQLite 來儲存和操作使用網域特定物件的關聯資料。 您可以從 .NET 應用程式將 EF 程式碼移轉到 UWP app，並預期它可以搭配連接字串的適當變更使用。
+Entity Framework Core 1 原本是專供 .NET 開發人員使用，可在通用 Windows 平台 (UWP) 上搭配 SQLite 來儲存和操作使用網域特定物件的關聯資料。 您可以從 .NET 應用程式將 EF 程式碼移轉到 UWP app，並預期它可以搭配連接字串的適當變更使用。
 
-目前 EF 僅支援 UWP 上的 SQLite。 在[開始使用通用 Windows 平台頁面](http://go.microsoft.com/fwlink/p/?LinkId=735013)上，有安裝 Entity Framework 7 和建立模型的詳細逐步解說。 其涵蓋下列主題：
+目前 EF 僅支援 UWP 上的 SQLite。 在[開始使用通用 Windows 平台頁面](http://go.microsoft.com/fwlink/p/?LinkId=735013)上，有安裝 Entity Framework Core 1 和建立模型的詳細逐步解說。 其涵蓋下列主題：
 
 -   先決條件
 -   建立新專案
@@ -29,6 +29,6 @@ Entity Framework 7 原本是專供 .NET 開發人員使用，可在通用 Window
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

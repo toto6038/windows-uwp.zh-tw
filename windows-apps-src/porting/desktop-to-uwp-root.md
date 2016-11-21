@@ -1,107 +1,73 @@
 ---
 author: awkoren
-Description: "準備您的 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms)，以便使用桌面轉換擴充功能轉換為通用 Windows 平台 (UWP) 應用程式。"
+Description: "開始使用傳統型轉 UWP 橋接器並將 Windows 傳統型應用程式 (例如 Win32、WPF 及 Windows Forms) 轉換為通用 Windows 平台 (UWP) App。"
 Search.Product: eADQiWindows 10XVcnh
-title: "將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) 應用程式"
+title: "使用傳統型橋接器將您的傳統型應用程式移轉通用 Windows 平台 (UWP)"
 translationtype: Human Translation
-ms.sourcegitcommit: ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2
-ms.openlocfilehash: 6cf6367ed0f6acea0f87ac36a050e874425423b1
+ms.sourcegitcommit: 933dcd48c03de1992bbfcf0d86951170264a309f
+ms.openlocfilehash: 170ed75d1cd865bfc8e4feb776fce4332cc67850
 
 ---
 
-# 將您的傳統型應用程式轉換為通用 Windows 平台 (UWP) 應用程式
+# 使用傳統型橋接器將您的傳統型應用程式移轉通用 Windows 平台 (UWP)
 
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
+開始使用傳統型轉 UWP 橋接器並將 Windows 傳統型應用程式轉換為通用 Windows 平台 (UWP) App。
 
-準備您的 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms)，以便使用桌面轉換擴充功能轉換為通用 Windows 平台 (UWP) 應用程式。
+傳統型橋接器是一組可讓您將 Windows 傳統型應用程式 (例如 Win32、Windows Forms 或 WPF) 或遊戲轉換為 UWP App 或遊戲的技術。 轉換之後，您的 Windows 傳統型應用程式就會以目標為 Windows10 Desktop 的 UWP 應用程式套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
-## 將應用程式轉換為 UWP 的好處
+將傳統型應用程式轉換為 UWP 套件的技術分為兩個部分。 第一個部分是轉換程序，它會將您現有的二進位檔重新封裝為 UWP 套件。 您的程式碼仍然相同，只是以不同方式封裝。 第二個部分是由 Windows 年度更新版中的執行階段技術所組成，可讓 UWP 套件擁有以完全信任方式執行而不是在應用程式容器中執行的可執行檔。 這項技術也會為已轉換的 App 提供套件識別資料，需要有此識別資料才能使用某些 UWP API。
 
-使用桌面轉換擴充功能的 UWP 是可讓您將 Windows 傳統型應用程式 (例如 Win32、Windows Forms 和 WPF) 或遊戲轉換為通用 Windows 平台 (UWP) app 或遊戲的橋樑。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx)。 轉換之後，您的 Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
+## 優點
 
-有兩個部分的技術可將傳統型應用程式轉換為 UWP 套件。 第一個部分是傳統型應用程式轉換器，它會取得您現有的二進位檔並將它們重新封裝為 UWP 套件。 您的程式碼仍然相同，只是以不同方式封裝。 第二個部分是由 Windows 年度更新版中的執行階段技術所組成，可讓 UWP 套件擁有以完全信任方式執行而不是在應用程式容器中執行的可執行檔。 這項技術也會為已轉換的應用程式提供套件識別資料，需要有此識別資料才能使用某些 UWP API。
+以下是一些轉換 Windows 傳統型應用程式的好處： 
 
-以下是一些轉換 Windows 傳統型應用程式的好處。
+**簡化部署**。 使用橋接器的 App 和遊戲有絕佳的部署體驗，可確保使用者能放心地安裝及更新。 如果使用者選擇解除安裝 App，系統將會完全移除它，且不會留下任何痕跡。 這能縮短編寫安裝體驗的時間，並讓使用者擁有最新的更新。
 
-* 可針對您的 app 為客戶提供更順暢的安裝體驗。 您可以使用側載來將它部署到電腦 (請參閱[在 Windows 10 中側載 LOB App](https://technet.microsoft.com/library/mt269549.aspx))，並且在解除安裝之後不會留下任何追蹤。 期限較長，您也能夠將您的應用程式發佈到 Windows 市集。
+**自動更新和授權**。 您的 App 可以參與 Windows 市集的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
 
-* 由於已轉換的應用程式具有套件識別資料，因此，您甚至可從完全信任的磁碟分割呼叫比以前更多的 UWP API。 請參閱[已轉換的傳統型應用程式支援的 UWP API](desktop-to-uwp-supported-api.md) 的完整清單。 
+**增加觸達對象並簡化營利**。 選擇透過 Windows 市集來散發，可讓您觸達數百萬的 Windows10 使用者，而他們可以利用當地的付款選項來取得 App、遊戲，並進行 App 內購買。
 
-* 依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。 所有可供任何其他 UWP app 使用的功能都可供您的 app 使用。
+**新增 UWP 功能**。  依照您自己的步調，您可以將 UWP 功能新增到您的應用程式套件，例如 XAML 使用者介面、動態磚更新、UWP 背景工作、應用程式服務，以及其他更多項目。
 
-* 如果您選擇要將所有 app 功能移出 app 完全信任的磁碟分割，然後移入 app 容器磁碟分割，則您的 app 將能在任何 Windows 10 裝置上執行。
+**跨裝置擴展使用案例**。 使用橋接器，您可以逐漸將程式碼移轉到通用 Windows 平台，以觸達所有的 Windows10 裝置類型，包括手機、Xbox One 和 HoloLens。
 
-* 做為 UWP app，您的 app 能夠執行的動作，就像它做為 Windows 傳統型應用程式時所做的一樣。 它會與登錄和檔案系統的虛擬化檢視互動，這很難與實際登錄和檔案系統區分。
+## 準備
 
-* 您的應用程式可以參與 Windows 市集的內建授權和自動更新功能。 由於自動更新只會下載檔案已變更的部分，因此是一項非常可靠又有效率的機制。
+傳統型轉 UWP 橋接器相當便於使用，因此您可能不需要針對 App 的轉換程序做出太多準備。 不過，在轉換前有一些事項和特別的情況需要注意。 請參閱[針對傳統型轉 UWP 橋接器準備 App](desktop-to-uwp-prepare.md) 文章，並在繼續之前解決任何適用於您 App 的問題。
 
-## 準備將傳統型應用程式轉換為 UWP
+## 轉換
 
-您可能不需要針對 app 的轉換程式做太多準備。 請記住，Windows 市集會為您處理授權和自動更新，因此您可以從程式碼基底中移除這些功能。 如果您的應用程式符合下列任一情況，您就需要在轉換之前先解決此問題。
+您有數個不同選項可用來轉換 App。
 
-+ __您的應用程式是使用 4.6.1 之前的 .NET 版本__。 僅支援 .NET 4.6.1。 您必須先將應用程式重新定位至 .NET 4.6.1 才能轉換。 
+**Desktop App Converter (DAC)**。 DAC 是會為您自動轉換並簽署 app 的工具。 使用 DAC 相當簡便且自動化，如果您的 App 會進行許多系統修改，或者您對於安裝程式所做的一切有任何不確定性，這相當有用。 若要開始，請參閱 [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) 上的文章。 
 
-+ __您的應用程式一律會以提升的安全性權限執行__。 在以互動使用者身分執行時您的應用程式必須能夠運作。 從 Windows 市集安裝您應用程式的使用者可能不是系統管理員，因此需要以提升的權限來執行您的應用程式，表示它無法針對標準使用者正常執行。
+**手動轉換**。 如果您的 app 是使用 xcopy 所安裝，或是您已經熟悉安裝程式對系統所做的變更，則手動轉換可能是更簡單的選擇。 這包括建立資訊清單檔案，執行 MakeAppx.exe 工具，然後簽署應用程式套件。 如需如何手動轉換的詳細資料，請參閱[使用傳統型橋接器將您的 App 手動轉換成 UWP](desktop-to-uwp-manual-conversion.md)。 
 
-+ __您的應用程式需要核心模式驅動程式或 Windows 服務__。 橋接器適用於應用程式，但它不支援核心模式驅動程式或需要在系統帳戶下執行的 Windows 服務。 請改用[背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)，而非 Windows 服務。
+**協力廠商安裝程式**。 有三個常見的協力廠商安裝程式 ([由 Flexera 所提供的 InstallShield](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)、[由 FireGiant 所提供的 WiX](https://www.firegiant.com/r/appx) 及[由 Caphyon 所提供的 Advanced Installer](http://www.advancedinstaller.com/uwp-app-package)) 現在支援桌面橋接器，而且只需要按幾下就能產生 MSI 安裝程式和已轉換的應用程式套件。 如需詳細資訊，請個別瀏覽每個安裝程式的網站。 
 
-+ __您的應用程式模組會以同處理序載入至不在您 AppX 套件中的處理序__。 這是不允許的，這表示不支援同處理序擴充功能，例如 [Shell 擴充功能](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果您在同一個套件中有兩個 app，您就可以在它們之間進行處理序間通訊。
+## 增強 
 
-+ __您的 app 呼叫 [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) 或 [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__。 已轉換的應用程式目前不支援這些功能。 我們正致力於在未來版本中新增支援。 因應措施是，您可以將使用這些功能找到的所有 .dll 複製到套件根目錄。 
+您可以使用各種 UWP API 來新增如動態磚、推播通知等功能，以增強已轉換傳統型應用程式的功能。 如需完整程式碼範例，請參閱 GitHub 存放庫中的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 若要檢視支援的 API 完整清單，請檢閱[使用傳統型橋接器轉換之 App 所支援的 UWP API](desktop-to-uwp-supported-api.md)。 
 
-+ __您的 app 會使用自訂的應用程式使用者模型識別碼 (AUMID)__。 如果您的處理序會呼叫 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) 來設定自己的 AUMID，則它可能只會使用應用程式模型環境/AppX 套件為它產生的 AUMID。 您不能定義自訂的 AUMID。
+除了呼叫 UWP API 之外，您可以利用只有已轉換之 App 可存取的功能來擴充您的 App。 這些包括於使用者登入時啟動處理程序，以及檔案總管整合等案例，且其設計用途在於讓原始傳統型應用程式與完整 UWP 應用程式套件之間的轉換運作更加順暢。 如需詳細資料，請參閱[傳統型橋接器應用程式擴充功能](desktop-to-uwp-extensions.md)。 
 
-+ __您的應用程式會修改 HKEY_LOCAL_MACHINE (HKLM) 登錄區__。 應用程式對於建立 HKLM 機碼或開啟某一個機碼進行修改的任何嘗試都將產生存取遭拒的失敗。 請記住，您的應用程式有自己私用的登錄虛擬化檢視，因此，不適用全部使用者和整部電腦登錄區的概念 (這是 HKLM 的概念)。 您需要尋找其他方式來封存您使用 HKLM 所做的動作，例如改為寫入 HKEY_CURRENT_USER (HKCU)。
+## 移轉
 
-+ __您的應用程式會使用 ddeexec 登錄子機碼做為啟動另一個應用程式的方式__。 在您的[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中，使用各種不同 Activatable* 擴充功能來設定時，請改用其中一個 DelegateExecute 動詞命令處理常式。
+使用橋接器，您可以逐漸將舊的程式碼移轉到 UWP，同時仍保留在 Windows 桌面上執行與發佈 App 的能力 一旦您完全移轉至 UWP (且您的 App 不再包含 WPF/Win32 元件)，您就可以觸達所有 Windows 裝置，包括手機、Xbox One 和 HoloLens。
 
-+ __您的應用程式會寫入 AppData 資料夾，以便與其他應用程式共用資料__。 轉換之後，系統會將 AppData 重新導向至本機 app 資料存放區，此為每一個 UWP app 的私人存放區。 使用不同方式來進行處理序間的資料共用。 如需詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
+## 偵錯
 
-+ __您的應用程式會寫入您應用程式的安裝目錄__。 例如，您的應用程式所寫入的記錄檔是放在與您的 exe 相同的目錄中。 不支援此情況，因此您將需要尋找其他位置，例如本機應用程式資料存放區。
+您可以使用 Visual Studio 針對您的 App 進行偵錯。 如需詳細說明，請參閱[針對使用傳統型橋接器轉換的 App 進行偵錯](desktop-to-uwp-debug.md)。 
 
-+ __您的應用程式安裝需要使用者互動__。 您的應用程式安裝程式必須能夠以無訊息方式執行，而且它需要安裝所有預設不在全新作業系統映像上的必要條件。
+如果您對於傳統型橋接器背後的運作方式有興趣，請參閱[傳統型橋接器的幕後作業](desktop-to-uwp-behind-the-scenes.md)。 
 
-+ __您的應用程式會使用目前的工作目錄__。 在執行階段，已轉換的應用程式將不會取得您先前在桌面 .LNK 捷徑中指定的相同工作目錄。 如果您的應用程式必須擁有正確的目錄才能正確運作，則您需要在執行階段變更 CWD。
+## 散佈
 
-+ __您的應用程式需要 UIAccess__。 如果您的應用程式在 UAC 資訊清單的 `requestedExecutionLevel` 元素中指定 `UIAccess=true`，則目前不支援轉換為 UWP。 如需詳細資訊，請參閱 [UI 自動化安全性概觀](https://msdn.microsoft.com/library/ms742884.aspx)。
+您可以使用 Windows 市集或透過側載散佈您的 App。 如需詳細資訊，請參閱[散發使用傳統型橋接器轉換的 App](desktop-to-uwp-distribute.md)。 請注意，您需要簽署 App 才能將它部署到使用者。 請參閱[簽署使用傳統型橋接器轉換的 App](desktop-to-uwp-signing.md) 以取得逐步指示。 
 
-+ __您的 app 已經是完整的 UWP app，而且想要從應用程式套件內叫用完全信任的處理程序__。 不支援反向使用橋接器，而且嘗試叫用完全信任處理程序的 UWP app 將無法通過市集認證。 若要在側載應用程式中啟用此案例，請先在您的應用程式資訊清單中包含 ```<desktop:Extension>``` 宣告 (其中包含值為 *Windows.FullTrustApplication* 的 *EntryPoint* 屬性)。 接著，將 app 的 ```<TargetDeviceFamily>``` 設定為 *Windows.Desktop*。 這表示 app 的唯一目標是傳統型裝置系列，而不是所有 UWP 裝置。 如果您的 app 傳回錯誤「APPX0501︰驗證錯誤」**且這些設定均已就緒，請確認您的目標裝置系列；app 的目標很可能是 *Windows.Universal* 系列，而非 *Windows.Desktop*。 
+## 支援與意見反應
 
-+ __您的 app 公開 COM 物件或 GAC 組件，以供其他處理程序使用__。 在目前版本中，您的應用程式不能公開 COM 物件或 GAC 組件給來自 AppX 套件外部的可執行檔處理程序使用。 來自套件內的處理程序可以正常登錄及使用 COM 物件和 GAC 組件，但無法從外部看見它們。 這表示如果透過外部處理程序叫用 OLE 等互通性案例，將無法作用。 
-
-+ __不支援您的應用程式連結 C 執行階段程式庫的方式__。 Microsoft C/C++ 執行階段程式庫提供適用於 Microsoft Windows 作業系統的程式設計常式。 這些常式將許多常見但 C 和 C++ 語言未提供的程式設計工作自動化。 如果您的應用程式利用 C/C++ 執行階段程式庫，您必須確定以支援的方式連結它。 
-    
-    Visual Studio 2015 支援用動態連結 (讓程式碼使用一般 DLL 檔案) 或用靜態連結 (將程式庫直接連結到程式碼中)，連結到目前的 CRT 版本。 可能的話，我們建議您的應用程式搭配 VS 2015 使用動態連結。 
-
-    支援先前的多種 Visual Studio 版本。 如需詳細資訊，請參閱下表： 
-
-    <table>
-    <th>Visual Studio 版本</td><th>動態連結</th><th>靜態連結</th></th>
-    <tr><td>2005 (VC 8)</td><td>不支援</td><td>支援</td>
-    <tr><td>2008 (VC 9)</td><td>不支援</td><td>支援</td>
-    <tr><td>2010 (VC 10)</td><td>支援</td><td>支援</td>
-    <tr><td>2012 (VC 11)</td><td>支援</td><td>不支援</td>
-    <tr><td>2013 (VC 12)</td><td>支援</td><td>不支援</td>
-    <tr><td>2015 (VC 14)</td><td>支援</td><td>支援</td>
-    </table>
-    
-    注意：在任何情況下，您都必須連結到最新可公開取得的 CRT。
-
-+ __您的應用程式會從 Windows 並列資料夾安裝與載入組件__。 例如，您的應用程式使用 C 執行階段程式庫 VC8 或 VC9 且從 Windows 並列資料夾動態連結它們，表示您的程式碼是使用來自共用資料夾的一般 DLL 檔。 不支援此連結方式。 您必須以靜態方式連結它們，方法是直接將可轉散發的程式庫檔案連結到您的程式碼。
-
-## 開始轉換處理程序
-
-您有數個不同選項可用來轉換 app。
-
-* **Desktop App Converter (DAC)**。 DAC 是會為您自動轉換並簽署 app 的工具。 使用 DAC 相當簡便且自動化，如果您的 app 會進行許多系統修改，或者您對於安裝程式所做的一切有任何不確定性，這相當有用。 若要開始使用 DAC，請參閱 [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)。 
-
-* **手動轉換**。 如果您的 app 是使用 xcopy 所安裝，或是您已經熟悉安裝程式對系統所做的變更，則手動轉換可能是更簡單的選擇。 這包括建立資訊清單檔案、執行 MakeAppx.exe 工具，然後簽署應用程式套件。 如需如何手動轉換的詳細資訊，請參閱[將您的 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) app](desktop-to-uwp-manual-conversion.md)。 
-
-* **協力廠商安裝程式**。 有三個常見的協力廠商安裝程式 ([由 Flexera 所提供的 InstallShield](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)、[由 FireGiant 所提供的 WiX](https://www.firegiant.com/r/appx) 及[由 Caphyon 所提供的 Advanced Installer](http://www.advancedinstaller.com/uwp-app-package)) 現在支援桌面橋接器，而且只需要按幾下就能產生 MSI 安裝程式和已轉換的應用程式套件。 如需詳細資訊，請個別瀏覽每個安裝程式的網站。 
-
-## 取得支援並提供意見反應
-
-如果您在執行轉換應用程式時發生問題，您可以造訪[論壇](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)以尋求協助。 
+如果您在執行轉換 App 時發生問題，您可以造訪[論壇](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)以尋求協助。 
 
 若要提供意見反應或提出功能建議，請查看 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。 
 
@@ -109,15 +75,18 @@ ms.openlocfilehash: 6cf6367ed0f6acea0f87ac36a050e874425423b1
 
 | 主題 | 描述 |
 |-------|-------------|
-| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行 Desktop App Converter。 您可能不需要針對 app 的轉換處理程序做太多準備 (如果有的話)。 |
-| [手動轉換傳統型應用程式](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
-| [已轉換的傳統型應用程式擴充功能](desktop-to-uwp-extensions.md) | 使用擴充功能來增強已轉換的應用程式，以啟用像是啟動工作、檔案總管整合及更多的擴充功能。 |
-| [已轉換的傳統型應用程式支援的 UWP API](desktop-to-uwp-supported-api.md) | 查看您可以針對已轉換的應用程式使用哪些 UWP API。 |
-| [簽署已轉換的傳統型應用程式](desktop-to-uwp-signing.md) | 了解如何使用憑證簽署已轉換的 .appx 套件。 |
-| [部署和偵錯已轉換的 UWP App](desktop-to-uwp-deploy-and-debug.md) | 取得在轉換 app 之後進行部署和偵錯的相關說明。 此外，如果您想探究一些桌面轉換擴充功能的本質，本主題非常適合您。 |
-| [傳統型應用程式橋接至 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上示範轉換 app 功能的程式碼範例。 |
+| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | 說明如何執行 Desktop App Converter。 |
+| [使用傳統型橋接器將您的 App 手動轉換為 UWP](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
+| [傳統型橋接器應用程式擴充功能](desktop-to-uwp-extensions.md) | 使用擴充功能來增強已轉換的 App，以啟用像是啟動工作和檔案總管整合等功能。 |
+| [使用傳統型橋接器轉換之 App 所支援的 UWP API](desktop-to-uwp-supported-api.md) | 查看您可以針對已轉換的傳統型應用程式使用哪些 UWP API。 |
+| [針對使用傳統型橋接器轉換的 App 進行偵錯](desktop-to-uwp-debug.md) | 說明可用來偵錯已轉換之 App 的選項。 | 
+| [簽署使用傳統型橋接器轉換的 App](desktop-to-uwp-signing.md) | 了解如何使用憑證簽署已轉換的應用程式套件。 |
+| [散發使用傳統型橋接器轉換的 App](desktop-to-uwp-distribute.md) | 查看如何將已轉換的 App 散佈給使用者。  |
+| [傳統型橋接器的幕後作業](desktop-to-uwp-behind-the-scenes.md) | 深入了解傳統型轉 UWP 橋接器背後的運作方式。 | 
+| [傳統型橋接器的已知問題](desktop-to-uwp-known-issues.md) | 列出傳統型轉 UWP 橋接器的已知問題。 | 
+| [傳統型應用程式橋接轉 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上示範轉換 app 功能的程式碼範例。 |
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

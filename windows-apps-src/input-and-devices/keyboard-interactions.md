@@ -6,15 +6,15 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f9c475a90c270270217999c5a7289e29e7fef208
-ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
+ms.sourcegitcommit: 667228e10456ffbc64b7d0782d5a8bdc02f2f203
+ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 ---
 
 # 鍵盤互動
 
 
-鍵盤輸入是 app 之整體使用者互動經驗的一個重要部分。 對於某些行動不便的人或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的 app、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。  
+鍵盤輸入是 App 整體使用者互動體驗的一個重要部分。 對於某些行動不便或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的 app、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。  
 
 ![鍵盤主角影像](images/input-patterns/input-keyboard-small.jpg)
 
@@ -360,7 +360,7 @@ ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
 
 您可以為任何物件附加鍵盤事件處理函式，只要該事件是該物件的成員即可。 這包含任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 衍生類別。 下列 XAML 範例示範如何為 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 附加 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式。
 
-```XAML
+```xaml
 <Grid KeyUp="Grid_KeyUp">
   ...
 </Grid>
@@ -372,24 +372,26 @@ ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
 
 下面的範例示範前面範例中附加的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件處理常式的不完整事件處理常式定義。
 
-```CSharp
+```csharp
 void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
 {
     //handling code here
 }
 ```
 
-```VisualBasic
+```vb
 Private Sub Grid_KeyUp(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
-    &#39;handling code here
+    ' handling code here
 End Sub
 ```
 
-```ManagedCPlusPlus
+```c++
 void MyProject::MainPage::Grid_KeyUp(
   Platform::Object^ sender,
   Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{//handling code here}
+  {
+      //handling code here
+  }
 ```
 
 ### 使用 KeyRoutedEventArgs
@@ -411,18 +413,19 @@ void MyProject::MainPage::Grid_KeyUp(
 
 在您的 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件處理常式中使用程式碼，即可偵測快速鍵組合。 然後，您可以追蹤想了解的輔助按鍵按下狀態。 當非輔助按鍵發生鍵盤事件時，您可以同時檢查輔助按鍵是否處於按下狀態。
 
-**注意** Alt 鍵以 **VirtualKey.Menu** 值表示。
+> [!NOTE]
+> Alt 鍵以 **VirtualKey.Menu** 值表示。
 
  
 
-## 快速鍵範例
+### 快速鍵範例
 
 
 以下範例示範如何實作快速鍵。 在這個範例中，使用者可以使用「播放」、「暫停」以及「停止」按鈕或 Ctrl+P、Ctrl+A 以及 Ctrl+S 鍵盤快速鍵來控制媒體的播放。 按鈕 XAML 使用工具提示以及按鈕標籤中的 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) 屬性顯示捷徑。 這個自我說明文件對於提高 app 的可用性及協助性是很重要的。 如需詳細資訊，請參閱[鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)。
 
 另請注意，頁面載入時會將輸入焦點設給本身。 如果沒有這個步驟，就沒有控制項會取得初始輸入焦點，而且除非使用者手動設定輸入焦點 (例如，按 Tab 鍵或按一下控制項)，否則 app 將無法引發輸入事件。
 
-```XAML
+```xaml
 <Grid KeyDown="Grid_KeyDown">
 
   <Grid.RowDefinitions>
@@ -459,7 +462,7 @@ void MyProject::MainPage::Grid_KeyUp(
 </Grid>
 ```
 
-```ManagedCPlusPlus
+```c++
 //showing implementations but not header definitions
 void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 {
@@ -487,7 +490,7 @@ void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::
 
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
+    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = false;
     else if (isCtrlKeyPressed) {
         if (e->Key==VirtualKey::P) {
             DemoMovie->Play();
@@ -498,11 +501,21 @@ void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI
 }
 ```
 
-```CSharp
+```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     // Set the input focus to ensure that keyboard events are raised.
     this.Loaded += delegate { this.Focus(FocusState.Programmatic); };
+}
+
+private void MediaButton_Click(object sender, RoutedEventArgs e)
+{
+    switch ((sender as Button).Name)
+    {
+        case "PlayButton": DemoMovie.Play(); break;
+        case "PauseButton": DemoMovie.Pause(); break;
+        case "StopButton": DemoMovie.Stop(); break;
+    }
 }
 
 private void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -521,16 +534,6 @@ private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
             case VirtualKey.A: DemoMovie.Pause(); break;
             case VirtualKey.S: DemoMovie.Stop(); break;
         }
-    }
-}
-
-private void MediaButton_Click(object sender, RoutedEventArgs e)
-{
-    switch ((sender as Button).Name)
-    {
-        case "PlayButton": DemoMovie.Play(); break;
-        case "PauseButton": DemoMovie.Pause(); break;
-        case "StopButton": DemoMovie.Stop(); break;
     }
 }
 ```
@@ -574,7 +577,10 @@ Private Sub MediaButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-**注意** 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) 或 [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) 可提供字串資訊，其中記載用於叫用該特定動作的捷徑。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在 app 中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確的為助憶鍵中的特定鍵加上文字底線。
+> [!NOTE]
+> 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) 或 [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) 可提供字串資訊，其中記載用於叫用該特定動作的快速鍵。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。
+>
+> 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在 app 中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確的為助憶鍵中的特定鍵加上文字底線。
 
  
 
@@ -585,7 +591,7 @@ End Sub
 
 以下列 XAML 範例為例，它會處理一個 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 和兩個 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 物件的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 在這個情況下，如果在任一 **Button** 物件具有焦點時放開按鍵，則會引發 **KeyUp** 事件。 接著，事件會反昇到父 **Canvas**。
 
-```XAML
+```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
   <Button Name="ButtonA" Content="Button A"/>
   <Button Name="ButtonB" Content="Button B"/>
@@ -595,7 +601,7 @@ End Sub
 
 下面的範例示範如何實作前一個範例中對應的 XAML 內容的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件處理常式。
 
-```CSharp
+```csharp
 void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 {
     statusTextBlock.Text = String.Format(
@@ -614,10 +620,37 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### AddHandler 和已處理的鍵盤事件
 
-您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術使用 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 方法來登錄處理常式，而不是使用 XAML 屬性或語言特定的語法新增處理常式 (例如 C# 中的 +=)。 大致上，這項技術的限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 案例中處理。 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上已有路由事件識別項 ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) 與 [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
+您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術使用 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 方法來註冊處理常式，而不是使用 XAML 屬性或語言特定的語法新增處理常式 (例如 C# 中的 +=)。 
+
+這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 案例中處理。 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上已有路由事件識別項 ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) 與 [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
+
+### 覆寫鍵盤事件和行為
+
+您可以覆寫特定控制項 (例如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) 的按鍵事件，為各種輸入裝置 (包括鍵盤與遊戲台) 提供一致的焦點瀏覽。
+
+在下列範例中，我們將控制項分成子類別，並覆寫 KeyDown 行為在按下任一方向鍵時將焦點移至 GridView 內容。
+
+```csharp
+public class CustomGridView : GridView
+  {
+    protected override void OnKeyDown(KeyRoutedEventArgs e)
+    {
+      // Override arrow key behaviors.
+      if (e.Key != Windows.System.VirtualKey.Left && e.Key !=
+        Windows.System.VirtualKey.Right && e.Key != 
+          Windows.System.VirtualKey.Down && e.Key != 
+            Windows.System.VirtualKey.Up)
+              base.OnKeyDown(e);
+      else
+        FocusManager.TryMoveFocus(FocusNavigationDirection.Down);
+    }
+  }
+```
+
+> [!NOTE]
+> 如果使用 GridView 只是為了版面配置，請考慮使用其他控制項，例如 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) 與 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid)。
 
 ## 命令
-
 
 少數 UI 元素提供命令功能的內建支援。 命令功能在相關實作中使用輸入相關路由事件。 它會叫用單一命令處理常式來處理相關的 UI 輸入，例如特定指標動作或特定快速鍵。
 
@@ -626,7 +659,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 您也可實作 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) 來封裝從一般事件處理常式叫用的命令功能。 透過這種方式，即使沒有可用的 **Command** 屬性，您還是可以使用命令功能。
 
 ## 文字輸入和控制項
-
 
 特定控制項會以它們自己的處理方式應對鍵盤事件。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 這個控制項的設計是擷取使用鍵盤輸入的文字，然後以視覺化方式呈現文字。 它在自己的邏輯中使用 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 與 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 來擷取按鍵輸入動作，然後如果文字真的變更了，就會引發它自己的 [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) 事件。
 
@@ -640,7 +672,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ## 觸控式鍵盤
 
-
 文字輸入控制項會自動支援觸控式鍵盤。 當使用者使用觸控輸入將輸入焦點設為文字控制項時，觸控式鍵盤會自動出現。 當輸入焦點不在文字控制項時，觸控式鍵盤就會隱藏起來。
 
 當觸控式鍵盤出現時，它會自動定位您的 UI，以確保取得焦點的元素保持永遠可見。 這可能會造成 UI 中其他重要的區域跑到螢幕外。 不過，您可以停用預設行為，並在觸控式鍵盤出現時調整 UI。 如需詳細資訊，請參閱[回應螢幕小鍵盤外觀的範例](http://go.microsoft.com/fwlink/p/?linkid=231633)。
@@ -653,6 +684,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 
 ## 本節中的其他文章
+
 <table>
 <colgroup>
 <col width="50%" />
@@ -672,11 +704,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 </tbody>
 </table>
 
- 
-
-
 ## 相關文章
-
 
 **開發人員**
 * [識別輸入裝置](identify-input-devices.md)
@@ -702,6 +730,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

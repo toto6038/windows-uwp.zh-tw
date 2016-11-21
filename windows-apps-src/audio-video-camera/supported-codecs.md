@@ -4,19 +4,19 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文列出 UWP app 支援的音訊與視訊轉碼器和格式。"
 title: "支援的轉碼器"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
+ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
+ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 ---
 
 # 支援的轉碼器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文列出 UWP app 支援的音訊與視訊轉碼器和格式。
+本文列出 UWP App 支援的音訊、視訊及影像轉碼器和格式。
 
-表格中下面的 "D" 表示解碼器支援，"E" 則表示編碼器支援。
+在下列表格中，"D" 表示解碼器支援，"E" 則表示編碼器支援。
 
 ## 音訊編碼器與支援的格式
 
@@ -2685,18 +2685,80 @@ ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 </tbody>
 </table>
 
- 
+## 影像轉碼器與支援的格式 
 
- 
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">轉碼器</th>
+<th align="left">桌上型電腦</th>
+<th align="left">其他裝置系列</th>
+</tr>
+</thead>
+<tr class="odd">
+<td align="left">BMP</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">DDS</td>
+<td align="left">D/E<sup>1</sup></td>
+<td align="left">D/E<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">DNG</td>
+<td align="left">D<sup>2</sup></td>
+<td align="left">D<sup>2</sup></td>
+</tr>
+<tr class="even">
+<td align="left">GIF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">ICO</td>
+<td align="left">D</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">JPEG-XR</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">PNG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">TIFF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">Camera RAW</td>
+<td align="left">D<sup>3</sup></td>
+<td align="left">否</td>
+</tr>
+</table>
 
- 
+<sup>1</sup> 支援透過 BC5 壓縮使用 BC1 的 DDS 影像。  
+<sup>2</sup> 支援具有非 RAW 內嵌預覽的 DNG 影像。  
+<sup>3</sup> 僅支援部分 Camera RAW 格式。  
+
+如需影像轉碼器的詳細資訊，請參閱[原生 WIC 轉碼器](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)。
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
+ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
+ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 ---
 # 選項按鈕
@@ -71,7 +71,9 @@ Microsoft Edge 瀏覽器設定中的選項按鈕。
 - 將它們放入同一個父容器。
 - 將每個選項按鈕的 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
 
-> **注意**&nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
+> 
+            **注意**
+            &nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
 
 在這個範例中，第一個選項按鈕群組位於相同的堆疊面板中，藉此以隱含方式群組化。 第二個群組分成 2 個堆疊面板，所以是依 GroupName 明確群組化。
 
@@ -155,11 +157,11 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-選項按鈕群組如下所示。
+使用者選取藍色背景和綠色框線後，選項按鈕群組看起來會像這樣。
 
 ![兩個群組中的選項按鈕](images/radio-button-groups.png)
 
-選項按鈕有兩個狀態：[已選取]** 或 [已清除]**。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
+選項按鈕有兩個狀態：[已選取] 或 [已清除]。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
 
 ## 建議
 
@@ -198,6 +200,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

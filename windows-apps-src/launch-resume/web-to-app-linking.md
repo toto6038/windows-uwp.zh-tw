@@ -4,8 +4,8 @@ title: "透過 App URI 處理常式支援網站至 App 連結"
 description: "使用 app URI 處理常式讓使用者持續使用您的 app"
 keywords: "深層連結 Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
-ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
+ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
+ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 
 ---
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludePaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
 
@@ -68,28 +68,28 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 | *****       | 代表任何子字串      |
 | **?**        | 代表單一字元 |
 
-假設以上述範例中的 `"excludePaths" : [ "/news/*, /blog/*" ]` 為例，您的 app 將支援所有以您網站的網址 (例如 msn.com) 為開頭的路徑，`/news/` 和 `/blog/` 下的那些「除外」****。 將可支援 **msn.com/weather.html**，但不支援 ****msn.com/news/topnews.html****。
+假設以上述範例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]` 為例，您的 app 將支援所有以您網站的網址 (例如 msn.com) 為開頭的路徑，`/news/` 和 `/blog/` 下的那些「除外」。 將可支援 **msn.com/weather.html**，但不支援 ****msn.com/news/topnews.html****。
 
 
 ### 多個 app
 
-如果您想要連結到網站的 app 有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個 app。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 [設定] &gt; [網站的 app]**** 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
+如果您想要連結到網站的 app 有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個 app。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 [設定] &gt; [網站的 app] 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
 
 ``` JSON
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludedPaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
   "packageFamilyName": "Your2ndAppsPFN",
-  "paths": [ "/example/*, /links/*" ]
+  "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
-若要為使用者提供最佳的使用經驗，請使用排除路徑，務必 從 JSON 檔案的支援路徑中排除僅供線上存取的內容。
+若要為使用者提供最佳的使用體驗，請使用排除路徑，務必從 JSON 檔案的支援路徑中排除僅供線上存取的內容。
 
-排除的路徑都會先行檢查，如果有相符項目，將會使用瀏覽器開啟對應的頁面，而不是使用指定的 app。 在上述範例中，‘/news/\*’ 包括該路徑下的任何頁面，而 ‘/news\*’ (沒有斜線軌跡的 'news') 則包括 ‘news\*’ 下的任何路徑，例如 ‘newslocal/’、‘newsinternational/’，依此類推。
+排除路徑都會先行檢查，如果有相符項目，將會使用瀏覽器開啟對應的頁面，而不是使用指定的 app。 在上述範例中，‘/news/\*’ 包括該路徑下的任何頁面，而 ‘/news\*’ (沒有斜線軌跡的 'news') 則包括 ‘news\*’ 下的任何路徑，例如 ‘newslocal/’、‘newsinternational/’，依此類推。
 
 ## 處理啟用以連結到內容的連結
 
@@ -141,7 +141,8 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要：**務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
+
+            **重要：**務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
 
 ## 測試︰本機驗證工具
 
@@ -151,7 +152,10 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 執行此工具時，可利用下列參數來測試 app 與網站的設定：
 
-**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
+
+            **AppHostRegistrationVerifier.exe**
+            *hostname packagefamilyname filepath*
+          
 
 -   主機名稱︰您的網站 (例如 microsoft.com)
 -   套件系列名稱 (PFN)：您的 app PFN
@@ -161,13 +165,14 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 關閉您的應用程式，驗證當您按一下連結時會啟用該 app。 接著在您的網站中，複製其中一個支援路徑的網址。 例如，如果您網站的網址是 “msn.com”，而其中一個支援路徑是 “path1”，您會使用： `http://msn.com/path1`
 
-確認您的 app 已經關閉。 按下 Windows 鍵 + R**** 以開啟[執行]**** 對話方塊並在視窗中貼上連結。 您的 app 應要啟動，而不是網頁瀏覽器。
+確認您的 app 已經關閉。 按下 Windows 鍵 + R 以開啟[執行] 對話方塊並在視窗中貼上連結。 您的 app 應要啟動，而不是網頁瀏覽器。
 
 此外，您可以使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API，測試從另一個應用程式來啟動您的 app。 您同樣可以使用這個 API，在手機上測試。
 
 如果您想要依照通訊協定啟用邏輯，在 **OnActivated** 事件處理常式中設定中斷點。
 
-**注意︰**如果您按一下 Microsoft Edge 瀏覽器中的連結，並不會啟動您的 app，而是將您帶至您的網站。
+
+            **注意︰**如果您按一下 Microsoft Edge 瀏覽器中的連結，並不會啟動您的 app，而是將您帶至您的網站。
 
 ## AppUriHandlers 祕訣︰
 
@@ -191,10 +196,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 [處理 URI 啟用](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-[關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
+
+            [關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

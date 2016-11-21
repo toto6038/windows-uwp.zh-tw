@@ -4,8 +4,8 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。"
 title: "將消費性產品回報為已完成"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 ---
 
@@ -18,18 +18,18 @@ ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
 
 利用這個方法來將消費性產品回報為已完成的方法有兩種：
 
--   提供消費性產品的項目識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **itemId** 參數中)，以及您提供的唯一追蹤識別碼。 如果您使用相同的追蹤識別碼來嘗試多次，即使該項目已遭取用，仍會傳回相同的結果。 如果您不確定某個取用要求是否已成功，您的服務應該要利用相同的追蹤識別碼來重新提交取用要求。 該追蹤識別碼會永遠繫結到該取用要求，且可以無限期地重新提交。
--   提供產品識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **productId** 參數中)，以及從下方＜要求主體＞一節中 **transactionId** 參數的說明列出的某個來源所取得的交易識別碼。
+* 提供消費性產品的項目識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **itemId** 參數中)，以及您提供的唯一追蹤識別碼。 如果您使用相同的追蹤識別碼來嘗試多次，即使該項目已遭取用，仍會傳回相同的結果。 如果您不確定某個取用要求是否已成功，您的服務應該要利用相同的追蹤識別碼來重新提交取用要求。 該追蹤識別碼會永遠繫結到該取用要求，且可以無限期地重新提交。
+* 提供產品識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **productId** 參數中)，以及從下方＜要求主體＞一節中 **transactionId** 參數的說明列出的某個來源所取得的交易識別碼。
 
 ## 先決條件
 
 
 若要使用這個方法，您將需要：
 
--   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
--   藉由從應用程式中的用戶端程式碼來呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所產生的 Windows 市集識別碼索引鍵。
+* 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
+* 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。
 
-如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
 
 ## 要求
 
@@ -71,8 +71,8 @@ UserIdentity 物件包含下列參數。
 | 參數            | 類型   | 描述                                                                                                                                 | 必要 |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。                                                                                                           | 是      |
-| identityValue        | 字串 | Windows 市集識別碼索引鍵的字串值。                                                                                                   | 是      |
-| localTicketReference | 字串 | 已傳回回應的要求識別碼。 我們建議您使用與 Windows 市集識別碼索引鍵中 *userId* 宣告相同的值。 | 是      |
+| identityValue        | 字串 | [從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。                                                                                                   | 是      |
+| localTicketReference | 字串 | 所傳回回應的要求識別碼。 我們建議您使用與 Windows 市集識別碼金鑰中 *userId* 宣告相同的值。 | 是      |
 
 <span/> 
 
@@ -142,7 +142,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | PartnerAadTicketRequired   | Azure AD 存取權杖沒有傳遞到 Authorization 標頭中的服務。                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
+| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼金鑰的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 
 <span/> 
 
@@ -151,13 +151,13 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)
 * [查詢產品](query-for-products.md)
 * [授與免費產品](grant-free-products.md)
-* [更新 Windows 市集識別碼索引鍵](renew-a-windows-store-id-key.md)
+* [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

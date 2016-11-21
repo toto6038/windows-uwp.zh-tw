@@ -4,8 +4,8 @@ ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "了解如何安裝 Microsoft Advertising 程式庫。"
 title: "安裝 Microsoft Advertising 程式庫"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
 
 
 ---
@@ -15,11 +15,13 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-針對適用於 Windows 10 的通用 Windows 平台 (UWP) app，Microsoft Advertising 程式庫隨附於 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中。 這個 SDK 是 Visual Studio 2015 的擴充功能。 如需這個 SDK 的詳細資訊，請參閱[這篇文章](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)。
+就適用於 Windows10 的「通用 Windows 平台」(UWP) app 而言，Microsoft Advertising 程式庫是包含在 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。 如需有關安裝這個 SDK 的詳細資訊，請參閱[這篇文章](microsoft-store-services-sdk.md)。
 
-> **注意**&nbsp;&nbsp; 如果您已安裝 Windows 10 SDK (14393) 或更新版本，若您想要將廣告新增到 JavaScript/HTML UWP app，也必須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但從 Windows 10 SDK (14393) 開始，就必須另外安裝這個程式庫。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 
+            **注意**
+            &nbsp;&nbsp;在已安裝 Windows10 SDK (14393) 或更新版本的情況下，如果您想要將廣告新增到 JavaScript/HTML UWP app，就必須一併安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的 Windows10 SDK 中，但從 Windows10 SDK (14393) 開始，就必須另外安裝這個程式庫。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
-針對適用於 Windows 8.1 和 Windows Phone 8.x 的 XAML 與 JavaScript/HTML App，Microsoft Advertising 程式庫隨附於[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 中。 這個 SDK 是 Visual Studio 2015 和 Visual Studio 2013 的擴充功能。
+針對適用於 Windows8.1 和 Windows Phone 8.x 的 XAML 與 JavaScript/HTML App，Microsoft Advertising 程式庫隨附於[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 中。 這個 SDK 是 Visual Studio 2015 和 Visual Studio 2013 的擴充功能。
 
 針對 Windows Phone Silverlight 8.x App，Microsoft Advertising 程式庫是在您可以下載並安裝到專案的 NuGet 套件中所提供。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
@@ -32,11 +34,13 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 * 適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 包含兩組廣告程式庫：適用於 Microsoft Advertising 的程式庫 (能為 XAML 和 JavaScript/HTML App 提供 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別)，以及適用於廣告流量分配的程式庫 (能提供 **AdMediatorControl** 類別)。
 
-本文件說明如何使用 Microsoft Advertising 程式庫的 **AdControl** 和 **InterstitialAd** 類別來顯示橫幅或插入式廣告影片。 如需針對 Windows 8.1 和 Windows Phone 8.x App 使用廣告流量分配的相關資訊，請參閱[使用廣告流量分配來獲得最佳收益](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
+本文件說明如何使用 Microsoft Advertising 程式庫的 **AdControl** 和 **InterstitialAd** 類別來顯示橫幅或插入式廣告影片。 如需針對 Windows8.1 和 Windows Phone 8.x App 使用廣告流量分配的相關資訊，請參閱[使用廣告流量分配來獲得最佳收益](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
->**注意**&nbsp;&nbsp;Windows 10 的 UWP app 目前不支援使用 **AdMediatorControl** 類別的廣告流量分配。 即將推出適用於 UWP app 的伺服器端流量分配，且其橫幅廣告 (**AdControl**) 和插入式影片廣告 (**InterstitialAd**) 使用相同 API。
+>
+            **注意**
+            &nbsp;&nbsp;Windows10 的 UWP app 目前不支援使用 **AdMediatorControl** 類別的廣告流量分配。 即將推出適用於 UWP app 的伺服器端流量分配，且其橫幅廣告 (**AdControl**) 和插入式影片廣告 (**InterstitialAd**) 使用相同 API。
 
-在您可以於 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出每個程式庫的名稱，排序方式與它們在 Visual Studio 的 [參考管理員]**** 對話方塊中所呈現的方式相同。
+在您可以於 App 程式碼中使用任何廣告控制項之前，您必須在專案中參考適當的程式庫。 下列表格列出每個程式庫的名稱，排序方式與它們在 Visual Studio 的 [參考管理員] 對話方塊中所呈現的方式相同。
 
 
 <table>
@@ -45,14 +49,15 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (XAML)</td>
+            <td rowspan="3">
+            **AdControl** 和 **InterstitialAd** (XAML)</td>
             <td>UWP</td>
             <td>適用於 XAML 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
         </tr>
         <tr>
-            <td>Windows 8.1</td>
-            <td>適用於 Windows 8.1 XAML 的 Ad Mediator SDK</td>
+            <td>Windows8.1</td>
+            <td>適用於 Windows8.1 XAML 的 Ad Mediator SDK</td>
             <td>1.0</td>
         </tr>
         <tr>
@@ -61,14 +66,15 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">
+            **AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
             <td>適用於 JavaScript 的 Microsoft Advertising SDK</td>
             <td>10.0</td>
         </tr>
         <tr>
-            <td>Windows 8.1</td>
-            <td>適用於 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK</td>
+            <td>Windows8.1</td>
+            <td>適用於 Windows8.1 Native (JS) 的 Microsoft Advertising SDK</td>
             <td>8.5</td>
         </tr>
         <tr>
@@ -77,14 +83,15 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdMediatorControl** (僅 XAML)</td>
+            <td rowspan="3">
+            **AdMediatorControl** (僅 XAML)</td>
             <td>UWP</td>
             <td>Microsoft Advertising Universal SDK</td>
             <td>1.0</td>
         </tr>
         <tr>
-            <td>Windows 8.1</td>
-            <td>適用於 Windows 8.1 XAML 的 Ad Mediator SDK</td>
+            <td>Windows8.1</td>
+            <td>適用於 Windows8.1 XAML 的 Ad Mediator SDK</td>
             <td>1.0</td>
         </tr>
         <tr>
@@ -103,6 +110,6 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

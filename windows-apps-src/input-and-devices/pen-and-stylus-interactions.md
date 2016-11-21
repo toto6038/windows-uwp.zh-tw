@@ -7,8 +7,8 @@ label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 translationtype: Human Translation
-ms.sourcegitcommit: 8bc5612c0fc9273d32ccbfcd5b4334566d24b017
-ms.openlocfilehash: 67149f51cc16fee6f5ba818915432b18d2c1a549
+ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
+ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
 
 ---
 
@@ -304,7 +304,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     ![選取套索](images/ink-unprocessed-3-small.png)
 
       ```csharp
-        // Handle unprocessed pointer events from modifed input.
+        // Handle unprocessed pointer events from modified input.
         // The input is used to provide selection functionality.
         // Selection UI is drawn on a canvas under the InkCanvas.
         private void UnprocessedInput_PointerPressed(
@@ -425,11 +425,11 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
         }
       ```
 
-## 轉譯自訂的筆墨
+## 轉譯自訂的筆跡
 
 根據預設，筆墨輸入是在低延遲背景執行緒上處理，並在其繪製期間轉譯為「濕潤」狀態。 完成筆劃 (拿起畫筆或手指，或是放開滑鼠按鈕) 時，即會在 UI 執行緒上處理該筆劃，並以「烘乾」狀態轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 層級 (在應用程式內容上方，並取代濕潤的筆墨)。
 
-筆跡平台可讓您覆寫這個行為，並以自訂烘乾筆墨輸入完整自訂筆墨經驗。
+筆跡平台可讓您覆寫這個行為，並以自訂乾筆跡輸入完整自訂筆跡體驗。
 
 自訂烘乾必須要有 [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) 物件才能管理筆墨輸入，並將它轉譯到通用 Windows app 的 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項。
 
@@ -437,6 +437,9 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 如需這項功能的完整範例，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。
 
+> [!NOTE]
+> 自訂乾燥與 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> 如果您的 app 使用自訂的乾燥實作覆寫 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的預設筆跡轉譯行為，InkToolbar 就不會再有轉譯的筆墨筆觸，InkToolbar 的內建清除命令也無法如預期般運作。 若要提供清除功能，就必須處理所有指標事件、對每一個筆劃執行點擊測試，並且覆寫內建的「清除所有筆跡」命令。
 
 ## 本節中的其他文章
 
@@ -471,6 +474,6 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

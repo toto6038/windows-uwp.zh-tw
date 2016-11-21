@@ -1,37 +1,34 @@
 ---
 author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-description: "請使用這個方法來更新 Windows 市集索引鍵。"
-title: "更新 Windows 市集識別碼索引鍵"
+description: "請使用這個方法來更新 Windows 市集金鑰。"
+title: "更新 Windows 市集識別碼金鑰"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 ---
 
 # 更新 Windows 市集識別碼金鑰
 
 
-
-
-請使用這個方法來更新 Windows 市集索引鍵。 當您藉由呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法來產生 Windows 市集識別碼索引鍵時，該索引鍵會有效 90 天。 索引鍵到期之後，這個方法可讓您使用過期的索引鍵來重新交涉，以取得新的索引鍵。
+請使用這個方法來更新 Windows 市集金鑰。 當您[產生 Windows 市集識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)時，該金鑰的有效期為 90 天。 金鑰到期之後，您可以藉由這個方法，使用過期的金鑰來重新交涉以取得一個新的金鑰。
 
 ## 先決條件
 
 
 若要使用這個方法，您將需要：
 
--   先前利用 `https://onestore.microsoft.com` 對象 URI 所建立的 Azure AD 存取權杖。
--   藉由從 app 中用戶端程式碼來呼叫 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法，所產生的過期 Windows 市集識別碼索引鍵。
+* 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
+* 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的過期「Windows 市集識別碼」金鑰。
 
-如需詳細資訊，請參閱 [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
 
 ## 要求
 
-
 ### 要求的語法
 
-| 索引鍵類型    | 方法 | 要求 URI                                              |
+| 金鑰類型    | 方法 | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
 | 集合 | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
 | 購買    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
@@ -53,7 +50,7 @@ ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
 | 參數     | 類型   | 描述                       | 必要 |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | 字串 | Azure AD 存取權杖。        | 是      |
-| key           | 字串 | 過期的 Windows 市集識別碼索引鍵。 | 否       |
+| key           | 字串 | 過期的 Windows 市集識別碼金鑰。 | 否       |
 
 <span/> 
 
@@ -78,7 +75,7 @@ Host: collections.mp.microsoft.com
 
 | 參數 | 類型   | 描述                                                                                                            | 必要 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | 字串 | 更新的 Windows 市集索引鍵，可在未來呼叫 Windows 市集集合 API 或購買 API 時使用。 | 否       |
+| key       | 字串 | 更新的 Windows 市集金鑰，可在未來呼叫 Windows 市集集合 API 或購買 API 時使用。 | 否       |
 
 <span/>
 
@@ -105,7 +102,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 代碼 | 錯誤        | 內部錯誤碼           | 說明                                                                                                                                                                           |
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
-| 401  | Unauthorized | InconsistentClientId       | Windows 市集識別碼索引鍵的 *clientId* 宣告，和 Azure AD 存取權杖的 *appid* 不相符。                                                                     |
+| 401  | Unauthorized | InconsistentClientId       | Windows 市集識別碼金鑰的 *clientId* 宣告，和 Azure AD 存取權杖的 *appid* 不相符。                                                                     |
 
 <span/>
 
@@ -119,6 +116,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

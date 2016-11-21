@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文列出適用於 UWP app 支援的 HTTP 即時資料流 (HLS) 通訊協定標記。"
 title: "HTTP 即時資料流 (HLS) 標記支援"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
+ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
+ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 > 以 "X-" 開頭的自訂標記可做為定時中繼資料來存取，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章中所述。
 
 |標記 |HLS 通訊協定版本所引進|HLS 通訊協定文件草稿版本|用戶端上的必要項|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1606 |
-|---------------------|-----------|--------------|---------|--------------|
+|---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本標記                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必要|支援|支援|支援|
 | 4.3.1.2.  EXT-X-VERSION |2|3|必要|支援|支援|支援
@@ -86,6 +86,6 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

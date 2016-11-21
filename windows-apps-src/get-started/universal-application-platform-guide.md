@@ -1,11 +1,11 @@
 ---
 author: TylerMSFT
 title: "通用 Windows 平台簡介"
-description: "了解可以在各式各樣執行 Windows 10 之裝置上執行的「通用 Windows 平台」(UWP) app。"
+description: "了解可以在各式各樣執行 Windows10 之裝置上執行的「通用 Windows 平台」(UWP) app。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
-ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
+ms.sourcegitcommit: 98dd2da8e16552fcde9790bd77f17a2100b63d4f
+ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
 
 ---
 
@@ -17,11 +17,11 @@ ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
 -   新的 UI 控制項和面板可讓您的 UI 適應不同裝置表單係數。
 -   如何了解與控制可供您的 app 使用的 API 表面。
 
-Windows 8 引進 Windows 執行階段 (WinRT)，它是由 Windows 應用程式模型演進而來。 做為通用應用程式架構。
+Windows8 引進 Windows 執行階段 (WinRT)，它是由 Windows 應用程式模型演進而來。 做為通用應用程式架構。
 
-Windows Phone 8.1 變成可用時，Windows 執行階段會對齊 Windows Phone 8.1 和 Windows。 如此可讓開發人員建立*通用 Windows 8 應用程式*，使用共用的程式碼基底，同時以 Windows 和 Windows Phone 為目標。
+Windows Phone 8.1 變成可用時，Windows 執行階段會對齊 Windows Phone 8.1 和 Windows。 如此可讓開發人員建立*通用 Windows8 應用程式*，使用共用的程式碼基底，同時以 Windows 和 Windows Phone 為目標。
 
-Windows 10 引進了通用 Windows 平台 (UWP)，進一步進化 Windows 執行階段模型，並將它帶到 Windows 10 統一核心。 做為核心的一部分，UWP 現在提供執行 Windows 10 的每個裝置上可用的通用 app 平台。 因為這樣的進化，以 UWP 為目標的 app 不僅可以呼叫所有裝置通用的 WinRT API，還可以呼叫 app 執行所在之裝置系列特定的 API (包括 Win32 和 .NET API)。 UWP 提供跨裝置的保證核心 API 層。 這表示您可以建立能夠安裝到各種裝置上的單一 app 套件。 同時，Windows 市集使用該單一應用程式套件提供統一的通路，可以達到您的 app 可以執行的所有裝置類型。
+Windows10 引進了通用 Windows 平台 (UWP)，進一步進化 Windows 執行階段模型，並將它帶到 Windows10 統一核心。 做為核心的一部分，UWP 現在提供執行 Windows10 的每個裝置上可用的通用 app 平台。 因為這樣的進化，以 UWP 為目標的 app 不僅可以呼叫所有裝置通用的 WinRT API，還可以呼叫 app 執行所在之裝置系列特定的 API (包括 Win32 和 .NET API)。 UWP 提供跨裝置的保證核心 API 層。 這表示您可以建立能夠安裝到各種裝置上的單一 app 套件。 同時，Windows 市集使用該單一應用程式套件提供統一的通路，可以達到您的 app 可以執行的所有裝置類型。
 
 ![通用 Windows 平台 app 在各種裝置上執行、支援彈性的使用者介面、自然的使用者輸入、一個市集、一個開發人員中心和雲端服務](images/universalapps-overview.png)
 
@@ -29,7 +29,7 @@ Windows 10 引進了通用 Windows 平台 (UWP)，進一步進化 Windows 執行
 
 ## 裝置系列
 
-Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 Windows Phone。 使用 Windows 10，您不再是以作業系統為目標，而是以一或多個裝置系列做為您的 app 的目標。 裝置系列會識別 API、系統特性以及您對於裝置系列中的裝置可以預期的行為。 它也會判斷可以從市集安裝您的 app 的一組裝置。 以下是裝置系列階層。
+Windows8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 Windows Phone。 使用 Windows10，您不再是以作業系統為目標，而是以一或多個裝置系列做為您的 app 的目標。 裝置系列會識別 API、系統特性以及您對於裝置系列中的裝置可以預期的行為。 它也會判斷可以從市集安裝您的 app 的一組裝置。 以下是裝置系列階層。
 
 ![裝置系列](images/device-family-tree.png)
 
@@ -73,7 +73,7 @@ Windows 8.1 和 Windows Phone 8.1 app 的目標作業系統 (OS)：Windows 或 W
 
 ## UI 和通用輸入
 
-UWP app 可以在具有不同輸入形式、螢幕解析度、DPI 密度以及其他獨特特性的許多不同類型裝置上執行。 Windows 10 提供新的通用控制項、配置面板和工具，可協助您針對您的 app 可能會在其上執行的裝置調整 UI。 例如，當您的 app 在桌上型電腦與行動裝置上執行時，您可以調整 UI 以利用不同的螢幕解析度。
+UWP app 可以在具有不同輸入形式、螢幕解析度、DPI 密度以及其他獨特特性的許多不同類型裝置上執行。 Windows10 提供新的通用控制項、配置面板和工具，可協助您針對您的 app 可能會在其上執行的裝置調整 UI。 例如，當您的 app 在桌上型電腦與行動裝置上執行時，您可以調整 UI 以利用不同的螢幕解析度。
 
 您的 app UI 的某些層面會跨裝置自動調整。 例如按鈕和滑桿的控制項會跨裝置系列和輸入模式自動調整。 不過，您的 app 使用者經驗設計可能需要依據 app 執行所在的裝置進行調整。 例如，在小型、手持裝置上執行相片 app 時應該調整 UI，以確保適合單手操作使用。 在桌上型電腦上執行相片 app 時，應該調整 UI 以充分利用額外的螢幕空間。
 
@@ -86,7 +86,7 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 
 ### 通用控制項與配置面板
 
-Windows 10 包含新的控制項，例如行事曆和分割檢視。 Pivot 控制項先前僅適用於 Windows Phone，現在也適用於通用裝置系列。
+Windows10 包含新的控制項，例如行事曆和分割檢視。 Pivot 控制項先前僅適用於 Windows Phone，現在也適用於通用裝置系列。
 
 控制項已經更新，可以在較大型的螢幕上正常運作、根據裝置可用的螢幕像素自行調整，並且可以與如鍵盤、滑鼠、觸控、手寫筆以及像是 Xbox 控制器的控制器等多種類型輸入正常配合運作。
 
@@ -98,7 +98,7 @@ Windows 10 包含新的控制項，例如行事曆和分割檢視。 Pivot 控�
 
 ![手機通訊 app UI](images/adaptiveux-phone.png)
 
-為了協助您根據可用螢幕空間量調整您的整體 UI 配置，Windows 10 引進了彈性面板和設計狀態。
+為了協助您根據可用螢幕空間量調整您的整體 UI 配置，Windows10 引進了彈性面板和設計狀態。
 
 ### 使用彈性面板設計彈性 UI
 
@@ -172,13 +172,13 @@ StateTriggers 會定義啟動視覺狀態的閾值，然後針對會觸發狀態
 
 ### 彈性縮放比例
 
-Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容之外，還有統一的比例因素集合，跨各種不同的螢幕大小和顯示器解析度針對 UI 元素提供一致的大小。 比例因素也相容於 iOS 與 Android 等其他作業系統的比例因素。 如此就可以輕鬆地在這些平台之間共用資產。
+Windows10 引進現有縮放比例模型的進化。 除了縮放向量內容之外，還有統一的比例因素集合，跨各種不同的螢幕大小和顯示器解析度針對 UI 元素提供一致的大小。 比例因素也相容於 iOS 與 Android 等其他作業系統的比例因素。 如此就可以輕鬆地在這些平台之間共用資產。
 
 市集會根據裝置的 DPI 部分來選取要下載的資產。 只會下載最符合裝置的資產。
 
 ### 通用輸入處理
 
-您可以使用通用控制項建置通用 Windows 應用程式，這些控制項會控制各種輸入，例如滑鼠、鍵盤、觸控、手寫筆以及控制器 (例如 Xbox 控制器)。 傳統上來說，筆跡已經只與手寫筆輸入相關聯，但是使用 Windows 10，您可以在某些裝置上使用觸控和使用任何指標輸入產生筆跡。 筆跡在許多裝置上 (包括行動裝置) 受到支援，只要幾行程式碼即可輕易結合。
+您可以使用通用控制項建置通用 Windows 應用程式，這些控制項會控制各種輸入，例如滑鼠、鍵盤、觸控、手寫筆以及控制器 (例如 Xbox 控制器)。 傳統上來說，筆跡已經只與手寫筆輸入相關聯，但是使用 Windows10，您可以在某些裝置上使用觸控和使用任何指標輸入產生筆跡。 筆跡在許多裝置上 (包括行動裝置) 受到支援，只要幾行程式碼即可輕易結合。
 
 下列 API 提供輸入的存取：
 
@@ -189,8 +189,7 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 
 ## 撰寫程式碼
 
-
-您適用於 [Visual Studio 中的 Windows 10 專案](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10)的程式設計語言選項包含 Visual C++、C#、Visual Basic 和 JavaScript。 對於Visual C++、C# 和 Visual Basic，您可以使用 XAML 以獲得完全不失真的原生 UI 體驗。 對於 Visual C++，您可以選擇使用 DirectX 繪製，或是同樣使用 XAML。 對於 JavaScript，您的展示層將會是 HTML，而 HTML 當然是跨平台 Web 標準。 您的大部分程式碼與 UI 是通用的，會在任何位置以相同的方式執行。 但是對於為特定裝置系列量身打造的程式碼，以及為特定表單係數量身打造的 UI，您可以選擇使用彈性程式碼和彈性 UI。 讓我們看看這些不同的情況。
+您適用於 [Visual Studio 中的 Windows10 專案](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10)的程式設計語言選項包含 Visual C++、C#、Visual Basic 和 JavaScript。 對於Visual C++、C# 和 Visual Basic，您可以使用 XAML 以獲得完全不失真的原生 UI 體驗。 對於 Visual C++，您可以選擇使用 DirectX 繪製，或是同樣使用 XAML。 對於 JavaScript，您的展示層將會是 HTML，而 HTML 當然是跨平台 Web 標準。 您的大部分程式碼與 UI 是通用的，會在任何位置以相同的方式執行。 但是對於為特定裝置系列量身打造的程式碼，以及為特定表單係數量身打造的 UI，您可以選擇使用彈性程式碼和彈性 UI。 讓我們看看這些不同的情況。
 
 **呼叫由您的目標裝置系列實作的 API**
 
@@ -246,7 +245,7 @@ Windows 10 引進現有縮放比例模型的進化。 除了縮放向量內容�
 
 **UWP 中的 Win32 API**
 
-C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows 10 裝置系列實作。 連結您的 app 與 Windowsapp.lib。 Windowsapp.lib 是「雨傘」 lib，提供 UWP API 的匯出。 連結到 Windowsapp.lib 會將 Windows 10 裝置系列上存在的 dll 的相依性新增至您的 app。
+C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows10 裝置系列實作。 連結您的 app 與 Windowsapp.lib。 Windowsapp.lib 是「雨傘」 lib，提供 UWP API 的匯出。 連結到 Windowsapp.lib 會將 Windows10 裝置系列上存在的 dll 的相依性新增至您的 app。
 
 如需可用於 UWP app 之 Win32 API 的完整清單，請參閱[適用於 UWP app 的 API 集合](https://msdn.microsoft.com/library/windows/desktop/mt186421)和[適用於 UWP app 的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 
@@ -277,10 +276,13 @@ C++/CX 中撰寫的 UWP app 或 Windows 執行階段元件都有屬於 UWP 之 W
 
 全新整合的 Windows 開發人員中心儀表板，可讓您集中管理和提交您為所有 Windows 裝置開發的 app。 新功能不只簡化程序，同時還讓您更好控制。 您在這裡還能找到結合[支付詳細資料](https://msdn.microsoft.com/library/windows/apps/dn986925)的詳細[分析報告](https://msdn.microsoft.com/library/windows/apps/mt148522)、[促銷應用程式和吸引客戶](https://msdn.microsoft.com/library/windows/apps/mt148526)的方式，以及更多好用功能。
 
-請參閱[使用整合的 Windows 開發人員中心儀表板](../publish/using-the-windows-dev-center-dashboard.md)以了解如何提交您的 app 在 Windows 市集中發行。
+請參閱[使用整合的 Windows 開發人員中心儀表板](../publish/using-the-windows-dev-center-dashboard.md)了解如何提交您的 app 在 Windows 市集中發行。
+
+## 另請參閱 ##
+如需更多的簡介資料，請參閱 [Windows10 - An Introduction to Building Windows Apps for Windows10 Devices (Windows10 - 建置適用於 Windows10 裝置的 Windows App 的簡介)](https://msdn.microsoft.com/en-us/magazine/dn973012.aspx)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

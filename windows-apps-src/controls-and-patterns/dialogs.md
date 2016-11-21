@@ -5,8 +5,8 @@ title: "對話方塊和飛出視窗"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 ---
 # 對話方塊和飛出視窗
@@ -48,8 +48,8 @@ ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>對話方塊</b> <br/><br/>
-   ![全按鈕對話方塊的範例](images/controls_dialog_twobutton.png)</p>
-<p>對話方塊是提供內容相關 App 資訊的強制回應 UI 重疊項目。 對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止， 而且它們通常會需要使用者執行某種動作。   
+    ![對話方塊範例](images/dialogs/dialog-delete-file-example.png)</p>
+<p>對話方塊是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止， 而且它們通常會需要使用者執行某種動作。   
 </p><br/>
 
   </div>
@@ -102,7 +102,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
   <div class="side-by-side-content-left">
    <p><b>適合使用對話方塊的情況...</b> <br/>
 <ul>
-<li>表示使用者「必須」****先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
+<li>表示使用者「必須」先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
 <ul>
   <li>當使用者的安全性可能受到破壞時</li>
   <li>當使用者將要永久修改重要資產時</li>
@@ -130,7 +130,8 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 
 
-## 對話方塊使用指導方針
+## 對話方塊
+### 一般指導方針
 
 -   在對話方塊文字的第一行中明確識別問題或使用者的目標。
 -   對話方塊標題是主要指示，而且是選擇性的。
@@ -146,7 +147,23 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   錯誤對話方塊會在對話方塊中顯示錯誤訊息，以及任何相關資訊。 錯誤對話方塊中應該只使用 [關閉] 按鈕或執行類似動作的按鈕。
 -   針對頁面上特定位置的內容相關錯誤，例如 (密碼欄位中的) 驗證錯誤，請使用 App 本身的畫布顯示內嵌錯誤，而不要使用對話方塊。
 
-## 建立對話方塊
+### 確認對話方塊 (確定/取消)
+確認對話方塊可讓使用者確認要執行的動作。 使用者可以確認動作或選擇取消。  
+典型的確認對話方塊有兩個按鈕︰確認 (確定) 按鈕和取消按鈕。  
+
+<ul>
+    <li>
+        <p>一般而言，確認按鈕應放在左邊 (主要按鈕)，取消按鈕 (次要按鈕) 應放在右邊。</p>
+         ![確定/取消對話方塊](images/dialogs/dialog-delete-file-example.png)
+        
+    </li>
+    <li>如一般建議一節所述，將按鈕與可識別針對主要指示或內容做出明確回應的文字搭配使用。
+    </li>
+</ul>
+
+> 某些平台將確認按鈕放在右邊，而非左邊。 那麼，為什麼建議將它放在左邊？  如果您假設大部分使用者習慣使用右手，而且是以右手拿手機，那麼確認按鈕位於左邊時實際上會更好按，因為它更有可能在使用者的拇指弧形內。 按鈕位於螢幕右邊時，使用者就必須將其拇指向內拉到較不舒服的位置。
+
+### 建立對話方塊
 若要建立對話方塊，請使用 [ContentDialog 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)。 您可以利用程式碼或標記建立對話方塊。 雖然在 XAML 中定義 UI 元素通常會比較容易，但針對簡單的對話方塊，單純使用程式碼會較為容易。 這個範例會建立一個對話方塊，以通知使用者沒有 WiFi 連線，然後使用 [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) 方法來加以顯示。
 
 ```csharp
@@ -174,23 +191,23 @@ private async void displayDeleteFileDialog()
     {
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
-        PrimaryButtonText = "Cancel",
-        SecondaryButtonText = "Delete file permanently"
+        PrimaryButtonText = "Delete",
+        SecondaryButtonText = "Cancel"
     };
 
     ContentDialogResult result = await deleteFileDialog.ShowAsync();
     
-    // Delete the file if the user clicked the second button. 
+    // Delete the file if the user clicked the primary button. 
     /// Otherwise, do nothing. 
-    if (result == ContentDialogResult.Secondary)
+    if (result == ContentDialogResult.Primary)
     {
         // Delete the file. 
     }
 }
 ```
 
-
-##  建立飛出視窗
+## 飛出視窗
+###  建立飛出視窗
 
 飛出視窗為開放式容器，可顯示任意 UI 做為其內容。  
 
@@ -278,7 +295,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## 設定飛出視窗樣式
+### 設定飛出視窗樣式
 若要設定飛出視窗的樣式，請修改其 [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx)。 這個範例會顯示一段換行的文字，並使文字區塊可供螢幕助讀程式存取。
 
 ````xaml
@@ -308,6 +325,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

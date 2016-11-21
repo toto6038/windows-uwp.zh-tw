@@ -5,22 +5,24 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "建置同時使用企業和個人資料的啟發式應用程式"
 translationtype: Human Translation
-ms.sourcegitcommit: 0da731e1211544ce6b07e783ddc2407da57781c2
-ms.openlocfilehash: 8ead30471371b9b6aca32088f115da9f68784922
+ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
+ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 ---
 
 # 建置同時使用企業和個人資料的啟發式應用程式
 
-__注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
- **應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
+            __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows10 (版本 1607)。
+
+應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
 
 在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工最愛的是，就算他們從組織的行動裝置管理 (MDM) 取消註冊或是完全離該組織，其裝置上的個人資料也能完好如初。
 
 如需 WIP 與啟發式應用程式的詳細資訊，請參閱︰[Windows 資訊保護 (WIP)](wip-hub.md)。
 
-[您可以在](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)找到完整的範例。
+
+            [您可以在](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)找到完整的範例。
 
 如果您已準備好進行每項工作，我們就開始吧。
 
@@ -28,25 +30,17 @@ __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
 
 您將需要：
 
-* Microsoft Intune 帳戶的存取權。
+* 執行 Windows10 (版本 1607) 的測試虛擬機器 (VM)。 這個測試 VM 將用來對您的應用程式偵錯。
 
-* 執行 Windows 10 (版本 1607) 的開發電腦。
-
-* 執行 Windows 10 (版本 1607) 的測試裝置。 這個裝置將用來對您的應用程式偵錯。
-
-  您總不能對已在 MDM 註冊的裝置偵錯， 所以您需要一個測試裝置。
-
-  為了簡化工作，我們假設您的測試裝置是一台電腦或虛擬機器。
+* 執行 Windows10 (版本 1607) 的開發電腦。 這可能是您的測試 VM (如果您有在其中安裝 Visual Studio)。
 
 ## 設定開發環境
 
 您將執行下列工作︰
 
-* 註冊您的測試電腦。
+* 在測試 VM 上安裝「WIP 設定開發人員小幫手」。
 
-* 建立保護原則。
-
-* 將原則下載到您的測試電腦。
+* 使用「WIP 設定開發人員小幫手」建立保護原則。
 
 * 設定 Visual Studio 專案。
 
@@ -54,23 +48,17 @@ __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
 
 * 將命名空間新增到程式碼檔案
 
-**註冊您的測試電腦**
+**在測試 VM 上安裝「WIP 設定開發人員小幫手」**
 
- 若要註冊您的測試電腦，請將您的 Intune 帳戶新增到測試電腦上的[設定]****->[存取公司或學校]**** 頁面。
+ 使用此工具在您的測試 VM 上設定 Windows 資訊保護原則。
 
- ![連線到 MDM](images/connect-v2.png)
-
- 您的電腦名稱會出現在 Intune 系統管理員主控台。
+ 請在此下載工具︰[WIP 設定開發人員小幫手](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)。
 
 **建立保護原則**
 
-建立原則，並將它部署到測試電腦。 請參閱[使用 Microsoft Intune 建立 Windows 資訊保護 (WIP) 原則](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune)。
+藉由將資訊新增到 WIP 設定開發人員小幫手的每個區段以定義您的原則。 選擇任一設定旁的 [說明] 圖示，以了解如何使用它 。
 
-**將原則下載到您的裝置**
-
-在測試電腦上，移至 [設定]**** 頁面，然後選取 [存取公司或學校]****-> [資訊]****->[同步]****。
-
-![使用 MDM 同步設定](images/sync.png)
+如需更多如何使用此工具的一般指導方針，請參閱應用程式下載頁面上的＜版本資訊＞一節。
 
 **設定 Visual Studio 專案**
 
@@ -86,7 +74,8 @@ __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
        <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*選擇性閱讀*："rescap" 前置詞表示「受限制的功能」**。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+   >
+            *選擇性閱讀*："rescap" 前置詞表示「受限制的功能」。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 4. 將這個命名空間新增到您的封裝資訊清單檔案︰
 
@@ -103,7 +92,7 @@ __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
 
 **設定遠端偵錯**
 
-在測試電腦上安裝 Visual Studio 遠端工具。 然後，在開發電腦上啟動遠端偵錯工具，並查看您的應用程式是否在目標電腦上執行。
+只有當您在 VM 以外的電腦上開發應用程式時，才需在您的測試 VM 上安裝 Visual Studio 遠端工具。 然後，在開發電腦上啟動遠端偵錯工具，並查看您的應用程式是否在測試 VM 上執行。
 
 請參閱[遠端電腦指示](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)。
 
@@ -141,7 +130,7 @@ else
 }
 ```
 
-Windows 10 (版本 1607) 支援 Windows 資訊保護。
+Windows10 (版本 1607) 支援 Windows 資訊保護。
 
 ## 讀取企業資料
 
@@ -400,7 +389,7 @@ private bool IsClipboardAllowedAsync()
 
 **避免提示使用者同意對話方塊**
 
-有一份既不是「個人」**也不是「企業」**的新文件。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
+有一份既不是「個人」也不是「企業」的新文件。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -443,7 +432,7 @@ private async void PasteText(bool isNewEmptyDocument)
 
 當員工選擇您的應用程式來分享資訊時，您的應用程式會開啟一個包含該內容的新項目。
 
-如先前所述，新項目不是「個人」**或「企業」**文件。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
+如先前所述，新項目不是「個人」或「企業」文件。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -499,7 +488,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 ### <a id="display-data"></a>保護出現在頁面的資料
 
-當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請「標記」**目前的應用程式檢視，或標記整個應用程式處理程序。
+當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請「標記」目前的應用程式檢視，或標記整個應用程式處理程序。
 
 當您標記檢視或處理程序時，Windows 會對它強制執行原則。 這有助於防止因為您的應用程式無法控制的動作所造成的資料遺漏。 例如在電腦上，使用者可以使用 CTRL-V 來複製檢視中的企業資訊，然後將該資訊貼到另一個應用程式。 Windows 會提供針對該動作的防護。 Windows 也可強制執行分享協定。
 
@@ -633,7 +622,10 @@ if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 
 **步驟 2︰建立檔案，並保護身分識別**
 
-[**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) 會建立一個受保護的檔案，並在您寫入該檔案時讓檔案控制代碼保持開啟。
+
+            [
+              **FileProtectionManager.CreateProtectedAndOpenAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync.aspx) 會建立一個受保護的檔案，並在您寫入該檔案時讓檔案控制代碼保持開啟。
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -1104,6 +1096,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

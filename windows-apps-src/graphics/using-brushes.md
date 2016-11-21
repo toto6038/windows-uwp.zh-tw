@@ -4,8 +4,8 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用筆刷"
 description: "Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
+ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
+ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ---
 # 使用筆刷
@@ -13,7 +13,7 @@ ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
@@ -179,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

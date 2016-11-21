@@ -4,15 +4,15 @@ ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "建立、寫入和讀取檔案"
 description: "使用 StorageFile 物件讀取和寫入檔案。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 145acd5a5a6143a31b792df721d94f9ddc5718fa
+ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
+ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 ---
 
 # 建立、寫入和讀取檔案
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -139,7 +139,6 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
 ```
 ```vb
     Dim dataWriter As New DataWriter(outputStream)
-
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
@@ -181,9 +180,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**使用緩衝區從檔案讀取位元組 (2 個步驟)**
+**使用緩衝區從檔案讀取文字 (2 個步驟)**
 
-1.  首先，呼叫 [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) 類別的 [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) 方法，從緩衝區讀取位元組到檔案。
+1.  首先，呼叫 [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) 類別的 [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) 方法。
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -260,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

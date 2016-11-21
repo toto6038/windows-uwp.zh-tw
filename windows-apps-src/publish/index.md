@@ -2,8 +2,8 @@
 author: jnHs
 Description: "了解如何將您的 Windows 應用程式發佈到 Windows 市集。"
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
+ms.sourcegitcommit: f894decad6a88ad3923e0bd5c54a6f4906555081
+ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
 
 
 ---
@@ -23,7 +23,7 @@ ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
 | [App 提交](app-submissions.md) | App 提交包含[價格與可用性的詳細資料](set-app-pricing-and-availability.md)、[屬性](enter-app-properties.md)、[年齡分級](age-ratings.md)、[套件](upload-app-packages.md)，以及[市集清單詳細資料](create-app-store-listings.md)。 您的提交在發佈到市集之前，將會經過[認證程序](the-app-certification-process.md)。 您可以使用的選用功能包括[套件正式發行前小眾測試版](package-flights.md)、[測試版測試](beta-testing-and-targeted-distribution.md)，以及[直接對企業的 LOB 發佈](distribute-lob-apps-to-enterprises.md)。 |
 | [附加元件提交](add-on-submissions.md) | 了解如何透過 Windows 開發人員中心儀表板發佈附加元件 (App 內產品)。 |
 | [利用廣告獲利](monetize-with-ads.md) | 管理您的廣告用量，包括自訂的廣告流量分配設定，以及分支機構廣告。 |
-| [App 管理與服務](app-management-and-services.md) | 使用像是推播通知、探究和地圖等服務，以及查看如何[檢視應用程式身分識別詳細資料](view-app-identity-details.md)與[保留額外的應用程式名稱](manage-app-names.md) |
+| [App 管理與服務](app-management-and-services.md) | 使用像是 A/B 測試 (實驗) 和地圖等服務，以及查看如何[檢視應用程式身分識別詳細資料](view-app-identity-details.md)與[保留額外的應用程式名稱](manage-app-names.md)。 |
 | [分析](analytics.md) | 取得您 App 的詳細分析資料，以查看您 App 的目前狀況，範圍從您已達到多少客戶，到客戶使用您 App 的狀況以及他們對 App 的相關反應。 您也可以找到 App 健康情況、廣告使用量及其他更多項目的相關資訊。 |
 | [App 促銷與客戶參與](app-promotion-and-customer-engagement.md) | 透過[廣告行銷活動](create-an-ad-campaign-for-your-app.md)、[促銷代碼](generate-promotional-codes.md)、[銷售定價](put-apps-and-add-ons-on-sale.md)等等來宣傳您的 App。 
 | [獲得報酬](getting-paid-apps.md) | 取得有關從您的 App、附加元件，以及 Microsoft Advertising 獲利的詳細資料。 |
@@ -32,6 +32,6 @@ ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

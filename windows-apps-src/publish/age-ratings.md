@@ -4,20 +4,22 @@ Description: "App 提交程序的 [年齡分級] 頁面讓您能夠提供 app �
 title: "年齡分級"
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 translationtype: Human Translation
-ms.sourcegitcommit: 8781eb0e5ea352216a1f4e1c6deedbd04d4b588c
-ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
+ms.sourcegitcommit: eaba2fa0af727df29843dad38e277f5b22192b51
+ms.openlocfilehash: 6269cff868f7a4357c3006d65fcc0ad5b7f7932b
 
 ---
 
 # 年齡分級
 
-[App 提交程序](app-submissions.md) 的 [年齡分級] 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
+
+            [App 提交程序](app-submissions.md) 的 [年齡分級] 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
 
 ## 回答年齡分級問卷
 
 當您第一次提交 App (或第一次更新使用較舊的年齡分級程序發佈的 App) 時，會提示您完成一份具有多個選項的問卷，以判斷 App 的年齡分級。
 
-> **重要** 如果您已經在其他店面完成 App 的問卷且具備 IARC 分級識別碼，就能選取選項來將您的分級識別碼提供給我們。 我們將會使用您的識別碼，將現有的分級與您在 Windows 市集中的 App 產生關聯。
+> 
+            **重要** 如果您已經在其他店面完成 App 的問卷且具備 IARC 分級識別碼，就能選取選項來將您的分級識別碼提供給我們。 我們將會使用您的識別碼，將現有的分級與您在 Windows 市集中的 App 產生關聯。
 
 您必須準確地回答問題。 在此程序中，我們會將您的發行者顯示名稱及電子郵件地址與 IARC 共享。 當您完成問卷之後，IARC 分級系統將會根據您的回應，提供年齡和內容分級資訊。 在不同的市場中向客戶顯示您的 App 時，我們將會使用這個分級資訊。 您也將收到來自 IARC 的電子郵件，其中包含您的 App 發佈時，App 分級的確認。
 
@@ -27,7 +29,8 @@ ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
 
 當您下一次更新 App 時，您將會在此頁面上看到 App 獲指派的所有分級。 如果 App 內容變更的結果需要調整您的任何答案，您也可以按一下 [編輯]，重新回答問卷。 IARC 也可能會隨時更新問題。 如果發生這種情況，當您提交更新時，可能會提示您重新完成問卷。
 
-> **注意** 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您的 app 是遊戲，而您想要在南韓提供使用，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
+> 
+            **注意** 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您的 app 是遊戲，而您想要在南韓提供使用，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
 
 ## 申訴分級或拒絕分類
 
@@ -50,6 +53,6 @@ ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

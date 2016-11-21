@@ -4,8 +4,8 @@ ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: "使用 Windows 市集提交 API 中的這個方法，來更新現有的套件正式發行前小眾測試版提交。"
 title: "使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 
 ---
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
 
 ## 要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -55,13 +55,14 @@ ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
 
 <span/>
 
-### 要求本文
+### 要求主體
 
-要求本文包含下列參數。
+要求主體包含下列參數。
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightPackages           | 陣列  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需回應本文中各個值的詳細資訊，請參閱[正式發行前小眾測試版資源](manage-flight-submissions.md#flight-package-object)。 在呼叫這個方法以更新 App 提交時，要求本文中只需要這些物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。 |
+| flightPackages           | 陣列  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需回應主體中各個值的詳細資訊，請參閱[正式發行前小眾測試版資源](manage-flight-submissions.md#flight-package-object)。 在呼叫這個方法以更新 App 提交時，要求主體中只需要這些物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值均是由「開發人員中心」所填入。 |
+| packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱[套件交付選項物件](manage-flight-submissions.md#package-delivery-options-object)。  |
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
 | notesForCertification           | 字串  |  為認證測試人員提供其他資訊，例如測試帳戶認證，以及存取和確認功能的步驟。 如需詳細資訊，請參閱[認證注意事項](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。 |
@@ -85,6 +86,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
   "notesForCertification": "No special steps are required for certification of this app."
@@ -93,7 +104,7 @@ Content-Type: application/json
 
 ## 回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含更新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱[套件正式發行前小眾測試版提交資源](manage-flight-submissions.md#flight-submission-object)。
+下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含更新提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[套件正式發行前小眾測試版提交資源](manage-flight-submissions.md#flight-submission-object)。
 
 ```json
 {
@@ -117,6 +128,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "fileUploadUrl": "https://productingestionbin1.blob.core.windows.net/ingestion/8b389577-5d5e-4cbe-a744-1ff2e97a9eb8?sv=2014-02-14&sr=b&sig=wgMCQPjPDkuuxNLkeG35rfHaMToebCxBNMPw7WABdXU%3D&se=2016-06-17T21:29:44Z&sp=rwl",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
@@ -148,6 +169,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 
