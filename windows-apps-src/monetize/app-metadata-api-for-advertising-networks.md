@@ -19,9 +19,9 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 廣告網路可以依照下列指示來要求 App 中繼資料 API 的存取權：
 
 1. 移至 App 中繼資料 API 入口網站的 [https://admetadata.portal.azure-api.net/signup](https://admetadata.portal.azure-api.net/signup) 頁面。
-2. 輸入必要的資訊，然後按一下 [Sign up] (註冊) 按鈕。
-3. 在相同的網站上，按一下 [Products] (產品) 索引標籤，然後按一下 [App details for advertising] (用於廣告的 App 詳細資料)。
-4. 在下一頁上，按一下 [Subscribe] (訂閱) 按鈕。 這會將您要存取 App 中繼資料 API 的要求提交給 Microsoft。
+2. 輸入必要的資訊，然後按一下 \[Sign up\] (註冊) 按鈕。
+3. 在相同的網站上，按一下 \[Products\] (產品) 索引標籤，然後按一下 \[App details for advertising\] (用於廣告的 App 詳細資料)。
+4. 在下一頁上，按一下 \[Subscribe\] (訂閱) 按鈕。 這會將您要存取 App 中繼資料 API 的要求提交給 Microsoft。
 
 在提交您的要求之後，您會在大約 24 小時內收到一封電子郵件，通知您該要求是已被允許還是拒絕。
 
@@ -31,18 +31,18 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 如果已授權您存取 App 中繼資料 API，請依照下列指示來取得您的訂用帳戶金鑰。 您必須在對 API 的呼叫要求表頭中傳遞此金鑰。
 
 1. 移至 App 中繼資料 API 入口網站的 [https://admetadata.portal.azure-api.net/signin](https://admetadata.portal.azure-api.net/signin) 頁面，並使用您的電子郵件和密碼登入。
-2. 按一下網站右上角中您的名稱，然後按一下 [Profile] (設定檔)。
-3. 在頁面的 [Your subscriptions] (您的訂用帳戶) 區段中，按一下 [Primary key] (主要金鑰) 旁邊的 [Show] (顯示)。 這就是您的訂用帳戶金鑰。 請複製該金鑰，以便在稍後呼叫 API 時可以使用。
+2. 按一下網站右上角中您的名稱，然後按一下 \[Profile\] (設定檔)。
+3. 在頁面的 \[Your subscriptions\] (您的訂用帳戶) 區段中，按一下 \[Primary key\] (主要金鑰) 旁邊的 \[Show\] (顯示)。 這就是您的訂用帳戶金鑰。 請複製該金鑰，以便在稍後呼叫 API 時可以使用。
 
 <span id="call-the-api" />
 ## 呼叫 API
 
-在您有了訂用帳戶金鑰之後，您便可以從所選擇的程式設計語言中使用 HTTP REST 語法來呼叫 API。 如需有關 API 語法的資訊，請參閱下方的 [API 語法](#syntax)一節。 若要查看 C#、JavaScript、Python 及數個其他語言中的程式碼範例，請按一下 App 中繼資料 API 入口網站的 [APIs] (API) 索引標籤，按一下 [App details] (App 詳細資料)，然後查看頁面底部的 [Code samples] (程式碼範例) 區段。
+在您有了訂用帳戶金鑰之後，您便可以從所選擇的程式設計語言中使用 HTTP REST 語法來呼叫 API。 如需有關 API 語法的資訊，請參閱下方的 [API 語法](#syntax)一節。 若要查看 C#、JavaScript、Python 及數個其他語言中的程式碼範例，請按一下 App 中繼資料 API 入口網站的 \[APIs\] (API) 索引標籤，按一下 \[App details\] (App 詳細資料)，然後查看頁面底部的 \[Code samples\] (程式碼範例) 區段。
 
 或者，您也可以使用 App 中繼資料 API 入口網站所提供的 UI 來呼叫 API：
-  1. 在入口網站中，按一下 [APIs] (API) 索引標籤，然後按一下 [App details] (App 詳細資料)。
-  2. 在下一頁上，於 [app_id] 欄位中輸入您想要擷取中繼資料之 App 的 [app_id](#request-parameters)，然後在 [Ocp_Apim_Subscription-Key] 欄位中輸入您的訂用帳戶金鑰。
-  3. 按一下 [Send] (傳送)。 回應會顯示在頁面底部。
+  1. 在入口網站中，按一下 \[APIs\] (API) 索引標籤，然後按一下 \[App details\] (App 詳細資料)。
+  2. 在下一頁上，於 \[app_id\] 欄位中輸入您想要擷取中繼資料之 App 的 [app_id](#request-parameters)，然後在 \[Ocp_Apim_Subscription-Key\] 欄位中輸入您的訂用帳戶金鑰。
+  3. 按一下 \[Send\] (傳送)。 回應會顯示在頁面底部。
 
 
 <span id="syntax" />
@@ -69,7 +69,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------|
-| app_id | 字串 | 必要。 您想要擷取中繼資料之 App 的識別碼。 這可以是下列其中一個值：<br/><br/><ul><li>App 的「市集識別碼」。 範例「市集識別碼」如 9NBLGGH29DM8。</li><li>原始建置的 Windows8.x 或 Windows Phone 8.x App「產品識別碼」(有時稱為「App 識別碼」)。 「產品識別碼」是 GUID。</li></ul> |
+| app_id | 字串 | 必要。 您想要擷取中繼資料之 App 的識別碼。 這可以是下列其中一個值：<br/><br/><ul><li>App 的「市集識別碼」。 範例「市集識別碼」如 9NBLGGH29DM8。</li><li>原始建置的 Windows 8.x 或 Windows Phone 8.x App「產品識別碼」(有時稱為「App 識別碼」)。 「產品識別碼」是 GUID。</li></ul> |
 
 <span/>
 
@@ -111,7 +111,7 @@ Ocp-Apim-Subscription-Key: <subscription key>
 | name           | 字串  | App 的名稱。   |
 | description           | 字串  | 來自 App 之「市集」清單的描述。  |
 | phoneStoreGuid           | 字串  | App 的「產品識別碼」(Windows Phone 8.x)。 這是 GUID。  |
-| windowsStoreGuid           | 字串  | App 的「產品識別碼」(Windows8.x)。 這是 GUID。 |
+| windowsStoreGuid           | 字串  | App 的「產品識別碼」(Windows 8.x)。 這是 GUID。 |
 | storeCategory           | 字串  | 「市集」中 App 的類別。 如需了解有哪些支援的值，請參閱「市集」中 App 的[類別與子類別表格](../publish/category-and-subcategory-table.md)。  |
 | iabCategory           | 字串  | 美國互動廣告局 (Interactive Advertising Bureau, IAB) 所定義的 App 內容類別。 例如，**News** (新聞) 或 **Sports** (體育)。 如需內容類別的清單，請參閱 IAB 網站上的 [IAB Tech Lab Content Taxonomy (IAB 科技實驗室內容分類)](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) 頁面。   |
 | iabCategoryId           | 字串  | App 的內容類別識別碼。 例如，**IAB12** 是 News (新聞) 類別的識別碼，**IAB17** 是 Sports (體育) 類別的識別碼。 如需內容類別識別碼的清單，請參閱 [OpenRTB API Specification (OpenRTB API 規格)](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) 頁面上的 5.1 節。 |

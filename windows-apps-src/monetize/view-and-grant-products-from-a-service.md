@@ -23,10 +23,8 @@ ms.openlocfilehash: 86d7383a7288434ec613244e4c2ba610889a45fb
 
 Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure AD) 驗證來存取客戶的擁有權資訊。 您必須先在 Windows 開發人員中心儀表板中，把 Azure AD 中繼資料套用到您的應用程式上，並產生數個必要的存取權杖和金鑰，才能夠呼叫這些 API。 下列步驟說明端對端的程序：
 
-1.  
-            [在 Azure AD 中設定 Web 應用程式](#step-1)。 這個應用程式代表您在 Azure AD 內容中的跨平台服務。
-2.  
-            [在 Windows 開發人員中心儀表板中，讓您的 Azure AD 用戶端識別碼與應用程式建立關聯](#step-2)。
+1.  [在 Azure AD 中設定 Web 應用程式](#step-1)。 這個應用程式代表您在 Azure AD 內容中的跨平台服務。
+2.  [在 Windows 開發人員中心儀表板中，讓您的 Azure AD 用戶端識別碼與應用程式建立關聯](#step-2)。
 3.  在您的服務中，[產生代表您發行者身分識別的 Azure AD 存取權杖](#step-3)。
 4.  在您 Windows 應用程式的用戶端程式碼中，[產生代表目前使用者身分識別的 Windows 市集識別碼金鑰](#step-4)，然後把該 Windows 市集識別碼金鑰傳回您的服務。
 5.  在您擁有必要的 Azure AD 存取權杖和 Windows 市集識別碼金鑰之後，[從您的服務呼叫 Windows 市集集合 API 或購買 API](#step-5)。
@@ -38,13 +36,12 @@ Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure A
 
 1.  依照[整合應用程式與 Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) 中的指示，將 Web 應用程式新增到 Azure AD。
 
-    > 
-            **注意**
-            &nbsp;&nbsp;在 [告訴我們您的應用程式] 頁面上，請務必選擇 [Web 應用程式和/或 Web API]。 您必須這麼做，才能為您的應用程式取得金鑰 (也稱為「用戶端密碼」)。 為了呼叫 Windows 市集集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
+    > **注意**
+            &nbsp;&nbsp;在 \[告訴我們您的應用程式\] 頁面上，請務必選擇 \[Web 應用程式和/或 Web API\]。 您必須這麼做，才能為您的應用程式取得金鑰 (也稱為「用戶端密碼」)。 為了呼叫 Windows 市集集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
 
-2.  在 [Azure 管理入口網站](http://manage.windowsazure.com/)中，瀏覽到 [Active Directory]。 選取您的目錄，按一下頂端的 [應用程式] 索引標籤，然後選取您的應用程式。
-3.  按一下 [設定] 索引標籤。 在此索引標籤上，取得您應用程式的用戶端識別碼並要求一個金鑰 (在後續步驟中稱為「用戶端密碼」)。
-4.  按一下螢幕底部的 [管理資訊清單]。 下載您的 Azure AD 應用程式資訊清單，並以下列文字取代 `"identifierUris"` 區段。
+2.  在 [Azure 管理入口網站](http://manage.windowsazure.com/)中，瀏覽到 \[Active Directory\]。 選取您的目錄，按一下頂端的 \[應用程式\] 索引標籤，然後選取您的應用程式。
+3.  按一下 \[設定\] 索引標籤。 在此索引標籤上，取得您應用程式的用戶端識別碼並要求一個金鑰 (在後續步驟中稱為「用戶端密碼」)。
+4.  按一下螢幕底部的 \[管理資訊清單\]。 下載您的 Azure AD 應用程式資訊清單，並以下列文字取代 `"identifierUris"` 區段。
 
     ```json
     "identifierUris" : [                                
@@ -64,7 +61,7 @@ Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure A
 Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端識別碼建立關聯的 App 和附加元件，提供其使用者擁有權資訊的存取權。
 
 1.  登入 [Windows 開發人員中心儀表板](https://dev.windows.com/overview)，然後選取您的 App
-2.  依序前往 [服務]&gt; [產品系列和購買] 頁面，然後在其中一個可用欄位中輸入您的 Azure AD 用戶端識別碼。
+2.  依序前往 \[服務\]&gt; \[產品系列和購買\] 頁面，然後在其中一個可用欄位中輸入您的 Azure AD 用戶端識別碼。
 
 <span id="step-3"/>
 ### 步驟 3：從 Azure AD 擷取存取權杖
@@ -79,14 +76,12 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
     -   `https://onestore.microsoft.com/b2b/keys/create/purchase`：在稍後的步驟中，您將使用以此 URI 建立的存取權杖，來要求 Windows 市集識別碼金鑰，讓您能搭配 Windows 市集購買 API 來使用。
     -   `https://onestore.microsoft.com`：在稍後的步驟中，您將使用以此 URI 建立的存取權杖，來直接呼叫「Windows 市集集合 API」或「購買 API」。
 
-    > 
-            **重要：**
+    > **重要：**
             &nbsp;&nbsp;請只搭配安全地儲存在您服務中的存取權杖來使用 `https://onestore.microsoft.com` 對象。 在您服務以外的地方公開與此對象搭配的存取權杖，可能會讓您的服務容易遭受重新執行攻擊。
 
 存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。 如需有關存取權杖結構的詳細資訊，請參閱[支援的權杖和宣告類型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
-> 
-            **重要**
+> **重要**
             &nbsp;&nbsp;您應該只在您的服務內容中 (而不是在您的 App 中) 建立 Azure AD 存取權杖。 如果該存取權杖被傳送到您的 App，您的用戶端密碼就可能遭竊。
 
 <span id="step-4"/>
@@ -110,14 +105,12 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
 
     針對每一種方法，都請將您的 Azure AD 存取權杖傳遞給 *serviceTicket* 參數。 您可以視需要把識別碼傳遞給可識別您服務內容中目前使用者的 *publisherUserId* 參數。 如果您負責維護服務的使用者識別碼，您便可以使用此參數，將這些使用者識別碼與您對「Windows 市集集合 API」或「購買 API」發出的呼叫相互關聯。
 
-    >
-            **注意**
+    >**注意**
             &nbsp;&nbsp;如需有關 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 3.  在您的 App 成功擷取「Windows 市集識別碼」金鑰之後，將金鑰傳遞回您的服務。
 
-> 
-            **注意**
+> **注意**
             &nbsp;&nbsp;每個「Windows 市集識別碼」金鑰的有效期是 90 天。 金鑰到期之後，您可以[更新金鑰](renew-a-windows-store-id-key.md)。 我們建議您更新自己的 Windows 市集識別碼金鑰，而不是建立新的。
 
 <span id="step-5"/>

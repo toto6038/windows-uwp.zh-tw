@@ -15,12 +15,10 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件 (亦稱為 App 內產品或 IAP) 提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->
-            **注意**
+>**注意**
             &nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的「Windows 市集提交 API」方法來建立附加元件。
 
->
-            **重要**
+>**重要**
             &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
 
 | 方法        | URI    | 描述                                                                 |
@@ -39,8 +37,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 1. 如果您尚未執行此動作，請先完成[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先決條件，包括將 Azure AD 應用程式關聯至您的 Windows 開發人員中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
 
-2. 
-            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 3. 在 Windows 市集提交 API 中執行下列方法。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。 如需詳細資訊，請參閱[建立附加元件提交](create-an-add-on-submission.md)。
 
@@ -58,8 +55,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >
-            **注意**
+  >**注意**
             &nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新圖示，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
@@ -217,8 +213,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 此資源包含附加元件的定價資訊。
 
->
-            **重要**
+>**重要**
             &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 您將會發現下列行為變更：
 
    > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，「定價」資源將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的定價資料。
@@ -240,8 +235,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 此資源包含附加元件的銷售資訊。
 
->
-            **重要**
+>**重要**
             &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「銷售」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
 
 此資源具有下列值。

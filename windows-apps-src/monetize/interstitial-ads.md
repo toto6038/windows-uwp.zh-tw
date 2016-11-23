@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows10、Windows8.1 或 Windows Phone 8.1 App 中包含插入式廣告。"
+description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。"
 title: "插入式廣告"
 translationtype: Human Translation
 ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
@@ -14,7 +14,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 
 
-本逐步解說示範如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows10、Windows8.1 或 Windows Phone 8.1 App 中包含插入式廣告。
+本逐步解說示範如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫，在 Windows 10、Windows 8.1 或 Windows Phone 8.1 App 中包含插入式廣告。
 
 如需示範如何使用 C# 和 C++ 將插入式廣告新增到 JavaScript/HTML App 及 XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -37,7 +37,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 ### 先決條件
 
 * 對於 UWP app︰請安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 與 Visual Studio 2015。
-* 對於 Windows8.1 或 Windows Phone 8.1 App：請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 與 Visual Studio 2015 或 Visual Studio 2013。
+* 對於 Windows 8.1 或 Windows Phone 8.1 App：請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) 與 Visual Studio 2015 或 Visual Studio 2013。
 
 ### 程式碼開發
 
@@ -48,17 +48,16 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 <span id="interstitialadsxaml10"/>
 ### 插入式廣告 (XAML/.NET)
 
-> 
-            **注意** 本節將提供 C# 範例，但同時也支援 Visual Basic 和 C++。
+> **注意** 本節將提供 C# 範例，但同時也支援 Visual Basic 和 C++。
  
 1. 在 Visual Studio 中，開啟您的專案。
-2. 在 [參考管理員] 中，根據您的專案類型選取下列其中一項參考︰
+2. 在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]，按一下 [擴充功能]，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    -   對於通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]，按一下 \[擴充功能\]，然後選取 \[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\] 旁邊的核取方塊。
 
-    -   對於 Windows8.1 專案：展開 [Windows8.1]，按一下 [擴充功能]，然後選取 [適用於 Windows8.1 XAML 的 Ad Mediator SDK] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   對於 Windows 8.1 專案：展開 \[Windows 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
-    -   對於 Windows Phone 8.1 專案：展開 [Windows Phone 8.1]，按一下 [擴充功能]，然後選取 [適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   對於 Windows Phone 8.1 專案：展開 \[Windows Phone 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
 3.  在 App 程式碼中包含下列命名空間參照。
 
@@ -81,8 +80,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 #endif
     ```
 
-    > 
-            **注意** 在提交 App 之前，請以實際值取代測試值。
+    > **注意** 在提交 App 之前，請以實際值取代測試值。
 
 5.  具現化 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)，連結所有事件處理常式，然後要求廣告。
 
@@ -153,13 +151,13 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 此範例假設您已在 Visual Studio 2015 中建立 JavaScript 的通用 App 專案，並且是針對特定的 CPU。
 
 1. 在 Visual Studio 中，開啟您的專案。
-2.  在 [參考管理員] 中，根據您的專案類型選取下列其中一項參考︰
+2.  在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]，按一下 [擴充功能]，然後選取 [適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    -   對於通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]，按一下 \[擴充功能\]，然後選取 \[適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)\] 旁邊的核取方塊。
 
-    -   對於 Windows8.1 專案：展開 [Windows8.1]，按一下 [擴充功能]，然後選取 [適用於 Windows8.1 Native 的 Microsoft Advertising SDK (JS)] 旁邊的核取方塊。
+    -   對於 Windows 8.1 專案：展開 \[Windows 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows 8.1 Native 的 Microsoft Advertising SDK (JS)\] 旁邊的核取方塊。
 
-    -   對於 Windows8.1 專案：展開 [Windows Phone 8.1]，按一下 [擴充功能]，然後選取 [Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)] 旁邊的核取方塊。
+    -   對於 Windows 8.1 專案：展開 \[Windows Phone 8.1\]，按一下 \[擴充功能\]，然後選取 \[Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)\] 旁邊的核取方塊。
 
 3.  在 HTML 中包含下列指令碼參照。
 
@@ -240,18 +238,17 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 此範例假設您已在 Visual Studio 2015 中建立 XAML 的通用 App 專案，並且是針對特定的 CPU 架構。
 
-> 
-            **重要** 此程式碼是以 C++ 撰寫，以符合 DirectX 要求。
+> **重要** 此程式碼是以 C++ 撰寫，以符合 DirectX 要求。
 
  
 1. 在 Visual Studio 中，開啟您的專案。
-1.  在 [參考管理員] 中，根據您的專案類型選取下列其中一項參考︰
+1.  在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]，按一下 [擴充功能]，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)] 旁邊的核取方塊。
+    -   對於通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]，按一下 \[擴充功能\]，然後選取 \[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\] 旁邊的核取方塊。
 
-    -   對於 Windows8.1 專案：展開 [Windows8.1]，按一下 [擴充功能]，然後選取 [適用於 Windows8.1 XAML 的 Ad Mediator SDK] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   對於 Windows 8.1 專案：展開 \[Windows 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
-    -   對於 Windows Phone 8.1 專案：展開 [Windows Phone 8.1]，按一下 [擴充功能]，然後選取 [適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   對於 Windows Phone 8.1 專案：展開 \[Windows Phone 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
 2.  在 App 適當的標頭檔中，宣告插入式廣告物件和相關屬性/方法。
 
@@ -354,7 +351,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 ### 使用 Windows 開發人員中心發行包含即時廣告的 App
 
-1.  在開發人員中心儀表板中，移至 App 的 [營利]&gt;[利用廣告營利] 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 針對廣告單位類型，指定 [插入式影片]。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至 App 的 \[營利\]&gt;\[利用廣告營利\] 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 針對廣告單位類型，指定 \[插入式影片\]。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值，用在開發人員中心產生的實際值取代。
 
@@ -372,7 +369,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 ## 移除參考錯誤：以特定 CPU 平台為目標 (XAML 和 HTML)
 
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU] 為目標。 如果專案的目標是 [任何 CPU]，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\] 為目標。 如果專案的目標是 \[任何 CPU\]，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
 
 ## 相關主題
 

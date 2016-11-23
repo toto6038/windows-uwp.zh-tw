@@ -42,7 +42,7 @@ ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 
 ## 使用 JSON 檔案將 app 與網站關聯
 
-若要確保只有您的 app 才能開啟您網站上的內容，請將您的 app 套件系列名稱放入位在網頁伺服器根目錄中，或位在網域的已知目錄中的 JSON 檔案。 這表示您的網站同意所列出的 app 開啟您網站上的內容。 您可以在 app 資訊清單設計工具的 [套件] 區段中，找到套件系列名稱。
+若要確保只有您的 app 才能開啟您網站上的內容，請將您的 app 套件系列名稱放入位在網頁伺服器根目錄中，或位在網域的已知目錄中的 JSON 檔案。 這表示您的網站同意所列出的 app 開啟您網站上的內容。 您可以在 app 資訊清單設計工具的 \[套件\] 區段中，找到套件系列名稱。
 
 >[!Important]
 > JSON 檔案不應該有.json 後置檔案。
@@ -73,7 +73,7 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 
 ### 多個 app
 
-如果您想要連結到網站的 app 有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個 app。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 [設定] &gt; [網站的 app] 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
+如果您想要連結到網站的 app 有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個 app。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 \[設定\] &gt; \[網站的 app\] 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
 
 ``` JSON
 [{
@@ -141,8 +141,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-
-            **重要：**務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
+**重要：**務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
 
 ## 測試︰本機驗證工具
 
@@ -152,8 +151,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 執行此工具時，可利用下列參數來測試 app 與網站的設定：
 
-
-            **AppHostRegistrationVerifier.exe**
+**AppHostRegistrationVerifier.exe**
             *hostname packagefamilyname filepath*
           
 
@@ -165,14 +163,13 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 關閉您的應用程式，驗證當您按一下連結時會啟用該 app。 接著在您的網站中，複製其中一個支援路徑的網址。 例如，如果您網站的網址是 “msn.com”，而其中一個支援路徑是 “path1”，您會使用： `http://msn.com/path1`
 
-確認您的 app 已經關閉。 按下 Windows 鍵 + R 以開啟[執行] 對話方塊並在視窗中貼上連結。 您的 app 應要啟動，而不是網頁瀏覽器。
+確認您的 app 已經關閉。 按下 Windows 鍵 + R 以開啟\[執行\] 對話方塊並在視窗中貼上連結。 您的 app 應要啟動，而不是網頁瀏覽器。
 
 此外，您可以使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API，測試從另一個應用程式來啟動您的 app。 您同樣可以使用這個 API，在手機上測試。
 
 如果您想要依照通訊協定啟用邏輯，在 **OnActivated** 事件處理常式中設定中斷點。
 
-
-            **注意︰**如果您按一下 Microsoft Edge 瀏覽器中的連結，並不會啟動您的 app，而是將您帶至您的網站。
+**注意︰**如果您按一下 Microsoft Edge 瀏覽器中的連結，並不會啟動您的 app，而是將您帶至您的網站。
 
 ## AppUriHandlers 祕訣︰
 
@@ -180,7 +177,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 - 列出所有您將會支援的主機。  請注意，www.example.com 與 example.com 的主機不同。
 
-- 使用者可以在 [設定] 中，選擇他們想要哪個 app 來處理網站。
+- 使用者可以在 \[設定\] 中，選擇他們想要哪個 app 來處理網站。
 
 - 您的 JSON 檔案必須上傳到 https 伺服器。
 
@@ -196,8 +193,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 [處理 URI 啟用](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-
-            [關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
+[關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
 
 
 

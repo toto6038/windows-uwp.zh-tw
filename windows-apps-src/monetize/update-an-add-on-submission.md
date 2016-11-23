@@ -16,8 +16,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 如需有關如何在使用「Windows 市集提交 API」來建立附加元件提交的程序中套用此方法的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
->
-            **重要**
+>**重要**
             &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將會忽略此方法之要求主體中的「定價」資源，而您將暫時無法使用此方法來變更附加元件提交的定價和銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-add-on-submissions.md#pricing-object)。
 
 ## 先決條件
@@ -25,12 +24,10 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* 
-            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->
-            **注意**
+>**注意**
             &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## 要求

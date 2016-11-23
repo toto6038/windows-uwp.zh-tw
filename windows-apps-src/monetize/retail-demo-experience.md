@@ -96,10 +96,9 @@ ms.openlocfilehash: 7a5367ae13be60be6e5b0ee4f62190f8b3330c59
 
 ## 準備零售示範模式開發的程式碼基底
 
-
-            [
+[
               **RetailInfo**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) 公用程式類別中的 [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 屬性是 Windows10 SDK 中 [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 命名空間中的一部分，可用來作為布林值指標，以指定您的應用程式在哪個程式碼路徑上執行 - 「一般」模式或「零售」模式。 
+            ](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) 公用程式類別中的 [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 屬性是 Windows 10 SDK 中 [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 命名空間中的一部分，可用來作為布林值指標，以指定您的應用程式在哪個程式碼路徑上執行 - 「一般」模式或「零售」模式。 
 
 當 [**RetailInfo.IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 傳回 true 時，您可以使用 [**RetailInfo.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.properties.aspx) 來查詢裝置相關的一組屬性，以建置一個自訂程度更高的零售示範體驗。 這些屬性包括 [**ManufacturerName**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.manufacturername.aspx)、[**Screensize**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.screensize.aspx)、[**Memory**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.memory.aspx) 等。 
 
@@ -124,7 +123,7 @@ ms.openlocfilehash: 7a5367ae13be60be6e5b0ee4f62190f8b3330c59
 
 #### 步驟 1：清理。
 * 所有 Win32 和市集 App 都會被關閉
-* 在已知資料夾 (例如 [圖片]、[影片]、[音樂]、[文件]、[已儲存的相片]、[手機相簿]、[桌面] 及 [下載] 資料夾) 中的所有檔案都會被刪除
+* 在已知資料夾 (例如 \[圖片\]、\[影片\]、\[音樂\]、\[文件\]、\[已儲存的相片\]、\[手機相簿\]、\[桌面\] 及 \[下載\] 資料夾) 中的所有檔案都會被刪除
 * 非結構化和結構化漫遊狀態都會被刪除
 * 結構化本機狀態會被刪除
 
@@ -134,7 +133,7 @@ ms.openlocfilehash: 7a5367ae13be60be6e5b0ee4f62190f8b3330c59
 
 ### 如何跨使用者工作階段儲存資料？
 
-如果您想要跨使用者工作階段儲存資料，您可以將資訊儲存在 [ApplicationData.Current.TemporaryFolder] 中，因為預設清理程序不會自動刪除此資料夾中的資料。 請注意，在進行清理程序期間，會刪除使用 *LocalState* 來儲存的資訊。 
+如果您想要跨使用者工作階段儲存資料，您可以將資訊儲存在 \[ApplicationData.Current.TemporaryFolder\] 中，因為預設清理程序不會自動刪除此資料夾中的資料。 請注意，在進行清理程序期間，會刪除使用 *LocalState* 來儲存的資訊。 
 
 ### 如何自訂清理程序？
 
