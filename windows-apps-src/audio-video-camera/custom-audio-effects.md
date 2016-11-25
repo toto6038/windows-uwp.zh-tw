@@ -24,7 +24,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 3.  針對此範例，請將專案命名為 *AudioEffectComponent*。 此名稱將會由稍後的程式碼所參考。
 4.  按一下 \[確定\]。
 5.  專案範本會建立名為 Class1.cs 的類別。 在 \[方案總管\] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 \[重新命名\]。
-6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 \[是\]。
+6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 \[是\]****。
 7.  開啟 **ExampleAudioEffect.cs** 並更新類別定義以實作 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 介面。
 
 
@@ -48,21 +48,13 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 系統會在您的效果上呼叫 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 來讓您知道效果正在運作之音訊串流的編碼屬性。 為了實作回音效果，本範例會使用緩衝區以儲存一秒的音訊資料。 這個方法能根據音訊編碼的取樣率，提供針對一秒音訊中的範例數目初始化緩衝區大小的機會。 延遲效果也會使用整數計數器以追蹤延遲緩衝區中的目前位置。 由於系統會在效果新增到音訊管道時呼叫 **SetEncodingProperties**，這是將該值初始化為 0 的好時機。 您也可以擷取傳遞到此方法的 **AudioEncodingProperties** 物件，以用於效果中的其他地方。
 
-[!code-cs
-              [DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)
-            ]
-            
-            [!code-cs
-              [SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)
-            ]
-          
+[!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
+[!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
 
 
 ### SetProperties 方法
 
-[
-              **SetProperties**
-            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
+[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 對應進行傳遞。
 
 [!code-cs[SetProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetProperties)]
 
@@ -72,9 +64,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 ### ProcessFrame 方法
 
-[
-              **ProcessFrame**
-            ](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法可以讓您的效果修改串流的音訊資料。 此方法會於每個框架呼叫一次，並會被傳遞 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 物件。 此物件包含輸入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 物件 (該物件包含要處理的傳入框架)，以及輸出 **AudioFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘音訊管線的音訊資料)。 音訊框架是代表音訊資料片段的音訊範例緩衝區。
+[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法可以讓您的效果修改串流的音訊資料。 此方法會於每個框架呼叫一次，並會被傳遞 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 物件。 此物件包含輸入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 物件 (該物件包含要處理的傳入框架)，以及輸出 **AudioFrame** 物件 (您將會針對該物件寫入會傳遞至剩餘音訊管線的音訊資料)。 音訊框架是代表音訊資料片段的音訊範例緩衝區。
 
 存取 **AudioFrame** 的資料緩衝區需要 COM Interop，因此您應該將 **System.Runtime.InteropServices** 命名空間包含在效果類別檔案中，然後將下列程式碼新增到命名空間內，使您的效果能匯入存取音訊緩衝區的介面。
 
@@ -82,9 +72,9 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 \[屬性\]。
-> 2.  選取 \[建置\] 索引標籤。
-> 3.  選取 \[允許 Unsafe 程式碼\] 核取方塊。
+> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 \[屬性\]****。
+> 2.  選取 \[建置\]**** 索引標籤。
+> 3.  選取 \[允許 Unsafe 程式碼\]**** 核取方塊。
 
  
 
@@ -98,7 +88,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 ### Close 方法
 
-系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782)[**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
+系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -110,9 +100,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 ### TimeIndependent 屬性
 
-[
-              **TimeIndependent**
-            ](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
+[**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
 
 [!code-cs[TimeIndependent](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetTimeIndependent)]
 
@@ -128,9 +116,9 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 如果要從您的 App 使用您的音訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
-2.  展開 \[專案\] 索引標籤，選取 \[方案\]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
-3.  按一下 \[確定\]
+1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]****，然後選取 \[加入參考\]****。
+2.  展開 \[專案\]**** 索引標籤，選取 \[方案\]****，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
+3.  按一下 \[確定\]****
 
 如果您的音訊效果類別已宣告為不同的命名空間，請務必將該命名空間包含在程式碼檔案中。
 
