@@ -1008,7 +1008,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\9cdaa63563dc08f2a17d1624b0a795fb84f8d39e.7c828ad607291e9c2dab50b347336909a3f634cc.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf",
-      "LocXliffCommit": "0e701080ca80172a00c04cb08f6e174a74abb19a"
+      "LocXliffCommit": "f3541df8098351947c4893e2c90855fcdf498967"
     },
     "windows-apps-src\\graphics-concepts\\block-compression.md.0931f2d9bc49beeab6872bcd7dbbcf753066e366.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\block-compression.md",
@@ -3288,7 +3288,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\840a5e76d409f547d55e558262af09c8fa36a544.09ad363c2b5d8e0ec50333c7a4fe9168c8096733.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf",
-      "LocXliffCommit": "0e701080ca80172a00c04cb08f6e174a74abb19a"
+      "LocXliffCommit": "f3541df8098351947c4893e2c90855fcdf498967"
     },
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md.87eb36580498b7a4d9d5bed7754b5c569b86bad1.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md",
