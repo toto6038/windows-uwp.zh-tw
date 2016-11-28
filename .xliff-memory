@@ -1008,7 +1008,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\9cdaa63563dc08f2a17d1624b0a795fb84f8d39e.7c828ad607291e9c2dab50b347336909a3f634cc.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf",
-      "LocXliffCommit": "f3541df8098351947c4893e2c90855fcdf498967"
+      "LocXliffCommit": "b135ea00cdaca8a4d6500e2c029cda6f828806de"
     },
     "windows-apps-src\\graphics-concepts\\block-compression.md.0931f2d9bc49beeab6872bcd7dbbcf753066e366.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\block-compression.md",
