@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ba9b78c5eafc949c6942acbcbf55620f60cc0d29?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents) | InSyncHandedBackSuccess | [Details](#9cdaa63563dc08f2a17d1624b0a795fb84f8d39e1626)
 
 ## Item Details
-##### <a name='9cdaa63563dc08f2a17d1624b0a795fb84f8d39e1626'></a> Source: [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ba9b78c5eafc949c6942acbcbf55620f60cc0d29?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/a1f52890e1b96df2759f821525c28cd0bbd32160?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents)
-* Handoff File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/90ffb37c55a43c35f18add50efdb4f74b9ab2e4f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-11-01 06:08:54
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b135ea00cdaca8a4d6500e2c029cda6f828806de?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf&_a=contents)
-* Handback Datetime: 2016-11-28 16:40:59
-* Bilingual File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b135ea00cdaca8a4d6500e2c029cda6f828806de?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-28 16:43:39
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
