@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents) | InSyncHandedBackSuccess | [Details](#840a5e76d409f547d55e558262af09c8fa36a5445228)
 
 ## Item Details
+##### <a name='840a5e76d409f547d55e558262af09c8fa36a5445228'></a> Source: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/6ea74daaf55d3a833903894fd53b6188e543c99b?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
+* Handoff File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4ce295402c4fa96505457c5063d89f27f8007b02?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2016-11-02 19:05:44
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/739eb22f2b38230a9a05b3b68ccd7ad766cc142f?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf&_a=contents)
+* Handback Datetime: 2016-11-28 22:39:57
+* Bilingual File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/739eb22f2b38230a9a05b3b68ccd7ad766cc142f?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-28 22:42:48
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
