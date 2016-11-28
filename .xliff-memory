@@ -3288,7 +3288,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\840a5e76d409f547d55e558262af09c8fa36a544.09ad363c2b5d8e0ec50333c7a4fe9168c8096733.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-tw.xlf",
-      "LocXliffCommit": "f3541df8098351947c4893e2c90855fcdf498967"
+      "LocXliffCommit": "739eb22f2b38230a9a05b3b68ccd7ad766cc142f"
     },
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md.87eb36580498b7a4d9d5bed7754b5c569b86bad1.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md",
