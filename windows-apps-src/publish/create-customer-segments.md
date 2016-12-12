@@ -1,63 +1,65 @@
 ---
 author: shawjohn
-Description: "了解如何建立客戶區隔，讓您可以一部分的客戶群為特定對象來進行促銷或互動。"
-title: "建立客戶區隔"
+Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
+title: Create customer segments
 translationtype: Human Translation
-ms.sourcegitcommit: c1b97d7ca331bdea101f16d3d59879db30173a0a
-ms.openlocfilehash: 6448c366784344b649084a3aa746a2fc8f21d31d
+ms.sourcegitcommit: eed71b2fc06db71fd105df37a73bd0cd0832931f
+ms.openlocfilehash: 28906c98d2826f5312e01713e2621159c6b24923
 
 ---
 
-# 建立客戶區隔
+# <a name="create-customer-segments"></a>Create customer segments
 
-有時候，您可能想要將一部分的客戶群做為特定對象來進行促銷和互動。 要這樣做，您可以在 Windows 開發人員中心建立一種[客戶群組](create-customer-groups.md) (稱為「區隔」)，其中包含符合您選擇的人口統計或收入條件的 Windows 10 客戶。
+There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
 
-例如，您可以建立只包含 50 或 50 歲以上客戶的區隔，或包含在 Windows 市集花費超過 $10 的客戶的區隔。 您也可以合併這些條件，建立一個區隔來包含 50 歲以上且在市集中花費超過 $10 的所有客戶。 我們提供幾個區隔範本以協助您開始進行，但是您可以定義和合併您想要的條件。
+For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
 
-> **提示**區隔在互動廣告活動中可用來[傳送特定對象的推播通知](send-push-notifications-to-your-apps-customers.md)給一組客戶。
+> **Tip** Segments can be used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign.
 
-## 建立客戶區隔
+## <a name="to-create-a-customer-segment"></a>To create a customer segment
 
-1.  在 [Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/overview)，選取頂端功能表中的 \[客戶\]。
-2.  在 \[客戶群組\] 頁面，執行下列其中一項︰
- - 在 \[我的客戶群組\] 區段，選取 \[建立新群組\] 以從頭定義區隔。 請確定已選取 \[群組類型\] 下拉式清單中的 \[區隔\]。
- - 在 \[區隔範本\] 區段，選取 \[複製以使用預先定義的區隔\]，您可以直接使用或依您的需求修改。
-3.  在 \[包含這個 app 中的客戶\] 清單中，選取您的其中一個 app 做為目標。
-4.  在 \[區隔名稱\] 方塊中，選擇您的區隔名稱。
-5.  在 \[定義包含條件\] 區段中，選擇區隔的篩選條件。
+1.  In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select **Customers** in the top menu.
+2.  On the **Customer groups** page, do one of the following:
+ - In the **My customer groups** section, select **Create new group** to define a segment from scratch. Be sure that **Segment** is selected in the **Group type** dropdown list.
+ - In the **Segment templates** section, select **Copy to use a predefined segment** that you can use as is or modify to suit your needs.
+3.  In the **Include customers from this app** list, select one of your apps to target.
+4.  In the **Segment name** box, choose a name for your segment.
+5.  In the **Define inclusion conditions** section, choose the filter criteria for the segment.
 
-    例如，如果您想建立只包含 18 到 24 歲 app 客戶的區隔，請從下拉式清單中選取 \[人口統計\] \[年齡群組\] \[是\] \[18 到 24\] 篩選條件。
+    You can choose from a variety of filter criteria, including **Acquisition source**, **Acquisitions**, **Demographic**, **Rating**, **Store acquisitions**, **Store purchases**, and **Store spend**.
 
-    您可以使用 AND/OR 查詢建置更複雜的區隔，以根據各種屬性包含或排除客戶。 若要新增 OR 查詢，請選取 \[+ OR 陳述式\]。 若要新增 ADD 查詢，請選取 \[新增另一個篩選\]。
+    For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
 
-    因此，如果您想要將該陳述式修改為只包含指定年齡範圍內的男性客戶，您可以選取 \[新增另一個篩選\]，然後再選取其他篩選條件 \[人口統計\] \[性別\] \[是\] \[男性\]。 在這個範例中，\[區隔定義\] 會顯示 \[年齡群組 = = 18 到 24 &amp;&amp; 性別 == 男性\]。
+    You can build more complex segments by using AND/OR queries to include or exclude customers based on various attributes. To add an OR query, select **+ OR statement**. To add an ADD query, select **Add another filter**.
 
-    ![區隔的篩選條件範例](images/create-segment-inclusions.png)
-6. 選取 \[儲存\]。
+    So, if you wanted to refine that segment to only include male customers who are in the specified age range, you would select **Add another filter** and then select the additional filter criteria [**Demographic**] [**Gender**] [**is**] [**Male**]. For this example, the **Segment definition** would display **Age group == 18 to 24 && Gender == Male**.
 
-> **重要**您將無法使用包含太少客戶的區隔。 如果區隔定義未包含足夠的客戶，您可以調整隔條件，或等到您的 app 有更多符合區隔條件的客戶時再試。
+    ![Example of filter criteria for a segment](images/create-segment-inclusions.png)
+6. Select **Save**.
 
-關於客戶區隔，需注意幾件事︰
-- 儲存區隔之後，需要 24 小時才能用於[特定對象的推播通知](send-push-notifications-to-your-apps-customers.md)。
-- 區隔結果每天會重新整理一次，因此您可能會看到區隔中的客戶總數每天隨著客戶是否符合區隔條件而變化。
-- 這些屬性大部分是使用所有歷史資料計算，但仍有些例外。 例如，**App 下載日期**、**廣告活動識別碼**、**市集頁面檢視日期**和**查閱者 URI 網域**限於最近 90 天的資料。
-- 區隔只會包含在 Windows 10 下載您的 App 的客戶。 如果您的 App 支援舊版的作業系統版本，使用這些舊版作業系統的客戶將不會包含在您建立的任何區隔中。
-- 區隔會自動排除 17 歲以下的任何客戶。
+> **Important** You won't be able to use a segment that includes too few customers. If your segment definition does not include enough customers, you can adjust the segment criteria, or try again later, when your app may have acquired more customers that meet your segment criteria.
 
-
-## App 統計資料
-
-區隔上的 \[App 統計資料\] 區段提供有關您 App 的部分資訊，以及您剛才建立的區隔大小。
-
-請注意，**可用的 app 客戶**不會反映實際下載您的 app 的客戶數，而是可包含在區隔內的客戶數 (也就是我們可以判斷符合年齡要求的客戶、已在 Windows 10 上下載您的 app 的客戶和與有效的 Microsoft 帳戶相關聯的客戶)。
-
-如果您檢視結果，而**此區隔中的客戶**為**少量**，表示區隔未包含足夠的客戶，區隔會標示為非使用中。 非使用中的區隔無法用於通知或其他功能。 您可以透過執行下列其中一項作業來啟用和使用區隔︰
-
-- 在 \[定義包含條件\] 區段，調整篩選條件，使區隔包含更多客戶。
-- 在 \[客戶群組\] 頁面的 \[非使用中區隔\] 區段，選取 \[重新整理\] 以查看區隔目前是否包含足夠的客戶。 如果從您首次建立區隔起有更多符合區隔條件的客戶已下載您的 app，此策略可能奏效。
+Things to keep in mind about customer segments:
+- After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).
+- Segment results are refreshed daily, so you may see the total count of customers in a segment change from day to day as customers drop in or out of the segment criteria.
+- Most of these attributes are calculated using all historical data, although there are some exceptions. For example, **App acquisition date**, **Campaign ID**, **Store page view date**, and **Referrer URI domain** are limited to the last 90 days of data.
+- The segment will only include customers who have acquired your app on Windows 10. If your app supports older OS versions, customers using those older OS versions will not be included in any segments you create.
+- Segments automatically exclude any customers who are younger than 17 years old.
 
 
+## <a name="app-statistics"></a>App statistics
 
-<!--HONumber=Nov16_HO1-->
+The **App statistics** section on the segment provides some info about your app, as well as the size of the segment you just created.
+
+Note that **Available app customers** does not reflect the actual number of customers who have acquired your app, but only the number of customers that are available to be included in segments (that is, customers that we can determine meet age requirements, have acquired your app on Windows 10, and who are associated with a valid Microsoft account).
+
+If you view the results and **Customers in this segment** says **Small**, the segment doesn't include enough customers and the segment is marked inactive. Inactive segments can't be used for notifications or other features. You might be able to activate and use a segment by doing one of the following:
+
+- In the **Define inclusion conditions** section, adjust the filter criteria so the segment includes more customers.
+- On the **Customer groups** page, in the **Inactive segments** section, select **Refresh** to see if the segment currently contains enough customers. This tactic might work, for example, if more customers who meet your segment criteria have downloaded your app since you first created the segment.
+
+
+
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,187 +1,187 @@
 ---
 author: TylerMSFT
-title: "使用背景工作支援 app"
-description: "本節中的主題說明如何藉由以背景工作回應觸發程序，在背景執行您的輕量型程式碼。"
+title: Support your app with background tasks
+description: The topics in this section show you how to make lightweight code run in the background in response to triggers.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
-ms.openlocfilehash: 35b64637904e35413217d4cf500658999db07088
+ms.sourcegitcommit: 7208ca16fe7eee2ec4039f3c4bc6305dceac96f3
+ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 ---
 
-# 使用背景工作支援 app
+# <a name="support-your-app-with-background-tasks"></a>Support your app with background tasks
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本節中的主題說明如何藉由使用背景工作，在背景執行您的輕量型程式碼。 您可以使用背景工作在 App 被暫停或未執行時提供功能。 您也可以將背景工作用於即時通訊 App，像是 VOIP、郵件和 IM。
+The topics in this section show you how to make lightweight code run in the background in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
 
-## 在背景播放媒體
+## <a name="playing-media-in-the-background"></a>Playing media in the background
 
-從 Windows10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+Starting in Windows 10, version 1607, playing audio in the background is much easier. See [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) for more information.
 
-## 同處理序與跨處理序背景工作
+## <a name="in-process-and-out-of-process-background-tasks"></a>In-process and out-of-process background tasks
 
-有兩種方式可實作背景工作︰一是同處理序，App 及其背景處理序在相同的處理序中執行；二是跨處理序，App 及背景處理序在不同的處理序中執行。 同處理序背景支援是在 Windows10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
+There are two approaches to implementing background tasks: in-process, in which the app and its background process run in the same process; and out-of-process, where the app and the background process run in separate processes. In-process background support was introduced in Windows 10, version 1607, to simplify writing background tasks. But you can still write out-of-process background tasks. See [Guidelines for background tasks](guidelines-for-background-tasks.md) for recommendations on when to write an in-process versus out-of-process background task.
 
-跨處理程序背景工作較具彈性，因為如果發生錯誤，背景處理程序無法關閉您的 App 處理程序。 但是彈性的代價是在管理跨處理程序通訊方面複雜度變高。
+Out-of-process background tasks are more resilient because your background process can't bring down your app process if something goes wrong. But the resiliency comes at the price of greater complexity to manage the cross-process communication.
 
-實作跨處理程序背景工作時，是作為作業系統在個別處理程序 (backgroundtaskhost.exe) 中執行的輕量型類別來實作。 跨處理程序背景工作是您所撰寫來實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別。 您可以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別來登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
+Out-of-process background tasks are implemented as lightweight classes that the OS runs in a separate process (backgroundtaskhost.exe). Out-of-process background tasks are classes you write that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
 
-在 Windows10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為在前景應用程式內直接執行背景程式碼。
+In Windows 10, version 1607, you can enable background activity without creating a background task. You can instead run your background code directly inside the foreground application.
 
-若要快速開始使用同處理序背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
+To get started quickly with in-process background tasks, see [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
 
-若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。
+To get started quickly with out-of-process background tasks, see [Create and register an out-of-process background task](create-and-register-an-outofproc-background-task.md).
 
 > [!TIP]
-> 從 Windows10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
+> Starting with Windows 10, you no longer need to place an app on the lock screen as a prerequisite for registering a background task for it.
 
-## 系統事件的背景工作
+## <a name="background-tasks-for-system-events"></a>Background tasks for system events
 
-您的應用程式可以藉由使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 類別登錄背景工作的方式，回應系統產生的事件。 App 可以使用下列任何系統事件觸發程序 (於 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 中定義)
+Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
 
-| 觸發程序名稱                     | 說明                                                                                                    |
+| Trigger name                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **InternetAvailable**            | 網際網路變成可用。                                                                                |
-| **NetworkStateChange**           | 網路變更，例如發生費用或連線變更。                                              |
-| **OnlineIdConnectedStateChange** | 與帳戶關聯的線上識別碼變更。                                                                 |
-| **SmsReceived**                  | 安裝的行動式寬頻裝置收到新的 SMS 訊息。                                         |
-| **TimeZoneChange**               | 裝置時區變更 (例如，系統因為日光節約時間而調整時鐘)。 |
+| **InternetAvailable**            | The Internet becomes available.                                                                                |
+| **NetworkStateChange**           | A network change such as a change in cost or connectivity occurs.                                              |
+| **OnlineIdConnectedStateChange** | Online ID associated with the account changes.                                                                 |
+| **SmsReceived**                  | A new SMS message is received by an installed mobile broadband device.                                         |
+| **TimeZoneChange**               | The time zone changes on the device (for example, when the system adjusts the clock for daylight saving time). |
 
-如需詳細資料，請參閱[使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)。
+For more info see [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md).
 
-## 背景工作的條件
+## <a name="conditions-for-background-tasks"></a>Conditions for background tasks
 
-您可以新增條件來控制背景工作執行的時間，即使是觸發後也可以。 觸發之後，背景工作會等到所有條件都符合才執行。 以下為可以使用的條件 (以 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列舉表示)。
+You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
 
-| 條件名稱           | 說明                       |
+| Condition name           | Description                       |
 |--------------------------|-----------------------------------|
-| **InternetAvailable**    | 網際網路必須為可用。   |
-| **InternetNotAvailable** | 網際網路必須為無法使用。 |
-| **SessionConnected**     | 工作階段必須已連線。    |
-| **SessionDisconnected**  | 工作階段必須已中斷連線。 |
-| **UserNotPresent**       | 使用者必須是離開狀態。            |
-| **UserPresent**          | 使用者必須是上線狀態。         |
+| **InternetAvailable**    | The Internet must be available.   |
+| **InternetNotAvailable** | The Internet must be unavailable. |
+| **SessionConnected**     | The session must be connected.    |
+| **SessionDisconnected**  | The session must be disconnected. |
+| **UserNotPresent**       | The user must be away.            |
+| **UserPresent**          | The user must be present.         |
 
  
-如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
+For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-## 應用程式資訊清單需求
+## <a name="application-manifest-requirements"></a>Application manifest requirements
 
-您必須先在應用程式資訊清單中宣告 App，App 才能成功註冊在跨處理序中執行的背景工作。 背景工作如果是在與其主控 App 相同的處理序中執行，您就不需要在應用程式資訊清單中宣告。 如需詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
+Before your app can successfully register a background task that runs out-of-process, it must be declared in the application manifest. Background tasks that run in the same process as their host app do not need to be declared in the application manifest. For more info see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
-## 背景工作
+## <a name="background-tasks"></a>Background tasks
 
-下列即時觸發程序可用來在背景執行輕量型自訂程式碼：
+The following real-time triggers can be used to run lightweight custom code in the background:
 
-| 即時觸發程序  | 描述 |
+| Real-time trigger  | Description |
 |--------------------|-------------|
-| **控制通道** | 背景工作可以保持連線，並透過使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 在控制通道上接收訊息。 如果您的 App 正在接聽通訊端，則您可以使用「通訊端代理程式」，而不使用 **ControlChannelTrigger**。 如需使用通訊端代理程式的詳細資訊，請參閱 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 Windows Phone 不支援 **ControlChannelTrigger**。 |
-| **計時器** | 背景工作的執行頻率最高可達每 15 分鐘一次，而且只要使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 即可設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。 |
-| **推播通知** | 背景工作會回應 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 以接收原始推播通知。 |
+| **Control Channel** | Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone. |
+| **Timer** | Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md). |
+| **Push Notification** | Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications. |
 
-**注意**  
+**Note**  
 
-通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-為了確保您的通用 Windows app 在您發行更新之後會繼續正常執行，請呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 App 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
+To ensure that your Universal Windows app continues to run properly after you release an update, call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-## 系統事件觸發程序
+## <a name="system-event-triggers"></a>System event triggers
 
-[**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 列舉代表下列系統事件觸發程序：
+The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration represents the following system event triggers:
 
-| 觸發程序名稱            | 說明                                                       |
+| Trigger name            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
-| **UserPresent**         | 背景工作會在使用者變成存在時觸發。   |
-| **UserAway**            | 背景工作會在使用者變成不在時觸發。    |
-| **ControlChannelReset** | 背景工作會在控制通道重設時觸發。 |
-| **SessionConnected**    | 背景工作會在工作階段連線時觸發。   |
+| **UserPresent**         | The background task is triggered when the user becomes present.   |
+| **UserAway**            | The background task is triggered when the user becomes absent.    |
+| **ControlChannelReset** | The background task is triggered when a control channel is reset. |
+| **SessionConnected**    | The background task is triggered when the session is connected.   |
 
    
-下列系統事件觸發程序會在使用者將 App 移入或移出鎖定畫面時發出訊號。
+The following system event triggers signal when the user has moved an app on or off the lock screen.
 
-| 觸發程序名稱                     | 說明                                  |
+| Trigger name                     | Description                                  |
 |----------------------------------|----------------------------------------------|
-| **LockScreenApplicationAdded**   | App 磚已新增到鎖定畫面。     |
-| **LockScreenApplicationRemoved** | App 磚已從鎖定畫面移除。 |
+| **LockScreenApplicationAdded**   | An app tile is added to the lock screen.     |
+| **LockScreenApplicationRemoved** | An app tile is removed from the lock screen. |
 
  
-## 背景工作資源限制
+## <a name="background-task-resource-constraints"></a>Background task resource constraints
 
-背景工作為輕量型。 將背景執行降至最低可確保不論是在前景 App 還是電池使用時間上，使用者都能獲得最佳體驗。 這是透過將資源限制套用至背景工作來強制執行。
+Background tasks are lightweight. Keeping background execution to a minimum ensures the best user experience with foreground apps and battery life. This is enforced by applying resource constraints to background tasks.
 
-背景工作的使用時間是限制為 30 秒時鐘時間。
+Background tasks are limited to 30 seconds of wall-clock usage.
 
-### 記憶體限制
+### <a name="memory-constraints"></a>Memory constraints
 
-由於低記憶體裝置的資源限制，因此背景工作可能會有記憶體限制，此限制會決定背景工作所能使用的記憶體量上限。 如果您的背景工作嘗試執行會超出這個限制的作業，該作業將會失敗，而可能會產生該工作可以處理的記憶體不足例外狀況。 如果該工作無法處理記憶體不足例外狀況，或所嘗試之作業的本質導致未產生記憶體不足例外狀況，則該工作將會立即終止。  
- 您可以使用 [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) API 查詢目前的記憶體使用量及限制以探索您的最高限度 (如果有的話)，並且監視您的背景工作正在進行的記憶體使用量。
+Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception--which the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately.  
+ You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
-### 低記憶體裝置針對具有背景工作的應用程式的個別裝置限制
+### <a name="per-device-limit-for-apps-with-background-tasks-for-low-memory-devices"></a>Per-device limit for apps with background tasks for low-memory devices
 
-在記憶體受限的裝置上，會限制可安裝在裝置上的 app 數量以及在任何指定時間可使用背景工作的 app 數量。 如果超過這個數字，對 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 的呼叫 (登錄所有背景工作時所需進行的呼叫) 就會失敗。
+On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
 
-### 省電模式
+### <a name="battery-saver"></a>Battery Saver
 
-除非您豁免您的 App，使其在省電模式開啟時，仍然可以執行背景工作並接收推播通知，否則當電池省電功能啟用時，只要裝置沒有連接外部電源，而且電池電量低於指定的剩餘電量，它就會阻止背景工作執行。 但是不會阻止您登錄背景工作。
+Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
-## 即時通訊的背景工作資源保證
+## <a name="background-task-resource-guarantees-for-real-time-communication"></a>Background task resource guarantees for real-time communication
 
-為了防止資源配額干擾即時通訊功能，使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 與 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 之背景工作的每個執行中工作都會收到保證的 CPU 資源配額。 資源配額如以上所述，並且在這些背景工作會保持不變。
+To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
 
-針對 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 與 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 背景工作，您的 app 不必執行其他動作就可以取得保證的資源配額。 系統永遠都會將這些視為極為重要的背景工作。
+Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
 
-## 維護觸發程序
+## <a name="maintenance-trigger"></a>Maintenance trigger
 
-維護工作只有在裝置插入 AC 電源時才能執行。 如需詳細資訊，請參閱[使用維護觸發程序](use-a-maintenance-trigger.md)。
+Maintenance tasks only run when the device is plugged in to AC power. For more info see [Use a maintenance trigger](use-a-maintenance-trigger.md).
 
-## 感應器和裝置的背景工作
+## <a name="background-tasks-for-sensors-and-devices"></a>Background tasks for sensors and devices
 
-您的 App 可以使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 類別，從背景工作存取感應器和週邊裝置。 您可以在長時間執行的操作使用這個觸發程序，例如資料同步或監控。 與系統事件的工作不同，**DeviceUseTrigger** 工作只能在您的 App 於前景中執行時觸發，而且您不能對它設定任何條件。
+Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
 
 > [!IMPORTANT]
-> **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與同處理序背景工作搭配使用。
+> The **DeviceUseTrigger** and **DeviceServicingTrigger** cannot be used with in-process background tasks.
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 app (如果有的話) 指定為裝置的具有特殊權限的 app。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
 
-## 管理背景工作
+## <a name="managing-background-tasks"></a>Managing background tasks
 
-背景工作可使用事件與本機存放裝置向您的 app 報告進度、完成與取消。 您的 app 也可抓取由背景工作擲回的例外狀況，並在 app 更新期間管理背景工作登錄。 如需詳細資訊，請參閱：
+Background tasks can report progress, completion, and cancellation to your app using events and local storage. Your app can also catch exceptions thrown by a background task, and manage background task registration during app updates. For more info see:
 
-[處理已取消的背景工作](handle-a-cancelled-background-task.md)  
-[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
+[Handle a cancelled background task](handle-a-cancelled-background-task.md)  
+[Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 
-**注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- ## 相關主題
+ ## <a name="related-topics"></a>Related topics
 
-**在 Windows10 中執行多工的概念指引**
+**Conceptual guidance for multitasking in Windows 10**
 
-* [啟動、繼續及多工處理](index.md)
+* [Launching, resuming, and multitasking](index.md)
 
-**相關的背景工作指導方針**
+**Related background task guidance**
 
-* [在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
-* [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
-* [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
-* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
-* [偵錯背景工作](debug-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
-* [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [登錄背景工作](register-a-background-task.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
-* [使用維護觸發程序](use-a-maintenance-trigger.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+* [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Create and register an out-of-process background task](create-and-register-an-outofproc-background-task.md)
+* [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

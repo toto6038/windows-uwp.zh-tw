@@ -1,50 +1,50 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-title: "取得檔案屬性"
-description: "取得由 StorageFile 物件所表示檔案的屬性 &amp;\\#8212;最上層、基本及延伸&amp;\\#8212;。"
+title: Get file properties
+description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a file represented by a StorageFile object.
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 ---
-# 取得檔案屬性
+# <a name="get-file-properties"></a>Get file properties
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+** Important APIs **
 
 -   [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737)
 -   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
 -   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770652)
 
-取得由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。
+Get properties—top-level, basic, and extended—for a file represented by a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-**注意：**另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
-
- 
-
-
-## 先決條件
-
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
-
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
-
--   **位置的存取權限**
-
-    例如，這些範例中的程式碼需要 **picturesLibrary** 功能，但是您的位置可能需要其他功能或完全不需要功能。 若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
-
-## 取得檔案的最上層屬性
-
-許多最上層檔案屬性都可當成 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 類別的成員來存取。 這些屬性包含檔案屬性、內容類型、建立日期、顯示名稱及檔案類型等。
-
-**注意：**請記得宣告 **picturesLibrary** 功能。
+**Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
-此範例會列舉圖片庫中的所有檔案，存取每個檔案的一些最上層屬性。
+
+## <a name="prerequisites"></a>Prerequisites
+
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
+
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+
+-   **Access permissions to the location**
+
+    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
+
+## <a name="getting-a-files-top-level-properties"></a>Getting a file's top-level properties
+
+Many top-level file properties are accessible as members of the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. These properties include the files attributes, content type, creation date, display name, file type, and so on.
+
+**Note**  Remember to declare the **picturesLibrary** capability.
+
+ 
+
+This example enumerates all of the files in the Pictures library, accessing a few of each file's top-level properties.
 
 ```csharp
 // Enumerate all files in the Pictures library.
@@ -62,11 +62,11 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
-## 取得檔案的基本屬性
+## <a name="getting-a-files-basic-properties"></a>Getting a file's basic properties
 
-許多基本檔案屬性都可藉由先呼叫 [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737) 方法來取得。 這個方法會傳回 [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 物件，此物件會定義項目 (檔案或資料夾) 大小的屬性，以及上次修改項目的時間。
+Many basic file properties are obtained by first calling the [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737) method. This method returns a [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) object, which defines properties for the size of the item (file or folder) as well as when the item was last modified.
 
-此範例會列舉圖片庫中的所有檔案，存取每個檔案的一些基本屬性。
+This example enumerates all of the files in the Pictures library, accessing a few of each file's basic properties.
 
 ```csharp
 // Enumerate all files in the Pictures library.
@@ -87,11 +87,11 @@ foreach (Windows.Storage.StorageFile file in files)
 }
  ```
 
-## 取得檔案的延伸屬性
+## <a name="getting-a-files-extended-properties"></a>Getting a file's extended properties
 
-除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法來存取 ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 物件可藉由呼叫 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性來取得)。當最上層和基本檔案屬性可以分別當成類別屬性 ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **BasicProperties**) 來存取時，您可以將 [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) 物件 (代表要擷取之屬性的名稱) 的 [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) 集合傳送到 **BasicProperties.RetrievePropertiesAsync** 方法，來取得延伸屬性。 這個方法接著會傳回 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
+Aside from the top-level and basic file properties, there are many properties associated with the file's contents. These extended properties are accessed by calling the [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) method. (A [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) object is obtained by calling the [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) property.) While top-level and basic file properties are accessible as properties of a class—[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and **BasicProperties**, respectively—extended properties are obtained by passing an [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) collection of [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) objects representing the names of the properties that are to be retrieved to the **BasicProperties.RetrievePropertiesAsync** method. This method then returns an [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) collection. Each extended property is then retrieved from the collection by name or by index.
 
-此範例會列舉圖片媒體櫃中的所有檔案、指定 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 物件中所需屬性 (**DataAccessed** 和 **FileOwner**) 的名稱、將該 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 物件傳送到 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 以擷取這些屬性，然後從傳回的 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 物件中依名稱擷取這些屬性。
+This example enumerates all of the files in the Pictures library, specifies the names of desired properties (**DataAccessed** and **FileOwner**) in a [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) object, passes that [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) object to [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) to retrieve those properties, and then retrieves those properties by name from the returned [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) object.
 
 ```csharp
 const string dateAccessedProperty = "System.DateAccessed";
@@ -137,6 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

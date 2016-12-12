@@ -1,39 +1,39 @@
 ---
 author: DelfCo
-description: "當 app 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊。"
-title: "背景網路通訊"
+description: Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground.
+title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 translationtype: Human Translation
-ms.sourcegitcommit: eea01135c60df0323b73bf3fda8b44e6d02cd04b
-ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
+ms.sourcegitcommit: a6d297ca8510267d21656bd2e22bb3958a4a4b52
+ms.openlocfilehash: ea979eceb20c13d4025ec94ec8ed05b484a7eb27
 
 ---
 
-# 背景網路通訊
+# <a name="network-communications-in-the-background"></a>Network communications in the background
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要 API**
+**Important APIs**
 
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-當 App 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊：通訊端代理程式和控制通道觸發程序。 針對長期連線使用通訊端的 App，可以在它們離開前景時，將通訊端的擁有權委派給系統通訊端代理程式。 當流量抵達通訊端時，代理程式會啟動應用程式，並將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
+Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground: The socket broker, and control channel triggers. Apps that use sockets for long-term connections can delegate ownership of a socket to a system socket broker when they leave the foreground. The broker then activates the app when traffic arrives on the socket, transfers ownership back to the app, and the app processes the arriving traffic.
 
-## 在背景工作中執行短期網路作業
+## <a name="performing-short-lived-network-operations-in-background-tasks"></a>Performing short-lived network operations in background tasks
 
-SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論) 是針對即使在 App 於背景執行時仍維持長期網路連線的 App 所設計。 在背景工作邏輯 (例如，傳送一個 HTTP 要求) 中需要短期網路連線的 App，可能會直接呼叫核心網路 API ([**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906))。 不過，這類工作必須以特定方式設定，以便在所有情況下正常運作。 背景工作必須搭配其背景工作使用 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 條件，或在其背景工作登錄上使用 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) 旗標。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。
+SocketActivityTrigger and ControlChannelTrigger (discussed later in this topic) are designed for apps that maintain long-lived network connections that persist even when the app runs in the background. Apps requiring short-lived network interactions as part of their background task’s logic (for example, sending out one HTTP request) may call directly into the core networking APIs ([**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)). However, such tasks must be configured in a particular way in order to work properly in all circumstances. Background tasks must use either the [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) condition with their background task or use the [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) flag on their background task registration. This tells the Background Tasks infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode.
 
-如果您的背景工作不會使用這裡所說明的 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 或 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx)，您的背景工作將無法在處於 [連線待命] 模式時存取網路 (例如，當手機螢幕關閉時。)
+If your background task does not use [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) or [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) as described here, then your background task will not be able to access the network when in Connected Standby mode (for example, when a phone's screen is turned off.)
 
-## 通訊端代理程式和 SocketActivityTrigger
+## <a name="socket-broker-and-the-socketactivitytrigger"></a>Socket broker and the SocketActivityTrigger
 
-如果 app 使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，則應使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和通訊端代理程式，這樣 app 的流量於 app 不在前景時抵達就會收到通知。
+If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, then you should use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and the socket broker to be notified when traffic arrives for your app while it's not in the foreground.
 
-為了讓 App 在非使用狀態時可以接收並處理通訊端上接收的資料，App 必須在啟動時執行一些一次性設定，然後在其轉為非使用狀態時將通訊端擁有權移轉給通訊端代理程式。
+In order for your app to receive and process data received on a socket when your app is not active, your app must perform some one-time setup at startup, and then transfer socket ownership to the socket broker when it is transitioning to a state where it is not active.
 
-一次設定步驟是建立觸發程序、登錄觸發程序的背景工作，並啟用通訊端代理程式的通訊端：
-  - 建立 **SocketActivityTrigger** 並登錄觸發程序的背景工作，並在您的程式碼中設定 TaskEntryPoint 參數以處理收到的封包。
+The one-time setup steps are to create a trigger, to register a background task for the trigger, and to enable the socket for the socket broker:
+  - Create a **SocketActivityTrigger** and register a background task for the trigger with the TaskEntryPoint parameter set to your code for processing a received packet.
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
             socketTaskBuilder.Name = _backgroundTaskName; 
@@ -42,7 +42,7 @@ SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論)
             socketTaskBuilder.SetTrigger(trigger); 
             _task = socketTaskBuilder.Register(); 
 ```
-  - 繫結通訊端之前，先在通訊端上呼叫 **EnableTransferOwnership**。
+  - Call **EnableTransferOwnership** on the socket, before you bind the socket.
 ```csharp
            _tcpListener = new StreamSocketListener(); 
           
@@ -50,17 +50,17 @@ SocketActivityTrigger 與 ControlChannelTrigger (稍後會在本主題中討論)
            // so that tcpip keeps required state for the socket to enable connected 
            // standby action. Background task Id is taken as a parameter to tie wake pattern 
            // to a specific background task.  
-           _tcpListener. EnableTransferOwnership(_task,SocketActivityConnectedStandbyAction.Wake); 
+           _tcpListener. EnableTransferOwnership(_task.TaskId,SocketActivityConnectedStandbyAction.Wake); 
            _tcpListener.ConnectionReceived += OnConnectionReceived; 
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
-正確設定您的通訊端之後，當您的 App 即將暫停時，就會在通訊端上呼叫 **TransferOwnership** 來將 App 傳輸到通訊端代理程式。 代理程式會監視通訊端，並在收到資料時啟動背景工作。 以下範例包含執行 **StreamSocketListener** 通訊端移轉的公用程式 **TransferOwnership** 函式。 (請注意，不同類型的通訊端有各自的 **TransferOwnership** 方法，所以您必須針對要移轉擁有權的通訊端呼叫適當的方法。 程式碼可能會包含一個多載的 **TransferOwnership** 協助程式，每個所使用之通訊端類型會有一個實作，這樣 **OnSuspending** 程式碼會更易於閱讀。)
+Once your socket is properly set up, when your app is about to suspend, call **TransferOwnership** on the socket to transfer it to a socket broker. The broker monitors the socket and activates your background task when data is received. The following example includes a utility **TransferOwnership** function to perform the transfer for **StreamSocketListener** sockets. (Note that the different types of sockets each have their own **TransferOwnership** method, so you must call the method appropriate for the socket whose ownership you are transferring. Your code would probably contain an overloaded **TransferOwnership** helper with one implementation for each socket type you use, so that the **OnSuspending** code remains easy to read.)
 
-App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列其中一個適當的方法傳遞背景作業的識別碼。
--   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法。
--   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法。
--   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的其中一個 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法。
+An app transfers ownership of a socket to a socket broker and passes the ID for the background task using the appropriate one of the following methods:
+-   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) methods on a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
+-   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) methods on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+-   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) methods on a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -82,20 +82,20 @@ App 會將通訊端的擁有權移轉給通訊端代理程式，並使用下列�
         deferral.Complete(); 
     } 
 ```
-在背景工作的事件處理常式中：
-   -  首先，取得背景工作延遲以使用非同步方法處理事件。
+In your background task's event handler:
+   -  First, get a background task deferral so that you can handle the event using asynchronous methods.
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
-   -  接下來，從事件引數擷取 SocketActivityTriggerDetails，並尋找引發事件的原因：
+   -  Next, extract the SocketActivityTriggerDetails from the event arguments, and find the reason that the event was raised:
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
     switch (details.Reason) 
 ```
-   -   如果事件是因為通訊端活動而引發，請在通訊端建立 DataReader，並以非同步方式載入讀取器，然後按照 app 的設計使用資料。 請注意，您必須將擁有權移轉回通訊端代理程式，之後通訊端再次活動時才會收到通知。
+   -   If the event was raised because of socket activity, create a DataReader on the socket, load the reader asynchronously, and then use the data according to your app's design. Note that you must return ownership of the socket back to the socket broker, in order to be notified of further socket activity again.
 
-   以下範例中，在通訊端上接收的文字會以快顯通顯示。
+   In the following example, the text received on the socket is displayed in a toast.
 
 ```csharp
 case SocketActivityTriggerReason.SocketActivity: 
@@ -109,7 +109,7 @@ case SocketActivityTriggerReason.SocketActivity:
             break; 
 ```
 
-   -   如果事件是因為保持運作計時器到期而引發，則您的程式碼應透過通訊端傳送一些資料，以保持通訊端運作並重新啟動保持運作計時器。 同樣地，務必將擁有權移轉回通訊端代理程式以接收後來的事件通知：
+   -   If the event was raised because a keep alive timer expired, then your code should send some data over the socket in order to keep the socket alive and restart the keep alive timer. Again, it is important to return ownership of the socket back to the socket broker in order to receive further event notifications:
 
 ```csharp
 case SocketActivityTriggerReason.KeepAliveTimerExpired: 
@@ -123,7 +123,7 @@ case SocketActivityTriggerReason.KeepAliveTimerExpired:
             break; 
 ```
 
-   -   如果事件因為通訊端關閉而引發，請確認在建立新的通訊端之後，將擁有權移轉給通訊端代理程式。 在此範例中，主機名稱和連接埠會儲存在本機設定中，以供用來建立新的通訊端連線：
+   -   If the event was raised because the socket was closed, re-establish the socket, making sure that after you create the new socket, you transfer ownership of it to the socket broker. In this sample, the hostname and port are stored in local settings so that they can be used to establish a new socket connection:
 
 ```csharp
 case SocketActivityTriggerReason.SocketClosed: 
@@ -140,38 +140,38 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
-   -   一旦事件通知處理完成，請記得將延遲完成：
+   -   Don't forget to Complete your deferral, once you have finished processing the event notification:
 
 ```csharp
   deferral.Complete();
 ```
 
-如需示範使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和通訊端代理程式的範例，請參閱 [SocketActivityStreamSocket 範例](http://go.microsoft.com/fwlink/p/?LinkId=620606)。 通訊端初始化在 Scenario1\_Connect.xaml.cs 中執行，而背景作業實作是在 SocketActivityTask.cs 中。
+For a complete sample demonstrating the use of the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and socket broker, see the [SocketActivityStreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620606). The initialization of the socket is performed in Scenario1\_Connect.xaml.cs, and the background task implementation is in SocketActivityTask.cs.
 
-您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機。
+You will probably notice that the sample calls **TransferOwnership** as soon as it creates a new socket or acquires an existing socket, rather than using the **OnSuspending** even handler to do so as described in this topic. This is because the sample focuses on demonstrating the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), and doesn't use the socket for any other activity while it is running. Your app will probably be more complex, and should use **OnSuspending** to determine when to call **TransferOwnership**.
 
-## 控制通道觸發程序
+## <a name="control-channel-triggers"></a>Control channel triggers
 
-首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，建議使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
+First, ensure that you're using control channel triggers (CCTs) appropriately. If you're using [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, we recommend you use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). You can use CCTs for **StreamSocket**, but they use more resources and might not work in Connected Standby mode.
 
-如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+If you are using WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or **Windows.Web.Http.HttpClient**, you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
-## ontrolChannelTrigger 搭配 WebSockets
+## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger with WebSockets
 
-使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
+Some special considerations apply when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **MessageWebSocket** or **StreamWebSocket** with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the **StreamWebSocket** are handled. Requests to receive packets on the **MessageWebSocket** are not affected.
 
-在使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，應遵循下列使用模式與最佳做法：
+The following usage patterns and best practices should be followed when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
 
--   必須隨時通知未處理的通訊端接收。 這樣才能夠發生推播通知工作。
--   WebSocket 通訊協定會定義持續連線訊息的標準模型。 [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 類別可將用戶端起始的 WebSocket 通訊協定持續連線訊息傳送至伺服器。 應用程式應該為 KeepAliveTrigger 將 **WebSocketKeepAlive** 類別登錄為 TaskEntryPoint。
+-   An outstanding socket receive must be kept posted at all times. This is required to allow the push notification tasks to occur.
+-   The WebSocket protocol defines a standard model for keep-alive messages. The [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class can send client-initiated WebSocket protocol keep-alive messages to the server. The **WebSocketKeepAlive** class should be registered as the TaskEntryPoint for a KeepAliveTrigger by the app.
 
-有些特殊考量會影響在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 接收封包要求的處理方式。 特別是在使用 **StreamWebSocket** 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，您的 app 必須使用原始非同步模式來處理讀取，而非 C# 與 VB.NET 中的 **await** 模型或 C++ 中的工作。 稍後在本節的程式碼範例中會說明原始非同步模式。
+Some special considerations affect the way that requests to receive packets on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) are handled. In particular, when using a **StreamWebSocket** with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a raw async pattern for handling reads instead of the **await** model in C# and VB.NET or Tasks in C++. The raw async pattern is illustrated in a code sample later in this section.
 
-使用原始非同步模式可讓 Windows 同步處理 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 背景工作上的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法與傳回的接收完成回呼。 當傳回完成回呼之後，就會叫用 **Run** 方法。 這可確保 app 可以在叫用 **Run** 方法之前收到資料/錯誤。
+Using the raw async pattern allows Windows to synchronize the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. The **Run** method is invoked after the completion callback returns. This ensures that the app has received the data/errors before the **Run** method is invoked.
 
-請注意，app 必須發出另一個讀取，才能從完成回呼傳回控制項，這一點很重要。 請注意，還有一點也很重要，就是 [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) 不能直接搭配 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 傳輸使用，因為那會中斷上述的同步處理。 不支援直接在傳輸上使用 [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) 方法。 相反地，[**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) 屬性上 [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) 方法傳回的 [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) 可在稍後傳送至 [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) 方法，以便進一步處理。
+It is important to note that the app has to post another read before it returns control from the completion callback. It is also important to note that the [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) cannot be directly used with the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transport since that breaks the synchronization described above. It is not supported to use the [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) method directly on top of the transport. Instead, the [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) returned by the [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) method on the [**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) property can be later passed to [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) method for further processing.
 
-下列範例顯示如何使用原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取。
+The following sample shows how to use a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 void PostSocketRead(int length) 
@@ -214,9 +214,9 @@ void PostSocketRead(int length)
 }
 ```
 
-讀取完成處理常式一定會在叫用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 背景工作的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法之前觸發。 Windows 的內部同步處理要等候從讀取完成回呼傳回 app。 App 通常會在讀取完成回呼快速處理從 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 收到的資料或錯誤。 訊息本身會在 **IBackgroundTask.Run** 方法的內容中處理。 在下列範例中，會使用讀取完成處理常式插入訊息且背景工作稍後要處理的訊息佇列來說明這一點。
+The read completion handler is guaranteed to fire before the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is invoked. Windows has internal synchronization to wait for an app to return from the read completion callback. The app typically quickly processes the data or the error from the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) in the read completion callback. The message itself is processed within the context of the **IBackgroundTask.Run** method. In this sample below, this point is illustrated by using a message queue that the read completion handler inserts the message into and the background task later processes.
 
-下列範例顯示搭配原始非同步模式在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上處理讀取時要使用的讀取完成處理常式。
+The following sample shows the read completion handler to use with a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
@@ -255,16 +255,16 @@ public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
 }
 ```
 
-WebSocket 的額外細節是持續連線處理常式。 WebSocket 通訊協定會定義持續連線訊息的標準模型。
+An additional detail for Websockets is the keep-alive handler. The WebSocket protocol defines a standard model for keep-alive messages.
 
-在使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 時，請針對 KeepAliveTrigger 將 [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 類別登錄為 [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774)，以允許取消暫停應用程式並定期將持續連線訊息傳送至伺服器 (遠端端點)。 這應該在背景登錄應用程式程式碼以及套件資訊清單中完成。
+When using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), register a[**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class instance as the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) for a KeepAliveTrigger to allow the app to be unsuspended and send keep-alive messages to the server (remote endpoint) periodically. This should be done as part of the background registration app code as well as in the package manifest.
 
-[**Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 的這個工作進入點必須在下列兩個地方指定：
+This task entry point of [**Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) needs to be specified in two places:
 
--   在來源程式碼中建立 KeepAliveTrigger 觸發程序時 (請參閱下列範例)。
--   在持續連線背景工作宣告的應用程式套件資訊清單。
+-   When creating KeepAliveTrigger trigger in the source code (see example below).
+-   In the app package manifest for the keepalive background task declaration.
 
-下列範例會在應用程式資訊清單的 &lt;Application&gt; 元素下，新增網路觸發程序通知與持續連線觸發程序。
+The following sample adds a network trigger notification and a keepalive trigger under the &lt;Application&gt; element in an app manifest.
 
 ```xml
   <Extensions>
@@ -285,9 +285,9 @@ WebSocket 的額外細節是持續連線處理常式。 WebSocket 通訊協定�
   </Extensions> 
 ```
 
-在 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 內容中使用 **await** 陳述式，以及在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上使用非同步操作時，app 要非常小心。 **Task&lt;bool&gt;** 物件可用來登錄推播通知的 **ControlChannelTrigger**，以及 **StreamWebSocket** 上的 WebSocket 持續連線，然後連線傳輸。 在登錄程序中，**StreamWebSocket** 傳輸會設為 **ControlChannelTrigger** 的傳輸，然後發佈讀取。 **Task.Result** 會封鎖目前的執行緒，直到執行完工作的所有步驟，且陳述式傳回訊息本文後才停止。 必須等到方法傳回 True 或 False 後，才能解析工作。 這樣可以確保整個方法都已執行。 **Task** 可以包含多個 **await** 陳述式，這些陳述式由 **Task** 保護。 使用 **StreamWebSocket** 或 **MessageWebSocket** 做為傳輸時，這個模式應與 **ControlChannelTrigger** 物件搭配使用。 對於那些需要長時間完成的操作 (例如，一般非同步讀取操作)，app 應使用上述的原始非同步模式。
+An app must be extremely careful when using an **await** statement in the context of a [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and an asynchronous operation on a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), or [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). A **Task&lt;bool&gt;** object can be used to register a **ControlChannelTrigger** for push notification and WebSocket keep-alives on the **StreamWebSocket** and connect the transport. As part of the registration, the **StreamWebSocket** transport is set as the transport for the **ControlChannelTrigger** and a read is posted. The **Task.Result** will block the current thread until all steps in the task execute and return statements in message body. The task is not resolved until the method returns either true or false. This guarantees that the whole method is executed. The **Task** can contain multiple **await** statements that are protected by the **Task**. This pattern should be used with the **ControlChannelTrigger** object when a **StreamWebSocket** or **MessageWebSocket** is used as the transport. For those operations that may take a long period of time to complete (a typical async read operation, for example), the app should use the raw async pattern discussed previously.
 
-下列範例會登錄推播通知的 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 與 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上的 WebSocket 持續連線。
+The following sample registers [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) for push notification and WebSocket keep-alives on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 private bool RegisterWithControlChannelTrigger(string serverUri)
@@ -423,23 +423,23 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-如需使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger StreamWebSocket 範例](http://go.microsoft.com/fwlink/p/?linkid=251232)。
+For more information on using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger StreamWebSocket sample](http://go.microsoft.com/fwlink/p/?linkid=251232).
 
-## ControlChannelTrigger 搭配 HttpClient
+## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger with HttpClient
 
-使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收封包要求的處理方式。
+Some special considerations apply when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) are handled.
 
-**注意** 目前不支援使用 SSL 的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+**Note**  [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) using SSL is not currently supported using the network trigger feature and [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
  
-在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，應遵循下列使用模式與最佳做法：
+The following usage patterns and best practices should be followed when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
 
--   App 可能需要先在 [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) 命名空間中的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 或 [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) 物件上設定各種屬性及標頭，然後才能將要求傳送到特定 URI。
--   App 需要先執行一個起始要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 搭配使用的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件設定為與 **ControlChannelTrigger** 物件搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
+-   The app may need to set various properties and headers on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) or [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) object in the [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) namespace before sending the request to the specific URI.
+-   An app may need to make need to an initial request to test and setup the transport properly before creating the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport can be properly setup, an [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object can be configured as the transport object used with the **ControlChannelTrigger** object. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object as the transport with the **ControlChannelTrigger** object.
 
-與其他網路傳輸不同的是，[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件無法直接傳送至 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 物件的 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法。 相反地，必須特別建構 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件，以搭配 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件和 **ControlChannelTrigger** 使用。 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件是使用 [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) 方法建立的。 然後，所建立的 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件會傳送到 **UsingTransport** 方法。
+Unlike other network transports, the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object cannot be directly passed into the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method of the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object. Instead, an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object must be specially constructed for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the **ControlChannelTrigger**. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object is created using the [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) method. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object that is created is then passed to **UsingTransport** method .
 
-下列範例顯示如何建構 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) 物件以便搭配 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 物件與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用。
+The following sample shows how to construct an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System;
@@ -481,13 +481,13 @@ private void SetupHttpRequestAndSendToHttpServer()
 }
 ```
 
-有些特殊考量會影響在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上要求傳送 HTTP 要求以起始接收已處理的回應的方式。 特別是當使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，您的 app 必須使用 Task 來處理傳送，而非使用 **await** 模型。
+Some special considerations affect the way that requests to send HTTP requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) to initiate receiving a response are handled. In particular, when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a Task for handling sends instead of the **await** model.
 
-使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 時，針對 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 背景工作上的 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法與接收完成回呼的傳回並沒有同步。 基於這個原因，app 只能使用 **Run** 方法中的封鎖 HttpResponseMessage 技術，並等候接收整個回應。
+Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637), there is no synchronization with the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. For this reason, the app can only use the blocking HttpResponseMessage technique in the **Run** method and wait until the whole response is received.
 
-使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 顯然與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 傳輸不同。 因為 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 程式碼，[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收回呼是透過 Task 傳遞至 app。 這表示當資料或錯誤分派至 app 時，會立即觸發 **ControlChannelTrigger** 推播通知工作。 在下列範例中，程式碼會將 [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) 方法傳回的 responseTask 儲存到全域儲存區，推播通知工作會提取並內嵌處理這個傳回值。
+Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is noticeably different from the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transports . The [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) receive callback is delivered via a Task to the app since the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) code. This means that the **ControlChannelTrigger** push notification task will fire as soon as the data or error is dispatched to the app. In the sample below, the code stores the responseTask returned by [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) method into global storage that the push notify task will pick up and process inline.
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用時，如何處理 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上的傳送要求。
+The following sample shows how to handle send requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System;
@@ -532,7 +532,7 @@ private void SendHttpRequest()
 }
 ```
 
-下列範例顯示當搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 時，如何讀取接收到的回應。
+The following sample shows how to read responses received on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System.Net;
@@ -573,23 +573,23 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-如需使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger HttpClient 範例](http://go.microsoft.com/fwlink/p/?linkid=258323)。
+For more information on using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger HttpClient sample](http://go.microsoft.com/fwlink/p/?linkid=258323).
 
-## ControlChannelTrigger 搭配 IXMLHttpRequest2
+## <a name="controlchanneltrigger-with-ixmlhttprequest2"></a>ControlChannelTrigger with IXMLHttpRequest2
 
-使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **IXMLHTTPRequest2** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 使用 **ControlChannelTrigger** 不會影響在 **IXMLHTTPRequest2** 要求傳送或接收 HTTP 要求的處理方式。
+Some special considerations apply when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **IXMLHTTPRequest2** with **ControlChannelTrigger**. Using **ControlChannelTrigger** does not affect the way that requests to send or receive HTTP requests on the **IXMLHTTPRequest2** are handled.
 
-使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時的使用模式與最佳做法
+Usage patterns and best practices when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
--   [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 物件當作傳輸時的存留期只包含一個要求/回應。 與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 物件搭配使用時，可以只建立和設定 **ControlChannelTrigger** 物件一次，然後重複呼叫 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法，而每次呼叫關聯一個新的 **IXMLHTTPRequest2** 物件。 App 應該在提供新的 **IXMLHTTPRequest2** 物件之前先刪除之前的 **IXMLHTTPRequest2** 物件，以確保 app 不會超用配置的資源限制。
--   App 可能需在呼叫 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 方法之前，先呼叫 [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) 和 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) 方法來設定 HTTP 傳輸。
--   App 需要先執行一個起始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 搭配使用的傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 物件設定為與 **ControlChannelTrigger** 搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 **IXMLHTTPRequest2** 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
+-   An [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object when used as the transport has a lifetime of only one request/response. When used with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object, it is convenient to create and set up the **ControlChannelTrigger** object once and then call the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method repeatedly, each time associating a new **IXMLHTTPRequest2** object. An app should delete the previous **IXMLHTTPRequest2** object before supplying a new **IXMLHTTPRequest2** object to ensure that the app does not exceed the allocated resource limits.
+-   The app may need to call the [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) and [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) methods to set up the HTTP transport before calling [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) method.
+-   An app may need to make need to an initial [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) request to test and setup the transport properly before creating the transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport is properly setup, the [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object can be configured as the transport object used with the **ControlChannelTrigger**. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the **IXMLHTTPRequest2** object as the transport with the **ControlChannelTrigger** object.
 
-如需使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](http://go.microsoft.com/fwlink/p/?linkid=258538)。
-
-
+For more information on using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger with IXMLHTTPRequest2 sample](http://go.microsoft.com/fwlink/p/?linkid=258538).
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Dec16_HO1-->
 
 

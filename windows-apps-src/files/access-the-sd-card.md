@@ -1,72 +1,72 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
-title: "存取 SD 記憶卡"
-description: "您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。"
+title: Access the SD card
+description: You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
 
 ---
-# 存取 SD 記憶卡
+# <a name="access-the-sd-card"></a>Access the SD card
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。
+You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
 
-在大部分情況下，您必須先在應用程式資訊清單檔案中指定 **removableStorage** 功能，App 才能儲存和存取 SD 記憶卡上的檔案。 通常您還必須登錄 App 所儲存和存取的檔案類型，以便處理這些檔案類型。
+In most cases, you have to specify the **removableStorage** capability in the app manifest file before your app can store and access files on the SD card. Typically you also have to register to handle the type of files that your app stores and accesses.
 
-您可以藉由使用下列方法，在選用的 SD 記憶卡上儲存和存取檔案：
+You can store and access files on the optional SD card by using the following methods:
 
-- 檔案選擇器。
+- File pickers.
 
-- [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
+- The [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) APIs.
 
-## SD 記憶卡上可存取和不可存取的項目
+## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>What you can and can't access on the SD card
 
-### 可以存取的項目
+### <a name="what-you-can-access"></a>What you can access
 
-- 您的應用程式只能讀寫已在應用程式資訊清單檔案中登錄為可處理的檔案類型。
+- Your app can only read and write files of file types that the app has registered to handle in the app manifest file.
 
-- 您的應用程式也可以建立和管理資料夾。
+- Your app can also create and manage folders.
 
-### 不可以存取的項目
+### <a name="what-you-cant-access"></a>What you can't access
 
-- 您的應用程式看不到也不能存取系統資料夾以及其中包含的檔案。
+- Your app can't see or access system folders and the files that they contain.
 
-- 您的應用程式看不到已標記隱藏屬性的檔案。 隱藏屬性一般用來降低意外刪除資料的風險。
+- Your app can't see files that are marked with the Hidden attribute. The Hidden attribute is typically used to reduce the risk of deleting data accidentally.
 
-- 您的應用程式無法使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 來查看或存取 [文件] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 [文件] 媒體櫃。
+- Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). However you can access the Documents library on the SD card by traversing the file system.
 
-## 安全性和隱私權考量
+## <a name="security-and-privacy-considerations"></a>Security and privacy considerations
 
-當 app 將檔案儲存在 SD 記憶卡上的通用位置時，並不會加密這些檔案，因此其他 app 通常可以存取它們。
+When an app saves files in a global location on the SD card, those files are not encrypted so they are typically accessible to other apps.
 
-- 裝置中有 SD 記憶卡時，已登錄可處理相同檔案類型的其他 app 可以存取您的檔案。
+- While the SD card is in the device, your files are accessible to other apps that have registered to handle the same file type.
 
-- 從裝置移除 SD 記憶卡並從電腦開啟時，可以在檔案總管中看到您的檔案，其他應用程式也可以存取它們。
+- When the SD card is removed from the device and opened from a PC, your files are visible in File Explorer and accessible to other apps.
 
-不過，當安裝在 SD 記憶卡上的應用程式將檔案儲存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中時，這些檔案會受到加密，而無法供其他應用程式存取。
+When an app installed on the SD card saves files in its [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), however, those files are encrypted and are not accessible to other apps.
 
-## 存取 SD 記憶卡上檔案的需求
+## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Requirements for accessing files on the SD card
 
-若要存取 SD 記憶卡上的檔案，您通常必須指定下列各項。
+To access files on the SD card, typically you have to specify the following things.
 
-1.  您必須在應用程式資訊清單檔案中指定 **removableStorage** 功能。
-2.  您還必須將與您想要存取之媒體類型關聯的副檔名登錄為可處理的副檔名。
+1.  You have to specify the **removableStorage** capability in the app manifest file.
+2.  You also have to register to handle the file extensions associated with the type of media that you want to access.
 
-前述方法也可讓您不需參考已知資料夾 (例如 **KnownFolders.MusicLibrary**) 即可存取 SD 記憶卡上的媒體檔案，或是存取儲存在媒體櫃資料夾外的媒體檔案。
+Use the preceding method also to access media files on the SD card without referencing a known folder like **KnownFolders.MusicLibrary**, or to access media files that are stored outside of the media library folders.
 
-若要使用已知資料夾來存取儲存在媒體櫃 ([音樂]、[相片] 或 [影片]) 中的媒體檔案，您只需要在應用程式資訊清單檔案中指定相關的功能 (**musicLibrary**、**picturesLibrary** 或 **videoLibrary**) 即可。 您不需要指定 **removableStorage** 功能。 如需詳細資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
+To access media files stored in the media libraries—Music, Photos, or Videos—by using known folders, you only have to specify the associated capability in the app manifest file—**musicLibrary**, **picturesLibrary**, or **videoLibrary**. You do not have to specify the **removableStorage** capability. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
 
-## 存取 SD 記憶卡上的檔案
+## <a name="accessing-files-on-the-sd-card"></a>Accessing files on the SD card
 
-### 取得 SD 記憶卡的參照
+### <a name="getting-a-reference-to-the-sd-card"></a>Getting a reference to the SD card
 
-[**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
+The [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) folder is the logical root [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) for the set of removable devices currently connected to the device. If an SD card is present, the first (and only) **StorageFolder** underneath the **KnownFolders.RemovableDevices** folder represents the SD card.
 
-使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
+Use code like the following to determine whether an SD card is present and to get a reference to it as a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
 
 ```csharp
 using Windows.Storage;
@@ -89,27 +89,27 @@ using Windows.Storage;
             }
 ```
 
-### 查詢 SD 記憶卡的內容
+### <a name="querying-the-contents-of-the-sd-card"></a>Querying the contents of the SD card
 
-SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使用來自 [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 之位置進行查詢的資料夾和檔案。 若要尋找檔案，您的 App 必須以遞迴方式周遊檔案系統，以列舉記憶卡的內容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) 與 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) 可有效率地取得 SD 記憶卡的內容。
+The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) to get the contents of the SD card efficiently.
 
-建議您使用背景執行緒來周遊 SD 記憶卡。 SD 記憶卡可以包含許多 GB 的檔案。
+We recommend that you use a background thread to traverse the SD card. An SD card may contain many gigabytes of data.
 
-您的 app 也可以要求使用者使用資料夾選擇器來選擇特定資料夾。
+Your app can also require the user to choose specific folders by using the folder picker.
 
-當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
+When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), the following methods behave in the following way.
 
--   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
+-   The [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
 
--   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法將會失敗。
+-   The [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) method fails if you have not registered to handle the file extension of the file you are trying to access.
 
-## 識別個別的 SD 記憶卡
+## <a name="identifying-the-individual-sd-card"></a>Identifying the individual SD card
 
-第一次掛接 SD 記憶卡時，作業系統會為記憶卡產生一個唯一的識別碼。 它會將這個識別碼儲存在記憶卡根目錄的 WPSystem 資料夾內的檔案中。 應用程式可以使用這個識別碼來判斷它是否可以辨識此記憶卡。 如果應用程式可以辨識這張卡，應用程式就能夠延遲之前完成的特定作業。 不過，在應用程式上次存取記憶卡之後，可能其中的內容已經變更。
+When the SD card is first mounted, the operating system generates a unique identifier for the card. It stores this ID in a file in the WPSystem folder at the root of the card. An app can use this ID to determine whether it recognizes the card. If an app recognizes the card, the app may be able to postpone certain operations that were completed previously. However the contents of the card may have changed since the card was last accessed by the app.
 
-例如，想想看建立電子書索引的應用程式。 如果應用程式之前掃描過整個 SD 記憶卡尋找電子書檔案並建立電子書的索引，在記憶卡重新插入且應用程式可辨識它的時候，即可立即顯示清單。 它可以另外啟動一個低優先順序的背景執行緒來搜尋新電子書。 當使用者嘗試存取已刪除的電子書，它也可以處理找不到之前存在的電子書的情形。
+For example, consider an app that indexes ebooks. If the app has previously scanned the whole SD card for ebook files and created an index of the ebooks, it can display the list immediately if the card is reinserted and the app recognizes the card. Separately it can start a low-priority background thread to search for new ebooks. It can also handle a failure to find an ebook that existed previously when the user tries to access the deleted ebook.
 
-包含此識別碼的屬性名稱為 **WindowsPhone.ExternalStorageId**。
+The name of the property that contains this ID is **WindowsPhone.ExternalStorageId**.
 
 ```csharp
 using Windows.Storage;
@@ -148,6 +148,6 @@ using Windows.Storage;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

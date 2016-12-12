@@ -1,55 +1,55 @@
 ---
 author: jnHs
-Description: "請在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的聯盟績效報告，來檢視您 app 中聯盟廣告的績效資料。"
-title: "聯盟績效報告"
+Description: Use the app-level and account-level affiliates performance reports on the Windows Dev Center dashboard to view performance data for affiliate ads in your apps.
+title: Affiliates performance report
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
-ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
+ms.sourcegitcommit: 9646b9614bb2935db5880cad9bf1a58648330671
+ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
 
 ---
 
-# 聯盟績效報告
+# <a name="affiliates-performance-report"></a>Affiliates performance report
 
-如果您已經[選擇加入 Microsoft 聯盟廣告計劃](about-affiliate-ads.md)，您就可以在 Windows 開發人員中心儀表板上的下列報告中，檢視您 app 中顯示之聯盟廣告的績效資料：
+If you have [opted in to the Microsoft affiliate ads program](about-affiliate-ads.md), you can view performance data for the affiliate ads that appear in your app in the following reports on the Windows Dev Center dashboard:
 
--   [應用程式層級的聯盟績效報告](affiliates-performance-report.md#app-level-affiliates-performance-report)。 這份報告提供儀表板目前所選 app 中聯盟廣告的績效資料。
--   [儀表板層級的聯盟績效報告](affiliates-performance-report.md#dashboard-level-affiliates-performance-report)。 這份報告提供您以選擇加入 Microsoft 聯盟廣告計劃之所有 app 中的聯盟廣告的績效資料摘要。
+-   [App-level affiliates performance report](#app-level-affiliate-ads-performance-report). This report provides performance data for affiliate ads in the currently selected app in the dashboard.
+-   [Dashboard-level affiliates performance report](#dashboard-level-affiliate-ads-performance-report). This report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program.
 
-這些報告會每天更新。 根據預設，報告是針對所有裝置上最近 30 天的績效進行篩選。 若要變更這些篩選，請按一下 [頁面篩選]****，並選擇不同的時間範圍或個別的裝置類型。 請注意，所有資料都是使用 UTC 而不是您特定的時區彙總。
+These reports are updated daily. By default, the reports are filtered on performance from the last 30 days, on all devices. To change these filters, click **Page filters** and choose a different time frame or an individual device type. Note that all data is aggregated based using UTC, not your particular time zone.
 
-下列各節提供更多有關這些報告的詳細資料。
+The following sections provide more details about these reports.
 
-## 應用程式層級的聯盟廣告績效報告
+## <a name="app-level-affiliate-ads-performance-report"></a>App-level affiliate ads performance report
 
-這份報告以圖表和表格形式提供儀表板中目前所選 App 的聯盟廣告績效資料。 若要檢視這份報告，請在儀表板中選取其中一個 App，然後在瀏覽窗格中按一下 [分析]**** &gt;[聯盟績效]****。
+This report provides affiliate ads performance data in graph and table form for the currently selected app in the dashboard. To view this report, select one of your apps in the dashboard and click **Analytics** &gt; **Affiliates performance** in the navigation pane.
 
-資料來自我們追蹤您 App 中廣告的下列七項績效衡量指標：
+The data is obtained from the following seven performance metrics we track for the ads in your app:
 
--   **估計營收 (已核准)**：您透過使用者按一下您 app 中的聯盟廣告並進行購買之後，以佣金方式從已核准購買中賺取之收益的估計金額。
--   **估計營收 (等待核准)**：您能以傭金方式從待核准購買中賺取之收益的估計金額。
--   **曝光數**：您 app 中顯示聯盟廣告的次數。
--   **點閱數**：使用者點閱您 app 中的聯盟廣告的次數。
--   **CTR**：點閱率，即聯盟廣告點閱數除以聯盟廣告曝光數。
--   **購買 (已核准)**：使用者按一下您 app 中的聯盟廣告之後已核准之購買的數目。
--   **購買 (等待核准)**：使用者按一下您 app 中的聯盟廣告之後等待核准之購買的數目。
+-   **Estimated earnings (approved)**: The estimated amount of money you received as a commission for approved purchases made by users clicking affiliate ads in your app.
+-   **Estimated earnings (pending approval)**: The estimated amount of money you could receive as a commission for the purchases that are pending approval.
+-   **Impressions**: The number of times an affiliate ad was shown in your app.
+-   **Clicks**: The number of times someone clicked on an affiliate ad in your app.
+-   **CTR**: Click-through rate, meaning the number of times an affiliate ad was clicked, divided by the number of affiliate ad impressions.
+-   **Purchases (approved)**: The number of approved purchases made by users clicking affiliate ads in your app.
+-   **Purchases (pending approval)**: The number of purchases pending approval that were made by users clicking affiliate ads in your app.
 
-> **注意** 使用者在市集購買產品之後，到購買可被聯盟廣告計畫核准之前，會有 45 天的等候期。 因為此等候期所致，在購買獲得核准或遭到拒絕之後，聯盟績效報告上指定日期的**估計營收 (已核准)**、**估計營收 (等待核准)**、**購買 (已核准)** 及**購買 (等待核准)** 資料可能會改變。
+> **Note**  After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
 
-## 儀表板層級的聯盟廣告績效報告
+## <a name="dashboard-level-affiliate-ads-performance-report"></a>Dashboard-level affiliate ads performance report
 
-您 [儀表板概觀]**** 頁面的 [聯盟績效]**** 區段中，會以圖形和表格形式提供您已選擇加入 Microsoft 聯盟廣告計劃之所有 app 中聯盟廣告的績效資料摘要。 這份報告會顯示和上述應用程式層級聯盟績效報告相同的績效衡量指標和篩選器。
+The **Affiliates performance** section on your **Dashboard overview** page provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form. This report shows the same performance metrics and filters as the app-level affiliates performance report described above.
 
-## 相關主題
+## <a name="related-topics"></a>Related topics
 
-* [關於聯盟廣告](about-affiliate-ads.md)
-* [利用廣告獲利](monetize-with-ads.md)
+* [About affiliate ads](about-affiliate-ads.md)
+* [Monetize with ads](monetize-with-ads.md)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

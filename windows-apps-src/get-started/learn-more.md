@@ -1,109 +1,110 @@
 ---
 author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
-title: "接下來要做什麼？"
-description: "現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供所含不同章節的簡介。"
-keywords: "開發人員中心, 入門"
+title: What&quot;s next?
+description: Now that you&quot;ve created your first app, check out the rest of the Dev Center. Here&quot;s an introduction to the different sections it contains.&quot;
+keywords: Dev Center, Getting started
 translationtype: Human Translation
-ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
-ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 ---
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# 接下來要做什麼？
+# <a name="whats-next"></a>What's next?
 
-您想要撰寫 App - 要從何處著手？ 以下是一些可協助您開始進行的「開發人員中心」主題。 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題。
+So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> courses. If you are already familiar with XAML and C#, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 XAML 的主要強大之處就在於使用「資料繫結」，這會將控制項與您 App 想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。
+There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a>. For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
 
-如果您要瀏覽最新的 Windows10 程式設計技術，例如在 app 中新增動畫和效果，請參閱 [Windows 開發人員部落格](https://blogs.windows.com/buildingapps)。
-
+If you are getting started, our recommendation is that you look through the UWP topics to get a feel for the platform, and then investigate creating your user interface by using, and then customizing, XAML controls. You'll use XAML to layout your app ([here's a tutorial](../layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand. 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
-    <td><h2>UWP 與 UWP App 週期</h2><p>App 如何啟動、當您啟動另一個 App 時會發生什麼情況？ 以下是說明。</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) App 指南</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app 週期</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows10 中有哪些酷炫功能</a></ul></td>  
+    <td><h2>UWP and the UWP app Lifecycle</h2><p>How does an app start, what happens when you start another one? Here’s the story.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Guide to Universal Windows Platform (UWP) apps</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app lifecycle</a></li>
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">What's cool in Windows 10</a></ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
-    <td><h2>UX 與 UI</h2><p>您有哪些可任您支配的控制項，以及如何使用它們？ 這些主題說明控制項和程式碼如何一起運作，以及您如何自訂它們來符合您 App 的外觀。</p> <ul>
-    <li><a href="https://developer.microsoft.com/windows/design">設計與 UI</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">使用 XAML 定義頁面配置</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">依功能分類的控制項</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">控制項和模式的簡介</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">設定控制項的樣式</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">回應式設計的螢幕大小與中斷點</a></li>
-      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">使用 UWP 社群工具組選取預先建立的控制項和模式</a></li>
+    <td><h2>UX and UI</h2><p>What controls do you have at your disposal, and how can they be used? These topics explain how controls and code work together, and how you can customize them to suit the look of your app.</p> <ul>
+    <li><a href="https://developer.microsoft.com/windows/design">Design and UI</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">Define page layouts with XAML</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">Controls by function</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">Intro to controls and patterns</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Styling controls</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Screen sizes and break points for responsive design</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Use the UWP Community Toolkit for a selection of prebuilt controls and patterns</a></li>
     </ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon6.png" width=64></td>
-    <td><h2>資料和服務</h2><p>了解資料繫結，資料繫結可讓您的程式碼自動填入清單和方格。 探索如何連結至外部資源以將資料匯入您的 App。</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">資料繫結</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListView、GridView 及資料繫結</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">資料存取</a></li>
+    <td><h2>Data and Services</h2><p>Learn about data binding, which lets your code automatically populate lists and grids. Discover how to link to external resources to get data into your apps.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">Data binding</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListViews, GridViews and data binding</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">Data access</a></li>
     </ul></td>  
 </tr>
- 
-
 <tr>
  <td width=60><img src="images/icon4.png" width=64></td>
-    <td><h2>發行</h2><p>與全世界分享您的作品、大發利市。 我們將引導您逐步完成將 App 在市集上架的程序。</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">發行 Windows 應用程式</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">封裝 App</a></li>
+    <td><h2>Publishing</h2><p>Share your work with the world, make money. We’ll walk you through the process of getting your app onto the store.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publish Windows apps</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Packaging apps</a></li>
     </ul></td>  
 </tr>
- 
 <tr>
  <td width=60><img src="images/icon2.png" width=64></td>
-    <td><h2>其他資源</h2><p>範例、教學課程、影片、其他工具及 SDK。 提升至全新境界。</p>
+    <td><h2>Other resources</h2><p>Samples, tutorials, videos, other tools and SDKs. Take it to the next level.</p>
     <ul>
-    <li><a href="https://developer.microsoft.com/windows/develop">操作說明文章</a></li>
-    <li><a href="https://developer.microsoft.com/windows/samples">程式碼範例</a></li>
-    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# 參考資料</a></li>
-    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 參考資料</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">撰寫適用於 Xbox One 的 App</a></li>
-     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">為 HoloLens 進行開發</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">將 App 移植到 Windows10</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">為企業撰寫 App</a></li>
-      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社群工具組</a></li>
+    <li><a href="https://developer.microsoft.com/windows/develop">How-to articles</a></li>
+    <li><a href="https://developer.microsoft.com/windows/samples">Code samples</a></li>
+    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# reference</a></li>
+    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API Reference</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Writing apps for Xbox One</a></li>
+     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">Developing for HoloLens</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">Writing apps for the Enterprise</a></li>
+      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">The UWP Community Toolkit</a></li>
     </ul>
     </td>  
 </tr>
- 
-
-
 </table>
 
 <hr>
 
-## 在「開發人員中心」尋找說明
+## <a name="windows-developer-blog"></a>Windows Developer Blog
 
+The [Windows Developer Blog](https://blogs.windows.com/buildingapps) includes regular postings on the latest in coding techniques, project ideas, and tools. Here are some you might find useful as you explore Windows development.
 
-            [Microsoft 開發人員中心](http://devcenter.microsoft.com)包含許多不同工具、架構及平台的大量文件。 當您在搜尋主題和範例時，應該確定您閱讀的是 UWP 特定的內容。 您要如何確定所閱讀的是正確內容？
-概念性內容 (也就是非 API 參考內容) 的主題 URL 中會有 UWP。 API 內容會有包含「Windows 執行階段」API 的路徑。 
+* [Animations with the Visual layer](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
+* [Interop between XAML and the Visual layer](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
+* [Creating beautiful effects for UWP](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
+* [Beautiful apps made possible and easy with Windows.UI](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
+* [Polishing your app with animation and audio cues](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
+* [Adding color to your design](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
 
-![範例 UWP 概念性主題](images/devcenter-topic2.png)
+<hr>
 
-![範例 UWP 參考主題](images/devcenter-topic1.png)
+## <a name="finding-help-in-the-dev-center"></a>Finding help in the Dev Center
 
-使用搜尋引擎時，將「Windows 應用程式開發」附加到您的搜尋字串中通常將您引導至 UWP 內容。
+The [Microsoft Dev Center](http://devcenter.microsoft.com) contains a mountain of documentation for many different tools, frameworks and platforms. When you are searching for topics and samples, you should make sure you are reading UWP specific content. How can you be sure you're reading the right content?
+Conceptual content, that is, non-API reference content, will have UWP in the topic's URL. API content will have a path that includes Windows Runtime APIs. 
+
+![An example UWP conceptual topic](images/devcenter-topic2.png)
+
+![An example UWP reference topic](images/devcenter-topic1.png)
+
+When using a search engine, appending "Windows app development" to your search string will more often than not lead you to UWP content.
 
 
 <hr>
 
 
-## 重要的開發人員中心主題
+## <a name="important-dev-center-topics"></a>Important Dev Center topics
 
-以下是「開發人員中心」中的主要內容小節清單。 
+Here is a list of the key sections of content in the DevCenter. 
 
 
 <table style="width:100%">
@@ -116,46 +117,46 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 <tbody>
 
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>設計</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">UWP app 的設計指導方針</a></td>
+<td align="left"><strong>Design</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">Design guidelines for UWP apps.</a></td>
 </tr>
 
 
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>開發</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">許多可供您 App 使用之功能的詳細資訊及程式碼範例。</a></td>
+<td align="left"><strong>Develop</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">Detailed info and coding examples for the many of the features available to your app.</a></td>
 </tr>
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>語言參考資料</strong></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">可供用於 UWP 開發的程式設計語言。</a></td>
+<td align="left"><strong>Language reference</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">The programming languages available for UWP development.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>遊戲</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534184">使用 DirectX 來開發遊戲。</a></td>
+<td align="left"><strong>Games</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534184">Developing games with DirectX.</a></td>
 </tr>
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>物聯網</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534186">建置您自己的連線的裝置</a></td>
+<td align="left"><strong>Internet of Things</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534186">Building your own connected devices.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>移植</strong></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用您的 Android 與 iOS 技能迅速建立 UWP app。</a></td>
+<td align="left"><strong>Porting</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">Leverage your Android and iOS skills to quickly make UWP apps.</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Windows 橋接器</strong></td>
-<td align="left"><a href="https://developer.microsoft.com/windows/bridges">可將較舊的 App 和 iOS App 更新成 UWP 的工具。</a></td>
+<td align="left"><strong>Windows Bridges</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/bridges">Tools for updating older apps and iOS apps to UWP.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows10 的 App。</a></td>
+<td align="left"><a href="https://www.xamarin.com">Use C# to write apps for iOS, Android and Windows 10.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>工作程式碼片段</strong></td>
-<td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">可完成小型但實用之工作的現成程式碼。</a></td>
+<td align="left"><strong>Task snippets</strong></td>
+<td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">Ready-to-use code that accomplish small but useful tasks.</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>操作說明主題</strong></td>
-<td align="left"><a href="https://developer.microsoft.com/windows/develop">涵蓋 UWP 功能的範例程式碼。</a></td>
+<td align="left"><strong>How-to topics</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/develop">Sample code covering specific UWP features.</a></td>
 </tr>
 </table>
 
@@ -163,6 +164,10 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 
 
-<!--HONumber=Nov16_HO1-->
+
+
+
+
+<!--HONumber=Dec16_HO1-->
 
 

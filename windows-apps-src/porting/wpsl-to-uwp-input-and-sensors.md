@@ -1,49 +1,49 @@
 ---
 author: mcleblanc
-description: "與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。"
-title: "針對 I/O、裝置與 app 模型將 Windows Phone Silverlight 移植到 UWP"
+description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+title: Porting Windows Phone Silverlight to UWP for I/O, device, and app model&quot;
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f3b3e32461b7804639c1c0e8ff9b55fa57a23cf0
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
 
 ---
 
-#  針對 I/O、裝置與 app 模型將 Windows Phone Silverlight 移植到 UWP
+#  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>Porting Windows Phone Silverlight to UWP for I/O, device, and app model
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-前一個主題是[移植 XAML 與 UI](wpsl-to-uwp-porting-xaml-and-ui.md)。
+The previous topic was [Porting XAML and UI](wpsl-to-uwp-porting-xaml-and-ui.md).
 
-與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。
+Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer or the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen.
 
-## 應用程式週期 (處理程序生命週期管理)
+## <a name="application-lifecycle-process-lifetime-management"></a>Application lifecycle (process lifetime management)
 
-您的 Windows Phone Silverlight 應用程式包含可儲存和還原其應用程式狀態及其檢視狀態的程式碼，以支援被標記並進行後續重新啟用。 通用 Windows 平台 (UWP) app 的應用程式生命週期與 Windows Phone Silverlight 應用程式極為相似，因為它們兩者具有相同的設計目標，就是隨時讓使用者所選擇在前景執行的應用程式擁有最多可用的資源。 您會發現您的程式碼會相當容易地適應新系統。
+Your Windows Phone Silverlight app contains code to save and restore its application state and its view state in order to support being tombstoned and subsequently re-activated. The app lifecycle of Universal Windows Platform (UWP) apps has strong parallels with that of Windows Phone Silverlight apps, since they're both designed with the same goal of maximizing the resources available to whichever app the user has chosen to have in the foreground at any moment. You'll find that your code will adapt to the new system reasonable easily.
 
-**注意** 按下硬體 [上一頁]**** 按鈕會自動終止 Windows Phone Silverlight app。 按下行動裝置上的硬體 [返回]**** 按鈕「不會」**自動終止 UWP app。 相反地，UWP app 會暫停，然後可能會被終止。 但這些細節對適當地回應應用程式週期事件的應用程式來說是透明的。
+**Note**   Pressing the hardware **Back** button automatically terminates a Windows Phone Silverlight app. Pressing the hardware **Back** button on a mobile device *does not* automatically terminate a UWP app. Instead, it becomes suspended, and then it may be terminated. But, those details are transparent to an app that responds appropriately to application lifecycle events.
 
-「防反彈空檔」是當應用程式變成非使用中，而系統即將引發暫停事件之前的一段時間。 UWP 應用程式沒有防反彈空檔；當 app 變成非使用中時，隨即會引發暫停事件。
+A "debounce window" is the period of time between the app becoming inactive and the system raising the suspending event. For a UWP app, there is no debounce window; the suspension event is raised as soon as an app becomes inactive.
 
-如需詳細資訊，請參閱[應用程式週期](https://msdn.microsoft.com/library/windows/apps/mt243287)。
+For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
 
-## 相機
+## <a name="camera"></a>Camera
 
-Windows Phone Silverlight 相機擷取程式碼使用 **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 或 **Microsoft.Phone.Tasks.CameraCaptureTask** 類別。 若要將該程式碼移植到通用 Windows 平台 (UWP)，您可以使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 在 [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) 主題中有提供程式碼範例。 該方法可讓您將相片擷取到存放檔案中，而它需要 app 套件資訊清單中已設定「麥克風」****與「網路攝影機」****[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
+Windows Phone Silverlight camera capture code uses the **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera**, or **Microsoft.Phone.Tasks.CameraCaptureTask** classes. To port that code to the Universal Windows Platform (UWP), you can use the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class. There is a code example in the [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) topic. That method allows you to capture a photo to a storage file, and it requires the **microphone** and **webcam** [**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747) to be set in the app package manifest.
 
-另一個選項是 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 類別，這同樣需要「麥克風」****與「網路攝影機」****[**裝置功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
+Another option is the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) class, which also requires the **microphone** and **webcam** [**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747).
 
-UWP app 不支援鏡頭 app。
+Lens apps are not supported for UWP apps.
 
-## 偵測執行您 app 的平台
+## <a name="detecting-the-platform-your-app-is-running-on"></a>Detecting the platform your app is running on
 
-考量應用程式設計目標的方式隨 Windows 10 而有所改變。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+The way of thinking about app-targeting changes with Windows 10. The new conceptual model is that an app targets the Universal Windows Platform (UWP) and runs across all Windows devices. It can then opt to light up features that are exclusive to particular device families. If needed, the app also has the option to limit itself to targeting one or more device families specifically. For more info on what device families are—and how to decide which device family to target—see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-**注意** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
+**Note**   We recommend that you not use operating system or device family to detect the presence of features. Identifying the current operating system or device family is usually not the best way to determine whether a particular operating system or device family feature is present. Rather than detecting the operating system or device family (and version number), test for the presence of the feature itself (see [Conditional compilation, and adaptive code](wpsl-to-uwp-porting-to-a-uwp-project.md)). If you must require a particular operating system or device family, be sure to use it as a minimum supported version, rather than design the test for that one version.
 
-有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態版面配置面板。 在 XAML 標記中，繼續使用以有效像素 (先前稱為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631))。
+To tailor your app's UI to different devices, there are several techniques that we recommend. Continue to use auto-sized elements and dynamic layout panels as you always have. In your XAML markup, continue to use sizes in effective pixels (formerly view pixels) so that your UI adapts to different resolutions and scale factors (see [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md).). And use Visual State Manager's adaptive triggers and setters to adapt your UI to the window size (see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).).
 
-不過，如果有無法避免的情況，使您不得不偵測裝置系列時，才能那樣做。 在這個範例中，我們使用 [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) 類別來瀏覽到專為行動裝置系列量身訂做的適當頁面，然後確保其會切換回預設頁面。
+However, if you have a scenario where it is unavoidable to detect the device family, then you can do that. In this example, we use the [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) class to navigate to a page tailored for the mobile device family where appropriate, and we make sure to fall back to a default page otherwise.
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -52,7 +52,7 @@ UWP app 不支援鏡頭 app。
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-您的應用程式也能從作用中的資源選擇因素來判斷其正在哪個裝置系列上執行。 下列範例說明如何以命令方式來判斷，而 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主題還會根據裝置系列因素，針對載入裝置系列特定資源中的類別說明較常見的使用案例。
+Your app can also determine the device family that it is running on from the resource selection factors that are in effect. The example below shows how to do this imperatively, and the [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes the more typical use case for the class in loading device family-specific resources based on the device family factor.
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
@@ -60,42 +60,42 @@ string deviceFamilyName;
 bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out deviceFamilyName);
 ```
 
-另請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation)。
+Also, see [Conditional compilation, and adaptive code](wpsl-to-uwp-porting-to-a-uwp-project.md).
 
-## 裝置狀態
+## <a name="device-status"></a>Device status
 
-Windows Phone Silverlight app 可以使用 **Microsoft.Phone.Info.DeviceStatus** 類別來取得 app 執行所在裝置的相關資訊。 雖然 UWP 沒有與 **Microsoft.Phone.Info** 命名空間直接對等的命名空間，但是以下是一些屬性和事件，可供您在 UWP app 中用來取代對 **DeviceStatus** 類別成員的呼叫。
+A Windows Phone Silverlight app can use the **Microsoft.Phone.Info.DeviceStatus** class to get info about the device on which the app is running. While there is no direct UWP equivalent for the **Microsoft.Phone.Info** namespace, here are some properties and events that you can use in a UWP app in place of calls to members of the **DeviceStatus** class.
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) 和 [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) 屬性                                                                                                                                    |
-| **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
-| **DeviceFirmwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceHardwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) 屬性 (僅傳統型裝置系列)                                                                                                                                                                             |
-| **DeviceManufacturer** 屬性                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                |
-| **DeviceName** 屬性                                                                 | [**EasClientDeviceInformation.SystemProductName**](https://msdn.microsoft.com/library/windows/apps/hh701401) 屬性 (僅傳統型裝置系列)                                                                                                                                                                                 |
-| **DeviceTotalMemory** 屬性                                                          | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
-| **IsKeyboardDeployed** 屬性                                                         | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **IsKeyboardPresent** 屬性                                                          | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **KeyboardDeployedChanged** 事件                                                       | 沒有對等項目。 這個屬性會提供行動裝置硬體鍵盤 (並不常用) 的相關資訊。                                                                                                                                                                                                        |
-| **PowerSource** 屬性                                                                | 沒有對等項目                                                                                                                                                                                                                                                                                                                      |
-| **PowerSourceChanged** 事件                                                            | 處理 [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) 事件 (僅行動裝置系列)。 當 [**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) 屬性 (僅行動裝置系列) 的值減少 1% 時，便會引發該事件。 |
+| **ApplicationCurrentMemoryUsage** and **ApplicationCurrentMemoryUsageLimit** properties | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) and [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) properties                                                                                                                                    |
+| **ApplicationPeakMemoryUsage** property                                                 | Use the memory profiling tools in Visual Studio. For more info, see [Analyze memory usage](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
+| **DeviceFirmwareVersion** property                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) property (desktop device family only)                                                                                                                                                                             |
+| **DeviceHardwareVersion** property                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) property (desktop device family only)                                                                                                                                                                             |
+| **DeviceManufacturer** property                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) property (desktop device family only)                                                                                                                                                                                |
+| **DeviceName** property                                                                 | [**EasClientDeviceInformation.SystemProductName**](https://msdn.microsoft.com/library/windows/apps/hh701401) property (desktop device family only)                                                                                                                                                                                 |
+| **DeviceTotalMemory** property                                                          | No equivalent                                                                                                                                                                                                                                                                                                                      |
+| **IsKeyboardDeployed** property                                                         | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **IsKeyboardPresent** property                                                          | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **KeyboardDeployedChanged** event                                                       | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **PowerSource** property                                                                | No equivalent                                                                                                                                                                                                                                                                                                                      |
+| **PowerSourceChanged** event                                                            | Handle the [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) event (mobile device family only). The event is raised when the value of the [**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) property (mobile device family only) decreases by 1%. |
 
-## 位置
+## <a name="location"></a>Location
 
-當在其應用程式套件資訊清單中宣告定位功能的應用程式於 Windows 10 上執行時，系統會提示使用者同意。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
+When an app that declares the Location capability in its app package manifest runs on Windows 10, the system will prompt the end-user for consent. So, if your app displays its own custom consent prompt, or if it provides an on-off toggle, then you will want to remove that so that the end-user is only prompted once.
 
-## 方向
+## <a name="orientation"></a>Orientation
 
-UWP app 中，與 **PhoneApplicationPage.SupportedOrientations** 和 **Orientation** 屬性對等的項目是 app 套件資訊清單中的 [**uap:InitialRotationPreference**](https://msdn.microsoft.com/library/windows/apps/dn934798) 元素。 選取 [應用程式]**** 索引標籤 (如果尚未選取)，然後選取 [支援的旋轉]**** 下的一或多個核取方塊，以記錄您的喜好設定。
+The UWP app equivalent of the **PhoneApplicationPage.SupportedOrientations** and **Orientation** properties is the [**uap:InitialRotationPreference**](https://msdn.microsoft.com/library/windows/apps/dn934798) element in the app package manifest. Select the **Application** tab if it isn't already selected and select one or more check boxes under **Supported rotations** to record your preferences.
 
-不過，我們鼓勵您將 UWP app 的 UI 設計成不論什麼裝置方向和螢幕大小，都能賞心悅目。 在下下一個主題[針對尺寸與使用者體驗移植](wpsl-to-uwp-form-factors-and-ux.md)中，會有更多的相關資訊。
+You're encouraged, however, to design the UI of your UWP app to look great regardless of device orientation and screen size. There's more about that in [Porting for form factors and user experience](wpsl-to-uwp-form-factors-and-ux.md), which is the topic after next.
 
-下一個主題是[移植商務與資料層](wpsl-to-uwp-business-and-data.md)。
-
-
+The next topic is [Porting business and data layers](wpsl-to-uwp-business-and-data.md).
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Dec16_HO1-->
 
 

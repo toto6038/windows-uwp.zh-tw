@@ -1,28 +1,28 @@
 ---
 author: TylerMSFT
-title: "透過 App URI 處理常式支援網站至 App 連結"
-description: "使用 app URI 處理常式讓使用者持續使用您的 app"
-keywords: "深層連結 Windows"
+title: Support web-to-app linking with app URI handlers
+description: Drive user engagement with your app by using app URI handlers.
+keywords: Deep Linking Windows
 translationtype: Human Translation
-ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
-ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
+ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
+ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
 
 ---
 
-# 透過 App URI 處理常式支援網站至 App 連結
+# <a name="support-web-to-app-linking-with-app-uri-handlers"></a>Support web-to-app linking with app URI handlers
 
-了解如何藉由支援網站至 app 連結讓使用者持續使用您的 app。 網站至 app 連結可讓您將 app 與網站關聯。 當使用者開啟網站的 http 或 https 連結時，會啟動您的 app，而不是開啟瀏覽器。 如果未安裝您的 app，則會提供可在瀏覽器中開啟您網站的連結。 因為只有經過驗證的內容擁有者可以登錄連結，所以使用者可以信任這個使用經驗。
+Learn how to drive user engagement with your app by supporting web-to-app linking. Web-to-app linking allows you to associate an app with a website. When users open an http or https link to your website, instead of opening the browser, your app is launched. If your app is not installed, a link is provided to open your website in the browser. Users can trust this experience because only verified content owners can register for a link.
 
-為了啟用網站至 App 連結，您將需要︰
-- 在資訊清單檔案中識別 app 將會處理 URI
-- 將具有應用程式套件系列名稱的 JSON 檔案，放在同一個主機根目錄做為應用程式資訊清單宣告。
-- 在 app 中處理啟用。
+In order to enable web to app linking you will need:
+- Identify the URIs your app will handle in the manifest file
+- A JSON file with the app Package Family Name at the same host root as the app manifest declaration.
+- Handle the activation in the app.
 
-## 登錄以處理 app 資訊清單中的 http 和 https 連結
+## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>Register to handle http and https links in the app manifest
 
-您的 app 需要識別將會處理的網站 URI。 若要執行此動作，請將 **Windows.appUriHandler** 擴充功能註冊新增至 app 的資訊清單檔案 **Package.appxmanifest** 中。
+Your app needs to identify the URIs for the websites it will handle. To do so, add the **Windows.appUriHandler** extension registration to your app’s manifest file **Package.appxmanifest**.
 
-例如，若您網站的網址為 “msn.com”，您必須在 app 資訊清單放入下列項目︰
+For example, if your website’s address is “msn.com” you would make the following entry in your app’s manifest:
 
 ```xml
 <Applications>
@@ -38,16 +38,16 @@ ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 </Applications>
 ```
 
-上述的宣告會登錄您的 app 要從指定的主機來處理連結。 如果您的網站有多個網址 (例如︰m.example.com、www.example.com 和 example.com)，請在 `<uap3:AppUriHandler>` 內為每個網址新增個別的 `<uap3:Host Name=... />` 項目。
+The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
 
-## 使用 JSON 檔案將 app 與網站關聯
+## <a name="associate-your-app-and-website-with-a-json-file"></a>Associate your app and website with a JSON file
 
-若要確保只有您的 app 才能開啟您網站上的內容，請將您的 app 套件系列名稱放入位在網頁伺服器根目錄中，或位在網域的已知目錄中的 JSON 檔案。 這表示您的網站同意所列出的 app 開啟您網站上的內容。 您可以在 app 資訊清單設計工具的 \[套件\] 區段中，找到套件系列名稱。
+To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain. This signifies that your website gives consent for the listed apps to open content on your site. You can find the package family name in the Packages section in the app manifest designer.
 
 >[!Important]
-> JSON 檔案不應該有.json 後置檔案。
+> The JSON file should not have a .json file suffix.
 
-建立名為 **windows-app-web-link** 的 JSON 檔案 (不含.json 副檔名)，並提供您的應用程式套件系列名稱。 例如：
+Create a JSON file (without the .json file extension) named **windows-app-web-link** and provide your app’s package family name. For example:
 
 ``` JSON
 [{
@@ -57,23 +57,23 @@ ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
  }]
 ```
 
-Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找對應的 JSON 檔案。
+Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.
 
-### 萬用字元
+### <a name="wildcards"></a>Wildcards
 
-上面的 JSON 檔案範例示範萬用字元的用法。 萬用字元可讓您以較少行的程式碼，支援各種不同的連結。 網站至 app 連結可在 JSON 檔案中支援兩種類型的萬用字元︰
+The JSON file example above demonstrates the use of wildcards. Wildcards allow you to support a wide variety of links with fewer lines of code. Web-to-app linking supports two types of wildcards in the JSON file:
 
-| **萬用字元** | **說明**               |
+| **Wildcard** | **Description**               |
 |--------------|-------------------------------|
-| *****       | 代表任何子字串      |
-| **?**        | 代表單一字元 |
+| *****       | Represents any substring      |
+| **?**        | Represents a single character |
 
-假設以上述範例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]` 為例，您的 app 將支援所有以您網站的網址 (例如 msn.com) 為開頭的路徑，`/news/` 和 `/blog/` 下的那些「除外」。 將可支援 **msn.com/weather.html**，但不支援 ****msn.com/news/topnews.html****。
+For instance, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not ****msn.com/news/topnews.html****.
 
 
-### 多個 app
+### <a name="multiple-apps"></a>Multiple apps
 
-如果您想要連結到網站的 app 有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個 app。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 \[設定\] &gt; \[網站的 app\] 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
+If you have two apps that you would like to link to your website, list both of the application package family names in your **windows-app-web-link** JSON file. Both apps can be supported. The user will be presented with a choice of which is the default link if both are installed. If they want to change the default link later, they can change it in **Settings > Apps for Websites**. Developers can also change the JSON file at any time and see the change as early as the same day but no later than eight days after the update.
 
 ``` JSON
 [{
@@ -87,13 +87,13 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
  }]
 ```
 
-若要為使用者提供最佳的使用體驗，請使用排除路徑，務必從 JSON 檔案的支援路徑中排除僅供線上存取的內容。
+To provide the best experience for your users, use exclude paths to make sure that online-only content is excluded from the supported paths in your JSON file.
 
-排除路徑都會先行檢查，如果有相符項目，將會使用瀏覽器開啟對應的頁面，而不是使用指定的 app。 在上述範例中，‘/news/\*’ 包括該路徑下的任何頁面，而 ‘/news\*’ (沒有斜線軌跡的 'news') 則包括 ‘news\*’ 下的任何路徑，例如 ‘newslocal/’、‘newsinternational/’，依此類推。
+Exclude paths are checked first and if there is a match the corresponding page will be opened with the browser instead of the designated app. In the example above, ‘/news/\*’ includes any pages under that path while ‘/news\*’ (no forward slash trails 'news') includes any paths under ‘news\*’ such as ‘newslocal/’, ‘newsinternational/’, and so on.
 
-## 處理啟用以連結到內容的連結
+## <a name="handle-links-on-activation-to-link-to-content"></a>Handle links on Activation to link to content
 
-在 app 的 Visual Studio 方案中，瀏覽到 **App.xaml.cs**，並在 **OnActivated()** 中對連結的內容新增處理。 在下列範例中，在 app 中開啟的頁面取決於 URI 路徑︰
+Navigate to **App.xaml.cs** in your app’s Visual Studio solution and in **OnActivated()** add handling for linked content. In the following example, the page that is opened in the app depends on the URI path:
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -141,62 +141,60 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要：**務必要以 `rootFrame.Navigate(deepLinkPageType, e);` 取代最終 的`if (rootFrame.Content == null)` 邏輯，如上述範例中所示。
+**Important** Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.
 
-## 測試︰本機驗證工具
+## <a name="test-it-out-local-validation-tool"></a>Test it out: Local validation tool
 
-您可以執行主機登錄驗證工具來測試您的 app 和網站設定，該工具可在下列位置取得︰
+You can test the configuration of your app and website by running the App host registration verifier tool which is available in:
 
 %windir%\\system32\\**AppHostRegistrationVerifier.exe**
 
-執行此工具時，可利用下列參數來測試 app 與網站的設定：
+Test the configuration of your app and website by running this tool with the following parameters:
 
-**AppHostRegistrationVerifier.exe**
-            *hostname packagefamilyname filepath*
-          
+**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
 
--   主機名稱︰您的網站 (例如 microsoft.com)
--   套件系列名稱 (PFN)：您的 app PFN
--   檔案路徑︰用於本機驗證的 JSON 檔案 (例如 C:\\SomeFolder\\windows-app-web-link)
+-   Hostname: Your website (e.g. microsoft.com)
+-   Package Family Name (PFN): Your app’s PFN
+-   File path: The JSON file for local validation (e.g. C:\\SomeFolder\\windows-app-web-link)
 
-## 測試︰Web 驗證
+## <a name="test-it-web-validation"></a>Test it: Web validation
 
-關閉您的應用程式，驗證當您按一下連結時會啟用該 app。 接著在您的網站中，複製其中一個支援路徑的網址。 例如，如果您網站的網址是 “msn.com”，而其中一個支援路徑是 “path1”，您會使用： `http://msn.com/path1`
+Close your application to verify that the app is activated when you click a link. Then, copy the address of one of the supported paths in your website. For example, if your website’s address is “msn.com”, and one of the support paths is “path1”, you would use `http://msn.com/path1`
 
-確認您的 app 已經關閉。 按下 Windows 鍵 + R 以開啟\[執行\] 對話方塊並在視窗中貼上連結。 您的 app 應要啟動，而不是網頁瀏覽器。
+Verify that your app is closed. Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window. Your app should launch instead of the web browser.
 
-此外，您可以使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API，測試從另一個應用程式來啟動您的 app。 您同樣可以使用這個 API，在手機上測試。
+Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API. You can use this API to test on phones as well.
 
-如果您想要依照通訊協定啟用邏輯，在 **OnActivated** 事件處理常式中設定中斷點。
+If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
 
-**注意︰**如果您按一下 Microsoft Edge 瀏覽器中的連結，並不會啟動您的 app，而是將您帶至您的網站。
+**Note:** If you click a link in the Microsoft Edge browser, it will not launch your app but will take you to your website.
 
-## AppUriHandlers 祕訣︰
+## <a name="appurihandlers-tips"></a>AppUriHandlers tips:
 
-- 請務必只指定您的 app 能夠處理的連結。
+- Make sure to only specify links that your app can handle.
 
-- 列出所有您將會支援的主機。  請注意，www.example.com 與 example.com 的主機不同。
+- List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.
 
-- 使用者可以在 \[設定\] 中，選擇他們想要哪個 app 來處理網站。
+- Users can choose which app they prefer to handle websites in Settings.
 
-- 您的 JSON 檔案必須上傳到 https 伺服器。
+- Your JSON file must be uploaded to an https server.
 
-- 如果您需要變更所要支援的路徑，您可以重新發佈 JSON 檔案，而不需要重新發佈您的 app。 使用者能在 1-8 天內查看所做的變更。
+- If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
 
-- 所有使用 AppUriHandlers 側載的 app，在安裝時都會有該主機的驗證連結。 您不需要將 JSON 檔案上傳，也能測試該功能。
+- All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
 
-- 只要您的 app 是利用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) 啟動的 UWP app，或使用 [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx) 啟動的 Windows 傳統型應用程式，此功能都能運作。 如果 URL 對應到已登錄的 app URI 處理常式，會啟動該 app，而不是瀏覽器。
+- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
-## 另請參閱
+## <a name="see-also"></a>See also
 
-[windows.protocol 註冊](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[windows.protocol registration](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
 
-[處理 URI 啟用](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[Handle URI Activation](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-[關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
+[Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,59 +1,59 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: "判斷 Microsoft OneDrive 檔案的可用性"
-description: "使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。"
+title: Determining availability of Microsoft OneDrive files
+description: Determine if a Microsoft OneDrive file is available using the StorageFile.IsAvailable property.
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
 
 ---
-# 判斷 Microsoft OneDrive 檔案的可用性
+# <a name="determining-availability-of-microsoft-onedrive-files"></a>Determining availability of Microsoft OneDrive files
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+** Important APIs **
 
--   [**FileIO 類別**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**StorageFile 類別**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**StorageFile.IsAvailable 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
+-   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/BR227171)
+-   [**StorageFile.IsAvailable property**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
+Determine if a Microsoft OneDrive file is available using the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property.
 
-## 先決條件
+## <a name="prerequisites"></a>Prerequisites
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187334)。
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
--   **App 功能宣告**
+-   **App capabilty declarations**
 
-    請參閱[檔案存取權限](file-access-permissions.md)。
+    See [File access permissions](file-access-permissions.md).
 
-## 使用 StorageFile.IsAvailable 屬性
+## <a name="using-the-storagefileisavailable-property"></a>Using the StorageFile.IsAvailable property
 
-使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
+Users are able to mark OneDrive files as either available-offline (default) or online-only. This capability enables users to move large files (such as pictures and videos) to their OneDrive, mark them as online-only, and save disk space (the only thing kept locally is a metadata file).
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)，可用來判斷檔案目前是否可用。 下表顯示 **StorageFile.IsAvailable** 屬性在各種案例中的值。
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx), is used to determine if a file is currently available. The following table shows the value of the **StorageFile.IsAvailable** property in various scenarios.
 
-| 檔案類型                              | 線上 | 計量付費網路        | 離線 |
+| Type of file                              | Online | Metered network        | Offline |
 |-------------------------------------------|--------|------------------------|---------|
-| 本機檔案                                | True   | True                   | True    |
-| 標示為可離線使用的 OneDrive 檔案 | True   | True                   | True    |
-| 標示為僅限線上存取的 OneDrive 檔案       | True   | 以使用者設定為基礎 | False   |
-| 網路檔案                              | True   | 以使用者設定為基礎 | False   |
+| Local file                                | True   | True                   | True    |
+| OneDrive file marked as available-offline | True   | True                   | True    |
+| OneDrive file marked as online-only       | True   | Based on user settings | False   |
+| Network file                              | True   | Based on user settings | False   |
 
  
 
-下列步驟說明如何判斷檔案目前是否可用。
+The following steps illustrate how to determine if a file is currently available.
 
-1.  宣告某項功能適用於您想要存取的媒體櫃。
-2.  包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 類型。
-3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
-4.  一旦您具備代表所需檔案之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件的存取權後，[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的值就會反映檔案是否可供使用。
+1.  Declare a capability appropriate for the library you want to access.
+2.  Include the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) namespace. This namespace includes the types for managing files, folders, and application settings. It also includes the needed [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) type.
+3.  Acquire a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object for the desired file(s). If you are enumerating a library, this step is usually accomplished by calling the [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) method and then calling the resulting [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) object's [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) method. The **GetFilesAsync** method returns an [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) collection of **StorageFile** objects.
+4.  Once you have the access to a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object representing the desired file(s), the value of the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property reflects whether or not the file is available.
 
-下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的傳回集合上重複執行。
+The following generic method illustrates how to enumerate any folder and return the collection of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) objects for that folder. The calling method then iterates over the returned collection referencing the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property for each file.
 
 ```CSharp
 /// <summary>
@@ -92,6 +92,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,3385 +1,4169 @@
-
 ---
-Description: "作者︰jnHs 轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。 本主題概述每個國家/地區支援的門檻和付款方式。"
-title: "付款門檻、方式和時間範圍"
+author: jnHs
+Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
+title: Payment thresholds, methods, and timeframes
 translationtype: Human Translation
-ms.sourcegitcommit: 85b9993334ecfb3ea2dc5a196cb5b5f9dc99c985
-ms.openlocfilehash: b4f98e31b52b77f6675771fc09bb492ca5cf9021
+ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
+ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 ---
 
 
-# 付款門檻、方式和時間範圍
+# <a name="payment-thresholds-methods-and-timeframes"></a>Payment thresholds, methods, and timeframes
 
-轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。 本主題概述每個國家/地區支援的付款門檻和付款方式。
+The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the payment thresholds and payment methods supported in each country/region.
 
-針對任何特定國家/地區，我們將使用 ACH/SEPA 或電匯支付款項。 此外，部分國家/地區支援 PayPal 做為付款方式。
+For any given country/region, we will either use ACH/SEPA or wire transfer to deliver our payments. Additionally, some countries/regions support PayPal as a payment method.
 
-## 款項進入支付帳戶所需的天數
+## <a name="number-of-days-for-payments-to-reach-payout-account"></a>Number of days for payments to reach payout account
 
-我們通常會在某個指定月份，於該月份的 15 日之前發送任何應付款項，但是還需要一天的時間，款項才會進入您的帳戶。 天數將取決於我們針對您的帳戶所使用的付款方式，如下所述。 
+We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below. 
 
-> **注意** 以下所示的是大概的天數；任何指定的支付可能需要較長或較短的時間。
+> **Note** The days shown below are approximate; any given payout may take a longer or shorter amount of time.
 
 
-| 付款方式 | 進入支付帳戶所需的天數 |
+| Payment method | Number of days to reach payout account |
 |--------------------|--------------------------------------------|
-| PayPal | 1 個工作天 | 
-| ACH/SEPA |2-3 個工作天 |
-| 電匯 | 7-10 個工作天 |
+| PayPal | 1 business day | 
+| ACH/SEPA |2-3 business days |
+| Wire Transfer | 7-10 business days |
 
 &nbsp;
 
-若要查看每個市場所使用的這些付款方式所在的國家/地區，請參閱下表。
+To see the countries/regions in which these payment methods are used for each marketplace, see the tables below.
 
-## 付款門檻和方式
+## <a name="payment-thresholds-and-methods"></a>Payment thresholds and methods
 
-> **注意** 付款門檻以美元列出。 在某些市場中，會使用當地貨幣對等項目。 
+> **Note** Payment thresholds are listed in USD. In some markets, the equivalent in local currency is used. 
 
-### Windows 市集 
+### <a name="windows-store"></a>Windows Store 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">支付帳戶 = 銀行帳戶</th>
-    <th colspan="2">支付帳戶 = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>國家/地區</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
-    <td>阿富汗</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Afghanistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿爾巴尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿爾及利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安哥拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Angola</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安地卡及巴布達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Antigua and Barbuda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿根廷</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>亞美尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Armenia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>澳大利亞</td>
-    <td>25 美元</td>
+    <td>Australia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>奧地利</td>
-    <td>25 美元</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>亞塞拜然</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴林</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>孟加拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bangladesh</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>白俄羅斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>比利時</td>
-    <td>25 美元</td>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>貝南</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>玻利維亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>波士尼亞赫塞哥維納</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>波札那</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Botswana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴西</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>保加利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>布吉納法索</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burkina Faso</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒲隆地</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burundi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>柬埔寨</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>喀麥隆</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>加拿大</td>
-    <td>25 美元</td>
+    <td>Canada</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中非共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>查德</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>智利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>中國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>China</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>哥倫比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>葛摩</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Comoros</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果民主共和國 (DRC)</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哥斯大黎加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Costa Rica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科特迪瓦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>克羅埃西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽普勒斯</td>
-    <td>25 美元</td>
+    <td>Cyprus</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>捷克共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>丹麥</td>
-    <td>25 美元</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>多米尼克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Dominica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>多明尼加共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄瓜多</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>埃及</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>薩爾瓦多</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄利垂亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛沙尼亞</td>
-    <td>25 美元</td>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>衣索比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>斐濟群島</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Fiji</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>芬蘭</td>
-    <td>25 美元</td>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>法國</td>
-    <td>25 美元</td>
+    <td>France</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>喬治亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>德國</td>
-    <td>25 美元</td>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>迦納</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ghana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>希臘</td>
-    <td>25 美元</td>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瓜地馬拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guatemala</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>幾內亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>海地</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>宏都拉斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Honduras</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>香港特別行政區</td>
-    <td>25 美元</td>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>匈牙利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>冰島</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印度</td>
-    <td>25 美元</td>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印尼</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>伊拉克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Iraq</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛爾蘭</td>
-    <td>25 美元</td>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>以色列</td>
-    <td>25 美元</td>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>義大利</td>
-    <td>25 美元</td>
+    <td>Italy</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>牙買加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>日本</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>約旦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哈薩克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kazakhstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>肯亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kenya</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>韓國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科威特</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>寮國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Laos</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>拉脫維亞</td>
-    <td>25 美元</td>
+    <td>Latvia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>黎巴嫩</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Lebanon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賴比瑞亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>列支敦斯登</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Liechtenstein</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>立陶宛</td>
-    <td>25 美元</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>盧森堡</td>
-    <td>25 美元</td>
+    <td>Luxembourg</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬達加斯加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Madagascar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬拉威</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malawi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬來西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mali</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬爾他</td>
-    <td>25 美元</td>
+    <td>Malta</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>模里西斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mauritius</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>墨西哥</td>
-    <td>25 美元</td>
+    <td>Mexico</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>摩納哥</td>
-    <td>25 美元</td>
+    <td>Monaco</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒙古</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒙特內哥羅</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>摩洛哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>莫三比克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mozambique</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼泊爾</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>荷蘭</td>
-    <td>25 美元</td>
+    <td>Netherlands</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>紐西蘭</td>
-    <td>25 美元</td>
+    <td>New Zealand</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>尼加拉瓜</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nicaragua</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼日</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Niger</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>奈及利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nigeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>挪威</td>
-    <td>25 美元</td>
+    <td>Norway</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>阿曼</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Oman</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴基斯坦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Pakistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拿馬</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Panama</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拉圭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Paraguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>秘魯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>菲律賓</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Philippines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>波蘭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>葡萄牙</td>
-    <td>25 美元</td>
+    <td>Portugal</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>卡達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Qatar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>羅馬尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>俄羅斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Russia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>盧安達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Rwanda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>聖文森及格瑞那丁</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>沙烏地阿拉伯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>塞內加爾</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽爾維亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>獅子山</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sierra Leone</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>新加坡</td>
-    <td>25 美元</td>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛伐克</td>
-    <td>25 美元</td>
+    <td>Slovakia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛維尼亞</td>
-    <td>25 美元</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>索馬利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>南非</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>西班牙</td>
-    <td>25 美元</td>
+    <td>Spain</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯里蘭卡</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sri Lanka</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>瑞典</td>
-    <td>25 美元</td>
+    <td>Sweden</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瑞士</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>塔吉克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tajikistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>坦尚尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>泰國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>東帝汶</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Timor-Leste</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>多哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Togo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>東加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tonga</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>千里達及托巴哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>突尼西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>土耳其</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>土庫曼</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Turkmenistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏干達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏克蘭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ukraine</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿拉伯聯合大公國</td>
-    <td>25 美元</td>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英國</td>
-    <td>25 美元</td>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>美國</td>
-    <td>25 美元</td>
+    <td>United States</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>烏拉圭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uruguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏茲別克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uzbekistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>委內瑞拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Venezuela</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>越南</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Vietnam</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尚比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>辛巴威</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zimbabwe</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Microsoft Advertising 
+### <a name="microsoft-advertising"></a>Microsoft Advertising 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">支付帳戶 = 銀行帳戶</th>
-    <th colspan="2">支付帳戶 = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>國家/地區</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
-    <td>阿富汗</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Afghanistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿爾巴尼亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Albania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿爾及利亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Algeria</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安哥拉</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Angola</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安地卡及巴布達</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Antigua and Barbuda</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿根廷</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Argentina</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>亞美尼亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Armenia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>澳大利亞</td>
-    <td>50 美元</td>
+    <td>Australia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>奧地利</td>
-    <td>50 美元</td>
+    <td>Austria</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>亞塞拜然</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Azerbaijan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴林</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bahrain</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>孟加拉</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bangladesh</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>白俄羅斯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Belarus</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>比利時</td>
-    <td>50 美元</td>
+    <td>Belgium</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>貝南</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Benin</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>玻利維亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bolivia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>波士尼亞赫塞哥維納</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>波札那</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Botswana</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴西</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Brazil</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>保加利亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bulgaria</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>布吉納法索</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burkina Faso</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒲隆地</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burundi</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>柬埔寨</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cambodia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>喀麥隆</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cameroon</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>加拿大</td>
-    <td>50 美元</td>
+    <td>Canada</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中非共和國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Central African Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>查德</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chad</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>智利</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chile</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>中國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>China</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>哥倫比亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Colombia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>葛摩</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Comoros</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果共和國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果民主共和國 (DRC)</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo (DRC)</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哥斯大黎加</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Costa Rica</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科特迪瓦</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Côte d'Ivoire</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>克羅埃西亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Croatia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽普勒斯</td>
-    <td>50 美元</td>
+    <td>Cyprus</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>捷克共和國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Czech Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>丹麥</td>
-    <td>50 美元</td>
+    <td>Denmark</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>多米尼克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Dominica</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>多明尼加共和國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Dominican Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄瓜多</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ecuador</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>埃及</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Egypt</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>薩爾瓦多</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>El Salvador</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄利垂亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Eritrea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛沙尼亞</td>
-    <td>50 美元</td>
+    <td>Estonia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>衣索比亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ethiopia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>斐濟群島</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Fiji</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>芬蘭</td>
-    <td>50 美元</td>
+    <td>Finland</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>法國</td>
-    <td>50 美元</td>
+    <td>France</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>喬治亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Georgia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>德國</td>
-    <td>50 美元</td>
+    <td>Germany</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>迦納</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ghana</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>希臘</td>
-    <td>50 美元</td>
+    <td>Greece</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瓜地馬拉</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guatemala</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>幾內亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guinea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>海地</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Haiti</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>宏都拉斯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Honduras</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>香港特別行政區</td>
-    <td>50 美元</td>
+    <td>Hong Kong SAR</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>匈牙利</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Hungary</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>冰島</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Iceland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印度</td>
-    <td>50 美元</td>
+    <td>India</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印尼</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Indonesia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>伊拉克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Iraq</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛爾蘭</td>
-    <td>50 美元</td>
+    <td>Ireland</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>以色列</td>
-    <td>50 美元</td>
+    <td>Israel</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>義大利</td>
-    <td>50 美元</td>
+    <td>Italy</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>牙買加</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jamaica</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>日本</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Japan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>約旦</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jordan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哈薩克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kazakhstan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>肯亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kenya</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>韓國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Korea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科威特</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kuwait</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>寮國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Laos</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>拉脫維亞</td>
-    <td>50 美元</td>
+    <td>Latvia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>黎巴嫩</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Lebanon</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賴比瑞亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Liberia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>列支敦斯登</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Liechtenstein</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>立陶宛</td>
-    <td>50 美元</td>
+    <td>Lithuania</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>盧森堡</td>
-    <td>50 美元</td>
+    <td>Luxembourg</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Macedonia (FYROM)</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬達加斯加</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Madagascar</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬拉威</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malawi</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬來西亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malaysia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬利</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mali</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬爾他</td>
-    <td>50 美元</td>
+    <td>Malta</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>模里西斯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mauritius</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>墨西哥</td>
-    <td>50 美元</td>
+    <td>Mexico</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>摩納哥</td>
-    <td>50 美元</td>
+    <td>Monaco</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒙古</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mongolia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒙特內哥羅</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Montenegro</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>摩洛哥</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Morocco</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>莫三比克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mozambique</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼泊爾</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nepal</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>荷蘭</td>
-    <td>50 美元</td>
+    <td>Netherlands</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>紐西蘭</td>
-    <td>50 美元</td>
+    <td>New Zealand</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>尼加拉瓜</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nicaragua</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼日</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Niger</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>奈及利亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nigeria</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>挪威</td>
-    <td>50 美元</td>
+    <td>Norway</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>阿曼</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Oman</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴基斯坦</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Pakistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拿馬</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Panama</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拉圭</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Paraguay</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>秘魯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Peru</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>菲律賓</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Philippines</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>波蘭</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Poland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>葡萄牙</td>
-    <td>50 美元</td>
+    <td>Portugal</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>卡達</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Qatar</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>羅馬尼亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Romania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>俄羅斯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Russia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>盧安達</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Rwanda</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>聖文森及格瑞那丁</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>沙烏地阿拉伯</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Saudi Arabia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>塞內加爾</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Senegal</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽爾維亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Serbia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>獅子山</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sierra Leone</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>新加坡</td>
-    <td>50 美元</td>
+    <td>Singapore</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛伐克</td>
-    <td>50 美元</td>
+    <td>Slovakia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛維尼亞</td>
-    <td>50 美元</td>
+    <td>Slovenia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>索馬利亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Somalia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>南非</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>South Africa</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>西班牙</td>
-    <td>50 美元</td>
+    <td>Spain</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯里蘭卡</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sri Lanka</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>瑞典</td>
-    <td>50 美元</td>
+    <td>Sweden</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瑞士</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Switzerland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Taiwan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>塔吉克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tajikistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>坦尚尼亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tanzania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>泰國</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>50 美元</td>
+    <td>Thailand</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>東帝汶</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Timor-Leste</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>多哥</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Togo</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>東加</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tonga</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>千里達及托巴哥</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Trinidad and Tobago</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>突尼西亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tunisia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>土耳其</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Turkey</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>土庫曼</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Turkmenistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏干達</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uganda</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏克蘭</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ukraine</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿拉伯聯合大公國</td>
-    <td>50 美元</td>
+    <td>United Arab Emirates</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英國</td>
-    <td>50 美元</td>
+    <td>United Kingdom</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>美國</td>
-    <td>50 美元</td>
+    <td>United States</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50 美元</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>烏拉圭</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uruguay</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏茲別克</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uzbekistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>委內瑞拉</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Venezuela</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>越南</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Vietnam</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尚比亞</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zambia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>辛巴威</td>
-    <td>50 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zimbabwe</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Azure Marketplace
+### <a name="azure-marketplace"></a>Azure Marketplace
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">支付帳戶 = 銀行帳戶</th>
-    <th colspan="2">支付帳戶 = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>國家/地區</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+  </tr>
+  <tr>
+    <td>Afghanistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Angola</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Antigua and Barbuda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Armenia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Australia</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
     <tr>
-    <td>奧地利</td>
-    <td>25 美元</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+<tr>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>比利時</td>
-    <td>25 美元</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Bangladesh</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+    <tr>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>保加利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+ <tr>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>加拿大</td>
-    <td>25 美元</td>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Botswana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Burkina Faso</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Burundi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+    <tr>
+    <td>Canada</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>克羅埃西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+<tr>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽普勒斯</td>
-    <td>25 美元</td>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Comoros</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Congo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Costa Rica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cyprus</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>捷克共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>丹麥</td>
-    <td>25 美元</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>愛沙尼亞</td>
-    <td>25 美元</td>
+    <td>Dominica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>芬蘭</td>
-    <td>25 美元</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Fiji</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>法國</td>
-    <td>25 美元</td>
+    <td>France</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>德國</td>
-    <td>25 美元</td>
+   <tr>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>希臘</td>
-    <td>25 美元</td>
+   <tr>
+    <td>Ghana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Guatemala</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>香港特別行政區</td>
-    <td>25 美元</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Honduras</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>匈牙利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>愛爾蘭</td>
-    <td>25 美元</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
-    <td>PayPal</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>義大利</td>
-    <td>25 美元</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Iraq</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>日本</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>拉脫維亞</td>
-    <td>25 美元</td>
+ <tr>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
-  </tr>
-  <tr>
-    <td>列支敦斯登</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>立陶宛</td>
-    <td>25 美元</td>
+   <tr>
+    <td>Italy</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>盧森堡</td>
-    <td>25 美元</td>
+    <td>Kazakhstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kenya</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Laos</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Latvia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Lebanon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Liechtenstein</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>馬爾他</td>
-    <td>25 美元</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
-    <td>PayPal</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>荷蘭</td>
-    <td>25 美元</td>
+    <td>Luxembourg</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>挪威</td>
-    <td>25 美元</td>
+    <td>Madagascar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Malawi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Mali</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Malta</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>波蘭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
-    <td>PayPal</td>
+ <tr>
+    <td>Mauritius</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>葡萄牙</td>
-    <td>25 美元</td>
+    <td>Mexico</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>羅馬尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
-  </tr>
-  <tr>
-    <td>斯洛伐克</td>
-    <td>25 美元</td>
+    <td>Monaco</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
-    <td>PayPal</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>斯洛維尼亞</td>
-    <td>25 美元</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Mozambique</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Netherlands</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Nicaragua</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>西班牙</td>
-    <td>25 美元</td>
+    <td>Niger</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Nigeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Norway</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Oman</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Pakistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Panama</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Paraguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Philippines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瑞典</td>
-    <td>25 美元</td>
+    <td>Portugal</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瑞士</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Qatar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Russia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英國</td>
-    <td>25 美元</td>
+    <td>Rwanda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Sierra Leone</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Slovakia</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>美國</td>
-    <td>25 美元</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-</table>
+ <tr>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Spain</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Sri Lanka</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Sweden</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Tajikistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Timor-Leste</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Togo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tonga</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Turkmenistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ukraine</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+    <tr>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>United States</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Uruguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Uzbekistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Venezuela</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Vietnam</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Zimbabwe</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ </table>
 
 &nbsp;
 
-### Office 市集
+### <a name="office-store"></a>Office Store
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">支付帳戶 = 銀行帳戶</th>
-    <th colspan="2">支付帳戶 = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>國家/地區</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
-    <td><strong>付款門檻</strong></td>
-    <td><strong>付款方式</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
-    <td>阿爾巴尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿爾及利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安道爾</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Andorra</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>安哥拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Angola</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿根廷</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>澳大利亞</td>
-    <td>25 美元</td>
+    <td>Australia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>奧地利</td>
-    <td>25 美元</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>亞塞拜然</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴林</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>孟加拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bangladesh</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>白俄羅斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>比利時</td>
-    <td>25 美元</td>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>貝南</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>玻利維亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>波士尼亞赫塞哥維納</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴西</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>保加利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>布吉納法索</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burkina Faso</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒲隆地</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Burundi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>柬埔寨</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>喀麥隆</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>加拿大</td>
-    <td>25 美元</td>
+    <td>Canada</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中非共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>查德</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>智利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>中國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>China</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>哥倫比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>剛果民主共和國 (DRC)</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哥斯大黎加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Costa Rica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科特迪瓦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>克羅埃西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽普勒斯</td>
-    <td>25 美元</td>
+    <td>Cyprus</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>捷克共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>丹麥</td>
-    <td>25 美元</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>多明尼加共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄瓜多</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>埃及</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>薩爾瓦多</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>厄利垂亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛沙尼亞</td>
-    <td>25 美元</td>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>衣索比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>芬蘭</td>
-    <td>25 美元</td>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>法國</td>
-    <td>25 美元</td>
+    <td>France</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>喬治亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>德國</td>
-    <td>25 美元</td>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>迦納</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Ghana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>希臘</td>
-    <td>25 美元</td>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瓜地馬拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guatemala</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>幾內亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>海地</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>宏都拉斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Honduras</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>香港特別行政區</td>
-    <td>25 美元</td>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>匈牙利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>冰島</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印度</td>
-    <td>25 美元</td>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>印尼</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>愛爾蘭</td>
-    <td>25 美元</td>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>以色列</td>
-    <td>25 美元</td>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>義大利</td>
-    <td>25 美元</td>
+    <td>Italy</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>牙買加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>日本</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>約旦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>哈薩克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kazakhstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>肯亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kenya</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>韓國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>科威特</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>吉爾吉斯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Kyrgyzstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>寮國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Laos</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>拉脫維亞</td>
-    <td>25 美元</td>
+    <td>Latvia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賴比瑞亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>列支敦斯登</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Liechtenstein</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>立陶宛</td>
-    <td>25 美元</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>盧森堡</td>
-    <td>25 美元</td>
+    <td>Luxembourg</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬達加斯加</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Madagascar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬拉威</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malawi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬來西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬利</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mali</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>馬爾他</td>
-    <td>25 美元</td>
+    <td>Malta</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>墨西哥</td>
-    <td>25 美元</td>
+    <td>Mexico</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>蒙古</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>蒙特內哥羅</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>摩洛哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>莫三比克</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Mozambique</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼泊爾</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>荷蘭</td>
-    <td>25 美元</td>
+    <td>Netherlands</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>紐西蘭</td>
-    <td>25 美元</td>
+    <td>New Zealand</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>尼加拉瓜</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nicaragua</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尼日</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Niger</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>奈及利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Nigeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>挪威</td>
-    <td>25 美元</td>
+    <td>Norway</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>阿曼</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Oman</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴基斯坦</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Pakistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拿馬</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Panama</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>巴拉圭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Paraguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>秘魯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>菲律賓</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Philippines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>波蘭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>葡萄牙</td>
-    <td>25 美元</td>
+    <td>Portugal</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>波多黎各</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Puerto Rico</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>卡達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Qatar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>羅馬尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>盧安達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Rwanda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>沙烏地阿拉伯</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>塞內加爾</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>賽爾維亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>獅子山</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sierra Leone</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>新加坡</td>
-    <td>25 美元</td>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛伐克</td>
-    <td>25 美元</td>
+    <td>Slovakia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯洛維尼亞</td>
-    <td>25 美元</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>索馬利亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>南非</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>西班牙</td>
-    <td>25 美元</td>
+    <td>Spain</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>斯里蘭卡</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Sri Lanka</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>瑞典</td>
-    <td>25 美元</td>
+    <td>Sweden</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>瑞士</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>坦尚尼亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>泰國</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>25 美元</td>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>東帝汶</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Timor-Leste</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>多哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Togo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>千里達及托巴哥</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>突尼西亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>土耳其</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>烏干達</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>阿拉伯聯合大公國</td>
-    <td>25 美元</td>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英國</td>
-    <td>25 美元</td>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>美國</td>
-    <td>25 美元</td>
+    <td>United States</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25 美元</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>烏拉圭</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Uruguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>委內瑞拉</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Venezuela</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>越南</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Vietnam</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>尚比亞</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>辛巴威</td>
-    <td>200 美元</td>
-    <td>電匯</td>
-    <td>不適用</td>
-    <td>不適用</td>
+    <td>Zimbabwe</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,21 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。"
-title: "目標預測"
+Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
+title: Targeting
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5707d36533e1b6566efb23ca9b6bf2bbf659cc63
+ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
+ms.openlocfilehash: 09e2241523411daa372bc7630d13b96a2aa8203b
 
 ---
 
-# 目標預測的指導方針
+# <a name="guidelines-for-targeting"></a>Guidelines for targeting
 
-Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
+Touch targeting in Windows uses the full contact area of each finger that is detected by a touch digitizer. The larger, more complex set of input data reported by the digitizer is used to increase precision when determining the user's intended (or most likely) target.
 
-**重要 API**
+**Important APIs**
 
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
@@ -23,44 +23,44 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 
 
 
-本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in UWP apps.
 
-## 度量單位和縮放
-
-
-為了在不同的畫面大小和像素密度之間保持一致，所有目標大小都是以實體單位 (公釐) 來表示。 實體單位可以透過下列等式轉換為像素：
-
-像素 = 像素密度 × 度量單位
-
-以下範例使用這個公式計算 9 公釐目標大小在每英吋 135 像素 (PPI) 的顯示器上且最大縮放倍數為 1 倍時的像素大小：
-
-像素 = 135 PPI × 9 公釐
-
-像素 = 135 PPI × (0.03937 英吋/公釐 × 9 公釐)
-
-像素 = 135 PPI × 0.35433 英吋
-
-像素 = 48 像素
-
-這個結果必須根據系統定義的每一個縮放倍數調整。
-
-## 閾值
+## <a name="measurements-and-scaling"></a>Measurements and scaling
 
 
-距離和時間閾值可以用來判斷互動的結果。
+To remain consistent across different screen sizes and pixel densities, all target sizes are represented in physical units (millimeters). Physical units can be converted to pixels by using the following equation:
 
-例如，偵測到觸碰時，如果物件從觸碰點拖曳的距離小於 2.7 公釐，而且在觸碰的 0.1 秒內提起，就會登錄點選。 手指移動距離超過這個 2.7 公釐的閾值時，便會拖曳物件以及選取或移動 (如需詳細資訊，請參閱[交叉滑動的指導方針](guidelines-for-cross-slide.md))。 視您的應用程式而定，手指按住不放 0.1 秒以上可能會造成系統執行自顯互動 (如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md#selfreveal))。
+Pixels = Pixel Density × Measurement
 
-## 目標大小
+The following example uses this formula to calculate the pixel size of a 9 mm target on a 135 pixel per inch (PPI) display at a 1x scaling plateau:
+
+Pixels = 135 PPI × 9 mm
+
+Pixels = 135 PPI × (0.03937 inches per mm × 9 mm)
+
+Pixels = 135 PPI × 0.35433 inches
+
+Pixels = 48 pixels
+
+This result must be adjusted according to each scaling plateau defined by the system.
+
+## <a name="thresholds"></a>Thresholds
 
 
-一般而言，將您的觸控目標大小設為 9 公釐或更大的方格 (在縮放倍數 1.0 倍的 135 PPI 螢幕上為 48x48 像素)。 避免使用小於 7 公釐方格的觸控目標大小。
+Distance and time thresholds may be used to determine the outcome of an interaction.
 
-下圖顯示目標大小一般是如何由視覺目標、實際目標大小以及實際目標與其他潛在目標的邊框間距所組成。
+For example, when a touch-down is detected, a tap is registered if the object is dragged less than 2.7 mm from the touch-down point and the touch is lifted within 0.1 second or less of the touch-down. Moving the finger beyond this 2.7 mm threshold results in the object being dragged and either selected or moved (for more information, see [Guidelines for cross-slide](guidelines-for-cross-slide.md)). Depending on your app, holding the finger down for longer than 0.1 second may cause the system to perform a self-revealing interaction (for more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md)).
 
-![顯示視覺目標、實際目標以及邊框間距之建議大小的圖。](images/targeting-size.png)
+## <a name="target-sizes"></a>Target sizes
 
-下表列出觸控目標的元件大小下限和建議大小。
+
+In general, set your touch target size to 9 mm square or greater (48x48 pixels on a 135 PPI display at a 1.0x scaling plateau). Avoid using touch targets that are less than 7 mm square.
+
+The following diagram shows how target size is typically a combination of a visual target, actual target size, and any padding between the actual target and other potential targets.
+
+![diagram showing the recommended sizes for the visual target, actual target, and padding.](images/targeting-size.png)
+
+The following table lists the minimum and recommended sizes for the components of a touch target.
 
 <table>
 <colgroup>
@@ -70,101 +70,101 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">目標元件</th>
-<th align="left">最小大小</th>
-<th align="left">建議大小</th>
+<th align="left">Target component</th>
+<th align="left">Minimum size</th>
+<th align="left">Recommended size</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">邊框間距</td>
-<td align="left">2 公釐</td>
-<td align="left">不適用。</td>
+<td align="left">Padding</td>
+<td align="left">2 mm</td>
+<td align="left">Not applicable.</td>
 </tr>
 <tr class="even">
-<td align="left">視覺目標大小</td>
-<td align="left">&lt; 實際大小的 60%</td>
-<td align="left">實際大小的 90-100%
-<p>如果視覺目標小於 4.2 公釐方格 (建議目標大小下限 7 公釐的 60%)，大部分使用者無法意識到這是可觸控的目標。</p></td>
+<td align="left">Visual target size</td>
+<td align="left">&lt; 60% of actual size</td>
+<td align="left">90-100% of actual size
+<p>Most users won't realize a visual target is touchable if it's less than 4.2 mm square (60% of the recommended minimum target size of 7 mm).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">實際目標大小</td>
-<td align="left">7 公釐方格</td>
-<td align="left">大於或等於 9 公釐方格 (48 x 48 像素 @ 1 倍)</td>
+<td align="left">Actual target size</td>
+<td align="left">7 mm square</td>
+<td align="left">Greater than or equal to 9 mm square (48 x 48 px @ 1x)</td>
 </tr>
 <tr class="even">
-<td align="left">總目標大小</td>
-<td align="left">11 x 11 公釐 (約 60 像素：3 個 20 像素的格線單位 @ 1 倍)</td>
-<td align="left">13.5 x 13.5 公釐 (72 x 72 px @ 1 倍)
-<p>這表示實際目標與邊框間距結合後的大小，應該大於它們各自的最小值。</p></td>
+<td align="left">Total target size</td>
+<td align="left">11 x 11 mm (approximately 60 px: three 20-px grid units @ 1x)</td>
+<td align="left">13.5 x 13.5 mm (72 x 72 px @ 1x)
+<p>This implies that the size of the actual target and padding combined should be larger than their respective minimums.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-這些建議目標大小可以根據自己的特殊情況而加以調整。 這些建議考慮到下列事項：
+These target size recommendations can be adjusted as required by your particular scenario. Some of the considerations that went into these recommendations include:
 
--   觸控頻率：考慮將重複或不斷按到的目標設成大於最小值。
--   錯誤結果：如果不小心點選之後，會有嚴重結果的目標，應該要有更多的邊框間距，而且要放在離內容區邊緣更遠的位置。 如果目標經常被點選，更是如此。
--   在內容區中的位置
--   尺寸和螢幕大小
--   手指姿勢
--   觸控視覺效果
--   硬體和觸控數位板
+-   Frequency of Touches: Consider making targets that are repeatedly or frequently pressed larger than the minimum size.
+-   Error Consequence: Targets that have severe consequences if touched in error should have greater padding and be placed further from the edge of the content area. This is especially true for targets that are touched frequently.
+-   Position in the content area
+-   Form factor and screen size
+-   Finger posture
+-   Touch visualizations
+-   Hardware and touch digitizers
 
-## 目標預測協助
-
-
-Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊框間距建議不適用的狀況；例如，網頁上的超連結、行事曆控制項、下拉式清單以及下拉式方塊，或是文字選取。
-
-這些目標預測平台改進和使用者介面行為與視覺化回饋 (判別 UI) 搭配運作，共同改進使用者的準確度和自信心。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
-
-如果可觸碰元素不得不小於建議的最小目標大小，可以使用下列技術將所造成的目標預測問題降到最小。
-
-## 繫連
+## <a name="targeting-assistance"></a>Targeting assistance
 
 
-繫連是一種視覺提示 (從接觸點到物件週框矩形的連結線)，用來向使用者表示它們已經連結到物件並正與該物件互動，雖然輸入接觸並未直接與該物件接觸。 在以下情況，會發生這種現象：
+Windows provides targeting assistance to support scenarios where the minimum size or padding recommendations presented here are not applicable; for example, hyperlinks on a webpage, calendar controls, drop down lists and combo boxes, or text selection.
 
--   在物件的某些鄰近性閾值以內，會先偵測到接觸點，然後這個物件會被當作是最有可能的接觸目標。
--   接觸點遠離物件，但是接觸點仍然在鄰近性閾值以內。
+These targeting platform improvements and user interface behaviors work together with visual feedback (disambiguation UI) to improve user accuracy and confidence. For more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
-這項功能並未對使用 JavaScript 的 Windows 市集應用程式的開發人員公開。
+If a touchable element must be smaller than the recommended minimum target size, the following techniques can be used to minimize the targeting issues that result.
 
-## 擦選
-
-
-擦選是指觸控目標所在區域中的任何一個位置，然後滑動而不提起手指直到停在想要的目標上為止，以藉此選取想要的目標。 這也稱為「觸離啟動」，也就是被啟動的物件是手指從畫面提起時最後觸碰的物件。
-
-設計擦選互動時，請遵循下列指導方針：
-
--   擦選要和判別 UI 搭配使用。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
--   擦選觸控目標的建議最小值為 20 px (3.75 公釐 @ 1 倍大小)。
--   在可移動瀏覽的表面 (例如網頁) 執行時，會優先進行擦選。
--   擦選目標應該彼此靠近。
--   當使用者將手指滑開擦選目標之後，動作會被取消。
--   如果目標執行的動作不具破壞性 (例如在行事曆上切換日期)，就會指定對擦選目標的繫連。
--   指定繫連時是採單一方向 (水平或垂直)。
-
-## 相關文章
+## <a name="tethering"></a>Tethering
 
 
-**範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+Tethering is a visual cue (a connector from a contact point to the bounding rectangle of an object) used to indicate to a user that they are connected to, and interacting with, an object even though the input contact isn't directly in contact with the object. This can occur when:
 
-**封存範例**
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+-   A touch contact was first detected within some proximity threshold to an object and this object was identified as the most likely target of the contact.
+-   A touch contact was moved off an object but the contact is still within a proximity threshold.
+
+This feature is not exposed to Windows Store app using JavaScript developers.
+
+## <a name="scrubbing"></a>Scrubbing
+
+
+Scrubbing means to touch anywhere within a field of targets and slide to select the desired target without lifting the finger until it is over the desired target. This is also referred to as "take-off activation", where the object that is activated is the one that was last touched when the finger was lifted from the screen.
+
+Use the following guidelines when you design scrubbing interactions:
+
+-   Scrubbing is used in conjunction with disambiguation UI. For more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
+-   The recommended minimum size for a scrubbing touch target is 20 px (3.75 mm @ 1x size).
+-   Scrubbing takes precedence when performed on a pannable surface, such as a webpage.
+-   Scrubbing targets should be close together.
+-   An action is canceled when the user drags a finger off a scrubbing target.
+-   Tethering to a scrubbing target is specified if the actions performed by the target are non-destructive, such as switching between dates on a calendar.
+-   Tethering is specified in a single direction, horizontally or vertically.
+
+## <a name="related-articles"></a>Related articles
+
+
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+**Archive samples**
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -175,6 +175,6 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

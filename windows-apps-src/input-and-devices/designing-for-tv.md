@@ -1,113 +1,116 @@
 ---
 author: eliotcowley
-Description: "設計您的 app，讓它在電視上看起來很美觀而且運作良好。"
-title: "針對 Xbox 和電視進行設計"
+Description: Design your app so that it looks good and functions well on your television.
+title: Designing for Xbox and TV
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 translationtype: Human Translation
-ms.sourcegitcommit: 8bf3a4384d97d59d2844614b981a2e837ccb493d
-ms.openlocfilehash: d168c358a3dd68f05b5d0962edb1fb62dfe0570e
+ms.sourcegitcommit: ee0a2f5a34cbbef198a9012d0425bb84e65f3b33
+ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
 
 ---
 
-# 針對 Xbox 和電視進行設計
+# <a name="designing-for-xbox-and-tv"></a>Designing for Xbox and TV
 
-設計您的「通用 Windows 平台」(UWP) app，讓它在 Xbox One 及電視螢幕上看起來既美觀又能正常運作。
+Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
 
-## 概觀
+## <a name="overview"></a>Overview
 
-通用 Windows 平台可讓您創造跨多個 Windows10 裝置的絕佳體驗。 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
+The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices. Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work. However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或其他輸出至電視螢幕的裝置開發 app，並使用控制器做為輸入，您就必須記住這一點。
+The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the **10-foot experience**. It is so named because the user is generally sitting approximately 10 feet away from the screen. This provides unique challenges that aren't present in, say, the *2-foot* experience, or interacting with a PC. If you are developing an app for Xbox One or any other device that outputs to the TV screen and uses a controller for input, you should always keep this in mind.
 
-您並非需要本篇文章中所有的步驟，才能讓 app 創造出 10 英呎體驗，但是了解這些步驟，為您的 app 做出適當的決定，可針對您的 app 特定需求，量身打造出更良好的 10 英呎體驗。 當您打算在 10 英呎環境中運作您的 app 時，請考慮下列設計原則。
+Not all of the steps in this article are required to make your app work well for 10-foot experiences, but understanding them and making the appropriate decisions for your app will result in a better 10-foot experience tailored for your app's specific needs. As you bring your app to life in the 10-foot environment, consider the following design principles.
 
-### 簡單
+### <a name="simple"></a>Simple
 
-針對 10 英呎環境的設計會產生一些獨特的挑戰。 解析度和檢視距離會讓人們很難處理太多資訊。 請嘗試讓設計保持清晰，盡量精簡為最簡單的元件。 在電視上顯示的資訊量應該與在行動電話上 (而不是電腦上) 看到的內容差不多。
+Designing for the 10-foot environment presents a unique set of challenges. Resolution and viewing distance can make it difficult for people to process too much information. Try to keep your design clean, reduced to the simplest possible components. The amount of information displayed on a TV should be comparable to what you'd see on a mobile phone, rather than on a desktop.
 
-![Xbox One 主畫面](images/designing-for-tv/xbox-home-screen.png)
+![Xbox One home screen](images/designing-for-tv/xbox-home-screen.png)
 
-### 易懂
+### <a name="coherent"></a>Coherent
 
-10 英呎環境中的 UWP app 應該直覺且易於使用。 讓焦點清楚而且易懂。 排列好內容，讓空間的移動一致而且可預測。 為使用者的動作提供最短的路徑。
+UWP apps in the 10-foot environment should be intuitive and easy to use. Make the focus clear and unmistakable. Arrange content so that movement across the space is consistent and predictable. Give people the shortest path to what they want to do.
 
-![Xbox One 電影應用程式](images/designing-for-tv/xbox-movies-app.png)
+![Xbox One Movies app](images/designing-for-tv/xbox-movies-app.png)
 
-_**螢幕擷取畫面中所顯示的所有電影都能在 Microsoft 電影與電視上取得。**_  
+_**All movies shown in the screenshot are available on Microsoft Movies & TV.**_  
 
-### 迷人
+### <a name="captivating"></a>Captivating
 
-大螢幕能提供最身歷其境、類似電影的體驗。 無縫的場景、順暢的動作，以及生動活潑的色彩和排版，都能讓您的 app 提升到不同的層次。 盡量明顯而美觀。
+The most immersive, cinematic experiences take place on the big screen. Edge-to-edge scenery, elegant motion, and vibrant use of color and typography take your apps to the next level. Be bold and beautiful.
 
-![Xbox One 的虛擬人偶應用程式](images/designing-for-tv/xbox-avatar-app.png)
+![Xbox One Avatar app](images/designing-for-tv/xbox-avatar-app.png)
 
-### 10 英呎體驗最佳化
+### <a name="optimizations-for-the-10-foot-experience"></a>Optimizations for the 10-foot experience
 
-您現在知道了出色的 UWP app 具備 10 英呎體驗的設計原則，請仔細閱讀下列概觀，了解可最佳化您的 app 並提供絕佳使用者體驗的特定方式。
+Now that you know the principles of good UWP app design for the 10-foot experience, read through the following overview of the specific ways you can optimize your app and make for a great user experience.
 
-| 功能        | 說明           |
+| Feature        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
-| [遊戲台與遙控器](#gamepad-and-remote-control)      | 確定您的 app 可使用遊戲台和遙控器順暢運作，是最佳化 10 英呎體驗最重要的步驟。 您可以對遊戲台和遙控器進行一些特定的增強功能，在使用者動作有某種程度受限的裝置上，最佳化使用者的互動體驗。 |
-| [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction) | UWP 提供「XY 焦點瀏覽」，可讓使用者四處瀏覽 app 的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
-| [滑鼠模式](#mouse-mode)|在某些使用者介面 (例如地圖和繪圖介面) 中，無法使用或不方便使用 XY 焦點瀏覽。 對於這些介面，UWP 提供「滑鼠模式」讓遊戲台/遙控器可自由瀏覽，就像傳統型電腦的滑鼠一樣。|
-| [視覺焦點](#focus-visual)  | 視覺焦點是目前有焦點的 UI 元素周圍的框線。 這可協助引導使用者輕鬆瀏覽您的 UI 而不會迷失。 如果焦點不是很清楚，使用者可能會在您的 UI 中迷路，而無法獲得良好的體驗。  |
-| [焦點佔用](#focus-engagement) | 若要在 UI 元素上設定焦點佔用，使用者必須按下 [A/選取] 按鈕以與其進行互動。 這有助於針對使用者瀏覽您 app 的 UI，建立更棒的使用體驗。
-| [調整 UI 元素大小](#ui-element-sizing)  | 通用 Windows 平台使用[縮放與有效像素](..\layout\design-and-ui-intro.md#effective-pixels-and-scaling)，根據檢視距離來調整 UI。 了解如何調整大小並套用到整個 UI，可協助最佳化 10 英呎環境的 app。  |
-|  [電視安全區域](#tv-safe-area) | UWP 預設會自動避免在電視不安全的區域 (接近螢幕邊緣的區域) 中顯示任何 UI。 不過，這會產生一種「被框住」的效果，UI 看起來就像信箱一樣。 為了讓您的 app 能真正融入電視螢幕，您要加以修改，讓 app 在支援的電視能延伸到螢幕的邊緣。 |
-| [色彩](#colors)  |  UWP 支援色彩佈景主題，優先採用系統佈景主題的 app 在 Xbox One 上將會預設為「深色」。 如果您的 app 有特定的色彩佈景主題，您應該考慮到有些色彩不適合電視，應盡量避免使用。 |
-| [音效](../style/sound.md)    | 音效聲音在 10 英呎體驗中扮演關鍵角色，其為使用者提供身歷其境的體驗與回應。 在 Xbox One 上執行 app 時，UWP 可提供針對通用控制項自動開啟音效的功能。 深入了解關於 UWP 內建音效支援及如何善用的詳細資訊。    |
-| [UI 控制項的指導方針](#guidelines-for-ui-controls)  |  提供數種可針對多部裝置良好運作的 UI 控制項，但當在電視上使用時具有特定考量。 深入了解有關針對 10 英呎體驗進行設計時使用這些控制項的一些最佳做法。 |
-| [適用於 Xbox 的自訂視覺狀態觸發程序](#custom-visual-state-trigger-for-xbox) | 若要針對 10 英呎體驗量身打造您的 UWP app，建議您使用自訂的「視覺狀態觸發程序」，在 App 偵測到它已在 Xbox 主機上啟動時變更配置。
+| [Gamepad and remote control](#gamepad-and-remote-control)      | Making sure that your app works well with gamepad and remote is the most important step in optimizing for 10-foot experiences. There are several gamepad and remote-specific improvements that you can make to optimize the user interaction experience on a device where their actions are somewhat limited. |
+| [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) | The UWP provides **XY focus navigation** that allows the user to navigate around your app's UI. However, this limits the user to navigating up, down, left, and right. Recommendations for dealing with this and other considerations are outlined in this section. |
+| [Mouse mode](#mouse-mode)|In some user interfaces, such as maps and drawing surfaces, it is not possible or practical to use XY focus navigation. For these interfaces, the UWP provides **mouse mode** to let the gamepad/remote navigate freely, like a mouse on a desktop computer.|
+| [Focus visual](#focus-visual)  | The focus visual is the border around the UI element that currently has focus. This helps orient the user so that they can easily navigate your UI without getting lost. If the focus is not clearly visible, the user could get lost in your UI and not have a great experience.  |
+| [Focus engagement](#focus-engagement) | Setting focus engagement on a UI element requires the user to press the **A/Select** button in order to interact with it. This can help create a better experience for the user when navigating your app's UI.
+| [UI element sizing](#ui-element-sizing)  | The Universal Windows Platform uses [scaling and effective pixels](..\layout\design-and-ui-intro.md#effective-pixels-and-scaling) to scale the UI according to the viewing distance. Understanding sizing and applying it across your UI will help optimize your app for the 10-foot environment.  |
+|  [TV-safe area](#tv-safe-area) | The UWP will automatically avoid displaying any UI in TV-unsafe areas (areas close to the edges of the screen) by default. However, this creates a "boxed-in" effect in which the UI looks letterboxed. For your app to be truly immersive on TV, you will want to modify it so that it extends to the edges of the screen on TVs that support it. |
+| [Colors](#colors)  |  The UWP supports color themes, and an app that respects the system theme will default to **dark** on Xbox One. If your app has a specific color theme, you should consider that some colors don't work well for TV and should be avoided. |
+| [Sound](../style/sound.md)    | Sounds play a key role in the 10-foot experience, helping to immerse and give feedback to the user. The UWP provides functionality that automatically turns on sounds for common controls when the app is running on Xbox One. Find out more about the sound support built into the UWP and learn how to take advantage of it.    |
+| [Guidelines for UI controls](#guidelines-for-ui-controls)  |  There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience. |
+| [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox) | To tailor your UWP app for the 10-foot experience, we recommend that you use a custom *visual state trigger* to make layout changes when the app detects that it has been launched on an Xbox console.
 
-## 遊戲台與遙控器
+> [!NOTE]
+> Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all UWP apps. If you're developing an HTML/JavaScript UWP app for Xbox, check out the excellent [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) library on GitHub.
 
-就像電腦的鍵盤和滑鼠，以及手機和平板電腦的觸控，遊戲台與遙控器是 10 英呎體驗的主要輸入裝置。 本節將介紹什麼是硬體按鈕，以及它們所執行的動作。 在 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)和[滑鼠模式](#mouse-mode)中，您將了解使用這些輸入裝置時如何最佳化您的 app。
+## <a name="gamepad-and-remote-control"></a>Gamepad and remote control
 
-遊戲台和遙控器行為的原始品質取決於您的 app 支援鍵盤的程度。 要確保您的 app 可搭配遊戲台/遙控器正確運作的一個好方式是確定它可搭配電腦的鍵盤正確運作，然後使用遊戲台/遙控器測試來尋找您 UI 的弱點。
+Just like keyboard and mouse are for PC, and touch is for phone and tablet, gamepad and remote control are the main input devices for the 10-foot experience. This section introduces what the hardware buttons are and what they do. In [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) and [Mouse mode](#mouse-mode), you will learn how to optimize your app when using these input devices.
 
-### 硬體按鈕
+The quality of gamepad and remote behavior that you get out-of-the-box depends on how well keyboard is supported in your app. A good way to ensure that your app will work well with gamepad/remote is to make sure that it works well with keyboard on PC, and then test with gamepad/remote to find weak spots in your UI.
 
-本文件將會以下圖中所提供的名稱參照按鈕。
+### <a name="hardware-buttons"></a>Hardware buttons
 
-![遊戲台與遙控器按鈕圖](images/designing-for-tv/hardware-buttons-gamepad-remote.png)
+Throughout this document, buttons will be referred to by the names given in the following diagram.
 
-您可以從圖中看到，遊戲台支援一些遙控器不支援的按鈕，反之亦然。 雖然您可以使用只在一種輸入裝置上支援的按鈕，讓瀏覽 UI 的速度更快，但是請注意，使用這些按鈕進行重要的互動，可能會產生使用者無法與特定部分 UI 互動的情況。
+![Gamepad and remote buttons diagram](images/designing-for-tv/hardware-buttons-gamepad-remote.png)
 
-下表列出 UWP app 支援的所有硬體按鈕，以及哪一種輸入裝置支援這些按鈕。
+As you can see from the diagram, there are some buttons that are supported on gamepad that are not supported on remote control, and vice versa. While you can use buttons that are only supported on one input device to make navigating the UI faster, be aware that using them for critical interactions may create a situation where the user is unable to interact with certain parts of the UI.
 
-| 按鈕                    | 遊戲台   | 遙控器    |
+The following table lists all of the hardware buttons supported by UWP apps, and which input device supports them.
+
+| Button                    | Gamepad   | Remote control    |
 |---------------------------|-----------|-------------------|
-| A/選取按鈕           | 是       | 是               |
-| B/返回按鈕             | 是       | 是               |
-| 方向鍵 (D 鍵)   | 是       | 是               |
-| 功能表按鈕               | 是       | 是               |
-| 檢視按鈕               | 是       | 是               |
-| X 和 Y 按鈕           | 是       | 否                |
-| 左搖桿                | 是       | 否                |
-| 右搖桿               | 是       | 否                |
-| LT 鍵和 RT 鍵   | 是       | 否                |
-| LB 鍵和 RB 鍵    | 是       | 否                |
-| OneGuide 按鈕           | 否        | 是               |
-| 音量按鈕             | 否        | 是               |
-| 頻道按鈕            | 否        | 是               |
-| 媒體控制項按鈕     | 否        | 是               |
-| 靜音按鈕               | 否        | 是               |
+| A/Select button           | Yes       | Yes               |
+| B/Back button             | Yes       | Yes               |
+| Directional pad (D-pad)   | Yes       | Yes               |
+| Menu button               | Yes       | Yes               |
+| View button               | Yes       | Yes               |
+| X and Y buttons           | Yes       | No                |
+| Left stick                | Yes       | No                |
+| Right stick               | Yes       | No                |
+| Left and right triggers   | Yes       | No                |
+| Left and right bumpers    | Yes       | No                |
+| OneGuide button           | No        | Yes               |
+| Volume button             | No        | Yes               |
+| Channel button            | No        | Yes               |
+| Media control buttons     | No        | Yes               |
+| Mute button               | No        | Yes               |
 
-### 內建按鈕支援
+### <a name="built-in-button-support"></a>Built-in button support
 
-UWP 會自動將現有的鍵盤輸入行為對應到遊戲台與遙控器輸入。 下表列出這些內建的對應。
+The UWP automatically maps existing keyboard input behavior to gamepad and remote control input. The following table lists these built-in mappings.
 
-| 鍵盤              | 遊戲台/遙控器                        |
+| Keyboard              | Gamepad/remote                        |
 |-----------------------|---------------------------------------|
-| 方向鍵            | 方向鍵 (也是遊戲台的左搖桿)    |
-| 空格鍵              | A/選取按鈕                       |
-| Enter 鍵                 | A/選取按鈕                       |
-| ESC 鍵                | B/返回按鈕*                        |
+| Arrow keys            | D-pad (also left stick on gamepad)    |
+| Spacebar              | A/Select button                       |
+| Enter                 | A/Select button                       |
+| Escape                | B/Back button*                        |
 
-\*當 App 不處理 B 按鈕的 [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941) 事件及 [KeyUp](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) 事件時，將會觸發 [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) 事件，這會在 App 內導致往回瀏覽。 不過，您必須自行實作此功能，如下列程式碼片段所示：
+\*When neither the [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941.aspx) nor [KeyUp](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) events for the B button are handled by the app, the [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) event will be fired, which should result in back navigation within the app. However, you have to implement this yourself, as in the following code snippet:
 
 ```csharp
 // This code goes in the MainPage class
@@ -151,39 +154,36 @@ private bool BackRequested()
 }
 ```
 
-Xbox One 上的 UWP App 也支援透過按下 [功能表] 按鈕來開啟操作功能表。 如需詳細資訊，請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)。
+UWP apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
 
-### 快速鍵支援
+### <a name="accelerator-support"></a>Accelerator support
 
-快速鍵可用來加速瀏覽 UI。 不過可能只有某些輸入裝置才有這些按鈕，所以請記住，並非所有使用者都能使用這些功能。 事實上，遊戲台是 Xbox One 上目前唯一支援 UWP app 快速鍵功能的輸入裝置。
+Accelerator buttons are buttons that can be used to speed up navigation through a UI. However, these buttons may be unique to a certain input device, so keep in mind that not all users will be able to use these functions. In fact, gamepad is currently the only input device that supports accelerator functions for UWP apps on Xbox One.
 
-下表列出 UWP 內建，以及您可自行實作的快速鍵支援。 請在您自訂的 UI 利用這些行為，以提供一致、友善的使用者體驗。
+The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.
 
-| 互動   | 鍵盤   | 遊戲台      | 內建於︰  | 建議用於： |
+| Interaction   | Keyboard   | Gamepad      | Built-in for:  | Recommended for: |
 |---------------|------------|--------------|----------------|------------------|
-| 向上一頁/向下一頁  | 向上一頁/向下一頁 | LT 鍵/RT 鍵 | 
-            [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支援垂直捲動的檢視
-| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | 
-            [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支援水平捲動的檢視
-| 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`、支援放大和縮小的檢視 |
-| 開啟/關閉瀏覽窗格 | 無 | 檢視 | 無 | 瀏覽窗格​​ |
-| [搜尋](#search-experience) | 無 | Y 按鈕 | 無 | App 中主要搜尋功能的快速鍵 |
+| Page up/down  | Page up/down | Left/right triggers | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support vertical scrolling
+| Page left/right | None | Left/right bumpers | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support horizontal scrolling
+| Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
+| Open/close nav pane | None | View | None | Navigation panes |
+| [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
 
-## XY 焦點瀏覽和互動
+## <a name="xy-focus-navigation-and-interaction"></a>XY focus navigation and interaction
 
-如果您的 app 支援使用鍵盤正確瀏覽焦點，這也會順利轉譯到遊戲台與遙控器。 方向鍵的瀏覽方式與「方向鍵」 (以及遊戲台上的「左搖桿」) 對應，而與 UI 元素的互動方式則與「Enter/Select」鍵對應 (請參閱[遊戲台與遙控器](#gamepad-and-remote-control))。 
+If your app supports proper focus navigation for keyboard, this will translate well to gamepad and remote control. Navigation with the arrow keys is mapped to the **D-pad** (as well as the **left stick** on gamepad), and interaction with UI elements is mapped to the **Enter/Select** key (see [Gamepad and remote control](#gamepad-and-remote-control)). 
 
-許多事件和屬性都同時為鍵盤與遊戲台所用 &mdash; 兩者都會引發 `KeyDown` 和 `KeyUp` 事件，且兩者都只會瀏覽到具有屬性 `IsTabStop="True"` 和 `Visibility="Visible"` 的控制項。 如需鍵盤設計指導方針，請參閱[鍵盤互動](keyboard-interactions.md)。
+Many events and properties are used by both keyboard and gamepad&mdash;they both fire `KeyDown` and `KeyUp` events, and they both will only navigate to controls that have the properties `IsTabStop="True"` and `Visibility="Visible"`. For keyboard design guidance, see [Keyboard interactions](keyboard-interactions.md).
 
-如果正確實作鍵盤支援，您的 app 應該可以正確運作，不過可能需要一些額外的工作才能支援每種狀況。 請思考您的 app 特定需求，以盡可能提供最佳的使用者體驗。
+If keyboard support is implemented properly, your app will work reasonably well; however, there may be some extra work required to support every scenario. Think about your app's specific needs to provide the best user experience possible.
 
 > [!IMPORTANT]
-> 預設會為所有在 Xbox One 上執行的 UWP app 啟用滑鼠模式。 若要停用滑鼠模式及啟用 XY 焦點瀏覽，請設定 `Application.RequiresPointerMode=WhenRequested`。
+> Mouse mode is enabled by default for UWP apps running on Xbox One. To disable mouse mode and enable XY focus navigation, set `Application.RequiresPointerMode=WhenRequested`.
 
-### 針對焦點問題進行偵錯
+### <a name="debugging-focus-issues"></a>Debugging focus issues
 
-
-            [FocusManager.GetFocusedElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.focusmanager.getfocusedelement.aspx) 方法會告訴您目前焦點位於哪一個元素。 在焦點視覺效果位置可能不明顯的情況下，這會相當有用。 您可以將此資訊記錄到 Visual Studio 輸出視窗，如以下所示：
+The [FocusManager.GetFocusedElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.focusmanager.getfocusedelement.aspx) method will tell you which element currently has focus. This is useful for situations where the location of the focus visual may not be obvious. You can log this information to the Visual Studio output window like so:
 
 ```csharp
 page.GotFocus += (object sender, RoutedEventArgs e) =>
@@ -197,36 +197,34 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 };
 ```
 
-有三個常見的原因會導致 XY 瀏覽可能無法依照您預期的方式運作︰
+There are three common reasons why XY navigation might not work the way you expect:
 
-* 
-            [IsTabStop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istabstop.aspx) 或 [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) 屬性設定錯誤。
-* 取得焦點的控制項實際上比您所想的大 &mdash; XY 瀏覽看的是控制項的大小總計 ([ActualWidth](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualwidth.aspx) 和 [ActualHeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualheight.aspx))，而不只是呈現有趣事項的控制項部分。
-* 一個可設定焦點的控制項位於另一個控制項上 &mdash; XY 瀏覽不支援重疊的控制項。
+* The [IsTabStop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istabstop.aspx) or [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) property is set wrong.
+* The control getting focus is actually bigger than you think&mdash;XY navigation looks at the total size of the control ([ActualWidth](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualwidth.aspx) and [ActualHeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualheight.aspx)), not just the portion of the control that renders something interesting.
+* One focusable control is on top of another&mdash;XY navigation doesn't support controls that are overlapped.
 
-如果在修正這些問題之後，XY 瀏覽仍然未依照您預期的方式運作，您可以使用[覆寫預設的瀏覽](#overriding-the-default-navigation)中所述的方法來手動指向您要取得焦點的元素。
+If XY navigation is still not working the way you expect after fixing these issues, you can manually point to the element that you want to get focus using the method described in [Overriding the default navigation](#overriding-the-default-navigation).
 
-如果 XY 瀏覽如預期般運作但未顯示焦點視覺效果，則可能是下列其中一個問題所造成：
+If XY navigation is working as intended but no focus visual is displayed, one of the following issues may be the cause:
 
-* 您將控制項重新樣板化而未包含焦點視覺效果。 請設定 `UseSystemFocusVisuals="True"` 或手動新增焦點視覺效果。
-* 您藉由呼叫 `Focus(FocusState.Pointer)` 來移動焦點。 
-            [FocusState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusstate.aspx) 參數可控制對焦點視覺效果產生的作用。 一般而言，您應該將此參數設定為 `FocusState.Programmatic`，如果焦點視覺效果先前是可見的，這會讓它保持可見，如果先前是隱藏的，則會保持隱藏。
+* You re-templated the control and didn't include a focus visual. Set `UseSystemFocusVisuals="True"` or add a focus visual manually.
+* You moved the focus by calling `Focus(FocusState.Pointer)`. The [FocusState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusstate.aspx) parameter controls what happens to the focus visual. Generally you should set this to `FocusState.Programmatic`, which keeps the focus visual visible if it was visible before, and hidden if it was hidden before.
 
-本節的其餘部分將深入探討使用 XY 瀏覽時常見的設計挑戰，並提供數種解決方法。
+The rest of this section goes into detail about common design challenges when using XY navigation, and offers several ways to solve them.
 
-### 無法存取的 UI
+### <a name="inaccessible-ui"></a>Inaccessible UI
 
-因為 XY 焦點瀏覽限制使用者只能向上、向下、向左和向右移動，所以您有可能無法存取某些 UI。 下圖說明 XY 焦點瀏覽不支援的 UI 配置類型範例。 請注意，使用使用遊戲台/遙控器無法存取中間的元素，因為會優先瀏覽垂直和水平方向，中間的元素將永遠不會優先取得焦點。
+Because XY focus navigation limits the user to moving up, down, left, and right, you may end up with scenarios where parts of the UI are inaccessible. The following diagram illustrates an example of the kind of UI layout that XY focus navigation doesn't support. Note that the element in the middle is not accessible by using gamepad/remote because the vertical and horizontal navigation will be prioritized and the middle element will never be high enough priority to get focus.
 
-![四個角有元素，且中間有無法存取的元素](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
+![Elements in four corners with inaccessible element in middle](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
 
-如果因為某些原因無法重新排列 UI，請使用下一節討論的其中一個技術來覆寫預設焦點行為。
+If for some reason rearranging the UI is not possible, use one of the techniques discussed in the next section to override the default focus behavior.
 
-### 覆寫預設的瀏覽
+### <a name="overriding-the-default-navigation"></a>Overriding the default navigation
 
-雖然通用 Windows 平台會嘗試使方向鍵/左搖桿的瀏覽方式讓使用者感到很直覺，但是它並無法保證針對您 App 之意圖最佳化的行為。 確保瀏覽針對您的 App 最佳化的最佳方式，是先使用控制器加以測試，以確認使用者能針對 App 的案例以直覺的方式存取每個 UI 元素。 如果您的 app 案例呼叫 XY 焦點瀏覽無法達到的行為，請考慮下列各節中的下列建議並/或覆寫行為，將焦點放在合理的項目上。
+While the Universal Windows Platform tries to ensure that D-pad/left stick navigation makes sense to the user, it cannot guarantee behavior that is optimized for your app's intentions. The best way to ensure that navigation is optimized for your app is to test it with a gamepad and confirm that every UI element can be accessed by the user in a manner that makes sense for your app's scenarios. In case your app's scenarios call for a behavior not achieved through the XY focus navigation provided, consider following the recommendations in the following sections and/or overriding the behavior to place the focus on a logical item.
 
-下列程式碼片段示範如何覆寫 XY 焦點瀏覽行為︰
+The following code snippet shows how you might override the XY focus navigation behavior:
 
 ```xml
 <StackPanel>
@@ -246,9 +244,9 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 </StackPanel>
 ```
 
-在這個案例中，當焦點在 `Home` 按鈕上而使用者瀏覽到左邊時，焦點會移到 `MyBtnLeft` 按鈕；如果使用者瀏覽到右邊，焦點會移到 `MyBtnRight` 按鈕等等。
+In this case, when focus is on the `Home` button and the user navigates to the left, focus will move to the `MyBtnLeft` button; if the user navigates to the right, focus will move to the `MyBtnRight` button; and so on.
 
-若要防止焦點從某個特定方向移出控制項，請使用 `XYFocus*` 屬性，以將它指向相同的控制項︰
+To prevent the focus from moving from a control in a certain direction, use the `XYFocus*` property to point it at the same control:
 
 ```xml
 <Button Name="HomeButton"  
@@ -256,7 +254,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
-透過使用這些 `XYFocus` 屬性，當下一個焦點候選項目超出其視覺化樹狀結構時，父控制項即可強制子項目的瀏覽，除非取得焦點的子項目使用相同的 `XYFocus` 屬性。
+Using these `XYFocus` properties, a control parent can also force the navigation of its children when the next focus candidate is out of its visual tree, unless the child who has the focus uses the same `XYFocus` property.
 
 ```xml
 <StackPanel Orientation="Horizontal" Margin="300,300">
@@ -273,29 +271,29 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 </StackPanel> 
 ```
 
-在上述範例中，如果焦點是在 `Button` Two 且使用者向右瀏覽，則最佳的焦點候選項目將會是 `Button` Four；不過，焦點會移到 `Button` Three，因為當焦點超出其樹狀結構時，父項目 `UserControl` 會強制瀏覽到該位置。
+In the sample above, if the focus is on `Button` Two and the user navigates to the right, the best focus candidate is `Button` Four; however, the focus is moved to `Button` Three because the parent `UserControl` forces it to navigate there when it is out of its visual tree.
 
-### 最少點選次數的路徑
+### <a name="path-of-least-clicks"></a>Path of least clicks
 
-請嘗試讓使用者以最少的點選次數執行最常見的工作。 在下列範例中，[TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 放在 \[播放\] 按鈕 (一開始會取得焦點) 與常用的元素之間，讓不必要的元素放在優先的工作之間。
+Try to allow the user to perform the most common tasks in the least number of clicks. In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed between the **Play** button (which initially gets focus) and a commonly used element, so that an unnecessary element is placed in between priority tasks.
 
-![最佳的瀏覽做法提供最少點選次數的路徑](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
+![Navigation best practices provide path with least clicks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-在下列範例中，[TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 改放在 \[播放\] 按鈕上方。 只要重新排列 UI，不要將不必要的元素放在優先的工作之間，即可大幅改善您 app 的可用性。
+In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed above the **Play** button instead. Simply rearranging the UI so that unnecessary elements are not placed in between priority tasks will greatly improve your app's usability.
 
-![TextBlock 移動到 [播放] 按鈕上方，不再位於優先工作之間](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
+![TextBlock moved above Play button so that it is no longer between priority tasks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
-### CommandBar 和 ContextFlyout
+### <a name="commandbar-and-contextflyout"></a>CommandBar and ContextFlyout
 
-使用 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 時，請記住[問題︰UI 元素位於長捲動清單/格線之後](#problem-ui-elements-located-after-long-scrolling-list-grid)中所述的捲動清單問題。 下列影像顯示一個 `CommandBar` 位於清單/格線下方的 UI 配置。 使用者必須一直向下捲動完整個清單/格線，才能到達 `CommandBar`。
+When using a [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), keep in mind the issue of scrolling through a list as mentioned in [Problem: UI elements located after long scrolling list/grid](#problem-ui-elements-located-after-long-scrolling-list-grid). The following image shows a UI layout with the `CommandBar` on the bottom of a list/grid. The user would need to scroll all the way down through the list/grid to reach the `CommandBar`.
 
-![CommandBar 位於清單/格線的底部](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
+![CommandBar at bottom of list/grid](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-如果您將 `CommandBar` 放在清單/格線的「上方」會怎麼樣？ 雖然使用者在向下捲動清單/格線後，必須捲動回去才能到達 `CommandBar`，但是比起前一種設定，這種設定的瀏覽程度會少一些。 請注意，這是假設您的 app 最初的焦點是放置在 `CommandBar` 旁邊或上方；如果最初的焦點是在清單/格線下方，此方法也同樣不佳。 如果這些 `CommandBar` 項目是不需要經常存取的全域動作項目 (例如 [同步] 按鈕)，則可接受將它們置於清單/格線的上方。
+What if you put the `CommandBar` *above* the list/grid? While a user who scrolled down the list/grid would have to scroll back up to reach the `CommandBar`, it is slightly less navigation than the previous configuration. Note that this is assuming that your app's initial focus is placed next to or above the `CommandBar`; this approach won't work as well if the initial focus is below the list/grid. If these `CommandBar` items are global action items that don't have to be accessed very often (such as a **Sync** button), it may be acceptable to have them above the list/grid.
 
-雖然您無法垂直堆疊 `CommandBar` 的項目，但是如果將這些項目依捲動方向放置 (例如，放在垂直捲動清單的左邊或右邊，或是放在水平捲動清單的頂端或底部) 對您的 UI 配置而言可行，則這可能會是您想要考慮使用的另一個選項。
+While you can't stack a `CommandBar`'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.
 
-如果您的 App 有所含項目必須已可供使用者存取的 `CommandBar`，您可以考慮將這些項目放在 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 內而將它們從 `CommandBar` 中移除。 `ContextFlyout` 是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) 的屬性，並且是與該元素關聯的[操作功能表](../controls-and-patterns/dialogs-popups-menus.md#context-menus-and-flyouts)。 在電腦上，當您在具有 `ContextFlyout` 的元素上按一下滑鼠右鍵時，該操作功能表就會出現。 在 Xbox One 上，則是當您在焦點位於這類元素上的情況下按「功能表」按鈕時，會出現該操作功能表。
+If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) and is the [context menu](../controls-and-patterns/dialogs-popups-menus.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
 
 <!--The following XAML code demonstrates a simple `ContextFlyout`:
 
@@ -340,67 +338,67 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 ```
 > **Note** Don't use both of these options, as `ContextFlyout` already handles the `ContextRequested` event.-->
 
-### UI 配置挑戰
+### <a name="ui-layout-challenges"></a>UI layout challenges
 
-由於 XY 焦點瀏覽的特性，有些 UI 配置更具挑戰性，而且應該依個別案例評估。 雖然沒有一種「正確」的方式，您選擇的解決方案也取決於您 app 的特定需求，不過您還是可以使用一些技術，創造絕佳的電視體驗。
+Some UI layouts are more challenging due to the nature of XY focus navigation, and should be evaluated on a case-by-case basis. While there is no single "right" way, and which solution you choose is up to your app's specific needs, there are some techniques that you can employ to make a great TV experience.
 
-為了更深入了解，讓我們看看一個假想的 App，以便說明這當中的部分問題及可克服這些問題的技術。
+To understand this better, let's look at an imaginary app that illustrates some of these issues and techniques to overcome them.
 
 > [!NOTE]
-> 這個假的 App 是為了說明 UI 問題和可能的解決方案，而不是為了示範您特定 App 的最佳使用者體驗。
+> This fake app is meant to illustrate UI problems and potential solutions to them, and is not intended to show the best user experience for your particular app.
 
-以下是一個假想的房地產 App，此 App 顯示可供銷售的房屋清單、地圖、房地產描述，以及其他資訊。 這個 app 有三個挑戰，您可以使用下列技術克服︰
+The following is an imaginary real estate app which shows a list of houses available for sale, a map, a description of a property, and other information. This app poses three challenges that you can overcome by using the following techniques:
 
-- [重新排列 UI](#ui-rearrange)
-- [焦點佔用](#engagement)
-- [滑鼠模式](#mouse-mode)
+- [UI rearrange](#ui-rearrange)
+- [Focus engagement](#engagement)
+- [Mouse mode](#mouse-mode)
 
-![假造的房地產 app](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
+![Fake real estate app](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### 問題：UI 元素位於長的捲動清單/格線之後 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### <a name="problem-ui-elements-located-after-long-scrolling-listgrid-a-nameproblem-ui-elements-located-after-long-scrolling-list-grida"></a>Problem: UI elements located after long scrolling list/grid <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-下列影像中所顯示的房地產的 [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 是很長的捲動清單。 如果 `ListView` 上「不」需要[佔用](#focus-engagement)，當使用者瀏覽到清單，焦點會放在清單中的第一個項目。 如果使用者要到達 [上一個] 或 [下一個] 按鈕時，他們必須瀏覽通過清單中的所有項目。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
+The [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) of properties shown in the following image is a very long scrolling list. If [engagement](#focus-engagement) is *not* required on the `ListView`, when the user navigates to the list, focus will be placed on the first item in the list. For the user to reach the **Previous** or **Next** button, they must go through all the items in the list. In cases like this where requiring the user to traverse the entire list is painful&mdash;that is, when the list is not short enough for this experience to be acceptable&mdash;you may want to consider other options.
 
-![房地產 app︰50 個項目的清單需要點選 51 次才能到達下面的按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
+![Real estate app: list with 50 items takes 51 clicks to reach buttons below](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
-#### 解決方案
+#### <a name="solutions"></a>Solutions
 
-**重新排列 UI <a name="ui-rearrange"></a>**
+**UI rearrange <a name="ui-rearrange"></a>**
 
-除非您最初的焦點是放在頁面底部，否則將 UI 元素放在長捲動清單上方比放在下方更容易存取。 如果這個新的配置適用於其他裝置，請針對所有裝置系列變更配置，而不要只是針對 Xbox One 進行特殊的 UI 配置，這是比較經濟的方法。 此外，垂直捲動方向放置 UI 元素 (也就是水平放在垂直捲動清單兩側，或垂直放在水平捲動清單上下) 可更方便存取。
+Unless your initial focus is placed at the bottom of the page, UI elements placed above a long scrolling list are typically more easily accessible than if placed below. If this new layout works for other devices, changing the layout for all device families instead of doing special UI changes just for Xbox One might be a less costly approach. Additionally, placing UI elements against the scrolling direction (that is, horizontally to a vertically scrolling list, or vertically to a horizontally scrolling list) will make for even better accessibility.
 
-![房地產 app︰放置按鈕在長捲動清單上方](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
+![Real estate app: place buttons above long scrolling list](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**焦點佔用 <a name="engagement"></a>**
+**Focus engagement <a name="engagement"></a>**
 
-「需要」佔用時，整個 `ListView` 會變成單一的焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
+When engagement is *required*, the entire `ListView` becomes a single focus target. The user will be able to bypass the contents of the list to get to the next focusable element. Read more about what controls support engagement and how to use them in [Focus engagement](#focus-engagement).
 
-![房地產 app︰設定需要佔用，只需按 1 次就可到達 [上一個/下一個] 按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
+![Real estate app: set engagement to required so that it only takes 1 click to reach Previous/Next buttons](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### 問題︰ScrollViewer 沒有任何可設定焦點的元素
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer without any focusable elements
 
-由於 XY 焦點瀏覽仰賴一次僅瀏覽單一可設定 UI 元素的設計，因此沒有任何可設定焦點的元素的 [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) (例如本範例所示的只包含文字) 可能會造成使用者無法檢視 `ScrollViewer` 中的所有內容。 如需這個案例和其他相關案例的解決方案，請參閱[焦點佔用](#focus-engagement)。
+Because XY focus navigation relies on navigating to one focusable UI element at a time, a [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`. For solutions to this and other related scenarios, see [Focus engagement](#focus-engagement).
 
-![房地產 app︰ScrollViewer 只包含文字](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![Real estate app: ScrollViewer with only text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### 問題︰自由捲動 UI
+#### <a name="problem-free-scrolling-ui"></a>Problem: Free-scrolling UI
 
-當您的 app 需要自由捲動 UI 時 (例如繪圖介面，或本範例中的地圖)，XY 焦點瀏覽就無法運作。 在這種情況下，您可以開啟[滑鼠模式](#mouse-mode)以允許使用者自由地在 UI 元素內瀏覽。
+When your app requires a freely scrolling UI, such as a drawing surface or, in this example, a map, XY focus navigation simply doesn't work. In such cases, you can turn on [mouse mode](#mouse-mode) to allow the user to navigate freely inside a UI element.
 
-![使用滑鼠模式的地圖 UI 元素](images/designing-for-tv/map-mouse-mode.png)
+![Map UI element using mouse mode](images/designing-for-tv/map-mouse-mode.png)
 
-## 滑鼠模式
+## <a name="mouse-mode"></a>Mouse mode
 
-如 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)中所述，在 Xbox One 上，焦點是使用 XY 瀏覽系統移動，讓使用者能夠透過向上、向下、向左和向右在控制項之間移動焦點。 不過，某些控制項 (例如 [WebView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.webview.aspx) 和 [MapControl](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx)) 需要類似滑鼠的互動，使用者可以自由地在控制項的界限內移動指標。 還有一些 app，使用者要能夠在整個頁面移動指標，讓使用遊戲台/遙控器的使用者能夠擁有類似使用電腦滑鼠的體驗。
+As described in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction), on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right. However, some controls, such as [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) and [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx), require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control. There are also some apps where it makes sense for the user to be able to move the pointer across the entire page, having an experience with gamepad/remote similar to what users can find on a PC with a mouse.
 
-對於這些案例，您應該對整個頁面或對某個頁面內的某個控制項要求指標 (滑鼠模式)。 例如，您的 app 可以有一個有 `WebView` 控制項的頁面，只有在這個控制項當中才使用滑鼠模式，而在其他地方則仍使用 XY 焦點瀏覽。 若要要求指標，您可以指定是要在「控制項或頁面被佔用時」還是在「頁面為焦點所在時」需要指標。
+For these scenarios, you should request a pointer (mouse mode) for the entire page, or on a control inside a page. For example, your app could have a page that has a `WebView` control that uses mouse mode only while inside the control, and XY focus navigation everywhere else. To request a pointer, you can specify whether you want it **when a control or page is engaged** or **when a page has focus**.
 
 > [!NOTE] 
-> 不支援在控制項取得焦點時要求指標。
+> Requesting a pointer when a control gets focus is not supported.
 
-針對在 Xbox One 上執行的 XAML 及裝載的 Web 應用程式，預設都會針對整個 App 啟用滑鼠模式。 強烈建議您關閉這個功能，並將您的應用程式針對 XY 瀏覽進行最佳化。 若要這樣做，請將 `Application.RequiresPointerMode` 屬性設定為 `WhenRequested`，以便讓您只有在控制項或頁面要求滑鼠模式時才啟用它。
+For both XAML and hosted web apps running on Xbox One, mouse mode is turned on by default for the entire app. It is highly recommended that you turn this off and optimize your app for XY navigation. To do this, set the `Application.RequiresPointerMode` property to `WhenRequested` so that you only enable mouse mode when a control or page calls for it.
 
-若要在 XAML 應用程式中執行這項操作，請在您 `App` 類別中使用下列程式碼︰ 
+To do this in a XAML app, use the following code in your `App` class: 
 
 ```csharp
 public App() 
@@ -412,29 +410,25 @@ public App()
 }
 ```
 
-在 HTML 和 Javascript App 中，請使用下列程式碼：
+For more information, including sample code for HTML/JavaScript, see [How to disable mouse mode](https://msdn.microsoft.com/windows/uwp/xbox-apps/how-to-disable-mouse-mode).
 
-```javascript
-navigator.gamepadInputEmulation = "keyboard";
-```
+The following diagram shows the button mappings for gamepad/remote in mouse mode.
 
-下圖顯示遊戲台/遙控器在滑鼠模式下的按鈕對應。
-
-![遊戲台/遙控器在滑鼠模式下的按鈕對應](images/designing-for-tv/mouse-mode.png)
+![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/mouse-mode.png)
 
 > [!NOTE]
-> 只有在搭配使用遊戲台/遙控器的 Xbox One 上才支援滑鼠模式。 在其他裝置系列和輸入類型上，會以無訊息方式略過。
+> Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.
 
-在控制項或頁面上使用 `RequiresPointer` 屬性可在其上啟用滑鼠模式。 `RequiresPointer` 有三個可能值︰`Never` (預設值)、`WhenEngaged` 以及 `WhenFocused`。
+Use the `RequiresPointer` property on a control or page to activate mouse mode on it. `RequiresPointer` has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
 
 > [!NOTE]
-> `RequiresPointer` 是新的 API，且尚未記載於文件。 
+> `RequiresPointer` is a new API and not yet documented. 
 
 <!--TODO: Link to doc-->
 
-### 在控制項上啟用滑鼠模式
+### <a name="activating-mouse-mode-on-a-control"></a>Activating mouse mode on a control
 
-當使用者以 `RequiresPointer="WhenEngaged"` 設定佔用控制項時，會在控制項上啟用滑鼠模式，直到使用者離開為止。 下列程式碼片段示範一個簡單的 `MapControl`，此控制項會在被佔用時啟用滑鼠模式︰
+When the user engages a control with `RequiresPointer="WhenEngaged"`, mouse mode is activated on the control until the user disengages it. The following code snippet demonstrates a simple `MapControl` that activates mouse mode when engaged:
 
 ```xml
 <Page>
@@ -446,15 +440,15 @@ navigator.gamepadInputEmulation = "keyboard";
 ```
 
 > [!NOTE]
-> 如果一個控制項在被佔用時會啟用滑鼠模式，則它也必須使用 `IsEngagementRequired="true"` 的佔用設定，否則永遠不會啟用滑鼠模式。
+> If a control activates mouse mode when engaged, it must also require engagement with `IsEngagementRequired="true"`; otherwise, mouse mode will never be activated.
 
-當控制項處於滑鼠模式時，其巢狀結構下的控制項也會處於滑鼠模式。 此時會忽略其子項要求的模式&mdash;因為不可能父項處於滑鼠模式，而子項不是。
+When a control is in mouse mode, its nested controls will be in mouse mode as well. The requested mode of its children will be ignored&mdash;it's impossible for a parent to be in mouse mode but a child not to be.
 
-此外，只有在控制項取得焦點時才會檢查控制項的要求模式，因此當控制項有焦點時，模式不會動態變更。
+Additionally, the requested mode of a control is only inspected when it gets focus, so the mode won't change dynamically while it has focus.
 
-### 啟用頁面上的滑鼠模式
+### <a name="activating-mouse-mode-on-a-page"></a>Activating mouse mode on a page
 
-若頁面有 `RequiresPointer="WhenFocused"` 屬性，當整個頁面取得焦點時，將啟用滑鼠模式。 下列程式碼片段示範如何提供頁面這個屬性︰
+When a page has the property `RequiresPointer="WhenFocused"`, mouse mode will be activated for the whole page when it gets focus. The following code snippet demonstrates giving a page this property:
 
 ```xml
 <Page RequiresPointer="WhenFocused">
@@ -463,252 +457,253 @@ navigator.gamepadInputEmulation = "keyboard";
 ```
 
 > [!NOTE]
-> 只有在 [Page](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.aspx) 物件上才支援 `WhenFocused` 值。 如果您嘗試在控制項上設定這個值，就會擲回例外狀況。
+> The `WhenFocused` value is only supported on [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) objects. If you try to set this value on a control, an exception will be thrown.
 
-### 停用全螢幕內容的滑鼠模式
+### <a name="disabling-mouse-mode-for-full-screen-content"></a>Disabling mouse mode for full screen content
 
-當以全螢幕顯示影片或其他類型的內容時，您通常會想要隱藏游標，因為它可能會干擾使用者。 這種案例會在 App 的其他部分是使用滑鼠模式，但您希望在顯示全螢幕內容時將它關閉時發生。 若要這樣做，請將全螢幕內容置於個別的 `Page` 上，然後依照下列步驟執行。
+Usually when displaying video or other types of content in full screen, you will want to hide the cursor because it can distract the user. This scenario occurs when the rest of the app uses mouse mode, but you want to turn it off when showing full screen content. To accomplish this, put the full screen content on its own `Page`, and follow the steps below.
 
-1. 在 `App` 物件中，設定 `RequiresPointerMode="WhenRequested"`。
-2. 在「除了」全螢幕 `Page` 之外的每個 `Page` 物件中，設定 `RequiresPointer="WhenFocused"`。
-3. 針對全螢幕 `Page` 設定 `RequiresPointer="Never"`。
+1. In the `App` object, set `RequiresPointerMode="WhenRequested"`.
+2. In every `Page` object *except* for the full screen `Page`, set `RequiresPointer="WhenFocused"`.
+3. For the full screen `Page`, set `RequiresPointer="Never"`.
 
-如此一來，顯示全螢幕內容時就一定不會出現游標。
+This way, the cursor will never appear when showing full screen content.
 
-## 視覺焦點
+## <a name="focus-visual"></a>Focus visual
 
-視覺焦點是目前有焦點的 UI 元素周圍的框線。 這可協助引導使用者輕鬆瀏覽您的 UI 而不會迷失。
+The focus visual is the border around the UI element that currently has focus. This helps orient the user so that they can easily navigate your UI without getting lost.
 
-透過視覺更新，以及對視覺焦點新增的許多自訂選項，開發人員可以信任單一視覺焦點能在電腦和 Xbox One 上，以及在支援鍵盤和/或遊戲台/遙控器的任何其他 Windows10 裝置上運作良好。
+With a visual update and numerous customization options added to focus visual, developers can trust that a single focus visual will work well on PCs and Xbox One, as well as on any other Windows 10 devices that support keyboard and/or gamepad/remote.
 
-雖然不同平台上可以使用相同的視覺焦點，但是使用者對於 10 英呎體驗遇到的狀況稍有不同。 您應該假設使用者不會完全注意到整個電視螢幕，因此目前聚焦的元素對使用者而言隨時都清晰可見非常重要，避免視覺搜尋遇到挫折。
+While the same focus visual can be used across different platforms, the context in which the user encounters it is slightly different for the 10-foot experience. You should assume that the user is not paying full attention to the entire TV screen, and therefore it is important that the currently focused element is clearly visible to the user at all times to avoid the frustration of searching for the visual.
 
-也請務必記住，視覺焦點預設會在使用遊戲台或遙控器 (而「不是」鍵盤) 時顯示。 因此，即使您未實作，當您在 Xbox One 上執行您的 app 時也會顯示。
+It is also important to keep in mind that the focus visual is displayed by default when using a gamepad or remote control, but *not* a keyboard. Thus, even if you don't implement it, it will appear when you run your app on Xbox One.
 
-### 最初的視覺焦點位置
+### <a name="initial-focus-visual-placement"></a>Initial focus visual placement
 
-啟動 app 或瀏覽到頁面時，請將焦點放在使用者應採取動作的第一個 UI 元素上。 例如，相片 app 可以將焦點放在圖庫中的第一個項目，瀏覽到歌曲詳細檢視的音樂 app 可以將焦點放在播放按鈕，以方便播放音樂。
+When launching an app or navigating to a page, place the focus on a UI element that makes sense as the first element on which the user would take action. For example, a photo app may place focus on the first item in the gallery, and a music app navigated to a detailed view of a song might place focus on the play button for ease of playing music.
 
-請嘗試將最初的焦點放在您 app 的左上方區域 (如果是由右至左的流程，則放在右上方)。 大部分的使用者一開始通常會將焦點放在這個角落，因為這是 app 內容流程通常開始的位置。
+Try to put initial focus in the top left region of your app (or top right for a right-to-left flow). Most users tend to focus on that corner first because that's where app content flow generally begins.
 
-### 讓焦點清晰可見
+### <a name="making-focus-clearly-visible"></a>Making focus clearly visible
 
-螢幕上永遠要顯示一個視覺焦點讓使用者可以挑選而停駐，而不需要搜尋焦點。 同樣地，螢幕上也應該隨時有一個可設定焦點的項目 &mdash; 例如，不要使用只有文字而沒有可設定焦點元素的快顯視窗。
+One focus visual should always be visible on the screen so that the user can pick up where they left off without searching for the focus. Similarly, there should be a focusable item onscreen at all times&mdash;for example, don't use pop-ups with only text and no focusable elements.
 
-這個規則有一個例外狀況，就是全螢幕體驗，例如觀賞影片或檢視影像，在這些情況下並不適合顯示焦點視覺效果。
+An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.
 
-### 自訂焦點視覺效果
+### <a name="customizing-the-focus-visual"></a>Customizing the focus visual
 
-如果您想要自訂焦點視覺效果，只要修改與每個控制項的焦點視覺效果相關的屬性，即可達到此目的。 有數個這類屬性可供您利用來將您的 App 個人化。
+If you'd like to customize the focus visual, you can do so by modifying the properties related to the focus visual for each control. There are several such properties that you can take advantage of to personalize your app.
 
-您甚至可以不使用系統提供的焦點視覺效果，方法是使用視覺狀態來繪製自己的焦點視覺效果。 若要深入了解，請參閱 [VisualState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.Aspx)。
+You can even opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see [VisualState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.Aspx).
 
-### 消失關閉重疊
+### <a name="light-dismiss-overlay"></a>Light dismiss overlay
 
-若要讓使用者注意使用者目前使用遊戲控制器或遙控器操作的 UI 元素，在 Xbox One 上執行 app 時，UWP 會自動新增一個「煙霧」層，蓋住快顯 UI 以外的區域。 這不需要任何額外的工作，但是設計您的 UI 時要記住這一點。 您可以在任何 `FlyoutBase` 上設定 `LightDismissOverlayMode` 屬性以啟用或停用煙霧層；它預設為 `Auto`，表示在 Xbox 上會啟用，在其他地方則會停用。 如需詳細資訊，請參閱[強制回應與消失關閉](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss)。
+To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, the UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss).
 
-## 焦點佔用
+## <a name="focus-engagement"></a>Focus engagement
 
-焦點佔用的目的是要讓您更容易使用控制器或遙控器來與 App 互動。 
-
-> [!NOTE]
-> 設定焦點佔用並不會影響鍵盤或其他輸入裝置。
-
-當 [FrameworkElement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 物件上的屬性 `IsFocusEngagementEnabled` 設定為 `True` 時，它會將控制項標示為需要焦點佔用。 這表示，使用者必須按下 \[A/選取\] 按鈕來「佔住」控制項並與它互動。 完成動作時，使用者可以按 [B/返回] 按鈕來解除控制項佔用並瀏覽到其他位置。
+Focus engagement is intended to make it easier to use a gamepad or remote to interact with an app. 
 
 > [!NOTE]
-> `IsFocusEngagementEnabled` 是新的 API，且尚未記載於文件。
+> Setting focus engagement does not impact keyboard or other input devices.
 
-### 焦點受困
+When the property `IsFocusEngagementEnabled` on a [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) object is set to `True`, it marks the control as requiring focus engagement. This means that the user must press the **A/Select** button to "engage" the control and interact with it. When they are finished, they can press the **B/Back** button to disengage the control and navigate out of it.
 
-焦點受困是當使用者嘗試瀏覽 app 的 UI，但「受困」在控制項內時所發生的狀況，很難或甚至無法移動到控制項之外。
+> [!NOTE]
+> `IsFocusEngagementEnabled` is a new API and not yet documented.
 
-下列範例顯示產生焦點受困的 UI。
+### <a name="focus-trapping"></a>Focus trapping
 
-![按鈕在水平滑桿左邊和右邊](images/designing-for-tv/focus-engagement-focus-trapping.png)
+Focus trapping is what happens when a user attempts to navigate an app's UI but becomes "trapped" within a control, making it difficult or even impossible to move outside of that control.
 
-如果使用者想要從左邊的按鈕瀏覽到右邊的按鈕，合理的狀況是假設使用者只要按下方向鍵/左搖桿向右兩次。 不過，如果 [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 不需要佔用，就會發生下列行為︰當使用者第一次按右鍵，焦點會移到 `Slider`，然後當使用者再按右鍵一次，`Slider` 的控點會向右移動。 使用者會一直將控點往右移動，而無法到達按鈕。
+The following example shows UI that creates focus trapping.
 
-有幾種方法可以解決這個問題。 其中一個方法是設計不同的配置，類似 [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction)中的房地產 app 範例，我們將「上一個」按鈕和「下一個」按鈕重新配置在 `ListView` 上方。 垂直而非水平堆疊控制項可以解決問題，如下列影像所示。
+![Buttons to the left and right of a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-![按鈕在水平滑桿上方和下方](images/designing-for-tv/focus-engagement-focus-trapping-2.png)
+If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice. However, if the [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the `Slider`, and when they press right again, the `Slider`'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.
 
-現在，使用者可以使用方向鍵/左搖桿向上及向下瀏覽到每個控制項，當 `Slider` 有焦點時，使用者可以按左鍵和按右鍵如預期般移動 `Slider` 控點。
+There are several approaches to getting around this issue. One is to design a different layout, similar to the real estate app example in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) where we relocated the **Previous** and **Next** buttons above the `ListView`. Stacking the controls vertically instead of horizontally as in the following image would solve the problem.
 
-解決這個問題的另一種方法需要在 `Slider` 上設定佔用。 如果您設定 `IsFocusEngagementEnabled="True"`，這會導致下列行為。
+![Buttons above and below a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping-2.png)
 
-![滑桿上需要焦點佔用，讓使用者可以瀏覽到右邊的按鈕](images/designing-for-tv/focus-engagement-slider.png)
+Now the user can navigate to each of the controls by pressing up and down on the D-pad/left stick, and when the `Slider` has focus, they can press left and right to move the `Slider` handle, as expected.
 
-當 `Slider` 需要焦點佔用時，使用者只要按方向鍵/左搖桿向右兩次，就可以到達右邊的按鈕。 這個解決方案很棒，因為它不需要調整任何 UI，就能產生預期的行為。
+Another approach to solving this problem is to require engagement on the `Slider`. If you set `IsFocusEngagementEnabled="True"`, this will result in the following behavior.
 
-### 項目控制項
+![Requiring focus engagement on slider so user can navigate to button on the right](images/designing-for-tv/focus-engagement-slider.png)
 
-除了 [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) 控制項，還有其他您需要佔用的控制項，例如︰
+When the `Slider` requires focus engagement, the user can get to the button on the right simply by pressing right on the D-pad/left stick twice. This solution is great because it requires no UI adjustment and produces the expected behavior.
 
-- [ListBox](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
-- [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
-- [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
-- [FlipView](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
+### <a name="items-controls"></a>Items controls
 
-這些控制項與 `Slider` 控制項不同，不會在自己本身內限制焦點，不過當它們包含大量資料時，可能會造成可用性問題。 以下是 `ListView` 包含大量資料的範例。
+Aside from the [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) control, there are other controls which you may want to require engagement, such as:
 
-![有大量資料，以及頂端按鈕和底部按鈕的 ListView](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
+- [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
+- [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+- [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
 
-類似 `Slider` 範例，我們來嘗試使用遊戲台/遙控器從上方按鈕瀏覽到下方按鈕。 焦點從頂端按鈕開始，按下方向鍵/搖桿會將焦點放在 `ListView` 中的第一個項目上 ("Item 1")。 當使用者再向下按一次，清單中下一個項目會取得焦點，而不是底部的按鈕。 若要到達按鈕，使用者必須先瀏覽 `ListView` 中的每個項目。 如果 `ListView` 包含大量資料，這可能相當不便，而且使用者體驗不佳。
+Unlike the `Slider` control, these controls don't trap focus within themselves; however, they can cause usability issues when they contain large amounts of data. The following is an example of a `ListView` that contains a large amount of data.
 
-若要解決這個問題，請將 `ListView` 上的 `IsFocusEngagementEnabled="True"` 屬性設定為需要在其上佔用。 這樣可讓使用者只要向下按，就可快速跳過 `ListView`。 不過，除非使用者在清單有焦點時按下 [A/選取] 按鈕佔用清單，然後按下 [B/返回] 按鈕離開清單，否則使用者無法捲動清單，或從清單中選擇項目。
+![ListView with large amount of data and buttons above and below](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
 
-![需要佔用的 ListView](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
+Similar to the `Slider` example, let's try to navigate from the button at the top to the button at the bottom with a gamepad/remote. Starting with focus on the top button, pressing down on the D-pad/stick will place the focus on the first item in the `ListView` ("Item 1"). When the user presses down again, the next item in the list gets focus, not the button on the bottom. To get to the button, the user must navigate through every item in the `ListView` first. If the `ListView` contains a large amount of data, this could be inconvenient and not an optimal user experience.
 
-#### ScrollViewer
+To solve this problem, set the property `IsFocusEngagementEnabled="True"` on the `ListView` to require engagement on it. This will allow the user to quickly skip over the `ListView` by simply pressing down. However, they will not be able to scroll through the list or choose an item from it unless they engage it by pressing the **A/Select** button when it has focus, and then pressing the **B/Back** button to disengage.
 
+![ListView with engagement required](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
 
-            [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 與這些控制項稍有不同，其具有待考量的個別原因。 如果您有具可設定焦點內容的 `ScrollViewer`，瀏覽至 `ScrollViewer` 預設可讓您在其可設定焦點的元素之間移動。 就像在 `ListView` 中一樣，您必須捲動每個項目才能瀏覽到 `ScrollViewer` 之外。 
+#### <a name="scrollviewer"></a>ScrollViewer
 
-如果 `ScrollViewer`*沒有*可設定焦點的內容&mdash;例如如果只包含文字&mdash;，您可以設定 `IsFocusEngagementEnabled="True"` 讓使用者可以使用 [A/選取] 按鈕來佔用 `ScrollViewer`。 佔用之後，使用者可以使用 [方向鍵/左搖桿] 捲動所有文字，然後在完成時按 [B/返回] 按鈕離開。
+Slightly different from these controls is the [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), which has its own quirks to consider. If you have a `ScrollViewer` with focusable content, by default navigating to the `ScrollViewer` will allow you to move through its focusable elements. Like in a `ListView`, you must scroll through each item to navigate outside of the `ScrollViewer`. 
 
-另一種方法是在 `ScrollViewer` 上設定 `IsTabStop="True"`，如此一來使用者便無須佔用控制項&mdash;，而可在 `ScrollViewer` 中無可設定焦點的元素時，使用 [方向鍵/左搖桿] 在上頭放置焦點然後捲動瀏覽。
+If the `ScrollViewer` has *no* focusable content&mdash;for example, if it only contains text&mdash;you can set `IsFocusEngagementEnabled="True"` so the user can engage the `ScrollViewer` by using the **A/Select** button. After they have engaged, they can scroll through the text by using the **D-pad/left stick**, and then press the **B/Back** button to disengage when they're finished.
 
-### 焦點佔用預設值
+Another approach would be to set `IsTabStop="True"` on the `ScrollViewer` so that the user doesn't have to engage the control&mdash;they can simply place focus on it and then scroll by using the **D-pad/left stick** when there are no focusable elements within the `ScrollViewer`.
 
-有些控制項會造成焦點受困，所以其預設設定需要焦點佔用，而有些控制項預設關閉焦點佔用，但可以將它開啟獲得好處。 下表列出這些控制項，及其預設的焦點佔用行為。
+### <a name="focus-engagement-defaults"></a>Focus engagement defaults
 
-| 控制項               | 焦點佔用預設值  |
+Some controls cause focus trapping commonly enough to warrant their default settings to require focus engagement, while others have focus engagement turned off by default but can benefit from turning it on. The following table lists these controls and their default focus engagement behaviors.
+
+| Control               | Focus engagement default  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | 開啟                        |
-| FlipView              | 關閉                       |
-| GridView              | 關閉                       |
-| ListBox               | 關閉                       |
-| ListView              | 關閉                       |
-| ScrollViewer          | 關閉                       |
-| SemanticZoom          | 關閉                       |
-| Slider                | 開啟                        |
+| CalendarDatePicker    | On                        |
+| FlipView              | Off                       |
+| GridView              | Off                       |
+| ListBox               | Off                       |
+| ListView              | Off                       |
+| ScrollViewer          | Off                       |
+| SemanticZoom          | Off                       |
+| Slider                | On                        |
 
-當 `IsFocusEngagementEnabled="True"` 時，其他所有 UWP 控制項將不會導致任何行為或視覺變更。
+All other UWP controls will result in no behavioral or visual changes when `IsFocusEngagementEnabled="True"`.
 
-## 調整 UI 元素大小
+## <a name="ui-element-sizing"></a>UI element sizing
 
-因為在 10 英呎環境中的 app 使用者會使用遙控器或遊戲台，而且坐在離螢幕數英呎遠的位置，所以您的設計必須納入一些特別的 UI 考量。 請確定 UI 有適當的內容密度，也不要太雜亂，讓使用者可以輕鬆瀏覽和選取元素。 請記住︰重點是簡單。
+Because the user of an app in the 10-foot environment is using a remote control or gamepad and is sitting several feet away from the screen, there are some UI considerations that need to be factored into your design. Make sure that the UI has an appropriate content density and is not too cluttered so that the user can easily navigate and select elements. Remember: simplicity is key.
 
-### 縮放比例與調適型配置
+### <a name="scale-factor-and-adaptive-layout"></a>Scale factor and adaptive layout
 
-「縮放比例」有助於確保 UI 元素以適合 app 執行裝置的大小顯示。 在桌面上，您可以在 [設定] &gt; [系統] &gt; [顯示] 中找到這個設定，以滑動值表示。 手機上也有這個相同的設定 (如果裝置支援)。
+**Scale factor** helps with ensuring that UI elements are displayed with the right sizing for the device on which the app is running. On desktop, this setting can be found in **Settings > System > Display** as a sliding value. This same setting exists on phone as well if the device supports it.
 
-![變更文字、應用程式與其他項目的大小](images/designing-for-tv/ui-scaling.png) 
+![Change the size of text, apps, and other items](images/designing-for-tv/ui-scaling.png) 
 
-Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，則預設會調整為 [200%]。 只要 UI 元素能針對其他裝置適當調整大小，就能針對電視適當調整大小。 Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此在從電腦等其他裝置帶入 app 時，請確定採用[調適型技術](https://msdn.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)，以 100% 縮放讓 UI 呈現 960 x 540 像素最佳外觀。
+On Xbox One, there is no such system setting; however, for UWP UI elements to be sized appropriately for TV, they are scaled at a default of **200%** for XAML apps and **150%** for HTML apps. As long as UI elements are appropriately sized for other devices, they will be appropriately sized for TV. Xbox One renders your app at 1080p (1920 x 1080 pixels). Therefore, when bringing an app from other devices such as PC, ensure that the UI looks great at 960 x 540 px at 100% scale (or 1280 x 720 px at 100% scale for HTML apps) utilizing [adaptive techniques](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
-針對 Xbox 設計與針對電腦設計稍有不同，因為您只需要考慮 1920 x 1080 一種解析度。 如果使用者的電視解析度比較高，就沒什麼關係&mdash;UWP app 一律會縮放至 1080p。
+Designing for Xbox is a little different from designing for PC because you only need to worry about one resolution, 1920 x 1080. It doesn't matter if the user has a TV that has better resolution&mdash;UWP apps will always scale to 1080p.
 
-但無論電視解析度為何，當您的 app 在 Xbox One 上執行時，也會提取 200% 的正確資產大小。
+Correct asset sizes from the 200% (or 150% for HTML apps) set will also be pulled in for your app when running on Xbox One, regardless of TV resolution.
 
-### 內容密度
+### <a name="content-density"></a>Content density
 
-設計 app 時請記住，使用者會從遠距離檢視 UI 而且使用遙控器或遊戲控制器與 UI 互動，比起使用滑鼠或觸控輸入要花費更多的時間瀏覽。
+When designing your app, remember that the user will be viewing the UI from a distance and interacting with it by using a remote or game controller, which takes more time to navigate than using mouse or touch input.
 
-#### UI 控制項的大小
+#### <a name="sizes-of-ui-controls"></a>Sizes of UI controls
 
-互動式 UI 元素的高度至少要有 32 epx (有效像素)。 這是常見 UWP 控制項的預設值，以縮放比例 200% 使用時，可確保從遠距離也能看見 UI 元素，並協助減少內容密度。 
+Interactive UI elements should be sized at a minimum height of 32 epx (effective pixels). This is the default for common UWP controls, and when used at 200% scale, it ensures that UI elements are visible from a distance and helps reduce content density. 
 
-![縮放比例 100% 和 200% 的 UWP 按鈕](images/designing-for-tv/button-100-200.png)
+![UWP button at 100% and 200% scale](images/designing-for-tv/button-100-200.png)
 
-#### 點選次數
+#### <a name="number-of-clicks"></a>Number of clicks
 
-使用者從電視螢幕一邊瀏覽到另一邊時，以不超過「點選六次」的原則來簡化您的 UI。 同樣地，這裡適用「簡單」的原則。 如需更多詳細資料，請參閱[最少點選次數的路徑](#path-of-least-clicks)。
+When the user is navigating from one edge of the TV screen to the other, it should take no more than **six clicks** to simplify your UI. Again, the principle of **simplicity** applies here. For more details, see [Path of least clicks](#path-of-least-clicks).
 
-![跨 6 個圖示](images/designing-for-tv/six-clicks.png)
+![6 icons across](images/designing-for-tv/six-clicks.png)
 
-### 文字大小
+### <a name="text-sizes"></a>Text sizes
 
-若要從遠距離看見您的 UI，請使用下列重要規則︰
+To make your UI visible from a distance, use the following rules of thumb:
 
-* 主要的文字和閱讀內容︰最小 15 epx
-* 非關鍵的文字和補充內容︰最小 12 epx
+* Main text and reading content: 15 epx minimum
+* Non-critical text and supplemental content: 12 epx minimum
 
-在 UI 中使用較大文字時，請挑選不會限制螢幕實際可用空間太多、佔用其他內容可能填入空間的大小。
+When using larger text in your UI, pick a size that does not limit screen real estate too much, taking up space that other content could potentially fill.
 
-### 不使用縮放比例
+### <a name="opting-out-of-scale-factor"></a>Opting out of scale factor
 
-我們建議您的 app 充分利用縮放比例支援，針對每個裝置類型進行縮放，可協助 app 在所有裝置上正確執行。 不過，您也可以不使用這個行為，以縮放比例 100% 來設計所有 UI。 請注意，您無法將縮放比例變更為 100% 以外的值。
+We recommend that your app take advantage of scale factor support, which will help it run appropriately on all devices by scaling for each device type. However, it is possible to opt out of this behavior and design all of your UI at 100% scale. Note that you cannot change the scale factor to anything other than 100%.
 
-您可以使用下列程式碼片段，選擇不使用縮放比例︰
+For XAML apps, you can opt out of scale factor by using the following code snippet:
 
 ```csharp
-bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+bool result = 
+    Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` 將會通知您是否成功選擇不要採用。
+`result` will inform you whether you successfully opted out.
 
-請務必將本主題中所述的「有效」像素值加倍來得到「實際」像素值，計算 UI 元素的適當大小。
+For more information, including sample code for HTML/JavaScript, see [How to turn off scaling](https://msdn.microsoft.com/windows/uwp/xbox-apps/disable-scaling).
 
-## 電視安全區域
+Please be sure to calculate the appropriate sizes of UI elements by doubling the *effective* pixel values mentioned in this topic to *actual* pixel values (or multiplying by 1.5 for HTML apps).
 
-由於歷史上以及技術上的理由，並非所有的電視都以相同的方式顯示螢幕邊緣的內容。 UWP 預設會避免在電視不安全區域中顯示任何 UI 內容，改為只繪製頁面背景。
+## <a name="tv-safe-area"></a>TV-safe area
 
-下列影像中，電視不安全區域以藍色區域表示。
+Not all TVs display content all the way to the edges of the screen due to historical and technological reasons. By default, the UWP will avoid displaying any UI content in TV-unsafe areas and instead will only draw the page background.
 
-![電視不安全區域](images/designing-for-tv/tv-unsafe-area.png)
+The TV-unsafe area is represented by the blue area in the following image.
 
-您可以將背景設定為靜態或佈景主題色彩，或設定為影像，如以下程式碼片段示範。
+![TV-unsafe area](images/designing-for-tv/tv-unsafe-area.png)
 
-### 佈景主題色彩
+You can set the background to a static or themed color, or to an image, as the following code snippets demonstrate.
+
+### <a name="theme-color"></a>Theme color
 
 ```xml
 <Page x:Class="Sample.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### 影像
+### <a name="image"></a>Image
 
 ```xml
 <Page x:Class="Sample.MainPage"
       Background="\Assets\Background.png"/>
 ```
 
-這是您的 app 不進行額外工作的外觀。
+This is what your app will look like without additional work.
 
-![電視安全區域](images/designing-for-tv/tv-safe-area.png)
+![TV-safe area](images/designing-for-tv/tv-safe-area.png)
 
-這不是最佳的結果，因為它讓 app 產生「被框住」的效果，某些 UI (例如瀏覽窗格和格線) 似乎被裁切掉。 不過，您可以進行最佳化，延伸部份 UI 到螢幕邊緣，讓 app 有更多電影效果。
+This is not optimal because it gives the app a "boxed-in" effect, with parts of the UI such as the nav pane and grid seemingly cut off. However, you can make optimizations to extend parts of the UI to the edges of the screen to give the app a more cinematic effect.
 
-### 將 UI 繪製到邊緣
+### <a name="drawing-ui-to-the-edge"></a>Drawing UI to the edge
 
-我們建議您使用特定 UI 元素，延伸到螢幕邊緣，讓使用者感覺更投入。 這些包括 [ScrollViewers](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)、[瀏覽窗格](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/nav-pane)以及 [CommandBars](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)。
+We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [nav panes](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane), and [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
 
-但同樣重要的是，互動式元素和文字則一律要避開螢幕邊緣，以確保在一些電視上不會被裁切掉。 我們建議您在螢幕邊緣的 5% 以內，只繪製不重要的視覺效果。 如[調整 UI 元素大小](#ui-element-sizing)所述，遵循 Xbox One 主機預設縮放比例 200% 的 UWP app 會使用 960 x 540 epx 的區域，所以在您的 app UI 中，您應該避免在下列區域中放置重要的 UI：
+On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in [UI element sizing](#ui-element-sizing), a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:
 
-- 從頂端和底端算起 27 epx
-- 從左邊和右邊算起 48 epx
+- 27 epx from the top and bottom
+- 48 epx from the left and right sides
 
-下列小節說明如何將您的 UI 延伸到螢幕邊緣。
+The following sections describe how to make your UI extend to the screen edges.
 
-#### 核心視窗界限
+#### <a name="core-window-bounds"></a>Core window bounds
 
-對於只針對 10 英呎體驗的 UWP app，使用核心視窗界限是比較簡單的選項。
+For UWP apps targeting only the 10-foot experience, using core window bounds is a more straightforward option.
 
-在 `App.xaml.cs` 的 `OnLaunched` 方法中，新增下列程式碼：
+In the `OnLaunched` method of `App.xaml.cs`, add the following code:
 
 ```csharp
 Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-有了這行程式碼，app 視窗會延伸到螢幕邊緣，所以您必須將所有互動式和重要 UI 移入稍早所述的電視安全區域中。 暫時性 UI (例如操作功能表和開啟的[下拉式方塊](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)) 會自動留在電視安全區域內。
+With this line of code, the app window will extend to the edges of the screen, so you will need to move all interactive and essential UI into the TV-safe area described earlier. Transient UI, such as context menus and opened [ComboBoxes](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), will automatically remain inside the TV-safe area.
 
-![核心視窗界限](images/designing-for-tv/core-window-bounds.png)
+![Core window bounds](images/designing-for-tv/core-window-bounds.png)
 
-#### 窗格背景 
+#### <a name="pane-backgrounds"></a>Pane backgrounds 
 
-瀏覽窗格通常會繪製在螢幕邊緣附近，所以背景應該要延伸到電視不安全區域，以免產生不適當的間距。 若要這麼做，只要將瀏覽窗格的背景色彩變更為應用程式的背景色彩即可。
+Navigation panes are typically drawn near the edge of the screen, so the background should extend into the TV-unsafe area so as not to introduce awkward gaps. You can do this by simply changing the color of the nav pane's background to the color of the app's background.
 
-使用先前所述的核心視窗界限將可讓您將 UI 繪製在螢幕的邊緣，但是您應該接著在 [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) 的內容上使用正值邊界，以便讓它保持在電視安全區域內。
+Using the core window bounds as previously described will allow you to draw your UI to the edges of the screen, but you should then use positive margins on the [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx)'s content to keep it within the TV-safe area.
 
-![延伸到螢幕邊緣的瀏覽窗格](images/designing-for-tv/tv-safe-areas-2.png)
+![Nav pane extended to edges of screen](images/designing-for-tv/tv-safe-areas-2.png)
 
-現在，瀏覽窗格的背景已經延伸到螢幕邊緣，同時瀏覽項目也保留在電視安全區域內。 
-            `SplitView` 的內容 (在此例中為項目的格線) 已經延伸到螢幕底部，因此看起來是持續往下而沒有被截斷，而格線頂端也仍然在電視安全區域內。 (若要深入了解如何執行這項操作，請參閱[捲動清單和格線的尾端](#scrolling-ends-of-lists-and-grids))。
+Here, the nav pane's background has been extended to the edges of the screen, while its navigation items are kept in the TV-safe area. The content of the `SplitView` (in this case, a grid of items) has been extended to the bottom of the screen so that it looks like it continues and isn't cut off, while the top of the grid is still within the TV-safe area. (Learn more about how to do this in [Scrolling ends of lists and grids](#scrolling-ends-of-lists-and-grids)).
 
-下列程式碼片段可達到這個效果︰
+The following code snippet achieves this effect:
 
 ```xml
 <SplitView x:Name="RootSplitView"
@@ -727,11 +722,9 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </SplitView>
 ```
 
+[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) is another example of a pane that is commonly positioned near one or more edges of the app, and as such on TV its background should extend to the edges of the screen. It also usually contains a **More** button, represented by "..." on the right side, which should remain in the TV-safe area. The following are a few different strategies to achieve the desired interactions and visual effects.
 
-            [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也包含一個 [更多] 按鈕 (在右邊以 "..." 代表)，此按鈕應該留在電視安全區域中。 以下是可達到所需的互動和視覺效果的幾個不同策略。
-
-
-            **選項 1**︰將 `CommandBar` 背景色彩變更為透明或與頁面背景相同的色彩︰
+**Option 1**: Change the `CommandBar` background color to either transparent or the same color as the page background:
 
 ```xml
 <CommandBar x:Name="topbar" 
@@ -740,10 +733,9 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </CommandBar>
 ```
 
-這麼做會讓 `CommandBar` 看起來就像位在與頁面其餘部分相同的背景上，因此背景會順暢地延伸到螢幕邊緣。
+Doing this will make the `CommandBar` look like it is on top of the same background as the rest of the page, so the background seamlessly flows to the edge of the screen.
 
-
-            **選項 2**︰新增一個填滿色彩與 `CommandBar` 背景相同的背景矩形，並將它置於 `CommandBar` 底下且延伸到頁面的其餘部分︰
+**Option 2**: Add a background rectangle whose fill is the same color as the `CommandBar` background, and have it lie below the `CommandBar` and across the rest of the page:
 
 ```xml
 <Rectangle VerticalAlignment="Top" 
@@ -757,21 +749,21 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> 如果使用這個方法，請注意 [更多] 按鈕會視需要變更所開啟之 `CommandBar` 的高度，以便在 `AppBarButton` 的圖示之下顯示其標籤。 建議您將標籤移到其圖示的「右側」，以避免發生調整大小的情況。 如需詳細資訊，請參閱 [CommandBar 標籤](#commandbar-labels)。
+> If using this approach, be aware that the **More** button changes the height of the opened `CommandBar` if necessary, in order to show the labels of the `AppBarButton`s below their icons. We recommend that you move the labels to the *right* of their icons to avoid this resizing. For more information, see [CommandBar labels](#commandbar-labels).
 
-這兩種方法也適用於本節所列的其他類型的控制項。
+Both of these approaches also apply to the other types of controls listed in this section.
 
-#### 捲動清單和格線的尾端
+#### <a name="scrolling-ends-of-lists-and-grids"></a>Scrolling ends of lists and grids
 
-清單和格線經常會包含一個螢幕無法同時容納的多個項目。 發生這種情況時，我們建議您將清單或格線延伸到螢幕邊緣。 水平捲動清單和格線時應該向右邊延伸，垂直捲動時應該向下延伸。
+It's common for lists and grids to contain more items than can fit onscreen at the same time. When this is the case, we recommend that you extend the list or grid to the edge of the screen. Horizontally scrolling lists and grids should extend to the right edge, and vertically scrolling ones should extend to the bottom.
 
-![電視安全區域格線截斷](images/designing-for-tv/tv-safe-area-grid-cutoff.png)
+![TV safe area grid cutoff](images/designing-for-tv/tv-safe-area-grid-cutoff.png)
 
-雖然清單或格線會像這樣延伸，但是請務必讓視覺焦點及其關聯的項目保留在電視安全區域內。
+While a list or grid is extended like this, it's important to keep the focus visual and its associated item inside the TV-safe area.
 
-![捲動格線焦點應保留在電視安全區域內](images/designing-for-tv/scrolling-grid-focus.png)
+![Scrolling grid focus should be kept in TV-safe area](images/designing-for-tv/scrolling-grid-focus.png)
 
-UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx) 內的功能，但是您必須新增邊框間距，以確保清單/格線項目可以捲動到安全區域的視野範圍內。 具體來說，您要對 [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 的 [ItemsPresenter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) 新增正邊界，如下列程式碼片段所示︰
+The UWP has functionality that will keep the focus visual inside the [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) or [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)'s [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), as in the following code snippet:
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle" 
@@ -812,7 +804,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 </Style>
 ```
 
-您可以將先前的程式碼片段放在頁面或 App 資源中，然後再透過下列方式存取它︰
+You would put the previous code snippet in either the page or app resources, and then access it in the following way:
 
 ```xml
 <Page>
@@ -822,65 +814,64 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 ```
 
 > [!NOTE]
-> 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 和 [Style](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.style.aspx) 的 [TargetType](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 屬性都設定為 `GridView`。
+> This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) attribute for both the [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) and the [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) to `GridView`.
 
-## 色彩
+## <a name="colors"></a>Colors
 
-通用 Windows 平台預設不會執行任何動作來修改 app 的色彩。 也就是說，您的 app 可以採取一些色彩設定的增強功能，來改善電視上的視覺體驗。
+By default, the Universal Windows Platform doesn't do anything to alter your app's colors. That said, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.
 
-### 應用程式佈景主題
+### <a name="application-theme"></a>Application theme
 
-您可以根據適合 app 的方式選擇「應用程式佈景主題」 (深色或淺色)，或者選擇不使用佈景主題。 請在[色彩佈景主題](../style/color.md#color-themes)中閱讀更多有關佈景主題的一般建議。
+You can choose an **Application theme** (dark or light) according to what is right for your app, or you can opt out of theming. Read more about general recommendations for themes in [Color themes](../style/color.md).
 
-UWP 也能讓 app 根據執行的裝置所提供的系統設定，動態設定佈景主題。 雖然 UWP 一律會優先採用使用者指定的佈景主題設定，但是每個裝置也會提供適當的預設佈景主題。 由於 Xbox One 的「媒體」體驗要求比「生產力」體驗要求還高，因此預設為深色的系統佈景主題。 如果您的 app 佈景主題是根據系統設定，在 Xbox One 上就會預設為深色。
+The UWP also allows apps to dynamically set the theme based on the system settings provided by the devices on which they run. While the UWP always respects the theme settings specified by the user, each device also provides an appropriate default theme. Because of the nature of Xbox One, which is expected to have more *media* experiences than *productivity* experiences, it defaults to a dark system theme. If your app's theme is based on the system settings, expect it to default to dark on Xbox One.
 
-### 輔色
+### <a name="accent-color"></a>Accent color
 
-UWP 提供一個很方便的方式可以公開使用者從其系統設定選取的「輔色」。
+The UWP provides a convenient way to expose the **accent color** that the user has selected from their system settings.
 
-使用者可以在 Xbox One 上選取使用者的色彩，就如同在電腦上選取輔色一樣。 只要您的 app 透過筆刷或色彩資源呼叫這些輔色，就會採用使用者在系統設定中選取的色彩。 請注意，Xbox One 上的輔色依使用者 (不是依系統) 而定。
+On Xbox One, the user is able to select a user color, just as they can select an accent color on a PC. As long as your app calls these accent colors through brushes or color resources, the color that the user selected in the system settings will be used. Note that accent colors on Xbox One are per user, not per system.
 
-另外，Xbox One 上的使用者色彩組與電腦、手機和其他裝置上的不同。 部分原因是因為這些色彩在 Xbox One 上是為了擁有最佳 10 英呎體驗，依照本文所述的方法和策略而手動挑選的。
+Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices. This is partly due to the fact that these colors are hand-picked to make for the best 10-foot experience on Xbox One, following the same methodologies and strategies explained in this article.
 
-只要您的 app 使用筆刷資源 (例如 **SystemControlForegroundAccentBrush**) 或色彩資源 (**SystemAccentColor**)，或直接透過 [UIColorType.Accent*](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API 改為呼叫輔色，這些色彩就會取代為適合電視的輔色。 高對比的筆刷色彩也會從系統 (就像在電腦和手機上一樣) 提取，但是是使用適合電視的色彩。
+As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API, those colors are replaced with accent colors appropriate for TV. High contrast brush colors are also pulled in from the system the same way as on a PC and phone, but with TV-appropriate colors.
 
-若要深入了解一般的輔色，請參閱[輔色](../style/color.md#accent-color)。
+To learn more about accent color in general, see [Accent color](../style/color.md#accent-color).
 
-### 電視之間的色彩差異
+### <a name="color-variance-among-tvs"></a>Color variance among TVs
 
-針對電視設計時，請注意色彩顯示的方式依照所呈現的電視而相當不同。 不要認為色彩會完全像在監視器上顯示的一樣。 如果您的 app 依賴細微的色彩差異來區分 UI，色彩可能會混合在一起，而讓使用者感到困惑。 無論使用的電視為何，請試著使用足以讓使用者能夠清楚分辨的色彩。
+When designing for TV, note that colors display quite differently depending on the TV on which they are rendered. Don't assume colors will look exactly as they do on your monitor. If your app relies on subtle differences in color to differentiate parts of the UI, colors could blend together and users could get confused. Try to use colors that are different enough that users will be able to clearly differentiate them, regardless of the TV they are using.
 
-### 電視安全色彩
+### <a name="tv-safe-colors"></a>TV-safe colors
 
-色彩的 RGB 值代表紅色、綠色及藍色的濃度。 電視無法處理極端的濃度值；因此，您在針對 10 英呎體驗設計時，應該避免使用這些色彩。 它們可以在某些電視上會產生奇異的帶狀效果，或者看起來像褪色一樣。 此外，高濃度色彩可能會導致開花的效果 (附近的像素開始繪製相同的色彩)。 
+A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well; therefore, you should avoid using these colors when designing for the 10-foot experience. They can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors). 
 
-雖然不同思想學派對於何謂電視安全色彩有不同的意見，但是 16-235 (或以十六進位表示的 10-EB) 的 RGB 值內的色彩通常可安全地用於電視。
+While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.
 
-![電視安全色彩範圍](images/designing-for-tv/tv-safe-colors.png)
+![TV-safe color range](images/designing-for-tv/tv-safe-colors.png)
 
-### 修正電視不安全色彩
+### <a name="fixing-tv-unsafe-colors"></a>Fixing TV-unsafe colors
 
-藉由調整其 RGB 值，分別將電視不安全色彩修正到電視安全範圍內，通常稱為「色彩鉗制」。 這個方法可能適合調色盤色彩不豐富的 app。 不過，使用此方法修正色彩可能會造成色彩彼此之間互相衝突，而無法提供最佳的 10 英呎體驗。
+Fixing TV-unsafe colors individually by adjusting their RGB values to be within the TV-safe range is typically referred to as **color clamping**. This method may be appropriate for an app that doesn't use a rich color palette. However, fixing colors using only this method may cause colors to collide with each other, which doesn't provide for the best 10-foot experience.
 
-若要最佳化電視的調色盤，建議您先透過諸如色彩鉗制等方法確認色彩是電視安全色彩，然後再改用**縮放**方法。
+To optimize your color palette for TV, we recommend that you first ensure that your colors are TV-safe through a method such as color clamping, then use a method called **scaling**.
 
-這會將所有色彩的 RGB 值都調整某個特定比例而落在電視安全範圍內。 調整 app 的所有色彩有助於防止色彩發生衝突，以獲得更好的 10 英呎體驗。
+This involves scaling all of your colors' RGB values by a certain factor to get them within the TV-safe range. Scaling all of your app's colors helps prevent color collision and makes for a better 10-foot experience.
 
-![鉗制與縮放](images/designing-for-tv/clamping-vs-scaling.png)
+![Clamping vs. scaling](images/designing-for-tv/clamping-vs-scaling.png)
 
-### 資產
+### <a name="assets"></a>Assets
 
-對色彩進行變更時，請務必要一併更新資產。 如果您的 app 使用 XAML 中看起來與資產色彩相同的色彩，但您只是更新 XAML 程式碼，您的資產色彩可能會不好看。
+When making changes to colors, make sure to also update assets accordingly. If your app uses a color in XAML that is supposed to look the same as an asset color, but you only update the XAML code, your assets will look off-color.
 
-### UWP 色彩範例
+### <a name="uwp-color-sample"></a>UWP color sample
 
-
-            [UWP 色彩佈景主題](../style/color.md#color-themes)針對深色佈景主題將 app 的背景設計為「黑色」，針對淺色佈景主題設計為「白色」。 因為黑色或白色都不是電視安全色彩，所以這些色彩都必須使用「鉗制」修正。 這些色彩修正之後，所有其他色彩都必須透過「縮放」調整，以保留必要的對比。
+[UWP color themes](../style/color.md) are designed around the app's background being either **black** for the dark theme or **white** for the light theme. Because neither black nor white are TV-safe, these colors needed to be fixed by using *clamping*. After they were fixed, all the other colors needed to be adjusted through *scaling* to retain the necessary contrast.
 
 <!--[v-lcap to eliot]why is the above paragraph in the past tense?-->
 <!--[elcowle] Because this is something that Microsoft had to do to the UWP color themes to accommodate TV-safe colors for Xbox. These themes are then provided in the below code sample.-->
 
-下列範例程式碼提供一個已針對電視用途進行最佳化的色彩佈景主題︰
+The following sample code provides a color theme that has been optimized for TV use:
 
 ```xml
 <Application.Resources>
@@ -948,12 +939,12 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 ```
 
 > [!NOTE]
-> 淺色佈景主題 **SystemChromeMediumLowColor** 和 **SystemChromeMediumLowColor** 是刻意使用相同的色彩，而非鉗制所造成。 
+> The light theme **SystemChromeMediumLowColor** and **SystemChromeMediumLowColor** are the same color on purpose and not caused as a result of clamping. 
 
 > [!NOTE]
-> 十六進位色彩是以 **ARGB** 來指定 (Alpha、紅、綠、藍)。
+> Hexadecimal colors are specified in **ARGB** (Alpha Red Green Blue).
 
-在不須使用鉗制即能顯示完整範圍的顯示器上，我們不建議使用電視安全色彩，因為色彩看起來會像褪色一樣。 當您的 app 在 Xbox 上而「不是」其他平台上執行時，請載入資源字典 (上一個範例)。 在 `App.xaml.cs` 的 `OnLaunched` 方法中，新增下列檢查：
+We don't recommend using TV-safe colors on a monitor able to display the full range without clamping because the colors will look washed out. Instead, load the resource dictionary (previous sample) when your app is running on Xbox but *not* other platforms. In the `OnLaunched` method of `App.xaml.cs`, add the following check:
 
 ```csharp
 if (IsTenFoot)
@@ -966,70 +957,67 @@ if (IsTenFoot)
 ```
 
 > [!NOTE] 
-> 如需 `IsTenFoot` 變數的定義，請參閱[適用於 Xbox 的自訂視覺狀態觸發程序](#custom-visual-state-trigger-for-xbox)。
+> The `IsTenFoot` variable is defined in [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox).
 
-這可確保無論 App 在哪個裝置上執行，都能顯示正確的色彩，藉此提供使用者更好、更賞心悅目的體驗。
+This will ensure that the correct colors will display on whichever device the app is running, providing the user with a better, more aesthetically pleasing experience.
 
-## UI 控制項的指導方針
+## <a name="guidelines-for-ui-controls"></a>Guidelines for UI controls
 
-提供數種可針對多部裝置良好運作的 UI 控制項，但當在電視上使用時具有特定考量。 深入了解有關針對 10 英呎體驗進行設計時使用這些控制項的一些最佳做法。
+There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience.
 
-### Pivot 控制項
+### <a name="pivot-control"></a>Pivot control
 
+A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote. 
 
-            [樞紐](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)可讓您在 App 內透過選取不同的標頭或索引標籤，快速瀏覽檢視。 控制項會在成為焦點的標頭加上底線，以便在使用遊戲台/遙控器時，更加凸顯目前選取的標頭。 
-
-![樞紐底線](images/designing-for-tv/pivot-underline.png)
+![Pivot underline](images/designing-for-tv/pivot-underline.png)
 
 <!--By default, when you navigate to a `Pivot`, one of the [PivotItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotitem.aspx)s will get focus. However, you can show focus around all the headers by setting `Pivot.HeaderFocusVisualPlacement="ItemHeaders"`.
 
 ![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
 
-您可以將 [Pivot.HeaderOverflowMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.headeroverflowmode.aspx) 屬性設定為 `PivotHeaderOverflowMode.NoWrap`，使標頭不會像在手機與平板電腦上一樣繞著螢幕換行。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如需詳細資訊，請參閱[索引標籤和樞紐](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)。
+You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot).
 
 <!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
 
 ![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
-### 瀏覽窗格
+### <a name="navigation-pane"></a>Navigation pane
 
-瀏覽窗格 (也稱為「漢堡式功能表」) 是 UWP app 中常用的瀏覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。 
+A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button. 
 
-使用滑鼠和觸控可以很容易存取瀏覽窗格，但使用遊戲台/遙控器遠端則較難存取瀏覽窗格，因為使用者必須瀏覽到按鈕才能開啟窗格。 因此，理想的做法是讓「檢視」按鈕開啟瀏覽窗格，以及讓使用者能夠一路瀏覽到頁面左邊來開啟窗格。 這將可讓使用者非常容易存取窗格的內容。 如需有關瀏覽窗格在不同螢幕大小中如何運作的詳細資訊，以及適用於遊戲台/遙控器瀏覽的最佳做法，請參閱[瀏覽窗格](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)。
+While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane).
 
-### CommandBar 標籤
+### <a name="commandbar-labels"></a>CommandBar labels
 
-在 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 上，理想的做法是將標籤放在圖示右邊，以便使 CommandBar 高度最小化並保持一致。 您可以將 [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) 屬性設定為 `CommandBarDefaultLabelPosition.Right` 來達到此目的。
+It is a good idea to have the labels placed to the right of the icons on a [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) so that its height is minimized and stays consistent. You can do this by setting the [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) property to `CommandBarDefaultLabelPosition.Right`.
 
-![標籤在圖示右邊的 CommandBar](images/designing-for-tv/commandbar.png)
+![CommandBar with labels to the right of icons](images/designing-for-tv/commandbar.png)
 
-設定此屬性也會使標籤變成一律顯示，這非常適用於 10 英呎體驗，因為它可將使用者的點選次數降到最低。 這也是一個可供其他裝置類型遵循的絕佳模型。
+Setting this property will also cause the labels to always be displayed, which works well for the 10-foot experience because it minimizes the number of clicks for the user. This is also a great model for other device types to follow.
 
 <!--When there isn't enough space in the window to fit all of the `AppBarButton`s, buttons move into an overflow menu, which is accessed by selecting the "..." button. This happens dynamically as the screen resizes. This generally shouldn't be a problem for TV because the screen size is so large, but if you find that you have overflow buttons, you can specify which appear first using the `AppBarButton.DynamicOverflowOrder` property.
 
 ![CommandBar with overflow commands](images/designing-for-tv/commandbar-overflow.png)-->
 
-### 工具提示
+### <a name="tooltip"></a>Tooltip
 
+The [Tooltip](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) control was introduced as a way to provide more information in the UI when the user hovers the mouse over, or taps and holds their figure on, an element. For gamepad and remote, `Tooltip` appears after a brief moment when the element gets focus, stays onscreen for a short time, and then disappears. This behavior could be distracting if too many `Tooltip`s are used. Try to avoid using `Tooltip` when designing for TV.
 
-            [Tooltip](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) 控制項是為了當使用者將滑鼠停留在元素上，或者點選並按住元素上的圖形時，在 UI 中提供更多資訊。 對於遊戲台和遙控器，當元素取得焦點一小段時間之後，`Tooltip` 就會出現在螢幕上停留一小段時間，然後消失。 如果使用了太多 `Tooltip`，這種行為可能會讓使用者分心。 針對電視進行設計時，請嘗試避免使用 `Tooltip`。
+### <a name="button-styles"></a>Button styles
 
-### 按鈕樣式
+While the standard UWP buttons work well on TV, some visual styles of buttons call attention to the UI better, which you may want to consider for all platforms, particularly in the 10-foot experience, which benefits from clearly communicating where the focus is located. To read more about these styles, see [Buttons](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/buttons).
 
-雖然標準的 UWP 按鈕能在電視上順利運作，但是一些按鈕視覺樣式更能讓 UI 吸引注意，您可以針對所有平台考慮這些樣式，特別是在 10 英呎體驗中，更需要清楚傳達焦點所在。 若要深入了解這些樣式，請參閱[按鈕](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/buttons)。
+### <a name="nested-ui-elements"></a>Nested UI elements
 
-### 巢狀的 UI 元素
+Nested UI exposes nested actionable items enclosed inside a container UI element where both the nested item as well as the container item can take independent focus from each other.
 
-巢狀的 UI 會公開容器 UI 元素內部包含的巢狀可動作項目，其中巢狀項目與容器項目都可以各自獨立取得焦點。
+Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a `ContextFlyout` (see [CommandBar and ContextFlyout](#commandbar-and-contextflyout)).
 
-對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 一個常見的解決方案是將巢狀的 UI 元素放入 `ContextFlyout` (請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout))。
+For more information on nested UI, see [Nested UI in list items](../controls-and-patterns/nested-ui.md).
 
-如需巢狀 UI 的詳細資訊，請參閱[清單項目中的巢狀 UI](../controls-and-patterns/nested-ui.md)。
+### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-### MediaTransportControls
-
-
-            [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols.aspx) 元素提供預設的播放體驗，讓使用者可以與其媒體互動 (播放、暫停、開啟隱藏式輔助字幕等等)。 這個控制項是 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.aspx) 的屬性，且支援兩種配置選項：「單列」和「雙列」。 在單列配置中，滑桿與播放按鈕都會在同一列上，且播放/暫停按鈕會在滑桿左邊。 在雙列配置中，滑桿會自成一列，而播放按鈕則位於下方另一列上。 針對 10 英呎體驗設計時，應使用雙列配置，因為它能為控制器提供較佳的瀏覽。 若要啟用雙列配置，請在 `MediaPlayerElement` 的 [TransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.transportcontrols.aspx) 屬性中的 `MediaTransportControls` 元素上設定 `IsCompact="False"`。
+The [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols.aspx) element lets users interact with their media by providing a default playback experience that allows them to play, pause, turn on closed captions, and more. This control is a property of [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.aspx) and supports two layout options: *single-row* and *double-row*. In the single-row layout, the slider and playback buttons are all located in one row, with the play/pause button located to the left of the slider. In the double-row layout, the slider occupies its own row, with the playback buttons on a separate lower row. When designing for the 10-foot experience, the double-row layout should be used, as it provides better navigation for gamepad. To enable the double-row layout, set `IsCompact="False"` on the `MediaTransportControls` element in the [TransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.transportcontrols.aspx) property of the `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -1041,23 +1029,26 @@ if (IsTenFoot)
 </MediaPlayerElement>
 ```  
 
-如需深入了解將媒體加入 App，請參閱[媒體播放](../controls-and-patterns/media-playback.md)。
+Visit [Media playback](../controls-and-patterns/media-playback.md) to learn more about adding media to your app.
 
-> ![NOTE] `MediaPlayerElement` 只能在 Windows10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows10 開發 App，便必須改為使用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
+> ![NOTE] `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.
 
-### 搜尋體驗
+### <a name="search-experience"></a>Search experience
 
-搜尋內容是 10 英呎體驗中其中一個最常執行的功能。 如果您的 app 提供搜尋體驗，使用者能夠使用遊戲台上的 **Y** 按鈕做為快速鍵來快速存取會很有幫助。
+Searching for content is one of the most commonly performed functions in the 10-foot experience. If your app provides a search experience, it is helpful for the user to have quick access to it by using the **Y** button on the gamepad as an accelerator.
 
-大部分客戶應該已經熟悉這個快速鍵，但是如果您願意，可以在 UI 新增視覺化 **Y** 字符，指出客戶可以使用此按鈕來存取搜尋功能。 如果您新增此提示，請務必使用 **Segoe Xbox Symbol MDL2** 字型 (E426) 中的符號，提供與 Xbox 殼層和其他 app 的一致性。
+Most customers should already be familiar with this accelerator, but if you like you can add a visual **Y** glyph to the UI to indicate that the customer can use the button to access search functionality. If you do add this cue, be sure to use the symbol from the **Segoe Xbox MDL2 Symbol** font (`&#xE3CC;` for XAML apps, `\E426` for HTML apps) to provide consistency with the Xbox shell and other apps.
 
-因為 **Y** 按鈕才可在遊戲台上使用，所以請務必提供其他方法存取搜尋，例如 UI 中的按鈕。 否則，部分客戶可能無法存取此功能。
+> [!NOTE]
+> Because the **Segoe Xbox MDL2 Symbol** font is only available on Xbox, the symbol won't appear correctly on your PC. However, it will show up on the TV once you deploy to Xbox.
 
-在 10 英呎體驗中，讓客戶使用全螢幕的搜尋體驗通常比較容易，因為顯示器的空間有限。 無論您有全螢幕或部分螢幕 (「就地」搜尋)，我們建議當使用者開啟搜尋體驗時，就出現已經開啟的螢幕小鍵盤，供客戶輸入搜尋字詞。
+Since the **Y** button is only available on gamepad, make sure to provide other methods of access to search, such as buttons in the UI. Otherwise, some customers may not be able to access the functionality.
 
-## 適用於 Xbox 的自訂視覺狀態觸發程序
+In the 10-foot experience, it is often easier for customers to use a full screen search experience because there is limited room on the display. Whether you have full screen or partial-screen, "in-place" search, we recommend that when the user opens the search experience, the onscreen keyboard appears already opened, ready for the customer to enter search terms.
 
-若要針對 10 英呎體驗量身打造您的 UWP app，建議您在 App 偵測到它已在 Xbox 主機上啟動時變更配置。 若要這麼做，其中一個方法是使用「視覺狀態觸發程序」。 當您想要在 **Blend for Visual Studio** 中進行編輯時，視覺狀態觸發程序最為實用。 下列程式碼片段示範如何建立適用於 Xbox 的視覺狀態觸發程序：
+## <a name="custom-visual-state-trigger-for-xbox"></a>Custom visual state trigger for Xbox
+
+To tailor your UWP app for the 10-foot experience, we recommend that you make layout changes when the app detects that it has been launched on an Xbox console. One way to do this is by using a custom *visual state trigger*. Visual state triggers are most useful when you want to edit in **Blend for Visual Studio**. The following code snippet shows how to create a visual state trigger for Xbox:
 
 ```xml
 <VisualStateManager.VisualStateGroups>
@@ -1083,7 +1074,7 @@ if (IsTenFoot)
 </VisualStateManager.VisualStateGroups>
 ```
 
-若要建立觸發程序，請將下列類別新增到您的 App。 這是上面的 XAML 程式碼所參考的類別︰
+To create the trigger, add the following class to your app. This is the class that is referenced by the XAML code above:
 
 ```csharp
 class DeviceFamilyTrigger : StateTriggerBase
@@ -1107,29 +1098,29 @@ class DeviceFamilyTrigger : StateTriggerBase
 }
 ```
 
-新增自訂觸發程序之後，每當您的 App 偵測到它在 Xbox One 主機上執行時，就會自動進行您在 XAML 程式碼中指定的配置修改。
+After you've added your custom trigger, your app will automatically make the layout modifications you specified in your XAML code whenever it detects that it is running on an Xbox One console.
 
-另一個您可以檢查 App 是否正在 Xbox 上執行並接著進行適當調整的方式是透過程式碼。 您可以使用下列簡單變數來檢查您的 App 是否正在 Xbox 上執行︰
+Another way you can check whether your app is running on Xbox and then make the appropriate adjustments is through code. You can use the following simple variable to check if your app is running on Xbox:
 
 ```csharp
 bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily == 
                     "Windows.Xbox");
 ```
 
-接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 如需相關範例，請參閱 [UWP 色彩範例](#uwp-color-sample)。
+Then, you can make the appropriate adjustments to your UI in the code block following this check. An example of this is shown in [UWP color sample](#uwp-color-sample).
 
-## 摘要
+## <a name="summary"></a>Summary
 
-針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
+Designing for the 10-foot experience has special considerations to take into account that make it different from designing for any other platform. While you can certainly do a straight port of your UWP app to Xbox One and it will work, it won't necessarily be optimized for the 10-foot experience and can lead to user frustration. Following the guidelines in this article will make sure that your app is as good as it can be on TV.
 
-## 相關文章
+## <a name="related-articles"></a>Related articles
 
-- [通用 Windows 平台 (UWP) 應用程式的裝置基本資訊](device-primer.md)
-- [遊戲台與遙控器的互動](gamepad-and-remote-interactions.md)
-- [UWP app 中的音效](../style/sound.md)
+- [Device primer for Universal Windows Platform (UWP) apps](device-primer.md)
+- [Gamepad and remote control interactions](gamepad-and-remote-interactions.md)
+- [Sound in UWP apps](../style/sound.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 
