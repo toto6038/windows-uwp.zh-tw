@@ -1,6 +1,6 @@
 ---
 author: PatrickFarley
-title: Communicate with a remote app service
+title: "與遠端 App 服務通訊"
 description: Exchange messages with an app service running on a remote device using Project "Rome".
 translationtype: Human Translation
 ms.sourcegitcommit: 1e0b9d2b13cbfeff2ca7cb81a82a1fb2f5a1dd9b
@@ -8,14 +8,14 @@ ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
 
 ---
 
-# <a name="communicate-with-a-remote-app-service"></a>Communicate with a remote app service
+# <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
 
-In addition to launching an app on a remote device using a URI, you can run and communicate with *app services* on remote devices as well. Any Windows-based device can be used as either the client or host device. This gives you an almost limitless number of ways to interact with connected devices without needing to bring an app to the foreground.
+除了使用 URI 啟動遠端裝置上的 app，您還可以在遠端裝置上執行「App 服務」並與之通訊。 任何 Windows 裝置都可用來做為用戶端或主機裝置。 這讓您不需將 app 帶到前景，就能以幾乎數目不拘的方式來與連接的裝置互動。
 
-## <a name="set-up-the-app-service-on-the-host-device"></a>Set up the app service on the host device
-In order to run an app service on a remote device, you must already have a provider of that app service installed on that device. This guide will use the Random Number Generator app service, which is available on the [Windows universal samples repo](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices). For instructions on how to write your own app service, see [Create and consume an app service](how-to-create-and-consume-an-app-service.md).
+## <a name="set-up-the-app-service-on-the-host-device"></a>設定主機裝置上的 App 服務
+您必須已經在遠端裝置上安裝 app 服務的提供者，才能在該裝置上執行該 app 服務。 本指南會使用可在 [Windows 通用範例儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)上找到的隨機數字產生器 app 服務。 如需如何撰寫您自己的 app 服務的指示，請參閱[建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)。
 
-Whether you are using an already-made app service or writing your own, you will need to make a few edits in order to make the service compatible with remote systems. In Visual Studio, go to the app service provider's project and select its Package.appxmanifest file. Right-click and select **View Code** to view the full contents of the file. Find the **Extension** element that defines the project as an app service and names its parent project.
+不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案，然後選取其 Package.appxmanifest 檔案。 以滑鼠右鍵按一下，然後選取 [檢視程式碼] 以檢視檔案的完整內容。 尋找將專案定義為應用程式服務的 **Extension** 元素，並命名其父專案。
 
 ``` xml
 ...
@@ -27,7 +27,7 @@ Whether you are using an already-made app service or writing your own, you will 
 ...
 ```
 
-Change the namespace of the **AppService** element to **uap3** and add the **SupportsRemoteSystems** attribute:
+將 **AppService** 元素的命名空間變更為 **uap3**，並新增 **SupportsRemoteSystems** 屬性︰
 
 ``` xml
 ...
@@ -35,7 +35,7 @@ Change the namespace of the **AppService** element to **uap3** and add the **Sup
 ...
 ```
 
-In order to use elements in this new namespace, you must add the namespace definition at the top of the manifest file.
+若要使用這個新命名空間中的元素，您必須在資訊清單檔案的頂端新增命名空間定義。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,44 +48,44 @@ In order to use elements in this new namespace, you must add the namespace defin
 </Package>
 ```
 
-Build your app service provider project and deploy it to the host device(s).
+建置您的 app 服務提供者專案，並部署到主機裝置。
 
-## <a name="target-the-app-service-from-the-client-device"></a>Target the app service from the client device
-The device from which the remote app service is to be called needs an app with Remote Systems functionality. This can be added into the same app that provides the app service on the host device (in which case you would install the same app on both devices), or implemented in a completely different app.
+## <a name="target-the-app-service-from-the-client-device"></a>以用戶端裝置的 App 服務為目標
+要從中呼叫遠端 app 服務的裝置，需要有具備遠端系統功能的 app。 這可加入至在主機裝置上提供 app 服務的相同 app (在這種情況下，您會在這兩個裝置上安裝相同的 app)，或在完全不同的 app 中加以實作。
 
-The following **using** statements are needed for the code in this section to run as-is:
+本節的程式碼需要下列 **using** 陳述式，才能依現況執行：
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
+[!code-cs[主要](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
 
 
-You must first instantiate an [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.AppService.AppServiceConnection) object, just as if you were to call an app service locally. This process is covered in more detail in [Create and consume an app service](how-to-create-and-consume-an-app-service.md). In this example, the app service to target is the Random Number Generator service.
+您必須先將 [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.AppService.AppServiceConnection) 物件具現化，就如同您在本機呼叫應用程式服務一樣。 [建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)中提供更多關於此處理序的詳細資料。 在這個範例中，當成目標的 app 服務是隨機數字產生器服務。
 
 > [!NOTE]
-> It is assumed that a [RemoteSystem](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) object has already been acquired by some means within the code that would call the following method. See [Launch a remote app](launch-a-remote-app.md) for instructions on how to set this up.
+> 其中假設您已經在會呼叫下列方法的程式碼內，利用一些方法取得 [RemoteSystem](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) 物件。 如需這要如何設定的指示，請參閱[啟動遠端 app](launch-a-remote-app.md)。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
+[!code-cs[主要](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
 
-Next, a [**RemoteSystemConnectionRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemConnectionRequest) object is created for the intended remote device. It is then used to open the **AppServiceConnection** to that device. Note that in the example below, error handling and reporting is greatly simplified for brevity.
+接下來，為預定的遠端裝置建立 [**RemoteSystemConnectionRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemConnectionRequest) 物件。 然後用它針對該裝置開啟 **AppServiceConnection**。 請注意，為求簡潔，下列範例已大幅簡化錯誤處理和報告。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
+[!code-cs[主要](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
 
-At this point, you should have an open connection to an app service on a remote machine.
+此時，您應該針對遠端電腦上的應用程式服務開啟連線。
 
-## <a name="exchange-service-specific-messages-over-the-remote-connection"></a>Exchange service-specific messages over the remote connection
+## <a name="exchange-service-specific-messages-over-the-remote-connection"></a>透過遠端連線交換服務特定訊息
 
-From here, you can send and receive messages to and from the service in the form of [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) objects (for more information, see [Create and consume an app service](how-to-create-and-consume-an-app-service.md)). The Random number generator service takes two integers with the keys `"minvalue"` and `"maxvalue"` as inputs, randomly selects an integer within their range, and returns it to the calling process with the key `"Result"`.
+接下來，您能以 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) 物件的形式，對服務傳送訊息和接收和接收服務的訊息 (如需詳細資訊，請參閱[建立和取用應用程式服務](how-to-create-and-consume-an-app-service.md))。 隨機數字產生器服務會利用索引鍵 `"minvalue"` 與 `"maxvalue"`，取得兩個整數做為輸入，隨機選取其範圍內的整數，然後以索引鍵 `"Result"` 將值傳回呼叫的處理序。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
+[!code-cs[主要](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
 
-Now you have connected to an app service on a targeted host device, run an operation on that device, and received data to your client device in response.
+現在您已連線到目標主機裝置上的 app 服務、在該裝置上執行操作，然後接收到送至用戶端裝置的回應資料。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相關主題
 
-[Connected apps and devices (Project "Rome") overview](connected-apps-and-devices.md)  
-[Launch a remote app](launch-a-remote-app.md)  
-[Create and consume an app service](how-to-create-and-consume-an-app-service.md)  
-[Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
+[已連線的 App 與裝置 (專案 "Rome") 概觀](connected-apps-and-devices.md)  
+[啟動遠端 app](launch-a-remote-app.md)  
+[建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)  
+[遠端系統 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
 
 
 

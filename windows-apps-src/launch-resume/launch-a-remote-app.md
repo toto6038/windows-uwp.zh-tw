@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: Launch an app on a remote device
+title: "啟動遠端裝置上的 App"
 description: Learn how to launch an app on a remote device using Project "Rome".
 translationtype: Human Translation
 ms.sourcegitcommit: 4e94ee5b3c56f3ec20e3592b97348c291297a670
@@ -8,61 +8,61 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ---
 
-# <a name="launch-an-app-on-a-remote-device"></a>Launch an app on a remote device
+# <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
 
-This article explains how to launch a Windows app on a remote device.
+本文說明如何以啟動遠端裝置上的 Windows 應用程式。
 
-Starting in Windows 10, version 1607, a UWP app can launch a UWP app or Windows desktop application remotely on another device that is also running Windows 10, version 1607 or later, provided that both devices are signed on with the same Microsoft Account (MSA).
+自 Windows 10 (版本 1607) 開始，UWP app 可以在另一部也執行 Windows 10 (版本 1607 或更新版本) 的裝置上，從遠端啟動 UWP app 或 Windows 傳統型應用程式，但前提是這兩部裝置是使用相同的 Microsoft 帳戶 (MSA) 所登入。
 
-The remote launch feature enables task-oriented user experiences, where a user can start a task on one device and finish it on another. For example, if the user is listening to music on their phone in the car, they could then hand playback over to their Xbox One when they arrive at home. Remote launch allows you to pass contextual data to the remote app being launched, in order to pick up where the task was left off.
+遠端啟動功能會啟用工作導向的使用者體驗，使用者可以在其中一部裝置上啟動工作，並在另一部上完成該工作。 例如，如果使用者正在車上聆聽手機上的音樂，則當他們到家時可交由 Xbox One 繼續播放。 遠端啟動允許您將內容相關的資料傳遞至已啟動的遠端 app，以便挑選停止工作的位置。
 
-## <a name="add-the-remotesystem-capability"></a>Add the remoteSystem capability
+## <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's Package.appxmanifest file.
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 [功能] 索引標籤上選取 [遠端系統] 來新增此功能，或手動將下列程式碼行新增至專案的 Package.appxmanifest 檔案。
 
 ``` xml
 <Capabilities>
    <uap3:Capability Name="remoteSystem"/>
  </Capabilities>
 ```
-## <a name="find-a-remote-device"></a>Find a remote device
+## <a name="find-a-remote-device"></a>尋找遠端裝置
 
-You must first find the device that you want to connect with. [Discover remote devices](discover-remote-devices.md) discusses how to do this in detail. We'll use a simple approach here that forgoes filtering by device or connectivity type. We will create a remote system watcher that looks for remote devices, and write handlers for the events that are raised when devices are discovered or removed. This will provide us with a collection of remote devices.
+您必須先找到想要連線的裝置。 [探索遠端裝置](discover-remote-devices.md)會詳細討論如何執行這個動作。 這裡我們將使用簡單的方法，不用裝置或連線類型來進行篩選。 我們將建立會監看遠端裝置的遠端系統監控程式，並針對在探索到裝置或其遭到移除時所引發的事件撰寫處理常式。 這將會提供一組遠端裝置。
 
-The code in these examples assumes that you have a `using Windows.System.RemoteSystems` statement in your file.
+這些範例中的程式碼假設您的檔案中已有 `using Windows.System.RemoteSystems` 陳述式。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+[!code-cs[主要](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
 
-The first thing you must do before making a remote launch is call `RemoteSystem.RequestAccessAsync()`. Check the return value to make sure your app is allowed to access remote devices. One reason this check could fail is if you haven't added the `remoteSystem` capability to your app.
+進行遠端啟動之前的第一件事，就是您必須執行呼叫 `RemoteSystem.RequestAccessAsync()`。 檢查傳回值，以確定您的 app 能夠存取遠端裝置。 這項檢查失敗的可能原因之一是，您可能還沒有將 `remoteSystem` 功能新增到您的 app。
 
-The system watcher event handlers are called when a device that we can connect with is discovered or is no longer available. We will use these event handlers to keep an updated list of devices that we can connect to.
+在發現到我們能夠連線的裝置或其不再可用時，都會呼叫系統監控程式事件處理常式。 我們將使用這些事件處理常式，不時更新一份可連線裝置的清單。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+[!code-cs[主要](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
 
-We will track the devices by remote system ID using a **Dictionary**. An **ObservableCollection** is used to hold the list of devices that we can enumerate. An **ObservableCollection** also makes it easy to bind the list of devices to UI, though we won't do that in this example.
+我們會使用**字典**，利用遠端系統識別碼來追蹤裝置。 使用 **ObservableCollection** 來保留我們可列舉的裝置清單。 **ObservableCollection** 也能更容易將裝置清單繫結到 UI，但在這個範例中將不會這樣做。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+[!code-cs[主要](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
 
-Add a call to `BuildDeviceList()` in your app startup code before you attempt to launch a remote app.
+在您的 app 啟動程式碼中新增對 `BuildDeviceList()` 的呼叫後，再嘗試啟動遠端 app。
 
-## <a name="launch-an-app-on-a-remote-device"></a>Launch an app on a remote device
+## <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
 
-Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
+將您想要連線的裝置傳送至 [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API，從遠端啟動 app。 這個方法有三個多載。 簡單來說，這個範例會示範如何指定 URI，以啟用遠端裝置上的 app。 在這個範例中，URI 會在遠端電腦上開啟地圖 app，以 3D 方式檢視太空針塔。
 
-Other **RemoteLauncher.LaunchUriAsync** overloads allow you to specify options such as the URI of the web site to view if no appropriate app can be launched on the remote device, and an optional list of package family names that could be used to launch the URI on the remote device. You can also provide data in the form of key/value pairs. You might pass data to the app you are activating to provide context to the remote app, such as the name of the song to play and the current playback location when you hand off playback from one device to another.
+其他 **RemoteLauncher.LaunchUriAsync** 多載可讓您指定選項，例如，無法在遠端裝置上啟動適當的 app 時，可用以檢視的網站 URI，以及可用來在遠端裝置上啟動 URI 的選擇性套件系列名稱清單。 您也能以索引鍵/值組的形式提供資料。 您可能會將資料傳遞至您啟用的 app，以便將內容提供給遠端 app，例如，當您要將一部裝置的播放工作交由另一部裝置進行時，會提供要播放的歌曲名稱和目前的播放位置。
 
-In practical scenarios, you might provide UI to select the device you want to target. But to simplify this example, we'll just use the first remote device on the list.
+在實際案例中，您可能會提供 UI 來選擇想要設為目標的裝置。 但為了簡化這個範例，我們只會使用清單中的第一部裝置。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+[!code-cs[主要](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-The [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
+從 **RemoteLauncher.LaunchUriAsync()** 傳回的 [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) 物件，會提供遠端啟動是否成功以及為什麼不成功的相關資訊。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相關主題
 
-[Remote Systems API reference](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
-[Connected apps and devices (Project "Rome") overview](connected-apps-and-devices.md)  
-[Discover remote devices](discover-remote-devices.md)  
-[Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
+[遠端系統 API 參考](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
+[已連線的 App 與裝置 (專案 "Rome") 概觀](connected-apps-and-devices.md)  
+[探索遠端裝置](discover-remote-devices.md)  
+[遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)示範如何探索遠端系統、啟動遠端系統上的 app，以及使用 app 服務在兩個系統上執行的 app 之間傳送訊息。
 
 
 

@@ -1,23 +1,23 @@
 ---
 author: awkoren
-Description: Shows how to manually convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
+Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 手動轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: Manually convert a Windows desktop application to a Universal Windows Platform (UWP) app
+title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) App"
 translationtype: Human Translation
 ms.sourcegitcommit: ee697323af75f13c0d36914f65ba70f544d046ff
 ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
 
 ---
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Manually convert your app to UWP using the Desktop Bridge
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>使用傳統型橋接器將您的 App 手動轉換為 UWP
 
-Using the [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you may want to create an app package and manifest manually. This article contains the steps for getting started. It also explains how to add unplated assets to your app, which is not covered by the DAC. 
+使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定性，這相當有用。 但如果您的 app 是使用 xcopy 所安裝，或者您已熟悉 app 的安裝程式對於系統所做的變更，您可能想要手動建立應用程式套件和資訊清單。 本文包含開始使用的步驟。 其中也會說明如何將無背板資產新增至您的 app，而 DAC 並未涵蓋此項。 
 
-Here's how to get started:
+以下是如何開始使用的方式：
 
-## <a name="create-a-manifest-by-hand"></a>Create a manifest by hand
+## <a name="create-a-manifest-by-hand"></a>手動建立資訊清單
 
-Your _appxmanifest.xml_ file needs to have the following content (at the minimum). Change placeholders that are formatted like \*\*\*THIS\*\*\* to actual values for your application.
+您的 _appxmanifest.xml_ 檔案必須具有下列內容 (基本內容)。 將已格式化的預留位置 (例如 \*\*\*THIS\*\*\*) 變更為適用於應用程式的實際值。
 
 ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -57,29 +57,29 @@ Your _appxmanifest.xml_ file needs to have the following content (at the minimum
     </Package>
 ```
 
-## <a name="add-unplated-assets"></a>Add unplated assets
+## <a name="add-unplated-assets"></a>新增無背板資產
 
-Here's how to configure the 44x44 assets for your app that show up on the taskbar.
+以下是如何針對您的 app，設定要顯示於工作列上的 44x44 資產。
 
-1. Obtain the correct 44x44 images and copy them into the folder that contains your images (i.e., Assets).
+1. 取得正確的 44x44 影像，並將它們複製到包含您的影像 (也就是資產) 的資料夾。
 
-2. For each 44x44 image, create a copy in the same folder and append *.targetsize-44_altform-unplated* to the file name. You should have two copies of each icon, each named in a specific way. For example, after completing the process, your assets folder might contain *MYAPP_44x44.png* and *MYAPP_44x44.targetsize-44_altform-unplated.png* (note: the former is the icon referenced in the appxmanifest under VisualElements attribute *Square44x44Logo*). 
+2. 針對每個 44x44 影像，在相同的資料夾中建立一個複本，然後將 *.targetsize-44_altform-unplated* 附加至檔案名稱。 每個圖示應該會有兩個複本，每個均以特定方式命名。 例如，完成處理程序之後，您的資產資料夾可能包含 *MYAPP_44x44.png* 和 *MYAPP_44x44.targetsize-44_altform-unplated.png* (注意︰前者是 VisualElements 屬性 *Square44x44Logo* 下方 appxmanifest 中所參考的圖示)。 
 
-3.  In the AppXManifest, set the BackgroundColor for every icon you are fixing to transparent. This attribute can be found under VisualElements for each application.
+3.  在 AppXManifest 中，針對您要修正的每個圖示，將 BackgroundColor 設為透明。 這個屬性可以在每個應用程式的 VisualElements 下方找到。
 
-4.  Open CMD, change directory to the package's root folder, and create a priconfig.xml file by running the command ```makepri createconfig /cf priconfig.xml /dq en-US```.
+4.  開啟 CMD、將目錄變更為套件的根資料夾，然後執行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 來建立 priconfig.xml 檔案。
 
-5.  Using CMD, staying in the package’s root folder, create the resources.pri file(s) using the command ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. For example, the command for your app might look like ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
+5.  使用 CMD、留在套件的根資料夾中，然後使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 來建立 resources.pri 檔案。 例如，應用程式的命令可能看起來像這樣：```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。 
 
-6.  Package your AppX using the instructions in the next step to see the results.
+6.  使用下一個步驟中的指示封裝您的 AppX，以查看結果。
 
-## <a name="run-the-makeappx-tool"></a>Run the MakeAppX tool
+## <a name="run-the-makeappx-tool"></a>執行 MakeAppX 工具
 
-Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate an AppX for your project. MakeAppx.exe is included with the Windows 10 SDK. 
+使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows&nbsp;10 SDK。 
 
-To run MakeAppx, first ensure you've created an manifest file as described above. 
+若要執行 MakeAppx，必須先確定您已建立資訊清單檔案，如上方所述。 
 
-Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example: 
+接著，建立對應檔案。 檔案的開頭應該是 **[Files]**，然後列出磁碟上的每個原始程式檔，之後接著它們在套件中的目的地路徑。 以下是範例： 
 
 ```
 [Files]
@@ -89,17 +89,17 @@ Next, create a mapping file. The file should start with **[Files]**, then list e
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-Finally, run the following command: 
+最後，執行下列命令： 
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
 
-## <a name="sign-your-appx-package"></a>Sign your AppX package
+## <a name="sign-your-appx-package"></a>簽署您的 AppX 套件
 
-The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the .appx package.
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows&nbsp;10 SDK) 來簽署 .appx 套件。
 
-Example usage: 
+用法範例： 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
@@ -107,13 +107,13 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-When you run MakeCert.exe and you're asked to enter a password, select **none**. For more info on certificates and signing, see the following: 
+當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 \[無\]。 如需憑證和簽章的詳細資訊，請參閱下列各項︰ 
 
-- [How to: Create Temporary Certificates for Use During Development](https://msdn.microsoft.com/library/ms733813.aspx)
+- [做法︰建立開發時要使用的暫時憑證](https://msdn.microsoft.com/library/ms733813.aspx)
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 
-- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+- [SignTool.exe (簽署工具)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
 
 

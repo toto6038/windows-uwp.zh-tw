@@ -1,75 +1,75 @@
 ---
 author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
-description: Learn how to enable in-app purchases and trials in UWP apps.
-title: In-app purchases and trials
+description: "了解如何在 UWP app 中啟用 App 內購買和試用版。"
+title: "App 內購買和試用版"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: 7783b6017a314ddb24509c55db8134a4c214430f
 
 ---
 
-# <a name="in-app-purchases-and-trials"></a>In-app purchases and trials
+# <a name="in-app-purchases-and-trials"></a>App 內購買和試用版
 
-The Windows SDK provides APIs you can use to implement the following features to make more money from your Universal Windows Platform (UWP) app:
+Windows SDK 提供您可用來實作下列功能以從您的「通用 Windows 平台」(UWP) app 提升獲利的 API。
 
-* **In-app purchases**&nbsp;&nbsp;Whether your app is free or not, you can sell content or new app functionality (such as unlocking the next level of a game) from right within the app.
+* **App 內購買**&nbsp;&nbsp;無論您的 App 是否免費，您都可以直接從 App 內銷售內容或新的 App 功能 (例如將遊戲的下一個關卡解除鎖定)。
 
-* **Trial functionality**&nbsp;&nbsp;If you configure your app as a [free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial), you can entice your customers to purchase the full version of your app by excluding or limiting some features during the trial period. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
+* **試用功能**&nbsp;&nbsp;如果您將 App [在 Windows 開發人員中心儀表板中設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，您將可藉由在試用期間排除或限制某些功能，來吸引客戶購買完整版的 App。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
-This article provides an overview of how in-app purchases and trials work in UWP apps.
+本文提供 UWP app 中 App 內購買和試用版的運作方式概觀。
 
 <span id="choose-namespace" />
-## <a name="choose-which-namespace-to-use"></a>Choose which namespace to use
+## <a name="choose-which-namespace-to-use"></a>選擇要使用的命名空間
 
-There are two different namespaces you can use to add in-app purchases and trial functionality to your UWP apps, depending on which version of Windows 10 your apps target. Although the APIs in these namespaces serve the same goals, they are designed quite differently, and code is not compatible between the two APIs.
+您可以根據您 App 的目標是哪一個 Windows&nbsp;10 版本，使用兩種不同的命名空間將 App 內購買和試用版功能新增到 UWP app。 雖然這些命名空間中的 API 都是為相同的目標服務，但其設計方式截然不同，且兩個 API 之間的程式碼並不相容。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Starting in Windows 10, version 1607, apps can use the API in this namespace to implement in-app purchases and trials. We recommend that you use the members in this namespace if your app targets Windows 10, version 1607, or a later release. This namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. For more information about this namespace, see the [Using the Windows.Services.Store namespace](#api_intro) section in this article.
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;從 Windows 10 版本 1607 開始，App 可以使用此命名空間中的 API 來實作 App 內購買和試用版。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，建議您使用此命名空間中的成員。 這個命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 如需有關此命名空間的詳細資訊，請參閱本文中的[使用 Windows.Services.Store 命名空間](#api_intro)一節。
 
-* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;All versions of Windows 10 also support an older API for in-app purchases and trials in this namespace. Although any UWP app for Windows 10 can use this namespace, this namespace may not be updated to support new types of products and features in Dev Center and the Store in the future. For information about this namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;所有 Windows 10 版本也都支援一個較舊的 API 來用於此命名空間中的 App 內購買和試用版。 雖然 Windows 10 的任何 UWP app 都可以使用此命名空間，但此命名空間無法被更新來支援未來「開發人員中心」和「市集」中新類型的產品與功能。 如需有關此命名空間的資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 <span id="concepts" />
-## <a name="basic-concepts"></a>Basic concepts
+## <a name="basic-concepts"></a>基本概念
 
-This section introduces basic concepts for in-app purchases and trials in UWP apps. Most of these concepts apply to both the **Windows.Services.Store** and **Windows.ApplicationModel.Store** namespaces, except where noted.
+本節介紹 UWP app 中 App 內購買和試用版的基本概念。 這其中大部分的概念除非另有註明，否則均同時適用於 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空間。
 
-Every item that is offered in the Store is generally called a *product*. Most developers work with the following types of products: *apps* and *add-ons* (also known as in-app products or IAPs).
+「市集」中提供的每個項目通常稱為「產品」。 大部分的開發人員會使用下列類型的產品︰*App* 和 *附加元件* (也稱為 App 內產品或 IAP)。
 
-An add-on refers to a product or feature that you make available to your customers in the context of your app. An add-on can represent any functionality that your app offers to customers: for example, currency to be used in an app or game, new maps or weapons for a game, the ability to use your app without ads, or digital content such as music or videos for apps that have the ability to offer that type of content. Every app and add-on has an associated license that indicates whether the user is entitled to use the app or add-on. If the user is entitled to use the app or add-on as a trial, the license also provides additional info about the trial.
+附加元件是指您在 App 內容中提供給客戶使用的產品或功能。 附加元件可以代表您 App 提供給客戶的任何功能︰例如，在 App 或遊戲中使用的貨幣、適用於遊戲的新地圖或武器，能夠在沒有廣告的情況下使用您的 App，或者適用於能夠提供該類型內容之 App 的數位內容 (例如，音樂或視訊)。 每個 App 與附加元件都有相關的授權，可指出使用者是否有資格使用該 App 或附加元件。 如果使用者有資格使用 App 或附加元件，授權也會提供關於試用版的額外資訊。
 
-To offer an add-on to customers in your app, you must [define the add-on for your app in the Dev Center dashboard](../publish/iap-submissions.md) so the Store knows about it. Then, your app can use APIs in the **Windows.Services.Store** or **Windows.ApplicationModel.Store** namespace to offer the add-on for sale to the user as an in-app purchase.
+若要在您的 App 中為客戶提供附加元件，您必須[在開發人員中心儀表板中定義 App 的附加元件](../publish/iap-submissions.md)，讓「市集」知道它。 接著，您的 App 便可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空間中的 API，以 App 內購買形式提供要對使用者銷售的附加元件。
 
-UWP apps can offer the following types of add-ons.
+UWP app 可以提供下列類型的附加元件。
 
-| Add-on type |  Description  |
+| 附加元件類型 |  說明  |
 |---------|-------------------|
-| Durable  |  An add-on that persists for the lifetime that you specify in the [Windows Dev Center dashboard](../publish/enter-iap-properties.md). <p/><p/>By default, durable add-ons never expire, in which case they can only be purchased once. If you specify a particular duration for the add-on, the user can repurchase the add-on after it expires. |
-| Developer-managed consumable  |  An add-on that can be purchased, used, and purchased again. This type of add-on is often used for in-app currency. <p/><p/>For this type of consumable, you are responsible for keeping track of the user's balance of items that the add-on represents, and for reporting the purchase of the add-on as fulfilled to the Store after the user has consumed all the items. The user cannot purchase the add-on again until your app has reported the previous add-on purchase as fulfilled. <p/><p/>For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app or service must maintain the new remaining balance of 90 coins for the user. After the user has consumed all 100 coins, your app must report the add-on as fulfilled, and then the user can purchase the 100 coin add-on again.    |
-| Store-managed consumable  |  An add-on that can be purchased, used, and purchased again. This type of add-on is often used for in-app currency.<p/><p/>For this type of consumable, the Store keeps track of the user's balance of items that the add-on represents. When the user consumes any items, you are responsible for reporting those items as fulfilled to the Store, and the Store updates the user's balance. Your app can query for the current balance for the user at any time. After the user consumes all of the items, the user can purchase the add-on again.  <p/><p/> For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. After the user has consumed all 100 coins, the user can purchase the 100 coin add-on again. <p/><p/>**Note**&nbsp;&nbsp;Store-managed consumables are available starting in Windows 10, version 1607. To use Store-managed consumables, your app must target Windows 10, version 1607, or a later version, and it must use the API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace.  |
+| 耐久性  |  針對您在 [Windows 開發人員中心儀表板](../publish/enter-iap-properties.md)指定的存留期持續存在的附加元件。 <p/><p/>根據預設，耐久性附加元件永遠不會過期，在此情況下只需購買一次。 如果您為附加元件指定特定的持續時間，則使用者就能在該附加元件到期之後重新進行購買。 |
+| 開發人員管理的消費性產品  |  可供購買、使用，然後再次購買的附加元件。 這種類型的附加元件通常用於 App 內貨幣。 <p/><p/>針對這種類型的消費性產品，您需負責記錄使用者在該附加元件所代表項目的餘額，以及負責在使用者取用所有項目之後，向「市集」回報已完全交付此附加元件的購買。 使用者必須等到您的 App 將先前的附加元件購買回報為已完全交付之後，才能再次購買該附加元件。 <p/><p/>例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的 App 或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。    |
+| 市集管理的消費性產品  |  可供購買、使用，然後再次購買的附加元件。 這種類型的附加元件通常用於 App 內貨幣。<p/><p/>針對這種類型的消費性產品，「市集」會記錄使用者在該附加元件所代表項目的餘額。 當使用者取用任何項目時，您必須負責向市集回報這些項目已完成，而市集會更新使用者的餘額。 您的 App 可以隨時查詢使用者目前的餘額。 當使用者用完所有項目之後，該使用者就能再次購買該附加元件。  <p/><p/> 例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 10 個金幣，則您的 App 會向市集回報已完成附加元件的 10 個單位，而市集會更新剩下的餘額。 當使用者花光 100 個金幣之後，該使用者就能再次購買 100 個金幣的附加元件。 <p/><p/>**注意**&nbsp;&nbsp;市集管理的消費性產品是從 Windows 10 版本 1607 開始提供。 若要使用市集管理的消費性產品，您的 App 必須以 Windows 10 版本 1607 或更新版本為目標，而且必須使用 **Windows.Services.Store** 命名空間中的 API，而不是 **Windows.ApplicationModel.Store** 命名空間中的 API。  |
 
 <span />
 
->**Note**&nbsp;&nbsp;Other types of add-ons, such as durable add-ons with packages (also known as downloadable content or DLC) are only available to a restricted set of developers, and are not covered in this documentation.
+>**注意**&nbsp;&nbsp;其他類型的附加元件 (例如，具有套件的耐久性附加元件，也稱為可下載內容或 DLC) 僅可供一組有限的開發人員使用，而本文件中並未涵蓋這個部分。
 
 <span id="api_intro" />
-## <a name="using-the-windowsservicesstore-namespace"></a>Using the Windows.Services.Store namespace
+## <a name="using-the-windowsservicesstore-namespace"></a>使用 Windows.Services.Store 命名空間
 
-The remainder of this article describes how to implement in-app purchases and trials using the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace. This namespace is available only to apps that target Windows 10, version 1607, or later, and we recommend that apps use this namespace instead of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace if possible.
+本文的其餘部分將說明如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間來實作 App 內購買和試用版。 此命名空間僅適用於目標為 Windows&nbsp;10 版本 1607 或更新版本的 App，建議您儘可能讓 App 使用此命名空間，而不使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。
 
-If you're looking for information about the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+如需您正在尋找 **Windows.ApplicationModel.Store** 命名空間的相關資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-### <a name="get-started-with-the-storecontext-class"></a>Get started with the StoreContext class
+### <a name="get-started-with-the-storecontext-class"></a>開始使用 StoreContext 類別
 
-The main entry point to the **Windows.Services.Store** namespace is the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. This class provides methods you can use to get info for the current app and its available add-ons, get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks. To get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object, do one of the following:
+**Windows.Services.Store** 命名空間的主要進入點是 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別。 這個類別會提供一些方法，可供您用來取得目前 App 及其可用附加元件的資訊、取得目前 App 或其附加元件的授權資訊、為目前的使用者購買 App 或附加元件，以及執行其他工作。 若要取得 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件，請執行下列其中一項操作︰
 
-* In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
+* 在單一使用者 App (也就是只在啟動 App 的使用者內容中執行的 App)，使用 [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) 方法來取得 **StoreContext** 物件，您可以用來為使用者存取和管理 Windows 市集相關的資料。 大多數「通用 Windows 平台」(UWP) app 都是單一使用者 App。
 
   > [!div class="tabbedCodeSnippets"]
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
-* In a [multi-user app](../xbox-apps/multi-user-applications.md), use the [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for a specific user who is signed in with their Microsoft account while using the app. The following example gets a **StoreContext** object for the first available user.
+* 在[多使用者 App](../xbox-apps/multi-user-applications.md) 中，請使用 [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) 方法來取得 **StoreContext** 物件，您可以針對在使用 App 時使用其 Microsoft 帳戶來登入的特定使用者，使用此物件來存取和管理其「Windows 市集」相關資料。 下列範例會針對第一位可用的使用者取得 **StoreContext** 物件。
 
   > [!div class="tabbedCodeSnippets"]
   ```csharp
@@ -77,86 +77,86 @@ The main entry point to the **Windows.Services.Store** namespace is the [StoreCo
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
 
->**Note**&nbsp;&nbsp;Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) must perform additional steps to configure the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object before they can use this object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](#desktop).
+>**注意**&nbsp;&nbsp;使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式必須先執行額外的步驟來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件，才能使用此物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](#desktop)。
 
-After you have a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object, you can start calling methods to get Store product info for the current app and its add-ons, retrieve license info for the current app and its add-ons, purchase an app or add-on for the current user, and perform other tasks. For more information about common tasks you can perform using this namespace, see the following articles:
+在您具備 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件之後，您可以開始呼叫方法來取得目前 App 及其附加元件的「市集」產品資訊、擷取目前 App 及其附加元件的授權資訊、為目前的使用者購買 App 或附加元件，以及執行其他工作。 如需有關您可以使用此命名空間來執行之常見工作的詳細資訊，請參閱下列文章：
 
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
+* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
+* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
 
-For a sample app that demonstrates how to use the **Windows.Services.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+如需示範如何使用 **Windows.Services.Store** 命名空間的範例 App，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 <span id="implement-iap" />
-### <a name="implement-in-app-purchases"></a>Implement in-app purchases
+### <a name="implement-in-app-purchases"></a>實作 App 內購買
 
-To offer an in-app purchase to customers in your app using the **Windows.Services.Store** namespace:
+使用 **Windows.Services.Store** 命名空間在您的 App 中為客戶提供 App 內購買：
 
-1. If your app offers add-ons that customers can purchase, [create add-on submissions for your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+1. 如果您的 App 提供客戶可購買的附加元件，請[在開發人員中心儀表板中為 App 建立附加元件提交項目](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
-2. Write code in your app to [retrieve product info for your app or an add-on offered by your app](get-product-info-for-apps-and-add-ons.md) and then [determine whether the license is active](get-license-info-for-apps-and-add-ons.md) (that is, whether the user has a license to use the app or add-on). If the license isn't active, display a UI that offers the app or add-on for sale to the user as an in-app purchase.
+2. 請在您的 App 中撰寫程式碼以[擷取您 App 或您 App 所提供之附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)，然後[判斷授權是否有效](get-license-info-for-apps-and-add-ons.md) (亦即，使用者是否具有可使用 App 或附加元件的授權)。 如果授權無效，請顯示一個 UI 來以 App 內購買形式為使用者提供要銷售的 App 或附加元件。
 
-3. If the user chooses to purchase your app or add-on, use the appropriate method to purchase the product. If the user is purchasing your app or a durable add-on, follow the process in [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md). If the user is purchasing a consumable add-on, follow the instructions in [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md).
+3. 如果使用者選擇購買您的 App 或附加元件，請使用適當的方法來購買該產品。 如果使用者要購買您的 App 或耐久性附加元件，請依照[啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)中的程序操作。 如果使用者要購買消費性附加元件，請依照[啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)中的指示操作。
 
-4. Test your implementation by following the [testing guidance](#testing) in this article.
+4. 依照本文中的[測試指導方針](#testing)來測試您的實作。
 
 <span id="implement-trial" />
-### <a name="implement-trial-functionality"></a>Implement trial functionality
+### <a name="implement-trial-functionality"></a>實作試用版功能
 
-To exclude or limit features in a trial version of your app using the **Windows.Services.Store** namespace:
+使用 **Windows.Services.Store** 命名空間在您的 App 試用版中排除或限制功能：
 
-1. [Configure your app as a free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial).
+1. [在 Windows 開發人員中心儀表板中將 App 設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
-2. Write code in your app to [retrieve product info for your app or an add-on offered by your app](get-product-info-for-apps-and-add-ons.md) and then [determine whether the license associated with the app is a trial license](get-license-info-for-apps-and-add-ons.md).
+2. 在您的 App 中撰寫程式碼以[擷取您 App 或您 App 所提供之附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)，然後[判斷與該 App 關聯的授權是否為試用版授權](get-license-info-for-apps-and-add-ons.md)。
 
-3. Exclude or limit certain features in your app if it is a trial, and then enable the features when the user purchases a full license. For more information, see [Implement a trial version of your app](implement-a-trial-version-of-your-app.md).
+3. 如果是試用版，請在您的 App 中排除或限制特定功能，然後再於使用者購買完整版授權時啟用這些功能。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
 
-4. Test your implementation by following the [testing guidance](#testing) in this article.
+4. 依照本文中的[測試指導方針](#testing)來測試您的實作。
 
 <span id="testing" />
-### <a name="test-your-implementation"></a>Test your implementation
+### <a name="test-your-implementation"></a>測試您的實作
 
-The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. Instead, you must publish an app to the Store and download that app to your development device to use its license for testing. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, which can use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) class to simulate license info during testing.
+**Windows.Services.Store** 命名空間不提供您可在測試期間用來模擬授權資訊的類別。 您必須改為將 App 發行到「市集」，並將該 App 下載到您的開發裝置，才能使用它的授權進行測試。 這與使用 **Windows.ApplicationModel.Store** 命名空間的 App 是不同的體驗，這些 App 可以使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，在測試期間模擬授權資訊。
 
-If your app uses APIs in the **Windows.Services.Store** namespace to access info for your app and its add-ons, follow this process to test your code:
+如果您的 App 使用 **Windows.Services.Store** 命名空間中的 API 來存取 App 及其附加元件的資訊，請依照下列程序來測試您的程式碼：
 
-1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard, and make sure your app passes the certification process so it is listed in the Store. Optionally, you can [hide your app from the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) so it is unavailable to customers while you test it.
+1. 如果您尚未在「市集」中發行及提供您的 App，請確定您的 App 符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求、[將您的 App 提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)給「Windows 開發人員中心」儀表板，以及確定您的 App 通過認證程序，如此才能在「市集」中將它列出。 您可以選擇性地[從市集隱藏 App](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，讓使用者在您測試時無法取得該 App。
 
-2. Next, make sure you have completed the following:
+2. 接著，確定您已完成下列操作：
 
-  * Write code in your app that uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class and other related types in the **Windows.Services.Store** namespace to implement [in-app purchases](#implement-iap) or [trial functionality](#implement-trial).
+  * 在您的 App 中撰寫使用 **Windows.Services.Store** 命名空間中的 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 及其他相關類型來實作 [App 內購買](#implement-iap)或[試用功能](#implement-trial)的程式碼。
 
-  * If your app offers add-ons that customers can purchase, [create add-on submissions for your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+  * 如果您的 App 提供客戶可購買的附加元件，請[在開發人員中心儀表板中為 App 建立附加元件提交項目](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
-  * If you want to exclude or limit some features in a trial version of your app, [configure your app as a free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial).
+  * 如果您想在 App 試用版中排除或限制某些功能，請[在 Windows 開發人員中心儀表板中將 App 設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
-3. With your project open in Visual Studio, click the **Project menu**, point to **Store**, and then click **Associate App with the Store**. Complete the instructions in the wizard to associate the app project with the app in your Windows Dev Center account that you want to use for testing.
+3. 在您的專案於 Visual Studio 中開啟的情況下，按一下 [專案] 功能表、指向 [市集]，然後按一下 [將應用程式與市集建立關聯]。 請完成精靈中的指示，將 App 專案與「Windows 開發人員中心」帳戶中您想要用來測試的 App 建立關聯。
 
-  >**Note**&nbsp;&nbsp;If you do not associate your project with an app in the Store, the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) methods set the **ExtendedError** property of their return values to the error code value 0x803F6107. This value indicates that the Store doesn't have any knowledge about the app.
+  >**注意**&nbsp;&nbsp;如果您不會將專案與市集中的 App 建立關聯，[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法就會將其傳回值的 **ExtendedError** 屬性設定為錯誤碼值 0x803F6107。 這個值表示市集沒有任何關於該 App 的知識。
 
-4. If you have not done so already, install the app from the Store that you specified in the previous step, run the app once, and then close this app. This ensures that a valid license for the app is installed to your development device.
+4. 如果您尚未執行此動作，從市集中安裝您在上一個步驟指定的 App、執行一次 App，然後關閉此 App。 這可確保 App 的有效授權已安裝於您的開發裝置上。
 
-5. In Visual Studio, start running or debugging your project. Your code should retrieve app and add-on data from the Store app that you associated with your local project. If you are prompted to reinstall the app, follow the instructions and then run or debug your project.
+5. 在 Visual Studio 中，開始執行或偵錯您的專案。 您的程式碼應該從與您本機專案相關聯的市集 App 中擷取 App 和附加元件資料。 如果系統提示您重新安裝 App，請依照下列指示進行，然後執行或偵錯您的專案。
 
 <span id="receipts" />
-### <a name="receipts-for-in-app-purchases"></a>Receipts for in-app purchases
+### <a name="receipts-for-in-app-purchases"></a>App 內購買的收據
 
-The **Windows.Services.Store** namespace does not provide an API you can use to obtain a transaction receipt for successful purchases in your app's code. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, which can [use a client-side API to retrieve a transaction receipt](use-receipts-to-verify-product-purchases.md).
+**Windows.Services.Store** 命名空間不提供您可用來在 App 程式碼中取得成功購買交易收據的 API。 這與使用 **Windows.ApplicationModel.Store** 命名空間的 App 是不同的體驗，這些 App 可以[使用用戶端 API 來擷取交易收據](use-receipts-to-verify-product-purchases.md)。
 
-If you implement in-app purchases using the **Windows.Services.Store** namespace and you want to validate whether a given customer has purchased an app or add-on, you can use the [query for products method](query-for-products.md) in the [Windows Store collection REST API](view-and-grant-products-from-a-service.md). The return data for this method confirms whether the specified customer has an entitlement for a given product, and provides data for the transaction in which the user acquired the product. The Windows Store collection API uses Azure AD authentication to retrieve this information.
+如果您使用 **Windows.Services.Store** 命名空間來實作 App 內購買，而您想要驗證指定的使用者是否已購買 App 或附加元件，則您可以使用 [Windows 市集集合 REST API](view-and-grant-products-from-a-service.md) 中的[查詢產品方法](query-for-products.md)。 此方法的傳回資料會確認指定的客戶是否具備所指定產品的權益，並提供使用者取得該產品的交易資料。 「Windows 市集」集合 API 會使用 Azure AD 驗證來存取此資訊。
 
 <span id="desktop" />
-### <a name="using-the-storecontext-class-in-an-app-that-uses-the-desktop-bridge"></a>Using the StoreContext class in an app that uses the Desktop Bridge
+### <a name="using-the-storecontext-class-in-an-app-that-uses-the-desktop-bridge"></a>在使用傳統型橋接器的應用程式中使用 StoreContext 類別
 
-Desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) can use the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class to implement in-app purchases and trials. However, if you have a Win32 desktop application or a desktop application that has a window handle (HWND) that is associated with the rendering framework (such as a WPF application), your application must configure the **StoreContext** object to specify which application window is the owner window for modal dialogs that are shown by the object.
+使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的傳統型應用程式可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別來實作 App 內購買和試用版。 不過，如果您有 Win32 傳統型應用程式，或是有具備與轉譯架構 (例如 WPF 應用程式) 關聯之視窗控制代碼 (HWND) 的傳統型應用程式，您的應用程式就必須設定 **StoreContext** 物件，以指定哪一個應用程式視窗是物件所顯示的強制回應對話方塊的主控視窗。
 
-Many **StoreContext** members (and members of other related types that are accessed through the **StoreContext** object) display a modal dialog to the user for Store-related operations such as purchasing a product. If a desktop application does not configure the **StoreContext** object to specify the owner window for modal dialogs, this object will return inaccurate data or errors.
+許多 **StoreContext** 成員 (以及透過 **StoreContext** 物件存取的其他相關類型的成員) 都會針對市集相關作業 (例如購買產品) 對使用者顯示強制回應對話方塊。 如果傳統型應用程式未設定 **StoreContext** 物件來指定強制回應對話方塊的主控視窗，此物件將會傳回不正確的資料或錯誤。
 
-To configure a **StoreContext** object in a desktop application that uses the Desktop Bridge, follow these steps.
+若要在使用「傳統型橋接器」的傳統型應用程式中使用 **StoreContext** 物件，請依照下列步驟。
 
-  1. If your application is written in a managed language such as C# or Visual Basic, declare the [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) attribute as shown in the following example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
+  1. 如果您的應用程式是以受管理的語言 (例如 C# 或 Visual Basic) 撰寫的，請在您的 App 程式碼中以 [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) 屬性宣告 [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) 介面，如以下範例所示。 此範例假設您的程式碼檔案有 **System.Runtime.InteropServices** 命名空間的 **using** 陳述式。
 
     > [!div class="tabbedCodeSnippets"]
     ```csharp
@@ -169,9 +169,9 @@ To configure a **StoreContext** object in a desktop application that uses the De
     }
     ```
 
-    If your application is written in native code, such as C++, you do not need to import the **IInitializeWithWindow** interface. Simply add a reference to the shobjidl.h header file in your code.
+    如果您的應用程式是以原生程式碼 (例如 C++) 撰寫的，您就不需要匯入 **IInitializeWithWindow** 介面。 只要在您的程式碼中新增對 shobjidl.h 標頭檔案的參考即可。
 
-  2. Use the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) (or [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx)) method to get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object as described earlier in this article and cast this object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object. Then, call the [Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following example shows how to pass the handle of your app's main window to the method.
+  2. 使用 [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) (或 [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx)) 方法來取得 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件 (如本文稍早所述)，然後將此物件轉換 [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) 物件。 接著，呼叫 [Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) 方法，並傳遞要作為 **StoreContext** 方法所顯示任何強制回應對話方塊之主控視窗的視窗控制代碼。 下列範例說明如何將您 App 主要視窗的控制代碼傳遞給方法。
 
     > [!div class="tabbedCodeSnippets"]
     ```csharp
@@ -181,35 +181,35 @@ To configure a **StoreContext** object in a desktop application that uses the De
     ```
 
 <span id="products-skus" />
-### <a name="products-skus-and-availabilities"></a>Products, SKUs, and availabilities
+### <a name="products-skus-and-availabilities"></a>產品、SKU 和可用性
 
-Every product in the Store has at least one *SKU*, and each SKU has at least one *availability*. These concepts are abstracted away from most developers in the Windows Dev Center dashboard, and most developers will never define SKUs or availabilities for their apps or add-ons. However, because the object model for Store products in the **Windows.Services.Store** namespace includes SKUs and availabilities, a basic understanding of these concepts can be helpful.
+「市集」中的每個產品都至少有一個 *SKU*，而每個 SKU 都至少會有一個「可用性」。 這些概念對於 Windows 開發人員中心儀表板中的大多數開發人員而言是非常抽象的，而且大多數開發人員永遠都不會為他們的 App 或附加元件定義 SKU 或可用性。 不過，由於 **Windows.Services.Store** 命名空間中適用於市集產品的物件模型包含了 SKU 和可用性，因此對這些概念有基本了解是很有幫助的。
 
-| Object type |  Description  |
+| 物件類型 |  描述  |
 |---------|-------------------|
-| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  This class represents any type of product that is available in the Store, including an app or add-on. This class provides properties you can use to access data such as the Store ID of the product, the images and videos for the Store listing, and pricing info. It also provides methods you can use to purchase the product. |
-| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  This class represents a *SKU* for a product. A SKU is a specific version of a product with its own description, price, and other unique product details. Each app or add-on has a default SKU. The only time most developers will ever have multiple SKUs for an app is if they publish a full version of their app and a trial version (in the Store catalog, each of these versions is a different SKU of the same app). <p/><p/> Some publishers have the ability to define their own SKUs. For example, a large game publisher might release a game with one SKU that shows green blood in markets that don't allow red blood and a different SKU that shows red blood in all other markets. Alternatively, a publisher who sells digital video content might publish two SKUs for a video, one SKU for the high-definition version and a different SKU for the standard-definition version. <p/><p/> Each product has a [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx) property you can use to access the SKUs. |
-| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  This class represents an *availability* for a SKU. An availability is a specific version of a SKU with its own unique pricing info. Each SKU has a default availability. Some publishers have the ability to define their own availabilities to introduce different price options for a given SKU. <p/><p/> Each SKU has an [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) property you can use to access the availabilities. For most developers, each SKU has a single default availability.  |
+| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  此類別代表「市集」中提供的任何類型產品，包括 App 或附加元件。 此類別提供可讓您用來存取資料 (例如產品的「市集識別碼」、「市集」清單的影像和視訊，以及定價資訊) 的屬性。 它也提供可讓您用來購買產品的方法。 |
+| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  此類別代表產品的 *SKU*。 SKU 是一個特定的產品版本，具有自己的描述、價格，以及其他獨特的產品詳細資料。 每個 App 或附加元件都有預設的 SKU。 大多數開發人員會對一個 App 提供多個 SKU 的唯一時刻是在其發行完整版的 App 和試用版時 (在市集型錄中，這其中每一個版本都是相同 App 的不同 SKU)。 <p/><p/> 某些發行者可以定義自己的 SKU。 例如，大型遊戲發行者可能在不允許紅色血液的市場中使用一個顯示綠色血液的 SKU 來發佈遊戲，並在所有其他市場中使用另一個顯示紅色血液的 SKU 來發佈。 或者，銷售數位視訊內容的發行者可能針對某個視訊發佈兩個 SKU，一個 SKU 適用於高解析度版本，而另一個 SKU 適用於標準畫質版本。 <p/><p/> 每個產品都有 [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx) 屬性，可讓您用來存取 SKU。 |
+| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  此類別代表 SKU 的「可用性」。 可用性是一個特定的 SKU 版本，具有自己獨特的定價資訊。 每個 SKU 都有預設的可用性。 某些發行者能夠定義自己的可用性，來介紹指定 SKU 的不同價格選項。 <p/><p/> 每個 SKU 都會有 [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) 屬性，可讓您用來存取可用性。 對於大部分開發人員而言，每個 SKU 都會有一個預設的可用性。  |
 
 <span id="store_ids" />
-### <a name="store-ids"></a>Store IDs
+### <a name="store-ids"></a>市集識別碼
 
-Every app and add-on in the Store has an associated **Store ID**. Many of the APIs in the **Windows.Services.Store** namespace require the Store ID in order to perform an operation on an app or add-on. Products, SKUs, and availabilities have different Store ID formats.
+市集中的每個 App 與附加元件都會有一個相關聯的**市集識別碼**。 **Windows.Services.Store** 命名空間中的許多 API 需要有市集識別碼，才能在 App 或附加元件上執行操作。 產品、SKU 和可用性具有不同的市集識別碼格式。
 
-| Object type |  Store ID format  |
+| 物件類型 |  市集識別碼格式  |
 |---------|-------------------|
-| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  The Store ID of any product in the Store is 12-character alpha-numeric string, such as ```9NBLGGH4R315```. This Store ID is available in the Windows Dev Center dashboard page for the app or add-on, and it is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) property [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object. This ID is sometimes called the *product Store ID*. |
-| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  For a SKU, the Store ID has the format ```<product Store ID>/xxxx```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product. For example, ```9NBLGGH4R315/000N```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) property of a  [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) object, and it is sometimes called the *SKU Store ID*. |
-| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  For an availability, the Store ID has the format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product and ```yyyyyyyyyyyy``` is a 12-character alpha-numeric string that identifies an availability for the SKU. For example, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) property of a  [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) object, and it is sometimes called the *availability Store ID*.  |
+| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  「市集」中任何產品的「市集識別碼」都是 12 個字元的英數字串，例如 ```9NBLGGH4R315```。 此市集識別碼適用於 App 或附加元件的 Windows 開發人員中心儀表板頁面，而且是由 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 物件的 [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) 屬性所傳回。 這個識別碼有時也稱為「產品市集識別碼」。 |
+| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  就 SKU 而言，「市集識別碼」的格式為 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU。 例如，```9NBLGGH4R315/000N```。 這個識別碼是由 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 物件的 [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) 屬性所傳回，有時稱為「SKU 市集識別碼」。 |
+| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  就可用性而言，「市集識別碼」的格式為 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是 4 個字元的英數字串，用來識別產品的 SKU，而 ```yyyyyyyyyyyy``` 是 12 個字元的英數字串，用來識別 SKU 的可用性。 例如，```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 這個識別碼是由 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 物件的 [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) 屬性所傳回，有時稱為「可用性市集識別碼」。  |
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相關主題
 
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
-* [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+* [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
+* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
+* [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
+* [使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
 
 

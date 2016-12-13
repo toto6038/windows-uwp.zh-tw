@@ -1,41 +1,41 @@
 ---
 author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: Enumerate and query files and folders
-description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+title: "列舉和查詢檔案和資料夾"
+description: "存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢，來查詢位置中的檔案和資料夾。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
 ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# <a name="enumerate-and-query-files-and-folders"></a>Enumerate and query files and folders
+# <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。
 
-For detailed guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
+如需如何儲存通用 Windows 平台 App 資料的詳細指導方針，請參閱 [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) 類別。
 
-**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
+**注意：**另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
  
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先決條件
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
--   **Access permissions to the location**
+-   **位置的存取權限**
 
-    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
+    例如，這些範例中的程式碼需要 **picturesLibrary** 功能，但是您的位置可能需要其他功能或完全不需要功能。 若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
-## <a name="enumerate-files-and-folders-in-a-location"></a>Enumerate files and folders in a location
+## <a name="enumerate-files-and-folders-in-a-location"></a>列舉位置中的檔案和資料夾
 
-> **Note**  Remember to declare the **picturesLibrary** capability.
+> **注意：**請記得宣告 **picturesLibrary** 功能。
 
-In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
+在這個範例中，我們會先使用 [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) 方法來取得 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根資料夾中 (不在子資料夾) 的所有檔案，並列出每個檔案的名稱。 接下來，我們會使用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) 方法來取得 **PicturesLibrary** 中的所有子資料夾，並列出每個子資料夾的名稱。
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
 > [!div class="tabbedCodeSnippets"]
@@ -138,10 +138,10 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > ```
 
 
-> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> **注意：**在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
  
 
-Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
+或者，您可以使用 [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) 方法取得特定位置中的所有項目 (檔案與子資料夾)。 下列範例使用 **GetItemsAsync** 方法取得 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根資料夾中 (不在子資料夾) 的所有檔案與子資料夾。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -210,11 +210,11 @@ Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/li
 > Next item
 > ```
 
-## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Query files in a location and enumerate matching files
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查詢位置中的檔案並列舉相符的檔案
 
-In this example we query for all the files in the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) and pass the [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) value to the method. That gives us a [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) object.
+在這個範例中，我們會查詢依月份群組的 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 中的所有檔案，這次範例遞迴到子資料夾。 首先，我們會呼叫 [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) 並將 [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) 值傳遞到方法。 我們會得到 [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) 物件。
 
-Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) which returns [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
+接著我們會呼叫 [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074)，它會傳回代表虛擬資料夾的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件。 在這個案例中，我們依月份分組，讓每個虛擬資料夾代表相同月份的檔案群組。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -313,7 +313,7 @@ Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microso
 > Next folder
 > ```
 
-The output of the example looks similar to the following.
+範例的輸出結果看起來和下面類似。
 
 ``` syntax
 July ‎2015 (2)

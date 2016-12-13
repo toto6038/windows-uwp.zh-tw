@@ -1,72 +1,72 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: Use this method in the Windows Store submission API to get data for an existing add-on submission.
-title: Get an add-on submission using the Windows Store submission API
+description: "在 Windows 市集提交 API 中使用這個方法，取得現有附加元件提交的資料。"
+title: "使用 Windows 市集提交 API 取得附加元件提交"
 translationtype: Human Translation
 ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
 ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 
 ---
 
-# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>Get an add-on submission using the Windows Store submission API
+# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件提交
 
-Use this method in the Windows Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
+在 Windows 市集提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的資料。 如需使用 Windows 市集提交 API 建立附加元件提交的程序的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先決條件
 
-To use this method, you need to first do the following:
+若要使用這個方法，您必須先進行下列動作：
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
+* 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
+* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## <a name="request"></a>Request
+## <a name="request"></a>要求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
-| Method | Request URI                                                      |
+| 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>要求的標頭
 
-| Header        | Type   | Description                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/>
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>要求參數
 
-| Name        | Type   | Description                                                                 |
+| 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to get. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| inAppProductId | 字串 | 必要。 包含您想要取得提交之附加元件的市集識別碼。 市集識別碼可在開發人員中心儀表板上取得，並且包含在[建立附加元件](create-an-add-on.md)或[取得附加元件詳細資料](get-all-add-ons.md)要求的回應資料中。  |
+| submissionId | 字串 | 必要。 要取得之提交的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中。  |
 
 <span/>
 
-### <a name="request-body"></a>Request body
+### <a name="request-body"></a>要求本文
 
-Do not provide a request body for this method.
+不提供此方法的要求主體。
 
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>要求範例
 
-The following example demonstrates how to get an add-on submission.
+下列範例示範如何取得附加元件提交。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>回應
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
+下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應主體包含指定提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
 
 ```json
 {
@@ -131,26 +131,26 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## <a name="error-codes"></a>Error codes
+## <a name="error-codes"></a>錯誤碼
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
-| Error code |  Description   |
+| 錯誤碼 |  描述   |
 |--------|------------------|
-| 404  | The submission could not be found. |
-| 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | 找不到提交。 |
+| 409  | 提交不屬於指定的附加元件，或附加元件使用 [Windows 市集提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
 
 <span/>
 
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相關主題
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Create an add-on submission](create-an-add-on-submission.md)
-* [Commit an add-on submission](commit-an-add-on-submission.md)
-* [Update an add-on submission](update-an-add-on-submission.md)
-* [Delete an add-on submission](delete-an-add-on-submission.md)
-* [Get the status of an add-on submission](get-status-for-an-add-on-submission.md)
+* [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [建立附加元件提交](create-an-add-on-submission.md)
+* [認可附加元件提交](commit-an-add-on-submission.md)
+* [更新附加元件提交](update-an-add-on-submission.md)
+* [刪除附加元件提交](delete-an-add-on-submission.md)
+* [取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)
 
 
 

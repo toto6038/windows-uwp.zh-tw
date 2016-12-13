@@ -1,32 +1,32 @@
 ---
 author: TylerMSFT
 title: Connected apps and devices (Project "Rome")
-description: This section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
+description: "本節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。"
 translationtype: Human Translation
 ms.sourcegitcommit: 871599217e6da0eb0febd140323e99db7d1258cb
 ms.openlocfilehash: 2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e
 
 ---
 
-# <a name="connected-apps-and-devices-project-rome"></a>Connected apps and devices (Project "Rome")
+# <a name="connected-apps-and-devices-project-rome"></a>已連線的 App 與裝置 (專案 Rome)
 
-This section explains how to connect apps across devices and platforms using Project "Rome." Learn how to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
+本節說明如何使用專案 Rome 跨裝置與平台來和 app 連線。 了解如何探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。
 
-Most people have multiple devices and often begin an activity on one device and finish it on another. To accommodate this, apps need to span devices and platforms.
+大部分的人擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，app 需要跨越裝置與平台。
 
-The [Remote Systems APIs](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems) introduced in Windows 10, version 1607, enable you to write apps that allow users to start a task on one device and finish it on another. The task remains the central focus, and users can do their work on the device that is most convenient. For example, you might be listening to the radio on your phone in the car, but when you get home you may want to transfer playback to your Xbox One that is hooked up to your home stereo system.
+Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 app，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，您可能會在車內聆聽手機上的收音機，但當您到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
 
-You can also use Project "Rome" for companion devices, or remote control scenarios. Use the app messaging APIs to create an app channel between two devices to send and receive custom messages. For example, you can write an app for your phone that controls playback on your TV, or a companion app that provides information about the characters on a TV show you are watching on another app.  
+您也可以將專案 "Rome" 用於配對裝置或遠端控制案例。 使用 app 訊息傳送 API，在兩部裝置之間建立 app 通道，來傳送和接收自訂訊息。 例如，您可以為手機撰寫可控制電視播放的 app，或撰寫配對 app 來為您在另一個 app 上觀看的電視節目角色提供相關資訊。  
 
-Devices can be connected proximally through Bluetooth and wireless, or remotely through the cloud, and are connected by the Microsoft account of the person using them.
+近端可以透過藍牙和無線來與裝置連線，或使用裝置使用者的 Microsoft 帳戶透過雲端從遠端連線。
 
-See the [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) for examples of how to discover remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
+請參閱[遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems )，以取得如何探索遠端系統、啟動遠端系統上的 app，以及使用 app 服務在兩個系統上執行的 app 之間傳送訊息的範例。
 
-| Topic | Description |
+| 主題 | 說明 |
 |-------|-------------|
-| [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
-| [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
-| [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
+| [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
+| [啟動遠端裝置上的 app](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的 app。  |
+| [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上的 app 互動。 |
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
-description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to Universal Windows Platform (UWP) apps.
-title: Porting Windows Runtime 8.x XAML and UI to UWP&quot;
+description: "以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至通用 Windows 平台 (UWP) app。"
+title: "將 Windows Runtime 8.x XAML 與 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
 ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
@@ -9,27 +9,27 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 ---
 
-# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Porting Windows Runtime 8.x XAML and UI to UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The previous topic was [Troubleshooting](w8x-to-uwp-troubleshooting.md).
+前一個主題是[疑難排解](w8x-to-uwp-troubleshooting.md)。
 
-The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to Universal Windows Platform (UWP) apps. You'll find that most of your markup is compatible, although you may need to make some adjustments to the system Resource keys or custom templates that you're using. The imperative code in your view models will require little or no change. Even much, or most, of the code in your presentation layer that manipulates UI elements should also be straightforward to port.
+以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 應用程式轉譯至通用 Windows 平台 (UWP) 應用程式。 您會發現大部分標記都相容，雖然您可能需要對系統的「資源」索引鍵或您使用的自訂範本進行一些調整。 檢視模型中的命令式程式碼需要少許變更或可保持不變。 甚至還可以直接移植展示層中操作 UI 元素的許多或大多數命令式程式碼。
 
-## <a name="imperative-code"></a>Imperative code
+## <a name="imperative-code"></a>命令式程式碼
 
-If you just want to get to the stage where your project builds, you can comment or stub out any non-essential code. Then iterate, one issue at a time, and refer to the following topics in this section (and the previous topic: [Troubleshooting](w8x-to-uwp-troubleshooting.md)), until any build and runtime issues are ironed-out and your port is complete.
+如果您只是想要到達專案建置階段，您可以將任何非必要程式碼標成註解或清除。 然後逐一查看問題，並參閱本節 (與上一個主題：[疑難排解](w8x-to-uwp-troubleshooting.md)) 中的下列主題，直到任何建置與執行階段問題都已解決，且您的移植已完成為止。
 
-## <a name="adaptiveresponsive-ui"></a>Adaptive/responsive UI
+## <a name="adaptiveresponsive-ui"></a>調適型/回應式 UI
 
-Because your app can run on a potentially wide range of devices—each with its own screen size and resolution—you'll want to go beyond the minimal steps to port your app and you'll want to tailor your UI to look its best on those devices. You can use the adaptive Visual State Manager feature to dynamically detect window size and to change layout in response, and an example of how to do that is shown in the section [Adaptive UI](w8x-to-uwp-case-study-bookstore2.md) in the Bookstore2 case study topic.
+因為您的 app 可以在許多不同的裝置上執行，每個裝置都有其獨特的螢幕大小與解析度，因此您將會想要透過最少的步驟來完成您的 app 移植，並讓您的 UI 能夠在那些裝置上呈現最佳外觀。 您可以使用調適型 Visual State Manager 功能來動態偵測視窗大小及變更回應配置，Bookstore2 案例研究主題的[調適型 UI](w8x-to-uwp-case-study-bookstore2.md) 中已經提供此做法的範例。
 
-## <a name="back-button-handling"></a>Back button handling
+## <a name="back-button-handling"></a>[返回] 按鈕處理
 
-For Universal 8.1 apps, Windows Store apps and Windows Phone Store apps have different approaches to the UI you show and the events you handle for the back button. But, for Windows 10 apps, you can use a single approach in your app. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event.
+針對通用 8.1 應用程式，Windows 市集應用程式和 Windows Phone 市集應用程式對於您顯示的 UI，以及您為返回按鈕處理的事件有不同的方法。 但是，對於 Windows 10 應用程式，您可以在應用程式中使用單一方法。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
-The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you do not need to confirm navigation (for example, to warn about unsaved changes).
+下面的範例適用於所有裝置系列，且非常適合在可將相同處理套用至所有頁面以及您不需要確認瀏覽 (例如，提供未儲存變更的警告) 的情況下使用。
 
 ```csharp
    // app.xaml.cs
@@ -71,93 +71,93 @@ The example below works for all device families and it is good for cases where t
     }
 ```
 
-There's also a single approach for all device families for programmatically exiting the app.
+也有適用於所有裝置系列，並以程式控制方式控制現有應用程式的單一方法。
 
 ```csharp
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## <a name="charms"></a>Charms
+## <a name="charms"></a>常用鍵
 
-You don't need to change any of your code that integrates with charms, but you do need to add some UI to your app to take the place of the Charms bar, which is not a part of the Windows 10 shell. A Universal 8.1 app running on Windows 10 has its own replacement UI provided by system-rendered chrome in the app's title bar.
+您不需要變更任何與常用鍵整合的程式碼，但需要將一些 UI 新增到應用程式，以取代不屬於 Windows 10 殼層一部分的常用鍵列。 在 Windows 10 上執行的通用 8.1 應用程式，在應用程式的標題列中，會有由系統轉譯組件區塊所提供的取代 UI。
 
-## <a name="controls-and-control-stylestemplates"></a>Controls, and control styles/templates
+## <a name="controls-and-control-stylestemplates"></a>控制項與控制項樣式/範本
 
-A Universal 8.1 app running on Windows 10 will retain the 8.1 appearance and behavior with respect to controls. But, when you port that app to a Windows 10 app, there are some differences in appearance and behavior to be aware of. The architecture and design of controls is essentially unchanged for Windows 10 apps, so the changes are mostly around [design language](#design-language), simplification, and usability improvements.
+在 Windows 10 上執行的通用 8.1 應用程式將保留與控制項相關的 8.1 外觀和行為。 但是，當您將應用程式移植到 Windows 10 應用程式時，會在外觀和行為上產生一些需注意的差異。 適用於 Windows 10 應用程式的控制項架構和設計基本上不會變更，因此，變更大部分都會與[設計語言](#design-language)、簡化，以及可用性的改進有關。
 
-**Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps and in Windows Store apps, but not in Windows Phone Store apps. For this reason (and because of the system resource keys that are supported for Windows 10 apps), we recommend that you re-use the custom styles/templates from your Windows Store apps when you're porting your app to Windows 10.
-If you want to be certain that your custom styles/templates are using the latest set of visual states, and are benefitting from performance improvements made to the default styles/templates, then edit a copy of the new Windows 10 default template and re-apply your customization to that. One example of a performance improvement is that any **Border** that formerly enclosed a **ContentPresenter** or a Panel has been removed and a child element now renders the border.
+**注意** PointerOver 視覺狀態在 Windows 10 應用程式和 Windows 市集應用程式的自訂樣式/範本中是相關的，但在 Windows Phone 市集應用程式中則不相關。 基於這個原因 (而且因為 Windows 10 app 支援的系統資源索引鍵的緣故)，我們建議您在將 app 移植到 Windows 10 時，重複使用 Windows 市集應用程式中的自訂樣式/範本。
+如果您想要確定您的自訂樣式/範本使用最新的一組視覺狀態，並且能夠從您對預設樣式/範本所進行的效能改進中獲益，請編輯新 Windows 10 預設範本的複本，然後在該複本中重新套用自訂項目。 效能改進的其中一個範例是，已移除先前括住 **ContentPresenter** 的任何 **Border** 或面板，而且子元素現在會呈現框線。
 
-Here are some more specific examples of changes to controls.
+以下是控制項變更的一些更具體的範例。
 
-| Control name | Change |
+| 控制項名稱 | 變更 |
 |--------------|--------|
-| **AppBar**   | If you are using the **AppBar** control ([**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) is recommended instead), then it is not hidden by default in a Windows 10 app. You can control this with the [**AppBar.ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/dn633872) property. |
-| **AppBar**, [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows 10 app, **AppBar** and [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) have a **See more** button (the ellipsis). |
-| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows Store app, the secondary commands of a [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) are always visible. In a Windows Phone Store app, and in a Windows 10 app, the don't appear until the command bar opens. |
-| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | For a Windows Phone Store app, the value of [**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) does not affect whether or not the bar is light-dismissible. For a Windows 10 app, if **IsSticky** is set to true, then the **CommandBar** disregards a light dismiss gesture. |
-| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows 10 app, [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) does not handle the [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) nor [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) events. Nor does it respond to a tap nor a swipe up. You still have the option to handle these events and set [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
-| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Review how your app looks with the visual changes to [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) and [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280). For a Windows 10 app running on a mobile device, these controls no longer navigate to a selection page but instead use a light-dismissible popup. |
-| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | In a Windows 10 app, you can't put [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) or [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) inside a fly-out. If you want those controls to be displayed in a popup-type control, then you can use [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) and [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
-| **GridView**, **ListView** | For **GridView**/**ListView**, see [GridView/ListView changes](#gridview). |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | In a Windows Phone Store app, a [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) control wraps around from the last section to the first. In a Windows Store app, and in a Windows 10 app, hub sections do not wrap around. |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | In a Windows Phone Store app, a [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) control's background image moves in parallax relative to the hub sections. In a Windows Store app, and in a Windows 10 app, parallax is not used. |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | In a Universal 8.1 app, the [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) property causes the section header—and a chevron glyph rendered next to it—to become interactive. In a Windows 10 app, there is an interactive "See more" affordance beside the header, but the header itself is not interactive. **IsHeaderInteractive** still determines whether interaction raises the [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) event. |
-| **MessageDialog** | If you're using **MessageDialog**, then consider instead using the more flexible [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972). Also, see the [XAML UI Basics](http://go.microsoft.com/fwlink/p/?linkid=619992) sample. |
-| **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** and **PickerFlyout** are deprecated for a Windows 10 app. For a single selection fly-out, use [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030); for more complex experiences, use [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
-| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | The [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) property is deprecated in a Windows 10 app, and setting it has no effect. Use [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) instead, which defaults to **Peek** (in which an eye glyph is displayed, like in a Windows Store app). Also, see [Guidelines for password boxes](https://msdn.microsoft.com/library/windows/apps/dn596103). |
-| [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | The [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) control is now universal, it is no longer limited to use on mobile devices. |
-| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Although [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) is implemented in the Universal device family, it is not fully functional on mobile devices. See [SearchBox deprecated in favor of AutoSuggestBox](#searchbox). |
-| **SemanticZoom** | For **SemanticZoom**, see [SemanticZoom changes](#semantic-zoom). |
-| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | Some default properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) have changed. [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) is **Auto**, [**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) is **Auto**, and [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) is **Disabled**. If the new default values are not appropriate for your app, then you can change them either in a style or as local values on the control itself.  |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | In a Windows Store app, spell-checking is off by default for a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). In a Windows Phone Store app, and in a Windows 10 app, it is on by default. |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | The default font size for a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) has changed from 11 to 15. |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | The default value of [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) has changed from **Default** to **DetectFromContent**. If that's undesirable, then use **UseFlowDirection**. **Default** is deprecated. |
-| Various | Accent color applies to a Windows Phone Store apps, and to Windows 10 apps, but not to Windows Store apps.  |
+| **AppBar**   | 如果您使用的是 **AppBar** 控制項 (建議改用 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927))，則預設在 Windows 10 應用程式中不會隱藏該控制項。 您可以使用 [**AppBar.ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/dn633872) 屬性加以控制。 |
+| **AppBar**、[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 10 應用程式中，**AppBar** 和 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 都有一個 [**查看更多**] 按鈕 (省略符號)。 |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 市集應用程式中，永遠可以看到 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 的次要命令。 在 Windows Phone 市集應用程式以及 Windows 10 應用程式中，不會顯示這些命令，直到命令列開啟為止。 |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 針對 Windows Phone 市集應用程式，[**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) 的值不會影響命令列是否會消失關閉。 針對 Windows 10 應用程式，如果將 **IsSticky** 設定為 True，則 **CommandBar** 會略過消失關閉手勢。 |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 10 應用程式中，[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 不會處理 [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) 事件，也不會處理 [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 事件。 它不會回應點選也不會回應向上撥動。 您仍然可以選擇處理這些事件，並設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939)。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 檢閱在視覺變更為 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 之後您應用程式的外觀。 針對在行動裝置上執行的 Windows 10 應用程式，這些控制項便不再瀏覽到選取頁面，而是改用會消失關閉的快顯視窗。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 應用程式中，您無法將 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放在飛出視窗內。 如果您希望在快顯類型控制項中顯示這些控制項，則您可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
+| **GridView**、**ListView** | 針對 **GridView**/**ListView**，請參閱 [GridView/ListView 變更](#gridview)。 |
+| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 市集應用程式和 Windows 10 應用程式中，中樞區段不會迴繞。 |
+| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項的背景影像不會以相對於中樞區段的視差移動。 在 Windows 市集應用程式和 Windows 10 應用程式中，將不會使用視差。 |
+| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | 在通用 8.1 app 中，[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) 屬性會讓區段標頭—和旁邊呈現的 ＞ 形箭號字符—變成互動式。 在 Windows 10 應用程式中，標頭旁邊有一個互動式的 [查看更多] 預示性，但標頭本身不是互動式。 **IsHeaderInteractive** 仍然會決定互動是否會引發 [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) 事件。 |
+| **MessageDialog** | 如果您使用的是 **MessageDialog**，則請考慮改用更有彈性的 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972)。 另請參閱 [XAML UI 基本知識](http://go.microsoft.com/fwlink/p/?linkid=619992)範例。 |
+| **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout** 和 **PickerFlyout** 對於 Windows 10 應用程式已過時。 如需單一選擇飛出視窗，請使用 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)；如需更複雜的體驗，請使用 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)。 |
+| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) 屬性在 Windows 10 應用程式中已過時，因此設定該屬性沒有任何作用。 請改用預設為 **Peek** 的 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) (其中會顯示一個眼睛字符，就像在 Windows 市集應用程式中一樣)。 另請參閱[密碼方塊的指導方針](https://msdn.microsoft.com/library/windows/apps/dn596103)。 |
+| [**樞紐分析**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) 控制項現在是通用的，不再受限於只能在行動裝置上使用。 |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | 雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox)。 |
+| **SemanticZoom** | 針對 **SemanticZoom**，請參閱 [SemanticZoom 變更](#semantic-zoom)。 |
+| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些預設屬性已經變更。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 為 **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 為 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 為 **Disabled**。 如果新的預設值不適用於您的 app，則您可以在樣式上進行變更，或當做控制項本身的本機值變更。  |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | 在 Windows 市集應用程式中，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 預設關閉拼字檢查。 在 Windows Phone 市集應用程式和 Windows 10 應用程式中，它預設為開啟。 |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的預設字型大小已從 11 變更為 15。 |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) 的預設值已從 **Default** 變更為 **DetectFromContent**。 如果不適當，則使用 **UseFlowDirection**。 **Default** 已過時。 |
+| 各種 | 輔色會套用到 Windows Phone 市集應用程式和 Windows 10 應用程式，但不會套用到 Windows 市集應用程式。  |
 
-For more info on UWP app controls, see [Controls by function](https://msdn.microsoft.com/library/windows/apps/mt185405), [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406), and [Guidelines for controls](https://msdn.microsoft.com/library/windows/apps/dn611856).
+如需 UWP app 控制項的詳細資訊，請參閱[依功能分類的控制項](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)，以及[控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
-##  <a name="design-language-in-windows-10"></a>Design language in Windows 10
+##  <a name="design-language-in-windows-10"></a>Windows 10 中的設計語言
 
-There are some small but important differences in design language between Universal 8.1 apps and Windows 10 apps. For all the details, see [Design](http://dev.windows.com/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
+通用 8.1 應用程式和 Windows 10 應用程式之間的設計語言，有一些細微但卻很重要的差異。 如需所有詳細資訊，請參閱[設計](http://dev.windows.com/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
-## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Effective pixels, viewing distance, and scale factors
+## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效的像素、檢視距離及縮放比例
 
-Previously, view pixels were the way to abstract the size and layout of UI elements away from the actual physical size and resolution of devices. View pixels have now evolved into effective pixels, and here's an explanation of that term, what it means, and the extra value it offers.
+檢視像素以前是從裝置的實際實體大小和解析度抽取 UI 元素大小與配置的方式。 檢視像素現在已經進化為有效像素，以下將說明此術語、它的意義及其提供的額外價值。
 
-The term "resolution" refers to a measure of pixel density and not, as is commonly thought, pixel count. "Effective resolution" is the way the physical pixels that compose an image or glyph resolve to the eye given differences in viewing distance and the physical pixel size of the device (pixel density being the reciprocal of physical pixel size). Effective resolution is a good metric to build an experience around because it is user-centric. By understanding all the factors, and controlling the size of UI elements, you can make the user's experience a good one.
+「解析度」一詞是指像素密度 (而非一般認為的像素計數) 的度量。 「有效解析度」係指在特定檢視距離與裝置之實體像素大小 (像素密度為實體像素大小的倒數) 的差異下，構成影像或字符的實體像素解析成視覺的方式。 有效解析度以使用者為中心，是建置體驗時很好的衡量標準。 藉由了解所有因素及控制 UI 元素的大小，您就能讓使用者享有良好的體驗。
 
-Different devices are a different number of effective pixels wide, ranging from 320 epx for the smallest devices, to 1024 epx for a modest-sized monitor, and far beyond to much higher widths. All you have to do is continue to use auto-sized elements and dynamic layout panels as you always have. There will also be some cases where you'll set the properties of your UI elements to a fixed size in XAML markup. A scale factor is automatically applied to your app depending on what device it runs on and the display settings made by the user. And that scale factor serves to keep any UI element with a fixed size presenting a more-or-less constant-sized touch (and reading) target to the user across a wide variety of screen sizes. And together with dynamic layout, your UI won't merely optically scale on different devices. It will instead do what's necessary to fit the appropriate amount of content into the available space.
+不同的裝置有不同數量的有效像素範圍，範圍從適用於最小型裝置的 320 epx 到適用於中等大小之監視器的 1024 epx，還有遠遠超過此寬度的更高像素。 您只需一如往常繼續使用自動調整大小元素與動態配置面板。 在某些情況下，也會將 XAML 標記中的 UI 元素屬性設定為固定大小。 縮放比例會根據您的應用程式是在何種裝置上執行，以及使用者所做的顯示設定，自動套用到該應用程式。 此外，該縮放比例還可用來讓大小固定的任何 UI 元素持續在各種不同螢幕大小上，為使用者呈現大約是固定大小的觸控 (及讀取) 目標。 和動態配置一起使用，您的 UI 將不只是在不同裝置上進行光學縮放。 它會改為執行必要的動作，以便將適當數量的內容放到可用空間中。
 
-So that your app has the best experience across all displays, we recommend that you create each bitmap asset in a range of sizes, each suitable for a particular scale factor. Providing assets at 100%-scale, 200%-scale, and 400%-scale (in that priority order) will give you excellent results in most cases at all the intermediate scale factors.
+為使您的應用程式在所有顯示器上都能有最佳體驗，建議您在某個大小範圍內個別建立適用於各個特定縮放比例的點陣圖資產。 提供 100%、200% 及 400% 的縮放比例 (並以此順序做為其優先順序)，可讓您在大部分情況下利用所有的中繼縮放係數獲得絕佳的結果。
 
-**Note**  If, for whatever reason, you cannot create assets in more than one size, then create 100%-scale assets. In Microsoft Visual Studio, the default project template for UWP apps provides branding assets (tile images and logos) in only one size, but they are not 100%-scale. When authoring assets for your own app, follow the guidance in this section and provide 100%, 200%, and 400% sizes, and use asset packs.
+**注意** 如果您無法建立多種大小的資產 (無論原因為何)，請建立縮放比例為 100% 的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
 
-If you have intricate artwork, then you may want to provide your assets in even more sizes. If you're starting with vector art, then it's relatively easy to generate high-quality assets at any scale factor.
+如果您有複雜的圖檔，您可以用更多大小來提供您的資產。 如果您開始使用向量藝術，則使用任何縮放比例來產生高品質的資產，相對來說就容易許多。
 
-We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device. You can re-use assets from your Windows Store app at scale factors such as 140% and 220%, but your app will run at one of the new scale factors and so some bitmap scaling will be unavoidable. Test your app on a range of devices to see whether you're happy with the results in your case.
+不建議您嘗試支援所有縮放比例，但 Windows 10 應用程式的完整縮放比例清單為 100%、125%、150%、200%、250%、300% 及 400%。 若有提供，市集將會為每個裝置挑選大小正確的資產，同時只會下載那些資產。 市集會根據裝置的 DPI 來選取要下載的資產。 您能以像是 140% 與 220% 的縮放比例重複使用 Windows 市集應用程式的資產，但您的應用程式將以新的縮放比例執行，因此必然會稍微縮放點陣圖比例。 在各種裝置測試您的應用程式，看看您是否對結果滿意。
 
-You may be re-using XAML markup from a Windows Store app where literal dimension values are used in the markup (perhaps to size shapes or other elements, perhaps for typography). But, in some cases, a larger scale factor is used on a device for a Windows 10 app than for a Universal 8.1 app (for example, 150% is used where 140% was before, and 200% is used where 180% was). So, if you find that these literal values are now too big on Windows 10, then try multiplying them by 0.8. For more info, see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958435).
+您可能會重複使用來自 Windows 市集應用程式的 XAML 標記，其中的常值維度值會在標記中使用 (可能用於圖形大小或其他元素，也可能用於印刷格式)。 但在某些情況下，較大的縮放比例會用於 Windows 10 應用程式適用的裝置，而非通用 8.1 應用程式適用的裝置 (例如，先前使用 140%，現在會使用 150%，而先前使用 180%，現在會使用 200%)。 因此，如果您發現這些常值目前在 Windows 10 上太大，則請嘗試將它們乘以 0.8。 如需詳細資訊，請參閱[適用於 UWP App 的回應式設計入門](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## <a name="gridviewlistview-changes"></a>GridView/ListView changes
+## <a name="gridviewlistview-changes"></a>GridView/ListView 變更
 
-Several changes have been made to the default style setters for [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) to make the control scroll vertically (instead of horizontally, as it did previously by default). If you edited a copy of the default style in your project, then your copy won't have these changes, so you'll need to make them manually. Here is a list of the changes.
+已針對 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的預設樣式 setter 進行數個變更，使控制項可垂直捲動 (而不是水平捲動，如同它先前預設的動作一樣)。 如果您曾編輯過專案中預設樣式的複本，則您的複本將不會擁有這些變更，因此您需要進行手動更新。 以下是變更的清單。
 
--   The setter for [**ScrollViewer.HorizontalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209547) has changed from **Auto** to **Disabled**.
--   The setter for [**ScrollViewer.VerticalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209587) has changed from **Disabled** to **Auto**.
--   The setter for [**ScrollViewer.HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) has changed from **Enabled** to **Disabled**.
--   The setter for [**ScrollViewer.VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) has changed from **Disabled** to **Enabled**.
--   In the setter for [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/br242826), the value of [**ItemsWrapGrid.Orientation**](https://msdn.microsoft.com/library/windows/apps/dn298907) has changed from **Vertical** to **Horizontal**.
+-   適用於 [**ScrollViewer.HorizontalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209547) 的 setter 已從 **Auto** 變更為 **Disabled**。
+-   適用於 [**ScrollViewer.VerticalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209587) 的 setter 已從 **Disabled** 變更為 **Auto**。
+-   適用於 [**ScrollViewer.HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 的 setter 已從 **Enabled** 變更為 **Disabled**。
+-   適用於 [**ScrollViewer.VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 的 setter 已從 **Disabled** 變更為 **Enabled**。
+-   在適用於 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/br242826) 的 setter 中，[**ItemsWrapGrid.Orientation**](https://msdn.microsoft.com/library/windows/apps/dn298907) 的值已從 **Vertical** 變更為 **Horizontal**。
 
-If that last change (the change to **Orientation**) seems contradictory, then remember that we're talking about a wrap grid. A horizontally-oriented wrap grid (the new value) is similar to a writing system where text flows horizontally and breaks to the next line down at the end of a page. A page of text like that scrolls vertically. Conversely, a vertically-oriented wrap grid (the previous value) is similar to a writing system where text flows vertically and therefore scrolls horizontally.
+如果這最後一個變更 (變更為 **Orientation**) 看似矛盾，則請記住，我們正在討論的是自動換行方格。 水平方向的自動換行方格 (新值) 類似橫書的書寫系統，並在頁面結尾向下分隔設定到下一行。 這類文字的頁面可以垂直捲動。 相反地，垂直方向的自動換行方格 (先前的值) 類似直書的書寫系統，因此可以水平捲動。
 
-Here are the aspects of [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) and [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that have change or are not supported in Windows 10.
+以下是 Windows 10 中已變更或不支援的 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 部分。
 
--   The [**IsSwipeEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702518) property (Windows Store apps only) is not supported for Windows 10 apps. The API is still present, but setting it has no effect. All previous selection gestures are supported except downward swipe (which is unsupported because data shows that it is not discoverable) and right-click (which is reserved for showing a context menu).
--   The [**ReorderMode**](https://msdn.microsoft.com/library/windows/apps/dn625099) property (Windows Phone Store apps only) is not supported for Windows 10 apps. The API is still present, but setting it has no effect. Instead, set [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/br208912) and [**CanReorderItems**](https://msdn.microsoft.com/library/windows/apps/br242882) to true on your **GridView** or **ListView** and then the user will be able to reorder using a press-and-hold (or click-and-drag) gesture.
--   When developing for Windows 10, use [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn298500) instead of [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn279298) in your item container style, both for [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and for [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). If you edit a copy of the default item container styles, then you will get the correct type.
--   The selection visuals have changed for a Windows 10 app. If you set [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/br242915) to **Multiple**, then by default, a check box is rendered for each item. The default setting for **ListView** items means that the check box is laid out inline beside the item, and as a result, the space occupied by the rest of the item will be slightly reduced and shifted. For **GridView** items, the check box is overlaid on top of the item by default. But, in either case, you can control the layout (Inline or Overlay) of the check boxes (with the [**CheckMode**](https://msdn.microsoft.com/library/windows/apps/dn913923) property) and whether they are shown at all (with the [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298541) property) on the [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) element inside your item container style as in the example below.
--   In Windows 10, the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event is raised twice per item during UI virtualization: once for the reclaim, and once for the re-use. If the value of [**InRecycleQueue**](https://msdn.microsoft.com/library/windows/apps/dn279443) is **true** and you have no special reclaim work to do, then you can exit your event handler immediately with the assurance that it will be re-entered when that same item is re-used (at which time **InRecycleQueue** will be **false**).
+-   Windows 10 應用程式不支援 [**IsSwipeEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702518) 屬性 (僅適用於 Windows 市集應用程式)： API 仍然存在，但設定它不會產生任何作用。 支援所有先前的選取手勢，但向下撥動 (不支援此手勢，因為資料會顯示它是無法探索的) 和按一下滑鼠右鍵 (其保留來顯示操作功能表) 除外。
+-   Windows 10 應用程式不支援 [**ReorderMode**](https://msdn.microsoft.com/library/windows/apps/dn625099) 屬性 (僅適用於 Windows Phone 市集應用程式)： API 仍然存在，但設定它不會產生任何作用。 相反地，在您的 **GridView** 或 **ListView** 上，將 [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/br208912) 和 [**CanReorderItems**](https://msdn.microsoft.com/library/windows/apps/br242882) 設定為 True，之後使用者就能使用按住不放 (或按一下並拖曳) 手勢重新排序。
+-   針對 Windows 10 進行開發時，在您的項目容器樣式中，同時針對 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 使用 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn298500) 而不是 [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn279298)。 如果您編輯預設項目容器樣式的複本，則可取得正確的類型。
+-   Windows 10 應用程式的選取視覺效果已經變更。 如果您將 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/br242915) 設定為 **Multiple**，則根據預設，會為每個項目呈現一個核取方塊。 **ListView** 項目的預設設定表示核取方塊已內嵌配置於項目旁邊，因此，其餘項目所佔用的空間會稍微降低並移動。 針對 **GridView** 項目，核取方塊預設會重疊於項目上方。 但在任一種情況下，您可以控制核取方塊 (使用 [**CheckMode**](https://msdn.microsoft.com/library/windows/apps/dn913923) 屬性) 的配置 (內嵌或重疊)，以及它們是否會在 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) 元素上完全顯示 (以及 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298541) 屬性)，此元素位於項目容器樣式內部，如下列範例所示。
+-   在 Windows 10 中，每個項目在 UI 虛擬化期間會引發 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件兩次：一次用於回收，一次用於重複使用。 如果 [**InRecycleQueue**](https://msdn.microsoft.com/library/windows/apps/dn279443) 的值是 **true**，且您沒有特殊回收工作需要執行，您可以立即結束事件處理常式，以確保在重複使用相同項目時可以重新進入此處理常式 (屆時 **InRecycleQueue** 將會是 **false**)。
 
 ```xml
 <Style x:Key="CustomItemContainerStyle" TargetType="ListViewItem|GridViewItem">
@@ -171,18 +171,18 @@ Here are the aspects of [**GridView**](https://msdn.microsoft.com/library/window
 </Style>
 ```
 
-![a listviewitempresenter with inline check box](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-inline.jpg)
+![具有內嵌核取方塊的 ListViewItemPresenter](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-inline.jpg)
 
-A ListViewItemPresenter with inline check box
+具有內嵌核取方塊的 ListViewItemPresenter
 
-![a listviewitempresenter with overlaid check box](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-overlay.jpg)
+![具有重疊核取方塊的 ListViewItemPresenter](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-overlay.jpg)
 
-A ListViewItemPresenter with an overlaid check box
+具有重疊核取方塊的 ListViewItemPresenter
 
--   With the removal of downward swipe and right-click gestures for selection (for the reasons given above), the interaction model has changed, one consequence of which is that the [**ItemClick**](https://msdn.microsoft.com/library/windows/apps/br242904) and [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) events are no longer mutually exclusive. For your Windows 10 app, review your scenarios and decide whether to adopt the "selection" or the "invoke" interaction model. For details, see [How to change the interaction mode](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625).
--   There are some changes to the properties that you use to style [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx). Properties that are new are [**CheckBoxBrush**](https://msdn.microsoft.com/library/windows/apps/dn913905), [**PressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913931), [**SelectedPressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913937), and [**FocusSecondaryBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn898370). Properties that are ignored for a Windows 10 app are [**Padding**](https://msdn.microsoft.com/library/windows/apps/dn424775) (use [**ContentMargin**](https://msdn.microsoft.com/library/windows/apps/dn424773) instead), [**CheckHintBrush**](https://msdn.microsoft.com/library/windows/apps/dn298504), [**CheckSelectingBrush**](https://msdn.microsoft.com/library/windows/apps/dn298506), [**PointerOverBackgroundMargin**](https://msdn.microsoft.com/library/windows/apps/dn424778), [**ReorderHintOffset**](https://msdn.microsoft.com/library/windows/apps/dn298528), [**SelectedBorderThickness**](https://msdn.microsoft.com/library/windows/apps/dn298533), and [**SelectedPointerOverBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn298539).
+-   移除用以選取的向下撥動和使用滑鼠右鍵按一下手勢之後 (基於上述因素)，互動模式即已變更，而其中一個結果是 [**ItemClick**](https://msdn.microsoft.com/library/windows/apps/br242904) 和 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件不再互斥。 針對 Windows 10 應用程式檢閱您的案例，並決定是否要採用「選項」或「叫用」互動模型。 如需詳細資訊，請參與[如何變更互動模式](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625)。
+-   對於您用來設定 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) 樣式的屬性有一些變更。 新的屬性是 [**CheckBoxBrush**](https://msdn.microsoft.com/library/windows/apps/dn913905)、[**PressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913931)、[**SelectedPressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913937) 及 [**FocusSecondaryBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn898370)。 要針對 Windows 10 應用程式略過的屬性是 [**Padding**](https://msdn.microsoft.com/library/windows/apps/dn424775) (改用 [**ContentMargin**](https://msdn.microsoft.com/library/windows/apps/dn424773))、[**CheckHintBrush**](https://msdn.microsoft.com/library/windows/apps/dn298504)、[**CheckSelectingBrush**](https://msdn.microsoft.com/library/windows/apps/dn298506)、[**PointerOverBackgroundMargin**](https://msdn.microsoft.com/library/windows/apps/dn424778)、[**ReorderHintOffset**](https://msdn.microsoft.com/library/windows/apps/dn298528)、[**SelectedBorderThickness**](https://msdn.microsoft.com/library/windows/apps/dn298533) 及 [**SelectedPointerOverBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn298539)。
 
-This table describes the changes to the visual states and visual state groups in the [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) and [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) control templates.
+下表說明 [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) 控制項範本中視覺狀態和視覺狀態群組的變更。
 
 | 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
@@ -190,63 +190,63 @@ This table describes the changes to the visual states and visual state groups in
 |                     | Normal                  |                   | Normal              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
-|                     | PointerOverPressed      |                   | [unavailable]       |
-|                     | Disabled                |                   | [unavailable]       |
-|                     | [unavailable]           |                   | PointerOverSelected |
-|                     | [unavailable]           |                   | Selected            |
-|                     | [unavailable]           |                   | PressedSelected     |
-| [unavailable]       |                         | DisabledStates    |                     |
-|                     | [unavailable]           |                   | Disabled            |
-|                     | [unavailable]           |                   | Enabled             |
-| SelectionHintStates |                         | [unavailable]     |                     |
-|                     | VerticalSelectionHint   |                   | [unavailable]       |
-|                     | HorizontalSelectionHint |                   | [unavailable]       |
-|                     | NoSelectionHint         |                   | [unavailable]       |
-| [unavailable]       |                         | MultiSelectStates |                     |
-|                     | [unavailable]           |                   | MultiSelectDisabled |
-|                     | [unavailable]           |                   | MultiSelectEnabled  |
-| SelectionStates     |                         | [unavailable]     |                     |
-|                     | Unselecting             |                   | [unavailable]       |
-|                     | Unselected              |                   | [unavailable]       |
-|                     | UnselectedPointerOver   |                   | [unavailable]       |
-|                     | UnselectedSwiping       |                   | [unavailable]       |
-|                     | Selecting               |                   | [unavailable]       |
-|                     | Selected                |                   | [unavailable]       |
-|                     | SelectedSwiping         |                   | [unavailable]       |
-|                     | SelectedUnfocused       |                   | [unavailable]       |
+|                     | PointerOverPressed      |                   | [無法使用]       |
+|                     | Disabled                |                   | [無法使用]       |
+|                     | [無法使用]           |                   | PointerOverSelected |
+|                     | [無法使用]           |                   | Selected            |
+|                     | [無法使用]           |                   | PressedSelected     |
+| [無法使用]       |                         | DisabledStates    |                     |
+|                     | [無法使用]           |                   | Disabled            |
+|                     | [無法使用]           |                   | 已啟用             |
+| SelectionHintStates |                         | [無法使用]     |                     |
+|                     | VerticalSelectionHint   |                   | [無法使用]       |
+|                     | HorizontalSelectionHint |                   | [無法使用]       |
+|                     | NoSelectionHint         |                   | [無法使用]       |
+| [無法使用]       |                         | MultiSelectStates |                     |
+|                     | [無法使用]           |                   | MultiSelectDisabled |
+|                     | [無法使用]           |                   | MultiSelectEnabled  |
+| SelectionStates     |                         | [無法使用]     |                     |
+|                     | Unselecting             |                   | [無法使用]       |
+|                     | Unselected              |                   | [無法使用]       |
+|                     | UnselectedPointerOver   |                   | [無法使用]       |
+|                     | UnselectedSwiping       |                   | [無法使用]       |
+|                     | Selecting               |                   | [無法使用]       |
+|                     | Selected                |                   | [無法使用]       |
+|                     | SelectedSwiping         |                   | [無法使用]       |
+|                     | SelectedUnfocused       |                   | [無法使用]       |
 
-If you have a custom [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) or [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) control template, then review it in light of the above changes. We recommend that you start over by editing a copy of the new default template and re-applying your customization to that. If, for whatever reason, you can't do that and you need to edit your existing template, then here is some general guidance around how you might go about doing that.
+如果您擁有自訂的 [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) 或 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) 控制項範本，則可按照上述變更來檢閱範本。 建議您一開始先編輯新預設範本的複本，然後將您的自訂重新套用到其中。 如果您基於任何因素而無法執行該動作，且需要編輯現有的範本，則以下提供一些您或許可用來執行該動作的一般指導方針。
 
--   Add the new MultiSelectStates visual state group.
--   Add the new MultiSelectDisabled visual state.
--   Add the new MultiSelectEnabled visual state.
--   Add the new DisabledStates visual state group.
--   Add the new Enabled visual state.
--   In the CommonStates visual state group, remove the PointerOverPressed visual state.
--   Move the Disabled visual state to the DisabledStates visual state group.
--   Add the new PointerOverSelected visual state.
--   Add the new PressedSelected visual state.
--   Remove the SelectedHintStates visual state group.
--   In the SelectionStates visual state group, move the Selected visual state to the CommonStates visual state group.
--   Remove the entire SelectionStates visual state group.
+-   新增新的 MultiSelectStates 視覺狀態群組。
+-   新增新的 MultiSelectDisabled 視覺狀態。
+-   新增新的 MultiSelectEnabled 視覺狀態。
+-   新增新的 DisabledStates 視覺狀態群組。
+-   新增新的 Enabled 視覺狀態。
+-   在 CommonStates 視覺狀態群組中，移除 PointerOverPressed 視覺狀態。
+-   將 Disabled 視覺狀態移至 DisabledStates 視覺狀態群組。
+-   新增新的 PointerOverSelected 視覺狀態。
+-   新增新的 PressedSelected 視覺狀態。
+-   移除 SelectedHintStates 視覺狀態群組。
+-   在 SelectionStates 視覺狀態群組中，將 Selected 的視覺狀態移至 CommonStates 視覺狀態群組。
+-   移除整個 SelectionStates 視覺狀態群組。
 
-## <a name="localization-and-globalization"></a>Localization and globalization
+## <a name="localization-and-globalization"></a>當地語系化和全球化
 
-You can re-use the Resources.resw files from your Universal 8.1 project in your UWP app project. After copying the file over, add it to the project and set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. The [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes how to load device family-specific resources based on the device family resource selection factor.
+您可以在 UWP app 專案中重複使用通用 8.1 專案的 Resources.resw 檔案。 完成複製檔案之後，請將該檔案新增到專案，並將 [**建置動作**] 設定為 [**PRIResource**] 以及將 [**複製到輸出目錄**] 設為 [**不要複製**]。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主題說明如何根據裝置系列資源選擇因素載入裝置系列特定資源。
 
-## <a name="play-to"></a>Play To
+## <a name="play-to"></a>播放至
 
-The APIs in the [**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) namespace are deprecated for Windows 10 apps in favor of the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) APIs.
+[**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) 命名空間中的 API 對於 Windows 10 應用程式已過時，並由 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) API 取而代之。
 
-## <a name="resource-keys-and-textblock-style-sizes"></a>Resource keys, and TextBlock style sizes
+## <a name="resource-keys-and-textblock-style-sizes"></a>資源索引鍵和 TextBlock 樣式大小
 
-The design language has evolved for Windows 10 and consequently certain system styles have changed. In some cases, you will want to revisit the visual designs of your views so that they are in harmony with the style properties that have changed.
+適用於 Windows 10 的設計語言已進化許多，因此變更了某些系統樣式。 在某些情況下，您會想要重新瀏覽檢視的視覺設計，使其與變更的樣式屬性彼此協調。
 
-In other cases, resource keys are no longer supported. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `ListViewItemTextBlockStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
+在其他情況下，不再支援資源索引鍵。 Visual Studio 中的 XAML 標記編輯器會醒目提示無法解析的資源索引鍵參考。 例如，XAML 標記編輯器會在樣式索引鍵 `ListViewItemTextBlockStyle` 的參考加上紅色波浪底線。 如果未修正該參考，當您嘗試將應用程式部署到模擬器或裝置上時，它將會立即終止。 因此，請務必注意 XAML 標記的正確性。 您會發現 Visual Studio 是攔截這類問題的絕佳工具。
 
-For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Store app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://dev.windows.com/design).
+對於仍然支援的索引鍵，設計語言的變更表示某些樣式設定的屬性已經變更。 例如，`TitleTextBlockStyle` 在 Windows 市集應用程式中將 **FontSize** 設定為 14.667px，並在 Windows Phone 市集應用程式中設定為 18.14px。 但是相同的樣式在 Windows 10 應用程式中，會將 **FontSize** 設定為更大的 24px。 檢閱您的設計和配置，並在適當的位置使用適當的樣式。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://dev.windows.com/design)。
 
-This is a full list of the keys that are no longer supported.
+以下是不再支援的完整索引鍵清單：
 
 -   CheckBoxAndRadioButtonMinWidthSize
 -   CheckBoxAndRadioButtonTextPaddingThickness
@@ -405,13 +405,13 @@ This is a full list of the keys that are no longer supported.
 -   TextStyleSmallFontSize
 -   TimeRemainingElementMargin
 
-## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox deprecated in favor of AutoSuggestBox
+## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox 已取代為 AutoSuggestBox
 
-Although [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) is implemented in the Universal device family, it is not fully functional on mobile devices. Use [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) for your universal search experience. Here's how you typically implement a search experience with **AutoSuggestBox**.
+雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請將 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 用在您的通用搜尋經驗。 以下說明在一般情況下如何透過 **AutoSuggestBox** 實作搜尋經驗。
 
-Once the user starts typing, the **TextChanged** event is raised, with a reason of **UserInput**. You then populate the list of suggestions and set the **ItemsSource** of the [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874). As the user navigates the list, the **SuggestionChosen** event is raised (and if you have set **TextMemberDisplayPath**, the text box is auto-filled with the property specified). When the user submits a choice with the Enter key, the **QuerySubmitted** event is raised, at which point you can take action on that suggestion (in this case, most likely navigating to another page with more details on the specified content). Note that the **LinguisticDetails** and **Language** properties of **SearchBoxQuerySubmittedEventArgs** are no longer supported (there are equivalent APIs to support that functionality). And **KeyModifiers** is no longer supported.
+使用者開始輸入後即會引發 **TextChanged** 事件，原因為 **UserInput**。 接著，您可以填入建議清單，並設定 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 的 **ItemsSource**。 使用者瀏覽清單時會引發 **SuggestionChosen** 事件 (且如果您已設定 **TextMemberDisplayPath**，文字方塊將會自動填入指定的屬性)。 當使用者以 Enter 鍵提交選擇時，會引發 **QuerySubmitted** 事件，此時您可以採取該建議動作 (在此情況下，很可能是瀏覽至其他含有指定內容之詳細資料的其他頁面)。 請注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 屬性已不再受支援 (有對等的 API 可支援該功能)。 **KeyModifiers** 也不再受支援。
 
-[**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) also has support for input method editors (IMEs). And, if you want to show a "find" icon, then you can do that too (interacting with the icon will cause the **QuerySubmitted** event to be raised).
+[**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 也具有輸入法編輯器 (IME) 的支援。 而且，如果您想要顯示「尋找」圖示，您也可以這麼做 (與該圖示互動將會引發 **QuerySubmitted** 事件)。
 
 ```xml
    <AutoSuggestBox ... >
@@ -421,66 +421,66 @@ Once the user starts typing, the **TextChanged** event is raised, with a reason 
     </AutoSuggestBox>
 ```
 
-Also, see [AutoSuggestBox porting sample](http://go.microsoft.com/fwlink/p/?linkid=619996).
+另請參閱 [AutoSuggestBox 移植範例](http://go.microsoft.com/fwlink/p/?linkid=619996)。
 
-## <a name="semanticzoom-changes"></a>SemanticZoom changes
+## <a name="semanticzoom-changes"></a>SemanticZoom 變更
 
-The zooming-out gesture for a [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) has converged on the Windows Phone model, which is to tap or click a group header (so, on desktop computers, the minus button affordance to zoom out is no longer displayed). Now, we get the same, consistent, behavior for free on all devices. One cosmetic difference from the Windows Phone model is that the zoomed-out view (the jump list) replaces the zoomed-in view rather than overlaying it. For this reason, you can remove any semi-opaque backgrounds from zoomed-out views.
+適用於 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 的縮放手勢已併入 Windows Phone 模型中，也就是可以點選或按一下群組標題 (因此，在傳統型電腦上，就不再顯示可用來進行縮放的減號按鈕能供性)。 我們現在可以在所有裝置上免費取得相同且一致的行為。 與 Windows Phone 模型不同的一個外觀差異是，放大檢視 (捷徑清單) 會取代縮小檢視，而不是與它重疊。 基於這個因素，您可以從縮小檢視中移除任何半透明的背景。
 
-In a Windows Phone Store app, the zoomed-out view expands to the size of the screen. In a Windows Store app, and in a Windows 10 app, the size of the zoomed-out view is constrained to the bounds of the **SemanticZoom** control.
+在 Windows Phone 市集應用程式中，縮小檢視會展開至螢幕的大小。 在 Windows 市集應用程式和 Windows 10 應用程式中，縮小檢視的大小限制為 **SemanticZoom** 控制項的界限。
 
-In a Windows Phone Store app, content behind the zoomed-out view (in z-order) shows through if the zoomed-out view has any transparency in its background. In a Windows Store app, and in a Windows 10 app, nothing is visible behind the zoomed out view.
+在 Windows Phone 市集應用程式中，如果縮小檢視在其背景具有任何透明度，則縮小檢視 (z 順序) 背後的內容會穿透顯示。 在 Windows 市集應用程式和 Windows 10 應用程式中，看不到縮小檢視背後的任何內容。
 
-In a Windows Store app, when the app is deactivated and reactivated, the zoomed-out view is dismissed (if it was being shown) and the zoomed-in view is shown instead. In a Windows Phone Store app, and in a Windows 10 app, the zoomed-out view will remain showing if it was being shown.
+在 Windows 市集應用程式中，當應用程式停用後和重新啟用時，會關閉縮小檢視 (若有顯示)，並改為顯示放大檢視。 在 Windows Phone 市集應用程式和 Windows 10 應用程式中，縮小檢視將會維持在顯示狀態。
 
-In a Windows Phone Store app, and in a Windows 10 app, the zoomed-out view is dismissed when the back button is pressed. For a Windows Store app, there is no built-in back button processing, so the question doesn't apply.
+在 Windows Phone 市集應用程式和 Windows 10 應用程式中，按下返回按鈕時，會關閉縮小檢視。 對於 Windows 市集應用程式，沒有內建的返回按鈕處理，因此此問題不適用。
 
-## <a name="settings"></a>Settings
+## <a name="settings"></a>設定
 
-The Windows Runtime 8.x **SettingsPane** class is not appropriate for Windows 10. Instead, in addition to building a Settings page, you should give your users a way to access it from within your app. We recommend that you expose this app Settings page at the top level, as the last pinned item on your navigation pane, but here are the full set of your options.
+Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除了建置設定頁面，您應該改為提供使用者從您的 app 存取它的方式。 我們建議您在最上層公開這個應用程式設定頁面，做為瀏覽窗格中最後一個釘選的項目，但此處是一組完整的選項。
 
--   Navigation pane. Settings should be the last item in the navigational list of choices, and pinned to the bottom.
--   Appbar/toolbar (within a tabs view or pivot layout). Settings should be the last item in the appbar or toolbar menu flyout. It is not recommended for Settings to be one of the top-level items within the navigation.
--   Hub. Settings should be located inside of the menu flyout (could be from the app bar menu or the toolbar menu within the Hub layout).
+-   瀏覽窗格。 設定應為選項瀏覽清單的最後一個項目，而且釘選到底部。
+-   Appbar/工具列 (在索引標籤檢視或樞紐分析配置內)。 設定應為 appbar 或工具列功能表飛出視窗中的最後一個項目。 不建議將設定做為瀏覽內的最上層項目的其中之一。
+-   中樞。 設定應位於功能表飛出視窗內 (可位於應用程式列功能表或中樞配置內的工具列功能表中)。
 
-It's also not recommended to bury Settings within a master-detail pane.
+也不建議將設定隱藏在主控制項/詳細資料控制項窗格中。
 
-Your Settings page should fill the whole of your app's window, and your Settings page is also where About and Feedback should be. For guidance on the design of your Settings page, see [Guidelines for app settings](https://msdn.microsoft.com/library/windows/apps/hh770544).
+設定頁面應填滿應用程式的整個視窗，而且設定頁面也應是關於和意見反應的所在位置。 如需設定頁面的設計指導方針，請參閱[應用程式設定的指導方針](https://msdn.microsoft.com/library/windows/apps/hh770544)。
 
-## <a name="text"></a>Text
+## <a name="text"></a>文字
 
-Text (or typography) is an important aspect of a UWP app and, while porting, you may want to revisit the visual designs of your views so that they are in harmony with the new design language. Use these illustrations to find the Universal Windows Platform (UWP) **TextBlock** system styles that are available. Find the ones that correspond to the Windows Phone Silverlight styles you used. Alternatively, you can create your own universal styles and copy the properties from the Windows Phone Silverlight system styles into those.
+文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的通用 Windows 平台 (UWP) **TextBlock** 系統樣式。 尋找與您使用的 Windows Phone Silverlight 樣式相對應的樣式。 您也可以選擇建立自己的通用樣式，然後從 Windows Phone Silverlight 系統樣式將屬性複製到這些通用樣式中。
 
-![system textblock styles for windows 10 apps](images/label-uwp10stylegallery.png) <br/>System TextBlock styles for Windows 10 apps
+![適用於 Windows 10 app 的系統 textblock 樣式](images/label-uwp10stylegallery.png) <br/>適用於 Windows 10 app 的系統 TextBlock 樣式
 
-In Windows Store apps and Windows Phone Store apps, the default font family is Global User Interface. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your 8.1 text, you can set your own metrics using properties such as [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) and [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362).
+在 Windows 市集應用程式和 Windows Phone 市集應用程式中，預設字型系列為 Global User Interface。 在 Windows 10 應用程式中，預設字型系列為 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重新產生 8.1 文字的外觀，您可以使用像是 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 和 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) 這樣的屬性設定您自己的標準。
 
-In Windows Store apps and Windows Phone Store apps, the default language for text is set to the language of the build, or to en-us. In a Windows 10 app, the default language is set to the top app language (font fallback). You can set [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066) explicitly, but you will enjoy better font fallback behavior if you do not set a value for that property.
+在 Windows 市集應用程式和 Windows Phone 市集應用程式中，文字的預設語言設定為組建的語言或 en-us。 在 Windows 10 應用程式中，預設語言設為常見的應用程式語言 (字型遞補)。 您可以明確地設定 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)，但是如果您未設定該屬性的值，將盡情享受更好的字型遞補行為。
 
-For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://go.microsoft.com/fwlink/p/?LinkID=533896). Also, see the [Controls](#controls) section above for changes to text controls.
+如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://go.microsoft.com/fwlink/p/?LinkID=533896)。 另請參閱上述的[控制項](#controls)一節，以了解文字控制項的變更。
 
-## <a name="theme-changes"></a>Theme changes
+## <a name="theme-changes"></a>佈景主題變更
 
-For a Universal 8.1 app, the default theme is dark by default. For Windows 10 devices, the default theme has changed, but you can control the theme used by declaring a requested theme in App.xaml. For example, to use a dark theme on all devices, add `RequestedTheme="Dark"` to the root Application element.
+針對通用 8.1 應用程式，預設佈景主題預設是深色。 Windows 10 裝置的預設佈景主題已經變更，但是您可以透過在 App.xaml 中宣告要求的佈景主題來控制所使用的佈景主題。 例如，若要在所有裝置上使用深色佈景主題，可將 `RequestedTheme="Dark"` 新增到根應用程式元素。
 
-## <a name="tiles-and-toasts"></a>Tiles and toasts
+## <a name="tiles-and-toasts"></a>磚和快顯通知
 
-For tiles and toasts, the templates you're currently using will continue to work in your Windows 10 app. But, there are new, adaptive templates available for you to use, and these are described in [Notifications, tiles, toasts, and badges](https://msdn.microsoft.com/library/windows/apps/mt185606).
+對於磚和快顯通知，您目前正在使用的範本會繼續在您的 Windows 10 應用程式中運作。 但是有全新適合的範本可供您使用，在[通知、磚、快顯通知以及徽章](https://msdn.microsoft.com/library/windows/apps/mt185606)中有詳細說明。
 
-Previously, on desktop computers, a toast notification was a transitory message. It would disappear, and no longer be retrievable, once it was missed or ignored. On Windows Phone, if a toast notification is ignored or temporarily dismissed, it would go into the Action Center. Now, Action Center is no longer limited to the Mobile device family.
+先前在桌上型電腦上，快顯通知是一個暫時的訊息。 它會消失，錯過或略過之後也無法再取得。 在 Windows Phone 上，如果快顯通知略過或暫時關閉，則會進入重要訊息中心。 現在，重要訊息中心不再只限於行動裝置系列。
 
-To send a toast notification, there is no longer any need to declare a capability.
+若要傳送快顯通知，不需要再宣告功能。
 
-## <a name="window-size"></a>Window size
+## <a name="window-size"></a>視窗大小
 
-For a Universal 8.1 app, the [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) app manifest element is used to declare a minimum window width. In your UWP app, you can specify a minimum size (both width and height) with imperative code. The default minimum size is 500x320epx, and that's also the smallest minimum size accepted. The largest minimum size accepted is 500x500epx.
+針對通用 8.1 應用程式，可以使用 [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) 應用程式資訊清單元素來宣告最小的視窗寬度。 在 UWP app 中，您可以使用命令式程式碼來指定最小大小 (寬度與高度)。 預設的最小大小是 500x320epx，這也是可接受的最小大小下限。 可接受的最小大小上限是 500x500epx。
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
         (new Size { Width = 500, Height = 500 });
 ```
 
-The next topic is [Porting for I/O, device, and app model](w8x-to-uwp-input-and-sensors.md).
+下一個主題是 [I/O、裝置與 app 模型的移植](w8x-to-uwp-input-and-sensors.md)。
 
 
 

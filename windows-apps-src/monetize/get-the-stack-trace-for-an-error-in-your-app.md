@@ -1,95 +1,95 @@
 ---
 author: mcleanbyron
 ms.assetid: 
-description: Use this method in the Windows Store analytics API to get the stack trace for an error in your app.
-title: Get the stack trace for an error in your app
+description: "在 Windows 市集分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。"
+title: "取得 App 中錯誤的堆疊追蹤"
 translationtype: Human Translation
 ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
 ms.openlocfilehash: 90481b5f85d010a142e86ca67ac94c3ec25d89c6
 
 ---
 
-# <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Get the stack trace for an error in your app
+# <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得 App 中錯誤的堆疊追蹤
 
-Use this method in the Windows Store analytics API to get the stack trace for an error in your app. This method can only download the stack trace for an app error that occurred in the last 30 days. Stack traces are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+在 Windows 市集分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。 這個方法只可以下載最近 30 天發生之 App 錯誤的堆疊追蹤。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗] 區段也提供堆疊追蹤。
 
-Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file that is associated with the error for which you want to retrieve the stack trace.
+使用這個方法之前，您必須先使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼。
 
-## <a name="prerequisites"></a>Prerequisites
-
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the ID of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.
-
-## <a name="request"></a>Request
+## <a name="prerequisites"></a>先決條件
 
 
-### <a name="request-syntax"></a>Request syntax
+若要使用這個方法，您必須先進行下列動作：
 
-| Method | Request URI                                                          |
+* 如果您尚未這樣做，請先完成 Windows 市集分析 API 的所有[先決條件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* 取得與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。
+
+## <a name="request"></a>要求
+
+
+### <a name="request-syntax"></a>要求的語法
+
+| 方法 | 要求 URI                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace``` |
 
 <span/> 
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>要求的標頭
 
-| Header        | Type   | Description                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>要求參數
 
-| Parameter        | Type   |  Description      |  Required  |
+| 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to get the stack trace. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| cabId | string | The unique ID of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
+| applicationId | 字串 | 您想要取得堆疊追蹤之 App 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
+| cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
 
 <span/>
  
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>要求範例
 
-The following example demonstrates how to get a stack trace using this method. Replace the *applicationId* value with the Store ID for your app.
+下列範例示範如何使用此方法取得堆疊追蹤。 將 *applicationId* 值取代為您 App 的市集識別碼。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>回應
 
 
-### <a name="response-body"></a>Response body
+### <a name="response-body"></a>回應主體
 
-| Value      | Type    | Description                  |
+| 值      | 類型    | 描述                  |
 |------------|---------|--------------------------------|
-| Value      | array   | An array of objects that each contain one frame of stack trace data. For more information about the data in each object, see the [stack trace values](#stack-trace-values) section below. |
-| @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.          |
+| 值      | 陣列   | 物件的陣列，每個物件都包含一個堆疊追蹤資料框架。 如需有關每個物件中資料的詳細資訊，請參閱下方的[堆疊追蹤值](#stack-trace-values)一節。 |
+| @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
+| TotalCount | inumber | 查詢之資料結果的資料列總數。          |
 
 <span/>
 
-### <a name="stack-trace-values"></a>Stack trace values
+### <a name="stack-trace-values"></a>堆疊追蹤值
 
-Elements in the *Value* array contain the following values.
+*Value* 陣列中的元素包含下列值。
 
-| Value           | Type    | Description      |
+| 值           | 類型    | 描述      |
 |-----------------|---------|----------------|
-| level            | string  |  The frame number that this element represents in the call stack.  |
-| image   | string  |   The name of the executable or library image that contains the function that is called in this stack frame.           |
-| function | string  |  The name of the function that is called in this stack frame. This is available only if your app includes symbols for the executable or library.              |
-| offset     | string  |  The byte offset of the current instruction relative to the start of the function.      |
+| level            | 字串  |  此元素在呼叫堆疊中所代表的框架數目。  |
+| image   | 字串  |   可執行檔名稱或程式庫映像，包含在此堆疊框架中呼叫的函式。           |
+| function | 字串  |  在此堆疊框架中呼叫的函式名稱。 只有當您的 App 包含可執行檔或程式庫的符號時才能使用。              |
+| offset     | 字串  |  相對於函式開始之目前指示的位元組位移。      |
 
 <span/> 
 
-### <a name="response-example"></a>Response example
+### <a name="response-example"></a>回應範例
 
-The following example demonstrates an example JSON response body for this request.
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -119,12 +119,12 @@ The following example demonstrates an example JSON response body for this reques
 
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相關主題
 
-* [Health report](../publish/health-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
+* [健康情況報告](../publish/health-report.md)
+* [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得錯誤報告資料](get-error-reporting-data.md)
+* [取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
 
 
 

@@ -1,24 +1,24 @@
 ---
 author: TylerMSFT
-title: Reserved file and URI scheme names
-description: This topic lists the reserved file and URI scheme names that are not available to your app.
+title: "保留檔案和 URI 配置名稱"
+description: "此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
 ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
 
 ---
-# <a name="reserved-file-and-uri-scheme-names"></a>Reserved file and URI scheme names
+# <a name="reserved-file-and-uri-scheme-names"></a>保留檔案和 URI 配置名稱
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use because they are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
+您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。 但是有些 URI 關聯是您無法使用的，因為它們是保留的關聯。 如果您的 app 登錄為保留的關聯，該登錄將會被忽略。 此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。
 
-## <a name="reserved-file-types"></a>Reserved file types
+## <a name="reserved-file-types"></a>保留的檔案類型
 
-There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
+保留的檔案類型有兩種類型：保留給內建 app 的檔案類型，和保留給作業系統的檔案類型。 當保留給內建 app 的檔案類型啟動時，將只會啟動內建 app。 您的 app 若嘗試對該檔案類型登錄，將一律被忽略。 同樣地，您的 app 若嘗試對保留給作業系統的檔案類型進行登錄，也將一律被忽略。
 
-File types reserved for built-in apps
+保留給內建 app 的檔案類型
 
 <table>
 <tr><td>.aac</td><td>.icon</td><td>.pem</td><td>.wdp</td></tr>
@@ -35,9 +35,9 @@ File types reserved for built-in apps
 <tr><td>.ico</td><td>.p7b</td><td>.wav</td><td></td></tr>
 </table> 
 
-## <a name="file-types-reserved-for-the-operating-system"></a>File types reserved for the operating system
+## <a name="file-types-reserved-for-the-operating-system"></a>保留給作業系統的檔案類型
 
-The following file types are reserved for the operating system
+以下是保留給作業系統的檔案類型
 
 <table>
 <tr><td>.accountpicture-ms</td><td>its</td><td>.ops</td><td>.url</td></tr>
@@ -78,13 +78,13 @@ The following file types are reserved for the operating system
 <tr><td>.isp</td><td>.ocx</td><td>.ttf</td><td></td></tr>
 </table>
 
-## <a name="reserved-uri-scheme-names"></a>Reserved URI scheme names
+## <a name="reserved-uri-scheme-names"></a>保留 URI 配置名稱
 
 <table>
 <tr><td>application.manifest</td><td>internetshortcut</td><td>ms-settings:network-mobilehotspot</td><td>shbfile</td></tr>
 <tr><td>application.reference</td><td>javascript</td><td>ms-settings:network-proxy</td><td>shcmdfile</td></tr>
 <tr><td>batfile</td><td>jscript</td><td>ms-settings:network-wifi</td><td>shsfile</td></tr>
-<tr><td>bing</td><td>jsefile</td><td>ms-settings:nfctransactions</td><td>smb</td></tr>
+<tr><td>Bing</td><td>jsefile</td><td>ms-settings:nfctransactions</td><td>smb</td></tr>
 <tr><td>blob</td><td>ldap</td><td>ms-settings:notifications</td><td>stickynotes</td></tr>
 <tr><td>callto</td><td>lnkfile</td><td>ms-settings:personalization</td><td>sysfile</td></tr>
 <tr><td>cerfile</td><td>mailto</td><td>ms-settings:privacy-calendar</td><td>tel</td></tr>

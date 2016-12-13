@@ -1,33 +1,33 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
-title: Use receipts to verify product purchases
+description: "每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。"
+title: "使用收據來驗證產品購買"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
 
 ---
 
-# <a name="use-receipts-to-verify-product-purchases"></a>Use receipts to verify product purchases
+# <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
 
->**Note**&nbsp;&nbsp;This article shows how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to get and validate a receipt for an in-app purchase. If you are using the alternative [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace for in-app purchases (introduced in Windows 10, version 1607), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Windows Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
+>**注意**&nbsp;&nbsp;這篇文章說明如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來取得和驗證收到 App 內購買。 如果您為 App 內購買使用另一個 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (Windows 10 版本 1607 推出)，這個命名空間並未提供 API 來取得 App 內購買的購買收據。 不過，您可以在 Windows 市集收藏 API 中使用 REST 方法取得購買交易的資料。 如需詳細資訊，請參閱 [App 內購買的收據](in-app-purchases-and-trials.md#receipts)。
 
 
-Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipt provides information about the listed product and monetary cost to the customer.
+每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。 這個收據會為客戶提供所列產品和金錢花費的相關資訊。
 
-Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made add-on (also called in-app product or IAP) purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
+如果您的 App 需要確認使用者已購買 App，或是已從 Windows 市集進行附加元件 (也稱為 App 內產品或 IAP) 購買，這項資訊的存取將可支援這些情況。 例如，想像有一個提供下載內容的遊戲。 如果購買遊戲內容的使用者想要在另一台裝置上玩遊戲，您就需要確認該使用者已經購買內容。 方法如下。
 
-## <a name="requesting-a-receipt"></a>Requesting a receipt
+## <a name="requesting-a-receipt"></a>要求收據
 
 
-The **Windows.ApplicationModel.Store** namespace supports several ways to get a receipt:
+**Windows.ApplicationModel.Store** 命名空間支援幾種方式取得收據︰
 
-* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) or [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (or one of the other overloads of this method), the return value contains the receipt.
-* You can call the [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) method to retrieve the current receipt info for your app and any add-ons in your app.
+* 當您使用 [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (或此方法的其中一個其他多載) 進行購買，傳回的值會包含收據。
+* 您可以呼叫 [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 方法來擷取 App 和 App 中任何附加元件目前的收據資訊。
 
-An app receipt looks something like this.
+App 收據看起來如下。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -51,7 +51,7 @@ An app receipt looks something like this.
 </Receipt>
 ```
 
-A product receipt looks like this.
+產品收據看起來如下。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -74,69 +74,69 @@ A product receipt looks like this.
 </Receipt>
 ```
 
-You can use either of these receipt examples to test your validation code. For more information about the contents of the receipt, see the [element and attribute descriptions](#receipt-descriptions).
+您可以使用這些收據範例的任一種來測試驗證碼。 如需收據內容的詳細資訊，請參閱[元素和屬性描述](#receipt-descriptions)。
 
-## <a name="validating-a-receipt"></a>Validating a receipt
+## <a name="validating-a-receipt"></a>驗證收據
 
-To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, where ```CertificateId``` is the **CertificateId** value in the receipt.
+若要驗證收據的真確性，您需要後端系統 (Web 服務或類似服務) 使用公開憑證來檢查收據的簽章。 若要取得這個憑證，請使用 URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```，其中 ```CertificateId``` 是收據中的 **CertificateId** 值。
 
-Here's an example of that validation process. This code runs in a .NET Framework console application that includes a reference to the **System.Security** assembly.
+以下是該驗證程序的範例。 這個程式碼會在包含 **System.Security** 組件之參考的 .NET Framework 主控台應用程式中執行。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
-## <a name="element-and-attribute-descriptions-for-a-receipt"></a>Element and attribute descriptions for a receipt
+## <a name="element-and-attribute-descriptions-for-a-receipt"></a>收據的元素和屬性描述
 
-This section describes the elements and attributes in a receipt.
+本節說明收據中的元素和屬性。
 
-### <a name="receipt-element"></a>Receipt element
+### <a name="receipt-element"></a>Receipt 元素
 
-The root element of this file is the **Receipt** element, which contains information about app and in-app purchases. This element contains the following child elements.
+此檔案的根元素是 **Receipt** 元素，其中包含 App 與 App 內購買的相關資訊。 此元素包含下列子項元素。
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    No        |  0 or 1  |  Contains purchase information for the current app.            |
-|  [ProductReceipt](#productreceipt)  |     No       |  0 or more    |   Contains information about an in-app purchase for the current app.     |
-|  Signature  |      Yes      |  1   |   This element is a standard [XML-DSIG construct](http://go.microsoft.com/fwlink/p/?linkid=251093). It contains a **SignatureValue** element, which contains the signature you can use to validate the receipt, and a **SignedInfo** element.      |
+|  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
+|  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
+|  Signature  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](http://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
 
-**Receipt** has the following attributes.
+**Receipt** 具有下列屬性。
 
-|  Attribute  |  Description   |
+|  屬性  |  描述   |
 |-------------|-------------------|
-|  **Version**  |    The version number of the receipt.            |
-|  **CertificateId**  |     The certificate thumbprint used to sign the receipt.          |
-|  **ReceiptDate**  |    Date the receipt was signed and downloaded.           |  
-|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
+|  **Version**  |    收據的版本號碼。            |
+|  **CertificateId**  |     用來簽署收據的憑證指紋。          |
+|  **ReceiptDate**  |    簽署和下載收據的日期。           |  
+|  **ReceiptDeviceId**  |   識別用來要求此收據的裝置。         |  |
 
 <span id="appreceipt" />
-### <a name="appreceipt-element"></a>AppReceipt element
+### <a name="appreceipt-element"></a>AppReceipt 元素
 
-This element contains purchase information for the current app.
+此元素包含目前 App 的購買資訊。
 
-**AppReceipt** has the following attributes.
+**AppReceipt** 具有下列屬性。
 
-|  Attribute  |  Description   |
+|  屬性  |  描述   |
 |-------------|-------------------|
-|  **Id**  |    Identifies the purchase.           |
-|  **AppId**  |     The Package Family Name value that the OS uses for the app.           |
-|  **LicenseType**  |    **Full**, if the user purchased the full version of the app. **Trial**, if the user downloaded a trial version of the app.           |  
-|  **PurchaseDate**  |    Date when the app was acquired.          |  |
+|  **Id**  |    識別購買。           |
+|  **AppId**  |     作業系統用於 App 的「套件系列名稱」值。           |
+|  **LicenseType**  |    如果使用者已購買完整版的 App，為 **Full**。 如果使用者下載試用版的 App，為 **Trial**。           |  
+|  **PurchaseDate**  |    取得 App 的日期。          |  |
 
 <span id="productreceipt" />
-### <a name="productreceipt-element"></a>ProductReceipt element
+### <a name="productreceipt-element"></a>ProductReceipt 元素
 
-This element contains information about an in-app purchase for the current app.
+此元素包含目前 App 之 App 內購買的相關資訊。
 
-**ProductReceipt** has the following attributes.
+**ProductReceipt** 具有下列屬性。
 
-|  Attribute  |  Description   |
+|  屬性  |  描述   |
 |-------------|-------------------|
-|  **Id**  |    Identifies the purchase.           |
-|  **AppId**  |     Identifies the app through which the user made the purchase.           |
-|  **ProductId**  |     Identifies the product purchased.           |
-|  **ProductType**  |    Determines the product type. Currently only supports a value of **Durable**.          |  
-|  **PurchaseDate**  |    Date when the purchase occurred.          |  |
+|  **Id**  |    識別購買。           |
+|  **AppId**  |     識別使用者透過哪個 App 進行購買。           |
+|  **ProductId**  |     識別購買的產品。           |
+|  **ProductType**  |    決定產品類型。 目前僅支援 **Durable** 值。          |  
+|  **PurchaseDate**  |    購買的日期。          |  |
 
  
 

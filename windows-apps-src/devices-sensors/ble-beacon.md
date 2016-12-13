@@ -1,57 +1,57 @@
 ---
 author: msatranjr
-title: Bluetooth Advertisements
-description: This section contains articles on how to integrate Bluetooth Low Energy (LE) Advertisements into Universal Windows Platform (UWP) apps through the user of AdvertisementWatcher and AdvertisementPublisher APIs.
+title: "藍牙廣告"
+description: "本節包含如何透過 AdvertisementWatcher 和 AdvertisementPublisher API 的使用者，將藍牙低功耗 (LE) 廣告整合到通用 Windows 平台 (UWP) 應用程式的文章。"
 translationtype: Human Translation
 ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
 ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
 
 ---
 
-# <a name="bluetooth-le-advertisements"></a>Bluetooth LE Advertisements
+# <a name="bluetooth-le-advertisements"></a>藍牙 LE 廣告
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+**重要 API**
 
 -   [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx)
 
-This article provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.  
+這篇文章提供適用於通用 Windows 平台 (UWP) 應用程式的藍牙低功耗 (LE) 廣告指標概觀。  
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>概觀
 
-There are two main functions that a developer can perform using the LE Advertisement APIs:
+有兩個開發人員可以使用 LE Advertisement API 執行的主要功能：
 
--   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): listen for nearby beacons and filter them out based on payload or proximity.  
--   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): define a payload for Windows to advertise on a developers behalf.  
+-   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)：接聽附近的指標並根據承載或鄰近性篩選出指標。  
+-   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)：定義 Windows 承載，以代表開發人員宣傳。  
 
-Full sample code is found in the [Bluetooth Advertisement Sample](http://go.microsoft.com/fwlink/p/?LinkId=619990) on Github
+在 Github 上的[藍牙廣告範例](http://go.microsoft.com/fwlink/p/?LinkId=619990)中可以找到完整的範例程式碼
 
-## <a name="basic-setup"></a>Basic Setup
+## <a name="basic-setup"></a>基本設定
 
-To use basic Bluetooth LE functionality in a Universal Windows Platform app, you must check the Bluetooth capability in the Package.appxmanifest.
+若要在通用 Windows 平台 App 中使用基本的藍牙 LE 功能，您必須在 Package.appxmanifest 中選取藍牙功能。
 
-1. Open Package.appxmanifest
-2. Go to the Capabilities tab
-3. Find Bluetooth in the list on the left and check the box next to it.
+1. 開啟 \[Package.appxmanifest\]
+2. 移至 \[功能\] 索引標籤
+3. 在左側清單中尋找 [藍牙]，並選取它旁邊的方塊。
 
-## <a name="publishing-advertisements"></a>Publishing Advertisements
+## <a name="publishing-advertisements"></a>發佈廣告
 
-Bluetooth LE Advertisements allow your device to constantly beacon out a specific payload, called an advertisement. This advertisement can be seen by any nearby Bluetooth LE capable device, if they are set up to listen for this specific advertisment.
+藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-**Note** For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index).
+**注意：**基於使用者隱私權的理由，廣告的存留時間是與您 App 的存留時間繫結。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index)。
 
-### <a name="basic-publishing"></a>Basic Publishing
+### <a name="basic-publishing"></a>基本發佈
 
-There are many different ways to add data to an Advertisement. This example shows a common way to create a company-specific advertisement. 
+將資料加入「廣告」的方法有很多種。 此範例示範建立公司專屬廣告的常見方法。 
 
-First, create the advertisement publisher that controls whether or not the device is beaconing out a specific advertisement.
+首先，建立廣告發佈程式 (Advertisement Publisher)，以控制裝置是否發出特定廣告指標。
 
 ```csharp
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Second, create a custom data section. This example uses an unassigned **CompanyId** value *0xFFFE* and adds the text *Hello World* to the advertisement. 
+接著，建立自訂資料區段。 這個範例使用未指派的 **CompanyId** 值 *0xFFFE* 並且將 *Hello World* 文字加入廣告。 
 
 ```csharp
 // Add custom data to the advertisement
@@ -69,17 +69,17 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-Now that the publisher has been created and setup, you can call **Start** to begin advertising.
+建立並設定發佈程式之後，您可以呼叫 **Start** 來開始發出廣告。
 
 ```csharp
 publisher.Start();
 ```
 
-## <a name="watching-for-advertisements"></a>Watching for Advertisements
+## <a name="watching-for-advertisements"></a>監看廣告
 
-### <a name="basic-watching"></a>Basic Watching
+### <a name="basic-watching"></a>基本監看
 
-The following code demonstrates how to create a Bluetooth LE Advertisement watcher, set a callback, and start watching for all LE advertisements.
+以下程式碼示範如何建立藍牙 LE 廣告監看程式、設定回呼，以及監看所有 LE 廣告。
 
 ```csharp
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
@@ -94,16 +94,16 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 }
 ```
 
-#### <a name="active-scanning"></a>Active Scanning
-To receive scan response advertisements as well, set the following after creating the watcher. Note that this will cause greater power drain and is not available while in background modes.
+#### <a name="active-scanning"></a>主動掃描
+若同時也要接收掃描回應廣告，則在建立監看程式之後進行以下設定。 注意，此設定會造成消耗較多的電量，且無法於背景模式中使用。
 
 ```csharp
 watcher.ScanningMode = BluetoothLEScanningMode.Active;
 ```
 
-### <a name="watching-for-a-specific-advertisement-pattern"></a>Watching for a Specific Advertisement Pattern
+### <a name="watching-for-a-specific-advertisement-pattern"></a>監看特定廣告模式
 
-Sometimes you want to listen for a specific advertisement. In this case, listen for an advertisement containing a payload with a made up company (identified as 0xFFFE) and containing the string *Hello World* in the advertisement. This can be paired with the Basic Publishing example to have one Windows machine advertising and another watching. Be sure to set this advertisement filter before you start the watcher!
+有時候您會想要接聽特定的廣告。 在此案例中，接聽的廣告所含的承載包含虛構公司 (識別為 0xFFFE)，且廣告中包含 *Hello World* 字串。 這可以與「基本發佈」範例搭配，讓一部 Windows 電腦進行廣告，另一部則進行監看。 請務必在啟動監看程式之前設定此廣告篩選條件！
 
 ```csharp
 var manufacturerData = new BluetoothLEManufacturerData();
@@ -118,9 +118,9 @@ manufacturerData.Data = writer.DetachBuffer();
 watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-### <a name="watching-for-a-nearby-advertisement"></a>Watching for a Nearby Advertisement
+### <a name="watching-for-a-nearby-advertisement"></a>監看附近的廣告
 
-Sometimes you only want to trigger your watcher when the device advertising has come in range. You can define your own range, just note that values will be clipped to between 0 and -128. 
+有時候您只想要在進入裝置發出廣告的範圍時才觸發監看程式。 您可以定義自己的範圍，但請注意該值會縮減至 0 和 -128 之間。 
 
 ```csharp
 // Set the in-range threshold to -70dBm. This means advertisements with RSSI >= -70dBm 
@@ -138,9 +138,9 @@ watcher.SignalStrengthFilter.OutOfRangeThresholdInDBm = -75;
 watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(2000);
 ```
 
-### <a name="gauging-distance"></a>Gauging Distance
+### <a name="gauging-distance"></a>測量距離
 
-When your Bluetooth LE Watcher's callback is triggered, the eventArgs include an RSSI value telling you the received signal strength (how strong the Bluetooth signal is).
+當藍牙 LE 監看程式的回呼被觸發時，包含 RSSI 值的 eventArgs 會告訴您收到的訊號強度 (藍牙訊號的強度)。
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -150,9 +150,9 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 }
 ```
 
-This can be roughly translated into distance, but should not be used to measure true distances as each individual radio is different. Different environmental factors can make distance difficult to gauge (such as walls, cases around the radio, or even air humidity).
+這個值可以約略轉譯成距離，但不應該用來測量實際距離，因為每個獨立無線電波都不同。 不同的環境因素可能使距離難以測量 (如牆壁、無線電波周圍的外殼，或甚至是空氣濕度)。
 
-An alternative to judging pure distance is to define "buckets". Radios tend to report 0 to -50 DBm when they are very close, -50 to -90 when they are a medium distance away, and below -90 when they are far away. Trial and error is best to determine what you want these buckets to be for your app.
+另一個用來判斷單純距離的方法是定義「值區」。 無線電波在非常接近的時候會回報 0 至 -50 DBm，在中等距離的時候為 -50 至 -90，很遠的時候則低於 -90。 若要決定適用於您 App 的值區，嘗試錯誤是最佳的方法。
 
 
 <!--HONumber=Dec16_HO1-->

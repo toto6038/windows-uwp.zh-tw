@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
-Description: After you define your experiment in the Dev Center dashboard and code your experiment in your app, you are ready to active your experiment and use the Dev Center dashboard to review the results of your experiment.
-title: Manage your experiment in the Dev Center dashboard
+Description: "在開發人員中心儀表板中定義實驗並在您的應用程式中編寫實驗用的程式碼之後，您即可使用實驗並使用開發人員中心儀表板來檢閱實驗的結果。"
+title: "在開發人員中心儀表板中管理您的實驗"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 translationtype: Human Translation
 ms.sourcegitcommit: bedaa31018d24f23e3e63c6b552b0d3116d7f415
@@ -9,55 +9,55 @@ ms.openlocfilehash: 18e7956e627589dca694b46472fea631c1ebe6b7
 
 ---
 
-# <a name="manage-your-experiment-in-the-dev-center-dashboard"></a>Manage your experiment in the Dev Center dashboard
+# <a name="manage-your-experiment-in-the-dev-center-dashboard"></a>在開發人員中心儀表板中管理您的實驗
 
-After you [define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to activate your experiment and use the Dev Center dashboard to review the results of your experiment. After you have obtained all the data you need, you can end your experiment and choose whether to keep using the variable values in the control variation for all your apps, or switch to using the variable values in one of your other variations.
+[在開發人員中心儀表板中定義實驗](define-your-experiment-in-the-dev-center-dashboard.md)並[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)之後，您即可啟用實驗並使用開發人員中心儀表板來檢閱實驗的結果。 取得所需的全部資料之後，您可以結束實驗，並選擇是否要在所有 App 中繼續使用控制項變化中的變數值，或切換為使用您其中一個其他變化中的變數值。
 
-> **Note**&nbsp;&nbsp;When you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> **注意**&nbsp;&nbsp;當您啟用實驗時，開發人員中心就會立即開始從任何已檢測的 App 收集資料，以記錄您的實驗資料。 不過，可能需要幾個小時的時間，實驗資料才會出現在儀表板中。
 
-For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+如需示範建立及執行實驗的端對端處理程序的逐步解說，請參閱[利用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
-## <a name="activate-your-experiment"></a>Activate your experiment
+## <a name="activate-your-experiment"></a>啟用您的實驗
 
-When you are satisfied with the parameters of your experiment on the dashboard and you have updated your app code, you are ready to activate your experiment so you can start collecting experiment data from your app. When the experiment is active, your app can retrieve variation values and report view and conversion events to Dev Center.
+當您很滿意儀表板上的實驗參數並已更新 App 程式碼時，即可啟用您的實驗，以便開始從您的 App 收集實驗資料。 實驗進行期間，您的 App 可以擷取變化值，並向開發人員中心回報檢視和轉換事件。
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. Under **Your apps**, select the app with the experiment that you want to activate.
-3. In the navigation pane, select **Services** and then select **Experimentation**.
-4. In the table of projects in the **Projects** section, expand the project that contains your experiment and then do one of the following:
-  * Click the **Activate** link for your experiment. Your experiment is added to the **Active experiments** section near the top of the page.
-  * Click the experiment name, scroll to the bottom of the experiment page, and click **Activate**.
+1. 登入[開發人員中心儀表板](https://dev.windows.com/overview)。
+2. 在**您的應用程式** 之下，選取您要啟用實驗的應用程式。
+3. 在瀏覽窗格中，選取 [服務]，然後選取 [實驗]。
+4. 在 [專案] 區段的專案表格中，展開包含您實驗的專案，接著執行下列其中一項：
+  * 按一下實驗的 [啟用] 連結。 您的實驗即會新增到接近頁面頂端的 [作用中的實驗] 區段。
+  * 按一下實驗名稱、捲動到實驗頁面底部，然後按一下 [啟用]。
 
-> **Important**&nbsp;&nbsp;After you activate an experiment, you can no longer modify the experiment parameters unless you clicked the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
-
-
-## <a name="review-the-results-of-your-experiment"></a>Review the results of your experiment
-
-1. In Dev Center, return to the **Experimentation** page for your app.
-2. In the **Active experiments** section, click the name of your active experiment to go to the experiment page.
-3. For an active or completed experiment, the first two sections in this page provide the results of your experiment:
-  * The **Results summary** section lists your experiment goals and the conversion rate percentage for each variation.
-  * The **Results details** section provides more details for each variation of all the goals in your experiment, including the views, conversions, unique users, conversion rate, delta %, confidence, and significance. The *confidence* is a statistical measure of the reliability of an estimate, which calculates the margin of error. The *significance* is a statistical measure, based on sample size, to determine the likelihood that a result is not due to chance, but is instead attributed to a specific cause.
-
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
+> **重要**&nbsp;&nbsp;啟用實驗之後，除非您在建立實驗時按下 [可編輯的實驗] 核取方塊，否則您就無法再修改實驗參數。 我們建議您在啟用實驗之前，先在您的 App 中編寫實驗程式碼。
 
 
-## <a name="complete-your-experiment"></a>Complete your experiment
+## <a name="review-the-results-of-your-experiment"></a>檢閱實驗的結果
 
-1. In the dashboard, return to your experiment page. For instructions, see the previous section.
-2. In the **Results summary** section, do one of the following:
-  * If you want to end the experiment and continue using the variable values in the control variation in your app, click **Keep**.
-  * If you want to end the experiment but switch to using the variable values in a different variation in your app, click **Switch** under the variation to which you want to switch.
-3. Click **OK** to confirm that you want to end the experiment.
+1. 在開發人員中心，回到您 App 的 [實驗] 頁面。
+2. 在 [作用中的實驗] 區段中，按一下作用中的實驗名稱以移至實驗頁面。
+3. 若為作用中或已完成的實驗，此頁面中的前兩個區段會提供您的實驗結果︰
+  * [結果摘要] 區段會列出您的實驗目標以及每個變化的轉換率百分比。
+  * [結果詳細資料] 區段會為實驗中所有目標的每個變化提供更多詳細資料，包括檢視數、轉換數、不重複的使用者數、轉換率、差異 %、信賴和顯著性。 「信賴」是估計值可靠性的統計測量，用來計算誤差範圍。 [顯著性] 是以樣本大小為基礎的統計測量，用來判斷結果的可能性不是因為機運，而是歸咎於特定原因。
+
+  >**注意**&nbsp;&nbsp;開發人員中心僅會回報 24 小時內每個使用者的第一個轉換事件。 如果使用者在 24 小時內觸發您 App 中多個轉換事件，則只會回報第一個轉換事件。 這是為了防止具有許多轉換事件的單一使用者扭曲一組範例使用者的實驗結果。
 
 
-## <a name="related-topics"></a>Related topics
+## <a name="complete-your-experiment"></a>完成您的實驗
 
-* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+1. 在儀表板中，回到您的實驗頁面。 如需相關指示，請參閱上一節。
+2. 在 [結果摘要] 區段中，執行下列其中一項：
+  * 如果您想要結束實驗並繼續在您的 App 中使用此控制項變化的變數值，按一下 [保留]。
+  * 如果您想要結束實驗但切換為在您的 App 中使用不同變化的變數值，在您要切換的目標變化下方按一下 [切換]。
+3. 按一下 [確定]，確認您要結束實驗。
+
+
+## <a name="related-topics"></a>相關主題
+
+* [在開發人員中心儀表板中建立專案與定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)
+* [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
+* [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
 
 
 
