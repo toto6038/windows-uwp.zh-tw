@@ -15,7 +15,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件 (亦稱為 App 內產品或 IAP) 提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
+>**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -51,7 +51,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
+  >**注意**  如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新圖示，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -210,7 +210,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 此資源包含附加元件的銷售資訊。
 
->**重要**&nbsp;&nbsp;**銷售**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
+>**重要**  **銷售**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
 
    > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
    > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。

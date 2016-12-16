@@ -14,7 +14,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 
 | 方法        | URI    | 描述                                                                 |
@@ -37,7 +37,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 1. 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
-  >**注意**&nbsp;&nbsp;請確定 App 至少有一個已完成[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)資訊的完整提交。
+  >**注意**  請確定 App 至少有一個已完成[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)資訊的完整提交。
 
 2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
@@ -57,7 +57,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果您要為提交新增新的套件或影像，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
+  >**注意**  如果您要為提交新增新的套件或影像，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
 
 4. 如果您要新增提交的新套件或影像，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -90,7 +90,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-an-app-submission"></a>管理 App 提交的漸進式套件推出
 
-您可以將 App 提交中的已更新套件以漸進方式推出給 Windows&nbsp;10 上的一部分 App 客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
+您可以將 App 提交中的已更新套件以漸進方式推出給 Windows 10 上的一部分 App 客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
 
 您也可以在「Windows 市集提交 API」中使用下列方法，以程式設計方式啟用和管理 App 提交的漸進式套件推出。
 
@@ -265,8 +265,8 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 | applicationPackages           |   array  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需詳細資訊，請參閱下方的[應用程式套件](#application-package-object)一節。 |    
 | packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱下方的[套件交付選項物件](#package-delivery-options-object)一節。  |
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](#enterprise-licensing)，可指出 App 適用的企業授權行為。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows&nbsp;10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 物件   |  機碼和值組的字典，其中每個機碼都是一個 [Windows&nbsp;10 裝置系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每個值都是一個布林值，可指出您的 App 是否允許將目標設為指定的裝置系列。     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 物件   |  機碼和值組的字典，其中每個機碼都是一個 [Windows 10 裝置系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每個值都是一個布林值，可指出您的 App 是否允許將目標設為指定的裝置系列。     |    
 | friendlyName           |   字串  |  基於顯示用途而使用的 App 易記名稱。       |  
 
 
@@ -333,7 +333,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 此資源包含 App 的銷售資訊。
 
->**重要**&nbsp;&nbsp;**銷售**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改 App 提交的銷售資料︰
+>**重要**  **銷售**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改 App 提交的銷售資料︰
 
    > * 在呼叫 [GET 方法以取得 App 提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得 App 提交的銷售資料。
    > * 呼叫 [PUT 方法以更新 App 提交](update-an-app-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更 App 提交的銷售資料。
@@ -408,7 +408,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 此資源具有下列值。  
 
->**注意**&nbsp;&nbsp;在呼叫[更新 App 提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+>**注意**  在呼叫[更新 App 提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
 
 | 值           | 類型    | 描述                   |
 |-----------------|---------|------|
@@ -421,7 +421,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 | capabilities    |  陣列   |  套件所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能宣告](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
 | minimumDirectXVersion    |  字串   |  App 套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的 App 進行設定；對於目標為其他版本的 App 則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | 字串    |  App 套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的 App 進行設定；對於目標為其他版本的 App 則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | 陣列    |  代表套件目標裝置系列的字串陣列。 這個值只適用於目標為 Windows&nbsp;10 的套件；對於目標為較舊版本的套件，這個值是 **None** 值。 目前針對 Windows&nbsp;10 套件支援下列的裝置系列字串，其中 *{0}* 是 Windows&nbsp;10 版本字串，例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0： <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
+| targetDeviceFamilies    | 陣列    |  代表套件目標裝置系列的字串陣列。 這個值只適用於目標為 Windows 10 的套件；對於目標為較舊版本的套件，這個值是 **None** 值。 目前針對 Windows 10 套件支援下列的裝置系列字串，其中 *{0}* 是 Windows 10 版本字串，例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0： <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
 
 <span/>
 

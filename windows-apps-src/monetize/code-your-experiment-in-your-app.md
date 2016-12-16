@@ -20,7 +20,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 
 下列小節描述取得實驗變化及將事件記錄至「開發人員中心」的一般程序。 編寫實驗用的 App 程式碼之後，就可以[在開發人員中心儀表板中定義實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 如需示範建立及執行實驗的端對端程序的逐步解說，請參閱[使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
->**注意**&nbsp;&nbsp;Windows Store Services SDK 中的部分實驗 API 使用[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)從「開發人員中心」擷取資料。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
+>**注意**  Windows Store Services SDK 中的部分實驗 API 使用[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)從「開發人員中心」擷取資料。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
 
 ## <a name="configure-your-project"></a>設定您的專案
 
@@ -32,7 +32,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 3. 在 [參考管理員] 中，展開 [通用 Windows]，然後按一下 [擴充功能]。
 4. 在 SDK 清單中，選取 [Microsoft Engagement Framework] 旁邊的核取方塊，然後按一下 [確定]。
 
->**注意**&nbsp;&nbsp;本文中的程式碼範例假設您的程式碼檔案有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空間的 **using** 陳述式。
+>**注意**  本文中的程式碼範例假設您的程式碼檔案有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空間的 **using** 陳述式。
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>取得變化資料並記錄實驗的檢視事件
 
@@ -51,7 +51,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 1. 宣告一個指派給您所要擷取的實驗之[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)的字串變數。
-  >**注意**&nbsp;&nbsp;當您[在開發人員中心儀表板中建立專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)時，會取得一個專案識別碼。 以下所示的專案識別碼僅供範例用途使用。
+  >**注意**  當您[在開發人員中心儀表板中建立專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)時，會取得一個專案識別碼。 以下所示的專案識別碼僅供範例用途使用。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]

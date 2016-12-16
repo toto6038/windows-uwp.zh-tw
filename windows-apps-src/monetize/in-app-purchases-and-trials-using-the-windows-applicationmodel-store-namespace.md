@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何在目標為 Windows&nbsp;10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
+description: "了解如何在目標為 Windows 10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
 title: "使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
@@ -19,7 +19,7 @@ ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
 
 >**注意事項**&nbsp;&nbsp;
 >
-> * 如果您 App 的目標是 Windows&nbsp;10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，並且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+> * 如果您 App 的目標是 Windows 10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，並且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 <br/><br/>
 > * 在使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中並不支援 **Windows.ApplicationModel.Store** 命名空間。 這些應用程式必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
 
@@ -50,7 +50,7 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 
 雖然您可以修改此檔案中的值，但我們還是建議您建立自己的 WindowsStoreProxy.xml 檔案 (在 Visual Studio 專案的資料資料夾) 來改用 **CurrentAppSimulator**。 模擬交易時，請呼叫 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 載入您的檔案。 如果您沒有呼叫 **ReloadSimulatorAsync** 載入自己的 WindowsStoreProxy.xml 檔案，**CurrentAppSimulator** 會建立/載入 (但不覆寫) 預設的 WindowsStoreProxy.xml 檔案。
 
->**注意**&nbsp;&nbsp;請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
+>**注意**  請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
 
 
 <span id="proxy-examples" />

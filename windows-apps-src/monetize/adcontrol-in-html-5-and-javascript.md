@@ -66,11 +66,11 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意**&nbsp;&nbsp;這一行必須放在 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
+    > **注意**  這一行必須放在 **&lt;head&gt;** 區段所包含的 default.js 之後，否則建置專案時會發生錯誤。
 
 8.  修改 default.html 檔案 (或其他 html 檔案，視您的專案而定) 中的 **&lt;body&gt;** 區段，以包含 **AdControl** 的 div。 指派 **AdControl** 中的 **applicationId** 和 **adUnitId** 屬性為[測試模式值](test-mode-values.md)中所提供的值，並調整控制項的高度與寬度，以符合其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**&nbsp;&nbsp;在提交 App 之前，請以實際值取代測試的 **applicationId** 和 **adUnitId** 值。
+    > **注意**  在提交 App 之前，請以實際值取代測試的 **applicationId** 和 **adUnitId** 值。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"

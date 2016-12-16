@@ -69,7 +69,7 @@ ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
 
 | 欄位        |  描述        |
 |---------------|-----------------|
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
 | osBuild | 錯誤發生時，App 正在執行之 OS 的組建編號。 |
 | market | 此字串包含錯誤發生時，App 正在執行之裝置的市場 ISO 3166 國家/地區碼。 |
 | deviceType | 下列其中一個字串指定錯誤發生時，App 正在執行的裝置類型︰<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |

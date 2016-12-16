@@ -13,7 +13,7 @@ ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
 
->**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來實作試用版，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
+>**注意**  本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來實作試用版，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
 
 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
@@ -100,7 +100,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 
 以模擬的授權伺服器測試您的 App 之後，並在將 App 提交至市集進行認證之前，請以 **CurrentApp** 取代 **CurrentAppSimulator**，如下一個程式碼範例所示。
 
->**重要**&nbsp;&nbsp;在將您的 App 提交至市集時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
+>**重要**  在將您的 App 提交至市集時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]

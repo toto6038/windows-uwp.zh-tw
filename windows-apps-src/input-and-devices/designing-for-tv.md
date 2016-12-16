@@ -18,7 +18,7 @@ ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
 
 ## <a name="overview"></a>概觀
 
-通用 Windows 平台可讓您創造跨多個 Windows&nbsp;10 裝置的絕佳體驗。 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
+通用 Windows 平台可讓您創造跨多個 Windows 10 裝置的絕佳體驗。 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
 
 坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或其他輸出至電視螢幕的裝置開發 app，並使用控制器做為輸入，您就必須記住這一點。
 
@@ -473,7 +473,7 @@ public App()
 
 視覺焦點是目前有焦點的 UI 元素周圍的框線。 這可協助引導使用者輕鬆瀏覽您的 UI 而不會迷失。
 
-透過視覺更新，以及對視覺焦點新增的許多自訂選項，開發人員可以信任單一視覺焦點能在電腦和 Xbox One 上，以及在支援鍵盤和/或遊戲台/遙控器的任何其他 Windows&nbsp;10 裝置上運作良好。
+透過視覺更新，以及對視覺焦點新增的許多自訂選項，開發人員可以信任單一視覺焦點能在電腦和 Xbox One 上，以及在支援鍵盤和/或遊戲台/遙控器的任何其他 Windows 10 裝置上運作良好。
 
 雖然不同平台上可以使用相同的視覺焦點，但是使用者對於 10 英呎體驗遇到的狀況稍有不同。 您應該假設使用者不會完全注意到整個電視螢幕，因此目前聚焦的元素對使用者而言隨時都清晰可見非常重要，避免視覺搜尋遇到挫折。
 
@@ -1031,7 +1031,7 @@ if (IsTenFoot)
 
 如需深入了解將媒體加入 App，請參閱[媒體播放](../controls-and-patterns/media-playback.md)。
 
-> ![NOTE] `MediaPlayerElement` 只能在 Windows&nbsp;10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows&nbsp;10 開發 App，便必須改為使用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
+> ![NOTE] `MediaPlayerElement` 只能在 Windows 10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
 
 ### <a name="search-experience"></a>搜尋體驗
 

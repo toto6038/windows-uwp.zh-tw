@@ -11,7 +11,7 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含下列各項的相關資訊：
 

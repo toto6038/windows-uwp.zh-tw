@@ -19,7 +19,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 App 建立新的提交，請按一下 App [概觀] 頁面上所顯示最新提交旁的 [更新]****。
 
-> **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上建立 App 提交。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將 App 提交自動化。
+> **注意**  本文件章節描述如何在開發人員中心儀表板上建立 App 提交。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將 App 提交自動化。
 
 ## App 提交檢查清單
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-**注意**&nbsp;&nbsp;如需直接將企業營運 (LOB) App 發佈到企業的相關資訊，請參閱[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)。
+**注意**  如需直接將企業營運 (LOB) App 發佈到企業的相關資訊，請參閱[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)。
 
 
 

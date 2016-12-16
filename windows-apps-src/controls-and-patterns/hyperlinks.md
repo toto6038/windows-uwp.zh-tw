@@ -64,7 +64,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ![超連結做為文字元素的範例](images/controls_hyperlink-element.png) 
 
-> **提示**&nbsp;&nbsp;在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="preserve"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
+> **提示**  在 XAML 中，於具有其他文字元素的文字控制項中使用 Hyperlink 時，請將內容放在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，並將 `xml:space="preserve"` 屬性套用至 Span，以保留 Hyperlink 與其他元素之間的空格。
 
 ## 建立 HyperlinkButton
 
@@ -95,7 +95,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 若要使用超連結瀏覽至 URI，請設定 NavigateUri 屬性。 使用者按一下或點選超連結時，會在預設瀏覽器中開啟指定的 URI。 預設瀏覽器會在與您 App 不同的處理程序中執行。
 
-> **注意**&nbsp;&nbsp;您不需要使用 http: 或 https: 配置。 如果適合在瀏覽器中載入這些位置中的資源內容，則可以使用 ms-appx:、ms-appdata: 或 ms-resources: 這類配置。 不過，會特別封鎖 file: 配置。 如需詳細資訊，請參閱 [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> **注意**  您不需要使用 http: 或 https: 配置。 如果適合在瀏覽器中載入這些位置中的資源內容，則可以使用 ms-appx:、ms-appdata: 或 ms-resources: 這類配置。 不過，會特別封鎖 file: 配置。 如需詳細資訊，請參閱 [URI 配置](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 使用者按一下超連結時，會將 NavigateUri 屬性的值傳遞給 URI 類型和配置的系統處理常式。 系統接著會啟動針對 NavigateUri 所提供的 URI 配置登錄的 app。
 

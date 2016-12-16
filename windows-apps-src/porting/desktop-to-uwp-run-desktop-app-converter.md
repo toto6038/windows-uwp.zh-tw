@@ -33,7 +33,7 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 ### <a name="9142016-v10"></a>9/14/2016 (v1.0)
 
 * Desktop App Converter 現在已在 [Windows 市集](https://aka.ms/converter)中可供下載。 
-* 在[下載中心](https://aka.ms/converterimages)抓取最新的 Windows&nbsp;10 基礎映像 (.wim) 以搭配 DAC 使用。
+* 在[下載中心](https://aka.ms/converterimages)抓取最新的 Windows 10 基礎映像 (.wim) 以搭配 DAC 使用。
 * 透過市集 app，您現在可以使用新的進入點 *DesktopAppConverter.exe <arguments>*，從提升權限的命令提示字元或 PowerShell 視窗中的任何位置執行轉換器。  
 
 
@@ -48,7 +48,7 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 * 已基於測試目的新增對自動簽署由 DAC 所產生且已轉換應用程式的支援 請查看 ```–Sign``` 旗標來試試看吧。 
 * 已新增警告，如果在封裝的 AppX 內不支援虛擬登錄區中的任何 COM 註冊時提供警告。  
 * 已新增支援，以支援在 VC++ 程式庫上自動偵測 App 相依性，然後將它們轉換為 AppX 資訊清單相依性。 請注意，為了使用 VC++ 執行階段側載與測試 App，您將需要下載 VCLib 架構套件，如部落格文章[在 Centennial 專案中使用 Visual C++ 執行階段](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)中所述。 在電腦上的資料夾 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下方找到套件、瀏覽到您所需的版本 (例如 11.0、12.0、14.0)，然後按兩下適當的架構套件 (x64、x86) 加以安裝。
-* 更新資訊清單結構描述，以便與 Windows&nbsp;10 年度更新版 (10.0.14393.0) 一致。 
+* 更新資訊清單結構描述，以便與 Windows 10 年度更新版 (10.0.14393.0) 一致。 
 * 數個錯誤修正和改進的輸出配置。 
 
 ### <a name="772016-v0122"></a>7/7/2016 (v0.1.22)
@@ -58,7 +58,7 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ### <a name="6162016-v0120"></a>6/16/2016 (v0.1.20)
 
-* 修正會致使無法順利在最新 Windows&nbsp;10 Insider Preview 組建上成功轉換的任何問題。 
+* 修正會致使無法順利在最新 Windows 10 Insider Preview 組建上成功轉換的任何問題。 
 * 使用 ```–PackageArch``` 取代 ```–CreateX86Package```，這可讓您指定產生的套件架構。 
 
 ### <a name="682016"></a>6/8/2016
@@ -86,7 +86,7 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ### <a name="operating-system"></a>作業系統
 
-+ Windows&nbsp;10 年度更新版 (10.0.14393.0 和更新版本) 專業版或企業版。
++ Windows 10 年度更新版 (10.0.14393.0 和更新版本) 專業版或企業版。
 
 ### <a name="hardware-configuration"></a>硬體設定
 
@@ -96,11 +96,11 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ### <a name="required-resources"></a>所需的資源
 
-+ [適用於 Windows&nbsp;10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
++ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## <a name="set-up-the-desktop-app-converter"></a>安裝 Desktop App Converter
 
-Desktop App Converter 依賴最新的 Windows&nbsp;10 功能。 請確定您是執行 Windows&nbsp;10 年度更新版 (14393.0) 或更新組建。
+Desktop App Converter 依賴最新的 Windows 10 功能。 請確定您是執行 Windows 10 年度更新版 (14393.0) 或更新組建。
 
 ### <a name="store-download"></a>市集下載
 
@@ -169,13 +169,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe
 
 ## <a name="sign-your-appx-package"></a>簽署您的 .Appx 套件
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 ```-Sign``` 旗標做為轉換器命令列的一部分或 SignTool.exe (其隨附於 Microsoft Windows&nbsp;10 SDK) 來簽署 .appx 套件。
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 ```-Sign``` 旗標做為轉換器命令列的一部分或 SignTool.exe (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
 
 如需如何簽署.appx 套件的詳細資訊，請參閱[簽署已轉換的傳統型應用程式](desktop-to-uwp-signing.md)。 
 
 ## <a name="caveats"></a>警告
 
-1. 主機電腦上的 Windows&nbsp;10 組建必須符合您在傳統型應用程式轉換器下載中取得的基礎映像。  
+1. 主機電腦上的 Windows 10 組建必須符合您在傳統型應用程式轉換器下載中取得的基礎映像。  
 2. 確定桌面安裝程式是在獨立的目錄中，因為轉換器會將目錄的所有內容複製到隔離的 Windows 環境。  
 3. 傳統型應用程式轉換器目前只支援在 64 位元作業系統上執行轉換處理序。 您只能將已轉換的 .appx 套件部署到 64 位元 (x64) 作業系統。  
 4. 傳統型應用程式轉換器需要桌面安裝程式，以便在自動安裝模式下執行。 確保您會使用 *-InstallerArguments* 參數，將適用於安裝程式的無訊息旗標傳遞至轉換器。

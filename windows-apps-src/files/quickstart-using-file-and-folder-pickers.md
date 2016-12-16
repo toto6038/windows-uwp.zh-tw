@@ -12,7 +12,7 @@ ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 # <a name="open-files-and-folders-with-a-picker"></a>使用選擇器開啟檔案和資料夾
 
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**

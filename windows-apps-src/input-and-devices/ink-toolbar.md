@@ -12,6 +12,8 @@ ms.openlocfilehash: 1b810a42166c48c1359dcf9adfba84184234b42c
 ---
 
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 有兩個不同的控制項可協助在通用 Windows 平台 (UWP) 應用程式中使用手寫筆跡：[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
 
@@ -29,13 +31,15 @@ ms.openlocfilehash: 1b810a42166c48c1359dcf9adfba84184234b42c
 
   我們會在本主題中討論 InkToolbar。
 
-## <a name="important-apis"></a>重要 API
-
-  -   [**InkCanvas 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
-  -   [**InkToolbar 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
-  -   [**InkPresenter 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)
-  -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
-
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**InkCanvas 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
+<li>[**InkToolbar 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
+<li>[**InkPresenter 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
+<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
+</ul>
+</div>
 
 ## <a name="default-inktoolbar"></a>預設 InkToolbar
 
@@ -269,10 +273,10 @@ By default, the InkToolbar supports both pen and mouse input, you have to enable
 InkToolbar 包含兩個不同群組的按鈕類型︰
 
 1. 包含內建繪圖、清除以及醒目提示按鈕的「工具」按鈕群組。 在此處新增自訂的畫筆與工具。
-> **注意**&nbsp;&nbsp;功能選項互斥。
+> **注意**  功能選項互斥。
 
 2. 包含內建尺規按鈕的「切換」按鈕群組。 在此處新增自訂的切換。
-> **注意**&nbsp;&nbsp;功能不會互斥，因此可以和其他使用中的工具同時使用。
+> **注意**  功能不會互斥，因此可以和其他使用中的工具同時使用。
 
 根據您的應用程式和所需的手寫筆跡功能，您可以將下列任何按鈕 (繫結到您自訂的筆跡功能) 新增到 InkToolbar：
 
@@ -280,7 +284,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 - 自訂工具 – 由主控 App 定義的非畫筆工具。
 - 自訂切換 – 將應用程式定義功能的狀態設定為開啟或關閉。 開啟時，功能會與使用中的工具搭配使用。
 
-> **注意**&nbsp;&nbsp;您無法變更內建按鈕的顯示順序。 預設的顯示順序是︰鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
+> **注意**  您無法變更內建按鈕的顯示順序。 預設的顯示順序是︰鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
 
 ### <a name="custom-pen"></a>自訂畫筆
 

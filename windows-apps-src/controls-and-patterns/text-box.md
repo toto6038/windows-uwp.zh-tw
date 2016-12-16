@@ -104,7 +104,7 @@ IsEnabled
 - 若要讓文字方塊允許並顯示新行或傳回字元，請將 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
 - 若要啟用文字換行，請將 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
-> **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 的 TextWrapping 屬性均不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，則會擲回無效的引數例外狀況。
+> **注意**  TextBox 和 RichEditBox 的 TextWrapping 屬性均不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，則會擲回無效的引數例外狀況。
 
 多行 TextBox 大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 或 [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 屬性，或是以父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。
 
@@ -222,7 +222,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
-> **重要**&nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
+> **重要**  輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
 其他會影響觸控式鍵盤的屬性包括 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx)、[IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx)。 (IsSpellCheckEnabled 也會影響使用硬體鍵盤時的 TextBox。)
 

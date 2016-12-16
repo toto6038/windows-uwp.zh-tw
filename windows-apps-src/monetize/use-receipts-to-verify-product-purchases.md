@@ -12,7 +12,7 @@ ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
 
->**注意**&nbsp;&nbsp;這篇文章說明如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來取得和驗證收到 App 內購買。 如果您為 App 內購買使用另一個 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (Windows 10 版本 1607 推出)，這個命名空間並未提供 API 來取得 App 內購買的購買收據。 不過，您可以在 Windows 市集收藏 API 中使用 REST 方法取得購買交易的資料。 如需詳細資訊，請參閱 [App 內購買的收據](in-app-purchases-and-trials.md#receipts)。
+>**注意**  這篇文章說明如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來取得和驗證收到 App 內購買。 如果您為 App 內購買使用另一個 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (Windows 10 版本 1607 推出)，這個命名空間並未提供 API 來取得 App 內購買的購買收據。 不過，您可以在 Windows 市集收藏 API 中使用 REST 方法取得購買交易的資料。 如需詳細資訊，請參閱 [App 內購買的收據](in-app-purchases-and-trials.md#receipts)。
 
 
 每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。 這個收據會為客戶提供所列產品和金錢花費的相關資訊。

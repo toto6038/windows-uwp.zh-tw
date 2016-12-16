@@ -18,11 +18,11 @@ Windows 市集提供「電信業者帳單」做為針對支援此功能之電信
 
 我們會定期與電信業者合作，拓展此付款方式的可用性。 如果您想要建議我們支援未在下面清單中列出的電信業者，請聯絡電信業者。
 
-## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>適用於 Windows&nbsp;10 和 Xbox One 裝置的電信業者帳單
+## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>適用於 Windows 10 和 Xbox One 裝置的電信業者帳單
 
-Windows&nbsp;10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows&nbsp;10 的所有裝置、執行 Windows&nbsp;10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
+Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows 10 的所有裝置、執行 Windows 10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
 
-目前已有下列電信業者支援 Windows&nbsp;10 的電信業者帳單實作。
+目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
 
 | 國家/地區  | 電信業者 |
 |-----------------|------------------|
@@ -40,10 +40,10 @@ Windows&nbsp;10 引進了「電信業者帳單」的新實作。 這個實作適
 
  
 
-## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>適用於 Windows Phone 8.x 和 Windows&nbsp;10 行動裝置版裝置的電信業者帳單
+## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>適用於 Windows Phone 8.x 和 Windows 10 行動裝置版裝置的電信業者帳單
 
 
-舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows&nbsp;10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
+舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows 10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
 
 下列電信業者支援舊版的電信業者帳單實作。
 

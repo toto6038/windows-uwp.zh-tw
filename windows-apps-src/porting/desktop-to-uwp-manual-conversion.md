@@ -75,7 +75,7 @@ ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
 
 ## <a name="run-the-makeappx-tool"></a>執行 MakeAppX 工具
 
-使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows&nbsp;10 SDK。 
+使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows 10 SDK。 
 
 若要執行 MakeAppx，必須先確定您已建立資訊清單檔案，如上方所述。 
 
@@ -97,7 +97,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## <a name="sign-your-appx-package"></a>簽署您的 AppX 套件
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows&nbsp;10 SDK) 來簽署 .appx 套件。
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
 
 用法範例： 
 

@@ -11,7 +11,7 @@ ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows&nbsp;8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  

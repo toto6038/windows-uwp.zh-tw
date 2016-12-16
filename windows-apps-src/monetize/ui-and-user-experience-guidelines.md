@@ -27,7 +27,7 @@ ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
 
 * 將廣告設計融入您的體驗中。 提供設計人員範例廣告，以規劃廣告的外觀。 App 中兩個良好規劃的廣告範例是「廣告即內容」配置和分割配置。
 
-  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows&nbsp;8.1 和 Windows&nbsp;10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
+  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows 8.1 和 Windows 10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
 
 * 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的 App。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[錯誤處理](error-handling-with-advertising-libraries.md)。
 

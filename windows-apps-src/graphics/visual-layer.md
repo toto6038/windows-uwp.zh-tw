@@ -10,9 +10,9 @@ ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
 ---
 # <a name="visual-layer"></a>視覺層
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows&nbsp;8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在 Windows&nbsp;10 中，已完成重要的工作來為所有 Windows 應用程式 (不論是傳統型或行動式) 建立新的整合式撰寫器和轉譯引擎。 該工作的結果即是稱為 Windows.UI.Composition 的「組合 WinRT API」，此 API 可讓您存取新的輕量型 Composition 物件，連同新的 Compositor 導向 Animations 與 Effects。
+在 Windows 10 中，已完成重要的工作來為所有 Windows 應用程式 (不論是傳統型或行動式) 建立新的整合式撰寫器和轉譯引擎。 該工作的結果即是稱為 Windows.UI.Composition 的「組合 WinRT API」，此 API 可讓您存取新的輕量型 Composition 物件，連同新的 Compositor 導向 Animations 與 Effects。
 
 Windows.UI.Composition 是一個宣告式的[保留模式](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API，您可以從任何「通用 Windows 平台」(UWP) 應用程式呼叫它以直接在應用程式中建立組合物件、動畫及效果。 API 是一個對現有架構 (例如 XAML) 的強大補充，可為 UWP 應用程式的開發人員提供 一個熟悉的 C# 表面來新增到其應用程式。 這些 API 也可用來建立無 DX 樣式架構的應用程式。
 

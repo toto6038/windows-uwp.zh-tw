@@ -64,7 +64,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | 欄位        | 支援的運算子   |  描述        |
 |---------------|--------|-----------------|
 | market | eq、ne | 內含裝置市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | isRevised  | eq、ne  | 指定 <strong>true</strong> 以篩選已修訂的評論，否則請指定 <strong>false</strong>。  |
 | packageVersion  | eq、ne  | 已評論的應用程式套件版本。  |

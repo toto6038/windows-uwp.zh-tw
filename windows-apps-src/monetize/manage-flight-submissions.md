@@ -17,7 +17,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理套件正式發行前小眾測試版提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 >**注意**
-            &nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 套件正式發行前小眾測試版必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理套件正式發行前小眾測試版的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
+              這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 套件正式發行前小眾測試版必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理套件正式發行前小眾測試版的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -58,7 +58,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
   ```
 
   >**注意**
-            &nbsp;&nbsp;如果您要為提交新增新的套件，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
+              如果您要為提交新增新的套件，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
 
 4. 如果您要新增提交的新套件，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -255,7 +255,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 此資源具有下列值。
 
 >**注意**
-            &nbsp;&nbsp;在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+              在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
 
 | 值           | 類型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|

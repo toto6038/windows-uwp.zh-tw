@@ -19,7 +19,7 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 
 >
             **注意**
-            &nbsp;&nbsp;InkCanvas 可以同時針對滑鼠與觸控輸入設定，以支援類似功能。
+              InkCanvas 可以同時針對滑鼠與觸控輸入設定，以支援類似功能。
 
 因為 InkCanvas 控制項不包含變更預設筆墨筆劃設定的支援，所以它可以與 InkToolbar 控制項配對。 InkToolbar 包含了可自訂與可擴充的按鈕集合，可在相關聯的 InkCanvas 中啟用筆跡相關的功能。
 
@@ -27,7 +27,7 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 
 >
             **注意**
-            &nbsp;&nbsp;InkToolbar 支援手寫筆以及滑鼠輸入，並可設定為辨識觸控輸入設定。
+              InkToolbar 支援手寫筆以及滑鼠輸入，並可設定為辨識觸控輸入設定。
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
@@ -56,7 +56,7 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 
 >
             **注意**
-            &nbsp;&nbsp;如需更多 InkCanvas 上轉譯的筆墨筆劃自訂項目，請使用基礎 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
+              如需更多 InkCanvas 上轉譯的筆墨筆劃自訂項目，請使用基礎 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
 
 ## 範例
 
@@ -80,7 +80,7 @@ InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板
 
 >
             **注意**
-            &nbsp;&nbsp;如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱[UWP app 中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)一文。
+              如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱[UWP app 中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)一文。
 
 InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所有內建工具) 併入您的 App 時需要額外的一行標記︰
 
@@ -121,12 +121,12 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 1. 包含內建繪圖、清除以及醒目提示按鈕的「工具」按鈕群組。 在此處新增自訂的畫筆與工具。
 > 
             **注意**
-            &nbsp;&nbsp;功能選項互斥。
+              功能選項互斥。
 
 2. 包含內建尺規按鈕的「切換」按鈕群組。 在此處新增自訂的切換。
 > 
             **注意**
-            &nbsp;&nbsp;功能不會互斥，因此可以和其他使用中的工具同時使用。
+              功能不會互斥，因此可以和其他使用中的工具同時使用。
 
 根據您的應用程式和所需的手寫筆跡功能，您可以將下列任何按鈕 (繫結到您自訂的筆跡功能) 新增到 InkToolbar：
 
@@ -136,7 +136,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 > 
             **注意**
-            &nbsp;&nbsp;您無法變更內建按鈕的顯示順序。 預設的顯示順序是︰鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
+              您無法變更內建按鈕的顯示順序。 預設的顯示順序是︰鋼珠筆、鉛筆、螢光筆、橡皮擦和尺規。 自訂畫筆會附加到最後一個預設畫筆，自訂工具按鈕會新增到最後一個畫筆按鈕與橡皮擦按鈕之間，而自訂切換按鈕會新增到尺規按鈕之後。 (自訂按鈕會以指定的順序新增。)
 
 雖然 InkToolbar 可能是最上層項目，但它通常會透過「手寫筆跡」按鈕或命令公開。 建議您使用 Segoe MLD2 Assets 字型的 EE56 字符做為最上層圖示。
 

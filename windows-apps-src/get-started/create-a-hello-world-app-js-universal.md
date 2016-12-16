@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows&nbsp;10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
+description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
 translationtype: Human Translation
 ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
 ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
@@ -10,7 +10,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 Hello, world app (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows&nbsp;10 裝置上執行的 App。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 

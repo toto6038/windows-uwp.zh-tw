@@ -37,7 +37,7 @@ Windows 市集集合 API 及購買 API 會使用 Azure Active Directory (Azure A
 1.  依照[整合應用程式與 Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) 中的指示，將 Web 應用程式新增到 Azure AD。
 
     > **注意**
-            &nbsp;&nbsp;在 \[告訴我們您的應用程式\] 頁面上，請務必選擇 \[Web 應用程式和/或 Web API\]。 您必須這麼做，才能為您的應用程式取得金鑰 (也稱為「用戶端密碼」)。 為了呼叫 Windows 市集集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
+              在 \[告訴我們您的應用程式\] 頁面上，請務必選擇 \[Web 應用程式和/或 Web API\]。 您必須這麼做，才能為您的應用程式取得金鑰 (也稱為「用戶端密碼」)。 為了呼叫 Windows 市集集合 API 或購買 API，當您在稍後的步驟中向 Azure AD 要求存取權杖時，必須提供用戶端密碼。
 
 2.  在 [Azure 管理入口網站](http://manage.windowsazure.com/)中，瀏覽到 \[Active Directory\]。 選取您的目錄，按一下頂端的 \[應用程式\] 索引標籤，然後選取您的應用程式。
 3.  按一下 \[設定\] 索引標籤。 在此索引標籤上，取得您應用程式的用戶端識別碼並要求一個金鑰 (在後續步驟中稱為「用戶端密碼」)。
@@ -77,12 +77,12 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
     -   `https://onestore.microsoft.com`：在稍後的步驟中，您將使用以此 URI 建立的存取權杖，來直接呼叫「Windows 市集集合 API」或「購買 API」。
 
     > **重要：**
-            &nbsp;&nbsp;請只搭配安全地儲存在您服務中的存取權杖來使用 `https://onestore.microsoft.com` 對象。 在您服務以外的地方公開與此對象搭配的存取權杖，可能會讓您的服務容易遭受重新執行攻擊。
+              請只搭配安全地儲存在您服務中的存取權杖來使用 `https://onestore.microsoft.com` 對象。 在您服務以外的地方公開與此對象搭配的存取權杖，可能會讓您的服務容易遭受重新執行攻擊。
 
 存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。 如需有關存取權杖結構的詳細資訊，請參閱[支援的權杖和宣告類型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
 > **重要**
-            &nbsp;&nbsp;您應該只在您的服務內容中 (而不是在您的 App 中) 建立 Azure AD 存取權杖。 如果該存取權杖被傳送到您的 App，您的用戶端密碼就可能遭竊。
+              您應該只在您的服務內容中 (而不是在您的 App 中) 建立 Azure AD 存取權杖。 如果該存取權杖被傳送到您的 App，您的用戶端密碼就可能遭竊。
 
 <span id="step-4"/>
 ### 步驟 4：從您應用程式中的用戶端程式碼產生 Windows 市集識別碼金鑰
@@ -106,12 +106,12 @@ Windows 市集集合 API 及購買 API 只會針對已與您 Azure AD 用戶端�
     針對每一種方法，都請將您的 Azure AD 存取權杖傳遞給 *serviceTicket* 參數。 您可以視需要把識別碼傳遞給可識別您服務內容中目前使用者的 *publisherUserId* 參數。 如果您負責維護服務的使用者識別碼，您便可以使用此參數，將這些使用者識別碼與您對「Windows 市集集合 API」或「購買 API」發出的呼叫相互關聯。
 
     >**注意**
-            &nbsp;&nbsp;如需有關 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+              如需有關 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 3.  在您的 App 成功擷取「Windows 市集識別碼」金鑰之後，將金鑰傳遞回您的服務。
 
 > **注意**
-            &nbsp;&nbsp;每個「Windows 市集識別碼」金鑰的有效期是 90 天。 金鑰到期之後，您可以[更新金鑰](renew-a-windows-store-id-key.md)。 我們建議您更新自己的 Windows 市集識別碼金鑰，而不是建立新的。
+              每個「Windows 市集識別碼」金鑰的有效期是 90 天。 金鑰到期之後，您可以[更新金鑰](renew-a-windows-store-id-key.md)。 我們建議您更新自己的 Windows 市集識別碼金鑰，而不是建立新的。
 
 <span id="step-5"/>
 ### 步驟 5：從您的服務呼叫 Windows 市集集合 API 或購買 API

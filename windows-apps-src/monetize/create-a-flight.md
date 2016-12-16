@@ -16,7 +16,7 @@ ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
 
 使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立套件正式發行前小眾測試版。
 
->**注意**&nbsp;&nbsp;這個方法會建立一個套件正式發行前小眾測試版但不含任何提交。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
+>**注意**  這個方法會建立一個套件正式發行前小眾測試版但不含任何提交。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
 
 ## 先決條件
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## 要求
 

@@ -31,7 +31,7 @@ ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
 
 
 
-> **注意**&nbsp;&nbsp; **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此頁面上的所有建議也適用於 MediaElement。
+> **注意**   **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此頁面上的所有建議也適用於 MediaElement。
 
 ## 這是正確的控制項嗎？
 
@@ -80,7 +80,7 @@ Windows 10 入門 app 中的媒體播放器。
 
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 會自動與系統媒體傳輸控制項整合。 系統媒體傳輸控制項是指當使用者按下硬體媒體鍵 (例如鍵盤上的媒體按鈕) 時，會以快顯方式顯示的控制項。 如需詳細資訊，請參閱 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)。
 
-> **注意**&nbsp;&nbsp; [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 不會自動與系統媒體傳輸控制項整合，因此您必須自行加以連接。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt228338)。
+> **注意**   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 不會自動與系統媒體傳輸控制項整合，因此您必須自行加以連接。 如需詳細資訊，請參閱[系統媒體傳輸控制項](https://msdn.microsoft.com/library/windows/apps/mt228338)。
 
 
 ### 設定媒體來源
@@ -233,7 +233,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 -   播放停止時。 例如，視訊播放完畢或簡報結束。
 -   發生播放錯誤時。 例如，網路連線問題或檔案損毀。
 
-> **注意**&nbsp;&nbsp; 如果 [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 設為 true，且媒體正在播放，系統將會自動防止顯示器停用。
+> **注意**   如果 [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 設為 true，且媒體正在播放，系統將會自動防止顯示器停用。
 
 **讓螢幕保持使用中**
 
@@ -374,7 +374,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 如果您有螢幕實際可用空間，或是正在設計 10 呎體驗，請使用雙列配置。 它能比精簡的單列配置提供更多的控制項空間，而且能夠針對 10 呎體驗提供更佳的控制器瀏覽支援。
 
-> **注意**&nbsp;&nbsp; 如需針對 10 呎體驗最佳化應用程式的詳細資訊，請造訪[針對 Xbox 和電視進行設計](../input-and-devices/designing-for-tv.md)文章。
+> **注意**   如需針對 10 呎體驗最佳化應用程式的詳細資訊，請造訪[針對 Xbox 和電視進行設計](../input-and-devices/designing-for-tv.md)文章。
 
 預設控制項已針對媒體播放最佳化，不過，您可以將所需的自訂選項新增至媒體播放器，以為您的 app 提供最佳體驗。 若要深入了解新增自訂控制項，請造訪[建立自訂傳輸控制項](custom-transport-controls.md)。
 

@@ -12,11 +12,11 @@ ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
 
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
->**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+>**注意**  本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 無論您的 App 是否免費，都可以直接從 App 內銷售內容、其他 App，或新的 App 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 App 中啟用這些產品。
 
-> **注意**&nbsp;&nbsp;試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
+> **注意**  試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
 
 針對您想要透過應用程式內產品提供的每項功能，建立一個購買選項，然後新增至您的 App。
 
-> **重要**&nbsp;&nbsp;在將您的 App 送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至 App。 如果您想要稍後再新增應用程式內產品，您就必須更新 App，然後重新送出新版本。
+> **重要**  在將您的 App 送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至 App。 如果您想要稍後再新增應用程式內產品，您就必須更新 App，然後重新送出新版本。
 
 1.  **建立應用程式內的購買選項權杖**
 

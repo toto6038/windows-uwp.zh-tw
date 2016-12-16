@@ -81,7 +81,7 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
 ![顯示文字與字母間距之間的差異](images/word-letter.png)
 
 **注意**
-            &nbsp;&nbsp;在 XAML 文字控制項中，請使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 來控制字元間距調整，以及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 來控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
+              在 XAML 文字控制項中，請使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 來控制字元間距調整，以及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 來控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
 
 
 
@@ -127,7 +127,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 ![顯示數個圖示和文字配對](images/hanging-text-alignment.png)
 
 **注意**
-            &nbsp;&nbsp;XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
+              XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
 
 ## <a name="clipping-and-ellipses"></a>裁剪和省略符號
 
@@ -144,7 +144,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 
 **注意**
-            &nbsp;&nbsp;大部分的坡形層級都是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 來提供 (例如：`HeaderTextBlockStyle`)。
+              大部分的坡形層級都是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 來提供 (例如：`HeaderTextBlockStyle`)。
 
 
 ## <a name="primary-and-secondary-text"></a>主要和次要文字

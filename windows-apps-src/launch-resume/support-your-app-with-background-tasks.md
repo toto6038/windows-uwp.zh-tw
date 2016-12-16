@@ -11,30 +11,30 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。 您可以使用背景工作，在 app 被暫停或未執行時提供功能。 您也可以將背景工作用於即時通訊 App，像是 VOIP、郵件和 IM。
 
 ## <a name="playing-media-in-the-background"></a>在背景播放媒體
 
-從 Windows&nbsp;10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+從 Windows 10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>同處理序與跨處理序背景工作
 
-有兩種方式可實作背景工作︰一是同處理序，App 及其背景處理序在相同的處理序中執行；二是跨處理序，App 及背景處理序在不同的處理序中執行。 同處理序背景支援是在 Windows&nbsp;10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
+有兩種方式可實作背景工作︰一是同處理序，App 及其背景處理序在相同的處理序中執行；二是跨處理序，App 及背景處理序在不同的處理序中執行。 同處理序背景支援是在 Windows 10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
 
 跨處理程序背景工作較具彈性，因為如果發生錯誤，背景處理程序無法關閉您的 App 處理程序。 但是彈性的代價是在管理跨處理程序通訊方面複雜度變高。
 
 實作跨處理程序背景工作時，是作為作業系統在個別處理程序 (backgroundtaskhost.exe) 中執行的輕量型類別來實作。 跨處理程序背景工作是您所撰寫來實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別。 您可以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別來登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
 
-在 Windows&nbsp;10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為在前景應用程式內直接執行背景程式碼。
+在 Windows 10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為在前景應用程式內直接執行背景程式碼。
 
 若要快速開始使用同處理序背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
 若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。
 
 > [!TIP]
-> 從 Windows&nbsp;10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
+> 從 Windows 10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
 
 ## <a name="background-tasks-for-system-events"></a>系統事件的背景工作
 
@@ -156,7 +156,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
  ## <a name="related-topics"></a>相關主題
 
-**在 Windows&nbsp;10 中執行多工的概念指引**
+**在 Windows 10 中執行多工的概念指引**
 
 * [啟動、繼續及多工處理](index.md)
 

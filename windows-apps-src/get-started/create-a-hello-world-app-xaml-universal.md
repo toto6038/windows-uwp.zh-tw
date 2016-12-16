@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "建立 Hello, world 應用程式 (XAML)"
-description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows&nbsp;10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
+description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
 translationtype: Human Translation
 ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
 ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
@@ -11,11 +11,11 @@ ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world App (XAML)
 
-本教學課程會教您如何使用 XAML 和 C#，為 Windows&nbsp;10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows&nbsp;10 裝置上執行的 App。
+本教學課程會教您如何使用 XAML 和 C#，為 Windows 10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 
--   建立目標是 **Windows&nbsp;10** 和 **UWP** 的新 **Visual Studio 2015** 專案。
+-   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 專案。
 -   撰寫 XAML 以變更您開始頁面上的 UI。
 -   在本機桌面上和 Visual Studio 中的手機模擬器上執行專案。
 -   使用 SpeechSynthesizer 讓 App 在您按下按鈕時說話。
@@ -207,7 +207,7 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 �
 
 ![行動裝置上最初的 App 畫面](images/win10-cs-09.png)
 
-如果您有執行 Windows&nbsp;10 的 Windows Phone，您也可以將它連接到電腦，然後在該手機上直接部署和執行 App (但是您必須先[啟用開發人員模式](enable-your-device-for-development.md))。
+如果您有執行 Windows 10 的 Windows Phone，您也可以將它連接到電腦，然後在該手機上直接部署和執行 App (但是您必須先[啟用開發人員模式](enable-your-device-for-development.md))。
 
 
 ## <a name="step-3-event-handlers"></a>步驟 3：事件處理常式

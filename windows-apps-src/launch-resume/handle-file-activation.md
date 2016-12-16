@@ -120,7 +120,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows&nbsp;8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 

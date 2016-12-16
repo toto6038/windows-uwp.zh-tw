@@ -12,7 +12,7 @@ ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
 
 
-\[ 針對 Windows&nbsp;10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**

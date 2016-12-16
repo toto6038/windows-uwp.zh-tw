@@ -14,7 +14,7 @@ ms.openlocfilehash: 5fd097d978b1960ed957a7e12ab7eece012c5b41
 
 本文會逐步說明如何使用 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 類別在使用 JavaScript 和 HTML 撰寫的通用 Windows 平台 (UWP) App 的影片內容中新增廣告。
 
->**注意**&nbsp;&nbsp;目前只有使用 JavaScript 與 HTML 撰寫的 UWP app 支援此功能。
+>**注意**  目前只有使用 JavaScript 與 HTML 撰寫的 UWP app 支援此功能。
 
 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 可搭配漸進式和串流處理媒體，並使用 IAB 標準 Video Ad Serving Template (VAST) 2.0/3.0 和 VMAP 承載格式。 如果使用標準，[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 就無從得知所互動的廣告服務。
 
@@ -112,7 +112,7 @@ ms.openlocfilehash: 5fd097d978b1960ed957a7e12ab7eece012c5b41
         });
   ```
 
-  >**注意**&nbsp;&nbsp;即使函式失敗，您還是必須呼叫 **play**，因為 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 會告訴 **MediaPlayer** 略過廣告並直接移動到內容。 您可能有不同的商務需求，例如如果無法從遠端成功擷取廣告，則插入內建的廣告。
+  >**注意**  即使函式失敗，您還是必須呼叫 **play**，因為 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 會告訴 **MediaPlayer** 略過廣告並直接移動到內容。 您可能有不同的商務需求，例如如果無法從遠端成功擷取廣告，則插入內建的廣告。
 
 8.  在播放時，會有其他事件可讓您的 App 追蹤進度和/或初始廣告符合處理程序之後可能發生的錯誤。 下列程式碼顯示一些這類事件。
   * [onPodStart](https://msdn.microsoft.com/library/windows/apps/mt732206.aspx)：
