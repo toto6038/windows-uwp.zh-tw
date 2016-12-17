@@ -4,12 +4,12 @@ ms.assetid:
 description: "本文示範使用 MediaCapture 類別來擷取相片和視訊的最簡單方式。"
 title: "使用 MediaCapture 進行基本相片、視訊和音訊的擷取"
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7355d442cd650f110042d5e01f51becbb51d0e
-ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
+ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
+ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 ---
 
-# 使用 MediaCapture 進行基本相片、視訊和音訊的擷取
+# <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,30 +17,31 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 如果您只想擷取相片或視訊，而不想新增任何其他媒體擷取功能，或者不想建立自己的相機 UI，您可能會想使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 類別，此類別讓您只需啟動 Windows 內建的相機 app，即可接收已擷取的相片或視訊檔案。 如需詳細資訊，請參閱[**使用 Windows 內建相機 UI 來擷取相片和視訊**](capture-photos-and-video-with-cameracaptureui.md)
 
+此文章中的程式碼是從[**相機入門套件**](https://go.microsoft.com/fwlink/?linkid=619479)範例改編而來。 您可以下載範例以查看實際使用的程式碼，或以此範例做為自己的 App 起點。
 
-## 將功能宣告加入至應用程式資訊清單
+## <a name="add-capability-declarations-to-the-app-manifest"></a>將功能宣告加入至應用程式資訊清單
 
 為了讓您的 app 可存取裝置的相機，您必須宣告您的 app 使用 *webcam* 和 *microphone* 裝置功能。 如果您要將擷取的相片和視訊儲存到使用者的圖片媒體櫃或視訊媒體櫃，您也必須宣告 *picturesLibrary* 和 *videosLibrary* 功能。
 
 **將功能新增到應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 [功能]**** 索引標籤。
-3.  核取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
 
 
-## 初始化 MediaCapture 物件
+## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
 本文所述的所有擷取方法所需的第一個步驟是藉由呼叫建構函式，然後呼叫 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync)，來初始化 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件。 由於 **MediaCapture** 物件將可從您 app 內的多個位置中存取，因此，請宣告類別變數來保存此物件。  實作適用於 **MediaCapture** 物件的 [**Failed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.Failed) 事件的處理常式，以便在擷取作業失敗時收到通知。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## 設定相機預覽
+## <a name="set-up-the-camera-preview"></a>設定相機預覽
 您能夠使用 **MediaCapture** 來擷取相片、視訊及音訊，而不需顯示相機預覽，但通常您會想要顯示預覽資料流，讓使用者可以看到擷取到的內容。 此外，有一些 **MediaCapture** 功能需要預覽資料流處於執行狀態，才能夠啟用它們，包括自動對焦、自動曝光及自動白平衡。 若要了解如何設定相機預覽，請參閱[**顯示相機預覽**](simple-camera-preview-access.md)。
 
-## 將相片擷取到 SoftwareBitmap
+## <a name="capture-a-photo-to-a-softwarebitmap"></a>將相片擷取到 SoftwareBitmap
 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 類別是在 Windows 10 中所引進，可提供多個功能中常見的影像表示法。 如果您想要擷取相片，然後立即在 app 中使用擷取的影像 (例如將它顯示於 XAML 中)，而不是擷取到檔案中，則您應該擷取到 **SoftwareBitmap**。 您稍後仍然可以選擇將影像儲存到磁碟。
 
 初始化 **MediaCapture** 物件之後，您可以使用 [**LowLagPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture) 類別，將相片擷取到 **SoftwareBitmap**。 藉由呼叫 [**PrepareLowLagPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagPhotoCaptureAsync) 來取得此類別的執行個體，其會傳入 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) 物件，以指定您所需的影像格式。 [**CreateUncompressed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateUncompressed) 會使用指定的像素格式來建立未壓縮的編碼。 呼叫 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture.CaptureAsync) 來擷取相片，這會傳回 [**CapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto) 物件。 透過存取 [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto.Frame) 屬性，然後存取 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) 屬性，來取得 **SoftwareBitmap**。
@@ -51,7 +52,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 如需使用 **SoftwareBitmap** 物件的相關資訊 (包含如何在 XAML 頁面中顯示該物件)，請參閱[**建立、編輯和儲存點陣圖影像**](imaging.md)。
 
-## 將相片擷取到檔案
+## <a name="capture-a-photo-to-a-file"></a>將相片擷取到檔案
 典型的攝影 app 會將擷取的相片儲存到磁碟或雲端儲存空間，而且需要將中繼資料 (例如相片方向) 新增到檔案。 下列範例示範如何將相片擷取到檔案。 您稍後仍然可以選擇從影像檔建立 **SoftwareBitmap**。 
 
 這個範例中示範的技術會將相片擷取到記憶體內部的資料流，然後將相片從資料流轉碼為磁碟上的檔案。 這個範例使用 [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) 來取得使用者的圖片媒體櫃，然後使用 [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) 屬性來取得參考預設儲存資料夾。 請記得將**圖片媒體櫃**功能新增到您的應用程式資訊清單，以便存取這個資料夾。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) 會建立新的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile)，而相片將儲存於其中。
@@ -66,7 +67,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 如需使用檔案和資料夾的詳細資訊，請參閱[**檔案、資料夾和媒體櫃**](https://msdn.microsoft.com/windows/uwp/files/index)。
 
-## 擷取視訊
+## <a name="capture-a-video"></a>擷取視訊
 使用 [**LowLagMediaRecording**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording) 類別，快速地將視訊擷取新增到您的 app。 首先，宣告物件的類別變數。
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
@@ -91,7 +92,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
-## 暫停和繼續視訊錄製
+## <a name="pause-and-resume-video-recording"></a>暫停和繼續視訊錄製
 您可以藉由呼叫 [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync)，然後呼叫 [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync)，來暫停視訊錄製，然後再繼續錄製，而不需建立個別的輸出檔案。
 
 [!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
@@ -111,7 +112,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 請注意，您也可以在停止視訊時，呼叫 [**StopWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopWithResultAsync) 來取得結果畫面。
 
 
-## 擷取音訊 
+## <a name="capture-audio"></a>擷取音訊 
 您可以使用上述用來擷取視訊的相同技術，快速地將音訊擷取新增到您的 app。 下列範例會在應用程式資料資料夾中建立 **StorageFile**。 呼叫 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) 來將擷取工作階段初始化，其會傳入檔案和 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile)，在這個範例中這是透過 [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) 靜態方法所產生。 若要開始錄製，請呼叫 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync)。
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
@@ -125,7 +126,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 Windows 內建相機 UI 來擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)
@@ -136,6 +137,6 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

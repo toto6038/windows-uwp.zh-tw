@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "判斷 Microsoft OneDrive 檔案的可用性"
 description: "使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔案是否可供使用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
 
 ---
-# 判斷 Microsoft OneDrive 檔案的可用性
+# <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
 使用 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
-## 使用 StorageFile.IsAvailable 屬性
+## <a name="using-the-storagefileisavailable-property"></a>使用 StorageFile.IsAvailable 屬性
 
 使用者可以將 OneDrive 檔案標示為可離線使用 (預設值) 或僅限線上存取。 這個功能可以讓使用者將大型檔案 (例如圖片或影片) 移到他們的 OneDrive、將檔案標示為僅限線上存取，以及節省磁碟空間 (本機保存的項目僅限中繼資料檔案)。
 
@@ -92,6 +92,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

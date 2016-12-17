@@ -4,12 +4,12 @@ ms.assetid:
 description: "本文章示範如何使用 MediaFrameReader 搭配 MediaCapture，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。"
 title: "使用 MediaFrameReader 處理媒體畫面"
 translationtype: Human Translation
-ms.sourcegitcommit: 21433f812915a2b4da6b4d68151bbc922a97a7a7
-ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
+ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
+ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 ---
 
-# 使用 MediaFrameReader 處理媒體畫面
+# <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
 本文章示範如何使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 搭配 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture)，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。 此功能是針對要讓執行媒體畫面即時處理的 App 使用所設計，例如虛擬實境及深度感知相機 App。
 
@@ -21,21 +21,21 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 > [!NOTE] 
 > 還有一個通用 Windows 應用程式範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)。
 
-## 設定您的專案
+## <a name="setting-up-your-project"></a>設定您的專案
 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
 
 **將功能新增到應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管]**** 中的 **package.appxmanifest** 項目，開啟 app 資訊清單的設計工具。
-2.  選取 [功能]**** 索引標籤。
-3.  核取 [網路攝影機]**** 方塊和 [麥克風]**** 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃]**** 方塊和 [視訊媒體櫃]**** 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 [功能] 索引標籤。
+3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## 選取畫面來源和畫面來源群組
+## <a name="select-frame-sources-and-frame-source-groups"></a>選取畫面來源和畫面來源群組
 許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的色彩和深度相機。 [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 物件代表一組可以同時使用的媒體畫面來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync)，以取得目前裝置所支援之所有畫面來源群組的清單。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
@@ -60,7 +60,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
-## 初始化 MediaCapture 物件，以使用所選的畫面來源群組
+## <a name="initialize-the-mediacapture-object-to-use-the-selected-frame-source-group"></a>初始化 MediaCapture 物件，以使用所選的畫面來源群組
 下一步是初始化 **MediaCapture** 物件，以使用您在上一個步驟中選取的畫面來源群組。
 
 **MediaCapture** 物件通常會在您 App 內部的多個位置使用，因此您應該宣告一個類別成員變數來保存它。
@@ -78,14 +78,14 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## 針對畫面來源設定慣用的格式
+## <a name="set-the-preferred-format-for-the-frame-source"></a>針對畫面來源設定慣用的格式
 若要設定畫面來源的慣用格式，您必須取得代表來源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 您可以透過存取已初始化 **MediaCapture** 物件的 [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) 字典，指定您想要使用的畫面來源的識別碼來取得此物件。 這就是為什麼我們在選取畫面來源群組時會儲存 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的原因。
 
 [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 屬性包含一份 [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/)，要求來源使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## 建立畫面來源的畫面讀取程式
+## <a name="create-a-frame-reader-for-the-frame-source"></a>建立畫面來源的畫面讀取程式
 若要接收媒體畫面來源的畫面，請使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader)。
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
@@ -98,7 +98,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
-## 處理畫面已到達事件
+## <a name="handle-the-frame-arrived-event"></a>處理畫面已到達事件
 當有新畫面可用時，就會引發 [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) 事件。 您可以選擇處理每一個到達的畫面，或者僅在您需要時使用畫面。 因為畫面讀取程式會引發其本身執行緒上的事件，您可能需要實作部分同步邏輯來確定您沒有嘗試從多個執行緒存取相同的資料。 本節說明如何將繪圖色彩畫面同步到 XAML 頁面中的影像控制項。 本案例會解決要求在 UI 執行緒上執行所有 XAML 控制項更新的其他同步限制式。
 
 在 XAML 中顯示畫面的第一步是建立影像控制項。 
@@ -125,16 +125,20 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 最後，*_taskRunning* 變數會設定回 false，就可以在下一次呼叫處理常式時再次執行工作。
 
+> [!NOTE] 
+> 如果您要存取 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 屬性提供的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 物件，則系統會建立這些物件的強式參考，這表示當您在包含的 **MediaFrameReference** 上呼叫 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 時，他們不會被處置。 您必須針對要立即處置的物件明確地直接呼叫 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否則，記憶體回收行程最終會釋放這些物件的記憶體，但您無法得知何時會釋放，而且如果配置的點陣圖或表面的數量超過系統允許的數量上限，新畫面的資料流就會停止。
+
+
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
 
-## 清理資源
+## <a name="cleanup-resources"></a>清理資源
 當您完成後讀取畫面時，請確定有透過呼叫 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync)、取消登錄 **FrameArrived** 處理常式，並處置 **MediaCapture** 物件，來停止媒體畫面讀取程式。
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
 如需有關在您的應用程式暫停時清理媒體擷取物件的詳細資訊，請參閱[**顯示相機預覽**](simple-camera-preview-access.md)。
 
-## FrameRenderer 協助程式類別
+## <a name="the-framerenderer-helper-class"></a>FrameRenderer 協助程式類別
 通用 Windows [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)提供了一個協助程式類別，可讓顯示來自您 App 中色彩、紅外線與深度來源的畫面變得更容易。 一般來說，您可能會想針對深度或紅外線資料多執行一些動作，而不僅是在螢幕上顯示，但是這個協助程式類別對於示範畫面讀取程式功能以及偵錯您自己的畫面讀取程式實作而言，是很有幫助的工具。
 
 **FrameRenderer** 協助程式類別會實作下列方法。
@@ -148,7 +152,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -163,6 +167,6 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

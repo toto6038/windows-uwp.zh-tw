@@ -4,14 +4,14 @@ title: "登錄背景工作"
 description: "了解如何建立可重複用來安全登錄大多數背景工作的函式。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
-ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
+ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
+ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 ---
 
-# 登錄背景工作
+# <a name="register-a-background-task"></a>登錄背景工作
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-## 定義方法簽章和傳回類型
+## <a name="define-the-method-signature-and-return-type"></a>定義方法簽章和傳回類型
 
 這個方法會採用背景工作的工作進入點、工作名稱、預先建構的背景工作觸發程序，以及 (選用) [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)。 這個方法會傳回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 物件。
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > 如果您的背景工作與您的 App 在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -52,7 +52,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -65,7 +65,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## 檢查是否有現有的註冊
+## <a name="check-for-existing-registrations"></a>檢查是否有現有的註冊
 
 檢查工作是否已登錄。 這是檢查的重點，因為如果多次登錄工作，則觸發該工作時，它就會多次執行；這樣可能會過量使用 CPU，也可能造成未預期的行為。
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -103,7 +103,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     // We'll register the task in the next step.
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -137,7 +137,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## 登錄背景工作 (或傳回現有登錄)
+## <a name="register-the-background-task-or-return-the-existing-registration"></a>登錄背景工作 (或傳回現有登錄)
 
 
 檢查現有背景工作登錄清單中是否已有該工作。 如果有，則傳回工作的該執行個體。
@@ -150,7 +150,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -199,7 +199,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -251,13 +251,13 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## 完成背景工作登錄公用程式函式
+## <a name="complete-background-task-registration-utility-function"></a>完成背景工作登錄公用程式函式
 
 
 這個範例顯示已完成的背景工作登錄函式。 這個函式可用來登錄大多數的背景工作 (除了網路背景工作之外)。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -310,7 +310,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -371,10 +371,9 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-> 
-  **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 ****
 
@@ -398,6 +397,6 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

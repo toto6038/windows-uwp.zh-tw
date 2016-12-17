@@ -4,18 +4,18 @@ description: "您對於任何具備網路功能的 app 所需執行的動作。"
 title: "網路功能基本知識"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
+ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
+ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
 
 ---
 
-# 網路功能基本知識
+# <a name="networking-basics"></a>網路功能基本知識
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您對於任何具備網路功能的 app 所需執行的動作。
 
-## 功能
+## <a name="capabilities"></a>功能
 
 若要使用網路，您必須在 app 資訊清單中新增適當的功能元素。 如果未在您的 app 資訊清單中指定任何網路功能，您的 app 將沒有網路功能，並連接到網路的任何嘗試都將失敗。
 
@@ -29,14 +29,13 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 您的 app 在某些情況下有可能需要其他功能。
 
-| 功能 | 說明 |
+| 功能 | 描述 |
 |------------|-------------|
-| **pushNotifications** | 如果您的 app 使用通訊端活動觸發程序，您就必須在 app 資訊清單中指定這項功能。 |
 | **enterpriseAuthentication** | 允許 app 連線至需要網域認證的網路資源。 此功能需要網域系統管理員啟用所有應用程式的功能。 例如，從私人內部網路上的 SharePoint 伺服器擷取資料的應用程式。 <br/> 透過此功能，您的認證可用來在需要認證的網路上存取網路資源。 具有此功能的應用程式可在網路上模擬您。 <br/> 若要允許 app 透過驗證 Proxy 來存取網際網路，此功能並非必要。 |
 | **鄰近性** | 與非常靠近電腦的裝置進行近距離鄰近性通訊時所需。 近距離鄰近性可用來傳送或與鄰近裝置上的應用程式連線。 <br/> 這個功能可讓 app 存取網路以連線至非常靠近的裝置，只要使用者同意傳送邀請或是接受邀請即可。 |
 | **sharedUserCertificates** | 這個功能可讓 app 存取軟體和硬體憑證，例如智慧卡憑證。 在執行階段叫用這個功能時，使用者必須採取行動，例如插入卡片或是選取憑證。 <br/> 透過這個功能，您的軟體與硬體憑證或智慧卡可供應用程式識別身分。 您的員工、銀行或政府服務單位可使用這個功能來識別身分。 |
 
-## App 不在前景時進行通訊
+## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>App 不在前景時進行通訊
 
 [使用背景工作支援應用程式](https://msdn.microsoft.com/library/windows/apps/mt299103)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 在 Windows 8 中，您使用「控制通道觸發程序」來達到此目的，這在 Windows 10 中仍受支援。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032)。 在某些情況下，Windows 10 的新技術可提供更好的功能與較低的額外負荷，例如啟用推播的資料流通訊端：通訊端代理程式與通訊端活動觸發程序。
 
@@ -44,9 +43,8 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 通訊端代理程式將在適用的環境中取代控制通道觸發程序，因為它可提供相同的功能，但限制較少，所需使用的記憶體也較少。 通訊端代理程式可供不是鎖定畫面 app 的 app 使用，且其在手機與其他裝置上的使用方式是相同的。 app 在流量到達時不需要執行，即可由通訊端代理程式啟用。 通訊端代理程式支援接聽 TCP 通訊端，控制通道觸發程序則不支援。
 
-如果您的 app 使用通訊端活動觸發程序，您就必須在 app 資訊清單中指定 **pushNotifications** 功能。
 
-### 選擇網路觸發程序
+### <a name="choosing-a-network-trigger"></a>選擇網路觸發程序
 
 在某些情況下，任一觸發程序均適用。 當您選擇要在您的 app 中使用的觸發程序時，請考量下列建議。
 
@@ -57,11 +55,11 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 如需如何使用通訊端代理程式的詳細資訊和範例，請參閱[背景網路通訊](network-communications-in-the-background.md)。
 
-## 安全連線
+## <a name="secured-connections"></a>安全連線
 
 安全通訊端層 (SSL) 與較新的傳輸層安全性 (TLS) 是密碼編譯通訊協定，其設計目的在於提供網路通訊的驗證與加密。 這些通訊協定的設計目的在於防止傳送和接收網路資料時遭到竊取和竄改。 這些通訊協定使用用戶端伺服器模型以進行通訊協定交換。 這些通訊協定也使用數位憑證與憑證授權單位，以驗證該伺服器是否為其本身所宣稱的伺服器。
 
-### 建立安全的通訊端連線
+### <a name="creating-secure-socket-connections"></a>建立安全的通訊端連線
 
 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件可用來設定在用戶端與伺服器之間使用 SSL/TLS 進行通訊。 對於 SSL/TLS 的支援，受限於使用 **StreamSocket** 物件做為 SSL/TLS 交涉中的用戶端。 您無法將 SSL/TLS 用於由 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 在收到連入通訊時建立的 **StreamSocket**，因為 **StreamSocket** 類別沒有實作做為伺服器的 SSL/TLS 交涉。
 
@@ -74,7 +72,7 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 > **注意** 您的程式碼應該永遠不會以隱含方式依賴使用特定的保護層級，或是依預設使用提供的安全性層級的假設。 安全性概況經常變更，為避免使用含有已知弱點的通訊協定，通訊協定和預設保護層級會隨著時間變更。 依據個別的電腦設定或安裝的軟體及套用的修補程式而定，預設值可能會有所不同。 如果您的應用程式需要使用特定的安全性層級，您必須明確地指定層級，並確定它實際上已在建立的連線中使用。
 
-### 使用 ConnectAsync
+### <a name="use-connectasync"></a>使用 ConnectAsync
 
 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用來建立具有網路服務的初始連線，然後為所有通訊立即交涉以使用 SSL/TLS。 有兩種 **ConnectAsync** 方法可支援傳遞 *protectionLevel* 參數：
 
@@ -164,7 +162,7 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### 使用 UpgradeToSslAsync
+### <a name="use-upgradetosslasync"></a>使用 UpgradeToSslAsync
 
 當您的程式碼使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 時，它會先在不加密的情況下建立網路服務的連線。 應用程式可以傳送或接收部分資料，然後為所有進一步的通訊將連線升級成使用 SSL/TLS。
 
@@ -353,7 +351,7 @@ using Windows::Storage::Streams;
     });
 ```
 
-### 建立安全的 WebSocket 連線
+### <a name="creating-secure-websocket-connections"></a>建立安全的 WebSocket 連線
 
 如同傳統型的通訊端連線，在為 Windows 市集應用程式使用 Windows 8 中的 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 功能時，也可以使用傳輸層安全性 (TLS)/安全通訊端層 (SSL) 加密 WebSocket 連線。 在大部分情況下，您會想使用安全的 WebSocket 連線。 這將會增加連線成功的機率，因為許多 Proxy 都會拒絕未加密的 WebSocket 連線。
 
@@ -363,11 +361,11 @@ using Windows::Storage::Streams;
 
 如果來自用戶端的起始要求不包含這個值，或提供的值不符合伺服器所期待，當發生 WebSocket 交握錯誤時，預期的值就會從伺服器傳送到用戶端。
 
-## 驗證
+## <a name="authentication"></a>驗證
 
 如何在透過網路連線時提供驗證認證。
 
-### 提供具有 StreamSocket 類別的用戶端憑證
+### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
 
 [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
@@ -380,7 +378,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### 提供驗證認證到 Web 服務
+### <a name="providing-authentication-credentials-to-a-web-service"></a>提供驗證認證到 Web 服務
 
 能讓 app 與安全 Web 服務互動的網路 API，每一個都提供自己的方法來初始化用戶端，或是使用伺服器和 Proxy 驗證認證來設定要求標頭。 使用指出使用者名稱、密碼以及使用這些認證之資源的 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 物件設定每個方法。 下表提供這些 API 的對應：
 
@@ -403,7 +401,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
  
-## 處理網路例外狀況
+## <a name="handling-network-exceptions"></a>處理網路例外狀況
 
 在程式設計大部分的領域中，例外狀況意味著程式中有某些缺失導致嚴重的問題或失敗。 網路程式設計還有其他因素會導致例外狀況：網路本身，以及網路通訊的本質。 網路通訊原本就不穩定，而容易發生未預期的失敗。 針對您每個使用網路的 app，您必須維護某些狀態資訊；且您的 app 程式碼必須藉由更新該狀態資訊，並為 app 初始化適當的邏輯以重新建立或重試通訊失敗，以處理網路例外狀況。
 
@@ -416,7 +414,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 -   有些 API 會提供協助程式方法，將例外狀況的 **HRESULT** 值轉換為例舉值。
 -   其他 API 則提供擷取實際 **HRESULT** 值的方法。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Windows 10 中的網路 API 改進](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
@@ -424,6 +422,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

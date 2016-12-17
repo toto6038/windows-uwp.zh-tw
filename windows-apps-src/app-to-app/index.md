@@ -4,12 +4,12 @@ description: "本節說明如何在通用 Windows 平台 (UWP) 應用程式之�
 title: "App 間通訊"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
-ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
+ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
+ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ---
 
-# App 間通訊
+# <a name="app-to-app-communication"></a>App 間通訊
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +21,7 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 
 除了分享協定之外，App 也可以整合傳統的資料傳輸技術，例如拖放或複製並貼上。 除了 UWP app 之間的通訊之外，這些方法也支援分享至傳統型應用程式及從傳統型應用程式分享。
 
-## 本節內容
+## <a name="in-this-section"></a>本節內容
 
 | 主題 | 描述 |
 |-------|-------------|
@@ -30,11 +30,11 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 | [複製和貼上](copy-and-paste.md) | 本文說明如何使用剪貼簿在 UWP app 中支援複製和貼上。 複製和貼上是在 app 間 (或是 app 內) 交換資料的傳統方式，而且幾乎每個 app 在某種程度上都能支援剪貼簿作業。 |
 | [拖放](drag-and-drop.md) | 本文說明如何在您的 UWP app 中新增拖放功能。 拖放是一種與影像和檔案之類的內容進行互動的傳統、原始方式。 實作之後，不論向哪一個方向拖放都能順暢運作，包括應用程式之間、應用程式到傳統型應用程式，以及傳統型應用程式到應用程式。 |
 
-## 另請參閱
-- [開發 UWP app](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>另請參閱
+- [開發 UWP app](https://developer.microsoft.com/windows/develop)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

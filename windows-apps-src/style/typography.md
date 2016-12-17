@@ -5,28 +5,28 @@ title: "印刷樣式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 8338b4ebcdd73f1b7ebf1dedafe68d861cd9d93b
-ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
+ms.sourcegitcommit: 0356d9420d85fbf54718223df77ed501d4b6f5e5
+ms.openlocfilehash: 45b4bbc86c69cabae4a2ee83d2d43c7189a710ce
 
 ---
 
-# 印刷樣式
+# <a name="typography"></a>印刷樣式
 
 如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
 
-## 字樣
+## <a name="typeface"></a>字樣
 
 我們選取了 Segoe UI，用於所有的 Microsoft 數位設計。 Segoe UI 提供各種字元，且依設計可讓不同的大小和像素密度維持最佳易讀性。 它提供了清晰、簡潔開放的美感，可補強系統的內容。
 
 ![Segoe UI 字型的範例文字](images/segoe-sample.png)
 
-## 粗細
+## <a name="weights"></a>粗細
 
 我們在處理印刷格式時，會考量到簡易性和效率。 我們選擇使用一個字樣、最小的粗細與大小，以及明確的階層。 定位和對齊方式會遵循指定語言的預設樣式。 英文的順序為由左至右、由上至下。 文字與影像之間的關係是清楚明瞭的。
 
 ![顯示支援的字型粗細。 細、Semilight、標準、Semibold 和粗體](images/weights.png)
 
-## 行距
+## <a name="line-spacing"></a>行距
 
 ![行距為 125% 的範例](images/line-spacing.png)
 
@@ -60,7 +60,7 @@ ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
 
 
 
-## 字型間距調整和追蹤
+## <a name="kerning-and-tracking"></a>字型間距調整和追蹤
 
 Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用以手寫文字為基礎的開放格式。 若要確保最佳的易讀性，並維持其人性化的完整性、字型間距調整和追蹤設定必須具有特定值。
 
@@ -71,7 +71,7 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
 
 
 
-## 文字和字母間距
+## <a name="word-and-letter-spacing"></a>文字和字母間距
 
 類似於字型間距調整和追蹤，字距和字母間距會使用特定的設定，以確保最佳易讀性和人性化的完整性。
 
@@ -80,12 +80,13 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
 
 ![顯示文字與字母間距之間的差異](images/word-letter.png)
 
-**注意**&nbsp;&nbsp;在 XAML 文字控制項中，請使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 來控制字元間距調整，以及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 來控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
+**注意**
+              在 XAML 文字控制項中，請使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 來控制字元間距調整，以及使用 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 來控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
 
 
 
 
-## 對齊方式
+## <a name="alignment"></a>對齊方式
 
 一般而言，我們建議字體的視覺元素和欄應靠左對齊。 在大部分情況下，這個靠左和不齊右方法可提供一致的內容錨定與統一的配置。
 
@@ -94,20 +95,20 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
 
 
 
-## 行尾
+## <a name="line-endings"></a>行尾
 
 當印刷樣式未定位為靠左和不齊右時，請嘗試確保行尾整齊並避免斷字。
 
 
 ![顯示整齊行尾](images/line-endings.png)
 
-## 段落
+## <a name="paragraphs"></a>段落
 
 若要提供對齊的欄邊緣，應以跳過一行且不縮排來表示段落。
 
 ![在段落之間顯示一整行的空間](images/paragraphs.png)
 
-## 字元計數
+## <a name="character-count"></a>字元計數
 
 如果一行太短，眼睛就會被迫要頻繁地來回游移，而破壞閱讀的節奏。 可能的話，每行 50-60 個字母是最易於閱讀的。
 
@@ -117,7 +118,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 ![顯示行的長度不同的 3 個段落](images/character-count.png)
 
-## 凸排文字對齊方式
+## <a name="hanging-text-alignment"></a>凸排文字對齊方式
 
 圖示與文字的水平對齊可用多種方式來處理，取決於圖示的大小和文字的數量。 當文字 (單行或多行) 符合圖示的高度時，文字應垂直置中。
 
@@ -125,9 +126,10 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 ![顯示數個圖示和文字配對](images/hanging-text-alignment.png)
 
-**注意**&nbsp;&nbsp;XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
+**注意**
+              XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供高度上限與基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
 
-## 裁剪和省略符號
+## <a name="clipping-and-ellipses"></a>裁剪和省略符號
 
 依預設剪裁 — 假設文字會自動換行，除非紅線另有指定。 使用非換行文字時，我們建議使用裁剪，而不要使用省略符號。 剪裁可在容器的邊緣、裝置的邊緣和捲軸的邊緣等位置執行。
 
@@ -135,25 +137,26 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 ![顯示使用文字裁剪的裝置框架](images/clipping.png)
 
-## 字體坡形
+## <a name="type-ramp"></a>字體坡形
 字體坡形從標題到本文建立了一個重要的設計關係，確保不同層級之間有一個清楚明瞭的階層。 此階層建立了一個結構，可讓使用者輕鬆地瀏覽已撰寫的通訊。
 
 ![顯示字體坡型](images/type-ramp.png) 所有大小皆採用有效像素。 
 
 
-**注意**&nbsp;&nbsp;大部分的坡形層級都是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 來提供 (例如：`HeaderTextBlockStyle`)。
+**注意**
+              大部分的坡形層級都是以遵循 `*TextBlockStyle` 命名慣例的 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) 來提供 (例如：`HeaderTextBlockStyle`)。
 
 
-## 主要和次要文字
+## <a name="primary-and-secondary-text"></a>主要和次要文字
 
-若要在字體坡形以外建立其他階層，請將次要文字設為 60% 的不透明度。 在[佈景主題調色盤](color.md#color-themes)中，您可以使用 BaseMedium。 主要文字一律應為 100% 的不透明或 BaseHigh。
+若要在字體坡形以外建立其他階層，請將次要文字設為 60% 的不透明度。 在[佈景主題調色盤](color.md#color-theming)中，您可以使用 BaseMedium。 主要文字一律應為 100% 的不透明或 BaseHigh。
 
 
-## 全部大寫的標題
+## <a name="all-caps-titles"></a>全部大寫的標題
 
 特定頁面標題應採用「全部大寫」的格式，以新增另一個階層維度。 這些標題應使用 BaseAlt，且字元間距應設為 em 的千分之 75。 這種處理方式也可用來輔助應用程式瀏覽。
 
-不過，在某些語言中，特定的名稱在採用大寫時會變更其意義，因此，任何以名稱或使用者輸入為基礎的頁面標題均「不應」**轉換為全部大寫。
+不過，在某些語言中，特定的名稱在採用大寫時會變更其意義，因此，任何以名稱或使用者輸入為基礎的頁面標題均「不應」轉換為全部大寫。
 
 
 **可行事項**
@@ -176,12 +179,12 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [文字控制項](../controls-and-patterns/text-controls.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

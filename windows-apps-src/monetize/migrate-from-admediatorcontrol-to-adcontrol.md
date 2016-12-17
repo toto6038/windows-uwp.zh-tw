@@ -13,7 +13,7 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 
 先前的 Advertising SDK 會從 Microsoft 啟用的通用 Windows 平台 (UWP) App 發行，以使用 **AdMediatorControl** 類別來顯示橫幅廣告，讓開發人員能夠藉由顯示來自我們合作夥伴網路 (AOL 和 AppNexus) 以及 AdDuplex 的橫幅廣告，以獲得最佳廣告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支援 **AdMediatorControl** 類別。 如果您現有的應用程式會使用來自舊版 SDK 的 **AdMediatorControl** 類別，而您想要將它移轉到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP App，請遵循本文中的指示，更新您的程式碼來使用 **AdControl** 類別而不是 **AdMediatorControl** 類別。 您可以選擇性地使用加權或排名方法，設定 App 以利用 AdDuplex 傳達廣告。
 
->**注意**&nbsp;&nbsp;本文所提供的程式碼範例僅供說明之用。 您可能需要對程式碼範例進行調整，才能在 App 中使用。
+>**注意**  本文所提供的程式碼範例僅供說明之用。 您可能需要對程式碼範例進行調整，才能在 App 中使用。
 
 ## 先決條件
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 * 一部已安裝 Visual Studio 2015 和 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的開發電腦。
 * 如果您想要利用 AdDuplex 傳達廣告，也必須要在開發電腦上安裝 [AdDuplex Windows 10 SDK](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077)。
 
-  >**注意**&nbsp;&nbsp;除了從上方連結執行 AdDuplex SDK 安裝程式之外，您也可以在 Visual Studio 2015 中安裝適用於您 UWP App 專案的 AdDuplex 程式庫。 在 Visual Studio 2015 中開啟您的 UWP App 專案，按一下 [專案]**** > [管理 NuGet 套件]****、搜尋名為 **AdDuplexWin10** 的 NuGet 套件，然後安裝該套件。
+  >**注意**  除了從上方連結執行 AdDuplex SDK 安裝程式之外，您也可以在 Visual Studio 2015 中安裝適用於您 UWP App 專案的 AdDuplex 程式庫。 在 Visual Studio 2015 中開啟您的 UWP App 專案，按一下 [專案]**** > [管理 NuGet 套件]****、搜尋名為 **AdDuplexWin10** 的 NuGet 套件，然後安裝該套件。
 
 ## 步驟 1︰擷取您的應用程式識別碼和廣告單位識別碼
 
@@ -72,7 +72,7 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 
 如果您只會在廣告流量分配設定中使用 Microsoft 付費廣告，請依照下列步驟進行。
 
-  >**注意**&nbsp;&nbsp;這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
+  >**注意**  這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
 
 1. 在 Visual Studio 中，開啟您的 UWP App 專案。
 2.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考…]****。
@@ -140,7 +140,7 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 
 如果您使用 Microsoft 自家廣告或 AdDuplex 以及 Microsoft 付費廣告，而且想要繼續利用 AdDuplex 傳達廣告，請依照本節中的步驟進行。 程式碼範例同時支援 AdDuplex 和 Microsoft 自家廣告。 如果您使用 AdDuplex 而不是 Microsoft 自家廣告 (反之亦然)，請移除您的案例不適用的程式碼。
 
-  >**注意**&nbsp;&nbsp;這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
+  >**注意**  這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
 
 1. 在 Visual Studio 中，開啟您的 UWP App 專案。
 2.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考…]****。

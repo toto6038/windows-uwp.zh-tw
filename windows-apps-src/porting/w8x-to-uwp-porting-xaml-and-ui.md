@@ -4,12 +4,12 @@ description: "以宣告式 XAML 標記形式定義 UI 的做法可以極順利�
 title: "將 Windows Runtime 8.x XAML 與 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 ---
 
-# 將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,15 +17,15 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 應用程式轉譯至通用 Windows 平台 (UWP) 應用程式。 您會發現大部分標記都相容，雖然您可能需要對系統的「資源」索引鍵或您使用的自訂範本進行一些調整。 檢視模型中的命令式程式碼需要少許變更或可保持不變。 甚至還可以直接移植展示層中操作 UI 元素的許多或大多數命令式程式碼。
 
-## 命令式程式碼
+## <a name="imperative-code"></a>命令式程式碼
 
 如果您只是想要到達專案建置階段，您可以將任何非必要程式碼標成註解或清除。 然後逐一查看問題，並參閱本節 (與上一個主題：[疑難排解](w8x-to-uwp-troubleshooting.md)) 中的下列主題，直到任何建置與執行階段問題都已解決，且您的移植已完成為止。
 
-## 調適型/回應式 UI
+## <a name="adaptiveresponsive-ui"></a>調適型/回應式 UI
 
-因為您的 app 可以在許多不同的裝置上執行，每個裝置都有其獨特的螢幕大小與解析度，因此您將會想要透過最少的步驟來完成您的 app 移植，並讓您的 UI 能夠在那些裝置上呈現最佳外觀。 您可以使用調適型 Visual State Manager 功能來動態偵測視窗大小及變更回應配置，Bookstore2 案例研究主題的[調適型 UI](w8x-to-uwp-case-study-bookstore2.md#adaptive-ui) 中已經提供此做法的範例。
+因為您的 app 可以在許多不同的裝置上執行，每個裝置都有其獨特的螢幕大小與解析度，因此您將會想要透過最少的步驟來完成您的 app 移植，並讓您的 UI 能夠在那些裝置上呈現最佳外觀。 您可以使用調適型 Visual State Manager 功能來動態偵測視窗大小及變更回應配置，Bookstore2 案例研究主題的[調適型 UI](w8x-to-uwp-case-study-bookstore2.md) 中已經提供此做法的範例。
 
-## [返回] 按鈕處理
+## <a name="back-button-handling"></a>[返回] 按鈕處理
 
 針對通用 8.1 應用程式，Windows 市集應用程式和 Windows Phone 市集應用程式對於您顯示的 UI，以及您為返回按鈕處理的事件有不同的方法。 但是，對於 Windows 10 應用程式，您可以在應用程式中使用單一方法。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
@@ -77,11 +77,11 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## 常用鍵
+## <a name="charms"></a>常用鍵
 
 您不需要變更任何與常用鍵整合的程式碼，但需要將一些 UI 新增到應用程式，以取代不屬於 Windows 10 殼層一部分的常用鍵列。 在 Windows 10 上執行的通用 8.1 應用程式，在應用程式的標題列中，會有由系統轉譯組件區塊所提供的取代 UI。
 
-## 控制項與控制項樣式/範本
+## <a name="controls-and-control-stylestemplates"></a>控制項與控制項樣式/範本
 
 在 Windows 10 上執行的通用 8.1 應用程式將保留與控制項相關的 8.1 外觀和行為。 但是，當您將應用程式移植到 Windows 10 應用程式時，會在外觀和行為上產生一些需注意的差異。 適用於 Windows 10 應用程式的控制項架構和設計基本上不會變更，因此，變更大部分都會與[設計語言](#design-language)、簡化，以及可用性的改進有關。
 
@@ -117,11 +117,11 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 如需 UWP app 控制項的詳細資訊，請參閱[依功能分類的控制項](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)，以及[控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
-##  Windows 10 中的設計語言
+##  <a name="design-language-in-windows-10"></a>Windows 10 中的設計語言
 
 通用 8.1 應用程式和 Windows 10 應用程式之間的設計語言，有一些細微但卻很重要的差異。 如需所有詳細資訊，請參閱[設計](http://dev.windows.com/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
-## 有效的像素、檢視距離及縮放比例
+## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效的像素、檢視距離及縮放比例
 
 檢視像素以前是從裝置的實際實體大小和解析度抽取 UI 元素大小與配置的方式。 檢視像素現在已經進化為有效像素，以下將說明此術語、它的意義及其提供的額外價值。
 
@@ -139,7 +139,7 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 您可能會重複使用來自 Windows 市集應用程式的 XAML 標記，其中的常值維度值會在標記中使用 (可能用於圖形大小或其他元素，也可能用於印刷格式)。 但在某些情況下，較大的縮放比例會用於 Windows 10 應用程式適用的裝置，而非通用 8.1 應用程式適用的裝置 (例如，先前使用 140%，現在會使用 150%，而先前使用 180%，現在會使用 200%)。 因此，如果您發現這些常值目前在 Windows 10 上太大，則請嘗試將它們乘以 0.8。 如需詳細資訊，請參閱[適用於 UWP App 的回應式設計入門](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## GridView/ListView 變更
+## <a name="gridviewlistview-changes"></a>GridView/ListView 變更
 
 已針對 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的預設樣式 setter 進行數個變更，使控制項可垂直捲動 (而不是水平捲動，如同它先前預設的動作一樣)。 如果您曾編輯過專案中預設樣式的複本，則您的複本將不會擁有這些變更，因此您需要進行手動更新。 以下是變更的清單。
 
@@ -230,15 +230,15 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 -   在 SelectionStates 視覺狀態群組中，將 Selected 的視覺狀態移至 CommonStates 視覺狀態群組。
 -   移除整個 SelectionStates 視覺狀態群組。
 
-## 當地語系化和全球化
+## <a name="localization-and-globalization"></a>當地語系化和全球化
 
 您可以在 UWP app 專案中重複使用通用 8.1 專案的 Resources.resw 檔案。 完成複製檔案之後，請將該檔案新增到專案，並將 [**建置動作**] 設定為 [**PRIResource**] 以及將 [**複製到輸出目錄**] 設為 [**不要複製**]。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主題說明如何根據裝置系列資源選擇因素載入裝置系列特定資源。
 
-## 播放至
+## <a name="play-to"></a>播放至
 
 [**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) 命名空間中的 API 對於 Windows 10 應用程式已過時，並由 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) API 取而代之。
 
-## 資源索引鍵和 TextBlock 樣式大小
+## <a name="resource-keys-and-textblock-style-sizes"></a>資源索引鍵和 TextBlock 樣式大小
 
 適用於 Windows 10 的設計語言已進化許多，因此變更了某些系統樣式。 在某些情況下，您會想要重新瀏覽檢視的視覺設計，使其與變更的樣式屬性彼此協調。
 
@@ -405,7 +405,7 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 -   TextStyleSmallFontSize
 -   TimeRemainingElementMargin
 
-## SearchBox 已取代為 AutoSuggestBox
+## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox 已取代為 AutoSuggestBox
 
 雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請將 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 用在您的通用搜尋經驗。 以下說明在一般情況下如何透過 **AutoSuggestBox** 實作搜尋經驗。
 
@@ -423,7 +423,7 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 另請參閱 [AutoSuggestBox 移植範例](http://go.microsoft.com/fwlink/p/?linkid=619996)。
 
-## SemanticZoom 變更
+## <a name="semanticzoom-changes"></a>SemanticZoom 變更
 
 適用於 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 的縮放手勢已併入 Windows Phone 模型中，也就是可以點選或按一下群組標題 (因此，在傳統型電腦上，就不再顯示可用來進行縮放的減號按鈕能供性)。 我們現在可以在所有裝置上免費取得相同且一致的行為。 與 Windows Phone 模型不同的一個外觀差異是，放大檢視 (捷徑清單) 會取代縮小檢視，而不是與它重疊。 基於這個因素，您可以從縮小檢視中移除任何半透明的背景。
 
@@ -435,7 +435,7 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 在 Windows Phone 市集應用程式和 Windows 10 應用程式中，按下返回按鈕時，會關閉縮小檢視。 對於 Windows 市集應用程式，沒有內建的返回按鈕處理，因此此問題不適用。
 
-## 設定
+## <a name="settings"></a>設定
 
 Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除了建置設定頁面，您應該改為提供使用者從您的 app 存取它的方式。 我們建議您在最上層公開這個應用程式設定頁面，做為瀏覽窗格中最後一個釘選的項目，但此處是一組完整的選項。
 
@@ -447,7 +447,7 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 設定頁面應填滿應用程式的整個視窗，而且設定頁面也應是關於和意見反應的所在位置。 如需設定頁面的設計指導方針，請參閱[應用程式設定的指導方針](https://msdn.microsoft.com/library/windows/apps/hh770544)。
 
-## 文字
+## <a name="text"></a>文字
 
 文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的通用 Windows 平台 (UWP) **TextBlock** 系統樣式。 尋找與您使用的 Windows Phone Silverlight 樣式相對應的樣式。 您也可以選擇建立自己的通用樣式，然後從 Windows Phone Silverlight 系統樣式將屬性複製到這些通用樣式中。
 
@@ -459,11 +459,11 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://go.microsoft.com/fwlink/p/?LinkID=533896)。 另請參閱上述的[控制項](#controls)一節，以了解文字控制項的變更。
 
-## 佈景主題變更
+## <a name="theme-changes"></a>佈景主題變更
 
 針對通用 8.1 應用程式，預設佈景主題預設是深色。 Windows 10 裝置的預設佈景主題已經變更，但是您可以透過在 App.xaml 中宣告要求的佈景主題來控制所使用的佈景主題。 例如，若要在所有裝置上使用深色佈景主題，可將 `RequestedTheme="Dark"` 新增到根應用程式元素。
 
-## 磚和快顯通知
+## <a name="tiles-and-toasts"></a>磚和快顯通知
 
 對於磚和快顯通知，您目前正在使用的範本會繼續在您的 Windows 10 應用程式中運作。 但是有全新適合的範本可供您使用，在[通知、磚、快顯通知以及徽章](https://msdn.microsoft.com/library/windows/apps/mt185606)中有詳細說明。
 
@@ -471,7 +471,7 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 若要傳送快顯通知，不需要再宣告功能。
 
-## 視窗大小
+## <a name="window-size"></a>視窗大小
 
 針對通用 8.1 應用程式，可以使用 [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) 應用程式資訊清單元素來宣告最小的視窗寬度。 在 UWP app 中，您可以使用命令式程式碼來指定最小大小 (寬度與高度)。 預設的最小大小是 500x320epx，這也是可接受的最小大小下限。 可接受的最小大小上限是 500x500epx。
 
@@ -485,6 +485,6 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

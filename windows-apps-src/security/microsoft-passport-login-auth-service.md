@@ -4,12 +4,12 @@ description: "這是一份完整逐步解說的第 2 部分，將說明如何在
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
 ---
 
-# 建立 Microsoft Passport 登入服務
+# <a name="create-a-microsoft-passport-login-service"></a>建立 Microsoft Passport 登入服務
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,20 +21,20 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用安裝在 Windows 10 電腦上的 Visual Studio 2015 (Community 版或更新版本)。
 
-## 練習 1：伺服器端的邏輯
+## <a name="exercise-1-server-side-logic"></a>練習 1：伺服器端的邏輯
 
 
 您將在這個練習中，從您在第一個實驗室所建置的 Passport 應用程式開始，建立本機模擬伺服器和資料庫。 這個實習實驗室的目的，是要讓您了解如何將 Microsoft Passport 整合到現有的系統中。 由於我們使用模擬伺服器及模擬資料庫，因此會去除許多不相關的設定。 而在您自己的應用程式中，您必須用實際的服務及資料庫取代模擬的物件。
 
 -   首先，請開啟您在第一個 Passport 實習實驗室所建立的 PassportLogin 解決方案。
 -   您將從實作模擬伺服器及模擬資料庫開始。 請建立名為「AuthService」的新資料夾， 方法是在方案總管中，用滑鼠右鍵按一下 [PassportLogin (通用 Windows)] 方案，然後選取 [加入] &gt; [新增資料夾]。
--   請建立 UserAccount 和 PassportDevices 類型，來做為將在模擬資料庫中儲存的資料模型。 UserAccount 類似在傳統的驗證伺服器上實作的使用者模型。 請用滑鼠右鍵按一下 [AuthService] 資料夾，然後加入名為「UserAccount.cs」的新類別。
+-   請建立 UserAccount 和 PassportDevices 類型，來做為將在模擬資料庫中儲存的資料模型。 UserAccount 類似在傳統的驗證伺服器上實作的使用者模型。 請用滑鼠右鍵按一下 \[AuthService\] 資料夾，然後加入名為 "UserAccount.cs" 的新類別。
 
-    ![](images/passport-auth-1.png)
+    ![passport 授權建立資料夾](images/passport-auth-1.png)
 
-    ![](images/passport-auth-2.png)
+    ![passport 授權建立類別](images/passport-auth-2.png)
 
--   請將類型定義變更為 Public，然後加入下列的公用屬性。 您將需要下列的參考。
+-   將類型定義變更為 Public，然後加入下列的公用屬性。 您將需要下列的參考。
 
     ```cs
     using System.ComponentModel.DataAnnotations;
@@ -538,7 +538,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
     }
     ```
 
-## 練習 2：用戶端的邏輯
+## <a name="exercise-2-client-side-logic"></a>練習 2：用戶端的邏輯
 
 
 您將在這個練習中，將第一個實驗室的用戶端 Views 及 Helper 類別，變更使用 AuthService 類別。 在真實世界中，AuthService 就是驗證伺服器，且您需要使用 Web API 來傳送及接收伺服器的資料。 對於這個實習實驗室來說，為了讓事情保持簡單，戶端和伺服器都在本機上。 而這個練習的目標，是了解如何使用 Microsoft Passport API。
@@ -988,13 +988,13 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
     }
     ```
 
--   請建置並執行應用程式 (F5)。 請登入範例使用者帳戶，其認證為「sampleUsername」及「samplePassword」。 您可能會在歡迎畫面中看到 \[Forget Device\] \(忘記裝置\) 按鈕，但頁面上沒有任何裝置。 當您建立或移轉使用者來使用 Microsoft Passport 時，系統並不會把 Passport 資訊發送到 AuthService。
+-   請建置並執行應用程式 (F5)。 請登入範例使用者帳戶，其認證為「sampleUsername」及「samplePassword」。 您可能會在歡迎畫面中看到 \[Forget Device\] \(忘記裝置\) 按鈕，但頁面上沒有任何裝置。 當您建立或移轉使用者來使用 Microsoft Passport 時，系統並不會將 Passport 資訊推送到 AuthService。
 
-    ![](images/passport-auth-3.png)
+    ![passport 登入畫面](images/passport-auth-3.png)
 
-    ![](images/passport-auth-4.png)
+    ![passport 登入成功](images/passport-auth-4.png)
 
--   如要把 Passport 資訊傳遞給 AuthService，您必須更新 MicrosoftPassportHelper.cs。 在 CreatePassportKeyAsync 方法中，您將需要呼叫新方法來嘗試取得 KeyAttestation，而不是只在成功建立金鑰時傳回 True。 雖然這個實習實驗室不會把這個資訊記錄在 AuthService 中，您將必須了解如何在用戶端取得此資訊。 請更新 CreatePassportKeyAsync 方法。
+-   若要將 Passport 資訊傳遞給 AuthService，您必須更新 MicrosoftPassportHelper.cs。 在 CreatePassportKeyAsync 方法中，您將需要呼叫新方法來嘗試取得 KeyAttestation，而不是只在成功建立金鑰時傳回 True。 雖然這個實習實驗室不會把這個資訊記錄在 AuthService 中，您將必須了解如何在用戶端取得此資訊。 請更新 CreatePassportKeyAsync 方法。
 
     ```cs
     public static async Task<bool> CreatePassportKeyAsync(Guid userId, string username)
@@ -1084,9 +1084,9 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 -   請取消 GetKeyAttestationAsync 方法中最後一行的註解，讓 Microsoft Passport 資訊能傳送到 AuthService。
 -   請建置並執行應用程式，然後跟之前一樣，使用預設認證登入應用程式。 您將會在歡迎畫面上看到裝置識別碼。 如果您曾經登入另一個裝置，該裝置的識別碼也會在這裡顯示 (如果您曾經有雲端代管的驗證服務)。 對於這個實習實驗室來說，這裡會顯示實際的裝置識別碼。 在真實的實作中，您會想要顯示易記的名稱，讓使用者能輕易了解，並用來辨識每個裝置。
 
-    ![](images/passport-auth-5.png)
+    ![passport 登入成功裝置識別碼](images/passport-auth-5.png)
 
--   21. 如要完成這個實習實驗室，在使用者選取使用者選取頁面中的項目並重新登入時，您需要針對使用者的要求及查問。 您先前為 AuthService 建立了兩種方法來要求查問，其中一個使用已簽署的查問。 請在 MicrosoftPassportHelper.cs 中建立名為「RequestSignAsync」的新方法。它將會從 AuthService 要求查問、使用 Passport API 在本機簽署查問，以及把已簽署的查問傳送到 AuthService。 在這個實習實驗室中，AuthService 將會接收已簽署的查問，並傳回 True。 在實際的實作中，您會需要實作驗證機制，來確認查問是否是由正確裝置上的正確使用者所簽署的。 請把下列方法加入 MicrosoftPassportHelper.cs。
+-   21. 若要完成這個實習實驗室，在使用者選取使用者選取頁面中的項目並重新登入時，您需要針對使用者的要求及查問。 您先前為 AuthService 建立了兩種方法來要求查問，其中一個使用已簽署的查問。 請在 MicrosoftPassportHelper.cs 中建立名為「RequestSignAsync」的新方法。它將會從 AuthService 要求查問、使用 Passport API 在本機簽署查問，以及把已簽署的查問傳送到 AuthService。 在這個實習實驗室中，AuthService 將會接收已簽署的查問，並傳回 True。 在實際的實作中，您會需要實作驗證機制，來確認查問是否是由正確裝置上的正確使用者所簽署的。 請把下列方法加入 MicrosoftPassportHelper.cs。
 
     ```cs
     private static async Task<bool> RequestSignAsync(Guid userId, KeyCredentialRetrievalResult openKeyResult)
@@ -1175,12 +1175,12 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 我們已經透過練習，提供您如何在伺服器端及用戶端實作的詳細資料。 我們預期這篇文章大多數的讀者都有需要移轉的現有系統，以便開始搭配 Microsoft Passport 來運作，而每個系統的詳細資料都將有所不同。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Microsoft Passport 及 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登入應用程式](microsoft-passport-login.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

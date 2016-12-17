@@ -4,12 +4,12 @@ description: "這篇簡介文章將協助應用程式設計人員和開發人員
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 
 ---
 
-# 安全開發 Windows app 的簡介
+# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows app 的簡介
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +17,7 @@ ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 這篇簡介文章將協助應用程式設計人員和開發人員，能更了解各種能快速建立安全的通用 Windows 平台 (UWP) 應用程式的 Windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
 
-## 1 簡介
+## <a name="1-introduction"></a>1 簡介
 
 
 開發安全的應用程式是種挑戰。 今日的世界充滿各種行動、社交、雲端，及複雜的企業應用程式，而且瞬息萬變，使得客戶期待應用程式會有更快的上市及更新速度。 而客戶也會使用許多不同類型的裝置，更增添了應用程式開發的複雜性。 如果您要建置適用於 Windows 10 通用 Windows 平台 (UWP) 的應用程式，這些裝置可能包含傳統的桌上型電腦、筆記型電腦、平板電腦及行動裝置，再加上種類日益增加的新裝置，包括物聯網、Xbox One、Microsoft Surface Hub 及 HoloLens。 身為開發人員，您必須確保自己的應用程式能在所有平台或相關裝置之間安全地傳輸及儲存資料。
@@ -34,7 +34,7 @@ ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 最後，靜態資料與存放在記憶體中或儲存媒體上的資料有關。 Windows 10 有種應用程式模型，能防止應用程式之間未經授權的資料存取，以及提供加密 API 來進一步保護裝置上的資料。 而稱為「認證保險箱」的功能在搭配可防止應用程式存取裝置上資訊的作業系統之後，就能用來將使用者認證安全地儲存在裝置上。
 
-## 2 驗證因素
+## <a name="2-authentication-factors"></a>2 驗證因素
 
 
 為了要保護資料，要求存取資料的使用者必須要經過身分識別，並獲得授權來存取該使用者要求的資料。 識別使用者身分的程序稱為「驗證」，而決定給予某資源存取權限的過程則叫「授權」。 這兩者是關係密切的作業，且對於使用者來說可能難以分辨。 它們可以是相當簡單或複雜的作業，完全取決於許多因素：例如，資料是存放在單一伺服器上，還是分散到許多系統中。 提供驗證及授權服務的伺服器稱為「識別提供者」。
@@ -49,7 +49,7 @@ ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 設計系統所使用的驗證方法，對於資料安全性來說是個複雜且重要的部分。 一般而言，您使用於驗證的因素越多，系統就越安全。 然而，驗證必須是便於使用的。 使用者通常會一天登入系統許多次，因此驗證程序必須快速。 您選擇的驗證類型是安全性和易於使用性之間的取捨；單一因素驗證最不安全但最易於使用，而多重要素驗證會隨因素的增加而更加安全，但也更加複雜。
 
-## 2.1 單一因素驗證
+## <a name="21-single-factor-authentication"></a>2.1 單一因素驗證
 
 
 這種形式的驗證是根據單一使用者認證來進行的。 這認證通常是密碼，但也可能是個人識別碼 (PIN)。
@@ -69,7 +69,7 @@ ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 儘管單一因素驗證有許多缺點，但它給予使用者認證的控制權。 使用者可以建立及修改密碼，而且只要鍵盤就能進行驗證程序。 這是單一因素驗證和多重要素驗證的主要差異。
 
-## 2.1.1 Web 驗證代理人
+## <a name="211-web-authentication-broker"></a>2.1.1 Web 驗證代理人
 
 
 如同先前所討論的，對於 IT 部門來說，使用密碼驗證的挑戰之一，在於管理使用者名稱/密碼資料庫、重設機制等等的經常費用提高了。目前有種越來越受歡迎的選擇，就是仰賴第三方識別提供者來提供藉由 OAuth (開放的驗證標準) 驗證的程序。
@@ -128,7 +128,7 @@ catch (Exception ex)
 }
 ```
 
-## 2.2 多重要素驗證
+## <a name="22-multi-factor-authentication"></a>2.2 多重要素驗證
 
 
 多重要素驗證使用一個以上的驗證因素， 通常是「您知道的事情」(例如密碼) 與「您擁有的東西」(例如行動電話或智慧卡) 的組合。 就算攻擊者發現使用者的密碼，在沒有裝置或智慧卡的情況下，攻擊者仍然無法存取帳戶。 而且如果攻擊者取得裝置或智慧卡，在沒有密碼的情況下，該裝置或智慧卡也沒有任何用處。 因此，多重要素驗證比單一因素驗證更加安全，但也更加複雜。
@@ -146,7 +146,7 @@ catch (Exception ex)
 
 如您所見，這個程序也與單一因素驗證不同，因為第二個使用者認證是傳送給使用者，而不是由使用者建立或提供。 因此使用者對於必要的認證並沒有完全的控制權。 把智慧卡當做第二個認證時亦是如此：是由組織負責製作智慧卡，然後提供給使用者。
 
-## 2.2.1 Azure Active Directory
+## <a name="221-azure-active-directory"></a>2.2.1 Azure Active Directory
 
 
 Azure Active Directory (Azure AD) 是雲端式身分識別及存取管理服務，可做為單一因素驗證或多重要素驗證的識別提供者。 Azure AD 驗證可以單獨使用，或是搭配驗證碼來使用。
@@ -155,7 +155,7 @@ Azure Active Directory (Azure AD) 是雲端式身分識別及存取管理服務�
 
 此外，Azure AD 可以做為 OAuth 提供者，為標準使用者提供跨多重平台之應用程式的驗證及授權機制。 如需深入了解，請參閱 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 和 [在 Azure 的多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication/)。
 
-## 2.4 Microsoft Passport 及 Windows Hello
+## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport 及 Windows Hello
 
 
 在 Windows 10 中，方便的多重要素驗證機制已經內建在作業系統中。 Microsoft Passport 及 Windows Hello 就是相關的兩個元件。 Windows Hello 就是 Windows 10 內建的新生物特徵辨識登入系統。 由於 Windows Hello 是直接內建在作業系統中，因此能夠讓使用者利用臉部或指紋辨識來解除使用者裝置的鎖定。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。
@@ -174,12 +174,12 @@ app 的註冊工作流程可能如下：
 
 如需 Microsoft Passport 及 Windows Hello 的詳細資訊，請參閱 [Microsoft Passport 指南](https://msdn.microsoft.com/library/mt589441) 和 [Microsoft Passport 開發人員指南](microsoft-passport.md)。
 
-## 3 傳輸中資料的安全性方法
+## <a name="3-data-in-flight-security-methods"></a>3 傳輸中資料的安全性方法
 
 
 傳輸中資料的安全性方法，適用於連線到網路的裝置之間傳輸的資料。 資料可能是在私人公司內部網路的高安全性環境中的不同系統之間傳輸，或是在網路上的非安全環境中的用戶端和 Web 服務之間傳輸。 Windows 10 應用程式透過自己的網路 API 支援 SSL 等標準，並搭配 Azure API Management 等技術來運作，讓開發人員可確保自己的應用程式有適當的安全性層級。
 
-## 3.1 遠端系統驗證
+## <a name="31-remote-system-authentication"></a>3.1 遠端系統驗證
 
 
 一般而言，會與遠端電腦系統進行通訊的案例有兩種。
@@ -193,14 +193,14 @@ Web 服務通訊的安全性需求，會比在直接連線案例中的需求還�
 
 第二種需求是訊息完整性：用戶端與 Web 服務必須能確認自己收到的訊息是由另一方有意傳送的，且訊息在傳輸過程中沒有遭到竄改。 這可透過以數位簽章簽署訊息，以及使用憑證驗證來達成。
 
-## 3.2 SSL 連線
+## <a name="32-ssl-connections"></a>3.2 SSL 連線
 
 
 Web 服務為了要建立及維護與用戶端之間的安全連線，可以使用安全超文字傳輸通訊協定 (HTTPS) 所支援的安全通訊端層 (SSL)。 SSL 藉由支援公開金鑰加密和伺服器憑證，來提供訊息機密性和完整性。 傳輸層安全性 (TLS) 已取代 SSL，但 TLS 通常還是會被稱為 SSL。
 
 當用戶端要求存取伺服器上的資源時，SSL 會啟動與伺服器之間的交涉程序， 這就稱為 SSL 信號交換。 而加密層級、公開和私密金鑰組，以及用戶端與伺服器憑證中的身分識別資訊，是雙方同意在 SSL 連線期間所有通訊的基礎。 伺服器也可能會在這個階段要求用戶端進行驗證。 連線建立之後，所有訊息都會使用交涉的公開金鑰加密，直到連線關閉為止。
 
-## 3.2.1 SSL 關聯
+## <a name="321-ssl-pinning"></a>3.2.1 SSL 關聯
 
 
 雖然 SSL 可使用加密和憑證來提供訊息機密性，卻完全不會檢查正在與用戶端進行通訊的伺服器，是否為正確的伺服器。 未經授權的第三方可能會模仿伺服器的行為，進而攔截用戶端所傳輸的機密資料。 為避免發生這種情況，用戶端會使用稱為 SSL 關聯的技術，來確認伺服器上的憑證是否為用戶端預期和信任的憑證。
@@ -260,7 +260,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 }
 ```
 
-## 3.3 發佈 REST API 和保護 REST API 的存取
+## <a name="33-publishing-and-securing-access-to-rest-apis"></a>3.3 發佈 REST API 和保護 REST API 的存取
 
 
 為確保 Web 服務的存取已經過授權，服務必須在每次 API 呼叫時要求驗證。 當 Web 服務在網路上公開時，能夠控制效能及範圍也是值得考量的地方。 Azure API Management 是能協助您在網路上公開 API 的服務，它依照三個層級來提供功能。
@@ -273,12 +273,12 @@ API 的**發行者/系統管理員**可輕鬆地透過 Azure API Management 的�
 
 Azure API Management 也能減少針對某個服務的 API 呼叫數量 (稱為節流的程序)，以便讓 Web 服務的效能最佳化。 如要深入了解，請參閱 [Azure API Management](https://azure.microsoft.com/services/api-management/) 和 [2015 年 AzureCon 中的 Azure API Management](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)。
 
-## 4 靜態資料的安全性方法
+## <a name="4-data-at-rest-security-methods"></a>4 靜態資料的安全性方法
 
 
 當資料抵達裝置後，我們將這些資料稱為「靜態資料」。 這種資料必須以安全的方式儲存在裝置上，讓未經授權的使用者或應用程式無法存取這些資訊。 Windows 10 中的應用程式模型會執行許多工作，來確保任何應用程式所儲存的資料只有該應用程式才能存取，同時在需要時提供 API 來共用資料。 還有其他 API 可用來確保資料能夠加密，且認證可以安全地儲存。
 
-## 4.1 Windows 應用程式模型
+## <a name="41-windows-app-model"></a>4.1 Windows 應用程式模型
 
 
 Windows 過去從來沒有為應用程式下過定義。 它之前最常被稱為可執行檔 (.exe)，且從未包含安裝、儲存體狀態、執行長度、版本設定、作業系統整合，或是 app 之間的通訊。 通用 Windows 平台模型為應用程式模型下了定義，其定義涵蓋安裝、執行階段環境、資源管理、更新、資料模型，以及解除安裝。
@@ -293,7 +293,7 @@ Windows 10 應用程式在容器中執行，這代表它們的預設權限有限
 
 如需詳細資訊，請參閱[這是通用的：了解 Windows 10 應用程式的週期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
 
-## 4.2 已儲存認證的保護
+## <a name="42-stored-credential-protection"></a>4.2 已儲存認證的保護
 
 
 會存取已驗證服務的 Windows 應用程式，通常會提供讓使用者將認證儲存在本機裝置上的選項。 這對使用者而言很方便；當他們提供使用者名稱與密碼之後，應用程式就會在後續啟動時自動使用這些資訊。 但如果讓攻擊者取得這項已儲存的資料，可能會帶來安全上的問題，因此 Windows 10 提供讓 Windows 應用程式把使用者認證儲存在安全的認證保險箱中的能力。 應用程式會呼叫認證保險箱 API 來儲存及擷取認證保險箱中的認證，而不是將認證儲存在應用程式的儲存體容器中。 認證保險箱是由作業系統所管理的，但只有儲存認證的的應用程式才能存取，這為認證儲存提供了安全管理的解決方案。
@@ -359,21 +359,21 @@ private PasswordCredential GetCredentialFromLocker()
 
 如需詳細資訊，請參閱[認證保險箱](credential-locker.md)。
 
-## 4.3 已儲存資料的保護
+## <a name="43-stored-data-protection"></a>4.3 已儲存資料的保護
 
 
 當您在處理已儲存的資料 (通常稱為靜態資料) 時，為這些資料加密即可防止未經授權的使用者存取已儲存的資料。 為資料加密的兩個常見機制，就是使用對稱金鑰或使用非對稱金鑰。 不過，資料加密無法確保資料從傳送到儲存的這段時間中不會遭到修改。 換句話說，這種方法無法確保資料完整性。 使用訊息驗證碼、雜湊及數位簽章，是解決這種問題的常見技術。
 
-## 4.3.1 資料加密
+## <a name="431-data-encryption"></a>4.3.1 資料加密
 
 
 使用對稱式加密時，寄件者與收件者都有相同的金鑰，並使用該金鑰來為資料加密及解密。 這個方法的挑戰在於安全地分享金鑰，讓雙方都知道自己有該金鑰。
 
 而其中一個解決方法，就是使用公開/私密金鑰的非對稱式加密。 公開金鑰可自由地與任何想要為訊息加密的使用者分享。 私密金鑰則會永遠保密，只有您可以使用它來為資料解密。 有種允許尋找公開金鑰的常見技術，就是使用數位憑證 (或是簡單稱為憑證)。 憑證除了包含使用者或伺服器的相關資訊 (例如名稱、簽發者、電子郵件地址和國家/地區) 之外，也包含公開金鑰的相關資訊。
 
-Windows app 開發人員可以使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 和 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 類別，在自己的 UWP app 中使用對稱式和非對稱式加密。 此外， [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 類別可以用來加密和解密資料、簽入內容和確認數位簽章。 app 也可以使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 類別來加密和解密儲存的本機資料。
+Windows app 開發人員可以使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 和 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 類別，在自己的 UWP app 中使用對稱式和非對稱式加密。 此外， [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 類別可以用來加密和解密資料、簽入內容和確認數位簽章。 App 也可以使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 類別來加密和解密儲存的本機資料。
 
-## 4.3 偵測訊息竄改 (MAC、雜湊以及簽章)
+## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 偵測訊息竄改 (MAC、雜湊以及簽章)
 
 
 MAC 是使用對稱金鑰 (稱為祕密金鑰) 產生的程式碼 (或標記)，或做為 MAC 加密演算法輸入的訊息。 寄件者及收件者要同意祕密金鑰及演算法，才會開始訊息傳輸。
@@ -385,11 +385,11 @@ MAC 會確認訊息，就像這樣。
 -   收件者使用祕密金鑰與訊息做為 MAC 演算法的輸入，以衍生 MAC 標記。
 -   收件者比較其 MAC 標記與寄件者的 MAC 標記。 如果這兩者相同，我們便知道該訊息並未遭到竄改。
 
-![](images/secure-macs.png)
+![mac 驗證](images/secure-macs.png)
 
-Windows 應用程式可以實行 MAC 訊息驗證，方法是藉由呼叫 [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) 類別來產生金鑰，以及呼叫 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 類別來執行 MAC 加密演算法。
+Windows 應用程式可以實行 MAC 訊息驗證，方法是呼叫 [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) 類別來產生金鑰，以及呼叫 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 類別來執行 MAC 加密演算法。
 
-## 4.3.1 使用雜湊
+## <a name="433-using-hashes"></a>4.3.3 使用雜湊
 
 
 雜湊函數是使用任意長度的資料區塊的密碼編譯演算法，會傳回一個固定大小位元字串，稱為雜湊值。 有一整個系列的雜湊函數可以執行這項操作。
@@ -428,7 +428,7 @@ public void SampleReusableHash()
 }
 ```
 
-## 4.3.2 數位簽章
+## <a name="434-digital-signatures"></a>4.3.4 數位簽章
 
 
 數位簽署的儲存訊息的資料完整性是以類似 MAC 驗證的方式驗證。 以下是數位簽章工作流程運作的方式。
@@ -444,7 +444,7 @@ public void SampleReusableHash()
 
 如需詳細資訊，請參閱[數位簽章](https://msdn.microsoft.com/library/windows/desktop/aa381977)、[MAC、雜湊以及簽章](macs-hashes-and-signatures.md)，以及[密碼編譯](cryptography.md)。
 
-## 5 總結
+## <a name="5-summary"></a>5 總結
 
 
 Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系統的功能來建立更安全的應用程式。 在不同的驗證案例中 (例如單一因素驗證、多重要素驗證，或利用 OAuth 識別提供者的代理驗證)，API 可用來減少在驗證方面最常見的挑戰。 Windows Hello 提供新的生物特徵識別登入系統來辨識使用者，以及主動防禦規避適當身分識別程序的攻擊。 Microsoft Passport 搭配 Windows Hello 使用時，能夠提供多層的金鑰和憑證保護，讓這些資料絕對不會在信賴平台模組以外的地方顯示或使用。 此外，透過選用的證明識別金鑰和憑證，能進一步提高安全性層級。
@@ -453,10 +453,10 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 
 當資料抵達裝置時，Windows 應用程式模型在應用程式該如何安裝、更新及存取資料方面提供更大的控制權，同時它還能防止其他應用程式以未經授權的方式存取這些資料。 由作業系統管理的認證保險箱能為使用者認證提供安全的儲存空間，而其他資料可在裝置上透過使用由通用 Windows 平台提供的加密和雜湊 API 來保護。
 
-## 6 資源
+## <a name="6-resources"></a>6 資源
 
 
-### 6.1 操作說明文章
+### <a name="61-how-to-articles"></a>6.1 操作說明文章
 
 -   [驗證和使用者識別](authentication-and-user-identity.md)
 -   [Microsoft Passport](microsoft-passport.md)
@@ -473,7 +473,7 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [密碼編譯的出口限制](export-restrictions-on-cryptography.md)
 -   [常見的密碼編譯工作](common-cryptography-tasks.md)
 
-### 6.2 程式碼範例
+### <a name="62-code-samples"></a>6.2 程式碼範例
 
 -   [認證保險箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [認證選擇器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
@@ -484,7 +484,7 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [Web 帳戶管理](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
 
-### 6.3 API 參考
+### <a name="63-api-reference"></a>6.3 API 參考
 
 -   [**Windows.Security.Authentication.OnlineId**](https://msdn.microsoft.com/library/windows/apps/hh701371)
 -   [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)
@@ -501,6 +501,6 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

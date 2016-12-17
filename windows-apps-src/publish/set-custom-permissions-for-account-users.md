@@ -97,11 +97,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">權限&nbsp;名稱</th>
-    <th align="left">唯讀&nbsp;</th>
+    <th align="left">權限 名稱</th>
+    <th align="left">唯讀 </th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
-    <th align="left">讀寫&nbsp; (附加元件)</th>
+    <th align="left">唯讀   (附加元件) </th>
+    <th align="left">讀寫  (附加元件)</th>
     </tr>
     </thead>
     <tbody>
@@ -119,11 +119,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">權限&nbsp;名稱</th>
-    <th align="left">唯讀&nbsp;</th>
+    <th align="left">權限 名稱</th>
+    <th align="left">唯讀 </th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
-    <th align="left">讀寫&nbsp; (附加元件)</th>
+    <th align="left">唯讀   (附加元件) </th>
+    <th align="left">讀寫  (附加元件)</th>
     </tr>
     </thead>
     <tbody>
@@ -138,11 +138,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">權限&nbsp;名稱</th>
-    <th align="left">唯讀&nbsp;</th>
+    <th align="left">權限 名稱</th>
+    <th align="left">唯讀 </th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
-    <th align="left">讀寫&nbsp; (附加元件)</th>
+    <th align="left">唯讀   (附加元件) </th>
+    <th align="left">讀寫  (附加元件)</th>
     </tr>
     </thead>
     <tbody>
@@ -163,11 +163,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">權限&nbsp;名稱</th>
-    <th align="left">唯讀&nbsp;</th>
+    <th align="left">權限 名稱</th>
+    <th align="left">唯讀 </th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
-    <th align="left">讀寫&nbsp; (附加元件)</th>
+    <th align="left">唯讀   (附加元件) </th>
+    <th align="left">讀寫  (附加元件)</th>
     </tr>
     </thead>
     <tbody>

@@ -3,33 +3,33 @@ author: Mtoepke
 title: "Xbox One 開發人員計畫上的 UWP 已知問題"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
-ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
+ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
+ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 ---
 
-# Xbox 開發人員計畫上的 UWP 已知問題
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
 
-\[如果您是透過 API 參考主題中的連結來到這裡，並在尋找通用裝置系列 API 的資訊，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](http://go.microsoft.com/fwlink/?LinkID=760755)。\]
+\[如果您是透過 API 參考主題中的連結來到這裡，並在尋找通用裝置系列 API 的資訊，請參閱[尚未在 Xbox 上支援的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755) (英文)。\]
 
-下列清單將針對您在此版本中可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
+下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
 
-**我們想要您的意見反應**，因此請在[開發通用 Windows 平台 App](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
+**我們想要您的意見反應**，因此請在[開發通用 Windows 平台 App](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
 如果您遇到困難，請閱讀本主題中的資訊、參閱[常見問題集](frequently-asked-questions.md)，並使用論壇以尋求協助。
 
 
 <!--## Developing games-->
  
-## 部分強制執行背景 App 的記憶體限制
+## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>部分強制執行背景 App 的記憶體限制
  
 於背景執行之 App 的磁碟使用量上限為 128 MB。 在 Xbox One 上目前的 UWP 版本中，若您的 App 在移至背景時超過上述限制，便會被停用。 此限制目前在您的 App 在已處於背景的情況下超過限制時，並不會強制執行，這代表如果您的 App 在背景執行時超過 128 MB，它將能夠持續配置記憶體。
  
 目前此問題還沒有解決方法。 App 應該適當地控管其記憶體使用量，並於背景執行時持續將該使用量保持低於 128 MB 的限制。
  
-## 家長監護開啟時，從 VS 進行部署將會失敗
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>家長監護開啟時，從 VS 進行部署將會失敗
 
 若主機開啟 [設定] 中的 [家長監護] 功能，從 VS 啟用 app 將會失敗。
 
@@ -42,9 +42,9 @@ ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
 6. 關閉 App。
 7. 使用 F5 從 VS 啟動，App 將會以無提示方式啟動。
 
-此時，直到您將使用者登出為止，該權限將會「持續生效」__，即使您將 App 解除安裝並重新安裝也一樣。
+此時，直到您將使用者登出為止，該權限將會「持續生效」，即使您將 App 解除安裝並重新安裝也一樣。
  
-有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律]**** 允許子女啟動該 App。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
+有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律] 允許子女啟動該 App。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
 
 <!--### x86 vs. x64
 
@@ -67,7 +67,7 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## DirectX 12 支援
+## <a name="directx-12-support"></a>DirectX 12 支援
 
 Xbox One 上的 UWP 支援 DirectX 11 功能層級 10。 此時不支援 DirectX 12。 
 
@@ -91,11 +91,11 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
-## Xbox One 上的已封鎖網路連接埠
+## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One 上的已封鎖網路連接埠
 
 Xbox One 裝置上的通用 Windows 平台 (UWP) App 具有無法繫結至 [49152, 65535] 範圍中之連接埠的限制。 雖然於執行階段期間繫結至這些連接埠時，看起來可能已成功，不過網路流量在抵達 App 之前可能便已無訊息地被捨棄。 您的 App 應該在可行的情況下繫結至連接埠 0，這將能允許系統選取本機連接埠。 如果您需要使用特定的連接埠，連接埠號碼必須位於 [1025, 49151] 的範圍內，而您也應該檢查並避免與 IANA 登錄發生衝突。 如需詳細資訊，請參閱[服務名稱與傳輸通訊協定連接埠號碼登錄 (英文)](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
-## UWP API 涵蓋範圍
+## <a name="uwp-api-coverage"></a>UWP API 涵蓋範圍
 
 並非所有的 UWP API 都在 Xbox 上受到支援。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果您發現其他 API 問題，請在論壇上報告它們。 
 
@@ -160,9 +160,9 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-## 瀏覽到 WDP 會導致憑證警告
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告
 
-您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]****。
+您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]。
 
 ![網站安全性憑證警告](images/security_cert_warning.jpg)
 
@@ -171,12 +171,12 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [常見問題集](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

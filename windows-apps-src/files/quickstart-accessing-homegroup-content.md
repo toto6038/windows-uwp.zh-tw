@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "存取 HomeGroup 內容"
 description: "存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 
 ---
-# 存取 HomeGroup 內容
+# <a name="accessing-homegroup-content"></a>存取 HomeGroup 內容
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
     您可以使用查詢來列舉 HomeGroup 中的檔案和資料夾。 若要了解檔案和資料夾查詢，請參閱[列舉和查詢檔案和資料夾](quickstart-listing-files-and-folders.md)。
 
-## 在 HomeGroup 開啟檔案選擇器
+## <a name="open-the-file-picker-at-the-homegroup"></a>在 HomeGroup 開啟檔案選擇器
 
 遵循下列步驟開啟檔案選擇器的執行個體，讓使用者從 HomeGroup 挑選檔案檔案和資料夾：
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }   
     ```
 
-## 搜尋 HomeGroup 中的檔案
+## <a name="search-the-homegroup-for-files"></a>搜尋 HomeGroup 中的檔案
 
 本節示範如何尋找符合使用者查詢字詞的 HomeGroup 項目。
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     ```
 
 
-## 搜尋 HomeGroup 中特定使用者的分享檔案
+## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a>搜尋 HomeGroup 中特定使用者的分享檔案
 
 本節說明如何尋找由特定使用者分享的 HomeGroup 檔案。
 
@@ -164,7 +164,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }    
     ```
 
-## 從 HomeGroup 串流視訊
+## <a name="stream-video-from-the-homegroup"></a>從 HomeGroup 串流視訊
 
 遵循這些步驟從 HomeGroup 串流視訊內容：
 
@@ -211,6 +211,6 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

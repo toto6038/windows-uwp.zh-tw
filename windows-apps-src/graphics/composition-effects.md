@@ -4,11 +4,11 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "組合效果"
 description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
-ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
+ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
+ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
 
 ---
-# 組合效果
+# <a name="composition-effects"></a>組合效果
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,15 +20,15 @@ ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 筆刷效果用於視覺化組合樹狀結構，這種效果的內容來自效果圖形的輸出。 效果可以參考現有表面/紋理，但沒有其他組合樹狀結構的輸出。
 
-## 效果功能
+## <a name="effect-features"></a>效果功能
 
 -   [效果程式庫](./composition-effects.md#effect-library)
 -   [鏈結效果](./composition-effects.md#chaining-effects)
 -   [動畫支援](./composition-effects.md#animation-support)
--   [效果屬性 – 常數與動畫效果](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [常數與動畫效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
 -   [使用獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### 效果程式庫
+### <a name="effect-library"></a>效果程式庫
 
 目前組合支援下列效果：
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
 
-### 鏈結效果
+### <a name="chaining-effects"></a>鏈結效果
 
 效果可以鏈結，允許應用程式同時在影像上使用多個效果。 效果圖形可以支援可互相參照的多個效果。 當描述您的效果時，只需新增效果做為您效果的輸入。
 
@@ -77,13 +77,13 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 上述範例說明一個有二項輸入的算數複合效果。 第二個輸入包含飽和度屬性為 0.5 的效果。
 
-### 動畫支援
+### <a name="animation-support"></a>動畫支援
 
-效果屬性支援動畫，您可以在效果編譯期間指定用動畫顯示，且「一律」做為常數的效果屬性。 可展示動畫的屬性是透過表單 "effect name.property name" 的字串來指定。 這些屬性可以透過多個效果的具現化，來獨立產生動畫效果。
+效果屬性支援動畫，您可以在效果編譯期間指定用動畫顯示，且「一律」做為常數的效果屬性。 可展示動畫的屬性是透過表單 "effect name.property name" 的字串來指定。 這些屬性可以透過多個效果的具現化，獨立產生動畫效果。
 
-### 效果屬性 – 常數與動畫效果
+### <a name="constant-vs-animated-effect-properties"></a>常數與動畫效果屬性 
 
-您可以在效果編譯期間指定效果屬性為動態或「一律」做為常數。 動態屬性是透過「<effect name>.<property name>」格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
+您可以在效果編譯期間，將效果屬性指定為動態或「一律」做為常數的屬性。 動態屬性是透過「<effect name>.<property name>」格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
 
 在編譯上述效果時，您有彈性可以選擇飽和度一律等於 0.5，或將它設為動態值並以動態或動畫效果顯示。
 
@@ -123,11 +123,11 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 請參閱[去飽和度 - 動畫範例](http://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](http://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
 
-### 使用獨立屬性的多個效果執行個體
+### <a name="multiple-effect-instances-with-independent-properties"></a>使用獨立屬性的多個效果執行個體
 
 藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](http://go.microsoft.com/fwlink/?LinkId=785344)。
 
-## 開始使用組合效果
+## <a name="getting-started-with-composition-effects"></a>開始使用組合效果
 
 這個快速入門教學課程會示範如何使用效果的一些基本功能。
 
@@ -136,13 +136,13 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   [安裝 Win2D](./composition-effects.md#installing-win2d)
 -   [設定您的組合基本知識](./composition-effects.md#setting-your-composition-basics)
 -   [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
--   [建立、編譯以及套用效果](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [建立、編譯以及套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
 
-### 安裝 Visual Studio
+### <a name="installing-visual-studio"></a>安裝 Visual Studio
 
 -   如果您沒有安裝支援的 Visual Studio 版本，請移至[這裡](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下載頁面。
 
-### 建立新的專案
+### <a name="creating-a-new-project"></a>建立新的專案
 
 -   移至 [檔案] -&gt; [新增] -&gt; [專案]...
 -   選取 [Visual C#]
@@ -150,7 +150,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   輸入您選擇的專案名稱
 -   按一下 [確定]
 
-### 安裝 Win2D
+### <a name="installing-win2d"></a>安裝 Win2D
 
 Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 
@@ -164,7 +164,7 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 在接下來的幾個步驟中，我們會使用組合 API，把移除所有飽和度的飽和度效果套用至這個貓咪影像。 在這個模型中，效果會在建立後套用至影像。
 
 ![來源影像](images/composition-cat-source.png)
-### 設定您的組合基本知識
+### <a name="setting-your-composition-basics"></a>設定您的組合基本知識
 
 如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](http://go.microsoft.com/fwlink/?LinkId=785345)。
 
@@ -177,14 +177,14 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### 建立 CompositionSurface 筆刷
+### <a name="creating-a-compositionsurface-brush"></a>建立 CompositionSurface 筆刷
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### 建立、編譯以及套用效果
+### <a name="creating-compiling-and-applying-effects"></a>建立、編譯以及套用效果
 
 1.) 建立圖形效果
 ```cs
@@ -227,7 +227,7 @@ brush.Surface = imageSource.Surface;
 6.) 執行您的應用程式 – 您的結果應該是一隻去除飽和度的貓：
 
 ![去除飽和度的影像](images/composition-cat-desaturated.png)
-## 其他資訊
+## <a name="more-information"></a>其他資訊
 
 -   [Microsoft – 組合 GitHub](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

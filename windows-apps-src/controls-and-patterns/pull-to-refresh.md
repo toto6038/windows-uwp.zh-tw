@@ -33,7 +33,7 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 - 關閉：只有在超過 `PullThreshold` 的時候放開清單，才會要求重新整理。 當使用者放開捲動器時，指示器會以動畫方式離開檢視。 (在手機上) 如果狀態列指示器可供使用，則會顯示。
 - 開啟：一超過 `PullThreshold` 就會重新整理，不論是否放開。 指示器會留在檢視中，直到已抓取新資料，然後才以動畫方式離開檢視。 當資料抓取完成時，會使用 **Deferral** 通知 App。
 
-> **注意**&nbsp;&nbsp;範例中的程式碼也適用於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，請自 GridView 衍生自訂類別，而不是 ListView，並修改預設的 GridView 範本。
+> **注意**  範例中的程式碼也適用於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，請自 GridView 衍生自訂類別，而不是 ListView，並修改預設的 GridView 範本。
 
 ## 新增重新整理指示器
 
@@ -47,7 +47,7 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 
 在拖動重新整理範例中，`RefreshableListView` 控制項範本會透過新增重新整理指示器，來修改標準的 **ListView** 範本。 重新整理指示器是放在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 中，且在 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) (顯示清單項目的部分) 上方。
 
-> **注意**&nbsp;&nbsp;只有未設定 `RefreshIndicatorContent` 屬性時，`DefaultRefreshIndicatorContent` 文字方塊才會提供後援文字指示器。
+> **注意**  只有未設定 `RefreshIndicatorContent` 屬性時，`DefaultRefreshIndicatorContent` 文字方塊才會提供後援文字指示器。
 
 以下是由預設 ListView 範本修改的控制項範本之部分。
 

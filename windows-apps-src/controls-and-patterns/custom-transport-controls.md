@@ -18,7 +18,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 開始之前，您應該先熟悉 MediaPlayerElement 和 MediaTransportControls 類別。 如需詳細資訊，請參閱＜MediaPlayerElement 控制項指南＞。
 
-> **提示**&nbsp;&nbsp;本主題中的範例是以[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
+> **提示**  本主題中的範例是以[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -33,7 +33,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 
 
-> **注意**&nbsp;&nbsp;**MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此頁面上的所有範例也適用於 **MediaElement**。
+> **注意**  **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此頁面上的所有範例也適用於 **MediaElement**。
 
 ## 您何時應該自訂範本？
 
@@ -45,11 +45,11 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 - 在調整控制項大小時變更命令移出的順序。
 - 提供不在預設集中的命令按鈕。
 
->**注意**&nbsp;&nbsp;如果畫面上沒有足夠的空間，螢幕上顯示的按鈕將會依照預先定義的順序刪除內建的傳輸控制項。 若要變更這個順序或將不符合的命令放入溢位功能表，您將需要自訂控制項。
+>**注意**  如果畫面上沒有足夠的空間，螢幕上顯示的按鈕將會依照預先定義的順序刪除內建的傳輸控制項。 若要變更這個順序或將不符合的命令放入溢位功能表，您將需要自訂控制項。
 
 您可以藉由修改預設範本來自訂控制項的外觀。 若要修改控制項的行為或增加新命令，您可以建立衍生自 MediaTransportControls 的自訂控制項。
 
->**提示**&nbsp;&nbsp;可自訂的控制項範本是 XAML 平台的一個強大功能，但也有您應該納入考慮的後果。 當您自訂範本時，它會變成 App 的靜態部分，因此不會收到 Microsoft 對範本所做的任何平台更新。 如果是由 Microsoft 進行範本更新，您應該採用新範本並重新加以修改，以獲得更新範本的好處。
+>**提示**  可自訂的控制項範本是 XAML 平台的一個強大功能，但也有您應該納入考慮的後果。 當您自訂範本時，它會變成 App 的靜態部分，因此不會收到 Microsoft 對範本所做的任何平台更新。 如果是由 Microsoft 進行範本更新，您應該採用新範本並重新加以修改，以獲得更新範本的好處。
 
 ## 範本結構
 
@@ -58,7 +58,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 - 第二個區段定義 MediaTransportControls 所使用的各種視覺狀態。
 - 第三個區段包含 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。
 
-> **注意**&nbsp;&nbsp;如需修改範本的詳細資訊，請參閱[控制項範本]()。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
+> **注意**  如需修改範本的詳細資訊，請參閱[控制項範本]()。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
 
 在下列各節中，您將了解如何為傳輸控制項自訂數個主要元素：
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允許使用者拖曳他們的媒體，同時顯示進度
@@ -184,7 +184,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 </CommandBar.SecondaryCommands>
 ```
 
-> **重要**&nbsp;&nbsp;您仍然必須讓按鈕顯示並加以啟用，才能在溢位功能表中予以使用。 在這個範例中，除非 IsPlaybackRateButtonVisible 屬性是 true，否則 PlaybackRateButton 元素不會顯示於溢位功能表中。 除非 IsPlaybackRateEnabled 屬性是 true，否則不會加以啟用。 設定這些屬性的方式，請見上一節。
+> **重要**  您仍然必須讓按鈕顯示並加以啟用，才能在溢位功能表中予以使用。 在這個範例中，除非 IsPlaybackRateButtonVisible 屬性是 true，否則 PlaybackRateButton 元素不會顯示於溢位功能表中。 除非 IsPlaybackRateEnabled 屬性是 true，否則不會加以啟用。 設定這些屬性的方式，請見上一節。
 
 ### 新增自訂按鈕
 

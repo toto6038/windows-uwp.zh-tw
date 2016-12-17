@@ -13,7 +13,7 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 在 Windows 市集提交 API 中使用下列方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 取得資料。 如需 Windows 市集提交 API 的簡介，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法僅能用來取得 App 的資料。 若要為附加元件建立或管理提交，請參閱[管理 App 提交](manage-app-submissions.md)中的方法。
+>**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法僅能用來取得 App 的資料。 若要為附加元件建立或管理提交，請參閱[管理 App 提交](manage-app-submissions.md)中的方法。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|

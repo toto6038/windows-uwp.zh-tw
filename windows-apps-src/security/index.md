@@ -4,23 +4,23 @@ description: "本節包含與建置適用於 Windows 10 的安全通用 Windows 
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a178f992ddd39b5609ce6d15b7e3560e157b9afb
-ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
+ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
+ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 
 ---
 
-# 安全性
+# <a name="security"></a>安全性
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含與建置適用於 Windows 10 的安全通用 Windows 平台 (UWP) 應用程式相關的文章。
 
-## 簡介 
+## <a name="introduction"></a>簡介 
 
-如果您是 Windows 或 UWP 開發的新手，請先參閱[開發安全的 Windows 應用程式簡介](web-authentication-broker.md)。 這篇簡介等級的文章提供您應用程式的安全性考量，以及 Windows 10 中各種可用功能的概觀。
+如果您是 Windows 或 UWP 開發的新手，請先參閱[開發安全的 Windows 應用程式簡介](intro-to-secure-windows-app-development.md)。 這篇簡介等級的文章提供您應用程式的安全性考量，以及 Windows 10 中各種可用功能的概觀。
 
-## 驗證和使用者識別
+## <a name="authentication-and-user-identity"></a>驗證和使用者識別
 
 [驗證和使用者識別](authentication-and-user-identity.md)一節包含與使用者登入和身分識別相關之案例的逐步解說。 App 有數個使用者驗證選項，涵蓋範圍從使用 [Web 驗證代理人](web-authentication-broker.md)的簡單單一登入 (SSO) 到高度安全的雙因素驗證。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
 <tr><td>[Web 驗證代理人](web-authentication-broker.md)</td><td>本文說明如何將您的 app 連接到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得描述 App 存取之提供者資源的存取權杖。</td></tr>
 </table>
 
-## 密碼編譯 
+## <a name="cryptography"></a>密碼編譯 
 
 密碼編譯一節包含更複雜的密碼編譯相關主題資訊。 
 
@@ -54,6 +54,6 @@ ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

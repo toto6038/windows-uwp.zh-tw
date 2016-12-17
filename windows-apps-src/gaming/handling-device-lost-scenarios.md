@@ -4,12 +4,12 @@ title: "處理 Direct3D 11 中的裝置已移除案例"
 description: "本主題說明在移除或重新初始化圖形卡之後，應如何重建 Direct3D 與 DXGI 裝置介面鏈結。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3cb625886add852d9faa36a0ad5bc611c1929077
+ms.sourcegitcommit: 5ed3815397b076ab3ee14fd3c22b235b46da5f09
+ms.openlocfilehash: b88d85c78ba5d08718b7e2c844f94beb71e5134a
 
 ---
 
-# <span id="dev_gaming.handling_device-lost_scenarios"></span>處理 Direct3D 11 中的裝置已移除案例
+# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>處理 Direct3D 11 中的裝置已移除案例
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,9 +25,9 @@ ms.openlocfilehash: 3cb625886add852d9faa36a0ad5bc611c1929077
 
 當這類情況發生時，DXGI 會傳回錯誤碼，表示必須重新初始化 Direct3D 裝置，而且必須重建裝置資源。 此逐步解說說明 Direct3D 11 app 與遊戲如何能偵測和回應圖形卡重設、移除或變更的情況。 程式碼範例是從隨附於 Microsoft Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本中提供的。
 
-# 指示
+# <a name="instructions"></a>指示
 
-### <span></span>步驟 1：
+### <a name="spanspanstep-1"></a><span></span>步驟 1：
 
 在轉譯迴圈中包含裝置已移除錯誤的檢查。 藉由呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等) 來呈現框架。 然後檢查它是否傳回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET**。
 
@@ -52,7 +52,7 @@ else
 }
 ```
 
-### 步驟 2：
+### <a name="step-2"></a>步驟 2：
 
 此外，也在回應視窗大小變更時包含裝置已移除錯誤的檢查。 這很適合用來檢查 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET**，因為：
 
@@ -87,9 +87,9 @@ else
 }
 ```
 
-### 步驟 3：
+### <a name="step-3"></a>步驟 3：
 
-只要您的 app 收到 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 錯誤，它就必須重新初始化 Direct3D 裝置，並重新初始化任何相依於裝置的資源。 釋出以舊版 Direct3D 裝置建立之圖形裝置資源的任何參照；那些資源現在已經失效，而且必須釋出對交換鏈結的所有參照後才能再建立新的參照。
+只要您的 App 收到 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 錯誤，它就必須重新初始化 Direct3D 裝置，並重新建立任何相依於裝置的資源。 釋出以舊版 Direct3D 裝置建立之圖形裝置資源的任何參照；那些資源現在已經失效，而且必須釋出對交換鏈結的所有參照後才能再建立新的參照。
 
 HandleDeviceLost 方法會釋出交換鏈結，並通知應用程式元件釋出裝置資源：
 
@@ -130,10 +130,10 @@ if (m_deviceNotify != nullptr)
 
 在 HandleDeviceLost 方法結束後，控制權會交還給轉譯迴圈，以繼續繪製下一個框架。
 
-## 備註
+## <a name="remarks"></a>備註
 
 
-### 調查裝置已移除錯誤的原因
+### <a name="investigating-the-cause-of-device-removed-errors"></a>調查裝置已移除錯誤的原因
 
 如果 DXGI 裝置已移除錯誤問題持續發生，可能代表您的圖形程式碼在繪製常式期間正產生無效狀況。 這也可能代表硬體故障或圖形驅動程式有錯誤。 如果要調查裝置已移除錯誤的原因，請在呼叫 [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 之後再釋出 Direct3D 裝置。 此方法會傳回六個可能的 DXGI 錯誤碼的其中一個，表示裝置已移除錯誤的原因：
 
@@ -159,7 +159,7 @@ if (m_deviceNotify != nullptr)
 
 如需詳細資料， 請參閱 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 與 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
 
-### 測試裝置已移除處理
+### <a name="testing-device-removed-handling"></a>測試裝置已移除處理
 
 Visual Studio 的「開發人員命令提示字元」支援針對與 Visual Studio 圖形診斷相關之 Direct3D 事件擷取及播放的命令列工具「dxcap」。 您可以在您的 app 執行時使用命令列選項「-forcetdr」，這會強制執行「GPU 逾時偵錯與復原」事件，藉以觸發 DXGI\_ERROR\_DEVICE\_REMOVED，並讓您可以測試您的錯誤處理程式碼。
 
@@ -177,6 +177,6 @@ Visual Studio 的「開發人員命令提示字元」支援針對與 Visual Stud
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

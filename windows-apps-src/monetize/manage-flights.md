@@ -16,7 +16,7 @@ ms.openlocfilehash: de1c23d721cee67d813520e3a23eb553cd90b7e9
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理套件正式發行前小眾測試版。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法只可用來取得、建立或刪除套件正式發行前小眾測試版。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
+>**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法只可用來取得、建立或刪除套件正式發行前小眾測試版。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|

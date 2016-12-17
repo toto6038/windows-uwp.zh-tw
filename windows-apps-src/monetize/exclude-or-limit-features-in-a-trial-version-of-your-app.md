@@ -5,29 +5,27 @@ title: "在試用版本中排除或限制某些功能"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: "免費試用程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
 
 ---
 
-# 在試用版本中排除或限制某些功能
+# <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
 
-
-
->**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來實作試用版，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
+>**注意**  本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來實作試用版，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[實作 App 的試用版](implement-a-trial-version-of-your-app.md)。
 
 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
 讓我們看看如何將它新增至 App。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 要新增功能讓客戶購買的 Windows 應用程式。
 
-## 步驟 1：挑選要在試用期間啟用或停用的功能
+## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>步驟 1：挑選要在試用期間啟用或停用的功能
 
-App 目前的授權狀態會儲存為 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
+App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
 
 此外，決定您在應用程式執行時要如何處理應用程式授權的變更。 您的試用版應用程式可具備完整功能，但應用程式內會有付費版本所沒有的廣告橫幅。 或者，試用版應用程式可以停用特定功能，或是定期顯示訊息，詢問使用者是否要購買。
 
@@ -59,181 +57,72 @@ App 目前的授權狀態會儲存為 [**LicenseInformation**](https://msdn.micr
     -   不顯示訊息直接啟用完整授權的所有功能 (或停用試用版通知)。
 
 如果您想要偵測授權變更並在 App 中執行一些動作，您必須按照下個步驟中的做法，新增事件處理常式。
-## 步驟 2：初始化授權資訊
 
-當您的 app 初始化時，為您的 app 取得 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，如此範例中所示。 我們假設 **licenseInformation** 是類型 **LicenseInformation** 的全域變數或欄位。
+## <a name="step-2-initialize-the-license-info"></a>步驟 2：初始化授權資訊
 
-初始化 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 以存取 app 的授權資訊。
+當您的 App 初始化時，為您的 App 取得 [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) 物件，如此範例中所示。 我們假設 **licenseInformation** 是類型 **LicenseInformation** 的全域變數或欄位。
 
-```CSharp
-void initializeLicense()
-{
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
+現在，您將要使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 取得模擬的授權資訊。 將 App 的發行版本提交到**市集**之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
 
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
-}
-```
+接下來新增事件處理常式，以在 App 執行時接收授權變更的通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。
 
-新增事件處理常式，以在應用程式執行時接收授權變更的通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
-```CSharp
-void InitializeLicense()
-{
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
-
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
-
-    // Register for the license state change event.
-     licenseInformation.LicenseChanged += new LicenseChangedEventHandler(licenseChangedEventHandler);
-
-}
-
-// ...
-
-void licenseChangedEventHandler()
-{
-    ReloadLicense(); // code is in next steps
-}
-```
-
-## 步驟 3：以條件性區塊撰寫功能程式碼
+## <a name="step-3-code-the-features-in-conditional-blocks"></a>步驟 3：以條件性區塊撰寫功能程式碼
 
 授權變更事件觸發時，您的 App 必須呼叫授權 API 來判斷試用狀態是否有所變更。 此步驟中的程式碼顯示如何為此事件建構處理常式。 此時，如果使用者購買應用程式，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
 
 此範例顯示如何評估 App 的授權狀態，據以啟用或停用您 App 的功能。
 
-```CSharp
-void ReloadLicense()
-{
-    if (licenseInformation.IsActive)
-    {
-         if (licenseInformation.IsTrial)
-         {
-             // Show the features that are available during trial only.
-         }
-         else
-         {
-             // Show the features that are available only with a full license.
-         }
-     }
-     else
-     {
-         // A license is inactive only when there' s an error.
-     }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
-## 步驟 4：取得 App 的試用版到期日
+## <a name="step-4-get-an-apps-trial-expiration-date"></a>步驟 4：取得 App 的試用版到期日
 
 納入可決定 App 試用版到期日的程式碼。
 
 此範例中的程式碼定義的函式可以取得應用程式試用版授權的到期日。 如果授權仍然有效，就會顯示到期日與試用版到期之前的剩餘天數。
 
-```CSharp
-void DisplayTrialVersionExpirationTime()
-{
-    if (licenseInformation.IsActive)
-    {
-        if (licenseInformation.IsTrial)
-        {
-            var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
-            // Display the expiration date using the DateTimeFormatter.
-            // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
+## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>步驟 5：透過模擬呼叫授權 API 來測試功能
 
-            var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
+現在使用模擬的資料來測試您的 App。 **CurrentAppSimulator** 會從位於 %UserProfile%\\AppData\\local\\packages\\&lt;套件名稱&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中，稱為 WindowsStoreProxy.xml 的 XML 檔案取得測試特定的授權資訊。 您可以編輯 WindowsStoreProxy.xml，變更您 App 與其功能的模擬到期日。 測試所有可能的到期日與授權組態，確認一切無誤。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
 
-            // Let the user know the number of days remaining before the feature expires
-        }
-        else
-        {
-            // ...
-        }
-    }
-    else
-    {
-       // ...
-    }
-}
-```
+如果這個路徑和檔案不存在，您必須在安裝或執行階段期間建立它們。 如果您嘗試存取 [CurrentAppSimulator.LicenseInformation](https://msdn.microsoft.com/library/windows/apps/hh779768) 屬性，但該特定位置中卻沒有 WindowsStoreProxy.xml，則會發生錯誤。
 
-## 步驟 5：透過模擬呼叫授權 API 來測試功能
+## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>步驟 6：以實際的 API 取代模擬的授權 API 方法
 
-現在請模擬呼叫授權伺服器來測試您的 App。 在 JavaScript、C#、Visual Basic 或 Visual C++ 中，在 app 的初始化程式碼中以 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 取代對 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)的參照。
+以模擬的授權伺服器測試您的 App 之後，並在將 App 提交至市集進行認證之前，請以 **CurrentApp** 取代 **CurrentAppSimulator**，如下一個程式碼範例所示。
 
-[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 會從稱為 WindowsStoreProxy.xml 的 XML 檔案取得測試特定的授權資訊，該檔案位於 %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData。 如果這個路徑或檔案不存在，您必須在安裝或執行階段期間建立它們。 如果您嘗試存取 [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) 屬性，但該特定位置中卻沒有 WindowsStoreProxy.xml，則會發生錯誤。
+>**重要**  在將您的 App 提交至市集時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
 
-此範例說明如何將程式碼新增至您的 app，以在不同的授權狀態下測試它。
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
 
-```CSharp
-void appInit()
-{
-    // some app initialization functions
-
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
-
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
-
-    // other app initialization functions
-}
-```
-
-您可以編輯 WindowsStoreProxy.xml，變更您應用程式與其功能的模擬到期日。 測試所有可能的到期日與授權組態，確認一切無誤。
-
-## 步驟 6：以實際的 API 取代模擬的授權 API 方法
-
-在您以模擬的授權伺服器測試您的 app 之後，以及在將 app 送出至市集進行認證之前，請以 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 取代 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)，如下一個程式碼範例所示。
-
-**重要** 在將您的 app 送出至市集時，該 app 必須使用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件，否則將無法通過認證。
-
-```CSharp
-void appInit()
-{
-    // some app initialization functions
-
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    licenseInformation = CurrentApp.LicenseInformation;
-
-    // Initialize the license info for testing.
-    // comment the next line for release
-    //   licenseInformation = CurrentAppSimulator.LicenseInformation;
-
-    // other app initialization functions
-}
-```
-
-## 步驟 7：為客戶說明免費試用版的運作方式
+## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>步驟 7：為客戶說明免費試用版的運作方式
 
 務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。
 
 如需有關描述 app 的詳細資訊，請參閱[建立 app 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [市集範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [設定 app 價格與可用性](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
+* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

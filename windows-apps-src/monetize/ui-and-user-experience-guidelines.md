@@ -4,37 +4,35 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解關於在 App 中廣告的 UI 和使用者體驗指導方針。"
 title: "在 App 中廣告的 UI 和使用者體驗指導方針。"
 translationtype: Human Translation
-ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
-ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
+ms.sourcegitcommit: 148aca16104f599f3048f5965c4131a3f37799f8
+ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
 
 
 ---
 
-# 在 App 中廣告的 UI 和使用者體驗指導方針。
+# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>在 App 中廣告的 UI 和使用者體驗指導方針。
 
 
-
-
-## Windows 應用程式的一般 UI 資源
+## <a name="general-ui-resources-for-windows-apps"></a>Windows 應用程式的一般 UI 資源
 
 您可以在[設計與 UI](https://developer.microsoft.com/windows/design) 中找到關於如何設計 App 外觀與操作方式的資訊。
 
-## AdControl 最佳做法
+## <a name="adcontrol-best-practices"></a>AdControl 最佳做法
 
 * [AdControl 最佳做法：可行事項](#adcontrolbestpracticesdo10)
 * [AdControl 最佳做法：禁止事項](#adcontrolbestpracticesdont10)
 
 <span id="adcontrolbestpracticesdo10"/>
-### AdControl 最佳做法：可行事項
+### <a name="adcontrol-best-practices-do"></a>AdControl 最佳做法：可行事項
 
 * 將廣告設計融入您的體驗中。 提供設計人員範例廣告，以規劃廣告的外觀。 App 中兩個良好規劃的廣告範例是「廣告即內容」配置和分割配置。
 
-  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows8.1 和 Windows10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
+  若要查看不同廣告大小在您 App 中的外觀與功能，您可以利用適用於 Windows Phone、Windows 8.1 和 Windows 10 的測試模式廣告單位。 完成使用測試模式廣告單元時，請記得在提交 App 進行認證之前，[使用真正的廣告單元識別碼更新您的 App](set-up-ad-units-in-your-app.md)。
 
 * 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的 App。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[錯誤處理](error-handling-with-advertising-libraries.md)。
 
 <span id="adcontrolbestpracticesdont10"/>
-### AdControl 最佳做法：禁止事項
+### <a name="adcontrol-best-practices-dont"></a>AdControl 最佳做法：禁止事項
 
 * 將廣告閂入開放可用空間。 廣告空間不應該放進您可找到的第一塊開放空間。 相反地，它應該整合到您 App 的整體設計中。
 
@@ -43,7 +41,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 * 混淆使用者的核心工作。 主要的焦點應一律在 App 上。 廣告空間應受到整合，以便讓它維持為次要焦點。
 
 <span id="interstitialbestpractices10"/>
-## 插入式廣告最佳做法與原則
+## <a name="interstitial-best-practices-and-policies"></a>插入式廣告最佳做法與原則
 
 * [插入式廣告最佳做法：可行事項](#interstitialbestpracticesdo10)
 * [插入式廣告最佳做法：避免事項](#interstitialbestpracticesavoid10)
@@ -54,7 +52,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 在這裡我們將協助您達成目標。 由於您比任何人都了解您的 App，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您 App 的評等與收益緊密結合。
 
 <span id="interstitialbestpracticesdo10"/>
-### 插入式廣告最佳做法：可行事項
+### <a name="interstitial-best-practices-do"></a>插入式廣告最佳做法：可行事項
 
 * 讓插入式廣告符合 App 的自然流程 (例如在遊戲關卡之間)。
 
@@ -84,13 +82,14 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
     * 影片廣告比橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
 
+<span/>
 
 * 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
 
 * 在初始提交後，請繼續改善您的 App。 查看廣告報表，然後變更設計以改進覆蓋率與影片完成率。
 
 <span id="interstitialbestpracticesavoid10"/>
-### 插入式廣告最佳做法：避免事項
+### <a name="interstitial-best-practices-avoid"></a>插入式廣告最佳做法：避免事項
 
 * 使用過度。 請勿強制廣告超過 5 分鐘，除非使用者明確地被遊戲外的選擇性好處吸引。
 
@@ -106,8 +105,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * 在呼叫 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前，請最少提早 5 分鐘開便開始擷取影片廣告。
 
-    * 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
+  * 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
+<span/>
 
 * 對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告已取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
@@ -122,7 +122,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
     * 玩家虛擬人偶上的自訂上衣也不錯，只要不會提供隱身效果！
 
 <span id="interstitialbestpracticesnever10"/>
-### 插入式廣告最佳做法：禁止事項 (原則強制執行)
+### <a name="interstitial-best-practices-never-policy-enforced"></a>插入式廣告最佳做法：禁止事項 (原則強制執行)
 
 * 一律不要將任何 UI 元素放在廣告容器上。
 
@@ -130,9 +130,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 <span/>
 
-* 一律不要在使用者與 App 互動時呼叫 **Show**。
+* 一律不要在使用者與 App 互動時呼叫 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx)。
 
-    * 因為 **InterstitialAd** 將會建立全螢幕重疊顯示畫面，使用者會覺得突兀。
+    * 因為 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 將會建立全螢幕重疊顯示畫面，使用者會覺得突兀。
 
     * 這也會導致點閱率誇大不實。
 
@@ -140,7 +140,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * 一律不要在 [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件處理常式內容中要求新的廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
 
-* 一律不要在要求插入式廣告後，將提供給您 App 的廣告忽略而不顯示。 如果您要求某個廣告，然後在您的要求回應中收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，就必須顯示該廣告。 如果您要搭配其他廣告網路來實作自己的廣告流量分配解決方案，請只在對其他廣告網路發出的要求失敗時，才為 **InterstitialAd** 控制項要求廣告。
+* 一律不要只是為了讓瀑布式廣告序列有備用廣告而要求插入式廣告。 如果您要求插入式廣告，然後收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，在 App 中顯示的下一個插入式廣告就必須是已經準備好透過 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 方法顯示的廣告。
 
  
 
@@ -148,6 +148,6 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

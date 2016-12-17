@@ -130,7 +130,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 從 Windows 10 版本 1607 開始，**Image** 元素支援動畫 GIF 影像。 當您使用 **BitmapImage** 做為影像的 **Source** 時，您可以存取 BitmapImage API 來控制動畫 GIF 影像的播放。 如需詳細資訊，請參閱 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 類別頁面的＜備註＞。
 
-> **注意**&nbsp;&nbsp;當您的 app 是針對 Windows 10 版本 1607 進行編譯，並在版本 1607 (或更新版本) 上執行時，便能獲得動畫 GIF 支援。 當您的 app 是針對較舊版本進行編譯並在其上執行時，系統會顯示 GIF 的第一個畫面，但不會產生動畫效果。
+> **注意**  當您的 app 是針對 Windows 10 版本 1607 進行編譯，並在版本 1607 (或更新版本) 上執行時，便能獲得動畫 GIF 支援。 當您的 app 是針對較舊版本進行編譯並在其上執行時，系統會顯示 GIF 的第一個畫面，但不會產生動畫效果。
 
 如需 app 資源以及如何封裝 app 影像來源的詳細資訊，請參閱[定義 app 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
@@ -154,7 +154,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 如果使用程式碼定義 Image 或 ImageBrush，請使用預設建構函式，然後設定相關來源屬性 ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx))。 當您使用程式碼設定來源屬性時，來源屬性需要一個 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (不是 URI)。 如果您的來源是資料流，請使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法來初始化該值。 如果您的來源是 URI，包含 app 中使用 **ms-appx** 或 **ms-resource** 配置的內容，則使用採用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 建構函式。 如果有任何與影像來源的抓取或解碼相關的時機問題，您也可以考慮處理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件，在這種情況下，您可能需要在影像來源可供使用前先顯示替代內容。 如需範例程式碼，請參閱 [XAML 影像範例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **注意**&nbsp;&nbsp;如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
+> **注意**  如果您使用程式碼來建立影像，可以使用自動處理以目前的比例和文化限定詞存取不合格的資源，或是使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 搭配文化和比例限定詞來直接取得資源。 如需詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
 ## 相關文章
 

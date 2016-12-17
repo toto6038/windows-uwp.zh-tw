@@ -24,7 +24,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 如果您遭遇任何問題或需要協助，請[聯絡支援服務](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
 >**注意**
-            &nbsp;&nbsp;如果您先前將 App 更新成使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (適用於 UWP app) 或[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App)，即表示您的 App 已經使用最新的可用廣告 SDK，您不需要對您的 App 進行任何進一步的變更。
+              如果您先前將 App 更新成使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (適用於 UWP app) 或[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App)，即表示您的 App 已經使用最新的可用廣告 SDK，您不需要對您的 App 進行任何進一步的變更。
 
 ## 先決條件
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 * App 的 .appx 或 .xap 套件。
 
   >**注意**
-            &nbsp;&nbsp;如果您已經沒有 App 的 .appx 或 .xap 套件，但仍然有開發電腦，其中具備用來建置 App 的 Visual Studio 和廣告 SDK 版本，您就可以在 Visual Studio 中重新產生 .appx 或 .xap 套件。
+              如果您已經沒有 App 的 .appx 或 .xap 套件，但仍然有開發電腦，其中具備用來建置 App 的 Visual Studio 和廣告 SDK 版本，您就可以在 Visual Studio 中重新產生 .appx 或 .xap 套件。
 
 <span id="part-1" />
 ## 第 1 部分︰判斷是否需要更新您的 App
@@ -165,7 +165,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 1. 確定您的開發電腦已安裝 Visual Studio 2015 (適用於UWP、Windows 8.1 或 Windows Phone 8.x 專案) 或 Visual Studio 2013 (適用於 Windows 8.1 或 Windows Phone 8.x 專案)。
 
   >**注意**
-            &nbsp;&nbsp;如果 Visual Studio 已在您的開發電腦上開啟，請先將它關閉，再執行下列步驟。
+              如果 Visual Studio 已在您的開發電腦上開啟，請先將它關閉，再執行下列步驟。
 
 1.  將您開發電腦上的所有舊版 Microsoft Advertising SDK 和 Ad Mediator SDK 解除安裝。
 

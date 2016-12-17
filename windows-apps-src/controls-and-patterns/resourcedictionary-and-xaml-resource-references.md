@@ -50,7 +50,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 -   `<x:String>` - 使用 "greeting" 索引鍵來定義資源。
 -   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源，此索引鍵會指派給 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 屬性。
 
-> **注意**&nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
+> **注意**  請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
 
 資源不一定要是字串；它們可以是任何可共用的物件，例如樣式、範本、筆刷和色彩。 不過，控制項、形狀和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 無法共用，因此無法宣告為可重複使用的資源。 如需有關共用的詳細資訊，請參閱本主題稍後的 [XAML 資源必須是可共用的](#xaml_resources_must_be_sharable)一節。
 
@@ -104,7 +104,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 
 您可以像存取任何其他字典一樣存取資源字典的成員。
 
-> **注意**&nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
+> **注意**  當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
 
  
 
@@ -254,7 +254,7 @@ sealed partial class App : Application
 
 「合併的資源字典」**是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
 
-> **祕訣**&nbsp;&nbsp;您可以使用 [專案]**** 功能表的 [新增] &gt; [新增項目] &gt; [資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典。
+> **祕訣**  您可以使用 [專案]**** 功能表的 [新增] &gt; [新增項目] &gt; [資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典。
 
 在這裡，您會在另一個名為 Dictionary1.xaml 的 XAML 檔案中，定義資源字典。
 
@@ -396,7 +396,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 查詢序列會接著檢查 app 執行階段物件樹狀目錄中的下一個父物件。 如果 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 存在並包含 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，便會要求包含指定索引鍵字串的字典項目。 如果找到資源，查詢序列會停止，並將物件放置在參考的位置。 否則，查詢行為會朝著物件樹狀根目錄繼續前進到下一個父層級。 此搜尋會一直持續向上遞迴到 XAML 的根元素為止，以搜尋完所有可能的直接資源位置。
 
-> **注意**&nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
+> **注意**  常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
 
  
 

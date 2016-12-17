@@ -4,36 +4,26 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 市集提交 API 中使用這個方法，取得現有附加元件提交的資料。"
 title: "使用 Windows 市集提交 API 取得附加元件提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
-ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 
 ---
 
-# 使用 Windows 市集提交 API 取得附加元件提交
+# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件提交
 
+在 Windows 市集提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的資料。 如需使用 Windows 市集提交 API 建立附加元件提交的程序的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
-
-
-在 Windows 市集提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的資料。 如需有關使用「Windows 市集提交 API」來建立附加元件提交的程序詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
-
->
-            **重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，此方法之回應資料中的「定價」資源將會空白，而您將暫時無法使用此方法來取得附加元件提交的定價和銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-add-on-submissions.md#pricing-object)。
-
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* 
-            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->
-            **注意**
-            &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
@@ -44,15 +34,15 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer**&lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -61,11 +51,11 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求主體。
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何取得附加元件提交。
 
@@ -74,9 +64,9 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/su
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含指定提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
+下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應主體包含指定提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
 
 ```json
 {
@@ -109,17 +99,7 @@ Authorization: Bearer <your access token>
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -151,7 +131,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -163,7 +143,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [建立附加元件提交](create-an-add-on-submission.md)
@@ -174,6 +154,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

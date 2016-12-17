@@ -74,7 +74,7 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 
 使用語意式縮放之前，您應該了解如何使用具有分組資料的清單檢視。 如需詳細資訊，請參閱[清單檢視與方格檢視](listview-and-gridview.md)和[在清單中將項目分組]()。 
 
-> **注意**&nbsp;&nbsp;若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [**ISemanticZoomInformation**]() 介面的任兩個控制項。 XAML 架構提供 3 個實作此介面的控制項︰ListView、GridView 及 Hub。
+> **注意**  若要定義 SemanticZoom 控制項的放大檢視和縮小檢視，您可以使用實作 [**ISemanticZoomInformation**]() 介面的任兩個控制項。 XAML 架構提供 3 個實作此介面的控制項︰ListView、GridView 及 Hub。
  
  這個 XAML 會顯示 SemanticZoom 控制項的結構。 您會將其他控制項指派給 ZoomedInView 與 ZoomedOutView 屬性。
  

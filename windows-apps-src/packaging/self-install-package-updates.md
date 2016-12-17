@@ -23,7 +23,7 @@ ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
 |  方法  |  說明  |
 |----------|---------------|
 | [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | 呼叫這個方法以取得可用套件更新的清單。<br/><br/>**注意**
-            &nbsp;&nbsp;在套件通過認證程序，以及 [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) 方法辨識出有可供 App 使用的套件更新之間，最多會有一天的延遲。 |
+              在套件通過認證程序，以及 [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) 方法辨識出有可供 App 使用的套件更新之間，最多會有一天的延遲。 |
 | [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | 呼叫這個方法以下載 (但不安裝) 可用的套件更新。 此作業系統會顯示對話方塊，詢問使用者是否可以下載更新。 |
 | [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | 呼叫這個方法以下載並安裝可用的套件更新。 作業系統會顯示對話方塊，詢問使用者是否可以下載並安裝更新。 如果您已經藉由呼叫 [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) 來下載套件更新，這個方法就會略過下載程序，而只會安裝更新。  |
 
@@ -219,7 +219,7 @@ private void HandleMandatoryPackageError()
 當您針對目標為 Windows 10 版本 1607 或更新版本的 app 建立套件提交時，可以將套件標記為強制性，並標記其成為強制性的日期/時間。 當設定此屬性，且 App 使用本文先前所述 API 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。
 
 >**注意**
-            &nbsp;&nbsp;套件更新的強制狀態並非由 Microsoft 來實施，作業系統不會提供 UI 來指示使用者必須安裝強制性應用程式更新。 開發人員必須刻意使用強制性設定，以便在程式碼中實施強制性應用程式更新。  
+              套件更新的強制狀態並非由 Microsoft 來實施，作業系統不會提供 UI 來指示使用者必須安裝強制性應用程式更新。 開發人員必須刻意使用強制性設定，以便在程式碼中實施強制性應用程式更新。  
 
 將套件提交標記為強制性：
 
@@ -230,7 +230,7 @@ private void HandleMandatoryPackageError()
 如需在開發人員中心儀表板上設定套件的詳細資訊，請參閱[上傳應用程式套件](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。
 
   >**注意**
-            &nbsp;&nbsp;如果您建立[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，就可以使用正式發行前小眾測試版 \[套件\] 頁面上類似的 UI，將套件標記為強制性。 在此情況下，強制性套件更新只適用於正式發行前小眾測試版群組的客戶。
+              如果您建立[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，就可以使用正式發行前小眾測試版 \[套件\] 頁面上類似的 UI，將套件標記為強制性。 在此情況下，強制性套件更新只適用於正式發行前小眾測試版群組的客戶。
 
 
 

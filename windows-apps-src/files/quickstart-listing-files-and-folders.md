@@ -1,25 +1,27 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "列舉和查詢檔案和資料夾"
 description: "存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢，來查詢位置中的檔案和資料夾。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# 列舉和查詢檔案和資料夾
+# <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢，來查詢位置中的檔案和資料夾。
+存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。
+
+如需如何儲存通用 Windows 平台 App 資料的詳細指導方針，請參閱 [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) 類別。
 
 **注意：**另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
  
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
@@ -29,7 +31,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
     例如，這些範例中的程式碼需要 **picturesLibrary** 功能，但是您的位置可能需要其他功能或完全不需要功能。 若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
-## 列舉位置中的檔案和資料夾
+## <a name="enumerate-files-and-folders-in-a-location"></a>列舉位置中的檔案和資料夾
 
 > **注意：**請記得宣告 **picturesLibrary** 功能。
 
@@ -208,7 +210,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next item
 > ```
 
-## 查詢位置中的檔案並列舉相符的檔案
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查詢位置中的檔案並列舉相符的檔案
 
 在這個範例中，我們會查詢依月份群組的 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 中的所有檔案，這次範例遞迴到子資料夾。 首先，我們會呼叫 [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) 並將 [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) 值傳遞到方法。 我們會得到 [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) 物件。
 
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -36,7 +36,7 @@ XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主
 
 每個佈景主題資源都是 XAML 檔案 themeresources.xaml 的一部分。 基於設計目的，Windows 軟體開發套件 (SDK) 安裝的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 資料夾中會提供 themeresources.xaml。 themeresources.xaml 中的資源字典也會重現於相同目錄的 generic.xaml 中。
 
-> **注意**&nbsp;&nbsp;Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 因此特別將它們放在 DesignTime 資料夾中，而且預設也不會複製到 app。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您 app 的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
+> **注意**  Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 因此特別將它們放在 DesignTime 資料夾中，而且預設也不會複製到 app。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您 app 的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
 
  ## 使用佈景主題資源的指導方針
 
@@ -122,7 +122,7 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 除了系統高對比佈景主題色彩以外，還使用索引鍵 `SystemAccentColor` 來提供系統輔色做為特殊的色彩資源。 在執行階段，這個資源會取得使用者已在 Windows 個人化設定中指定為輔色的色彩。
 
-> **注意**&nbsp;&nbsp;您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但是尊重使用者的色彩選擇仍然是最佳做法，特別是針對高對比設定。
+> **注意**  您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但是尊重使用者的色彩選擇仍然是最佳做法，特別是針對高對比設定。
 
 ### 佈景主題相依筆刷
 
@@ -150,7 +150,7 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意**&nbsp;&nbsp;並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都是提供來做為筆刷資源。
+> **注意**  並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都是提供來做為筆刷資源。
 
 ## XAML 字體坡形
 
@@ -311,7 +311,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-> **注意**&nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
+> **注意**   [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
 
 ## 其他具名樣式
 

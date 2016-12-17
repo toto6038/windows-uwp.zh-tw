@@ -26,7 +26,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 ![巢狀 UI 組件](images/nested-ui-example-1.png)
 
-> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
+> 注意   ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
 ## 主要和次要動作
 

@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。"
 title: "音訊、視訊和相機"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
+ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
+ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# 音訊、視訊和相機
+# <a name="audio-video-and-camera"></a>音訊、視訊和相機
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  
@@ -22,6 +22,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [偵測影像或影片中的臉部](detect-and-track-faces-in-an-image.md) | 示範如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150)，在一連串視訊畫面中追蹤隨著時間改變的臉部。 |
 | [媒體組合和編輯](media-compositions-and-editing.md) | 說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 |
 | [自訂視訊效果](custom-video-effects.md) | 說明如何建立能實作 **IBasicVideoEffect** 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。 |
+| [自訂音訊效果](custom-audio-effects.md) | 描述如何建立能實作 **IBasicAudioEffect** 介面以允許您為音訊串流建立自訂效果的 Windows 執行階段元件。 |
 | [建立、編輯和儲存點陣圖影像](imaging.md) | 說明如何使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來載入及儲存影像檔，以代表點陣圖影像。  |
 | [音訊裝置資訊屬性](audio-device-information-properties.md)  | 列出與音訊裝置有關的裝置資訊屬性。 |
 | [轉碼媒體檔案](transcode-media-files.md) | 說明如何使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API，將視訊檔案從一種格式轉碼成另一種格式。 |
@@ -33,7 +34,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [支援的轉碼器](supported-codecs.md) | 列出 UWP App 支援的音訊、視訊及影像轉碼器和格式。 |
 
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [開發 UWP app](https://developer.microsoft.com/en-us/windows/develop)
 
  
@@ -48,6 +49,6 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

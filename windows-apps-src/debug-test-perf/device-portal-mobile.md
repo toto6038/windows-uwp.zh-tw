@@ -4,11 +4,11 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "行動裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
+ms.sourcegitcommit: ea4f755afbf16d4ba5043ebb6be586f19dcc4370
+ms.openlocfilehash: c39c1a843c4f466e1999b4e80bf87f5842ad1996
 
 ---
-# 行動裝置的 Device Portal
+# <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
 從 Windows 10 版本 1511 開始，即針對行動裝置系列提供額外的開發人員功能。 只有在裝置上啟用開發人員模式時，才能使用這些功能。
 
@@ -16,11 +16,11 @@ ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 ![Device Portal 設定](images/device-portal/mob-dev-mode-options.png)
 
-## 在 Windows Phone 上設定 Device Portal
+## <a name="set-up-device-portal-on-windows-phone"></a>在 Windows Phone 上設定 Device Portal
 
-### 開啟裝置探索和配對
+### <a name="turn-on-device-discovery-and-pairing"></a>開啟裝置探索和配對
 
-若要連接到 Device Portal，您必須啟用裝置探索。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
+若要連線到 Device Portal，您必須啟用裝置探索和 Device Portal。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
 
 第一次連線到 Device Portal 時，系統會要求您提供 6 個字元且區分大小寫的安全性驗證碼。 這可確保您具備手機的存取權，並讓您保持安全免於受到攻擊者入侵。 按下手機上的 [配對] 按鈕，即會產生並顯示驗證碼，接著請在瀏覽器的文字方塊中輸入這 6 個字元。
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
     使用這個位址來在手機上適用於 Windows 10 行動裝置版的 Microsoft Edge 中於本機檢視 Device Portal。
     
-    - 區域網路： `https://<The IP address of the phone>`
+    - 區域網路： `https://<The IP address or hostname of the phone>`
 
     使用這個位址來透過區域網路連線。
 
@@ -58,25 +58,25 @@ ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 如果您是在受保護的環境中使用 Device Portal (例如測試實驗室)，您可以在此環境中信任區域網路上的每個人、裝置上沒有個人資訊，而且有獨特的需求，則您可以停用驗證。 這會啟用未加密的通訊，並允許具有您手機 IP 位址的任何人對它進行控制。
 
-## 工具附註
+## <a name="tool-notes"></a>工具附註
 
-## Device Portal 頁面
-### 處理程序
+## <a name="device-portal-pages"></a>Device Portal 頁面
+### <a name="processes"></a>處理程序
 
 終止任意程序的能力並不包含在 Windows Mobile Device Portal 中。 
 
 行動裝置上的 Device Portal 提供標準的頁面集。 如需詳細描述，請參閱 [Windows Device Portal 概觀](device-portal.md)。
 
-- App
+- 應用程式管理員
+- App 檔案總管 (隔離的存放裝置總管)
 - 處理程序
-- 效能
+- 效能圖表
 - Windows 事件追蹤 (ETW)
-- 效能追蹤
+- 效能追蹤 (WPR) 
 - 裝置
 - 網路功能
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

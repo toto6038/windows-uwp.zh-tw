@@ -4,22 +4,22 @@ Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WP
 Search.Product: eADQiWindows 10XVcnh
 title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) App"
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
+ms.sourcegitcommit: ee697323af75f13c0d36914f65ba70f544d046ff
+ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
 
 ---
 
-# 使用傳統型橋接器將您的 App 手動轉換為 UWP
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>使用傳統型橋接器將您的 App 手動轉換為 UWP
 
-使用 Desktop App Converter (DAC) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定，這相當有用。 但如果您的 App 是使用 xcopy 所安裝，或者您已熟悉 App 的安裝程式對於系統所做的變更，您可以選擇手動建立應用程式套件和資訊清單。
+使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定性，這相當有用。 但如果您的 app 是使用 xcopy 所安裝，或者您已熟悉 app 的安裝程式對於系統所做的變更，您可能想要手動建立應用程式套件和資訊清單。 本文包含開始使用的步驟。 其中也會說明如何將無背板資產新增至您的 app，而 DAC 並未涵蓋此項。 
 
-以下是手動建立套件的步驟︰
+以下是如何開始使用的方式：
 
-## 手動建立資訊清單。
+## <a name="create-a-manifest-by-hand"></a>手動建立資訊清單
 
-您的 _appxmanifest.xml_ 檔案必須具有下列內容 (基本內容)。 將已格式化的預留位置 (例如 ***THIS***) 變更為適用於應用程式的實際值。
+您的 _appxmanifest.xml_ 檔案必須具有下列內容 (基本內容)。 將已格式化的預留位置 (例如 \*\*\*THIS\*\*\*) 變更為適用於應用程式的實際值。
 
-    ```XML
+```XML
     <?xml version="1.0" encoding="utf-8"?>
     <Package
        xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -55,11 +55,27 @@ ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
         </Application>
       </Applications>
     </Package>
-    ```
+```
 
-## 執行 MakeAppX 工具
+## <a name="add-unplated-assets"></a>新增無背板資產
 
-使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows10 SDK。 
+以下是如何針對您的 app，設定要顯示於工作列上的 44x44 資產。
+
+1. 取得正確的 44x44 影像，並將它們複製到包含您的影像 (也就是資產) 的資料夾。
+
+2. 針對每個 44x44 影像，在相同的資料夾中建立一個複本，然後將 *.targetsize-44_altform-unplated* 附加至檔案名稱。 每個圖示應該會有兩個複本，每個均以特定方式命名。 例如，完成處理程序之後，您的資產資料夾可能包含 *MYAPP_44x44.png* 和 *MYAPP_44x44.targetsize-44_altform-unplated.png* (注意︰前者是 VisualElements 屬性 *Square44x44Logo* 下方 appxmanifest 中所參考的圖示)。 
+
+3.  在 AppXManifest 中，針對您要修正的每個圖示，將 BackgroundColor 設為透明。 這個屬性可以在每個應用程式的 VisualElements 下方找到。
+
+4.  開啟 CMD、將目錄變更為套件的根資料夾，然後執行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 來建立 priconfig.xml 檔案。
+
+5.  使用 CMD、留在套件的根資料夾中，然後使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 來建立 resources.pri 檔案。 例如，應用程式的命令可能看起來像這樣：```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。 
+
+6.  使用下一個步驟中的指示封裝您的 AppX，以查看結果。
+
+## <a name="run-the-makeappx-tool"></a>執行 MakeAppX 工具
+
+使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 AppX。 MakeAppx.exe 隨附於 Windows 10 SDK。 
 
 若要執行 MakeAppx，必須先確定您已建立資訊清單檔案，如上方所述。 
 
@@ -79,9 +95,9 @@ ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
 
-## 簽署您的 AppX 套件
+## <a name="sign-your-appx-package"></a>簽署您的 AppX 套件
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows10 SDK) 來簽署 .appx 套件。
+Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
 
 用法範例： 
 
@@ -102,6 +118,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

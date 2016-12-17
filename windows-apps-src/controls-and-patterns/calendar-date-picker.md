@@ -80,7 +80,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 您可以處理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以便在 Date 值變更時收到通知。
 
-> **注意**&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**  如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 ### 設定標頭與預留位置文字
 
