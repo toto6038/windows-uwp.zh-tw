@@ -1,14 +1,14 @@
 ---
-author: msatranjr
+author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "使用 WinAppDeployCmd.exe 工具安裝 App"
 description: "Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 電腦將通用 Windows 平台 (UWP) App 部署到任何 Windows 10 裝置的命令列工具。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
-ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
+ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
+ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
 
 ---
-# 使用 WinAppDeployCmd.exe 工具安裝 App
+# <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安裝 App
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,7 +20,7 @@ Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows 10 �
 
 **WinAppDeployCmd.exe** 工具位於 Windows 10 電腦上的下列位置：**C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (根據您 SDK 的安裝路徑而定)。 首先，將您的 Windows 10 裝置連接到相同的子網路，或使用 USB 連線直接將它連接到您的 Windows 10 電腦。 然後使用下列語法與本文稍後此命令的範例來部署您的 UWP App：
 
-## WinAppDeployCmd 語法和選項
+## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 語法和選項
 
 以下是您可以針對 **WinAppDeployCmd.exe** 使用的語法
 
@@ -99,7 +99,7 @@ WinAppDeployCmd command -option <argument> ...
 | &lt;remotedeploydir&gt;| 裝置上相對於部署位置的目錄。                      |
 
  
-## WinAppDeployCmd.exe 範例
+## <a name="winappdeploycmdexe-examples"></a>WinAppDeployCmd.exe 範例
 
 以下是如何使用 **WinAppDeployCmd.exe** 的語法從命令列部署的一些範例。
 
@@ -139,7 +139,7 @@ WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeployd
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
-## 使用 WinAppDeployCmd 在 Xbox One 上設定 [從電腦執行] 部署
+## <a name="using-winappdeploycmd-to-set-up-run-from-pc-deployment-on-xbox-one"></a>使用 WinAppDeployCmd 在 Xbox One 上設定 [從電腦執行] 部署
 
 [從電腦執行] 可讓您將 UWP 應用程式部署到 Xbox One，且不複製其上的二進位檔，而是將二進位檔裝載於與 Xbox 相同網路中的網路共用上。  若要這樣做，您需要開發人員已解除鎖定的 Xbox One，以及 Xbox 可存取之網路磁碟機上的鬆散檔案 UWP 應用程式。
 
@@ -152,6 +152,6 @@ ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myA
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

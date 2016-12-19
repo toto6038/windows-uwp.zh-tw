@@ -5,22 +5,20 @@ description: "了解如何使用 Windows.Services.Store 命名空間來搭配使
 title: "啟用消費性附加元件購買"
 keywords: "App 內的購買選項程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
-ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 12191a946ec080c8e386191363617a9c437671c5
 
 ---
 
-# 啟用消費性附加元件購買
+# <a name="enable-consumable-add-on-purchases"></a>啟用消費性附加元件購買
 
-目標為 Windows10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來管理使用者如何在您的 UWP app 中完成消費性附加元件 (也稱為 App 內產品或 IAP)。 請針對可購買、使用，然後再次購買的項目使用消費性附加元件。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
+目標為 Windows 10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來管理使用者如何在您的 UWP app 中完成消費性附加元件 (也稱為 App 內產品或 IAP)。 請針對可購買、使用，然後再次購買的項目使用消費性附加元件。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
 
->
-  **注意**
-  &nbsp;&nbsp;本文適用於目標為 Windows10 版本 1607 或更新版本的 app。 如果您的 app 目標為較早版本的 Windows10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>**注意**   本文適用於目標為 Windows 10 版本 1607 或更新版本的 app。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
-## 消費性附加元件概觀
+## <a name="overview-of-consumable-add-ons"></a>消費性附加元件概觀
 
-目標為 Windows10 版本 1607 或更新版本的 app，可提供兩種類型的消費性附加元件，其差別在於管理完成的方式：
+目標為 Windows 10 版本 1607 或更新版本的 app，可提供兩種類型的消費性附加元件，其差別在於管理完成的方式：
 
 * **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向市集回報已完成附加元件的購買。 在您的 App 回報已完成先前的附加元件購買之前，使用者將無法再次購買該附加元件。
 
@@ -30,9 +28,7 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
   例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 10 個金幣，則您的 App 會向市集回報已完成附加元件的 10 個單位，而市集會更新剩下的餘額。 當使用者花光 100 個金幣之後，該使用者就能再次購買 100 個金幣的附加元件。
 
-  >
-  **注意**
-  &nbsp;&nbsp;市集管理的消費性產品是從 Windows10 版本 1607 開始提供。 即將推出在 Windows 開發人員中心儀表板建立市集管理的消費性產品的能力。
+  >**注意**   市集管理的消費性產品是從 Windows 10 版本 1607 開始提供。 即將推出在 Windows 開發人員中心儀表板建立市集管理的消費性產品的能力。
 
 若要為使用者提供消費性附加元件，請依照下列一般程序執行：
 
@@ -41,10 +37,10 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 您也可以隨時針對市集管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 這些範例包含下列先決條件：
-* 適用於目標為 Windows10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
+* 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
 * 您已在 Windows 開發人員中心儀表板中建立 app 並具備消費性附加元件 (亦稱為App 內購買或 IAP)，而且已在市集中發佈此 app 且可供使用。 這可以是您想要釋出給客戶的 app，或者可以是符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求的基本 app，而您只能基於測試目的加以使用。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
 
 這些範例中的程式碼假設：
@@ -54,10 +50,10 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
->**注意**&nbsp;&nbsp;如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增這些範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
+>**注意**  如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增這些範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
 
 <span id="report_fulfilled" />
-## 將消費性附加元件回報為已完全交付
+## <a name="report-a-consumable-add-on-as-fulfilled"></a>將消費性附加元件回報為已完全交付
 
 當使用者從您的 app [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)並取用您的附加元件之後，您的 app 必須藉由呼叫 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) 方法來將附加元件回報為已完成。 您必須將下列資訊傳遞給此方法：
 
@@ -69,119 +65,18 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 這個範例示範如何將市集管理的消費性產品回報為已完成。
 
-```csharp
-private StoreContext context = null;
-
-public async void ConsumeAddOn(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // This is an example for a Store-managed consumable, where you specify the actual number
-    // of units that you want to report as consumed so the Store can update the remaining
-    // balance. For a developer-managed consumable where you maintain the balance, specify 1
-    // to just report the add-on as fulfilled to the Store.
-    uint quantity = 10;
-    string addOnStoreId = "9NBLGGH4TNNR";
-    Guid trackingId = Guid.NewGuid();
-
-    workingProgressRing.IsActive = true;
-    StoreConsumableResult result = await context.ReportConsumableFulfillmentAsync(
-        addOnStoreId, quantity, trackingId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StoreConsumableStatus.Succeeded:
-            textBlock.Text = "The fulfillment was successful. Remaining balance: " +
-                result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.InsufficentQuantity:
-            textBlock.Text = "The fulfillment was unsuccessful because the user " +
-            "doesn't have enough remaining balance." + result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.NetworkError:
-            textBlock.Text = "The fulfillment was unsuccessful due to a network error.";
-            break;
-
-        case StoreConsumableStatus.ServerError:
-            textBlock.Text = "The fulfillment was unsuccessful due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "The fulfillment was unsuccessful due to an unknown error.";
-            break;
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
 
 <span id="get_balance" />
-## 取得市集管理的消費性產品剩下的餘額。
+## <a name="get-the-remaining-balance-for-a-store-managed-consumable"></a>取得市集管理的消費性產品剩下的餘額。
 
 這個範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) 方法，來取得市集管理的消費性產品剩下的餘額。
 
-```csharp
-private StoreContext context = null;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
 
-public async void GetRemainingBalance(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    string addOnStoreId = "9NBLGGH4TNNR";
-
-    workingProgressRing.IsActive = true;
-    StoreConsumableResult result = await context.GetConsumableBalanceRemainingAsync(addOnStoreId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StoreConsumableStatus.Succeeded:
-            textBlock.Text = "Remaining balance: " + result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.NetworkError:
-            textBlock.Text = "Could not retrieve balance due to a network error.";
-            break;
-
-        case StoreConsumableStatus.ServerError:
-            textBlock.Text = "Could not retrieve balance due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "Could not retrieve balance due to an unknown error.";
-            break;
-    }
-}
-```
-
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [App 內購買和試用版](in-app-purchases-and-trials.md)
 * [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
@@ -192,6 +87,6 @@ public async void GetRemainingBalance(string storeId)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

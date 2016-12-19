@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音樂、圖片及影片媒體櫃中的檔案和資料夾"
 description: "將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。"
 translationtype: Human Translation
-ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
-ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 ---
 
-# 音樂、圖片及影片媒體櫃中的檔案和資料夾
+# <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +19,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 媒體櫃是一個虛擬資料夾集合，依預設會包含已知的資料夾，外加使用者透過您的 app 或其中一個內建 app 新增至媒體櫃的任何其他資料夾。 例如，圖片媒體櫃依預設會包含 [圖片] 這個已知資料夾。 使用者可以透過您的 app 或內建的 [相片] app，在圖片媒體櫃中新增或移除資料夾。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
@@ -28,7 +28,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 -   **位置的存取權限**
 
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能]**** 頁面上，選取您應用程式所管理的媒體櫃。
+    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能] 頁面上，選取您應用程式所管理的媒體櫃。
 
     -   **音樂媒體櫃**
     -   **圖片媒體櫃**
@@ -36,7 +36,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
     若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
-## 取得對媒體櫃的參考
+## <a name="get-a-reference-to-a-library"></a>取得對媒體櫃的參考
 
 
 **注意**：請記得宣告適當的功能。
@@ -53,7 +53,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## 取得媒體櫃中資料夾的清單
+## <a name="get-the-list-of-folders-in-a-library"></a>取得媒體櫃中資料夾的清單
 
 
 若要取得媒體櫃中資料夾的清單，請取得 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性的值。
@@ -66,7 +66,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## 取得媒體櫃中預設儲存新檔案的資料夾
+## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>取得媒體櫃中預設儲存新檔案的資料夾
 
 
 若要取得媒體櫃中預設儲存新檔案的資料夾，請取得 [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) 屬性的值。
@@ -75,7 +75,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## 將現有的資料夾新增到媒體櫃
+## <a name="add-an-existing-folder-to-a-library"></a>將現有的資料夾新增到媒體櫃
 
 
 若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 [**將此資料夾新增至圖片**] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 屬性 (和內建的 [相片] app) 中的項目，但是該資料夾不會顯示為檔案總管中 [圖片] 資料夾的子項。
@@ -85,7 +85,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## 從媒體櫃中移除資料夾
+## <a name="remove-a-folder-from-a-library"></a>從媒體櫃中移除資料夾
 
 
 若要從媒體櫃中移除資料夾，請呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 方法，並指定要移除的資料夾。 您可以使用 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控制項 (或類似項目)，讓使用者選取要移除的資料夾。
@@ -99,7 +99,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## 取得媒體櫃中資料夾清單變更的通知
+## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>取得媒體櫃中資料夾清單變更的通知
 
 
 若要取得與媒體櫃中資料夾清單變更相關的通知，請為媒體櫃的 [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) 事件註冊一個處理常式。
@@ -115,7 +115,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## 媒體櫃資料夾
+## <a name="media-library-folders"></a>媒體櫃資料夾
 
 
 裝置會為使用者和 app 提供五個預先定義的位置來儲存媒體檔案。 內建 app 會將使用者建立的媒體和下載的媒體都儲存在這些位置。
@@ -134,7 +134,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
-## 查詢媒體櫃
+## <a name="querying-the-media-libraries"></a>查詢媒體櫃
 
 若要取得檔案集合，指定媒體櫃及您要的檔案類型
 
@@ -164,11 +164,13 @@ private async void getSongs()
 }
 ```
 
-### 查詢結果同時包含內部和卸除式儲存空間
+### <a name="query-results-include-both-internal-and-removable-storage"></a>查詢結果同時包含內部和卸除式儲存空間
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [
+              **Windows.Storage**
+            ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 
@@ -177,7 +179,7 @@ private async void getSongs()
 如果您透過呼叫 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 來查詢圖片媒體櫃的內容，結果會包含 internalPic.jpg 與 SDPic.jpg 兩者。
 
 
-## 使用相片
+## <a name="working-with-photos"></a>使用相片
 
 
 如果裝置的相機會同時儲存每張圖片的低解析度影像和高解析度影像，則深層查詢只會傳回低解析度影像。
@@ -197,7 +199,7 @@ private async void getSongs()
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## 使用串流方法將檔案新增到媒體櫃
+## <a name="using-stream-methods-to-add-a-file-to-a-media-library"></a>使用串流方法將檔案新增到媒體櫃
 
 
 當您使用已知資料夾來存取媒體櫃 (例如 **KnownFolders.PictureLibrary**)，並且使用串流方法將檔案新增到媒體櫃時，請務必關閉您的程式碼所開啟的所有串流。 否則，這些方法將無法如預期般將檔案新增到媒體櫃，因為至少還有一個串流仍然擁有檔案的控制代碼。
@@ -246,6 +248,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

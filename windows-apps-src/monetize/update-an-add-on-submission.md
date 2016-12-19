@@ -4,22 +4,19 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "使用 Windows 市集提交 API 中的這個方法，更新現有的附加元件提交。"
 title: "使用 Windows 市集提交 API 更新附加元件提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
-ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: ac126d8e8cf8301399a3248a1d65e19805e70255
 
 ---
 
-# 使用 Windows 市集提交 API 更新附加元件提交
+# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 更新附加元件提交
 
 
 使用 Windows 市集提交 API 中的這個方法，更新現有的附加元件 (也稱為應用程式內產品或 IAP) 提交。 使用這個方法成功更新提交之後，您必須針對擷取和發佈[認可提交](commit-an-add-on-submission.md)。
 
-如需有關如何在使用「Windows 市集提交 API」來建立附加元件提交的程序中套用此方法的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
+如需這個方法如何在使用 Windows 市集提交 API 建立附加元件提交的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
->**重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將會忽略此方法之要求主體中的「定價」資源，而您將暫時無法使用此方法來變更附加元件提交的定價和銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-add-on-submissions.md#pricing-object)。
-
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -27,10 +24,9 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->**注意**
-            &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
@@ -41,15 +37,15 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 <span/>
  
 
-### 要求標頭
+### <a name="request-header"></a>要求標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer**&lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -58,7 +54,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求主體
 
 要求主體包含下列參數。
 
@@ -76,7 +72,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何更新附加元件提交。
 
@@ -113,17 +109,7 @@ Content-Type: application/json
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -133,7 +119,7 @@ Content-Type: application/json
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含更新提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
 
@@ -168,17 +154,7 @@ Content-Type: application/json
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -209,7 +185,7 @@ Content-Type: application/json
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -221,7 +197,7 @@ Content-Type: application/json
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
@@ -233,6 +209,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

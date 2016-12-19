@@ -18,7 +18,7 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 
 如需這個方法如何在使用 Windows 市集提交 API 建立附加元件提交的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
->**注意**&nbsp;&nbsp;這個方法會為現有的附加元件建立提交。 若要建立附加元件，請使用[建立附加元件](create-an-add-on.md)方法。
+>**注意**  這個方法會為現有的附加元件建立提交。 若要建立附加元件，請使用[建立附加元件](create-an-add-on.md)方法。
 
 ## 先決條件
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 在您的開發人員中心帳戶中為 App 建立附加元件。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件](create-an-add-on.md)方法進行。
 
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## 要求
 

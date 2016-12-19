@@ -39,7 +39,7 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 
 若要建立反轉清單，使用清單檢視搭配 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 做為其項目面板。 在 ItemsStackPanel 上，將 [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 設為 [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
 
-> **重要**&nbsp;&nbsp;從 Windows 10，版本 1607 開始，已提供 **KeepLastItemInView** 列舉值可供使用。 在舊版 Windows 10 上執行您的 app 時，您無法使用這個值。
+> **重要**  從 Windows 10，版本 1607 開始，已提供 **KeepLastItemInView** 列舉值可供使用。 在舊版 Windows 10 上執行您的 app 時，您無法使用這個值。
 
 這個範例示範如何使清單檢視項目對齊底部，並指出對項目進行變更時，應將最後一個項目保持在檢視中。
  

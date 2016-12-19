@@ -6,12 +6,12 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: fc01951adfb151f1c5952d9181492a1d1f88b0cc
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 特殊的磚範本
+# <a name="special-tile-templates"></a>特殊的磚範本
 
 
 
@@ -19,14 +19,14 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 除了圖示磚範本 (針對 Windows 10 更新的傳統型特殊範本) 以外，每一個特殊的磚範本都是特別針對 Windows 10 建置的。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
 
-## 圖示磚範本
+## <a name="iconic-tile-template"></a>圖示磚範本
 
 
 圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本
 
 ![小型和中型郵件磚](images/iconic-template-mail-2sizes.png)
 
-### 如何建立圖示磚
+### <a name="how-to-create-an-iconic-tile"></a>如何建立圖示磚
 
 下列步驟說明建立適用於 Windows 10 的圖示磚必須知道的所有事。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
 
@@ -77,10 +77,7 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 以下是 XML 承載的範例程式碼：
 
 ```XML
-<badge value="2"/></code></pre></td>
-</tr>
-</tbody>
-</table>
+<badge value="2"/>
 ```
 
 磚的徽章會適當地更新。
@@ -91,16 +88,16 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 ![與圖示磚範本相關聯的 API 與承載](images/iconic-template-properties-info.png)
 
-## 相片磚範本
+## <a name="photos-tile-template"></a>相片磚範本
 
 
 相片磚範本可讓您在動態磚上顯示相片的幻燈片秀。 範本適用於所有磚大小 (包括小型)，而且在每個磚大小上的行為都相同。 下列範例示範使用相片範本的中型磚的五個畫面格。 範本包含縮放和淡入與淡出動畫，而且會循環顯示所選相片並無限循環。
 
 ![使用相片磚範本的影像幻燈片秀](images/photo-tile-template-image01.jpg)
 
-### 如何使用相片範本
+### <a name="how-to-use-the-photos-template"></a>如何使用相片範本
 
-如果您安裝了 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用相片範本就很輕鬆。 雖然您可以使用原始 XML，但強烈建議您使用 NotificationExtensions，這樣您就不需要為產生有效的 XML 或 XML 逸出內容操心。
+如果您安裝了 [Notification 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，使用相片範本就很輕鬆。 雖然您可以使用原始 XML，但強烈建議您使用程式庫，這樣您就不需要為產生有效的 XML 或 XML 逸出內容操心。
 
 Windows Phone 在一個幻燈片秀中最多顯示 9 張相片；平板電腦、膝上型電腦和桌上型電腦最多顯示 12 張。
 
@@ -108,16 +105,6 @@ Windows Phone 在一個幻燈片秀中最多顯示 9 張相片；平板電腦、
 
 
 ```XML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 <!--
  
 To use the Photos template...
@@ -168,9 +155,9 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/1.jpg"),
-                    new TileImageSource("ms-appdata:///local/Images/2.jpg"),
-                    new TileImageSource("http://msn.com/images/3.jpg")
+                    new TileBasicImage() { Source = "Assets/1.jpg" },
+                    new TileBasicImage() { Source = "ms-appdata:///local/Images/2.jpg" },
+                    new TileBasicImage() { Source = "http://msn.com/images/3.jpg" }
  
                     // TODO: Can have 12 images total
                 }
@@ -182,7 +169,7 @@ TileContent content = new TileContent()
 };
 ```
 
-## 連絡人磚範本
+## <a name="people-tile-template"></a>連絡人磚範本
 
 
 Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本自 Windows 10 組建 10572 開始提供，我們歡迎所有人在應用程式中使用。
@@ -207,11 +194,11 @@ Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂
 
  
 
-如果您使用 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，要使用連絡人磚範本，您只需要為您的 *TileBinding* 內容建立一個新的 *TileBindingContentPeople* 物件。 *TileBindingContentPeople* 類別有一個供您新增影像的 Images 屬性。
+如果您使用 [Notification 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，若要使用連絡人磚範本，只需要為您的 *TileBinding* 內容建立一個新的 *TileBindingContentPeople* 物件即可。 *TileBindingContentPeople* 類別有一個供您新增影像的 Images 屬性。
 
 如果您使用原始的 XML，請將 *hint-presentation* 設定為 "people"，並將您的影像新增為繫結元素的子系。
 
-下列 C# 程式碼範例假設您使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)。
+下列 C# 程式碼範例假設您使用的是 [Notification 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
 ```CSharp
 TileContent content = new TileContent()
@@ -224,15 +211,15 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/ProfilePics/1.jpg"),
-                    new TileImageSource("Assets/ProfilePics/2.jpg"),
-                    new TileImageSource("Assets/ProfilePics/3.jpg"),
-                    new TileImageSource("Assets/ProfilePics/4.jpg"),
-                    new TileImageSource("Assets/ProfilePics/5.jpg"),
-                    new TileImageSource("Assets/ProfilePics/6.jpg"),
-                    new TileImageSource("Assets/ProfilePics/7.jpg"),
-                    new TileImageSource("Assets/ProfilePics/8.jpg"),
-                    new TileImageSource("Assets/ProfilePics/9.jpg")
+                    new TileBasicImage() { Source = "Assets/ProfilePics/1.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/2.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/3.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/4.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/5.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/6.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/7.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/8.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/9.jpg" }
                 }
             }
         }
@@ -244,16 +231,16 @@ TileContent content = new TileContent()
 <tile>
   <visual>
  
-    <binding template=&#39;TileMedium&#39; hint-presentation=&#39;people&#39;>
-      <image src=&#39;Assets/ProfilePics/1.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/2.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/3.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/4.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/5.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/6.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/7.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/8.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/9.jpg&#39;/>
+    <binding template="TileMedium" hint-presentation="people">
+      <image src="Assets/ProfilePics/1.jpg"/>
+      <image src="Assets/ProfilePics/2.jpg"/>
+      <image src="Assets/ProfilePics/3.jpg"/>
+      <image src="Assets/ProfilePics/4.jpg"/>
+      <image src="Assets/ProfilePics/5.jpg"/>
+      <image src="Assets/ProfilePics/6.jpg"/>
+      <image src="Assets/ProfilePics/7.jpg"/>
+      <image src="Assets/ProfilePics/8.jpg"/>
+      <image src="Assets/ProfilePics/9.jpg"/>
     </binding>
  
   </visual>
@@ -270,11 +257,11 @@ TileContent content = new TileContent()
 
 若要傳送通知，請參閱[選擇通知傳遞方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
-* [GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [磚、徽章及通知](tiles-badges-notifications.md)
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
 * [彈性磚範本：結構描述和文件](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -288,6 +275,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

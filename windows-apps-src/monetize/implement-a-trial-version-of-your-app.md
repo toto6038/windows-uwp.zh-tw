@@ -5,20 +5,20 @@ description: "了解如何使用 Windows.Services.Store 命名空間來實作 Ap
 title: "實作 App 的試用版"
 keywords: "免費試用程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
-ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
 
 ---
 
-# 實作 App 的試用版
+# <a name="implement-a-trial-version-of-your-app"></a>實作 App 的試用版
 
 如果您將 App [在 Windows 開發人員中心儀表板中設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶可在試用期間免費使用您的 App，您將可藉由在試用期間排除或限制某些功能，來吸引客戶升級成完整版的 App。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
 目標為 Windows 10 版本 1607 或更新版本的 App，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您 App 的試用授權，而且如果授權狀態在 App 執行期間變更，則會收到通知。
 
->**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>**注意**  本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
-## 實作試用版的指導方針
+## <a name="guidelines-for-implementing-a-trial-version"></a>實作試用版的指導方針
 
 App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 類別的屬性。 一般而言，您會將依存於授權狀態的函式放在條件性區塊中，如下個步驟所述。 考量這些功能時，請確定您實作功能的方式，可在所有授權狀態下運作。
 
@@ -53,7 +53,7 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 
 務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。 如需有關描述 App 的詳細資訊，請參閱[建立 App 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 這個範例包含下列先決條件：
 * 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
@@ -64,64 +64,20 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 * 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
->**注意**&nbsp;&nbsp;如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
+>**注意**  如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
 
-## 程式碼範例
+## <a name="code-example"></a>程式碼範例
 
 當您的 App 進行初始化時，請取得 App 的 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 物件，並處理 [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) 事件，以在授權於 App 執行期間變更時收到通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。 當授權變更時，取得新的授權，並據以啟用或停用您的 App 功能。
 
 此時，如果使用者購買 App，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
 
-
-```csharp
-private StoreContext context = null;
-private StoreAppLicense appLicense = null;
-
-// Call this while your app is initializing.
-private async void InitializeLicense()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    workingProgressRing.IsActive = true;
-    appLicense = await context.GetAppLicenseAsync();
-    workingProgressRing.IsActive = false;
-
-    // Register for the licenced changed event.
-    context.OfflineLicensesChanged += context_OfflineLicensesChanged;
-}
-
-private async void context_OfflineLicensesChanged(StoreContext sender, object args)
-{
-    // Reload the license.
-    workingProgressRing.IsActive = true;
-    appLicense = await context.GetAppLicenseAsync();
-    workingProgressRing.IsActive = false;
-
-    if (appLicense.IsActive)
-    {
-        if (appLicense.IsTrial)
-        {
-            textBlock.Text = $"This is the trial version. Expiration date: {appLicense.ExpirationDate}";
-
-            // Show the features that are available during trial only.
-        }
-        else
-        {
-            // Show the features that are available only with a full license.
-        }
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [App 內購買和試用版](in-app-purchases-and-trials.md)
 * [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
@@ -132,6 +88,6 @@ private async void context_OfflineLicensesChanged(StoreContext sender, object ar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -88,7 +88,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
-> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
+> 請注意  我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...

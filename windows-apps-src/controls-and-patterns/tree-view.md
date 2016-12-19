@@ -69,7 +69,7 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 
 樹狀檢視有下列主要類別。 這些都是在參考實作中已經定義且包含的類別。
 
-> **注意**&nbsp;&nbsp;樹狀檢視是實作為 [Windows 執行階段元件](https://msdn.microsoft.com/windows/uwp/winrt-components/index) (以 C++ 撰寫)，所以可以被任何語言的 UWP app 參考。 在範例中，樹狀檢視程式碼是位於 *cpp/Control* 資料夾中。 C# 中並沒有相對應的 *cs/Control* 資料夾。
+> **注意**  樹狀檢視是實作為 [Windows 執行階段元件](https://msdn.microsoft.com/windows/uwp/winrt-components/index) (以 C++ 撰寫)，所以可以被任何語言的 UWP app 參考。 在範例中，樹狀檢視程式碼是位於 *cpp/Control* 資料夾中。 C# 中並沒有相對應的 *cs/Control* 資料夾。
 
 - `TreeNode` 類別會實作樹狀檢視的階層式版面配置。 它也會保留項目範本中將會與它繫結的資料。
 - `TreeView` 類別會實作　ItemClick、展開/折疊資料夾，及拖曳初始化的事件。

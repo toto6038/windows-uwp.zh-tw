@@ -17,7 +17,7 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 本文會逐步說明如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight App 使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 類別來顯示橫幅廣告。
 
-> **Windows Phone Silverlight 8.0 的注意事項**&nbsp;&nbsp;使用 Universal Ad Client SDK 或 Microsoft Advertising SDK 較早版本的 **AdControl** 且已經在市集中的現有 Windows Phone 8.0 Silverlight App 仍然支援橫幅廣告。 不過，新的 Windows Phone 8.0 Silverlight 專案不再支援橫幅廣告。 此外，Windows Phone 8.x Silverlight 專案中的某些偵錯和測試案例也有限。 如需詳細資訊，請參閱[在您的 App 中顯示廣告](display-ads-in-your-app.md#silverlight_support)。
+> **Windows Phone Silverlight 8.0 的注意事項**  使用 Universal Ad Client SDK 或 Microsoft Advertising SDK 較早版本的 **AdControl** 且已經在市集中的現有 Windows Phone 8.0 Silverlight App 仍然支援橫幅廣告。 不過，新的 Windows Phone 8.0 Silverlight 專案不再支援橫幅廣告。 此外，Windows Phone 8.x Silverlight 專案中的某些偵錯和測試案例也有限。 如需詳細資訊，請參閱[在您的 App 中顯示廣告](display-ads-in-your-app.md#silverlight_support)。
 
 
 ## 將廣告組件新增到您的專案
@@ -96,7 +96,7 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 6.  在 **Grid** 標籤中，加入以下 **AdControl** 程式碼。 將 **ApplicationId** 和 **AdUnitId** 屬性指派給[測試模式屬性](test-mode-values.md)中提供的屬性，並將 **Height** 和 **Width** 屬性調整為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**&nbsp;&nbsp;在提交 App 之前，請以實際值取代測試的 **ApplicationId** 和 **AdUnitId** 值。
+    > **注意**  在提交 App 之前，請以實際值取代測試的 **ApplicationId** 和 **AdUnitId** 值。
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">

@@ -56,7 +56,7 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時間選擇器的範例](images/time-picker-closed.png)
 
-> **注意**&nbsp;&nbsp;如需有關日期和時間值的重要資訊，請參閱*日期和時間控制項*文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**  如需有關日期和時間值的重要資訊，請參閱*日期和時間控制項*文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 
 

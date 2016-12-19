@@ -4,11 +4,11 @@ ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: "效能"
 description: "使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
+ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
+ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
 
 ---
-# 效能
+# <a name="performance"></a>效能
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,6 +19,7 @@ ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 | 主題 | 說明 |
 |-------|-------------|
 | [規劃效能](planning-and-measuring-performance.md) | 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 |
+| [最佳化背景活動](optimize-background-activity.md) | 建立 UWP app，與系統一同以省電方式來使用背景工作。 |
 | [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md) | 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 效能和啟動時間。 |
 | [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md) | 透過資料虛擬化改善 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 效能和啟動時間。 |
 | [改善記憶體回收效能](improve-garbage-collection-performance.md) | 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 |
@@ -36,6 +37,6 @@ ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,11 +4,11 @@ ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "ListView 與 GridView UI 最佳化"
 description: "透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。"
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
 
 ---
-# ListView 與 GridView UI 最佳化
+# <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的效能和啟動時間。 如需資料虛擬化技術的資訊，請參閱 [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md)。
 
-## 集合效能的兩個關鍵因素
+## <a name="two-key-factors-in-collection-performance"></a>集合效能的兩個關鍵因素
 
 操作集合是常見的案例。 相片檢視器有相片的集合、閱讀程式有文章/書籍/故事的集合，而購物 app 有產品的集合。 這個主題說明您可以執行的動作，讓您的 app 在操作集合時更有效率。
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 如果想要順暢移動瀏覽/捲動，UI 執行緒必須能夠執行有效且智慧的具現化、資料繫結和配置項目工作。
 
-## UI 虛擬化
+## <a name="ui-virtualization"></a>UI 虛擬化
 
 UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 元素是依需求建立。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (及其他標準 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 不會再次顯示項目時，架構會回收記憶體。
 
@@ -33,7 +33,7 @@ UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 
 
 檢視區這個概念對 UI 虛擬化很重要，因為架構必須建立可能要加以顯示的元素。 一般而言，[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 的檢視區是邏輯控制項的延伸。 例如，[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的檢視區是 **ListView** 元素的寬度和高度。 有些面板允許子元素有不限數量的空間，範例是 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 和 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)，使用自動調整大小的列或欄。 當虛擬化的 **ItemsControl** 放在這類的面板中時，會採用足夠的空間以顯示其所有項目，虛擬化就無效。 在 **ItemsControl** 設定寬度和高度以還原虛擬化。
 
-## 每個項目的元素減少
+## <a name="element-reduction-per-item"></a>每個項目的元素減少
 
 將用來轉譯您的項目的 UI 元素數保持在合理的最小值。
 
@@ -64,7 +64,8 @@ UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 
 
 有大約 25 個屬性含有類似於 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) 和 [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx) 的自我描述名稱。 如果展示器類型證明不足以針對您的使用案例進行自訂，您可以改為編輯 `ListViewItemExpanded` 或 `GridViewItemExpanded` 控制項範本的複本。 您可以在 `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` 中找到這些項目。 請注意，使用這些範本表示，增加自訂就要犧牲一些效能。
 
-## 漸進式更新 ListView 與 GridView 項目
+<span id="update-items-incrementally"/>
+## <a name="update-listview-and-gridview-items-progressively"></a>漸進式更新 ListView 與 GridView 項目
 
 如果您使用資料虛擬化，則可以保留 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的高回應性，方法是設定控制項針對仍在 (下載) 載入的項目轉譯暫時 UI 元素。 隨著資料載入，暫時元素隨後會逐漸被實際 UI 取代。
 
@@ -72,7 +73,7 @@ UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 
 
 這些技術的範例常見於相片檢視 app：即使尚未下載和顯示所有影像，使用者仍然可以移動瀏覽/捲動並與集合互動。 或者，對於「影片」項目，您可以在第一個階段中顯示標題，在第二個階段顯示分級，以及在第三個階段顯示海報影像。 使用者能夠越早看到每個項目的最重要資料，就表示他們能夠越快採取動作。 然後在時間允許時會填入較不重要的資訊。 以下是您可以用來實作這些技術的平台功能。
 
-### 預留位置
+### <a name="placeholders"></a>預留位置
 
 暫時預留位置視覺效果功能預設為開啟，它是使用 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 屬性進行控制。 在快速移動瀏覽/捲動期間，這項功能可為使用者提供視覺提示，以了解還有更多項目尚未完整顯示，同時保留順暢度。 如果您使用下列其中一個技術，若您不想讓系統轉譯預留位置，則可將 **ShowsScrollingPlaceholders** 設為 False。
 
@@ -239,7 +240,7 @@ namespace LotsOfItems
 
 4.  如果您現在執行 app 並且快速移動瀏覽/捲動格線檢視，則您會看到與使用 **x:Phase** 時相同的行為。
 
-## 含異質集合的容器回收
+## <a name="container-recycling-with-heterogeneous-collections"></a>含異質集合的容器回收
 
 在某些應用程式中，在集合內需要針對不同類型的項目有不同的 UI。 這會產生一種虛擬化面板不可能發生的情況，也就是重複使用/回收使用過的元素來顯示項目。 在移動瀏覽期間重新建立項目的視覺元素，會消除許多虛擬化提供的效能優點。 不過，稍加規劃就可允許虛擬化面板重複使用元素。 開發人員視其案例會有數個選項：[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或項目範本選取器。 **ChoosingItemContainer** 方法有較佳的效能。
 
@@ -320,6 +321,6 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

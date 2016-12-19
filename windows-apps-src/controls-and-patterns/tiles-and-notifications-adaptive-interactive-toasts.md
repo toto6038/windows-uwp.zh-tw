@@ -6,11 +6,11 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
+ms.sourcegitcommit: 2ac3a4a1efa85a3422d8964ad4ee62db28bc975f
+ms.openlocfilehash: cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa
 
 ---
-# 調適型和互動式快顯通知
+# <a name="adaptive-and-interactive-toast-notifications"></a>調適型和互動式快顯通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -24,9 +24,15 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 **注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
- 
 
-## 快顯通知結構
+## <a name="getting-started"></a>開始使用
+
+**安裝 Notifications 程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
+
+**安裝通知視覺化工具。** 這個免費的 UWP 應用程式透過在您編輯快顯通知時提供即時視覺預覽 (類似 Visual Studio 的 XAML 編輯器/設計檢視)，可協助您設計互動式快顯通知。 您可以閱讀[此部落格文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)以取得詳細資訊，您也可以從[這裡](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下載通知視覺化工具。
+
+
+## <a name="toast-notification-structure"></a>快顯通知結構
 
 
 快顯通知是使用 XML 建構，並通常包含下列重要元素：
@@ -54,11 +60,72 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 </toast>
 ```
 
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Sample"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "This is a simple toast notification example"
+                }
+            },
+ 
+            AppLogoOverride = new ToastGenericAppLogo()
+            {
+                Source = "oneAlarm.png"
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Buttons =
+        {
+            new ToastButton("check", "check")
+            {
+                ImageUri = "check.png"
+            },
+ 
+            new ToastButton("cancel", "cancel")
+            {
+                ImageUri = "cancel.png"
+            }
+        }
+    },
+ 
+    Audio = new ToastAudio()
+    {
+        Src = new Uri("ms-winsoundevent:Notification.Reminder")
+    }
+};
+```
+
+接著您可以使用此程式碼來建立並傳送快顯通知：
+
+```CSharp
+ToastNotification notification = new ToastNotification(content.GetXml());
+ToastNotificationManager.CreateToastNotifier().Show(notification);
+```
+
+若要查看可顯示快顯通知的完整運作 App，請參閱[傳送本機快顯通知的快速入門](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
+
 以及結構的視覺化呈現方式：
 
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
-### 視覺
+### <a name="visual"></a>視覺
 
 在視覺元素內部，必須有且只有一個包含快顯通知視覺內容的繫結元素。
 
@@ -69,7 +136,13 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### 動作
+您 App 的身分是透過 App 圖示來傳達。 不過，如果您使用 appLogoOverride，則會在您的文字行下方顯示 App 名稱。
+
+| 標準快顯通知                                                                              | 使用 appLogoOverride 的快顯通知                                                          |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| ![未使用 appLogoOverride 的通知](images/adaptivetoasts-withoutapplogooverride.jpg) | ![使用 appLogoOverride 的通知](images/adaptivetoasts-withapplogooverride.jpg) |
+
+### <a name="actions"></a>動作
 
 在 UWP App 中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在 App 外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
 
@@ -87,7 +160,7 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-### 音訊
+### <a name="audio"></a>音訊
 
 針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的 app 從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
 
@@ -96,7 +169,7 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 請參閱[音訊結構描述頁面](https://msdn.microsoft.com/library/windows/apps/br230842)了解快顯通知音訊的相關資訊，包括完整的 ms-winsoundevents 清單。
 
-## 鬧鐘、提醒及來電
+## <a name="alarms-reminders-and-incoming-calls"></a>鬧鐘、提醒及來電
 
 
 您可以針對鬧鐘、提醒及來電使用快顯通知。 這些特殊快顯通知的外觀和標準快顯通知一致，但是特殊快顯通知具備一些自訂、以案例為基礎的 UI 和圖案：
@@ -105,7 +178,7 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 -   除了和提醒通知共用上述行為之外，鬧鐘通知也會自動播放循環音效。
 -   來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 這可以透過在以下的快顯通知根元素內部指定 scenario 屬性來完成 – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## XML 範例
+## <a name="xml-examples"></a>XML 範例
 
 
 **注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
@@ -119,18 +192,60 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 ```XML
 <toast launch="app-defined-string">
   <visual>
-<binding template="ToastGeneric">
-    <text>Photo Share</text>
+    <binding template="ToastGeneric">
+      <text>Photo Share</text>
       <text>Andrew sent you a picture</text>
       <text>See it in full size!</text>
-      <image placement="appLogoOverride" src="A.png" />
-    <image placement="inline" src="hiking.png" />
+      <image src="https://unsplash.it/360/180?image=1043" />
+      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
     </binding>
   </visual>
 </toast>
 ```
 
-![包含豐富視覺內容的通知](images/adaptivetoasts-xmlsample01.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Photo Share"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "Andrew sent you a picture"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "See it in full size!"
+                },
+ 
+                new AdaptiveImage()
+                {
+                    Source = "https://unsplash.it/360/180?image=1043"
+                }
+            },
+ 
+            AppLogoOverride = new ToastGenericAppLogo()
+            {
+                Source = "https://unsplash.it/64?image=883",
+                HintCrop = ToastGenericAppLogoCrop.Circle
+            }
+        }
+    }
+};
+```
+
+![包含豐富視覺內容的通知](images/adaptivetoasts-xmlsample01.jpg)
 
  
 
@@ -144,17 +259,55 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
     <binding template="ToastGeneric">
       <text>Microsoft Company Store</text>
       <text>New Halo game is back in stock!</text>
-      <image placement="appLogoOverride" src="A.png" />
     </binding>
   </visual>
   <actions>
-    <action activationType="foreground" content="see more details" arguments="details" imageUri="check.png"/>
-    <action activationType="background" content="remind me later" arguments="later" imageUri="cancel.png"/>
+    <action activationType="foreground" content="See more details" arguments="details"/>
+    <action activationType="background" content="Remind me later" arguments="later"/>
   </actions>
 </toast>
 ```
 
-![包含動作的通知，範例 1](images/adaptivetoasts-xmlsample02.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Microsoft Company Store"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "New Halo game is back in stock!"
+                }
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Buttons =
+        {
+            new ToastButton("See more details", "details"),
+ 
+            new ToastButton("Remind me later", "later")
+            {
+                ActivationType = ToastActivationType.Background
+            }
+        }
+    }
+};
+```
+
+![包含動作的通知，範例 1](images/adaptivetoasts-xmlsample02.jpg)
 
  
 
@@ -166,20 +319,57 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 <toast launch="app-defined-string">
   <visual>
     <binding template="ToastGeneric">
-      <text>Cortana</text>
-      <text>We noticed that you are near Wasaki.</text>
-      <text>Thomas left a 5 star rating after his last visit, do you want to try?</text>
-      <image placement="appLogoOverride" src="A.png" />
+      <text>Restaurant suggestion...</text>
+      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
     </binding>
   </visual>
   <actions>
-    <action activationType="foreground" content="reviews" arguments="reviews" />
-    <action activationType="protocol" content="show map" arguments="bingmaps:?q=sushi" />
+    <action activationType="foreground" content="Reviews" arguments="reviews" />
+    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
   </actions>
 </toast>
 ```
 
-![包含動作的通知，範例 2](images/adaptivetoasts-xmlsample03.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Restaurant suggestion..."
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
+                }
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Buttons =
+        {
+            new ToastButton("Reviews", "reviews"),
+ 
+            new ToastButton("Show map", "bingmaps:?q=sushi")
+            {
+                ActivationType = ToastActivationType.Protocol
+            }
+        }
+    }
+};
+```
+
+![包含動作的通知，範例 2](images/adaptivetoasts-xmlsample03.jpg)
 
  
 
@@ -193,18 +383,74 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
     <binding template="ToastGeneric">
       <text>Andrew B.</text>
       <text>Shall we meet up at 8?</text>
-      <image placement="appLogoOverride" src="A.png" />
+      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
     </binding>
   </visual>
   <actions>
-    <input id="message" type="text" placeHolderContent="reply here" />
-    <action activationType="background" content="reply" arguments="reply" />
-    <action activationType="foreground" content="video call" arguments="video" />
+    <input id="message" type="text" placeHolderContent="Type a reply" />
+    <action activationType="background" content="Reply" arguments="reply" />
+    <action activationType="foreground" content="Video call" arguments="video" />
   </actions>
 </toast>
 ```
 
-![包含文字和輸入動作的通知](images/adaptivetoasts-xmlsample04.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Andrew B."
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "Shall we meet up at 8?"
+                }
+            },
+ 
+            AppLogoOverride = new ToastGenericAppLogo()
+            {
+                Source = "https://unsplash.it/64?image=883",
+                HintCrop = ToastGenericAppLogoCrop.Circle
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastTextBox("message")
+            {
+                PlaceholderContent = "Type a reply"
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButton("Reply", "reply")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+ 
+            new ToastButton("Video call", "video")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+    }
+};
+```
+
+![包含文字和輸入動作的通知](images/adaptivetoasts-xmlsample04.jpg)
 
  
 
@@ -218,17 +464,70 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
     <binding template="ToastGeneric">
       <text>Andrew B.</text>
       <text>Shall we meet up at 8?</text>
-      <image placement="appLogoOverride" src="A.png" />
+      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
     </binding>
   </visual>
   <actions>
-    <input id="message" type="text" placeHolderContent="reply here" />
-    <action activationType="background" content="reply" arguments="reply" imageUri="send.png" hint-inputId="message"/>
+    <input id="message" type="text" placeHolderContent="Type a reply" />
+    <action activationType="background" content="Reply" arguments="reply" hint-inputId="message" imageUri="Assets/Icons/send.png"/>
   </actions>
 </toast>
 ```
 
-![包含文字輸入和動作的通知](images/adaptivetoasts-xmlsample05.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Andrew B."
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "Shall we meet up at 8?"
+                }
+            },
+ 
+            AppLogoOverride = new ToastGenericAppLogo()
+            {
+                Source = "https://unsplash.it/64?image=883",
+                HintCrop = ToastGenericAppLogoCrop.Circle
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastTextBox("message")
+            {
+                PlaceholderContent = "Type a reply"
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButton("Reply", "reply")
+            {
+                TextBoxId = "message",
+                ImageUri = "Assets/Icons/send.png",
+                ActivationType = ToastActivationType.Background
+            }
+        }
+    }
+};
+```
+
+![包含文字輸入和動作的通知](images/adaptivetoasts-xmlsample05.jpg)
 
  
 
@@ -242,22 +541,77 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
     <binding template="ToastGeneric">
       <text>Spicy Heaven</text>
       <text>When do you plan to come in tomorrow?</text>
-      <image placement="appLogoOverride" src="A.png" />
     </binding>
   </visual>
   <actions>
     <input id="time" type="selection" defaultInput="2" >
-  <selection id="1" content="Breakfast" />
-  <selection id="2" content="Lunch" />
-  <selection id="3" content="Dinner" />
+      <selection id="1" content="Breakfast" />
+      <selection id="2" content="Lunch" />
+      <selection id="3" content="Dinner" />
     </input>
     <action activationType="background" content="Reserve" arguments="reserve" />
-    <action activationType="background" content="Call Restaurant" arguments="call" />
+    <action activationType="foreground" content="Call Restaurant" arguments="call" />
   </actions>
 </toast>
 ```
 
-![包含選取項目輸入和動作的通知](images/adaptivetoasts-xmlsample06.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Spicy Heaven"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "When do you plan to come in tomorrow?"
+                }
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("time")
+            {
+                DefaultSelectionBoxItemId = "2",
+                Items =
+                {
+                    new ToastSelectionBoxItem("1", "Breakfast"),
+                    new ToastSelectionBoxItem("2", "Lunch"),
+                    new ToastSelectionBoxItem("3", "Dinner")
+                }
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButton("Reserve", "reserve")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+ 
+            new ToastButton("Call Restaurant", "call")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+    }
+};
+```
+
+![包含選取項目輸入和動作的通知](images/adaptivetoasts-xmlsample06.jpg)
 
  
 
@@ -266,107 +620,187 @@ ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 這個範例顯示...
 
 ```XML
-<toast scenario="reminder" launch="developer-pre-defined-string">
+<toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
+   
   <visual>
     <binding template="ToastGeneric">
-      <text>Adam&#39;s Hiking Camp</text>
-      <text>You have an upcoming event for this Friday!</text>
-      <text>RSVP before it"s too late.</text>
-      <image placement="appLogoOverride" src="A.png" />
-      <image placement="inline" src="hiking.png" />
+      <text>Adaptive Tiles Meeting</text>
+      <text>Conf Room 2001 / Building 135</text>
+      <text>10:00 AM - 10:30 AM</text>
     </binding>
   </visual>
+ 
   <actions>
-    <action activationType="background" content="RSVP" arguments="rsvp" />
-    <action activationType="background" content="Reminder me later" arguments="later" />
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
   </actions>
+   
 </toast>
 ```
 
-![提醒通知](images/adaptivetoasts-xmlsample07.png)
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "action=viewEvent&eventId=1983",
+    Scenario = ToastScenario.Reminder,
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Adaptive Tiles Meeting"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "Conf Room 2001 / Building 135"
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "10:00 AM - 10:30 AM"
+                }
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("snoozeTime")
+            {
+                DefaultSelectionBoxItemId = "15",
+                Items =
+                {
+                    new ToastSelectionBoxItem("5", "5 minutes"),
+                    new ToastSelectionBoxItem("15", "15 minutes"),
+                    new ToastSelectionBoxItem("60", "1 hour"),
+                    new ToastSelectionBoxItem("240", "4 hours"),
+                    new ToastSelectionBoxItem("1440", "1 day")
+                }
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButtonSnooze()
+            {
+                SelectionBoxId = "snoozeTime"
+            },
+ 
+            new ToastButtonDismiss()
+        }
+    }
+};
+```
+
+![提醒通知](images/adaptivetoasts-xmlsample07.jpg)
 
  
 
-## 啟用範例
+## <a name="handling-activation-foreground-and-background"></a>處理啟用 (前景和背景)
+
+若要了解如何處理快顯通知啟用 (使用者按一下快顯通知或快顯通知上的按鈕)，請參閱[快速入門：傳送本機快顯通知及處理啟用](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)。
 
 
-如上述說明，快顯通知的內文和動作可以透過不同方式啟動 app。 下面的範例將說明如何處理來自快顯通知內文和/或快顯通知動作的不同類型啟用。
-
-**前景**
-
-在這個案例中，app 會透過啟動 app 並瀏覽至正確內容，以使用前景啟用來回應可執行動作之快顯通知內部的動作。
-
-從用來叫用 OnLaunched() 的快顯通知啟用。 在 Windows 10 中，快顯通知有自己的啟用類型且將會叫用 OnActivated()。
-
-```
-async protected override void OnActivated(IActivatedEventArgs args)
-{
-        //Initialize your app if it&#39;s not yet initialized;
-    //Find out if this is activated from a toast;
-    If (args.Kind == ActivationKind.ToastNotification)
-    {
-                //Get the pre-defined arguments and user inputs from the eventargs;
-        var toastArgs = args as ToastNotificationActivatedEventArgs;
-        var arguments = toastArgs.Arguments;
-        var input = toastArgs.UserInput["1"]; 
-}
-     
-    //...
-}
-```
-
-**背景**
-
-在這個案例中，app 會使用背景工作來處理可執行動作之快顯通知內部的動作。 下面的程式碼說明如何宣告此背景工作，以處理您應用程式資訊清單內部的快顯通知啟用，以及說明如何在按鈕被按下時從動作和使用者輸入取得引數。
-
-```
-<!-- Manifest Declaration -->
-<!-- A new task type toastNotification is added -->
-<Extension Category = "windows.backgroundTasks" 
-EntryPoint = "Tasks.BackgroundTaskClass" >
-  <BackgroundTasks>
-    <Task Type="systemEvent" />
-  </BackgroundTasks>
-</Extension>
-```
-
-```
-namespace ToastNotificationTask
-{
-    public sealed class ToastNotificationBackgroundTask : IBackgroundTask
-    {
-        public void Run(IBackgroundTaskInstance taskInstance)
-        {
-        //Inside here developer can retrieve and consume the pre-defined 
-        //arguments and user inputs;
-        var details = taskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
-        var arguments = details.Arguments;
-        var input = details.Input.Lookup("1");
-
-            // ...
-        }        
-    }
-}
-```
-
-## 結構描述：&lt;visual&gt; 和 &lt;audio&gt;
+## <a name="schemas-ltvisualgt-and-ltaudiogt"></a>結構描述：&lt;visual&gt; 和 &lt;audio&gt;
 
 
-在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
+在以下的 XML 結構描述中，"?" 尾碼表示屬性是選擇性的。
 
 ```
 <toast launch? duration? activationType? scenario? >
-    <visual version? lang? baseUri? addImageQuery? >
-        <binding template? lang? baseUri? addImageQuery? >
-            <text lang? >content</text>
-            <text />
-            <image src placement? alt? addImageQuery? hint-crop? />
-        </binding>
-    </visual>
-    <audio src? loop? silent? />
-    <actions>
-    </actions>
+  <visual lang? baseUri? addImageQuery? >
+    <binding template? lang? baseUri? addImageQuery? >
+      <text lang? hint-maxLines? >content</text>
+      <image src placement? alt? addImageQuery? hint-crop? />
+      <group>
+        <subgroup hint-weight? hint-textStacking? >
+          <text />
+          <image />
+        </subgroup>
+      </group>
+    </binding>
+  </visual>
+  <audio src? loop? silent? />
 </toast>
+```
+
+```
+ToastContent content = new ToastContent()
+{
+    Launch = ?,
+    Duration = ?,
+    ActivationType = ?,
+    Scenario = ?,
+ 
+    Visual = new ToastVisual()
+    {
+        Language = ?,
+        BaseUri = ?,
+        AddImageQuery = ?,
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = ?,
+                    Language = ?,
+                    HintMaxLines = ?
+                },
+ 
+                new AdaptiveGroup()
+                {
+                    Children =
+                    {
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = ?,
+                            HintTextStacking = ?,
+                            Children =
+                            {
+                                new AdaptiveText(),
+                                new AdaptiveImage()
+                            }
+                        }
+                    }
+                },
+ 
+                new AdaptiveImage()
+                {
+                    Source = ?,
+                    AddImageQuery = ?,
+                    AlternateText = ?,
+                    HintCrop = ?
+                }
+            }
+        }
+    },
+ 
+    Audio = new ToastAudio()
+    {
+        Src = ?,
+        Loop = ?,
+        Silent = ?
+    }
+};
 ```
 
 **&lt;toast 中的屬性&gt;**
@@ -402,11 +836,6 @@ scenario?
 -   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
 **&lt;visual 中的屬性&gt;**
-
-version?
-
--   version? = nonNegativeInteger
--   這個屬性是不必要的，因為版本設定在 &lt;visual&gt; 中將被取代。 如有需要，請持續留意您將可從較高階層指定的新版本設定模型。
 
 lang?
 
@@ -489,23 +918,70 @@ silent?
 
 -   請參閱[此元素結構描述文章](https://msdn.microsoft.com/library/windows/apps/br230842)，以了解此選擇性屬性的詳細資料。
 
-## 結構描述：&lt;action&gt;
+## <a name="schemas-ltactiongt"></a>結構描述：&lt;action&gt;
 
 
-在以下的結構描述中，"?" 尾碼表示屬性是選擇性的。
+在以下的 XML 結構描述中，"?" 尾碼表示屬性是選擇性的。
 
 ```
 <toast>
-    <visual>
-    </visual>
-    <audio />
-    <actions>
-        <input id type title? placeHolderContent? defaultInput? >
-            <selection id content />
-        </input>
-        <action content arguments activationType? imageUri? hint-inputId />
-    </actions>
+  <visual>
+  </visual>
+  <audio />
+  <actions>
+    <input id type title? placeHolderContent? defaultInput? >
+      <selection id content />
+    </input>
+    <action content arguments activationType? imageUri? hint-inputId />
+  </actions>
 </toast>
+```
+
+```
+ToastContent content = new ToastContent()
+{
+    Visual = ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("id")
+            {
+                Title = ?
+                DefaultSelectionBoxItemId = ?,
+                Items =
+                {
+                    new ToastSelectionBoxItem("id", "content")
+                }
+            },
+ 
+            new ToastTextBox("id")
+            {
+                Title = ?,
+                PlaceholderContent = ?,
+                DefaultInput = ?
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButton("content", "args")
+            {
+                ActivationType = ?,
+                ImageUri = ?,
+                TextBoxId = ?
+            },
+ 
+            new ToastButtonSnooze("content")
+            {
+                SelectionBoxId = "snoozeTime"
+            },
+ 
+            new ToastButtonDismiss("content")
+        }
+    }
+};
 ```
 
 **&lt;input 中的屬性&gt;**
@@ -581,7 +1057,7 @@ hint-inputId
 -   值必須是要關聯之輸入屬性的 id。
 -   在行動裝置與桌上型裝置中，這個屬性會將按鈕放在輸入方塊旁邊。
 
-## 系統處理之動作的屬性
+## <a name="attributes-for-system-handled-actions"></a>系統處理之動作的屬性
 
 
 如果您不想要由 app 以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
@@ -590,32 +1066,75 @@ hint-inputId
 
 ```
 <toast>
-    <visual>
-    </visual>
-    <audio />
-    <actions hint-systemCommands? = "SnoozeAndDismiss" />
+  <visual>
+  </visual>
+  <actions hint-systemCommands="SnoozeAndDismiss" />
 </toast>
+```
+
+```
+ToastContent content = new ToastContent()
+{
+    Visual = ...
+ 
+    Actions = new ToastActionsSnoozeAndDismiss()
+};
 ```
 
 個別的系統處理的動作
 
 ```
 <toast>
-    <visual>
-    </visual>
-    <audio />
-<actions>
-<input id="snoozeTime" type="selection" defaultInput="10">
-  <selection id="5" content="5 minutes" />
-  <selection id="10" content="10 minutes" />
-  <selection id="20" content="20 minutes" />
-  <selection id="30" content="30 minutes" />
-  <selection id="60" content="1 hour" />
-</input>
-<action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content=""/>
-<action activationType="system" arguments="dismiss" content=""/>
-</actions>
+  <visual>
+  </visual>
+  <actions>
+  <input id="snoozeTime" type="selection" defaultInput="10">
+    <selection id="5" content="5 minutes" />
+    <selection id="10" content="10 minutes" />
+    <selection id="20" content="20 minutes" />
+    <selection id="30" content="30 minutes" />
+    <selection id="60" content="1 hour" />
+  </input>
+  <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content=""/>
+  <action activationType="system" arguments="dismiss" content=""/>
+  </actions>
 </toast>
+```
+
+```
+ToastContent content = new ToastContent()
+{
+    Visual = ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("snoozeTime")
+            {
+                DefaultSelectionBoxItemId = "15",
+                Items =
+                {
+                    new ToastSelectionBoxItem("5", "5 minutes"),
+                    new ToastSelectionBoxItem("10", "10 minutes"),
+                    new ToastSelectionBoxItem("20", "20 minutes"),
+                    new ToastSelectionBoxItem("30", "30 minutes"),
+                    new ToastSelectionBoxItem("60", "1 hour")
+                }
+            }
+        },
+ 
+        Buttons =
+        {
+            new ToastButtonSnooze()
+            {
+                SelectionBoxId = "snoozeTime"
+            },
+ 
+            new ToastButtonDismiss()
+        }
+    }
+};
 ```
 
 若要建構個別的延期和關閉動作，請執行以下作業：
@@ -637,13 +1156,12 @@ hint-inputId
  
 
  
+## <a name="related-topics"></a>相關主題
+
+* [快速入門：傳送本機快顯通知及處理啟用](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
+* [GitHub 上的 Notifications 程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

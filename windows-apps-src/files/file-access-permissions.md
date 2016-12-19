@@ -1,21 +1,21 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "檔案存取權限"
 description: "App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
-ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 
 ---
-# 檔案存取權限
+# <a name="file-access-permissions"></a>檔案存取權限
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
 
-## 所有 app 都能存取的位置
+## <a name="the-locations-that-all-apps-can-access"></a>所有 app 都能存取的位置
 
 當您建立新的 app 時，預設可以存取下列檔案系統位置：
 
@@ -106,7 +106,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
      
 
-## Windows 市集應用程式可以存取的位置
+## <a name="locations-windows-store-apps-can-access"></a>Windows 市集應用程式可以存取的位置
 
 -   **使用者的 [下載] 資料夾** 預設儲存下載檔案的資料夾。
 
@@ -146,7 +146,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
     如果您在下載資料夾中建立檔案或資料夾，建議您將該項目新增到應用程式的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，如此一來，您的應用程式未來便能輕易存取該項目。
 
-## 存取其他位置
+## <a name="accessing-additional-locations"></a>存取其他位置
 
 除了預設位置，App 還可以在應用程式資訊清單中宣告功能 (請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968))，或是呼叫檔案選擇器來讓使用者挑選 App 要存取的檔案和資料夾 (請參閱[使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md))，藉以存取其他檔案和資料夾。
 
@@ -165,6 +165,6 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

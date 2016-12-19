@@ -113,7 +113,7 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 
 .NET 亦支援名為 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的類型，隱含可轉換為 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 類別中的「備註」。
 
-> **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\} 標記延伸](../xaml-platform/binding-markup-extension.md)運算式。
+> **注意**  採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可做為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期做為資料的 [\{Binding\} 標記延伸](../xaml-platform/binding-markup-extension.md)運算式。
 
 
 ## 相關主題

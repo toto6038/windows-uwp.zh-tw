@@ -2,42 +2,39 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "建立 Hello, world 應用程式 (XAML)"
-description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
+description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
-ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 ---
 
-# 建立 Hello, world App (XAML)
+# <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world App (XAML)
 
-本教學課程會教您如何使用 XAML 和 C#，為 Windows10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows10 裝置上執行的 App。
+本教學課程會教您如何使用 XAML 和 C#，為 Windows 10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 
--   建立目標是 **Windows10** 和 **UWP** 的新 **Visual Studio 2015** 專案。
+-   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 專案。
 -   撰寫 XAML 以變更您開始頁面上的 UI。
 -   在本機桌面上和 Visual Studio 中的手機模擬器上執行專案。
 -   使用 SpeechSynthesizer 讓 App 在您按下按鈕時說話。
 
-## 開始之前...
+## <a name="before-you-start"></a>開始之前...
 
--   
-            [通用 Windows app 是什麼](whats-a-uwp.md)？
--   
-            [Windows10 的新功能](https://dev.windows.com/whats-new-windows-10-dev-preview)？
--   若要完成這個教學課程，您需要 Windows10 與 Visual Studio 2015。 
-            [開始設定](get-set-up.md)。
+-   [通用 Windows app 是什麼](whats-a-uwp.md)？
+-   [Windows 10 的新功能](https://dev.windows.com/whats-new-windows-10-dev-preview)？
+-   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 [開始設定](get-set-up.md)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 [視窗] 功能表中的 [重設視窗配置] 命令來重設它。
 
 
-## 如果您比較偏好觀賞影片...
+## <a name="if-you-would-rather-watch-a-video"></a>如果您比較偏好觀賞影片...
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 如果相較於逐步指南，您更偏好使用視覺方法，這部影片涵蓋了相同的內容但提供精彩的原聲帶。
 
-## 步驟 1：在 Visual Studio 中建立新專案
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案
 
 1.  啟動 Visual Studio 2015。
 
@@ -62,7 +59,7 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 雖然 [空白應用程式 (通用 Windows)] 是最基本的範本，但它仍然包含許多檔案。 這些檔案對於所有使用 C# 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
 
 
-### 檔案提供哪些內容？
+### <a name="whats-in-the-files"></a>檔案提供哪些內容？
 
 若要檢視和編輯您專案中的檔案，請在 [方案總管] 中按兩下該檔案。 像展開資料夾一樣展開 XAML 檔案，以檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計介面與 XAML 編輯器。
 > [!NOTE]
@@ -90,9 +87,9 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 -   Assets/StoreLogo.png 代表「Windows 市集」中您的 App。
 -   Assets/SplashScreen.scale-200.png 是您 App 啟動時顯示的啟動顯示畫面。
 
-## 步驟 2：新增按鈕
+## <a name="step-2-adding-a-button"></a>步驟 2：新增按鈕
 
-### 使用設計工具檢視
+### <a name="using-the-designer-view"></a>使用設計工具檢視
 
 讓我們將按鈕新增到我們的頁面中。 在本教學課程中，您僅會使用上述所列的一些檔案：App.xaml、MainPage.xaml 以及 MainPage.xaml.cs。
 
@@ -128,14 +125,14 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ![[方案總管] 視窗](images/win10-cs-07.png)
 
-## 步驟 3：啟動 App
+## <a name="step-3-start-the-app"></a>步驟 3：啟動 App
 
 
 到目前為止，您已經建立了一個非常簡單的 App。 您可以趁現在建置、部署和啟動您的應用程式，並看看它的外觀。 您可以在本機電腦、模擬器或遠端裝置上進行應用程式的偵錯。 以下是在 Visual Studio 中的目標裝置功能表。
 
 ![用於偵錯應用程式的裝置目標下拉式清單](images/uap-debug.png)
 
-### 在傳統型裝置上啟動應用程式
+### <a name="start-the-app-on-a-desktop-device"></a>在傳統型裝置上啟動應用程式
 
 根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
 
@@ -146,12 +143,12 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 **在本機電腦上開始偵錯**
 
-1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 [標準] 工具列上，確定已選取 [本機電腦]。 (這是預設選項)。
-2.  按一下工具列上的 [開始偵錯] 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 \[標準\] 工具列上，確定已選取 \[本機電腦\]。 (這是預設選項)。
+2.  按一下工具列上的 \[開始偵錯\] 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   在 [偵錯] 功能表中，按一下 [開始偵錯]。
+   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
 
    –或–
 
@@ -169,19 +166,19 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 **停止偵錯**
 
-   按一下工具列中的 [停止偵錯] 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
+   按一下工具列中的 \[停止偵錯\] 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
 
    –或–
 
-   在 [偵錯] 功能表中，按一下 [停止偵錯]。
+   在 \[偵錯\] 功能表中，按一下 \[停止偵錯\]。
 
    –或–
 
    關閉應用程式視窗。
 
-### 在行動裝置模擬器上啟動 app
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>在行動裝置模擬器上啟動 app
 
-您的應用程式會在所有 Windows10 裝置上執行，因此，我們來看看它在 Windows Phone 上的外觀如何。
+您的應用程式會在所有 Windows 10 裝置上執行，因此，我們來看看它在 Windows Phone 上的外觀如何。
 
 除了在傳統型裝置上偵錯的選項外，Visual Studio 還提供在連接到電腦的實體行動裝置或在行動裝置模擬器上部署和偵錯應用程式的選項。 您可以為有不同記憶體和顯示器組態的裝置選擇不同的模擬器。
 
@@ -200,7 +197,7 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
    –或–
 
-   在 [偵錯] 功能表中，按一下 [開始偵錯]。
+   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
 
    –或–
 
@@ -210,10 +207,10 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 �
 
 ![行動裝置上最初的 App 畫面](images/win10-cs-09.png)
 
-如果您有執行 Windows10 的 Windows Phone，您也可以將它連接到電腦，然後在該手機上直接部署和執行 App (但是您必須先[啟用開發人員模式](enable-your-device-for-development.md))。
+如果您有執行 Windows 10 的 Windows Phone，您也可以將它連接到電腦，然後在該手機上直接部署和執行 App (但是您必須先[啟用開發人員模式](enable-your-device-for-development.md))。
 
 
-## 步驟 3：事件處理常式
+## <a name="step-3-event-handlers"></a>步驟 3：事件處理常式
 
 「事件處理常式」聽起來很複雜，但它只是事件發生時 (例如使用者按一下按鈕) 所呼叫程式碼的另一個名稱。
 
@@ -247,20 +244,22 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 請確定您也包含了 **async** 關鍵字，否則當您嘗試執行 App 時將會收到錯誤。
 
-### 我們剛才做了什麼？
+### <a name="what-did-we-just-do"></a>我們剛才做了什麼？
 
 這個程式碼使用一些 Windows API 來建立語音合成物件，然後提供一些讓它說出的文字。 (如需有關使用 SpeechSynthesis 的詳細資訊，請參閱 [SpeechSynthesis 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx)文件)。
 
 當您執行 App 並按一下按鈕時，您的電腦 (或手機) 就會逐字說出 "Hello, World!"。
 
 
-## 摘要
+## <a name="summary"></a>摘要
 
 
-恭喜！您已經完成適用於 Windows10 和 UWP 的第一個 app 了！ 準備好進行[下一步](learn-more.md)嗎？
+恭喜！您已經完成適用於 Windows 10 和 UWP 的第一個 app 了！
+
+若要了解如何使用 XAML 來配置您的 app 將使用的控制項，請嘗試進行[格線教學課程](../layout/grid-tutorial.md)，或直接進行[下一步](learn-more.md)？
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -2,15 +2,15 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
+description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
+ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
+ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ---
-# 建立 Hello, world app (JS)
+# <a name="create-a-hello-world-app-js"></a>建立 Hello, world app (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 
@@ -20,14 +20,13 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 -   在本機桌面上和 Visual Studio 的手機模擬器上執行專案
 -   使用適用於 JavaScript 的 Windows Library 控制項
 
-## 開始之前...
+## <a name="before-you-start"></a>開始之前...
 
 -   [通用 Windows app 是什麼](whats-a-uwp.md)？
--   [Windows 10 的新功能](https://dev.windows.com/whats-new-windows-10-dev-preview)？
 -   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 [開始設定](get-set-up.md)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 \[視窗\] 功能表中的 \[重設視窗配置\] 命令來重設它。
 
-## 步驟 1：在 Visual Studio 中建立新專案
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案
 
 讓我們建立名為 `HelloWorld` 的新應用程式。 方法如下：
 1.  啟動 Visual Studio 2015。
@@ -62,14 +61,14 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 這些檔案對於所有使用 JavaScript 的 UWP app 都是必要的。 您在 Visual Studio 中建立的任何專案都包含這些檔案。
 
-## 步驟 2：啟動 app
+## <a name="step-2-launch-the-app"></a>步驟 2：啟動 app
 
 
 到目前為止，您已經建立了一個非常簡單的 App。 您可以趁現在建置、部署和啟動您的應用程式，並看看它的外觀。 您可以在本機電腦、模擬器或遠端裝置上進行應用程式的偵錯。 以下是在 Visual Studio 中的目標裝置功能表。
 
 ![用於偵錯應用程式的裝置目標下拉式清單](images/uap-debug.png)
 
-### 在傳統型裝置上啟動應用程式
+### <a name="start-the-app-on-a-desktop-device"></a>在傳統型裝置上啟動應用程式
 
 根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
 
@@ -113,7 +112,7 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
    關閉應用程式視窗。
 
-### 在行動裝置模擬器上啟動 app
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>在行動裝置模擬器上啟動 app
 
 您的應用程式會在所有 Windows 10 裝置上執行，因此，我們來看看它在 Windows Phone 上的外觀如何。
 
@@ -142,7 +141,7 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 �
 
 ![行動裝置上最初的 App 畫面](images/helloworld-1-winjs-phone.png)
 
-## 步驟 3：修改起始頁
+## <a name="step-3-modify-your-start-page"></a>步驟 3：修改起始頁
 
 Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您 app 的起始頁。 當 app 執行時，它會顯示起始頁的內容。 起始頁也包含 app 的程式碼檔案及樣式表的參考。 以下是 Visual Studio 為您建立的起始頁：
 
@@ -192,7 +191,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
    在後續步驟中，我們要為顯示個人化問候語的 **button** 建立一個事件處理常式。 我們要將事件處理常式程式碼新增到 main.js 檔案。
 
-## 步驟 4：建立事件處理常式
+## <a name="step-4-create-an-event-handler"></a>步驟 4：建立事件處理常式
 
 當我們建立新專案時，Visual Studio 會為我們建立 /js/main.js 檔案。 這個檔案包含了處理 app 週期的程式碼。 您也在這裡撰寫其他的程式碼，為 index.html 檔案提供互動功能。
 
@@ -260,9 +259,9 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
     };
 ```
 
-讓我們為您的 [button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定義一個事件處理常式。 我們新的事件處理常式會從 `nameInput`[input](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項取得使用者的名稱，並使用它將問候語輸出到您在上一節中建立的 `greetingOutput`**div** 元素。
+讓我們為您的 [button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定義一個事件處理常式。 我們新的事件處理常式會從 `nameInput` [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項取得使用者的名稱，並使用它將問候語輸出到您在上一節中建立的 `greetingOutput` **div** 元素。
 
-### 使用適用於觸控、滑鼠及手寫筆輸入的事件
+### <a name="using-events-that-work-for-touch-mouse-and-pen-input"></a>使用適用於觸控、滑鼠及手寫筆輸入的事件
 
 在 UWP app 中，您不需要擔心觸控、滑鼠以及其他指標輸入形式之間的差異。 您可以只使用您知道的事件 (例如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312))，而這些事件適用於所有輸入形式。
 
@@ -279,7 +278,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
         }
 ```
 
-2.  在事件處理常式中，從 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項擷取使用者的名稱，並使用它來建立問候語。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 顯示結果。
+2.  在事件處理常式中，從 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控制項擷取使用者的名稱，並使用它來建立問候語。 使用 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 顯示結果。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -290,7 +289,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 您已將事件處理常式新增到 main.js。 現在您需要登錄它。
 
-## 步驟 5：在 app 啟動時登錄事件處理常式
+## <a name="step-5-register-the-event-handler-when-your-app-launches"></a>步驟 5：在 app 啟動時登錄事件處理常式
 
 
 目前我們唯一需要做的事是在按鈕上登錄事件處理常式。 登錄事件處理常式的建議做法是從我們的程式碼呼叫 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145)。 登錄事件處理常式的理想時機是 app 啟用時。 幸運的是，Visual Studio 已經為我們在 main.js 檔案中產生一些程式碼，用來處理 app 的啟用。
@@ -300,8 +299,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 我們只針對 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 啟用。 只要 app 不在執行中，然後使用者啟用它，app 就被「啟動」了。 無論 app 是過去已經關閉或者是第一次啟動，都會呼叫 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在 app 頁面準備好前都不會關閉啟動顯示畫面。
 
-**提示**
-            **WinJS.UI.processAll** 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
+**提示** **WinJS.UI.processAll** 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
 
 如果要登錄非 WinJS 控制項的事件處理常式，最好緊接在呼叫 **WinJS.UI.processAll** 之後。
 
@@ -329,7 +327,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 **注意** 如果您想知道為什麼我們使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 在程式碼中登錄事件而不是在 HTML 中設定 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，請參閱[撰寫基本 app 的程式碼](https://msdn.microsoft.com/library/windows/apps/Hh780660)以取得詳細的說明。
 
-## 步驟 6：新增適用於 JavaScript 的 Windows Library 控制項
+## <a name="step-6-add-a-windows-library-for-javascript-control"></a>步驟 6：新增適用於 JavaScript 的 Windows Library 控制項
 
 
 除了標準 HTML 控制項，您的 app 可以使用[適用於 JavaScript 的 Windows Library](https://msdn.microsoft.com/library/windows/apps/BR229782) 中的任何控制項，例如 [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681)、[WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711)、[WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837)、[WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項。
@@ -338,7 +336,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 **將 Rating 控制項新增至您的 app。**
 
-1.  在您的 index.html 檔案中，將 [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) 與 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項新增到 `greetingOutput`**div** 後方。
+1.  在您的 index.html 檔案中，將 [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) 與 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控制項新增到 `greetingOutput` **div** 後方。
 
 ```html
     <body class="win-type-body">
@@ -363,7 +361,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 現在，按一下 **Rating** 控制項會變更評等，但不會執行其他動作。 讓我們使用事件處理常式在使用者變更評分時執行一些動作。
 
-## 步驟 7：為適用於 JavaScript 的 Windows Library 控制項登錄事件處理常式
+## <a name="step-7-register-an-event-handler-for-a-windows-library-for-javascript-control"></a>步驟 7：為適用於 JavaScript 的 Windows Library 控制項登錄事件處理常式
 
 
 為 WinJS 控制項登錄事件處理常式，與為標準 HTML 控制項登錄事件處理常式稍有不同。 之前我們提過 **onactivated** 事件處理常式會呼叫 **WinJS.UI.processAll** 方法，以在您的標記中初始化 WinJS。 **WinJS.UI.processAll** 呼叫是包含在對 **setPromise** 方法的呼叫中，就像這樣：
@@ -492,12 +490,14 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 ![電腦上完成的 Hello world app](images/helloworld-5-winjs.png)
 
-## 摘要
+## <a name="summary"></a>摘要
 
-恭喜您！您已經使用 JavaScript 和 HTML 建立`適用於 Windows 10 和 UWP 的第一個 app 了！
+恭喜您！您已經使用 JavaScript 和 HTML 建立適用於 Windows 10 和 UWP 的第一個 app 了！
+
+接下來要做什麼？ [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) 文件將可讓您使用適用於 JavaScript 的 Windows Library。
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

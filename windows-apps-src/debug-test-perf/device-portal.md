@@ -4,11 +4,11 @@ ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概觀"
 description: "了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
-ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
 
 ---
-# Windows Device Portal 概觀
+# <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
 Windows Device Portal 能讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。 它也提供進階診斷工具來協助您疑難排解和檢視您 Windows 裝置的即時效能。
 
@@ -18,7 +18,7 @@ Device Portal 是您裝置上的網頁伺服器，您可以從電腦上的網頁
 
 Windows Device Portal 中的所有項目都是以 [REST API](device-portal-api-core.md) (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
 
-## 安裝程式
+## <a name="setup"></a>安裝程式
 
 每個裝置都有連線到 Device Portal 的特定指示，但是每個裝置都需要執行這些一般步驟：
 1. 在您的裝置上啟用開發人員模式與 Device Portal 。
@@ -27,22 +27,24 @@ Windows Device Portal 中的所有項目都是以 [REST API](device-portal-api-c
 
 裝置系列 | 預設開啟？ | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
-HoloLens | 是，在開發人員模式 | 80 (預設值) | 443 (預設值) | localhost:10080
+HoloLens | 是，在開發人員模式 | 80 (預設值) | 443 (預設值) | http://127.0.0.1:10080
 IoT | 是，在開發人員模式 | 8080 | 透過登錄機碼啟用 | N/A
 Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
-電腦| 在開發人員模式內啟用 | 隨機 &gt; 50,000 (xx080) | 隨機 &gt; 50,000 (xx443) | N/A
-手機 | 在開發人員模式內啟用 | 80| 443 | localhost:10080
+電腦| 在開發人員模式內啟用 | 50080\* | 50043\* | N/A
+手機 | 在開發人員模式內啟用 | 80| 443 | http://127.0.0.1:10080
+
+\* 情況並非總是如此，因為電腦上的 Device Portal 會宣告位於暫時性範圍內的連接埠 (&gt;50000)，以避免與裝置上現有的連接埠宣告相衝突。  若要深入了解，請參閱適用於電腦的[連接埠設定](device-portal-desktop.md#setting-port-numbers)一節。  
 
 如需裝置特定的安裝指示，請參閱︰
 - [HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
 - [IoT 的 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [行動裝置的 Device Portal](device-portal-mobile.md#set-up-device-portal-on-window-phone)
+- [行動裝置的 Device Portal](device-portal-mobile.md)
 - [Xbox 的 Device Portal](device-portal-xbox.md)
 - [傳統型裝置的 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
-## 功能
+## <a name="features"></a>功能
 
-### 工具列與瀏覽
+### <a name="toolbar-and-navigation"></a>工具列與瀏覽
 
 頁面頂端的工具列能讓您存取常用狀態與功能。
 - **關機**：關閉裝置。
@@ -53,11 +55,11 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 這裡描述各種裝置上常見的工具。 根據不同的裝置，可能提供其他選項。 如需詳細資訊，請參閱您裝置的特定頁面。
 
-### 首頁
+### <a name="home"></a>首頁
 
 您的 Device Portal 工作階段從首頁開始。 首頁頁面通常會有裝置的相關資訊，例如名稱與 OS 版本，也包含可為裝置設定的喜好設定。
 
-### App
+### <a name="apps"></a>App
 
 提供在裝置上安裝/解除安裝 AppX 套件與套件組合及其管理功能。
 
@@ -77,17 +79,17 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 2.  按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
 3.  按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
 4.  新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
-5.  在 [部署]**** 下，按一下 [執行]****。 
-6.  若要安裝另一個 app，請按一下 [重設]**** 按鈕以清除欄位。
+5.  在 [部署] 下，按一下 [執行]。 
+6.  若要安裝另一個 app，請按一下 [重設] 按鈕以清除欄位。
 
 
 **解除安裝 app**
 
 1.  請確定您的應用程式不在執行中。 
 2.  若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
-3.  準備好之後，請按一下 [解除安裝]****。
+3.  準備好之後，請按一下 [解除安裝]。
 
-### 處理程序
+### <a name="processes"></a>處理程序
 
 顯示有關目前正在執行之處理程序的詳細資訊。 這包括 App 與系統處理程序。
 
@@ -95,7 +97,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-processes.png)
 
-### 效能
+### <a name="performance"></a>效能
 
 顯示系統診斷資訊的即時圖表，例如電源使用量、畫面播放速率與 CPU 負載。
 
@@ -108,13 +110,13 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-perf.png)
 
-### Windows 事件追蹤 (ETW)
+### <a name="event-tracing-for-windows-etw"></a>Windows 事件追蹤 (ETW)
 
 管理裝置上的即時 Windows 事件追蹤 (ETW)
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-etw.png)
 
-選取 [隱藏提供者]**** 以只顯示 [事件] 清單。
+選取 [隱藏提供者] 以只顯示 [事件] 清單。
 - **已登錄的提供者**︰選取 ETW 提供者與追蹤等級。 追蹤等級是下列其中一個值 ︰
     1. 異常結束或終止
     2. 嚴重錯誤
@@ -122,34 +124,34 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
     4. 非錯誤警告
     5. 追蹤的詳細資料 (*)
 
-按一下或點選 [啟用]**** 以開始追蹤。 提供者已新增到 [啟用的提供者]**** 下拉式清單中。
+按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
 - **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
-- **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用]**** 以停止追蹤。 按一下或點選 [全部停止]**** 以暫停所有追蹤。
-- **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 [啟用]**** 以啟用已停用的提供者。 按一下或點選 [清除]**** 以清除歷程記錄。
-- **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 [清除]**** 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [儲存到檔案]****，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
+- **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。 按一下或點選 [全部停止] 以暫停所有追蹤。
+- **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。 按一下或點選 [清除] 以清除歷程記錄。
+- **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 [清除] 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [儲存到檔案]，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
 
 如需使用 ETW 追蹤的詳細資訊，請參閱有關使用它來收集您 App 即時記錄的[部落格文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
 
-### 效能追蹤
+### <a name="performance-tracing"></a>效能追蹤
 
 從您的裝置擷取 [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR)。
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 [開始]**** 以開始追蹤。
-- **自訂設定檔**︰按一下或點選 [瀏覽]****，以從您的電腦選擇 WPR 設定檔。 按一下或點選 [上傳並開始]**** 以開始追蹤。
+- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 [開始] 以開始追蹤。
+- **自訂設定檔**︰按一下或點選 [瀏覽]，以從您的電腦選擇 WPR 設定檔。 按一下或點選 [上傳並開始] 以開始追蹤。
 
-若要停止追蹤，請按一下 [停止]****。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
+若要停止追蹤，請按一下 [停止]。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
 
 擷取的 ETL 檔案可以在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中開啟以進行分析。
 
-### 裝置
+### <a name="devices"></a>裝置
 
 列舉與您的裝置連接的所有周邊裝置。
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-devices.png)
 
-### 網路功能
+### <a name="networking"></a>網路功能
 
 管理裝置上的網路連線。  除非您透過 USB 連線到 Device Portal，否則變更這些設定很可能會中斷您與 Device Portal 的連線。
 - **設定檔**：選取要使用的其他 WiFi 設定檔。  
@@ -157,15 +159,15 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-network.png)
 
-### App 檔案總管
+### <a name="app-file-explorer"></a>App 檔案總管
 
 可讓您檢視和操作側載 App 所儲存的檔案。  這是 Windows Phone 8.1 [隔離的存放裝置總管](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的全新、跨平台版本，請參閱[這篇部落格文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)，深入了解 App 檔案總管和其使用方法。 
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
-## 服務功能和附註
+## <a name="service-features-and-notes"></a>服務功能和附註
 
-### DNS-SD
+### <a name="dns-sd"></a>DNS-SD
 
 Device Portal 會使用 DNS-SD 在區域網路上公告其目前狀態。  所有的 Device Portal 執行個體都會在 "WDP._wdp._tcp.local" 底下公告，不論其裝置類型為何。 服務執行個體的 TXT 記錄會提供下列項目：
 
@@ -178,7 +180,7 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
 
 建議連接 HTTPS 連接埠，因為並非所有的裝置都會接聽由 DNS-SD 記錄公告的 HTTP 埠。 
 
-### CSRF 保護和指令碼處理
+### <a name="csrf-protection-and-scripting"></a>CSRF 保護和指令碼處理
 
 為了防止 [CSRF 攻擊](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 要求都需要唯一權杖。 這個 X-CSRF-Token 要求標頭的權杖是衍生自工作階段 Cookie，CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 會複製到各個要求的 X-CSRF-Token 標頭中。
 
@@ -192,12 +194,12 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
 
 **注意**︰以 "auto-" 開頭的使用者名稱無法透過瀏覽器登入 Device Portal。  
 
-#### 跨網站 WebSocket 攔截 (CSWSH) 保護
+#### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>跨網站 WebSocket 攔截 (CSWSH) 保護
 
 若要防止 [CSWSH 攻擊](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，開啟 WebSocket 連接到裝置入口網站的所有用戶端，必須也提供符合 Host 標頭的 Origin 標頭。  這可向裝置入口網站證明要求是來自裝置入口網站 UI 或有效的用戶端應用程式。  沒有 Origin 標頭您的要求將會被拒絕。 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

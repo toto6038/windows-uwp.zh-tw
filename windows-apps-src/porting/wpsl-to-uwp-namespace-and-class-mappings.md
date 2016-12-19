@@ -4,12 +4,12 @@ description: "本主題提供 Windows Phone Silverlight API 與其通用 Windows
 title: "Windows Phone Silverlight 和 UWP 命名空間與類別對應"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
 
 ---
 
-# Windows Phone Silverlight 和 UWP 命名空間與類別對應
+# <a name="windows-phone-silverlight-to-uwp-namespace-and-class-mappings"></a>Windows Phone Silverlight 和 UWP 命名空間與類別對應
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Appointments** 類別 | [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) 類別 |
 | (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** 類別 | [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) 類別 |
 | 控制項和 UI 基礎結構 | |
-| **ControlTiltEffect.TiltEffect** 類別 | 來自 Windows 執行階段動畫庫的動畫會內建至通用控制項的預設「樣式」中。 請參閱[動畫](wpsl-to-uwp-porting-xaml-and-ui.md#animation)。 |
+| **ControlTiltEffect.TiltEffect** 類別 | 來自 Windows 執行階段動畫庫的動畫會內建至通用控制項的預設「樣式」中。 請參閱[動畫](wpsl-to-uwp-porting-xaml-and-ui.md)。 |
 | **Microsoft.Phone.Controls** 命名空間 | [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空間 |
 | (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** 類別 | [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) 類別 |
 | (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.DatePickerPage** 類別 | [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 類別 |
@@ -80,7 +80,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** 命名空間 | 沒有直接的對等項目 | 
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 命名空間 | 沒有直接的對等項目 |
 | **Microsoft.Phone.Globalization** 命名空間 | 沒有直接的對等項目 | 
-| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 類別 | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 類別。 如需更多詳細資料，請參閱[裝置狀態](wpsl-to-uwp-input-and-sensors.md#device-status)。 | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 類別 | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 類別。 如需更多詳細資料，請參閱[裝置狀態](wpsl-to-uwp-input-and-sensors.md)。 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** 類別 | 沒有直接的對等項目 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** 類別 | [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) 類別 | 
 | **System.Windows** 命名空間 | [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 命名空間 | 
@@ -129,7 +129,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | **Microsoft.Xna.Framework.Media.MediaQueue** 類別 | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 類別 |
 | **Microsoft.Xna.Framework.Media.Playlist** 類別 | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) 類別 |
 | **System.Windows.Media** 命名空間 | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 命名空間 |
-| **System.Windows.Media.RadialGradientBrush** 類別 | 沒有直接的對等項目。 請參閱[媒體和圖形](wpsl-to-uwp-porting-xaml-and-ui.md#media)。 |
+| **System.Windows.Media.RadialGradientBrush** 類別 | 沒有直接的對等項目。 請參閱[媒體和圖形](wpsl-to-uwp-porting-xaml-and-ui.md)。 |
 | **System.Windows.Media.Animation** 命名空間 | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 命名空間 |
 | **System.Windows.Media.Effects** 命名空間 | 沒有直接的對等項目 | 
 | **System.Windows.Media.Imaging** 命名空間 | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空間 |
@@ -249,6 +249,6 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -42,7 +42,7 @@ ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 
 對於 Windows 8.1 和 Windows Phone 8.x 應用程式，您可使用 **AdMediatorControl** 類別，以顯示來自多個廣告網路的橫幅廣告來最佳化廣告收益。 將此控制項新增至您的 App 後，在 Windows 開發人員中心儀表板中設定廣告流量分配設定，而我們會負責針對來自您選擇之廣告網路的橫幅廣告要求進行流量分配。 如需詳細資訊，請參閱[使用廣告流量分配來獲得最佳廣告收益](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
->**注意**&nbsp;&nbsp;Windows 10 的 UWP app 目前不支援使用 **AdMediatorControl** 類別的廣告流量分配。 即將推出適用於 UWP app 的伺服器端流量分配，且其橫幅廣告 (**AdControl**) 和插入式影片廣告 (**InterstitialAd**) 使用相同 API。 如需將 UWP App 中的 **AdMediatorControl** 移轉至 **AdControl** 的指南，請參閱[針對 UWP App 從 AdMediatorControl 移轉到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
+>**注意**  Windows 10 的 UWP app 目前不支援使用 **AdMediatorControl** 類別的廣告流量分配。 即將推出適用於 UWP app 的伺服器端流量分配，且其橫幅廣告 (**AdControl**) 和插入式影片廣告 (**InterstitialAd**) 使用相同 API。 如需將 UWP App 中的 **AdMediatorControl** 移轉至 **AdControl** 的指南，請參閱[針對 UWP App 從 AdMediatorControl 移轉到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
 
 <span id="silverlight_support"/>
 ## Windows Phone 8.x Silverlight 專案的廣告支援

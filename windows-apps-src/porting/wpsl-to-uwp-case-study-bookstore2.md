@@ -4,49 +4,49 @@ ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "這個案例研究 (根據 Bookstore 中所提供的資訊來建置) 是從在 LongListSelector 中顯示分組資料的 Windows Phone Silverlight App 開始著手。"
 title: "Windows Phone Silverlight 至 UWP 案例研究：Bookstore2"
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
 
 ---
 
-# Windows Phone Silverlight 至 UWP 案例研究：Bookstore2
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight 至 UWP 案例研究：Bookstore2
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 這個案例研究 (根據 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置) 是從在 **LongListSelector** 中顯示分組資料的 Windows Phone Silverlight App 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們會逐步說明將 app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的步驟。
 
-**注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步驟執行。
+**注意** 在 Visual Studio 中開啟 Bookstore2Universal\_10 時，如果您看見「需要 Visual Studio 更新」的訊息，則請依照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中＜選取目標平台版本處理＞的步驟執行。
 
-## 下載
+## <a name="downloads"></a>下載
 
 [下載 Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
 [下載 Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952)。
 
-##  Windows Phone Silverlight app
+##  <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight app
 
 下圖示範 Bookstore2WPSL8 (我們即將移植的 app 看起來的樣子)。 它是依作者分組的書籍垂直捲動 **LongListSelector**。 您可以縮小至捷徑清單，然後從該處往回瀏覽至任何群組。 此應用程式有兩個主要部分：提供分組資料來源的檢視模型，以及繫結至該檢視模型的使用者介面。 如同我們將看到的，這兩個部分都可輕鬆從 Windows Phone Silverlight 技術移植到通用 Windows 平台 (UWP)。
 
 ![bookstore2wpsl8 的外觀](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  移植到 Windows 10 專案
+##  <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 專案
 
 這是一項快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore2WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore2Universal\_10。 這些是從 Bookstore2WPSL8 複製到 Bookstore2Universal\_10 的檔案。
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管]**** 中的 [重新整理]****，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
 我們可以保留 App.xaml，以及 Visual Studio 在 Windows 10 專案中為我們產生的 App.xaml.cs。
 
-編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore2WPSL8 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 [檔案中取代]**** 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
+編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore2WPSL8 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 [檔案中取代] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
 
--   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析]**** 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 [解析]**** 命令。
--   對 `BitmapImage` 使用 [解析]**** 命令。
+-   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
+-   對 `ImageSource` 使用 [解析] 命令。
+-   對 `BitmapImage` 使用 [解析] 命令。
 -   刪除 `using System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   將 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE2WPSL8" 變更為 "BOOKSTORE2UNIVERSAL"。
--   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，更新 **BookSku.CoverImage** 屬性的實作 (請參閱[將映像繫結至檢視模型](wpsl-to-uwp-case-study-bookstore1.md#binding-an-image))。
+-   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，更新 **BookSku.CoverImage** 屬性的實作 (請參閱[將映像繫結至檢視模型](wpsl-to-uwp-case-study-bookstore1.md))。
 
 在 MainPage.xaml 中，需要進行下列初始移植變更：
 
@@ -59,9 +59,9 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 -   正如同我們對 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 的做法，以 `SubtitleTextBlockStyle` 的參考取代 `PhoneTextExtraLargeStyle` **TextBlock** 樣式的所有參考、以 `SubtitleTextBlockStyle` 取代 `PhoneTextSubtleStyle`、以 `CaptionTextBlockStyle` 取代 `PhoneTextNormalStyle`，並以 `HeaderTextBlockStyle` 取代 `PhoneTextTitle1Style`。
 -   `BookTemplate` 中的一個例外狀況。 第二個 **TextBlock** 的樣式應該參考 `CaptionTextBlockStyle`。
 -   從 `AuthorGroupHeaderTemplate` 內的 **TextBlock** 移除 FontFamily 屬性，並將 **Border** 的背景設定為參考 `SystemControlBackgroundAccentBrush` 而非 `PhoneAccentBrush`。
--   由於[變更與檢視像素相關](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)，因此請細查標記，並將所有固定大小維度 (邊界、寬度、高度等等) 乘以 0.8。
+-   由於[變更與檢視像素相關](wpsl-to-uwp-porting-xaml-and-ui.md)，因此請細查標記，並將所有固定大小維度 (邊界、寬度、高度等等) 乘以 0.8。
 
-## 取代 LongListSelector
+## <a name="replacing-the-longlistselector"></a>取代 LongListSelector
 
 
 以 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項取代 **LongListSelector** 將需要數個步驟，因此讓我們開始進行這項操作。 **LongListSelector** 會直接繫結至分組資料來源，但是 **SemanticZoom** 包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控制項，這些控制項會透過 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 配接器間接繫結至資料。 **CollectionViewSource** 必須在標記中做為資源，因此讓我們從將它新增至 MainPage.xaml 之 `<Page.Resources>` 內的標記中開始著手。
@@ -119,7 +119,7 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 雖然檢視模型和放大和縮小檢視正常運作，我們還需要處理一些樣式與範本方面的工作。 例如，正確的樣式和筆刷尚未使用，因此看不見您可以按一下以縮小的群組標頭上的文字。 如果您在桌面裝置上執行應用程式，那麼您會看見第二個問題，也就是在視窗可能會比行動裝置的螢幕還要大的較大型裝置上，應用程式不會調整使用者介面以提供最佳的體驗和空間使用。 因此在接下來的幾個小節 ([初始設定樣式和範本](#initial-styling-and-templating)、[彈性 UI](#adaptive-ui) 與[最終的樣式](#final-styling))，我們將會解決這些問題。
 
-## 初始設定樣式和範本
+## <a name="initial-styling-and-templating"></a>初始設定樣式和範本
 
 若要恰當地保留群組標頭的空間，請在 **Border** 上編輯 `AuthorGroupHeaderTemplate` 並將 **Margin** 設定為 `"0,0,0,9.6"`。
 
@@ -129,11 +129,11 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 將 `LayoutRoot` 的背景變更為 `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`。
 
-## 彈性 UI
+## <a name="adaptive-ui"></a>彈性 UI
 
 因為我們是以手機應用程式開始，在程序的此階段中，我們所移植之應用程式的 UI 配置只適用於小型裝置與縮小視窗，也就不讓人驚訝。 但是我們真的希望當應用程式執行於較寬的視窗中 (這只有在具備大螢幕的裝置上才有可能)，以及只能在應用程式縮小視窗使用我們目前所擁有的 UI (這會發生在小型裝置上，也有可能發生在大型裝置上) 時，UI 配置能夠自行調整並充分運用空間。
 
-我們可以使用彈性的 Visual State Manager 功能來達到這個目的。 我們將在視覺元素上設定屬性，讓 UI 預設為使用我們目前所使用的範本，以縮小狀態進行配置。 接著，將偵測 app 的視窗寬於或等於特定大小的時機 (以[有效像素](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)單位來測量)，並變更視覺元素的屬性，來取得更大且更寬的配置做為回應。 我們會將這些屬性變更放置於某個視覺狀態中，並使用彈性觸發程序持續監視，且根據視窗寬度 (以有效像素為單位) 決定是否要套用該視覺狀態。 在此案例中我們觸發了視窗寬度，但是也可能觸發視窗高度。
+我們可以使用彈性的 Visual State Manager 功能來達到這個目的。 我們將在視覺元素上設定屬性，讓 UI 預設為使用我們目前所使用的範本，以縮小狀態進行配置。 接著，將偵測 app 的視窗寬於或等於特定大小的時機 (以[有效像素](wpsl-to-uwp-porting-xaml-and-ui.md)單位來測量)，並變更視覺元素的屬性，來取得更大且更寬的配置做為回應。 我們會將這些屬性變更放置於某個視覺狀態中，並使用彈性觸發程序持續監視，且根據視窗寬度 (以有效像素為單位) 決定是否要套用該視覺狀態。 在此案例中我們觸發了視窗寬度，但是也可能觸發視窗高度。
 
 視窗的最小寬度為 548 epx，這是最適合這個使用案例的大小，因為這是我們想要顯示寬型配置的最小型裝置的大小。 手機通常會低於 548 epx，因此在這類小型裝置上，我們會保留預設的窄型配置。 在電腦上，視窗預設會以足夠寬度啟動以觸發寬度狀態的切換，這會顯示 250x250 大小的項目。 您將能從該處拖曳視窗窄邊，使其足以顯示至少兩個包含大小為 250x250 項目的欄。 比這個還窄一點，且觸發程序將停用、將移除寬型視覺狀態，而預設的窄型配置將會生效。
 
@@ -211,7 +211,7 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
     ...
 ```
 
-## 最終的樣式
+## <a name="final-styling"></a>最終的樣式
 
 接下來就是一些要調整的最終的樣式
 
@@ -263,20 +263,20 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 縮小檢視已移植完成且正在行動裝置上執行的 Windows 10 app
 
-## 讓檢視模型更具彈性
+## <a name="making-the-view-model-more-flexible"></a>讓檢視模型更具彈性
 
-本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別「是」**一個 BookSku 群組。
+本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別「是」一個 BookSku 群組。
 
-當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」**的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」**一個 BookSku 群組「也是」**該作者居住過之地址的群組，該怎麼辦？ Author 無法同時「是」**這兩個群組。 但是 Author 可以「有」**任何數目的群組。 而這就是方案：使用「有一個群組」**模式來取代或補充我們目前使用的「是一個群組」**模式。 方法如下：
+當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個「某種東西」的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠「既是」一個 BookSku 群組「也是」該作者居住過之地址的群組，該怎麼辦？ Author 無法同時「是」這兩個群組。 但是 Author 可以「有」任何數目的群組。 而這就是方案：使用「有一個群組」模式來取代或補充我們目前使用的「是一個群組」模式。 方法如下：
 
 -   變更 Author，讓它不再衍生自 **List&lt;T&gt;**。
 -   將下列欄位新增至 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
 -   將下列屬性新增至 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
 -   當然，我們可以重複上述兩個步驟，依所需的數目將多個群組新增至 Author。
 -   將 AddBookSku 方法的實作變更為 `this.BookSkus.Add(bookSku);`。
--   既然 Author 已至少「有」**一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將這個屬性新增至 **CollectionViewSource**： `ItemsPath="BookSkus"`
+-   既然 Author 已至少「有」一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將這個屬性新增至 **CollectionViewSource**： `ItemsPath="BookSkus"`
 
-這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」**指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組：
+這些變更會讓這個 app 在功能上保持不變，但您現在已了解可如何延伸 Author 以及 **CollectionViewSource** (如果需要的話)。 讓我們對 Author 進行最後一個變更，以便在使用它但「不」指定 **CollectionViewSource.ItemsPath** 的情況下，會使用我們所選擇的預設群組：
 
 ```csharp
     public class Author : IEnumerable<BookSku>
@@ -296,12 +296,12 @@ ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 現在，如果我們想要，我們可以選擇移除 `ItemsPath="BookSkus"`，而 app 將仍以相同的方式運作。
 
-## 總結
+## <a name="conclusion"></a>總結
 
 與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 Windows Phone Silverlight 的所有功能和概念 **LongListSelector** 等等皆已被視為可藉由 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP app 使用。 我們示範了如何同時重複使用 (或複製和編輯) UWP app 中的命令式程式碼和標記，以完成自訂符合最窄到最寬的 Windows 裝置尺寸和之間所有大小的功能、UI 和互動。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

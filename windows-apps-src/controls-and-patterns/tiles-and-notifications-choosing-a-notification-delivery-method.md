@@ -6,18 +6,18 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 71b1255c25adcb4a99d082ba5e83af60b316abe1
 
 ---
-# 選擇通知傳遞方法
+# <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 本文涵蓋四個通知選項：本機、排程、定期和推播，它們會傳遞磚和徽章更新及快顯通知內容。 即使使用者沒有與應用程式直接互動，磚或快顯通知仍然可以將資訊傳遞給使用者。 App 的性質及內容與您想傳遞的資訊，可以協助您判斷哪種通知方法最適合您的案例。
 
-## 通知傳遞方法概觀
+## <a name="notification-delivery-methods-overview"></a>通知傳遞方法概觀
 
 
 App 可以使用四種機制來傳遞通知：
@@ -89,7 +89,7 @@ App 可以使用四種機制來傳遞通知：
 
  
 
-## 本機通知
+## <a name="local-notifications"></a>本機通知
 
 
 在應用程式執行時更新應用程式磚或徽章，或是產生快顯通知，是最簡單的通知傳遞機制；它只需要本機 API 呼叫。 每個應用程式都可以在磚上顯示實用或有趣的資訊，即使該內容只會在使用者啟動並與應用程式互動時才變更。 即使您也使用了其他的通知機制，本機通知還是讓應用程式磚保持最新狀態的好辦法。 例如，相片應用程式磚可以顯示最近新增相簿中的相片。
@@ -99,28 +99,30 @@ App 可以使用四種機制來傳遞通知：
 當 API 呼叫是本機呼叫時，通知可以參考網頁影像。 如果網路影像無法下載、已損毀或不符合影像規格，磚與快顯通知的應對方式是不同的：
 
 -   磚：不會顯示更新
--   快顯通知：會顯示通知，但是包含預留位置影像
+-   快顯通知：會顯示通知，但是捨棄影像
 
-本機通知不會過期，但是最佳做法是設定明確的到期時間。
+根據預設，本機快顯通知會在三天後到期，而本機磚通知永遠不會過期。 我們建議針對您的通知使用合理且明確的到期時間 (快顯通知的最大值為三天) 來覆寫這些預設值。 
 
 如需詳細資訊，請參閱這些主題：
 
 -   [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
+-   [傳送本機快顯通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 排程通知
+## <a name="scheduled-notifications"></a>排程通知
 
 
 排程通知是本機通知的子集，它們可以指定應該更新磚或顯示快顯通知的確切時間。 排程通知適合事先已知道要更新之內容 (像是會議邀請) 的情況。 如果您事先並不清楚通知內容，那就應該使用推播或定期通知。
 
-根據預設，排程的通知會在傳遞的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
+請注意，排程的通知無法用於徽章通知；徽章通知最適合當作本機、定期或推播通知。
+
+根據預設，排程的通知會在傳遞的三天後到期。 您可以覆寫排程的磚通知上的這個預設到期時間，但無法覆寫排程的快顯通知上的到期時間。
 
 如需詳細資訊，請參閱這些主題：
 
--   [排程通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 定期通知
+## <a name="periodic-notifications"></a>定期通知
 
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 它們也是將相同內容散佈給廣大群眾的絕佳方式。 您的用戶端程式碼可以指定雲端位置 URL，好讓 Windows 輪詢以取得磚或徽章的更新，以及指定輪詢該位置的頻率。 Windows 會在每個輪詢間隔期間連線 URL，下載指定的 XML 內容並在磚上顯示內容。
@@ -134,14 +136,14 @@ App 可以使用四種機制來傳遞通知：
 -   [定期通知概觀](tiles-and-notifications-periodic-notification-overview.md)
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 推播通知
+## <a name="push-notifications"></a>推播通知
 
 
 若要交流即時資料或針對使用者個人化的資料，就非常適合使用推播通知。 推播通知用於在無法預測的時間產生的內容，像是突發新聞、社交網路更新或立即訊息。 當資料 (像是遊戲進行時的遊戲分數) 有時效性而不適合定期通知時，也可以使用推播通知。
 
 推播通知需要能夠管理推播通知通道與選擇何時將通知傳送給何人的雲端服務。
 
-根據預設，推播通知會在 Windows 推播通知服務 (WNS) 收到它們的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設設定。
+根據預設，推播通知會在裝置收到的三天後到期。 如有需要，您可以指定明確的到期時間來覆寫這個預設值 (快顯通知的最大值為三天)。
 
 如需詳細資訊，請參閱：
 
@@ -150,12 +152,12 @@ App 可以使用四種機制來傳遞通知：
 -   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [傳送本機磚通知](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [傳送本機快顯通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
 * [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [排程通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761464)
 * [快顯通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期通知概觀](tiles-and-notifications-periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -170,6 +172,6 @@ App 可以使用四種機制來傳遞通知：
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

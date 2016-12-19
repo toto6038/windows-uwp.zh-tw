@@ -4,38 +4,28 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "使用 Windows 市集提交 API 中的這個方法，更新現有的 App 提交。"
 title: "使用 Windows 市集提交 API 更新 App 提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 819843c8ba1e4a073f70f7de36fe98dd4087cdc6
-ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: ec533c5a021d006787a7d217fa7f5eb98835fdd3
 
 ---
 
-# 使用 Windows 市集提交 API 更新 App 提交
-
-
-
+# <a name="update-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 更新 App 提交
 
 使用 Windows 市集提交 API 中的這個方法，更新現有的 App 提交。 使用這個方法成功更新提交之後，您必須針對擷取和發佈[認可提交](commit-an-app-submission.md)。
 
-如需有關如何在使用「Windows 市集提交 API」來建立 App 提交的程序中套用此方法的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+如需這個方法如何在使用 Windows 市集提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
->
-            **重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中 App 提交的定價資料模型。 實作這項變更之後，將會忽略此方法之要求主體中的「定價」資源，而您將暫時無法使用此方法來變更 App 提交的試用期間、定價及銷售資料。 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取 App 提交的定價資訊。 如需詳細資訊，請參閱[定價資源](manage-app-submissions.md#pricing-object)。
-
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* 
-            [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立 App 提交](create-an-app-submission.md)方法進行。
 
->
-            **注意**
-            &nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
@@ -46,15 +36,15 @@ ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
 <span/>
  
 
-### 要求標頭
+### <a name="request-header"></a>要求標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer**&lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -63,7 +53,7 @@ ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求主體
 
 要求主體包含下列參數。
 
@@ -85,12 +75,12 @@ ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
 | applicationPackages           |   array  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需詳細資訊，請參閱[應用程式套件](manage-app-submissions.md#application-package-object)一節。 在呼叫這個方法以更新 App 提交時，要求主體中只需要這些物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值均是由「開發人員中心」所填入。   |    
 | packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱[套件交付選項物件](manage-app-submissions.md#package-delivery-options-object)。  |
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](manage-app-submissions.md#enterprise-licensing)，可指出 App 適用的企業授權行為。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布林值   |  指出是否允許您的 App [以未來的 Windows10 裝置系列為目標](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows 10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 布林值   |  指出是否允許您的 App [以未來的 Windows 10 裝置系列為目標](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何更新 App 提交。
 
@@ -174,7 +164,7 @@ Content-Type: application/json
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含更新提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
 
@@ -278,7 +268,7 @@ Content-Type: application/json
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -290,7 +280,7 @@ Content-Type: application/json
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [取得 App 提交](get-an-app-submission.md)
@@ -301,6 +291,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

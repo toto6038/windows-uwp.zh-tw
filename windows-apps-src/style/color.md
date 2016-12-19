@@ -39,7 +39,7 @@ ms.openlocfilehash: 8e253c93f932e04b825478cf0801e4c8c0d43b9d
 
 ![彩色重要訊息中心的充分運用](images/action_center_redline_zoom.png) 色彩邏輯如何套用到設計規格的範例。
 
-**注意**：&nbsp;&nbsp;在 XAML 中，主要輔色會公開為名為 `SystemAccentColor` 的[佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 這些色調會以 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 及 `SystemAccentColorDark3` 的形式可供使用。 此外，也可以透過 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 與 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列舉，以程式設計的方式提供使用。
+**注意**：  在 XAML 中，主要輔色會公開為名為 `SystemAccentColor` 的[佈景主題資源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 這些色調會以 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 及 `SystemAccentColorDark3` 的形式可供使用。 此外，也可以透過 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 與 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列舉，以程式設計的方式提供使用。
 
 ## 色彩佈景主題設定
 

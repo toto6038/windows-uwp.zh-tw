@@ -4,12 +4,12 @@ Description: "此文章列出使用傳統型轉 UWP 橋接器轉換 App 之前�
 Search.Product: eADQiWindows 10XVcnh
 title: "針對傳統型轉 UWP 橋接器準備 App"
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
+ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
+ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 
 ---
 
-# 準備 App 以使用傳統型橋接器來轉換
+# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>準備 App 以使用傳統型橋接器來轉換
 
 此文章列出使用傳統型轉 UWP 橋接器轉換 App 之前，您需要知道的事項。 您可能不需要針對 App 的轉換程序做太多準備，但如果以下任何項目適用於您的應用程式，您就需要先處理之後才能轉換。 請記住，Windows 市集會為您處理授權和自動更新，因此您可以從程式碼基底中移除那些功能。
 
@@ -61,7 +61,14 @@ ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
 
 + __您的 App 會從 Windows 並列資料夾安裝與載入組件__。 例如，您的 App 使用 C 執行階段程式庫 VC8 或 VC9 且從 Windows 並列資料夾動態連結它們，表示您的程式碼是使用來自共用資料夾的通用 DLL 檔。 不支援此連結方式。 您必須以靜態方式連結它們，方法是直接將可轉散發的程式庫檔案連結到您的程式碼。
 
++ __您的 app 使用 System32/SysWOW64 資料夾中的相依性__。 若要讓這些 DLL 能夠運作，您必須將它們包含於 AppX 套件的虛擬檔案系統部分。 這可確保 app 行為就如同已將 DLL 安裝在 **System32**/**SysWOW64** 資料夾中。 在套件的根目錄中，建立名為 **VFS** 的資料夾。 在該資料夾內，建立 **SystemX64** 和 **SystemX86** 資料夾。 然後，將 DLL 的 32 位元版本放置於 **SystemX86** 資料夾中，並將 64 位元版本放置於 **SystemX64** 資料夾中。
 
-<!--HONumber=Nov16_HO1-->
++ __您的 app 使用 Dev11 VCLibs 架構套件__。 如果將 VCLibs 11 程式庫定義為 AppX 套件中的相依性，則可直接從 Windows 市集安裝它們。 若要這樣做，請針對您的應用程式套件資訊清單進行下列變更︰在 `<Dependencies>` 節點下方，新增：  
+`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
+從 Windows 市集進行安裝期間，將會在安裝 app 之前，先安裝 VCLibs 11 架構的適當版本 (x86 或 x64)。  
+如果 app 是透過側載進行安裝，將不會安裝相依性。 若要在您的電腦上手動安裝相依性，您必須下載並安裝[適用於傳統型橋接器的 VC 11.0 架構套件](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 如需這些案例的詳細資訊，請參閱[在 Centennial 專案中使用 Visual C++ 執行階段](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
+
+
+<!--HONumber=Dec16_HO1-->
 
 

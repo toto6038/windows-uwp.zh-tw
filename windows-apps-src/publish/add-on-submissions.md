@@ -4,12 +4,12 @@ Description: "您要透過 Windows 開發人員中心儀表板發佈附加元件
 title: "附加元件提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
-ms.sourcegitcommit: b0d877e46ba6958bfc61dd87687c30e91b6cd937
-ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
+ms.sourcegitcommit: 0f2b48f646423f299999a61d78dd956a78a09a8e
+ms.openlocfilehash: 1e7c02621da528c4635ab47bd7c2a898f2441da1
 
 ---
 
-# 附加元件提交
+# <a name="add-on-submissions"></a>附加元件提交
 
 附加元件 (有時也稱為應用程式內產品) 是可供客戶購買之 App 的補充項目。 附加元件可以是有趣的新附加元件功能、新的遊戲等級，或任何您認為將能持續吸引使用者的項目。 附加元件不僅是賺錢的絕佳方式，也可以協助促進客戶的互動和投入。
 
@@ -17,13 +17,13 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您就可以建立提交作業，讓您的附加元件可透過 Windows 市集購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到市集之後，您可以對附加元件[進行更新](#updating-an-add-on-after-submission)，不需要重新提交 App。
 
-> **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
+> **注意**  本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
 
-## 提交附加元件的檢查清單
+## <a name="checklist-for-submitting-an-add-on"></a>提交附加元件的檢查清單
 
 以下是您在建立附加元件提交時提供之資訊的清單。 您需要提供的項目如下所示。 某些項目是選擇性的，或者已經有預設值，但您可以視需要加以變更。
 
-### 建立新的附加元件頁面
+### <a name="create-a-new-add-on-page"></a>建立新的附加元件頁面
 | 欄位名稱                    | 注意事項                            |
 |-------------------------------|----------------------------------|
 | [**產品類型**](set-your-add-on-product-id.md#product-type)      | 必要。 如果是 [耐久]，就必須有 [產品存留期]。 |  
@@ -31,7 +31,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 屬性頁面
+### <a name="properties-page"></a>屬性頁面
 | 欄位名稱                    | 注意事項                              |   
 |-------------------------------|------------------------------------|
 | [**產品存留期**](enter-add-on-properties.md#product-lifetime)  | 如果產品類型是 [耐久品]，則為必要。 不適用於其他產品類型。 |
@@ -42,7 +42,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 定價和可用性頁面
+### <a name="pricing-and-availability-page"></a>定價和可用性頁面
 | 欄位名稱                    | 注意事項                                       |
 |-------------------------------|---------------------------------------------|
 | [**基本價格**](set-add-on-pricing-and-availability.md#base-price)                | 必要                                    |
@@ -53,8 +53,8 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 市集清單
-需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-descriptions.md#languages)提供市集清單。
+### <a name="store-listings"></a>市集清單
+需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#languages)提供市集清單。
 
 | 欄位名稱                    | 注意事項                                       |
 |-------------------------------|---------------------------------------------|
@@ -69,12 +69,11 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 **注意** 您也必須在您的 App 程式碼中實作附加元件。 如需詳細資訊，請參閱[啟用應用程式內產品購買](../monetize/enable-in-app-product-purchases.md)。
 
 
-## 發佈之後更新附加元件
+## <a name="updating-an-add-on-after-publication"></a>發佈之後更新附加元件
 
 您可以隨時對已發佈的附加元件進行變更。 附加元件變更的提交與發佈獨立於您的 App 之外，因此您通常不需要更新整個 App，就可以對附加元件進行變更，例如更新 App 的價格或描述。
 
-> 
-  **重要** 如果您的 App 可供 Windows8.x 的客戶使用，您必須建立並發佈新的 App 提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
+> **重要** 如果您的 App 可供 Windows 8.x 的客戶使用，您必須建立並發佈新的 App 提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows 8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows 8.x 的客戶將無法看見新的附加元件。
 
 若要提交更新，請移至儀表板的附加元件頁面，然後按一下 [更新]。 這會使用您前一個提交作業的資訊做為起點，建立一個新的附加元件提交作業。 視需要變更資訊，然後按一下 [提交至市集]。
 
@@ -82,6 +81,6 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

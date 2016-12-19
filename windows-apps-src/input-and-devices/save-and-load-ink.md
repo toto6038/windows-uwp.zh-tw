@@ -1,18 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。"
-title: "儲存和抓取 Windows Ink 筆觸資料"
+title: "儲存和抓取 Windows Ink 筆劃資料"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 筆跡序列化格式"
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 
 ---
 
-# 儲存和抓取 Windows Ink 筆觸資料
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>儲存和抓取 Windows Ink 筆劃資料
 
 
 支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
@@ -30,7 +30,7 @@ ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
  
 
-## 將筆墨筆劃儲存為檔案
+## <a name="save-ink-strokes-to-a-file"></a>將筆墨筆劃儲存為檔案
 
 
 我們將在此處示範如何儲存在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上繪製的筆墨筆劃。
@@ -87,7 +87,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [儲存]**** 按鈕的 click 事件處理常式中儲存筆劃。
+3.  最後，會在 [儲存] 按鈕的 click 事件處理常式中儲存筆劃。
 
     [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
@@ -160,7 +160,7 @@ public MainPage()
 > [!NOTE]  
 > GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
 
-## 從檔案載入筆墨筆劃
+## <a name="load-ink-strokes-from-a-file"></a>從檔案載入筆墨筆劃
 
 我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項上轉譯它們。
 
@@ -216,7 +216,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [載入]**** 按鈕的 click 事件處理常式中載入筆墨。
+3.  最後，會在 [載入] 按鈕的 click 事件處理常式中載入筆墨。
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
@@ -270,14 +270,14 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 | GIF                       | 指定使用 GIF 檔案保留的筆墨，這種檔案包含做為中繼資料內嵌在檔案中的 ISF。 這可讓筆墨可在沒有啟用筆墨功能的應用程式中加以檢視，並且在其返回啟用筆墨功能的應用程式時仍完全不失真。 這個格式適合用來在 HTML 檔案中傳輸筆墨內容，讓筆墨和非筆墨應用程式都可以使用該內容。 |
 | Base64Gif                 | 指定使用 base64 編碼保護之 GIF 保留的筆墨。 提供這個格式是為了在 XML 或 HTML 檔案中直接編碼筆墨，以便稍後轉換為影像。 可能的使用情況是產生包含所有筆墨資訊的 XML 格式，並用來透過可延伸樣式表語言轉換 (Extensible Stylesheet Language Transformations，XSLT) 來產生 HTML。 
 
-## 複製筆墨筆劃並貼上剪貼簿
+## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>複製筆墨筆劃並貼上剪貼簿
 
 
 我們將在此處示範如何使用剪貼簿，在 app 之間傳輸筆墨筆劃。
 
 若要支援剪貼簿功能，內建的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 剪下和複製命令會要求選取一或多個筆墨筆劃。
 
-在這個範例中，我們將在使用畫筆筆身按鈕 (或滑鼠右鍵按鈕) 修改輸入時啟用筆劃選取項目。 如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的[傳入輸入以進行進階處理](pen-and-stylus-interactions.md#passthrough)。
+在這個範例中，我們將在使用畫筆筆身按鈕 (或滑鼠右鍵按鈕) 修改輸入時啟用筆劃選取項目。 如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的＜傳入輸入以進行進階處理＞。
 
 1.  一開始先設定 UI。
 
@@ -319,7 +319,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
     [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
 
-    如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的[傳入輸入以進行進階處理](pen-and-stylus-interactions.md#passthrough)。
+    如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的＜傳入輸入以進行進階處理＞。
 ```    CSharp
 public MainPage()
     {
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  最後，在新增筆劃選取項目支援之後，我們會在 [剪下]****、[複製]**** 和 [貼上]**** 按鈕的 click 事件處理常式中實作剪貼簿功能。
+3.  最後，在新增筆劃選取項目支援之後，我們會在 \[剪下\]、\[複製\] 和 \[貼上\] 按鈕的 click 事件處理常式中實作剪貼簿功能。
 
     針對剪下功能，我們會先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上呼叫 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232)。
 
@@ -428,7 +428,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
@@ -436,16 +436,18 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [著色本範例](https://aka.ms/cpubsample-coloringbook)
+* [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

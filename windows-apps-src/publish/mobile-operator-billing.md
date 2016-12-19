@@ -4,12 +4,12 @@ Description: "Windows 市集提供「電信業者帳單」做為針對支援此�
 title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
-ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
+ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
+ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 
 ---
 
-# 電信業者帳單
+# <a name="mobile-operator-billing"></a>電信業者帳單
 
 
 Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。 如果客戶的電信業者支援這項功能，客戶就能使用他們的行動裝置帳戶在市集購物。
@@ -18,11 +18,11 @@ Windows 市集提供「電信業者帳單」做為針對支援此功能之電信
 
 我們會定期與電信業者合作，拓展此付款方式的可用性。 如果您想要建議我們支援未在下面清單中列出的電信業者，請聯絡電信業者。
 
-## 適用於 Windows10 和 Xbox One 裝置的電信業者帳單
+## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>適用於 Windows 10 和 Xbox One 裝置的電信業者帳單
 
-Windows10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows10 的所有裝置、執行 Windows10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
+Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows 10 的所有裝置、執行 Windows 10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
 
-目前已有下列電信業者支援 Windows10 的電信業者帳單實作。
+目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
 
 | 國家/地區  | 電信業者 |
 |-----------------|------------------|
@@ -40,10 +40,10 @@ Windows10 引進了「電信業者帳單」的新實作。 這個實作適用於
 
  
 
-## 適用於 Windows Phone 8.x 和 Windows10 行動裝置版裝置的電信業者帳單
+## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>適用於 Windows Phone 8.x 和 Windows 10 行動裝置版裝置的電信業者帳單
 
 
-舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
+舊版的「電信業者帳單」實作可用於 Windows Phone 8.x 裝置。 部分行動業者可能會選擇在專為 Windows 10 行動裝置版設計的手機上包含此項實作。 在包含此項實作的裝置上，「電信業者帳單」會自動提供給使用者做為付款方式。
 
 下列電信業者支援舊版的電信業者帳單實作。
 
@@ -51,54 +51,31 @@ Windows10 引進了「電信業者帳單」的新實作。 這個實作適用於
 |----------------------|--------------------------------------------------------------------|
 | 澳大利亞            | Telstra                                                            |
 | 奧地利              | A1 Telekom、T-Mobile                                               |
-| 巴林              | Zain、VIVA                                                         |
 | 比利時              | BASE、Mobistar、Proximus                                           |
 | 巴西               | Claro                                                              |
-| 保加利亞             | Telenor                                                            |
 | 加拿大               | Fido、Rogers                                                       |
-| 智利                | Claro                                                              |
 | 中國                | 中國移動                                                       |
-| 哥倫比亞             | Claro、Movistar                                                    |
-| 哥斯大黎加           | Claro                                                              |
-| 克羅埃西亞              | Tomato、VIPnet、Tele2                                              |
+| 哥倫比亞             | Movistar                                                           |
 | 捷克共和國       | T-Mobile、Vodafone、O2                                             |
 | 厄瓜多              | Claro                                                              |
-| 埃及                | Mobinil                                                            |
-| 愛沙尼亞              | EMT、Tele2                                                         |
 | 芬蘭              | Elisa、TeliaSonera、DNA                                            |
-| 法國               | Orange、Orange Réunion (La Réunion)、SFR、Bouygues                 |
+| 法國               | Orange、SFR、Bouygues                                              |
 | 德國              | Telefonica、Telekom Deutschland、Vodafone                          |
 | 希臘               | Vodafone                                                           |
-| 瓜地馬拉            | Claro                                                              |
 | 匈牙利              | Telenor、T-Mobile                                                  |
 | 印度                | Idea                                                               |
-| 印尼            | Indosat、Telkomsel、XL Axiata、Hutchinson CP Telecommunications (HCPT)     |
+| 印尼            | Indosat、Telkomsel、Hutchinson CP Telecommunications (HCPT)        |
 | 愛爾蘭              | O2、Vodafone、Three                                                |
 | 義大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
-| 約旦               | Zain、Umniah                                                       |
-| 肯亞                | Safaricom                                                          |
-| 科威特               | Zain、Viva、Ooredoo                                                |
-| 拉脫維亞               | Tele2                                                              |
-| 立陶宛            | Tele2                                                              |
-| 馬來西亞             | DiGi                                                               |
+| 約旦               | Umniah                                                             |
 | 墨西哥               | Iusacell、Telcel、Movistar                                         |
 | 荷蘭          | T-Mobile、Vodafone                                                 |
-| 挪威               | Telenor                                                            |
-| 阿曼                 | Ooredoo                                                            |
-| 巴基斯坦             | Telenor                                                            |
-| 秘魯                 | Claro                                                              |
-| 菲律賓          | Globe、Sun、Smart Communications                                   |
 | 波蘭               | T-Mobile、Orange、Polkomtel (Plus)、Play                           |
 | 羅馬尼亞              | Orange、Vodafone                                                   |
 | 俄羅斯               | Beeline、MTS                                                       |
-| 沙烏地阿拉伯         | Zain                                                               |
-| 新加坡            | M1、SingTel、StarHub                                               |
 | 斯洛伐克             | T-Mobile                                                           |
-| 斯洛維尼亞             | Si.mobil                                                           |
 | 南非         | Vodacom                                                            |
 | 西班牙                | Movistar、Vodafone、Orange                                         |
-| 瑞典               | Telenor、Tele2                                                     |
-| 阿拉伯聯合大公國 | Etisalat、Du                                                       |
 | 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
 | 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
@@ -117,6 +94,6 @@ Windows10 引進了「電信業者帳單」的新實作。 這個實作適用於
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -5,14 +5,14 @@ title: "便捷鍵"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keyword: Access keys, keyboard, accessibility
+keywords: "便捷鍵, 鍵盤, 協助工具"
 translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
+ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
+ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
 
 ---
 
-# 便捷鍵
+# <a name="access-keys"></a>便捷鍵
 
 不方便使用滑鼠的使用者 (例如受到某種程度運動神經傷害的使用者) 通常依賴鍵盤來瀏覽 app 並與之互動。  XAML 架構可讓您透過 Tab 瀏覽和便捷鍵，提供對 UI 元素的鍵盤存取。
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
 
 如需鍵盤瀏覽與協助工具的詳細資訊，請參閱[鍵盤互動](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)與[鍵盤協助工具](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)。 本文假設您了解這些文章中討論的概念。
 
-## 便捷鍵概觀
+## <a name="access-key-overview"></a>便捷鍵概觀
 
 便捷鍵可讓使用者利用鍵盤直接叫用按鈕或設定焦點，而不需要重複地按方向鍵或 Tab。 便捷鍵的用意在於能輕鬆地被搜尋，因此您應該將它們直接記載在 UI 中；例如，在控制項上含有便捷鍵的浮動徽章。
 
@@ -43,20 +43,20 @@ _圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相�
 
 **便捷鍵組合**
 
-便捷鍵組合通常是一次按一個按鍵來達成動作，而不是同時按下多個按鍵。 (但其中有例外，我們將在下一節討論。) 達成動作所需的按鍵輸入順序就是「便捷鍵組合」__。 使用者按下 Alt 鍵以起始便捷鍵組合。 當使用者按下便捷鍵組合中的最後一個按鍵時，就會叫用便捷鍵。 例如，若要在 Word 中開啟 [檢視] 索引標籤，使用者會按下 _Alt、W_ 便捷鍵組合。
+便捷鍵組合通常是一次按一個按鍵來達成動作，而不是同時按下多個按鍵。 (但其中有例外，我們將在下一節討論。) 達成動作所需的按鍵輸入順序就是「便捷鍵組合」。 使用者按下 Alt 鍵以起始便捷鍵組合。 當使用者按下便捷鍵組合中的最後一個按鍵時，就會叫用便捷鍵。 例如，若要在 Word 中開啟 [檢視] 索引標籤，使用者會按下 _Alt、W_ 便捷鍵組合。
 
 使用者可以在一個便捷鍵組合中叫用數個便捷鍵。 例如，若要在 Word 文件中開啟 [複製格式]，使用者會按下 Alt 以起始組合，然後按下 _H_ 來瀏覽 [常用] 區段並變更便捷鍵範圍，然後按下 _F_，最後是 _P_。_H_ 和 _FP_ 分別為 [常用] 索引標籤和 [複製格式] 的便捷鍵。
 
 有些項目在叫用之後會完成便捷鍵組合 (例如 [複製格式] 按鈕) 而某些則不會 (例如 [常用] 索引標籤)。 叫用便捷鍵會產生執行命令、移動焦點、變更便捷鍵範圍，或某些其他相關聯的動作。
 
-## 便捷鍵使用者互動
+## <a name="access-key-user-interaction"></a>便捷鍵使用者互動
 
 若要了解便捷鍵 API，則必須先了解使用者互動模型。 您可以在下面找到便捷鍵使用者互動模型的摘要：
 
 - 當使用者按下 Alt 鍵時，就會啟動便捷鍵組合，即使焦點位在輸入控制項時亦同。 然後，使用者可以按便捷鍵來叫用相關聯的動作。 這種使用者互動需要您在 UI 中搭配一些視覺能供性，記載可用的便捷鍵，例如當按下 Alt 鍵時會顯示的浮動徽章
-- 當使用者同時按下 Alt 鍵加上便捷鍵時，會立即叫用便捷鍵。 這類似於使用 Alt+「便捷鍵」__定義的鍵盤快速鍵。 在此情況下，不會顯示便捷鍵視覺能供性。 不過，叫用便捷鍵可能導致變更便捷鍵範圍。 在此情況下，會起始便捷鍵組合，並且顯示新範圍的視覺能供性。
+- 當使用者同時按下 Alt 鍵加上便捷鍵時，會立即叫用便捷鍵。 這類似於使用 Alt+「便捷鍵」定義的鍵盤快速鍵。 在此情況下，不會顯示便捷鍵視覺能供性。 不過，叫用便捷鍵可能導致變更便捷鍵範圍。 在此情況下，會起始便捷鍵組合，並且顯示新範圍的視覺能供性。
     > [!NOTE]
-    > 只有使用單一字元的便捷鍵可以利用這種使用者互動。 Alt+「便捷鍵」__組合不支援使用多個字元的便捷鍵。    
+    > 只有使用單一字元的便捷鍵可以利用這種使用者互動。 Alt+「便捷鍵」組合不支援使用多個字元的便捷鍵。    
 - 當多字元便捷鍵共用某些字元時，在使用者按下共用的字元時，便會篩選便捷鍵。 例如，假設有顯示三個便捷鍵：_A1_、_A2_ 和 _C_。如果使用者按下 _A_，則只會顯示 _A1_ 和 _A2_ 便捷鍵，並隱藏 C 的視覺能供性。
 - Esc 鍵會移除一層篩選。 例如，如果有便捷鍵為 _B_、_ABC_、_ACD_ 和 _ABD_，而使用者按下 _A_，則只會顯示 _ABC_、_ACD_ 和 _ABD_。 如果使用者接著按下 _B_、則只會顯示 _ABC_ 與 _ABD_。 如果使用者按下 Esc，則會移除一層篩選，並顯示 _ABC_、_ACD_ 和 _ABD_ 便捷鍵。 如果使用者再按一次 Esc，則會再移除另一層篩選，而所有的便捷鍵 - _B_、_ABC_、_ACD_ 和 _ABD_ – 都會啟用，並顯示它們的視覺能供性。
 - Esc 鍵瀏覽回先前的範圍。 便捷鍵可能屬於不同的範圍，以便在有許多命令的 app 中能更輕鬆地瀏覽。 便捷鍵組合一律在主要範圍開始。 所有的便捷鍵都屬於主要範圍，除了那些指定為範圍擁有者的特定 UI 元素。 當使用者叫用其為範圍擁有者元素的便捷鍵時，XAML 架構會自動將範圍移動到該元素，並將它加入內部便捷鍵瀏覽堆疊。 Esc 鍵可在各便捷鍵瀏覽堆疊之間向後移動。
@@ -79,7 +79,7 @@ _圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相�
  - 可結束便捷鍵組合的特殊按鍵：Esc、Alt、方向鍵、Enter 和 Tab。
  - 指派給便捷鍵的英數字元。
 
-## 便捷鍵 API
+## <a name="access-key-apis"></a>便捷鍵 API
 
 為了支援便捷鍵使用者互動，XAML 架構提供 API，如下所述。
 
@@ -125,7 +125,7 @@ _圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相�
 
 便捷鍵可以使用多種語言當地語系化，並使用 [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API 在執行階段載入。
 
-## 叫用便捷鍵時使用的控制項模式
+## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>叫用便捷鍵時使用的控制項模式
 
 控制項模式是公開常用控制項功能的介面實作；例如，按鈕會實作 **Invoke** 控制項模式，而這會引發 **Click** 事件。 當叫用便捷鍵時，XAML 架構會查詢叫用的元素是否實作控制項模式，並在有實作時執行控制項模式。 如果元素有一個以上的控制項模式，則只會叫用其中一個，其餘的部分將會忽略。 控制項模式會以下列順序來搜尋：
 
@@ -137,7 +137,7 @@ _圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相�
 如果找不到控制項模式，便捷鍵叫用會顯示為 no-op，並且會記錄偵錯訊息以協助您偵錯此情況：「找不到此元件的自動化模式。 請在 AccessKeyInvoked 的事件處理常式中實作所需的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」
 
 > [!NOTE]
-> Visual Studio 的 [偵錯設定] 中的偵錯程式 [應用程式處理類型] 必須為 [混合 (Managed 和原生)]__ 或 [原生]__ 才能看到此訊息。
+> Visual Studio 的 [偵錯設定] 中的偵錯程式 [應用程式處理類型] 必須為 [混合 (Managed 和原生)] 或 [原生] 才能看到此訊息。
 
 如果您不想要讓便捷鍵執行其預設控制項模式，或元素不具有控制項模式，則您應該處理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件，並實作所需的行為。
 ```csharp
@@ -150,11 +150,11 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 
 如需控制項模式的詳細資訊，請參閱[使用者介面自動化控制項模式概觀](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)。
 
-## 便捷鍵和朗讀程式
+## <a name="access-keys-and-narrator"></a>便捷鍵和朗讀程式
 
 Windows 執行階段具有使用者介面自動化提供者，它會公開 Microsoft UI 自動化元素上的屬性。 這些屬性可讓使用者介面自動化用戶端應用程式探索關於使用者介面部分的相關資訊。 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性可讓用戶端 (例如朗讀程式) 探索與元素相關聯的便捷鍵。 每當元素取得焦點時，朗讀程式將會讀取此屬性。 如果 AutomationProperties.AccessKey 不具有值，則 XAML 架構會從 UIElement 或 TextElement 傳回 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性值。 如果 AccessKey 屬性已經有值，您就不需要設定 AutomationProperties.AccessKey。
 
-## 範例：按鈕的便捷鍵
+## <a name="example-access-key-for-button"></a>範例：按鈕的便捷鍵
 
 本範例說明如何為按鈕建立便捷鍵。 範例使用 Tooltip 做為視覺能供性，以實作包含便捷鍵的浮動徽章。
 
@@ -229,7 +229,7 @@ XAML 架構會自動呼叫 Click 事件的處理常式，因此您不需要處�
     }
 ```
 
-## 範例：限定範圍的便捷鍵
+## <a name="example-scoped-access-keys"></a>範例：限定範圍的便捷鍵
 
 本範例說明如何建立限定範圍的便捷鍵。 PivotItem 的 IsAccessKeyScope 屬性可在使用者按下 Alt 時，避免顯示 PivotItem 子元素的便捷鍵。 這些便捷鍵只有在使用者叫用 PivotItem 時才會顯示，因為 XAML 架構會自動切換範圍。 架構也會隱藏其他範圍的便捷鍵。
 
@@ -385,6 +385,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

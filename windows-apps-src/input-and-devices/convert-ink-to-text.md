@@ -1,18 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。"
-title: "將 Windows Ink 筆觸辨識為文字"
+title: "將 Windows Ink 筆劃辨識為文字"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
+keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手寫辨識"
 translationtype: Human Translation
-ms.sourcegitcommit: dfb790980a8016da0ed9a080d7cf56b5a8a784ff
-ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: c402843cce752a54d8ff7301d892ef8014350a07
 
 ---
 
-# 將 Windows Ink 筆觸辨識為文字
+# <a name="recognize-windows-ink-strokes-as-text"></a>將 Windows Ink 筆劃辨識為文字
 
 使用 Windows Ink 中支援的手寫辨識功能，將筆墨筆劃轉換為文字。
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
 
 針對此處的所有範例，新增筆墨功能所需的命名空間參考。 這包括 "Windows.UI.Input.Inking"。
 
-## 基本的手寫辨識
+## <a name="basic-handwriting-recognition"></a>基本的手寫辨識
 
 
 我們將在此處示範如何使用與預設安裝的語言套件相關聯的手寫辨識引擎，來解譯 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一組筆劃。
@@ -203,7 +203,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 國際性辨識
+## <a name="international-recognition"></a>國際性辨識
 
 
 Windows 支援的完整語言子集可用於手寫辨識。
@@ -213,15 +213,15 @@ Windows 支援的完整語言子集可用於手寫辨識。
 您的 app 可以查詢這組已安裝的手寫辨識引擎，並使用其中一個，或者讓使用者選擇他們偏好的語言。
 
 **注意**  
-使用者可以移至 [設定] -&gt; [時間與語言]****，來查看已安裝的語言清單。 [語言]**** 下方會列出已安裝的語言。
+使用者可以移至 [設定] -&gt; [時間與語言]，來查看已安裝的語言清單。 [語言] 下方會列出已安裝的語言。
 
 若要安裝新的語言套件並針對該語言啟用手寫辨識：
 
-1.  移至 [設定] &gt; [時間與語言] &gt; [地區與語言]****。
-2.  選取 [新增語言]****。
-3.  從清單中選取語言，然後選擇地區版本。 語言現在會列於 [地區及語言]**** 頁面上。
-4.  按一下語言，然後選取 [選項]****。
-5.  在 [語言選項]**** 頁面上，下載 [手寫辨識引擎]**** (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
+1.  移至 [設定] &gt; [時間與語言] &gt; [地區與語言]。
+2.  選取 [新增語言]。
+3.  從清單中選取語言，然後選擇地區版本。 語言現在會列於 [地區及語言] 頁面上。
+4.  按一下語言，然後選取 [選項]。
+5.  在 [語言選項] 頁面上，下載 [手寫辨識引擎] (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
 
  
 
@@ -448,7 +448,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 動態手寫辨識
+## <a name="dynamic-handwriting-recognition"></a>動態手寫辨識
 
 
 先前的兩個範例要求使用者按下按鈕來開始辨識。 您的 app 也可以使用與基本計時函式配對的筆劃輸入來執行動態辨識。
@@ -660,7 +660,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
@@ -668,12 +668,14 @@ string str = "Recognition result\n";
 * [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [著色本範例](https://aka.ms/cpubsample-coloringbook)
+* [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
-
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

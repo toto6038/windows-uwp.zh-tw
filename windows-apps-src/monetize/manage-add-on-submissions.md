@@ -4,22 +4,18 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件提交。"
 title: "使用 Windows 市集提交 API 管理附加元件提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
-ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 ---
 
-# 使用 Windows 市集提交 API 管理附加元件提交
+# <a name="manage-add-on-submissions-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 管理附加元件提交
 
 
 
 在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理附加元件 (亦稱為 App 內產品或 IAP) 提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**
-            &nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的「Windows 市集提交 API」方法來建立附加元件。
-
->**重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的定價資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
+>**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -31,7 +27,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 | DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}``` | 刪除附加元件提交。 如需詳細資訊，請參閱[刪除附加元件提交](delete-an-add-on-submission.md)。 |
 
 <span id="create-an-add-on-submission">
-## 建立附加元件提交
+## <a name="create-an-add-on-submission"></a>建立附加元件提交
 
 若要建立附加元件的提交，請遵循此程序。
 
@@ -55,8 +51,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**注意**
-            &nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
+  >**注意**  如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新圖示，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -86,12 +81,12 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
-## 資源
+## <a name="resources"></a>資源
 
 這些方法會使用下列資源來格式化資料。
 
 <span id="add-on-submission-object" />
-### 附加元件提交
+### <a name="add-on-submission"></a>附加元件提交
 
 此資源代表附加元件的提交。 下列範例示範此資源的格式。
 
@@ -126,17 +121,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -188,7 +173,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 | friendlyName  | 字串  |  基於顯示用途而使用的附加元件易記名稱。  |
 
 <span id="listing-object" />
-### 清單
+### <a name="listing"></a>清單
 
 此資源包含附加元件的清單資訊。 此資源具有下列值。
 
@@ -199,7 +184,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 |  title               |     字串    |   附加元件清單的標題。   |  
 
 <span id="icon-object" />
-### 圖示
+### <a name="icon"></a>圖示
 
 此資源包含附加元件清單的圖示資料。 此資源具有下列值。
 
@@ -209,34 +194,28 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 |  fileStatus               |   字串      |  圖示檔案的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
-### 定價
+### <a name="pricing"></a>定價
 
-此資源包含附加元件的定價資訊。
+此資源包含附加元件的定價資訊。 此資源具有下列值。
 
->**重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「定價」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的定價和銷售資料。 您將會發現下列行為變更：
-
-   > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，「定價」資源將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的定價資料。
-   > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略「定價」資源中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的定價資料。
-
-> 將來，我們會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式取得及更新附加元件提交的定價資訊。
-
-此資源具有下列值。
-
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| 值           | 類型    | 描述               |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    物件     |  機碼和值組的字典，其中每個機碼都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
-|  sales               |   陣列      |  包含附加元件銷售資訊的物件陣列。 如需詳細資訊，請參閱下方的[銷售](#sale-object)一節。    |     
+|  sales               |   陣列      |  **過時**。 包含附加元件銷售資訊的物件陣列。 如需詳細資訊，請參閱下方的[銷售](#sale-object)一節。    |     
 |  priceId               |   字串      |  指定附加元件[基本價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[價格區間](#price-tiers)。    |
 
 
 <span id="sale-object" />
-### 銷售
+### <a name="sale"></a>銷售
 
 此資源包含附加元件的銷售資訊。
 
->**重要**
-            &nbsp;&nbsp;在不久的將來，Microsoft 將會變更「Windows 開發人員中心」中附加元件提交的定價資料模型。 實作這項變更之後，將不再支援「銷售」資源，而您將暫時無法使用「Windows 市集提交 API」來取得或修改附加元件提交的銷售資料。 將來，我們會更新此 API 來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。 如需詳細資訊，請參閱[定價資源](#pricing-object)一節。
+>**重要**  **銷售**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
+
+   > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
+   > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。
+
+> 我們將來會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。
 
 此資源具有下列值。
 
@@ -251,7 +230,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="status-details-object" />
-### 狀態詳細資料
+### <a name="status-details"></a>狀態詳細資料
 
 此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
 
@@ -263,7 +242,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="status-detail-object" />
-### 狀態詳細資料
+### <a name="status-detail"></a>狀態詳細資料
 
 此資源包含有關提交的任何相關錯誤或警告的其他資訊。 此資源具有下列值。
 
@@ -274,7 +253,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="certification-report-object" />
-### 認證報告
+### <a name="certification-report"></a>認證報告
 
 此資源提供提交認證報告資料的存取。 此資源具有下列值。
 
@@ -285,13 +264,13 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 
-## 列舉
+## <a name="enums"></a>列舉
 
 這些方法會使用下列列舉。
 
 
 <span id="price-tiers" />
-### 價格區間
+### <a name="price-tiers"></a>價格區間
 
 下列值代表附加元件提交可用的價格區間。
 
@@ -304,7 +283,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="submission-status-code" />
-### 提交狀態碼
+### <a name="submission-status-code"></a>提交狀態碼
 
 下列值代表提交的狀態碼。
 
@@ -327,7 +306,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 管理附加元件](manage-add-ons.md)
@@ -335,6 +314,6 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

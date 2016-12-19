@@ -4,11 +4,11 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解資料繫結"
 description: "資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef5e2819a7fd18fb3ed3162fd8debe750f29c378
-ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 
 ---
-# 深入了解資料繫結
+# <a name="data-binding-in-depth"></a>深入了解資料繫結
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +19,8 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **注意**&nbsp;&nbsp;這個主題將提供資料繫結功能的詳細說明。 如需簡短且實用的簡介，請參閱[資料繫結概觀](data-binding-quickstart.md)。
+> **注意**
+              這個主題將提供資料繫結功能的詳細說明。 如需簡短且實用的簡介，請參閱[資料繫結概觀](data-binding-quickstart.md)。
 
 
 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。 資料繫結可讓您將資料與 UI 分開考量，為 app 建構更簡單的概念模型，以及更好的可讀性、測試性和維護性。
@@ -43,7 +44,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 -   下載 [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app。
 -   下載 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app。
 
-## 每個繫結包含這些項目
+## <a name="every-binding-involves-these-pieces"></a>每個繫結包含這些項目
 
 -   *繫結來源*。 這是繫結的資料來源，可以是任何類別的執行個體，且其成員有您想在 UI 中顯示的值。
 -   *繫結目標*。 這是 UI 中用來顯示資料的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)。
@@ -51,7 +52,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 
 在下列各節，我們將詳細說明繫結來源、繫結目標和繫結物件。 我們以一個範例來串連各節，此範例將一個按鈕的內容繫結到 **HostViewModel** 類別的 **NextButtonText** 字串屬性。
 
-### 繫結來源
+### <a name="binding-source"></a>繫結來源
 
 以下是一個非常基本的類別實作，可做為繫結來源。
 
@@ -145,7 +146,7 @@ public class HostViewModel : BindableBase
 
 您可以使用增量載入將清單控制項繫結到任意大的資料來源，而仍然保有高效能。 例如，您可以將清單控制項繫結到 Bing 影像查詢結果，而不需一次載入所有結果。 改為只立即載入一些結果，再視需要載入額外的結果。 若要支援增量載入，您必須在支援集合變更通知的資料來源上實作 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。 當資料繫結引擎要求更多資料時，您的資料來源必須提出適當的要求、整合結果，然後傳送適當的通知來更新 UI。
 
-### 繫結目標
+### <a name="binding-target"></a>繫結目標
 
 在下列兩個範例中，**Button.Content** 屬性是繫結目標，而它的值設定為宣告繫結物件的標記延伸。 首先顯示 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，接著顯示 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 通常是在標記中宣告繫結 (方便、易讀、可加工)。 但如果需要的話，您可以避免使用標記，改為立即 (以程式設計方式) 建立 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 類別的執行個體。
 
@@ -158,7 +159,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-### 使用 {x:Bind} 宣告的繫結物件
+### <a name="binding-object-declared-using-xbind"></a>使用 {x:Bind} 宣告的繫結物件
 
 在撰寫我們的 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 標記之前，還有一個步驟需要執行。 我們需要從代表標記頁面的類別中公開繫結來源類別。 作法是在 **HostView** 頁面類別中新增屬性 (在此案例中為 **HostViewModel** 類型)。
 
@@ -188,7 +189,9 @@ namespace QuizGame.View
 
 請注意我們指定給 **Path** 的值。 這個值是從頁面本身的角度來解譯，在此案例中，路徑最初會參考我們剛才加入至 **HostView** 頁面的屬性 **ViewModel**。 該屬性會傳回 **HostViewModel** 執行個體，因此我們可以進入該物件來存取 **HostViewModel.NextButtonText** 屬性。 此外，我們會指定 **Mode** 來覆寫一次性的 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 預設值。
 
-[**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 屬性支援多種繫結語法選項，可讓您繫結到巢狀屬性、附加屬性以及整數和字串索引子。 如需詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 繫結到字串索引子可以提供繫結至動態屬性的效果，卻不需實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 如需其他設定，請參閱 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
+[
+              **Path**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 屬性支援多種繫結語法選項，可讓您繫結到巢狀屬性、附加屬性以及整數和字串索引子。 如需詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 繫結到字串索引子可以提供繫結至動態屬性的效果，卻不需實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 如需其他設定，請參閱 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
 **注意**當 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦點時 (不是在使用者每次按下按鍵之後)，即會將對於 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的變更傳送到雙向繫結來源。
 
@@ -217,7 +220,7 @@ namespace QuizGame.View
 
 **{x:Bind}** 不適合晚期繫結案例 (例如，瀏覽 JSON 物件的字典結構)，也不適合 duck 類型，此為類型的弱式格式，其會以屬性名稱上的語彙相符項為依據 (「如果它走路、游泳的方式及呱呱聲像隻鴨子，那它就是隻鴨子」)。 透過 duck 類型，與 Age 屬性的繫結同樣可滿足 Person 或 Wine 物件。 針對這些案例，請使用 **{Binding}**。
 
-### 使用 {Binding} 宣告的繫結物件
+### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 預設會假設您繫結到標記頁面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 我們會將頁面的 **DataContext** 設定為繫結來源類別的執行個體 (在此案例中為 **HostViewModel** 類型)。 下列範例顯示宣告繫結物件的標記。 我們使用稍早已在「繫結目標」一節中使用的 **Button.Content** 繫結目標，並繫結到 **HostViewModel.NextButtonText** 屬性。
 
@@ -250,16 +253,22 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 **注意** 根據預設，當 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦點時，[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的變更會傳送到雙向繫結來源。 若要在使用者每次按下按鍵輸入傳送變更，請在標記中的繫結上將 **UpdateSourceTrigger** 設定為 **PropertyChanged**。 您可以也將 **UpdateSourceTrigger** 設定為 **Explicit**，以完全掌控何時將變更傳送到來源。 接著需要處理文字方塊上的事件 (通常是 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683))、在目標上呼叫 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以取得 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 物件，最後呼叫 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以程式設計方式更新資料來源。
 
-[**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 屬性支援多種繫結語法選項，可讓您繫結到巢狀屬性、附加屬性以及整數和字串索引子。 如需詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 繫結到字串索引子可以提供繫結至動態屬性的效果，卻不需實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) 屬性在元素對元素繫結上很有用。 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) 屬性有多種用途，其中之一是以更強大的方式替代 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 內的範本繫結。 如需其他設定，請參閱 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)和 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 類別。
+[
+              **Path**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 屬性支援多種繫結語法選項，可讓您繫結到巢狀屬性、附加屬性以及整數和字串索引子。 如需詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 繫結到字串索引子可以提供繫結至動態屬性的效果，卻不需實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 [
+              **ElementName**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) 屬性在元素對元素繫結上很有用。 [
+              **RelativeSource**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) 屬性有多種用途，其中之一是以更強大的方式替代 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 內的範本繫結。 如需其他設定，請參閱 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)和 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 類別。
 
-## 如果來源和目標不是相同類型，該怎麼辦？
+## <a name="what-if-the-source-and-the-target-are-not-the-same-type"></a>如果來源和目標不是相同類型，該怎麼辦？
 
 如果您想要根據佈林值屬性的值控制 UI 元素的可見度、想要以數值的範圍或趨勢的函數呈現 UI 元素的色彩，或想要在應該為字串的 UI 元素屬性中顯示日期和/或時間值，則需要將值的類型轉換成另一種類型。 在某些情況下，正確的解決方案是從繫結來源類別公開正確類型的另一個屬性，但將轉換邏輯封裝在那裡並維持為可測試。 但是，當您有大量的或組合龐大的來源和目標屬性時，這就顯的缺乏彈性和擴充性。 在那樣的情況下，您有幾個選項：
 
 * 如果使用 {x:Bind}，您可以直接繫結至函式來執行該轉換
 * 或者您可以指定一個值轉換器，這是為執行轉換所設計的物件 
 
-## 值轉換器
+## <a name="value-converters"></a>值轉換器
 
 以下是適用於一次性或單向繫結的值轉換器，可將 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 值轉換成包含月份的字串值。 此類別實作 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
@@ -367,13 +376,14 @@ End Class
 如果您將文字控制項繫結到不是字串的值，資料繫結引擎會將該值轉換為字串。 如果該值是參照類型，資料繫結引擎會呼叫 [**ICustomPropertyProvider.GetStringRepresentation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) 或 [**IStringable.ToString**](https://msdn.microsoft.com/library/Dn302136) (若有的話) 來擷取字串值，否則會呼叫 [**Object.ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 但請注意，繫結引擎會忽略隱藏基底類別實作的任何 **ToString** 實作。 子類別實作應該會改而覆寫基底類別 **ToString** 方法。 同樣地，在原生語言中，所有 Managed 物件似乎都實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) 與 [**IStringable**](https://msdn.microsoft.com/library/Dn302135)。 不過，對 **GetStringRepresentation** 與 **IStringable.ToString** 的所有呼叫都會路由傳送到 **Object.ToString** 或該方法的覆寫，永遠不會路由傳送到隱藏基底類別實作的新 **ToString** 實作。
 
 > [!NOTE]
-> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-## {x:Bind} 中的函式繫結
+## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函式繫結
 
 {x:Bind} 讓繫結路徑中的最後一個步驟可以是函式。 這可以用來執行轉換，以及執行和一個以上屬性相依的繫結。 請參閱 [**{x:Bind} 標記延伸**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)。
 
-## 使用 {x:Bind} 的資源字典
+<span id="resource-dictionaries-with-x-bind"/>
+## <a name="resource-dictionaries-with-xbind"></a>使用 {x:Bind} 的資源字典
 
 [{X:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)取決於程式碼產生，因此需要一個程式碼後置檔案，由其中的建構函式呼叫 **InitializeComponent** (初始化產生的程式碼)。 重複使用資源字典時需要具現化其類別 (以呼叫 **InitializeComponent**)，而不是參考其檔案名稱。 以下是在現有的資源字典中使用 {x:Bind} 的範例。
 
@@ -428,7 +438,7 @@ MainPage.xaml
 </Page>
 ```
 
-## 事件繫結和 ICommand
+## <a name="event-binding-and-icommand"></a>事件繫結和 ICommand
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 支援一個稱為「事件繫結」的功能。 除了在程式碼後置檔案中使用方法來處理事件，這項功能可讓您使用繫結來指定事件的處理常式。 假設您的 **MainPage** 類別有 **RootFrame** 屬性。
 
@@ -453,7 +463,7 @@ MainPage.xaml
 事件繫結技巧類似於實作與使用命令 (命令是一個屬性，可傳回實作 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx) 介面的物件)。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 與 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 都能搭配命令一起使用。 因此，您不需要實作命令模式許多次，您可以使用 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 範例 (在 [Common] 資料夾) 中的**DelegateCommand** 協助程式類別。
 
 
-## 繫結到資料夾或檔案集合
+## <a name="binding-to-a-collection-of-folders-or-files"></a>繫結到資料夾或檔案集合
 
 您可以使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間中的 API 來擷取資料夾和檔案資料。 不過，**GetFilesAsync**、**GetFoldersAsync** 及 **GetItemsAsync** 這些各式方法並不會傳回適合繫結到清單控制項的值。 您必須改為繫結到 [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) 類別之 [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422)、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) 及 [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) 方法的傳回值。 下列來自 [StorageDataSource 和 GetVirtualizedFilesVector 範例](http://go.microsoft.com/fwlink/p/?linkid=228621)的程式碼範例示範一般的使用模式。 請記得在您的應用程式套件資訊清單中宣告 **picturesLibrary** 功能，並確認您的 [圖片庫] 資料夾中有圖片。
 
@@ -486,7 +496,7 @@ MainPage.xaml
 
 另請注意，虛擬化向量可能會在填入某些項目的值之前先傳回 **null**。 例如，使用與虛擬化向量繫結之清單控制項的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 值之前，您應該先檢查是否有 **null**，或者改用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768)。
 
-## 繫結到依索引鍵分組的資料
+## <a name="binding-to-data-grouped-by-a-key"></a>繫結到依索引鍵分組的資料
 
 如果您取得一般項目集合 (例如書籍，以 **BookSku** 類別表示) 且使用常見的屬性做為索引鍵將項目分組 (例如 **BookSku.AuthorName** 屬性)，則結果稱為分組資料。 資料分組之後就不再是一般集合。 分組資料是群組物件的集合，其中每個群組物件都有 a) 索引鍵，b) 屬性符合該索引鍵的項目集合。 同樣以書籍為例子，依作者名稱將書籍分組會產生作者名稱群組的集合，其中每個群組都有 a) 索引鍵，即作者命名，b) **AuthorName** 屬性符合群組索引鍵的 **BookSku** 集合。
 
@@ -494,7 +504,9 @@ MainPage.xaml
 
 若要啟用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的分組功能，請將 [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) 設定為 **true**。 不論您是否也需要設定 [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) 屬性，這完全取決於您如何撰寫群組物件。 撰寫群組物件有兩種方式：「是一個群組」模式和「有一個群組」模式。 在「是一個群組」模式中，群組物件衍生自集合類型 (例如 **List&lt;T&gt;**)，因此群組物件本身實際上是項目群組。 使用這個模式時，您不需要設定 **ItemsPath**。 在「有一個群組」模式中，群組物件有集合類型 (例如 **List&lt;T&gt;**) 的一或多個屬性，因此群組以屬性形式而「有一個」項目群組 (或以數個屬性的形式而有數個項目群組)。 使用這個模式時，您需要將 **ItemsPath** 設定為包含項目群組的屬性名稱。
 
-下列範例說明「有一個群組」模式。 頁面類別有一個名為 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的屬性，可傳回檢視模型的執行個體。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 繫結至檢視模型的 **Authors** 屬性 (**Authors** 為群組物件的集合)，也指定是 **Author.BookSkus** 屬性包含分組項目。 最後，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 繫結至 **CollectionViewSource**，並定義其群組樣式以呈現群組中的項目。
+下列範例說明「有一個群組」模式。 頁面類別有一個名為 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的屬性，可傳回檢視模型的執行個體。 [
+              **CollectionViewSource**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209833) 繫結至檢視模型的 **Authors** 屬性 (**Authors** 為群組物件的集合)，也指定是 **Author.BookSkus** 屬性包含分組項目。 最後，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 繫結至 **CollectionViewSource**，並定義其群組樣式以呈現群組中的項目。
 
 ```csharp
     <Page.Resources>
@@ -569,21 +581,24 @@ MainPage.xaml
     </GridView>
 ```
 
-[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) 控制項是讓使用者檢視及瀏覽分組資料的絕佳方式。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 範例 app 說明如何使用 **SemanticZoom**。 在該 app 中，您可以檢視依作者分組的書籍清單 (放大檢視)，也可以縮小來查看作者的捷徑清單 (縮小檢視)。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 放大和縮小檢視實際上是繫結到相同 **CollectionViewSource** 的 **ListView** 或 **GridView** 控制項。
+[
+              **SemanticZoom**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh702601) 控制項是讓使用者檢視及瀏覽分組資料的絕佳方式。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 範例 app 說明如何使用 **SemanticZoom**。 在該 app 中，您可以檢視依作者分組的書籍清單 (放大檢視)，也可以縮小來查看作者的捷徑清單 (縮小檢視)。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 放大和縮小檢視實際上是繫結到相同 **CollectionViewSource** 的 **ListView** 或 **GridView** 控制項。
 
 ![SemanticZoom 的圖例](images/sezo.png)
 
 當您繫結到階層式資料時—例如分類內的子分類—您可以選擇在 UI 中以一系列項目控制項來顯示階層式層級。 選取一個項目控制項會決定後續項目控制項的內容。 您可以將每個清單繫結到它自身的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 並將 **CollectionViewSource** 執行個體一起繫結在鏈結中，使清單保持同步。 這稱為主要/詳細資料 (或清單/詳細資料) 檢視。 如需詳細資訊，請參閱[如何繫結到階層式資料並建立主要/詳細資料檢視](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)。
 
-## 診斷和偵錯資料繫結的問題
+<span id="debugging"/>
+## <a name="diagnosing-and-debugging-data-binding-problems"></a>診斷和偵錯資料繫結的問題
 
 繫結標記包含屬性的名稱 (針對 C#，有時還有欄位和方法)。 因此，當您重新命名屬性時，也需要變更任何參考它的繫結。 忘記這樣做會造成常見的資料繫結錯誤，而且您的 app 將無法編譯或無法正確執行。
 
-由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 建立的繫結物件在功能上大致相同。 但是 {x:Bind} 有繫結來源的類型資訊，而且會在編譯階段產生原始程式碼。 使用 {x:Bind} 時，可以對其餘的程式碼進行同樣的問題偵測。 這包括編譯時驗證您的繫結運算式，以及在產生做為頁面部分類別的原始程式碼中設定中斷點來偵錯。 您可以在 `obj` 資料夾的檔案中找到這些類別，名稱類似 (適用於 C#) `<view name>.g.cs`)。 如果繫結發生問題，請在 Microsoft Visual Studio 偵錯工具中開啟 [發生未處理的例外狀況時中斷]****。 偵錯工具會在那一刻中斷執行，讓您偵錯出了什麼問題。 對於繫結來源節點圖形的每個部分，{x:Bind} 產生的程式碼都採用相同的模式，您可以使用 **呼叫堆疊** 視窗中的資訊，協助您判斷導致問題的呼叫序列。
+由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 建立的繫結物件在功能上大致相同。 但是 {x:Bind} 有繫結來源的類型資訊，而且會在編譯階段產生原始程式碼。 使用 {x:Bind} 時，可以對其餘的程式碼進行同樣的問題偵測。 這包括編譯時驗證您的繫結運算式，以及在產生做為頁面部分類別的原始程式碼中設定中斷點來偵錯。 您可以在 `obj` 資料夾的檔案中找到這些類別，名稱類似 (適用於 C#) `<view name>.g.cs`)。 如果繫結發生問題，請在 Microsoft Visual Studio 偵錯工具中開啟 [發生未處理的例外狀況時中斷]。 偵錯工具會在那一刻中斷執行，讓您偵錯出了什麼問題。 對於繫結來源節點圖形的每個部分，{x:Bind} 產生的程式碼都採用相同的模式，您可以使用 **呼叫堆疊** 視窗中的資訊，協助您判斷導致問題的呼叫序列。
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 沒有繫結來源的類型資訊。 但在附加偵錯工具的情況下執行您的 app 時，所有繫結錯誤都會顯示在 Visual Studio 的 [輸出]**** 視窗中。
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 沒有繫結來源的類型資訊。 但在附加偵錯工具的情況下執行您的 app 時，所有繫結錯誤都會顯示在 Visual Studio 的 [輸出] 視窗中。
 
-## 在程式碼中建立繫結
+## <a name="creating-bindings-in-code"></a>在程式碼中建立繫結
 
 **注意** 本節只適用於 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因為您不能在程式碼中建立 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 繫結。 不過，部分與 {x:Bind} 相同的優點可以利用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 來達成，讓您能夠在任何相依性屬性上登錄變更通知。
 
@@ -627,7 +642,7 @@ Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 ```
 
-## {x:Bind} 和 {Binding} 功能比較
+## <a name="xbind-and-binding-feature-comparison"></a>{x:Bind} 和 {Binding} 功能比較
 
 | 功能 | {x:Bind} | {Binding} | 附註 |
 |---------|----------|-----------|-------|
@@ -651,6 +666,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

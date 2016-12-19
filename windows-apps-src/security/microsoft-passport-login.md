@@ -4,12 +4,12 @@ description: "這是一份完整逐步解說的第 1 部分，將說明如何建
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
-ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 ---
 
-# 建立 Microsoft Passport 登入應用程式
+# <a name="create-a-microsoft-passport-login-app"></a>建立 Microsoft Passport 登入應用程式
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +23,7 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 在您開始之前，請先參閱 [Microsoft Passport 及 Windows Hello](microsoft-passport.md)，讓自己對 Microsoft Passport 的運作方式有大致的概念。
 
-## 入門
+## <a name="get-started"></a>入門
 
 
 為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用安裝在 Windows 10 電腦上的 Visual Studio 2015 (Community 版或更新版本)。
@@ -33,20 +33,20 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 -   選擇 \[空白應用程式 (通用 Windows)\]，然後把您的應用程式命名為「PassportLogin」。
 -   建置並執行新的應用程式 (F5)，您應該會看到畫面出現空白的視窗。 關閉應用程式。
 
-![](images/passport-login-1.png)
+![passport 新增專案](images/passport-login-1.png)
 
-## 練習 1：使用 Microsoft Passport 登入
+## <a name="exercise-1-login-with-microsoft-passport"></a>練習 1：使用 Microsoft Passport 登入
 
 
 您將在這個練習中，了解如何查看電腦是否已設定 Microsoft Passport，以及如何使用 Microsoft Passport 來登入帳戶。
 
--   您將在新的專案中，為新的解決方案建立名為「Views」的新資料夾。 這個資料夾將包含會在這個範例中瀏覽的頁面。 請在方案總管中，用滑鼠右鍵按一下專案、選取 \[加入\] &amp; \[新增資料夾\]，然後把資料夾重新命為 Views。
+-   您將在新的專案中，為新的解決方案建立名為「Views」的新資料夾。 這個資料夾將包含會在這個範例中瀏覽的頁面。 在方案總管中，用滑鼠右鍵按一下專案、選取 \[加入\] &gt; \[新增資料夾\]，然後將資料夾重新命為 Views。
 
-    ![](images/passport-login-2.png)
+    ![passport 新增資料夾](images/passport-login-2.png)
 
--   用滑鼠右鍵按一下新的 \[Views\] 資料夾、選取 \[加入\] &amp; \[新增項目\]，然後選取 \[空白頁\]。 請將此頁面命名為「Login.xaml」。
+-   用滑鼠右鍵按一下新的 \[Views\] 資料夾、選取 \[加入\] &gt; \[新增項目\]，然後選取 \[空白頁\]。 請將此頁面命名為 "Login.xaml"。
 
-    ![](images/passport-login-3.png)
+    ![passport 新增空白頁面](images/passport-login-3.png)
 
 -   如要定義新登入頁面的使用者介面，請加入下列 XAML。 這個 XAML 將定義 StackPanel 來對齊下列子系：
 
@@ -160,11 +160,11 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
     }
     ```
 
--   如要建立 MicrosoftPassportHelper 類別，請用滑鼠右鍵按一下解決方案 \[PassportLogin (通用 Windows)\]，然後按一下 \[加入\] &gt; \[新增資料夾\]， 並將這個資料夾命名為 Utils。
+-   如要建立 MicrosoftPassportHelper 類別，請用滑鼠右鍵按一下解決方案 \[PassportLogin (通用 Windows)\]，然後按一下 \[加入\] &gt; \[新增資料夾\]， 將這個資料夾命名為 Utils。
 
-    ![](images/passport-login-5.png)
+    ![passport 建立協助程式類別](images/passport-login-5.png)
 
--   請用滑鼠右鍵按一下 \[Utils\] 資料夾，並按一下 \[加入\] &gt; \[類別\]。 然後把這個類別命名為「MicrosoftPassportHelper.cs」。
+-   用滑鼠右鍵按一下 \[Utils\] 資料夾，並按一下 \[加入\] &gt; \[類別\]。 然後把這個類別命名為「MicrosoftPassportHelper.cs」。
 -   請將 MicrosoftPassportHelper 的類別定義變更為 Public Static，然後加入下列方法，以便讓使用者知道是否已準備好使用 Microsoft Passport。 您將需要新增必要的命名空間。
 
     ```cs
@@ -207,11 +207,11 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
     using PassportLogin.Utils;
     ```
 
--   請建置並執行應用程式 (F5)。 系統將讓您瀏覽至登入頁面，而該頁面的 Microsoft Passport 橫幅會指出您的 Passport 是否已準備好使用。 您應該會看到綠色或藍色的橫幅，指出您電腦上 Microsoft Passport 的狀態。
+-   請建置並執行應用程式 (F5)。 系統將讓您瀏覽至登入頁面，而該頁面的 Microsoft Passport 橫幅會指出您的 Passport 是否已準備好使用。 您應該會看到綠色或藍色的橫幅，指出您電腦上的 Microsoft Passport 狀態。
 
-    ![](images/passport-login-6.png)
+    ![passport 登入畫面準備就緒](images/passport-login-6.png)
 
-    ![](images/passport-login-7.png)
+    ![passport 登入畫面尚未設定](images/passport-login-7.png)
 
 -   接下來，您必須建置登入用的邏輯。 請建立名為「Models」的新資料夾。
 -   請在 \[Models\] 資料夾中建立名為「Account.cs」的新類別。 這個類別將做為您的帳戶模型。 由於這是範例，這個帳戶模型將只會包含一個使用者名稱。 請將類別定義變更為 Public，然後加入 Username 屬性。
@@ -484,11 +484,11 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
     }
     ```
 
--   請建置並執行應用程式。 系統將帶您前往 Login 頁面。 請輸入「sampleUsername」，然後按一下 \[Login\] \(登入\)。 系統會以 Microsoft Passport 提示要求您輸入 PIN 碼。 在您正確輸入自己的 PIN 碼之後，CreatePassportKeyAsync 方法就能建立 Passport 金鑰。 請監視輸出視窗，看看是否有指出已成功登入的訊息。
+-   請建置並執行應用程式。 系統將帶您前往 Login 頁面。 請輸入「sampleUsername」，然後按一下 \[Login\] \(登入\)。 系統會以 Microsoft Passport 提示要求您輸入 PIN 碼。 在您正確輸入自己的 PIN 碼之後，CreatePassportKeyAsync 方法就能建立 Passport 金鑰。 請監視輸出視窗，看看是否顯示已成功登入的訊息。
 
-    ![](images/passport-login-8.png)
+    ![passport 登入 PIN 提示](images/passport-login-8.png)
 
-## 練習 2：歡迎頁面，以及使用者選取頁面
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>練習 2：歡迎使用頁面和使用者選取頁面
 
 
 您將在這個練習中，繼續先前的練習。 當使用者成功登入之後，他們應該會看見歡迎頁面，而該頁面會有能讓使用者登出或刪除自己帳戶的選項。 由於 Passport 會為每台電腦建立金鑰，您可以建立使用者選取畫面，來顯示所有曾經登入該電腦的使用者。 然後使用者就能選取其中一個帳戶，不用重新輸入密碼就能直接前往歡迎畫面，原因是該使用者已通過驗證來存取該電腦。
@@ -624,9 +624,9 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   請建置並執行應用程式。 然後使用「sampleUsername」登入，並按一下 \[Login\] \(登入\)。 請輸入您的 PIN 碼；如果登入成功，您應該會看到歡迎畫面。 請嘗試按一下能忘記使用者的按鈕，然後監視輸出視窗，看看使用者是否遭到刪除。 請注意，當使用者遭到刪除時，您仍舊會在歡迎頁面上。 您必須建立 app 可以瀏覽的使用者選取頁面。
 
-    ![](images/passport-login-9.png)
+    !passport 歡迎使用畫面](images/passport-login-9.png)
 
--   請在 \[Views\] 資料夾中，建立名為「UserSelection.xaml」的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
+-   在 \[Views\] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -872,9 +872,9 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   請建置並執行應用程式。 然後使用 "sampleUsername" 登入。 請輸入您的 PIN；如果登入成功，您將會看到歡迎畫面。 請按一下 Back to User List \(返回使用者清單\)。 現在，您應該會看到清單中有一位使用者。 如果您按一下該使用者，Passport 就會讓您重新登入，但不必重新輸入任何密碼等資料。
 
-    ![](images/passport-login-10.png)
+    ![passport 選取使用者清單](images/passport-login-10.png)
 
-## 練習 3：為新的 Passport 使用者註冊
+## <a name="exercise-3-registering-a-new-passport-user"></a>練習 3：為新的 Passport 使用者註冊
 
 
 您將在這個練習中建立新的頁面，以便利用 Passport 來建立新帳戶。 該頁面的運作方式與 Login 頁面類似。 Login 頁面會針對正移轉去使用 Passport 的現有使用者實作。 PassportRegister 頁面將為新的使用者建立 Passport 註冊。
@@ -959,20 +959,20 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
     }
     ```
 
--   請建置並執行應用程式。 然後嘗試為新的使用者註冊。 請返回使用者清單，然後驗證您可以選取該使用者來登入。
+-   請建置並執行應用程式。 然後嘗試為新的使用者註冊。 接著返回使用者清單，並驗證您可以選取該使用者來登入。
 
-    ![](images/passport-login-11.png)
+    ![passport 註冊新的使用者](images/passport-login-11.png)
 
-在這個實驗室中，您已經學會必要的基本技巧，來利用新的 Microsoft Passport API 驗證現有的使用者，以及為新使用者建立帳戶。 您可以利用這個新知識，來開始消除使用者必須記住您應用程式所用密碼的需求，且依然有信心自己的應用程式會受到使用者驗證的保護。 Windows 10 使用 Passport 技術，來支援 Windows Hello 的生物識別技術登入。 如果您已經在使用支援 Windows Hello 的電腦，您將會看到這幾個練習已經在支援 Windows Hello。
+在這個實驗室中，您已經學會必要的基本技巧，利用新的 Microsoft Passport API 來驗證現有的使用者，以及為新使用者建立帳戶。 您可以利用這個新知識，來開始消除使用者必須記住您應用程式所用密碼的需求，且依然有信心自己的應用程式會受到使用者驗證的保護。 Windows 10 使用 Passport 技術，來支援 Windows Hello 的生物識別技術登入。 如果您已經在使用支援 Windows Hello 的電腦，您將會看到這幾個練習已經在支援 Windows Hello。
 
 當身為開發人員的您實作對於 Microsoft Passport 的支援之後，就不需要為了支援 Windows Hello 而做任何額外的工作。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Microsoft Passport 及 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

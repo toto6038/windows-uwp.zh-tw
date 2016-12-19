@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "檔案、資料夾和媒體櫃"
 description: "了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。"
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
 
 ---
- # 檔案、資料夾和媒體櫃
+ # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 | [存取 SD 記憶卡](access-the-sd-card.md) | 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。 |
 | [檔案存取權限](file-access-permissions.md) | App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。 |
 
-## 相關範例
+## <a name="related-samples"></a>相關範例
 [資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
 [檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)
@@ -40,6 +40,6 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

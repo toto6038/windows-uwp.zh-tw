@@ -79,14 +79,14 @@ XAML 會在可行時使用更有效率的程式碼路徑來配置文字。 這�
 - [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx)：只有預設值為 0 才是快速路徑。
 - [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx)：只有 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值才是快速路徑。 **Clip** 值會停用快速路徑。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果 app 是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱＜版本調適型程式碼＞。
+> **注意**  在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果 app 是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱＜版本調適型程式碼＞。
 - [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)：只有各種 Typography 屬性的預設值才是快速路徑。
 - [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx)：如果 [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) 不是 0，則 **BaselineToBaseline** 和 **MaxHeight** 值會停用快速路徑。
 - [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx)：只有 **false** 是快速路徑。 將此屬性設為 **true** 以停用快速路徑。
 
 您可以在偵錯期間將 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) 屬性設為 **true** 以判斷文字是否使用快速路徑轉譯。 當這個屬性設為 true 時，快速路徑上的文字會以亮綠色顯示。
 
->**提示**&nbsp;&nbsp;這個功能已在 Build 2015 - [XAML 效能：最大化使用 XAML 建置的通用 Windows app 經驗的技術](https://channel9.msdn.com/Events/Build/2015/3-698)這個研討會中進行深度說明。
+>**提示**  這個功能已在 Build 2015 - [XAML 效能：最大化使用 XAML 建置的通用 Windows app 經驗的技術](https://channel9.msdn.com/Events/Build/2015/3-698)這個研討會中進行深度說明。
 
 
 
@@ -118,13 +118,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![在偵錯模式中轉譯的文字](images/text-block-rendering-performance.png)
 
->**注意**&nbsp;&nbsp;不在快速路徑上的文字色彩不會變更。 如果您將應用程式中的文字色彩指定為亮綠色，則在較慢的轉譯路徑上顯示該文字時，仍會將它顯示為亮綠色。 請注意，不要將因為文字位於快速路徑上而在 app 中設定為綠色的文字，以及因為偵錯設定而設定為綠色的文字相互混淆了。
+>**注意**  不在快速路徑上的文字色彩不會變更。 如果您將應用程式中的文字色彩指定為亮綠色，則在較慢的轉譯路徑上顯示該文字時，仍會將它顯示為亮綠色。 請注意，不要將因為文字位於快速路徑上而在 app 中設定為綠色的文字，以及因為偵錯設定而設定為綠色的文字相互混淆了。
 
 ## 格式化文字
 
 雖然 Text 屬性會儲存純文字，但是您可以將不同的格式設定選項套用到 TextBlock 控制項，來自訂應用程式中轉譯文字的方式。 您可以設定標準控制項屬性 (例如，FontFamily、FontSize、FontStyle、Foreground 及 CharacterSpacing) 來變更文字的外觀。 您也可以使用內嵌文字元素和 Typography 附加屬性來設定文字的格式。 這些選項只會影響 TextBlock 在本機顯示文字的方式，因此舉例來說，如果您複製文字並貼到 RTF 控制項，即不會套用任何格式設定。
 
->**注意**&nbsp;&nbsp;請記住，如上一節所述，快速路徑上的內嵌文字元素和非預設印刷格式值不會轉譯。
+>**注意**  請記住，如上一節所述，快速路徑上的內嵌文字元素和非預設印刷格式值不會轉譯。
 
 
 ### 內嵌元素

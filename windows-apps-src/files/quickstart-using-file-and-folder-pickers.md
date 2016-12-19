@@ -1,18 +1,18 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用選擇器開啟檔案和資料夾"
 description: "讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。"
 translationtype: Human Translation
-ms.sourcegitcommit: 232008b7f80aceab201d5bedd744eedfe995648e
-ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 ---
 
-# 使用選擇器開啟檔案和資料夾
+# <a name="open-files-and-folders-with-a-picker"></a>使用選擇器開啟檔案和資料夾
 
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -27,7 +27,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
  
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
@@ -38,7 +38,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
     請參閱[檔案存取權限](file-access-permissions.md)。
 
-## 檔案選擇器 UI
+## <a name="file-picker-ui"></a>檔案選擇器 UI
 
 
 檔案選擇器會顯示資訊以引導使用者，並且在開啟或儲存檔案時提供一致的體驗。
@@ -53,7 +53,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![有兩個選取要開啟之檔案的檔案選擇器。](images/picker-multifile-600px.png)
 
-## 選擇器的運作方式
+## <a name="how-pickers-work"></a>選擇器的運作方式
 
 
 使用選擇器，您的 app 可以存取、瀏覽和儲存使用者系統上的檔案和資料夾。 您的 app 會以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件的形式接收這些挑中的項目，您稍後可以進行操作。
@@ -64,7 +64,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![圖表中顯示的程序是一個 app 透過另一個 app 開啟檔案，並將檔案選擇器當作兩個 app 之間的介面使用。](images/app-to-app-diagram-600px.png)
 
-## 挑選單一檔案：完整程式碼清單
+## <a name="pick-a-single-file-complete-code-listing"></a>挑選單一檔案：完整程式碼清單
 
 
 ```CSharp
@@ -88,7 +88,7 @@ else
 }
 ```
 
-## 挑選單一檔案：逐步說明
+## <a name="pick-a-single-file-step-by-step"></a>挑選單一檔案：逐步說明
 
 
 呼叫檔案選擇器牽涉到建立和自訂檔案選擇器物件，然後顯示檔案選擇器供使用者挑選一或多個項目。
@@ -153,7 +153,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## 挑選資料夾：完整程式碼清單
+## <a name="pick-a-folder-complete-code-listing"></a>挑選資料夾：完整程式碼清單
 
 
 ```CSharp
@@ -185,6 +185,6 @@ else
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

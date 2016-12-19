@@ -4,19 +4,19 @@ ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。"
 title: "媒體傳播"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# 媒體傳播
+# <a name="media-casting"></a>媒體傳播
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
 
-## MediaElement 內建的媒體傳播
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>MediaPlayerElement 內建的媒體傳播
 
 從通用 Windows app 傳播媒體最簡單的方式是使用 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項內建的傳播功能。
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 > [!NOTE] 
 > 從 Windows 10 版本 1607 開始，建議您使用 **MediaPlayer** 類別來播放媒體項目。 **MediaPlayerElement** 是輕量型的 XAML 控制項，可用來轉譯 XAML 頁面中的 **MediaPlayer** 內容。 **MediaElement** 控制項仍持續受支援，以提供回溯相容性。 如需使用 **MediaPlayer** 與 **MediaPlayerElement** 播放媒體內容的詳細資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。 如需使用 **MediaSource** 和相關 API 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。
 
-## 使用 CastingDevicePicker 傳播媒體
+## <a name="media-casting-with-the-castingdevicepicker"></a>使用 CastingDevicePicker 傳播媒體
 
 將媒體傳播到裝置的第二個方法是使用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525)。 若要使用這個類別，請在專案中加入 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 命名空間。
 
@@ -78,7 +78,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## 使用自訂裝置選擇器來傳播媒體
+## <a name="media-casting-with-a-custom-device-picker"></a>使用自訂裝置選擇器來傳播媒體
 
 下節說明如何從程式碼中列舉傳播裝置並起始連線，以建立您自己的傳播裝置選擇器 UI。
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
