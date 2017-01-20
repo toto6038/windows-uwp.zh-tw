@@ -5,34 +5,44 @@ title: "視覺化回饋"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+keywords: "視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果、輸入、互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 ---
 
-# 視覺化回饋的指導方針
+# <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
-
-## 建議事項
+## <a name="recommendations"></a>建議
 
 -   儘可能嘗試與原始控制項範本保持接近，以獲得最佳的控制項及應用程式效能。
 -   如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
 -   不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
 -   不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-接觸點視覺效果對於要求準確度和精確度的觸控互動相當重要。 例如，您的 App 應該清楚地指示點選位置，讓使用者在未命中目標時能夠知到未命中、誤差有多少，以及必須要做什麼調整。
+接觸點視覺效果對於要求準確度和精確度的觸控互動相當重要。 例如，您的應用程式應該清楚地指示點選位置，讓使用者在未命中目標時能夠知到未命中、誤差有多少，以及必須要做什麼調整。
 
-使用可用的預設 XAML 平台控制項，將可確保您的 App 在所有裝置上及在所有輸入情況下都能正確運作。 如果您的 App 包含需要自訂回饋的自訂互動，那麼您應當確保回饋適當、可跨輸入裝置，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
+使用可用的預設 XAML 平台控制項，可確保您的應用程式在所有裝置上及在所有輸入情況下都能正確運作。 如果您的應用程式包含需要自訂回饋的自訂互動，那麼您應當確保回饋適當、可跨輸入裝置，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
 
 [!IMPORTANT] 建議您不要變更內建手勢的互動行為。 
 
@@ -50,11 +60,11 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 | --- | --- | --- | --- |
 | 觸控視覺效果 | 滑鼠/觸控板視覺效果 | 手寫筆視覺效果 | 鍵盤視覺效果 |
 
-## 高可見度焦點視覺效果
+## <a name="high-visibility-focus-visuals"></a>高可見度焦點視覺效果
 
 所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
 
-## 色彩商標和自訂
+## <a name="color-branding--customizing"></a>色彩商標和自訂
 
 **框線屬性**
 
@@ -82,7 +92,7 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
 
-粗細、邊界或 App 開發人員是否想要使用焦點視覺效果是在個別控制項上決定。
+粗細、邊界或應用程式開發人員是否想要使用焦點視覺效果是在個別控制項上決定。
 
 **色彩屬性**
 
@@ -100,7 +110,7 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 **適用於設計人員**
 * [移動瀏覽的指導方針](guidelines-for-panning.md)
@@ -129,6 +139,6 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

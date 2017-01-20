@@ -6,11 +6,11 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8a9a9009574b46ff3ae5b05569fb871a49e2f1ea
 
 ---
-# 控制項和模式的簡介
+# <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 - 設定控制項上的屬性，例如寬度、高度或前景色彩。 
 - 在控制項的事件處理常式中新增程式碼，使其執行某些功能。 
 
-## 新增控制項
+## <a name="add-a-control"></a>新增控制項
 您可以使用數種方式將控制項新增到應用程式：
  
 - 使用設計工具，例如 Blend for Visual Studio 或 Microsoft Visual Studio Extensible Application Markup Language (XAML) 設計工具。 
@@ -43,7 +43,7 @@ Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應
 
 您也可以將控制項從 [工具箱] 拖曳到 XAML 設計工具。
 
-## 設定控制項的名稱 
+## <a name="set-the-name-of-a-control"></a>設定控制項的名稱 
 
 若要在程式碼中處理控制項，您需設定其 [x:Name](../xaml-platform/x-name-attribute.md) 屬性，然後在您的程式碼中以名稱參照該控制項。 您可以在 Visual Studio [屬性] 視窗或 XAML 中設定名稱。 以下說明如何使用 [屬性] 視窗頂端的 [名稱] 文字方塊來變更目前所選控制項的名稱。 
 
@@ -60,7 +60,7 @@ Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## 設定控制項屬性 
+## <a name="set-the-control-properties"></a>設定控制項屬性 
 
 您可以使用屬性 (Property) 來指定控制項的外觀、內容以及其他屬性 (Attribute)。 當您使用設計工具新增控制項時，Visual Studio 可能會幫您設定控制大小、位置和內容的一些屬性。 在 [設計] 檢視中選取和操作控制項，就可以變更部分屬性 (例如 Width、Height 或 Margin)。 這個圖例顯示 [設計] 檢視中的部分調整大小工具。 
 
@@ -98,7 +98,7 @@ Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## 建立事件處理常式 
+## <a name="create-an-event-handler"></a>建立事件處理常式 
 
 每個控制項都有事件可讓您回應使用者的動作，或是應用程式的其他變更。 例如，Button 控制項有一個 Click 事件，會在使用者按一下 Button 時引發。 您可以建立方法來處理事件，該方法稱為事件處理常式。 您可以在 [屬性] 視窗、XAML 或程式碼中建立控制項事件和事件處理常式方法的關聯。 如需事件的詳細資訊，請參閱[事件與路由事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 
@@ -136,9 +136,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-
-
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 -   [依功能排序的控制項索引](controls-by-function.md)
 -   [Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
@@ -148,6 +146,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,12 +6,12 @@ title: "開發通用 Windows 10 app"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
-ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 
 ---
 
-# 開發全人 Windows 應用程式  
+# <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
 本文討論如何開發無障礙的通用 Windows 平台 (UWP) App。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
 
@@ -23,12 +23,12 @@ ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 2. 確保您的 app 支援[鍵盤瀏覽](#keyboard-navigation)，以供無法使用滑鼠或觸控螢幕的人使用。
 3. 確定您的 app 支援無障礙的[色彩和對比](#color-and-contrast)設定。
 
-## 程式設計存取  
+## <a name="programmatic-access"></a>程式設計存取  
 程式設計存取對於在 App 中建立協助工具是非常重要的。 這是透過為 App 的內容和互動式 UI 元素設定無障礙名稱 (必要) 及描述 (選用) 來達成。 這將能確保 UI 控制項皆已公開給螢幕助讀程式 (例如朗讀器) 等的輔助技術 (AT)，或是替代輸出裝置 (例如點字顯示)。 在沒有程式設計存取的情況下，輔助技術的 API 將無法正確解譯資訊，讓使用者無法充分使用產品，或迫使 AT 使用並非用來做為協助工具介面使用的未記載程式設計介面或技術。 當 UI 控制項針對輔助技術公開時，AT 將能夠判斷可供使用者使用的動作和選項。  
 
 如需使 app 的 UI 元素可供輔助技術 (AT) 使用的詳細資訊，請參閱[公開基本的協助工具資訊](basic-accessibility-information.md)。
 
-## 鍵盤瀏覽  
+## <a name="keyboard-navigation"></a>鍵盤瀏覽  
 讓視障或行動不便的使用者能夠透過鍵盤瀏覽 UI，是一件非常重要的事。 不過，只有需要使用者互動以運作的 UI 控制項才需要鍵盤焦點。 不需要動作的元件 (例如靜態影像) 並不需要鍵盤焦點。  
 
 請務必記得，鍵盤瀏覽和使用滑鼠或觸控瀏覽的不同之處，在於鍵盤瀏覽是線性的。 考慮鍵盤瀏覽時，請思考您的使用者與產品互動的方式，以及什麼樣的瀏覽才是合乎邏輯的方式。 在西方文化中，人們的閱讀方式是從左到右，從上到下。 因此，常見的鍵盤瀏覽做法便是跟隨這個模式。  
@@ -45,11 +45,11 @@ ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 
 此外，[針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書，針對這個主題有一篇名叫_設計邏輯階層_的絕佳章節。
 
-## 色彩和對比  
+## <a name="color-and-contrast"></a>色彩和對比  
 Windows 的其中一個內建協助工具功能便是高對比模式，此模式能增加螢幕上文字和影像的色彩對比。 對於一些人來說，提升色彩對比能降低眼睛的疲勞度，並使畫面更容易閱讀。 當您在高對比中驗證 UI 時，應該要檢查控制項的程式碼是否有一致，且依照系統色彩 (而非硬式編碼色彩) 進行撰寫，以確保使用者能和未使用高對比之使用者看到一樣的控制項。  
 
 XAML
-```xml
+```xaml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
 如需使用系統色彩和資源的詳細資訊，請參閱 [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md)。
@@ -62,9 +62,9 @@ XAML
 
 **色彩對比率** - 已更新的美國身心障礙者法第 508 項及其他法律，要求文字和其背景之間的預設色彩對比必須為 5:1。 針對較大的文字 (18 點字型大小，或 14 點及粗體)，預設對比必須為 3:1。  
 
-**色彩組合** - 大約有 7% 的男性 (以及少於 1 % 的女性) 擁有某種形式的色彩缺陷。 患有色盲的使用者將無法區分部分顏色，因此請務必不要只使用色彩來傳達應用程式中的狀態或意義。 針對裝飾性的影像 (例如圖示或背景)，色彩組合應該要以色盲使用者能夠最大限度地認知該影像為前提做出選擇。  
+**色彩組合** - 大約有 7% 的男性 (以及少於 1 % 的女性) 患有某種形式的色盲。 患有色盲的使用者將無法區分部分顏色，因此請務必不要只使用色彩來傳達應用程式中的狀態或意義。 針對裝飾性的影像 (例如圖示或背景)，色彩組合應該要以色盲使用者能夠最大限度地認知該影像為前提做出選擇。  
 
-## 協助工具檢查清單  
+## <a name="accessibility-checklist"></a>協助工具檢查清單  
 下列為協助工具檢查清單的簡短版本：
 
 1. 為 App 的內容和互動式 UI 元素設定無障礙名稱 (必要) 以及描述 (選用)。
@@ -76,7 +76,7 @@ XAML
 
 如需詳細資料，請參閱完整的[協助工具檢查清單](accessibility-checklist.md)主題。
 
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [設計通用軟體](designing-inclusive-software.md)  
 * [通用設計](http://design.microsoft.com/inclusive)
 * [協助工具應避免的做法](practices-to-avoid.md)
@@ -86,6 +86,6 @@ XAML
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

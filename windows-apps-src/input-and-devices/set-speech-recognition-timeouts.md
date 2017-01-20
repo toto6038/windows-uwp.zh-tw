@@ -5,22 +5,32 @@ title: "設定語音辨識逾時"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+keywords: "speech, voice, speech recognition, natural language, dictation, input, user interaction, 語音, 聲音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 770a34c7c190540456a2748290b0aa557fcc1800
 
 ---
 
-# 設定語音辨識逾時
+# <a name="set-speech-recognition-timeouts"></a>設定語音辨識逾時
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)</li>
+<li>[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</li>
+</ul>
+</div>
 
--   [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)
--   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
-
-
-## 設定逾時
+## <a name="set-a-timeout"></a>設定逾時
 
 
 在這裡，我們會指定各種 [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 值：
@@ -29,7 +39,7 @@ ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
 -   BabbleTimeout - SpeechRecognizer 在假設語音輸入已結束並且完成辨識作業之前，繼續聆聽無法辨識音效 (babble) 的時間長度。
 -   EndSilenceTimeout - SpeechRecognizer 偵測靜音 (在產生辨識結果之前) 並且假設語音輸入已結束的時間長度。
 
-**注意：**每個辨識器都可以設定逾時。
+**注意** 每個辨識器都可以設定逾時。
 
  
 
@@ -40,7 +50,7 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 * [語音互動](speech-interactions.md)
@@ -56,6 +66,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -5,24 +5,27 @@ title: "Universal Windows Platform (UWP) app 的命令設計基本知識"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bc6ad505dff838204fcf1d0764ec075a382d56cd
 
 ---
 
-#  UWP app 的命令設計基本知識
+#  <a name="command-design-basics-for-uwp-apps"></a>UWP app 的命令設計基本知識
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 在通用 Windows 平台 (UWP) app 中，*命令元素*是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。 此文件說明命令元素，例如按鈕和核取方塊、它們支援的互動，以及裝載它們的命令表面 (例如命令列和操作功能表)。
 
-## <span id="Provide_the_right_type_of_interactions"></span><span id="provide_the_right_type_of_interactions"></span><span id="PROVIDE_THE_RIGHT_TYPE_OF_INTERACTIONS"></span>提供正確的互動類型
+## <a name="provide-the-right-type-of-interactions"></a>提供正確的互動類型
 
 
 設計命令介面時，最重要的是決定使用者應該可以做甚麼事情。 例如，如果您正在建立相片應用程式，使用者會需要用來編輯相片的工具。 不過，如果您正在建立會顯示相片的社交媒體應用程式，影像編輯或許不是優先考量，因此可以省略編輯工具以節省空間。 決定您希望使用者完成的事，並提供工具協助他們完成。
 
 如需如何規劃 app 正確互動的建議，請參閱[規劃您的 app](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx)。
 
-## <span id="Use_the_right_command_element_for_the_interaction"></span><span id="use_the_right_command_element_for_the_interaction"></span><span id="USE_THE_RIGHT_COMMAND_ELEMENT_FOR_THE_INTERACTION"></span>針對互動使用正確的命令元素
+## <a name="use-the-right-command-element-for-the-interaction"></a>針對互動使用正確的命令元素
 
 
 針對正確的互動使用正確的元素，可以讓人感到 app 是直覺易用的，並與混亂難用的 app 產生區別。 Universal Windows Platform (UWP) 在控制項的表單中，提供您許多可在應用程式中使用的命令元素。 以下是一些最常見的控制項清單以及它們啟用的互動摘要。
@@ -39,7 +42,7 @@ ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 
 如需完整清單，請參閱[控制項與 UI 元素](https://dev.windows.com/design/controls-patterns)
 
-## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span> 在正確的表面放置命令
+##  <a name="place-commands-on-the-right-surface"></a>在正確的表面放置命令
 
 
 您可以在 app 中的數個表面放置命令元素，包括 app 畫布 (app 的內容區域) 或可當作命令容器的命令元素，例如命令列、功能表、對話方塊，以及飛出視窗。 以下是一些放置命令的一般建議：
@@ -53,36 +56,34 @@ ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 
 以下是 Windows 提供的命令表面清單，以及何時使用的建議。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
+<table class="uwpd-top-aligned-table">
+
 <tr class="header">
 <th align="left">表面</th>
 <th align="left">說明</th>
 </tr>
-</thead>
-<tbody>
+
 <tr class="odd">
-<td align="left">應用程式畫布 (內容區域)
+<td align="left" style="vertical-align: top">應用程式畫布 (內容區域)
 <p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
-<td align="left"><p>如果命令很重要，而且使用者經常用來完成核心案例，請將它放在畫布上 (應用程式內容區域)。 因為您可將命令放在靠近它們影響的物件 (或放在物件上)，將命令放在畫布上使它們更明顯、更易於使用。</p>
+
+<td align="left" style="vertical-align: top;">如果命令很重要，而且使用者經常用來完成核心案例，請將它放在畫布上 (應用程式內容區域)。 因為您可將命令放在靠近它們影響的物件 (或放在物件上)，將命令放在畫布上使它們更明顯、更易於使用。
 <p>然而，請仔細選擇要放在畫布上的命令。 App 畫布上過多的命令會佔去寶貴的螢幕空間，而且會妨礙使用者。 如果某個命令不常使用，請考慮將它放在其他的命令表面，例如在功能表或是命令列中的「更多」&quot;&quot;區域。</p></td>
 </tr>
+
 <tr class="even">
-<td align="left">[命令列](https://msdn.microsoft.com/library/windows/apps/hh465302)
+<td align="left" style="vertical-align: top;">[命令列](https://msdn.microsoft.com/library/windows/apps/hh465302)
 <p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
-<td align="left"><p>命令列可讓使用者輕鬆存取動作。 您可以使用命令列來顯示使用者內容專用命令或選項，如相片選取或繪圖模式。</p>
+<td align="left" style="vertical-align: top;">命令列可讓使用者輕鬆存取動作。 您可以使用命令列來顯示使用者內容專用命令或選項，如相片選取或繪圖模式。
 <p>命令列可以放置於畫面頂端、畫面底部，或同時放置於畫面頂端與底部。 相片編輯 app 的這個設計顯示了內容區域和命令列：</p>
 <p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
 <p>如需有關命令列的詳細資訊，請參閱 [Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302) (命令列指導方針) 文章。</p></td>
 </tr>
+
 <tr class="odd">
-<td align="left">[功能表和操作功能表](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left" style="vertical-align: top;">[功能表和操作功能表](../controls-and-patterns/menus.md)
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
-<td align="left"><p>有時候將多個命令群組為命令功能表是更有效率的做法。 功能表能讓您使用更少的空間顯示更多的選項。 功能表可以包含互動式控制項。</p>
+<td align="left" style="vertical-align: top;">有時候將多個命令群組為命令功能表是更有效率的做法。 功能表能讓您使用更少的空間顯示更多的選項。 功能表可以包含互動式控制項。
 <p>操作功能表可以提供常用動作的快速鍵，並提供存取只與特定內容相關的次要命令。</p>
 <p>操作功能表是針對以下類型的命令和命令情境：</p>
 <ul>
@@ -95,30 +96,31 @@ ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 <p><img src="images/subway/uap-subway-ak-8in-dashboard-200.png" alt="A context menu in an subway app" /></p>
 <p>如需有關操作功能表的詳細資訊，請參閱[操作功能表的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465308)文章。</p></td>
 </tr>
+
 <tr class="even">
-<td align="left">[對話方塊控制項](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left" style="vertical-align: top;">[對話方塊控制項](../controls-and-patterns/dialogs.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
-<td align="left"><p>對話方塊是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 大部分的狀況下，對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止，而且通常需要使用者執行某種類型的動作來關閉對話方塊。</p>
+<td align="left" style="vertical-align: top;">對話方塊是提供內容相關應用程式資訊的強制回應 UI 重疊項目。 大部分的狀況下，對話方塊會阻擋與應用程式視窗的互動，直到對話方塊確實關閉為止，而且通常需要使用者執行某種類型的動作來關閉對話方塊。
 <p>對話方塊具有破壞性，因此只應在特定情況下使用。 如需詳細資訊，請參閱 [When to confirm or undo actions](#whentoconfirm) (確認或復原動作的時機) 章節。</p></td>
 </tr>
+
 <tr class="odd">
-<td align="left">[飛出視窗](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left" style="vertical-align: top;">[飛出視窗](../controls-and-patterns/dialogs.md)
 <p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
-<td align="left"><p>一種輕量型的內容相關快顯視窗，可顯示與使用者的動作相關的 UI。 使用飛出視窗可以：</p>
+<td align="left" style="vertical-align: top;">一種輕量型的內容相關快顯視窗，可顯示與使用者的動作相關的 UI。 使用飛出視窗可以：
 <p></p>
 <ul>
 <li>顯示功能表。</li>
 <li>顯示有關項目的更多細節。</li>
 <li>要求使用者確認動作而不中斷與應用程式的互動。</li>
 </ul>
-<p>只要點選或按一下飛出視窗外的地方，就可以關閉飛出視窗。 如需有關飛出視窗控制項的詳細資訊，請參閱[對話方塊、功能表和快顯視窗](../controls-and-patterns/dialogs-popups-menus.md)文章。</p></td>
+<p>只要點選或按一下飛出視窗外的地方，就可以關閉飛出視窗。 如需飛出視窗控制項的詳細資訊，請參閱[對話方塊和飛出視窗](../controls-and-patterns/dialogs.md)文章。</p></td>
 </tr>
-</tbody>
 </table>
 
  
 
-## <span id="whentoconfirm"></span><span id="WHENTOCONFIRM"></span>確認或復原動作的時機
+## <a name="when-to-confirm-or-undo-actions"></a>確認或復原動作的時機
 
 
 無論是設計多良好的使用者介面和多細心的使用者，在有些時候使用者還是會執行意料外的動作而想取消。 在這些情況下，應用程式透過要求使用者確認執行動作，或提供復原最近動作的功能會十分有幫助。
@@ -135,11 +137,12 @@ ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
     -   修改內容或編輯文字
     -   重新命名檔案
 
-**提示** 請注意 app 使用確認對話方塊的頻率；在使用者犯錯時雖然非常有幫助，但在使用者有意執行某些動作時也是一種妨礙。
+> [!TIP]
+> 請注意應用程式使用確認對話方塊的頻率；在使用者犯錯時雖然非常有幫助，但在使用者有意執行某些動作時也是一種妨礙。
 
  
 
-## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span> 最佳化特定的輸入類型
+##  <a name="optimize-for-specific-input-types"></a>最佳化特定的輸入類型
 
 
 如需最佳化特定輸入類型或裝置之使用者體驗的詳細資訊，請參閱[互動基本資訊](../input-and-devices/input-primer.md)。
@@ -157,6 +160,6 @@ ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

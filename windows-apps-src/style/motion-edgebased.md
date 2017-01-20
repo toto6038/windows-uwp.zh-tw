@@ -6,24 +6,28 @@ ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
 ---
 
-# 以邊緣為基礎的 UI 動畫
+# <a name="edge-based-ui-animations"></a>以邊緣為基礎的 UI 動畫
 
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是 app 表面的一部分，則可能需要重新調整 app 其餘部分的大小以容納它。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
+</ul>
+</div>
 
--   [**EdgeUIThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
-
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   使用邊緣 UI 動畫來顯示或隱藏無法延伸到畫面中的自訂訊息或錯誤列。
@@ -38,10 +42,10 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
     ![說明何時使用邊緣 UI 或面板動畫和重新定位。](images/edgevsreposition.png)
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
-**適用於開發人員 (XAML)**
+**適用於開發人員**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [讓以邊緣為基礎的 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -60,6 +64,6 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

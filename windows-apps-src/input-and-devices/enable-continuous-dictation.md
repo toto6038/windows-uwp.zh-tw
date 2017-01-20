@@ -5,32 +5,39 @@ title: "啟用連續聽寫"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+keywords: "語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: f4353807c83cbf91c385b31acfd481abb6ea5aed
 
 ---
 
-# 連續聽寫
+# <a name="continuous-dictation"></a>連續聽寫
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 了解如何擷取及辨識較長且連續的聽寫語音輸入。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)</li>
+<li>[**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)</li>
+</ul>
+</div>
 
--   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
--   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
+在[語音辨識](speech-recognition.md)中，您可以學習如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653244) 物件的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653226) 方法抓取或辨識相對簡短的語音輸入，例如，在撰寫簡短的簡訊服務 (SMS) 訊息或問問題時。
 
-
-在[語音辨識](speech-recognition.md)中，您可以學習如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 物件的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 方法抓取或辨識相對簡短的語音輸入，例如，在撰寫簡短的簡訊服務 (SMS) 訊息或問問題時。
-
-針對較長、連續語音辨識的工作階段 (例如聽寫或電子郵件) 時，請使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 屬性來取得 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 物件。
+針對較長、連續語音辨識的工作階段 (例如聽寫或電子郵件) 時，請使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 屬性來取得 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 物件。
 
 
 
-## 設定
+## <a name="set-up"></a>設定
 
 
 您的應用程式需要幾項物件來管理連續聽寫工作階段：
@@ -64,7 +71,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## 初始化
+## <a name="initialization"></a>初始化
 
 
 初始化連續語音辨識時，您必須：
@@ -72,7 +79,7 @@ private StringBuilder dictatedTextBuilder;
 -   擷取 UI 執行緒的發送器 (如果您在連續辨識事件處理常式中更新您應用程式的 UI)。
 -   初始化語音辨識器。
 -   編譯內建聽寫文法。
-    **注意：**語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
+    **注意**   語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 -   設定辨識事件的事件接聽程式。
 
 在這個範例中，我們會在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中初始化語音辨識。
@@ -99,7 +106,7 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## 處理辨識事件
+## <a name="handle-recognition-events"></a>處理辨識事件
 
 
 您可以透過呼叫 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來擷取單一、簡短的發音或片語。 
@@ -121,7 +128,7 @@ SpeechRecognitionCompilationResult result =
 
 以下是支援連續辨識的基本步驟：  
 
-1.  在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中註冊 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 連續辨識事件的處理常式。
+1.  在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/dn913900) 頁面事件中註冊 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/br227508) 連續辨識事件的處理常式。
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
@@ -129,7 +136,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然後我們檢查 [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 屬性。 如果「信賴等級」的值是 [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 或更高，我們就會將文字附加到 StringBuilder。 我們也會在收集輸入時更新 UI 。
 
-    **注意：**[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
+    **注意**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
 ```    CSharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -161,7 +168,7 @@ private async void ContinuousRecognitionSession_ResultGenerated(
 
     工作階段會在您呼叫 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法 (在下一節中說明) 時結束。 工作階段也可以在發生錯誤時結束，或在使用者停止說話時結束。 檢查事件引數的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 屬性來判斷工作階段的結束原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
 
-    在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中註冊 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 連續辨識事件的處理常式。
+    在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/dn913899) 頁面事件中註冊 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br227508) 連續辨識事件的處理常式。
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
@@ -169,7 +176,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件處理常式會檢查 Status 數性以判斷辨識是否成功。 它也會處理使用者已經停止說話的情況。 通常，[**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) 會被視為成功辨識，因為它表示使用者已經結束說話。 您應該在您的程式碼中處理此情況，以提供良好體驗。
 
-    **注意：**[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
+    **注意**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
 ```    CSharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -204,14 +211,14 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## 提供進行中的辨識回應
+## <a name="provide-ongoing-recognition-feedback"></a>提供進行中的辨識回應
 
 
 當人們交談時，他們通常會依賴前後相關內容來完整了解說話內容。 語音辨識也一樣，通常需要前後相關內容來提供高信賴等級的辨識結果。 例如，只有能夠在前後文字中收集更多相關內容時才能區分 "weight" 與 "wait" 這兩個字。 辨識器在能夠正確辨識某個字或某幾個字之後，才會引發 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。
 
 這可能會導致使用者體驗不是那麼理想，因為使用者會持續說話，且辨識器在達到夠高的信賴等級以引發 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件之前不會提供任何結果。
 
-處理 [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) 事件以改善此明顯的回應性不足問題。 無論辨識器是否會針對正在處理的文字產生一組新的可能相符項目，都會引發此事件。 事件引數會提供包含目前相符項目的 [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) 屬性。 在使用者連續說話時向使用者顯示這些項目，並讓他們知道處理作業仍在作用中。 在信賴等級提高並決定辨識結果之後，以[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件中提供的最終 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 來取代臨時的 **Hypothesis** 結果。
+處理 [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) 事件以改善此明顯的回應性不足問題。 無論辨識器是否會針對正在處理的文字產生一組新的可能相符項目，都會引發此事件。 事件引數會提供包含目前相符項目的 [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) 屬性。 在使用者連續說話時向使用者顯示這些項目，並讓他們知道處理作業仍在作用中。 在信賴等級提高並決定辨識結果之後，以[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913895) 事件中提供的最終 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913900) 來取代臨時的 **Hypothesis** 結果。
 
 我們在這裡附加假設文字和省略符號 (…) 至輸出 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的目前的值。 在新的假設內容產生時，以及在從 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件取得最終結果之後，文字方塊的內容就會更新。
 
@@ -232,12 +239,12 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## 開始及停止辨識
+## <a name="start-and-stop-recognition"></a>開始及停止辨識
 
 
 在開始辨識工作階段之前，請檢查語音辨識器 [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) 屬性的值。 語音辨識器必須處於 [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 狀態。
 
-在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 屬性的 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) 方法來開始工作階段。
+在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913901) 屬性的 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913913) 方法來開始工作階段。
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -251,7 +258,7 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 -   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 會讓任何擱置中辨識事件完成 ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 會繼續被引發，直到所有擱置中辨識作業完成為止)。
 -   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 會立即終止辨識工作階段，並捨棄任何擱置中結果。
 
-在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 屬性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法來停止工作階段。
+在檢查語音辨識器的狀態之後，我們會透過呼叫語音辨識器之 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913898) 屬性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913913) 方法來停止工作階段。
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -261,13 +268,13 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ```
 
 [!NOTE]  
-在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 之後，可能會發生 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。  
-因為多執行緒的關係，可能會在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 時仍於堆疊中保留 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。 如果是這樣，就仍會引發 **ResultGenerated** 事件。  
+在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913900) 之後，可能會發生 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913898) 事件。  
+因為多執行緒的關係，可能會在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913900) 時仍於堆疊中保留 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913898) 事件。 如果是這樣，就仍會引發 **ResultGenerated** 事件。  
 如果您在取消辨識工作階段時設定任何私用欄位，請一律確認它們在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 處理常式中的值。 例如，如果您在取消工作階段時將欄位設定為 null，請勿假設您處理常式中的欄位已經初始化。
 
  
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 * [語音互動](speech-interactions.md)
@@ -284,6 +291,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -5,16 +5,17 @@ title: "主動式畫布配置模式"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
 
 ---
-# 主動式畫布配置模式
+# <a name="active-canvas-layout-pattern"></a>主動式畫布配置模式
 
 主動式畫布是一種包含內容區域和命令區域的模式。 它適用於單一檢視應用程式或模態體驗，例如相片檢視器/編輯器、文件檢視器、地圖、繪畫或讓其他利用自由捲動檢視的應用程式。 對於要採取的動作，根據您需要的動作之數量和類型，主動式畫布可搭配使用命令列或只有按鈕。
 
-## 範例
+## <a name="examples"></a>範例
 
 這個相片編輯應用程式的設計強調主動式畫布模式，左側是行動裝置範例，右側則是桌面範例。 影像編輯表層是一個畫布，底部的命令列則包含應用程式的所有內容相關動作。
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 ![採用主動式畫布模式的地圖應用程式範例](images/uap-subway-pc-phone-700.png)
 
 
-## 實作此模式
+## <a name="implementing-this-pattern"></a>實作此模式
 
 主動式畫布由內容區域和命令區域組成。
 
@@ -35,12 +36,12 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 -   [**應用程式列與命令列**](../controls-and-patterns/app-bars.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

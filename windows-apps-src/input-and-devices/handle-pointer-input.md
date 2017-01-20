@@ -5,46 +5,53 @@ title: "處理指標輸入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+keywords: "pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆, 滑鼠, 觸控板, 觸控 ,指標, 輸入, 使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ba4288d93924d3a32a0a659dea67af28fb607987
 
 ---
 
-# 處理指標輸入
+# <a name="handle-pointer-input"></a>處理指標輸入
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-在通用 Windows 平台 (UWP) App 中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
+在通用 Windows 平台 (UWP) 應用程式中，接收、處理及管理來自指標裝置 (例如觸控、滑鼠、畫筆/手寫筆及觸控板) 的輸入資料。
 
-**重要 API**
-
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
 **重要**  
 如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您以[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)來模型化您的自訂互動，以保持一致且可探索的 UI 體驗。 這些平台控制項提供完整的通用 Windows 平台 (UWP) 使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
 
-## 指標
+## <a name="pointers"></a>指標
+許多互動體驗牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將資訊升級到整合的輸入堆疊，並公開為已合併且無從驗證裝置的指標資料。 您的 UWP 應用程式之後就能取用此資料，而不需擔心所使用的輸入裝置。
 
-
-許多互動體驗牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將資訊升級到整合的輸入堆疊，並公開為已合併且無從驗證裝置的指標資料。 您的 UWP app 之後就能取用此資料，而不需擔心所使用的輸入裝置。
-
-**注意** 裝置特定的資訊也會視您 app 的需求，從原始 HID 資料中升級。
+**注意**  裝置特定的資訊也會視您應用程式的需求，從原始 HID 資料升級。
 
  
 
 輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 物件來表示，此物件是透過各種不同指標事件所提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入點。
 
-## 指標事件
+## <a name="pointer-events"></a>指標事件
 
 
-指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及取得延伸資訊 (例如位置、壓力和接觸幾何)。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的 app 必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
+指標事件會公開基本資訊，例如偵測狀態 (位於範圍或接觸點內) 與裝置類型，以及取得延伸資訊 (例如位置、壓力和接觸幾何)。 此外，也能取得特定的裝置屬性 (例如，使用者按下哪一個滑鼠按鈕，或者是否使用了畫筆橡皮擦的筆尖)。 如果您的應用程式必須區別輸入裝置及其功能，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-UWP app 可以接聽下列指標事件：
+UWP 應用程式可以接聽下列指標事件：
 
-**注意** 呼叫 [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) 來將指標輸入限制為特定的 UI 元素。 當元素擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 由於 [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (按下滑鼠按鈕、觸控或手寫筆接觸點) 必須為 True，**CapturePointer** 才能成功，您通常會在 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件處理常式內擷取指標。
+**注意**  呼叫 [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) 來將指標輸入限制為特定的 UI 元素。 當元素擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 由於 [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (按下滑鼠按鈕、觸控或手寫筆接觸點) 必須為 True，**CapturePointer** 才能成功，您通常會在 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件處理常式內擷取指標。
 
  
 
@@ -75,7 +82,7 @@ UWP app 可以接聽下列指標事件：
 <td align="left"><p>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
-<strong>注意</strong> 沒有對應的指標擷取事件。
+<strong>注意</strong>  沒有對應的指標擷取事件。
 </div>
 <div>
  
@@ -127,12 +134,12 @@ UWP app 可以接聽下列指標事件：
 
  
 
-## 範例
+## <a name="example"></a>範例
 
 
-以下提供一些來自基本指標追蹤 App 的程式碼範例，示範如何進行接聽，以及處理指標事件並取得各種適用於作用中指標的屬性。
+以下提供一些來自基本指標追蹤應用程式的程式碼範例，示範如何進行接聽，以及處理指標事件並取得各種適用於作用中指標的屬性。
 
-### 建立 UI
+### <a name="create-the-ui"></a>建立 UI
 
 針對這個範例，我們使用矩形 (`targetContainer`) 做為指標輸入的目標物件。 當指標狀態變更時，目標的色彩就會變更。
 
@@ -195,7 +202,7 @@ UWP app 可以接聽下列指標事件：
 </Page>
 ```
 
-### 接聽指標事件
+### <a name="listen-for-pointer-events"></a>接聽指標事件
 
 在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 來取得指標資訊。
 
@@ -244,13 +251,13 @@ UWP app 可以接聽下列指標事件：
 
 ```
 
-### 處理指標事件
+### <a name="handle-pointer-events"></a>處理指標事件
 
 接下來，將使用 UI 回饋來示範基本指標事件處理常式。
 
 -   這個處理常式會管理 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件。 我們將事件新增到事件記錄檔，將指標新增到用於追蹤相關指標的指標陣列，並顯示指標詳細資料。
 
-    **注意** [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 與 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件不會永遠成對出現。 您的 app 應接聽和處理可能得出指標向下動作 (例如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、 以及 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)) 的任何事件。
+    **注意**  [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 與 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件不一定都成對出現。 您的應用程式應接聽和處理可能得出指標向下動作 (例如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、 以及 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)) 的任何事件。
 
      
 
@@ -331,7 +338,7 @@ UWP app 可以接聽下列指標事件：
 
 -   這個處理常式會管理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件。 我們將事件新增到事件記錄檔，並更新指標詳細資料。
 
-    **重要** 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件進行路由。
+    **重要**  滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件進行路由。
 
      
 
@@ -520,7 +527,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
 -   這個處理常式會管理 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
-    **注意** [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 可能會發生，而非 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。 指標擷取可能因為各種原因而遺失。
+    **注意**  [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 可能會發生，而非 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。 指標擷取可能因為各種原因而遺失。
 
      
 
@@ -556,7 +563,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### 取得指標屬性
+### <a name="get-pointer-properties"></a>取得指標屬性
 
 如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 與 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法，從 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 物件取得最延伸的指標資訊。
 
@@ -652,7 +659,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### 完整範例
+### <a name="complete-example"></a>完整範例
 
 以下是這個範例的 C\# 程式碼。 如需較複雜範例的連結，請參閱本頁面下方的相關文章。
 
@@ -1080,7 +1087,7 @@ namespace PointerInput
 }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 **範例**
@@ -1106,6 +1113,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -7,11 +7,11 @@ isNew: true
 label: Date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
 
 ---
-# 日期選擇器
+# <a name="date-picker"></a>日期選擇器
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,30 +20,25 @@ ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx"><strong>Date 屬性</strong></a></li>
+<li>[**DatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**Date 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
+
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 使用日期選擇器可讓使用者挑選已知的日期，例如出生日期 (行事曆內容不重要)。
 
 如需有關如何選擇正確日期控制項的詳細資訊，請參閱[日期和時間控制項](date-and-time.md)文章。
 
-## 範例
+## <a name="examples"></a>範例
 
 進入點會顯示所選的日期，當使用者選取進入點時，選擇器介面就會從中央垂直展開供使用者選取。 日期選擇器與其他 UI 重疊；它不會將其他 UI 移開。
 
 ![展開中的日期選擇器範例](images/controls_datepicker_expand.png)
 
-## 建立日期選擇器
+## <a name="create-a-date-picker"></a>建立日期選擇器
 
 這個範例示範如何建立含有標頭的簡單日期選擇器。
 
@@ -60,11 +55,11 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期選擇器的範例](images/date-picker-closed.png)
 
-> **注意**  如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**&nbsp;&nbsp;如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 - [日期和時間控制項](date-and-time.md)
 - [行事曆日期選擇器](calendar-date-picker.md)
@@ -73,6 +68,6 @@ birthDatePicker.Header = "Date of birth";
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

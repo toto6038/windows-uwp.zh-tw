@@ -1,29 +1,31 @@
 ---
 author: mijacobs
-Description: "了解如何使用磚、徽章、快顯通知以及通知提供您 App 的進入點，並將使用者維持在最新狀態。"
+Description: "了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。"
 title: "磚、徽章及通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
 
 ---
-# UWP App 的徽章通知
+# <a name="badge-notifications-for-uwp-apps"></a>UWP 應用程式的徽章通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
 <img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>有顯示數字徽章的磚<br/> 數字 63 表示 63 封未讀取的郵件。</div>
 
-通知徽章可傳遞您 App 專屬的摘要或狀態資訊。 這些資訊可以是數值 (1-99) 或是一組系統提供的字符。 最適合徽章傳遞的資訊範例包括線上遊戲的網路連線狀態、立即訊息 App 的使用者狀態、郵件 App 中未讀取郵件的數目，以及社交媒體 App 中的新文章數目。 
+通知徽章可傳遞您應用程式專屬的摘要或狀態資訊。 這些資訊可以是數值 (1-99) 或是一組系統提供的字符。 最適合徽章傳遞的資訊範例包括線上遊戲的網路連線狀態、立即訊息應用程式的使用者狀態、郵件應用程式中未讀取郵件的數目，以及社交媒體應用程式中的新文章數目。 
 
-不論 App 是否在執行，通知徽章都會顯示在 App 工作列圖示上，以及其開始磚的右下角。 徽章能在所有大小的磚上顯示。  
+不論應用程式是否在執行，通知徽章都會顯示在應用程式工作列圖示上，以及其開始磚的右下角。 徽章能在所有大小的磚上顯示。  
 
-**注意**  您不能提供自己的徽章影像，只能使用系統提供的徽章影像。
+> [!NOTE]
+> 您不能提供自己的徽章影像，只能使用系統提供的徽章影像。
 
-## 數字徽章
+
+## <a name="numeric-badges"></a>數字徽章
 
 <table>
     <tr>
@@ -43,7 +45,7 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
     </tr>    
 </table>
 
-## 字符徽章
+## <a name="glyph-badges"></a>字符徽章
 除了數字之外，徽章也可以顯示一個字符，其屬於一組不可延伸之狀態字符。 
 
 <table>
@@ -119,11 +121,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 </tr>
 </table>
 
-## 建立徽章
+## <a name="create-a-badge"></a>建立徽章
 
 以下範例名如何建立徽章更新。
 
-### 建立數字徽章
+### <a name="create-a-numeric-badge"></a>建立數字徽章
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -150,7 +152,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### 建立字符徽章
+### <a name="create-a-glyph-badge"></a>建立字符徽章
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -178,7 +180,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### 清除徽章
+### <a name="clear-a-badge"></a>清除徽章
 
 ````csharp
 private void clearBadge()
@@ -187,17 +189,17 @@ private void clearBadge()
 }
 ````
 
-## 取得範例
+## <a name="get-the-sample-code"></a>取得範例程式碼
 
 * [通知範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> 說明如何建立動態磚、傳送徽章更新，以及顯示快顯通知。 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [調適型和互動式快顯通知](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [建立磚](tiles-and-notifications-creating-tiles.md)
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

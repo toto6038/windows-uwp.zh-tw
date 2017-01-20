@@ -6,16 +6,13 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
 
 
 ---
-# 工具提示
+# <a name="tooltips"></a>工具提示
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 工具提示是連結至另一個控制項或物件的簡短描述。 工具提示可協助使用者了解 UI 中未直接說明的不熟悉的物件。 當使用者將焦點移至控制項、按住控制項或將滑鼠指標暫留在控制項時，它們將會自動顯示。 當使用者移動手指、指標或鍵盤/遊戲台焦點數秒之後，工具提示就會消失。
 
@@ -24,17 +21,12 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService 類別</strong></a></li>
+<li>[**ToolTip 類別**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
+<li>[**ToolTipService 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用工具提示在要求使用者執行動作前顯示關於控制項的詳細資訊。 您應謹慎使用工具提示，只有當它們可以為試著完成工作的使用者明顯帶來效用時，才應使用工具提示。 通用的原則是，如果相同經驗的別處也提供某個資訊，就不需要工具提示。 有價值的工具提示將可釐清不清楚的動作。
 
@@ -61,13 +53,13 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 -   **使用者是否覺得提示會造成困擾或干擾？**
     如果是，請考慮使用其他解決方案，包括不執行任何動作。 如果您要在可能造成干擾的地方使用提示，請允許使用者將其關閉。
 
-## 範例
+## <a name="example"></a>範例
 
 Bing 地圖服務應用程式中的工具提示。
 
 ![Bing 地圖服務應用程式中的工具提示](images/control-examples/tool-tip-maps.png)
 
-## 建議
+## <a name="recommendations"></a>建議
 
 -   請謹慎使用工具提示 (或完全不使用)。 工具提示是一種干擾。 工具提示和快顯一樣讓人分心，所以除非它們具有重要價值，否則不要使用。
 -   讓工具提示文字簡潔。 工具提示適合簡短句子和句子片段。 大型文字區塊可能太具壓迫性，且工具提示可能會在使用者完成閱讀之前即逾時。
@@ -78,12 +70,11 @@ Bing 地圖服務應用程式中的工具提示。
 -   不要在工具提示內放置看起來像是互動式影像的影像。
 
 相關主題
------------------------------------------------
 
 * [**ToolTip 類別**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8be3dfed1e6fda1777905a73db4b0eae1e3368dd
 
 ---
-# 滑桿
+# <a name="sliders"></a>滑桿
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged 事件</strong></a></li>
+<li>[**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
+<li>[**Value 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
+<li>[**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 如果您希望使用者能夠設定既定且連續的值 (例如音量或亮度)，或是某個範圍的離散值 (例如螢幕解析度設定)，可以使用滑桿。
 
@@ -59,7 +53,7 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 -   使用者可受益於立即回應。
 
-## 範例
+## <a name="examples"></a>範例
 
 Windows Phone 上用來控制音量的滑桿。
 
@@ -69,7 +63,7 @@ Windows Phone 上用來控制音量的滑桿。
 
 ![用來變更 Windows 顯示設定中文字大小的滑桿](images/control-examples/slider-display-settings.png)
 
-## 建立滑桿
+## <a name="create-a-slider"></a>建立滑桿
 
 以下是如何在 XAML 中建立滑桿。
 
@@ -103,7 +97,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## 建議
+## <a name="recommendations"></a>建議
 
 -   調整控制項的大小，方便使用者設定想要的值。 設定分散值時，確定使用者可輕鬆地使用滑鼠選取任何值。 確定滑桿的端點永遠在檢視邊界內。
 -   在使用者選取時或選取後提供立即回饋 (可行的話)。 例如，Windows 音量控制項發出嗶聲，指示所選取的音訊音量。
@@ -114,9 +108,9 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   不要變更預設的滑桿縮圖大小。
 -   如果值的範圍很大而且使用者很可能從範圍中的數個具有代表性的值選擇時，請不要建立連續滑桿。 而是將這些值做為允許選擇的間距。 例如，如果時間值可能長達 1 個月，但使用者只需要從 1 分鐘、1 小時、1 天或 1 個月中挑選，那麼請建立只有 4 個間距點的滑桿。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-### 選擇正確的配置：水平或垂直
+### <a name="choosing-the-right-layout-horizontal-or-vertical"></a>選擇正確的配置：水平或垂直
 
 您可以將滑桿的方向設定為水平或垂直。 使用這些指導方針來決定要使用哪種配置。
 
@@ -125,7 +119,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   在可以朝某個方向 (水平或垂直) 平移的頁面中使用滑桿時，滑桿的方向應該與平移方向不同。 否則，使用者可能在嘗試移動瀏覽頁面時撥動到滑桿而不小心變更到值。
 -   如果您仍然不確定要使用哪個方向，請使用最適合您頁面配置的方向。
 
-### 範圍方向
+### <a name="range-direction"></a>範圍方向
 
 範圍方向是指您從目前值將滑桿滑動到最大值時，移動滑桿的方向。
 
@@ -133,7 +127,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   若是水平樣式，在從左到右的頁面配置中，請將較低值放在滑桿的左側，在從右到左的頁面配置中則放在滑桿右側。
 -   上述指導方針的一個例外是媒體搜尋列：永遠將較低的值放置在滑桿的左邊。
 
-### 間距和刻度標記
+### <a name="steps-and-tick-marks"></a>間距和刻度標記
 
 -   如果您不希望在滑桿的最小值和最大值之間允許任意值，請使用間距點。例如，如果您使用滑桿來指定要購買的電影票張數，請不要允許浮點數值。 請將間距值指定為 1。
 -   如果您指定間距 (也稱作貼齊點)，請確認最後一個間距對齊滑桿的最大值。
@@ -142,7 +136,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   當使用者需要知道所選擇設定的確實值，不需與控制項互動時，請顯示刻度和值標籤。 或者，使用者可以使用值工具提示查看確實值。
 -   當間距點不明顯時，請一律使用刻度標記。 例如，如果滑桿的寬度為 200 像素且具有 200 個貼齊點，您可以隱藏刻度標記，因為使用者不會注意到貼齊行為。 但是如果僅有 10 個貼齊點時，請顯示刻度標記。
 
-### 標籤
+### <a name="labels"></a>標籤
 
 -   **滑桿標籤**
 
@@ -168,7 +162,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   把文字放在與控制項相對的位置中間並包括單位 (例如像素)。
     -   因為擦選時會蓋住滑桿的捲動方塊，所以請考慮以其他方式 (使用標籤或其他視覺物件) 來顯示目前的值。 滑桿設定文字大小可以在滑桿旁呈現一些正確大小的範例文字。
 
-### 外觀和互動
+### <a name="appearance-and-interaction"></a>外觀和互動
 
 滑桿是由軌道和捲動方塊組成。 軌道是一個列 (可選擇性顯示各種樣式的刻度記號)，代表可以輸入的值範圍。 捲動方塊則是選取器，使用者點選軌道或在上面來回擦選即可定位。
 
@@ -176,15 +170,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 設計自訂滑桿的時候，請考慮以盡可能不擁擠的方式為使用者呈現所有的資訊。 如果使用者需要知道單位才能了解設定，請使用值標籤；找出充滿創意的方式用圖形呈現這些值。 例如，控制音量的滑桿可以在滑桿的音量最低處顯示沒有音波的喇叭圖形，而在音量最高處顯示有音波的喇叭圖形。
 
-## 相關主題
-
-**適用於設計人員**
-- [切換開關的指導方針](toggles.md)
-**適用於開發人員 (XAML)**
+## <a name="related-topics"></a>相關主題
+- [切換開關](toggles.md)
 - [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

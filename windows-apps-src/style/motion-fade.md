@@ -6,22 +6,27 @@ ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae
 
 ---
 
-# 淡化動畫
+# <a name="fade-animations"></a>淡化動畫
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡入/淡出動畫會淡入和淡出。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**FadeInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210298)</li>
+<li>[**FadeOutThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210302)</li>
+</ul>
+</div>
 
--   [**FadeInThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**FadeOutThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
-
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   當您的應用程式在不相關或包含大量文字元素之間轉換時，請先使用淡出再接著使用淡入。 這樣能讓傳出物件完全消失，然後才看到傳入物件。
@@ -29,9 +34,8 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 -   請避免使用淡入/淡出動畫在清單中新增或刪除項目。 請改用專為該目的建立的清單動畫。
 -   請避免使用淡入/淡出動畫變更頁面的全部內容。 請改用專為該目的建立的頁面轉換動畫。
 -   淡出是移除元素的一種微妙方式。
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
-**適用於開發人員 (XAML)**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [讓淡入/淡出產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -48,6 +52,6 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

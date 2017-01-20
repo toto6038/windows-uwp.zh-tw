@@ -6,13 +6,13 @@ ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed0c8e86d38865fad8bb784550b9b4fc61a8b40a
 
 ---
 
-# 滑鼠互動
-
+# <a name="mouse-interactions"></a>滑鼠互動
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 這個主題說明滑鼠互動的設計考量。
 
-## UWP app 滑鼠語言
+## <a name="the-uwp-app-mouse-language"></a>UWP app 滑鼠語言
 
 
 一組可用於整個系統的簡單滑鼠互動。
@@ -86,7 +86,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 </tbody>
 </table>
 
-## 滑鼠事件
+## <a name="mouse-events"></a>滑鼠事件
 
 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 - [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## 視覺化回饋的指導方針
+## <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
 
 -   偵測到滑鼠時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果滑鼠有一段時間沒有移動，或者使用者起始觸控互動，讓滑鼠 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -114,7 +114,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
 
-## 游標
+## <a name="cursors"></a>游標
 
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
@@ -129,7 +129,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
@@ -156,6 +156,6 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

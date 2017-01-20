@@ -3,15 +3,20 @@ author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: "啟用您的裝置以用於開發"
 description: "設定您的 Windows 10 裝置以進行開發和偵錯。"
-keywords: "啟用裝置"
+keywords: "開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ed91f7585b63199ab9d591c712d4260a3b452b85
-ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
-您必須先在您的開發電腦及任何您將測試程式碼的裝置上啟用 [開發人員模式]，才能撰寫 App。
+您必須先在您的開發電腦及任何您將測試程式碼的裝置上啟用 [開發人員模式]，才能撰寫應用程式。
 
 ## <a name="use-developer-features"></a>使用開發人員功能
 
@@ -213,6 +218,6 @@ ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

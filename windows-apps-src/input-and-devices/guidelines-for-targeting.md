@@ -1,29 +1,31 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。"
+Description: "本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。"
 title: "目標預測"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
-ms.openlocfilehash: 09e2241523411daa372bc7630d13b96a2aa8203b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9710e3060410428e1a4b7cfe89442c7df8602ed2
 
 ---
 
 # <a name="guidelines-for-targeting"></a>目標預測的指導方針
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-
-本主題描述在 Windows 執行階段 App 中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
+本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供目標預測的最佳做法。
 
 ## <a name="measurements-and-scaling"></a>度量單位和縮放
 
@@ -175,6 +177,6 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

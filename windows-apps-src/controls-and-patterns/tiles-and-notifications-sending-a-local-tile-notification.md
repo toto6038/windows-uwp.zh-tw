@@ -6,22 +6,19 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bbc09a6638fd7c0798e49600bd74388d5bb4629d
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
-
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中，次要磚則是以程式設計方式建立，而且是由您的應用程式程式碼定義。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
-**注意**：請了解[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)和[彈性磚範本結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
+> [!NOTE] 
+>了解[建立調適性磚](tiles-and-notifications-create-adaptive-tiles.md)及[調適性磚範本結構描述](tiles-and-notifications-adaptive-tiles-schema.md)。
 
  
 
@@ -285,7 +282,6 @@ var notification = new TileNotification(doc);
 
 ## <a name="related-topics"></a>相關主題
 
-
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
 * [彈性磚範本：結構描述和文件](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
@@ -303,6 +299,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

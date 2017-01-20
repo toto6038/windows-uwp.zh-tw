@@ -1,41 +1,37 @@
 ---
 author: Jwmsft
-Description: "中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的 App。"
+Description: "中樞控制項使用階層式瀏覽模式來支援使用關聯式資訊架構的應用程式。"
 title: "中樞控制項"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ad5a8dfab77c78b1c53762f5de868819e0b37d6f
 
 ---
-# 中樞控制項/模式
+# <a name="hub-controlpattern"></a>中樞控制項/模式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-中樞控制項可讓您將 app 內容組織成不同但相關的區段或類別。 中樞中區段的目的是在於能夠以慣用的順序進行周遊，並可做為更詳細經驗的起點。
+中樞控制項可讓您將應用程式內容組織成不同但相關的區段或類別。 中樞中區段的目的是在於能夠以慣用的順序進行周遊，並可做為更詳細經驗的起點。
 
 ![中樞範例](images/hub_example_tablet.png)
 
 中樞中的內容可以採用全景檢視方式顯示，讓使用者能夠檢視新功能、可用功能及相關項目。 中樞通常會有頁面標頭，而每個內容區段都會有一個區段標頭。
 
+
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Hub 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>HubSection 類別</strong></a></li>
+<li>[**Hub 類別**](https://msdn.microsoft.com/library/windows/apps/dn251843)</li>
+<li>[**HubSection 類別**](https://msdn.microsoft.com/library/windows/apps/dn251845)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 中樞控制項適用於顯示依階層排列的大量內容。 中樞會為新內容的瀏覽與探索排定優先順序，讓它們不論是顯示市集中的項目還是媒體集合中的項目，都相當有用。
 
@@ -59,17 +55,17 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
 
 -   **彈性架構**
 
-    如果您想要讓您的 App 架構維持淺層狀態，您可以將所有通道內容都納入中樞區段摘要中。
+    如果您想要讓您的應用程式架構維持淺層狀態，您可以將所有通道內容都納入中樞區段摘要中。
 
-中樞只是您可以使用的數個瀏覽元素其中之一；若要深入了解瀏覽模式及其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) App 的瀏覽設計基本知識](../layout/navigation-basics.md)。
+中樞只是您可以使用的數個瀏覽元素其中之一；若要深入了解瀏覽模式及其他瀏覽元素，請參閱[通用 Windows 平台 (UWP) 應用程式的瀏覽設計基本知識](../layout/navigation-basics.md)。
 
-## 中樞架構
+## <a name="hub-architecture"></a>中樞架構
 
 中樞控制項具備階層式瀏覽模式，此模式支援使用關聯式資訊架構的應用程式。 中樞由不同的內容類別組成，每個類別均對應至應用程式的區段頁面。 區段頁面可以使用任何形式顯示，只要能夠呈現出最佳的狀況和區段所包含的內容。
 
 ![階層式 Food with Friends 應用程式的線框](images/navigation_diagram_food_with_friends_app_new.png)
 
-## 移動瀏覽/捲動的配置
+## <a name="layouts-and-panningscrolling"></a>移動瀏覽/捲動的配置
 
 有一些方式可用來在中樞中配置及瀏覽內容；但是請確定中樞中列出的內容會一律以和中樞捲動方向垂直的方向移動瀏覽。
 
@@ -86,7 +82,7 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
 
 ![水平移動瀏覽中樞範例](images/controls_hub_vertical_horizontal_scroll.png)
 
-## 範例
+## <a name="examples"></a>範例
 
 中樞提供大量的設計彈性。 這可讓您設計具有各式各樣引人注目及豐富視覺體驗的應用程式。 您可以為第一個群組使用主角影像或內容區段；主角的大型影像可以在不失去中心焦點的情況下，從垂直與水平方向裁剪。 以下是單個主角影像以及如何針對橫向、直向及窄格式寬度裁剪影像的範例。
 
@@ -96,7 +92,7 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
 
 ![小螢幕上的中樞模式範例](images/phone_hub_example.png)
 
-## 建議
+## <a name="recommendations"></a>建議
 
 -   若要讓使用者知道中樞區段中有更多內容，建議您裁剪內容，以方便使用者一次檢視某一數量的內容。
 -   視應用程式的需求而定，您可以新增數個中樞區段到中樞控制項，每一區段都提供獨特的功能用途。 例如，一個區段可能包含一系列連結和控制項，另一個區段則可能是縮圖影像的存放庫。 使用者可以使用中樞控制項內建的手勢支援，在這些區段之間移動瀏覽。
@@ -114,8 +110,11 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
     -   背景、區段、區段標頭及區段內容的色彩
 
 
+## <a name="get-the-sample-code"></a>取得範例程式碼
+* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 相關文章
+
+## <a name="related-articles"></a>相關文章
 
 - [Hub 類別](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [瀏覽基本知識](../layout/navigation-basics.md)
@@ -124,6 +123,6 @@ Hub 控制項有數個功能，可使它在建置內容瀏覽模式上能夠良�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

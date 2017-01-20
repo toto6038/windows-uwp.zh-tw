@@ -6,23 +6,29 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 筆跡序列化格式"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 11bd4c1d8c4f675fb1dad38e249d64324fa29ecf
 
 ---
 
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>儲存和抓取 Windows Ink 筆劃資料
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
 
-
-**重要 API**
-
--   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
--   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
-
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
+<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
+</ul>
+</div>
 
 
 > [!NOTE]
@@ -91,7 +97,7 @@ public MainPage()
 
     [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
-    選取檔案之後，我們會開啟已設為 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
+    選取檔案之後，我們會開啟已設為 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241731) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241635) 資料流。
 
     接著呼叫 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114)，將 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 管理的筆墨筆劃序列化至資料流。
 ```    CSharp
@@ -220,7 +226,7 @@ public MainPage()
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
-    選取檔案之後，我們會開啟已設為 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 資料流。
+    選取檔案之後，我們會開啟已設為 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241731) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241635) 資料流。
 
     接著呼叫 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607)，來讀取並還原序列化已儲存的筆墨筆劃，然後載入 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)。 將筆劃載入 **InkStrokeContainer**，會導致 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 立即將它們轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
@@ -367,7 +373,7 @@ public MainPage()
 
 3.  最後，在新增筆劃選取項目支援之後，我們會在 \[剪下\]、\[複製\] 和 \[貼上\] 按鈕的 click 事件處理常式中實作剪貼簿功能。
 
-    針對剪下功能，我們會先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上呼叫 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232)。
+    針對剪下功能，我們會先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/br244232) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上呼叫 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/dn922011)。
 
     接著呼叫 [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) 來移除筆墨畫布上的筆劃。
 
@@ -448,6 +454,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用選擇器開啟檔案和資料夾"
 description: "讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 FileOpenPicker 和 FileSavePicker 類別來存取檔案，使用 FolderPicker 來存取資料夾。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
+ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
+ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
 
 ---
 
@@ -23,9 +23,7 @@ ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 類別來存取檔案，使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。
 
-**注意**如需完整範例，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
-
- 
+**注意**：如需完整範例，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -95,63 +93,63 @@ else
 
 1.  **建立和自訂 FileOpenPicker**
 
-```CSharp
-var picker = new Windows.Storage.Pickers.FileOpenPicker();
-    picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-    picker.SuggestedStartLocation =
-        Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-    picker.FileTypeFilter.Add(".jpg");
-    picker.FileTypeFilter.Add(".jpeg");
-    picker.FileTypeFilter.Add(".png");
-```
+    ```CSharp
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+        picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+        picker.SuggestedStartLocation =
+            Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+        picker.FileTypeFilter.Add(".jpg");
+        picker.FileTypeFilter.Add(".jpeg");
+        picker.FileTypeFilter.Add(".png");
+    ```
 
-在與您的使用者和 app 相關的檔案選擇器物件上設定屬性。 如需協助您決定如何自訂檔案選擇器的指導方針，請參閱[檔案選擇器的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465182)。
+    在與您的使用者和 app 相關的檔案選擇器物件上設定屬性。 如需協助您決定如何自訂檔案選擇器的指導方針，請參閱[檔案選擇器的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465182)。
 
-這個範例會藉由設定下列三個屬性，在使用者可以挑選的便利位置建立一個豐富的視覺化圖片：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 及 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+    這個範例會藉由設定下列三個屬性，在使用者可以挑選的便利位置建立一個豐富的視覺化圖片：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 及 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
--   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
+    -   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
 
--   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 設定為 [圖片]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
+    -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207854) 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207890) 設定為 [圖片]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
 
--   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 以指定檔案類型，讓使用者聚焦在挑選相關的檔案。 若要使用新的項目取代 **FileTypeFilter** 中的檔案類型，請使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) (而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834))。
+    -   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 以指定檔案類型，讓使用者聚焦在挑選相關的檔案。 若要使用新的項目取代 **FileTypeFilter** 中的檔案類型，請使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) (而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834))。
 
 2.  **顯示 FileOpenPicker**
 
-    -   **開啟單一檔案**
+    - **開啟單一檔案**
 
-```CSharp
-Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-        if (file != null)
-        {
-            // Application now has read/write access to the picked file
-            this.textBlock.Text = "Picked photo: " + file.Name;
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
-
-    -   **開啟多個檔案**
-
-```CSharp
-var files = await picker.PickMultipleFilesAsync();
-        if (files.Count > 0)
-        {
-            StringBuilder output = new StringBuilder("Picked files:\n");
-
-            // Application now has read/write access to the picked file(s)
-            foreach (Windows.Storage.StorageFile file in files)
+    ```CSharp
+    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
             {
-                output.Append(file.Name + "\n");
+                // Application now has read/write access to the picked file
+                this.textBlock.Text = "Picked photo: " + file.Name;
             }
-            this.textBlock.Text = output.ToString();
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
+
+    - **開啟多個檔案**  
+
+    ```CSharp
+    var files = await picker.PickMultipleFilesAsync();
+            if (files.Count > 0)
+            {
+                StringBuilder output = new StringBuilder("Picked files:\n");
+
+                // Application now has read/write access to the picked file(s)
+                foreach (Windows.Storage.StorageFile file in files)
+                {
+                    output.Append(file.Name + "\n");
+                }
+                this.textBlock.Text = output.ToString();
+            }
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
 
 ## <a name="pick-a-folder-complete-code-listing"></a>挑選資料夾：完整程式碼清單
 
@@ -159,6 +157,7 @@ var files = await picker.PickMultipleFilesAsync();
 ```CSharp
 var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 folderPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.Desktop;
+folderPicker.FileTypeFilter.Add("*");
 
 Windows.Storage.StorageFolder folder = await folderPicker.PickSingleFolderAsync();
 if (folder != null)
@@ -177,14 +176,7 @@ else
 
 **提示**：只要您的 app 透過選擇器來存取檔案或資料夾，就會將該項目新增到 app 的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便追蹤。 若要深入了解如何使用這些清單，請參閱[如何追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md)。
 
- 
 
- 
-
- 
-
-
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

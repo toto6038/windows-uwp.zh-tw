@@ -4,8 +4,8 @@ Description: "Windows 市集提供「電信業者帳單」做為針對支援此�
 title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
-ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
+ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
+ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 ---
 
@@ -22,11 +22,12 @@ Windows 市集提供「電信業者帳單」做為針對支援此功能之電信
 
 Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用於執行 Windows 10 的所有裝置、執行 Windows 10 行動裝置版的手機和 Xbox One 主機。 在這些裝置上，客戶可以新增「電信業者帳單」做為付款方式來購買。 
 
-目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
+目前已有下列電信業者支援 Windows 10 的電信業者帳單實作。
 
 | 國家/地區  | 電信業者 |
 |-----------------|------------------|
 | 芬蘭         | DNA、Elisa       |
+| 法國          | Orange           |
 | 德國         | O2               |
 | 匈牙利         | Telenor          |
 | 義大利           | Wind             |
@@ -77,7 +78,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 | 南非         | Vodacom                                                            |
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 英國       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
-| 美國        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
+| 美國        | AT&T、T-Mobile、Verizon                                    |
 | 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
@@ -94,6 +95,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

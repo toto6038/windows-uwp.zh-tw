@@ -4,14 +4,14 @@ title: "使用背景工作回應系統事件"
 description: "了解如何建立回應 SystemTrigger 事件的背景工作。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
 
 ---
 
-# 使用背景工作回應系統事件
+# <a name="respond-to-system-events-with-background-tasks"></a>使用背景工作回應系統事件
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 了解如何建立回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的背景工作。
 
-本主題假設您有為 App 撰寫的背景工作類別，且這個工作需要執行以回應系統所觸發的事件，例如當網際網路可用性發生變更或是使用者登入時。 本主題將焦點放在 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 類別。 如需有關撰寫背景工作類別的詳細資訊，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。
+本主題假設您有為 App 撰寫的背景工作類別，且這個工作需要執行以回應系統所觸發的事件，例如當網際網路可用性發生變更或是使用者登入時。 本主題將焦點放在 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 類別。 如需有關撰寫背景工作類別的詳細資訊，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
-## 建立 SystemTrigger 物件
+## <a name="create-a-systemtrigger-object"></a>建立 SystemTrigger 物件
 
 -   在應用程式程式碼中，建立新的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 物件。 第一個參數 *triggerType* 指定將啟用這個背景工作的系統事件觸發程序類型。 如需事件類型清單，請參閱 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
     > SystemTrigger ^ internetTrigger = ref new SystemTrigger(SystemTriggerType::InternetAvailable, false);
     > ```
 
-## 登錄背景工作
+## <a name="register-the-background-task"></a>登錄背景工作
 
 -   呼叫背景工作登錄函式以登錄背景工作。 如需有關註冊背景工作的詳細資訊，請參閱[註冊背景工作](register-a-background-task.md)。
 
@@ -59,13 +59,13 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
 
-    > **注意**：通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+    > **注意** 通用 Windows app 在登錄任何背景觸發程序類型之前，必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
     為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
     > **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
  
-## 備註
+## <a name="remarks"></a>備註
 
 若要查看背景工作登錄的執行方式，請下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
@@ -73,14 +73,13 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 和 [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831) 事件的背景工作，以便在即使 app 不在前景的情況下，也能夠與使用者進行即時通訊。 如需詳細資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-> 
-  **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 ****
 
-* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
@@ -96,6 +95,6 @@ App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/w
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

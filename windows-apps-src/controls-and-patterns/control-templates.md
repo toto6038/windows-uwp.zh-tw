@@ -9,40 +9,34 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
 
 ---
-# 控制項範本
+# <a name="control-templates"></a>控制項範本
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項的外觀。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209391"><strong>ControlTemplate 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx"><strong>Control.Template 屬性</strong></a></li>
+<li>[**ControlTemplate 類別**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
+<li>[**Control.Template 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項的外觀。
-
-## 自訂控制項範本的範例
+## <a name="custom-control-template-example"></a>自訂控制項範本的範例
 
 
 根據預設，[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項會將其內容 (**CheckBox** 旁邊的字串或物件) 放到選取方塊的右側，而核取記號則表示使用者已選取 **CheckBox**。 這些特性代表 **CheckBox** 的視覺結構和視覺行為。
 
-以下是使用預設 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態時所顯示的樣子。
+以下是使用預設 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態時所顯示的樣子。
 
 ![預設的 CheckBox 範本](images/templates-checkbox-states-default.png)
 
-您可以為 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 建立 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 來變更這些特性。 舉例來說，如果您希望核取方塊的內容出現在選取方塊的下方，而且想要使用 **X** 來表示使用者已選取核取方塊。 可以在 **CheckBox** 的 **ControlTemplate** 中變更這些特性。
+您可以為 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 建立 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316) 來變更這些特性。 舉例來說，如果您希望核取方塊的內容出現在選取方塊的下方，而且想要使用 **X** 來表示使用者已選取核取方塊。 可以在 **CheckBox** 的 **ControlTemplate** 中變更這些特性。
 
 若要使用自訂範本搭配控制項，請將 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 指派給控制項的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 屬性。 以下是使用名為 `CheckBoxTemplate1` 之 **ControlTemplate** 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。 下一節將會說明 **ControlTemplate** 的 Extensible Application Markup Language (XAML)。
 
@@ -54,12 +48,12 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 ![自訂核取方塊的範本](images/templates-checkbox-states.png)
 
-## 指定控制項的視覺結構
+## <a name="specify-the-visual-structure-of-a-control"></a>指定控制項的視覺結構
 
 
 在建立 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 時，您可以合併各個 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 物件來建置單一控制項。 **ControlTemplate** 只能有一個 **FrameworkElement** 做為其根元素。 根元素通常包含其他 **FrameworkElement** 物件。 物件組合起來就形成控制項的視覺結構。
 
-這個 XAML 為 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 建立一個 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，指出控制項的內容位於選取方塊的下方。 根元素是 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 此範例指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 建立 **X**，指出使用者已選取 **CheckBox**，並建立 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 指出尚未決定的狀態。 請注意，**Path** 與 **Ellipse** 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 都是設定為 0，因此預設兩者都不會顯示。
+這個 XAML 為 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 建立一個 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316)，指出控制項的內容位於選取方塊的下方。 根元素是 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 此範例指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 建立 **X**，指出使用者已選取 **CheckBox**，並建立 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 指出尚未決定的狀態。 請注意，**Path** 與 **Ellipse** 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 都是設定為 0，因此預設兩者都不會顯示。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -95,7 +89,7 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 </ControlTemplate>
 ```
 
-## 指定控制項的視覺行為
+## <a name="specify-the-visual-behavior-of-a-control"></a>指定控制項的視覺行為
 
 
 視覺行為會指定控制項處於特定狀態時的外觀。 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項有 3 種核取狀態：`Checked`、`Unchecked` 以及 `Indeterminate`。 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) 屬性的值決定 **CheckBox** 的狀態，而其狀態決定方塊中顯示的項目。
@@ -111,9 +105,9 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
  
 
-您可以使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 中元素外觀的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053)。 當控制項進入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上設定)。
+您可以使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外觀的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 當控制項進入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上設定)。
 
-下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件。 此範例會設定在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) ([**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性。 `Checked` **VisualState** 指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 是 1。 `Indeterminate` **VisualState** 指定 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked` **VisualState** 沒有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 會回到其預設外觀。
+下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件。 此範例會設定在 [**Border**](https://msdn.microsoft.com/library/windows/apps/hh738505) ([**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209250) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/br209391) 附加屬性。 `Checked` **VisualState** 指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br208962) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br243355) 是 1。 `Indeterminate` **VisualState** 指定 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked` **VisualState** 沒有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 會回到其預設外觀。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -181,18 +175,18 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 狀態轉換                     | 發生什麼事                                                                                                                                                                                                                                                                                                                                   | 轉換完成時 CheckBox 的外觀 |
-| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。                                                                                                                                                         | 顯示 X。                                |
-| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 為 0。 | 顯示圓形。                            |
-| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
+| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。                                                                                                                                                         | 顯示 X。                                |
+| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 為 0。 | 顯示圓形。                            |
+| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
 
  
 如需有關如何建立控制項視覺狀態的詳細資訊，特別是如何使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 類別和動畫類型，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)。
 
-## 使用工具輕鬆處理主題
+## <a name="use-tools-to-work-with-themes-easily"></a>使用工具輕鬆處理主題
 
 快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio **線上文件**的控制項上按一下滑鼠右鍵，然後選取**編輯佈景主題**或**編輯樣式** \(依您用滑鼠右鍵按一下的控制項而定\)。 然後您可以選取 \[**套用資源**\] 來套用現有的佈景主題，或選取 \[**建立空白**\] 來定義新的佈景主題。
 
-## 控制項和協助工具
+## <a name="controls-and-accessibility"></a>控制項和協助工具
 
 當您建立控制項的新範本時，除了可能變更控制項的行為和視覺外觀，還可能變更控制項本身在協助工具架構的表現方式。 通用 Windows 平台 (UWP) 支援 Microsoft 使用者介面自動化的協助工具架構。 所有預設控制項和其範本都支援適用於控制項的目的和功能的一般 UI 自動化控制項類型和模式。 這些控制項類型和模式都由 UI 自動化用戶端 (例如，輔助技術) 解譯，而且這可以讓控制項做為大型無障礙應用程式 UI 的一部分加以存取。
 
@@ -200,20 +194,17 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 當您建立全新的自訂控制項時，有時也會想要同時建立新的自動化對等。 如需詳細資訊，請參閱[自訂自動化對等](../accessibility/custom-automation-peers.md)。
 
-## 深入了解控制項的預設範本
+## <a name="learn-more-about-a-controls-default-template"></a>深入了解控制項的預設範本
 
 記載 XAML 控制項樣式和範本的主題顯示了一些 XAML 摘錄，這些摘錄與您使用先前說明的「編輯佈景主題」****或「編輯樣式」****技術時會看到的起始 XAML 摘錄相同。 每一個主題都會列出視覺狀態的名稱、所使用的佈景主題資源，以及包含範本之完整樣式的 XAML。 如果您已經開始修改範本而且想要看看原始範本的樣子，或想確認您的新範本是否具備所有必要的指定視覺狀態，這些主題可做為有用的指引。
 
-## 控制項範本中的佈景主題資源
+## <a name="theme-resources-in-control-templates"></a>控制項範本中的佈景主題資源
 
-針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的 app 可以使用適用於該佈景主題的資源集，所以 app UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
+針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的應用程式可以使用適用於該佈景主題的資源集，所以應用程式 UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
 
-**注意**  
-此文章適用於撰寫 UWP app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
- 
+ ## <a name="get-the-sample-code"></a>取得範例程式碼
+* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [自訂文字編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
 
@@ -222,6 +213,6 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

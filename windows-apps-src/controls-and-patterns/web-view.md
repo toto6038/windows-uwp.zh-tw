@@ -1,40 +1,32 @@
 ---
 author: Jwmsft
-Description: "網頁檢視控制項會將檢視嵌入您的 app 中，而 app 使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。"
+Description: "網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。"
 title: "網頁檢視"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
 
 ---
-# 網頁檢視
+# <a name="web-view"></a>網頁檢視
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-
-
-網頁檢視控制項會將檢視嵌入您的 app 中，而 app 使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
+網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容 。 超連結也可以在網頁檢視控制項中顯示和運作。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>WebView 類別</strong></a></li>
+<li>[**WebView 類別**](https://msdn.microsoft.com/library/windows/apps/br227702)</li>
 </ul>
-
-</div>
 </div>
 
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
+使用網頁檢視控制項，可在您的應用程式套件中顯示來自遠端網頁伺服器的豐富格式 HTML 內容、動態產生的程式碼或內容檔案。 豐富內容也能夠包含指令碼程式碼，並在指令碼與應用程式的程式碼之間通訊。
 
-
-## 這是正確的控制項嗎？
-
-使用網頁檢視控制項，可在您的 app 套件中顯示來自遠端網頁伺服器的豐富格式 HTML 內容、動態產生的程式碼或內容檔案。 豐富內容也能夠包含指令碼程式碼，並在指令碼與 app 的程式碼之間通訊。
-
-## 建立網頁檢視
+## <a name="create-a-web-view"></a>建立網頁檢視
 
 **修改網頁檢視的外觀**
 
@@ -54,9 +46,9 @@ ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
 
 如 [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 類別頁面的 Events 表格中所指出，網頁檢視不支援繼承自[**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) 的大部分使用者輸入事件 (例如 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx)、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx))。 相反地，您可以搭配使用 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 與 JavaScript **eval** 函式來使用 HTML 事件處理常式，以及使用 HTML 事件處理常式中的 **window.external.notify** 來通知使用 [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 的應用程式。
 
-### 瀏覽至內容
+### <a name="navigating-to-content"></a>瀏覽至內容
 
-網頁檢視提供數種 API 來進行基本瀏覽：[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) 和 [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx)。 您可以使用這些元素為您的 app 新增典型的網頁瀏覽功能。 
+網頁檢視提供數種 API 來進行基本瀏覽：[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) 和 [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx)。 您可以使用這些元素為您的應用程式新增典型的網頁瀏覽功能。 
 
 若要設定網頁檢視的初始內容，請在 XAML 中設定 [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) 屬性。 XAML 剖析器會自動將字串轉換為 [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx)。 
 
@@ -79,17 +71,17 @@ Source 屬性可以設定在程式碼中，但是，如果不這麼做，您通�
 webView1.Navigate("http://www.contoso.com");
 ```
 
-若要瀏覽至具有 POST 要求和 HTTP 標頭的 URI，請使用 [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法僅支援 [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) 屬性值的 [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 和 [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx)。 
+若要瀏覽至具有 POST 要求和 HTTP 標頭的 URI，請使用 [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法僅支援 [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 屬性值的 [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) 和 [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx)。 
 
-若要從您 app 的 [**LocalFolder**]() 或 [**TemporaryFolder**]() 資料存放區載入未壓縮和未加密內容，請搭配使用 **Navigate** 方法與使用 [ms-appdata 配置]()的 **Uri**。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/*folder*/*file*.html 和ms-appdata:///temp/*folder*/*file*.html)。 (若要載入壓縮或加密檔案，請參閱 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx))。 
+若要從您應用程式的 [**LocalFolder**]() 或 [**TemporaryFolder**]() 資料存放區載入未壓縮和未加密內容，請搭配使用 **Navigate** 方法與使用 [ms-appdata 配置]()的 **Uri**。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/*folder*/*file*.html 和ms-appdata:///temp/*folder*/*file*.html)。 (若要載入壓縮或加密檔案，請參閱 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx))。 
 
-所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以瀏覽至 ms-appdata:///temp/folder1/file.html，但此檔案中不能有 ms-appdata:///temp/folder2/file.html 的連結。 不過，您仍然可以使用 **ms-appx-web 配置**來連結至 app 套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
+所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以瀏覽至 ms-appdata:///temp/folder1/file.html，但此檔案中不能有 ms-appdata:///temp/folder2/file.html 的連結。 不過，您仍然可以使用 **ms-appx-web 配置**來連結至應用程式套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-若要從 app 套件中載入內容，請搭配使用 **Navigate** 方法與使用 [**ms-appx-web 配置**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web)的 **Uri**。 
+若要從應用程式套件中載入內容，請搭配使用 **Navigate** 方法與使用 [**ms-appx-web 配置**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web)的 **Uri**。 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
@@ -97,7 +89,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 您可以使用 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) 方法，透過自訂解析器載入本機內容。 這適用於更進階的案例，例如，下載和快取 Web 內容以進行離線使用，或是解壓縮壓縮檔中的內容。
 
-### 回應瀏覽事件
+### <a name="responding-to-navigation-events"></a>回應瀏覽事件
 
 網頁檢視控制項提供數個事件，以用來回應瀏覽和內容載入狀態。 根網頁檢視內容的事件發生順序如下：[**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)。
 
@@ -145,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** - 發生在網頁檢視完成載入目前內容或瀏覽失敗時。 若要判斷瀏覽是否失敗，請檢查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 類別的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 屬性。 
+**NavigationCompleted** - 發生在網頁檢視完成載入目前內容或瀏覽失敗時。 若要判斷瀏覽是否失敗，請檢查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 類別的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 屬性。 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -170,21 +162,21 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 - [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 發生在網頁檢視中的框架完成剖析其目前 HTML 內容時。 
 - [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 發生在網頁檢視中的框架完成載入其內容時。 
 
-### 回應潛在問題
+### <a name="responding-to-potential-problems"></a>回應潛在問題
 
 您可以回應內容的潛在問題，例如長時間執行的指令碼、網頁檢視無法載入的內容，以及不安全內容的警告。 
 
-指令碼正在執行時，您的 app 看起來會像沒有回應。 如果網頁檢視執行 JavaScript 並且可以中斷指令碼，則 [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件會定期發生。 若要判斷指令碼已執行多久的時間，請檢查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 屬性。 若要停止指令碼，請將事件引數 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 屬性設定為 **true**。 除非在後續網頁檢視瀏覽期間重新載入停止的指令碼，否則不會再次執行停止的指令碼。 
+指令碼正在執行時，您的應用程式看起來會像沒有回應。 如果網頁檢視執行 JavaScript 並且可以中斷指令碼，則 [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件會定期發生。 若要判斷指令碼已執行多久的時間，請檢查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 屬性。 若要停止指令碼，請將事件引數 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 屬性設定為 **true**。 除非在後續網頁檢視瀏覽期間重新載入停止的指令碼，否則不會再次執行停止的指令碼。 
 
-網頁檢視控制項無法裝載任意的檔案類型。 嘗試載入網頁檢視無法裝載的內容時，會發生 [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) 事件。 您可以處理此事件並通知使用者，或使用 [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) 類別將檔案重新導向至外部瀏覽器或另一個 app。
+網頁檢視控制項無法裝載任意的檔案類型。 嘗試載入網頁檢視無法裝載的內容時，會發生 [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) 事件。 您可以處理此事件並通知使用者，或使用 [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) 類別將檔案重新導向至外部瀏覽器或另一個應用程式。
 
 同樣地，在網頁內容中叫用不支援的 URI 配置 (例如 fbconnect:// 或 mailto://) 時，會發生 [**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) 事件。 您可以處理這個事件來提供自訂行為，而不是允許預設系統啟動程式啟動 URI。
 
 網頁檢視針對 SmartScreen 篩選工具回報為不安全的內容顯示警告頁面時，會發生 [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx)。 如果使用者選擇繼續瀏覽，則後續的頁面瀏覽不會顯示警告，也不會引發事件。
 
-### 處理網頁檢視內容的特殊情況
+### <a name="handling-special-cases-for-web-view-content"></a>處理網頁檢視內容的特殊情況
 
-您可以使用 [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) 屬性和 [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) 事件，來偵測、回應與啟用網頁內容中的全螢幕體驗 (例如全螢幕影片播放)。 例如，您可能使用 ContainsFullScreenElementChanged 事件來調整網頁檢視，使其佔用整個 app 檢視，或者，如下列範例所示，在想要具有全螢幕網頁體驗時，讓視窗型 app 進入全螢幕模式。
+您可以使用 [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) 屬性和 [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) 事件，來偵測、回應與啟用網頁內容中的全螢幕體驗 (例如全螢幕影片播放)。 例如，您可能使用 ContainsFullScreenElementChanged 事件來調整網頁檢視，使其佔用整個應用程式檢視，或者，如下列範例所示，在想要具有全螢幕網頁體驗時，讓視窗型應用程式進入全螢幕模式。
 
 ```csharp
 // Assume webView is defined in XAML
@@ -207,7 +199,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 
 您可以使用 [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) 事件來處理下列情況：託管的網頁內容要求顯示新視窗 (例如快顯視窗) 時。 您可以使用另一個 WebView 控制項來顯示所要求視窗的內容。
 
-使用 [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件，以啟用需要特殊功能的 Web 功能。 這些目前包含地理位置、IndexedDB 存放區，以及使用者音訊和視訊 (例如，從麥克風或網路攝影機)。 如果您的 app 存取使用者位置或使用者媒體，則仍需要在 app 資訊清單中宣告此功能。 例如，在 Package.appxmanifest 中，使用地理位置的 app 最少需要下列功能宣告：
+使用 [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件，以啟用需要特殊功能的 Web 功能。 這些目前包含地理位置、IndexedDB 存放區，以及使用者音訊和視訊 (例如，從麥克風或網路攝影機)。 如果您的應用程式存取使用者位置或使用者媒體，則仍需要在應用程式資訊清單中宣告此功能。 例如，在 Package.appxmanifest 中，使用地理位置的應用程式最少需要下列功能宣告：
 
 ```xml
   <Capabilities>
@@ -216,9 +208,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
   </Capabilities>
 ```
 
-除了處理 [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件的 app 之外，使用者還必須核准要求位置或媒體功能之 app 的標準系統對話方塊，以啟用這些功能。
+除了處理 [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件的應用程式之外，使用者還必須核准要求位置或媒體功能之應用程式的標準系統對話方塊，以啟用這些功能。
 
-以下範例示範 app 如何從 Bing 啟用地圖中的地理位置︰
+以下範例示範應用程式如何從 Bing 啟用地圖中的地理位置︰
 
 ```csharp
 // Assume webView is defined in XAML
@@ -234,11 +226,11 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-如果您的 app 需要使用者輸入或其他非同步作業來回應權限要求，請使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 方法來建立可稍後處理的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 請參閱 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)。 
+如果您的應用程式需要使用者輸入或其他非同步作業來回應權限要求，請使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 方法來建立可稍後處理的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 請參閱 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)。 
 
 如果使用者必須安全地登出網頁檢視中所裝載的網站，或是其他安全性十分重要的情況，請透過網頁檢視工作階段呼叫靜態方法 [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) 來清除所有本機快取的內容。 這可以防止惡意使用者存取敏感性資料。 
 
-### 與網頁檢視內容互動
+### <a name="interacting-with-web-view-content"></a>與網頁檢視內容互動
 
 使用 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 方法叫用指令碼或將其插入網頁檢視內容，以及使用 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件從網頁檢視內容取回資訊，即可與網頁檢視內容互動。
 
@@ -264,11 +256,11 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-網頁檢視內容中的指令碼可以搭配使用 **window.external.notify** 與 string 參數，以將資訊送回 app。 若要接收這些訊息，請處理 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件。 
+網頁檢視內容中的指令碼可以搭配使用 **window.external.notify** 與 string 參數，以將資訊送回應用程式。 若要接收這些訊息，請處理 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件。 
 
-若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在 app 資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI (您可以在 Microsoft Visual Studio 之 Package.appxmanifest 設計工具的 [內容 URI] 索引標籤上這麼做)。這個清單中的 URI 必須使用 HTTPS，而且可以包含子網域萬用字元 (例如，`https://*.microsoft.com`)，但是不可以包含網域萬用字元 (例如，`https://*.com` 和 `https://*.*`)。 資訊清單需求不適用於源自 app 套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 載入的內容。 
+若要在呼叫 window.external.notify 時讓外部網頁引發 **ScriptNotify** 事件，您必須在應用程式資訊清單的 **ApplicationContentUriRules** 區段中包含頁面的 URI (您可以在 Microsoft Visual Studio 之 Package.appxmanifest 設計工具的 [內容 URI] 索引標籤上這麼做)。這個清單中的 URI 必須使用 HTTPS，而且可以包含子網域萬用字元 (例如，`https://*.microsoft.com`)，但是不可以包含網域萬用字元 (例如，`https://*.com` 和 `https://*.*`)。 資訊清單需求不適用於源自應用程式套件的內容、使用 ms-local-stream:// URI 的內容，或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 載入的內容。 
 
-### 在網頁檢視中存取 Windows 執行階段
+### <a name="accessing-the-windows-runtime-in-a-web-view"></a>在網頁檢視中存取 Windows 執行階段
 
 您可以使用 [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) 方法，將原生類別的執行個體從 Windows 執行階段元件插入網頁檢視的 JavaScript 內容。 這樣可在該網頁檢視的 JavaScript 內容中完整存取該物件的原生方法、屬性和事件。 類別必須使用 [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 屬性進行裝飾。 
 
@@ -286,9 +278,9 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 如需詳細資訊，請參閱 [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx)。 
 
-此外，還可以允許網頁檢視中的受信任 JavaScript 內容直接存取 Windows 執行階段 API。 這會提供網頁檢視中所裝載 Web app 的功能強大原生功能。 若要啟用這項功能，在 Package.appxmanifest 中 app 的 ApplicationContentUriRules 中，必須將受信任內容的 URI 設為白名單，而且 WindowsRuntimeAccess 特別設定為 "all"。 
+此外，還可以允許網頁檢視中的受信任 JavaScript 內容直接存取 Windows 執行階段 API。 這會提供網頁檢視中所裝載 Web 應用程式的功能強大原生功能。 若要啟用這項功能，在 Package.appxmanifest 中應用程式的 ApplicationContentUriRules 中，必須將受信任內容的 URI 設為允許清單，而且 WindowsRuntimeAccess 特別設定為 "all"。 
 
-這個範例示範 app 資訊清單的一個區段。 在這裡，本機 URI 具有 Windows 執行階段的存取權。 
+這個範例示範應用程式資訊清單的一個區段。 在這裡，本機 URI 具有 Windows 執行階段的存取權。 
 
 ```csharp
   <Applications>
@@ -302,34 +294,34 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
   </Applications>
 ```
 
-### 網頁內容裝載的選項
+### <a name="options-for-web-content-hosting"></a>網頁內容裝載的選項
 
 您可以使用 [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) 屬性 (類型為 [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) 來控制是否啟用 JavaScript 和 IndexedDB。 例如，如果您使用網頁檢視來顯示完全靜態內容，則可能要停用 JavaScript 以獲得最佳效能。
 
-### 擷取網頁檢視內容
+### <a name="capturing-web-view-content"></a>擷取網頁檢視內容
 
-若要與其他 app 共用網頁檢視內容，請使用 [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) 方法，這會將選取的內容傳回為 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx)。 這是非同步方法，因此您必須使用延遲，防止 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) 事件處理常式在非同步呼叫完成之前返回。 
+若要與其他應用程式共用網頁檢視內容，請使用 [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) 方法，這會將選取的內容傳回為 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx)。 這是非同步方法，因此您必須使用延遲，防止 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) 事件處理常式在非同步呼叫完成之前返回。 
 
 若要取得目前網頁檢視內容的預覽影像，請使用 [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) 方法。 這個方法會建立目前內容的映像，並將它寫入指定的資料流中。 
 
-### 執行緒行為
+### <a name="threading-behavior"></a>執行緒行為
 
 網頁檢視內容預設會裝載於傳統型裝置系列之裝置的 UI 執行緒上，並從所有其他裝置上的 UI 執行緒予以卸載。 您可以使用 [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 靜態屬性，來查詢目前用戶端的預設執行緒行為。 必要時，您可以使用 [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) 建構函式來覆寫這個行為。 
 
-> **注意**  將 UI 執行緒上的內容裝載到行動裝置時可能會發生效能問題，因此，請務必在變更 DefaultExecutionMode 時在所有目標裝置上進行測試。
+> **注意**&nbsp;&nbsp;將 UI 執行緒上的內容裝載到行動裝置時可能會發生效能問題，因此，請務必在變更 DefaultExecutionMode 時在所有目標裝置上進行測試。
 
 從 UI 執行緒卸載內容的網頁檢視與父控制項不相容，而父控制項需要手勢才能從網頁檢視控制項散佈到父項 (例如 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 和其他相關控制項)。 這些控制項將無法接收關閉執行緒網頁檢視中所起始的手勢。 此外，不直接支援列印關閉執行緒網頁內容；您應該改為使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) 填滿來列印元素。
 
-## 建議事項
+## <a name="recommendations"></a>建議
 
 
--   確定所載入的網站在裝置上格式正確，以及使用的色彩、印刷格式及瀏覽方式，都和 app 的其他部分一致。
+-   確定所載入的網站在裝置上格式正確，以及使用的色彩、印刷格式及瀏覽方式，都和應用程式的其他部分一致。
 -   應該適當地調整輸入欄位的大小。 使用者可能不知道他們可以放大來輸入文字。
--   如果網頁檢視在外觀上與 app 的其他部分不像，請考慮採用替代控制項或方式來完成相關工作。 如果網頁檢視符合 app 的其他部分，使用者會將其與其他部分視為一個整體，而獲得無縫式經驗。
+-   如果網頁檢視在外觀上與應用程式的其他部分不像，請考慮採用替代控制項或方式來完成相關工作。 如果網頁檢視符合應用程式的其他部分，使用者會將其與其他部分視為一個整體，而獲得無縫式經驗。
 
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [**WebView 類別**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -342,6 +334,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

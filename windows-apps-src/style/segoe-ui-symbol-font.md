@@ -7,38 +7,28 @@ ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1e7914c0641d2897efbcbe5c9479a2ecc1a8dd2d
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
-# Segoe MDL2 圖示
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 本文列出 Segoe MDL2 Assets 字型所提供的圖示。 
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn252842"><strong>Symbol 列舉 (XAML)</strong></a></li>
+<li>[**Symbol 列舉 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)</li>
 </ul>
-
-</div>
 </div>
 
 
+## <a name="about-segoe-mdl2-assets"></a>關於 Segoe MDL2 Assets
 
-## 如何取得此字型？
-若要取得 Segoe MDL2 Assets 字型，您必須安裝 Windows 10。 
-
-## 關於 Segoe MDL2 Assets
-
-自 Windows 10 發行之後，Windows 8/8.1 Segoe UI Symbol 字型已被 Segoe MDL2 Assets 字型取代。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** 仍然以「傳統」資源的形式可供使用，但建議您更新 app 以使用新的 **Segoe MDL2 Assets**。
-
-> **注意**
->
-> **Em** 是字型中的度量單位。 字型中的 1 Em 等於 72ppi 的 100% 指定點值。 例如，16pt 等於 72ppi 的 16px (也稱為 100% 縮放倍數)。 設計新的 MDL2 字型，讓圖示區域的範圍是正方形 Em。 因此如果您在字碼中針對寬度和高度放置 16px，您會取得 16x16px 圖示範圍。 這不一定表示該圖示是範圍的完整維度。
+自從發行 Windows 10 後，Segoe MDL2 Assets 字型就取代了 Windows 8/8.1 Segoe UI Symbol 圖示字型。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** 仍然以「傳統」資源的形式提供，但建議您更新應用程式以使用新的 **Segoe MDL2 Assets**)。
 
 **Segoe MDL2 Assets** 字型中包含的大部分圖示和 UI 控制項會對應到 Unicode 專用區 (PUA)。 PUA 可讓字型開發人員將私人 Unicode 值指派給沒有對應到現有字碼指標的字符。 這在建立符號字型時很有用，但這會產生互通性問題。 如果無法使用字型，則不會顯示字符。 請只有在您可以指定 **Segoe MDL2 Assets** 字型時，才使用這些字符。
 
@@ -46,7 +36,7 @@ ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
 
 不同於 **Segoe UI Symbol**，**Segoe MDL2 Assets** 字型中的圖示不是用於內嵌文字。 這表示像是進度公開箭頭的某些較舊「技巧」不再適用。 同樣地，因為所有新的圖示的大小和定位相同，所以不需要以零寬度製作；我們剛才確定它們可以做為集合運作。 在理想的情況下，您可以重疊設計為集合的兩個圖示，它們會落在位置上。 我們可以這樣做以允許字碼中的顏色標示。 例如，針對磚徽章狀態建立 U+EA3A 和 U+EA3B。 由於這些項目已經置中，因此可以針對不同的狀態在圓形填滿的部分上色。
 
-## 分層和鏡像
+## <a name="layering-and-mirroring"></a>分層和鏡像
 
 **Segoe MDL2 Assets** 中的所有字符具有相同的固定寬度和一致的高度與左邊的原始點，因此可以藉由直接在彼此上方繪製字符來達成分層及顏色標示效果。 此範例示範在零寬度的紅色心形上繪製一個黑色外框。
 
@@ -54,21 +44,24 @@ ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
 
 許多圖示也提供鏡像的形式，可在文字方向由右至左的語言 (例如阿拉伯文、波斯文及希伯來文) 中使用。
 
-## Symbol 列舉
-如果您使用 C#/VB/C++ 和 XAML 來開發 app，您可以使用 [**Symbol 列舉**](https://msdn.microsoft.com/library/windows/apps/dn252842) 來使用來自 Segoe MDL2 Assets 字型的圖示。 
+## <a name="symbol-enumeration"></a>Symbol 列舉
+如果您使用 C#/VB/C++ 和 XAML 來開發應用程式，您可以使用 [**Symbol 列舉**](https://msdn.microsoft.com/library/windows/apps/dn252842) 來使用 Segoe MDL2 Assets 字型的圖示。 
+
+## <a name="how-do-i-get-this-font"></a>如何取得此字型？
+若要取得 Segoe MDL2 Assets 字型，您必須安裝 Windows 10。 
 
 <!--
 Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
 -->
 
-## 圖示清單
+## <a name="icon-list"></a>圖示清單
 
 <table>
 
  <tr>
   <td>符號</td>
   <td>Unicode 點</td>
-  <td>描述</td>
+  <td>說明</td>
  </tr>
  <tr><td>![CheckMarkLegacy](images/segoe-mdl/e001.png)</td>
   <td>E001</td>
@@ -5143,10 +5136,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-
-
-
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [字型的指導方針](fonts.md)
 * [**Symbol 列舉**](https://msdn.microsoft.com/library/windows/apps/dn252842)
@@ -5160,6 +5150,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

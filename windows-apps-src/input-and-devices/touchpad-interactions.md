@@ -1,20 +1,26 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，來建立通用 Windows 平台 (UWP) App。"
+Description: "使用已針對觸控板進行最佳化，但在功能上與所有輸入裝置一致的直覺式特殊使用者互動體驗，以建立通用 Windows 平台 (UWP) 應用程式。"
 title: "觸控板互動"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+keywords: "觸控板、PTP、觸控、指標、輸入、使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: dd91c8a6c58c25799a0c43b8632fade5309850cc
 
 ---
 
-# 觸控板設計指導方針
+# <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
 
-將您的 app 設計成使用者可透過觸控板與其互動的 app。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這項結合讓觸控板既適用於觸控最佳化 UI，也適用於較小的生產力 app 目標。
+將您的應用程式設計成使用者可透過觸控板與其互動的應用程式。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這項結合讓觸控板既適用於觸控最佳化 UI，也適用於較小的生產力應用程式目標。
 
  
 
@@ -40,12 +46,12 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
-本主題中討論的手勢和指導方針可以協助您確保您的 App 使用最少的程式碼就能順暢地支援觸控板輸入。
+本主題中討論的手勢和指導方針可以協助您確保您的應用程式使用最少的程式碼就能順暢地支援觸控板輸入。
 
-## 觸控板語言
+## <a name="the-touchpad-language"></a>觸控板語言
 
 
-一組可用於整個系統的簡單觸控板互動。 針對觸控及滑鼠輸入最佳化您的 App，而這個語言讓使用者可以立即熟悉您的 App，提高他們的自信，讓您的 App 更易於學習及使用。
+一組可用於整個系統的簡單觸控板互動。 針對觸控及滑鼠輸入最佳化您的應用程式，而這個語言讓使用者可以立即熟悉您的應用程式，提高他們的自信，讓您的應用程式更易於學習及使用。
 
 比起在標準觸控板上所做的動作，使用者能夠設定更多的精確式觸控板手勢與互動行為。 下列兩個影像顯示分別來自標準觸控板和精確式觸控板之 [設定] &gt; [裝置] &gt; [滑鼠和觸控板] 的不同觸控板設定頁面。
 
@@ -77,7 +83,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 </tr>
 <tr class="even">
 <td align="left"><p>三指滑動</p></td>
-<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 [工作檢視]、顯示桌面，或在開啟的 App 之間切換。</p></td>
+<td align="left"><p>使用者喜好設定，可開啟虛擬桌面的 [工作檢視]、顯示桌面，或在開啟的應用程式之間切換。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>單指點選以進行主要動作</p></td>
@@ -112,14 +118,14 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
  
 
-## 硬體
+## <a name="hardware"></a>硬體
 
 
 查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
-## 視覺化回饋
+## <a name="visual-feedback"></a>視覺化回饋
 
 
 -   偵測到觸控板游標時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果觸控板游標有一段時間沒有移動，或者使用者起始觸控互動，讓觸控板 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -130,12 +136,12 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## 游標
+## <a name="cursors"></a>游標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
 
-每一個標準游標都有與其關聯之相對應的預設影像。 使用者或 app 可以隨時取代與任何標準游標相關聯的預設影像。 Windows 市集應用程式透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 Windows 市集應用程式透過 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函式指定游標影像。
 
 如果您需要自訂滑鼠游標：
 
@@ -145,7 +151,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 -   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png)、 ![調整水平大小游標](images/cursor-horizontal.png)、 ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png)、 ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
 -   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png)、 ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 * [處理指標輸入](handle-pointer-input.md)
@@ -167,6 +173,6 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

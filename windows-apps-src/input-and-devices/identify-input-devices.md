@@ -5,29 +5,38 @@ title: "識別輸入裝置"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
+keywords: "裝置, 數位板, 輸入, 互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 20230362a38d4541fbed25ac822c96032f7b6d8f
 
 ---
 
-# 識別輸入裝置
+# <a name="identify-input-devices"></a>識別輸入裝置
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 識別連接至通用 Windows 平台 (UWP) 裝置的輸入裝置，以及識別它們的功能和屬性。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## 擷取滑鼠屬性
+## <a name="retrieve-mouse-properties"></a>擷取滑鼠屬性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 類別，這個類別可以用來擷取由一或多個已連接滑鼠所公開的屬性。 做法是建立一個新的 **MouseCapabilities** 物件並取得您感興趣的屬性。
 
-**注意** 這裡討論之屬性所傳回的值都是以所有偵測到的滑鼠為根據：只要至少有一個滑鼠支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一滑鼠所公開的最大值。
+**注意**  這裡所討論屬性傳回的值都是以所有偵測到的滑鼠為根據：只要至少有一個滑鼠支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一滑鼠所公開的最大值。
 
  
 
@@ -45,7 +54,7 @@ private void GetMouseProperties()
 }
 ```
 
-## 擷取鍵盤屬性
+## <a name="retrieve-keyboard-properties"></a>擷取鍵盤屬性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) 類別，這個類別可以用來擷取是否已連接鍵盤。 做法是建立一個新的 **KeyboardCapabilities** 物件並取得 [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) 屬性。
@@ -60,12 +69,12 @@ private void GetKeyboardProperties()
 }
 ```
 
-## 擷取觸控屬性
+## <a name="retrieve-touch-properties"></a>擷取觸控屬性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 類別，這個類別可以用來擷取是否已連接任何觸控數位板。 做法是建立一個新的 **TouchCapabilities** 物件並取得您感興趣的屬性。
 
-**注意** 這裡討論之屬性所傳回的值是以所有偵測到的觸控數位板為根據：只要至少有一個數位板支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一數位板所公開的最大值。
+**注意**  這裡所討論屬性傳回的值是以所有偵測到的觸控數位板為根據：只要至少有一個數位板支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一數位板所公開的最大值。
 
  
 
@@ -80,12 +89,12 @@ private void GetTouchProperties()
 }
 ```
 
-## 擷取指標屬性
+## <a name="retrieve-pointer-properties"></a>擷取指標屬性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 類別，這個類別可以用來擷取是否有任何裝置支援指標輸入 (觸控、觸控板、滑鼠或手寫筆)。 做法是建立一個新的 **PointerDevice** 物件並取得您感興趣的屬性。
 
-**注意** 這裡討論之屬性所傳回的值是以所有偵測到的指標裝置為根據：只要至少有一個裝置支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一指標裝置所公開的最大值。
+**注意**  這裡所討論屬性傳回的值是以所有偵測到的指標裝置為根據：只要至少有一個裝置支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一指標裝置所公開的最大值。
 
  
 
@@ -176,7 +185,7 @@ private void GetPointerDevices()
     }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 **範例**
@@ -196,6 +205,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 市集提交 API 以程式設計方式為登錄到您 Windows 開發人員中心帳戶的 App 建立和管理提交。"
 title: "使用 Windows 市集服務建立和管理提交"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 ---
 
@@ -55,12 +55,11 @@ ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 
 在您使用 Windows 市集提交 API 之前，您必須將 Azure AD 應用程式與開發人員中心帳戶相關聯、擷取應用程式的租用戶識別碼和用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Windows 市集提交 API 的 App 或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
 
->**注意**
-              您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
+>**注意**&nbsp;&nbsp;您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
 1.  在開發人員中心，移至您的 [帳戶設定]，按一下 [管理使用者]，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在 [管理使用者] 頁面中，按一下 [新增 Azure AD 應用程式]，新增代表您要用來存取開發人員中心帳戶提交之 App 或服務的 Azure AD 應用程式，並指派 [管理員] 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 [新增 Azure AD 應用程式] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 \[新增 Azure AD 應用程式\] 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在 [管理使用者] 頁面中，按一下 [新增 Azure AD 應用程式]，新增代表您要用來存取開發人員中心帳戶提交之 App 或服務的 Azure AD 應用程式，並指派 [管理員] 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 \[新增 Azure AD 應用程式\] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 \[新增 Azure AD 應用程式\] 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
 3.  返回 \[管理使用者\] 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 \[租用戶識別碼\] 和 \[用戶端識別碼\] 的值。
 
@@ -74,7 +73,7 @@ ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -84,17 +83,18 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-對於 *tenant\_id*、*client\_id* 和 *client\_secret* 參數，指定您在上一節從開發人員中心為應用程式擷取的租用戶識別碼、用戶端識別碼和金鑰。 對於 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com``` URI。
+對於 POST URI 中的 *tenant\_id* 值以及 *client\_id* 與 *client\_secret* 參數，請為您在上一章節擷取自開發人員中心的應用程式指定租用戶識別碼、用戶端識別碼以及金鑰。 對於 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com```。
 
 存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。
+
+如需示範如何使用 C#、Java 或 Python 程式碼來取得存取權杖的範例，請參閱 Windows 市集提交 API [程式碼範例](#code-examples)。
 
 <span id="call-the-windows-store-submission-api">
 ## <a name="step-3-use-the-windows-store-submission-api"></a>步驟 3：使用 Windows 市集提交 API
 
 取得 Azure AD 存取權杖之後，您就可以呼叫 Windows 市集提交 API 中的方法。 API 包含許多方法，可以分成適用於 App、附加元件與套件正式發行前小眾測試版的案例。 若要建立或更新提交，您通常要以特定順序呼叫 Windows 市集提交 API 中的多個方法。 如需每個案例及每個方法之語法的相關資訊，請參閱下表中的文章。
 
->**注意**
-              取得存取權杖之後，在權杖到期之前，您有 60 分鐘的時間可以呼叫 Windows 市集提交 API 中的方法。
+>**注意**&nbsp;&nbsp;取得存取權杖之後，在權杖到期之前，您有 60 分鐘的時間可以呼叫 Windows 市集提交 API 中的方法。
 
 | 案例       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -102,8 +102,7 @@ grant_type=client_credentials
 | 附加元件 | 取得、建立或刪除您 App 的附加元件，然後取得、建立或刪除附加元件的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理附加元件](manage-add-ons.md)</li><li>[管理附加元件提交](manage-add-on-submissions.md)</li></ul> |
 | 套件正式發行前小眾測試版 | 取得、建立或刪除您 App 的套件正式發行前小眾測試版，然後取得、建立或刪除套件正式發行前小眾測試版的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理套件正式發行前小眾測試版](manage-flights.md)</li><li>[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)</li></ul> |
 
-<span />
-
+<span id="code-samples"/>
 ## <a name="code-examples"></a>程式碼範例
 
 下列文章提供詳細的程式碼範例，示範如何以多個不同的程式設計語言使用 Windows 市集提交 API：
@@ -137,6 +136,6 @@ grant_type=client_credentials
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

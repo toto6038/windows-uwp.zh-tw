@@ -1,21 +1,28 @@
 ---
-description: "透過「Windows 開發人員中心」UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP app 的特質。"
+description: "透過「Windows 開發人員中心」UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP 應用程式的特質。"
 keywords: "uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發"
 title: "UWP 樣式指南 - Windows 應用程式開發"
 author: mijacobs
+label: Style
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 488eac85e7ab724dd3dbc6d5972cd330d972134b
 
 ---
-# UWP 樣式指南
+# <a name="uwp-style-guide"></a>UWP 樣式指南
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  <p>教導您如何透過色彩、印刷樣式和動作定義您 UWP app 特質的設計指導方針與程式碼範例。</p>
+  <p>教導您如何透過色彩、印刷樣式和動作定義您 UWP 應用程式特質的設計指導方針與程式碼範例。</p>
   </div>
   <div class="side-by-side-content-right">
     ![色彩、圖示、動作、音效，和印刷樣式指導方針](images/style-header-v2.png)
@@ -28,7 +35,7 @@ ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[色彩](color.md)</b><br/>
-色彩可提供 App 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。</p>
+色彩可提供應用程式的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。</p>
   </div>
   <div class="side-by-side-content-right">
    <p><b>[圖示](icons.md)</b><br/>
@@ -66,7 +73,7 @@ ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
   
   <div class="side-by-side-content-right">
    <p><b>[設定控制項的樣式](../controls-and-patterns/styling-controls.md)</b><br/>
-您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
+您可以使用 XAML 架構，以許多方式自訂應用程式的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
   </div>
 </div>
 </div>
@@ -74,6 +81,6 @@ ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

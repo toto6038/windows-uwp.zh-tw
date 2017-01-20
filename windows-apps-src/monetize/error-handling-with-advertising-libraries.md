@@ -4,20 +4,17 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。"
 title: "Microsoft Advertising 程式庫的錯誤處理"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dedac33d86f50b63de300f78a9f9961efc1c016b
+ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
+ms.openlocfilehash: 56df2b0f0a41d128f02aa5e2aa0ce11e6f6ca16a
 
 ---
 
-# Microsoft Advertising 程式庫的錯誤處理
-
-
-
+# <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising 程式庫的錯誤處理
 
 本主題提供如何處理 Microsoft Advertising 程式庫中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別所產生之錯誤的相關基本資訊。
 
 <span id="bkmk-javascript"/>
-## JavaScript/HTML app
+## <a name="javascripthtml-apps"></a>JavaScript/HTML app
 
 處理 JavaScript 中 **AdControl** 的錯誤：
 
@@ -27,7 +24,8 @@ ms.openlocfilehash: dedac33d86f50b63de300f78a9f9961efc1c016b
 
 **onErrorOccurred** 事件處理常式是在 **AdControl** 之 **div** 的 **data-win-options** 屬性中設定。 在以下範例中， **onErrorOccurred** 事件是設定成由名為 **errorLogger** 的函式處理。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 250px; height: 250px; z-index: 1"
      data-win-control="MicrosoftNSJS.Advertising.AdControl"
      data-win-options="{applicationId: 'd25517cb-12d4-4699-8bdc-52040c712cab', adUnitId: 'ADPT33', onErrorOccurred: errorLogger}">
@@ -40,17 +38,19 @@ ms.openlocfilehash: dedac33d86f50b63de300f78a9f9961efc1c016b
 
 以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` javascript
 WinJS.Utilities.markSupportedForProcessing(
 window.errorLogger = function (sender, evt) {
-    console.log(new Date()).toLocaleTimeString() + ": " + sender.element.id + " error: " + evt.errorMessage + " error code: " + evt.errorCode + \n");
+    console.log(new Date()).toLocaleTimeString() + ": " + sender.element.id + " error: " + evt.errorMessage +
+    " error code: " + evt.errorCode + \n");
 });
 ```
 
 請參閱 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)以取得示範 JavaScript 中 **AdControl** 錯誤處理的逐步解說。
 
 <span id="bkmk-dotnet"/>
-## XAML app
+## <a name="xaml-apps"></a>XAML app
 
 處理 XAML app 中的 **AdControl** 錯誤：
 
@@ -60,16 +60,19 @@ window.errorLogger = function (sender, evt) {
 
 以下是將名為 **OnAdError** 的委派指派給 **ErrorOccurred** 事件的範例。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` csharp
 this.ErrorOccurred = OnAdError;
 ```
 
 以下是在 Visual Studio 中撰寫錯誤資訊給輸出視窗之 **OnAdError** 委派的範例定義。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` csharp
 private void OnAdError(object sender, AdErrorEventArgs e)
 {
-    System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error + " ErrorCode: " + e.ErrorCode.ToString());
+    System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error +
+        " ErrorCode: " + e.ErrorCode.ToString());
 }
 ```
 
@@ -81,6 +84,6 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

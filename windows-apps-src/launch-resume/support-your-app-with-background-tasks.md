@@ -4,8 +4,8 @@ title: "使用背景工作支援 App"
 description: "本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 7208ca16fe7eee2ec4039f3c4bc6305dceac96f3
-ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 若要快速開始使用同處理序背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
-若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。
+若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 > [!TIP]
 > 從 Windows 10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
@@ -74,7 +74,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 下列即時觸發程序可用來在背景執行輕量型自訂程式碼：
 
-| 即時觸發程序  | 描述 |
+| 即時觸發程序  | 說明 |
 |--------------------|-------------|
 | **控制通道** | 背景工作可以保持連線，並透過使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 在控制通道上接收訊息。 如果您的 App 正在接聽通訊端，則您可以使用「通訊端代理程式」，而不使用 **ControlChannelTrigger**。 如需使用通訊端代理程式的詳細資訊，請參閱 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 Windows Phone 不支援 **ControlChannelTrigger**。 |
 | **計時器** | 背景工作的執行頻率最高可達每 15 分鐘一次，而且只要使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 即可設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。 |
@@ -142,7 +142,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與同處理序背景工作搭配使用。
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 app (如果有的話) 指定為裝置的具有特殊權限的 app。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個 App (如果有的話) 指定為裝置的具有特殊權限的 App。 如需詳細資訊，請參閱 [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## <a name="managing-background-tasks"></a>管理背景工作
 
@@ -165,7 +165,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 * [在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
@@ -182,6 +182,6 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

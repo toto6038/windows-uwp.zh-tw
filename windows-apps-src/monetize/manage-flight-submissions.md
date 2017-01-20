@@ -1,39 +1,74 @@
 ---
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理套件正式發行前小眾測試版提交。"
+description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版提交。"
 title: "使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
+ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
+ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 ---
 
-# 使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交
+# <a name="manage-package-flight-submissions-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交
 
+Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 套件正式發行前小眾測試版必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理套件正式發行前小眾測試版的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
 
+<span id="methods-for-package-flight-submissions" />
+## <a name="methods-for-managing-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交的方法
 
-在 Windows 市集提交 API 中使用下列方法，來為登錄到您 Windows 開發人員中心帳戶的 App 管理套件正式發行前小眾測試版提交。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的先決條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。
 
->**注意**
-              這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 套件正式發行前小眾測試版必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理套件正式發行前小眾測試版的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
-
-| 方法        | URI    | 描述                                                                 |
-|---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 取得現有套件正式發行前小眾測試版提交的資料。 如需詳細資訊，請參閱[這篇文章](get-a-flight-submission.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 取得現有套件正式發行前小眾測試版提交的狀態。 如需詳細資訊，請參閱[這篇文章](get-status-for-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` | 為已向您「Windows 開發人員中心」帳戶登錄的 App 建立新的套件正式發行前小眾測試版提交。 如需詳細資訊，請參閱[這篇文章](create-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 將新的或更新的套件正式發行前小眾測試版提交認可到「Windows 開發人員中心」。 如需詳細資訊，請參閱[這篇文章](commit-a-flight-submission.md)。 |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 更新現有的套件正式發行前小眾測試版提交。 如需詳細資訊，請參閱[這篇文章](update-a-flight-submission.md)。 |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 刪除套件正式發行前小眾測試版提交。 如需詳細資訊，請參閱[這篇文章](delete-a-flight-submission.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout``` | 取得套件正式發行前小眾測試版提交的漸進式推出資訊。 如需詳細資訊，請參閱[這篇文章](get-package-rollout-info-for-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` | 更新套件正式發行前小眾測試版提交的漸進式推出百分比。 如需詳細資訊，請參閱[這篇文章](update-the-package-rollout-percentage-for-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` | 停止套件正式發行前小眾測試版提交的漸進式推出。 如需詳細資訊，請參閱[這篇文章](halt-the-package-rollout-for-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` | 完成套件正式發行前小眾測試版提交的漸進式推出。 如需詳細資訊，請參閱[這篇文章](finalize-the-package-rollout-for-a-flight-submission.md)。 |
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">方法</th>
+<th align="left">URI</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[取得現有的套件正式發行前小眾測試版提交](get-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status```</td>
+<td align="left">[取得現有套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions```</td>
+<td align="left">[建立新套件正式發行前小眾測試版提交](create-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[更新現有的套件正式發行前小眾測試版提交](update-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit```</td>
+<td align="left">[認可新的或已更新的套件正式發行前小眾測試版提交](commit-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)</td>
+</tr>
+</tbody>
+</table>
 
 <span id="create-a-package-flight-submission">
-## 建立套件正式發行前小眾測試版提交
+### 建立套件正式發行前小眾測試版提交
 
 若要建立套件正式發行前小眾測試版的提交，請遵循此程序。
 
@@ -41,32 +76,42 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Windows 市集提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
-3. 在「Windows 市集提交 API」中執行下列方法來[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。
+3. 在 Windows 市集提交 API 中執行下列方法來[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
   ```
 
-  回應主體包含三個項目︰新提交的識別碼、新提交的資料 (包含所有清單和定價資訊)，以及用於上傳提交的任何套件的共用存取簽章 (SAS) URI。 如需 SAS 的詳細資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+  回應主體包含三個項目︰新提交的識別碼、新提交的資料 (包含所有清單和定價資訊)，以及用於上傳提交至 Azure Blob 儲存體的任何套件的共用存取簽章 (SAS) URI。
+
+  >**注意**&nbsp;&nbsp;SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS URI 及使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
 4. 如果您要為提交新增新的套件，請[準備套件](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)並將它們新增到 ZIP 封存。
 
 5. 以新提交的任何所需變更來修訂提交資料，然後執行下列方法來[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
-  >**注意**
-              如果您要為提交新增新的套件，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
+  <span/>
+  >**注意**&nbsp;&nbsp;如果您要為提交新增新的套件，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
 
-4. 如果您要新增提交的新套件，將 ZIP 封存上傳至您在步驟 2 中呼叫之 POST 方法回應主體中提供的 SAS URI。 如需詳細資訊，請參閱[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+4. 如果您要新增提交的新套件，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
 
-  下列程式碼片段示範如何使用「適用於 .NET 的 Azure 儲存體用戶端程式庫」中的 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 類別來上傳封存。
+  * [.NET 適用的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+  * [Java 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+  * [Python 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
+  <span/>
+
+  下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
+
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
       new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
   await blockBob.UploadFromStreamAsync(stream);
@@ -74,73 +119,90 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這會向「開發人員中心」發出警示，指出您已完成提交，而現在應該將更新套用至您的帳戶。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
   ```
 
 6. 執行下列方法來[取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)，以檢查認可狀態。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
   ```
 
-  若要確認提交狀態，請檢閱回應主體中的「狀態」值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+  若要確認提交狀態，請檢閱回應主體中的「狀態」**值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以使用先前的方法或瀏覽「開發人員中心」儀表板，來繼續監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
+
+<span/>
+### <a name="code-examples"></a>程式碼範例
+
+下列文章提供詳細的程式碼範例，示範如何以數種不同的程式設計語言來建立套件正式發行前小眾測試版：
+
+* [C# 程式碼範例](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
+* [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
 <span id="manage-gradual-package-rollout">
-## 管理套件正式發行前小眾測試版提交的漸進式套件推出
+## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理套件正式發行前小眾測試版提交的漸進式套件推出
 
-您可以將套件正式發行前小眾測試版提交中的已更新套件，以漸進方式推出給 Windows 10 上的一部分 App 客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
+您可以將套件正式發行前小眾測試版提交中的已更新套件，以漸進方式推出給 Windows 10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
 
-您也可以在「Windows 市集提交 API」中使用下列方法，以程式設計方式啟用和管理套件正式發行前小眾測試版提交的漸進式套件推出。
-
-* 啟用套件正式發行前小眾測試版提交的漸進式套件推出：
+若要以程式設計方式啟用和管理套件正式發行前小眾測試版提交的漸進式套件推出，請使用 Windows 市集提交 API 中的方法，遵照此程序執行。
 
   1. [建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)或[取得套件正式發行前小眾測試版提交](get-a-flight-submission.md)。
-  2. 在回應資料中，找出 [packageRollout](#package-rollout-object) 資源，將 *isPackageRollout* 欄位設定為 true，然後將 *packageRolloutPercentage* 欄位設定為應該取得已更新套件的 App 客戶百分比。
+  2. 在回應資料中，找出 [packageRollout](#package-rollout-object) 資源，將 *isPackageRollout* 欄位設定為 true，然後將 *packageRolloutPercentage* 欄位設定為應該取得已更新套件的應用程式客戶百分比。
   3. 將已更新的套件正式發行前小眾測試版提交資料傳遞給[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法。
 
+在為套件正式發行前小眾測試版提交啟用漸進式套件推出之後，您可使用下列方法，以程式設計方式取得、更新、中斷或完成漸進式推出。
+
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">方法</th>
+<th align="left">URI</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout```</td>
+<td align="left">[取得套件正式發行前小眾測試版提交的漸進式推出資訊](get-package-rollout-info-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
+<td align="left">[更新套件正式發行前小眾測試版提交的漸進式推出百分比](update-the-package-rollout-percentage-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout```</td>
+<td align="left">[中斷套件正式發行前小眾測試版提交的漸進式推出](halt-the-package-rollout-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout```</td>
+<td align="left">[完成套件正式發行前小眾測試版提交的漸進式推出](finalize-the-package-rollout-for-a-flight-submission.md)</td>
+</tr>
+</tbody>
+</table>
+
 <span/>
+## 資料資源
 
-* 若要[取得套件正式發行前小眾測試版提交的套件推出資訊](get-package-rollout-info-for-a-flight-submission.md)，請執行下列方法。
-
-  ```
-  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout
-  ```
-
-<span/>
-
-* 若要[更新套件正式發行前小眾測試版提交的套件推出百分比](update-the-package-rollout-percentage-for-a-flight-submission.md)，請執行下列方法。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage  
-  ```
-
-<span/>
-
-* 若要[停止套件正式發行前小眾測試版提交的套件推出](halt-the-package-rollout-for-a-flight-submission.md)，請執行下列方法。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout   
-  ```  
-
-<span/>
-
-* 若要[完成套件正式發行前小眾測試版提交的套件推出](finalize-the-package-rollout-for-a-flight-submission.md)，請執行下列方法。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout
-  ```
-
-## 資源
-
-這些方法會使用下列資料資源。
+用於管理套件正式發行前小眾測試版提交的 Windows 市集提交 API 方法，使用下列 JSON 資料資源。
 
 <span id="flight-submission-object" />
-### 套件正式發行前小眾測試版提交
+### <a name="flight-submission-resource"></a>正式發行前小眾測試版提交資源
 
-此資源代表套件正式發行前小眾測試版的提交。 下列範例示範此資源的格式。
+此資源描述套件正式發行前小眾測試版提交。
 
 ```json
 {
@@ -183,57 +245,57 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 此資源具有下列值。
 
-| 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值      | 類型   | 描述              |
+|------------|--------|------------------------------|
 | id            | 字串  | 提交的識別碼。  |
 | flightId           | 字串  |  包含要與提交產生關聯之套件正式發行前小眾測試版的識別碼。  |  
 | status           | 字串  | 提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | 物件  |  包含其他有關提交狀態的詳細資料 (包括任何錯誤的資訊)。 如需詳細資訊，請參閱下方的[狀態詳細資料](#status-details-object)一節。 |
-| flightPackages           | 陣列  | 包含可提供關於提交中每個套件之詳細資料的物件。 如需詳細資訊，請參閱下方的[套件正式發行前小眾測試版](#flight-package-object)一節。  |
-| packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱下方的[套件交付選項物件](#package-delivery-options-object)一節。  |
+| statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。  |
+| flightPackages           | 陣列  | 包含可提供關於提交中每個套件之詳細資料的[正式發行前小眾測試版套件資源](#flight-package-object)。   |
+| packageDeliveryOptions    | 物件  | [套件交付選項資源](#package-delivery-options-object)包含提交的漸進式套件推出和強制更新設定。   |
 | fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立套件正式發行前小眾測試版提交](#create-a-package-flight-submission)。  |
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
 | notesForCertification           | 字串  |  為認證測試人員提供其他資訊，例如測試帳戶認證，以及存取和確認功能的步驟。 如需詳細資訊，請參閱[認證注意事項](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。 |
 
 <span id="status-details-object" />
-### 狀態詳細資料
+### <a name="status-details-resource"></a>狀態詳細資料資源
 
 此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| 值           | 類型    | 描述                   |
 |-----------------|---------|------|
-|  errors               |    物件     |   包含提交錯誤詳細資料的物件陣列。 如需詳細資訊，請參閱下方的[狀態詳細資料](#status-detail-object)一節。   |     
-|  warnings               |   物件      | 包含提交警告詳細資料的物件陣列。 如需詳細資訊，請參閱下方的[狀態詳細資料](#status-detail-object)一節。     |
-|  certificationReports               |     物件    |   提供提交認證報告資料存取的物件陣列。 如果認證失敗，您可以檢查這些報告來取得詳細資訊。 如需詳細資訊，請參閱下方的[認證報告](#certification-report-object)一節。   |  
+|  errors               |    物件     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。   |     
+|  warnings               |   物件      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。     |
+|  certificationReports               |     物件    |   提供提交認證報告資料存取的[認證報告資源](#certification-report-object)陣列。 如果認證失敗，您可以檢查這些報告來取得詳細資訊。    |  
 
 
 <span id="status-detail-object" />
-### 狀態詳細資料
+### <a name="status-detail-resource"></a>狀態詳細資料資源
 
 此資源包含有關提交的任何相關錯誤或警告的其他資訊。 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| 值           | 類型    | 描述       |
 |-----------------|---------|------|
-|  code               |    字串     |   描述錯誤或警告類型的字串。 如需詳細資訊，請參閱下方的[提交狀態碼](#submission-status-code)一節。   |     
+|  code               |    字串     |   描述錯誤或警告類型的[提交狀態碼](#submission-status-code)。 |  
 |  details               |     字串    |  含有更多關於問題之詳細資料的訊息。     |
 
 
 <span id="certification-report-object" />
-### 認證報告
+### <a name="certification-report-resource"></a>認證報告資源
 
 此資源提供提交認證報告資料的存取。 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| 值           | 類型    | 描述         |
 |-----------------|---------|------|
-|     日期            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
+|     date            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 
 <span id="flight-package-object" />
-### 正式發行前小眾測試版套件
+### <a name="flight-package-resource"></a>正式發行前小眾測試版套件資源
 
-此資源提供關於提交中套件的詳細資料。 下列範例示範此資源的格式。
+此資源提供關於提交中套件的詳細資料。
 
 ```json
 {
@@ -254,26 +316,25 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 此資源具有下列值。
 
->**注意**
-              在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+>**注意**&nbsp;&nbsp;在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
+| 值           | 類型    | 描述              |
 |-----------------|---------|------|
 | fileName   |   字串      |  套件的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  字串   |  唯一識別套件的識別碼。 此值由開發人員中心所使用。   |     
-| version    |  字串   |  App 套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
-| architecture    |  字串   |  App 套件的架構 (例如，ARM)。   |     
-| languages    | 陣列    |  App 所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
+| version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
+| architecture    |  字串   |  應用程式套件的架構 (例如，ARM)。   |     
+| languages    | 陣列    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  陣列   |  套件所需的功能陣列。 如需功能的詳細資訊，請參閱[應用程式功能宣告](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
-| minimumDirectXVersion    |  字串   |  App 套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的 App 進行設定；對於目標為其他版本的 App 則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字串    |  App 套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的 App 進行設定；對於目標為其他版本的 App 則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  字串   |  應用程式套件所支援的最低 DirectX 版本。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | 字串    |  應用程式套件所需的最小 RAM。 這只能針對目標為 Windows 8.x 的應用程式進行設定；對於目標為其他版本的應用程式則會加以忽略。 這可以是下列其中一個值： <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
-### 套件交付選項物件
+### <a name="package-delivery-options-resource"></a>套件交付選項資源
 
-此資源包含提交的漸進式套件推出和強制更新設定。 下列範例示範此資源的格式。
+此資源包含提交的漸進式套件推出和強制更新設定。
 
 ```json
 {
@@ -294,12 +355,12 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-| packageRollout   |   物件      |  包含提交的漸進式套件推出設定。 如需詳細資訊，請參閱下方的[套件推出物件](#package-rollout-object)一節。    |  
-| isMandatoryUpdate    | 布林值    |  指出您是否要將這項提交中的套件視為自我安裝 App 更新的強制項目。 如需有關自我安裝 App 更新的強制套件詳細資訊，請參閱[下載與安裝 App 的套件更新](../packaging/self-install-package-updates.md)。    |  
+| packageRollout   |   物件      |   [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。    |  
+| isMandatoryUpdate    | 布林值    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝應用程式更新的強制套件詳細資訊，請參閱[下載與安裝應用程式的套件更新](../packaging/self-install-package-updates.md)。    |  
 | mandatoryUpdateEffectiveDate    |  日期   |  這項提交中的套件變成強制項目的日期和時間，採用 ISO 8601 格式和 UTC 時區。   |        
 
 <span id="package-rollout-object" />
-### 套件推出物件
+### <a name="package-rollout-resource"></a>套件推出資源
 
 此資源包含提交的漸進式[套件推出設定](#manage-gradual-package-rollout)。 此資源具有下列值。
 
@@ -312,12 +373,12 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 <span/>
 
-## 列舉
+## <a name="enums"></a>列舉
 
 這些方法會使用下列列舉。
 
 <span id="submission-status-code" />
-### 提交狀態碼
+### <a name="submission-status-code"></a>提交狀態碼
 
 下列代碼代表提交的狀態。
 
@@ -340,7 +401,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 管理套件正式發行前小眾測試版](manage-flights.md)
@@ -353,6 +414,6 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

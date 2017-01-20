@@ -1,12 +1,22 @@
-# <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>使用 Grid 和 StackPanel 建立簡單的天氣 App
+---
+author: mukin
+Description: "此教學課程式文章會逐步指引讀者，使其了解建立基本應用程式使用者介面的步驟。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。"
+title: "使用 Grid 和 StackPanel 建立簡單的天氣應用程式"
+translationtype: Human Translation
+ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
+ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 
-利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣 app。 使用這些工具，就能輕鬆製作在任何執行 Windows 10 的裝置上看起來都很棒的 app。 完成本教學課程可能需要 10-20 分鐘。
+---
+
+# <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>使用 Grid 和 StackPanel 建立簡單的天氣應用程式
+
+利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣應用程式。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
 
 ## <a name="prerequisites"></a>先決條件
 - Windows 10 和 Microsoft Visual Studio 2015。 [按一下這裡，以了解如何開始設定 Visual Studio](../get-started/get-set-up.md)。
-- 如何使用 XAML 和 C# 建立基本 "Hello World" app 的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hellow World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hellow World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
-## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的 App
+## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的應用程式
 1. 在 Visual Studio 功能表中，選取 \[檔案\] > \[新增專案\]。
 2. 在 \[新增專案\] 對話方塊的左窗格中，選取 \[Visual C#\] > \[Windows\] > \[通用\] 或 \[Visual C++\] > \[Windows\] > \[通用\]。
 3. 在中央窗格中，選取 \[空白應用程式\]。
@@ -14,7 +24,7 @@
 5. 若要執行程式，從功能表中選取 \[偵錯\] > \[開始偵錯\]，或選取 F5。
 
 ## <a name="step-2-define-a-grid"></a>步驟 2︰定義 Grid
-在 XAML 中，**Grid** 是由一系列的列和欄所組成。 藉由在 **Grid** 中指定元素的列與欄，您就能在使用者介面中輕易地放置其他元素和適當的空間。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
+在 XAML 中，**Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
 
 若要開始建立版面配置，請使用 \[方案總管\] 來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
 
@@ -31,9 +41,9 @@
 </Grid>
 ```
 
-新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "3\*" 和 "\*"，因此，**Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
+新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義應用程式介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "3\*" 和 "\*"，因此，**Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
-若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#layout-properties)。
+若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 
 如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid**，我們將為它提供一些色彩。
 
@@ -48,12 +58,12 @@
 
 請注意，我們針對第三個 **Border** 使用額外的屬性 **Grid.ColumnSpan**，這導致此 **Border** 會在較低的列中橫跨兩欄。 您可以透過相同方式來使用 **Grid.RowSpan**，而且一起使用這些屬性，可讓您在任意數目的列和欄上橫跨某個元素。 這類橫跨的左上角永遠是元素屬性中所指定的 **Grid.Column** 和 **Grid.Row** 。
 
-如果您執行此 app，結果看起來就像這樣。
+如果您執行此應用程式，結果看起來就像這樣。
 
 ![為格線上色](images/grid-weather-1.png)
 
 ## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步驟 4︰使用 StackPanel 元素整理內容
-**StackPanel** 是我們將用來建立天氣 app 的第二個 UI 元素。 **StackPanel** 是許多基本 app 版面配置中最基本的一部分，讓您能夠輕鬆地以垂直或水平方向堆疊元素。
+**StackPanel** 是我們將用來建立天氣應用程式的第二個 UI 元素。  **StackPanel** 是許多基本應用程式配置的基礎部分，可讓您以垂直或水平方式堆疊元素。
 
 在下列程式碼中，我們會建立兩個 **StackPanel** 元素，並使用三個 **TextBlocks** 來填滿每一個元素。 將這些 **StackPanel** 元素新增至 **Grid** 的 **Border** 元素 (來自步驟 3) 下方。 這導致 **TextBlock** 元素會呈現在我們稍早建立的彩色 **Grid** 上方。
 
@@ -73,7 +83,7 @@
 
 在第一個 **Stackpanel** 中，每個 **TextBlock** 都會垂直堆疊在下一個的下方。 這是 StackPanel 的預設行為，因此我們不需要設定 **Orientation** 屬性。 在第二個 StackPanel 中，我們希望子元素以水平方向由左到右堆疊，因此我們將 **Orientation** 屬性設為 "Horizontal"。 我們也必須將 **Grid.ColumnSpan** 屬性設為 "2"，讓文字會在較低的 **Border** 上置中。
 
-如果您立即執行此 app，將會看見如下的結果。
+如果您立即執行此應用程式，將會看見如下的結果。
 
 ![新增 StackPanel](images/grid-weather-2.png)
 
@@ -102,11 +112,12 @@
 您可以視需要試著使用上述的版面配置進行試驗，並探索您可用來代表天氣資料的各種方式。
 
 ## <a name="related-articles"></a>相關文章
-如需如何設計 UWP app 版面配置的簡介，請參閱 [UWP app 設計簡介](https://msdn.microsoft.com/en-us/windows/uwp/layout/design-and-ui-intro)
+如需如何設計 UWP 應用程式版面配置的簡介，請參閱 [UWP 應用程式設計簡介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
-若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml)
+若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO1-->
 
 

@@ -3,8 +3,8 @@ author: QuinnRadich
 title: "選擇 UWP 版本"
 description: "在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 了解不同 UWP 版本之間的差異，以及如何在新的及現有的專案中設定您的選項。"
 translationtype: Human Translation
-ms.sourcegitcommit: 006b5d01c2474591a81e4d7a83c5735dc0b3d9d8
-ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
+ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
+ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
 
 | 版本 | 描述 |
 | --- | --- |
-| 組建 14393 (年度更新版) | 這是發行於 2016 年 7 月的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
+| 組建 14393 (年度更新版) | 這是發行於 2016 年 7 月的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
 | 組建 10586 | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1511.md) |
 | 組建 10240 | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1507.md) |
 

@@ -1,17 +1,20 @@
 ---
 author: mijacobs
 Description: "本文從設計觀點說明通用 Windows 平台 (UWP) 的功能、優點及需求。 了解平台可提供您哪些免費且隨時供您使用的工具。"
-title: "通用 Windows 平台 (UWP) 應用程式設計簡介"
+title: "通用 Windows 平台 (UWP) 應用程式設計簡介 (Windows 應用程式)"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e6169f033a224c6ad9c3ba47ef1fd0a80e137dff
 
 ---
 
-#  UWP app 設計簡介 
+#  <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介 
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 通用 Windows 平台 (UWP) 應用程式可以在任何執行 Windows 的裝置上執行，包括手機、平板電腦或電腦。
 
@@ -23,9 +26,9 @@ ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 本文章描述 UWP app 的 UI 功能與優點，並提供一些建立您第一個 UWP app 的高階設計指導方針。 我們先來看看，當您建立 UWP app 時可取得的一些功能。 
 
-## UWP app 功能
+## <a name="uwp-app-features"></a>UWP app 功能
 
-### 有效像素與縮放
+### <a name="effective-pixels-and-scaling"></a>有效像素與縮放
 
 UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其可在所有裝置上清晰可讀。
 
@@ -35,7 +38,7 @@ UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其�
 
 因為此縮放系統的運作方式，所以您設計 UWP app 時是使用*有效像素*，而不是實體像素。 所以，這樣會對您設計應用程式的方式造成什麼影響？
 
--   在設計的時候，您可以忽略像素密度和實際螢幕解析度。 相反地，針對大小類別 (我們[稍後於本文件中](#sizeclasses)會定義大小類別) 設計實際解析度 (有效像素解析度)。
+-   在設計的時候，您可以忽略像素密度和實際螢幕解析度。 相反地，針對大小類別設計實際解析度 (有效像素解析度) (如需詳細資訊，請參閱[螢幕大小與中斷點文章](screen-sizes-and-breakpoints-for-responsive-design.md))。
 
 -   系統調整您的 UI 時，會以 4 的倍數進行。 如果要確保外觀清晰，請將您的設計貼齊 4x4 像素格線：讓 UI 元素的邊界、大小和位置，以及文字位置 (但不是大小—文字可以是任意大小) 為 4 有效像素的倍數。
 
@@ -47,14 +50,15 @@ UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其�
 
 ![沒有對齊 4x4 像素格線的設計元素](images/rsp-design/offthegridillustration.png)
 
-**提示** 在影像編輯程式中建立螢幕圖樣時，請將 DPI 設定為 72，並針對您的目標大小類別，將影像尺寸設定為有效解析度。 (如需大小類別和有效解析度的清單，請參閱本文章的[特定大小類別的建議](#sizeclasses)一節)。
+> [!TIP]
+> 在影像編輯程式中建立螢幕圖樣時，請將 DPI 設定為 72，並針對您的目標大小類別，將影像尺寸設定為有效解析度。 (如需大小類別和有效解析度的清單，請參閱本文章的[特定大小類別的建議](#sizeclasses)一節)。
 
 
-### 通用輸入和智慧型互動
+### <a name="universal-input-and-smart-interactions"></a>通用輸入和智慧型互動
 
 UWP 的另一個內建功能是透過智慧型互動啟用的通用輸入。 雖然您可以針對特定的輸入模式和裝置設計您的應用程式，但您不需要這麼做。 這是因為通用 Windows app 預設會依賴智慧型互動。 這表示您可以針對按一下的互動來設計，而不需知道或定義按一下是來自滑鼠的點擊或手指的點選。
 
-### 通用控制項與樣式
+### <a name="universal-controls-and-styles"></a>通用控制項與樣式
 
 
 UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系列的應用程式。
@@ -85,7 +89,7 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 
 我們已經說明了 UWP app 的建置組塊，讓我們來看看如何將它們放在一起來建立 UI。 
     
-## 典型 UWP app 的結構
+## <a name="the-anatomy-of-a-typical-uwp-app"></a>典型 UWP app 的結構
 
 
 現代使用者介面很複雜，是由文字、形狀、色彩和動畫所組成，這最終組成您所使用之裝置畫面的個別像素。 當您開始設計使用者介面時，純粹的選項數目會非常驚人。
@@ -94,7 +98,7 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 
 
 
-<table>
+<table class="uwpd-noborder" >
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -122,7 +126,7 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 
 決定應用程式適合哪些 UI 元素時，也可以考慮要執行應用程式的裝置和螢幕大小。
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>針對特定裝置和螢幕大小量身打造您的 app
+## <a name="tailoring-your-app-for-specific-devices-and-screen-sizes"></a>針對特定裝置和螢幕大小量身打造您的 app
 
 
 UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 的裝置上都能有效使用。 那麼，為什麼您還是希望針對特定裝置系列自訂您的應用程式 UI？
@@ -146,12 +150,12 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
     通用控制項程式庫可搭配所有輸入類型 (觸控、手寫筆、鍵盤、滑鼠)，但是您仍然可以透過重新安排 UI 元素，最佳化特定輸入類型。 例如，如果您在螢幕底部放置瀏覽元素，手機使用者就能輕鬆存取—但是大部分的電腦使用者則希望在螢幕頂端看到瀏覽元素。
 
-## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>回應式設計技術
+## <a name="responsive-design-techniques"></a>回應式設計技術
 
 
 當您針對特定螢幕寬度自訂應用程式的 UI 時，我們假設您要建立回應式設計。 以下是六種您可以用來自訂應用程式 UI 的回應式設計技術。
 
-### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>調整位置
+### <a name="reposition"></a>調整位置
 
 您可以變更應用程式 UI 元素的位置，以充分利用每個裝置。 在這個範例中，手機或平板手機的直向檢視必須要有捲動 UI，其中一次只能有一個完整畫面。 當應用程式轉譯到允許兩個完整螢幕畫面的裝置時，不論是直向或橫向，畫面 B 會使用一個專用空間。 如果您是使用格線來定位，當重新調整 UI 位置時可以依照相同的格線。
 
@@ -161,13 +165,13 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 ![應用程式在較大螢幕上重新調整內容的設計](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>重新調整大小
+### <a name="resize"></a>重新調整大小
 
 您可以調整邊界和 UI 元素的大小，以最佳化畫面大小。 如同這裡的範例所顯示，您可以輕鬆地透過增加內容畫面，來加強在較大螢幕上的閱讀體驗。
 
 ![調整大小設計元素](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>自動重排
+### <a name="reflow"></a>自動重排
 
 依據裝置和方向來變更 UI 元素的排列，應用程式能夠提供最佳的顯示內容。 例如，當在較大螢幕時切換成較大的容器、新增欄，並以不同的方式產生清單項目是合理的做法。
 
@@ -175,7 +179,7 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 ![自動重排設計元素](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> 顯示
+###  <a name="reveal"></a>顯示
 
 您可以根據螢幕空間顯示 UI，或者當裝置支援其他功能、特定情況或適合的螢幕方向時顯示。
 
@@ -191,13 +195,13 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 -   在任何應用程式中，您可以分割欄位顯示更多詳細資料。
 -   在任何應用程式中，您可以將垂直堆疊的內容改成以水平方向排列。 從手機或平版手機移至較大的裝置時，堆疊的清單項目可以改成以清單項目為列，並以中繼資料為欄來顯示。
 
-### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>替換
+### <a name="replace"></a>替換
 
 這項技術可讓您針對特定裝置大小類別或方向切換使用者介面。 在這個範例中，瀏覽窗格與其精簡、暫時性 UI 適用於較小的裝置，但使用於較大的裝置索引標籤上可能是更好的選擇。
 
 ![替換設計元素](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> 重新設計
+###  <a name="re-architect"></a>重新設計
 
 您可以摺疊或分支應用程式的結構，以便符合特定裝置。 在這個範例中，由左邊的裝置移至右邊的裝置示範了頁面的連接。
 
@@ -208,7 +212,7 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 ![使用重新架構回應式設計技術的設計範例](images/rsp-design/rspd-rearchitect-type1.png)
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 - [什麼是 UWP app？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
@@ -220,6 +224,6 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

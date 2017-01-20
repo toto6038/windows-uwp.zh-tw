@@ -1,46 +1,53 @@
 ---
-description: "了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP App 並撰寫 App 程式碼。"
-title: "UWP app 配置設計 – Windows 應用程式開發"
+description: "了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP 應用程式並撰寫應用程式程式碼。"
+title: "UWP 應用程式配置設計 – Windows 應用程式開發"
 author: mijacobs
-keywords: "uwp app 配置, 通用 Windows 平台, app 設計, 介面"
+keywords: "uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介面"
+label: Layout
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
 
 ---
-# UWP app 的配置
+# <a name="layout-for-uwp-apps"></a>UWP 應用程式的配置
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-App 結構、版面配置及瀏覽都是您的 App 使用者體驗的基礎。 本節中的文章可協助您建立一個很容易瀏覽，且在不同裝置與螢幕大小上有不同外觀的 App。
+應用程式結構、版面配置及瀏覽都是您的應用程式使用者體驗的基礎。 本節中的文章可協助您建立一個很容易瀏覽，且在不同裝置與螢幕大小上有不同外觀的應用程式。
 
-## 簡介
+## <a name="intro"></a>簡介
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  <p><b>[App UI 設計簡介](design-and-ui-intro.md)</b><br />
-當您設計 UWP app 時，必須建立適合顯示器大小不同之各種裝置的使用者介面。 本文章提供 UI 相關功能與 UWP app 的優點，以及設計回應式 UI 的一些秘訣與技巧的概觀。 </p>
+  <p><b>[應用程式 UI 設計簡介](design-and-ui-intro.md)</b><br />
+當您設計 UWP 應用程式時，必須建立適合顯示器大小不同之各種裝置的使用者介面。 本文章提供 UI 相關功能與 UWP 應用程式的優點，以及設計回應式 UI 的一些秘訣與技巧的概觀。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![在多種裝置上執行的 app](images/rspd-reposition-type1-sm.png)
+    ![在多種裝置上執行的應用程式](images/rspd-reposition-type1-sm.png)
   </div>
 </div>
 </div>
 
-## App 配置與結構
-查看這些建議以協助您建構 App 及使用三種類型的 UI 元素：瀏覽、命令及內容。
+## <a name="app-layout-and-structure"></a>應用程式配置與結構
+查看這些建議以協助您建構應用程式及使用三種類型的 UI 元素：瀏覽、命令及內容。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
 <p>
 <b>[瀏覽基本知識](navigation-basics.md)</b><br/>
-UWP app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 本文會為您介紹這些元件，並示範如何搭配使用來建立最佳的瀏覽體驗。
+UWP 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 本文會為您介紹這些元件，並示範如何搭配使用來建立最佳的瀏覽體驗。
 </p>
 <p>
 <b>[內容基本知識](content-basics.md)</b><br/>
-任何一種 App 的主要用途都是讓使用者存取內容：在相片編輯 App 中，內容是相片；在旅遊 App 中，內容是地圖與旅遊地點的相關資訊；以此類推。 本文提供三種內容案例的內容設計建議：取用、建立與互動。
+任何一種應用程式的主要用途都是讓使用者存取內容：在相片編輯應用程式中，內容是相片；在旅遊應用程式中，內容是地圖與旅遊地點的相關資訊；以此類推。 本文提供三種內容案例的內容設計建議：取用、建立與互動。
 </p> 
   </div>
   <div class="side-by-side-content-right">
@@ -50,7 +57,7 @@ UWP app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈
 </div>
 </div>
 
-## 頁面配置 
+## <a name="page-layout"></a>頁面配置 
 這些文章可協助您建立在不同螢幕尺寸、視窗大小、解析度及方向上看起來都會很棒的彈性化 UI。 
 
 
@@ -62,7 +69,7 @@ UWP app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈
   </div>
   <div class="side-by-side-content-right">
  <p><b>[使用 XAML 定義版面配置](layouts-with-xaml.md)</b> <br/>
-如何使用 XAML 屬性和版面配置面板，讓您的 App 具有回應性及調適性。</p>
+如何使用 XAML 屬性和版面配置面板，讓您的應用程式具有回應性及調適性。</p>
   </div>
 </div>
 </div>
@@ -83,6 +90,6 @@ UWP app 中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功能的彈
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 
