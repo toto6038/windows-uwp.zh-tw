@@ -37,14 +37,14 @@ ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 確定您的裝置有麥克風或同等的功能。
 
-在[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211430) (**package.appxmanifest** 檔案) 中設定 [麥克風]**** 裝置功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211474))，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
+在[應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211430) (**package.appxmanifest** 檔案) 中設定 **[麥克風]** 裝置功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211474))，以存取麥克風的音訊饋送。 這樣可讓 app 從連接的麥克風錄音。
 
 請參閱[應用程式功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
 ## <a name="recognize-speech-input"></a>辨識語音輸入
 
 
-「限制式」**定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
+*「限制式」*定義了應用程式可在語音輸入中辨識的字詞和片語 (詞彙)。 限制式是語音辨識的核心，可大幅提升您應用程式的語音辨識準確度。
 
 您可以在執行語音辨識時使用各種類型的限制式：
 
@@ -62,11 +62,11 @@ ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
     這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
-    若要使用 Web 服務的限制，必須在 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面的 [設定]**** 中開啟 [了解我] 選項以啟用語音輸入與聽寫支援。
+    若要使用 Web 服務的限制，必須在 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面的 **[設定]** 中開啟 [了解我] 選項以啟用語音輸入與聽寫支援。
 
     以下說明如何測試是否已啟用語音輸入，並開啟 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面 (如果未啟用)。
 
-    首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[以 C# 或 Visual Basic 撰寫的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
+    首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[以 C\# 或 Visual Basic 撰寫的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -161,15 +161,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果您使用的是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式：
 
--   [正在聆聽]**** 畫面。
--   [正在思考]**** 畫面。
--   [聽到您說]**** 畫面或錯誤畫面。
+-   **[正在聆聽]** 畫面。
+-   **[正在思考]** 畫面。
+-   **[聽到您說]** 畫面或錯誤畫面。
 
 如果您使用的是以字詞或片語清單為基礎的限制式，或是以 SRGS 文法檔為基礎的限制式：
 
--   [正在聆聽]**** 畫面。
--   [您說的是]**** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
--   [聽到您說]**** 畫面或錯誤畫面。
+-   **[正在聆聽]** 畫面。
+-   **[您說的是]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
+-   **[聽到您說]** 畫面或錯誤畫面。
 
 下列影像針對使用以 SGRS 文法檔為基礎之條件約束的語音辨識器，顯示其畫面之間流程的範例。 在這個範例中，語音辨識是成功的。
 

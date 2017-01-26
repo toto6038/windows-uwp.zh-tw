@@ -68,7 +68,7 @@ ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線「內」**。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線*「內」*。
 ![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
@@ -79,7 +79,7 @@ ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 邊界是 [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 參見下方：![高可見度焦點視覺效果邊界粗細 (僅限底部)](images/FocusThicknessSide.png)
 
-邊界是控制項視覺界限與焦點視覺效果「次要框線」**起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
+邊界是控制項視覺界限與焦點視覺效果*「次要框線」*起始位置之間的空間。 預設邊界是距離控制項界限 **1px**。 您可以編輯個別控制項的這個邊界，方法是變更 **FocusVisualMargin** 屬性︰
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
