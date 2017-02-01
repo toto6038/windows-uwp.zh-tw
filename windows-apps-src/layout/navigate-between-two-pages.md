@@ -7,7 +7,7 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
 
 ---

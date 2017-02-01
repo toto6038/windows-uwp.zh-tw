@@ -6,7 +6,7 @@ title: "開發通用 Windows 10 app"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 
 ---

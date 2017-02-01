@@ -7,7 +7,7 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: bc6ad505dff838204fcf1d0764ec075a382d56cd
 
 ---

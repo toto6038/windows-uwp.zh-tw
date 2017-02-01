@@ -7,7 +7,7 @@ label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: f5af27fd0be0782ce38258c0ac404dbff9c5c197
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 09447ad4545f3839d39a4b9191b51718455e7c00
 
 ---

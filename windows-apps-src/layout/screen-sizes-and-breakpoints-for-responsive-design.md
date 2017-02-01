@@ -7,7 +7,7 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 7189987209e894d81b2574aff576c64fb5f7a97a
 
 ---

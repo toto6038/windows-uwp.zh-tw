@@ -6,7 +6,7 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---

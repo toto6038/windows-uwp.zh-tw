@@ -39,7 +39,7 @@ ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 這個範例示範如何使清單檢視項目對齊底部，並指出對項目進行變更時，應將最後一個項目保持在檢視中。
  
  **XAML**
-```xaml
+ ```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>

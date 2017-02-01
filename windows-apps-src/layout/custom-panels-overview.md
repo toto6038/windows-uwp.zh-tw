@@ -10,7 +10,7 @@ label: XAML custom panels overview (Windows apps)
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: ff8d604be663b711bebf358f3256a5e6c55fb047
 
 ---

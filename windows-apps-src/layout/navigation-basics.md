@@ -7,7 +7,7 @@ label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: d0c1858727d4a19e699d2ec9cf5d869460873524
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
 
 ---
